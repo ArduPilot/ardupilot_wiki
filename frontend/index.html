@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+  <title>ArduPilot - Versatile, Trusted, Open</title>
+
+  <meta name="description"
+    content="ArduPilot is a trusted, versatile, and open source autopilot system supporting many vehicle types: multi-copters, traditional helicopters, fixed wing aircraft, boats, submarines, rovers and more. The source code is developed by a large community of professionals and enthusiasts. New developers are always welcome! The best way to start is by joining the Developer Team Forum, which is open to all and chock-full of daily development goodness.">
+  <meta name="author" content="ArduPilot">
+
+  <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+  <meta property="og:site_name" content="ArduPilot.org" />
+  <meta property="og:site" content="" />
+  <meta property="og:title" content="ArduPilot">
+  <meta property="og:description"
+    content="ArduPilot is a trusted, versatile, and open source autopilot system supporting many vehicle types: multi-copters, traditional helicopters, fixed wing aircraft, boats, submarines, rovers and more. The source code is developed by a large community of professionals and enthusiasts. New developers are always welcome! The best way to start is by joining the Developer Team Forum, which is open to all and chock-full of daily development goodness." />
+  <!-- description shown in the actual shared post -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ardupilot.org">
+  <meta property="og:image" content="">
+
+  <link rel="canonical" href="https://www.ardupilot.org" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="icon" href="icon.png">
+  <link rel="mask-icon" href="icon.png" color="#ffffff">
+
+  <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-TileColor" content="#ffffff">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+
+  <script>
+    $.getJSON("blog_posts.json", function (data) {
+      $.each(data, function (key, val) {
+
+        if (val.has_image) {
+          $('#blog_posts').append('<div class="col-lg-4 col-md-6 col-12">' +
+            '<a href="' + val.link + '" class="d-block mb-4 h-100 text-dark">' +
+            '<img class="img-fluid img-thumbnail" src="' + val.image + '" loading="lazy" alt="">' +
+            '<spam>' + val.title + '</spam></a>' +
+            '</div>');
+        } else {
+          $('#blog_posts').append('<div class="col-lg-4 col-md-6 col-12">' +
+            '<a href="' + val.link + '" class="d-block mb-4 h-100 text-dark">' +
+            '<iframe class="embed-responsive-item" title="' + val.title + '" src="' + val.youtube_link + '"></iframe><br>' +
+            '<spam>' + val.title + '</spam></a>' +
+            '</div>');
+        }
+
+      });
+    });
+  </script>
+
+  <script>
+    $.getJSON("news_posts.json", function (data) {
+      $.each(data, function (key, val) {
+        $('#news_posts').append('<li><p class="text-justify lead">' +
+          '<a href="' + val.link + '" >' +
+          val.title + ':</a> ' + val.text +
+          '</li>')
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <div id="headerID">
+    <!-- NAVBAR -->
+  </div>
+
+  <div class="container" style="max-width: 920px">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_01_Ardupilot42.webp">
+            <source type="image/jpeg" srcset="images/slides_01_Ardupilot42.jpg">
+            <img class="d-block w-100" src="images/slides_01_Ardupilot42.jpg" loading="lazy"
+                 alt="Local Motors/Airbus VTOL UAV on its maiden flight">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/avoidance.webp">
+            <source type="image/jpeg" srcset="images/avoidance.jpg">
+            <img class="d-block w-100" src="images/avoidance.jpg" loading="lazy"
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_02_7_hour_flight_Titled_920.webp">
+            <source type="image/jpeg" srcset="images/slides_02_7_hour_flight_Titled_920.jpg">
+            <img class="d-block w-100" src="images/slides_02_7_hour_flight_Titled_920.jpg" loading="lazy" alt="Airbus VTOL UAV">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_03_Airbus-local-motors.webp">
+            <source type="image/jpeg" srcset="images/slides_03_Airbus-local-motors.jpg">
+            <img class="d-block w-100" src="images/slides_03_Airbus-local-motors.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_3b_2048x1536-1.webp">
+            <source type="image/jpeg" srcset="images/slides_3b_2048x1536-1.jpg">
+            <img class="d-block w-100" src="images/slides_3b_2048x1536-1.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_04_AP_Discourse_AntiMatterCrusaderBoat_.webp">
+            <source type="image/jpeg" srcset="images/slides_04_AP_Discourse_AntiMatterCrusaderBoat_.jpg">
+            <img class="d-block w-100" src="images/slides_04_AP_Discourse_AntiMatterCrusaderBoat_.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_05_Rubidium_Rover.webp">
+            <source type="image/jpeg" srcset="images/slides_05_Rubidium_Rover.jpg">
+            <img class="d-block w-100" src="images/slides_05_Rubidium_Rover.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_06_Olivier_Brousse_Methane_Copter.webp">
+            <source type="image/jpeg" srcset="images/slides_06_Olivier_Brousse_Methane_Copter.jpg">
+            <img class="d-block w-100" src="images/slides_06_Olivier_Brousse_Methane_Copter.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_07_zhangir.webp">
+            <source type="image/jpeg" srcset="images/slides_07_zhangir.jpg">
+            <img class="d-block w-100" src="images/slides_07_zhangir.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_09_luiz_goncalves.webp">
+            <source type="image/jpeg" srcset="images/slides_09_luiz_goncalves.jpg">
+            <img class="d-block w-100" src="images/slides_09_luiz_goncalves.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_10_vlcsnap-2017-02-21-.webp">
+            <source type="image/jpeg" srcset="images/slides_10_vlcsnap-2017-02-21-.jpg">
+            <img class="d-block w-100" src="images/slides_10_vlcsnap-2017-02-21-.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_11_Aerial_Alchemy.webp">
+            <source type="image/jpeg" srcset="images/slides_11_Aerial_Alchemy.jpg">
+            <img class="d-block w-100" src="images/slides_11_Aerial_Alchemy.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_12_Facebook_Adam_hubalovsky.webp">
+            <source type="image/jpeg" srcset="images/slides_12_Facebook_Adam_hubalovsky.jpg">
+            <img class="d-block w-100" src="images/slides_12_Facebook_Adam_hubalovsky.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_13_OBC16Caneberra1.webp">
+            <source type="image/jpeg" srcset="images/slides_13_OBC16Caneberra1.jpg">
+            <img class="d-block w-100" src="images/slides_13_OBC16Caneberra1.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_14_OBC16Canberra3.webp">
+            <source type="image/jpeg" srcset="images/slides_14_OBC16Canberra3.jpg">
+            <img class="d-block w-100" src="images/slides_14_OBC16Canberra3.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_15_OBC16Canberra2.webp">
+            <source type="image/jpeg" srcset="images/slides_15_OBC16Canberra2.jpg">
+            <img class="d-block w-100" src="images/slides_15_OBC16Canberra2.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_16_Volcano1.webp">
+            <source type="image/jpeg" srcset="images/slides_16_Volcano1.jpg">
+            <img class="d-block w-100" src="images/slides_16_Volcano1.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_17_HYBRiX-flying-landinggear.webp">
+            <source type="image/jpeg" srcset="images/slides_17_HYBRiX-flying-landinggear.png">
+            <img class="d-block w-100" src="images/slides_17_HYBRiX-flying-landinggear.png" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_18_BlueRov-920.webp">
+            <source type="image/jpeg" srcset="images/slides_18_BlueRov-920.jpg">
+            <img class="d-block w-100" src="images/slides_18_BlueRov-920.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_19_UAV3000_1500.webp">
+            <source type="image/jpeg" srcset="images/slides_19_UAV3000_1500.jpg">
+            <img class="d-block w-100" src="images/slides_19_UAV3000_1500.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_20_RLNovaerial_square.webp">
+            <source type="image/jpeg" srcset="images/slides_20_RLNovaerial_square.jpg">
+            <img class="d-block w-100" src="images/slides_20_RLNovaerial_square.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_21_NovAerial_GCS1.webp">
+            <source type="image/jpeg" srcset="images/slides_21_NovAerial_GCS1.jpg">
+            <img class="d-block w-100" src="images/slides_21_NovAerial_GCS1.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_22_NovAerialGCS2.webp">
+            <source type="image/jpeg" srcset="images/slides_22_NovAerialGCS2.jpg">
+            <img class="d-block w-100" src="images/slides_22_NovAerialGCS2.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_23_3DVistas.webp">
+            <source type="image/jpeg" srcset="images/slides_23_3DVistas.jpg">
+            <img class="d-block w-100" src="images/slides_23_3DVistas.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_24_MIT_Andrew_Barry_1920.webp">
+            <source type="image/jpeg" srcset="images/slides_24_MIT_Andrew_Barry_1920.jpg">
+            <img class="d-block w-100" src="images/slides_24_MIT_Andrew_Barry_1920.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_25_cat_eddie_weeks_2-920.webp">
+            <source type="image/jpeg" srcset="images/slides_25_cat_eddie_weeks_2-920.jpg">
+            <img class="d-block w-100" src="images/slides_25_cat_eddie_weeks_2-920.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_26_cat_eddie_weeks_mission_resize.webp">
+            <source type="image/jpeg" srcset="images/slides_26_cat_eddie_weeks_mission_resize.jpg">
+            <img class="d-block w-100" src="images/slides_26_cat_eddie_weeks_mission_resize.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_27_home_ardupilot.webp">
+            <source type="image/jpeg" srcset="images/slides_27_home_ardupilot.jpg">
+            <img class="d-block w-100" src="images/slides_27_home_ardupilot.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_28_Greg_Covey_FireFLY6.webp">
+            <source type="image/jpeg" srcset="images/slides_28_Greg_Covey_FireFLY6.jpg">
+            <img class="d-block w-100" src="images/slides_28_Greg_Covey_FireFLY6.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_29_bg2.webp">
+            <source type="image/jpeg" srcset="images/slides_29_bg2.jpg">
+            <img class="d-block w-100" src="images/slides_29_bg2.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_30_octaquadplane.webp">
+            <source type="image/jpeg" srcset="images/slides_30_octaquadplane.jpg">
+            <img class="d-block w-100" src="images/slides_30_octaquadplane.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_31_SkyMapper_1152px.webp">
+            <source type="image/jpeg" srcset="images/slides_31_SkyMapper_1152px.jpg">
+            <img class="d-block w-100" src="images/slides_31_SkyMapper_1152px.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_32_vlcsnap-2017-02-21-15h48m21s139-920.webp">
+            <source type="image/jpeg" srcset="images/slides_32_vlcsnap-2017-02-21-15h48m21s139-920.jpg">
+            <img class="d-block w-100" src="images/slides_32_vlcsnap-2017-02-21-15h48m21s139-920.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_33_Thomas_Coyle_Rover_Check.webp">
+            <source type="image/jpeg" srcset="images/slides_33_Thomas_Coyle_Rover_Check.jpg">
+            <img class="d-block w-100" src="images/slides_33_Thomas_Coyle_Rover_Check.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_34_zion1413273025362.webp">
+            <source type="image/jpeg" srcset="images/slides_34_zion1413273025362.jpg">
+            <img class="d-block w-100" src="images/slides_34_zion1413273025362.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+        <div class="carousel-item img-fluid">
+          <picture>
+            <source type="image/webp" srcset="images/slides_35_BlueRov-920.webp">
+            <source type="image/jpeg" srcset="images/slides_35_BlueRov-920.jpg">
+            <img class="d-block w-100" src="images/slides_35_BlueRov-920.jpg" loading="lazy" alt="">
+          </picture>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev " href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next " href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+  <main role="main" class="container">
+
+
+    <div class="starter-template">
+      <h1>Community</h1>
+
+      <p class="text-justify lead">Community is what really sets ArduPilot apart from many other offerings in the
+        market. Here are some of the places you can find ArduPilot users and developers:</p>
+
+
+      <div class="starter-template">
+        <h2>Latest posts on Community Blogs</h2>
+          <div class="row text-left text-lg-left" id="blog_posts">
+          </div>
+      </div>
+      <br><br>
+
+      <div class="starter-template">
+        <h2>Latest Community Forums posts</h2>
+          <ul id="news_posts">
+          </ul>
+      </div>
+      <br><br>
+
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Discussion Forum</h3>
+            </div>
+            <div class="panel-body">
+              Get help and interact with other ArduPilot users on <a href="https://discuss.ardupilot.org/">Discussion
+                Forum</a> and <a href="https://discuss.ardupilot.org/c/blog">related blogs on ArduPilot.org!</a><br><br>
+
+              <a href="https://discuss.ardupilot.org/c/blog">
+                <picture>
+                  <source type="image/webp" srcset="images/ArduPilotDiscuss.webp">
+                  <source type="image/jpeg" srcset="images/ArduPilotDiscuss.png">
+                  <img src="images/ArduPilotDiscuss.png" class="img-fluid rounded" loading="lazy" alt="https://discuss.ardupilot.org/c/blog">
+                </picture>
+              </a>
+
+
+              <br><br><br>
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Facebook ArduPilot group</h3>
+            </div>
+            <div class="panel-body">
+              <a href="https://www.facebook.com/groups/ArduPilot.org/">Facebook ArduPilot group</a> have several post
+              with most recent community cases.
+
+              <br><br><br>
+
+              <a href="https://www.facebook.com/groups/ArduPilot.org/">
+                <picture>
+                  <source type="image/webp" srcset="images/FaceBookArduPilot.webp">
+                  <source type="image/jpeg" srcset="images/FaceBookArduPilot.png">
+                  <img src="images/FaceBookArduPilot.png" class="img-fluid rounded" loading="lazy" alt="https://www.facebook.com/groups/ArduPilot.org/">
+                </picture>
+              </a>
+
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Discord</h3>
+            </div>
+            <div class="panel-body">
+              Developing questions? Check our <a href="https://ardupilot.org/discord">discord channels</a> and exchange
+              your coding questions with other developers.
+
+              <br><br>
+
+              <a href="https://ardupilot.org/discord">
+                <picture>
+                  <source type="image/webp" srcset="images/discord_mini.webp">
+                  <source type="image/jpeg" srcset="images/discord_mini.png">
+                  <img src="images/discord_mini.png" class="img-fluid rounded" loading="lazy" alt="https://ardupilot.org/discord">
+                </picture>
+              </a>
+
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+
+      </div>
+
+      <br>
+
+
+      <div class="starter-template">
+        <h1>Developer Community</h1>
+        <p class="text-justify lead">
+          Working on the code? You can start with our <a href="https://ardupilot.org/dev/index.html">Developers
+            Guide</a> and chat with other developers at <a href="https://ardupilot.org/discord">our discord channels</a>
+        </p>
+      </div>
+      <br><br>
+
+
+    </div>
+    <br>
+
+
+
+    <div class="starter-template">
+      <h1>What is ArduPilot?</h1>
+      <p class="text-justify lead">ArduPilot is a trusted, versatile, and open source autopilot system supporting many
+        vehicle types: multi-copters, traditional helicopters, fixed wing aircraft, boats, submarines, rovers and more.
+        The source code is developed by a large community of professionals and enthusiasts. New developers are always
+        welcome! The best way to start is by joining the Developer Team Forum, which is open to all and chock-full of
+        daily development goodness.</p>
+    </div>
+    <br><br>
+
+    <div class="starter-template">
+      <h1>One autopilot for any mission</h1>
+      <p class="text-justify lead">ArduPilot enables the creation and use of trusted, autonomous, unmanned vehicle
+        systems for the peaceful benefit of all. ArduPilot provides a comprehensive suite of tools suitable for almost
+        any vehicle and application. As an open source project, it is constantly evolving based on rapid feedback from a
+        large community of users. The Development Team works with the community and commercial partners to add
+        functionality to ArduPilot thatbenefits everyone. Although ArduPilot does not manufacture any hardware,
+        ArduPilot firmware works on a wide variety of different hardware to control unmanned vehicles of all types.
+        Coupled with ground control software, unmanned vehicles running ArduPilot can have advanced functionality
+        including real-time communication with operators. ArduPilot has a huge online community dedicated to helping
+        users with questions, problems, and solutions.</p>
+
+      <p class="text-justify lead">The ArduPilot Project provides an advanced, full-featured and reliable open source
+        autopilot software system. The first ArduPilot open code repository was created in 2009 - since then it has been
+        developed by a team of diverse professional engineers, academics, computer scientists, and other members of our
+        global community. It is capable of controlling almost any vehicle system imaginable: conventional and VTOL
+        airplanes, gliders, multirotors, helicopters, sailboats, powered boats, submarines, ground vehicles and even
+        Balance-Bots. The supported vehicle types frequently expand as use cases emerge for new and novel platforms.</p>
+
+      <p class="text-justify lead">Installed in over 1,000,000 vehicles world-wide, and with advanced data-logging,
+        analysis and simulation tools, ArduPilot is a deeply tested and trusted autopilot system. The open-source code
+        base means that it is rapidly evolving, always at the cutting edge of technology development, whilst sound
+        release processes provide confidence to the end user. With many peripheral suppliers creating interfaces, users
+        benefit from a broad ecosystem of sensors, companion computers and communication systems. Since the source code
+        is open, it can be audited to ensure compliance with security and secrecy requirements.</p>
+
+      <p class="text-justify lead">The software suite is installed in vehicles from many manufacturers, such as many
+        from our Partners, and more broadly throughout the global autonomous systems industry. It is also used for
+        testing and development by large institutions and corporations such as NASA, Intel and Insitu/Boeing, as well as
+        countless colleges and universities around the world.</p>
+    </div>
+    <br><br>
+
+    <div class="text-center">
+      <picture>
+        <source type="image/webp" srcset="images/home_ardupilot.webp">
+        <source type="image/jpeg" srcset="images/home_ardupilot.jpg">
+        <img loading="lazy" alt="images/home_ardupilot.jpg" src="images/home_ardupilot.jpg" class="img-fluid rounded">
+      </picture>
+    </div>
+    <br><br><br>
+
+
+    <div class="starter-template">
+      <h1>Terms & Slices</h1>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Unmanned vehicles</h2>
+          </div>
+          <div class="panel-body text-justify">
+            ArduPilot can control several types of hardwares suck as multi-copters, traditional helicopters, fixed wing
+            aircraft, boats, submarines, rovers and more. <br><br><br>
+          </div>
+        </div>
+      </div><!-- /.col-sm-4 -->
+
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Hardware</h2>
+          </div>
+          <div class="panel-body text-justify">
+            Is the peripheral sensors, controller, and output devices that act as the vehicle's eyes, ears, brain and
+            arms. Almost any mobile machine can be transformed into an autonomous vehicle, by simply integrating a small
+            hardware package into it. Hardware packages begin with a controller. Using inputs from sensors, the
+            controller is able to send outputs to devices such as ESC's, servos, gimbals and other peripherals.
+
+            <picture>
+              <source type="image/webp" srcset="images/pixhawk_small.webp">
+              <source type="image/jpeg" srcset="images/pixhawk_small.jpg">
+              <img src="images/pixhawk_small.jpg" class="img-fluid rounded" loading="lazy" alt="">
+            </picture>
+
+
+            <br><br><br>
+          </div>
+        </div>
+      </div><!-- /.col-sm-4 -->
+
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Firmware</h2>
+          </div>
+          <div class="panel-body text-justify">
+            Is the code running on the controller. You choose the firmware to match your vehicle and mission: <a
+              href="https://ardupilot.org/copter/index.html">Copter</a>, <a
+              href="https://ardupilot.org/plane/index.html"> Plane</a>, <a
+              href="https://ardupilot.org/rover/index.html">Rover</a>, <a
+              href="https://ardupilot.org/copter/index.html">Sub</a>, or <a
+              href="https://ardupilot.org/antennatracker/index.html">Antenna Tracker</a>.<br><br>
+
+            <picture>
+              <source type="image/webp" srcset="images/firmware_types.webp">
+              <source type="image/jpeg" srcset="images/firmware_types.jpg">
+              <img src="images/firmware_types.jpg" class="img-fluid rounded" loading="lazy" alt="">
+            </picture>
+
+          </div>
+        </div>
+      </div><!-- /.col-sm-4 -->
+
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Software</h2>
+          </div>
+          <div class="panel-body text-justify">
+            Is your interface to the controller. Also called a Ground Control Station (GCS), the software can run on
+            PC's or mobile devices. A GCS allows users to set-up, configure, test, and tune the vehicle. Advanced
+            packages allow autonomous mission planning, operation, and post-mission analysis.
+          </div>
+        </div>
+      </div><!-- /.col-sm-4 -->
+
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Ground Station</h2>
+          </div>
+          <div class="panel-body text-justify">
+            Ground stations for UAVs, or ground control stations for UAVs are land-based communications and control
+            systems typically used for direct piloting and communication between the crew and a UAV. These ground
+            control systems typically allow for both piloting of the craft and streaming live video and data.
+          </div>
+        </div>
+      </div><!-- /.col-sm-4 -->
+
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Mission Planner</h2>
+          </div>
+          <div class="panel-body text-justify">
+            Is a full-featured GCS supported by ArduPilot. It offers point-and-click interaction with your hardware,
+            custom scripting, and simulation.
+            <br><br>
+            <picture>
+              <source type="image/webp" srcset="images/mission_planner_spline_waypoint.webp">
+              <source type="image/jpeg" srcset="images/mission_planner_spline_waypoint.jpg">
+              <img src="images/mission_planner_spline_waypoint.jpg" class="img-fluid rounded" loading="lazy" alt="">
+            </picture>
+
+          </div>
+        </div>
+      </div><!-- /.col-sm-4 -->
+
+    </div>
+
+    <br><br>
+
+    <div class="starter-template">
+      <h1>ArduPilot Documentation</h1>
+      <p class="text-justify lead">ArduPilot has a large set of documentation available through its Wiki. See the link
+        DOCS in the top bar to check it. You need to choose your hardware (which you can get help in "AutoPilot
+        Hardware"), then you could follow vehicle's "First Time Setup" for installing the firmware and Ground Station
+        software, connecting the components, and calibration steps.</p>
+    </div>
+    <br><br>
+
+
+  </main><!-- /.container -->
+
+
+
+  <div class="container">
+
+    <div class="page-header">
+      <h1>User Cases</h1>
+    </div>
+    <hr class="mt-2 mb-5">
+
+    <div class="row text-center text-lg-left">
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html" class="d-block mb-4 h-100">
+          <picture>
+            <source type="image/webp" srcset="images/cases_01_bluerov-dev-1-1024x466.webp">
+            <source type="image/jpeg" srcset="images/cases_01_bluerov-dev-1-1024x466.jpg">
+            <img class="img-fluid img-thumbnail" src="images/cases_01_bluerov-dev-1-1024x466.jpg" loading="lazy" alt=""> Underwater
+            exploration for coral reefs, oilpipe inspections
+          </picture>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html" class="d-block mb-4 h-100">
+          <picture>
+            <source type="image/webp" srcset="images/cases_02_case_vtol-quadplane.webp">
+            <source type="image/jpeg" srcset="images/cases_02_case_vtol-quadplane.jpg">
+            <img class="img-fluid img-thumbnail" src="images/cases_02_case_vtol-quadplane.jpg" loading="lazy" alt=""> VTOL QuadPlane for
+            Search & Rescue operations
+          </picture>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html" class="d-block mb-4 h-100">
+          <picture>
+            <source type="image/webp" srcset="images/cases_03_PX4-Tractor.webp">
+            <source type="image/jpeg" srcset="images/cases_03_PX4-Tractor.jpg">
+            <img class="img-fluid img-thumbnail" src="images/cases_03_PX4-Tractor.jpg" loading="lazy" alt=""> Agricultural automatic
+            robot tractors
+          </picture>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html" class="d-block mb-4 h-100">
+          <picture>
+            <source type="image/webp" srcset="images/cases_04_SkyMapper_1152px.webp">
+            <source type="image/jpeg" srcset="images/cases_04_SkyMapper_1152px.jpg">
+            <img class="img-fluid img-thumbnail" src="images/cases_04_SkyMapper_1152px.jpg" loading="lazy" alt=""> Large area aerial
+            mapping with fixedwing drones
+          </picture>
+        </a>
+      </div>
+
+
+    </div>
+
+    <br><br><br>
+    <div class="alert alert-warning" role="alert">
+      <strong>Warning!</strong> Every country has different regulations governing the operation of remote controlled
+      and/or autonomous vehicles. <a href="https://droneregulations.info">This database</a> has country specific
+      information, but it is every operator's responsibility to be seek out and be aware of local, regional, and federal
+      regulations.
+
+    </div>
+
+
+  </div><!-- /.container -->
+
+
+  <br>
+
+
+  <div id="footerID">
+    <!-- FOOTER -->
+  </div>
+  <script>
+    $("#headerID").load("includes/_topbar.html");
+    $("#footerID").load("includes/_footer.html");
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "ArduPilot Build Wiki (All)",
+            "type": "shell",
+            "command": "./update.py",
+            "args": [
+                "--parallel",
+                "-1"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ArduPilot Build Wiki (AntennaTracker)",
+            "type": "shell",
+            "command": "./update.py",
+            "args": [
+                "--parallel",
+                "-1",
+                "--site",
+                "antennatracker"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ArduPilot Build Wiki (Blimp)",
+            "type": "shell",
+            "command": "./update.py",
+            "args": [
+                "--parallel",
+                "-1",
+                "--site",
+                "blimp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ArduPilot Build Wiki (Copter)",
+            "type": "shell",
+            "command": "./update.py",
+            "args": [
+                "--parallel",
+                "-1",
+                "--site",
+                "copter"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ArduPilot Build Wiki (Dev)",
+            "type": "shell",
+            "command": "./update.py",
+            "args": [
+                "--parallel",
+                "-1",
+                "--site",
+                "dev"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ArduPilot Build Wiki (MAVProxy)",
+            "type": "shell",
+            "command": "./update.py",
+            "args": [
+                "--parallel",
+                "-1",
+                "--site",
+                "mavproxy"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ArduPilot Build Wiki (Plane)",
+            "type": "shell",
+            "command": "./update.py",
+            "args": [
+                "--parallel",
+                "-1",
+                "--site",
+                "plane"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ArduPilot Build Wiki (Planner)",
+            "type": "shell",
+            "command": "./update.py",
+            "args": [
+                "--parallel",
+                "-1",
+                "--site",
+                "planner"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ArduPilot Build Wiki (Planner2)",
+            "type": "shell",
+            "command": "./update.py",
+            "args": [
+                "--parallel",
+                "-1",
+                "--site",
+                "planner2"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ArduPilot Build Wiki (Rover)",
+            "type": "shell",
+            "command": "./update.py",
+            "args": [
+                "--parallel",
+                "-1",
+                "--site",
+                "rover"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+    ]
+}

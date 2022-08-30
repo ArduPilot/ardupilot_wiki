@@ -1,0 +1,94 @@
+# Common files except under Common
+/ardupilot/source/docs/common-*
+/copter/source/docs/common-*
+/plane/source/docs/common-*
+/rover/source/docs/common-*
+/planner/source/docs/common-*
+/planner2/source/docs/common-*
+/antennatracker/source/docs/common-*
+/dev/source/docs/common-*
+/mavproxy/source/docs/common-*
+/blimp/source/docs/common-*
+
+# Common CSS except under Common
+/ardupilot/source/_static/common_*
+/copter/source/_static/common_*
+/plane/source/_static/common_*
+/rover/source/_static/common_*
+/planner/source/_static/common_*
+/planner2/source/_static/common_*
+/antennatracker/source/_static/common_*
+/dev/source/_static/common_*
+/mavproxy/source/_static/common_*
+/blimp/source/_static/common_*
+
+# Any build directory
+*/build/*
+
+# Logs
+*.log
+
+# Build outputs
+*.html
+*.pyc
+
+# static html pages
+!/frontend/*.html
+!/frontend/includes/*.html
+
+
+# Vagrant
+/.vagrant
+
+# VSCode
+/.vscode
+
+# Parameters multiversioning
+/copter/source/docs/parameters-Copter-*.rst
+/plane/source/docs/parameters-Plane-*.rst
+/rover/source/docs/parameters-Rover-*.rst
+/antennatracker/source/docs/parameters-AntennaTracker-*.rst
+/blimp/source/docs/parameters-Blimp-*.rst
+/copter/source/docs/parameters-latest.rst
+/plane/source/docs/parameters-latest.rst
+/rover/source/docs/parameters-latest.rst
+/antennatracker/source/docs/parameters-latest.rst
+/blimp/source/docs/parameters-latest.rst
+/copter/source/_static/parameters-Copter.json
+/plane/source/_static/parameters-Plane.json
+/rover/source/_static/parameters-Rover.json
+/antennatracker/source/_static/parameters-Antennatracker.json
+/blimp/source/_static/parameters-Blimp.json
+
+
+# Parameters files
+/copter/source/docs/parameters.rst
+/plane/source/docs/parameters.rst
+/rover/source/docs/parameters.rst
+/antennatracker/source/docs/parameters.rst
+/dev/source/docs/AP_Periph-Parameters.rst
+/blimp/source/docs/parameters.rst
+
+# Log messages files
+/copter/source/docs/logmessages.rst
+/plane/source/docs/logmessages.rst
+/rover/source/docs/logmessages.rst
+/antennatracker/source/docs/logmessages.rst
+/blimp/source/docs/logmessages.rst
+
+# Javascript files
+/antennatracker/source/_static/useralerts.js
+/copter/source/_static/useralerts.js
+/dev/source/_static/useralerts.js
+/plane/source/_static/useralerts.js
+/rover/source/_static/useralerts.js
+/ardupilot/source/_static/useralerts.js
+/mavproxy/source/_static/useralerts.js
+/planner/source/_static/useralerts.js
+/planner2/source/_static/useralerts.js
+/blimp/source/_static/useralerts.js
+
+# Website
+/frontend/blog_posts.json
+/frontend/news_posts.json
+

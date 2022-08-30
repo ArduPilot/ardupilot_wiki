@@ -1,0 +1,60 @@
+/* custom CSS for ArduPilot wiki */
+
+/* Table in user alerts page */
+table.useralerts-table td {
+    white-space: normal;
+}
+
+/* CSS for Partners logo list */
+table.partners-table {
+    width: 100%;
+}
+
+table.partners-table img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+}
+
+table.partners-table td {
+    background-color: #fff !important;
+    height: 15vw;
+}
+
+@media screen and (min-width: 1660px) {
+    table.partners-table td {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    table.partners-table td {
+        width: 100%;
+        display: block;
+        height: 20vw;
+        border: 1px solid #e1e4e5 !important;
+    }
+
+    table.partners-table, table.partners-table tbody {
+        display: block;
+    }
+}
+
+/* wiki top menu makes anchor links disappear under it, this hack fixes it */
+.section {
+    padding-top: 40px;
+    margin-top: -40px;
+}
+
+/* make certain toc sidebar items red */
+.wy-menu .toctree-l1 a[href*="arduplane-setup.html"],
+.wy-menu .toctree-l1 a[href*="first-flight-landing-page.html"],
+.wy-menu .toctree-l1 a[href*="initial-setup.html"],
+.wy-menu .toctree-l1 a[href*="flying-arducopter.html"],
+.wy-menu .toctree-l1 a[href*="apmrover-setup.html"],
+.wy-menu .toctree-l1 a[href*="rover-first-drive.html"],
+.wy-menu .toctree-l1 a[href*="quadplane-setup.html"],
+.wy-menu .toctree-l1 a[href*="quadplane-first-flight.html"] {
+    color: red;
+    font-weight: bold;
+}
