@@ -101,10 +101,6 @@ are all around 1,500, there are three likely causes:
    the test, or did it too quickly.
 #. Your RC connections are plugged in wrong, either upside down, on the
    wrong pins, or otherwise not making a connection
-#. You have one of the early APM boards that may need to have its PPM
-   firmware updated (this should not be a problem for any board shipped
-   after mid-2010). Instructions for doing that
-   are :ref:`here <copter:common-ppm-encoder-8-channel-standalone-encoder>`.
 
 Flight Control Modes
 ====================
