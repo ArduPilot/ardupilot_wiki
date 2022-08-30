@@ -21,7 +21,7 @@ need:
 
 -  Miniature video camera. The variety of cameras increases daily. Most now support resolutions of 600-1200 TVL (TV Lines) and have wide supply range tolerance (5-24V typically). Lens are available from wide-angle (<2.8mm) to ultra-narrow (>5mm). For mini-quads, usually wide angle are used, while for planes, normal field of view/focal lengths (2.8mm-3.6mm) are usually used. A wide selection are easily found by searching the internet for ``FPV Camera``.
 -  5.8Ghz 25mw to 200mw video transmitter/receiver pair. Again, supply voltage tolerances now easily accommodate 2s-4s Lipo batteries normally used as vehicle power.
--  OSD (On-Screen-Display). Many autopilots now integrate this function directly. If not, external OSDs like `MinimOSD <http://store.jdrones.com/jD_MiniOSD_V12_p/jdminiosd12.htm>`__ can be used. Or, not used at all. However, being able to see the battery status, flight data, etc. makes a much more enjoyable flight!
+-  OSD (On-Screen-Display). Many autopilots now integrate this function directly. If not, external OSDs like `MinimOSD <http://www.holybro.com/product/micro-osd-v2/>`__ can be used. Or, not used at all. However, being able to see the battery status, flight data, etc. makes a much more enjoyable flight!
 -  Separate batteries for powering the above are rarely needed now, since most now accommodate the flight pack's voltage range from full to empty,
 
 In addition you will need a monitor like the `Black Pearl <http://www.amazon.com/FlySight-Black-Pearl-Diversity-Integrated/dp/B00KR69WHY>`__
