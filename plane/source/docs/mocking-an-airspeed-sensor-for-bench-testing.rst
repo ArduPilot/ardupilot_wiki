@@ -32,9 +32,7 @@ you will temporarily configure your autopilot to use the analogue port.
 Required parts
 ~~~~~~~~~~~~~~
 
-You will need this `DF-13 cable <http://store.jdrones.com/cable_df13_3pin_25cm_p/cbldf13p3c25.htm>`__,
-and a simple `potentiometer like this <https://www.sparkfun.com/products/9939>`__ or
-`this <http://hobbyking.com/hobbyking/store/__39510__Potentiameter_Round_Pot_Turnigy_9XR_Transmitter_3set_.html>`__.
+You will need a DF-13 cable and a simple `potentiometer like this <https://www.sparkfun.com/products/9939>`__ or `this <http://hobbyking.com/hobbyking/store/__39510__Potentiameter_Round_Pot_Turnigy_9XR_Transmitter_3set_.html>`__.
 Either a B10K and B5K potentiometer can be used to set speed from 0 to as much as 90 m/s.
 
 Pixhawk Configuration and Settings
