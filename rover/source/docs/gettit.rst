@@ -47,8 +47,7 @@ Developers creating robot vision applications should consider a Linux based auto
 
 .. note::
 
-   You will need at least four \ `female-to-female servo extension cables <http://store.jdrones.com/Servo_Extension_15cm_Female_Female_p/cblsrvff15.htm>`__
-   to connect the autopilot to your RC receiver (choose length to
+   You will need servo extension cable to connect the autopilot to your RC receiver (choose length to
    suit)
 
 4+ channel RC transmitter and receiver
