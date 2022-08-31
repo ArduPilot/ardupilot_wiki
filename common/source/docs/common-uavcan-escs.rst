@@ -47,10 +47,9 @@ subsequent ESC should be connected to the previous using a 4-pin
 DroneCAN cable.  The final ESC should have a CAN bus terminator plugged
 into one of its 4-pin DroneCAN ports.
 
-The FTDI Cable connection is only required for the one-time set-up
-discussed below.
+An FTDI Cable connection to the ESC's debug port is only required for set-up if the ESC does not present its parameters via DroneCAN. In that case, contact the manufacturer for detailed instructions.
 
-Alternatively, the ESC can be configured via CAN bus using the `DroneCAN GUI Tool <common-uavcan-gui>`.
+Preferably, the ESC can be configured via CAN bus using the `DroneCAN GUI Tool <common-uavcan-gui>`.
 
 Autopilot Setup
 ===============
@@ -60,47 +59,6 @@ For the examples below, the values are shown for CAN driver #1.
 
 -  :ref:`CAN_D1_UC_NODE<CAN_D1_UC_NODE>` - which is the node ID of the autopilot sending the commands to the ESCs so that there can be differentiation between multiple sources on the CAN bus
 -  :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` - bitmask that determines which autopilot servo/motor output signals are sent to the DroneCAN ESCs
-
-
-ESC setup using CLI
-===================
-
-Each ESC must go through a one-time manual setup using an `FTDI cable <https://www.amazon.com/ftdi-adapter/s?k=ftdi+adapter>`__
-to define its DroneCAN Node Id and motor number.  In future versions of
-ArduPilot this will be replaced with a setup procedure using the mission
-planner (and other GCSs).
-
-The steps required are:
-
--  Connect the FTDI cable to the ESC's "Developer port" as shown in the
-   image above.
--  Power the ESCs with a battery
--  Use a terminal program such as
-   `Putty <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`__
-   to connect to the ESC using the FTDI cable's COM port, using serial
-   at 115200 baud
--  press **Enter** into the terminal and a "ch>" prompt should appear
--  type ``cfg list`` to see a full list of parameters
--  on motor #1 (i.e. front-right on a quad) set the uavcan_node_id to
-   "10" and esc_index to "0" by typing:
-
-   -  ``cfg set uavcan_node_id 10``
-   -  ``cfg set esc_index 0``
-   -  ``cfg save``   (to save the configuration)
-   - ``reboot``
-
--  to test the motor moves:
-
-   -  ``dc arm``  (to enable the output)
-   -  ``dc 0.2`` (to spin motor at 20%)
-   -  ``dc`` (to stop motor)
-
--  repeat for motors #2 (back left on a quad), #3, #4, etc with each
-   motor having a node-id and index one higher than the previous (in
-   fact the node-id doesn't matter as long as it's unique).
-
-.. image:: ../../../images/ESC_cli_setup.png
-    :target: ../_images/ESC_cli_setup.png
 
 Logging and Reporting
 ---------------------
