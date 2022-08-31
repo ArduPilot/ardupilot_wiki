@@ -187,7 +187,7 @@ The Jumper T16 and RadioMaster T16 are FRSky Horus-like OpenTX based transmitter
 PPM encoders
 ============
 
-A PPM Encoder <https://www.amazon.com/s?k=ppm+encoder>`__ will
+A `PPM Encoder <https://www.amazon.com/s?k=ppm+encoder>`__ will
 allow you to use any older style RC receiver that has only PWM outputs for each channel instead of an SBUS or PPM output. See :ref:`common-ppm-encoders-new` for more information.
 
 .. toctree::
