@@ -15,7 +15,6 @@ Remote IDs are becoming a legal requirement in some countries.  Below is a list 
 MAVLink enabled devices that connect to the autopilot:
 
 - `Aerobits idME <https://www.aerobits.pl/product/idme/>`__
-- `BlueMark DroneBeacon MAVLink (EU, US) <https://dronescout.co/dronebeacon-mavlink-remote-id-transponder/>`__ (support expected to be added in ArduPilot-4.3.0)
 - `Dronetag Mini <https://dronetag.cz/en/products/mini/>`__
 
 Stand-alone devices:
@@ -24,6 +23,12 @@ Stand-alone devices:
 - `EAMS Robotics remote id (Japan) <http://www.eams-robo.co.jp/remoteid.html>`__
 - `TEAD remote id (Japan) <https://www.tead.co.jp/product/remote-id/>`__
 
+OpenDroneID Compatible devices (support included in ArduPlane 4.0 and later)
+
+- `BlueMark DroneBeacon MAVLink (EU, US) <https://dronescout.co/dronebeacon-mavlink-remote-id-transponder/>`__
+- 'Wurzbach Electronics <https://wurzbachelectronics.com/esp32-remote-id-development-set>`__
+
+
 OpenDroneID
 ===========
 
@@ -31,7 +36,7 @@ OpenDroneID
     :target: ../../_images/remoteid.jpg
 
 
-ArduPilot provides support for OpenDroneID in firmware versions 4.2 and later via MAVLink to an OpenDroneID compatible RemoteID module attached to either a serial port or DroneCAN port on the autopilot.
+ArduPilot provides support for OpenDroneID in firmware versions 4.0 and later via MAVLink to an OpenDroneID compatible RemoteID module attached to either a serial port or DroneCAN port on the autopilot.
 
 In order to provide tamper protection, a special autopilot firmware must be built and loaded on the autopilot which: enables this feature, prevents loading non-compliant firmware via GCS or normal uploaders, and provides further tamper-proofing.
 
