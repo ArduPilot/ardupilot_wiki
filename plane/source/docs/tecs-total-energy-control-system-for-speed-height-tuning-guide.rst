@@ -164,7 +164,7 @@ Flight Testing
       or the maximum sink rate :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` needs to be reduced.
 
 If the height response oscillates you can try increasing the value of
-`TECS_PTCH_DAMP <#TECS_PTCH_DAMP>`__ in increments of 0.1 (don't go
+:ref:`TECS_PTCH_DAMP<TECS_PTCH_DAMP>` in increments of 0.1 (don't go
 above 0.5 unless you know how to check for excessive noise in the
 nav_pitch signal using the mission planner tuning window) and then try
 increasing the value of :ref:`TECS_TIME_CONST<TECS_TIME_CONST>` in increments of 1.0.
