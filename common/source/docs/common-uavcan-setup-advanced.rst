@@ -128,14 +128,14 @@ If the DroneCAN port is attached to CAN FD peripherials, setting :ref:`CAN_D1_UC
 SLCAN
 =====
 
-ArduPilot and DroneCAN provides a means to directly communicate with DroneCAN devices on the CAN BUS attached to the autopilot: SLCAN. Enabling SLCAN and communicating with the DroneCAN devices is dependent on the autopilot's processor. F7/H7 processors use one method and F4, a different method.
+ArduPilot and DroneCAN provide a means to directly communicate with DroneCAN devices on the CAN BUS attached to the autopilot: SLCAN. Enabling SLCAN and communicating with the DroneCAN devices is dependent on the autopilot's processor. F7/H7 processors use one method and F4, a different method.
 
 .. toctree::
     :maxdepth: 1
 
     SLCAN Access on F4 Based Autopilots <common-slcan-f4>
     SLCAN Access on F7/H7 Based Autopilots <common-slcan-f7h7>
-    Mission Planner SLCAN <common-mp-slcan>
+    Mission Planner SLCAN <planner:dronecan-uavcan-slcan>
     DroneCAN GUI <common-uavcan-gui>
 
 

@@ -90,7 +90,7 @@ ArduPilot Firmware DroneCAN Setup
 
 .. note:: Be sure to enable the autopilot's CAN port and set it up for DroneCAN protocol. See : :ref:`common-uavcan-setup-advanced`
 
-DroneCAN Adapters can support various devices and configurations. Often, its configuration parameters will need to be altered. To achieve this, either use :ref:`DroneCAN GUI<common-uavcan-gui>` or :ref:`MissionPlanner SLCAN.<common-mp-slcan>` to change the device's parameters.
+DroneCAN Adapters can support various devices and configurations. Often, its configuration parameters will need to be altered. To achieve this, either use :ref:`DroneCAN GUI<common-uavcan-gui>` or :ref:`MissionPlanner SLCAN <planner:dronecan-uavcan-slcan>` to change the device's parameters.
 
 For example, when using the MatekL431-Airspeed, you may need to change the ARSPD_TYPE parameter in the device to match the actual I2C airspeed sensor you are using.
 

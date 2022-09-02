@@ -48,7 +48,7 @@ Pre-Flight Setup
 -  Connect to each vehicle's autopilot and the tracker and set
    the ``SYSID_THISMAV`` to a unique number (i.e. "1" for first vehicle,
    "2" for second vehicle, "3" for third, "9" for the tracker).
--  On the GCS, :ref:`reduce data rate <common-mission-planner-telemetry-logs_setting_the_datarate>`
+-  On the GCS, :ref:`reduce data rate <planner:mission-planner-telemetry-logs-setting-the-datarate>`
    to the minimum acceptable value to reduce network traffic.
 -  Plug in the tracker to the ground station PC using a USB cable.
 
