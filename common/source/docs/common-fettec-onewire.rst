@@ -22,7 +22,7 @@ FETtec OneWire ESC's telemetry information is sent back to the autopilot:
 The autopilot uses it to:
 
 - log the status of each ESC to the SDCard or internal Flash, for :ref:`post flight analysis<common-logs>`
-- send the status of each ESC to the Ground Station or companion computer for :ref:`real-time monitoring<common-mission-planner-telemetry-logs>`
+- send the status of each ESC to the Ground Station or companion computer for :ref:`real-time monitoring<planner:mission-planner-telemetry-logs>`
 - optionally dynamically change the center frequency of the notch filters used to reduce frame vibration noise in the gyros. See optional configuration information below.
 - optionally measure battery voltage and power consumption. See optional configuration information below.
 

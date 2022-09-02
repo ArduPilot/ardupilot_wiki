@@ -61,7 +61,7 @@ The Control and Status area of the Flight Data screen is in the lower left-hand 
 - Gauges: This shows four popular telemetry gauges. Double click the speed gauge to change the top speed.
 - Status: Clicking the Status menu button will display all of the telemetry parameters
 - Servos/Relay: This allows the setting of any relay pins or setting/overriding RC values for channels 5 thru 14. (Use servo settings with caution, you could change flight modes)
-- :ref:`Telemetry Logs <common-mission-planner-telemetry-logs>`:  Use this section to view, analyze, convert, and playback telemetry logs that are recorded by Mission Planner. See :ref:`Playing Back Missions with Tlogs <common-recording-and-playing-back-missions>` for specifics on playing back your mission and viewing the mission in the map area.
+- :ref:`Telemetry Logs <planner:mission-planner-telemetry-logs>`:  Use this section to view, analyze, convert, and playback telemetry logs that are recorded by Mission Planner. See :ref:`Playing Back Missions with Tlogs <common-recording-and-playing-back-missions>` for specifics on playing back your mission and viewing the mission in the map area.
 - Data Flash Logs:  This provides a means to download data flash logs, analyze them, or create KML/gpx files from them. Click Review a Log to open a log file and establish a new window to view/analyze the log. Details :ref:`here <common-downloading-and-analyzing-data-logs-in-mission-planner>`.
 - :ref:`Scripts: <using-python-scripts-in-mission-planner>`: Automation using Python scripts and vehicle state
 

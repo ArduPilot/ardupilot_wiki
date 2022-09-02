@@ -33,7 +33,7 @@ Topics related to logging and analysis
 [site wiki="plane,copter,rover,dev,planner"]
     Measuring Vibration <common-measuring-vibration>
     Measuring Vibration with "Batch Sampling" <common-imu-batchsampling>
-    Telemetry Logs <common-mission-planner-telemetry-logs>
+    Telemetry Logs <https://ardupilot.org/planner/docs/mission-planner-telemetry-logs.html>
 [/site]
 
 

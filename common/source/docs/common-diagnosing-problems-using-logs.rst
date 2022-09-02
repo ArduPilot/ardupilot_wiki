@@ -15,7 +15,7 @@ There are two ways to record your flight data. With some exceptions, the
 two methods record very similar data but in different ways:
 
 -  :ref:`Dataflash logs <common-downloading-and-analyzing-data-logs-in-mission-planner>` are recorded on the autopilot (often to the SD card) so they must be downloaded from the autopilot after a flight
--  :ref:`Telemetry logs <planner:common-mission-planner-telemetry-logs>` (also known as "tlogs") are recorded by the ground station (i.e. Mission Planner) on the local PC when the autopilot is connected via a :ref:`telemetry link <common-telemetry-landingpage>`
+-  :ref:`Telemetry logs <planner:mission-planner-telemetry-logs>` (also known as "tlogs") are recorded by the ground station (i.e. Mission Planner) on the local PC when the autopilot is connected via a :ref:`telemetry link <common-telemetry-landingpage>`
 
 If you are not yet familiar with the basics of these log files, first review the introductory pages to understand where these logs are stored and how you can download and view the information held within them.
 

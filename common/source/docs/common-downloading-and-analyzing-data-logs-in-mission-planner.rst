@@ -13,16 +13,10 @@ Depending on the autopilot type and configuration, the dataflash logs may be sav
 
 [copywiki destination="copter,plane,rover,dev,planner"]
 
-.. note::
+.. note:: :ref:`Telemetry logs <planner:mission-planner-telemetry-logs>` (also known as "tlogs") collect similar information to dataflash logs (see :ref:`Diagnosing problems using Logs <common-diagnosing-problems-using-logs>` for more information).
 
-   :ref:`Telemetry logs <common-mission-planner-telemetry-logs>` (also
-   known as "tlogs") collect similar information to dataflash logs (see
-   :ref:`Diagnosing problems using Logs <common-diagnosing-problems-using-logs>` for more information).
+.. note:: If your vehicle is having trouble producing dataflash logs - including the infamous "No IO heartbeat" diagnostic message - try a different SD card.  You may also choose to test the card using a dedicated tool, such as ``H2testw``.  Low board voltages are also known to cause logging issues.
 
-.. note::
-
-   If your vehicle is having trouble producing dataflash logs - including the infamous "No IO heartbeat" diagnostic message - try a different SD card.  You may also choose to test the card using a dedicated tool, such as ``H2testw``.  Low board voltages are also known to cause logging issues.
-   
 Logging Parameters
 ==================
 
@@ -892,7 +886,7 @@ When you download the dataflash log files from the autopilot it will
 automatically create a KMZ file (file with extension .kmz). This file
 can be opened with Google Earth (just double click the file) to view
 your flight in Google Earth. Please see the instructions on the
-:ref:`Telemetry Logs Page <common-mission-planner-telemetry-logs_creating_3d_images_of_the_flight_path>`
+:ref:`Telemetry Logs Page <planner:mission-planner-telemetry-logs-creating-3d-images-of-the-flight-path>`
 for additional details.
 
 Video tutorials

@@ -1,4 +1,4 @@
-.. _common-mission-planner-telemetry-logs:
+.. _mission-planner-telemetry-logs:
 
 ==============
 Telemetry Logs
@@ -6,8 +6,6 @@ Telemetry Logs
 
 Telemetry logs (also known as "tlogs") are recorded by the ground station when you connect ArduPilot to your
 computer via a :ref:`telemetry link <common-telemetry-landingpage>`. This topic explains how to configure and access tlogs.
-
-[copywiki destination="copter,plane,rover,dev,planner"]
 
 .. note::
 
@@ -30,7 +28,7 @@ Besides the ".tlog" files, ".rlog" files are also created.  These
 contain all the .tlog data plus additional debug output from the mission
 planner.  but cannot be parsed or played back so they should be ignored.
 
-.. _common-mission-planner-telemetry-logs_setting_the_datarate:
+.. _mission-planner-telemetry-logs-setting-the-datarate:
 
 Setting the datarate
 ====================
@@ -69,7 +67,7 @@ show the recorded data changing as the flight progresses.
 .. image:: ../../../images/mptlog1.jpg
     :target: ../_images/mptlog1.jpg
 
-.. _common-mission-planner-telemetry-logs_creating_3d_images_of_the_flight_path:
+.. _mission-planner-telemetry-logs-creating-3d-images-of-the-flight-path:
 
 Creating 3d images of the flight path
 =====================================
