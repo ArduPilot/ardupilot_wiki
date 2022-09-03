@@ -15,6 +15,9 @@ This lists features or changes merged in master and build in the "latest" firmwa
 [site wiki="plane,copter,rover"]
     TeraRanger NEO <common-teraranger-neo>
 [/site]
+[site wiki="rover"]
+    Dock Mode <common-dock-mode>
+[/site]
     Other wiki changes <common-future-wiki-changes>
 
 
