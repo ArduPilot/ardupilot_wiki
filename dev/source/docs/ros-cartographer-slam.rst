@@ -236,6 +236,10 @@ After <rosparam command="load" file="$(arg config_yaml)" /> add a line like belo
 ::
 
     <remap from="/mavros/vision_pose/pose" to="/robot_pose" />
+    
+.. note::
+
+    Instead of manually modifying the above packages, clone `this <https://github.com/ArduPilot/ardupilot_ros>`__ repository and install the dependencies.
 
 
 Build the Packages
