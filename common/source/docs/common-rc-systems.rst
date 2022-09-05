@@ -30,12 +30,14 @@ Connecting the Receiver
 
 For all protocols above, ArduPilot auto-detects the protocol of the RC receiver system. However, depending on the protocol and autopilot type, the physical connection to the autopilot may differ.
 
+Some protocols, most noticeably SRXL2, CRSF, and ELRS, require a full UART connection.
+
+In addition other protocols that also provide telemetry, like FPort, would generally require a bi-directional half-duplex connection in order to obtain telemetry. For these protocols the TX output of the UART should be connected to the serial input of the receiver. It is also possible on F7 and H7 boards to connect to the UART RX input with some additional configuration.
+
 PPM-Sum/SBus/IBus
 -----------------
 
 These receivers are usually connected to the RCin or SBUS input pin on the autopilot.
-
-Some protocols, most noticeably SRXL2, require a bi-directional, half-duplex UART connection. In addition protocols that provide telemetry also generally require a bi-directional half-duplex connection. For these protocols the TX output of the UART should be connected to the serial input of the receiver. It is also possible on F7 and H7 boards to connect to the UART RX input with some additional configuration.
 
 To connect a PPM-Sum receiver or an SBus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk.
 
@@ -71,7 +73,7 @@ These bi-directional protocols require the use of a Serial Port. See links below
 RC input to Serial Port
 -----------------------
 
-.. note:: ArduPilot firmware releases 4.0 and later, any UART RX input will auto-detect all the protocols (except PPM), if the serial port protocol is set to 23 (for example :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` for the TELEM2 UART is used).
+.. note:: ArduPilot firmware releases 4.0 and later, any UART RX input will auto-detect all the protocols (except PPM or SRXL2/CRSF/ELRS which also require connection of the UART's TX pin), if the serial port protocol is set to 23 (for example :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` for the TELEM2 UART is used).
 
 .. note:: The serial port baudrate is automatically set and controlled by the firmware when any serial RC protocol is detected.
 

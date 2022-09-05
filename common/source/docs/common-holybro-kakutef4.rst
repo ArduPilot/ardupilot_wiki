@@ -64,7 +64,7 @@ ESC telemetry input.
 RC Input
 ========
 
-The R3 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true UART connection. However, bi-directional protocols which include telemetry, such as SRXL2 and FPort, when connected in this manner, will only provide RC without telemetry. 
+The R3 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
 
 - PPM/SBUS/DSM/SRXL attach to R3 pin.
 - FPort must use UART6 or UART4. See :ref:`common-FPort-receivers`.
