@@ -1,146 +1,32 @@
-.. _common-limited_firmware:
+.. _common-limited-firmware:
 
+==========================
+Board Firmware Limitations
+==========================
+
+ArduPilot's code base includes so many drivers and features that not all can still fit on many autpilots with cpu's only having 1MB. Therefore many boards have some features and drivers ommitted in their standard builds available on the `ArduPilot Firmware Server <https://firmware.ardupilot.org>`__.
+
+The inclusion of these features in any given board's firmware build is controlled by certain code phrases. If a board's firmware does not include a feature or driver that the user desires, it can be included in a custom firmware created using the `Custom Firmware Server <https://custom.ardupilot.org>`__. This page lists all the build options, and the name of the feature/driver used on the Custom Firmware Server's checkboxes.
+
+Also provided is a list of autopilot boards that link to a page listing features and drivers NOT included in its firmware. Simply click on the board you are interested in and you will be directed to its list of features/drivers NOT included in the standard firmware. You can then reference the features table below as to an explanation of what it is and how to enable it on a custom build, if desired.
+
+ArduPilot Feature/Driver Options
+================================
+
+
+============================   =======================================
+Option                            Custom Build Server Checkbox
+============================   =======================================
+AC_AVOID_ENABLED                Safety:Enable Avoidance
+AP_AIRSPEED_ENABLED             Sensors:Enable Airspeed Sensors
+AP_AIRSPEED_MS4525_ENABLED      Airspeed Drivers:Enable MS4525 Airspeed
+MODE_FLIP_ENABLED               Copter:Enable Mode Flip
+============================   =======================================
+
+Features/Drivers Not Included by Autopilot
 ==========================================
-Firmware Limitations on AutoPilot Hardware
-==========================================
 
-The ArduPilot firmware in some configurations exceeds 1 MB in size. Some autopilots may not have enough
-flash memory to store the full firmware.
-
-For the affected autopilots, a reduced firmware is generated. This firmware omits less-commonly used features
-in order to reduce the firmware size to less than 1 MB.
-
-The missing features are listed below. If you require any of these features, you can try to create a build with them in it (at the expense of other non-needed features) using the `Custom Firmware Build Server <https://custom.ardupilot.org>`__.
-
-Limitations Common to all 1MB Boards
-====================================
-
-Exclusions for: KakuteF4, Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini, older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip), BeastF4, F35Lightning, F4BY, MambaF405v2, MazzyStarDrone, OmnibusNanoV6, VRBrain-v51, VRBrain-v52, VRCore-v10, VRUBrain-v51, airbotf4, crazyflie2, mini-pix, revo-mini, skyviper, speedybeef4.
-
-- ADSB
-- EFI Controller Support
-- External AHRS
-- FETtec ESCs
-- INA2XX Battery Monitors
-- Plane Deep Stall Landing
-- Torqeedo Motor Control
-- MAVLink frame rate control from SD file
-- INS Temperature Calibration
-- SOLO Gimbal Support
-- Visual Odometry
-- Airspeed Drag Compensation
-- Plus Code Location Support
-- Object Avoidance using Proximity Sensors
-- CRSF Text Display (Telemetry is included)
-- Bootloader inclusion in main code base
-- EKF2 (EKF3 only)
-- LUA scripting support
-- In-Flight FFT control of Harmonic Notch
-
-Additional Limitations for Certain 1MB and Other Boards
-=======================================================
-
-Additional Feature Exclusions for: Sparky2, OMNIBUSF7V2, KakuteF7, and older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip)
-
-   -  **Common to all vehicles**
-
-      -  Aux function for testing IMU failover (KILL_IMU)
-      -  LTM, MSP, CRSF, Spektrum, Devo and Hott telemetry formats
-      -  Piccolo CAN
-      -  Oreo LED lights
-      -  NCP5623 LED lights
-      -  NMEA output format
-      -  Solo Gimbal
-      -  In Flight FFT support
-      -  MTK, SIRF GPS support
-      -  AK09916 on ICM20948 compass
-      -  Runcam Control
-      -  External I2C barometers
-      -  DLVR Airspeed sensors
-      -  CAN Tester
-      -  KDE CAN
-      -  External AHRS
-      -  Generator
-      -  GPS moving baseline
-      -  MSP Rangefinders
-      -  Camera Mount Control
-      -  OSD Parameter Editor
-      -  OSD Scrolling Sidebars
-      -  Button
-      -  OAPathPlanner
-       
-   -  **Copter only**
-
-      -  Sprayer
-      -  Gripper
-      -  RPM
-      -  Guided, Follow, Sport, Guided_noGPS, SystemID, Zigzag and Autorotate modes
-      -  Beacon
-      -  Optical Flow
-
-   -  **Plane Only**
-
-      -  Gripper
-      -  Soaring
-      -  Landing Gear
-      -  Qautotune mode
-      -  Off-board Guided
-
-   -  **Rover Only**
-
-      -  N/A
+.. toctree::
 
 
-   -  **Sub Only**
-
-      -  N/A
-
-Additional exclusions for: Matek F405, Matek F405-Wing/F405-SE, OmnibusF4/F4Pro
-
-   -  SMBUS battery
-   -  Parachute 
-   -  Sprayer
-   -  OAPathPlanner
-   -  Generator
-   -  Precision Landing
-   -  Baro Wind Compensation *
-   -  Gripper *
-
-      * enabled in OmnibusF4/F4Pro
-
-Also for MatekF405-Wing:
-
-   -  Wind Compensation
-   -  RunCam Control
-   -  Spektrum Telem
-
-Additional exclusions for: SuccexF4
-
-   -  Parachute
-   -  Sprayer
-
-.. _ram_limitations:
-
-RAM Limitations
-===============
-
-There may be insufficient RAM available in some flight controllers to support all enabled firmware features. Some possible symptoms are:
-
-- MAVFTP does not work. Parameter downloads to GCS are delayed starting while the GCS tries to establish a MAVFTP link which cannot be setup, and then proceed slowly to download parameters using the normal download method.
-- Compass Calibration will not start
-- Logging will not start
-- Terrain downloading from GCS will not start
-- Interfaces will not initialize, such as CAN: "Failed to initialise CAN Interface xx"
-
-If this occurs, several possible options are available to allow temporary use of MAVFTP, download terrain tiles, allow a driver to be loaded, and/or Compass Calibration. All require a reboot to take effect:
-
-- Make sure IMU Batch Sampling (used for FFT analysis) is not running by setting :ref:`INS_LOG_BAT_MASK<INS_LOG_BAT_MASK>` = 0.
-- Try temporarily disabling logging by setting :ref:`LOG_BACKEND_TYPE<LOG_BACKEND_TYPE>` to 0, then returning to 1 (default) after calibrating.
-- Reduce the size of :ref:`LOG_FILE_BUFSIZE<LOG_FILE_BUFSIZE>`. However, lowering below 16KB can introduce small gaps in the log. This may be used temporarily to download terrain or calibrate compass.
-- Disable Terrain Following temporarily by setting :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` to 0.
-- Disable SmartRTL on Copter by setting :ref:`SRTL_POINTS<SRTL_POINTS>` = 0.
-- If using DroneCAN, try reducing the memory allocation from the default of 16KB (for two nodes) using the ``CAN_Dx_UC_POOL`` parameters.
-
-.. note:: in Mission Planner's STATUS tab, you can monitor the "freemem" status for current free RAM. Be aware, that its a total of unallocated memory and that everything that requires a memory allocation needs it to be one, contiguous block. But the status will give an indication of what is available. For example, MAVftp needs ~ 12K contiguous block to start.
-
-[copywiki destination="plane,copter,rover,blimp"]
+   CubeOrange <common-CubeOrange-limitations>
