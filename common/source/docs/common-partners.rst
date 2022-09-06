@@ -604,5 +604,27 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://visionaerial.com/
 
+    *
+      - .. image:: ../../../images/supporters/supporters_bluemark.png
+            :width: 250px
+            :align: center
+            :target:  https://bluemark.io/
+
+      - .. image:: ../../../images/supporters/supporters_skystars.jpg
+            :width: 250px
+            :align: center
+            :target:  http://skystars-rc.com/index.html
+
+    *
+      - .. image:: ../../../images/supporters/supporters_cdspace.png
+            :width: 250px
+            :align: center
+            :target:  https://cdspace.in/
+
+      - .. image:: ../../../images/supporters/supporters_simnet.png
+            :width: 250px
+            :align: center
+            :target:  www.simnet.aero
+
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
