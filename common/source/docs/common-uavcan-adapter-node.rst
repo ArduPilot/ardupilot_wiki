@@ -29,7 +29,7 @@ The first adapter was manufactured by `mRobotics <https://store.mrobotics.io/pro
 
 The first generation was based on the f103 processor, while the current generation uses an f303 for more memory, allowing more peripheral options to be accommodated simultaneously in the firmware. The L431 processor is now supported, as well as any ArduPilot compatible autopilot can be adapted for use as a DroneCAN Adapter Node.
 
-Developers might find the AP_Periph section of the dev docs useful for more details about creating AP_Periph nodes. :ref:`dev:ap-peripheral-landing-page`
+Developers might find the :ref:`AP_Periph section <dev:ap-peripheral-landing-page>` of the dev docs useful for more details about creating AP_Periph nodes.
 
 Features
 ========
