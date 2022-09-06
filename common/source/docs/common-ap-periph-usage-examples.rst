@@ -1,5 +1,5 @@
 .. _common-ap-periph-usage-examples:
-
+[copywiki destination="copter,plane,rover,dev"]
 ======================
 DroneCAN Adapter Setup
 ======================
