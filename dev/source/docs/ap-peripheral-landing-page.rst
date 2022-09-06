@@ -37,7 +37,7 @@ Examples of using generic AP_Periph nodes are shown here:
 .. toctree::
    :maxdepth: 1
 
-   AP_Periph Usage Examples <ap-periph-usage-examples>
+   DroneCAN Adapter Node Setup <common-ap-periph-usage-examples>
 
 Existing Products
 =================
