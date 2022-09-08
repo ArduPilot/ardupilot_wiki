@@ -23,28 +23,24 @@ Connecting to the Autopilot (4.2 or earlier)
 
 We recommend connecting the Gimbals's COM2 port to one of the autopilot's Serial/Telemetry ports like Telem2 as shown above.
 
-Connect with a ground station and set the following parameters:
+Connect with a ground station and set the following parameters, if using the first mount:
 
-- :ref:`MNT_TYPE <MNT_TYPE>` to "4" for "SToRM32 MavLink" and reboot the autopilot
+- :ref:`MNT1_TYPE <MNT1_TYPE>` to "4" for "SToRM32 MavLink" and reboot the autopilot
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps.  "SERIAL2" can be replaced with another serial port (i.e. SERIAL1) depending upon the physical connection
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
 - :ref:`SR2_EXTRA1 <SR2_EXTRA1>` to 10
 - :ref:`SR2_POSITION <SR2_POSITION>` to 10
 
-The gimbal's maximum angles can be set using these parameters:
+The gimbal's maximum angles can be set using these parameters (shown for the first mount):
 
-- :ref:`MNT_ANGMIN_ROL <MNT_ANGMIN_ROL>` to -3000 to allow leaning left up to 30deg
-- :ref:`MNT_ANGMAX_ROL <MNT_ANGMAX_ROL>` to 3000 to allow leaning right up to 30deg
-- :ref:`MNT_ANGMIN_TIL <MNT_ANGMIN_TIL>` to -9000 to allow pointing 90deg down
-- :ref:`MNT_ANGMAX_TIL <MNT_ANGMAX_TIL>` to 3000 to allow pointing 30deg up
-- :ref:`MNT_ANGMIN_PAN <MNT_ANGMIN_PAN>` to -18000 to allow turning around to the left
-- :ref:`MNT_ANGMAX_PAN <MNT_ANGMAX_PAN>` to 18000 to allow turning around to the right
+- :ref:`MNT1_ROLL_MIN <MNT1_ROLL_MIN>` to -30 to allow leaning left up to 30deg
+- :ref:`MNT1_ROLL_MAX <MNT1_ROLL_MAX>` to 30 to allow leaning right up to 30deg
+- :ref:`MNT1_PITCH_MIN <MNT1_PITCH_MIN>` to -90 to allow pointing 90deg down
+- :ref:`MNT1_PITCH_MAX <MNT1_PITCH_MAX>` to 30 to allow pointing 30deg up
+- :ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>` to -180 to allow turning around to the left
+- :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to 180 to allow turning around to the right
 
-To control the gimbal's lean angles from a transmitter set:
-
-- :ref:`MNT_RC_IN_TILT <MNT_RC_IN_TILT>` to 6 to control the gimbal's tilt (aka pitch angle) with the transmitter's Ch6 tuning knob
-- :ref:`MNT_RC_IN_ROLL <MNT_RC_IN_ROLL>` to some input channel number to control the gimbal's roll angle
-- :ref:`MNT_RC_IN_PAN <MNT_RC_IN_PAN>` to some input channel number to control the gimbals' heading
+To control the gimbal's lean angles from a transmitter set the RC controls for roll, pitch, or yaw using ``RCx_OPTION`` 212 (Mount1 Roll), 213 (Mount1 Pitch), 214 (Mount1 Yaw) for the first mount, or 215-217 for the second mount, respectively.
 
 Gremsy's instructions can be found below:
 
@@ -60,7 +56,7 @@ The gimbal should work without any additional configuration but to improve perfo
 - Connect the gimbal to your Desktop PC using a USB cable
 - Push the "CONNECTION" button on the left side of the window, then select the COM port and press "Connect"
 - Select the "CONTROLS" tab and ensure "SYNC" is selected so the gimbal communicates with the autopilot using MAVLink
-- Select the "STIFFNESS" tab and adjust the Tilt, Roll and Pan gains so that the gimbal holds the camera in position without shaking
+- Select the "STIFFNESS" tab and adjust the Tilt, Roll, and Pan gains so that the gimbal holds the camera in position without shaking
 
 Testing Controlling the Gimbal from RC
 --------------------------------------
@@ -80,7 +76,7 @@ Testing ROI
 The ROI feature points the vehicle and/or camera to point at a target.  This can be tested by doing the following:
 
 - Ensure the vehicle has GPS lock
-- If using the Mission Planner, go to the Flight Data screen and right-mouse-button-click on a point about 50m ahead of the vehicle (the orange and red lines show the vehicle's current heading), select **Point Camera Here** and input an altitude of -50 (meters).  The camera should point forward and then tilt down at about 45 degrees
+- If using the Mission Planner, go to the Flight Data screen and right-mouse-button-click on a point about 50m ahead of the vehicle (the orange and red lines show the vehicle's current heading), select **Point Camera Here** and input an altitude of -50 (meters). The camera should point forward and then pitch down at about 45 degrees
 
 .. image:: ../../../images/Tarot_BenchTestROI.jpg
     :target: ../_images/Tarot_BenchTestROI.jpg
@@ -98,9 +94,9 @@ If using ArduPilot 4.3 (or higher) please follow these setup instructions
 
 Connecting the Gimbals's COM2 port to one of the autopilot's Serial/Telemetry ports like Telem2 as shown above.
 
-Connect with a ground station and set the following parameters:
+Connect with a ground station and set the following parameters, if using the first mount::
 
-- :ref:`MNT_TYPE <MNT_TYPE>` to "6" for "Gremsy" and reboot the autopilot
+- :ref:`MNT1_TYPE <MNT1_TYPE>` to "6" for "Gremsy" and reboot the autopilot
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps.  "SERIAL2" can be replaced with another serial port (i.e. SERIAL1) depending upon the physical connection
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
 - :ref:`SERIAL2_OPTIONS <SERIAL2_OPTIONS>` to 1024 for "Don't forward mavlink to/from"
@@ -145,4 +141,4 @@ Configuring the Gimbal
       :target: ../_images/gremsy-settings-reduce-drift-by-drone.png
       :width: 450px
 
-- Select the "STIFFNESS" tab and adjust the Tilt, Roll and Pan gains so that the gimbal holds the camera in position without shaking
+- Select the "STIFFNESS" tab and adjust the Tilt, Roll, and Pan gains so that the gimbal holds the camera in position without shaking

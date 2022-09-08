@@ -14,7 +14,7 @@ A buzzer (or Tone Alarm) can be used to audibly indicate status changes for the 
 .. image:: ../../../images/buzzer.jpg
     :target: ../_images/buzzer.jpg
 
-If a passive piezo is used, it can play various :ref:`sounds <common-sounds-pixhawkpx4>` including the Arming buzz and Lost Vehicle Alarms (search for "Lost Copter Alarm" on :ref:`this page <channel-7-and-8-options>`, "Lost Plane" in the RCx_OPTIONS, for example, :ref:`RC5_OPTION <RC5_OPTION>`, or "Lost Rover" in the :ref:`Auxiliary Functions <common-auxiliary-functions>`).
+If a passive piezo is used, it can play various :ref:`sounds <common-sounds-pixhawkpx4>` including the Arming buzz and Lost Vehicle Alarms (search for "Lost Copter Alarm" on :ref:`this page <channel-7-and-8-options>`, "Lost Plane" in the RCx_OPTION, for example, :ref:`RC5_OPTION <RC5_OPTION>`, or "Lost Rover" in the :ref:`Auxiliary Functions <common-auxiliary-functions>`).
 
 .. note:: in order to use a passive piezo buzzer to play the musical notification tones, the autopilot firmware must have defined that capability to a pin with a timer in its build definition. This is not a capability that the user can add by parameter setup, unlike the use of an active buzzer by designating a GPIO capable pin with :ref:`NTF_BUZZ_PIN<NTF_BUZZ_PIN>`.
 

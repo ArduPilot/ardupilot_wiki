@@ -53,7 +53,7 @@ SAFETY FIRST!
 =============
 
 - The avoidance algorithms have been constantly changing. While in most scenarios it will help the user keep the vehicle safe from any obstacles, or fence breaches; due to unknown sensor glitch, or other such problems, avoidance should be swiftly turned off mid-flight (especially while trying for the first time).
-- Set any vacant channel of your Transmitter to use RCx_OPTIONS parameter and set it to 40. For example, if channel 8 switch of your transmitter is vacant, set :ref:`RC8_OPTION<RC8_OPTION>` = 40.
+- Set any vacant channel of your Transmitter to use RCx_OPTION parameter and set it to 40. For example, if channel 8 switch of your transmitter is vacant, set :ref:`RC8_OPTION<RC8_OPTION>` = 40.
 - Toggling this switch to HIGH would switch on Proximity based avoidance and vice versa.
 
 

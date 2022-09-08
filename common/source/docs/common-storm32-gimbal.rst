@@ -51,17 +51,19 @@ Using a ground station (e.g. Mission Planner) set the following parameters.  The
 .. image:: ../../../images/SToRM32_MP_Serial2Baud_new.png
     :target: ../_images/SToRM32_MP_Serial2Baud_new.png
 
-- :ref:`MNT_TYPE <MNT_TYPE>` = 4 (SToRM32 MAVLink) and reboot the autopilot
-- set :ref:`MNT_ANGMIN_PAN <MNT_ANGMIN_PAN>`, :ref:`MNT_ANGMAX_PAN <MNT_ANGMAX_PAN>`, :ref:`MNT_ANGMIN_TIL <MNT_ANGMIN_TIL>`, :ref:`MNT_ANGMAX_TIL <MNT_ANGMAX_TIL>`, :ref:`MNT_ANGMIN_ROL <MNT_ANGMIN_ROL>`, :ref:`MNT_ANGMAX_ROL <MNT_ANGMAX_ROL>` to match your gimbal's range.
-- Optionally set :ref:`MNT_RC_IN_TILT <MNT_RC_IN_TILT>` = 6 to control the gimbal's tilt from the transmitter's ch6 tuning knob
+if the first mount is being used, set the following parameters:
+
+- :ref:`MNT1_TYPE <MNT1_TYPE>` = 4 (SToRM32 MAVLink) and reboot the autopilot
+- set :ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>`, :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>`, :ref:`MNT1_PITCH_MIN <MNT1_PITCH_MIN>`, :ref:`MNT1_PITCH_MAX <MNT1_PITCH_MAX>`, :ref:`MNT1_ROLL_MIN <MNT1_ROLL_MIN>`, :ref:`MNT1_ROLL_MAX <MNT1_ROLL_MAX>` to match your gimbal's range.
+- Optionally set :ref:`RC6_OPTION <RC6_OPTION>` = 213 to control the gimbal's pitch from the transmitter's ch6 tuning knob.
 
 The screenshot below shows a setup in which the gimbal has:
 
-- 360 of yaw rotation (:ref:`MNT_ANGMIN_PAN <MNT_ANGMIN_PAN>` = -18000, :ref:`MNT_ANGMAX_PAN <MNT_ANGMAX_PAN>`  = 17999)
-- 60 degrees (both left and right) of roll (:ref:`MNT_ANGMIN_ROL <MNT_ANGMIN_ROL>` = -6000, :ref:`MNT_ANGMAX_ROL <MNT_ANGMAX_ROL>`  = +6000)
-- Can point straight down (:ref:`MNT_ANGMIN_TIL <MNT_ANGMIN_TIL>` = -9000)
-- Can point straight up (:ref:`MNT_ANGMAX_TIL <MNT_ANGMAX_TIL>` = +9000)
-- Gimbal's tilt is controlled by transmitter's channel 6 tuning knob
+- 360 of yaw rotation (:ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>` = -180, :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>`  = 179)
+- 60 degrees (both left and right) of roll (:ref:`MNT1_ROLL_MIN <MNT1_ROLL_MIN>` = -60, :ref:`MNT1_ROLL_MAX <MNT1_ROLL_MAX>`  = +60)
+- Can point straight down (:ref:`MNT1_PITCH_MIN <MNT1_PITCH_MIN>` = -9000)
+- Can point straight up (:ref:`MNT1_PITCH_MAX <MNT1_PITCH_MAX>` = +90)
+- Gimbal's pitch is controlled by the transmitter's channel 6 tuning knob
 
 .. image:: ../../../images/SToRM32_MP_MountParams.png
     :target: ../_images/SToRM32_MP_MountParams.png
@@ -73,7 +75,7 @@ To use the serial protocol use all the same settings as above except:
 
 -  When :ref:`Configuring the Gimbal <common-storm32-gimbal_configuring_the_gimbal>` controller set the "MAVLink configuration" parameter to "no heartbeat"
 -  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 8 (SToRM32 Gimbal Serial).  If another serial port is connected to the gimbal replace "2" with the serial port number
--  :ref:`MNT_TYPE <MNT_TYPE>` = 5 (SToRM32 Serial)
+-  :ref:`MNT1_TYPE <MNT1_TYPE>` = 5 (SToRM32 Serial)
 
 Testing the gimbal
 ==================

@@ -90,7 +90,7 @@ travel can still be utilized for full span ailerons. Upwards travel of the contr
 Crow Mode Switch
 ================
 
-If Differential Spoilers are used, setting an ``RCx_OPTIONS`` channel to "87" will allow the control of CROW aileron (outer spoilers) operation. 
+If Differential Spoilers are used, setting an ``RCx_OPTION`` channel to "87" will allow the control of CROW aileron (outer spoilers) operation. 
 
 - HIGH position: No change to CROW deflection amount or use of progressive crow.
 - MIDDLE position: force progressive crow, assuming :ref:`DSPOILER_CROW_W1<DSPOILER_CROW_W1>` is non-zero, even if :ref:`DSPOILER_OPTS <DSPOILER_OPTS>` bit 2 is zero.
