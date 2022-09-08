@@ -15,7 +15,7 @@ The gimbal's attitude (in body-frame Quaternion form) can be monitored by decodi
 
 .. note::
 
-    ArduPilot's MAVLink interface for controlling gimbals was significantly upgraded for 4.3 compared with earlier versions. This page primarily discusses the interface for 4.3 (and higher).
+    ArduPilot's MAVLink interface for controlling gimbals was significantly upgraded for 4.3 compared with earlier versions. This page primarily discusses the interface for 4.3 (and higher) which aims to comply with the `MAVLink Gimbalv2 protocol <https://mavlink.io/en/services/gimbal_v2.html>`__
 
 .. note::
 
@@ -126,7 +126,7 @@ MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW to move to a desired angle or at a desired ra
 ----------------------------------------------------------------------------------
 
 The gimbal's attitude can be changed to a desired pitch and yaw angle or changed at a desired rate by sending a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the
-command and param1 through param6 fields set as specified for the `MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW>`__ command.
+command and param1 through param7 fields set as specified for the `MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW>`__ command.
 
 The gimbal's yaw behaviour as the vehicle rotates can also be controlled.  The two behaviour are:
 
@@ -192,10 +192,10 @@ The gimbal's yaw behaviour as the vehicle rotates can also be controlled.  The t
    <td>float</td>
    <td>not used</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>param7</strong></td>
    <td>float</td>
-   <td>Gimbal device ID (not used)</td>
+   <td>Gimbal device ID (0 is primary gimbal, 1 is 1st gimbal, 2 is 2nd gimbal)</td>
    </tr>
    </tbody>
    </table>
