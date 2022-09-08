@@ -82,7 +82,7 @@ eg. If set to -60/+60 the output will reach Min/Max (its limit) when the
 'copter reaches -15°/+15°)
 
 **Retract Angles** refer to the position of the gimbal when the
-mount's mode is "retracted" (i.e. MNT_MODE=0). "Retracted" normally
+mount's mode is "retracted" (i.e. MNT1_MODE=0). "Retracted" normally
 means when the gimbal is pulled into the body of the aircraft which is
 generally not relevant for multicopters.
 
@@ -103,7 +103,7 @@ If you find your gimbal is moving in the wrong direction, check the
    Mission Planner: Camera andGimbal Setup Screen
 
 If you wish to adjust the gimbal tilt, roll or pan while flying, you can
-set the :ref:`MNT_RC_IN_PAN<MNT_RC_IN_PAN>`, :ref:`MNT_RC_IN_ROLL<MNT_RC_IN_ROLL>`, and/or :ref:`MNT_RC_IN_TILT<MNT_RC_IN_TILT>` to the RC channel to be used for this. Be sure that those channels do not have any ``RCx_OPTION`` also assigned.
+set the :ref:`MNT1_RC_IN_PAN<MNT1_RC_IN_PAN>`, :ref:`MNT1_RC_IN_ROLL<MNT1_RC_IN_ROLL>`, and/or :ref:`MNT1_RC_IN_TILT<MNT1_RC_IN_TILT>` to the RC channel to be used for this. Be sure that those channels do not have any ``RCx_OPTION`` also assigned.
 
 .. tip:: if only a manual pan, and or tilt is desired using servos, you can use this setup without stabilizaton. In addition, by extending the ``SERVO LIMITS`` you can sometimes obtain almost 180 degree servo rotation, on some servos. Increase them slowly, testing as you do, and do not over extend the PWM values. Stop when motion stops increasing.
 
@@ -177,25 +177,25 @@ See :ref:`Camera Shutter Configuration in Mission Planner <common-camera-shutter
 Camera Mount Mode/Targeting
 ===========================
 
-The camera/gimbal direction can be controlled by the pilot using RC control(RC Targeting) if RC channels for control have been assigned (default on startup unless changed), by the autopilot during missions using the DO_SET_ROI or DO_MNT_CONTROL commands (GPS and MAVLink Targeting), not at all (just stabilizing and set to a given angle on the axes, called NEUTRAL), or when RETRACTED if a retractable mount is used to rotate the camera as it retracts for clearance.
+The camera/gimbal direction can be controlled by the pilot using RC control(RC Targeting) if RC channels for control have been assigned (default on startup unless changed), by the autopilot during missions using the DO_SET_ROI or DO_MNT1_CONTROL commands (GPS and MAVLink Targeting), not at all (just stabilizing and set to a given angle on the axes, called NEUTRAL), or when RETRACTED if a retractable mount is used to rotate the camera as it retracts for clearance.
 
 If a retractable mount is employed, the overall mount may be deployed or retracted using an output assigned with ``SERVOx_FUNCTION`` set to "MountOpen". This will be automatically controlled by the autopilot as if it were landing gear (see :ref:`common-landing-gear`), or by pilot using an rc channel whose ``RCx_OPTION`` is set to "Landing Gear".
 
-The default targeting mode for the camera/gimbal is set by the :ref:`MNT_DEFLT_MODE<MNT_DEFLT_MODE>` parameter.
+The default targeting mode for the camera/gimbal is set by the :ref:`MNT1_DEFLT_MODE<MNT1_DEFLT_MODE>` parameter.
 
-The direction the axes are set for the NEUTRAL and RETRACTED modes are set by:
+The direction the axes are set for the NEUTRAL and RETRACTED modes are set by(shown for first mount):
 
-- :ref:`MNT_NEUTRAL_X<MNT_NEUTRAL_X>`
-- :ref:`MNT_NEUTRAL_Y<MNT_NEUTRAL_Y>`
-- :ref:`MNT_NEUTRAL_Z<MNT_NEUTRAL_Z>`
-- :ref:`MNT_RETRACT_X<MNT_RETRACT_X>`
-- :ref:`MNT_RETRACT_Y<MNT_RETRACT_Y>`
-- :ref:`MNT_RETRACT_Z<MNT_RETRACT_Z>`
+- :ref:`MNT1_NEUTRAL_X<MNT1_NEUTRAL_X>`
+- :ref:`MNT1_NEUTRAL_Y<MNT1_NEUTRAL_Y>`
+- :ref:`MNT1_NEUTRAL_Z<MNT1_NEUTRAL_Z>`
+- :ref:`MNT1_RETRACT_X<MNT1_RETRACT_X>`
+- :ref:`MNT1_RETRACT_Y<MNT1_RETRACT_Y>`
+- :ref:`MNT1_RETRACT_Z<MNT1_RETRACT_Z>`
 
 Other Parameters
 ================
 
 Since servos in the gimbal may react slower to position/angle changes in the vehicle's roll and pitch as the vehicle moves about a target, the camera shot may have some visible lag in it. This can be reduced by using these parameters to have the gimbal outputs move a bit ahead of the movements of the vehicle.
 
-- :ref:`MNT_LEAD_RLL<MNT_LEAD_RLL>`
-- :ref:`MNT_LEAD_PTCH<MNT_LEAD_PTCH>`
+- :ref:`MNT1_LEAD_RLL<MNT1_LEAD_RLL>`
+- :ref:`MNT1_LEAD_PTCH<MNT1_LEAD_PTCH>`

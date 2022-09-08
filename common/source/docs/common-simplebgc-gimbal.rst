@@ -20,9 +20,9 @@ Connecting the gimbal to the Autopilot
 
 Although the SimpleBGC can be connected using PWM (similar to the Tarot gimbal) we recommend using the serial interface connected to one of the autopilot's Serial/Telemetry ports like Telem2 as shown above.
 
-In ArduPilot/APM Planner/Mission planner set the following variables:
+In ArduPilot/APM Planner/Mission planner set the following variables(shown for first mount):
 
-- :ref:`MNT_TYPE <MNT_TYPE>` to 4 / "Mount Type (None, Servo or MavLink)"
+- :ref:`MNT1_TYPE <MNT1_TYPE>` to 4 / "Mount Type (None, Servo or MavLink)"
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 1 / "MavLink" (Notee "SERIAL2" should be "SERIAL1" if using Telem1 port, SERIAL4 if using Serial4/5, etc)
 - :ref:`SR2_EXTRA1 <SR2_EXTRA1>` to 20
 - :ref:`SR2_POSITION <SR2_POSITION>` to 10
@@ -30,7 +30,7 @@ In ArduPilot/APM Planner/Mission planner set the following variables:
 
 If you wish to control the pitch angle manually you can set:
 
-- :ref:`MNT_RC_IN_TILT <MNT_RC_IN_TILT>` to 6
+- :ref:`MNT1_RC_IN_TILT <MNT1_RC_IN_TILT>` to 6
 - In the SimpleBCG GUI in the tab "RC Settings" in the field "Input Configuration" set PITCH to "API_VIRT_CH6".
 
 .. warning::
@@ -42,7 +42,7 @@ Setup through the Ground Station
 
 Set the following parameters through your ground station and then reboot the autopilot:
 
-- :ref:`MNT_TYPE <MNT_TYPE>` to 3 / "AlexMos-Serial"
+- :ref:`MNT1_TYPE <MNT1_TYPE>` to 3 / "AlexMos-Serial"
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 7 / "AlexMos Gimbal Serial"  (Notee "SERIAL2" should be "SERIAL1" if using Telem1 port, SERIAL4 if using Serial4/5, etc)
 
 If you are unable to connect you may wish to set the following parameters although normally this should not be required:
@@ -52,16 +52,16 @@ If you are unable to connect you may wish to set the following parameters althou
 
 The gimbal's maximum lean angles can be set using these parameters:
 
-- :ref:`MNT_ANGMIN_ROL <MNT_ANGMIN_ROL>`, :ref:`MNT_ANGMAX_ROL <MNT_ANGMAX_ROL>` to -3000 and 3000 to limit the roll angle to 30 degrees in each direction
-- :ref:`MNT_ANGMIN_TIL <MNT_ANGMIN_TIL>`, :ref:`MNT_ANGMAX_TIL <MNT_ANGMAX_TIL>` to -9000 and 0 to limit the gimbal to point between straight down (-90 degrees) and straight forward (0 degrees)
+- :ref:`MNT1_ANGMIN_ROL <MNT1_ANGMIN_ROL>`, :ref:`MNT1_ANGMAX_ROL <MNT1_ANGMAX_ROL>` to -3000 and 3000 to limit the roll angle to 30 degrees in each direction
+- :ref:`MNT1_ANGMIN_TIL <MNT1_ANGMIN_TIL>`, :ref:`MNT1_ANGMAX_TIL <MNT1_ANGMAX_TIL>` to -9000 and 0 to limit the gimbal to point between straight down (-90 degrees) and straight forward (0 degrees)
 
 To control the gimbal's lean angles from a transmitter set:
 
-- :ref:`MNT_RC_IN_TILT <MNT_RC_IN_TILT>` to 6 to control the gimbal's tilt (aka pitch angle) with the transmitter's Ch6 tuning knob
+- :ref:`MNT1_RC_IN_TILT <MNT1_RC_IN_TILT>` to 6 to control the gimbal's tilt (aka pitch angle) with the transmitter's Ch6 tuning knob
 
 For a 3-axis gimbal with 360 degrees of yaw set:
 
-- :ref:`MNT_ANGMIN_PAN <MNT_ANGMIN_PAN>`, :ref:`MNT_ANGMAX_PAN <MNT_ANGMAX_PAN>` to -18000 and 18000 to get a full 360 degrees of yaw range
+- :ref:`MNT1_ANGMIN_PAN <MNT1_ANGMIN_PAN>`, :ref:`MNT1_ANGMAX_PAN <MNT1_ANGMAX_PAN>` to -18000 and 18000 to get a full 360 degrees of yaw range
 
 
 Using Gimbal GUI and MavLink Connection

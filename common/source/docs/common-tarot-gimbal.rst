@@ -93,13 +93,13 @@ If using the Mission Planner a Camera Gimbal setup screen is available as shown 
 - "Servo Limits" holds the minimum and maximum PWM values that will be sent to the gimbal
 - "Angle Limits" are the earth-frame angles (in degrees) that the gimbal can achieve. "0" degrees is straight ahead, "-90" is straight down
 
-If manually setting parameters:
+If manually setting parameters(shown for first mount):
 
-- :ref:`MNT_TYPE <MNT_TYPE>` = 1 (for "Servo" gimbal)
-- :ref:`MNT_RC_IN_TILT <MNT_RC_IN_TILT>` = 6 to specify that RC input channel 6 (normally the tuning knob) will be used to control the pitch/tilt of the gimbal
-- :ref:`MNT_ANGMAX_TIL <MNT_ANGMAX_TIL>` = 0 to specify the gimbal's highest angle is zero degrees (i.e. forward)
-- :ref:`MNT_ANGMIN_TIL <MNT_ANGMIN_TIL>` = -9000 to specify the gimbal's lowest angle is 90 degrees (i.e. down)
-- :ref:`MNT_STAB_TILT <MNT_STAB_TILT>` = 0 to specify ArduPilot should not send tilt compensation to the gimbal (the gimbal does this by itself)
+- :ref:`MNT1_TYPE <MNT1_TYPE>` = 1 (for "Servo" gimbal)
+- :ref:`MNT1_RC_IN_TILT <MNT1_RC_IN_TILT>` = 6 to specify that RC input channel 6 (normally the tuning knob) will be used to control the pitch/tilt of the gimbal
+- :ref:`MNT1_ANGMAX_TIL <MNT1_ANGMAX_TIL>` = 0 to specify the gimbal's highest angle is zero degrees (i.e. forward)
+- :ref:`MNT1_ANGMIN_TIL <MNT1_ANGMIN_TIL>` = -9000 to specify the gimbal's lowest angle is 90 degrees (i.e. down)
+- :ref:`MNT1_STAB_TILT <MNT1_STAB_TILT>` = 0 to specify ArduPilot should not send tilt compensation to the gimbal (the gimbal does this by itself)
 - :ref:`SERVO9_MIN <SERVO9_MIN>` = 1000 to specify the minimum PWM value to send to the gimbal
 - :ref:`SERVO9_MAX <SERVO9_MAX>` = 1520 to specify the maximum PWM value to send to the gimbal
 

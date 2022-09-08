@@ -23,9 +23,9 @@ Connecting to the Autopilot (4.2 or earlier)
 
 We recommend connecting the Gimbals's COM2 port to one of the autopilot's Serial/Telemetry ports like Telem2 as shown above.
 
-Connect with a ground station and set the following parameters:
+Connect with a ground station and set the following parameters(shown for first mount):
 
-- :ref:`MNT_TYPE <MNT_TYPE>` to "4" for "SToRM32 MavLink" and reboot the autopilot
+- :ref:`MNT1_TYPE <MNT1_TYPE>` to "4" for "SToRM32 MavLink" and reboot the autopilot
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps.  "SERIAL2" can be replaced with another serial port (i.e. SERIAL1) depending upon the physical connection
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
 - :ref:`SR2_EXTRA1 <SR2_EXTRA1>` to 10
@@ -33,18 +33,18 @@ Connect with a ground station and set the following parameters:
 
 The gimbal's maximum angles can be set using these parameters:
 
-- :ref:`MNT_ANGMIN_ROL <MNT_ANGMIN_ROL>` to -3000 to allow leaning left up to 30deg
-- :ref:`MNT_ANGMAX_ROL <MNT_ANGMAX_ROL>` to 3000 to allow leaning right up to 30deg
-- :ref:`MNT_ANGMIN_TIL <MNT_ANGMIN_TIL>` to -9000 to allow pointing 90deg down
-- :ref:`MNT_ANGMAX_TIL <MNT_ANGMAX_TIL>` to 3000 to allow pointing 30deg up
-- :ref:`MNT_ANGMIN_PAN <MNT_ANGMIN_PAN>` to -18000 to allow turning around to the left
-- :ref:`MNT_ANGMAX_PAN <MNT_ANGMAX_PAN>` to 18000 to allow turning around to the right
+- :ref:`MNT1_ANGMIN_ROL <MNT1_ANGMIN_ROL>` to -3000 to allow leaning left up to 30deg
+- :ref:`MNT1_ANGMAX_ROL <MNT1_ANGMAX_ROL>` to 3000 to allow leaning right up to 30deg
+- :ref:`MNT1_ANGMIN_TIL <MNT1_ANGMIN_TIL>` to -9000 to allow pointing 90deg down
+- :ref:`MNT1_ANGMAX_TIL <MNT1_ANGMAX_TIL>` to 3000 to allow pointing 30deg up
+- :ref:`MNT1_ANGMIN_PAN <MNT1_ANGMIN_PAN>` to -18000 to allow turning around to the left
+- :ref:`MNT1_ANGMAX_PAN <MNT1_ANGMAX_PAN>` to 18000 to allow turning around to the right
 
 To control the gimbal's lean angles from a transmitter set:
 
-- :ref:`MNT_RC_IN_TILT <MNT_RC_IN_TILT>` to 6 to control the gimbal's tilt (aka pitch angle) with the transmitter's Ch6 tuning knob
-- :ref:`MNT_RC_IN_ROLL <MNT_RC_IN_ROLL>` to some input channel number to control the gimbal's roll angle
-- :ref:`MNT_RC_IN_PAN <MNT_RC_IN_PAN>` to some input channel number to control the gimbals' heading
+- :ref:`MNT1_RC_IN_TILT <MNT1_RC_IN_TILT>` to 6 to control the gimbal's tilt (aka pitch angle) with the transmitter's Ch6 tuning knob
+- :ref:`MNT1_RC_IN_ROLL <MNT1_RC_IN_ROLL>` to some input channel number to control the gimbal's roll angle
+- :ref:`MNT1_RC_IN_PAN <MNT1_RC_IN_PAN>` to some input channel number to control the gimbals' heading
 
 Gremsy's instructions can be found below:
 
@@ -100,7 +100,7 @@ Connecting the Gimbals's COM2 port to one of the autopilot's Serial/Telemetry po
 
 Connect with a ground station and set the following parameters:
 
-- :ref:`MNT_TYPE <MNT_TYPE>` to "6" for "Gremsy" and reboot the autopilot
+- :ref:`MNT1_TYPE <MNT1_TYPE>` to "6" for "Gremsy" and reboot the autopilot
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps.  "SERIAL2" can be replaced with another serial port (i.e. SERIAL1) depending upon the physical connection
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
 - :ref:`SERIAL2_OPTIONS <SERIAL2_OPTIONS>` to 1024 for "Don't forward mavlink to/from"
