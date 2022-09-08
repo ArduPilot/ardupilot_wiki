@@ -142,3 +142,20 @@ Configuring the Gimbal
       :width: 450px
 
 - Select the "STIFFNESS" tab and adjust the Tilt, Roll, and Pan gains so that the gimbal holds the camera in position without shaking
+
+Connecting Two Gimbals
+----------------------
+
+If two Gremsy gimbals are used, each gimbal can be directly connected to one of the autopilot's serial ports or they can can be daisy-chained together with only one connected to one of the autopilot's serial ports.
+
+- Use the gTune desktop application set the second gimbal's MAVLink component id to "GIMBAL_COMPID2"
+
+  .. image:: ../../../images/gremsy-settings-compid.png
+      :target: ../_images/gremsy-settings-compid.png
+      :width: 450px
+
+- Connect a GCS to your autopilot and set
+
+    - :ref:`MNT2_TYPE <MNT2_TYPE>` to "6" for "Gremsy" and reboot the autopilot
+    - set the appropriate SERIALx_BAUD, SERIALx_PROTOCOL and SERIALx_OPTIONS parameters as described above
+
