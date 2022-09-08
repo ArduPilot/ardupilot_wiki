@@ -27,8 +27,8 @@ Set the mode with MAV_CMD_DO_MOUNT_CONTROL
 The gimbal/mount's mode can be set by sending a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the command and param7 fields set as specified for the `MAV_CMD_DO_MOUNT_CONTROL <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_MOUNT_CONTROL>`__ command.
 The supported modes are:
 
-0. Retract : gimbal will move to a retracted position (see MNT_RETRACT_X, Y, Z) or relax
-1. Neutral : gimbal will move to a neutral position (see MNT_NEUTRAL_X, Y, Z)
+0. Retract : gimbal will move to a retracted position (see MNT1_RETRACT_X, Y, Z) or relax
+1. Neutral : gimbal will move to a neutral position (see MNT1_NEUTRAL_X, Y, Z)
 2. MAVLink Targeting : gimbal's angle or rate targets are controlled via mavlink messages (see MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW).  It is not necessary to specifically change to this mode, this will happen automatically if MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW is sent
 3. RC Targeting : pilot controls the gimbal angle or rate using RC input (see MNT_RC_IN_PAN/ROLL/TILT and MNT_RC_RATE parameters)
 4. GPS Point: gimbal points towards a Location (Lat, Lon, Alt) (see MAV_CMD_DO_SET_ROI).  It is not necessary to specifically change to this mode, this will happen automatically if MAV_CMD_DO_SET_ROI is sent

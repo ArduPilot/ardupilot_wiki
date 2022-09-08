@@ -332,7 +332,7 @@ gimbal mount:
 ::
 
     # Specify a servo-based mount:
-    param set MNT_TYPE 1
+    param set MNT1_TYPE 1
 
     # Set RC output 6 as pan servo:
     param set SERVO6_FUNCTION 6

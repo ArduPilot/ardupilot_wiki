@@ -277,7 +277,7 @@ This output controls the landing gear servo(s) in Copter and Plane. See :ref:`la
 Airbrakes
 +++++++++
 
-This output is for air brake control. Manual input control is via ``RCx_OPTIONS`` = 210. For more information see :ref:`airbrakes-on-plane`.
+This output is for air brake control. Manual input control is via ``RCx_OPTION`` = 210. For more information see :ref:`airbrakes-on-plane`.
 
 COPTER / QUADPLANE FUNCTIONS
 ----------------------------
@@ -456,9 +456,9 @@ CAMERA/GIMBAL FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |       Function                 | ID |        Available in:                  |
 +--------------------------------+----+---------------------------------------+
-|      Mount Pan                 | 6  |    Plane, Copter, Rover               |
+|      Mount Yaw                 | 6  |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
-|      Mount Tilt                | 7  |    Plane, Copter, Rover               |
+|      Mount Pitch               | 7  |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
 |      Mount Roll                | 8  |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
@@ -466,9 +466,9 @@ CAMERA/GIMBAL FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |      Camera Trigger            | 10 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
-|      Mount2 Pan                | 12 |    Plane, Copter, Rover               |
+|      Mount2 Yaw                | 12 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
-|      Mount2 Tilt               | 13 |    Plane, Copter, Rover               |
+|      Mount2 Pitch              | 13 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
 |      Mount2 Roll               | 14 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
@@ -483,8 +483,8 @@ CAMERA/GIMBAL FUNCTIONS
 |      Camera Shutter Speed      | 93 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
 
-Mount Pan/Tilt/Roll/Deploy
-++++++++++++++++++++++++++
+Mount Yaw/Pitch/Roll/Deploy
++++++++++++++++++++++++++++
 
 These control the output channels for controlling a servo gimbal. Please
 see the :ref:`camera gimbal configuration documentation <common-camera-gimbal>` for details.
