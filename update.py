@@ -104,6 +104,12 @@ def error(str_to_print):
     print("[update.py][error]: " + str(str_to_print))
 
 
+def fatal(str_to_print):
+    """Show and count the errors."""
+    error(str_to_print)
+    sys.exit(1)
+
+
 def remove_if_exists(filepath):
     try:
         os.remove(filepath)
@@ -222,6 +228,18 @@ def sphinx_make(site, parallel, fast):
         time.sleep(0.1)
 
 
+def check_build(site):
+    """
+    check that build was successful
+    """
+    for wiki in ALL_WIKIS:
+        if wiki in ['common', 'frontend']:
+            continue
+        index_html = os.path.join(wiki, "build", "html", "index.html")
+        if not os.path.exists(index_html):
+            fatal("%s site not built - missing %s" % (wiki, index_html))
+
+
 def copy_build(site, destdir):
     """
     Copies each site into the target location
@@ -266,9 +284,9 @@ def copy_build(site, destdir):
         shutil.rmtree(olddir)
 
 
-def copy_and_keep_build(site, destdir, backupdestdir):
+def make_backup(site, destdir, backupdestdir):
     """
-    Copies each site into target location and keep last "n" builds as backups
+    backup current site
     """
     for wiki in ALL_WIKIS:
         if site == 'common':
@@ -277,41 +295,23 @@ def copy_and_keep_build(site, destdir, backupdestdir):
             continue
         if wiki == 'frontend':
             continue
-        debug('copying: %s' % wiki)
+        debug('Backing up: %s' % wiki)
+
         targetdir = os.path.join(destdir, wiki)
         distutils.dir_util.mkpath(targetdir)
 
-        if os.path.exists(targetdir):
-            olddir = os.path.join(
-                backupdestdir,
-                str(building_time + '-wiki-bkp'),
-                str(wiki))
-            debug('Checking %s' % olddir)
-            distutils.dir_util.mkpath(olddir)
-            debug('Moving %s into %s' % (targetdir, olddir))
-            shutil.move(targetdir, olddir)
+        if not os.path.exists(targetdir):
+            fatal("FAIL backup when looking for folder %s" % targetdir)
 
-            sourcedir = os.path.join(
-                os.path.abspath(os.getcwd()),
-                str(wiki),
-                'build',
-                'html')
-            html_moved_dir = os.path.join(destdir, 'html')
-            try:
-                shutil.move(sourcedir, html_moved_dir)
-                # Rename move! (single move to html/* failed)
-                shutil.move(html_moved_dir, targetdir)
-                debug("Moved to %s" % targetdir)
-            except Exception:  # FIXME: narrow exception type
-                error("FAIL moving output to %s" % targetdir)
-            finally:
-                debug("Creating a backup in %s" % olddir)
-                # subprocess.check_call(['cp', '-r', targetdir ,olddir])
-                distutils.dir_util.copy_tree(targetdir,
-                                             olddir,
-                                             preserve_symlinks=0)
-        else:
-            error("FAIL when looking for folder %s" % targetdir)
+        bkdir = os.path.join(backupdestdir, str(building_time + '-wiki-bkp'), str(wiki))
+        debug('Checking %s' % bkdir)
+        distutils.dir_util.mkpath(bkdir)
+        debug('Copying %s into %s' % (targetdir, bkdir))
+        try:
+            subprocess.check_call(["rsync", "-a", "--delete", targetdir + "/", bkdir])
+        except subprocess.CalledProcessError as ex:
+            print(ex)
+            fatal("Failed to backup %s" % wiki)
 
 
 def delete_old_wiki_backups(folder, n_to_keep):
@@ -750,8 +750,29 @@ def copy_static_html_sites(site, destdir):
             pass
 
 
-#######################################################################
+def check_imports():
+    '''check key imports work'''
+    import pkg_resources
+    requires = ["sphinx_rtd_theme>=0.1.8", "sphinxcontrib.vimeo>=0.0.1"]
+    for r in requires:
+        print("Checking for %s" % r)
+        try:
+            pkg_resources.require(r)
+        except pkg_resources.ResolutionError as ex:
+            print(ex)
+            fatal("Require %s" % r)
+    # special case for sphinxcontrib.youtube as it isn't setup properly as a package
+    try:
+        import sphinxcontrib.youtube
+        if pkg_resources.parse_version(sphinxcontrib.youtube.__version__) < pkg_resources.parse_version("1.2.0"):
+            fatal("sphinxcontrib.youtube too old %s < %s" % (sphinxcontrib.youtube.__version__, "1.2.0"))
+    except Exception as ex:
+        print(ex)
+        fatal("Failed to check sphinxcontrib.youtube version")
+    print("Imports OK")
 
+
+#######################################################################
 if __name__ == "__main__":
     if platform.system() == "Windows":
         multiprocessing.freeze_support()
@@ -782,7 +803,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         '--destdir',
-        default="/var/sites/wiki/web" if platform.system() != "Windows" else os.path.join(os.path.dirname(__file__), "..", "wiki"),  # noqa: E501
+        default=None,
         help="Destination directory for compiled docs",
     )
     parser.add_argument(
@@ -827,6 +848,8 @@ if __name__ == "__main__":
     now = datetime.now()
     building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
 
+    check_imports()
+
     if not args.fast:
         if args.paramversioning:
             # Parameters for all versions availble on firmware.ardupilot.org:
@@ -846,10 +869,13 @@ if __name__ == "__main__":
         put_cached_parameters_files_in_sites(args.site)
         cache_parameters_files(args.site)
 
+    check_build(args.site)
+
     if args.enablebackups:
-        copy_and_keep_build(args.site, args.destdir, args.backupdestdir)
+        make_backup(args.site, args.destdir, args.backupdestdir)
         delete_old_wiki_backups(args.backupdestdir, N_BACKUPS_RETAIN)
-    elif args.destdir:
+
+    if args.destdir:
         copy_build(args.site, args.destdir)
 
     # To navigate locally and view versioning script for parameters
