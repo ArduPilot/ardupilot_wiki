@@ -11,7 +11,8 @@ rem Install sphinx theme from ArduPilot repository
 pip install --upgrade git+https://github.com/ArduPilot/sphinx_rtd_theme.git
 
 rem and a youtube plugin:
-pip install --upgrade git+https://github.com/sphinx-contrib/youtube.git
+pip install --upgrade git+https://github.com/ArduPilot/sphinxcontrib-youtube.git
+pip install --upgrade git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git
 
 rem and a parser to use getting posts from Discourse (forum) and insert in FrontEnd
 pip install --upgrade beautifulsoup4

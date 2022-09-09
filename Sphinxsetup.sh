@@ -57,8 +57,9 @@ python3 -m pip install --user --upgrade lxml
 # Install sphinx theme from ArduPilot repository
 python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinx_rtd_theme.git
 
-# and a youtube plugin:
-python3 -m pip install --user --upgrade git+https://github.com/sphinx-contrib/youtube.git
+# and youtube and video plugins:
+python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinxcontrib-youtube.git
+python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git
 
 # and a parser to use getting posts from Discourse (forum) and insert in FrontEnd
 python3 -m pip install --user --upgrade beautifulsoup4
