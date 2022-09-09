@@ -232,6 +232,9 @@ def check_build(site):
     """
     check that build was successful
     """
+    if platform.system() == "Windows":
+        print("Skipping check_build on windows")
+        return
     for wiki in ALL_WIKIS:
         if wiki in ['common', 'frontend']:
             continue
