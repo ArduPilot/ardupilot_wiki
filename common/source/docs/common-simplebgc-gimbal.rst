@@ -55,7 +55,7 @@ The gimbal's maximum lean angles can be set using these parameters:
 - :ref:`MNT1_ROLL_MIN <MNT1_ROLL_MIN>`, :ref:`MNT1_ROLL_MAX <MNT1_ROLL_MAX>` to -30 and 30 to limit the roll angle to 30 degrees in each direction
 - :ref:`MNT1_PITCH_MIN <MNT1_PITCH_MIN>`, :ref:`MNT1_PITCH_MAX <MNT1_PITCH_MAX>` to -90 and 0 to limit the gimbal to point between straight down (-90 degrees) and straight forward (0 degrees)
 
-To control the gimbal's pitch angles from a transmitter set an RC channel's ``RCx_OPTION `` to 213.
+To control the gimbal's pitch angles from a transmitter set an RC channel's ``RCx_OPTION`` to 213.
 
 For a 3-axis gimbal with 360 degrees of yaw set:
 
