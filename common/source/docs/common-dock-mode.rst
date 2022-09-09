@@ -114,3 +114,5 @@ The docking process can be fine tuned using the following parameters.
 
    Be prepared to retake control if there are sudden unexpected
    movements (Change mode to Hold or manual).
+
+[copywiki destination="rover"]
