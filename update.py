@@ -738,9 +738,8 @@ def copy_static_html_sites(site, destdir):
     """
     Copy pure HMTL folder the same way that Sphinx builds it
     """
-    debug('Copying static sites (only frontend so far).')
-
-    if (site == 'frontend') or (site is None):
+    if (site in ['frontend', None]) and (destdir is not None):
+        debug('Copying static sites (only frontend so far).')
         update_frotend_json()
         folder = 'frontend'
         try:
@@ -756,7 +755,8 @@ def copy_static_html_sites(site, destdir):
 def check_imports():
     '''check key imports work'''
     import pkg_resources
-    requires = ["sphinx_rtd_theme>=0.1.8", "sphinxcontrib.vimeo>=0.0.1"]
+    # package names to check the versions of. Note that these can be different than the string used to import the package
+    requires = ["sphinx_rtd_theme>=0.1.8", "sphinxcontrib.youtube>=1.2.0", "sphinx==5.1.1", "docutils==0.16"]
     for r in requires:
         print("Checking for %s" % r)
         try:
@@ -764,14 +764,6 @@ def check_imports():
         except pkg_resources.ResolutionError as ex:
             print(ex)
             fatal("Require %s" % r)
-    # special case for sphinxcontrib.youtube as it isn't setup properly as a package
-    try:
-        import sphinxcontrib.youtube
-        if pkg_resources.parse_version(sphinxcontrib.youtube.__version__) < pkg_resources.parse_version("1.2.0"):
-            fatal("sphinxcontrib.youtube too old %s < %s" % (sphinxcontrib.youtube.__version__, "1.2.0"))
-    except Exception as ex:
-        print(ex)
-        fatal("Failed to check sphinxcontrib.youtube version")
     print("Imports OK")
 
 
@@ -889,5 +881,7 @@ if __name__ == "__main__":
     if error_count > 0:
         print("%u errors during Wiki build" % (error_count,))
         sys.exit(1)
+    else:
+        print("Build completed without errors")
 
     sys.exit(0)
