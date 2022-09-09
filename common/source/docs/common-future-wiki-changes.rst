@@ -107,7 +107,7 @@ Allows automatic setup of in-flight FFT notch parameters. Set :ref:`FFT_ENABLE<F
    <td><strong>Mount Lock</strong></td>
    <td>
 
-If high, locks the heading of the mount to earth-frame, otherwise, yaw is heading locked to vehicle heading. If pilot controlled positioning is active, the pilot's inputs changes the heading target appropriately in whatever frame is selected. Without this switch, its vehicle heading.
+If high, locks the heading of all mounts to earth-frame, otherwise, yaw is heading locked to vehicle heading. If pilot controlled positioning is active, the pilot's inputs changes the heading target appropriately in whatever frame is selected. Without this switch, its vehicle heading.
 
 .. raw:: html
 
