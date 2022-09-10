@@ -63,7 +63,7 @@ The AP_Periph DroneCAN firmware supports these DroneCAN features:
 
 Firmware
 ========
-`Firmware <https://firmware.ardupilot.org/AP_Periph/>`__ is provided in the AP_Periph folder for supported DroneCAN devices as well as the conversion of some autopilots to DroneCAN adapter use. Currently, the following firmware is pre-built, but the code allows for easy customization. Firmware can be installed using either :ref:`DroneCAN GUI<common-uavcan-gui>` or :ref:`MissionPlanner SLCAN <common-mp-slcan>` when the device is attached to a DroneCAN port on an autopilot and the autopilot has that port enabled. See :ref:`common-uavcan-setup-advanced`. Since the size of all the ArduPilot driver libraries would exceed the smaller processors, several variations, supporting different peripheral sets, are provided.
+`Firmware <https://firmware.ardupilot.org/AP_Periph/>`__ is provided in the AP_Periph folder for supported DroneCAN devices as well as the conversion of some autopilots to DroneCAN adapter use. Currently, the following firmware is pre-built, but the code allows for easy customization. Firmware can be installed using either :ref:`DroneCAN GUI<common-uavcan-gui>` or :ref:`MissionPlanner SLCAN <planner:dronecan-uavcan-slcan>` when the device is attached to a DroneCAN port on an autopilot and the autopilot has that port enabled. See :ref:`common-uavcan-setup-advanced`. Since the size of all the ArduPilot driver libraries would exceed the smaller processors, several variations, supporting different peripheral sets, are provided.
 
 F103 Based
 ----------
