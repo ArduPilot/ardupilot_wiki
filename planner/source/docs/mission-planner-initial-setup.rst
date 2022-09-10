@@ -49,11 +49,19 @@ When connected, peripherals such as Battery Monitors, Integrated OSD, Airspeed S
 
 DroneCAN/UAVCAN SLCAN
 ---------------------
-The SLCAN tool inside Mission Planner allows viewing, configuration, and software updates of nodes connected to the CAN bus port of the autopilot.
+The SLCAN tool inside Mission Planner allows viewing, configuration, and software updates of DroneCAN nodes connected to the CAN bus port of the autopilot. There are two ways to connect to the DroneCAN node:
 
-Before the autopilot can be connected to Mission Planner using SLCAN, parameters have to be configured. See :ref:`common-slcan-f4` or :ref:`common-slcan-f7h7` for setup information. If Mission Planner is in the disconnected state, make sure the SLCAN port is shown as the selected COM port in the dropdown box in the upper right corner of Mission Planner.
+- Using SLCAN directly
+- Using SLCAN over MAVLink
 
-In Mission Planner, navigate to Initial Setup->Optional Hardware->DroneCAN/UAVCAN click on the highlighted red button. 
+Connecting to the DroneCAN node
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If using the direct SLCAN connection method, autopilot parameters have to be configured first. See :ref:`common-slcan-f4` or :ref:`common-slcan-f7h7` for setup information. Mission Planner should be in the disconnected state, and make sure the SLCAN port is shown as the selected COM port in the dropdown box in the upper right corner of Mission Planner.
+
+If using the MAVLink method, nothing is required for setup and Mission Planner should be in the connected state via the normal MAVLink connection to the autopilot.
+
+In Mission Planner, navigate to Initial Setup->Optional Hardware->DroneCAN/UAVCAN click on the highlighted red button if connecting using the direct SLCAN method, or the appropriate green button for MAVLink communication over either CAN bus port 1 or port 2, depending on which port the node is attached. 
 
 .. image:: ../../../images/can-drivers-parameters-slcan-mp.png
 
