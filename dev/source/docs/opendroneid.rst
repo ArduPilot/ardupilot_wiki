@@ -26,8 +26,8 @@ Building Firmware for Bench Testing and Experimentation
 
 An experimental firmware version can be built for any autopilot by:
 
-- Adding the line "define AP_OPENDRONEID_ENABLED 1" to its hwdef.dat file, or simply building with the  waf build option, ``--enable-opendroneid``
-- Adding the waf build option, ``--enable-firmware-checking``, will add another tamper proofing check. If enabled, a bootloader will not run firmware with a different board ID. This extends the protection already afforded by using a unique board ID for OpenDroneID enabled autopilots that will reject normal attempts of loading firmware without the necessary functions and parameters required for compliance.
+- Adding the line "define AP_OPENDRONEID_ENABLED 1" to its hwdef.dat file, or simply building with the  waf configure option, ``--enable-opendroneid``
+- Adding the waf configure option, ``--enable-firmware-checking``, will add another tamper proofing check. If enabled, a bootloader will not run firmware with a different board ID. This extends the protection already afforded by using a unique board ID for OpenDroneID enabled autopilots that will reject normal attempts of loading firmware without the necessary functions and parameters required for compliance.
 
 
 Testing
