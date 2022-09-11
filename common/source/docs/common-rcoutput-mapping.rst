@@ -7,7 +7,11 @@ Autopilot Output Functions
 
 All autopilot servo/motor outputs may be mapped to any output function supported by
 ArduPilot. This page describes how to configure these output channels and what each
-of the available functions is.
+of the available functions that can be assigned to an output are.
+
+ArduPilot supports up to 32 outputs. These may be via DroneCAN ESCs or directly from autopilot outputs, or a mixture of both.
+
+.. note:: see the left sidebar menu for major output categories to navigate to desired functions on this page quickly.
 
 The SERVOn_FUNCTION parameters
 ------------------------------
