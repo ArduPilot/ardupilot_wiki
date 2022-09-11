@@ -59,6 +59,11 @@ The upper PWM range from the input trim value to its maximum input is translated
    :target: ../../_images/rcscaled-io.jpg
    
  Also note expansion to 32 outputs instead of 16 : See https://github.com/ArduPilot/ardupilot_wiki/pull/4595
+ 
+Add IRC Tramp VTX Support
+=========================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/4596
 
 Add Analog Fuel Level Sensors
 =============================
