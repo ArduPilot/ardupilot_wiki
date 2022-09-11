@@ -4,7 +4,7 @@
 Video Transmitter Support
 =========================
 
-Video transmitter (VTX) support allows the flight controller to control an attached video transmitter. Depending on the VTX and protocol used, components that can be controlled include video band, video channel, transmitter power and pit mode. Supported protocols are SmartAudio and TBS Crossfire (CRSF).
+Video transmitter (VTX) support allows the flight controller to control an attached video transmitter. Depending on the VTX and protocol used, components that can be controlled include video band, video channel, transmitter power and pit mode. Supported protocols are SmartAudio, IRC Tramp, and TBS Crossfire (CRSF).
 
 .. note:: Not all video transmitters claiming SmartAudio support fully support the specification and some functions may not be provided in that transmitter, or implemented in a non-standard way. Consult the manufacturer's documentation if questions arise.
 
@@ -43,6 +43,12 @@ Reboot your flight controller and power your video transmitter. At startup you s
 
 .. image:: ../../../images/VTX-both.jpg
     :target: ../_images/VTX-both.jpg
+
+ImmersionRC Tramp
+-----------------
+
+- Connect the telemtry pin of the video transmitter to the TX pin of the autopilot's UART used to control it.
+- Set :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` = 44 if using SERIAL5 for connection to VTX
 
 Video transmitter settings
 --------------------------
