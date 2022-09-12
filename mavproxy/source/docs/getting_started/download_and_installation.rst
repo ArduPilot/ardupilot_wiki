@@ -43,7 +43,7 @@ For Python 3 on Debian based systems (including Ubuntu, WSL, Raspian):
 
     sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-lxml python3-pygame
     pip3 install PyYAML mavproxy --user
-    echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
+    echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
 
 For Python 2 on Debian based systems (including Ubuntu, WSL, Raspian):
 
@@ -51,7 +51,7 @@ For Python 2 on Debian based systems (including Ubuntu, WSL, Raspian):
 
     sudo apt-get install python-dev python-opencv python-wxgtk4.0 python-pip python-matplotlib python-lxml python-pygame
     pip install PyYAML mavproxy --user
-    echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
+    echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
     
 For Python 3 on Fedora based systems:
 
@@ -59,7 +59,7 @@ For Python 3 on Fedora based systems:
 
     sudo dnf install python3-devel python3-opencv python3-wxpython4 python3-pip python3-matplotlib python3-pygame python3-lxml python3-yaml redhat-rpm-config
     pip3 install PyYAML mavproxy --user
-    echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
+    echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
 
 If you get a "permission denied" error message when connecting to serial devices,
 the user permissions may need to be changed:
