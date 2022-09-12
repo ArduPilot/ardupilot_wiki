@@ -26,6 +26,8 @@ Pre-Flight Setup
 - Set :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` = 1 to collect data from the first IMU
 - :ref:`LOG_BITMASK <copter:LOG_BITMASK>`'s IMU_RAW bit must **not** be checked.  The default :ref:`LOG_BITMASK<LOG_BITMASK>` value is fine. If it is checked the results can be confusing as you will get no samples if using post-filter or regular logging, you will however get samples if using sensor rate logging and your SD card is able to cope.
 
+.. _common-imu-notch-filtering-flight-and-post-flight-analysis:
+
 Flight and Post-Flight Analysis
 ===============================
 
@@ -52,6 +54,8 @@ It is possible to filter some of this noise to increase performance and allow be
 - With the same log, open it in the regular way in mission planner and graph the throttle value. From this identify an average hover throttle value.
 - It's also possible to use :ref:`MOT_HOVER_LEARN <MOT_HOVER_LEARN>` = 2 in Copter and read off the value of :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`, or :ref:`Q_M_HOVER_LEARN <Q_M_HOVER_LEARN>` = 2 in QuadPlane and read off the value of :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
 - This gives you a hover motor frequency *hover_freq* and thrust value *hover_thrust* . Note that learning of hover thrust only occurs while in an altitude controlled mode with no pitch or roll angle. Therefore, it should be done in calm wind conditions with no pilot stick input for at least 10 seconds.
+
+.. _common-imu-notch-filtering-post-configuration-flight-and-post-flight-analysis:
 
 Post Configuration Confirmation Flight and Post-Flight Analysis
 ===============================================================
