@@ -27,7 +27,7 @@ Serial Setup
 
 For the example below, the unit will assumed to be attached to SERIAL5 of the autopilot.
 
-- :ref:`EFI_TYPE<EFI_TYPE>` : MegaSquirt = 1, Lutan = 3
+- :ref:`EFI_TYPE<EFI_TYPE>`: MegaSquirt = 1, Lutan = 3
 - :ref:`SERIAL5_PROTOCOL<SERIAL5_PROTOCOL>` = 24 (Serial EFI))
 - :ref:`SERIAL5_BAUD<SERIAL5_BAUD>` = 115 (115.2Kbaud)
 
