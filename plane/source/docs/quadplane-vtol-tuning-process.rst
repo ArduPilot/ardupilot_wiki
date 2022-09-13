@@ -223,12 +223,12 @@ Step 8: Yaw Bias
 A common problem in QuadPlanes is excessive amount of VTOL power being
 used to maintain yaw. This can be caused by:
 
- - small misalignment of the VTOL motors
- - frame twist (often caused by wing twist) as thrust is applied
+- small misalignment of the VTOL motors
+- frame twist (often caused by wing twist) as thrust is applied
 
 If too much power is needed to maintain yaw then the aircraft could
 lose yaw control during transitions, or could lose roll and pitch
-stability. For larger quadplanes it is common to need to deliberately
+stability. For larger QuadPlanes it is common to need to deliberately
 tilt the motors by a couple of degrees to increase yaw authority.
 
 You should check the amount of thrust being used to maintain yaw by
@@ -250,7 +250,7 @@ get get a good notch filter setup to reduce noise to the VTOL PID
 controllers. A good set of notch filtering parameters is critical to a
 good tune.
 
-To get a notch filter setup you need to hover your quadplane for 2
+To get a notch filter setup you need to hover your QuadPlane for 2
 minutes with no pilot input and with :ref:`INS_LOG_BAT_MASK
 <INS_LOG_BAT_MASK>` set to 1. This will enable FFT logging which will
 guide the correct setup of the notch filters. You should then
@@ -267,13 +267,13 @@ reducing noise enough to get a good tune.
 Step 10: Manual tuning of Roll and Pitch
 ----------------------------------------
 
-While you may be tempted to jump straight to QAUTOTUNE mode, this is
-not recommended. Most quadplanes need some manual tuning of roll and
-pitch before they can handle a QAUTOTUNE. If you jump straight to a
-QAUTOTUNE then your aircraft may become unstable enough to crash. A
-good manual tune will also reduce the amount of time a QAUTOTUNE will
+While you may be tempted to jump straight to autotuning, this is
+not recommended. Most QuadPlanes need some manual tuning of roll and
+pitch before they can handle an autotune. If you jump straight to an
+autotune then your aircraft may become unstable enough to crash. A
+good manual tune will also reduce the amount of time an autotune will
 take, which can be critical given the small VTOL hover times of many
-quadplanes.
+QuadPlanes.
 
 Before starting the manual tune you should go back and check you have
 fully completed the steps above, and ensure you have a good notch
@@ -319,25 +319,16 @@ tune.
 
 After you have gone through the above steps you should carefully look
 at your logs to ensure you don't have a hidden oscillation. The
-structure of quadplanes sometimes means that oscillations may not be
+structure of QuadPlanes sometimes means that oscillations may not be
 externally visible. You should use the RATE, PIQR and PIQP messages to
 look for oscillations.
-
-Using the Quick Tune LUA Applet to Automate the Manual Tune
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For systems using an autopilot with sufficient memory to run :ref:`LUA scripts <common-lua-scripts>`, such as F7 and H7 based controllers, this process has been automated via a LUA Applet.
-
-Be sure that scripting has been setup and sufficient memory has been allocated, as explained in :ref:`LUA scripts <common-lua-scripts>`.
-
-See the `Quick VTOL Tune LUA script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/VTOL-quicktune.md>`__.
 
 Step 11: Evaluating the aircraft tune
 -------------------------------------
 
 You need to evaluate the aircraft's tune to see if the previous steps
 have resulted in a tune which is good enough for a transition flight
-or for QAUTOTUNE.
+or for autotuning.
 
 1. Take off in QHOVER or QSTABILIZE
 2. Apply small roll and pitch inputs. Start with 5 degree inputs and releasing the stick to centre, pitch, left, right, roll forward back, then all 4 points on the diagonal
@@ -346,7 +337,7 @@ or for QAUTOTUNE.
 
 If the aircraft begins to overshoot significantly or oscillate after
 the stick input, halt the tests before the situation begins to
-endanger the aircraft. The aircraft may require more manual tuning before QAUTOTUNE can be run.
+endanger the aircraft. The aircraft may require more manual tuning before autotuning can be run.
 
 To test the stabilization loops independent of the input shaping, set the parameter: :ref:`Q_A_RATE_FF_ENAB <Q_A_RATE_FF_ENAB>` to 0.
 
@@ -360,12 +351,30 @@ the aircraft oscillates and go back to manual tuning.
 
 Set :ref:`Q_A_RATE_FF_ENAB <Q_A_RATE_FF_ENAB>` to 1 after the tests are complete.
 
-Step 12: QAUTOTUNE
-------------------
+Step 12: Autotuning
+-------------------
+Often, a good manual tune will be sufficient. However, autotuning can sometimes improve the tune.
 
-If the aircraft appears stable enough to attempt QAUTOTUNE and you
-have sufficient battery to last through a QAUTOTUNE then you can
-follow the instructions in the :ref:`QAUTOTUNE<qautotune-mode>` page. Often, after a good manaul tune or using the`Quick VTOL Tune LUA script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/VTOL-quicktune.md>`__, this will not be necessary.
+If the aircraft appears stable enough to attempt autotuning and you
+have sufficient battery to last through an autotuning session then you can autotune using one of two methods:
+
+- Quick Tune LUA Applet (the preferred method if your autopilot is capable of running LUA scripts)
+- QAUTOTUNE Mode (no longer the recommended method, but can be used if using LUA scripts is not possible)
+
+Using the Quick VTOL Tune LUA Applet to Automate Tuning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For systems using an autopilot with sufficient memory to run :ref:`LUA scripts <common-lua-scripts>`, such as F7 and H7 based controllers, this process has been automated via a LUA Applet.
+
+Be sure that scripting has been setup and sufficient memory has been allocated, as explained in :ref:`LUA scripts <common-lua-scripts>`.
+
+See the `Quick VTOL Tune LUA script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/VTOL-quicktune.md>`__.
+
+
+Using the QAUTOTUNE mode to Automate Tuning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Follow the instructions in the :ref:`QAUTOTUNE<qautotune-mode>` page.
 
 You should use QAUTOTUNE on one axis at a time (setting
 :ref:`Q_AUTOTUNE_AXES <Q_AUTOTUNE_AXES>` for the axis you want to
@@ -385,7 +394,7 @@ There a number of problems that can prevent QAUTOTUNE from providing a good tune
 - Overloaded propellers or motors.
 - Autotuning a Tailsitter's pitch or yaw axis, since they require feed-forward.
 
-If QAUTOTUNE has failed you will need to do a manual tune.
+If QAUTOTUNE has failed you will need to re-do a manual tune.
 
 Some signs that QAUTOTUNE has been successful are:
 
@@ -416,7 +425,9 @@ The most important of these parameters is:
 - :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>`: Yaw rate acceleration
 - :ref:`Q_A_ANG_LIM_TC <Q_A_ANG_LIM_TC>`: Aircraft smoothing time
 
-QAUTOTUNE will set the :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`, :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>` and :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` parameters to their maximum based on measurements done during the QAUTOTUNE tests. These values should not be increased beyond what QAUTOTUNE suggests without careful testing. In most cases pilots will want to reduce these values significantly.
+QAUTOTUNE mode tuning will set the :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`, :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>` and :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` parameters to their maximum based on measurements done during the QAUTOTUNE tests. These values should not be increased beyond what QAUTOTUNE suggests without careful testing. In most cases pilots will want to reduce these values significantly.
+
+The Quick VTOL Tune LUA Applet will not adjust these from defaults and you may adjust them to get the feel you desire.
 
 For aircraft designed to carry large directly mounted payloads, the maximum values of :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`, :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>` and :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` should be reduced based on the minimum and maximum takeoff weight (TOW):
 
@@ -443,6 +454,8 @@ The full list of input shaping parameters are:
 - :ref:`Q_A_RATE_R_MAX <Q_A_RATE_R_MAX>`
 - :ref:`Q_A_RATE_Y_MAX <Q_A_RATE_Y_MAX>`
 - :ref:`Q_A_SLEW_YAW <Q_A_SLEW_YAW>`
+- :ref:`Q_P_JERK_XY<Q_P_JERK_XY>`
+- :ref:`Q_P_JERK_Z<Q_P_JERK_Z>`
 - :ref:`Q_LOIT_ACC_MAX <Q_LOIT_ACC_MAX>`
 - :ref:`Q_LOIT_ANG_MAX <Q_LOIT_ANG_MAX>`
 - :ref:`Q_LOIT_BRK_ACCEL <Q_LOIT_BRK_ACCEL>`
