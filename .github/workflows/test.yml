@@ -29,16 +29,6 @@ jobs:
       - name: Check image formats
         run: |
           find ./images/ -exec file {} + | grep RIFF -vzq
-      - name: Check for extra characters after ref directives
-        shell: bash {0}
-        run: |
-          grep --include=\*.rst -Rn -E '(:ref:`.*?`[_]{0,2}) ([\.,:])' .
-          test $? -eq 1
-      - name: Check for bad characters before ref directives
-        shell: bash {0}
-        run: |
-          grep --include=\*.rst -Rn -E '[a-zA-Z0-9_:]:ref:' .
-          test $? -eq 1
       - name: Check python flake8 formatting
         run : |
           set -eux -o pipefail

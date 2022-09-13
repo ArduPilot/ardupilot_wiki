@@ -770,6 +770,20 @@ def check_imports():
     print("Imports OK")
 
 
+def check_ref_directives():
+    '''check formatting around ref directive that sphinx does not warn about'''
+    character_before_ref_tag = re.compile(r"[a-zA-Z0-9_:]:ref:")
+    character_after_ref_tag = re.compile(r"(:ref:`.*?`[_]{0,2}) ([\.,:])")
+
+    for f in glob.glob("**/*.rst", recursive=True):
+        with open(f, "r", "utf-8") as file:
+            for i, line in enumerate(file.readlines()):
+                if character_before_ref_tag.search(line):
+                    error("Remove character before ref directive in \"%s\" on line number %s" % (f, i))
+                if character_after_ref_tag.search(line):
+                    error("Remove character after ref directive in \"%s\" on line number %s" % (f, i))
+
+
 #######################################################################
 if __name__ == "__main__":
     if platform.system() == "Windows":
@@ -847,6 +861,7 @@ if __name__ == "__main__":
     building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
 
     check_imports()
+    check_ref_directives()
 
     if not args.fast:
         if args.paramversioning:
