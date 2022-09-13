@@ -1,4 +1,4 @@
-<p>You can change and check the parameters for another version: <script type="text/javascript" src="../_static/jquery-3.2.1.js">
+<p>You can change and check the parameters for another version: <script type="text/javascript" src="../_static/jquery-3.2.1.min.js">
 </script>
 
 <select class="selectpicker" onChange="window.document.location.href=this.options[this.selectedIndex].value;"></select>
