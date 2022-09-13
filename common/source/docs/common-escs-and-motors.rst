@@ -53,5 +53,15 @@ Electronic Fuel Injectors (EFI)
     :maxdepth: 1
 
     Electronic Fuel Injection <common-efi>
+
+
+Large QuadPlane ESC Issues
+==========================
+
+.. toctree::
+    :maxdepth: 1
+
+    ESC Signalling Issues <common-esc-issues>
+
 [/site]
 
