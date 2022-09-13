@@ -282,6 +282,9 @@ def copy_build(site, destdir):
             print("DEBUG: FAIL moving output to %s" % targetdir)
             error('Error moving output')
 
+        # copy jquery
+        shutil.copy('js/jquery-3.2.1.min.js', '%s/_static/jquery-3.2.1.min.js' % targetdir)
+
         # delete the old directory
         print('DEBUG: removing %s' % olddir)
         shutil.rmtree(olddir)
