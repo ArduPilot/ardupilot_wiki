@@ -287,7 +287,8 @@ def copy_build(site, destdir):
             error('Error moving output')
 
         # copy jquery
-        shutil.copy('js/jquery-3.2.1.min.js', '%s/_static/jquery-3.2.1.min.js' % targetdir)
+        os.makedirs(os.path.join(targetdir, '_static'), exist_ok=True)
+        shutil.copy(os.path.join('js', 'jquery-3.2.1.min.js'), os.path.join(targetdir, '_static', 'jquery-3.2.1.min.js'))
 
         # delete the old directory
         print('DEBUG: removing %s' % olddir)
