@@ -52,6 +52,10 @@ from datetime import datetime
 # without the following import on old versions of Python:
 from distutils import dir_util  # noqa: F401
 
+if sys.version_info < (3, 8):
+    print("Minimum python version is 3.8")
+    sys.exit(1)
+
 DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover']
 ALL_WIKIS = [
     'copter',
