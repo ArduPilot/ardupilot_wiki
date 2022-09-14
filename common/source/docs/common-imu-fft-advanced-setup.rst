@@ -19,6 +19,11 @@ You can see that the bandwidth estimate is roughly 125Hz. Use this as follows:
 
 - Set :ref:`INS_HNTCH_BW <INS_HNTCH_BW>` and/or :ref:`INS_HNTC2_BW <INS_HNTC2_BW>` = *bandwidth estimate*
 
+FFT Averaging
+=============
+
+Instantaneous FFT's can suffer from noise and one way to reduce the noise is to average a number of data frames together before performing the FFT. Theory shows that this will reduce the noise by sqrt(N), where N is the number of frames that are averaged, as long as the data is stationary. On a multirotor the data is not stationary for very long because of changes in throttle, thus usually only a small number of frames can be averaged. Setting the parameter :ref:`FFT_NUM_FRAMES<FFT_NUM_FRAMES>` to a non-zero value will average that number of frames to produce the FFT used by the center frequency setting code. Experimentation will be required to determine the optimum number of frames to be used, but is normally 2-5 frames.
+
 Post Configuration Flight and Post-Flight Analysis
 ==================================================
 
