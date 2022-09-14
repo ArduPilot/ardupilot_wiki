@@ -184,7 +184,7 @@ def fetchlogmessages(site=None, cache=None):
 
 def build_one(wiki, fast):
     '''build one wiki'''
-    print('Using make for sphinx: %s' % wiki)
+    debug('Using make for sphinx: %s' % wiki)
     if platform.system() == "Windows":
         # This will fail if there's no folder to clean, so no check_call here
         if not fast:
@@ -239,7 +239,7 @@ def check_build(site):
     check that build was successful
     """
     if platform.system() == "Windows":
-        print("Skipping check_build on windows")
+        debug("Skipping check_build on windows")
         return
     for wiki in ALL_WIKIS:
         if site is not None and site != wiki:
@@ -262,16 +262,16 @@ def copy_build(site, destdir):
             continue
         if wiki == 'frontend':
             continue
-        print('copy: %s' % wiki)
+        debug('Copy: %s' % wiki)
         targetdir = os.path.join(destdir, wiki)
-        print("DEBUG: Creating backup")
+        debug("Creating backup")
         olddir = os.path.join(destdir, 'old')
-        print('DEBUG: recreating %s' % olddir)
+        debug('Recreating %s' % olddir)
         if os.path.exists(olddir):
             shutil.rmtree(olddir)
         os.makedirs(olddir)
         if os.path.exists(targetdir):
-            print('DEBUG: moving %s into %s' % (targetdir, olddir))
+            debug('Moving %s into %s' % (targetdir, olddir))
             shutil.move(targetdir, olddir)
         # copy new dir to targetdir
         # print("DEBUG: targetdir: %s" % targetdir)
@@ -285,17 +285,16 @@ def copy_build(site, destdir):
             shutil.move(sourcedir, html_moved_dir)
             # Rename move! (single move to html/* failed)
             shutil.move(html_moved_dir, targetdir)
-            print("DEBUG: Moved to %s" % targetdir)
+            debug("Moved to %s" % targetdir)
         except Exception:  # FIXME: narrow exception type
-            print("DEBUG: FAIL moving output to %s" % targetdir)
-            error('Error moving output')
+            error("FAIL moving output to %s" % targetdir)
 
         # copy jquery
         os.makedirs(os.path.join(targetdir, '_static'), exist_ok=True)
         shutil.copy(os.path.join('js', 'jquery-3.2.1.min.js'), os.path.join(targetdir, '_static', 'jquery-3.2.1.min.js'))
 
         # delete the old directory
-        print('DEBUG: removing %s' % olddir)
+        debug('Removing %s' % olddir)
         shutil.rmtree(olddir)
 
 
@@ -331,7 +330,7 @@ def make_backup(site, destdir, backupdestdir):
 
 def delete_old_wiki_backups(folder, n_to_keep):
     try:
-        debug('Checking number of number of backups in folder %s' % folder)
+        debug('Checking number of backups in folder %s' % folder)
         backup_folders = glob.glob(folder + "/*-wiki-bkp/")
         backup_folders.sort()
         if len(backup_folders) > n_to_keep:
@@ -360,7 +359,7 @@ def generate_copy_dict(start_dir=COMMON_DIR):
     for wiki in ALL_WIKIS:
         files = glob.glob('%s/source/docs/common-*.rst' % wiki)
         for f in files:
-            print('remove: %s' % f)
+            debug('Remove existing common: %s' % f)
             os.remove(f)
 
     # Create destination folders that might be needed (if don't exist)
@@ -388,7 +387,7 @@ def generate_copy_dict(start_dir=COMMON_DIR):
     for root, dirs, files in os.walk(start_dir):
         for file in files:
             if file.endswith(".rst"):
-                print("FILE: %s" % file)
+                debug("FILE: %s" % file)
                 source_file_path = os.path.join(root, file)
                 source_file = open(source_file_path, 'r', 'utf-8')
                 source_content = source_file.read()
@@ -399,7 +398,7 @@ def generate_copy_dict(start_dir=COMMON_DIR):
                     # print("CopyTarget: %s" % wiki)
                     content = strip_content(source_content, wiki)
                     targetfile = '%s/source/docs/%s' % (wiki, file)
-                    print(targetfile)
+                    debug(targetfile)
                     destination_file = open(targetfile, 'w', 'utf-8')
                     destination_file.write(content)
                     destination_file.close()
@@ -417,7 +416,7 @@ def generate_copy_dict(start_dir=COMMON_DIR):
                 for wiki in targets:
                     content = strip_content(source_content, wiki)
                     targetfile = '%s/source/_static/%s' % (wiki, file)
-                    print(targetfile)
+                    debug(targetfile)
                     destination_file = open(targetfile, 'w', 'utf-8')
                     destination_file.write(content)
                     destination_file.close()
@@ -770,13 +769,13 @@ def check_imports():
     # package names to check the versions of. Note that these can be different than the string used to import the package
     requires = ["sphinx_rtd_theme>=1.0.0", "sphinxcontrib.youtube>=1.2.0", "sphinx==5.1.1", "docutils==0.16"]
     for r in requires:
-        print("Checking for %s" % r)
+        debug("Checking for %s" % r)
         try:
             pkg_resources.require(r)
         except pkg_resources.ResolutionError as ex:
             print(ex)
             fatal("Require %s" % r)
-    print("Imports OK")
+    debug("Imports OK")
 
 
 def check_ref_directives():
@@ -847,8 +846,8 @@ if __name__ == "__main__":
     parser.add_argument(
         '--verbose',
         dest='verbose',
-        action='store_false',
-        default=True,
+        action='store_true',
+        default=False,
         help="show debugging output",
     )
     parser.add_argument(
@@ -906,8 +905,7 @@ if __name__ == "__main__":
     # locally and working once is on the server.
 
     if error_count > 0:
-        print("%u errors during Wiki build" % (error_count,))
-        sys.exit(1)
+        fatal("%u errors during Wiki build" % (error_count,))
     else:
         print("Build completed without errors")
 
