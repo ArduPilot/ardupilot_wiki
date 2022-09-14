@@ -103,7 +103,7 @@ PWM Output
 ==========
 
 The Pixhawk6X supports up to 16 PWM outputs. All 16 outputs
-support all normal PWM output formats. All FMU outputs also support DShot.
+support all normal PWM output formats. All FMU outputs, except 7 and 8, also support DShot.
 
 The 8 FMU PWM outputs are in 4 groups:
 
