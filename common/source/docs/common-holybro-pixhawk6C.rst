@@ -93,7 +93,7 @@ PWM Output
 ==========
 
 The Pixhawk6X/C supports up to 16 PWM outputs. All 16 outputs
-support all normal PWM output formats. All FMU outputs (marked AUX) except 7 and 8 on the Pixhawk6C version ,also support DShot.
+support all normal PWM output formats. All FMU outputs (marked AUX) also support DShot.
 
 The 8 FMU PWM outputs are in 4 groups:
 
@@ -126,7 +126,7 @@ connector. The Pixhawk6C uses analog power monitors on these ports.
 Compass
 =======
 
-The Pixhawk6C hs a built-in compass. Due to potential
+The Pixhawk6C has a built-in compass. Due to potential
 interference, the autopilot is usually used with an external I2C compass as
 part of a GPS/Compass combination.
 
