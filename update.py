@@ -236,6 +236,8 @@ def check_build(site):
         print("Skipping check_build on windows")
         return
     for wiki in ALL_WIKIS:
+        if site is not None and site != wiki:
+            continue
         if wiki in ['common', 'frontend']:
             continue
         index_html = os.path.join(wiki, "build", "html", "index.html")
@@ -250,7 +252,7 @@ def copy_build(site, destdir):
     for wiki in ALL_WIKIS:
         if site == 'common':
             continue
-        if site is not None and not site == wiki:
+        if site is not None and site != wiki:
             continue
         if wiki == 'frontend':
             continue
