@@ -624,7 +624,6 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_simnet.png
             :width: 250px
             :align: center
-            :target:  www.simnet.aero
-
+            :target:  https://www.simnet.aero/
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
