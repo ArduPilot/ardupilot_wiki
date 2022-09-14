@@ -65,6 +65,11 @@ Add IRC Tramp VTX Support
 
 See https://github.com/ArduPilot/ardupilot_wiki/pull/4596
 
+Add In-Flight FFT averaging
+===========================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/4614
+
 Add Analog Fuel Level Sensors
 =============================
 
