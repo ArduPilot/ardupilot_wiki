@@ -158,4 +158,4 @@ firmware to continuously stabilize the vehicle
 -----
 
 .. image:: ../../../images/banner-freespace.png
-   :target: https://freespace.solutions/
+   :target: https://freespacesolutions.com.au/tuning/
