@@ -774,7 +774,7 @@ def check_imports():
             pkg_resources.require(r)
         except pkg_resources.ResolutionError as ex:
             print(ex)
-            fatal("Require %s" % r)
+            fatal("Require %s\nPlease run the wiki build setup script \"Sphinxsetup\"" % r)
     debug("Imports OK")
 
 
