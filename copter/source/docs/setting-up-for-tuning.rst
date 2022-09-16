@@ -75,14 +75,14 @@ The PID controller default values for axis P/D/I values are usually safe for fir
 
 For Copter-4.2
 
-- :ref:`ATC_ANG_YAW_P <ATC_ANG_YAW>` : 0.5 x :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` / 4500
+- ``ATC_ANG_YAW_P`` : 0.5 x :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` / 4500
 
 For Copter-4.1
 
-- :ref:`ACRO_YAW_P <ACRO_YAW_P>` : 0.5 x :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` / 4500
+- ``ACRO_YAW_P`` : 0.5 x :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` / 4500
 
 
-For Copter-4.0 (and later):
+For Copter-4.1 (and later):
 
 - :ref:`ATC_RAT_PIT_FLTD <ATC_RAT_PIT_FLTD__AC_AttitudeControl_Multi>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
 - :ref:`ATC_RAT_PIT_FLTT <ATC_RAT_PIT_FLTT__AC_AttitudeControl_Multi>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
@@ -90,12 +90,6 @@ For Copter-4.0 (and later):
 - :ref:`ATC_RAT_RLL_FLTT <ATC_RAT_RLL_FLTT__AC_AttitudeControl_Multi>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
 - :ref:`ATC_RAT_YAW_FLTE <ATC_RAT_YAW_FLTE__AC_AttitudeControl_Multi>`: 2
 - :ref:`ATC_RAT_YAW_FLTT <ATC_RAT_YAW_FLTT__AC_AttitudeControl_Multi>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-
-For Copter-3.6 (and earlier):
-
-- ``ATC_RAT_PIT_FILT`` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- ``ATC_RAT_RLL_FILT`` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- ``ATC_RAT_YAW_FILT`` : 2
 
 .. image:: ../images/tuning-process-instructions-2.hires.png
     :target: ../_images/tuning-process-instructions-2.hires.png
