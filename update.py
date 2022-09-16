@@ -35,7 +35,9 @@ import argparse
 import distutils
 import errno
 import filecmp
+import json
 import glob
+import gzip
 import hashlib
 import multiprocessing
 import os
@@ -45,6 +47,8 @@ import shutil
 import subprocess
 import sys
 import time
+
+import rst_table
 
 from codecs import open
 from datetime import datetime
@@ -71,6 +75,15 @@ ALL_WIKIS = [
     'blimp',
 ]
 COMMON_DIR = 'common'
+
+WIKI_NAME_TO_VEHICLE_NAME = {
+    'copter': 'Copter',
+    'plane': 'Plane',
+    'rover': 'Rover',
+    'antennatracker': 'AntennaTracker',
+    'blimp': 'Blimp',
+    'AP_Periph': 'AP_Periph',  # no actual wiki for this....
+}
 
 # GIT_REPO = ''
 
@@ -792,8 +805,145 @@ def check_ref_directives():
                     error("Remove character after ref directive in \"%s\" on line number %s" % (f, i))
 
 
+def create_features_pages(site):
+    '''for each vehicle, write out a page containing features for each
+    supported board'''
+
+    debug("Creating features pages")
+
+    # grab build_options which allows us to map from define to name
+    # and description.  Create a convenience hash for it
+    remove_if_exists("build_options.py")
+    fetch_url("https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/scripts/build_options.py")
+    import build_options
+    build_options_by_define = {}
+    for f in build_options.BUILD_OPTIONS:
+        build_options_by_define[f.define] = f
+
+    # fetch and load most-recently-built features.json
+    remove_if_exists("features.json.gz")
+    fetch_url("https://firmware.ardupilot.org/features.json.gz")
+    features_json = json.load(gzip.open("features.json.gz"))
+    if features_json["format-version"] != "1.0.0":
+        print("bad format version")
+        return
+    features = features_json["features"]
+
+    # print("features: (%s)" % str(features))
+    for wiki in WIKI_NAME_TO_VEHICLE_NAME.keys():
+        debug(wiki)
+        if site is not None and site != wiki:
+            continue
+        if wiki not in WIKI_NAME_TO_VEHICLE_NAME:
+            continue
+        vehicletype = WIKI_NAME_TO_VEHICLE_NAME[wiki]
+        content = create_features_page(features, build_options_by_define, vehicletype)
+        if wiki == "AP_Periph":
+            destination_filepath = "dev/source/docs/periph-binary-features.rst"
+        else:
+            destination_filepath = "%s/source/docs/binary-features.rst" % wiki
+        with open(destination_filepath, "w") as f:
+            f.write(content)
+
+
+def reference_for_board(board):
+    '''return a string suitable for creating an anchor in RST to make
+    board's feture table linkable'''
+    return "FEATURE_%s" % board
+
+
+def create_features_page(features, build_options_by_define, vehicletype):
+    features_by_platform = {}
+    for build in features:
+        # print("build: (%s)" % str(build))
+        if build["vehicletype"] != vehicletype:
+            continue
+        features_by_platform[build["platform"]] = build["features"]
+    rows = []
+    column_headings = ["Category", "Feature", "Incuded", "Description"]
+    all_tables = ""
+    for platform_key in sorted(features_by_platform.keys(), key=lambda x : x.lower()):
+        rows = []
+        platform_features = features_by_platform[platform_key]
+        sorted_platform_features_in = []
+        sorted_platform_features_not_in = []
+        for feature in platform_features:
+            feature_in = not feature.startswith("!")
+            if feature_in:
+                build_options = build_options_by_define[feature]
+                sorted_platform_features_in.append((build_options.category, feature))
+            else:
+                build_options = build_options_by_define[feature[1:]]
+                sorted_platform_features_not_in.append((build_options.category, feature))
+
+        sorted_platform_features = (
+            sorted(sorted_platform_features_not_in, key=lambda x : x[0] + x[1]) +
+            sorted(sorted_platform_features_in, key=lambda x : x[0] + x[1]))
+
+        for (category, feature) in sorted_platform_features:
+            feature_in = not feature.startswith("!")
+            if not feature_in:
+                # trim off the !
+                feature = feature[1:]
+            build_options = build_options_by_define[feature]
+            row = [category, build_options.label]
+            if feature_in:
+                row.append("Yes")
+            else:
+                row.append("No")
+            row.append(build_options.description)
+            if not feature_in:
+                # for now, do not include features that are on the
+                # board, just those that aren't, per Henry's request:
+                rows.append(row)
+        t = rst_table.tablify(rows,
+                              headings=column_headings)
+        underline = "-" * len(platform_key)
+        all_tables += ('''
+.. _%s:
+
+%s
+%s
+
+%s
+''' % (reference_for_board(platform_key), platform_key, underline, t))
+
+    index = ""
+    for board in sorted(features_by_platform.keys(), key=lambda x : x.lower()):
+        index += '- :ref:`%s<%s>`\n\n' % (board, reference_for_board(board))
+
+    all_features_rows = []
+    for feature in sorted(build_options_by_define.values(), key=lambda x : (x.category + x.label).lower()):
+        all_features_rows.append([feature.category, feature.label, feature.description])
+    all_features = rst_table.tablify(all_features_rows, headings=["Category", "Feature", "Description"])
+
+    return '''
+.. Dynamically generated by update.py.  Do not edit.
+
+%s Features by board type in "latest" builds from build server
+
+Board Index
+===========
+
+%s
+
+
+All Features
+============
+
+%s
+
+Boards
+======
+
+%s
+''' % (vehicletype, index, all_features, all_tables)
+
 #######################################################################
+
+
 if __name__ == "__main__":
+
     if platform.system() == "Windows":
         multiprocessing.freeze_support()
 
@@ -885,6 +1035,8 @@ if __name__ == "__main__":
     copy_static_html_sites(args.site, args.destdir)
     generate_copy_dict()
     sphinx_make(args.site, args.parallel, args.fast)
+
+    create_features_pages(args.site)
 
     if args.paramversioning:
         put_cached_parameters_files_in_sites(args.site)
