@@ -122,6 +122,14 @@ def remove_if_exists(filepath):
             raise e
 
 
+def fetch_url(fetchurl):
+    '''fetches content at url and puts it in a file corresponding to the filename in the URL'''
+    if platform.system() == "Windows":
+        subprocess.check_call(["powershell.exe", "Start-BitsTransfer", "-Source", fetchurl])
+    else:
+        subprocess.check_call(["wget", fetchurl])
+
+
 def fetchparameters(site=None, cache=None):
     """Fetches the parameters for all the sites from the test server and
     copies them to the correct location.
@@ -143,10 +151,7 @@ def fetchparameters(site=None, cache=None):
                 raise Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,))
             continue
         if site == key or site is None:
-            if platform.system() == "Windows":
-                subprocess.check_call(["powershell.exe", "Start-BitsTransfer", "-Source", fetchurl])
-            else:
-                subprocess.check_call(["wget", fetchurl])
+            fetch_url(fetchurl)
 
             # move in new file
             if os.path.exists(targetfile):
@@ -170,10 +175,7 @@ def fetchlogmessages(site=None, cache=None):
                 raise(Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,)))
             continue
         if site == key or site is None:
-            if platform.system() == "Windows":
-                subprocess.check_call(["powershell.exe", "Start-BitsTransfer", "-Source", fetchurl])
-            else:
-                subprocess.check_call(["wget", fetchurl])
+            fetch_url(fetchurl)
             # move in new file
             if os.path.exists(targetfile):
                 os.unlink(targetfile)
