@@ -29,6 +29,8 @@ determine exactly which check has failed:
 #. The first cause of the Pre-Arm Check failure will be displayed in red
    on the HUD window
 
+Pre-arm checks that are failing will also be sent as messages to the GCS while disarmed, about every 30 seconds. If you wish to disable this and have them sent only when an attempt arm fails, then set the :ref:`ARMING_OPTIONS<ARMING_OPTIONS>` bit 1 (value 1).
+
 Failure messages
 ================
 
