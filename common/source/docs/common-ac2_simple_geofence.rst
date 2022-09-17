@@ -83,6 +83,8 @@ If :ref:`FENCE_ACTION<FENCE_ACTION>` is set to a guided return mode (6 or 7), th
 
 The return point can also be replaced by the nearest rally point (See: :ref:`common-rally-points`) as a destination, if :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` is enabled.
 
+Modes changes can be executed after the fence breach unless the :ref:`FENCE_OPTIONS<FENCE_OPTIONS>` is set to "1"'. If set, the vehicle must return to within the fence boundary in order to change modes.
+
 
 Enabling the Fence in Mission Planner
 =====================================
