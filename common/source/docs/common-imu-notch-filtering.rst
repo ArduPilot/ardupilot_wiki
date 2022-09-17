@@ -46,14 +46,14 @@ Checking Notch Filter Effectiveness
 
 Once the notch filter(s) are setup, the effectiveness of them can be checked by again measuring the  frequency spectrum of the output of the filters (which are the new inputs to the IMU sensors). Refer back to the :ref:`common-imu-batchsampling`  page for this.
 
-Double-Notch
-============
+Double/Triple-Notch
+===================
 
-The software notch filters used are very "spikey" being relatively narrow but good at attenuation at their center. On larger copters the noise profile of the motors is quite dirty covering a broader range of frequencies than can be covered by a single notch filter. In order to address this situation it is possible to configure the harmonic notches as double notches that gives a wider spread of significant attenuation. To utilize this feature set :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` to "1".
+The software notch filters used are very "spikey" being relatively narrow but good at attenuation at their center. On larger copters the noise profile of the motors is quite dirty covering a broader range of frequencies than can be covered by a single notch filter. In order to address this situation it is possible to configure the harmonic notches as double or triple notches that gives a wider spread of significant attenuation. To utilize this feature set :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` to "1" for double notches, to "16" for triple notches.
 
-.. note:: Each notch has some CPU cost so if you configure both dynamic harmonics and double notches (:ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` set to 3) you will end up with 8 notches on your aircraft per IMU. On flight controllers with 3 IMUs, this totals 24 notches which is computationally significant and could impact operation. For example, with F4 cpus with one IMU, using :ref:`INS_GYRO_RATE<INS_GYRO_RATE>` =0 (1khz) this is safe, as is 3 IMUs running with fast sampling (:ref:`INS_GYRO_RATE<INS_GYRO_RATE>` =1 (2khz) on H7 cpus.
+.. note:: Each notch has some CPU cost so if you configure both dynamic harmonics and double/triple notches (:ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` set to 3 or 18) you will end up with many notches on your aircraft per IMU. On flight controllers with 3 IMUs, this totals 24 or more notches which is computationally significant and could impact operation. For example, with F4 cpus with one IMU, using :ref:`INS_GYRO_RATE<INS_GYRO_RATE>` =0 (1khz) this is safe, as is 3 IMUs running with fast sampling (:ref:`INS_GYRO_RATE<INS_GYRO_RATE>` =1 (2khz) on H7 cpus. Use triple notches with caution to computational loading.
 
-Note also that with a double-notch the maximum attenuation is either side of the center frequency so on smaller aircraft with a very pronounced peak their use is usually counter productive.
+Note also that with a double notch, the maximum attenuation is either side of the center frequency so on smaller aircraft with a very pronounced peak their use is usually counter productive.
 
 .. toctree::
     :hidden:
