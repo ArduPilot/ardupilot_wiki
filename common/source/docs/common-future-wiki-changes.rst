@@ -58,23 +58,6 @@ The upper PWM range from the input trim value to its maximum input is translated
 .. image:: ../../../images/rcscaled-io.jpg
    :target: ../../_images/rcscaled-io.jpg
 
-Also note expansion to 32 outputs instead of 16 : See https://github.com/ArduPilot/ardupilot_wiki/pull/4595
- 
-Add IRC Tramp VTX Support
-=========================
-
-See https://github.com/ArduPilot/ardupilot_wiki/pull/4596
-
-Add In-Flight FFT averaging
-===========================
-
-See https://github.com/ArduPilot/ardupilot_wiki/pull/4614
-
-Add Analog Fuel Level Sensors
-=============================
-
-See https://github.com/ArduPilot/ardupilot_wiki/pull/4413
-
 On :ref:`common-rangefinder-landingpage`
 ========================================
 
@@ -162,14 +145,6 @@ add:
 
 .. note:: Logging of the continuously streaming log messages, such as attitude, sensors, etc. can be paused by using the ``RCx_OPTION`` auxiliary function "164" on a transmitter channel. Switching this channel high will pause these messages, but not events, mode changes, warnings, etc. This allows autopilots with limited logging capabilites (ie using Block logging to chip memory and no SD card) to log only when desired during the flight, as during tuning phases or determination of TECs parameters, etc.
 
-[site wiki="rover"]
-
-Add info about steering speed scaling option
-============================================
-
-see https://github.com/ArduPilot/ardupilot_wiki/pull/4423
-
-[/site]
 [site wiki="plane"]
 
 Add info on altitude control in LOITER mode
