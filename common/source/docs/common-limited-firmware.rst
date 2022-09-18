@@ -4,121 +4,14 @@
 Firmware Limitations on AutoPilot Hardware
 ==========================================
 
-The ArduPilot firmware in some configurations exceeds 1 MB in size. Some autopilots may not have enough
-flash memory to store the full firmware.
+The ArduPilot firmware in some configurations exceeds 1 MB in size. Some autopilots may not have enough flash memory to store the full firmware.
 
-For the affected autopilots, a reduced firmware is generated. This firmware omits less-commonly used features
-in order to reduce the firmware size to less than 1 MB.
+For the affected autopilots, a reduced firmware is generated. This firmware omits less-commonly used features in order to reduce the firmware size to less than 1 MB.
 
-The missing features are listed below. If you require any of these features, you can try to create a build with them in it (at the expense of other non-needed features) using the `Custom Firmware Build Server <https://custom.ardupilot.org>`__.
+The missing features are listed on :ref:`this page<binary-features>` for each board type for the current "latest" firmware. If you require any of these features, you can try to create a build with them in it (at the expense of other non-needed features) using the `Custom Firmware Build Server <https://custom.ardupilot.org>`__. The missing features list for a board are listed in the same groups and labels as those shown on the Custom Firmware Build Server.
 
-Limitations Common to all 1MB Boards
-====================================
-
-Exclusions for: KakuteF4, Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini, older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip), BeastF4, F35Lightning, F4BY, MambaF405v2, MazzyStarDrone, OmnibusNanoV6, VRBrain-v51, VRBrain-v52, VRCore-v10, VRUBrain-v51, airbotf4, crazyflie2, mini-pix, revo-mini, skyviper, speedybeef4.
-
-- ADSB
-- EFI Controller Support
-- External AHRS
-- FETtec ESCs
-- INA2XX Battery Monitors
-- Fuel Level and Fuel Flow Battery Monitors
-- Plane Deep Stall Landing
-- Torqeedo Motor Control
-- MAVLink frame rate control from SD file
-- INS Temperature Calibration
-- SOLO Gimbal Support
-- Visual Odometry
-- Airspeed Drag Compensation
-- Plus Code Location Support
-- Object Avoidance using Proximity Sensors
-- CRSF Text Display (Telemetry is included)
-- Bootloader inclusion in main code base
-- EKF2 (EKF3 only)
-- LUA scripting support
-- In-Flight FFT control of Harmonic Notch
-
-Additional Limitations for Certain 1MB and Other Boards
-=======================================================
-
-Additional Feature Exclusions for: Sparky2, OMNIBUSF7V2, KakuteF7, and older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip)
-
-   -  **Common to all vehicles**
-
-      -  Aux function for testing IMU failover (KILL_IMU)
-      -  LTM, MSP, CRSF, Spektrum, Devo and Hott telemetry formats
-      -  Piccolo CAN
-      -  Oreo LED lights
-      -  NCP5623 LED lights
-      -  NMEA output format
-      -  Solo Gimbal
-      -  In Flight FFT support
-      -  MTK, SIRF GPS support
-      -  AK09916 on ICM20948 compass
-      -  Runcam Control
-      -  External I2C barometers
-      -  DLVR Airspeed sensors
-      -  CAN Tester
-      -  KDE CAN
-      -  External AHRS
-      -  Generator
-      -  GPS moving baseline
-      -  MSP Rangefinders
-      -  Camera Mount Control
-      -  OSD Parameter Editor
-      -  OSD Scrolling Sidebars
-      -  Button
-      -  OAPathPlanner
-       
-   -  **Copter only**
-
-      -  Sprayer
-      -  Gripper
-      -  RPM
-      -  Guided, Follow, Sport, Guided_noGPS, SystemID, Zigzag and Autorotate modes
-      -  Beacon
-      -  Optical Flow
-
-   -  **Plane Only**
-
-      -  Gripper
-      -  Soaring
-      -  Landing Gear
-      -  Qautotune mode
-      -  Off-board Guided
-
-   -  **Rover Only**
-
-      -  N/A
-
-
-   -  **Sub Only**
-
-      -  N/A
-
-Additional exclusions for: Matek F405, Matek F405-Wing/F405-SE, OmnibusF4/F4Pro
-
-   -  SMBUS battery
-   -  Parachute 
-   -  Sprayer
-   -  OAPathPlanner
-   -  Generator
-   -  Precision Landing
-   -  Baro Wind Compensation *
-   -  Gripper *
-
-      * enabled in OmnibusF4/F4Pro
-
-Also for MatekF405-Wing:
-
-   -  Wind Compensation
-   -  RunCam Control
-   -  Spektrum Telem
-
-Additional exclusions for: SuccexF4
-
-   -  Parachute
-   -  Sprayer
+Using the server does require you to know which features you DO want to have and check them, as well as the ones desired that are currently missing.
+A table of all current build options that can be selected are shown :ref:`here<all-features>`.
 
 .. _ram_limitations:
 
@@ -143,5 +36,10 @@ If this occurs, several possible options are available to allow temporary use of
 - If using DroneCAN, try reducing the memory allocation from the default of 16KB (for two nodes) using the ``CAN_Dx_UC_POOL`` parameters.
 
 .. note:: in Mission Planner's STATUS tab, you can monitor the "freemem" status for current free RAM. Be aware, that its a total of unallocated memory and that everything that requires a memory allocation needs it to be one, contiguous block. But the status will give an indication of what is available. For example, MAVftp needs ~ 12K contiguous block to start.
+
+.. toctree::
+    :hidden:
+
+    Features <binary-features>
 
 [copywiki destination="plane,copter,rover,blimp"]
