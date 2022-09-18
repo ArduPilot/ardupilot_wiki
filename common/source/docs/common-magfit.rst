@@ -1,5 +1,6 @@
 .. _common-magfit:
 
+==================================================
 Refining Calibration Parameters using a Flight Log
 ==================================================
 
