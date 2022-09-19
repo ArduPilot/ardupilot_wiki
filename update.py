@@ -858,7 +858,7 @@ def create_features_page(features, build_options_by_define, vehicletype):
             continue
         features_by_platform[build["platform"]] = build["features"]
     rows = []
-    column_headings = ["Category", "Feature", "Incuded", "Description"]
+    column_headings = ["Category", "Feature", "Included", "Description"]
     all_tables = ""
     for platform_key in sorted(features_by_platform.keys(), key=lambda x : x.lower()):
         rows = []
