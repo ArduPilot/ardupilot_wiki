@@ -21,6 +21,7 @@ Harmonic Notch Configuration for Throttle Based Mode
 - Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` and/or :ref:`INS_HNTC2_REF <INS_HNTC2_REF>` = *hover_thrust* to set the harmonic notch reference value
 - Set :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` = *hover_freq* to set the harmonic notch reference frequency
 - Set :ref:`INS_HNTCH_BW <INS_HNTCH_BW>` and/or :ref:`INS_HNTC2_BW <INS_HNTC2_BW>` = *hover_freq* / 2 to set the harmonic notch bandwidth
+- Set :ref:`INS_HNTCH_FM_RAT<INS_HNTCH_FM_RAT>` and/or :ref:`INS_HNTC2_FM_RAT<INS_HNTC2_FM_RAT>` to the percentage of :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` that you desire the notch frequency to track below hover throttle. Note that lower frequency notch filters will have more phase lag and can impact stability. If you want throttle based notch filtering to be effective at a throttle up to 30% below the configured notch frequency then set this parameter to 0.7. The default of 1.0 means the notch will not go below the frequency in the :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` parameter.
 
 Check the performance of the filter(s) after setup by doing another post filter configuration test flight as discussed in the :ref:`batch sampler<common-imu-batchsampling>` section and analyzing the logs.
 
