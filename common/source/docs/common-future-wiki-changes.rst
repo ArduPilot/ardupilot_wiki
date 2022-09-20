@@ -130,11 +130,5 @@ Three position switch. If high, will request arming. If switched to low position
    </tr>
    </table>
 
-In :ref:`common-imu-fft`
-========================
-
-add:
-
-.. note:: Setting up the FFT parameters can be done automatically using the ``RCx_OPTION`` auxiliary function "162" on a transmitter switch. Set the function to a switch on the transmitter. Hover the vehicel, switch it on (high) for 30 seconds, switch back low and land. The parameters will have been setup and switch function removed.
 
 
