@@ -79,6 +79,7 @@ Unidirectional Rangefinders
     Maxbotix Analog Sonar <common-rangefinder-maxbotix-analog>
     ST VL53L0X / VL53L1X Lidar <common-vl53l0x-lidar>
     TeraRanger One/EVO Rangefinders <common-teraranger-one-rangefinder>
+    TeraRanger NEO <common-teraranger-neo>
     Underwater Sonar <common-underwater-sonars-landingpage>
 
 Omnidirectional Proximity Rangefinders
