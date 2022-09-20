@@ -30,6 +30,8 @@ NAV_VTOL_TAKEOFF command is ignored.
 
 If a NAV_VTOL_TAKEOFF is executed when already flying, the vehicle will enter VTOL mode and climb the amount given in the altitude parameter, above its current altitude. This behavior can be modified by using the "respect takeoff frames" bit of the :ref:`Q_OPTIONS<Q_OPTIONS>` bitmask which will skip to the next command if already at or above the altitude set in the parameter, or climb to it.
 
+In order to prevent the landing gear from dragging due to GPS noise at the beginning of the takeoff, you can set :ref:`Q_NAVALT_MIN<Q_NAVALT_MIN>` to a non zero value which will force the roll and pitch to be zero until that altitude is reached. At which point, navigation (ie loiter in position during the takeoff climb) will become active.
+
 AUTO VTOL Landing
 -----------------
 
