@@ -867,12 +867,19 @@ def create_features_page(features, build_options_by_define, vehicletype):
         sorted_platform_features_not_in = []
         for feature in platform_features:
             feature_in = not feature.startswith("!")
-            if feature_in:
+            if not feature_in:
+                feature = feature[1:]
+            try:
                 build_options = build_options_by_define[feature]
-                sorted_platform_features_in.append((build_options.category, feature))
+            except KeyError:
+                # mismatch between build_options.py and features.json
+                print("feature %s not in build_options.py" % feature)
+                continue
+            if feature_in:
+                some_list = sorted_platform_features_in
             else:
-                build_options = build_options_by_define[feature[1:]]
-                sorted_platform_features_not_in.append((build_options.category, feature))
+                some_list = sorted_platform_features_not_in
+            some_list.append((build_options.category, feature))
 
         sorted_platform_features = (
             sorted(sorted_platform_features_not_in, key=lambda x : x[0] + x[1]) +
