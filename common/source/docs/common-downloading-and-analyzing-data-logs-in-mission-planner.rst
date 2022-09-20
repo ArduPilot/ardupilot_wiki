@@ -29,7 +29,10 @@ Some commonly used parameters are:
 - :ref:`LOG_FILE_MB_FREE<LOG_FILE_MB_FREE>`: This parameter sets the minimum free space on the logging media before logging begins. If this is not available, then older logs will be deleted to provide it during initialization. Default is 500MB.
 - :ref:`LOG_FILE_RATEMAX<LOG_FILE_RATEMAX>`: This sets the maximum rate that streaming log messages will be logged to the file backend to limit file sizes. A value of zero(default) means no limit is applied to normal logging, which depends on the :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>` value ( 50Hz: Plane, 300Hz: QuadPlane/Rover, 400Hz: Copter, normally). Note that similarly, :ref:`LOG_BLK_RATEMAX<LOG_BLK_RATEMAX>` and :ref:`LOG_MAV_RATEMAX<LOG_MAV_RATEMAX>` perform the same optional limiting for the BLOCK logging and MAVLink logging streams, respectively.
 
-.. note:: If you suspect that you are missing logging entries due to excessive logging speed, you can check the DSF.Dp log message for the amount of missed entries
+.. note:: If you suspect that you are missing logging entries due to excessive logging speed, you can check the DSF.Dp log message for the amount of missed entries.
+
+.. note:: Logging of the continuously streaming log messages, such as attitude, sensors, etc. can be paused by using the ``RCx_OPTION`` auxiliary function "164" on a transmitter channel. Switching this channel high will pause these messages, but not events, mode changes, warnings, etc. This allows autopilots with limited logging capabilites (ie using Block logging to chip memory and no SD card) to log only when desired during the flight, as during tuning phases or determination of TECs parameters, etc. You can also eliminate unneeded log messages using :ref:`LOG_BITMASK<LOG_BITMASK>` to reduce log size
+
 
 .. _common-downloading-and-analyzing-data-logs-in-mission-planner_downloading_logs_via_mavlink:
 
