@@ -58,10 +58,6 @@ The upper PWM range from the input trim value to its maximum input is translated
 .. image:: ../../../images/rcscaled-io.jpg
    :target: ../../_images/rcscaled-io.jpg
 
-On :ref:`common-rangefinder-landingpage`
-========================================
-
-Add link to :ref:`common-teraranger-neo`
 
 
 
