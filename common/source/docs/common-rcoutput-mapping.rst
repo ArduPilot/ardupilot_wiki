@@ -85,6 +85,38 @@ GENERIC FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |      RCPassThru16              | 66 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
+|      RCIN1Scaled               |140 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN2Scaled               |141 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN3Scaled               |142 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN4Scaled               |143 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN5Scaled               |144 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN6Scaled               |145 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN7Scaled               |146 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN8Scaled               |147 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN9Scaled               |148 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN10Scaled              |149 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN11Scaled              |150 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN12Scaled              |151 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN13Scaled              |152 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN14Scaled              |153 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN15Scaled              |154 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN16Scaled              |155 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
 
 Disabled
 ++++++++
@@ -114,6 +146,16 @@ RCPassThru1 to RCPassThru16
 +++++++++++++++++++++++++++
 
 This operates the same as RCPassThru explained above. However, instead of the ``SERVOx`` output being controlled by the ``RCx`` input, any RC input can be assigned to control this output. For example RCPassThru 1 (51) would assign RC Channel 1 input to control the output. So, for output 1, assigning 51 to the :ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>` is identical to assigning  the value of 1 passing RC Channel 1 to the output.
+
+RCIN1Scaled to RCIN16Scaled
++++++++++++++++++++++++++++
+
+This operates similar to RCPassThru1 to RCPassThru16 above. However, instead of exactly passing the received PWM to the output, its is scaled.The RC input's dead-zone(DZ) is also obeyed.
+
+The upper PWM range from the input trim value to its maximum input is translated to its corresponding output's trim to maximum parameter values range, and similarly for the ranges below the input's trim value as shown below:
+
+.. image:: ../../../images/rcscaled-io.jpg
+   :target: ../../_images/rcscaled-io.jpg
 
 PLANE FUNCTIONS (Also applies to QuadPlanes)
 --------------------------------------------
