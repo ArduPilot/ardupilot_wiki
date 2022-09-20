@@ -12,9 +12,6 @@ This lists features or changes merged in master and build in the "latest" firmwa
 .. toctree::
     :maxdepth: 1
 
-[site wiki="rover"]
-    Dock Mode <dock-mode>
-[/site]
     Other wiki changes <common-future-wiki-changes>
 
 
