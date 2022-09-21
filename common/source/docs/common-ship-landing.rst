@@ -51,7 +51,7 @@ You will need ArduPilot plane 4.2 or later
 Lua Script
 ----------
 
-The ship landing functionality is in a :ref:`LUA script<common-lua-scripts>`. You will need the plane_ship_landing.lua script from `here <https://github.com/ardupilot/ardupilot/blob/master/libraries/AP_Scripting/examples/plane_ship_landing.lua>`__
+The ship landing functionality is in a :ref:`LUA script<common-lua-scripts>`. You will need the plane_ship_landing.lua script from `here <https://github.com/ardupilot/ardupilot/blob/master/libraries/AP_Scripting/applets/plane_ship_landing.lua>`__
 
 This script needs to be put in the APM/scripts directory on your microSD card on the aircraft.
 
