@@ -4,15 +4,15 @@
 MSP OSD
 =======
 
-ArduPilot supports 2 types of MSP OSDs:
+ArduPilot supports several types of MSP OSDs using MSP based protocols:
 
- - Telemetry based OSDs such as DJI FPV Goggles V1/V2, DJI Goggles RE, FatShark ByteFrost, FatShark SharkByte, MWOSD, etc
- - DisplayPort (aka CANVAS MODE) based OSD's such as FatShark SharkByte (fw 09042021 and later) and MWOSD
+ - Telemetry based OSDs such as DJI FPV Goggles V1/V2, DJI Goggles RE, FatShark ByteFrost, FatShark SharkByte, `MWOSD <http://www.mwosd.com/>`__ , etc
+ - DisplayPort (sometimes incorrectly referred to as CANVAS MODE) based OSD's such as FatShark SharkByte (fw 09042021 and later), DJI goggles using the `wtf-os <https://github.com/fpv-wtf/wtfos>`__ firmware and `msdp-osd module <https://github.com/fpv-wtf/msp-osd>`__, and MWOSD's DisplayPort mode/firmware
 
 Telemetry based OSDs will render OSD panel items on screen with their own engine, so ArduPilot has no control of how the items look.
 Another limit of telemetry based OSDs is that there's no way for ArduPilot to add new panel items at will, it's the vendor's responsibility to add new features by rolling out new firmware releases.
 
-DisplayPort, on the contrary, is an MSP protocol extension that allows to remotely draw text on compatible external OSDs, DisplayPort is also known as CANVAS MODE.
+DisplayPort, on the contrary, is an MSP protocol extension that allows to remotely draw text on compatible external OSDs, DisplayPort is also known (incorrectly) as CANVAS MODE.
 Basically it’s a remote text only frame buffer that uses local fonts (local to the rendering engine i.e. the OSD hardware) to render strings sent via MSP.
 
 Telemetry based OSD
@@ -47,7 +47,7 @@ To enable MSP OSD, set the following parameters ( example using SERIAL port 2 as
  - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 33
  - :ref:`MSP_OPTIONS<MSP_OPTIONS>` = 0 (polling mode)
 
-.. note:: DJI OSD must be enabled: in SETTINGS->DISPLAY->CUSTOM OSD menu of goggles
+.. note:: DJI Custom OSD must be enabled: in SETTINGS->DISPLAY->CUSTOM OSD menu of goggles
 
 OSD Panel Items
 ---------------
@@ -170,9 +170,13 @@ Features
 DisplayPort OSDs can render all the panel items supported by the ArduPilot's onboard OSD.
 Features such as multiple screen switching, multiple units and statistics are supported as well, please refer to the :ref:`onboard OSD documentation <common-osd-overview>`  for more info.
 
-By setting :ref:`MSP_OPTIONS<MSP_OPTIONS>` bit 2 to 1 one can force ArduPilot to impersonate betaflight and use a betaflight compatible font table on the remote OSD system.
-This is required if the remote OSD system does not have an ArduPilot compatible fonts table. MWOSD already supports custom fonts and therefore does not require this hack while FatShark's SharkByte will support custom fonts in a future release.
-Default behaviour is to use the ArduPilot fonts table.
+By setting :ref:`MSP_OPTIONS<MSP_OPTIONS>` bit 2 to 1 (value = 4) one can force ArduPilot to impersonate Betaflight and use a Betaflight compatible font indexes for the font table integrated in the remote OSD system.
+
+This is required if the remote OSD system does not have an ArduPilot compatible fonts table. MWOSD and DJI goggles using the wtf-os/msp-osd firmware already support custom fonts locally and therefore does not require this hack, while HDzero recently added an ArduPilot compatible font set.
+
+.. note:: the direction arrows will be reversed since ArduPilot and Betaflight use direction arrows in their font tables that are 180 deg different than each other.
+
+Default behavior (:ref:`MSP_OPTIONS<MSP_OPTIONS>` = 0) is to use the ArduPilot font table's indexes.
 
 Configuration
 -------------
@@ -182,10 +186,31 @@ To enable MSP DisplayPort OSD, set the following parameters (using SERIAL port 2
  - :ref:`OSD_TYPE<OSD_TYPE>` = 5
  - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 42
 
+DJI Goggles with WTF-OSD firmware
+---------------------------------
+
+Depending on existing firmware revision, you can modify the firmware of the DJI goggles with a third party "rooting" and OS replacement that allows using DisplayPort protocol and gives the same capabilities as that of the ArduPilot internal OSD in terms of panel items, screens, and placement.
+
+In addition, you can have either standard definition (SD) fonts, or high definition (HD) fonts, as well as colors for the fonts. The steps required to use this are:
+
+- Use the `wtf-osd web based configurator <https://testing.fpv.wtf>`__ configuration buttons on your goggles and air units to:
+
+#. ``Root`` the goggles and air unit
+#. Install ``WTFOS``
+#. Use the "Package Manager" to install the ``msp-osd`` module
+#. Install the font package on the root directory of the goggles SD card
+#. Configure :ref:`OSD_TYPE<OSD_TYPE>` = 5 and :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 42
+
+Now you can select to display either the SD or HD fonts using ``OSDx_TXT_RES`` for each screen.
+
+The SD fonts position are set on a 30x16 X/Y position grid as normal, the HD use a 50x18 grid.
+
+Sets of fonts converted from ArduPilots standard font sets are provided on the msp-osd module site, but an additional SD/HD sets with color icons will be available by ArduPilot. Check back here for links in the future.
+
+
 Testing OSD with SITL
 =====================
-
-OSD functionality can be tested and panel items adjusted without autopilot or video hardware using the :ref:`Software In The Loop (SITL) simulator <dev:sitl-simulator-software-in-the-loop>` setup. Follow those SITL-Instructions to setup a simulation environment. Run the simulator on current source code using ``--osdmsp`` option to build the OSD code into the simulator. For example, for a plane simulation:
+MSP OSD functionality can be tested and panel items adjusted without autopilot or video hardware using the :ref:`Software In The Loop (SITL) simulator <dev:sitl-simulator-software-in-the-loop>` setup. Follow those SITL-Instructions to setup a simulation environment. Run the simulator on current source code using ``--osdmsp`` option to build the OSD code into the simulator. For example, for a plane simulation:
 
 ::
 
