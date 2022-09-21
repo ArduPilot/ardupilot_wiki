@@ -1,0 +1,25 @@
+# Install sphinx with a specific docutils version
+# Docutils version is for correct bullet point rendering. Can be rolled forward after the theme is updated to >=0.5.1
+# See https://stackoverflow.com/a/68685753/2578171
+sphinx==7.1.2; python_version=="3.8"
+sphinx==7.2.6; python_version>"3.8"
+sphinx-tabs==3.*
+docutils<0.19
+requests>=2.31.0
+
+# lxml for parameter parsing:
+lxml
+
+# Install sphinx theme from ArduPilot repository
+git+https://github.com/ArduPilot/sphinx_rtd_theme.git
+
+# Sphinx youtube and video plugins:
+# This package will require a --force option if you have an older extension installed
+# Rerun Sphinxsetup.sh after doing that
+git+https://github.com/ArduPilot/sphinxcontrib-youtube.git
+
+# and a parser to use getting posts from Discourse (forum) and insert in FrontEnd
+beautifulsoup4
+
+# Install flake8
+flake8==3.7.9
