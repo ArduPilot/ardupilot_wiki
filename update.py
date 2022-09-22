@@ -865,10 +865,12 @@ def create_features_page(features, build_options_by_define, vehicletype):
         platform_features = features_by_platform[platform_key]
         sorted_platform_features_in = []
         sorted_platform_features_not_in = []
+        features_in = {}
         for feature in platform_features:
             feature_in = not feature.startswith("!")
             if not feature_in:
                 feature = feature[1:]
+            features_in[feature] = feature_in
             try:
                 build_options = build_options_by_define[feature]
             except KeyError:
@@ -886,23 +888,21 @@ def create_features_page(features, build_options_by_define, vehicletype):
             sorted(sorted_platform_features_in, key=lambda x : x[0] + x[1]))
 
         for (category, feature) in sorted_platform_features:
-            feature_in = not feature.startswith("!")
-            if not feature_in:
-                # trim off the !
-                feature = feature[1:]
             build_options = build_options_by_define[feature]
             row = [category, build_options.label]
-            if feature_in:
+            if features_in[feature]:
                 row.append("Yes")
             else:
                 row.append("No")
             row.append(build_options.description)
-            if not feature_in:
+            if not features_in[feature]:
                 # for now, do not include features that are on the
                 # board, just those that aren't, per Henry's request:
                 rows.append(row)
-        t = rst_table.tablify(rows,
-                              headings=column_headings)
+        if len(rows) == 0:
+            t = ""
+        else:
+            t = rst_table.tablify(rows, headings=column_headings)
         underline = "-" * len(platform_key)
         all_tables += ('''
 .. _%s:
