@@ -205,7 +205,7 @@ Now you can select to display either the SD or HD fonts using ``OSDx_TXT_RES`` f
 
 The SD fonts position are set on a 30x16 X/Y position grid as normal, the HD use a 50x18 grid.
 
-Sets of fonts converted from ArduPilots standard font sets are provided on the msp-osd module site, but an additional SD/HD sets with color icons will be available by ArduPilot. Check back here for links in the future.
+Sets of fonts converted from ArduPilots standard font sets are provided on the msp-osd module site, but an additional SD/HD sets with color icons are available `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts/HDFonts>`__
 
 
 Testing OSD with SITL
