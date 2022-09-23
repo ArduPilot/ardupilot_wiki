@@ -23,6 +23,7 @@ GPS/Compass
     CUAV Neo 3 Pro DroneCAN GPS <common-cuav-neo-3-pro>
     CUAV Neo 3（M9N) GPS <common-cuav-neo-3>
     Hex Here 2 DroneCAN GPS/Gyro/IMU/Baro <http://www.proficnc.com/all-products/152-gps-module.html>
+    Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>    
     Holybro Micro M8N GPS Module <https://shop.holybro.com/micro-m8n-gps_p1009.html> 
     Holybro Nano Ublox M8 5883 GPS Module <https://shop.holybro.com/nano-ublox-m8-5883-gps-module_p1236.html> 
     Holybro M8N (Pixhawk 4) GPS Module <https://shop.holybro.com/pixhawk-4-gps-module_p1094.html>
@@ -53,7 +54,6 @@ These GPS can incorporate real time kinematic data, either internally generated 
     Hitec PositionPro GNSS <https://www.hiteccs.com/drones/peripheral-details/positionpro-gnss-receiver/>
     Holybro RTK M8P Family <common-holybro-rtk-m8p>
     Holybro RTK F9P Family <common-holybro-rtk-f9p>
-    Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/RTK_F9P>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
     Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
