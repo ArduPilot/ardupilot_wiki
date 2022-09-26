@@ -21,6 +21,10 @@ General Swashplate/Collective Setup
 
 These set the cyclic max, allow bench testing of blade angle setup, and setting features of the swashplate/collective.
 
+- :ref:`H_COL_ANG_MIN<H_COL_ANG_MIN>`
+- :ref:`H_COL_ANG_MAX<H_COL_ANG_MAX>`
+- :ref:`H_COL_ZERO_THRST<H_COL_ZERO_THRST>`
+- :ref:`H_COL_LAND_MIN<H_COL_LAND_MIN>`
 - :ref:`H_CYC_MAX<H_CYC_MAX>`
 - :ref:`H_SV_MAN<H_SV_MAN>`
 - :ref:`H_SV_TEST<H_SV_TEST>`
@@ -36,7 +40,7 @@ These setup the configuration of the swashplate and collective travel.
 - :ref:`H_SW_H3_ENABLE<H_SW_H3_ENABLE__AP_MotorsHeli_Single>`  Never manually set this parameter!
 - :ref:`H_COLYAW<H_COLYAW>`
 - :ref:`H_COL_MAX<H_COL_MAX>`
-- ``H_COL_MID``
+- ``H_COL_MID``  This parameter was used in versions prior to Copter 4.3.0
 - :ref:`H_COL_MIN<H_COL_MIN>`
 - :ref:`H_SW_COL_DIR<H_SW_COL_DIR__AP_MotorsHeli_Single>`
 - :ref:`H_SW_LIN_SVO<H_SW_LIN_SVO__AP_MotorsHeli_Single>`
@@ -52,7 +56,7 @@ If Dual Heli frame type is selected, these additional parameters for the second 
 - :ref:`H_YAW_SCALER<H_YAW_SCALER>`
 - :ref:`H_COL2_MIN<H_COL2_MIN>`
 - :ref:`H_COL2_MAX<H_COL2_MAX>`
-- ``H_COL2_MID``
+- ``H_COL2_MID``  This parameter was used in versions prior to Copter 4.3.0
 - :ref:`H_SW2_TYPE<H_SW2_TYPE>`
 - :ref:`H_SW2_COL_DIR<H_SW2_COL_DIR>`
 - :ref:`H_SW2_LIN_SVO<H_SW2_LIN_SVO>`
@@ -92,6 +96,7 @@ The speed of the rotor, or rotors in the case of Dual Heli, is controlled by Ard
 - :ref:`H_RSC_RUNUP_TIME<H_RSC_RUNUP_TIME>`
 - :ref:`H_RSC_SLEWRATE<H_RSC_SLEWRATE>`
 - :ref:`H_RSC_CRITICAL<H_RSC_CRITICAL>`
+- :ref:`H_RSC_CLDWN_TIME<H_RSC_CLDWN_TIME>`
 - :ref:`H_RSC_AROT_PCT<H_RSC_AROT_PCT>` Currently only available in SITL
 
 External Governor
@@ -117,11 +122,15 @@ ArduPilot Provided Rotor Speed Governor
 
 Parameters for internal rotor speed governor, if used.  Internal throttle curve will need to be set up to use this mode.
 
-- ``H_RSC_GOV_DISGAG``
+- ``H_RSC_GOV_DISGAG``  This parameter was used in versions prior to Copter 4.3.0
 - :ref:`H_RSC_GOV_DROOP<H_RSC_GOV_DROOP>`
 - :ref:`H_RSC_GOV_RANGE<H_RSC_GOV_RANGE>`
-- ``H_RSC_GOV_SETPNT``
-- ``H_RSC_GOV_TCGAIN``
+- ``H_RSC_GOV_SETPNT``  This parameter was used in versions prior to Copter 4.3.0
+- ``H_RSC_GOV_TCGAIN``  This parameter was used in versions prior to Copter 4.3.0
+- :ref:`H_RSC_GOV_COMP<H_RSC_GOV_COMP>`
+- :ref:`H_RSC_GOV_FF<H_RSC_GOV_FF>`
+- :ref:`H_RSC_GOV_RPM<H_RSC_GOV_RPM>`
+- :ref:`H_RSC_GOV_TORQUE<H_RSC_GOV_TORQUE>`
 
 Tail Setup
 ==========
