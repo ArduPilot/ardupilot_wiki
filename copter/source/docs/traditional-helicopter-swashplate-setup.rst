@@ -16,6 +16,14 @@ three servo swashplates as there is no chance for binding. It will most likely
 always be required for four servo swashplates because of the potential for binding 
 in a four point attachment. 
 
+The following video covers the swashplate setup and leveling the swashplate.
+
+..youtube::
+
+This video covers setting up the min collective, max collective, zero thrust collective, max cyclic and stabilize collective curve.
+
+..youtube::
+
 Before You Begin
 ================
 
