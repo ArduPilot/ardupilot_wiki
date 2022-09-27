@@ -197,15 +197,17 @@ In addition, you can have either standard definition (SD) fonts, or high definit
 
 #. ``Root`` the goggles and air unit
 #. Install ``WTFOS``
-#. Use the "Package Manager" to install the ``msp-osd`` module
-#. Install the font package on the root directory of the goggles SD card
+#. Use the "Package Manager" to install the ``msp-osd`` module 
+#. Install the font package as instructed by the msp-osd readme in the root directory of the goggles SD card
 #. Configure :ref:`OSD_TYPE<OSD_TYPE>` = 5 and :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 42
 
-Now you can select to display either the SD or HD fonts using ``OSDx_TXT_RES`` for each screen.
+Now you can select to display either the SD or HD fonts using ``OSDx_TXT_RES`` for each OSD screen enabled.
 
-The SD fonts position are set on a 30x16 X/Y position grid as normal, the HD use a 50x18 grid.
+The SD font's positions are set on a 30x16 X/Y position grid as normal, the HD uses a 50x18 grid.
 
-Sets of fonts converted from ArduPilots standard font sets are provided on the msp-osd module site, but an additional SD/HD sets with color icons are available `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts/HDFonts>`__
+Sets of fonts converted from ArduPilots standard font sets are provided on the ``msp-osd`` module site, but additional DJI-style SD/HD sets with color icons are available `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts/HDFonts>`__
+
+.. note:: the font set above will need to be renamed and placed in the appropriate subdirectory on the goggle's SD card if usinng a version after ``mspd-osd`` ver 0.6.7. Follow the readme for whatever version you are using of ``msp-osd``.
 
 
 Testing OSD with SITL
