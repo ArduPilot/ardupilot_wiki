@@ -150,6 +150,7 @@ Full Table of Contents
     Lua Scripts <docs/common-lua-scripts>
     Porting to a new Flight Controller <docs/porting>
     OEM Customization <docs/common-oem-customizations>
+    Secure Firmware <docs/secure-firmware>
     RemoteID <docs/opendroneid>
     Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
