@@ -19,6 +19,7 @@ The main failsafe topics are listed below.
     EKF Failsafe <ekf-inav-failsafe>
     Dead Reckoning Failsafe <deadreckoning-failsafe>
     Vibration Failsafe <vibration-failsafe>
+    Dead Motor Takeoff Prevention <tkoff-rpm-min>
     Terrain Data Loss Failsafe (see section on loss of terrain data induced RTL) <terrain-following>
     Crash Check <crash_check>
     Parachute <common-parachute>
