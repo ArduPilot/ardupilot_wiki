@@ -59,8 +59,8 @@ Closed hardware
     Holybro Kakute F4 Mini* <common-holybro-kakutef4-mini>
     Holybro Kakute F7 AIO* <common-holybro-kakutef7aio>
     Holybro Kakute F7 Mini* (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
-    Holybro Kakute H7-BT <common-holybro-kakuteh7.rst>
-    Holybro Kakute H7 Mini <common-holybro-kakuteh7mini.rst>
+    Holybro Kakute H7 V2 <common-holybro-kakuteh7-v2>
+    Holybro Kakute H7 Mini v1.3 <common-holybro-kakuteh7mini-v13>
     Holybro Pixhawk 4 Mini <common-holybro-ph4mini>
     Holybro Pixhawk5X <common-holybro-ph5x>
     Horizon31 PixC4-Jetson <common-horizon31-pixc4-jetson>
@@ -70,12 +70,7 @@ Closed hardware
     Mamba Basic F405 mk3 <common-mamba-basic-mk3>
     Mamba H743 v4 <common-mambaH743v4>
     MakeFlyEasy PixSurveyA1 <common-makeflyeasy-PixSurveyA1>
-    Mateksys F405-SE <common-matekf405-se>
-    Mateksys F405-STD and variants* <common-matekf405>
     Mateksys F405 TE Family <common-matekf405-te>
-    Mateksys F405-Wing* <common-matekf405-wing>
-    Mateksys F765-Wing <common-matekf765-wing>
-    Mateksys F765-WSE <common-matekf765-wse>
     Mateksys H743-Wing/MINI/SLIM <common-matekh743-wing>
     mRo ControlZero F7 <common-mro-control-zero-F7>
     mRo Pixracer Pro (H7) <common-pixracer-pro>
@@ -123,8 +118,15 @@ The following boards are no longer produced, however documentation is still avai
     Emlid Edge <common-emlid-edge>
     Erle PXFmini RPi Zero Shield <common-pxfmini>
     Erle ErleBrain <common-erle-brain-linux-autopilot>
+    Holybro Kakute H7 Mini <common-holybro-kakuteh7mini.rst>
+    Holybro Kakute H7-BT <common-holybro-kakuteh7.rst>
     Intel Aero <common-intel-aero-overview>
     Intel Aero RTF vehicle <common-intel-aero-rtf>
+    Mateksys F405-SE <common-matekf405-se>
+    Mateksys F405-STD and variants* <common-matekf405>
+    Mateksys F405-Wing <common-matekf405-wing>
+    Mateksys F765-Wing <common-matekf765-wing>
+    Mateksys F765-WSE <common-matekf765-wse>
 
 The following boards are no longer supported. The documentation is :ref:`archived<common-archived-topics>`, but
 available if you're still working on those platforms:
