@@ -43,24 +43,39 @@ In order to provide tamper protection, a special autopilot firmware must be buil
 
 For details on building firmware with OpenDroneID feature, see :ref:`dev:opendroneid` for details.
 
+ArduRemoteID
+============
+
 ArduPilot also has developed firmware for  ESP32-S3 and C3 development boards for an OpenDroneID compatible Remote ID module for attachment by serial MAVLink connection or DroneCAN to the autopilot. A binary for flashing the board, along with instructions, is `available here <https://github.com/ArduPilot/ArduRemoteID>`__ .  Note, this firmware is rapidly evolving, so check for updates frequently. This device can be attached to the autopilot by USB, or serial, or DroneCAN (if external CAN transceiver is attached)
 
 .. image:: ../../../images/ESP32-S3.jpg
     :target: ../../_images/ESP32-S3.jpg
 
-Mission Planner (must be the latest beta version) has a tab in its DATA view for Drone ID which allows connection of the required external serial GPS to obtain operation location, and setup tabs for UAS and Operator IDs, if required by your local jurisdiction. It also shows Remote ID status.
+This firmware provides security signing and locking features for tamper resistance on the ArduRemoteID module:
+
+- if the board has a USB programming port,access to that port, as well as the DroneCAN and MAVLink parameters, normally setup before shipment to customers can be locked, either temporarily or permanently, requiring a security key pair and secure commands to be used to alter those parameters.
+- when in a locked state, the only way to update firmware is to use a secure WIFI web interface provided by the module using a public/private key pair.
+
+See the detailed instructions in the `ArduRemoteID README.md file <https://github.com/ArduPilot/ArduRemoteID>`__.
+
+End User Data Setup and Use
+===========================
+
+Mission Planner (must be the latest beta version) has a tab in its DATA view (Drone ID) for OpenDrone ID operation which allows connection of the required external serial GPS to obtain operation location, and setup tabs for UAS and Operator IDs, if required by your local jurisdiction. It also shows Remote ID status.
 The ground station will also have status and pre-arm failure messages displayed if there are problems.
+
+Other GCS are developing similar OpenDroneID setup wizards.
 
 
 Testing
--------
+=======
 
 See :ref:`OpenDroneID <dev:opendroneid>` for information on how to build firmware for OpenDroneID and to run the code on an autopilot to experiment with parameters,etc.
 
 Android Application
 -------------------
 
-There is an `android phone application <https://play.google.com/store/apps/details?id=org.opendroneid.android_osm>`__ in the Google Play Store that allows one to display RemoteID  Bluetooth and/or WIFI transmissions and vehicle data. 
+There is are android phone applications `OSM <https://play.google.com/store/apps/details?id=org.opendroneid.android_osm>`__  and `DroneScanner <https://play.google.com/store/apps/details?id=cz.dronetag.dronescanner>`__ in the Google Play Store that allows one to display RemoteID  Bluetooth and/or WIFI transmissions and vehicle data. 
 
 Other references:
 
