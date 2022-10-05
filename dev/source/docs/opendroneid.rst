@@ -29,6 +29,8 @@ An experimental firmware version can be built for any autopilot by:
 - Adding the line "define AP_OPENDRONEID_ENABLED 1" to its hwdef.dat file, or simply building with the  waf configure option, ``--enable-opendroneid``
 - Adding the waf configure option, ``--enable-firmware-checking``, will add another tamper proofing check. If enabled, a bootloader will not run firmware with a different board ID. This extends the protection already afforded by using a unique board ID for OpenDroneID enabled autopilots that will reject normal attempts of loading firmware without the necessary functions and parameters required for compliance.
 
+.. note:: you will need to build both the bootloader and the main firmware. Use "Tools/scripts/build_bootloaders.py BOARDNAME" to build the bootloader before reconfiguring waf and building the main firmware to include the bootloader with the new board id.
+
 
 Testing
 =======
