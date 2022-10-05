@@ -12,7 +12,7 @@ ArduPilot provides methods for making firmware for autopilot systems integrating
 
 ArduPilot's tamper resistance currently consists of:
 
-- Using a special board ID for ODID (OpenDroneID) firmware that will reject normal attempts of loading firmware without the necessary functions and parameters required for compliance
+- Using a special board ID for ODID (OpenDroneID) firmware that will reject normal attempts of loading firmware without the necessary functions and parameters required for compliance. Any bootloader created with OpenDroneID capabilities also has firmware checking enabled such that it will not boot main firmware unless the board ids match.
 - Special READONLY parameters which can be set in the firmware during the compilation
 
 Future enhancements are planned.
@@ -27,7 +27,7 @@ Building Firmware for Bench Testing and Experimentation
 An experimental firmware version can be built for any autopilot by:
 
 - Adding the line "define AP_OPENDRONEID_ENABLED 1" to its hwdef.dat file, or simply building with the  waf configure option, ``--enable-opendroneid``
-- Adding the waf configure option, ``--enable-firmware-checking``, will add another tamper proofing check. If enabled, a bootloader will not run firmware with a different board ID. This extends the protection already afforded by using a unique board ID for OpenDroneID enabled autopilots that will reject normal attempts of loading firmware without the necessary functions and parameters required for compliance.
+- Any OpenDroneID capable firmware will add another tamper proofing check. An OpenDroneID enabled bootloader will not run firmware with a different board ID. This extends the protection already afforded by using a unique board ID for OpenDroneID enabled autopilots that will reject normal attempts of loading firmware without the necessary functions and parameters required for compliance.
 
 .. note:: you will need to build both the bootloader and the main firmware. Use "Tools/scripts/build_bootloaders.py BOARDNAME" to build the bootloader before reconfiguring waf and building the main firmware to include the bootloader with the new board id.
 
