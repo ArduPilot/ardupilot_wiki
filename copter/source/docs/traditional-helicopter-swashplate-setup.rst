@@ -18,11 +18,11 @@ in a four point attachment.
 
 The following video covers the swashplate setup and leveling the swashplate.
 
-..youtube::
+.. youtube:: oA-9FFYC6Ek
 
 This video covers setting up the min collective, max collective, zero thrust collective, max cyclic and stabilize collective curve.
 
-..youtube::
+.. youtube:: qfOuZc_7J4g
 
 Before You Begin
 ================
