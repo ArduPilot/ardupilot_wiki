@@ -4,29 +4,43 @@
 Traditional Helicopter – ArduPilot Helicopter Ground School
 ===========================================================
 
-Video 1 - Helicopter Parameters
--------------------------------
-
-..  youtube:: GLWUo5uyb7E
-
--------------------------------------------------------------------------------
-
-Video 2 - Head and Servo Setup
+Mounting the Flight Controller
 ------------------------------
 
-..  youtube:: PQkEgexN1Ys
+..  youtube:: sJEO4CUhwjs
 
 -------------------------------------------------------------------------------
 
-Video 3 - Throttle Setup for Electric Helicopters
--------------------------------------------------
+Connecting Servos and Transmitter Setup
+---------------------------------------
+
+..  youtube:: JagHOc0_mNQ
+
+-------------------------------------------------------------------------------
+
+Swashplate Setup and Leveling
+-----------------------------
+
+..  youtube:: oA-9FFYC6Ek
+
+-------------------------------------------------------------------------------
+
+Collective Pitch and Stabilize Curve Setup
+------------------------------------------
+
+..  youtube:: qfOuZc_7J4g
+
+-------------------------------------------------------------------------------
+
+Throttle Setup for Electric Helicopters
+---------------------------------------
 
 ..  youtube:: PPGnhMssyV8
 
 -------------------------------------------------------------------------------
 
-Video 4 - Throttle Curves, Piston and Turbine Engines
------------------------------------------------------
+Throttle Curves, Piston and Turbine Engines
+-------------------------------------------
 
 ..  youtube:: C3E2f8h1CoM
 

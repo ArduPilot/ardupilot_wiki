@@ -6,7 +6,7 @@ Traditional Helicopter — Connecting and Calibrating the System
 
 This page covers how to make the physical connections between the flight controller, RC receiver, ESC and servos as well as calibrating the RC transmitter, Compass, Accelerometer, and ESC.  The following video covers making the connections and setting up the transmitter to work with the flight controller.
 
-..youtube::
+.. youtube:: JagHOc0_mNQ
 
 Autopilot Info
 ==============
