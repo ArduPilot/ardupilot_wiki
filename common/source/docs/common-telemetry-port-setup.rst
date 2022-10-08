@@ -59,6 +59,8 @@ The Mission Planner's **Config/Tuning |Planner** screen's **Telemetry Rates** dr
 
 Due to CPU or bandwidth limitations, the actual rate of the data sent may be lower than the rate requested.
 
+.. note:: Some telemetry systems require specific rates. In order to allow those to be set in the autopilot parameters and not overriden by the GCS, set the rates to "-1" for MP, or use the disable option in QGC. However, do not set these before doing the basic autopilot accelerometer calibration in Mission Planner as it forces new values during the calibration and will not restore them after it is finished.
+
 .. note::
 
    Most ground stations set the desired stream rate by sending the `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_DATA_STREAM>`__ MAVLink message to the vehicle instead of directly setting the parameters mentioned above.  If done this way, Copter **DOES NOT** save the rate changes to eeprom meaning they will not persist over a reboot.
