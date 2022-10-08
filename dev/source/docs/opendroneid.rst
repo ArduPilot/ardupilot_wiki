@@ -32,6 +32,10 @@ An experimental firmware version can be built for any autopilot by:
 .. note:: you will need to build both the bootloader and the main firmware. Use "Tools/scripts/build_bootloaders.py BOARDNAME" to build the bootloader before reconfiguring waf and building the main firmware to include the bootloader with the new board id.
 
 
+Here is a video illustrating the entire process:
+
+.. youtube:: Az8v4Kx4hS0
+
 Testing
 =======
 

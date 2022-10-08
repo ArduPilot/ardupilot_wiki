@@ -84,3 +84,8 @@ Other references:
 - `OpenDroneID list of remote id devices for the US and EU <https://github.com/opendroneid/receiver-android/blob/master/transmitter-devices.md>`__
 
 If you know if other available devices please `add a comment in this issue <https://github.com/ArduPilot/ardupilot_wiki/issues/4414>`__
+
+Video Tutorial for OEMs Adding Remote ID to ArduPilot Systems
+=============================================================
+
+.. youtube:: Az8v4Kx4hS0
