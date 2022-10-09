@@ -38,6 +38,6 @@ TBS Video Transmitters can also be connected to ArduPilot using the CRSF protoco
 
 If you are using CRSF for RC input as well then nothing more needs to be done in order to enable VTX control.
 
-If you only with to use CRSF for VTX control then connect the VTX to the UART in the normal way - TX to RX and RX to TX and configure the UART connection as follows: 
+If you only wish to use CRSF for VTX control then connect the VTX to the UART in the normal way - TX to RX and RX to TX and configure the UART connection as follows: 
 
 - Set :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 29
