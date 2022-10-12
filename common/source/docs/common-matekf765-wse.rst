@@ -126,6 +126,13 @@ If the GPS is attached to UART2 TX/RX and powered from the adjacent 4.5V pins, i
 
 A battery must be plugged in for power to be provided to the pins marked 5V on the board.
 
+I2C Airspeed Sensor
+===================
+
+If attached to CL2/DA2, set :ref:`ARSPD_BUS<ARSPD_BUS>` = 0, as well as appropriate :ref:`ARSPD_TYPE<ARSPD_TYPE>`.
+
+If attached to CL1/DA1, set :ref:`ARSPD_BUS<ARSPD_BUS>` = 1, as well as appropriate :ref:`ARSPD_TYPE<ARSPD_TYPE>`.
+
 Battery Monitor Configuration
 =============================
 These settings are set as defaults when the firmware is loaded. However, if they are ever lost, you can manually set the parameters:
