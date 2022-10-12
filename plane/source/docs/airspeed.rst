@@ -41,7 +41,7 @@ A list of digital and UAVCAN airspeed sensors are listed :ref:`below<arspd-senso
 I2C
 ---
 Connect the airspeed sensor to autopilots's I2C port (or I2C splitter
-module). 
+module). The :ref:`ARSPD_BUS<ARSPD_BUS>` parameter must be set for the bus used to connect the sensor. Normally this defaults to "1" , and corresponds to the I2C bus normally designated for connecting the sensor. But if it is attached to another I2C bus (eg. compass, or on some autopilots its been mistakenly assigned) it will need to be changed to "0". If the sensor fails to initialize (a GCS message will be sent if this is the case), then try changing the bus number and rebooting.
 
 .. image:: ../images/airspeed_full_assembly_800px.jpg
     :target: ../_images/airspeed_full_assembly_800px.jpg
