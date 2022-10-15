@@ -32,4 +32,4 @@ The harmonic notch is designed to match the motor noise frequency as it changes 
 
 - First perform a long dynamic flight using your current settings and post-filter batch logging. Examine the FFT and look at how far the motor noise peak extends below the hover frequency. Use this frequency - *min_freq* - as the lower bound of your scaling. Then in order to calculate an updated value of the throttle reference use:
 
-:ref:`INS_HNTCH_REF <INS_HNTCH_REF>` and/or :ref:`INS_HNTC2_REF <INS_HNTC2_REF>` = *hover_thrust* * SQUAREROOT(*min_freq / hover_freq*)
+:ref:`INS_HNTCH_REF <INS_HNTCH_REF>` and/or :ref:`INS_HNTC2_REF <INS_HNTC2_REF>` = *hover_thrust* * SQUARE(*min_freq / hover_freq*)
