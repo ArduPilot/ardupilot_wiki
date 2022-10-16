@@ -37,14 +37,14 @@ GPS/Compass
 RTK GPS
 =======
 
-These GPS can incorporate real time kinematic data, either internally generated or externally provided, to improve the precision of the position estimate from the normal GPS meter range down to the cenitmeter range. This increased precision also allows for "Moving Baseline" yaw estimates using two devices on a vehicle with certain RTK GPSes (F9P based). See :ref:`common-gps-for-yaw`.
+These GPS can incorporate real time kinematic data, either internally generated or externally provided, to improve the precision of the position estimate from the normal GPS meter range down to the cenitmeter range. This increased precision also allows for "Moving Baseline" yaw estimates using two devices on a vehicle with certain RTK GPSes (F9P based) or dedicated Moving Baseline GPSes. See :ref:`common-gps-for-yaw`.
 
 .. toctree::
     :maxdepth: 1
     
     ArduSimple RTK GPS <common-gps-ardusimple>
     Ark RTK GPS <https://arkelectron.com/product/ark-rtk-gps/>
-    Blicube RTK GPS <https://wiki.blicube.com/grtk/>
+    Blicube RTK GPS (Single Unit Moving Baseline) <https://wiki.blicube.com/grtk/>
     CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
     CUAV C-RTK 9Ps RTK Receiver <https://store.cuav.net/shop/c-rtk-9ps/>
     CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>

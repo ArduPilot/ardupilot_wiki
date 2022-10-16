@@ -9,7 +9,9 @@ need for a compass which may suffer from magnetic interference from
 the ground or the vehicle's motors and ESCs.  This works even if the
 GPSs do not have RTK fix (RTCM data from a fixed RTK station or NTRIP server).
 
-GPSs from ArduPilot Partners that are known to work are shown on the :ref:`common-positioning-landing-page`
+Also, recently, single unit GPSes which utilize Internal Moving Baseline (see below) are becoming available, like the Blicube RTK GPS.
+
+GPSes from ArduPilot Partners that are known to work are shown on the :ref:`common-positioning-landing-page`
 
 .. note::
 
