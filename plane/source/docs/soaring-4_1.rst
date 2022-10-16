@@ -40,6 +40,13 @@ functionality:
 
    The flight mode will be returned to whatever it was before THERMAL was triggered.
 
+Airspeed Control
+================
+
+When in SOARING, the target airspeed while cruising is set via throttle stick position for FBWB and CRUISE modes, even while gliding. For AUTO mode, it is set at  :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`, unless the :ref:`SOAR_CRSE_ARSPD<SOAR_CRSE_ARSPD>` parameter is set to a non-zero value ("0" is default). If it is set to "-1", then the :ref:`soaring-speed-to-fly` computed value will be used. If greater than zero, then that value in meters/sec will be used for target airspeed.
+
+While in THERMAL mode, the target airspeed will be :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`, unless the :ref:`SOAR_THML_ARSPD<SOAR_THML_ARSPD>` parameter is set to a non-zero value ("0" is default). Then that value in meters/sec will be used for target airspeed instead.
+
 
 Hardware
 ========
