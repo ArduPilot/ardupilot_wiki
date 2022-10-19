@@ -143,6 +143,8 @@ Newer versions of BLHeli32 (32.7 and higher) and BLHeli_S (16.73 and higher) sup
 
 Only the lowest 4 DShot capable servo outputs can be used.  For autopilots with an IOMCU (e.g. Pixhawk, CubeOrange) this means AUX1 to AUX4 can be used.  For Pixracer and other autopilots without a separate IOMCU coprocessor this means outputs 1 to 4 can be used.
 
+.. warning:: on any autopilot using NON Bi-directional firmware and then the "-bdshot" version is loaded, if the an RC receiver using PPM, SBUS, IBus, DSM, or SRXL has been connected to an RC in using a timer interrupt, rather than a configuration using a UART with ``SERIALx_PROTOCOL`` = 23, the RC receiver will no longer function since that timer based RC input function has been eliminated to free up more DMA for Bi-directional DShot. The receiver will need to be moved to a UART or, if that RC input has an alternate configuration as a true UART input, the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` will need to be changed and that UART's ``SERIALx_PROTOCOL`` changed to "23".
+
 Setup
 -----
 
