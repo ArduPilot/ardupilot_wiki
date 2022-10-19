@@ -624,7 +624,18 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_simnet.png
             :width: 250px
             :align: center
-            :target:  https://www.simnet.aero/
+            :target:  www.simnet.aero/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_striekair.jpg
+            :width: 250px
+            :align: center
+            :target:  https://www.striekair.com/
+
+      - .. image:: ../../../images/supporters/supporters_uavlas.png
+            :width: 250px
+            :align: center
+            :target:  http://www.uavlas.com/
 
     *
       - .. image:: ../../../images/supporters/supporters_inspiredflight.jpg
@@ -632,6 +643,10 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://inspiredflight.com/
 
-      -
+      - .. image:: ../../../images/supporters/supporters_ascent.png
+            :width: 250px
+            :align: center
+            :target:  https://ascentaerosystems.com
+
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
