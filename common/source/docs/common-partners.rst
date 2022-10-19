@@ -536,13 +536,13 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_RevolutionAerospace.png
             :width: 250px
             :align: center
-            :target:  www.revn.aero
+            :target:  https://www.revn.aero/
 
     *
       - .. image:: ../../../images/supporters/supporters_Bralca.png
             :width: 250px
             :align: center
-            :target:  www.bralca.com
+            :target:  https://www.bralca.com/
 
       - .. image:: ../../../images/supporters/supporters_Zhongke.jpg
             :width: 250px
@@ -558,24 +558,24 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_engemap.png
             :width: 250px
             :align: center
-            :target:  www.engemap.com.br
+            :target:  http://engemap.com.br/v3/
 
     *
       - .. image:: ../../../images/supporters/supporters_AVCRM.png
             :width: 250px
             :align: center
-            :target:  avcrm.net
+            :target:  https://avcrm.net/
 
       - .. image:: ../../../images/supporters/supporters_MMC.jpg
             :width: 250px
             :align: center
-            :target:  www.mmcuav.com/
+            :target:  https://www.mmcuav.com/
 
     *
       - .. image:: ../../../images/supporters/supporters_soleon.jpg
             :width: 250px
             :align: center
-            :target:  www.soleon.it
+            :target:  https://www.soleon.it/en
 
       - .. image:: ../../../images/supporters/supporters_dronelogbook.png
             :width: 250px
@@ -624,7 +624,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_simnet.png
             :width: 250px
             :align: center
-            :target:  www.simnet.aero/
+            :target:  https://www.simnet.aero/
 
     *
       - .. image:: ../../../images/supporters/supporters_striekair.jpg
