@@ -2,23 +2,23 @@
 
 [copywiki destination="blimp,plane,copter,rover"]
 
-================
-SIYI ZR10 Gimbal
-================
+========================
+SIYI ZR10 and A8 Gimbals
+========================
 
-The `SIYI ZR10 <https://shop.siyi.biz/products/zr10>`__ is a 3-axis gimbal and camera which can communicate with ArduPilot using a custom serial protocol.
+The `SIYI ZR10 <https://shop.siyi.biz/products/zr10>`__ and `SIYI A8 <https://shop.siyi.biz/products/siyi-a8-mini>`__  are 3-axis gimbals and camera which can communicate with ArduPilot using a custom serial protocol.
 
 .. image:: ../../../images/siyi-zr10-gimbal.png
     :target: https://shop.siyi.biz/products/zr10
 
 .. warning::
 
-    Support for this gimbal is available in ArduPilot 4.4 (and higher)
+    Support for these gimbals is available in ArduPilot 4.4 (and higher)
 
 Where to Buy
 ------------
 
-The gimbal can be purchased directly from `SIYI <https://shop.siyi.biz/products/zr10>`__
+These gimbals can be purchased directly from `SIYI <https://shop.siyi.biz/collections/gimbal-camera>`__
 
 Connecting to the Autopilot
 ---------------------------
