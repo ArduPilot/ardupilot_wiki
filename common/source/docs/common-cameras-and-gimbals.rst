@@ -22,7 +22,7 @@ gimbals in which ArduPilot controls the stabilisation.
 -  :ref:`Gremsy T3, T7, Pixy and Mio <common-gremsy-pixyu-gimbal>` - high quality 3-axis gimbals
 -  :ref:`Servo Gimbals <common-camera-gimbal>` — older-style servo-driven gimbal where ArduPilot provides stabilisation
 -  :ref:`SimpleBGC (aka AlexMos) Gimbal Controller <common-simplebgc-gimbal>` - a popular 2-axis or 3-axis brushess gimbal controller which uses a custom serial interface
--  :ref:`Siyi ZR10 <common-siyi-zr10-gimbal>` - 3-axis camera and gimbal (only supported in AP 4.4 and higher)
+-  :ref:`Siyi ZR10 and A8 <common-siyi-zr10-gimbal>` - 3-axis gimbal and camera (only supported in AP 4.4 and higher)
 -  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an inexpensive 2-axis or 3-axis brushless gimbal controller which responds to MAVLink commands (a richer format than PWM) over a serial interface
 -  :ref:`Tarot 2D Gimbal <common-tarot-gimbal>` — low cost 2-axis brushless gimbal
 

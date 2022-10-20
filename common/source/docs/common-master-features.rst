@@ -11,7 +11,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
 .. toctree::
     :maxdepth: 1
 
-    Siyi ZR10 Gimbal <common-siyi-zr10-gimbal>
+    SIYI ZR10 and A8 gimbals <common-siyi-zr10-gimbal>
     Other wiki changes <common-future-wiki-changes>
 
 
