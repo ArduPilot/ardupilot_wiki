@@ -4,20 +4,24 @@
 Fly-By-Wire Low Altitude Limit
 ==============================
 
-This function of Plane allows you to set a minimum altitude for FBW-B
-mode (even if you don't have airspeed sensor) which your airplane will
+This function of Plane allows you to set a minimum altitude for FBWB and CRUISE
+modes (even if you don't have airspeed sensor) which your airplane will
 try to stay above.
 
-When FBW Low Alt Limit is enabled, if your airplane goes lower than
-defined alt it will level up and climb back to the safe altitude. After
-it is reached you will regain full control.
+When :ref:`ALT_HOLD_FBWCM<ALT_HOLD_FBWCM>` is enabled, if your airplane goes lower than
+defined altitude relative to HOME, it will level up and/or climb back to this altitude. After
+it is reached you will regain altitude control.
+
+.. note:: the minimum MSL altitude target will be the higher of: this altitude, or the current altitude target above terrain in FBWB or CRUISE modes if :ref:`common-terrain-following` is enabled, or the :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>` above HOME if that fence (See :ref:`common-geofencing-landing-page`) is enabled.
+
+.. warning:: this parameter is in centimeters, not meters!
 
 Use for R/C training
 ====================
 
 This function will help those of us who doesn't have that much flying
-skills to fly safely. It is really useful for FPV flying as FBW-B mode
-provides easy control and the Low Altitude Limit will help you avoid
+skills to fly safely. It is really useful for FPV flying as FBWB or CRUISE modes
+provide easy control and the :ref:`ALT_HOLD_FBWCM<ALT_HOLD_FBWCM>` limit will help you avoid
 crashing into the ground ;-)
 
 `Here <http://youtu.be/9wysVRrOmcQ>`__ is a video demo. APM is in FBW-B
@@ -37,10 +41,10 @@ Choosing the right altitude
 
 Desired altitude should be set very carefully. As we know our planes
 can't react immediately, so we have to choose altitude with this in
-mind. I recommend using 3000 (30 meters) for pretty flat terrain.
+mind. Using 3000 (30 meters) is recommended for flights over pretty flat terrain.
 
 Landing
 =======
 
 In order to land your plane you will need to disable this feature by
-changing your flightmode to anything other than FBW-B.
+changing your flightmode to anything other than FBWB or CRUISE. FBWA, STABILIZE, or MANUAL modes are always the preferred modes for a manual landing, in any case.
