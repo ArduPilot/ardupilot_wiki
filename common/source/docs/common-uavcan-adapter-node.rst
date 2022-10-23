@@ -118,6 +118,8 @@ DroneCAN Adapter Nodes
 
 Several devices are manufactured specifically for use as general-purpose adapter nodes:
 
-:ref:`mRo DroneCAN Adapter Node <common-mro-uavcan-adapter-node>`
+- `ARK CANnode <https://arkelectron.com/product/ark-cannode/>`__
+- `MatekL431 DroneCAN Adapter Node <http://www.mateksys.com/?portfolio=can-l431>`_
+- :ref:`mRo DroneCAN Adapter Node <common-mro-uavcan-adapter-node>`
 
-`MatekL431 DroneCAN Adapter Node <http://www.mateksys.com/?portfolio=can-l431>`_
+
