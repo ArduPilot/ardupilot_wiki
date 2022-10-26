@@ -1,12 +1,14 @@
 .. _reference-frames-hexsoon-edu450:
 
-==============
-Hexsoon EDU450
-==============
+===============
+Hexsoon EDU-450
+===============
 
 .. image:: ../images/reference-frames-hexsoon-edu450.jpg
 
-The Hexsoon EDU450 is a relatively low cost frame including motors, ESCs and propellers
+The Hexsoon EDU-450 is a relatively low cost frame including motors, ESCs and propellers
+
+CubePilot's `EDU-450 specfications can be found here <https://docs.cubepilot.org/user-guides/cubepilot-ecosystem/cubepilot-partners/hexsoon/multirotor-frame/edu-450>`__
 
 Parts List
 ----------
