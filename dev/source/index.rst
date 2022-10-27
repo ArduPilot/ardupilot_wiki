@@ -161,6 +161,7 @@ Full Table of Contents
     Training Centers <docs/common-training-centers>
     GSoC <docs/gsoc>
     2021 Developers Conference<docs/2021-conference>
+    2022 Roadmap <https://github.com/orgs/ArduPilot/projects/2>
     Wiki Editing Guide <docs/common-wiki_editing_guide>
     USB IDs <docs/USB-IDs>
     User Alerts <docs/user-alerts-developer>
