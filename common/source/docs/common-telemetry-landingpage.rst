@@ -42,6 +42,7 @@ Long Range
 .. toctree::
     :maxdepth: 1
 
+    Andruav Android Cellular <https://cloud.ardupilot.org/andruav-index.html>
     Blicube RLINK P900 <common-blicube-rlink>
     ClearSky Airlink 4G LTE Telemetry <common-airlink-telemetry>
     CRSF Telemetry <common-crsf-telemetry>
