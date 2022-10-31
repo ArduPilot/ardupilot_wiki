@@ -30,7 +30,7 @@ The Pass-Through feature allows BLHeli32 and BLHeli_S ESCs to be upgraded and co
 - Connect your PC to the autopilot using a USB cable and then connect with a ground station (e.g. Mission Planner, QGC).
 - Set :ref:`SERVO_BLH_AUTO <SERVO_BLH_AUTO>` to 1 to automatically enable pass-through on all outputs configured as motors (e.g. :ref:`SERVOx_FUNCTION <SERVO9_FUNCTION>` = "Motor1", "Motor2", etc) for multicopters and quadplanes or throttle (e.g. those with :ref:`SERVOx_FUNCTION <SERVO9_FUNCTION>` set to 70 ("throttle"), 73 ("throttle left") or 74 ("throttle right")) on rovers.  For most multicopters, quadplanes and rovers this will do the right thing but for planes, set :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` to enable pass-through on the appropriate servo outputs.
 - If your PC is connected to the autopilot using a telemetry radio (instead of using USB cable as recommended above) set :ref:`SERVO_BLH_PORT <SERVO_BLH_PORT>` to the autopilot port connected to the telemetry radio.  Beware that this is does NOT specify the port used for :ref:`ESC telemetry <blheli32-esc-telemetry>` feedback to your autopilot!
-- If using a safety switch ensure it is pushed (or disabled by setting :ref:`BRD_SAFETYENABLE <BRD_SAFETYENABLE>` = 0)
+- If using a safety switch ensure it is pushed (or disabled by setting :ref:`BRD_SAFETY_DEFLT <BRD_SAFETY_DEFLT>` = 0).  (``BRD_SAFETYENABLE`` in older firmware versions)
 - Disconnect the ground station (but leave the USB cable connected)
 - Start the ESC configuration software and connect to the autopilot's COM port by selecting "BLHeli32 Bootloader (Betaflight/Cleanflight)" from the interfaces menu.  Press "Connect" and "Read Setup".  You should be able to upgrade and configure all connected ESCs
 
