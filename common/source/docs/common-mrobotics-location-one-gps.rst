@@ -29,7 +29,7 @@ Configuration
 - :ref:`GPS_TYPE<GPS_TYPE>` = 9 (DroneCAN) if primary GPS or,
 - :ref:`GPS_TYPE<GPS_TYPE>` = 9 (DroneCAN) if using as secondary GPS
 - :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` set bit 5 (+32 to value) to enable LED as notification LED
-- :ref:`BRD_SAFETYENABLE<BRD_SAFETYENABLE>` = 1 enables this, and any other, safety switch in the system. 
+- :ref:`BRD_SAFETY_DEFLT<BRD_SAFETY_DEFLT>` = 1 enables this, and any other, safety switch in the system. (``BRD_SAFETYENABLE`` in older firmware versions)
 
 Compass
 -------

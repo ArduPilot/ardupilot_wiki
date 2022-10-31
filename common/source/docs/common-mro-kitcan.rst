@@ -89,7 +89,7 @@ To enable the integrated I2C RGB LED set:
 
 - :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` bit 5 (DroneCAN) should be set in the autopilot. 
 
-The integrated safety switch is automatically used, if the autopilot has enabled the use of safety switches via :ref:`BRD_SAFETYENABLE<BRD_SAFETYENABLE>` is "1" (default).
+The integrated safety switch is automatically used, if the autopilot has enabled the use of safety switches via :ref:`BRD_SAFETY_DEFLT<BRD_SAFETY_DEFLT>` is "1" (default).  (``BRD_SAFETYENABLE`` in older firmware versions)
 
 If you want to enable an attached I2C airspeed sensor, set:
 

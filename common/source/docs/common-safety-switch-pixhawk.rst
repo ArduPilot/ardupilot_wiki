@@ -19,7 +19,7 @@ LED meaning
 Configuring the Safety Switch
 =============================
 
-- :ref:`BRD_SAFETYENABLE <BRD_SAFETYENABLE>` = 0 to disable the switch
+- :ref:`BRD_SAFETY_DEFLT <BRD_SAFETY_DEFLT>` = 0 to disable the switch.(``BRD_SAFETYENABLE`` in older firmware versions)
 - :ref:`BRD_SAFETY_MASK <BRD_SAFETY_MASK>` can be used to set which individual channels are enabled/disabled with the safety switch
 
 .. image:: ../../../images/safetyswitch-bitmask.png
