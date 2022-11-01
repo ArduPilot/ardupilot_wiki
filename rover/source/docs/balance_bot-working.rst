@@ -28,7 +28,7 @@ As explained previously, when the pitch is non zero, the vehicle is forced to ac
 
 Rover vs Balance Bot:
 +++++++++++++++++++++
-The working of a Balance Bot is closer to that of a Copter than a conventional Rover. The motion of a Balance Bot is actually caused by the vehicle pitching, rather than simply a motor throttle. This is unlike in a Rover, where the user can directly control motor throttle, to control the vehicle's acceleration. In a Balance Bot, the user controls the pitch angle, which in turns causes the vehicle to accelerate. The motor throttle in a Balance Bot, is determined by the control system and is meant to correct and hold it's pitch.
+The working of a Balance Bot is closer to that of a Copter than a conventional Rover. The motion of a Balance Bot is actually caused by the vehicle pitching, rather than simply a motor throttle. This is unlike in a Rover, where the user can directly control motor throttle, to control the vehicle's acceleration. In a Balance Bot, the user controls the pitch angle, which in turns causes the vehicle to accelerate. The motor throttle in a Balance Bot, is determined by the control system and is meant to correct and hold its pitch.
 
 .. image:: /images/balance_bot-working.png
 
