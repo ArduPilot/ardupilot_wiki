@@ -20,7 +20,7 @@ This is bad:
 .. youtube:: 4Lkcze44W3E
     :width: 100%
 
-The only fix is to change motors. Make sure the backlash is as less as possible.
+The only fix is to change motors. Make sure the backlash is as low as possible.
 
 **2) Weight Distribution** : 
 If the center of gravity is near the wheels, the vehicle can topple quickly and if the motors are not fast enough to compensate, then the vehicle can become wobbly. The higher the center of gravity, the slower the vehicle falls. But more torque would be required from the motors to keep it balanced.
