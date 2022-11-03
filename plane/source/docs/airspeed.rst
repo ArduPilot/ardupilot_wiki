@@ -26,7 +26,7 @@ If an airspeed sensor is used, the throttle stick will set the target airspeed i
 Airspeed Sensor Type
 ====================
 
-Airspeed sensors can be either analog or digital. The analog sensors connect to an A/D converter input pin on the autopilot, while digital sensors connect to the autopilot's external I2C bus using the SDA and SCL external digital I/O pins or via UAVCAN. The type is set by the :ref:`ARSPD_TYPE<ARSPD_TYPE>` parameter. Analog sensors are type 2, UAVCAN sensors as type 8, and supported I2C bus digital sensors by other numbers.
+Airspeed sensors can be either analog or digital. The analog sensors connect to an A/D converter input pin on the autopilot, while digital sensors connect to the autopilot's external I2C bus using the SDA and SCL external digital I/O pins or via DroneCAN. The type is set by the :ref:`ARSPD_TYPE<ARSPD_TYPE>` parameter. Analog sensors are type 2, DroneCAN sensors as type 8, and supported I2C bus digital sensors by other numbers.
 
 If there is no sensor, be sure to set the :ref:`ARSPD_TYPE<ARSPD_TYPE>` to 0. ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. :ref:`ARSPD_TYPE<ARSPD_TYPE>` must be set to zero in order to display this value if no sensor is present.
 
@@ -35,7 +35,7 @@ If there is no sensor, be sure to set the :ref:`ARSPD_TYPE<ARSPD_TYPE>` to 0. Ar
 Autopilot Airspeed Connection
 =============================
 
-A list of digital and UAVCAN airspeed sensors are listed :ref:`below<arspd-sensor-list>`.
+A list of digital and DroneCAN airspeed sensors are listed :ref:`below<arspd-sensor-list>`.
 
 
 I2C
@@ -50,10 +50,10 @@ To enable the digital airspeed sensor, connect the autopilot to Mission
 Planner (or APM Planner for OS X), and select the Optional Hardware/Airspeed
 tab under the CONFIG menu. Using the drop-down box for Type, select your sensor's type. The Pin dropdown is not used and can be ignored. Check the "Use Airpeed" box to use it in control, or leave it unchecked during in-flight calibration discussed below to check its operation before use.
 
-UAVCAN
-------
+DroneCAN
+--------
 
-Attach the sensor to the AutoPilot's UAVCAN port and select UAVCAN in the above mentioned Type dropdown box and check the "Use Airspeed" box as appropriate. 
+Attach the sensor to the AutoPilot's DroneCAN port and select DroneCAN in the above mentioned Type dropdown box and check the "Use Airspeed" box as appropriate. 
 
 Analog Airspeed sensor
 ----------------------
@@ -162,14 +162,14 @@ I2C
     - `Matek DLVR <http://www.mateksys.com/?portfolio=aspd-dlvr>`_
 
 
-UAVCAN
-------
+DroneCAN
+--------
 
 - DLVR
-    - `Matek UAVCAN DLVR <http://www.mateksys.com/?portfolio=aspd-dlvr>`_
+    - `Matek DroneCAN DLVR <http://www.mateksys.com/?portfolio=aspd-dlvr>`_
 
 - 5033 
-    - `Qiotek UAVCAN 5033 <https://www.qio-tek.com/index.php?route=product/product&product_id=309>`_
+    - `Qiotek DroneCAN 5033 <https://www.qio-tek.com/index.php?route=product/product&product_id=309>`_
 
 Other Topics
 ============
