@@ -27,6 +27,7 @@ popular Companion Computer hardware are listed below.
     NVidia TX2 <companion-computer-nvidia-tx2>
     ODroid <odroid-via-mavlink>
     Raspberry Pi <raspberry-pi-via-mavlink>
+    Pixhawk RPi CM4 Baseboard <https://shop.holybro.com/pixhawk-rpi-cm4-baseboard_p1347.html>
 
 The Companion Computer software refers to the programs and tools that run on the Companion
 Computer. They will take in MAVLink telemetry from the Flight Controller and can route and 
