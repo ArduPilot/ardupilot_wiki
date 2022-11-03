@@ -11,7 +11,7 @@ Supported Protocols
 ===================
 
 `I2C <https://en.wikipedia.org/wiki/I%C2%B2C>`__, `SPI <https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus>`__,
-`UART (aka Serial) <https://en.wikipedia.org/wiki/Universal_asynchronous_receiver/transmitter>`__ and `CANBUS <https://en.wikipedia.org/wiki/CAN_bus>`__ (in particular UAVCAN) protocols are supported.
+`UART (aka Serial) <https://en.wikipedia.org/wiki/Universal_asynchronous_receiver/transmitter>`__ and `CANBUS <https://en.wikipedia.org/wiki/CAN_bus>`__ (in particular UAVCAN/DRoneCAN) protocols are supported.
 If you plan to write a new driver, you will likely need to refer to the sensor's datasheet in order to determine which protocol it uses.
 
 I2C
