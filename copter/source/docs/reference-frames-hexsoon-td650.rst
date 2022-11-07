@@ -4,7 +4,7 @@
 Hexsoon TD-650
 ==============
 
-.. image:: ../images/reference-frames-hexsoon-td650.jpeg
+.. image:: ../images/reference-frames-hexsoon-td650.jpg
 
 The Hexsoon TD-650 is a carbon fiber frame including motors, ESCs and propellers
 
@@ -42,3 +42,5 @@ Flight Demonstration
 --------------------
 ..  youtube:: FbzXvi3beDI
     :width: 100%
+
+.. image:: ../images/reference-frames-hexsoon-td650-pic2.jpg

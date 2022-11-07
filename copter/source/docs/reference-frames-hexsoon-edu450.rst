@@ -29,3 +29,5 @@ Firmware used: Copter-4.0
 Parameter file: `hexsoon-edu450.param <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/hexsoon-edu450.param>`__
 
 This parameter file can also be loaded using the Mission Planner's Config/Tuning >> Full Parameter Tree page by selecting "hexsoon-edu450" from the drop down on the middle right and then push the "Load Presaved" button.
+
+.. image:: ../images/reference-frames-hexsoon-edu450-pic2.jpg
