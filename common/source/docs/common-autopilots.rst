@@ -14,6 +14,7 @@ Open hardware
 
     BBBMini* (Linux) <https://github.com/mirkix/BBBMINI>
     Beagle Bone Blue (Linux) <common-beagle-bone-blue>
+    Blue Robotics Navigator* (Linux) <https://bluerobotics.com/store/comm-control-power/control/navigator/>
     CUAV V5 Plus <common-cuav-v5plus-overview>
     CUAV V5 Nano <common-cuav-v5nano-overview>
     CUAV Nora <common-cuav-nora-overview>
@@ -41,7 +42,7 @@ Open hardware
     TauLabs Sparky2** <common-taulabs-sparky2>
     
 
-\* these devices are sensor add-on boards for a Beagle Bone microcomputer. See board links for details 
+\* these devices are sensor add-on boards for a Linux-based microcomputer. See board links for details.
 
 \** due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
