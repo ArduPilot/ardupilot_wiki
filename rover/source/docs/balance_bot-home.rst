@@ -9,19 +9,7 @@ ArduPilot Rover includes support for Self Balancing Robots or Balance Bots. This
 ..  youtube:: EmhTBPNDpWw
     :width: 100%
 
-
-
-Supported Control Modes
------------------------
-
-- Manual
-- Hold
-- Acro
-- Guided
-- Auto
-- RTL
-
-.. note:: New or inexperienced ArduPilot users are recommended to go through the Rover :ref:`Introduction<gettit>`, :ref:`First Time Setup<apmrover-setup>` and :ref:`First drive<rover-first-drive>` sections before proceeding with this section.
+.. note:: New users are recommended to go through the Rover :ref:`Introduction<gettit>`, :ref:`First Time Setup<apmrover-setup>` and :ref:`First drive<rover-first-drive>` sections before proceeding with this section.
 
 Get Started
 -----------
