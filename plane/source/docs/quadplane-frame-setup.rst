@@ -41,6 +41,9 @@ layout. For Tri and Y6 this parameter is ignored.
 -  3 for H frame
 -  11 for FireFly6Y6 (for Y6 only)
 
+.. note:: You should reboot the autopilot after setting :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` and
+:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` and before making any other changes as they will change the default assignment of output channel.
+
 Motor Ordering
 --------------
 
@@ -85,9 +88,21 @@ You can optionally move the quad motors to be on any other channel above
 
 Tricopter
 ---------
+Frame Type 7 is Tricopter and can be either non-Tiltrotor configuration, or :ref:`Tiltrotor<guide-tilt-rotor>` configured using either Vectored or Non-Vectored yaw control.
 
-Frame Type 7 is Tricopter and can be either non-Tiltrotor configuration, or :ref:`Tiltrotor<guide-tilt-rotor>` configured using either Vectored or Non-Vectored yaw control. If using non-Tiltrotor or Non-Vectored Yaw Tilt-rotor, the yaw control output is setup as Motor 7 (``SERVOn_FUNCTION`` = 39) using a tilt mechanism for the yaw motor, Motor 4. You should set up the yaw servo’s maximum lean angle in degrees with :ref:`Q_M_YAW_SV_ANGLE<Q_M_YAW_SV_ANGLE>`. This lean angle assumes that ``SERVOn_MIN`` and ``SERVOn_MAX``, represent +/- 90 degrees, with ``SERVOn_TRIM`` representing 0 degrees lean.
+With the default Tricopter frame the motors are on outputs
+5, 6, 8 and 11. The arrangement is:
 
+-  **Output 5:** Front right motor, counter-clockwise
+-  **Output 6:** Front left motor, clockwise
+-  **Output 7:** Rear motor, clockwise
+-  **Output 8:** Tail Tilt Servo (see below)
+
+.. image:: /images/quadplane_tricopter_defaults.jpg
+
+If using non-Tiltrotor or Non-Vectored Yaw Tilt-rotor, the yaw control output is setup as Motor 7 (``SERVOn_FUNCTION`` = 39) using a tilt mechanism for the yaw motor, Motor 4. 
+
+If your vehicle has tilt-rotors you should set up the yaw servo’s maximum lean angle in degrees with :ref:`Q_M_YAW_SV_ANGLE<Q_M_YAW_SV_ANGLE>`. This lean angle assumes that ``SERVOn_MIN`` and ``SERVOn_MAX``, represent +/- 90 degrees, with ``SERVOn_TRIM`` representing 0 degrees lean. ** Make sure to read the section below about Tilt Rotors before completing this step. **
 
 Tilt-Rotors
 ===========
