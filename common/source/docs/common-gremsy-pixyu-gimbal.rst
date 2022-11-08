@@ -94,7 +94,7 @@ If using ArduPilot 4.3 (or higher) please follow these setup instructions
 
 Connecting the Gimbals's COM2 port to one of the autopilot's Serial/Telemetry ports like Telem2 as shown above.
 
-Connect with a ground station and set the following parameters, if using the first mount::
+Connect with a ground station and set the following parameters, if using the first mount:
 
 - :ref:`MNT1_TYPE <MNT1_TYPE>` to "6" for "Gremsy" and reboot the autopilot
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps.  "SERIAL2" can be replaced with another serial port (i.e. SERIAL1) depending upon the physical connection
