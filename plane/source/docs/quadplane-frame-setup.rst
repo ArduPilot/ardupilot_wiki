@@ -95,8 +95,8 @@ With the default Tricopter frame the motors are on outputs
 
 -  **Output 5:** Motor 1 - Front right motor, looking from above
 -  **Output 6:** Motor 2 - Front left motor
--  **Output 7:** Motor 4 - Rear motor
--  **Output 8:** Motor 7 - Tail Tilt Servo (see below)
+-  **Output 8:** Motor 4 - Rear motor
+-  **Output 11:** Motor 7 - Tail Tilt Servo (see below)
 
 .. image:: ../../../images/quadplane_tricopter_defaults.png
 
