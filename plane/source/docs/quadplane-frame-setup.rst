@@ -93,12 +93,12 @@ Frame Type 7 is Tricopter and can be either non-Tiltrotor configuration, or :ref
 With the default Tricopter frame the motors are on outputs
 5, 6, 8 and 11. The arrangement is:
 
--  **Output 5:** Front right motor, counter-clockwise
--  **Output 6:** Front left motor, clockwise
--  **Output 7:** Rear motor, clockwise
--  **Output 8:** Tail Tilt Servo (see below)
+-  **Output 5:** Motor 1 - Front right motor, looking from above
+-  **Output 6:** Motor 2 - Front left motor
+-  **Output 7:** Motor 4 - Rear motor
+-  **Output 8:** Motor 7 - Tail Tilt Servo (see below)
 
-.. image:: /images/quadplane_tricopter_defaults.jpg
+.. image:: ../../../images/quadplane_tricopter_defaults.png
 
 If using non-Tiltrotor or Non-Vectored Yaw Tilt-rotor, the yaw control output is setup as Motor 7 (``SERVOn_FUNCTION`` = 39) using a tilt mechanism for the yaw motor, Motor 4. 
 
