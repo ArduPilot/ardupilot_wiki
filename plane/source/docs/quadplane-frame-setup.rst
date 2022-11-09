@@ -41,7 +41,7 @@ layout. For Tri and Y6 this parameter is ignored.
 -  3 for H frame
 -  11 for FireFly6Y6 (for Y6 only)
 
-.. note:: You should reboot the autopilot after setting :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` and
+.. note:: You should reboot the autopilot after setting :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` and/or
 :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` and before making any other changes as they will change the default assignment of output channel.
 
 Motor Ordering
