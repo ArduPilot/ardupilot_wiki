@@ -47,7 +47,8 @@ Further Information
 ===================
 
 - The Mission saved on FC is never touched - the Relocation is only temporary.
-- Start- and Land-Commands and Commands after DO_LAND_START are never relocated.
+- Only WAYPOINT and SPLINE_WAYPOINT will be relocated. If you want to relocate e.g. LOITER_UNLIM, LOITER_TURNS, LOITER_TIME or LOITER_TO_ALT, you should define a WAYPOINT and a following LOITER.. command with no location.
+- Waypoints after DO_LAND_START are never relocated.
 - If the Parameter ``MIS_RESTART`` is set to 0 (Resume Mission), a further translation is earliest possible after a started Mission is reset or finished completely.
 - A Relocation will only take place if the AUTO-mode is initiated by RC or GCS. That means, e.g. SOARING is working perfectly with RELOCATE_MISSION.
 
