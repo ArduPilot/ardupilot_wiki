@@ -30,6 +30,11 @@ It is best to connect the ground station (e.g. Mission Planner) to the vehicle u
 
 - Set :ref:`GCS_PID_MASK <GCS_PID_MASK>` = 4 (Pitch)
 - Connect with Mission Planner, go to the Data screen and check the "Tuning" checkbox in the bottom middle.  From the large "Display This" window check "piddesired", "pidachieved" and optionally "pidP", "pidI" and "pidD"
+- Speed up the rate of the PID_TUNING messages using Mission Planner's Ctrl-F Message Interval feature
+
+.. image:: ../images/balance_bot-tuning-msginterval.png
+    :target: ../_images/balance_bot-tuning-msginterval.png
+
 - Stand the vehicle upright and arm in Manual mode
 - With the throttle stick in the middle the "piddesired" should always be zero while the "pidachieved" will move as the vehicle pitches back and forth
 - Open Mission Planner's Config Full Parameter Tree and adjust :ref:`ATC_BAL_P <ATC_BAL_P>`, :ref:`ATC_BAL_I <ATC_BAL_I>` and :ref:`ATC_BAL_D <ATC_BAL_D>` gains so that "pidachieved" follows "piddesired" (e.g. stays near zero)
