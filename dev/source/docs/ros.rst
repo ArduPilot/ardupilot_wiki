@@ -11,7 +11,7 @@ ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka R
 
 `ROS <http://www.ros.org/>`__ provides libraries, tools, hardware abstraction, device drivers, visualizers, message-passing, package management, and more to help software developers create robot applications.  In the future, we expect ROS will be replaced by `ROS2 <http://design.ros2.org/articles/why_ros2.html>`__
 
-`MAVROS <http://wiki.ros.org/mavros>`__ is a ROS "node" that can convert between ROS topics and `MAVLink messages <https://github.com/ArduPilot/mavlink>`__ allowing ArduPilot vehicles to communicate with ROS.  The `MAVROS code can be found here <https://github.com/mavlink/mavros/tree/master/mavros>`__.
+`MAVROS <http://wiki.ros.org/mavros>`__ is a ROS package that can convert between ROS topics and `MAVLink messages <https://github.com/ArduPilot/mavlink>`__ allowing ArduPilot vehicles to communicate with ROS.  The `MAVROS code can be found here <https://github.com/mavlink/mavros/tree/master/mavros>`__.
 
 These pages will show you how to:
 
