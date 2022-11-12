@@ -72,7 +72,7 @@ Closed hardware
     Mamba H743 v4 <common-mambaH743v4>
     MakeFlyEasy PixSurveyA1 <common-makeflyeasy-PixSurveyA1>
     Mateksys F405 TE Family <common-matekf405-te>
-    Mateksys H743-Wing/MINI/SLIM <common-matekh743-wing>
+    Mateksys H743-Wing/MINI/SLIM/WLITE <common-matekh743-wing>
     mRo ControlZero F7 <common-mro-control-zero-F7>
     mRo Pixracer Pro (H7) <common-pixracer-pro>
     mRo Nexus <common-mro-nexus>
