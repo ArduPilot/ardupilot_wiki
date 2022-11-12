@@ -1,8 +1,8 @@
 .. _common-matekh743-wing:
 
-============================
-Mateksys H743-Wing/SLIM/MINI
-============================
+==================================
+Mateksys H743-Wing/SLIM/MINI/WLITE
+==================================
 
 .. image:: ../../../images/matekh743-wing.png
      :target: ../_images/matekh743-wing.png
@@ -11,8 +11,7 @@ Mateksys H743-Wing/SLIM/MINI
 the above image and some content courtesy of `mateksys.com <http://www.mateksys.com/>`__
 
 .. note::
-
-   Support for this board is available with ArduPilot Plane 4.0.6, Copter 4.0.4, and higher
+Only the WING version is shown above. All versions use the same firmware, but have varying configurations for pinouts and resources available. See Matek's site for exact details for every variant. 
 
 Specifications
 ==============
@@ -145,7 +144,7 @@ Then reboot.
 
 :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 11
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.0
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 10.5 (note: WLITE needs this changed to 21)
 
 :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 40.0
 
