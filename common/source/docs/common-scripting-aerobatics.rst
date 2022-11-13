@@ -119,3 +119,12 @@ Setup Instructions for Example Tricks on a Switch Scripts
 
 Remember: ALTITUDE IS YOUR FRIEND! dont attempt your first one below 200feet! and FPV is a good way to try it out first, if you have trouble with seeing the vehicle at that altitude.
 [copywiki destination="plane"]
+
+Tuning for Aerobatics
+=====================
+
+Normal ArduPilot Autotune provides a safe, stable PID tune for most vehicles. As such, its not optimized for precision aerobatics which require a tight tune. See below:
+
+.. toctree::
+
+   Aerobatic Tuning <common-aerobatics-tuning>
