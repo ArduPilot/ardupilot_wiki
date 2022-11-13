@@ -4,7 +4,7 @@
 Building the code
 =================
 
-The linked articles below explain how to setup your build environment on Linux/Ubuntu, MacOS or Windows and then build ArduPilot with either `waf <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ or make.
+The linked articles below explain how to setup your build environment on Linux/Ubuntu, MacOS or Windows and then build ArduPilot with `waf <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
 The instructions below assume that you have already :ref:`installed git <git-install>`, :ref:`forked <git-fork>` and :ref:`cloned <git-clone>` the ArduPilot repo.
 
@@ -17,9 +17,6 @@ Setting up the Build Environment
 
 Building / Compiling
 --------------------
-
-ArduPilot currently supports two build systems, `waf <https://waf.io/>`__ and **make** with waf being the recommended option because it allows building for all boards.
-In most cases the build dependencies described for **waf** and **make** are the same, the only part of the instructions that changes is the build command. 
 
 **Linux / MacOSX users:**
 
