@@ -10,8 +10,7 @@ Mateksys H743-Wing/SLIM/MINI/WLITE
 
 the above image and some content courtesy of `mateksys.com <http://www.mateksys.com/>`__
 
-.. note::
-Only the WING version is shown above. All versions use the same firmware, but have varying configurations for pinouts and resources available. See Matek's site for exact details for every variant. 
+.. note:: Only the WING version is shown above. All versions use the same firmware, but have varying configurations for pinouts and resources available. See Matek's site for exact details for every variant. 
 
 Specifications
 ==============
