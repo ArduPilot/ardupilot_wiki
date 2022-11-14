@@ -88,6 +88,7 @@ Closed hardware
     QioTek Zealot F427 <common-qiotek-zealot>
     QioTek Zealot H743 <common-qiotek-zealoth7>
     Sky-Drones AIRLink <common-skydrones-airlink>
+    SkystarsH7HD <common-skystarsH7>
     SPRacing H7 Extreme <common-spracingh7-extreme>
     Swan-K1 <common-Swan-K1>
     SpeedyBee F4 (this board currently is non-verified) <common-speedybeef4>
