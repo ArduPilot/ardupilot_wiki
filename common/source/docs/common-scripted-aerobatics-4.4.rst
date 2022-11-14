@@ -116,7 +116,10 @@ The script provides numerous individual tricks, and a table of their IDs is prov
  24  Crossbox Humpty           radius  height                                Yes
  25  Laydown Humpty            radius  height                                Yes        
  25  Barrell Roll              radius  length       # spirals                No
- 26  Straight Hold             length  bank angle                            No  
+ 26  Straight Hold             length  bank angle                            No
+ 29  Four Point Roll 	       length                          				 No
+ 30  Eight Point Roll 	       length                                  		 No
+ 31  Multi Point Roll 	       length  num points 			                 No  
  200 Test Suite (dont fly!)
  201 NZ Clubman Schedule
  202 FAI F3A P-23
@@ -164,6 +167,15 @@ While adding new basic tricks requires modification of the plane_aerobatics.lua 
 An example for a schedule similar to the AirShow schedule is included as `trick72.txt <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/Aerobatics/FixedWing/trick72.txt>`__ and would be executed as ``TRIKx_ID`` = 72 via switch or in an AUTO mission command. The schedule will display its "name" when started, and as each trick begins the "message" will sent to the GCS to indicate its start.
 
 Note, that the "straight_align" command is not a trick, but rather a command as to when the next trick is to begin. Its parameter is meters from the schedules initial entry point. Positive numbers are meters away from that point in the entry direction on the ground track, while negative numbers are in the opposite direction on the track line. If the aircraft is already past that point in the desired direction along the track, the trick will begin immediately.
+
+Tuning for Aerobatics
+=====================
+
+Normal ArduPilot Autotune provides a safe, stable PID tune for most vehicles. As such, its not optimized for precision aerobatics which require a tight tune. See below:
+
+.. toctree::
+
+   Aerobatic Tuning <common-aerobatics-tuning>
 
 Simulation
 ==========
