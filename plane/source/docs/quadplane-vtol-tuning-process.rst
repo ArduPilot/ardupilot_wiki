@@ -295,6 +295,8 @@ The parameters you will be adjusting are:
 - :ref:`Q_A_RAT_PIT_D <Q_A_RAT_PIT_D>`
 - :ref:`Q_A_RAT_PIT_P <Q_A_RAT_PIT_P>` and :ref:`Q_A_RAT_PIT_I <Q_A_RAT_PIT_I>`
 
+.. note::  If the VTOL motors do not tilt, then the ``Q_A_RAT_PIT_FF`` and  ``Q_A_RAT_YAW_FF`` will be zero and corrections are dominated by P/I/D. But if pitch or yaw control is primarily by tilting the motors, then the FF terms dominate and P/D are primarily for disturbance correction. For tuning a tilted motor controlled axis, see :ref:`pitch-yaw-tuning`.
+
 Start with the roll parameters, then move onto the pitch.
 
 1. Increase the D term in steps of 50% until oscillation is observed
