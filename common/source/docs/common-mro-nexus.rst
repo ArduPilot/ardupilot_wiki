@@ -44,7 +44,7 @@ Specifications
 -  **Power**
 
    -  5-5.5VDC from USB or PowerBrick connector. Optional/recommended
-      `ACSP4 +5V/+12V Power Supply <https://store.mrobotics.io/product-p/auav-acsp4-mr.htm>`__.
+      `ACSP4 +5V/+12V Power Supply <https://store.mrobotics.io/product-p/m10026a.htm>`__.
    -  Ultra low noise LDOs for sensors and FMU
 
 -  **Interfaces/Connectivity**
