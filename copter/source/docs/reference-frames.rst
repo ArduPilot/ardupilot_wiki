@@ -12,7 +12,7 @@ This section includes details on tested frames to speed up DIY builds of multico
     :maxdepth: 1
 
     Hexsoon EDU-450 <reference-frames-hexsoon-edu450>
-    Hexsoon TD-650 <reference-frames-hexsoon-td650>
+    Hexsoon EDU-650 <reference-frames-hexsoon-td650>
 	Holybro S500 <reference-frames-holybro-s500>
     AmovLab P200 <reference-frames-amovlab-p200>
     iFlight Chimera 7 <reference-frames-iflight-chimera7>
