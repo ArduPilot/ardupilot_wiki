@@ -181,7 +181,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  http://www.makeflyeasy.com
 
-      - .. image:: ../../../images/supporters/supporters_logo_Hexsoon.jpg
+      - .. image:: ../../../images/supporters/supporters_logo_hexsoon.png
             :width: 250px
             :align: center
             :target:  http://www.hexsoon.com
