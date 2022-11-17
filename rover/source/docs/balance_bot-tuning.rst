@@ -11,7 +11,7 @@ The Pitch controller should be tuned in Manual mode. The parameters involved in 
 
 - :ref:`BAL_PITCH_MAX<BAL_PITCH_MAX>`: Pitch angle limit.  If the user provides full throttle the vehicle will attempt to lean at this angle
 - :ref:`BAL_PITCH_TRIM <BAL_PITCH_TRIM>`: Pitch trim to offset tilt of center of mass
-- :ref:`ATC_BAL_SPD_FF <ATC_BAL_SPD_FF>`: Feed forward gain using the current speed.  This should normally be set to 0
+- :ref:`ATC_BAL_PIT_FF <ATC_BAL_PIT_FF>`: Feed forward gain using the current pitch angle.  This should normally be set to 0.4
 - :ref:`ATC_BAL_FF <ATC_BAL_FF>`: Feed forward gain using desired pitch angle.  This should normally be set to 0
 - :ref:`ATC_BAL_P <ATC_BAL_P>`: P gain used to correct the current pitch angle error.  Higher values will result in faster error correction but if too high will lead to oscillation.
 - :ref:`ATC_BAL_I <ATC_BAL_I>`: I gain used to correct long term pitch angle errors.  Setting to the same value as P often works well.  If set too high this could lead to slow oscillations.
@@ -46,7 +46,22 @@ It is best to connect the ground station (e.g. Mission Planner) to the vehicle u
 Reducing Drift with Pitch Trim
 ------------------------------
 
-If the vehicle consistently drifts in one direction while upright in Manual mode the center of mass may be slightly off of center.  :ref:`BAL_PITCH_TRIM <BAL_PITCH_TRIM>` sets the default pitch angle at zero throttle. Adjust it in steps of 0.1 degrees until the vehicle's drift is reduced.
+If the vehicle consistently drifts in one direction while upright in Manual mode the center of mass may be slightly off of center.  :ref:`BAL_PITCH_TRIM <BAL_PITCH_TRIM>` sets the default pitch angle at zero throttle.
+
+If the balance bot drifts forward, increase :ref:`BAL_PITCH_TRIM <BAL_PITCH_TRIM>` in steps of 0.1 until the vehicle's drift is reduced.  If the balance bot drifts backwards, decrease :ref:`BAL_PITCH_TRIM <BAL_PITCH_TRIM>`.
+
+Pitch Limiting
+--------------
+
+Rover-4.3 (and higher) includes automatic pitch limiting to reduce the chance of the vehicle falling over due to throttle saturation.  The feature works by monitoring the throttle output and if it crosses a given threshold the maximum pitch angle is temporarily reduced.
+
+The parameters below can be used to tune this features although normally they can be left at their default values
+
+- :ref:`ATC_BAL_LIM_THR<ATC_BAL_LIM_THR>`: pitch limit feature's throttle threshold (expressed as a value betwee 0 and 1).  If the vehicle's throttle climbs above this limit the vehicle's maximum pitch angle will be reduced.
+- :ref:`ATC_BAL_LIM_TC<ATC_BAL_LIM_TC>`: pitch limit feature's time constant.  Lower values will cause the pitch limit to be reduced quickly.  Higher values will limit the pitch more slowly.
+
+..  youtube:: 8EATOJRzBqs
+    :width: 100%
 
 .. _balance_bot-tuning-acro:
 
