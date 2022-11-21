@@ -29,7 +29,7 @@ fit in with the existing `MAVLink messages <https://mavlink.io/en/>`__.
 For example, you might want to send a new navigation command to the
 vehicle so that it can perform a trick (like a flip) in the middle of a
 mission (i.e. in AUTO mode).  In this case, you would need a new
-MAV_CMD_NAV_TRICK similar to the `MAV_CMD_NAV_WAYPOINT <https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_WAYPOINT>` definition
+MAV_CMD_NAV_TRICK similar to the `MAV_CMD_NAV_WAYPOINT <https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_WAYPOINT>`__  definition
 (search for "MAV_CMD_NAV_WAYPOINT" in the \ `MAVLink messages <https://mavlink.io/en/messages/common.html>`__ page).
 
 Alternatively, you may want to send down a new type of sensor data from
