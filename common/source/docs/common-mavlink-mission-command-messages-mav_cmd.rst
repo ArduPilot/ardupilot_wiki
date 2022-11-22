@@ -2313,20 +2313,18 @@ regardless of the ``param3`` value).
    </td>
    </tr>
    <td><strong>param2</strong></td>
-   <td>Sec</td>
+   <td>Speed deg/s</td>
    <td>Speed during yaw change:[deg per second].</td>
    </tr>
    <tr>
    <td><strong>param3</strong></td>
    <td>Dir 1=CW</td>
-   <td>If <code>param4=1</code> (relative) only: [-1 = CCW, +1 = CW]. This denotes
-   whether the autopilot should add (CW) or subtract (CCW) the
-   degrees (``param1``) from the current heading to calculate the target heading.
+   <td>Used to denote the direction of rotation to achieve the target angle (-1=CCW, 1=CW, 0=the vehicle will always turn in direction that most quickly gets it to the new target heading, but only if <code>param4=0</code> (absolute), otherwise 0 = CW).
    </td>
    </tr>
    <tr>
    <td><strong>param4</strong></td>
-   <td>rel/abs</td>
+   <td>0=Abs 1=Rel</td>
    <td>Specify if <code>param1</code> ("Deg" field) is an absolute direction (0) or a relative to the current yaw direction (1).</td>
    </tr>
    <tr style="color: #c0c0c0">
@@ -2353,7 +2351,7 @@ regardless of the ``param3`` value).
 .. figure:: ../../../images/MissionList_ConditionYaw.png
    :target: ../_images/MissionList_ConditionYaw.png
 
-   Copter: Mission Planner Settingsfor CONDITION_YAW command
+   Copter: Mission Planner Settings for CONDITION_YAW command
 
 [/site]
 [site wiki="copter" heading="off"]
