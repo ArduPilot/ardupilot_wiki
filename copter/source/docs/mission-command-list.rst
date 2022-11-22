@@ -289,17 +289,12 @@ when "rel/abs" field is "0" (meaning absolute)
 OR the change in heading (in degrees) when "rel/abs" field is "1"
 (meaning relative)
 
-**Sec** - not supported.  meant to limit the rotation speed (in deg/sec)
+**Speed deg/s** - the rotation speed (in deg/sec)
 as the vehicle turns to the desired heading
 
-**Dir (1=CW, -1=CCW)** - Used only when relative heading is specified
-(i.e. "rel/abs" = "1") denotes whether the autopilot should add
-(CW) or subtract (CCW) the degrees (Deg) from the current heading to
-calculate the target heading. The vehicle will always turn in direction
-that most quickly gets it to the new target heading regardless if CW or
-CCW are used.
+**Dir 1=CW** - Used to denote the direction of rotation to achieve the target angle (1=CW, -1=CCW, 0= the vehicle will always turn in direction that most quickly gets it to the new target heading, but only when "rel/abs" = "0",).
 
-**rel/abs** - allows specifying the heading (i.e "Deg" field) as an
+**rel/abs (0=Abs, 1=Rel)** - allows specifying the heading (i.e "Deg" field) as an
 absolute heading (if "0") or relative to the current heading (if "1")
 
 Do-Jump
