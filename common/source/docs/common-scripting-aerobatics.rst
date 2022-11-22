@@ -5,7 +5,7 @@ Scripted Aerobatics
 ===================
 
 
-.. note:: this capability is in ArduPlane 4.2 and higher
+.. note:: this capability is in ArduPlane 4.2 and higher. It is rapidly evolving. Its suggested that users uses load the current "Latest" firmware and refer to its matching doucmentation ( :ref:`common-scripted-aerobatics-4.4` ) for best perfoemance.
 
 ArduPilot has the capability of executing aerobatics from a LUA script. Either via AUTO mode mission items, or via scripts executed in many normal plane flight modes, usually controlled via a transmitter switch and selection RC channels.
 
