@@ -630,7 +630,6 @@ More Links
 - `Pinouts · beagleboard/beaglebone-blue Wiki <https://github.com/beagleboard/beaglebone-blue/wiki/Pinouts>`__
 - `ArduPilot Blue - A beginner's guide <https://github.com/imfatant/test>`__
 - `EE192 Getting Started with the Beaglebone Blue <https://inst.eecs.berkeley.edu/~ee192/sp21/files/GettingStartedBBBL.pdf>`__
-- `ArduPilot for beginners. Installation and configuration on BeagleBone Blue / Sudo Null IT News <https://sudonull.com/post/8513-ArduPilot-for-beginners-Installation-and-configuration-on-BeagleBone-Blue>`__
 - `How to compile using a github action workflow <https://github.com/drtrigon/ardupilot-beagle-bone-blue-binaries/>`__
 - `Building ArduPilot <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__
 - `Enabling the UIO PRU driver in recent kernels <https://catch22eu.github.io/website/beaglebone/beaglebone-pru-uio/>`__
