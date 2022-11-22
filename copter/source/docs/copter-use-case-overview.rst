@@ -27,7 +27,7 @@ available using autopilot :ref:`flight/control modes <flight-modes>`:
    you to run complex missions that you can define using a :ref:`ground control station <common-choosing-a-ground-station>`.
 -  A companion computer on the vehicle can communicate with/control
    Copter (for example, using
-   `DroneKit-Python <http://python.dronekit.io/>`__) and perform
+   `DroneKit-Python <https://github.com/dronekit/dronekit-python/>`__) and perform
    computationally intensive low-latency tasks like computer-vision.
 
 This stability and precision, and the flexibility in terms of manual and
