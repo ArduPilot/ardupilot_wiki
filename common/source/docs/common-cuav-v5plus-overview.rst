@@ -65,7 +65,7 @@ Where to Buy
 ============
 
 Order from `here <https://store.cuav.net/index.php>`__.
-Official retailers are listed `here  <https://leixun.aliexpress.com/>`__.
+Official retailers are listed `here  <https://www.cuav.net/en/resellers/>`__.
 
 Quick Start
 ===========
