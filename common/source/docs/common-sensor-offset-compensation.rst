@@ -55,3 +55,6 @@ Although individual position offsets can be set for each IMU, the difference bet
 
 - :ref:`FLOW_POS_X <FLOW_POS_X>`, :ref:`FLOW_POS_Y <FLOW_POS_Y>`, :ref:`FLOW_POS_Z <FLOW_POS_Z>` distance from the IMU or center of gravity
 
+**Visual Odometry:**
+
+- :ref:`VISO_POS_X <VISO_POS_X>`, :ref:`VISO_POS_Y <VISO_POS_Y>`, :ref:`VISO_POS_Z <VISO_POS_Z>` distance from the IMU or center of gravity

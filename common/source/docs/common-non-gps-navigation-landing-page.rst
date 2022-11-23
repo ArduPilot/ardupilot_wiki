@@ -16,6 +16,7 @@ These are the available options that allow a vehicle to estimate its position wi
 
     Intel RealSense T265 <common-vio-tracking-camera>
     MarvelMind Beacons <common-marvelmind>
+    ModalAI VOXL <common-modalai-voxl>
     Nooploop Beacons <common-nooploop>
 [site wiki="copter"]
     Nokov Indoor Optical Tracking <https://discuss.ardupilot.org/t/nokov-indoor-optical-tracking-system>
