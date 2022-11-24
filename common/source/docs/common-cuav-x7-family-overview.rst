@@ -125,8 +125,8 @@ pins:
 - PWM10(M10) 59
 - PWM11(M11) 60
 - PWM12(M12) 61
-- PWM11(M13) 62
-- PWM11(M14) 63
+- PWM13(M13) 62
+- PWM14(M14) 63
 
 Analog inputs
 =============
