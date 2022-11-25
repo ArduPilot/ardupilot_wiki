@@ -452,6 +452,16 @@ Do-Fence-Enable
 
 Enable(1) or Disable(0) the Copter :ref:`common-ac2_simple_geofence` and/or Copter :ref:`common-polygon_fence`. This command takes no additional arguments.
 
+Do-Gimbal-Manager-PitchYaw
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../../../images/mission-list-do-gimbal-manager-pitchyaw.png
+    :target: ../_images/mission-list-do-gimbal-manager-pitchyaw.png
+
+Moves the :ref:`camera gimbal <common-cameras-and-gimbals>` to the desired pitch and yaw angles (in degrees).  Positive pitch angles are up, Negative are down.  Positive yaw angles are clockwise, negative are counter clockwise.   If the "Flags" field is "0" the yaw angle is in "body frame" (e.g. 0 is forward).  If "Flags" is "16" the yaw angle is in "earth frame" (e.g. 0 is North).
+
+Alternatively Pitch Rate and Yaw Rate fields can be used to move the gimbal at a specified rate in deg/sec.  A Condition-Delay for a few seconds followed by another Do-Gimbal-Manager-PitchYaw should be used to eventually stop the gimbal from rotating.
+
 Do-Mount-Control
 ~~~~~~~~~~~~~~~~
 
