@@ -442,8 +442,7 @@ Do-Digicam-Control
 .. image:: ../../../images/MissionList_DoDigicamControl.png
     :target: ../_images/MissionList_DoDigicamControl.png
 
-Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>`
-once. This command takes no additional arguments.
+Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>` once.  The "Shutter Cmd" field should be set to "1".
 
 Do-Fence-Enable
 ~~~~~~~~~~~~~~~~~~
