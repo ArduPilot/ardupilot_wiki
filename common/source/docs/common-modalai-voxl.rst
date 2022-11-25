@@ -84,3 +84,9 @@ For indoor/outdoor transitions (e.g. VOXL camera indoors, GPS+Compass outdoors):
 After the parameters are modified, reboot the autopilot.
 
 More details on :ref:`GPS/Non-GPS Transitions can be found here <common-non-gps-to-gps>`
+
+Videos
+------
+
+..  youtube:: CikqIRzXlRc
+    :width: 100%
