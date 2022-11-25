@@ -327,6 +327,14 @@ command.
 
    No more that one hundred (100) Do-Jump commands can be used in a mission. This value is further reduced to fifteen (15) Do-Jump commands for boards with less than 500kb of ram. Subsequent Do-Jumps will be ignored.
 
+Do-Aux-Function
+~~~~~~~~~~~~~~~
+
+.. image:: ../../../images/mission-list-do-aux-function.png
+    :target: ../_images/mission-list-do-aux-function.png
+
+Allows any :ref:`auxiliary function <common-auxiliary-functions>` to be executed from within a mission without setting up an auxiliary switch.  The "AuxFunction" field should be set to the "RCx_OPTION value" from the linked page.  The "Switch" fields corresponds to the auxiliary function switch position with "0" meaning "low", "1" meaning "middle" and "2" meaning high.
+
 Do-Change-Speed
 ~~~~~~~~~~~~~~~
 
