@@ -50,7 +50,7 @@ ___________________________________________________________________
 
 
 - Fport: ``SERIALx_PROTOCOL`` = 23, ``SERIALx_OPTIONS`` = 7
-- Sport: ``SERIALx_PROTOCOL`` = 10, ``SERIALx_OPTIONS`` = 15 (invert TX/RX, Half Duplex)
+- Sport: ``SERIALx_PROTOCOL`` = 10, ``SERIALx_OPTIONS`` = 7 (invert TX/RX, Half Duplex)
 
 ______________________________________________________________________
 
