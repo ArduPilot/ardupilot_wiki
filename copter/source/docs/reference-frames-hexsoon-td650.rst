@@ -10,7 +10,7 @@ The Hexsoon EDU-650 (formerly known as TD-650) is a carbon fiber frame including
 
 The frame is available from many `CubePilot distributors <https://cubepilot.org/>`__
 
-CubePilot's `EDU-650 specfications can be found here <https://docs.cubepilot.org/user-guides/cubepilot-ecosystem/cubepilot-partners/hexsoon/multirotor-frame/td-650>`__
+Hexsoon's `EDU-650 specfications can be found here <https://docs.cubepilot.org/user-guides/cubepilot-ecosystem/cubepilot-partners/hexsoon/multirotor-frame/td-650>`__
 
 Box Contents
 ------------
@@ -31,6 +31,9 @@ Additional Required Parts
 
 Connection and Setup
 --------------------
+
+.. image:: ../images/refrence-frames-hexsoon-edu650-assembly.jpg
+    :target: ../_images/refrence-frames-hexsoon-edu650-assembly.jpg
 
 Connect the four ESC wires to the back of the autopilot as shown in the :ref:`QuadX configuration <connect-escs-and-motors>`
 

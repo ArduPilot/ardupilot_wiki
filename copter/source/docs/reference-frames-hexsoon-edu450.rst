@@ -10,7 +10,7 @@ The Hexsoon EDU-450 is a relatively low cost frame including motors, ESCs and pr
 
 This frame is available from many `CubePilot retailers <https://www.cubepilot.com/#/reseller/list>`__
 
-CubePilot's `EDU-450 specfications can be found here <https://docs.cubepilot.org/user-guides/cubepilot-ecosystem/cubepilot-partners/hexsoon/multirotor-frame/edu-450>`__
+Hexsoon's `EDU-450 specfications can be found here <https://docs.cubepilot.org/user-guides/cubepilot-ecosystem/cubepilot-partners/hexsoon/multirotor-frame/edu-450>`__
 
 Box Contents
 ------------
@@ -30,6 +30,9 @@ Additional Required Parts
 
 Connection and Setup
 --------------------
+
+.. image:: ../images/refrence-frames-hexsoon-edu450-assembly.jpg
+    :target: ../_images/refrence-frames-hexsoon-edu450-assembly.jpg
 
 Connect the four ESC wires to the back of the autopilot as shown in the :ref:`QuadX configuration <connect-escs-and-motors>`
 
