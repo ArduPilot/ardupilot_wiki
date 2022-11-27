@@ -217,6 +217,7 @@ Features
    :hidden:
 
    Home <https://ardupilot.org>
+   Vehicle Types <docs/common-all-vehicle-types>
    Copter <https://ardupilot.org/copter/index.html>
    Plane <https://ardupilot.org/plane/index.html>
    Rover <https://ardupilot.org/rover/index.html>
