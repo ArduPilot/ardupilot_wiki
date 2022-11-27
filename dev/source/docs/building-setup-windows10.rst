@@ -37,7 +37,7 @@ The official instructions are `here <https://docs.microsoft.com/en-us/windows/ws
 
     * To reload the path variables in WSL either close the terminal and reopen it or use: ``logout``
 
-#. Install an XWindows application to run graphical programs such as SITL by installing `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`_, `Cygwin X <https://x.cygwin.com/>`_ or `Xming <https://sourceforge.net/projects/xming/>`_ on Windows.
+#. If using Windows 10 install an XWindows application to run graphical programs such as SITL by installing `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`_, `Cygwin X <https://x.cygwin.com/>`_ or `Xming <https://sourceforge.net/projects/xming/>`_ on Windows. For Winodws 11 this is not necessary.
 
 #. If desired, change default WSL parameters as described `at this link <https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig>`_. These parameters allow you to set for example the amount of memory and number of processors used by WSL.
 
@@ -171,9 +171,9 @@ See this `guide <https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#
 File System Access between WSL and Windows
 ------------------------------------------
 
-From within WSL, the Windows drives are referenced in the /mnt directory. For example, to list documents within your (<username>) documents folder: ``ls /mnt/c/'Documents and Settings'/<username>/Documents`` or ``ls /mnt/c/Users/<username>/Documents``. You can also use the command ``explorer.exe .`` to open a Windows file explorer window in the current Linux directory. Take care that the editor being used on the Windows side does not change the line endings. Corruption of files is possible if care is not taken when crossing between file systems.
+From within WSL, the Windows drives are referenced in the /mnt directory. For example, to list documents within your (<username>) documents folder: ``ls /mnt/c/'Documents and Settings'/<username>/Documents`` or ``ls /mnt/c/Users/<username>/Documents``. You can also use the command ``explorer.exe .`` to open a Windows file explorer window in the current Linux directory. Take care that the editor being used on the Windows side does not change the line endings. Corruption of files is possible if care is not taken when crossing between file systems. In Windows 11, the Linux file manager 'nautilus' or Windows 'explorer.exe' can be invoked from the command line.
 
-From within Windows, the WSL distribution's files are located at (type in windows Explorer address bar): ``\\wsl$\<distribution name>`` (e.g. ``\\wsl$\Ubuntu-20.04``).
+From within Windows 10, the WSL distribution's files are located at (type in windows Explorer address bar): ``\\wsl$\<distribution name>`` (e.g. ``\\wsl$\Ubuntu-20.04``). Within Windows 11, the files are accessible under the Ubuntu directory in file explorer. Be careful modifying WSL text files in Windows editors since line endings are different in the two file systems.
 
 .. note::
 
