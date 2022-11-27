@@ -174,7 +174,8 @@ Tuning for Aerobatics
 Normal ArduPilot Autotune provides a safe, stable PID tune for most vehicles. As such, its not optimized for precision aerobatics which require a tight tune. See below:
 
 .. toctree::
-
+    :maxdepth: 1
+    
    Aerobatic Tuning <common-aerobatics-tuning>
 
 Simulation
