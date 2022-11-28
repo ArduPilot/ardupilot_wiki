@@ -13,7 +13,7 @@ The `SIYI ZR10 <https://shop.siyi.biz/products/zr10>`__ and `SIYI A8 <https://sh
 
 .. warning::
 
-    Support for these gimbals is available in ArduPilot 4.4 (and higher)
+    Support for these gimbals is available in ArduPilot 4.3.1 (and higher)
 
 Where to Buy
 ------------
@@ -25,6 +25,10 @@ Connecting to the Autopilot
 
 .. image:: ../../../images/siyi-zr10-gimbal-autopilot.png
     :target: ../_images/siyi-zr10-gimbal-autopilot.png
+    :width: 450px
+
+.. image:: ../../../images/siyi-a8-gimbal-autopilot.png
+    :target: ../_images/siyi-a8-gimbal-autopilot.png
     :width: 450px
 
 Connect the gimbal's RX, TX and GND pins to one of the autopilot's serial ports as shown above.
@@ -53,4 +57,7 @@ Configuring the Gimbal
 ----------------------
 
 - Download, install and run "SIYI PC Assistant" which can be found on the `SIYI ZR10 web page's Downloads tab <https://shop.siyi.biz/products/zr10>`__
-- Ensure the gimbal is running version 0.2.1 or higher
+- Ensure the gimbal is running a recent firmware.  For ZR10 use 0.2.1 or higher.  For A8 use 0.1.7 or higher.
+
+.. image:: ../../../images/siyi-gimbal-firmversion.png
+    :target: ../_images/siyi-gimbal-firmversion.png
