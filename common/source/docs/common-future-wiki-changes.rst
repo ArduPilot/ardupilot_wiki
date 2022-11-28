@@ -7,6 +7,15 @@ Future Wiki Changes (in Master branch now)
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+on :ref:`common-powermodule-landingpage`, add:
+==============================================
+
+.. toctree::
+    :maxdepth: 1
+
+    Synthetic Current Sensor/Analog Voltage Monitor <common-synthetic-current-monitor>
+
+
 [site wiki="plane"]
 
 on :ref:`acro-mode` page, in section "Acro Locking", add:
