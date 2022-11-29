@@ -72,6 +72,8 @@ The :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` must be set correctly for the comp
 
 The setting of the orientation of external compasses is no longer required. It's determined automatically during :ref:`common-compass-calibration-in-mission-planner` now. This can be disabled, or only report the orientation determined during Compass Calibration, using the :ref:`COMPASS_AUTO_ROT<COMPASS_AUTO_ROT>` parameter. The orientation determination CAN fail if the magnetic fields are compromised by nearby metal or other interference, especially on 45 deg offset orientations. If the compass is known to be mounted on a 45 degree bias to the accelerometers, and fails to determine orientation during the Compass Calibration, then setting :ref:`COMPASS_AUTO_ROT<COMPASS_AUTO_ROT>` to "3" and repeating the calibration, may yield a successful completion.
 
+.. note:: automatic determination of compass orientation ONLY occurs using normal Compass Calibration. :ref:`In-flight Calibration<automatic-compass-offset-calibration>` and :ref:`Large Vehicle Mag Calibration <large-vehicle-mag-cal>` require that the orientation be properly set BEFORE attempting these types of calibration.
+
 However, if the need to double-check the orientation of a compass should arise:
 
 -  When rotating your aircraft through all axes each of the compasses should move in the same direction, and should be of approximately the same values:
