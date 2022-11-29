@@ -19,7 +19,7 @@ Step 1 - getting started
 
 .. note::
 
-    The MCU must have at least 1 MB of flash.
+    The MCU must have at least 1 MB of flash to run the flight controller code. However, processors with lower flash memory can be used to develop DroneCAN peripherals which integrate many of ArudPilot's peripheral drivers for airspeed sensors, gps, compass, baro, etc. See the :ref:`ap-peripheral-landing-page' section for more information.
 
 .. tip:: Choose your board name carefully! Use 13 characters or less for your board name, otherwise it may be truncated when the board name is sent from the flight controller to a ground station such as Mission Planner.
 
