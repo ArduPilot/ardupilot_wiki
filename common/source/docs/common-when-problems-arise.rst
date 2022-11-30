@@ -57,6 +57,17 @@ Free RAM issues
 
 During initialization, it is possible for some features/subsystems to fail to get enough RAM allocated. Sometimes this will be announced such as in the case of insufficient memory to start a LUA script: "Scripting requires a larger minimum stack size", or for terrain: "Terrain: Allocation failed", etc. Also, insufficient free memory can result in compass calibration failing or MAVftp not initializing. See  :ref:`RAM Limitations <ram_limitations>` for more information.
 
+Main Loop Slow
+==============
+
+Some autopilots with slower CPUs (e.g. STM32F4) may not be fast enough to run all enabled features while also keeping the main loop running at the optimal rate (400hz for multicopters and helicopters, 200hz for quadplanes, 50hz for planes, rovers and boats).  The ArduPilot scheduler is forced to make compromises and may slow down the main loop resulting in messages like, "Main Loop slow (320hz <400hz)".  In these situations disabling some features as listed below may help.
+
+- Reduce the number of EKF cores (aka EKF lanes) by setting :ref:`EK3_IMU_MASK <EK3_IMU_MASK>` = 1 (first core only) or 3 (first and second core)
+- Disable :ref:`IMU batch sampling <common-imu-batchsampling>` by setting :ref:`INS_FAST_SAMPLE <INS_FAST_SAMPLE>` = 0
+- Disable the :ref:`harmonic notch <common-imu-notch-filtering>` by setting :ref:`INS_HNTCH_ENABLE <INS_HNTCH_ENABLE>` = 0 and :ref:`INS_HNTC2_ENABLE <INS_HNTC2_ENABLE>` = 0
+- Disable :ref:`In-Flight FFT based harmonic notch <common-imu-fft>` by setting :ref:`FFT_ENABLE <FFT_ENABLE>` = 0
+- Reduce the main loop rate by lowering :ref:`SCHED_LOOP_RATE <SCHED_LOOP_RATE>` (for multicopters try as low as 200)
+
 H7 AutoPilot Will Not Initialize
 ================================
 
