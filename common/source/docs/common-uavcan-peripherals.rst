@@ -17,6 +17,7 @@ DroneCAN was created to continue the development of the widely used UAVCAN v0 pr
     CUAV Neo 3 Pro DroneCAN GPS <common-cuav-neo-3-pro>
     CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
     CUAV DroneCAN Power Module <common-can-pmu>
+    FoxTech DroneCAN Airspeed/Compass <https://www.foxtechfpv.com/foxtech-aerofox-can-airspeed-compass.html>
     Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     Matek DroneCAN DLVR-10 Airspeed Sensor <common-matek-uavcan-dlvr>
