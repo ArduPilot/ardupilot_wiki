@@ -96,13 +96,12 @@ Prop Wash Compensation
 
 During low speed flight at high thrust settings, the air flow over some control surfaces is mostly due to the propeller. If this effect is not accounted for, the angle rate controller gain can be too high causing excessive response and/or instability.
 
-ArduPilot can use propeller disk theory to estimate the airspeed seen by the control surfaces as a result of both prop wash and forward airspeed. In order for this calculation to be done :ref:`PROP_DSKLD<PROP_DSKLD>` must be set. This is the aircraft weight in KG divided by the total disk area of the propellers. If a axial contra-rotating propeller is used, this counts as a single propeller. The disk area for each propeller is calculated from the diameter. 
-This allows ArduPilot to calculate the airspeed directly behind the propeller, however on a real vehicle 100% of the control surface is not in the direct prop wash.
+ArduPilot can use propeller disk theory to estimate the airspeed seen by the control surfaces as a result of both prop wash and forward airspeed which is then used to compensate for the variation in control affectiveness with thrust. In order for this calculation to be done, :ref:`PROP_DSKLD<PROP_DSKLD>` must be set. This is the aircraft weight in Kg divided by the total disk area of the propellers in m^2. The following formula can be used: PROP_DSKLD = weight / (n_props x 0.785 x dia x dia), where n_props is the number of propellers, dia is the propeller diameter in metres and weight is the aircraft weight in Kilograms. If a axial contra-rotating propeller is used, this counts as a single propeller.
 
 The effect of prop wash on the roll, pitch and yaw (aileron, elevator and rudder) is controlled individually by the :ref:`PROP_RLL_COMP<PROP_RLL_COMP>` , :ref:`PROP_PIT_COMP<PROP_PIT_COMP>` and :ref:`PROP_YAW_COMP<PROP_YAW_COMP>` compensation parameters.
 
-If a control surface is not affected by prop wash then its respective compensation parameter should be set to 0. If a control surface is fully affected, then its respective compensation parameter should be set to 1.
+If a control surface is not affected by prop wash then its respective compensation parameter should be set to 0. If a control surface is maximally affected, then its respective compensation parameter will be closer to 1.
 
-How much a control surface is affected is a function of how much of the surface is within the prop wash and its distance behind the propeller. If a control axis oscillates during prop hanging or vertical climbs at high throttle, then the corresponding compensation parameter should be increased.
+How much a control surface is affected is a function of how much of the surface is within the prop wash and its distance behind the propeller. The ACRO roll, pitch and yaw angle rate control loops should be tuned first in level flight before the PROP_RLL_COMP, PROP_PIT_COMP and PROP_YAW_COMP parameters are adjusted. If a control axis oscillates or over achieves the demanded rate during prop hanging or vertical climbs at high throttle, then its corresponding compensation parameter should be increased until the response during the prop hang or vertical climb matches that achieved during level flight tuning.
 
 For best results an airspeed sensor should be fitted.
