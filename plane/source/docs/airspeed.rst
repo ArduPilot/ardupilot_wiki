@@ -166,10 +166,14 @@ DroneCAN
 --------
 
 - DLVR
+    - `Foxtech AEROFOX Airspeed/Compass <https://www.foxtechfpv.com/foxtech-aerofox-can-airspeed-compass.html>`__
     - `Matek DroneCAN DLVR <http://www.mateksys.com/?portfolio=aspd-dlvr>`_
 
 - 5033 
     - `Qiotek DroneCAN 5033 <https://www.qio-tek.com/index.php?route=product/product&product_id=309>`_
+
+- 6897
+    - `Foxtech AEROFOX Airspeed/Compass <https://www.foxtechfpv.com/foxtech-aerofox-can-airspeed-compass.html>`__
 
 Other Topics
 ============
