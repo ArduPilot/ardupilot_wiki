@@ -40,6 +40,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     Display (Onboard) <common-display-onboard>
     ESCs and Motors <common-escs-and-motors>
+    External AHRS Systems <common-external-ahrs>
 [site wiki="plane"]
     Drive Calculator Motor/Propeller Analyzer <drivecalculator-guide>
 [/site]
