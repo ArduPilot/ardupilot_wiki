@@ -62,7 +62,19 @@ These GPS can incorporate real time kinematic data, either internally generated 
 
 .. note:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
 
-.. note:: If the GPS is only capable of 115.2Kbaud serial data rates, set :ref:`GPS_DRV_OPTIONS<GPS_DRV_OPTIONS>` bit 2 to enable its operation.
+GPS Driver Options
+==================
+
+Several GPS operating options are provided by the :ref:`GPS_DRV_OPTIONS<GPS_DRV_OPTIONS>` parameter. This parameter is a bit mask and allows multiple option selections at the same time:
+
+- bit 0: if set, will send RTK correction data from the first GPS directly to the second via the second's UART port for :ref:`common-gps-for-yaw`, instead via the autopilot.
+- bit 1: if set, enable SBF moving baseline yaw using custom base and GPS_MB1 offsets.
+- bit 2: if set, use 115.2Kbaud for max serial data rate for those GPSes not capable of higher rates.
+- bit 3: if set, routes RTK data between two CAN GPSes via CAN instead of via the autopilot.
+- bit 4: if set, GPS reports altitude in ellipsoid height instead of height AMSL.
+
+GPS Auto Switch
+===============
 
 When using two GPS units there are a number of switching options that can be selected with :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>`.
 
