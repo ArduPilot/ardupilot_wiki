@@ -98,7 +98,7 @@ in a number of ways.
 
 How are collected funds spent?
 ==============================
-Funds are first used to cover fixed costs including servers to host the wiki, forum, autotest and build servers and other running expenses. We also fund 3 part time highly qualified support engineers to help partners with support, and the partners coordinator position to ensure the partners program runs smoothly.
+Funds are first used to cover fixed costs including servers to host the wiki, forum, autotest and build servers and other running expenses. We also fund 3 part time highly qualified support engineers to help partners with support, a Wiki documentation maintainer, and the partners coordinator position to ensure the partners program runs smoothly.
 
 A Funding Committee of 3 members is voted on annually from within the Development Team to oversee and control financial matters.
 
