@@ -47,6 +47,8 @@ Configuration (4.3 or higher)
 
 Connect to the autopilot with a ground station and set the following parameters. These settings assume the autopilot's PWM outputs 9, 10 and 11 will control the gimbal's roll, pitch and yaw angles respectively. They also assume common angular ranges of the gimbal which may need adjusting to match the actual gimbal being used.
 
+.. note:: Currently up to two mounts can be supported, MNT1 and MNT2. The following parameters are for the first mount. The second mount has the same parameters.
+
 - :ref:`MNT1_TYPE <MNT1_TYPE>` to 1 (Servo) and reboot the autopilot
 - :ref:`MNT1_PITCH_MIN <MNT1_PITCH_MIN>` to -90 (meaning the gimbal can pitch straight downwards)
 - :ref:`MNT1_PITCH_MAX <MNT1_PITCH_MAX>` to 25 (meaning the gimbal can pitch up by 25 deg)
@@ -55,6 +57,9 @@ Connect to the autopilot with a ground station and set the following parameters.
 - :ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>` to -180 (meaning the gimbal can yaw to the left 180deg)
 - :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to 180 (meaning the gimbal can yaw to the right 180deg)
 - :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to 90 (deg/s) to control speed of gimbal when using RC targetting
+
+Typical input and output assignments are shown below, but any unused RC input channel or autopilot output channels can be assigned for some or all of these functions.
+
 - :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` to 8 (Mount1 Roll)
 - :ref:`SERVO9_MIN <SERVO9_MIN>` and :ref:`SERVO9_MAX <SERVO9_MAX>` to match the min and max range of the roll servo
 - :ref:`SERVO10_FUNCTION <SERVO10_FUNCTION>` to 7 (Mount1 Pitch)
@@ -138,63 +143,32 @@ To level and center the gimbal:
 
 -  Keep the airframe perfectly straight-and-level
 -  If the gimbal is not quite perfectly level, tweak the hardware first, eg, get servo horn/s so that the gimbal is as close to level as possible before doing the next step(s). Do this by unscrewing the horn from the servo and repositioning it, and/or if using push-rods to the gimbal, by adjusting the length of them.
--  If "pitch" is still not quite level, you can "trim" it by adjusting the ``MNTx_PITCH_MIN`` and ``MNTx_PITCH_MAX`` ... BOTH by one click in the same direction (e.g. click both down arrows once each) This will ensure that the difference between them remains constant (important), but will adjust the "center" position of the gimbal by small amounts (do not do this too much as it affects the maximum throw/s at the extremities by the same amount).
-
-Common fixes for poor video quality
-===================================
-
-Some of the more common causes and solutions for poor video are listed
-below:
-
--  "Jello" effect (or rolling shutter) is a by-product of using a camera
-   with a CMOS sensor (GoPro, et al) caused by vibration from unbalanced
-   props/motors and can be mitigated by mounting the camera on soft
-   rubber, silicone, foam ear plugs or sometimes just on velcro.
--  digital and optical stabilization systems found in many cameras often
-   do not perform well because of the vibrations found on many
-   multicopters.
-
-   -  Exceptions: the Sony video camera balanced steady shot system is
-      very effective even at maximum 30 power zoom.
-
--  For better and smoother Yaw, use Expo control on your RC and lower
-   the :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` gain in the autopilot.
-
-It is important to remember that even with a perfect setup, photography
-is an art as well as a science. Using the camera pointing straight to
-the ground is a good place to start, but more dramatic viewpoints can be
-achieved with angles other than vertical. Mount about 40 degrees
-deviation from vertical to obtain mainly ground photos but with an oblique
-view. About 70 degrees off vertical will give you a lot more sky thus giving
-more scenic photos. ArduPilot will stabilize the gimbal to whatever position you set.
+-  If "pitch" is still not quite level, you can "trim" it by adjusting the ``MNT_PITCH_MIN`` and ``MNT_PITCH_MAX`` ... BOTH by one click in the same direction (e.g. click both down arrows once each) This will ensure that the difference between them remains constant (important), but will adjust the "center" position of the gimbal by small amounts (do not do this too much as it affects the maximum throw/s at the extremities by the same amount).
 
 Shutter configuration
 =====================
 
 See :ref:`Camera Shutter Configuration in Mission Planner <common-camera-shutter-with-servo>` for information on how to integrate shutter triggering with ArduPilot.
 
-Camera Mount Mode/Targeting
-===========================
+See :ref:`common-cameras-and-gimbals` page for links to various triggering methods.
 
-The camera/gimbal direction can be controlled by the pilot using RC control(RC Targeting) if RC channels for control have been assigned (default on startup unless changed), by the autopilot during missions using the DO_SET_ROI or DO_MNT_CONTROL commands (GPS and MAVLink Targeting), not at all (just stabilizing and set to a given angle on the axes, called NEUTRAL), or when RETRACTED if a retractable mount is used to rotate the camera as it retracts for clearance.
+See :ref:`common-mount-targeting` for mount control and targeting information.
 
-If a retractable mount is employed, the overall mount may be deployed or retracted using an output assigned with ``SERVOx_FUNCTION`` set to "MountOpen". This will be automatically controlled by the autopilot as if it were landing gear (see :ref:`common-landing-gear`), or by pilot using an RC channel whose ``RCx_OPTION`` is set to "Landing Gear".
-
-The default targeting mode for the first camera/gimbal is set by the :ref:`MNT1_DEFLT_MODE<MNT1_DEFLT_MODE>` parameter, while ref:`MNT2_DEFLT_MODE<MNT2_DEFLT_MODE>` is used for the second mount, if used.
-
-The direction the axes are set for the NEUTRAL and RETRACTED modes are set by (shown for the first mount):
-
-- :ref:`MNT1_NEUTRAL_X<MNT1_NEUTRAL_X>`
-- :ref:`MNT1_NEUTRAL_Y<MNT1_NEUTRAL_Y>`
-- :ref:`MNT1_NEUTRAL_Z<MNT1_NEUTRAL_Z>`
-- :ref:`MNT1_RETRACT_X<MNT1_RETRACT_X>`
-- :ref:`MNT1_RETRACT_Y<MNT1_RETRACT_Y>`
-- :ref:`MNT1_RETRACT_Z<MNT1_RETRACT_Z>`
 
 Other Parameters
 ================
 
 Since servos in the gimbal may react slower to position/angle changes in the vehicle's roll and pitch as the vehicle moves about a target, the camera shot may have some visible lag in it. This can be reduced by using these parameters to have the gimbal outputs move a bit ahead of the movements of the vehicle.
 
-- :ref:`MNT1_LEAD_RLL<MNT1_LEAD_RLL>`
+
+Revs 4.3 or higher
+------------------
+
+- :ref:`MNT1_LEAD_RLL<MNT1_LEAD_RLL>` 
 - :ref:`MNT1_LEAD_PTCH<MNT1_LEAD_PTCH>`
+
+Revs 4.2 or lower
+-----------------
+
+- ``MNT_LEAD_RLL`` 
+- ``MNT_LEAD_PTCH``
