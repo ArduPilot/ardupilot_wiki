@@ -287,6 +287,7 @@ Intended as continuous PWM range control inputs:
 |        300-307       | Scripting RC channels      |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 
+.. note:: 201-204 are not implemented, reserved for future use.
 
 Description of Features
 =======================
