@@ -26,6 +26,8 @@ gimbals in which ArduPilot controls the stabilisation.
 -  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an inexpensive 2-axis or 3-axis brushless gimbal controller which responds to MAVLink commands (a richer format than PWM) over a serial interface
 -  :ref:`Tarot 2D Gimbal <common-tarot-gimbal>` — low cost 2-axis brushless gimbal
 
+Mount control and targeting is covered on the :ref:`common-mount-targeting` page.
+
 Cameras with MAVLink interfaces
 ===============================
 
@@ -36,7 +38,9 @@ Cameras with MAVLink interfaces
 Camera Control and GeoTagging
 =============================
 
-ArduPilot allows you to :ref:`configure the camera shutter output port <common-camera-shutter-with-servo>` (servo, relay). In :ref:`camera mission planning <common-camera-control-and-auto-missions-in-mission-planner>`
+ArduPilot allows you to :ref:`configure the camera shutter output port <common-camera-shutter-with-servo>` (servo, relay).
+
+In :ref:`camera mission planning <common-camera-control-and-auto-missions-in-mission-planner>`
 you can specify when the camera shutter should trigger, or a distance
 that the vehicle should travel between shots.
 
@@ -45,6 +49,7 @@ camera (including its shutter). The topics explain how to configure the
 camera shutter, and list a number of different approaches for converting
 the output signal into the form expected by your particular camera:
 
+-  :ref:`Mount Mode and Targeting Control<common-mount-targeting>`
 -  :ref:`Airpixel Entire Geotagger <common-geotagging-airpixel-entire>`
 -  :ref:`DROTAG x Geotagger  <common-geotagging-drotagx>`
 -  :ref:`Seagull IR Camera Trigger <common-camera-trigger-seagull-ir>`
@@ -57,6 +62,34 @@ the output signal into the form expected by your particular camera:
 -  :ref:`Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>`
 -  :ref:`Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>` (non-standard integration)
 -  :ref:`RunCam Camera Control <common-camera-runcam>`
+
+Common fixes for poor video quality
+===================================
+
+Some of the more common causes and solutions for poor video are listed
+below:
+
+-  "Jello" effect (or rolling shutter) is a by-product of using a camera
+   with a CMOS sensor (GoPro, et al) caused by vibration from unbalanced
+   props/motors and can be mitigated by mounting the camera on soft
+   rubber, silicone, foam ear plugs or sometimes just on velcro.
+-  digital and optical stabilization systems found in many cameras often
+   do not perform well because of the vibrations found on many
+   multicopters.
+
+   -  Exceptions: the Sony video camera balanced steady shot system is
+      very effective even at maximum 30 power zoom.
+
+-  For better and smoother Yaw, use Expo control on your RC and lower
+   the :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` gain in the autopilot.
+
+It is important to remember that even with a perfect setup, photography
+is an art as well as a science. Using the camera pointing straight to
+the ground is a good place to start, but more dramatic viewpoints can be
+achieved with angles other than vertical. Mount about 40 degrees
+deviation from vertical to obtain mainly ground photos but with an oblique
+view. About 70 degrees off vertical will give you a lot more sky thus giving
+more scenic photos. ArduPilot will stabilize the gimbal to whatever position you set.
 
 Detail topics
 =============
@@ -82,3 +115,4 @@ Detail topics
     Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>
     Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>
     RunCam Camera Control <common-camera-runcam>
+    Mount Mode and Targeting Control<common-mount-targeting>
