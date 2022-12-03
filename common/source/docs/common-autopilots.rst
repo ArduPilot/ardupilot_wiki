@@ -55,8 +55,8 @@ Closed hardware
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
-    Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     Flywoo F745 AIO BL_32/ Nano <common-flywoo-f745>
+    Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     Holybro Kakute F4* <common-holybro-kakutef4>
     Holybro Kakute F4 Mini* <common-holybro-kakutef4-mini>
     Holybro Kakute F7 AIO* <common-holybro-kakutef7aio>
@@ -122,6 +122,7 @@ The following boards are no longer produced, however documentation is still avai
     Emlid Edge <common-emlid-edge>
     Erle PXFmini RPi Zero Shield <common-pxfmini>
     Erle ErleBrain <common-erle-brain-linux-autopilot>
+    Foxeer Reaper F745-AIO V2 <common-foxeerf745aio>
     Holybro Kakute H7 Mini <common-holybro-kakuteh7mini.rst>
     Holybro Kakute H7-BT <common-holybro-kakuteh7.rst>
     Intel Aero <common-intel-aero-overview>
