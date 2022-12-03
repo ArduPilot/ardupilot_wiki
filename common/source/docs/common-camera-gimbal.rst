@@ -79,7 +79,7 @@ Gimbal`` set-up screen. (see image below)
 The **Type** box should be set to the type of gimbal. "Servo" for either non-stabilized manual control, or ArduPilot stabilization, or use of an external gimbal stabilizer. The autopilot will need to be rebooted in order for this to take effect and allow changes to the options below.
 
 For each axis (**PITCH, ROLL, YAW**) of your camera gimbal select the appropriate output
-channel that you connected above and ensure the appropriate **"Stabilise"** checkbox is checked.
+channel (although shown as "RCx" in the above, MP will now show the labels for output channel choices correctly as "SERVOx" in current MP releases) that you connected above and ensure the appropriate **"Stabilise"** checkbox is checked (DO NOT CHECK YAW, however, its not supported) .
 
 .. note:: if only directional control is desired without correcting for vehicle attitude, then leave the **"Stabilise"** checkbox unchecked.
 
@@ -121,7 +121,7 @@ If you find your gimbal is moving in the wrong direction, check the
    Mission Planner: Camera and Gimbal Setup Screen
 
 If you wish to adjust the gimbal yaw, pitch, or roll while flying, you can
-set the RC controls for roll, pitch, or yaw using ``RCx_OPTION`` 212 (Mount1 Roll), 213 (Mount1 Pitch), 214 (Mount1 Yaw) for the first mount, or 215-217 for the second mount, respectively.
+set the RC controls for roll, pitch, or yaw using the **Input channel** selection box.
 
 .. tip:: If only manual yaw and/or pitch is desired using servos, you can use this setup without stabilization. In addition, by extending the ``SERVO LIMITS`` you can sometimes obtain almost 180-degree servo rotation, on some servos. Increase them slowly, testing as you do, and do not overextend the PWM values. Stop when the motion stops increasing.
 
@@ -170,5 +170,5 @@ Revs 4.3 or higher
 Revs 4.2 or lower
 -----------------
 
-- ``MNT_LEAD_RLL`` 
+- ``MNT_LEAD_RLL``
 - ``MNT_LEAD_PTCH``
