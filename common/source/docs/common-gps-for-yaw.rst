@@ -67,6 +67,8 @@ the two GPS modules to go via the flight controller board.
 
 .. note:: should be possible to mix and match a Serial GPS and a DroneCAN GPS, but this configuration has not been tested as yet.
 
+.. note:: Do not use :ref:`GPS_AUTO_SWITCH<GPS_AUTO_SWITCH>` = 2 (Blend) when using Moving Baseline configurations.
+
 Internal Moving Baseline Systems
 ================================
 
