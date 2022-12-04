@@ -49,7 +49,7 @@ Some (but not all) product examples using AP-Periph:
 - :ref:`mRo UAVCAN/DroneCAN Adapter node<common-mro-uavcan-adapter-node>`
 - :ref:`Orange Cube<common-thecubeorange-overview>` (It is a flight controller, but it can also be used in AP_Periph. Similar node types to follow.)
 
-See: :ref:`common-uavcan-peripherals` for more devices
+See: :ref:`DroneCAN Peripherals <copter:common-uavcan-peripherals>` for more devices
 
 Firmware
 ========

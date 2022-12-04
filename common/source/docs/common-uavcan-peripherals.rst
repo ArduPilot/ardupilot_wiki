@@ -1,4 +1,4 @@
-.. common-uavcan-peripherals:
+.. _common-uavcan-peripherals:
 
 ====================
 DroneCAN Peripherals
