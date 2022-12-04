@@ -11,7 +11,9 @@ This lists features or changes merged in master and build in the "latest" firmwa
 .. toctree::
     :maxdepth: 1
 
+    [site wiki="plane,copter"]
     Trajectory Based Precision Aerobatics Scripting (replaces old page) <common-scripted-aerobatics-4.4>
+    [/site]
     SIYI ZR10 and A8 gimbals <common-siyi-zr10-gimbal>
     Other wiki changes <common-future-wiki-changes>
 

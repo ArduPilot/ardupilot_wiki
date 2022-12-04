@@ -1,6 +1,6 @@
 .. _common-scripted-aerobatics-4.4:
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter"]
 
 ===================
 Scripted Aerobatics
