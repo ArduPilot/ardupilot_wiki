@@ -1,5 +1,6 @@
 .. common-aerobatics-tuning:
 
+[copywiki destination="plane,copter"]
 ================================
 Tuning for Autonomous Aerobatics
 ================================
