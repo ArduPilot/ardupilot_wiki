@@ -32,7 +32,7 @@ ArduPilot sub-divides tailsitters into two broad categories:
   - Within Non-vectored are two sub-categories, Single/Dual Motor and CopterMotor:
 
      - Single/Dual Motor uses one or two motors and can employ only differential thrust if dual motor. Single motor tailsitters are similar to normal 3D planes that can hover using large control surfaces exposed to the single motor prop wash for control, but with ArduPilot providing the control stability for hovering, loitering, and VTOL mission navigation. Dual Motor add differential thrust to assist in body frame yaw control, while copter motor tailsitters are almost the same as a multicopter when in VTOL stance with flying surfaces, if present, adding to the control.
-     -  CopterMotor uses three, four, or more motors and operates in a more copter-like fashion. These may or may not have control surfaces usable in fixed wing flight for control. **               CopterMotor tailsitters without them (ie. only have a lifting wing with no control surfaces) must use always use their motors to provide control while in fixed wing flight modes. Setting :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` = 2 automatically does this.**
+     -  CopterMotor uses three, four, or more motors and operates in a more copter-like fashion. These may or may not have control surfaces usable in fixed wing flight for control. **               CopterMotor tailsitters without them (ie. only have a lifting wing with no control surfaces) must always use their motors to provide control while in fixed wing flight modes. Setting :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` = 2 automatically does this.**
 
 Tailsitter Configuration
 ========================
