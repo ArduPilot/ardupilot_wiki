@@ -27,7 +27,7 @@ gimbals in which ArduPilot controls the stabilisation.
 -  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an inexpensive 2-axis or 3-axis brushless gimbal controller which responds to MAVLink commands (a richer format than PWM) over a serial interface
 -  :ref:`Tarot 2D Gimbal <common-tarot-gimbal>` — low cost 2-axis brushless gimbal
 
-Mount control and targeting is covered on the :ref:`common-mount-targeting` page.
+Mount control is covered on the :ref:`common-mount-targeting` page.
 
 Cameras with MAVLink interfaces
 ===============================
@@ -50,7 +50,6 @@ camera (including its shutter). The topics explain how to configure the
 camera shutter, and list a number of different approaches for converting
 the output signal into the form expected by your particular camera:
 
--  :ref:`Mount Mode and Targeting Control<common-mount-targeting>`
 -  :ref:`Airpixel Entire Geotagger <common-geotagging-airpixel-entire>`
 -  :ref:`DROTAG x Geotagger  <common-geotagging-drotagx>`
 -  :ref:`Seagull IR Camera Trigger <common-camera-trigger-seagull-ir>`
@@ -117,4 +116,4 @@ Detail topics
     Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>
     Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>
     RunCam Camera Control <common-camera-runcam>
-    Mount Mode and Targeting Control<common-mount-targeting>
+    Gimbal / Mount Controls <common-mount-targeting>
