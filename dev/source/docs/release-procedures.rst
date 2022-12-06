@@ -34,21 +34,21 @@ Create a new release branch or switch to an existing release branch
 
 Open a Git Bash terminal in the ardupilot repository.
 
-If this release involves a major or minor version increase (i.e. 3.5 to 3.6) create a new branch in your local ardupilot repository:
+If this release involves a major or minor version increase (i.e. 4.3 to 4.4) create a new branch in your local ardupilot repository:
 
-- ``git checkout -b Copter-3.6`` ("Copter-3.6" should be replaced with the correct major and minor version numbers)
+- ``git checkout -b Copter-4.4`` ("Copter-4.4" should be replaced with the correct major and minor version numbers)
 - ``git push`` to create the new directory in the shared repo
-- click the `"New Project" button <https://github.com/ArduPilot/ardupilot/projects>`__ on the GitHub projects page to create the corresponding "Copter 3.x Backports" project.  This is used to track features to be included in future releases
+- click the `"New Project" button <https://github.com/ArduPilot/ardupilot/projects?type=classic>`__ on the GitHub projects page to create the corresponding "Copter 4.x" project.  This is used to track features to be included in future releases
 
 Alternatively if this release is built on an earlier release branch checkout the branch:
 
-- ``git checkout Copter-3.6`` to switch to the existing release branch ("Copter-3.6" should be replaced with the correct major and minor version numbers)
+- ``git checkout Copter-4.3`` to switch to the existing release branch ("Copter-4.3" should be replaced with the correct major and minor version numbers)
 
 Pull in changes from master
 ---------------------------
 
-Check the `ArduPilot Github Projects <https://github.com/ArduPilot/ardupilot/projects>`__ to determine which PRs and commits should be included in this release.
-For example the `Copter 3.5 Backports project <https://github.com/ArduPilot/ardupilot/projects/4>`__ holds the list of PRs and commits that should be included in the next Copter-3.5 release.
+Check the `ArduPilot Github Projects <https://github.com/ArduPilot/ardupilot/projects?type=classic>`__ to determine which PRs and commits should be included in this release.
+For example the `Copter 4.3 project <https://github.com/ArduPilot/ardupilot/projects/25>`__ holds the list of PRs and commits that should be included in the next Copter-4.3 release.
 
 - ``git reset --hard origin/master``, ``git submodule update --recursive`` can be used to reset the release branch to master if all of master should be included (this is normal for at least the first few beta releases)
 
@@ -104,8 +104,8 @@ Releasing a stable version is the same as a beta version except the ``ArduCopter
 
 An additional tag is created including the patch release number:
 
-- ``git tag Copter-3.6.0``
-- ``git push origin Copter-3.6.0``
+- ``git tag Copter-4.3.0``
+- ``git push origin Copter-4.3.0``
 
 Announcements are done in much the same way as beta releases by posting on these sites:
 
