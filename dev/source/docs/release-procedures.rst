@@ -73,7 +73,7 @@ Steps 4 to 8 above should be repeated for the ``ArduCopter-beta-heli`` tag to re
 Check the versions are available in Mission Planner
 ---------------------------------------------------
 
-Wait 4hrs to 11hrs for the binaries to be built (check the `Build list <https://firmware.ardupilot.org/Tools/BuildSizes/builds.html>`__ and/or `autotest-output.txt <https://autotest.ardupilot.org/autotest-output.txt>`__ file for status) and then open the Mission Planner's Initial Setup > Install Firmware page and click the "Beta firmwares" link and ensure that the version displayed below each multicopter icon has updated.
+Wait 4hrs to 11hrs for the binaries to be built (check the `Build list <https://firmware.ardupilot.org/Tools/BuildSizes/builds.html>`__, `autotest-output.txt <https://autotest.ardupilot.org/autotest-output.txt>`__  and/or `manifest.json <https://firmware.ardupilot.org/manifest.json>`__ for status) and then open the Mission Planner's Initial Setup > Install Firmware page and click the "Beta firmwares" link and ensure that the version displayed below each multicopter icon has updated.
 
 .. image:: ../images/ReleaseProcedures_MPBetaFirmwares.jpg
     :target: ../_images/ReleaseProcedures_MPBetaFirmwares.jpg
