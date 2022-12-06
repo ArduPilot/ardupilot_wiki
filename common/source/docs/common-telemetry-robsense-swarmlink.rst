@@ -9,6 +9,10 @@ Robsense SwarmLink
 
 `Robsense SwarmLink <https://home.robsense.com/?page_id=862&lang=en>`__ telemetry radios allows connecting multiple drones to a single ground station without the need for multiple radios on the ground station side (i.e. it creates a mesh network).  Network monitoring and configuration software is also included.
 
+.. warning::
+
+   The developer team has been unable to contact Robsense leading us to believe the manufacturer is no longer supporting this product
+
 Specifications (according to the manufacturer)
 ----------------------------------------------
 
