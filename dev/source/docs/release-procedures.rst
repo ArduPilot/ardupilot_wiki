@@ -83,13 +83,13 @@ Announce the release to the beta testers
 
 Let Beta testers know the new version is available by posting on these sites:
 
-- `Discourse's Copter category <https://discuss.ardupilot.org/c/arducopter>`__ (create a new category if required)
+- `Discuss's Copter category <https://discuss.ardupilot.org/c/arducopter>`__ (create a new category if required)
 - `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.  Include the contents of the ReleaseNotes.txt so people know what has changed and a video if possible
 
 Issue Tracking
 --------------
 
-- beta testers should report issues in the appropriate `discourse Copter forum <https://discuss.ardupilot.org/c/arducopter>`__
+- beta testers should report issues in the appropriate `Discuss Copter forum <https://discuss.ardupilot.org/c/arducopter>`__
 - the release manager (Randy) with help from other developers should investigate issues and respond with the cause of the problem
 - confirmed bugs should be added to the `ArduPilot Issues List <https://github.com/ArduPilot/ardupilot/issues>`__.  The issue's label should be set to "Copter" and Projects and Milestone set to the upcoming release if it should be addressed before release.
 
@@ -109,10 +109,10 @@ An additional tag is created including the patch release number:
 
 Announcements are done in much the same way as beta releases by posting on these sites:
 
-- `Discourse's Copter category <https://discuss.ardupilot.org/c/arducopter>`__ (create a new category if required)
+- `Discuss's Copter category <https://discuss.ardupilot.org/c/arducopter>`__ (create a new category if required)
 - `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.  Include the contents of the ReleaseNotes.txt so people know what has changed and a video if possible
 - `LinkedIn <https://www.linkedin.com>`__
-- Back on Github, `Draft a new release <https://github.com/ArduPilot/ardupilot/releases>`__ and add the Discourse link from above
+- Back on Github, `Draft a new release <https://github.com/ArduPilot/ardupilot/releases>`__ and add the Discuss link from above
 
 Mission Planner will also show a pop-up informing users that a new version is available.
 
