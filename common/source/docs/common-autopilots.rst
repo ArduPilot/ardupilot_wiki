@@ -6,6 +6,8 @@ Autopilot Hardware Options
 
 This section provides information about ArduPilot Autopilot Hardware options.  The list below is sorted by manufacturer and product name.
 
+Linux boards don't support all features as of low demand.
+
 Open hardware
 -------------
 
