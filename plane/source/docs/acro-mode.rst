@@ -37,11 +37,6 @@ hold the aileron stick hard over while leaving the elevator stick alone.
 The plane will apply elevator correction to try to hold your pitch while
 rolling, including applying inverse elevator while inverted.
 
-In the current implementation the controller won't use rudder while the
-plane is on its side to hold pitch, which means horizontal rolls won't
-be as smooth as a good manual pilot, but that should be fixed in a
-future release. This also means that it won't hold knife-edge flight.
-
 Performing a loop is just as simple - just start with wings level then
 pull back on the elevator stick while leaving the aileron alone. The
 controller will try to hold your roll attitude through the loop. You can
