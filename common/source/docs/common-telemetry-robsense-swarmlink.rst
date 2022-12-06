@@ -4,6 +4,8 @@
 Robsense SwarmLink
 ==================
 
+**ARCHIVED TOPIC: No longer manufactured**
+
   .. image:: ../../../images/telemetry-robsense-swarmlink.png
 	 :target: ../_images/telemetry-robsense-swarmlink.png
 

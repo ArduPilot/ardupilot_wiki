@@ -40,6 +40,8 @@ value to users with old hardware.
     common-toshiba-can-escs
     common-tarot-gimbal
     DROTAG x Geotagger <common-geotagging-drotagx>
+    Robsense SwarmLink <common-telemetry-robsense-swarmlink>
+
 [/site]
 [site wiki="copter"]
     Boat Mode <boat-mode>
