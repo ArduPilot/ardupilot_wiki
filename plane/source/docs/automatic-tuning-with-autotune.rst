@@ -135,7 +135,9 @@ coping well with wind, or not holding altitude well. Keep flying in
 AUTOTUNE mode well past the point where you think the plane is flying
 well.
 
-If you have an OSD or Ground Control Station, then messages for D and P tuning phases for the axis, as well as a "Tuning Completed" message will be displayed. Once tuning is completed, it is saved.
+If you have an OSD or Ground Control Station, then messages for D and P tuning phases for the axis, as well as a "Tuning Completed" message will be displayed.
+
+.. note:: To save the new tune, you must disarm while still in AUTOTUNE mode. If you switch out of AUTOTUNE, new settings will be lost and previous tune restored. You can use this feature if you're unhappy with AUTOTUNE's results and want to discard them.
 
 Tuning light, agile aircraft
 ----------------------------
