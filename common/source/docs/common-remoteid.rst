@@ -25,6 +25,8 @@ Stand-alone devices:
 - `EAMS Robotics remote id (Japan) <http://www.eams-robo.co.jp/remoteid.html>`__
 - `TEAD remote id (Japan) <https://www.tead.co.jp/product/remote-id/>`__
 
+.. note:: US FAA Compliant devices are listed `here <https://uasdoc.faa.gov/listDocs>`__
+
 OpenDroneID Compatible devices (support included in ArduPlane 4.0 and later)
 
 - `BlueMark DroneBeacon MAVLink (EU, US) <https://dronescout.co/dronebeacon-mavlink-remote-id-transponder/>`__
