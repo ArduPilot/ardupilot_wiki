@@ -8,6 +8,8 @@ SITL was originally developed on Linux, but can also be built and run *natively*
 
 Currently, the simplest way to run SITL on Windows is to build the code and simulate using WSL:  :ref:`dev:building-setup-windows10`
 
+Prerequisites: 'Windows 10 64bit'  at a minimum, this will not work on , for example, Windows 7. It also will not run on any 32bit windows installation.
+
 The remainder of this article shows how to build and run :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` *natively* on Windows using Cygwin. These commands were tested on Windows 10 with :ref:`MAVProxy <mavproxy:home>` and Copter-4.0.0-dev.
 
 .. figure:: ../images/MAVProxy_Map_GuidedCopter.jpg
