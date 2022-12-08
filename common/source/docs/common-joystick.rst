@@ -94,6 +94,11 @@ Setup with the Mission Planner
    values are not at least 1 PWM us off the default value, that calibration
    has not been done. If you have RC calibrated your transmitter/receiver system already, this will not be necessary. DO NOT RC CALIBRATE THE JOYSTICK, it is not the same control mechanism as is used for RC systems. It uses MAVLink override messages.
 
+   If you want to set like mode2, set Ch1 to Ch4 as follows.
+   
+   .. image:: ../../../images/joystick_Mode2_Setting.png
+    :target: ../_images/joystick_Mode2_Setting.png
+    :scale: 65%
 
 Testing the controls before flying
 ==================================
