@@ -54,6 +54,10 @@ Quadcopter
     :target: ../_images/motororder-quad-atail-2d.png
     :scale: 35%
 
+.. image:: ../../../images/motororder-Y4a-2d.jpg
+    :target: ../_images/motororder-Y4a-2d.jpg
+    :width: 35%
+
 Tricopter
 ---------
 
@@ -88,13 +92,6 @@ Hexacopter
 .. image:: ../images/motororder-hexa-plus-2d.png
     :target: ../_images/motororder-hexa-plus-2d.png
     :scale: 40%
-
-Y4
---
-
-.. image:: ../../../images/motororder-Y4a-2d.jpg
-    :target: ../_images/motororder-Y4a-2d.jpg
-    :width: 35%
 
 Y6
 --
