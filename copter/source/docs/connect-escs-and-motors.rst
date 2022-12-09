@@ -56,7 +56,7 @@ Quadcopter
 
 .. image:: ../../../images/motororder-Y4a-2d.jpg
     :target: ../_images/motororder-Y4a-2d.jpg
-    :width: 35%
+    :scale: 40%
 
 Tricopter
 ---------
