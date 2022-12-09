@@ -12,7 +12,7 @@ Supported Systems
 Currently, ArduPilot supports these systems:
 
 - `Parker Lord 3DM® Series <https://www.microstrain.com/inertial-sensors/all-sensors>`_
-- `VectorNav AHRS <https://www.vectornav.com/products>`__
+- `VectorNav VN-300 AHRS <https://www.vectornav.com/products>`__
 
 Setup
 =====
