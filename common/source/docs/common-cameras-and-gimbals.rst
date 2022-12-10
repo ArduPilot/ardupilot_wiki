@@ -20,7 +20,7 @@ that have their own self-stabilization controllers and the simpler servo-driven
 gimbals in which ArduPilot controls the stabilisation.
 
 -  :ref:`Brushless PWM <common-brushless-pwm-gimbal>` - brushless gimbals that accept PWM or SBUS input for angle control
--  :ref:`Gremsy T3, T7, Pixy and Mio <common-gremsy-pixyu-gimbal>` - high quality 3-axis gimbals
+-  :ref:`Gremsy T3, T7, Pixy, Mio and ZIO <common-gremsy-pixyu-gimbal>` - high quality 3-axis gimbals
 -  :ref:`Servo Gimbals <common-camera-gimbal>` — older-style servo-driven gimbal where ArduPilot provides stabilisation
 -  :ref:`SimpleBGC (aka AlexMos) Gimbal Controller <common-simplebgc-gimbal>` - a popular 2-axis or 3-axis brushess gimbal controller which uses a custom serial interface
 -  :ref:`Siyi ZR10 and A8 <common-siyi-zr10-gimbal>` - 3-axis gimbal and camera (only supported in AP 4.4 and higher)
