@@ -38,7 +38,7 @@ then you could choose level 7, which will result in a bit sharper tune
 have done an initial tune with a lower level. Levels above 8 should only
 be used by very experienced pilots.
 
-You can also autotune the yaw axis during AUTOTUNE for yaw rate control in :ref:`ACRO mode <acro-mode>` by setting :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1.
+You can also autotune the yaw axis during AUTOTUNE for yaw rate control in :ref:`ACRO mode <acro-mode>` by setting :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1. Tuning the yaw axis can only be done in AUTOTUNE mode, or using the ``RCx_OPTION`` switch set to 107, but only in ACRO mode with :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1.
 
 .. note:: with Yaw rate controller active, turning in AUTOTUNE mode will require the use of rudder, not just aileron input. Do not enable :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` if you do not have a rudder.
 
@@ -131,7 +131,7 @@ As of version 4.2, ArduPilot provides the option for utilization of a rate contr
 
 To enable this functionality, set :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` to 1. When enabled, the :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` parameter can be used to adjust maximum yaw rate demanded at rudder stick full deflections in ACRO mode.
 
-This controller can be AutoTuned in the same manner as the pitch and roll axes, and in the same session using the Rudder control stick to produce the rapid yaw demands used by AUTOTUNE.
+This controller can be AutoTuned in the same manner as the pitch and roll axes, and in the same session using the Rudder control stick to produce the rapid yaw demands used by AUTOTUNE. Autotuning YAW can also be done in ACRO mode using an auxiliary switch set with the ``RCx_OPTION`` to 107. 
 
 .. note:: while AutoTuning with this controller enabled, it will resist any non-pilot commanded yaw changes, (ie like traditional helicopter "heading hold" gyros), just as in ACRO mode with the yaw rate controller active. Banking the aircraft will NOT result in a turn, or at least a poorly executed turn. Pilot rudder inputs in turns will be needed.
 
