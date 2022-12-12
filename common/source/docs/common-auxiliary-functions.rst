@@ -952,7 +952,7 @@ Forces Airspeed Use to be disabled for testing in the air.
    <td><strong>Enable Autotuning</strong></td>
    <td>
 
-Allows tuning without entering AUTOTUNE mode. (i.e. place the vehicle in LOITER/AUTO with stick mixing enabled, and can autotune while the vehicle is loitering by using sticks.)
+Allows tuning without entering AUTOTUNE mode. (i.e. if you place the vehicle in LOITER/AUTO with stick mixing enabled, it can autotune while the vehicle is loitering by using sticks, but enabling autotuning can occur in any mode other than MANUAL.) 
 
 .. raw:: html
 
