@@ -66,6 +66,7 @@ Applications and Info
 
     FlightDeck FrSky Transmitter App <common-frsky-flightdeck>
     MAVLink2 Packet Signing (Security) <common-MAVLink2-signing>
+    MAVLink High Latency Protocol <common-MAVLink-high-latency>
     Repeater for Wireless Ground Station Connections <common-wireless-gcs-repeater>
     Telemetry Radio Regional Regulations <common-telemetry-radio-regional-regulations>
 
