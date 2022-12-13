@@ -12,9 +12,6 @@ Open hardware
 .. toctree::
     :maxdepth: 1
 
-    BBBMini* (Linux) <https://github.com/mirkix/BBBMINI>
-    Beagle Bone Blue (Linux) <common-beagle-bone-blue>
-    Blue Robotics Navigator* (Linux) <https://bluerobotics.com/store/comm-control-power/control/navigator/>
     CUAV V5 Plus <common-cuav-v5plus-overview>
     CUAV V5 Nano <common-cuav-v5nano-overview>
     CUAV Nora <common-cuav-nora-overview>
@@ -36,13 +33,8 @@ Open hardware
     mRo Pixracer <common-pixracer-overview>
     mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/m10021a.htm>
     mRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/m10022a.htm>
-    Obal Board (Linux) <common-obal-overview>
     OpenPilot Revolution <common-openpilot-revo-mini>
-    PocketPilot* (Linux) <https://github.com/PocketPilot/PocketPilot>
     TauLabs Sparky2** <common-taulabs-sparky2>
-    
-
-\* these devices are sensor add-on boards for a Linux-based microcomputer. See board links for details.
 
 \** due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
@@ -99,6 +91,22 @@ Closed hardware
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
 
 \* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
+
+Linux Based Autopilots
+----------------------
+
+These autopilots using an underlying Linux OS. Linux boards usually have more CPU power and memory many of the other boards listed on this page, but do not support DShot, Bi-Directional DShot, BLHeli ESC passthrough, many of the ArduPilot GPIO based features, and easy upload from the ground stations. They do allow experimentation and development of advanced control and navigation algorithms (see also :ref:`common-companion-computers`).
+
+.. toctree::
+    :maxdepth: 1
+
+    BBBMini* (Linux) <https://github.com/mirkix/BBBMINI>
+    Beagle Bone Blue (Linux) <common-beagle-bone-blue>
+    Blue Robotics Navigator* (Linux) <https://bluerobotics.com/store/comm-control-power/control/navigator/>
+    Obal Board (Linux) <common-obal-overview>
+    PocketPilot* (Linux) <https://github.com/PocketPilot/PocketPilot>
+
+\* these devices are sensor add-on boards for a Linux-based microcomputer. See board links for details.
 
 .. note:: For more information on using ArduPilot on Linux based boards, see :ref:`building-the-code`
 
