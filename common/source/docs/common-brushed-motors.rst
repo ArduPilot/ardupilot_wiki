@@ -22,6 +22,7 @@ Verified Motor Drivers
 - `Pololu G2 High-Power Motor Driver <https://www.pololu.com/product/2991>`__ supports "BrushedWithRelay"
 - `Pololu DRV8838 Motor Driver <https://www.pololu.com/product/2990>`__ supports "BrushedWithRelay"
 - `RoboClaw 2x7A Motor Controller <https://www.pololu.com/product/3284>`__ supports "Normal" when the Roboclaw is in RC Mode
+- `L298N Motor Driver <https://www.amazon.com/s?k=l298n+motor+driver>`__ . See also `these setup instructions <https://github.com/jazzl0ver/ardupilot-rover-l298n>`__
 - :ref:`SkyRocket <copter:skyrocket>` drones use "Brushed" motors
 
 Connection and Configuration
