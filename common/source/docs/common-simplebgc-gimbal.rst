@@ -4,8 +4,10 @@
 SimpleBGC Gimbal (aka AlexMos gimbal)
 =====================================
 
-The SimpleBGC is a popular brushless gimbal controller that can communicate with ArduPilot (Copter, Plane, and Rover) using a custom serial protocol.
+The SimpleBGC is a popular brushless gimbal controller that can communicate with ArduPilot (Copter, Plane, and Rover) using MAVLink or a custom serial protocol.
 More details on the capabilities of this gimbal can be found at `basecamelectronics.com <https://www.basecamelectronics.com/>`__
+
+More details can be found in the `software user manual <https://www.basecamelectronics.com/files/v3/SimpleBGC_32bit_manual_2_6x_eng.pdf>`__.
 
 Where to Buy
 ============
@@ -18,32 +20,15 @@ Connecting the gimbal to the Autopilot
 .. image:: ../../../images/simplebgc-gimbal-pixhawk.png
     :target: ../_images/simplebgc-gimbal-pixhawk.png
 
-Although the SimpleBGC can be connected using PWM (similar to the Tarot gimbal) we recommend using the serial interface connected to one of the autopilot's Serial/Telemetry ports like Telem2 as shown above.
+Although the SimpleBGC can be connected using PWM we recommend using the serial interface connected to one of the autopilot's Serial/Telemetry ports like Telem2 as shown above.
 
-In your Ground Control Station set the following variables, if using the first mount::
+Configuration when using Custom Serial Protocol
+===============================================
 
-- :ref:`MNT1_TYPE <MNT1_TYPE>` to 4 / "Mount Type (None, Servo or MavLink)"
-- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 1 / "MavLink" (Note "SERIAL2" should be "SERIAL1" if using Telem1 port, SERIAL4 if using Serial4/5, etc)
-- :ref:`SR2_EXTRA1 <SR2_EXTRA1>` to 20
-- :ref:`SR2_POSITION <SR2_POSITION>` to 10
-- :ref:`SR2_RC_CHAN <SR2_RC_CHAN>` to 20 and all other SR2_* variables to 0.
+In your Ground Control Station set the following parameters, if using the first mount connected to Serial2 as shown above:
 
-If you wish to control the pitch angle manually you can set:
-
--  ``RCx_OPTION`` to 213.
-- In the SimpleBCG GUI in the tab "RC Settings" in the field "Input Configuration" set PITCH to "API_VIRT_CH6".
-
-.. warning::
-
-    If you connect the gimbal as shown in the above diagram, it is NOT possible to establish a connection to the GUI on a PC via USB and have it connected simultaneously to the autopilot. It happens because the UART1 ("serial" in the picture above) is "paralleled to the onboard USB-UART converter (excepting the "Tiny" boards that has a dedicated USB). If you accidentally connect both the GUI via USB and an autopilot via UART1, you might end up with corrupt data on the flash of the gimbal. It can result in unexpected motor movement! The reason details, please check the `link <https://www.basecamelectronics.com/files/v3/SimpleBGC_32bit_manual_2_6x_eng.pdf>`__.
-
-Setup through the Ground Station
-================================
-
-Set the following parameters through your ground station and then reboot the autopilot( values shown for first mount):
-
-- :ref:`MNT1_TYPE <MNT1_TYPE>` to 3 / "AlexMos-Serial"
-- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 7 / "AlexMos Gimbal Serial"  (Note "SERIAL2" should be "SERIAL1" if using Telem1 port, SERIAL4 if using Serial4/5, etc)
+- :ref:`MNT1_TYPE <MNT1_TYPE>` to 3 ("AlexMos-Serial")
+- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 7 ("AlexMos Gimbal Serial")
 
 If you are unable to connect you may wish to set the following parameters although normally this should not be required:
 
@@ -61,11 +46,12 @@ For a 3-axis gimbal with 360 degrees of yaw set:
 
 - :ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>`, :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to -180 and 180 to get a full 360 degrees of yaw range
 
+Configuration when using MAVLink Protocol
+=========================================
 
-Using Gimbal GUI and MavLink Connection
-=======================================
+The manufacturer instructions on the MAVLink setup can be found on page 97 of the `software user manual <https://www.basecamelectronics.com/files/v3/SimpleBGC_32bit_manual_2_6x_eng.pdf>`__.
 
-To use the gimbal GUI and the autopilot with MavLink it is necessary to use Gimbal firmware version 2.60 or above. 
+To use the gimbal GUI and the MAVlink protocol, the gimbal must be running firmware version 2.60 or above.
 
 The following instructions present how to wire the components:
 
@@ -81,6 +67,23 @@ In this setup you have to take care of the following options in the GUI:
 - Port setting: 115200, none parity 
 - Check the options: Send heartbeat and Query RC data 
 - MavLink control mode: "Controls ROLL and PITCH axes only" If everything is set correctly you should see something like the following in the fields: AHRS: OK (40ms), GPS: OK (106ms), RC: OK, Control: OK CH1: Packets received: 257502, lost: 0, parse errors: 3 CH2: Packets received: 0, lost: 0, parse errors: 0.
+
+In your Ground Control Station set the following parameters, if using the first mount connected to Serial2:
+
+- :ref:`MNT1_TYPE <MNT1_TYPE>` to 4 ("SToRM32 MAVLink")
+- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 1 ("MAVlink1")
+- :ref:`SR2_EXTRA1 <SR2_EXTRA1>` to 20
+- :ref:`SR2_POSITION <SR2_POSITION>` to 10
+- :ref:`SR2_RC_CHAN <SR2_RC_CHAN>` to 20 and all other SR2_* variables to 0.
+
+If you wish to control the pitch angle manually you can set:
+
+-  ``RCx_OPTION`` to 213.
+- In the SimpleBCG GUI in the tab "RC Settings" in the field "Input Configuration" set PITCH to "API_VIRT_CH6".
+
+.. warning::
+
+    If you connect the gimbal as shown in the above diagram, it is NOT possible to establish a connection to the GUI on a PC via USB and have it connected simultaneously to the autopilot. It happens because the UART1 ("serial" in the picture above) is "paralleled to the onboard USB-UART converter (excepting the "Tiny" boards that has a dedicated USB). If you accidentally connect both the GUI via USB and an autopilot via UART1, you might end up with corrupt data on the flash of the gimbal. It can result in unexpected motor movement! The reason details, please check the `link <https://www.basecamelectronics.com/files/v3/SimpleBGC_32bit_manual_2_6x_eng.pdf>`__.
 
 
 .. _common-simplebgc-gimbal_testing_the_gimbal_moves_correctly:
