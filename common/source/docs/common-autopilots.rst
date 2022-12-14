@@ -34,9 +34,9 @@ Open hardware
     mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/m10021a.htm>
     mRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/m10022a.htm>
     OpenPilot Revolution <common-openpilot-revo-mini>
-    TauLabs Sparky2** <common-taulabs-sparky2>
+    TauLabs Sparky2* <common-taulabs-sparky2>
 
-\** due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
+\* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
 Closed hardware
 ---------------
@@ -100,13 +100,13 @@ These autopilots using an underlying Linux OS. Linux boards usually have more CP
 .. toctree::
     :maxdepth: 1
 
-    BBBMini* (Linux) <https://github.com/mirkix/BBBMINI>
+    BBBMini** (Linux) <https://github.com/mirkix/BBBMINI>
     Beagle Bone Blue (Linux) <common-beagle-bone-blue>
-    Blue Robotics Navigator* (Linux) <https://bluerobotics.com/store/comm-control-power/control/navigator/>
+    Blue Robotics Navigator** (Linux) <https://bluerobotics.com/store/comm-control-power/control/navigator/>
     Obal Board (Linux) <common-obal-overview>
-    PocketPilot* (Linux) <https://github.com/PocketPilot/PocketPilot>
+    PocketPilot** (Linux) <https://github.com/PocketPilot/PocketPilot>
 
-\* these devices are sensor add-on boards for a Linux-based microcomputer. See board links for details.
+\** these devices are sensor add-on boards for a Linux-based microcomputer. See board links for details.
 
 .. note:: For more information on using ArduPilot on Linux based boards, see :ref:`building-the-code`
 
