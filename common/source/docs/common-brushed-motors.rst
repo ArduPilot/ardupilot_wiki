@@ -40,6 +40,9 @@ Connection and Configuration
 - :ref:`MOT_PWM_FREQ <MOT_PWM_FREQ>` defaults to 16000 but can be changed to any value from 1000 to 20000 to change the output frequency
 [/site]
 
+.. note:: in some ground control stations, attempting to set this parameter above its normal 50 to 490hz range will require the user to acknowledge this "out of range" setup in order to set the parameter. This is to prevent accidental miss-configuration for brushless ESCs.
+
+
 .. warning::
 
     If the autopilot will also control servos (which use regular RC PWM) take care that the servos are not in the same "PWM output group" as any motor outputs.  The grouping is only documented on some of the :ref:`AutoPilot Hardware Options <common-autopilots>` pages but for a regular Pixhawk or Cube autopilot MAIN OUT 1 ~ 4 are in group1 meaning that if any brushed motors are configured for MAIN OUT 1 to 4 then servos must be connected to output 5 or higher
