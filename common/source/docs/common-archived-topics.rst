@@ -108,6 +108,7 @@ value to users with old hardware.
     How to sign a Pixhawk with your Certificate of Authenticity <how-to-use-the-auth-command-to-sign-a-pixhawk-board-with-your-certificate-of-authenticity>
     SITL Serial Mapping <sitl-serial-mapping>
     2020/2021 Roadmap <roadmap>
+    Trouble Shooting Pixhawk4 Boot <troubleshooting-pixhawkpx4-boot>
 [/site]
 
 
