@@ -109,6 +109,12 @@ value to users with old hardware.
     SITL Serial Mapping <sitl-serial-mapping>
     2020/2021 Roadmap <roadmap>
 [/site]
+[site wiki="copter,rover"]
+.. toctree::
+    :maxdepth: 1
+
+    Visual Odometry with OpenKai and ZED <common-zed>
+[/site]
 
 
 [copywiki destination="copter,plane,rover,dev"]
