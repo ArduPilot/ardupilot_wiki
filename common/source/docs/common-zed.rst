@@ -1,10 +1,13 @@
 .. _common-zed:
 
+
+ARCHIVED
+
 ========================================
 ZED stereo camera for Non-GPS Navigation
 ========================================
 
-[copywiki destination="copter,rover,blimp"]
+[copywiki destination="copter,rover"]
 
 This article explains how a `ZED stereo camera <https://www.stereolabs.com>`__ can be used with `OpenKai <https://github.com/yankailab/OpenKAI>`__ as a substitute for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto.
 
