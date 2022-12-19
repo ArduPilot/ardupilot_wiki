@@ -54,6 +54,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     Hitec PositionPro GNSS <https://www.hiteccs.com/drones/peripheral-details/positionpro-gnss-receiver/>
     Holybro RTK M8P Family <common-holybro-rtk-m8p>
     Holybro RTK F9P Family <common-holybro-rtk-f9p>
+    LOCOSYS HAWK R1 RTK GNSS / R2 RTK GNSS + Compass<common-gps-locosys>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/RTK_F9P>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
     Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
