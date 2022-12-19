@@ -159,7 +159,7 @@ Specifying Message Rates in a File
 
 At boot ArduPilot will populate the initial message intervals from files found in either ROMFS or in the filesystem.
 
-On ChibiOS-based boards the SD card will be searched for specially-named files in the APM subdirectory.
+On ChibiOS-based boards (with more than 1MB of flash) the SD card will be searched for specially-named files in the root directory.
 
 Each mavlink channel is configured in a separate configuration file.  The first serial port configured as mavlink is channel 0, the second serial port channel 1 etc.
 
