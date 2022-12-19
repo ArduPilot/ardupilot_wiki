@@ -20,6 +20,7 @@ MAVLink enabled devices that connect to the autopilot:
 Stand-alone devices:
 
 - `Aerobits idME+ <https://www.aerobits.pl/product/idme-remoteid/>`__
+- `AEROENTRY remote id (Japan) <https://aeroentry.co.jp/info/product/228/>`__
 - `BlueMark DroneBeacon <https://dronescout.co/dronebeacon-remote-id-transponder/>`__
 - `Braveridge remote id (Japan) <https://www.braveridge.com/product/archives/49>`__
 - `EAMS Robotics remote id (Japan) <http://www.eams-robo.co.jp/remoteid.html>`__
