@@ -590,6 +590,26 @@ Other SITL vicon settings are hel in SIM_VICON_xx parameters:
 
    param show SIM_VICON*
 
+Simulating Multiple Flight Controllers on a Vehicle
+---------------------------------------------------
+
+The STANDBY Mode function (``RCx_OPTION`` = 76) allows an autopilot to be put into a soft standby mode so that a second autopilot or companion computer can take control, but allow the first to resume later. In order to help in the code development of such systems, you can simulate two flight controllers operating in the simulation at the same time. The "master" instance, which has the active outputs into the sim is started declaring that there will be a "slave" instance which will be monitoring the sensors and running its code in parallel, but whose outputs are not connected into the simulation physics:
+
+::
+
+   ./Tools/autotest/sim_vehicle.py -v ArduCopter --slave 1
+
+then another sim is started for the "slave" autopilot using:
+
+::
+
+   ./Tools/autotest/sim_vehicle.py -v ArduCopter  -f json:0.0.0.0 -I1
+
+you can then switch between whose outputs are being used by the simulation physics with the ``SIM_JSON_MASTER`` parameter  ie O or 1.
+
+The second simulation could be running code from a different branch on the same computer.
+
+
 Accessing log files
 ===================
 
