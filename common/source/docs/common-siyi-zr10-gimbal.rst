@@ -41,7 +41,7 @@ Connect with a ground station and set the following parameters.  The params belo
 - :ref:`MNT1_PITCH_MIN <MNT1_PITCH_MIN>` to -90
 - :ref:`MNT1_PITCH_MAX <MNT1_PITCH_MAX>` to 25
 - :ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>` to -80
-- :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to -80
+- :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to 80
 - :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to 90 (deg/s) to control speed of gimbal when using RC targetting
 - :ref:`RC6_OPTION <RC6_OPTION>` = 213 ("Mount Pitch") to control the gimbal's pitch angle with RC channel 6
 - :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw angle with RC channel 7
