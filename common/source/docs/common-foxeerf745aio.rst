@@ -1,10 +1,10 @@
 .. _common-foxeerf745aio:
 
-=========================
-Foxeer Reaper F745 AIO V2
-=========================
+=======================
+Foxeer Reaper F745 AIO 
+=======================
 
-The Foxeer Reaper F745 AIO V2 features an F7 flight controller and an integrated 45A 2-6S BLHeli_S 4-in-1 Bluejay ESC.
+The Foxeer Reaper F745 AIO V2/V3 features an F7 flight controller and an integrated 45A 2-6S BLHeli_S 4-in-1 Bluejay ESC.
 
 .. note:: ArduPilot does not currently support the V3 version.
 
@@ -28,7 +28,7 @@ Specifications
 
 -  **Sensors**
 
-   -  BMI-270 IMU (Accelerometer/Gyro)
+   -  (Accelerometer/Gyro) BMI-270 IMU on V2, ICM-42688 on V3
    -  Voltage & 130A Current sensor
 
 -  **Power**
@@ -157,6 +157,6 @@ any ArduPilot ground station software. Updates should be done with the xxxxxxxxx
 Firmware
 ========
 
-Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "ReaperF745v2".
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "ReaperF745".
 
 [copywiki destination="plane,copter,rover,blimp"]
