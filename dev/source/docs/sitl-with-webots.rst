@@ -18,8 +18,8 @@ Running the Examples
 ====================
 
 #. Open Webots using the command line.
-#. Download and open a vehicle from the `vehicle examples folder <https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Webots/worlds>`__   such as  ``webots_quadPlus.wbt`` .
-#. Compile the Robot Controller and WorldInfo physics plugin using Webots GUI.
+#. Download and open a vehicle from the `vehicle examples folder <https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Webots/worlds>`__   such as  ``webots_quadPlus.wbt``.
+#. Compile the Robot Controller and WorldInfo physics plugin using Webots GUI by opening their respective source files (`ardupilot_SITL_QUAD.c <https://github.com/ArduPilot/ardupilot/blob/master/libraries/SITL/examples/Webots/controllers/ardupilot_SITL_QUAD/ardupilot_SITL_QUAD.c>`__ and `sitl_physics_env.c <https://github.com/ArduPilot/ardupilot/blob/master/libraries/SITL/examples/Webots/plugins/physics/sitl_physics_env/sitl_physics_env.c>`__) and running ``Build > Build``. More info about building with Webots can be found `here <https://cyberbotics.com/doc/guide/webots-built-in-editor>`__.
 #. Press Run on Webots GUI. Now the simulator is running.
 #. Run ArduPilot's SITL using available scripts in the `examples folder <https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Webots>`__. 
 
@@ -33,8 +33,8 @@ Running the Examples
 .. warning::
 
    It is important to run Webots before ArduPilot's SITL , otherwise the socket connection may not establish.
-
-
+   
+   As of writing, these instructions work with Webots 2021b. Newer versions may or may not work correctly.
 
 Simulation Parameters
 =====================
