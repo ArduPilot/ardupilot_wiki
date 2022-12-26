@@ -54,3 +54,18 @@ change note in the YAW Controller section to:
 .. note:: while AutoTuning with this controller enabled, roll inputs will result in yaw outputs also, allowing more coordinated turns with the yaw controller active. This will normally result in simultaneously tuning the yaw controller with the roll controller, but not necessisarily completing the yaw tune when the roll tune finishes. Also, there may be seemingly excessive rudder applied initially in the roll tune on vehicles with large yaw authority, until the tune progresses.
 
 [/site]
+
+[site wiki="copter"]
+
+on :ref:`common-transmitter-tuning` page, add:
+==============================================
+
+under TUNE parameter table:
+
++--------+-------------------------+----------------------------------------------------------------------+
+|Value	 |Meaning                  | Parameter                                                            |
++========+=========================+======================================================================+
+|59      |Position Control Max     |  :ref:`PSC_ANGLE_MAX<PSC_ANGLE_MAX>`                                 |
+|        | Lean Angle              |                                                                      |
++--------+-------------------------+----------------------------------------------------------------------+
+[/site]
