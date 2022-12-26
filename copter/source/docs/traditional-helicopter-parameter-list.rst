@@ -38,7 +38,7 @@ These setup the configuration of the swashplate and collective travel.
 
 - :ref:`H_SW_TYPE<H_SW_TYPE__AP_MotorsHeli_Single>`
 - :ref:`H_SW_H3_ENABLE<H_SW_H3_ENABLE__AP_MotorsHeli_Single>`  Never manually set this parameter!
-- :ref:`H_COLYAW<H_COLYAW>`
+- ``H_COLYAW<H_COLYAW`` This parameter will be eliminated in versions after 4.3
 - :ref:`H_COL_MAX<H_COL_MAX>`
 - ``H_COL_MID``  This parameter was used in versions prior to Copter 4.3.0
 - :ref:`H_COL_MIN<H_COL_MIN>`
