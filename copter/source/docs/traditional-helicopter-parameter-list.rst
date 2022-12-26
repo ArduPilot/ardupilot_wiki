@@ -10,7 +10,7 @@ This list is provided as a quick means to explore all the unique Single and Dual
 Vehicle Type/Configuration
 ==========================
 
-These are basic setup parameters which need to be set in all cases.
+These are basic setup parameters that need to be set in all cases.
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>`  Note: only Single Heli and Dual Heli are valid with TradHeli firmware
 - :ref:`H_FLYBAR_MODE<H_FLYBAR_MODE>`
@@ -19,7 +19,7 @@ These are basic setup parameters which need to be set in all cases.
 General Swashplate/Collective Setup
 ===================================
 
-These set the cyclic max, allow bench testing of blade angle setup, and setting features of the swashplate/collective.
+These set the cyclic max, allow bench testing of blade angle set up, and set features of the swashplate/collective.
 
 - :ref:`H_COL_ANG_MIN<H_COL_ANG_MIN>`
 - :ref:`H_COL_ANG_MAX<H_COL_ANG_MAX>`
@@ -34,11 +34,11 @@ These set the cyclic max, allow bench testing of blade angle setup, and setting 
 Single Swashplate/Collective Setup
 ==================================
 
-These setup the configuration of the swashplate and collective travel.
+These set up the configuration of the swashplate and collective travel.
 
 - :ref:`H_SW_TYPE<H_SW_TYPE__AP_MotorsHeli_Single>`
-- :ref:`H_SW_H3_ENABLE<H_SW_H3_ENABLE__AP_MotorsHeli_Single>`  Never manually set this parameter!
-- ``H_COLYAW<H_COLYAW`` This parameter will be eliminated in versions after 4.3
+- :ref:`H_SW_H3_ENABLE<H_SW_H3_ENABLE__AP_MotorsHeli_Single>` Never manually set this parameter!
+- ``H_COLYAW<H_COLYAW>`` This parameter will be eliminated in versions after 4.3
 - :ref:`H_COL_MAX<H_COL_MAX>`
 - ``H_COL_MID``  This parameter was used in versions prior to Copter 4.3.0
 - :ref:`H_COL_MIN<H_COL_MIN>`
@@ -88,7 +88,7 @@ ArduPilot allows custom swashplate servo placement for three servo swashplates. 
 Rotor Speed Control Setup
 =========================
 
-The speed of the rotor, or rotors in the case of Dual Heli, is controlled by ArduPilot using the following RSC modes: RSC channel passthrough (not recommended), external governor, internal throttle curve, or internal governor. Parameters are provided for rotor spool time, throttle slew rate, and critical rotor speed.  The internal throttle curve and governor are mainly for use with ICE or turbine engines but can be used for electric powered heli's without ESC governing.
+The speed of the rotor, or rotors in the case of Dual Heli, is controlled by ArduPilot using the following RSC modes: RSC channel passthrough (not recommended), external governor, internal throttle curve, or internal governor. Parameters are provided for rotor spool time, throttle slew rate, and critical rotor speed.  The internal throttle curve and governor are mainly for use with ICE or turbine engines but can be used for electric-powered helis without ESC governing.
 
 - :ref:`H_RSC_MODE<H_RSC_MODE>`
 - :ref:`H_RSC_IDLE<H_RSC_IDLE>`
@@ -120,7 +120,7 @@ Parameters for internal throttle curve, if used.
 ArduPilot Provided Rotor Speed Governor
 =======================================
 
-Parameters for internal rotor speed governor, if used.  Internal throttle curve will need to be set up to use this mode.
+Parameters for internal rotor speed governor, if used. The transmitter's throttle curve will need to be set up to use this mode. See the Setup section of :ref:`traditional-helicopter-internal-rsc-governor`.
 
 - ``H_RSC_GOV_DISGAG``  This parameter was used in versions prior to Copter 4.3.0
 - :ref:`H_RSC_GOV_DROOP<H_RSC_GOV_DROOP>`
@@ -135,7 +135,7 @@ Parameters for internal rotor speed governor, if used.  Internal throttle curve 
 Tail Setup
 ==========
 
-The type of tail rotor/control used are determined by these parameters.
+The type of tail rotor/control used is determined by these parameters.
 
 - :ref:`H_TAIL_SPEED<H_TAIL_SPEED>`
 - :ref:`H_TAIL_TYPE<H_TAIL_TYPE>`
