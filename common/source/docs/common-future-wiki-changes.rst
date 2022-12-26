@@ -27,9 +27,9 @@ on :ref:`common-powermodule-landingpage`, add:
     Synthetic Current Sensor/Analog Voltage Monitor <common-synthetic-current-monitor>
 
 
-on :ref:`common-uavcan-setup-advanced`, :ref:`mission-planner-initial-setup`, :ref:`common-slcan-f4`, and :ref:`common-slcan-f7h7` pages add the following note:
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+on :ref:`common-uavcan-setup-advanced`, :ref:`mission-planner-initial-setup`, :ref:`common-slcan-f4`, and :ref:`common-slcan-f7h7` pages add the following note:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 .. note:: SLCAN access via COM port is disabled when armed to lower cpu load. Use SLCAN via MAVLink instead.
 
 
