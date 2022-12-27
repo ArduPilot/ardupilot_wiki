@@ -288,12 +288,12 @@ The message definition can be found `here <https://mavlink.io/en/messages/common
 
 Valid options are:
 
-- MAV_FRAME_GLOBAL (0): alt is meters above sea level
-- MAV_FRAME_GLOBAL_INT (5): alt is meters above sea level
-- MAV_FRAME_GLOBAL_RELATIVE_ALT (3): alt is meters above home
-- MAV_FRAME_GLOBAL_RELATIVE_ALT_INT (6): alt is meters above home
-- MAV_FRAME_GLOBAL_TERRAIN_ALT (10): alt is meters above terrain
-- MAV_FRAME_GLOBAL_TERRAIN_ALT_INT (11): alt is meters above terrain
+- MAV_FRAME_GLOBAL (0): alt is in meters above sea level
+- MAV_FRAME_GLOBAL_INT (5): alt is in meters above sea level
+- MAV_FRAME_GLOBAL_RELATIVE_ALT (3): alt is in meters above home
+- MAV_FRAME_GLOBAL_RELATIVE_ALT_INT (6): alt is in meters above home
+- MAV_FRAME_GLOBAL_TERRAIN_ALT (10): alt is in meters above terrain
+- MAV_FRAME_GLOBAL_TERRAIN_ALT_INT (11): alt is in meters above terrain
 
 .. raw:: html
 
