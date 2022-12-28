@@ -37,7 +37,7 @@ GPS/Compass
 RTK GPS
 =======
 
-These GPS can incorporate real time kinematic data, either internally generated or externally provided, to improve the precision of the position estimate from the normal GPS meter range down to the cenitmeter range. This increased precision also allows for "Moving Baseline" yaw estimates using two devices on a vehicle with certain RTK GPSes (F9P based) or dedicated Moving Baseline GPSes. See :ref:`common-gps-for-yaw`.
+These GPS can incorporate real time kinematic data, either internally generated or externally provided, to improve the precision of the position estimate from the normal GPS meter range down to the cenitmeter range (see :ref:`common-rtk-correction`). This increased precision also allows for "Moving Baseline" yaw estimates using two devices on a vehicle with certain RTK GPSes (F9P based) or dedicated Moving Baseline GPSes. See :ref:`common-gps-for-yaw`.
 
 .. toctree::
     :maxdepth: 1
