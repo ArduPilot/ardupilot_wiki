@@ -16,7 +16,14 @@ on :ref:`common-auxiliary-functions`, add:
 |       170            |  QSTABILIZE mode           |          |  x      |         |
 +----------------------+----------------------------+----------+---------+---------+
 
+on :ref:`common-downloading-and-analyzing-data-logs-in-mission-planner` page:
+=============================================================================
 
+under Logging Parameters, change:
+- :ref:`LOG_DISARMED<LOG_DISARMED>`: Setting to one will start logging when power is applied, rather than at the first arming of the vehicle. Usefull when debugging pre-arm failures.
+
+to
+- :ref:`LOG_DISARMED<LOG_DISARMED>`: Setting to 1 will start logging when power is applied, rather than at the first arming of the vehicle. Usefull when debugging pre-arm failures. Setting to 2 will only log on power application other than USB power to prevent logging while setting up on the bench.
 
 on :ref:`common-powermodule-landingpage`, add:
 ==============================================
