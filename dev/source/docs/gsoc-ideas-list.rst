@@ -13,7 +13,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2022 <htt
 - Update ROS integration for Non-GPS navigation and off-board path-planning
 - Create more ignition vehicle models, and improve physics of existing models in SITL (software-in-the-loop simulator)
 - Improve custom firmware server including adding branch support and improve dependency handling
-- Improve :ref:`Gazebo simulator <using-gazebo-simulator-with-sitl>` integration including JSON protocol, Gazebo9, and new sensors set
+- Improve :ref:`Gazebo simulator <sitl-with-gazebo>` integration including JSON protocol, Gazebo9, and new sensors set
 - Build system improvements, specifically fixing dependency handling and speeding up the waf build
 - Improvements to the `MAVProxy GCS <https://github.com/ArduPilot/MAVProxy>`__. Better multivehicle support, performance improvement. Requires strong python skills.
 - Swift Package for MAVLink communications
