@@ -1,11 +1,12 @@
-.. _using-gazebo-simulator-with-sitl:
+.. _sitl-with-gazebo-legacy:
 
-================================
-Using Gazebo Simulator with SITL
-================================
+=========================================
+Using SITL with legacy versions of Gazebo
+=========================================
 
-This article explains how to use Gazebo http://gazebosim.org/
-as an external simulator for ArduPilot Rover, Copter and Plane.
+This article explains how to use legacy versions of Gazebo 
+https://classic.gazebosim.org/ as an external simulator for
+ArduPilot Rover, Copter and Plane.
 
 Overview
 ========
