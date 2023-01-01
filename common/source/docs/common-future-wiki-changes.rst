@@ -64,6 +64,16 @@ change note in the YAW Controller section to:
 
 [site wiki="copter"]
 
+on :ref:`turtle-mode` page, add the following notes:
+====================================================
+
+
+-  Turtle mode cannot be entered unless throttle is zero
+-  Upon entry to turtle mode the motors stay disarmed, but the notfiy LEDs flash
+-  Raising the throttle, the motors arm, and motors spin. Lowering throttle to zero disarms the motors
+-  Motors spin only when throttle is raised
+
+
 on :ref:`common-transmitter-tuning` page, add:
 ==============================================
 
