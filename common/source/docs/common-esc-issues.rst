@@ -73,3 +73,44 @@ ESC Overvoltage Spikes
 ======================
 
 Long power cabling runs from the battery to the ESC on larger vehicles can produce large voltage spikes due to the lead inductance. These spikes not only increase noise, increasing the potential for noise coupling to the signal control lines of the ESC, but also can be potentially directly damaging to the ESC. This can be reduced or eliminated by adding low ESR capacitance at the ESC power inputs. An example of the typical capacitor bank for these applications is offered by `Advanced Power Drives <https://powerdrives.net/cap-bank>`__.
+
+ESC Firmware Bugs
+=================
+
+Some ESC firmware versions contain bugs which can seriously impact
+correct operation with ArduPilot. The following lists some known bugs
+which users should be aware of. Where workarounds are available they
+will be listed.
+
+APD ESCs with anti-spark connectors
+-----------------------------------
+
+In December 2022 a serious bug was found in APD F series and HV Pro
+ESCs that impacts vehicles using anti-spark connectors for the
+batteries. The bug can cause the ESC to get into a state where
+throttle can only increase, which will almost always result in a crash
+and can be dangerous for people in the vicinity of the vehicle.
+
+The bug happens due to the following logic in the ESC firmware:
+
+- 200ms after ESC startup the supply voltage is sampled, then multiplied by 1.2 to get a value that is taken as the maximum supply voltage
+- at any time after that if the supply voltage is above this level then an over voltage error is raised
+- while an over voltage error is raised the throttle will not be reduced unless the flight controller demands a zero throttle
+
+The aim of this feature was to prevent motor braking from pushing too
+much power back into the batteries, which could in theory lead to
+overheating of the batteries.
+
+The issue happens if the rise time of the supply voltage is slow
+enough that the voltage does not reach 80% of the true supply voltage
+within 200ms. This can happen when using anti-spark connectors to
+connect the batteries, particularly in combination with long wiring
+and significant levels of added capacitance.
+
+When this happens then on takeoff the flight controller will not be
+able to reduce throttle on affected motors, which will be very likely
+cause the vehicle to crash.
+
+Users of APD ESCs on vehicles using anti-spark connectors should
+contact APD for information on how to upgrade their firmware to
+resolve this bug.
