@@ -88,8 +88,9 @@ APD ESCs with anti-spark connectors
 Vehicles running anti-spark connectors and APD ESCs with firmware versions
 dated before November 2022 may be susceptible to an incorrect setting of
 the over-voltage limit. If incorrectly set (when the pre-charge time constant is over 200 ms),
-the ESC will prevent motor braking until it receives a zero throttle command, which could lead 
-to aircraft damage.
+the ESC will prevent motor braking until it receives a zero throttle command. The issue can cause the ESC 
+to get into a state where throttle can only increase, which will almost always result in a crash and can 
+be dangerous for people in the vicinity of the vehicle.
 
 The issue happens due to the following logic in the ESC firmware:
 
