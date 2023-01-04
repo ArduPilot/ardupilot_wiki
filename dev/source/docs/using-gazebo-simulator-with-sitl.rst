@@ -26,9 +26,9 @@ No current release has built-in support for ArduPilot,  however. (Previous PRs f
 Preconditions
 =============
 
-We recommend Ubuntu starting from 16.04 or 18.04 as those were  the platform used for testing this approach. They are also known to be compatible with SITL.
+We recommend Ubuntu starting from 16.04 or 18.04 as those were the platform used for testing this approach. They are also known to be compatible with SITL.
 
-We will be using a standard version of ArduPilot but a custom plugin for Gazebo, until the gazebo plugin gets merged into Gazebo-master.
+We will be using a standard version of ArduPilot and a custom plugin for Gazebo, until the gazebo plugin gets merged into Gazebo-master.
 
 This plugin can be used with or without ROS integration. In both case we recommend to use Gazebo from the OSRF repository.
 
