@@ -66,6 +66,7 @@ Closed hardware
     Mamba Basic F405 mk3 <common-mamba-basic-mk3>
     Mamba H743 v4 <common-mambaH743v4>
     MakeFlyEasy PixSurveyA1 <common-makeflyeasy-PixSurveyA1>
+    MakeFlyEasy PixPilot-V6 <common-makeflyeasy-PixPilot-V6>
     Mateksys F405 TE Family <common-matekf405-te>
     Mateksys H743-Wing/MINI/SLIM/WLITE <common-matekh743-wing>
     ModalAI Flight core <https://www.modalai.com/products/flight-core>
