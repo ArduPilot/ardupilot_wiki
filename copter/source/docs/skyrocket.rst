@@ -13,6 +13,12 @@ This page provides details for advanced users and potential developers on these 
 Where to Buy
 ------------
 
+.. warning::
+
+    The Journey drones that SkyRocket sells starting end of 2021 are not supported by
+    ArduPilot. See `this ArduPilot forum thread
+    <https://discuss.ardupilot.org/t/is-the-sky-viper-journey-se-copter-transmitter-pair-user-upgradeable-to-ardupilot/79275>`__.
+
 **2017 models**
 
 The *Sky Viper v2450GPS Drone with Autopilot and GPS* is on sale through `Walmart <https://www.walmart.com/ip/Sky-Viper-Streaming-Drone-with-GPS/797973157>`__, `Amazon <https://www.amazon.com/Sky-Viper-v2450GPS-Streaming-Autopilot/dp/B072HH13VQ/ref=lp_13203361011_1_6>`__ and Costco in the US, Australia, Canada, Chile, France, German, Holland, Lithuania, Mexico, New Zealand, Serbia, UK since October 2017.
@@ -26,6 +32,11 @@ In August 2018, SkyRocket released three new ArduPilot powered drones, the Fury,
 The Fury and Scout utilize "SurfaceScan", built on ArduPilot's OpticalFlow feature, to allow for indoor flight stability and position holding, unprecedented in this price range. 
 The Journey, with GPS rather than OpticalFlow, takes lessons learned from the V2450GPS and builds on those for a solid re-release for the full GPS-enabled ArduPilot experience. The flight parameters and firmware for both the Scout and Journey can be easily modified as the user sees fit through the embedded wifi access point, powered by APWeb or using your favorite ground control software. 
 Much of the information on this page, which was written for the V2450GPS, will at least partially apply to these new models, with updates annotated as they are discovered.
+
+**2021 models**
+
+The Journey is not sold anymore. Instead a Sky Viper Journey SE is shipped. Resellers might still have the Journey listed but have been observed to ship the Journey SE.
+
 
 Discussion
 ----------
