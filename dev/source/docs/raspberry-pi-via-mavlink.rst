@@ -116,6 +116,11 @@ MAVProxy
 MAVProxy can be used to send commands to the flight controller from the Pi. 
 It can also be used to route telemetry to other network endpoints.
 
+.. note::
+
+    If the Raspberry PI is heavily loaded, mavproxy.py might not provide a reliable connecton. This is more likely on older/slower
+    devices like the Raspberry PI Zero. If this happens, consider using mavlink-routerd (see below).
+
 This assumes you have a SSH connection to the Pi. If not, see see the 
 the `RPi Documentation <https://www.raspberrypi.org/documentation/remote-access/ssh/>`__.
 
