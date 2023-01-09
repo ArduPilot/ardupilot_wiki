@@ -119,7 +119,7 @@ It can also be used to route telemetry to other network endpoints.
 .. note::
 
     If the Raspberry PI is heavily loaded, mavproxy.py might not provide a reliable connecton. This is more likely on older/slower
-    devices like the Raspberry PI Zero. If this happens, consider using mavlink-routerd (see below).
+    devices like the Raspberry PI Zero. If this happens, consider using mavlink-routerd. See this post on the ArduPilot forum for a detailed discussion: `MavLink Routing with Router software <https://discuss.ardupilot.org/t/mavlink-routing-with-a-router-software/82138#solution-1-3>`__.
 
 This assumes you have a SSH connection to the Pi. If not, see see the 
 the `RPi Documentation <https://www.raspberrypi.org/documentation/remote-access/ssh/>`__.
