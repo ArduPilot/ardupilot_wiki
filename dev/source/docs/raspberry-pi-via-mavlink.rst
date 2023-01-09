@@ -116,11 +116,6 @@ MAVProxy
 MAVProxy can be used to send commands to the flight controller from the Pi. 
 It can also be used to route telemetry to other network endpoints.
 
-.. note::
-
-    If the Raspberry PI is heavily loaded, mavproxy.py might not provide a reliable connecton. This is more likely on older/slower
-    devices like the Raspberry PI Zero. If this happens, consider using mavlink-routerd. See this post on the ArduPilot forum for a detailed discussion: `MavLink Routing with Router software <https://discuss.ardupilot.org/t/mavlink-routing-with-a-router-software/82138#solution-1-3>`__.
-
 This assumes you have a SSH connection to the Pi. If not, see see the 
 the `RPi Documentation <https://www.raspberrypi.org/documentation/remote-access/ssh/>`__.
 
@@ -153,6 +148,17 @@ command to display the ``ARMING_CHECK`` parameters value
    this example otherwise doesn't run properly, make sure that you haven't
    accidentally assigned these files to another username, such as
    Root.
+
+To run MAVProxy as a telemetry router on the Pi, set it up to run as a service and use the --daemon and --non-interactive parameters. For example:
+
+::
+
+   mavproxy.py --daemon --non-interactive --default-modules='' --continue --master=/dev/serial0 --baudrate 1500000 --out=udp:pro:14550
+
+.. note::
+
+    If the Raspberry PI is heavily loaded, mavproxy.py might not provide a reliable connecton for telemetry routing. This is more likely on older/slower
+    devices like the Raspberry PI Zero. If this happens, consider using mavlink-routerd. See this post on the ArduPilot forum for a detailed discussion: `MavLink Routing with Router software <https://discuss.ardupilot.org/t/mavlink-routing-with-a-router-software/82138#solution-1-3>`__.
 
 Mavlink-router
 --------------
