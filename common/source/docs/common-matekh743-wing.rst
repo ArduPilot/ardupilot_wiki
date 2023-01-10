@@ -24,7 +24,7 @@ Specifications
 
    -  InvenSense MPU6000 IMU (accel, gyro) & ICM20602
    -  DPS310 barometer
-   -  Voltage & 132A current sensor
+   -  Voltage & 132A current sensor (integrated current sensor only on -WING V2/V3 and -WLITE)
 
 
 -  **Power**
@@ -145,7 +145,7 @@ Then reboot.
 
 :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 10.5 (note: WLITE needs this changed to 21)
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 40.0 (note: WLITE needs this changed to 66.7)
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 40.0 (note: WLITE and WING V2/V3 needs this changed to 66.7)
 
 :ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN>` 18
 
