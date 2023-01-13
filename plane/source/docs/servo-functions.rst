@@ -127,7 +127,7 @@ For QuadPlanes, including Tailsitters and Tilt-Rotors, see these sections: :ref:
 
 
 Auxiliary Flying Surfaces
--------------------------
+=========================
 
 In addition, auxiliary control surfaces, such as flaps, spoilers and airbrakes can be configured:
 
