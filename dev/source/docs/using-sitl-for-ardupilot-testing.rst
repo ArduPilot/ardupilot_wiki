@@ -205,6 +205,50 @@ is equivalent to COM16:
 
 .. _using-sitl-for-ardupilot-testing_sitl_without_mavproxy_tcp:
 
+Replaying serial data from Saleae Logic data captures
+=====================================================
+
+Saleae Logic is often used when decoding and debugging protocols for the first time.  The "async serial" analyzers can export the data to a CSV, and this data can then be replayed through ArduPilot's simulated UARTDriver to test parsing of that data.
+
+Serial data is replayed into the simulation at the same rate it appeared on the wire when taking the trace, preserving frame-gaps and the like.
+
+After you have Logic decoding the serial stream, export the data using this interface element:
+
+.. figure:: ../images/saleae-async-save.png
+   :target: ../_images/saleae-async-save.png
+   :width: 450px
+
+That data should be in this format:
+
+::
+
+   Time [s],Value,Parity Error,Framing Error
+   109.557104960000004,0x9B,,
+   109.590780800000005,0x00,,
+   109.609869119999999,0x00,,
+   109.610386399999996,0x00,,
+   109.613748799999996,0x00,,
+   109.614266079999993,0x6B,,
+   109.616231679999999,0x00,,
+   109.744313439999999,0x0A,,
+   109.744830719999996,0x89,,
+
+Place this capture file into the root directory of your ArduPilot repository checkout.
+
+Specify the schema and filename on the ``sim_vehicle.py`` command-line.  The following example inserts a breakpoint where the data is being read into the parser:
+
+::
+
+   ./Tools/autotest/sim_vehicle.py  --gdb --debug -v plane -A --uartF=logic_async_csv:hobbywing-platinum-pro-v3.csv --speedup=1 -B AP_HobbyWing_Platinum_PRO_v3::update
+
+.. note::
+
+   Your ``SERIAL5_PROTOCOL`` must be set appropriately for this data to be read.
+
+.. note::
+
+   There is a 5s simulated-time delay before data is fed into the simulation from the file.
+
 Using a different GCS instead of MAVProxy
 -----------------------------------------
 
