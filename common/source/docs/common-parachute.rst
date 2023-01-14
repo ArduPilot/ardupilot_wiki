@@ -4,6 +4,10 @@
 Parachute
 =========
 
+.. image:: ../../../images/parachute.png
+   :target: ../../images/parachute.png
+
+
 This topic describes how to set up manual and automatic parachute
 release.
 
