@@ -58,7 +58,7 @@ aircraft will then slow down as it approaches the return point, aiming
 for an altitude set by :ref:`Q_RTL_ALT <Q_RTL_ALT>`.
 
 Once the return point is reached the aircraft begins to descend and
-land, exactly as described in the VTOL RTL mode above.
+land, exactly as described in the VTOL RTL mode below.
 
 :ref:`Q_RTL_MODE <Q_RTL_MODE>` = 2
 ----------------------------------
