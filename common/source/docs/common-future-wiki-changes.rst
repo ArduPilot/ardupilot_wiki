@@ -36,9 +36,37 @@ on :ref:`common-powermodule-landingpage`, add:
 
 
 on :ref:`common-uavcan-setup-advanced`, :ref:`mission-planner-initial-setup`, :ref:`common-slcan-f4`, and :ref:`common-slcan-f7h7` pages add the following note:
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+================================================================================================================================================================
 .. note:: SLCAN access via COM port is disabled when armed to lower cpu load. Use SLCAN via MAVLink instead.
 
+on :ref:`common-external-ahrs` add:
+===================================
+
+under Supported Systems add:
+
+  - VectorNav VN-100AHRS
+
+under Setup replace with:
+
+VectorNav300 or Parker Lord
+---------------------------
+
+    - :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` = 11 (External AHRS)
+
+    - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 1 (VectorNAV) or 2 (Parker Lord)
+
+This will replace ArduPilot’s internally generated INS/AHRS subsystems with the external system
+
+VectorNav100
+------------
+
+    - :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` = 3 (ArduPilot's EKF3)
+
+    - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 1 (VectorNAV)
+
+    - :ref:`EAHRS_OPTIONS<EAHRS_OPTIONS>` bit 0 set to 1 ("1" value) to disable its compensation of the sensor biases, letting EKF3 do that (since there is no internal GPS to provide the best estimates)
+
+- for all of the above, set the ``SERIALx_PROTOCOL`` to “36” (AHRS) and ``SERIALx_BAUD`` to “115” (unless you have changed the external unit’s baud rate from its default value) for the port which is connected to the external AHRS unit.
 
 [site wiki="plane"]
 
