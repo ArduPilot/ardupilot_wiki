@@ -54,6 +54,7 @@ In addition, the behavior of QuadPlane can be modified by the setting of the :re
 -  bit 18(+262144), if set, will only allow arming in VTOL and AUTO modes. This can be used for tailsitters to prevent arming in a fixed wing mode when sitting in VTOL stance to prevent tip-overs. For AUTO mode, WP must be a VTOL takeoff in order to arm with this option.
 -  bit 19(+524288), if set, will allow the forcing of VTOL to Fixed Wing transitions if :ref:`Q_TRANS_FAIL<Q_TRANS_FAIL>` is not zero and exceeded, and if the airspeed is greater than 1/2 of :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>`, then the transition to fixed wing will immediately complete, rather than taking the :ref:`Q_TRANS_FAIL_ACT<Q_TRANS_FAIL_ACT>` action. See :ref:`quadplane-transitions`.
 -  bit 20(+1048576), if set overrides bit 5, if set, and forces an RTL on RC failsafe while in a VTOL mode. This is useful in over-water operations where either an QLAND or QRTL is undesirable.
+-  bit 21(+2097152), if set tilts tilt motors up when disarmed in FW modes (except manual) to prevent ground strikes.
 
 Behavior can be modified as well as by the :ref:`Q_RTL_MODE<Q_RTL_MODE>` and :ref:`Q_GUIDED_MODE<Q_GUIDED_MODE>` parameters.
 
