@@ -65,6 +65,8 @@ land, exactly as described in the VTOL RTL mode below.
 
 Setting :ref:`Q_RTL_MODE<Q_RTL_MODE>` to 2 results in behavior similar to above, but with the vehicle returning like normal fixed wing RTL until it reaches :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>`, then loitering in fixed wing mode down to :ref:`Q_RTL_ALT<Q_RTL_ALT>` altitude, and then exiting facing the wind and executing a QRTL to the home position. Be sure the loiter portion is set up to clear any obstacles.
 
+If RTL is triggered within the larger of RLT_RADIUS and WP_LOITER_RAD, and below Q_RTL_ALT, in a VTOL mode or assisted fixed wing flight, the vehicle will proceed immediately toward Q_RTL_ALT and the landing position (QRTL mode) and then land.
+
 :ref:`Q_RTL_MODE <Q_RTL_MODE>` = 3
 ----------------------------------
 
