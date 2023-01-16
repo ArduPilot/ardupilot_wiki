@@ -41,8 +41,11 @@ Parameter file: `hexsoon-td650.param <https://github.com/ArduPilot/ardupilot/blo
 
 This parameter file can also be loaded using the Mission Planner's Config/Tuning >> Full Parameter Tree page by selecting "hexsoon-td650" from the drop down on the middle right and then push the "Load Presaved" button.
 
-Flight Demonstration
---------------------
+Videos
+------
+..  youtube:: WSiLnHEjBlI
+    :width: 100%
+
 ..  youtube:: FbzXvi3beDI
     :width: 100%
 
