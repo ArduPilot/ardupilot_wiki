@@ -237,6 +237,20 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
+    <tr class="row-odd">
+        <td><center><a class="first last reference external image-reference" href="https://www.fossuav.com/"><img alt="FOSS UAV Ltd" src="../_images/fossuav_logo.png" style="width: 90px;" /></a><br/><br/>UK</center></td>
+        <td><div class="first last line-block">
+            <div class="line">FOSS UAV Ltd, Andy Piper, <a href="mailto:sales@fossuav.com" target="_top">sales@fossuav.com</a></div>
+            <div class="line"><br/></div>
+            <div class="line">Consulting services include: ArduPilot code development (C++, Lua)</div>
+            <div class="line">Vehicle setup support and log analysis.</div>
+            <div class="line">For UK-based clients we offer an in-person tuning service.</div>
+            <div class="line">Remote tuning for non-UK-based clients is also available.</div>
+            <div class="line">Specializing in driver development, ChibiOS, small/fast copter tuning, filtering.  </div>
+            <div class="line">Please visit my channel on <a class="first last reference external image-reference" href="https://www.youtube.com/channel/UC6jQLyVeimsO5O_J5ncYgow"><img alt="YouTube Channel" src="../_images/youtube_logo.png" style="width: 90px;" /></a></div>
+            </div>
+        </td>
+    </tr>
     </tbody>
     </table>
 
@@ -309,6 +323,12 @@ listed here will be active participants in the community.
     :scale: 0%
 
 .. image:: ../../../images/logos/Event38.png
+    :scale: 0%
+
+.. image:: ../../../images/logos/fossuav_logo.png
+    :scale: 0%	
+
+.. image:: ../../../images/logos/youtube_logo.png
     :scale: 0%	
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
