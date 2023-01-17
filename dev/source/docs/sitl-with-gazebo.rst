@@ -5,7 +5,7 @@ Using SITL with Gazebo
 ======================
 
 `Gazebo <http://gazebosim.org/>`__ is a well known and respected robotics
-simulator which has been used in number of robotics simulation challenges
+simulator which has been used in a number of robotics simulation challenges
 for ground, marine and space based robots, including the DARPA Robotics
 Challenge, DARPA Subterranean Challenge and Virtual RobotX Competition. 
 
