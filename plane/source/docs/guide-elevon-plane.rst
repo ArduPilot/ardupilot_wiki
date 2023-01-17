@@ -4,6 +4,9 @@
 Elevon Planes
 =============
 
+.. image:: ../images/elevons.gif
+
+
 Elevon planes (also known as delta-wings) are popular for their
 simplicity and robustness.
 

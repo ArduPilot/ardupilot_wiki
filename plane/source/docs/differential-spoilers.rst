@@ -34,6 +34,9 @@ Gliders can utilize differential spoilers to implement flaperon style functions 
 .. image:: ../images/crow.jpg
    :target: ../_images/crow.jpg
 
+.. image:: ../images/diffspoilers.gif
+
+
 Preparation
 ===========
 
