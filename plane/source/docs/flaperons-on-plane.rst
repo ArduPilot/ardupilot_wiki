@@ -8,6 +8,8 @@ Flaperon Configuration
 ailerons (using one channel each) as both flaps and ailerons. This
 article shows how to set up Flaperons in Plane.
 
+.. image:: ../images/flaperons.gif
+
 Input/Output Channels
 =====================
 
