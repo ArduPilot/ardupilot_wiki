@@ -17,12 +17,6 @@ location used by the :ref:`MSI installation <install-mission-planner>`. You can 
 downloading the "zip" version which contains all the files necessary and
 placing the files into a folder of your choice.
 
-.. note::
-
-   You will need a version of WinZip to install in a different
-   location. Search for "Winzip free" for possible ad supported
-   versions.
-
 Download the most recent Mission Planner ZIP Files
 --------------------------------------------------
 
