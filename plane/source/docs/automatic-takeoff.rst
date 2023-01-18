@@ -208,6 +208,8 @@ limited to a value that the aircraft can use to climb quickly at full
 throttle. A value of around 20 degrees is good for a wide range of
 aircraft.
 
+.. _takeoff-fbwa:
+
 Testing Ground Takeoff in FBWA mode
 ===================================
 
