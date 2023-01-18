@@ -143,7 +143,7 @@ the tuning in FBWA mode, and only change to auto-takeoff once you can
 takeoff in FBWA mode without overriding the steering at all (ie. takeoff
 without using the rudder stick).
 
-It can also be very helpful to use the ``FBWA_TDRAG_CHAN`` option to setup
+It can also be very helpful to use the :ref:`FBWA Takeoff Elevator <takeoff-fbwa>` option to setup
 the same automated elevator behaviour as is used in auto-takeoff when in
 FBWA mode. That helps keep tail wheels on the ground in taildragger
 aircraft (and can also be used to keep nose wheels on the ground in
