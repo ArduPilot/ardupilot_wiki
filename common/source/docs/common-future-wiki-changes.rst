@@ -70,6 +70,11 @@ VectorNav100
 
 [site wiki="plane"]
 
+on :ref:`common-mavlink-mission-command-messages-mav_cmd` page:
+===============================================================
+
+under DO_CHANGE_SPEED command add:" For Airspeed, a value of -2.0 indicates return to normal cruise airspeed" to speed parameter description.
+
 on :ref:`acro-mode` page, in section "Acro Locking", add:
 =========================================================
 
