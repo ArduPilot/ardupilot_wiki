@@ -84,6 +84,8 @@ If you are using Plane in an aircraft with the propeller in the nose,
 the pitot tube must be mounted out on one wing, at least a foot from the
 fuselage to be outside the prop flow.
 
+See :ref:`common-pitot-considerations` for more infomation on pitot tubes and placement considerations.
+
 Checking operation
 ==================
 
@@ -181,5 +183,6 @@ Other Topics
     :maxdepth: 1
 
     Calibrating an Airspeed Sensor <calibrating-an-airspeed-sensor>
+    Pitot Tube Considerations <common-pitot-considerations>
     Mocking an Airspeed Sensor for Bench Testing <mocking-an-airspeed-sensor-for-bench-testing>
     Analog Airspeed Sensors <analog-airspeed-sensors>
