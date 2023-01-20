@@ -6,6 +6,13 @@ QuadPlane Tips
 
 There are a few helpful hints and tips for first-time QuadPlane users.
 
+Heavy commercial QuadPlane operators should also read:
+
+.. toctree::
+   :maxdepth: 1
+
+   High Reliability QuadPlane Operation <quadplane-reliability>
+
 Motor Alignment
 ===============
 
