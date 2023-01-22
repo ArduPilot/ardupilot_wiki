@@ -1,3 +1,6 @@
+# Common file extensions
+.DS_Store
+
 # Common files except under Common
 /ardupilot/source/docs/common-*
 /copter/source/docs/common-*
