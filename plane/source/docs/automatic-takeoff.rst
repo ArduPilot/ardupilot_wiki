@@ -222,7 +222,7 @@ values then the elevator will be controlled in FBWA in an identical
 manner to how it is controller for an AUTO takeoff. The elevator will go
 to the :ref:`TKOFF_TDRAG_ELEV <TKOFF_TDRAG_ELEV>` value (usually 100% for a tail dragger) as
 soon as that RC channel goes high, and will stay there until the
-aircraft reaches a ground speed of :ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` meters per second.
+aircraft reaches an airspeed (if airspeed sensor is used) or groundspeed (if airspeed sensor is not used) of :ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` meters per second.
 
 This provides a convenient way to test auto takeoff in FBWA mode, and
 also is a nice way to get better ground steering in FBWA mode in
