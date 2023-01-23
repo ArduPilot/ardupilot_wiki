@@ -188,10 +188,10 @@ to include:
     Port = 14550
     PortLock = 0
 
-MAVp2p
+mavp2p
 ------
 
-mavp2p is a flexible and efficient Mavlink proxy / bridge / router, implemented in the form of a command-line utility. Like mavlink-router, p2p can replace mavproxy in companion computeres with limited resources. MAVp2p has pre-built binaries for most common Raspberry PI architectures. `MAVp2p <https://github.com/aler9/mavp2p>`__.
+mavp2p is a flexible and efficient Mavlink proxy / bridge / router, implemented in the form of a command-line utility. Functioning like MAVProxy's router, mavp2p can replace MAVProxy in companion computers with limited resources. mavp2p has pre-built binaries for most common Raspberry PI architectures. `MAVp2p <https://github.com/aler9/mavp2p>`__.
 
 DroneKit
 --------
