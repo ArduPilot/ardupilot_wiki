@@ -22,7 +22,7 @@ ArduPilot comes pre-configured with appropriate defaults for all FFT settings. T
 
 For most uses with other FFT related advanced parameters at their default, this is all that is required. The user can do optimization of the filtering setup by analyzing the test flight logs and adjusting notch bandwidth, if desired, by following the :ref:`In-flight FFT Advanced Setup <common-imu-fft-advanced-setup>` instructions.
 
-.. note:: Setting up the FFT parameters can be done automatically using the ``RCx_OPTION`` auxiliary function "162" on a transmitter switch. Set the function to a switch on the transmitter. Hover the vehicle, switch it on (high) for 30 seconds, switch back low and land. The parameters will have been setup and switch function removed.
+.. note:: Setting up the FFT parameters can be done automatically using the ``RCx_OPTION`` auxiliary function "162" on a transmitter switch. Set the function to a switch on the transmitter. Hover the vehicle, switch it on (high) for 30 seconds, switch back low and land. The parameters will have been setup and switch function removed. NOTE: do not use this featue in firmware version 4.3!
 
 .. note:: Using In-Flight FFT can result in poorer performance than a properly setup :ref:`Throttle-Based <common-throttle-based-notch>` notch filter, since the FFT computations take time and can lag the actual required center frequency. In-Flight FFT is useful when the rotor frequencies of the vehicle vary widely as in heavy lift vehicles operating with high and low loads. It can be useful is setting up :ref:`Throttle-Based <common-throttle-based-notch>` notch filters, however, see :ref:`In-flight FFT Advanced Setup <common-imu-fft-advanced-setup>` instructions for more information.
 
