@@ -1,10 +1,10 @@
 .. _gsoc-ideas-list:
     
 ========================================
-List of Suggested Projects for GSoC 2022
+List of Suggested Projects for GSoC 2023
 ========================================
 
-This is a list of projects suggested by ArduPilot developers for `GSoC 2022 <https://summerofcode.withgoogle.com/>`__. These are only suggestions so if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2022.
+This is a list of projects suggested by ArduPilot developers for `GSoC 2023 <https://summerofcode.withgoogle.com/>`__. These are only suggestions so if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2023.
 
 - Rover AutoTune
 - Rover/Boat automatic docking
@@ -23,7 +23,7 @@ See lower down on this page for more details for some of the projects listed abo
 Timeline
 ========
 
-The timeline for `GSoC 2022 is here <https://developers.google.com/open-source/gsoc/timeline>`__
+The timeline for `GSoC 2023 is here <https://developers.google.com/open-source/gsoc/timeline>`__
 
 How to improve your chances of being accepted
 =============================================
