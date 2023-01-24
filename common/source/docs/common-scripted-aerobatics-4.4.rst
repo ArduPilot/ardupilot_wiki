@@ -81,7 +81,7 @@ The execution of a script running during the NAV_SCRIPT_TIME item can easily be 
 Trajectory Precise Plane Aerobatics LUA script (firmware 4.4 and higher)
 ========================================================================
 
-A trajectory precise, plane aerobatics script example is provided in the LUA Scripting Applet directory called `plane_aerobatics.lua <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets/Aerobatics/FixedWing>`__ . This LUA applet has a multitude of maneuvers, as well as complete sequences of routines, and the ability to easily create and add new sequence of routines.
+A trajectory precise (attempts to track an exact earth referenced geospatial path), plane aerobatics script example is provided in the LUA Scripting Applet directory called `plane_aerobatics.lua <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets/Aerobatics/FixedWing>`__ . This LUA applet has a multitude of maneuvers, as well as complete sequences of routines, and the ability to easily create and add new sequence of routines.
 
 These tricks and sequences can be either run as part of a mission using the NAV_SCRIPT_TIME mission command above, or activated by a switch on the RC transmitter.
 
@@ -111,35 +111,22 @@ The script provides numerous individual tricks, and a table of their IDs is prov
  19  Stall Turn                radius  height       direction                Yes        
  20  Procedure Turn            radius  bank angle   step-out                 Yes        
  21  Derry Turn                radius  bank angle                            No         
- 22  Two Point Roll            length                                        No         
  23  Half Climbing Circle      radius  height       bank angle               Yes        
- 24  Crossbox Humpty           radius  height                                Yes
  25  Laydown Humpty            radius  height                                Yes        
- 25  Barrell Roll              radius  length       # spirals                No
- 26  Straight Hold             length  bank angle                            No
- 29  Four Point Roll 	       length                          				 No
+ 26  Barrell Roll              radius  length       # spirals                No
+ 27  Straight Hold             length  bank angle                            No
+ 28  Partial Circle 	       radius  bank angle              				 No
  30  Eight Point Roll 	       length                                  		 No
  31  Multi Point Roll 	       length  num points 			                 No  
- 200 Test Suite (dont fly!)
- 201 NZ Clubman Schedule
- 202 FAI F3A P-23
- 203 FAI F3C Scale Example
- 204 AirShow 
+ 32  Side Step                 radius  bank angle              				 No
 ==== ========================  ======  ===========  ==========   ==========  ==========
-
-The IDs 200 and above are sequences of the tricks above.
-
-An example is the Airshow Sequence, consisting of Loop/HalfReverseCubanEight/ScaleFigureEight/Immelmann/Roll/Split-S/RollingCircle/HumptyBump/HalfCubanEight/Upline45/Downline45/HalfReverseCubanEight:
-
-.. image:: ../../../images/airshow.png
-
 
 To use as part of a mission, you would insert a SCRIPT_TIME mission item as shown:
 
 .. image:: ../../../images/nav_script_time.jpg
 
 
-in the above example, once WP3 is reached the airshow will execute, and when finished, proceed to WP5.
+in the above example, once WP3 is reached the airshow (shown here as "204", loaded from a shedules file named trick204.txt, see scheduels section below) will execute, and when finished, proceed to WP5.
 
 Tricks on a Switch
 ------------------
@@ -149,8 +136,8 @@ This applet also provides a means to execute tricks or sequences via an RC Switc
 Setup
 -----
 
-- Make sure you have Autotuned your plane and that its capable of doing aerobatics in ACRO mode well (Bixlers and flying wings only can do rolls and loops, generally, sine they have insufficient yaw authority and side fuselage area...ie must be able to knife edge for full capability). This includes Autotuning the new YAW rate controller. Enable :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` and set :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` appropriately (90deg/s is a good start). When you Autotune, not only do pitch and roll, but also yaw by exercising the rudder, like pitch and roll.
-- Enable scripting, on an autopilot that is capable (F7 or H7) with :ref:`SCR_ENABLE<SCR_ENABLE>` =1, reboot and set :ref:`SCR_HEAP_SIZE<SCR_HEAP_SIZE>` = 250000 and :ref:`SCR_VM_I_COUNT<SCR_VM_I_COUNT>` = 200000.
+- Make sure you have Autotuned your plane and that its capable of doing aerobatics in ACRO mode well (Bixlers and flying wings only can do rolls and loops, generally, since they have insufficient yaw authority and side fuselage area...ie must be able to knife edge for full capability). This includes Autotuning the new YAW rate controller. Enable :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` and set :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` appropriately (90deg/s is a good start). When you Autotune, not only do pitch and roll, but also yaw by exercising the rudder, like pitch and roll.
+- Enable scripting, on an autopilot that is capable (F7 or H7) with :ref:`SCR_ENABLE<SCR_ENABLE>` =1, reboot and set :ref:`SCR_HEAP_SIZE<SCR_HEAP_SIZE>` = 250000 (you will need more if other scripts are running also) and :ref:`SCR_VM_I_COUNT<SCR_VM_I_COUNT>` = 200000.
 - Copy the `plane_aerobatic.lua <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets/FixedWing>`__ script into your SD card APM/scripts directory. Use the RAW view and copy to files on the SD card. Reboot.
 - If you want to activate tricks and schedules from an RC switch, assign an RC channel to ``RCx_OPTION`` = 300 for the trick activation switch (low=disable,mid=show trick number selected, high= do it) and one for 301 which is trick selection. This normally a pot or slider, but can be any switch (which limits the number of tricks to the number of switch positions). Set the ``TRIK_ENABLE`` to 1 and reboot. Then set `TRIK_COUNT`` parameter to the number of tricks (11 maximum) to be selectable by the trick selection channel. Reboot.
 - For each trick/schedule, set its corresponding ``TRIKn_ID/ARG1/ARG2/ARG3/ARG4`` parameters. For example, if you wish TRIK3 to be a Vertical Box, 50 meters tall, 100 meters long, with corner radii of 15 meters, set ``TRIK3_ID`` = 5, ``TRIK3_ARG1`` = 100, ``TRIK3_ARG2`` = 50, and ``TRIK3_ARG3`` = 15. Other TRIK3 argument values are ignored.
@@ -159,14 +146,40 @@ Setup
 
 Remember: ALTITUDE IS YOUR FRIEND! dont attempt your first one below 200feet! and FPV is a good way to try it out first, if you have trouble with seeing the vehicle at that altitude.
 
-Adding Custom Schedules
------------------------
+AEROM Parameters
+----------------
 
-While adding new basic tricks requires modification of the plane_aerobatics.lua applet, adding combinations of the above included tricks is easily done via creation of a simple text file in the /scripts directory, or the root directory on the SD card where the plane_aerobatics.lua script is stored.
+Many new parameters will appear when this script is loaded, which control the tuning of the tricks. See the `README.md <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets/Aerobatics/FixedWing/README.md>`__ file for up to date information, but a few should be changed from their defaults in most cases:
 
-An example for a schedule similar to the AirShow schedule is included as `trick72.txt <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/Aerobatics/FixedWing/trick72.txt>`__ and would be executed as ``TRIKx_ID`` = 72 via switch or in an AUTO mission command. The schedule will display its "name" when started, and as each trick begins the "message" will sent to the GCS to indicate its start.
+- ``AEROM_PATH_SCALE`` this is probably the most critical when using the example schedules. Individual tricks in a mission, or a trick on a switch, can adjust the trick dimensions with the TRIKx_ARGy parameters. But the schedules, unless edited, have dimensions suited to high performance pattern planes with significant vertical speed capability. For normal 3D planes or sport planes these are too aggressive and the sequence will probably abort on many tricks, especially in wind. However, if you lower the path scale from "1" (no scaling) to ".75", more normal 3D planes will be able to execute the schedule. For marginally powered (can barely hover vertically) planes, even a ".5" scale factor, or less, might be required, scaling all radii and lengths of the pattern by 50%.
+- ``AEROM_THR_MIN`` should be set to 15-20 (%) to maintain inertia at the bottom of loops, etc.
+- ``AEROM_KE_ANG`` most planes need a little boost to the knife edge rudder, so setting this 10 is usually needed
+- :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`: while the script does NOT use the airspeed sensor, it  uses GPS velocity to track the trajectory and this parameter to set target ground speeds. As such you may wish to set this (even if there is no airspeed sensor) to a "fast" cruise speed within the vehicles capability. Flying on the fast end of cruise helps deal with wind impacts.
 
-Note, that the "straight_align" command is not a trick, but rather a command as to when the next trick is to begin. Its parameter is meters from the schedules initial entry point. Positive numbers are meters away from that point in the entry direction on the ground track, while negative numbers are in the opposite direction on the track line. If the aircraft is already past that point in the desired direction along the track, the trick will begin immediately.
+Schedules
+---------
+The applet also allows loading sequences of tricks to perform contest schedules like F3A or airshows as a single trick which can be executed from a mission or as Trick on a Switch. These are text files of the form ``trickX.txt``, where X would be the trick id, and located in the /scripts directory, or the root directory on the SD card where the plane_aerobatics.lua script is stored. These should not be the same number as existing tricks.
+
+
+An example for a schedule is included as `trick72.txt <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/Aerobatics/FixedWing/trick72.txt>`__ and would be executed as ``TRIKx_ID`` = 72 via switch or in an AUTO mission command. The schedule will display its "name" when started, and as each trick begins a "message" will sent to the GCS to indicate its start.
+
+Several sequences, such as F3A, etc. are included in the `Schedules folder <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets/Aerobatics/FixedWing/Schedules>`__.
+The above 'trick72.txt' is the SuperAirshow Sequence, consisting of Loop/HalfReverseCubanEight/ScaleFigureEight/Immelmann/Roll/Split-S/RollingCircle/HumptyBump/Barrel Rool/Cross Box TopHat/Triangular Loop:
+
+.. image:: ../../../images/airshow.png
+
+Adding new basic tricks can also be done via a schedule file. This is shown in the SuperAirShow schedule file where a triangle loop and a crossbox tophat trick have been created and loaded with the schedule sequence.
+
+Trick File Commands
+-------------------
+
+Several commands can be used within the trick file:
+
+- name: <the name of the Trick>
+- message: <usually the trick name>  displayed as a GCS message. This should be positioned immediately before the trick
+- <trick name> <param1><parm2>..<param4>   the subroutine name in the plane_aerobatics file that actually performs the trick and its passed parameters
+- align_center:   this will wait to start the following trick until the vehicle is centered, or if beyond the center (in the direction of flight) of the aerobatic box, immediately. The center is where the trick schedule was started.
+- align_box x:  this positions the start of the next trick "x" from the box end in the direction of travel, ie "1" would make the trick be aligned at the box end, while .75 would start it 3/4 the way from center to it. Usually a value of "1" is used.
 
 Tuning for Aerobatics
 =====================
@@ -200,6 +213,6 @@ Other scripts can be developed which allow control of the vehicle, either via NA
 
 - Obtaining the arguments of a NAV_SCRIPT_TIME command using "vehicle:nav_script_time()" if running while in AUTO mode.
 
-- Controlling the above rates and throttle with the "vehicle:set_target_throttle_rate_rpy(....)" function, which must be called regularly (at least every 200ms) to set the roll/pitch/yaw rates and throttle percentage. Failure to do so, will disable the control override and return control to the original flight mode. Changing flight modes also disables script control.
+- Controlling the above rates and throttle with the "vehicle:set_target_throttle_rate_rpy(....)" function, which must be called regularly (at least every second) to set the roll/pitch/yaw rates and throttle percentage. Failure to do so, will disable the control override and return control to the original flight mode. Changing flight modes also disables script control.
 
 
