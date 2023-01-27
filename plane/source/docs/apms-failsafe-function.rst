@@ -94,7 +94,7 @@ Some very old RC receivers cannot be set to send "no pulses" when losing RC sign
 
 
 GCS Failsafe
-~~~~~~~~~~~~
+============
 
 **How it works.** When flying while using telemetry on the GCS, the
 autopilot can be programmed to trigger into failsafe mode if it loses
@@ -119,7 +119,7 @@ Configuring for Ground Control Station Control beyond RC range
 If the telemetry range exceeds the RC transmitter range, then it may be desired to prevent loss of RC signal from initiating a failsafe. Reliance on the above GCS failsafe would be then be used to provide failsafe protection. In order to prevent the RC system from interfering with GCS operation, set :ref:`THR_FAILSAFE<THR_FAILSAFE>` = 2. This prevents the RC failsafe action from being taken, but still detects the failsafe condition and ignores the RC inputs, preventing possible interference to Ground Control Station control of the vehicle. Control via the RC system can be resumed once back into its range.
 
 Configuring for valid RC outputs while in RC Failsafe
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================
 
 Normally, the RC channels are ignored when in RC Failsafe (except the throttle channel, but for failsafe detection exit only). Sometimes it is desirable to allow the preset signal loss values( for receivers capable of this ), to be used in the event of an RC failsafe. For example, parachute activation, or other controls via RC passthrough (see :ref:`common-auxiliary-functions`) could be desired when in RC failsafe. For receivers with this capability and which use a FS data bit, setting :ref:`RC_OPTIONS<RC_OPTIONS>` bit 2 to "1", can accomplish this. In this case, the FS bit is ignored. Upon RC signal loss the receiver would go to its pre-set channel outputs values, but a failsafe action would not be taken by ArduPilot, since the receiver is still outputting valid data as far as ArduPilot can detect. The fixed RC channel values would processed as normal by ArduPilot.
 
@@ -129,7 +129,7 @@ Normally, the RC channels are ignored when in RC Failsafe (except the throttle c
 .. warning:: Since the autopilot cannot know if the RC link is lost in this configuration, it is possible to get into dangerous situations, especially with QuadPlanes. For example, you are low on battery and far away, and the battery failsafe is active and attempting a VTOL land to prevent a crash. As it drops out of RC range, it will switch to the RC failsafe mode set in the receiver, and attempt to execute that, canceling the battery failsafe action, and ultimately resulting in a crash.
 
 Battery Failsafe
-~~~~~~~~~~~~~~~~
+================
 
 .. note::
 
@@ -197,12 +197,12 @@ The following is a description of the actions that can be taken for battery fail
 
 
 Failsafe Parameters and their Meanings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+======================================
 
 Short failsafe action (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` )
 ------------------------------------------------------------
 
-The action to take on a short (:ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds) failsafe event . A short failsafe event in plane stabilization modes can be set to change mode to CIRCLE or FBWA, or be disabled completely. In QuadPlane stabilization modes, it will change to QLAND or QRTL, dependent upon which :ref:`Q_OPTIONS<Q_OPTIONS>` is selected. Short failsafe only occurs on loss of RC, either RC loss or Throttle Failsafe.
+The action to take on a short (:ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds) RC failsafe event . A short failsafe event in plane stabilization modes can be set to change mode to CIRCLE or FBWA, or be disabled completely. In QuadPlane stabilization modes, it will change to QLAND or QRTL, dependent upon which :ref:`Q_OPTIONS<Q_OPTIONS>` is selected. Short failsafe only occurs on loss of RC, either RC loss or Throttle Failsafe.
 
 In AUTO, LOITER and GUIDED modes you can also choose for it continue with the mission and ignore the short failsafe. If :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` is 0 then it will continue with the mission, if it is 1 then it will enter CIRCLE mode.
 
@@ -236,7 +236,7 @@ In AUTO, LOITER and GUIDED modes you can also choose for it continue with the mi
 Long failsafe action (:ref:`FS_LONG_ACTN<FS_LONG_ACTN>` )
 ---------------------------------------------------------
 
-The action to take on a long (:ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds) failsafe event. If the aircraft was in a stabilization or manual mode when failsafe started and a long failsafe occurs then it will change to RTL mode if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is 0 or 1, and will change to FBWA  and idle the throttle if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 2.
+The action to take on a long (:ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds) RC failsafe event. If the aircraft was in a stabilization or manual mode when failsafe started and a long failsafe occurs then it will change to RTL mode if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is 0 or 1, and will change to FBWA  and idle the throttle if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 2.
 
 If the aircraft was in an auto mode (such as AUTO or GUIDED) when the failsafe started then it will continue in the auto mode if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 0, will change to RTL mode if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 1 and will change to FBWA mode and idle the throttle if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 2. If :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 3, the parachute will be deployed (make sure the chute is configured and enabled).
 
@@ -307,7 +307,7 @@ There are three possible enabled settings. Seeing :ref:`FS_GCS_ENABL<FS_GCS_ENAB
    </table>
 
 Failsafe Diagnosis in Logs or GCS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=================================
 
 GCSs will often display text indicating the type of failsafe encountered, such as "Failsafe Short event on: type=1/reason=3". Type and Reason can be determined using the table below:
 
@@ -400,6 +400,6 @@ GCSs will often display text indicating the type of failsafe encountered, such a
 
 
 Independent Watchdog
---------------------
+====================
 
 See :ref:`common-watchdog` for details.
