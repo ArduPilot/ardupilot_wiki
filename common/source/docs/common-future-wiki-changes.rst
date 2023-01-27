@@ -93,6 +93,14 @@ change note in the YAW Controller section to:
 
 .. note:: while AutoTuning with this controller enabled, roll inputs will result in yaw outputs also, allowing more coordinated turns with the yaw controller active. This will normally result in simultaneously tuning the yaw controller with the roll controller, but not necessisarily completing the yaw tune when the roll tune finishes. Also, there may be seemingly excessive rudder applied initially in the roll tune on vehicles with large yaw authority, until the tune progresses.
 
+On :ref:`apms-failsafe-function` page:
+======================================
+
+Add note to Battery Failsafe Section:
+
+.. note:: the battery low failsafe voltage must be higher than the battery critical failsafe voltage or a pre-arm error will occur.
+
+
 [/site]
 
 [site wiki="copter"]
