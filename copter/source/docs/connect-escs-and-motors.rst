@@ -19,7 +19,7 @@ Motor order diagrams
 ====================
 
 The diagrams below show motor order for each frame type.
-The numbers indicate which output pin from the autopilot shoould be connected to each motor/propeller.
+The numbers indicate which output pin from the autopilot should be connected to each motor/propeller.
 The propeller direction is shown in green (clockwise, CW) or blue (counter-clockwise, CCW)
 
 .. figure:: ../images/MOTORS_CW_CCWLegend.jpg
