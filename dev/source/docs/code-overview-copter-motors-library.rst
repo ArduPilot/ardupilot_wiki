@@ -64,7 +64,7 @@ All motors libraries must do two things:
 
   - Roll input of +1.0 should cause motor and servo outputs that provide maximum roll rotation to the right
   - Pitch input of +1.0 should result in maximum pitch back
-  - Yaw input of +1.0 should result in maximu yaw in the clockwise direction
+  - Yaw input of +1.0 should result in maximum yaw in the clockwise direction
   - Throttle input of +1.0 should result in maximum acceleration upwards (in the vehicle's body frame).  Throttle of zero should result in minimum acceleration upwards (or maximum acceleration downwards in the case of helicopters)
 
 2. Set the limit flags to avoid "I-term build-up" in the attitude and throttle controllers.  Although a vehicle will be flyable without setting these flags, they are important for protecting against overshoot in lean angle control and also for automatic landing detection.  The limits are held in the `AP_Motors_Class::limit <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Motors/AP_Motors_Class.h#L118>`__ variable.
