@@ -87,17 +87,15 @@ rudder.
 I switch to RTL mode while hovering
 -----------------------------------
 
-The aircraft will transition to fixed wing flight. The quad motors will
+The aircraft will generally transition to fixed wing flight. The quad motors will
 provide assistance with lift and attitude while the forward motor starts
-to pull the aircraft forward.
+to pull the aircraft forward. Depending on the :ref:`Q_RTL_MODE<Q_RTL_MODE>`,
+different behaviors can be selected as it returns to the return point (rally or home).
+See :ref:`quadplane_rtl` for details.
 
-The normal Plane RTL flight plan will then be run, which defaults to
-circling at the RTL altitude above the arming position or nearest rally
-point. If you have :ref:`RTL_AUTOLAND <RTL_AUTOLAND>`
-setup then the aircraft will do a fixed wing landing.
+If you have :ref:`RTL_AUTOLAND <RTL_AUTOLAND>`
+setup then the aircraft will follow the mission configuration.
 
-If you set :ref:`Q_RTL_MODE <Q_RTL_MODE>` to 1 then the aircraft will switch to a VTOL
-landing when it gets close to return point.
 
 I switch into QRTL close to HOME
 --------------------------------
