@@ -31,14 +31,14 @@ RC Failsafe
 .. _apms-failsafe-function_throttle_failsafe:
 
 Radio Signal Failure
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 If the received signal is lost or the control information corrupted, or the receiver sets its "failsafe bit" in protocols which have this (like Sbus, FPort, etc.), then an RC Failsafe condition occurs and the actions described in the :ref:`RC Failsafe Actions<fs_actions>` section below will be taken, if the :ref:`THR_FAILSAFE<THR_FAILSAFE>` parameter is 1.
 
 .. note:: by setting :ref:`RC_OPTIONS<RC_OPTIONS>` bit 2, you can force ArduPilot to ignore the "failsafe" bits in the protocol, and only initiate RC Failsafe due to missing or corrupted control information.
 
 Throttle Failsafe
-~~~~~~~~~~~~~~~~~
+-----------------
 
 In addition, if the throttle signal falls below a threshold set by :ref:`THR_FS_VALUE<THR_FS_VALUE>` and the :ref:`THR_FAILSAFE<THR_FAILSAFE>` is = 1, an RC Failsafe condition will be entered, a Ground Control Station text message ("Throttle Failsafe On") will be sent (to differentiate from a Radio Signal Failure Failsafe), and the actions described in the RC Failsafe Actions section below will be taken.
 
@@ -59,7 +59,7 @@ The system must be setup such that the throttle channel's signal can go below :r
 .. _fs_actions:
 
 RC Failsafe Operation
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 -  When RC Failsafe is entered, all RC inputs (except throttle in the case of Throttle Failsafe), are ignored as the autopilot takes its failsafe actions.
 -  First, the autopilot will go into Short Failsafe when it detects RC Failsafe for more than :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds.
@@ -71,7 +71,7 @@ RC Failsafe Operation
 .. note:: The action set by :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` will continue even if your RC signal is reacquired, if the flight mode is the same as it was before the failsafe action began. Once RC signal is reacquired, the :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` can be exited via a mode change on the :ref:`FLTMODE_CH<FLTMODE_CH>`. If the mode on the RC transmitter was changed during the failsafe period, then this changed mode is entered after the RC signal is restored. In addition, other failsafes, such as battery failsafe, can also change the mode, if they occur subsequently to the RC signal loss.
 
 Bench Testing RC Failsafe
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 #. Power up the system and verify that you are seeing RC control in the Mission Planner SETUP->Mandatory Hardware->Radio Calibration tab and in a non-auto mode (Manual, Stabilize, FBW are ok). Check that normal throttle movements to idle do NOT trigger a failsafe and normal control stick movements are observed.
 #. Switch to Mission Planners DATA View tab. Turn off the transmitter. After :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds, if enabled, you should see the flight mode switch to :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>`. After :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` sec, if enabled, the flight mode should then switch to :ref:`FS_LONG_ACTN<FS_LONG_ACTN>`. Turn the transmitter back on and change flight modes. The Long Failsafe flight mode should change to the selected mode.
@@ -82,7 +82,7 @@ If you observe this behavior, your RC Failsafe function has been set up correctl
 .. _old_RX:
 
 Older Receivers
-~~~~~~~~~~~~~~~
+---------------
 
 Some very old RC receivers cannot be set to send "no pulses" when losing RC signal and simple hold the ROLL/PITCH/YAW RC channels at their last value and set the throttle channel to its minimum PWM value (low throttle). For those, the only way to setup an RC failsafe is to set the :ref:`THR_FS_VALUE<THR_FS_VALUE>` to slightly above that value and use the transmitters trim tab to raise the idle stick value 40-50us above that for normal operation.
 
@@ -114,7 +114,7 @@ telemetry. In the event that the autopilot stops receiving MAVlink
    Verify on the log that the autopilot went into RTL after :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` sec of MAVLink inactivity.
 
 Configuring for Ground Control Station Control beyond RC range
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------------------
 
 If the telemetry range exceeds the RC transmitter range, then it may be desired to prevent loss of RC signal from initiating a failsafe. Reliance on the above GCS failsafe would be then be used to provide failsafe protection. In order to prevent the RC system from interfering with GCS operation, set :ref:`THR_FAILSAFE<THR_FAILSAFE>` = 2. This prevents the RC failsafe action from being taken, but still detects the failsafe condition and ignores the RC inputs, preventing possible interference to Ground Control Station control of the vehicle. Control via the RC system can be resumed once back into its range.
 
@@ -135,7 +135,8 @@ Battery Failsafe
 
     This failsafe requires the vehicle have a working :ref:`Power Module <common-powermodule-landingpage>`.
 
-.. note:: ArduPilot firmware versions 4.0 and later support up to 10 batteries/power monitors. All the  discussion below applies to those optional batteries also. Each can trigger a failsafe and each can have different actions and setup values. In addition, a group of batteries can be treated as a single unit, see ``BATTx_MONITOR`` = 10.
+.. note:: ArduPilot supports up to 10 batteries/power monitors. All the  discussion below applies to those optional batteries also. Each can trigger a failsafe and each can have different actions and setup values. In addition, a group of batteries can be treated as a single unit, see ``BATTx_MONITOR`` = 10.
+
 
 When the failsafe will trigger
 ------------------------------
