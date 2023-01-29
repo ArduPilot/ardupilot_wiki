@@ -100,7 +100,7 @@ LOGMESSAGE_SITE = {
     'antennatracker': 'Tracker',
     'blimp': 'Blimp',
 }
-error_count = 0
+error_log = list()
 N_BACKUPS_RETAIN = 10
 
 VERBOSE = False
@@ -114,9 +114,9 @@ def debug(str_to_print):
 
 def error(str_to_print):
     """Show and count the errors."""
-    global error_count
-    error_count += 1
-    print("[update.py][error]: " + str(str_to_print))
+    global error_log
+    error_log.append(str_to_print)
+    print(f"[update.py][error]: {str_to_print}", file=sys.stderr)
 
 
 def fatal(str_to_print):
@@ -794,13 +794,19 @@ def check_ref_directives():
     character_before_ref_tag = re.compile(r"[a-zA-Z0-9_:]:ref:")
     character_after_ref_tag = re.compile(r"(:ref:`.*?`[_]{0,2}) ([\.,:])")
 
-    for f in glob.glob("**/*.rst", recursive=True):
+    # don't check "common="" files in vehicle wikis
+    skipped_files = set()
+    for wiki in ALL_WIKIS:
+        skipped_files.update(glob.glob(f'{wiki}/source/docs/common-*.rst'))
+    wiki_glob = set(glob.glob("**/*.rst", recursive=True))
+    files_to_check = wiki_glob.difference(skipped_files)
+    for f in files_to_check:
         with open(f, "r", "utf-8") as file:
             for i, line in enumerate(file.readlines()):
                 if character_before_ref_tag.search(line):
-                    error("Remove character before ref directive in \"%s\" on line number %s" % (f, i))
+                    error(f"Remove character before ref directive in \"{f}\" on line number {i+1}")
                 if character_after_ref_tag.search(line):
-                    error("Remove character after ref directive in \"%s\" on line number %s" % (f, i))
+                    error(f"Remove character after ref directive in \"{f}\" on line number {i+1}")
 
 
 def create_features_pages(site):
@@ -1068,8 +1074,12 @@ if __name__ == "__main__":
     # --allow-file-access-from-files". Otherwise it will appear empty
     # locally and working once is on the server.
 
+    error_count = len(error_log)
     if error_count > 0:
-        fatal("%u errors during Wiki build" % (error_count,))
+        print("Reprinting error messages:", file=sys.stderr)
+        for msg in error_log:
+            print(f"[update.py][error]: {msg}", file=sys.stderr)
+        fatal(f"{error_count} errors during Wiki build")
     else:
         print("Build completed without errors")
 
