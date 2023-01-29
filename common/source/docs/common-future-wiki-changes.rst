@@ -68,6 +68,11 @@ VectorNav100
 
 - for all of the above, set the ``SERIALx_PROTOCOL`` to “36” (AHRS) and ``SERIALx_BAUD`` to “115” (unless you have changed the external unit’s baud rate from its default value) for the port which is connected to the external AHRS unit.
 
+on :ref:`common-efi` page, add:
+===============================
+
+In addition, ArduPilot allows the addition of new EFI controller drivers via :ref:`common-lua-scripts`. For examples, see the `HFE CAN EFI driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_HFE.md>`__ or the `SkyPower CAN driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_SkyPower.md>`__
+
 [site wiki="plane"]
 
 on :ref:`common-mavlink-mission-command-messages-mav_cmd` page:
