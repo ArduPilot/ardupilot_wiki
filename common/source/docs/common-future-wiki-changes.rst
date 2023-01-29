@@ -74,6 +74,12 @@ on :ref:`common-efi` page, add:
 In addition, ArduPilot allows the addition of new EFI controller drivers via :ref:`common-lua-scripts`. For examples, see the `HFE CAN EFI driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_HFE.md>`__ or the `SkyPower CAN driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_SkyPower.md>`__
 
 [site wiki="plane"]
+on :ref:`automatic-takeoff` page, add at bottom a new section:
+===============================================================
+
+Catapult Launch without an Airspeed Sensor
+==========================================
+Taking off without an airspeed sensor using a catapult may cause less than maximum throttle to be used due to high initial climb rates. For heavy vehicles, this may result in a stall due to the long time constants used in TECS to adjust throttle after the initial launch. The parameter :ref:`TKOFF_THR_MAX_T<TKOFF_THR_MAX_T>` can be used to force maximum throttle for a time, irrespective of climb rates from an initial catapult launch to allow the vehicle to obtain sufficient speed.
 
 on :ref:`common-mavlink-mission-command-messages-mav_cmd` page:
 ===============================================================
