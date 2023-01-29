@@ -69,6 +69,12 @@ VectorNav100
 - for all of the above, set the ``SERIALx_PROTOCOL`` to “36” (AHRS) and ``SERIALx_BAUD`` to “115” (unless you have changed the external unit’s baud rate from its default value) for the port which is connected to the external AHRS unit.
 
 [site wiki="plane"]
+on :ref:`automatic-takeoff` page, add at bottom a new section:
+===============================================================
+
+Catapult Launch without an Airspeed Sensor
+==========================================
+Taking off without an airspeed sensor using a catapult may cause less than maximum throttle to be used due to high initial climb rates. For heavy vehicles, this may result in a stall due to the long time constants used in TECS to adjust throttle after the initial launch. The parameter :ref:`TKOFF_THR_MAX_T<TKOFF_THR_MAX_T>` can be used to force maximum throttle for a time, irrespective of climb rates from an initial catapult launch to allow the vehicle to obtain sufficient speed.
 
 on :ref:`common-mavlink-mission-command-messages-mav_cmd` page:
 ===============================================================
