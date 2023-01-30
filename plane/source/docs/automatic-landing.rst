@@ -389,7 +389,7 @@ The below video is an example of a Skywalker X8 performing an auto-landing with 
 Key Parameters
 --------------
 
-The key parameters that control reverse thrust landing in addition to the ones :ref:`listed in section 1.1 <automatic-landing_key_parameters>`  and :ref:` Reverse Thrust setup <-reverse-thrust>` are:
+The key parameters that control reverse thrust landing in addition to the ones :ref:`listed in section 1.1 <automatic-landing_key_parameters>`  and :ref:` Reverse Thrust setup <reverse-thrust-setup>` are:
 
 -  :ref:`LAND_PF_ALT <LAND_PF_ALT>`
 -  :ref:`LAND_PF_SEC <LAND_PF_SEC>`
