@@ -101,6 +101,7 @@ Detail topics
     Gremsy Pixy U Gimbal <common-gremsy-pixyu-gimbal>
     Servo Gimbal <common-camera-gimbal>
     SimpleBGC Gimbal Controller <common-simplebgc-gimbal>
+    Siyi ZR10, ZR30 and A8 <common-siyi-zr10-gimbal>
     SToRM32 Gimbal Controller <common-storm32-gimbal>
     Tarot 2D Gimbal <common-tarot-gimbal>
     FLIR Vue Pro Thermal Camera <common-flir-vue-pro>
