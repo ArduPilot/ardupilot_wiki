@@ -1078,7 +1078,7 @@ if __name__ == "__main__":
     if error_count > 0:
         print("Reprinting error messages:", file=sys.stderr)
         for msg in error_log:
-            print(f"[update.py][error]: {msg}", file=sys.stderr)
+            print(f"\033[1;31m[update.py][error]: {msg}\033[0m", file=sys.stderr)
         fatal(f"{error_count} errors during Wiki build")
     else:
         print("Build completed without errors")
