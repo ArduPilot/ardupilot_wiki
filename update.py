@@ -183,7 +183,7 @@ def fetchlogmessages(site=None, cache=None):
         targetfile = './%s/source/docs/logmessages.rst' % key
         if cache:
             if not os.path.exists(targetfile):
-                raise(Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,)))
+                raise Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,))
             continue
         if site == key or site is None:
             fetch_url(fetchurl)
@@ -541,7 +541,7 @@ def is_the_same_file(file1, file2):
             a = hasher.hexdigest()
             digests.append(a)
 
-    return(digests[0] == digests[1])
+    return digests[0] == digests[1]
 
 
 def fetch_versioned_parameters(site=None):
