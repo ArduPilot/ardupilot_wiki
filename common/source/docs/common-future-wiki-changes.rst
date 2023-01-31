@@ -138,3 +138,12 @@ under TUNE parameter table:
 |        | Lean Angle              |                                                                      |
 +--------+-------------------------+----------------------------------------------------------------------+
 [/site]
+
+[site wiki="copter"]
+
+on :ref:`common-airspeed-sensor` page, add new param:
+=====================================================
+
+- :ref:`ARSPD_ENABLE<ARSPD_ENABLE>` = 1 to allow use of airspeed sensor and to show other airspeed parameters
+
+[/site]
