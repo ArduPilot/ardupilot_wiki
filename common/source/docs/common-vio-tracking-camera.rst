@@ -49,6 +49,7 @@ Connect to the autopilot with a ground station (i.e. Mission Planner) and check 
 
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 2 (MAVLink2).  Note this assumes the RPI4 is connected to AutoPilot "Telem2" port.
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 921 (921600 baud)
+- Optionally set :ref:`SERIAL2_OPTIONS <SERIAL2_OPTIONS>` = 1024 (Don't forward mavlink to/from) to block the RPI4/T265 mavlink messages from reaaching the ground station
 
 For ArduPilot-4.0 (and earlier):
 
