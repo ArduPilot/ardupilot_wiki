@@ -50,18 +50,15 @@ Connect to the autopilot with a ground station (i.e. Mission Planner) and check 
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 2 (MAVLink2).  Note this assumes the RPI4 is connected to AutoPilot "Telem2" port.
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 921 (921600 baud)
 - Optionally set :ref:`SERIAL2_OPTIONS <SERIAL2_OPTIONS>` = 1024 (Don't forward mavlink to/from) to block the RPI4/T265 mavlink messages from reaaching the ground station
+- :ref:`VISO_TYPE <VISO_TYPE>` = 2 (IntelT265)
 
-For ArduPilot-4.1 (and later):
+Next setup the EKF3 to use the ExternalNav for position and velocity:
 
-- :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` = 3 (EKF3)
-- :ref:`EK2_ENABLE <EK2_ENABLE>` = 0 (disabled)
-- :ref:`EK3_ENABLE <EK3_ENABLE>` = 1 (enabled)
 - :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` = 6 (ExternalNav)
 - :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 6 (ExternalNav)
 - :ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>` = 1 (Baro which is safer because of the camera's weakness to high vibrations)
 - :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` = 6 (ExternalNav)
-- :ref:`GPS_TYPE <GPS_TYPE>`  = 0 to disable the GPS
-- :ref:`VISO_TYPE <VISO_TYPE>` = 2 (IntelT265)
+- Optionally set :ref:`GPS_TYPE <GPS_TYPE>`  = 0 to disable the GPS
 
 If you wish to use the camera's heading:
 
