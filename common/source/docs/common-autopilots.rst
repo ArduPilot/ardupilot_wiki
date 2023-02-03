@@ -76,6 +76,8 @@ Closed hardware
     Omnibus F4 AIO/Pro* <common-omnibusf4pro>
     OmnibusNanoV6 <common-omnibusnanov6>
     Omnibus F7V2* <common-omnibusf7>
+    ThePeach FCC-K1 <common-thepeach-k1>
+    ThePeach FCC-R1 <common-thepeach-r1>
 [site wiki="copter"]
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
 [/site]
