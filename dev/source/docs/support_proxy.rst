@@ -1,8 +1,8 @@
 .. _support_proxy:
 
-=========
+=====================
 Partner Support Proxy
-=========
+=====================
 
 This page tells you how to take advantage of the ArduPilot MAVLink
 support proxy at `support.ardupilot.org <https://support.ardupilot.org>`__. You have likely been directed here
@@ -75,6 +75,7 @@ Connecting as a Support Engineer
 
 If you are a support engineer you will have been given 3 pieces of
 information:
+
  - the port number that you will connect on
  - the port number that your users will connect on
  - an initial randomly generated MAVLink2 signing pass phrase
