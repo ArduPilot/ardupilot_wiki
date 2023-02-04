@@ -142,6 +142,7 @@ Full Table of Contents
     Learning the code <docs/learning-the-ardupilot-codebase>
     Simulation & Testing <docs/simulation-2>
     Debugging <docs/debugging>
+    Support Proxy <docs/support_proxy>
     Contributing Code <docs/contributing>
     MAVLink Interface <docs/mavlink-commands>
     CAN and DroneCAN/UAVCAN <docs/can-bus>
