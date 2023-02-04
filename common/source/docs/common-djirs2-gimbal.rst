@@ -1,5 +1,7 @@
 .. _common-djirs2-gimbal:
 
+[copywiki destination="blimp,copter,plane,rover"]
+
 ===========================
 DJI RS2 and RS3-Pro Gimbals
 ===========================
