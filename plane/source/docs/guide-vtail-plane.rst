@@ -161,7 +161,7 @@ are used:
 - LEFT_VTAIL = (yaw+pitch)*0.5
 - RIGHT_VTAIL = (-yaw+pitch)*0.5
 
-Adjusting the :ref:`MIXING_GAIN<MIXING_GAIN>` controls the percentabe of throws from pitch vs yaw.
+Adjusting the :ref:`MIXING_GAIN<MIXING_GAIN>` controls the percentage of throws from pitch vs yaw.
 
 Final Setup
 ===========
