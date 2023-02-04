@@ -79,6 +79,11 @@ information:
  - the port number that your users will connect on
  - an initial randomly generated MAVLink2 signing pass phrase
 
+.. note::
+
+   Your computers system clock must be accurate for the proxy to
+   work. If it is off by more than one minute then signing may fail.
+
 To setup your support proxy port for MissionPlanner you need to use
 the Advanced->Mavlink Signing tool:
 
@@ -124,6 +129,14 @@ pressing "Use" will update the signing key for your support ID.
 
 For technical support please contact Andrew Tridgell on your partner
 support channel on discord.
+
+CAN Management
+--------------
+
+Note that as CAN packets can be forwared over MAVLink you can
+configure DroneCAN devices remotely via the proxy. Use the
+MAVLink-CAN1 or MAVLink-CAN2 buttons in Setup->Optional
+Hardware->DroneCAN to start looking at the remote CAN bus.
 
 Using MAVProxy as a Support Engineer
 ------------------------------------
