@@ -48,6 +48,8 @@ In addition, the last navigation waypoint before NAV_LAND must be far enough awa
 
 The above shows a planned approach with the pre-approach waypoint 440m away from touchdown at 50m altitude, the final approach waypoint at 220m away and 25m altitude, giving a supposedly gentle glide slope of 6 degrees (which is a 1.7m/s descent at 15m/s airspeed). However, the actual result is 9 deg glide path since the switch to AUTO mode and the landing sequence was begun at the point shown at beginning of the yellow path, and the resulting overshoots at the two waypoints result in a steeper glide slope (9 degrees) between the final approach waypoint and the touchdown point. Spacing the waypoints a little further away would have allowed the approach to have settled by the final approach waypoint, and with the desired final glide slope. The faster the vehicle is flying, the wider the turn radii are, and the wider the waypoints should be spaced.
 
+.. _automatic-landing_key_parameters:
+
 The key parameters that control automatic landing are:
 
 -  :ref:`LAND_FLARE_ALT <LAND_FLARE_ALT>`
