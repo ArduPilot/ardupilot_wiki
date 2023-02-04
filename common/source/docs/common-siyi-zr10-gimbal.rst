@@ -1,6 +1,6 @@
 .. _common-siyi-zr10-gimbal:
 
-[copywiki destination="blimp,plane,copter,rover"]
+[copywiki destination="plane,copter,rover"]
 
 ==============================
 SIYI ZR10, ZR30 and A8 Gimbals
