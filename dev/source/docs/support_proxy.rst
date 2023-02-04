@@ -5,10 +5,10 @@ Partner Support Proxy
 =========
 
 This page tells you how to take advantage of the ArduPilot MAVLink
-support proxy at support.ardupilot.org. You have likely been directed
-here by an ArduPilot support engineer who is wanting you to use the
-proxy to allow the support engineer to connect to your vehicle to
-assist you.
+support proxy at `support.ardupilot.org <https://support.ardupilot.org>`__. You have likely been directed here
+by an ArduPilot support engineer who is wanting you to use the proxy
+to allow the support engineer to connect to your vehicle to assist
+you.
 
 About the Support Proxy
 -----------------------
@@ -129,4 +129,10 @@ Using MAVProxy as a Support Engineer
 ------------------------------------
 
 An example shell script for connecting as a support engineer using
-MAVProxy is `available here https://github.com/ArduPilot/UDPProxy/blob/main/mav_support.sh`__
+MAVProxy is `available here <https://github.com/ArduPilot/UDPProxy/blob/main/mav_support.sh>`__.
+
+Source Code
+-----------
+
+The source code for the UDPProxy tool along with instructions for
+installing it on your own machine are `available here <https://github.com/ArduPilot/UDPProxy>`__.
