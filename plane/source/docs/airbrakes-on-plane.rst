@@ -36,7 +36,7 @@ You can have airbrakes automatically used in an automated landing or in conjunct
 Use With Reverse Thrust on Motor
 --------------------------------
 
-Setup :ref:`Reverse Thrust<reverse-thrust>` as desired. Airbrake operation will be in sync with reverse throttle applied.
+Setup :ref:`Reverse Thrust<reverse-thrust-setup>` as desired. Airbrake operation will be in sync with reverse throttle applied.
 
 Use Without Reverse Thrust ESC
 ------------------------------

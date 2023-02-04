@@ -100,7 +100,7 @@ If not, you're coming in too steep for the negative-thrust-to-mass ratio of your
    conservative to maintain repeatability.
 
 
-:ref:`automaic-flaps` can also be used for steeper approaches.
+:ref:`automatic-flaps` can also be used for steeper approaches.
 
 Setting up a Pre-Flare
 ======================

@@ -107,8 +107,7 @@ Note that you can also use reverse thrust on the forward motor. If
 your :ref:`THR_MIN <THR_MIN>` parameter is less than zero then reverse
 thrust is available and the motor will use reverse thrust to slow down
 or move backwards as needed. See the :ref:`reverse thrust
-<reverse-thrust>` section in the :ref:`automatic landing
-<automatic-landing>` documentation for more details.
+<reverse-thrust-autolanding>` section for more details.
 
 As with active weathervaning, using the forward motor is only enabled
 in position controlled VTOL modes. This means it is not enabled in
