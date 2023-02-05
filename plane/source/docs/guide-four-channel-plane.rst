@@ -82,12 +82,7 @@ or from 1 to 0).
 
 The output can be reversed in Mission Planner on the SETUP/Mandatory Hardware/Servo Output page, just check the box for the channel that needs to be reversed. This will set the output's SERVOn_REVERSED parameter.
 
-.. note:: :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` mut not be set to 0 for rudder setup. If the 
-          plane actually needs 0, then reset it after this setup.
-
-          :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` should cause the tail surfaces point away from the 
-          direction of the lowered aileron. This corrects adverse yaw caused
-          by the additional drag of a lowered aileron.
+.. note:: :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` mut not be set to 0 (the default value is 0.5) for checking rudder movement in FBWA as the plane is rolled away from level. If no automatic coupling of rudder to aileron for coordinated turns by the autopilot is desired, then reset it to zero after this setup check.
 
 Confirm RC Transmitter Input
 ============================
