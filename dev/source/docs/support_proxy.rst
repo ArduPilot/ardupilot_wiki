@@ -59,6 +59,27 @@ server. The support person will be able to connect and help you.
    Please close MissionPlanner completely when you have finished with
    your support session to ensure the port is released.
 
+Connecting with QGroundControl
+------------------------------
+
+To forward your connection to the support engineer from QGroundControl
+you need to use this configration setting:
+
+.. image:: ../images/QGroundControl_mavlink_mirror.jpg
+    :target: ../_images/QGroundControl_mavlink_mirror.jpg
+
+You need to put support.ardupilot.org:XXXXX where XXXXX is the support
+port number your support engineer has given you.
+
+.. note::
+
+   Please remember to untick the "Enable MAVLink forwarding" option
+   when your support session is completed!
+
+.. image:: ../images/QGroundControl_mavlink_mirror2.jpg
+    :target: ../_images/QGroundControl_mavlink_mirror2.jpg
+
+
 Connecting With MavProxy
 ------------------------
 
