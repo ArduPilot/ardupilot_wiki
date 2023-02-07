@@ -45,34 +45,40 @@ UART Mapping
 ============
  
  - SERIAL0 -> USB
- - SERIAL1 -> USART2     (TELEM1, RTS/CTS pins)
- - SERIAL2 -> USART3     (TELEM2, RTS/CTS pins)
- - SERIAL3 -> UART4      (GPS1)
- - SERIAL4 -> UART8      (GPS2)
+ - SERIAL1 -> USART2     (TELEM1, RTS/CTS pins) DMA-enabled
+ - SERIAL2 -> USART3     (TELEM2, RTS/CTS pins) DMA-enabled
+ - SERIAL3 -> UART4      (GPS1) DMA-enabled
+ - SERIAL4 -> UART8      (GPS2) TX only DMA-enabled
  - SERIAL5 -> UART7      (Debug)
+
+Serial port protocols (Telem, GPS, etc.) can be adjusted to personal preferences using the ``SERIALx_PROTOCOL`` parameter.
 
 RC Input
 ========
 
 The RCIN pin, which by default is mapped to timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connetion. However, Fport, when connected in this manner, will only provide RC without telemetry
 
-To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL4(UART8) would need to be used for receiver connections. Below are setups using UART8. `SERIAL4_PROTOCOL <https://ardupilot.org/copter/docs/parameters.html#serial5-protocol>`_ should be set to “23”.
+To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL4(UART8) would need to be used for receiver connections. Below are setups using UART8. :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` should be set to “23”.
 
-- Fport would require `SERIAL4_OPTIONS <https://ardupilot.org/copter/docs/parameters.html#serial5-options>`_ be set to”15”
-- CRSF would require `SERIAL4_OPTIONS <https://ardupilot.org/copter/docs/parameters.html#serial5-options>`_ be set to “0”
-- SRXL2 would require `SERIAL4_OPTIONS <https://ardupilot.org/copter/docs/parameters.html#serial5-options>`_ be set to “4” and connects only the UART8 TX pin.
+ - Fport would require :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` be set to”15”
+ - CRSF would require :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` be set to “0”
+ - SRXL2 would require :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` be set to “4” and connects only the UART8 TX pin.
 
-Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See `Radio Control Systems <https://ardupilot.org/copter/docs/common-rc-systems.html#common-rc-systems>`_ for details.
+Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`Radio Control Systems <common-rc-systems>` for details.
 
 PWM Output
 ==========
 
 The ThePeach FCC-K1 supports up to 13 PWM outputs. All outputs support all normal PWM output formats.
 
-The 5 AUX outputs are in 2 groups:
+The 5 AUX outputs are in 2 groups and also support DShot:
 
 - AUX 1, 2, 3 and 4 in group1
 - AUX 5 in group2
+
+FMU outputs within the same group need to use the same output rate and protocol. If
+any output in a group uses DShot then all channels in that group need
+to use DShot.
 
 Battery Monitoring
 ==================
