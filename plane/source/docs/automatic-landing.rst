@@ -39,7 +39,7 @@ The phases of an autolanding are:
 Setting Up the Approach Waypoint
 --------------------------------
 
-The autolanding begins after reaching the last navigation waypoint before the NAV_LAND waypoint (where you want to touchdown and land). This waypoint must be far enough from the touchdown point and at an altitude that a reasonable glide slope can be obtained. Without an airspeed sensor, the speed will be at least that of normal waypoint navigation and usually higher, due to the descent. It is important to have a glide slope that is obtainable with the :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` rate of the vehicle and perferably, well below that rate.
+The autolanding begins after reaching the last navigation waypoint before the NAV_LAND waypoint (where you want to touchdown and land). This waypoint must be far enough from the touchdown point and at an altitude that a reasonable glide slope can be obtained. Without an airspeed sensor, the speed will be that of normal waypoint navigation, which without an airspeed sensor is primarily controlled by :ref:`TRIM_THROTTLE<TRIM_THROTTLE>`. It is important to have a glide slope that is obtainable with the :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` rate of the vehicle and preferably, well below that rate. You can lower the approach airspeed in order to reduce the time in the flare, and possible overshoot of landing point, by adjusting the :ref:`TECS_LAND_THR<TECS_LAND_THR>` to a lower value than :ref:`TRIM_THROTTLE<TRIM_THROTTLE>`. Be careful, not to lower it so much as to cause a stall on approach.
 
 In addition, the last navigation waypoint before NAV_LAND must be far enough away that any turns made by the mission to that waypoint will have already be completed and the vehicle back on track in a line to the landing point. Usually, two waypoints are used. The first to allow any mission item (including aborted go-arounds for an autoland reattempt) to get aligned to another waypoint setup closer to the touchdown point but still providing a nice glide slope. We will designate the last waypoint before the NAV_LAND as the "final approach" waypoint and the one before it the "pre-approach" waypoint, as shown above. The next figure shows these waypoints **incorrectly** placed, without sufficient spacing:
 
@@ -58,6 +58,7 @@ The key parameters that control automatic landing are:
 -  :ref:`TECS_LAND_SINK <TECS_LAND_SINK>`
 -  :ref:`TECS_SINK_MAX<TECS_SINK_MAX>`
 -  :ref:`TECS_SINK_MIN<TECS_SINK_MIN>`
+-  :ref:`TECS_LAND_THR<TECS_LAND_THR>`
 
 .. note:: The TECS parameters are related to the glide slope and final flare sink control. As such, the :ref:`TECS speed/height controller<tecs-total-energy-control-system-for-speed-height-tuning-guide>` must be tuned correctly, and the vehicle must have good pitch tuning for TECS to operate properly (see :ref:`common-tuning`)
 
