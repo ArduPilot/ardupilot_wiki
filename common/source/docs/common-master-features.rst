@@ -16,6 +16,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
     [/site]
     Temperature Sensors <common-temperature-sensor>
     DJI RS2 and RS3-Pro gimbals <common-djirs2-gimbal>
+    ViewPro gimbals <common-viewpro-gimbal>
     Other wiki changes <common-future-wiki-changes>
 
 
