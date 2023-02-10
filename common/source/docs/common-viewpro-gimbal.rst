@@ -45,7 +45,7 @@ Connect to the autopilot with a ground station and do the following
       - 6: IR1 13mm
       - 7: IR2 52mm
 
-- Set VIEP_ZOOM_SPEED to control speed of zoom (value between 0 and 7)
+- Set VIEP_ZOOM_SPEED parameter created by the driver script to control the speed of zoom (value between 0 and 7)
 
 Testing
 =======
