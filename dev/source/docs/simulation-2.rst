@@ -42,7 +42,7 @@ The most commonly used simulators are:
 -  :ref:`Silent Wings Soaring<soaring-sitl-with-silentwings>` 
 -  :ref:`MATLAB and Simulink<sitl-with-MATLAB>` are numerical computing environments used for developing algorithms and plotting data developed by `MathWorks <https://www.mathworks.com/>`__.
 -  :ref:`JSON interface<sitl-with-JSON>` The JSON interface is a generic interface protocol designed to be easy to implement for those developing physics backend. There are Python and MATLAB examples.
--  :ref:`Webots <sitl-with-webots>` is a simulator mainly used for robotics. It is easy to build many vehicles using it. ArduPilot has Rover, Quadcopter, and Tricopters examples that have been built especially for this simulator.
+-  :ref:`Webots <sitl-with-webots>` is a cross-platform robotics simulator that is quick to set up and get running. It currently has examples for multicopter and rover vehicles.
 
 
 Less often used simulators include:
