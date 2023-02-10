@@ -34,7 +34,7 @@ Connect to the autopilot with a ground station and do the following
 - Optionally for gimbals with multiple cameras, an auxiliary switch can control the active camera by doing the following
   
   - Set :ref:`RC9_OPTION <RC9_OPTION>` = 300 (Scripting1) to allow selecting the acdtive camera with RC9.  Note that any auxiliary switch may be used.
-  - VIEP_CAM_SWLOW, VIEP_CAM_SWMID, and VIEP_CAM_SWHIGH control the active camera when the aux switch is the low, medium and high position respectively.  Possible values are
+  - When the driver script is run, it creates three new parameters : VIEP_CAM_SWLOW, VIEP_CAM_SWMID, and VIEP_CAM_SWHIGH. These control the active camera when the aux switch is the low, medium and high position respectively.  Possible values are
 
       - 0: No change in camera selection
       - 1: EO1
