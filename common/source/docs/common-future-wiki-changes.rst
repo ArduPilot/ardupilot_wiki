@@ -116,8 +116,14 @@ On :ref:`automatic-landing` page, under Controlling the Flare:
 
 The landing controller sets a point before the touchdown as the expected flare start point. This "flare_aim" point is calculated from the :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` and :ref:`TECS_LAND_SINK<TECS_LAND_SINK>` for the expected duration of the flare before the actual touchdown. If consistently landing long or short, this point can be adjusted using the :ref:` TECS_FLARE_AIM<TECS_FLARE_AIM>` parameter. If landing too short, decrease the percentage from its default of 50%, conversely, increasing it if landing too long.
 
-The transition from the glide-slope sink rate to the flare sink rate is controlled by the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` parameter. The start of the flare will occur at :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` and the sink rate will be gradually adjusted to :ref:`TECS_LAND_SINK<TECS_LAND_SINK>` at the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` to avoid a rapid pitch change at the beginning of the flare, which would tend to create a "balloning" effect at the start of the flare. :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` should be lower than :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>`.
+The transition from the glide-slope sink rate to the flare sink rate is controlled by the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` parameter. The start of the flare will occur at :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` and the sink rate will be gradually adjusted to :ref:`TECS_LAND_SINK<TECS_LAND_SINK>` at the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` to avoid a rapid pitch change at the beginning of the flare, which would tend to create a "ballooning" effect at the start of the flare. :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` should be lower than :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>`.
 
+On :ref:`precision-autolanding` page, under the Approach Airspeed section, add:
+===============================================================================
+
+The :ref:`LAND_WIND_COMP<LAND_WIND_COMP>` parameter controls how much headwind compensation is used when landing. Headwind speed component multiplied by this parameter is added to :ref:`TECS_LAND_ARSPD<TECS_LAND_ARSPD>` value. Set to 0 to disable this. 
+
+.. note:: The target landing airspeed value is still limited to being lower than :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>`.
 
 [/site]
 
