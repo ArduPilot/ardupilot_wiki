@@ -102,7 +102,7 @@ The :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES>` bitmask selects which axes will be tuned
 change note in the YAW Controller section to:
 ---------------------------------------------
 
-.. note:: while AutoTuning with this controller enabled, roll inputs will result in yaw outputs also, allowing more coordinated turns with the yaw controller active. This will normally result in simultaneously tuning the yaw controller with the roll controller, but not necessisarily completing the yaw tune when the roll tune finishes. Also, there may be seemingly excessive rudder applied initially in the roll tune on vehicles with large yaw authority, until the tune progresses.
+.. note:: while AutoTuning with this controller enabled, roll inputs will result in yaw outputs also, allowing more coordinated turns with the yaw controller active. This will normally result in simultaneously tuning the yaw controller with the roll controller, but not necessarily completing the yaw tune when the roll tune finishes. Also, there may be seemingly excessive rudder applied initially in the roll tune on vehicles with large yaw authority, until the tune progresses.
 
 On :ref:`apms-failsafe-function` page:
 ======================================
@@ -110,6 +110,13 @@ On :ref:`apms-failsafe-function` page:
 Add note to Battery Failsafe Section:
 
 .. note:: the battery low failsafe voltage must be higher than the battery critical failsafe voltage or a pre-arm error will occur.
+
+On :ref:`automatic-landing` page, under Controlling the Flare:
+==============================================================
+
+The landing controller sets a point before the touchdown as the expected flare start point. This "flare_aim" point is calculated from the :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` and :ref:`TECS_LAND_SINK<TECS_LAND_SINK>` for the expected duration of the flare before the actual touchdown. If consistently landing long or short, this point can be adjusted using the :ref:` TECS_FLARE_AIM<TECS_FLARE_AIM>` parameter. If landing too short, decrease the percentage from its default of 50%, conversely, increasing it if landing too long.
+
+The transition from the glide-slope sink rate to the flare sink rate is controlled by the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` parameter. The start of the flare will occur at :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` and the sink rate will be gradually adjusted to :ref:`TECS_LAND_SINK<TECS_LAND_SINK>` at the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` to avoid a rapid pitch change at the beginning of the flare, which would tend to create a "balloning" effect at the start of the flare. :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` should be lower than :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>`.
 
 
 [/site]
