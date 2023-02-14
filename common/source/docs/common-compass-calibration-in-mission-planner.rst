@@ -6,14 +6,14 @@ Compass Calibration
 
 This article explains how to perform basic compass calibration. It assumes that you have at least one compass, either internally or externally in the system, and it has been enabled. See :ref:`Advanced Compass Setup <common-compass-setup-advanced>` for more information and to setup other compass related features.
 
-.. tip::
+.. warning::  It is important that when compass calibration is done, the vehicle have a good 3D gps lock, in order to assure the best setup. If necessary, move outdoors in order to get a good 3D gps lock before doing the compass calibration.
 
-   It is not necessary to recalibrate the compass when the vehicle is flown at a new location because ArduPilot includes a "world magnetic model" which allows converting the location's magnetic North to true North without recalibrating .  In addition the location's "inclination" is calibrated at startup and then again soon after takeoff. It is important that when compass calibration is done, the vehicle have a good 3D gps lock, in order to assure the best setup. If necessary, move outdoors in order to get a good 3D gps lock before doing the compass calibration.
-   
 .. note::
 
    Compass calibration cannot be performed while vehicle is armed.
 
+
+.. tip:: It is not necessary to recalibrate the compass when the vehicle is flown at a new location because ArduPilot includes a "world magnetic model" which allows converting the location's magnetic North to true North without recalibrating .  In addition the location's "inclination" is calibrated at startup and then again soon after takeoff.
 
 Calibration first steps
 =======================
