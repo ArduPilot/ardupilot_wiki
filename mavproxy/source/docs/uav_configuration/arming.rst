@@ -28,6 +28,11 @@ The autopilot can be disarmed by:
 
     disarm
 
+The autopilot can be force disarmed by:
+
+.. code:: bash
+
+    disarm force
 
 Safety Switch
 =============
