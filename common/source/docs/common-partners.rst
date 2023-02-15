@@ -443,7 +443,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_sparkletech.jpg
             :width: 250px
             :align: center
-            :target:  https://www.sparkleuav.com/
+            :target:  http://www.sparkletech.hk/
 
       - .. image:: ../../../images/supporters/supporters_vulcan_logo.jpg
             :width: 250px
