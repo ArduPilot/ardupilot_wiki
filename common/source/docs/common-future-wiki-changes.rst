@@ -99,6 +99,16 @@ add in the setup section:
 
 The :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES>` bitmask selects which axes will be tuned while in Autotune. Default is roll, pitch and yaw.
 
+remove in the setup section:
+----------------------------
+
+Tuning the yaw axis can only be done in AUTOTUNE mode, or using the ``RCx_OPTION`` switch set to 107, ``but only in ACRO mode`` with :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1.
+
+remove in Acro Mode Yaw Rate Controller section:
+------------------------------------------------
+
+Autotuning YAW can also be done ``in ACRO mode`` using an auxiliary switch set with the ``RCx_OPTION`` to 107.
+
 change note in the YAW Controller section to:
 ---------------------------------------------
 
