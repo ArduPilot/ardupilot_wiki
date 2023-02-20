@@ -1,8 +1,8 @@
 .. _pixhawk-force-px4io-flash:
 
-==================================
-Forcing a flash of the px4io board
-==================================
+======================================
+Forcing a flash of the IOMCU processor
+======================================
 
 Overview
 ========

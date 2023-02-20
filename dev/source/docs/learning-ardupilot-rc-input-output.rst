@@ -8,15 +8,6 @@ RC input is a key part of any autopilot, giving the pilot control of the
 airframe, allowing them to change modes and also giving them control of
 auxiliary equipment such as camera mounts.
 
-ArduPilot supports several different types of RC Input depending on the
-board type:
-
--  PPMSum - on PX4, Pixhawk, Linux and APM2
--  SBUS - on PX4, Pixhawk and Linux
--  Spektrum/DSM - on PX4, Pixhawk and Linux
--  PWM - on APM1 and APM2
--  RC Override (MAVLink) - all boards
-
 The number of channels available depends on the hardware of the
 particular board. Note that SBUS and Spektrum/DSM are serial protocols.
 SBUS is a 100kbaud inverted UART protocol and Spektrum/DSM is a 115200

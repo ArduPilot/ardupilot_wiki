@@ -17,8 +17,8 @@ The `Leddar One Lidar <https://leddartech.com/modules/leddarone/>`__ is a light 
 
    Severe spikes in the reported range have been found in some Coptere-3.4.2 user's logs so we recommend careful ground testing of the distances reported or wait until Copter-3.4.3 is released by which time we hope to have the cause of these spikes identified.
 
-Connecting to the Pixhawk
-=========================
+Connecting to the AutoPilot
+===========================
 
 The sensor's serial connection can be connected to any spare serial port (i.e. Telem1, Teleme2, Serial4) on the autopilot.  Connect the lidar's RX line to the autopilot's UART TX line, the lidar's TX line to the UART's RX then also connect the GND and 5V lines.  The image below shows how the sensor output pins can be connected to a Pixhawk's Serial4 port.
 

@@ -31,8 +31,8 @@ Connect with a USB cable
 .. image:: ../images/AntennaTracker_ConnectToGCS_USBCable.jpg
     :target: ../_images/AntennaTracker_ConnectToGCS_USBCable.jpg
 
-If the antenna controller is a Pixhawk you can simply connect your
-ground station computer to the Pixhawk using a long micro USB cable.
+You can simply connect your ground station computer to the autopilot
+using a long micro USB cable.
 
 Connect a 2nd pair of radios
 ============================
