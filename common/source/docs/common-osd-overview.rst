@@ -117,4 +117,70 @@ The simulated OSD can now be set and configured via parameters.
    To see all available options type::
    
       ./sim_vehicle.py -help
-   
+
+List of OSD Panels
+==================
+
+==========    ===========
+Panel Name    Description
+==========    ===========
+ ALTITUDE     Altitude above Home
+ BAT_VOLT     Primary Battery Voltage
+ RSSI         RC Received Signal Strength
+ CURRENT      Primary Battery Current
+ BATUSED      Consumed Battery Capacity
+ SATS         Number of GPS Satellites
+ FLTMODE      Flight Mode
+ MESSAGE      GCS Messages
+ GSPEED       Ground Speed
+ HORIZON      Artificial Horizon
+ HOME         Distance and Direction to Home
+ HEADING      Magnetic Heading
+ THROTTLE     Throttle Percentage
+ COMPASS      Compass Rose
+ WIND         Wind Speed and Direction
+ ASPEED       System Airspeed
+ VSPEED       Climb Rate
+ ESCTEMP      ESC Temperature
+ ESCRPM       ESC RPM
+ ESCAMPS      ESC Current
+ GPSLAT       GPS Latitude
+ GPSLONG      GPS Longitude
+ ROLL         Roll degrees
+ PITCH        Pitch degrees
+ TEMP         Baro Temperature
+ HDOP         GPS HDOP
+ WAYPOINT     Next Waypoint Distance and Direction
+ XTRACK       Cross Track Error
+ DIST         Total Distance Traveled
+ STATS        Statistics Summary
+ FLTIME       Elasped Time in Flight
+ CLIMBEFF     Climb Efficiency
+ EFF          Efficiency
+ BTEMP        2nd Baro Temperature
+ ATEMP        Airspeed Temperature
+ BAT2_VLT     Second Battery Voltage
+ BAT2USED     Second Battery Consumption
+ ASPD2        Airspeed sensor 2
+ ASPD1        Airspeed sensor 1
+ CLK          Local Time of Day
+ SIDEBARS     Speed/Alt Sidebars
+ CRSSHAIR     Artificial Horizon Crosshair
+ HOMEDIST     Distance to HOME (MSPOSD only)
+ HOMEDIR      Direction to HOME (MSPOSD only)
+ POWER        Power (MSPOSD only)
+ CELLVOLT     Calculated Cell Voltage for Primary Battery (MSPOSD only)
+ BATTBAR      Battery Health Bar (MSPOSD only)
+ ARMING       Arming Status (MSPOSD only)
+ PLUSCODE     Open Location Code
+ CALLSIGN     Callsign from SD card callsign.txt
+ CURRENT2     2nd Battery Current
+ VTX_PWR      Video TX power setting
+ TER_HGT      Altitude above Terrain
+ AVGCELLV     Calculated Cell Voltage for Primary Battery
+ RESTVOLT     Calculated Resting Voltage for Primary Battery
+ FENCE        EENCE enabled status
+ RNGF         Rangefinder Distance
+ ACRVOLT      Calculated Cell Resting Voltage for Primary Battery
+ LINK_Q       RC Link Quality
+==========    ===========
