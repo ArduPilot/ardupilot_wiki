@@ -167,7 +167,7 @@ This is enabled by setting :ref:`FRAME_CLASS <FRAME_CLASS>` to 15 - Scripting Ma
 and `fault tolerant hex example <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/MotorMatrix_fault_tolerant_hex.lua>`__.
 
 .. note::
-    Not all flight controllers support scripting see: :ref:`firmware limitations <common-limited_firmware>`.
+    Not all autopilots support scripting see: :ref:`firmware limitations <common-limited_firmware>`.
 
 Recognizing clockwise and counterclockwise propellers
 -----------------------------------------------------

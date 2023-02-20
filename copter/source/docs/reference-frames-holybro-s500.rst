@@ -6,7 +6,7 @@ Holybro S500
 
 .. image:: ../images/reference-frames-holybro-s500.jpg
 
-The Holybro S500 is a relatively low cost and easy to assemble frame including flight controller, GPS, motors, BLHeli ESCs and propellers
+The Holybro S500 is a relatively low cost and easy to assemble frame including autopilot, GPS, motors, BLHeli ESCs and propellers
 
 Parts List
 ----------
