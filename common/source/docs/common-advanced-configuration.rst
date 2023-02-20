@@ -95,6 +95,7 @@ tuning options for the vehicle.
 [site wiki="copter,plane"]
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>
 [/site]
+    On Screen Displays (OSD) <common-osd-overview>
     OSD Parameter Editor <common-paramosd>
     Parameter List (Full) <parameters>
     Parameter Reset <common-parameter-reset>
