@@ -32,7 +32,7 @@ Possible Solutions:
 - lower wiring impedance with larger wiring or shorter runs
 - use ESCs that do not present such high input loading
 - add buffers to autopilot outputs to provide 5v signaling and higher drive currents
-- some autopilots have the option of increasing their signal levels from 3.3V to 5V using the :ref:`BRD_PWM_VOLT_SEL<BRD_PWM_VOLT_SEL>` = 1. See the following list of autopilots that support this:
+- some autopilots have the option of increasing their signal levels from 3.3V to 5V using the :ref:`BRD_PWM_VOLT_SEL<BRD_PWM_VOLT_SEL>` = 1. See the following list of autopilots that support this (if you can see this parameter in your GCS parameter list, then your autopilot has this feature):
 
 Autopilots with :ref:`BRD_PWM_VOLT_SEL<BRD_PWM_VOLT_SEL>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -41,6 +41,7 @@ Autopilots with :ref:`BRD_PWM_VOLT_SEL<BRD_PWM_VOLT_SEL>`
 - :ref:`CubeYellow<common-thecubeyellow-overview>`
 - `mRo Control Zero Classic <https://store.mrobotics.io/product-p/m10048d.htm>`__
 - :ref:`mRo Pixracer Pro<common-pixracer-pro>`
+- :ref:`MakeFlyEasy PixPilot V6 <common-makeflyeasy-PixPilot-V6>`
 
 Induced Noise
 =============
