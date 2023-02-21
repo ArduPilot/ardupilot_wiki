@@ -16,14 +16,14 @@ These control surfaces can be driven by:
 Servo Output
 ============
 
-Connect the airbrake servo to a servo output channel on your flight controller. Set the corresponding servo output function to Airbrake (110). Set the servo minimum value SERVOX_MIN to the value for airbrake fully retracted. Set the maximum value SERVOX_MAX to the value for airbrake fully deployed.
+Connect the airbrake servo to a servo output channel on your autopilot. Set the corresponding servo output function to Airbrake (110). Set the servo minimum value SERVOX_MIN to the value for airbrake fully retracted. Set the maximum value SERVOX_MAX to the value for airbrake fully deployed.
 
 
 
 RC Channel Input
 ================
 
-Assign a spare RC channel on your transmitter to a dial, slider or 3 position switch. On the flight controller, ensure this channel is calibrated and assign this channel the RC channel ``RCx_OPTION`` option Airbrake (210).
+Assign a spare RC channel on your transmitter to a dial, slider or 3 position switch. On the autopilot, ensure this channel is calibrated and assign this channel the RC channel ``RCx_OPTION`` option Airbrake (210).
 
 .. _airbrake-setup:
 

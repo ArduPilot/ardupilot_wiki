@@ -102,7 +102,7 @@ Keep the plane level in FBWA mode and command the following inputs by moving the
    </table>
 
 If the control surfaces do not respond correctly, change the RCn_reversed
-parameter (from 0 to 1, or from 1 to 0). Do NOT reverse the output on your transmitter. It must be changed in the flight controller!
+parameter (from 0 to 1, or from 1 to 0). Do NOT reverse the output on your transmitter. It must be changed in the autopilot!
 Double check MANUAL mode for the
 same inputs. If everything is setup correctly, the plane should be almost
 ready to fly.
