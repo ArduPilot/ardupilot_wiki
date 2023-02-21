@@ -10,19 +10,45 @@ Future Wiki Changes (in Master branch now)
 on :ref:`common-auxiliary-functions`, add:
 ==========================================
 
+
 +----------------------+----------------------------+----------+---------+---------+
 | **RCx_OPTION value** | **Feature Description**    |**Copter**|**Plane**|**Rover**|
 +----------------------+----------------------------+----------+---------+---------+
 |       170            |  QSTABILIZE mode           |          |  x      |         |
 +----------------------+----------------------------+----------+---------+---------+
+|       171            |  Compass Calibration       |    x     |  x      |    x    |
++----------------------+----------------------------+----------+---------+---------+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Option</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>Compass Calibration</strong></td>
+   <td>
+
+Switching to high will behave the same as if the Start button for :ref:`onboard calibration <onboard_calibration>` had been pressed. Returning the switch to low will cancel the calibration if still in progress.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   </tbody>
+   </table>
 
 on :ref:`common-downloading-and-analyzing-data-logs-in-mission-planner` page:
 =============================================================================
 
 under Logging Parameters, change:
+
 - :ref:`LOG_DISARMED<LOG_DISARMED>`: Setting to one will start logging when power is applied, rather than at the first arming of the vehicle. Usefull when debugging pre-arm failures.
 
 to
+
 - :ref:`LOG_DISARMED<LOG_DISARMED>`: Setting to 1 will start logging when power is applied, rather than at the first arming of the vehicle. Usefull when debugging pre-arm failures. Setting to 2 will only log on power application other than USB power to prevent logging while setting up on the bench.
 
 on :ref:`common-powermodule-landingpage`, add:
@@ -72,6 +98,11 @@ on :ref:`common-efi` page, add:
 ===============================
 
 In addition, ArduPilot allows the addition of new EFI controller drivers via :ref:`common-lua-scripts`. For examples, see the `HFE CAN EFI driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_HFE.md>`__ or the `SkyPower CAN driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_SkyPower.md>`__
+
+on :ref:`common-camera-runcam` page, under Setup, add:
+======================================================
+
+For RunCam2 4K camera, set :ref:`CAM_RC_TYPE<CAM_RC_TYPE>` = 5.
 
 [site wiki="plane"]
 on :ref:`automatic-takeoff` page, add at bottom a new section:
@@ -169,4 +200,11 @@ on :ref:`common-airspeed-sensor` page, add new param:
 
 - :ref:`ARSPD_ENABLE<ARSPD_ENABLE>` = 1 to allow use of airspeed sensor and to show other airspeed parameters
 
+[/site]
+[site wiki="rover"]
+
+on :ref:`wind-vane` page, add at bottom link to:
+================================================
+
+`Connecting Bluetooth Windvane to ArduPilot <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_WindVane/Tools/Bluetooth%20NMEA%20receiver/Bluetooth%20NMEA%20receiver.md>`_
 [/site]
