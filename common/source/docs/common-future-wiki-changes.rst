@@ -59,6 +59,18 @@ on :ref:`common-powermodule-landingpage`, add:
 
     Synthetic Current Sensor/Analog Voltage Monitor <common-synthetic-current-monitor>
 
+add a new section:
+------------------
+
+EFI Fuel Monitoring, See :ref:`common-efi` section on using :ref:`BATT_MONITOR<BATT_MONITOR>` = 27 (EFI).
+
+on :ref:`common-efi` page add section:
+
+Using a Battery Monitor to Report Fuel Flow and Consumption
+
+If an EFI is used in the system, either thru a LUA driver or the built-in drivers above, the fuel flow and consumption can be monitored using :ref:`BATT_MONITOR<BATT_MONITOR>` = 27. The fuel flow in liters/hour will be reported as amps, while the fuel consumed in milliliters will be reported as mah. 
+
+.. note:: the MAVLink command to reset the fuel consumed does not work with this monitor.
 
 
 on :ref:`common-uavcan-setup-advanced`, :ref:`mission-planner-initial-setup`, :ref:`common-slcan-f4`, and :ref:`common-slcan-f7h7` pages add the following note:
