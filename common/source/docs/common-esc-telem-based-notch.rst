@@ -16,6 +16,12 @@ If ESCs with telemetry are used (either via a separate telemety wire or bi-direc
 - Set :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` = below the hover frequency - you can easily determine this by performing a gentle hover and looking at the ESC telemetry data
 - Set :ref:`INS_HNTCH_BW <INS_HNTCH_BW>` and/or :ref:`INS_HNTC2_BW <INS_HNTC2_BW>` = half of INS_HNTCH_FREQ
 
+.. note::
+
+   If you set the dynamic harmonics option (i.e. a notch per motor) mentioned below, the bandwidth should not be half the frequency. It should be greatly reduced as more notches cause more phase lag (i.e. latency), thus the bandwidth needs to be reduced to maintain a reasonable phase lag, else oscillation and a poorer tune will result despite the more accurate filtering compared to throttle-based filtering. For example, with four motors, :ref:`INS_HNTCH_FREQ<INS_HNTCH_FREQ>` / 4 is suggested as a starting point.
+   This is because for notch filters, a wider bandwidth causes a greater phase lag per notch.
+   You can also use the `Filter Tool <https://firmware.ardupilot.org/Tools/FilterTool/>`__ to check the phase lag for your chosen filtering settings. If your phase lag is higher than it was with the throttle-based notch, then you can try reducing the bandwidth even further, balancing the phase lag and the amount of noise in the system.
+
 Center Frequency Slewing
 ========================
 
@@ -23,7 +29,7 @@ The rate at which the harmonic notch frequency is updated has a big impact on no
 
 By default the update rate is 200Hz and where the source of frequency information is slower than that - for instance when using ESC telemetry where the maximum rate that can be sustained is about 100Hz - ArduPilot will slew the frequency changes at 200Hz to avoid large steps. The slewed rate is the rate that is reported by ESC telemetry, although the raw rate can be seen in the logs as well.
 
-On systems with faster CPUs (H7 based autopilots) it is possible to update the harmonic notch at the main loop rates used for VTOL aircraft (typically 300-400Hz set by :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`) by setting bit 3 of the notch options, i.e. 
+On systems with faster CPUs (H7 based autopilots) it is possible to update the harmonic notch at the main loop rates used for VTOL aircraft (typically 300-400Hz set by :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`) by setting bit 3 of the notch options, i.e.
 
 - :ref:`INS_HNTCH_OPTS<INS_HNTCH_OPTS>` and/or :ref:`INS_HNTC2_OPTS<INS_HNTC2_OPTS>` = 4
 
