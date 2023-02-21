@@ -4,7 +4,7 @@
 Simple Overview of ArduPilot Operation
 ======================================
 
-This is a very basic overview of the functions of ArduPilot firmware running on a autopilot. Shown below is a simple block diagram of the basic functional operation. This will give you a better understanding of ArduPilot basic functions as you configure your system.
+This is a very basic overview of the functions of ArduPilot firmware running on an autopilot. Shown below is a simple block diagram of the basic functional operation. This will give you a better understanding of ArduPilot basic functions as you configure your system.
 
 .. image:: ../../../images/block-diagram.jpg
     :target: ../_images/block-diagram.jpg

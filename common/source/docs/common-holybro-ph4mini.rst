@@ -5,7 +5,7 @@
 Pixhawk4-Mini Flight Controller
 ===============================
 
-The Pixhawk4-Mini flight controller is sold by `Holybro <https://shop.holybro.com/pixhawk4-mini_p1120.html>`__
+The Pixhawk4-Mini autopilot is sold by `Holybro <https://shop.holybro.com/pixhawk4-mini_p1120.html>`__
 
 Features
 ========

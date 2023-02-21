@@ -16,7 +16,7 @@ Versions Prior to 4.2
 ---------------------
 In firmware versions before 4.2,  the parameter ``BRD_PWM_COUNT`` determines how many of the PWM outputs are used for controlling motors/servos, and how many can be re-purposed and used as GPIO-style outputs.
 
-If a autopilot has **X** outputs, then the number of available outputs that can be assigned via the ``SERVOx_FUNCTION`` parameter to be a relay, LED, etc. output is ( **X** - ``BRD_PWM_COUNT`` ). These GPIO outputs begin at the highest output number and proceed downward. So, for example, if the total outputs is 6 and ``BRD_PWM_COUNT`` = 4, then output 5/6 can be used for GPIO type functions.
+If an autopilot has **X** outputs, then the number of available outputs that can be assigned via the ``SERVOx_FUNCTION`` parameter to be a relay, LED, etc. output is ( **X** - ``BRD_PWM_COUNT`` ). These GPIO outputs begin at the highest output number and proceed downward. So, for example, if the total outputs is 6 and ``BRD_PWM_COUNT`` = 4, then output 5/6 can be used for GPIO type functions.
 
 The exception is autopilots using an IOMCU co-processor. These autopilots normally have 8 MAIN outputs, and several AUX outputs. Only the AUX outputs can be re-purposed as GPIOs, and the ``BRD_PWM_COUNT`` parameter only applies to this group of outputs.
 

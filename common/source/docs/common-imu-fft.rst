@@ -12,7 +12,7 @@ In-Flight FFT Based Harmonic Notch Setup
 
 ArduPilot comes pre-configured with appropriate defaults for all FFT settings. The only initial setup required is:
 
-- Set :ref:`FFT_ENABLE <FFT_ENABLE>` = 1 to enable the FFT engine. This then requires that you reboot your flight controller after which FFT support will be enabled and other FFT parameters should be visible in your GCS. With default parameter settings the FFT engine will run a self-check for frequency matching on your hardware. If you do not see any FFT errors then things are working properly.
+- Set :ref:`FFT_ENABLE <FFT_ENABLE>` = 1 to enable the FFT engine. This then requires that you reboot your autopilot after which FFT support will be enabled and other FFT parameters should be visible in your GCS. With default parameter settings the FFT engine will run a self-check for frequency matching on your hardware. If you do not see any FFT errors then things are working properly.
 
 - With FFT enabled it is best to first perform a test flight to check that your aircraft's particular noise frequencies are being captured and to monitor CPU load. See :ref:`Initial Analysis Flight <common-imu-fft-test-flight>`. Normally, results from this will show clear noise recognition and acceptable cpu loading, and  then you can use the FFT to drive the :ref:`harmonic notch<common-imu-notch-filtering>` by setting these parameters:
 

@@ -78,9 +78,9 @@ On the CAN node you need to set:
 - :ref:`OUTx_FUNCTION <dev:OUT1_FUNCTION>` to a value of 50 plus the servo number for each output you want to be enabled as PWM output
 - :ref:`OUTx_FUNCTION <dev:OUT1_FUNCTION>` = 0 for any outputs you do not have connected. Do not leave them at the default of 33 + ESC number
 
-For example, if you had an elevator servo on SERVO2 on the main autopilot and you want this to appear on the first output of the CAN node (on the node's pin marked “1”) then you would set OUT1_FUNCTION = 52 (that is 50 + the servo number on the flight controller). If you wanted a rudder that is on SERVO4 to appear on output 4 then you would set OUT4_FUNCTION=54.
+For example, if you had an elevator servo on SERVO2 on the main autopilot and you want this to appear on the first output of the CAN node (on the node's pin marked “1”) then you would set OUT1_FUNCTION = 52 (that is 50 + the servo number on the autopilot). If you wanted a rudder that is on SERVO4 to appear on output 4 then you would set OUT4_FUNCTION=54.
 
-.. note:: It is also recommended to set OUTn_MIN to 1000, OUTn_MAX to 2000, and OUTn_TRIM to 1500. That will allow you to use the SERVOn_MIN, SERVOn_MAX, and SERVOn_TRIM values on the main autopilot to control the outputs range and center in the usual way. It is possible to use other values on the node, but it gets more complicated to understand the mapping of the PWM values, so using 1000, 1500, 2000 is recommended. Doing this also means the PWM value in your flight controller logs matches what is output by the node.
+.. note:: It is also recommended to set OUTn_MIN to 1000, OUTn_MAX to 2000, and OUTn_TRIM to 1500. That will allow you to use the SERVOn_MIN, SERVOn_MAX, and SERVOn_TRIM values on the main autopilot to control the outputs range and center in the usual way. It is possible to use other values on the node, but it gets more complicated to understand the mapping of the PWM values, so using 1000, 1500, 2000 is recommended. Doing this also means the PWM value in your autopilot logs matches what is output by the node.
 
 Combining DShot and PWM outputs
 -------------------------------

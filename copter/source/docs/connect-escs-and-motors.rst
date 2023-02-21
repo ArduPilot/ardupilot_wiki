@@ -4,7 +4,7 @@
 Connect ESCs and Motors
 =======================
 
-This article explains how to connect the ESCs, motors and propellers to a autopilot.  The Pixhawk is used as an example but other autopilots are connected in a similar way.
+This article explains how to connect the ESCs, motors and propellers to an autopilot.  The Pixhawk is used as an example but other autopilots are connected in a similar way.
 
 Connect the power (+), ground (-), and signal (s) wires for each ESC to
 the autopilot's main output pins by motor number. Find your frame type

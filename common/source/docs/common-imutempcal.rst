@@ -17,21 +17,21 @@ The temperature calibration is stored in ArduPilot parameters, just
 like other types of calibration parameters. There is also the option
 to store the parameters in a way that persists across a full parameter
 reset, which allows support for factory calibration for vendors
-selling ArduPilot compatible flight controllers.
+selling ArduPilot compatible autopilots.
 
 Temperature Calibration Procedure
 ---------------------------------
 
 The key factors to a good temperature calibration are:
 
- - letting the flight controller cool to a temperature below the
+ - letting the autopilot cool to a temperature below the
    minimum operating temperature before starting the calibration
 
  - ensuring the IMU temperature that is reached during the calibration
    run is high enough to cover all flight conditions
 
  - ensuring that there is no movement during the calibration. Note
-   that the flight controller does not need to be level, but it must
+   that the autopilot does not need to be level, but it must
    not move.
 
 Before you start the calibration process you need to setup some key
@@ -174,7 +174,7 @@ The key features of the graphs are:
 The calibration script will also save a copy of the new calibration
 parameters to the file tcal.parm, or a filename chosen with
 the --outfile command line option. You should load these parameters to
-enable the new calibration on the flight controller.
+enable the new calibration on the autopilot.
 
 Other command line options are:
 
@@ -198,17 +198,17 @@ Other command line options are:
 Factory Temperature Calibration
 -------------------------------
 
-On flight controllers based on the STM32F7 and STM32H7
+On autopilots based on the STM32F7 and STM32H7
 microcontrollers we support storing temperature calibration parameters
 in persistent storage in the boards bootloader sector. This allows the
 calibration parameters to persist even with a complete parameter
 reset, including changing firmware type. This allows a vendor to ship
-flight controllers pre-calibrated from the factory which is a great
+autopilots pre-calibrated from the factory which is a great
 convenience for users.
 
 To save parameters persistently you should perform a temperature
 calibration as described above then as a final step send a "flash
-bootloader" mavlink command to the flight controller. This will
+bootloader" mavlink command to the autopilot. This will
 re-flash the bootloader with calibration parameters embedded in the
 final part of the bootloader sector in flash. You can inspect these
 parameters using the @SYS/persistent.parm sysfs file using a mavftp

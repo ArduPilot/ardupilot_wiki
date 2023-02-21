@@ -9,7 +9,7 @@ designed for long range serial communication.  Ranges of `15km and much higher h
 
 .. warning::
 
-   Many common flight controllers have telemetry port current limits that prevent directly powering RFD900 radios at their full transmit power. You should power high power radios externally or limit their maximum transmit power to an acceptable level.All commonly used flight controllers should be able to handle transmit powers of 20dBm.  See the manual of your specific flight controller for the detailed power specifications of each telemetry port. To set the transmit (TX) power see :ref:`Configuring a Telemetry Radio using Mission Planner <common-configuring-a-telemetry-radio-using-mission-planner>`.
+   Many common autopilots have telemetry port current limits that prevent directly powering RFD900 radios at their full transmit power. You should power high power radios externally or limit their maximum transmit power to an acceptable level.All commonly used autopilots should be able to handle transmit powers of 20dBm.  See the manual of your specific autopilot for the detailed power specifications of each telemetry port. To set the transmit (TX) power see :ref:`Configuring a Telemetry Radio using Mission Planner <common-configuring-a-telemetry-radio-using-mission-planner>`.
 
 
 .. image:: ../../../images/RFD900_telemetry_radio.jpg

@@ -8,7 +8,7 @@ Overview
 ========
 
 `SmartAP PDB <https://sky-drones.com/power/smartap-pdb.html>`__ (Power Distribution Board) is a board which allows transferring the power from 
-the battery to ESCs / Motors and generate power supply for the flight controller and 
+the battery to ESCs / Motors and generate power supply for the autopilot and 
 other peripherals with different voltage levels. Also, PDB provides the functionality for battery 
 voltage / current measurements. SmartAP PDB makes high-power lines connections easier and much more reliable.
 
@@ -30,7 +30,7 @@ Specifications
 - Integrated DC-DC converter from 10-60 V input (up to 14S battery) to 12V / 5A output to power peripherals
 - 5V and 12V power output terminals (standard 2.54mm/0.1" connectors)
 - Integrated loud electromagnetic sounder (buzzer)
-- Power output for the flight controller (both 5V regulated and battery voltage level output)
+- Power output for the autopilot (both 5V regulated and battery voltage level output)
 - Fully compatible with SmartAP, ArduPilot and PX4 autopilots
 
 Size and Weight

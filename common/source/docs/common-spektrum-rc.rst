@@ -57,7 +57,7 @@ In the configuration of the serial port select the RCIN protocol and set the ser
 - Set :ref:`SERIAL4_OPTIONS <SERIAL4_OPTIONS>` = 4
 - Set :ref:`RSSI_TYPE <RSSI_TYPE>` = 3
 
-Many single board flight controllers support RC input on serial port 6 only exposing the RX connection. For F7 flight controllers, such as the Kakute F7, it is necessary to swap the RX and TX pins in order to support SRXL2. It is also necessary to support serial access on the UART by using the board's alternate configuration:
+Many single board autopilots support RC input on serial port 6 only exposing the RX connection. For F7 autopilots, such as the Kakute F7, it is necessary to swap the RX and TX pins in order to support SRXL2. It is also necessary to support serial access on the UART by using the board's alternate configuration:
 
 - Set :ref:`SERIAL6_PROTOCOL <SERIAL6_PROTOCOL>` = 23
 - Set :ref:`SERIAL6_OPTIONS <SERIAL6_OPTIONS>` = 12

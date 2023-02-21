@@ -4,7 +4,7 @@
 Flywoo GOKU GN 745 AIO with 40A ESC/ Nano
 =========================================
 
-The Flywoo GOKU GN 745 AIO is a flight controller produced by [Flywoo](https://flywoo.net/).
+The Flywoo GOKU GN 745 AIO is an autopilot produced by [Flywoo](https://flywoo.net/).
 
 .. image:: ../../../images/flywooF745AIO.jpg
     :target: ../../_images/flywooF745AIO.jpg

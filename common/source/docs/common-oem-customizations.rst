@@ -59,7 +59,7 @@ This section assumes that the OEM has set up the build environment (:ref:`buildi
 
     .. warning:: The user may also run Lua scripts off the SD card, so care should be taken in naming the embedded script file names to not conflict with potential user file names. It is recommended that the file names of embedded Lua scripts be provided in the product documentation for the user.
 
-#. You can also imbed small pieces of documentation in the ROM of the chip that are readable when examining the @ROMFS folder via MAVFtp. These can be pictures or small informational documents. These must fit within the free flash space of the flight controller. These files can be located in sub-directories in ``libraries/AP_HAL_ChibiOS/hwdef/OEM_CubeOrange`` (e.g. ``libraries/AP_HAL_ChibiOS/hwdef/OEM_CubeOrange/AircraftManual``).
+#. You can also imbed small pieces of documentation in the ROM of the chip that are readable when examining the @ROMFS folder via MAVFtp. These can be pictures or small informational documents. These must fit within the free flash space of the autopilot. These files can be located in sub-directories in ``libraries/AP_HAL_ChibiOS/hwdef/OEM_CubeOrange`` (e.g. ``libraries/AP_HAL_ChibiOS/hwdef/OEM_CubeOrange/AircraftManual``).
 
 #. Now build as normal with OEM-CubeOrange as the board name in the configuration. The default parameters, Lua scripts, and the custom firmware name will be embedded appropriately.
 

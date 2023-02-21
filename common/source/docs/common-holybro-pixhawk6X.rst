@@ -4,7 +4,7 @@
 Pixhawk 6X Flight Controller
 ============================
 
-Pixhawk6X®  is the latest update to the successful family of Pixhawk® flight controllers made by Holybro, featuring STM32H7 cpus, vibration isolation of IMUs, redundant IMUs, double redundant barometers on separate buses, IMU heating, and integrated Ethernet for high speed connections to companion computers.
+Pixhawk6X®  is the latest update to the successful family of Pixhawk® autopilots made by Holybro, featuring STM32H7 cpus, vibration isolation of IMUs, redundant IMUs, double redundant barometers on separate buses, IMU heating, and integrated Ethernet for high speed connections to companion computers.
 
 Pixhawk6X:
 
@@ -15,7 +15,7 @@ Pixhawk6X:
 Where To Buy
 ============
 
-The Pixhawk6 flight controllers are sold by `Holybro <https://shop.holybro.com/c/flight-controllers_0456>`__
+The Pixhawk6 autopilots are sold by `Holybro <https://shop.holybro.com/c/flight-controllers_0456>`__
 
 Features of Pixhawk6 Series
 ===========================

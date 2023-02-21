@@ -15,7 +15,7 @@ Featuring STM32H7 cpu, vibration isolation of IMUs, redundant IMUs, double redun
 Where To Buy
 ============
 
-The Pixhawkv6X flight controllers are sold by `CUAV <https://store.cuav.net/uav-flight-controller/>`__
+The Pixhawkv6X autopilots are sold by `CUAV <https://store.cuav.net/uav-flight-controller/>`__
 
 Specifications
 ==============

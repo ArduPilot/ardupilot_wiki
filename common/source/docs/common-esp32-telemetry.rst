@@ -112,7 +112,7 @@ Wiring is very simple and mostly the same for all devices connected to
 any serial port (eg TELEM1 or TELEM2) of the autopilot. This guide does not go into
 detail here, but provides an outline for wiring below.
 
--  Connect UART of ESP32 to a UART of your flight controller (e.g. TELEM
+-  Connect UART of ESP32 to a UART of your autopilot (e.g. TELEM
    1 or TELEM 2 port). Make sure the voltage levels match! Most ESP32
    DevKits can only take 3.3V!
 
@@ -122,7 +122,7 @@ detail here, but provides an outline for wiring below.
    -  Stable 3.3V or 5V power supply to the ESP32 (depending on the
       available inputs of your DevKit and capabilities of the autopilot)
 
--  Set the flight controller port to MAVLINK 1 or 2 protocol.
+-  Set the autopilot port to MAVLINK 1 or 2 protocol.
 
 Some manufacturers of ESP32 DevKits have wrong labels for the
 pins on their products. Make sure that the PINs on your board are
@@ -131,13 +131,13 @@ labeled correctly if you encounter issues.
 Make sure to always follow the instructions of the ESP32 board manufacturer when it comes to wiring. Especially the power supply.
 
 .. image:: https://raw.githubusercontent.com/DroneBridge/ESP32/master/wiki/Pixhawk_wiring.png
-   :alt: Example wiring of flight controller to ESP32
+   :alt: Example wiring of autopilot to ESP32
 
 
 ArduPilot configuration
 =======================
 
-Configure the UART of the flight controller that is wired to the ESP32. The default configuration of DroneBridge is:
+Configure the UART of the autopilot that is wired to the ESP32. The default configuration of DroneBridge is:
 
 -  Protocol: MAVLink (v1 or v2)
 -  Baudrate: 115200 baud

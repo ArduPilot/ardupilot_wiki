@@ -61,7 +61,7 @@ For either Serial or DroneCAN GPS also set:
 - :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 2 ("GPS") or 3 ("GPS with Compass Fallback") if a compass(es) is also in the system
 
 The above configurations assumes that you want the RTCMv3 data between
-the two GPS modules to go via the flight controller board.
+the two GPS modules to go via the autopilot board.
 
 .. note:: You may instead install a cross-over UART cable between the two UART2 connectors on the two GPS modules (Assuming they are serial rather than DroneCAN). If you do that then you can set :ref:`GPS_DRV_OPTIONS <GPS_DRV_OPTIONS>` = 1 which tells the u-blox GPS driver to configure the two GPS modules to send RTCMv2 data over UART2. On DroneCAN modules, a second CAN port is provided to allow this direct connection for RTCMv2 data. In that case, set :ref:`GPS_DRV_OPTIONS <GPS_DRV_OPTIONS>` = 8.
 

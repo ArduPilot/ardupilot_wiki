@@ -58,8 +58,8 @@ Additional Features
 Filter
 ------
 
-Various sensors can be attached to the flight controller. However, depending on the quality and use case of the sensor, it might give noisy data.
-This noise will be stored onboard the flight controller as "obstacles" and the vehicle might suddenly start avoiding false objects. To counter this problem, Copter and Rover 4.1 have an inbuilt low pass filter on the raw sensor data.
+Various sensors can be attached to the autopilot. However, depending on the quality and use case of the sensor, it might give noisy data.
+This noise will be stored onboard the autopilot as "obstacles" and the vehicle might suddenly start avoiding false objects. To counter this problem, Copter and Rover 4.1 have an inbuilt low pass filter on the raw sensor data.
 The filter can be adjusted by :ref:`PRX_FILT <PRX_FILT>` (setting it to 0 will disable the feature).
 By default, only the filtered values get logged. However, by setting :ref:`PRX_LOG_RAW <PRX_LOG_RAW>` = 1, raw values from the sensors will also be logged. This can be used for debugging purposes.
 

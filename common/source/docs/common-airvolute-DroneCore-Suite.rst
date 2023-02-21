@@ -15,7 +15,7 @@ It consists of a control part called **DroneCore.Pilot** and power part called *
 **DroneCore.Pilot** - top board for control of the aircraft containing
 
 -  **Jetson Xavier NX** Companion Computer
--  CubePilot Cube flight controller running ArduPilot firmware
+-  CubePilot Cube autopilot running ArduPilot firmware
 -  Internal 5V power supply
 -  Power selector
 -  Peripheral connectors
@@ -44,7 +44,7 @@ Various software libraries (coming soon) further enrich the possibilities for th
 
 DroneCore.Suite provides easy to use ROS based software stack supporting development of autonomous applications.
 
-Out of the box the device is configured to fly a Quadcopter (though flight controller calibration is needed).
+Out of the box the device is configured to fly a Quadcopter (though autopilot calibration is needed).
 
 
 .. image:: ../../../images/airvolute_droneCore.Suite_top_view_9219.jpg
@@ -111,9 +111,9 @@ Block Diagram
     :target: ../../_images/airvolute_DroneCore.Pilot_block_diagram.svg
 
 
-**DroneCore.Pilot** is based on Cube Orange - the widely used flight controller by Hex.aero running on ArduPilot (or optionally PX4 flight stack) and Nvidia Jetson Xavier NX. Their rich interfaces allow connecting most sensors and other peripherals for drones available on the market.
+**DroneCore.Pilot** is based on Cube Orange - the widely used autopilot by Hex.aero running on ArduPilot (or optionally PX4 flight stack) and Nvidia Jetson Xavier NX. Their rich interfaces allow connecting most sensors and other peripherals for drones available on the market.
 
-**DroneCore.Power** contains 4 FOC DroneCAN ESCs with motor identification feature able to be configured for all common BLDC/PMSM drone motors on the market and a telemetry interface providing real time data to the flight controller. Furthermore it provides battery voltage and current measurements as well as individual cell voltages.
+**DroneCore.Power** contains 4 FOC DroneCAN ESCs with motor identification feature able to be configured for all common BLDC/PMSM drone motors on the market and a telemetry interface providing real time data to the autopilot. Furthermore it provides battery voltage and current measurements as well as individual cell voltages.
 
 Useful links
 ============

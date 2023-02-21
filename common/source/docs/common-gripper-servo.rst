@@ -4,7 +4,7 @@
 Servo Gripper
 =============
 
-This article explains how to connect a servo to a autopilot and configure it for use as a gripper which is useful for delivery or bottle drop applications.
+This article explains how to connect a servo to an autopilot and configure it for use as a gripper which is useful for delivery or bottle drop applications.
 The servo can be controlled directly by the pilot via a switch on the transmitter or as part of a mission.  You may wish to refer to the :ref:`general servo wiki page <common-servo>` for other ways servos can be controlled.
 
 .. note::

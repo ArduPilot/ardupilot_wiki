@@ -4,7 +4,7 @@
 SPRacing H7 Extreme
 ===================
 
-The SPRacingH7 Extreme is a flight controller produced by `Seriously Pro Racing <http://www.seriouslypro.com/>`__ .
+The SPRacingH7 Extreme is an autopilot produced by `Seriously Pro Racing <http://www.seriouslypro.com/>`__ .
 
 .. image:: ../../../images/SPracing-H7-extreme.jpg
      :target: ../_images/SPracing-H7-extreme.jpg

@@ -39,7 +39,7 @@ Specifications
 
 **note:**
 
-The output power rails **FMU PWM OUT** and **I/O PWM OUT** do not power the flight controller board (and are not powered by it). You must supply power to one of **POWER** or **USB** or the board will be unpowered.
+The output power rails **FMU PWM OUT** and **I/O PWM OUT** do not power the autopilot board (and are not powered by it). You must supply power to one of **POWER** or **USB** or the board will be unpowered.
 
 UART Mapping
 ============

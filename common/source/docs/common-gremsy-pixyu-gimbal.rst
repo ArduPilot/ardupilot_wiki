@@ -4,7 +4,7 @@
 Gremsy Mio, Pixy, S1, T3, T7, and ZIO 3-Axis Gimbals
 ====================================================
 
-Gremsy `Mio <https://gremsy.com/products/mio>`__, `Pixy F <https://gremsy.com/products/pixy-f>`__, `Pixy U <https://gremsy.com/products/pixy-u>`__, `Pixy WP <https://gremsy.com/products/pixy-wp>`__,  `S1 <https://gremsy.com/products/gremsy-s1v3>`__, `T3 <https://gremsy.com/products/gremsy-t3v3>`__, `T7 <https://gremsy.com/products/gremsy-t7>`__ and `ZIO <https://gremsy.com/zio>`__ 3-axis gimbals can communicate with the flight controller using the MAVLink protocol and are compatible with a range of cameras for real-time video or mapping purposes.
+Gremsy `Mio <https://gremsy.com/products/mio>`__, `Pixy F <https://gremsy.com/products/pixy-f>`__, `Pixy U <https://gremsy.com/products/pixy-u>`__, `Pixy WP <https://gremsy.com/products/pixy-wp>`__,  `S1 <https://gremsy.com/products/gremsy-s1v3>`__, `T3 <https://gremsy.com/products/gremsy-t3v3>`__, `T7 <https://gremsy.com/products/gremsy-t7>`__ and `ZIO <https://gremsy.com/zio>`__ 3-axis gimbals can communicate with the autopilot using the MAVLink protocol and are compatible with a range of cameras for real-time video or mapping purposes.
 
 .. image:: ../../../images/gremsy-pixyu-gimbal.png
     :target: https://gremsy.com/products/pixy-u

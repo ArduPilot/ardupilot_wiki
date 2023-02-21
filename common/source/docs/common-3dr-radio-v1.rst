@@ -67,7 +67,7 @@ This is not usually required, but if desired see: :ref:`common-configuring-a-tel
 Updating the Firmware
 ---------------------
 
-Using Mission Planner, with the module connected to the flight controller for power and the base USB unit plugged into the computer:
+Using Mission Planner, with the module connected to the autopilot for power and the base USB unit plugged into the computer:
 
 - determine the USB COMM port the base radio is using and enter that into the port selection box of Mission Planner along with the baud rate (57600 is defualt for the radios).
 - WITHOUT connecting anything in Mission Planner, use the SETUP/Optional Hardware/Sik Radio utility tab to "Upload Firmware (local)" which will download the latest firmware and write it to the radios.

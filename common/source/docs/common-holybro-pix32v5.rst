@@ -14,10 +14,10 @@ Pix32 v5
 System Features
 ===============
 
-HolyBro Pix32 v5 is a new flight controller developed on the base of FMUv5
+HolyBro Pix32 v5 is a new autopilot developed on the base of FMUv5
 scheme, which can be regarded as a variant version of 'Pixhawk4'.
 
-The Pix32 v5 is comprised of a separate flight controller and carrier board which are
+The Pix32 v5 is comprised of a separate autopilot and carrier board which are
 connected by a 100pin connector. It is designed for those pilots who need a high power,
 flexible and customizable flight control system.
 

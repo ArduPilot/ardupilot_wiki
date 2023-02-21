@@ -39,7 +39,7 @@ Carrier Board Mini
     :target: ../_images/CCarrier_mini.jpg
     :width: 360px
 
-Mini Carrier Board has the standardized DF17 connector which allows the user to connect it to every version of the Cube flight controller. With smaller size and almost the same capability with the standard carrier board, it can better fit in to those applications which have size limits. Also, it can be equipped with the Cube Purple to better fulfil the requests from customers. 
+Mini Carrier Board has the standardized DF17 connector which allows the user to connect it to every version of the Cube autopilot. With smaller size and almost the same capability with the standard carrier board, it can better fit in to those applications which have size limits. Also, it can be equipped with the Cube Purple to better fulfil the requests from customers. 
 
 Functionality of Carrier Board:
 

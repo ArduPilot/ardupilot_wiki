@@ -8,7 +8,7 @@ CUAV Nora Overview
     :target: ../_images/nora.png
     :width: 360px
 
-**Nora** :sup:`®` is an advanced autopilot independently designed by CUAV :sup:`®`. It uses a higher-performance STM32H7 processor and integrates industrial-grade sensors and ultra-low temperature drift sensors. Compared with previous flight controllers, it has better performance and more reliability. Nora is ideal for academic research and commercial systems integration.
+**Nora** :sup:`®` is an advanced autopilot independently designed by CUAV :sup:`®`. It uses a higher-performance STM32H7 processor and integrates industrial-grade sensors and ultra-low temperature drift sensors. Compared with previous autopilots, it has better performance and more reliability. Nora is ideal for academic research and commercial systems integration.
 
 Other characteristics
 =====================

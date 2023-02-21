@@ -128,7 +128,7 @@ Semi Automatic ESC-by-ESC Calibration
 #. Disconnect the battery and USB cable so the autopilot powers down
 #. Connect the battery
 #. The arming tone will be played (if the vehicle has a buzzer attached)
-#. If using a autopilot with a safety button (like the Pixhawk) press it until it displays solid red
+#. If using an autopilot with a safety button (like the Pixhawk) press it until it displays solid red
 #. You will hear a musical tone then two beeps
 #. A few seconds later you should hear a number of beeps (one for each battery cell you're using) and finally a single long beep indicating the end points have been set and the ESC is calibrated
 #. Disconnect the battery and power up again normally and test as described below
