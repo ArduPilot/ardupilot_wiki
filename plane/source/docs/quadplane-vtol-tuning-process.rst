@@ -260,7 +260,7 @@ setup a harmonic notch to remove the noise from your gyros.
 When setting up your filtering you should consider the cause of any
 oscillation you find. On most aircraft the vibrations you find will be
 directly caused by a multiple of the RPM, but on some aircraft a frame
-resonance or resonance in the flight controller mount may be the
+resonance or resonance in the autopilot mount may be the
 cause. Understanding the cause of any resonances is critical to
 reducing noise enough to get a good tune.
 
