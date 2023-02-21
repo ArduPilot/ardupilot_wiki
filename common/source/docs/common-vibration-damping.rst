@@ -288,7 +288,7 @@ Additional Vibration Reduction Considerations
 #. The amount and type of damping medium needs to be carefully matched
    to the weight (mass) of the item we are trying to isolate as well as
    the frequency and amplitude of the vibrations we are seeking to
-   damp. We are trying to isolate a autopilot that weighs
+   damp. We are trying to isolate an autopilot that weighs
    less than 2 ounces and this is a very small mass.
 #. Virtually all off the shelf solutions (either pad or stud type) are
    designed for an isolated mass that would weigh at least 5 to 10 times

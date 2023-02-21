@@ -97,7 +97,7 @@ The issue happens due to the following logic in the ESC firmware:
 
 - 200 ms after ESC startup the supply voltage is sampled, where the maximum voltage is taken as 120% of this point.
 - At any time after that, if the supply voltage is above this level, then an over-voltage error is raised.
-- While an over-voltage error is raised, the throttle will not be reduced unless the flight controller demands a zero throttle.
+- While an over-voltage error is raised, the throttle will not be reduced unless the autopilot demands a zero throttle.
 
 This feature aimed to prevent motor braking from pushing too much power back into the batteries, which could lead to overcharging 
 of the batteries or excessive spikes on the ESC inputs.

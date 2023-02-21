@@ -10,7 +10,7 @@ makeflyeasy PixPilot-V6
    :width: 450px
 
 
-The PixPilot-V6 flight controller is sold by a range of resellers listed on the makeflyeasy(http://www.makeflyeasy.com)
+The PixPilot-V6 autopilot is sold by a range of resellers listed on the makeflyeasy(http://www.makeflyeasy.com)
 
 Specifications
 ==============

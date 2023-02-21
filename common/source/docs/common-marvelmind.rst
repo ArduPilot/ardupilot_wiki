@@ -32,7 +32,7 @@ Marvelmind Settings
 - The height of every stationary beacon, from the ground, must be set on the dashboard.
 - The hedge should be set to output Marvelmind Protocol at baud rate of 115200.
 
-Connecting to a autopilot
+Connecting to an autopilot
 =================================
 
 - Ensure that Copter-3.6 (or higher) or Rover-3.3 is loaded onto the autopilot and connect with a Ground Station (i.e. Mission Planner).

@@ -11,7 +11,7 @@ The Cube Overview
 System Features
 ===============
 
-The Cube autopilot is a further evolution of the Pixhawk autopilot. It is designed for commercial systems and manufacturers who wish to fully integrate a autopilot into their system. On top of the existing features of Pixhawk, it has the following enhancements:
+The Cube autopilot is a further evolution of the Pixhawk autopilot. It is designed for commercial systems and manufacturers who wish to fully integrate an autopilot into their system. On top of the existing features of Pixhawk, it has the following enhancements:
 
 -  3 sets of IMU sensors for extra redundancy
 -  2 sets of IMU are vibration-isolated mechanically, reducing the effect of frame vibration to state estimation

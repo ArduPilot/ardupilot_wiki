@@ -4,7 +4,7 @@
 Mamba H743v4
 ============
 
-The MambaH743v4 is a flight controller produced by `Diatone <https://www.diatone.us>`__.
+The MambaH743v4 is an autopilot produced by `Diatone <https://www.diatone.us>`__.
 
 .. image:: ../../../images/MambaH743v4.jpg
    :target: ../../_images/MambaH743v4.jpg

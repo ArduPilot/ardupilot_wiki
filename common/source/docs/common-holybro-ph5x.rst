@@ -5,7 +5,7 @@
 Pixhawk 5X Flight Controller
 ============================
 
-Pixhawk 5X® is the latest update to the successful family of Pixhawk® flight controllers made by Holybro, featuring vibration isolation of IMUs, triple redundant IMUs, double redundant barometers on separate buses, IMU heating, and integrated Ethernet for high speed connections to companion computers.
+Pixhawk 5X® is the latest update to the successful family of Pixhawk® autopilots made by Holybro, featuring vibration isolation of IMUs, triple redundant IMUs, double redundant barometers on separate buses, IMU heating, and integrated Ethernet for high speed connections to companion computers.
 
 .. image:: ../../../images/holybro-pixhawk5x/pixhawk5x_exploded_diagram.jpg
     :target: ../_images/pixhawk5x_exploded_diagram.jpg
@@ -14,7 +14,7 @@ Pixhawk 5X® is the latest update to the successful family of Pixhawk® flight c
 Where To Buy
 ============
 
-The Pixhawk5X flight controller is sold by `Holybro <https://shop.holybro.com/pixhawk-5x_p1279.html>`__
+The Pixhawk5X autopilot is sold by `Holybro <https://shop.holybro.com/pixhawk-5x_p1279.html>`__
 
 Features
 ========

@@ -45,7 +45,7 @@ Calibration steps
    -  You should calibrate the board mounted in the vehicle if possible. 
    -  However, you may need to calibrate the board before it is mounted if the size/shape of the vehicle makes this difficult.
    -  The level position is the most important to get right as this will be the attitude that your controller considers level while flying.
-   -  You can recalibrate this Level position using Mission Planner after you have installed the flight controller and are ready to fly. Place the vehicle in its level flying attitude and use the **Calibrate Level** button.
+   -  You can recalibrate this Level position using Mission Planner after you have installed the autopilot and are ready to fly. Place the vehicle in its level flying attitude and use the **Calibrate Level** button.
 
 .. note:: this **Calibrate Level** operation can only correct up to a 10 degree difference between the initial calibration and the final position in the vehicle, and only corrects pitch and roll differences, not yaw.
 

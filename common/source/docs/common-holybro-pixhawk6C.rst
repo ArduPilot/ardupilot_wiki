@@ -4,7 +4,7 @@
 Pixhawk 6C Flight Controller
 ============================
 
-Pixhawk6C is the latest update to the successful family of Pixhawk® flight controllers made by Holybro, featuring STM32H7 cpus, vibration isolation of IMUs, redundant IMUs, and IMU heating.
+Pixhawk6C is the latest update to the successful family of Pixhawk® autopilots made by Holybro, featuring STM32H7 cpus, vibration isolation of IMUs, redundant IMUs, and IMU heating.
 
 .. image:: ../../../images/holybro-pixhawk6/Pixhawk6C.png
     :target: ../_images/Pixhawk6C.png
@@ -13,7 +13,7 @@ Pixhawk6C is the latest update to the successful family of Pixhawk® flight cont
 Where To Buy
 ============
 
-The Pixhawk6 flight controllers are sold by `Holybro <https://shop.holybro.com/c/flight-controllers_0456>`__
+The Pixhawk6 autopilots are sold by `Holybro <https://shop.holybro.com/c/flight-controllers_0456>`__
 
 Features of Pixhawk6 Series
 ===========================

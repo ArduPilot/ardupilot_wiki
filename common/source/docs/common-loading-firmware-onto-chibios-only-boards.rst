@@ -7,7 +7,7 @@ Loading Firmware onto boards without existing ArduPilot firmware
 Recent versions of ArduPilot (Copter-3.6, Plane-3.9, Rover-3.5) run on relatively small, non-Pixhawk, autopilots using the ChibiOS operating system.
 Examples of these boards include the :ref:`OpenPilot RevoMini <common-openpilot-revo-mini>`, :ref:`Mateksys F405-Wing <common-matekf405-wing>` and :ref:`Omnibus F4 Pro <common-omnibusf4pro>`.
 
-Most often, these boards have another flight controller software pre-installed. (If the board has ArduPilot already installed, see :ref:`common-loading-firmware-onto-pixhawk` for firmware loading instructions.
+Most often, these boards have another autopilot software pre-installed. (If the board has ArduPilot already installed, see :ref:`common-loading-firmware-onto-pixhawk` for firmware loading instructions.
 
 Installing ArduPilot to these autopilot involves:
 
@@ -185,7 +185,7 @@ Installing the ArduPilot bootloader
 - You must initially have a working version of ArduPilot installed on the board - follow the steps above.
 - You now must remove the copy protection on the internal flash. This is a destructive operation requiring complete erasure of the flash. ArduPilot provides support to make this easy. Set :ref:`BRD_OPTIONS<BRD_OPTIONS>` = 16.
 - Power off and power on the board. The board will not appear to boot but the flash sector is being erased. Wait a few seconds and then power off the board.
-- Hold down the ``boot`` button (boot *not* bind this time) and power on the flight controller. This will put the board in dfu mode.
+- Hold down the ``boot`` button (boot *not* bind this time) and power on the autopilot. This will put the board in dfu mode.
 - Download the ArduPilot bootloader, e.g. https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/SPRacingH7_bl.bin
 - Install the bootloader via dfu:
 

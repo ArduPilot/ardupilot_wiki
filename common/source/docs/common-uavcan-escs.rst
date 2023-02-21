@@ -41,7 +41,7 @@ Connecting to the Flight Controller
 .. image:: ../../../images/Pixhawk_UAVCAN_ESC.jpg
     :target: ../_images/Pixhawk_UAVCAN_ESC.jpg
 
-One ESC (it does not matter which) should be connected to the flight controller's
+One ESC (it does not matter which) should be connected to the autopilot's
 CAN port using a 4-pin DF13 to 4-pin DroneCAN adapter cable. Each
 subsequent ESC should be connected to the previous using a 4-pin
 DroneCAN cable.  The final ESC should have a CAN bus terminator plugged

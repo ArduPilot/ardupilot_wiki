@@ -103,7 +103,7 @@ Populating a screen's parameter slots using MAVProxy's OSD module
 =================================================================
  
 OSD based parameter setting includes a `MAVProxy module <https://ardupilot.org/mavproxy/>`__ to populate each screen's parameter slots.
-Connect your flight controller, connect tp MAVProxy and load the OSD module by typing :code:`module load osd`
+Connect your autopilot, connect tp MAVProxy and load the OSD module by typing :code:`module load osd`
 
 .. note::
    

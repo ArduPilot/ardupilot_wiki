@@ -84,7 +84,7 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 ESC Telemetry
 =============
 
-The SERIAL5 port (UART5) is for ESC telemetry. It is connected through the motor connector and works out of the box with the `Tekko32 F3 Mini <https://shop.holybro.com/tekko32-f3-4in1-45a-mini-esc_p1132.html>`__ which is commonly paired with this flight controller.
+The SERIAL5 port (UART5) is for ESC telemetry. It is connected through the motor connector and works out of the box with the `Tekko32 F3 Mini <https://shop.holybro.com/tekko32-f3-4in1-45a-mini-esc_p1132.html>`__ which is commonly paired with this autopilot.
  
 FrSky Telemetry
 ===============

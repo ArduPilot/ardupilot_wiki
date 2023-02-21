@@ -18,7 +18,7 @@ A table of all current build options that can be selected are shown :ref:`here<a
 RAM Limitations
 ===============
 
-There may be insufficient RAM available in some flight controllers to support all enabled firmware features. Some possible symptoms are:
+There may be insufficient RAM available in some autopilots to support all enabled firmware features. Some possible symptoms are:
 
 - MAVFTP does not work. Parameter downloads to GCS are delayed starting while the GCS tries to establish a MAVFTP link which cannot be setup, and then proceed slowly to download parameters using the normal download method.
 - Compass Calibration will not start

@@ -8,7 +8,7 @@ CUAV X7 Family Overview
     :target: ../_images/cuav_autopilot/x7plus/x7_plus.png
     :width: 360px
 
-**X7/X7 Pro/X7+/X7+ Pro®** is an advanced autopilot family designed in-house by CUAV®. It uses a higher-performance STM32H7 processor and integrates industrial-grade sensors. Compared with previous flight controllers, it has better performance and higher reliability.
+**X7/X7 Pro/X7+/X7+ Pro®** is an advanced autopilot family designed in-house by CUAV®. It uses a higher-performance STM32H7 processor and integrates industrial-grade sensors. Compared with previous autopilots, it has better performance and higher reliability.
 
 The first generation autopilots (X7/X7 Pro) have been updated with new sensors, providing the same high performance, but with more reliable source of supply, and some improvements to allow Bi-dir DShot and servo rail voltage monitoring.
 
