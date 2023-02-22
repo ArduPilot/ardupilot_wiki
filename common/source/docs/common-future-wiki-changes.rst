@@ -160,7 +160,12 @@ under TUNE parameter table:
 |59      |Position Control Max     |  :ref:`PSC_ANGLE_MAX<PSC_ANGLE_MAX>`                                 |
 |        | Lean Angle              |                                                                      |
 +--------+-------------------------+----------------------------------------------------------------------+
-[/site]
+
+on :ref:`airspeed-estimation` page, add to Barometer Position Error section:
+============================================================================
+
+- :ref:`BARO1_WCF_UP<BARO1_WCF_UP>`: Pressure error coefficient in positive Z direction (climbing)
+- :ref:`BARO1_WCF_DN<BARO1_WCF_DN>`: Pressure error coefficient in negative Z direction (descending)
 
 [site wiki="copter"]
 
