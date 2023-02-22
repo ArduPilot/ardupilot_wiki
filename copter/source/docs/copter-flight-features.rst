@@ -20,3 +20,4 @@ a full set of features see the :doc:`full parameter list <parameters>` and the `
     Notch Filtering <common-imu-notch-filtering>
     common-moving-vehicle-initialization
     common-non-gps-navigation-landing-page
+    weathervaning
