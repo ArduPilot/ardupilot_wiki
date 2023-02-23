@@ -20,7 +20,7 @@ Open hardware
     Drotek Pixhawk3 <https://drotek.gitbook.io/pixhawk-3-pro/>
     F4BY <common-f4by>
     CubePilot Cube Black <common-thecube-overview>
-    CubePilot Cube Orange <common-thecubeorange-overview>
+    CubePilot Cube Orange/+ <common-thecubeorange-overview>
     CubePilot Cube Purple <common-thecubepurple-overview>
     CubePilot Cube Yellow <common-thecubeyellow-overview>
     CubePilot Cube Green <https://docs.cubepilot.org/user-guides/autopilot/the-cube-module-overview>
