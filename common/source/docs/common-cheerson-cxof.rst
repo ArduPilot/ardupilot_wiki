@@ -4,7 +4,7 @@
 Cheerson CX-OF Optical Flow
 ===========================
 
-[copywiki destination="copter,plane"]
+[copywiki destination="copter,plane,rover"]
 
 The Cheerson CX-OF optical flow sensor is a lightweight and low cost optical flow sensor which can be used to improve horizontal position control especially in GPS denied environments.
 

@@ -60,7 +60,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 	Non-GPS navigation <common-non-gps-navigation-landing-page>
 [/site]
     On-Screen Display (OSD) <common-osd-boards-on-screen-display>
-[site wiki="copter,plane"]
+[site wiki="copter,plane,rover"]
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>
 [/site]
 [site wiki="copter, plane"]

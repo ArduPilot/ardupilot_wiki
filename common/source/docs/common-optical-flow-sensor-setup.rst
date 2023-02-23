@@ -1,6 +1,6 @@
 .. _common-optical-flow-sensor-setup:
 
-[copywiki destination="copter,plane"]
+[copywiki destination="copter,plane,rover"]
 
 =====================================
 Optical Flow Sensor Testing and Setup
@@ -17,13 +17,27 @@ With the sensor connected to the autopilot, connect to the autopilot with the Mi
 Calibrating the sensor
 ======================
 #. Connect to your autopilot and ensure that logging while disarmed is enabled by setting :ref:`LOG_DISARMED <copter:LOG_DISARMED>` to 1
+[site wiki='rover']
+#. Ensure the :ref:`FLOW_HGT_OVR <rover:FLOW_HGT_OVR>` parameter is set to the height of the sensor above ground
+[/site]
+
 #. Find a location with a textured surface and good lighting (natural light or strong incandescent)
 #. Remove Propellers (safety first)
+   [site wiki='plane,copter']
 #. Power on the vehicle and hold level away from your body and at eye level
 #. Rotate about the vehicle in roll through a range from -15 to +15
    degrees in about a second and then back again. Repeat this 5 to 10
    times. By closing one eye you will be able to keep the centre of the
    sensor stationary against the background while you do the rotation.
+   [/site]
+   [site wiki='rover']
+#. Power on the vehicle
+#. Rotate the vehicle (keeping it as close to the ground as practical)
+   in roll through a range from -15 to +15
+   degrees in about a second and then back again. Repeat this 5 to 10
+   times. By closing one eye you will be able to keep the centre of the
+   sensor stationary against the background while you do the rotation.
+   [/site]
 #. Repeat  about the vehicle pitch axis.
 #. Download the data flash logs and plot the ``OF.flowX``, ``OF.bodyX``
    and ``IMU.GyrX`` data. It should look something like this:
@@ -48,6 +62,7 @@ Calibrating the sensor
    the :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` parameter is probably set incorrectly or
    you do not have the flow sensor pointing downwards
 
+[site wiki='plane,copter']
 Range Sensor Check
 ==================
 
@@ -58,6 +73,8 @@ sensor calibration test. Check the following:
 #. It outputs a range on the ground that is 10cm of the expected value
    (remember that measured range will increase when you roll or pitch
    the vehicle because the laser is then measuring on a slant)
+
+[/site]
 
 Pre-Arm checks
 ==============
@@ -72,6 +89,7 @@ and leave all other options checked.
 Because optical flow requires good sonar/range finder data when the
 optical flow is enabled, an additional pre-arm check is enforced.
 
+[site wiki='plane,copter']
 **While the vehicle is disarmed you should lift the vehicle straight up
 to at least 50cm but no higher than 2m** (if the rangefinder sees a
 distance of over 2m you will need to restart the autopilot).
@@ -111,6 +129,8 @@ Second Flight
    now start experimenting with height changes and moving it around in
    the loiter mode
 
+[/site]
+
 Setup for Regular Flight
 ========================
 
@@ -148,6 +168,7 @@ Example Video (Copter-3.4)
 
 ---------------------------------
 
+[site wiki='plane,copter']
 Inflight Calibration
 ====================
 
@@ -205,6 +226,8 @@ An alternative method which avoids the need to land and change EKF3 parameters b
   - :ref:`EK3_SRC2_VELZ <EK3_SRC1_VELZ>` = 0 (None)
   - :ref:`EK3_SRC2_YAW <EK3_SRC1_YAW>` = 1 (Compass)
   - :ref:`EK3_SRC_OPTIONS <EK3_SRC_OPTIONS>` = 0 (Disable FuseAllVelocities)
+
+[/site]
 
 .. note::
 
