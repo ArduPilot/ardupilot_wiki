@@ -92,7 +92,7 @@ tuning options for the vehicle.
     Notch Filter Configuration <common-imu-notch-filtering>
 [/site]
     Object Avoidance <common-object-avoidance-landing-page>
-[site wiki="copter,plane"]
+[site wiki="copter,plane,rover"]
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>
 [/site]
     On Screen Displays (OSD) <common-osd-overview>

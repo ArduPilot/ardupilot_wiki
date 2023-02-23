@@ -6,7 +6,7 @@ ARCHIVED:Mouse-based Optical Flow Sensor (ADNS3080)
 
 .. note:: This page is archived and the device is no longer supported in ArduPilot software
 
-[copywiki destination="copter,plane"]
+[copywiki destination="copter,plane,rover"]
 
 Copter-3.2.1 on APM2.x boards included limited support for the mouse sensor based `Optical Flow sensor <http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2047675.m570.l1313.TR0.TRC0.H0.Xoptical+flow.TRS0&_nkw=optical+flow&_sacat=0>`__ using the OF_Loiter flight mode.
 

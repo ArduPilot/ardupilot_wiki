@@ -4,9 +4,9 @@
 Optical Flow Sensors (landingpage)
 ==================================
 
-[copywiki destination="copter,plane"]
+[copywiki destination="copter,plane,rover"]
 
-Copter and Plane support Optical Flow Sensors.  These are camera modules that use ground texture and visible features to determine aircraft ground velocity.
+Copter, Plane and Rover support Optical Flow Sensors.  These are camera modules that use ground texture and visible features to determine aircraft ground velocity.
 
 Select the links below for information on the available sensors.
 

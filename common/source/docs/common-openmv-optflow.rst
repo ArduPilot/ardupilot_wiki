@@ -4,7 +4,7 @@
 OpenMV for Optical Flow
 =======================
 
-[copywiki destination="copter,plane"]
+[copywiki destination="copter,plane,rover"]
 
 The `OpenMV camera <https://openmv.io/>`__ is a programmable camera which includes support for optical flow.
 

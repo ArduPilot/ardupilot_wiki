@@ -4,7 +4,7 @@
 PX4FLOW Optical Flow Camera Board
 =================================
 
-[copywiki destination="copter,plane"]
+[copywiki destination="copter,plane,rover"]
 
 This article describes how to setup the PX4FLOW (Optical Flow) Sensor which can be used for :ref:`Non-GPS navigation <common-non-gps-navigation-landing-page>`.
 

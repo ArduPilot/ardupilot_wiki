@@ -67,6 +67,7 @@ value to users with old hardware.
     Sonar Sensors <sonar-sensors>
     Tuning Steering and Navigation (ver 3.1 and older) <tuning-steering-and-navigation-for-a-rover>
     Tuning Waypoint Turn Speed (ver 3.1 and older) <speed-turn-parameter-tuning>
+    ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
 [/site]
 
 [site wiki="plane"]
