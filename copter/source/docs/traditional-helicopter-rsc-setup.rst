@@ -57,3 +57,10 @@ Turbine Engine Start
 ====================
 
 A special RC Auxiliary Function ("159") is implemented to provide the start signal RC switch for turbine engines. When armed and RSC is idle, the high position signals the helicopter rotor speed governor to ramp the throttle to full and back to idle, which signals the turbine engine ECU to initiate the start sequence. The switch must be set back low and aircraft has to be disarmed to re-enable this feature.
+
+Practice (Manual) Autorotation Setup
+====================================
+
+In versions 4.4 and later, the ability to conduct power re-engagement from an autorotation has been added.  This feature will work with ESC's when using their internal governor, the ArduPilot throttle curve or the ArduPilot built-in RSC governor.
+
+See :ref:`traditional-helicopter-autorotation` page.

@@ -42,5 +42,6 @@ Canberra Team in Australia.
     Pre-Flight Testing <trad-heli-preflight-testing>
     First Flight Tests <traditional-helicopter-first-flight-tests>
     Tuning <traditional-helicopter-tuning>
+    Autorotation <traditional-helicopter-autorotation>
     Tips <traditional-helicopter-tips>
     ArduPilot Helicopter Ground School <traditional-helicopter-configuration>
