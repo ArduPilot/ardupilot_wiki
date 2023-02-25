@@ -72,13 +72,66 @@ the two GPS modules to go via the autopilot board.
 Internal Moving Baseline Systems
 ================================
 
-Some vehicle GPS provide GPS for Yaw utilizing a completely internal dual gps unit and managing the inter gps communication totally internally, rather than having ArduPilot pass data between the GPSes. An example of this system is the `Blicube GRTK <https://wiki.blicube.com/grtk/>`__.
+Some vehicle GPS provide GPS for Yaw utilizing a completely internal dual gps unit and managing the inter gps communication totally internally, rather than having ArduPilot pass data between the GPSes. Examples of these system are the `Blicube GRTK <https://wiki.blicube.com/grtk/>`__ and the `Holybro UM982 <>`_.
 
-This only requires that the GPS be attached to a SERIALx port using ``SERIALx_PROTOCOL`` = 5 (GPS)
- and setting only:
+.. note:: ArduPilot allows for up to two GPSes. The following parameter examples are for the first GPS
+
+Blicube GRTK
+------------
+For the Blicube GRTK, it only requires that the GPS be attached to a SERIALx port using ``SERIALx_PROTOCOL`` = 5 (GPS) and setting only:
 
 - :ref:`GPS_TYPE<GPS_TYPE>` = 5 (NMEA)
 - :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 2 ("GPS") or 3 ("GPS with Compass Fallback") if a compass(es) is also in the system.
+
+This system requires that the "Master" antenna and "Slave" antenna (see manufacturer's documentation for which is antenna is designated the "Master") be mounted on the vehicle front to back in line with the 0 degree yaw of the vehicle and at the same vertical level and be at least 30cm apart.
+
+.. note:: this unit can be used with only its "Master" antenna connected, if desired, but no yaw information should be used.
+
+Holybro UM982
+-------------
+The Holybro Unicore UM982 GPS should have the following parameters set:
+
+- :ref:`GPS_TYPE<GPS_TYPE>` = 25 (UnicoreMovingBaseline)
+- :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 2 ("GPS") or 3 ("GPS with Compass Fallback") if a compass(es) is also in the system.
+
+.. note:: this unit can be used with only its "Master" antenna connected, if desired, but no yaw information should be used. In this case set :ref:`GPS_TYPE<GPS_TYPE>` = 24 (UnicoreMaster)
+
+For the Holybro UM982 GPS, and other Unicore UM982 GPSes, the "Master" and "Slave" antennas have more mounting flexibility, but must be mounted at least 30cm apart on the vehicle. The offset distances in the x/y/z directions must be entered for the following parameters:
+
+- :ref:`GPS_MB1_TYPE<GPS_MB1_TYPE>` = 1 (GPS1 Moving Baseline master antenna offsets relative to slave antenna, also enables the next parameters to be shown)
+- :ref:`GPS_MB1_OFS_X<GPS_MB1_OFS_X>`: offset in meters from the "Slave" to "Master" antenna in the X axis (in direction of 0 deg yaw, positive offsets are if "Master" is in front of the "Slave".
+- :ref:`GPS_MB1_OFS_Y<GPS_MB1_OFS_Y>`: offset in meters from the "Slave" to "Master" antenna in the Y axis (in direction 90 deg (right) of 0 deg yaw, positive offsets are if "Master" to the right of the "Slave".
+- :ref:`GPS_MB1_OFS_Z<GPS_MB1_OFS_Z>`: offset in meters from the "Slave" to "Master" antenna in the Z axis (in direction up and down, positive offsets are if "Master" below the "Slave".
+
+This figure and photo illustrates these parameters and their settings:
+
+.. image:: ../../../images/UnicoreMovingBaselineOffsets.png
+    :target: ../../_images/UnicoreMovingBaselineOffsets.png
+
+
+.. image:: ../../../images/X-500V2_MovingBaseline.png
+    :target: ../../_images/X-500V2_MovingBaseline
+
+Holybro X500V2 Mounting Example
+
+RTK Correction
+==============
+
+ArduPilot will automatically foward RTCM correction data it receives over MAVLink from a GCS or telemetry radio (from a fixed baseline RTK base station) to these GPSes. See :ref:`common-rtk-correction`.
+
+Master Antenna Offset from Vehicle CG
+=====================================
+
+For ultimate positioning precision in the centimeter ranges, the offset of the "Master" antenna from the vehicle's CG can optionally be entered to compensate for attitude effects on GPS accuracy. The offsets from the CG are entered into:
+
+- :ref:`GPS_POS1_X<GPS_POS1_X>`: offset in meters from the Center of Gravity to "Master" antenna in the X axis (in direction of 0 deg yaw, positive offsets are if "Master" is in front of the Center of Gravity.
+- :ref:`GPS_POS1_Y<GPS_POS1_Y>`: offset in meters from the Center of Gravity to "Master" antenna in the Y axis (in direction 90 deg (right) of 0 deg yaw, positive offsets are if "Master" to the right of the Center of Gravity.
+- :ref:`GPS_POS1_Z<GPS_POS1_Z>`: offset in meters from the Center of Gravity to "Master" antenna in the Z axis (in direction up and down, positive offsets are if "Master" below the Center of Gravity.
+
+This figure and photo illustrates these parameters and their settings:
+
+.. image:: ../../../images/magoffsets.png
+    :target: ../../_images/magoffsets.png
 
 
 Testing
