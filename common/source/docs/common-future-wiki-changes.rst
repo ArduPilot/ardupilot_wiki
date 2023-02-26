@@ -7,6 +7,12 @@ Future Wiki Changes (in Master branch now)
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+
+on :ref:`common-tbs-rc` page, add a section on ELRS:
+====================================================
+
+ELRS can be setup in the same manner as CRSF, however, bit 13 of :ref:`RC_OPTIONS<RC_OPTIONS>` should be set to alter the baudrate from 416KBaud that CRSF uses, to 420KBaud that ELRS uses.
+
 add UM982 Moving Baseline GPS:
 ==============================
 
