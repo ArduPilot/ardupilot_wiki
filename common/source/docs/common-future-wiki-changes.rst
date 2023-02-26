@@ -51,8 +51,8 @@ Switching to high will behave the same as if the Start button for :ref:`onboard 
    </tbody>
    </table>
 
-on :ref:`common-compass-calibration -in-mission-planner` page:
-==============================================================
+on :ref:`common-compass-calibration-in-mission-planner` page:
+=============================================================
 
 change content of Onboard Calibration using Stick Gestures (no GCS) section to be started by RC switch (171) instead of stick gestures.
 
