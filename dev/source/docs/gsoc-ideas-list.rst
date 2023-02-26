@@ -7,7 +7,6 @@ List of Suggested Projects for GSoC 2023
 This is a list of projects suggested by ArduPilot developers for `GSoC 2023 <https://summerofcode.withgoogle.com/>`__. These are only suggestions so if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2023.
 
 - Rover AutoTune
-- Rover/Boat automatic docking
 - Boat object avoidance with Luxonis AI camera
 - Copter/Rover camera gimbal integration improvements
 - Update ROS integration for Non-GPS navigation and off-board path-planning
@@ -59,23 +58,6 @@ The list of parameters that should be tuned includes:
 See `Issue #8851 <https://github.com/ArduPilot/ardupilot/issues/8851>`__
 
 Some of the development can be completed using the :ref:`SITL simulator <sitl-simulator-software-in-the-loop>` but funding will also be provided for the RC car frame and autopilot
-
-Rover/Boat automatic docking
-----------------------------
-
-- Skills required: C++
-- Mentor: Randy Mackay, Peter Barker
-- Expected Size: 350h
-- Level of Difficulty: Medium
-- Expected Outcome: control mode added that autonomously maneuvers a car or boat to stop directly infront of a visual target
-
-This project involves `adding a new control mode to the Rover firmware <https://ardupilot.org/dev/docs/rover-adding-a-new-drive-mode.html>`__ to maneuver a car or boat to within cm of a visual target.  In many ways this is similar to `Copter's precision landing <https://ardupilot.org/copter/docs/precision-landing-with-irlock.html>`__ feature and it is likely that the `AC_PrecLand library <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AC_PrecLand>`__ can be re-used to estimate where the target is.  The expected control outputs will be desired speed and turn rate.
-
-As a minimum we should add support for `Ackermann <https://ardupilot.org/rover/docs/rover-motor-and-servo-connections.html#separate-steering-and-throttle>`__ and `skid steering vehicles <https://ardupilot.org/rover/docs/rover-motor-and-servo-connections.html#skid-steering>`__ but better performance can probably be achieved using `omni vehicles <https://ardupilot.org/rover/docs/rover-motor-and-servo-connections.html#omni-vehicles>`__ which can move laterally.
-
-Most of the development can be completed using the :ref:`SITL simulator <sitl-simulator-software-in-the-loop>` but funding will also be provided for the required hardware which could include an IR-Lock system or `AI camera <https://shop.luxonis.com/products/oak-d-iot-75>`__, companion computer, autopilot and a car or boat frame.
-
-See `Issue #20158 <https://github.com/ArduPilot/ardupilot/issues/20158>`__.
 
 Boat object avoidance with Luxonis AI camera
 --------------------------------------------
