@@ -7,6 +7,12 @@ Future Wiki Changes (in Master branch now)
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+
+on :ref:`common-tbs-rc` page, add a section on ELRS:
+====================================================
+
+ELRS can be setup in the same manner as CRSF, however, bit 13 of :ref:`RC_OPTIONS<RC_OPTIONS>` should be set to alter the baudrate from 416KBaud that CRSF uses, to 420KBaud that ELRS uses.
+
 add UM982 Moving Baseline GPS:
 ==============================
 
@@ -44,6 +50,12 @@ Switching to high will behave the same as if the Start button for :ref:`onboard 
    </tr>
    </tbody>
    </table>
+
+on :ref:`common-compass-calibration-in-mission-planner` page:
+=============================================================
+
+change content of Onboard Calibration using Stick Gestures (no GCS) section to be started by RC switch (171) instead of stick gestures.
+
 
 on :ref:`common-downloading-and-analyzing-data-logs-in-mission-planner` page:
 =============================================================================
