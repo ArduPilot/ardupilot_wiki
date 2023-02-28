@@ -157,6 +157,7 @@ The key parameters for runway takeoff are:
 -  :ref:`TKOFF_ROTATE_SPD <TKOFF_ROTATE_SPD>`
 -  :ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>`
 -  :ref:`GROUND_STEER_ALT <GROUND_STEER_ALT>`
+-  :ref:`TKOFF_GND_PITCH<TKOFF_GND_PITCH>`
 
 In addition to those parameters you also need to tune ground steering,
 so that the ground steering controller is able to reliably steer the
@@ -190,7 +191,7 @@ raise the nose (pitch up) to leave the ground. This needs to be a speed
 at which the aircraft can sustain a climb, so it should be at least 2
 meters per second above the stall speed of the aircraft, preferably
 more. A higher value will mean a longer takeoff (and thus need more
-runway).
+runway). During the run, use :ref:`TKOFF_GND_PITCH<TKOFF_GND_PITCH>` to keep the aircraft on the runway while below this airspeed.
 
 The :ref:`TKOFF_THR_SLEW <TKOFF_THR_SLEW>` parameter controls the throttle slew rate (as a
 percentage per second) during takeoff. This is used to allow the
