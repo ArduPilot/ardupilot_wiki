@@ -37,6 +37,7 @@ Canberra Team in Australia.
     Helicopter Parameter List at a Glance <traditional-helicopter-parameter-list>
     Connecting and Calibration <traditional-helicopter-connecting-apm>
     Swashplate Setup <traditional-helicopter-swashplate-setup>
+    Tailrotor Setup <traditional-helicopter-tailrotor-setup>
     Rotor Speed Control Setup <traditional-helicopter-rsc-setup>
     Internal Rotor Speed Governor <traditional-helicopter-internal-rsc-governor>
     Pre-Flight Testing <trad-heli-preflight-testing>
