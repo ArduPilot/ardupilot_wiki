@@ -659,4 +659,12 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://woot-tech.com/
 
+    *
+      - .. image:: ../../../images/supporters/supporters_superwake.png
+            :width: 250px
+            :align: center
+            :target:  https://www.superwake.ca/
+
+      -
+
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
