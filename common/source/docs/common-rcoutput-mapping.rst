@@ -156,6 +156,8 @@ The upper PWM range from the input trim value to its maximum input is translated
 
 .. image:: ../../../images/rcscaled-io.jpg
    :target: ../../_images/rcscaled-io.jpg
+   
+.. note:: the SERVx_MIN/MAX values can be larger than what Mission Planner allows in some presentations. Use the CONFIG/Full Parameter Tree view to set parametes beyong their normal "safe" ranges.
 
 PLANE FUNCTIONS (Also applies to QuadPlanes)
 --------------------------------------------
