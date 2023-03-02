@@ -9,6 +9,11 @@ Gremsy `Mio <https://gremsy.com/products/mio>`__, `Pixy F <https://gremsy.com/pr
 .. image:: ../../../images/gremsy-pixyu-gimbal.png
     :target: https://gremsy.com/products/pixy-u
 
+.. warning::
+
+   MIO gimbals are unable to communication with ArduPilot.  We hope for a fix with Gremsy software version 7.7.3.
+   T3V3 gimbals must be running 7.7.3-Preview (or higher).
+
 Where to Buy
 ============
 
