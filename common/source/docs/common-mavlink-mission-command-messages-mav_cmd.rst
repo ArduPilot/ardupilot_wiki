@@ -177,6 +177,8 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_NAV_GUIDED_ENABLE <mav_cmd_nav_guided_enable>` (NAV_GUIDED only)
 - :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
+- :ref:`MAV_CMD_JUMP_TAG<mav_cmd_jump_tag>`
+- :ref:`MAV_CMD_DO_JUMP_TAG <mav_cmd_do_jump_tag>`
 - :ref:`MAV_CMD_MISSION_START <mav_cmd_mission_start>`
 - :ref:`MAV_CMD_COMPONENT_ARM_DISARM <mav_cmd_component_arm_disarm>`
 - :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
@@ -236,6 +238,8 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
+- :ref:`MAV_CMD_JUMP_TAG<mav_cmd_jump_tag>`
+- :ref:`MAV_CMD_DO_JUMP_TAG <mav_cmd_do_jump_tag>`
 - :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
 - :ref:`MAV_CMD_DO_INVERTED_FLIGHT <mav_cmd_do_inverted_flight>`
 - :ref:`MAV_CMD_DO_LAND_START <mav_cmd_do_land_start>`
@@ -261,6 +265,8 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
 - :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
+- :ref:`MAV_CMD_JUMP_TAG<mav_cmd_jump_tag>`
+- :ref:`MAV_CMD_DO_JUMP_TAG <mav_cmd_do_jump_tag>`
 - :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
 - :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
 - :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
@@ -2107,6 +2113,146 @@ mission, or it can be repeated indefinitely.
 
 In the example above the vehicle would fly back-and-forth between
 waypoints #1 and #2 a total of 3 times before flying on to waypoint #4.
+
+.. _mav_cmd_jump_tag:
+
+MAV_CMD_JUMP_TAG
+-------------------
+
+Supported by: Copter, Plane, Rover.
+
+This is a location marker in the mission command sequence that can be used a "jump to" location for the :ref:`MAV_CMD_DO_JUMP_TAG<MAV_CMD_DO_JUMP_TAG>` command. The tag id in its parameter field can be any arbitrary number between 1 and 65535.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Tag#</td>
+   <td>The tag number for the DO_JUMP_TAG command.</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param2</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td>
+   </td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td>
+   </td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
+
+.. _mav_cmd_do_jump_tag:
+
+MAV_CMD_DO_JUMP_TAG
+-------------------
+
+Supported by: Copter, Plane, Rover.
+
+Jump to the specified :ref:`MAV_CMD_JUMP_TAG<MAV_CMD_JUMP_TAG>` item in the mission list. The jump tag command can be repeated either a specified number of times before continuing the
+mission, or it can be repeated indefinitely.
+
+.. tip::
+
+   Despite the name, this command is really a "NAV\_" command rather
+   than a "DO\_" command. Conditional commands like CONDITION_DELAY don't
+   affect DO_JUMP (it will always perform the jump as soon as it reaches
+   the command).
+
+.. note::
+
+   -  There can be a maximum of 15 jump_tag commands in a mission after which new DO_JUMP_TAG commands are ignored.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>WP#</td>
+   <td>The tag number of the JUMP_TAG item to jump to.</td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>Repeat#</td>
+   <td>Number of times that the DO_JUMP_TAG command will execute before moving to
+   the next sequential command. If the value is zero the next command will
+   execute immediately. A value of -1 will cause the command to repeat
+   indefinitely.
+   </td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td>
+   </td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td>
+   </td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
+
+**Mission planner screenshots**
+
+TODO
 
 Conditional commands
 ====================
