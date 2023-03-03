@@ -738,7 +738,7 @@ If ``BRD_PWM_CNT`` = 6 then
 
 By default, the pins are digital outputs as outlined above. A digital
 pin will instead be a digital input if it is assigned to a parameter
-that represents a digital input. For example, setting :ref:`CAM_FEEDBACK_PIN<CAM_FEEDBACK_PIN>`
+that represents a digital input. For example, setting ``CAM_FEEDBACK_PIN``
 to 50 will make pin 50 the digital input that receives a signal from the
 camera when a picture has been taken.
 
