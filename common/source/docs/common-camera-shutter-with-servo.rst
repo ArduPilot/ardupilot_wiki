@@ -81,8 +81,7 @@ The main steps are:
    Parameters List**
 #. Set at least two of the output pins as digital GPIO output/inputs as described in 
    :ref:`GPIOs <common-gpios>`.
-#. Set ``CAM_FEEDBACK_PIN ``
-   to the pin number connected to the hotshoe.
+#. Set ``CAM_FEEDBACK_PIN`` to the pin number connected to the hotshoe.
 #. Set ``CAM_FEEDBACK_POL``
    to indicate whether the feedback pin (hotshoe voltage) goes high or
    low when the picture is taken.

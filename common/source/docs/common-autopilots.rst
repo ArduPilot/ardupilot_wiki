@@ -12,6 +12,7 @@ Open hardware
 .. toctree::
     :maxdepth: 1
 
+    ARKV6X DS-10 Pixhawk6 <https://arkelectron.com/product/arkv6x/>
     CUAV V5 Plus <common-cuav-v5plus-overview>
     CUAV V5 Nano <common-cuav-v5nano-overview>
     CUAV Nora <common-cuav-nora-overview>
