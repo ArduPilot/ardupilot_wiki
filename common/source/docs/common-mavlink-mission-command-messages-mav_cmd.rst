@@ -303,7 +303,7 @@ the first waypoint are dropped.
 MAV_CMD_NAV_WAYPOINT
 --------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Navigate to the specified position.
 
@@ -706,7 +706,7 @@ and the mission will move onto the next command immediately.
 MAV_CMD_NAV_LOITER_UNLIM
 ------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Loiter at the specified location for an unlimited amount of time.
 
@@ -1131,7 +1131,7 @@ The radius of loiter is set in the ``WP_LOITER_RAD`` parameter.
 MAV_CMD_NAV_RETURN_TO_LAUNCH
 ----------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Return to the *home location* or the nearest `Rally
 Point <common-rally-points>`__, if closer. The home location is where
@@ -2029,7 +2029,7 @@ until the time in seconds has elapsed. This is used in a mission to allow a vehi
 MAV_CMD_DO_JUMP
 ---------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Jump to the specified command in the mission list. The jump command can
 be repeated either a specified number of times before continuing the
@@ -2128,7 +2128,7 @@ the last waypoint will be skipped.
 MAV_CMD_CONDITION_DELAY
 -----------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 After reaching a waypoint, delay the execution of the next conditional
 "_DO_" command for the specified number of seconds (e.g.
@@ -2206,7 +2206,7 @@ starts 5 seconds after the vehicle has passed Waypoint #2.
 MAV_CMD_CONDITION_DISTANCE
 --------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Delays the start of the next "``_DO_``\ " command until the vehicle is
 within the specified number of meters of the next waypoint.
@@ -2721,7 +2721,7 @@ Change the target horizontal speed and/or the vehicle's throttle.
 MAV_CMD_DO_SET_HOME
 -------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Sets the home location either as the current location or at the location
 specified in the command.For SITL work, altitude input here needs to be with reference to absolute altitude, taking into account SRTM elevation.
@@ -2804,7 +2804,7 @@ specified in the command.For SITL work, altitude input here needs to be with ref
 MAV_CMD_DO_SET_RELAY
 --------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Set a `Relay <common-relay>`__ pin's voltage high (on) or low (off).
 
@@ -2876,7 +2876,7 @@ Set a `Relay <common-relay>`__ pin's voltage high (on) or low (off).
 MAV_CMD_DO_REPEAT_RELAY
 -----------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Toggle the :ref:`Relay <common-relay>` pin's voltage/state a specified
 number of times with a given period. Toggling the Relay will turn an off
@@ -2946,7 +2946,7 @@ be set high and then after 3 seconds it would be toggled low again.
 MAV_CMD_DO_SET_SERVO
 --------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Set a given :ref:`servo pin <common-servo>` output to a specific PWM value.
 
@@ -3017,7 +3017,7 @@ moved to PWM 1700 (servos generally accept PWM values between 1000 and
 MAV_CMD_DO_REPEAT_SERVO
 -----------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Cycle a :ref:`servo <common-servo>` PWM output pin between its mid-position
 value and a specified PWM value, for a given number of cycles and with a
@@ -3437,7 +3437,7 @@ command with all zero for ``param5``-``param7`` (Lat, Lon and Alt).
 MAV_CMD_DO_DIGICAM_CONFIGURE
 ----------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Configure an on-board camera controller system.
 
@@ -3513,7 +3513,7 @@ if one is present.
 MAV_CMD_DO_DIGICAM_CONTROL
 --------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>` once. This command takes no additional arguments.
 
@@ -3591,7 +3591,7 @@ In general if a command field is set to 0 it is ignored.
 MAV_CMD_DO_MOUNT_CONTROL
 ------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Mission command to control a camera or antenna mount.
 
@@ -3662,7 +3662,7 @@ in the mission.
 MAV_CMD_DO_SET_CAM_TRIGG_DIST
 -----------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>` at
 regular distance intervals. This command is useful in :ref:`camera survey missions <common-camera-control-and-auto-missions-in-mission-planner>`. 
@@ -3736,7 +3736,7 @@ after every 5m that the vehicle travels.
 MAV_CMD_DO_FENCE_ENABLE
 -----------------------
 
-Supported by: Plane , Copter, Rover.
+Supported by: All vehicles.
 
 Mission commands to enable the Plane :ref:`GeoFence <plane:geofencing>`, Copter/Rover :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence`.
 
@@ -3795,7 +3795,7 @@ Mission commands to enable the Plane :ref:`GeoFence <plane:geofencing>`, Copter/
 MAV_CMD_DO_AUX_FUNCTION
 -----------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Mission command to control an :ref:`Auxiliary Function<common-auxiliary-functions>` in the same manner as an RC channel switch.
 
@@ -4245,7 +4245,7 @@ This command can be used to start or stop the ICE before a NAV_VTOL_LAND or afte
 MAV_CMD_DO_SET_RESUME_REPEAT_DIST
 ---------------------------------
 
-Supported by: Plane, Copter & Rover.
+Supported by: All vehicles.
 
 Set the distance that the mission will be rewound when resuming after an interupt (switching modes).  A full explanation of this feature can be found on the :ref:`Mission Rewind on Resume Page <common-mission-rewind>`.  After setting a rewind distance in a mission, setting the distance to zero will switch off the rewind feature from that point on the mission.
 
@@ -4303,7 +4303,7 @@ Set the distance that the mission will be rewound when resuming after an interup
 MAV_CMD_STORAGE_FORMAT
 ----------------------
 
-Supported by: Plane, Copter & Rover.
+Supported by: All vehicles.
 
 Format SD Card. Useful for vehicles where SD card is inaccessible. Param1 and Param2 must be set to 1.
 
