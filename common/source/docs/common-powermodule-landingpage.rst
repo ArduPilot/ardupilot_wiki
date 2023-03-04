@@ -34,6 +34,7 @@ CAN/DroneCAN Power Monitor
     :maxdepth: 1
 
     CUAV CAN/DroneCAN PMU<common-can-pmu>
+    Matek CAN-L4-BM DroneCan PMU <http://www.mateksys.com/?portfolio=can-l4-bm>
     Packet Digital MPPT Solar Controller <common-packetdigital-mppt>
     Pomegranate Systems<common-pomegranate-systems-pm>
 
