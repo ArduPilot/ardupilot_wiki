@@ -194,7 +194,8 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>`
-- :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
+- :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>` (Gimbal/mount enabled only)
+- :ref:`MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <mav_cmd_do_gimbal_manager_pitchyaw>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_PARACHUTE <mav_cmd_do_parachute>` (Parachute enabled only)
 - :ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>`
 - :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>` (NAV_GUIDED only)
@@ -238,6 +239,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
+- :ref:`MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <mav_cmd_do_gimbal_manager_pitchyaw>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
 - :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
 - :ref:`MAV_CMD_DO_INVERTED_FLIGHT <mav_cmd_do_inverted_flight>`
@@ -278,6 +280,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
 - :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
+- :ref:`MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <mav_cmd_do_gimbal_manager_pitchyaw>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_SET_RESUME_REPEAT_DIST <mav_cmd_do_set_resume_repeat_dist>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
 - :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
@@ -779,7 +782,7 @@ will restart).
 .. figure:: ../../../images/MissionList_LoiterUnlimited.png
    :target: ../_images/MissionList_LoiterUnlimited.png
 
-   Copter: Mission Planner Settings forLOITER_UNLIM command
+   Copter: Mission Planner Settings for LOITER_UNLIM command
 
 [/site]
 
@@ -1060,7 +1063,7 @@ This is the mission equivalent of the :ref:`Loiter flight mode <copter:loiter-mo
 .. figure:: ../../../images/MissionList_LoiterTime.png
    :target: ../_images/MissionList_LoiterTime.png
 
-   Copter: Mission Planner Settings forLOITER_TIME command
+   Copter: Mission Planner Settings for LOITER_TIME command
 
 [/site]
 
@@ -1418,7 +1421,7 @@ the engines.
 .. figure:: ../../../images/MissionList_Land.png
    :target: ../_images/MissionList_Land.png
 
-   Copter: Mission Planner Settings for LANDcommand
+   Copter: Mission Planner Settings for LAND command
 
 [/site]
 
@@ -2174,7 +2177,7 @@ mission, or it can be repeated indefinitely.
 .. figure:: ../../../images/MissionList_DoJump.png
    :target: ../_images/MissionList_DoJump.png
 
-   Copter: Mission Planner Settings for DO_JUMP command
+   Mission Planner Settings for DO_JUMP command
 
 In the example above the vehicle would fly back-and-forth between
 waypoints #1 and #2 a total of 3 times before flying on to waypoint #4.
@@ -2263,7 +2266,7 @@ After reaching a waypoint, delay the execution of the next conditional
 .. figure:: ../../../images/MissionList_ConditionDelay.png
    :target: ../_images/MissionList_ConditionDelay.png
 
-   Copter: Mission Planner Settingsfor CONDITION_DELAY command
+   Mission Planner Settingsfor CONDITION_DELAY command
 
 In the example above, Command #4 (``DO_SET_ROI``) is delayed so that it
 starts 5 seconds after the vehicle has passed Waypoint #2.
@@ -2338,7 +2341,7 @@ within the specified number of meters of the next waypoint.
 .. figure:: ../../../images/MissionList_ConditionDistance.png
    :target: ../_images/MissionList_ConditionDistance.png
 
-   Copter: Mission PlannerSettings for CONDITION_DISTANCE command
+   Mission PlannerSettings for CONDITION_DISTANCE command
 
 In the example above, Command #4 (``DO_SET_ROI``) is delayed so that it
 only starts once the vehicle is within 50m of waypoint #5.
@@ -2520,7 +2523,7 @@ The parameters are all ignored.
 .. figure:: ../../../images/MissionPlanner_MissionStartCommand.jpg
    :target: ../_images/MissionPlanner_MissionStartCommand.jpg
 
-   Mission Planner: MISSION_STARTcommand
+   Mission Planner: MISSION_START command
 
 .. _mav_cmd_component_arm_disarm:
 
@@ -2665,7 +2668,7 @@ speed-type and throttle settings are ignored.
 .. figure:: ../../../images/MissionList_DoChangeSpeed.png
    :target: ../_images/MissionList_DoChangeSpeed.png
 
-   Copter: Mission Planner Settingsfor DO_CHANGE_SPEED command
+   Copter: Mission Planner Settings for DO_CHANGE_SPEED command
 
 [/site]
 
@@ -2865,7 +2868,7 @@ specified in the command.For SITL work, altitude input here needs to be with ref
 .. figure:: ../../../images/MissionList_DoSetHome.png
    :target: ../_images/MissionList_DoSetHome.png
 
-   Copter: Mission Planner Settings forDO_SET_HOME command
+   Mission Planner Settings for DO_SET_HOME command
 
 .. _mav_cmd_do_set_relay:
 
@@ -2937,7 +2940,7 @@ Set a `Relay <common-relay>`__ pin's voltage high (on) or low (off).
 .. figure:: ../../../images/MissionPlanner_DO_SET_RELAY.png
    :target: ../_images/MissionPlanner_DO_SET_RELAY.png
 
-   Copter: MissionPlanner Settings for DO_SET_RELAY command
+   MissionPlanner Settings for DO_SET_RELAY command
 
 .. _mav_cmd_do_repeat_relay:
 
@@ -3004,7 +3007,7 @@ relay on and vice versa
 .. figure:: ../../../images/MissionList_DoRepeatRelay.png
    :target: ../_images/MissionList_DoRepeatRelay.png
 
-   Copter: Mission Planner Settingsfor DO_RELAY_REPEAT command
+   Mission Planner Settingsfor DO_RELAY_REPEAT command
 
 In the example above, assuming the relay was off to begin with, it would
 be set high and then after 3 seconds it would be toggled low again.
@@ -3072,7 +3075,7 @@ Set a given :ref:`servo pin <common-servo>` output to a specific PWM value.
 .. figure:: ../../../images/MissionList_DoSetServo.png
    :target: ../_images/MissionList_DoSetServo.png
 
-   Copter: Mission Planner Settingsfor DO_SET_SERVO command
+   Mission Planner Settingsfor DO_SET_SERVO command
 
 In the example above, the servo attached to output channel 8 would be
 moved to PWM 1700 (servos generally accept PWM values between 1000 and
@@ -3149,7 +3152,7 @@ the channel (``RC8_TRIM`` in the screenshot below). The default value is
 .. figure:: ../../../images/MissionList_DoRepeatServo.png
    :target: ../_images/MissionList_DoRepeatServo.png
 
-   Copter: Mission Planner Settingsfor DO_REPEAT_SERVO command
+   Mission Planner Settingsfor DO_REPEAT_SERVO command
 
 In the example above, the servo attached to output channel 8 would be
 moved to PWM 1700, then after 4 second, back to mid, after another 4
@@ -3363,7 +3366,7 @@ and Alt).
 .. figure:: ../../../images/MissionList_DoSetRoi.jpg
    :target: ../_images/MissionList_DoSetRoi.jpg
 
-   Copter: Mission Planner Settings forDO_SET_ROI command
+   Copter: Mission Planner Settings for DO_SET_ROI command
 
 In the example above the nose and camera would be pointed at the red
 marker.
@@ -3652,7 +3655,7 @@ In general if a command field is set to 0 it is ignored.
 .. figure:: ../../../images/MissionList_DoDigicamControl.png
    :target: ../_images/MissionList_DoDigicamControl.png
 
-   Copter: Mission PlannerSettings for DO_DIGICAM_CONTROL command.
+   Mission PlannerSettings for DO_DIGICAM_CONTROL command.
 
 .. _mav_cmd_do_mount_control:
 
@@ -3722,8 +3725,77 @@ in the mission.
 .. figure:: ../../../images/MissionList_DoMountControl.png
    :target: ../_images/MissionList_DoMountControl.png
 
-   Copter: Mission PlannerSettings for DO_MOUNT_CONTROL command
+   Mission Planner Settings for DO_MOUNT_CONTROL command
 
+.. _mav_cmd_do_gimbal_manager_pitchyaw:
+
+MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW
+----------------------------------
+
+Supported by: All vehicles.
+
+Mission command to move the gimbal to the desired pitch and yaw angles (in degrees).
+
+This command allows you to specify a pitch and yaw angle which
+will be sent to the :ref:`camera gimbal <common-cameras-and-gimbals>`. This
+can be used to point the camera in specific directions at various times
+in the mission. Positive pitch angles are up, Negative are down.  Positive yaw angles are clockwise, negative are counter clockwise.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td></td>
+   <td>Pitch, in degrees.</td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td></td>
+   <td>Yaw, in degrees.</td>
+   </tr>
+   <tr>
+   <td><strong>param3</strong></td>
+   <td></td>
+   <td>PitchRate, in deg/s.</td>
+   </tr>
+   <tr>
+   <td><strong>param4</strong></td>
+   <td></td>
+   <td>YawRate, in deg/s</td>
+   </tr>
+   <tr>
+   <td><strong>param5</strong></td>
+   <td></td>
+   <td>Flags: 0=boddyframe, 16=earthframe</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>reserved</td>
+   </tr>
+   <tr>
+   <td><strong>param7</strong></td>
+   <td></td>
+   <td> Gimbal instance ID</td>
+   </tr>
+   </tbody>
+   </table>
+
+**Mission planner screenshots**
+
+.. figure:: ../../../images/mission-list-do-gimbal-manager-pitchyaw.png
+   :target: ../_images/mission-list-do-gimbal-manager-pitchyaw.png
+
+   Mission PlannerSettings for DO_GIMBAL_MANAGE_PITCHYAW command
 
 .. _mav_cmd_do_set_cam_trigg_dist:
 
@@ -3793,7 +3865,7 @@ To trigger the camera once, immediately after passing the DO command, set param3
 .. figure:: ../../../images/MissionList_DoSetCamTriggDist.png
    :target: ../_images/MissionList_DoSetCamTriggDist.png
 
-   Copter: Mission PlannerSettings for DO_SET_CAM_TRIGG_DIST command
+   Mission PlannerSettings for DO_SET_CAM_TRIGG_DIST command
 
 The above configuration above will cause the camera shutter to trigger
 after every 5m that the vehicle travels.
