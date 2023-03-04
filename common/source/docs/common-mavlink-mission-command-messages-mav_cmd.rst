@@ -182,6 +182,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
 - :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
 - :ref:`MAV_CMD_CONDITION_YAW <mav_cmd_condition_yaw>`
+- :ref:`MAV_CMD_DO_AUX_FUNCTION <mav_cmd_do_aux_function>`
 - :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
 - :ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
 - :ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
@@ -223,6 +224,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
 - :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
 - :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
+- :ref:`MAV_CMD_DO_AUX_FUNCTION<mav_cmd_do_aux_function>`
 - :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
 - :ref:`MAV_CMD_DO_ENGINE_CONTROL <mav_cmd_do_engine_control>`
 - :ref:`MAV_CMD_DO_VTOL_TRANSITION <mav_cmd_do_vtol_transition>`
@@ -263,6 +265,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
 - :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
 - :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
+- :ref:`MAV_CMD_DO_AUX_FUNCTION<mav_cmd_do_aux_function>`
 - :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
 - :ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
 - :ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
@@ -3787,6 +3790,64 @@ Mission commands to enable the Plane :ref:`GeoFence <plane:geofencing>`, Copter/
    </tbody>
    </table>
 
+.. _mav_cmd_do_aux_function:
+
+MAV_CMD_DO_AUX_FUNCTION
+-----------------------
+
+Supported by: Copter, Plane, Rover.
+
+Mission command to control an :ref:`Auxiliary Function<common-auxiliary-functions>` in the same manner as an RC channel switch.
+
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Aux Function</td>
+   <td>Auxiliary Function code,same as RCx_OPTIONS </td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>Switch Position</td>
+   <td> 0:Low, 1:Mid, 2:High</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
 
 .. _mav_cmd_do_parachute:
 [site wiki="copter" heading="off"]
@@ -3983,7 +4044,6 @@ Mission command to operate EPM gripper.
    </tr>
    </tbody>
    </table>
-
 
 .. _mav_cmd_do_guided_limits:
 
