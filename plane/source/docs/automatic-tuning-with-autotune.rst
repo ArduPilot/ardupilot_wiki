@@ -26,7 +26,9 @@ To setup your aircraft for AUTOTUNE you need to select AUTOTUNE mode as
 one of the flight modes selectable with the flight mode switch on your
 transmitter.
 
-.. note:: you can AutoTune in any stabilized flight mode, such as CRUISE or FBWA/B, LOITER, or even during an AUTO mission segment (if :ref:`STICK_MIXING<STICK_MIXING>` is enabled), via an ``RCx_OPTION`` switch set to 107.
+.. note:: you can AutoTune in most stabilized flight modes, such as CRUISE or FBWA/B, LOITER, or even during an AUTO mission segment (if :ref:`STICK_MIXING<STICK_MIXING>` is enabled), via an ``RCx_OPTION`` switch set to 107.
+
+.. warning:: Large QuadPlanes can be difficult to fly manually while monitoring the GCS for tune progress messages or if you are not experienced in flying in pilot guided modes. In these cases, it is safer to do the tuning while in a repeating fixed course mission (ie. a rectangular loop for example) in AUTO or while LOITERing, using the the above RC Aux Switch to enable autotuning while not having to constantly guide the vehicle on course.
 
 You also should choose a tuning level by setting the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`
 parameter in the advanced parameter screen of your ground station. The
