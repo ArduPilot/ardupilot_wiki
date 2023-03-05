@@ -1,4 +1,5 @@
 .. _common-scripting-applets:
+[copywiki destination="plane,copter,rover,dev"]
 
 ==============
 Script Applets
