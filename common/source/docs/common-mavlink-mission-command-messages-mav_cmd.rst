@@ -195,7 +195,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>`
 - :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
 - :ref:`MAV_CMD_DO_PARACHUTE <mav_cmd_do_parachute>` (Parachute enabled only)
-- :ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>` (EPM enabled only)
+- :ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>`
 - :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>` (NAV_GUIDED only)
 - :ref:`MAV_CMD_DO_SET_RESUME_REPEAT_DIST <mav_cmd_do_set_resume_repeat_dist>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
@@ -2402,43 +2402,43 @@ The parameters are all ignored.
    <th>Mission Planner Field</th>
    <th>Description</th>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td><strong>param1</strong></td>
    <td></td>
    <td>The first mission item to run.</td>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
    <td></td>
    <td>The last mission item to run (after this item is run, the mission ends).</td>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td>param3</td>
    <td></td>
    <td></td>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td>param4</td>
    <td></td>
    <td></td>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td>param5</td>
    <td></td>
    <td></td>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td>param6</td>
    <td></td>
    <td></td>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td>param7</td>
    <td></td>
@@ -3534,7 +3534,7 @@ In general if a command field is set to 0 it is ignored.
    <td><strong>param1</strong></td>
    <td>On/Off</td>
    <td>Session control (on/off or show/hide lens):
-   
+
    0: Turn off the camera / hide the lens
 
    1: Turn on the camera /Show the lens
@@ -3655,8 +3655,8 @@ in the mission.
    :target: ../_images/MissionList_DoMountControl.png
 
    Copter: Mission PlannerSettings for DO_MOUNT_CONTROL command
-   
-   
+
+
 .. _mav_cmd_do_set_cam_trigg_dist:
 
 MAV_CMD_DO_SET_CAM_TRIGG_DIST
