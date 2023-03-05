@@ -187,8 +187,14 @@ Payload Place
 .. image:: ../../../images/MissionList_packageplace.png
     :target: ../_images/MissionList_packageplace.png
 
-The vehicle flies to the specified location and descends until it senses (using motor output) that the package has reached the ground.  The gripper is then released to unload the package.
-The first column ("Max Desc") holds the maximum descent (in meters) that the vehicle should descend.  If the package has still not reached the ground despite this descent, the package will not be released and the vehicle will advance to the next mission command.
+The vehicle flies to the specified location and descends until it senses (using motor output) that the package has reached the ground.  The gripper is then released to unload the package and ascend back to the waypoint altitude.
+The first column ("Max Desc") holds the maximum descent (in meters) that the vehicle should descend.  If the package has still not reached the ground despite this descent, the package will not be released and the vehicle will return to  the waypoint altitude and advance to the next mission command.
+Parameters controlling this operation (besides :ref:`Gripper parameters <common-gripper-landingpage>`) are:
+
+- :ref:`PLDP_SPEED_DN<PLDP_SPEED_DN>`: Descent speed, once the waypoint is reached, is either :ref:`LAND_SPEED<LAND_SPEED>` or this value, if non-zero.
+- :ref:`PLDP_THRESH<PLDP_THRESH>`: The percentage of thrust decrease that indicates payload touch-down. The reference thrust is measured over the first two seconds of descent.
+- :ref:`PLDP_RNG_MIN<PLDP_RNG_MIN>`: If non-zero, the minimum release height over ground obtained from a downward facing rangerfinder. Automatic gripper release can occur only if below this altitude above ground in addition to thrust reduction being obtained. If this value is non zero and no rangefinder is present, the place will be aborted and the vehicle will ascend and proceed to the next waypoint. 
+- :ref:`PLDP_DELAY<PLDP_DELAY>`: Delay in seconds after release the vehicle will remain in position after release before ascending. This allows payload replacement if the gripper is set to re-engage after a delay (see :ref:`GRIP_AUTOCLOSE<GRIP_AUTOCLOSE>`)
 
 ..  youtube:: m4GK4ALqluc
     :width: 100%
