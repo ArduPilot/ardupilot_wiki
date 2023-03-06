@@ -42,4 +42,6 @@ to use. The ``DO_LAND_START`` closest to the current location in all three dimen
 This can be useful if you have multiple landing sequences for different
 wind conditions or different areas.
 
+.. note:: by default, the closest ``DO_LAND_START`` will be selected, even if the current mission sequence has a landing point closer to the present position. Setting bit 1 (MIS_OPTIONS) of the :ref:`MIS_OPTIONS<MIS_OPTIONS>` parameter, if RTL is caused by a :ref:`Battery Failsafe<plane-battery-failsafe>`, then the mission will continue if it has a closer landing point in its current sequence.
+
 .. note:: ArduPilot checks to see if there is a ``DO_LAND_START`` mission items before arming, and :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` is set to 0. If so, a pre-arm failure condition will prevent arming. If it is desired to use a ``DO_LAND_START`` only for aborted autolandings and not as an RTL action override, then set :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` = 3, to allow arming. Its use for an aborted autolanding is explained in :ref:`aborting-autolanding`.
