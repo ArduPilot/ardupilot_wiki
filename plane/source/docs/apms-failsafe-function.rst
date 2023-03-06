@@ -128,6 +128,8 @@ Normally, the RC channels are ignored when in RC Failsafe (except the throttle c
 
 .. warning:: Since the autopilot cannot know if the RC link is lost in this configuration, it is possible to get into dangerous situations, especially with QuadPlanes. For example, you are low on battery and far away, and the battery failsafe is active and attempting a VTOL land to prevent a crash. As it drops out of RC range, it will switch to the RC failsafe mode set in the receiver, and attempt to execute that, canceling the battery failsafe action, and ultimately resulting in a crash.
 
+.. _plane-battery-failsafe:
+
 Battery Failsafe
 ================
 
