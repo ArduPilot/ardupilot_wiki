@@ -394,7 +394,7 @@ There a number of problems that can prevent QAUTOTUNE from providing a good tune
 - Non-linear ESC response.
 - Very low setting for :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>`.
 - Overloaded propellers or motors.
-- Autotuning a Tailsitter's pitch or yaw axis, since they require feed-forward.
+- Autotuning a Tailsitter's pitch or yaw axis, or vectored yaw axis on TiltRotor, since they require feed-forward.
 
 If QAUTOTUNE has failed you will need to re-do a manual tune.
 
