@@ -226,6 +226,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_NAV_VTOL_TAKEOFF <mav_cmd_nav_vtol_takeoff>`
 - :ref:`MAV_CMD_NAV_VTOL_LAND <mav_cmd_nav_vtol_land>`
 - :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
+- :ref:`MAV_CMD_NAV_PAYLOAD_PLACE <mav_cmd_nav_payload_place>`
 - :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
 - :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
 - :ref:`MAV_CMD_DO_AUX_FUNCTION<mav_cmd_do_aux_function>`
@@ -2039,13 +2040,18 @@ until the time in seconds has elapsed. This is used in a mission to allow a vehi
 MAV_CMD_NAV_PAYLOAD_PLACE
 -------------------------
 
-Supported by: Copter.
+Supported by: Copter and Plane.
 
 [site wiki="copter"]
 
 After reaching this waypoint, the vehicle will descend up to the maximum descent value. If the payload has not touched the ground before this limit is reached, the vehicle will climb back up to the waypoint altitude and continue to the next mission item. If it reaches the ground, it will automatically release the gripper if enabled, and optionally wait a period, re-grip, and ascend back to the waypoint altitude and continue the mission. Numerous parameters that control the payload touch down detection, wait period, etc. are prefaced with ``PLDP_``.
-
-
+[/site]
+[site wiki=plane']
+**QUADPLANE ONLY, fixed wing planes will skip this command**
+After reaching this waypoint, the vehicle will have transitioned to VTOL and will descend up to the maximum descent value. If the vehicle has not touched the ground before this limit is reached, the vehicle will climb back up to the waypoint altitude and continue to the next mission item. If it reaches the ground, it will stop its motors and wait for a LUA script command (see `Package Place LUA applet <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/plane_package_place.lua>`__ ) to send an abort_landing command to ascend back to the waypoint altitude and continue to the next mission item, be sent a disarm command, or the pilot uses the ``RCx_OPTION`` = 173 to send the abort_landing command, instead of via a LUA script.
+This allows the gripper to be commanded to be released, packages replaced, etc.
+[/site]
+[wiki site="copter,plane"]
 **Command parameters**
 
 .. raw:: html
@@ -2095,9 +2101,6 @@ After reaching this waypoint, the vehicle will descend up to the maximum descent
    </tr>
    </tbody>
    </table>
-[/site]
-
-[site wiki="plane"]
 
 [/site]
 

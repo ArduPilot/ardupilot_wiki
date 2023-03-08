@@ -260,9 +260,11 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        169           | Camera Auto Focus          |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
-|       170            |  QSTABILIZE mode           |          |  x      |         |
+|       170            |  QSTABILIZE mode           |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
-|       171            |  Compass Calibration       |    x     |  x      |    x    |
+|       171            |  Compass Calibration       |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        173           | Plane AUTO Landing Abort   |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
 
 Intended as continuous PWM range control inputs:
@@ -1104,14 +1106,20 @@ Three position switch. If high, will request arming. If switched to low position
    </td>
    </tr>
    <tr>
-   <th>Option</th>
-   <th>Description</th>
-   </tr>
-   <tr>
    <td><strong>Compass Calibration</strong></td>
    <td>
 
 Switching to high will behave the same as if the Start button for :ref:`onboard calibration <onboard_calibration>` had been pressed. Returning the switch to low will cancel the calibration if still in progress.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Plane AUTO Mode Landing Abort</strong></td>
+   <td>
+
+If switched to the HIGH position, will abort any landing that is currently in progress while in AUTO mode, This includes the VTOL, or fixed wing, landing phase of any AUTO mission, and the :ref:`PAYLOAD_PLACE <mav_cmd_nav_payload_place>` mission command. It does not affect the fixed wing approach phase of a VTOL landing, QLAND or QRTL modes.
 
 .. raw:: html
 
