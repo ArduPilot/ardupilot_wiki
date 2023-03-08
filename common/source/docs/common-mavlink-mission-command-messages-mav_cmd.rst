@@ -176,6 +176,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_NAV_SPLINE_WAYPOINT <mav_cmd_nav_spline_waypoint>`
 - :ref:`MAV_CMD_NAV_GUIDED_ENABLE <mav_cmd_nav_guided_enable>` (NAV_GUIDED only)
 - :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
+- :ref:`MAV_CMD_NAV_PAYLOAD_PLACE <mav_cmd_nav_payload_place>`
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
 - :ref:`MAV_CMD_MISSION_START <mav_cmd_mission_start>`
 - :ref:`MAV_CMD_COMPONENT_ARM_DISARM <mav_cmd_component_arm_disarm>`
@@ -2021,6 +2022,73 @@ until the time in seconds has elapsed. This is used in a mission to allow a vehi
    </tr>
    </tbody>
    </table>
+
+[/site]
+
+.. _mav_cmd_nav_payload_place:
+
+MAV_CMD_NAV_PAYLOAD_PLACE
+-------------------------
+
+Supported by: Copter.
+
+[site wiki="copter"]
+
+After reaching this waypoint, the vehicle will descend up to the maximum descent value. If the payload has not touched the ground before this limit is reached, the vehicle will climb back up to the waypoint altitude and continue to the next mission item. If it reaches the ground, it will automatically release the gripper if enabled, and optionally wait a period, re-grip, and ascend back to the waypoint altitude and continue the mission. Numerous parameters that control the payload touch down detection, wait period, etc. are prefaced with ``PLDP_``.
+
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Maximum Descent</td>
+   <td>meters</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param2</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr>
+   <tr>
+   <td><strong>param5</strong></td>
+   <td>Lat</td>
+   <td>Latitude.</td>
+   </tr>
+   <tr>
+   <td><strong>param6</strong></td>
+   <td>Long</td>
+   <td>Longitude</td>
+   </tr>
+   <tr>
+   <td><strong>param7</strong></td>
+   <td>Alt</td>
+   <td>Altitude</td>
+   </tr>
+   </tbody>
+   </table>
+[/site]
+
+[site wiki="plane"]
 
 [/site]
 
