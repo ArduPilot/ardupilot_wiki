@@ -201,13 +201,15 @@ In addition, you can have either standard definition (SD) fonts, or high definit
 #. Install the font package as instructed by the msp-osd readme in the root directory of the goggles SD card
 #. Configure :ref:`OSD_TYPE<OSD_TYPE>` = 5 and :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 42
 
-Now you can select to display either the SD or HD fonts using ``OSDx_TXT_RES`` for each OSD screen enabled.
+Now you can select to display either the SD or HD fonts using ``OSDx_TXT_RES`` for each OSD screen enabled. 0 = SD (30x16), 1 = HD (50x18), 3 = HD (60x22).
 
-The SD font's positions are set on a 30x16 X/Y position grid as normal, the HD uses a 50x18 grid.
+The SD font's positions are set on a 30x16 X/Y position grid as normal, the HD uses a 50x18 or 60x22 grid. The 50x18 grid has margins at the top/bottom/left/right of the screen before the grid begins. 
 
 Sets of fonts converted from ArduPilots standard font sets are provided on the ``msp-osd`` module site, but additional DJI-style SD/HD sets with color icons are available `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts/HDFonts>`__
 
 .. note:: the font set above will need to be renamed and placed in the appropriate subdirectory on the goggle's SD card if usinng a version after ``mspd-osd`` ver 0.6.7. Follow the readme for whatever version you are using of ``msp-osd``.
+
+.. note:: Mission Planners' OSD setup screen is only a 30x18 matrix, so drag and drop of the OSD panel items is limited for the HD resolutions, but manually entering the higher values for the X/Y positions does work.
 
 
 Testing OSD with SITL
