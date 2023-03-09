@@ -11,6 +11,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2023 <htt
 - AI & ArduPilot development environment
 - Multicopter Swarm Avoidance
 - Improve custom firmware server including adding branch support and improve dependency handling
+- ROS2 support
 
 See lower down on this page for more details for some of the projects listed above
 
@@ -109,10 +110,18 @@ setting default parameters.
 
 The successful student will need strong python and web development skills.
 
-ROS2 MAVROS support for ArduPilot
----------------------------------
+ROS2 support
+------------
+
+- Skills required: ROS2, C++, python, mavlink
+- Mentor: Andrew Tridgell
+- Expected Size: 175h or 350h
+- Level of Difficulty: Medium
+- Expected Outcome: ArduPilot vehicles can communicate with ROS2
 
 Currently, there is no MAVROS equivalent for ROS2, with `OSRF <https://www.openrobotics.org>`__ quickly moving to make ROS2 the standard version of ROS, supporting it has become a growing interest in our community. An initial port of the basic features of MAVROS would be a big step towards integrating ArduPilot and ROS2.
+
+A previous GSoC made good progress on this project (see `Dds prototype PR <https://github.com/ArduPilot/ardupilot/pull/17779>`__)
 
 Projects Completed in past years
 --------------------------------
