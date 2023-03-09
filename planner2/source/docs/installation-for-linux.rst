@@ -18,11 +18,11 @@ System Requirements
 Download
 --------
 
-Download the latest deb file for your machine from 
+Download the latest installation file for your machine from GitHub.
 
-`firmware.ardupilot.org/Tools/APMPlanner <https://firmware.ardupilot.org/Tools/APMPlanner/>`__
+`github.com/ArduPilot/apm_planner/releases <https://github.com/ArduPilot/apm_planner/releases>`__
 
-There is a `RC-Model <http://download.opensuse.org/repositories/hardware:/RC-Model/>`__ repository available for OpenSUSE which contains APM Planner. 
+Legacy versions from `firmware.ardupilot.org/Tools/APMPlanner <https://firmware.ardupilot.org/Tools/APMPlanner/>`__
 
 And also check the `discussion forum for latest info <https://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__
 
