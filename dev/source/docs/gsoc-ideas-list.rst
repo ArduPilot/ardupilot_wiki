@@ -7,6 +7,7 @@ List of Suggested Projects for GSoC 2023
 This is a list of projects suggested by ArduPilot developers for `GSoC 2023 <https://summerofcode.withgoogle.com/>`__. These are only suggestions so if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2023.
 
 - Rover AutoTune
+- Camera and Gimbal enhancements
 - AI & ArduPilot development environment
 - Create more ignition vehicle models, and improve physics of existing models in SITL (software-in-the-loop simulator)
 - Improve custom firmware server including adding branch support and improve dependency handling
@@ -56,6 +57,30 @@ The list of parameters that should be tuned includes:
 See `Issue #8851 <https://github.com/ArduPilot/ardupilot/issues/8851>`__
 
 Some of the development can be completed using the :ref:`SITL simulator <sitl-simulator-software-in-the-loop>` but funding will also be provided for the RC car frame and autopilot
+
+Camera and Gimbal enhancements
+------------------------------
+
+- Skills required: C++, mavlink
+- Mentor: Randy Mackay
+- Expected Size: 175h or 350h
+- Level of Difficulty: Medium
+- Expected Outcome: Improved camera and gimbal support in both pilot controlled and autonomous modes (Auto, Guided)
+
+This project involves numberous small and medium sized enhancements and bug fixes to ArduPilot's camera and gimbal support (see `Camera enhancement <https://github.com/ArduPilot/ardupilot/issues/23151>`__ and `Gimbal enhancement <https://github.com/ArduPilot/ardupilot/issues/20985>`__ lists).  These include:
+
+- Camera Zoom position support
+- Camera Focus position support
+- Improve compliance with `MAVLink Camera Protocol <https://mavlink.io/en/services/camera.html>`__ (see AP's :ref:`MAVLink Interface Camera Controls wiki <mavlink-camera>`)
+- Multiple gimbal support (see `Mount: issues with multi-gimbal support <https://github.com/ArduPilot/ardupilot/issues/21665>`__)
+- Resolve any other known issues with the Siyi, Gremsy drivers (e.g. `Siyi should use angle control <https://github.com/ArduPilot/ardupilot/issues/23149>`__)
+- Support for pointing gimbal at :ref:`Circle center <copter:circle-mode>`
+- DroneCAN gimbal driver (see `Connect a Gimbal via DroneCAN <https://github.com/ArduPilot/ardupilot/issues/22148>`__)
+- Enhance SITL gimbal support including adding multiple gimbals to a RealFlight model
+- Work with AP QGC developer to ensure AP provides all info required for new camera gimbal control screen
+- Mission Planner fixes to `Camera Gimbal setup <https://github.com/ArduPilot/MissionPlanner/issues/3049>`__ and Payload Control screens
+
+Funding will be provided for the required hardware which will likely include a camera gimbal, transmitter and autopilot.
 
 AI & ArduPilot development environment
 --------------------------------------
