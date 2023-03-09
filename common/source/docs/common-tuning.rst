@@ -20,6 +20,7 @@ parameters. The following topics shown you how.
     Manual Tuning <ac_rollpitchtuning>
     AUTOTUNE <autotune>
     Input Shaping <input-shaping>
+    Throttle Boost <throttle-boost>
     Transmitter Based Tuning <common-transmitter-tuning>
     Configuring Notch Filtering <common-imu-notch-filtering>
     Configuring In-Flight FFT <common-imu-fft>
