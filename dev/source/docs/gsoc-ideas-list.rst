@@ -10,12 +10,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2023 <htt
 - Camera and Gimbal enhancements
 - AI & ArduPilot development environment
 - Multicopter Swarm Avoidance
-- Create more ignition vehicle models, and improve physics of existing models in SITL (software-in-the-loop simulator)
 - Improve custom firmware server including adding branch support and improve dependency handling
-- Improve :ref:`Gazebo simulator <sitl-with-gazebo>` integration including JSON protocol, Gazebo9, and new sensors set
-- Build system improvements, specifically fixing dependency handling and speeding up the waf build
-- Improvements to the `MAVProxy GCS <https://github.com/ArduPilot/MAVProxy>`__. Better multivehicle support, performance improvement. Requires strong python skills.
-- Swift Package for MAVLink communications
 
 See lower down on this page for more details for some of the projects listed above
 
@@ -102,22 +97,6 @@ Once complete, it should be possible to run a demonstration in SITL in which thr
 
 Development should be possible with only an Ubuntu or Windows PC but funding for hardware will also be provided if required.
 
-Ignition Modelling
-------------------
-
-The new Gazebo Ignition simulation system offers a rich simulation
-environment where the vehicle can interact with world objects and
-other vehicles. We would like to expand the number of vehicle models
-that are available, and improve the physics fidelity of the existing
-vehicles. You can see the vehicle models we have now here
-`https://github.com/ArduPilot/SITL_Models/tree/master/Ignition
-<https://github.com/ArduPilot/SITL_Models/tree/master/Ignition>`__
-
-The successful applicatant will need strong C++ skills, as well as an
-understanding of aerodynamics for the creation of vehicle physics
-models. Experience with Gazebo or Ignition would be a significant help.
-
-
 Custom Firmware Server
 ----------------------
 
@@ -129,26 +108,6 @@ dependency handling, as well as support for enabling Lua scripts and
 setting default parameters.
 
 The successful student will need strong python and web development skills.
-
-Build System Improvements
--------------------------
-
-The build system that ArduPilot uses is based on the python waf
-system. It works well, but we would like some improvements to reduce
-the CPU overhead and improve dependency handling.
-
-The successful student will need strong python skills and
-understanding of build system structures.
-
-MathWorks Simulink
-------------------
-
-`MathWorks Simulink <https://www.mathworks.com/products/simulink.html>`__ is a popular model based control algorithm design program.  The purpose of this project would be to allow Simulink to create attitude control algorithm code (in C++) that can then be compiled into ArduPilot and flown in the simulator or on a real vehicle.
-
-Swift Package for Mavlink
--------------------------
-
-`Swift Packages <https://developer.apple.com/documentation/swift_packages>`__ are Apple's solution for creating reusable components that can be used in iOS and Mac applications. MAVLink currently has several attempts to create a communications package for iOS, but they are currently not compatible with ArduPilot. The goal for this project would be to either create our own universal MAVLink package or adopt one of the existing ones (`MAVSDK Swift <https://github.com/mavlink/MAVSDK-Swift>`__, `pymavlink Swift Generator <https://github.com/ArduPilot/pymavlink/blob/master/generator/swift/MAVLink.swift>`__)to work with ArduPilot and be easily deployable as a Swift package so that anyone who wants to use it to create their own iOS based app can integrate it.
 
 ROS2 MAVROS support for ArduPilot
 ---------------------------------
