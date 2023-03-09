@@ -83,27 +83,6 @@ This project involves numberous small and medium sized enhancements and bug fixe
 
 Funding will be provided for the required hardware which will likely include a camera gimbal, transmitter and autopilot.
 
-AI & ArduPilot development environment
---------------------------------------
-
-- Skills required: C++, python, mavlink, AI
-- Mentor: Randy Mackay
-- Expected Size: 175h or 350h
-- Level of Difficulty: Medium
-- Expected Outcome: 
-
-This project involves creating scripts and wiki documentation to help developers setup a development and testing environment for vision based AI models to be integrated with ArduPilot vehicles (primarily multicopters, rovers and boats).
-
-- decide which AI models will be supported (perhaps `TensorFlow <https://www.tensorflow.org>`__ or `OpenCV AI <https://opencv.org/>`__)
-- choose a simulator (probably :ref:`webots <dev:sitl-with-webots>` or :ref:`AirSim <dev:sitl-with-airsim>`)
-- ensure the simulator's onboard camera output is available to the AI model
-- ensure the AI model's outputs can control the vehicle
-- create scripts to setup the development environment
-- create documentation on how to setup and use the development environment
-- create a ready-to-use example demonstrating the use of the environment (e.g. `multicopter safe landing <https://github.com/stephansturges/OpenLander>`__ or rover lane following)
-
-Development should be possible with only an Ubuntu or Windows PC but funding for hardware will also be provided if required.
-
 Multicopter Swarm Avoidance
 ---------------------------
 
