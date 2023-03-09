@@ -8,7 +8,6 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2023 <htt
 
 - Rover AutoTune
 - Camera and Gimbal enhancements
-- AI & ArduPilot development environment
 - Multicopter Swarm Avoidance
 - Improve custom firmware server including adding branch support and improve dependency handling
 - ROS2 support
