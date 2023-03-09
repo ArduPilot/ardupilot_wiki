@@ -7,9 +7,7 @@ List of Suggested Projects for GSoC 2023
 This is a list of projects suggested by ArduPilot developers for `GSoC 2023 <https://summerofcode.withgoogle.com/>`__. These are only suggestions so if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2023.
 
 - Rover AutoTune
-- Boat object avoidance with Luxonis AI camera
-- Copter/Rover camera gimbal integration improvements
-- Update ROS integration for Non-GPS navigation and off-board path-planning
+- AI & ArduPilot development environment
 - Create more ignition vehicle models, and improve physics of existing models in SITL (software-in-the-loop simulator)
 - Improve custom firmware server including adding branch support and improve dependency handling
 - Improve :ref:`Gazebo simulator <sitl-with-gazebo>` integration including JSON protocol, Gazebo9, and new sensors set
@@ -37,7 +35,7 @@ When making the difficult decision about which students to accept, we look for:
 Rover AutoTune
 --------------
 
-- Skills required: C++
+- Skills required: C++, Lua
 - Mentor: Randy Mackay
 - Expected Size: 175h or 350h
 - Level of Difficulty: Hard
@@ -45,7 +43,7 @@ Rover AutoTune
 
 This project involves `adding a new AutoTune mode to the Rover firmware <https://ardupilot.org/dev/docs/rover-adding-a-new-drive-mode.html>`__ to calculate the frame limits, speed control and steering control gains.  This is essentially an automated version of the manual tuning process documented in `this section of the Rover wiki <https://ardupilot.org/rover/docs/rover-first-drive.html>`__.
 
-Similar to `Copter's autotune mode <https://ardupilot.org/copter/docs/autotune.html>`__ this new mode should include a state machine that provides various throttle and steering outputs and then monitors the response by checking the AHRS/EKF outputs.
+Similar to `Copter's autotune mode <https://ardupilot.org/copter/docs/autotune.html>`__ and `VTOL-quicktune.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/VTOL-quicktune.lua>`__ script this new mode should include a state machine that provides various throttle and steering outputs and then monitors the response by checking the AHRS/EKF outputs.
 
 The list of parameters that should be tuned includes:
 
@@ -59,58 +57,26 @@ See `Issue #8851 <https://github.com/ArduPilot/ardupilot/issues/8851>`__
 
 Some of the development can be completed using the :ref:`SITL simulator <sitl-simulator-software-in-the-loop>` but funding will also be provided for the RC car frame and autopilot
 
-Boat object avoidance with Luxonis AI camera
---------------------------------------------
+AI & ArduPilot development environment
+--------------------------------------
 
-- Skills required: C++, mavlink, AI
-- Mentor: Randy Mackay, Peter Barker
-- Expected Size: 350h
-- Level of Difficulty: Medium
-- Expected Outcome: Autonomous boats is able to avoid other boats, rocks and floating debris using an Luxonis AI camera
-
-This project involves training and integrating a Luxonis AI camera to recognise rocks, floating debris and other boats and then send the estimated position of these obstacles to ArduPilot's existing :ref:`object avoidance features <rover:common-object-avoidance-landing-page>` (Simple avoidance, Bendy Ruler and Dijkstra's/A-Star) so that the vehicle can stop and/or path plan around them.
-
-Much of the development can be completed using one of the :ref:`ArduPilot supported simulators <simulation-2>` but funding will also be provided for the required hardware which will include a `Luxonis AI camera <https://shop.luxonis.com/products/oak-d-iot-75>`__, companion computer, autopilot and a car or boat frame.
-
-Copter/Rover camera gimbal integration improvements
----------------------------------------------------
-
-- Skills required: C++, mavlink
-- Mentor: Randy Mackay, Peter Barker
+- Skills required: C++, python, mavlink, AI
+- Mentor: Randy Mackay
 - Expected Size: 175h or 350h
 - Level of Difficulty: Medium
-- Expected Outcome: Improved support of gimbals in pilot controlled and fully autonomous modes (Auto, Guided)
+- Expected Outcome: 
 
-This project involves resolving numerous small issues with ArduPilot's camera gimbal support.  These include:
+This project involves creating scripts and wiki documentation to help developers setup a development and testing environment for vision based AI models to be integrated with ArduPilot vehicles (primarily multicopters, rovers and boats).
 
-- Auxiliary switch to allow pilot to control whether the gimbal maintains an attitude relative to the vehicle's heading or stays pointed in the same direction even as the vehicle turns (aka "earth frame")
-- Support for new mavlink ROI messages (see `issue #7658 <https://github.com/ArduPilot/ardupilot/issues/7658>`__)
-- Identify and resolve any issues with pilot controlling gimbal using rate or angle control
-- Support for pointing gimbal at :ref:`Circle center <copter:circle-mode>`
-- Support for pointing gimbal at another vehicle while in :ref:`Follow mode <copter:follow-mode>`
-- Support for pointing gimbal at specified waypoint
-- Resolve any specific issues with the Gremsy PixyU gimbal (see `issue #14448 <https://github.com/ArduPilot/ardupilot/issues/14448>`__)
+- decide which AI models will be supported (perhaps `TensorFlow <https://www.tensorflow.org>`__ or `OpenCV AI <https://opencv.org/>`__)
+- choose a simulator (probably :ref:`webots <dev:sitl-with-webots>` or :ref:`AirSim <dev:sitl-with-airsim>`)
+- ensure the simulator's onboard camera output is available to the AI model
+- ensure the AI model's outputs can control the vehicle
+- create scripts to setup the development environment
+- create documentation on how to setup and use the development environment
+- create a ready-to-use example demonstrating the use of the environment (e.g. `multicopter safe landing <https://github.com/stephansturges/OpenLander>`__ or rover lane following)
 
-Funding will be provided for the required hardware which will likely include a camera gimbal, transmitter, autopilot and a multicopter or car frame.
-
-Update ROS integration for Non-GPS navigation and off-board path-planning
--------------------------------------------------------------------------
-
-- Skills required: ROS, C++, python
-- Mentor: Randy Mackay, Jaime Machuca
-- Expected Size: 175h or 350h
-- Level of Difficulty: Medium
-
-ArduPilot can be `integrated with ROS <https://ardupilot.org/dev/docs/ros.html>`__ both for `Non-GPS position estimation <https://ardupilot.org/dev/docs/ros-cartographer-slam.html>`__ and `object avoidance <https://ardupilot.org/dev/docs/ros-object-avoidance.html>`__.  This project aims to verify and update the instructions for these two features.
-
-Once the above two items are complete, if time permits the next task would be to integrate the offboard object avoidance with ArduPilot Auto mode.  This involves ArduPilot maintaining the final target but then sending it at 1hz (or faster) to ROS's offboard path planning algorithm via mavros.  This will primarily require updating mavros.
-
-- `Randy's video using ROS for path planning around obstacles <https://www.youtube.com/watch?v=u99qwQSl9Z4>`__
-- `mavros PR to allow ROS to accept set-position-target-global-int messages <https://github.com/mavlink/mavros/pull/1184>`__ from ArduPilot to be fed into ROS's navigation algorithm
-
-Funding will be provided for the required hardware which will likely include an autopilot, Nvidia or RPI4 companion computer, 360 lidar and multicopter or RC car frame
-
-`Related issue #5608 <https://github.com/ArduPilot/ardupilot/issues/5608>`__
+Development should be possible with only an Ubuntu or Windows PC but funding will also be provided if required.
 
 Ignition Modelling
 ------------------
@@ -167,6 +133,12 @@ Currently, there is no MAVROS equivalent for ROS2, with `OSRF <https://www.openr
 
 Projects Completed in past years
 --------------------------------
+
+In 2022, students worked on these projects:
+
+- `Rover autonomous docking <https://discuss.ardupilot.org/t/gsoc-2022-rover-autodocking-conclusion/90626>`__
+- `ROS integration for Non-GPS navigation and off-board path-planning <https://discuss.ardupilot.org/t/gsoc-2022-update-ros-integration-for-non-gps-navigation-and-off-board-path-planning/86948>`__
+- `Boat object avoidance with Luxonis AI camera <https://discuss.ardupilot.org/t/gsoc-2022-boat-object-avoidance-with-luxonis-ai-camera/91257>`__
 
 In 2019, students successfully completed these projects:
 
