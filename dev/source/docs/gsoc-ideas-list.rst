@@ -9,6 +9,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2023 <htt
 - Rover AutoTune
 - Camera and Gimbal enhancements
 - AI & ArduPilot development environment
+- Multicopter Swarm Avoidance
 - Create more ignition vehicle models, and improve physics of existing models in SITL (software-in-the-loop simulator)
 - Improve custom firmware server including adding branch support and improve dependency handling
 - Improve :ref:`Gazebo simulator <sitl-with-gazebo>` integration including JSON protocol, Gazebo9, and new sensors set
@@ -101,7 +102,26 @@ This project involves creating scripts and wiki documentation to help developers
 - create documentation on how to setup and use the development environment
 - create a ready-to-use example demonstrating the use of the environment (e.g. `multicopter safe landing <https://github.com/stephansturges/OpenLander>`__ or rover lane following)
 
-Development should be possible with only an Ubuntu or Windows PC but funding will also be provided if required.
+Development should be possible with only an Ubuntu or Windows PC but funding for hardware will also be provided if required.
+
+Multicopter Swarm Avoidance
+---------------------------
+
+- Skills required: C++, python, mavlink
+- Mentor: Peter Barker, Rishabh Singh
+- Expected Size: 175h or 350h
+- Level of Difficulty: Medium
+- Expected Outcome: vehicles in a swarm should avoid each other
+
+This project involves enhanceing ArduPilot's Copter software so that vehicles flying in a swarm avoid each other.  The control logic should run primarily on each drone's flight controller (e.g. not on the ground station nor a companion computer).
+
+- AC_Avoidance class should be enhanced to consume the location and speed of other vehicles.  The "simple avoidance" feature (see :ref:`Copter's object avoidance wiki page <copter:common-object-avoidance-landing-page>`) should then cause the vehicle to stop before hitting another vehicle in most modes (Loiter, Auto, Guided, etc).  Ideally the vehicle should also backaway from other vehicles if they get too close.
+- SITL should be used to develop and test this feature
+- by centralising remote vehicle knowledge and generalising the follow database.  Allow AC_Avoidance to work on this new database
+
+Once complete, it should be possible to run a demonstration in SITL in which three vehicle are visible on the map.  Two should be acting as obstacles (flying in Guided mode) while the third is flown by a pilot in Loiter mode.  We should be able to move the two "obstacle" vehicles around while the third vehicle will not run into the others regardless of what inputs the pilot provides.
+
+Development should be possible with only an Ubuntu or Windows PC but funding for hardware will also be provided if required.
 
 Ignition Modelling
 ------------------
