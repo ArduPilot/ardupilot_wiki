@@ -14,9 +14,11 @@ System Requirements
 Download
 ========
 
-Download the installer .dmg file for your macOS (OSX) machine from 
+Download the installer .dmg file for your macOS (OSX) machine from GitHub.
 
-`firmware.ardupilot.org/Tools/APMPlanner <https://firmware.ardupilot.org/Tools/APMPlanner/>`__
+`github.com/ArduPilot/apm_planner/releases <https://github.com/ArduPilot/apm_planner/releases>`__
+
+Legacy versions from `firmware.ardupilot.org/Tools/APMPlanner <https://firmware.ardupilot.org/Tools/APMPlanner/>`__
 
 And also check the discussion forum for lastest info
 
@@ -28,6 +30,8 @@ Install Packages
 ----------------
 
 .. note::
+
+   The FTDI Driver install is not needed for OSX 10.11+
 
    The FTDI Driver install is optional for OSX Yosemite 10.10, but some users have required this install.
 
