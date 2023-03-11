@@ -9,7 +9,6 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2023 <htt
 - Rover AutoTune
 - Camera and Gimbal enhancements
 - Multicopter Swarm Avoidance
-- Improve custom firmware server including adding branch support and improve dependency handling
 - ROS2 support
 
 See lower down on this page for more details for some of the projects listed above
@@ -96,18 +95,6 @@ This project involves enhanceing ArduPilot's Copter software so that vehicles fl
 Once complete, it should be possible to run a demonstration in SITL in which three vehicle are visible on the map.  Two should be acting as obstacles (flying in Guided mode) while the third is flown by a pilot in Loiter mode.  We should be able to move the two "obstacle" vehicles around while the third vehicle will not run into the others regardless of what inputs the pilot provides.
 
 Development should be possible with only an Ubuntu or Windows PC but funding for hardware will also be provided if required.
-
-Custom Firmware Server
-----------------------
-
-The ArduPilot custom firmware server (see
-`https://custom.ardupilot.org <https://custom.ardupilot.org>`__ ) was
-developed during GSoC 2021, and has been extremely useful. We would
-like to extend the functionalty to multiple branches and add automatic
-dependency handling, as well as support for enabling Lua scripts and
-setting default parameters.
-
-The successful student will need strong python and web development skills.
 
 ROS2 support
 ------------
