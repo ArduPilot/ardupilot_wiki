@@ -56,8 +56,7 @@ before it actually reaches the current waypoint
 degrees (0=north, 90 = east). Instead use a
 :ref:`CONDITION_YAW <mission-command-list_condition-yaw>` command.
 
-**Lat, Lon** - the latitude and longitude targets.  If left as zero it
-will hold the current location.
+**Lat, Lon** - the latitude and longitude targets.  If left as zero, current location will be substituted for waypoint location, making it appear as if the waypoint is simply skipped.
 
 **Alt** - the target altitude above home in meters.  If left as zero it
 will hold the current altitude.
