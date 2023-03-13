@@ -47,6 +47,8 @@ Connect a ground station (e.g. Mission Planner) to the autopilot and set the fol
 - :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (DroneCAN)
 - :ref:`BATT_OPTIONS<BATT_OPTIONS>` provides several options for MPPT enable and disable depending on autopilot events.
 
+.. note:: the MPPT can be manually turned on or off using an RC channel switch setup with its ``RCx_OPTION`` = 172.
+
 Check the MPPT board's parameters by connecting through "SLCAN"
 
 - Open Mission Planner's SETUP >> Optional Hardware >> UAVCAN(DroneCAN) page
