@@ -35,11 +35,15 @@ The exact behaviour depends on the :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` value:
 -  If :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` = 2, then the plane will bypass the RTL completely
    and go straight to the landing sequence after the ``DO_LAND_START``.
 
+.. note:: If you are already in a landing sequence (NAV_LAND or DO_START_LAND sequence), then it will continue.
+
 You can optionally include more than one ``DO_LAND_START`` mission item
 in your mission. If that is done then the latitude/longitude/altitude of the
 ``DO_LAND_START`` mission items is used to choose which landing sequence
 to use. The ``DO_LAND_START`` closest to the current location in all three dimensions is used.
 This can be useful if you have multiple landing sequences for different
 wind conditions or different areas.
+
+.. note:: if you execute an RTL due to a battery failsafe and the :ref:`MIS_OPTIONS<MIS_OPTIONS>` bit 1 (Use distance to land) is set, then if continuing the mission results in a closer landing point, then the mission will proceed.
 
 .. note:: ArduPilot checks to see if there is a ``DO_LAND_START`` mission items before arming, and :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` is set to 0. If so, a pre-arm failure condition will prevent arming. If it is desired to use a ``DO_LAND_START`` only for aborted autolandings and not as an RTL action override, then set :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` = 3, to allow arming. Its use for an aborted autolanding is explained in :ref:`aborting-autolanding`.
