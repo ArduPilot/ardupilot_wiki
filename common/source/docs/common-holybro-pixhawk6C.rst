@@ -106,6 +106,8 @@ FMU outputs within the same group need to use the same output rate and protocol.
 any output in a group uses DShot then all channels in that group need
 to use DShot.
 
+.. note:: to use BDShot capability on outputs 1-8, use the firmware in the "Pixhawk6C-bdshot" folder on the `Firmware Server <https://firmware.ardupilot.org>`__
+
 Battery Monitoring
 ==================
 
