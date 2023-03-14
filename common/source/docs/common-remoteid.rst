@@ -31,6 +31,8 @@ Stand-alone devices:
 OpenDroneID Compatible devices (support included in ArduPlane 4.0 and later)
 
 - `BlueMark DroneBeacon MAVLink (EU, US) <https://dronescout.co/dronebeacon-mavlink-remote-id-transponder/>`__
+- `Cube ID <https://docs.cubepilot.org/user-guides/cube-id/cube-id>`__
+- `Cube ID_CAN <https://docs.cubepilot.org/user-guides/cube-id/cube-id>`__
 - `Wurzbach Electronics <https://wurzbachelectronics.com/esp32-remote-id-development-set>`__
 - `mRo RemoteID <https://store.mrobotics.io/product-p/m10049.htm>`__
 
