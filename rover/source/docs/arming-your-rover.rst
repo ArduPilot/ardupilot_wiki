@@ -26,6 +26,8 @@ There are three ways to arm the vehicle:
 
 If the vehicle fails to arm, please see the "Pre-Arm Checks" section below.
 
+.. note:: Rover cannot be armed in RTL or SMARTRTL modes. In addition AUTO, GUIDED, LOITER, RTL, SMARTRTL, FOLLOW, and DOCK modes cannot be armed via an :ref:`common-auxiliary-functions` RC switch.
+
 How to Disarm
 =============
 

@@ -8,11 +8,6 @@ Arming the vehicle allows the motors to start spinning.  Before arming,
 make sure all people, objects, and any body parts (e.g., hands) are
 clear of the propellers. Then do the following:
 
-.. note::
-
-   You can only arm or disarm in Stabilize, ACRO, AltHold, Loiter,
-   and PosHold modes.  You cannot arm your copter in AUTO
-   mode. The :ref:`AUTO_OPTIONS<AUTO_OPTIONS>` parameter can be used to alter this behaviour, allowing arming while in AUTO mode, and/or, allowing a mission takeoff command to start upon AUTO mode entry, even if the throttle has not been raised.
 
 #. Turn on your transmitter.
 #. Plug in the LiPo battery.  The red and blue lights should flash for a few seconds as the gyros are calibrated (do not move the copter)
@@ -28,6 +23,26 @@ clear of the propellers. Then do the following:
 
    If you leave the throttle at minimum for 15 seconds while in any
    of the above modes the motors will automatically disarm.
+
+.. note:: you cannot arm while in certain modes. See the table below:
+
+=========================           =====================
+Modes not allowing Arming           Exceptions
+=========================           =====================
+AUTO                                :ref:`AUTO_OPTIONS<AUTO_OPTIONS>` bit 0 is set (Allow arming in mode)
+AUTOTUNE
+BRAKE
+CIRCLE
+FLIP
+GUIDED                              via MAVLink DO_ARM/DISARM command, :ref:`common-lua-scripts`, or :ref:`common-auxiliary-functions<common-auxiliary-functions>` switch if enabled with :ref:`GUID_OPTIONS<GUID_OPTIONS>`
+LAND
+RTL
+SMARTRTL
+SYSID
+AVOIDADSB
+FOLLOW
+AUTOTUNE
+=========================           =====================
 
 Disarming the motors
 ====================
