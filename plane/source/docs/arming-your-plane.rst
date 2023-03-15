@@ -23,7 +23,7 @@ crash.
 
    This feature in no way removes the need to respect the
    prop! When the plane is powered, ALWAYS avoid placing hands in
-   the vicinity of the propellor, even when the throttle is
+   the vicinity of the propeller, even when the throttle is
    disarmed. If all is not well with the autopilot electronics or software
    there is always a slight possibility that signal could unintentionally
    reach the motor. Even though this is unlikely (and made even less likely
@@ -78,7 +78,7 @@ When you are ready to fly you can ask Plane to arm. This can be done in
 three ways:
 
 -  **Rudder Arming**. Hold the rudder stick fully to the right and the
-   throttle stick fully down for 2 seconds.
+   throttle stick fully down for 3 seconds.
 -  **Arming Switch**. An RC channel can be configured as an ARM/DISARM switch by using the RCx_OPTION for that channel set to 153.
 -  **GCS Arming**. Press the arming button on your ground station
 
@@ -86,6 +86,8 @@ three ways:
    :target: ../_images/armingButtonMissPlan.jpg
 
    Location of the Arm/Disarm button in Mission Planner (button circled in red near the bottom of the image).
+
+.. note:: Plane does not allow arming in RTL, QRTL, or QLAND modes.
 
 How to Disarm
 =============
