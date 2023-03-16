@@ -12,6 +12,7 @@ Heavy commercial QuadPlane operators should also read:
    :maxdepth: 1
 
    High Reliability QuadPlane Operation <quadplane-reliability>
+   ESC Signalling Issues <common-esc-issues>
 
 Motor Alignment
 ===============
