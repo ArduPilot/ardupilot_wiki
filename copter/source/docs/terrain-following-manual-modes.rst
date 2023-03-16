@@ -20,6 +20,7 @@ Setup and Configuration
 
 - Which is being used is configured by the :ref:`SURFTRAK_MODE<SURFTRAK_MODE>` parameter or by: 
 - An :ref:`auxiliary switch <common-auxiliary-functions>` (function "75"), or  :ref:`channel-7-and-8-options`, can be configured to turn on/off use of the rangefinder.
+- the :ref:`SURFTRAK_TC<SURFTRAK_TC>` parameter controls the smoothing of the surface data. Increase if you are moving fast and getting perturbations in the flight path. Conversely, it can be lower to make the vehicle more responsive to the rangefinder data.
 
 .. warning::
 
