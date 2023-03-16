@@ -188,6 +188,11 @@ Mission Re-Wind
 
 The behavior of returning to a mission sequence when interrupted by a mode change is described in the :ref:`common-mission-rewind` section.
 
+Mission Size
+============
+
+The number of mission items which can be stored in the autopilot is limited to approximately 650 waypoints. If you need to have longer missions, then you can set the :ref:`BRD_SD_MISSION<BRD_SD_MISSION>` parameter to create a file on the SD Card to store more. This can be set up to a maximum of 64 (kB) which would allow a total of over 4,000 waypoints in a mission.
+
 How to prefetch a stored Mission Map
 ====================================
 
