@@ -1,8 +1,8 @@
 .. _quadplane-tips:
 
-==============
-QuadPlane Tips
-==============
+====================
+QuadPlane Setup Tips
+====================
 
 There are a few helpful hints and tips for first-time QuadPlane users.
 
