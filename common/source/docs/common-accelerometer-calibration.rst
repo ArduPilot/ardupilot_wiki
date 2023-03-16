@@ -22,6 +22,8 @@ Calibration steps
 
 .. warning:: If the board is mounted in a non-standard orientation (i.e. arrow is not pointing forward) then please ensure the :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>`  is properly set before doing the accelerometer calibration.
 
+.. tip:: For very large vehicles, this may be done on the bench, after the orientation is set for how it will be mounted in the vehicle and the calibration orientations are done as fit in the vehicle. Then be sure to use the **Calibrate Level** step in the following instructions once mounted.
+
 - Under **Setup \| Mandatory Hardware**, select **Accel Calibration** from the left-side menu.
 
    .. figure:: ../../../images/mp_accelerometer_calibration.png
