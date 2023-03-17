@@ -12,7 +12,7 @@ Copter includes the Dead Reckoning Failsafe that allows a vehicle to return home
 
 .. note::
 
-    Similar functionality is available using the `copter-deadreckon-home.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/copter-deadreckon-home.lua>`__ script (`video1 <https://www.youtube.com/watch?v=KKShYheW4J0>`__, `video2 <https://www.youtube.com/watch?v=esM0EqMH_BE>`__)
+    Similar functionality is available using the `copter-deadreckon-home.lua <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets/copter-deadreckon-home.lua>`__ script (`video1 <https://www.youtube.com/watch?v=KKShYheW4J0>`__, `video2 <https://www.youtube.com/watch?v=esM0EqMH_BE>`__)
 
 Setup
 =====
