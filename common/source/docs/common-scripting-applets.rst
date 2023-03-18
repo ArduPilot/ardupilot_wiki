@@ -22,6 +22,7 @@ RockBlock.lua                               Rockblock modem
 Script_Controller.lua                       Allows selection of multiple scripts and missions on SD Card
 SmartAudio.lua                              Smart Audio control
 VTOL-quicktune.lua                          VTOL-quicktuning applet
+copter-deadreckon-home.lua                  flies towards home on loss of GPS
 forward_flight_motor_shutdown.lua           Forward flight motor shutdown
 motor_failure_test.lua                      Motor failure testing script
 plane_aerobatics.lua(in Aerobatics subdir)  Autonomous trajectory precise aerobatics
