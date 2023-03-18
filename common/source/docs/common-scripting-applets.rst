@@ -24,9 +24,9 @@ SmartAudio.lua                              Smart Audio control
 VTOL-quicktune.lua                          VTOL-quicktuning applet
 forward_flight_motor_shutdown.lua           Forward flight motor shutdown
 motor_failure_test.lua                      Motor failure testing script
+plane_aerobatics.lua(in Aerobatics subdir)  Autonomous trajectory precise aerobatics
 plane_package_place.lua                     Quadplane payload place script
 plane_ship_landing.lua                      Script to automate moving vehicle landing with a beacon
 runcam_on_arm.lua                           Starts/stops video recording on arm/disarm 
-plane_aerobatics.lua(in Aerobatics subdir)  Autonomous trajectory precise aerobatics
 sport_aerobatics.lua(in Aerobatics subdir)  Autonomous rate based aerobatics
 ==========================================  ===========
