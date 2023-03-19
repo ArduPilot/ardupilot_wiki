@@ -84,7 +84,6 @@ Vehicles from Non-Partners
 * DRONEE  Easy to Use Mapping Plane Drone `DRONEE PLANE <https://dronee.aero/pages/droneeplane>`__
 * `MotoDoro Farm Mapper (Plane) <https://motodoro.com/blog/detail/00005-farm-mapper-vtol.html>`__
 * `UAV Mapper from TuffWing <http://www.tuffwing.com/products/drone_mapper.html>`__
-* 3DR Quad from `DroneFever <http://dronefever.com/product.php?productid=38>`__
 * 3DR Solo from `Amazon <https://www.amazon.com/3DR-Solo-Quadcopter-No-Gimbal/dp/B00ZPM7BOG>`__
 * `LP Mini Orca HVTOL Drone <https://lpbond.com/productos/miniorca.html>`__
 
