@@ -87,7 +87,7 @@ three ways:
 
    Location of the Arm/Disarm button in Mission Planner (button circled in red near the bottom of the image).
 
-.. note:: Plane does not allow arming in RTL, QRTL, or QLAND modes.
+.. note:: Plane does not allow arming in RTL, QRTL, or QLAND modes. Arming in other throttle controlled modes, like LOITER,CRUISE,etc. is possible, but only if actually flying (ie after an accidental inflight disarm, watchdog reset, etc.)
 
 How to Disarm
 =============
