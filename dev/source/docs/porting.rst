@@ -52,7 +52,7 @@ The source code for the bootloaders can be found in `AP_Bootloader
 but pre-compiled binaries are available for many boards in the
 `Tools/Bootloaders
 <https://firmware.ardupilot.org/Tools/Bootloaders>`__ directory on our
-firmware server. Please refer to the `README.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/README.txt>`__ to see if one of the existing bootloaders is compatible for the new board.
+firmware server. Please refer to the `README.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/README.md>`__ to see if one of the existing bootloaders is compatible for the new board.
 
 .. note::
 
@@ -71,7 +71,7 @@ If using Mission Planner to load the firmware to the board:
 
 - connect the board to the windows PC with a USB cable
 - go to MP’s Initial Setup >> Install Firmware screen and click on the **Load custom firmware** and select the .apj file and press OK. If the "Load custom firmware" link it not available go to the Config/Tuning >> Planner page and set the "Layout" to "Advanced"
-- if the MP fails to load the firmware to the board it is possible the “APJ_BOARD_ID” from your hwdef.dat file does not match the .apj firmware file.  The board-id in the bootloader is listed in the bootloader's `README.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/README.txt>`__ file.  A temporary work around is to change the APJ_BOARD_ID in the hwdef.dat file to match the bootloader's. Longer term a bootloader specific to the new board needs to be created so that ground stations can differentiate this board from others and automatically load the correct firmware.
+- if the MP fails to load the firmware to the board it is possible the “APJ_BOARD_ID” from your hwdef.dat file does not match the .apj firmware file.  The board-id in the bootloader is listed in the bootloader's `README.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/README.md>`__ file.  A temporary work around is to change the APJ_BOARD_ID in the hwdef.dat file to match the bootloader's. Longer term a bootloader specific to the new board needs to be created so that ground stations can differentiate this board from others and automatically load the correct firmware.
 
   .. note::
 
