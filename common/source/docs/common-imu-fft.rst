@@ -6,7 +6,7 @@
 In-Flight FFT Based Harmonic Notch Setup
 ========================================
 
-.. note:: This feature is included in autopilots with 2MB of memory. Check your autopilot's :ref:`firmware limitations<common-limited_firmware>` after the release to determine if your autopilot has this feature.
+.. note:: This feature is included in autopilots with 2MB of memory. Check your autopilot's :ref:`binary-features` to determine if your autopilot has this feature (GyroFFT). Also, only 1 FFT based Notch can be setup.
 
 .. _common-imu-fft-pre-flight-setup:
 
@@ -25,6 +25,29 @@ For most uses with other FFT related advanced parameters at their default, this 
 .. note:: Setting up the FFT parameters can be done automatically using the ``RCx_OPTION`` auxiliary function "162" on a transmitter switch. Set the function to a switch on the transmitter. Hover the vehicle, switch it on (high) for 30 seconds, switch back low and land. The parameters will have been setup and switch function removed. NOTE: do not use this feature in firmware version 4.3!
 
 .. note:: Using In-Flight FFT can result in poorer performance than a properly setup :ref:`Throttle-Based <common-throttle-based-notch>` notch filter, since the FFT computations take time and can lag the actual required center frequency. In-Flight FFT is useful when the rotor frequencies of the vehicle vary widely as in heavy lift vehicles operating with high and low loads. It can be useful is setting up :ref:`Throttle-Based <common-throttle-based-notch>` notch filters, however, see :ref:`In-flight FFT Advanced Setup <common-imu-fft-advanced-setup>` instructions for more information.
+
+FFT Options
+===========
+
+There are two options which can be selected by setting the appropriate bit in the :ref:`FFT_OPTIONS<FFT_OPTIONS>` parameter that affect FFT operation:
+
+Post Filter Chain FFT Analysis Window
+-------------------------------------
+
+Normally, the FFT analysis for adjusting the center frequency is done by measuring the noise directly at the output of the unfiltered gyro data. However, if bit 0 of :ref:`FFT_OPTIONS<FFT_OPTIONS>` is set, then the measurement window takes into account the effects of the low pass filter and any configured notch filter(s). This is useful if there is high frequency noise, which impacts the control response less than lower frequency noise due to the low pass at the end of the filter chain, but may be targeted by the FFT measurement. Setting this bit will only track those lower frequency, and more critical, noise peaks.
+
+Motor Noise Check
+-----------------
+
+If bit 1 of :ref:`FFT_OPTIONS<FFT_OPTIONS>` is set and ESC motor rpm telemetry is available, then the measurement window for the FFT is centered about the motor(s) frequency as reported by ESC telemetry. This will generate a GCS warning message if noise from any motor greater than 40db is passing through the filter chain, and identify its level, motor number, and frequency. This bit must be used with bit 0 also set.
+
+Typical Use
+===========
+
+A typical use of the FFT notch filter is in addition to other dynamic harmonic notch filters (Throttle, ESC, or RPM based). In these configurations, using the post LPF FFT Window :ref:`FFT_OPTIONS<FFT_OPTIONS>` bit will yield the best overall filtering results by positioning the FFT filter to target noise not filtered by the other notch filter and gyro LPF (:ref:`INS_GYRO_FILTER<INS_GYRO_FILTER>`.
+
+Additional Information
+======================
 
 For those interested in the details of how this feature works and tradeoffs in some of the advanced parameters, not normally adjusted by users, the :ref:`In-Flight FFT: How it Works <common-imu-fft-how-it-works>` document describes the operation and these advanced parameters.
 
