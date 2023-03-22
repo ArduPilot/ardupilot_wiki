@@ -115,10 +115,10 @@ The script provides numerous individual tricks, and a table of their IDs is prov
  25  Laydown Humpty            radius  height                                Yes        
  26  Barrell Roll              radius  length       # spirals                No
  27  Straight Hold             length  bank angle                            No
- 28  Partial Circle 	       radius  bank angle              				 No
- 30  Eight Point Roll 	       length                                  		 No
- 31  Multi Point Roll 	       length  num points 			                 No  
- 32  Side Step                 radius  bank angle              				 No
+ 28  Partial Circle 	          radius  bank angle              				  No
+ 30  Eight Point Roll 	       length                                  		  No
+ 31  Multi Point Roll 	       length  num points 			                    No  
+ 32  Side Step                 radius  bank angle              				  No
 ==== ========================  ======  ===========  ==========   ==========  ==========
 
 To use as part of a mission, you would insert a SCRIPT_TIME mission item as shown:
@@ -143,6 +143,8 @@ Setup
 - For each trick/schedule, set its corresponding ``TRIKn_ID/ARG1/ARG2/ARG3/ARG4`` parameters. For example, if you wish TRIK3 to be a Vertical Box, 50 meters tall, 100 meters long, with corner radii of 15 meters, set ``TRIK3_ID`` = 5, ``TRIK3_ARG1`` = 100, ``TRIK3_ARG2`` = 50, and ``TRIK3_ARG3`` = 15. Other TRIK3 argument values are ignored.
 - Setting the activation switch to mid position will identify the trick number selected by the selection channel on the ground station or TX, if running :ref:`Yaapu <common-frsky-yaapu>` telemetry.
 - You can abort out of the trick by putting activation switch low, change modes, or set selector to 0. A trick or sequence will also abort if the programmed trajectory is not being met with an error limit. This usually indicates a lack of sufficient vehicle tuning or power.
+
+.. note: Do not rely on defaults for ``TRIKx`` parameters...they need to be setup for each trick!
 
 Remember: ALTITUDE IS YOUR FRIEND! dont attempt your first one below 200feet! and FPV is a good way to try it out first, if you have trouble with seeing the vehicle at that altitude.
 
