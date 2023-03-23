@@ -4,8 +4,8 @@
 ArduPilot Style Guide
 =====================
 
-In order to improve the readability of the ArduPilot code and help new
-users pick up the code quickly please use the following styles.
+In order to improve the readability of the ArduPilot code, and help new
+users pick up the code more quickly, please use the following styles. Code submitted may be rejected if these styles are not followed.
 
 .. note::
 
