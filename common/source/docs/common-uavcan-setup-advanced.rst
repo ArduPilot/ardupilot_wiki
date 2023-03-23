@@ -110,12 +110,27 @@ DroneCAN Rangefinder configuration
 
 Set ``RNGFNDx_TYPE`` = 24 to enable DroneCAN rangefinder type. Rangefinder data received over DroneCAN will only be used if the received sensor_id matches the parameter ``RNGFNDx_ADDR``. For AP_Periph firmware based adaptor nodes, this value is 0, so ``RNGFNDx_ADDR`` must be set to 0. Other DroneCAN rangefinders may differ. See also :ref:`DroneCAN Adaptor Node<common-uavcan-adapter-node>` instructions.
 
+DroneCAN Options
+================
+
+Several options for each DroneCAN driver can be selected via the :ref:`CAN_D1_UC_OPTION<CAN_D1_UC_OPTION>` and :ref:`CAN_D2_UC_OPTION<CAN_D2_UC_OPTION>` bitmask parameters. Default is not set:
+
+====================      =================
+CAN_Dx_UC_OPTION bit      Function when set
+====================      =================
+0                         ClearDNADatabase, :ref:`see below <dronecan_node_conflicts>`
+1                         IgnoreDNANodeConflicts, :ref:`see below <dronecan_node_conflicts>`
+2                         EnableCanfd, :ref:`CANFD below<dronecan_node_flexibledatarate>`
+====================      =================
+
 .. _dronecan_node_conflicts:
 
 DroneCAN Node ID Conflicts
 ==========================
 
 When a device is attached and recognized, it's node ID and hardware ID are entered into a database which is stored between power cycles. If multiple devices with the same node ID and different hardware IDs are used (swapping smart batteries, for example, with the same node ID), a conflict will arise in the database. This will require the use of the :ref:`CAN_D1_UC_OPTION<CAN_D1_UC_OPTION>` parameter to allow the database to be reset on the next boot, or conflicts in the database to be ignored.
+
+.. _dronecan_node_flexibledatarate:
 
 CAN FD (Flexible Data rate)
 ===========================
