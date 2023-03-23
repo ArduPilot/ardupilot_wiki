@@ -100,25 +100,25 @@ The script provides numerous individual tricks, and a table of their IDs is prov
  8   Rolling Circle            radius  num rolls                             No
  9   Half Cuban Eight          radius                                        Yes
  10  Half Reverse Cuban Eight  radius                                        Yes
- 11  Cuban Eight               radius                                        No         
- 12  Humpty Bump               radius  height                                Yes        
- 13  Straight Flight           length  bank angle                            No         
- 14  Scale Figure Eight        radius  bank angle                            No         
- 15  Immelmann Turn            radius                                        Yes        
- 16  Split-S                   radius                                        Yes        
- 17  Upline-45                 radius  height gain                           No         
- 18  Downline-45               radius  height loss                           No         
- 19  Stall Turn                radius  height       direction                Yes        
- 20  Procedure Turn            radius  bank angle   step-out                 Yes        
- 21  Derry Turn                radius  bank angle                            No         
- 23  Half Climbing Circle      radius  height       bank angle               Yes        
- 25  Laydown Humpty            radius  height                                Yes        
+ 11  Cuban Eight               radius                                        No
+ 12  Humpty Bump               radius  height                                Yes
+ 13  Straight Flight           length  bank angle                            No
+ 14  Scale Figure Eight        radius  bank angle                            No
+ 15  Immelmann Turn            radius                                        Yes
+ 16  Split-S                   radius                                        Yes
+ 17  Upline-45                 radius  height gain                           No
+ 18  Downline-45               radius  height loss                           No
+ 19  Stall Turn                radius  height       direction                Yes
+ 20  Procedure Turn            radius  bank angle   step-out                 Yes
+ 21  Derry Turn                radius  bank angle                            No
+ 23  Half Climbing Circle      radius  height       bank angle               Yes
+ 25  Laydown Humpty            radius  height                                Yes
  26  Barrell Roll              radius  length       # spirals                No
  27  Straight Hold             length  bank angle                            No
- 28  Partial Circle 	          radius  bank angle              				  No
- 30  Eight Point Roll 	       length                                  		  No
- 31  Multi Point Roll 	       length  num points 			                    No  
- 32  Side Step                 radius  bank angle              				  No
+ 28  Partial Circle            radius  bank angle                            No
+ 30  Eight Point Roll          length                                        No
+ 31  Multi Point Roll          length  num points                            No
+ 32  Side Step                 radius  bank angle                            No
 ==== ========================  ======  ===========  ==========   ==========  ==========
 
 To use as part of a mission, you would insert a SCRIPT_TIME mission item as shown:
