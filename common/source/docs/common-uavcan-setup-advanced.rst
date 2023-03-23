@@ -122,6 +122,8 @@ CAN_Dx_UC_OPTION bit      Function when set
 1                         IgnoreDNANodeConflicts, :ref:`see below <dronecan_node_conflicts>`
 2                         EnableCanfd, :ref:`CANFD below<dronecan_node_flexibledatarate>`
 3                         IgnoreDNANodeUnhealthy, ignore disconnected node ids
+4                         SendServoAsPWM, instead of sending servo positions as -1 to -1, send as PWM values in us
+5                         SendGNSS, send GPS fix and status info over DroneCAN, used by some gimbals
 ====================      =================
 
 .. _dronecan_node_conflicts:
