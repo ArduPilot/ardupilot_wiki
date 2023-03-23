@@ -121,6 +121,7 @@ CAN_Dx_UC_OPTION bit      Function when set
 0                         ClearDNADatabase, :ref:`see below <dronecan_node_conflicts>`
 1                         IgnoreDNANodeConflicts, :ref:`see below <dronecan_node_conflicts>`
 2                         EnableCanfd, :ref:`CANFD below<dronecan_node_flexibledatarate>`
+3                         IgnoreDNANodeUnhealthy, ignore disconnected node ids
 ====================      =================
 
 .. _dronecan_node_conflicts:
