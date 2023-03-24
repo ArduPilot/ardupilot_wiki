@@ -37,7 +37,7 @@ Connecting to the Autopilot
 
 Connect the gimbal's RX, TX and GND pins to one of the autopilot's serial ports as shown above.
 
-Connect with a ground station and set the following parameters.  The params below assume the autopilot's telem2 port is used,
+Connect with a ground station and set the following parameters.  The params below assume the autopilot's telem2 port is used and the Camera1 control instance,
 
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 8 ("SToRM32 Gimbal Serial")
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps
@@ -47,7 +47,7 @@ Connect with a ground station and set the following parameters.  The params belo
 - :ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>` to -80
 - :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to 80
 - :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to 90 (deg/s) to control speed of gimbal when using RC targetting
-- `CAM_TRIGG_TYPE`` to 3 (Mount / Siyi) to allow control of the camera
+- :ref:`CAM1_TYPE<CAM1_TYPE>` to 4 (Mount / Siyi) to allow control of the camera
 - :ref:`RC6_OPTION <RC6_OPTION>` = 213 ("Mount Pitch") to control the gimbal's pitch angle with RC channel 6
 - :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw angle with RC channel 7
 - :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Lock") to switch between "lock" and "follow" mode with RC channel 8
