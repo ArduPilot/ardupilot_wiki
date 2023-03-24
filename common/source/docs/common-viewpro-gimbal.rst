@@ -29,7 +29,7 @@ Connect to the autopilot with a ground station and do the following
 - Set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 28 (Scripting).  This assumes the gimbal is attached to the autopilot's Serial2 port but any serial port can be used.
 - Set :ref:`SCR_ENABLE <SCR_ENABLE>` = 1 to enable scripting and reboot the autopilot
 - Set :ref:`MNT1_TYPE <MNT1_TYPE>` = 9 (Scripting) to enable the mount/gimbal scripting driver
-- Set ``CAM_TRIGG_TYPE`` = 3 (Mount) to enable camera control using the mount driver
+- Set :ref:`CAM1_TYPE<CAM1_TYPE>` = 4 (Mount) to enable the camera1 instance control using the mount driver
 - Download mount-viewpro-driver.lua (`from here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/drivers>`__) and copy it to the autopilot's SD card in the APM/scripts directory and reboot the autopilot
 - Optionally for gimbals with multiple cameras, an auxiliary switch can control the active camera by doing the following
   

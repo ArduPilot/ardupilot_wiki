@@ -41,7 +41,7 @@ Camera Control and GeoTagging
 
 ArduPilot allows you to :ref:`configure the camera shutter output port <common-camera-shutter-with-servo>` (servo, relay).
 
-.. note:: be sure to set the ``CAM_MIN_INTERVAL`` to be greater than the fastest the camera can take photos when using the camera trigger functions.
+.. note:: be sure to set the ``CAMx_INTRVAL_MIN`` to be greater than the fastest the camera can take photos when using the camera trigger functions.
 
 In :ref:`camera mission planning <common-camera-control-and-auto-missions-in-mission-planner>`
 you can specify when the camera shutter should trigger, or a distance

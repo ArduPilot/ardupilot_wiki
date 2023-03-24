@@ -34,10 +34,10 @@ Set the following parameters on the autopilot (assuming Telem2/Serial2 is used):
 -  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 57 (57200 baud)
 -  :ref:`SR2_POSITION <SR2_POSITION>` = 5 to send the vehicle's position to the camera at 5hz
 
-To allow triggering the taking of pictures during a mission or from a transmitter's auxiliary switch connect the "P3" 3-pin servo connector to the one of the autopilot's servo outputs.  In this example AUX OUT 1 (aka SERVO9) is used.  Then set the following parameters
+To allow triggering the taking of pictures during a mission or from a transmitter's auxiliary switch connect the "P3" 3-pin servo connector to the one of the autopilot's servo outputs.  In this example AUX OUT 1 (aka SERVO9) is used.  Then set the following parameters (Assuming the Camera1 instance):
 
 - :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` = 10 (Camera Trigger)
-- `CAM_SERVO_ON`` = 1900
+- :ref:`CAM1_SERVO_ON<CAM1_SERVO_ON>` = 1900
 - `CH8_OPT`` or :ref:`RC8_OPTION <RC8_OPTION>` = 9 (Camera Trigger) to enable triggering from transmitter switch 8
 
 Configure the Phone
