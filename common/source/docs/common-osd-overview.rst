@@ -7,7 +7,8 @@ OSD
 .. image:: ../../../images/osd.jpg
     :target: ../_images/osd.jpg
 
-Onboard OSD functionality was introduced with the ChibiOS port to ArduCopter 3.6x, ArduPlane 3.9x and ArduRover 3.5x firmware versions. Mainly aiming at aio-boards with onboard MAX7456-type chips, it enables overlay of FC data using the onboard video system. Once enabled, it uses various panel items that can individually be set active and positioned on the screen using respective parameters. It allows to setup multiple screen layouts and switch between those using a spare RC channel.
+OSD functionality is provided for on-board OSDs using MAX7456-type chips and external MSP based OSDs, including DJI Goggles, and goggles using DisplayPort.
+This enables overlay of FC data on the video. Once enabled, it uses various panel items that can individually be set active and positioned on the screen using respective parameters. It allows to setup multiple screen layouts and switch between those using a spare RC channel. It also allows the display and change of sets of parameters using stick gestures or RC transmitters, in certain cases.
 
 .. note:: 
 
@@ -50,6 +51,11 @@ Several font sets are included and can be changed during runtime (and those who 
 
 MAVftp might be a convenient option to upload files to your SD card without having to physically remove it from your autopilot. Font files, font editor, and utilities to convert to a .bin file from .mcm are `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts>`__. If downloading the editor or a font's .bin file from this site, be sure to use the ``Download` button, rather than selecting ``Raw``, and then right click saving, as you would the .mcm or .py files.
 
+To enable the use of external MSP OSDs or DisplayPort systems see:
+
+- :ref:`common-minim-osd-quick-installation-guide`
+- :ref:`common-msp-osd-overview-4.2`
+- :ref:`common-paramosd`
 
 .. _screen-switching:
 
