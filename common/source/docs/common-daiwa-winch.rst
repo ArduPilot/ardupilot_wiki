@@ -55,7 +55,7 @@ Set the following parameters
 - :ref:`SERVO10_TRIM <SERVO10_TRIM>` = 1500
 - :ref:`SERVO10_MAX <SERVO10_MAX>` = 2000
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 31 (Winch).  Note this assumes the Winch's telemetry is connected to Serial2/Telem2
-- :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115
+- :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115 (Some versions of the winch use 38400 baud rate. If you are getting "Winch unhealthy" messages with everything else set up correctly, try setting :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 38)
 - :ref:`RC6_OPTION <RC6_OPTION>` = 45 (Winch Control) to allow controlling the winch speed from the transmitter's channel 6 knob
 - :ref:`RC6_DZ <RC6_DZ>` = 30.  This deadzone is used to detect whether the pilot has moved the winch control knob to retake control from autonomous operation
 - :ref:`RC6_TRIM <RC6_TRIM>` = The mid value between :ref:`RC6_MIN <RC6_MIN>` and :ref:`RC6_MAX <RC6_MAX>` which is normally close to 1500
