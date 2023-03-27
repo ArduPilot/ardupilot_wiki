@@ -43,6 +43,7 @@ The minimum steps to get the camera working include
 
 - `Setup adb <https://docs.modalai.com/setup-adb/>`__ on an Ubuntu workstation
 - Connect the camera to the Ubuntu workstation, start and adb shell and `run voxl-configure-vision-px4 <https://docs.modalai.com/voxl-vision-px4-installation/>`__ (Note: you may simply press <enter> when asked for an IP address)
+- run "systemctl enable voxl-mavlink-server" to configure the mavlink server to start automatically
 - Optionally `run "systemctl status voxl-vision-px4" <https://docs.modalai.com/voxl-cam-user-guide-core/#view-visual-inertial-odometry-data>`__ to check if VOXL is producing good position estimates
 
 Autopilot Configuration
