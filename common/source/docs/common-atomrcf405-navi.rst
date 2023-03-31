@@ -8,7 +8,7 @@ AtomRC F405-NAVI
     :target: ../_images/atomrcf405-navi.jpg
     :width: 450px
 
-the above image and some content courtesy of `mateksys.com <http://atomrc.com/>`__
+the above image and some content courtesy of `ATOMRC <http://atomrc.com/>`__
 
 .. note::
 
