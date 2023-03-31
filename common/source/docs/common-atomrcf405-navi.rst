@@ -110,7 +110,7 @@ With this option, :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` must be set to "23",
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM (SBUS requires external inversion on other UARTs). See :ref:`common-rc-systems` for details.
 
-.. note:: the 5v pin above the SBUS pin is powered when USB is connected. All other 5V pins are only powered when battery is present.
+.. note:: the 5v pin above the SBUS pin and the 5V pin in the GPS connector are powered when USB is connected. All other 5V pins are only powered when battery is present.
 
 Battery Monitor Configuration
 =============================
