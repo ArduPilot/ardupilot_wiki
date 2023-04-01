@@ -58,6 +58,10 @@ Connect with a ground station and set the following parameters.  The params belo
   - :ref:`RC9_OPTION <RC9_OPTION>` = 168 ("Camera Manual Focus") to adjust focus in and out
   - :ref:`RC9_OPTION <RC9_OPTION>` = 169 ("Camera Auto Focus") to trigger auto focus
 
+.. warning::
+
+    A8 does not support zoom at 4K recording resolution
+
 Configuring the Gimbal
 ----------------------
 
