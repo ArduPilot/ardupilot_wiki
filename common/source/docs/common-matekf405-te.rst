@@ -29,6 +29,8 @@ This family consists of:
 
 the above images and some content courtesy of `mateksys.com <http://www.mateksys.com/>`__
 
+.. note: some members of this family have SD cards, some only flash for log storage. On SD equipped boards, be sure to set :ref:`LOG_BACKEND_TYPE<LOG_BACKEND_TYPE>` = 1.
+
 Specifications
 ==============
 
