@@ -113,16 +113,6 @@ Clone the `Robot Pose Publisher <http://wiki.ros.org/robot_pose_publisher>`__ pa
     cd $HOME/catkin_ws/src
     git clone https://github.com/GT-RAIL/robot_pose_publisher.git
 
-Modify the robot_pose_publisher.cpp file
-
-::
-
-    cd $HOME/catkin_ws/src/robot_pose_publisher/src
-    gedit robot_pose_publisher.cpp
-
-    # modify line 40 to look like below ("false" has been changed to "true")
-    nh_priv.param<bool>("is_stamped", is_stamped, true);
-
 Create the cartographer_ros launch file using your favourite editor (like "gedit")
 
 ::
@@ -134,7 +124,6 @@ Copy-paste the contents below into the file
 
 ::
 
-    <?xml version="1.0"?>
        <launch>
           <param name="/use_sim_time" value="false" />
           <node name="cartographer_node"
@@ -142,8 +131,8 @@ Copy-paste the contents below into the file
                 type="cartographer_node"
                 args="-configuration_directory $(find cartographer_ros)/configuration_files -configuration_basename cartographer.lua"
                 output="screen">
-                <remap from="odom" to "/mavros/local_position/odom" />
-                <remap from="imu" to "/mavros/imu/data" />
+                <remap from="odom" to="/mavros/local_position/odom" />
+                <remap from="imu" to="/mavros/imu/data" />
           </node>
           <node name="cartographer_occupancy_grid_node"
                 pkg="cartographer_ros"
@@ -152,7 +141,10 @@ Copy-paste the contents below into the file
                 pkg="robot_pose_publisher"
                 type="robot_pose_publisher"
                 respawn="false"
-                output="screen" />
+                output="screen" >
+                <param name="is_stamped" type="bool" value="true"/>
+                <remap from="robot_pose" to="/mavros/vision_pose/pose" />
+          </node>
           <node pkg="tf" type="static_transform_publisher" name="base_to_laser_broadcaster" args="0 0 0 0 0 0 base_link laser 100" />
        </launch>
 
@@ -222,20 +214,6 @@ Copy-paste the contents below into the file
     POSE_GRAPH.optimize_every_n_nodes = 30
 
     return options
-
-Modify mavros's node.launch file with your favourite editor (like gedit shown below)
-
-::
-
-    roscd mavros
-    cd launch
-    sudo gedit node.launch
-
-After <rosparam command="load" file="$(arg config_yaml)" /> add a line like below.   This causes the `mavros vision_pose_estimate plugin <https://github.com/mavlink/mavros/blob/master/mavros_extras/src/plugins/vision_pose_estimate.cpp>`__ (which uses the "/mavros/vision_pose/pose" topic) to pull data from the "/robot_pose" topic output by cartographer
-
-::
-
-    <remap from="/mavros/vision_pose/pose" to="/robot_pose" />
     
 .. note::
 
