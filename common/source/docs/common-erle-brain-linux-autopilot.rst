@@ -109,9 +109,8 @@ Run the following instructions in the bash command prompt to build ArduPilot on 
 
 ::
 
-    $ git clone https://github.com/erlerobot/ardupilot
+    $ git clone --recurse-submodules https://github.com/erlerobot/ardupilot
     $ cd ardupilot
-    $ git submodule update --init --recursive
 
 ::
 
@@ -235,9 +234,8 @@ Run the following instructions in the bash command prompt to build ArduPilot on 
 
 ::
 
-    $ git clone https://github.com/erlerobot/ardupilot
+    $ git clone --recurse-submodules https://github.com/erlerobot/ardupilot
     $ cd ardupilot
-    $ git submodule update --init --recursive
 
 ::
 

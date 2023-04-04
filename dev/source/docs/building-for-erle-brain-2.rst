@@ -36,9 +36,8 @@ Clone the source:
     #Move to home
     cd ~/
     #Clone the ArduPilot repository in home
-    git clone https://github.com/ArduPilot/ardupilot.git
+    git clone --recurse-submodules https://github.com/ArduPilot/ardupilot.git
     cd ardupilot
-    git submodule update --init --recursive
 
 Build
 -----

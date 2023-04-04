@@ -98,7 +98,7 @@ Download source
 
    ::
 
-       git clone git://github.com/ArduPilot/ardupilot.git
+       git clone --recurse-submodules git://github.com/ArduPilot/ardupilot.git
 
    .. image:: ../images/git_bash_clone_ardupilot.jpg
        :target: ../_images/git_bash_clone_ardupilot.jpg
