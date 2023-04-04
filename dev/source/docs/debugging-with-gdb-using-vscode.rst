@@ -33,7 +33,7 @@ In order to use GDB, you need to configure your SITL build with debug symbols. U
 
 Setting up VSCode Debugger
 ==========================
-With the VSCode open to the ArduPilot directory. Open the `Run and Debug` menu (Ctrl+Shift+D). In the Run and Debug menu, `create a launch.json file`. Then `Add Configuration`, it should open a launch.json file for setting up debugging configurations.
+With VSCode open to the ArduPilot directory. Open the `Run and Debug` menu (Ctrl+Shift+D). Within the `Run and Debug` menu, select `create a launch.json file`. Then select `Add Configuration`, it should open a launch.json file for setting up debugging configurations.  An example launch.json file can be found below.  Copy-paste the example into the newly created launch.json file in VSCode, overwitting anything that has was pre-defined in the file, and save the file.  This example file is a good place to start but can be modified to your liking.  Should you need to access or edit the file in the future, you can find it in the .vscode directory, or you can simply click on the cog icon in the `Run and Debug` menu.
 
 .. image:: ../images/VSCode-config1.png
     :target: ../_images/VSCode-config1.png
