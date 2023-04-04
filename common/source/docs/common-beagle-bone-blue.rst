@@ -278,7 +278,7 @@ Install Ubuntu 20.04 64-Bit as build machine (e.g. can be VM or github action).
 
     sudo apt update
     sudo apt install git
-    git clone https://github.com/ardupilot/ardupilot.git
+    git clone --recurse-submodules https://github.com/ardupilot/ardupilot.git
     cd ardupilot
 
 use either the stable tag ``ArduPlane-stable`` or the current Plane branch ``Plane-4.1`` (in the moment both refer to Plane-4.1.6) - make sure to use a ``stable`` version
@@ -287,7 +287,6 @@ use either the stable tag ``ArduPlane-stable`` or the current Plane branch ``Pla
 
     ./Tools/environment_install/install-prereqs-ubuntu.sh
     git checkout Plane-4.1
-    git submodule update --init --recursive
 
 ::
 

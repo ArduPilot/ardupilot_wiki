@@ -60,9 +60,8 @@ Download and compile ArduCopter
 
    ::
 
-       git clone https://github.com/ArduPilot/ardupilot.git
+       git clone --recurse-submodules https://github.com/ArduPilot/ardupilot.git
        cd ardupilot
-       git submodule update --init --recursive
 
 #. Building the flight control firmware is nearly identical for
    :ref:`building for the Pixhawk <building-px4-with-make>`

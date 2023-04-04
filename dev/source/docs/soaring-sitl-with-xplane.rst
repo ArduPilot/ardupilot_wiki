@@ -117,9 +117,8 @@ Setting up ArduPlane SITL
     
        ::
 
-           git clone git://github.com/ArduPilot/ardupilot.git
+           git clone --recurse-submodules git://github.com/ArduPilot/ardupilot.git
            cd ardupilot
-           git submodule update --init --recursive
 
     c) Delete the contents of *ArduPilot\\Logs* directory and, assuming you are in the *ArduPilot* directory in Cygwin, run
      

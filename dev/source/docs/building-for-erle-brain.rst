@@ -53,9 +53,8 @@ Clone the source:
 ::
 
     cd 
-    git clone https://github.com/erlerobot/ardupilot.git
+    git clone --recurse-submodules https://github.com/erlerobot/ardupilot.git
     cd ardupilot
-    git submodule update --init --recursive
 
 Build
 -----

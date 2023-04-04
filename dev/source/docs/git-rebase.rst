@@ -31,12 +31,14 @@ the "Git Shell" or "Git Bash" utility that should already be :ref:`installed <gi
    ::
 
        git checkout topic-branch
+       git submodule update --init --recursive
 
    If you want to create a new branch to work on which you would like to rebase on top of the ArduPilot master branch,
 
    ::
 
        git checkout -b topic-branch
+       git submodule update --init --recursive
 
 #. Ensure your repository is connected to the upstream repository you
    forked from.
@@ -51,6 +53,7 @@ the "Git Shell" or "Git Bash" utility that should already be :ref:`installed <gi
    ::
 
        git fetch upstream
+       git submodule update --init --recursive
 
 #. Rebase your current branch from the upstream's master branch.
 
@@ -58,11 +61,11 @@ the "Git Shell" or "Git Bash" utility that should already be :ref:`installed <gi
 
        git rebase upstream/master
 
-#. Update your local repo's submodules
+#. Initialize and update your local repo's submodules
 
    ::
 
-       git submodule update --recursive
+       git submodule update --init --recursive
 
 #. Check that the rebase was successfull. Using cmdline (``git log --oneline --decorate --all --graph`` , type q to exit) or a GUI tool like gitk, sourcetree, etc. Your commits should appear on top of ArduPilot master lastest commit, like show on previous picture.
 
