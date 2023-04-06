@@ -49,9 +49,11 @@ Follow the instructions below to test in the simulator or on a real vehicle.  If
 - Lower the auxiliary switch at any time to re-enable the GPS
 - Post testing, lower or raise the :ref:`FS_DR_TIMEOUT <FS_DR_TIMEOUT>` parameter to reflect the maximum number of seconds the vehicle can maintain control without GPS
 
-Video
-=====
+Videos
+======
 
 ..  youtube:: G-vYP_IQZeM
     :width: 100%
 
+..  youtube:: Xq-ecwgFKzA
+    :width: 100%
