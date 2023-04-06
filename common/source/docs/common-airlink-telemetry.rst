@@ -15,7 +15,7 @@ Features
 ========
 - Telemetry command and control.
 - Send data to `Flightradar24 <https://www.flightradar24.com>`__ and `Open Glider Network <https://www.glidernet.org/>`__ (ADS-B).
-- Multiple vehicles control (in development).
+- Multiple vehicles control.
 - Recieve RTK correction data for GNSS from Internet (in development).
 
 Technical Specifications
@@ -67,4 +67,5 @@ Videos
 
 Where to buy
 ============
+-   `astroX store <https://cli.co/Ps7X8N8>`_
 -   `Airlink store <https://rushop.air-link.space/>`_
