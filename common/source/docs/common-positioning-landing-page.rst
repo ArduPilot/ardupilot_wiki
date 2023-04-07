@@ -26,8 +26,8 @@ GPS/Compass
     Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>    
     Holybro Micro M8N GPS Module <https://shop.holybro.com/micro-m8n-gps_p1009.html> 
     Holybro Nano Ublox M8 5883 GPS Module <https://shop.holybro.com/nano-ublox-m8-5883-gps-module_p1236.html> 
-    Holybro M8N (Pixhawk 4) GPS Module <https://shop.holybro.com/pixhawk-4-gps-module_p1094.html>
-    Holybro M9N GPS Module <http://www.holybro.com/product/holybro-m9n-gps/>
+    Holybro M8N (Pixhawk 4) GPS Module <https://holybro.com/collections/gps-rtk-systems/products/m8n-gps>
+    Holybro M9N GPS Module <https://holybro.com/collections/gps-rtk-systems/products/m9n-gps>
     Matek DroneCAN AP_Periph GNSS M10-L4-3100 <http://www.mateksys.com/?portfolio=m10-l4-3100>
     Matek SAM-M8Q <http://www.mateksys.com/?portfolio=sam-m8q>
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
@@ -54,6 +54,8 @@ These GPS can incorporate real time kinematic data, either internally generated 
     Freefly RTK GPS Ground Station <https://store.freeflysystems.com/products/rtk-gps-ground-station>
     Hex Here+ RTK Receiver <common-here-plus-gps>
     Hitec PositionPro GNSS <https://www.hiteccs.com/drones/peripheral-details/positionpro-gnss-receiver/>
+    Holybro DroneCAN H-RTK F9P Rover <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-rover>
+    Holybro DroneCAN H-RTK F9P Helical <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-helical>
     Holybro RTK M8P Family <common-holybro-rtk-m8p>
     Holybro RTK F9P Family <common-holybro-rtk-f9p>
     LOCOSYS HAWK R1 RTK GNSS / R2 RTK GNSS + Compass<common-gps-locosys>
