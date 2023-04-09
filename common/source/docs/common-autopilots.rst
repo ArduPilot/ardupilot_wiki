@@ -30,6 +30,7 @@ Open hardware
     Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
     Holybro Pixhawk6X <common-holybro-pixhawk6X>
     Holybro Pixhawk6C <common-holybro-pixhawk6C>
+    Holybro Pix32v6(Pixhawk6C variant) <common-holybro-pix32v6>
     mRo Pixhawk <common-pixhawk-overview>
     mRo Pixracer <common-pixracer-overview>
     mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/m10021a.htm>
