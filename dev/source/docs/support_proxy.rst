@@ -27,32 +27,23 @@ use when connecting. It will be a 5 or 6 digit number. In the diagrams
 below we will use the example number '10001'. Please replace that with
 the number you have been told to use.
 
-To get started, select the Mavlink Mirror option under Setup->Advanced
+To get started, select the Support Proxy option under Setup->Advanced
 in MissionPlanner:
 
-.. image:: ../images/MissionPlanner_start_mavlink_mirror.jpg
-    :target: ../_images/MissionPlanner_start_mavlink_mirror.jpg
+.. image:: ../images/MissionPlanner_start_support1.jpg
+    :target: ../_images/MissionPlanner_start_support1.jpg
 
-Now choose "UDP client", make sure you tick the "Write access" tick
-box and choose a baudrate. Any baud rate will do (it does not affect
-the speed of the connection):
+If you don't see this option then you have an old version of
+MissionPlanner and should update to the latest release.
 
-.. image:: ../images/MissionPlanner_mavlink_mirror2.jpg
-    :target: ../_images/MissionPlanner_mavlink_mirror2.jpg
+Next enter the 5 or 6 digit ID that your support engineer have you and press connect:
 
-now click connect and choose support.ardupilot.org as the hostname:
-
-.. image:: ../images/MissionPlanner_mavlink_mirror3.jpg
-    :target: ../_images/MissionPlanner_mavlink_mirror3.jpg
-
-now click OK and choose the port number you have been asked to
-use. This is the 5 or 6 digit code the support engineer has given you:
-
-.. image:: ../images/MissionPlanner_mavlink_mirror4.jpg
-    :target: ../_images/MissionPlanner_mavlink_mirror4.jpg
+.. image:: ../images/MissionPlanner_start_support2.jpg
+    :target: ../_images/MissionPlanner_start_support2.jpg
 
 at this point you are streaming your mavlink data to the proxy
-server. The support person will be able to connect and help you.
+server. The support person will be able to connect and help you. You
+can click the Stop button to stop forwarding your link.
 
 .. note::
 
