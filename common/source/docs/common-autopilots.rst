@@ -95,6 +95,7 @@ Closed hardware
     Swan-K1 <common-Swan-K1>
     SpeedyBee F4 (this board currently is non-verified) <common-speedybeef4>
     SpeedyBee F4 V3 <common-speedybeef4-v3>
+    SpeedyBeeF405WING <common-speedybeef405wing>
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
 
