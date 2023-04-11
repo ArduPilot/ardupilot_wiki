@@ -11,6 +11,8 @@ DJI RS2 and RS3-Pro Gimbals
 
 ArduPilot 4.4 (and higher) support the `DJI RS2 <https://www.dji.com/rs-2>`__ and `DJI RS3-Pro <https://www.dji.com/jp/rs-3-pro>`__ handheld gimbals using a :ref:`Lua script <common-lua-scripts>`.  The driver relies on the gimbal supporting the "DJI R SDK" protocol which is only these two gimbals as far as we know.  Other gimbals including the very similar RSC2 and RS3 are not supported.
 
+Some images on this page are from the DJI SDK Protocol and User Interface instructions.
+
 What to Buy
 ===========
 
@@ -25,6 +27,12 @@ Connect the autopilot's CAN1 or CAN2 port to the Focus wheel as shown below
 .. image:: ../../../images/djirs2-gimbal-autopilot-connection.png
     :width: 450px
     :target: ../_images/djirs2-gimbal-autopilot-connection.png
+
+Alternatively the connection can be accomplished without a Focus wheel.  Note the image below shows the ports on the right side of the gimbal.  The right-side port may be used but the pin positions are rotated 180 deg.
+
+.. image:: ../../../images/djirs2-gimbal-autopilot-connection-option2.png
+    :width: 450px
+    :target: ../_images/djirs2-gimbal-autopilot-connection-option2.png
 
 Connect to the autopilot with a ground station and do the following
 
