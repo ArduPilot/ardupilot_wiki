@@ -41,3 +41,9 @@ Testing
 =======
 
 See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal
+
+Videos
+======
+
+..  youtube:: Le1lWbucnF4
+    :width: 100%
