@@ -100,7 +100,7 @@ The main steps for building the docs are:
    .. code-block:: bash
 
        cd /vagrant
-       python update.py
+       python3 update.py
 
 Setup with Docker
 -----------------
@@ -131,11 +131,11 @@ As shown in the last step of the vagrant instructions above, use update.py to bu
 
 .. code-block:: bash
 
-    python update.py (to build all wikis)
-    python update.py --site copter  (to build just the copter wiki)
-    python update.py --site plane   (to build just the plane wiki)
-    python update.py --site rover   (to build just the rover wiki)
-    python update.py --site dev     (to build just this developer wiki)
+    python3 update.py (to build all wikis)
+    python3 update.py --site copter  (to build just the copter wiki)
+    python3 update.py --site plane   (to build just the plane wiki)
+    python3 update.py --site rover   (to build just the rover wiki)
+    python3 update.py --site dev     (to build just this developer wiki)
 
 The update.py script will copy the common files into each wiki subdirectory and then build each wiki.
 
@@ -209,7 +209,7 @@ Restview can be installed with:
 
 .. code-block:: bat
 	
-	python -m pip install restview
+	python3 -m pip install restview
 		
 The restview executable will be installed in the **Scripts** folder of the Python main folder.
 Restview will start the on-the-fly HTML rendering and open a tab page in your preferred web browser.

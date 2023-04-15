@@ -87,7 +87,7 @@ so you will need to rebuild pymavlink to include your custom message.
  
  - Remove the currently installed version of pymavlink. ``pip uninstall pymavlink``
  - Install the updated version. CD to ``ardupilot/modules/mavlink/pymavlink``
-   and run ``python setup.py install --user``
+   and run ``python3 setup.py install --user``
  - Mavproxy is now capable of sending or receiving the new message. To ask it
    to print out or send your message you need to implement a module. Modules
    are python plugins that allow you to add functionality to Mavproxy. By default

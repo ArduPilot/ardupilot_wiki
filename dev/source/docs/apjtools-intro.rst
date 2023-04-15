@@ -31,13 +31,13 @@ How to update the Defaults
 
 ::
 
-    python apj_tool.py --set-file param-defaults.parm arducopter.apj
+    python3 apj_tool.py --set-file param-defaults.parm arducopter.apj
 
 - Check the defaults have been applied correctly with this command
 
 ::
 
-    python apj_tool.py --show arducopter.apj
+    python3 apj_tool.py --show arducopter.apj
 
 - Load the modified .apj file to your vehicle and check the defaults have worked correctly
 
@@ -48,7 +48,7 @@ Additional Info
 
 ::
 
-    python apj_tool.py --help
+    python3 apj_tool.py --help
 
 - The parameters will be the new default values only if the user has not modified them
 - If all parameters are reset to their defaults, they will return to the values specified in the file
