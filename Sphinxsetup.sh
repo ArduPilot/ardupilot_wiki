@@ -21,12 +21,6 @@ sudo apt-get install -y unzip git imagemagick curl wget make python3
 # Install packages release specific
 if [ ${DISTRIBUTION_CODENAME} = 'bionic' ]; then
   sudo apt-get install -y python3-distutils
-elif [ ${DISTRIBUTION_CODENAME} = 'focal' ]; then
-  sudo apt-get install -y python-is-python3
-else
-    if [ ${DISTRIBUTION_ID} = 'Ubuntu' ]; then
-        sudo apt-get install -y python-is-python3
-    fi
 fi
 
 # For WSL (esp. version 2) make DISPLAY empty to allow pip to run
