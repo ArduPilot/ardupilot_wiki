@@ -637,5 +637,34 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://www.superwake.ca/
 
+    *
+      - .. image:: ../../../images/supporters/supporters_cavok.png
+            :width: 250px
+            :align: center
+            :target:  http://www.cavok-uas.com/
+
+      - .. image:: ../../../images/supporters/supporters_triaddrones.png
+            :width: 250px
+            :align: center
+            :target:  https://www.triaddrones.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporter_sdmodel.jpg
+            :width: 250px
+            :align: center
+            :target:  https://www.sdmodel.com.tw/
+
+      - .. image:: ../../../images/supporters/supporters_botlab.png
+            :width: 250px
+            :align: center
+            :target:  https://botlabdynamics.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_adti.jpg
+            :width: 250px
+            :align: center
+            :target:  https://www.adti.camera/
+
+      -
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
