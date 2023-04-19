@@ -31,6 +31,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Qiotek <http://www.qio-tek.com/>`__
 * `RF Design <http://store.rfdesign.com.au/>`__
 * `Rotoye <https://rotoye.com/>`__ (Smart Batteries)
+* `SD Model <https://www.sdmodel.com.tw/>`__
 * `Sky-Drones <https://sky-drones.com/store>`__
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
 * `uAvionix <https://uavionix.com/>`__
