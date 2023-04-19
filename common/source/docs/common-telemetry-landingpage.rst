@@ -54,6 +54,7 @@ Long Range
     LTM telemetry <common-ltm-telemetry>
     RFD900 <common-rfd900>
     Robsense SwarmLink <common-telemetry-robsense-swarmlink>
+    Rockblock Satellite Modem <common-telemetry-rockblock>
     SPL Satellite Telemetry <https://discuss.ardupilot.org/t/stretching-comm-links-from-indoors-to-the-globe/45896>
     UAVCast 3G/4G Cellular <common-uavcast-telemetry>
     XBStation 4G LTE Link <common-xbstation-telemetry>
