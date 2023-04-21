@@ -61,28 +61,12 @@ If calibration fails:
 - if compass calibration still fails it may help to raise :ref:`COMPASS_OFFS_MAX <COMPASS_OFFS_MAX>` from 850 to 2000 or even 3000
 - finally, if a single compass is not calibrating and you trust the others, disable it.
 
-Onboard Calibration using Stick Gestures (no GCS)
-=================================================
+Onboard Calibration using RC Switch
+===================================
 
-.. note:: This feature has  been removed in firmware versions after 4.1.
+Onboard Calibration can be started using an RC switch instead using the Mission Planner technique above. This allows calibrating without the tangle of the USB cable.
 
-ArduPilot supports "Onboard Calibration using RC Controller stick gestures" meaning that the calibration routine runs on the autopilot with no GCS.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
-
-- requires RC calibration first
-- to start compass calibration hold throttle stick full up and full right yaw for 2 seconds
-- if your autopilot has a buzzer attached you should hear a single tone followed by short beep once per second
-- hold the vehicle in the air and rotate it so that each side (front, back, left, right, top and bottom) points down towards the earth for a few seconds in turn
-
-   .. figure:: ../../../images/accel-calib-positions-e1376083327116.jpg
-      :target: ../_images/accel-calib-positions-e1376083327116.jpg
-
-- upon successful completion three rising tones will be emitted and you will need to reboot the autopilot before it is possible to arm the vehicle.
-
-If calibration fails:
-
-- you will hear a failure tone and the calibration routine will restart
-- to cancel calibration at anytime hold throttle stick full up and full left yaw for 2 seconds
-- if, after multiple attempts, you are unable to calibrate the compass, Cancel with stick and use normal Onboard Calibration from GCS above
+Setup an RC channel to start the calibration by setting its ``RCx_OPTION`` to be "171". A high value on the channel will start calibrating all compasses and you would move the vehicle as above. A low value will cancel the calibration. The tones for success or failure above will be emitted.
 
 .. _large-vehicle-mag-cal:
 
