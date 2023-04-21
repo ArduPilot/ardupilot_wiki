@@ -23,6 +23,8 @@ The following units have been tested and are supported:
 - DroneCAN (adapted versions of the above serial units)
 - PiccoloCAN (`Currawong's ECU <https://www.currawong.aero/ecu/>`__ and `IntelliJect EFI <https://power4flight.com/uav-engine-products/uav-engine-control-units/intelliject-efi/>`__)
 
+.. note:: In addition, ArduPilot allows the addition of new EFI controller drivers via :ref:`common-lua-scripts`. For examples, see the `HFE CAN EFI driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_HFE.md>`__ or the `SkyPower CAN driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_SkyPower.md>`__
+
 Serial Setup
 ============
 
@@ -59,7 +61,14 @@ For the example below, the unit will be assumed to be attached to the first CAN 
 - :ref:`EFI_FUEL_DENS<EFI_FUEL_DENS>`: Fuel density to calculate fuel consumption
 - :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1 (first driver)
 - :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` = 4 (PiccoloCAN)
-- :ref:`CAN_D1_PC_ECU_ID<CAN_D1_PC_ECU_ID>`: Node ID to send throttle commands to
+- :ref:`CAN_D1_PC_ECU_ID<CAN_D1_PC_ECU_ID>`: Node ID to send throttle commands
+
+Using a Battery Monitor to Report Fuel Flow and Consumption
+===========================================================
+
+If an EFI is used in the system, either thru a LUA driver or the built-in drivers above, the fuel flow and consumption can be monitored using :ref:`BATT_MONITOR<BATT_MONITOR>` = 27. The fuel flow in liters/hour will be reported as amps, while the fuel consumed in milliliters will be reported as mah.
+
+.. note:: the MAVLink command to reset the fuel consumed does not work with this monitor.
 
 Displaying EFI telemetry in Mission Planner
 ===========================================
