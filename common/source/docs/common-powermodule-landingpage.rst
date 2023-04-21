@@ -28,6 +28,7 @@ Power Monitors Connecting to AutoPilot Power Monitor Port
     CUAV HV PM<common-hv-pm>
     Mauch Power Monitor <common-mauch-power-modules>
     SmartAP Power Distribution Board<common-smartap-pdb>
+    Synthetic Current Sensor/Analog Voltage Monitor <common-synthetic-current-monitor>
 
 CAN/DroneCAN Power Monitor
 ==========================
@@ -52,6 +53,11 @@ Power Monitoring Via Telemetry Equipped BLHeli32/S ESCs
 =======================================================
 
 - See :ref:`this section<esc-telemetry-based-battery-monitor>` of the :ref:`blheli32-esc-telemetry` page
+
+EFI Fuel Monitoring
+===================
+
+EFI Fuel Monitoring, See :ref:`common-efi` section on using :ref:`BATT_MONITOR<BATT_MONITOR>` = 27 (EFI).
 
 Liquid Fuel Monitors
 ====================
