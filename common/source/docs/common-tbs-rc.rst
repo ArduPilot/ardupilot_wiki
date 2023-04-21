@@ -31,6 +31,11 @@ See :ref:`common-crsf-telemetry` for information about telemetry data sent, disp
 
 .. warning:: If the autopilot is rebooted via MAVLink, it will lose communication with the CRSF receiver until the receiver is power cycled. Also, the CRSF TX must be transmitting BEFORE the receiver is powered up.
 
+ELRS Receivers
+==============
+
+ELRS can be setup in the same manner as CRSF above , however, bit 13 of :ref:`RC_OPTIONS<RC_OPTIONS>` should be set to alter the baudrate from 416KBaud that CRSF uses, to 420KBaud that ELRS uses.
+
 CRSF Video Transmitters
 =======================
 
