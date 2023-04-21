@@ -8,6 +8,8 @@ Enabling SLCAN allows the autopilot to connect to CANBUS through USB on PC.
 It allows viewing, configuration and software updates of devices connected to the CANBUS.
 There are two different applications for using SLCAN to modify DroneCAN device parameters: DroneCAN GUI or Mission Planner. But first, the SLCAN interface must be enabled.
 
+.. note:: SLCAN access via COM port is disabled when armed to lower cpu load. Use SLCAN via MAVLink instead. The MAVLink method is generally preferred in any case.
+
 SLCAN Interface
 ===============
 
