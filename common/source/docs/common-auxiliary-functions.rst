@@ -260,6 +260,10 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        169           | Camera Auto Focus          |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
+|       170            |  QSTABILIZE mode           |          |  x      |         |
++----------------------+----------------------------+----------+---------+---------+
+|       171            |  Compass Calibration       |    x     |  x      |    x    |
++----------------------+----------------------------+----------+---------+---------+
 
 Intended as continuous PWM range control inputs:
 
@@ -1094,6 +1098,20 @@ If high, will not log streaming type log messages (sensors,attitudes,ekf,etc.) t
    <td>
 
 Three position switch. If high, will request arming. If switched to low position, will emergency stop any rotating motor output like the Motor Emergency Stop switch. If switched to middle position, will de-activate the Motor Emergency Stop, but not request an arm condition. This is a safer alternative to ARM/DISARM in that accidental switching to low position will not disarm, and will allow recovery in the air if switched back to middle or high quickly.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <th>Option</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>Compass Calibration</strong></td>
+   <td>
+
+Switching to high will behave the same as if the Start button for :ref:`onboard calibration <onboard_calibration>` had been pressed. Returning the switch to low will cancel the calibration if still in progress.
 
 .. raw:: html
 
