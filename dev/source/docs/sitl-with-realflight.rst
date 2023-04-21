@@ -25,7 +25,7 @@ See the last section on this page for setup instructions, if using an OpenTX tra
 Enabling RealFlight Link Feature
 ================================
 
-On RealFlight go to Settings->Physics and enable the FlightAxis
+On RealFlight go to Settings->Physics and enable the FlightAxis and set "Pause Sim When in Background" to No
 option then restart RealFlight. In RealFlight Evolution, press ESC, go to Settings->Physics->Quality and enable the "RealFlight Link" option.
 
 Configure RealFlight
