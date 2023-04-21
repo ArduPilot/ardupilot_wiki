@@ -144,6 +144,8 @@ If the DroneCAN port is attached to CAN FD peripherials, setting :ref:`CAN_D1_UC
 SLCAN
 =====
 
+.. note:: SLCAN access via COM port is disabled when armed to lower cpu load. Use SLCAN via MAVLink instead. This method is generally preferred, in any case.
+
 ArduPilot and DroneCAN provide a means to directly communicate with DroneCAN devices on the CAN BUS attached to the autopilot: SLCAN. Enabling SLCAN and communicating with the DroneCAN devices is dependent on the autopilot's processor. F7/H7 processors use one method and F4, a different method.
 
 - :ref:`Mission Planner SLCAN <planner:dronecan-uavcan-slcan>`
