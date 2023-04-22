@@ -26,9 +26,13 @@ To setup your aircraft for AUTOTUNE you need to select AUTOTUNE mode as
 one of the flight modes selectable with the flight mode switch on your
 transmitter.
 
+You can also autotune the yaw axis during AUTOTUNE for yaw rate control in :ref:`ACRO mode <acro-mode>` by setting :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1.
+
 .. note:: you can AutoTune in most stabilized flight modes, such as CRUISE or FBWA/B, LOITER, or even during an AUTO mission segment (if :ref:`STICK_MIXING<STICK_MIXING>` is enabled), via an ``RCx_OPTION`` switch set to 107.
 
 .. warning:: Large QuadPlanes can be difficult to fly manually while monitoring the GCS for tune progress messages or if you are not experienced in flying in pilot guided modes. In these cases, it is safer to do the tuning while in a repeating fixed course mission (ie. a rectangular loop for example) in AUTO or while LOITERing, using the the above RC Aux Switch to enable autotuning while not having to constantly guide the vehicle on course.
+
+The :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES>` bitmask selects which axes will be tuned while in Autotune. Default is roll, pitch and yaw.
 
 You also should choose a tuning level by setting the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`
 parameter in the advanced parameter screen of your ground station. The
@@ -39,8 +43,6 @@ then you could choose level 7, which will result in a bit sharper tune
 (faster attitude changes). Levels above 7 are not recommended until you
 have done an initial tune with a lower level. Levels above 8 should only
 be used by very experienced pilots.
-
-You can also autotune the yaw axis during AUTOTUNE for yaw rate control in :ref:`ACRO mode <acro-mode>` by setting :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1. Tuning the yaw axis can only be done in AUTOTUNE mode, or using the ``RCx_OPTION`` switch set to 107, but only in ACRO mode with :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1.
 
 .. note:: with Yaw rate controller active, turning in AUTOTUNE mode will require the use of rudder, not just aileron input. Do not enable :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` if you do not have a rudder.
 
@@ -133,9 +135,9 @@ As of version 4.2, ArduPilot provides the option for utilization of a rate contr
 
 To enable this functionality, set :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` to 1. When enabled, the :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` parameter can be used to adjust maximum yaw rate demanded at rudder stick full deflections in ACRO mode.
 
-This controller can be AutoTuned in the same manner as the pitch and roll axes, and in the same session using the Rudder control stick to produce the rapid yaw demands used by AUTOTUNE. Autotuning YAW can also be done in ACRO mode using an auxiliary switch set with the ``RCx_OPTION`` to 107. 
+This controller can be AutoTuned in the same manner as the pitch and roll axes, and in the same session using the Rudder control stick to produce the rapid yaw demands used by AUTOTUNE.
 
-.. note:: while AutoTuning with this controller enabled, it will resist any non-pilot commanded yaw changes, (ie like traditional helicopter "heading hold" gyros), just as in ACRO mode with the yaw rate controller active. Banking the aircraft will NOT result in a turn, or at least a poorly executed turn. Pilot rudder inputs in turns will be needed.
+.. note:: while AutoTuning with this controller enabled, roll inputs will result in yaw outputs also, allowing more coordinated turns with the yaw controller active. This will normally result in simultaneously tuning the yaw controller with the roll controller, but not necessarily completing the yaw tune when the roll tune finishes. Also, there may be seemingly excessive rudder applied initially in the roll tune on vehicles with large yaw authority, until the tune progresses.
 
 Autotune Level 0
 ================
