@@ -76,6 +76,8 @@ ACRO MODE ATTITUDE LOCKING
 
 By enabling the :ref:`ACRO_LOCKING<ACRO_LOCKING>` parameter, whatever attitude (roll and pitch angle) the pilot places the plane in, upon releasing the sticks, the autopilot will not only resist rate changes (caused by trim or turbulence), but also attempt to hold and correct back to that attitude. Note that his requires that the plane be properly tuned (see :ref:`Tuning<common-tuning>` ).
 
+It is recommended that it be set to "2", instead of "1", in order to use a quarternion based control system with much better performance than the older system. In order for this to be effective, yaw rate control (:ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>`) must be "1" and the yaw rate controller tuned using :ref:`Autotune <automatic-tuning-with-autotune>` for best performance.
+
 ACRO Mode YAW Rate Control
 ==========================
 
