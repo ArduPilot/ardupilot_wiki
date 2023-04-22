@@ -20,3 +20,8 @@ Once flipped upright, exit the mode for normal operation to resume.
 
 
 .. note:: continuous operation of motors in the reversed mode may cause either ESC or motor overheating in some cases.
+
+-  Turtle mode cannot be entered unless throttle is zero
+-  Upon entry to turtle mode the motors stay disarmed, but the notfiy LEDs flash
+-  Raising the throttle, the motors arm, and motors spin. Lowering throttle to zero disarms the motors
+-  Motors spin only when throttle is raised
