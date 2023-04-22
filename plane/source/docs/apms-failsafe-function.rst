@@ -139,6 +139,8 @@ Battery Failsafe
 
 .. note:: ArduPilot supports up to 10 batteries/power monitors. All the  discussion below applies to those optional batteries also. Each can trigger a failsafe and each can have different actions and setup values. In addition, a group of batteries can be treated as a single unit, see ``BATTx_MONITOR`` = 10.
 
+.. note:: the battery low failsafe voltage must be higher than the battery critical failsafe voltage or a pre-arm error will occur.
+
 
 When the failsafe will trigger
 ------------------------------
