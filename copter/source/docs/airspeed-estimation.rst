@@ -109,3 +109,5 @@ Enable the compensation and copy the calculated position error coefficients into
 - :ref:`BARO1_WCF_BCK <BARO1_WCF_BCK>`: Pressure error coefficient in negative X direction (backwards)
 - :ref:`BARO1_WCF_RGT <BARO1_WCF_RGT>`: Pressure error coefficient in positive Y direction (right)
 - :ref:`BARO1_WCF_LFT <BARO1_WCF_LFT>`: Pressure error coefficient in positive Y direction (left)
+- :ref:`BARO1_WCF_UP<BARO1_WCF_UP>`: Pressure error coefficient in positive Z direction (climbing)
+- :ref:`BARO1_WCF_DN<BARO1_WCF_DN>`: Pressure error coefficient in negative Z direction (descending)
