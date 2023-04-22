@@ -244,7 +244,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <mav_cmd_do_gimbal_manager_pitchyaw>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
-- :ref:`MAV_CMD_JUMP_TAG<mav_cmd_jump_tag>`
+- :ref:`MAV_CMD_JUMP_TAG <mav_cmd_jump_tag>`
 - :ref:`MAV_CMD_DO_JUMP_TAG <mav_cmd_do_jump_tag>`
 - :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
 - :ref:`MAV_CMD_DO_INVERTED_FLIGHT <mav_cmd_do_inverted_flight>`
@@ -2046,7 +2046,7 @@ Supported by: Copter and Plane.
 
 After reaching this waypoint, the vehicle will descend up to the maximum descent value. If the payload has not touched the ground before this limit is reached, the vehicle will climb back up to the waypoint altitude and continue to the next mission item. If it reaches the ground, it will automatically release the gripper if enabled, and optionally wait a period, re-grip, and ascend back to the waypoint altitude and continue the mission. Numerous parameters that control the payload touch down detection, wait period, etc. are prefaced with ``PLDP_``.
 [/site]
-[site wiki=plane']
+[site wiki="plane"]
 **QUADPLANE ONLY, fixed wing planes will skip this command**
 After reaching this waypoint, the vehicle will have transitioned to VTOL and will descend up to the maximum descent value. If the vehicle has not touched the ground before this limit is reached, the vehicle will climb back up to the waypoint altitude and continue to the next mission item. If it reaches the ground, it will stop its motors and wait for a LUA script command (see `Package Place LUA applet <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/plane_package_place.lua>`__ ) to send an abort_landing command to ascend back to the waypoint altitude and continue to the next mission item, be sent a disarm command, or the pilot uses the ``RCx_OPTION`` = 173 to send the abort_landing command, instead of via a LUA script.
 This allows the gripper to be commanded to be released, packages replaced, etc.
@@ -2194,7 +2194,7 @@ waypoints #1 and #2 a total of 3 times before flying on to waypoint #4.
 .. _mav_cmd_jump_tag:
 
 MAV_CMD_JUMP_TAG
--------------------
+----------------
 
 Supported by: Copter, Plane, Rover.
 
