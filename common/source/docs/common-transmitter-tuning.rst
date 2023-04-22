@@ -374,6 +374,10 @@ The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the para
 +--------+-------------------------+----------------------------------------------------------------------+
 |58      |SysID Magnitude          | :ref:`SIDS_MAGNITUDE<SID_MAGNITUDE>`                                 |
 +--------+-------------------------+----------------------------------------------------------------------+
+|59      |Position Control Max     |  :ref:`PSC_ANGLE_MAX<PSC_ANGLE_MAX>`                                 |
+|        | Lean Angle              |                                                                      |
++--------+-------------------------+----------------------------------------------------------------------+
+
 
 ** Traditional Heli Only
 
