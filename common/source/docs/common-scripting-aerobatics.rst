@@ -1,5 +1,6 @@
 .. _common-scripted-aerobatics:
 
+[copywiki destination="plane"]
 ===================
 Scripted Aerobatics
 ===================
@@ -118,7 +119,6 @@ Setup Instructions for Example Tricks on a Switch Scripts
 - You can bail out of the trick by putting activation switch low, change modes, or set selector to 0
 
 Remember: ALTITUDE IS YOUR FRIEND! dont attempt your first one below 200feet! and FPV is a good way to try it out first, if you have trouble with seeing the vehicle at that altitude.
-[copywiki destination="plane"]
 
 Tuning for Aerobatics
 =====================
