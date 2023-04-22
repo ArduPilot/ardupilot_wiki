@@ -33,6 +33,10 @@ stall speed is dependent on the weight of your aircraft you will need to
 adjust the landing speed if you change the aircraft's weight
 significantly (such as by adding batteries or a camera).
 
+The :ref:`LAND_WIND_COMP<LAND_WIND_COMP>` parameter controls how much headwind compensation is used when landing. Headwind speed component multiplied by this parameter is added to :ref:`TECS_LAND_ARSPD<TECS_LAND_ARSPD>` value. Set to 0 to disable this. 
+
+.. note:: The target landing airspeed value is still limited to being lower than :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>`.
+
 To further improve landing you can use a Pre-Flare to reduce airspeed
 just before the flare. This is enabled by setting either
 :ref:`LAND_PF_ALT <LAND_PF_ALT>` or :ref:`LAND_PF_SEC <LAND_PF_SEC>`
