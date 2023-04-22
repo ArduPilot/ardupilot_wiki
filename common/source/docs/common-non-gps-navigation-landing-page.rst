@@ -21,7 +21,9 @@ These are the available options that allow a vehicle to estimate its position wi
 [site wiki="copter"]
     Nokov Indoor Optical Tracking <https://discuss.ardupilot.org/t/nokov-indoor-optical-tracking-system>
 [/site]
+[site wiki="copter,plane"]
     Optical Flow <common-optical-flow-sensors-landingpage>
+[/site]
 [site wiki="copter"]
     OptiTrack motion capture system <common-optitrack>
 [/site]

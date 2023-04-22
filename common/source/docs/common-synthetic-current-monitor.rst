@@ -1,5 +1,5 @@
 .. _common-synthetic-current-monitor:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover"]
 
 ===============================================
 Synthetic Current Sensor/Analog Voltage Monitor
