@@ -2824,7 +2824,7 @@ speed-type and throttle settings are ignored.
 [site wiki="plane" heading="off"]
 
 Change the target horizontal speed (airspeed or groundspeed) and/or the
-vehicle's throttle. If airspeed, this changes the :ref:`TRIM_ARSPD<TRIM_ARSPD_CM>` parameter during the flight until reboot or mode is changed to CRUISE or FBWB. If groundspeed option is used, then :ref:`MIN_GNDSPD<MIN_GNDSPD_CM>` parameter is changed to this value until rebooted or changed by this command again. If the throttle field is non-zero and equal to or below 100, then the :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` parameter is changed  until reboot or changed by this command again.
+vehicle's throttle. If airspeed option is selected, this changes the :ref:`TRIM_ARSPD<TRIM_ARSPD_CM>` parameter during the flight until reboot or mode is changed to CRUISE or FBWB. If groundspeed option is used, then :ref:`MIN_GNDSPD<MIN_GNDSPD_CM>` parameter is changed to this value until rebooted or changed by this command again. If the throttle field is non-zero and equal to or below 100, then the :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` parameter is changed  until reboot or changed by this command again.
 
 .. note:: Speed changes only have effect if an airspeed sensor is present, healthy, and in use. :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` changes impacts only flight with airspeed sensor not in use.
 
@@ -2847,7 +2847,7 @@ vehicle's throttle. If airspeed, this changes the :ref:`TRIM_ARSPD<TRIM_ARSPD_CM
    <tr>
    <td><strong>param2</strong></td>
    <td>Speed (m/s)</td>
-   <td>Target speed (m/s). A value of -1 indicates no change.</td>
+   <td>Target speed (m/s). A value of -1 indicates no change. a value of -2 uses :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`</td>
    </tr>
    <tr>
    <td><strong>param3</strong></td>
