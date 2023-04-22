@@ -233,3 +233,7 @@ Speed Scaling Issues with no Airspeed Sensor
 ============================================
 
 Since control effectiveness varies with airspeed, ArduPilot automatically scales the control gains in stabilized modes with airspeed to allow stability at low speeds and to avoid oscillations at high airspeeds. However, when an airspeed sensor is not used, an estimated airspeed based on GPS speed, accelerometer inputs, and position changes is used. During takeoffs into strong head wind, this estimate can be wrong and the gains scaled up, resulting in oscillations during the climb into the wind. Setting :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 7 to 1, the speed scaling will be limited during the takeoff phase of automatic takeoffs to eliminate oscillations, particularly on tightly tuned vehicles.
+
+Catapult Launch without an Airspeed Sensor
+==========================================
+Taking off without an airspeed sensor using a catapult may cause less than maximum throttle to be used due to high initial climb rates. For heavy vehicles, this may result in a stall due to the long time constants used in TECS to adjust throttle after the initial launch. The parameter :ref:`TKOFF_THR_MAX_T<TKOFF_THR_MAX_T>` can be used to force maximum throttle for a time, irrespective of climb rates from an initial catapult launch to allow the vehicle to obtain sufficient speed.
