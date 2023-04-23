@@ -28,8 +28,9 @@ To use a different frame type you can set :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` an
 -  3 for octa
 -  4 for octaquad
 -  5 for Y6
--  7 for Tri
--  10 for Tailsitter
+-  6 for reversed tri
+-  7 for tri
+-  10 for tailsitter
 
 Within each of these frame classes the :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` chooses the motor
 layout. For Tri and Y6 this parameter is ignored.
