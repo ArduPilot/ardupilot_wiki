@@ -21,24 +21,34 @@ Frame Types and Classes
 -----------------------
 
 To use a different frame type you can set :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` and
-:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>`. :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` can be:
+:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>`. 
+
+Frame Class
+~~~~~~~~~~~
+
+:ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` designates the number of motors used, and can be:
 
 -  1 for quad
 -  2 for hexa
 -  3 for octa
 -  4 for octaquad
--  5 for Y6
--  7 for Tri
--  10 for Tailsitter
+-  5 for Y6 (ignores all following frame classes except 10 and 11, all others result in Y6A configuration)
+-  7 for tri (ignores all following frame classes except 6 for reversed tricopter)
+-  10 for tailsitter using single/dual motors
+
+Frame Type
+~~~~~~~~~~
 
 Within each of these frame classes the :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` chooses the motor
-layout. For Tri and Y6 this parameter is ignored.
+layout and rotation directions.
 
 -  0 for plus frame
 -  1 for X frame
 -  2 for V frame
 -  3 for H frame
--  11 for FireFly6Y6 (for Y6 only)
+-  6 for reversed X frame
+-  10 for Y6B only
+-  11 for FireFly6Y6 (Y6F only)
 
 VTOL Motor Ordering
 -------------------
