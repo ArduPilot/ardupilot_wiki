@@ -1106,6 +1106,46 @@ Three position switch. If high, will request arming. If switched to low position
    </td>
    </tr>
    <tr>
+   <td><strong>Camera Record Video</strong></td>
+   <td>
+
+Controls video recording on some cameras/mounts.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Camera Zoom</strong></td>
+   <td>
+
+Controls camera zoom on some cameras/mounts.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Camera Manual Focus</strong></td>
+   <td>
+
+Changes manual focus on some cameras/mounts.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Camera AutoFocus</strong></td>
+   <td>
+
+Controls autofocus on some cameras/mounts.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
    <td><strong>Compass Calibration</strong></td>
    <td>
 
