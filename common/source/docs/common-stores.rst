@@ -10,6 +10,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `AION ROBOTICS <https://www.aionrobotics.com>`__
 * `Air-Supply Aerial <https://www.airsupply.com>`__
 * `AltiGator <http://www.altigator.com/>`__
+* `ArduSimple <https://www.ardusimple.com/>`__
 * `Bask Aerospace <https://baskaerospace.com.au/>`__
 * `Benewake <https://beixingguangzi.en.alibaba.com/>`__
 * `Blicube <https://www.blicube.com/>`__
