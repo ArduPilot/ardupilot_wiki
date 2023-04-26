@@ -65,7 +65,7 @@ parameters, and swap channels to get the right movement direction for
 elevons and rudder. Flap operation is also possible. The weighting of flap input to the movement of the outer and inner control surfaces can be set
 using :ref:`DSPOILER_CROW_W1 <DSPOILER_CROW_W1>` and :ref:`DSPOILER_CROW_W2 <DSPOILER_CROW_W2>` respectively. The default value of "0" for each parameter is no flap action.
 
-.. note:: manual flap control is controlled by any RC channel whose ``RCx_OPTION ``is set to "208".
+.. note:: manual flap control is controlled by any RC channel whose ``RCx_OPTION`` is set to "208".
 
 Differential Spoiler options
 ============================
