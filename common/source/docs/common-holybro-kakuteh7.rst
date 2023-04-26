@@ -23,7 +23,7 @@ Specifications
 
 -  **Sensors**
 
-   -  InvenSense ICM20689 IMU (accel and gyro only, no compass)
+   -  InvenSense MPU6000 IMU (accel and gyro only, no compass)
    -  BMP280 barometer
 
 -  **Power**
