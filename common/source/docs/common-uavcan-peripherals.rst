@@ -18,6 +18,8 @@ DroneCAN was created to continue the development of the widely used UAVCAN v0 pr
     CUAV Neo 3 Pro DroneCAN GPS <common-cuav-neo-3-pro>
     CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
     CUAV DroneCAN Power Module <common-can-pmu>
+    DroneCAN ESCs <common-uavcan-escs>
+    DroneCAN Servos <common-dronecan-servos>
     FoxTech DroneCAN Airspeed/Compass <https://www.foxtechfpv.com/foxtech-aerofox-can-airspeed-compass.html>
     Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>
     Holybro DroneCAN H-RTK F9P Rover <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-rover>
@@ -36,5 +38,4 @@ DroneCAN was created to continue the development of the widely used UAVCAN v0 pr
     Qiotek DroneCAN Airspeed Sensor <https://www.qio-tek.com/index.php?route=product/product&product_id=309>
     Qiotek DroneCAN RM3100 Compass <http://www.qio-tek.com/RM3100_CAN>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/RTK_F9P>
-    DroneCAN ESCs <common-uavcan-escs>
     Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>

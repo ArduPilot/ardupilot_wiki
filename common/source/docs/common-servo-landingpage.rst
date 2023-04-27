@@ -13,7 +13,8 @@ ArduPilot supports several types of servos.
 .. toctree::
     :maxdepth: 1
 
-    Servos (PWM) <common-servo>
+    DroneCAN Servos <common-dronecan-servos>
+    PWM Servos (PWM) <common-servo>
     SBus Servos <common-sbus-out>
     Robotis Servos <common-servo-robotis>
     Volz Servos <common-servo-volz>
