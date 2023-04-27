@@ -1,5 +1,5 @@
 .. _common-toshiba-can-escs:
-
+**ARCHIVED: no longer supported**
 ================
 Toshiba CAN ESCs
 ================
