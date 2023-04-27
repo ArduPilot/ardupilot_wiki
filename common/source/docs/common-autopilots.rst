@@ -57,6 +57,7 @@ Closed hardware
     Holybro Kakute F4 Mini* <common-holybro-kakutef4-mini>
     Holybro Kakute F7 AIO* <common-holybro-kakutef7aio>
     Holybro Kakute F7 Mini* (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
+    Holybro Kakute H7 V1 <common-holybro-kakuteh7.rst>
     Holybro Kakute H7 V2 <common-holybro-kakuteh7-v2>
     Holybro Kakute H7 Mini v1.3 <common-holybro-kakuteh7mini-v13>
     Holybro Pixhawk 4 Mini <common-holybro-ph4mini>
@@ -144,7 +145,6 @@ The following boards are no longer produced, however documentation is still avai
     Erle PXFmini RPi Zero Shield <common-pxfmini>
     Erle ErleBrain <common-erle-brain-linux-autopilot>
     Holybro Kakute H7 Mini <common-holybro-kakuteh7mini.rst>
-    Holybro Kakute H7-BT <common-holybro-kakuteh7.rst>
     Intel Aero <common-intel-aero-overview>
     Intel Aero RTF vehicle <common-intel-aero-rtf>
     Mateksys F405-SE <common-matekf405-se>

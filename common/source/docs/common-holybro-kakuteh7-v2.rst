@@ -17,7 +17,7 @@ Holybro Kakute H7 V2
 Where to Buy
 ============
 
-- Available from many retailers including `Holybro <hhttps://shop.holybro.com/kakute-h7-v2_p1344.html>`__
+- Available from many retailers including `Holybro <https://shop.holybro.com/kakute-h7-v2_p1344.html>`__
 
 
 Specifications
