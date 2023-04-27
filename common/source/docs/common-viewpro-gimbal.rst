@@ -30,7 +30,11 @@ Connect to the autopilot with a ground station and do the following
 - Set :ref:`SCR_ENABLE <SCR_ENABLE>` = 1 to enable scripting and reboot the autopilot
 - Set :ref:`MNT1_TYPE <MNT1_TYPE>` = 9 (Scripting) to enable the mount/gimbal scripting driver
 - Set :ref:`CAM1_TYPE<CAM1_TYPE>` = 4 (Mount) to enable the camera1 instance control using the mount driver
-- Download mount-viewpro-driver.lua (`from here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/drivers>`__) and copy it to the autopilot's SD card in the APM/scripts directory and reboot the autopilot
+- Download mount-viewpro-driver.lua and copy it to the autopilot's SD card in the APM/scripts directory and reboot the autopilot
+
+  - `If using AP 4.4.x download the mount-viewpro-driver.lua from here <https://github.com/ArduPilot/ardupilot/tree/Copter-4.4/libraries/AP_Scripting/drivers>`__
+  - `If using AP 4.5.x download the mount-viewpro-driver.lua from here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/drivers>`__
+  
 - Optionally for gimbals with multiple cameras, an auxiliary switch can control the active camera by doing the following
   
   - Set :ref:`RC9_OPTION <RC9_OPTION>` = 300 (Scripting1) to allow selecting the acdtive camera with RC9.  Note that any auxiliary switch may be used.
