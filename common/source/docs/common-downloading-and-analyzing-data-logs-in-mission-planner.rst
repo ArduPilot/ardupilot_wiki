@@ -24,7 +24,7 @@ Some commonly used parameters are:
 
 - :ref:`LOG_BACKEND_TYPE<LOG_BACKEND_TYPE>`: Bitmask for where to save logs to. Common values are "0" to disable logging, "1" to log to SD card file, "2" to stream over MAVLink and "4" to log to board dataflash memory, if equipped.
 - :ref:`LOG_BITMASK<LOG_BITMASK>`: Bitmask for what items are logged. Normally, use default value, or "0" to disable logging.
-- :ref:`LOG_DISARMED<LOG_DISARMED>`: Setting to 1 will start logging when power is applied, rather than at the first arming of the vehicle. Useful when debugging pre-arm failures. Setting to 2 will only log on power application other than USB power to prevent logging while setting up on the bench.
+- :ref:`LOG_DISARMED<LOG_DISARMED>`: Setting to 1 will start logging when power is applied, rather than at the first arming of the vehicle. Useful when debugging pre-arm failures. Setting to 2 will only log on power application other than USB power to prevent logging while setting up on the bench. Setting to 3 will also erase any log in which the vehicle does not proceed to the armed stated. This prevents accumulating numerous logs while configuring on the bench or at the field. See :ref:`LOG_DARM_RATEMAX<LOG_DARM_RATEMAX>` also for managing log file sizes while logging disarmed.
 - :ref:`LOG_FILE_DSRMROT<LOG_FILE_DSRMROT>`: Setting this bit will force the creation of a new log file after disarming, waiting 15 seconds, and then re-arming. Normally, a log will be one file for every power cycle of the autopilot, beginning upon first arm.
 - :ref:`LOG_FILE_MB_FREE<LOG_FILE_MB_FREE>`: This parameter sets the minimum free space on the logging media before logging begins. If this is not available, then older logs will be deleted to provide it during initialization. Default is 500MB.
 - :ref:`LOG_FILE_RATEMAX<LOG_FILE_RATEMAX>`: This sets the maximum rate that streaming log messages will be logged to the file backend to limit file sizes. A value of zero(default) means no limit is applied to normal logging, which depends on the :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>` value ( 50Hz: Plane, 300Hz: QuadPlane/Rover, 400Hz: Copter, normally). Note that similarly, :ref:`LOG_BLK_RATEMAX<LOG_BLK_RATEMAX>` and :ref:`LOG_MAV_RATEMAX<LOG_MAV_RATEMAX>` perform the same optional limiting for the BLOCK logging and MAVLink logging streams, respectively.
@@ -33,6 +33,10 @@ Some commonly used parameters are:
 
 .. note:: Logging of the continuously streaming log messages, such as attitude, sensors, etc. can be paused by using the ``RCx_OPTION`` auxiliary function "164" on a transmitter channel. Switching this channel high will pause these messages, but not events, mode changes, warnings, etc. This allows autopilots with limited logging capabilites (ie using Block logging to chip memory and no SD card) to log only when desired during the flight, as during tuning phases or determination of TECs parameters, etc. You can also eliminate unneeded log messages using :ref:`LOG_BITMASK<LOG_BITMASK>` to reduce log size
 
+Replay Logging
+--------------
+
+ArduPilot has the ability to log in a fashion that solutions to EKF/AHRS issues can be more easily verified by actually re-playing a log against code changes to see if the solution results in the desired, corrected behavior. This requires that the logs showing the issue to be worked on be made with logging active during disarmed periods (with :ref:`LOG_DISARMED<LOG_DISARMED>` set to a non-zero value, preferably 3) and :ref:`LOG_REPLAY<LOG_REPLAY>` =1 , thereby logging more sensor data than normal.
 
 .. _common-downloading-and-analyzing-data-logs-in-mission-planner_downloading_logs_via_mavlink:
 
