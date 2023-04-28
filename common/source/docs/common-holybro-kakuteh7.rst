@@ -1,8 +1,8 @@
 .. _common-holybro-kakuteh7:
 
-=================
-Holybro Kakute H7
-=================
+====================
+Holybro Kakute H7 V1
+====================
 
 .. image:: ../../../images/holybro-kakuteh7-top.jpg
     :target: ../_images/holybro-kakuteh7-top.jpg
@@ -14,6 +14,11 @@ Holybro Kakute H7
 
 *above image and some content courtesy of* `Holybro <http://www.holybro.com>`__
 
+Where to Buy
+============
+
+- Available from many retailers including `Holybro <https://holybro.com/products/kakute-h7>`__
+
 Specifications
 ==============
 
@@ -23,7 +28,7 @@ Specifications
 
 -  **Sensors**
 
-   -  InvenSense ICM20689 IMU (accel and gyro only, no compass)
+   -  InvenSense MPU6000 IMU (accel and gyro only, no compass)
    -  BMP280 barometer
 
 -  **Power**

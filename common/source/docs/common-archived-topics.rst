@@ -35,6 +35,7 @@ value to users with old hardware.
     Skysight Mono Camera Trigger <common-camera-trigger-skysight-mono>
     PPM Encoders <common-ppm-encoder-8-channel-standalone-encoder>
     PPM Encoder <common-ppm-encoder>
+    common-toshiba-can-escs
 [/site]
 [site wiki="copter"]
     Boat Mode <boat-mode>

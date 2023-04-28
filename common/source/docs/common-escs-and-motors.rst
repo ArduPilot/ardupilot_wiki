@@ -41,7 +41,6 @@ ESC
     FETtec OneWire ESCs <common-fettec-onewire>
     PWM, OneShot and OneShot125 ESCs <common-brushless-escs>
     KDE CAN ESCs <common-kde-can-escs>
-    Toshiba CAN ESCs <common-toshiba-can-escs>
     ESC Grounding and Wiring Considerations<common-esc-grounding>
 
 [site wiki="plane"]
