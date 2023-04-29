@@ -27,7 +27,7 @@ components, including those required for the operation of the autopilot.
     Compass Calibration <common-compass-calibration-in-mission-planner>
     Flight Modes <flight-modes>
     RC Transmitter Mode Setup <common-rc-transmitter-flight-mode-configuration>
-    ESC Calibration <guide-esc-calibration>
+    ESC Calibration <common-esc-calibration>
     Automatic Trim <auto-trim>
     Failsafe Function <apms-failsafe-function>
     Airspeed Parameters Setup <airspeed-parameters-setup>
