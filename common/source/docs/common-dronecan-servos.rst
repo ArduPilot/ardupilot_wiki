@@ -4,7 +4,7 @@
 DroneCAN Servos
 ===============
 
-ArduPilot supports :ref:`DroneCAN<common-uavcan-setup-advanced>` servos. DroneCAN connected servos offer high noise immunity and longer lead runs that normal :ref:`PWM servos<comon-servo>`.
+ArduPilot supports :ref:`DroneCAN<common-uavcan-setup-advanced>` servos. DroneCAN connected servos offer high noise immunity and longer lead runs that normal :ref:`PWM servos<common-servo>`.
 
 -  `HiTec <https://www.hiteccs.com/actuators/products/search/servo/1/spec/1-18/accessory/0/sort/0>`__
 -  `Currawong <https://www.currawongeng.com/can-servo/>`__
