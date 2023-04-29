@@ -1,13 +1,17 @@
 .. _common-holybro-pixhawk6C:
 
-============================
-Pixhawk 6C Flight Controller
-============================
+====================================
+Pixhawk 6C 6C Mini Flight Controller
+====================================
 
-Pixhawk6C is the latest update to the successful family of Pixhawk® autopilots made by Holybro, featuring STM32H7 cpus, vibration isolation of IMUs, redundant IMUs, and IMU heating.
+Pixhawk6C is the latest update to the successful family of Pixhawk® autopilots made by Holybro, featuring STM32H7 cpus, vibration isolation of IMUs, redundant IMUs, and IMU heating. It comes in two form factors. The 6C Mini reduces the size and has a built-in PWM motor/servo header, at the expense of a bit fewer ports.
 
 .. image:: ../../../images/holybro-pixhawk6/Pixhawk6C.png
     :target: ../_images/Pixhawk6C.png
+    :width: 320px
+
+.. image:: ../../../images/Pixhawk6C-Mini.jpg
+    :target: ../_images/Pixhawk6C-Mini.jpg
     :width: 320px
 
 Where To Buy
@@ -19,7 +23,7 @@ Features of Pixhawk6 Series
 ===========================
 
 +---------------------+-----------------------------+-----------------+----------------------+
-|                     |Pixhawk 6X                   |Pixhawk 6C       |Pix32 v6              |
+|                     |Pixhawk 6X                   |Pixhawk 6C/Mini  |Pix32 v6              |
 +=====================+=============================+=================+======================+
 |Key Design Point     |Additional Redundancy        |Low profile      |Cost effective        |
 |                     +-----------------------------+-----------------+----------------------+
@@ -43,13 +47,15 @@ Features of Pixhawk6 Series
 +---------------------+-----------------------------+-----------------+----------------------+
 |Power Monitor        |I2C                          |Analog           |Analog                |
 +---------------------+-----------------------------+-----------------+----------------------+
-|UART                 |8                            |7                |7                     |
+|PWM Outputs          |8 Main, 8 FMU                |8 Main, 8/6 FMU  |8 Main, 6 FMU         |
++---------------------+-----------------------------+-----------------+----------------------+
+|UART                 |8                            |7 / 4            |7                     |
 +---------------------+-----------------------------+-----------------+----------------------+
 |CAN Bus              |                              2                                       |
 +---------------------+-----------------------------+-----------------+----------------------+
-|GPS/Copass Ports     |                             2                                        |
+|GPS/Compass Ports    |                             2                                        |
 +---------------------+-----------------------------+-----------------+----------------------+
-|UART Flow Control    |3 Ports                      |2 Ports          |2 Ports               |
+|UART Flow Control    |3 Ports                      |2/1 Ports        |2 Ports               |
 +---------------------+-----------------------------+-----------------+----------------------+
 |Additional I2C	      |                             Yes                                      |
 +---------------------+-----------------------------+-----------------+----------------------+
@@ -69,23 +75,23 @@ UART Mapping
  - SERIAL2 -> UART5 (Telem2) RTS/CTS pins
  - SERIAL3 -> USART1 (GPS1)
  - SERIAL4 -> UART8 (GPS2)
- - SERIAL5 -> USART2 (Telem3) RTS/CTS pins
- - SERIAL6 -> USART3 (USER)
+ - SERIAL5 -> USART2 (Telem3) RTS/CTS pins (not included on 6C Mini)
+ - SERIAL6 -> USART3 (USER) (Debug p)
  - SERIAL7 -> USB (can be used for SLCAN with protocol change)
 
 RC Input
 ========
 The RCIN pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
 
-To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL6 (UART3) would need to be used for receiver connections. Below are setups using Serial6.
+To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL5 (UART3) would need to be used for receiver connections. Below are setups using Serial6. For the 6C Mini, SERIAL1 - SERIAL4 would need to be used.
 
-- :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` should be set to "23".
+- :ref:`SERIAL5_PROTOCOL<SERIAL5_PROTOCOL>` should be set to "23".
 
-- FPort would require :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "15".
+- FPort would require :ref:`SERIAL5_OPTIONS<SERIAL5_OPTIONS>` be set to "15".
 
-- CRSF would require :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "0".
+- CRSF would require :ref:`SERIAL5_OPTIONS<SERIAL5_OPTIONS>` be set to "0".
 
-- SRXL2 would require :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "4" and connects only the TX pin.
+- SRXL2 would require :ref:`SERIAL5_OPTIONS<SERIAL5_OPTIONS>` be set to "4" and connects only the TX pin.
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
 
@@ -99,8 +105,7 @@ The 8 FMU PWM outputs are in 4 groups:
 
  - PWM 1, 2, 3 and 4 in group1
  - PWM 5 and 6 in group2
- - PWM 7 and 8 in group3
-
+ - PWM 7 and 8 in group3 (not 6C Mini)
 
 FMU outputs within the same group need to use the same output rate and protocol. If
 any output in a group uses DShot then all channels in that group need
@@ -128,14 +133,14 @@ connector. The Pixhawk6C uses analog power monitors on these ports.
 Compass
 =======
 
-The Pixhawk6C has a built-in compass. Due to potential
+The Pixhawk6C/Mini has a built-in compass. Due to potential
 interference, the autopilot is usually used with an external I2C compass as
 part of a GPS/Compass combination.
 
 GPIOs
 =====
 
-The 8 FMU PWM outputs can be used as GPIOs (relays, buttons, RPM etc). To use them you need to set the output's ``SERVOx_FUNCTION`` to -1. See :ref:`common-gpios` page for more information.
+The FMU PWM outputs can be used as GPIOs (relays, buttons, RPM etc). To use them you need to set the output's ``SERVOx_FUNCTION`` to -1. See :ref:`common-gpios` page for more information.
 
 The numbering of the GPIOs for PIN variables in ArduPilot is:
 
@@ -147,8 +152,8 @@ FMU pins:
  - PWM4 53
  - PWM5 54
  - PWM6 55
- - PWM7 56
- - PWM8 57
+ - PWM7 56 (not 6C Mini)
+ - PWM8 57 (not 6C Mini)
 
 Analog inputs
 =============
@@ -163,6 +168,8 @@ Connectors
 Unless noted otherwise all connectors are JST GH
 
 See `Pixhawk6C pinout <https://docs.holybro.com/autopilot/pixhawk-6c/pixhawk-6c-pinout>`__
+
+or `Pixhawk6C Mini pinout <https://docs.holybro.com/autopilot/pixhawk-6c-mini/pixhawk-6c-mini-ports>`__
 
 
 Loading Firmware
