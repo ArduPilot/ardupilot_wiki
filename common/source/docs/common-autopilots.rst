@@ -29,7 +29,7 @@ Open hardware
     Holybro Pix32 v5 <common-holybro-pix32v5>
     Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
     Holybro Pixhawk6X <common-holybro-pixhawk6X>
-    Holybro Pixhawk6C <common-holybro-pixhawk6C>
+    Holybro Pixhawk6C/ 6C Mini <common-holybro-pixhawk6C>
     Holybro Pix32v6(Pixhawk6C variant) <common-holybro-pix32v6>
     mRo Pixhawk <common-pixhawk-overview>
     mRo Pixracer <common-pixracer-overview>
