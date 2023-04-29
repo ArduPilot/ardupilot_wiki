@@ -1,16 +1,18 @@
-.. _guide-esc-calibration:
+.. _common-esc-calibration:
 
+
+[copywiki destination="plane,rover"]
 ===============
 ESC Calibration
 ===============
 
 First, make sure that the correct ESC protocol has been setup. Find your ESC(s) type under :ref:`common-escs-and-motors`, and follow its configuration information.
 
-Planes using a traditional PWM controlled ESC (electronic speed controller) for motor output
-will likely need to be calibrated. If you are using a digital esc protocol like DShot or are using CAN ESCs then you don't need to calibrate them. 
+Vehicles using a traditional PWM controlled ESC (electronic speed controller) for motor output
+will likely need to be calibrated. **If you are using a digital esc protocol like DShot or are using CAN ESCs then you don't need to calibrate them.**
 
-.. warning:: Remove the propeller from your aircraft before
-             starting ESC calibration
+.. warning:: Remove the propeller from Planes before
+             starting ESC calibration!
 
 Calibrating an ESC involves teaching the ESC what range of throttle
 inputs it should respond to. It needs to know what PWM value on the
@@ -38,9 +40,9 @@ autopilot from a USB cable for the purposes of this calibration.
 The steps for calibration are:
 
 - start with the autopilot powered, but with the ESC unpowered and
-  propeller removed
-- switch to MANUAL flight mode
-- disable the safety switch (if fitted) and arm the airplane
+  propeller, if a Plane, removed
+- switch to MANUAL flight/control mode
+- disable the safety switch (if fitted) and arm the vehicle
 - move the throttle stick on your transmitter to maximum
 - add power to the ESC
 
@@ -75,7 +77,10 @@ Reversing PWM based ESCs
 
 If you are using a reversing ESC for reverse thrust ( see :ref:`Automatic Landing<automatic-landing>` section on Reverse Thrust Landing ), and its PWM based rather than CAN, OneShot, or DShot, then you may need to calibrate it. Usually, a button is provided for setting full forward, neutral, and full reverse. In this case, you will need to setup an RCx_OPTION on an RC channel to allow setting full reverse manually. Follow the manufacturers instructions for calibration.
 
-Most brushed motor ESCs have a fixed calibration which will require manually setting the throttle output's ``SERVOx_MAX``, and ``SERVOx_MIN`` parameters to match the ESCs maximum points.
+Brushed Motor ESCS
+==================
+
+Most brushed motor ESCs have a fixed calibration which will require manually setting the throttle output's ``SERVOx_MAX``, and ``SERVOx_MIN`` parameters to match the ESCs maximum points. ``SERVOx_TRIM`` would be set so that the motor is stopped, if using a reversing ESC.
 
 Other ESC Protocols
 ===================

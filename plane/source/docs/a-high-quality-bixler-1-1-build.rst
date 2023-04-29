@@ -60,7 +60,7 @@ Programming the ESC
 #. Using the ESC's setup instructions, set the ESC's low voltage cutoff to its lowest setting to allow   the autopilot battery level failsafe feature do its job. (be sure to enable it!)
 #. Don't worry about motor direction; you can just switch two of the motor
    wires if the motor spins backwards.
-#. Follow the :ref:`ESC setup guide <guide-esc-calibration>` to calibrate the ESC
+#. Follow the :ref:`ESC setup guide <common-esc-calibration>` to calibrate the ESC
 
 Wiring the ESC and BEC
 ======================

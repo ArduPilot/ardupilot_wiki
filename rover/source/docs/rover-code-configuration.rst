@@ -23,6 +23,7 @@ In addition to mandatory calibration, you may also choose to :ref:`Configure Opt
     Compass Calibration <common-compass-calibration-in-mission-planner>
     RC Transmitter Mode Setup <common-rc-transmitter-flight-mode-configuration>
     Motor and Servo configuration <rover-motor-and-servo-configuration>
+    ESC Calibraton <common-esc-calibration>
     Failsafes <rover-failsafes>
     Control Modes <rover-control-modes>
 

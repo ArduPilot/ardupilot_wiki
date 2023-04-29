@@ -35,7 +35,7 @@ Before operating the vehicle, you must setup:
 - :ref:`Compass (optional for Plane)<common-compass-calibration-in-mission-planner>`
 - :ref:`Radio Calibration<common-radio-control-calibration>`
 - Servo Output : configure each :ref:`output's function<common-rcoutput-mapping>`. Default values get loaded upon initial firmware installation, but be sure to check them here.
-- :ref:`ESC Calibration<esc-calibration>` for Copter only (not required for ESCs running DShot protocol, but must be :ref:`configured <common-brushless-escs>` in ArduPilot) Plane uses its own :ref:`guide-esc-calibration` technique, but is also a mandatory setup item.
+- :ref:`ESC Calibration<esc-calibration>` for Copter only (not required for ESCs running DShot protocol, but must be :ref:`configured <common-brushless-escs>` in ArduPilot) Plane and Rover use their own :ref:`common-esc-calibration` technique, but is also a mandatory setup item.
 - Flight Modes: Refer to :ref:`Plane <plane:flight-modes>`, :ref:`Copter <copter:flight-modes>` or :ref:`Rover<rover-control-modes>` mode pages.
 - Failsafe: Refer to :ref:`Plane <apms-failsafe-function>`, :ref:`Copter <failsafe-landing-page>` or :ref:`Rover<rover-failsafes>` failsafe pages.
 

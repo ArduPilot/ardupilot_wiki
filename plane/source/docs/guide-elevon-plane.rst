@@ -169,5 +169,5 @@ Final Setup
 After completing the above you should move onto the final setup of
 your aircraft.
 
-- :ref:`ESC Calibration <guide-esc-calibration>`
+- :ref:`ESC Calibration <common-esc-calibration>`
 - :ref:`Center of Gravity <guide-center-of-gravity>`

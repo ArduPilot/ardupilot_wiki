@@ -27,7 +27,7 @@ PWM ESCs use a periodic input pulse of width typically between 1000uS and 2000uS
 [site wiki="plane"]
 - Forward motors will use normal PWM unless OneShot (see below) or :ref:`DShot <common-dshot-escs>` has been enabled.  The PWM range for each channel is specified by the corresponding :ref:`SERVOx_MIN <SERVO3_MIN>` and :ref:`SERVOx_MAX <SERVO3_MAX>` parameters.
 - VTOL motors will use normal PWM when :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE>` is 0/Normal (the default).  The PWM range is specified by the :ref:`Q_M_PWM_MIN <Q_M_PWM_MIN>` and :ref:`Q_M_PWM_MAX <Q_M_PWM_MAX>` parameters
-- See :ref:`ESC Calibration <guide-esc-calibration>` for info on aligning the autopilot's output range with the ESC's input range.
+- See :ref:`ESC Calibration <common-esc-calibration>` for info on aligning the autopilot's output range with the ESC's input range.
 
 .. note:: The autopilot should be re-booted after changing the protocol type.
 [/site]

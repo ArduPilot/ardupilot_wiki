@@ -86,7 +86,7 @@ Older Receivers
 
 Some very old RC receivers cannot be set to send "no pulses" when losing RC signal and simple hold the ROLL/PITCH/YAW RC channels at their last value and set the throttle channel to its minimum PWM value (low throttle). For those, the only way to setup an RC failsafe is to set the :ref:`THR_FS_VALUE<THR_FS_VALUE>` to slightly above that value and use the transmitters trim tab to raise the idle stick value 40-50us above that for normal operation.
 
-.. note:: be sure to do :ref:`ESC calibration<guide-esc-calibration>` after you have setup the failsafes and throttle ranges.
+.. note:: be sure to do :ref:`ESC calibration<common-esc-calibration>` after you have setup the failsafes and throttle ranges.
 
 **Transmitter Tutorials:**
 
