@@ -9,7 +9,10 @@ things:
 
 #. Detects a RC Failsafe condition and then initiating a defined response, such as returning to home. Detection of an RC Failsafe is either a complete loss, or corruption, of RC signals, or the receiver sets a FS bit in its data stream for those protocols supporting it (SBUS, etc.), or that the throttle channel PWM value falls below a certain point set by :ref:`THR_FS_VALUE<THR_FS_VALUE>`. This RC failsafe must be enabled by setting :ref:`THR_FAILSAFE<THR_FAILSAFE>` = 1.
 #. Optionally, detect loss of telemetry (GCS Failsafe) and take an programmable action, such as switching to return to launch (RTL) mode.
-#. Detect loss of GPS for more than 20 seconds and switch into Dead Reckoning mode until GPS signal is regained. See https://youtu.be/0VMx2u8MlUU for a demo.
+
+Either of the above have two phases: Short Failsafe which occurs a programmable time after loss of RC or telemetry, which allows optionally circling to try to recover the signals, and if the loss persists longer, a Long Failsafe which determines what long term action is to be taken.
+
+3. Detect loss of GPS for more than 20 seconds and switch into Dead Reckoning mode until GPS signal is regained. See https://youtu.be/0VMx2u8MlUU for a demo.
 #. Optionally, detect low battery conditions (low voltage/remaining capacity) and initiate a programmable response, such as returning to home. ArduPilot supports this on multiple batteries.
 
 Here's what the failsafe **will not do**:
@@ -63,9 +66,9 @@ RC Failsafe Operation
 
 -  When RC Failsafe is entered, all RC inputs (except throttle in the case of Throttle Failsafe), are ignored as the autopilot takes its failsafe actions.
 -  First, the autopilot will go into Short Failsafe when it detects RC Failsafe for more than :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds.
--  A message will be displayed on your Ground Control Station(GCS), or OSD, if its message panel is enabled, that a Short Failsafe is active, and the autopilot will take the :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>`, if enabled.  The default is CIRCLE mode.
+-  A message will be displayed on your Ground Control Station(GCS), or OSD, if its message panel is enabled, that a Short Failsafe is active, and the autopilot will take the :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>`, if enabled.  The default is CIRCLE mode. This is intended to possibly allow the vehicle's changing orientation to re-acquire the signal, but other actions can be assigned. See :ref:`FS_SHORT_ACTN parameter below <failsafe-parameters>` for how each mode responds to the selected action value.
 -  If the condition causing the Short Failsafe is removed, the vehicle will return to the previous mode, and a message will be displayed that Short Failsafe is cleared. If it was a Throttle Failsafe that caused the RC Failsafe, and throttle was increased in order to exit, then an additional message will be sent stating that the Throttle Failsafe is OFF.
--  If the condition causing the Short Failsafe persists longer than :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds the autopilot will go into Long Failsafe, send a message to the GCS that it has been entered, and execute the :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` action, if enabled. The default setting for Long Failsafe action to take is RTL (Return to Launch).
+-  If the condition causing the Short Failsafe persists longer than :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds the autopilot will go into Long Failsafe, send a message to the GCS that it has been entered, and execute the :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` action, if enabled. The default setting for Long Failsafe action to take is RTL (Return to Launch). See :ref:`FS_LONG_ACTN parameter below <failsafe-parameters>` for how each mode responds to the selected action value.
 -  If the RC Failsafe condition is later exited, a message will be displayed that the Long Failsafe is cleared, but the flight mode will not revert. If it was a Throttle Failsafe that caused the RC Failsafe, and throttle was increased in order to exit, then an additional message will be sent stating that the Throttle Failsafe is OFF.
 
 .. note:: The action set by :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` will continue even if your RC signal is reacquired, if the flight mode is the same as it was before the failsafe action began. Once RC signal is reacquired, the :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` can be exited via a mode change on the :ref:`FLTMODE_CH<FLTMODE_CH>`. If the mode on the RC transmitter was changed during the failsafe period, then this changed mode is entered after the RC signal is restored. In addition, other failsafes, such as battery failsafe, can also change the mode, if they occur subsequently to the RC signal loss.
@@ -99,7 +102,7 @@ GCS Failsafe
 **How it works.** When flying while using telemetry on the GCS, the
 autopilot can be programmed to trigger into failsafe mode if it loses
 telemetry. In the event that the autopilot stops receiving MAVlink
-(telemetry protocol) heartbeat messages. :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` applies just in the case of a long Throttle Failsafe.
+(telemetry protocol) heartbeat messages. :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` applies just in the case of a long Throttle Failsafe. See :ref:`FS_LONG_ACTN parameter below <failsafe-parameters>` for how each mode responds to the selected action value.
 
 **Setup.**
 
@@ -200,6 +203,7 @@ The following is a description of the actions that can be taken for battery fail
 +     |                  | otherwise do nothing                                                        +
 +-----+------------------+-----------------------------------------------------------------------------+
 
+.. _failsafe-parameters:
 
 Failsafe Parameters and their Meanings
 ======================================
@@ -207,72 +211,239 @@ Failsafe Parameters and their Meanings
 Short failsafe action (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` )
 ------------------------------------------------------------
 
-The action to take on a short (:ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds) RC failsafe event . A short failsafe event in plane stabilization modes can be set to change mode to CIRCLE or FBWA, or be disabled completely. In QuadPlane stabilization modes, it will change to QLAND or QRTL, dependent upon which :ref:`Q_OPTIONS<Q_OPTIONS>` is selected. Short failsafe only occurs on loss of RC, either RC loss or Throttle Failsafe.
+The action to take on a short (:ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds) RC failsafe event .
 
-In AUTO, LOITER and GUIDED modes you can also choose for it continue with the mission and ignore the short failsafe. If :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` is 0 then it will continue with the mission, if it is 1 then it will enter CIRCLE mode.
+No Action is ever taken for Short FailSafe in these modes:
 
-.. raw:: html
+- CIRCLE
+- RTL
+- TAKEOFF
+- QRTL
+- QLAND
+- LOITER to Alt and QLAND
 
-   <table border="1" class="docutils">
-   <tbody>
-   <tr>
-   <th>VALUE</th>
-   <th>MEANING</th>
-   </tr>
-   <tr>
-   <td>0</td>
-   <td>Continue</td>
-   </tr>
-   <tr>
-   <td>1</td>
-   <td>Circle/ReturnToLaunch</td>
-   </tr>
-   <tr>
-   <td>2</td>
-   <td>FBWA</td>
-   </tr>
-   <tr>
-   <td>3</td>
-   <td>Disabled</td>
-   </tr>
-   </tbody>
-   </table>
+:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` = 3 disables taking action in ANY mode
+
+.. note:: if in AutoLanding in AUTO, it will always continue to the landing
+
+In QuadPlanes, Short FailSafe will force QLAND by default, RTL if bit 20 of :ref:`Q_OPTIONS<Q_OPTIONS>` is set, or QRTL if bit 5 of :ref:`Q_OPTIONS<Q_OPTIONS>` is set, if entered from these modes:
+
+- QSTABILIZE
+- QHOVER
+- QLOITER
+- QACRO
+- QAUTOTUNE
+
+Otherwise:
+
++----------------------+------------------------+-------------------------+
+|FS_SHORT_ACTN         |  Mode                  |   Action Taken          |
++======================+========================+=========================+
+| 0 - CONTINUE if in   | MANUAL                 | CIRCLE unless           |
++  AUTO, or CIRCLE     +------------------------+  emergency landing      +
+|                      | ACRO                   |  switch is active,      |
++                      +------------------------+  then FBWA              +
+|                      |STABILIZE               |                         |
++                      +------------------------+                         +
+|                      |FBWA                    |                         |
++                      +------------------------+                         +
+|                      |FBWB                    |                         |
++                      +------------------------+                         +
+|                      |CRUISE                  |                         |
++                      +------------------------+                         +
+|                      |AUTOTUNE                |                         |
++                      +------------------------+                         +
+|                      |TRAINING                |                         |
++                      +------------------------+-------------------------+
+|                      |LOITER                  |  No Change              |
++                      +------------------------+                         +
+|                      |AUTO                    |                         |
++                      +------------------------+                         +
+|                      |THERMAL                 |                         |
++                      +------------------------+                         +
+|                      |AVOID_ADSB              |                         |
++                      +------------------------+                         +
+|                      |GUIDED                  |                         |
++----------------------+------------------------+-------------------------+
+
++----------------------+------------------------+-------------------------+
+|FS_SHORT_ACTN         |  Mode                  |   Action Taken          |
++======================+========================+=========================+
+| 1 -CIRCLE            | MANUAL                 | CIRCLE unless           |
++                      +------------------------+  emergency landing      +
+|                      | ACRO                   |  switch is active,      |
++                      +------------------------+  then FBWA              +
+|                      |STABILIZE               |                         |
++                      +------------------------+                         +
+|                      |FBWA                    |                         |
++                      +------------------------+                         +
+|                      |FBWB                    |                         |
++                      +------------------------+                         +
+|                      |CRUISE                  |                         |
++                      +------------------------+                         +
+|                      |AUTOTUNE                |                         |
++                      +------------------------+                         +
+|                      |TRAINING                |                         |
++                      +------------------------+-------------------------+
+|                      |LOITER                  |  CIRCLE                 |
++                      +------------------------+                         +
+|                      |AUTO                    |                         |
++                      +------------------------+                         +
+|                      |THERMAL                 |                         |
++                      +------------------------+                         +
+|                      |AVOID_ADSB              |                         |
++                      +------------------------+                         +
+|                      |GUIDED                  |                         |
++----------------------+------------------------+-------------------------+
+
++----------------------+------------------------+-------------------------+
+|FS_SHORT_ACTN         |  Mode                  |   Action Taken          |
++======================+========================+=========================+
+| 2 -GLIDE             | MANUAL                 | GLIDE/FBWB unless       |
++  or                  +------------------------+  emergency landing      +
+|  4 - FBWB(ALT HOLD)  | ACRO                   |  switch is active,      |
++                      +------------------------+  then GLIDE             +
+|                      |STABILIZE               |                         |
++                      +------------------------+                         +
+|                      |FBWA                    |                         |
++                      +------------------------+                         +
+|                      |FBWB                    |                         |
++                      +------------------------+                         +
+|                      |CRUISE                  |                         |
++                      +------------------------+                         +
+|                      |AUTOTUNE                |                         |
++                      +------------------------+                         +
+|                      |TRAINING                |                         |
++                      +------------------------+-------------------------+
+|                      |LOITER                  | GLIDE/FBWB              |
++                      +------------------------+                         +
+|                      |AUTO                    |                         |
++                      +------------------------+                         +
+|                      |THERMAL                 |                         |
++                      +------------------------+                         +
+|                      |AVOID_ADSB              |                         |
++                      +------------------------+                         +
+|                      |GUIDED                  |                         |
++----------------------+------------------------+-------------------------+
 
 Long failsafe action (:ref:`FS_LONG_ACTN<FS_LONG_ACTN>` )
 ---------------------------------------------------------
 
-The action to take on a long (:ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds) RC failsafe event. If the aircraft was in a stabilization or manual mode when failsafe started and a long failsafe occurs then it will change to RTL mode if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is 0 or 1, and will change to FBWA  and idle the throttle if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 2.
+The action to take on a long (:ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds) RC failsafe event. :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` should be set longer than :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>`.
 
-If the aircraft was in an auto mode (such as AUTO or GUIDED) when the failsafe started then it will continue in the auto mode if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 0, will change to RTL mode if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 1 and will change to FBWA mode and idle the throttle if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 2. If :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 3, the parachute will be deployed (make sure the chute is configured and enabled).
+No Action is ever taken for Long FailSafe in these modes:
 
-.. raw:: html
+- RTL
+- TAKEOFF
+- QRTL
+- QLAND
+- LOITER to Alt and QLAND
 
-   <table border="1" class="docutils">
-   <tbody>
-   <tr>
-   <th>VALUE</th>
-   <th>MEANING</th>
-   </tr>
-   <tr>
-   <td>0</td>
-   <td>Continue</td>
-   </tr>
-   <tr>
-   <td>1</td>
-   <td>ReturnToLaunch</td>
-   </tr>
-   <tr>
-   <td>2</td>
-   <td>FBWA Glide</td>
-   </tr>
-   <tr>
-   <td>3</td>
-   <td>Deploy Parachute</td>
-   </tr>
-   </tbody>
-   </table>
+In QuadPlanes, Long FailSafe will force QLAND by default, RTL if bit 20 of :ref:`Q_OPTIONS<Q_OPTIONS>` is set, or QRTL if bit 5 of :ref:`Q_OPTIONS<Q_OPTIONS>` is set, if entered from these modes:
 
-In a QuadPlane, if in VTOL operation in modes others than AUTO or GUIDED, the action taken will be either a QRTL or QLAND, depending on the :ref:`Q_OPTIONS<Q_OPTIONS>` bit mask setting for bit 5. And if in fixed-wing operation, and the long or short failsafe action is a mode change to RTL, then the :ref:`Q_RTL_MODE<Q_RTL_MODE>` will determine behavior at the end of that RTL, just as in the case of a regular mode change to RTL.
+- QSTABILIZE
+- QHOVER
+- QLOITER
+- QACRO
+- QAUTOTUNE
+
+Otherwise:
+
++----------------------+------------------------+-------------------------+
+|FS_LONG_ACTN          |  Mode                  |   Action Taken          |
++======================+========================+=========================+
+| 0 - CONTINUE if in   | MANUAL                 | RTL unless              |
++  AUTO, or RTL        +------------------------+  emergency landing      +
+|                      | ACRO                   |  switch is active,      |
++                      +------------------------+  then GLIDE             +
+|                      |STABILIZE               |                         |
++                      +------------------------+                         +
+|                      |FBWA                    |                         |
++                      +------------------------+                         +
+|                      |FBWB                    |                         |
++                      +------------------------+                         +
+|                      |CRUISE                  |                         |
++                      +------------------------+                         +
+|                      |AUTOTUNE                |                         |
++                      +------------------------+                         +
+|                      |TRAINING                |                         |
++                      +------------------------+                         +
+|                      |LOITER                  |                         |
++                      +------------------------+                         +
+|                      |THERMAL                 |                         |
++                      +------------------------+                         +
+|                      |CIRCLE                  |                         |
++                      +------------------------+-------------------------+
+|                      |AUTO                    |  No Change              |
++                      +------------------------+                         +
+|                      |AVOID_ADSB              |                         |
++                      +------------------------+                         +
+|                      |GUIDED                  |                         |
++----------------------+------------------------+-------------------------+
+
++----------------------+------------------------+-------------------------+
+|FS_LONG_ACTN          |  Mode                  |   Action Taken          |
++======================+========================+=========================+
+| 1 - RTL              | MANUAL                 | RTL unless              |
++                      +------------------------+  emergency landing      +
+|                      | ACRO                   |  switch is active,      |
++                      +------------------------+  then GLIDE             +
+|                      |STABILIZE               |                         |
++                      +------------------------+                         +
+|                      |FBWA                    |                         |
++                      +------------------------+                         +
+|                      |FBWB                    |                         |
++                      +------------------------+                         +
+|                      |CRUISE                  |                         |
++                      +------------------------+                         +
+|                      |AUTOTUNE                |                         |
++                      +------------------------+                         +
+|                      |TRAINING                |                         |
++                      +------------------------+                         +
+|                      |LOITER                  |                         |
++                      +------------------------+                         +
+|                      |THERMAL                 |                         |
++                      +------------------------+                         +
+|                      |CIRCLE                  |                         |
++                      +------------------------+-------------------------+
+|                      |AUTO                    |                         |
++                      +------------------------+                         +
+|                      |AVOID_ADSB              |  RTL                    |
++                      +------------------------+                         +
+|                      |GUIDED                  |                         |
++----------------------+------------------------+-------------------------+
+
++----------------------+------------------------+-------------------------+
+|FS_LONG_ACTN          |  Mode                  |   Action Taken          |
++======================+========================+=========================+
+| 2 - GLIDE or         | MANUAL                 | GLIDE,AUTO or PARACHUTE |
++  4- AUTO or          +------------------------+  unless emergency       +
+|  3- PARACHUTE        | ACRO                   |  landing switch is      |
++                      +------------------------+  active, then GLIDE     +
+|                      |STABILIZE               |                         |
++                      +------------------------+                         +
+|                      |FBWA                    |                         |
++                      +------------------------+                         +
+|                      |FBWB                    |                         |
++                      +------------------------+                         +
+|                      |CRUISE                  |                         |
++                      +------------------------+                         +
+|                      |AUTOTUNE                |                         |
++                      +------------------------+                         +
+|                      |TRAINING                |                         |
++                      +------------------------+                         +
+|                      |LOITER                  |                         |
++                      +------------------------+                         +
+|                      |THERMAL                 |                         |
++                      +------------------------+                         +
+|                      |CIRCLE                  |                         |
++                      +------------------------+-------------------------+
+|                      |AUTO                    |                         |
++                      +------------------------+                         +
+|                      |AVOID_ADSB              | GLIDE,AUTO or PARACHUTE |
++                      +------------------------+                         +
+|                      |GUIDED                  |                         |
++----------------------+------------------------+-------------------------+
 
 GCS failsafe enable (:ref:`FS_GCS_ENABL<FS_GCS_ENABL>` )
 --------------------------------------------------------
