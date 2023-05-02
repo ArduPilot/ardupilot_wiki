@@ -31,3 +31,8 @@ In parts of the code where loops are running very quickly it may be necessary to
 
 .. image:: ../images/debug-with-send-text.png
     :target: ../_images/debug-with-send-text.png
+
+Here's a quick video demonstrating how to use send_text to debug and test local changes.
+
+.. youtube:: VMEX0c6n1DY
+    
