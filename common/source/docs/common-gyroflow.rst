@@ -13,7 +13,7 @@ ArduPilot Setup
 
 The following parameters are required:
 
-:ref:`LOG_BITMASK<LOG_BITMASK>` bit 21 must be set (2097152 added to present value if not already set) to enable the proper logging
+The Video Stabilization bit in :ref:`LOG_BITMASK<LOG_BITMASK>` (bit 20 for Copter/Rover, 21 for Plane) must be set (1048576 (Copter/Rover) or 2097152 (Plane) added to present value if not already set) to enable the proper logging
 
 :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>` should be set to 300Hz or higher. Planes and Rovers have 50Hz as a default and this should be raised. QuadPlanes and Copters have it already set by default.
 
