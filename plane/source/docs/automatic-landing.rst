@@ -66,22 +66,27 @@ The key parameters that control automatic landing are:
 
 The meaning and recommended value of each of these parameters is described below.
 
+.. image:: ../../../images/autolanding-flare.png
+    :target: ../../_images/autolanding-flare.png
+
 Setting the Flare Point
 -----------------------
 
 The "flare" is the final stage of the landing when the autopilot cuts the throttle and raises the pitch, increasing drag and slowing the aircraft to sink onto the ground. The appropriate time to flare depends on the type of aircraft, and is controlled by the :ref:`LAND_FLARE_ALT <LAND_FLARE_ALT>` and :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` parameters.
 
-The primary control of the flare is the :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` parameter.
+The first control of the flare is the :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` parameter.
 This is the time in seconds before the aircraft would hit the ground if it continued with its current descent rate. 
 
 So if the plane is descending at 2 meters/second and you set the :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` to 3 then the aircraft would flare at an altitude of 6 meters above the ground. 
 By using a time to impact to control the flare the aircraft is able to flare at a higher altitude if it is descending quickly, and at a lower altitude if it is descending slowly. That helps ensure the flare is able to produce a smooth touchdown.
 
-The second control is :ref:`LAND_FLARE_ALT <LAND_FLARE_ALT>`. That is an altitude above the ground in meters at which the aircraft will flare, regardless of its descent rate.
+The second control is :ref:`LAND_FLARE_ALT <LAND_FLARE_ALT>`. That is an altitude above the ground in meters at which the aircraft will flare, regardless of its descent rate. It is important that this value be close to the altitude that will usually result from the :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>`, since it is used in later calculations. Changing the descent rate required from the last waypoint before the landing will impact the height at which :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` would become active and should be adjusted accordingly.
 
-The appropriate values for these two parameters depends on how the autopilot is estimating its altitude above the ground.
+Whichever is reached first will force the beginning of the flare.The appropriate values for these two parameters depends on how the autopilot is estimating its altitude above the ground. 
 
 If you are relying solely on a barometer for landing altitude then you will probably need higher values, to account for barometric errors (see :ref:`improving-autolanding` below). The defaults are usually appropriate as a starting point for 1-1.5 meter wingspan vehicles.
+
+With a very well tuned vehicle (both Attitude and TECS) and using a rangefinder, lower altitudes can be attempted to start the flare.
 
 Controlling the glide slope
 ---------------------------
@@ -125,11 +130,13 @@ achieve the desired descent rate are
 :ref:`TECS_LAND_DAMP <TECS_LAND_DAMP>`
 and the main pitch tuning parameters.
 
+.. note:: If the vehicle does not have good pitch tuning, the vehicle's CG is significantly "nose heavy", or the elevator is being increased by propeller slip-stream, then the ability of the vehicle to actually attain the desired sink rates and attitudes can be severely impacted. Symptoms are landing short, and/or with the nose/nose wheel touching down first.
+
 The landing controller sets a point before the touchdown as the expected flare start point. This "flare_aim" point is calculated from the :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` and :ref:`TECS_LAND_SINK<TECS_LAND_SINK>` for the expected duration of the flare before the actual touchdown. If consistently landing long or short, this point can be adjusted using the :ref:`LAND_FLARE_AIM<LAND_FLARE_AIM>` parameter. If landing too short, decrease the percentage from its default of 50%, conversely, increasing it if landing too long.
 
-The transition from the glide-slope sink rate to the flare sink rate is controlled by the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` parameter. The start of the flare will occur at :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` and the sink rate will be gradually adjusted to :ref:`TECS_LAND_SINK<TECS_LAND_SINK>` at the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` to avoid a rapid pitch change at the beginning of the flare, which would tend to create a "ballooning" effect at the start of the flare. :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` should be lower than :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>`.
+The transition from the glide-slope sink rate to the flare sink rate is controlled by the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` parameter and should normally be set below :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>`. The start of the flare will occur at :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` and the sink rate will be gradually adjusted to :ref:`TECS_LAND_SINK<TECS_LAND_SINK>` at the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` to avoid a rapid pitch change at the beginning of the flare, which would tend to create a "ballooning" effect at the start of the flare. See note at the end of this section for a possible exception to having :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` set lower than :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>`.
 
-The :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` parameter sets the minimum pitch target in the
+The :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` parameter sets the minimum pitch target at the very end of the
 flare (in centi-degrees). This parameter is very airframe specific and
 is designed to prevent the nose of the aircraft being too far down on
 touchdown causing issues with damaging the landing gear or breaking a
@@ -139,11 +146,10 @@ small negative number can be good, to allow the nose to be kept down a
 small amount to reduce the chance of stall if the flare happens too far
 off the ground.
 
-Note that the actual pitch of the aircraft can be quite a bit above :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` as the TECS controller tries to control the descent
-rate. The maximum pitch is controlled by the
-:ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>`
-parameter if it is non-zero, otherwise by the
-:ref:`LIM_PITCH_MAX <LIM_PITCH_MAX>` parameter.
+Note that the actual pitch of the aircraft can be quite a bit above :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` as the TECS controller tries to control the descent rate. The maximum pitch is controlled by the :ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>`
+parameter if it is non-zero, otherwise by the :ref:`LIM_PITCH_MAX <LIM_PITCH_MAX>` parameter.
+
+However, if the vehicle cannot maintain the demanded pitch attitude in the later stages of the flare due to CG, tuning, etc. :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` may never be reached resulting in nose/nose wheel first touchdowns. In that case, set the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` ABOVE the :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` parameter, effectively allowing the :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` limit to take effect immediately, increasing the rate at which its demanded (i.e. at the beginning of the flare as opposed to the end)
 
 The :ref:`TECS_LAND_DAMP<TECS_LAND_DAMP>` parameter is a damping constant for the pitch
 control during flare. A larger number will cause the pitch demand to change
@@ -151,6 +157,8 @@ more slowly. This parameter can be used to reduce issues with sudden
 pitch changes when the flare happens.
 
 .. note:: you can use :ref:`STICK_MIXING<STICK_MIXING>` to allow manual adjustments during the flare, if needed, while tuning the above parameters.
+
+.. note:: For most well tuned vehicles the default values for all the landing parameters should result in safe landings. Iteratively adjusting the altitude limits and the aim point parameter will usually lead to almost perfect, repeatable landings. Analyzing the logs for TECS.dh vs TECS.dhdem and ATT.Pitch vs ATT.DesPitch will show how well the vehicle is attaining the desired attitude and sink rates in the flare.
 
 After the Flare
 ---------------
