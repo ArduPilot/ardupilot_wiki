@@ -77,11 +77,10 @@ To use the serial protocol use all the same settings as above except:
 -  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 8 (SToRM32 Gimbal Serial).  If another serial port is connected to the gimbal replace "2" with the serial port number
 -  :ref:`MNT1_TYPE <MNT1_TYPE>` = 5 (SToRM32 Serial)
 
-Testing the gimbal
-==================
+Control and Testing
+===================
 
-For instructions for testing the gimbal moves correctly please check the
-:ref:`similar section for the SimpleBGC gimbal <common-simplebgc-gimbal_testing_the_gimbal_moves_correctly>`.
+See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
 
 Resistor issue on some boards
 =============================

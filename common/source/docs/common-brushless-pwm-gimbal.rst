@@ -51,6 +51,8 @@ Connect to the autopilot with a ground station and set the following parameters.
 - :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw rate with RC channel 7
 - :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Lock") to switch between "lock" and "follow" mode with RC channel 8
 
+See the "Control with an RC transmitter" section of :ref:`this page <common-mount-targeting>` for more details on parameter changes required to control the gimbal through an RC Transmitter (aka "RC Targeting")
+
 Configuring the Gimbal
 ----------------------
 
@@ -63,3 +65,8 @@ Connect the gimbal to your PC and using its configuration application
     - set yaw angle input to input to channel 11
 
 - If the gimbal supports "lock" and "follow" yaw control it should be configured for "follow".
+
+Control and Testing
+-------------------
+
+See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands

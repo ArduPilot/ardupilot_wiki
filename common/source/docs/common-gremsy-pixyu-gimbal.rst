@@ -36,7 +36,8 @@ Connect to the autopilot with a ground station and set the following parameters,
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps.  "SERIAL2" can be replaced with another serial port (i.e. SERIAL1) depending upon the physical connection
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
 - :ref:`SERIAL2_OPTIONS <SERIAL2_OPTIONS>` to 1024 for "Don't forward mavlink to/from"
-- Optionally set :ref:`RC9_OPTION <RC9_OPTION>` to 163 for "Mount Lock" to allow the pilot to switch between "lock" and "follow" modes during "RC Targetting".  Note "RC9" can be replaced with any RC input channel
+
+See the "Control with an RC transmitter" section of :ref:`this page <common-mount-targeting>` for details on parameter changes required to control the gimbal through an RC Transmitter (aka "RC Targeting")
 
 When the autopilot has successfully connected to the gimbal, "Mount: GREMSY PixyU fw:7.7.1.0" (or similar) will be sent to the ground station.  Looking for this message may be useful in determining if the autopilot and gimbal are communicating successfully.
 
@@ -79,30 +80,10 @@ Configuring the Gimbal
 
 - Select the "STIFFNESS" tab and adjust the Tilt, Roll, and Pan gains so that the gimbal holds the camera in position without shaking
 
-Testing Controlling the Gimbal from RC
---------------------------------------
+Control and Testing
+-------------------
 
-- Disconnect the USB cable connecting your PC to the gimbal
-- Powerup the vehicle and gimbal
-- Move the transmitter's channel 6 tuning knob to its minimum position, the camera should point straight down
-- Move the ch6 knob to maximum and the gimbal should point upwards
-
-.. note::
-
-   The RC's channel 6 input can be checked from Mission Planner's Radio calibration page
-
-Testing ROI
------------
-
-The ROI feature points the vehicle and/or camera to point at a target.  This can be tested by doing the following:
-
-- Ensure the vehicle has GPS lock
-- If using the Mission Planner, go to the Flight Data screen and right-mouse-button-click on a point about 50m ahead of the vehicle (the orange and red lines show the vehicle's current heading), select **Point Camera Here** and input an altitude of -50 (meters). The camera should point forward and then pitch down at about 45 degrees
-
-.. image:: ../../../images/Tarot_BenchTestROI.jpg
-    :target: ../_images/Tarot_BenchTestROI.jpg
-
-Pilot control of the gimbal can be restored by setting up an :ref:`auxiliary function switch <common-auxiliary-functions>` to "Retract Mount" (i.e. RCx_OPTION = 27) and then move the switch to the lower position
+See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
 
 Connecting Two Gimbals
 ----------------------
