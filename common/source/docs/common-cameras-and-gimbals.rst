@@ -26,7 +26,6 @@ gimbals in which ArduPilot controls the stabilisation.
 -  :ref:`SimpleBGC (aka AlexMos) Gimbal Controller <common-simplebgc-gimbal>` - a popular 2-axis or 3-axis brushess gimbal controller which uses a custom serial interface
 -  :ref:`Siyi ZR10, ZR30 and A8 <common-siyi-zr10-gimbal>` - 3-axis gimbal and camera
 -  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an inexpensive 2-axis or 3-axis brushless gimbal controller which responds to MAVLink commands (a richer format than PWM) over a serial interface
--  :ref:`Tarot 2D Gimbal <common-tarot-gimbal>` — low cost 2-axis brushless gimbal
 -  :ref:`ViewPro gimbals <common-viewpro-gimbal>`
 
 Mount control is covered on the :ref:`common-mount-targeting` page.
@@ -107,7 +106,6 @@ Detail topics
     SimpleBGC Gimbal Controller <common-simplebgc-gimbal>
     Siyi ZR10, ZR30 and A8 <common-siyi-zr10-gimbal>
     SToRM32 Gimbal Controller <common-storm32-gimbal>
-    Tarot 2D Gimbal <common-tarot-gimbal>
     FLIR Vue Pro Thermal Camera <common-flir-vue-pro>
     Airpixel Entire Geotagger <common-geotagging-airpixel-entire>
     DROTAG x Geotagger <common-geotagging-drotagx>

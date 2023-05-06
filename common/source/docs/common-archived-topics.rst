@@ -36,6 +36,7 @@ value to users with old hardware.
     PPM Encoders <common-ppm-encoder-8-channel-standalone-encoder>
     PPM Encoder <common-ppm-encoder>
     common-toshiba-can-escs
+    common-tarot-gimbal
 [/site]
 [site wiki="copter"]
     Boat Mode <boat-mode>
