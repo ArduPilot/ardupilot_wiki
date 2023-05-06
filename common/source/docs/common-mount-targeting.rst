@@ -43,6 +43,7 @@ While the gimbal is in "RC Targeting" mode (see above for how to change modes), 
 - set :ref:`RC6_OPTION <RC6_OPTION>` = 212 ("Mount1 Roll") to control the gimbal's roll angle with RC channel 6
 - set :ref:`RC7_OPTION <RC7_OPTION>` = 213 ("Mount1 Pitch") to control the gimbal's pitch angle with RC channel 7
 - set :ref:`RC8_OPTION <RC8_OPTION>` = 214 ("Mount1 Yaw") to control the gimbal's yaw angle with RC channel 8
+- ensure the RCx_TRIM parameter for each RC input channel used is half way between RCx_MIN and RCx_MAX
 
 By default the RC input specifies the **angle** but this can be changed to **rate** control by setting :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to the desired rotation rate in deg/sec.
 
