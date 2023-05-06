@@ -45,10 +45,12 @@ Connect to the autopilot with a ground station and do the following
 - Download mount-djirs2-driver.lua (`from here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/drivers>`__) and copy it to the autopilot's SD card in the APM/scripts directory and reboot the autopilot
 - Optionally set DJIR_DEBUG to 1 to display parsing and errors stats at 5sec.  Set to 2 to display gimbal angles
 
-Testing
-=======
+See the "Control with an RC transmitter" section of :ref:`this page <common-mount-targeting>` for details on parameter changes required to control the gimbal through an RC Transmitter (aka "RC Targeting")
 
-See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal
+Control and Testing
+===================
+
+See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
 
 Videos
 ======

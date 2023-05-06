@@ -70,6 +70,11 @@ Typical input and output assignments are shown below, but any unused RC input ch
 - :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw rate with RC channel 7
 - :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Lock") to switch between "lock" and "follow" mode with RC channel 8
 
+Control and Testing
+===================
+
+See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
+
 Configuration Using Mission Planner (4.2 or lower)
 ==================================================
 

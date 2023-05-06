@@ -70,3 +70,8 @@ Configuring the Gimbal
 
 .. image:: ../../../images/siyi-gimbal-firmversion.png
     :target: ../_images/siyi-gimbal-firmversion.png
+
+Control and Testing
+-------------------
+
+See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
