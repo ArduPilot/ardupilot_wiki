@@ -4,6 +4,7 @@
 Tarot Gimbal
 ============
 
+**ARCHIVED**
 .. note::
 
    The Tarot T-2D has been a popular low cost 2-axis brushless gimbal. While this actual hardware has been retired and manufacturer support discontinued, this page is intended to keep up basic support for this item, as well as to serve as an illustrative example of how to configure ardupilot gimbal control options.
