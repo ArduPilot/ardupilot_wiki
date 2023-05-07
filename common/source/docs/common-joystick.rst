@@ -128,8 +128,8 @@ no failover to regular transmitter):
 
 #. Turn regular transmitter off
 #. Connect with the mission planner, push Joystick window's **Enable**
-   button and ensure RC overrides are being sent to the vehicle (use
-   Radio Calibration screen) or Flight Data's status screen.
+   button and ensure RC overrides are being sent to the vehicle. (use
+   Radio Calibration screen or Flight Data's status screen)
 #. Arm vehicle, switch to Stabilize or Loiter mode and raise the throttle
 #. Ensure the motors are spinning by checking the Flight Data screen's
    "ch1out" ~ "ch4out"
