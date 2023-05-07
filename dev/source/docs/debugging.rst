@@ -6,6 +6,12 @@ Debugging
 
 This section is for topics related to debugging ArduPilot source code.
 
+There is a series of videos introducing some debugging techniques for ArduPilot code:
+
+.. youtube:: 5nQiY_q_ZVA
+
+.. youtube:: 8fIndjwc_-Y
+
 Debug Output
 ------------
 
