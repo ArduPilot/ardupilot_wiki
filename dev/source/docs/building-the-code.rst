@@ -18,15 +18,32 @@ Setting up the Build Environment
 Building / Compiling
 --------------------
 
-**Linux / MacOSX users:**
+**Linux and Windows users:**
 
-- Linux and MacOSX users should build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
+Once the build environment is set up as above, Linux and Windows users, (under Windows 
+Subsystem for Linux) should run the following commmands prior to the initial build:
+
+- `git submodule init`
+- `git submodule update --recursive`
+- `./Tools/gittools/submodule-sync.sh`
+- `python3 waf configure --board *BoardName*`
+- `python3 waf clean`
+
+`*BoardName*` above is the name of the board, as labeled by its associated folder in
+`/ardupiot/libraries/AP_HAL_ChibiOS/hwdef`.
+
+Run the following command, each time you wish to build:
+`python3 waf copter`
+
+(Substitute `plane`, `rover` etc for `copter` as required)
+
+
+**Linux and MacOSX users:**
+
+- Linux and MacOSX users will find additional, detailed information in this document, and the video below: `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
 .. youtube:: lNSvAPZOM_o
 
-**Windows users:**
-
-- Windows users should fellow the directions described on :ref:`Setup Build Environment on Windows <building-setup-windows>`.
 
 **Board specific instructions:**
 
