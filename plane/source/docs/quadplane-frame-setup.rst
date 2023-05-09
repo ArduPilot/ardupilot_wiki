@@ -32,9 +32,9 @@ Frame Class
 -  2 for hexa
 -  3 for octa
 -  4 for octaquad
--  5 for Y6 (ignores all following frame classes except 10 and 11, all others result in Y6A configuration)
--  7 for tri (ignores all following frame classes except 6 for reversed tricopter)
--  10 for tailsitter using single/dual motors
+-  5 for Y6 (ignores all following frame types except 10 and 11, all others result in Y6A configuration)
+-  7 for tri (ignores all following frame types except 6 for reversed tricopter)
+-  10 for tailsitter using single/dual motors (ignores all following frame types)
 
 Frame Type
 ~~~~~~~~~~
