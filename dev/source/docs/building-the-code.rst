@@ -15,13 +15,11 @@ Setting up the Build Environment
 - :ref:`Setup the Build Environment on Windows <building-setup-windows>`
 - :ref:`Setup the Build Environment on MacOSX <building-setup-mac>`
 
+
 Building / Compiling
 --------------------
 
-**Linux and Windows users:**
-
-Once the build environment is set up as above, Linux and Windows users, (under Windows 
-Subsystem for Linux) should run the following commmands prior to the initial build:
+Once the build environment is set up as above, run the following commmands prior to the initial build. (For Windows users, this is under WSL, as set up above):
 
 - `git submodule init`
 - `git submodule update --recursive`
@@ -38,9 +36,12 @@ Run the following command, each time you wish to build:
 (Substitute `plane`, `rover` etc for `copter` as required)
 
 
-**Linux and MacOSX users:**
+**Details**
 
-- Linux and MacOSX users will find additional, detailed information in this document, and the video below: `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
+- Additional detailed information is available in this document: `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
+
+
+- This video demonstrates building on a Linux PC:
 
 .. youtube:: lNSvAPZOM_o
 
