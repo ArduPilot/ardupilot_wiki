@@ -22,7 +22,7 @@ Building / Compiling
 Once the build environment is set up as above, run the following commmands prior to the initial build. (For Windows users, this is under WSL, as set up above):
 
 - `git submodule init`
-- `git submodule update --recursive`
+- `git submodule update --recursive --init`
 - `./Tools/gittools/submodule-sync.sh`
 - `python3 waf configure --board *BoardName*`
 - `python3 waf clean`
