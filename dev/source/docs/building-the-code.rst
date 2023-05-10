@@ -19,7 +19,7 @@ Setting up the Build Environment
 Building / Compiling
 --------------------
 
-Once the build environment is set up as above, run the following commmands prior to the initial build. (For Windows users, this is under WSL, as set up above):
+Once the build environment is set up as above, run the following commmands prior to the initial build. (For Windows users, this is using WSL, as set up above):
 
 - `git submodule init`
 - `git submodule update --recursive`
