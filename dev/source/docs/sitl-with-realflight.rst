@@ -25,8 +25,9 @@ See the last section on this page for setup instructions, if using an OpenTX tra
 Enabling RealFlight Link Feature
 ================================
 
-On RealFlight go to Settings->Physics and enable the FlightAxis and set "Pause Sim When in Background" to No
-option then restart RealFlight. In RealFlight Evolution, press ESC, go to Settings->Physics->Quality and enable the "RealFlight Link" option.
+On RealFlight8/9, go to Settings->Physics and enable the FlightAxis option and set "Pause Sim When in Background" option to No and then restart RealFlight.
+
+In RealFlight Evolution, press ESC, go to Settings->Physics->Quality and enable the "RealFlight Link" option.
 
 Configure RealFlight
 ====================
@@ -45,7 +46,7 @@ From within RealFlight, Reduce graphics options to improve performance:
   - Simulation, Settings, Graphics
   - Under "Quality" set all values to "No" or "Low" (i.e. set "Clouds" to "No", "Water Quality" to "Low", etc)
   - Under "Hardware" set "Resolution" to "800 x 600 Medium(16 bit) and select "Full Screen" mode
-  - Under "Physics" settings, change the option for "Pause Sim When in Background" to No, and "Automatic Reset Delay(sec)" to 2.0, and be sure RealFlight Link Enable is "Yes".
+  - Under "Physics" settings, change the option "Automatic Reset Delay(sec)" to 2.0, and be sure RealFlight Link Enable is "Yes".
    
   .. image:: ../images/realflight-settings-graphics.png
     :target: ../_images/realflight-settings-graphics.png
