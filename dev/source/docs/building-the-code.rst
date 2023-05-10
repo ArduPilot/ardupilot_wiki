@@ -25,7 +25,7 @@ Once the build environment is set up as above, run the following commmands prior
 - `git submodule update --recursive --init`
 - `./Tools/gittools/submodule-sync.sh`
 - `python3 waf configure --board *BoardName*`
-- `python3 waf clean`
+- `./waf clean`
 
 `*BoardName*` above is the name of the board, as labeled by its associated folder in
 `/ardupiot/libraries/AP_HAL_ChibiOS/hwdef`.
