@@ -31,7 +31,7 @@ Once the build environment is set up as above, run the following commmands prior
 `/ardupiot/libraries/AP_HAL_ChibiOS/hwdef`.
 
 Run the following command, each time you wish to build:
-`python3 waf copter`
+`./waf copter`
 
 (Substitute `plane`, `rover` etc for `copter` as required)
 
