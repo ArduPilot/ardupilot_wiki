@@ -24,7 +24,7 @@ Once the build environment is set up as above, run the following commmands prior
 - `git submodule init`
 - `git submodule update --recursive --init`
 - `./Tools/gittools/submodule-sync.sh`
-- `python3 waf configure --board *BoardName*`
+- `./waf configure --board *BoardName*`
 - `./waf clean`
 
 `*BoardName*` above is the name of the board, as labeled by its associated folder in
