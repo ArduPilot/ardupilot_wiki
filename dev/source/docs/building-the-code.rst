@@ -21,11 +21,12 @@ Building / Compiling
 
 Once the build environment is set up as above, run the following commmands prior to the initial build. (For Windows users, this is using WSL, as set up above):
 
-- `git submodule init`
+- `git clone https://github.com/ArduPilot/ardupilot`
+- `cd ardupilot`
 - `git submodule update --recursive --init`
 - `./Tools/gittools/submodule-sync.sh`
 - `./waf configure --board *BoardName*`
-- `./waf clean`
+- `./waf clean` (Optional; may be useful in some cases)
 
 `*BoardName*` above is the name of the board, as labeled by its associated folder in
 `/ardupiot/libraries/AP_HAL_ChibiOS/hwdef`.
