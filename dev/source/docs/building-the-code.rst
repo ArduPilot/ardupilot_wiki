@@ -37,6 +37,11 @@ Run the following command, each time you wish to build:
 (Substitute `plane`, `rover` etc for `copter` as required)
 
 
+**Note for Windows users**
+If possible, run the build steps above from a WSL directory, *not* from a directory on your
+Windows filesystem. Building from the Windows filesystem is very slow.
+
+
 **Details**
 
 - Additional detailed information is available in this document: `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
