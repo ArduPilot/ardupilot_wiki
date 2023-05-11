@@ -356,6 +356,31 @@ underscores.
 
     class ap_compass { };
 
+Enums
+---------------
+
+Prefer enum classes over raw enums. Enums should be PascalCase, and be singular.
+All entries should have trailing commas, even the last one.
+
+**Right:**
+
+::
+
+    enum class CompassType {
+        FOO,
+        BAR,
+    };
+
+**Wrong:**
+
+::
+
+    enum compass_types {
+        FOO,
+        BAR
+    };
+
+
 Functions and variables
 -----------------------
 
