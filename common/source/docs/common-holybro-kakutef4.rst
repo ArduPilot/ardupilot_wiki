@@ -97,8 +97,8 @@ currently available with ArduPilot.
 
 The PWM is in 2 groups:
 
- - PWM 1 and 4 in group 1
- - PWM 2 and 3 in group 2
+ - PWM 1 and 2 in group 1
+ - PWM 3 and 4 in group 2
 
 Channels within the same group need to use the same output rate, whether PWM or Dshot. If
 any channel in a group uses DShot then all channels in the group need
