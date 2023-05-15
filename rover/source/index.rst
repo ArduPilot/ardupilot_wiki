@@ -48,6 +48,7 @@ automation in our :ref:`Video Demos <rover-video-demonstrations>`).
     OEM Customization <docs/common-oem-customizations>
     Boats <docs/boat-configuration>
     Balance Bots <docs/balance_bot-home>
+    Mowers <docs/mower-home>
     Sailboats <docs/sailboat-home>
     Walking Robots <docs/walking-robots>
     Reference Frames <docs/reference-frames>
