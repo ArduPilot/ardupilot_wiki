@@ -32,6 +32,8 @@ If you have been using the autopilot, be sure to save the parameters, mission it
 
 Once you have saved these to replace them after simulating, reset the changed parameters by setting :ref:`FORMAT_VERSION<FORMAT_VERSION>` parameter to zero and rebooting the vehicle. This allows new default to be used in the simulation.
 
+.. note:: with MAVProxy, once rebooted you need to "FETCH" params to refresh the parameters to see them changed back to defaults, or dis-connect and re-connect to the autopilot.
+
 Pre-Compiled Firmware
 =====================
 
