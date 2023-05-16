@@ -6,7 +6,7 @@
 SIYI ZR10, ZR30 and A8 Gimbals
 ==============================
 
-The `SIYI ZR10 <https://shop.siyi.biz/products/zr10>`__, `ZR30 <https://shop.siyi.biz/products/siyi-zr30>`__ and `A8 <https://shop.siyi.biz/products/siyi-a8-mini>`__  are 3-axis gimbals and camera which can communicate with ArduPilot using a custom serial protocol.
+The `SIYI ZR10 <https://shop.siyi.biz/products/siyi-zr10>`__, `ZR30 <https://shop.siyi.biz/products/siyi-zr30>`__ and `A8 <https://shop.siyi.biz/products/siyi-a8-mini>`__  are 3-axis gimbals and camera which can communicate with ArduPilot using a custom serial protocol.
 
 .. image:: ../../../images/siyi-zr10-gimbal.png
     :target: https://shop.siyi.biz/products/zr10
@@ -65,7 +65,7 @@ Connect with a ground station and set the following parameters.  The params belo
 Configuring the Gimbal
 ----------------------
 
-- Download, install and run "SIYI PC Assistant" which can be found on the `SIYI ZR10 web page's Downloads tab <https://shop.siyi.biz/products/zr10>`__
+- Download, install and run "SIYI PC Assistant" which can be found on the `SIYI ZR10 web page's Downloads tab <https://shop.siyi.biz/products/siyi-zr10>`__
 - Ensure the gimbal is running a recent firmware.  For ZR10 use 0.2.1 or higher.  For A8 use 0.1.7 or higher.
 
 .. image:: ../../../images/siyi-gimbal-firmversion.png
