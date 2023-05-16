@@ -13,7 +13,7 @@ below to determine the assigned order of the motors.
 .. figure:: ../images/Pixhwak_outputs.jpg
    :target: ../_images/Pixhwak_outputs.jpg
 
-   Pixhawk Outputpins (numbered). First 4 pins are colour-coded for connecting a Quadframe
+   Pixhawk output pins (numbered). First 4 pins are colour-coded for connecting a Quadframe
 
 Motor order diagrams
 ====================
@@ -32,6 +32,10 @@ Quadcopter
 
 .. image:: ../images/motororder-quad-x-2d.png
     :target: ../_images/motororder-quad-x-2d.png
+    :scale: 40%
+
+.. image:: ../images/motororder-betaflight-x-2d.png
+    :target: ../_images/motororder-betaflight-x-2d.png
     :scale: 40%
 
 .. image:: ../images/motororder-quad-plus-2d.png
