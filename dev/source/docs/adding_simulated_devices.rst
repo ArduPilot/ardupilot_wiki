@@ -317,3 +317,26 @@ then another sim is started for the "slave" autopilot using:
 you can then switch between whose outputs are being used by the simulation physics with the ``SIM_JSON_MASTER`` parameter  ie O or 1.
 
 The second simulation could be running code from a different branch on the same computer.
+
+Adding a Winch
+==============
+
+A virtual winch can be added to a copter by setting these parameters:
+
+::
+
+    param set WINCH_TYPE 1
+    param set SERVO9_FUNCTION 88
+    param set RC9_OPTION 45
+
+Then restart SITL. After setting it up try this:
+
+::
+
+    module load graph
+    graph SERVO_OUTPUT_RAW.servo9_raw
+    rc 9 2000 (to release line)
+    rc 9 1000 (to wind in line)
+    rc 9 1500 (to stop winch from moving)
+
+More instructions for controlling the winch using mavlink commands can be found on the :ref:`MAVLink Interface Winch Control page <mavlink-winch>`
