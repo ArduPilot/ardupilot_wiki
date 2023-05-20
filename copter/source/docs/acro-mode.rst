@@ -8,7 +8,8 @@ Acro mode uses the RC sticks to control the angular velocity
 of the copter in each axis. Release the sticks and the vehicle will maintain its
 current attitude and will not return to level (attitude hold). Acro mode is useful for
 aerobatics such as flips or rolls, or FPV when smooth and fast control
-is desired.
+is desired. Raising the :ref:`INS_GYRO_FILTER<INS_GYRO_FILTER>` cutoff frequency and retuning may allow better responsiveness, but appropriate harmonic notch filtering to prevent noise impacts must be setup prior to retuning. 
+See :ref:`common-imu-notch-filtering`  for more information.
 
 Pure rate mode stabilization, utilizing only the gyros with no attitude feedback from the accelerometers, can be forced by setting bit 1 of :ref:`ACRO_OPTIONS<ACRO_OPTIONS>` to one. Attitude will still have an open loop correction applied in this mode, similar to "heading hold" tail gyros, but attitude can drift over time.
 
@@ -139,9 +140,16 @@ modes, not just ACRO.
    Centi-degress/sec/sec. Same principle as ``ATC_ACCEL_R_MAX`` and :ref:`ATC_ACCEL_P_MAX` 
    but on the YAW axis based on the :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` parameter value 
    (likely a much lower, more attainable value.)
+-  :ref:`ATC_THR_MIX_MAN <ATC_THR_MIX_MAN>`: Balance between attitude and throttle control. This 
+   value can be increased to improve attitude control when the throttle is cut for better Airmode handling,
+   however a stable tune is essential before it can be increased.
 
 User Videos
 ===========
-
 .. youtube:: dnygfyvXmL4
     :width: 100%
+.. youtube:: rJUpmGjbU8k
+    :width: 100%
+.. youtube:: 42iS9d-Lrqw
+    :width: 100%
+    
