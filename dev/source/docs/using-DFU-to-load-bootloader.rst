@@ -47,7 +47,7 @@ You can download the appropriate bootloader from `here <https://firmware.ardupil
 dfu-util tool
 =============
 
-This is a Linux command line DFU programming tool. On Linux
+This is a command line DFU programming tool. On Linux
 machines with apt you can install it using:
 
  sudo apt-get install dfu-util
@@ -95,12 +95,6 @@ download the px4fmuv2_bl.bin and run this:
                 
   dfu-util -a 0 --dfuse-address 0x08000000 -D px4fmuv2_bl.bin
   
-with some versions of dfu-util you may need this instead:
-
-.. code-block:: bash
-                
-  dfu-util -a 0 -s 0x08000000 --dfuse-address 0x08000000 -D px4fmuv2_bl.bin
-
 it should say "Downloading" and show a progress bar. On completion the board is ready to test the bootloader.
 
 After you have the bootloader loaded power cycle with the boot0 pin
