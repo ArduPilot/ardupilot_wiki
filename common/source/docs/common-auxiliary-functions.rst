@@ -106,6 +106,10 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        43            | Inverted Flight            |    X     |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        44            | Winch Enable               |    X     |         |         |
++----------------------+----------------------------+----------+---------+---------+
+|        45            | Winch Control              |    X     |         |         |
++----------------------+----------------------------+----------+---------+---------+
 |        46            | RC Override Enable         |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        47            | Rsvd for custom function   |    X     |         |         |
@@ -620,6 +624,26 @@ Disarms the vehicle if brought low.
    <td>
 
 Enabling inverted flight only changes how ArduPilot stabilizes the vehicle. It will stabilize it with a roll of 180 degrees from normal whenever inverted flight is enabled in a stabilized mode. Unless the vehicle is capable of inverted flight, do **NOT** use this option.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Winch Enable</strong></td>
+   <td>
+
+Enables Winch operation.A low on this channel relaxes the winch.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Winch Control</strong></td>
+   <td>
+
+Controls the speed and direction of the winch.Low: takeup, Middle: stop, High: unreel
 
 .. raw:: html
 
