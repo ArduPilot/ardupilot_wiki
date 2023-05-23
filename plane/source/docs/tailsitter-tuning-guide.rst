@@ -31,7 +31,7 @@ For pitch and yaw, control is provided by the fixed wing control surfaces, somet
 .. code:: bash
 
    PIQY.FF+PIQY.P+PIQY.D   
-   X * (PIQP.Act) , where X is 0.2 to start
+   X * (PIQY.Act) , where X is 0.2 to start
 
 Below is an image of this where the X value is adjusted until the two curves are the same amplitude, with a value of x = 0.1. This is then set as the :ref:`Q_A_RAT_YAW_FF<Q_A_RAT_YAW_FF>` and :ref:`Q_A_RAT_YAW_I<Q_A_RAT_YAW_I>` values.
 
