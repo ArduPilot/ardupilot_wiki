@@ -1,0 +1,130 @@
+{
+    "1": {
+        "Name": "QUAD",
+        "6": {
+            "Name": "PLUS (REVERSED)"
+        },
+        "12": {
+            "Name": "X (BETAFLIGHT)"
+        },
+        "13": {
+            "Name": "X (DJI)"
+        },
+        "14": {
+            "Name": "X (CLOCKWISE)"
+        },
+        "16": {
+            "Name": "PLUS (NO YAW TORQUE)",
+            "Notes": "Motor rotation direction does not matter"
+        },
+        "17": {
+            "Name": "X (NO YAW TORQUE)",
+            "Notes": "Motor rotation direction does not matter"
+        },
+        "18": {
+            "Name": "X (BETAFLIGHT REV)"
+        }
+    },
+    "2": {
+        "Name": "HEXA",
+        "13": {
+            "Name": "X (DJI)"
+        },
+        "14": {
+            "Name": "X (CLOCKWISE)"
+        }
+    },
+    "3": {
+        "Name": "OCTO",
+        "13": {
+            "Name": "X (DJI)"
+        },
+        "14": {
+            "Name": "X (CLOCKWISE)"
+        }
+    },
+    "4": {
+        "Name": "OCTO QUAD",
+        "12": {
+            "Name": "X (BETAFLIGHT)"
+        },
+        "14": {
+            "Name": "X (CLOCKWISE)"
+        },
+        "18": {
+            "Name": "X (BETAFLIGHT REV)"
+        }
+    },
+    "5": {
+        "Name": "Y6",
+        "0": {
+            "Name": "A",
+            "Notes": "Identical to FRAME_TYPE=1-9 or 12-18"
+        },
+        "1": {
+            "Name": ""
+        },
+        "2": {
+            "Name": ""
+        },
+        "3": {
+            "Name": ""
+        },
+        "4": {
+            "Name": ""
+        },
+        "5": {
+            "Name": ""
+        },
+        "6": {
+            "Name": ""
+        },
+        "7": {
+            "Name": ""
+        },
+        "8": {
+            "Name": ""
+        },
+        "9": {
+            "Name": ""
+        },
+        "10": {
+            "Name": "B"
+        },
+        "11": {
+            "Name": "F"
+        },
+        "12": {
+            "Name": ""
+        },
+        "13": {
+            "Name": ""
+        },
+        "14": {
+            "Name": ""
+        },
+        "15": {
+            "Name": ""
+        },
+        "16": {
+            "Name": ""
+        },
+        "17": {
+            "Name": ""
+        },
+        "18": {
+            "Name": ""
+        }
+    },
+    "14": {
+        "Name": "DECA",
+        "1": {
+            "Name": "X",
+            "Notes": "Identical to FRAME_TYPE=14"
+        },
+        "14": {
+            "Name": "X (CLOCKWISE)",
+            "Notes": "Identical to FRAME_TYPE=1"
+        }
+    }
+}

@@ -15,17 +15,98 @@ below to determine the assigned order of the motors.
 
    Pixhawk output pins (numbered). First 4 pins are colour-coded for connecting a Quadframe
 
-Motor order diagrams
-====================
+Motor Order
+===========
 
-The diagrams below show motor order for each frame type.
+The diagram below shows motor order for the selected frame type.
 The numbers indicate which output pin from the autopilot should be connected to each motor/propeller.
-The propeller direction is shown in green (clockwise, CW) or blue (counter-clockwise, CCW)
+The propeller direction is shown in green (clockwise, CW) or blue (counter-clockwise, CCW).
+The letters shown in red indicate which motor should turn when using Mission Planner's Motor Test feature.
+
+.. raw:: html
+
+    <script src='../_static/motor-diagram.js'></script>
+    <div>
+        <span style="font-weight: bold;">Select Frame Class and Type:</span>
+        <br>
+        <span style="display: inline-block;">
+            <select id="frame-class" onchange="onFrameClassChange()"></select>
+            <select id="frame-type" onchange="generateDiagram()"></select>
+        </span>
+    </div>
+    <div>
+        <svg id="motor-diagram" xmlns="http://www.w3.org/2000/svg"
+             width="400" height="400" style="padding: 25 0 25 0;">
+            <defs id ="svg-defs">
+                <g id="frame-half-2d" fill="#ebebeb">
+                    <path d="M 1 64 L -30 64
+                             A 12 12 0 0 1 -42 52 L -42 -28
+                             A 12 12 0 0 1 -38 -36
+                             L -5 -62
+                             A 12 12 0 0 1 0 -63
+                             L 1 -63"
+                    stroke-width="12" />
+                    <circle cx="-17" cy="-29" r="5" stroke-width="0" fill="#60507f" />
+                    <line x1="-17" y1="-29" x2="1" y2="-29" stroke-width="10" />
+                </g>
+                <g id="frame-2d">
+                    <use xlink:href="#frame-half-2d" />
+                    <use xlink:href="#frame-half-2d" transform="scale(-1 1)"" />
+                </g>
+                <path id="prop-half-arc" d="M -90 -6 A 91 91 0 0 1 89 -23
+                                           L 74 -21 L 101 4
+                                           A 101 101 0 0 0 -100 -14 Z" />
+                <g id="prop-arc">
+                    <use xlink:href="#prop-half-arc" />
+                    <use xlink:href="#prop-half-arc" transform="rotate(180)" />
+                </g>
+                <mask id="cw-arc-mask">
+                    <circle cx="0" cy="0" r="101" fill="white" />
+                    <rect x="-36" y="-102" width="72" height="20" fill="black" />
+                </mask>
+                <mask id="ccw-arc-mask">
+                    <circle cx="0" cy="0" r="101" fill="white" />
+                    <rect x="-50" y="-101" width="100" height="25" fill="black" />
+                </mask>
+                <g id="motor-center">
+                    <circle cx="0" cy="0" r="75" fill="#c4c4c4" opacity="0.5" />
+                    <circle cx="0" cy="0" r="35" />
+                </g>
+                <g id="CW" fill="#33cc33">
+                    <use xlink:href="#motor-center" />
+                    <use xlink:href="#prop-arc" mask="url(#cw-arc-mask)" />
+                    <text x="0" y="-100">CW</text>
+                </g>
+                <g id="CCW" fill="#00b8e6">
+                    <use xlink:href="#motor-center" />
+                    <use xlink:href="#prop-arc" mask="url(#ccw-arc-mask)" transform="scale(-1 1)" />
+                    <text x="0" y="-100">CCW</text>
+                </g>
+                <g id="NYT" fill="#60507f" stroke="#60507f">
+                    <use xlink:href="#motor-center" />
+                    <circle cx="0" cy="0" r="101" stroke-width="10" fill-opacity="0" />
+                </g>
+            </defs>
+            <g id="motor-diagram-layers" text-anchor="middle" dominant-baseline="central"
+               font-family="sans-serif" font-size="48" font-weight="bold">
+                <g id="layer-frame" stroke="#60507f" stroke-width="12"></g>
+                <g id="layer-motors" font-size="36"></g>
+                <g id="layer-motor-numbers" fill="white" font-weight="normal"></g>
+                <g id="layer-motor-letters" fill="red"></g>
+                <g id="layer-frame-name" fill="black" font-style="italic"></g>
+                <g id="layer-frame-notes" font-size="32" font-weight="normal" font-style="italic"></g>
+            </g>
+        </svg>
+      </div>
+      <script>initDiagram();</script>
 
 .. figure:: ../images/MOTORS_CW_CCWLegend.jpg
    :target: ../_images/MOTORS_CW_CCWLegend.jpg
 
    Legend for motor-order diagrams
+
+Legacy Diagrams (to be removed)
+===============================
 
 Quadcopter
 ----------
