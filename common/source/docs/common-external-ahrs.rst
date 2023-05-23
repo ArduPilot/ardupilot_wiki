@@ -26,6 +26,46 @@ VectorNav300 or Parker Lord
 
 This will replace ArduPilot’s internally generated INS/AHRS subsystems with the external system
 
+.. note::
+    When setting up the VN-300, you may need to configure unique update rates for different data. You can achieve this by running the following two commands:
+    - ``$VNWRG,75,3,8,34,072E,0106,0612*0C``
+    - ``$VNWRG,76,3,80,4E,0002,0010,20B8,0018*63``
+
+VN-300 data is expected at two different update rates, 50Hz and 5Hz.
+**50Hz**
+* Group 3 (GPS)
+    * UncompMag
+    * UncompAccel
+    * UncompGyro
+    * Pres
+    * Mag 
+    * Accel
+    * AngularRate 
+* Group 5 (Attitude)
+    * YawPitchRoll
+    * Quaternion
+    * YprU
+* Group 6 (INS)
+    * PosLLa
+    * VelNed
+    * PosU 
+    * VelU 
+**5Hz**
+* Group 2 (Time)
+    * TimeGps
+* Group 3 (IMU)
+    * Temp 
+* Group 4 (GPS1)
+    * NumSats
+    * Fix
+    * PosLLa
+    * VelNed
+    * DOP
+* Group 7 (GPS2)
+    * NumSats
+    * DOP
+
+
 VectorNav100
 ------------
 
