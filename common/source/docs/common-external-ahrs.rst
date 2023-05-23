@@ -26,6 +26,13 @@ VectorNav300 or Parker Lord
 
 This will replace ArduPilot’s internally generated INS/AHRS subsystems with the external system
 
+VN-300 Specific setup
+~~~~~~~~~~~~~~~~~~~~~
+When setting up the VN-300, it will be necessary to set :ref:`GPS_TYPE<GPS_TYPE>` = 21 and :ref:`GPS_TYPE2<GPS_TYPE2>` = 21. 
+
+VN-300 data is expected at two different update rates, 50Hz and 5Hz. This is autoconfigured. See the `USER MANAUAL <https://www.vectornav.com/products/detail/vn-300>`__ for more details.
+
+
 VectorNav100
 ------------
 
