@@ -28,6 +28,7 @@ GPS/Compass
     Holybro Nano Ublox M8 5883 GPS Module <https://shop.holybro.com/nano-ublox-m8-5883-gps-module_p1236.html> 
     Holybro M8N (Pixhawk 4) GPS Module <https://holybro.com/collections/gps-rtk-systems/products/m8n-gps>
     Holybro M9N GPS Module <https://holybro.com/collections/gps-rtk-systems/products/m9n-gps>
+    Holybro DroneCAN RM3100 Professional Grade Compass <https://holybro.com/products/dronecan-rm3100-compass>
     Matek DroneCAN AP_Periph GNSS M10-L4-3100 <http://www.mateksys.com/?portfolio=m10-l4-3100>
     Matek SAM-M8Q <http://www.mateksys.com/?portfolio=sam-m8q>
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
