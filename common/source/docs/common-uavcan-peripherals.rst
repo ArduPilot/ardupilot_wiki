@@ -24,6 +24,7 @@ DroneCAN was created to continue the development of the widely used UAVCAN v0 pr
     Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>
     Holybro DroneCAN H-RTK F9P Rover <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-rover>
     Holybro DroneCAN H-RTK F9P Helical <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-helical>
+    Holybro DroneCAN RM3100 Professional Grade Compass <https://holybro.com/products/dronecan-rm3100-compass>
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     Matek DroneCAN AP_Periph GNSS M10-L4-3100 <http://www.mateksys.com/?portfolio=m10-l4-3100>
     Matek DroneCAN DLVR-10 Airspeed Sensor <common-matek-uavcan-dlvr>
