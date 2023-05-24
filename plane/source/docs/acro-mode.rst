@@ -14,7 +14,7 @@ rails" manual flying mode.
 .. note:: rate stabilization is not enabled by default for the YAW axis. Set :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1 to enable yaw axis rate stabilization. Be careful since this will prevent any turns by aileron alone and require application of rudder also to turn. Also, do not enable this if the plane has no yaw control.
 
 To use this mode you need to set up :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` (if using yaw rate controller), :ref:`ACRO_ROLL_RATE <ACRO_ROLL_RATE>`
-and :ref:`ACRO_PITCH_RATE <ACRO_PITCH_RATE>`. These default to 180 degrees/second (0, ie no limit, for yaw), and control how responsive your
+and :ref:`ACRO_PITCH_RATE <ACRO_PITCH_RATE>`. These default to 180 degrees/second (and 0, ie no limit, for yaw.However, for AUTOTUNE on yaw axis to work, it must be set to a non-zero value. 90 degrees/second is suggested), and control how responsive your
 plane will be about each axis. It is also necessary to have the plane tuned well (see :ref:`tuning-quickstart`)
 
 When flying in ACRO the aircraft will resist changes to its existing attitude
