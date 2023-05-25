@@ -99,7 +99,7 @@ is hosted on GitHub at: `https://github.com/ArduPilot/ardupilot_gazebo <https://
 
     ::
 
-      mkdir gz_ws/src && cd gz_ws/src
+      mkdir -p gz_ws/src && cd gz_ws/src
       git clone https://github.com/ArduPilot/ardupilot_gazebo
 
 #. Build the plugin
