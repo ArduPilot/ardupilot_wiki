@@ -72,7 +72,7 @@ the two GPS modules to go via the autopilot board.
 Internal Moving Baseline Systems
 ================================
 
-Some vehicle GPS provide GPS for Yaw utilizing a completely internal dual gps unit and managing the inter gps communication totally internally, rather than having ArduPilot pass data between the GPSes. Examples of these system are the `Blicube GRTK <https://wiki.blicube.com/grtk/>`__ and the `Holybro UM982 <>`_.
+Some vehicle GPS provide GPS for Yaw utilizing a completely internal dual gps unit and managing the inter gps communication totally internally, rather than having ArduPilot pass data between the GPSes. Examples of these system are the `Blicube GRTK <https://wiki.blicube.com/grtk/>`__ and the `Holybro UM982 <https://holybro.com/products/h-rtk-unicore-um982>`_.
 
 .. note:: ArduPilot allows for up to two GPSes. The following parameter examples are for the first GPS
 
