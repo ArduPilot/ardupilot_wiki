@@ -92,6 +92,7 @@ You can also use this pin defintion to output general debug messages using fault
     :maxdepth: 1
 
     Logs <common-logs>
+    DroneCAN Debugging <https://www.youtube.com/watch?v=F0H4Y5V3lfo>
     Debugging with send_text <debug-with-send-text>
     Using MAVExplorer for log analysis <using-mavexplorer-for-log-analysis>
     Finding the Particular Commit which Introduced a Bug <finding-the-particular-commit-which-introduced-a-bug>
