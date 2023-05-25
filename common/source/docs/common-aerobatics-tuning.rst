@@ -79,3 +79,8 @@ Confirming Test Flight
 Do the above analysis for all axes.
 
 After verifying and modifying the PIDS, fly again, being ready to resume MANUAL control if unstable. A rolling circle trick is one of the most difficult to execute with a softly tuned vehicle, so try that trick. If it does not maintain altitude well, the pitch or yaw tuning during that maneuver should be analyzed and tuning tweaks performed, assuming there is not another issue like insufficient power or fuselage side surface area.
+
+Video on Log Analysis
+=====================
+
+.. youtube:: vGgfyhUOZGk
