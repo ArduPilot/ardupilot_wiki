@@ -84,6 +84,72 @@ function appendSVGLine(parent, x1=0, y1=0, x2=0, y2=0) {
     return elem;
 }
 
+function getMotorExtents(extents, x, y) {
+    function calcMidPoints(points) {
+        function midPoint(begin, end) {
+            return {'x': (begin.x + end.x) / 2, 'y':  (begin.y + end.y) / 2 };
+        }
+        points.ForwardMidPt = midPoint(points.ForwardLeft, points.ForwardRight);
+        points.BackMidPt = midPoint(points.BackLeft, points.BackRight);
+        points.LeftMidPt = midPoint(points.ForwardLeft, points.BackLeft);
+        points.RightMidPt = midPoint(points.ForwardRight, points.BackRight);
+        return points;
+    }
+    if (extents === undefined) {
+        extents = {
+            'ForwardRight' : {'x': 0, 'y': 0},
+            'BackRight' : {'x': 0, 'y': 0},
+            'BackLeft' : {'x': 0, 'y': 0},
+            'ForwardLeft' : {'x': 0, 'y': 0},
+            'ForwardMidPt' : {'x': 0, 'y': 0},
+            'BackMidPt' : {'x': 0, 'y': 0},
+            'LeftMidPt' : {'x': 0, 'y': 0},
+            'RightMidPt' : {'x': 0, 'y': 0}
+        }
+    }
+    if (x > extents.ForwardRight.x && y < 0) {
+        extents.ForwardRight.x = x;
+        extents.ForwardRight.y = y;
+        return calcMidPoints(extents);
+    }
+    if (y < extents.ForwardRight.y && x > 0) {
+        extents.ForwardRight.x = x;
+        extents.ForwardRight.y = y;
+        return calcMidPoints(extents);
+    }
+    if (x > extents.BackRight.x && y > 0) {
+        extents.BackRight.x = x;
+        extents.BackRight.y = y;
+        return calcMidPoints(extents);
+    }
+    if (y > extents.BackRight.y && x > 0) {
+        extents.BackRight.x = x;
+        extents.BackRight.y = y;
+        return calcMidPoints(extents);
+    }
+    if (x < extents.BackLeft.x && y > 0) {
+        extents.BackLeft.x = x;
+        extents.BackLeft.y = y;
+        return calcMidPoints(extents);
+    }
+    if (y > extents.BackLeft.y && x < 0) {
+        extents.BackLeft.x = x;
+        extents.BackLeft.y = y;
+        return calcMidPoints(extents);
+    }
+    if (x < extents.ForwardLeft.x && y < 0) {
+        extents.ForwardLeft.x = x;
+        extents.ForwardLeft.y = y;
+        return calcMidPoints(extents);
+    }
+    if (y < extents.ForwardLeft.y && x < 0) {
+        extents.ForwardLeft.x = x;
+        extents.ForwardLeft.y = y;
+        return calcMidPoints(extents);
+    }
+    return calcMidPoints(extents);
+}
+
 function generateDiagram() {
     const frameClass = document.getElementById('frame-class').value;
     const frameType = document.getElementById('frame-type').value;
@@ -109,7 +175,6 @@ function generateDiagram() {
         return Array.from(new Map(arr.map((a) => [a.join(), a])).values()).length;
     })();
 
-    // TODO: draw correct frame arms for V, H, and I types
     // TODO: generate 3D frames for coaxial props
     // TODO: replace procedural generation with image for bi-copter, tri-copter, etc
     const motorDisplayRadius = {
@@ -125,6 +190,7 @@ function generateDiagram() {
     }[uniqueMotorPositions];
 
     const charCode = 'A'.charCodeAt(0) - 1;
+    let motorExtents;
     layout.motors.forEach(function(motor) {
         const θ = Math.atan2(-motor.Pitch, -motor.Roll);
         const r = Math.sqrt(motor.Pitch ** 2 + motor.Roll ** 2) * motorDisplayRadius;
@@ -133,12 +199,30 @@ function generateDiagram() {
         if (motor.Rotation === '?') motor.Rotation = 'NYT';
         appendSVGElement(layerMotors, 'use', x, y, motor.Rotation);
         appendSVGElement(layerMotorNumbers, 'text', x, y, motor.Number);
-        appendSVGLine(layerFrame, x, y);
+        if (['V', 'H', 'I'].includes(layout.TypeName)) {
+            motorExtents = getMotorExtents(motorExtents, x, y);
+        } else {
+            appendSVGLine(layerFrame, x, y);
+        }
 
         x = (r + motorDisplayDiameter / 2) * Math.cos(θ);
         y = (r + motorDisplayDiameter / 2) * Math.sin(θ);
         appendSVGElement(layerMotorLetters, 'text', x, y, String.fromCharCode(motor.TestOrder + charCode));
     });
+
+    if (['V', 'H'].includes(layout.TypeName)) {
+        appendSVGLine(layerFrame, motorExtents.BackLeft.x, motorExtents.BackLeft.y, motorExtents.ForwardLeft.x, motorExtents.ForwardLeft.y);
+        appendSVGLine(layerFrame, motorExtents.BackRight.x, motorExtents.BackRight.y, motorExtents.ForwardRight.x, motorExtents.ForwardRight.y);
+        appendSVGLine(layerFrame, motorExtents.LeftMidPt.x, motorExtents.LeftMidPt.y);
+        appendSVGLine(layerFrame, motorExtents.RightMidPt.x, motorExtents.RightMidPt.y);
+    }
+    if (layout.TypeName === 'I') {
+        appendSVGLine(layerFrame, motorExtents.BackLeft.x, motorExtents.BackLeft.y, motorExtents.BackRight.x, motorExtents.BackRight.y);
+        appendSVGLine(layerFrame, motorExtents.ForwardLeft.x, motorExtents.ForwardLeft.y, motorExtents.ForwardRight.x, motorExtents.ForwardRight.y);
+        appendSVGLine(layerFrame, motorExtents.ForwardMidPt.x, motorExtents.ForwardMidPt.y);
+        appendSVGLine(layerFrame, motorExtents.BackMidPt.x,  motorExtents.BackMidPt.y);
+
+    }
     appendSVGElement(layerFrame, 'use', 0, 0, 'frame-2d');
 
     let extents = svg.getBBox();
