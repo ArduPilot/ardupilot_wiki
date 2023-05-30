@@ -132,6 +132,7 @@ Some boards have features removed in order to fit the firmware into their memory
 
     Firmware Limitations <common-limited-firmware>
     
+.. note:: If a board has a missing feature that is required by the user, building a custom firmware using the `ArduPilot Custom Firmware Build Server <https://custom.ardupilot.org>`__ can be used to create firmware which drops features not needed and adding desired features back into the firmware in that freed space.
 
 Discontinued boards
 -------------------
