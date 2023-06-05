@@ -47,10 +47,14 @@ Connect with a ground station and set the following parameters.  The params belo
 - :ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>` to -80
 - :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to 80
 - :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to 90 (deg/s) to control speed of gimbal when using RC targetting
-- :ref:`CAM1_TYPE<CAM1_TYPE>` to 4 (Mount / Siyi) to allow control of the camera
 - :ref:`RC6_OPTION <RC6_OPTION>` = 213 ("Mount Pitch") to control the gimbal's pitch angle with RC channel 6
 - :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw angle with RC channel 7
 - :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Lock") to switch between "lock" and "follow" mode with RC channel 8
+- Enable camera controls with one of the following AP version specific parameters
+
+  - For AP4.3 (or earlier) set CAM_TRIGG_TYPE to 3 / "Mountj (Siyi)" to allow control of the camera
+  - For AP4.4 (or later) set :ref:`CAM1_TYPE<CAM1_TYPE>` to 4 / "Mount (Siyi)" to allow control of the camera
+
 - Optionally these auxiliary functions are also available
 
   - :ref:`RC9_OPTION <RC9_OPTION>` = 166 ("Camera Record Video") to start/stop recording of video
