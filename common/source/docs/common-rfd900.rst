@@ -34,8 +34,8 @@ cables separately or by getting ready made telemetry set (as seen below).
 
 The radio and antennas as separate units are available:
 
--  `RFDesign Store, 900Mhz <http://store.rfdesign.com.au/rfd-900x-modem/>`__
--  `RFDesign Store, 868Mhz <http://store.rfdesign.com.au/rfd-868x-modem/>`__
+-  `RFDesign Store, 900Mhz <https://store.rfdesign.com.au/search.php?search_query=rfd900x+modem&x=0&y=0>`__
+-  `RFDesign Store, 868Mhz <https://store.rfdesign.com.au/search.php?search_query=rfd868x+modem&x=0&y=0>`__
 -  `ProfiCNC Store <http://www.proficnc.com/52-online-sales>`_
 
 Ready made Sets
