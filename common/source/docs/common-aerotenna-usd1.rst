@@ -8,7 +8,7 @@ The `Ainstein US-D1 Radar Altimeter <https://ainstein.ai/drone-makers-drone-serv
 
 .. warning:: currently the manufacturer warns that operation indoors can be problematic due to multi-path reflections...caution is advised
 
-The user manual for this radar unit can be found `here. <https://ainstein.ai/wp-content/uploads/2022/04/US-D1-Technical-User-Manual.pdf>`__
+The user manual for this radar unit can be found `here. <https://ainstein.ai/wp-content/uploads/US-D1-Technical-User-Manual-D00.02.05.docx.pdf>`__
 
 .. image:: ../../../images/aerotenna-usd1.png
 
@@ -29,7 +29,7 @@ The USD1 is available in serial and DroneCAN versions.
 For a serial connection you can use any spare Serial/UART port.  The example below shows how to connect to SERIAL4 as the first rangefinder.
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
--  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 38 (38400 baud)
+-  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud)
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 11 (USD1-Serial)
 -  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 50
 -  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 4500
