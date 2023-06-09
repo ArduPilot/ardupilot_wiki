@@ -61,7 +61,7 @@ For the example below, the unit will be assumed to be attached to the first CAN 
 - :ref:`EFI_FUEL_DENS<EFI_FUEL_DENS>`: Fuel density to calculate fuel consumption
 - :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1 (first driver)
 - :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` = 4 (PiccoloCAN)
-- :ref:`CAN_D1_PC_ECU_ID<CAN_D1_PC_ECU_ID>`: Node ID to send throttle commands
+- :ref:`CAN_D1_PC_ECU_ID<CAN_D1_PC_ECU_ID>`: Node ID to send throttle commands (Set to 0 to only receive telemetry)
 
 Using a Battery Monitor to Report Fuel Flow and Consumption
 ===========================================================
