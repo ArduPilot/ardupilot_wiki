@@ -21,7 +21,7 @@ In ArduPlane 4.0 and later, Automatic Takeoff is also a mode itself. When entere
 
 Once :ref:`TKOFF_LVL_ALT<TKOFF_LVL_ALT>` is reached, or the loiter point distance is reached, maximum throttle and takeoff roll limits (:ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>` ) are stopped and normal navigation begins to the loiter point and altitude.
 
-If the mode is entered while already flying, it will immediately begin loitering as in LOITER mode.
+If the mode is entered while already flying, it will immediately begin loitering as in LOITER mode if at or above :ref:`TKOFF_ALT<TKOFF_ALT>` altitude above ground, otherwise it will climb to that altitude and then begin loitering .
 
 TAKEOFF mode can also be entered via a switch using an RCx_OPTION = 77, as well as via normal selection by the flight mode channel.
 
