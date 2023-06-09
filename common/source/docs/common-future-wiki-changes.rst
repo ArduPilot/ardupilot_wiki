@@ -7,6 +7,11 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+on :ref:`common-buzzer` page, add the following to the buzzer sounds table:
+
+- Gryo Init complete    7 short beeps
+- Ready to ARM          beep-beep-beep-beeeeeep
+
 [site wiki="plane"]
 
 on :ref:`arming-your-plane` page, under "How to Arm":
