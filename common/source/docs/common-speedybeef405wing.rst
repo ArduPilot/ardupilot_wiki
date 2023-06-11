@@ -118,7 +118,7 @@ RC Input
 
 The SBUS pin, is passed by an inverter to RX2 (UART2 RX), which by default is mapped to a timer input instead of the UART, and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry. 
 
-To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the RX2 pin can also be configured to be used as true UART2 RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL7 port's RX input pin.
+To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the RX2 pin can also be configured to be used as true UART2 RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL2 port's RX input pin.
 
 With this option, :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` must be set to "23", and:
 
@@ -130,13 +130,18 @@ With this option, :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` must be set to "23",
 
 - CRSF also requires a TX2 connection, in addition to RX2, and automatically provides telemetry.
 
-- SRXL2 requires a connection to TX2 and automatically provides telemetry.  Set :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` to "4".
+- SRXL2 requires a connection to TX2 and automatically provides telemetry.  Set :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` to "4".
 
 .. note:: UART1 is configured by default for serial receivers. You can also have more than one receiver in the system at a time (usually used for long range hand-offs to a remote TX). See :ref:`common-multiple-rx` for details.
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM (SBUS requires external inversion on other UARTs). See :ref:`common-rc-systems` for details.
 
 .. note:: the "4V5" pin above the SBUS pin and the 4V5 pins in the GPS, Airspeed, and Telem connectors are powered when USB is connected. Be careful not to present too much load to the USB source or voltage droop may occur. All other 5V pins are only powered when battery is present.
+
+WIFI
+====
+
+The SpeedyBeeF405Wing has an integrated wireless module allowing connections to GCS via WIFI. See the user manual for instructions. While BT is advertised as an alternate mode, this has not been proven to work with all BT dongles or cell-phones by ArduPilot. The WIFI mode has been tested with a variety of systems, however. Be sure the :ref:`SERIAL6_BAUD<SERIAL6_BAUD>` = 115 and that nothing is loading the TX6/RX6 pins which are connected to the wireless module, by default..
 
 OSD Support
 ===========
