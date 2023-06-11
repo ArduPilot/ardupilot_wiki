@@ -223,6 +223,9 @@ html_context = common_conf.html_context
 
 # -- Options for LaTeX output ---------------------------------------------
 
+# Default engine is pdflatex
+latex_engine = 'xelatex'
+
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     # 'papersize': 'letterpaper',

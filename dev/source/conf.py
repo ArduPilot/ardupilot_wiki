@@ -219,6 +219,9 @@ html_context = common_conf.html_context
 
 # -- Options for LaTeX output ---------------------------------------------
 
+# Default engine is pdflatex
+latex_engine = 'xelatex'
+
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     # 'papersize': 'letterpaper',
@@ -232,9 +235,6 @@ latex_elements = {
     # Latex figure (float) alignment
     # 'figure_align': 'htbp',
 }
-
-# Default engine is pdflatex
-latex_engine = 'xelatex'
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,

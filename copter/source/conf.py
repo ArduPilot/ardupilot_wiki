@@ -226,6 +226,8 @@ html_context = common_conf.html_context
 
 # -- Options for LaTeX output ---------------------------------------------
 
+latex_engine = common_conf.latex_engine
+
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     # 'papersize': 'letterpaper',

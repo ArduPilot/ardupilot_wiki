@@ -215,7 +215,8 @@ def build_one(wiki, fast, no_html, pdf):
         subprocess.check_call(
             buildcommand + ["html"], cwd=wiki, shell=useshell)
     if pdf:
-        subprocess.check_call(buildcommand + ["latexpdf", r'LATEXMKOPTS="-silent"'], cwd=wiki, shell=useshell)
+        # using .run for now until build errors in the wiki can be cleaned up
+        subprocess.run(buildcommand + ["latexpdf", r'LATEXMKOPTS="-silent"'], cwd=wiki, shell=useshell)
 
 
 def sphinx_make(site, parallel, fast, no_html, pdf):
@@ -256,7 +257,7 @@ def sphinx_make(site, parallel, fast, no_html, pdf):
         time.sleep(0.1)
 
 
-def check_build(site):
+def check_build(site, no_html, pdf):
     """
     check that build was successful
     """
@@ -268,9 +269,15 @@ def check_build(site):
             continue
         if wiki in ['common', 'frontend']:
             continue
-        index_html = os.path.join(wiki, "build", "html", "index.html")
-        if not os.path.exists(index_html):
-            fatal("%s site not built - missing %s" % (wiki, index_html))
+        if not no_html:
+            index_html = os.path.join(wiki, "build", "html", "index.html")
+            if not os.path.exists(index_html):
+                fatal(f"{wiki} site not built - missing {index_html}")
+        if pdf:
+            pdf_path = os.path.join(wiki, "build", "latex", "*.pdf")
+            pdf_path_glob = glob.glob(pdf_path)
+            if len(pdf_path_glob) != 1:
+                fatal(f"{wiki} site not built - missing {pdf_path}")
 
 
 def copy_build(site, destdir):
@@ -789,7 +796,7 @@ def check_imports():
     '''check key imports work'''
     import pkg_resources
     # package names to check the versions of. Note that these can be different than the string used to import the package
-    requires = ["sphinx_rtd_theme>=1.0.0", "sphinxcontrib.youtube>=1.2.0", "sphinx==5.1.1", "docutils==0.16"]
+    requires = ["sphinx_rtd_theme>=1.0.0", "sphinxcontrib.youtube>=1.2.0", "sphinx>=5.1.1", "docutils>=0.16"]
     for r in requires:
         debug("Checking for %s" % r)
         try:
@@ -1085,7 +1092,7 @@ if __name__ == "__main__":
         put_cached_parameters_files_in_sites(args.site)
         cache_parameters_files(args.site)
 
-    check_build(args.site)
+    check_build(args.site, args.no_html, args.pdf)
 
     if args.enablebackups:
         make_backup(args.site, args.destdir, args.backupdestdir)
