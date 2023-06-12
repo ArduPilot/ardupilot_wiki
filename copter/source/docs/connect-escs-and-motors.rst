@@ -96,6 +96,10 @@ Hexacopter
 .. image:: ../images/motororder-hexa-x-2d.png
     :target: ../_images/motororder-hexa-x-2d.png
     :scale: 40%
+    
+.. image:: ../images/motororder-hexa-h-2d.png
+    :target: ../_images/motororder-hexa-h-2d.png
+    :scale: 40%
 
 .. image:: ../images/motororder-hexa-plus-2d.png
     :target: ../_images/motororder-hexa-plus-2d.png
