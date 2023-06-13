@@ -219,7 +219,7 @@ html_context = common_conf.html_context
 
 html_js_files = [
     ('https://plausible.ardupilot.org/js/script.outbound-links.js', {"data-domain": "ardupilot.org", "defer": "defer"}),
-    ]
+]
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {

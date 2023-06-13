@@ -153,7 +153,7 @@ html_static_path = ['_static']
 html_js_files = [
     './useralerts.js',
     ('https://plausible.ardupilot.org/js/script.outbound-links.js', {"data-domain": "ardupilot.org", "defer": "defer"}),
-    ]
+]
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied

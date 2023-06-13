@@ -370,7 +370,7 @@ epub_exclude_files = ['search.html']
 
 html_js_files = [
     ('https://plausible.ardupilot.org/js/script.outbound-links.js', {"data-domain": "ardupilot.org", "defer": "defer"}),
-    ]
+]
 
 # Intersphinx mapping config (done globally)
 intersphinx_mapping = common_conf.intersphinx_mapping
