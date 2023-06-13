@@ -216,7 +216,9 @@ htmlhelp_basename = 'ArduPilotdoc'
 # Where to point the base of the build for the main site menu
 html_context = common_conf.html_context
 
-
+html_js_files = [
+    ('https://plausible.ardupilot.org/js/script.outbound-links.js', {"data-domain": "ardupilot.org", "defer": "defer"}),
+    ]
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {

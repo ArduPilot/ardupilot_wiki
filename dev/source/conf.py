@@ -367,7 +367,9 @@ epub_exclude_files = ['search.html']
 
 # If false, no index is generated.
 # epub_use_index = True
-
+html_js_files = [
+    ('https://plausible.ardupilot.org/js/script.outbound-links.js', {"data-domain": "ardupilot.org", "defer": "defer"}),
+]
 
 # Intersphinx mapping config (done globally)
 intersphinx_mapping = common_conf.intersphinx_mapping
