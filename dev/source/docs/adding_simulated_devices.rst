@@ -98,6 +98,33 @@ distance.
    -  ``grangev`` - rangefinder voltage
    -  ``grange`` - graph "rangefinder_roll"
 
+Adding a 360deg lidar
+=====================
+
+SITL can simulate a 360 deg lidar (either RPLidarA2 or SF45b) which is useful for testing object avoidance. To set it up use the following commands:
+
+::
+
+    param set SERIAL5_PROTOCOL 11 (Proximity)
+    param set PRX1_TYPE 5 (RPLidarA2)
+      OR
+    param set PRX1_TYPE 8 (SF45b)
+
+Next start the simulator using one of the lines shown below.  This will start the vehicle in a location surrounded by virtual barriers
+
+::
+
+    ../Tools/autotest/sim_vehicle.py -A --uartF=sim:sf45b -l 51.8752066,14.6487840,54.15,0
+    ../Tools/autotest/sim_vehicle.py -A --uartF=sim:rplidara2 -l 51.8752066,14.6487840,54.15,0
+    
+To display the barriers on the map run type the following into the terminal
+
+::
+
+    script /tmp/post-locations.scr
+
+.. image:: ../images/sim-rplidara2-barriers.png
+
 Adding an Optical Flow sensor
 =============================
 
