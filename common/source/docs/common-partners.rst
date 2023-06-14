@@ -275,7 +275,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target:  https://dualrc.com
 
     *
-      - .. image:: ../../../images/supporters/supporters_logo_DAVWINGS.png
+      - .. image:: ../../../images/supporters/supporters_propell.png
             :width: 250px
             :align: center
             :target:  http://davwings.com
@@ -665,6 +665,32 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://www.adti.camera/
 
-      -
+      - .. image:: ../../../images/supporters/supporters_logo_nooploop.png
+            :width: 250px
+            :align: center
+            :target:  https://www.nooploop.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_scropion.png
+            :width: 250px
+            :align: center
+            :target:  https://www.scorpionsystem.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_ad.png
+            :width: 250px
+            :align: center
+            :target:  http://www.adsystem.kr/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_proto.png
+            :width: 250px
+            :align: center
+            :target:  https://www.proto-systems.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_rgblab.png
+            :width: 250px
+            :align: center
+            :target:  https://www.rgblab.kr/
+
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
