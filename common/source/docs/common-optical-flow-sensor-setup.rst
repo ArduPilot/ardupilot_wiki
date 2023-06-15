@@ -131,7 +131,7 @@ Second Flight
 
 [/site]
 
-Setup for NOrmal Operation
+Setup for Normal Operation
 ==========================
 
 For EKF2:
@@ -159,6 +159,8 @@ For EKF3:
 
 - Alternatively, GPS can work with OpticalFlow using EKF source switching.
 - See :ref:`GPS / Non-GPS Transitions <common-non-gps-to-gps>` for information on EKF source switching.
+[site wiki="plane,copter"]
+.. note:: When Copters have an optical flow sensor enabled (along with a rangefinder) and it is specified as the only horizontal position source (e.g. ``EK3_SRCx_VELXY``=OpticalFlow and ``EK3_SRCx_POSXY``=None) and the vehicle is flying in a pilot controlled mode requiring a position estimate (ie Loiter or PosHold) the vehicle will not climb above the rangefinder's maximum altitude specified in ``RNGFNDx_MAX_CM``. This is a safety mechanism because otherwise the EKF failsafe would trigger as the vehicle flew out of rangefinder range.
 
 Example Video (Copter-3.4)
 ==========================
@@ -168,7 +170,7 @@ Example Video (Copter-3.4)
 
 ---------------------------------
 
-[site wiki="plane,copter"]
+
 Inflight Calibration
 ====================
 
@@ -227,7 +229,7 @@ An alternative method which avoids the need to land and change EKF3 parameters b
   - :ref:`EK3_SRC2_YAW <EK3_SRC1_YAW>` = 1 (Compass)
   - :ref:`EK3_SRC_OPTIONS <EK3_SRC_OPTIONS>` = 0 (Disable FuseAllVelocities)
 
-[/site]
+
 
 .. note::
 
@@ -235,3 +237,4 @@ An alternative method which avoids the need to land and change EKF3 parameters b
 
 ..  youtube:: Crx97v1bwWo
     :width: 100%
+[/site]
