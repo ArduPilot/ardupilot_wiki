@@ -92,3 +92,5 @@
 /frontend/blog_posts.json
 /frontend/news_posts.json
 
+# Mac file
+.DS_Store

@@ -66,7 +66,29 @@ If you are using the Adafruit HUZZAH ESP8266 board and are flashing from a Windo
     .. image:: ../../../images/esp8266-telemetry-flash.jpg
         :target: ../_images/esp8266-telemetry-flash.jpg
 
-- Mac and Linux users should use the `esptool <https://github.com/espressif/esptool>`__
+- Mac users should use the `esptool <https://github.com/espressif/esptool>`__
+
+  - First, find the COM of your connected device by using the following command line in the terminal. The USB COM port that the ESP8266 is attached will appear something  "/dev/ttyusbserial-A600eto2" 
+
+    ..  code-block:: shell
+
+      $ ls /dev/tty\.*
+
+  - Next, you need to erase all content in your ESP8266. Put the ESP8266 in bootloader mode, and run this command in your terminal window, replacing the *COM* with the ESP8266 COM port you found previously above
+
+    ..  code-block:: shell
+
+      $ esptool.py   --baud 921600  --port COM erase_flash
+
+  - Finally,  flash the board with the correct expected firmware: Put your device in bootloader mode again, and use the following command, again replacing the *COM* with the  port you used in the previous command.
+
+    ..  code-block:: shell
+
+      $ esptool.py   --baud 921600  --port COM write_flash  --flash_mode dio --flash_size detect 0x0 firmware-XXXX.bin
+
+
+
+- Linux users should use the `esptool <https://github.com/espressif/esptool>`__
 
 Changing the Wifi SSID and Password
 -----------------------------------
@@ -74,7 +96,7 @@ Changing the Wifi SSID and Password
 - connect from your PC to the wifi access point (initial access point ID is "ArduPilot", and password is "ardupilot")
 - open a browser to `192.168.4.1 <http://192.168.4.1/>`__ and a simple web interface will appear like below
 - click on the "Setup" link
-- set the "AP SSID" and "AP Password" fields (both must between 8 and 16 characters), push the "Save" button and reboot the device
+- set the "AP SSID" and "AP Password" fields (both must be between 8 and 16 characters), push the "Save" button and reboot the device
 
     .. image:: ../../../images/esp8266-telemetry-web-setup.png
         :target: ../_images/esp8266-telemetry-web-setup.png
