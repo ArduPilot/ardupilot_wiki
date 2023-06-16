@@ -53,3 +53,37 @@ Data screen's Status tab. Look closely for "sonarrange".
 
 .. image:: ../../../images/mp_rangefinder_lidarlite_testing.jpg
     :target: ../_images/mp_rangefinder_lidarlite_testing.jpg
+
+
+Using the sensor with an AP Periph DroneCAN Node
+================================================
+The USD1 is available in either CAN or Serial communication protocol versions. The USD1 CAN protocol is different than DroneCAN and hence requires a dedicated CAN port running this protocol. If the autopilot does not have a spare CAN port or spare serial port for conencting the USD1, but has a DroneCAN port setup, you can create another serial port in the system using an AP_Periph CAN node attached to the DroneCAN port. The USD1 MUST be the Serial version for this to work.
+
+To use the USD1 with a CAN Node like the Matek AP_Periph CAN Node L431, use the following set up.
+
+First, flash the AP_Periph device with a firmware that has the rangefinder features. For the Matek AP_Periph CAN Node L431, the latest stable firmware is `here. <https://firmware.ardupilot.org/AP_Periph/stable/MatekL431-Rangefinder/>`__
+
+.. image:: ../../../images/USD1_AP_Periph_Wiring_Diagram.png
+    :target: ../_images/USD1_AP_Periph_Wiring_Diagram.png
+
+Set the parameters in the CAN Node to the following:
+
+-  RNGFND_BAUDRATE = 115
+-  RNGFND_MAX_RATE = 50
+-  RNGFND_PORT = 1 (UART 2, i.e. TX2, RX2)
+-  RNGFND1_ORIENT = 0 (No matter what orientation)
+-  RNGFND1_TYPE = 11
+
+.. warning::
+
+   RNGFND_PORT is indexed differently than the UARTs on the board. For RNGFND_PORT = 0, use RX1 and TX1 on the board, etc.
+
+Next, set the parameters on the autopilot:
+
+-  RNGFND1_TYPE = 24 (DroneCAN) Then Restart
+-  RNGFND1_ORIENT = 25 (Down)
+-  RNGFND1_ADDR = 0 (For sensor_id = 0)
+
+.. note::
+
+   If there are more than one rangefinder in the system you will need to determine the Sensor ID for the USD1. Look in CAN inspector for message "uavcan_equiment_range_sensor_Measurement" for its sensor_id.
