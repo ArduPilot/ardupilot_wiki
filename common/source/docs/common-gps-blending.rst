@@ -33,9 +33,9 @@ After rebooting the board, the status, hdop and satellite count of both GPSs sho
 Dataflash logging
 =================
 
-The first GPS's data appears in the GPS and GPA messages.
-The second GPS's data appears in the GPS2 and GPA2 messages.
-The blended GPS data appears in the GPSB and GPAB messages.
+The first GPS's data appears with an instance number of 0 in the GPS and GPA messages. (ie GPS[0].x, GPA[0].x messages)
+The second GPS's data appears with an instance number of 1 in the GPS and GPA messages.
+The blended GPS data appears with an instance number of 2 in the GPS and GPA messages.
 
 If using the Mission Planner, opening a dataflash log and clicking on "Show Map" will show both GPSs, the blended position and the EKF's final estimate (shown as "POS")
 
