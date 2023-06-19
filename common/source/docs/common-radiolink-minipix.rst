@@ -7,7 +7,7 @@ RadioLink MiniPix
 
 .. warning:: This autopilot is not recommended because some versions of the board are not compatible with the official ArduPilot software despite multiple efforts to work with the manufacturer to make them compatible. The manufacturer is also apparently not abiding by the GPLv3 license which requires releasing the modified source code to its customers.  "V1.0" and "V1.2" probably work, "V1.0 II" and "V1.1" definitely do not work.
 
-
+.. warning:: The RadioLink CrossFlight is not supported by ArduPilot.  As far as the ArduPilot Development Team is aware, RadioLink are in violation of ArduPilot's GPLv3 license in that they refuse to release the source code for their modifications to ArduPilot.  The Development Team recommend you do not purchase this product, and instead select from one of our many other supported boards.
 
 
 .. image:: ../../../images/minipix1.jpg
