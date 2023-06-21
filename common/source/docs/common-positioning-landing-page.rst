@@ -51,6 +51,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
     CUAV C-RTK 9Ps RTK Receiver <https://store.cuav.net/shop/c-rtk-9ps/>
     CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
+    CUAV C-RTK2 HP  Heading and RTK receiver<common-cuav-c-rtk2-hp>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
     Freefly RTK GPS Ground Station <https://store.freeflysystems.com/products/rtk-gps-ground-station>
     Hex Here+ RTK Receiver <common-here-plus-gps>
