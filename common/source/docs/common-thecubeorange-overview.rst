@@ -162,12 +162,12 @@ The Cube connector pin assignments
    </tr>
    <tr>
    <td>4 (blk)</td>
-   <td>SCL I2C1</td>
+   <td>SCL I2C2</td>
    <td>+3.3V</td>
    </tr>
    <tr>
    <td>5 (blk)</td>
-   <td>SDA I2C1</td>
+   <td>SDA I2C2</td>
    <td>+3.3V</td>
    </tr>
    <tr>
@@ -218,12 +218,12 @@ The Cube connector pin assignments
    </tr>
    <tr>
    <td>4 (blk)</td>
-   <td>SCL I2C2</td>
+   <td>SCL I2C1</td>
    <td>+3.3V</td>
    </tr>
    <tr>
    <td>5 (blk)</td>
-   <td>SDA I2C2</td>
+   <td>SDA I2C1</td>
    <td>+3.3V</td>
    </tr>
    <tr>
