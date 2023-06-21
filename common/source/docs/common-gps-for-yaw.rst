@@ -4,12 +4,11 @@
 GPS for Yaw (aka Moving Baseline)
 =================================
 
-Two UBlox F9 GPS modules can be used to estimate yaw which removes the
-need for a compass which may suffer from magnetic interference from
+New RTK GPS modules, such as a pair of Ublox F9's or the Unicore UM-982, can be used to estimate yaw, in addition to providing position information,  which removes the need for a compass which may suffer from magnetic interference from
 the ground or the vehicle's motors and ESCs.  This works even if the
-GPSs do not have RTK fix (RTCM data from a fixed RTK station or NTRIP server).
+GPSs do not have an RTK fix (RTCM data from a fixed RTK station or NTRIP server).
 
-Also, recently, single unit GPSes which utilize Internal Moving Baseline (see below) are becoming available, like the Blicube RTK GPS.
+Also, recently, single unit modules which utilize Internal Moving Baseline (see below) are becoming available, like the Blicube RTK GPS, Holybro UM-982, and CUAV C-RTK HP.
 
 GPSes from ArduPilot Partners that are known to work are shown on the :ref:`common-positioning-landing-page`
 
@@ -21,17 +20,17 @@ GPSes from ArduPilot Partners that are known to work are shown on the :ref:`comm
 Hardware Setup
 ==============
 
-- Two Ublox F9 GPSs should be placed on the vehicle at least 30cm apart (horizontally)
-- The 1st GPS and 2nd GPS should be connected to a serial/telem ports on the
+- Two Ublox F9 GPSs should be placed on the vehicle at least 30cm apart (horizontally) or the antennas for single module systems separated by that minimum distance.
+- For F9P systems, the 1st GPS and 2nd GPS should be connected to a serial/telem ports on the
   autopilot.  These instructions assume Serial3 and Serial4 are used but any
   serial ports should work as long as the first port using protocol 5 is connected to one of the GPS.
-- Serial GPS modules must be connected to ArduPilot via their UART1 connectors, DroneCAN modules via CAN (if the DroneCAN modules support Moving Baseline), or interconnected per their manufacturer instructions.
+- Serial GPS modules must be connected to ArduPilot via their (not the autopilots's) UART1 connectors, DroneCAN modules via CAN , or interconnected per their manufacturer instructions.
 
 Configuration
 =============
 
-Serial GPS
-----------
+Dual Serial GPS
+---------------
 
 - :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` = 5 ("GPS") assuming the 1st GPS is connected to SERIAL3.
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 5 ("GPS") assuming the 2nd GPS is connected to serial port 4
@@ -40,8 +39,8 @@ Serial GPS
 - :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` = 1 (AutoConfig Serial)
 - Set the :ref:`GPS_POS1_X <GPS_POS1_X>`/Y/Z and :ref:`GPS_POS2_X <GPS_POS2_X>`/Y/Z parameters for the GPSs (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`). You must establish the relative positions of each GPS location on the vehicle with respect the vehicle's motion.
 
-DroneCAN GPS
-------------
+Dual DroneCAN GPS
+-----------------
 
 If DroneCAN GPS are used, then configure the CAN/DroneCAN ports as explained in :ref:`common-uavcan-setup-advanced` and instead of setting up the SERIAL port protocols above, make sure that no SERIAL ports are setup with GPS protocol ("5"). Also be sure that the two DroneCAN GPS are on the same physical CAN bus from the autopilot. This usually requires that a CAN bus splitter be used. Then set these parameters:
 
@@ -69,12 +68,12 @@ the two GPS modules to go via the autopilot board.
 
 .. note:: Do not use :ref:`GPS_AUTO_SWITCH<GPS_AUTO_SWITCH>` = 2 (Blend) when using Moving Baseline configurations.
 
-Internal Moving Baseline Systems
-================================
+Single Unit Internal Moving Baseline Systems
+============================================
 
-Some vehicle GPS provide GPS for Yaw utilizing a completely internal dual gps unit and managing the inter gps communication totally internally, rather than having ArduPilot pass data between the GPSes. Examples of these system are the `Blicube GRTK <https://wiki.blicube.com/grtk/>`__ and the `Holybro UM982 <https://holybro.com/products/h-rtk-unicore-um982>`_.
+Some GPS units can provide GPS for Yaw utilizing a completely internal dual gps unit and managing the inter gps communication totally internally, rather than having ArduPilot pass data between the GPSes. 
 
-.. note:: ArduPilot allows for up to two GPSes. The following parameter examples are for the first GPS
+.. note:: ArduPilot allows for up to two GPSes. The following parameter examples are for setting up the first GPS instance.
 
 Blicube GRTK
 ------------
@@ -87,6 +86,9 @@ This system requires that the "Master" antenna and "Slave" antenna (see manufact
 
 .. note:: this unit can be used with only its "Master" antenna connected, if desired, but no yaw information should be used.
 
+For the Holybro UM982 GPS, and other Unicore UM982 GPSes like the CUAV C-RTK2 HP, the "Master" and "Slave" antennas have more mounting flexibility, but must be mounted at least 30cm apart on the vehicle. The offset distances in the x/y/z directions must be entered detailed in the Master-Slave Antenna Offsets section below.
+
+
 Holybro UM982
 -------------
 The Holybro Unicore UM982 GPS should have the following parameters set:
@@ -96,7 +98,19 @@ The Holybro Unicore UM982 GPS should have the following parameters set:
 
 .. note:: this unit can be used with only its "Master" antenna connected, if desired, but no yaw information should be used. In this case set :ref:`GPS_TYPE<GPS_TYPE>` = 24 (UnicoreMaster)
 
-For the Holybro UM982 GPS, and other Unicore UM982 GPSes, the "Master" and "Slave" antennas have more mounting flexibility, but must be mounted at least 30cm apart on the vehicle. The offset distances in the x/y/z directions must be entered for the following parameters:
+CUAV DroneCAN C-RTK2 HP
+-----------------------
+
+The CUAV C-RTK2 HP unit can be connected to the autopilot either by serial or DroneCAN connections.
+
+See :ref:`CUAV C-RTK2 HP  Heading and RTK receiver<common-cuav-c-rtk2-hp>` for more information and setup details.
+
+.. _antenna-offsets:
+
+Master-Slave Antenna Offsets
+============================
+
+Dual unit or single unit/dual antenna systems (except Blicube GRTK) need the relative positions for the "Master" and "Slave" antennas specified:
 
 - :ref:`GPS_MB1_TYPE<GPS_MB1_TYPE>` = 1 (GPS1 Moving Baseline master antenna offsets relative to slave antenna, also enables the next parameters to be shown)
 - :ref:`GPS_MB1_OFS_X<GPS_MB1_OFS_X>`: offset in meters from the "Slave" to "Master" antenna in the X axis (in direction of 0 deg yaw, positive offsets are if "Master" is in front of the "Slave".
