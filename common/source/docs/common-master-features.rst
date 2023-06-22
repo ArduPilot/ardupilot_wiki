@@ -11,7 +11,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
 .. toctree::
     :maxdepth: 1
 
-
+    Xacti Camera Gimbals <common-xacti-gimbal>
     Other wiki changes <common-future-wiki-changes>
 
 
