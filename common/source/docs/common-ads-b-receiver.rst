@@ -46,11 +46,11 @@ The serial port to which the receiver is connected should be configured to also 
 +----------------+-----------------------------+---------------------------------+----------------+
 |ADSB Protocol   |:ref:`ADSB_TYPE <ADSB_TYPE>` |``SERIALx_PROTOCOL``             |``SERIALx_BAUD``|
 +================+=============================+=================================+================+
-|MAVLINK         |              1              |     MAVLink2 (2)                |   57600        |
-+----------------+-----------------------------+---------------------------------+----------------+
-|Sagetech        |              2              |     ADSB (28)                   |    115200      |
-+----------------+-----------------------------+                                 +                +
-|UCP             |              3              |                                 |                |
+|MAVLINK         |              1              |     MAVLink2 (2)                |    57600       |
++----------------+-----------------------------+---------------------------------+                +
+|Sagetech        |              2              |                                 |                |
++----------------+-----------------------------+                                 +----------------+
+|UCP             |              3              |     ADSB (35)                   |    115200      |
 +----------------+-----------------------------+                                 +                +
 |Sagetech MX     |              4              |                                 |                |
 +----------------+-----------------------------+---------------------------------+----------------+
@@ -99,6 +99,8 @@ The following parameters are used to configure ADS-B out:
 In many cases the defaults are OK and you don't need to change any of these except :ref:`ADSB_RF_SELECT <ADSB_RF_SELECT>` which is needed to turn on the transmitter. The :ref:`ADSB_RF_SELECT<ADSB_RF_SELECT>` transmit bit is cleared on boot to ensure you're only trsnamitting when intentionally enabled.
 
 There are additional MAVLink messages for ADSB in uavionix.xml to allow a GCS to set all of these options. Namely, msg UAVIONIX_ADSB_OUT_CFG and UAVIONIX_ADSB_OUT_DYNAMIC where the _cfg is the only place where you can assign a custom callsign.
+
+.. note:: Mission Planner's transponder tab will not send correct messages to Sagetech's XP series transponders. In order to change operating mode, Sagetech's Engineering GUI can be used to set the transponder to ALT mode to ensure transmission is working with the flight controller.
 
 Enabling Manned Vehicle Avoidance
 =================================
