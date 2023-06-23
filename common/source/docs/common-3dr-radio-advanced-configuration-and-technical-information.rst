@@ -322,7 +322,7 @@ your responsibility to ensure any use of it is compliant with local
 rules.
 
 For example, if your local rules allow for a maximum of 30dBm (1W) EIRP,
-then if you use a amplifier with a 12dB transmit gain, and an antenna
+then if you use an amplifier with a 12dB transmit gain, and an antenna
 with 3dBi gain, then you will need to set TXPOWER to at most 14.
 
 If you don't know how to calculate it, we've made a tutorial for you
