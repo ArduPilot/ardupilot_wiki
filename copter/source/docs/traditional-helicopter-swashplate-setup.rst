@@ -169,8 +169,8 @@ angle measures the desired minimum collective blade pitch.
 
 .. note:: Overall collective measurements must be made using the :ref:`H_SV_MAN <H_SV_MAN>` parameter since these would be impacted and inaccurate if the autopilot stabilization was active.
 
-Version 4.2
------------
+Version 4.2 and later
+---------------------
 Minimum and Maximum Collective Blade Pitch Angle
 ++++++++++++++++++++++++++++++++++++++++++++++++
 
