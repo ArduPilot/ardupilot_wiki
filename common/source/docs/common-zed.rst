@@ -11,10 +11,6 @@ ZED stereo camera for Non-GPS Navigation
 
 This article explains how a `ZED stereo camera <https://www.stereolabs.com>`__ can be used with `OpenKai <https://github.com/yankailab/OpenKAI>`__ as a substitute for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto.
 
-.. note::
-
-   This is a feature was released in Copter-3.5.
-
 ..  youtube:: ze3zs9Bhm98
     :width: 100%
 
