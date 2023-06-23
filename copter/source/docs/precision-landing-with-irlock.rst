@@ -10,7 +10,7 @@ Overview
 Copter supports Precision Landing using the `IR-LOCK sensor <https://irlock.com/collections/frontpage/products/ir-lock-sensor-precision-landing-kit>`__ and a :ref:`sonar or lidar <common-rangefinder-landingpage>`.
 Using this system, when the vehicle enters LAND mode (and has GPS lock) it is possible to reliably land within 30cm of an IR beacon that is moving at less than 1m/s.
 
-Copter 3.5 (and higher) additionally supports Precision Loiter which allows a vehicle to maintain its position above a target while in Loiter mode.  The Pilot can enable this using one of the transmitter's :ref:`auxiliary function switches <common-auxiliary-functions>` (in versions prior to Copter-4.0, CH7_OPT or CH_8_OPT would be used).
+Copter also supports Precision Loiter which allows a vehicle to maintain its position above a target while in Loiter mode.  The Pilot can enable this using one of the transmitter's :ref:`auxiliary function switches <common-auxiliary-functions>` (in versions prior to Copter-4.0, CH7_OPT or CH_8_OPT would be used).
 
 ..  youtube:: rGFO73ZxADY
     :width: 100%

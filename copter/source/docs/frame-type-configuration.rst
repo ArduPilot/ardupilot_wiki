@@ -11,8 +11,6 @@ If using the mission planner select Initial Setup, **Mandatory Hardware \| Frame
 .. figure:: ../images/MissionPlanner_Select_Frame-Type.jpg
    :target: ../_images/MissionPlanner_Select_Frame-Type.jpg
 
-If using Copter-3.5 (or higher) firmware a "Frame Class" section should be visible which allows selecting the "Class" of vehicle (Quad, Hexa, Octa, etc).
-
 .. note::
 
    For Traditional Helicopters, "Heli" should already be selected and it should not be changed.
