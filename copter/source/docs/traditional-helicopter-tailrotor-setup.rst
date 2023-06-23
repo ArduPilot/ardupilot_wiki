@@ -5,10 +5,11 @@ Traditional Helicopter – Tailrotor Setup
 =========================================
 
 There are several ways for controlling the speed and/or pitch of the tailrotor and each have a unique setup.  The :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` parameter is used to specify method for controlling the tailrotor.  A list of available tail types is given below:
-- Servo Only
-- Direct Drive Fixed Pitch Clockwise (DDFP CW)
-- Direct Drive Fixed Pitch Counter-Clockwise (DDFP CCW)
-- Direct Drive Variable Pitch (DDVP)
+
+- Servo Only (ArduPilot will supply the tail rotor stabilization like a tail rotor gyro)
+- Direct Drive Fixed Pitch Clockwise (DDFP CW) (tail rotor driven by a motor whose ESC is controlled by ArudPilot)
+- Direct Drive Fixed Pitch Counter-Clockwise (DDFP CCW) (tail rotor driven by a motor whose ESC is controlled by ArudPilot)
+- Direct Drive Variable Pitch (DDVP) (both a tail rotor motor ESC and a servo controlled pitch link are used)
 
 Tailrotor setups
 ================
@@ -31,13 +32,17 @@ The Direct Drive Variable Pitch (DDVP) tail type uses a tail motor with a variab
 Setting Tail Trim
 =================
 
-Setting the trim value of the Servo output is important to ensuring that the integrator is minimized.  Collective to tailrotor compensation can also help with this and is discussed in the next section.  If no collective to tailrotor compensation is used, then it is recommended that the ``SERVOx_TRIM`` for the tailrotor servo is set to the PWM that corresponds to the tailrotor pitch required for hover or the motor speed for DDFP.  To determine this, hover the aircraft.  After the flight, pull the log and determine the average PWM value for the servo for hovering flight.  Either set that as the ``SERVOx_TRIM`` or mechanically adjust the tail pitch (non-DDFP tail types) for the tail pitch corresponding to the PWM.  Then set the ``SERVOx_TRIM`` to the servo midpoint.  If the collective to tail rotor compensation is used the set the ``SERVOx_TRIM`` for the PWM that corresponds to zero tailrotor pitch.  In the case of a non-DDFP tailrotor, the tailrotor pitch can be mechanically adjust to zero pitch for the servo midpoint.
+Setting the trim value of the Servo output is important to ensuring that the integrator offset of the tail rotor control loop is minimized, to maximize control range.  Collective to tailrotor compensation can also help with this and is discussed in the next section.
+
+If no collective to tailrotor compensation is used, then it is recommended that the ``SERVOx_TRIM`` for the tailrotor servo is set to the PWM that corresponds to the tailrotor pitch required for hover, or the motor speed for DDFP. To determine this, hover the aircraft.  After the flight, pull the log and determine the average PWM value for the servo for hovering flight.  Either set that as the ``SERVOx_TRIM`` or mechanically adjust the tail pitch (non-DDFP tail types) for the tail pitch corresponding to the PWM.  Then set the ``SERVOx_TRIM`` to the servo midpoint. The latter approach is usually preferable.
+
+If the collective to tail rotor compensation is used (see below) the set the ``SERVOx_TRIM`` for the PWM that corresponds to zero tailrotor pitch.  Or, the tailrotor pitch can be mechanically adjusted to zero pitch for the servo midpoint.
 
 Collective to Tailrotor Compensation
 ====================================
 
-Collective to tailrotor compensation is used to remove the effects of the aircraft yawing when collective pitch is changed. 
+Collective to tailrotor compensation is used to remove the effects of the aircraft momentarily yawing when the collective pitch is changed rapidly and to minimize integrator offsets. 
 
-In versions 4.3 and earlier, the parameter ``H_COLYAW`` was used.  This implementation assumed the tailrotor changed linearly with collective blade pitch.  In versions 4.4 and later, the parameter :ref:`H_COL2YAW<H_COL2YAW>` is used.  This implementation uses an accepted helicopter performance relationship between helicopter power required and weight.  Setting this parameter will only be valid for one rotor speed.  Set the tailrotor pitch so it is zero deg blade pitch at the ``SERVOx_TRIM`` value. if the rotor speed is changed then the parameter might require retuning.  The relationship uses collective to the 3/2 power to determine the tailrotor correction.  It is recommended to start at 0.5 and increase the parameter until there is little to no yawing when changing the collective pitch.  One other way would be to determine the yaw required for hovering as well as the collective and then calculate the value.
+In versions 4.3 and earlier, the parameter ``H_COLYAW`` was used.  This implementation assumed the tailrotor changed linearly with collective blade pitch.  In versions 4.4 and later, the parameter :ref:`H_COL2YAW<H_COL2YAW>` is used.  This implementation uses an accepted helicopter performance relationship between helicopter power required and weight.  Setting this parameter will only be valid for one rotor speed.  Set the tailrotor pitch so it is zero deg blade pitch at the ``SERVOx_TRIM`` value. If the rotor speed is changed then the parameter might require retuning.  The relationship uses collective to the 1.5 power to determine the tailrotor correction.  It is recommended to start at 0.5 and increase the parameter until there is little to no yawing when changing the collective pitch.  One other way would be to determine the yaw required for hovering as well as the collective and then calculate the value.
 
 See also: :ref:`traditional-helicopter-aerobatic-setup`
