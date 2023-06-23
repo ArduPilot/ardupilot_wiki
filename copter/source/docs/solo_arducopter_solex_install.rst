@@ -4,7 +4,7 @@
 3DR Solo - Initial ArduCopter Install Using Solex
 =================================================
 
-These are detailed instructions for the installation of ArduCopter 3.5.0 and higher on the 3DR Solo using the Solex app for Android. **Your solo should be in safe working order before you start**. It should not be malfunctioning or unreliable before you even begin. It must be up to date with the latest 3DR firmware. You cannot do this with a straight out of the box Solo. You must go through the full pre-flight update first on a new Solo.  Once your Solo is up to date and working well, you're ready to begin this process.
+These are detailed instructions for the installation of ArduCopter on the 3DR Solo using the Solex app for Android. **Your solo should be in safe working order before you start**. It should not be malfunctioning or unreliable before you even begin. It must be up to date with the latest 3DR firmware. You cannot do this with a straight out of the box Solo. You must go through the full pre-flight update first on a new Solo.  Once your Solo is up to date and working well, you're ready to begin this process.
 
 .. note:: If you need help troubleshooting a problem during with this process or have questions, the `Solo Beta Test Facebook group <https://www.facebook.com/groups/617648671719759/>`_ is the best place to go.
 
