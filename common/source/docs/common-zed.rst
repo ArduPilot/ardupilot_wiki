@@ -13,7 +13,7 @@ This article explains how a `ZED stereo camera <https://www.stereolabs.com>`__ c
 
 .. note::
 
-   This is an feature was released in Copter-3.5.
+   This is a feature was released in Copter-3.5.
 
 ..  youtube:: ze3zs9Bhm98
     :width: 100%
