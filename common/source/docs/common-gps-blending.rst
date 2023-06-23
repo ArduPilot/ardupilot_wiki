@@ -4,15 +4,11 @@
 GPS Blending (aka Dual GPS)
 ===========================
 
-Copter 3.5 (and higher), Plane 3.8.0 (and higher) and recent versions of Rover all support GPS Blending.
-Using two GPSs reduces the chance of glitches affecting the vehicle.
+GPS Blending combines the readings from two gpses.
+Using two GPSes reduces the chance of glitches affecting the vehicle.
 
 .. image:: ../../../images/pixhawk_with_dual_gps.jpg
     :target: ../_images/pixhawk_with_dual_gps.jpg
-
-.. note::
-
-   Two GPSs should not be used on Copter-3.4.5 (and older) firmwares because of the risk of sudden vehicle movements when the primary GPS changes.
 
 Only GPSs that report position and speed accuracy can be used for blending.  All UBlox GPSs provide this extra information while GPSs using the NMEA protocol generally do not.
 

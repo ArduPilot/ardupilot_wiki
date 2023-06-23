@@ -75,9 +75,6 @@ Set the following parameters in the Mission planner's full parameter list and re
 .. image:: ../../../images/can-pmu/mp-set.png
     :target: ../_images/can-pmu/mp-set.png
 
-.. note::
-
- Please use Copter 3.6/Plane 3.9/Rover 3.5 firmware versions or higher.
 
 More information
 ================

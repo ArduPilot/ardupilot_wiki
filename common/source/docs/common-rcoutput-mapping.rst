@@ -399,7 +399,6 @@ These are the Copter and QuadPlane VTOL motor outputs. For Multi-Copters, see :r
 .. note::
 
    It is only possible to modify the output channel used, it is not possible to redefine the direction the motor spins with these parameters.
-   Copter-3.5 (and earlier) do not support assigning the same function to multiple output channels but this feature will be present in Copter-3.6 (and higher).
 [/site]
 
 For QuadPlanes, see :ref:`quadplane-frame-setup` for motor output configuration.

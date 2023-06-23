@@ -11,10 +11,6 @@ This article provides a brief overview of Piksi Multi multi-band multi-constella
 
 .. note::
 
-     Piksi Multi RTK GPS is supported in Copter-3.5 (and higher), Plane 3.8.0 (and higher) and Rover 3.1 (and higher)
-
-.. note::
-
      The previous offering from Swift Navigation, Piksi v2, is still supported by ArduPilot. That being said, Swift has announced Piksi v2's end-of-life, and new units are no longer available. Deprecated integration documentation for Piksi v2 is `available here <http://docs.swiftnav.com/wiki/Integrating_Piksi_with_the_Pixhawk_platform>`__.
 
 What is Piksi Multi?
