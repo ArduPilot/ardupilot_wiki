@@ -58,6 +58,16 @@ Specifications
 
 .. image:: ../../../images/pixhawkv6x-size.jpg
 
+Pinouts
+=======
+
+.. image:: ../../../images/cuav-pixhawk6x-connectors.png
+    :target: ../.././_images/cuav-pixhawk6x-connectors.png
+
+.. image:: ../../../images/cuav-pixhawk6x-outputs.png
+    :target: ../.././_images/cuav-pixhawk6x-outputs.png
+
+
 
 UART Mapping
 ============
