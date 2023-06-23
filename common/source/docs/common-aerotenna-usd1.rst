@@ -86,4 +86,4 @@ Next, set the parameters on the autopilot:
 
 .. note::
 
-   If there are more than one rangefinder in the system you will need to determine the Sensor ID for the USD1. Look in CAN inspector for message "uavcan_equiment_range_sensor_Measurement" for its sensor_id.
+   If there is more than one rangefinder in the system you will need to determine the Sensor ID for the USD1. Look in CAN inspector for a message "uavcan_equiment_range_sensor_Measurement" for its sensor_id.
