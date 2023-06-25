@@ -46,6 +46,10 @@ Quadcopter
     :target: ../_images/motororder-dji-x-2d.png
     :scale: 40%
 
+.. image:: ../images/motororder-quad-cw-x-2d.png
+    :target: ../_images/motororder-quad-cw-x-2d.png
+    :scale: 40%
+
 .. image:: ../images/motororder-quad-plus-2d.png
     :target: ../_images/motororder-quad-plus-2d.png
     :scale: 40%
