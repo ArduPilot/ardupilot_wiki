@@ -21,6 +21,7 @@ DroneCAN was created to continue the development of the widely used UAVCAN v0 pr
     DroneCAN ESCs <common-uavcan-escs>
     DroneCAN Servos <common-dronecan-servos>
     FoxTech DroneCAN Airspeed/Compass <https://www.foxtechfpv.com/foxtech-aerofox-can-airspeed-compass.html>
+    Himark CAN Servos <http://himarkuaveng.com/cate-21898-23052.html>
     Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>
     Holybro DroneCAN H-RTK F9P Rover <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-rover>
     Holybro DroneCAN H-RTK F9P Helical <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-helical>
