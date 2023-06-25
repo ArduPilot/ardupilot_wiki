@@ -55,8 +55,11 @@ The keys to a good hand launch are:
 -  if the propeller is behind your hand during launch then ensuring that
    the motor does not start until it is past your hand
 -  ensuring that the aircraft does not try to climb out too steeply
+-  assuring that the parameters are set to actually start the motor after the vehicle leaves your hand
 
-The main parameters that control the hand launch are:
+.. note:: default values for the following parameters will usually start the motor as soon at takeoff is selected (mode or mission item). This may be fine for certain hand launch situations/vehicles, but adjusting the following parameters to non-default values may be needed for safety in other situations.
+
+The main parameters that control the hand launch motor start are:
 
 -  :ref:`TKOFF_THR_MINACC <TKOFF_THR_MINACC>`
 -  :ref:`TKOFF_THR_DELAY <TKOFF_THR_DELAY>`
@@ -64,9 +67,9 @@ The main parameters that control the hand launch are:
 -  :ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>`
 
 When the auto takeoff mission command starts (usually by switching to
-AUTO mode) the autopilot starts in "throttle suppressed" mode. The
-throttle will not start until the conditions set by the TKOFF_THR\_
-parameters met.
+AUTO mode) or you switch to TAKEOFF mode when armed, the autopilot starts in "throttle suppressed" mode. The
+throttle will not start until the conditions set by the ``TKOFF_THR_x``
+parameters are met.
 
 The :ref:`TKOFF_THR_MINACC <TKOFF_THR_MINACC>` parameter controls the minimum forward
 acceleration of the aircraft before the throttle will engage. The
@@ -75,22 +78,23 @@ launch the aircraft. You need to set this value high enough that the
 motor won't start automatically when you are carrying the aircraft
 normally, but low enough that you can reliably trigger the acceleration
 with a normal throwing action. A value of around 15 m/s/s is good for
-most aircraft.
+most aircraft. The default value is 0, meaning this safeguard is not active.
+
+Sometimes it is desirable to require multiple "shakes" of the vehicle above the :ref:`TKOFF_THR_MINACC <TKOFF_THR_MINACC>` before allowing a motor start. The :ref:`TKOFF_ACCEL_CNT<TKOFF_ACCEL_CNT>` parameter can be used to require multiple events exceeding this acceleration before proceeding in the motor start.
 
 The :ref:`TKOFF_THR_DELAY <TKOFF_THR_DELAY>` parameter is a delay in 1/10 of a second units to
-hold off starting the motor after the minimum acceleration is reached.
+hold off starting the motor after the minimum acceleration or acceleration count is reached.
 This is meant to ensure that the propeller is past your hand before the
-motor starts. A value of at least 2 (which is 0.2 seconds) is
-recommended for a hand launch.
+motor starts. A value of at least 2 (which is 0.2 seconds and the default for the parameter) is
+recommended for a hand launch. More may be needed.
 
 The :ref:`TKOFF_THR_MINSPD <TKOFF_THR_MINSPD>` parameter is a minimum ground speed (as measured
-by the GPS) before the motor starts. This is an additional safety
+by the GPS) before the motor starts after the above dealy. This is an additional safety
 measure to ensure the aircraft is out of your hand before the motor
-starts. A value of 4m/s is recommended for a hand launch.
+starts. A value of 4m/s is a good starting point if you wish this safety feature to be active. The default is 0, which would allow the motor to start immediately after the above delay with most GPSes since their velocity estimate is usually a bit  noisey.
 
 Note that if your aircraft is a "tractor" type with the motor at the
-front then you may want to set :ref:`TKOFF_THR_DELAY <TKOFF_THR_DELAY>` and :ref:`TKOFF_THR_MINSPD <TKOFF_THR_MINSPD>`
-to zero, or use lower values.
+front then you may want to use the default values of :ref:`TKOFF_THR_DELAY <TKOFF_THR_DELAY>` and :ref:`TKOFF_THR_MINSPD <TKOFF_THR_MINSPD>`, or use low values.
 
 The final parameter you should think about is the :ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>`
 parameter. That controls the maximum pitch which the autopilot will
@@ -99,6 +103,8 @@ demand in auto flight. When set to a non-zero value this replaces the
 this parameter to a value which is small enough to ensure the aircraft
 can climb reliably at full throttle will make takeoff much more
 reliable. A value of 20 is good for most aircraft.
+
+.. note::  Hand launching a plane usually requires that the vehicle leaves your hand at zero degrees to 5 degs pitch. Higher pitches could lead to a stall. ArduPilot will not start the motors if the pitch is greater than 40 degrees or roll greater than 30 degrees from level. These limits should never be approached when throwing the plane, but are provided as a safety gate. 
 
 Catapult Launching
 ==================
