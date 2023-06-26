@@ -73,7 +73,7 @@ Quick Start
 .. note:: PPM/RCIN input only supports PPM, Use side port for SBUS and other serial digital protocols.
 
 .. image:: ../../../images/cuav_autopilot/v5plus/v5plus_pinouts.png
-    :target: ../_images/cuav_autopilot/v5plus/v5plus_pinouts.png
+    :target: ../../_images/cuav_autopilot/v5plus/v5plus_pinouts.png
 
 Interfaces
     +------------------+--------------------------------------------------------------+
