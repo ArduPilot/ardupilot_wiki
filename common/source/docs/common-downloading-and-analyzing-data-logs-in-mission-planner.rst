@@ -22,7 +22,7 @@ Logging Parameters
 
 Some commonly used parameters are:
 
-- :ref:`LOG_BACKEND_TYPE<LOG_BACKEND_TYPE>`: Bitmask for where to save logs to. Common values are "0" to disable logging, "1" to log to SD card file, "2" to stream over MAVLink and "4" to log to board dataflash memory, if equipped.
+- :ref:`LOG_BACKEND_TYPE<LOG_BACKEND_TYPE>`: Bitmask for where to save logs to. Common values are "0" to disable logging, "1" (bit 0 set) to log to SD card file, "2"(bit 1 set) to stream over MAVLink and "4"(bit 2 set) to log to board dataflash memory, if equipped.
 - :ref:`LOG_BITMASK<LOG_BITMASK>`: Bitmask for what items are logged. Normally, use default value, or "0" to disable logging.
 - :ref:`LOG_DISARMED<LOG_DISARMED>`: Setting to 1 will start logging when power is applied, rather than at the first arming of the vehicle. Useful when debugging pre-arm failures. Setting to 2 will only log on power application other than USB power to prevent logging while setting up on the bench. Setting to 3 will also erase any log in which the vehicle does not proceed to the armed stated. This prevents accumulating numerous logs while configuring on the bench or at the field. See :ref:`LOG_DARM_RATEMAX<LOG_DARM_RATEMAX>` also for managing log file sizes while logging disarmed.
 - :ref:`LOG_FILE_DSRMROT<LOG_FILE_DSRMROT>`: Setting this bit will force the creation of a new log file after disarming, waiting 15 seconds, and then re-arming. Normally, a log will be one file for every power cycle of the autopilot, beginning upon first arm.
@@ -37,6 +37,25 @@ Replay Logging
 --------------
 
 ArduPilot has the ability to log in a fashion that solutions to EKF/AHRS issues can be more easily verified by actually re-playing a log against code changes to see if the solution results in the desired, corrected behavior. This requires that the logs showing the issue to be worked on be made with logging active during disarmed periods (with :ref:`LOG_DISARMED<LOG_DISARMED>` set to a non-zero value, preferably 3) and :ref:`LOG_REPLAY<LOG_REPLAY>` =1 , thereby logging more sensor data than normal.
+
+On-Board DataFlash Logging
+==========================
+
+Some boards do not have SD card interfaces for logging, but rather a limited amount of dataflash, typically 16MB. This saves log files in a manner like a circular buffer. Once the flash is filled, the oldest log file is overwritten with the current logging data. If there is only one file on the flash when space runs out, logging is stopped instead.
+
+A new log file will be started after boot, upon arming, or, immediately if :ref:`LOG_DISARMED<LOG_DISARMED>` is 1.
+
+If :ref:`LOG_FILE_DSRMROT<LOG_FILE_DSRMROT>` is enabled, any disarm will stop logging and a new file started upon the next arm or immediately if :ref:`LOG_DISARMED<LOG_DISARMED>` is 1. Otherwise, logging to the current file will resume on a re-arm. Any reboot stops logging to the current file.
+
+In order to maximize the utility of the limited flash space several things can be done:
+
+- Reduce the things logged using :ref:`LOG_BITMASK<LOG_BITMASK>`.
+- Eliminate logging the EKF3 messages which are voluminous and usually needed only for problem diagnosis using the :ref:`EK3_LOG_LEVEL<EK3_LOG_LEVEL>` parameter.
+- Only log when needed during the flight, ie tuning, gathering data for TECS tuning, etc. using an RC Aux switch set to "164" to start and stop log writes.
+- Reduce the logging rate to a slower rate (below 10Hz) by setting :ref:`LOG_BLK_RATEMAX<LOG_BLK_RATEMAX>` which is by default unrestricted.
+- Download and erase the logs each flight and only log one file for a flight
+
+.. note:: some dataflash chips are particularly slow, leading to gaps in the logs. Setting :ref:`LOG_BLK_RATEMAX<LOG_BLK_RATEMAX>` to a lower value can help eliminate these gaps.
 
 .. _common-downloading-and-analyzing-data-logs-in-mission-planner_downloading_logs_via_mavlink:
 
