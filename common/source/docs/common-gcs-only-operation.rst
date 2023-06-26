@@ -30,9 +30,9 @@ Plane and Rover
 Both Plane and Rover only require two parameter changes to allow the arming of the vehicle when using only a GCS.
 
 -  In Plane, :ref:`THR_FAILSAFE<THR_FAILSAFE>` must be set to zero, while in Rover, :ref:`FS_THR_ENABLE<FS_THR_ENABLE>` must be set to zero.
--  In both Plane and Rover, :ref:`ARMING_CHECK<ARMING_CHECK>` should not include bit 6 (RC check). A value of 65470 will include all other checks. It is not recommended that :ref:`ARMING_CHECK<ARMING_CHECK>` be set to 0 (ARM immediately), since important system checks would be bypassed.
+-  In both Plane and Rover, :ref:`RC_PROTOCOLs<RC_PROTOCOLs>` should be set to "0" to prevent accidental detection of noise as an RC source. 
 
-The vehicle can then be armed after the GPS has obtained lock and internal initializations have completed, either by rudder arming (if enabled, see :ref:`ARMING_RUDDER<ARMING_RUDDER>` ) or arming command from the GCS. 
+The vehicle can then be armed after the GPS has obtained lock and internal initializations have been completed, either by joystick rudder arming (if enabled, see :ref:`ARMING_RUDDER<ARMING_RUDDER>` ) or arming command from the GCS. 
 
 
 Copter
