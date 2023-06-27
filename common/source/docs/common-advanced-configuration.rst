@@ -106,6 +106,7 @@ tuning options for the vehicle.
     Reverse Thrust Setup<reverse-thrust-setup>
 [/site]
     RunCam Camera Configuration and Control <common-camera-runcam>
+    Safety Switch <common-safety-switch-pixhawk>
     Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Sensor Testing <common-sensor-testing>
     Serial Port to Port Passthrough <common-serial-passthrough>
