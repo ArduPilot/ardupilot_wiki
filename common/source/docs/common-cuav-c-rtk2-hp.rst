@@ -108,4 +108,4 @@ Be sure to setup the offset parameters for the antennas, see: :ref:`Antenna Offs
 
 CUAV docs
 =========
-`C-RTK2 HP<https://doc.cuav.net/gps/c-rtk-series/en/c-rtk2-hp/>`__
+`C-RTK2 HP <https://doc.cuav.net/gps/c-rtk-series/en/c-rtk2-hp/>`__
