@@ -385,6 +385,7 @@ RCIN port
 Debug
 -----
 The Pixhawk4 supports SWD debugging on the debug port
+
 .. raw:: html
 
    <table border="1" class="docutils">
