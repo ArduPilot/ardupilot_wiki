@@ -37,4 +37,13 @@ on :ref:`setting-up-for-tuning` page:
 =====================================
 
 `Motors option bit <https://github.com/ArduPilot/ardupilot_wiki/pull/5218>`__
+
+on :ref:`gcs-failsafe` page:
+============================
+
+Add to failsafe settings:
+
+- **BRAKE or LAND** (Value 7): switch to BRAKE mode if included in firmware or to LAND mode, if not.
+
+
 [/site]
