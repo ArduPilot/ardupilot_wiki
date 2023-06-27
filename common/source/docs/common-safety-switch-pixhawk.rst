@@ -20,6 +20,7 @@ Configuring the Safety Switch
 =============================
 
 - :ref:`BRD_SAFETY_DEFLT <BRD_SAFETY_DEFLT>` = 0 to disable the switch for systems not equipped.(``BRD_SAFETYENABLE`` in older firmware versions)
+- - :ref:`BRD_SAFETYOPTION<BRD_SAFETYOPTION>`. This bitmask controls the behavior of the safety button. It allows you to control if the safety button can be used to enable the safety safety state and/or disable it, and whether the button is only active when disarmed, and to force entry back to the safety on state when you disarm. The default behaviour is for the button to enter or exit the safety state, only when disarmed.
 - :ref:`BRD_SAFETY_MASK <BRD_SAFETY_MASK>` can be used to set which individual channels remain enabled with the safety switch. This allows limited control surface movements to check correct operation on the ground. Motor outputs will remain disabled in all stabilized flight modes.
 
 .. note:: Being in the "Safety" state 
@@ -32,14 +33,12 @@ Configuring the Safety Switch
 Using the Safety Switch to force I/O board firmware update
 ==========================================================
 
-If the safety switch is held down for the first few seconds after a Pixhawk is powered up, the I/O firmware is reloaded.
+If the safety switch is held down for the first few seconds after the autopilot is powered up, the I/O firmware is reloaded, if the autopilot includes an IOMCU.
 
 This is normally not required but in some rare cases is required after a firmware upload if you hear the "Start up Failed" sound after startup (see :ref:`Sounds wiki page <common-sounds-pixhawkpx4>`).
 
 .. note::
 
-   A Pixhawk has two CPUs, the main CPU (aka FMU) is where ArduPilot runs.  
-   There is a separate I/O CPU which is responsible for some I/O including PWM outputs to the MAIN OUT channels.  
-   Pixracers only have the main CPU.
+   Many autopilots have two CPUs, the main CPU (aka FMU) is where ArduPilot runs. The IOMCU is a separate I/O CPU which is responsible for some I/O including PWM outputs to the MAIN OUT channels. Other autopilots do not have an IOMCU, just the main CPU.
 
 [copywiki destination="plane,copter,rover,blimp"]
