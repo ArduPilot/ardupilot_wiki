@@ -106,3 +106,6 @@ for either connection method, set:
 
 Be sure to setup the offset parameters for the antennas, see: :ref:`Antenna Offsets<antenna-offsets>`
 
+CUAV docs
+=========
+`C-RTK2 HP<https://doc.cuav.net/gps/c-rtk-series/en/c-rtk2-hp/>`__
