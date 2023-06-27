@@ -31,6 +31,7 @@ Start with setting up the voltage range to cope with voltage sag.
 - :ref:`Q_M_BAT_IDX <Q_M_BAT_IDX>`: index of the battery to use for voltage measurements on VTOL power system. Zero is the first battery, one for 2nd battery etc
 - :ref:`Q_M_BAT_VOLT_MAX <Q_M_BAT_VOLT_MAX>`: 4.2v x No. Cells for LiPo
 - :ref:`Q_M_BAT_VOLT_MIN <Q_M_BAT_VOLT_MIN>`: 3.3v x No. Cells for LiPo
+- :ref:`Q_M_OPTIONS<Q_M_OPTIONS>` = 0 (default). The default is to use sag compensated voltage for the above and during tuning computations. It can be set to 1 to use raw voltage instead of sag compensated voltage, which may improve tuning results for light vehicles.
 
 Note that :ref:`Q_M_BAT_IDX <Q_M_BAT_IDX>` needs to be for the correct
 battery for your VTOL motors. If you have a separate battery for
