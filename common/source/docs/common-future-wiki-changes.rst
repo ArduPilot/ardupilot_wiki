@@ -12,6 +12,8 @@ on :ref:`common-buzzer` page, add the following to the buzzer sounds table:
 - Gryo initialisation complete    7 short beeps
 - Ready to ARM          beep-beep-beep-beeeeeep
 
+`BlackBox Logger using ArduPilot Plane <https://github.com/ArduPilot/ardupilot_wiki/pull/5227>`__
+
 [site wiki="plane"]
 
 on :ref:`arming-your-plane` page, under "How to Arm":
