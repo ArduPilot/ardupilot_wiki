@@ -54,6 +54,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     CUAV C-RTK2 HP  Heading and RTK receiver<common-cuav-c-rtk2-hp>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
     Freefly RTK GPS Ground Station <https://store.freeflysystems.com/products/rtk-gps-ground-station>
+    Foxteck AEROFOX F9P-RTK <https://www.foxtechfpv.com/aerofox-f9p-rtk-unit.html>
     Hex Here+ RTK Receiver <common-here-plus-gps>
     Hitec PositionPro GNSS <https://www.hiteccs.com/drones/peripheral-details/positionpro-gnss-receiver/>
     Holybro DroneCAN H-RTK F9P Rover <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-rover>
