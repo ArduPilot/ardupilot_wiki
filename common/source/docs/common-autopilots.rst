@@ -60,6 +60,7 @@ Closed hardware
     Holybro Kakute H7 V1 <common-holybro-kakuteh7.rst>
     Holybro Kakute H7 V2 <common-holybro-kakuteh7-v2>
     Holybro Kakute H7 Mini v1.3 <common-holybro-kakuteh7mini-v13>
+    Holybro Kakute H7 Wing <common-kakuteh7wing>
     Holybro Pixhawk 4 Mini <common-holybro-ph4mini>
     Holybro Pixhawk5X <common-holybro-ph5x>
     Horizon31 PixC4-Jetson <common-horizon31-pixc4-jetson>
