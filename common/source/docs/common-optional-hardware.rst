@@ -27,6 +27,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     AIS (Automatic Identification System) <common-ais>
     Barometer (external) <common-baro-external>
+    BlackBox Logger using an AutoPilot <common-blackboxlogger>
 [site wiki="copter,plane,rover"]
     Button Inputs <common-buttons>
     Buzzer <common-buzzer>
