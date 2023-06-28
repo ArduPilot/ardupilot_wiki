@@ -57,19 +57,6 @@ Pinouts
 	:target: ../images/c-rtk2-hp/pinouts.jpg
 
 
-GNSS performance comparison
-===========================
-
-=============                  ==============================================    ========================
- Parameter                        U-blox F9P                                       C-RTK2 HP
-=============                  ==============================================    ========================
-Channel                        184                                               1408
-GNSS                           Four constellations                               All constellations
-Freq Bands                     L1/L5/G1/G2/B1I/B2I/E1b/E5b|L1/**L2**/L5/G1/G2    B1/B2/**B3I**/E1/**E5a**/E5b|
-Yaw                            √(two modules）                                   √（one module）
-RTK accuracy                    1cm+1PPM                                         0.8cm+1PPM
-=============                  ==============================================    ========================
-
 Hardware connection and ArduPilot Setup
 =======================================
 C-RTK2 HP supports connection either via serial or DroneCAN port to the autopilot.
