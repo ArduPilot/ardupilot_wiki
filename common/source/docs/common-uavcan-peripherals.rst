@@ -17,6 +17,7 @@ DroneCAN was created to continue the development of the widely used UAVCAN v0 pr
     CUAV Neo v2 Pro DroneCAN GPS <common-cuav-neo-v2-pro>
     CUAV Neo 3 Pro DroneCAN GPS <common-cuav-neo-3-pro>
     CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
+    CUAV C-RTK2 HP Heading and RTK receiver<common-cuav-c-rtk2-hp>
     CUAV DroneCAN Power Module <common-can-pmu>
     DroneCAN ESCs <common-uavcan-escs>
     DroneCAN Servos <common-dronecan-servos>
