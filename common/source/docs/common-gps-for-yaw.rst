@@ -101,7 +101,31 @@ The Holybro Unicore UM982 GPS should have the following parameters set:
 CUAV DroneCAN C-RTK2 HP
 -----------------------
 
-The CUAV C-RTK2 HP unit can be connected to the autopilot either by serial or DroneCAN connections.
+C-RTK2 HP supports connection either via serial or DroneCAN port to the autopilot.
+
+DroneCAN
+--------
+The diagram below shows the C-RTK2-HP being connected via its CAN port to an autopilot's CAN port.
+
+- setup the autopilot's CAN port parameters for DroneCAN: :ref:`common-uavcan-setup-advanced`
+- :ref:`GPS_TYPE<GPS_TYPE>` = 9 (DroneCAN GPS)
+
+.. image:: ../../../images/c-rtk2-hp/c-rtk2-hp-connection-en.jpg
+	:target: ../images/c-rtk2-hp/c-rtk2-hp-connection-en.jpg
+
+Serial
+------
+The diagram below shows the C-RTK2 HP being connected via its UART2 port to an autopilot's serial port setup for GPS Protocol.
+
+.. image:: ../../../images/c-rtk2-hp/c-rtk2-hp-connection-en2.jpg
+	:target: ../images/c-rtk2-hp/c-rtk2-hp-connection-en2.jpg
+
+- set the autopilot's ``SERIALx_PROTOCOL`` = '5' (be sure any lower numbered port does not use this protocol unless a GPS is attached)
+- :ref:`GPS_TYPE<GPS_TYPE>` = 25 (UnicoreMovingBaseline)
+
+.. note:: this unit can be used with only its "Master" antenna connected, if desired, but no yaw information should be used. In this case set :ref:`GPS_TYPE<GPS_TYPE>` = 24 (UnicoreMaster)
+
+
 
 See :ref:`CUAV C-RTK2 HP  Heading and RTK receiver<common-cuav-c-rtk2-hp>` for more information and setup details.
 
