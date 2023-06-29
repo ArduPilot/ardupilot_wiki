@@ -188,7 +188,6 @@ Getting more info
    Traditional Helicopters <docs/traditional-helicopters>
    Tricopter <docs/tricopter>
    SingleCopter and CoaxCopter <docs/singlecopter-and-coaxcopter>
-   Dual Helicopters <docs/dual-helicopter>
    HeliQuads <docs/heliquads>
    SkyRocket <docs/skyrocket>
    Advanced Configuration <docs/common-advanced-configuration>
