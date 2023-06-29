@@ -43,7 +43,7 @@ the partner can ask questions, post logs for review or discuss
 features. We also have a shared channel that all partners can access
 to facilitate discussions between partners.
 
-The partners program funds 3 highly qualified support engineers to
+The partners program funds 4 highly qualified support engineers to
 help support the needs of partners. These support engineers are not
 full time, but we do strive to provide very timely support for
 partners and we're proud of our track record of providing top quality
