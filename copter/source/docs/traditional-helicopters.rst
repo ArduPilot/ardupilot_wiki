@@ -34,6 +34,6 @@ Canberra Team in Australia.
     First Time Setup <traditional-helicopter-first-time-setup>
     First Flights and Tuning <traditional-helicopter-first-flight>
     Autorotation <traditional-helicopter-autorotation>
-    Dual Helicopters <docs/dual-helicopter>
+    Dual Helicopters <dual-helicopter>
     Tips <traditional-helicopter-tips>
     ArduPilot Helicopter Ground School <traditional-helicopter-configuration>
