@@ -6,6 +6,9 @@ Autopilot Hardware Options
 
 This section provides information about ArduPilot Autopilot Hardware options.  The list below is sorted by manufacturer and product name.
 
+.. note:: Not all of these autopilots have been directly tested by ArduPilot development team members and while firmware  is provided by ArduPilot, it does not constitute an endorsement by ArduPilot.  However, most boards developed by ArduPilot Partners have been provided to the ArduPilot development team to aid in any possible support issues that might arise. 
+
+
 Open hardware
 -------------
 
