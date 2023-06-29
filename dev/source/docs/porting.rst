@@ -6,6 +6,12 @@ Porting to a new flight controller board
 
 ArduPilot :ref:`supports a wide variety of flight controllers <common-autopilots>` with new controllers being added all the time.  This page spells out the steps to port ArduPilot to a new board with an emphasis on porting to STM32 based boards (the most common type) using `ChibiOS <http://www.chibios.org/dokuwiki/doku.php>`__.
 
+.. note:: Any firmware customization of ArduPilot code must abide by the terms of the GPL3.0+ open source code license. ArduPilot also reminds developers and manufacturers to adhere to the appropriate trademark and copyright laws when developing new autopilots
+
+.. image:: ../../../images/gpl3.png
+    :target: https://www.gnu.org/licenses/gpl-3.0.en.html
+
+
 Consider joining the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ to speak with other developers about this topic.
 
 ..  youtube:: y2KCB0a3xMg
