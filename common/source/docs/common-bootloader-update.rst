@@ -23,6 +23,8 @@ The ArduPilot specific bootloader is included within the ArduPilot firmware but 
   .. image:: ../../../images/bootloader-file-description.png
      :width: 450px
 
+.. note:: some autopilots with 1MB of flash do NOT have the bootloader included to save flash and the following attempts to upgrade from the firmware will result in a failure message in Mission Planner or Mavproxy. In those cases, you will need to flash the ``xxxx_bl.hex`` firmware for the autopilot using DFU as explained in :ref:`common-loading-firmware-onto-chibios-only-boards` as if it did not already have ArduPilot firmware loaded.
+
 Upgrading using Mission Planner
 -------------------------------
 
