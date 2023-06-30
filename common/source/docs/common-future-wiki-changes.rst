@@ -47,5 +47,12 @@ Add to failsafe settings:
 
 - **BRAKE or LAND** (Value 7): switch to BRAKE mode if included in firmware or to LAND mode, if not.
 
+on :ref:`follow-mode` page:
+===========================
+
+Add the parameter:
+
+- :ref:`FOLL_OPTIONS<FOLL_OPTIONS>`: set bit 0 to "1" to enable the :ref:`common-mount-targeting` to follow the target vehicle.
+
 
 [/site]
