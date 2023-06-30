@@ -9,7 +9,7 @@ ArduPilot supports up to nine individual temperature sensors with I2C interfaces
 
 - `TSYS01 <https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Data+Sheet%7FTSYS01%7FA%7Fpdf%7FEnglish%7FENG_DS_TSYS01_A.pdf%7FG-NICO-018>`__
 - `MCP9600 <https://ww1.microchip.com/downloads/en/DeviceDoc/MCP960X-Data-Sheet-20005426.pdf>`__
-- `MAX31865 <file:///home/henry/Downloads/MAX31865.pdf>`__
+- `MAX31865 <https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf>`__
 
 .. image:: ../../../images/temperature-sensor.jpg
    :target: ../../_images/temperature-sensor.jpg
