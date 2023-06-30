@@ -8,11 +8,22 @@ Will be in future 4.5 release
 [copywiki destination="plane,copter,rover,blimp"]
 
 on :ref:`common-buzzer` page, add the following to the buzzer sounds table:
+===========================================================================
 
 - Gryo initialisation complete    7 short beeps
 - Ready to ARM          beep-beep-beep-beeeeeep
 
 `BlackBox Logger using ArduPilot Plane <https://github.com/ArduPilot/ardupilot_wiki/pull/5227>`__
+
+Added new battery monitor param for some INA2XX based sensors:
+=============================================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5241
+
+Dropped included bootloader on some 1MB flash boards:
+=====================================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5242
 
 [site wiki="plane"]
 
