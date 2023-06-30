@@ -1,6 +1,6 @@
 .. _common-xacti-gimbal:
 
-[copywiki destination="plane,copter,rover"]
+[copywiki destination="plane,copter,rover,blimp"]
 
 =============
 Xacti Gimbals
