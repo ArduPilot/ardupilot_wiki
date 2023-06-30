@@ -413,7 +413,8 @@ The terrain library provides access to checking heights against a terrain databa
 
 - :code:`height_amsl( Location )` - Returns the height (in meters) above mean sea level at the provided Location userdata, or returns nil if that is not available.
 
-- :code:`height_terrain_difference_home( Location )` - Returns the difference in height (in meters) between the provided location and home, or returns nil if that is not available.
+- :code:`height_terrain_difference_home( difference, extrapolate)` -  find the difference between home terrain height and the terrain
+       height at the current location in meters. Returns false if not available. If extrapolate is true, will return based on last valid terrain data.
 
 - :code:`height_above_terrain()` - Returns the height (in meters) that the vehicle is currently above the terrain, or returns nil if that is not available.
 
