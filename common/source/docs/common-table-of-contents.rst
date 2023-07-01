@@ -6,3 +6,5 @@ Table of Contents
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy,blimp"]
 
+This feature not currently available
+
