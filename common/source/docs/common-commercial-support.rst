@@ -1,9 +1,11 @@
 .. _common-commercial-support:
 
-==================
-Commercial Support
-==================
+============================
+Commercial Support and Tools
+============================
 
+Consultation
+============
 The following is a list of individuals and companies that can provide commercial (i.e. paid)
 support for ArduPilot including vehicle design, tuning, log analysis, bug fixes and enhancements.
 
@@ -330,5 +332,13 @@ listed here will be active participants in the community.
 
 .. image:: ../../../images/logos/youtube_logo.png
     :scale: 0%	
+
+Fleet Management Systems
+========================
+
+- `Autrik <https://www.autrik.com/>`__
+- `AVCRM (AUS/NZ) <https://avcrm.net/aerodromes/>`__
+- `Drone LogBook <https://www.dronelogbook.com/hp/1/index.html>`__
+- `flyfreely <https://flyfreely.io/>`__
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
