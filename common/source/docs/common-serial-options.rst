@@ -423,11 +423,13 @@ Bitmask Options
 - if bit 2 is set, then HalfDuplex operation using the TX pin is implemented.
 - if bit 3 is set, then the TX and RX pins are effectively swapped internally.
 - if bit 4 is set, then the RX pin has a weak pull down resistor activated.
-- if bit 5 is set, then the TX pin has a weak pull down resistor activated.
-- if bit 6 is set, then the RX pin has a weak pull up resistor activated.
+- if bit 5 is set, then the RX pin has a weak pull up resistor activated.
+- if bit 6 is set, then the TX pin has a weak pull down resistor activated.
 - if bit 7 is set, then the TX pin has a weak pull up resistor activated.
 - if bit 8 is set, then the RX has no DMA activated (assuming DMA is available on this UART)
 - if bit 9 is set, then the TX has no DMA activated (assuming DMA is available on this UART)
 - if bit 10 is set, then MAVLink forwarding will not be active on this UART port.
+- if bit 11 is set, then the hardware FIFO in H7 autopilots is disabled
+- if bit 12 is set, the GCS are prevented from changing the MAVLink message stream rates set by the ``SRx_...`` parameters.
 
-.. note:: HalfDuplex is supported on all ChiBiOS based autopilots, but all other options are only supported on boards with F7 or H7 microprocessors.
+.. note:: HalfDuplex is supported on all ChiBiOS based autopilots, but inversion and swap are only supported on boards with F7 or H7 microprocessors.
