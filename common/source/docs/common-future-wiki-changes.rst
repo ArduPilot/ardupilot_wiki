@@ -16,7 +16,7 @@ on :ref:`common-buzzer` page, add the following to the buzzer sounds table:
 `BlackBox Logger using ArduPilot Plane <https://github.com/ArduPilot/ardupilot_wiki/pull/5227>`__
 
 Added new battery monitor param for some INA2XX based sensors:
-=============================================================
+==============================================================
 
 See https://github.com/ArduPilot/ardupilot_wiki/pull/5241
 
