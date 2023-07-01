@@ -31,7 +31,7 @@ Several Options are available by right-clicking the HUD.
 .. note:: In the CONFIG/Planner screen, you can select to display video from a capture source on the PC in the HUD window, and have the HUD display overlaid or not on that video.
 
 - Set Aspect Ratio: clicking this alternates between 4:1 and 16:9 aspect ratio.
-- User Items: You can add any of the telemetry parameters to the display by right-clicking on the HUD, clicking User Items, and checking the items you want to display. Note that you can view all of the telemetry in the Control and Status area by clicking the Status button.
+- User Items: You can add any of the telemetry parameters to the display by right-clicking on the HUD, clicking User Items, and checking the items you want to display. Note that you can also view all of the telemetry in the Control and Status area by clicking the Status button. If Scripting is sending NAMED_VALUE_FLOAT values, these will also appear as an item that you can display in the HUD.
 - Russian HUD: Toggle to/from a Russian style HUD (i.e. ground horizon fixed).
 - Swap with Map: swap map to this window and vice versa.
 - Ground Color: Click to change the ground color.
