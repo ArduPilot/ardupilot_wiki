@@ -42,6 +42,7 @@ When bit 0 is set of the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` parameter the pil
 
 When bit 1 is set of the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` parameter the Copter will face the direction of travel as it circles, otherwise, the Copter will point its nose at the center of the circle as it orbits.
 When bit 2 is set of the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` parameter the circle's center position will set upon mode entry at the current location, rather than on the perimeter with the center in front of the Copter at the start.
+When bit 3 is set of the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` parameter the mount's (if used) ROI aka region of interest will be set on the circle center causing mount to face the circle's center all the times. 
 
 Other Notes
 ===========
