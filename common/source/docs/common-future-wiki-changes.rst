@@ -46,6 +46,11 @@ on :ref:`quadplane-vtol-tuning-process` page:
 
 [/site]
 [site wiki="copter"]
+on :ref:`circle-mode` page, under Circle Control Options, add:
+==============================================================
+
+`Circle option bit 3 <https://github.com/ArduPilot/ardupilot_wiki/pull/5248>`__
+
 on :ref:`setting-up-for-tuning` page:
 =====================================
 
