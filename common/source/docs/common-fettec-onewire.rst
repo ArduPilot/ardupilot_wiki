@@ -1,3 +1,4 @@
+.. _common-fettec-onewire:
 ===================
 FETtec OneWire ESCs
 ===================
