@@ -132,8 +132,8 @@ connectors. These are intended for use with the I2C power monitors, if desired.
 .. note:: do not try to use the Mission Planner SETUP->Optional Hardware->Battery Monitor tab to setup the I2C power monitors for the Pixhawk6X. The parameters needed for their operation are already setup by default:
 
 - :ref:`BATT_MONITOR<BATT_MONITOR>` = 21
-- :ref:`BATT_I2C_BUS<BATT_I2C_BUS>` = 1
-- :ref:`BATT_I2C_ADDR<BATT_I2C_ADDR>` = 65
+- :ref:`BATT_I2C_BUS<BATT_I2C_BUS__AP_BattMonitor_INA2xx>` = 1
+- :ref:`BATT_I2C_ADDR<BATT_I2C_ADDR__AP_BattMonitor_INA2xx>` = 65
 
 Compass
 =======
