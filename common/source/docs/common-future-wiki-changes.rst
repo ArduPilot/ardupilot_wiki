@@ -7,6 +7,11 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+on :ref:`common-downloading-and-analyzing-data-logs-in-mission-planner` page:
+=============================================================================
+
+see https://github.com/ArduPilot/ardupilot_wiki/pull/5227
+
 on :ref:`common-buzzer` page, add the following to the buzzer sounds table:
 ===========================================================================
 
