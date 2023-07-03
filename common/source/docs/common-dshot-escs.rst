@@ -107,6 +107,26 @@ The current commands supported are:
 
 .. warning:: Currently, ArduPilot supports the command set (:ref:`SERVO_DSHOT_ESC<SERVO_DSHOT_ESC>` =1) that is commonly used, however, others are appearing and may not be compatible, resulting in undefined operation. Use caution (remove blades!) until correct operation using type=1 is verified for your ESC
 
+.. _blheli32-reversible-dshot:
+
+Reversible DShot ESCs
+---------------------
+
+Reversible DShot (aka 3D mode) allows the motor to be spun in either direction which is important for Rover, Boats and :ref:`Planes with reverse thrust <plane:reverse-thrust-setup>`.
+
+Currently, only BLHeli32 and BLHeli_S capable reversible DShot ESCs are supported. In order to use one, the output which drives it must be designated with the appropriate bit in the :ref:`SERVO_BLH_3DMASK<SERVO_BLH_3DMASK>` bitmask parameter. This will map the outputs 1000-1500-2000 values to the correct digital values for the ESC to provide FullReverse-Idle-FullForward range operation, respectively.
+
+If :ref:`DShot commands <dshot-commands>` have been enabled then ArduPilot will automatically configure the ESCs to reversible mode (3D mode) at startup, according to the :ref:`SERVO_BLH_3DMASK<SERVO_BLH_3DMASK>`. Enabling :ref:`DShot commands <dshot-commands>` will allow the other DShot commands to be sent to any other ESC configured as DShot by the DShot mask parameters discussed in :ref:`DShot setup instructions <common-dshot-escs>`.
+
+Otherwise, you must manually configure the ESCs' "Motor Direction" to "Bidirectional 3D" as shown below.
+
+  .. image:: ../../../images/blheli-reversible-dshot.png
+    :target: ../_images/blheli-reversible-dshot.png
+    :width: 450px
+
+.. note:: Currently, ArduPilot only supports the use of reversible ESCs for Plane and Rover, not Copter.
+
+
 .. _dshot-mixing-escs:
 
 Mixing ESC Protocols
