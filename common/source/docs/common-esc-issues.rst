@@ -1,6 +1,6 @@
 .. _common-esc-issues:
 
-[copywiki destination="plane"]
+[copywiki destination="plane,copter,rover"]
 
 =====================
 ESC Signalling Issues

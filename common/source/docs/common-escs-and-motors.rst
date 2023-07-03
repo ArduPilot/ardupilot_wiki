@@ -6,7 +6,7 @@ ESCs and Motors
 
 .. image:: ../../../images/motors-and-escs-topimage.png
 
-ArduPilot supports a wide variety of ESCs and motors.  The pages below provide setup instructions for the most popular types
+ArduPilot supports a wide variety of ESCs, motors, and Electronic Fuel systems.  The pages below provide setup instructions for the most popular types
 
 Motors
 ======
@@ -14,7 +14,7 @@ Motors
     :maxdepth: 1
 
 [site wiki="copter,rover"]
-    Brushed motors <common-brushed-motors>
+    Brushed motors and ESCs <common-brushed-motors>
 [/site]
 [site wiki="copter"]
     Booster motor <booster-motor>
@@ -29,19 +29,47 @@ Motors
 [/site]
 
 
-ESC 
-====
+ESC for Brushless Motors 
+========================
+
+ESCs (Electronic Speed Controls) have many different protocols for communicating with the autopilot for motor speed control, and and can also provide telemetry information on motor rpm, battery voltage. The
+capabilities will vary with each individual ESC model. Some ESCs have specialized firmware that allows easy configuration of operating parameters. The following sections
+explain the required ArduPilot setup to utilize the protocols, telemetry, and setup programs that various ESCs utilize.
+See :ref:`common-esc-guide` for a guide to terminology.
+
+Protocols
+---------
+
+.. toctree::
+    :maxdepth: 1
+
+    PWM, OneShot and OneShot125 ESCs <common-brushless-escs>
+    DShot ESCs <common-dshot-escs>
+    KDE CAN ESCs <common-kde-can-escs>
+    DroneCAN ESCs <common-uavcan-escs>
+    Currawong Velocity ESCs <common-velocity-can-escs>
+    FETtec OneWire ESCs <common-fettec-onewire>
+
+
+ESCs using BLHeli32 or BLHeli-S Configuration Firmware
+------------------------------------------------------
+
 .. toctree::
     :maxdepth: 1
 
     BLHeli/BLHeli32 Capable ESCs <common-blheli32-passthru>
-    Currawong Velocity ESCs <common-velocity-can-escs>
-    DroneCAN ESCs <common-uavcan-escs>
-    DShot ESCs <common-dshot-escs>
-    FETtec OneWire ESCs <common-fettec-onewire>
-    PWM, OneShot and OneShot125 ESCs <common-brushless-escs>
-    KDE CAN ESCs <common-kde-can-escs>
-    ESC Grounding and Wiring Considerations<common-esc-grounding>
+
+
+Telemetry
+---------
+
+.. toctree::
+    :maxdepth: 1
+
+    ESC Telemetry <common-esc-telemetry>
+
+.. note:: Currently ArduPilot only supports telemetry on BLHeli or DroneCAN/CAN ESCs, not throttle signal wire reported telemetry that some single unit ESCs report.
+
 
 [site wiki="plane"]
 
@@ -54,13 +82,15 @@ Electronic Fuel Injectors (EFI)
     Electronic Fuel Injection <common-efi>
 
 
-Large QuadPlane ESC Issues
-==========================
+[/site]
+ESC wiring and Large QuadPlane ESC Issues
+=========================================
 
 .. toctree::
     :maxdepth: 1
 
+    ESC Grounding and Wiring Considerations<common-esc-grounding>
     ESC Signalling Issues <common-esc-issues>
+    ESC Terminology <common-esc-guide>
 
-[/site]
 
