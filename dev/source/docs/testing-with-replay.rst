@@ -56,7 +56,7 @@ Changing parameters
 
 Simulation parameters may be changed before replaying a log using the option: ``-parm NAME=VALUE`` (this sets the parameter ``NAME`` to
 ``VALUE``). 
-The parameters which may be edited are those listed by running the `:ref:`param show`` command in `SITL <setting-up-sitl-on-sitl>`.
+The parameters which may be edited are those listed by running the "param show <param-name>" command in SITL.
 
 For example, to change the EKF I gate value to 1,000, run the command:
 
