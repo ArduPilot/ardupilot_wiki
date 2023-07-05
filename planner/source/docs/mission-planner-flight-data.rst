@@ -21,12 +21,12 @@ Several Options are available by right-clicking the HUD.
 .. image:: ../../../images/MP-HUD-rightclick.png
 
 - Video:
-  - You can start or stop recording the HUD as an .avi video stored in the logs folder.
-  - Set MJPEG Source: Connect and display MJPEG video source from the network.
-  - Start Camera: If a video source has been selected in the CONFIG/Planner page, start displaying it in the HUD window.
-  - Set GStreamer Source: Connect and display Gstreamer video stream.
-  - HereLink Video: Display HereLink video, use the same IP as when connecting MP via UDPCL to Herelink for telemetry. See Herelink documentation.
-  - GStreamer Stop: Stop GStreamer video.
+   - You can start or stop recording the HUD as an .avi video stored in the logs folder.
+   - Set MJPEG Source: Connect and display MJPEG video source from the network.
+   - Start Camera: If a video source has been selected in the CONFIG/Planner page, start displaying it in the HUD window.
+   - Set GStreamer Source: Connect and display Gstreamer video stream.
+   - HereLink Video: Display HereLink video, use the same IP as when connecting MP via UDPCL to Herelink for telemetry. See Herelink documentation.
+   - GStreamer Stop: Stop GStreamer video.
 
 .. note:: In the CONFIG/Planner screen, you can select to display video from a capture source on the PC in the HUD window, and have the HUD display overlaid or not on that video.
 
@@ -44,19 +44,19 @@ The Control and Status area of the Flight Data screen is in the lower left-hand 
 
 - Quick:  This allows a quick look at just a few telemetry values in large text.  Double-click to add items. Right-click to change the number of rows/columns and move the tab to a separate window.
 - Actions: Use this area to control your Auto Pilot either for testing (using USB and no motor battery) or for controlling your vehicle. You can switch modes, arm/disarm (while on the ground), enable an attached joystick, restart a mission in the air, control a camera mount, etc.
-  - The dropdown menus on the left are for (in order from top to bottom) choosing a MAVLink action, choosing a waypoint to set, choosing a mode to set, and choosing the state of the camera mount. The buttons directly to the right of each dropdown send the selected action to the connected vehicle.
-  - There are shortcut buttons for Auto, Loiter, and RTL modes
-  - Joystick: Allows the user to set up a joystick attached to the ground station
-  - Set Home Alt: Set current altitude to zero
-  - Restart Mission: Set the current waypoint to the start of the current mission
-  - Raw Sensor View: Shows roll, pitch, and yaw angles. Also shows gyro, accelerometer, 8 RC input channels, and 8 servo output channels.
-  - Arm/Disarm: Arm and disarm the vehicle.
-  - Resume Mission: Change to Auto mode at the previous waypoint.
-  - Change Speed: This value is always in m/s and performs a DO_CHANGE_SPEED command
-  - Change Alt: This value is in the user-selected altitude units. The default units are meters.
-  - Set Loiter Rad: This changes the loiter radius when in Loiter mode in meters.
-  - Clear Track: Clears the purple track line shown on the map.
-  - Abort Landing: Commands the vehicle-specific abort landing procedure.
+   - The dropdown menus on the left are for (in order from top to bottom) choosing a MAVLink action, choosing a waypoint to set, choosing a mode to set, and choosing the state of the camera mount. The buttons directly to the right of each dropdown send the selected action to the connected vehicle.
+   - There are shortcut buttons for Auto, Loiter, and RTL modes
+   - Joystick: Allows the user to set up a joystick attached to the ground station
+   - Set Home Alt: Set current altitude to zero
+   - Restart Mission: Set the current waypoint to the start of the current mission
+   - Raw Sensor View: Shows roll, pitch, and yaw angles. Also shows gyro, accelerometer, 8 RC input channels, and 8 servo output channels.
+   - Arm/Disarm: Arm and disarm the vehicle.
+   - Resume Mission: Change to Auto mode at the previous waypoint.
+   - Change Speed: This value is always in m/s and performs a DO_CHANGE_SPEED command
+   - Change Alt: This value is in the user-selected altitude units. The default units are meters.
+   - Set Loiter Rad: This changes the loiter radius when in Loiter mode in meters.
+   - Clear Track: Clears the purple track line shown on the map.
+   - Abort Landing: Commands the vehicle-specific abort landing procedure.
 - Messages: Messages from the vehicle that can range in importance from informational to critical. Important messages also appear on the HUD.
 - Gauges: This shows four popular telemetry gauges. Double click the speed gauge to change the top speed.
 - Status: Clicking the Status menu button will display all of the telemetry parameters
