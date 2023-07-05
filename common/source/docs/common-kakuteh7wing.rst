@@ -4,9 +4,6 @@
 Holybro KakuteH7-WING
 =====================
 
-.. image:: ../../../images/KakuteH7-Wing.png
-    :target: ../_images/KakuteH7-Wing.png
-    :width: 450px
 
 Specifications
 ==============
