@@ -7,6 +7,16 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+on :ref:`common-cuav-pixhawkv6X` and :ref:`common-holybro-pixhawk6X` pages, add:
+================================================================================
+
+to their firmware and output sections, that Bi-Directiona DShot firmware variations are available.
+
+on :ref:`common-rcoutput-mapping` page under, RCIN1Scaled to RCIN16Scaled¶ section, add note:
+=============================================================================================
+
+.. note:: normally passthru output will hold their last valid value during an RC failsafe. By setting the :ref:`SERVO_RC_FS_MSK<SERVO_RC_FS_MSK>`, selected passthru outputs can be set as if their input channel went to neutral. This is helpful for outputs controlling servo gimbals, or other manually controlled functions.
+
 on :ref:`common-downloading-and-analyzing-data-logs-in-mission-planner` page:
 =============================================================================
 
