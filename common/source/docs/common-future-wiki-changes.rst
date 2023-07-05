@@ -7,6 +7,11 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+on :ref:`planner:mission-planner-flight-data` page, under the ACTIONs list, add a note:
+=======================================================================================
+
+.. note:: the ability to change modes from the ground station can be restricted, by mode, using the :ref:`FLTMODE_GCSBLOCK<FLTMODE_GCSBLOCK>` parameter.
+
 on :ref:`common-cuav-pixhawkv6X` and :ref:`common-holybro-pixhawk6X` pages, add:
 ================================================================================
 
