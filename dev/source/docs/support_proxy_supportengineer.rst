@@ -65,6 +65,11 @@ pressing "Use" will update the signing key for your support ID.
 For technical support please contact Andrew Tridgell on your partner
 support channel on discord.
 
+Useful Tips
+-----------
+
+When helping a user with remote tuning, having them run this `LUA Applet <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/revert_param.md>`__ to allow you to instantly revert all tuning in case of an issue, may be useful.
+
 Using MAVProxy as a Support Engineer
 ------------------------------------
 
