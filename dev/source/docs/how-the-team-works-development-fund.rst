@@ -4,7 +4,7 @@
 Funding Committee
 =================
 
-ArduPilot collects funds through donations from :ref:`individuals <common-donation>` and `Partners <https://ardupilot.org/about/Partners>`__ and these are held within SPI and the AdruPilot Foundation.
+ArduPilot collects funds through donations from :ref:`individuals <common-donation>` and `Partners <https://ardupilot.org/about/Partners>`__ and these are held within SPI and the ArduPilot Foundation.
 Some of these funds go to pay for fixed costs including servers (i.e. build servers, wiki servers, etc) and are billed directly to ArduPilot's account within SPI. Other project expenses and support engineer compensation is paid from the ArduPilot Foundation account.
 
 The rules governing the Fundinng committee are setforth here: `Funding Committee Rules <https://docs.google.com/document/d/1l6M5fxjoLEv4TQYzvZhbcBYsUlxJOXSIEfELrACp6f8/edit?usp=sharing>`__.
