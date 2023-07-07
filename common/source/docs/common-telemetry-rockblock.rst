@@ -57,6 +57,8 @@ For the purposes of this configuration, the free `adafruit.io <https://io.adafru
 #.  Ensure :ref:`LUA Scripts<common-lua-scripts>` are enabled and the RockBLOCK UART is set as a scripting UART.
 #.  Run the RockBLOCK gateway `rockblock2mav.py <https://github.com/stephendade/rockblock2mav>`__ on the GCS to send/receive telemetry on 127.0.0.1:16000. Ensure the GCS software is connected to this ip/port.
 
+.. note:: QGroundControl and Mission Planner have very limited support for RockBLOCK MAVLink telemetry. It is highly recommended to use MAVProxy, which fully supports this telemetry.
+
 
 Usage
 =====
