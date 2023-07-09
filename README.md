@@ -10,8 +10,6 @@ We also have a dedicated documentation channel on our developers' Discord server
 
 We accept contributions from all members of the community! You can help by creating new articles, re-checking older ones, fixing broken links or correcting spelling and grammatical errors. Any help is valued.
 
-To make your participation seamless, all you require is a GitHub account. You can sign up [__here__](https://github.com/join).
+To participate, all you require is a GitHub account. You can sign up [__here__](https://github.com/join).
 
-Contribute to the ArduPilot Wiki by joining us today.
-
-For further information, kindly refer back to our [Wiki Editing Guide](https://ardupilot.org/dev/docs/common-wiki_editing_guide.html).
+Contribute to the ArduPilot Wiki by joining us today!
