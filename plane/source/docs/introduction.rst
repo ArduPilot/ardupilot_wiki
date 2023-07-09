@@ -53,6 +53,6 @@ weekends, we make it available for benevolent use.
 
     All Supported Vehicle Types <common-all-vehicle-types>
     Choosing a Ground Station <common-choosing-a-ground-station>
-    Choosing an Autopilot <common-choosing-a-flight-controller>
+    Choosing an Autopilot Board <common-choosing-a-flight-controller>
     AutoPilot Hardware <common-autopilots>
 

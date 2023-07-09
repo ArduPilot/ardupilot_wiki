@@ -21,3 +21,4 @@ This article describes the main components of a Rover system, including the grou
     Optional Hardware <optional-hardware>
     Choosing a Ground Station <common-choosing-a-ground-station>
     Choosing an Autopilot Board <common-choosing-a-flight-controller>
+    AutoPilot Hardware <common-autopilots>
