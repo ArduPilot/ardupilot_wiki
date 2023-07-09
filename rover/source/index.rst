@@ -35,29 +35,14 @@ automation in our :ref:`Video Demos <rover-video-demonstrations>`).
    :maxdepth: 4
    :hidden:
    
-    Introduction <docs/gettit>
-    Autopilot Hardware Options <docs/common-autopilots>
-    First Time Setup <docs/apmrover-setup>
-    First Drive and Tuning <docs/rover-first-drive>
-    If A Problem Arises <docs/common-when-problems-arise>
-    Rover Features <docs/rover-features>
-    Advanced Configuration <docs/common-advanced-configuration>
-    Mission Planning <docs/common-mission-planning>
-    Logs <docs/common-logs>
-    Peripheral Hardware <docs/common-optional-hardware>
+    Introduction to Rover <docs/introduction>    
+    Setup <docs/setup>
+    Drive Preparation and Operation <docs/drive-preparation-and-operation>
+    Troubleshooting and Support <docs/troubleshooting-and-support>
+    Rover Variants <docs/rover-variants>
     OEM Customization <docs/common-oem-customizations>
-    Boats <docs/boat-configuration>
-    Balance Bots <docs/balance_bot-home>
-    Sailboats <docs/sailboat-home>
-    Walking Robots <docs/walking-robots>
-    Reference Frames <docs/reference-frames>
-    Use-Cases and Applications <docs/common-use-cases-and-applications>
-    Antenna Tracking <docs/common-antenna-tracking>
-    Simulation <docs/common-simulation>
-    User Alerts <docs/common-user-alerts>
-    Upcoming Features <docs/common-master-features>
+    Further Information <docs/further-information>
     Appendix <docs/common-appendix>
-
 
 
 
