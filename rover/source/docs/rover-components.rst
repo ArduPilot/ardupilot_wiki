@@ -1,14 +1,3 @@
-.. _gettit:
-
-=====================
-Introduction to Rover
-=====================
-
-This article describes the main components of a Rover system, including the ground vehicle, autopilot hardware, and the software/firmware.
-
-.. image:: ../images/APMrover7.jpg
-    :target: ../_images/APMrover7.jpg
-
 Rover Components
 ================
 
@@ -86,47 +75,3 @@ under 2600 mAh will do - for example `this one
 For larger 1/10th scale `this is a good size choice <https://hobbyking.com/en_us/zippy-5000mah-2s1p-30c-hardcase-pack.html>`__
 A simple LiPo charger like `this one <https://hobbyking.com/en_us/imax-b6-ac-v2-charger-discharger-1-6-cells-genuine-au-plug.html>`__
 will work fine.
-
-Optional hardware
-=================
-
-Telemetry Radio
----------------
-
-A :ref:`telemetry radio <common-telemetry-landingpage>` allows your Rover
-to communicate with your ground station remotely using the MAVLink
-protocol. This allows you to interact with your missions in real time
-and receive streaming data from your vehicle's cameras and other
-components. This adds considerable convenience to your missions!
-
-.. image:: ../../../images/Telemetry_store.jpg
-    :target: ../_images/Telemetry_store.jpg
-
-Sonar/IR Sensors
-----------------
-
-:ref:`Sonar/IR sensors <sonar-sensors>`
-are recommended for obstacle avoidance.
-
-Ready to Use Rovers
-===================
-
-A list of ready-to-use vehicles is on the :ref:`RTF wiki page <common-rtf>`.
-
-Ground Control Station
-======================
-
-The list of supported ground stations is on the :ref:`Choosing a Ground Station <common-choosing-a-ground-station>` wiki page
-and we explain how to install a number of them in :ref:`Installing Ground Station (GCS) software <common-install-gcs>`.
-
-.. note::
-
-   This wiki uses :ref:`Mission Planner <planner:home>` as the reference GCS for most instructions.
-
-.. toctree::
-    :maxdepth: 1
-
-    Video Demos <rover-video-demonstrations>
-    Choosing a Ground Station <common-choosing-a-ground-station>
-    Choosing an Autopilot Board <common-choosing-a-flight-controller>
-    All Supported Vehicle Types <common-all-vehicle-types>

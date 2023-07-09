@@ -38,7 +38,6 @@ the wiki.
 [/site]
 
 [site wiki="plane"]
-    Common Airframe Builds <common-common-airframe-builds>
     Release Notes <project-news>
 [/site]
 

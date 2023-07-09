@@ -1,7 +1,7 @@
 .. _introduction:
 
 ===============================
-Introducing Copter
+Introduction to Copter
 ===============================
 
 Copter, an advanced and versatile open-source autopilot system, is specially designed for multicopters, helicopters, and other rotor vehicles. 
