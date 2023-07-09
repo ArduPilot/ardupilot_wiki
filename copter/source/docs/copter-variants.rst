@@ -12,3 +12,4 @@ Types of Copters
     SkyRocket <skyrocket>
     Solo <solo_arducopter_upgrade>
     Reference Frames <reference-frames>
+    Ready to Fly Vehicles <common-rtf>

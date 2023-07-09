@@ -1,7 +1,7 @@
 .. _introduction:
 
 ========================
-User Manual Introduction
+Introduction to Plane
 ========================
 
 This User Manual is designed to work for the novice and experienced

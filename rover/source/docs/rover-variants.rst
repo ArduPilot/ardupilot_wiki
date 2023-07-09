@@ -10,3 +10,4 @@ Rover Variants
     Sailboats <sailboat-home>
     Walking Robots <walking-robots>
     Reference Frames <reference-frames>
+    Ready to Fly Vehicles <common-rtf>

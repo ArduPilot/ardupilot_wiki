@@ -183,7 +183,7 @@ Getting more info
    Setup <docs/setup>
    Flight Preparation and Operation <docs/flight-preparation-and-operation>
    Troubleshooting and Support <docs/troubleshooting-and-support>
-   Copters Variants <docs/types-of-copters>
+   Copters Variants <docs/copter-variants>
    OEM Customization <docs/common-oem-customizations>
    Further Information <docs/further-information>
    Appendix <docs/common-appendix>

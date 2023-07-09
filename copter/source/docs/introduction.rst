@@ -17,7 +17,6 @@ As part of the larger ArduPilot ecosystem, Copter can be used with shared simula
 ArduPilot is the preferred platform for many commercially available autopilot systems and can significantly enhance DIY multirotor's capabilities.
 
 Key Features
-============
 
 Copter boasts of several remarkable features:
 
@@ -32,7 +31,6 @@ Copter boasts of several remarkable features:
 -  **No Vendor Lock-in**: ArduPilot is an entirely open-source platform backed by a diverse community of developers. It leaves you in total control of the software on your vehicle and its performance.
 
 Getting Started
-===============
 
 To begin, you need a multicopter equipped with an :ref:`ArduPilot compatible autopilot <common-autopilots>`. 
 You can choose from a list of :ref:`ready-to-fly vehicles <common-rtf>` or build your own.
@@ -52,7 +50,6 @@ Begin by understanding what a multicopter can do, and how to select a frame, aut
 Then proceed to :ref:`First Time Setup <initial-setup>` to assemble your copter and :ref:`First Flight <flying-arducopter>` to configure and tune it.
 
 Discover More About Copter
-==========================
 
 To delve deeper into Copter and key configuration decisions, explore the topics below:
 
@@ -61,10 +58,10 @@ To delve deeper into Copter and key configuration decisions, explore the topics 
 
     How Multicopters Work <what-is-a-multicopter-and-how-does-it-work>
     Choosing a MultiCopter Frame <choosing-a-frame>
-    Choosing an Autopilot <common-choosing-a-flight-controller>
-    Choosing a Ground Station <common-choosing-a-ground-station>
     Building Your Own Frame <what-you-need>
     MultiCopter Safety <safety-multicopter>
-    Ready to Fly Vehicles <common-rtf>
     Supported Vehicle Types <common-all-vehicle-types>
     Use-Case Overview <copter-use-case-overview>
+    Choosing an Autopilot <common-choosing-a-flight-controller>
+    Choosing a Ground Station <common-choosing-a-ground-station>
+    AutoPilot Hardware <common-autopilots>
