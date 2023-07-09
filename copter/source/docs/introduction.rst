@@ -4,12 +4,15 @@
 Introducing Copter
 ===============================
 
-Copter, an advanced and versatile open-source autopilot system, is specially designed for multicopters, helicopters, and other rotor vehicles. It provides a :ref:`wide variety of flight modes <flight-modes>` ranging from fully manual to completely autonomous operations.
+Copter, an advanced and versatile open-source autopilot system, is specially designed for multicopters, helicopters, and other rotor vehicles. 
+It provides a :ref:`wide variety of flight modes <flight-modes>` ranging from fully manual to completely autonomous operations.
 
 .. image:: ../images/copter-introduction-diagram.jpg
     :target: ../_images/copter-introduction-diagram.jpg
 
-Copter is a part of the broader ArduPilot software platform. It works with a wide array of :ref:`Ground Control Station programs <common-choosing-a-ground-station>`, enabling vehicle setup, real-time flight monitoring, and robust mission planning. As part of the larger ArduPilot ecosystem, Copter can be used with shared simulators, log analysis tools, and advanced APIs for vehicle control.
+Copter is a part of the broader ArduPilot software platform. 
+It works with a wide array of :ref:`Ground Control Station programs <common-choosing-a-ground-station>`, enabling vehicle setup, real-time flight monitoring, and robust mission planning. 
+As part of the larger ArduPilot ecosystem, Copter can be used with shared simulators, log analysis tools, and advanced APIs for vehicle control.
 
 ArduPilot is the preferred platform for many commercially available autopilot systems and can significantly enhance DIY multirotor's capabilities.
 
@@ -31,9 +34,12 @@ Copter boasts of several remarkable features:
 Getting Started
 ===============
 
-To begin, you need a multicopter equipped with an :ref:`ArduPilot compatible autopilot <common-autopilots>`. You can choose from a list of :ref:`ready-to-fly vehicles <common-rtf>` or build your own.
+To begin, you need a multicopter equipped with an :ref:`ArduPilot compatible autopilot <common-autopilots>`. 
+You can choose from a list of :ref:`ready-to-fly vehicles <common-rtf>` or build your own.
 
-If you opt for a :ref:`ready-to-fly vehicle <common-rtf>`, it should arrive pre-configured and tuned, ready for its maiden flight. Ensure to read the manufacturer's instructions, particularly safety-related sections, before flying. After :ref:`installing the ground station <common-install-gcs>`, you can move on to the :ref:`First Flight <flying-arducopter>` instructions.
+If you opt for a :ref:`ready-to-fly vehicle <common-rtf>`, it should arrive pre-configured and tuned, ready for its maiden flight. 
+Ensure to read the manufacturer's instructions, particularly safety-related sections, before flying. 
+After :ref:`installing the ground station <common-install-gcs>`, you can move on to the :ref:`First Flight <flying-arducopter>` instructions.
 
 .. warning:: 
 
@@ -41,7 +47,9 @@ If you opt for a :ref:`ready-to-fly vehicle <common-rtf>`, it should arrive pre-
    hazardous! Always adhere to :ref:`best safety practices <safety-multicopter>` and heed all safety
    warnings.
 
-If you plan to build your own multicopter, the following pages will guide you. Begin by understanding what a multicopter can do, and how to select a frame, autopilot board, and other essential components. Then proceed to :ref:`First Time Setup <initial-setup>` to assemble your copter and :ref:`First Flight <flying-arducopter>` to configure and tune it.
+If you plan to build your own multicopter, the following pages will guide you. 
+Begin by understanding what a multicopter can do, and how to select a frame, autopilot board, and other essential components. 
+Then proceed to :ref:`First Time Setup <initial-setup>` to assemble your copter and :ref:`First Flight <flying-arducopter>` to configure and tune it.
 
 Discover More About Copter
 ==========================
