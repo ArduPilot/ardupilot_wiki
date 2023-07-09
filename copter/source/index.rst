@@ -184,8 +184,8 @@ Getting more info
    Setup <docs/setup>
    Flight Preparation and Execution <docs/flight-preparation-and-execution>
    Troubleshooting and Support <docs/troubleshooting-and-support>
-   Further Information <docs/further-information>
    OEM Customization <docs/common-oem-customizations>
+   Further Information <docs/further-information>
    Appendix <docs/common-appendix>
 
 
