@@ -1,8 +1,8 @@
 .. _introduction:
 
-========================
-Introduction to Plane
-========================
+============
+Introduction
+============
 
 This User Manual is designed to work for the novice and experienced
 users. It should be easy to run through, but there is also a nice path
@@ -51,12 +51,13 @@ weekends, we make it available for benevolent use.
 .. toctree::
     :maxdepth: 1
 
-    Use-Cases and Applications <common-use-cases-and-applications>
-    All Supported Vehicle Types <common-all-vehicle-types>
-    Flight Features <flight-features>
+    ArduPilot Use-Cases <common-use-cases-and-applications>
+    ArduPilot Supported Vehicle Types <common-all-vehicle-types>
+    Ready to Fly Vehicles <common-rtf>
+    Plane Flight Features <flight-features>
     Choosing a Ground Station <common-choosing-a-ground-station>
     Mission Planning <common-mission-planning>
     Simulation <common-simulation>
-    Upcoming Features <common-master-features>
     Antenna Tracking <common-antenna-tracking>
+    Upcoming Features <common-master-features>
 

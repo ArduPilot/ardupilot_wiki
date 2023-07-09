@@ -105,7 +105,7 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
    :maxdepth: 4
    :hidden:
    
-    Introduction to Plane <docs/introduction>
+    Introduction <docs/introduction>
     Choosing an Autopilot Board <docs/common-choosing-a-flight-controller>
     First Time Setup <docs/arduplane-setup>
     First Flight and Tuning <docs/first-flight-landing-page>
