@@ -116,7 +116,6 @@ For control and propulsion, the Flapping Fin Blimp uses micro servos, such as`th
     :hidden:
 
     common-choosing-a-flight-controller
-    common-autopilots
     common-choosing-a-ground-station
     common-installing-3dr-ublox-gps-compass-module
     common-non-gps-navigation-landing-page

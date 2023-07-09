@@ -51,8 +51,12 @@ weekends, we make it available for benevolent use.
 .. toctree::
     :maxdepth: 1
 
+    Use-Cases and Applications <common-use-cases-and-applications>
     All Supported Vehicle Types <common-all-vehicle-types>
+    Flight Features <flight-features>
     Choosing a Ground Station <common-choosing-a-ground-station>
-    Choosing an Autopilot Board <common-choosing-a-flight-controller>
-    AutoPilot Hardware <common-autopilots>
+    Mission Planning <common-mission-planning>
+    Simulation <common-simulation>
+    Upcoming Features <common-master-features>
+    Antenna Tracking <common-antenna-tracking>
 

@@ -67,4 +67,3 @@ To delve deeper into Copter and key configuration decisions, explore the topics 
     Use-Case Overview <copter-use-case-overview>
     Choosing an Autopilot <common-choosing-a-flight-controller>
     Choosing a Ground Station <common-choosing-a-ground-station>
-    AutoPilot Hardware <common-autopilots>

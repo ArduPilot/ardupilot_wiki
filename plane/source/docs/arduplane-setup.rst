@@ -20,3 +20,5 @@ give you a taste:
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
     Configuration <plane-configuration-landing-page>
     Airframe Specific Setup Guides <airframe-guides>
+    QuadPlane Setup and Operation <quadplane-support>
+    Ready to Fly Vehicles <common-rtf>

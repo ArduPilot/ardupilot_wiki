@@ -106,12 +106,12 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
    :hidden:
    
     Introduction to Plane <docs/introduction>
-    Setup <docs/setup>
-    Flight Preparation and Operation <docs/flight-preparation-and-operation>
+    Choosing an Autopilot Board <docs/common-choosing-a-flight-controller>
+    First Time Setup <docs/arduplane-setup>
+    First Flight and Tuning <docs/first-flight-landing-page>
+    Advanced Configuration <docs/common-advanced-configuration>
+    Peripheral Hardware <docs/common-optional-hardware>
     Troubleshooting and Support <docs/troubleshooting-and-support>
-    Plane Variants <docs/plane-variants>
-    OEM Customization <docs/common-oem-customizations>
-    Further Information <docs/further-information>
     Appendix <docs/common-appendix>
 
 
