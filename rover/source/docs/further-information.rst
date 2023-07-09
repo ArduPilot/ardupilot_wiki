@@ -1,6 +1,8 @@
-==========
+.. _further-information:
+
+===================
 Further Information
-==========
+===================
 
 .. toctree::
    :maxdepth: 1

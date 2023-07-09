@@ -1,6 +1,8 @@
-==========
+.. _rover-variants:
+
+==============
 Rover Variants
-==========
+==============
 
 .. toctree::
    :maxdepth: 1

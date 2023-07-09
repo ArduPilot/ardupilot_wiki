@@ -1,3 +1,6 @@
+.. _rover-components:
+
+================
 Rover Components
 ================
 

@@ -1,6 +1,8 @@
-================
-Types of Copters
-================
+.. _copter-variants:
+
+===============
+Copter Variants
+===============
 
 .. toctree::
     :maxdepth: 1

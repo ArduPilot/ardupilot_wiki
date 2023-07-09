@@ -1,6 +1,8 @@
-==========
-Types of Planes
-==========
+.. _plane-variants:
+
+==============
+Plane Variants
+==============
 
 .. toctree::
    :maxdepth: 1

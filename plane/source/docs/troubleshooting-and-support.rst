@@ -1,6 +1,8 @@
-==========
+.. _troubleshotting-and-support:
+
+===========================
 Troubleshooting and Support
-==========
+===========================
 
 .. toctree::
    :maxdepth: 1

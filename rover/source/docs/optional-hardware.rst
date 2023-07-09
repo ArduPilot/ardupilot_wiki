@@ -1,8 +1,11 @@
+.. _optional-hardware:
+
+=================
 Optional hardware
 =================
 
 Telemetry Radio
----------------
+===============
 
 A :ref:`telemetry radio <common-telemetry-landingpage>` allows your Rover
 to communicate with your ground station remotely using the MAVLink
@@ -14,7 +17,7 @@ components. This adds considerable convenience to your missions!
     :target: ../_images/Telemetry_store.jpg
 
 Sonar/IR Sensors
-----------------
+================
 
 :ref:`Sonar/IR sensors <sonar-sensors>`
 are recommended for obstacle avoidance.
