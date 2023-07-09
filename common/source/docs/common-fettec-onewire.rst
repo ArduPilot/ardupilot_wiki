@@ -55,8 +55,8 @@ FETtec ESC configurator software
 
 The `FETtec ESC configurator <https://github.com/FETtec/ESC-Configurator/releases>`_ can change all ESC's settings and do ESC firmware updates.
 Use it to make sure, that your ESC Firmware Version is 2.17 (September 2021) or later.
-Tipicaly a FETtec autopilot can be used as a USB<->OneWire bridge so that the *FETtec ESC configurator* can communicate with the ESCs.
-ESC's parameter changes and ESC firmware updates are also made via OneWire so a serial passthough is possible.
+Typically a FETtec autopilot can be used as a USB<->OneWire bridge so that the *FETtec ESC configurator* can communicate with the ESCs.
+ESC's parameter changes and ESC firmware updates are also made via OneWire so a serial passthrough is possible.
 Often used parameters are for example: 
 
 - **Motor direction** - If your motor spins in the wrong direction you can change it easily without rewiring
