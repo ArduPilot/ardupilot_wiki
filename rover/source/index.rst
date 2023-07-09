@@ -57,7 +57,6 @@ automation in our :ref:`Video Demos <rover-video-demonstrations>`).
     User Alerts <docs/common-user-alerts>
     Upcoming Features <docs/common-master-features>
     Appendix <docs/common-appendix>
-    Full Table of Contents <docs/common-table-of-contents>
 
 
 

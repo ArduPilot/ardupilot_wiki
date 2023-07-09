@@ -150,5 +150,4 @@ Full Table of Contents
     Autopilot Setup <docs/autopilot-setup>
     Credits and Contributors <docs/credits-and-contributors>
     Appendix <docs/common-appendix>
-    Full Table of Contents <docs/common-table-of-contents>
 

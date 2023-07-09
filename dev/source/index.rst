@@ -168,4 +168,3 @@ Full Table of Contents
     User Alerts <docs/user-alerts-developer>
     Academic Works Involving ArduPilot <docs/acadamic-works>
     Appendix <docs/common-appendix>
-    Full Table of Contents <docs/common-table-of-contents>

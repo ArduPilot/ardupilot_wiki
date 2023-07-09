@@ -238,7 +238,6 @@ Features
    Hardware Vendors <docs/common-stores>
    Contact Us <docs/common-contact-us>
    docs/common-appendix
-   Full Table of Contents <docs/common-table-of-contents>
 
 
 last build |today|
