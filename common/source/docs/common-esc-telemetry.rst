@@ -8,9 +8,9 @@ ESC Telemetry
 
 If the ESC has this capability, it allows monitoring and logging of performance data that previously required additional sensors (like power modules and RPM sensors). The detailed data provided by every ESC allows real-time decisions and individual ESC or motor performance tuning and failure analysis. Note that a given ESC may or may not have a specific sensor type's data transmitted via telemetry. It is common for 4 in 1 escs to provide voltage and current sensors but not transmit the data via telemetry, but rather by direct connection to the autopilot. Check the ESC data sheet and connection information for details.
 
-Telemetry data may be conveyed to the autopilot either by a separate wire connection to an autopilot's UART RX pin or across the signal wire used to convey motor speed information (Bi-Directional DShot) or CAN messages for CAN based ESCs. Currently only BLHeli-32 ESCs provide this capability in non-CAN ESCS, but it is possible for an ESC not to implement the BLHeli firmware and still provide this capability. Currenly, ArduPilot only supports this for BLHeli based ESCs.
+Telemetry data may be conveyed to the autopilot either by a separate wire connection to an autopilot's UART RX pin or across the signal wire used to convey motor speed information (Bi-Directional DShot) or CAN messages for CAN based ESCs. For non-CAN ESCs, this capability is available primarily in selected BLHeli ESCs running stock or BlueJay firmware. But it is possible for an ESC not to implement the BLHeli firmware and still provide this capability. Currenly, ArduPilot only supports this for BLHeli/BlueJay telemetry compatible ESCs.
 
- ESC telemetry of motor rpm is especially useful for controlling the center frequency of harmonic notch filters to control noise. See :ref:`common-esc-telem-based-notch` for more information.
+ESC telemetry of motor rpm is especially useful for controlling the center frequency of harmonic notch filters to control noise. See :ref:`common-esc-telem-based-notch` for more information.
 
 .. note:: ArduPilot does not currently support the polling of the ESCs for telemetry data via throttle idle messages over the signal line in non DShot protocols.
 
@@ -31,7 +31,7 @@ Set the following parameters to enable BLHeli32 telemetry feedback to the autopi
 
 - :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed.  Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM.
 
-.. note:: using the rpm value reported using single wire telemetry for the center frequency adjustment of the :ref:`harmonic notch feature <common-imu-notch-filtering>`  works. but the responsiveness is slower than using telemetry provided by Bi_directional DShot. See  next section.
+.. note:: using the rpm value reported using single wire telemetry for the center frequency adjustment of the :ref:`harmonic notch feature <common-imu-notch-filtering>`  works well, but the responsiveness is slower than using telemetry provided by Bi_directional DShot. See  next section.
 
 Bi-directional DShot
 ====================
