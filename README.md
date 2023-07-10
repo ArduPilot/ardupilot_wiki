@@ -1,15 +1,22 @@
-# ArduPilot Wiki Contributions
 
-## ArduPilot Wiki: A Comprehensive Editing Guide
+# ArduPilot Wiki Sources
 
-Visit our main wiki page at [ArduPilot](https://ardupilot.org/ardupilot).
+## ArduPilot Wiki Editing Guide
 
-For comprehensive editing guidelines, please refer to our [Editing Guide](https://ardupilot.org/dev/docs/common-wiki_editing_guide.html).
+Main Wiki - https://ardupilot.org/ardupilot
 
-We also have a dedicated documentation channel on our developers' Discord server. Connect with us at [ArduPilot Discord Server](https://ardupilot.org/discord).
+Editing Guide - https://ardupilot.org/dev/docs/common-wiki_editing_guide.html
 
-We accept contributions from all members of the community! You can help by creating new articles, re-checking older ones, fixing broken links or correcting spelling and grammatical errors. Any help is valued.
+Documentation channel on developers Discord server - [ArduPilot Discord Server](https://ardupilot.org/discord)
 
-To participate, all you require is a GitHub account. You can sign up [__here__](https://github.com/join).
+All members of the community are welcome to join and contribute to this
+wiki! Any help you can offer is appreciated — from creating new articles
+and re-validating older articles, through to fixing broken links and
+spelling/grammatical errors.
 
-Contribute to the ArduPilot Wiki by joining us today!
+We've made that very easy - all you need for access is a 
+GitHub account [__Join HERE__](https://github.com/join)
+
+This link provides everything you need to help the wiki grow!
+
+See the [Wiki Editing Guide](https://ardupilot.org/dev/docs/common-wiki_editing_guide.html)
