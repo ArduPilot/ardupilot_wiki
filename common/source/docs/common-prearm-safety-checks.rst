@@ -41,7 +41,7 @@ Most are obvious as to the issue, but some can have multiple sources and the mes
 
 **EKF3 Yaw inconsistent by x degs**: The autopilot is not using EKF3 because its yaw disagrees with the current ARHS system being used (usually DCM). Normally a compass issue caused by metal objects nearby.
 
-**AHRS: not using configured AHRS type**: Normally, if EKF3 is being used, it has not started or has fallen back to DCM because its not healthy yet. Can also be caused by miss-configuring which EKF is enabled versus being used by :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>`.
+**AHRS: not using configured AHRS type**: Normally, if EKF3 is being used, it has not started or has fallen back to DCM because its not healthy yet. Can also be caused by misconfiguring which EKF is enabled versus being used by :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>`.
 
 **EKF3 waiting for GPS config data**: A DroneCAN GPS has been configured but is disconnected or not setup.
 
