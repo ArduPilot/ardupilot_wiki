@@ -17,7 +17,6 @@ This article describes the main components of a Rover system, including the grou
     :maxdepth: 1
 
     Video Demos <rover-video-demonstrations>
+    Rover Features <rover-features>
     Rover Components <rover-components>
     Optional Hardware <optional-hardware>
-    Choosing a Ground Station <common-choosing-a-ground-station>
-    Choosing an Autopilot Board <common-choosing-a-flight-controller>

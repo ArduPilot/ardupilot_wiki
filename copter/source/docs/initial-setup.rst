@@ -29,6 +29,13 @@ within the sections) see the topics below:
     Loading Firmware to boards without existing ArduPilot firmware<common-loading-firmware-onto-chibios-only-boards>
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
     Configuration <configuring-hardware>
+    Traditional Helicopters <traditional-helicopters>
+    Tricopter <tricopter>
+    SingleCopter and CoaxCopter <singlecopter-and-coaxcopter>
+    HeliQuads <heliquads>
+    SkyRocket <skyrocket>
+    Solo <solo_arducopter_upgrade>
+    Reference Frames <reference-frames>
     
     
 .. tip::

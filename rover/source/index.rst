@@ -32,17 +32,15 @@ automation in our :ref:`Video Demos <rover-video-demonstrations>`).
 
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 1
    :hidden:
    
-    Introduction to Rover <docs/introduction>    
-    Setup <docs/setup>
-    Drive Preparation and Operation <docs/drive-preparation-and-operation>
+    ArduPilot Overview <docs/common-ardupilot-intro>
+    Choosing an Autopilot Board <docs/common-choosing-a-flight-controller>
+    Rover <docs/introduction>    
+    First Time Setup <docs/apmrover-setup>
+    First Drive and Tuning <docs/rover-first-drive>
+    Advanced Configuration <docs/common-advanced-configuration>
+    Peripheral Hardware <docs/common-optional-hardware>
     Troubleshooting and Support <docs/troubleshooting-and-support>
-    Rover Variants <docs/rover-variants>
-    OEM Customization <docs/common-oem-customizations>
-    Further Information <docs/further-information>
     Appendix <docs/common-appendix>
-
-
-

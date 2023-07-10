@@ -16,3 +16,8 @@ This section provides a step-by-step guide for assembling and configuring an Unm
     Loading Firmware onto boards without existing ArduPilot firmware (first time only) <common-loading-firmware-onto-chibios-only-boards>
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
     Configuration <rover-code-configuration>
+    Boats <boat-configuration>
+    Balance Bots <balance_bot-home>
+    Sailboats <sailboat-home>
+    Walking Robots <walking-robots>
+    Reference Frames <reference-frames>

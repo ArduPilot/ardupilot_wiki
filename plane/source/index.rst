@@ -104,9 +104,10 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
 .. toctree::
    :maxdepth: 4
    :hidden:
-   
-    Introduction <docs/introduction>
+       
+    ArduPilot Overview <docs/common-ardupilot-intro>
     Choosing an Autopilot Board <docs/common-choosing-a-flight-controller>
+    Plane <docs/introduction>
     First Time Setup <docs/arduplane-setup>
     First Flight and Tuning <docs/first-flight-landing-page>
     Advanced Configuration <docs/common-advanced-configuration>

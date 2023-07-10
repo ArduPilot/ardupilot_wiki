@@ -179,14 +179,15 @@ Getting more info
 .. toctree::
    :hidden:
    
-   Introduction to Copter <docs/introduction>
-   Setup <docs/setup>
-   Flight Preparation and Operation <docs/flight-preparation-and-operation>
-   Troubleshooting and Support <docs/troubleshooting-and-support>
-   Copters Variants <docs/copter-variants>
-   OEM Customization <docs/common-oem-customizations>
-   Further Information <docs/further-information>
-   Appendix <docs/common-appendix>
+    ArduPilot Overview <docs/common-ardupilot-intro>
+    Choosing an Autopilot Board <docs/common-choosing-a-flight-controller>
+    Copter <docs/introduction>
+    First Time Setup <docs/initial-setup>
+    First Flight and Tuning <docs/flying-arducopter>
+    Advanced Configuration <docs/common-advanced-configuration>
+    Peripheral Hardware <docs/common-optional-hardware>
+    Troubleshooting and Support <docs/troubleshooting-and-support>
+    Appendix <docs/common-appendix>
 
 
 
