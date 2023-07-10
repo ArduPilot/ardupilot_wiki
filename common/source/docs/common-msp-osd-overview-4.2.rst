@@ -176,7 +176,7 @@ By setting :ref:`MSP_OPTIONS<MSP_OPTIONS>` bit 2 to 1 (value = 4) one can force 
 
 This is required if the remote OSD system does not have an ArduPilot compatible fonts table. MWOSD and DJI goggles using the wtf-os/msp-osd firmware already support custom fonts locally and therefore does not require this hack, while HDzero recently added an ArduPilot compatible font set.
 
-.. note:: the direction arrows will be reversed since ArduPilot and Betaflight use direction arrows in their font tables that are 180 deg different than each other.
+.. note:: the direction arrows will be reversed since ArduPilot and Betaflight use direction arrows in their font tables that are 180 deg different than each other. This can be corrected by using :ref:`OSD_OPTIONS<OSD_OPTIONS>` bit 5 to invert them before sending to OSD.
 
 Default behavior (:ref:`MSP_OPTIONS<MSP_OPTIONS>` = 0) is to use the ArduPilot font table's indexes.
 
