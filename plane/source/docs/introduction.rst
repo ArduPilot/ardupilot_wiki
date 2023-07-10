@@ -52,4 +52,5 @@ weekends, we make it available for benevolent use.
     :maxdepth: 1
 
     Plane Flight Features <flight-features>
+    Detailed Vehicle Builds <common-common-airframe-builds>
 
