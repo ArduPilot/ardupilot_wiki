@@ -128,8 +128,8 @@ If you think of something that should be added to this site, please
 `open an issue for the wiki <https://github.com/ArduPilot/ardupilot_wiki/issues>`__.
 
 
-Full Table of Contents
-======================
+Table of Contents
+=================
 
 .. toctree::
    :titlesonly:
@@ -168,4 +168,3 @@ Full Table of Contents
     User Alerts <docs/user-alerts-developer>
     Academic Works Involving ArduPilot <docs/acadamic-works>
     Appendix <docs/common-appendix>
-    Full Table of Contents <docs/common-table-of-contents>
