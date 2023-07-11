@@ -1,6 +1,43 @@
 .. _common-autopilots:
 
-==========================
+=====================
+Choosing an Autopilot
+=====================
+
+ArduPilot runs on many different autopilot boards, the most
+important of which are linked from the topic :ref:`AutoPilot Hardware Options <common-autopilots>`.
+
+Selecting the right board depends on the physical restraints of the
+vehicle, features desired, and the applications that you want to run.
+Factors to consider are:
+
+#. Sensor Redundancy: ArduPilot supports redundant IMUS, GPS, etc. Many controllers have multiple IMUs integrated on board for applications requiring this level of reliability.
+#. Number of Servo/Motor Outputs
+#. Number of UARTs: Telemetry radios, GPS's, Companion Computers, etc can be attached via these ports
+#. External Buses: I2C, CAN, etc. allow many types of devices, such as airspeed sensors, LED controllers, etc. to be attached to the autopilot.
+#. Number of Analog I/O: Some controllers have analog I/O available for such features as inputting receiver signal strength (RSSI) or battery voltage/current or other analog sensors.
+#. Integrated Features: Such as on-board OSD (On Screen Display), integrated battery monitoring sensors
+#. Vibration Isolation: Internal mechanical vibration isolators for IMUs for high vibration applications
+#. IMU Heaters: On board temperature control of IMUs for applications in harsh environments or widely varying temperatures during a flight to provide the highest possible precision.
+#. Size: Many vehicles have limited space for the autopilot.
+#. Expense: Controller prices range from ~$25 to much more, depending on feature set.
+
+.. tip::
+
+   There are also numerous clones and minor variants of the boards linked below. Many of these may be perfectly capable replacements. Help in selecting an autopilot can also be obtained in the user forums (`ArduPilot Discuss <https://discuss.ardupilot.org>`__ or RC Groups <https://www.rcgroups.com/forums/showthread.php?3102183-Most-Integrated-Ardupilot-Flight-Controller-%28ChiBios%29>`__.
+
+
+[site wiki="copter, plane" heading="off"]
+
+.. note::
+
+   The APM2.6 board is no longer supported for Copter or Plane. The
+   last firmware builds that can be installed on these boards are AC v3.2.1 and Plane
+   3.3.0.
+
+[/site]
+
+
 Autopilot Hardware Options
 ==========================
 

@@ -35,5 +35,6 @@ Canberra Team in Australia.
     First Flights and Tuning <traditional-helicopter-first-flight>
     Autorotation <traditional-helicopter-autorotation>
     Dual Helicopters <dual-helicopter>
+    HeliQuads <heliquads>
     Tips <traditional-helicopter-tips>
     ArduPilot Helicopter Ground School <traditional-helicopter-configuration>

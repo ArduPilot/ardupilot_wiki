@@ -542,4 +542,4 @@ Supported Vehicles
 +------+-------------------------------------------------+--------------------------------------------------+
 
 
-[copywiki destination="copter,plane,rover,ardupilot"]
+[copywiki destination="ardupilot"]

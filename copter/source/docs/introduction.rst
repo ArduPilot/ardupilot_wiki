@@ -51,22 +51,5 @@ Please start by reading this section in order to understand what a multicopter c
 and other essential components.
 Then proceed to :ref:`First Time Setup <initial-setup>` to learn how to assemble your Copter and then :ref:`First Flight <flying-arducopter>` to learn how to configure and tune it.
 
-Learn more about Copter
-=======================
-
-To find out more about Copter and your main configuration decisions,
-please see the topics below:
 
 
-.. toctree::
-    :maxdepth: 1
-
-    How Multicopters Work <what-is-a-multicopter-and-how-does-it-work>
-    Choosing a MultiCopter Frame <choosing-a-frame>
-    Choosing an Autopilot <common-choosing-a-flight-controller>
-    Choosing a Ground Station <common-choosing-a-ground-station>
-    Building Your Own Frame <what-you-need>
-    MultiCopter Safety <safety-multicopter>
-    Ready to Fly vehicles <common-rtf>
-    Supported vehicle types <common-all-vehicle-types>
-    Use-Case Overview <copter-use-case-overview>

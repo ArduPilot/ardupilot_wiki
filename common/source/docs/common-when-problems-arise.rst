@@ -8,6 +8,14 @@ ArduPilot, is extremely capable and flexible. But with high performance and flex
 
 This WIKI documentation attempts to reduce the effort of configuring and operating your ArduPilot based vehicle by providing as much accurate information on configuration, parameters, and operating modes as possible, and is continuously being updated as new releases occur or areas needing further explanation arise. Your assistance in that effort is welcomed and solicited. See :ref:`common_wiki_editing_guide`
 
+.. note:: Enabling and using the logging capability of ArduPilot is usually a key requirement when seeking assistance from other in diagnosing issues that you cannot resolve yourself by following the suggestions below.
+
+.. toctree::
+   :maxdepth: 1
+
+   Logs <common-logs>
+
+
 What to do if you have an issue
 ===============================
 
