@@ -1,11 +1,15 @@
 .. _ros:
 
-===
-ROS
-===
+========
+ROS/ROS2
+========
 
 .. image:: ../images/logos/rosorg_logo.png
     :target: ../_images/logos/rosorg_logo.png
+
+
+.. image:: ../images/logos/ros2_logo.jpg
+    :target: ../_images/logos/ros2_logo.jpg
 
 ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka Robot Operating System).
 
@@ -19,6 +23,7 @@ These pages will show you how to:
     :maxdepth: 1
 
         Install ROS and MAVROS <ros-install>
+        Install ROS2 <ros2>
         Connecting to ArduPilot from ROS <ros-connecting>
         Hector SLAM for non-GPS navigation <ros-slam>
         Google Cartographer SLAM for non-GPS navigation <ros-cartographer-slam>
@@ -28,6 +33,7 @@ These pages will show you how to:
         Clock/Time syncronisation <ros-timesync>
         Send data from AP to ROS/mavros <ros-data-from-ap>
         ROS with SITL <ros-sitl>
+        ROS 2 with SITL <ros2-sitl>
         ROS with SITL in Gazebo <ros-gazebo>
         ROS with distance sensors <ros-distance-sensors>
         ROS with Aruco Boards detection <ros-aruco-detection>
