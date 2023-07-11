@@ -52,5 +52,4 @@ weekends, we make it available for benevolent use.
     :maxdepth: 1
 
     Choosing a Ground Station <common-choosing-a-ground-station>
-    Choosing an Autopilot <common-choosing-a-flight-controller>
-    All Supported Vehicle Types <common-all-vehicle-types>
+    Choosing an Autopilot <common-autopilots>
