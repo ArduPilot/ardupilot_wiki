@@ -51,5 +51,4 @@ This manual will guide you through setup and configuration process.
     docs/common-logs
     How to Operate <docs/how-to-operate>
     docs/common-appendix
-    docs/common-table-of-contents
     User Alerts <docs/common-user-alerts>
