@@ -60,6 +60,20 @@ Setup steps
 
 Now you should be able to build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
+Additional Steps for macOS mojave
+---------------------------------
+Due to some changes binutils installed via brew have stopped working for macOS mojave leading to crashing builds. So if installed, remove via following command:
+
+::
+
+    brew uninstall binutils
+
+Also you will need to install the c++ include headers to /usr/include to do that. Run the following in commandline and follow the installation routine:
+
+::
+
+    open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+
 Cleaning
 --------
 
