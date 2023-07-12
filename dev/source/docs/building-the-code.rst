@@ -22,6 +22,10 @@ Building / Compiling
 
 - Linux and MacOSX users should build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
+.. note::
+
+   Do not use `sudo` unless specified in the instructions.
+
 .. youtube:: lNSvAPZOM_o
 
 **Windows users:**
