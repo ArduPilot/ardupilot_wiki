@@ -6,6 +6,9 @@
     <p style="text-align:center;color:red;"><strong>
     Success with ArduPilot requires that the 'First Time Setup' and 'First Flight/Drive and Tuning' sections of the vehicle's documentation be read and followed!</strong>
 
+    <p style="text-align:center;color:green;"><strong>
+    ArduPilot is open source <u>firmware</u> that runs on a wide range of autopilot <u>hardware</u>.</strong>
+
     <p style="text-align:left; color:black;">
 
     ArduPilot enables the creation and use of trusted, autonomous,
@@ -217,6 +220,11 @@ Features
    :hidden:
 
    Home <https://ardupilot.org>
+
+.. toctree::
+   :hidden:
+   :caption: Platforms Using ArduPilot
+
    Vehicle Types <docs/common-all-vehicle-types>
    Copter <https://ardupilot.org/copter/index.html>
    Plane <https://ardupilot.org/plane/index.html>
@@ -224,18 +232,33 @@ Features
    Sub <http://ardusub.com/>
    Blimp <https://ardupilot.org/blimp/index.html>
    AntennaTracker <https://ardupilot.org/antennatracker/index.html>
+
+.. toctree::
+   :hidden:
+   :caption: Ground Control Stations
+
    Mission Planner <https://ardupilot.org/planner/index.html>
    APM Planner 2 <https://ardupilot.org/planner2/index.html>
    MAVProxy <https://ardupilot.org/mavproxy/index.html>
-   Companion Computers <https://ardupilot.org/dev/docs/companion-computers.html>
+
+.. toctree::
+   :hidden:
+   :caption: Information for Developers
+
    Developers <https://ardupilot.org/dev/index.html>
+   Companion Computers <https://ardupilot.org/dev/docs/companion-computers.html>
+
+.. toctree::
+   :hidden:
+   :caption: Additional Information
+
    Firmware Downloads <docs/common-downloads_firmware>
+   Custom Firmware Build Server <https://custom.ardupilot.org>
    The ArduPilot Team <docs/common-team>
-   The History of ArduPilot<docs/common-history-of-ardupilot>
    ArduPilot Partners Program <docs/common-partners-program>
    Commercial Support <docs/common-commercial-support>
-   Acknowledgements <docs/common-acknowledgments>
    Hardware Vendors <docs/common-stores>
+   Acknowledgements <docs/common-acknowledgments>
    Contact Us <docs/common-contact-us>
    docs/common-appendix
    Full Table of Contents <docs/common-table-of-contents>
