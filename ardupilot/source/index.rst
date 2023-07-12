@@ -250,10 +250,15 @@ Features
 
 .. toctree::
    :hidden:
-   :caption: Additional Information
+   :caption: Get the firmware
 
    Firmware Downloads <docs/common-downloads_firmware>
    Custom Firmware Build Server <https://custom.ardupilot.org>
+
+.. toctree::
+   :hidden:
+   :caption: Additional Information
+
    The ArduPilot Team <docs/common-team>
    ArduPilot Partners Program <docs/common-partners-program>
    Commercial Support <docs/common-commercial-support>
