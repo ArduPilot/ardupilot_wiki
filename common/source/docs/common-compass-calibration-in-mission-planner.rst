@@ -38,7 +38,7 @@ Onboard Calibration
 
 "Onboard Calibration" is a calibration routine that runs on the autopilot.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling and orientation are also automatically determined.
 
-.. note:: Calibration could fail for the onboard compasses if the :ref:`autopilot board orientation<AHRS_ORIENTATION>` parameter is not correct.
+.. note:: Calibration could fail for the compasses integrated into the autopilot, if any,  if the :ref:`autopilot board orientation<AHRS_ORIENTATION>` parameter is not correct.
 
 To perform the onboard calibration of all compasses:
 
