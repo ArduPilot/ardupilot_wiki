@@ -11,7 +11,7 @@ GPSes from ArduPilot Partners that are known to work are shown on the :ref:`comm
 
 .. note::
 
- **Ublox F9P modules must run firmware version 1.13 or higher and constellations configured**. See :ref:`common-gps-ublox-firmware-update`.
+ **Ublox F9P modules must run firmware version 1.3.2 or higher and constellations configured**. See :ref:`common-gps-ublox-firmware-update`.
 
 
 Hardware Setup
