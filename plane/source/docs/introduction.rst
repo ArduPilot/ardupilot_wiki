@@ -69,4 +69,4 @@ Plane has many advanced and complex features such as Automatic Takeoffs and Land
 All of us involved with this project care a great deal about the privacy
 and safety of those whom we share this planet with. Please be a good
 steward of this technology. It is the product of many evenings and
-weekends, we make it available for benevolent us.
+weekends, we make it available for benevolent use.
