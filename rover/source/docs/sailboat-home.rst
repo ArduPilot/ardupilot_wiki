@@ -1,4 +1,4 @@
-.. _sailboat_bot-home:
+.. _sailboat-home:
 
 ======================
 Sailing Vehicles Home
