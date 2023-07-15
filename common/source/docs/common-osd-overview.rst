@@ -61,6 +61,23 @@ To enable the use of external MSP OSDs or DisplayPort systems see:
 - :ref:`common-msp-osd-overview-4.2`
 - :ref:`common-paramosd`
 
+Second OSD
+==========
+
+ArduPilot now supports having two OSD backends simultaneously. For example, this would be used on long range planes where a shorter range HD system like DJI or Walksnail would be used up until it reached the limit of its range, and then the pilot would switch to using an analog, lower definition, longer range system while operating at distance. In fact, it is possible to have three OSD systems running simultaneously since pure MSP OSD telemetry is active if any ONE OSD backend is running and an MSP base OSD could be attached to a serial port using MSP protocol.
+
+A typical configuration would be to use the onboard analog video OSD system, together with a DisplayPort system. The setup would be:
+
+- :ref:`OSD_TYPE<OSD_TYPE>` = 1 to enable the analog system, with a long range video transmitter connected to the Video output pin of the autopilot
+- :ref:`OSD_TYPE2<OSD_TYPE2>` = 5 to enable the second DisplayPort backend
+- ``SERIALx_PROTOCOL`` = 42 for the serial port which the DJI or Walksnail VTX is connected for telemetry input to the goggles.
+
+.. note:: there are several combinations of first and second OSD type that are not allowed and will result in a pre-arm warning to change configuration. The most obvious is using two osd types of the same kind.
+
+.. note:: although both OSD systems work simultaneously, if the two OSD systems are different resolutions, you will need to setup multiple OSD screens (see below) and switch the screen layout when switching to using the different system (ie when  swapping the video display being actively used). It is possible to create a single screen layout that works for both, but the advantage of the HD system would be obviously reduced.
+
+.. note:: screen item setup for HD displays may give warnings in Mission Planner about screen location parameters being out of range. Just ignore those.
+
 .. _screen-switching:
 
 Screens and screen switching 
