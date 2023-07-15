@@ -105,23 +105,19 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
    :maxdepth: 4
    :hidden:
    
+
     Introduction <docs/introduction>
     Choosing an Autopilot <docs/common-autopilots>
+    Introduction <docs/plane-introduction>
+    AutoPilot Hardware <docs/common-autopilots>
+    Ground Control Stations <docs/common-GCS>
     First Time Setup <docs/arduplane-setup>
     First Flight and Tuning <docs/first-flight-landing-page>
     QuadPlane Setup and Operation <docs/quadplane-support>
-    If A Problem Arises <docs/common-when-problems-arise> 
-    Flight Features <docs/flight-features>
-    Advanced Configuration <docs/common-advanced-configuration>
     Mission Planning <docs/common-mission-planning>
-    Logs <docs/common-logs>
+    If A Problem Arises <docs/common-when-problems-arise> 
+    Advanced Configuration <docs/common-advanced-configuration>
     Peripheral Hardware <docs/common-optional-hardware>
-    OEM Customization <docs/common-oem-customizations>
-    Use-Cases and Applications <docs/common-use-cases-and-applications>
-    Antenna Tracking <docs/common-antenna-tracking>
-    Simulation <docs/common-simulation>
+    Additional Information <docs/additional-information>
     User Alerts <docs/common-user-alerts>
-    Upcoming Features <docs/common-master-features>
-    Appendix <docs/common-appendix>
-    Fixed Wing FAQ <docs/fixed-wing-faq>
 
