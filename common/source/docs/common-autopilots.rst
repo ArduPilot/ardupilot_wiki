@@ -4,8 +4,7 @@
 Choosing an Autopilot
 =====================
 
-ArduPilot runs on many different autopilot boards, the most
-important of which are linked from the topic :ref:`AutoPilot Hardware Options <common-autopilots>`.
+ArduPilot runs on many different autopilot boards, which are linked from the topic below: AutoPilot Hardware Options.
 
 Selecting the right board depends on the physical restraints of the
 vehicle, features desired, and the applications that you want to run.
