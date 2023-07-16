@@ -36,7 +36,7 @@ automation in our :ref:`Video Demos <rover-video-demonstrations>`).
    :hidden:
    
     Introduction <docs/gettit>
-    Autopilot Hardware Options <docs/common-autopilots>
+    Choosing an Autopilot <docs/common-autopilots>
     First Time Setup <docs/apmrover-setup>
     First Drive and Tuning <docs/rover-first-drive>
     If A Problem Arises <docs/common-when-problems-arise>

@@ -106,7 +106,7 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
    :hidden:
    
     Introduction <docs/introduction>
-    AutoPilot Hardware <docs/common-autopilots>
+    Choosing an Autopilot <docs/common-autopilots>
     First Time Setup <docs/arduplane-setup>
     First Flight and Tuning <docs/first-flight-landing-page>
     QuadPlane Setup and Operation <docs/quadplane-support>
