@@ -65,6 +65,12 @@ A slightly improved but fully compatible variant can now be obtained from mRo:
 Pixhawk connector assignments
 =============================
 
+.. warning::
+   
+   Many Pixhawk clones use Molex picoblade connectors instead of DF13 connectors.
+   They have rectangular pins, rather than square ones, and cannot be assumed compatible.
+
+
 .. image:: ../../../images/Pixhawk_with_legend.jpg
     :target: ../_images/Pixhawk_with_legend.jpg
 
