@@ -181,7 +181,7 @@ Getting more info
    
 
    Introduction to Copter<docs/copter-introduction>
-   AutoPilot Hardware Options <docs/common-autopilots>
+   Choosing an Autopilot <docs/common-autopilots>
    Ground Control Stations <docs/common-GCS>
    First Time Setup <docs/initial-setup>
    First Flight and Tuning <docs/flying-arducopter>
