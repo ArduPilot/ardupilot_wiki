@@ -643,6 +643,17 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  http://www.cavok-uas.com/
 
+      - .. image:: ../../../images/supporters/supporters_pegasus_logo.png
+            :width: 250px
+            :align: center
+            :target:  https://pegasusimagery.ca/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_skyhawk_logo.png
+            :width: 250px
+            :align: center
+            :target:  https://www.skyhawkaerospace.com/
+
       - .. image:: ../../../images/supporters/supporters_triaddrones.png
             :width: 250px
             :align: center
@@ -665,32 +676,53 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://www.adti.camera/
 
+      - .. image:: ../../../images/supporters/supporters_autrik-logo.png
+            :width: 250px
+            :align: center
+            :target:  https://www.autrik.com/
+
+    *
       - .. image:: ../../../images/supporters/supporters_logo_nooploop.png
             :width: 250px
             :align: center
             :target:  https://www.nooploop.com/
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_scropion.png
             :width: 250px
             :align: center
             :target:  https://www.scorpionsystem.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_ad.png
             :width: 250px
             :align: center
             :target:  http://www.adsystem.kr/
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_proto.png
             :width: 250px
             :align: center
             :target:  https://www.proto-systems.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_rgblab.png
             :width: 250px
             :align: center
             :target:  https://www.rgblab.kr/
 
+      - .. image:: ../../../images/supporters/supporters_SIYI_logo.jpg
+            :width: 250px
+            :align: center
+            :target:  https://shop.siyi.biz/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_jacksonuav_logo.png
+            :width: 250px
+            :align: center
+            :target:  http://www.jacksonuas.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_yjuav.jpg
+            :width: 250px
+            :align: center
+            :target:  http://www.yjuav.net/
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
