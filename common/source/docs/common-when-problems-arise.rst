@@ -28,6 +28,11 @@ What to do if you have an issue
 .. note:: WatchDog resets ("WDG:") should be reported `on this page <https://github.com/ArduPilot/ardupilot/issues/15915>`_ , Internal Errors ("Internal Error:") should be reported `here <https://github.com/ArduPilot/ardupilot/issues/15916>`_
 
 
+Vehicle Will Not Arm
+====================
+
+See :ref:`common-prearm-safety-checks`. Do not disable arming checks except for bench setup testing. Doing so puts your vehicle at risk for a crash. Always track down the reason why a pre-arm check failure is occurring and correct it before operating the vehicle!
+
 [site wiki="copter"]
 
 
