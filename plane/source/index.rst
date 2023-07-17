@@ -106,10 +106,8 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
    :hidden:
    
 
-    Introduction <docs/introduction>
-    Choosing an Autopilot <docs/common-autopilots>
     Introduction <docs/plane-introduction>
-    AutoPilot Hardware <docs/common-autopilots>
+    Choosing an Autopilot <docs/common-autopilots>
     Ground Control Stations <docs/common-GCS>
     First Time Setup <docs/arduplane-setup>
     First Flight and Tuning <docs/first-flight-landing-page>
