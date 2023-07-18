@@ -7,7 +7,12 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
-on :ref:`common-osd-overview` pagge, add:
+on :ref:`common-efi` page, add:
+===============================
+
+see https://github.com/ArduPilot/ardupilot_wiki/pull/5288
+
+on :ref:`common-osd-overview` page, add:
 =========================================
 
 see https://github.com/ArduPilot/ardupilot_wiki/pull/5280
