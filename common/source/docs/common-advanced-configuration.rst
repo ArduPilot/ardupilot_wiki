@@ -113,6 +113,7 @@ tuning options for the vehicle.
     Safety Switch <common-safety-switch-pixhawk>
     Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Sensor Testing <common-sensor-testing>
+    Serial Forwarding to DroneCAN <common-serial-over-DroneCAN>
     Serial Port to Port Passthrough <common-serial-passthrough>
     Serial Port Configuration <common-serial-options>
 [site wiki="plane"]

@@ -8,7 +8,9 @@ This lists features or changes merged in master and build in the "latest" firmwa
 
 .. note:: Currently firmware is in the 4.3 stable stage. Items listed are in "latest" but not 4.3 beta and stable releases.
 
-[site wiki="plane,copter"]
+
+[site wiki="plane,copter,rover,blimp"]
+
 
 .. toctree::
     :maxdepth: 1
