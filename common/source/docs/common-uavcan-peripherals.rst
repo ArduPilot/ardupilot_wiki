@@ -38,7 +38,7 @@ DroneCAN was created to continue the development of the widely used UAVCAN v0 pr
     mRo Location One GPS GPS+Compass+LED+Safety Switch <common-mrobotics-location-one-gps>
     mRo DroneCAN Adapter Node <common-mro-uavcan-adapter-node>
     Pomegranate Systems DroneCAN Power Module<common-pomegranate-systems-pm>
-    Qiotek DroneCAN Airspeed Sensor <https://www.qio-tek.com/index.php?route=product/product&product_id=309>
-    Qiotek DroneCAN RM3100 Compass <http://www.qio-tek.com/RM3100_CAN>
-    Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/RTK_F9P>
+    Qiotek DroneCAN Airspeed Sensor <https://www.qio-tek.com/index.php/product/qiotek-asp5033-dronecan-airspeed-and-compass-module>
+    Qiotek DroneCAN RM3100 Compass <https://www.qio-tek.com/index.php/product/qiotek-rm3100-dronecan-module>
+    Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
     Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
