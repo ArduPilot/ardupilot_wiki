@@ -34,7 +34,9 @@ GPS/Compass
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     mRo GPS, GPS+Compass,RTK, and DroneCAN modules <https://store.mrobotics.io/category-s/109.htm>
     mRo Locaton One DroneCAN GPS/Compass <common-mrobotics-location-one-gps>
-    Qiotek DroneCAN RM3100 Compass <http://www.qio-tek.com/RM3100_CAN>
+    Qiotek DroneCAN GNSS M10 QMC5883  <https://www.qio-tek.com/index.php/product/qiotek-m10s-gnss-module/>
+    Qiotek GNSS M10 QMC5883 <https://www.qio-tek.com/index.php/product/qiotek-m10s-gnss-module/>
+    Qiotek DroneCAN RM3100 Compass <https://www.qio-tek.com/index.php/product/qiotek-rm3100-dronecan-module/>
     Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
 
 RTK GPS
@@ -63,7 +65,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     Holybro RTK F9P Family <common-holybro-rtk-f9p>
     Holybro RTK NEMA UM-982 GPS <https://holybro.com/products/h-rtk-unicore-um982>
     LOCOSYS HAWK R1 RTK GNSS / R2 RTK GNSS + Compass<common-gps-locosys>
-    Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/RTK_F9P>
+    Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
     Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
     Synerx MDU-2000 RTK + LTE GPS <common-synerex-mdu-2000>
