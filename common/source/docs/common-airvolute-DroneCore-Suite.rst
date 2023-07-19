@@ -48,7 +48,7 @@ Out of the box the device is configured to fly a Quadcopter (though autopilot ca
 
 
 .. image:: ../../../images/airvolute_droneCore.Suite_top_view_9219.jpg
-    :target: ../../_images/airvolute_droneCore.Suite_top_view_9219.jpg
+    :target: ../_images/airvolute_droneCore.Suite_top_view_9219.jpg
 
 Specifications
 ==============
@@ -108,7 +108,7 @@ Block Diagram
 =============
 
 .. image:: ../../../images/airvolute_DroneCore.Pilot_block_diagram.svg
-    :target: ../../_images/airvolute_DroneCore.Pilot_block_diagram.svg
+    :target: ../_images/airvolute_DroneCore.Pilot_block_diagram.svg
 
 
 **DroneCore.Pilot** is based on Cube Orange - the widely used autopilot by Hex.aero running on ArduPilot (or optionally PX4 flight stack) and Nvidia Jetson Xavier NX. Their rich interfaces allow connecting most sensors and other peripherals for drones available on the market.

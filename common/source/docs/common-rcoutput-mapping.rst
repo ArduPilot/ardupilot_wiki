@@ -155,7 +155,7 @@ This operates similar to RCPassThru1 to RCPassThru16 above. However, instead of 
 The upper PWM range from the input trim value to its maximum input is translated to its corresponding output's trim to maximum parameter values range, and similarly for the ranges below the input's trim value as shown below:
 
 .. image:: ../../../images/rcscaled-io.jpg
-   :target: ../../_images/rcscaled-io.jpg
+   :target: ../_images/rcscaled-io.jpg
    
 .. note:: the SERVOx_MIN/MAX values can be larger than what Mission Planner allows in some presentations. Use the CONFIG/Full Parameter Tree view to set parametes beyong their normal "safe" ranges.
 

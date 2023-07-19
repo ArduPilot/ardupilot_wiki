@@ -85,7 +85,7 @@ Extending Current Measurement Capacity
 Shunt resistor power monitors of this variety can be used to measure higher currents if setup in a current sharing configuration, as shown below:
 
 .. image:: ../../../images/current-sharing.jpg
-    :target: ../../_images/current-sharing.jpg
+    :target: ../_images/current-sharing.jpg
 
 Design points:
 
@@ -95,7 +95,7 @@ Design points:
 
 
 .. image:: ../../../images/current-sharing-pic.png
-    :target: ../../_images/current-sharing-pic.png
+    :target: ../_images/current-sharing-pic.png
 
 In the photo above, by providing two bypasses, the current is shared such that the power monitor sees a little less than 1/3 the total current flowing, and reports a value ~1/3 normal, extending its range ~3X.
 

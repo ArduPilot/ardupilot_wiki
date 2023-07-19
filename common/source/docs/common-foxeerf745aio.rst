@@ -9,7 +9,7 @@ The Foxeer Reaper F745 AIO V2/V3 features an F7 autopilot and an integrated 45A 
 .. note:: ArduPilot does not currently support the V3 version.
 
 .. image:: ../../../images/foxeerf745aio.png
-    :target: ../../_images/foxeerf745aio.png
+    :target: ../_images/foxeerf745aio.png
 
 Where To Buy
 ============
@@ -62,7 +62,7 @@ Pinouts
 =======
 
 .. image:: ../../../images/foxeerF745aio-pinout.png
-    :target: ../../_images/foxeerF745aio-pinout.png
+    :target: ../_images/foxeerF745aio-pinout.png
 
 Default UART order
 ==================

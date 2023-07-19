@@ -7,7 +7,7 @@ Mamba H743v4
 The MambaH743v4 is an autopilot produced by `Diatone <https://www.diatone.us>`__.
 
 .. image:: ../../../images/MambaH743v4.jpg
-   :target: ../../_images/MambaH743v4.jpg
+   :target: ../_images/MambaH743v4.jpg
 
 
 Specifications
@@ -48,7 +48,7 @@ Pinout
 ======
 
 .. image:: ../../../images/MambaH743v4_pinout.jpg
-    :target: ../../_images/MambaH743v4_pinout.jpg
+    :target: ../_images/MambaH743v4_pinout.jpg
 
 UART Mapping
 ============

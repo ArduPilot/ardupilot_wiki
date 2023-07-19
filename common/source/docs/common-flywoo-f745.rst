@@ -7,12 +7,12 @@ Flywoo GOKU GN 745 AIO with 40A ESC/ Nano
 The Flywoo GOKU GN 745 AIO is an autopilot produced by [Flywoo](https://flywoo.net/).
 
 .. image:: ../../../images/flywooF745AIO.jpg
-    :target: ../../_images/flywooF745AIO.jpg
+    :target: ../_images/flywooF745AIO.jpg
 
 The Nano version is a smaller reduced feature set version
 
 .. image:: ../../../images/flywoof745nano.jpg
-    :target: ../../_images/flywoof745nano.jpg
+    :target: ../_images/flywoof745nano.jpg
 
 Where To Buy
 ============
@@ -67,12 +67,12 @@ Pinouts
 AIO
 
 .. image:: ../../../images/flywoo-f745AIO-wiring.jpg
-    :target: ../../_images/flywoo-f745AIO-wiring.jpg
+    :target: ../_images/flywoo-f745AIO-wiring.jpg
 
 Nano
 
 .. image:: ../../../images/GOKUGN745AIO-nano_Pinout.jpg
-    :target: ../../_images/GOKUGN745AIO-nano_Pinout.jpg
+    :target: ../_images/GOKUGN745AIO-nano_Pinout.jpg
     
 Default UART order
 ==================

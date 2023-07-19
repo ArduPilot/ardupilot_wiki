@@ -9,7 +9,7 @@ Mission Planner has a special Drone ID tab in its DATA view for use with OpenDro
 .. note:: This feature is rapidly evolving and is available only on the latest Beta Mission Planner updates. Updates will be made frequently so check for the latest version, frequently.
 
 .. image:: ../../../images/mp_remoteid.png
-    :target: ../../_images/mp_remoteid.png
+    :target: ../_images/mp_remoteid.png
 
 This control manages the exchange of GCS/Operator information with the RID module, 
 via the AutoPilot connection. 
@@ -22,7 +22,7 @@ Mission Planner must have a source of GPS information about its location. The GP
 This can be accomplished by either attaching a GPS to the PC's COM or USB port (some GPS may require an FTDI adapter) or by using an app like `GPS to Bluetooth <https://play.google.com/store/apps/details?id=com.cajax.gps2bt2&hl=en_US&gl=US>`__ on your phone to feed GPS data via a Bluetooth serial COM port to Mission Planner.
 
 .. image:: ../../../images/gps2bt.png
-    :target: ../../_images/gps2bt.png
+    :target: ../_images/gps2bt.png
 
 The COM port and baud rate (normally 9600) are entered in the ``GCS GPS`` dialogs and then Connect to Base GPS pushed. If successful, location data will immediately appear below those dialog boxes.
 

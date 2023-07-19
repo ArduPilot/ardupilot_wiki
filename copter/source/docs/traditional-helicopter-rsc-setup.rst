@@ -46,12 +46,12 @@ These are also used in :ref:`H_RSC_MODE<H_RSC_MODE>` = 4 as a basis for its feed
 If the collective range is set for conventional (non-aerobatic) setups, ie ~-2deg to +12deg, then the ``H_RSC_THRCRV_X`` parameters would be set to drive the Throttle Servo similarly to:
 
 .. image:: ../../../images/normal_throttle_curve.jpg
-   :target: ../../_images/normal_throttle_curve.jpg
+   :target: ../_images/normal_throttle_curve.jpg
 
 If setup with an aerobatic, symmetrical collective range, ie ~ -12deg to +12deg, then they should be set drive the Throttle Servo similarly to this:
 
 .. image:: ../../../images/aerobatic_throttle_curve.jpg
-   :target: ../../_images/aerobatic_throttle_curve.jpg
+   :target: ../_images/aerobatic_throttle_curve.jpg
 
 .. note:: ArduPilot will spline curve fit between the ``H_RSC_THRCRV_X`` setpoints to produce smooth throttle servo output versus collective points.
 
