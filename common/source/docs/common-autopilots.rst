@@ -90,6 +90,7 @@ Closed hardware
     AtomRC F405-NAVI <common-atomrcf405-navi>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Flywoo F745 AIO BL_32/ Nano <common-flywoo-f745>
+    Foxeer H745 MPU600 <common-foxeerh743v1>
     Foxeer Reaper F745-AIO V2 <common-foxeerf745aio>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     Holybro Kakute F4* <common-holybro-kakutef4>
