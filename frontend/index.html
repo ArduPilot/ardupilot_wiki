@@ -35,49 +35,27 @@
   <meta name="msapplication-TileColor" content="#ffffff">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-    crossorigin="anonymous"></script>
-
+  <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <script>
-    $.getJSON("blog_posts.json", function (data) {
-      $.each(data, function (key, val) {
+    function loadContent(elementId, file) {
+      fetch(file)
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+              })
+              .then(text => document.getElementById(elementId).innerHTML = text)
+              .catch(e => console.error('Error:', e));
+    }
 
-        if (val.has_image) {
-          $('#blog_posts').append('<div class="col-lg-4 col-md-6 col-12">' +
-            '<a href="' + val.link + '" class="d-block mb-4 h-100 text-dark">' +
-            '<img class="img-fluid img-thumbnail" src="' + val.image + '" loading="lazy" alt="">' +
-            '<spam>' + val.title + '</spam></a>' +
-            '</div>');
-        } else {
-          $('#blog_posts').append('<div class="col-lg-4 col-md-6 col-12">' +
-            '<a href="' + val.link + '" class="d-block mb-4 h-100 text-dark">' +
-            '<iframe class="embed-responsive-item" title="' + val.title + '" src="' + val.youtube_link + '"></iframe><br>' +
-            '<spam>' + val.title + '</spam></a>' +
-            '</div>');
-        }
-
-      });
-    });
-  </script>
-
-  <script>
-    $.getJSON("news_posts.json", function (data) {
-      $.each(data, function (key, val) {
-        $('#news_posts').append('<li><p class="text-justify lead">' +
-          '<a href="' + val.link + '" >' +
-          val.title + ':</a> ' + val.text +
-          '</li>')
-      });
+    document.addEventListener("DOMContentLoaded", function() {
+      loadContent("headerID", "includes/_topbar.html");
+      loadContent("footerID", "includes/_footer.html");
     });
   </script>
   <script defer data-domain="ardupilot.org" src="https://plausible.ardupilot.org/js/script.outbound-links.js"></script>
@@ -102,9 +80,10 @@
       <div class="carousel-inner">
         <div class="carousel-item active img-fluid">
           <picture>
-            <source type="image/webp" srcset="images/slides_01_Ardupilot42.webp">
-            <source type="image/jpeg" srcset="images/slides_01_Ardupilot42.jpg">
-            <img class="d-block w-100" src="images/slides_01_Ardupilot42.jpg" loading="lazy"
+            <!-- first carousel element should have explicit height settled to improve performance and not lazy loaded-->
+            <source media="(max-height: 480px)" type="image/webp" srcset="images/slides_01_Ardupilot42.webp">
+            <source media="(max-height: 480px)" type="image/jpeg" srcset="images/slides_01_Ardupilot42.jpg">
+            <img class="d-block w-100" src="images/slides_01_Ardupilot42.jpg"
                  alt="Local Motors/Airbus VTOL UAV on its maiden flight">
           </picture>
         </div>
@@ -112,7 +91,7 @@
           <picture>
             <source type="image/webp" srcset="images/avoidance.webp">
             <source type="image/jpeg" srcset="images/avoidance.jpg">
-            <img class="d-block w-100" src="images/avoidance.jpg" loading="lazy"
+            <img class="d-block w-100" src="images/avoidance.jpg" loading="lazy" alt="Avoidance example">
           </picture>
         </div>
         <div class="carousel-item img-fluid">
@@ -321,8 +300,8 @@
         <div class="carousel-item img-fluid">
           <picture>
             <source type="image/webp" srcset="images/slides_31_SkyMapper_1152px.webp">
-            <source type="image/jpeg" srcset="images/slides_31_SkyMapper_1152px.jpg">
-            <img class="d-block w-100" src="images/slides_31_SkyMapper_1152px.jpg" loading="lazy" alt="">
+            <source type="image/jpeg" srcset="images/slides_31_SkyMapper_1152px.JPG">
+            <img class="d-block w-100" src="images/slides_31_SkyMapper_1152px.JPG" loading="lazy" alt="">
           </picture>
         </div>
         <div class="carousel-item img-fluid">
@@ -744,11 +723,76 @@
   <div id="footerID">
     <!-- FOOTER -->
   </div>
-  <script>
-    $("#headerID").load("includes/_topbar.html");
-    $("#footerID").load("includes/_footer.html");
-  </script>
 
+  <script>
+    fetch('blog_posts.json')
+            .then(response => response.json())
+            .then(data => {
+              const blogPosts = document.getElementById('blog_posts');
+
+              data.forEach(val => {
+                let div = document.createElement('div');
+                let anchor = document.createElement('a');
+                let spam = document.createElement('spam');
+
+                div.classList.add("col-lg-4", "col-md-6", "col-12");
+                anchor.classList.add("d-block", "mb-4", "h-100", "text-dark");
+
+
+                anchor.href = val.link;
+                spam.textContent = val.title;
+
+                if (val.has_image) {
+                  let img = document.createElement('img');
+
+                  img.classList.add("img-fluid", "img-thumbnail");
+                  img.src = val.image;
+                  img.loading = "lazy";
+                  img.alt = "";
+
+                  anchor.appendChild(img);
+                } else {
+                  let iframe = document.createElement('iframe');
+
+                  iframe.classList.add("embed-responsive-item");
+                  iframe.src = val.youtube_link;
+                  iframe.title = val.title;
+
+                  anchor.appendChild(iframe);
+                  anchor.appendChild(document.createElement('br'));
+                }
+
+                anchor.appendChild(spam);
+                div.appendChild(anchor);
+                blogPosts.appendChild(div);
+              });
+            })
+            .catch(error => console.error('Error:', error));
+
+    fetch('news_posts.json')
+            .then(response => response.json())
+            .then(data => {
+              const newsPosts = document.getElementById('news_posts');
+
+              data.forEach(val => {
+                let listItem = document.createElement('li');
+                let para = document.createElement('p');
+                let link = document.createElement('a');
+
+                para.className = 'text-justify lead';
+
+                link.href = val.link;
+                link.textContent = val.title + ':';
+
+                para.appendChild(link);
+                para.innerHTML += ' ' + val.text;
+                listItem.appendChild(para);
+
+                newsPosts.appendChild(listItem);
+              });
+            })
+            .catch(error => console.error('Error:', error));
+  </script>
 </body>
 
 </html>
