@@ -1,8 +1,8 @@
 .. _quadplane-vtol-tuning:
 
-=====================
-QuadPlane VTOL Tuning
-=====================
+==============================
+QuadPlane VTOL Tuning Overview
+==============================
 
 This section provides an overview of how to tune various QuadPlane VTOL parameters.
 
