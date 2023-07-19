@@ -46,10 +46,10 @@ Pinouts
 =======
 
 .. image:: ../../../images/speedybeef4-v3-pinout-top.jpg
-    :target: ../../_images/speedybeef4-v3-pinout-top.jpg
+    :target: ../_images/speedybeef4-v3-pinout-top.jpg
 
 .. image:: ../../../images/speedybeef4-v3-pinout-bottom.jpg
-    :target: ../../_images/speedybeef4-v3-pinout-bottom.jpg
+    :target: ../_images/speedybeef4-v3-pinout-bottom.jpg
 
 UART Defaults
 =============

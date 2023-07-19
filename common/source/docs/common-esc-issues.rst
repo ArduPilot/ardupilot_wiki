@@ -22,7 +22,7 @@ For large, high-value vehicles, its always good to check the ESC signal levels f
 Below is an example scope trace for two ESC signals for ESCs presenting too high an input load or too much wiring resistance. As shown, the second ESC's analog level is about 3V, which is a little marginal, but the first ESC trace is only about 2V and is too low for reliable operation.
 
 .. image:: ../../../images/esc-signal.jpg
-   :target: ../../_images/esc-signal.jpg
+   :target: ../_images/esc-signal.jpg
 
 It is also possible to see poor rise and fall times, but with adequate voltage levels due to high reactance in the connection. This will also affect timing and performance and should be corrected.
 
@@ -54,14 +54,14 @@ On large vehicles, the power or motor phase lines usually run in parallel with t
 Here are scope traces of the above situation:
 
 .. image:: ../../../images/esc-cycling.jpg
-   :target: ../../_images/esc-cycling.jpg
+   :target: ../_images/esc-cycling.jpg
 
 As the current ramps, noise is being induced into the analog signal until it finally is corrupt enough to be interpreted by the ESC as shutdown pulse width, which it does, allowing the signaling to recover and repeat the cycle.
 
 Expanding the section where the shutdown occurs, you can see that the analog signal finally gets noisy enough for its digital logic level to be incorrectly interpreted.
 
 .. image:: ../../../images/esc-noise.jpg
-   :target: ../../_images/esc-noise.jpg
+   :target: ../_images/esc-noise.jpg
 
 Solutions
 ---------

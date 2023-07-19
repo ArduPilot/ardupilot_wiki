@@ -76,7 +76,7 @@ Displaying EFI telemetry in Mission Planner
 The following EFI telemetry is available in the Mission Planner. Just right click in the DATA screens HUD display and select ``User Items``. Then select what data to display.
 
 .. image:: ../../../images/mp_efi_hud_items.jpg
-   :target: ../../_images/mp_efi_hud_items.jpg
+   :target: ../_images/mp_efi_hud_items.jpg
 
 Using the EFI RPM in ArduPilot
 ==============================

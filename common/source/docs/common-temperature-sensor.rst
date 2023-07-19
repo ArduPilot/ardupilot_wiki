@@ -12,7 +12,7 @@ ArduPilot supports up to nine individual temperature sensors with I2C interfaces
 - `MAX31865 <https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf>`__
 
 .. image:: ../../../images/temperature-sensor.jpg
-   :target: ../../_images/temperature-sensor.jpg
+   :target: ../_images/temperature-sensor.jpg
 
 ArduPilot already has numerous possible sources for temperature reports: ESCs, Smart Batteries, Motor EFI and these independent sensors can be used to replace those devices temperature reports which already exist in ArduPilot. They can also just be logged.
 

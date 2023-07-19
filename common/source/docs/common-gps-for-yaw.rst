@@ -141,11 +141,11 @@ Dual unit or single unit/dual antenna systems (except Blicube GRTK) need the rel
 This figure and photo illustrates these parameters and their settings:
 
 .. image:: ../../../images/UnicoreMovingBaselineOffsets.png
-    :target: ../../_images/UnicoreMovingBaselineOffsets.png
+    :target: ../_images/UnicoreMovingBaselineOffsets.png
 
 
 .. image:: ../../../images/X-500V2_MovingBaseline.png
-    :target: ../../_images/X-500V2_MovingBaseline
+    :target: ../_images/X-500V2_MovingBaseline
 
 Holybro X500V2 Mounting Example
 
@@ -166,7 +166,7 @@ For ultimate positioning precision in the centimeter ranges, the offset of the "
 This figure and photo illustrates these parameters and their settings:
 
 .. image:: ../../../images/magoffsets.png
-    :target: ../../_images/magoffsets.png
+    :target: ../_images/magoffsets.png
 
 
 Testing

@@ -8,7 +8,7 @@ Mamba MK4 F405Mini
 The Mamba MK4 F405Mini is an autopilot produced by `Diatone <https://www.diatone.us>`__.
 
 .. image:: ../../../images/Mamba_MK4_F405Mini.jpg
-   :target: ../../_images/Mamba_MK4_F405Min.jpg
+   :target: ../_images/Mamba_MK4_F405Min.jpg
 
 
 Specifications
@@ -49,11 +49,11 @@ Pinout
 ======
 
 .. image:: ../../../images/mambaf405-mini_pinout_a.jpg
-    :target: ../../_images/mambaf405-mini_pinout_a.jpg
+    :target: ../_images/mambaf405-mini_pinout_a.jpg
 
 
 .. image:: ../../../images/mambaf405-mini_pinout_b.jpg
-    :target: ../../_images/mambaf405-mini_pinout_b.jpg
+    :target: ../_images/mambaf405-mini_pinout_b.jpg
 
 UART Mapping
 ============

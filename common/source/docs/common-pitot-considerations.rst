@@ -14,7 +14,7 @@ Pitot Dynamic Pressure Input/Static Port
 Airspeed sensors work by measuring the differential pressure between a dynamic port facing the vehicle's relative wind and a static port measuring general prevailing air pressure. Usually, these ports are placed on a single pitot tube.
 
 .. image:: ../../../images/pitot.jpg
-    :target: ../../_images/pitot.jpg
+    :target: ../_images/pitot.jpg
 
 The pitot tube should be placed on the vehicle such that:
 
@@ -24,7 +24,7 @@ The pitot tube should be placed on the vehicle such that:
 The ideal location would be extended well beyond the nose of the aircraft or wing leading edge, as shown below:
 
 .. image:: ../../../images/ideal-pitot.jpg
-   :target: ../../_images/ideal-pitot.jpg
+   :target: ../_images/ideal-pitot.jpg
 
 But this does present handling and "trip" hazards that must be tolerated. However, such positioning is very important for vehicles operating near their stall point.
 

@@ -7,7 +7,7 @@ Remote ID (aka Drone ID)
 ========================
 
 .. image:: ../../../images/remoteid-title.png
-    :target: ../../_images/remoteid-title.png
+    :target: ../_images/remoteid-title.png
     :width: 400px
 
 Remote IDs are becoming a legal requirement in some countries. Below is a list of devices compatible with ArduPilot. There is a quite nice explanation and list of frequently asked questions regarding Remote ID available `here <https://drone-remote-id.com/>`__ (site hosted by Dronetag)
@@ -62,7 +62,7 @@ OpenDroneID
 ===========
 
 .. image:: ../../../images/remoteid.jpg
-    :target: ../../_images/remoteid.jpg
+    :target: ../_images/remoteid.jpg
 
 
 ArduPilot provides support for OpenDroneID in firmware versions 4.0 and later via MAVLink to an OpenDroneID compatible RemoteID module attached to either a serial port or DroneCAN port on the autopilot.
@@ -77,7 +77,7 @@ ArduRemoteID
 ArduPilot also has developed firmware for  ESP32-S3 and C3 development boards for an OpenDroneID compatible Remote ID module for attachment by serial MAVLink connection or DroneCAN to the autopilot. A binary for flashing the board, along with instructions, is `available here <https://github.com/ArduPilot/ArduRemoteID>`__.  Note, this firmware is rapidly evolving, so check for updates frequently. This device can be attached to the autopilot by USB, serial, or DroneCAN (if an external CAN transceiver is attached)
 
 .. image:: ../../../images/ESP32-S3.jpg
-    :target: ../../_images/ESP32-S3.jpg
+    :target: ../_images/ESP32-S3.jpg
 
 This firmware provides security signing and locking features for tamper resistance on the ArduRemoteID module:
 

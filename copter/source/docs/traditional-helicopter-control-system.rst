@@ -48,7 +48,7 @@ Error between demanded and measured rates is multiplied by the P term. The D ter
 Since there may be systemic offsets (like CG errors or mechanical trim imperfections) resulting in some long term errors to achieving the demanded rates, an integrator accumulates all errors over time, and provides an additional correction via the I gain. I gain is multiplied by the integrator and summed with the other outputs of the rate controller to form the input to the swashplate. 
 
 .. image:: ../../../images/heli-pid-loop.png
-   :target: ../../_images?heli-pid-loop.png
+   :target: ../_images?heli-pid-loop.png
 
 The integrator maximum I path contribution is limited by the :ref:`ATC_RAT_RLL_IMAX<ATC_RAT_RLL_IMAX__AC_AttitudeControl_Heli>` in roll and
 :ref:`ATC_RAT_PIT_IMAX<ATC_RAT_PIT_IMAX__AC_AttitudeControl_Heli>` in pitch. 

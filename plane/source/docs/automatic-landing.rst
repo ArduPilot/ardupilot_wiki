@@ -34,7 +34,7 @@ The phases of an autolanding are:
 - Flare and touchdown
 
 .. image:: ../../../images/autolanding.jpg
-   :target: ../../_images/autolanding.jpg
+   :target: ../_images/autolanding.jpg
 
 Setting Up the Approach Waypoint
 --------------------------------
@@ -44,7 +44,7 @@ The autolanding begins after reaching the last navigation waypoint before the NA
 In addition, the last navigation waypoint before NAV_LAND must be far enough away that any turns made by the mission to that waypoint will have already be completed and the vehicle back on track in a line to the landing point. Usually, two waypoints are used. The first to allow any mission item (including aborted go-arounds for an autoland reattempt) to get aligned to another waypoint setup closer to the touchdown point but still providing a nice glide slope. We will designate the last waypoint before the NAV_LAND as the "final approach" waypoint and the one before it the "pre-approach" waypoint, as shown above. The next figure shows these waypoints **incorrectly** placed, without sufficient spacing:
 
 .. image:: ../../../images/autolanding-approach.png
-    :target: ../../_images/autolanding-approach.png
+    :target: ../_images/autolanding-approach.png
 
 The above shows a planned approach with the pre-approach waypoint 440m away from touchdown at 50m altitude, the final approach waypoint at 220m away and 25m altitude, giving a supposedly gentle glide slope of 6 degrees (which is a 1.7m/s descent at 15m/s airspeed). However, the actual result is 9 deg glide path since the switch to AUTO mode and the landing sequence was begun at the point shown at beginning of the yellow path, and the resulting overshoots at the two waypoints result in a steeper glide slope (9 degrees) between the final approach waypoint and the touchdown point. Spacing the waypoints a little further away would have allowed the approach to have settled by the final approach waypoint, and with the desired final glide slope. The faster the vehicle is flying, the wider the turn radii are, and the wider the waypoints should be spaced.
 
@@ -67,7 +67,7 @@ The key parameters that control automatic landing are:
 The meaning and recommended value of each of these parameters is described below.
 
 .. image:: ../../../images/autolanding-flare.png
-    :target: ../../_images/autolanding-flare.png
+    :target: ../_images/autolanding-flare.png
 
 Setting the Flare Point
 -----------------------

@@ -41,7 +41,7 @@ As a Plane altitude rangefinder used in auto landings:
 - Set :ref:`RNGFND1_MAX_CM<RNGFND1_MAX_CM>` = 2200 (22m since grass landings will reduce reliable range down to this range instead of 30m)
 
 .. image:: ../../../images/terabee-neo-landing.png
-    :target: ../../_images/terabee-neo-landing.png
+    :target: ../_images/terabee-neo-landing.png
 
 
 For Copter and Object Avoidance applications, additional/different parameters will be need to set. See :ref:`common-rangefinder-setup`.
