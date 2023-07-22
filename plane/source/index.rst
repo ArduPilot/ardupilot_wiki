@@ -1,20 +1,21 @@
 .. _home:
 
-==========
-Plane Home
-==========
+===============
+ArduPilot Plane
+===============
+
+..  raw:: html
+    
+    <p style="text-align:center;color:red;"><strong>
+    Success with Plane requires that the 'First Time Setup' and 'First Flight and Tuning' sections of this documentation be read and followed!</strong>
+    <br></br>
+
 
 .. image:: /images/home_plane.jpg
     :target: _images/home_plane.jpg
 
-..  raw:: html
 
-    <h1 style="text-align:center;">ArduPilot</h1>
-    
-    <p style="text-align:center;color:red;"><strong>
-    Success with ArduPilot requires that the 'First Time Setup' and 'First Flight/Drive and Tuning' sections of this documentation be read and followed!</strong>
-
-The free Plane firmware running on a compatible controller board gives
+The open source Plane firmware running on a compatible controller board gives
 any fixed-wing aircraft full autonomous capability. VTOL fixed-wing aircraft that 
 hover and cruise in different configurations 
 are also included under the Plane firmware.
@@ -38,6 +39,10 @@ research use.
     and `2016 <https://discuss.ardupilot.org/t/canberrauav-outback-challenge-2016-debrief/12162>`__ as well as the \
     `2014 Sparkfun Autonomous Vehicle Competition <https://avc.sparkfun.com/2014/scores#Aerial:Fixed>`__.
 
+
+.. tip::
+
+    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
 
 --------------
 
@@ -106,7 +111,7 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
    :hidden:
    
 
-    Introduction <docs/plane-introduction>
+    Introduction to Plane <docs/plane-introduction>
     Choosing an Autopilot <docs/common-autopilots>
     Ground Control Stations <docs/common-GCS>
     First Time Setup <docs/arduplane-setup>
