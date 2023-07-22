@@ -4,26 +4,26 @@
 Choosing an Autopilot
 =====================
 
-ArduPilot runs on many different autopilot boards, which are linked from the topic below: AutoPilot Hardware Options.
-
-Selecting the right board depends on the physical restraints of the
+ArduPilot runs on many different autopilot boards. Selecting the right board depends on the physical restraints of the
 vehicle, features desired, and the applications that you want to run.
 Factors to consider are:
 
 #. Sensor Redundancy: ArduPilot supports redundant IMUS, GPS, etc. Many controllers have multiple IMUs integrated on board for applications requiring this level of reliability.
-#. Number of Servo/Motor Outputs
-#. Number of UARTs: Telemetry radios, GPS's, Companion Computers, etc can be attached via these ports
+#. Number of Servo/Motor Outputs.
+#. Number of UARTs: Telemetry radios, GPS's, Companion Computers, etc can be attached via these ports.
 #. External Buses: I2C, CAN, etc. allow many types of devices, such as airspeed sensors, LED controllers, etc. to be attached to the autopilot.
 #. Number of Analog I/O: Some controllers have analog I/O available for such features as inputting receiver signal strength (RSSI) or battery voltage/current or other analog sensors.
-#. Integrated Features: Such as on-board OSD (On Screen Display), integrated battery monitoring sensors
-#. Vibration Isolation: Internal mechanical vibration isolators for IMUs for high vibration applications
+#. Integrated Features: Such as on-board OSD (On Screen Display), integrated battery monitoring sensors.
+#. Vibration Isolation: Internal mechanical vibration isolators for IMUs for high vibration applications.
 #. IMU Heaters: On board temperature control of IMUs for applications in harsh environments or widely varying temperatures during a flight to provide the highest possible precision.
 #. Size: Many vehicles have limited space for the autopilot.
 #. Expense: Controller prices range from ~$25 to much more, depending on feature set.
 
+The sections below provide information about ArduPilot autopilot hardware options.  The list below is sorted by manufacturer and product name.
+
 .. tip::
 
-   There are also numerous clones and minor variants of the boards linked below. Many of these may be perfectly capable replacements. Help in selecting an autopilot can also be obtained in the user forums (`ArduPilot Discuss <https://discuss.ardupilot.org>`__ or RC Groups <https://www.rcgroups.com/forums/showthread.php?3102183-Most-Integrated-Ardupilot-Flight-Controller-%28ChiBios%29>`__.
+   There are also numerous clones and minor variants of the boards linked below. Many of these may be perfectly capable replacements. Help in selecting an autopilot can also be obtained in the user forums (`ArduPilot Discuss <https://discuss.ardupilot.org>`__ or `RC Groups <https://www.rcgroups.com/forums/showthread.php?3102183-Most-Integrated-Ardupilot-Flight-Controller-%28ChiBios%29>`__ ).
 
 
 [site wiki="copter, plane" heading="off"]
@@ -36,17 +36,11 @@ Factors to consider are:
 
 [/site]
 
-
-Autopilot Hardware Options
-==========================
-
-This section provides information about ArduPilot Autopilot Hardware options.  The list below is sorted by manufacturer and product name.
-
 .. note:: Not all of these autopilots have been directly tested by ArduPilot development team members and while firmware  is provided by ArduPilot, it does not constitute an endorsement by ArduPilot.  However, most boards developed by ArduPilot Partners have been provided to the ArduPilot development team to aid in any possible support issues that might arise. 
 
 
-Open hardware
--------------
+Open Hardware
+=============
 
 .. toctree::
     :maxdepth: 1
@@ -79,8 +73,8 @@ Open hardware
 
 \* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
-Closed hardware
----------------
+Closed Hardware
+===============
 
 .. toctree::
     :maxdepth: 1
@@ -146,7 +140,7 @@ Closed hardware
 \* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
 Linux Based Autopilots
-----------------------
+======================
 
 These autopilots using an underlying Linux OS. Linux boards usually have more CPU power and memory many of the other boards listed on this page, but do not support DShot, Bi-Directional DShot, BLHeli ESC passthrough, many of the ArduPilot GPIO based features, and easy upload from the ground stations. They do allow experimentation and development of advanced control and navigation algorithms (see also :ref:`common-companion-computers`).
 
@@ -164,7 +158,7 @@ These autopilots using an underlying Linux OS. Linux boards usually have more CP
 .. note:: For more information on using ArduPilot on Linux based boards, see :ref:`building-the-code`
 
 Firmware Limitations
---------------------
+====================
 
 Some boards have features removed in order to fit the firmware into their memory capacity. See the section below:
 
@@ -175,8 +169,8 @@ Some boards have features removed in order to fit the firmware into their memory
     
 .. note:: If a board has a missing feature that is required by the user, building a custom firmware using the `ArduPilot Custom Firmware Build Server <https://custom.ardupilot.org>`__ can be used to create firmware which drops features not needed and adding desired features back into the firmware in that freed space.
 
-Discontinued boards
--------------------
+Discontinued Boards
+===================
 The following boards are no longer produced, however documentation is still available in the wiki or online, and recent builds are still expected to work.  These boards are not recommended for new projects.
 
 .. toctree::
@@ -204,9 +198,9 @@ available if you're still working on those platforms:
 - Qualcomm Snapdragon Flight Kit
 
 Schematics
-----------
+==========
 
-Schematics for some of the "Open hardware" autopilots `can be found here <https://github.com/ArduPilot/Schematics>`__
+Schematics for some of the "Open Hardware" autopilots `can be found here <https://github.com/ArduPilot/Schematics>`__
 
 
 [copywiki destination="plane,copter,rover,blimp"]
