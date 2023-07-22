@@ -1,17 +1,14 @@
 .. _home:
 
-================
-ArduPilot: Rover
-================
+===============
+ArduPilot Rover
+===============
 
 ..  raw:: html
  
     <p style="text-align:center;color:red;"><strong>
-    Success with ArduPilot requires that the 'First Time Setup' and 'First Drive and Tuning' sections of this documentation be read and followed!</strong>
-    
-.. tip::
-
-   Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
+    Success with Rover requires that the 'First Time Setup' and 'First Drive and Tuning' sections of this documentation be read and followed!</strong>
+    <br></br>
 
 .. image:: /images/home_rover.jpg
     :target: _images/home_rover.jpg
@@ -27,11 +24,15 @@ However, Rover's functionality has extended far past this single event.
 It's being employed in numerous practical applications, including, but not limited to, agricultural automation. 
 You can explore a few of these applications in our :ref:`Video Demos <rover-video-demonstrations>`.
 
+.. tip::
+
+   Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
+
 .. toctree::
    :hidden:
 
     Introduction to Rover <docs/rover-introduction>
-    Choosing an AutoPilot <docs/common-autopilots>
+    Choosing an Autopilot <docs/common-autopilots>
     Ground Control Stations <docs/common-GCS>
     First Time Setup <docs/apmrover-setup>
     First Drive and Tuning <docs/rover-first-drive>
