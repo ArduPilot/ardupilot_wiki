@@ -1,23 +1,18 @@
 .. _home:
 
-===========
-Copter Home
-===========
-
+================
+ArduPilot Copter
+================
+   
 ..  raw:: html
-
-    <h1 style="text-align:center;">ArduPilot</h1>
     
     <p style="text-align:center;color:red;"><strong>
-    Success with ArduPilot requires that the 'First Time Setup' and 'First Flight/Drive and Tuning' sections of this documentation be read and followed!</strong>
-    
-.. tip::
-
-    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
-
+    Success with Copter requires that the 'First Time Setup' and 'First Flight and Tuning' sections of this documentation be read and followed!</strong>
+    <br></br>
 
 .. image:: /images/home_copter.jpg
     :target: _images/home_copter.jpg
+
 
 ..  raw:: html
 
@@ -70,7 +65,11 @@ Copter Home
     </td>
     </tr>
     </table>
+    <br></br>
 
+.. tip::
+
+    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
 
 --------------
 
@@ -180,7 +179,7 @@ Getting more info
    :hidden:
    
 
-   Introduction to Copter<docs/copter-introduction>
+   Introduction to Copter <docs/copter-introduction>
    Choosing an Autopilot <docs/common-autopilots>
    Ground Control Stations <docs/common-GCS>
    First Time Setup <docs/initial-setup>
