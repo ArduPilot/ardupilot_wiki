@@ -4,6 +4,8 @@
 Electronic Speed Controller (ESC) Calibration
 =============================================
 
+.. note:: This document applies ONLY to Copter setups, not Rover or Plane. Refer to those vehicles setup guides for ESC calibration
+
 Electronic speed controllers are responsible for spinning the motors at
 the speed requested by the autopilot. Most ESCs need to be calibrated so
 that they know the minimum and maximum pwm values that the flight
