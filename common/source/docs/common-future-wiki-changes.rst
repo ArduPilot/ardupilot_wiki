@@ -7,6 +7,11 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+on :ref:`common-matekf765-wse` page:
+====================================
+
+- add that outputs 1-4 are bi-directional dshot capable
+
 on :ref:`common-dshot-esc` page, change the param setup under DShot commands to:
 ================================================================================
 
