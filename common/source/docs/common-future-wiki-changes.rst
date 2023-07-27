@@ -7,6 +7,11 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+on :ref:`common-dshot-esc` page, change the param setup under DShot commands to:
+================================================================================
+
+- set :ref:`SERVO_DSHOT_ESC<SERVO_DSHOT_ESC>` should be set to the type of DShot ESCs being used. This is required especially if Bi-Directional DShot telemetry or Extended Telemetry is being used.
+
 on :ref:`common-efi` page, add:
 ===============================
 
