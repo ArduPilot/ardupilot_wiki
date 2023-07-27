@@ -59,6 +59,8 @@ Set the following parameters to enable BLHeli32 and BLHeli_S bi-directional DSho
 
 - :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed. Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM (small motors might have 12 poles).
 
+- :ref:`SERVO_DSHOT_ESC<SERVO_DSHOT_ESC>` must be set to the type of Dshot ESC you are using.
+
 ESC Telemetry Logging and Reporting
 ===================================
 
