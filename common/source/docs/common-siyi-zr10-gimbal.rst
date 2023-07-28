@@ -15,6 +15,10 @@ The `SIYI ZR10 <https://shop.siyi.biz/products/siyi-zr10>`__, `ZR30 <https://sho
 
     Support for these gimbals is available in ArduPilot 4.3.1 (and higher)
 
+.. warning::
+
+    The Siyi A2 is not supported
+
 Where to Buy
 ------------
 
@@ -57,6 +61,7 @@ Connect with a ground station and set the following parameters.  The params belo
 
 - Optionally these auxiliary functions are also available
 
+  - :ref:`RC9_OPTION <RC9_OPTION>` = 9 ("Camera Trigger") to take a picture
   - :ref:`RC9_OPTION <RC9_OPTION>` = 166 ("Camera Record Video") to start/stop recording of video
   - :ref:`RC9_OPTION <RC9_OPTION>` = 167 ("Camera Zoom") to zoom in and out
   - :ref:`RC9_OPTION <RC9_OPTION>` = 168 ("Camera Manual Focus") to adjust focus in and out
