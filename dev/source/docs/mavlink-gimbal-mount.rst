@@ -295,19 +295,23 @@ Valid options are:
    <td>float</td>
    <td>not used</td>
    </tr>
+   <tr>
    <tr style="color: #c0c0c0">
    <td><strong>param4</strong></td>
    <td>float</td>
    <td>not used</td>
    </tr>
+   <tr>
    <td><strong>param5</strong></td>
    <td>int32_t</td>
    <td>Latitude in degrees * 10^7</td>
    </tr>
+   <tr>
    <td><strong>param6</strong></td>
    <td>int32_t</td>
    <td>Longitude in degrees * 10^7</td>
    </tr>
+   <tr>
    <td><strong>param7</strong></td>
    <td>float</td>
    <td>Altitude in meters</td>
