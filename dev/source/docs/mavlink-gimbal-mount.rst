@@ -108,19 +108,22 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 
 - module load message
 
-+------------------------------------------------------+---------------------------------+
-| Example MAVProxy/SITL Command                        | Description                     |
-+======================================================+=================================+
-| ``message COMMAND_LONG 0 0 205 0 0 0 0 0 0 0 0``     | Retract Gimbal                  |
-+------------------------------------------------------+---------------------------------+
-| ``message COMMAND_LONG 0 0 205 0 0 0 0 0 0 0 3``     | Switch to RC Targeting          |
-|                                                      | (Pilot controls gimbal from RC) |
-+------------------------------------------------------+---------------------------------+
-| ``message COMMAND_LONG 0 0 205 0 0 0 0 0 0 0 5``     | Point gimbal at another vehicle |
-|                                                      | see MAV_CMD_DO_SET_ROI_SYSID    |
-+------------------------------------------------------+---------------------------------+
-| ``message COMMAND_LONG 0 0 205 0 0 0 0 0 0 0 6``     | Point gimbal at home            |
-+------------------------------------------------------+---------------------------------+
++------------------------------------------------------+-----------------------------------+
+| Example MAVProxy/SITL Command                        | Description                       |
++======================================================+===================================+
+| ``message COMMAND_LONG 0 0 205 0 0 0 0 0 0 0 0``     | Retract Gimbal                    |
++------------------------------------------------------+-----------------------------------+
+| ``message COMMAND_LONG 0 0 205 0 0 0 0 0 0 0 2``     | Switch to MAVLink Targeting       |
+|                                                      | (MAVLink messages control gimbal) |
++------------------------------------------------------+-----------------------------------+
+| ``message COMMAND_LONG 0 0 205 0 0 0 0 0 0 0 3``     | Switch to RC Targeting            |
+|                                                      | (Pilot controls gimbal from RC)   |
++------------------------------------------------------+-----------------------------------+
+| ``message COMMAND_LONG 0 0 205 0 0 0 0 0 0 0 5``     | Point gimbal at another vehicle   |
+|                                                      | see MAV_CMD_DO_SET_ROI_SYSID      |
++------------------------------------------------------+-----------------------------------+
+| ``message COMMAND_LONG 0 0 205 0 0 0 0 0 0 0 6``     | Point gimbal at home              |
++------------------------------------------------------+-----------------------------------+
 
 MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW to move to a desired angle or at a desired rate
 ----------------------------------------------------------------------------------
