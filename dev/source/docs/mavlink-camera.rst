@@ -17,23 +17,24 @@ These commands are supported in ArduPilot 4.4.0 and higher:
 - MAV_CMD_VIDEO_START_CAPTURE to start recording video
 - MAV_CMD_VIDEO_STOP_CAPTURE to stop recording a video
 
+These commands are supported in ArduPilot 4.5.0 and higher:
+
+- MAV_CMD_CAMERA_TRACK_POINT to initiate tracking of a point on the video feed
+- MAV_CMD_CAMERA_TRACK_RECTANGLE to initiate tracking of a rectangle on the video feed
+- MAV_CMD_CAMERA_STOP_TRACKING to stop tracking
+- CAMERA_INFORMATION includes vendor and model name, firmware version, etc for use by GCS
+- CAMERA_SETTINGS includes zoom and focus level for use by GCS
+
 These commands and messages are not yet supported but may be in future releases
 
-- MAV_CMD_REQUEST_CAMERA_INFORMATION
-- MAV_CMD_REQUEST_CAMERA_SETTINGS
 - MAV_CMD_REQUEST_CAMERA_CAPTURE_STATUS
 - MAV_CMD_RESET_CAMERA_SETTINGS
 - MAV_CMD_SET_CAMERA_MODE
 - MAV_CMD_IMAGE_STOP_CAPTURE
 - MAV_CMD_DO_TRIGGER_CONTROL
-- MAV_CMD_CAMERA_TRACK_POINT to initiate tracking of a point on the video feed
-- MAV_CMD_CAMERA_TRACK_RECTANGLE to initiate tracking of a rectangle on the video feed
-- MAV_CMD_CAMERA_STOP_TRACKING to stop tracking
 - MAV_CMD_VIDEO_START_STREAMING and MAV_CMD_VIDEO_STOP_STREAMING to start and stop streaming a video to the ground station
 - MAV_CMD_REQUEST_VIDEO_STREAM_INFORMATION
 - MAV_CMD_REQUEST_VIDEO_STREAM_STATUS
-- CAMERA_INFORMATION
-- CAMERA_SETTINGS
 - CAMERA_CAPTURE_STATUS
 - CAMERA_IMAGE_CAPTURED
 - CAMERA_FOV_STATUS
@@ -563,3 +564,192 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 +----------------------------------------------------+---------------------------------------------+
 | ``message COMMAND_LONG 0 0 2501 0 1 0 0 0 0 0 0``  | Stop recording video on 1st camera          |
 +----------------------------------------------------+---------------------------------------------+
+
+MAV_CMD_CAMERA_TRACK_POINT to start tracking a point on the live video stream
+-----------------------------------------------------------------------------
+
+To start tracking a point on the live video stream send a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the command and param fields set as specified for the `MAV_CMD_CAMERA_TRACK_POINT <https://mavlink.io/en/messages/common.html#MAV_CMD_CAMERA_TRACK_POINT>`__ commands.  The `MAV_CMD_CAMERA_STOP_TRACKING <https://mavlink.io/en/messages/common.html#MAV_CMD_CAMERA_STOP_TRACKING>`__ can be used to stop tracking.
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Type</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>target_system</strong></td>
+   <td>uint8_t</td>
+   <td>System ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>target_component</strong></td>
+   <td>uint8_t</td>
+   <td>Component ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>command</strong></td>
+   <td>uint16_t</td>
+   <td>MAV_CMD_CAMERA_TRACK_POINT=2004</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>confirmation</strong></td>
+   <td>uint8_t</td>
+   <td>0</td>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>float</td>
+   <td>Point X (0 to 1, 0 is left, 1 is right)</td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>float</td>
+   <td>Point Y (0 to 1, 0 is top, 1 is bottom)</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param3</strong></td>
+   <td>float</td>
+   <td>Radius (unused)</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param4</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param5</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param6</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param7</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   </tbody>
+   </table>
+
+The example commands below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter:
+
+- module load message
+
++--------------------------------------------------------+----------------------------------------------------------+
+| Example MAVProxy/SITL Command                          | Description                                              |
++========================================================+==========================================================+
+| ``message COMMAND_LONG 0 0 2004 0 0.5 0.5 0 0 0 0 0``  | Start tracking a point on the middle of the video stream |
++--------------------------------------------------------+----------------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2010 0 0 0 0 0 0 0 0``      | Stop tracking                                            |
++--------------------------------------------------------+----------------------------------------------------------+
+
+MAV_CMD_CAMERA_TRACK_RECTANGLE to start tracking a rectangle on the live video stream
+-------------------------------------------------------------------------------------
+
+To start tracking a rectangle on the live video stream send a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the command and param fields set as specified for the `MAV_CMD_CAMERA_TRACK_RECTANGLE <https://mavlink.io/en/messages/common.html#MAV_CMD_CAMERA_TRACK_RECTANGLE>`__ commands.  The `MAV_CMD_CAMERA_STOP_TRACKING <https://mavlink.io/en/messages/common.html#MAV_CMD_CAMERA_STOP_TRACKING>`__ can be used to stop tracking.
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Type</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>target_system</strong></td>
+   <td>uint8_t</td>
+   <td>System ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>target_component</strong></td>
+   <td>uint8_t</td>
+   <td>Component ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>command</strong></td>
+   <td>uint16_t</td>
+   <td>MAV_CMD_CAMERA_TRACK_RECTANGLE=2005</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>confirmation</strong></td>
+   <td>uint8_t</td>
+   <td>0</td>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>float</td>
+   <td>Top Left X (0 to 1, 0 is left, 1 is right)</td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>float</td>
+   <td>Point Y (0 to 1, 0 is top, 1 is bottom)</td>
+   </tr>
+   <tr>
+   <td><strong>param3</strong></td>
+   <td>float</td>
+   <td>Bottom Right X (0 to 1, 0 is left, 1 is right)</td>
+   </tr>
+   <tr>
+   <td><strong>param4</strong></td>
+   <td>float</td>
+   <td>Bottom Right Y (0 to 1, 0 is top, 1 is bottom)</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param5</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param6</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param7</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   </tbody>
+   </table>
+
+The example commands below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter:
+
+- module load message
+
++-----------------------------------------------------------+--------------------------------------------------------------+
+| Example MAVProxy/SITL Command                             | Description                                                  |
++===========================================================+==============================================================+
+| ``message COMMAND_LONG 0 0 2005 0 0.4 0.4 0.6 0.6 0 0 0`` | Start tracking a rectangle on the middle of the video stream |
++-----------------------------------------------------------+--------------------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2005 0 0.4 0.0 0.6 0.1 0 0 0`` | Start tracking a rectangle in the top middle                 |
++-----------------------------------------------------------+--------------------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2010 0 0 0 0 0 0 0 0``         | Stop tracking                                                |
++-----------------------------------------------------------+--------------------------------------------------------------+
+
+CAMERA_INFORMATION and CAMERA_SETTINGS include information useful for GCSs
+--------------------------------------------------------------------------
+
+These two messages include information that can be useful for the ground station.  The `CAMERA_INFORMATION <https://mavlink.io/en/messages/common.html#CAMERA_INFORMATION>`__ includes vendor and model name, firmware version, sensor size, sensor resolution and camera capabilities.  The `CAMERA_SETTINGS <https://mavlink.io/en/messages/common.html#CAMERA_SETTINGS>`__ is much simpler and only includes the mode, zoom level and focus level.
+
+A ground station can request the messages be sent (just once) using the `MAV_CMD_REQUEST_MESSAGE  <https://mavlink.io/en/messages/common.html#MAV_CMD_REQUEST_MESSAGE>`__ command as described on the :ref:`Requesting Data From The Autopilot <mavlink-requesting-data>` page.
+
+The example commands below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter:
+
+- module load message
+
++----------------------------------------------------+-----------------------------------------------------+
+| Example MAVProxy/SITL Command                      | Description                                         |
++====================================================+=====================================================+
+| ``message COMMAND_LONG 0 0 512 0 259 0 0 0 0 0 0`` | Request the CAMERA_INFORMATION message be sent once |
++----------------------------------------------------+-----------------------------------------------------+
+| ``message COMMAND_LONG 0 0 512 0 260 0 0 0 0 0 0`` | Request the CAMERA_SETTINGS message be sent once    |
++----------------------------------------------------+-----------------------------------------------------+
