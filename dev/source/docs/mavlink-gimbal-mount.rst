@@ -9,6 +9,7 @@ This page explains how MAVLink can be used to control a gimbal (aka camera mount
 - use MAV_CMD_DO_MOUNT_CONTROL to set the gimbal's mode (aka mount mode)
 - use MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW to move to a desired angle or at a desired rate
 - use MAV_CMD_DO_SET_ROI_LOCATION to point at a Location
+- use MAV_CMD_DO_SET_ROI_NONE to stop point at a Location or vehicle
 - use MAV_CMD_DO_SET_ROI_SYSID to point at another vehicle
 
 The gimbal's attitude (in body-frame Quaternion form) can be monitored by decoding the `GIMBAL_DEVICE_ATTITUDE_STATUS <https://mavlink.io/en/messages/common.html#GIMBAL_DEVICE_ATTITUDE_STATUS>`__ message.
@@ -332,6 +333,100 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 +---------------------------------------------------------------------------+------------------------------------------------------------------+
 | ``message COMMAND_INT 0 0 11 195 0 0 0 0 0 0 -353632632 1491663846 10``   | Point at Lat:-35.3632632 Lon:149.1663846 Alt:10m above terrain   |
 +---------------------------------------------------------------------------+------------------------------------------------------------------+
+
+MAV_CMD_DO_SET_ROI_NONE to stop pointing at a Location
+------------------------------------------------------
+
+The gimbal ROI can be stopped (e.g. the gimbal will switch to its default mode held in the MNT1_DEFLT_MODE param)) by sending a `COMMAND_INT <https://mavlink.io/en/messages/common.html#COMMAND_INT>`__ with the command and param1 specified for the `MAV_CMD_DO_SET_ROI_NONE <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_ROI_NONE>`__ command.
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Type</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>target_system</strong></td>
+   <td>uint8_t</td>
+   <td>System ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>target_component</strong></td>
+   <td>uint8_t</td>
+   <td>Component ID of flight controller or just 0</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>frame</strong></td>
+   <td>uint8_t</td>
+   <td>0 (not used)</td>
+   </tr>
+   <tr>
+   <td><strong>command</strong></td>
+   <td>uint16_t</td>
+   <td>MAV_CMD_DO_SET_ROI_NONE=197</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>current</strong></td>
+   <td>uint8_t</td>
+   <td>0 (not used)</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>autocontinue</strong></td>
+   <td>uint8_t</td>
+   <td>0 (not used)</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param1</strong></td>
+   <td>float</td>
+   <td>Gimbal device id (unused)</td>
+   </tr>
+   <tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param2</strong></td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param3</strong></td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param4</strong></td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param5</strong></td>
+   <td>int32_t</td>
+   <td>not used</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param6</strong></td>
+   <td>int32_t</td>
+   <td>not used</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param7</strong></td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   </tbody>
+   </table>
+
+The example commands below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter:
+
+- module load message
+
++--------------------------------------------------------+------------------------------------------------+
+| Example MAVProxy/SITL Command                          | Description                                    |
++========================================================+================================================+
+| ``message COMMAND_INT 0 0 0 197 0 0 0 0 0 0 0 0 0``    | Stop pointing at a Location or another vehicle |
+|                                                        | (gimbal will return to its default mode)       |
++--------------------------------------------------------+------------------------------------------------+
 
 MAV_CMD_DO_SET_ROI_SYSID to point at another vehicle
 ----------------------------------------------------
