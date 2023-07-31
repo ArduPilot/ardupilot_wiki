@@ -12,8 +12,8 @@ on :ref:`common-matekf765-wse` page:
 
 - add that outputs 1-4 are bi-directional dshot capable
 
-on :ref:`common-dshot-esc` page, change the param setup under DShot commands to:
-================================================================================
+on :ref:`common-dshot-escs` page, change the param setup under DShot commands to:
+=================================================================================
 
 - set :ref:`SERVO_DSHOT_ESC<SERVO_DSHOT_ESC>` should be set to the type of DShot ESCs being used. This is required especially if Bi-Directional DShot telemetry or Extended Telemetry is being used.
 
