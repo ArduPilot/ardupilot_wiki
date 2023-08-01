@@ -23,7 +23,7 @@ Topics related to logging and analysis
 
 [site wiki="plane,copter,dev,planner,rover"]
     Dataflash Logs <common-downloading-and-analyzing-data-logs-in-mission-planner>
-    Telemetry Logs <planner:mission-planner-telemetry-logs>
+    Telemetry Logs <https://ardupilot.org/planner/docs/mission-planner-telemetry-logs.html>
     Diagnosing problems using Logs <common-diagnosing-problems-using-logs>
 [/site]
 [site wiki="plane"]
@@ -45,7 +45,6 @@ Topics related to logging and analysis
 [site wiki="plane,copter,rover,dev,planner"]
     Measuring Vibration <common-measuring-vibration>
     Measuring Vibration with "Batch Sampling" <common-imu-batchsampling>
-    Telemetry Logs <https://ardupilot.org/planner/docs/mission-planner-telemetry-logs.html>
 [/site]
 
 
