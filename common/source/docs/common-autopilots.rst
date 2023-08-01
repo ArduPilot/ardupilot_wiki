@@ -4,7 +4,7 @@
 Choosing an Autopilot
 =====================
 
-ArduPilot runs on many different autopilot boards. Selecting the right board depends on the physical restraints of the
+ArduPilot runs on many different autopilot boards. Selecting the right board depends on the physical constraints of the
 vehicle, features desired, and the applications that you want to run.
 Factors to consider are:
 
