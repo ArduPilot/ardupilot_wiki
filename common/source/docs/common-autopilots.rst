@@ -82,6 +82,7 @@ Closed Hardware
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
     AtomRC F405-NAVI <common-atomrcf405-navi>
+    brainFPV RADIX2 HD <common-radix2hd>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Flywoo F745 AIO BL_32/ Nano <common-flywoo-f745>
     Foxeer H743 MPU600 <common-foxeerh743v1>
