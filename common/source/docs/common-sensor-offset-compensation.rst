@@ -41,6 +41,8 @@ because we use the acceleration in our altitude hold controllers this could stil
 
 Although individual position offsets can be set for each IMU, the difference between the placement of IMUs on most autopilot boards is so small that the same values can be used for all IMUs
 
+.. note:: if the IMU offset is specified, then all the following offsets are relative to **Center of Gravity** rather than the IMU.
+
 **GPS:**
 
 - :ref:`GPS_POS1_X <GPS_POS1_X>`, :ref:`GPS_POS1_Y <GPS_POS1_Y>`, :ref:`GPS_POS1_Z <GPS_POS1_Z>` the first GPS's position from the vehicle's IMU or center-of-gravity

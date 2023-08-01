@@ -34,7 +34,7 @@ Some commonly used parameters are:
 .. note:: Logging of the continuously streaming log messages, such as attitude, sensors, etc. can be paused by using the ``RCx_OPTION`` auxiliary function "164" on a transmitter channel. Switching this channel high will pause these messages, but not events, mode changes, warnings, etc. This allows autopilots with limited logging capabilites (ie using Block logging to chip memory and no SD card) to log only when desired during the flight, as during tuning phases or determination of TECs parameters, etc. You can also eliminate unneeded log messages using :ref:`LOG_BITMASK<LOG_BITMASK>` to reduce log size
 
 Replay Logging
---------------
+==============
 
 ArduPilot has the ability to log in a fashion that solutions to EKF/AHRS issues can be more easily verified by actually re-playing a log against code changes to see if the solution results in the desired, corrected behavior. This requires that the logs showing the issue to be worked on be made with logging active during disarmed periods (with :ref:`LOG_DISARMED<LOG_DISARMED>` set to a non-zero value, preferably 3) and :ref:`LOG_REPLAY<LOG_REPLAY>` =1 , thereby logging more sensor data than normal.
 

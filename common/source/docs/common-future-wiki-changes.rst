@@ -7,6 +7,21 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+Add new MAVLink Camera/Gimbal commands:
+=======================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5307
+
+on :ref:`common-matekf765-wse` page:
+====================================
+
+- add that outputs 1-4 are bi-directional dshot capable
+
+on :ref:`common-dshot-escs` page, change the param setup under DShot commands to:
+=================================================================================
+
+- set :ref:`SERVO_DSHOT_ESC<SERVO_DSHOT_ESC>` should be set to the type of DShot ESCs being used. This is required especially if Bi-Directional DShot telemetry or Extended Telemetry is being used.
+
 on :ref:`common-efi` page, add:
 ===============================
 
