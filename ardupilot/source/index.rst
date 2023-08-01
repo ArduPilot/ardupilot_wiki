@@ -1,14 +1,13 @@
 .. _home:
 
-=========
-ArduPilot
-=========
-
 ..  raw:: html
     <h1 style="text-align:center;">ArduPilot</h1>
 
     <p style="text-align:center;color:green;"><strong>
     ArduPilot is open source <u>software</u> that runs on a wide range of <u>hardware</u>.</strong>
+
+    <p style="text-align:center;color:red;"><strong>
+    Success with ArduPilot requires that the 'First Time Setup' and 'First Flight/Drive and Tuning' sections of the vehicle's documentation be read and followed!</strong>
 
     <p style="text-align:left; color:black;">
 
