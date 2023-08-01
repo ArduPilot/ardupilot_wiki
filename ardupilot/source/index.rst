@@ -75,7 +75,7 @@ The choice is yours -- one autopilot for any mission.
     <td width="27%">
 
 :ref:`Ground Control Station <common-choosing-a-ground-station>` (GCS) is your interface to the
-controller. This software can run on PC's or mobile devices.
+controller. Various versions of GCS software are available for Window's, Linux, and Android platforms.
 
 A GCS allows users to set-up, configure, test, and tune the vehicle. Advanced
 packages allow autonomous mission planning, operation,
