@@ -7,6 +7,11 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+Update Gremsy ZIO camera configuration:
+=======================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5319
+
 Add new MAVLink Camera/Gimbal commands:
 =======================================
 
