@@ -85,7 +85,7 @@ at a time to avoid confusion.
    <tr><td>Incorrect for both movements (pitch and roll)</td><td>Change the reversal of that channel</td><tr>
    </table>
 
-.. note:: :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` mut not be set to 0 for rudder setup. If the 
+.. note:: :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` must not be set to 0 for rudder setup. If the 
           plane actually needs 0, then reset it after this setup.
 
           :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` should cause the tail surfaces point in the 
