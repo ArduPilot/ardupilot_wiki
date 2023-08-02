@@ -7,6 +7,7 @@ Stores
 The following stores are known to stock quality versions of the controllers, telemetry radios, cables etc.
 recommended for use with ArduPilot (in alphabetical order).  You may also want to check the list of :ref:`Ready-to-Use vehicles <common-rtf>`.
 
+* `ADTi <https://www.adti.camera/>`__
 * `AION ROBOTICS <https://www.aionrobotics.com>`__
 * `Air-Supply Aerial <https://www.airsupply.com>`__
 * `AltiGator <http://www.altigator.com/>`__
