@@ -71,6 +71,8 @@ Types of Fences
 |   - FENCE_ALT_MIN defines min altitude|                    |   X       |          |         |
 +---------------------------------------+--------------------+-----------+----------+---------+
 
+.. note:: if :ref:`FENCE_TYPE<FENCE_TYPE>` =2 inclusion zones overlap, a fence breach will occur when crossing a boundary, even if within another inclusion zone, UNLESS :ref:`FENCE_OPTIONS<FENCE_OPTIONS>` bit 1 is set to make all inclusions zones a union set.
+
 .. _fence_breach_actions:
 
 Fence Breach Actions
