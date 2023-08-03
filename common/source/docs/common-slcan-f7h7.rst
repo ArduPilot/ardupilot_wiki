@@ -15,6 +15,8 @@ SLCAN Interface
 
 The ArduPilot firmware provides two software USB interfaces, accessed simultaneously from the single physical USB connector. In  Mission Planner, you will see two COM ports assigned to the autopilot (if not, see Troubleshooting section below). One is for the SLCAN interface, the other for the normal MAVLink based Ground Control Station (GCS) connection. 
 
+.. note:: in firmware 4.5 and later, most autopilots that present two COM ports will both be for normal MAVLink connections and not have one default to SLCAN since SLCAN over MAVLink is the preferred connection method now.
+
 In firmware 4.0 and earlier, they will be indistinguishable in the Mission Planner COM port selection box until you try to connect to the GCS with the SLCAN port that has been enabled for SLCAN protocol. (In later firmware versions, together with using the latest `Mission Planner driver set <https://firmware.ardupilot.org/Tools/MissionPlanner/driver.msi>`__ , each port will be clearly labeled.)
 
 The port that will not connect (if already configured for SLCAN protocol, however, default is usually for MAVLink protocol so it can connect normally) is the SLCAN interface. This COM port is associated with a SERIALx port in the autopilot parameters. This SERIALx port will be the highest numbered port in the parameter list. 
