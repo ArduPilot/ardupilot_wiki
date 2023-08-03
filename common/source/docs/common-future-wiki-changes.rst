@@ -7,6 +7,12 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+Add new FENCE_OPTIONS bit:
+==========================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5325
+
+
 Update Gremsy ZIO camera configuration:
 =======================================
 
