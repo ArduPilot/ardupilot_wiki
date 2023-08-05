@@ -4,7 +4,6 @@
 Traditional Helicopter – Tailrotor Setup
 =========================================
 
-<<<<<<< HEAD
 There are several ways for controlling the tailrotor to maintain yaw stabilization and provide yaw control, and each have a unique setup.  The :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` parameter is used to specify method for controlling the tailrotor.  A list of available tail types is given below:
 
 - Servo Only: ArduPilot will supply the tail rotor stabilization like a tail rotor gyro and control the pitch of the tail rotor blades.
