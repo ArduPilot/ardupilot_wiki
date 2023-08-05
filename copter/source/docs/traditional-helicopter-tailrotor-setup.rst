@@ -4,14 +4,13 @@
 Traditional Helicopter – Tailrotor Setup
 =========================================
 
-<<<<<<< HEAD
 There are several ways for controlling the tailrotor to maintain yaw stabilization and provide yaw control, and each have a unique setup.  The :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` parameter is used to specify method for controlling the tailrotor.  A list of available tail types is given below:
 
 - Servo Only: ArduPilot will supply the tail rotor stabilization like a tail rotor gyro and control the pitch of the tail rotor blades.
 - Servo with External Gyro: ArduPilot will output yaw demands without direct yaw attitude stabilization which is provided via an external gyro.
 - Direct Drive Variable Pitch (DDVP): Instead of the tail rotor being driven from the main rotor via mechanical coupling as in the above cases, an electric motor is used with motor controlled(ramp up/down, operating point) by ArduPilot. Main yaw control is via tail blade pitch servo, as above.
 - Direct Drive Fixed Pitch Clockwise (DDFP CW): Tail rotor is driven by a motor whose ESC is controlled by ArduPilot to maintain yaw stability and yaw direction. Used with clockwise rotating main rotors, when viewed from above.
-- Direct Drive Fixed Pitch Counter-Clockwise (DDFP CCW): Tail rotor driven by a motor whose ESC is controlled by ArudPilot to maintain yaw stability and yaw direction. Used with clockwise rotating main rotors, when viewed from above.
+- Direct Drive Fixed Pitch Counter-Clockwise (DDFP CCW): Tail rotor driven by a motor whose ESC is controlled by ArudPilot to maintain yaw stability and yaw direction. Used with counter-clockwise rotating main rotors, when viewed from above.
 
 
 Tailrotor Types
