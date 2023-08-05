@@ -102,6 +102,11 @@ on :ref:`quadplane-vtol-tuning-process` page:
 
 [/site]
 [site wiki="copter"]
+on :ref:`traditional-helicopter-tailrotor-setup` page, add info for DDFP tail rotor motor thrust linearization:
+===============================================================================================================
+
+See: https://github.com/ArduPilot/ardupilot_wiki/pull/5328
+
 on :ref:`circle-mode` page, under Circle Control Options, add:
 ==============================================================
 
