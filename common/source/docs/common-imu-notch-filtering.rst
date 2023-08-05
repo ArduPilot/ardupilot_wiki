@@ -67,12 +67,23 @@ Checking Notch Filter Effectiveness
 
 Once the notch filter(s) are setup, the effectiveness of them can be checked by again measuring the  frequency spectrum of the output of the filters (which are the new inputs to the IMU sensors). Refer back to the :ref:`common-imu-batchsampling`  page for this.
 
-Double/Triple-Notch
-===================
+Multi Notch
+===========
 
-The software notch filters used are very "spikey" being relatively narrow but good at attenuation at their center. On larger copters the noise profile of the motors is quite dirty covering a broader range of frequencies than can be covered by a single notch filter. In order to address this situation it is possible to configure the harmonic notches as double or triple notches that gives a wider spread of significant attenuation. To utilize this feature set :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` to "1" for double notches, to "16" for triple notches.
+The software notch filters used are very "spikey" being relatively narrow but good at attenuation at their center. On larger copters the noise profile of the motors is quite dirty covering a broader range of frequencies than can be covered by a single notch filter. In order to address this situation it is possible to configure the harmonic notches as multiple notches that gives a wider spread of significant attenuation. The configuration is controlled by the :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` parameter. This is a bitmask parameter and multiple options are possible at the same time, but using bit 0, 1, and bit 4 at the same time should be avoided. Use only one of those in a given configuration.
+
+==========================================      =======================
+:ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` Bit      Action
+==========================================      =======================
+0                                               Double overlapping Notches
+1                                               MultiSource: if using FFT Mode, the three largest noise sources will have a notch assigned. If ESC Telemetry Mode, then each motor will have a notch assigned at its RPM.
+2                                               Updates the filters at the loop rate. This is cpu intensive, but tracks noise variations faster. Only valid if frequency source updates at loop rate, ie Bi-Directional DShot telemetry.
+3                                               Enables notches on every IMU instead of just the primary. This is cpu intensive, but allows better lane switching decisions in noisy situations and for debugging. Not recommended for F4 boards.
+4                                               Triple overlapping Notches
+==========================================      =======================
 
 .. note:: double notch option is no longer recommended since the triple notch option has been added. With a double notch, the maximum attenuation is either side of the center frequency, so on smaller aircraft with a very pronounced peak their use is usually counter productive.
+
 
 .. note:: Each notch has some CPU cost so if you configure multiple notches you can end up with many notches on your aircraft. For example, triple single (no harmonics) notches, using ESC telemetry will result in 3 notches per motor or 12 total notches. For example, with F4 cpus this should be acceptable, but enabling a second group of triple notches with :ref:`INS_HNTC2_ENABLE<INS_HNTC2_ENABLE>` or multiple harmonic notches, could cause problems.
 
