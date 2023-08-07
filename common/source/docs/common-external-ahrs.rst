@@ -11,18 +11,18 @@ Supported Systems
 
 Currently, ArduPilot supports these systems:
 
-- `Parker Lord 3DM® Series <https://www.microstrain.com/inertial-sensors/all-sensors>`_
+- `MicroStrain 3DM® Series <https://www.microstrain.com/inertial-sensors/all-sensors>`_
 - `VectorNav VN-300 AHRS <https://www.vectornav.com/products>`__
 - `VectorNav VN-100AHRS <https://www.vectornav.com/products>`__
 
 Setup
 =====
-VectorNav300 or Parker Lord
+VectorNav300 or MicroStrain
 ---------------------------
 
     - :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` = 11 (External AHRS)
 
-    - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 1 (VectorNAV) or 2 (Parker Lord)
+    - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 1 (VectorNAV) or 2 (MicroStrain)
 
 This will replace ArduPilot’s internally generated INS/AHRS subsystems with the external system
 
