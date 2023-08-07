@@ -12,7 +12,7 @@ Note that MAVProxy can only connect to 1 vehicle at a time. If control
 of multiple vehicles is desired, multiple MAVProxy sessions should be
 used - one session for each vehicle.
 
--\\-master
+-\-master
 ==========
 
 Specifies which port (serial, USB or network address/port) the UAV is
@@ -47,18 +47,18 @@ If connecting to a remote IP address, the udpout or tcpout arguments should be u
     mavproxy.py --master=udpout:10.10.1.1:14550
     mavproxy.py --master=tcpout:10.10.1.1:14550
 
--\\-quadcopter
+-\-quadcopter
 ==============
 
 Use quadcopter controls.
 
--\\-baudrate
+-\-baudrate
 ============
 
 Specify baudrate of ``--master`` and ``--out`` ports. Only applicable
 for serial links.
 
--\\-out
+-\-out
 =======
 
 Forward the MAVLink packets to a remote device (serial, USB or network
@@ -89,75 +89,75 @@ the first client in the 192.168.2.0 to 192.168.2.254 range on port 14550.
     mavproxy.py --master=/dev/ttyACM0,57600 --out=udpbcast:192.168.2.255:14550 
 
 
--\\-sitl
+-\-sitl
 ========
 
 Host and port to send simulated RC input for the Software in the loop (SITL) simulator. Usually ``--sitl=127.0.0.1:5501``
 
--\\-streamrate
+-\-streamrate
 ==============
 
 MAVLink stream rate.
 
--\\-source-system
+-\-source-system
 =================
 
 MAVLink source system for this GCS.
 
--\\-source-component
+-\-source-component
 ====================
 
 MAVLink source component for this GCS.
 
--\\-target-system
+-\-target-system
 =================
 
 MAVLink target master system.
 
--\\-target-component
+-\-target-component
 ====================
 
 MAVLink target master component.
 
--\\-logfile
+-\-logfile
 ===========
 
 Name of MAVLink master logfile. Default is mav.tlog.
 
--\\-append-log
+-\-append-log
 ==============
 
 Append to latest log file, rather than creating a new one. Useful if
 re-connecting mid-flight.
 
--\\-setup
+-\-setup
 =========
 
 Startup in the APM's command line interface (CLI) mode.
 
--\\-nodtr
+-\-nodtr
 =========
 
 Disable DTR drop on close.
 
--\\-show-errors
+-\-show-errors
 ===============
 
 Show MAVLink error packets.
 
--\\-speech
+-\-speech
 ==========
 
 Use text-to-speech. Requires the speechd software on Linux.
 
--\\-aircraft
+-\-aircraft
 ============
 
 Name of the aircraft being flown. If used, logfiles will be stored in
 **/Logs/AircraftName/Date/flightNumber/flight.tlog**. Useful for keeping
 flight logs organised.
 
--\\-cmd
+-\-cmd
 =======
 
 Initial commands to run in MAVProxy. Delimited by ``;``
@@ -166,90 +166,90 @@ Initial commands to run in MAVProxy. Delimited by ``;``
 
     mavproxy.py --master=/dev/ttyUSB0 --cmd="param load init.parm; module load map;"
 
--\\-console
+-\-console
 ===========
 
 Load the GUI console module on startup.
 
--\\-map
+-\-map
 =======
 
 Load the moving map module on startup.
 
--\\-load-module
+-\-load-module
 ===============
 
 Load the specified module on startup. Can be used multiple times, or
 with a comma separated list.
 
--\\-mavversion
+-\-mavversion
 ==============
 
 Specify MAVLink version. Can be 1.0 or 2.0. Otherwise MAVProxy will autodetect the MAVLink version
 
--\\-auto-protocol
+-\-auto-protocol
 =================
 
 Auto detect MAVLink protocol version.
 
--\\-continue
+-\-continue
 ============
 
 Continue logs.
 
--\\-nowait
+-\-nowait
 ==========
 
 Don't wait for HEARTBEAT packets on startup.
 
--\\-dialect
+-\-dialect
 ===========
 
 MAVLink dialect. Uses the APM dialect by default.
 
--\\-rtscts
+-\-rtscts
 ==========
 
 Use RTS/CTS hardware flow control.
 
--\\-mission
+-\-mission
 ===========
 
 Give the current mission a name. If used, the flight log will be stored
 as :file:`/Logs/aircraftname/missionname` rather than the default
 :file:`/Logs/aircraftname/currentdatetime`.
 
--\\-daemon
+-\-daemon
 ==========
 
 Run in daemon mode (as a background process). No interactive shell will
 be started.
 
--\\-state-basedir
+-\-state-basedir
 =================
 
 The base directory will logs are stored, if it is not the current
 directory.
 
--\\-version
+-\-version
 ===========
 
 Return version information about MAVProxy.
 
--\\-moddebug
+-\-moddebug
 ============
 
 Controls the level of debugging output displayed on the console. Default is 0
 (no debug output). A value of 3 is useful for debugging crashes or errors in
 MAVProxy and its modules.
 
--\\-default-modules
+-\-default-modules
 ===================
 
 A comma separated list of the modules to load on startup by default. The default 
 value of this parameter is ``log,signing,wp,rally,fence,param,relay,tuneopt,arm,mode,calibration,rc,auxopt,misc,cmdlong,`` ``battery,terrain,output,adsb``
 
--\\-non-interactive
+-\-non-interactive
 ===================
 
 Do not start interactive shell
