@@ -96,7 +96,7 @@ Hardware setup
 
 Typical hardware setup for flying drones is:
 
-.. image:: http://erlerobotics.com/docs/img/Artificial_Brains/Erle_Brain2/Hardware/Erle-Brain_Componentes.jpg
+.. image:: ../../../images/Erle-Brain_Componentes.jpg
     :target: ../_images/Erle-Brain_Componentes.jpg
 
 If you wish more info about hardware connections, go to our
