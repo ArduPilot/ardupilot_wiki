@@ -2774,7 +2774,7 @@ speed-type and throttle settings are ignored.
    <th>Mission Planner Field</th>
    <th>Description</th>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>param1</strong></td>
    <td>speed m/s</td>
    <td>Speed type (0,1=Ground Speed,  2=Climb Speed, 3=Descent Speed).</td>
@@ -2787,7 +2787,7 @@ speed-type and throttle settings are ignored.
    <tr style="color: #c0c0c0">
    <td>param3</td>
    <td></td>
-   <td>Trim throttle as a percentage (0-100%). A value of -1 indicates no change.</td>
+   <td>Empty</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
@@ -2841,18 +2841,18 @@ vehicle's throttle. If airspeed option is selected, this changes the :ref:`TRIM_
    </tr>
    <tr>
    <td><strong>param1</strong></td>
-   <td>Type (0=as 1=gs)</td>
+   <td>Type </td>
    <td>Speed type (0=Airspeed, 1=Ground Speed).</td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>
    <td>Speed (m/s)</td>
-   <td>Target speed (m/s). A value of -1 indicates no change. a value of -2 uses :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`</td>
+   <td>Target speed (m/s). If airspeed, a value below or above min/max airspeed limits results in no change. a value of -2 uses :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`</td>
    </tr>
    <tr>
    <td><strong>param3</strong></td>
    <td>Throttle(%)</td>
-   <td>Throttle as a percentage (0-100%). A value of -1 indicates no change.</td>
+   <td>Throttle as a percentage (0-100%). A value of 0 or negative indicates no change.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
@@ -2904,12 +2904,12 @@ Change the target horizontal speed and/or the vehicle's throttle.
    <tr>
    <td><strong>param2</strong></td>
    <td>Speed (m/s)</td>
-   <td>Target speed (m/s). A value of -1 indicates no change.</td>
+   <td>Target speed (m/s). </td>
    </tr>
-   <tr>
-   <td><strong>param3</strong></td>
-   <td>Throttle(%)</td>
-   <td>Throttle as a percentage (0-100%). A value of -1 indicates no change.</td>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
