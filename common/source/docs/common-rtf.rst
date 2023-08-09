@@ -52,6 +52,7 @@ VTOL/QuadPlanes from Partners
 * `CUAV - Raefly <https://store.cuav.net/shop/raefly/>`__
 * `CUAV - Raefly VT260 <https://store.cuav.net/shop/raefly-vt260-vtol-uav/>`__
 * `Event38 - E400 <https://event38.com/fixed-wing/e400-vtol-drone/>`__
+* `Event38 - E455 <https://event38.com/fixed-wing/e455-vtol-drone/>`__
 * `FlyDragonDroneTech - FDG30 <https://www.droneassemble.com/product/vtol-uav-6-hours-endurance-with-1kg-payload-for-survey-serveillance/>`__
 * `FlyDragonDroneTech - FDG50F <https://www.droneassemble.com/product/hybrid-vtol-uav-7-hours-endurance-with-10kgs-payload/>`__
 * :ref:`MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>`
