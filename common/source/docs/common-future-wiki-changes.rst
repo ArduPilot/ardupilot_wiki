@@ -7,6 +7,12 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+on :ref:`common-blheli32-passthru` page add note for ESC-Configurator tool:
+===========================================================================
+
+.. note:: firmware 4.5 or later required to use this tool.
+
+
 Add new FENCE_OPTIONS bit:
 ==========================
 
