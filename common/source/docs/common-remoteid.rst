@@ -48,7 +48,7 @@ Stand-alone devices with optional MAVLink capability:
 
 .. note:: US FAA Compliant devices are listed `here <https://uasdoc.faa.gov/listDocs>`__
 
-OpenDroneID Compatible devices (support included in ArduPlane 4.0 and later)
+OpenDroneID Compatible devices (support included in ArduPlane 4.2 and later)
 
 - `BlueMark DroneBeacon MAVLink Family(EU, US) <https://dronescout.co/dronebeacon-mavlink-remote-id-transponder/>`__
 - `Cube ID <https://docs.cubepilot.org/user-guides/cube-id/cube-id>`__
@@ -65,7 +65,7 @@ OpenDroneID
     :target: ../_images/remoteid.jpg
 
 
-ArduPilot provides support for OpenDroneID in firmware versions 4.0 and later via MAVLink to an OpenDroneID compatible RemoteID module attached to either a serial port or DroneCAN port on the autopilot.
+ArduPilot provides support for OpenDroneID in firmware versions 4.2 and later via MAVLink to an OpenDroneID compatible RemoteID module attached to either a serial port or DroneCAN port on the autopilot.
 
 In order to provide tamper protection, a special autopilot firmware must be built and loaded on the autopilot which: enables this feature, prevents loading non-compliant firmware via GCS or normal uploaders, and provides further tamper-proofing.
 
