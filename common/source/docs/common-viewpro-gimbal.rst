@@ -55,3 +55,13 @@ Testing
 =======
 
 See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal
+
+Downloading Images and Videos
+=============================
+
+If the gimbal is connected using Ethernet, images and videos stored on the SD card may be downloaded manually using the built-in webserver.  Using your favourite browser open http://192.168.2.119:8554/download (assuming the gimbal is using the default IP address).
+
+`wget <https://www.gnu.org/software/wget/>`__ can also be used to download all images and videos with a single command
+
+- On Windows, ``wget.exe -r -l 10 --convert-links http://192.168.2.119:8554/download/``
+- On Linux/Ubuntu ``wget -r -l 10 --convert-links http://192.168.2.119:8554/download/``
