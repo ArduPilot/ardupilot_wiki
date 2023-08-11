@@ -880,7 +880,8 @@ def create_features_page(features, build_options_by_define, vehicletype):
                 build_options = build_options_by_define[feature]
             except KeyError:
                 # mismatch between build_options.py and features.json
-                print("feature %s not in build_options.py" % feature)
+                print("feature %s (%s,%s) not in build_options.py" %
+                      (feature, platform_key, vehicletype))
                 continue
             if feature_in:
                 some_list = sorted_platform_features_in
