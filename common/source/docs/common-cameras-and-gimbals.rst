@@ -57,6 +57,8 @@ the output signal into the form expected by your particular camera:
 
 .. note:: be sure to set the ``CAMx_INTRVAL_MIN`` to be greater than the fastest the camera can take photos when using the camera trigger functions.
 
+Camera controls including during missions are covered on the :ref:`common-camera-controls` page.
+
 Common fixes for poor video quality
 ===================================
 
@@ -113,3 +115,4 @@ Detail topics
     Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>
     RunCam Camera Control <common-camera-runcam>
     Gimbal / Mount Controls <common-mount-targeting>
+    Camera Controls <common-camera-controls>
