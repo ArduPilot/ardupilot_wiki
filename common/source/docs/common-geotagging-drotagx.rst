@@ -1,5 +1,6 @@
 .. _common-geotagging-drotagx:
 
+**ARCHIVED**
 =======================
 DROTAG x for Geotagging
 =======================

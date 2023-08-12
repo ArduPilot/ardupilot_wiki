@@ -37,6 +37,7 @@ value to users with old hardware.
     PPM Encoder <common-ppm-encoder>
     common-toshiba-can-escs
     common-tarot-gimbal
+    DROTAG x Geotagger <common-geotagging-drotagx>
 [/site]
 [site wiki="copter"]
     Boat Mode <boat-mode>
