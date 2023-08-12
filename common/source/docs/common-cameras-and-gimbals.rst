@@ -42,7 +42,6 @@ the output signal into the form expected by your particular camera:
 
 -  :ref:`Servo or Relay controlled camera shutter <common-camera-shutter-with-servo>` (servo, relay).
 -  :ref:`Airpixel Entire Geotagger <common-geotagging-airpixel-entire>`
--  :ref:`DROTAG x Geotagger  <common-geotagging-drotagx>`
 -  :ref:`FLIR Vue Pro Thermal Camera <common-flir-vue-pro>`
 -  :ref:`Seagull IR Camera Trigger <common-camera-trigger-seagull-ir>`
 -  :ref:`Seagull MAP2 Camera Trigger <common-camera-trigger-seagull-map2>`
@@ -103,7 +102,6 @@ Detail topics
     ViewPro gimbals <common-viewpro-gimbal>
     FLIR Vue Pro Thermal Camera <common-flir-vue-pro>
     Airpixel Entire Geotagger <common-geotagging-airpixel-entire>
-    DROTAG x Geotagger <common-geotagging-drotagx>
     Seagull IR Camera Trigger <common-camera-trigger-seagull-ir>
     Seagull MAP2 Camera Trigger <common-camera-trigger-seagull-map2>
     Seagull MAP-X2 Camera Trigger and Logger <common-camera-trigger-seagull-mapx2>
