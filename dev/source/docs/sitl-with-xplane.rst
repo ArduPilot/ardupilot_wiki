@@ -187,7 +187,7 @@ create a PT60 directory::
 Using SITL running inside WSL2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The :ref:`currently recommended<dev:_sitl-native-on-windows>` way of setting up SITL for Windows runs in Windows Subsystem for Linux, as explained in :ref:`dev:building-setup-windows10`.
+The :ref:`currently recommended<dev:sitl-native-on-windows>` way of setting up SITL for Windows runs in Windows Subsystem for Linux, as explained in :ref:`dev:building-setup-windows10`.
 
 To connect X-Plane and SITL in this environment you need to manually point each of them at the right address in the virtual network created between the two operating systems.
 
