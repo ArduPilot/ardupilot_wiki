@@ -101,6 +101,11 @@ on :ref:`takeoff-mode` page:
 
 `Takeoff Mode enhancement <https://github.com/ArduPilot/ardupilot_wiki/pull/5173>`__
 
+on :ref:`apms-failsafe-function` page, add long failsafe actions for Mode Takeoff:
+==================================================================================
+
+See: https://github.com/ArduPilot/ardupilot_wiki/pull/5353
+
 on :ref:`quadplane-vtol-tuning-process` page:
 =============================================
 
