@@ -101,6 +101,7 @@ Closed Hardware
     Horizon31 PixC4-Jetson <common-horizon31-pixc4-jetson>
     IFlight Beast F7 45A AIO <common-iflight-beastf7AIO>
     IFlight BeastH7 AIO <common-iflight-beasth7AIO>
+    IFlight Blitz Whoop F7 AIO <common-iflight-blitzf7AIO>
     Mamba F405 MK2* <common-mamba405-mk2>
     Mamba MK4 F405Mini <common-mambaf405-mini>
     Mamba Basic F405 mk3 <common-mamba-basic-mk3>
