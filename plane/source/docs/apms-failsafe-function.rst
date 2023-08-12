@@ -334,7 +334,6 @@ The action to take on a long (:ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds) R
 No Action is ever taken for Long FailSafe in these modes:
 
 - RTL
-- TAKEOFF
 - QRTL
 - QLAND
 - LOITER to Alt and QLAND
@@ -373,6 +372,8 @@ Otherwise:
 |                      |THERMAL                 |                         |
 +                      +------------------------+                         +
 |                      |CIRCLE                  |                         |
+|                      +------------------------+                         |
+|                      |TAKEOFF                 |                         |
 +                      +------------------------+-------------------------+
 |                      |AUTO                    |  No Change              |
 +                      +------------------------+                         +
@@ -405,6 +406,8 @@ Otherwise:
 |                      |THERMAL                 |                         |
 +                      +------------------------+                         +
 |                      |CIRCLE                  |                         |
+|                      +------------------------+                         |
+|                      |TAKEOFF                 |                         |
 +                      +------------------------+-------------------------+
 |                      |AUTO                    |                         |
 +                      +------------------------+                         +
@@ -437,6 +440,8 @@ Otherwise:
 |                      |THERMAL                 |                         |
 +                      +------------------------+                         +
 |                      |CIRCLE                  |                         |
+|                      +------------------------+                         |
+|                      |TAKEOFF                 |                         |
 +                      +------------------------+-------------------------+
 |                      |AUTO                    |                         |
 +                      +------------------------+                         +
@@ -444,6 +449,8 @@ Otherwise:
 +                      +------------------------+                         +
 |                      |GUIDED                  |                         |
 +----------------------+------------------------+-------------------------+
+
+.. note: in Mode TAKEOFF, Long Failsafe Action is postponed until :ref:`TKOFF_LVL_ALT<TKOFF_LVL_ALT>` is obtained unless action is GLIDE or PARACHUTE, which would occur immediately .
 
 GCS failsafe enable (:ref:`FS_GCS_ENABL<FS_GCS_ENABL>` )
 --------------------------------------------------------
