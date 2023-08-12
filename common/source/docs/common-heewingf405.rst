@@ -155,7 +155,9 @@ This board does not include a GPS or compass so an :ref:`external GPS/compass <c
 
 Firmware
 ========
-This board does not come a correct Ardupilot bootloader (it may at some future point) so it cannot be upgraded with new versions of Ardupilot firmware. ANd cecause it has not boot pin exposed, DFU loading is not possible. 
+First Versions
+--------------
+The first version of the board does not come a correct Ardupilot bootloader (it may at some future point) so it cannot be upgraded with new versions of Ardupilot firmware. ANd cecause it has not boot pin exposed, DFU loading is not possible. 
 
 Instead a `"transitional" firmware <https://firmware.ardupilot.org/Tools/TransitionalFirmware/HeeWingF405/>`__  can be used and loaded like normal ArduPilot firmware (this is rev 4.3.7 Plane firmware) as a custom firmware file in Mission Planner.
 
@@ -163,6 +165,15 @@ This firmware contains the correct bootloader and it can be installed using the 
 
 Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "HEEWING-F405".
+
+V2 Version
+----------
+
+The upcoming V2 version with SD card logging should ship with a correct bootloader with ArduPilot firmware installed. Updating firmware can be done normally with Mission Planner or other GCS.
+
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
+"HEEWING-F405v2".
+
 
 [copywiki destination="plane,copter,rover,blimp"]
 
