@@ -86,13 +86,24 @@ Configuration of CAN driver
 ---------------------------
 
 The driver should be set to use some protocol. Currently there is support for DroneCAN devices,
-which is numbered 1, and numerous CAN ESCs.
+which is numbered 1, and numerous CAN ESCs and other devicess.
 The parameter ``CAN_Dx_PROTOCOL``, where x is the number of driver, should be filled
 with the number of protocol for this driver.
 
-.. image:: ../../../images/can-driver-parameters-protocol.png
-    :target: ../_images/can-driver-parameters-bitrate.png
-    
+===============     =============
+CAN_Dx_PROTOCOL     Protocol Type
+===============     =============
+0                   Disabled
+1                   DroneCAN
+4                   PiccoloCAN
+6                   EFI_NWPMU
+7                   USD1
+8                   KDECAN
+10                  Scripting based CAN driver
+11                  Benewake
+12                  Scripting2 (allows two drivers)
+===============     =============
+
 After the change to protocol the autopilot has to be rebooted for the changes to take place.
 
 CAN ESCs
