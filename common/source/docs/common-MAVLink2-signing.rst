@@ -35,7 +35,7 @@ You can check if the link is now signing by clicking "Stats..." under the comm p
 Use
 ===
 
-Once the autopilot is using signing, USB connections are unaffected, but any link via a SERIAL port using MAVLink2 protocol will only respond to MAVLink commands if they are signed with the key the autopilot is using. But links will still receive telemetry updates even if they are not using singing with the active key.
+Once the autopilot is using signing, USB connections are unaffected, but any link via a SERIAL port using MAVLink2 protocol will only respond to MAVLink commands if they are signed with the key the autopilot is using. But links will still receive telemetry updates even if they are not using signing with the active key.
 
 When you connect Mission Planner over a link that is signing, it will see if it has the correct key stored in its keys table that you would have setup previously. If it does, the connection will use that key and commands will be acted upon by the autopilot, including parameter download at connection. If you connect, but parameter download does not occur, then the key was not present. Add the key, and re-connect.
 
