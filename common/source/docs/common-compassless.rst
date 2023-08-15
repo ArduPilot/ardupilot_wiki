@@ -37,7 +37,7 @@ For configure EKF3 to always use GSF set :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 8 
 Operation
 ---------
 
-Currently, only Plane will arm if the :ref:`ARMING_CHECK<ARMING_CHECK>` for compass (or ALL) is enabled, when no compasses are enabled. Copter and QuadPlane will give an pre-arming failure. Three possible methods to arm are:
+Currently, only Plane will arm if the :ref:`ARMING_CHECK<ARMING_CHECK>` for compass (or ALL) is enabled, when no compasses are enabled. Copter and QuadPlane will give an pre-arming failure. Three possible methods to arm Copter and QuadPlane are:
 
 #. Disable :ref:`ARMING_CHECK<ARMING_CHECK>` for Compass (keep the others!).
 #. Force arming from ground station.
@@ -46,6 +46,8 @@ Currently, only Plane will arm if the :ref:`ARMING_CHECK<ARMING_CHECK>` for comp
 .. warning:: If either of the first two methods are used, then the first movements of the vehicle in VTOL position controlled modes may be initially in the wrong direction, but should quickly stop once yaw alignment of the GSF has been obtained. Either fly the vehicle a bit in a non-position controller mode (like STABILIZE or QHOVER), or give the vehicle sufficient clearance for the unknown initial movement direction.
 
 Afterwards, flight and navigation should be acceptable.
+
+.. note:: on Plane, without compass, after arming the vehicle will fall back to DCM ("DCM Active"  message over MAVLinK) from EKF3 since it has no yaw sensor yet. This will be flagged in MP HUD as "Unhealthy AHRS" or on RC telemetry systems (like CRSF) with a "AHRS Bad" message. Ignore this, once the plane starts moving EKF3 will obtain yaw information and align, and operation will switch back to it ("EKF3 active").
 
 If any problems are experienced, please post logs on the https://discuss.ardupilot.org forum.
 
