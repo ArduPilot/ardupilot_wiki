@@ -70,3 +70,7 @@ Examples available
 
     ros2 launch ardupilot_gz_bringup iris_maze.launch.py
 
+Here is a demo video of Ardupilot working with ROS 2 and Gazebo:
+
+..  youtube:: HZKXrSAE-ac
+    :width: 100%
