@@ -6,6 +6,10 @@ FLIR Vue Pro
 
 The `FLIR Vue Pro <https://www.flir.com/products/vue-pro/>`__ infrared camera supports MAVLink which allows the camera to add position and attitude information to each image stored on its internal SD card
 
+.. warning::
+
+    The Flir Vue Pro MAVLink interface appears to be broken in the latest firmware from FLIR (ver 3.3.2) meaning pictures taken will not include EXIF data of the vehicle's position and attitude
+
 .. image:: ../../../images/flir-vue-pro.png
     :width: 400px
 
