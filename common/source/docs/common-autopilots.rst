@@ -79,6 +79,7 @@ Closed Hardware
 .. toctree::
     :maxdepth: 1
 
+    ACNS-CM4Pilot <common-acns-cm4pilot>
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
     AtomRC F405-NAVI <common-atomrcf405-navi>
