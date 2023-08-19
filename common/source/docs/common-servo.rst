@@ -10,10 +10,7 @@ ball.  These servo(s) can be controlled either directly by the pilot via
 a switch on the transmitter, through commands sent from the ground
 station or as part of a mission.
 
-Either
-`analog <https://www.amazon.com/Hitec-31055S-HS-55-Economy-Universal/dp/B0006O3WNW>`__
-or `digital servos <https://www.amazon.com/Hitec-RCD-35076S-HS-A5076HB-Digital/dp/B003RXHMNK>`__
-may be used.
+Either analog or digital servos may be used such as provided by ArduPilot partner `Hitec <https://hitecrcd.com/products/servos>`__ or other vendors.
 
 Connecting the servo to an AutoPilot
 ====================================
