@@ -49,6 +49,8 @@ Servos
 The drive servos are selected based on the amount of force that is needed to move the hydraulic control valve on the mower platform that is selected.  The servo mentioned here is for the very common HydroGear transaxle used on many mowers.  If you have a mower platform that is different you will have to determine what servo will work by researching what others have used or measuring the torque required.  There is a resistance spring on each of the hydraulic control valves that needs to be removed to reduce the torque required by the servo.  The resistance springs are only needed when driving with the manual drive handles.  The manual drive handles are disconnected when the servos are connected.  Manual drive handle operation is not compatible with the electronic drive system.  The new manual operation is now to flip a switch on the RC controller and drive with the joysticks.
  It is a multi-dimensional puzzle to figure out where to mount the drive servos. They need to be in a serviceable location, protected from the other moving parts and heat sources, be very firmly mounted, as well as being in the right place to get the movement needed.  This will likely require building custom mounting hardware and linkages. The AGFRC 100KG servo is a bigger more robust solution, having more torque and operating at a higher voltage.  The HiTec D845WP is a 45KG servo operating at a lower voltage (5-8v), also requiring a separate lower voltage power supply.  Both of these servos are Waterproof - Metal Gear servos for use in harsh environments.
 
+Cube mower layout 081823.jpg
+
 Relays/Relay Boards
 ===================
 
