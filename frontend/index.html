@@ -724,7 +724,12 @@
   </div>
 
   <script>
-    fetch('blog_posts.json')
+    fetch('blog_posts.json', {
+              headers: {
+                "Pragma": "no-cache",
+                "Cache-Control": "no-store"
+              }
+            })
             .then(response => response.json())
             .then(data => {
               const blogPosts = document.getElementById('blog_posts');
@@ -768,7 +773,12 @@
             })
             .catch(error => console.error('Error:', error));
 
-    fetch('news_posts.json')
+    fetch('news_posts.json', {
+              headers: {
+                "Pragma": "no-cache",
+                "Cache-Control": "no-store"
+              }
+            })
             .then(response => response.json())
             .then(data => {
               const newsPosts = document.getElementById('news_posts');
