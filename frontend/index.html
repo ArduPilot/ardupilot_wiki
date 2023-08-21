@@ -757,10 +757,13 @@
                   anchor.appendChild(img);
                 } else {
                   let iframe = document.createElement('iframe');
-
-                  iframe.classList.add("embed-responsive-item");
+                  anchor.classList.add("embed-responsive");
+                  iframe.classList.add("embed-responsive-item", "img-thumbnail");
                   iframe.src = val.youtube_link;
                   iframe.title = val.title;
+                  iframe.style.width = "100%";
+                  iframe.style.height = "80%";
+
 
                   anchor.appendChild(iframe);
                   anchor.appendChild(document.createElement('br'));
