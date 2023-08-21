@@ -43,6 +43,7 @@ class BlogPostsFetcher:
             self.blog_url: (base_dir / "./frontend/blog_posts.json").resolve(),
             self.news_url: (base_dir / "./frontend/news_posts.json").resolve()
         }
+
     @staticmethod
     def get_arguments() -> Any:
         parser = argparse.ArgumentParser(description="python3 get_discourse_posts.py [Number of posts to retrieve]")
@@ -71,39 +72,59 @@ class BlogPostsFetcher:
             print(f"[get_blog_posts.py] {str_to_print}")
 
     def get_single_post_text(self, content: Any) -> str:
-        post_text = self.clean_html(str(content['post_stream']['posts'][0]['cooked']))
+        post_text = self.clean_html(content)
         item = post_text.split('\n')
         litem = " ".join(item)
         return str(litem[:140] + ' (...)')
 
     @staticmethod
     def get_first_youtube_link(request: str) -> str:
-        # regular expression to find URLs that contain 'YouTube'
+        request_lines = request.splitlines()
+        # Join the first 5 lines back together
+        first_five_lines = '\n'.join(request_lines[:5])
+        first_five_lines_lower = first_five_lines.lower()  # lowercase to handle weird image type
+
+        # Regular expression to find URLs that contain 'YouTube' or image links
         url_pattern = re.compile(r'href=[\'"]?(https?://www\.youtube[^\'" >]+)')
-        youtube_links = url_pattern.findall(request)
-        return youtube_links[0] if youtube_links else ''
+        img_pattern = re.compile(r'(?:href|src)=[\'"]?(https?://[^\'" >]+\.(jpg|jpeg|png|gif|svg|bmp|webp))')
+
+        # Find all matches
+        youtube_links = url_pattern.findall(first_five_lines)
+        img_links = img_pattern.findall(first_five_lines_lower)[0] if img_pattern.findall(first_five_lines_lower) else None
+
+        # If there are image links before YouTube links, return empty string
+        if img_links and (not youtube_links or
+                          first_five_lines_lower.index(img_links[0]) < first_five_lines.index(youtube_links[0])):
+            return ''
+
+        # If there are no YouTube links, still return ''
+        if not youtube_links:
+            return ''
+
+        # Return the first YouTube link
+        return youtube_links[0]
 
     @staticmethod
     def youtube_link_to_embed_link(url: str) -> str:
-        return str(url).replace('https://www.youtube.com/watch?v=', 'https://www.youtube-nocookie.com/embed/')
+        return url.replace('https://www.youtube.com/watch?v=', 'https://www.youtube-nocookie.com/embed/')
 
     def get_post_data(self, content: Any, i: int, verbose: bool) -> Post:
         item = content['topic_list']['topics'][i]
         single_post_link = str('https://discuss.ardupilot.org/t/' + str(item['slug']) + '/' + str(item['id'])) + '.json'
         self.debug(f"Requesting post text {single_post_link} ... ", verbose)
-        post_content = self.execute_http_request_json(single_post_link)
+        post_content_raw = self.execute_http_request_json(single_post_link)
+        post_content = str(post_content_raw['post_stream']['posts'][0]['cooked'])
         single_post_text = self.get_single_post_text(post_content)
 
-        youtube_link = ''
         has_image = False
-        if str(item['image_url']) == 'None':
-            self.debug(f"Requesting post text {single_post_link} to look for youtube link... ", verbose)
-            youtube_link = self.youtube_link_to_embed_link(self.get_first_youtube_link(single_post_text))
-        else:
+        self.debug(f"Requesting post text {single_post_link} to look for youtube link... ", verbose)
+        youtube_link = self.youtube_link_to_embed_link(self.get_first_youtube_link(post_content))
+        if youtube_link == '' and str(item['image_url']) != 'None':
             has_image = True
             youtube_link = 'nops'
 
-        return Post(item['title'], item['image_url'], has_image, youtube_link, single_post_link.rsplit('.', 1)[0], single_post_text.strip())
+        return Post(item['title'], item['image_url'], has_image, youtube_link, single_post_link.rsplit('.', 1)[0],
+                    single_post_text.strip())
 
     def save_posts_to_json(self, url: str, n_posts: int, verbose: bool) -> None:
         content = self.execute_http_request_json(url)
