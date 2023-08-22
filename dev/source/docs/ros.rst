@@ -36,6 +36,7 @@ These pages will show you how to:
         ROS 2 with SITL <ros2-sitl>
         ROS with SITL in Gazebo <ros-gazebo>
         ROS 2 with SITL in Gazebo <ros2-gazebo>
+        Cartographer SLAM with ROS 2 in SITL <ros2-cartographer-slam>
         ROS with distance sensors <ros-distance-sensors>
         ROS with Aruco Boards detection <ros-aruco-detection>
         ROS with Apriltag Boards detection <ros-apriltag-detection>
