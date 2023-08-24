@@ -4,7 +4,7 @@
 Control a Camera
 ================
 
-This page explains how MAVLink can be used to control a camera.  These commands are supported in ArduPilot 4.3.x and earlier:
+This page explains how MAVLink can be used to control a camera.  These commands are supported in all versions of ArduPilot:
 
 - MAV_CMD_DO_DIGICAM_CONTROL to take a picture
 - MAV_CMD_DO_SET_CAM_TRIGG_DIST to take pictures at regular distance intervals
