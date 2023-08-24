@@ -308,6 +308,8 @@ MAV_CMD_SET_CAMERA_ZOOM to control the camera zoom
 
 The camera zoom can be controlled by sending a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the command and param fields set as specified for the `MAV_CMD_SET_CAMERA_ZOOM <https://mavlink.io/en/messages/common.html#MAV_CMD_SET_CAMERA_ZOOM>`__ command.
 
+Zoom Type=1 (continuous, aka rate control) is support in 4.4.0 (and higher).  Zoom Type=2 (range, aka absolute) is supported in AP 4.5.0 (and higher)
+
 .. raw:: html
 
    <table border="1" class="docutils">
@@ -340,12 +342,12 @@ The camera zoom can be controlled by sending a `COMMAND_LONG <https://mavlink.io
    <tr>
    <td><strong>param1</strong></td>
    <td>float</td>
-   <td>Zoom Type=1 (step=0, continous=1, range=2, focal length=3)</td>
+   <td>Zoom Type=1 (continous=1, range=2)</td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>
    <td>float</td>
-   <td>Zoom Value (zoom in=1, zoom out=-1, stop=0)</td>
+   <td>Zoom Value (zoom in=1, zoom out=-1, stop=0 OR 0~100%)</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param3</strong></td>
@@ -387,6 +389,10 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 | ``message COMMAND_LONG 0 0 531 0 1 -1 0 0 0 0 0``  | Zoom out                                    |
 +----------------------------------------------------+---------------------------------------------+
 | ``message COMMAND_LONG 0 0 531 0 1 0 0 0 0 0 0``   | Stop zooming in or out                      |
++----------------------------------------------------+---------------------------------------------+
+| ``message COMMAND_LONG 0 0 531 0 2 0 0 0 0 0 0``   | Zoom out to 0% (all the way out)            |
++----------------------------------------------------+---------------------------------------------+
+| ``message COMMAND_LONG 0 0 531 0 2 100 0 0 0 0 0`` | Zoom in to 100% (all the way in)            |
 +----------------------------------------------------+---------------------------------------------+
 
 MAV_CMD_SET_CAMERA_FOCUS to manually or automatically focus the camera
