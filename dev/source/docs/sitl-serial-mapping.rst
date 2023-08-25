@@ -6,7 +6,7 @@
 Archived: SITL Serial Mapping
 =============================
 
-.. warning:: This topic is archived.
+.. warning:: This topic is archived. The information has been moved to :ref:`learning-ardupilot-uarts-and-the-console`.
 
 This document attempts to supply information about the virtual serial ports present in ArduPilot's SITL.
 
