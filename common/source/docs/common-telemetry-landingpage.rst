@@ -45,7 +45,7 @@ Long Range
     Andruav Android Cellular <https://cloud.ardupilot.org/andruav-index.html>
     Blicube RLINK P900 <common-blicube-rlink>
     ClearSky Airlink 4G LTE Telemetry <common-airlink-telemetry>
-    CRSF Telemetry <common-crsf-telemetry>
+    CRSF/ELRS Telemetry <common-crsf-telemetry>
     CUAV P8 Radio <common-cuav-p8>
     CUAV P9 Radio <common-cuav-p9>
     DragonLink <common-dragonlink-rc>
@@ -70,4 +70,7 @@ Applications and Info
     MAVLink High Latency Protocol <common-MAVLink-high-latency>
     Repeater for Wireless Ground Station Connections <common-wireless-gcs-repeater>
     Telemetry Radio Regional Regulations <common-telemetry-radio-regional-regulations>
+
+
+-  :ref:`Yaapu Telemetry Scripts for OpenTX <common-frsky-yaapu>`
 

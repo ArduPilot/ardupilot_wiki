@@ -44,7 +44,7 @@ ArduPilot autodetects the following serial RC receiver protocols:
    #. PPM remote control (R/C) receivers
    #. SBus receivers
    #. FPort receivers (see :ref:`common-FPort-receivers` )
-   #. Crossfire (CRSF) receivers (see :ref:`common-tbs-rc`, needs full UART connection for Telem)
+   #. Crossfire (CRSF) and ELRS receivers (see :ref:`common-tbs-rc`, needs full UART connection.)
    #. Spektrum DSM and DSM2 receivers
    #. Spektrum DSM-X Satellite receivers
    #. IBUS receivers
