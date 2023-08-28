@@ -39,7 +39,7 @@ PPM-Sum/SBus/IBus
 
 These receivers are usually connected to the RCin or SBUS input pin on the autopilot.
 
-To connect a PPM-Sum receiver or an SBus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk.
+To connect a PPM-Sum receiver or an SBus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk. If you wish to connect SBUS to a serial UART port, connect the SBUS pin to the serial RX pin.
 
 .. image:: ../../../images/RCIN_connection.jpg
     :target: ../_images/RCIN_connection.jpg
