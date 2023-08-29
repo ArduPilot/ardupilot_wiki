@@ -39,7 +39,7 @@ PPM-Sum/SBus/IBus
 
 These receivers are usually connected to the RCin or SBUS input pin on the autopilot.
 
-To connect a PPM-Sum receiver or an SBus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk. If you wish to connect SBUS to a serial UART port, connect the SBUS pin to the serial RX pin.
+To connect a PPM-Sum receiver or an SBus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk.
 
 .. image:: ../../../images/RCIN_connection.jpg
     :target: ../_images/RCIN_connection.jpg
@@ -73,7 +73,10 @@ These bi-directional protocols require the use of a Serial Port. See links below
 RC input to Serial Port
 -----------------------
 
-.. note:: any UART RX input will auto-detect all the protocols (except PPM, or SRXL2/CRSF/ELRS which also require connection of the UART's TX pin), if the serial port protocol is set to 23 (for example, generally, :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` for the TELEM2 UART if used). The exception to this is for SBUS attached to UARTs on F4 based autopilots. This requires an external inverter since SBUS is inverted and F4 autopilots do not have selectable inversion on their UART pins.
+.. note:: PPM will not work with a Serial Port. SRXL2/CRSF/ELRS also require connection of the UART's TX pin.
+
+Any UART RX input will auto-detect the protocol if the serial port protocol is set to 23 (for example, generally, :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` for the TELEM2 UART if used). The exception to this is for SBUS attached to UARTs on F4 based autopilots. This requires an external inverter since SBUS is inverted and F4 autopilots do not have selectable inversion on their UART pins.
+Generally, the TX on the receiver will connect to the RX on the autopilot; and TX on the autopilot will connect to RX on the receiver if necessary.
 
 .. note:: The serial port baudrate is automatically set and controlled by the firmware when any serial RC protocol is detected.
 
