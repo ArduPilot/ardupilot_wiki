@@ -21,11 +21,10 @@ If Vehicle A or B requires Ground Station Control, an additional Telemetry radio
 .. image:: ../images/Follow2.jpg
    :target: ../_images/Follow2.jpg
 
-In the case of QGroundControl, all that is required is to switch to FOLLOW Mode once it is connected to QGroundControl. It will then follow the computer/phone running QGC.
+If using QGroundControl ensure the Application setting under the General tab ``Stream GCS Position`` is set to "When in Follow Me Flight Mode" or "Always".  Next connect to the vehicle and switch to FOLLOW Mode and it will then follow the computer/phone running QGC.
 
-.. note::
-
-   Follow is available in Rover-3.5 (and higher)
+.. image:: ../images/follow-mode-qgc-setting.png
+   :target: ../_images/follow-mode-qgc-setting.png
 
 The following parameters can be used to tune Follow mode's performance:
 
