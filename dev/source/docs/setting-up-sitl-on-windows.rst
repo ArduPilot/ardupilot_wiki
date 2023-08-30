@@ -1,8 +1,12 @@
 .. _setting-up-sitl-on-windows:
 
-========================================================
-SITL on Windows in a Virtual Machine - VM (Manual Setup)
-========================================================
+===============================================
+SITL setup on Windows in a VM (not recommended)
+===============================================
+
+.. warning::
+
+   These instructions are out-of-date.  We recommend Windows users follow the instructions for :ref:`Setting up the Build Environment using WSL <building-setup-windows>` and :ref:`Setting up SITL on WSL <sitl-on-windows-wsl>`
 
 This article explains how to *manually* set up the :ref:`SITL ArduPilot Simulator <sitl-simulator-software-in-the-loop>` in a virtual machine
 environment on Windows, and connect it to a Ground Control Station
