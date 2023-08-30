@@ -1,8 +1,12 @@
 .. _sitl-native-on-windows:
 
-==========================
-Setting up SITL on Windows
-==========================
+====================================================
+SITL setup on Windows using Cygwin (not recommended)
+====================================================
+
+.. warning::
+
+   These instructions are out-of-date.  We recommend Windows users follow the instructions for :ref:`Setting up the Build Environment using WSL <building-setup-windows>` and :ref:`Setting up SITL on WSL <sitl-on-windows-wsl>`
 
 SITL was originally developed on Linux, but can also be built and run *natively* on Windows. It can also be run on a virtual machine (Linux) hosted on Windows, Mac OSX, or Linux or by using the Windows Subsystem for Linux (WSL).
 
