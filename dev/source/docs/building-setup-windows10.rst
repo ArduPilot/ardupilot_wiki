@@ -1,4 +1,3 @@
-
 .. _building-setup-windows10:
 
 ====================================================================
@@ -90,12 +89,14 @@ As of July 2022, Microsoft's solution of providing USB access to WSL2 via usbipd
 .. note:: WSL1 can upload to boards by default with no additional changes. This is due to differences in how USB devices are handled.
 
 
+.. _building-setup-windows10_XWindows:
+
 Using SITL with WSL and XWindows (Windows 10 only)
 --------------------------------------------------
 
 Windows 11 has a built-in XServer that is automatically set up. This section can be skipped if you are using Windows 11.
 
-When using SITL with default options or ``--console --map`` an installed XWindows application must be started first. If not, the following error message will appear when running:
+When using SITL (e.g. ``Tools/autotest/sim_vehicle.py``) with default options or ``--console --map`` an installed XWindows application must be started first. If not, the following error message will appear when running:
 
 ::
 
