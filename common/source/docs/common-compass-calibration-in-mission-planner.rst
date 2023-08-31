@@ -4,6 +4,8 @@
 Compass Calibration
 ===================
 
+.. note:: Operation of fixed wing Planes and some Rovers is possible without the use of a compass (See :ref:<common-compassless>`), but utilizing a compass is recommended for all other vehicles unless yaw is provided by some other means (:ref:`common-gps-for-yaw>` or :ref:`common-non-gps-navigation-landing-page` or :ref:`common-external-ahrs>`)
+
 This article explains how to perform basic compass calibration. It assumes that you have at least one compass, either internally or externally in the system, and it has been enabled. See :ref:`Advanced Compass Setup <common-compass-setup-advanced>` for more information and to setup other compass related features.
 
 .. warning::  It is important that when compass calibration is done, the vehicle have a good 3D gps lock, in order to assure the best setup. If necessary, move outdoors in order to get a good 3D gps lock before doing the compass calibration.
