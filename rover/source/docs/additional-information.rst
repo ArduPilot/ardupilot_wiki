@@ -5,7 +5,7 @@ Additional Information and Topics of Interest
 =============================================
 
 .. toctree::
-   :hidden:
+    :maxdepth: 1
 
     Upcoming Features <common-master-features>
     Antenna Tracking <common-antenna-tracking>
