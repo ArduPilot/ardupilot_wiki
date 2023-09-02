@@ -33,11 +33,11 @@ Preparing the tag
 .. image:: ../../../images/pozy-pixhawk-uno.png
     :target: ../_images/pozy-pixhawk-uno.png
 
-- connect one of the Pixhawk's telemetry connections to the UNO.  Telem1 is shown above but Telem2 or Serial4/5 will work equally well.
-- Pixhawk's GND should be connecdted to one of the UNO's GND pins.
-- Pixhawk's TX should be connected to the UNO's pin 10.
-- Pixhawk's RX should be connected to the UNO's pin 11.
-- Pixhawk's VCC may be connected to the UNO's 5V connector to provide power to the Uno/Pozyx from the Pixhawk.
+- connect one of the autopilot's telemetry connections to the UNO.  Telem1 is shown above but any SERIAL port will work equally well.
+- autopilot's UART port GND should be connected to one of the UNO's GND pins.
+- autopilot's UART port TX should be connected to the UNO's pin 10.
+- autopilot's UART port RX should be connected to the UNO's pin 11.
+- autopilot's UART port VCC may be connected to the UNO's 5V connector to provide power to the Uno/Pozyx from the autopilot.
 
 The Arduino IDE should be used to load `IndoorLoiter sketch <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Pozyx/IndoorLoiter/IndoorLoiter.ino>`__ onto the Uno after first changing the anchor tags `found here <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Pozyx/IndoorLoiter/IndoorLoiter.ino#L12>`__ to match the IDs of the tags in your setup.
 
@@ -60,15 +60,17 @@ Connect with a Ground Station and set the following parameters:
 - set :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` to 4 (Beacon)
 - set :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` to 0 (None)
 - set :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` to 0 (None)
+- set :ref:`EK3_SRC1_POSZ<EK3_SRC1_POSZ>` to  4 (Beacon)
+- set :ref:`EK3_SRC1_YAW<EK3_SRC1_YAW>` to 1 (Compass) since a compass is required for use with this device.
 - set :ref:`ARMING_CHECK <ARMING_CHECK>` to -9 to disable the GPS arming check
-- set :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` to 115 to set telemetry1's baud rate to 115200 (if using Telem2 set :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` instead)
-- set :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` to 13 (Beacon) to enable reading the IndoorLoiter2 protocol (If using Telem2 set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` instead)
-- set :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` to 0 to ensure telem1 does not use flow control (If using Telem2 set :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` instead, not required if using Serial4/5)
+- set :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` to 115 to set SERIAL1 port's baud rate to 115200 (if using a different SERIAL port set its baud rate to 115, instead)
+- set :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` to 13 (Beacon) to enable reading the IndoorLoiter2 protocol (If using a different port, set its protocol to 13 instead)
+- set :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` to 0 to ensure telem1 does not use flow control (If using Telem2 set :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` instead, not required if using a SERIAL port without flow control)
 
 Ground Testing
 ==============
 
-- Connect the Autopilot to a ground station.  You may need to connect the Lipo battery as well because some computers are unable to provide enough power through their USB port for the combined Pixhawk+Pozyx+Uno.
+- Connect the Autopilot to a ground station.  You may need to connect the Lipo battery as well because some computers are unable to provide enough power through their USB port for the combined autopilot+Pozyx+Uno.
 - Press the UNO's white or red reset button which can be found next to the USB port (see image above)
 - After about 1 minute the vehicle's position should jump to the lattitude, longitude you input during the configuration step (above).  If it does not, connect a USB cable to the UNO's USB port and open the Arduino IDE's serial monitor and look for errors.
 - Check that the vehicle's position is relatively stable (i.e. moving around less than one meter)
