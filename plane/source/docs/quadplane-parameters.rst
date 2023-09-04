@@ -27,6 +27,7 @@ Key Parameters
    as one of your available flight modes (as that will shut down the
    quad motors). Please be careful not to use hard left rudder and zero
    throttle while flying or you risk disarming your motors.
+-  The default :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>` for a QuadPlane is to 300 (Hz). Most QuadPlanes do not need this to be rasied. Some very small vehicles (< 1Kg) might benefit from setting it to 400. In heavier vehicles, their higher inertia results in lower effective control response rates, so they do not benefit from a higher loop rate. Raising above 300 only leads to larger log files in these vehicles.
 
 Q_OPTIONS
 =========
