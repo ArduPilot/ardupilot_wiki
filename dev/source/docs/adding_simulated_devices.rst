@@ -18,8 +18,8 @@ When starting SITL, you can have it display a simulation of the integated OSD, i
 .. note:: the OSD emulation displays OSD panel items and locations, but it does not allow multiple screens, nor units other than metric
 
 
-Adding a Gimbal
-===============
+Adding a Virtual Gimbal
+=======================
 
 SITL can simulate a virtual gimbal.
 
@@ -54,6 +54,11 @@ Then stop and re-launch SITL with the ``-M`` flag:
 ::
 
     sim_vehicle.py -M
+
+Adding a Real Serial Gimbal
+===========================
+
+.. youtube:: jmqPJt7rnm0
 
 Adding a Rangefinder
 ====================
