@@ -114,7 +114,10 @@ Closed Hardware
     Mateksys F405 TE Family <common-matekf405-te>
     Mateksys H743-Wing/MINI/SLIM/WLITE <common-matekh743-wing>
     ModalAI Flight core <https://www.modalai.com/products/flight-core>
+    mRo ControlZero Classic <https://store.mrobotics.io/product-p/m10048d.htm>
     mRo ControlZero F7 <common-mro-control-zero-F7>
+    mRo ControlZero H7 <https://store.mrobotics.io/mRo-Control-Zero-H7-p/mro-ctrl-zero-h7.htm>
+    mRo COntrolZero H7 OEM <https://store.mrobotics.io/product-p/m10059d.htm>
     mRo Pixracer Pro (H7) <common-pixracer-pro>
     mRo Nexus <common-mro-nexus>
     Omnibus F4 AIO/Pro* <common-omnibusf4pro>
