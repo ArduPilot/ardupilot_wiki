@@ -9,6 +9,7 @@ Additional Information and Topics of Interest
     :maxdepth: 1
 
     Upcoming Features <common-master-features>
+    Ready to Fly/Use Vehicles <common-rtf>
     Antenna Tracking <common-antenna-tracking>
     Simulation <common-simulation>
     Solo Software Upgrade <solo_arducopter_upgrade>
