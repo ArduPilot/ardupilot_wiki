@@ -72,7 +72,7 @@ Serial protocols shown are defaults, but can be adjusted to personal preferences
 
 Servo/Motor Outputs
 ===================
-The KakuteH7 supports up to 14 PWM outputs. Outputs 1-10 support DShot. Outputs 5-8 support BiDirDshot.
+The KakuteH7 supports up to 14 PWM outputs. Outputs 1-10 support DShot. Outputs 1-8 support BiDirDshot.
 
 The PWM is in 5 groups:
 
