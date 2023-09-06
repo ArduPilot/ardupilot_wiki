@@ -30,8 +30,8 @@ Power Monitors Connecting to AutoPilot Power Monitor Port
     SmartAP Power Distribution Board<common-smartap-pdb>
     Synthetic Current Sensor/Analog Voltage Monitor <common-synthetic-current-monitor>
 
-CAN/DroneCAN Power Monitor
-==========================
+CAN/DroneCAN Power Monitors and Batteries
+=========================================
 
 .. toctree::
     :maxdepth: 1
@@ -40,6 +40,7 @@ CAN/DroneCAN Power Monitor
     Matek CAN-L4-BM DroneCan PMU <http://www.mateksys.com/?portfolio=can-l4-bm>
     Packet Digital MPPT Solar Controller <common-packetdigital-mppt>
     Pomegranate Systems<common-pomegranate-systems-pm>
+    Tattu DroneCan Battery<common-tattu-dronecan-battery>
 
 I2C Power Monitor
 =================
