@@ -14,7 +14,7 @@ Power Monitors/Modules provide these benefits:
 
 The links below have information about the most commonly used power monitors/modules
 
-Up to 10 batteries/power monitors can be monitored. Each monitor has its own group of configuration parameters, designated by ``BATTx_`` with x denoting each monitor in the system (first monitor "x" is null character, ie ``BATT_`` prefix). In addition, a ``BATT_MONITOR`` "type" = SUM is available, that consolidates  battery monitors into a single report using the :ref:`BATT_SUM_MASK<BATT_SUM_MASK>`.
+Up to 16 batteries/power monitors can be monitored. Each monitor has its own group of configuration parameters, designated by ``BATTx_`` with x denoting each monitor in the system (first monitor "x" is null character, ie ``BATT_`` prefix). In addition, a ``BATT_MONITOR`` "type" = SUM is available, that consolidates  battery monitors into a single report using the :ref:`BATT_SUM_MASK<BATT_SUM_MASK>`.
 
 .. note:: some kinds of monitors can provide bi-directional battery current information. These are useful when generators or MPPT chargers are being utilized in the system to monitor the net charge state of the battery.
 
