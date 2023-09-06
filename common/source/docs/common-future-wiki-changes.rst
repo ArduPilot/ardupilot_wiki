@@ -7,6 +7,11 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+Add DroneCAN ESC reversing capability
+=====================================
+
+see https://github.com/ArduPilot/ardupilot_wiki/pull/5398
+
 Expand the number of possible power/battery monitors up to 16
 =============================================================
 
