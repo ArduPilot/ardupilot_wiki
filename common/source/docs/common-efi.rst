@@ -22,6 +22,7 @@ The following units have been tested and are supported:
 - Lutan Serial
 - DroneCAN (adapted versions of the above serial units)
 - PiccoloCAN (`Currawong's ECU <https://www.currawong.aero/ecu/>`__ and `IntelliJect EFI <https://power4flight.com/uav-engine-products/uav-engine-control-units/intelliject-efi/>`__)
+- DLA EFI (`DLA232cc UAV Engine <https://www.austars-model.com/dla-232cc-uavuas-engine-optional-one-key-startauto-startergenerator_g17937.html>`__
 
 .. note:: In addition, ArduPilot allows the addition of new EFI controller drivers via :ref:`common-lua-scripts`. For examples, see the `HFE CAN EFI driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_HFE.md>`__ or the `SkyPower CAN driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_SkyPower.md>`__
 
@@ -62,6 +63,11 @@ For the example below, the unit will be assumed to be attached to the first CAN 
 - :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1 (first driver)
 - :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` = 4 (PiccoloCAN)
 - :ref:`CAN_D1_PC_ECU_ID<CAN_D1_PC_ECU_ID>`: Node ID to send throttle commands (Set to 0 to only receive telemetry)
+
+DLA Setup
+=========
+
+Driver is provided via a :ref:`LUA <common-lua-scripts>` script. See LUA script setup instructions and the `DLA EFI Lua md file <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_DLA.md>`__ for details.
 
 Using a Battery Monitor to Report Fuel Flow and Consumption
 ===========================================================
