@@ -7,6 +7,11 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+Expand the number of possible power/battery monitors up to 16
+=============================================================
+
+see https://github.com/ArduPilot/ardupilot_wiki/pull/5396
+
 on :ref:`common-blheli32-passthru` page add note for ESC-Configurator tool:
 ===========================================================================
 
