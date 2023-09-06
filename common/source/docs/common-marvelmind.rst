@@ -28,7 +28,7 @@ Marvelmind Settings
 - The hedge should be set to output Marvelmind Protocol at baud rate of 115200.
 
 Connecting to an autopilot
-=================================
+==========================
 
 - Set :ref:`EK3_SRC1_POSXY<EK3_SRC1_POSXY>` to 4 (Beacon)
 - Set :ref:`EK3_SRC1_VELXY<EK3_SRC1_VELXY>` to 0 (None)
