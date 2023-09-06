@@ -50,6 +50,7 @@ For the examples below, the values are shown for DroneCAN driver #1 using CAN Po
 -  :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` = 1 (DroneCAN protocol)
 -  :ref:`CAN_D1_UC_NODE<CAN_D1_UC_NODE>` - which is the node ID of the autopilot sending the commands to the ESCs so that there can be differentiation between multiple sources on the CAN bus. This is normally automatically set during discovery, but can be altered for advanced configurations (multiple sources on the bus).
 -  :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` - bitmask that determines which autopilot servo/motor output signals are sent to the DroneCAN ESCSs
+-  :ref:`CAN_D1_UC_ESC_RM<CAN_D1_UC_ESC_RV>` - bitmask that designates which autopilot servo/motor outputs have reversible DroneCAN ESCs, allowing both positive and negative control values to be sent.
 
 Logging and Reporting
 ---------------------
