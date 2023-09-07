@@ -58,7 +58,7 @@ There are several parameters that determine which autopilot servo/motor channels
 For the examples below, the values are shown for DroneCAN driver #1 using CAN Port #1
 
 -  :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1, which assigns driver1 to port1
--  :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` = 1 (DroneCAN protocol), 4 (PiccoloCAN protocol), or 8 (KDECAN protocol) depending on which protocl the ESC is  using.
+-  :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` = 1 (DroneCAN protocol), 4 (PiccoloCAN protocol), or 8 (KDECAN protocol) depending on which protocol the ESC is  using.
 -  :ref:`CAN_D1_UC_NODE<CAN_D1_UC_NODE>` - which is the node ID of the autopilot sending the commands to the ESCs so that there can be differentiation between multiple sources on the CAN bus. This is normally automatically set during discovery, but can be altered for advanced configurations (multiple sources on the bus).
 -  :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` - bitmask that determines which autopilot servo/motor output signals are sent to the DroneCAN ESCSs
 
