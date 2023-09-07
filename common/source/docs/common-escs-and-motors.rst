@@ -48,6 +48,7 @@ Protocols
     KDE CAN ESCs <common-kde-can-escs>
     DroneCAN ESCs <common-uavcan-escs>
     Currawong Velocity ESCs <common-velocity-can-escs>
+    Hobbywing DroneCAN ESCs <common-hobbywing-dronecan-esc>
     FETtec OneWire ESCs <common-fettec-onewire>
 
 
