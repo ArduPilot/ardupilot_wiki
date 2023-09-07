@@ -1,8 +1,11 @@
 .. _common-KakuteH7-Wing:
 
-=====================
-Holybro KakuteH7-WING
-=====================
+=======================
+Holybro KakuteH743-WING
+=======================
+
+.. image:: ../../../images/Kakute_H743-Wing.jpg
+    :target: ../_images/Kakute_H743-Wing.jpg
 
 
 Specifications
@@ -19,8 +22,9 @@ Specifications
 -  **Power**
     - Separate stacked power supply and power monitor board for isolation
     - 2S - 8S Lipo input voltage with voltage monitoring
-    - 9V/12V, 1.5A BEC for powering Video Transmitter
-    - 6V/7.2V, ?A BEC for servos
+    - 5V, 2A (3A Peak) BEC for Receiver, OSD, Camera, 2812 LED Strip, Buzzer, GPS, Air Speed Sensor, etc.
+    - 9V/12V, 2A (3A peak) BEC for powering Video Transmitter
+    - 6V/7.2V, 6A (8A Peak) BEC for servos
     - 3.3V, 1A BEC
 
 -  **Interfaces**
@@ -37,8 +41,8 @@ Specifications
 
 -  **Size and Dimensions**
 
-    - 45mm x 30mm x 18mm
-    - 2??g
+    - 45mm x 30mm x 13.5mm
+    - 28g (with USB Extender Board)
 
 Where to Buy
 ============
@@ -49,8 +53,8 @@ Where to Buy
 Pinouts
 ==============
 
-.. image:: ../../../images/KakuteH7-Wing_pinouts.png
-    :target: ../_images/KakuteH7-Wing_pinouts.png
+.. image:: ../../../images/Kakute_H743-Wing-Boards_layout-sq.jpg
+    :target: ../_images/Kakute_H743-Wing-Boards_layout-sq.jpg
 
 
 Default UART order
