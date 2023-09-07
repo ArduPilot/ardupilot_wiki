@@ -342,11 +342,9 @@ metal in the board that is causing the large offsets and this may not
 actually be a problem in which case you may wish to disable the compass
 check.
 
-**Check mag field** : the sensed magnetic field in the area is 35%
+**Check mag field** : This can result from failing two different checks. First, the sensed magnetic field in the area is 35%
 higher or  lower than the expected value.  The expected length is 530 so
-it's > 874 or < 185.  Magnetic field strength varies around the world
-but these wide limits mean it's more likely the :ref:`compass calibration <common-compass-calibration-in-mission-planner>` has not
-calculated good offsets and should be repeated.
+it's > 874 or < 185. Also, besides this rough check, when the vehicle's position has been obtained (GPS lock), another check against the field strength predicted using the internal World Magnetic Field database is done with much tighter limits. If you are failing this, either the :ref:`compass calibration <common-compass-calibration-in-mission-planner>` has not calculated good offsets and calibration should be repeated, or your vehicle is near a large metallic or magnetic disturbance and will need to be relocated.
 
 **Compasses inconsistent** : the internal and external compasses are
 pointing in different directions (off by >45 degrees).  This is normally
