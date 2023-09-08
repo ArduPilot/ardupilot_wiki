@@ -15,6 +15,24 @@ Features
  - 4 UARTs
  - 4 PWM outputs
 
+Barometer-less Operation
+========================
+
+This autopilot does not include a barometer sensor for altitude information and therefore has restricted modes of operation:
+
+Plane
+-----
+An altitude source must be provided for any operation. Attach a GPS and follow the instructions in :ref:`common-gps-for-alt`.
+
+Copter
+------
+Arming and operation in ACRO and STABILIZE modes is possible. It is also possible to arm and fly in ALTHOLD, but altitude hold performance relies on accelerometer/gyro exclusively and could be exceptionally poor, even resulting in a crash so is not recommended. As with Plane you can use a GPS for altitude data, but Rangefinders and Beacons can also be used and the ``EK3_SCRX_POSZ`` parameters set appropriately.
+
+Rover
+-----
+Rover does not require an altitude source and the ``EK3_SCRX_POSZ`` parameters can be set to "0"
+
+
 Where to Buy
 ============
 
