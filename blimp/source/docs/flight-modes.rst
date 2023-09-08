@@ -10,7 +10,7 @@ for Blimp.
 Overview
 ========
 
-Blimp has 4 built-in flight modes.
+Blimp has 5 built-in flight modes.
 
 Flight modes are controlled through the radio (via a :ref:`transmitter switch <common-rc-transmitter-flight-mode-configuration>`), or using commands from a ground station (GCS) or
 companion computer.
@@ -25,6 +25,7 @@ The table below shows for each flight mode whether it provides altitude or posit
     <tr><td>Manual</td><td>m</td><td>m</td><td>No</td><td>Manual output via motor/servo mixer.</td></tr>
     <tr><td>Velocity</td><td>s</td><td>s</td><td>Yes</td><td>Stick positions set a desired velocity. Mostly intended for tuning.</td></tr>
     <tr><td>Loiter</td><td>s</td><td>s</td><td>Yes</td><td>Holds altitude and position.</td></tr>
+    <tr><td>RTL</td><td>s</td><td>s</td><td>Yes</td><td>Returns to position/altitude set when first armed (Home) and sets 0deg YAW</td></tr>
     </table>
 
 .. raw:: html
