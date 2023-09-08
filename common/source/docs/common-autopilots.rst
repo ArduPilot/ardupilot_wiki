@@ -69,7 +69,7 @@ Open Hardware
     mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/m10021a.htm>
     mRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/m10022a.htm>
     OpenPilot Revolution <common-openpilot-revo-mini>
-    TauLabs Sparky2* <common-taulabs-sparky2>
+    TauLabs Sparky2 <common-taulabs-sparky2>
 
 \* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
@@ -88,10 +88,10 @@ Closed Hardware
     Foxeer Reaper F745-AIO V2 <common-foxeerf745aio>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     HeeWing F405/F405V2 <common-heewingf405>
-    Holybro Kakute F4* <common-holybro-kakutef4>
-    Holybro Kakute F4 Mini* <common-holybro-kakutef4-mini>
-    Holybro Kakute F7 AIO* <common-holybro-kakutef7aio>
-    Holybro Kakute F7 Mini* (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
+    Holybro Kakute F4 <common-holybro-kakutef4>
+    Holybro Kakute F4 Mini <common-holybro-kakutef4-mini>
+    Holybro Kakute F7 AIO <common-holybro-kakutef7aio>
+    Holybro Kakute F7 Mini (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
     Holybro Kakute H7 V1 <common-holybro-kakuteh7.rst>
     Holybro Kakute H7 V2 <common-holybro-kakuteh7-v2>
     Holybro Kakute H7 Mini v1.3 <common-holybro-kakuteh7mini-v13>
@@ -102,7 +102,7 @@ Closed Hardware
     IFlight Beast F7 45A AIO <common-iflight-beastf7AIO>
     IFlight BeastH7 AIO <common-iflight-beasth7AIO>
     IFlight Blitz Whoop F7 AIO <common-iflight-blitzf7AIO>
-    Mamba F405 MK2* <common-mamba405-mk2>
+    Mamba F405 MK2 <common-mamba405-mk2>
     Mamba MK4 F405Mini <common-mambaf405-mini>
     Mamba Basic F405 mk3 <common-mamba-basic-mk3>
     Mamba H743 v4 <common-mambaH743v4>
@@ -120,9 +120,9 @@ Closed Hardware
     mRo COntrolZero H7 OEM <https://store.mrobotics.io/product-p/m10059d.htm>
     mRo Pixracer Pro (H7) <common-pixracer-pro>
     mRo Nexus <common-mro-nexus>
-    Omnibus F4 AIO/Pro* <common-omnibusf4pro>
+    Omnibus F4 AIO/Pro <common-omnibusf4pro>
     OmnibusNanoV6 <common-omnibusnanov6>
-    Omnibus F7V2* <common-omnibusf7>
+    Omnibus F7V2 <common-omnibusf7>
     ThePeach FCC-K1 <common-thepeach-k1>
     ThePeach FCC-R1 <common-thepeach-r1>
 [site wiki="copter"]
@@ -142,12 +142,12 @@ Closed Hardware
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
 
-\* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
+.. note:: due to flash memory limitations, most F4 based, and some other boards, do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
 Linux Based Autopilots
 ======================
 
-These autopilots using an underlying Linux OS. Linux boards usually have more CPU power and memory many of the other boards listed on this page, but do not support DShot, Bi-Directional DShot, BLHeli ESC passthrough, many of the ArduPilot GPIO based features, and easy upload from the ground stations. They do allow experimentation and development of advanced control and navigation algorithms (see also :ref:`common-companion-computers`).
+These autopilots use an underlying Linux OS. Linux boards usually have more CPU power and memory many of the other boards listed on this page, but do not support DShot, Bi-Directional DShot, BLHeli ESC passthrough, many of the ArduPilot GPIO based features, and easy upload from the ground stations. They do allow experimentation and development of advanced control and navigation algorithms (see also :ref:`common-companion-computers`).
 
 .. toctree::
     :maxdepth: 1
@@ -176,7 +176,7 @@ Some boards have features removed in order to fit the firmware into their memory
 
 Discontinued Boards
 ===================
-The following boards are no longer produced, however documentation is still available in the wiki or online, and recent builds are still expected to work.  These boards are not recommended for new projects.
+The following boards are no longer produced, however, documentation is still available in the wiki or online, and recent builds are still expected to work.  These boards are not recommended for new projects.
 
 .. toctree::
     :maxdepth: 1
