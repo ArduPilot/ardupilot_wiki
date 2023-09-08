@@ -12,29 +12,23 @@ motor health.
 ..  youtube:: LnUmYgAINBc
     :width: 100%
 
-List of CAN ESCs
-================
+List of DroneCAN ESCs
+=====================
 
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 + Name                                                                                          + Avail                                                                                      + Ever Worked                                                                                                     +
 +===============================================================================================+============================================================================================+=================================================================================================================+
++ :ref:`Currawong Velocity ESC <common-velocity-can-escs>`                                      + Yes                                                                                        + Yes                                                                                                             +
++-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 + :ref:`Hobbywing CAN ESCs <common-hobbywing-dronecan-esc>`                                     + Yes                                                                                        + Yes                                                                                                             +
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-+ `Zubax Orel 20 <https://files.zubax.com/products/io.px4.sapog/Zubax_Orel_20_Datasheet.pdf>`__ + `Yes <https://titaneliteinc.com/titanoc/index.php?route=product/product&product_id=995>`__ + Yes                                                                                                             +
-+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-+ `Zubax Myxa <https://zubax.com/products/myxa/>`__                                             + Yes                                                                                        + Yes                                                                                                             +
++ `Holybro Kotleta20 <https://holybro.com/products/kotleta20>`__                                + Yes                                                                                        + Yes                                                                                                             +
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 + `Zubax Mitochondrik <https://zubax.com/products/mitochondrik>`__                              + Yes                                                                                        + Yes                                                                                                             +
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-+ `Holybro Kotleta20 <http://www.holybro.com/product/kotleta20/>`__                             + Yes                                                                                        + Yes                                                                                                             +
++ `Zubax Myxa <https://zubax.com/products/myxa/>`__                                             + Yes                                                                                        + Yes                                                                                                             +
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-+ `AutoQuad ESC32 <http://autoquad.org/esc32/>`__                                               + No                                                                                         + No                                                                                                              +
-+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-+ `VESC <http://vedder.se/2015/01/vesc-open-source-esc/>`__                                     + `Yes <https://www.ollinboardcompany.com/product/vedder-s-speed-controller>`__              + No (`proposal <https://discuss.ardupilot.org/t/next-gen-esc-validation-and-integration-vesc-declined/12534>`__) +
-+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-+ `HiEnd Can Bus ESC <https://www.aerolab.de/esc-regler/hiend-can-bus-esc/>`__                  + Yes                                                                                        + ?                                                                                                               +
-+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-+ :ref:`Velocity ESC <common-velocity-can-escs>`                                                + Yes                                                                                        + Yes                                                                                                             +
++ `Zubax Orel 20 <https://files.zubax.com/products/io.px4.sapog/Zubax_Orel_20_Datasheet.pdf>`__ + `Yes <https://titaneliteinc.com/titanoc/index.php?route=product/product&product_id=995>`__ + Yes                                                                                                             +
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 Connecting to the Flight Controller
@@ -51,7 +45,7 @@ into one of its 4-pin DroneCAN ports.
 
 An FTDI Cable connection to the ESC's debug port is only required for set-up if the ESC does not present its parameters via DroneCAN. In that case, contact the manufacturer for detailed instructions.
 
-Preferably, the ESC can be configured via CAN bus using the `DroneCAN GUI Tool <common-uavcan-gui>`.
+Preferably, the ESC can be configured via CAN bus using the :ref:`DroneCAN GUI Tool <common-uavcan-gui>`.
 
 Autopilot Setup
 ===============
@@ -60,7 +54,7 @@ There are several parameters that determine which autopilot servo/motor channels
 For the examples below, the values are shown for DroneCAN driver #1 using CAN Port #1
 
 -  :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1, which assigns driver1 to port1
--  :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` = 1 (DroneCAN protocol), 4 (PiccoloCAN protocol), or 8 (KDECAN protocol) depending on which protocol the ESC is  using.
+-  :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` = 1 (DroneCAN protocol)
 -  :ref:`CAN_D1_UC_NODE<CAN_D1_UC_NODE>` - which is the node ID of the autopilot sending the commands to the ESCs so that there can be differentiation between multiple sources on the CAN bus. This is normally automatically set during discovery, but can be altered for advanced configurations (multiple sources on the bus).
 -  :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` - bitmask that determines which autopilot servo/motor output signals are sent to the DroneCAN ESCSs
 
