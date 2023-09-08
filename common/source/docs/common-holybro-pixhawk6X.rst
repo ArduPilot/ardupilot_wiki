@@ -126,7 +126,9 @@ connector. They are intended for use with the I2C power monitor supplied with th
 
 - :ref:`BATT_MONITOR<BATT_MONITOR>` = 21
 - :ref:`BATT_I2C_BUS<BATT_I2C_BUS__AP_BattMonitor_INA2xx>` = 1
-- :ref:`BATT_I2C_ADDR<BATT_I2C_ADDR__AP_BattMonitor_INA2xx>` = 65
+- :ref:`BATT_I2C_ADDR<BATT_I2C_ADDR__AP_BattMonitor_INA2xx>` = 65 (For Low voltage (6S) Digital Power Module),= 69 (For High Voltage (12S/14S) Digital Power Module)
+
+.. note:: In Ardupilot 4.4 and later, the BATT_I2C_ADDR for Pixhawk 6X is default to be 0. This will perform an auto detection of the I2C address, and you do not need to change BATT_I2C_ADDR parameter.
 
 Compass
 =======
