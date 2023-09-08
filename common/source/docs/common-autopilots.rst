@@ -125,6 +125,7 @@ Closed Hardware
     Omnibus F7V2* <common-omnibusf7>
     ThePeach FCC-K1 <common-thepeach-k1>
     ThePeach FCC-R1 <common-thepeach-r1>
+    YJUAV A6SE <common-yjuav-a6se>
 [site wiki="copter"]
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
 [/site]
