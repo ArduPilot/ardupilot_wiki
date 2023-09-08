@@ -19,7 +19,7 @@ Specifications
 -  **Sensors**
 
    -  InvenSense MPU6000 IMU (accel, gyro) 
-   -  DSP310 barometer
+   -  DSP310 barometer (not in V2 version)
    -  Voltage & 300A Current sensor
 
 
@@ -49,7 +49,23 @@ Specifications
 
 .. warning:: This board has no compass and no way to connect an external compass. Applications requiring accurate heading information must rely on ArduPilots :ref:`common-compassless` operation.
 
-.. warning:: This autopilot does not have a barometer. An external barometer can be added, or operation with an alternate altitude sensor, such as GPS for outdoor use or rangefinder for indoor applications is supported (see :ref:`EK3_SRC1_POSZ<EK3_SRC1_POSZ>`), with the following caveats. In Plane, if GPS is lost, then the user should switch to MANUAL mode immediately to avoid a crash. In Copter, operation is allowed using GPS, but not recommended, due to the imprecision in altitude hold modes. Bear in mind if GPS fails and the vehicle is using it for altitude information, a crash can eventually result due to lack of accurate altitude information.See :ref:`common-gps-for-alt` for more information.
+Barometer-less Operation
+========================
+
+Depending on version, this autopilot may not include a barometer sensor for altitude information and therefore has restricted modes of operation:
+
+Plane
+-----
+An altitude source must be provided for any operation. Attach a GPS and follow the instructions in :ref:`common-gps-for-alt`.
+
+Copter
+------
+Arming and operation in ACRO and STABILIZE modes is possible. It is also possible to arm and fly in ALTHOLD, but altitude hold performance relies on accelerometer/gyro exclusively and could be exceptionally poor, even resulting in a crash so is not recommended. As with Plane you can use a GPS for altitude data, but Rangefinders and Beacons can also be used and the ``EK3_SCRX_POSZ`` parameters set appropriately.
+
+Rover
+-----
+Rover does not require an altitude source and the ``EK3_SCRX_POSZ`` parameters can be set to "0"
+
 
 Where to Buy
 ============
