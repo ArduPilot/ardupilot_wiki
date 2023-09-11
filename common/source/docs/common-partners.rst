@@ -566,163 +566,193 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://visionaerial.com/
 
-      - .. image:: ../../../images/supporters/supporters_bluemark.png
-            :width: 250px
-            :align: center
-            :target:  https://bluemark.io/
-
-    *
       - .. image:: ../../../images/supporters/supporters_skystars.jpg
             :width: 250px
             :align: center
             :target:  http://skystars-rc.com/index.html
 
+    *
       - .. image:: ../../../images/supporters/supporters_cdspace.png
             :width: 250px
             :align: center
             :target:  https://cdspace.in/
 
-    *
       - .. image:: ../../../images/supporters/supporters_simnet.png
             :width: 250px
             :align: center
             :target:  https://www.simnet.aero/
 
+    *
       - .. image:: ../../../images/supporters/supporters_striekair.jpg
             :width: 250px
             :align: center
             :target:  https://www.striekair.com/
 
-    *
       - .. image:: ../../../images/supporters/supporters_uavlas.png
             :width: 250px
             :align: center
             :target:  http://www.uavlas.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_inspiredflight.jpg
             :width: 250px
             :align: center
             :target:  https://inspiredflight.com/
 
-    *
       - .. image:: ../../../images/supporters/supporters_ascent.png
             :width: 250px
             :align: center
             :target:  https://ascentaerosystems.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_aerialvision.png
             :width: 250px
             :align: center
             :target:  http://www.aerial-vision.com.au/
 
-    *
       - .. image:: ../../../images/supporters/supporters_SYPAQ.png
             :width: 250px
             :align: center
             :target:  https://www.sypaq.com.au/
 
+    *
       - .. image:: ../../../images/supporters/supporters_dynamtictech.png
             :width: 250px
             :align: center
             :target:  https://dynamatics.com/
 
-    *
       - .. image:: ../../../images/supporters/supporters_woot_tech.png
             :width: 250px
             :align: center
             :target:  https://woot-tech.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_superwake.png
             :width: 250px
             :align: center
             :target:  https://www.superwake.ca/
 
-    *
       - .. image:: ../../../images/supporters/supporters_cavok.png
             :width: 250px
             :align: center
             :target:  http://www.cavok-uas.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_pegasus_logo.png
             :width: 250px
             :align: center
             :target:  https://pegasusimagery.ca/
 
-    *
       - .. image:: ../../../images/supporters/supporters_skyhawk_logo.png
             :width: 250px
             :align: center
             :target:  https://www.skyhawkaerospace.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_triaddrones.png
             :width: 250px
             :align: center
             :target:  https://www.triaddrones.com/
 
-    *
       - .. image:: ../../../images/supporters/supporter_sdmodel.jpg
             :width: 250px
             :align: center
             :target:  https://www.sdmodel.com.tw/
 
+    *
       - .. image:: ../../../images/supporters/supporters_botlab.png
             :width: 250px
             :align: center
             :target:  https://botlabdynamics.com/
 
-    *
       - .. image:: ../../../images/supporters/supporters_adti.jpg
             :width: 250px
             :align: center
             :target:  https://www.adti.camera/
 
+    *
       - .. image:: ../../../images/supporters/supporters_autrik-logo.png
             :width: 250px
             :align: center
             :target:  https://www.autrik.com/
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_nooploop.png
             :width: 250px
             :align: center
             :target:  https://www.nooploop.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_scropion.png
             :width: 250px
             :align: center
             :target:  https://www.scorpionsystem.com/
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_ad.png
             :width: 250px
             :align: center
             :target:  http://www.adsystem.kr/
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_proto.png
             :width: 250px
             :align: center
             :target:  https://www.proto-systems.com/
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_rgblab.png
             :width: 250px
             :align: center
             :target:  https://www.rgblab.kr/
 
+    *
       - .. image:: ../../../images/supporters/supporters_SIYI_logo.jpg
             :width: 250px
             :align: center
             :target:  https://shop.siyi.biz/
 
-    *
       - .. image:: ../../../images/supporters/supporters_jacksonuav_logo.png
             :width: 250px
             :align: center
             :target:  http://www.jacksonuas.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_yjuav.jpg
             :width: 250px
             :align: center
             :target:  http://www.yjuav.net/
+
+      - .. image:: ../../../images/supporters/Supporters_Air_Hub_Logo.png
+            :width: 250px
+            :align: center
+            :target:  https://www.swinburne.edu.au/research/platforms-initiatives/air-hub/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_ROSOR_Logo.png
+            :width: 250px
+            :align: center
+            :target:  https://www.rosor.ca/
+
+      - .. image:: ../../../images/supporters/supporters_radical_logo.png
+            :width: 250px
+            :align: center
+            :target:  https://www.radicalaero.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_AS_logo.jpg
+            :width: 250px
+            :align: center
+            :target:  nan
+
+      - .. image:: ../../../images/supporters/supporters_flyfocus_logo.png
+            :width: 250px
+            :align: center
+            :target:  https://flyfocus.pl/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_umineco_logo.png
+            :width: 250px
+            :align: center
+            :target:  https://www.umineco.company/
+
+      -
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
