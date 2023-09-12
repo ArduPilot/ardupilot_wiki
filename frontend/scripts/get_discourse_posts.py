@@ -46,10 +46,11 @@ class BlogPostsFetcher:
 
     @staticmethod
     def get_arguments() -> Any:
-        parser = argparse.ArgumentParser(description="python3 get_discourse_posts.py [Number of posts to retrieve]")
+        parser = argparse.ArgumentParser(description="python3 get_discourse_posts.py")
         parser.add_argument("--n_posts", dest='n_posts', default="8", help="Number of posts to retrieve")
         parser.add_argument("--verbose", dest='verbose', action='store_false', default=True, help="show debugging output")
-        return parser.parse_args()
+        args, unknown = parser.parse_known_args()
+        return args
 
     @staticmethod
     def execute_http_request_json(url: str) -> Any:
