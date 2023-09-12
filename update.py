@@ -25,7 +25,7 @@ Build notes:
     using the "site" shortcode:
     [site wiki="plane,rover"]conditional content[/site]
 
-Parameters files are fetched from autotest using a Wget
+Parameters files are fetched from autotest using requests
 
 """
 from __future__ import print_function, unicode_literals
@@ -46,6 +46,11 @@ import shutil
 import subprocess
 import sys
 import time
+import requests
+from urllib.parse import urlparse
+from concurrent.futures import ThreadPoolExecutor
+from typing import Optional, Dict, List
+
 
 import rst_table
 
@@ -134,64 +139,98 @@ def remove_if_exists(filepath):
             raise e
 
 
-def fetch_url(fetchurl):
-    '''fetches content at url and puts it in a file corresponding to the filename in the URL'''
-    if platform.system() == "Windows":
-        subprocess.check_call(["powershell.exe", "Start-BitsTransfer", "-Source", fetchurl])
-    else:
-        subprocess.check_call(["wget", fetchurl])
+def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
+    fetch_url(fetchurl, fpath=new_name, verbose=False)
+    # move in new file
+    if os.path.exists(target_file):
+        os.unlink(target_file)
+        os.rename(new_name, target_file)
 
 
-def fetchparameters(site=None, cache=None):
-    """Fetches the parameters for all the sites from the test server and
+def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) -> None:
+    """Fetches content at url and puts it in a file corresponding to the filename in the URL"""
+    print(f"Fetching {fetchurl}")
+
+    if verbose:
+        total_size = get_request_file_size(fetchurl)
+
+    response = requests.get(fetchurl, stream=True)
+    response.raise_for_status()
+
+    filename = fpath or os.path.basename(urlparse(fetchurl).path)
+
+    downloaded_size = 0
+    chunk_size = 10 * 1024
+
+    with open(filename, 'wb') as out_file:
+        if verbose:
+            print(f"Completed : 0%", end='')
+        completed_last = 0
+        for chunk in response.iter_content(chunk_size=chunk_size):
+            out_file.write(chunk)
+            downloaded_size += len(chunk)
+
+            # progress bar
+            if verbose:
+                completed = downloaded_size * 100 // total_size
+                if completed - completed_last > 10 or completed == 100:
+                    print(f"..{completed}%", end='')
+                    completed_last = completed
+        if verbose:
+            print()  # Newline to correct the console cursor position
+
+
+def get_request_file_size(url: str) -> int:
+    headers = {'Accept-Encoding': 'identity'}  # needed as request use compression by default
+    hresponse = requests.head(url, headers=headers)
+
+    if 'Content-Length' in hresponse.headers:
+        size = int(hresponse.headers['Content-Length'])
+        return size
+    return 0
+
+
+def fetchparameters(site: Optional[str] = None, cache: Optional[str] = None) -> None:
+    dataname = "Parameters"
+    fetch_ardupilot_generated_data(PARAMETER_SITE, f'https://autotest.ardupilot.org/{dataname}', f'{dataname}.rst',
+                                   f'{dataname.lower()}.rst', site, cache)
+
+
+def fetchlogmessages(site: Optional[str] = None, cache: Optional[str] = None) -> None:
+    dataname = "LogMessages"
+    fetch_ardupilot_generated_data(LOGMESSAGE_SITE, f'https://autotest.ardupilot.org/{dataname}', f'{dataname}.rst',
+                                   f'{dataname.lower()}.rst', site, cache)
+
+
+def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: str, document_name: str,
+                                   site: Optional[str] = None, cache: Optional[str] = None) -> None:
+    """Fetches the data for all the sites from the test server and
     copies them to the correct location.
 
     This is always run as part of a build (i.e. no checking to see if
-    parameters have changed.)
+    parameters or logmessage have changed.)
 
     """
-    # remove any parameters files in root
-    remove_if_exists('Parameters.rst')
+    urls: List[str] = []
+    targetfiles: List[str] = []
+    names: List[str] = []
 
-    for key, value in PARAMETER_SITE.items():
-        fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
-        targetfile = './%s/source/docs/parameters.rst' % key
+    for key, value in site_mapping.items():
+        fetchurl = f'{base_url}/{value}/{sub_url}'
+        targetfile = f'./{key}/source/docs/{document_name}'
         if key == 'AP_Periph':
-            targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
+            targetfile = f'./dev/source/docs/AP_Periph-{sub_url}'
         if cache:
             if not os.path.exists(targetfile):
-                raise Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,))
+                raise Exception(f"Asked to use cached files, but {targetfile} does not exist")
             continue
         if site == key or site is None:
-            fetch_url(fetchurl)
+            urls.append(fetchurl)
+            targetfiles.append(targetfile)
+            names.append(f"{value}_{document_name}")
 
-            # move in new file
-            if os.path.exists(targetfile):
-                os.unlink(targetfile)
-            os.rename('Parameters.rst', targetfile)
-
-
-def fetchlogmessages(site=None, cache=None):
-    """
-    Fetches the parameters for all the sites from the autotest server and
-    copies them to the correct location.
-
-    This is always run as part of a build (i.e. no checking to see if
-    logmessages have changed.)
-    """
-    for key, value in LOGMESSAGE_SITE.items():
-        fetchurl = 'https://autotest.ardupilot.org/LogMessages/%s/LogMessages.rst' % value
-        targetfile = './%s/source/docs/logmessages.rst' % key
-        if cache:
-            if not os.path.exists(targetfile):
-                raise Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,))
-            continue
-        if site == key or site is None:
-            fetch_url(fetchurl)
-            # move in new file
-            if os.path.exists(targetfile):
-                os.unlink(targetfile)
-            os.rename('LogMessages.rst', targetfile)
+    with ThreadPoolExecutor() as executor:
+        executor.map(fetch_and_rename, urls, targetfiles, names, timeout=5*60)
 
 
 def build_one(wiki, fast):
@@ -514,9 +553,8 @@ def fetch_versioned_parameters(site=None):
 
         if key == 'AP_Periph': # workaround until create a versioning for AP_Periph in firmware server
             fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
-            subprocess.check_call(["wget", fetchurl])
             targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
-            os.rename('Parameters.rst', targetfile)
+            fetch_and_rename(fetchurl, targetfile, 'Parameters.rst')
 
         else: # regular versining
 
