@@ -99,15 +99,15 @@ With this option, :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` must be set to "23",
 
 - PPM is not supported.
 
-- DSM/SRXL connects to the RX2  pin, but SBUS would still be connected to SBUS.
+- SBUS/DSM/SRXL connects to the RX6  pin.
 
-- FPort requires connection to TX2 and RX2 via a bi-directional inverter. See :ref:`common-FPort-receivers`.
+- FPort requires connection to TX6 and RX6 via a bi-directional inverter. See :ref:`common-FPort-receivers`.
 
-- CRSF also requires a TX2 connection, in addition to RX2, and automatically provides telemetry.
+- CRSF also requires a TX6 connection, in addition to RX6, and automatically provides telemetry.
 
-- SRXL2 requires a connection to TX2 and automatically provides telemetry.  Set :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` to "4".
+- SRXL2 requires a connection to TX6 and automatically provides telemetry.  Set :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` to "4".
 
-Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM (SBUS requires external inversion on other UARTs). See :ref:`common-rc-systems` for details.
+Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
 
 USB Power
 =========
