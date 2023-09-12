@@ -55,6 +55,8 @@ from datetime import datetime
 # without the following import on old versions of Python:
 from distutils import dir_util  # noqa: F401
 
+from frontend.scripts import get_discourse_posts
+
 if sys.version_info < (3, 8):
     print("Minimum python version is 3.8")
     sys.exit(1)
@@ -740,16 +742,13 @@ def put_cached_parameters_files_in_sites(site=None):
                 pass
 
 
-def update_frotend_json():
+def update_frontend_json():
     """
     Frontend get posts from Forum server and insert it into JSON
     """
     debug('Running script to get last posts from forum server.')
     try:
-        if platform.system() == "Windows":
-            subprocess.check_call(["python", "./frontend/scripts/get_discourse_posts.py"])
-        else:
-            subprocess.check_call(["python3", "./frontend/scripts/get_discourse_posts.py"])
+        get_discourse_posts.main()
     except Exception as e:
         error(e)
         pass
@@ -761,7 +760,7 @@ def copy_static_html_sites(site, destdir):
     """
     if (site in ['frontend', None]) and (destdir is not None):
         debug('Copying static sites (only frontend so far).')
-        update_frotend_json()
+        update_frontend_json()
         folder = 'frontend'
         try:
             site_folder = os.getcwd() + "/" + folder
