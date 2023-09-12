@@ -110,7 +110,7 @@ VERBOSE = False
 def debug(str_to_print):
     """Debug output if verbose is set."""
     if VERBOSE:
-        print("[update.py] " + str_to_print)
+        print(f"[update.py]: {str_to_print}")
 
 
 def error(str_to_print):
@@ -196,7 +196,7 @@ def fetchlogmessages(site=None, cache=None):
 
 def build_one(wiki, fast):
     '''build one wiki'''
-    debug('Using make for sphinx: %s' % wiki)
+    print(f'Using make for sphinx: {wiki}')
     if platform.system() == "Windows":
         # This will fail if there's no folder to clean, so no check_call here
         if not fast:
@@ -221,7 +221,7 @@ def sphinx_make(site, parallel, fast):
         done.add(wiki)
         if site == 'common' or site == 'frontend':
             continue
-        if wiki == 'frontend'    :
+        if wiki == 'frontend':
             continue
         if site is not None and not site == wiki:
             continue
@@ -297,9 +297,9 @@ def copy_build(site, destdir):
             shutil.move(sourcedir, html_moved_dir)
             # Rename move! (single move to html/* failed)
             shutil.move(html_moved_dir, targetdir)
-            debug("Moved to %s" % targetdir)
-        except Exception:  # FIXME: narrow exception type
-            error("FAIL moving output to %s" % targetdir)
+            debug(f"Moved to {targetdir}")
+        except shutil.Error:
+            error(f"FAIL moving output to {targetdir}")
 
         # copy jquery
         os.makedirs(os.path.join(targetdir, '_static'), exist_ok=True)
@@ -359,6 +359,13 @@ def delete_old_wiki_backups(folder, n_to_keep):
         error('Error on deleting some previous wiki backup folders: %s' % e)
 
 
+def create_dir_if_not_exists(dir_path: str) -> None:
+    try:
+        os.mkdir(dir_path)
+    except FileExistsError:  # Catching specific exception
+        pass
+
+
 def generate_copy_dict(start_dir=COMMON_DIR):
     """
     This creates a dict which indexes copy targets for all common docs.
@@ -376,25 +383,10 @@ def generate_copy_dict(start_dir=COMMON_DIR):
 
     # Create destination folders that might be needed (if don't exist)
     for wiki in ALL_WIKIS:
-        try:
-            os.mkdir(wiki)
-        except Exception:  # FIXME: narrow exception type
-            pass
-
-        try:
-            os.mkdir('%s/source' % wiki)
-        except Exception:  # FIXME: narrow exception type
-            pass
-
-        try:
-            os.mkdir('%s/source/docs' % wiki)
-        except Exception:  # FIXME: narrow exception type
-            pass
-
-        try:
-            os.mkdir('%s/source/_static' % wiki)
-        except Exception:  # FIXME: narrow exception type
-            pass
+        create_dir_if_not_exists(wiki)
+        create_dir_if_not_exists(f'{wiki}/source')
+        create_dir_if_not_exists(f'{wiki}/source/docs')
+        create_dir_if_not_exists(f'{wiki}/source/_static')
 
     for root, dirs, files in os.walk(start_dir):
         for file in files:
@@ -489,46 +481,11 @@ def strip_content(content, site):
 
 def logmatch_code(matchobj, prefix):
 
-    try:
-        print("%s m0: %s" % (prefix, matchobj.group(0)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m0" % prefix)
-
-    try:
-        print("%s m1: %s" % (prefix, matchobj.group(1)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m1" % prefix)
-
-    try:
-        print("%s m2: %s" % (prefix, matchobj.group(2)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m1" % prefix)
-
-    try:
-        print("%s m3: %s" % (prefix, matchobj.group(3)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m3" % prefix)
-
-    try:
-        print("%s m4: %s" % (prefix, matchobj.group(4)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m4" % prefix)
-    try:
-        print("%s m5: %s" % (prefix, matchobj.group(5)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m5" % prefix)
-    try:
-        print("%s m6: %s" % (prefix, matchobj.group(6)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m6" % prefix)
-    try:
-        print("%s m7: %s" % (prefix, matchobj.group(7)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except 7" % prefix)
-    try:
-        print("%s m8: %s" % (prefix, matchobj.group(8)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m8" % prefix)
+    for i in range(9):
+        try:
+            print("%s m%d: %s" % (prefix, i, matchobj.group(i)))
+        except IndexError:  # The object has less groups than expected
+            print("%s: except m%d" % (prefix, i))
 
 
 def is_the_same_file(file1, file2):
