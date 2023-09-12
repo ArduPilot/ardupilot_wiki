@@ -44,7 +44,7 @@ Now update all dependencies:
     cd ~/ros2_ws
     sudo apt update
     rosdep update
-    rosdep install --rosdistro ${ROS_DISTRO} --from-paths src
+    rosdep install --rosdistro ${ROS_DISTRO} --from-paths src -i
 
 And finally, build your workspace:
 
