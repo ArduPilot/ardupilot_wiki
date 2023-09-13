@@ -29,6 +29,22 @@ Connect to the autopilot with a ground station and set the following parameters 
 - Set :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` to 1 (DroneCAN)
 - Set :ref:`BATT_MONITOR<BATT_MONITOR>` to 8 (DroneCAN)
 
+Connecting Multiple Batteries
+=============================
+
+If more than one Tattu battery is connected, use MP's DroneCAN, MAVLink-CAN1 feature or the :ref:`DroneCAN GUI<common-uavcan-gui>` to set each battery's "battery.id" field to a unique number (e.g. 1 for the 1st battery, 2 for the 2nd battery).
+
+.. image:: ../../../images/tattu-dronecan-battery-multiple.png
+   :target: ../_images/tattu-dronecan-battery-multiple.png
+   :width: 450px
+
+On the autopilot, set the appropriate battery serial number parameter to match the above battery.id values
+
+- Set :ref:`BATT_SERIAL_NUM<BATT_SERIAL_NUM>` to 1
+- Set :ref:`BATT2_SERIAL_NUM<BATT2_SERIAL_NUM>` to 2
+
+To more easily see the average voltage and total current of multiple batteries a :ref:`"Sum of Selected Monitors" battery monitor <common-power-module-configuration-in-mission-planner>` can be configured.
+
 Testing
 =======
 
