@@ -46,7 +46,7 @@ of functionality available.
    <tr><td>GUIDED</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Circles user defined point from GCS</td></tr>
    <tr><td>Return To Launch (RTL)</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Returns to and circles home or rally point</td></tr>
    <tr><td>LAND (AUTO)</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Final part of automatic mission for touchdown</td></tr>
-   <tr><td>THERMAL</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Mode entered to search for thermal lift by SOARING feature or manually if lift is encountered. See :ref:`thermal-mode`</td></tr>
+   <tr><td>THERMAL</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Mode entered to search for thermal lift by SOARING feature or manually if lift is encountered. See :ref:`THERMAL Mode <thermal-mode>`</td></tr>
    </table>
    
    
