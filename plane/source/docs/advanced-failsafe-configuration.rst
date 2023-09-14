@@ -196,8 +196,8 @@ The AFS system monitors the health of the link between your ground
 station and your aircraft. It does this by looking for HEARTBEAT MAVLink
 messages coming from the ground station.
 
-If the aircraft does not receive a HEARTBEAT message for a period of 10
-seconds then it enters a GCS failsafe state. It then looks for a
+If the aircraft does not receive a HEARTBEAT message for a period of AFS_GCS_TIMEOUT
+seconds then it enters a GCS failsafe state. (The default is 10 seconds.) It then looks for a
 :ref:`AFS_WP_COMMS<AFS_WP_COMMS>` parameter, and if that is non-zero it will change the
 current target waypoint to the one given in :ref:`AFS_WP_COMMS<AFS_WP_COMMS>`. You should
 set up a section of your mission with whatever actions you want to take
