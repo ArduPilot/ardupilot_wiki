@@ -37,6 +37,7 @@ The top image shows how to connect the gimbal's CANL, CANH and GND pins to one o
 Connect to the autopilot with a ground station and set the following parameters and then reboot the autopilot.  The params below assume the autopilot's CAN1 port is used,
 
 - :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` to 1 (DroneCAN)
+- :ref:`CAN_D1_UC_NODE <CAN_D1_UC_NODE>` to 1
 - :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` to 1 (First driver)
 - :ref:`MNT1_TYPE <MNT1_TYPE>` to 10 (Xacti) and reboot the autopilot
 - :ref:`MNT1_PITCH_MIN <MNT1_PITCH_MIN>` to -90
@@ -53,6 +54,10 @@ Connect to the autopilot with a ground station and set the following parameters 
   - :ref:`RC9_OPTION <RC9_OPTION>` = 166 ("Camera Record Video") to start/stop recording of video
   - :ref:`RC9_OPTION <RC9_OPTION>` = 168 ("Camera Manual Focus") to adjust focus in and out
   - :ref:`RC9_OPTION <RC9_OPTION>` = 169 ("Camera Auto Focus") to trigger auto focus
+
+.. warning::
+
+   When the autopilot first detects the Xacti gimbal the :ref:`MNT1_DEVID<MNT1_DEVID>` will be set to a unique number to identify the gimbal.  If the gimbal is moved to another CAN port it may be necessary to manually set :ref:`MNT1_DEVID<MNT1_DEVID>` to zero and reboot the autopilot in order for the gimbal to be found.
 
 Control and Testing
 -------------------
