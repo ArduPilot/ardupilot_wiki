@@ -113,3 +113,5 @@ Allowing actuators to move
    Remove/disable all props or other dangerous actuators before continuing.  Be prepared to cut power to servos should it become evident control surfaces are straining.  Keep clear of entrapment or other hazards.
 
 Servo/Motor outputs can be permitted to operate by setting the :ref:`SIM_OH_MASK<SIM_OH_MASK>` parameter.  The bits correspond to the servo output channels, so to allow the first 4 channels to move set :ref:`SIM_OH_MASK<SIM_OH_MASK>` to 15.
+
+Relay outputs can be permitted to operate by setting the :ref:`SIM_OH_RELAY_MASK<SIM_OH_RELAY_MASK>` parameter. The bits correspond to the relays, so to allow the first 2 relays to actuate set :ref:`SIM_OH_MASK<SIM_OH_MASK>` to 3.
