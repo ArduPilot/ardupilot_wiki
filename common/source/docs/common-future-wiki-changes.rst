@@ -7,6 +7,11 @@ Will be in future 4.5 release
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+Add TSYS03 temp sensor
+======================
+
+see https://github.com/ArduPilot/ardupilot_wiki/pull/5427
+
 Add note about new Mag Field pre-arm check
 ==========================================
 
