@@ -15,8 +15,7 @@ Key Parameters
 -  To enable QuadPlane functionality you need to set the :ref:`Q_ENABLE<Q_ENABLE>`
    parameter to 1 and then refresh the parameter list
 -  The :ref:`Q_M_PWM_MIN<Q_M_PWM_MIN>` and :ref:`Q_M_PWM_MAX<Q_M_PWM_MAX>` parameters used to set the
-   PWM range of the quad motors (this allows them to be different from
-   the range for the forward motor). These need to be set to the range
+   PWM range of the VTOL motors (MOTORx) and the SERVOx_MIN/MAX for the outputs driving these motors is ignored. These need to be set to the range
    your ESCs expect.
 -  The most critical tuning parameters are :ref:`Q_A_RAT_RLL_P<Q_A_RAT_RLL_P>` and
    :ref:`Q_A_RAT_PIT_P<Q_A_RAT_PIT_P>`. These default to 0.25 but you may

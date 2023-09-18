@@ -44,8 +44,8 @@ To set the timespan along the horizontal axis (in seconds):
 .. code:: bash
 
     graph timespan 20
- 
- To set the tickresolution along the horizontal axis (1/<number of ticks>):
+
+To set the tickresolution along the horizontal axis (1/<number of ticks>):
 
 .. code:: bash
 

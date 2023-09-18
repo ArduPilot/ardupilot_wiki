@@ -114,4 +114,4 @@ Allowing actuators to move
 
 Servo/Motor outputs can be permitted to operate by setting the :ref:`SIM_OH_MASK<SIM_OH_MASK>` parameter.  The bits correspond to the servo output channels, so to allow the first 4 channels to move set :ref:`SIM_OH_MASK<SIM_OH_MASK>` to 15.
 
-Relay outputs can be permitted to operate by setting the :ref:`SIM_OH_RELAY_MASK<SIM_OH_RELAY_MASK>` parameter. The bits correspond to the relays, so to allow the first 2 relays to actuate set :ref:`SIM_OH_MASK<SIM_OH_MASK>` to 3.
+Relay outputs can be permitted to operate by setting the :ref:`SIM_OH_RELAY_MSK<SIM_OH_RELAY_MSK>` parameter. The bits correspond to the relays, so to allow the first 2 relays to actuate set :ref:`SIM_OH_MSK<SIM_OH_MSK>` to 3.
