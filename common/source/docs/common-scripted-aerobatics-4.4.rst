@@ -193,6 +193,19 @@ Normal ArduPilot Autotune provides a safe, stable PID tune for most vehicles. As
     
    Aerobatic Tuning <common-aerobatics-tuning>
 
+Analyzing Performance
+=====================
+
+Analyzing the resulting execution of the trick(s) or schedules can easily be done by using the `Plot3d tool <http://plot3d.ardupilot.org>`__ which displays the programmed path and the actual executed path graphically. The first part of the timeline will trace the programmed path, while the second half traces the actual. Both are overlaid at the start to show path errors. The lua script will log additional items while executing the trick(s) to allow this tool to display this information.
+
+To use this tool, load your flight log file using the **Load BIN** button, select "manual" site selection and **Copy Origin** to set the view to you home location.
+
+.. image:: ../../../images/plot3d.png
+    :target: ../_images/plot3d.png
+
+Overlaid on the above image is the second tool: using the ``AERT.Perr`` log message which shows the 3D position error from programmed path in meters. The above shows that the vehicle was blown downwind in high crosswinds out of the rolling circle by 15m at one point. This was greatly improved in later flights by increasing the speed at which the plane did the routine (increased TRIM_ARSPD_CM)
+
+
 Simulation
 ==========
 
