@@ -27,6 +27,7 @@ gimbals in which ArduPilot controls the stabilisation.
 -  :ref:`Siyi ZR10, ZR30 and A8 <common-siyi-zr10-gimbal>` - 3-axis gimbal and camera
 -  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an inexpensive 2-axis or 3-axis brushless gimbal controller which responds to MAVLink commands (a richer format than PWM) over a serial interface
 -  :ref:`ViewPro gimbals <common-viewpro-gimbal>`
+-  :ref:`Xacti gimbals <common-xacti-gimbal>`
 
 Mount control is covered on the :ref:`common-mount-targeting` page.
 
@@ -100,6 +101,7 @@ Detail topics
     Siyi ZR10, ZR30 and A8 <common-siyi-zr10-gimbal>
     SToRM32 Gimbal Controller <common-storm32-gimbal>
     ViewPro gimbals <common-viewpro-gimbal>
+    Xacti gimbals <common-xacti-gimbal>
     FLIR Vue Pro Thermal Camera <common-flir-vue-pro>
     Airpixel Entire Geotagger <common-geotagging-airpixel-entire>
     Seagull IR Camera Trigger <common-camera-trigger-seagull-ir>
