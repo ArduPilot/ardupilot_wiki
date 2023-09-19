@@ -6,9 +6,16 @@
 Xacti Gimbals
 =============
 
-The `Xacti Camera Gimbals <https://xacti-co.com/service/drone_camera/>`__ are 3-axis camera gimbals which communicate with ArduPilot using the DroneCAN protocol.
+The `Xacti Camera Gimbals <https://xacti-co.com/service/drone_camera/>`__ are relatively lightweight 3-axis camera gimbals which communicate with ArduPilot using the DroneCAN protocol.  Real time video output is available simulataneously through HDMI and USB.  Pictures taken include the vehicle's location (lat, lon, alt) stored using EXIF.
 
 .. image:: ../../../images/xacti-gimbal.png
+
+The four supported models are:
+
+- CX-GB100 : 20MP RGB
+- CX-GB200 : 12MP RGB + 640x512 pixel IR
+- CX-GB300 : Multispectral NDVI
+- CX-GB400 : 12MP RGB with 2.5x optical zoom
 
 .. note::
 
@@ -63,6 +70,17 @@ Control and Testing
 -------------------
 
 See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
+
+Firmware Updates
+----------------
+
+Firmware updates are available from Xacti directly and normally include a "firmware.bin" file and an empty "UPDATE.txt" file.  To update the camera:
+
+- Power down the gimbal and remove its SD card
+- Copy the "firmware.bin" and "UPDATE.txt" files to the SD card
+- Power up the gimbal and wait for at least 10 seconds
+- Optionally power down the gimbal, remove the SD card and check that the "firmware.bin" and/or "UPDATE.txt" files have been deleted.  If either was deleted then the firmware update was successful
+- Power up the gimbal and it should operate normally
 
 Videos
 ------
