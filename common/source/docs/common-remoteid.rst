@@ -54,6 +54,7 @@ OpenDroneID Compatible devices (support included in ArduPlane 4.2 and later)
 - `Cube ID <https://docs.cubepilot.org/user-guides/cube-id/cube-id>`__
 - `Cube ID_CAN <https://docs.cubepilot.org/user-guides/cube-id/cube-id>`__
 - `Dronetag DRI <https://dronetag.cz/products/dri/>`__
+- `Holybro Remote ID Module <https://holybro.com/products/remote-id>`__
 - `Wurzbach Electronics <https://wurzbachelectronics.com/esp32-remote-id-development-set>`__
 - `mRo RemoteID <https://store.mrobotics.io/product-p/m10049.htm>`__
 
