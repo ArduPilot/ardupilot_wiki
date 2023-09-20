@@ -39,7 +39,7 @@ Transition to Fixed Wing Mode from VTOL
 
 .. note:: if bit 19 of :ref:`Q_OPTIONS<Q_OPTIONS>` is set and :ref:`Q_TRANS_FAIL<Q_TRANS_FAIL>` is not zero, and if the airspeed is greater than 1/2 of :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>`, then the transition to fixed wing will immediately complete. This is useful if no airspeed sensor is being used, and the transition is into a headwind, which could prevent an accurate airspeed estimate from being obtained until a turn is made. Without using the :ref:`Q_TRANS_FAIL<Q_TRANS_FAIL>` timeout and this Q_OPTION, the transition could be indefinitely long since airspeed might be reported as below :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` due to low groundspeed.
 
-.. note:: The airspeed used during transition can be found in dataflash logs as CTUN.As. This is a canonical value which will include the airspeed sensor if enabled, or use the synthetic airspeed if not. Therefore, if you are having trouble achieving the transition speed, this is the value you should refer to.
+.. note:: The airspeed used during transition can be found in dataflash logs as CTUN.As. This is a canonical value which will include the airspeed sensor if enabled, or use the synthetic airspeed if not. 
 
 Transition to a VTOL mode from Fixed Wing
 =========================================
