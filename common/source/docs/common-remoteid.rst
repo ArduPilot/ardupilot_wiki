@@ -36,6 +36,7 @@ Stand-alone devices:
 - `BlueMark DroneBeacon External Power <https://dronescout.co/dronebeacon-ext-power/>`__
 - `BlueMark DroneBeacon FPV <https://dronescout.co/dronebeacon-fpv/>`__
 - `Braveridge remote id (Japan) <https://www.braveridge.com/product/archives/49>`__
+- `Dronetag BS <https://dronetag.cz/products/bs/>`__
 - `EAMS Robotics remote id (Japan) <http://www.eams-robo.co.jp/remoteid.html>`__
 - `TEAD remote id (Japan) <https://www.tead.co.jp/product/remote-id/>`__
 
