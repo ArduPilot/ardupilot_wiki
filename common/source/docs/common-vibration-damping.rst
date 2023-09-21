@@ -33,7 +33,9 @@ autopilot is so small.
 
 One of the following three types of foam should be cut into small 1cm ~ 2cm cubes and attached to each of the four corners of the autopilot as described on the :ref:`Mounting the Autopilot wiki page <common-mounting-the-flight-controller>`:
 
-- `3M foam sold by mRobotics <https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm>`__ is sticky on both sides and comes pre-cut so that individual cubes can be easily attached to the autopilot
+- 3M Foam is sticky on both sides and comes pre-cut so that individual cubes can be easily attached to the autopilot
+   - `sold by mRobotics <https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm>`__ 
+   - `sold by Holybro <https://holybro.com/products/foam-pads-20pcs>`__
 - `Du-Bro 1/4" R/C foam <https://www.dubro.com/products/r-c-protective-foam-rubber>`__
 - `HobbyKing orange foam <https://hobbyking.com/en_us/anti-vibration-foam-orange-latex-190mm-x-140mm-x-6mm.html?___store=en_us>`__ (discontinued)
 
