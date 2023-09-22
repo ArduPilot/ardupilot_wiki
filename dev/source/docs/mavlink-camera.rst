@@ -17,11 +17,13 @@ These commands are supported in ArduPilot 4.4.0 and higher:
 - MAV_CMD_VIDEO_START_CAPTURE to start recording video
 - MAV_CMD_VIDEO_STOP_CAPTURE to stop recording a video
 
-These commands are supported in ArduPilot 4.5.0 and higher:
+These commands and messages are supported in ArduPilot 4.5.0 and higher:
 
 - MAV_CMD_CAMERA_TRACK_POINT to initiate tracking of a point on the video feed
 - MAV_CMD_CAMERA_TRACK_RECTANGLE to initiate tracking of a rectangle on the video feed
 - MAV_CMD_CAMERA_STOP_TRACKING to stop tracking
+- MAV_CMD_IMAGE_STOP_CAPTURE to stop tacking time interval pictures
+- CAMERA_FOV_STATUS to display the lat, lon, alt where the camera gimbal is pointing
 - CAMERA_INFORMATION includes vendor and model name, firmware version, etc for use by GCS
 - CAMERA_SETTINGS includes zoom and focus level for use by GCS
 
@@ -30,14 +32,12 @@ These commands and messages are not yet supported but may be in future releases
 - MAV_CMD_REQUEST_CAMERA_CAPTURE_STATUS
 - MAV_CMD_RESET_CAMERA_SETTINGS
 - MAV_CMD_SET_CAMERA_MODE
-- MAV_CMD_IMAGE_STOP_CAPTURE
 - MAV_CMD_DO_TRIGGER_CONTROL
 - MAV_CMD_VIDEO_START_STREAMING and MAV_CMD_VIDEO_STOP_STREAMING to start and stop streaming a video to the ground station
 - MAV_CMD_REQUEST_VIDEO_STREAM_INFORMATION
 - MAV_CMD_REQUEST_VIDEO_STREAM_STATUS
 - CAMERA_CAPTURE_STATUS
 - CAMERA_IMAGE_CAPTURED
-- CAMERA_FOV_STATUS
 - CAMERA_TRACKING_IMAGE_STATUS
 - CAMERA_TRACKING_GEO_STATUS
 
@@ -222,7 +222,7 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 MAV_CMD_IMAGE_START_CAPTURE to take a picture
 ---------------------------------------------
 
-A picture can be taken by sending a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the command and param3 fields set as specified for the `MAV_CMD_IMAGE_START_CAPTURE <https://mavlink.io/en/messages/common.html#MAV_CMD_IMAGE_START_CAPTURE>`__ command.
+One or more picture can be taken by sending a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the command, param1, param2 and param3 fields set as specified for the `MAV_CMD_IMAGE_START_CAPTURE <https://mavlink.io/en/messages/common.html#MAV_CMD_IMAGE_START_CAPTURE>`__ command.
 
 .. raw:: html
 
@@ -253,20 +253,20 @@ A picture can be taken by sending a `COMMAND_LONG <https://mavlink.io/en/message
    <td>uint8_t</td>
    <td>0</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>param1</strong></td>
    <td>float</td>
-   <td>unused</td>
+   <td>Camera Id (all=0, 1=1st, 2=2nd)</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>param2</strong></td>
    <td>float</td>
-   <td>Interval=0 (unsupported)</td>
+   <td>Interval in seconds between pics (supported from AP4.5.0)</td>
    </tr>
    <tr>
    <td><strong>param3</strong></td>
    <td>float</td>
-   <td>Total Images=1 (multiple images not supported)</td>
+   <td>Total Images (0=capture forever)</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param4</strong></td>
@@ -297,11 +297,109 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 
 - module load message
 
-+------------------------------------------------------+---------------------------------+
-| Example MAVProxy/SITL Command                        | Description                     |
-+======================================================+=================================+
-| ``message COMMAND_LONG 0 0 2000 0 0 0 1 0 0 0 0``    | Take a picture                  |
-+------------------------------------------------------+---------------------------------+
++------------------------------------------------------+----------------------------------------------------+
+| Example MAVProxy/SITL Command                        | Description                                        |
++======================================================+====================================================+
+| ``message COMMAND_LONG 0 0 2000 0 0 0 1 0 0 0 0``    | All cameras take a picture                         |
++------------------------------------------------------+----------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2000 0 1 0 1 0 0 0 0``    | 1st camera takes a picture                         |
++------------------------------------------------------+----------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2000 0 2 0 1 0 0 0 0``    | 2nd camera takes a picture                         |
++------------------------------------------------------+----------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2000 0 1 2 3 0 0 0 0``    | 1st camera takes 3 pics at 2 sec intervals         |
++------------------------------------------------------+----------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2000 0 1 5 0 0 0 0 0``    | 1st camera takes unlimited pics at 5 sec intervals |
++------------------------------------------------------+----------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2001 0 0 0 0 0 0 0 0``    | All cameras stop taking pictures                   |
++------------------------------------------------------+----------------------------------------------------+
+
+MAV_CMD_IMAGE_STOP_CAPTURE to stop taking pictures
+--------------------------------------------------
+
+Stop taking time interval pictures by sending a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the command and param1 fields set as specified for the `MAV_CMD_IMAGE_STOP_CAPTURE <https://mavlink.io/en/messages/common.html#MAV_CMD_IMAGE_STOP_CAPTURE>`__ command.
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Type</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>target_system</strong></td>
+   <td>uint8_t</td>
+   <td>System ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>target_component</strong></td>
+   <td>uint8_t</td>
+   <td>Component ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>command</strong></td>
+   <td>uint16_t</td>
+   <td>MAV_CMD_IMAGE_STOP_CAPTURE=2001</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>confirmation</strong></td>
+   <td>uint8_t</td>
+   <td>0</td>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>float</td>
+   <td>CameraId (all=0, 1=1st, 2=2nd)</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param2</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param3</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param4</strong></td>
+   <td>float</td>
+   <td>Sequence Number (unsupported)</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param5</strong></td>
+   <td>float</td>
+   <td>Sequence Number (unsupported)</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param6</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param7</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   </tbody>
+   </table>
+
+**Example**
+
+The example commands below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter
+
+- module load message
+
++------------------------------------------------------+----------------------------------------------------+
+| Example MAVProxy/SITL Command                        | Description                                        |
++======================================================+====================================================+
+| ``message COMMAND_LONG 0 0 2001 0 0 0 0 0 0 0 0``    | All cameras stop taking pictures                   |
++------------------------------------------------------+----------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2001 0 1 0 0 0 0 0 0``    | 1st camera stops taking pictures                   |
++------------------------------------------------------+----------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2001 0 2 0 0 0 0 0 0``    | 2nd camera stops taking pictures                   |
++------------------------------------------------------+----------------------------------------------------+
 
 MAV_CMD_SET_CAMERA_ZOOM to control the camera zoom
 --------------------------------------------------
@@ -741,21 +839,35 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 | ``message COMMAND_LONG 0 0 2010 0 0 0 0 0 0 0 0``         | Stop tracking                                                |
 +-----------------------------------------------------------+--------------------------------------------------------------+
 
-CAMERA_INFORMATION and CAMERA_SETTINGS include information useful for GCSs
---------------------------------------------------------------------------
+CAMERA_INFORMATION, CAMERA_SETTINGS, CAMERA_FOV_STATUS include information useful for GCSs
+------------------------------------------------------------------------------------------
 
-These two messages include information that can be useful for the ground station.  The `CAMERA_INFORMATION <https://mavlink.io/en/messages/common.html#CAMERA_INFORMATION>`__ includes vendor and model name, firmware version, sensor size, sensor resolution and camera capabilities.  The `CAMERA_SETTINGS <https://mavlink.io/en/messages/common.html#CAMERA_SETTINGS>`__ is much simpler and only includes the mode, zoom level and focus level.
+These three messages include information that can be useful for the ground station.
 
-A ground station can request the messages be sent (just once) using the `MAV_CMD_REQUEST_MESSAGE  <https://mavlink.io/en/messages/common.html#MAV_CMD_REQUEST_MESSAGE>`__ command as described on the :ref:`Requesting Data From The Autopilot <mavlink-requesting-data>` page.
+- `CAMERA_INFORMATION <https://mavlink.io/en/messages/common.html#CAMERA_INFORMATION>`__ includes vendor and model name, firmware version, sensor size, sensor resolution and camera capabilities.  
+- `CAMERA_SETTINGS <https://mavlink.io/en/messages/common.html#CAMERA_SETTINGS>`__ is much simpler and only includes the mode, zoom level and focus level.
+- `CAMERA_FOV_STATUS <https://mavlink.io/en/messages/common.html#CAMERA_FOV_STATUS>`__ includes the location (lat, lon, alt) of the camera (or more accurately the vehicle), the location of what the camera gimbal is pointing at and the camera attitude (expressed as a quaternion).
+
+A ground station can request the messages be sent just once using the `MAV_CMD_REQUEST_MESSAGE  <https://mavlink.io/en/messages/common.html#MAV_CMD_REQUEST_MESSAGE>`__ command or at regular intervals using `MAV_CMD_SET_MESSAGE_INTERVAL  <https://mavlink.io/en/messages/common.html#MAV_CMD_SET_MESSAGE_INTERVAL>`__ as described on the :ref:`Requesting Data From The Autopilot <mavlink-requesting-data>` page.
 
 The example commands below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter:
 
 - module load message
 
-+----------------------------------------------------+-----------------------------------------------------+
-| Example MAVProxy/SITL Command                      | Description                                         |
-+====================================================+=====================================================+
-| ``message COMMAND_LONG 0 0 512 0 259 0 0 0 0 0 0`` | Request the CAMERA_INFORMATION message be sent once |
-+----------------------------------------------------+-----------------------------------------------------+
-| ``message COMMAND_LONG 0 0 512 0 260 0 0 0 0 0 0`` | Request the CAMERA_SETTINGS message be sent once    |
-+----------------------------------------------------+-----------------------------------------------------+
++----------------------------------------------------------+--------------------------------------------------+
+| Example MAVProxy/SITL Command                            | Description                                      |
++==========================================================+==================================================+
+| ``message COMMAND_LONG 0 0 512 0 259 0 0 0 0 0 0``       | Request CAMERA_INFORMATION be sent once          |
++----------------------------------------------------------+--------------------------------------------------+
+| ``message COMMAND_LONG 0 0 512 0 260 0 0 0 0 0 0``       | Request CAMERA_SETTINGS be sent once             |
++----------------------------------------------------------+--------------------------------------------------+
+| ``message COMMAND_LONG 0 0 511 0 260 1000000 0 0 0 0 0`` | Request CAMERA_SETTINGS be sent once per second  |
++----------------------------------------------------------+--------------------------------------------------+
+| ``message COMMAND_LONG 0 0 511 0 260 -1 0 0 0 0 0``      | Request CAMERA_SETTINGS stop being sent          |
++----------------------------------------------------------+--------------------------------------------------+
+| ``message COMMAND_LONG 0 0 512 0 271 0 0 0 0 0 0``       | Request CAMERA_FOV_STATUS be sent once           |
++----------------------------------------------------------+--------------------------------------------------+
+| ``message COMMAND_LONG 0 0 511 0 271 1000000 0 0 0 0 0`` | Request CAMERA_FOV_STATUS be sent once per second|
++----------------------------------------------------------+--------------------------------------------------+
+| ``message COMMAND_LONG 0 0 511 0 271 -1 0 0 0 0 0``      | Request CAMERA_FOV_STATUS stop being sent        |
++----------------------------------------------------------+--------------------------------------------------+
