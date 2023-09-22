@@ -36,13 +36,9 @@ Set the following parameters to enable BLHeli32 telemetry feedback to the autopi
 Bi-directional DShot
 ====================
 
-Newer versions of BLHeli32 (32.7 and higher) and BLHeli_S (16.73 and higher) support returning motor RPM values over the DShot signal line. Supporting bi-directional DShot requires exclusive use of one or more DMA channels and thus not all versions of ArduPilot support it. Versions that support bi-directional DShot natively are listed below.  For other autopilots please load the ArduPilot firmware version ending in "-bdshot".
+Newer versions of BLHeli32 (32.7 and higher) and BLHeli_S (16.73 and higher) support returning motor RPM values over the DShot signal line. Supporting bi-directional DShot requires exclusive use of one or more DMA channels and thus not all autopilots support it. Versions that support bi-directional DShot have this stated in their wiki pages, see :ref:`common-autopilots` for your autopilot.
 
-- BeastF7, BeastF7v2, BeastH7, BeastH7v2
-- FlywooF745, FlywooF745Nano
-- KakuteF4Mini, KakuteF7Mini, KakuteH7Mini
-
-Only the lowest 4 DShot capable servo outputs can be used.  For autopilots with an IOMCU (e.g. Pixhawk, CubeOrange) this means AUX1 to AUX4 can be used.  For Pixracer and other autopilots without a separate IOMCU coprocessor this means outputs 1 to 4 can be used.
+Some autopilots with IOMCUs can not only support Dshot on their "Main" outputs (see :ref:`common-dshot-escs` for setup and more information), but also bi-directional DShot on their first four outputs. Currently, this is limited only to Pixhawk6X/C autopilots.
 
 Setup
 -----

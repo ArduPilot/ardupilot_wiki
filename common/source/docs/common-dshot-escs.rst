@@ -22,15 +22,23 @@ DShot is the underlying ESC control protocol used by :ref:`BLHeli <common-blheli
 
 .. note:: most DShot ESCs normally will also operate as normal :ref:`PWM ESCs <common-brushless-escs>`.
 
+.. _connecting-escs:
+
 Connecting the ESCs
 ===================
 
-For autopilots with an IOMCU (e.g. Pixhawk, CubeOrange) the Bi-Directional DShot ESCs should be connected to the AUX outputs. 
-On CubeOrange Normal DShot works on all channels.  AUX1 cannot be used for Bi-Directional DShot meaning only AUX2 to AUX6 can be used for Bi_directional.  (`see issue <https://github.com/ArduPilot/ardupilot/issues/20362>`__).
+For firmware versions prior to 4.5, autopilots with an IOMCU co-processor (e.g. Pixhawk, CubeOrange,etc.) the DShot ESCs should be connected to the AUX outputs and not the MAIN outputs of the IOMCU co-processor. In firmware versions 4.5 or later, the :ref:`BRD_IO_DSHOT<BRD_IO_DSHOT>` parameter may be set to load Dshot compatible IOMCU firmware on the next bootup for some autopilots using F103 IOMCUs. If this parameter is not present, then the autopilot does not have DShot capability on its IOMCU outoputs. See the :ref:`IOMCU Dshot Limitations <iomcu-dshot>` section for limitations and more information. 
 
-For :ref:`Pixracer <common-pixracer-overview>` and :ref:`other boards <common-autopilots>` without a separate IOMCU coprocessor, any servo/motor outputs can be used.
+On CubeOrange DShot works on all channels.  AUX1 cannot be used for Bi-Directional DShot meaning only AUX2 to AUX6 can be used for Bi_directional DShot.  (`see issue <https://github.com/ArduPilot/ardupilot/issues/20362>`__).
+
+For :ref:`other boards <common-autopilots>` without a separate IOMCU coprocessor, any servo/motor outputs can be used for DShot.
 
 Please see the :ref:`Mixing ESC Protocols <dshot-mixing-escs>` section below for more details on limitations
+
+BiDirectional DShot
+-------------------
+
+Some boards 
 
 Select the DShot baud rate
 ==========================
@@ -58,7 +66,7 @@ If :ref:`Bi-directional DShot <bidir-dshot>` will be used, DShot300 and DShot600
 Configure the Servo Functions
 =============================
 
-As mentioned above, if using an autopilot with an IOMCU (e.g. Pixhawk, CubeOrange) the ESCs should be connected to the AUX outputs instead of the default MAIN outputs.  This in turn means that the corresponding :ref:`SERVOx_FUNCTION <SERVO9_FUNCTION>` parameters must be updated so the autopilot knows which output is connected to the ESCs/motors.   This can be most easily done using Mission Planner's "Servo Output" page
+As mentioned above, if using an autopilot with an IOMCU (e.g. Pixhawk, CubeOrange,etc.) the ESCs should be connected to the AUX outputs instead of the default MAIN outputs.  This in turn means that the corresponding :ref:`SERVOx_FUNCTION <SERVO9_FUNCTION>` parameters must be updated so the autopilot knows which output is connected to the ESCs/motors.   This can be most easily done using Mission Planner's "Servo Output" page
 
 .. image:: ../../../images/dshot-setup-mp-servooutput.png
 
@@ -143,3 +151,19 @@ While all the servo/motor outputs of an ArduPilot autopilot are capable of Norma
 .. note:: Everytime the autopilot initializes, it sends a message to the ground control station, showing which outputs are PWM/Oneshot/or DShot. The remaining higher numbered outputs are assigned as GPIOs.
 
 .. image:: ../../../images/RCOutbanner.jpg
+
+
+.. _iomcu-dshot:
+
+IOMCU DShot Limitations
+=======================
+
+If the DShot enabled IOMCU firmware has been loaded (See :ref:`Connecting ESCs <connecting-escs>` section above), there are certain limitations:
+
+- PPM can no longer be detected on the RCin pin
+- The "MAIN" outputs can support PWM as well as normal DShot, but the "grouping" of like protocols to the timer groups are:
+   - MAIN 1,2 Group1
+   - MAIN 3,4 Group2
+   - MAIN 5-8 Group3
+
+All normal setup instructions for DShot outputs apply also.
