@@ -163,7 +163,7 @@ Firmware for these boards can be found `here <https://firmware.ardupilot.org>`_ 
 
 Firmware that supports :ref:`bi-directional Dshot <bidir-dshot>` is labeled "MatekH743-bdshot".
 
-.. warning:: The bi-directional Dshot firmware redefines the Rx6 pin as a pure UART input, and cannot support PPM. It also requires that the :ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` = 23 and that :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>` = 3 for use with SBUS to provide inversion. In addition, outputs 9-12 no longer support normal Dshot. Only outputs 1-4 are bi-directional Dshot capable.
+.. warning:: The bi-directional Dshot firmware redefines the Rx6 pin as a pure UART input, and cannot support PPM. It also requires that the :ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` = 23 and that :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>` = 3 for use with SBUS to provide inversion. In addition, outputs 9-12 no longer support normal Dshot. Only outputs 1-4 are bi-directional Dshot capable. Finally, the buzzer in the USB dongle will no longer play musical tones, only simple buzzer beeps.
 
 
 .. note:: If you experience issues with the device ceasing to initialize after power up, see :ref:`common-when-problems-arise` section for H7 based autopilots for a possible solution.
