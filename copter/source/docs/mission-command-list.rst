@@ -486,3 +486,16 @@ Do-Gripper
 
 This command allows opening and closing a :ref:`servo gripper <common-gripper-servo>` or :ref:`EPM gripper <common-cameras-and-gimbals>`.
 Set the "drop/grab" column to 0 to close the gripper, 1 to open the gripper.  The first column, "Gripper No" is ignored because we currently only support a single gripper per vehicle.
+
+Do-Winch
+~~~~~~~~
+
+.. image:: ../../../images/MissionList_DoWinch.png
+    :target: ../_images/MissionList_DoWinch.png
+
+This command allows controlling a :ref:`winch <common-daiwa-winch>` to raise or lower a package.
+
+- "winch no" is not used
+- "action" should be 0 to relax the winch, 1 for Length control, 2 for Rate control
+- "length" should be filled in with the meters of line to release.  Positive numbers release the line, negative retract the line.  Note "action" should be "1".
+- "rate" should be filled in with the speed (in m/s) to release the line.  Positive numbers release the line, negative retract the line.  Note "action" should be "2".

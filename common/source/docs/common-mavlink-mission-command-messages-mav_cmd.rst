@@ -203,6 +203,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>` (NAV_GUIDED only)
 - :ref:`MAV_CMD_DO_SET_RESUME_REPEAT_DIST <mav_cmd_do_set_resume_repeat_dist>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
+- :ref:`MAV_CMD_DO_WINCH<mav_cmd_do_winch>`
 - :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
 [/site]
 
@@ -4644,5 +4645,65 @@ Format SD Card. Useful for vehicles where SD card is inaccessible. Param1 and Pa
    </tr>
    </tbody>
    </table>
+
+[site wiki="copter" heading="off"]
+.. _mav_cmd_do_winch:
+
+MAV_CMD_DO_WINCH
+----------------
+
+Supported by: Copter.
+
+Control Winch operation.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Winch no</td>
+   <td>Not currently used</td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>action</td>
+   <td>0 to relax the winch, 1 for Length control, 2 for Rate control</td>
+   </tr>
+   <tr>
+   <td><strong>param3</strong></td>
+   <td>length</td>
+   <td>should be filled in with the meters of line to release.  Positive numbers release the line, negative retract the line.  Note "action" should be "1"</td>
+   </tr>
+   <tr>
+   <td><strong>param4</strong></td>
+   <td>rate</td>
+   <td>should be filled in with the speed (in m/s) to release the line.  Positive numbers release the line, negative retract the line.  Note "action" should be "2".</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
+[/site]
 
 [copywiki destination="copter,plane,rover,planner,dev"]
