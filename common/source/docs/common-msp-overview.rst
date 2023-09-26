@@ -32,7 +32,7 @@ There are 3 MSP backends selected by serial protocol:
 
  - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 33 is for DJI FPV or RE Goggles
  - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 32 is for sensors or generic MSP telemetry usage
- - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 42 is for DisplayPort for DJI goggle using wtf-os firmare, HDzero, of DisplayPort MWOSD.
+ - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 42 is for DisplayPort for DJI goggle using wtf-os firmare, HDZero, Walksnail, or DisplayPort MWOSD.
 
 .. note:: There are 2 different DJI telemetery protocols to try to maintain compatibility with DJI's evolving hardware.
 
