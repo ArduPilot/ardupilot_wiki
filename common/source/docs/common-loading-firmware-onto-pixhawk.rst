@@ -8,6 +8,8 @@ Loading Firmware
 
 These instructions will show you how to download the latest firmware onto the autopilot hardware that already has ArduPilot firmware installed. This process will use the Mission Planner ground control station. See :ref:`common-loading-firmware-onto-chibios-only-boards`.
 
+.. note:: for some autopilots, it may be possible to update the firmware by :ref:`flashing from SD card <common-install-sdcard>`
+
 Connect autopilot to computer
 =============================
 
@@ -107,3 +109,8 @@ You can test the firmware is working on a basic level by switching to the *Missi
 
 :ref:`Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>` has more
 information on connecting to Mission Planner.
+
+.. toctree::
+   :hidden:
+
+   common-install-sdcard
