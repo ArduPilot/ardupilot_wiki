@@ -29,6 +29,60 @@ Key Parameters
    throttle while flying or you risk disarming your motors.
 -  The default :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>` for a QuadPlane is to 300 (Hz). Most QuadPlanes do not need this to be rasied. Some very small vehicles (< 1Kg) might benefit from setting it to 400. In heavier vehicles, their higher inertia results in lower effective control response rates, so they do not benefit from a higher loop rate. Raising above 300 only leads to larger log files in these vehicles.
 
+.. _return_behavior_setup:
+
+Return Behavior Setup Guide:
+============================
+
+While there are many parameters setting distances and heights for the various home return modes/behaviors (read about failsafes in :ref:`quadplane-flying` and :ref:`QRTL and RTL modes <quadplane-flight-modes>`), this is a quick setup guide for basic behaviors.
+
+RTL mode
+--------
+
+Is a fixed wing return mode which normally flys back to the home point and loiters, but can optionally do an automatic mission sequence, usually set by the user to land the vehicle at home in fixed wing mode.
+
+If entered from VTOL flight several other behavior options can be selected by the :ref:`Q_RTL_MODE<Q_RTL_MODE>` parameter.
+
+QRTL mode
+---------
+
+When operating close to home is a VTOL return and the land at home, but further away will switch to fixed wing flight until back closer to home, and then transition back to VTOL and land at home. QRTL mode always results in a VTOL landing at home unless the pilot interrupts it.
+
+RC Failsafe
+-----------
+
+Loss of RC link can switch to a return flight mode or several other behaviors.
+
+Setup
+-----
+
+1.If you lose RC link for greater than :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` in fixed wing flight set :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` value below to obtain various behavior options:
+
+- "0" : do nothing if in AUTO mode, otherwise switch to RTL mode (see #3,4 below)
+- "1" : switch to RTL mode (see #3,4 below)
+- "2" : cut throttle and glide in FWBA mode
+- "3" : deploy parachute (assuming you have one setup)
+- "4" : switch to AUTO mode and execute mission at current mission sequence pointer
+
+2. If you lose RC link for greater than :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` in VTOL flight, you will immediately QLAND, unless you select the following optional behavior:
+
+- set :ref:`Q_OPTIONS<Q_OPTIONS>` bit 5 to switch to QRTL mode instead. (see #5 below)
+- set :ref:`Q_OPTIONS<Q_OPTIONS>` bit 20 to switch to RTL mode instead (see #3,4 below). If bit 5 is set above, it will be ignored in lieu of this option bit.
+
+3. Anytime you switch to RTL (due either to manual mode change or failsafe action), do you want to execute an autoland sequence (does not need to actually have a land command, if some other action is desired), rather than just return and loiter around home?
+
+- If yes,then set up a DO_LAND_START mission sequence and enable the :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` parameter. See :ref:`do_land_start` for details of setup.
+
+4. If in a VTOL mode, and you switch to RTL (due either to manual mode change or failsafe action), then set the :ref:`Q_RTL_MODE<Q_RTL_MODE>` parameter value as follows to determine the behavior:
+
+- "0" : Switch to normal RTL mode, transitioning to fixed wing (see #3 above)
+- "1" : Transition to fixed wing, fly towards home, transition back to VTOL mode when close to home, move to over home, switch to QLAND and land at home in VTOL.
+- "2" : Transition to fixed wing, fly towards home, loiter down to altitude around home, turn into the wind, transition back to VTOL mode and move to over home, switch to QLAND and land at home in VTOL
+- "3" : Switch to QRTL :Transition to fixed wing, and do a special approach to home including "airbraking",  transition back to VTOL mode, move to over home, switch to QLAND and land at home in VTOL.
+
+5. When switching to QRTL  default behavior is to transition to fixed wing if in VTOL (assuming you are not close to home already in VTOL Flight), flying back to home, then switching back to VTOL as you approach home, switching to QLAND over home, and landing at home (see :ref:`qrtl-mode` for more information). You can disable the fixed wing approach, and return home and land only using VTOL mode if :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 set.
+
+
 Q_OPTIONS
 =========
 In addition, the behavior of QuadPlane can be modified by the setting of the :ref:`Q_OPTIONS<Q_OPTIONS>` bitmask parameter (no bits are set, by default):
@@ -65,5 +119,5 @@ Behavior can be modified as well as by the :ref:`Q_RTL_MODE<Q_RTL_MODE>` and :re
    The QuadPlane code requires GPS lock for proper operation. This is
    inherited from the plane code, which disables inertial estimation of
    attitude and position if GPS lock is not available. Do not try to fly a
-   QuadPlane indoors. It will not fly well
+   QuadPlane indoors. It will not fly well!!!!
 
