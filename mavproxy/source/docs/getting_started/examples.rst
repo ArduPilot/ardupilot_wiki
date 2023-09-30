@@ -20,7 +20,7 @@ And for each client (where xxx.xxx.xxx.xxx is the daemon's IP address):
 
 .. code:: bash
     
-    mavproxy.py –master=udpout:xxx.xxx.xxx.xxx:14550
+    mavproxy.py –-master=udpout:xxx.xxx.xxx.xxx:14550
     
 Use multiple radio links (one serial, one network) to the remote vehicle. This is useful for situations where a backup radio link is required:
 
