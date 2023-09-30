@@ -27,6 +27,10 @@ If one is found then the plane will automatically enter AUTO mode and
 land, starting at the part of the mission just after the
 ``DO_LAND_START`` marker.
 
+.. note:: the "landing sequence" whose start is the ``DO_LAND_START`` marker, does not actually
+have to include a landing! it can be any sequence of valid mission commands. For example, flying to
+a location, and changing to an indefinite VTOL loiter (applies only to a QuadPlane, obviously).
+
 The exact behaviour depends on the :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` value:
 
 -  If :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` = 1, then the plane will first RTL as normal, then
