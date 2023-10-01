@@ -227,3 +227,5 @@ other vehicles can be built, but the RADIX2HD is targeted primarily for copter a
 
 To use it, copy the resulting arducopter_{VERSION}_brainfpv.bin to the USB drive that appears when the RADIX 2 HD is in bootloader mode.
 
+
+[copywiki destination="plane,copter,rover,blimp"]
