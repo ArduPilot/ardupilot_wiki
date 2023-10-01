@@ -10,6 +10,7 @@ DroneCAN was created to continue the development of the widely used UAVCAN v0 pr
     :maxdepth: 1
 
     AnyLeaf GNSS + AHRS<https://www.anyleaf.org/gnss-can>
+    AnyLeaf ELRS RC + telemetry <https://www.anyleaf.org/elrs-rx-can>
     ARK RTK F9P <https://arkelectron.com/product/ark-rtk-gps/>
     Avionics Anonymous Airspeed +Temp <common-avanon-adc>
     Avionics Anonymous GNSS + Compass <common-avanon-gnss-mag>
