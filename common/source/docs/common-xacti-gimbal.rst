@@ -28,6 +28,11 @@ Where to Buy
 
 These gimbals can be purchased directly from `Xacti <https://xacti-co.com/service/drone_camera/>`__
 
+Compatible connector and jumper wires are available from digikey
+
+- `ZER-08V-S connector <https://www.digikey.jp/en/products/detail/jst-sales-america-inc/ZER-08V-S/1887023>`__
+- `ASZESZE jumper wires <https://www.digikey.jp/en/products/base-product/jst-sales-america-inc/455/ASZESZE/587926>`__
+
 Connecting to the Autopilot
 ---------------------------
 
@@ -44,15 +49,16 @@ The top image shows how to connect the gimbal's CANL, CANH and GND pins to one o
 Connect to the autopilot with a ground station and set the following parameters and then reboot the autopilot.  The params below assume the autopilot's CAN1 port is used,
 
 - :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` to 1 (DroneCAN)
-- :ref:`CAN_D1_UC_NODE <CAN_D1_UC_NODE>` to 1
+- :ref:`CAN_D1_UC_NODE <CAN_D1_UC_NODE>` to 1 (only required for Xacti firmwares from before Aug 2023)
 - :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` to 1 (First driver)
 - :ref:`MNT1_TYPE <MNT1_TYPE>` to 10 (Xacti) and reboot the autopilot
 - :ref:`MNT1_PITCH_MIN <MNT1_PITCH_MIN>` to -90
 - :ref:`MNT1_PITCH_MAX <MNT1_PITCH_MAX>` to 25
 - :ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>` to -90
 - :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to 90
-- :ref:`CAM1_TYPE <CAM1_TYPE>` to 4 (Mount)
 - :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to 30 (deg/s) to control speed of gimbal when using RC targetting
+- :ref:`CAM1_TYPE <CAM1_TYPE>` to 4 (Mount)
+- :ref:`CAM1_INTRVAL_MIN <CAM1_INTRVAL_MIN>` to 0.9
 - :ref:`RC6_OPTION <RC6_OPTION>` = 213 ("Mount Pitch") to control the gimbal's pitch angle with RC channel 6
 - :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw angle with RC channel 7
 
@@ -69,7 +75,7 @@ Connect to the autopilot with a ground station and set the following parameters 
 Control and Testing
 -------------------
 
-See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
+See :ref:`Gimbal / Mount Controls <common-mount-targeting>` and :ref:`Camera Controls <common-camera-controls>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
 
 Firmware Updates
 ----------------
