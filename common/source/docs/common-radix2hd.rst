@@ -1,5 +1,6 @@
 .. _common-radix2hd:
 
+[copywiki destination="plane,copter,rover,blimp"]
 ==================
 brainFPV RADIX2 HD
 ==================
