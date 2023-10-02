@@ -44,4 +44,5 @@ DroneCAN was created to continue the development of the widely used UAVCAN v0 pr
     Qiotek DroneCAN RM3100 Compass <https://www.qio-tek.com/index.php/product/qiotek-rm3100-dronecan-module>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
     Tattu Plus DroneCAN Battery <common-tattu-dronecan-battery>
+    Xacti Camera Gimbal <common-xacti-gimbal>
     Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
