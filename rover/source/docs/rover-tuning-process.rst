@@ -48,7 +48,7 @@ Follow the instructions on the :ref:`Tuning Steering Rate <rover-tuning-steering
 Rover QuickTune LUA Script
 ==========================
 
-If the autopilot is capable of running :ref:`common-lua-scripts`, the instead of manually tuning steering and speed/throttle controllers, it ca be done automatically using the `rover-quicktune.lua applet <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/rover-quicktune.lua>`__. Read its `instruction file <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/rover-quicktune.md>`_ for setup and use information.
+If the autopilot is capable of running :ref:`common-lua-scripts`, instead of manually tuning steering and speed/throttle controllers, it can be done automatically using the `rover-quicktune.lua applet <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/rover-quicktune.lua>`__. Read its `instruction file <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/rover-quicktune.md>`_ for setup and use information.
 
 Configure Pivot Turns (Skid Steering vehicles only)
 ===================================================
