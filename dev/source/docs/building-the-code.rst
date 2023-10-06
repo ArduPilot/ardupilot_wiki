@@ -30,7 +30,8 @@ Building / Compiling
 
 **Windows users:**
 
-- Windows users should fellow the directions described on :ref:`Setup Build Environment on Windows <building-setup-windows>`.
+- Windows users should follow the directions described in :ref:`Setup Build Environment on Windows <building-setup-windows10>`. This creates a Linux-like
+environment called WSL/WSL2 from which the user can setup the build environment as explained in :ref:`Setup the Build Environment on Linux/Ubuntu <building-setup-linux>` and then using the instructions in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
 **Board specific instructions:**
 
@@ -46,8 +47,8 @@ Mission Planner
 
 
 
-Links to current build pages
-----------------------------
+Links to othe pages of interest or advanced topics
+--------------------------------------------------
 
 .. toctree::
     :maxdepth: 1
