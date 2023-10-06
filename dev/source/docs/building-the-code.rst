@@ -47,8 +47,8 @@ Mission Planner
 
 
 
-Links to othe pages of interest or advanced topics
---------------------------------------------------
+Links to other pages of interest or advanced topics
+---------------------------------------------------
 
 .. toctree::
     :maxdepth: 1
