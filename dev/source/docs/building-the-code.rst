@@ -15,12 +15,39 @@ Setting up the Build Environment
 - :ref:`Setup the Build Environment on Windows <building-setup-windows>`
 - :ref:`Setup the Build Environment on MacOSX <building-setup-mac>`
 
+
 Building / Compiling
 --------------------
 
-**Linux / MacOSX users:**
+Once the build environment is set up as above, run the following commmands prior to the initial build. (For Windows users, this is using WSL, as set up above):
 
-- Linux and MacOSX users should build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
+- `git clone https://github.com/ArduPilot/ardupilot`
+- `cd ardupilot`
+- `git submodule update --recursive --init`
+- `./Tools/gittools/submodule-sync.sh`
+- `./waf configure --board *BoardName*`
+- `./waf clean` (Optional; may be useful in some cases)
+
+`*BoardName*` above is the name of the board, as labeled by its associated folder in
+`/ardupiot/libraries/AP_HAL_ChibiOS/hwdef`.
+
+Run the following command, each time you wish to build:
+`./waf copter`
+
+(Substitute `plane`, `rover` etc for `copter` as required)
+
+
+**Note for Windows users**
+If possible, run the build steps above from a WSL directory, *not* from a directory on your
+Windows filesystem. Building from the Windows filesystem is very slow.
+
+
+**Details**
+
+- Additional detailed information is available in this document: `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
+
+
+- This video demonstrates building on a Linux PC:
 
 .. note::
 
@@ -28,9 +55,6 @@ Building / Compiling
 
 .. youtube:: lNSvAPZOM_o
 
-**Windows users:**
-
-- Windows users should fellow the directions described on :ref:`Setup Build Environment on Windows <building-setup-windows>`.
 
 **Board specific instructions:**
 
