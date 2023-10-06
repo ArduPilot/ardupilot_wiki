@@ -22,9 +22,14 @@ The following units have been tested and are supported:
 - Lutan Serial
 - DroneCAN (adapted versions of the above serial units)
 - PiccoloCAN (`Currawong's ECU <https://www.currawong.aero/ecu/>`__ and `IntelliJect EFI <https://power4flight.com/uav-engine-products/uav-engine-control-units/intelliject-efi/>`__)
-- DLA EFI (`DLA232cc UAV Engine <https://www.austars-model.com/dla-232cc-uavuas-engine-optional-one-key-startauto-startergenerator_g17937.html>`__
 
-.. note:: In addition, ArduPilot allows the addition of new EFI controller drivers via :ref:`common-lua-scripts`. For examples, see the `HFE CAN EFI driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_HFE.md>`__ or the `SkyPower CAN driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_SkyPower.md>`__
+Using :ref:`LUA script drivers <common-lua-scripts>`:
+
+- `DLA EFI (DLA232cc UAV Engine) <https://www.austars-model.com/dla-232cc-uavuas-engine-optional-one-key-startauto-startergenerator_g17937.html>`__
+- `HFE CAN EFI driver <https://www.unmannedsystemstechnology.com/company/hfe-international-llc/>`__
+- `SkyPower CAN SGC-352 <https://3w-international.com/produkt/sgc-352-starter-generator-control-unit/>`__
+- `INF EFI <https://innoflighttechnology.com/efi/>`__
+- `Halo-6000 Generator <https://www.foxtechfpv.com/foxtech-halo-6000-efi-generator-for-hybrid-drone.html>`__
 
 Serial Setup
 ============
@@ -68,6 +73,14 @@ DLA Setup
 =========
 
 Driver is provided via a :ref:`LUA <common-lua-scripts>` script. See LUA script setup instructions and the `DLA EFI Lua md file <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/EFI_DLA.md>`__ for details.
+
+Setup using LUA script drivers
+==============================
+
+- Be sure your autopilot is capable of running LUA scripts. See :ref:`binary-features` listing for your autopilot and be sure it does NOT list "SCRIPTING" under "Other" features as missing.
+- Setup :ref:`LUA Scripting <common-lua-scripts>`
+- Copy the appropriate driver script to your autopilot SD card from the `LUA Driver directory <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/drivers>`__
+- Follow the instructions in the driver's ".md" file.
 
 Using a Battery Monitor to Report Fuel Flow and Consumption
 ===========================================================
