@@ -12,6 +12,11 @@ Add ICE option to prevent starting when disarmed
 
 See https://github.com/ArduPilot/ardupilot_wiki/pull/5465
 
+Add new NeoPixel LED type
+=========================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5467
+
 Add NoopLoop TOF P/F and NanoRadar rangefinder support
 ======================================================
 
