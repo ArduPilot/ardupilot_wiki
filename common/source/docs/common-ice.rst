@@ -120,6 +120,7 @@ Bit (Set to enable)     Function
 0                       Set ignition output to :ref:`ICE_PWM_IGN_OFF <ICE_PWM_IGN_OFF>` during any RC failsafe
 1                       Disable the Redline Governor feature (but still display GCS warnings)
 2                       Allows throttle servo output while disarmed in MANUAL mode
+3                       Prevent starting while disarmed
 ===================     ========
 
 Vibration isolation
