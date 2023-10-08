@@ -36,8 +36,8 @@ Compatible connector and jumper wires are available from digikey
 Connecting to the Autopilot
 ---------------------------
 
-.. image:: ../../../images/xacti-gimbal-autopilot.png
-    :target: ../_images/xacti-gimbal-autopilot.png
+.. image:: ../../../images/xacti-gimbal-autopilot.jpg
+    :target: ../_images/xacti-gimbal-autopilot.jpg
     :width: 450px
 
 .. image:: ../../../images/xacti-gimbal-pinout.png
