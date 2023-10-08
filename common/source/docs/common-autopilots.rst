@@ -137,6 +137,7 @@ Closed Hardware
     Sky-Drones AIRLink <common-skydrones-airlink>
     SkystarsH7HD <common-skystarsH7>
     SPRacing H7 Extreme <common-spracingh7-extreme>
+    SPRacing H7 RF <common-spracingh7-rf>
     Swan-K1 <common-Swan-K1>
     SpeedyBee F4 (this board currently is non-verified) <common-speedybeef4>
     SpeedyBee F4 V3 <common-speedybeef4-v3>
