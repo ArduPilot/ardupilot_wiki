@@ -31,8 +31,8 @@ These gimbals can be purchased directly from `Xacti <https://xacti-co.com/servic
 Connecting to the Autopilot
 ---------------------------
 
-.. image:: ../../../images/xacti-gimbal-autopilot.png
-    :target: ../_images/xacti-gimbal-autopilot.png
+.. image:: ../../../images/xacti-gimbal-autopilot.jpg
+    :target: ../_images/xacti-gimbal-autopilot.jpg
     :width: 450px
 
 .. image:: ../../../images/xacti-gimbal-pinout.png
