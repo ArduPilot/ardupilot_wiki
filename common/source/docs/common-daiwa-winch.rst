@@ -1,6 +1,6 @@
 .. _common-daiwa-winch:
 
-[copywiki destination="copter"]
+
 ===========
 Daiwa Winch
 ===========
@@ -23,12 +23,12 @@ The `Daiwa winch <http://www.ele.okaya.co.jp/index_en.html>`__ is a high quality
     The driver for this winch will be released with Copter-4.1.0.  For earlier versions the winch can be controlled using the autopilot's servo outputs which allows the winch to be operated from the pilot's transmitter and/or from DO_SET_SERVO mission commands
 
 Where To Buy
-------------
+============
 
 - These winches are manufactured by Okaya (`japanese site <https://www.okaya.co.jp/>`__, `english site <https://www.okaya.co.jp/en/index.html>`__) and can be purchased `here (English) <http://www.ele.okaya.co.jp/index_en.html>`__ or `here (Japanese) <https://www.ipros.jp/product/detail/2000434011/>`__.
 
 Connection and Configuration
-----------------------------
+============================
 
 Connect the winch to the autopilot as shown below
 
@@ -66,8 +66,23 @@ Set the following parameters
 - :ref:`RC6_TRIM <RC6_TRIM>` = The mid value between :ref:`RC6_MIN <RC6_MIN>` and :ref:`RC6_MAX <RC6_MAX>` which is normally close to 1500
 - :ref:`RC8_OPTION <RC8_OPTION>` = 44 (Winch Enable) to allow relaxing the winch by pulling the transmitter's channel 8 switch low
 
+Winch Options
+=============
+
+The :ref:`WINCH_OPTIONS<WINCH_OPTIONS>` parameter provides a bit mask of possible configuration options for the winch when the following bits are set in the parameter:
+
+===     ======
+Bit     Option
+===     ======
+0       Spin freely on startup allows the line to be pulled out after startup. This is the current default but is actually quite annoying because we need to remember to disengage the clutch before takeoff or the package will likely be left on the ground.
+1       Verbose output sends text to the GCS when any important state of the winch changes (healthy, moving up or down, clutch position, line length). This is in addition to the normal Telemetry winch messages (see below)
+2       Retry if stuck (Daiwa only)
+===     ======
+
+All options are set active by default.
+
 Winch Telemetry
----------------
+===============
 
 The status of the winch can be viewed in real-time using Mission Planner or QGC's MAVLink Inspector window.  If using Mission Planner push the "MAVLink Inspector" button found under Setup, Advanced.
 
@@ -78,7 +93,7 @@ The status of the winch can be viewed in real-time using Mission Planner or QGC'
 The winch's current draw, length of line, current speed (in m/s) temperature and voltage can all be seen.
 
 Zero Reset Line Length
-----------------------
+======================
 
 The winch constantly estimates how much line has been deployed and will stop retracting line once this estimated line length has reached zero in order to protect the line from being broken.  This estimate is prone to drift however meaning that you may find it impossible to completely retract the line or (less likely) it may retract too far and break the line.  To avoid these issues the line length estimate should be periodically reset to zero using the following procedure:
 
@@ -94,12 +109,12 @@ The winch constantly estimates how much line has been deployed and will stop ret
     :width: 400px
 
 Control during Missions
------------------------
+=======================
 
 The Winch can be controlled during Autonomous missions using the DO_WINCH mission command.  See the bottom of the :ref:`Copter Mission Command List <copter:mission-command-list>` for more details
 
 Winch-test Lua Script
----------------------
+=====================
 
 In cases where the vehicle will be well outside of RC range and no joystick is being used, the `winch-test lua script <https://raw.githubusercontent.com/ArduPilot/ardupilot/master/libraries/AP_Scripting/examples/winch-test.lua>`__ may be useful in order to allow manually raise or lower the line using Mission Planner's Aux Function page.
 
