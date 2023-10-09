@@ -153,6 +153,11 @@ on :ref:`quadplane-vtol-tuning-process` page:
 
 [/site]
 [site wiki="copter"]
+Add winch options
+=================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5472
+
 on :ref:`traditional-helicopter-tailrotor-setup` page, add info for DDFP tail rotor motor thrust linearization:
 ===============================================================================================================
 
