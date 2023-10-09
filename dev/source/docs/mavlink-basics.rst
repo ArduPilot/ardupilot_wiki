@@ -17,7 +17,7 @@ Message Format
     :target: ../_images/mavlink-frame.png
     :width: 450px
 
-- Messages are no more than 263 bytes or 280 bytes when using version 1 and 2 of the protocol respectively.
+- Messages are no more than 263 bytes (Mavlink version1.0) or 280 bytes (Mavlink version 2.0).
 - The sender always fills in the ``System ID`` and ``Component ID`` fields so that the receiver knows where the packet came from.  The ``System ID`` is a unique ID for each vehicle or ground station.  Ground stations normally use a high system id like "255" and vehicles default to use "1" (this can be changed by setting the :ref:`SYSID_THISMAV <copter:SYSID_THISMAV>` parameter).  The ``Component ID`` for the ground station or flight controller is normally "1".  Other MAVLink capable device on the vehicle (i.e. companion computer, gimbal) should use the same ``System ID`` as the flight controller but use a different ``Component ID``
 - The ``Message ID`` field can be seen in the `common.xml <https://mavlink.io/en/messages/common.html>`__ and `ardupilot.xml <https://mavlink.io/en/messages/ardupilotmega.html>`__ next to the message name.  For example the `HEARTBEAT <https://mavlink.io/en/messages/common.html#HEARTBEAT>`__ message Id is "0"
 - The ``Data`` portion of the message holds the individual field values being sent
