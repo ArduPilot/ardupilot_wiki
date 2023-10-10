@@ -127,7 +127,7 @@ Set up directories/paths and extra packages in Cygwin
 
 ::
 
-    ln -s /usr/bin/python3.7 /usr/bin/python
+    ln -sf /usr/bin/python3.7 /usr/bin/python3
     ln -s /usr/bin/pip3.7 /usr/bin/pip
     pip install empy pyserial pymavlink
 
