@@ -30,7 +30,7 @@ Connecting the Receiver
 
 For all protocols above, ArduPilot auto-detects the protocol of the RC receiver system. However, depending on the protocol and autopilot type, the physical connection to the autopilot may differ.
 
-Some protocols, most noticeably SRXL2, CRSF, and ELRS, require a full UART connection.
+Some protocols, most notably SRXL2, CRSF, and ELRS, require a full UART connection.
 
 In addition other protocols that also provide telemetry, like FPort, would generally require a bi-directional half-duplex connection in order to obtain telemetry. For these protocols the TX output of the UART should be connected to the serial input of the receiver. It is also possible on F7 and H7 boards to connect to the UART RX input with some additional configuration.
 
@@ -62,6 +62,14 @@ FPort/FPort2
 ------------
 
 FPort is a bi-directional protocol, using SBus RC in one direction, and serial telemetry in the other. The RC portion can be decoded when attached to an autopilot as if it were SBus, but the embedded telemetry would be lost. See the :ref:`FPort setup documentation<common-FPort-receivers>` for details on connection to one of the autopilots Serial Ports.
+
+
+:ref:`mLRS <common-mlrs-rc>`
+----------------------------
+
+mLRS can provide RC control and MAVLink telemetry. mLRS receivers have an RC output pin that can be configured for either SBUS or CRSF protocol (CRSF would be only RC data). For SBUS you can connect it to the autopilot's RCin pin. For CRSF or SBUS, it can be connected to any autopilot UART RX pin and that port configured for RC protocol. Using CRSF portocol, allows RSSI/LQ information to be delivered to the autopilot.
+
+For optional telemetry a separate TX/RX port is provided on the receiver to be connected to an autopilot MAVLink telemetry serial port. You can omit the single wire RC connection and configure the mLRS receiver to output RC channels over MAVLink if you are not using GCS RC overrides (eg, joystick)
 
 
 SRXL2/CRSF/ELRS
@@ -127,6 +135,8 @@ Below is a table with some commonly  available systems showing these elements. N
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Graupner               |Short |    Yes   |    Medium  |   yes     |  SUM-D       |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
+|mLRS                   |Long  |  Bi-Dir  |  12K - 91K |via LUA    |SBUS/CRSF     |    5   |
++-----------------------+------+----------+------------+-----------+--------------+--------+
 |Multiplex              |Short |     No   |      -     |    -      |   SRXL       |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Spektrum               |Short |    No    |     -      |   -       |  DSM/DSM2    |        |
@@ -141,6 +151,8 @@ Note 2: See :ref:`common-frsky-yaapu`. Future firmware versions will offer the a
 Note 3: ArduPilot provides a means to send its telemetry data via CRSF such that it can be displayed on `OpenTX <https://www.open-tx.org/>`__ transmitters using the :ref:`Yaapu Telemetry LUA Script<common-frsky-yaapu>`.
 
 Note 4: ELRS (EpressLRS) is a system that uses the CRSF (TBS Crossfire) RC protocol with several minimizations to simplify the system. It has reduced features but it connects to ArduPilot just like CRSF, when CRSF RXs are attached using a full UART, instead of SBUS protocol to communicate to ArduPilot. See `ExpressLRS site <https://www.expresslrs.org/2.0/>` for more information.
+
+Note 5: The mLRS project is firmware designed specifically to carry both RC and MAVLink. The usable telemetry speed varies by the chosen mode and is managed via RADIO_STATUS flow control. It uses the CRSF (TBS Crossfire) RC protocol on both the receiver and Tx module.  It also integrates full MAVLink telemetry via serial connections on the Tx module and the receiver.
 
 Links to Radio Control Systems
 ==============================
@@ -163,6 +175,7 @@ With integrated telemetry:
     DragonLink <common-dragonlink-rc>
     FRSky <common-frsky-rc>
     Graupner (HOTT) <common-graupner-rc>
+    mLRS <common-mlrs-rc>
     Multiplex (no support in ArduPilot for M-Link telemetry yet) <common-multiplex-rc>
     Spektrum SRXL2 <common-spektrum-rc>
     TBS CRSF <common-tbs-rc>
