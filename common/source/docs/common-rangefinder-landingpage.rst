@@ -77,6 +77,9 @@ Unidirectional Rangefinders
     Lightware SF02 Lidar <common-rangefinder-sf02>
     Maxbotix I2C Sonar <common-rangefinder-maxbotixi2c>
     Maxbotix Analog Sonar <common-rangefinder-maxbotix-analog>
+    Nooploop TOF-Sense P <common-rangefinder-nooploop-tofsense-p>
+    Nooploop TOF-Sense F <common-rangefinder-nooploop-tofsense-f>
+    Nanoradar NRA24 <common-rangefinder-nra24>
     ST VL53L0X / VL53L1X Lidar <common-vl53l0x-lidar>
     TeraRanger One/EVO Rangefinders <common-teraranger-one-rangefinder>
     TeraRanger NEO <common-teraranger-neo>

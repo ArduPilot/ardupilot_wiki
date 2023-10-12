@@ -97,16 +97,19 @@ CAN_Dx_PROTOCOL     Protocol Type
 1                   DroneCAN
 4                   PiccoloCAN
 6                   EFI_NWPMU
-7                   USD1
+7                   USD1 (RangeFinder)
 8                   KDECAN
 10                  Scripting based CAN driver
-11                  Benewake
+11                  Benewake (RangeFinder)
 12                  Scripting2 (allows two drivers)
+13                  NoopLoop TOFSenseP (RangeFinder)
+14                  NanoRadar NRA24 (RangeFinder)
 ===============     =============
 
 After the change to protocol the autopilot has to be rebooted for the changes to take place.
 
 .. note:: only devices matching the selected protocol can be connected to a given CAN bus. Mixing of different protocol devices on a single CAN bus is not allowed. However, if the Protocol is set to DroneCAN, certain devices with different protocols can be attached. See :ref:`dronecan_mixed_protocols`.
+
 
 CAN ESCs
 ========
