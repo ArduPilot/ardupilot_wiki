@@ -10,9 +10,19 @@ fi
 DISTRIBUTION_ID=$(lsb_release -i -s)
 if [ ${DISTRIBUTION_ID} = 'Ubuntu' ]; then
   DISTRIBUTION_CODENAME=$(lsb_release -c -s)
-  if [ ${DISTRIBUTION_CODENAME} = 'focal' ] || [ ${DISTRIBUTION_CODENAME} = 'bionic' ]; then
-    sudo add-apt-repository universe
+  if [ ${DISTRIBUTION_CODENAME} = 'focal' ] || [ ${DISTRIBUTION_CODENAME} = 'bionic' ] || [ ${DISTRIBUTION_CODENAME} = 'lunar' ]; then
+    sudo add-apt-repository universe -y
   fi
+fi
+
+# create a Python venv on more recent releases:
+if [ ${DISTRIBUTION_CODENAME} == 'lunar' ]; then
+    sudo apt install python3.11-venv
+    python3 -m venv $HOME/venv-ardupilot-wiki --upgrade-deps
+
+    # activate it:
+    SOURCE_LINE="source $HOME/venv-ardupilot-wiki/bin/activate"
+    $SOURCE_LINE
 fi
 
 sudo apt-get -y update
@@ -45,27 +55,26 @@ else
     SPHINX_VERSION="7.2.6"
 fi
 
-curl "$GET_PIP_URL" -o get-pip.py
-python3 get-pip.py
-rm -f get-pip.py
+PIP_USER_ARGUMENT=""
+if [ ${DISTRIBUTION_CODENAME} != 'lunar' ]; then
+  curl "$GET_PIP_URL" -o get-pip.py
+  python3 get-pip.py
+  rm -f get-pip.py
+  PIP_USER_ARGUMENT="--user"
+fi
 
 # Install python packages using known working versions
 # Install sphinx with a specific docutils version
-python3 -m pip install --user --upgrade sphinx==${SPHINX_VERSION} "docutils<0.19"  "requests>=2.31.0"
-
+# Docutils version is for correct bullet point rendering. Can be rolled forward after theme is updated to >=0.5.1
+# See https://stackoverflow.com/a/68685753/2578171
 # lxml for parameter parsing:
-python3 -m pip install --user --upgrade lxml
-
 # Install sphinx theme from ArduPilot repository
-python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinx_rtd_theme.git
-
 # and youtube and video plugins:
 # This command might require a --force option if you have and older extension installed
 # Rerun Sphinxsetup.sh after doing that
-python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinxcontrib-youtube.git
-
+# and a parser to use getting posts from Discourse (forum) and insert in FrontEnd
 # Install flake8
-python3 -m pip install --user --upgrade flake8==3.7.9
+python3 -m pip install $PIP_USER_ARGUMENT --upgrade sphinx==${SPHINX_VERSION} "docutils<0.19"  "requests>=2.31.0" lxml git+https://github.com/ArduPilot/sphinx_rtd_theme.git git+https://github.com/ArduPilot/sphinxcontrib-youtube.git beautifulsoup4 flake8==3.7.9
 
 # Reset the value of DISPLAY
 if grep -qi -E '(Microsoft|WSL)' /proc/version; then

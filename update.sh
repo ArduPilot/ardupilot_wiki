@@ -31,6 +31,11 @@ lock_file build.lck || {
     echo "$(date +%s) already locked" >>build.lck.log
     exit 1
 }
+# activate Python venv on more recent releases:
+if [ ${DISTRIBUTION_CODENAME} == 'lunar' ]; then
+    SOURCE_LINE="source $HOME/venv-ardupilot-wiki/bin/activate"
+    $SOURCE_LINE
+fi
 
 test -n "$FORCEBUILD" || {
     (cd ardupilot_wiki && git fetch > /dev/null 2>&1)
