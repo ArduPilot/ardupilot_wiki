@@ -10,9 +10,19 @@ fi
 DISTRIBUTION_ID=$(lsb_release -i -s)
 if [ ${DISTRIBUTION_ID} = 'Ubuntu' ]; then
   DISTRIBUTION_CODENAME=$(lsb_release -c -s)
-  if [ ${DISTRIBUTION_CODENAME} = 'focal' ] || [ ${DISTRIBUTION_CODENAME} = 'bionic' ]; then
-    sudo add-apt-repository universe
+  if [ ${DISTRIBUTION_CODENAME} = 'focal' ] || [ ${DISTRIBUTION_CODENAME} = 'bionic' ] || [ ${DISTRIBUTION_CODENAME} = 'lunar' ]; then
+    sudo add-apt-repository universe -y
   fi
+fi
+
+# create a Python venv on more recent releases:
+if [ ${DISTRIBUTION_CODENAME} == 'lunar' ]; then
+    sudo apt install python3.11-venv
+    python3 -m venv $HOME/venv-ardupilot-wiki --upgrade-deps
+
+    # activate it:
+    SOURCE_LINE="source $HOME/venv-ardupilot-wiki/bin/activate"
+    $SOURCE_LINE
 fi
 
 sudo apt-get -y update
@@ -38,12 +48,16 @@ if [ "$(python --version)" == "Python 3.6.9" ]; then
     GET_PIP_URL="https://bootstrap.pypa.io/pip/3.6/get-pip.py"
 fi
 
-curl "$GET_PIP_URL" -o get-pip.py
-python3 get-pip.py
-rm -f get-pip.py
+PIP_USER_ARGUMENT=""
+if [ ${DISTRIBUTION_CODENAME} != 'noble' ]; then
+  curl "$GET_PIP_URL" -o get-pip.py
+  python3 get-pip.py
+  rm -f get-pip.py
+  PIP_USER_ARGUMENT="--user"
+fi
 
 # Install required python packages
-python3 -m pip install --user --upgrade -r requirements.txt
+python3 -m pip install $PIP_USER_ARGUMENT --upgrade -r requirements.txt
 
 # Reset the value of DISPLAY
 if grep -qi -E '(Microsoft|WSL)' /proc/version; then
