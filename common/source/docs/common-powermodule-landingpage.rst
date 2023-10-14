@@ -47,6 +47,7 @@ CAN/DroneCAN Power Monitors and Batteries
     Packet Digital MPPT Solar Controller <common-packetdigital-mppt>
     Pomegranate Systems<common-pomegranate-systems-pm>
     Tattu DroneCan Battery<common-tattu-dronecan-battery>
+    Aerotate DroneCAN Smart Battery<common-aerotate-dronecan-battery>
 
 I2C Power Monitor
 =================

@@ -9,6 +9,7 @@ DroneCAN was created to continue the development of the widely used UAVCAN v0 pr
 .. toctree::
     :maxdepth: 1
 
+    Aerotate DroneCAN Smart Battery<common-aerotate-dronecan-battery>
     AnyLeaf GNSS + AHRS<https://www.anyleaf.org/gnss-can>
     AnyLeaf ELRS RC + telemetry <https://www.anyleaf.org/elrs-rx-can>
     ARK RTK F9P <https://arkelectron.com/product/ark-rtk-gps/>
