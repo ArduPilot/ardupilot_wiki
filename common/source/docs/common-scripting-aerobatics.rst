@@ -67,7 +67,7 @@ The format of the SCRIPT_TIME item is:
    </tbody>
    </table>
 
-A LUA script would need to be running when the above mission command is encountered to recognize that it needs to take control, and start sending pitch/roll/yaw rate inputs into the autopilot to control its attitude and/or trajectory. It can use the two variable input parameters of the command to control aspects of the maneuver, such as rate of rolls/loops, repeat counts, time for certain segments of the maneuver, etc. An example is provided in the LUA Scripting examples directory called `plane_aerobatics.lua <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples/Aerobatics/Missions>`__ for several types of tricks.
+A LUA script would need to be running when the above mission command is encountered to recognize that it needs to take control, and start sending pitch/roll/yaw rate inputs into the autopilot to control its attitude and/or trajectory. It can use the two variable input parameters of the command to control aspects of the maneuver, such as rate of rolls/loops, repeat counts, time for certain segments of the maneuver, etc. An example is provided in the LUA Scripting examples directory called `plane_aerobatics.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/Aerobatics/FixedWing/plane_aerobatics.lua>`__ for several types of tricks.
 
 The execution of a script running during the NAV_SCRIPT_TIME item can easily be interrupted by switching modes out of AUTO.
 
