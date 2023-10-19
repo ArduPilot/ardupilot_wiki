@@ -4,6 +4,10 @@
 Setting up SITL using Vagrant
 =============================
 
+Warning
+
+These instructions are out-of-date. We recommend Windows 10 or later users follow the instructions for :ref:`Setting up the Build Environment using WSL <building-setup-windows>` and :ref:`Setting up SITL on WSL <sitl-on-windows-wsl>`
+
 This article explains how to set up the :ref:`SITL ArduPilot Simulator <sitl-simulator-software-in-the-loop>` in a virtual machine
 environment using `Vagrant <https://www.vagrantup.com/>`__, and connect
 it to a Ground Control Station running on the host computer. This
