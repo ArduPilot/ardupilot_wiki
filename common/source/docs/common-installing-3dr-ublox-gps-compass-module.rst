@@ -15,8 +15,6 @@ ArduPilot automatically configures the GPS soon after startup so there is no nee
 Connecting the Autopilot
 ========================
 
-.. _common-installing-3dr-ublox-gps-compass-module_connecting_to_pixhawk:
-
 .. image:: ../../../images/gps-connection.jpg
      :target: ../_iamges/gps-connection.jpg
 

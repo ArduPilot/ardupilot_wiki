@@ -27,6 +27,9 @@ wiki_base_url = 'https://ardupilot.org/'
 intersphinx_base_url = wiki_base_url + '%s/'
 
 
+# Default engine is pdflatex
+latex_engine = 'pdflatex'
+
 # Where to point the base of the build for the main site menu
 html_context = {'target': '/'}
 # This needs to change to the actual URL root once the theme updated.

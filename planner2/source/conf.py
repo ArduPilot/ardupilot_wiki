@@ -221,6 +221,9 @@ html_js_files = [
 ]
 # -- Options for LaTeX output ---------------------------------------------
 
+# Default engine is pdflatex
+latex_engine = 'xelatex'
+
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     # 'papersize': 'letterpaper',
@@ -239,7 +242,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'ArduPilot.tex', u'ArduPilot Documentation',
+    (master_doc, 'ArduPilotPlanner2.tex', u'ArduPilot APM Planner 2 Documentation',
      u'ArduPilot Dev Team', 'manual'),
 ]
 
@@ -249,10 +252,10 @@ latex_documents = [
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
-# latex_use_parts = False
+latex_use_parts = True
 
 # If true, show page references after internal links.
-# latex_show_pagerefs = False
+latex_show_pagerefs = True
 
 # If true, show URL addresses after external links.
 # latex_show_urls = False

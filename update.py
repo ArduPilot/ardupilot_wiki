@@ -84,6 +84,7 @@ WIKI_NAME_TO_VEHICLE_NAME = {
 
 # GIT_REPO = ''
 
+
 PARAMETER_SITE = {
     'rover': 'APMrover2',
     'copter': 'ArduCopter',
@@ -140,7 +141,7 @@ def fetch_url(fetchurl):
         subprocess.check_call(["wget", fetchurl])
 
 
-def fetchparameters(site=None, cache=None):
+def fetchparameters(site=None, cache=None, pdf=None):
     """Fetches the parameters for all the sites from the test server and
     copies them to the correct location.
 
@@ -156,6 +157,8 @@ def fetchparameters(site=None, cache=None):
         targetfile = './%s/source/docs/parameters.rst' % key
         if key == 'AP_Periph':
             targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
+        if pdf:
+            fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/ParametersLatex.rst' % value  # noqa"
         if cache:
             if not os.path.exists(targetfile):
                 raise Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,))
@@ -166,7 +169,10 @@ def fetchparameters(site=None, cache=None):
             # move in new file
             if os.path.exists(targetfile):
                 os.unlink(targetfile)
-            os.rename('Parameters.rst', targetfile)
+            if pdf:
+                os.rename('ParametersLatex.rst', targetfile)
+            else:
+                os.rename('Parameters.rst', targetfile)
 
 
 def fetchlogmessages(site=None, cache=None):
@@ -192,23 +198,30 @@ def fetchlogmessages(site=None, cache=None):
             os.rename('LogMessages.rst', targetfile)
 
 
-def build_one(wiki, fast):
+def build_one(wiki, fast, no_html, pdf):
     '''build one wiki'''
     debug('Using make for sphinx: %s' % wiki)
+    # default to building on Linux
+    buildcommand = ["nice", "make"]
+    useshell = False
     if platform.system() == "Windows":
+        buildcommand = ["make.bat"]
+        useshell = True
         # This will fail if there's no folder to clean, so no check_call here
-        if not fast:
-            subprocess.run(["make.bat", "clean"], cwd=wiki, shell=True)
-        subprocess.check_call(["make.bat", "html"], cwd=wiki, shell=True)
-    else:
-        if not fast:
-            subprocess.check_call(["nice", "make", "clean"], cwd=wiki)
-        subprocess.check_call(["nice", "make", "html"], cwd=wiki)
+        subprocess.run(buildcommand + ["clean"], cwd=wiki, shell=useshell)
+    if not fast:
+        subprocess.check_call(buildcommand + ["clean"], cwd=wiki, shell=useshell)
+    if not no_html:
+        subprocess.check_call(
+            buildcommand + ["html"], cwd=wiki, shell=useshell)
+    if pdf:
+        # using .run for now until build errors in the wiki can be cleaned up
+        subprocess.run(buildcommand + ["latexpdf", r'LATEXMKOPTS="-silent"'], cwd=wiki, shell=useshell)
 
 
-def sphinx_make(site, parallel, fast):
+def sphinx_make(site, parallel, fast, no_html, pdf):
     """
-    Calls 'make html' to build each site
+    Calls 'make html' or 'make latexpdf' to build each site
     """
     done = set()
     wikis = set(ALL_WIKIS[:])
@@ -223,7 +236,7 @@ def sphinx_make(site, parallel, fast):
             continue
         if site is not None and not site == wiki:
             continue
-        p = multiprocessing.Process(target=build_one, args=(wiki, fast))
+        p = multiprocessing.Process(target=build_one, args=(wiki, fast, no_html, pdf))
         p.start()
         procs.append(p)
         while parallel != -1 and len(procs) >= parallel:
@@ -244,7 +257,7 @@ def sphinx_make(site, parallel, fast):
         time.sleep(0.1)
 
 
-def check_build(site):
+def check_build(site, no_html, pdf):
     """
     check that build was successful
     """
@@ -256,9 +269,15 @@ def check_build(site):
             continue
         if wiki in ['common', 'frontend']:
             continue
-        index_html = os.path.join(wiki, "build", "html", "index.html")
-        if not os.path.exists(index_html):
-            fatal("%s site not built - missing %s" % (wiki, index_html))
+        if not no_html:
+            index_html = os.path.join(wiki, "build", "html", "index.html")
+            if not os.path.exists(index_html):
+                fatal(f"{wiki} site not built - missing {index_html}")
+        if pdf:
+            pdf_path = os.path.join(wiki, "build", "latex", "*.pdf")
+            pdf_path_glob = glob.glob(pdf_path)
+            if len(pdf_path_glob) != 1:
+                fatal(f"{wiki} site not built - missing {pdf_path}")
 
 
 def copy_build(site, destdir):
@@ -777,7 +796,7 @@ def check_imports():
     '''check key imports work'''
     import pkg_resources
     # package names to check the versions of. Note that these can be different than the string used to import the package
-    requires = ["sphinx_rtd_theme>=1.0.0", "sphinxcontrib.youtube>=1.2.0", "sphinx==5.1.1", "docutils==0.16"]
+    requires = ["sphinx_rtd_theme>=1.0.0", "sphinxcontrib.youtube>=1.2.0", "sphinx>=5.1.1", "docutils>=0.16"]
     for r in requires:
         debug("Checking for %s" % r)
         try:
@@ -1027,6 +1046,20 @@ if __name__ == "__main__":
         help=("Incremental build using already downloaded parameters, log messages, and video thumbnails rather than cleaning "
               "before build."),
     )
+    parser.add_argument(
+        '--no-html',
+        dest='no_html',
+        action='store_true',
+        default=False,
+        help="Disable html output",
+    )
+    parser.add_argument(
+        '--pdf',
+        dest='pdf',
+        action='store_true',
+        default=False,
+        help="Enable pdf output",
+    )
 
     args = parser.parse_args()
     # print(args.site)
@@ -1047,20 +1080,20 @@ if __name__ == "__main__":
             fetch_versioned_parameters(args.site)
         else:
             # Single parameters file. Just present the latest parameters:
-            fetchparameters(args.site, args.cached_parameter_files)
+            fetchparameters(args.site, args.cached_parameter_files, args.pdf)
 
-        # Fetch most recent LogMessage metadata from autotest:
-        fetchlogmessages(args.site, args.cached_parameter_files)
+            # Fetch most recent LogMessage metadata from autotest:
+            fetchlogmessages(args.site, args.cached_parameter_files)
 
     copy_static_html_sites(args.site, args.destdir)
     generate_copy_dict()
-    sphinx_make(args.site, args.parallel, args.fast)
+    sphinx_make(args.site, args.parallel, args.fast, args.no_html, args.pdf)
 
     if args.paramversioning:
         put_cached_parameters_files_in_sites(args.site)
         cache_parameters_files(args.site)
 
-    check_build(args.site)
+    check_build(args.site, args.no_html, args.pdf)
 
     if args.enablebackups:
         make_backup(args.site, args.destdir, args.backupdestdir)

@@ -16,7 +16,7 @@ if [ ${DISTRIBUTION_ID} = 'Ubuntu' ]; then
 fi
 
 sudo apt-get -y update
-sudo apt-get install -y unzip git imagemagick curl wget make python3
+sudo apt-get install -y unzip git imagemagick curl wget make python3 texlive-latex-recommended texlive-fonts-recommended tex-gyre texlive-latex-extra latexmk fonts-freefont-otf
 
 # Install packages release specific
 if [ ${DISTRIBUTION_CODENAME} = 'bionic' ]; then
@@ -46,24 +46,12 @@ rm -f get-pip.py
 # Install sphinx with a specific docutils version
 # Docutils version is for correct bullet point rendering. Can be rolled forward after theme is updated to >=0.5.1
 # See https://stackoverflow.com/a/68685753/2578171
-python3 -m pip install --user --upgrade sphinx==5.1.1 docutils==0.16
-
-# lxml for parameter parsing:
-python3 -m pip install --user --upgrade lxml
-
+# lxml for parameter parsing
 # Install sphinx theme from ArduPilot repository
-python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinx_rtd_theme.git
-
-# and youtube and video plugins:
-# This command might require a --force option if you have and older extension installed
-# Rerun Sphinxsetup.sh after doing that
-python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinxcontrib-youtube.git
-
+# and youtube and video plugins (might require a --force option if you have an older extension installed. Rerun Sphinxsetup.sh after doing that)
 # and a parser to use getting posts from Discourse (forum) and insert in FrontEnd
-python3 -m pip install --user --upgrade beautifulsoup4
-
-# Install flake8
-python3 -m pip install --user --upgrade flake8==3.7.9
+# and flake8
+python3 -m pip install --user --upgrade "sphinx>=5" lxml git+https://github.com/ArduPilot/sphinx_rtd_theme.git git+https://github.com/ArduPilot/sphinxcontrib-youtube.git beautifulsoup4 flake8==3.7.9
 
 # Reset the value of DISPLAY
 if grep -qi -E '(Microsoft|WSL)' /proc/version; then
