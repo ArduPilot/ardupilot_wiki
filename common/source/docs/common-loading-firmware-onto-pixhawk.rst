@@ -46,12 +46,14 @@ Answer **Yes** when it asks you "Are you sure?".
 
    Mission Planner: Install FirmwareScreen
 
+.. note:: some boards are specifically targeted to a particular vehicle type and firmware is not automatically built for other vehicles. However, ArduPilot could still be built for those other vehicles using the `Custom Firmware Server <https://custom.ardupilot.org/>`__.
+
 Mission Planner will try to detect which board you are using. It may ask you to unplug the board, press OK, and plug it back in to detect the board type.
 
 .. figure:: ../../../images/Pixhawk_InstallFirmware2.png
    :target: ../_images/Pixhawk_InstallFirmware2.png
 
-   Mission Planner: Install FirmwarePrompt
+   Mission Planner: Install Firmware Prompt
 
 Often you will be presented with a dropdown box of firmware variants for the board, which you can select from (such as bi-directional DShot variants, if available). For boards which share the Pixhawk board id, the list will be extensive, as shown below:
 
