@@ -108,7 +108,7 @@ Servo/Motor Outputs
 All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot, serial LED, and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs.
 
  - PWM 1,2 in group1
- - PWM 2,4 in group2
+ - PWM 3,4 in group2
  - PWM 5-7 in group3
  - PWM 8-10 in group4
  - PWM 11,12 in group5  Note: PWM12 is setup for serial LED use by default, if PWM11 is used for motors or servos, you must re-assign PMW12 to a normal PWM output or nothing
