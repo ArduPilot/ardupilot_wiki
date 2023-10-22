@@ -39,7 +39,7 @@ Specifications
    -  8x PWM outputs Bir-Directional DShot capable
    -  1x RC input
    -  CAN Bus port
-   -  6x UARTs/serial for GPS and other peripherals. UARt6 RX and TX can be re-tasked as the 9th and 10th PWM outputs
+   -  7x UARTs/serial for GPS and other peripherals. UART6 RX and TX can be re-tasked as the 9th and 10th PWM outputs
    -  I2C port for external compass, airspeed, etc.
    -  microSDCard for program firmward, logging, etc.
    -  USB-C port
@@ -81,12 +81,13 @@ The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the
 receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 
 - SERIAL0 -> USB
-- SERIAL1 -> UART1 (DMA-enabled, MSP DisplayPort OSD)
+- SERIAL1 -> UART1 (DMA-enabled, MSP DisplayPort OSD on DJI Connector)
 - SERIAL2 -> UART2 (DMA-enabled, GPS)
-- SERIAL3 -> UART3 (DMA-enabled, RCin on DJI Connector)
+- SERIAL3 -> UART3 (DMA-enabled, RCin)
 - SERIAL4 -> UART4 (RX on ESC connector for ESC Telemetry)
 - SERIAL5 -> UART5 (spare)
 - SERIAL6 -> UART6 (spare, PWM 9 and 10 by default, use :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1 for UART)
+- SERIAL7 -> UART7 (RX pin only on DJI Connector)
 
 RC Input
 ========
@@ -108,6 +109,8 @@ To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receive
 - SRXL2 requires a connection to Tx6 and automatically provides telemetry.  Set :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` to "4".
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
+
+RX6 can be configured for RCin coming from DJI air units by setting `:ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` to something other than "23" and setting `:ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` to "23".
 
 
 Motor/Servo Outputs
