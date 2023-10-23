@@ -53,7 +53,7 @@ for transitions to QuadPlane modes while flying at high speed. Tilt-rotors will,
 - Transition to altitude holding VTOL modes will manage power to the VTOL motors as necessary to hold altitude as the vehicle slows from forward fixed wing flight.
 - Transition to non-altitude holding VTOL modes will provide vertical thrust as commanded by the throttle.
 - Transition to position holding modes will project a stopping position to maintain based on deceleration of the vehicle and then hold it once reached.
-- When transitioning to a position holding mode, like QLIOTER, QuadPlane will try to decelerate, which can result in the nose pitching up rapidly if traveling at high speeds. In order to prevent this, the pitch is initially limited to 0 degrees, relaxing this limit to the smaller of :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` or :ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>` over the period of :ref:`Q_BACKTRANS_MS<Q_BACKTRANS_MS>`.
+- When transitioning to a position holding mode, like QLIOTER, QuadPlane will try to decelerate, which can result in the nose pitching up rapidly if traveling at high speeds (which will result in considerable altitude gain in most cases). In order to prevent this, the pitch is initially limited to 0 degrees, relaxing this limit to the smaller of :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` or :ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>` over the period of :ref:`Q_BACKTRANS_MS<Q_BACKTRANS_MS>`. Even with these limits altitude gain can result during the deceleration while transitioning.
 
 .. note:: this phased-in pitch limit is applied for all fixed wing to VTOL transitions, except for transitions to QACRO.
 
