@@ -6,6 +6,15 @@ Adding Simulated Peripherals to sim_vehicle
 
 Several devices can be simulated within SITL. These include Gimbals, Beacons, Rangefinders, VICON, RPM sensors,etc.
 
+Starting with CAN based simulated peripherals
+=============================================
+
+When SITL is started, it has a standard set of peripherals (ie GPS, ESCs, Servos for flying surfaces, Power Monitors, etc.) simulated also. However, these can be simulated as DroneCAN devices instead to allow monitoring of CAN behavior, allow testing of new AP_Periph devices in the simulation, etc. To start SITL using these peripherals, instead of the normally connected ones:
+
+::
+
+   sim_vehicle.py -v <vehicle> --console --map --can-peripherals
+
 Simulating On-Board OSD
 =======================
 
@@ -16,6 +25,14 @@ When starting SITL, you can have it display a simulation of the integated OSD, i
     sim_vehicle.py -v ArduPlane --console --map --osd
 
 .. note:: the OSD emulation displays OSD panel items and locations, but it does not allow multiple screens, nor units other than metric
+
+Simulating I2C devices
+======================
+
+.. toctree::
+    :maxdepth: 1
+
+    sitl-i2c-devices
 
 
 Adding a Virtual Gimbal
