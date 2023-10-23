@@ -154,15 +154,10 @@ the default working directory will be the directory in which sim_vehicle.py was 
 
     sim_vehicle.py -v ArduPlane --console --map --add-param-file=<path to file> -w
 
-Starting with CAN based simulated peripherals
----------------------------------------------
+Adding Simulated Peripherals into the Simulation
+------------------------------------------------
 
-When SITL is started, it has a standard set of peripherals (ie GPS, ESCs, Servos for flying surfaces, Power Monitors, etc.) simulated also. However, these can be simulated as DroneCAN devices instead to allow monitoring of CAN behavior, allow testing of new AP_Periph devices in the simulation, etc. To start SITL using these peripherals, instead of the normally connected ones:
-
-::
-
-   sim_vehicle.py -v <vehicle> --console --map --can-peripherals
-
+See :ref:`adding_simulated_devices`
 
 Using real serial devices
 -------------------------
@@ -211,8 +206,6 @@ is equivalent to COM16:
 ::
 
     sim_vehicle.py -A "--serial1=uart:/dev/ttyS15" --console --map
-
-.. _using-sitl-for-ardupilot-testing_sitl_without_mavproxy_tcp:
 
 Swarming with SITL
 ------------------
