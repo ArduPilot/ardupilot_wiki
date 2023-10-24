@@ -50,7 +50,7 @@ Specifications
 
    -  2S - 6S Lipo input voltage with voltage monitoring
    -  90A Cont., 215A peak current monitor
-   -  9V/12/5V, 1.8A BEC for powering Video Transmitter
+   -  9V/12/5V, 1.8A BEC for powering Video Transmitter controlled by GPIO(early bd revs do not have this feature)
    -  4.9V/6V/7.2V, 4.5A BEC for servos
    -  5V, 2.4A BEC for internal and peripherals
 
@@ -152,6 +152,20 @@ VTX Control
 ===========
 
 UART5 TX is located in the Video Output connector to provide IRC Tramp or Smart Audio control of video transmitters. See :ref:`common-vtx` for more information.
+
+VTX Power Control
+=================
+
+GPIO 81 controls the VTX BEC output to pins marked "9V". Setting this GPIO high removes voltage supply to pins.
+
+Set a ``RELAYx_PIN`` to “81” to control the  switching. Then select an RC channel for control (Chx) and set its ``RCx_OPTION`` to the appropriate Relay (1-6) that you had set its pin parameter above.
+
+For example, use Channel 10 to control the switch using Relay 2:
+
+    :ref:`RELAY_PIN2<RELAY_PIN2>` = “81”
+
+    :ref:`RC10_OPTION<RC10_OPTION>` = “34” (Relay2 Control)
+
 
 Battery Monitor Configuration
 =============================
