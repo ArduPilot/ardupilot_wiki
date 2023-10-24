@@ -39,6 +39,7 @@ Several options can be set using :ref:`OSD_OPTIONS<OSD_OPTIONS>` (bitmask select
 - bit3 = Convert feet to miles at 5280ft instead of 10000ft
 - bit4 = Do not display crosshair
 - bit5 = Translate arrow directions when using BF font set
+- bit6 = Aviation style horizon when inverted (pitch moves horizon in opposite direction)
      
 Several font sets are included and can be changed during runtime (and those who can build the software can customize or add additional font sets....see libraries/AP_OSD/fonts/README.md)
 
