@@ -12,6 +12,7 @@ Below is a list of applets and their use as of this writing. More are being adde
 ==========================================  ===========
 Applet Name                                 Description
 ==========================================  ===========
+BattEstimate.lua                            Battery state of charge estimator
 Gimbal_Camera_Mode.lua                      Select auto or manual gimbal/camera control mode
 Heli_IM_COL_Tune.lua                        Traditional IM_COL_TUNE tuning applet
 Hexsoon LEDs.lua                            Hexsoon Multicopter LED control script
@@ -25,6 +26,7 @@ VTOL-quicktune.lua                          VTOL-quicktuning applet
 copter-deadreckon-home.lua                  flies towards home on loss of GPS
 forward_flight_motor_shutdown.lua           Forward flight motor shutdown
 motor_failure_test.lua                      Motor failure testing script
+mount-poi.lua                               Displays the location (lat, lon and altitude) that the gimbal is currently pointing towards
 plane_aerobatics.lua(in Aerobatics subdir)  Autonomous trajectory precise aerobatics
 plane_package_place.lua                     Quadplane payload place script
 plane_ship_landing.lua                      Script to automate moving vehicle landing with a beacon
