@@ -36,6 +36,9 @@ Several options can be set using :ref:`OSD_OPTIONS<OSD_OPTIONS>` (bitmask select
 - bit0 = Enable use of compact number+decimal point fonts
 - bit1 = Invert wind direction indicator (to point to the direction its blowing from instead of toward)
 - bit2 = Invert horizon roll direction
+- bit3 = Convert feet to miles at 5280ft instead of 10000ft
+- bit4 = Do not display crosshair
+- bit5 = Translate arrow directions when using BF font set
      
 Several font sets are included and can be changed during runtime (and those who can build the software can customize or add additional font sets....see libraries/AP_OSD/fonts/README.md)
 
