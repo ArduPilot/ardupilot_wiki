@@ -6,6 +6,10 @@ Future Wiki Changes (in Master branch now)
 Will be in future 4.5 release and is currently in master ("latest")
 
 [copywiki destination="plane,copter,rover,blimp"]
+Add Battery SOC and Gimbal POI applets
+======================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5495
 
 Add ICE option to prevent starting when disarmed
 ================================================
