@@ -4,9 +4,9 @@
 LOITER to Altitude and QLAND Mode
 =================================
 
-If the previous mode was a fixed wing mode, this mode will perform a descending fixed wing LOITER down to :ref:`Q_RTL_ALT<Q_RTL_ALT>` and then switch to :ref:`QLAND mode <qland-mode>`. The LOITER center is set to the point when entering the mode. 
+If the previous mode was a fixed wing mode, this mode will perform a descending fixed wing LOITER down to :ref:`Q_RTL_ALT<Q_RTL_ALT>` and then switch to :ref:`QLAND mode <qland-mode>`. If the aircraft was already performing a loiter when switching to this mode the LOITER center does not change, otherwise the LOITER center will become the same location it is at when entering the mode.
 
-.. note:: the QLAND target will be directly below the point it switches to QLAND (ie on the loiter circle path, not its center)
+.. note:: the QLAND target will be directly below the point it switches to QLAND (ie on the loiter circle path, not its center) if it is not already loitering
 
 If in a VTOL mode, or below  :ref:`Q_RTL_ALT<Q_RTL_ALT>`, when switching to this mode, it will change immediately to :ref:`QLAND mode <qland-mode>`.
 
