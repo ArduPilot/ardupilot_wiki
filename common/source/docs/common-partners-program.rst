@@ -83,6 +83,7 @@ are:
  - you will be added to the partners mailing list and partners discord channel
  - you will receive an invitation to the monthly partners development call
 
+If you have not received a reply from the Partners Program Coordinator in 2 business days, please check the SPAM folder of your inbox. Otherwise, fill out `this form <https://forms.gle/pZN81bcjiVez7QpN9>`__ and the Coordinator will reach out to you shortly. 
 
 Payment Methods
 ===============
