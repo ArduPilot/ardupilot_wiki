@@ -85,6 +85,7 @@ Closed Hardware
     BetaFPV F4 1S 12A AIO V3 <common-betafpvf405>
     brainFPV RADIX2 HD <common-radix2hd>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
+    Flywoo F405 Pro <common-flywoof405pro>
     Flywoo F745 AIO BL_32/ Nano <common-flywoo-f745>
     Foxeer H743 MPU600 <common-foxeerh743v1>
     Foxeer Reaper F745-AIO V2 <common-foxeerf745aio>
