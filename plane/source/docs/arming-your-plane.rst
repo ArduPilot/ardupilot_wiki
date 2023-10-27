@@ -137,6 +137,8 @@ your autopilot has notification LEDs and a buzzer. The clues are:
 See the :ref:`sounds page <common-sounds-pixhawkpx4>` to listen to what the
 buzzer sounds like for each state.
 
+Unless the :ref:`ARMING_OPTIONS<ARMING_OPTIONS>` bit 2 is set, text messages will be sent to the GCS to indicate when arming or disarming has occurred.
+
 Throttle output when disarmed
 =============================
 

@@ -60,3 +60,9 @@ Disarming the motors will cause the motors to stop spinning. To disarm the motor
 #. Turn off your transmitter.
 
 .. note:: If setup, you can use one of the ``RC_xOPTION`` switches that includes the disarm function. See switch option "81", "153, or "154".
+
+GCS Status Messages
+===================
+
+Unless the :ref:`ARMING_OPTIONS<ARMING_OPTIONS>` bit 2 is set, text messages will be sent to the GCS to indicate when arming or disarming has occurred.
+
