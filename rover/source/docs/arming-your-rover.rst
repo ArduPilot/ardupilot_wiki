@@ -19,7 +19,7 @@ If the LEDs never become blue or green please see the "Pre-Arm Checks" section b
 There are three ways to arm the vehicle:
 
 -  **From the transmitter sticks**.  Ensure the vehicle is in :ref:`Hold <hold-mode>`, :ref:`Manual <manual-mode>`, :ref:`Acro <acro-mode>` or :ref:`Steering <steering-mode>` mode, then center the throttle stick and hold the steering stick fully to the right for 2 seconds
--  **From a transmitter switch**.  Raise the auxiliary switch to the high position (see :ref:`how to configure aux functions here <common-auxiliary-functions>`)
+-  **From a transmitter switch**.  If setup, you can use one of the **RC_xOPTION switches** that includes the arm function. See switch option "153", "154, or "160.
 -  **From the Ground Station**.  Press the arm/disarm button on your ground station.  If using the Mission Planner this can be found on the Flight Data screen's action tab on the bottom left
 
 .. image:: ../../../images/armingButtonMissPlan.jpg
@@ -32,7 +32,7 @@ How to Disarm
 =============
 
 -  **From the transmitter sticks**.  Ensure the vehicle is in :ref:`Hold <hold-mode>`, :ref:`Manual <manual-mode>`, :ref:`Acro <acro-mode>` or :ref:`Steering <steering-mode>` mode, then hold the steering stick fully left for 2 seconds
--  **From a transmitter switch**.  Lower the auxiliary switch to the low position (see :ref:`how to configure aux functions here <common-auxiliary-functions>`)
+-  **From a transmitter switch**.  If setup, you can use one of the ``RC_xOPTION`` switches that includes the disarm function. See switch option "81", "153, or "154".
 -  **From the Ground Station**.  Press the arm/disarm button on your ground station.  If using the Mission Planner this can be found on the Flight Data screen's action tab on the bottom left
 
 .. note::

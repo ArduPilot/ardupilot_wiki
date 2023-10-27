@@ -79,7 +79,7 @@ three ways:
 
 -  **Rudder Arming**. Hold the rudder stick fully to the right and the
    throttle stick fully down for 3 seconds.
--  **Arming Switch**. An RC channel can be configured as an ARM/DISARM switch by using the RCx_OPTION for that channel set to 153.
+-  If setup, you can use one of the **RC_xOPTION switches** that includes that function. See switch option "153", "154, or "160".
 -  **GCS Arming**. Press the arming button on your ground station
 
 .. figure:: ../../../images/armingButtonMissPlan.jpg
@@ -92,7 +92,7 @@ three ways:
 How to Disarm
 =============
 
--  If setup, you can use the **ARM/DISARM** RC_xOPTION switch.
+-  If setup, you can use one of the ``RC_xOPTION`` switches that includes that function. See switch option "81", "153, or "154".
 
 .. warning:: This is **UNCONDITIONAL**. If done while in flight, all motors disarm and you must have throttle at idle before re-arming can occur!
 

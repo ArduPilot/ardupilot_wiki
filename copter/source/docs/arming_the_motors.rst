@@ -44,6 +44,9 @@ FOLLOW
 AUTOTUNE
 =========================           =====================
 
+
+.. note:: If setup, you can use one of the **RC_xOPTION switches** that includes the arm function. See switch option "153", "154, or "160".
+
 Disarming the motors
 ====================
 
@@ -55,3 +58,5 @@ Disarming the motors will cause the motors to stop spinning. To disarm the motor
 #. If using an autopilot with a safety switch, press it until the LED begins flashing
 #. Disconnect the Lipo battery.
 #. Turn off your transmitter.
+
+.. note:: If setup, you can use one of the ``RC_xOPTION`` switches that includes the disarm function. See switch option "81", "153, or "154".
