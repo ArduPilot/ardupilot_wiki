@@ -2256,7 +2256,9 @@ MAV_CMD_DO_JUMP_TAG
 
 Supported by: Copter, Plane, Rover.
 
-Jump to the specified :ref:`MAV_CMD_JUMP_TAG<MAV_CMD_JUMP_TAG>` item in the mission list. The jump tag command can be repeated, either a specified number of times before continuing the mission, or it can be repeated indefinitely.
+Jump to the specified :ref:`MAV_CMD_JUMP_TAG<MAV_CMD_JUMP_TAG>` item in the mission list. The jump tag command can be repeated, either a specified number of times before continuing the
+mission, or it can be repeated indefinitely.
+
 
 .. tip::
 
@@ -4475,7 +4477,7 @@ Supported by: Plane (not Copter or Rover).
 
 Stop or start the internal combustion engine (ICE)
 
-This command can be used to start or stop the ICE before a NAV_VTOL_LAND or after a NAV_VTOL_TAKEOFF command for a QuadPlane to avoid potential prop strikes in the wind. It should be placed before either of those commands.
+This command can be used to start or stop the ICE before a NAV_VTOL_LAND or after a NAV_VTOL_TAKEOFF command for a QuadPlane to avoid potential prop strikes in the wind. It should be placed before either of those commands.Also can be used to allow a single engine start while disarmed if otherwise prohibited by :ref:`ICE_OPTIONS<ICE_OPTIONS>` bit 3 being set,
 
 **Command parameters**
 
@@ -4501,10 +4503,9 @@ This command can be used to start or stop the ICE before a NAV_VTOL_LAND or afte
    <td></td>
    <td>Altitude in meters. Altitude at which action is taken.</td>
    </tr>
-   <tr style="color: #c0c0c0">
-   <td>param4</td>
+   <td><strong>param4</strong></td>
    <td></td>
-   <td>Empty</td>
+   <td>Flags: 1 = allow a single start while disarmed even if :ref:`ICE_OPTIONS<ICE_OPTIONS>` bit 3 is set</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param5</td>
