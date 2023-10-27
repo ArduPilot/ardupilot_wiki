@@ -137,6 +137,10 @@ Dropped included bootloader on some 1MB flash boards:
 See https://github.com/ArduPilot/ardupilot_wiki/pull/5242
 
 [site wiki="plane"]
+Add MAVLink command option to start ICE even if normally prevented while disarmed
+=================================================================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5505
 
 on :ref:`arming-your-plane` page, under "How to Arm":
 =====================================================
