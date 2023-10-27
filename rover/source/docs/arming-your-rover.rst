@@ -113,6 +113,8 @@ The LED and buzzer provide visual and audio clues as to the arming state:
 
 A full list of buzzer sounds can be found on the :ref:`sounds page <common-sounds-pixhawkpx4>`.
 
+Unless the :ref:`ARMING_OPTIONS<ARMING_OPTIONS>` bit 2 is set, text messages will be sent to the GCS to indicate when arming or disarming has occurred.
+
 PWM Output Behaviour when Disarmed
 ==================================
 
