@@ -2256,8 +2256,7 @@ MAV_CMD_DO_JUMP_TAG
 
 Supported by: Copter, Plane, Rover.
 
-Jump to the specified:ref:`MAV_CMD_JUMP_TAG<MAV_CMD_JUMP_TAG>` item in the mission list. The jump tag command can be repeated, either a specified number of times before continuing the
-mission, or it can be repeated indefinitely.
+Jump to the specified :ref:`MAV_CMD_JUMP_TAG<MAV_CMD_JUMP_TAG>` item in the mission list. The jump tag command can be repeated, either a specified number of times before continuing the mission, or it can be repeated indefinitely.
 
 .. tip::
 
