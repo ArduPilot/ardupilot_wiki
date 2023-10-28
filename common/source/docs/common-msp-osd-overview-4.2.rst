@@ -12,7 +12,7 @@ ArduPilot supports several types of MSP OSDs using MSP based protocols:
 Telemetry based OSDs will render OSD panel items on screen with their own engine, so ArduPilot has no control of how the items look.
 Another limit of telemetry based OSDs is that there's no way for ArduPilot to add new panel items at will, it's the vendor's responsibility to add new features by rolling out new firmware releases.
 
-DisplayPort, on the contrary, is an MSP protocol extension that allows to remotely draw text on compatible external OSDs, DisplayPort is also known (incorrectly) as CANVAS MODE.
+DisplayPort, on the other hand, is an MSP protocol extension that allows to remotely draw text on compatible external OSDs, DisplayPort is also known (incorrectly) as CANVAS MODE.
 Basically it’s a remote text only frame buffer that uses local fonts (local to the rendering engine i.e. the OSD hardware) to render strings sent via MSP.
 
 Telemetry based OSD
@@ -174,9 +174,9 @@ Features such as multiple screen switching, multiple units and statistics are su
 
 By setting :ref:`MSP_OPTIONS<MSP_OPTIONS>` bit 2 to 1 (value = 4) one can force ArduPilot to impersonate Betaflight and use a Betaflight compatible font indexes for the font table integrated in the remote OSD system.
 
-This is required if the remote OSD system does not have an ArduPilot compatible fonts table. MWOSD and DJI goggles using the wtf-os/msp-osd firmware already support custom fonts locally and therefore does not require this hack, while HDZero recently added an ArduPilot compatible font set.
-
 .. note:: the direction arrows will be reversed since ArduPilot and Betaflight use direction arrows in their font tables that are 180 deg different than each other. This can be corrected by using :ref:`OSD_OPTIONS<OSD_OPTIONS>` bit 5 to invert them before sending to OSD.
+
+This is required if the remote OSD system does not have an ArduPilot compatible fonts table (such as DJI O3 systems). MWOSD, Walksnail, and DJI goggles using the wtf-os/msp-osd firmware already support custom fonts locally and therefore does not require this hack, while HDZero recently added an ArduPilot compatible font set.
 
 Default behavior (:ref:`MSP_OPTIONS<MSP_OPTIONS>` = 0) is to use the ArduPilot font table's indexes.
 
@@ -185,7 +185,7 @@ Stick commands such as for accessing HDZero's VTX Menu also work.
 Configuration
 -------------
 
-To enable MSP DisplayPort OSD, set the following parameters (using SERIAL port 2 as the port to attach to the Air unit using both TX and RX lines):
+To enable MSP DisplayPort OSDs (such as HDZero, Walksnail), set the following parameters (using SERIAL port 2 as the port to attach to the Air unit using both TX and RX lines):
 
  - :ref:`OSD_TYPE<OSD_TYPE>` = 5
  - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 42
@@ -207,15 +207,19 @@ In addition, you can have either standard definition (SD) fonts, or high definit
 #. Install the font package as instructed by the msp-osd readme in the root directory of the goggles SD card
 #. Configure :ref:`OSD_TYPE<OSD_TYPE>` = 5 and :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 42
 
-Now you can select to display either the SD or HD fonts using ``OSDx_TXT_RES`` for each OSD screen enabled. 0 = SD (30x16), 1 = HD (50x18), 3 = HD (60x22).
 
-The SD font's positions are set on a 30x16 X/Y position grid as normal, the HD uses a 50x18 or 60x22 grid. The 50x18 grid has margins at the top/bottom/left/right of the screen before the grid begins. 
-
-Sets of fonts converted from ArduPilots standard font sets are provided on the ``msp-osd`` module site, but additional DJI-style SD/HD sets with color icons are available `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts/HDFonts>`__
+Sets of fonts converted from ArduPilot's standard font sets are provided on the ``msp-osd`` module site, but additional DJI-style SD/HD sets with color icons are available `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts/HDFonts>`__
 
 .. note:: the font set above will need to be renamed and placed in the appropriate subdirectory on the goggle's SD card if using a version after ``mspd-osd`` ver 0.6.7. Follow the readme for whatever version you are using of ``msp-osd``.
 
-.. note:: Mission Planners' OSD setup screen is only a 30x18 matrix, so drag and drop of the OSD panel items is limited for the HD resolutions, but manually entering the higher values for the X/Y positions does work.
+Display Resolution
+------------------
+
+If the OSD is capable, you can select to display either the SD or HD fonts using ``OSDx_TXT_RES`` for each OSD screen enabled. 0 = SD (30x16), 1 = HD (50x18), 3 = HD (60x22).
+
+The SD font's positions are set on a 30x16 X/Y position grid as normal, the HD uses a 50x18 or 60x22 grid. The 50x18 grid has margins at the top/bottom/left/right of the screen before the grid begins. 
+
+.. note:: Mission Planners' OSD setup screen now suuports HD OSD configuration.
 
 
 Testing OSD with SITL
@@ -245,7 +249,7 @@ By changing the OSD panel items' parameters, a live update on their placement ca
 Using Mission Planner to Configure the Layout
 =============================================
 
-Mission Planner(MP) has a tab in its CONFIG menu to configure the on-board OSD many autopilots integrate. This same configuration tab can be used to configure the OSD panels. In fact, you can do that while the SITL program and MSP OSD emulation window are active by connecting Mission Planner running on the same computer, or networked computer, to MAVProxy, using this command in MAVProxy:
+Mission Planner(MP) has a tab in its CONFIG menu to configure the on-board OSD many autopilots integrate, as well as setup layouts for Displayport OSDs. This same configuration tab can be used to configure the OSD panels. In fact, you can do that while the SITL program and MSP OSD emulation window are active by connecting Mission Planner running on the same computer, or networked computer, to MAVProxy, using this command in MAVProxy:
 
 ::
 
