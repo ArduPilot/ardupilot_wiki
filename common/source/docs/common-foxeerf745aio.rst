@@ -80,15 +80,15 @@ default protocols shown
 RC Input
 ========
 
-RC input is configured on the RX2 (UART2_RX) pin. It supports all RC protocols except PPM. See :ref:`common-rc-systems` for details for a specific RC system. :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` is set to "23", by default, to enable this.
+RC input is configured on the RX2 (UART2_RX) pin. It supports all RC protocols except PPM. See :ref:`common-rc-systems` for details for a specific RC system. :ref:`SERIAL 2_PROTOCOL<SERIAL2_PROTOCOL>` is set to "23", by default, to enable this.
 
-- SBUS/DSM/SRXL connects to the RX2 pin but SBUS requires that the :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` be set to "3".
+- SBUS/DSM/SRXL connects to the RX2 pin but SBUS requires that the :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` be set to "3".
 
-- FPort requires connection to TX2 and :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` be set to "7".
+- FPort requires connection to TX2 and :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` be set to "7".
 
-- CRSF also requires a TX3 connection, in addition to RX2, and automatically provides telemetry. Set :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` to "0".
+- CRSF also requires a TX2 connection, in addition to RX2, and automatically provides telemetry. Set :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` to "0".
 
-- SRXL2 requires a connection to TX2 and automatically provides telemetry.  Set :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` to "4".
+- SRXL2 requires a connection to TX2 and automatically provides telemetry.  Set :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` to "4".
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
 
