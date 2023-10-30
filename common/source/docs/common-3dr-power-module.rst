@@ -58,7 +58,7 @@ If the autopilot has additional analog-to-digital pins available, a second batte
 
 - :ref:`BATT2_MONITOR <BATT_MONITOR>` = **4** to measure both voltage and current (you will need to reboot the board after changing this)
 - :ref:`BATT2_VOLT_PIN <BATT_VOLT_PIN>` = **13**
-- :ref:`BATT_CURR_PIN <BATT_CURR_PIN>` = **14**
+- :ref:`BATT2_CURR_PIN <BATT_CURR_PIN>` = **14**
 
 The :ref:`BATT2_VOLT_MULT <BATT_VOLT_MULT>` and :ref:`BATT2_AMP_PERVLT <BATT_AMP_PERVLT>` should also be set by comparing the reported values vs values collected using a hand held voltage meter
 
