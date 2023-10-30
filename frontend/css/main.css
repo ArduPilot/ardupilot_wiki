@@ -81,6 +81,11 @@ html {
     color: white !important; /* ArduPilot */
 }
 
+.nav-link:hover {
+    color: rgb(176, 176, 176) !important;
+    text-decoration: underline;
+}
+
 .dropdown-toggle::after {
 /*display: inline-block;*/
 margin-left: 0.255em;
