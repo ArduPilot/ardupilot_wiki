@@ -301,7 +301,6 @@ def copy_build(site, destdir):
 
         # copy jquery
         os.makedirs(os.path.join(targetdir, '_static'), exist_ok=True)
-        shutil.copy(os.path.join('js', 'jquery-3.2.1.min.js'), os.path.join(targetdir, '_static', 'jquery-3.2.1.min.js'))
 
         # delete the old directory
         debug('Removing %s' % olddir)
