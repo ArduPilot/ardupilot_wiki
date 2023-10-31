@@ -52,6 +52,7 @@ from concurrent.futures import ThreadPoolExecutor
 from typing import Optional, Dict, List
 
 
+from sphinx.application import Sphinx
 import rst_table
 
 from codecs import open
@@ -232,17 +233,21 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
 
 
 def build_one(wiki, fast):
-    '''build one wiki'''
-    print(f'Using make for sphinx: {wiki}')
-    if platform.system() == "Windows":
-        # This will fail if there's no folder to clean, so no check_call here
-        if not fast:
-            subprocess.run(["make.bat", "clean"], cwd=wiki, shell=True)
-        subprocess.check_call(["make.bat", "html"], cwd=wiki, shell=True)
-    else:
-        if not fast:
-            subprocess.check_call(["nice", "make", "clean"], cwd=wiki)
-        subprocess.check_call(["nice", "make", "html"], cwd=wiki)
+    """build one wiki"""
+    print('Using sphinx-build for sphinx: %s' % wiki)
+
+    source_dir = os.path.join(wiki, 'source')
+    output_dir = os.path.join(wiki, 'build')
+    html_dir = os.path.join(output_dir, 'html')
+    doctree_dir = os.path.join(output_dir, 'doctrees')
+
+    # This will fail if there's no folder to clean, so we check first
+    if not fast and os.path.exists(output_dir):
+        shutil.rmtree(output_dir)
+
+    app = Sphinx(srcdir=source_dir, confdir=source_dir, outdir=html_dir, doctreedir=doctree_dir, buildername='html',
+                 parallel=2)
+    app.build()
 
 
 def sphinx_make(site, parallel, fast):
