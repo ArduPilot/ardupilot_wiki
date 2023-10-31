@@ -87,10 +87,14 @@ class BlogPostsFetcher:
         # Regular expression to find URLs that contain 'YouTube' or image links
         url_pattern = re.compile(r'href=[\'"]?(https?://www\.youtube[^\'" >]+)')
         img_pattern = re.compile(r'(?:href|src)=[\'"]?(https?://[^\'" >]+\.(jpg|jpeg|png|gif|svg|bmp|webp))')
+        img_pattern2 = re.compile(r'img src=[\'"]?(https?://[^\'" >]+)')  # catch google link and such
 
         # Find all matches
         youtube_links = url_pattern.findall(first_five_lines)
         img_links = img_pattern.findall(first_five_lines_lower)[0] if img_pattern.findall(first_five_lines_lower) else None
+        if img_links is None:
+            img_links = img_pattern2.findall(first_five_lines_lower)[0] if img_pattern2.findall(
+                first_five_lines_lower) else None
 
         # If there are image links before YouTube links, return empty string
         if img_links and (not youtube_links or
