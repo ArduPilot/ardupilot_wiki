@@ -50,7 +50,7 @@ For the IRIS shown above:
 Calculate the Propeller Drag Coefficient
 ----------------------------------------
 
-The :ref:`EK3_DRAG_MCOEF <EK3_DRAG_MCOEF>` should be calculated after performing a flight test as described `here in the video <https://youtu.be/xVVtvVuZGQE?t=1421>`__.
+The :ref:`EK3_DRAG_MCOEF <EK3_DRAG_MCOEF>` should be calculated after performing a flight test as described `here in the video <https://youtu.be/xVVtvVuZGQE&t=1421s>`__.
 
 1. Fly in a low wind conditions in a wide open space
 2. Optionally set :ref:`LOG_DISARMED <LOG_DISARMED>` = 1 and :ref:`LOG_REPLAY <LOG_REPLAY>` = 1 to allow post flight tuning with :ref:`Replay <dev:testing-with-replay>`
@@ -88,7 +88,7 @@ The EKF's wind speed estimate is recorded in the onboard log XKF2 message's VWN 
 Barometer Position Error Compensation
 -------------------------------------
 
-Once wind estimation has been enabled, it can be used to compensate for the wind's effect on each barometer in each of four directions (foward, back, left right).  The method to calculate each parameter's value is discussed `here in the video <https://youtu.be/xVVtvVuZGQE?t=3486>`__.
+Once wind estimation has been enabled, it can be used to compensate for the wind's effect on each barometer in each of four directions (foward, back, left right).  The method to calculate each parameter's value is discussed `here in the video <https://youtu.be/xVVtvVuZGQE&t=3486s>`__.
 
 Perform a test flight
 

@@ -8,7 +8,7 @@ QLOITER Mode automatically attempts to maintain the current location, heading an
 
 A good GPS lock, :ref:`low magnetic interference on the compass <common-diagnosing-problems-using-logs_compass_interference>` and :ref:`low vibrations <common-diagnosing-problems-using-logs_vibrations>` are all important in achieving good QLOITER performance.
 
-..  youtube:: yVAnBQkNJdY?start=261
+..  youtube:: yVAnBQkNJdY&t=261s
     :width: 100%
 
 Controls

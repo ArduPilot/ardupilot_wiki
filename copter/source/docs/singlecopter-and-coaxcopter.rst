@@ -103,5 +103,5 @@ The vehicle below has two motors mounted back to back with one propeller above a
 .. image:: ../images/P1060929.jpg
     :target: ../_images/P1060929.jpg
 
-..  youtube:: FFiPbyigxVI#t=40
+..  youtube:: FFiPbyigxVI&t=40s
     :width: 100%
