@@ -6,7 +6,7 @@ FlowHold Mode
 
 FlowHold mode uses an :ref:`optical flow sensor <common-optical-flow-sensors-landingpage>` to hold position without the need for a GPS nor a downward facing Lidar.  Better performance can be achieved by attaching a :ref:`rangefinder <common-rangefinder-landingpage>` and using regular :ref:`Loiter <loiter-mode>` mode instead
 
-..  youtube:: SSISkG58cDk?t=70
+..  youtube:: SSISkG58cDk&t=70s
     :width: 100%
 
 .. warning::

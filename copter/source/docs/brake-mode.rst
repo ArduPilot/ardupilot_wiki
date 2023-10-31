@@ -18,7 +18,7 @@ are all important in achieving good performance.
 
 If the vehicle is landed in Brake mode it will immediately disarm.
 
-..  youtube:: -Db4u8LJE5w?t=103
+..  youtube:: -Db4u8LJE5w&t=103s
     :width: 100%
 
 Controls

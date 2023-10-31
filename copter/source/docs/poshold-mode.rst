@@ -17,7 +17,7 @@ the current location, heading and altitude. Good GPS position, :ref:`low magneti
 :ref:`low vibrations <common-diagnosing-problems-using-logs_vibrations>`
 are all important in achieving good loiter performance.
 
-..  youtube:: O5lEUo7w0bY#t=117
+..  youtube:: O5lEUo7w0bY&t=117s
     :width: 100%
 
 Controls

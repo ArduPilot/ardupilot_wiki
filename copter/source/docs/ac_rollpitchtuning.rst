@@ -29,5 +29,5 @@ If using :ref:`Transmitter based tuning<common-transmitter-tuning>`, set the min
 Video of in-flight tuning
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-..  youtube:: NOQPrTdrQJM#t=145
+..  youtube:: NOQPrTdrQJM&t=145s
     :width: 100%
