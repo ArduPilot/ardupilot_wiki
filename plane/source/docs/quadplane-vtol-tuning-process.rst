@@ -75,8 +75,7 @@ RPM. You should be able to tell at what PWM the motors stop producing
 more thrust by listening to the sound made at different PWM values, or
 you can use a tachometer.
 
-The :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>`:ref:`Q_M_SPIN_MAX
-<Q_M_SPIN_MAX>` values are used to select a sub-range of the outputs
+The :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>` and :ref:`Q_M_SPIN_MAX<Q_M_SPIN_MAX>` values are used to select a sub-range of the outputs
 to your motors which is linear. For hobby users the defaults are
 usually good, but for professional vehicles you should use the thrust
 stand data to determine the right range to produce linear thrust after
