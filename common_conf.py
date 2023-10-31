@@ -14,6 +14,7 @@ extensions = [
     'sphinx.ext.imgmath',
     'sphinx.ext.ifconfig',
     'sphinxcontrib.youtube',  # For youtube embedding
+    'sphinxcontrib.jquery',
 ]
 
 # Set False to re-enable warnings for non-local images.
