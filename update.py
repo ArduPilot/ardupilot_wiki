@@ -777,7 +777,7 @@ def check_imports():
     '''check key imports work'''
     import pkg_resources
     # package names to check the versions of. Note that these can be different than the string used to import the package
-    requires = ["sphinx_rtd_theme>=1.0.0", "sphinxcontrib.youtube>=1.2.0", "sphinx==5.1.1", "docutils==0.16"]
+    requires = ["sphinx_rtd_theme>=1.3.0", "sphinxcontrib.youtube>=1.2.0", "sphinx>=6.0.0", "docutils>=0.16"]
     for r in requires:
         debug("Checking for %s" % r)
         try:
