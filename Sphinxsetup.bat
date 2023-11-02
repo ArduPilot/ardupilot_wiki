@@ -2,7 +2,7 @@ rem remove any existing packages that may cause conflicts
 pip uninstall -y sphinx lxml sphinx-rtd-theme sphinxcontrib-youtube beautifulsoup4
 
 rem Install sphinx
-pip install --upgrade sphinx==7.1.2 docutils
+pip install --upgrade sphinx==7.1.2 "docutils<0.19"
 
 rem lxml for parameter parsing:
 pip install --upgrade lxml
