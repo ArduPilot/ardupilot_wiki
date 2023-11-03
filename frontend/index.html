@@ -71,41 +71,39 @@
 
 <main role="main" class="container">
 
-<div class="container-fluid" style="max-width: 920px">
-    <div id="carouselPictures" class="carousel slide">
+    <div class="container-fluid" style="max-width: 920px">
+        <div id="carouselPictures" class="carousel slide">
 
-        <div class="carousel-inner" id="carousel_content">
-            <div class="carousel-item active img-fluid">
-                <picture>
-                    <!-- first carousel element should have explicit height settled to improve performance and not lazy loaded-->
-                    <source media="(max-height: 480px)" type="image/webp" srcset="images/slides_01_Ardupilot42.webp">
-                    <source media="(max-height: 480px)" type="image/jpeg" srcset="images/slides_01_Ardupilot42.jpg">
-                    <img class="d-block w-100" src="images/slides_01_Ardupilot42.jpg"
-                         alt="Local Motors/Airbus VTOL UAV on its maiden flight">
-                </picture>
+            <div class="carousel-inner" id="carousel_content">
+                <div class="carousel-item active img-fluid">
+                    <picture>
+                        <!-- first carousel element should have explicit height settled to improve performance and not lazy loaded-->
+                        <source media="(max-height: 480px)" type="image/webp"
+                                srcset="images/slides_01_Ardupilot42.webp">
+                        <source media="(max-height: 480px)" type="image/jpeg" srcset="images/slides_01_Ardupilot42.jpg">
+                        <img class="d-block w-100" src="images/slides_01_Ardupilot42.jpg"
+                             alt="Local Motors/Airbus VTOL UAV on its maiden flight">
+                    </picture>
+                </div>
             </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPictures" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselPictures" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPictures" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselPictures" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-
     </div>
-</div>
 
 
-<br>
-<br>
-<br>
-<br>
-
-
-
+    <br>
+    <br>
+    <br>
+    <br>
 
 
     <div class="contentSection">
@@ -424,85 +422,86 @@
     <br><br>
 
 
+    <div class="container-fluid">
+
+        <div class="page-header">
+            <h1>User Cases</h1>
+        </div>
+        <hr class="mt-2 mb-5">
+
+        <div class="row text-center text-lg-left">
+
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
+                   class="d-block mb-4 h-100">
+                    <picture>
+                        <source type="image/webp" srcset="images/cases_01_bluerov-dev-1-1024x466.webp">
+                        <source type="image/jpeg" srcset="images/cases_01_bluerov-dev-1-1024x466.jpg">
+                        <img class="img-fluid img-thumbnail" src="images/cases_01_bluerov-dev-1-1024x466.jpg"
+                             loading="lazy"
+                             alt=""> Underwater
+                        exploration for coral reefs, oilpipe inspections
+                    </picture>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
+                   class="d-block mb-4 h-100">
+                    <picture>
+                        <source type="image/webp" srcset="images/cases_02_case_vtol-quadplane.webp">
+                        <source type="image/jpeg" srcset="images/cases_02_case_vtol-quadplane.jpg">
+                        <img class="img-fluid img-thumbnail" src="images/cases_02_case_vtol-quadplane.jpg"
+                             loading="lazy"
+                             alt=""> VTOL QuadPlane for
+                        Search & Rescue operations
+                    </picture>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
+                   class="d-block mb-4 h-100">
+                    <picture>
+                        <source type="image/webp" srcset="images/cases_03_PX4-Tractor.webp">
+                        <source type="image/jpeg" srcset="images/cases_03_PX4-Tractor.jpg">
+                        <img class="img-fluid img-thumbnail" src="images/cases_03_PX4-Tractor.jpg" loading="lazy"
+                             alt="">
+                        Agricultural automatic
+                        robot tractors
+                    </picture>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
+                   class="d-block mb-4 h-100">
+                    <picture>
+                        <source type="image/webp" srcset="images/cases_04_SkyMapper_1152px.webp">
+                        <source type="image/jpeg" srcset="images/cases_04_SkyMapper_1152px.jpg">
+                        <img class="img-fluid img-thumbnail" src="images/cases_04_SkyMapper_1152px.jpg" loading="lazy"
+                             alt=""> Large area aerial
+                        mapping with fixedwing drones
+                    </picture>
+                </a>
+            </div>
 
 
-
-<div class="container">
-
-    <div class="page-header">
-        <h1>User Cases</h1>
-    </div>
-    <hr class="mt-2 mb-5">
-
-    <div class="row text-center text-lg-left">
-
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
-               class="d-block mb-4 h-100">
-                <picture>
-                    <source type="image/webp" srcset="images/cases_01_bluerov-dev-1-1024x466.webp">
-                    <source type="image/jpeg" srcset="images/cases_01_bluerov-dev-1-1024x466.jpg">
-                    <img class="img-fluid img-thumbnail" src="images/cases_01_bluerov-dev-1-1024x466.jpg" loading="lazy"
-                         alt=""> Underwater
-                    exploration for coral reefs, oilpipe inspections
-                </picture>
-            </a>
         </div>
 
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
-               class="d-block mb-4 h-100">
-                <picture>
-                    <source type="image/webp" srcset="images/cases_02_case_vtol-quadplane.webp">
-                    <source type="image/jpeg" srcset="images/cases_02_case_vtol-quadplane.jpg">
-                    <img class="img-fluid img-thumbnail" src="images/cases_02_case_vtol-quadplane.jpg" loading="lazy"
-                         alt=""> VTOL QuadPlane for
-                    Search & Rescue operations
-                </picture>
-            </a>
-        </div>
+        <br><br><br>
+        <div class="alert alert-warning" role="alert">
+            <strong>Warning!</strong> Every country has different regulations governing the operation of remote
+            controlled
+            and/or autonomous vehicles. <a href="https://droneregulations.info">This database</a> has country specific
+            information, but it is every operator's responsibility to be seek out and be aware of local, regional, and
+            federal
+            regulations.
 
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
-               class="d-block mb-4 h-100">
-                <picture>
-                    <source type="image/webp" srcset="images/cases_03_PX4-Tractor.webp">
-                    <source type="image/jpeg" srcset="images/cases_03_PX4-Tractor.jpg">
-                    <img class="img-fluid img-thumbnail" src="images/cases_03_PX4-Tractor.jpg" loading="lazy" alt="">
-                    Agricultural automatic
-                    robot tractors
-                </picture>
-            </a>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-6">
-            <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
-               class="d-block mb-4 h-100">
-                <picture>
-                    <source type="image/webp" srcset="images/cases_04_SkyMapper_1152px.webp">
-                    <source type="image/jpeg" srcset="images/cases_04_SkyMapper_1152px.jpg">
-                    <img class="img-fluid img-thumbnail" src="images/cases_04_SkyMapper_1152px.jpg" loading="lazy"
-                         alt=""> Large area aerial
-                    mapping with fixedwing drones
-                </picture>
-            </a>
         </div>
 
 
-    </div>
-
-    <br><br><br>
-    <div class="alert alert-warning" role="alert">
-        <strong>Warning!</strong> Every country has different regulations governing the operation of remote controlled
-        and/or autonomous vehicles. <a href="https://droneregulations.info">This database</a> has country specific
-        information, but it is every operator's responsibility to be seek out and be aware of local, regional, and
-        federal
-        regulations.
-
-    </div>
-
-
-</div><!-- /.container-fluid -->
+    </div><!-- /.container-fluid -->
 
 </main><!-- /.container-fluid -->
 
