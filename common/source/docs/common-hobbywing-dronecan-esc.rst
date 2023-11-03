@@ -10,6 +10,8 @@ Hobbywing DroneCAN ESC
 
 Hobbywing ESCs with CAN interfaces (`including these <https://www.hobbywing.com/en/products?id=46>`__) support DroneCAN which allows the autopilot to control the ESC/motor via CAN and also retrieve the individual rpm, voltage, current and temperature.
 
+.. note:: be sure that the CAN version of the ESC is being ordered. Contact Hobbywing if there is doubt. Some ESCs may require special ordering to get CAN interface.
+
 The contents of this page were verified using a `Hobbywing X6 Plus (6218-150KV CW motor) <https://www.hobbywingdirect.com/collections/xrotor-x8-series/products/xrotor-pro-x6-series>`__.
 
 Some images courtesy of hobbywing.com
