@@ -73,7 +73,7 @@
 
 <main role="main" class="container">
 
-    <div class="container-fluid" style="max-width: 920px">
+    <div class="container" style="max-width: 920px">
         <div id="carouselPictures" class="carousel slide">
 
             <div class="carousel-inner" id="carousel_content">
@@ -117,7 +117,67 @@
 
         <div class="contentSection">
             <h2>Latest posts on Community Blogs</h2>
-            <div class="row text-left text-lg-left" id="blog_posts">
+            <div id="blog_posts">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
+                            <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min">
+                            Loading Blog post
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
+                            <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min">
+                            Loading Blog post
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
+                            <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min">
+                            Loading Blog post
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
+                            <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min">
+                            Loading Blog post
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
+                            <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min">
+                            Loading Blog post
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
+                            <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min">
+                            Loading Blog post
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
+                            <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min">
+                            Loading Blog post
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
+                            <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min">
+                            Loading Blog post
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
+                            <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min">
+                            Loading Blog post
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <br><br>
@@ -424,7 +484,7 @@
     <br><br>
 
 
-    <div class="container-fluid">
+    <div class="container">
 
         <div class="page-header">
             <h1>User Cases</h1>
@@ -503,18 +563,16 @@
         </div>
 
 
-    </div><!-- /.container-fluid -->
+    </div>
 
-</main><!-- /.container-fluid -->
+</main>
 
-<br>
 
 <footer>
     <div id="footerID">
-        <br>
         <!-- Footer -->
         <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
-            <div class="container-fluid text-center">
+            <div class="container text-center">
                 © 2023 Copyright: &copy; <a href="https://www.ardupilot.org/"> ArduPilot.org</a>
             </div>
         </footer>
@@ -523,7 +581,6 @@
 </footer>
 
 <script>
-    // TODO : make a grid 3x3 with static size for the blogs post. Create it on DOM loading and then defer filling
     fetch('blog_posts.json', {
         headers: {
             "Pragma": "no-cache",
@@ -532,46 +589,38 @@
     })
         .then(response => response.json())
         .then(data => {
-            const blogPosts = document.getElementById('blog_posts');
+            const blogPostNodes = document.querySelectorAll('#blog_posts .col-md-4');
+            data.forEach((val, index) => {
+                if (index < blogPostNodes.length) {
+                    let anchor = blogPostNodes[index].querySelector("a");
+                    let span = document.createElement('span');
+                    anchor.href = val.link;
+                    span.textContent = val.title;
 
-            data.forEach(val => {
-                let div = document.createElement('div');
-                let anchor = document.createElement('a');
-                let spam = document.createElement('spam');
+                    if (val.has_image) {
+                        let img = document.createElement('img');
+                        img.classList.add("img-fluid", "img-thumbnail");
+                        img.src = val.image;
+                        img.loading = "lazy";
+                        //img.alt = val.title;
 
-                div.classList.add("col-lg-4", "col-md-6", "col-12");
-                anchor.classList.add("d-block", "mb-4", "h-100", "text-dark");
+                        anchor.innerHTML = '';
+                        anchor.appendChild(img);
+                    } else {
+                        let iframe = document.createElement('iframe');
+                        anchor.classList.add("embed-responsive");
+                        iframe.classList.add("embed-responsive-item", "img-thumbnail");
+                        iframe.src = val.youtube_link;
+                        iframe.title = val.title;
+                        iframe.style.width = "100%";
+                        iframe.style.height = "80%";
 
+                        anchor.innerHTML = '';
+                        anchor.appendChild(iframe);
+                    }
 
-                anchor.href = val.link;
-                spam.textContent = val.title;
-
-                if (val.has_image) {
-                    let img = document.createElement('img');
-
-                    img.classList.add("img-fluid", "img-thumbnail");
-                    img.src = val.image;
-                    img.loading = "lazy";
-                    img.alt = "";
-
-                    anchor.appendChild(img);
-                } else {
-                    let iframe = document.createElement('iframe');
-                    anchor.classList.add("embed-responsive");
-                    iframe.classList.add("embed-responsive-item", "img-thumbnail");
-                    iframe.src = val.youtube_link;
-                    iframe.title = val.title;
-                    iframe.style.width = "100%";
-                    iframe.style.height = "80%";
-
-
-                    anchor.appendChild(iframe);
-                    anchor.appendChild(document.createElement('br'));
+                    anchor.appendChild(span);
                 }
-
-                anchor.appendChild(spam);
-                div.appendChild(anchor);
-                blogPosts.appendChild(div);
             });
         })
         .catch(error => console.error('Error:', error));
