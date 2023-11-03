@@ -24,6 +24,8 @@ Direct Drive Fixed Pitch
 
 The Direct Drive Fixed Pitch (DDFP) tail type accommodates two options: one where the main rotor rotates clockwise when viewed from above and the other where the main rotor rotates counter-clockwise when viewed from above.  Be sure to select the DDFP tail type for the main rotor rotation.  In this case, the control of tailrotor thrust is accomplished through tailrotor speed since it is a fixed pitch propeller. In the Heli Page of the Mission Planner Setup Tab, motor 4 is assigned to the servo number that corresponds to the servo channel the tailrotor ESC is physically connected.
 
+From version 4.5 and onward, DDFP tails now have access to thrust linearisation and voltage scaling. These features are off by default. The parameters used to setup these features can be found with the prefix  ``H_DDRP_x``.  Configuration of these features is exactly the same as thrust linearisation for multicopter, details for which can be found: ref:`here<motor-thrust-scaling>`.
+
 Direct Drive Variable Pitch
 +++++++++++++++++++++++++++
 
@@ -33,6 +35,21 @@ Setting Tail Trim
 =================
 
 Setting the trim value of the Servo output is important to ensuring that the integrator offset of the tail rotor control loop is minimized, to maximize control range.  Collective to tailrotor compensation can also help with this and is discussed in the next section.
+
+For DDFP tails on Version 4.5 and Onward
+++++++++++++++++++++++++++++++++++++++++
+
+If no collective to tailrotor compensation is used, then it is recommended that the :ref:`H_YAW_TRIM<H_YAW_TRIM>` parameter is set to minimise the yaw I term in the hover.  To determine this:
+
+- Ensure PID logging is switched on in the :ref:`LOG_BITMASK<LOG_BITMASK>` parameter.
+- Hover the aircraft, maintaining altitude.  For best results, this is preferentially done on a light wind day. If possible, leave the aircraft drift with the wind and mintain a fixed height (ALT HOLD is very useful for this).
+- After the flight, download the log and find the ``PIDY.I`` message.  Zoom in the on that portion of the flight with the hovering (should be a relatively flat line). Determine the average value of the I term. Enter this average value in the :ref:`H_YAW_TRIM<H_YAW_TRIM>` parameter.
+- To confirm this has been done correctly repeat the flight.  Now, in the hovering portion of the flight, the yaw I Term should be close to zero. 
+
+If the collective to tail rotor compensation is used (see below) then set the :ref:`H_YAW_TRIM<H_YAW_TRIM>` for the I term that is sufficient to compensate for the main rotor zero blade pitch drag.
+
+Other Tail Types and DDFP using Version 4.4.2 and Older
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 If no collective to tailrotor compensation is used, then it is recommended that the ``SERVOx_TRIM`` for the tailrotor servo is set to the PWM that corresponds to the tailrotor pitch required for hover, or the motor speed for DDFP. To determine this, hover the aircraft.  After the flight, pull the log and determine the average PWM value for the servo for hovering flight.  Either set that as the ``SERVOx_TRIM`` or mechanically adjust the tail pitch (non-DDFP tail types) for the tail pitch corresponding to the PWM.  Then set the ``SERVOx_TRIM`` to the servo midpoint. The latter approach is usually preferable.
 
