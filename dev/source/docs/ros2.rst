@@ -9,7 +9,7 @@ ROS 2
 
 ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka Robot Operating System).
 
-`ROS <http://www.ros.org/>`__ provides libraries, tools, hardware abstraction, device drivers, visualizers, message-passing, package management, and more to help software developers create robot applications. ROS has been succeded by `ROS2 <http://design.ros2.org/articles/why_ros2.html>`__, and Ardupilot now natively supports it through its library `AP_DDS <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_DDS>`__
+`ROS <http://www.ros.org/>`__ provides libraries, tools, hardware abstraction, device drivers, visualizers, message-passing, package management, and more to help software developers create robot applications. ROS has been superseded by `ROS2 <http://design.ros2.org/articles/why_ros2.html>`__, and Ardupilot now natively supports it through its library `AP_DDS <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_DDS>`__
 
 
 Prerequisites
@@ -20,7 +20,7 @@ Prerequisites
 
     We are keen to improve ArduPilot's support of ROS 2 so if you find issues (such as commands that do not seem to be supported), please report them in the `ArduPilot issues list <https://github.com/ArduPilot/ardupilot/issues>`__ with a title 
 
-First, make sure that you have succesfully installed `ROS humble <https://docs.ros.org/en/humble/Installation.html>`__ and create a `ROS 2 workspace <https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#id4>`__. This page assumes that your workspace is named `ros2_ws`
+First, make sure that you have successfully installed `ROS humble <https://docs.ros.org/en/humble/Installation.html>`__ and create a `ROS 2 workspace <https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#id4>`__. This page assumes that your workspace is named `ros2_ws`
 
 Before anything else, make sure that you have `sourced your ROS 2 environment <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#source-the-setup-files>`__ and check if it is `configured correctly <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#check-environment-variables>`__.
 
@@ -44,14 +44,15 @@ Now update all dependencies:
     cd ~/ros2_ws
     sudo apt update
     rosdep update
-    rosdep install --rosdistro ${ROS_DISTRO} --from-paths src -i
+    source /opt/ros/humble/setup.bash
+    rosdep install --from-paths src --ignore-src
 
 And finally, build your workspace:
 
 .. code-block:: bash
 
     cd ~/ros2_ws
-    colcon build --cmake-args -DBUILD_TESTING=ON
+    colcon build --packages-up-to ardupilot_dds_tests --cmake-args -DBUILD_TESTING=ON
 
 If you'd like to test your installation, run:
 
