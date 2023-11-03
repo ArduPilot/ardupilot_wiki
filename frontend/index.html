@@ -2,495 +2,534 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
-  <title>ArduPilot - Versatile, Trusted, Open</title>
+    <title>ArduPilot - Versatile, Trusted, Open</title>
 
-  <meta name="description"
-    content="ArduPilot is a trusted, versatile, and open source autopilot system supporting many vehicle types: multi-copters, traditional helicopters, fixed wing aircraft, boats, submarines, rovers and more. The source code is developed by a large community of professionals and enthusiasts. New developers are always welcome! The best way to start is by joining the Developer Team Forum, which is open to all and chock-full of daily development goodness.">
-  <meta name="author" content="ArduPilot">
+    <meta name="description"
+          content="ArduPilot is a trusted, versatile, and open source autopilot system supporting many vehicle types: multi-copters, traditional helicopters, fixed wing aircraft, boats, submarines, rovers and more. The source code is developed by a large community of professionals and enthusiasts. New developers are always welcome! The best way to start is by joining the Developer Team Forum, which is open to all and chock-full of daily development goodness.">
+    <meta name="author" content="ArduPilot">
 
-  <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-  <meta property="og:site_name" content="ArduPilot.org" />
-  <meta property="og:title" content="ArduPilot">
-  <meta property="og:description"
-    content="ArduPilot is a trusted, versatile, and open source autopilot system supporting many vehicle types: multi-copters, traditional helicopters, fixed wing aircraft, boats, submarines, rovers and more. The source code is developed by a large community of professionals and enthusiasts. New developers are always welcome! The best way to start is by joining the Developer Team Forum, which is open to all and chock-full of daily development goodness." />
-  <!-- description shown in the actual shared post -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ardupilot.org">
-  <meta property="og:image" content="https://ardupilot.org/images/ArduPilot-Motto.png">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content="ArduPilot.org"/>
+    <meta property="og:title" content="ArduPilot">
+    <meta property="og:description"
+          content="ArduPilot is a trusted, versatile, and open source autopilot system supporting many vehicle types: multi-copters, traditional helicopters, fixed wing aircraft, boats, submarines, rovers and more. The source code is developed by a large community of professionals and enthusiasts. New developers are always welcome! The best way to start is by joining the Developer Team Forum, which is open to all and chock-full of daily development goodness."/>
+    <!-- description shown in the actual shared post -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ardupilot.org">
+    <meta property="og:image" content="https://ardupilot.org/images/ArduPilot-Motto.png">
 
-  <link rel="canonical" href="https://www.ardupilot.org" />
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-icon.png">
-  <!-- Place favicon.ico in the root directory -->
-  <link rel="icon" href="icon.png">
-  <link rel="mask-icon" href="icon.png" color="#ffffff">
+    <link rel="canonical" href="https://www.ardupilot.org"/>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="icon" href="icon.png">
+    <link rel="mask-icon" href="icon.png" color="#ffffff">
 
-  <meta name="theme-color" content="#ffffff">
-  <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
 
-  <!-- CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="css/main.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script>
-    function loadContent(elementId, file) {
-      fetch(file)
-              .then(response => {
-                if (!response.ok) {
-                  throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.text();
-              })
-              .then(text => document.getElementById(elementId).innerHTML = text)
-              .catch(e => console.error('Error:', e));
-    }
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <script>
+        function loadContent(elementId, file) {
+            fetch(file)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(text => document.getElementById(elementId).innerHTML = text)
+                .catch(e => console.error('Error:', e));
+        }
 
-    document.addEventListener("DOMContentLoaded", function() {
-      loadContent("headerID", "includes/_topbar.html");
-    });
-  </script>
-  <script defer data-domain="ardupilot.org" src="https://plausible.ardupilot.org/js/script.outbound-links.js"></script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadContent("headerID", "includes/_topbar.html");
+        });
+    </script>
+    <script defer data-domain="ardupilot.org"
+            src="https://plausible.ardupilot.org/js/script.outbound-links.js"></script>
 
 </head>
 
 <body>
 
-  <div id="headerID">
+<div id="headerID">
     <!-- NAVBAR -->
-  </div>
+</div>
 
-  <div class="container-fluid" style="max-width: 920px">
+<div class="container-fluid" style="max-width: 920px">
     <div id="carouselPictures" class="carousel slide">
 
-      <div class="carousel-inner" id="carousel_content">
-        <div class="carousel-item active img-fluid">
-          <picture>
-            <!-- first carousel element should have explicit height settled to improve performance and not lazy loaded-->
-            <source media="(max-height: 480px)" type="image/webp" srcset="images/slides_01_Ardupilot42.webp">
-            <source media="(max-height: 480px)" type="image/jpeg" srcset="images/slides_01_Ardupilot42.jpg">
-            <img class="d-block w-100" src="images/slides_01_Ardupilot42.jpg"
-                 alt="Local Motors/Airbus VTOL UAV on its maiden flight">
-          </picture>
+        <div class="carousel-inner" id="carousel_content">
+            <div class="carousel-item active img-fluid">
+                <picture>
+                    <!-- first carousel element should have explicit height settled to improve performance and not lazy loaded-->
+                    <source media="(max-height: 480px)" type="image/webp" srcset="images/slides_01_Ardupilot42.webp">
+                    <source media="(max-height: 480px)" type="image/jpeg" srcset="images/slides_01_Ardupilot42.jpg">
+                    <img class="d-block w-100" src="images/slides_01_Ardupilot42.jpg"
+                         alt="Local Motors/Airbus VTOL UAV on its maiden flight">
+                </picture>
+            </div>
         </div>
-      </div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselPictures" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselPictures" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPictures" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPictures" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
 
     </div>
-  </div>
+</div>
 
 
-  <br>
-  <br>
-  <br>
-  <br>
+<br>
+<br>
+<br>
+<br>
 
 
-
-  <main role="main" class="container-fluid">
+<main role="main" class="container-fluid">
 
 
     <div class="contentSection">
-      <h1>Community</h1>
+        <h1>Community</h1>
 
-      <p class="text-justify lead">Community is what really sets ArduPilot apart from many other offerings in the
-        market. Here are some of the places you can find ArduPilot users and developers:</p>
-
-
-      <div class="contentSection">
-        <h2>Latest posts on Community Blogs</h2>
-          <div class="row text-left text-lg-left" id="blog_posts">
-          </div>
-      </div>
-      <br><br>
-
-      <div class="contentSection">
-        <h2>Latest Community Forums posts</h2>
-          <ul id="news_posts">
-          </ul>
-      </div>
-      <br><br>
+        <p class="text-justify lead">Community is what really sets ArduPilot apart from many other offerings in the
+            market. Here are some of the places you can find ArduPilot users and developers:</p>
 
 
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Discussion Forum</h3>
+        <div class="contentSection">
+            <h2>Latest posts on Community Blogs</h2>
+            <div class="row text-left text-lg-left" id="blog_posts">
             </div>
-            <div class="panel-body">
-              Get help and interact with other ArduPilot users on <a href="https://discuss.ardupilot.org/">Discussion
-                Forum</a> and <a href="https://discuss.ardupilot.org/c/blog">related blogs on ArduPilot.org!</a><br><br>
+        </div>
+        <br><br>
 
-              <a href="https://discuss.ardupilot.org/c/blog">
-                <picture>
-                  <source type="image/webp" srcset="images/ArduPilotDiscuss.webp">
-                  <source type="image/jpeg" srcset="images/ArduPilotDiscuss.png">
-                  <img src="images/ArduPilotDiscuss.png" class="img-fluid rounded" loading="lazy" alt="https://discuss.ardupilot.org/c/blog">
-                </picture>
-              </a>
+        <div class="contentSection">
+            <h2>Latest Community Forums posts</h2>
+            <ul id="news_posts">
+            </ul>
+        </div>
+        <br><br>
 
 
-              <br><br><br>
-            </div>
-          </div>
-        </div><!-- /.col-sm-4 -->
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Discussion Forum</h3>
+                    </div>
+                    <div class="panel-body">
+                        Get help and interact with other ArduPilot users on <a href="https://discuss.ardupilot.org/">Discussion
+                        Forum</a> and <a href="https://discuss.ardupilot.org/c/blog">related blogs on ArduPilot.org!</a><br><br>
 
-        <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Facebook ArduPilot group</h3>
-            </div>
-            <div class="panel-body">
-              <a href="https://www.facebook.com/groups/ArduPilot.org/">Facebook ArduPilot group</a> have several post
-              with most recent community cases.
-
-              <br><br><br>
-
-              <a href="https://www.facebook.com/groups/ArduPilot.org/">
-                <picture>
-                  <source type="image/webp" srcset="images/FaceBookArduPilot.webp">
-                  <source type="image/jpeg" srcset="images/FaceBookArduPilot.png">
-                  <img src="images/FaceBookArduPilot.png" class="img-fluid rounded" loading="lazy" alt="https://www.facebook.com/groups/ArduPilot.org/">
-                </picture>
-              </a>
-
-            </div>
-          </div>
-        </div><!-- /.col-sm-4 -->
-
-        <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Discord</h3>
-            </div>
-            <div class="panel-body">
-              Developing questions? Check our <a href="https://ardupilot.org/discord">discord channels</a> and exchange
-              your coding questions with other developers.
-
-              <br><br>
-
-              <a href="https://ardupilot.org/discord">
-                <picture>
-                  <source type="image/webp" srcset="images/discord_mini.webp">
-                  <source type="image/jpeg" srcset="images/discord_mini.png">
-                  <img src="images/discord_mini.png" class="img-fluid rounded" loading="lazy" alt="https://ardupilot.org/discord">
-                </picture>
-              </a>
-
-            </div>
-          </div>
-        </div><!-- /.col-sm-4 -->
-
-      </div>
-
-      <br>
+                        <a href="https://discuss.ardupilot.org/c/blog">
+                            <picture>
+                                <source type="image/webp" srcset="images/ArduPilotDiscuss.webp">
+                                <source type="image/jpeg" srcset="images/ArduPilotDiscuss.png">
+                                <img src="images/ArduPilotDiscuss.png" class="img-fluid rounded" loading="lazy"
+                                     alt="https://discuss.ardupilot.org/c/blog">
+                            </picture>
+                        </a>
 
 
-      <div class="contentSection">
-        <h1>Developer Community</h1>
-        <p class="text-justify lead">
-          Working on the code? You can start with our <a href="https://ardupilot.org/dev/index.html">Developers
-            Guide</a> and chat with other developers at <a href="https://ardupilot.org/discord">our discord channels</a>
-        </p>
-      </div>
-      <br><br>
+                        <br><br><br>
+                    </div>
+                </div>
+            </div><!-- /.col-sm-4 -->
+
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Facebook ArduPilot group</h3>
+                    </div>
+                    <div class="panel-body">
+                        <a href="https://www.facebook.com/groups/ArduPilot.org/">Facebook ArduPilot group</a> have
+                        several post
+                        with most recent community cases.
+
+                        <br><br><br>
+
+                        <a href="https://www.facebook.com/groups/ArduPilot.org/">
+                            <picture>
+                                <source type="image/webp" srcset="images/FaceBookArduPilot.webp">
+                                <source type="image/jpeg" srcset="images/FaceBookArduPilot.png">
+                                <img src="images/FaceBookArduPilot.png" class="img-fluid rounded" loading="lazy"
+                                     alt="https://www.facebook.com/groups/ArduPilot.org/">
+                            </picture>
+                        </a>
+
+                    </div>
+                </div>
+            </div><!-- /.col-sm-4 -->
+
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Discord</h3>
+                    </div>
+                    <div class="panel-body">
+                        Developing questions? Check our <a href="https://ardupilot.org/discord">discord channels</a> and
+                        exchange
+                        your coding questions with other developers.
+
+                        <br><br>
+
+                        <a href="https://ardupilot.org/discord">
+                            <picture>
+                                <source type="image/webp" srcset="images/discord_mini.webp">
+                                <source type="image/jpeg" srcset="images/discord_mini.png">
+                                <img src="images/discord_mini.png" class="img-fluid rounded" loading="lazy"
+                                     alt="https://ardupilot.org/discord">
+                            </picture>
+                        </a>
+
+                    </div>
+                </div>
+            </div><!-- /.col-sm-4 -->
+
+        </div>
+
+        <br>
+
+
+        <div class="contentSection">
+            <h1>Developer Community</h1>
+            <p class="text-justify lead">
+                Working on the code? You can start with our <a href="https://ardupilot.org/dev/index.html">Developers
+                Guide</a> and chat with other developers at <a href="https://ardupilot.org/discord">our discord
+                channels</a>
+            </p>
+        </div>
+        <br><br>
 
 
     </div>
     <br>
 
 
-
     <div class="contentSection">
-      <h1>What is ArduPilot?</h1>
-      <p class="text-justify lead">ArduPilot is a trusted, versatile, and open source autopilot system supporting many
-        vehicle types: multi-copters, traditional helicopters, fixed wing aircraft, boats, submarines, rovers and more.
-        The source code is developed by a large community of professionals and enthusiasts. New developers are always
-        welcome! The best way to start is by joining the Developer Team Forum, which is open to all and chock-full of
-        daily development goodness.</p>
+        <h1>What is ArduPilot?</h1>
+        <p class="text-justify lead">ArduPilot is a trusted, versatile, and open source autopilot system supporting many
+            vehicle types: multi-copters, traditional helicopters, fixed wing aircraft, boats, submarines, rovers and
+            more.
+            The source code is developed by a large community of professionals and enthusiasts. New developers are
+            always
+            welcome! The best way to start is by joining the Developer Team Forum, which is open to all and chock-full
+            of
+            daily development goodness.</p>
     </div>
     <br><br>
 
     <div class="contentSection">
-      <h1>One autopilot for any mission</h1>
-      <p class="text-justify lead">ArduPilot enables the creation and use of trusted, autonomous, unmanned vehicle
-        systems for the peaceful benefit of all. ArduPilot provides a comprehensive suite of tools suitable for almost
-        any vehicle and application. As an open source project, it is constantly evolving based on rapid feedback from a
-        large community of users. The Development Team works with the community and commercial partners to add
-        functionality to ArduPilot thatbenefits everyone. Although ArduPilot does not manufacture any hardware,
-        ArduPilot firmware works on a wide variety of different hardware to control unmanned vehicles of all types.
-        Coupled with ground control software, unmanned vehicles running ArduPilot can have advanced functionality
-        including real-time communication with operators. ArduPilot has a huge online community dedicated to helping
-        users with questions, problems, and solutions.</p>
+        <h1>One autopilot for any mission</h1>
+        <p class="text-justify lead">ArduPilot enables the creation and use of trusted, autonomous, unmanned vehicle
+            systems for the peaceful benefit of all. ArduPilot provides a comprehensive suite of tools suitable for
+            almost
+            any vehicle and application. As an open source project, it is constantly evolving based on rapid feedback
+            from a
+            large community of users. The Development Team works with the community and commercial partners to add
+            functionality to ArduPilot thatbenefits everyone. Although ArduPilot does not manufacture any hardware,
+            ArduPilot firmware works on a wide variety of different hardware to control unmanned vehicles of all types.
+            Coupled with ground control software, unmanned vehicles running ArduPilot can have advanced functionality
+            including real-time communication with operators. ArduPilot has a huge online community dedicated to helping
+            users with questions, problems, and solutions.</p>
 
-      <p class="text-justify lead">The ArduPilot Project provides an advanced, full-featured and reliable open source
-        autopilot software system. The first ArduPilot open code repository was created in 2009 - since then it has been
-        developed by a team of diverse professional engineers, academics, computer scientists, and other members of our
-        global community. It is capable of controlling almost any vehicle system imaginable: conventional and VTOL
-        airplanes, gliders, multirotors, helicopters, sailboats, powered boats, submarines, ground vehicles and even
-        Balance-Bots. The supported vehicle types frequently expand as use cases emerge for new and novel platforms.</p>
+        <p class="text-justify lead">The ArduPilot Project provides an advanced, full-featured and reliable open source
+            autopilot software system. The first ArduPilot open code repository was created in 2009 - since then it has
+            been
+            developed by a team of diverse professional engineers, academics, computer scientists, and other members of
+            our
+            global community. It is capable of controlling almost any vehicle system imaginable: conventional and VTOL
+            airplanes, gliders, multirotors, helicopters, sailboats, powered boats, submarines, ground vehicles and even
+            Balance-Bots. The supported vehicle types frequently expand as use cases emerge for new and novel
+            platforms.</p>
 
-      <p class="text-justify lead">Installed in over 1,000,000 vehicles world-wide, and with advanced data-logging,
-        analysis and simulation tools, ArduPilot is a deeply tested and trusted autopilot system. The open-source code
-        base means that it is rapidly evolving, always at the cutting edge of technology development, whilst sound
-        release processes provide confidence to the end user. With many peripheral suppliers creating interfaces, users
-        benefit from a broad ecosystem of sensors, companion computers and communication systems. Since the source code
-        is open, it can be audited to ensure compliance with security and secrecy requirements.</p>
+        <p class="text-justify lead">Installed in over 1,000,000 vehicles world-wide, and with advanced data-logging,
+            analysis and simulation tools, ArduPilot is a deeply tested and trusted autopilot system. The open-source
+            code
+            base means that it is rapidly evolving, always at the cutting edge of technology development, whilst sound
+            release processes provide confidence to the end user. With many peripheral suppliers creating interfaces,
+            users
+            benefit from a broad ecosystem of sensors, companion computers and communication systems. Since the source
+            code
+            is open, it can be audited to ensure compliance with security and secrecy requirements.</p>
 
-      <p class="text-justify lead">The software suite is installed in vehicles from many manufacturers, such as many
-        from our Partners, and more broadly throughout the global autonomous systems industry. It is also used for
-        testing and development by large institutions and corporations such as NASA, Intel and Insitu/Boeing, as well as
-        countless colleges and universities around the world.</p>
+        <p class="text-justify lead">The software suite is installed in vehicles from many manufacturers, such as many
+            from our Partners, and more broadly throughout the global autonomous systems industry. It is also used for
+            testing and development by large institutions and corporations such as NASA, Intel and Insitu/Boeing, as
+            well as
+            countless colleges and universities around the world.</p>
     </div>
     <br><br>
 
     <div class="text-center">
-      <picture>
-        <source type="image/webp" srcset="images/home_ardupilot.webp">
-        <source type="image/jpeg" srcset="images/home_ardupilot.jpg">
-        <img loading="lazy" alt="images/home_ardupilot.jpg" src="images/home_ardupilot.jpg" class="img-fluid rounded">
-      </picture>
+        <picture>
+            <source type="image/webp" srcset="images/home_ardupilot.webp">
+            <source type="image/jpeg" srcset="images/home_ardupilot.jpg">
+            <img loading="lazy" alt="images/home_ardupilot.jpg" src="images/home_ardupilot.jpg"
+                 class="img-fluid rounded">
+        </picture>
     </div>
     <br><br><br>
 
 
     <div class="contentSection">
-      <h1>Terms & Slices</h1>
+        <h1>Terms & Slices</h1>
     </div>
     <br>
 
     <div class="row">
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title">Unmanned vehicles</h2>
-          </div>
-          <div class="panel-body text-justify">
-            ArduPilot can control several types of hardwares such as multi-copters, traditional helicopters, fixed wing
-            aircraft, boats, submarines, rovers and more. <br><br><br>
-          </div>
-        </div>
-      </div><!-- /.col-sm-4 -->
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Unmanned vehicles</h2>
+                </div>
+                <div class="panel-body text-justify">
+                    ArduPilot can control several types of hardwares such as multi-copters, traditional helicopters,
+                    fixed wing
+                    aircraft, boats, submarines, rovers and more. <br><br><br>
+                </div>
+            </div>
+        </div><!-- /.col-sm-4 -->
 
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title">Hardware</h2>
-          </div>
-          <div class="panel-body text-justify">
-            Is the peripheral sensors, controller, and output devices that act as the vehicle's eyes, ears, brain and
-            arms. Almost any mobile machine can be transformed into an autonomous vehicle, by simply integrating a small
-            hardware package into it. Hardware packages begin with a controller. Using inputs from sensors, the
-            controller is able to send outputs to devices such as ESC's, servos, gimbals and other peripherals.
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Hardware</h2>
+                </div>
+                <div class="panel-body text-justify">
+                    Is the peripheral sensors, controller, and output devices that act as the vehicle's eyes, ears,
+                    brain and
+                    arms. Almost any mobile machine can be transformed into an autonomous vehicle, by simply integrating
+                    a small
+                    hardware package into it. Hardware packages begin with a controller. Using inputs from sensors, the
+                    controller is able to send outputs to devices such as ESC's, servos, gimbals and other peripherals.
 
-            <picture>
-              <source type="image/webp" srcset="images/pixhawk_small.webp">
-              <source type="image/jpeg" srcset="images/pixhawk_small.jpg">
-              <img src="images/pixhawk_small.jpg" class="img-fluid rounded" loading="lazy" alt="">
-            </picture>
+                    <picture>
+                        <source type="image/webp" srcset="images/pixhawk_small.webp">
+                        <source type="image/jpeg" srcset="images/pixhawk_small.jpg">
+                        <img src="images/pixhawk_small.jpg" class="img-fluid rounded" loading="lazy" alt="">
+                    </picture>
 
 
-            <br><br><br>
-          </div>
-        </div>
-      </div><!-- /.col-sm-4 -->
+                    <br><br><br>
+                </div>
+            </div>
+        </div><!-- /.col-sm-4 -->
 
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title">Firmware</h2>
-          </div>
-          <div class="panel-body text-justify">
-            Is the code running on the controller. You choose the firmware to match your vehicle and mission: <a
-              href="https://ardupilot.org/copter/index.html">Copter</a>, <a
-              href="https://ardupilot.org/plane/index.html"> Plane</a>, <a
-              href="https://ardupilot.org/rover/index.html">Rover</a>, <a
-              href="https://ardupilot.org/copter/index.html">Sub</a>, or <a
-              href="https://ardupilot.org/antennatracker/index.html">Antenna Tracker</a>.<br><br>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Firmware</h2>
+                </div>
+                <div class="panel-body text-justify">
+                    Is the code running on the controller. You choose the firmware to match your vehicle and mission: <a
+                        href="https://ardupilot.org/copter/index.html">Copter</a>, <a
+                        href="https://ardupilot.org/plane/index.html"> Plane</a>, <a
+                        href="https://ardupilot.org/rover/index.html">Rover</a>, <a
+                        href="https://ardupilot.org/copter/index.html">Sub</a>, or <a
+                        href="https://ardupilot.org/antennatracker/index.html">Antenna Tracker</a>.<br><br>
 
-            <picture>
-              <source type="image/webp" srcset="images/firmware_types.webp">
-              <source type="image/jpeg" srcset="images/firmware_types.jpg">
-              <img src="images/firmware_types.jpg" class="img-fluid rounded" loading="lazy" alt="">
-            </picture>
+                    <picture>
+                        <source type="image/webp" srcset="images/firmware_types.webp">
+                        <source type="image/jpeg" srcset="images/firmware_types.jpg">
+                        <img src="images/firmware_types.jpg" class="img-fluid rounded" loading="lazy" alt="">
+                    </picture>
 
-          </div>
-        </div>
-      </div><!-- /.col-sm-4 -->
+                </div>
+            </div>
+        </div><!-- /.col-sm-4 -->
 
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title">Software</h2>
-          </div>
-          <div class="panel-body text-justify">
-            Is your interface to the controller. Also called a Ground Control Station (GCS), the software can run on
-            PC's or mobile devices. A GCS allows users to set-up, configure, test, and tune the vehicle. Advanced
-            packages allow autonomous mission planning, operation, and post-mission analysis.
-          </div>
-        </div>
-      </div><!-- /.col-sm-4 -->
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Software</h2>
+                </div>
+                <div class="panel-body text-justify">
+                    Is your interface to the controller. Also called a Ground Control Station (GCS), the software can
+                    run on
+                    PC's or mobile devices. A GCS allows users to set-up, configure, test, and tune the vehicle.
+                    Advanced
+                    packages allow autonomous mission planning, operation, and post-mission analysis.
+                </div>
+            </div>
+        </div><!-- /.col-sm-4 -->
 
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title">Ground Station</h2>
-          </div>
-          <div class="panel-body text-justify">
-            Ground stations for UAVs, or ground control stations for UAVs are land-based communications and control
-            systems typically used for direct piloting and communication between the crew and a UAV. These ground
-            control systems typically allow for both piloting of the craft and streaming live video and data.
-          </div>
-        </div>
-      </div><!-- /.col-sm-4 -->
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Ground Station</h2>
+                </div>
+                <div class="panel-body text-justify">
+                    Ground stations for UAVs, or ground control stations for UAVs are land-based communications and
+                    control
+                    systems typically used for direct piloting and communication between the crew and a UAV. These
+                    ground
+                    control systems typically allow for both piloting of the craft and streaming live video and data.
+                </div>
+            </div>
+        </div><!-- /.col-sm-4 -->
 
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title">Mission Planner</h2>
-          </div>
-          <div class="panel-body text-justify">
-            Is a full-featured GCS supported by ArduPilot. It offers point-and-click interaction with your hardware,
-            custom scripting, and simulation.
-            <br><br>
-            <picture>
-              <source type="image/webp" srcset="images/mission_planner_spline_waypoint.webp">
-              <source type="image/jpeg" srcset="images/mission_planner_spline_waypoint.jpg">
-              <img src="images/mission_planner_spline_waypoint.jpg" class="img-fluid rounded" loading="lazy" alt="">
-            </picture>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Mission Planner</h2>
+                </div>
+                <div class="panel-body text-justify">
+                    Is a full-featured GCS supported by ArduPilot. It offers point-and-click interaction with your
+                    hardware,
+                    custom scripting, and simulation.
+                    <br><br>
+                    <picture>
+                        <source type="image/webp" srcset="images/mission_planner_spline_waypoint.webp">
+                        <source type="image/jpeg" srcset="images/mission_planner_spline_waypoint.jpg">
+                        <img src="images/mission_planner_spline_waypoint.jpg" class="img-fluid rounded" loading="lazy"
+                             alt="">
+                    </picture>
 
-          </div>
-        </div>
-      </div><!-- /.col-sm-4 -->
+                </div>
+            </div>
+        </div><!-- /.col-sm-4 -->
 
     </div>
 
     <br><br>
 
     <div class="contentSection">
-      <h1>ArduPilot Documentation</h1>
-      <p class="text-justify lead">ArduPilot has a large set of documentation available through its Wiki. See the link
-        DOCS in the top bar to check it. You need to choose your hardware (which you can get help in "AutoPilot
-        Hardware"), then you could follow vehicle's "First Time Setup" for installing the firmware and Ground Station
-        software, connecting the components, and calibration steps.</p>
+        <h1>ArduPilot Documentation</h1>
+        <p class="text-justify lead">ArduPilot has a large set of documentation available through its Wiki. See the link
+            DOCS in the top bar to check it. You need to choose your hardware (which you can get help in "AutoPilot
+            Hardware"), then you could follow vehicle's "First Time Setup" for installing the firmware and Ground
+            Station
+            software, connecting the components, and calibration steps.</p>
     </div>
     <br><br>
 
 
-  </main><!-- /.container-fluid -->
+</main><!-- /.container-fluid -->
 
 
-
-  <div class="container-fluid">
+<div class="container-fluid">
 
     <div class="page-header">
-      <h1>User Cases</h1>
+        <h1>User Cases</h1>
     </div>
     <hr class="mt-2 mb-5">
 
     <div class="row text-center text-lg-left">
 
-      <div class="col-lg-3 col-md-4 col-6">
-        <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html" class="d-block mb-4 h-100">
-          <picture>
-            <source type="image/webp" srcset="images/cases_01_bluerov-dev-1-1024x466.webp">
-            <source type="image/jpeg" srcset="images/cases_01_bluerov-dev-1-1024x466.jpg">
-            <img class="img-fluid img-thumbnail" src="images/cases_01_bluerov-dev-1-1024x466.jpg" loading="lazy" alt=""> Underwater
-            exploration for coral reefs, oilpipe inspections
-          </picture>
-        </a>
-      </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
+               class="d-block mb-4 h-100">
+                <picture>
+                    <source type="image/webp" srcset="images/cases_01_bluerov-dev-1-1024x466.webp">
+                    <source type="image/jpeg" srcset="images/cases_01_bluerov-dev-1-1024x466.jpg">
+                    <img class="img-fluid img-thumbnail" src="images/cases_01_bluerov-dev-1-1024x466.jpg" loading="lazy"
+                         alt=""> Underwater
+                    exploration for coral reefs, oilpipe inspections
+                </picture>
+            </a>
+        </div>
 
-      <div class="col-lg-3 col-md-4 col-6">
-        <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html" class="d-block mb-4 h-100">
-          <picture>
-            <source type="image/webp" srcset="images/cases_02_case_vtol-quadplane.webp">
-            <source type="image/jpeg" srcset="images/cases_02_case_vtol-quadplane.jpg">
-            <img class="img-fluid img-thumbnail" src="images/cases_02_case_vtol-quadplane.jpg" loading="lazy" alt=""> VTOL QuadPlane for
-            Search & Rescue operations
-          </picture>
-        </a>
-      </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
+               class="d-block mb-4 h-100">
+                <picture>
+                    <source type="image/webp" srcset="images/cases_02_case_vtol-quadplane.webp">
+                    <source type="image/jpeg" srcset="images/cases_02_case_vtol-quadplane.jpg">
+                    <img class="img-fluid img-thumbnail" src="images/cases_02_case_vtol-quadplane.jpg" loading="lazy"
+                         alt=""> VTOL QuadPlane for
+                    Search & Rescue operations
+                </picture>
+            </a>
+        </div>
 
-      <div class="col-lg-3 col-md-4 col-6">
-        <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html" class="d-block mb-4 h-100">
-          <picture>
-            <source type="image/webp" srcset="images/cases_03_PX4-Tractor.webp">
-            <source type="image/jpeg" srcset="images/cases_03_PX4-Tractor.jpg">
-            <img class="img-fluid img-thumbnail" src="images/cases_03_PX4-Tractor.jpg" loading="lazy" alt=""> Agricultural automatic
-            robot tractors
-          </picture>
-        </a>
-      </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
+               class="d-block mb-4 h-100">
+                <picture>
+                    <source type="image/webp" srcset="images/cases_03_PX4-Tractor.webp">
+                    <source type="image/jpeg" srcset="images/cases_03_PX4-Tractor.jpg">
+                    <img class="img-fluid img-thumbnail" src="images/cases_03_PX4-Tractor.jpg" loading="lazy" alt="">
+                    Agricultural automatic
+                    robot tractors
+                </picture>
+            </a>
+        </div>
 
-      <div class="col-lg-3 col-md-4 col-6">
-        <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html" class="d-block mb-4 h-100">
-          <picture>
-            <source type="image/webp" srcset="images/cases_04_SkyMapper_1152px.webp">
-            <source type="image/jpeg" srcset="images/cases_04_SkyMapper_1152px.jpg">
-            <img class="img-fluid img-thumbnail" src="images/cases_04_SkyMapper_1152px.jpg" loading="lazy" alt=""> Large area aerial
-            mapping with fixedwing drones
-          </picture>
-        </a>
-      </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
+               class="d-block mb-4 h-100">
+                <picture>
+                    <source type="image/webp" srcset="images/cases_04_SkyMapper_1152px.webp">
+                    <source type="image/jpeg" srcset="images/cases_04_SkyMapper_1152px.jpg">
+                    <img class="img-fluid img-thumbnail" src="images/cases_04_SkyMapper_1152px.jpg" loading="lazy"
+                         alt=""> Large area aerial
+                    mapping with fixedwing drones
+                </picture>
+            </a>
+        </div>
 
 
     </div>
 
     <br><br><br>
     <div class="alert alert-warning" role="alert">
-      <strong>Warning!</strong> Every country has different regulations governing the operation of remote controlled
-      and/or autonomous vehicles. <a href="https://droneregulations.info">This database</a> has country specific
-      information, but it is every operator's responsibility to be seek out and be aware of local, regional, and federal
-      regulations.
+        <strong>Warning!</strong> Every country has different regulations governing the operation of remote controlled
+        and/or autonomous vehicles. <a href="https://droneregulations.info">This database</a> has country specific
+        information, but it is every operator's responsibility to be seek out and be aware of local, regional, and
+        federal
+        regulations.
 
     </div>
 
 
-  </div><!-- /.container-fluid -->
+</div><!-- /.container-fluid -->
 
 
-  <br>
+<br>
 
 
-  <div id="footerID">
+<div id="footerID">
     <br>
     <!-- Footer -->
     <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
-      <div class="container-fluid text-center">
-        © 2023 Copyright: &copy; <a href="https://www.ardupilot.org/"> ArduPilot.org</a>
-      </div>
+        <div class="container-fluid text-center">
+            © 2023 Copyright: &copy; <a href="https://www.ardupilot.org/"> ArduPilot.org</a>
+        </div>
     </footer>
     <!-- Footer -->
-  </div>
+</div>
 
-  <script>
+<script>
     // TODO : make a grid 3x3 with static size for the blogs post. Create it on DOM loading and then defer filling
     fetch('blog_posts.json', {
-              headers: {
-                "Pragma": "no-cache",
-                "Cache-Control": "no-store"
-              }
-            })
-            .then(response => response.json())
-            .then(data => {
-              const blogPosts = document.getElementById('blog_posts');
+        headers: {
+            "Pragma": "no-cache",
+            "Cache-Control": "no-store"
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            const blogPosts = document.getElementById('blog_posts');
 
-              data.forEach(val => {
+            data.forEach(val => {
                 let div = document.createElement('div');
                 let anchor = document.createElement('a');
                 let spam = document.createElement('spam');
@@ -503,46 +542,46 @@
                 spam.textContent = val.title;
 
                 if (val.has_image) {
-                  let img = document.createElement('img');
+                    let img = document.createElement('img');
 
-                  img.classList.add("img-fluid", "img-thumbnail");
-                  img.src = val.image;
-                  img.loading = "lazy";
-                  img.alt = "";
+                    img.classList.add("img-fluid", "img-thumbnail");
+                    img.src = val.image;
+                    img.loading = "lazy";
+                    img.alt = "";
 
-                  anchor.appendChild(img);
+                    anchor.appendChild(img);
                 } else {
-                  let iframe = document.createElement('iframe');
-                  anchor.classList.add("embed-responsive");
-                  iframe.classList.add("embed-responsive-item", "img-thumbnail");
-                  iframe.src = val.youtube_link;
-                  iframe.title = val.title;
-                  iframe.style.width = "100%";
-                  iframe.style.height = "80%";
+                    let iframe = document.createElement('iframe');
+                    anchor.classList.add("embed-responsive");
+                    iframe.classList.add("embed-responsive-item", "img-thumbnail");
+                    iframe.src = val.youtube_link;
+                    iframe.title = val.title;
+                    iframe.style.width = "100%";
+                    iframe.style.height = "80%";
 
 
-                  anchor.appendChild(iframe);
-                  anchor.appendChild(document.createElement('br'));
+                    anchor.appendChild(iframe);
+                    anchor.appendChild(document.createElement('br'));
                 }
 
                 anchor.appendChild(spam);
                 div.appendChild(anchor);
                 blogPosts.appendChild(div);
-              });
-            })
-            .catch(error => console.error('Error:', error));
+            });
+        })
+        .catch(error => console.error('Error:', error));
 
     fetch('news_posts.json', {
-              headers: {
-                "Pragma": "no-cache",
-                "Cache-Control": "no-store"
-              }
-            })
-            .then(response => response.json())
-            .then(data => {
-              const newsPosts = document.getElementById('news_posts');
+        headers: {
+            "Pragma": "no-cache",
+            "Cache-Control": "no-store"
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            const newsPosts = document.getElementById('news_posts');
 
-              data.forEach(val => {
+            data.forEach(val => {
                 let listItem = document.createElement('li');
                 let para = document.createElement('p');
                 let link = document.createElement('a');
@@ -557,26 +596,26 @@
                 listItem.appendChild(para);
 
                 newsPosts.appendChild(listItem);
-              });
-            })
-            .catch(error => console.error('Error:', error));
-  </script>
-  <script src="js/carousel_data.js" defer></script>
-  <script defer>
-    window.onload = function() {
-      let carousel = document.querySelector("#carousel_content");
+            });
+        })
+        .catch(error => console.error('Error:', error));
+</script>
+<script src="js/carousel_data.js" defer></script>
+<script defer>
+    window.onload = function () {
+        let carousel = document.querySelector("#carousel_content");
 
-      // Shuffle the carouselData array
-      for(let i = carouselData.length - 1; i > 0; i--){
-        const j = Math.floor(Math.random() * i)
-        const temp = carouselData[i]
-        carouselData[i] = carouselData[j]
-        carouselData[j] = temp
-      }
+        // Shuffle the carouselData array
+        for (let i = carouselData.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * i)
+            const temp = carouselData[i]
+            carouselData[i] = carouselData[j]
+            carouselData[j] = temp
+        }
 
-      // Use the shuffled carouselData array
-      for(let i = 0; i < carouselData.length; i++) {
-        carousel.innerHTML += `
+        // Use the shuffled carouselData array
+        for (let i = 0; i < carouselData.length; i++) {
+            carousel.innerHTML += `
         <div class="carousel-item img-fluid">
           <picture>
             <source type="image/webp" srcset="${carouselData[i].imgSrcWebp}">
@@ -585,9 +624,9 @@
           </picture>
         </div>
       `;
-      }
+        }
     }
-  </script>
+</script>
 </body>
 
 </html>
