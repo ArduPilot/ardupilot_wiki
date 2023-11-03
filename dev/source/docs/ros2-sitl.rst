@@ -4,7 +4,7 @@
 ROS 2 with SITL
 ===============
 
-Once ROS2 is correctly :ref:`installed <ros2>`, source your workspace and launch Ardupilot SITL with ROS 2! 
+Once ROS2 is correctly :ref:`installed <ros2>`, and SITL is also :ref:`installed <sitl-simulator-software-in-the-loop>`, source your workspace and launch Ardupilot SITL with ROS 2! 
 
 .. code-block:: bash
 
