@@ -39,7 +39,7 @@ Build:
 .. code-block:: bash
 
     cd ~/ros2_ws
-    colcon build --cmake-args -DBUILD_TESTING=ON
+    colcon build --packages-up-to ardupilot_gz_bringup --cmake-args -DBUILD_TESTING=ON 
 
 If you'd like to test your installation, run:
 
