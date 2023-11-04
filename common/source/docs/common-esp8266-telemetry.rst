@@ -39,7 +39,7 @@ If all is well the ground station will connect, download parameters and the HUD 
 Flashing the device with the MAVESP8266 firmware
 ------------------------------------------------
 
-We recommend flashing the ArduPilot specific version of MAVESP8266 (`binaries <https://firmware.ardupilot.org/Tools/MAVESP8266/latest/>`__, `source code <https://github.com/tridge/mavesp8266>`__) over the original `MAVESP8266 <https://github.com/dogmaphobic/mavesp8266>`__ because it includes two additional features:
+We recommend flashing the ArduPilot specific version of MAVESP8266 (`binaries <https://firmware.ardupilot.org/Tools/MAVESP8266/latest/>`__, `source code <https://github.com/ArduPilot/mavesp8266>`__) over the original `MAVESP8266 <https://github.com/dogmaphobic/mavesp8266>`__ because it includes two additional features:
 
 - mavlink2 support
 - subsequent firmware uploads can be done over wifi
