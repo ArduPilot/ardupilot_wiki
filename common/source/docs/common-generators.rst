@@ -18,6 +18,9 @@ The following are all currently supported within ArduPilot:
     RichenPower generator <common-richenpower-generator>
     Intelligent Energy 650W/800W Hydrogen Fuel Cell <common-ie650-fuelcell>
     Intelligent Energy 2.4kW Hydrogen Fuel Cell <common-ie24-fuelcell>
+    Shang Fei Aviation <http://www.svffi.com/en> 
+
+.. note:: Shang Fei generator uses a LUA script driver `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/drivers>`__
 [/site]
 
 [copywiki destination="plane,copter,rover"]
