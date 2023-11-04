@@ -31,7 +31,7 @@ Planner:
 -  With appropriate telemetry hardware you can:
 
    -  Monitor your vehicle's status while in operation.
-   -  Record telemetry logs which contain much more information the the
+   -  Record telemetry logs which contain much more information about the
       on-board autopilot logs.
    -  View and analyze the telemetry logs.
    -  Operate your vehicle in FPV (first person view)
