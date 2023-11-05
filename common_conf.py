@@ -14,6 +14,7 @@ extensions = [
     'sphinx.ext.imgmath',
     'sphinx.ext.ifconfig',
     'sphinxcontrib.youtube',  # For youtube embedding
+    'sphinxcontrib.jquery',
 ]
 
 # Set False to re-enable warnings for non-local images.
@@ -59,8 +60,6 @@ intersphinx_mapping = {'copter': (intersphinx_base_url % 'copter',
 #  http://stackoverflow.com/questions/12772927/specifying-an-online-image-in-sphinx-restructuredtext-format
 #  And https://github.com/sphinx-doc/sphinx/issues/2429
 
-# Set False to re-enable warnings for non-local images.
-disable_non_local_image_warnings = True
 
 if disable_non_local_image_warnings:
     import sphinx.environment

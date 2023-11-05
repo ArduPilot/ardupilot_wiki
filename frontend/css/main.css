@@ -67,7 +67,13 @@ html {
 
 }
 
+/*#blog_posts .row .col-md-4 a {*/
+/*    min-height: 485px; !* Modify to your preference *!*/
+/*}*/
 
+.col_min {
+    min-height: 300px;
+}
 
 .bg-dark {
     /* background-color: #343a40 !important; */

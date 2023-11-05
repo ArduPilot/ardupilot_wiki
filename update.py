@@ -25,7 +25,7 @@ Build notes:
     using the "site" shortcode:
     [site wiki="plane,rover"]conditional content[/site]
 
-Parameters files are fetched from autotest using a Wget
+Parameters files are fetched from autotest using requests
 
 """
 from __future__ import print_function, unicode_literals
@@ -46,6 +46,11 @@ import shutil
 import subprocess
 import sys
 import time
+import requests
+from urllib.parse import urlparse
+from concurrent.futures import ThreadPoolExecutor
+from typing import Optional, Dict, List
+
 
 import rst_table
 
@@ -54,6 +59,8 @@ from datetime import datetime
 # while flake8 says this is unused, distutils.dir_util.mkpath fails
 # without the following import on old versions of Python:
 from distutils import dir_util  # noqa: F401
+
+from frontend.scripts import get_discourse_posts
 
 if sys.version_info < (3, 8):
     print("Minimum python version is 3.8")
@@ -108,7 +115,7 @@ VERBOSE = False
 def debug(str_to_print):
     """Debug output if verbose is set."""
     if VERBOSE:
-        print("[update.py] " + str_to_print)
+        print(f"[update.py]: {str_to_print}")
 
 
 def error(str_to_print):
@@ -132,69 +139,103 @@ def remove_if_exists(filepath):
             raise e
 
 
-def fetch_url(fetchurl):
-    '''fetches content at url and puts it in a file corresponding to the filename in the URL'''
-    if platform.system() == "Windows":
-        subprocess.check_call(["powershell.exe", "Start-BitsTransfer", "-Source", fetchurl])
-    else:
-        subprocess.check_call(["wget", fetchurl])
+def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
+    fetch_url(fetchurl, fpath=new_name, verbose=False)
+    # move in new file
+    if os.path.exists(target_file):
+        os.unlink(target_file)
+        os.rename(new_name, target_file)
 
 
-def fetchparameters(site=None, cache=None):
-    """Fetches the parameters for all the sites from the test server and
+def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) -> None:
+    """Fetches content at url and puts it in a file corresponding to the filename in the URL"""
+    print(f"Fetching {fetchurl}")
+
+    if verbose:
+        total_size = get_request_file_size(fetchurl)
+
+    response = requests.get(fetchurl, stream=True)
+    response.raise_for_status()
+
+    filename = fpath or os.path.basename(urlparse(fetchurl).path)
+
+    downloaded_size = 0
+    chunk_size = 10 * 1024
+
+    with open(filename, 'wb') as out_file:
+        if verbose:
+            print(f"Completed : 0%", end='')
+        completed_last = 0
+        for chunk in response.iter_content(chunk_size=chunk_size):
+            out_file.write(chunk)
+            downloaded_size += len(chunk)
+
+            # progress bar
+            if verbose:
+                completed = downloaded_size * 100 // total_size
+                if completed - completed_last > 10 or completed == 100:
+                    print(f"..{completed}%", end='')
+                    completed_last = completed
+        if verbose:
+            print()  # Newline to correct the console cursor position
+
+
+def get_request_file_size(url: str) -> int:
+    headers = {'Accept-Encoding': 'identity'}  # needed as request use compression by default
+    hresponse = requests.head(url, headers=headers)
+
+    if 'Content-Length' in hresponse.headers:
+        size = int(hresponse.headers['Content-Length'])
+        return size
+    return 0
+
+
+def fetchparameters(site: Optional[str] = None, cache: Optional[str] = None) -> None:
+    dataname = "Parameters"
+    fetch_ardupilot_generated_data(PARAMETER_SITE, f'https://autotest.ardupilot.org/{dataname}', f'{dataname}.rst',
+                                   f'{dataname.lower()}.rst', site, cache)
+
+
+def fetchlogmessages(site: Optional[str] = None, cache: Optional[str] = None) -> None:
+    dataname = "LogMessages"
+    fetch_ardupilot_generated_data(LOGMESSAGE_SITE, f'https://autotest.ardupilot.org/{dataname}', f'{dataname}.rst',
+                                   f'{dataname.lower()}.rst', site, cache)
+
+
+def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: str, document_name: str,
+                                   site: Optional[str] = None, cache: Optional[str] = None) -> None:
+    """Fetches the data for all the sites from the test server and
     copies them to the correct location.
 
     This is always run as part of a build (i.e. no checking to see if
-    parameters have changed.)
+    parameters or logmessage have changed.)
 
     """
-    # remove any parameters files in root
-    remove_if_exists('Parameters.rst')
+    urls: List[str] = []
+    targetfiles: List[str] = []
+    names: List[str] = []
 
-    for key, value in PARAMETER_SITE.items():
-        fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
-        targetfile = './%s/source/docs/parameters.rst' % key
+    for key, value in site_mapping.items():
+        fetchurl = f'{base_url}/{value}/{sub_url}'
+        targetfile = f'./{key}/source/docs/{document_name}'
         if key == 'AP_Periph':
-            targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
+            targetfile = f'./dev/source/docs/AP_Periph-{sub_url}'
         if cache:
             if not os.path.exists(targetfile):
-                raise Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,))
+                raise Exception(f"Asked to use cached files, but {targetfile} does not exist")
             continue
         if site == key or site is None:
-            fetch_url(fetchurl)
+            urls.append(fetchurl)
+            targetfiles.append(targetfile)
+            names.append(f"{value}_{document_name}")
 
-            # move in new file
-            if os.path.exists(targetfile):
-                os.unlink(targetfile)
-            os.rename('Parameters.rst', targetfile)
-
-
-def fetchlogmessages(site=None, cache=None):
-    """
-    Fetches the parameters for all the sites from the autotest server and
-    copies them to the correct location.
-
-    This is always run as part of a build (i.e. no checking to see if
-    logmessages have changed.)
-    """
-    for key, value in LOGMESSAGE_SITE.items():
-        fetchurl = 'https://autotest.ardupilot.org/LogMessages/%s/LogMessages.rst' % value
-        targetfile = './%s/source/docs/logmessages.rst' % key
-        if cache:
-            if not os.path.exists(targetfile):
-                raise Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,))
-            continue
-        if site == key or site is None:
-            fetch_url(fetchurl)
-            # move in new file
-            if os.path.exists(targetfile):
-                os.unlink(targetfile)
-            os.rename('LogMessages.rst', targetfile)
+    with ThreadPoolExecutor() as executor:
+        executor.map(fetch_and_rename, urls, targetfiles, names, timeout=5*60)
 
 
 def build_one(wiki, fast):
     '''build one wiki'''
-    debug('Using make for sphinx: %s' % wiki)
+    print(f'Using make for sphinx: {wiki}')
     if platform.system() == "Windows":
         # This will fail if there's no folder to clean, so no check_call here
         if not fast:
@@ -219,7 +260,7 @@ def sphinx_make(site, parallel, fast):
         done.add(wiki)
         if site == 'common' or site == 'frontend':
             continue
-        if wiki == 'frontend'    :
+        if wiki == 'frontend':
             continue
         if site is not None and not site == wiki:
             continue
@@ -295,13 +336,12 @@ def copy_build(site, destdir):
             shutil.move(sourcedir, html_moved_dir)
             # Rename move! (single move to html/* failed)
             shutil.move(html_moved_dir, targetdir)
-            debug("Moved to %s" % targetdir)
-        except Exception:  # FIXME: narrow exception type
-            error("FAIL moving output to %s" % targetdir)
+            debug(f"Moved to {targetdir}")
+        except shutil.Error:
+            error(f"FAIL moving output to {targetdir}")
 
         # copy jquery
         os.makedirs(os.path.join(targetdir, '_static'), exist_ok=True)
-        shutil.copy(os.path.join('js', 'jquery-3.2.1.min.js'), os.path.join(targetdir, '_static', 'jquery-3.2.1.min.js'))
 
         # delete the old directory
         debug('Removing %s' % olddir)
@@ -357,6 +397,13 @@ def delete_old_wiki_backups(folder, n_to_keep):
         error('Error on deleting some previous wiki backup folders: %s' % e)
 
 
+def create_dir_if_not_exists(dir_path: str) -> None:
+    try:
+        os.mkdir(dir_path)
+    except FileExistsError:  # Catching specific exception
+        pass
+
+
 def generate_copy_dict(start_dir=COMMON_DIR):
     """
     This creates a dict which indexes copy targets for all common docs.
@@ -374,25 +421,10 @@ def generate_copy_dict(start_dir=COMMON_DIR):
 
     # Create destination folders that might be needed (if don't exist)
     for wiki in ALL_WIKIS:
-        try:
-            os.mkdir(wiki)
-        except Exception:  # FIXME: narrow exception type
-            pass
-
-        try:
-            os.mkdir('%s/source' % wiki)
-        except Exception:  # FIXME: narrow exception type
-            pass
-
-        try:
-            os.mkdir('%s/source/docs' % wiki)
-        except Exception:  # FIXME: narrow exception type
-            pass
-
-        try:
-            os.mkdir('%s/source/_static' % wiki)
-        except Exception:  # FIXME: narrow exception type
-            pass
+        create_dir_if_not_exists(wiki)
+        create_dir_if_not_exists(f'{wiki}/source')
+        create_dir_if_not_exists(f'{wiki}/source/docs')
+        create_dir_if_not_exists(f'{wiki}/source/_static')
 
     for root, dirs, files in os.walk(start_dir):
         for file in files:
@@ -487,46 +519,11 @@ def strip_content(content, site):
 
 def logmatch_code(matchobj, prefix):
 
-    try:
-        print("%s m0: %s" % (prefix, matchobj.group(0)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m0" % prefix)
-
-    try:
-        print("%s m1: %s" % (prefix, matchobj.group(1)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m1" % prefix)
-
-    try:
-        print("%s m2: %s" % (prefix, matchobj.group(2)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m1" % prefix)
-
-    try:
-        print("%s m3: %s" % (prefix, matchobj.group(3)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m3" % prefix)
-
-    try:
-        print("%s m4: %s" % (prefix, matchobj.group(4)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m4" % prefix)
-    try:
-        print("%s m5: %s" % (prefix, matchobj.group(5)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m5" % prefix)
-    try:
-        print("%s m6: %s" % (prefix, matchobj.group(6)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m6" % prefix)
-    try:
-        print("%s m7: %s" % (prefix, matchobj.group(7)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except 7" % prefix)
-    try:
-        print("%s m8: %s" % (prefix, matchobj.group(8)))
-    except Exception:  # FIXME: narrow exception type
-        print("%s: except m8" % prefix)
+    for i in range(9):
+        try:
+            print("%s m%d: %s" % (prefix, i, matchobj.group(i)))
+        except IndexError:  # The object has less groups than expected
+            print("%s: except m%d" % (prefix, i))
 
 
 def is_the_same_file(file1, file2):
@@ -555,9 +552,8 @@ def fetch_versioned_parameters(site=None):
 
         if key == 'AP_Periph': # workaround until create a versioning for AP_Periph in firmware server
             fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
-            subprocess.check_call(["wget", fetchurl])
             targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
-            os.rename('Parameters.rst', targetfile)
+            fetch_and_rename(fetchurl, targetfile, 'Parameters.rst')
 
         else: # regular versining
 
@@ -740,16 +736,13 @@ def put_cached_parameters_files_in_sites(site=None):
                 pass
 
 
-def update_frotend_json():
+def update_frontend_json():
     """
     Frontend get posts from Forum server and insert it into JSON
     """
     debug('Running script to get last posts from forum server.')
     try:
-        if platform.system() == "Windows":
-            subprocess.check_call(["python", "./frontend/scripts/get_discourse_posts.py"])
-        else:
-            subprocess.check_call(["python3", "./frontend/scripts/get_discourse_posts.py"])
+        get_discourse_posts.main()
     except Exception as e:
         error(e)
         pass
@@ -761,7 +754,7 @@ def copy_static_html_sites(site, destdir):
     """
     if (site in ['frontend', None]) and (destdir is not None):
         debug('Copying static sites (only frontend so far).')
-        update_frotend_json()
+        update_frontend_json()
         folder = 'frontend'
         try:
             site_folder = os.getcwd() + "/" + folder
@@ -777,7 +770,7 @@ def check_imports():
     '''check key imports work'''
     import pkg_resources
     # package names to check the versions of. Note that these can be different than the string used to import the package
-    requires = ["sphinx_rtd_theme>=1.0.0", "sphinxcontrib.youtube>=1.2.0", "sphinx==5.1.1", "docutils==0.16"]
+    requires = ["sphinx_rtd_theme>=1.3.0", "sphinxcontrib.youtube>=1.2.0", "sphinx>=7.1.2", "docutils<0.19"]
     for r in requires:
         debug("Checking for %s" % r)
         try:

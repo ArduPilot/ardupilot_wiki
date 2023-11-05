@@ -46,10 +46,11 @@ class BlogPostsFetcher:
 
     @staticmethod
     def get_arguments() -> Any:
-        parser = argparse.ArgumentParser(description="python3 get_discourse_posts.py [Number of posts to retrieve]")
+        parser = argparse.ArgumentParser(description="python3 get_discourse_posts.py")
         parser.add_argument("--n_posts", dest='n_posts', default="8", help="Number of posts to retrieve")
         parser.add_argument("--verbose", dest='verbose', action='store_false', default=True, help="show debugging output")
-        return parser.parse_args()
+        args, unknown = parser.parse_known_args()
+        return args
 
     @staticmethod
     def execute_http_request_json(url: str) -> Any:
@@ -87,10 +88,14 @@ class BlogPostsFetcher:
         # Regular expression to find URLs that contain 'YouTube' or image links
         url_pattern = re.compile(r'href=[\'"]?(https?://www\.youtube[^\'" >]+)')
         img_pattern = re.compile(r'(?:href|src)=[\'"]?(https?://[^\'" >]+\.(jpg|jpeg|png|gif|svg|bmp|webp))')
+        img_pattern2 = re.compile(r'img src=[\'"]?(https?://[^\'" >]+)')  # catch google link and such
 
         # Find all matches
         youtube_links = url_pattern.findall(first_five_lines)
         img_links = img_pattern.findall(first_five_lines_lower)[0] if img_pattern.findall(first_five_lines_lower) else None
+        if img_links is None:
+            img_links = img_pattern2.findall(first_five_lines_lower)[0] if img_pattern2.findall(
+                first_five_lines_lower) else None
 
         # If there are image links before YouTube links, return empty string
         if img_links and (not youtube_links or
