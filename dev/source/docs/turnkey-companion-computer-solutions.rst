@@ -10,36 +10,29 @@ This article lists turnkey companion computer solutions that are advertised as w
 
    Please let us know if you discover a new companion computer, so we can add it to this list. 
 
-Horizon31 - PixC4-Jetson
+EchoMAV - EchoPilot AI
 =========================================================
 
-.. figure:: https://horizon31.com/wp-content/uploads/2020/03/pixc4-jetson_transparent-600x452.png
-   :target:  https://horizon31.com/product/pixc4-jetson/
+.. figure:: https://echomav.com/wp-content/uploads/2020/03/echopilot_ai_1.png
+   :target:  https://echomav.com/product/echopilot-ai/
 
-The `PixC4-Jetson <https://horizon31.com/product/pixc4-jetson/>`__ is a professional-quality NDAA Compliant Flight Management Unit (FMUv5) which supports ArduPilot and is tightly integrated with an Nvidia Jetson (Nano, Xavier NX or TX2 NX) SBC and peripheral support system (USB, MIPI, Ethernet, M.2 slot, etc.). The PixC4-Jetson is 83x59mm and features a board-to-board design for direct integration into user platforms or can be used with specialized "breakout" boards to support various vehicle types and wiring needs.
+The `EchoPilot AI <https://echomav.com/product/echopilot-ai/>`__ is a professional-quality US-made, NDAA Compliant Flight Management Unit (FMUv5) tightly integrated with an Nvidia Jetson (Nano, Xavier NX, TX2 NX, Orin NX or Orin Nano) Single Board Computer. Additional peripheral support systems are included onboard including USB3, USB2, MIPI x2, Ethernet x2, M.2 slots for NVMe SSDs and LTE modems). The EchoPilot AI is 83x59mm and features a board-to-board design for direct integration into user platforms or can be used with the provided universal "breakout" board to support various vehicle types and wiring needs. The breakout board is open source so that users can easily support custom integrations if desired.
 
-**Included turn-key software provides the following features:**
+**Included software provides the following features:**
+* Installed ArduPilot with factory calibrated and tested sensors
+* Nvidia Linux for Tegra is installed and provisioned with baseline UAS software support software installed
+* Unicast/Multicast/Broadcast Telemetry over the network is provided out of the box (via `mavlink-router <https://github.com/mavlink-router/mavlink-router>`__) with a simple web-based configuration UI
+* Web interface for status monitoring, remote terminal access and more
 
-* UDP Unicast/Multicast/Broadcast Telemetry (MAVLink)
-* LTE connection management with Layer-2 peer to peer VPN
-* Powerful multi-endpoint video encoding pipelines with example/open-source scripts for customization
-* `ATAK <https://www.civtak.org/>`__ Integration
-* Web interface for configuration and remote terminal access
-* Supports multiple simultaneous communication pathways such as LOS, LTE and Satcom with advanced stale command rejection and message deduplication
-* Scalable and secure cloud connectivity to Horizon31's US servers and optional access to their cloud GCS and low-latency webRTC video distribution system (https://gcs.horizon31.com)
+The EchoPilot AI includes an onboard RemoteID subsystem compatible with `ArduRemoteID <https://github.com/ArduPilot/ArduRemoteID>`__.
 
-.. figure:: https://horizon31.com/wp-content/uploads/2020/12/webgcs_2-1024x560.jpg
-   :target:  https://horizon31.com/webgcs/
+The EchoPilot AI is ideal for platforms needing a compact and powerful companion computer to support video streaming/encoding, computer vision, machine learning, or autonomy tasks. The provided connectivity also eases integration with multiple communication pathways.
 
-Horizon31 - PixC4-Pi
-=========================================================
+**Communication options include:**
+* LTE 5G (e.g., Sierra Wireless EM9191)
+* Iridium 9603 satellite modem (e.g., `RockBLOCK 9603 <https://www.groundcontrol.com/us/product/rockblock-9603-compact-plug-and-play-satellite-transmitter/>`__)
+* Various IP radios supported (e.g., Microhard, Doodle Labs, Persistent Systems and Silvus Technologies)
 
-.. figure:: https://horizon31.com/wp-content/uploads/2021/08/IMG_7517-600x534.jpg
-   :target:  https://horizon31.com/product/pixc4-pi/
-   
-The `PixC4-Pi <https://horizon31.com/product/pixc4-pi/>`__ is a professional-quality NDAA Compliant Flight Management Unit (FMUv5) which supports ArduPilot and is tightly integrated with a Raspberry Pi 4 compute module and peripheral support system (USB, MIPI, Ethernet, M.2 slot, etc.). The PixC4-Pi is about the size of a business card (84x42mm) and weighs 67g (with heatsink). The PixC4-Pi includes the same software stack as the PixC4-Jetson, with the primary difference being the PixC4-Pi does not support h.265 encoding, only h.264.
-
-   
 UAVcast-Pro - Raspberry Pi software for LTE / WiFi Drones
 =========================================================
 
