@@ -82,6 +82,7 @@ Closed Hardware
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
     AtomRC F405-NAVI <common-atomrcf405-navi>
+    AocodaRC H743Dual <common-aocoda-h743dual>
     BetaFPV F4 1S 12A AIO V3 <common-betafpvf405>
     brainFPV RADIX2 HD <common-radix2hd>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
