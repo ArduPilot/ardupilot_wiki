@@ -158,15 +158,21 @@ Enable Battery monitor with these parameter settings :
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 10
+First group of battery monitor pins & options:
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 11
+ - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 10
+ - :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 11
+ - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` = 11 
+ - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` = 17.0 (note: Please calibrate before use.)
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` = 11 
+Second group of battery monitor pins & options:
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` = 11 (note: Please calibrate before use.)
+ - :ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN>` = 18
+ - :ref:`BATT2_CURR_PIN<BATT2_CURR_PIN>` = 7
+ - :ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT>` = 11 
+ - :ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT>` = 17.0 (note: Please calibrate before use.)
 
-.. note:: this autopilot uses a high precision current sensor which is sensitive to ESC switching noise. Please check carefully before use :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>`, as voltage divider circuit for data collection is at ESC/BEC side.
+.. note:: this autopilot uses a high precision current sensor which is sensitive to ESC switching noise. Please check carefully before use :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>`/:ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT>`, as voltage divider circuit for data collection is at ESC/BEC side.
 
 Where to Buy
 ============
