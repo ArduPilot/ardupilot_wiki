@@ -142,6 +142,11 @@ Dropped included bootloader on some 1MB flash boards:
 See https://github.com/ArduPilot/ardupilot_wiki/pull/5242
 
 [site wiki="plane"]
+Add new method using forward motor/tilt to assist in holding position
+=====================================================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5532
+
 Add MAVLink command option to start ICE even if normally prevented while disarmed
 =================================================================================
 
