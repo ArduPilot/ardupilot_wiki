@@ -9,7 +9,7 @@ ROS 2
 
 ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka Robot Operating System).
 
-`ROS <http://www.ros.org/>`__ provides libraries, tools, hardware abstraction, device drivers, visualizers, message-passing, package management, and more to help software developers create robot applications. ROS has been superseded by `ROS2 <http://design.ros2.org/articles/why_ros2.html>`__, and Ardupilot now natively supports it through its library `AP_DDS <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_DDS>`__
+`ROS <http://www.ros.org/>`__ provides libraries, tools, hardware abstraction, device drivers, visualizers, message-passing, package management, and more to help software developers create robot applications. ROS has been superseded by `ROS2 <http://design.ros2.org/articles/why_ros2.html>`__, and Ardupilot now natively supports it through its library `AP_DDS <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_DDS>`__.
 
 
 Prerequisites
@@ -18,13 +18,15 @@ Prerequisites
 - Learn on to use ArduPilot first by following the relevant wiki for `Rover <https://ardupilot.org/rover/index.html>`__, `Copter <https://ardupilot.org/copter/index.html>`__ or `Plane <https://ardupilot.org/plane/index.html>`__. In particular, make sure the vehicle works well in Manual and Autonomous modes like Guided and Auto before trying to use ROS.
 - Learn how to use ROS 2 by reading the `beginner tutorials <https://docs.ros.org/en/humble/Tutorials.html>`__.  In the case of a problem with ROS, it is best to ask on ROS community forums first (or google your error).
 
-    We are keen to improve ArduPilot's support of ROS 2 so if you find issues (such as commands that do not seem to be supported), please report them in the `ArduPilot issues list <https://github.com/ArduPilot/ardupilot/issues>`__ with a title 
+    We are keen to improve ArduPilot's support of ROS 2 so if you find issues (such as commands that do not seem to be supported), please report them in the `ArduPilot issues list <https://github.com/ArduPilot/ardupilot/issues>`__. A maintainer can add the `ROS` tag. 
 
-First, make sure that you have successfully installed `ROS humble <https://docs.ros.org/en/humble/Installation.html>`__ and create a `ROS 2 workspace <https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#id4>`__. This page assumes that your workspace is named `ros2_ws`
+First, make sure that you have successfully installed `ROS humble <https://docs.ros.org/en/humble/Installation.html>`__ and create a `ROS 2 workspace <https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#id4>`__. This page assumes that your workspace is named `ros2_ws`.
 
 Before anything else, make sure that you have `sourced your ROS 2 environment <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#source-the-setup-files>`__ and check if it is `configured correctly <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#check-environment-variables>`__.
 
-Finally, follow the `Installing Build Dependencies <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_DDS#installing-build-dependencies>`__ section of `AP_DDS`'s README
+Follow the `Installing Build Dependencies <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_DDS#installing-build-dependencies>`__ section of `AP_DDS`'s README.
+
+Finally, ensure you have `set up your ArduPilot build environment <https://ardupilot.org/dev/docs/building-the-code.html#setting-up-the-build-environment>`__.
 
 Installation (Ubuntu)
 =====================
