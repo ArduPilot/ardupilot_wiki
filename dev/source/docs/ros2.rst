@@ -18,7 +18,7 @@ Prerequisites
 - Learn on to use ArduPilot first by following the relevant wiki for `Rover <https://ardupilot.org/rover/index.html>`__, `Copter <https://ardupilot.org/copter/index.html>`__ or `Plane <https://ardupilot.org/plane/index.html>`__. In particular, make sure the vehicle works well in Manual and Autonomous modes like Guided and Auto before trying to use ROS.
 - Learn how to use ROS 2 by reading the `beginner tutorials <https://docs.ros.org/en/humble/Tutorials.html>`__.  In the case of a problem with ROS, it is best to ask on ROS community forums first (or google your error).
 
-    We are keen to improve ArduPilot's support of ROS 2 so if you find issues (such as commands that do not seem to be supported), please report them in the `ArduPilot issues list <https://github.com/ArduPilot/ardupilot/issues>`__. A maintainer can add the `ROS` tag. 
+    We are keen to improve ArduPilot's support of ROS 2 so if you find issues (such as commands that do not seem to be supported), please report them in the `ArduPilot issues list <https://github.com/ArduPilot/ardupilot/issues>`__. A maintainer can add the `ROS` tag.
 
 First, make sure that you have successfully installed `ROS humble <https://docs.ros.org/en/humble/Installation.html>`__ and create a `ROS 2 workspace <https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#id4>`__. This page assumes that your workspace is named `ros2_ws`.
 
@@ -137,17 +137,17 @@ Build the container:
 Start the container in interactive mode:
 
 .. code-block:: bash
-    
+
     docker run -it --name ardupilot-dds ardupilot/ardupilot-dev-ros
 
 Connect another bash process to the running container:
 
 .. code-block:: bash
-    
+
     docker container exec -it ardupilot-dds /bin/bash
 
 The remaining steps are the same as for Ubuntu. You may need to install MAVProxy if it is not available on the container.
 
 .. code-block:: bash
-    
+
     pip install -U MAVProxy
