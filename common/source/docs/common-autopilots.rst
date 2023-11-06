@@ -147,6 +147,7 @@ Closed Hardware
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
     YJUAV A6SE <common-yjuav-a6se>
+    YJUAV A6SE H743<common-yjuav-a6se-h743>
 
 .. note:: due to flash memory limitations, most F4 based, and some other boards, do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
