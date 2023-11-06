@@ -24,7 +24,8 @@ VectorNav300 or MicroStrain
 
     - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 1 (VectorNAV) or 2 (MicroStrain)
 
-This will replace ArduPilot’s internally generated INS/AHRS subsystems with the external system
+This will replace ArduPilot’s internally generated INS/AHRS subsystems with the external system.
+The MicroStrain system must be configured via `Sensor Connect <https://www.microstrain.com/software/sensorconnect>`__ before use.
 
 VN-300 Specific setup
 ~~~~~~~~~~~~~~~~~~~~~
