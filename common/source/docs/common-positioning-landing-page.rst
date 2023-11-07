@@ -42,7 +42,7 @@ GPS/Compass
 RTK GPS
 =======
 
-These GPS can incorporate real time kinematic data, either internally generated or externally provided, to improve the precision of the position estimate from the normal GPS meter range down to the cenitmeter range (see :ref:`common-rtk-correction`). This increased precision also allows for "Moving Baseline" yaw estimates using two devices on a vehicle with certain RTK GPSes (F9P based) or dedicated Moving Baseline GPSes. See :ref:`common-gps-for-yaw`.
+These GPS can incorporate real time kinematic data, either internally generated or externally provided, to improve the precision of the position estimate from the normal GPS meter range down to the centimeter range (see :ref:`common-rtk-correction`). This increased precision also allows for "Moving Baseline" yaw estimates using two devices on a vehicle with certain RTK GPSes (F9P based) or dedicated Moving Baseline GPSes. See :ref:`common-gps-for-yaw`.
 
 .. toctree::
     :maxdepth: 1
@@ -69,7 +69,8 @@ These GPS can incorporate real time kinematic data, either internally generated 
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
     Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
     Synerx MDU-2000 RTK + LTE GPS <common-synerex-mdu-2000>
-    Trimble BD930 RTK GPS <common-gps-trimble>
+    Trimble BD930 RTK GNSS <common-gps-trimble-bd930>
+    Trimble PX-1 RTX GNSS+INS <common-gps-trimble-px1>
 
 .. note:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
 
