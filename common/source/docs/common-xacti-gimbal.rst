@@ -66,6 +66,12 @@ Connect to the autopilot with a ground station and set the following parameters 
   - :ref:`RC9_OPTION <RC9_OPTION>` = 168 ("Camera Manual Focus") to adjust focus in and out
   - :ref:`RC9_OPTION <RC9_OPTION>` = 169 ("Camera Auto Focus") to trigger auto focus
 
+- To improve the accuracy of the location EXIF data stored to each image taken, the camera trigger feedback can be enabled as follows
+
+   - Connect the CAM_SYNC wire (shown in blue on the image above) from the camera to one of the autopilot's AUX OUT signal pins (e.g. AUX OUT 6's bottom row pin)
+   - :ref:`CAM1_FEEDBAK_PIN <CAM1_FEEDBAK_PIN>` to 55 (AUX6) (if connected to AUX OUT 6)
+   - :ref:`SERVO14_FUNCTION <SERVO14_FUNCTION>` to -1 (GPIO) (if connected to AUX OUT 6)
+
 .. warning::
 
    When the autopilot first detects the Xacti gimbal the :ref:`MNT1_DEVID<MNT1_DEVID>` will be set to a unique number to identify the gimbal.  If the gimbal is moved to another CAN port it may be necessary to manually set :ref:`MNT1_DEVID<MNT1_DEVID>` to zero and reboot the autopilot in order for the gimbal to be found.
