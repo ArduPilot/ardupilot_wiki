@@ -56,7 +56,7 @@ Connect to the autopilot with a ground station and set the following parameters 
 - :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to 90
 - :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to 30 (deg/s) to control speed of gimbal when using RC targetting
 - :ref:`CAM1_TYPE <CAM1_TYPE>` to 4 (Mount)
-- :ref:`CAM1_INTRVAL_MIN <CAM1_INTRVAL_MIN>` to 0.9
+- :ref:`CAM1_INTRVAL_MIN <CAM1_INTRVAL_MIN>` to 1 (second)
 - :ref:`RC6_OPTION <RC6_OPTION>` = 213 ("Mount Pitch") to control the gimbal's pitch angle with RC channel 6
 - :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw angle with RC channel 7
 
@@ -68,9 +68,20 @@ Connect to the autopilot with a ground station and set the following parameters 
 
 - To improve the accuracy of the location EXIF data stored to each image taken, the camera trigger feedback can be enabled as follows
 
-   - Connect the CAM_SYNC wire (shown in blue on the image above) from the camera to one of the autopilot's AUX OUT signal pins (e.g. AUX OUT 6's bottom row pin)
+   - Connect the CAM_SYNC wire (shown in blue in the image above) from the camera to one of the autopilot's AUX OUT signal pins (e.g. AUX OUT 6's bottom row pin)
    - :ref:`CAM1_FEEDBAK_PIN <CAM1_FEEDBAK_PIN>` to 55 (AUX6) (if connected to AUX OUT 6)
    - :ref:`SERVO14_FUNCTION <SERVO14_FUNCTION>` to -1 (GPIO) (if connected to AUX OUT 6)
+
+- To allow remotely powering on/off the camera the POWER_ON pin can be connected to an autopilot :ref:`relay pin <common-relay>` (see purple wire in image above) and then set the following parameters (assuming the autopilot's AUX OUT 5 pin is used)
+
+   - Connect the camera's POWER_ON pin (shown in purple in the image above) to one of the autopilot's AUX OUT signal pins (e.g. AUX OUT 5's bottom row pin)
+   - :ref:`RELAY_PIN <RELAY_PIN>` to 54 (AUX5) (if connected to AUX OUT 5)
+   - :ref:`SERVO13_FUNCTION <SERVO13_FUNCTION>` to -1 (GPIO) (if connected to AUX OUT 5)
+   - The camera can be powered off/on using an :ref:`auxiliary switch <common-auxiliary-functions>` set to "Relay 1 On/Off" or Mission Planner's Aux Function screen can be used.  Pulling the relay high will turn the camera off, low will turn it back on.
+
+.. image:: ../../../images/xacti-gimbal-power-relay-mp.png
+    :target: ../_images/xacti-gimbal-power-relay-mp.png
+    :width: 450px
 
 .. warning::
 
