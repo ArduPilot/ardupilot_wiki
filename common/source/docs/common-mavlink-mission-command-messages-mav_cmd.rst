@@ -2773,7 +2773,7 @@ speed-type and throttle settings are ignored.
    </tr>
    <tr>
    <td><strong>param1</strong></td>
-   <td>speed m/s</td>
+   <td>Type</td>
    <td>Speed type (0,1=Ground Speed,  2=Climb Speed, 3=Descent Speed).</td>
    </tr>
    <tr>
