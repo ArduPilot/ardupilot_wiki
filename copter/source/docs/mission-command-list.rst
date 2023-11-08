@@ -341,13 +341,11 @@ Do-Change-Speed
 .. image:: ../../../images/MissionList_DoChangeSpeed.png
     :target: ../_images/MissionList_DoChangeSpeed.png
 
-Change the target horizontal speed (in meters/sec) of the vehicle.
+Change the desired maximum speed (in meters/sec) of the vehicle.  Normally the "Type" field is left at 0 meaning the horizontal speed is set.
 
-**speed m/s** - the desired maximum speed in meters/second.
+**Type** - 0:horizontal speed, 1:climb rate, 2:descent rate
 
-.. warning::
-
-   The speed parameter should be in the SECOND COLUMN, not the first column as shown in the screenshot above
+**Speed m/s** - the desired maximum speed in meters/second.
 
 Do-Set-Home
 ~~~~~~~~~~~
