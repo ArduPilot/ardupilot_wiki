@@ -13,10 +13,11 @@ This lists features or changes merged in master and build in the "latest" firmwa
 .. toctree::
     :maxdepth: 1
 
-    Xacti Camera Gimbals <common-xacti-gimbal>
+    JAE JRE-30 <common-rangefinder-jae-jre-30>
     Nooploop TOF-Sense P <common-rangefinder-nooploop-tofsense-p>
     Nooploop TOF-Sense F <common-rangefinder-nooploop-tofsense-f>
     Nanoradar NRA24 <common-rangefinder-nra24>
+    Xacti Camera Gimbals <common-xacti-gimbal>
     Other wiki changes <common-future-wiki-changes>
 [/site]
 [site wiki="rover"]
@@ -24,10 +25,11 @@ This lists features or changes merged in master and build in the "latest" firmwa
 .. toctree::
     :maxdepth: 1
 
-    Xacti Camera Gimbals <common-xacti-gimbal>
+    JAE JRE-30 <common-rangefinder-jae-jre-30>
     Nooploop TOF-Sense P <common-rangefinder-nooploop-tofsense-p>
     Nooploop TOF-Sense F <common-rangefinder-nooploop-tofsense-f>
     Nanoradar NRA24 <common-rangefinder-nra24>
+    Xacti Camera Gimbals <common-xacti-gimbal>
     Other wiki changes <common-future-wiki-changes>
     New Circle Mode <circle-mode>
 [/site]
