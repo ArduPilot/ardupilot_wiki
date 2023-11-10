@@ -17,6 +17,7 @@ Select the links below for information on the available sensors.
     ARK Flow <common-arkflow>
     Cheerson CX-OF <common-cheerson-cxof>
     HereFlow <common-hereflow>
+    Mateksys 3901-L0X <common-mateksys-optflow-3901L0X>
     OpenMV <common-openmv-optflow>
     PX4FLOW <common-px4flow-overview>
     UPixels UPFlow <common-upixels-upflow>
