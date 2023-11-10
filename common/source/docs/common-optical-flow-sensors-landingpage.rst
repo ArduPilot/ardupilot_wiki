@@ -14,12 +14,9 @@ Select the links below for information on the available sensors.
     :maxdepth: 1
 
     Optical Flow Setup <common-optical-flow-sensor-setup>
+    ARK Flow <common-arkflow>
     Cheerson CX-OF <common-cheerson-cxof>
     HereFlow <common-hereflow>
-    PX4FLOW <common-px4flow-overview>
     OpenMV <common-openmv-optflow>
+    PX4FLOW <common-px4flow-overview>
     UPixels UPFlow <common-upixels-upflow>
-    ARK Flow <common-arkflow>
-
-
-    
