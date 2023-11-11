@@ -1,8 +1,8 @@
 .. _common-speedybeef4-v3:
 
-================
-Speedy Bee F4 V3
-================
+===================
+Speedy Bee F4 V3/V4
+===================
 
 .. image:: ../../../images/speedybeef4-v3.png
     :target: ../_images/speedybeef4-v3.png
@@ -16,8 +16,8 @@ Specifications
 -  **Processor and Sensors**
 
    -  STM32F405 ARM microcontroller
-   -  BMI270 IMU (Gyro and Accelerometers)
-   -  SPL06 Barometer
+   -  V3:BMI270 IMU, V4:ICM42688 (Gyro and Accelerometers)
+   -  V3:SPL06, V4:DPS310 Barometer
    -  AT7456E OSD
 
 -  **Interfaces**
@@ -44,12 +44,21 @@ Specifications
 
 Pinouts
 =======
-
+V3
+--
 .. image:: ../../../images/speedybeef4-v3-pinout-top.jpg
     :target: ../_images/speedybeef4-v3-pinout-top.jpg
 
 .. image:: ../../../images/speedybeef4-v3-pinout-bottom.jpg
     :target: ../_images/speedybeef4-v3-pinout-bottom.jpg
+
+V4
+--
+.. image:: ../../../images/speedybeef4-v4-pinout-top.jpg
+    :target: ../_images/speedybeef4-v4-pinout-top.jpg
+
+.. image:: ../../../images/speedybeef4-v4-pinout-bottom.jpg
+    :target: ../_images/speedybeef4-v4-pinout-bottom.jpg
 
 UART Defaults
 =============
@@ -74,15 +83,27 @@ For CRSF/ELRS/SRXL2 connection of the receiver to T2 will also be required.
 Dshot capability
 ================
 
-The SpeedyBee F405 v3 supports up to 9 PWM outputs. The M1 to M4 outputs are on the esc connector, M5 to M8 on solder pads, plus LED pad(PWM output 9) for LED strip or another PWM output.
+The SpeedyBee F405 v3/v4 supports up to 9 PWM outputs. The M1 to M4 outputs are on the esc connector, M5 to M8 on solder pads, plus LED pad(PWM output 9) for LED strip or another PWM output.
 
+V3
+--
 The PWM is in 3 groups:
 
 -  PWM 1-4 in group1
 -  PWM 5-8 in group2
 -  PWM 9   in group3
 
-Channels within the same group need to use the same output protocol. If any channel in a group uses DShot then all channels in the group need to use DShot. Channels 1-4 also support bi-directional DShot, but only if the IC2 port is not being used for compass or other devices.
+V4
+--
+The PWM is in 5 groups:
+
+- PWM 1-2 in group1
+- PWM 3-4 in group2
+- PWM 5-6 in group3
+- PWM 7-8 in group4
+- PWM 9 in group5
+
+Channels within the same group need to use the same output protocol. If any channel in a group uses DShot then all channels in the group need to use DShot. Channels 1-4 also support bi-directional DShot (V4 only).
 
 OSD Support
 ===========
