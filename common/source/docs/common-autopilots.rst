@@ -141,7 +141,7 @@ Closed Hardware
     SPRacing H7 RF <common-spracingh7-rf>
     Swan-K1 <common-Swan-K1>
     SpeedyBee F4 (this board currently is non-verified) <common-speedybeef4>
-    SpeedyBee F4 V3 <common-speedybeef4-v3>
+    SpeedyBee F4 V3/V4 <common-speedybeef4-v3>
     SpeedyBee F405 Mini <common-speedybeef405-mini>
     SpeedyBeeF405WING <common-speedybeef405wing>
     ThePeach FCC-K1 <common-thepeach-k1>
