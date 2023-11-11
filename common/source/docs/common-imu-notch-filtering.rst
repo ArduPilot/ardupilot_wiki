@@ -51,9 +51,9 @@ All of the above are repeated, independently, for the second notch and are prefa
 Number of Harmonics Filtered
 ============================
 
-- Set :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>` to enable up to three harmonic (multiples of the center frequency) notches. For ESC :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` tracking, each motor will get a set of these notches. If an octocopter sets up all three harmonics, this results in 8 x 3 = 24 notch filters. Enabling triple notches (see below) would result in 72 filters! This would most certainly cause excessive cpu loading and performance issues. Other modes only provide a single set of harmonic notches.
+- Set :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>` to enable multiple harmonic filters centered at up to 16x the base frequency (multiples of the center frequency) notches. For ESC :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` tracking, each motor will get a set of these notches. If an octocopter sets up three harmonics, this results in 8 x 3 = 24 notch filters. Enabling triple notches (see below) would result in 72 filters! This would most certainly cause excessive cpu loading and performance issues. Other modes only provide a single set of harmonic notches.
 
-Always enable only the number of harmonic notch filters actually required and be especially aware of what is being enabled if using ESC (:ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 3) tracking mode.
+Always enable only the number of harmonic notch filters actually required and be especially aware of what is being enabled if using ESC (:ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 3) tracking mode. Enabling too many will result in running out of CPU cycles with unpredictable results. Three harmonics is usually safe.
 
 FFT Dynamic Harmonic Notch Frequency Tracking
 =============================================
