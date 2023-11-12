@@ -58,4 +58,5 @@ speed is filtered using a low pass filter, the frequency of this filter can be s
     Airspeed <wind-vane-airspeed>
     RPM <wind-vane-rpm>
     Modern Devices rev-p <wind-vane-MD-rev-p>
-    Connecting Bluetooth Windvane to ArduPilot <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_WindVane/Tools/Bluetooth%20NMEA%20receiver/Bluetooth%20NMEA%20receiver.md>`_
+    Connecting Bluetooth Windvane to ArduPilot <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_WindVane/Tools/Bluetooth%20NMEA%20receiver/Bluetooth%20NMEA%20receiver.md>
+
