@@ -141,10 +141,8 @@ def remove_if_exists(filepath):
 
 def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
     fetch_url(fetchurl, fpath=new_name, verbose=False)
-    # move in new file
-    if os.path.exists(target_file):
-        os.unlink(target_file)
-        os.rename(new_name, target_file)
+    print(f"Renaming {new_name} to {target_file}")
+    os.replace(new_name, target_file)
 
 
 def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) -> None:
