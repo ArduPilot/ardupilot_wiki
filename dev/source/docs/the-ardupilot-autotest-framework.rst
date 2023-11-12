@@ -231,7 +231,7 @@ Tools/autotest/quadplane.py
     contains tests for ArduPlane's QuadPlane code
 Tools/autotest/pysim/util.py
     various utility functions used by AutoTest
-Tools/autotest/common.py
+Tools/autotest/vehicle_test_suite.py
     Contains a base class inherited by the per-vehicle testing routines
 
 Network Structure
