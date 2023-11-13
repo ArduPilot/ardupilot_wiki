@@ -1,18 +1,18 @@
 .. _common-jae-jfb110:
 
-==========
-JAE JFB110
-==========
+===========
+JAE JFB-110
+===========
 
-The JAE (Japan Aviation Electronics Industry) JFB110 autopilot is made in Japan with a focus on robustness and reliability.  Instead of the more common JST connectors, this autopilot uses automotive grade water proof connectors for most peripherals.  It also includes an automotive grade IMU and high speed TypeC USB.
+The JAE (Japan Aviation Electronics Industry) JFB-110 autopilot is made in Japan with a focus on robustness and reliability.  Instead of the more common JST connectors, this autopilot uses automotive grade water proof connectors for most peripherals.  It also includes an automotive grade IMU and high speed TypeC USB.
 
-..  youtube:: qA1bgznHKpY
-    :width: 100%
+.. image:: ../../../images/jae-jfb110.jpg
+    :target: ../_images/jae-jfb110.jpg
 
 Where To Buy
 ============
 
-The JFB110 can be purchased directly from `JAE <https://www.jae.com/en/>`__
+The JFB-110 can be purchased directly from `JAE <https://www.jae.com/en/>`__
 
 Features
 ========
@@ -383,5 +383,11 @@ allowing the loading of xxxxxx.apj firmware files with any ArduPilot
 compatible ground station.
 
 Firmware for these boards can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "JFB110".
+
+Video
+-----
+
+..  youtube:: qA1bgznHKpY
+    :width: 100%
 
 [copywiki destination="plane,copter,rover,blimp"]
