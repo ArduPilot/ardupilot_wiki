@@ -49,8 +49,7 @@ import time
 import requests
 from urllib.parse import urlparse
 from concurrent.futures import ThreadPoolExecutor
-from typing import Optional, Dict, List
-
+from typing import Optional, Dict, List, Union
 
 import rst_table
 
@@ -62,8 +61,6 @@ from distutils import dir_util  # noqa: F401
 
 from frontend.scripts import get_discourse_posts
 import logging
-
-logging.basicConfig(level=logging.DEBUG, format='[update.py]: [%(levelname)s]: %(message)s')
 
 
 class ErrorStoreHandler(logging.Handler):
@@ -146,12 +143,12 @@ def debug(str_to_print: str) -> None:
     logging.debug(str_to_print)
 
 
-def error(str_to_print: [str, Exception]) -> None:
+def error(str_to_print: Union[str, Exception]) -> None:
     """Show and count the errors."""
     logging.error(f"{str_to_print}")
 
 
-def fatal(str_to_print: [str, Exception]) -> None:
+def fatal(str_to_print: Union[str, Exception]) -> None:
     """Show and count the errors."""
     logging.critical(f"{str_to_print}")
     sys.exit(1)
@@ -326,7 +323,7 @@ def check_build(site):
             fatal("%s site not built - missing %s" % (wiki, index_html))
 
 
-def copy_build(site, destdir):
+def copy_build(site, destdir) -> None:
     """
     Copies each site into the target location
     """
@@ -372,7 +369,7 @@ def copy_build(site, destdir):
         shutil.rmtree(olddir)
 
 
-def make_backup(site, destdir, backupdestdir):
+def make_backup(building_time, site, destdir, backupdestdir):
     """
     backup current site
     """
@@ -736,7 +733,7 @@ def cache_parameters_files(site=None):
 
 def put_cached_parameters_files_in_sites(site=None):
     """
-    For each vechile: put built .html files in site folder
+    For each vehicle: put built .html files in site folder
 
     """
     for key, value in PARAMETER_SITE.items():
@@ -751,12 +748,12 @@ def put_cached_parameters_files_in_sites(site=None):
                 debug("Site %s getting previously built files from %s" %
                       (site, built_folder))
                 for built in built_parameters_files:
-                    if ("latest" not in built):  # latest parameters files must be built every time
+                    if "latest" not in built:  # latest parameters files must be built every time
                         debug("Reusing built %s in %s " %
                               (built, vehicle_folder))
                         shutil.copy(built, vehicle_folder)
             except Exception as e:
-                error(e)
+                error(str(e))
                 pass
 
 
@@ -768,7 +765,7 @@ def update_frontend_json():
     try:
         get_discourse_posts.main()
     except Exception as e:
-        error(e)
+        error(str(e))
         pass
 
 
@@ -806,7 +803,7 @@ def check_imports():
 
 
 def check_ref_directives():
-    '''check formatting around ref directive that sphinx does not warn about'''
+    """check formatting around ref directive that sphinx does not warn about"""
     character_before_ref_tag = re.compile(r"[a-zA-Z0-9_:]:ref:")
     character_after_ref_tag = re.compile(r"(:ref:`.*?`[_]{0,2}) ([\.,:])")
 
@@ -826,8 +823,8 @@ def check_ref_directives():
 
 
 def create_features_pages(site):
-    '''for each vehicle, write out a page containing features for each
-    supported board'''
+    """for each vehicle, write out a page containing features for each
+    supported board"""
 
     debug("Creating features pages")
 
@@ -867,8 +864,8 @@ def create_features_pages(site):
 
 
 def reference_for_board(board):
-    '''return a string suitable for creating an anchor in RST to make
-    board's feture table linkable'''
+    """return a string suitable for creating an anchor in RST to make
+    board's feture table linkable"""
     return "FEATURE_%s" % board
 
 
@@ -927,14 +924,14 @@ def create_features_page(features, build_options_by_define, vehicletype):
         else:
             t = rst_table.tablify(rows, headings=column_headings)
         underline = "-" * len(platform_key)
-        all_tables += ('''
+        all_tables += ("""
 .. _%s:
 
 %s
 %s
 
 %s
-''' % (reference_for_board(platform_key), platform_key, underline, t))
+""" % (reference_for_board(platform_key), platform_key, underline, t))
 
     index = ""
     for board in sorted(features_by_platform.keys(), key=lambda x : x.lower()):
@@ -945,7 +942,7 @@ def create_features_page(features, build_options_by_define, vehicletype):
         all_features_rows.append([feature.category, feature.label, feature.description])
     all_features = rst_table.tablify(all_features_rows, headings=["Category", "Feature", "Description"])
 
-    return '''
+    return """
 .. _binary-features:
 
 =====================================
@@ -973,131 +970,141 @@ Boards
 ======
 
 %s
-''' % (vehicletype, index, all_features, all_tables)
+""" % (vehicletype, index, all_features, all_tables)
 
 #######################################################################
 
 
-if __name__ == "__main__":
+class WikiUpdater:
+    def __init__(self) -> None:
+        if platform.system() == "Windows":
+            multiprocessing.freeze_support()
 
-    if platform.system() == "Windows":
-        multiprocessing.freeze_support()
+        # Set up option parsing to get connection string
+        parser = argparse.ArgumentParser(
+            description='Copy Common Files as needed, stripping out non-relevant wiki content',
+        )
+        parser.add_argument(
+            '--site',
+            help="If you just want to copy to one site, you can do this. Otherwise will be copied.",
+        )
+        parser.add_argument(
+            '--clean',
+            action='store_true',
+            help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).",
+        )
+        parser.add_argument(
+            '--cached-parameter-files',
+            action='store_true',
+            help="Do not re-download parameter files",
+        )
+        parser.add_argument(
+            '--parallel',
+            type=int,
+            help="limit parallel builds, -1 for unlimited",
+            default=1,
+        )
+        parser.add_argument(
+            '--destdir',
+            default=None,
+            help="Destination directory for compiled docs",
+        )
+        parser.add_argument(
+            '--enablebackups',
+            action='store_true',
+            default=False,
+            help="Enable several backups up to const N_BACKUPS_RETAIN in --backupdestdir folder",
+        )
+        parser.add_argument(
+            '--backupdestdir',
+            default="/var/sites/wiki-backup/web",
+            help="Destination directory for compiled docs",
+        )
+        parser.add_argument(
+            '--paramversioning',
+            action='store_true',
+            default=False,
+            help="Build multiple parameters pages for each vehicle based on its firmware repo.",
+        )
+        parser.add_argument(
+            '--verbose',
+            dest='verbose',
+            action='store_true',
+            default=False,
+            help="show debugging output",
+        )
+        parser.add_argument(
+            '--fast',
+            dest='fast',
+            action='store_true',
+            default=False,
+            help=("Incremental build using already downloaded parameters, "
+                  "log messages, and video thumbnails rather than cleaning "
+                  "before build."),
+        )
+        self.args, unknown = parser.parse_known_args()
+        self.verbose: bool = self.args.verbose
 
-    # Set up option parsing to get connection string
-    parser = argparse.ArgumentParser(
-        description='Copy Common Files as needed, stripping out non-relevant wiki content',
-    )
-    parser.add_argument(
-        '--site',
-        help="If you just want to copy to one site, you can do this. Otherwise will be copied.",
-    )
-    parser.add_argument(
-        '--clean',
-        action='store_true',
-        help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).",
-    )
-    parser.add_argument(
-        '--cached-parameter-files',
-        action='store_true',
-        help="Do not re-download parameter files",
-    )
-    parser.add_argument(
-        '--parallel',
-        type=int,
-        help="limit parallel builds, -1 for unlimited",
-        default=1,
-    )
-    parser.add_argument(
-        '--destdir',
-        default=None,
-        help="Destination directory for compiled docs",
-    )
-    parser.add_argument(
-        '--enablebackups',
-        action='store_true',
-        default=False,
-        help="Enable several backups up to const N_BACKUPS_RETAIN in --backupdestdir folder",
-    )
-    parser.add_argument(
-        '--backupdestdir',
-        default="/var/sites/wiki-backup/web",
-        help="Destination directory for compiled docs",
-    )
-    parser.add_argument(
-        '--paramversioning',
-        action='store_true',
-        default=False,
-        help="Build multiple parameters pages for each vehicle based on its firmware repo.",
-    )
-    parser.add_argument(
-        '--verbose',
-        dest='verbose',
-        action='store_true',
-        default=False,
-        help="show debugging output",
-    )
-    parser.add_argument(
-        '--fast',
-        dest='fast',
-        action='store_true',
-        default=False,
-        help=("Incremental build using already downloaded parameters, log messages, and video thumbnails rather than cleaning "
-              "before build."),
-    )
+        logging_level = logging.DEBUG if self.verbose else logging.INFO
+        logging.basicConfig(level=logging_level, format='[update.py]: [%(levelname)s]: %(message)s')
 
-    args = parser.parse_args()
-    # print(args.site)
-    # print(args.clean)
+    def run(self) -> None:
+        now = datetime.now()
+        building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
 
-    VERBOSE = args.verbose
+        check_imports()
+        check_ref_directives()
+        create_features_pages(self.args.site)
 
-    now = datetime.now()
-    building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
+        if not self.args.fast:
+            if self.args.paramversioning:
+                # Parameters for all versions availble on firmware.ardupilot.org:
+                fetch_versioned_parameters(self.args.site)
+            else:
+                # Single parameters file. Just present the latest parameters:
+                fetchparameters(self.args.site, self.args.cached_parameter_files)
 
-    check_imports()
-    check_ref_directives()
-    create_features_pages(args.site)
+            # Fetch most recent LogMessage metadata from autotest:
+            fetchlogmessages(self.args.site, self.args.cached_parameter_files)
 
-    if not args.fast:
-        if args.paramversioning:
-            # Parameters for all versions availble on firmware.ardupilot.org:
-            fetch_versioned_parameters(args.site)
+        copy_static_html_sites(self.args.site, self.args.destdir)
+        generate_copy_dict()
+        sphinx_make(self.args.site, self.args.parallel, self.args.fast)
+
+        if self.args.paramversioning:
+            put_cached_parameters_files_in_sites(self.args.site)
+            cache_parameters_files(self.args.site)
+
+        check_build(self.args.site)
+
+        if self.args.enablebackups:
+            make_backup(building_time, self.args.site, self.args.destdir, self.args.backupdestdir)
+            delete_old_wiki_backups(self.args.backupdestdir, N_BACKUPS_RETAIN)
+
+        if self.args.destdir:
+            copy_build(self.args.site, self.args.destdir)
+
+        # To navigate locally and view versioning script for parameters
+        # working is necessary run Chrome as "chrome
+        # --allow-file-access-from-files". Otherwise it will appear empty
+        # locally and working once is on the server.
+
+        error_count = len(error_store_handler.error_messages)
+        if error_count > 0:
+            error("Reprinting error messages:")
+            for error_msg in error_store_handler.error_messages:
+                error(f"\033[1;31m[update.py][error]: {error_msg}\033[0m")
+            fatal(f"{error_count} errors during Wiki build")
         else:
-            # Single parameters file. Just present the latest parameters:
-            fetchparameters(args.site, args.cached_parameter_files)
+            info("Build completed without errors")
 
-        # Fetch most recent LogMessage metadata from autotest:
-        fetchlogmessages(args.site, args.cached_parameter_files)
+        sys.exit(0)
 
-    copy_static_html_sites(args.site, args.destdir)
-    generate_copy_dict()
-    sphinx_make(args.site, args.parallel, args.fast)
 
-    if args.paramversioning:
-        put_cached_parameters_files_in_sites(args.site)
-        cache_parameters_files(args.site)
+def main():
+    updater = WikiUpdater()
+    updater.run()
 
-    check_build(args.site)
 
-    if args.enablebackups:
-        make_backup(args.site, args.destdir, args.backupdestdir)
-        delete_old_wiki_backups(args.backupdestdir, N_BACKUPS_RETAIN)
-
-    if args.destdir:
-        copy_build(args.site, args.destdir)
-
-    # To navigate locally and view versioning script for parameters
-    # working is necessary run Chrome as "chrome
-    # --allow-file-access-from-files". Otherwise it will appear empty
-    # locally and working once is on the server.
-
-    error_count = len(error_store_handler.error_messages)
-    if error_count > 0:
-        error("Reprinting error messages:")
-        for error_msg in error_store_handler.error_messages:
-            error(f"\033[1;31m[update.py][error]: {error_msg}\033[0m")
-        fatal(f"{error_count} errors during Wiki build")
-    else:
-        info("Build completed without errors")
-
-    sys.exit(0)
+if __name__ == "__main__":
+    main()
