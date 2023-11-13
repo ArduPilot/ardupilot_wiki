@@ -6,6 +6,9 @@ JAE JRE-30 Radar
 
 The JAE (Japan Aviation Electronics Industry) JRE-30 radar is a light weight (110g) radar with a maximum range of over 50m.  The relatively wide beam width (about 20 deg) and reliable ranging even in difficult environments can make it a better choice than lidar for some applications.
 
+.. image:: ../../../images/jae-jre-30.jpg
+    :target: ../_images/jae-jre-30.jpg
+
 Where to Buy
 ============
 
@@ -27,7 +30,7 @@ Specifications
 Connection to Autopilot
 =======================
 
-The radar has an 12-pin PicobBlade Molex connector with the following pinout
+The radar has an 12-pin PicoBlade Molex connector with the following pinout
 
 +--------+--------+------------------------+
 | Pin No | Name   | Details                |
