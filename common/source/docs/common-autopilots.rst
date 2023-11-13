@@ -97,6 +97,7 @@ Closed Hardware
     ARK_PI6X <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/ARK_PI6X/README.md>
     Atlas-Control <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Atlas-Control/README.md>
     AtomRC F405-NAVI <common-atomrcf405-navi>
+    AtomRC F405-NAVI-Deluxe <common-atomrcf405-navi-deluxe>
     BetaFPV F405 family <common-betafpvf405>
     BrahmaF4 <common-brahmaf4>
     BOTWINGF405 <common-botwingf405>
