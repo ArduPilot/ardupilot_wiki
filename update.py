@@ -61,6 +61,32 @@ from datetime import datetime
 from distutils import dir_util  # noqa: F401
 
 from frontend.scripts import get_discourse_posts
+import logging
+
+logging.basicConfig(level=logging.DEBUG, format='[update.py]: [%(levelname)s]: %(message)s')
+
+
+class ErrorStoreHandler(logging.Handler):
+    """Allow to store errors for later usage."""
+    def __init__(self, *args, **kwargs):
+        super(ErrorStoreHandler, self).__init__(*args, **kwargs)
+        self.error_messages = []
+
+    def emit(self, record):
+        self.error_messages.append(record.getMessage())
+
+
+logger = logging.getLogger(__name__)
+
+# The ErrorStoreHandler stores the messages
+error_store_handler = ErrorStoreHandler()
+error_store_handler.setLevel(logging.ERROR)
+logger.addHandler(error_store_handler)
+
+# The StreamHandler logs to the console
+stream_handler = logging.StreamHandler(sys.stdout)
+stream_handler.setLevel(logging.ERROR)
+logger.addHandler(stream_handler)
 
 if sys.version_info < (3, 8):
     print("Minimum python version is 3.8")
@@ -106,32 +132,32 @@ LOGMESSAGE_SITE = {
     'antennatracker': 'Tracker',
     'blimp': 'Blimp',
 }
-error_log = list()
+
 N_BACKUPS_RETAIN = 10
 
-VERBOSE = False
+
+def info(str_to_print: str) -> None:
+    """Show and count the errors."""
+    logging.info(str_to_print)
 
 
-def debug(str_to_print):
+def debug(str_to_print: str) -> None:
     """Debug output if verbose is set."""
-    if VERBOSE:
-        print(f"[update.py]: {str_to_print}")
+    logging.debug(str_to_print)
 
 
-def error(str_to_print):
+def error(str_to_print: [str, Exception]) -> None:
     """Show and count the errors."""
-    global error_log
-    error_log.append(str_to_print)
-    print(f"[update.py][error]: {str_to_print}", file=sys.stderr)
+    logging.error(f"{str_to_print}")
 
 
-def fatal(str_to_print):
+def fatal(str_to_print: [str, Exception]) -> None:
     """Show and count the errors."""
-    error(str_to_print)
+    logging.critical(f"{str_to_print}")
     sys.exit(1)
 
 
-def remove_if_exists(filepath):
+def remove_if_exists(filepath: str) -> None:
     try:
         os.remove(filepath)
     except OSError as e:
@@ -141,13 +167,13 @@ def remove_if_exists(filepath):
 
 def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
     fetch_url(fetchurl, fpath=new_name, verbose=False)
-    print(f"Renaming {new_name} to {target_file}")
+    info(f"Renaming {new_name} to {target_file}")
     os.replace(new_name, target_file)
 
 
 def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) -> None:
     """Fetches content at url and puts it in a file corresponding to the filename in the URL"""
-    print(f"Fetching {fetchurl}")
+    info(f"Fetching {fetchurl}")
 
     if verbose:
         total_size = get_request_file_size(fetchurl)
@@ -162,7 +188,7 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
 
     with open(filename, 'wb') as out_file:
         if verbose:
-            print(f"Completed : 0%", end='')
+            info("Completed : 0%")
         completed_last = 0
         for chunk in response.iter_content(chunk_size=chunk_size):
             out_file.write(chunk)
@@ -172,10 +198,10 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
             if verbose:
                 completed = downloaded_size * 100 // total_size
                 if completed - completed_last > 10 or completed == 100:
-                    print(f"..{completed}%", end='')
+                    info(f"..{completed}%")
                     completed_last = completed
         if verbose:
-            print()  # Newline to correct the console cursor position
+            info("")  # Newline to correct the console cursor position
 
 
 def get_request_file_size(url: str) -> int:
@@ -232,8 +258,8 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
 
 
 def build_one(wiki, fast):
-    '''build one wiki'''
-    print(f'Using make for sphinx: {wiki}')
+    """build one wiki"""
+    info(f'Using make for sphinx: {wiki}')
     if platform.system() == "Windows":
         # This will fail if there's no folder to clean, so no check_call here
         if not fast:
@@ -320,7 +346,7 @@ def copy_build(site, destdir):
             shutil.rmtree(olddir)
         os.makedirs(olddir)
         if os.path.exists(targetdir):
-            debug('Moving %s into %s' % (targetdir, olddir))
+            debug(f'Moving {targetdir} into {olddir}')
             shutil.move(targetdir, olddir)
         # copy new dir to targetdir
         # print("DEBUG: targetdir: %s" % targetdir)
@@ -372,7 +398,7 @@ def make_backup(site, destdir, backupdestdir):
         try:
             subprocess.check_call(["rsync", "-a", "--delete", targetdir + "/", bkdir])
         except subprocess.CalledProcessError as ex:
-            print(ex)
+            error(ex)
             fatal("Failed to backup %s" % wiki)
 
 
@@ -519,9 +545,9 @@ def logmatch_code(matchobj, prefix):
 
     for i in range(9):
         try:
-            print("%s m%d: %s" % (prefix, i, matchobj.group(i)))
+            info("%s m%d: %s" % (prefix, i, matchobj.group(i)))
         except IndexError:  # The object has less groups than expected
-            print("%s: except m%d" % (prefix, i))
+            error("%s: except m%d" % (prefix, i))
 
 
 def is_the_same_file(file1, file2):
@@ -760,12 +786,12 @@ def copy_static_html_sites(site, destdir):
             shutil.rmtree(targetdir, ignore_errors=True)
             shutil.copytree(site_folder, targetdir)
         except Exception as e:
-            error(e)
+            error(str(e))
             pass
 
 
 def check_imports():
-    '''check key imports work'''
+    """check key imports work"""
     import pkg_resources
     # package names to check the versions of. Note that these can be different than the string used to import the package
     requires = ["sphinx_rtd_theme>=1.3.0", "sphinxcontrib.youtube>=1.2.0", "sphinx>=7.1.2", "docutils<0.19"]
@@ -774,7 +800,7 @@ def check_imports():
         try:
             pkg_resources.require(r)
         except pkg_resources.ResolutionError as ex:
-            print(ex)
+            error(str(ex))
             fatal("Require %s\nPlease run the wiki build setup script \"Sphinxsetup\"" % r)
     debug("Imports OK")
 
@@ -819,7 +845,7 @@ def create_features_pages(site):
     fetch_url("https://firmware.ardupilot.org/features.json.gz")
     features_json = json.load(gzip.open("features.json.gz"))
     if features_json["format-version"] != "1.0.0":
-        print("bad format version")
+        error("bad format version")
         return
     features = features_json["features"]
 
@@ -871,7 +897,7 @@ def create_features_page(features, build_options_by_define, vehicletype):
                 build_options = build_options_by_define[feature]
             except KeyError:
                 # mismatch between build_options.py and features.json
-                print("feature %s (%s,%s) not in build_options.py" %
+                error("feature %s (%s,%s) not in build_options.py" %
                       (feature, platform_key, vehicletype))
                 continue
             if feature_in:
@@ -1065,13 +1091,13 @@ if __name__ == "__main__":
     # --allow-file-access-from-files". Otherwise it will appear empty
     # locally and working once is on the server.
 
-    error_count = len(error_log)
+    error_count = len(error_store_handler.error_messages)
     if error_count > 0:
-        print("Reprinting error messages:", file=sys.stderr)
-        for msg in error_log:
-            print(f"\033[1;31m[update.py][error]: {msg}\033[0m", file=sys.stderr)
+        error("Reprinting error messages:")
+        for error_msg in error_store_handler.error_messages:
+            error(f"\033[1;31m[update.py][error]: {error_msg}\033[0m")
         fatal(f"{error_count} errors during Wiki build")
     else:
-        print("Build completed without errors")
+        info("Build completed without errors")
 
     sys.exit(0)
