@@ -28,7 +28,6 @@ Build notes:
 Parameters files are fetched from autotest using requests
 
 """
-from __future__ import print_function, unicode_literals
 
 import argparse
 import distutils
@@ -66,7 +65,7 @@ import logging
 class ErrorStoreHandler(logging.Handler):
     """Allow to store errors for later usage."""
     def __init__(self, *args, **kwargs):
-        super(ErrorStoreHandler, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.error_messages = []
 
     def emit(self, record):
@@ -320,7 +319,7 @@ def check_build(site):
             continue
         index_html = os.path.join(wiki, "build", "html", "index.html")
         if not os.path.exists(index_html):
-            fatal("%s site not built - missing %s" % (wiki, index_html))
+            fatal(f"{wiki} site not built - missing {index_html}")
 
 
 def copy_build(site, destdir) -> None:
@@ -391,7 +390,7 @@ def make_backup(building_time, site, destdir, backupdestdir):
         bkdir = os.path.join(backupdestdir, str(building_time + '-wiki-bkp'), str(wiki))
         debug('Checking %s' % bkdir)
         distutils.dir_util.mkpath(bkdir)
-        debug('Copying %s into %s' % (targetdir, bkdir))
+        debug(f'Copying {targetdir} into {bkdir}')
         try:
             subprocess.check_call(["rsync", "-a", "--delete", targetdir + "/", bkdir])
         except subprocess.CalledProcessError as ex:
@@ -460,7 +459,7 @@ def generate_copy_dict(start_dir=COMMON_DIR):
                 for wiki in targets:
                     # print("CopyTarget: %s" % wiki)
                     content = strip_content(source_content, wiki)
-                    targetfile = '%s/source/docs/%s' % (wiki, file)
+                    targetfile = f'{wiki}/source/docs/{file}'
                     debug(targetfile)
                     destination_file = open(targetfile, 'w', 'utf-8')
                     destination_file.write(content)
@@ -478,7 +477,7 @@ def generate_copy_dict(start_dir=COMMON_DIR):
                 # print("JS: " + str(targets))
                 for wiki in targets:
                     content = strip_content(source_content, wiki)
-                    targetfile = '%s/source/_static/%s' % (wiki, file)
+                    targetfile = f'{wiki}/source/_static/{file}'
                     debug(targetfile)
                     destination_file = open(targetfile, 'w', 'utf-8')
                     destination_file.write(content)
@@ -615,9 +614,9 @@ def fetch_versioned_parameters(site=None):
 
                 # Moves the updated JSON file
                 if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % ("AntennaTracker", "AntennaTracker")  # noqa: E501
+                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/{}/parameters-{}.json'.format("AntennaTracker", "AntennaTracker")  # noqa: E501
                 else:
-                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value, key.title())
+                    vehicle_json_file = os.getcwd() + f'/../new_params_mversion/{value}/parameters-{key.title()}.json'
                 new_file = (
                     key +
                     "/source/_static/" +
@@ -647,22 +646,22 @@ def fetch_versioned_parameters(site=None):
                                     "/source/docs/" +
                                     filename[str(filename).rfind("/")+1:])
                         if not os.path.isfile(new_file):
-                            debug("Copying %s to %s (target file does not exist)" % (filename, new_file))
+                            debug(f"Copying {filename} to {new_file} (target file does not exist)")
                             shutil.copy2(filename, new_file)
                         elif os.path.isfile(filename.replace("new_params_mversion", "old_params_mversion")): # The cached file exists?  # noqa: E501
 
                             # Temporary debug messages to help with cache tasks.
-                            debug("Check cache: %s against %s" % (filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
+                            debug("Check cache: {} against {}".format(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
                             debug("Check cache with filecmp.cmp: %s" % filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
                             debug("Check cache with sha256: %s" % is_the_same_file(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
 
                             if ("parameters.rst" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.  # noqa: E501
-                                debug("Overwriting %s to %s" % (filename, new_file))
+                                debug(f"Overwriting {filename} to {new_file}")
                                 shutil.copy2(filename, new_file)
                             else:
                                 debug("It will reuse the last build of " + new_file)
                         else:   # If not cached, copy it anyway.
-                            debug("Copying %s to %s" % (filename, new_file))
+                            debug(f"Copying {filename} to {new_file}")
                             shutil.copy2(filename, new_file)
 
                     except Exception as e:
@@ -925,17 +924,17 @@ def create_features_page(features, build_options_by_define, vehicletype):
             t = rst_table.tablify(rows, headings=column_headings)
         underline = "-" * len(platform_key)
         all_tables += ("""
-.. _%s:
+.. _{}:
 
-%s
-%s
+{}
+{}
 
-%s
-""" % (reference_for_board(platform_key), platform_key, underline, t))
+{}
+""".format(reference_for_board(platform_key), platform_key, underline, t))
 
     index = ""
     for board in sorted(features_by_platform.keys(), key=lambda x : x.lower()):
-        index += '- :ref:`%s<%s>`\n\n' % (board, reference_for_board(board))
+        index += f'- :ref:`{board}<{reference_for_board(board)}>`\n\n'
 
     all_features_rows = []
     for feature in sorted(build_options_by_define.values(), key=lambda x : (x.category + x.label).lower()):
@@ -951,26 +950,26 @@ List of Firmware Limitations by Board
 
 **Dynamically generated by update.py.  Do not edit.**
 
-%s Omitted features by board type in "latest" builds from build server
+{} Omitted features by board type in "latest" builds from build server
 
 
 Board Index
 ===========
 
-%s
+{}
 
 .. _all-features:
 
 All Features
 ============
 
-%s
+{}
 
 Boards
 ======
 
-%s
-""" % (vehicletype, index, all_features, all_tables)
+{}
+""".format(vehicletype, index, all_features, all_tables)
 
 #######################################################################
 
