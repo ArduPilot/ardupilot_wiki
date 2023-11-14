@@ -11,5 +11,5 @@ The `official DroneKit Python documentation <https://dronekit-python.readthedocs
 There is also a video below showing how to setup Dronekit for
 SITL/MAVProxy on Linux.
 
-.. youtube:: wSEc7Sm2O0E
+.. youtube:: Ek02j0X51Cm_mvM-
     :width: 100%
