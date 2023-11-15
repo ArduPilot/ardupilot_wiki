@@ -42,6 +42,7 @@ Parts List
 - `3S 7500mAh battery <https://www.banggood.com/ZOP-Power-11_1V-7500mAh-35C-3S-Lipo-Battery-XT60-Plug-for-RC-Quadcopter-Car-p-1334677.html>`__
 - `Battery mounting plate <https://www.banggood.com/Realacc-Carbon-Fiber-Battery-Protection-Board-with-Tie-Down-Strap-for-X-Frame-kit-p-1111041.html>`__
 - :ref:`Hex CubeBlack <common-thecube-overview>` or similar :ref:`ArduPilot compatible autopilot <common-autopilots>`
+- `Hex Here3 GPS <https://www.cubepilot.com/#/here/here3>`__ or :ref:`similar GPS <common-positioning-landing-page>`
 - `Hex HereLink <http://www.proficnc.com/all-products/163-gps-module.html>`__ or any 8 channel (or more) transmitter like the `Futaba T10J <https://www.futabarc.com/systems/futk9200-10j/index.html>`__
 - `Firefly 8SE action camera <https://www.banggood.com/Hawkeye-Firefly-8SE-4K-90-Degree-170-Degree-Touch-Screen-FPV-Action-Camera-Ver2_1-p-1334168.html>`__
 - `Slim HDMI cable <http://www.8sinn.com/index.php/extrathin-micro-hdmi-micro-hdmi-cable-80cm.html>`__
