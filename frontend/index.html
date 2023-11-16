@@ -635,16 +635,24 @@
     })
         .then(response => response.json())
         .then(data => {
+            function isValidUrl(string) {
+                try {
+                    new URL(string);
+                    return true;
+                } catch (_) {
+                    return false;
+                }
+            }
             const blogPostNodes = document.querySelectorAll('#blog_posts .col-md-4');
             data.forEach((val, index) => {
                 if (index < blogPostNodes.length) {
-                    let anchor = blogPostNodes[index].querySelector("a");
-                    let span = document.createElement('span');
+                    const anchor = blogPostNodes[index].querySelector("a");
+                    const span = document.createElement('span');
                     anchor.href = val.link;
                     span.textContent = val.title;
 
                     if (val.has_image) {
-                        let img = document.createElement('img');
+                        const img = document.createElement('img');
                         img.classList.add("img-fluid", "img-thumbnail");
                         img.src = val.image;
                         img.loading = "lazy";
@@ -655,8 +663,8 @@
 
                         anchor.innerHTML = '';
                         anchor.appendChild(img);
-                    } else {
-                        let iframe = document.createElement('iframe');
+                    } else if (isValidUrl(val.youtube_link)) {
+                        const iframe = document.createElement('iframe');
                         anchor.classList.add("embed-responsive");
                         iframe.classList.add("embed-responsive-item", "img-thumbnail");
                         //iframe.src = val.youtube_link;
@@ -665,9 +673,9 @@
                         iframe.style.width = "100%";
                         iframe.style.aspectRatio = "4/3";
                         iframe.loading = "lazy";
-                        let youtubeUrl = new URL(val.youtube_link);
-                        let videoId = youtubeUrl.pathname.split('/')[2];
-                        let video_thumbnail = "https://img.youtube.com/vi/" + videoId + "/hqdefault.jpg";
+                        const youtubeUrl = new URL(val.youtube_link);
+                        const videoId = youtubeUrl.pathname.split('/')[2];
+                        const video_thumbnail = "https://img.youtube.com/vi/" + videoId + "/hqdefault.jpg";
                         iframe.srcdoc = `<style>
                             body, .yt_img {
                             width: 100%;
@@ -690,6 +698,28 @@
 
                         anchor.innerHTML = '';
                         anchor.appendChild(iframe);
+                    } else {
+                        const picture = document.createElement('picture');
+                        const source1 = document.createElement('source');
+                        source1.media = '(max-height: 480px)';
+                        source1.type = 'image/webp';
+                        source1.srcset = 'images/ArduPilot-Motto.webp';
+                        const source2 = document.createElement('source');
+                        source2.media = '(max-height: 480px)';
+                        source2.type = 'image/png';
+                        source2.srcset = 'images/ArduPilot-Motto.png';
+                        const img = document.createElement('img');
+                        img.src = 'images/ArduPilot-Motto.png';
+                        img.alt = 'ArduPilot';
+                        img.className = 'img-fluid img-thumbnail col_min';
+                        img.loading = 'lazy';
+                        img.style.aspectRatio = '4/3';
+                        img.textContent = 'Loading Blog post';
+                        picture.appendChild(source1);
+                        picture.appendChild(source2);
+                        picture.appendChild(img);
+                        anchor.innerHTML = '';
+                        anchor.appendChild(picture);
                     }
 
                     anchor.appendChild(span);
@@ -709,9 +739,9 @@
             const newsPosts = document.getElementById('news_posts');
 
             data.forEach(val => {
-                let listItem = document.createElement('li');
-                let para = document.createElement('p');
-                let link = document.createElement('a');
+                const listItem = document.createElement('li');
+                const para = document.createElement('p');
+                const link = document.createElement('a');
 
                 para.className = 'text-justify lead';
 
@@ -730,7 +760,7 @@
 <script src="js/carousel_data.js" defer></script>
 <script defer>
     window.onload = function () {
-        let carousel = document.querySelector("#carousel_content");
+        const carousel = document.querySelector("#carousel_content");
 
         // Shuffle the carouselData array
         for (let i = carouselData.length - 1; i > 0; i--) {
