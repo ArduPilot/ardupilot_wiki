@@ -112,16 +112,11 @@ For bug reports, read
 Once the next version is released, you could install openocd with apt.
 ``sudo apt-get install openocd``.
 
-Before OpenOCD and GDB are run, their configuration files need to be copied to the build folder. Note that the build folder name is the same at the board name.
-
-Go to the ``./Tools/debug`` folder and copy ``openocd.cfg`` to ``./build/<boardname>/bin``, 
-if not done so previously.
-
-For example:
+When you run OpenOCD, supply it with a config file.
+For example, on an H7 board like CubeRed:
 ```bash
 ./waf configure --board CubeRedPrimary --enable-dds  --enable-networking --debug
-cp Tools/debug/openocd-h7.cfg build/CubeRedPrimary/openocd.cfg
-./waf plane --upload
+openocd --file Tools/debug/openocd-h7.cfg
 ```
 
 Type ``openocd`` in your terminal in the ``bin`` directory above.
