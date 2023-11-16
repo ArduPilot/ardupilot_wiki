@@ -256,7 +256,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
     <tr class="row-odd">
         <td><center>EOSBANDI<br/><br/>Hungary</center></td>
         <td><div class="first last line-block">
-            <div class="line">Andras Schaffer, <a href="mailto:eosbandi@eosbandi.com" target="_top">eosbandi@eosbandi.com</a></div>
+            <div class="line">Andras Schaffer, <a href="mailto:eosbandi@gmail.com" target="_top">eosbandi@gmail.com</a></div>
             <div class="line"><br/></div>
             <div class="line">Consulting services include: Mission Planner code development</div>
             <div class="line">Ardupilot extensions, LUA script development, device integration.</div>
