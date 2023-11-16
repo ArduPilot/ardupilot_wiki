@@ -82,17 +82,47 @@ in the gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2 file.
 After installation you should find you have a tool called
 arm-none-eabi-gdb.
 
-Installing OpenOCD
+Installing OpenOCD with stlink support
 ==================
 
-You will need to install OpenOCD if you are using the ST-Link debugger:
+You will need to install OpenOCD if you are using the ST-Link debugger.
 
+
+
+As of November 2023, release 0.12.0 does not include the necessary ChibiOS support.
+Until then, compile OpenOCD from source.
+
+```
+git clone --recurse-submodules git@github.com:openocd-org/openocd.git
+cd openocd
+./configure --enable-stlink
+make
+make install
+```
+
+Check the install was successful
+```
+openocd --version
+Open On-Chip Debugger 0.12.0+dev-g9fcf33da8 (2023-11-15-23:04)
+Licensed under GNU GPL v2
+For bug reports, read
+        http://openocd.org/doc/doxygen/bugs.html
+```
+
+Once the next version is released, you could install openocd with apt.
 ``sudo apt-get install openocd``.
 
 Before OpenOCD and GDB are run, their configuration files need to be copied to the build folder. Note that the build folder name is the same at the board name.
 
 Go to the ``./Tools/debug`` folder and copy ``openocd.cfg`` to ``./build/<boardname>/bin``, 
-if not done so previously
+if not done so previously.
+
+For example:
+```bash
+./waf configure --board CubeRedPrimary --enable-dds  --enable-networking --debug
+cp Tools/debug/openocd-h7.cfg build/CubeRedPrimary/openocd.cfg
+./waf plane --upload
+```
 
 Type ``openocd`` in your terminal in the ``bin`` directory above.
 
