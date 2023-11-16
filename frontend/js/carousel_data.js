@@ -1,4 +1,4 @@
-let carouselData = [
+const carouselData = [
     {
         "imgSrcWebp": "images/avoidance.webp",
         "imgSrcJpeg": "images/avoidance.jpg",
