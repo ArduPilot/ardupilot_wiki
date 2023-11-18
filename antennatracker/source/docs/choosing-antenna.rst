@@ -34,7 +34,7 @@ Where to buy
 
 Below are some retailers/antennas that users have reported success with:
 
--  `AirMax 900 16dBi Yagi antenna from ubiquitiwarehouse.com.au <http://ubiquitiwarehouse.com.au/product_info.php?products_id=133&osCsid=154e266c33243489ed9371eb183caf78>`__
+-  `AirMax 900 16dBi Yagi antenna from ipwireless.com.au <https://www.ipwireless.com.au/index.php?route=product/product&product_id=108>`__
    (Australia)
 -  `L-Com 900Mhz 8dBi flat patch antenna from readymaderc.com <https://www.readymaderc.com/products/details/900-mhz-8-dbi-flat-patch-antenna-4ft-sma-male-connector>`__
    (USA) (`requires RP SMA female to SMA female adapter <http://www.readymaderc.com/store/index.php?main_page=product_info&cPath=11_45_58&products_id=432>`__)
