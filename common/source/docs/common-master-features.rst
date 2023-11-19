@@ -14,6 +14,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
     :maxdepth: 1
 
     JAE JRE-30 <common-rangefinder-jae-jre-30>
+    LD-06 TOF Lidar <common-ld06>
     Nooploop TOF-Sense P <common-rangefinder-nooploop-tofsense-p>
     Nooploop TOF-Sense F <common-rangefinder-nooploop-tofsense-f>
     Nanoradar NRA24 <common-rangefinder-nra24>
@@ -26,6 +27,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
     :maxdepth: 1
 
     JAE JRE-30 <common-rangefinder-jae-jre-30>
+    LD-06 TOF Lidar <common-ld06>
     Nooploop TOF-Sense P <common-rangefinder-nooploop-tofsense-p>
     Nooploop TOF-Sense F <common-rangefinder-nooploop-tofsense-f>
     Nanoradar NRA24 <common-rangefinder-nra24>
