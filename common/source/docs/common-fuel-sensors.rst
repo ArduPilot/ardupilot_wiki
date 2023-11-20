@@ -85,3 +85,22 @@ Parameter Setup
 -  :ref:`BATT_FL_V_MULT<BATT_FL_V_MULT>` The is a multiplier calculated using the minimum and maximum voltage measured on the analog pin. This is calculated as 1 / (Voltage_Full - Voltage_Empty).
 -  :ref:`BATT_FL_FLTR<BATT_FL_FLTR>` This is the frequency of the low pass filter in Hertz. A value of -1 disables the filter and unfiltered voltage is used to determine the fuel level.
 -  :ref:`BATT_FL_PIN<BATT_FL_PIN>` This is the analog pin where the sensor is attached.
+
+Advanced Parameter Setup
+++++++++++++++++++++++++
+
+Fuel level is normally calculated using a linear relationship between fuel level and reported analog voltage from the sensor. However, some sensors have a non-linear output versus fuel level. ArduPilot provides up to a third order polynomial curve fit by changing the following parameters from their default values (which is a linear fit):
+
+example shown for first battery monitor
+- :ref:`BATT_FL_FF<BATT_FL_FF>` First order polynomial fit term
+- :ref:`BATT_FL_FS<BATT_FL_FS>` Second order polynomial fit term
+- :ref:`BATT_FL_FT<BATT_FL_FT>` Third order polynomial fit term
+- :ref:`BATT_FL_OFF<BATT_FL_OFF>` Offset term
+
+every voltage sample from the sensor is modified as:
+
+measured sensor voltage = vm
+
+modified voltage = (BATT_FL_FT * vm^3 + BATT_FL_FS * vm^2 + BATT_FL_FF * vm) + BATT_FL_OFF
+
+This allows the non-linearity to be compensated. The values for these parameters should be obtained from the sensor manufacturer, if applicable.
