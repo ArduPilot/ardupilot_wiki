@@ -6,6 +6,11 @@ Future Wiki Changes (in Master branch now)
 Will be in future 4.5 release and is currently in master ("latest")
 
 [copywiki destination="plane,copter,rover,blimp"]
+Add polynomial correction params to fuel level batt monitor
+===========================================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5575
+
 Expand selection of harmonic filter center frequencies
 ======================================================
 
