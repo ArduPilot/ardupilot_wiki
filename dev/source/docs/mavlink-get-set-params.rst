@@ -73,6 +73,6 @@ Hidden Parameters
 
 In order to reduce the time spent downloading parameters, ArduPilot hides parameters for some subsystems if they are disabled.
 
-For example, users can choose to use either EKF2 or EKF3 but the EKF3 is disabled by default so all but the EK3_ENABLE parameter are hidden.  Once the EK3_ENABLE parameter is set to "1" the remaining EK3_xxx parameters become visible.
+For example, users can choose to use QuadPlane functionality in ArduPlane, but Q_ENABLE is disabled by default so all its parameters are hidden.  Once the Q_ENABLE parameter is set to "1" the remaining Q_xxx parameters become visible.
 
 From a ground station or companion computer point of view this means that the total number of parameters will change.  i.e. the `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__ **param_count** field may increase but also note that the **param_index** for a given parameter may change.  This means it is best to not rely on the **param_index** field.
