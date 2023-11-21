@@ -17,11 +17,12 @@ This information is reported in the autopilot logs via the EFI, EFI2, and ECYL l
 
 The following units have been tested and are supported:
 
-- MegaSquirt Serial
+- `MegaSquirt Serial <https://megasquirt.info/>`__
 - NWPMU CAN bus
-- Lutan Serial
+- `Lutan Serial <https://www.lutanefi.com/en>`__
 - DroneCAN (adapted versions of the above serial units)
 - PiccoloCAN (`Currawong's ECU <https://www.currawong.aero/ecu/>`__ and `IntelliJect EFI <https://power4flight.com/uav-engine-products/uav-engine-control-units/intelliject-efi/>`__)
+- `Hirth Engines <https://hirthengines.com/2-stroke-engines/41-series/>`__
 
 Using :ref:`LUA script drivers <common-lua-scripts>`:
 
@@ -36,9 +37,11 @@ Serial Setup
 
 For the example below, the unit will assumed to be attached to SERIAL5 of the autopilot.
 
-- :ref:`EFI_TYPE<EFI_TYPE>`: MegaSquirt = 1, Lutan = 3
+- :ref:`EFI_TYPE<EFI_TYPE>`: MegaSquirt = 1, Lutan = 3, Hirth = 8
 - :ref:`SERIAL5_PROTOCOL<SERIAL5_PROTOCOL>` = 24 (Serial EFI))
 - :ref:`SERIAL5_BAUD<SERIAL5_BAUD>` = 115 (115.2Kbaud)
+
+.. note:: only one serial EFI is allowed in a given system
 
 NWPMU Setup
 ===========
@@ -106,3 +109,22 @@ First, set either RPM1 or RPM2 sensor as being sourced from the EFI (examples wi
 
 - set :ref:`RPM1_TYPE<RPM1_TYPE>` = 3 (EFI)
 - then setup the :ref:`common-rpm-based-notch`
+
+Throttle Linearization
+======================
+
+Some serial EFIs use the ArduPilot throttle output PWM value to control the throttle instead of a servo. Often the engine thrust is not a linear relation to this value. ArduPilot provides up to a third order polynomial curve fit for PWM versus control value sent to the EFI by changing the following parameters from their default values (which is a linear fit):
+
+- :ref:`EFI_THRLIN_EN<EFI_THRLIN_EN>` = 1 to enable, then refresh parameters or reboot to show:
+- :ref:`EFI_THRLIN_COEF1<EFI_THRLIN_COEF1>` First order polynomial fit term
+- :ref:`EFI_THRLIN_COEF2<EFI_THRLIN_COEF2>` Second order polynomial fit term
+- :ref:`EFI_THRLIN_COEF3<EFI_THRLIN_COEF3>` Third order polynomial fit term
+- :ref:`EFI_THRLIN_OFS<EFI_THRLIN_OFS>` Offset term
+
+throttle values are modified as:
+
+ArduPilot scaled throttle output value = thr
+
+modified throttle = (EFI_THRLIN_COEF3 * thr^3 + EFI_THRLIN_COEF2 * thr^2 + EFI_THRLIN_COEF1 * thr) + EFI_THRLIN_OFS
+
+This allows the non-linearity to be compensated. The values for these parameters should be obtained from the EFI manufacturer, if applicable.
