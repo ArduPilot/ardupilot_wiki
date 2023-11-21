@@ -29,7 +29,12 @@ Connect to the autopilot with a ground station and set the following parameters 
 
 - Set :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` to 1 (First Driver)
 - Set :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` to 1 (DroneCAN)
-- Modify :ref:`CAN_D1_UC_OPTION<CAN_D1_UC_OPTION>` so that "Hobbywing ESC" is checked (or directly set to 128)
+- Set :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` to configure which servo outputs are transmitted over CAN.  For most quadcopters this should be set to 15.
+
+.. image:: ../../../images/hobbywing-dronecan-esc-ucescbm-param.png
+   :target: ../_images/hobbywing-dronecan-esc-ucescbm-param.png
+
+-  Modify :ref:`CAN_D1_UC_OPTION<CAN_D1_UC_OPTION>` so that "Hobbywing ESC" is checked (or directly set to 128)
 
 .. image:: ../../../images/hobbywing-dronecan-esc-options-param.png
    :target: ../_images/hobbywing-dronecan-esc-options-param.png
