@@ -193,6 +193,11 @@ on :ref:`quadplane-vtol-tuning-process` page:
 
 [/site]
 [site wiki="copter"]
+Add Heli DDFP yaw trim param
+============================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5584
+
 Add winch options
 =================
 
