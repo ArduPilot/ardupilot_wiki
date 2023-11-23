@@ -70,7 +70,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Power Tether <common-power-tether>
     PPM Encoder <common-ppm-encoders-new>
 [site wiki="copter"]
-    Precision Landing and Loiter (IRLock) <precision-landing-with-irlock>
+    Precision Landing and Loiter using IRLock <precision-landing-with-irlock>
 [/site]
     Radio Control Systems <common-rc-systems>
     Rangefinders (Sonar, Lidar, Depth Cameras) <common-rangefinder-landingpage>
