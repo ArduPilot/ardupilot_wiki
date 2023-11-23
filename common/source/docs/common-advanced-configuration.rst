@@ -99,6 +99,9 @@ tuning options for the vehicle.
     OSD Parameter Editor <common-paramosd>
     Parameter List (Full) <parameters>
     Parameter Reset <common-parameter-reset>
+[site wiki="copter"]
+    Precision Landing and Loiter <precision-landing-with-irlock>
+[/site]
     RC Input Channel Mapping (RCMAP) <common-rcmap>
     RC Options <common-rc-options>
     Redundant Telemetry <common-redundant-telemetry>
