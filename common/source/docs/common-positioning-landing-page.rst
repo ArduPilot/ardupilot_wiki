@@ -64,7 +64,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     Holybro RTK M8P Family <common-holybro-rtk-m8p>
     Holybro RTK F9P Family <common-holybro-rtk-f9p>
     Holybro RTK F9P Ultralight <https://holybro.com/products/h-rtk-f9p-ultralight>
-    Holybro RTK NEMA UM-982 GPS <https://holybro.com/products/h-rtk-unicore-um982>
+    Holybro RTK Unicore UM982 GPS <https://holybro.com/products/h-rtk-unicore-um982>
     LOCOSYS HAWK R1 RTK GNSS / R2 RTK GNSS + Compass<common-gps-locosys>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
