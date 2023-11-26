@@ -47,7 +47,7 @@ The default receiver channel to ArduCopter RC input function mapping is as follo
 |              | (throttle) (note3) |
 +--------------+--------------------+
 
-Note1: These functions are  mapped by ``RCMAP_x`` parameters by default.
+Note1: These functions are mapped by the  default values of ``RCMAP_x`` parameters as shown,but can changed as desired.
 
 Note2: The :ref:`FLTMODE_CH<FLTMODE_CH>` defaults to RC Channel 5.
 
@@ -63,9 +63,7 @@ The :ref:`autopilot output functions wiki <common-rcoutput-mapping>` shows the c
 Tail Servo/Control
 ------------------
 
-Tail servo is designated as Motor 4 (servo function 36) and is defaulted to output 4. Direct Drive Fixed Pitch (DDFP) tail rotors will also be connected to Motor 4 and the tail type parameter (:ref:`H_TAIL_TYPE <H_TAIL_TYPE>`) set to DDFP.  Direct Drive Variable Pitch (DDVP) tail rotors will use Motor 4 (defaulted to output 4) to control tail rotor pitch and the tail ESC (servo function 32) connection is defaulted to output 7. This is automatically configured as tail RSC for the servo 7 function when the tail type parameter (:ref:`H_TAIL_TYPE <H_TAIL_TYPE>`) is set to DDVP. 
-
-Be sure to check the direction of operation of the Tail Servo. Move the rudder stick and notice the change in tail rotor pitch. Be sure that its increase or decrease of pitch is such that the change in thrust will result in the desired direction of movement. If not, reverse the servo direction with the :ref:`SERVO4_REVERSED<SERVO4_REVERSED>` parameter.
+See :ref:`traditional-helicopter-tailrotor-setup`
 
 Motor Control
 -------------

@@ -4,30 +4,57 @@
 Traditional Helicopter – Tailrotor Setup
 =========================================
 
-There are several ways for controlling the speed and/or pitch of the tailrotor and each have a unique setup.  The :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` parameter is used to specify method for controlling the tailrotor.  A list of available tail types is given below:
+There are several ways for controlling the tailrotor to maintain yaw stabilization and provide yaw control, and each have a unique setup.  The :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` parameter is used to specify method for controlling the tailrotor.  A list of available tail types is given below:
 
-- Servo Only (ArduPilot will supply the tail rotor stabilization like a tail rotor gyro)
-- Direct Drive Fixed Pitch Clockwise (DDFP CW) (tail rotor driven by a motor whose ESC is controlled by ArduPilot)
-- Direct Drive Fixed Pitch Counter-Clockwise (DDFP CCW) (tail rotor driven by a motor whose ESC is controlled by ArduPilot)
-- Direct Drive Variable Pitch (DDVP) (both a tail rotor motor ESC and a servo controlled pitch link are used)
+- Servo Only: ArduPilot will supply the tail rotor stabilization like a tail rotor gyro and control the pitch of the tail rotor blades.
+- Servo with External Gyro: ArduPilot will output yaw demands without direct yaw attitude stabilization which is provided via an external gyro.
+- Direct Drive Variable Pitch (DDVP): Instead of the tail rotor being driven from the main rotor via mechanical coupling as in the above cases, an electric motor is used with motor controlled(ramp up/down, operating point) by ArduPilot. Main yaw control is via tail blade pitch servo, as above.
+- Direct Drive Fixed Pitch Clockwise (DDFP CW): Tail rotor is driven by a motor whose ESC is controlled by ArduPilot to maintain yaw stability and yaw direction. Used with clockwise rotating main rotors, when viewed from above.
+- Direct Drive Fixed Pitch Counter-Clockwise (DDFP CCW): Tail rotor driven by a motor whose ESC is controlled by ArudPilot to maintain yaw stability and yaw direction. Used with clockwise rotating main rotors, when viewed from above.
 
-Tailrotor setups
-================
 
-Servo Only
-++++++++++
+Tailrotor Types
+===============
 
-The Servo Only tail type uses a servo to control the tailrotor pitch slider.  The tailrotor speed is controlled by a physical connection (tailrotor shaft or belt) to the engine and main shaft. In the Heli Page of the Mission Planner Setup Tab, motor 4 is assigned to the servo number that corresponds to the servo channel the tail rotor servo is physically connected.  Depending on your servo type, set the minimum, maximum and trim PWM.  Setting the trim PWM is discussed below.
+Servo Only :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` = 0
++++++++++++++++++++++++++++++++++++++++++++++++
 
-Direct Drive Fixed Pitch
-++++++++++++++++++++++++
+The Servo Only tail type uses a servo connected to an autopilot output whose ``SERVOx_FUNCTION`` is selected as ``Motor4`` to control the tailrotor pitch slider.  The tailrotor speed is controlled by a physical connection (tailrotor shaft or belt) to the engine and main shaft. Depending on your servo setup and mechanical throws, set the ``SERVOx_MIN``, ``SERVOx_MAX``, and ``SERVOx_REVERSED`` parameter values.  Setting the ``SERVOx_TRIM`` is discussed below.
 
-The Direct Drive Fixed Pitch (DDFP) tail type accommodates two options: one where the main rotor rotates clockwise when viewed from above and the other where the main rotor rotates counter-clockwise when viewed from above.  Be sure to select the DDFP tail type for the main rotor rotation.  In this case, the control of tailrotor thrust is accomplished through tailrotor speed since it is a fixed pitch propeller. In the Heli Page of the Mission Planner Setup Tab, motor 4 is assigned to the servo number that corresponds to the servo channel the tailrotor ESC is physically connected.
+Be sure to check the direction of operation of the Tail Servo. Move the rudder stick and notice the change in tail rotor pitch. Be sure that its increase or decrease of pitch is such that the change in thrust will result in the desired direction of movement. If not, reverse the servo direction with the ``SERVOx_REVERSED`` parameter.
 
-Direct Drive Variable Pitch
-+++++++++++++++++++++++++++
+Servo with External Gyro :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` = 1
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The Direct Drive Variable Pitch (DDVP) tail type uses a tail motor with a variable pitch propeller.  A separate servo is used to control the tailrotor pitch.  The setup of the servo is similar to the servo only tail type. In the Heli Page of the Mission Planner Setup Tab, motor 4 is assigned to the servo number that corresponds to the servo channel the tailrotor servo is physically connected.  For the tail motor, the HeliTailRSC is assigned to the servo number that corresponds to the servo channel the tail motor ESC is physically connected.
+Instead of ArduPilot controlling both the desired yaw rate and stability, this option relies on an external gyro for stabilization. A servo is still used to input yaw rate demands to the tail and its setup as above, for the Servo Only case.
+
+The external gyro gain can be set by the :ref:`H_GYR_GAIN<H_GYR_GAIN>` parameter using the autopilot's "Motor7" output function,``SERVOx_FUNCTION``.
+
+In ACRO mode, this gain can be changed to the value of the :ref:`H_GYR_GAIN_ACRO<H_GYR_GAIN_ACRO>` parameter, if non-zero.
+
+Direct Drive Variable Pitch :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` = 2
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The Direct Drive Variable Pitch (DDVP) tail type uses a separate tail motor with a variable pitch propeller.  A separate servo is used to control the tailrotor pitch.  The setup of the servo is similar to the servo only tail type. ``SERVOx_FUNCTION`` "Motor4" is assigned to the output number that corresponds to the servo channel the tailrotor servo is physically connected (defaults to output 4).  For the tail motor, the "HeliTailRSC" ("32") is assigned to the motor/servo channel to which the tail motor ESC is physically connected (defaults to output 7).
+
+The range of the motor ESC is controlled by its output's ``SERVOx_MIN/MAX`` parameters and ArduPilot will ramp it output up or down, as appropriate, to its normal operating value set by the :ref:`H_TAIL_SPEED<H_TAIL_SPEED>` parameter.
+
+Direct Drive Fixed Pitch :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` = 3 or 4
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The Direct Drive Fixed Pitch (DDFP) tail type uses a fixed pitch tail rotor and separate motor. The stabilization and yaw is controlled by the speed of this motor. It has two options: one where the main rotor rotates clockwise when viewed from above and the other where the main rotor rotates counter-clockwise when viewed from above.  Be sure to select the DDFP tail type for the main rotor rotation.  In this case, the control of tailrotor thrust is accomplished through tailrotor speed since it is a fixed pitch propeller. The ``SERVOx_FUNCTION`` of "32" (HeliTailRSC) should be assigned to the servo channel (default is output 7) to which the tailrotor ESC is physically connected.
+
+These Tail Type Connections are summarized below:
+
+==============================  ============   ===============    =============
+Type                            H_TAIL_TYPE    TailPitch Servo    TailMotor ESC
+==============================  ============   ===============    =============
+Servo only                      0                 Motor4          none
+Servo with Gyro                 1                 Motor4          none
+DirectDriveVariablePitch        2                 Motor4          HeliTailRSC
+DirectDriveFixedPitch(CW)       3                 na              Motor4
+DirectDriveFixesPitch(CCW)      4                 na              Motor4
+==============================  ============   ===============    =============
 
 Setting Tail Trim
 =================
