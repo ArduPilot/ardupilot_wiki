@@ -193,20 +193,15 @@ on :ref:`quadplane-vtol-tuning-process` page:
 
 [/site]
 [site wiki="copter"]
-Add Heli DDFP yaw trim param
-============================
+Add Heli DDFP parameters
+========================
 
-See https://github.com/ArduPilot/ardupilot_wiki/pull/5584
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5591
 
 Add winch options
 =================
 
 See https://github.com/ArduPilot/ardupilot_wiki/pull/5472
-
-on :ref:`traditional-helicopter-tailrotor-setup` page, add info for DDFP tail rotor motor thrust linearization:
-===============================================================================================================
-
-See: https://github.com/ArduPilot/ardupilot_wiki/pull/5328
 
 on :ref:`circle-mode` page, under Circle Control Options, add:
 ==============================================================
