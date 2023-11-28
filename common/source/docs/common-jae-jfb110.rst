@@ -146,7 +146,7 @@ PWR1, PWR2 port pin assignments
 +--------+---------------------+--------------------------+
 | 29     | VCC 3.3V High Power | 3.3V 1A max              |
 +--------+---------------------+--------------------------+
-| 30     | Serial5 RX          |                          |
+| 30     | Serial5 RX          | RC input2                |
 +--------+---------------------+--------------------------+
 | 31     | RSSI                | Pin 10                   |
 +--------+---------------------+--------------------------+
@@ -295,7 +295,7 @@ UART / Serial
 +---------+---------------------+---------+-----+
 | Serial4 | GPS2                | No      | Yes |
 +---------+---------------------+---------+-----+
-| Serial5 | Unused              | No      | Yes |
+| Serial5 | RCin2               | No      | Yes |
 +---------+---------------------+---------+-----+
 | Serial6 | SBUS Out            | No      | Yes |
 +---------+---------------------+---------+-----+
@@ -309,9 +309,11 @@ RC Input
 
 The RC In pin, is mapped to a timer input  and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS, FPort, and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry. 
 
-To allow CRSF and embedded telemetry available in FPort, CRSF, and SRXL2 receivers, any UART with DMA can be assigned to be used as the RC connection instead of the PPM pin. For example SERIAL4 could be re-assigned as RC input.
+An alternate RC input is setup on SERIAL5 RX input and provides the same capabilities as above except it does not support PPM.
 
-With this option, :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` must be set to "23", and:
+To allow CRSF and embedded telemetry available in FPort, CRSF, and SRXL2 receivers, any full UART with DMA can be assigned to be used as the RC connection instead of the PPM pin. For example SERIAL4 could be re-assigned as RC input.
+
+With this option, :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` must be set to "23", :ref:`SERIAL5_PROTOCOL<SERIAL5_PROTOCOL>` must be cahnged to some other protocol than its default of "23" (only one UART is allowed to have that protocol in a system), and:
 
 - PPM is not supported.
 
