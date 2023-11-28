@@ -343,7 +343,7 @@ Do-Change-Speed
 
 Change the desired maximum speed (in meters/sec) of the vehicle.  Normally the "Type" field is left at 0 meaning the horizontal speed is set.
 
-**Type** - 0:horizontal speed, 1:climb rate, 2:descent rate
+**Type** - 0:ground speed, 1:airspeed(if available) 2:climb rate, 3:descent rate
 
 **Speed m/s** - the desired maximum speed in meters/second.
 
