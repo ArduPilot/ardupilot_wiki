@@ -192,7 +192,7 @@ This board does not include a GPS or compass so an :ref:`external GPS/compass <c
 
 Firmware
 ========
-This board does not come with ArduPilot firmware pre-installed. Use instructions here to load ARduPilot the first time :ref:`common-loading-firmware-onto-chibios-only-boards`.
+This board does not come with ArduPilot firmware pre-installed. Use instructions here to load ArduPilot the first time :ref:`common-loading-firmware-onto-chibios-only-boards`.
 
 Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "SpeedyBeeF405WING".
