@@ -72,7 +72,7 @@ Default UART order
 ==================
 
 - SERIAL0 = console = USB
-- SERIAL1 = Telemetry1 = USART1
+- SERIAL1 = Telemetry1 = USART1 (DMA capable)
 - SERIAL2 = RCinput = USART2 (RX2 connected to SBUS via inverter, to use as UART input use :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1 and do not attach anything to SBUS pin)
 - SERIAL3 = GPS1 = USART3
 - SERIAL4 = GPS2 = UART4
