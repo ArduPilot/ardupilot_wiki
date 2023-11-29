@@ -27,7 +27,7 @@ Operation
 Precision Landing, when enabled and active, will provide final positioning during the landing rather than via GPS data only.
 If the landing target is lost (ie position updates with respect to it do not occur), if :ref:`PLND_STRICT<PLND_STRICT>` has been set appropriately, it will try and climb up to a location decided by :ref:`PLND_RET_BEHAVE<PLND_RET_BEHAVE>`. It will then try and come down again in hopes of seeing the landing target. It will keep doing this until :ref:`PLND_RET_MAX<PLND_RET_MAX>` retries have occurred. Then, depending on :ref:`PLND_STRICT<PLND_STRICT>`, it will either just land, or it will stay in the air hovering (useful for, say, landing on boats where you don’t really want to land on water).
 
-Repositioning manually by the pilot during the landing will abort the landing unless :ref:`PLND_OPTIONS<PLND_OPTIONS>` bit 1 is set.
+Repositioning manually by the pilot during the landing will abort the landing unless :ref:`PLND_OPTIONS<PLND_OPTIONS>` bit 1 is set. Final landing speed may be reduced below :ref:`LAND_SPEED<LAND_SPEED>` as necessary to assure a precise touchdown. This can be disabled for a faster final land speed by setting :ref:`PLND_OPTIONS<PLND_OPTIONS>` bit 2.
 
 ..  youtube:: plM5BJY34Bc
     :width: 100%
@@ -43,7 +43,7 @@ Parameters
 - :ref:`PLND_RET_BEHAVE<PLND_RET_BEHAVE>` how the moves to last valid landing target report on a retry
 - :ref:`PLND_ALT_MIN<PLND_ALT_MIN>` Vehicle will continue landing vertically even if target is lost below this height. This needs a rangefinder to work. Set to zero to disable this.
 - :ref:`PLND_ALT_MAX<PLND_ALT_MAX>` Vehicle will continue landing vertically until this height if target is not found. Below this height if landing target is not found, landing retry/failsafe might be attempted. This needs a rangefinder to work. Set to zero to disable this.
-- :ref:`PLND_OPTIONS<PLND_OPTIONS>` set bit 0 if landing target is moving, set bit 1 to allow the precision landing to continue after a manual reposition.
+- :ref:`PLND_OPTIONS<PLND_OPTIONS>` set bit 0 if landing target is moving, set bit 1 to allow the precision landing to continue after a manual reposition, and setting but 2 makes the landing descent profile similar to the normal land mode (i.e land mode without precision landing enabled usually has faster final descent)
 
 Other ``PLND_`` parameters are provided to adjust for landing detector position on the vehicle, if needed.
 
