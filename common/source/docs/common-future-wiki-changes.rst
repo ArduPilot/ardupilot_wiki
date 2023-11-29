@@ -6,6 +6,11 @@ Future Wiki Changes (in Master branch now)
 Will be in future 4.5 release and is currently in master ("latest")
 
 [copywiki destination="plane,copter,rover,blimp"]
+Add info on sharing DroneCAN bus with second protocol
+=====================================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5602
+
 Add SBF GPS-for-Yaw 
 ===================
 
