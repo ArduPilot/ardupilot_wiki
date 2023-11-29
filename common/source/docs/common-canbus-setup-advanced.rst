@@ -106,7 +106,7 @@ CAN_Dx_PROTOCOL     Protocol Type
 
 After the change to protocol the autopilot has to be rebooted for the changes to take place.
 
-.. note:: only devices matching the selected protocol can be connected to a given CAN bus. Mixing of different protocol devices on a single CAN bus is not allowed.
+.. note:: only devices matching the selected protocol can be connected to a given CAN bus. Mixing of different protocol devices on a single CAN bus is not allowed. However, if the Protocol is set to DroneCAN, certain devices with different protocols can be attached. See :ref:`dronecan_mixed_protocols`.
 
 CAN ESCs
 ========

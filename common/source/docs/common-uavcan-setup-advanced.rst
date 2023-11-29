@@ -142,6 +142,23 @@ If the DroneCAN port is attached to CAN FD peripherials, setting :ref:`CAN_D1_UC
 
 .. note:: CAN FD requires a larger memory pool allocation than normal. Default is 24KB instead of the normal 12KB.
 
+.. _dronecan_mixed_protocols:
+
+Mixed Protocols on a DroneCAN CAN bus
+=====================================
+
+If the ``CAN_Dx_PROTOCOL`` is DroneCAN, then the following other devices with differing protocols can also reside on that bus by setting the ``CAN_Dx_PROTOCOL2`` parameter:
+
+=====  ===============
+ID     Device Protocol
+=====  ===============
+7      USD1
+10     Scripting
+11     Benewake
+12     Scripting2
+13     TOFSenseP
+14     NanoRadar_NRA24
+=====  ===============
 
 SLCAN
 =====
