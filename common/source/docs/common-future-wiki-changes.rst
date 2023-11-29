@@ -197,6 +197,11 @@ on :ref:`quadplane-vtol-tuning-process` page:
 
 [/site]
 [site wiki="copter"]
+Add Fast Precision Landing speed option
+=======================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5598
+
 Add Heli DDFP parameters
 ========================
 
