@@ -17,7 +17,7 @@ Specifications
 -  **Processor**
 
    -  STM32H743VIH6 (480MHz)
-   -  128KByte Flash for datalogging
+   -  128MByte Flash for datalogging
 
 
 -  **Sensors**
