@@ -28,6 +28,7 @@ Some commonly used parameters are:
 - :ref:`LOG_FILE_DSRMROT<LOG_FILE_DSRMROT>`: Setting this bit will force the creation of a new log file after disarming, waiting 15 seconds, and then re-arming. Normally, a log will be one file for every power cycle of the autopilot, beginning upon first arm.
 - :ref:`LOG_FILE_MB_FREE<LOG_FILE_MB_FREE>`: This parameter sets the minimum free space on the logging media before logging begins. If this is not available, then older logs will be deleted to provide it during initialization. Default is 500MB.
 - :ref:`LOG_FILE_RATEMAX<LOG_FILE_RATEMAX>`: This sets the maximum rate that streaming log messages will be logged to the file backend to limit file sizes. A value of zero(default) means no limit is applied to normal logging, which depends on the :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>` value ( 50Hz: Plane, 300Hz: QuadPlane/Rover, 400Hz: Copter, normally). Note that similarly, :ref:`LOG_BLK_RATEMAX<LOG_BLK_RATEMAX>` and :ref:`LOG_MAV_RATEMAX<LOG_MAV_RATEMAX>` perform the same optional limiting for the BLOCK logging and MAVLink logging streams, respectively.
+- :ref:`LOG_MAX_FILES<LOG_MAX_FILES>`: The maximum number of log file that will be written on dataflash or SD card before starting to rotate log number. Limit is a maximum of 500 logs.
 
 .. note:: If you suspect that you are missing logging entries due to excessive logging speed, you can check the DSF.Dp log message for the amount of missed entries.
 
