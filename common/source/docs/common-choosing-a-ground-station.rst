@@ -235,6 +235,24 @@ Android GCS intended for enthusiasts.
 -  `Issues List <https://github.com/geeksville/arduleader/issues>`__
 -  `Source Code <https://github.com/geeksville/arduleader/tree/master/andropilot>`__
 
+LOGOS
+--------------
+
+GCS designed to streamline the planning of complex missions that include area scanning, taking photo & video.
+It provides 3D view mode, binding of phisical structures and inbuilt simulator that helps to get the better visual of planned missions.
+Supports ardupilot drones for the moment.
+
+-  **Platform**: Windows
+-  **Licence**: Proprietary. Though the app can be used infinitely unless advanced features are not utilized.
+
+.. image:: ../../../images/LOGOS_GCS.png
+    :target: ../_images/LOGOS_GCS.png
+
+-  `Download <https://aerologos.by/download>`__
+-  `Website <https://aerologos.by/>`__
+-  `Youtube <https://www.youtube.com/@AerologosBusinessAccount/>`__
+
+
 Additional GCS hardware
 =======================
 
