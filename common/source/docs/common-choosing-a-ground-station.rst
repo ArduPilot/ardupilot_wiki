@@ -136,6 +136,21 @@ Supports multi-node installation, meaning that it is possible to connect multipl
 -  `DIY Drones Group for UgCS Users <https://diydrones.com/group/ugcs>`__
 -  `UgCS Github Repository <https://github.com/ugcs>`__
 
+LOGOS
+-----
+
+GCS designed to streamline the planning of complex missions that include area scanning, taking photos, & videos. It provides a 3D view mode, binding of physical structures and an in-built simulator that helps to better visualize planned missions.
+
+-  **Platform**: Windows
+-  **Licence**: Proprietary. Can be used freely, but advanced features are not available without purchase.
+
+.. image:: ../../../images/LOGOS_GCS.png
+    :target: ../_images/LOGOS_GCS.png
+
+-  `Download <https://aerologos.by/download>`__
+-  `Website <https://aerologos.by/>`__
+-  `Youtube <https://www.youtube.com/@AerologosBusinessAccount/>`__
+
 Mobile GCSs
 ===========
 
