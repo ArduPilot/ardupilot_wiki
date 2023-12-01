@@ -46,6 +46,7 @@ DroneCAN sensor types. Support is included for:
  - Safety LED and Safety Switch
  - Buzzer (tonealarm or simple GPIO)
  - PWM and DShot output
+ - Serial port pass through (see :ref:`DroneCAN Serial Port Passthrough <common_dronecan_serial>`)
 
 Setting up the autopilot and a general purpose adapter node to enable these features (assuming the node supports them) is detailed on :ref:`common-ap-periph-usage-examples`.
 
@@ -131,4 +132,7 @@ Several devices are manufactured specifically for use as general-purpose adapter
 - `MatekL431 DroneCAN Adapter Node <http://www.mateksys.com/?portfolio=can-l431>`_
 - :ref:`mRo DroneCAN Adapter Node <common-mro-uavcan-adapter-node>`
 
+.. toctree::
+    :hidden:
 
+    DroneCAN Serial Port Passthrough <common_dronecan_serial>
