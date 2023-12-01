@@ -65,6 +65,8 @@ Firmware
 ========
 `Firmware <https://firmware.ardupilot.org/AP_Periph/>`__ is provided in the AP_Periph folder for supported DroneCAN devices as well as the conversion of some autopilots to DroneCAN adapter use. Currently, the following firmware is pre-built, but the code allows for easy customization. Firmware can be installed using either :ref:`DroneCAN GUI<common-uavcan-gui>` or :ref:`MissionPlanner SLCAN <planner:dronecan-uavcan-slcan>` when the device is attached to a DroneCAN port on an autopilot and the autopilot has that port enabled. See :ref:`common-uavcan-setup-advanced`. Since the size of all the ArduPilot driver libraries would exceed the smaller processors, several variations, supporting different peripheral sets, are provided.
 
+.. note:: More variations are constantly being added
+
 F103 Based
 ----------
 - f103-GPS: Serial GPS, I2C Compass, I2C RGB LED
@@ -79,6 +81,13 @@ F303 Based
 
 L431 Based
 ----------
+- MatekL431-ADSB
+- MatekL431-BattMon
+- MatekL431-EFI
+- MatekL431-GPS
+- MatekL431-HWTelem: HobbyWing ESC/Telem
+- MatekL431-Proximity
+- MatekL431-RC
 - MatekL431-Periph: Serial GPS, I2C QMC5883L Compass, I2C SPL06 Baro, I2C RGB LED, I2C Airspeed (MS4525 default), Passive Buzzer, Battery Monitor, MSP, 5 PWM outputs (it is recommended to use MatekL431-DShot for this application)
 - MatekL431-Airspeed: I2C Airspeed, DLVR 10" default type
 - MatekL431-DShot: 5 Bi-Directional DShot(default)/PWM outputs starting at SERVO5 by default, ESC telem on UART1 RX (see `setup instructions here <https://discuss.ardupilot.org/t/using-matekl431-adapters-for-pwm-and-dshot>`__)
