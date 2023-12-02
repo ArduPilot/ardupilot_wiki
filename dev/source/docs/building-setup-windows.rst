@@ -10,8 +10,9 @@ There are two options for building on Windows: Windows Subsystem for Linux (WSL)
 Setup for building with waf using WSL (Windows 10 and 11 only)
 --------------------------------------------------------------
 
-#. :ref:`Install WSL as described here <building-setup-windows10>`
-#. :ref:`Setup VSCode as described here <editing-the-code-with-vscode>` (optional)
+#. Install WSL as described `here <https://docs.microsoft.com/en-us/windows/wsl/install>`__
+#. If Windows 10 :ref:`follow these instructions <building-setup-windows10_new>`, if Windows 11 :ref:`follow these instructions <building-setup-windows11>`.
+#. (optional, if you wish to use VSCode editor) :ref:`Setup VSCode as described here <editing-the-code-with-vscode>`
 
 
 Setup for building with waf using Cygwin
