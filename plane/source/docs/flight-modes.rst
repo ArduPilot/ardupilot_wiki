@@ -45,11 +45,10 @@ of functionality available.
    <tr><td>CIRCLE</td><td>A</td><td>A</td><td>A</td><td></td><td></td><td>Gently turns aircraft</td></tr>
    <tr><td>GUIDED</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Circles user defined point from GCS</td></tr>
    <tr><td>Return To Launch (RTL)</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Returns to and circles home or rally point</td></tr>
-   <tr><td>LAND (AUTO)</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Final part of automatic mission for touchdown</td></tr>
+   <tr><td>TAKEOFF</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Automatic takeoff to specific altitude, and loiter at distance from takeoff until mode is changed</td></tr>
    <tr><td>THERMAL</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Mode entered to search for thermal lift by SOARING feature or manually if lift is encountered. See :ref:`THERMAL Mode <thermal-mode>`</td></tr>
    </table>
-   
-   
+
 .. raw:: html
 
    <table border="1" class="docutils">
@@ -63,6 +62,8 @@ of functionality available.
 
 .. note:: Automatic throttle controlled modes can optionally have pilot-based speed adjustments using the throttle stick via the :ref:`THROTTLE_NUDGE<THROTTLE_NUDGE>` parameter. Otherwise, the autopilot will attempt to maintain :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` airspeed if an airspeed sensor is being used, or :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` as a target throttle, as in FBWA and CRUISE modes.
 
+.. note:: Most altitude controlled modes can optionally maintain altitude with respect to Terrain instead of relative to HOME. See :ref:`common-terrain-following` for more information.
+
 
 .. warning::
 
@@ -71,13 +72,8 @@ of functionality available.
    oscillations. Perform an :ref:`AUTOTUNE <automatic-tuning-with-autotune>` before using stabilized or automatic roll and pitch modes
    extensively. :ref:`Tune TECS <tecs-total-energy-control-system-for-speed-height-tuning-guide>` before using automatic throttle modes
    extensively.
-   
-   
-Mission Specific Modes
-======================
-
-When flying an AUTO mission Plane has some sub-modes that are set using
-mission items. The two main sub-modes are :ref:`TAKEOFF <takeoff-mode>` and :ref:`LAND <land-mode>`.
+ 
+.. note:: AUTO mode also provides for :ref:`automatic-takeoff` and :ref:`automatic-landing`.
 
 Flight Mode List
 ================
@@ -93,7 +89,6 @@ Flight Mode List
     FBWA Mode (FLY BY WIRE_A) <fbwa-mode>
     FBWB Mode (FLY BY WIRE_B) <fbwb-mode>
     GUIDED Mode <guided-mode>
-    LAND Mode <land-mode>
     LOITER Mode <loiter-mode>
     MANUAL Mode <manual-mode>
     RTL Mode (Return To Launch) <rtl-mode>

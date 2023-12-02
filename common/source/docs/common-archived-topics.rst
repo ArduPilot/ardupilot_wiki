@@ -79,6 +79,7 @@ value to users with old hardware.
     Normal/Elevon/VTail Mode & Reversing Servos <reversing-servos-and-setting-normalelevon-mode>
     Channel Output Functions <channel-output-functions>
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
+    LAND mode <land-mode>
 [/site]
 [site wiki="dev"]
 .. toctree::
