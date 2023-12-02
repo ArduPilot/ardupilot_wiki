@@ -30,7 +30,7 @@ Building / Compiling
 
 **Windows users:**
 
-- Windows users should follow the directions described in :ref:`Setup Build Environment on Windows <building-setup-windows10>`. This creates a Linux-like environment called WSL/WSL2 from which the user can setup the build environment as explained in :ref:`Setup the Build Environment on Linux/Ubuntu <building-setup-linux>` and then use the instructions in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
+- Windows users should follow the WSL setup directions for Windows 10 described in  :ref:`building-setup-windows10_new` or :ref:`building-setup-windows11` for Windows 11 systems . This creates a Linux-like environment called WSL/WSL2 from which the user can setup the build environment as explained in :ref:`Setup the Build Environment on Linux/Ubuntu <building-setup-linux>` and then use the instructions in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
 **Board specific instructions:**
 
@@ -54,7 +54,8 @@ Links to other pages of interest or advanced topics
 
     Setup the Build Environment on Linux/Ubuntu <building-setup-linux>
     Setup the Build Environment on Windows <building-setup-windows>
-    Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>
+    Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10_new>
+    Setup the waf Build Environment on Windows11 using WSL2 <building-setup-windows11>
     Setup the waf Build Environment on Windows using Cygwin <building-setup-windows-cygwin>
     Setup Eclipse on Windows for building with waf <building-setup-windows-eclipse>
     Setup the Build Environment on MacOSX <building-setup-mac>

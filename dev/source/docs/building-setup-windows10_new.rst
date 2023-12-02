@@ -1,10 +1,8 @@
-.. _building-setup-windows10:
+.. _building-setup-windows10_new:
 
-**ARCHIVED** see :ref:`building-setup-windows10_new`
-
-====================================================================
-Setting up the Build Environment on Windows 10/11 using WSL1 or WSL2
-====================================================================
+========================================================
+Setting up the Build Environment on Windows 10 using WSL
+========================================================
 
 These setup instructions describe how to set up "Windows Subsystem for Linux" which allows building with waf.
 
@@ -17,7 +15,7 @@ Upon completion, you will be able to build ArduPilot binaries and run the native
 
 
 WSL Setup Steps
----------------
+===============
 The official instructions are `here <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_ but the steps are also listed below.
 
 #. Enable WSL by opening "Control Panel", "Programs", "Turn Windows features on or off", selecting "Windows Subsystem for Linux", and press OK.
@@ -38,7 +36,7 @@ The official instructions are `here <https://docs.microsoft.com/en-us/windows/ws
 
     * To reload the path variables in WSL either close the terminal and reopen it or use: ``logout``
 
-#. If using Windows 10 install an XWindows application to run graphical programs such as SITL by installing `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`_, `Cygwin X <https://x.cygwin.com/>`_ or `Xming <https://sourceforge.net/projects/xming/>`_ on Windows. For Winodws 11 this is not necessary.
+#. If using Windows 10 install an XWindows application to run graphical programs such as SITL by installing `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`_, `Cygwin X <https://x.cygwin.com/>`_ or `Xming <https://sourceforge.net/projects/xming/>`_ on Windows. 
 
 #. If desired, change default WSL parameters as described `at this link <https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig>`_. These parameters allow you to set for example the amount of memory and number of processors used by WSL.
 
@@ -57,28 +55,12 @@ The official instructions are `here <https://docs.microsoft.com/en-us/windows/ws
 
 
 WSL1 vs WSL2
-------------
-WSL2 is the latest version of the Windows10 Subsystem for Linux. It is many times faster than WSL1 and is therefore preferred for building the code in terms of compilation speed. It can also run MAVProxy and native SITL.  However, it does not support the following yet:
-
-    * USB: uploading code or connecting to the autopilot is not possible (Not possible by default)
-    * Running Realflight on the same or a remote PC
-
-If these features are needed, WSL1 might be preferable.
-
-Once installed, you can switch between WSL1 or WSL2 versions as you prefer using PowerShell.
-
-::
-
-    wsl --list --verbose
-
-::
-
-    wsl --set-version Ubuntu 1
-    wsl --set-version Ubuntu 2
+============
+WSL2 is the latest version of the Windows10 Subsystem for Linux. It is many times faster than WSL1 and is therefore preferred for building the code in terms of compilation speed. It can also run MAVProxy and native SITL.
 
 
 Uploading to a board using WSL2
-+++++++++++++++++++++++++++++++
+===============================
 
 Uploading to boards (e.g. ``./waf plane --upload``) in WSL2 is possible; however, an installation of Python must exist on the Windows side. Install these packages in Windows Python.
 
@@ -91,10 +73,10 @@ As of July 2022, Microsoft's solution of providing USB access to WSL2 via usbipd
 .. note:: WSL1 can upload to boards by default with no additional changes. This is due to differences in how USB devices are handled.
 
 
-
+.. _building-setup-windows10_XWindows:
 
 Using SITL with WSL and XWindows (Windows 10 only)
---------------------------------------------------
+==================================================
 
 Windows 11 has a built-in XServer that is automatically set up. This section can be skipped if you are using Windows 11.
 
@@ -116,7 +98,7 @@ Open the "Ubuntu" application and add the following to the end of ``~/.bashrc``.
 
 
 Using VcXsrv to Create XWindows Displays
-++++++++++++++++++++++++++++++++++++++++
+========================================
 
 #. Select display settings: "Multiple Windows" but it is your preference
 #. Select how to start clients: **Must** select **"Start no Client"**
@@ -129,10 +111,11 @@ Using VcXsrv to Create XWindows Displays
         * Under ``Inbound Rules`` find ``VcXsrv windows xserver`` and ensure ``Allow Connection`` is enabled for your network type ``Private``, ``Public``, or both
         * Check ``Outbound Rules`` as well
 
-.. note:: this step is not required in Win11 since it already itegrates the grahical interface into its WSL2 environment.
+.. note:: this step is not required in Win11 since it already integrates the graphical interface into its WSL2 environment.
+
 
 Code Editing in WSL Using VSCode (Optional)
--------------------------------------------
+===========================================
 
 VSCode can be installed on the Windows machine to edit and compile files inside of WSL. VSCode automatically integrates upon installation with WSL. More details are available :ref:`here<editing-the-code-with-vscode>`.
 
@@ -141,7 +124,7 @@ VSCode can be installed on the Windows machine to edit and compile files inside 
 
 
 Windows Terminal (Optional)
----------------------------
+===========================
 
 Windows Terminal enables multiple tabs that can switch between many Linux terminals, PowerShell, and more. Directions to install Windows Terminal `are here <https://docs.microsoft.com/en-us/windows/terminal/get-started>`_.
 
@@ -172,7 +155,7 @@ See this `guide <https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#
 
 
 File System Access between WSL and Windows
-------------------------------------------
+==========================================
 
 From within WSL, the Windows drives are referenced in the /mnt directory. For example, to list documents within your (<username>) documents folder: ``ls /mnt/c/'Documents and Settings'/<username>/Documents`` or ``ls /mnt/c/Users/<username>/Documents``. You can also use the command ``explorer.exe .`` to open a Windows file explorer window in the current Linux directory. Take care that the editor being used on the Windows side does not change the line endings. Corruption of files is possible if care is not taken when crossing between file systems. In Windows 11, the Linux file manager 'nautilus' or Windows 'explorer.exe' can be invoked from the command line.
 

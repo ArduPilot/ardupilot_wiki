@@ -10,7 +10,7 @@ SITL setup on Windows using Cygwin (not recommended)
 
 SITL was originally developed on Linux, but can also be built and run *natively* on Windows. It can also be run on a virtual machine (Linux) hosted on Windows, Mac OSX, or Linux or by using the Windows Subsystem for Linux (WSL).
 
-Currently, the simplest way to run SITL on Windows is to build the code and simulate using WSL:  :ref:`dev:building-setup-windows10`
+Currently, the simplest way to run SITL on Windows is to build the code and simulate using WSL: in Windows 10 :ref:`building-setup-windows10_new`
 
 Prerequisites: 'Windows 10 64bit'  at a minimum, this will not work on , for example, Windows 7. It also will not run on any 32bit windows installation.
 

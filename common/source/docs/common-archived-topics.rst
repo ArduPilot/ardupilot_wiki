@@ -104,6 +104,7 @@ value to users with old hardware.
     Building for Erle-Brain 2 <building-for-erle-brain-2>
     Building for Erle-Brain <building-for-erle-brain>
     Building for Navio on RPI 2<building-for-navio-on-rpi2>
+    Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>
     Intel Edison <intel-edison>
     Interfacing with Pixhawk Using the NSH <interfacing-with-pixhawk-using-the-nsh>
     BeaglePilot Project <beaglepilot>
