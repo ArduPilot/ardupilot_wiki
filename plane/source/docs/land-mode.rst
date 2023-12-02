@@ -1,5 +1,7 @@
 .. _land-mode:
 
+** ARCHIVED** See :ref:`automatic-landing`
+
 =========
 LAND Mode
 =========
