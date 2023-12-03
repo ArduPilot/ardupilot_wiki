@@ -222,7 +222,7 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
             if not os.path.exists(targetfile):
                 raise Exception(f"Asked to use cached files, but {targetfile} does not exist")
             continue
-        if site == key or site is None:
+        if site == key or site is None or (site == 'dev' and key == 'AP_Periph'):
             urls.append(fetchurl)
             targetfiles.append(targetfile)
             names.append(f"{value}_{document_name}")
