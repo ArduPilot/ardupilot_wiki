@@ -30,7 +30,7 @@ Clone ArduPilot repository
 
     ::
 
-         git config --global url."https://" 
+         git config --global url."https://".insteadOf git://
 
     to use https protocols instead of the default git:// prefix.
 
