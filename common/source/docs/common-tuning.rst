@@ -6,8 +6,8 @@ Tuning
 
 With the default PID settings, ArduPilot will fly most RC vehicles
 safely right out of the box. To fly well, with tight navigation and
-reliable performance in wind, you’ll want to tune your autopilot
-parameters. The following topics shown you how.
+reliable performance in the wind, you’ll want to tune your autopilot
+parameters. The following topics show you how.
 
 [site wiki="copter"]
 .. toctree::
