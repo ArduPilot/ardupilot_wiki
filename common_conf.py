@@ -11,7 +11,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
-    'sphinx.ext.imgmath',
+    'sphinx.ext.mathjax',     # For :math: element rendering
     'sphinx.ext.ifconfig',
     'sphinxcontrib.youtube',  # For youtube embedding
     'sphinxcontrib.jquery',
