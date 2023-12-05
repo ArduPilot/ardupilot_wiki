@@ -13,7 +13,7 @@ RadioLink MiniPix
 .. image:: ../../../images/minipix1.jpg
     :target: ../_images/minipix1.jpg
 
-*above image and some content courtesy of the* `RadioLink website <http://www.radiolink.com.cn/doce/product-detail-133.html>`__ 
+*above image and some content courtesy of the RadioLink website 
 
 
 Specifications
@@ -40,10 +40,6 @@ Specifications
    -  size 39 x 39 x 12 mm
    -  weight 12 g without wires
 
-Where to Buy
-============
-
--  RadioLink hardware is available from various warehouses like `banggood.com <https://www.banggood.com/de/Radiolink-Mini-PIX-F4-Flight-Controller-MPU6500-w-TS100-M8N-GPS-UBX-M8030-For-RC-Drone-FPV-Racing-p-1240423.html?cur_warehouse=CN>`__
 
 Peripheral Connections
 ======================
