@@ -110,6 +110,13 @@ Script Crashes and Errors
 If scripts run out of memory (or panic for any reason) all currently running scripts are terminated, and the scripting engine will restart, and reload all scripts from the disk.
 This is allowed to happen at all flight stages, even while the vehicle is armed and flying.
 
+In order to prevent arming if a script is missing (ie. SD card ejected or file corrupted) or if a script that is supposed to run once before arming and then terminate, but does not, then either, or both, of two checksum pre-arm checks can be enabled:
+
+- :ref:`SCR_LD_CHECKSUM<SCR_LD_CHECKSUM>` which checks that the checksum of all loaded scripts matches this value
+- :ref:`SCR_RUN_CHECKSUM<SCR_RUN_CHECKSUM>` which checks that the checksum of all running scripts matches this value
+
+These can be set automatically when the scripts have been loaded and the desired ones running before arming, by setting the :ref:`SCR_DEBUG_OPTS<SCR_DEBUG_OPTS>` bit 5 which will compute and set these parameter's values, and then reset bit 5 automatically.
+
 Scripting and Parameters
 ========================
 
