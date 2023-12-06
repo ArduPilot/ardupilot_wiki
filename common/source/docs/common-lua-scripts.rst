@@ -107,8 +107,7 @@ The last line of the script is also used to schedule the function to be run for 
 
 Script Crashes and Errors
 =========================
-If scripts run out of memory (or panic for any reason) all currently running scripts are terminated, and the scripting engine will restart, and reload all scripts from the disk.
-This is allowed to happen at all flight stages, even while the vehicle is armed and flying.
+If scripts run out of memory (or panic for any reason) all currently running scripts are terminated. If an indivdual script has an errror, it will terminate. If either occurs before arming, a pre-arm failure will be generated. A scripting restart command or reboot would be needed to restart the script or scripting as a whole.
 
 Scripting and Parameters
 ========================
