@@ -25,7 +25,10 @@ If the ROS 2 topics aren't being published, set the ardupilot parameter DDS_ENAB
 
 For more information refer to `ardupilot/Tools/ros2/README.md <https://github.com/ArduPilot/ardupilot/tree/master/Tools/ros2#readme>`__. There you can find examples of launches using serial connection instead of udp, as well as a step-by-step breakdown of what the launch files are doing.
 
-Once everything is running, you can now interract with ArduPilot through the ROS 2 CLI.
+ROS 2 CLI
+=========
+
+Once everything is running, you can now interact with ArduPilot through the ROS 2 CLI.
 
 .. code-block:: bash
 
@@ -36,3 +39,18 @@ Once everything is running, you can now interract with ArduPilot through the ROS
     ros2 node info /ardupilot_dds
     # Echo a topic published from ArduPilot
     ros2 topic echo /ap/geopose/filtered
+
+MAVProxy
+========
+
+To test and fly around, you can launch a `mavproxy <https://ardupilot.org/dev/docs/copter-sitl-mavproxy-tutorial.html>`__ instance in yet another terminal:
+
+.. code-block:: bash
+    
+    mavproxy.py --console --map --aircraft test --master=:14550
+
+
+Next up
+=======
+
+Add Gazebo in :ref:`ROS 2 with Gazebo <ros2-gazebo>`
