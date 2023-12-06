@@ -14,6 +14,7 @@ Currently, ArduPilot supports these systems:
 - `MicroStrain 3DM® Series <https://www.microstrain.com/inertial-sensors/all-sensors>`_
 - `VectorNav VN-300 AHRS <https://www.vectornav.com/products>`__
 - `VectorNav VN-100AHRS <https://www.vectornav.com/products>`__
+- `Inertialabs INS-P <https://inertiallabs.com/wp-content/uploads/2023/09/INS-B-P-D-DL_Datasheet_rev-6.27_August_2023.pdf>`__
 
 Setup
 =====
@@ -22,7 +23,7 @@ VectorNav300 or MicroStrain
 
     - :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` = 11 (External AHRS)
 
-    - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 1 (VectorNAV) or 2 (MicroStrain)
+    - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 1 (VectorNAV), 2 (MicroStrain5), 5(InertialLabs), or 7(MicroStrain7)
 
 This will replace ArduPilot’s internally generated INS/AHRS subsystems with the external system.
 The MicroStrain system must be configured via `Sensor Connect <https://www.microstrain.com/software/sensorconnect>`__ before use.
