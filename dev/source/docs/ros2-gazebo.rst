@@ -4,19 +4,19 @@
 ROS 2 with Gazebo
 =================
 
-Once ROS2 is correctly :ref:`installed <ros2>` and running :ref:`sitl <ros2-sitl>`, we can integrate Ardupilot with Gazebo. 
+Once ROS2 is correctly :ref:`installed <ros2>` and running :ref:`SITL <ros2-sitl>`, we can integrate ArduPilot with Gazebo. 
 
-First, `install Gazebo Garden <https://gazebosim.org/docs/garden/install>`.
+First, `install Gazebo Garden <https://gazebosim.org/docs/garden/install>`__.
 
 Next, set up all the necessary ROS 2 packages in the workspace.
 
-We will clone the required repositories using `vcstool <https://github.com/dirk-thomas/vcstool>` and a `ros2.repos` files:
+We will clone the required repositories using `vcstool <https://github.com/dirk-thomas/vcstool>`__ and a `ros2.repos` files:
 
 .. code-block:: bash
 
-    cd ~/ros2_ws/src
+    cd ~/ros2_ws
     wget https://raw.githubusercontent.com/ArduPilot/ardupilot_gz/main/ros2_gz.repos
-    vcs import --recursive < ros2_gz.repos
+    vcs import --recursive src < ros2_gz.repos
 
 Set the gazebo version
 
@@ -74,7 +74,7 @@ Examples available
 
     ros2 launch ardupilot_gz_bringup iris_maze.launch.py
 
-Here is a demo video of Ardupilot working with ROS 2 and Gazebo:
+Here is a demo video of ArduPilot working with ROS 2 and Gazebo:
 
 ..  youtube:: HZKXrSAE-ac
     :width: 100%

@@ -4,7 +4,7 @@
 Cartographer SLAM with ROS 2 in SITL
 ====================================
 
-This page shows how to setup ROS 2 with Ardupilot SITL and run Google Cartographer as a SLAM source. 
+This page shows how to setup ROS 2 with ArduPilot SITL and run Google Cartographer as a SLAM source. 
 
 Installation
 ============
@@ -53,7 +53,7 @@ In another terminal, run:
 Configure ArduPilot
 ===================
 
-If you'd like to get the information from Cartographer to go into Ardupilot's extended kalman filter, you will need to change some parameters, you can do that through any GCS, including mavproxy:
+If you'd like to get the information from Cartographer to go into ArduPilot's extended kalman filter, you will need to change some parameters, you can do that through any GCS, including mavproxy:
 
 -  :ref:`AHRS_EKF_TYPE <copter:AHRS_EKF_TYPE>` = 3 to use EKF3
 -  :ref:`EK2_ENABLE <copter:EK2_ENABLE>` = 0 to disable EKF2
