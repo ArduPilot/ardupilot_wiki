@@ -214,6 +214,44 @@ is equivalent to COM16:
 
 .. _using-sitl-for-ardupilot-testing_sitl_without_mavproxy_tcp:
 
+Swarming with SITL
+------------------
+
+SITL has support for launching multiple vehicles from a single command.
+With this method, SITL is restricted to launching vehicles of the same type.
+
+When launching multiple vehicles, each one will need a unique SysId parameter: :ref:`SYSID_THISMAV<SYSID_THISMAV>`.
+The easiest method to avoid SysId conflicts is with the ``--auto-sysid`` option.
+
+The number of vehicles is set with ``--count`` option.
+
+Up to this point, all the vehicles would spawn in the same default location and intersect.
+
+To avoid that, they must be spawned in unique locations.
+There are two primary approaches, using either a swarm offset line or a swarm configuration file.
+Both require a location to be set with ``--location``.
+
+When using a swarm offset line, the option ``--auto-offset-line 90,10`` will space the 
+vehicles out at a line with heading of 90 degrees orientation. The vehicles will be spaced 10
+meters apart. Thus, they will be spread out east-west.
+
+Putting it all together for five Copter vehicles on an auto-offset-line at CMAC:
+
+::
+
+    sim_vehicle.py -v Copter --map --console --count 5 --auto-sysid --location CMAC --auto-offset-line 90,10
+
+
+The other way to spawn the vehicles is the swarm configuration file.
+An example configuration is found in ``Tools/autotest/swarminit.txt``, with the file format described in the header.
+This allows configurable ENU offsets as well as an initial absolute heading for each vehicle.
+
+::
+
+    sim_vehicle.py -v Copter --map --console --count 5 --auto-sysid --location CMAC --swarm Tools/autotest/swarminit.txt
+
+:ref:`MavProxy's Multiple Vehicle Guide <mavproxy:multi>` contains information to control the swarm.
+
 Replaying serial data from Saleae Logic data captures
 =====================================================
 
