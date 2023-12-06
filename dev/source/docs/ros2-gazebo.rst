@@ -32,14 +32,14 @@ Update ROS dependencies:
     source /opt/ros/humble/setup.bash
     sudo apt update
     rosdep update
-    rosdep install --rosdistro $ROS_DISTRO --from-paths src -i -r -y
+    rosdep install --from-paths src --ignore-src -r
 
 Build:
 
 .. code-block:: bash
 
     cd ~/ros2_ws
-    colcon build --packages-up-to ardupilot_gz_bringup --cmake-args -DBUILD_TESTING=ON 
+    colcon build --packages-up-to ardupilot_gz_bringup
 
 If you'd like to test your installation, run:
 
@@ -78,3 +78,9 @@ Here is a demo video of Ardupilot working with ROS 2 and Gazebo:
 
 ..  youtube:: HZKXrSAE-ac
     :width: 100%
+
+
+Next up
+=======
+
+Run Cartographer SLAM in :ref:`Cartographer SLAM with ROS 2 in SITL <ros2-cartographer-slam>`

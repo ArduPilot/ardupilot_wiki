@@ -50,13 +50,6 @@ In another terminal, run:
     source ~/ros2_ws/install/setup.sh
     ros2 launch ardupilot_ros cartographer.launch.py
 
-To test and fly around, you can launch a `mavproxy <https://ardupilot.org/dev/docs/copter-sitl-mavproxy-tutorial.html>`__ instance in yet another terminal:
-
-.. code-block:: bash
-    
-    mavproxy.py --console --map --aircraft test --master=:14550
-
-
 Configure ArduPilot
 ===================
 

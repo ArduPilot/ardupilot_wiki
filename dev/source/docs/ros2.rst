@@ -58,7 +58,7 @@ And finally, build your workspace:
 .. code-block:: bash
 
     cd ~/ros2_ws
-    colcon build --packages-up-to ardupilot_dds_tests --cmake-args -DBUILD_TESTING=ON
+    colcon build --packages-up-to ardupilot_dds_tests
 
 If you'd like to test your installation, run:
 
