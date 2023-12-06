@@ -12,7 +12,7 @@ rate gyroscopes, accelerometer, compass, GPS, airspeed and barometric
 pressure measurements.
 
 The advantage of the EKF over the simpler complementary filter
-algorithms (i.e. "Inertial Nav"), is that by fusing all available measurements it is better
+algorithms (i.e. "Inertial Nav" or DCM), is that by fusing all available measurements it is better
 able to reject measurements with significant errors. This makes the
 vehicle less susceptible to faults that affect a single sensor. An EKF also
 enables measurements from optional sensors such as optical flow and
@@ -26,13 +26,13 @@ Most users should not need to modify any EKF parameters, but the information bel
 More detailed information can be found on the :ref:`developer EKF wiki page <dev:extended-kalman-filter>`. 
 
 Should the EKF2 or EKF3 be used?
---------------------------------
+================================
 
 In general, we recommend users stick with the EKF3, which is now the default. In addition, 1MB autopilots only have this option due to space limitations. EKF2 can still be used but does not have many of the enhancements of EKF3 such as newer sensor sources including Beacons, Wheel Encoders and Visual Odometry.
 
 
 Choosing the EKF and number of cores
-------------------------------------
+====================================
 
 :ref:`AHRS_EKF_USE <dev:extended-kalman-filter_ahrs_ekf_use>`: set to "1" to use the EKF, "0" to use DCM for attitude control and
 inertial nav (Copter-3.2.1) or ahrs dead reckoning (Plane) for position control.  In Copter-3.3 (and higher) this parameter is forced to "1" and cannot be changed.
@@ -59,17 +59,17 @@ inertial nav (Copter-3.2.1) or ahrs dead reckoning (Plane) for position control.
    Using the parameters above it is possible to run up to 5 AHRSs in parallel at the same time (DCMx1, EKF2x2, EKF3x2) but this can result in performance problems so if running EKF2 and EKF3 in parallel, set the IMU_MASK to reduce the total number of cores.
 
 Affinity and Lane Switching
-----------------------------
+===========================
 
 EKF3 provides the feature of sensor affinity which allows the EKF cores to also use non-primary instances of sensors, specifically, Airspeed, Barometer, Compass (Magnetometer) and GPS. This allows the vehicle to better manage good quality sensors and be able to switch lanes accordingly to use the best-performing one for state estimation. For more details and configuration, refer :ref:`EKF3 Affinity and Lane Switching <common-ek3-affinity-lane-switching>`.
 
 GPS / Non-GPS Transitions
--------------------------
+=========================
 
-EKF3 (in ArduPilot 4.1 and higher) supports in-flight switching of sensors which can be useful for transitioning between GPS and Non-GPS environments.  See :ref:`GPS / Non-GPS Transitions <common-non-gps-to-gps>` for more details.
+EKF3 supports in-flight switching of sensors which can be useful for transitioning between GPS and Non-GPS environments.  See :ref:`GPS / Non-GPS Transitions <common-non-gps-to-gps>` for more details.
 
 Commonly modified parameters
-----------------------------
+============================
 
 :ref:`EK2_ALT_SOURCE <EK2_ALT_SOURCE>` which sensor to use as the primary altitude source
 
@@ -91,3 +91,14 @@ Controls how GPS is used.
 :ref:`EK2_YAW_M_NSE <EK2_YAW_M_NSE>`: Controls the weighting between GPS and Compass when calculating the heading.  Default is "0.5", lower values will cause the compass to be trusted more (i.e. higher weighting to the compass)
    
 As mentioned above, a more detailed overview of EKF theory and tuning parameters is available on the developer wiki's :ref:`Extended Kalman Filter Navigation Overview and Tuning <dev:extended-kalman-filter>`.
+
+EKF3 Fallback to DCM
+====================
+
+In ArduPlane, the older filter (DCM) is used as a fallback if the EKF3 stops using GPS (ie does not think that the GPS is providing accurate position and velocity) but the GPS is still reporting a 3D lock. In this case, ArduPlane switches to the DCM filter as its position, velocity, and attitude estimator. This is indicated by a GCS message that DCM has now become active.
+
+The reasons why EKF3 may start rejecting GPS are varied (but still have GPS 3D lock), but include GPS jamming, high vibrations making the EKF3 think it has moved to a different position inertially than GPS reports, etc.
+
+Using DCM (if GPS is indeed still accurate) as a fallback filter is not a real issue for fixed wing flight. It was the original ArduPlane inertial navigation algorithm. For VTOL QuadPlane hovering modes, it is more problematic, since DCM does not consider velocities in its estimator, so hovering is less accurate.
+
+If DCM fallback is observed, it would be worthwhile to determine the root cause and address it, since this is not a desired operating mode.
