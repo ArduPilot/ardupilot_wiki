@@ -9,7 +9,7 @@ ROS 2
 
 ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka Robot Operating System).
 
-`ROS <http://www.ros.org/>`__ provides libraries, tools, hardware abstraction, device drivers, visualizers, message-passing, package management, and more to help software developers create robot applications. ROS has been superseded by `ROS2 <http://design.ros2.org/articles/why_ros2.html>`__, and Ardupilot now natively supports it through its library `AP_DDS <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_DDS>`__.
+`ROS <http://www.ros.org/>`__ provides libraries, tools, hardware abstraction, device drivers, visualizers, message-passing, package management, and more to help software developers create robot applications. ROS has been superseded by `ROS2 <http://design.ros2.org/articles/why_ros2.html>`__, and ArduPilot now natively supports it through its library `AP_DDS <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_DDS>`__.
 
 
 Prerequisites
