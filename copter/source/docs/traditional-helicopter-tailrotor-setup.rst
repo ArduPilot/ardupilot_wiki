@@ -10,7 +10,7 @@ There are several ways for controlling the tailrotor to maintain yaw stabilizati
 - Servo with External Gyro: ArduPilot will output yaw demands without direct yaw attitude stabilization which is provided via an external gyro.
 - Direct Drive Variable Pitch (DDVP): Instead of the tail rotor being driven from the main rotor via mechanical coupling as in the above cases, an electric motor is used with motor controlled(ramp up/down, operating point) by ArduPilot. Main yaw control is via tail blade pitch servo, as above.
 - Direct Drive Fixed Pitch Clockwise (DDFP CW): Tail rotor is driven by a motor whose ESC is controlled by ArduPilot to maintain yaw stability and yaw direction. Used with clockwise rotating main rotors, when viewed from above.
-- Direct Drive Fixed Pitch Counter-Clockwise (DDFP CCW): Tail rotor driven by a motor whose ESC is controlled by ArudPilot to maintain yaw stability and yaw direction. Used with clockwise rotating main rotors, when viewed from above.
+- Direct Drive Fixed Pitch Counter-Clockwise (DDFP CCW): Tail rotor driven by a motor whose ESC is controlled by ArudPilot to maintain yaw stability and yaw direction. Used with counter-clockwise rotating main rotors, when viewed from above.
 
 
 Tailrotor Types
