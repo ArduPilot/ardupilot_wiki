@@ -92,6 +92,7 @@ Controls how GPS is used.
    
 As mentioned above, a more detailed overview of EKF theory and tuning parameters is available on the developer wiki's :ref:`Extended Kalman Filter Navigation Overview and Tuning <dev:extended-kalman-filter>`.
 
+[site wiki="plane"]
 EKF3 Fallback to DCM
 ====================
 
@@ -102,3 +103,6 @@ The reasons why EKF3 may start rejecting GPS are varied (but still have GPS 3D l
 Using DCM (if GPS is indeed still accurate) as a fallback filter is not a real issue for fixed wing flight. It was the original ArduPlane inertial navigation algorithm. For VTOL QuadPlane hovering modes, it is more problematic, since DCM does not consider velocities in its estimator, so hovering is less accurate.
 
 If DCM fallback is observed, it would be worthwhile to determine the root cause and address it, since this is not a desired operating mode.
+
+However, in some situations where GPS lock is valid, but the GPS may give incorrect data leading to DCM being worse than just using EKF3 without GPS (for example, GPS jamming environments), you may wish to prevent fallback to DCM. This can be accomplished using the bits in the :ref:`AHRS_OPTIONS<AHRS_OPTIONS>` parameter.
+[/site]
