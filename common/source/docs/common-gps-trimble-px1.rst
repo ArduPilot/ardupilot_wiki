@@ -16,7 +16,7 @@ Parameter Setup
 
 The following instructions assume the PX-1 is your first GPS. If you have configured it as a second GPS, change all parameter names.
 
-- :ref:`GPS_COM_PORT <GPS_COM_PORT>` = 1 (to use COM2, the TTL output of the PX-1) or 3 (to use COM1, the RS232 output of the PX-1)
+- :ref:`GPS_COM_PORT <GPS_COM_PORT>` must be set per the documented values
 - :ref:`GPS_TYPE <GPS_TYPE>` = 11 (for GSOF)
 - :ref:`SERIAL3_PROTOCOL <SERIAL3_PROTOCOL>` = 5 (to use GPS)
 
