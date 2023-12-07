@@ -182,6 +182,10 @@ Dropped included bootloader on some 1MB flash boards:
 See https://github.com/ArduPilot/ardupilot_wiki/pull/5242
 
 [site wiki="plane"]
+Add AHRS_OPTIONS
+================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5635
 
 Add Hirth Engine/EFI
 ====================
