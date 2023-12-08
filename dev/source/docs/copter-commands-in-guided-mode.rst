@@ -442,7 +442,10 @@ Bitmask to indicate which fields should be **ignored** by the vehicle
 
 bit1:body roll rate, bit2:body pitch rate, bit3:body yaw rate, bit7:throttle, bit8:attitude
 
-Should always be 0b00000111 / 0x07 / 7 (decimal)
+Two values are accepted:
+
+- 0b00000111 / 0x07 / 7 (decimal): ignore body roll/pitch/yaw rates and use the attitude quaternion (**q**) instead
+- 0b10000000 / 0x80 / 128 (decimal): ignore attitude quaternion (**q**) and use the body roll/pitch/yaw rates instead
 
 .. raw:: html
 
@@ -455,22 +458,24 @@ Should always be 0b00000111 / 0x07 / 7 (decimal)
    Attitude quaternion (w, x, y, z order, zero-rotation is {1, 0, 0, 0})
    <br>
    Note that zero-rotation causes vehicle to rotate towards North.
+   <br>
+   Ignored if type_mask = 0x80
    </td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>body_roll_rate</strong></td>
    <td>float</td>
-   <td>Body roll rate not supported</td>
+   <td>Body roll rate in rad/s.  Ignored if type_mask = 0x07</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>body_pitch_rate</strong></td>
    <td>float</td>
-   <td>Body pitch rate not supported</td>
+   <td>Body pitch rate in rad/s.  Ignored if type_mask = 0x07</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>body_yaw_rate</strong></td>
    <td>float</td>
-   <td>Body yaw rate not supported</td>
+   <td>Body yaw rate in rad/s.  Ignored if type_mask = 0x07</td>
    </tr>
    <tr>
    <td><strong>thrust</strong></td>
@@ -495,19 +500,27 @@ Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) 
 - arm throttle
 - takeoff 10
 
-+------------------------------------------+--------------------------------------------------------------+
-| Example MAVProxy/SITL Command            | Description                                                  |
-+==========================================+==============================================================+
-| ``attitude 1 0 0 0 0.5``                 | hold level attitude with zero climb rate (if GUID_OPTIONS=0) |
-|                                          | OR hold level attitude and 50% throttle (if GUID_OPTIONS=8)  |
-+------------------------------------------+--------------------------------------------------------------+
-| ``attitude 1 0 0 0 1.0``                 | climb at WPNAV_SPEED_UP (if GUID_OPTIONS=0) OR               |
-|                                          | climb at 100% throttle (if GUID_OPTIONS=8)                   |
-+------------------------------------------+--------------------------------------------------------------+
-| ``attitude 1 0 0 0 0.0``                 | descend at WPNAV_SPEED_DN (if GUID_OPTIONS=0) OR             |
-|                                          | descend at 0% throttle (if GUID_OPTIONS=8)                   |
-+------------------------------------------+--------------------------------------------------------------+
-| ``attitude 0.9961947 0.0871557 0 0 0.5`` | roll at 10deg with zero climb rate (if GUID_OPTIONS=0) OR    |
-|                                          | roll at 10deg and 50% throttle (if GUID_OPTIONS=8)           |
-+------------------------------------------+--------------------------------------------------------------+
++------------------------------------------+----------------------------------------------------------------+
+| Example MAVProxy/SITL Command            | Description                                                    |
++==========================================+================================================================+
+| ``attitude 1 0 0 0 0.5``                 | hold level attitude with zero climb rate (if GUID_OPTIONS=0)   |
+|                                          | OR hold level attitude and 50% throttle (if GUID_OPTIONS=8)    |
++------------------------------------------+----------------------------------------------------------------+
+| ``attitude 1 0 0 0 1.0``                 | climb at WPNAV_SPEED_UP (if GUID_OPTIONS=0) OR climb at 100%   |
+|                                          | throttle (if GUID_OPTIONS=8)                                   |
++------------------------------------------+----------------------------------------------------------------+
+| ``attitude 1 0 0 0 0.0``                 | descend at WPNAV_SPEED_DN (if GUID_OPTIONS=0) OR descend at 0% |
+|                                          | throttle (if GUID_OPTIONS=8)                                   |
++------------------------------------------+----------------------------------------------------------------+
+| ``attitude 0.9961947 0.0871557 0 0 0.5`` | roll at 10deg with zero climb rate (if GUID_OPTIONS=0) OR roll |
+|                                          | at 10deg and 50% throttle (if GUID_OPTIONS=8)                  |
++------------------------------------------+----------------------------------------------------------------+
+| ``attitude 128 1 0 0 0 30 0 0 0.5``      | body roll rate of 30deg/s with zero climb rate (if             |
+|                                          | GUID_OPTIONS=0) OR body roll rate of 30deg/s and 50% throttle  |
+|                                          | (if GUID_OPTIONS=8)                                            |
++------------------------------------------+----------------------------------------------------------------+
+| ``attitude 128 1 0 0 0 0 0 45 0.5``      | body yaw rate of 45deg/s with zero climb rate (if              |
+|                                          | GUID_OPTIONS=0) OR body yaw rate of 45deg/s and 50% throttle   |
+|                                          | (if GUID_OPTIONS=8)                                            |
++------------------------------------------+----------------------------------------------------------------+
 
