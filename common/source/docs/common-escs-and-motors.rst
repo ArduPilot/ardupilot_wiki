@@ -68,6 +68,7 @@ Telemetry
     :maxdepth: 1
 
     ESC Telemetry <common-esc-telemetry>
+    Hobbywing Telemetry Hub (DatalinkV2)(uses LUA driver) <https://www.hobbywingdirect.com/products/data-link-v2>
 
 .. note:: Currently ArduPilot only supports telemetry on BLHeli or DroneCAN/CAN ESCs, not throttle signal wire reported telemetry that some single unit ESCs report.
 
