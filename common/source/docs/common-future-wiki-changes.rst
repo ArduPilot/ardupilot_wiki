@@ -6,6 +6,11 @@ Future Wiki Changes (in Master branch now)
 Will be in future 4.5 release and is currently in master ("latest")
 
 [copywiki destination="plane,copter,rover,blimp"]
+Add Battery Monitor AuxInfo Option
+==================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5640
+
 Add Trimble PX-1 GSOF GPS
 =========================
 
