@@ -6,6 +6,11 @@ Future Wiki Changes (in Master branch now)
 Will be in future 4.5 release and is currently in master ("latest")
 
 [copywiki destination="plane,copter,rover,blimp"]
+Add Hobbywing DatalinkV2 Telemetry Hub
+======================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5643
+
 Add Battery Monitor AuxInfo Option
 ==================================
 
