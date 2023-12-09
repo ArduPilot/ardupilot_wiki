@@ -87,6 +87,7 @@ Other Parameters
 - :ref:`BATT_ARM_VOLT<BATT_ARM_VOLT>` is the minimum voltage reported from this monitor that will allow arming to occur.
 - :ref:`BATT_ARM_MAH<BATT_ARM_MAH>` is the minimum capacity remaining reported from this monitor that will allow arming to occur.
 - :ref:`BATT_CURR_MULT<BATT_CURR_MULT>` allows adjusting the current scale for DroneCAN(UAVCAN) monitors which do not have a CAN parameter exposed for adjustment.
+- :ref:`BATT_SERIAL_NUM<BATT_SERIAL_NUM>` is used to designate which battery an SMBUS or DroneCAN monitor is associated, since multiple instances of these monitors are possible.
 
 
 Failsafe
