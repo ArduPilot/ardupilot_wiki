@@ -15,14 +15,14 @@ GPS/Compass
 ===========
 .. toctree::
     :maxdepth: 1
-    
+
     Avionics Anonymous GNSS + Compass<common-avanon-gnss-mag>
     Avionics Anonymous Compass<common-avanon-mag>
     Beitain BN-220 GPS / BN-880 GPS + Compass Module <common-beitian-gps>
     CUAV Neo v2 Pro DroneCAN GPS <common-cuav-neo-v2-pro>
     CUAV Neo 3 Pro DroneCAN GPS <common-cuav-neo-3-pro>
     CUAV Neo 3（M9N) GPS <common-cuav-neo-3>
-    Hex Here 2 DroneCAN GPS/Gyro/IMU/Baro <http://www.proficnc.com/all-products/152-gps-module.html>
+    CubePilot Here 2 DroneCAN GPS/Gyro/IMU/Baro <https://docs.cubepilot.org/user-guides/here-2/updating-here-2-firmware>
     Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>    
     Holybro Micro M8N GPS Module <https://shop.holybro.com/micro-m8n-gps_p1009.html> 
     Holybro Nano Ublox M8 5883 GPS Module <https://shop.holybro.com/nano-ublox-m8-5883-gps-module_p1236.html> 
@@ -55,9 +55,12 @@ These GPS can incorporate real time kinematic data, either internally generated 
     CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
     CUAV C-RTK2 HP  Heading and RTK receiver<common-cuav-c-rtk2-hp>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
+    CubePilot HERE 3/3+ DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-3/here-3-manual>
+    CubePilot HERE 4 DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-4/here-4-manual>
+    CubePilot Here+ RTK Base/Rover Receiver <common-here-plus-gps>
+    CubePilot HEREPRO DroneCAN RTK GPS/Compass <https://docs.cubepilot.org/user-guides/herepro/herepro-manual>
     Freefly RTK GPS Ground Station <https://store.freeflysystems.com/products/rtk-gps-ground-station>
     Foxteck AEROFOX F9P-RTK <https://www.foxtechfpv.com/aerofox-f9p-rtk-unit.html>
-    Hex Here+ RTK Receiver <common-here-plus-gps>
     Hitec PositionPro GNSS <https://www.hiteccs.com/drones/peripheral-details/positionpro-gnss-receiver/>
     Holybro DroneCAN H-RTK F9P Rover <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-rover>
     Holybro DroneCAN H-RTK F9P Helical <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-helical>

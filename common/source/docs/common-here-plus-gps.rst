@@ -1,8 +1,8 @@
 .. _common-here-plus-gps:
 
-=============
-Here+ RTK GPS
-=============
+=======================
+CubePilot Here+ RTK GPS
+=======================
 
 This article provides a brief overview of how to setup a Here+ RTK GPS receiver which is based on the Ublox M8P.
 Like other RTK GPSs, the Here+ can provide much more accurate position estimates than regular GPSs but normally requires the use of a 2nd GPS connected to the ground station.
@@ -14,7 +14,7 @@ These instructions focus on the setup using Mission Planner on Windows, but HERE
 Where to buy
 ============
 
-See a list of `Proficnc resellers here <http://www.proficnc.com/stores>`__ or you can purchase directly from `Proficnc.com <http://www.proficnc.com/gps/77-gps-module.html>`__.
+Newer generation of this product can be purchased through CubePilot `resellers <https://cubepilot.org/#/reseller/list>`__
 
 Connecting the vehicle and base station GPSs
 ============================================
