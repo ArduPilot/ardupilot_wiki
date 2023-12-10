@@ -57,7 +57,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     CUAV C-RTK2 HP  Heading and RTK receiver<common-cuav-c-rtk2-hp>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
     CubePilot HERE 3/3+ DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-3/here-3-manual>
-    CubePilot HERE 4 DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-4/here-4-manual>
+    CubePilot HERE 4 DroneCAN RTK GPS/IMU/Compass (see note below) <https://docs.cubepilot.org/user-guides/here-4/here-4-manual>
     CubePilot Here+ RTK Base/Rover Receiver <common-here-plus-gps>
     CubePilot HEREPRO DroneCAN F9P RTK GPS/Compass <https://docs.cubepilot.org/user-guides/herepro/herepro-manual>
     Freefly RTK GPS Ground Station <https://store.freeflysystems.com/products/rtk-gps-ground-station>
@@ -76,7 +76,9 @@ These GPS can incorporate real time kinematic data, either internally generated 
     Synerx MDU-2000 RTK + LTE GPS <common-synerex-mdu-2000>
     Trimble BD930 RTK GPS <common-gps-trimble>
 
-.. note:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
+.. note:: a version of firmware for the CubePilot HERE 4 DroneCAN RTK GPS is available `here <https://firmware.ardupilot.org/AP_Periph/latest/Here4AP/>`__ that includes evolving ArduPilot improvements.
+
+.. warning:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
 
 
 Moving Baseline (GPS for Yaw) Capable
