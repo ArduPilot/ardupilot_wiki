@@ -54,7 +54,7 @@ Configuration the copter
 Starting Nokov module
 =====================
 
-- Start connect to copter with MAVProxy. Inside MAVProxy load optitrack module with:
+- Start connect to copter with MAVProxy. Inside MAVProxy load nokov module with:
 
 .. code:: bash
 
