@@ -7,7 +7,7 @@ Failsafes
 Rover supports three failsafe mechanisms as described below.
 
 Radio Failsafe (aka Throttle Failsafe)
---------------------------------------
+======================================
 
 .. image:: ../images/rover-failsafe-rc.jpg
     :target: ../_images/rover-failsafe-rc.jpg
@@ -24,7 +24,7 @@ This failsafe is triggered if the connection between the user's transmitter and 
 - once the transmitter/receiver connection is restored, the user must use the transmitter's mode switch to re-take control of the vehicle in :ref:`Manual <manual-mode>` (or any other mode)
 
 Battery Failsafe
-~~~~~~~~~~~~~~~~
+================
 
 .. note::
 
@@ -57,7 +57,7 @@ Rover also includes a two-layer battery failsafe.  This allows setting up a foll
 
 - :ref:`BATT_CRT_VOLT <BATT_CRT_VOLT>` - holds the secondary (lower) voltage threshold.  Set to zero to disable. Default is zero.
 - :ref:`BATT_CRT_MAH <BATT_CRT_MAH>` - holds the secondary (lower) capacity threshold.  Set to zero to disable. Default is zero.
-- :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>` - holds the secondary action to take. It has the same options and default as :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` .
+- :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>` - holds the secondary action to take. It has the same options and default as :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>`.
 
 Advanced Battery Failsafe Settings
 ----------------------------------
@@ -67,16 +67,43 @@ Advanced Battery Failsafe Settings
 - ``BATTx_`` parameters can be setup to trigger the failsafe on other batteries
 
 GCS Failsafe (aka Telemetry Failsafe)
--------------------------------------
+=====================================
+
+Prior to Rover-4.4
+------------------
 
 This failsafe is triggered if the vehicle stops receiving `heartbeat messages <https://mavlink.io/en/messages/common.html#HEARTBEAT>`__ from the ground station for at least :ref:`FS_TIMEOUT <FS_TIMEOUT>` seconds.
 
-- set :ref:`FS_GCS_ENABLE <FS_GCS_ENABLE>` to "1" to enable this failsafe
-- if :ref:`FS_ACTION <FS_ACTION>` is "1", the vehicle will :ref:`RTL <rtl-mode>` to home, if "2" the vehicle will :ref:`Hold <hold-mode>`
-- you must use the transmitter's mode switch to re-take control of the vehicle in :ref:`Manual <manual-mode>` (or any other mode), or change modes via the GCS iself, if communication is re-established.
+Starting from Rover-4.4
+-----------------------
+
+Significant improvements have been made in Rover-4.4 and later for Ground Control Failsafe .
+
+The Ground Station Control (GCS) failsafe controls how Rover will behave if contact with the GCS is lost.
+The GCS failsafe monitors the time since the last MAVLink heartbeat from the GCS. If no heartbeat is received :ref:`FS_GCS_TIMEOUT <FS_GCS_TIMEOUT>` seconds (Default is 5 seconds), the GCS failsafe event will trigger based on your parameter settings. Note that if no GCS is ever connected, the GCS failsafe will remain inactive regardless of parameter settings.
+
+Enabling the failsafe in all versions
+-------------------------------------
+
+In parameters list, set the :ref:`FS_GCS_ENABLE <FS_GCS_ENABLE>` parameter to:
+
+-  **Disabled** (Value 0) will disable the GCS failsafe entirely.
+-  **Enabled** (Value 1) will execute the FS_ACTION when Failsafe trigger.
+-  **Enabled Continue with Mission in Auto Mode** (Value 2) will ignore the failsafe in an Auto Mode mission.
+
+The action done on GCS Failsafe is controlled by the :ref:`FS_ACTION <FS_ACTION>` parameter:
+
+- **Nothing** (Value O) will do nothing.
+- **RTL** (Value 1) will active RTL to go home.
+- **Hold** (Value 2) will active Hold Mode and stay in place.
+- **SmartRTL or RTL** (Value 3) will active SmartRTL mode to go back home or RTL if SmartRTL doesn't work.
+- **SmartRTL or Hold** (Value 4)  will active SmartRTL mode to go back home or Hold mode if Smart RTL doesn't work.
+
+You must use the transmitter's mode switch to re-take control of the vehicle in :ref:`Manual <manual-mode>` (or any other mode), or change modes with the GCS itself, if communication is re-established.
+
 
 Crash Check
------------
+===========
 
 If enabled by setting the :ref:`FS_CRASH_CHECK <FS_CRASH_CHECK>` parameter to "1" (for :ref:`Hold <hold-mode>`) or "2" (for :ref:`Hold <hold-mode>` and Disarm) this failsafe will switch the vehicle to Hold and then (optionally) disarm the vehicle if all the following are true for at least 2 seconds:
 
@@ -86,11 +113,11 @@ If enabled by setting the :ref:`FS_CRASH_CHECK <FS_CRASH_CHECK>` parameter to "1
 - demanded throttle to the motors (from the pilot or autopilot) is at least 5%
 
 Hold Mode Failsafes
--------------------
+===================
 
 The :ref:`FS_OPTIONS<FS_OPTIONS>` bitmask parameter determines if failsafes will be recognized while in HOLD Mode. If bit 0 is set, then failsafes will be recognized and acted upon. If not, failsafes will be ignored in HOLD mode (default).
 
-Independent Watchdog
---------------------
+Hardware Watchdog
+=================
 
 See :ref:`common-watchdog` for details.

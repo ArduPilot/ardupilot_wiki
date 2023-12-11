@@ -29,22 +29,17 @@ Setting Spin-Armed and Min Throttle
 ===================================
 
 By default, when the vehicle is armed but not flying, the motors will spin at a slightly slower than normal speed.  This speed can be configured using :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` parameter (For older versions check MOT_SPIN_ARMED).
-Once the vehicle is flying, we want to ensure that we never output a value that causes the motors to stop spinning, this lower limit can be configured with the :ref:`THR_MIN<THR_MIN>` or :ref:`MOT_SPIN_MIN<MOT_SPIN_MIN>` parameter (depending upon the version).
-
-If using Copter-3.3 (or earlier):
-
--  set the :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` parameter to **(the percentage discovered above + 2%) * 10**.  I.e. if you found the deadzone of the ESCs was 7%, set :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` to 90 (i.e. (7 + 2) * 10).
--  set the :ref:`THR_MIN<THR_MIN>` parameter to at least 30 higher than :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>`.  I.e. if :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` was 90, set :ref:`THR_MIN<THR_MIN>` to 120.
-
-If using Copter-3.4 (or higher):
+Once the vehicle is flying, we want to ensure that we never output a value that causes the motors to stop spinning, this lower limit can be configured :ref:`MOT_SPIN_MIN<MOT_SPIN_MIN>` parameter.
 
 -  set the :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` parameter to **(the percentage discovered above + 2%) / 100**.  I.e. if you found the deadzone of the ESCs was 7%, set :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` to 0.09 (i.e (7 + 2) / 100).
 -  set the :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` parameter to at least 0.03 higher than :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>`.  I.e. if :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` was 0.09, set :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` to 0.12.
 
 .. note::
 
-   Setting :ref:`THR_MIN <THR_MIN>` or :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` even higher than recommended above is fine especially because we want to account for voltage drop of the battery but setting it too high reduces the lower range of the motors which reduces control which could be important especially on powerful copters with a low hover throttle.
+   Setting :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` even higher than recommended above is acceptable if we want to account for voltage drop of the battery, but setting it too high reduces the lower range of the motors which reduces control which could be important, especially on powerful copters with a low hover throttle.
 
 .. note::
 
-   Copter 3.4 (and higher) also includes the :ref:`MOT_SPIN_MAX <MOT_SPIN_MAX>` parameter to account for the very top of the ESC/motor range which generally produces no additional thrust.  By default this value is 0.95 (i.e. top 5% of the range produces no additional thrust).
+   The :ref:`MOT_SPIN_MAX <MOT_SPIN_MAX>` parameter to account for the very top of the ESC/motor range which generally produces no additional thrust.  By default this value is 0.95 (i.e. top 5% of the range produces no additional thrust).
+
+.. note:: if ESC RPM telemetry is being used, the :ref:`TKOFF_RPM_MIN<TKOFF_RPM_MIN>` parameter could be set slightly below the :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` parameter to prevent takeoff attempts, and subsequent flips on takeoff, if one or more motors are not spinning.

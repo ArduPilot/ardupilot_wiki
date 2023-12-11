@@ -4,63 +4,96 @@
 Automatic Landing
 =================
 
-This article explains how to land Plane as part of a mission plan and includes information about how a landing can be safely aborted.
+This article explains how to autonomously land Plane as part of a mission plan and includes information about how a landing can be safely aborted. Switching to AUTO mode and executing an autolanding can also be done as an RTL action using the ``DO_LAND_START`` mission command.
 
 Configuring for Automatic Landing
 =================================
 
-Plane can automatically land an aircraft, as part of a mission plan.
+To autoland the plane you need to add a :ref:`NAV_LAND <mav_cmd_nav_land>` command to the end of your mission indicating the latitude, longitude and altitude of your desired touchdown point and if aborting the autoland is allowed. When the preceeding waypoint is reached, it will descend and navigate to the touchdown point.
 
-To land the plane you need to add a :ref:`NAV_LAND <mav_cmd_nav_land>` command to the end of your mission indicating the latitude, longitude and altitude of your desired touchdown point. 
-In most cases, the altitude should be set to 0. 
-During landing, the autopilot will shut down the throttle and hold the current heading when the plane reaches the flare point, controlled by the parameters described below.
+In most cases, the altitude should be set to 0. During the final flare portion of the landing, the autopilot will shut down the throttle and hold the current heading, controlled by the parameters described below.
+
+For many vehicles, most of the parameters associated with autolanding can be left at their defaults. The basic parameters are covered below in the Basic Autolanding Section for vehicles not using an airspeed sensor and/or rangefinder. For more advanced configuration, see the sections listed below:
+
+.. toctree::
+   :maxdepth: 1
+
+    Aborting an Autolanding <aborting-autolanding>
+    Precision Autolanding <precision-autolanding>
+    RangeFinder Autolanding <rangefinder-autolanding>
+    Using Reverse Thrust in Autolanding <reverse-thrust-autolanding>
+    Using DO_LAND_START <do-land-start>
+
+Basic Autolanding
+=================
+
+The phases of an autolanding are:
+
+- Passing final approach waypoint
+- Navigating to the flare point on a "glide-slope" (ie controlled descent)
+- Flare and touchdown
+
+.. image:: ../../../images/autolanding.jpg
+   :target: ../_images/autolanding.jpg
+
+Setting Up the Approach Waypoint
+--------------------------------
+
+The autolanding begins after reaching the last navigation waypoint before the NAV_LAND waypoint (where you want to touchdown and land). This waypoint must be far enough from the touchdown point and at an altitude that a reasonable glide slope can be obtained. Without an airspeed sensor, the speed will be that of normal waypoint navigation, which without an airspeed sensor is primarily controlled by :ref:`TRIM_THROTTLE<TRIM_THROTTLE>`. It is important to have a glide slope that is obtainable with the :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` rate of the vehicle and preferably, well below that rate. You can lower the approach airspeed in order to reduce the time in the flare, and possible overshoot of landing point, by adjusting the :ref:`TECS_LAND_THR<TECS_LAND_THR>` to a lower value than :ref:`TRIM_THROTTLE<TRIM_THROTTLE>`. Be careful, not to lower it so much as to cause a stall on approach.
+
+In addition, the last navigation waypoint before NAV_LAND must be far enough away that any turns made by the mission to that waypoint will have already be completed and the vehicle back on track in a line to the landing point. Usually, two waypoints are used. The first to allow any mission item (including aborted go-arounds for an autoland reattempt) to get aligned to another waypoint setup closer to the touchdown point but still providing a nice glide slope. We will designate the last waypoint before the NAV_LAND as the "final approach" waypoint and the one before it the "pre-approach" waypoint, as shown above. The next figure shows these waypoints **incorrectly** placed, without sufficient spacing:
+
+.. image:: ../../../images/autolanding-approach.png
+    :target: ../_images/autolanding-approach.png
+
+The above shows a planned approach with the pre-approach waypoint 440m away from touchdown at 50m altitude, the final approach waypoint at 220m away and 25m altitude, giving a supposedly gentle glide slope of 6 degrees (which is a 1.7m/s descent at 15m/s airspeed). However, the actual result is 9 deg glide path since the switch to AUTO mode and the landing sequence was begun at the point shown at beginning of the yellow path, and the resulting overshoots at the two waypoints result in a steeper glide slope (9 degrees) between the final approach waypoint and the touchdown point. Spacing the waypoints a little further away would have allowed the approach to have settled by the final approach waypoint, and with the desired final glide slope. The faster the vehicle is flying, the wider the turn radii are, and the wider the waypoints should be spaced.
+
+.. note:: You can use QGroundControl to automatically setup your approach and landing waypoints, but it will use a slightly different approach. Using the "LAND" button on the Plan screen, QGroundControl will add a "LOITER_TO_ALT" waypoint (NAV_LOITER_TO_ALT) at a distance determined by its wizard's glide slope parameter to bring the vehicle down (or up) to approach altitude, add a DO_LAND_START (See :ref:`aborting-autolanding`) marker, and a NAV_LAND. 
 
 .. _automatic-landing_key_parameters:
-
-Key Parameters
---------------
 
 The key parameters that control automatic landing are:
 
 -  :ref:`LAND_FLARE_ALT <LAND_FLARE_ALT>`
 -  :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>`
 -  :ref:`LAND_PITCH_CD <LAND_PITCH_CD>`
--  :ref:`TECS_LAND_ARSPD <TECS_LAND_ARSPD>`
--  :ref:`TECS_LAND_SPDWGT <TECS_LAND_SPDWGT>`
+-  :ref:`TECS_LAND_SINK <TECS_LAND_SINK>`
+-  :ref:`TECS_SINK_MAX<TECS_SINK_MAX>`
+-  :ref:`TECS_SINK_MIN<TECS_SINK_MIN>`
+-  :ref:`TECS_LAND_THR<TECS_LAND_THR>`
 
-The meaning and recommended value of each of these parameters is
-described below.
+.. note:: The TECS parameters are related to the glide slope and final flare sink control. As such, the :ref:`TECS speed/height controller<tecs-total-energy-control-system-for-speed-height-tuning-guide>` must be tuned correctly, and the vehicle must have good pitch tuning for TECS to operate properly (see :ref:`common-tuning`)
+
+The meaning and recommended value of each of these parameters is described below.
+
+.. image:: ../../../images/autolanding-flare.png
+    :target: ../_images/autolanding-flare.png
 
 Setting the Flare Point
 -----------------------
 
-The "flare" is the final stage of the landing when the autopilot cuts the throttle and raises the pitch, increasing drag and slowing the aircraft to sink onto the ground. 
-The appropriate time to flare depends on the type of aircraft, and is controlled by the :ref:`LAND_FLARE_ALT <LAND_FLARE_ALT>` and :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` parameters.
+The "flare" is the final stage of the landing when the autopilot cuts the throttle and raises the pitch, increasing drag and slowing the aircraft to sink onto the ground. The appropriate time to flare depends on the type of aircraft, and is controlled by the :ref:`LAND_FLARE_ALT <LAND_FLARE_ALT>` and :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` parameters.
 
-The primary control of the flare is the ``LAND_FLARE_SEC`` parameter.
+The first control of the flare is the :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` parameter.
 This is the time in seconds before the aircraft would hit the ground if it continued with its current descent rate. 
-So if the plane is descending at 2 meters/second and you set the ``LAND_FLARE_SEC`` to 3 then the aircraft would flare at an altitude of 6 meters above the ground. 
+
+So if the plane is descending at 2 meters/second and you set the :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` to 3 then the aircraft would flare at an altitude of 6 meters above the ground. 
 By using a time to impact to control the flare the aircraft is able to flare at a higher altitude if it is descending quickly, and at a lower altitude if it is descending slowly. That helps ensure the flare is able to produce a smooth touchdown.
 
-The second control is ``LAND_FLARE_ALT``. 
-That is an altitude above the ground in meters at which the aircraft will flare, regardless of its descent rate.
+The second control is :ref:`LAND_FLARE_ALT <LAND_FLARE_ALT>`. That is an altitude above the ground in meters at which the aircraft will flare, regardless of its descent rate. It is important that this value be close to the altitude that will usually result from the :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>`, since it is used in later calculations. Changing the descent rate required from the last waypoint before the landing will impact the height at which :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` would become active and should be adjusted accordingly.
 
-The appropriate values for these two parameters depends on how the autopilot is estimating its altitude above the ground. 
-If the autopilot has a good rangefinder (:ref:`such as LIDAR <common-rangefinder-lidarlite>`) then you can safely choose quite small numbers, and flare close to the ground. 
-That will generally produce a better landing. 
-A value for ``LAND_FLARE_SEC`` of 1.5 and ``LAND_FLARE_ALT`` of 2 is a good place to start with a LiDAR. 
-If you are relying solely on a barometer for landing altitude then you will probably need higher values, to account for barometric error.
+Whichever is reached first will force the beginning of the flare.The appropriate values for these two parameters depends on how the autopilot is estimating its altitude above the ground. 
+
+If you are relying solely on a barometer for landing altitude then you will probably need higher values, to account for barometric errors (see :ref:`improving-autolanding` below). The defaults are usually appropriate as a starting point for 1-1.5 meter wingspan vehicles.
+
+With a very well tuned vehicle (both Attitude and TECS) and using a rangefinder, lower altitudes can be attempted to start the flare.
 
 Controlling the glide slope
 ---------------------------
 
-Another important factor in setting up the flare point is the glide slope. 
-The glide slope is the ratio of the distance from the last waypoint to the landing point, and the height difference between the last waypoint and the landing point. 
-For example, if the landing point is 300 meters from the last waypoint, and the last waypoint is 30 meters above the ground then the glide slope is 10%.
+Another important factor in setting up the flare point is the glide slope. The glide slope is the ratio of the distance from the last waypoint to the landing point, and the height difference between the last waypoint and the landing point. For example, if the landing point is 300 meters from the last waypoint, and the last waypoint is 30 meters above the ground then the glide slope is 10%.
 
-If the glide slope is too steep then the aircraft will not be able to flare in time to avoid crashing, plus the autopilot may not be able to keep the plane on the approach slope accurately. 
-It is recommended that you start with a glide slope of at most 10%. 
-What glide slope your plane can handle will depend on how well your pitch controller tuning is, how good your TECS tuning is, and the landing speed you ask for.
+If the glide slope is too steep then the aircraft will not be able to flare in time to avoid crashing, plus the autopilot may not be able to keep the plane on the approach slope accurately. It is recommended that you start with a glide slope of at most 10%. What glide slope your plane can handle will depend on how good your pitch controller tuning is, how good your TECS tuning is, and the landing speed you ask for.
 
 If you find your aircraft is not following the desired glide slope
 accurately then you should first check your pitch tuning in your logs,
@@ -69,74 +102,11 @@ degrees during landing. If they don't then look at the documentation on
 pitch tuning (or possibly re-run AUTOTUNE). If the demanded and achieved
 pitch do match then you should check your TECS logs to ensure that the
 demanded and achieved airspeed are matching during landing. Have a look
-at the TECS tuning patch for more information.
+at the :ref:`TECS tuning page <tecs-total-energy-control-system-for-speed-height-tuning-guide>` for more information.
 
 You should also be aware that many model aircraft can glide for long
 distances, and it may be that your requested glide slope and airspeed
 combination just isn't achievable.
-
-Landing Airspeed
-----------------
-
-Automatic landing is greatly assisted by the use of an airspeed sensor.
-When using an airspeed sensor the landing approach speed (the speed
-coming down the glide slope) is controlled by the
-:ref:`TECS_LAND_ARSPD <TECS_LAND_ARSPD>`
-parameter, in meters/second.
-
-You need to choose a value for ``TECS_LAND_ARSPD`` that is above the
-stall speed of your aircraft, but low enough that the aircraft is able
-to lose altitude and land in a reasonable distance. Note that as the
-stall speed is dependent on the weight of your aircraft you will need to
-adjust the landing speed if you change the aircraft's weight
-significantly (such as by adding batteries or a camera).
-
-To further improve landing you can use a Pre-Flare to reduce airspeed
-just before the flare. This is enabled by setting either
-:ref:`LAND_PF_ALT <LAND_PF_ALT>` or :ref:`LAND_PF_SEC <LAND_PF_SEC>`
-to either enter a pre-flare state at a fixed altitude or at an estimated
-seconds to ground (given your current decent rate). Once the Pre-Flare
-is triggered the desired airspeed becomes :ref:`LAND_PF_ARSPD <LAND_PF_ARSPD>`.
-This value should be lower than ``TECS_LAND_ARSPD`` but greater than the
-stall speed. This is particularly useful where reverse thrust is
-available. However, some aircraft can handle a stall landing so setting
-this to a very low number (1) will tell the aircraft to bleed off as
-much airspeed as possible before the flare.
-
-Controlling the approach
-------------------------
-
-During the landing approach the autopilot needs to balance the requested
-airspeed (set by ``TECS_LAND_ARSPD``) and the requested glide slope and
-landing position (set by the previous waypoint and final landing point).
-The default configuration tries to balance these two demands equally,
-but for some aircraft you may want to prioritize one over the other.
-
-The priority of airspeed control versus height control is set using the
-:ref:`TECS_LAND_SPDWGT <TECS_LAND_SPDWGT>`
-parameter. A value of 1 (the default) means a balance between the two. A
-value closer to two gives a higher priority to airspeed and a value
-closer to zero gives a higher priority to height control. For example,
-if you are landing at a speed close to the stall speed you may wish to
-place a high priority on the airspeed control. To do that you should set
-``TECS_LAND_SPDWGT`` to a value close to 2, such as 1.9.
-
-If what you want in a landing is precision in the position where it
-lands then you should set ``TECS_LAND_SPDWGT`` to a low number, such as
-0.2 or even 0.0. In that case the plane will still try to achieve the
-target landing airspeed by using the throttle, but it will not try to
-control airspeed with pitch.
-
-If you are landing a glider (or any aircraft without a motor) then you
-should set ``TECS_LAND_SPDWGT`` to 2.0, so that airspeed is the priority
-and pitch will be used to control airspeed.
-
-In most cases a value of -1 gives the best result. This special value
-will auto-adjust the value during the landing, scaling it from your
-normal :ref:`TECS_SPDWEIGHT <TECS_SPDWEIGHT>`
-value down to zero at the point of landing. So up in the sky during
-approach you maintain good airspeed but by the time you land the
-emphasis is on a more accurate landing.
 
 .. _automatic-landing_controlling_the_flare:
 
@@ -151,10 +121,8 @@ using a target descent rate. Once the flare is started the throttle is
 zero.
 
 The main job of the autopilot in the flare is to try to achieve
-the descent rate specified in the
-:ref:`TECS_LAND_SINK <TECS_LAND_SINK>` parameter. That defaults to 0.25 meters/second, which is a reasonable
-touchdown vertical speed for most models. To achieve that speed the TECS
-controller uses pitch control only as the motor has been forced to zero.
+the descent rate specified in the :ref:`TECS_LAND_SINK <TECS_LAND_SINK>` parameter. That defaults to 0.25 meters/second, which is a reasonable
+touchdown vertical speed for most models. To achieve that speed the TECS controller uses pitch control only as the motor has been forced to zero.
 
 The primary parameters which affect the ability of the aircraft to
 achieve the desired descent rate are
@@ -162,7 +130,13 @@ achieve the desired descent rate are
 :ref:`TECS_LAND_DAMP <TECS_LAND_DAMP>`
 and the main pitch tuning parameters.
 
-The ``LAND_PITCH_CD`` parameter sets the minimum pitch target in the
+.. note:: If the vehicle does not have good pitch tuning, the vehicle's CG is significantly "nose heavy", or the elevator is being increased by propeller slip-stream, then the ability of the vehicle to actually attain the desired sink rates and attitudes can be severely impacted. Symptoms are landing short, and/or with the nose/nose wheel touching down first.
+
+The landing controller sets a point before the touchdown as the expected flare start point. This "flare_aim" point is calculated from the :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` and :ref:`TECS_LAND_SINK<TECS_LAND_SINK>` for the expected duration of the flare before the actual touchdown. If consistently landing long or short, this point can be adjusted using the :ref:`LAND_FLARE_AIM<LAND_FLARE_AIM>` parameter. If landing too short, decrease the percentage from its default of 50%, conversely, increasing it if landing too long.
+
+The transition from the glide-slope sink rate to the flare sink rate is controlled by the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` parameter and should normally be set below :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>`. The start of the flare will occur at :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` and the sink rate will be gradually adjusted to :ref:`TECS_LAND_SINK<TECS_LAND_SINK>` at the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` to avoid a rapid pitch change at the beginning of the flare, which would tend to create a "ballooning" effect at the start of the flare. See note at the end of this section for a possible exception to having :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` set lower than :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>`.
+
+The :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` parameter sets the minimum pitch target at the very end of the
 flare (in centi-degrees). This parameter is very airframe specific and
 is designed to prevent the nose of the aircraft being too far down on
 touchdown causing issues with damaging the landing gear or breaking a
@@ -172,17 +146,19 @@ small negative number can be good, to allow the nose to be kept down a
 small amount to reduce the chance of stall if the flare happens too far
 off the ground.
 
-Note that the actual pitch of the aircraft can be quite a bit above
-``LAND_PITCH_CD`` as the TECS controller tries to control the descent
-rate. The maximum pitch is controlled by the
-:ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>`
-parameter if it is non-zero, otherwise by the
-:ref:`LIM_PITCH_MAX <LIM_PITCH_MAX>` parameter.
+Note that the actual pitch of the aircraft can be quite a bit above :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` as the TECS controller tries to control the descent rate. The maximum pitch is controlled by the :ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>`
+parameter if it is non-zero, otherwise by the :ref:`LIM_PITCH_MAX <LIM_PITCH_MAX>` parameter.
 
-The ``TECS_LAND_DAMP`` parameter is a damping constant for the pitch
+However, if the vehicle cannot maintain the demanded pitch attitude in the later stages of the flare due to CG, tuning, etc. :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` may never be reached resulting in nose/nose wheel first touchdowns. In that case, set the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` ABOVE the :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` parameter, effectively allowing the :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` limit to take effect immediately, increasing the rate at which its demanded (i.e. at the beginning of the flare as opposed to the end)
+
+The :ref:`TECS_LAND_DAMP<TECS_LAND_DAMP>` parameter is a damping constant for the pitch
 control during flare. A larger number will cause the pitch demand to change
 more slowly. This parameter can be used to reduce issues with sudden
 pitch changes when the flare happens.
+
+.. note:: you can use :ref:`STICK_MIXING<STICK_MIXING>` to allow manual adjustments during the flare, if needed, while tuning the above parameters.
+
+.. note:: For most well tuned vehicles the default values for all the landing parameters should result in safe landings. Iteratively adjusting the altitude limits and the aim point parameter will usually lead to almost perfect, repeatable landings. Analyzing the logs for TECS.dh vs TECS.dhdem and ATT.Pitch vs ATT.DesPitch will show how well the vehicle is attaining the desired attitude and sink rates in the flare.
 
 After the Flare
 ---------------
@@ -190,8 +166,7 @@ After the Flare
 After the plane flares it continues to navigate, but with zero throttle.
 The navigation direction is a line extrapolated forward through the
 landing point from the last waypoint. Note that the navigation roll will
-be limited to
-:ref:`LEVEL_ROLL_LIMIT <LEVEL_ROLL_LIMIT>`
+be limited to :ref:`LEVEL_ROLL_LIMIT <LEVEL_ROLL_LIMIT>`
 (which defaults to 5 degrees) to prevent wing strike, so if there is a
 significant cross-wind then it is likely that the aircraft will not be
 able to maintain the exact path.
@@ -200,7 +175,7 @@ If your aircraft is consistently landing long (which can happen for a
 variety of reasons) then you can adjust
 :ref:`TECS_LAND_SRC <TECS_LAND_SRC>` to
 either force a stall (negative) or bring it down (positive). This value
-will adjust your ``TECS_LAND_SINK`` proportional to the distance from
+will adjust your :ref:`TECS_LAND_SRC <TECS_LAND_SRC>` proportional to the distance from
 the LAND point. This helps ensure you land in a reasonable distance from
 the LAND point.
 
@@ -210,41 +185,21 @@ the LAND point.
    aircraft more lift as it is close to the ground or simply the aircraft
    traveling very fast.
 
-When the plane has stopped moving for
-:ref:`LAND_DISARMDELAY <LAND_DISARMDELAY>`
+When the plane has stopped moving for :ref:`LAND_DISARMDELAY <LAND_DISARMDELAY>`
 seconds (default 20 seconds) it will disarm the motor. Optionally, you
 can disable servo movement once LAND_DISARMDELAY has triggered by
 setting :ref:`LAND_THEN_NEUTRL <LAND_THEN_NEUTRL>`.
 
-Using a rangefinder
--------------------
+Rudder Control during Flare and Rollout
+---------------------------------------
 
-If you have :ref:`fitted a rangefinder <common-rangefinder-landingpage>`
-to your aircraft then you can use it for much more accurate landing
-control. To allow the rangefinder to be used for landing you need to set
-the :ref:`RNGFND_LANDING <RNGFND_LANDING>` parameter to 1.
+If enabled, the ground steering controller will take over below :ref:`GROUND_STEER_ALT<GROUND_STEER_ALT>` to maintain vehicle compass heading below this altitude and during roll out. See :ref:`tuning-ground-steering-for-a-plane` for details.
 
-When using a rangefinder for landing the altitude given by the
-rangefinder is used only in the landing approach and to determine the
-flare point, and is designed to allow the aircraft to more accurately
-follow the glide slope and to flare at the right time.
 
-.. note::
-
-   The effectiveness of a rangefinder can depend on the surface you
-   are flying over, so it is a good idea to do some low passes in a flight
-   mode such as FBWA first, then examine the logs to check that the
-   rangefinder is working correctly.
-
-Also note that if you have a longer range rangefinder then it is a very
-good idea to set the minimum range of the rangerfinder well above zero.
-For example, the PulsedLight Lidar has a typical range of over 40
-meters, and when it gets false readings it tends to read ranges of less
-than 1 meter. And setting :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` to 150 , if its the first system rangefinder, will discard any rangerfinder readings below 1.5 meters, and will
-greatly improve the robustness of the Lidar for landing.
+.. _improving-autolanding:
 
 Improving the landing
----------------------
+=====================
 
 The key to a good landing is the autopilot knowing how far off the
 ground it is. With the default setup the only sensor available to detect
@@ -261,10 +216,9 @@ The ideal setup for good automatic landing is to have a
 :ref:`Lidar <common-rangefinder-landingpage>`. A Lidar can measure
 the distance to the ground very accurately, and doesn't suffer from
 drift. If you have a Lidar installed you can enable its use for landing
-with ``RNGFND_LANDING=1``.
+with :ref:`RNGFND_LANDING<RNGFND_LANDING>` = 1.
 
-If a Lidar isn't fitted then there are a few things you can do to
-minimise barometric error problems with auto-land
+If a Lidar isn't fitted then there are a few things you can do to minimize barometric error problems with auto-land
 
 -  perform a barometer calibration after the electronics have warmed up.
    The easiest way to do this is to disarm the plane with rudder-disarming, arm/disarm switch, or
@@ -276,215 +230,10 @@ minimise barometric error problems with auto-land
    Check your logs and see if the landing is happening at zero altitude
    consistently
 
+Alternatively, you can use a high precision GPS as the altitude source instead of the barometer. See
+
 With planes that belly land it can also work well to setup the landing
-with a shallow pitch (in ``LAND_PITCH_CD``) and set a slightly higher
+with a shallow pitch (in :ref:`LAND_PITCH_CD<LAND_PITCH_CD>`) and set a slightly higher
 altitude to flare at. That will only work if your stall speed is low
 enough that gliding for a while will work reliably.
 
-.. _do_land_start:
-
-Using DO_LAND_START
-===================
-
-Sometimes it is useful to trigger an automatic landing as part of an RTL
-(return to launch). To do this you need to do two things:
-
--  add a :ref:`DO_LAND_START <mav_cmd_do_land_start>`
-   mission item to your mission, just before the start of your landing
-   sequence
--  set the :ref:`RTL_AUTOLAND <RTL_AUTOLAND>`
-   parameter to 1 or 2
-
-The way it works is that when the plane enters an RTL it checks to see
-if the parameter RTL_AUTOLAND is set to 1 or 2. If it is then the
-current mission is searched for a mission item of type DO_LAND_START.
-If one is found then the plane will automatically enter AUTO mode and
-land, starting at the part of the mission just after the
-``DO_LAND_START`` marker.
-
-The exact behaviour depends on the ``RTL_AUTOLAND`` value:
-
--  If ``RTL_AUTOLAND=1`` then the plane will first RTL as normal, then
-   when it starts circling the return point (home or a rally point) it
-   will then switch to the AUTO mission after the ``DO_LAND_START`` and
-   land
--  If ``RTL_AUTOLAND=2`` then the plane will bypass the RTL completely
-   and go straight to the landing sequence.
-
-You can optionally include more than one ``DO_LAND_START`` mission item
-in your mission. If that is done then the latitude/longitude of the
-``DO_LAND_START`` mission items is used to choose which landing sequence
-to use. The ``DO_LAND_START`` closest to the current location is used.
-This can be useful if you have multiple landing sequences for different
-wind conditions or different areas.
-
-How to abort an auto-landing
-============================
-A landing-abort mechanism is provided to allow you to abort a landing sequence in a safe, controlled, and expected way. Custom abort behaviour can be pre-programmed as part of the mission or you can use the default abort mechanism. To enable this feature set param LAND_ABORT_THR=1.
- 
-There are three steps to this feature:
-
-1. :ref:`Trigger an abort <trigger_an_abort>`
-#. :ref:`The behavior during the abort <behavior_during_the_abort>`
-#. :ref:`The mission state after the abort completes <mission_state_after_an_aborted_landing_completes>`
-
-
-.. _trigger_an_abort:
-
-Step 1) Abort land triggers
----------------------------
-The are three ways to trigger an auto-landing abort. All of them will only work while in AUTO mode and currently executing a ``LAND`` waypoint mission item:
-
--  **Send the ``MAV_CMD_DO_GO_AROUND`` command using a GCS.** Mission Planner has a button labeled "Abort Landing" on the FlightData Actions tab.
--  **RC input Throttle > 90%**. This will trigger an abort while staying in AUTO mode. The throttle only needs to be high briefly to trigger it. Don't forget to lower it!
--  **Mode change**. For human piloted landing abort you can switch out of AUTO mode into, for example MANUAL/STABILIZE/FBWA, and navigate the aircraft safely however you'd like. Using this method will skip abort behavior step 2 because it is being done manually. When switching back to AUTO the mission will resume as described in step 3 below.
-
-.. _behavior_during_the_abort:
-
-Step 2) Abort land flight behavior
-----------------------------------
-The abort behaviour has a default configuration and does not require a pre-planned mission. The default abort behavior is to simulate an auto-takeoff: pitch up at least 10 degrees and set throttle to TKOFF_THR_MAX and hold the heading until it reaches a target altitude of 30m. It is possible to override the pitch and altitude to allow for a customized behavior.
-
-- Pitch minimum. If there was a NAV_TAKEOFF ever executed on this mission then the same pitch will be re-used here.
-- Target altitude. If NAV_LAND param1 is >0 then it is used as a target altitude in meters. Else If a NAV_TAKEOFF was ever executed on this mission then the same altitude will be re-used here.
-  
-This step is skipped if the abort trigger is via mode change because it is assumed the pilot manually took over and flew the aircraft to a safe altitude at the pitch and throttle of their choosing.
-
-.. _mission_state_after_an_aborted_landing_completes:
-
-Step 3) Mission state after an aborted landing completes
---------------------------------------------------------
-Once an abort land has completed, by either reaching the target altitude or switching back to AUTO, the mission index will have changed and you will no longer be executing a NAV_LAND command. The mission index will change to be one of these three options and checked for in this order:
-
-- If the NAV_LAND mission item is followed by mission item :ref:`CONTINUE_AND_CHANGE_ALT <mav_cmd_nav_continue_and_change_alt>` with param1 = 0 or 1 then the mission index will increment once to that command and execute it like normal. This can be followed by further post-abort mission planning for any custom planned mission behavior.
-- Else If there is a :ref:`DO_LAND_START <mav_cmd_do_land_start>` in the mission then it jumps to that index.
-- Else the mission index decrements once to be the index before the NAV_LAND. This will ensure the same landing approach is repeated.
-
-
-.. _reverse-thrust:
-
-Reverse Thrust Setup
-====================
-
-Some ESC's allow for reversing motor direction. When using reverse on the propeller it will generate a negative thrust which can be used to reduce your airspeed. During a steep landing approach this method can be used to maintain a stable and low airspeed allowing you to land much more softly and precisely. Reverse thrust can also be automatically used during automatic landings (see below) or during other throttle controlled modes to steepen descents. 
-See  :ref:`Reverse Thrust Setup<reverse-thrust-setup>` for details on setting up reverse thrust.
-
-.. warning:: enabling reverse thrust automatically sets the SERVOx_TRIM value to LOW throttle stick for the throttle output servo. SERVOx_TRIM is normally ignored, and low stick is SERVOx_MIN! Arming in this condition with an ESC not properly setup will spin-up the motor, possibly dramatically!
-
-Reverse-Thrust in AutoLanding and Throttle Controlled Modes
-===========================================================
-
-.. note:: To use this feature in automatic landings, it is highly recommend to use an airspeed sensor and a rangefinder (see above) for an accurate altitude.
-
-The below video is an example of a Skywalker X8 performing an auto-landing with a 15 degree slope. The target is the hat on the ground showing it is possible to get repeatable high precision landings where the final position error was dictated by the GPS position error. This particular aircraft has been landed at 20deg and 25deg slopes too. You may have different results depending on weight of aircraft and available thrust from motor/propeller. Typically a Skywalker X8 would need a shallow slope such at 6 to 10deg.
-
-..  youtube:: kdw8vjbttNo
-    :width: 100%
-
-.. _reverse-thrust-key-parameters:
-
-Key Parameters
---------------
-
-The key parameters that control reverse thrust landing in addition to the ones :ref:`listed in section 1.1 <automatic-landing_key_parameters>`  and :ref:` Reverse Thrust setup <-reverse-thrust>` are:
-
--  :ref:`LAND_PF_ALT <LAND_PF_ALT>`
--  :ref:`LAND_PF_SEC <LAND_PF_SEC>`
--  :ref:`LAND_PF_ARSPD <LAND_PF_ARSPD>`
--  :ref:`USE_REV_THRUST <USE_REV_THRUST>`
--  :ref:`TECS_APPR_SMAX <TECS_APPR_SMAX>`
--  ``SERVx_TRIM`` where x is the throttle output channel
--  :ref:`THR_MIN <THR_MIN>`
-
-The maximum amount of reverse thrust used in autopilot throttle controlled modes is set by :ref:`THR_MIN <THR_MIN>`. A value of -100 provides the maximum, while -20 would provide 20% of  maximum, and so on.
-
-The :ref:`USE_REV_THRUST <USE_REV_THRUST>` parameter is a bit mask that allows the setting of when reverse thrust can be activated, as when autolanding, or in other throttle controlled modes.
-
-If an RC channel's ``RCx_OPTION`` auxiliary function has been set to "64", then activating the switch will also provide access to the reverse thrust capability in non-throttle controlled modes, as shown in the :ref:`Reverse Thrust Setup<reverse-thrust-setup>` section.
-
-.. note:: Airbrakes can also be automatically deployed during reverse thrust operation. See :ref:`Airbrakes<airbrakes-on-plane>`.
-
-
-ESC (Electronic Speed Controller)
----------------------------------
-
-Most important is to set the ::ref:`SERVO3_TRIM <SERVO3_TRIM>` (assuming the esc/motor is attached to output 3)to the point that the ESC is idle, usually around mid-range (1500us) to create an output curve that has :ref:`SERVO3_MAX<SERVO3_MAX>` for full forward thrust, and :ref:`SERVO3_MIN<SERVO3_MIN>` for full reverse thrust. This should be done AFTER the RC Calibrations setup step. 
-
-Hardware selection and programming
-++++++++++++++++++++++++++++++++++
-
-Many ESCs can operate in forwards and reverse, however that is usually not a stock feature and may need to be reprogrammed to do it. Any SimonK and BLHeli compatible ESC can be flashed to support reverse thrust.
-
-`Here's info about BLHeli compatible ones <https://blhelisuite.wordpress.com/>`__.
-
-
-Hardware configuration
-++++++++++++++++++++++
-
-.. note::
-
-   Remove propeller while configuring ESCs and thrust parameters
-
-Configure your ESC for reverse thrust by changing its neutral point.
-Many ESC require custom firmware to accomplish this. Search Google or your ESC's mfgr for instructions on how to configure your particular ESC.
-
-Set  Minimum PWM to 1000, mid to 1500, and maximum to 2000, corresponding to maximum reverse thrust,idle, and maximum positive thrust from the ESC/Motor.
-
-Determining your max glide slope angle
---------------------------------------
-
-For a steep landing approach, the limitation is how well you can maintain your desired airspeed. 
-This is determined by your aircraft's ability to create reverse thrust (motor+prop thrust or airbrake drag ability) and its resistance to slowing down (aircraft mass). 
-In many cases extreme steepness is unnecessary, but possible. 
-With an over-sized motor and lightweight aircraft you can come in as steep as 60 degrees.
-
-To determine your steepest approach angle, set :ref:`TECS_APPR_SMAX <TECS_APPR_SMAX>` very high as to not limit you (e.g. 99). 
-Next, plan a mission with a steeper than normal approach (try 15 degrees and go up from there).
-Watch your airspeed on the approach - the aircraft should be able to maintain :ref:`TECS_LAND_ARSPD <TECS_LAND_ARSPD>` without exceeding 75% of the available reverse throttle range. 
-If not, you're coming in too steep for the negative-thrust-to-mass ratio of your aircraft.
-
-.. tip::
-
-   Keep in mind that whatever value you determine as your maximum may
-   not be acceptable in all wind conditions. It is best to be a little
-   conservative to maintain repeatability.
-
-Setting up the Pre-Flare
-------------------------
-
-With a rangefinder and airspeed sensors installed, at the pre-flare point we will have an accurate airspeed and altitude reading. 
-This gives us a good idea of our momentum and stable "initial conditions" to the final flare. 
-Set ``LAND_PF_ALT`` (or ``LAND_PF_SEC``) to a fairly high point (for example 10m) and adjust from there. 
-Next set ``LAND_PF_ARSPD`` to a value just above your stall speed.
-
-When LAND_PF_ALT is reached the airspeed demand will instantly go from :ref:`TECS_LAND_ARSPD <TECS_LAND_ARSPD>` to LAND_PF_ARSPD.
-This will cause it to slam on the brakes via increased reverse thrust so that the airspeed reduces to the desired airspeed.
-
-The trick is to set ``LAND_PF_ALT`` to an altitude where it
-achieves ``LAND_PF_ARSPD`` before killing the throttle at
-``LAND_FLARE_ALT`` (which occurs at a somewhat low altitude - around 1
-or 2m).
-
-Example, ``TECS_LAND_ARSPD = 15``, ``LAND_PF_ARSPD = 12``, ``LAND_PF_ALT=12``, ``LAND_FLARE_ALT=2``.
-Depending on your slope, mass of aircraft and motor+propeller thrust
-ability, you're expecting the aircraft to decelerate from 15m/s to 12m/s
-airspeed while dropping 10m to 2m. These are the critical params to adjust to
-ensure a smooth and slow flare below 2m altitude.
-
-Flare
------
-
-Now that you are starting the flare with a stable and predictable airspeed, it's much easier to :ref:`control the flare <automatic-landing_controlling_the_flare>`. 
-If you've already tuned your flare for an auto-land without reverse thrust you'll want to retune it. 
-You'll notice you're coming in much slower ad tuning will be easier. 
-The tweaks and compromises you had to do before are much easier to deal with.
-
-
-Determining actual stall speed of your aircraft
-+++++++++++++++++++++++++++++++++++++++++++++++
-
-Unless you really know what you're doing, stall speed can be hard to estimate. 
-Traditionally, to determine this true value you would need to slowly decrease your airspeed until you stall but that comes with the pesky problem that now you have a stalled aircraft falling out of the sky.
-
-With ``LAND_PF_ALT`` and ``LAND_PF_ARSPD`` you can check your stall speed much lower to the ground. 
-To know the airspeed at the exact moment it stalls, check your dataflash logs (``*.bin`` on SD card) for the airspeed (ARSP.Airspeed) when your wing loses lift and drops by comparing actual roll (CTUN.Roll) and desired roll (CTUN.NavPitch) diverge.

@@ -46,7 +46,7 @@ feature you want to head towards. Then when you let go of the rudder it
 will head straight for that point.
 
 Note that you can configure CRUISE mode to do terrain following on
-flight controllers with microSD storage available. See the
+autopilots with microSD storage available. See the
 :ref:`terrain following documentation <common-terrain-following>`.
 
 .. warning::

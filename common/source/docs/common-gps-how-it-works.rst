@@ -121,8 +121,8 @@ advanced GPS as well as a RTK base station or a Network of RTK base
 stations broadcasting corrections over a modem or Internet through the
 RTCM protocol.
 
-.. image:: ../../../images/RTK.jpg
-    :target: ../_images/RTK.jpg
+.. image:: ../../../images/rtk_c.jpg
+    :target: ../_images/rtk_c.jpg
 
 RTK is easier to use with slow motion or static applications (like
 surveying or farming) and give centimeter or millimeter precision.

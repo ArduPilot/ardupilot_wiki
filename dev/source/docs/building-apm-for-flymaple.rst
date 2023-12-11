@@ -59,9 +59,8 @@ How to build APM for Flymaple on Linux.
 ::
 
     cd ~
-    git clone https://github.com/ArduPilot/ardupilot.git
+    git clone --recurse-submodules https://github.com/ArduPilot/ardupilot.git
     cd ardupilot
-    git submodule update --init --recursive
 
 -  Now edit config.mk to be something like this:
 

@@ -122,7 +122,7 @@ MultiCopter Safety
       In the USA that is the `AMA <https://www.modelaircraft.org/>`__.
       Review the AMA `safety code <https://www.modelaircraft.org/sites/default/files/105.pdf>`__. 
       Working with the FAA and other government organizations, 
-      the AMA has established (and continues to update) rules for `First Person View (FPV) Operations <https://www.modelaircraft.org/sites/default/files/550.pdf>`__. 
+      the AMA has established (and continues to update) rules for `First Person View (FPV) Operations <https://www.modelaircraft.org/system/files/documents/550.pdf>`__. 
       If you are in the USA (or not), read these documents! The AMA has a
       strong lobbying group that will help protect our rights. 
       Get involved and support your country's model aircraft organizations -

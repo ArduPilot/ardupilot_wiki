@@ -17,7 +17,7 @@ Message Format
     :target: ../_images/mavlink-frame.png
     :width: 450px
 
-- Messages are no more than 263 bytes
+- Messages are no more than 263 bytes (Mavlink version1.0) or 280 bytes (Mavlink version 2.0).
 - The sender always fills in the ``System ID`` and ``Component ID`` fields so that the receiver knows where the packet came from.  The ``System ID`` is a unique ID for each vehicle or ground station.  Ground stations normally use a high system id like "255" and vehicles default to use "1" (this can be changed by setting the :ref:`SYSID_THISMAV <copter:SYSID_THISMAV>` parameter).  The ``Component ID`` for the ground station or flight controller is normally "1".  Other MAVLink capable device on the vehicle (i.e. companion computer, gimbal) should use the same ``System ID`` as the flight controller but use a different ``Component ID``
 - The ``Message ID`` field can be seen in the `common.xml <https://mavlink.io/en/messages/common.html>`__ and `ardupilot.xml <https://mavlink.io/en/messages/ardupilotmega.html>`__ next to the message name.  For example the `HEARTBEAT <https://mavlink.io/en/messages/common.html#HEARTBEAT>`__ message Id is "0"
 - The ``Data`` portion of the message holds the individual field values being sent
@@ -40,7 +40,7 @@ High Level Message Flow
 
 MAVLink1 vs MAVLink2
 --------------------
-
+- MAVLink2 messages have a maximum of 280 bytes of length, as they implement compatibility flags and support for signature.
 - MAVLink2 extends MAVLink1 by allowing new fields to be added to existing MAVLink1 messages, supports new messages with ``Message ID`` over "255" and adds support for signing messages
 - MAVLink2 is backwards compatible with MAVLink1 meaning that if a device understands MAVlink2 messages it certainly understands MAVLink1 messages
 - If a device only capable of understanding MAVLink1 receives a message that includes additional fields (added under MAVLink2) the device will only see the original fields.  I.e. the device will be able to read the message but will not "see" the additional fields

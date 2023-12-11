@@ -4,10 +4,9 @@
 Loading Firmware onto boards without existing ArduPilot firmware
 ================================================================
 
-Recent versions of ArduPilot (Copter-3.6, Plane-3.9, Rover-3.5) run on relatively small, non-Pixhawk, autopilots using the ChibiOS operating system.
-Examples of these boards include the :ref:`OpenPilot RevoMini <common-openpilot-revo-mini>`, :ref:`Mateksys F405-Wing <common-matekf405-wing>` and :ref:`Omnibus F4 Pro <common-omnibusf4pro>`.
+ArduPilot now uses the ChibiOS operating system for all autopilots, including the many smaller boards targeted for multicopter racing applications.
 
-Most often, these boards have another flight controller software pre-installed. (If the board has ArduPilot already installed, see :ref:`common-loading-firmware-onto-pixhawk` for firmware loading instructions.
+Often, these boards have another autopilot software pre-installed. (If the board has ArduPilot already installed, see :ref:`common-loading-firmware-onto-pixhawk` for firmware loading instructions.)
 
 Installing ArduPilot to these autopilot involves:
 
@@ -136,3 +135,62 @@ Upload ArduPilot to the board
 
 
 You may now reboot the board and :ref:`connect with your favourite ground station <common-connect-mission-planner-autopilot>` (Mission Planner, QGC, etc) and future firmware uploads should also be possible using the normal method for Pixhawk boards.
+
+Loading firmware onto Boards with external flash
+================================================
+
+Some recent boards, most notably those from Seriously Pro Racing (http://www.seriouslypro.com/), use MCUs with small amounts of internal flash but with much larger externally connected flash chips. These boards require extra steps to load ArduPilot firmware. Typically some kind of bootloader resides on the internal flash and then the main firmware resides on the external flash.
+
+Loading firmware using SSBL
+---------------------------
+
+The SPRacing series of boards come pre-installed with a proprietary bootloader on the internal flash and require the use of a second stage bootloader to load further firmware. There are a couple of options to load firmware with these boards, but whichever option you choose you will need to initially load ArduPilot using SSBL. Please follow the "INSTALLATION" instructions at https://github.com/spracing/ssbl in order to load SSBL onto your board. Once SSBL is loaded please follow the PX4 instructions to load ArduPilot onto the board https://github.com/spracing/ssbl#px4-installation-to-external-flash but instead of using PX4 firmware please use the arducopter.bin firmware image. A summary of the steps follows:
+
+- Download https://github.com/spracing/ssbl/releases and install SSBL to external flash following https://github.com/spracing/ssbl#installation-to-external-flash
+- Download the latest ArduPilot external flash binary, for instance https://firmware.ardupilot.org/Copter/latest/SPRacingH7/arducopter.bin
+- Use dd to pad the binary to 2MB:
+
+.. code-block:: none
+
+   dd if=/dev/zero ibs=1k count=2048 of=AP_2MB.bin
+   dd conv=notrunc if=arducopter.bin of=AP_2MB.bin
+   
+- Put the board into SSBL dfu mode - power off, hold BIND (not BOOT), power on - LED flashes fast, release BIND, LED flashed slow - DFU mode enabled
+- Flash the binary using
+
+.. code-block:: none
+
+   dfu-util -D AP_2MB.bin -s 0x90100000:0x200000
+
+- Verify the flash. The dfu-util command below copies the contents of the flash back to the computer, the diff command will tell you if the contents are identical or different. Do not attempt to fly if diff doesn't say the files are identical - retry.
+
+.. code-block:: none
+
+   dfu-util -U AP_2MB-VERIFY.bin -s 0x90100000:0x200000
+   diff -sb AP_2MB.bin AP_2MB-VERIFY.bin
+
+- Power off, install an SD card (.note: you *must* install an SD card, the firmware will not boot without it), power on
+- Configure the board as normal using Mission Planner
+
+At this point you should have working firmware on the board. If you want to load new firmware you will need to follow steps 2-7 again (you cannot use Mission Planner to load firmware). If you are certain that you will never want to load betaflight on the board then you can install the ArduPilot bootloader.
+
+Installing the ArduPilot bootloader
+-----------------------------------
+
+.. warning:: installing the ArduPilot bootloader is a one-way operation. You cannot restore the board to factory configuration or load betaflight after this step - you would have to return the board to Seriously Pro to be re-flashed with factory firmware, assuming that is possible
+
+**If you are certain that you only want to use ArduPilot on the board**, then flashing the ardupilot bootloader enables much simpler subsequent upgrades.
+
+- You must initially have a working version of ArduPilot installed on the board - follow the steps above.
+- You now must remove the copy protection on the internal flash. This is a destructive operation requiring complete erasure of the flash. ArduPilot provides support to make this easy. Set :ref:`BRD_OPTIONS<BRD_OPTIONS>` = 16.
+- Power off and power on the board. The board will not appear to boot but the flash sector is being erased. Wait a few seconds and then power off the board.
+- Hold down the ``boot`` button (boot *not* bind this time) and power on the autopilot. This will put the board in dfu mode.
+- Download the ArduPilot bootloader, e.g. https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/SPRacingH7_bl.bin
+- Install the bootloader via dfu:
+
+.. code-block:: none
+
+   dfu-util -a 0 --dfuse-address 0x08000000 -D SPRacingH7_bl.bin
+
+- Reboot the board.
+- You can now use your favorite tool to upload the ArduPilot firmware

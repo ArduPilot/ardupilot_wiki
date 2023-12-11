@@ -40,19 +40,18 @@ window.
    
    
 .. toctree::
-    :maxdepth: 1
-    :hidden:
+   :maxdepth: 1
+   :hidden:
 
-    Flight DATA Screen Overview<mission-planner-ground-control-station>
-    Flight PLAN Screen<mission-planner-flight-plan>
-    SETUP Screen <mission-planner-initial-setup>
-    CONFIGuration and Tuning Screens <mission-planner-configuration-and-tuning>
-    SIMULATION Screen <mission-planner-simulation>
-    Logs <common-logs>
-    Advanced Mission Planner Features <other-mission-planner-features>
-    Language Translations <mission-planner-language-translations>
-    Compass Calibration <common-compass-calibration-in-mission-planner>
-    Accelerometer Calibration <common-accelerometer-calibration>
-    Radio Control Calibration <common-radio-control-calibration>
-    RC Transmitter Flight Mode Configuration <common-rc-transmitter-flight-mode-configuration>
-    
+   Flight DATA Screen Overview<mission-planner-ground-control-station>
+   Flight PLAN Screen<mission-planner-flight-plan>
+   SETUP Screen <mission-planner-initial-setup>
+   CONFIGuration and Tuning Screens <mission-planner-configuration-and-tuning>
+   SIMULATION Screen <mission-planner-simulation>
+   Logs <common-logs>
+   Advanced Mission Planner Features <other-mission-planner-features>
+   Language Translations <mission-planner-language-translations>
+   Compass Calibration <common-compass-calibration-in-mission-planner>
+   Accelerometer Calibration <common-accelerometer-calibration>
+   Radio Control Calibration <common-radio-control-calibration>
+   RC Transmitter Flight Mode Configuration <common-rc-transmitter-flight-mode-configuration>

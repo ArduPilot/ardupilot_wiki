@@ -31,3 +31,7 @@ In parts of the code where loops are running very quickly it may be necessary to
 
 .. image:: ../images/debug-with-send-text.png
     :target: ../_images/debug-with-send-text.png
+
+here is a video illustrating this and yet another way to do it"
+
+.. youtube:: 5nQiY_q_ZVA

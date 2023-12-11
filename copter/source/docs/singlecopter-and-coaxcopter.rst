@@ -43,7 +43,7 @@ Connect the servos to the autopilot's outputs, normally used in Copter for motor
 Loading the Firmware
 --------------------
 
-As of Copter-3.5.x all of the multicopter firmware (quad, hexa, octa, octaquad, y6, tri, single, coax) including single and coax copter have been consolidated into a single firmware.
+All of the multicopter firmware (quad, hexa, octa, octaquad, y6, tri, single, coax) including single and coax copter have been consolidated into a single firmware.
 This means the quad (or other multicopter) firmware should be loaded onto the autopilot and then please set:
 
 - :ref:`FRAME_CLASS <FRAME_CLASS>` to 8 for SingleCopter or 9 for CoaxCopter
@@ -103,5 +103,5 @@ The vehicle below has two motors mounted back to back with one propeller above a
 .. image:: ../images/P1060929.jpg
     :target: ../_images/P1060929.jpg
 
-..  youtube:: FFiPbyigxVI#t=40
+..  youtube:: FFiPbyigxVI&t=40s
     :width: 100%

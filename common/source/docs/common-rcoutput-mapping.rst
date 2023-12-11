@@ -7,7 +7,11 @@ Autopilot Output Functions
 
 All autopilot servo/motor outputs may be mapped to any output function supported by
 ArduPilot. This page describes how to configure these output channels and what each
-of the available functions is.
+of the available functions that can be assigned to an output are.
+
+ArduPilot supports up to 32 outputs. These may be via DroneCAN ESCs or directly from autopilot outputs, or a mixture of both.
+
+.. note:: see the left sidebar menu for major output categories to navigate to desired functions on this page quickly.
 
 The SERVOn_FUNCTION parameters
 ------------------------------
@@ -81,6 +85,38 @@ GENERIC FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |      RCPassThru16              | 66 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
+|      RCIN1Scaled               |140 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN2Scaled               |141 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN3Scaled               |142 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN4Scaled               |143 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN5Scaled               |144 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN6Scaled               |145 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN7Scaled               |146 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN8Scaled               |147 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN9Scaled               |148 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN10Scaled              |149 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN11Scaled              |150 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN12Scaled              |151 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN13Scaled              |152 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN14Scaled              |153 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN15Scaled              |154 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
+|      RCIN16Scaled              |155 |        Plane, Copter, Rover           |
++--------------------------------+----+---------------------------------------+
 
 Disabled
 ++++++++
@@ -110,6 +146,18 @@ RCPassThru1 to RCPassThru16
 +++++++++++++++++++++++++++
 
 This operates the same as RCPassThru explained above. However, instead of the ``SERVOx`` output being controlled by the ``RCx`` input, any RC input can be assigned to control this output. For example RCPassThru 1 (51) would assign RC Channel 1 input to control the output. So, for output 1, assigning 51 to the :ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>` is identical to assigning  the value of 1 passing RC Channel 1 to the output.
+
+RCIN1Scaled to RCIN16Scaled
++++++++++++++++++++++++++++
+
+This operates similar to RCPassThru1 to RCPassThru16 above. However, instead of exactly passing the received PWM to the output, its is scaled.The RC input's dead-zone(DZ) is also obeyed.
+
+The upper PWM range from the input trim value to its maximum input is translated to its corresponding output's trim to maximum parameter values range, and similarly for the ranges below the input's trim value as shown below:
+
+.. image:: ../../../images/rcscaled-io.jpg
+   :target: ../_images/rcscaled-io.jpg
+   
+.. note:: the SERVOx_MIN/MAX values can be larger than what Mission Planner allows in some presentations. Use the CONFIG/Full Parameter Tree view to set parametes beyong their normal "safe" ranges.
 
 PLANE FUNCTIONS (Also applies to QuadPlanes)
 --------------------------------------------
@@ -160,6 +208,8 @@ PLANE FUNCTIONS (Also applies to QuadPlanes)
 |      Motor Enable Switch       | 30 |    Copter, QuadPlane                  |
 +--------------------------------+----+---------------------------------------+
 |      Landing Gear              | 29 |    Copter, Plane                      |
++--------------------------------+----+---------------------------------------+
+|      AirBrakes                 |110 |    Plane                              |
 +--------------------------------+----+---------------------------------------+
 
 Aileron
@@ -234,12 +284,12 @@ component of the output.
 Elevon Left/ Right
 ++++++++++++++++++
 
-Provides outputs for :ref:`Elevons <guide-elevon-plane>` .
+Provides outputs for :ref:`Elevons <guide-elevon-plane>`.
 
 V-tail Left/ Right
 ++++++++++++++++++
 
-Provides outputs for :ref:`guide-vtail-plane` .
+Provides outputs for :ref:`guide-vtail-plane`.
 
 Differential Spoilers Left/Right
 ++++++++++++++++++++++++++++++++
@@ -271,6 +321,11 @@ Landing Gear
 ++++++++++++
 
 This output controls the landing gear servo(s) in Copter and Plane. See :ref:`landing-gear` for more information.
+
+Airbrakes
++++++++++
+
+This output is for air brake control. Manual input control is via ``RCx_OPTION`` = 210. For more information see :ref:`airbrakes-on-plane`.
 
 COPTER / QUADPLANE FUNCTIONS
 ----------------------------
@@ -338,13 +393,12 @@ Motors 1 - 12
 
 
 
-These are the Copter and QuadPlane VTOL motor outputs. For Multi-Copters, see :ref:`Motor Order Diagrams<connect-escs-and-motors>` . Or see :ref:`Traditional Helicopter <traditional-helicopter-connecting-apm>`, or :ref:`singlecopter-and-coaxcopter`, or :ref:`heliquads`.
+These are the Copter and QuadPlane VTOL motor outputs. For Multi-Copters, see :ref:`Motor Order Diagrams<connect-escs-and-motors>`. Or see :ref:`Traditional Helicopter <traditional-helicopter-connecting-apm>`, or :ref:`singlecopter-and-coaxcopter`, or :ref:`heliquads`.
 
 [site wiki="copter"]
 .. note::
 
    It is only possible to modify the output channel used, it is not possible to redefine the direction the motor spins with these parameters.
-   Copter-3.5 (and earlier) do not support assigning the same function to multiple output channels but this feature will be present in Copter-3.6 (and higher).
 [/site]
 
 For QuadPlanes, see :ref:`quadplane-frame-setup` for motor output configuration.
@@ -449,9 +503,9 @@ CAMERA/GIMBAL FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |       Function                 | ID |        Available in:                  |
 +--------------------------------+----+---------------------------------------+
-|      Mount Pan                 | 6  |    Plane, Copter, Rover               |
+|      Mount Yaw                 | 6  |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
-|      Mount Tilt                | 7  |    Plane, Copter, Rover               |
+|      Mount Pitch               | 7  |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
 |      Mount Roll                | 8  |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
@@ -459,9 +513,9 @@ CAMERA/GIMBAL FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |      Camera Trigger            | 10 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
-|      Mount2 Pan                | 12 |    Plane, Copter, Rover               |
+|      Mount2 Yaw                | 12 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
-|      Mount2 Tilt               | 13 |    Plane, Copter, Rover               |
+|      Mount2 Pitch              | 13 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
 |      Mount2 Roll               | 14 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
@@ -476,8 +530,8 @@ CAMERA/GIMBAL FUNCTIONS
 |      Camera Shutter Speed      | 93 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
 
-Mount Pan/Tilt/Roll/Deploy
-++++++++++++++++++++++++++
+Mount Yaw/Pitch/Roll/Deploy
++++++++++++++++++++++++++++
 
 These control the output channels for controlling a servo gimbal. Please
 see the :ref:`camera gimbal configuration documentation <common-camera-gimbal>` for details.
@@ -511,12 +565,12 @@ INTERNAL COMBUSTION ENGINE FUNCTIONS
 Ignition/Starter/Choke
 ++++++++++++++++++++++
 
-For control of an internal combustion engine's spark plug/igniter, starter motor, and choke. See :ref:`common-ice` .
+For control of an internal combustion engine's spark plug/igniter, starter motor, and choke. See :ref:`common-ice`.
 
 NEOPIXEL LED STRINGS
 --------------------
 
-:ref:`Neopixel LEDs/Strings<common-serial-led-neopixel>` can be controlled using ``Function IDs 120-124``, thereby supporting up to four strings independently controlled. These may be used for ArduPilot notifications and warnings (See :ref:`common-ntf-devices` ) or controlled via LUA scripting (See :ref:`common-lua-scripts`.
+:ref:`Neopixel LEDs/Strings<common-serial-led-neopixel>` can be controlled using ``Function IDs 120-123``, thereby supporting up to four strings independently controlled. These may be used for ArduPilot notifications and warnings (See :ref:`common-ntf-devices` ) or controlled via LUA scripting (See :ref:`common-lua-scripts`.
 This is available in all vehicles.
 
 ProfiLEDs
@@ -554,7 +608,7 @@ This is an output for controlling a servo or electromagnetic gripper for holding
 Sprayer Pump/Mixer
 ++++++++++++++++++
 
-These outputs are controlling a :ref:`sprayer` .
+These outputs are controlling a :ref:`sprayer`.
 
 Output SERVOn MAX/MIN/TRIM
 ++++++++++++++++++++++++++
@@ -564,7 +618,7 @@ Continuously outputs the parameter value set for that output. Used in button det
 GENERAL PURPOSE LUA SCRIPTING OUTPUTS
 -------------------------------------
 
-:ref:`Lua Scripts <common-lua-scripts>` can also directly control autopilot outputs. Using ``Function IDs 94-106`` provides the ability to configure up to 16 of these outputs, if the autopilot is capable. This is available in all vehicles.
+:ref:`Lua Scripts <common-lua-scripts>` can also directly control autopilot outputs. Using ``Function IDs 94-109`` provides the ability to configure up to 16 of these outputs, if the autopilot is capable. This is available in all vehicles.
 
 INTERNAL CONTROLLER ACCESS
 --------------------------

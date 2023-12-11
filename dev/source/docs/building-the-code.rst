@@ -4,7 +4,7 @@
 Building the code
 =================
 
-The linked articles below explain how to setup your build environment on Linux/Ubuntu, MacOS or Windows and then build ArduPilot with either `waf <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ or make.
+The linked articles below explain how to setup your build environment on Linux/Ubuntu, MacOS or Windows and then build ArduPilot with `waf <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
 The instructions below assume that you have already :ref:`installed git <git-install>`, :ref:`forked <git-fork>` and :ref:`cloned <git-clone>` the ArduPilot repo.
 
@@ -18,18 +18,19 @@ Setting up the Build Environment
 Building / Compiling
 --------------------
 
-ArduPilot currently supports two build systems, `waf <https://waf.io/>`__ and **make** with waf being the recommended option because it allows building for all boards.
-In most cases the build dependencies described for **waf** and **make** are the same, the only part of the instructions that changes is the build command. 
-
 **Linux / MacOSX users:**
 
 - Linux and MacOSX users should build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
+
+.. note::
+
+   Do not use `sudo` unless specified in the instructions.
 
 .. youtube:: lNSvAPZOM_o
 
 **Windows users:**
 
-- Windows users should fellow the directions described on :ref:`Setup Build Environment on Windows <building-setup-windows>`.
+- Windows users should follow the directions described in :ref:`Setup Build Environment on Windows <building-setup-windows10>`. This creates a Linux-like environment called WSL/WSL2 from which the user can setup the build environment as explained in :ref:`Setup the Build Environment on Linux/Ubuntu <building-setup-linux>` and then use the instructions in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
 **Board specific instructions:**
 
@@ -45,8 +46,8 @@ Mission Planner
 
 
 
-Links to current build pages
-----------------------------
+Links to other pages of interest or advanced topics
+---------------------------------------------------
 
 .. toctree::
     :maxdepth: 1

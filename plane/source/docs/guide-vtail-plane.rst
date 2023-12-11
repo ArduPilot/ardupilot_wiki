@@ -85,7 +85,7 @@ at a time to avoid confusion.
    <tr><td>Incorrect for both movements (pitch and roll)</td><td>Change the reversal of that channel</td><tr>
    </table>
 
-.. note:: :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` mut not be set to 0 for rudder setup. If the 
+.. note:: :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` must not be set to 0 for rudder setup. If the 
           plane actually needs 0, then reset it after this setup.
 
           :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` should cause the tail surfaces point in the 
@@ -161,7 +161,7 @@ are used:
 - LEFT_VTAIL = (yaw+pitch)*0.5
 - RIGHT_VTAIL = (-yaw+pitch)*0.5
 
-Adjusting the :ref:`MIXING_GAIN<MIXING_GAIN>` controls the percentabe of throws from pitch vs yaw.
+Adjusting the :ref:`MIXING_GAIN<MIXING_GAIN>` controls the percentage of throws from pitch vs yaw.
 
 Final Setup
 ===========
@@ -169,5 +169,5 @@ Final Setup
 After completing the V-Tail guide, move onto the final setup of
 the aircraft.
 
-- :ref:`ESC Calibration <guide-esc-calibration>`
+- :ref:`ESC Calibration <common-esc-calibration>`
 - :ref:`Center of Gravity <guide-center-of-gravity>`

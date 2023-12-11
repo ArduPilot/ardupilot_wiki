@@ -7,12 +7,14 @@ Stores
 The following stores are known to stock quality versions of the controllers, telemetry radios, cables etc.
 recommended for use with ArduPilot (in alphabetical order).  You may also want to check the list of :ref:`Ready-to-Use vehicles <common-rtf>`.
 
+* `ADTi <https://www.adti.camera/>`__
 * `AION ROBOTICS <https://www.aionrobotics.com>`__
 * `Air-Supply Aerial <https://www.airsupply.com>`__
 * `AltiGator <http://www.altigator.com/>`__
+* `ArduSimple <https://www.ardusimple.com/>`__
 * `Bask Aerospace <https://baskaerospace.com.au/>`__
 * `Benewake <https://beixingguangzi.en.alibaba.com/>`__
-* `Beili Electronics <https://www.blicube.com/>`__
+* `Blicube <https://www.blicube.com/>`__
 * `BlueRobotics <https://www.bluerobotics.com/store/>`__
 * `BZB UAS <https://bzbuas.com/>`__
 * `Craft & Theory <http://www.craftandtheoryllc.com/store/>`__ (FrSky telemetry, MAUCH power modules)
@@ -31,6 +33,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Qiotek <http://www.qio-tek.com/>`__
 * `RF Design <http://store.rfdesign.com.au/>`__
 * `Rotoye <https://rotoye.com/>`__ (Smart Batteries)
+* `SD Model <https://www.sdmodel.com.tw/>`__
 * `Sky-Drones <https://sky-drones.com/store>`__
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
 * `uAvionix <https://uavionix.com/>`__

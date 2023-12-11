@@ -12,8 +12,8 @@ This page explains how MAVLink can be used by a ground station or companion comp
 
 The MAVLink enums for flight modes can be found `here <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml#L1007>`__
 
-Get the Flightmode with HEATBEAT
---------------------------------
+Get the Flightmode with HEARTBEAT
+---------------------------------
 
 The vehicle's current flight mode is sent once per second within the `HEARTBEAT <https://mavlink.io/en/messages/common.html#HEARTBEAT>`__ message's custom_mode field.  The flightmode number varies by vehicle type (e.g. Copter, Plane, Rover, etc) so please refer to the links above to convert the custom_mode number to a human readable flightmode name.
 

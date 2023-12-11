@@ -320,7 +320,7 @@ Stops motors immediately
    <td>
 
 Opposite of Emergency stop (above) in that switch must be ON for motors
-to spin (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__).
+to spin (`video <https://youtu.be/-Db4u8LJE5w&t=51s>`__).
 
 .. raw:: html
 

@@ -5,23 +5,24 @@ ACRO Mode
 =========
 
 ACRO (for acrobatic) is a mode for advanced users that provides rate
-based stabilization with attitude lock. It is a good choice for people
+based stabilization with optional attitude lock. It is a good choice for people
 who want to push their plane harder than you can in :ref:`FLY BY WIRE A (FBWA) <fbwa-mode>` or :ref:`STABILIZE <stabilize-mode>` mode without
 flying in :ref:`MANUAL <manual-mode>`. This is the mode to use for rolls,
 loops and other basic aerobatic maneuvers, or if you just want an "on
 rails" manual flying mode.
 
-To setup this mode you need to set :ref:`ACRO_ROLL_RATE <ACRO_ROLL_RATE>`
-and :ref:`ACRO_PITCH_RATE <ACRO_PITCH_RATE>`.
-These default to 180 degrees/second, and control how responsive your
-plane will be about each axis.
+.. note:: rate stabilization is not enabled by default for the YAW axis. Set :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1 to enable yaw axis rate stabilization. Be careful since this will prevent any turns by aileron alone and require application of rudder also to turn. Also, do not enable this if the plane has no yaw control.
 
-When flying in ACRO the aircraft will try to hold its existing attitude
+To use this mode you need to set up :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` (if using yaw rate controller), :ref:`ACRO_ROLL_RATE <ACRO_ROLL_RATE>`
+and :ref:`ACRO_PITCH_RATE <ACRO_PITCH_RATE>`. These default to 180 degrees/second (and 0, ie no limit, for yaw.However, for AUTOTUNE on yaw axis to work, it must be set to a non-zero value. 90 degrees/second is suggested), and control how responsive your
+plane will be about each axis. It is also necessary to have the plane tuned well (see :ref:`tuning-quickstart`)
+
+When flying in ACRO the aircraft will resist changes to its existing attitude
 if you have no stick input. So if you roll the plane to a 30 degree bank
 angle with 10 degrees pitch and then let go of the sticks, the plane
-should hold that attitude. This applies upside down as well, so if you
+should hold that attitude short term. This applies upside down as well, so if you
 roll the plane upside down and let go of the sticks the plane will try
-to hold the inverted attitude until you move the sticks again.
+to hold the inverted attitude short term or until you move the sticks again.
 
 .. note:: the internal controllers will resist attitude changes, but drift due to turbulence or miss-trimming will result in gradual attitude changes. See ACRO MODE ATTITUDE LOCKING section below.
 
@@ -34,13 +35,9 @@ plane will start rolling at half of ``ACRO_ROLL_RATE``.
 
 So to perform a simple horizontal roll, just start in level flight then
 hold the aileron stick hard over while leaving the elevator stick alone.
-The plane will apply elevator correction to try to hold your pitch while
-rolling, including applying inverse elevator while inverted.
-
-In the current implementation the controller won't use rudder while the
-plane is on its side to hold pitch, which means horizontal rolls won't
-be as smooth as a good manual pilot, but that should be fixed in a
-future release. This also means that it won't hold knife-edge flight.
+The plane will apply elevator correction to try to resist pitch changes while
+rolling, including applying inverse elevator while inverted. But to exactly hold the
+pitch attitude during multiple rolls without drift, :ref:`ACRO_LOCKING<ACRO_LOCKING>` must be enabled.
 
 Performing a loop is just as simple - just start with wings level then
 pull back on the elevator stick while leaving the aileron alone. The
@@ -61,8 +58,7 @@ flying then it is highly recommended that you setup a
    correct stall recovery procedure is. This varies a lot between
    airframes. Search for stall recovery tutorials for R/C aircraft and
    read them
--  don't overload your airframe, only fly ACRO mode with a lightly
-   loaded plane
+-  don't overload your airframe, only fly ACRO mode with a plane capable of surviving full control surface deflections at any speed.
 -  make sure you have enough airspeed for whatever maneuver you are
    attempting. Throttle and speed control is completely under manual
    pilot control in ACRO mode
@@ -79,6 +75,8 @@ ACRO MODE ATTITUDE LOCKING
 ==========================
 
 By enabling the :ref:`ACRO_LOCKING<ACRO_LOCKING>` parameter, whatever attitude (roll and pitch angle) the pilot places the plane in, upon releasing the sticks, the autopilot will not only resist rate changes (caused by trim or turbulence), but also attempt to hold and correct back to that attitude. Note that his requires that the plane be properly tuned (see :ref:`Tuning<common-tuning>` ).
+
+It is recommended that it be set to "2", instead of "1", in order to use a quarternion based control system with much better performance than the older system. In order for this to be effective, yaw rate control (:ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>`) must be "1" and the yaw rate controller tuned using :ref:`Autotune <automatic-tuning-with-autotune>` for best performance.
 
 ACRO Mode YAW Rate Control
 ==========================

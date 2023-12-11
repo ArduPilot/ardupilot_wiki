@@ -33,6 +33,11 @@ value to users with old hardware.
 [site wiki="copter,plane,rover"]
     Edge Quick Start <common-edge-quick-start>
     Skysight Mono Camera Trigger <common-camera-trigger-skysight-mono>
+    PPM Encoders <common-ppm-encoder-8-channel-standalone-encoder>
+    PPM Encoder <common-ppm-encoder>
+    common-toshiba-can-escs
+    common-tarot-gimbal
+    DROTAG x Geotagger <common-geotagging-drotagx>
 [/site]
 [site wiki="copter"]
     Boat Mode <boat-mode>
@@ -65,6 +70,7 @@ value to users with old hardware.
     Sonar Sensors <sonar-sensors>
     Tuning Steering and Navigation (ver 3.1 and older) <tuning-steering-and-navigation-for-a-rover>
     Tuning Waypoint Turn Speed (ver 3.1 and older) <speed-turn-parameter-tuning>
+    ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
 [/site]
 
 [site wiki="plane"]
@@ -73,6 +79,7 @@ value to users with old hardware.
     Normal/Elevon/VTail Mode & Reversing Servos <reversing-servos-and-setting-normalelevon-mode>
     Channel Output Functions <channel-output-functions>
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
+    LAND mode <land-mode>
 [/site]
 [site wiki="dev"]
 .. toctree::
@@ -106,6 +113,13 @@ value to users with old hardware.
     How to sign a Pixhawk with your Certificate of Authenticity <how-to-use-the-auth-command-to-sign-a-pixhawk-board-with-your-certificate-of-authenticity>
     SITL Serial Mapping <sitl-serial-mapping>
     2020/2021 Roadmap <roadmap>
+    Trouble Shooting Pixhawk4 Boot <troubleshooting-pixhawkpx4-boot>
+[/site]
+[site wiki="copter,rover"]
+.. toctree::
+    :maxdepth: 1
+
+    Visual Odometry with OpenKai and ZED <common-zed>
 [/site]
 
 

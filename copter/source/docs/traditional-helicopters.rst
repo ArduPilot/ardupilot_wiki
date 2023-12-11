@@ -31,16 +31,10 @@ Canberra Team in Australia.
 .. toctree::
     :maxdepth: 1
 
-    Suggested Parts List <traditional-heli-parts-list>
-    Loading the Firmware <loading-the-code>
-    Mounting the Autopilot <trad-heli-mounting>
-    Helicopter Parameter List at a Glance <traditional-helicopter-parameter-list>
-    Connecting and Calibration <traditional-helicopter-connecting-apm>
-    Swashplate Setup <traditional-helicopter-swashplate-setup>
-    Rotor Speed Control Setup <traditional-helicopter-rsc-setup>
-    Internal Rotor Speed Governor <traditional-helicopter-internal-rsc-governor>
-    Pre-Flight Testing <trad-heli-preflight-testing>
-    First Flight Tests <traditional-helicopter-first-flight-tests>
-    Tuning <traditional-helicopter-tuning>
+    First Time Setup <traditional-helicopter-first-time-setup>
+    First Flights and Tuning <traditional-helicopter-first-flight>
+    Autorotation <traditional-helicopter-autorotation>
+    Dual Helicopters <dual-helicopter>
+    HeliQuads <heliquads>
     Tips <traditional-helicopter-tips>
     ArduPilot Helicopter Ground School <traditional-helicopter-configuration>

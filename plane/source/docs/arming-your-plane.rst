@@ -23,7 +23,7 @@ crash.
 
    This feature in no way removes the need to respect the
    prop! When the plane is powered, ALWAYS avoid placing hands in
-   the vicinity of the propellor, even when the throttle is
+   the vicinity of the propeller, even when the throttle is
    disarmed. If all is not well with the autopilot electronics or software
    there is always a slight possibility that signal could unintentionally
    reach the motor. Even though this is unlikely (and made even less likely
@@ -78,8 +78,8 @@ When you are ready to fly you can ask Plane to arm. This can be done in
 three ways:
 
 -  **Rudder Arming**. Hold the rudder stick fully to the right and the
-   throttle stick fully down for 2 seconds.
--  **Arming Switch**. An RC channel can be configured as an ARM/DISARM switch by using the RCx_OPTION for that channel set to 41.
+   throttle stick fully down for 3 seconds.
+-  If setup, you can use one of the **RC_xOPTION switches** that includes that function. See switch option "153", "154, or "160".
 -  **GCS Arming**. Press the arming button on your ground station
 
 .. figure:: ../../../images/armingButtonMissPlan.jpg
@@ -87,10 +87,12 @@ three ways:
 
    Location of the Arm/Disarm button in Mission Planner (button circled in red near the bottom of the image).
 
+.. note:: Plane does not allow arming in RTL, QRTL, or QLAND modes. Arming in other throttle controlled modes, like LOITER,CRUISE,etc. is possible, but only if actually flying (ie after an accidental inflight disarm, watchdog reset, etc.)
+
 How to Disarm
 =============
 
--  If setup, you can use the **ARM/DISARM** RC_xOPTION switch.
+-  If setup, you can use one of the ``RC_xOPTION`` switches that includes that function. See switch option "81", "153, or "154".
 
 .. warning:: This is **UNCONDITIONAL**. If done while in flight, all motors disarm and you must have throttle at idle before re-arming can occur!
 
@@ -101,7 +103,7 @@ pilots while flying so there are additional requirements prior to disarm:
 
 -  You need to allow rudder disarming by changing **ARMING_RUDDER**
    parameter to 2 (ArmOrDisarm) or use the ARM/DISARM switch function provided by 
-   setting an RC channel's RCx_OPTION to 41.
+   setting an RC channel's RCx_OPTION to 153.
 -  The autopilot needs to make sure that you are not actually
    flying. There is an algorithm for this that uses the **airspeed sensor**
    readings. So you need this source available and giving values lower
@@ -152,6 +154,13 @@ Diagnosing failure to arm
 
 It can be frustrating if your plane refuses to arm. To diagnose arming
 issues follow this guide
+
+In Landing Sequence Pre-Arm Failure
+-----------------------------------
+
+If the last mission item was a landing sequence or land command, then arming is prevented and a "Prearm: In Landing Sequence" message is presented. This can occur after an autoland, or if the autopilot is booted before RC is established and the failsafe mode uses a landing sequence (ie :ref:`do-land-start` and :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` is set, QLAND, etc.). 
+
+This may be cleared by restarting the mission using the GCS or :ref:`common-auxiliary-functions` switch, or rebooting with RC active.
 
 Check that it is ready to arm
 -----------------------------

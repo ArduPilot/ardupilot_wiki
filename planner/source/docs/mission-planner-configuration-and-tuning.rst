@@ -1,12 +1,12 @@
 .. _mission-planner-configuration-and-tuning:
 
 ========================================
-Mission Planner CONFiguration and Tuning
+Mission Planner Configuration and Tuning
 ========================================
 
 This section of Mission Planner, invoked by the Menu item ``CONFIG``
 at the top of Mission Planner, has several subsections. The subsection
-are where you configure the parameters that control how your auto pilot
+are where you configure the parameters that control how your autopilot
 controls your vehicle.
 
 Tuning refers to adjusting parameters in the control loops so your vehicle behaves the way you desire. Most of these parameters are set for you when you first install your firmware but some
@@ -17,7 +17,7 @@ What you see when you enter this section depends on whether or not you are conne
 Planner
 =======
 
-You will see this menu item if the auto pilot is or is not connected. when disconnected, this will be the only item that is active.
+You will see this menu item if the autopilot is or is not connected. when disconnected, this will be the only active item.
 
 This is where you set up most of the options related to Mission Planner
 appearance and operation. Such things as enabling speech, where the logs are saved, the
@@ -35,7 +35,7 @@ GeoFence (Copter only)
 
 This allows configuration of the various Fence/Exclusion Zone/Inclusion Zone parameters. The coordinates of these fences are setup and saved via the PLAN screen. For Plane and Rover, these associated fence parameter must be set manually via the Full Parameter Screen described below. 
 
-For more information on Geo-Fences, see :ref:`geofencing` , or :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence` for Copter and Rover.
+For more information on Geo-Fences, see :ref:`geofencing`, or :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence` for Copter and Rover.
 
 
 Basic Tuning
@@ -51,12 +51,12 @@ For Copter, the Basic Tuning screen is very simple to enable an easy way for beg
 Standard Params
 ===============
 
-This screen provides access to parameters which are most commonly adjusted by users to alter the behavior of the vehicle for each individual application.
+This screen provides access to parameters that most commonly adjusted by users to alter the behavior of the vehicle for each application.
 
 Advanced Params
 ===============
 
-This screen provide access to many parameters not normally adjusted by the average user, but by more advance users.
+This screen provides access to many parameters not normally adjusted by the average user, but by more advanced users.
 
 OnBoard OSD
 ===========
@@ -87,7 +87,7 @@ Displays every parameter of the connected vehicle. Allows any parameter to be ch
 - Refresh Params: Reload the parameter list from the autopilot. Often this is required, to display a group of parameters that were just enabled, such when you enable Q_ENABLE (QuadPlane enable mode) on Plane, or a battery monitor.
 - Compare Params: Compares current parameters on the screen (including modified but not saved yet) to a file, and allows selection of which will be modified to that file's value.
 
-.. note:: An important aspect of the Compare Params feature: After you select the file with the saved parameters you want to compare, you will get a window that lists every parameter that is different. At this point nothing has been changed, but if you check some items and then click Continue, those items will be changed in parameter screen of Mission Planner. You will then need to click the Write Params parameters button in the right hand panel to copy the changes to your autopilot.
+.. note:: An important aspect of the Compare Params feature: After you select the file with the saved parameters you want to compare, you will get a window that lists every parameter that is different. At this point nothing has been changed, but if you check some items and then click Continue, those items will be changed in the parameter screen of Mission Planner. You will then need to click the Write Params parameters button in the right-hand panel to copy the changes to your autopilot.
 
 - Load Presaved: Many common vehicle platform typical parameters are available to load via the dropdown box. On loaded, they could be saved to the vehicle with the Write Params button
 - Reset to Default: CAUTION! this will immediately reset all parameters to the vehicle's default settings. Recalibration and setup via the SETUP menu will be required or a restore of previously save parameters from a file.
@@ -97,5 +97,5 @@ Displays every parameter of the connected vehicle. Allows any parameter to be ch
 Full Parameter Tree
 ===================
 
-A tree style  view of the Full Parameter Screen.
+A tree style view of the Full Parameter Screen.
 

@@ -83,6 +83,8 @@ Bit 	Meaning
 
 Bit 3 makes interpretation of SET_ATTITUDE_TARGET MAVLink command's ``thrust`` field as pure thrust from 0 to 1 , instead of a climb rate. See `Commands in Guided Mode <https://ardupilot.org/dev/docs/copter-commands-in-guided-mode.html>`__
 
+The :ref:GUID_TIMEOUT<GUID_TIMEOUT> parameter holds the timeout (in seconds) when the vehicle is being controlled using attitude, velocity and/or acceleration commands. If no commands are received from the companion computer for this many seconds, the vehicle will slow to a stop (if velocity and/or acceleration commands were being provided) or hold a level hover (if attitude commands were provided). The default setting is 3 seconds.
+
 .. _guided_nogps:
 
 Guided_NoGPS

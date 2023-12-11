@@ -1,8 +1,8 @@
 .. _common-matekh743-wing:
 
-============================
-Mateksys H743-Wing/SLIM/MINI
-============================
+==================================
+Mateksys H743-Wing/SLIM/MINI/WLITE
+==================================
 
 .. image:: ../../../images/matekh743-wing.png
      :target: ../_images/matekh743-wing.png
@@ -10,9 +10,7 @@ Mateksys H743-Wing/SLIM/MINI
 
 the above image and some content courtesy of `mateksys.com <http://www.mateksys.com/>`__
 
-.. note::
-
-   Support for this board is available with ArduPilot Plane 4.0.6, Copter 4.0.4, and higher
+.. note:: Only the WING version is shown above. All versions use the same firmware, but have varying configurations for pinouts and resources available. See Matek's site for exact details for every variant. 
 
 Specifications
 ==============
@@ -26,7 +24,7 @@ Specifications
 
    -  InvenSense MPU6000 IMU (accel, gyro) & ICM20602
    -  DPS310 barometer
-   -  Voltage & 132A current sensor
+   -  Voltage & 132A current sensor (integrated current sensor only on -WING V2/V3 and -WLITE)
 
 
 -  **Power**
@@ -63,7 +61,7 @@ Specifications
 Camera and Supply Switch
 ========================
 
-Switching between the two camera inputs, C1 (default on) or C2, and between on (default) and off of Vsw (5/9V selectable supply), can be implemented using the Relay function of ArduPilot and assigning the relays to an ``RCx_OPTION`` switch on the transmitter.
+Switching between the two camera inputs, C1 (default on) or C2, and between on (default) and off of Vsw (jumper selectable supply), can be implemented using the Relay function of ArduPilot and assigning the relays to an ``RCx_OPTION`` switch on the transmitter.
 
 Set the ``RELAYx_PIN`` to "81" for on/off of Vsw, and to "82" to control the camera switching.
 Then select an RC channel for control (Chx) and set its ``RCx_OPTION`` to the appropriate Relay (1-4) that you had set its pin parameter above.
@@ -72,6 +70,8 @@ For example, use Channel 10 to control the camera switch using Relay 2:
 
 - :ref:`RELAY_PIN2<RELAY_PIN2>` = "82"
 - :ref:`RC10_OPTION<RC10_OPTION>` = "34" (Relay2 Control)
+
+.. note:: setting Relay on/high assigned for Vsw will turn off that supply. Likewise, setting on/high for the Relay assigned for camera, will switch from Camera 1 to Camera 2.
    
 Default UART order
 ==================
@@ -90,7 +90,7 @@ Serial port protocols (Telem, GPS, etc.) can be adjusted to personal preferences
 RC Input
 ========
 
-he Rx6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true UART connection. However, bi-directional protocols which include telemetry, such as SRXL2 and FPort, when connected in this manner, will only provide RC without telemetry. 
+The Rx6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the Rx6 pin can also be configured to be used as true UART RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL7 port's RX input pin.
 
@@ -143,9 +143,9 @@ Then reboot.
 
 :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 11
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.0
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 10.5 (note: WLITE needs this changed to 21)
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 40.0
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 40.0 (note: WLITE and WING V2/V3 needs this changed to 66.7)
 
 :ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN>` 18
 
@@ -163,7 +163,7 @@ Firmware for these boards can be found `here <https://firmware.ardupilot.org>`_ 
 
 Firmware that supports :ref:`bi-directional Dshot <bidir-dshot>` is labeled "MatekH743-bdshot".
 
-.. warning:: The bi-directional Dshot firmware redefines the Rx6 pin as a pure UART input, and cannot support PPM. It also requires that the :ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` = 23 and that :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>` = 3 for use with SBUS to provide inversion. In addition, outputs 9-12 no longer support normal Dshot. Only outputs 1-4 are bi-directional Dshot capable.
+.. warning:: The bi-directional Dshot firmware redefines the Rx6 pin as a pure UART input, and cannot support PPM. It also requires that the :ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` = 23 and that :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>` = 3 for use with SBUS to provide inversion. In addition, outputs 9-12 no longer support normal Dshot. Only outputs 1-8 are bi-directional Dshot capable, with 1-2,3-4,5-6,7-8 in groups. Finally, the buzzer in the USB dongle will no longer play musical tones, only simple buzzer beeps.
 
 
 .. note:: If you experience issues with the device ceasing to initialize after power up, see :ref:`common-when-problems-arise` section for H7 based autopilots for a possible solution.

@@ -1,0 +1,21 @@
+{
+    "esbonio.sphinx.confDir": "${workspaceFolder}/copter/source",
+    "grammarly.config.documentDialect": "american",
+    "grammarly.files.include": [
+        "**/readme.md",
+        "**/README.md",
+        "**/*.txt",
+        "**/*.rst"
+    ],
+    "files.exclude": {
+        "antennatracker/**/common-*": true,
+        "blimp/**/common-*": true,
+        "copter/**/common-*": true,
+        "dev/**/common-*": true,
+        "mavproxy/**/common-*": true,
+        "plane/**/common-*": true,
+        "planner/**/common-*": true,
+        "planner2/**/common-*": true,
+        "rover/**/common-*": true,
+    }
+}

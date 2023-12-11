@@ -6,13 +6,8 @@ Marvelmind for Non-GPS navigation
 
 [copywiki destination="copter,rover,blimp"]
 
-This article explains how a `MarvelMind <https://marvelmind.com/>`__ system can be as a short-range substitute for a GPS allowing position control modes like Auto and Guided.
+This article explains how a `MarvelMind <https://marvelmind.com/>`__ system can be a short-range substitute for a GPS allowing position control modes like Auto and Guided.
 See the `user manual <https://marvelmind.com/pics/marvelmind_navigation_system_manual.pdf>`__ for more details on the system.
-
-.. note::
-
-   Support was added in Copter-3.6 and Rover-3.3.
-   This wiki page is a work-in-progress.
 
 .. image:: ../../../images/marvel-mind.jpg
     :target: ../_images/marvel-mind.jpg
@@ -32,13 +27,14 @@ Marvelmind Settings
 - The height of every stationary beacon, from the ground, must be set on the dashboard.
 - The hedge should be set to output Marvelmind Protocol at baud rate of 115200.
 
-Connecting to a autopilot
-=================================
+Connecting to an autopilot
+==========================
 
-- Ensure that Copter-3.6 (or higher) or Rover-3.3 is loaded onto the autopilot and connect with a Ground Station (i.e. Mission Planner).
-- Enable the :ref:`EKF3 as described here <common-apm-navigation-extended-kalman-filter-overview>`
-- Set ``EK3_ALT_SOURCE`` to 3 (means using Marvelmind for altitude)
-- Set ``EK3_GPS_TYPE`` to 3 (means Inhibit GPS use)
+- Set :ref:`EK3_SRC1_POSXY<EK3_SRC1_POSXY>` to 4 (Beacon)
+- Set :ref:`EK3_SRC1_VELXY<EK3_SRC1_VELXY>` to 0 (None)
+- Set :ref:`EK3_SRC1_POSZ<EK3_SRC1_POSZ>` to 4 (Beacon)
+- Set :ref:`EK3_SRC1_VELZ<EK3_SRC1_VELZ>` to 0 (None)
+- Set :ref:`EK3_SRC1_YAW<EK3_SRC1_YAW>` to 1 (Compass)
 - Set :ref:`BCN_TYPE <BCN_TYPE>` to 2 (means using Marvelmind system)
 - Set :ref:`BCN_LATITUDE <BCN_LATITUDE>`, :ref:`BCN_LONGITUDE <BCN_LONGITUDE>` and :ref:`BCN_ALT <BCN_ALT>` to match your actual location.  Getting these values exactly correct is not particularly important although getting it close is required in order for the compass's declination to be correctly looked up from the small database held within ArduPilot.
 - Set :ref:`BCN_ORIENT_YAW <BCN_ORIENT_YAW>` to the heading from the origin beacon to the 2nd beacon.  One way to capture this value is to stand at the origin holding the vehicle so that it's nose points towards the second beacon.  Read the vehicle's heading from the HUD and enter this value into :ref:`BCN_ORIENT_YAW <BCN_ORIENT_YAW>`

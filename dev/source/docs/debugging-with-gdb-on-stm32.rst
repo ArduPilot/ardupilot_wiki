@@ -62,6 +62,10 @@ using the JTAG breakout cable. Connect the
 SWDIO and SWCLK (see `Debug port pinout <https://ardupilot.org/copter/docs/common-pixracer-overview.html#debug-port-jst-sm06b-connector>`__
 for reference) to the corresponding SWDIO and SWCLK pins on the ST-Link debugger.
 
+Ensure :ref:`BRD_OPTIONS<BRD_OPTIONS>` sets the "Enable Debug Pins" bit if bit 3 is present in the vehicle software being used.
+It is also advised to disable the watchdog by ensuring bit 0 is not set.
+
+
 Installing GDB
 ==============
 

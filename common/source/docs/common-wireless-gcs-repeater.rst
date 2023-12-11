@@ -40,12 +40,12 @@ Setup
 Bluetooth Module Baud Rate
 --------------------------
 
-The module must be set for 57600 baud to work with the telemetry radio. How to change the baud rate is discussed `here <https://www.instructables.com/id/AT-command-mode-of-HC-05-Bluetooth-module/>`__, or you can buy a `module preconfigured <http://store.jdrones.com/Bluetooth_telemetry_modem_p/tlmbt01.htm>`__.
+The module must be set for 57600 baud to work with the telemetry radio. How to change the baud rate is discussed `here <https://www.instructables.com/id/AT-command-mode-of-HC-05-Bluetooth-module/>`__.
 
 ESP8266 WIFI Module
 -------------------
 
-Setting up the WIFI module is detailed :ref:`here<common-esp8266-telemetry>` .
+Setting up the WIFI module is detailed :ref:`here<common-esp8266-telemetry>`.
 
 
 

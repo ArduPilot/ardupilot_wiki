@@ -1,4 +1,4 @@
-.. common-scripting-parameters:
+.. _common-scripting-parameters:
 
 =======================================
 Accessing/Adding Parameters via Scripts

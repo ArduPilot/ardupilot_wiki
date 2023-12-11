@@ -51,7 +51,7 @@ Vicon System Setup
 
 - The Vicon system should be correctly calibrated. The origin should be set using the calibration wand. In the Vicon Tracker software, the Z-axis (shown in blue) of the Vicon system world frame should point up. We will call the X-axis (red) as North, and the Y-axis (green) as West.
 - The UAV should have a minimum of 4 reflective markers to ensure an accurate fix. Any reflective surfaces on the UAV should be covered with masking tape to avoid spurious detections.
-- Place the UAV in the Vicon space so that the forward direction of the flight controller is facing 'North'. (Figure 1)
+- Place the UAV in the Vicon space so that the forward direction of the autopilot is facing 'North'. (Figure 1)
 - In the Vicon Tracker, select all of the markers and create a new object for the UAV. The coordinate frame of the UAV should then be aligned with the Vicon world frame, so that X is forward, Y is Left and Z is up. (Figure 2)
 
 .. figure:: ../../../images/vicon-frame-reference.jpg
@@ -62,7 +62,7 @@ Vicon System Setup
 .. figure:: ../../../images/vicon-alignment.png
     :target: ../_images/vicon-alignment.png
 
-    Figure 2: Screenshot from Vicon Tracker software, showing world coordinate frame (bottom left) aligned with UAV coordinate frame. The origin of the object frame should be approximately where the flight controller is located.
+    Figure 2: Screenshot from Vicon Tracker software, showing world coordinate frame (bottom left) aligned with UAV coordinate frame. The origin of the object frame should be approximately where the autopilot is located.
 
 
 .. warning::

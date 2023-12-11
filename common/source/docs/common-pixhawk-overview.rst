@@ -65,6 +65,12 @@ A slightly improved but fully compatible variant can now be obtained from mRo:
 Pixhawk connector assignments
 =============================
 
+.. warning::
+   
+   Many Pixhawk clones use Molex picoblade connectors instead of DF13 connectors.
+   They have rectangular pins, rather than square ones, and cannot be assumed compatible.
+
+
 .. image:: ../../../images/Pixhawk_with_legend.jpg
     :target: ../_images/Pixhawk_with_legend.jpg
 
@@ -687,7 +693,7 @@ defaults to 4, which means the first 4 AUX connectors are for servos
 ``BRD_PWM_COUNT`` to 0 then you would have 6 virtual digital pins and
 still have 8 PWM outputs on the rest of the connector.
 
-.. note:: in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR outputs to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
+.. note:: in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR output to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
 
 The 6 possible pins are available for PIN variables as pin numbers 50 to
 55 inclusive.
@@ -738,7 +744,7 @@ If ``BRD_PWM_CNT`` = 6 then
 
 By default, the pins are digital outputs as outlined above. A digital
 pin will instead be a digital input if it is assigned to a parameter
-that represents a digital input. For example, setting :ref:`CAM_FEEDBACK_PIN<CAM_FEEDBACK_PIN>`
+that represents a digital input. For example, setting :ref:`CAM1_FEEDBAK_PIN<CAM1_FEEDBAK_PIN>`
 to 50 will make pin 50 the digital input that receives a signal from the
 camera when a picture has been taken.
 

@@ -8,10 +8,14 @@ Enabling SLCAN allows the autopilot to connect to CANBUS through USB on PC.
 It allows viewing, configuration and software updates of devices connected to the CANBUS.
 There are two different applications for using SLCAN to modify DroneCAN device parameters: DroneCAN GUI or Mission Planner. But first, the SLCAN interface must be enabled.
 
+.. note:: SLCAN access via COM port is disabled when armed to lower cpu load. Use SLCAN via MAVLink instead. The MAVLink method is generally preferred in any case.
+
 SLCAN Interface
 ===============
 
 The ArduPilot firmware provides two software USB interfaces, accessed simultaneously from the single physical USB connector. In  Mission Planner, you will see two COM ports assigned to the autopilot (if not, see Troubleshooting section below). One is for the SLCAN interface, the other for the normal MAVLink based Ground Control Station (GCS) connection. 
+
+.. note:: in firmware 4.5 and later, most autopilots that present two COM ports will both be for normal MAVLink connections and not have one default to SLCAN since SLCAN over MAVLink is the preferred connection method now.
 
 In firmware 4.0 and earlier, they will be indistinguishable in the Mission Planner COM port selection box until you try to connect to the GCS with the SLCAN port that has been enabled for SLCAN protocol. (In later firmware versions, together with using the latest `Mission Planner driver set <https://firmware.ardupilot.org/Tools/MissionPlanner/driver.msi>`__ , each port will be clearly labeled.)
 
@@ -30,7 +34,7 @@ Connect to Mission Planner. In the Full Parameters list set the highest numbered
 Making Changes to DroneCAN Devices
 ==================================
 
-Once SLCAN has been enabled, you can use :ref:`Mission Planner <common-mp-slcan>`  to make changes immediately to device parameters or firmware update.
+Once SLCAN has been enabled, you can use :ref:`Mission Planner <planner:dronecan-uavcan-slcan>`  to make changes immediately to device parameters or firmware update.
 
 :ref:`DroneCAN GUI tool <common-uavcan-gui>` can also be used
 
@@ -42,7 +46,7 @@ here is an example video of configuring a DroneCAN power monitor device:
 Troubleshooting
 ===============
 
-Occasionally, Windows will only present one COM port in Mission Planner. In that case, you may still be able to connect to Mission Planner and change the parameters, if the COM port Windows has chosen to display is the autopilot port with MAVLink protocol selected.  However, you will most likely need to load the composite USB driver in order to obtain both COM ports, as shown in :ref:`these instructions<loading-composite-USB>` , once the SLCAN port protocol has been enabled.
+Occasionally, Windows will only present one COM port in Mission Planner. In that case, you may still be able to connect to Mission Planner and change the parameters, if the COM port Windows has chosen to display is the autopilot port with MAVLink protocol selected.  However, you will most likely need to load the composite USB driver in order to obtain both COM ports, as shown in :ref:`these instructions<loading-composite-USB>`, once the SLCAN port protocol has been enabled.
 
 If you reboot the autopilot, the composite Windows USB driver may be unloaded and the process repeated upon re-attachment.
 

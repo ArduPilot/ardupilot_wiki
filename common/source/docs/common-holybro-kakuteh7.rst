@@ -1,8 +1,8 @@
 .. _common-holybro-kakuteh7:
 
-=================
-Holybro Kakute H7
-=================
+====================
+Holybro Kakute H7 V1
+====================
 
 .. image:: ../../../images/holybro-kakuteh7-top.jpg
     :target: ../_images/holybro-kakuteh7-top.jpg
@@ -14,6 +14,11 @@ Holybro Kakute H7
 
 *above image and some content courtesy of* `Holybro <http://www.holybro.com>`__
 
+Where to Buy
+============
+
+- Available from many retailers including `Holybro <https://holybro.com/products/kakute-h7>`__
+
 Specifications
 ==============
 
@@ -23,7 +28,7 @@ Specifications
 
 -  **Sensors**
 
-   -  InvenSense ICM20689 IMU (accel and gyro only, no compass)
+   -  InvenSense MPU6000 IMU (accel and gyro only, no compass)
    -  BMP280 barometer
 
 -  **Power**
@@ -86,7 +91,7 @@ The PWM outputs are marked M1-M8 in the above pinouts. The corresponding servo o
 RC Input
 ========
 
-The R6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true UART connection. However, bi-directional protocols which include telemetry, such as SRXL2 and FPort, when connected in this manner, will only provide RC without telemetry. 
+The R6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the R6 pin can also be configured to be used as true UART RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL6 port's RX input pin.
 
@@ -107,7 +112,7 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 FrSky Telemetry
 ===============
 
-FrSky Telemetry is supported using the Tx pin of any UART including SERIAL6/UART6 . You need to set the following parameters to enable support for FrSky S.PORT (example shows SERIAL6). Note this assumes the RC input is using default (ALT_BRD_CONFIG =0). Obviously, if using ALT_BRD_CONFIG = 1 for full duplex RC prtocols, you must a different UART for FrSky Telemetry.
+FrSky Telemetry is supported using the Tx pin of any UART including SERIAL6/UART6 . You need to set the following parameters to enable support for FrSky S.PORT (example shows SERIAL6). Note this assumes the RC input is using default (:ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 0). Obviously, if using :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1 for full duplex RC prtocols, you must a different UART for FrSky Telemetry.
  
   - :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` 10
   - :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` 7

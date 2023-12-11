@@ -15,7 +15,7 @@ It consists of a control part called **DroneCore.Pilot** and power part called *
 **DroneCore.Pilot** - top board for control of the aircraft containing
 
 -  **Jetson Xavier NX** Companion Computer
--  CubePilot Cube flight controller running ArduPilot firmware
+-  CubePilot Cube autopilot running ArduPilot firmware
 -  Internal 5V power supply
 -  Power selector
 -  Peripheral connectors
@@ -24,7 +24,7 @@ It consists of a control part called **DroneCore.Pilot** and power part called *
 
 **DroneCore.Power** - bottom board with power electronics containing:
 
--  4 FOC UAVCAN ESCs - 20A continuous / 40A peak current
+-  4 FOC DroneCAN ESCs - 20A continuous / 40A peak current
 -  Stacked configuration allows 8 ESCs
 -  Power sensor (battery voltage and current measurement)
 -  Analog inputs for battery cell monitoring
@@ -44,11 +44,11 @@ Various software libraries (coming soon) further enrich the possibilities for th
 
 DroneCore.Suite provides easy to use ROS based software stack supporting development of autonomous applications.
 
-Out of the box the device is configured to fly a Quadcopter (though flight controller calibration is needed).
+Out of the box the device is configured to fly a Quadcopter (though autopilot calibration is needed).
 
 
 .. image:: ../../../images/airvolute_droneCore.Suite_top_view_9219.jpg
-    :target: ../../_images/airvolute_droneCore.Suite_top_view_9219.jpg
+    :target: ../_images/airvolute_droneCore.Suite_top_view_9219.jpg
 
 Specifications
 ==============
@@ -68,7 +68,7 @@ Specifications
 -  Integrated DC/DC converter for control circuits
 -  Redundant power supply with power good monitoring for control unit
 -  Current protected peripheral connectors
--  4 x FOC UAVCAN ESC 40A, featuring motor identification and motor
+-  4 x FOC DroneCAN ESC 40A, featuring motor identification and motor
    diagnostics
 -  Power sensor, SMBUS
 
@@ -91,7 +91,7 @@ Specifications
 -  Gigabit Ethernet (ZIF connector, reductions available)
 -  6 CSI (22 pin)
 -  4 GPIO
--  UAV CAN, UART, I2C, SPI
+-  DroneCAN, UART, I2C, SPI
 -  IMU BMI088 and barometer BMP388 on board
 -  USB 2.0 for debugging
 -  Micro SD card
@@ -100,7 +100,7 @@ Specifications
 
 **DroneCore.Power** (bottom power board)
 
--  4 x FOC UAVCAN ESCs – 40A peak / 20A continuous
+-  4 x FOC DroneCAN ESCs – 40A peak / 20A continuous
 -  power sensor, SMBUS,
 -  LED Driver for 4x WS2812B strips
 
@@ -108,12 +108,12 @@ Block Diagram
 =============
 
 .. image:: ../../../images/airvolute_DroneCore.Pilot_block_diagram.svg
-    :target: ../../_images/airvolute_DroneCore.Pilot_block_diagram.svg
+    :target: ../_images/airvolute_DroneCore.Pilot_block_diagram.svg
 
 
-**DroneCore.Pilot** is based on Cube Orange - the widely used flight controller by Hex.aero running on ArduPilot (or optionally PX4 flight stack) and Nvidia Jetson Xavier NX. Their rich interfaces allow connecting most sensors and other peripherals for drones available on the market.
+**DroneCore.Pilot** is based on Cube Orange - the widely used autopilot by Hex.aero running on ArduPilot (or optionally PX4 flight stack) and Nvidia Jetson Xavier NX. Their rich interfaces allow connecting most sensors and other peripherals for drones available on the market.
 
-**DroneCore.Power** contains 4 FOC ESCs with motor identification feature able to be configured for all common BLDC/PMSM drone motors on the market and a telemetry interface providing real time data to the flight controller. Furthermore it provides battery voltage and current measurements as well as individual cell voltages.
+**DroneCore.Power** contains 4 FOC DroneCAN ESCs with motor identification feature able to be configured for all common BLDC/PMSM drone motors on the market and a telemetry interface providing real time data to the autopilot. Furthermore it provides battery voltage and current measurements as well as individual cell voltages.
 
 Useful links
 ============

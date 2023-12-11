@@ -6,6 +6,12 @@ Debugging
 
 This section is for topics related to debugging ArduPilot source code.
 
+There is a series of videos introducing some debugging techniques for ArduPilot code:
+
+.. youtube:: 5nQiY_q_ZVA
+
+.. youtube:: 8fIndjwc_-Y
+
 Debug Output
 ------------
 
@@ -86,9 +92,11 @@ You can also use this pin defintion to output general debug messages using fault
     :maxdepth: 1
 
     Logs <common-logs>
+    DroneCAN Debugging <https://www.youtube.com/watch?v=F0H4Y5V3lfo>
     Debugging with send_text <debug-with-send-text>
     Using MAVExplorer for log analysis <using-mavexplorer-for-log-analysis>
     Finding the Particular Commit which Introduced a Bug <finding-the-particular-commit-which-introduced-a-bug>
     Debugging with GDB <debugging-with-gdb>
+    Watchdog Debugging <watchdog-debugging>
     LTTng Tracing <using-linux-trace-toolkit-ng-lttng-to-trace-ardupilot-in-realtime>
     Static Analysis <static-analysis>

@@ -58,7 +58,7 @@ If the autopilot has additional analog-to-digital pins available, a second batte
 
 - :ref:`BATT2_MONITOR <BATT_MONITOR>` = **4** to measure both voltage and current (you will need to reboot the board after changing this)
 - :ref:`BATT2_VOLT_PIN <BATT_VOLT_PIN>` = **13**
-- :ref:`BATT_CURR_PIN <BATT_CURR_PIN>` = **14**
+- :ref:`BATT2_CURR_PIN <BATT_CURR_PIN>` = **14**
 
 The :ref:`BATT2_VOLT_MULT <BATT_VOLT_MULT>` and :ref:`BATT2_AMP_PERVLT <BATT_AMP_PERVLT>` should also be set by comparing the reported values vs values collected using a hand held voltage meter
 
@@ -85,7 +85,7 @@ Extending Current Measurement Capacity
 Shunt resistor power monitors of this variety can be used to measure higher currents if setup in a current sharing configuration, as shown below:
 
 .. image:: ../../../images/current-sharing.jpg
-    :target: ../../_images/current-sharing.jpg
+    :target: ../_images/current-sharing.jpg
 
 Design points:
 
@@ -95,7 +95,7 @@ Design points:
 
 
 .. image:: ../../../images/current-sharing-pic.png
-    :target: ../../_images/current-sharing-pic.png
+    :target: ../_images/current-sharing-pic.png
 
 In the photo above, by providing two bypasses, the current is shared such that the power monitor sees a little less than 1/3 the total current flowing, and reports a value ~1/3 normal, extending its range ~3X.
 

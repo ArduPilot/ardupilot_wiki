@@ -4,11 +4,11 @@
 TBS Crossfire Telemetry
 =======================
 
-.. note:: ELRS (ExpressLRS) RC systems use the Crossfire protocol and are connected in a similar manner. However, ERLS telemetry is limited primarily to only signal strength and link quality. And does not provide bi-directional telemetry like Crossfire.
+.. note:: ELRS (ExpressLRS) RC systems use the Crossfire protocol and are connected in a similar manner. However, it does not provide bi-directional telemetry like Crossfire.
 
 TBS CRSF Receivers incorporate telemetry along with RC control information in their interface to ArduPilot. ArduPilot supports native CRSF telemetry and extensions to it that allow using the :Ref:`common-frsky-yaapu`. See :ref:`common-tbs-rc` for connection and setup information.
 
-OpenTx will discover the native CRSF Telemetry sensors, which then can be displayed on `OpenTX <https://www.open-tx.org/>`_ telemetry screens or repeated from the CRSF TX module's WIFI to MAVLink Ground Control Stations:
+OpenTx will discover the native CRSF Telemetry sensors (but a limited number, use passthru option below for more displayed information using Yaapu Telemetry script), which then can be displayed on `OpenTX <https://www.open-tx.org/>`_ telemetry screens or repeated from the CRSF TX module's WIFI to MAVLink Ground Control Stations:
 
 .. image:: ../../../images/crossfire-telemetry-meaning.jpg
 

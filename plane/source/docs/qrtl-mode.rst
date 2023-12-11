@@ -12,7 +12,7 @@ to use and customize QRTL mode.
 Overview
 ========
 
-When QRTL mode is selected, the QuadPlane will return to the home location. By default, it will transition to fixed wing mode, executing the first part of a normal RTL, and then make an approach  as it nears the landing point and switch to VTOL mode and proceed to the landing point, then descend to a landing. See the description of this under the :ref:`Hybrid RTL<hybrid_rtl>` section for :ref:`Q_RTL_MODE<Q_RTL_MODE>` = 3.
+When QRTL mode is selected, the QuadPlane will return to the home location. By default, it will transition to fixed wing mode (if in a VTOL mode before entering, it will climb to :ref:`Q_RTL_ALT<Q_RTL_ALT>` if below that altitude, before transitioning), executing the first part of a normal RTL, and then make an approach  as it nears the landing point and switch to VTOL mode and proceed to the landing point, then descend to a landing. See the description of this under the :ref:`Hybrid RTL<hybrid_rtl>` section for :ref:`Q_RTL_MODE<Q_RTL_MODE>` = 3.
 
 If a pure VTOL QRTL is desired, then you must disable the fixed wing RTL and approach feature by setting :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16. Then the following actions will then occur on a QRTL:
 
@@ -20,6 +20,14 @@ The QuadPlane will immediately navigate towards the home location at :ref:`Q_WP_
 
 .. image:: ../images/QRTL.jpg
     :target: ../_images/QRTL.jpg
+
+.. note::
+
+    QuadPlane will recognize that it has landed if the motors are at
+    minimum but its altitude does not change more than 0.2m for one
+    second.  It does not use the altitude itself to decide whether to shut off the
+    motors except that the QuadPlane must also be below :ref:`Q_LAND_FINAL_ALT<Q_LAND_FINAL_ALT>` above home(ie in the LAND FINAL phase). The altitude change for the decision can be increased, in case the altitude determination from the EKF is excessively noisy by increasing the :ref:`Q_LAND_ALTCHG<Q_LAND_ALTCHG>` value from its default value of 0.2m.
+    
 
 Alternatively, you may :ref:`configure the plane to return to a Rally Point <common-rally-points>`, rather than the home location.
 

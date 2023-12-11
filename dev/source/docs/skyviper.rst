@@ -40,7 +40,7 @@ Otherwise:
 
 ::
 
-   git clone https://github.com/SkyRocketToys/ardupilot
+   git clone --recurse-submodules https://github.com/SkyRocketToys/ardupilot
 
 Once you have the repository:
 

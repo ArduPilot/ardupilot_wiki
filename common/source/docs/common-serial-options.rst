@@ -14,7 +14,7 @@ Serial Port 0 is always assigned to the USB port, but others can vary. Check its
 
 .. note:: more serial ports may be shown in the parameters than exist on a given controller. Check its  :ref:`description page<common-autopilots>` 
 
-By default the protocols/expected peripheral for each port is shown below:
+By default (for most autopilots) the protocols/expected peripheral for each port is shown below:
 
 .. note:: any supported protocol/peripheral can be used by any port by changing its ``SERIALx_PROTOCOL`` parameter
 
@@ -60,7 +60,7 @@ The serial ports support many different kinds of interfaces and peripheral. The 
    <td>1</td>
    <td>
 
-MAVLink1, See :ref:`Telemetry Setup<common-telemetry-port-setup>`
+MAVLink1, see :ref:`Telemetry Setup<common-telemetry-port-setup>`
 
 .. raw:: html
 
@@ -70,7 +70,7 @@ MAVLink1, See :ref:`Telemetry Setup<common-telemetry-port-setup>`
    <td>2</td>
    <td>
 
-MAVLink2, See :ref:`Telemetry Setup<common-telemetry-port-setup>`
+MAVLink2, see :ref:`Telemetry Setup<common-telemetry-port-setup>`
 
 .. raw:: html
 
@@ -80,7 +80,7 @@ MAVLink2, See :ref:`Telemetry Setup<common-telemetry-port-setup>`
    <td>3</td>
    <td>
 
-FrSky D, See :ref:`FrSky Telemetry <common-frsky-telemetry>` 
+FrSky D, see :ref:`FrSky Telemetry <common-frsky-telemetry>` 
 
 .. raw:: html
 
@@ -90,7 +90,7 @@ FrSky D, See :ref:`FrSky Telemetry <common-frsky-telemetry>`
    <td>4</td>
    <td>
 
-FrSky SPort, See :ref:`FrSky Telemetry <common-frsky-telemetry>` 
+FrSky SPort, see :ref:`FrSky Telemetry <common-frsky-telemetry>` 
 
 .. raw:: html
 
@@ -99,7 +99,7 @@ FrSky SPort, See :ref:`FrSky Telemetry <common-frsky-telemetry>`
    <td>5</td>
    <td>
 
-GPS, See :ref:`GPS <common-gps-how-it-works>` and :ref:`Devices<common-positioning-landing-page>`
+GPS, see :ref:`GPS <common-gps-how-it-works>` and :ref:`Devices<common-positioning-landing-page>`
 
 .. raw:: html
 
@@ -109,7 +109,7 @@ GPS, See :ref:`GPS <common-gps-how-it-works>` and :ref:`Devices<common-positioni
    <td>7</td>
    <td>
 
-Alexmos Gimbal Serial, See :ref:`Alexmos Gimbal <common-simplebgc-gimbal>` 
+Alexmos Gimbal Serial, see :ref:`Alexmos Gimbal <common-simplebgc-gimbal>` 
 
 .. raw:: html
 
@@ -119,7 +119,7 @@ Alexmos Gimbal Serial, See :ref:`Alexmos Gimbal <common-simplebgc-gimbal>`
    <td>8</td>
    <td>
 
-SToRM32 Gimbal Serial, See :ref:`SToRM32 Gimbal <common-storm32-gimbal>` 
+SToRM32 Gimbal Serial, see :ref:`SToRM32 Gimbal <common-storm32-gimbal>` 
 
 .. raw:: html
 
@@ -129,7 +129,7 @@ SToRM32 Gimbal Serial, See :ref:`SToRM32 Gimbal <common-storm32-gimbal>`
    <td>9</td>
    <td>
 
-Rangefinder, See :ref:`Rangefinders <common-rangefinder-landingpage>` 
+Rangefinder, see :ref:`Rangefinders <common-rangefinder-landingpage>` 
 
 .. raw:: html
 
@@ -139,7 +139,7 @@ Rangefinder, See :ref:`Rangefinders <common-rangefinder-landingpage>`
    <td>10</td>
    <td>
 
-FrSky SPort Passthrough (OpenTX), See :ref:`FrSky Passthrough Telemetry <common-frsky-passthrough>` 
+FrSky SPort Passthrough (OpenTX), see :ref:`FrSky Passthrough Telemetry <common-frsky-passthrough>` 
 
 .. raw:: html
 
@@ -149,7 +149,7 @@ FrSky SPort Passthrough (OpenTX), See :ref:`FrSky Passthrough Telemetry <common-
    <td>11</td>
    <td>
 
-Lidar360, See :ref:`360 Lidars here <common-rangefinder-landingpage>` 
+Lidar360, see :ref:`360 Lidars here <common-rangefinder-landingpage>` 
 
 .. raw:: html
 
@@ -159,7 +159,7 @@ Lidar360, See :ref:`360 Lidars here <common-rangefinder-landingpage>`
    <td>13</td>
    <td>
 
-Beacon, See :ref:`Non-GPS Navigation <common-non-gps-navigation-landing-page>` 
+Beacon, see :ref:`Non-GPS Navigation <common-non-gps-navigation-landing-page>` 
 
 .. raw:: html
 
@@ -169,7 +169,7 @@ Beacon, See :ref:`Non-GPS Navigation <common-non-gps-navigation-landing-page>`
    <td>14</td>
    <td>
 
-Volz Servo, See :ref:`common-servo-volz` 
+Volz Servo, see :ref:`common-servo-volz` 
 
 .. raw:: html
 
@@ -179,7 +179,7 @@ Volz Servo, See :ref:`common-servo-volz`
    <td>15</td>
    <td>
 
-SBus Servo, See :ref:`common-sbus-output` 
+SBus Servo, see :ref:`common-sbus-output` 
 
 .. raw:: html
 
@@ -189,7 +189,7 @@ SBus Servo, See :ref:`common-sbus-output`
    <td>16</td>
    <td>
 
-ESC Telemetry, See :ref:`blheli32-esc-telemetry` 
+ESC Telemetry, see :ref:`blheli32-esc-telemetry` 
 
 .. raw:: html
 
@@ -209,7 +209,7 @@ Devo Telemetry
    <td>18</td>
    <td>
 
-OpticalFlow, See :ref:`Optical Flow Sensors <common-optical-flow-sensors-landingpage>` 
+OpticalFlow, see :ref:`Optical Flow Sensors <common-optical-flow-sensors-landingpage>` 
 
 .. raw:: html
 
@@ -219,7 +219,7 @@ OpticalFlow, See :ref:`Optical Flow Sensors <common-optical-flow-sensors-landing
    <td>19</td>
    <td>
 
-RobotisServo, See :ref:`common-servo-robotis` 
+RobotisServo, see :ref:`common-servo-robotis` 
 
 .. raw:: html
 
@@ -238,7 +238,7 @@ RobotisServo, See :ref:`common-servo-robotis`
    <td>21</td>
    <td>
 
-WindVane, See :ref:`wind-vane` 
+WindVane, see :ref:`wind-vane` 
 
 .. raw:: html
 
@@ -258,7 +258,7 @@ SLCAN
    <td>23</td>
    <td>
 
-RC Input, See :ref:`common-flight-controller-wiring` 
+RC Input, see :ref:`common-flight-controller-wiring` 
 
 .. raw:: html
 
@@ -388,7 +388,7 @@ Serial ADSB receiver
    <td>36</td>
    <td>
 
-External AHRS
+External AHRS, see :ref:`common-external-ahrs`
 
 .. raw:: html
 
@@ -398,7 +398,87 @@ External AHRS
    <td>37</td>
    <td>
 
-Smart Audio
+Smart Audio, see :ref:`common-vtx`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>38</td>
+   <td>
+
+FETtecOneWire, see :ref:`common-fettec-onewire`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>39</td>
+   <td>
+
+Torqeedo, see :ref:`common-torqeedo`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>40</td>
+   <td>
+
+AIS, see :ref:`common-ais`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>41</td>
+   <td>
+
+CoDevESC
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>42</td>
+   <td>
+
+DisplayPort, see :ref:`common-msp-osd-overview-4.2`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>43</td>
+   <td>
+
+MAVLink High Latency, see :ref:`common-MAVLink-high-latency`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>44</td>
+   <td>
+
+IRC Tramp, see :ref:`common-vtx`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td> 45</td>
+   <td>
+
+DDS XRCE
 
 .. raw:: html
 
@@ -423,11 +503,13 @@ Bitmask Options
 - if bit 2 is set, then HalfDuplex operation using the TX pin is implemented.
 - if bit 3 is set, then the TX and RX pins are effectively swapped internally.
 - if bit 4 is set, then the RX pin has a weak pull down resistor activated.
-- if bit 5 is set, then the TX pin has a weak pull down resistor activated.
-- if bit 6 is set, then the RX pin has a weak pull up resistor activated.
+- if bit 5 is set, then the RX pin has a weak pull up resistor activated.
+- if bit 6 is set, then the TX pin has a weak pull down resistor activated.
 - if bit 7 is set, then the TX pin has a weak pull up resistor activated.
 - if bit 8 is set, then the RX has no DMA activated (assuming DMA is available on this UART)
 - if bit 9 is set, then the TX has no DMA activated (assuming DMA is available on this UART)
 - if bit 10 is set, then MAVLink forwarding will not be active on this UART port.
+- if bit 11 is set, then the hardware FIFO in H7 autopilots is disabled
+- if bit 12 is set, the GCS are prevented from changing the MAVLink message stream rates set by the ``SRx_...`` parameters.
 
-.. note:: HalfDuplex is supported on all ChiBiOS based autopilots, but all other options are only supported on boards with F7 or H7 microprocessors.
+.. note:: HalfDuplex is supported on all ChiBiOS based autopilots, but inversion and swap are only supported on boards with F7 or H7 microprocessors.

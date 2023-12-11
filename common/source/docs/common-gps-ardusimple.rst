@@ -38,7 +38,7 @@ Wiring and Connections
 
 All ArduSimple GNSS models come with a JST GH 6-pin connector/cable that is compatible with the Pixhawk family and many other autopilots.
 
-.. note:: The cables/connectors may be modified to connect to other flight controller boards, using the Pin Map information provided above.
+.. note:: The cables/connectors may be modified to connect to other autopilot boards, using the Pin Map information provided above.
 
 Configuration
 =============

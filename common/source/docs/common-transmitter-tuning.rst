@@ -44,7 +44,7 @@ Concepts
 The two key controls for transmitter based tuning are:
 
 - A "tuning knob", setup on your transmitter to a convenient knob or
-  slider and linked to a RC channel that your board receives
+  slider and linked to an RC channel that your board receives
 
 - An optional "selector switch" for controlling advanced features of
   the tune. This should be linked to a two position switch mapped to
@@ -67,14 +67,14 @@ Setting up for tuning
 To setup your vehicle for tuning you need to set the following
 parameters:
 
-- :ref:`TUNE_CHAN<TUNE_CHAN>` : the RC input channel associated with your chosen tuning
+- :ref:`TUNE_CHAN<TUNE_CHAN>`: the RC input channel associated with your chosen tuning
   knob
-- :ref:`TUNE_CHAN_MIN<TUNE_CHAN_MIN>` : the minimum PWM values produced on :ref:`TUNE_CHAN<TUNE_CHAN>`
-- :ref:`TUNE_CHAN_MAX<TUNE_CHAN_MAX>` : the maximum PWM values produced on :ref:`TUNE_CHAN<TUNE_CHAN>`
-- :ref:`TUNE_PARAM<TUNE_PARAM>` : the parameter or set of parameters you will be tuning
-- :ref:`TUNE_SELECTOR<TUNE_SELECTOR>` : the RC input channel associated with your chosen
+- :ref:`TUNE_CHAN_MIN<TUNE_CHAN_MIN>`: the minimum PWM values produced on :ref:`TUNE_CHAN<TUNE_CHAN>`
+- :ref:`TUNE_CHAN_MAX<TUNE_CHAN_MAX>`: the maximum PWM values produced on :ref:`TUNE_CHAN<TUNE_CHAN>`
+- :ref:`TUNE_PARAM<TUNE_PARAM>`: the parameter or set of parameters you will be tuning
+- :ref:`TUNE_SELECTOR<TUNE_SELECTOR>`: the RC input channel associated with your chosen
   selector switch (optional)
-- :ref:`TUNE_RANGE<TUNE_RANGE>` : the scaling range which the tuning knob covers
+- :ref:`TUNE_RANGE<TUNE_RANGE>`: the scaling range which the tuning knob covers
 
 The :ref:`TUNE_PARAM<TUNE_PARAM>` parameter selects the parameter or set of parameters you
 will be tuning. Values of :ref:`TUNE_PARAM<TUNE_PARAM>` less than 100 correspond to
@@ -85,7 +85,7 @@ the other in a flight.
 .. note:: Most of the tuneable parameters apply to the VTOL operation of QuadPlanes. Only :ref:`TUNE_PARAM<TUNE_PARAM>` values in the 50-57 range are for fixed wing operation.
 
 Use your ground stations parameter interface to see see the full list
-of tunable parameters and parameter sets available for :ref:`TUNE_PARAM<TUNE_PARAM>` . For
+of tunable parameters and parameter sets available for :ref:`TUNE_PARAM<TUNE_PARAM>`. For
 Plane most of the parameters are associated with tuning the
 QuadPlane VTOL motors as those are the most difficult to tune. You can
 also tune some fixed wing parameters, although most people find the
@@ -101,9 +101,9 @@ Using the tuning knob
 
 The basic operation of the tuning knob is very simple. If the tuning
 knob is at the bottom of its range then the parameter being tuned is
-set to the initial value divided by the :ref:`TUNE_RANGE<TUNE_RANGE>` . If the tuning knob
+set to the initial value divided by the :ref:`TUNE_RANGE<TUNE_RANGE>`. If the tuning knob
 is at the top of its range then the parameter being tuned will be set
-to the initial value multiplied by :ref:`TUNE_RANGE<TUNE_RANGE>` .
+to the initial value multiplied by :ref:`TUNE_RANGE<TUNE_RANGE>`.
 
 So with a default value for :ref:`TUNE_RANGE<TUNE_RANGE>` of 2 you will be able to change
 the parameter in a range from half its initial value to 2x the initial
@@ -115,7 +115,7 @@ Activating the tuning knob
 When you first start tuning a parameter you will find the tuning knob
 is not yet active. This is because the knob does not activate until it
 passes the "mid-point value", defined as half way between
-:ref:`TUNE_CHAN_MIN<TUNE_CHAN_MIN>` and :ref:`TUNE_CHAN_MAX<TUNE_CHAN_MAX>` . Activating the tuning knob in this
+:ref:`TUNE_CHAN_MIN<TUNE_CHAN_MIN>` and :ref:`TUNE_CHAN_MAX<TUNE_CHAN_MAX>`. Activating the tuning knob in this
 way ensures that you don't accidentally take off with a large change
 in tuning value. You are guaranteed to start the tune with a value
 very close to your current value for the parameter.
@@ -139,7 +139,7 @@ tuning knob around the current value. Toggle the selector switch
 briefly high then low and the center-value will change to whatever the
 tubing knob is set to. When you re-center the tuning knob will
 de-activate again until you move it to the mid-point position. This
-prevents you getting a jump in the tuning value when you re-center.
+prevents you from getting a jump in the tuning value when you re-center.
 
 Tuning multiple parameters
 ==========================
@@ -168,8 +168,8 @@ Holding the selector switch for more than 2 seconds will switch you to
 the next parameter and will also change the tuning knob back to its
 "wait for mid-point" state on the new parameter. The buzzer on the
 board will give a loud BEEP sequence to indicate which parameter in
-the set you have changed to. For the first parameter in the set you
-will get one loud BEEP. For the second parameter you will get two loud
+the set you have changed to. For the first parameter in the set, you
+will get one loud BEEP. For the second parameter, you will get two loud
 BEEPs and so on.
 
 When you have cycled through all of the parameters in the tuning set
@@ -193,6 +193,12 @@ set.
 +    106                      + Set_VelXY         +     :ref:`Q_P_VELXY_P<Q_P_VELXY_P>`  / :ref:`Q_P_VELXY_I<Q_P_VELXY_I>`                                              +
 +-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
 +    107                      + Set_AccelZ        +     :ref:`Q_P_ACCZ_P<Q_P_ACCZ_P>` /  :ref:`Q_P_ACCZ_I<Q_P_ACCZ_I>` / :ref:`Q_P_ACCZ_D<Q_P_ACCZ_D>`                  +
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++    108                      + Set_RatePitchDP   +     :ref:`Q_A_RAT_PIT_D<Q_A_RAT_PIT_D>` / :ref:`Q_A_RAT_PIT_P<Q_A_RAT_PIT_P>`                                       +
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++    109                      + Set_RateRollDP    +     :ref:`Q_A_RAT_RLL_D<Q_A_RAT_RLL_D>` / :ref:`Q_A_RAT_RLL_P<Q_A_RAT_RLL_P>`                                       +
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++    110                      + Set_RateYawDP     +     :ref:`Q_A_RAT_YAW_D<Q_A_RAT_YAW_D>` /  :ref:`Q_A_RAT_YAW_P<Q_A_RAT_YAW_P>`                                      +
 +-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
 
 
@@ -238,7 +244,7 @@ The first parameter you will be tuning will be RateRollD. To tune that
 parameter (and the other parameters in the rate roll/pitch set) you
 should follow this process:
 
-- move the tuning knob to the mid-point to active the knob. You will
+- move the tuning knob to the mid-point to activate the knob. You will
   hear a rapid bup-bip from the board to indicate the tuning knob is
   activated.
 - start raising the tuning knob slowly, stopping immediately if the
@@ -271,16 +277,16 @@ holding the selector switch for more than five seconds. You will know
 the 5 seconds is up when you hear the distinctive rapid
 bup-bip-bup-bip sound from the buzzer.
 
-At that point you can land the vehicle, or just enjoy flying it.
+At that point, you can land the vehicle, or just enjoy flying it.
 
 The first time you do a full tune in this way it will probably take
-about five minutes of flight time to do a tune. With some practice you
+about five minutes of flight time to do a tune. With some practice, you
 can do a full tune in a bit over a minute.
 
 [/site]
 [site wiki="copter"]
 
-With transmitter based tuning you can tune a single or multiple parameters in flight using Channel 6 of the transmitter.
+With transmitter based tuning you can tune single or multiple parameters in flight using Channel 6 of the transmitter.
 
 The :ref:`TUNE<TUNE>` parameter determines which parameter is being tuned.
 
@@ -294,16 +300,16 @@ The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the para
 +========+=========================+======================================================================+
 |0       |         None            |                                                                      |
 +--------+-------------------------+----------------------------------------------------------------------+
-|1       |Stab Roll/Pitch kP       |  :ref:`ATC_ANG_RLL_P<ATC_ANG_RLL_P>` ,                               |
+|1       |Stab Roll/Pitch kP       |  :ref:`ATC_ANG_RLL_P<ATC_ANG_RLL_P>`,                                |
 |        |                         |  :ref:`ATC_ANG_PIT_P<ATC_ANG_PIT_P>`                                 |
 +--------+-------------------------+----------------------------------------------------------------------+
-|4       |Rate Roll/Pitch kP       |  :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Multi>` ,     |
+|4       |Rate Roll/Pitch kP       |  :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Multi>`,      |
 |        |                         |  :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Multi>`       |
 +--------+-------------------------+----------------------------------------------------------------------+
-|5       |Rate Roll/Pitch kI       |  :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Multi>` ,     |
+|5       |Rate Roll/Pitch kI       |  :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Multi>`,      |
 |        |                         |  :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Multi>`       |
 +--------+-------------------------+----------------------------------------------------------------------+
-|21      |Rate Roll/Pitch kD       |  :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Multi>` ,     |
+|21      |Rate Roll/Pitch kD       |  :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Multi>`,      |
 |        |                         |  :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Multi>`       |
 +--------+-------------------------+----------------------------------------------------------------------+
 |3       |Stab Yaw kP              |  :ref:`ATC_ANG_YAW_P<ATC_ANG_YAW_P>`                                 |
@@ -334,9 +340,9 @@ The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the para
 +--------+-------------------------+----------------------------------------------------------------------+
 |10      |WP Speed                 |  :ref:`WPNAV_SPEED<WPNAV_SPEED>`                                     |
 +--------+-------------------------+----------------------------------------------------------------------+
-|25      |Acro RollPitch kP        | :ref:`ACRO_RP_P<ACRO_RP_P>`                                          |
+|25      |Acro RollPitch kP        | :ref:`ACRO_RP_RATE<ACRO_RP_RATE>`                                    |
 +--------+-------------------------+----------------------------------------------------------------------+
-|40      |Acro Yaw kP              | :ref:`ACRO_YAW_P<ACRO_YAW_P>`                                        |
+|40      |Acro Yaw kP              | :ref:`ACRO_Y_RATE<ACRO_Y_RATE>`                                      |
 +--------+-------------------------+----------------------------------------------------------------------+
 |45      |RC Feel                  | :ref:`ATC_INPUT_TC<ATC_INPUT_TC>`                                    |
 +--------+-------------------------+----------------------------------------------------------------------+
@@ -368,6 +374,10 @@ The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the para
 +--------+-------------------------+----------------------------------------------------------------------+
 |58      |SysID Magnitude          | :ref:`SIDS_MAGNITUDE<SID_MAGNITUDE>`                                 |
 +--------+-------------------------+----------------------------------------------------------------------+
+|59      |Position Control Max     |  :ref:`PSC_ANGLE_MAX<PSC_ANGLE_MAX>`                                 |
+|        | Lean Angle              |                                                                      |
++--------+-------------------------+----------------------------------------------------------------------+
+
 
 ** Traditional Heli Only
 
@@ -392,7 +402,7 @@ Rate Roll P and Rate Pitch P will be used in the following example procedure
 #. Turn your transmitter's CH6 tuning knob to the minimum position,
    press the "Refresh Params" button and ensure that the Rate Roll P and
    Rate Pitch P values become 0.08 (or something very close)
-#. Turn the CH6 knob to it's maximum position, press "Refresh Params"
+#. Turn the CH6 knob to its maximum position, press "Refresh Params"
    and ensure the Rate Roll P moves to 0.20
 #. Move the CH6 knob back to the middle
 #. Arm and fly your copter in Stabilize mode adjusting the ch6 knob
@@ -401,19 +411,16 @@ Rate Roll P and Rate Pitch P will be used in the following example procedure
 #. With the CH6 knob in the position that gave the best performance,
    return to the Copter Pids screen and push the "Refresh Params" button
 #. In the Rate Roll P and Rate Pitch P fields re-type the value that you
-   see but just slightly modified so that the mission planner recongises
+   see but just slightly modified so that the mission planner recognizes
    that it's changed and resends to the autopilot (Note: if you re-type
    exactly the same number as what appears in Rate Roll P it won't be
-   updated).  So for example if the Rate Roll P appears as "0.1213" make
+   updated).  So for example, if the Rate Roll P appears as "0.1213" make
    it "0.1200"
 #. Set Ch6 Opt back to "None" and push "Write Params"
 #. Push the Disconnect button on the top right, and the Connect
 #. Ensure that the Rate Roll P value is the value that you retyped in
    step #12
 
-Note: while you are moving the tuning knob the values update at 3 times
-per second.  The need to press the Refresh button in the mission planner
-in steps #6 and #7 above is just because the Copter is not sending the
-updates to the mission planner in real-time.
+.. note:: While you are moving the tuning knob the values update at 3 times per second.  The need to press the Refresh button in the mission planner in steps #6 and #7 above is just because the Copter is not sending the updates to the mission planner in real-time.
 
 [/site]

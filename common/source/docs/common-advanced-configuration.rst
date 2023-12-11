@@ -41,6 +41,7 @@ tuning options for the vehicle.
 [site wiki="plane"]
     Crash Detection <crash-detect>
 [/site]
+    DroneCAN Setup <common-uavcan-setup-advanced>
     EKF (Extended Kalman Filter) <common-apm-navigation-extended-kalman-filter-overview>
     EKF Affinity & Lane Switching <common-ek3-affinity-lane-switching>
     EKF Sources and Selection <common-ekf-sources>
@@ -91,12 +92,16 @@ tuning options for the vehicle.
     Notch Filter Configuration <common-imu-notch-filtering>
 [/site]
     Object Avoidance <common-object-avoidance-landing-page>
-[site wiki="copter,plane"]
+[site wiki="copter,plane,rover"]
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>
 [/site]
+    On Screen Displays (OSD) <common-osd-overview>
     OSD Parameter Editor <common-paramosd>
     Parameter List (Full) <parameters>
     Parameter Reset <common-parameter-reset>
+[site wiki="copter"]
+    Precision Landing and Loiter <precision-landing-with-irlock>
+[/site]
     RC Input Channel Mapping (RCMAP) <common-rcmap>
     RC Options <common-rc-options>
     Redundant Telemetry <common-redundant-telemetry>
@@ -104,6 +109,7 @@ tuning options for the vehicle.
     Reverse Thrust Setup<reverse-thrust-setup>
 [/site]
     RunCam Camera Configuration and Control <common-camera-runcam>
+    Safety Switch <common-safety-switch-pixhawk>
     Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Sensor Testing <common-sensor-testing>
     Serial Port to Port Passthrough <common-serial-passthrough>
@@ -126,7 +132,7 @@ tuning options for the vehicle.
     Terrain Following <common-terrain-following>
     Transmitter Based Tuning <common-transmitter-tuning>
 [/site]
-    DroneCAN Setup <common-uavcan-setup-advanced>
+    Video Stabilization (Gyroflow) <common-gyroflow>
     Video Transmitter Control <common-vtx>
 [site wiki="copter,plane,rover,planner"]
     UBlox GPS Configuration <common-ublox-gps>

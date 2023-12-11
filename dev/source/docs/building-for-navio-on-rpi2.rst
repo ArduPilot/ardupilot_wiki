@@ -33,9 +33,8 @@ Clone the source:
 
 ::
 
-    git clone https://github.com/diydrones/ardupilot.git
+    git clone --recurse-submodules https://github.com/diydrones/ardupilot.git
     cd ardupilot
-    git submodule update --init
 
 .. note::
 

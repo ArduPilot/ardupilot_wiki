@@ -9,6 +9,8 @@ GPS / Non-GPS Transitions
 
 ArduPilot 4.1 (and higher) support in-flight transitions between GPS and Non-GPS environments.
 
+.. note:: Non-GPS navigation is available for all vehicles. However, it is not applicable to fast or high flying vehicles such as conventional Planes. QuadPlanes can utilize this when in VTOL operation and close to the ground, as when docking inside a hangar using 3D cameras or beacons.
+
 Setup
 -----
 

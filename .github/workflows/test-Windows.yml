@@ -8,18 +8,18 @@ env:
   TEST: "1"
 jobs:
 
-  build:
+  build-windows:
 
     runs-on: 'windows-latest'
     strategy:
       fail-fast: false  # don't cancel if a job from the matrix fails
       matrix:
-        python-version: [3.8]
+        python-version: ["3.8", "3.10"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
       - name: Setting environment
@@ -27,4 +27,4 @@ jobs:
           ./Sphinxsetup.bat
       - name: Test build
         run: |
-          python ./update.py --parallel 4 --verbose --destdir=./web
+          python3 ./update.py --parallel 4 --verbose --destdir=./web

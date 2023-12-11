@@ -48,9 +48,9 @@ In addition to normal analog voltage and current sensing modules, ArduPilot supp
 
 These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor. These can be set directly via the CONFIG/Parameter Tree tab for each battery monitor. Here are the monitor types supported:
 
-=================================     =============================
+=================================     ========================================================
 :Ref:`BATT_MONITOR<BATT_MONITOR>`       TYPE
-=================================     =============================
+=================================     ========================================================
 0 	                                    Disabled
 3 	                                    Analog Voltage Only
 4 	                                    Analog Voltage and Current
@@ -59,21 +59,22 @@ These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor.
 7 	                                    :ref:`SMBus-Generic<common-smart-battery-landingpage>`
 8 	                                    DroneCAN-BatteryInfo
 9 	                                    :ref:`ESC<blheli32-esc-telemetry>`
-10 	                                    Sum Of Selected Monitors, see BATTx_SUM_MASK parameter
-11 	                                    :ref:`FuelFlow <common-fuel-sensors>`
-12 	                                    :ref:`FuelLevelPWM <common-fuel-sensors>`
-13 	                                    :ref:`SMBUS-SUI3<common-smart-battery-landingpage>`
-14 	                                    :ref:`SMBUS-SUI6<common-smart-battery-landingpage>`
-15              	                    NeoDesign
-16              	                    SMBus-Maxell
-17 	                                    :ref:`Generator-Elec<common-ie650-fuelcell>`
-18 	                                    :ref:`Generator-Fuel<common-ie650-fuelcell>`
-19 	                                    :ref:`Rotoye<common-smart-battery-rotoye>`
-20 	                                    MPPT
-21 	                                    INA2XX
-22 	                                    LTC2946
-23 	                                    Torqeedo Motor Controller
-=================================     =============================
+10 	                                 Sum Of Selected Monitors, see BATTx_SUM_MASK parameter
+11 	                                 :ref:`FuelFlow <common-fuel-sensors>`
+12 	                                 :ref:`FuelLevelPWM <common-fuel-sensors>`
+13 	                                 :ref:`SMBUS-SUI3<common-smart-battery-landingpage>`
+14 	                                 :ref:`SMBUS-SUI6<common-smart-battery-landingpage>`
+15              	                     NeoDesign
+16              	                     SMBus-Maxell
+17 	                                 :ref:`Generator-Elec<common-ie650-fuelcell>`
+18 	                                 :ref:`Generator-Fuel<common-ie650-fuelcell>`
+19 	                                 :ref:`Rotoye<common-smart-battery-rotoye>`
+20 	                                 MPPT
+21 	                                 INA2XX
+22 	                                 LTC2946
+23 	                                 Torqeedo Motor Controller
+24 	                                 :ref:`FuelLevelAnalog <common-fuel-sensors>`
+=================================     ========================================================
 
 
 .. note:: Once a specific monitor type is selected, parameters associated with that type of monitor will be revealed once parameters are refreshed. Scales and offsets, bus addresses, etc. will be displayed, as appropriate, for that monitor.
@@ -81,11 +82,12 @@ These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor.
 Other Parameters
 ----------------
 
-- :ref:`BATT_OPTIONS<BATT_OPTIONS>` bit 0, if set, will ignore the State Of Charge field in DroneCAN monitors, since some do not populate this field with meaningful data. Also various options for MPPT type monitors are provided.
+- :ref:`BATT_OPTIONS<BATT_OPTIONS>` bit 0, if set, will ignore the State Of Charge field in DroneCAN monitors, since some do not populate this field with meaningful data. Also various options for MPPT type monitors are provided. Bit 6 allows the resting voltage to be sent in place of battery voltage, which is sometime more useful.
 - :ref:`BATT_SUM_MASK<BATT_SUM_MASK>` is used if the monitor is type "10" (Sum Of Selected Monitors) to select which monitors' reported voltages will be averaged, and current values will be summed, and reported for this monitor. Selecting this monitor's own instance number has no effect. If no bits are set, it will average all lower numbered instance's reports.
 - :ref:`BATT_ARM_VOLT<BATT_ARM_VOLT>` is the minimum voltage reported from this monitor that will allow arming to occur.
 - :ref:`BATT_ARM_MAH<BATT_ARM_MAH>` is the minimum capacity remaining reported from this monitor that will allow arming to occur.
 - :ref:`BATT_CURR_MULT<BATT_CURR_MULT>` allows adjusting the current scale for DroneCAN(UAVCAN) monitors which do not have a CAN parameter exposed for adjustment.
+- :ref:`BATT_SERIAL_NUM<BATT_SERIAL_NUM>` is used to designate which battery an SMBUS or DroneCAN monitor is associated, since multiple instances of these monitors are possible.
 
 
 Failsafe

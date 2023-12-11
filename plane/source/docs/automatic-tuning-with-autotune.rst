@@ -26,7 +26,13 @@ To setup your aircraft for AUTOTUNE you need to select AUTOTUNE mode as
 one of the flight modes selectable with the flight mode switch on your
 transmitter.
 
-.. note:: as of version 4.1.3, you can AutoTune in any stabilized flight mode, such as CRUISE or FBWA/B, LOITER, or even during an AUTO mission segment (if :ref:`STICK_MIXING<STICK_MIXING>` is enabled), via an ``RCx_OPTION`` switch set to 107.
+You can also autotune the yaw axis during AUTOTUNE for yaw rate control in :ref:`ACRO mode <acro-mode>` by setting :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1 and :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` to a value equal or less than the yaw rate capability of the vehicle(90 deg/s is a typical value). This of course assumes that the vehicle has yaw control surfaces(an elevon only flying wing does not, for example).
+
+.. note:: you can AutoTune in most stabilized flight modes, such as CRUISE or FBWA/B, LOITER, or even during an AUTO mission segment (if :ref:`STICK_MIXING<STICK_MIXING>` is enabled), via an ``RCx_OPTION`` switch set to 107.
+
+.. warning:: Large QuadPlanes can be difficult to fly manually while monitoring the GCS for tune progress messages or if you are not experienced in flying in pilot guided modes. In these cases, it is safer to do the tuning while in a repeating fixed course mission (ie. a rectangular loop for example) in AUTO or while LOITERing, using the the above RC Aux Switch to enable autotuning while not having to constantly guide the vehicle on course.
+
+The :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES>` bitmask selects which axes will be tuned while in Autotune. Default is roll, pitch and yaw.
 
 You also should choose a tuning level by setting the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`
 parameter in the advanced parameter screen of your ground station. The
@@ -38,13 +44,16 @@ then you could choose level 7, which will result in a bit sharper tune
 have done an initial tune with a lower level. Levels above 8 should only
 be used by very experienced pilots.
 
-Autotune tunes the FF (feedforward), P, I, and D terms at each :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`, which determines the maximum/target slew rates used for the tuning process ( :ref:`PTCH2SRV_RMAX_UP<PTCH2SRV_RMAX_UP>`, :ref:`PTCH2SRV_RMAX_DN<PTCH2SRV_RMAX_DN>`, :ref:`RLL2SRV_RMAX<RLL2SRV_RMAX>`) and the gain from desired attitude angle to demanded angular rate ( :ref:`PTCH2SRV_TCONST<PTCH2SRV_TCONST>` and :ref:`RLL2SRV_TCONST<RLL2SRV_TCONST>`).
+.. note:: with Yaw rate controller active, turning in AUTOTUNE mode will require the use of rudder, not just aileron input. Do not enable :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` if you do not have a rudder.
+
+Autotune tunes the FF (feedforward), P, I, and D terms at each :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`, which determines the maximum/target slew rates used for the tuning process and the gain from desired attitude angle to demanded angular rate ( :ref:`PTCH2SRV_TCONST<PTCH2SRV_TCONST>` and :ref:`RLL2SRV_TCONST<RLL2SRV_TCONST>`).
 
 It is important to set a level appropriate for the rates that the aircraft can physically achieve.
-This is because excessive target rates will prevent the autotune from adjusting the gains.
 In particular, the level 6 roll rates can be too large for slow aircraft with large wing spans,
 like gliders. These often have a maximum roll rate of 30 - 40 degrees per second and should use
-level 2 or 3. See :ref:`automatic-tuning-with-autotune_level-settings` for the rates.
+level 2 or 3. See :ref:`automatic-tuning-with-autotune_level-settings` for the rates. But level 8 may be appropriate for light foam planes in the under 2kg class.
+
+.. note:: the :ref:`PTCH2SRV_RMAX_UP<PTCH2SRV_RMAX_UP>`, :ref:`PTCH2SRV_RMAX_DN<PTCH2SRV_RMAX_DN>`, and :ref:`RLL2SRV_RMAX<RLL2SRV_RMAX>` rates should be set appropriately for normal flight also according to the vehicle's capabilities.
 
 You also need to make sure that all of the basic settings for your
 airframe are correct. In particular, ensure that all surface reversals
@@ -60,17 +69,13 @@ In addition, ArduPilot will automatically scale the tuning gains versus airspeed
 
 Other things to check:
 
--  if you have an airspeed sensor fitted then make sure it is working
-   and you have calibrated it. See the section on :ref:`airspeed calibration <calibrating-an-airspeed-sensor>`.
--  check your center of gravity, making sure it is correct according to
-   the manual for your aircraft. In general it is safer to be a bit more
+- if you have an airspeed sensor fitted then make sure it is working and you have calibrated it. See the section on :ref:`airspeed calibration <calibrating-an-airspeed-sensor>`.
+- check your center of gravity, making sure it is correct according to the manual for your aircraft. In general it is safer to be a bit more
    nose heavy than tail heavy.
--  check your surface trims. It is recommended to use the :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` option after reading the documentation for that option.
--  make sure your failsafe settings are setup correctly. Try turning off
-   your transmitter with your plane on the ground (and propeller removed
-   or made safe) and check how the plane reacts
--  setup a rally point for a safe place to RTL if needed other than home
--  make sure that the :ref:`PTCH_RATE_SMAX<PTCH_RATE_SMAX>` and :ref:`RLL_RATE_SMAX<RLL_RATE_SMAX>` parameters are appropriately set for your servos speeds. See :ref:`common-servo-limit-cycle-detection`. If these are set too low, then the tune will be impacted.
+- check your surface trims. It is recommended to use the :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` option after reading the documentation for that option.
+- make sure your failsafe settings are setup correctly. Try turning off your transmitter with your plane on the ground (and propeller removed or made safe) and check how the plane reacts
+- setup a rally point for a safe place to RTL if needed other than home
+- make sure that the :ref:`PTCH_RATE_SMAX<PTCH_RATE_SMAX>` and :ref:`RLL_RATE_SMAX<RLL_RATE_SMAX>` parameters are appropriately set for your servos speeds. See :ref:`common-servo-limit-cycle-detection`. If these are set too low, then the tune will be impacted.
 
 Flying in AUTOTUNE
 ==================
@@ -86,14 +91,8 @@ When you engage AUTOTUNE mode a few things will happen:
    rates and angle error to demanded rate gain. These values depend on the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` 
 -  the autotune system will monitor your demanded roll and pitch rates
    (as determined by your transmitter stick movements). When the
-   demanded roll or pitch rate exceeds 80% of the maximum rate (not 80% stick deflection, one must move stick quickly towards full throw) the
-   autotune system will use the response of the aircraft to learn roll
-   or pitch tuning values.
--  the autotune system will save the parameters once the tune has been completed for an axis. This means that if autotune causes your aircraft to
-   become unstable switch to another mode and
-   recover. When you switch out of AUTOTUNE mode the last saved
-   parameters are restored. Switching back into AUTOTUNE will resume the tune where it was stopped, unless a reboot occurs. Note that the SMAX params may hide an over-tuned condition, such
-   that oscillations may appear as just "twitchy" behavior.
+   demanded roll or pitch rate (or yaw rate if :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1) exceeds 40% of the maximum tuning target axis rate set by the ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`,(not stick deflection) the autotune system will use the response of the aircraft to learn the tuning values. So sharp stick movements are required with a slight pause at moderate to maximum stick deflections in each direction.
+-  the autotune system will save the P and D parameters once the tune has been completed for an axis.  When you switch out of AUTOTUNE mode the FF and I values will be saved. Switching out of AUTOTUNE in the midst of tuning an axis will revert the PID values to their original values.
 -  If you are starting with the default parameters for roll and pitch
    you may find the plane is quite sluggish when you first enter
    AUTOTUNE. You will find that as the tune progresses this will get
@@ -101,30 +100,13 @@ When you engage AUTOTUNE mode a few things will happen:
    turns.
 
 The key to a successful Autotune is to input rapid roll or pitch
-movements with the transmitter sticks. You should only do one of either
-roll or pitch at a time, and you should move the stick rapidly to the
-maximum deflection.
+movements with the transmitter sticks. It is best only do one axis at a time, although tuning is occurring simultaneously on all axes being tuned, so tuning messages may be interleaved occasionally.
 
-So in the roll direction you should first command a hard right turn with
-the aileron stick, then shortly afterwards push the aileron stick hard
-the other way to command a hard left turn. Note that you do not need to
-wait for the plane to bank over all the way after each stick movement.
-After about 2 seconds of stick movement in one direction you can reverse
-the stick quickly.The plane will steer hard right, then hard left as you
-move the aileron stick. With each sudden reversal it will improve the
-tuning values by about 5%. So you need at least 20 full stick movements
-to learn a reasonable tuning value.
-
-For pitch tuning you need to use the pitch transmitter stick to take the
-aircraft on a roller-coaster ride. Pull back hard on the stick to pitch
-up, then shortly afterwards push down to pitch down. Continue doing this
-for at least 20 iterations.
+So rapid stick movements with short pauses at each deflection is used for each axis in turn until the tuning finished message is reported on GCS or OSD.
 
 If your initial tuning values were too low then you should notice the
 aircraft becomes progressively more responsive as you fly in AUTOTUNE
-mode. 
-
-.. note:: If the aircraft ever becomes unstable enough that you think it is dangerous to keep flying then you should change out of AUTOTUNE mode. That will restore the parameters you had from 10 seconds ago.
+mode.
 
 -  Stop increasing the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` on successive autotune sessions when the desired feel and responsiveness is obtained, oscillations occur, or it becomes "twitchy" in an axis.
 
@@ -132,14 +114,8 @@ mode.
 Don't stop too early
 ~~~~~~~~~~~~~~~~~~~~
 
-It is recommended that you do at least 20 rapid roll movements and at
-least 20 rapid pitch movements, preferably far more. Some people stop
-too early end up up with poor values that result in their aircraft not
-coping well with wind, or not holding altitude well. Keep flying in
-AUTOTUNE mode well past the point where you think the plane is flying
+If you cannot monitor the tune progress with a GCS or OSD, it is recommended that you do at least 20 rapid movements in each axis, preferably  more. Stopping before all axes are finished tuning will result in a poorly flying aircraft. Keep flying and exercising the sticks in AUTOTUNE mode well past the point where you think the plane is flying
 well.
-
-If you have an OSD or Ground Control Station, then messages for D and P tuning phases for the axis, as well as a "Tuning Completed" message will be displayed. Once tuning is completed, it is saved.
 
 Tuning light, agile aircraft
 ----------------------------
@@ -161,7 +137,7 @@ To enable this functionality, set :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` to 1. 
 
 This controller can be AutoTuned in the same manner as the pitch and roll axes, and in the same session using the Rudder control stick to produce the rapid yaw demands used by AUTOTUNE.
 
-.. note:: while AutoTuning with this controller enabled, it will resist any non-pilot commanded yaw changes, (ie like traditional helicopter "heading hold" gyros), just as in ACRO mode with the yaw rate controller active. Banking the aircraft will NOT result in a turn, or at least a poorly executed turn. Pilot rudder inputs in turns will be needed.
+.. note:: while AutoTuning with this controller enabled, roll inputs will result in yaw outputs also, allowing more coordinated turns with the yaw controller active. This will normally result in simultaneously tuning the yaw controller with the roll controller, but not necessarily completing the yaw tune when the roll tune finishes. Also, there may be seemingly excessive rudder applied initially in the roll tune on vehicles with large yaw authority, until the tune progresses.
 
 Autotune Level 0
 ================
@@ -172,7 +148,7 @@ This is a special level that does not change the rates or time constant (ie like
 Completing the tune
 ===================
 
-Once you have learned reasonable roll and pitch tuning parameters with
+Once you have learned reasonable tuning parameters with
 autotune you should complete the tune by manually tuning some other key
 parameters.
 
@@ -298,3 +274,5 @@ AUTOTUNE_LEVEL settings
 +---------------+----------------+
 |  11           |  300           |
 +---------------+----------------+
+
+.. note:: Yaw rate target, if being tuned, is always 90 deg/sec

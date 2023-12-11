@@ -58,8 +58,8 @@ Enabling the AFS failsafe system
 
 To enable the AFS failsafe system you need to set the :ref:`AFS_ENABLE<AFS_ENABLE>` parameter to 1. The default is zero, which means all the other options are disabled.
 
-Note that the AFS system is only built into Plane by default on higher
-end autopilot boards like the PX4 and Pixhawk.
+Note that the AFS system is only built into Plane by default only on higher
+memory autopilot boards like the CubeOrange and Pixhawk6X. Check the :ref:`Firmware Limitations page <binary-features>` for your autopilot.
 
 AFS Termination
 ---------------
@@ -164,11 +164,11 @@ When a GPS failure occurs (which is defined as loss of GPS lock for 3
 seconds) the AFS system will look at the :ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>` parameter.
 This parameter species a waypoint number in your mission to use when a
 GPS failure occurs. If :ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>` is non-zero the aircraft will
-change current waypoint to the waypoint number specified in :ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>` . You should setup your mission so that the aircraft
+change current waypoint to the waypoint number specified in :ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>`. You should setup your mission so that the aircraft
 will perform whatever actions you want on GPS loss. For example, you
 could have a set of waypoints starting at number 10 which first loiter
 on the spot for 30 seconds, and then proceed back to the airfield. You
-would then set ::ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>` to 10 to enable that part of the
+would then set :ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>` to 10 to enable that part of the
 mission on loss of GPS lock.
 
 When setting up mission items for GPS lock it is sometimes useful to
@@ -196,16 +196,16 @@ The AFS system monitors the health of the link between your ground
 station and your aircraft. It does this by looking for HEARTBEAT MAVLink
 messages coming from the ground station.
 
-If the aircraft does not receive a HEARTBEAT message for a period of 10
-seconds then it enters a GCS failsafe state. It then looks for a
+If the aircraft does not receive a HEARTBEAT message for a period of AFS_GCS_TIMEOUT
+seconds then it enters a GCS failsafe state. (The default is 10 seconds.) It then looks for a
 :ref:`AFS_WP_COMMS<AFS_WP_COMMS>` parameter, and if that is non-zero it will change the
 current target waypoint to the one given in :ref:`AFS_WP_COMMS<AFS_WP_COMMS>`. You should
 set up a section of your mission with whatever actions you want to take
-on loss of communications.
+on loss of communications. This jump to a designated mission item normally only occur if the failsafe happens while in AUTO mode. To make it occur in any autothrottle controlled mode ( like CRUISE or GUIDED), you will need to set the :ref:`AFS_OPTIONS<AFS_OPTIONS>` bit 1 (+2 to value of param).
 
 If GPS lock is lost at the same time as GCS communications is lost then
 that is considered a "dual loss", and the aircraft will immediately
-terminate.
+terminate if the :ref:`AFS_DUAL_LOSS<AFS_DUAL_LOSS>` is enabled ("1").
 
 Note that the monitoring of HEARTBEAT messages only tells the autopilot
 that it can see messages from the ground station. It does not mean the
@@ -220,9 +220,9 @@ re-established. This counter is only incremented if the 2nd communication
 failure happens at least 30 seconds after the previous one (to account
 for a short period of communications failure).
 
-If during a period of GPS loss the aircraft also loses communications
-with the ground station then this is termed a "dual loss", and the
-aircraft will terminate if :ref:`AFS_DUAL_LOSS<AFS_DUAL_LOSS>` is 1.
+IF the GSC loss is recovered while in this failsafe state, then, normally, the mission item pointer is returned to whatever mission item was active when the failsafe occurred. To prevent this, and continue on with whatever missions sequence is executing due to the failsafe, you will need to set the :ref:`AFS_OPTIONS<AFS_OPTIONS>` bit 0 (+1 to the value).
+
+.. note:: even if the GSC AFS failsafe was entered from a mode other than AUTO, and the :ref:`AFS_OPTIONS<AFS_OPTIONS>` bit 0 is set, the vehicle will start executing the current item pointed to when the failsafe was entered, even though it was not in AUTO mode.
 
 RC Loss
 ~~~~~~~
@@ -241,14 +241,14 @@ monitor the health of the failsafe system using external electronics
 
 The key parameters are:
 
--  :ref:`AFS_TERM_PIN<AFS_TERM_PIN>` : This is a digital pin which is set to a high
+-  :ref:`AFS_TERM_PIN<AFS_TERM_PIN>`: This is a digital pin which is set to a high
    voltage if termination is started. Note that this pin will go high on
    termination even if the :ref:`AFS_TERM_ACTION<AFS_TERM_ACTION>` parameter is not set to 42.
--  :ref:`AFS_HB_PIN<AFS_HB_PIN>` : This is a digital pin number for a pin which is
+-  :ref:`AFS_HB_PIN<AFS_HB_PIN>`: This is a digital pin number for a pin which is
    toggled at a rate of 10Hz by the failsafe system. If termination
    occurs and a :ref:`AFS_TERM_PIN<AFS_TERM_PIN>` value is not set then the heartbeat pin
    will stop toggling.
--  :ref:`AFS_MAN_PIN<AFS_MAN_PIN>` : This is a digital pin number for a pin which goes
+-  :ref:`AFS_MAN_PIN<AFS_MAN_PIN>`: This is a digital pin number for a pin which goes
    high when the aircraft is in MANUAL mode. It may be useful with some
    external failsafe boards to detect manual mode and behave
    differently.
@@ -261,6 +261,13 @@ operator to be able to terminate the aircraft immediately if they think
 the aircraft is a danger to people or other aircraft. To force an
 immediate termination you should use the :ref:`AFS_TERMINATE<AFS_TERMINATE>` parameter. By
 setting that parameter to 1 the aircraft will immediately terminate.
+
+AFS_OPTIONS
+------------------
+The behavior of AFS due to GSC loss can be modified by the setting of the :ref:`AFS_OPTIONS<AFS_OPTIONS>` bitmask parameter (no bits are set by default):
+
+- bit 0 (+1), if set, the aircraft will continue with the current mission item even after GCS connection is recovered. If not set, the aircraft will jump back to the mission item right before GCS failsafe occurs 
+- bit 1 (+2), if set, will also force entering AUTO when GCS failsafe occurs while in any throtlled controlled modes other than AUTO (ie CRUISE, GUIDED, etc.).
 
 Example AFS failsafe mission
 ----------------------------
@@ -310,14 +317,14 @@ Settings for Outback Challenge 2014
 To be compliant with the OBC 2014 rules you should have the following
 settings:
 
--  :ref:`AFS_ENABLE<AFS_ENABLE>` : 1
--  :ref:`AFS_WP_COMMS<AFS_WP_COMMS>` : waypoint number for OBC comms hold followed by two
+-  :ref:`AFS_ENABLE<AFS_ENABLE>`: 1
+-  :ref:`AFS_WP_COMMS<AFS_WP_COMMS>`: waypoint number for OBC comms hold followed by two
    minute loiter, then return to airfield home
--  :ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>` : waypoint number to loiter in place for 30
+-  :ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>`: waypoint number to loiter in place for 30
    seconds, followed by return to airfield home
--  :ref:`AFS_TERM_ACTION<AFS_TERM_ACTION>` : 42
--  :ref:`AFS_AMSL_LIMIT<AFS_AMSL_LIMIT>` : 914
--  :ref:`AFS_QNH_PRESSURE<AFS_QNH_PRESSURE>` : correct QNH pressure for the day
--  :ref:`AFS_RC_FAIL_TIME<AFS_RC_FAIL_TIME>` : 1500
--  :ref:`AFS_MAX_GPS_LOSS<AFS_MAX_GPS_LOSS>` : 2
--  :ref:`AFS_MAX_COM_LOSS<AFS_MAX_COM_LOSS>` : 2
+-  :ref:`AFS_TERM_ACTION<AFS_TERM_ACTION>`: 42
+-  :ref:`AFS_AMSL_LIMIT<AFS_AMSL_LIMIT>`: 914
+-  :ref:`AFS_QNH_PRESSURE<AFS_QNH_PRESSURE>`: correct QNH pressure for the day
+-  :ref:`AFS_RC_FAIL_TIME<AFS_RC_FAIL_TIME>`: 1500
+-  :ref:`AFS_MAX_GPS_LOSS<AFS_MAX_GPS_LOSS>`: 2
+-  :ref:`AFS_MAX_COM_LOSS<AFS_MAX_COM_LOSS>`: 2

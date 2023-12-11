@@ -4,7 +4,7 @@
 SkyRocket Software
 ==================
 
-- the drone ships with a custom version of ArduPilot (Copter) which is close to Copter-3.5 but has additional features that will be coming back into master in the near future (notch filter, etc).  `GitHub repo is here <https://github.com/SkyRocketToys/ardupilot>`__ in the skyviper-stable branch.
+- the drone shipped with a custom version of ArduPilot (Copter) which is close to Copter-3.5 but now additional features (notch filter, etc).  `GitHub repo is here <https://github.com/SkyRocketToys/ardupilot>`__ in the skyviper-stable branch.
 - firmware source for the video board is `here <https://github.com/SkyRocketToys/Sonix>`__
 - `APWeb <https://github.com/ArduPilot/APWeb>`__ (a tiny open source web server) runs on the drone and allows easy calibration, modification of parameters, uploading firmware to both the drone and transmitter, downloading log files, pictures and videos.
 - the transmitter has a relatively low powered STM8 processor running open source software written by Tridge (incorporates some code from Paparazzi).  `Github repo is here <https://github.com/SkyRocketToys/STM8TX>`__.

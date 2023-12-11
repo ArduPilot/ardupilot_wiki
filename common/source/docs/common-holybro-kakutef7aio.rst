@@ -7,7 +7,7 @@ Holybro Kakute F7 and KAKUTE F7 AIO
 .. image:: ../../../images/holybro-kakutef7aio.png
     :target: ../_images/holybro-kakutef7aio.png
 
-*above image and some content courtesy of* `Holybro <http://www.holybro.com/product/59>`__
+*above image and some content courtesy of* `Holybro <http://www.holybro.com/product/kakute-f7-aio-v1-5/>`__
 
 .. note::
 
@@ -96,7 +96,7 @@ The PWM outputs are marked M1-M6 in the above pinouts. The corresponding servo o
 RC Input
 ========
 
-The R6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true UART connection. However, bi-directional protocols which include telemetry, such as SRXL2 and FPort, when connected in this manner, will only provide RC without telemetry. 
+The R6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the R6 pin can also be configured to be used as true UART RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL6 port's RX input pin.
 
@@ -188,6 +188,6 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 
 Firmware for this board which supports :ref:`bi-directional Dshot <bidir-dshot>` is labeled "KakuteF7-bdshot". 
 
-.. note:: Output 5 is disabled in this firmware and Output 6 only supports normal Dshot and PWM.
+.. note:: Output 5 is disabled in bi-directional Dshot firmware and Output 6 only supports normal Dshot and PWM.
 
 [copywiki destination="plane,copter,rover,blimp"]

@@ -38,7 +38,7 @@ Currently, ArduPilot supports Neopixel and ProfiLED RGB LED strings. They can be
 
 ..  youtube:: ytW538e_cQw
 
-Serial LEDs require a whole pwm group, more information about your flight controller's PWM groups can be found on it's :ref:`hardware page<common-autopilots>`. To check that the desired outputs have been setup correctly look for the PWM types message in your GCS's messages tab. See :ref:`common-gpios`
+Serial LEDs require a whole pwm group, more information about your autopilot's PWM groups can be found on it's :ref:`hardware page<common-autopilots>`. To check that the desired outputs have been setup correctly look for the PWM types message in your GCS's messages tab. See :ref:`common-gpios`
 
 .. toctree::
     :maxdepth: 1

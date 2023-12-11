@@ -64,12 +64,12 @@ ESC telemetry input.
 RC Input
 ========
 
-The R3 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true UART connection. However, bi-directional protocols which include telemetry, such as SRXL2 and FPort, when connected in this manner, will only provide RC without telemetry. 
+The R3 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
 
 - PPM/SBUS/DSM/SRXL attach to R3 pin.
 - FPort must use UART6 or UART4. See :ref:`common-FPort-receivers`.
 - CRSF must use UART6 or UART4 for RC and Telemetry. See :ref:`common-tbs-rc`.
-- SRXL2 must use UART6 or UART4 for both RC and Telemetry. See :ref:`common-spektrum-rc` .
+- SRXL2 must use UART6 or UART4 for both RC and Telemetry. See :ref:`common-spektrum-rc`.
 
 FrSky Telemetry
 ===============
@@ -97,8 +97,8 @@ currently available with ArduPilot.
 
 The PWM is in 2 groups:
 
- - PWM 1 and 4 in group 1
- - PWM 2 and 3 in group 2
+ - PWM 1 and 2 in group 1
+ - PWM 3 and 4 in group 2
 
 Channels within the same group need to use the same output rate, whether PWM or Dshot. If
 any channel in a group uses DShot then all channels in the group need

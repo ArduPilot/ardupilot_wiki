@@ -4,6 +4,7 @@
 Tarot Gimbal
 ============
 
+**ARCHIVED**
 .. note::
 
    The Tarot T-2D has been a popular low cost 2-axis brushless gimbal. While this actual hardware has been retired and manufacturer support discontinued, this page is intended to keep up basic support for this item, as well as to serve as an illustrative example of how to configure ardupilot gimbal control options.
@@ -88,18 +89,17 @@ Set-up through the Ground Station
 If using the Mission Planner a Camera Gimbal setup screen is available as shown above:
 
 - "Type" should be set to "Servo"
-- "Tilt" should be set to "SERVO9" to specify AUX OUT 1 is connected to the gimbal's tilt input
-- "Stabilize Tilt" should be unchecked
+- "Pitch" should be set to "SERVO9" to specify AUX OUT 1 is connected to the gimbal's pitch input
+- "Stabilize Pitch" should be unchecked
 - "Servo Limits" holds the minimum and maximum PWM values that will be sent to the gimbal
 - "Angle Limits" are the earth-frame angles (in degrees) that the gimbal can achieve. "0" degrees is straight ahead, "-90" is straight down
 
-If manually setting parameters:
+If manually setting parameters for the first mount:
 
-- :ref:`MNT_TYPE <MNT_TYPE>` = 1 (for "Servo" gimbal)
-- :ref:`MNT_RC_IN_TILT <MNT_RC_IN_TILT>` = 6 to specify that RC input channel 6 (normally the tuning knob) will be used to control the pitch/tilt of the gimbal
-- :ref:`MNT_ANGMAX_TIL <MNT_ANGMAX_TIL>` = 0 to specify the gimbal's highest angle is zero degrees (i.e. forward)
-- :ref:`MNT_ANGMIN_TIL <MNT_ANGMIN_TIL>` = -9000 to specify the gimbal's lowest angle is 90 degrees (i.e. down)
-- :ref:`MNT_STAB_TILT <MNT_STAB_TILT>` = 0 to specify ArduPilot should not send tilt compensation to the gimbal (the gimbal does this by itself)
+- :ref:`MNT1_TYPE <MNT1_TYPE>` = 1 (for "Servo" gimbal)
+- :ref:`RC6_OPTION <RC6_OPTION>` = 213 to specify that RC input channel 6 (normally the tuning knob) will be used to control the pitch of the gimbal
+- :ref:`MNT1_PITCH_MAX <MNT1_PITCH_MAX>` = 0 to specify the gimbal's highest angle is zero degrees (i.e. forward)
+- :ref:`MNT1_PITCH_MIN <MNT1_PITCH_MIN>` = -90 to specify the gimbal's lowest angle is 90 degrees (i.e. down)
 - :ref:`SERVO9_MIN <SERVO9_MIN>` = 1000 to specify the minimum PWM value to send to the gimbal
 - :ref:`SERVO9_MAX <SERVO9_MAX>` = 1520 to specify the maximum PWM value to send to the gimbal
 
@@ -110,16 +110,11 @@ Testing the gimbal moves correctly
 
 **Testing the pilot's control of pitch**
 
-Once powered the gimbal should point to its Tilt Angle Min (i.e.
-straight down) when your transmitter's channel 6 tuning knob is at its
-minimum pwm value (perhaps around 1000) and the camera should point to
-its maximum tilt angle (i.e. straight forward) when the tuning knob is
-at its maximum (perhaps around 2000). The mission planner's Radio
-calibration page can be used to check the Ch6's current input pwm value.
+Once powered the gimbal should point to its Pitch Angle Min (i.e. straight down) when your transmitter's channel 6 tuning knob is at its minimum pwm value (perhaps around 1000) and the camera should point to its maximum pitch angle (i.e. straight forward) when the tuning knob is at its maximum (perhaps around 2000). The mission planner's Radio calibration page can be used to check the Ch6's current input pwm value.
 
 **Testing ROI**
 
-**You must have GPS lock to test ROI.** The ROI feature points the vehicle and/or camera to point at a target. The instructions above describe a setup so that only controls the Tilt (i.e. pitch) of the Tarot gimbal so when a :ref:`Do-Set-ROI <copter:mission-command-list_do-set-roi>` command is received Copter will attempt to turn the vehicle's nose to point in the direction of the target and tilt camera depending upon the vehicle's distance and altitude. You can test the gimbal tilt moves correctly by connecting with the mission planner, then on the Flight Data screen's map, right-mouse-button-click on a point about 50m ahead of the vehicle (the orange and red lines show the vehicle's current heading), select "Point Camera Here" and input an altitude of -50 (meters). This should cause the gimbal to point down at about 45 degrees.
+**You must have GPS lock to test ROI.** The ROI feature points the vehicle and/or camera to point at a target. The instructions above describe a setup so that only controls the pitch of the Tarot gimbal so when a :ref:`Do-Set-ROI <copter:mission-command-list_do-set-roi>` command is received Copter will attempt to turn the vehicle's nose to point in the direction of the target and pitch the camera depending upon the vehicle's distance and altitude. You can test the gimbal pitch moves correctly by connecting with the mission planner, then on the Flight Data screen's map, right-mouse-button-click on a point about 50m ahead of the vehicle (the orange and red lines show the vehicle's current heading), select "Point Camera Here" and input an altitude of -50 (meters). This should cause the gimbal to point down at about 45 degrees.
 
 .. image:: ../../../images/Tarot_BenchTestROI.jpg
     :target: ../_images/Tarot_BenchTestROI.jpg

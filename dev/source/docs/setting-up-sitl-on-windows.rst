@@ -1,8 +1,12 @@
 .. _setting-up-sitl-on-windows:
 
-=============================================
-SITL on Windows in a VMWare VM (Manual Setup)
-=============================================
+===============================================
+SITL setup on Windows in a VM (not recommended)
+===============================================
+
+.. warning::
+
+   These instructions are out-of-date.  We recommend Windows users follow the instructions for :ref:`Setting up the Build Environment using WSL <building-setup-windows>` and :ref:`Setting up SITL on WSL <sitl-on-windows-wsl>`
 
 This article explains how to *manually* set up the :ref:`SITL ArduPilot Simulator <sitl-simulator-software-in-the-loop>` in a virtual machine
 environment on Windows, and connect it to a Ground Control Station
@@ -21,7 +25,7 @@ ArduPilot code as a native executable on a Linux PC. SITL can also be
 run within a virtual machine on Windows, Mac OSX or Linux.
 
 This article shows how to manually set up SITL on a Linux environment
-hosted in a VMware virtual machine.
+hosted in a VMware virtual machine. You can use any Virtual Machine provider such a VirtualBox, Vmware, etc.
 
 .. note::
 
@@ -35,16 +39,14 @@ Preconditions
 =============
 
 Please note that before attempting this you should already have
-:ref:`downloaded the code <where-to-get-the-code>` to your machine
-and be able to :ref:`build it with Arduino <building-ardupilot-with-arduino-windows>` or
-:ref:`Make <building-px4-with-make>`.
+:ref:`downloaded the code <where-to-get-the-code>` to your machine.
 
 Step #1 - Install VMWare and create an Ubuntu Virtual Machine
 =============================================================
 
 1. Download and install `VMware <https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/6_0>`__ (look for VMware Workstation Player for Windows)
 
-2. Download the `Ubuntu iso <http://www.ubuntu.com/download/desktop/thank-you?country=--&version=14.04.2&architecture=amd64>`__
+2. Download the latest Ubuntu version : 22.04 LTS for example.
 
 3. Start VMware and create new ubuntu machine by selecting Player > File
 > New Virtual Machine
@@ -84,7 +86,7 @@ Step #2 - Start the VM for the first time
 
    |Ubuntu_setTimezone|
 #. Setup a terminal short by clicking on the Dash Home icon on the top
-   left, Type "terminal" and then drag the terminal applicatoin to the
+   left, Type "terminal" and then drag the terminal application to the
    left start pane
 
    |Ubuntu_TerminalShortcut|
@@ -120,37 +122,7 @@ should be visible
 with the name of the folder you set-up) to create a symbolic link to the
 shared folder from your home directory
 
-Step #4 - install packages on your VM
-=====================================
-
-.. note::
-
-   Most of these same dependencies will be installed when you do the
-   next step (:ref:`SITL instructions for Linux <setting-up-sitl-on-linux>`).
-
-Open up a terminal and type the following to update the list of packages
-in the software center:
-
-::
-
-    sudo apt-get update
-
-Then install the following packages (reply 'y' if it prompts you re
-additional disk space used)
-
-::
-
-    sudo apt-get install python-dev dos2unix python-wxgtk3.0 python-matplotlib python-opencv python-pip g++ gawk git ccache
-    sudo pip install pymavlink
-    sudo pip install mavproxy
-
-If you wish to run Plane you will also need to install these packages:
-
-::
-
-    sudo apt-get install libexpat1-dev autoconf libtool automake
-
-Step #5 - Follow the Linux instructions
+Step #4 - Follow the Linux instructions
 =======================================
 
 Now that you have a Linux VM you should follow the :ref:`SITL instructions for Linux <setting-up-sitl-on-linux>`

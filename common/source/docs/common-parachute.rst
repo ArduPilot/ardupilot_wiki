@@ -4,6 +4,10 @@
 Parachute
 =========
 
+.. image:: ../../../images/parachute.png
+   :target: ../../images/parachute.png
+
+
 This topic describes how to set up manual and automatic parachute
 release.
 
@@ -130,7 +134,7 @@ release:
 -  the roll and/or pitch angle of the vehicle is 30 degrees off from the
    target lean angle (Copter only)
 -  the barometer shows the vehicle is not climbing (excessive baro noise CAN prevent release in some cases) (Copter & Plane)
--  the vehicle is above the :ref:`CHUTE_ALT_MIN <CHUTE_ALT_MIN>` altitude (Copter & Plane). A value of "0" diables this check.
+-  the vehicle is above the :ref:`CHUTE_ALT_MIN <CHUTE_ALT_MIN>` altitude (Copter & Plane). A value of "0" disables this check.
 
 ..  youtube:: xaw3-oSahtE
     :width: 100%

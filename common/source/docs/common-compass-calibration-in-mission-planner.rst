@@ -4,16 +4,18 @@
 Compass Calibration
 ===================
 
+.. note:: Operation of fixed wing Planes and some Rovers is possible without the use of a compass (See :ref:<common-compassless>`), but utilizing a compass is recommended for all other vehicles unless yaw is provided by some other means (:ref:`common-gps-for-yaw` or :ref:`common-non-gps-navigation-landing-page` or :ref:`common-external-ahrs`)
+
 This article explains how to perform basic compass calibration. It assumes that you have at least one compass, either internally or externally in the system, and it has been enabled. See :ref:`Advanced Compass Setup <common-compass-setup-advanced>` for more information and to setup other compass related features.
 
-.. tip::
+.. warning::  It is important that when compass calibration is done, the vehicle have a good 3D gps lock, in order to assure the best setup. If necessary, move outdoors in order to get a good 3D gps lock before doing the compass calibration.
 
-   It is not necessary to recalibrate the compass when the vehicle is flown at a new location because ArduPilot includes a "world magnetic model" which allows converting the location's magnetic North to true North without recalibrating .  In addition the location's "inclination" is calibrated at startup and then again soon after takeoff. It is important that when compass calibration is done, the vehicle have a good 3D gps lock, in order to assure the best setup. If necessary, move outdoors in order to get a good 3D gps lock before doing the compass calibration.
-   
 .. note::
 
    Compass calibration cannot be performed while vehicle is armed.
 
+
+.. tip:: It is not necessary to recalibrate the compass when the vehicle is flown at a new location because ArduPilot includes a "world magnetic model" which allows converting the location's magnetic North to true North without recalibrating .  In addition the location's "inclination" is calibrated at startup and then again soon after takeoff.
 
 Calibration first steps
 =======================
@@ -38,7 +40,7 @@ Onboard Calibration
 
 "Onboard Calibration" is a calibration routine that runs on the autopilot.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling and orientation are also automatically determined.
 
-.. note:: Calibration could fail for the onboard compasses if the :ref:`autopilot board orientation<AHRS_ORIENTATION>` parameter is not correct.
+.. note:: Calibration could fail for the compasses integrated into the autopilot, if any,  if the :ref:`autopilot board orientation<AHRS_ORIENTATION>` parameter is not correct.
 
 To perform the onboard calibration of all compasses:
 
@@ -61,33 +63,23 @@ If calibration fails:
 - if compass calibration still fails it may help to raise :ref:`COMPASS_OFFS_MAX <COMPASS_OFFS_MAX>` from 850 to 2000 or even 3000
 - finally, if a single compass is not calibrating and you trust the others, disable it.
 
-Onboard Calibration using Stick Gestures (no GCS)
-=================================================
+Onboard Calibration using RC Switch
+===================================
 
-.. note:: This feature has  been removed in firmware versions after 4.1.
+Onboard Calibration can be started using an RC switch instead using the Mission Planner technique above. This allows calibrating without the tangle of the USB cable.
 
-ArduPilot supports "Onboard Calibration using RC Controller stick gestures" meaning that the calibration routine runs on the autopilot with no GCS.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
+Setup an RC channel to start the calibration by setting its ``RCx_OPTION`` to be "171". A high value on the channel will start calibrating all compasses and you would move the vehicle as above. A low value will cancel the calibration. The tones for success or failure above will be emitted.
 
-- requires RC calibration first
-- to start compass calibration hold throttle stick full up and full right yaw for 2 seconds
-- if your autopilot has a buzzer attached you should hear a single tone followed by short beep once per second
-- hold the vehicle in the air and rotate it so that each side (front, back, left, right, top and bottom) points down towards the earth for a few seconds in turn
-
-   .. figure:: ../../../images/accel-calib-positions-e1376083327116.jpg
-      :target: ../_images/accel-calib-positions-e1376083327116.jpg
-
-- upon successful completion three rising tones will be emitted and you will need to reboot the autopilot before it is possible to arm the vehicle.
-
-If calibration fails:
-
-- you will hear a failure tone and the calibration routine will restart
-- to cancel calibration at anytime hold throttle stick full up and full left yaw for 2 seconds
-- if, after multiple attempts, you are unable to calibrate the compass, Cancel with stick and use normal Onboard Calibration from GCS above
+.. _large-vehicle-mag-cal:
 
 Large Vehicle MagCal
 ====================
 
-Large or heavy vehicles are impractical to rotate on all axis. This feature allows a fairly accurate calibration if GPS lock is active on the autopilot and the vehicles actual heading is known, either using a landmark reference on the Mission Planner map, or using another compass (eg cell phone) and entering the vehicles heading.
+Large or heavy vehicles are impractical to rotate on all axis. This feature allows a fairly accurate calibration if GPS lock is active on the autopilot and the vehicles actual heading is known, either using a landmark reference on the Mission Planner map, or using another compass (eg cell phone) and entering the vehicles heading. 
+
+.. warning:: The proper orientation of the compass must also be set in order for this method to give a good result.  If orientation is incorrect this procedure will appear to succeed while leaving the compass calibration in a very bad state.
+
+.. note:: the heading entered should be TRUE, not MAGNETIC. Using a phone's compass app will usually required adding the local declination value to the reading in order to obtain the TRUE geographic heading which should be entered.
 
 Compass Ordering
 ================

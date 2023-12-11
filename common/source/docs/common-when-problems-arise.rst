@@ -8,6 +8,14 @@ ArduPilot, is extremely capable and flexible. But with high performance and flex
 
 This WIKI documentation attempts to reduce the effort of configuring and operating your ArduPilot based vehicle by providing as much accurate information on configuration, parameters, and operating modes as possible, and is continuously being updated as new releases occur or areas needing further explanation arise. Your assistance in that effort is welcomed and solicited. See :ref:`common_wiki_editing_guide`
 
+.. note:: Enabling and using the logging capability of ArduPilot is usually a key requirement when seeking assistance from other in diagnosing issues that you cannot resolve yourself by following the suggestions below.
+
+.. toctree::
+   :maxdepth: 1
+
+   Logs <common-logs>
+
+
 What to do if you have an issue
 ===============================
 
@@ -19,6 +27,11 @@ What to do if you have an issue
 
 .. note:: WatchDog resets ("WDG:") should be reported `on this page <https://github.com/ArduPilot/ardupilot/issues/15915>`_ , Internal Errors ("Internal Error:") should be reported `here <https://github.com/ArduPilot/ardupilot/issues/15916>`_
 
+
+Vehicle Will Not Arm
+====================
+
+See :ref:`common-prearm-safety-checks`. Do not disable arming checks except for bench setup testing. Doing so puts your vehicle at risk for a crash. Always track down the reason why a pre-arm check failure is occurring and correct it before operating the vehicle!
 
 [site wiki="copter"]
 
@@ -51,6 +64,11 @@ Copter Common Problems
    of the motor or ESCs.
 
 [/site]
+
+Free RAM issues
+===============
+
+During initialization, it is possible for some features/subsystems to fail to get enough RAM allocated. Sometimes this will be announced such as in the case of insufficient memory to start a LUA script: "Scripting requires a larger minimum stack size", or for terrain: "Terrain: Allocation failed", etc. Also, insufficient free memory can result in compass calibration failing or MAVftp not initializing. See  :ref:`RAM Limitations <ram_limitations>` for more information.
 
 H7 AutoPilot Will Not Initialize
 ================================

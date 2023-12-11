@@ -4,10 +4,10 @@
 TAKEOFF Mode
 ============
 
-Automatic takeoff can be accomplished either as a mission control command or by directly changing into the TAKEOFF mode. See also the :ref:`automatic-takeoff` topic for general setup information for automatic takeoffs.
+Automatic takeoff can be accomplished either as a mission control command in AUTO mode (NAV_TAKEOFF) or by directly changing into the TAKEOFF mode. See also the :ref:`automatic-takeoff` topic for general setup information for automatic takeoffs.
 
-TAKEOFF Mission Command
-=======================
+NAV_TAKEOFF Mission Command
+===========================
 
 The takeoff mission command specifies a takeoff pitch and a target altitude. During auto-takeoff
 Plane will use the maximum throttle set by the :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>` parameter.

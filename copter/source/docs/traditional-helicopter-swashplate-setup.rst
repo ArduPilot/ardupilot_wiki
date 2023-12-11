@@ -16,6 +16,14 @@ three servo swashplates as there is no chance for binding. It will most likely
 always be required for four servo swashplates because of the potential for binding 
 in a four point attachment. 
 
+The following video covers the swashplate setup and leveling the swashplate.
+
+.. youtube:: oA-9FFYC6Ek
+
+This video covers setting up the min collective, max collective, zero thrust collective, max cyclic and stabilize collective curve.
+
+.. youtube:: qfOuZc_7J4g
+
 Before You Begin
 ================
 
@@ -129,7 +137,7 @@ Leveling swashplate without using Linearize Servo Feature
 
 If you aren’t using the Linearize Servo feature, then you will use the servo trim parameters 
 to level your swashplate. Set the :ref:`H_SV_MAN <H_SV_MAN>` parameter to 1.  Adjust the transmitter throttle 
-stick (collective) until the servos are nearly perpendicular to the shaft.  Adjust :ref:`SERVO1_TRIM <SERVO1_TRIM>` , 
+stick (collective) until the servos are nearly perpendicular to the shaft.  Adjust :ref:`SERVO1_TRIM <SERVO1_TRIM>`, 
 :ref:`SERVO2_TRIM <SERVO2_TRIM>`, and :ref:`SERVO3_TRIM <SERVO3_TRIM>` until the swashplate is level.
 
 Leveling swashplate using Linearize Servo Feature
@@ -161,8 +169,8 @@ angle measures the desired minimum collective blade pitch.
 
 .. note:: Overall collective measurements must be made using the :ref:`H_SV_MAN <H_SV_MAN>` parameter since these would be impacted and inaccurate if the autopilot stabilization was active.
 
-Version 4.2
------------
+Version 4.2 and later
+---------------------
 Minimum and Maximum Collective Blade Pitch Angle
 ++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -220,7 +228,7 @@ Checking the maximum cyclic blade pitch requires positioning the blades 90 deg t
 Therefore if the longitudinal maximum blade cyclic pitch is being measured then rotate the blades until they are perpendicular to the fuselage
 of the aircraft (sticking out the left and right side).  Measure the blade pitch with the elevator and aileron stick centered and then deflect
 the elevator stick full forward or aft and measure the blade pitch.  The difference between the two measurements would be the maximum cyclic 
-blade pitch corresponding to the :ref:`H_CYC_MAX <H_CYC_MAX>` .  The cyclic blade pitch is the same for the pitch (elevator) and roll (aileron) axes.
+blade pitch corresponding to the :ref:`H_CYC_MAX <H_CYC_MAX>`.  The cyclic blade pitch is the same for the pitch (elevator) and roll (aileron) axes.
 
 
 .. toctree::

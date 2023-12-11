@@ -18,14 +18,8 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
-/* commercial support tag*/
-.img-max-commercial {
-    max-width: 100px;
-    width: 100%;
-}
-
 /*
-// This code bellow if uncomment makes the dropdown "automatic". It means, it is not necessary to click it, just pass the mouse over.
+// This code below if uncomment makes the dropdown "automatic". It means, it is not necessary to click it, just pass the mouse over.
 */
 .navbar-nav li:hover .dropdown-menu {
     display: block;
@@ -52,6 +46,7 @@ html {
 
 .carousel-inner{
     width:100%;
+    height: auto;
 }
 
 .carousel-inner img{
@@ -72,7 +67,13 @@ html {
 
 }
 
+/*#blog_posts .row .col-md-4 a {*/
+/*    min-height: 485px; !* Modify to your preference *!*/
+/*}*/
 
+.col_min {
+    min-height: 300px;
+}
 
 .bg-dark {
     /* background-color: #343a40 !important; */
@@ -84,6 +85,11 @@ html {
     display: block;
     padding: 0.5rem 1rem;
     color: white !important; /* ArduPilot */
+}
+
+.nav-link:hover {
+    color: rgb(176, 176, 176) !important;
+    text-decoration: underline;
 }
 
 .dropdown-toggle::after {

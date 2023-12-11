@@ -50,6 +50,8 @@ parameter ``CAN_Px_DRIVER``, where x is the number of the CAN port.
 The value of this parameter is the id of driver that will be associated with this
 port (interface).
 
+Each enabled bus/driver will use a block of RAM memory (not Flash) depending on the type of driver and if CANFD is enabled. For example, DroneCAN will allocate 12KB for its driver (24K if CANFD) by default, but can vary from board to board depending on its defaults, if set by its hardware definition file. The ``CAN_Dx_UC_POOL`` parameter can be used to change the pool size. Required pool size depends on bus traffic required by the attached DroneCAN peripheral and can sometimes be reduced for peripherals such as GPS or Compass, whereas peripherals such as ESCs require more bus traffic and therefore a larger pool size.
+
 For example, the most common setup will have one driver and all interfaces will be connected
 to it.
 The :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` and :ref:`CAN_P2_DRIVER<CAN_P2_DRIVER>` parameters in this configuration should be set to 1 (first
@@ -84,14 +86,27 @@ Configuration of CAN driver
 ---------------------------
 
 The driver should be set to use some protocol. Currently there is support for DroneCAN devices,
-which is numbered 1, and numerous CAN ESCs.
-The parameter ``CAN_Px_PROTOCOL``, where x is the number of driver, should be filled
+which is numbered 1, and numerous CAN ESCs and other devicess.
+The parameter ``CAN_Dx_PROTOCOL``, where x is the number of driver, should be filled
 with the number of protocol for this driver.
 
-.. image:: ../../../images/can-driver-parameters-protocol.png
-    :target: ../_images/can-driver-parameters-bitrate.png
-    
+===============     =============
+CAN_Dx_PROTOCOL     Protocol Type
+===============     =============
+0                   Disabled
+1                   DroneCAN
+4                   PiccoloCAN
+6                   EFI_NWPMU
+7                   USD1
+8                   KDECAN
+10                  Scripting based CAN driver
+11                  Benewake
+12                  Scripting2 (allows two drivers)
+===============     =============
+
 After the change to protocol the autopilot has to be rebooted for the changes to take place.
+
+.. note:: only devices matching the selected protocol can be connected to a given CAN bus. Mixing of different protocol devices on a single CAN bus is not allowed.
 
 CAN ESCs
 ========

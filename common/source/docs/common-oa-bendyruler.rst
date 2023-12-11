@@ -20,8 +20,8 @@ Basic Configuration
 -------------------
 
 -  :ref:`OA_TYPE <OA_TYPE>` = 1 (BendyRuler).  You may need to refresh parameters after changing this to see the parameters below.
--  :ref:`OA_BR_LOOKAHEAD <OA_BR_LOOKAHEAD>` : This parameter is called "OA_LOOKAHEAD" before Copter and Rover 4.1. It is the distance (in meters) ahead of the vehicle that should be probed.  Obstacles further than this far away will be ignored.  This should be long enough that the path around obstacles can be "seen" but not too long or the vehicle will be overly cautious and not enter areas with a lot of obstacles. 5m is typical.
--  :ref:`OA_MARGIN_MAX <OA_MARGIN_MAX>` : the distance (in meters) that the vehicle should stay away from obstacles. 2m is a typical value.
+-  :ref:`OA_BR_LOOKAHEAD <OA_BR_LOOKAHEAD>`: This parameter is called "OA_LOOKAHEAD" before Copter and Rover 4.1. It is the distance (in meters) ahead of the vehicle that should be probed.  Obstacles further than this far away will be ignored.  This should be long enough that the path around obstacles can be "seen" but not too long or the vehicle will be overly cautious and not enter areas with a lot of obstacles. 5m is typical.
+-  :ref:`OA_MARGIN_MAX <OA_MARGIN_MAX>`: the distance (in meters) that the vehicle should stay away from obstacles. 2m is a typical value.
 
 .. note::
 
@@ -50,11 +50,11 @@ Advanced Configuration
 
 If using a lidar or proximity sensor the following "obstacle database" parameters are available:
 
-- :ref:`OA_DB_SIZE <OA_DB_SIZE>` : the maximum number of obstacles that can be tracked
-- :ref:`OA_DB_EXPIRE <OA_DB_EXPIRE>` : the number of seconds after an obstacle disappears from view that it is removed from the database
-- :ref:`OA_DB_QUEUE_SIZE <OA_DB_QUEUE_SIZE>` : the buffer size between the lidar and obstacle database.  Normally this can be left at the default value
-- :ref:`OA_DB_OUTPUT <OA_DB_OUTPUT>` : controls whether tracked objects are visible on the GCS as small airplanes
-- :ref:`OA_DB_ALT_MIN <OA_DB_ALT_MIN>` : OADatabase will reject obstacle's if vehicle's altitude above home is below this parameter, in a 3 meter radius around home. This can be useful if your sensor is picking up the ground as obstacles while taking off.
+- :ref:`OA_DB_SIZE <OA_DB_SIZE>`: the maximum number of obstacles that can be tracked
+- :ref:`OA_DB_EXPIRE <OA_DB_EXPIRE>`: the number of seconds after an obstacle disappears from view that it is removed from the database
+- :ref:`OA_DB_QUEUE_SIZE <OA_DB_QUEUE_SIZE>`: the buffer size between the lidar and obstacle database.  Normally this can be left at the default value
+- :ref:`OA_DB_OUTPUT <OA_DB_OUTPUT>`: controls whether tracked objects are visible on the GCS as small airplanes
+- :ref:`OA_DB_ALT_MIN <OA_DB_ALT_MIN>`: OADatabase will reject obstacle's if vehicle's altitude above home is below this parameter, in a 3 meter radius around home. This can be useful if your sensor is picking up the ground as obstacles while taking off.
 
 
 Videos

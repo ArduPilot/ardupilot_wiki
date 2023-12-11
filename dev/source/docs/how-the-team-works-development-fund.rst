@@ -4,8 +4,10 @@
 Funding Committee
 =================
 
-ArduPilot collects funds through donations from :ref:`individuals <common-donation>` and `Partners <https://ardupilot.org/about/Partners>`__ and these are held within SPI.
-Some of these funds go to pay for fixed costs including servers (i.e. build servers, wiki servers, etc) and are billed directly to ArduPilot's account within SPI.
+ArduPilot collects funds through donations from :ref:`individuals <common-donation>` and `Partners <https://ardupilot.org/about/Partners>`__ and these are held within SPI and the ArduPilot Foundation.
+Some of these funds go to pay for fixed costs including servers (i.e. build servers, wiki servers, etc) and are billed directly to ArduPilot's account within SPI. Other project expenses and support engineer compensation is paid from the ArduPilot Foundation account.
+
+The rules governing the Fundinng committee are setforth here: `Funding Committee Rules <https://docs.google.com/document/d/1l6M5fxjoLEv4TQYzvZhbcBYsUlxJOXSIEfELrACp6f8/edit?usp=sharing>`__.
 
 Each month SPI publishes an in-month and year-to-date financial report on the Treasurer `page <https://spi-inc.org/treasurer/>`__.  Annual Reports, containing a high level summary, are published `here <https://spi-inc.org/corporate/annual-reports/>`__
 
@@ -33,9 +35,9 @@ Evaluating Proposals
 
 The ArduPilot funding committee is made up of three elected members from the team with elections held each December.  The currently elected members are:
 
-- Francisco Ferreira
+- Tom Pittenger
 - James Pattison
-- Pierre Kancir
+- Andy Piper
 
 This committee reviews the `Proposal category <https://discuss.ardupilot.org/c/proposals>`__ regularly and evaluates proposals based on both the benefit to ArduPilot and likelihood of success.
 The approve/reject decision is made by a simple majority vote (i.e. 2 of 3 must approve).

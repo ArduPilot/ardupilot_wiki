@@ -12,6 +12,12 @@ The autopilot can be armed by:
 .. code:: bash
 
     arm throttle
+    
+The autopilot can be force armed by:
+
+.. code:: bash
+
+    arm throttle force
 
 Disarming
 =========
@@ -22,6 +28,11 @@ The autopilot can be disarmed by:
 
     disarm
 
+The autopilot can be force disarmed by:
+
+.. code:: bash
+
+    disarm force
 
 Safety Switch
 =============

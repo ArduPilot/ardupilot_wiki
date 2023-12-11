@@ -30,7 +30,7 @@ These parts are required:
    OR `8GB eMMC Module <https://www.hardkernel.com/shop/8gb-emmc-module-c1-c0-linux/>`__
    preloaded with Linux (the EMMC module is about 4x faster which may be
    useful for image processing)
--  `FTDI Cable <http://store.jdrones.com/cable_ftdi_6pin_5v_p/cblftdi5v6p.htm>`__ or USB
+-  'FTDI Cable <https://www.amazon.com/ftdi-adapter/s?k=ftdi+adapter>`__ or USB
    to Serial interface like `this <https://www.amazon.com/Prolific-PL2303-USB-TTL-Module/dp/B008958S7A>`__. This `link <https://www.sjoerdlangkemper.nl/2019/03/20/usb-to-serial-uart/>`__ provides an overview of USB-TTL modules.
 
 These optional items may also be useful:
@@ -278,7 +278,7 @@ items
 Drone API
 ~~~~~~~~~
 
-To install the latest :ref:`Drone API <droneapi-tutorial>` , run the
+To install the latest :ref:`Drone API <droneapi-tutorial>`, run the
 following:
 
 ::

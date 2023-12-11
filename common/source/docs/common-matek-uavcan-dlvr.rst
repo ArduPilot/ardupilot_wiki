@@ -124,7 +124,7 @@ I2C Mode
 Firmware Update
 ---------------
 
-Firmware may be updated in the future to include the option of MSP connectivity. See `here <http://www.mateksys.com/?portfolio=aspd-dlvr#tab-id-4>`_  for instructions for using the firmware update UART1 pads, or if using DroneCAN, see instructions :ref:`here <common-mp-slcan>`
+Firmware may be updated in the future to include the option of MSP connectivity. See `here <http://www.mateksys.com/?portfolio=aspd-dlvr#tab-id-4>`_  for instructions for using the firmware update UART1 pads, or if using DroneCAN, see instructions :ref:`here <planner:dronecan-uavcan-slcan>`
 
 Where to Buy
 ------------

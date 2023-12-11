@@ -32,7 +32,7 @@ ArduPilot sub-divides tailsitters into two broad categories:
   - Within Non-vectored are two sub-categories, Single/Dual Motor and CopterMotor:
 
      - Single/Dual Motor uses one or two motors and can employ only differential thrust if dual motor. Single motor tailsitters are similar to normal 3D planes that can hover using large control surfaces exposed to the single motor prop wash for control, but with ArduPilot providing the control stability for hovering, loitering, and VTOL mission navigation. Dual Motor add differential thrust to assist in body frame yaw control, while copter motor tailsitters are almost the same as a multicopter when in VTOL stance with flying surfaces, if present, adding to the control.
-     -  CopterMotor uses three, four, or more motors and operates in a more copter-like fashion. These may or may not have control surfaces usable in fixed wing flight for control. **               CopterMotor tailsitters without them (ie. only have a lifting wing with no control surfaces) must use always use their motors to provide control while in fixed wing flight modes. Setting :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` = 2 automatically does this.**
+     -  CopterMotor uses three, four, or more motors and operates in a more copter-like fashion. These may or may not have control surfaces usable in fixed wing flight for control. **               CopterMotor tailsitters without them (ie. only have a lifting wing with no control surfaces) must always use their motors to provide control while in fixed wing flight modes. Setting :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` = 2 automatically does this.**
 
 Tailsitter Configuration
 ========================
@@ -273,6 +273,8 @@ The pitch rate used when pitching down to forward flight is given by :ref:`Q_TAI
 
 For the back transition from forward flight to VTOL, the plane controller will be used until the nose reaches :ref:`Q_TAILSIT_ANG_VT<Q_TAILSIT_ANG_VT>` above the horizon. If :ref:`Q_TAILSIT_ANG_VT<Q_TAILSIT_ANG_VT>` is 0 :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` will be used for both forward and back transitions.
 The pitch rate used when pitching up to VTOL flight is given by :ref:`Q_TAILSIT_RAT_VT<Q_TAILSIT_RAT_VT>`, this rate will be held until :ref:`Q_TAILSIT_ANG_VT<Q_TAILSIT_ANG_VT>` is reached.
+
+.. note:: if you back transition while on the ground, ie sitting in a FW mode at zero throttle, armed, and then switch to a VTOL mode, the motors will immediately start spinning until the "transition" completes and the motors tilt up. This can result in ground movement. To help prevent this, you can set :ref:`Q_OPTIONS<Q_OPTIONS>` bit 18 to prevent arming unless already in a VTOL mode.
 
 Depending on the entry speed and time required to transition, the vehicle may gain altitude, sometimes significantly, since the throttle is set to the current :ref:`Q_M_THRST_HOVER<Q_M_THST_HOVER>` hover thrust value throughout the transition to VTOL. This can be overridden with a lower value by setting :ref:`Q_TAILSIT_THR_VT<Q_TAILSIT_THR_VT>`. With experimentation, changing the rates, angle, and this parameter for fixed wing to VTOL transitions, it is possible to obtain almost level altitude transitions. Especially with copter style tailsitters with no control surfaces using Q_TAILSIT_ENABLE = 2, keeping attitude control active even at low or zero throttle values.
 

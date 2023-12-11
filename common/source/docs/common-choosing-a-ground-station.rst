@@ -12,40 +12,34 @@ Overview
 ========
 
 A ground station is typically a software application, running on a
-ground-based computer, that communicates with your UAV via :ref:`wireless telemetry <common-telemetry-landingpage>`. It displays real-time data
+ground-based computer,phone,or transmitter, that communicates with your UAV via :ref:`wireless telemetry <common-telemetry-landingpage>` or USB cable. It displays real-time data
 on the UAVs performance and position and can serve as a “virtual
 cockpit”, showing many of the same instruments that you would have if
 you were flying a real plane. A GCS can also be used to control a UAV in
 flight, uploading new mission commands and setting parameters. It is
 often also used to monitor the live video streams from a UAV’s cameras.
 
-There are at least ten different ground control stations. On desktop there is (*Mission
-Planner*, *APM Planner 2*, *MAVProxy*, *QGroundControl* and *UgCS*. For Tablet/Smartphone there is
-*Tower* (DroidPlanner 3), *MAVPilot*, *AndroPilot* and *SidePilot* that can be
-used to communicate with ArduPilot (i.e.
-:ref:`Copter <copter:home>`,
-`Plane <https://ardupilot.org/plane/index.html>`_,
-:ref:`Rover <rover:home>`,
-:ref:`AntennaTracker <antennatracker:home>`).
+A GCS is also required to setup the configuration of the autopilot prior to its use and to update the autopilot's firmware.
+
+There are at least ten different ground control stations. On desktop there is *Mission
+Planner*, *APM Planner 2*, *MAVProxy*, *QGroundControl*, *UgCS*, and *LOGOS*. For Tablet/Smartphone there are
+*QGroundControl*, *Tower* (DroidPlanner 3), *MAVPilot*, *AndroPilot* and *SidePilot* that can be
+used to communicate with ArduPilot.
 
 The decision to select a particular GCS often depends on your vehicle
 and preferred computing platform:
 
 -  **Ready-to-fly** users may prefer the portability and ease of use of
-   *Tower* (Droid Planner 3), or another GCS running on a tablet or
+   *QGroundControl*, or another GCS running on a tablet or
    phone.
 -  **DIY/Kit** users and developers often have to access configuration
    and analysis tools, and would therefore need (at least initially)
-   *Mission Planner*, *APM Planner 2* or another more full-featured GCS.
+   *Mission Planner*, *QGroundControl*, *APM Planner 2* or another more full-featured GCS.
+-  **Code Developers** will appreciate some of *MAVProxy's* features.
 
-.. note::
 
-   This wiki primarily refers to set-up and configuration using the
-   Mission Planner, because it was created first and is the most
-   full-featured GCS.
-
-Comparison Desktop
-==================
+Desktop GCSs
+============
 
 Mission Planner
 ---------------
@@ -86,7 +80,7 @@ user base and a reduced feature set when compared with Mission Planner.
 MAVProxy
 --------
 
-Linux GCS often used by Plane developers. Primarily a command line
+Linux GCS often used by code developers. Primarily a command line
 interface with graphical modules for map and mission editing. Written in
 Python, and extensible via python modules.
 
@@ -142,8 +136,39 @@ Supports multi-node installation, meaning that it is possible to connect multipl
 -  `DIY Drones Group for UgCS Users <https://diydrones.com/group/ugcs>`__
 -  `UgCS Github Repository <https://github.com/ugcs>`__
 
-Comparison Mobile
-=================
+LOGOS
+-----
+
+GCS designed to streamline the planning of complex missions that include area scanning, taking photos, & videos. It provides a 3D view mode, binding of physical structures and an in-built simulator that helps to better visualize planned missions.
+
+-  **Platform**: Windows
+-  **Licence**: Proprietary. Can be used freely, but advanced features are not available without purchase.
+
+.. image:: ../../../images/LOGOS_GCS.png
+    :target: ../_images/LOGOS_GCS.png
+
+-  `Download <https://aerologos.by/download>`__
+-  `Website <https://aerologos.by/>`__
+-  `Youtube <https://www.youtube.com/@AerologosBusinessAccount/>`__
+
+Mobile GCSs
+===========
+
+QGroundControl
+--------------
+
+QGroundControl works with MAVLink capable autopilots including ArduPilot.
+It's unique among the GCS offerings as it runs on all platforms desktop and mobile.
+
+-  **Platform**: Windows, Mac OS X, Linux, Android and iOS
+-  **Licence**: `Open Source <http://www.qgroundcontrol.org/license>`__
+   (GPLv3)
+
+.. image:: ../../../images/QGroundControlTabletImage.jpg
+    :target: ../_images/QGroundControlTabletImage.jpg
+
+-  `Website <http://qgroundcontrol.com/>`__
+-  `Support Forum <https://discuss.px4.io/c/qgroundcontrol/15>`__
 
 Tower
 -----
@@ -243,26 +268,23 @@ Android
 
 For Android devices, you will need:
 
--  Android based tablet that can act as a USB host. Google Nexus tablets
-   are recommended, and the compatible hardware lists for the different
-   GCSs are listed in the table above.
--  :ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` or
-   similar (915 Mhz for US, 433 for Europe) which includes the
-   bidirectional ground and air telemetry units.
--  USB OTG cable (typically less than $2 on
-   `ebay <http://www.ebay.com/sch/i.html?_trksid=m570.l3201&_nkw=usb+otg+cable&_sacat=0>`__
-   and
-   `Amazon <http://www.amazon.com/T-Flash-Adapter-Samsung-GT-i9100-GT-N7000/dp/B005FUNYSA/ref=sr_1_5?ie=UTF8&qid=1376262351&sr=8-5&keywords=android+otg+cable>`__).
+-  Android based tablet or smartphone. *QGroundControl* can utilize Bluetooth, WIFI, or USB connectivity to the autopilot from the phone. For USB the device must be ablke to act as a USB host (OTG). 
 
-   
+A connectivity method to vehicle's autopilot:
+-  :ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` or other radio telemetry (:ref:`common-telemetry-landingpage`) with OTG cable can be used for long range, in-the-air, connectivity to a similar vehicle telemetry unit.
+-  WIFI (:ref:`common-esp8266-telemetry`)
+-  Bluetooth (:ref:`common-mission-planner-bluetooth-connectivity`)
+-  for benchtop USB connectivity, a USB OTG cable (typically less than $2 on `ebay <http://www.ebay.com/sch/i.html?_trksid=m570.l3201&_nkw=usb+otg+cable&_sacat=0>`__ and`Amazon <http://www.amazon.com/T-Flash-Adapter-Samsung-GT-i9100-GT-N7000/dp/B005FUNYSA/ref=sr_1_5?ie=UTF8&qid=1376262351&sr=8-5&keywords=android+otg+cable>`__).
+-  Some other telemetry method (:ref:`common-telemetry-landingpage`)
+
 iOS
 ---
 
 For iOS devices, you will need:
 
--  iOS Based device such as an iPad or iPhone. If running iPad, the cellular version is recommended for better GPS support.
+-  iOS Based devices such as an iPad or iPhone. If running iPad, the cellular version is recommended for better GPS support.
 -  Wifi or Bluetooth LE link to the Drone
--  Bridge Connection to a:ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` via Wifi or Bluetooth LE
+-  Bridge Connection to a :ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` via Wifi or Bluetooth LE
 
   See iOS App Vendors for more details.
 
@@ -271,7 +293,5 @@ Desktop PCs (Windows/Mac/Linux)
 
 For Desktop devices you will need:
 
--  :ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` or
-   :ref:`similar <common-telemetry-landingpage>` (915 Mhz for US, 433 for
-   Europe) which includes the bidirectional ground and air telemetry
-   units.
+-  A USB cable, BT module, WIFI adapter, or other connectivity means as listed here (:ref:`common-telemetry-landingpage`)
+

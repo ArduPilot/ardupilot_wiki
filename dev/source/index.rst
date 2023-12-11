@@ -95,7 +95,7 @@ ArduPilot dev team.
 -  `UAVCAN* <http://uavcan.org>`__ -
    Lightweight protocol designed for reliable communication in aerospace and robotic 
    applications via CAN bus. ArduPilot is using the `Libuavcan <http://uavcan.org/Implementations/Libuavcan/>`__,
-   which is a portable, cross-platform library written in C++ with minimal dependency on the C++ standard library.
+   which is a portable, cross-platform library written in C++ with minimal dependency on the C++ standard library and calls its version DroneCAN, allowing UAVCAN to evolve separately.
 
 How the team works
 ==================
@@ -128,12 +128,12 @@ If you think of something that should be added to this site, please
 `open an issue for the wiki <https://github.com/ArduPilot/ardupilot_wiki/issues>`__.
 
 
-Full Table of Contents
-======================
+Table of Contents
+=================
 
 .. toctree::
    :titlesonly:
-   
+
     License (GPLv3) <docs/license-gplv3>
     AP_Peripheral Devices <docs/ap-peripheral-landing-page>
     Downloading the code / Using Git <docs/where-to-get-the-code>
@@ -142,14 +142,18 @@ Full Table of Contents
     Learning the code <docs/learning-the-ardupilot-codebase>
     Simulation & Testing <docs/simulation-2>
     Debugging <docs/debugging>
+    ArduPilot On Linux <docs/ardupilot-on-linux>
+    Support Proxy <docs/support_proxy>
     Contributing Code <docs/contributing>
     MAVLink Interface <docs/mavlink-commands>
-    CAN and UAVCAN <docs/can-bus>
+    CAN and DroneCAN/UAVCAN <docs/can-bus>
     Companion Computers <docs/companion-computers>
-    ROS <docs/ros>
+    ROS/ROS2 <docs/ros>
     Lua Scripts <docs/common-lua-scripts>
     Porting to a new Flight Controller <docs/porting>
     OEM Customization <docs/common-oem-customizations>
+    Secure Firmware <docs/secure-firmware>
+    RemoteID <docs/opendroneid>
     Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
     Resources for GCS Developers <docs/gcs-resources>
@@ -159,10 +163,9 @@ Full Table of Contents
     Training Centers <docs/common-training-centers>
     GSoC <docs/gsoc>
     2021 Developers Conference<docs/2021-conference>
+    2022 Roadmap <https://github.com/orgs/ArduPilot/projects/2>
     Wiki Editing Guide <docs/common-wiki_editing_guide>
     USB IDs <docs/USB-IDs>
     User Alerts <docs/user-alerts-developer>
-    Upcoming Features <docs/common-master-features>
     Academic Works Involving ArduPilot <docs/acadamic-works>
     Appendix <docs/common-appendix>
-    Full Table of Contents <docs/common-table-of-contents>

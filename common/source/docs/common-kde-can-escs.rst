@@ -51,10 +51,8 @@ Configuration
 
 - Set :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 8 (KDECAN)
 - Set :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (First driver) to specify that the ESCs are connected to the CAN1 port
-[site wiki="copter,rover"]
 - Set :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` = 1000 and :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` = 2000 so ArduPilot uses an output range that matches the ESCs input range
-- Set :ref:`CAN_D1_KDE_NPOLE <CAN_D1_KDE_NPOLE>` to the number of poles on the motor (Note it may be necessary to reboot the autopilot to cause this parameter to appear).  If you are not sure of the number, you can probably count them by looking closely into the top of the motor.  Even if set incorrectly the motors should spin normally because this number is only used to calculate the RPM reported to the ground station and stored in the onboard logs
-[/site]
+- Set :ref:`KDE_NPOLE <KDE_NPOLE>` to the number of poles on the motor (Note it may be necessary to reboot the autopilot to cause this parameter to appear).  If you are not sure of the number, you can probably count them by looking closely into the top of the motor.  Even if set incorrectly the motors should spin normally because this number is only used to calculate the RPM reported to the ground station and stored in the onboard logs
 
 Logging and Reporting
 ---------------------

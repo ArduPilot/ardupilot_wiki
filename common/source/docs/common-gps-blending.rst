@@ -4,15 +4,11 @@
 GPS Blending (aka Dual GPS)
 ===========================
 
-Copter 3.5 (and higher), Plane 3.8.0 (and higher) and recent versions of Rover all support GPS Blending.
-Using two GPSs reduces the chance of glitches affecting the vehicle.
+GPS Blending combines the readings from two gpses.
+Using two GPSes reduces the chance of glitches affecting the vehicle.
 
 .. image:: ../../../images/pixhawk_with_dual_gps.jpg
     :target: ../_images/pixhawk_with_dual_gps.jpg
-
-.. note::
-
-   Two GPSs should not be used on Copter-3.4.5 (and older) firmwares because of the risk of sudden vehicle movements when the primary GPS changes.
 
 Only GPSs that report position and speed accuracy can be used for blending.  All UBlox GPSs provide this extra information while GPSs using the NMEA protocol generally do not.
 
@@ -33,9 +29,9 @@ After rebooting the board, the status, hdop and satellite count of both GPSs sho
 Dataflash logging
 =================
 
-The first GPS's data appears in the GPS and GPA messages.
-The second GPS's data appears in the GPS2 and GPA2 messages.
-The blended GPS data appears in the GPSB and GPAB messages.
+The first GPS's data appears with an instance number of 0 in the GPS and GPA messages. (ie GPS[0].x, GPA[0].x messages)
+The second GPS's data appears with an instance number of 1 in the GPS and GPA messages.
+The blended GPS data appears with an instance number of 2 in the GPS and GPA messages.
 
 If using the Mission Planner, opening a dataflash log and clicking on "Show Map" will show both GPSs, the blended position and the EKF's final estimate (shown as "POS")
 

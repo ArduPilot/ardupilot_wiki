@@ -85,7 +85,7 @@ high the copter's heading will oscillate. If they are too low the copter
 may be unable to maintain its heading.
 
 As mentioned on the :ref:`Stabilize mode's tuning section <stabilize-mode_tuning>`,
-the ACRO_YAW_P parameter controls how quickly copter rotates based on
+the :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` parameter controls how quickly copter rotates based on
 a pilot’s yaw input.  The default of 4.5 commands a 200 deg/sec rate of
 rotation when the yaw stick is held fully left or right.  Higher values
 will make it rotate more quickly.
@@ -158,4 +158,4 @@ firmware to continuously stabilize the vehicle
 -----
 
 .. image:: ../../../images/banner-freespace.png
-   :target: https://freespace.solutions/
+   :target: https://freespacesolutions.com.au/tuning/

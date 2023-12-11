@@ -1,20 +1,11 @@
 .. _home:
 
-===========
-Blimp Home
-===========
-
-.. tip::
-
-    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
-
+===============
+ArduPilot Blimp
+===============
 
 .. image:: /images/home_blimp.png
     :target: _images/home_blimp.png
-    
-.. youtube:: t-qaqH-AO2c
-
---------------
 
 Getting more info
 ~~~~~~~~~~~~~~~~~
@@ -24,6 +15,14 @@ Getting more info
    to ask support questions and advice.
 -  To get involved with the development of the software platform, visit the `ArduPilot development guide <https://ardupilot.org/dev/index.html>`__.
 -  As this vehicle is still new you are also welcome to ask setup or general questions in the blimp channel on the `ArduPilot Discord server <https://ardupilot.org/discord>`__.
+
+.. tip::
+
+    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
+
+--------------
+    
+.. youtube:: t-qaqH-AO2c
 
 .. toctree::
    :hidden:
@@ -35,4 +34,4 @@ Getting more info
    Complete parameter list <docs/parameters>
    Complete log message list <docs/logmessages>
    Simulation<docs/simulation>
-   Full Table of Contents <docs/common-table-of-contents>
+   Upcoming Features <docs/common-master-features>

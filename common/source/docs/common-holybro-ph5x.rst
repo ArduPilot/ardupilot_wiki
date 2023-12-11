@@ -5,7 +5,7 @@
 Pixhawk 5X Flight Controller
 ============================
 
-Pixhawk 5X® is the latest update to the successful family of Pixhawk® flight controllers made by Holybro, featuring vibration isolation of IMUs, triple redundant IMUs, double redundant barometers on separate buses, IMU heating, and integrated Ethernet for high speed connections to companion computers.
+Pixhawk 5X® is the latest update to the successful family of Pixhawk® autopilots made by Holybro, featuring vibration isolation of IMUs, triple redundant IMUs, double redundant barometers on separate buses, IMU heating, and integrated Ethernet for high speed connections to companion computers.
 
 .. image:: ../../../images/holybro-pixhawk5x/pixhawk5x_exploded_diagram.jpg
     :target: ../_images/pixhawk5x_exploded_diagram.jpg
@@ -14,7 +14,7 @@ Pixhawk 5X® is the latest update to the successful family of Pixhawk® flight c
 Where To Buy
 ============
 
-The Pixhawk5X flight controller is sold by `Holybro <https://shop.holybro.com/pixhawk-5x_p1279.html>`__
+The Pixhawk5X autopilot is sold by `Holybro <https://shop.holybro.com/pixhawk-5x_p1279.html>`__
 
 Features
 ========
@@ -79,26 +79,26 @@ UART Mapping
 ============
 
  - SERIAL0 -> USB 
- - SERIAL1 -> UART7 (Telem1) RTS/CTS pins
- - SERIAL2 -> UART5 (Telem2) RTS/CTS pins
+ - SERIAL1 -> UART7 (Telem1) RTS/CTS pins (DMA enabled)
+ - SERIAL2 -> UART5 (Telem2) RTS/CTS pins (DMA enabled)
  - SERIAL3 -> USART1 (GPS1)
  - SERIAL4 -> UART8 (GPS2)
- - SERIAL5 -> UART2 (Telem3) RTS/CTS pins
+ - SERIAL5 -> UART2 (Telem3) RTS/CTS pins (DMA enabled)
  - SERIAL6 -> UART4 (USER)
  - SERIAL7 -> USART3 (Debug)
  - SERIAL9 -> USB (SLCAN)
 
 RC Input
 ========
-The RCIN pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true UART connection. However, bi-directional protocols which include telemetry, such as SRXL2 and FPort, when connected in this manner, will only provide RC without telemetry. 
+The RCIN pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
 
-To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL6 (UART4) would need to be used for receiver connections. Below are setups using UART4. :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` should be set to "23".
+To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL5 (UART2) would need to be used for receiver connections. Below are setups using UART2. :ref:`SERIAL5_PROTOCOL<SERIAL5_PROTOCOL>` should be set to "23".
 
-- FPort would require :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "15".
+- FPort would require :ref:`SERIAL5_OPTIONS<SERIAL5_OPTIONS>` be set to "15".
 
-- CRSF would require :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "0".
+- CRSF would require :ref:`SERIAL5_OPTIONS<SERIAL5_OPTIONS>` be set to "0".
 
-- SRXL2 would require :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "4" and connects only the UART4 TX pin.
+- SRXL2 would require :ref:`SERIAL5_OPTIONS<SERIAL5_OPTIONS>` be set to "4" and connects only the UART2 TX pin.
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
 
@@ -128,8 +128,8 @@ connector. They are intended for use with the I2C power monitor supplied with th
 .. note:: do not try to use the Mission Planner SETUP->Optional Hardware->Battery Monitor tab to setup the power monitors. The parameters needed for their operation are already setup by default:
 
 - :ref:`BATT_MONITOR<BATT_MONITOR>` = 21
-- :ref:`BATT_I2C_BUS<BATT_I2C_BUS>` = 1
-- :ref:`BATT_I2C_ADDR<BATT_I2C_ADDR>` = 65
+- :ref:`BATT_I2C_BUS<BATT_I2C_BUS__AP_BattMonitor_INA2xx>` = 1
+- :ref:`BATT_I2C_ADDR<BATT_I2C_ADDR__AP_BattMonitor_INA2xx>` = 65
 
 Compass
 =======

@@ -8,7 +8,7 @@ DroneCAN_GUI is a tool that allows viewing, configuration and software updates o
 connected to the BUS.
 
 - Windows: Download `DroneCAN_GUI <https://firmware.ardupilot.org/Tools/CAN_GUI/>`_ and install.
-- Linux: python -m pip install dronecan_gui_tool dronecan
+- Linux: python3 -m pip install dronecan_gui_tool dronecan
 
 Before the autopilot can be connected, SLCAN mode must be operational. See :ref:`common-slcan-f4` or :ref:`common-slcan-f7h7` for setup information.
 

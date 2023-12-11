@@ -13,7 +13,7 @@ Parts List
 
 - `iFlight Titan Chimera7 LR frame <https://shop.iflight-rc.com/quad-parts-cat20/FrameKits-Parts-TPU-cat346/xl-series-cat110/Chimera7-Pro-6S-Long-Range-Frame-Kit-Pro1723>`__
 - XING 2806.5 1300KV / `XING2 2809 1250KV <https://shop.iflight-rc.com/XING2-2809-FPV-Motor-Unibell-Pro1673>`__ / T-Motor F90 1300KV Motor x4
-- Lumenier LUX H7 HD Ultimate / `Matek H743 Slim flight controller <http://www.mateksys.com/?portfolio=h743-slim>`__
+- Lumenier LUX H7 HD Ultimate / `Matek H743 Slim autopilot <http://www.mateksys.com/?portfolio=h743-slim>`__
 - `TBS UNIFY 5G8 PRO32 HV <https://www.team-blacksheep.com/products/prod:unifypro32_hv>`__ VTX
 - `TBS Tracer nano RX <https://www.team-blacksheep.com/products/prod:tracer_nanorx>`__
 - Gemfan 7040 propellers x4
@@ -25,7 +25,7 @@ Parts List
 - Turnigy Graphene Panther 3000mAh 6S 75C battery or similar
 - RC transmitter with at least 6 channels like the Radiomaster RX16S
 
-This frame will also take the DJI digital HD VTX system. To build an ArduPilot compatible version of the RTF kit the flight controller and ESC will need to be changed out from those shipped.
+This frame will also take the DJI digital HD VTX system. To build an ArduPilot compatible version of the RTF kit the autopilot and ESC will need to be changed out from those shipped.
 
 Connection and Setup
 --------------------

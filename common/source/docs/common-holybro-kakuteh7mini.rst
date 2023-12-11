@@ -1,8 +1,8 @@
 .. _common-holybro-kakuteh7mini:
 
-======================
-Holybro Kakute H7 Mini
-======================
+===========================
+Holybro Kakute H7 Mini V1.3
+===========================
 
 .. image:: ../../../images/holybro-kakuteh7mini.jpg
     

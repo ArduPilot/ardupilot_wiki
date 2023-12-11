@@ -1,8 +1,8 @@
 .. _ros:
 
-===
-ROS
-===
+========
+ROS/ROS2
+========
 
 .. image:: ../images/logos/rosorg_logo.png
     :target: ../_images/logos/rosorg_logo.png
@@ -11,7 +11,11 @@ ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka R
 
 `ROS <http://www.ros.org/>`__ provides libraries, tools, hardware abstraction, device drivers, visualizers, message-passing, package management, and more to help software developers create robot applications.  In the future, we expect ROS will be replaced by `ROS2 <http://design.ros2.org/articles/why_ros2.html>`__
 
-`MAVROS <http://wiki.ros.org/mavros>`__ is a ROS "node" that can convert between ROS topics and `MAVLink messages <https://github.com/ArduPilot/mavlink>`__ allowing ArduPilot vehicles to communicate with ROS.  The `MAVROS code can be found here <https://github.com/mavlink/mavros/tree/master/mavros>`__.
+
+.. image:: ../images/logos/ros2_logo.jpg
+    :target: ../_images/logos/ros2_logo.jpg
+
+`MAVROS <http://wiki.ros.org/mavros>`__ is a ROS package that can convert between ROS topics and `MAVLink messages <https://github.com/ArduPilot/mavlink>`__ allowing ArduPilot vehicles to communicate with ROS.  The `MAVROS code can be found here <https://github.com/mavlink/mavros/tree/master/mavros>`__.
 
 These pages will show you how to:
 
@@ -19,6 +23,7 @@ These pages will show you how to:
     :maxdepth: 1
 
         Install ROS and MAVROS <ros-install>
+        Install ROS2 <ros2>
         Connecting to ArduPilot from ROS <ros-connecting>
         Hector SLAM for non-GPS navigation <ros-slam>
         Google Cartographer SLAM for non-GPS navigation <ros-cartographer-slam>
@@ -28,7 +33,10 @@ These pages will show you how to:
         Clock/Time syncronisation <ros-timesync>
         Send data from AP to ROS/mavros <ros-data-from-ap>
         ROS with SITL <ros-sitl>
+        ROS 2 with SITL <ros2-sitl>
         ROS with SITL in Gazebo <ros-gazebo>
+        ROS 2 with SITL in Gazebo <ros2-gazebo>
+        Cartographer SLAM with ROS 2 in SITL <ros2-cartographer-slam>
         ROS with distance sensors <ros-distance-sensors>
         ROS with Aruco Boards detection <ros-aruco-detection>
         ROS with Apriltag Boards detection <ros-apriltag-detection>

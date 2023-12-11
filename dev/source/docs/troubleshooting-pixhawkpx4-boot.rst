@@ -1,5 +1,7 @@
 .. _troubleshooting-pixhawkpx4-boot:
 
+ARCHIVED
+
 ============================
 Troubleshooting Pixhawk Boot
 ============================

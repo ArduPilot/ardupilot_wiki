@@ -87,7 +87,9 @@ Connect to the autopilot with a ground station (i.e. Mission Planner) and check 
 
 Enable any of the :ref:`obstacle avoidance <common-object-avoidance-landing-page>` of your own choosing. :ref:`Simple avoidance behavior <common-simple-object-avoidance>` (Stop/Slide) will be used as the example for this wiki:
 
-- :ref:`PRX_TYPE <PRX_TYPE>` = 2: for MAVLink
+Example setup below shown for first proximity sensor:
+
+- :ref:`PRX1_TYPE <PRX1_TYPE>` = 2: for MAVLink
 - :ref:`AVOID_ENABLE <AVOID_ENABLE>` = 7: “All” to use all sources of barrier information including “Proximity” sensors
 
 Example of specifics for ``Loiter`` and ``AltHold`` mode:
@@ -193,7 +195,7 @@ These steps are only required if you have not already installed APSync to the co
 For the companion computer:
 
 - **OS**: **Ubuntu 18.04** (highly recommended as this release is the most up-to-date with the required libraries).
-- **Python 3.6** and above, which is also the standard for Ubuntu 18.04. Check ther version with ``$ python3 -V``, you should see ``Python 3.6.9`` or higher.
+- **Python 3.6** and above, which is also the standard for Ubuntu 18.04. Check the version with ``$ python3 -V``, you should see ``Python 3.6.9`` or higher.
 - `librealsense <https://github.com/IntelRealSense/librealsense>`__: download or install from the `official source <https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md>`__.
 - ``pyrealsense2`` is also required
 

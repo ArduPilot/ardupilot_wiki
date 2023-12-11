@@ -1,12 +1,18 @@
 .. _sitl-native-on-windows:
 
-==========================
-Setting up SITL on Windows
-==========================
+====================================================
+SITL setup on Windows using Cygwin (not recommended)
+====================================================
+
+.. warning::
+
+   These instructions are out-of-date.  We recommend Windows users follow the instructions for :ref:`Setting up the Build Environment using WSL <building-setup-windows>` and :ref:`Setting up SITL on WSL <sitl-on-windows-wsl>`
 
 SITL was originally developed on Linux, but can also be built and run *natively* on Windows. It can also be run on a virtual machine (Linux) hosted on Windows, Mac OSX, or Linux or by using the Windows Subsystem for Linux (WSL).
 
 Currently, the simplest way to run SITL on Windows is to build the code and simulate using WSL:  :ref:`dev:building-setup-windows10`
+
+Prerequisites: 'Windows 10 64bit'  at a minimum, this will not work on , for example, Windows 7. It also will not run on any 32bit windows installation.
 
 The remainder of this article shows how to build and run :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` *natively* on Windows using Cygwin. These commands were tested on Windows 10 with :ref:`MAVProxy <mavproxy:home>` and Copter-4.0.0-dev.
 

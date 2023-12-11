@@ -13,6 +13,8 @@ This allows MAVProxy to substitute a fakegps signal into the autopilot or simula
 
 In order to use it after the module is loaded, you must change :ref:`GPS_TYPE<GPS_TYPE>` to "14" (MAVLink) so that GPS data is supplied via MAVLink commands.
 
+.. note:: Autopilots with less than 2MB of flash do not have the MAVLink type GPS backend compiled in by default. Use the custom build server to create a firmware that does in order to use this module.
+
 Then you can right click on any location and see the dropdown options for setting the new location and altitude:
 
 .. image:: ../../images/fakegps.jpg

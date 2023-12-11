@@ -4,7 +4,7 @@
 Onboard Display
 ===============
 
-This article explains how to connect a small onboard display to a autopilot which can be useful for displaying a small amount of vehicle information before takeoff.
+This article explains how to connect a small onboard display to an autopilot which can be useful for displaying a small amount of vehicle information before takeoff.
 
 .. image:: ../../../images/common-display-pixhawk.png
     :target: ../_images/common-display-pixhawk.png

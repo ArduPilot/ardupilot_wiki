@@ -70,5 +70,5 @@ In order to actually use this,an airspeed sensor must be in use, and the :ref:`T
 Use with pilot controlled forward thrust only
 +++++++++++++++++++++++++++++++++++++++++++++
 
-The autopilot controlled reverse thrust discussed above can be used without needing to have the throttle stick evoke any reverse thrust at all. Simply set :ref:`THR_MIN<THR_MIN>` for the maximum reverse thrust and :ref:`USE_REV_THRUST<USE_REV_THRUST>` as desired, and then set ::ref:`RC3_TRIM<RC3_TRIM>` =  :ref:`RC3_MIN<RC3_MIN>`. Low throttle stick will be zero thrust and above that, will only be forward thrust, however the autopilot can still command reverse thrust as needed.
+The autopilot controlled reverse thrust discussed above can be used without needing to have the throttle stick evoke any reverse thrust at all. Simply set :ref:`THR_MIN<THR_MIN>` for the maximum reverse thrust and :ref:`USE_REV_THRUST<USE_REV_THRUST>` as desired, and then set :ref:`RC3_TRIM<RC3_TRIM>` =  :ref:`RC3_MIN<RC3_MIN>`. Low throttle stick will be zero thrust and above that, will only be forward thrust, however the autopilot can still command reverse thrust as needed.
 

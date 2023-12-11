@@ -176,4 +176,4 @@ You can build 32-bit binaries to be run outside of Cygwin with a small set of co
 
 ::
 
-      ./waf configure --board=sitl --toolchain i686-pc-cygwin
+      ./waf configure --board=sitl --toolchain x86_64-pc-cygwin

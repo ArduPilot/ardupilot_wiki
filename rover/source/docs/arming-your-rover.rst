@@ -19,18 +19,20 @@ If the LEDs never become blue or green please see the "Pre-Arm Checks" section b
 There are three ways to arm the vehicle:
 
 -  **From the transmitter sticks**.  Ensure the vehicle is in :ref:`Hold <hold-mode>`, :ref:`Manual <manual-mode>`, :ref:`Acro <acro-mode>` or :ref:`Steering <steering-mode>` mode, then center the throttle stick and hold the steering stick fully to the right for 2 seconds
--  **From a transmitter switch**.  Raise the auxiliary switch to the high position (see :ref:`how to configure aux functions here <common-auxiliary-functions>`)
+-  **From a transmitter switch**.  If setup, you can use one of the **RC_xOPTION switches** that includes the arm function. See switch option "153", "154, or "160.
 -  **From the Ground Station**.  Press the arm/disarm button on your ground station.  If using the Mission Planner this can be found on the Flight Data screen's action tab on the bottom left
 
 .. image:: ../../../images/armingButtonMissPlan.jpg
 
 If the vehicle fails to arm, please see the "Pre-Arm Checks" section below.
 
+.. note:: Rover cannot be armed in RTL or SMARTRTL modes. In addition AUTO, GUIDED, LOITER, RTL, SMARTRTL, FOLLOW, and DOCK modes cannot be armed via an :ref:`common-auxiliary-functions` RC switch.
+
 How to Disarm
 =============
 
 -  **From the transmitter sticks**.  Ensure the vehicle is in :ref:`Hold <hold-mode>`, :ref:`Manual <manual-mode>`, :ref:`Acro <acro-mode>` or :ref:`Steering <steering-mode>` mode, then hold the steering stick fully left for 2 seconds
--  **From a transmitter switch**.  Lower the auxiliary switch to the low position (see :ref:`how to configure aux functions here <common-auxiliary-functions>`)
+-  **From a transmitter switch**.  If setup, you can use one of the ``RC_xOPTION`` switches that includes the disarm function. See switch option "81", "153, or "154".
 -  **From the Ground Station**.  Press the arm/disarm button on your ground station.  If using the Mission Planner this can be found on the Flight Data screen's action tab on the bottom left
 
 .. note::
@@ -56,7 +58,7 @@ A more complete list of failures can be found on the :ref:`Pre-Arm Safety Checks
 -  Safety switch. The safety switch must be set to the off
    state before arming is allowed. This is either done by pressing the
    safety switch for 2 seconds until it stops flashing, or you can
-   disable the use of the safety switch by setting :ref:`BRD_SAFETYENABLE <BRD_SAFETYENABLE>` to 0.
+   disable the use of the safety switch by setting :ref:`BRD_SAFETY_DEFLT <BRD_SAFETY_DEFLT>` to 0.
 -  Inertial Sensor Checks. The accelerometers and gyroscopes must all be
    healthy and all be calibrated. If you have more than one accel or
    gyro then they need to be consistent with each other.

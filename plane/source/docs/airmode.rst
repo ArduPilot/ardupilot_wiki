@@ -4,8 +4,6 @@
 AirMode
 =======
 
-.. note:: this feature will be available in Plane 4.1 firmware and later.
-
 This is not an actual flight mode, but rather, an important feature of QACRO and QSTABILIZE modes. Other flight control software refer to it as a flight mode, so for consistency, its included in the QuadPlane flight modes documentation.
 
 What it is
@@ -19,10 +17,4 @@ Instead, stabilization even at zero throttle can be enabled/disabled for these m
 
 .. warning:: If Airmode is enabled by this switch while disarmed, and you arm via rudder, the aircraft will immediately attempt to yaw to the right while still on the ground.
 
-Alternatively, you can set :ref:`Q_OPTIONS<Q_OPTIONS>` bit 9 (512) to allow Airmode to be activated if armed using an RC channel switch (``RCx_OPTION`` = 41). Arming via rudder, in this case, will not activate Airmode, as it does when using the Airmode RC option switch. This option bit is ignored if using an RC switch to enable/disable Airmode.
-
-.. note:: You cannot activate Airmode without using either the switch option or the :ref:`Q_OPTIONS<Q_OPTIONS>` method.
-
-
-
-
+If you arm using an RC switch (``RCx_OPTION`` = 154), AirMode will be active but can be disabled with the above switch. If you arm using an RC switch using the (``RCx_OPTION`` = 153) function, then AirMode can only be enabled or disabled using the ``RCx_OPTION`` = 84 switch function.

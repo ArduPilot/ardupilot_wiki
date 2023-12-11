@@ -38,7 +38,7 @@ Hardware changes to reduce magnetic interference on the compass
 #. Twist the wires between the PDB, ESC and battery and use grounded
    shielding where possible.
 #. Replace the PDB and ESCs with a 4-in-1 ESC because they tend to
-   poroduce less interference probably because their wires are shorter
+   produce less interference probably because their wires are shorter
    and closer together and they also have an aluminum plate on top which
    may help reduce the interference.
 #. Add aluminum shielding (even gutter tape) around the wires from the

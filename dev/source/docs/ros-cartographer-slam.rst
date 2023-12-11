@@ -46,14 +46,14 @@ Install more packages
 
 ::
 
-    sudo apt-get install ros-kinetic-desktop
+    sudo apt-get install ros-<distro>-desktop
 
 - OR install each of these individual packages (this list is not yet complete):
 
 ::
 
-    sudo apt-get install ros-kinetic-tf ros-kinetic-tf-conversions ros-kinetic-laser-geometry
-    sudo apt-get install ros-kinetic-cv-bridge ros-kinetic-image-transport
+    sudo apt-get install ros-<distro>-tf ros-<distro>-tf-conversions ros-<distro>-laser-geometry
+    sudo apt-get install ros-<distro>-cv-bridge ros-<distro>-image-transport
     sudo apt-get install qt4-qmake qt4-dev-tools
     sudo apt-get install protobuf-compiler
 
@@ -113,16 +113,6 @@ Clone the `Robot Pose Publisher <http://wiki.ros.org/robot_pose_publisher>`__ pa
     cd $HOME/catkin_ws/src
     git clone https://github.com/GT-RAIL/robot_pose_publisher.git
 
-Modify the robot_pose_publisher.cpp file
-
-::
-
-    cd $HOME/catkin_ws/src/robot_pose_publisher/src
-    gedit robot_pose_publisher.cpp
-
-    # modify line 40 to look like below ("false" has been changed to "true")
-    nh_priv.param<bool>("is_stamped", is_stamped, true);
-
 Create the cartographer_ros launch file using your favourite editor (like "gedit")
 
 ::
@@ -134,7 +124,6 @@ Copy-paste the contents below into the file
 
 ::
 
-    <?xml version="1.0"?>
        <launch>
           <param name="/use_sim_time" value="false" />
           <node name="cartographer_node"
@@ -142,8 +131,8 @@ Copy-paste the contents below into the file
                 type="cartographer_node"
                 args="-configuration_directory $(find cartographer_ros)/configuration_files -configuration_basename cartographer.lua"
                 output="screen">
-                <remap from=”odom” to “/mavros/local_position/odom” />
-                <remap from=”imu” to “/mavros/imu/data” />
+                <remap from="odom" to="/mavros/local_position/odom" />
+                <remap from="imu" to="/mavros/imu/data" />
           </node>
           <node name="cartographer_occupancy_grid_node"
                 pkg="cartographer_ros"
@@ -152,7 +141,10 @@ Copy-paste the contents below into the file
                 pkg="robot_pose_publisher"
                 type="robot_pose_publisher"
                 respawn="false"
-                output="screen" />
+                output="screen" >
+                <param name="is_stamped" type="bool" value="true"/>
+                <remap from="robot_pose" to="/mavros/vision_pose/pose" />
+          </node>
           <node pkg="tf" type="static_transform_publisher" name="base_to_laser_broadcaster" args="0 0 0 0 0 0 base_link laser 100" />
        </launch>
 
@@ -171,68 +163,61 @@ Copy-paste the contents below into the file
     include "trajectory_builder.lua"
 
     options = {
-
-        map_builder = MAP_BUILDER,
-        trajectory_builder = TRAJECTORY_BUILDER,
-        map_frame = "map",
-        tracking_frame = "base_link",
-        published_frame = "base_link",
-        odom_frame = "odom",
-        provide_odom_frame = true,
-        use_odometry = false,
-        use_nav_sat = false,
-        use_landmarks = false,
-        publish_frame_projected_to_2d = false,
-        num_laser_scans = 1,
-        num_multi_echo_laser_scans = 0,
-        num_subdivisions_per_laser_scan = 1,
-        rangefinder_sampling_ratio = 1,
-        odometry_sampling_ratio = 1,
-        fixed_frame_pose_sampling_ratio = 1,
-        imu_sampling_ratio = 1,
-        landmarks_sampling_ratio = 1,
-        num_point_clouds = 0,
-        lookup_transform_timeout_sec = 0.2,
-        submap_publish_period_sec = 0.3,
-        pose_publish_period_sec = 5e-3,
-        trajectory_publish_period_sec = 30e-3,
+      map_builder = MAP_BUILDER,
+      trajectory_builder = TRAJECTORY_BUILDER,
+      map_frame = "map",
+      tracking_frame = "base_link",
+      published_frame = "base_link",
+      odom_frame = "odom",
+      provide_odom_frame = true,
+      publish_frame_projected_to_2d = false,
+      use_odometry = false,
+      use_nav_sat = false,
+      use_landmarks = false,
+      num_laser_scans = 1,
+      num_multi_echo_laser_scans = 0,
+      num_subdivisions_per_laser_scan = 1,
+      num_point_clouds = 0,
+      lookup_transform_timeout_sec = 0.2,
+      submap_publish_period_sec = 0.3,
+      pose_publish_period_sec = 5e-3,
+      trajectory_publish_period_sec = 30e-3,
+      rangefinder_sampling_ratio = 1.,
+      odometry_sampling_ratio = 1.,
+      fixed_frame_pose_sampling_ratio = 1.,
+      imu_sampling_ratio = 1.,
+      landmarks_sampling_ratio = 1.,
     }
 
     MAP_BUILDER.use_trajectory_builder_2d = true
 
+    TRAJECTORY_BUILDER_2D.min_range = 0.05
+    TRAJECTORY_BUILDER_2D.max_range = 30
+    TRAJECTORY_BUILDER_2D.missing_data_ray_length = 8.5
     TRAJECTORY_BUILDER_2D.use_imu_data = false
-
-    TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
-    
-    TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 10
-      
+    TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 0.2
     TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = 5
-      
     TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
-      
     TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.linear_search_window = 0.1
-    
     TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.translation_delta_cost_weight = 1.
-      
     TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.rotation_delta_cost_weight = 10
+    TRAJECTORY_BUILDER_2D.motion_filter.max_angle_radians = math.rad(0.2)
+    -- for current lidar only 1 is good value
+    TRAJECTORY_BUILDER_2D.num_accumulated_range_data = 1
 
+    TRAJECTORY_BUILDER_2D.min_z = -0.5
+    TRAJECTORY_BUILDER_2D.max_z = 0.5
+
+    POSE_GRAPH.constraint_builder.min_score = 0.65
+    POSE_GRAPH.constraint_builder.global_localization_min_score = 0.65
     POSE_GRAPH.optimization_problem.huber_scale = 1e2
+    POSE_GRAPH.optimize_every_n_nodes = 30
 
     return options
+    
+.. note::
 
-Modify mavros's node.launch file with your favourite editor (like gedit shown below)
-
-::
-
-    roscd mavros
-    cd launch
-    sudo gedit node.launch
-
-After <rosparam command="load" file="$(arg config_yaml)" /> add a line like below.   This causes the `mavros vision_pose_estimate plugin <https://github.com/mavlink/mavros/blob/master/mavros_extras/src/plugins/vision_pose_estimate.cpp>`__ (which uses the "/mavros/vision_pose/pose" topic) to pull data from the "/robot_pose" topic output by cartographer
-
-::
-
-    <remap from="/mavros/vision_pose/pose" to="/robot_pose" />
+    Instead of manually modifying the above packages, clone `this <https://github.com/ArduPilot/ardupilot_ros>`__ repository and install the dependencies.
 
 
 Build the Packages
@@ -279,19 +264,25 @@ Start mavros as described on the :ref:`Connecting with ROS page <ros-connecting>
 .. code-block:: bash
 
     roslaunch mavros apm.launch fcu_url:=udp://:14855@
+    
 
 Configure ArduPilot
 -------------------
 
 Connect to the flight controller with a ground station (i.e. Mission Planner) and check that the following parameters are set as shown below:
 
--  :ref:`AHRS_EKF_TYPE <copter:AHRS_EKF_TYPE>` = 2 (the default) to use EKF2 (at the time this page was written the EKF3 did not yet support external position estimates)
--  :ref:`EK2_ENABLE <copter:EK2_ENABLE>` = 1 (the default)
--  :ref:`EK3_ENABLE <copter:EK3_ENABLE>` = 0 (the default)
+-  :ref:`AHRS_EKF_TYPE <copter:AHRS_EKF_TYPE>` = 3 to use EKF3
+-  :ref:`EK2_ENABLE <copter:EK2_ENABLE>` = 0 to disable EKF2
+-  :ref:`EK3_ENABLE <copter:EK3_ENABLE>` = 1 to enable EKF3
+-  :ref:`EK3_SRC1_POSXY <copter:EK3_SRC1_POSXY>` = 6 to set position horizontal source to ExternalNAV
+-  :ref:`EK3_SRC1_POSZ <copter:EK3_SRC1_POSZ>` = 1 to set position vertical source to Baro
+-  :ref:`EK3_SRC1_VELXY <copter:EK3_SRC1_VELXY>` = 6 to set velocity horizontal source to ExternalNAV
+-  :ref:`EK3_SRC1_VELZ <copter:EK3_SRC1_VELZ>` = 6 to set vertical velocity source to ExternalNAV
+-  :ref:`EK3_SRC1_YAW <copter:EK3_SRC1_YAW>` = 6 to set yaw source to ExternalNAV
 -  :ref:`GPS_TYPE <copter:GPS_TYPE>` = 0 to disable the GPS
 -  :ref:`VISO_TYPE <copter:VISO_TYPE>` = 1 to enable visual odometry
--  :ref:`EK2_GPS_TYPE <copter:EK2_GPS_TYPE>` = 3 to disable the EKF's use of the GPS
--  :ref:`COMPASS_ENABLE<copter:COMPASS_ENABLE>` = 0, :ref:`COMPASS_USE <copter:COMPASS_USE>` = 0, :ref:`COMPASS_USE2 <copter:COMPASS_USE2>` = 0, :ref:`COMPASS_USE3 <copter:COMPASS_USE3>` = 0 to disable the EKF's use of the compass and instead rely on the heading from ROS and Hector SLAM
+-  :ref:`ARMING_CHECK <copter:ARMING_CHECK>` = 388598 (optional, to disable GPS checks)
+
 
 After changing any of the values above, reboot the flight controller.
 

@@ -30,7 +30,7 @@ Clone ArduPilot repository
 
     ::
 
-         git config --global url."https://" 
+         git config --global url."https://".insteadOf git://
 
     to use https protocols instead of the default git:// prefix.
 
@@ -52,7 +52,7 @@ Reload the path (log-out and log-in to make permanent):
 
 Now you should be able to build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
-.. note:: At this point you have already installed the MAVProxy Ground Control Station (MAVProxy GCS) and are also ready to do Software In the Loop (SITL) simulations of the vehicle code. See :ref:`sitl-simulator-software-in-the-loop`  and :ref:`setting-up-sitl-on-linux` . You are ready to not only build the code, but run your build in the ArduPilot SITL simulator.
+.. note:: At this point you have already installed the MAVProxy Ground Control Station (MAVProxy GCS) and are also ready to do Software In the Loop (SITL) simulations of the vehicle code. See :ref:`sitl-simulator-software-in-the-loop`  and :ref:`setting-up-sitl-on-linux`. You are ready to not only build the code, but run your build in the ArduPilot SITL simulator.
 
 
 .. youtube:: 4B8BVskH0vc
@@ -164,22 +164,6 @@ compiler into /usr/lib/ccache like this:
     sudo ln -s /usr/bin/ccache arm-none-eabi-gcc
 
 Then add /usr/lib/ccache to the front of your $PATH
-
----------
-
-Additional Steps for macOS mojave
-=================================
-Due to some changes binutils installed via brew have stopped working for macOS mojave leading to crashing builds. So if installed, remove via following command:
-
-::
-
-    brew uninstall binutils
-
-Also you will need to install the c++ include headers to /usr/include to do that. Run the following in commandline and follow the installation routine:
-
-::
-
-    open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
 
 ---------
 

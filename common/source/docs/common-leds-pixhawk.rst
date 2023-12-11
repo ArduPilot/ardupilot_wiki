@@ -101,7 +101,7 @@ The states and events are shown in order of precedence.
 +-----------------------------------------------+--------------------+
 | |  ARMED:                                     | |                  |
 | |  3Dfix                                      | | |rgbarmed|       |
-| |  No vaild GPS fix                           | | |rgbarmednogps|  |
+| |  No valid GPS fix                           | | |rgbarmednogps|  |
 +-----------------------------------------------+--------------------+
 | |  DISARMED:                                  | |                  |
 | |  pre-arm checks failing                     | | |rgbprearm|      |

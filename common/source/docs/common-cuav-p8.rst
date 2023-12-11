@@ -40,7 +40,7 @@ Connection with Flight Control
 
 .. image:: ../../../images/cuav-radio/p8-connect.png
 
-V5+/v5 nano/X7/X7 PRO/NORA ： Green connector is connected flight controller's telemetry UART, white connector is connected to P8 radio.
+V5+/v5 nano/X7/X7 PRO/NORA ： Green connector is connected autopilot's telemetry UART, white connector is connected to P8 radio.
 
 
 Video

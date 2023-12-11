@@ -4,6 +4,8 @@
 PPM Encoder
 ===========
 
+.. warning:: **Archived**
+
 The PPM encoder allows to encode up to 8 PWM (pulse width modulated)
 signals into one PPM (pulse position modulation) signal.
 

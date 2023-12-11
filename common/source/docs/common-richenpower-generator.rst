@@ -10,6 +10,8 @@ The RichenPower H2 Hybrid and H2plus Hybrid generators can be used to extend a v
 
 A transmitter's auxiliary switch can be used to control the generator's speed (stop, idle or run).
 
+.. note:: the driver for this device is not included by default in the firmware built and available on the `Firmware Server <https://firmware.ardupilot.org>`__ . Either the user must build his own firmware with this backend enabled or use the `Custom Firmware Server <https://custom.ardupilot.org>`__
+
 Where to Buy
 ------------
 

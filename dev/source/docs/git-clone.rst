@@ -28,9 +28,8 @@ Cloning with the command line
 
    ::
 
-       git clone https://github.com/your-github-userid/ardupilot
+       git clone --recurse-submodules https://github.com/your-github-userid/ardupilot
        cd ardupilot
-       git submodule update --init --recursive
 
 .. youtube:: kAli2y2-n-M
 
@@ -38,9 +37,8 @@ Cloning with the command line
 
    ::
 
-       git clone https://github.com/ArduPilot/ardupilot
+       git clone --recurse-submodules https://github.com/ArduPilot/ardupilot
        cd ardupilot
-       git submodule update --init --recursive
 
 Cloning with the GitHub GUI (Windows or MAC)
 ============================================

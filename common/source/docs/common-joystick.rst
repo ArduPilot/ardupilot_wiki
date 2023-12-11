@@ -31,6 +31,13 @@ You will need the following equipment:
    between your ground station and vehicle.
 -  A laptop computer running *Mission Planner*.
 
+Calibration
+===========
+
+First you must calibrate the joystick using the Windows joystick/game controller wizard.
+
+.. image:: ../../../images/joystick.jpg
+
 Setup with the Mission Planner
 ==============================
 
@@ -83,9 +90,10 @@ Setup with the Mission Planner
    RC4\_ max/min parameters).
 
    This error is caused because *Mission Planner* maps the Joystick exactly
-   to the 1100 - 1900 range, but the pre-arm checks assume that if the
-   values are not at least 1 pwm off the century value, that calibration
-   has not been done.
+   to the RC min and max range, but the pre-arm checks assume that if the
+   values are not at least 1 PWM us off the default value, that calibration
+   has not been done. If you have RC calibrated your transmitter/receiver system already, this will not be necessary. DO NOT RC CALIBRATE THE JOYSTICK, it is not the same control mechanism as is used for RC systems. It uses MAVLink override messages.
+
 
 Testing the controls before flying
 ==================================
@@ -120,8 +128,8 @@ no failover to regular transmitter):
 
 #. Turn regular transmitter off
 #. Connect with the mission planner, push Joystick window's **Enable**
-   button and ensure RC overrides are being sent to the vehicle (use
-   Radio Calibration screen) or Flight Data's status screen.
+   button and ensure RC overrides are being sent to the vehicle. (use
+   Radio Calibration screen or Flight Data's status screen)
 #. Arm vehicle, switch to Stabilize or Loiter mode and raise the throttle
 #. Ensure the motors are spinning by checking the Flight Data screen's
    "ch1out" ~ "ch4out"

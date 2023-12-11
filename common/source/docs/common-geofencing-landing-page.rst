@@ -30,21 +30,21 @@ Inclusion and Exclusion Fences are defined easily in Mission Planner under the P
 +---------------------------------------+--------------------+-----------+----------+---------+
 |       TYPE OF FENCE                   | ``FENCE_TYPE`` bit |  PLANE    | COPTER   |  ROVER  |
 +=======================================+====================+===========+==========+=========+
-|  Cylindrical ("TinCan")               |                    |    X      |    X     |    X    |
-|     - Center is HOME                  |      1 "Circle"    |           |          |         |
+|Global Maximum Altitude                |    0               |           |          |         |
+|   - FENCE_ALT_MAX defines max altitude|                    |    X      |    X     |         |
++---------------------------------------+--------------------+-----------+----------+---------+
+|  Cylindrical ("TinCan")               |      1             |    X      |    X     |    X    |
+|     - Circle Centered on Home         |                    |           |          |         |
 |     - Parameters for radius, height   |                    |           |          |         |
 +---------------------------------------+--------------------+-----------+----------+---------+
 |  Inclusion/Exclusion Zones            |                    |           |          |         |
 |     - Arbitrary Locations             |                    |           |          |         |
-|     - Polygonal or Circular           |     2 "Polygonal"  |    X      |    X     |    X    |
+|     - Polygonal or Circular           |     2              |    X      |    X     |    X    |
 |     - Inclusion or Exclusion          |                    |           |          |         |
 |     - Defined by list, like missions  |                    |           |          |         |
 |     - No height/altitude restriction  |                    |           |          |         |
 +---------------------------------------+--------------------+-----------+----------+---------+
-|Global Maximum Altitude                |    0 "Max altitude"|           |          |         |
-|   - FENCE_ALT_MAX defines max altitude|                    |    X      |    X     |         |
-+---------------------------------------+--------------------+-----------+----------+---------+
-|Global Minimum Altitude                |   3 "Min altitude" |           |          |         |
+|Global Minimum Altitude                |   3                |           |          |         |
 |   - FENCE_ALT_MIN defines min altitude|                    |   X       |          |         |
 +---------------------------------------+--------------------+-----------+----------+---------+
 

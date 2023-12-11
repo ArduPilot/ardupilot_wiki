@@ -16,7 +16,7 @@ is within the no go zone. Note: this angle will be used whatever the wind streng
 that in mind.
 
 ``WP_OVERSHOOT`` defines the maximum cross track error in auto mode that is allowed before
-the vehicle will tack. This keeps the vehicle within a corridor of width 2* :ref:`SAIL_XTRACK_MAX<SAIL_XTRACK_MAX>` . If set to zero
+the vehicle will tack. This keeps the vehicle within a corridor of width 2* :ref:`SAIL_XTRACK_MAX<SAIL_XTRACK_MAX>`. If set to zero
 the vehicle will ignore the cross track error and only tack once it can reach its destination.
 
 :ref:`PIVOT_TURN_RATE <PIVOT_TURN_RATE>` defines the maximum rate used for tacking, a lower value will result

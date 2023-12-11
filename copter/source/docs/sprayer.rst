@@ -4,7 +4,7 @@
 Crop Sprayer
 ============
 
-Copter includes support for a crop sprayer.  This feature allows a autopilot connected to a PWM operated pump and (optionally) spinner to control the rate of flow of liquid fertilizer based on the vehicle speed.
+Copter includes support for a crop sprayer.  This feature allows an autopilot connected to a PWM operated pump and (optionally) spinner to control the rate of flow of liquid fertilizer based on the vehicle speed.
 
 ..  youtube:: O8ZnxkXMv6A
     :width: 100%
@@ -34,7 +34,7 @@ Enabling the Sprayer
 -  Set the :ref:`SPRAY_ENABLE <SPRAY_ENABLE>` parameter to 1 and refresh parameters (the sprayer is not a commonly used feature so its other parameters are initially hidden)
 -  Connect the pump to one of the autopilot's PWM outputs (like Pixhawk AUX1) and set the appropriate SERVO*_FUNCTION  or RC*_FUNCTION to 22 (where "*" is the RC output number, i.e. if the pump is connected to a Pixhawk's AUX1, set :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` to 22).
 -  Connect the optional spinner to another output port and set SERVO*_FUNCTION or RC*_FUNCTION to 23 (i.e. if using a Pixhawk's AUX2, set :ref:`SERVO10_FUNCTION <SERVO10_FUNCTION>` to 23)
--  To allow the pilot to turn on/off the sprayer set an auxiliary switch on an rc channel(``RCx_OPTIONS``) to "15"
+-  To allow the pilot to turn on/off the sprayer set an auxiliary switch on an rc channel(``RCx_OPTION``) to "15"
 
 Configuring the pump
 ====================

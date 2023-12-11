@@ -4,7 +4,7 @@
 UAV LogViewer
 =============
 
-This utility provides an easy to use viewer for ArduPilot dataflash and telemetry logs. Data can be plotted and even manipulated, and the flight visually re-flown in 3D. It is accessed `here <http://plot.ardupilot.org>`__ and is web based, although most of the computations are done locally in the web browser. Both Chrome/Chromium and FireFox are supported browsers.
+This utility provides an easy to use viewer for ArduPilot dataflash and telemetry logs. Data can be plotted and even manipulated, and the flight visually re-flown in 3D. It is accessed `HERE <http://plot.ardupilot.org>`__ and is web based, although most of the computations are done locally in the web browser. Both Chrome/Chromium and FireFox are supported browsers.
 
 
 Initial Screen

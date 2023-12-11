@@ -38,7 +38,7 @@ The Equipment List
 #. Y-servo-cable to connect both aileron servos together to one autopilot output.
 
 
-.. note:: This autopilot is no longer supported. See the current autopilot :ref:`list<common-autopilots>` . OmnibusF4 Pro V3 is an inexpensive alternative. Any UBLOX MN-8 class GPS works well, such as a BN-220. A compass (gps/compass combo parts are available) is not necessary for ArduPilot on planes.
+.. note:: This autopilot is no longer supported. See the current autopilot :ref:`list<common-autopilots>`. OmnibusF4 Pro V3 is an inexpensive alternative. Any UBLOX MN-8 class GPS works well, such as a BN-220. A compass (gps/compass combo parts are available) is not necessary for ArduPilot on planes.
 
 Getting Started
 ===============
@@ -60,7 +60,7 @@ Programming the ESC
 #. Using the ESC's setup instructions, set the ESC's low voltage cutoff to its lowest setting to allow   the autopilot battery level failsafe feature do its job. (be sure to enable it!)
 #. Don't worry about motor direction; you can just switch two of the motor
    wires if the motor spins backwards.
-#. Follow the :ref:`ESC setup guide <guide-esc-calibration>` to calibrate the ESC
+#. Follow the :ref:`ESC setup guide <common-esc-calibration>` to calibrate the ESC
 
 Wiring the ESC and BEC
 ======================
@@ -242,7 +242,7 @@ Tuning and Flight Performance
 =============================
 
 To get the best motor and propeller for my build, I used `eCalc <http://ecalc.ch>`__ , which is
-worth the money. You can also use :ref:`Drive Calculator<drivecalculator-guide>` , which is free.
+worth the money. You can also use :ref:`Drive Calculator<drivecalculator-guide>`, which is free.
 
 After going through the wizard in Mission Planner, you should have a compass
 that points correctly, and a properly working GPS. I found that the initial

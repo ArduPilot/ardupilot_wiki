@@ -43,13 +43,13 @@ The rewind-on-resume feature is enabled by setting a DO_SET_RESUME_REPEAT_DIST m
 be done in one of two ways:
 
 
-**1) Ground control station recognises the DO_SET_RESUME_DIST mission item**
+**1) Ground control station recognises the DO_SET_RESUME_REPEAT_DIST mission item**
 
-- Add a DO_SET_RESUME_DIST mission item from the point in the mission that you wish to enable the feature.
+- Add a DO_SET_RESUME_REPEAT_DIST mission item from the point in the mission that you wish to enable the feature.
 - Set the first data column to be the distance in meters that you want the mission to be rewound to, on resume.
 
 
-**2) Ground control station does not recognise the DO_SET_RESUME_DIST mission item**
+**2) Ground control station does not recognise the DO_SET_RESUME_REPEAT_DIST mission item**
 
 - Add an UNKNOWN mission item from the point in the mission that you wish to enable the feature and set the MAVLink ID to 215.
 - Set the first data column to be the distance in meters that you want the mission to be rewound to, on resume.
@@ -62,11 +62,11 @@ To check that the rewind distance has been correctly set in the mission, monitor
 control station.  When the vehicle registers the command the following message will be displayed: "Resume repeat 
 dist set to <DISTANCE> m".
 
-Multiple DO_SET_RESUME_DIST commands can be set throughout the mission.  This provides the operator the ability to
+Multiple DO_SET_RESUME_REPEAT_DIST commands can be set throughout the mission.  This provides the operator the ability to
 vary the rewind distance or switch the feature on/off throughout the mission, where extreme care and accuracy is 
 required to manoeuvre the vehicle on certain mission legs.
 
-This feature can be switched off by setting a DO_SET_RESUME_DIST mission item with a distance of zero.
+This feature can be switched off by setting a DO_SET_RESUME_REPEAT_DIST mission item with a distance of zero.
 
 .. tip::
     When identifying the resume distance needed, a sensible value to try for most vehicles is twice the minimum turn

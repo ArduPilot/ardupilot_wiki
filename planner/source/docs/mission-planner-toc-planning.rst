@@ -30,7 +30,7 @@ emphasize the major topics and sub topics.)**
    these pages
 
    -  **Windows Installer**
-      ( :ref:`install mission planner <planner:install-mission-planner>` )
+      ( :ref:`install mission planner <install-mission-planner>` )
    -  **Advanced Installation**
       (:ref:`mission-planner-advanced-installation <mission-planner-advanced-installation>`) New
       8/7/13. ready to add to TOC (Not a common page)
@@ -61,8 +61,7 @@ emphasize the major topics and sub topics.)**
          -  Gauges:
          -  Status
          -  Servos:
-         -  Telemetry
-            Logs (:ref:`common-mission-planner-telemetry-logs <common-mission-planner-telemetry-logs>`)
+         -  :ref:`Telemetry Logs <mission-planner-telemetry-logs>`
 
             -  *Playing Back Missions with
                Tlogs* :ref:`common-recording-and-playing-back-missions <common-recording-and-playing-back-missions>`

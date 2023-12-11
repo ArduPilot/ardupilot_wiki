@@ -28,9 +28,9 @@ There are 3 common causes of a non-linear thrust curve.
 
 Start with setting up the voltage range to cope with voltage sag.
 
-- :ref:`Q_M_BAT_IDX <Q_M_BAT_IDX>` : index of the battery to use for voltage measurements on VTOL power system. Zero is the first battery, one for 2nd battery etc
-- :ref:`Q_M_BAT_VOLT_MAX <Q_M_BAT_VOLT_MAX>` : 4.2v x No. Cells for LiPo
-- :ref:`Q_M_BAT_VOLT_MIN <Q_M_BAT_VOLT_MIN>` : 3.3v x No. Cells for LiPo
+- :ref:`Q_M_BAT_IDX <Q_M_BAT_IDX>`: index of the battery to use for voltage measurements on VTOL power system. Zero is the first battery, one for 2nd battery etc
+- :ref:`Q_M_BAT_VOLT_MAX <Q_M_BAT_VOLT_MAX>`: 4.2v x No. Cells for LiPo
+- :ref:`Q_M_BAT_VOLT_MIN <Q_M_BAT_VOLT_MIN>`: 3.3v x No. Cells for LiPo
 
 Note that :ref:`Q_M_BAT_IDX <Q_M_BAT_IDX>` needs to be for the correct
 battery for your VTOL motors. If you have a separate battery for
@@ -47,7 +47,7 @@ details on thrust scaling.
 If you are setting up a hobby grade vehicle then you can use the
 graph below to estimate the correct :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>` value for your aircraft.
 
-- :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>` : 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props.
+- :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>`: 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props.
 
 .. image:: ../images/tuning-process-instructions-1.hires.png
     :target: ../_images/tuning-process-instructions-1.hires.png
@@ -75,19 +75,18 @@ RPM. You should be able to tell at what PWM the motors stop producing
 more thrust by listening to the sound made at different PWM values, or
 you can use a tachometer.
 
-The :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>` :ref:`Q_M_SPIN_MAX
-<Q_M_SPIN_MAX>` values are used to select a sub-range of the outputs
+The :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>` and :ref:`Q_M_SPIN_MAX<Q_M_SPIN_MAX>` values are used to select a sub-range of the outputs
 to your motors which is linear. For hobby users the defaults are
 usually good, but for professional vehicles you should use the thrust
 stand data to determine the right range to produce linear thrust after
 the expo is applied.
 
-- :ref:`Q_M_PWM_MAX <Q_M_PWM_MAX>` : Check ESC manual for fixed range or 2000us
-- :ref:`Q_M_PWM_MIN <Q_M_PWM_MIN>` : Check ESC manual for fixed range or 1000us
-- :ref:`Q_M_SPIN_ARM <Q_M_SPIN_ARM>` : use the :ref:`motor test feature <connect-escs-and-motors_testing_motor_spin_directions>`
-- :ref:`Q_M_SPIN_MAX <Q_M_SPIN_MAX>` : 0.95
-- :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>` : use the :ref:`motor test feature <connect-escs-and-motors_testing_motor_spin_directions>`
-- :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>` : 0.25, or below the expected hover thrust percentage (low is safe)
+- :ref:`Q_M_PWM_MAX <Q_M_PWM_MAX>`: Check ESC manual for fixed range or 2000us
+- :ref:`Q_M_PWM_MIN <Q_M_PWM_MIN>`: Check ESC manual for fixed range or 1000us
+- :ref:`Q_M_SPIN_ARM <Q_M_SPIN_ARM>`: use the :ref:`motor test feature <connect-escs-and-motors_testing_motor_spin_directions>`
+- :ref:`Q_M_SPIN_MAX <Q_M_SPIN_MAX>`: 0.95
+- :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>`: use the :ref:`motor test feature <connect-escs-and-motors_testing_motor_spin_directions>`
+- :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`: 0.25, or below the expected hover thrust percentage (low is safe)
 
 Step 3: PID Controller Initial Setup
 ------------------------------------
@@ -96,20 +95,20 @@ The settings below are meant to get your PID controller acceleration
 and filter settings into the right approximate range for your
 vehicle. These parameters are critical to the tuning process.
 
-- :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` :  10Hz to 20Hz
-- :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` : 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props
-- :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>` : 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
-- :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>` : 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
-- :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` : 27000 for 10 inch props, 18000 for 20 inch props, 9000 for 30 inch props
-- :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>` : 0.5 x :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` / 4500
+- :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>`:  10Hz to 20Hz
+- :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>`: 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props
+- :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`: 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
+- :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>`: 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
+- :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>`: 27000 for 10 inch props, 18000 for 20 inch props, 9000 for 30 inch props
+- :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>`: 0.5 x :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` / 4500
 
 
-- :ref:`Q_A_RAT_PIT_FLTD <Q_A_RAT_PIT_FLTD>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`Q_A_RAT_PIT_FLTT <Q_A_RAT_PIT_FLTT>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`Q_A_RAT_RLL_FLTD <Q_A_RAT_RLL_FLTD>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`Q_A_RAT_RLL_FLTT <Q_A_RAT_RLL_FLTT>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`Q_A_RAT_YAW_FLTE <Q_A_RAT_YAW_FLTE>` : 2
-- :ref:`Q_A_RAT_YAW_FLTT <Q_A_RAT_YAW_FLTT>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`Q_A_RAT_PIT_FLTD <Q_A_RAT_PIT_FLTD>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`Q_A_RAT_PIT_FLTT <Q_A_RAT_PIT_FLTT>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`Q_A_RAT_RLL_FLTD <Q_A_RAT_RLL_FLTD>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`Q_A_RAT_RLL_FLTT <Q_A_RAT_RLL_FLTT>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`Q_A_RAT_YAW_FLTE <Q_A_RAT_YAW_FLTE>`: 2
+- :ref:`Q_A_RAT_YAW_FLTT <Q_A_RAT_YAW_FLTT>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
 
 
 
@@ -206,6 +205,8 @@ This test will allow to test the altitude controller and ensure the stability of
 
 1. Check :ref:`Q_M_HOVER_LEARN <Q_M_HOVER_LEARN>` is set to 2. This will allow the controller to learn by itself the correct hover value when flying.
 
+.. note:: the Hover throttle value is only "learned" when the attitude is not being commanded by the pilot, or autopilot (ie QLOITER,etc.), to exceed 5 degrees from neutral for two seconds.
+
 2. Take off in QSTABILIZE and increase altitude to 5m. Switch to QHOVER and be ready to switch back to QSTABILIZE. If the aircraft is hovering at a very low hover throttle value you may hear a reasonably fast oscillation in the motors. Ensure the aircraft has spent at least 30 seconds in hover to let the hover throttle parameter converge to the correct value. Land and disarm the aircraft.
 
 3. Set these parameters on ground and preferably disarm  (A confident pilot could set them in flight with GCS):
@@ -221,12 +222,12 @@ Step 8: Yaw Bias
 A common problem in QuadPlanes is excessive amount of VTOL power being
 used to maintain yaw. This can be caused by:
 
- - small misalignment of the VTOL motors
- - frame twist (often caused by wing twist) as thrust is applied
+- small misalignment of the VTOL motors
+- frame twist (often caused by wing twist) as thrust is applied
 
 If too much power is needed to maintain yaw then the aircraft could
 lose yaw control during transitions, or could lose roll and pitch
-stability. For larger quadplanes it is common to need to deliberately
+stability. For larger QuadPlanes it is common to need to deliberately
 tilt the motors by a couple of degrees to increase yaw authority.
 
 You should check the amount of thrust being used to maintain yaw by
@@ -248,7 +249,7 @@ get get a good notch filter setup to reduce noise to the VTOL PID
 controllers. A good set of notch filtering parameters is critical to a
 good tune.
 
-To get a notch filter setup you need to hover your quadplane for 2
+To get a notch filter setup you need to hover your QuadPlane for 2
 minutes with no pilot input and with :ref:`INS_LOG_BAT_MASK
 <INS_LOG_BAT_MASK>` set to 1. This will enable FFT logging which will
 guide the correct setup of the notch filters. You should then
@@ -258,20 +259,20 @@ setup a harmonic notch to remove the noise from your gyros.
 When setting up your filtering you should consider the cause of any
 oscillation you find. On most aircraft the vibrations you find will be
 directly caused by a multiple of the RPM, but on some aircraft a frame
-resonance or resonance in the flight controller mount may be the
+resonance or resonance in the autopilot mount may be the
 cause. Understanding the cause of any resonances is critical to
 reducing noise enough to get a good tune.
 
 Step 10: Manual tuning of Roll and Pitch
 ----------------------------------------
 
-While you may be tempted to jump straight to QAUTOTUNE mode, this is
-not recommended. Most quadplanes need some manual tuning of roll and
-pitch before they can handle a QAUTOTUNE. If you jump straight to a
-QAUTOTUNE then your aircraft may become unstable enough to crash. A
-good manual tune will also reduce the amount of time a QAUTOTUNE will
+While you may be tempted to jump straight to autotuning, this is
+not recommended. Most QuadPlanes need some manual tuning of roll and
+pitch before they can handle an autotune. If you jump straight to an
+autotune then your aircraft may become unstable enough to crash. A
+good manual tune will also reduce the amount of time an autotune will
 take, which can be critical given the small VTOL hover times of many
-quadplanes.
+QuadPlanes.
 
 Before starting the manual tune you should go back and check you have
 fully completed the steps above, and ensure you have a good notch
@@ -292,6 +293,8 @@ The parameters you will be adjusting are:
 - :ref:`Q_A_RAT_RLL_P <Q_A_RAT_RLL_P>` and :ref:`Q_A_RAT_RLL_I <Q_A_RAT_RLL_I>`
 - :ref:`Q_A_RAT_PIT_D <Q_A_RAT_PIT_D>`
 - :ref:`Q_A_RAT_PIT_P <Q_A_RAT_PIT_P>` and :ref:`Q_A_RAT_PIT_I <Q_A_RAT_PIT_I>`
+
+.. note::  If the VTOL motors do not tilt, then the ``Q_A_RAT_PIT_FF`` and  ``Q_A_RAT_YAW_FF`` will be zero and corrections are dominated by P/I/D. But if pitch or yaw control is primarily by tilting the motors, then the FF terms dominate and P/D are primarily for disturbance correction. For tuning a tilted motor controlled axis, see :ref:`pitch-yaw-tuning`.
 
 Start with the roll parameters, then move onto the pitch.
 
@@ -317,7 +320,7 @@ tune.
 
 After you have gone through the above steps you should carefully look
 at your logs to ensure you don't have a hidden oscillation. The
-structure of quadplanes sometimes means that oscillations may not be
+structure of QuadPlanes sometimes means that oscillations may not be
 externally visible. You should use the RATE, PIQR and PIQP messages to
 look for oscillations.
 
@@ -326,7 +329,7 @@ Step 11: Evaluating the aircraft tune
 
 You need to evaluate the aircraft's tune to see if the previous steps
 have resulted in a tune which is good enough for a transition flight
-or for QAUTOTUNE.
+or for autotuning.
 
 1. Take off in QHOVER or QSTABILIZE
 2. Apply small roll and pitch inputs. Start with 5 degree inputs and releasing the stick to centre, pitch, left, right, roll forward back, then all 4 points on the diagonal
@@ -335,7 +338,7 @@ or for QAUTOTUNE.
 
 If the aircraft begins to overshoot significantly or oscillate after
 the stick input, halt the tests before the situation begins to
-endanger the aircraft. The aircraft may require more manual tuning before QAUTOTUNE can be run.
+endanger the aircraft. The aircraft may require more manual tuning before autotuning can be run.
 
 To test the stabilization loops independent of the input shaping, set the parameter: :ref:`Q_A_RATE_FF_ENAB <Q_A_RATE_FF_ENAB>` to 0.
 
@@ -349,12 +352,30 @@ the aircraft oscillates and go back to manual tuning.
 
 Set :ref:`Q_A_RATE_FF_ENAB <Q_A_RATE_FF_ENAB>` to 1 after the tests are complete.
 
-Step 12: QAUTOTUNE
-------------------
+Step 12: Autotuning
+-------------------
+Often, a good manual tune will be sufficient. However, autotuning can sometimes improve the tune.
 
-If the aircraft appears stable enough to attempt QAUTOTUNE and you
-have sufficient battery to last through a QAUTOTUNE then you can
-follow the instructions in the :ref:`QAUTOTUNE<qautotune-mode>` page.
+If the aircraft appears stable enough to attempt autotuning and you
+have sufficient battery to last through an autotuning session then you can autotune using one of two methods:
+
+- Quick Tune LUA Applet (the preferred method if your autopilot is capable of running LUA scripts)
+- QAUTOTUNE Mode (no longer the recommended method, but can be used if using LUA scripts is not possible)
+
+Using the Quick VTOL Tune LUA Applet to Automate Tuning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For systems using an autopilot with sufficient memory to run :ref:`LUA scripts <common-lua-scripts>`, such as F7 and H7 based controllers, this process has been automated via a LUA Applet.
+
+Be sure that scripting has been setup and sufficient memory has been allocated, as explained in :ref:`LUA scripts <common-lua-scripts>`.
+
+See the `Quick VTOL Tune LUA script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/VTOL-quicktune.md>`__.
+
+
+Using the QAUTOTUNE mode to Automate Tuning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Follow the instructions in the :ref:`QAUTOTUNE<qautotune-mode>` page.
 
 You should use QAUTOTUNE on one axis at a time (setting
 :ref:`Q_AUTOTUNE_AXES <Q_AUTOTUNE_AXES>` for the axis you want to
@@ -372,9 +393,9 @@ There a number of problems that can prevent QAUTOTUNE from providing a good tune
 - Non-linear ESC response.
 - Very low setting for :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>`.
 - Overloaded propellers or motors.
-- Autotuning a Tailsitter's pitch or yaw axis, since they require feed-forward.
+- Autotuning a Tailsitter's pitch or yaw axis, or vectored yaw axis on TiltRotor, since they require feed-forward.
 
-If QAUTOTUNE has failed you will need to do a manual tune.
+If QAUTOTUNE has failed you will need to re-do a manual tune.
 
 Some signs that QAUTOTUNE has been successful are:
 
@@ -387,7 +408,7 @@ QAUTOTUNE will attempt to tune each axis as tight as the aircraft can tolerate. 
 - :ref:`Q_A_ANG_RLL_P <Q_A_ANG_RLL_P>` should be reduced from 10 to 6
 - :ref:`Q_A_ANG_YAW_P <Q_A_ANG_YAW_P>` should be reduced from 10 to 6
 - :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>` should be reduced from 1 to 0.5
-- :ref:`Q_A_RAT_YAW_I <Q_A_RAT_YAW_I>` : :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>` x 0.1
+- :ref:`Q_A_RAT_YAW_I <Q_A_RAT_YAW_I>`: :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>` x 0.1
 
 These values should only be changed if QAUTOTUNE produces higher values. Small aerobatic aircraft may prefer to keep these values as high as possible.
 
@@ -398,14 +419,16 @@ QuadPlane has a set of parameters that define the way the aircraft feels to fly.
 
 The most important of these parameters is:
 
-- :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>` : yaw rate x 45 degrees/s
-- :ref:`Q_ANGLE_MAX <Q_ANGLE_MAX>` :  maximum lean angle
-- :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>` : Pitch rate acceleration
-- :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>` : Roll rate acceleration
-- :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` : Yaw rate acceleration
-- :ref:`Q_A_ANG_LIM_TC <Q_A_ANG_LIM_TC>` : Aircraft smoothing time
+- :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>`: yaw rate x 45 degrees/s
+- :ref:`Q_ANGLE_MAX <Q_ANGLE_MAX>`:  maximum lean angle
+- :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`: Pitch rate acceleration
+- :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>`: Roll rate acceleration
+- :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>`: Yaw rate acceleration
+- :ref:`Q_A_ANG_LIM_TC <Q_A_ANG_LIM_TC>`: Aircraft smoothing time
 
-QAUTOTUNE will set the :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`, :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>` and :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` parameters to their maximum based on measurements done during the QAUTOTUNE tests. These values should not be increased beyond what QAUTOTUNE suggests without careful testing. In most cases pilots will want to reduce these values significantly.
+QAUTOTUNE mode tuning will set the :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`, :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>` and :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` parameters to their maximum based on measurements done during the QAUTOTUNE tests. These values should not be increased beyond what QAUTOTUNE suggests without careful testing. In most cases pilots will want to reduce these values significantly.
+
+The Quick VTOL Tune LUA Applet will not adjust these from defaults and you may adjust them to get the feel you desire.
 
 For aircraft designed to carry large directly mounted payloads, the maximum values of :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`, :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>` and :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` should be reduced based on the minimum and maximum takeoff weight (TOW):
 
@@ -432,6 +455,8 @@ The full list of input shaping parameters are:
 - :ref:`Q_A_RATE_R_MAX <Q_A_RATE_R_MAX>`
 - :ref:`Q_A_RATE_Y_MAX <Q_A_RATE_Y_MAX>`
 - :ref:`Q_A_SLEW_YAW <Q_A_SLEW_YAW>`
+- :ref:`Q_P_JERK_XY<Q_P_JERK_XY>`
+- :ref:`Q_P_JERK_Z<Q_P_JERK_Z>`
 - :ref:`Q_LOIT_ACC_MAX <Q_LOIT_ACC_MAX>`
 - :ref:`Q_LOIT_ANG_MAX <Q_LOIT_ANG_MAX>`
 - :ref:`Q_LOIT_BRK_ACCEL <Q_LOIT_BRK_ACCEL>`

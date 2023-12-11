@@ -3,45 +3,42 @@
 ================
 Hardware Options
 ================
-This page lists the hardware options that can meet all of the Balance Bot specific requirements. Though there is no limitation to running Balance Bot on any Rover compatible hardware, not all features and drive modes may be supported in certain configurations.
 
-Autopilot Board
-===============
-Autopilot Boards than can be used with Balance Bot are required to have sufficient PWM outputs for driving the motors (2 or more), and outputs which can be tasked as GPIOs (4 or more)(see :ref:`common-gpios`) for interfacing the wheel encoder pulse outputs. Some miniature versions of autopilots using an IOMCU will only have outputs that cannot be re-tasked as GPIOs and are therefore unsuitable.
+This page lists the hardware required for an autonomous Balance Bot
 
-Balance Bot Frame
-=================
+Frame
+=====
+
 Any readily available or custom made frame suitable for Balance Bots can be used. Ensure that there is sufficient space to hold all the components.
 
 For a 3d printable frame, check out :ref:`Arduroller<reference-frames-arduroller>`.
 
-Motors with encoders
-====================
-Brushed Motors with quadrature encoders(two pin output) are recommended for Balance Bots. There is no restriction on using brushless motors, but additional quadrature encoders will have to be added to run any mode other than Hold and Manual. Stepper Motors and motors that use UART/I2C interface are not currently supported.
+Autopilot
+=========
 
-Gear backlash is a problem with many geared dc motors and this can badly affect stability of Balance Bots. It is recommended to use motors that are specified to be zero-backlash or have very less backlash.
+The autopilot needs at least two PWM outputs for controlling the two motors and four :ref:`GPIO pins<common-gpios>` to connect to two :ref:`wheel encoders <wheel-encoder>`.  Some autopilots without an IOMCU will not have enough GPIOs to support wheel encoders.
 
-Motor Drivers/ESC
-=================
-For a full list of ArduPilot supported brushed motor drives/ESCs, refer the :ref:`brushed motors<common-brushed-motors>` page.
-
-Wheel Encoders
-==============
-When using motors without an an inbuilt encoder, external encoders that can be attached to the motor shaft, can be used. Only quadrature encoders with two output pins are currently supported. For more information, refer the :ref:`wheel encoder<wheel-encoder>` page.
-
-
-GPS + Compass(optional)
+Motors and Wheel Encoders
 =========================
-A GPS+Compass module is required for running Auto, Guided and RTL Modes. Using compass is also recommended for steering in Acro Mode. For more details on supported GPS hardware, refer :ref:`GPS<common-positioning-landing-page>` page.
+
+The recommended solution is to use brushed motors with built-in quadrature :ref:`wheel encoders <wheel-encoder>` but other motors may be used if external encoders are attached to the motor shafts.  Note that only quadrature encoders with two output pins are supported.  :ref:`Wheel encoders <wheel-encoder>` allow faster and more precise control of each wheel which greatly improves the vehicle's balance.
+
+Stepper Motors and motors that use UART/I2C interface are not currently supported.
+
+Gear backlash is a problem with many geared dc motors and this can negatively affect stability. It is recommended to use motors that are specified to be zero-backlash or have very little backlash.
+
+ESCs/Motor Drivers
+==================
+
+A list of verified ESCs/motor drivers can be fouind on the :ref:`brushed motors<common-brushed-motors>` page.
+
+GPS + Compass
+=============
+
+A GPS+Compass module is recommended if the balance bot will be used outdoors in autonomous modes (e.g. Auto, Guided, RTL).  A compass is required so the vehicle can estimate its heading.  For more details on supported GPS hardware, refer to the :ref:`GPS/Compass page<common-positioning-landing-page>`.
 
 Telemetry Radio(optional)
 =========================
+
 Telemetry radios are very useful for tuning and debugging. For more information on supported hardware options refer :ref:`telemetry<common-telemetry-landingpage>` page.
-
-
-
-
-
-
-
 

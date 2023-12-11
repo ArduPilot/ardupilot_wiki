@@ -4,11 +4,13 @@
 Rotor Speed Control Setup
 =========================
 
-Unlike other vehicles, more specifically multicopters, the throttle RC input channel does not directly control the throttle in what are usually called "non altitude controlled modes" or "non throttle controlled modes", like STABILIZE or ACRO. Instead it controls the Collective for the helicopter.
+Unlike other vehicles, more specifically multicopters, the throttle RC input channel does not directly control the throttle in any mode, even in modes designated in Multicopter as "non altitude controlled modes" or "non throttle controlled modes", like STABILIZE or ACRO. Instead it only directly controls the Collective for the helicopter in non altitude controlled modes.
+
+.. note:: the exception to this is the RC Passthrough RSC mode. This is NOT recommended usually.
 
 This means that some method must be used to control the throttle or esc for maintaining constant rotor speed through out the flight envelope.
 
-The Rotor Speed Control (RSC) uses the heliRSC output (``SERVOx_FUNCTION`` = 31) to the engine throttle or speed control/governor to control rotor speed. This can be done in a few different ways:
+The Rotor Speed Control (RSC) uses the heliRSC output (``SERVOx_FUNCTION`` = 31) to the engine throttle or speed control/governor to control rotor speed. This can be derived in a few different ways:
 
 -  Through an open loop control via either an RC transmitter passthrough or an internal throttle curve which takes collective demand and creates a corresponding throttle demand.
 -  Using a set point signal to an external governor, or electronic speed controller
@@ -23,18 +25,35 @@ RSC mode
 
 First, set the RSC Mode parameter (:ref:`H_RSC_MODE <H_RSC_MODE>`). The RSC modes are listed below with a short description. 
 
-#. RC Passthrough - this mode passes through the RC channel input on which the Motor Interlock (``RCx_OPTION`` =32) is assigned. The channel must be over 1200us in order for the heliRSC output to follow the RC input. Otherwise, heliRSC will be :ref:`H_RSC_IDLE <H_RSC_IDLE>`.
-#. RSC setpoint - this mode is used for helicopters utilizing either an electronic speed controller or an external governor for internal combustion engines. The PWM passed to the HeliRSC output is determined from the External Motor Governor Setpoint (:ref:`H_RSC_SETPOINT <H_RSC_SETPOINT>`) parameter. The output PWM is calculated by the following equation: PWM output = ``RSC_SETPOINT`` * 0.01 * (``SERVOx_MAX`` - ``SERVOx_MIN``) + ``SERVOx_MIN`` where SERVOx is the output assigned to Throttle
-#. Throttle curve - This mode is an open loop control of the HeliRSC servo output. Users will need to fine-tune the throttle curve to maintain the desired rotor speed throughout the flight envelope. The throttle curve is a five point spline curve fit set by the ``H_RSC_THRCRV_x`` parameters. It is used to determine the HeliRSC servo output based on the collective (throttle stick) on the RC transmitter.
-#. Governor - The governor is designed to maintain a user specified rotor speed using the throttle curve as the feedforward control. This feature requires a rotor speed sensor. The ``H_RSC_GOV_x``. The parameters needed to set  the Throttle Curve mode above, also should be set correctly for this mode since it uses them as a basis for feed-forward control in the Governor.
+#. RC Passthrough (:ref:`H_RSC_MODE <H_RSC_MODE>` = 1) - this mode passes through the RC channel input on which the Motor Interlock (``RCx_OPTION`` =32) is assigned. The channel must be over 1200us in order for the heliRSC output to follow the RC input. Otherwise, heliRSC will be :ref:`H_RSC_IDLE <H_RSC_IDLE>`.
+#. RSC setpoint (:ref:`H_RSC_MODE <H_RSC_MODE>` = 2) - this mode is used for helicopters utilizing either an electronic speed controller or an external governor for internal combustion engines. The PWM passed to the HeliRSC output is determined from the External Motor Governor Setpoint (:ref:`H_RSC_SETPOINT <H_RSC_SETPOINT>`) parameter. The output PWM is calculated by the following equation: PWM output = ``RSC_SETPOINT`` * 0.01 * (``SERVOx_MAX`` - ``SERVOx_MIN``) + ``SERVOx_MIN`` where SERVOx is the output assigned to Throttle
+#. Throttle curve (:ref:`H_RSC_MODE <H_RSC_MODE>` = 3) - This mode is an open loop control of the HeliRSC servo output. Users will need to fine-tune the throttle curve to maintain the desired rotor speed throughout the flight envelope. The throttle curve is a five point spline curve fit set by the ``H_RSC_THRCRV_x`` parameters. It is used to determine the HeliRSC servo output based on the collective (throttle stick) on the RC transmitter.
+#. Governor (:ref:`H_RSC_MODE <H_RSC_MODE>` = 4) - The governor is designed to maintain a user specified rotor speed using the throttle curve as the feedforward control. This feature requires a rotor speed sensor. The ``H_RSC_GOV_x``. The parameters needed to set  the Throttle Curve mode above, also should be set correctly for this mode since it uses them as a basis for feed-forward control in the Governor.
 
 .. warning::
     Setting the RSC mode to RC Passthrough requires configuring the RC receiver to hold last value for the Motor Interlock channel (default is channel 8). If the receiver loses connection to the transmitter and receiver is not configured correctly, the motor will shutdown and the helicopter will crash! It also means that the pilot has to be in control of throttle during any altitude holding or autonomous modes. This can be very difficult, can lead to a crash, and is strongly discouraged. This mode is provided only for some very specialized, advanced users.
 
 
 - :ref:`H_RSC_MODE <H_RSC_MODE>` =2 will be the most commonly used mode for electric helis having an ESC with governor mode built in.
-- :ref:`H_RSC_MODE <H_RSC_MODE>` =3 can be used for open loop control of the heli motor, providing no constant head speed control, but is usually used to setup the feed-forward throttle curve baseline for the Governor mode below. Having a RSC governor is highly desirable in order to maintain a steady tune point for the stabilization parameters.
-- :ref:`H_RSC_MODE <H_RSC_MODE>` =4 will be used if no external RSC governor is present. Primarily for ICE and Turbine engines.
+- :ref:`H_RSC_MODE <H_RSC_MODE>` =3 can be used for open loop control of the heli motor, providing no constant head speed feedback control, but is usually used to setup the feed-forward throttle curve baseline for the Governor mode below. Having a RSC governor is highly desirable in order to maintain a steady tune point for the stabilization parameters.
+- :ref:`H_RSC_MODE <H_RSC_MODE>` =4 can be used if no external RSC governor is present. Primarily for ICE and Turbine engines.
+
+Typical Throttle Curves for :ref:`H_RSC_MODE<H_RSC_MODE>` = 3
+-------------------------------------------------------------
+
+These are also used in :ref:`H_RSC_MODE<H_RSC_MODE>` = 4 as a basis for its feedforward.
+
+If the collective range is set for conventional (non-aerobatic) setups, ie ~-2deg to +12deg, then the ``H_RSC_THRCRV_X`` parameters would be set to drive the Throttle Servo similarly to:
+
+.. image:: ../../../images/normal_throttle_curve.jpg
+   :target: ../_images/normal_throttle_curve.jpg
+
+If setup with an aerobatic, symmetrical collective range, ie ~ -12deg to +12deg, then they should be set drive the Throttle Servo similarly to this:
+
+.. image:: ../../../images/aerobatic_throttle_curve.jpg
+   :target: ../_images/aerobatic_throttle_curve.jpg
+
+.. note:: ArduPilot will spline curve fit between the ``H_RSC_THRCRV_X`` setpoints to produce smooth throttle servo output versus collective points.
 
 Rotor Speed Ramp and Idle Settings
 ==================================
@@ -57,3 +76,10 @@ Turbine Engine Start
 ====================
 
 A special RC Auxiliary Function ("159") is implemented to provide the start signal RC switch for turbine engines. When armed and RSC is idle, the high position signals the helicopter rotor speed governor to ramp the throttle to full and back to idle, which signals the turbine engine ECU to initiate the start sequence. The switch must be set back low and aircraft has to be disarmed to re-enable this feature.
+
+Practice (Manual) Autorotation Setup
+====================================
+
+In versions 4.4 and later, the ability to conduct power re-engagement from an autorotation has been added.  This feature will work with ESC's when using their internal governor, the ArduPilot throttle curve or the ArduPilot built-in RSC governor.
+
+See :ref:`traditional-helicopter-autorotation` page.

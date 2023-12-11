@@ -4,10 +4,15 @@
 Using SITL
 ==========
 
-This article describes how :ref:`SITL <sitl-simulator-software-in-the-loop>`
-and :ref:`MAVProxy <mavproxy-developer-gcs>` can be used to change the environment,
-simulate failure modes, and configure the vehicle with optional components.
-It also explains how to :ref:`connect to different GCSs <using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations>`.
+This article describes how :ref:`SITL <sitl-simulator-software-in-the-loop>` can be used to change the environment, simulate failure modes, and configure the vehicle with optional components.
+
+SITL can be run under Linux using a tool named ``sim_vehicle.py`` from a Linux or WSL2 command line, or through :ref:`Mission Planner's Simulation feature <mission-planner-simulation>`. It can also be run in conjunction with a graphics visualization and/or physics modeling program like :ref:`Realflight<sitl-with-realflight>`.
+
+In addition to running the simulation, a ground control station program will need to be run concurrently in order to control the simultion. With ``sim_vehicle.py``, `MAVProxy <https://ardupilot.org/mavproxy/index.html>`__ is automatically started. When using Mission Planner's simulation feature, it is used. You can also have more than one GCS attached, see :ref:`connect to different GCSs <using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations>`.
+
+.. note::
+
+   This page assumes you have already cloned the repository and set up the build environment if you wish to simulate your own code - see :ref:`Building the code <building-the-code>`, although this is not needed if using :ref:`Mission Planner's Simulation feature <mission-planner-simulation>` since it can easily run simulations on the current development code or stable code versions.
 
 .. tip::
 
@@ -27,6 +32,9 @@ It also explains how to :ref:`connect to different GCSs <using-sitl-for-ardupilo
 ..  youtube:: Ewh0fKGEJL4
     :width: 100%
 
+Using sim_vehicle.py
+====================
+
 A startup script, ```sim_vehicle.py`` is provided to automatically build the SITL firmware version for the current code branch, load the simulation models, start the simulator, setup environment and vehicle parameters, and start the MAVProxy GCS. Many script start-up parameters can be specified, type this for a full list:
 
 ::
@@ -35,9 +43,9 @@ A startup script, ```sim_vehicle.py`` is provided to automatically build the SIT
 
 
 Selecting a vehicle/frame type
-==============================
+------------------------------
 
-The simulation will default to the vehicle type in the directory in which it is started. You can select the vehicle type if starting from the ardupilot directory by starting the simulator calling **sim_vehicle.py** with the ``-v`` parameter.
+The simulation will default to the vehicle type in the directory in which it is started. You can select the vehicle type if starting from any directory by starting the simulator calling **sim_vehicle.py** with the ``-v`` parameter.
 
 ::
 
@@ -48,10 +56,10 @@ The frame type can also be changed with the ``-f`` parameter.
 ::
 
     sim_vehicle.py -v ArduPlane -f quadplane --console --map
-    
+
 
 Frame Types:
-------------
+~~~~~~~~~~~~
 
 A partial listing of frame types is show below. For a current list, just type:
 
@@ -75,6 +83,7 @@ A partial listing of frame types is show below. For a current list, just type:
 +                          + quadplane-tilttri      +
 +                          + quadplane-tilttrivec   +
 +                          + quadplane-tri          +
++                          + plane-3d               +
 +--------------------------+------------------------+
 +                          + quad (default if -f    +
 +                          + is not used)           +
@@ -94,11 +103,11 @@ A partial listing of frame types is show below. For a current list, just type:
 +                          + sailboat sailboat-motor+
 +--------------------------+------------------------+
 
-.. note:: It is important to select the proper frame type. This not only loads the correct parameter set, but also selects the correct physics model. In real life, for example, you can configure and setup the ArduPlane firmware for any QuadPlane, but you cannot do that in SITL without having selected the exact QuadPlane frame type for the simulation to get the correct physics model.
+.. note:: It is important to select the proper frame type. This not only loads the correct parameter set, but also selects the correct physics model. In real life, for example, you can configure and setup the ArduPlane firmware for any QuadPlane, but you cannot do that in SITL without having selected the exact QuadPlane frame type for the simulation to get the correct physics model. If a frame type is not selected, a default set for the vehicle type will be loaded, as indicated above.
 
 
 Setting vehicle start location
-==============================
+------------------------------
 
 You can start the simulator with the vehicle at a particular location by
 calling **sim_vehicle.py** with the ``-L`` parameter and a named
@@ -126,485 +135,299 @@ For example, to start Copter in *Ballarat* (a named location in
    located in ``$HOME/.config/ardupilot/locations.txt`` - you will
    need to create this file using your favourite text editor.
 
-Simulating On-Board OSD
-=======================
-
-When starting SITL, you can have it display a simulation of the integated OSD, if the autopilot includes one. Add the ``--osd`` option when starting SITL:
-
-::
-
-    sim_vehicle.py -v ArduPlane --console --map --osd
-    
-.. note:: the OSD emulation displays OSD panel items and locations, but it does not allow multiple screens, nor units other than metric
-
-
 .. _using-sitl-for-ardupilot-testing_loading_a_parameter_set:
 
-Loading a parameter set
-=======================
+Loading a different default parameter set
+-----------------------------------------
 
-When starting SITL the first time, the device may be configured with
-"unforgiving" parameters. Typically you will want to replace these with
-values that simulate more realistic vehicle and environment conditions.
-Useful parameter sets are provided in the autotest source for
-`Copter <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/default_params/copter.parm>`__,
-`Plane <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/default_params/plane.parm>`__,
-and
-`Rover <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/default_params/rover.parm>`__.
-
-.. tip::
-
-   This only needs to be done once, after loading, the parameters are
-   stored in the simulated EEPROM.
-
-The MAVProxy commands to load the parameters for Copter, Rover and Plane
-(assuming the present working directory is a vehicle directory like
-**/ardupilot/ArduCopter/**) are shown below:
+A set of default parameters are automatically selected by the frame type. However, you may select a different parameter file by using the ``--add-param-file=`` option, instead of manually loading them via the GCS after the simulation starts:
 
 ::
 
-    param load ../Tools/autotest/default_params/copter.parm
+    sim_vehicle.py -v ArduPlane --console --map --add-param-file=<path to file>
+
+the default working directory will be the directory in which sim_vehicle.py was started.
+
+.. note:: the "default" parameter set emulates the parameter default values contained in the firmware. These are used at startup for parameters, UNLESS the user has previously changed them for a parameter(s), in which case those changed values are used. In SITL, these changes are stored in a file in the simulation startup directory named ``eeprom.bin``. If you wish to startup with only the default values, either that file can be erased, or the ``-w`` options can be used.
 
 ::
 
-    param load ../Tools/autotest/default_params/plane.parm
+    sim_vehicle.py -v ArduPlane --console --map --add-param-file=<path to file> -w
 
-::
+Adding Simulated Peripherals into the Simulation
+------------------------------------------------
 
-    param load ../Tools/autotest/default_params/rover.parm
+See :ref:`adding_simulated_devices`
 
-You can re-load the parameters later if you choose, or revert to the
-default parameters by starting SITL (**sim_vehicle.py**) with the
-``-w`` flag.
-
-.. note:: You may have to load them again, after typing ``param fetch``, in order to load parameters that require enabling before presenting their parameter set.  And, in some cases, you may even need to restart SITL in order for some new parameters, such as output function changes, to take effect. This can be avoided if you add the parameter file during the start of SITL with the "--add-param-file=*pathtofile* "....ie: sim_vehicle.py -f flightaxis:192.168.x.x - -map - -console --add-param-file=*pathtofile* -w. This adds the param file as a default and then wipes any previous param changes that may exist in the simulation directory. 
-
-Parameters can also be saved. For example, to save the parameters into
-the present working directory you might do:
-
-::
-
-    param save ./myparams.parm
-
-Setting parameters
-==================
-
-Many of the following tasks involve setting parameter values over
-MAVLink, which you do using the ``param set`` command as shown:
-
-::
-
-    param set PARAMETERNAME VALUE
-
-All available parameters can be listed using ``param show``. The
-SITL-specific parameters start with ``SIM_``, and can be obtained using:
-
-::
-
-    param show SIM_*
-
-.. tip::
-
-   A table of user settable SITL-specific parameters can be found in `SITL.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/SITL/SITL.cpp>`__
-   When you change a parameter the value remains in the virtual EEPROM
-   after you restart SITL. Remember to change it back if you don't want it
-   any more (or :ref:`reload/reset the parameters <using-sitl-for-ardupilot-testing_loading_a_parameter_set>`). 
-
-Testing RC failsafe
-===================
-
-To test the behaviour of ArduPilot when you lose remote control (RC),
-set the parameter ``SIM_RC_FAIL=1``, as shown:
-
-::
-
-    param set SIM_RC_FAIL 1
-
-This simulates the complete loss of RC input. If you just want to
-simulate low throttle (below throttle failsafe level) then you can do
-that with the RC command:
-
-::
-
-    rc 3 900
-
-Testing GPS failure
-===================
-
-To test losing GPS lock, use ``SIM_GPS_DISABLE``:
-
-::
-
-    param set SIM_GPS_DISABLE 1
-
-You can also enable/disable a 2nd GPS using ``SIM_GPS2_DISABLE``.
-
-Testing GPS-for-Yaw
-===================
-
-To test GPS-for-Yaw using two simulated UBlox GPSs:
-
-::
-
-    param set EK3_SRC1_YAW 2
-    param set GPS_AUTO_CONFIG 0
-    param set GPS_TYPE 17
-    param set GPS_TYPE2 18
-    param set GPS_POS1_Y -0.2
-    param set GPS_POS2_Y 0.2
-    param set SIM_GPS_POS_Y -0.2
-    param set SIM_GPS2_POS_Y 0.2
-    param set SIM_GPS2_DISABLE 0
-    param set SIM_GPS2_HDG 1
-
-Reboot SITL and the heading should be visible in the GPS2_RAW message's yaw field:
-
-::
-
-    status GPS2_RAW
-
-To test using a single NMEA GPS:
-
-::
-
-    param set EK3_SRC1_YAW 2
-    param set GPS_TYPE 5
-    param set SIM_GPS_TYPE 5
-    param set SIM_GPS_HDG 1
-
-Reboot SITL and the heading should be visible in the GPS_RAW_INT message's yaw field:
-
-::
-
-    status GPS_RAW_INT
-
-Testing the effects of vibration
-================================
-
-To test the vehicle's reaction to vibration, use ``SIM_ACC_RND``. The
-example below adds 3 m/s/s acceleration noise:
-
-::
-
-    param set SIM_ACC_RND 3
-
-Testing the effects of wind
-===========================
-
-The wind direction, speed and turbulence can be changed to test their
-effect on flight behaviour. The following settings changes the wind so
-that it blows from the South at a speed of 10 m/s.
-
-::
-
-    param set SIM_WIND_DIR 180
-    param set SIM_WIND_SPD 10
-
-To see other wind parameters do:
-
-::
-
-    param show sim_wind*
-
-
-Adding a Gimbal
-===============
-
-SITL can simulate a virtual gimbal.
-
-.. note::
-
-   Gimbal simulation causes SITL to start sending
-   `MOUNT_STATUS <https://mavlink.io/en/messages/ardupilotmega.html#MOUNT_STATUS>`__
-   messages. These messages contain the orientation according to the last
-   commands sent to the gimbal, not actual measured values. As a result, it
-   is possible that the true gimbal position will not match - i.e. a
-   command might be ignored or the gimbal might be moved manually. Changes
-   are not visible in Mission Planner.
-
-First start the simulator and use the following commands to set up the
-gimbal mount:
-
-::
-
-    # Specify a servo-based mount:
-    param set MNT_TYPE 1
-
-    # Set RC output 6 as pan servo:
-    param set SERVO6_FUNCTION 6
-
-    # Set RC output 8 as roll servo:
-    param set SERVO7_FUNCTION 8
-
-Then stop and re-launch SITL with the ``-M`` flag:
-
-::
-
-    sim_vehicle.py -M
-
-Adding a Rangefinder
-====================
-
-SITL can simulate an analog rangefinder, which is very useful for
-developing flight modes that can use a rangefinder. To set it up use the
-following commands:
-
-::
-
-    param set SIM_SONAR_SCALE 10
-    param set RNGFND1_TYPE 1
-    param set RNGFND1_SCALING 10
-    param set RNGFND1_PIN 0
-    param set RNGFND1_MAX_CM 5000
-    param set RNGFND1_MIN_CM 0
-
-    # Enable rangefinder for landing (Plane only!)
-    param set RNGFND_LANDING 1
-
-The above commands will set up an analog rangefinder with a maximum range
-of 50 meters (the 50m comes from an analog voltage range of 0 to 5V, and
-a scaling of 10). After making the above changes you need to restart
-SITL.
-
-Then to test it try this:
-
-::
-
-    module load graph
-    graph RANGEFINDER.distance
-
-Then try a flight and see if the graph shows you the rangefinder
-distance.
-
-.. tip::
-
-   You can also use the following commands to graph rangefinder
-   information (defined as *MAVProxy* aliases):
-
-   -  ``grangealt`` - graph rangefinder distance and relative altitude.
-   -  ``grangev`` - rangefinder voltage
-   -  ``grange`` - graph "rangefinder_roll"
-
-Adding an Optical Flow sensor
-=============================
-
-A virtual optical flow sensor can be added enabling a RangeFinder (see "Adding a Rangefinder" above) and then setting these parameters:
-
-::
-
-    param set SIM_FLOW_ENABLE 1
-    param set FLOW_TYPE 10
-
-Then restart SITL. After setting it up try this:
-
-::
-
-    module load graph
-    graph OPTICAL_FLOW.flow_comp_m_x OPTICAL_FLOW.flow_comp_m_y
-
-Go for a flight and see if you get reasonable data.
-
-Adding an RPM sensor
-====================
-
-You can add an RPM sensor like this:
-
-::
-
-    param set RPM_TYPE 1
-    
-This allows to display and log your virtual motor's rotational speed.
-
-Adding Wheel Encoders
-=====================
-
-You can test two virtual wheel encoders like this:
-
-::
-
-    param set AHRS_EKF_TYPE 3
-    param set EK2_ENABLE 0
-    param set EK3_ENABLE 1
-    param fetch
-    param set EK3_SRC1_POSXY 0
-    param set EK3_SRC1_VELXY 7
-    param set EK3_SRC1_VELZ 0
-    param set GPS_TYPE 0
-    param set WENC_TYPE 10
-    param fetch
-    param set WENC_POS_Y 0.075
-    param set WENC2_TYPE 10
-    param set WENC2_POS_Y -0.075
-    param set ARMING_CHECK 60918 (to disable GPS checks)
-
-The restart SITL and right mouse button click on the map and select "Set Origin (with height)" and the vehicle should appear on the map.  It may also be useful to enter "map set showsimpos 1" to make the vehicle's actual position visible.
-
-Adding Range Beacons
-====================
-
-You can test a virtual range beacons by setting the following parameters
-
-::
-
-    param set AHRS_EKF_TYPE 3
-    param set EK2_ENABLE 0
-    param set EK3_ENABLE 1
-    param fetch
-    param set EK3_GPS_TYPE 3
-    param set GPS_TYPE 0
-    param set BCN_TYPE 10
-    param fetch
-    param set BCN_LATITUDE -35.363261
-    param set BCN_LONGITUDE 149.165230
-    param set BCN_ALT 584
-
-The restart SITL and the vehicle should appear on the map.  After perhaps 30seconds it should shift to its normal starting position.
-
-Testing Precision Landing
+Using real serial devices
 -------------------------
 
+Sometimes it is useful to use a real serial device in SITL. This makes
+it possible to connect SITL to a real GPS for GPS device driver
+development, or connect it to a real OSD device for testing an OSD.
+
+To use a real serial device you can use a command like this:
+
+::
+
+    sim_vehicle.py -A "--serial2=uart:/dev/ttyUSB0" --console --map
+
+what that does it pass the --serial2 argument to the ardupilot code,
+telling it to use /dev/ttyUSB0 instead of the normal internal simulated
+GPS for the 2nd UART. You can find the SITL serial port mappings :ref:`here <learning-ardupilot-uarts-and-the-console>`
+
+Any of the 8 UARTs can be configured in this way, using serial0 to serial7.
+The standard serial ports SERIAL1 and SERIAL2 are uartC and uartD respectively.
+
+Typically serial devices can be connected to a computer's USB port through
+an FTDI adapter, but note that these generally do not support half-duplex.
+In order to communicate with devices in this way you should make sure your 
+user has appropriate access on linux-type systems to the dialout group. On
+WSL it is also usually necessary to setup the port once the device has been connected
+before trying to interact with it through SITL. For instance for COM22:
+
+::
+
+    stty -F /dev/ttyS22 raw 115200
+
+You can set additional parameters on the uart in the connection string, so for instance
+to use a device on SERIAL1 at 115k baud only, specify:
+
+::
+
+    sim_vehicle.py -v ArduCopter -A "--serial1=uart:/dev/ttyUSB0:115200" --console --map
+
+Similar to this if you were running a vehicle in SITL via Cygwin on
+Microsoft Windows and you wanted to send the MAVLink output through a
+connected radio on COM16 to AntennaTracker you can use a command like
+this - note under Cygwin comm ports are ttyS and they start at 0 so 15
+is equivalent to COM16:
+
+::
+
+    sim_vehicle.py -A "--serial1=uart:/dev/ttyS15" --console --map
+
+Swarming with SITL
+------------------
+
+SITL has support for launching multiple vehicles from a single command.
+With this method, SITL is restricted to launching vehicles of the same type.
+
+When launching multiple vehicles, each one will need a unique SysId parameter: :ref:`SYSID_THISMAV<SYSID_THISMAV>`.
+The easiest method to avoid SysId conflicts is with the ``--auto-sysid`` option.
+
+The number of vehicles is set with ``--count`` option.
+
+Up to this point, all the vehicles would spawn in the same default location and intersect.
+
+To avoid that, they must be spawned in unique locations.
+There are two primary approaches, using either a swarm offset line or a swarm configuration file.
+Both require a location to be set with ``--location``.
+
+When using a swarm offset line, the option ``--auto-offset-line 90,10`` will space the 
+vehicles out at a line with heading of 90 degrees orientation. The vehicles will be spaced 10
+meters apart. Thus, they will be spread out east-west.
+
+Putting it all together for five Copter vehicles on an auto-offset-line at CMAC:
+
+::
+
+    sim_vehicle.py -v Copter --map --console --count 5 --auto-sysid --location CMAC --auto-offset-line 90,10
+
+
+The other way to spawn the vehicles is the swarm configuration file.
+An example configuration is found in ``Tools/autotest/swarminit.txt``, with the file format described in the header.
+This allows configurable ENU offsets as well as an initial absolute heading for each vehicle.
+
+::
+
+    sim_vehicle.py -v Copter --map --console --count 5 --auto-sysid --location CMAC --swarm Tools/autotest/swarminit.txt
+
+:ref:`MavProxy's Multiple Vehicle Guide <mavproxy:multi>` contains information to control the swarm.
+
+Replaying serial data from Saleae Logic data captures
+=====================================================
+
+Saleae Logic is often used when decoding and debugging protocols for the first time.  The "async serial" analyzers can export the data to a CSV, and this data can then be replayed through ArduPilot's simulated UARTDriver to test parsing of that data.
+
+Serial data is replayed into the simulation at the same rate it appeared on the wire when taking the trace, preserving frame-gaps and the like.
+
+After you have Logic decoding the serial stream, export the data using this interface element:
+
+.. figure:: ../images/saleae-async-save.png
+   :target: ../_images/saleae-async-save.png
+   :width: 450px
+
+That data should be in this format:
+
+::
+
+   Time [s],Value,Parity Error,Framing Error
+   109.557104960000004,0x9B,,
+   109.590780800000005,0x00,,
+   109.609869119999999,0x00,,
+   109.610386399999996,0x00,,
+   109.613748799999996,0x00,,
+   109.614266079999993,0x6B,,
+   109.616231679999999,0x00,,
+   109.744313439999999,0x0A,,
+   109.744830719999996,0x89,,
+
+Place this capture file into the root directory of your ArduPilot repository checkout.
+
+Specify the schema and filename on the ``sim_vehicle.py`` command-line.  The following example inserts a breakpoint where the data is being read into the parser:
+
+::
+
+   ./Tools/autotest/sim_vehicle.py  --gdb --debug -v plane -A --uartF=logic_async_csv:hobbywing-platinum-pro-v3.csv --speedup=1 -B AP_HobbyWing_Platinum_PRO_v3::update
+
 .. note::
 
-   These instructions are written assuming ArduCopter
+   Your ``SERIAL5_PROTOCOL`` must be set appropriately for this data to be read.
 
-Enable Precision Landing, and set the precision landing backend type to SITL:
+.. note::
 
-::
+   There is a 5s simulated-time delay before data is fed into the simulation from the file.
 
-   param set PLND_ENABLED 1
-   param fetch
-   param set PLND_TYPE 4
-   param set SIM_PLD_ENABLE 1
-   param set SIM_PLD_LAT -35.3632
-   param set SIM_PLD_LON 149.1652
+Using a different GCS instead of MAVProxy
+-----------------------------------------
 
-A rangefinder is currently required for precision landing.  Enable a simulated rangefinder:
+Start ``sim_vehicle`` without starting MAVProxy using the ``--no-mavproxy`` option. SITL will be
+listening for any GGS station to connect via TCP port 5760.
 
-::
+Many GCS can only initiate the connection via TCP. For Mission Planner or QGC, select TCP, the host ip that sim_vehicle is running on or 127.0.0.1 if running locally, and connect.
 
-   param set RNGFND1_TYPE 1
-   param set RNGFND1_MIN_CM 0
-   param set RNGFND1_MAX_CM 4000
-   param set RNGFND1_PIN 0
-   param set RNGFND1_SCALING 12.12
+.. figure:: ../images/MissionPlanner_ConnectTCP.jpg
+   :target: ../_images/MissionPlanner_ConnectTCP.jpg
 
-Restart the simulation.
-   
-Takeoff and fly a bit, then switch into land:
+   Mission Planner: Connecting toSITL using TCP
+
+Using a different GCS instead of MAVProxy (via UDP)
+---------------------------------------------------
+
+To connect another GCS using the ``--no-mavproxy`` option and UDP requires adding a startup option to have the simulation output heartbeats on UDP so the GCS can connect:
 
 ::
 
-   arm throttle
-   rc 3 1800
-   mode land
-   rc 3 1500
+    sim_vehicle.py -A "--serial0=udpclient<gcs ip>:14550" --console --map
 
-Check the logs for precision landing messages:
+where <gcs ip> would be 127.0.0.1 if the GCS is on the same PC or the ip address of a remote PC running a GCS
 
-::
+In Mission Planner, connect to the SITL UDP port by selecting
+**UDP** and then the **Connect** button. Enter the port to listen on
+(the default port number of 14550 should be correct if SITL is running
+on the same computer).
 
-   ls -lt logs
+.. figure:: ../images/MissionPlanner_Connect_UDP.jpg
+   :target: ../_images/MissionPlanner_Connect_UDP.jpg
 
-Choose the youngest, then:
+   Mission Planner: Connecting to a UDPPort
 
-::
+Using Mission Planner's Simulation feature
+==========================================
 
-   mavlogdump --type PL logs/<youngest>
+Instead of using ``sim_vehicle.py`` under Linux or WSL, you can also simulate using Mission Planner's simulation feature.
 
+See :ref:`mission-planner-simulation`
 
-Testing Vicon (aka Vision Positioning)
---------------------------------------
+.. _using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations:
 
-Start SITL, wiping parameters:
+Connecting other/additional ground stations
+===========================================
 
-::
+SITL can connect to multiple ground stations by using MAVProxy or Mission Planner to
+forward UDP packets to the GCSs network address.
 
-   ./Tools/autotest/sim_vehicle.py -v ArduCopter --gdb --debug -w
+.. _using-sitl-for-ardupilot-testing_sitl_with_mavproxy_udp:
 
-Enable EKF3, disable GPS and set Serial5 protocol to mavlink so as to accept vision-position-estimate and vision-speed-estimate messages:
+Using MAVProxy (UDP) forwarding
+-------------------------------
 
-::
+Multiple ground stations can be connected to SITL by using MAVProxy to
+forward UDP packets to the GCSs network address (for example, forwarding
+to another Windows box or Android tablet on your local network). The
+simulated vehicle can then be controlled and viewed through any attached
+GCS.
 
-    param set AHRS_EKF_TYPE 3
-    param set EK2_ENABLE 0
-    param set EK3_ENABLE 1
-    param fetch
-    param set EK3_SRC1_POSXY 6
-    param set EK3_SRC1_POSZ 6
-    param set EK3_SRC1_VELXY 6
-    param set EK3_SRC1_VELZ 6
-    param set EK3_SRC1_YAW 6
-    param set VISO_TYPE 2
-    param set SERIAL5_PROTOCOL 2
-    param set GPS_TYPE 0 (optional)
-    param set ARMING_CHECK 388598 (optional, to disable GPS checks)
-    param fetch
+First find the IP address of the machine running the GCS. How you get
+the address is platform dependent (on Windows you can use the 'ipconfig'
+command to find the computer's address).
 
-Restart the simulation, attaching a simulated Vicon system to uartF (which corresponds to ``SERIAL5``):
-
-::
-
-   ../Tools/autotest/sim_vehicle.py --map --console -A "--uartF=sim:vicon:"
-
-The console should indicate no GPS is present:
+Assuming the IP address of the GCS is 192.168.14.82, you would add this
+address/port as a MAVProxy output using:
 
 ::
 
-   GPS: 0 (0)
+    output add 192.168.14.82:14550
 
-Vision position estimates should now be being fed into ArduCopter:
+The GCS would then connect to SITL by listening on that UDP port.
 
-::
+.. tip::
 
-   STABILIZE> status VICON_POSITION_ESTIMATE
-   STABILIZE> 43371: VICON_POSITION_ESTIMATE {usec : 38380000, x : 0.0, y : 0.0, z : -0.0999755859375, roll : 0.0, pitch : 0.0, yaw : -0.122173137963}
+   If you're running the GCS on the **same machine** as SITL then an
+   appropriate output may already exist. Check this by calling ``output``
+   on the *MAVProxy command prompt*:
 
+   ::
 
-You should also receive a startup message from the EKF:
+       GUIDED> output
+       GUIDED> 2 outputs
+       0: 127.0.0.1:14550
+       1: 127.0.0.1:14551
 
-::
+   In this case we can connect a GCS running on the same machine to UDP
+   port 14550 or 14551. We can choose to connect another GCS to the
+   remaining port, and add more ports if needed. 
 
-   APM: EKF3 IMU0 is using external nav data
-   APM: EKF3 IMU0 initial pos NED = 0.0,0.0,-0.1 (m)
-   APM: EKF3 IMU1 is using external nav data
-   APM: EKF3 IMU1 initial pos NED = 0.0,0.0,-0.1 (m)
+Using Mission Planner Forwarding
+--------------------------------
 
-Use MAVProxy's right-click context menu item to ``Set Origin (with alt)``
+Mission Planner can forward to other GCS using it Mavlink Mirror. Under SETUP/Advanced/Mavlink Mirror set the connection type (usually UDP Client), baud rate (11520 for UDP),optional write access to allow the connecting GCS to changes things, and press connect. A listening GCS will automtically connect to SITL.
 
-Arm in loiter, takeoff and fly somewhere:
+.. image:: ../../../images/mavlink-forwarding.jpg
+  :target: ../_images/mavlink-forwarding.jpg
 
-::
+SITL Simulation Parameters
+==========================
 
-   loiter
-   arm throttle
-   rc 3 1800
-   rc 2 1400
+.. toctree::
+     :maxdepth: 1
 
-Other SITL vicon settings are hel in SIM_VICON_xx parameters:
+     SITL_simulation_parameters
 
-::
+Adding simulated devices to sim_vehicle
+=======================================
 
-   param show SIM_VICON*
+.. toctree::
+   :maxdepth: 1
+
+   adding_simulated_devices
 
 Accessing log files
 ===================
 
-SITL supports both blogs and DF logs (same as other types of ArduPilot
-ports). The DF logs are stored in a "logs" subdirectory in the directory
-where you start SITL. You can also access the DF logs via MAVLink using
-a GCS, but directly accessing them in the logs/ directory is usually
-more convenient.
+SITL supports both Block Logging and SD card storage DataFlash logs (the same as used with physical autopilots). The SD card logs are stored in a "logs" subdirectory in the directory
+where you start sim_vehicle or in Mission Planner's sitl/logs directory in the its documents folder. The Block Flash logs are stored in the blackbox.bin file.
+You can also access the logs via MAVLink using a GCS, but directly accessing SD card emulated logs in the logs/ directory is usually more convenient.
 
-To keep your blogs organised it is recommended you start SITL using the
+To keep your logs organized it is recommended you start SITL using the
 "--aircraft NAME" option. That will create a subdirectory called NAME
-which will have flight logs organised by date. Each flight will get its
+which will have flight logs organized by date. Each simulation run will get its
 own directory, and will include the parameters for the flight plus any
 downloaded waypoints and rally points.
 
 Graphing vehicle state
 ======================
 
-MAVProxy allows you to create graphs of inputs, outputs, internal variables, etc. by loading the ``graph`` module.  You can then create graphs of vehicle state using the graph command. For example, to graph the RC channel 3 input during the simulation:
+MAVProxy allows you to create graphs of inputs, outputs, internal variables, etc. by loading the ``graph`` module.
+
+::
+
+
+    module load graph
+
+
+You can then create graphs of vehicle state using the graph command. For example, to graph the RC channel 3 input during the simulation:
 
 ::
 
@@ -614,6 +437,7 @@ As with most commands, you can type ``graph`` and then double tab to see availab
 
 Since these are rather long to type, MAVProxy allows for the creation of shorter aliases.  There have been many aliases created in a file present in the ArduPilot source tree in the Tools/vagrant sub-directory called **mavinit.scr**. If this file is copied and placed in your home directory and renamed to **.mavinit.scr**, it will be used upon *MAVProxy's* initialization.  Common ones are: *g* for graph, *grc* to graph the RC inputs, *gservo8* to graph the first 8 output channels instead of typing long item names eight times, etc. Using this alias initialization file also has the advantage of automatically loading the graph module upon startup, so you will not have to load it.
 
+Mission Planner allows graphing using the "tuning" box in the DATA tab's map screen. Checking that box will open a graph screen. Double clicking it will present a selection dialog of what messages/data to graph.
 
 Using a joystick
 ================
@@ -640,7 +464,7 @@ To remove this debug line run this command:
 note that this needs to be one long command line. Ignore the line
 wrapping in the wiki. If you have installed the joystick support using the instructions on setting up the ArduPilot code building environment, then this will probably NOT be required.
 
-Then to use the joystick run:
+Then to use the joystick in MAVProxy run:
 
 ::
 
@@ -648,314 +472,4 @@ Then to use the joystick run:
 
 If you want to add support for a new joystick type then you need to add a file for it following these `instructions <https://github.com/ArduPilot/MAVProxy/blob/master/docs/JOYSTICKS.md>`__ . Note that you can also use this information to customize the operation of your joystick if it already supported. Just modify it file appropriately.
 
-Using real serial devices
-=========================
-
-Sometimes it is useful to use a real serial device in SITL. This makes
-it possible to connect SITL to a real GPS for GPS device driver
-development, or connect it to a real OSD device for testing an OSD.
-
-To use a real serial device you can use a command like this:
-
-::
-
-    sim_vehicle.py -A "--uartB=uart:/dev/ttyUSB0" --console --map
-
-what that does it pass the --uartB argument to the ardupilot code,
-telling it to use /dev/ttyUSB0 instead of the normal internal simulated
-GPS for the 2nd UART. You can find the SITL serial port mappings :ref:`here <learning-ardupilot-uarts-and-the-console>`
-
-Any of the 5 UARTs can be configured in this way, using uartA to uartE.
-The standard serial ports SERIAL1 and SERIAL2 are uartC and uartD respectively.
-
-Typically serial devices can be connected to a computer's USB port through
-an FTDI adapter, but note that these generally do not support half-duplex.
-In order to communicate with devices in this way you should make sure your 
-user has appropriate access on linux-type systems to the dialout group. On
-WSL it is also usually necessary to setup the port once the device has been connected
-before trying to interact with it through SITL. For instance for COM22:
-
-::
-
-    stty -F /dev/ttyS22 raw 115200
-
-You can set additional parameters on the uart in the connection string, so for instance
-to use a device on SERIAL1 at 115k baud only, specify:
-
-::
-
-    sim_vehicle.py -v ArduCopter -A "--uartC=uart:/dev/ttyUSB0:115200" --console --map
-
-Similar to this if you were running a vehicle in SITL via Cygwin on
-Microsoft Windows and you wanted to send the MAVLink output through a
-connected radio on COM16 to AntennaTracker you can use a command like
-this - note under Cygwin comm ports are ttyS and they start at 0 so 15
-is equivalent to COM16:
-
-::
-
-    sim_vehicle.py -A "--uartC=uart:/dev/ttyS15" --console --map
-
-.. _using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations:
-
-
-Changing the speed of the simulation
-====================================
-
-Most of the simulator backends support changing the speed while
-running. Just set the SIM_SPEEDUP parameter as needed. A value of 1
-means normal wall-clock time. A value of 5 means 5x realtime. A value
-of 0.1 means 1/10th of real time.
-
-Testing Compass Calibration
-===========================
-
-A quick way to test compass calibration in SITL is with the
-"calibration" vehicle model. To use this with plane do this:
-
-::
-
-   sim_vehicle.py -D -f plane --model calibration --console --map
-
-then do:
-
-:: 
-
-   servo set 5 1250
-
-This will start the vehicle moving through a "compass dance". You can
-start a compass calibration to test changes to the calibrator
-code. Using this in combination with the SIM_SPEEDUP parameter can be useful.
-
-The calibration vehicle module has a lot of other features too. See
-`http://guludo.me/posts/2016/05/27/compass-calibration-progress-with-geodesic-sections-in-ardupilot/
-<http://guludo.me/posts/2016/05/27/compass-calibration-progress-with-geodesic-sections-in-ardupilot/>`__
-for details.
-
-Connecting other/additional ground stations
-===========================================
-
-SITL can connect to multiple ground stations by using *MAVProxy* to
-forward UDP packets to the GCSs network address. Alternatively SITL can
-connect to a GCS over TCP/IP without using *MAVProxy*.
-
-To start SITL without starting MAVProxy use the ``--no-mavproxy`` option. SITL will be
-listening for a GGS station to connect via UDP port 14550 or TCP port 5760.
-
-.. _using-sitl-for-ardupilot-testing_sitl_with_mavproxy_udp:
-
-SITL with MAVProxy (UDP)
-------------------------
-
-SITL can connect to multiple ground stations by using *MAVProxy* to
-forward UDP packets to the GCSs network address (for example, forwarding
-to another Windows box or Android tablet on your local network). The
-simulated vehicle can then be controlled and viewed through any attached
-GCS.
-
-First find the IP address of the machine running the GCS. How you get
-the address is platform dependent (on Windows you can use the 'ipconfig'
-command to find the computer's address).
-
-Assuming the IP address of the GCS is 192.168.14.82, you would add this
-address/port as a *MAVProxy* output using:
-
-::
-
-    output add 192.168.14.82:14550
-
-The GCS would then connect to SITL by listening on that UDP port. The
-method for connecting will be GCS specific (we show :ref:`how to connect for Mission Planner <using-sitl-for-ardupilot-testing_connecting_mission_planner_udp>` below).
-
-.. tip::
-
-   If you're running the GCS on the **same machine** as SITL then an
-   appropriate output may already exist. Check this by calling ``output``
-   on the *MAVProxy command prompt*:
-
-   ::
-
-       GUIDED> output
-       GUIDED> 2 outputs
-       0: 127.0.0.1:14550
-       1: 127.0.0.1:14551
-
-   In this case we can connect a GCS running on the same machine to UDP
-   port 14550 or 14551. We can choose to connect another GCS to the
-   remaining port, and add more ports if needed. 
-
-   
-.. _using-sitl-for-ardupilot-testing_sitl_without_mavproxy_tcp:
-
-Multi-Aircraft SITL with MAVProxy
-----------------------------------
-
-Multiple aircraft can be simulated in SITL with MAVProxy. This feature owes much to prior work here: https://ardupilot.org/mavproxy/docs/getting_started/multi.html 
-
-To access this feature use both the number (-n) or count (--count) as well as the auto-sysid (--auto-syid) features of sim_vehicle.py like so:
-
-::
-
-    sim_vehicle.py -v ArduPlane -n3 --auto-sysid
-
-Now MAVProxy will receive messages on the console from all aircraft. Verifying a connection to multiple vehicles is as simple as checking the MAVProxy console -- https://ardupilot.org/mavproxy/docs/modules/console.html. The following is an image of the console when connected to vehicle 2:
-
-.. figure:: ../images/mavproxy_multi_vehicle_link2_highlighted.png
-   :target: ../_images/mavproxy_multi_vehicle_link2_highlighted.png
-   :width: 450px
-
-Use vehicle <n> to set the active vehicle (using 1-based indexing). Use alllinks <cmd> to send <cmd> to all vehicles in turn. For example, alllinks mode rtl will set RTL mode on all vehicles.
-
-**Note** while the vehicles use 1-based indexing, the logs use 0-based. So a multi-vehicle plane that was labeled 1 at the MAVProxy prompt will be labeled 0 in the logs. Subdirectories for each vehicle will be formed based on where you started up MAVProxy. For example, a log directory for vehicle 0 looks like this:
-
-.. figure:: ../images/multiplane_uses_zero_based.png
-   :target: ../_images/multiplane_uses_zero_based.png
-   :width: 450px
-
-The eeprom.bin file contains a copy (among other things) of all the parameters for vehicle 0. The logs directory has all the dataflash logs for the vehicle, and terrain directory has all the Shuttle Radar Topograph Mission terrain tiles.
-
-It is possible to specify the desired instance numbers (-i) to the sim_vehicle.py call, which results in precise log indexing:
-
-::
-
-    sim_vehicle.py -v ArduPlane -n3 --auto-sysid -i "1 2 3"
-
-Be sure to verify the MAVProxy map and missions before takeoff. An example map at the default airfield before we takeoff looks like this:
-
-.. figure:: ../images/mavproxy_multi_vehicle_pre_takeoff.png
-   :target: ../_images/mavproxy_multi_vehicle_pre_takeoff.png
-   :width: 450px
-
-Load missions for each aircraft before takeoff. At the MAVProxy prompt, verify a connection to vehicle 1 by entering:
-
-::
-
-    MANUAL> vehicle 1
-
-To use sample waypoints, just load them as follows:
-
-::
-
-    MANUAL> wp load 0/vehicle1_waypoints.wp
-
-The waypoints loaded on the map are as in the figure:
-
-.. figure:: ../images/mavproxy_multi_vehicle1_mission.png
-   :target: ../_images/mavproxy_multi_vehicle1_mission.png
-   :width: 450px
-
-This is a sample mission that is just a takeoff waypoint followed by an unlimited loiter waypoint.
-
-Load the other two missions by setting the appropriate vehicle and their waypoint files. For example, a mission set for the other two vehicles looks like:
-
-.. figure:: ../images/mavproxy_multi_vehicle2_mission.png
-   :target: ../_images/mavproxy_multi_vehicle2_mission.png
-   :width: 450px
-
-.. figure:: ../images/mavproxy_multi_vehicle3_mission.png
-   :target: ../_images/mavproxy_multi_vehicle3_mission.png
-   :width: 450px
-
-**Please note this is for demonstration ONLY!!** The missions for all vehicles pass very close to each other and they are not altitude deconflicted either. If this is meant for real aircraft then more care is needed to be certain about your multi-aircraft configuration!
-
-That said, takeoff aircraft 1 by proceeding to AUTO mode:
-
-::
-    
-    MANUAL> vehicle 1
-
-::
-    
-    MANUAL> Set vehicle 1 (link 1)
-
-::
-    
-    MANUAL> arm throttle
-
-::
-    
-    MANUAL> AUTO
-
-Vehicle 1 should proceed to the unlimited loiter waypoint:
-
-.. figure:: ../images/mavproxy_multi_vehicle1_loiter.png
-   :target: ../_images/mavproxy_multi_vehicle1_loiter.png
-   :width: 450px
-
-All three vehicles loitering together:
-
-.. figure:: ../images/mavproxy_multi_vehicle3_loiter.png
-   :target: ../_images/mavproxy_multi_vehicle3_loiter.png
-   :width: 450px
-
-Flight is also possible in non-auto modes (e.g., via the MAVProxy takeoff command) but that is left as an exercise to the reader.
-
-SITL without MAVProxy (TCP)
----------------------------
-
-It is also possible to interact with SITL over TCP/IP by starting it
-using \ *vehicle_name*.\ **elf** (e.g. **/ArduCopter/ArduCopter.elf**).
-*MAVProxy* is not needed when using this method.
-
-Run the file in the *Cygwin Terminal*, specifying a home position and
-vehicle model as shown below:
-
-::
-
-    $ ./ArduCopter.elf --home -35,149,584,270 --model quad
-    Started model quad at -35,149,584,270 at speed 1.0
-    Starting sketch 'ArduCopter'
-    Starting SITL input
-    bind port 5760 for 0
-    Serial port 0 on TCP port 5760
-    Waiting for connection ....
-
-The command output shows that you can connect to SITL using TCP/IP at
-the network address of the **machine SITL is running on** at port 5760.
-
-.. tip::
-
-   **ArduCopter.elf** has other startup options, which you can use
-   using the -h command line parameter:
-
-   ::
-
-       ./ArduCopter.elf -h
-
-.. _using-sitl-for-ardupilot-testing_connecting_mission_planner_udp:
-
-Connecting Mission Planner (UDP)
---------------------------------
-
-First set up SITL to :ref:`output UDP packets to the address/port of the computer running *Mission Planner* <using-sitl-for-ardupilot-testing_sitl_with_mavproxy_udp>`.
-
-In *Mission Planner* listen to the specific UDP port by selecting
-**UDP** and then the **Connect** button. Enter the port to listen on
-(the default port number of 14550 should be correct if SITL is running
-on the same computer).
-
-.. figure:: ../images/MissionPlanner_Connect_UDP.jpg
-   :target: ../_images/MissionPlanner_Connect_UDP.jpg
-
-   Mission Planner: Connecting to a UDPPort
-
-Connecting to Mission Planner (TCP)
------------------------------------
-
-First set up SITL :ref:`for use with TCP <using-sitl-for-ardupilot-testing_sitl_without_mavproxy_tcp>`.
-
-In *Mission Planner* connect to SITL by selecting **TCP** and then the
-**Connect** button. Enter the \ *remote host* and *remote Port* of the
-machine running SITL. *Mission Planner* will then connect and can be
-used just as before.
-
-.. tip::
-
-   If SITL is running on the same machine as *Mission Planner* you can
-   click through the \ *remote host* and *remote Port* prompts as these
-   default to the correct values.
-
-.. figure:: ../images/MissionPlanner_ConnectTCP.jpg
-   :target: ../_images/MissionPlanner_ConnectTCP.jpg
-
-   Mission Planner: Connecting toSITL using TCP
+To use a joystick in Mission Planner under Windows, be sure to setup the joystick using Window's Game Controller control panel, then under Mission Planners DATA screen Actions tab, click Joystick, then setup the axes and buttons, and enable it.

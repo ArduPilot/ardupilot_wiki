@@ -73,7 +73,7 @@ RC input is configured on the R3 (UART3_RX) pin. It supports all RC protocols ex
 
 - SBUS/DSM/SRXL connects to the R6 pin.
 
-- SBUS FPort requires connection to T3 and an external bi-directional inverter, see :ref:`common-FPort-receivers` .
+- SBUS FPort requires connection to T3 and an external bi-directional inverter, see :ref:`common-FPort-receivers`.
 
 - CRSF also requires a T3 connection, in addition to R6, and automatically provides telemetry. 
 
@@ -84,7 +84,7 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 ESC Telemetry
 =============
 
-The SERIAL5 port (UART5) is for ESC telemetry. It is connected through the motor connector and works out of the box with the `Tekko32 F3 Mini <https://shop.holybro.com/tekko32-f3-4in1-45a-mini-esc_p1132.html>`__ which is commonly paired with this flight controller.
+The SERIAL5 port (UART5) is for ESC telemetry. It is connected through the motor connector and works out of the box with the `Tekko32 F3 Mini <https://shop.holybro.com/tekko32-f3-4in1-45a-mini-esc_p1132.html>`__ which is commonly paired with this autopilot.
  
 FrSky Telemetry
 ===============
@@ -94,8 +94,8 @@ to set the following parameters to enable support for FrSky S.PORT. It
 has built-in inverters and a diode to allow for operation from a single
 pin with no special adapters.
 
-  - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` 4 or 10
-  - :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` 0
+  - :ref:`SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>` 4 or 10
+  - :ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>` 0
 
 OSD Support
 ===========
@@ -107,7 +107,7 @@ PWM Output
 
 The KakuteF4 supports up to 5 PWM outputs. The pads for motor output
 M1 to M6 on the above diagram are for the 5 outputs. M1-4 outputs
-support DShot and :ref:`Bi-Directional DShot<bidir-dshot>` , as well as all PWM types. The M5 is defaulted to support serial LEDs instead of PWM but can be changed by changing its default function using :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` and supports Dshot.
+support DShot and :ref:`Bi-Directional DShot<bidir-dshot>`, as well as all PWM types. The M5 is defaulted to support serial LEDs instead of PWM but can be changed by changing its default function using :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` and supports Dshot.
 
 The PWM is in 2 groups:
 

@@ -4,25 +4,21 @@
 Servo Gripper
 =============
 
-This article explains how to connect a servo to a autopilot and configure it for use as a gripper which is useful for delivery or bottle drop applications.
+This article explains how to connect a servo to an autopilot and configure it for use as a gripper which is useful for delivery or bottle drop applications.
 The servo can be controlled directly by the pilot via a switch on the transmitter or as part of a mission.  You may wish to refer to the :ref:`general servo wiki page <common-servo>` for other ways servos can be controlled.
-
-.. note::
-
-   This servo gripper is included in Copter-3.5 (and higher).  If using an earlier version, a similar result can be accomplished by :ref:`controlling the servo as a camera shutter <common-servo>`
 
 ..  youtube:: HiOw6OvJcik
     :width: 100%
 
-Connecting the servo to a Pixhawk
-=================================
+Connecting the servo to an autopilot
+====================================
 
 .. image:: ../../../images/Servo_Pixhawk.jpg
     :target: ../_images/Servo_Pixhawk.jpg
 
--  If using Copter, connect the servo to AUX OUT 1, 2, 3 or 4.  MAIN OUT 1 ~ 8 should be avoided because these update at 400hz.  If using Plane or Rover where all pins update at 50hz, any unused MAIN OUT or AUX OUT 1 ~ 4 may be used.
--  AUX OUT 5 and 6 cannot be used by default because they are setup as :ref:`Relays <common-relay>`.  These pins can changed to Servo outputs by setting the ``BRD_PWM_COUNT`` parameter to 6 and setting :ref:`RELAY_PIN <RELAY_PIN>` and :ref:`RELAY_PIN2 <RELAY_PIN2>` to -1.
--  The Pixhawk autopilot cannot provide power to the servos so an external BEC or ESC that can provide 5V should be used.
+-  If using Copter, connect the servo to AUX OUT 1, 2, 3 or 4 if the autopilot includes an IOMCU for the first 8 MAIN outputs, or any output operating at 50Hz if the autopilot does not use an IOMCU.  MAIN OUT 1 ~ 8 should be avoided because these normally update at 400hz.  If using Plane or Rover where all PWM output pins usually update at 50hz, any unused output may be used.
+-  In autopilots with IOMCUs, AUX OUT 5 and 6 cannot be used by default because they are setup as :ref:`Relays <common-relay>`.  These pins can changed to Servo outputs by setting the ``BRD_PWM_COUNT`` parameter to 6 and setting :ref:`RELAY_PIN <RELAY_PIN>` and :ref:`RELAY_PIN2 <RELAY_PIN2>` to -1.
+-  If the autopilot cannot provide power to the servos, an external BEC or ESC that can provide 5V should be used.
 
 Configuration
 =============

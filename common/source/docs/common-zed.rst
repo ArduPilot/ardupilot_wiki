@@ -1,16 +1,15 @@
 .. _common-zed:
 
+
+ARCHIVED
+
 ========================================
 ZED stereo camera for Non-GPS Navigation
 ========================================
 
-[copywiki destination="copter,rover,blimp"]
+[copywiki destination="copter,rover"]
 
 This article explains how a `ZED stereo camera <https://www.stereolabs.com>`__ can be used with `OpenKai <https://github.com/yankailab/OpenKAI>`__ as a substitute for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto.
-
-.. note::
-
-   This is an feature was released in Copter-3.5.
 
 ..  youtube:: ze3zs9Bhm98
     :width: 100%
@@ -39,8 +38,7 @@ Setup
 
 Configuration through the Ground Station 
 ========================================
-
-Ensure that Copter-3.5 (or higher) is loaded onto the autopilot and connect with a Ground Station (i.e. Mission Planner).
+Example setup below shown for first proximity sensor:
 
 - enable communication between the TX1 and autopilot using the `Setup the Pixhawk instructions from the tx1 setup wiki page <https://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-pixhawk>`__
 - set :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` to 3 (means use EKF3)
@@ -48,7 +46,7 @@ Ensure that Copter-3.5 (or higher) is loaded onto the autopilot and connect with
 - set :ref:`EK3_ENABLE <EK3_ENABLE>` to 1 (enable EKF3)
 - set :ref:`GPS_TYPE <GPS_TYPE>` to 0 (disable the GPS)
 - set :ref:`VISO_TYPE <VISO_TYPE>` to 1 (enable visual odometry)
-- optionally set :ref:`PRX_TYPE <PRX_TYPE>` to 2 (enable using ZED's depth map for object avoidance)
+- optionally set :ref:`PRX1_TYPE <PRX1_TYPE>` to 2 (enable using ZED's depth map for object avoidance)
 
 Optionally you may also:
 
@@ -62,7 +60,7 @@ Ground Testing
 - Plug in the vehicle's LiPo battery so that both the TX1 and autopilot are powered
 - Connect the autopilot to a ground station using a USB cable
 - If you are using Mission Planner as your ground station, once messages are successfully passing from the ZED/TX1 to the autopilot:
-  - a proximity viewer should appear showing the distance to objects ahead of the vehicle (if :ref:`PRX_TYPE <PRX_TYPE>` was enabled above) 
+  - a proximity viewer should appear showing the distance to objects ahead of the vehicle (if :ref:`PRX1_TYPE <PRX1_TYPE>` was enabled above)
   - "Bad Vision Position" message should disappear from the HUD
 - Set the home position from the ground station map (from MP's Flight Data screen, right-mouse-button-click on the map and select "Set EKF Origin Here").  The vehicle should appear on the map.
 
@@ -75,7 +73,7 @@ Flight testing
 ==============
 
 - Setup the vehicle with AltHold and Loiter flight modes
-- Setup an :ref:`auxiliary switch <channel-7-and-8-options>` to enable/disable object avoidance and move switch to the off position.  Alternatively set :ref:`PRX_TYPE <PRX_TYPE>` to 0.  This helps ensure the vehicle will not backaway from objects in AltHold mode which could surprise the pilot.
+- Setup an :ref:`auxiliary switch <channel-7-and-8-options>` to enable/disable object avoidance and move switch to the off position.  Alternatively set :ref:`PRX1_TYPE <PRX1_TYPE>` to 0.  This helps ensure the vehicle will not backaway from objects in AltHold mode which could surprise the pilot.
 - Attempt to arm and take-off in Loiter mode
 
 DataFlash logging

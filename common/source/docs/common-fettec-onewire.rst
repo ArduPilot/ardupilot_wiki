@@ -1,3 +1,5 @@
+.. _common-fettec-onewire:
+
 ===================
 FETtec OneWire ESCs
 ===================
@@ -22,7 +24,7 @@ FETtec OneWire ESC's telemetry information is sent back to the autopilot:
 The autopilot uses it to:
 
 - log the status of each ESC to the SDCard or internal Flash, for :ref:`post flight analysis<common-logs>`
-- send the status of each ESC to the Ground Station or companion computer for :ref:`real-time monitoring<common-mission-planner-telemetry-logs>`
+- send the status of each ESC to the Ground Station or companion computer for :ref:`real-time monitoring<planner:mission-planner-telemetry-logs>`
 - optionally dynamically change the center frequency of the notch filters used to reduce frame vibration noise in the gyros. See optional configuration information below.
 - optionally measure battery voltage and power consumption. See optional configuration information below.
 
@@ -53,8 +55,8 @@ FETtec ESC configurator software
 
 The `FETtec ESC configurator <https://github.com/FETtec/ESC-Configurator/releases>`_ can change all ESC's settings and do ESC firmware updates.
 Use it to make sure, that your ESC Firmware Version is 2.17 (September 2021) or later.
-Tipicaly a FETtec flight controller can be used as a USB<->OneWire bridge so that the *FETtec ESC configurator* can communicate with the ESCs.
-ESC's parameter changes and ESC firmware updates are also made via OneWire so a serial passthough is possible.
+Typically a FETtec autopilot can be used as a USB<->OneWire bridge so that the *FETtec ESC configurator* can communicate with the ESCs.
+ESC's parameter changes and ESC firmware updates are also made via OneWire so a serial passthrough is possible.
 Often used parameters are for example: 
 
 - **Motor direction** - If your motor spins in the wrong direction you can change it easily without rewiring

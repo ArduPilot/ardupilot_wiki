@@ -31,7 +31,7 @@ between u-center and the GPS by doing the following:
 Connection Option #2 - FTDI cable
 =================================
 
-You will need an `FTDI cable <http://store.jdrones.com/cable_ftdi_6pin_5v_p/cblftdi5v6p.htm>`__ and
+You will need an `FTDI cable <https://www.amazon.com/ftdi-adapter/s?k=ftdi+adapter>`__ and
 a `GPS adapter cable <http://store.scoutuav.com/product/cables-connectors/gps-cable-10-cm/>`__ to
 connect the GPS to your computer. If you have never plugged an FTDI
 device into your computer, you may need to download and install

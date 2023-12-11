@@ -15,45 +15,61 @@ GPS/Compass
 ===========
 .. toctree::
     :maxdepth: 1
-    
+
     Avionics Anonymous GNSS + Compass<common-avanon-gnss-mag>
     Avionics Anonymous Compass<common-avanon-mag>
     Beitain BN-220 GPS / BN-880 GPS + Compass Module <common-beitian-gps>
     CUAV Neo v2 Pro DroneCAN GPS <common-cuav-neo-v2-pro>
     CUAV Neo 3 Pro DroneCAN GPS <common-cuav-neo-3-pro>
     CUAV Neo 3（M9N) GPS <common-cuav-neo-3>
-    Hex Here 2 DroneCAN GPS/Gyro/IMU/Baro <http://www.proficnc.com/all-products/152-gps-module.html>
+    CubePilot Here 2 DroneCAN GPS/Gyro/IMU/Baro <https://docs.cubepilot.org/user-guides/here-2/updating-here-2-firmware>
+    Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>    
     Holybro Micro M8N GPS Module <https://shop.holybro.com/micro-m8n-gps_p1009.html> 
     Holybro Nano Ublox M8 5883 GPS Module <https://shop.holybro.com/nano-ublox-m8-5883-gps-module_p1236.html> 
-    Holybro M8N (Pixhawk 4) GPS Module <https://shop.holybro.com/pixhawk-4-gps-module_p1094.html>
-    Holybro M9N GPS Module <http://www.holybro.com/product/holybro-m9n-gps/>
+    Holybro M8N (Pixhawk 4) GPS Module <https://holybro.com/collections/gps-rtk-systems/products/m8n-gps>
+    Holybro M9N GPS Module <https://holybro.com/collections/gps-rtk-systems/products/m9n-gps>
+    Holybro DroneCAN RM3100 Professional Grade Compass <https://holybro.com/products/dronecan-rm3100-compass>
+    Matek DroneCAN AP_Periph GNSS M10-L4-3100 <http://www.mateksys.com/?portfolio=m10-l4-3100>
+    Matek SAM-M8Q <http://www.mateksys.com/?portfolio=sam-m8q>
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     mRo GPS, GPS+Compass,RTK, and DroneCAN modules <https://store.mrobotics.io/category-s/109.htm>
     mRo Locaton One DroneCAN GPS/Compass <common-mrobotics-location-one-gps>
-    Qiotek DroneCAN RM3100 Compass <http://www.qio-tek.com/RM3100_CAN>
+    Qiotek DroneCAN GNSS M10 QMC5883  <https://www.qio-tek.com/index.php/product/qiotek-m10s-gnss-module/>
+    Qiotek GNSS M10 QMC5883 <https://www.qio-tek.com/index.php/product/qiotek-m10s-gnss-module/>
+    Qiotek DroneCAN RM3100 Compass <https://www.qio-tek.com/index.php/product/qiotek-rm3100-dronecan-module/>
     Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
 
 RTK GPS
 =======
 
-These GPS can incorporate real time kinematic data, either internally generated or externally provided, to improve the precision of the position estimate from the normal GPS meter range down to the cenitmeter range. This increased precision also allows for "Moving Baseline" yaw estimates using two devices on a vehicle with certain RTK GPSes (F9P based). See :ref:`common-gps-for-yaw`.
+These GPS can incorporate real time kinematic data, either internally generated or externally provided, to improve the precision of the position estimate from the normal GPS meter range down to the cenitmeter range (see :ref:`common-rtk-correction`). This increased precision also allows for "Moving Baseline" yaw estimates using two devices on a vehicle with certain RTK GPSes (F9P based) or dedicated Moving Baseline GPSes. See :ref:`common-gps-for-yaw`.
 
 .. toctree::
     :maxdepth: 1
     
     ArduSimple RTK GPS <common-gps-ardusimple>
     Ark RTK GPS <https://arkelectron.com/product/ark-rtk-gps/>
-    Blicube RTK GPS <https://www.blicube.com/grtk_en/>
+    Blicube RTK GPS (Single Unit Moving Baseline) <https://wiki.blicube.com/grtk/>
     CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
     CUAV C-RTK 9Ps RTK Receiver <https://store.cuav.net/shop/c-rtk-9ps/>
     CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
+    CUAV C-RTK2 HP  Heading and RTK receiver<common-cuav-c-rtk2-hp>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
+    CubePilot HERE 3/3+ DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-3/here-3-manual>
+    CubePilot HERE 4 DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-4/here-4-manual>
+    CubePilot Here+ RTK Base/Rover Receiver <common-here-plus-gps>
+    CubePilot HEREPRO DroneCAN RTK GPS/Compass <https://docs.cubepilot.org/user-guides/herepro/herepro-manual>
     Freefly RTK GPS Ground Station <https://store.freeflysystems.com/products/rtk-gps-ground-station>
-    Hex Here+ RTK Receiver <common-here-plus-gps>
+    Foxteck AEROFOX F9P-RTK <https://www.foxtechfpv.com/aerofox-f9p-rtk-unit.html>
     Hitec PositionPro GNSS <https://www.hiteccs.com/drones/peripheral-details/positionpro-gnss-receiver/>
+    Holybro DroneCAN H-RTK F9P Rover <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-rover>
+    Holybro DroneCAN H-RTK F9P Helical <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-helical>
     Holybro RTK M8P Family <common-holybro-rtk-m8p>
     Holybro RTK F9P Family <common-holybro-rtk-f9p>
-    Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/RTK_F9P>
+    Holybro RTK F9P Ultralight <https://holybro.com/products/h-rtk-f9p-ultralight>
+    Holybro RTK Unicore UM982 GPS <https://holybro.com/products/h-rtk-unicore-um982>
+    LOCOSYS HAWK R1 RTK GNSS / R2 RTK GNSS + Compass<common-gps-locosys>
+    Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
     Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
     Synerx MDU-2000 RTK + LTE GPS <common-synerex-mdu-2000>
@@ -61,7 +77,19 @@ These GPS can incorporate real time kinematic data, either internally generated 
 
 .. note:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
 
-.. note:: If the GPS is only capable of 115.2Kbaud serial data rates, set :ref:`GPS_DRV_OPTIONS<GPS_DRV_OPTIONS>` bit 2 to enable its operation.
+GPS Driver Options
+==================
+
+Several GPS operating options are provided by the :ref:`GPS_DRV_OPTIONS<GPS_DRV_OPTIONS>` parameter. This parameter is a bit mask and allows multiple option selections at the same time:
+
+- bit 0: if set, will send RTK correction data from the first GPS directly to the second via the second's UART port for :ref:`common-gps-for-yaw`, instead via the autopilot.
+- bit 1: if set, enable SBF moving baseline yaw using custom base and GPS_MB1 offsets.
+- bit 2: if set, use 115.2Kbaud for max serial data rate for those GPSes not capable of higher rates.
+- bit 3: if set, routes RTK data between two CAN GPSes via CAN instead of via the autopilot.
+- bit 4: if set, GPS reports altitude in ellipsoid height instead of height AMSL.
+
+GPS Auto Switch
+===============
 
 When using two GPS units there are a number of switching options that can be selected with :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>`.
 
@@ -87,6 +115,7 @@ Advanced Uses
 .. toctree::
     :maxdepth: 1
 
+    Fixed Baseline RTK GPS Correction <common-rtk-correction>
     GPS Blending (aka Dual GPS) <common-gps-blending>
     GPS for Yaw (aka Moving Baseline) <common-gps-for-yaw>
     GPS – How it Works <common-gps-how-it-works>

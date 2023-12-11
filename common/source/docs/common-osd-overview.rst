@@ -7,7 +7,8 @@ OSD
 .. image:: ../../../images/osd.jpg
     :target: ../_images/osd.jpg
 
-Onboard OSD functionality was introduced with the ChibiOS port to ArduCopter 3.6x, ArduPlane 3.9x and ArduRover 3.5x firmware versions. Mainly aiming at aio-boards with onboard MAX7456-type chips, it enables overlay of FC data using the onboard video system. Once enabled, it uses various panel items that can individually be set active and positioned on the screen using respective parameters. It allows to setup multiple screen layouts and switch between those using a spare RC channel.
+OSD functionality is provided for on-board OSDs using MAX7456-type chips and external MSP based OSDs, including DJI Goggles, and goggles using DisplayPort.
+This enables overlay of FC data on the video. Once enabled, it uses various panel items that can individually be set active and positioned on the screen using respective parameters. It allows to setup multiple screen layouts and switch between those using a spare RC channel. It also allows the display and change of sets of parameters using stick gestures or RC transmitters, in certain cases.
 
 .. note:: 
 
@@ -35,6 +36,9 @@ Several options can be set using :ref:`OSD_OPTIONS<OSD_OPTIONS>` (bitmask select
 - bit0 = Enable use of compact number+decimal point fonts
 - bit1 = Invert wind direction indicator (to point to the direction its blowing from instead of toward)
 - bit2 = Invert horizon roll direction
+- bit3 = Convert feet to miles at 5280ft instead of 10000ft
+- bit4 = Do not display crosshair
+- bit5 = Translate arrow directions when using BF font set
      
 Several font sets are included and can be changed during runtime (and those who can build the software can customize or add additional font sets....see libraries/AP_OSD/fonts/README.md)
 
@@ -48,8 +52,13 @@ Several font sets are included and can be changed during runtime (and those who 
 
 .. note::    In firmware 4.1 and above, onboard font options might be limited on 1 MB boards to save memory for other features. However, font upload from SD card is supported. This allows the user to choose from up to 10 font files (named "font0.bin" - "font9.bin") placed in the root directory of your SD card. Additionally, this allows the user to easily add individualized and/or customized language charsets for the onboard OSD without the need to compile  individual firmware. Runtime font changing using the parameter :ref:`OSD_FONT<OSD_FONT>` is unaffected. 
 
-MAVftp might be a convenient option to upload files to your SD card without having to physically remove it from your flight controller. Font files, font editor, and utilities to convert to a .bin file from .mcm are `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts>`__. If downloading the editor or a font's .bin file from this site, be sure to use the ``Download` button, rather than selecting ``Raw``, and then right click saving, as you would the .mcm or .py files.
+MAVftp might be a convenient option to upload files to your SD card without having to physically remove it from your autopilot. Font files, font editor, and utilities to convert to a .bin file from .mcm are `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts>`__. If downloading the editor or a font's .bin file from this site, be sure to use the ``Download` button, rather than selecting ``Raw``, and then right click saving, as you would the .mcm or .py files.
 
+To enable the use of external MSP OSDs or DisplayPort systems see:
+
+- :ref:`common-minim-osd-quick-installation-guide`
+- :ref:`common-msp-osd-overview-4.2`
+- :ref:`common-paramosd`
 
 .. _screen-switching:
 
@@ -117,4 +126,70 @@ The simulated OSD can now be set and configured via parameters.
    To see all available options type::
    
       ./sim_vehicle.py -help
-   
+
+List of OSD Panels
+==================
+
+==========    ===========
+Panel Name    Description
+==========    ===========
+ ALTITUDE     Altitude above Home
+ BAT_VOLT     Primary Battery Voltage
+ RSSI         RC Received Signal Strength
+ CURRENT      Primary Battery Current
+ BATUSED      Consumed Battery Capacity
+ SATS         Number of GPS Satellites
+ FLTMODE      Flight Mode
+ MESSAGE      GCS Messages
+ GSPEED       Ground Speed
+ HORIZON      Artificial Horizon
+ HOME         Distance and Direction to Home
+ HEADING      Magnetic Heading
+ THROTTLE     Throttle Percentage
+ COMPASS      Compass Rose
+ WIND         Wind Speed and Direction
+ ASPEED       System Airspeed
+ VSPEED       Climb Rate
+ ESCTEMP      ESC Temperature
+ ESCRPM       ESC RPM
+ ESCAMPS      ESC Current
+ GPSLAT       GPS Latitude
+ GPSLONG      GPS Longitude
+ ROLL         Roll degrees
+ PITCH        Pitch degrees
+ TEMP         Baro Temperature
+ HDOP         GPS HDOP
+ WAYPOINT     Next Waypoint Distance and Direction
+ XTRACK       Cross Track Error
+ DIST         Total Distance Traveled
+ STATS        Statistics Summary
+ FLTIME       Elasped Time in Flight
+ CLIMBEFF     Climb Efficiency
+ EFF          Efficiency
+ BTEMP        2nd Baro Temperature
+ ATEMP        Airspeed Temperature
+ BAT2_VLT     Second Battery Voltage
+ BAT2USED     Second Battery Consumption
+ ASPD2        Airspeed sensor 2
+ ASPD1        Airspeed sensor 1
+ CLK          Local Time of Day
+ SIDEBARS     Speed/Alt Sidebars
+ CRSSHAIR     Artificial Horizon Crosshair
+ HOMEDIST     Distance to HOME (MSPOSD only)
+ HOMEDIR      Direction to HOME (MSPOSD only)
+ POWER        Power (MSPOSD only)
+ CELLVOLT     Calculated Cell Voltage for Primary Battery (MSPOSD only)
+ BATTBAR      Battery Health Bar (MSPOSD only)
+ ARMING       Arming Status (MSPOSD only)
+ PLUSCODE     Open Location Code
+ CALLSIGN     Callsign from SD card callsign.txt
+ CURRENT2     2nd Battery Current
+ VTX_PWR      Video TX power setting
+ TER_HGT      Altitude above Terrain
+ AVGCELLV     Calculated Cell Voltage for Primary Battery
+ RESTVOLT     Calculated Resting Voltage for Primary Battery
+ FENCE        EENCE enabled status
+ RNGF         Rangefinder Distance
+ ACRVOLT      Calculated Cell Resting Voltage for Primary Battery
+ LINK_Q       RC Link Quality
+==========    ===========

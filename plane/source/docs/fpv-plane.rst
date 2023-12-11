@@ -163,9 +163,10 @@ and rebooting/reconnecting to the FC.
 
 -  Receiver RSSI
 
-ArduPilot supports either analog RSSI or PWM RSSI (also known as "Digital RSSI") embedded in an RC channel. For
-analog (voltage-type), set :ref:`RSSI_TYPE<RSSI_TYPE>` =1 and reboot, for PWM set :ref:`RSSI_TYPE<RSSI_TYPE>` =2. The remaining RSSI
-parameters will not appear until this parameter is set and saved and your FC rebooted.
+ArduPilot supports either analog RSSI or PWM RSSI (also known as "Digital RSSI") embedded in an RC channel. ArduPilot also supports RSSI provided
+directly by the RC protocol (like CRSF). For
+analog (voltage-type), set :ref:`RSSI_TYPE<RSSI_TYPE>` =1 and reboot, for PWM set :ref:`RSSI_TYPE<RSSI_TYPE>` =2, and for RC protocol provided set :ref:`RSSI_TYPE<RSSI_TYPE>` =3 . The remaining RSSI
+parameters will not appear until this parameter is set and saved and your FC rebooted. For Analog RSSi adjust these:
 
     :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` =x (see :ref:`this page for details <common-rssi-received-signal-strength-indication>`)
     
@@ -238,7 +239,7 @@ good basic performance. In order to display this in the OSD, you will need to se
 5. ARMING: Leave all arming parameters at default. There is no reason to disable these safety checks. You should be able to get a GPS lock even indoors with modern GPS units. Inability to arm due to one of these checks failing means something has to be corrected. This adds noticeable safety by keeping you from accidentally starting your flight without your autopilot being in a fully functional state.
 
 All other parameters can be left to default. However, after you get some flights, you might want to play with:
-:ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>` , :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` , and :ref:`FBWB_CLIMB_RATE<FBWB_CLIMB_RATE>` . These are pretty docile at default values.
+:ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>`, :ref:`LIM_ROLL_CD<LIM_ROLL_CD>`, and :ref:`FBWB_CLIMB_RATE<FBWB_CLIMB_RATE>`. These are pretty docile at default values.
 
 -  ESC Calibration
 

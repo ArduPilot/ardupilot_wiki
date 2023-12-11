@@ -83,7 +83,7 @@ For reasons explained later it is recommended to use the highest number pin firs
 
 First the board needs to be configured to allow PWM pins to be set for GPIO.  This is done using the parameter ``BRD_PWM_COUNT`` .  Reduce the PWM count to free up a pin to be used for GPIO.  On non-Pixhawk boards the PWM count will include all PWM outputs.  On Pixhawk boards this parameter only affects AUX pins.  Write the parameter and reboot the autopilot.
 
-.. note:: in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR outputs to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
+.. note:: in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR output to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
 
 Now the RPM library must be enabled. In the following sections, we will use the second instance of RPM sensor for parameter examples.
 
@@ -99,7 +99,7 @@ for example, if we have set AUX port 5 to a GPIO and its GPIO numbering correspo
 The parameter :ref:`RPM2SCALING<RPM2_SCALING>` will correspond to the number magnets used.  Most commonly only one magnet is used and this parameter is set to 1.  Some installations use 
 2 magnets, 180 degrees out of phase.  In this case this parameter should be set to 0.5.
 
-Initially, it is recommended to leave the parameters :ref:`RPM2_MIN<RPM2_MIN>` , :ref:`RPM2_MAX<RPM2_MAX>` , and :ref:`RPM2_MIN_QUAL<RPM2_MIN_QUAL>` as their defaults.  If an RPM signal exceeds any of these limits then the value reported in the ground station and the logs is zero.  Therefore, only adjust these values once you have confirmed that your RPM sensor is working as expected, otherwise it can make it more difficult to debug if nothing is getting reported.
+Initially, it is recommended to leave the parameters :ref:`RPM2_MIN<RPM2_MIN>`, :ref:`RPM2_MAX<RPM2_MAX>`, and :ref:`RPM2_MIN_QUAL<RPM2_MIN_QUAL>` as their defaults.  If an RPM signal exceeds any of these limits then the value reported in the ground station and the logs is zero.  Therefore, only adjust these values once you have confirmed that your RPM sensor is working as expected, otherwise it can make it more difficult to debug if nothing is getting reported.
 
 .. note::
 

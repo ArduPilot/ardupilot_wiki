@@ -278,7 +278,7 @@ Install Ubuntu 20.04 64-Bit as build machine (e.g. can be VM or github action).
 
     sudo apt update
     sudo apt install git
-    git clone https://github.com/ardupilot/ardupilot.git
+    git clone --recurse-submodules https://github.com/ardupilot/ardupilot.git
     cd ardupilot
 
 use either the stable tag ``ArduPlane-stable`` or the current Plane branch ``Plane-4.1`` (in the moment both refer to Plane-4.1.6) - make sure to use a ``stable`` version
@@ -287,7 +287,6 @@ use either the stable tag ``ArduPlane-stable`` or the current Plane branch ``Pla
 
     ./Tools/environment_install/install-prereqs-ubuntu.sh
     git checkout Plane-4.1
-    git submodule update --init --recursive
 
 ::
 
@@ -630,7 +629,6 @@ More Links
 - `Pinouts · beagleboard/beaglebone-blue Wiki <https://github.com/beagleboard/beaglebone-blue/wiki/Pinouts>`__
 - `ArduPilot Blue - A beginner's guide <https://github.com/imfatant/test>`__
 - `EE192 Getting Started with the Beaglebone Blue <https://inst.eecs.berkeley.edu/~ee192/sp21/files/GettingStartedBBBL.pdf>`__
-- `ArduPilot for beginners. Installation and configuration on BeagleBone Blue / Sudo Null IT News <https://sudonull.com/post/8513-ArduPilot-for-beginners-Installation-and-configuration-on-BeagleBone-Blue>`__
 - `How to compile using a github action workflow <https://github.com/drtrigon/ardupilot-beagle-bone-blue-binaries/>`__
 - `Building ArduPilot <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__
 - `Enabling the UIO PRU driver in recent kernels <https://catch22eu.github.io/website/beaglebone/beaglebone-pru-uio/>`__

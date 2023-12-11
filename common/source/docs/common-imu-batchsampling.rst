@@ -15,33 +15,73 @@ Samples are typically taken at the same rate as gyro updates provided to the aut
 
 This 1KHz "backend" rate is the rate at which gyro filtering takes place, i.e. low-pass and notch filters, and on smaller copters 1Khz is not high enough to avoid aliasing from noise at higher frequencies. For example, a 3" copter might have a full throttle motor frequency of 600Hz. Since filters can only apply at half the sample frequency (the Nyquist limit)it is not possible to filter 600Hz noise when sampling at 1Khz and the noise will be aliased down to lower frequencies.
 
-In firmware versions 4.1 and later, the backend rate has been made configurable for IMUs that support fast sampling (i.e. Invensense sensors) so that higher rates can be supported. The backend rate can by configured by setting :ref:`INS_GYRO_RATE<INS_GYRO_RATE>`. The default 0 gives the same behaviour as previous firmware versions. A rate of N gives a backend rate of 2^N Khz, so for instance a value of 1 gives a backend rate of 2Khz ,etc.
+The backend rate has been made configurable for IMUs that support fast sampling (i.e. Invensense sensors) so that higher rates can be supported. The backend rate can be configured by setting :ref:`INS_GYRO_RATE<INS_GYRO_RATE>`. The default 0 gives the same behaviour as previous firmware versions. A rate of N gives a backend rate of 2^N Khz, so for instance a value of 1 gives a backend rate of 2Khz ,etc.
 
 .. note:: This raises the rate at which all gyro filters are run and can be computationally expensive depending on the number of notches configured. Values above 0 are only recommend on F7 or H7 platforms and values above 1 should only be used with careful tuning. This is automatically done for those platforms. This allows capturing frequencies at 1KHz and below on these autopilots.
 
 Pre-Flight Setup
 ================
 
+- Set :ref:`INS_LOG_BAT_OPT<INS_LOG_BAT_OPT>` = 4 to do pre and post-filter 1KHz sampling
 - Set :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` = 1 to collect data from the first IMU
+- :ref:`INS_LOG_BAT_LGIN<INS_LOG_BAT_LGIN>` is the gap between batch samples and normally does not need to be changed. It can be lowered to increase accuracy of resulting FFT, but may be ineffective depending on the systems logging speed.
 - :ref:`LOG_BITMASK <copter:LOG_BITMASK>`'s IMU_RAW bit must **not** be checked.  The default :ref:`LOG_BITMASK<LOG_BITMASK>` value is fine. If it is checked the results can be confusing as you will get no samples if using post-filter or regular logging, you will however get samples if using sensor rate logging and your SD card is able to cope.
+
+.. _common-imu-notch-filtering-flight-and-post-flight-analysis:
 
 Flight and Post-Flight Analysis
 ===============================
 
-- Perform a regular flight (not just a gentle hover) of at least a few minutes and :ref:`download the dataflash logs <common-downloading-and-analyzing-data-logs-in-mission-planner>`
-- Open Mission Planner, press Ctrl-F, press the FFT button, press "new DF log" and select the .bin log file downloaded above
+- Perform a regular flight (not just a gentle hover) of at least 1 minute and :ref:`download the dataflash logs <common-downloading-and-analyzing-data-logs-in-mission-planner>`
+- Open Mission Planner, under SETUP/ADVANCED, press the FFT button, press "IMU Batch Sample" and select the .bin log file downloaded above
 
-.. image:: ../../../images/imu-batchsampling-fft-mp2.png
-    :target:  ../_images/imu-batchsampling-fft-mp2.png
+.. image:: ../../../images/fft-mp.jpg
+    :target:  ../_images/fft-mp.jpg
     :width: 450px
 
-- Accelerometer data appears in the top left window with the vertical axis showing the amplitude and horizontal axis showing the frequency.  The amplitude is not scaled to a useful value meaning the graph is useful for determining the frequency of the vibration but not whether the levels are too high or not.  Vibration at frequencies above 300Hz may lead to attitude or position control problems.
-- The default configuration shows raw accelerometer and gyro data before it has been filtered. Filtering is a key part of preventing noise reaching the PID loops and motors and thus it is important to be able look at the data after it has been filtered as well. In addition, when configuring advanced filtering using a notch (see :ref:`common-imu-notch-filtering`) it is hard to do this effectively without seeing the output. In order to see post-filter output set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 2.
-- For small copters in manual flight modes it is important to let as much signal through below about 100Hz and as little as possible above this. Configuring post-filter output will allow you to see this.
+On the graph it should be possible to identify a significant peak in noise that corresponds to the motor rotational frequency. On a smaller Copter this is likely to be around 200Hz and on a larger Copter/QuadPlane 100Hz or so. There will usually be harmonics of the motor rotational frequency (2x,3x that frequency) also.Here is an example from a 5" quad with no notches setup and a 20Hz lowpass setting for the gyro filter:
 
-.. image:: ../../../images/imu-batchsampling-fft-mp.png
-    :target:  ../_images/imu-batchsampling-fft-mp.png
+.. image:: ../../../images/fft-pre.jpg
+    :target:  ../_images/fft-pre.jpg
     :width: 450px
+
+- Four graphs are shown: ACC0- Accelerometer spectrum before filtering, ACC1- Accelerometer spectrum after filtering, GYR0 -Gyro spectrum before filtering, and GYR1- Gyro spectrum after filtering.  Vibration at frequencies above 100Hz may lead to attitude or position control problems.
+- A pronounced noise peak at 180Hz is evident from the motors in hover, with a smaller second harmonic showing.
+- Notice that the noise has been dramatically reduced by the lowpass filters on the sensors, but at the cost of significant phase lag that will have reduced how tight the tune was made. It should be possible to "notch" out that 180Hz motor noise spike and increase the gyro low pass filter to 60 or 80Hz to allow a tighter tune to be done. The accelerometer path is not as critical since it forms an outer loop around the gyro based rate PID controllers. Leaving its lowpass filter at 10Hz does not affect the ability of the vehicle to reject disturbances quickly, which is the rate controller's main task.
+- If we just increase the gyro lowpass filter to 60Hz from 20HZ , without adding notch filters to decrease the motor noise, this results, which is not acceptable:
+
+.. image:: ../../../images/fft-60hznonotch.jpg
+    :target:  ../_images/fft-60hznonotch.jpg
+    :width: 450px
+
+Harmonic Notch Filter Setup
+===========================
+
+It is possible to filter some of this noise to increase performance and allow better tuning by activating the harmonic notch filter(s). See :ref:`common-imu-notch-filtering` for details.
+
+For Throttle Based Dynamic Harmonic Notch(s) you will need some additional information from the logs if using a :ref:`common-throttle-based-notch`:
+- With the same log, open it in the regular way in mission planner and graph the throttle value: CTUN.ThO (Copter) or QTUN.ThO (QuadPlane).
+. From this identify an average hover throttle value which will be used for :ref:`INS_HNTCH_REF <INS_HNTCH_REF>`.
+- It's also possible to use :ref:`MOT_HOVER_LEARN <MOT_HOVER_LEARN>` = 2 in Copter and read off the value of :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`, or :ref:`Q_M_HOVER_LEARN <Q_M_HOVER_LEARN>` = 2 in QuadPlane and read off the value of :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
+- This gives you a hover motor frequency *hover_freq* and thrust value *hover_thrust* . Note that learning of hover thrust only occurs while in an altitude controlled mode with no pitch or roll angle. Therefore, it should be done in calm wind conditions with no pilot stick input for at least 10 seconds.
+
+.. _common-imu-notch-filtering-post-configuration-flight-and-post-flight-analysis:
+
+Post Configuration Confirmation Flight and Post-Flight Analysis
+===============================================================
+
+- With :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` still set to = 1 to collect data from the first IMU:
+- Set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 2 to capture post-filter gyro data 
+
+Perform a similar hover flight and analyze the dataflash logs in the same way. This time you should see significantly less noise and, more significantly, attenuation of the motor noise peak. If the peak does not seem well attenuated then you can experiment with increasing the bandwidth and attenuation of the notch. However, the wider the notch the more delay it will introduce into the control of the aircraft so doing this can be counter-productive.
+
+Here is an example from the same 5" quad with the harmonic notch configured and 60Hz gyro lowpass filter:
+
+.. image:: ../../../images/fft-post60hz.jpg
+    :target:  ../_images/fft-post60hz.jpg
+    :width: 450px
+
+.. note:: be sure to reset the :ref:`INS_LOG_BAT_MASK<INS_LOG_BAT_MASK>` to "0" when finished with analysis flights to free up the RAM consumed by this feature. In some autopilots, you cannot do other memory intensive tasks like Compass Calibration or MAVftp if this batch logging is enabled.
 
 Advanced Configuration and Analysis
 -----------------------------------
@@ -74,7 +114,7 @@ Analysis with pymavlink
 
    pbarker@bluebottle:~/rc/ardupilot(fastest-sampling)$ ~/rc/pymavlink/tools/mavfft_isb.py /tmp/000003.BIN
    Processing log /tmp/000003.BIN
-   .Skipping ISBD outside ISBH (fftnum=0)
+   Skipping ISBD outside ISBH (fftnum=0)
 
    Skipping ISBD outside ISBH (fftnum=0)
 

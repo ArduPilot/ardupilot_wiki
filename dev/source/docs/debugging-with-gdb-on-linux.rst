@@ -61,9 +61,12 @@ You can also attach MAVProxy if required
 
     sim_vehicle.py -v ArduCopter -f quad --console --map -D -G
 
-The SITL launch script also get some other feature already provided like launch gdb stopped, put some breakpoints, etc.
+here is a video of its use:
 
-- attach to already running SITL process. You can get the SITL process id with ``pidof [vehicle type : arducopter, arduplane, ardurover]``.
+.. youtube:: 8fIndjwc_-Y
+
+
+- you can also attach to an already running SITL process. You can get the SITL process id with ``pidof [vehicle type : arducopter, arduplane, ardurover]``.
 
 ::
 
@@ -72,6 +75,7 @@ The SITL launch script also get some other feature already provided like launch 
 When gdb is launched you should be able to use it to debug ArduPilot like any other program. If you don't know how to
 use gdb from commandline, please look on the net for some tutorial, a simple one can be found `here <http://www.unknownroad.com/rtfm/gdbtut/gdbtoc.html>`__.
 Don't forget that you can crash your drone on SITL safely !
+
 
 With IDE
 ========

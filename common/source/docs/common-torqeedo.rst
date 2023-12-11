@@ -15,7 +15,7 @@ What to Buy
 
 - Torqeedo motors can be purchased directly from `torqeedo.com <https://www.torqeedo.com/en/products/outboards/travel/travel-1103-c/M-1151-00.html>`__  or one of their `dealers <https://www.torqeedo.com/en/stores>`__
 - `Throttle extension cable or motor extension cable <https://www.torqeedo.com/en/search?q=extension%20cable>`__
-- `Japan Drones RS483-to-Serial converter board <http://japandrones.com/shopdetail/000000000176/ct21/page1/order/>`__ or DIY parts include
+- `Japan Drones RS485-to-Serial converter board <http://japandrones.com/shopdetail/000000000176/ct21/page1/order/>`__ or DIY parts include
 
     - `RS485 to TTL converter <https://www.amazon.ca/MAX485CSA-Converter-Integrated-Circuits-Products/dp/B06W9H64TN/ref=sr_1_fkmrnull_1?keywords=rs485+to+ttl+lc&qid=1552083892&s=gateway&sr=8-1-fkmrnull>`__
     - `3.3V regulator <https://www.sparkfun.com/products/526>`__
@@ -42,7 +42,7 @@ An interface board should be assembled using the parts mentioned above and conne
 
    If the motor connector method is used with non-torqeedo batteries, be sure to use batteries with built-in short circuit protection.  During early development and testing of this interface, after applying large and rapid changes to the throttle and managed to cause a short circuit within the motor.  A short circuit, especially with large batteries, could lead to a fire and serious injury.
 
-Below are pictures of the modified throttle extension cable and `Japan Drones RS483-to-Serial converter board <http://japandrones.com/shopdetail/000000000176/ct21/page1/order/>`__ 
+Below are pictures of the modified throttle extension cable and `Japan Drones RS485-to-Serial converter board <http://japandrones.com/shopdetail/000000000176/ct21/page1/order/>`__ 
 
   .. image:: ../../../images/torqeedo-throttle-cable-pins.jpg
       :target: ../_images/torqeedo-throttle-cable-pins.jpg
@@ -52,7 +52,7 @@ Below are pictures of the modified throttle extension cable and `Japan Drones RS
       :target: ../_images/torqeedo-throttle-cable-running-electronics-adapter.jpg
       :width: 400px
 
-Below are pictures of the modified motor extension cable and `Japan Drones RS483-to-Serial converter board <http://japandrones.com/shopdetail/000000000176/ct21/page1/order/>`__
+Below are pictures of the modified motor extension cable and `Japan Drones RS485-to-Serial converter board <http://japandrones.com/shopdetail/000000000176/ct21/page1/order/>`__
 
   .. image:: ../../../images/torqeedo-motor-cable-small-annotated.jpg
       :target: ../_images/torqeedo-motor-cable-small-annotated.jpg

@@ -27,8 +27,8 @@ Connecting and Configuring the Rangefinder
 
 
 [site wiki="copter,rover"]
-  - Set the parameter :ref:`PRX_TYPE<PRX_TYPE>` = 4 to use horizontal rangefinders as Proximity Sensors (For obstacle avoidance).
-  - For Copter and Rover, up to 8 rangefinders may placed around the vehicle to provide 360 degree coverage, or a single 360 degree Lidar. But only one forward facing rangefinder is required for :ref:`Object Avoidance <common-object-avoidance-landing-page>` .
+  - Set the parameter ``PRXx_TYPE`` = 4 for each horizontal rangefinder(s) to use them as Proximity Sensors (For obstacle avoidance).
+  - For Copter and Rover, up to 8 rangefinders may placed around the vehicle to provide 360 degree coverage, or a single 360 degree Lidar. But only one forward facing rangefinder is required for :ref:`Object Avoidance <common-object-avoidance-landing-page>`.
   - If a rangefinder is oriented facing up, then it will be used in the :ref:`common-simple-object-avoidance` operation as an upwards sensing proximity sensor in Copter LOITER, ALTHOLD, and POSHOLD modes.
 [/site]
 [site wiki="plane,copter"]

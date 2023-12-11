@@ -13,14 +13,20 @@ What is DFU
 ===========
 
 DFU is the "Direct Firmware Update" mode for some microcontrollers,
-most notably the STM32F4 series. It allows you to load a firmware
+most notably the STM32Fx series. It allows you to load a firmware
 (including a bootloader) over USB using widely available DFU
 utilities.
 
 Accessing DFU Mode
 ==================
 
-You access it by pulling the "boot0" pin high on the processor when it
+On many autopilots there is a separate "boot" button provided which will place the 
+autopilot into DFU mode if powered while it is pressed.
+
+On many higher end autopilots no readily accessible button is provided and the
+autopilot must opened and a pad or cpu pin accessed.
+
+On these autopilots DFU mode is entered by pulling the "boot0" pin high on the processor when it
 is powered on. On a Pixhawk1 this is done by pulling the "FMU-BOOT"
 pad on the top surface of the Pixhawk1 high. The FMU-BOOT pad is
 located between the buzzer and DSM/Spkt connectors on the Pixhawk1.
@@ -31,18 +37,25 @@ up to 5V if you don't have 3.3V handy. The 3.3V supply on the switch is suitable
 When the pin is pulled up apply power to the board (eg. plug in the
 USB connector) and the board should boot into DFU mode.
 
+STM32Cube Programmer
+====================
+
+This utility is available for Windows, MACOS, and Linux and provides a simple GUI programmer. It is available at https://www.st.com/en/development-tools/stm32cubeprog.html .
+
+You can download the appropriate bootloader from `here <https://firmware.ardupilot.org/Tools/Bootloaders>`__ and install it beginning at address 0x08000000.
+
 dfu-util tool
 =============
 
-It is recommended that you install the dfu-util tool. On Linux
-machines with apt you can do that with:
+This is a command line DFU programming tool. On Linux
+machines with apt you can install it using:
 
  sudo apt-get install dfu-util
 
 On other systems please see `http://dfu-util.sourceforge.net/ <http://dfu-util.sourceforge.net/>`__.
 
 Listing DFU Devices
-===================
+-------------------
 
 Run the following:
 
@@ -70,7 +83,7 @@ You should get a result like this:
 If you don't get that then do some googling on how to debug USB connection issues with DFU.
 
 Loading a bootloader
-====================
+--------------------
 
 The current bootloaders suitable for ArduPilot on STM32 are here:
 
@@ -82,12 +95,6 @@ download the px4fmuv2_bl.bin and run this:
                 
   dfu-util -a 0 --dfuse-address 0x08000000 -D px4fmuv2_bl.bin
   
-with some versions of dfu-util you may need this instead:
-
-.. code-block:: bash
-                
-  dfu-util -a 0 -s 0x08000000 --dfuse-address 0x08000000 -D px4fmuv2_bl.bin
-
 it should say "Downloading" and show a progress bar. On completion the board is ready to test the bootloader.
 
 After you have the bootloader loaded power cycle with the boot0 pin

@@ -4,8 +4,8 @@
 ArduPilot Style Guide
 =====================
 
-In order to improve the readability of the ArduPilot code and help new
-users pick up the code quickly please use the following styles.
+In order to improve the readability of the ArduPilot code, and help new
+users pick up the code more quickly, please use the following styles. Code submitted may be rejected if these styles are not followed.
 
 .. note::
 
@@ -356,6 +356,31 @@ underscores.
 
     class ap_compass { };
 
+Enums
+---------------
+
+Prefer enum classes over raw enums. Enums should be PascalCase, and be singular.
+All entries should have trailing commas, even the last one.
+
+**Right:**
+
+::
+
+    enum class CompassType {
+        FOO,
+        BAR,
+    };
+
+**Wrong:**
+
+::
+
+    enum compass_types {
+        FOO,
+        BAR
+    };
+
+
 Functions and variables
 -----------------------
 
@@ -364,6 +389,7 @@ Functions that return a single physical value or variables that represent a phys
 **Right:**
 
 ::
+
     uint16 get_angle_rad() { ... };
     float distance_m;
 
@@ -379,6 +405,7 @@ Functions or variables that represent a value relative to a frame should be suff
 **Right:**
 
 ::
+
     uint16 get_distance_ned_cm() { ... };
     uint16 get_distance_enu_m() { ... };
     float position_neu_mm;

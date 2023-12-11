@@ -73,6 +73,6 @@ First Float
 -----------
 #. Verify properly operation sailing in MANUAL mode. Trim steering from TX to cruise straight. Then in the ground control station (GCS), set the steering servo's :ref:`SERVO1_TRIM<SERVO1_TRIM>` to the SERVO1's output value at neutral TX stick. Then set the :ref:`RC1_TRIM<RC1_TRIM>` (Assuming no RC remapping has been done) to the value of the channel at neutral stick, then return the trim to zero.
 #. Next sail in ACRO. At low speed, determine the turn rate, ie how many secs for a complete turn divided by 360 and enter this in the :ref:`ACRO_TURN_RATE<ACRO_TURN_RATE>` parameter.
-#. Next do the :ref:`rover-tuning-throttle-and-speed` and  :ref:`rover-tuning-steering-rate` .
+#. Next do the :ref:`rover-tuning-throttle-and-speed` and  :ref:`rover-tuning-steering-rate`.
 
 At this point, it will be tuned well enough with the defaults in the navigation controller to navigate and return to home. Further :ref:`rover-tuning-navigation` can be done, if desired.

@@ -10,14 +10,14 @@ The Plane 4.2 firmware supports VTOL taking off and landing on a moving platform
 Equipment Needed
 ================
 
-To use this feature you need a beacon setup on the landing platform. This beacon should be based on an ArduPilot flight controller running the ArduPilot Rover firmware. You can set the ``FRAME_CLASS`` parameter on the beacon flight controller to "2" to make it a “boat” or "1" to make it a truck, so that the right icon shows in the ground station. The beacon will be broadcasting its position to allow the QuadPlane to track its moving HOME position, similar to :ref:`Copter's Follow Mode<copter:follow-mode>`.
+To use this feature you need a beacon setup on the landing platform. This beacon should be based on an ArduPilot autopilot running the ArduPilot Rover firmware. You can set the ``FRAME_CLASS`` parameter on the beacon autopilot to "2" to make it a “boat” or "1" to make it a truck, so that the right icon shows in the ground station. The beacon will be broadcasting its position to allow the QuadPlane to track its moving HOME position, similar to :ref:`Copter's Follow Mode<copter:follow-mode>`.
 
 .. image:: ../../../images/ship-landing.jpg
 
 The beacon system needs the following:
 
 - a reliable yaw source. Using dual-F9P GPS with :ref:`moving baseline yaw<common-gps-for-yaw>` is recommended if the moving platform will cause problems with compasses.
-- a telemetry radio setup so that the aircraft can see GLOBAL_POSITION_INT mavlink messages from the beacon flight controller. There are multiple methods of achieving that, see the section below on radio setup
+- a telemetry radio setup so that the aircraft can see GLOBAL_POSITION_INT mavlink messages from the beacon autopilot. There are multiple methods of achieving that, see the section below on radio setup
 - the beacon needs a different mavlink system ID to the aircraft and the GCS. You set this with the :ref:`SYSID_THISMAV<SYSID_THISMAV>` parameter. In the example below, :ref:`SYSID_THISMAV<SYSID_THISMAV>` = 17, has been set.
 - the beacon can be offset from the actual landing location. The beacon should be placed for optimal radio performance, then the instructions below can be used to setup the actual landing location relative to the beacon.
 
@@ -51,7 +51,7 @@ You will need ArduPilot plane 4.2 or later
 Lua Script
 ----------
 
-The ship landing functionality is in a :ref:`LUA script<common-lua-scripts>`. You will need the plane_ship_landing.lua script from `here <https://github.com/ardupilot/ardupilot/blob/master/libraries/AP_Scripting/examples/plane_ship_landing.lua>`__
+The ship landing functionality is in a :ref:`LUA script<common-lua-scripts>`. You will need the plane_ship_landing.lua script from `here <https://github.com/ardupilot/ardupilot/blob/master/libraries/AP_Scripting/applets/plane_ship_landing.lua>`__
 
 This script needs to be put in the APM/scripts directory on your microSD card on the aircraft.
 

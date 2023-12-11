@@ -26,7 +26,7 @@ If an airspeed sensor is used, the throttle stick will set the target airspeed i
 Airspeed Sensor Type
 ====================
 
-Airspeed sensors can be either analog or digital. The analog sensors connect to an A/D converter input pin on the autopilot, while digital sensors connect to the autopilot's external I2C bus using the SDA and SCL external digital I/O pins or via UAVCAN. The type is set by the :ref:`ARSPD_TYPE<ARSPD_TYPE>` parameter. Analog sensors are type 2, UAVCAN sensors as type 8, and supported I2C bus digital sensors by other numbers.
+Airspeed sensors can be either analog or digital. The analog sensors connect to an A/D converter input pin on the autopilot, while digital sensors connect to the autopilot's external I2C bus using the SDA and SCL external digital I/O pins or via DroneCAN. The type is set by the :ref:`ARSPD_TYPE<ARSPD_TYPE>` parameter. Analog sensors are type 2, DroneCAN sensors as type 8, and supported I2C bus digital sensors by other numbers.
 
 If there is no sensor, be sure to set the :ref:`ARSPD_TYPE<ARSPD_TYPE>` to 0. ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. :ref:`ARSPD_TYPE<ARSPD_TYPE>` must be set to zero in order to display this value if no sensor is present.
 
@@ -35,13 +35,13 @@ If there is no sensor, be sure to set the :ref:`ARSPD_TYPE<ARSPD_TYPE>` to 0. Ar
 Autopilot Airspeed Connection
 =============================
 
-A list of digital and UAVCAN airspeed sensors are listed :ref:`below<arspd-sensor-list>`.
+A list of digital and DroneCAN airspeed sensors are listed :ref:`below<arspd-sensor-list>`.
 
 
 I2C
 ---
 Connect the airspeed sensor to autopilots's I2C port (or I2C splitter
-module). 
+module). The :ref:`ARSPD_BUS<ARSPD_BUS>` parameter must be set for the bus used to connect the sensor. Normally this defaults to "1" , and corresponds to the I2C bus normally designated for connecting the sensor. But if it is attached to another I2C bus (eg. compass, or on some autopilots its been mistakenly assigned) it will need to be changed to "0". If the sensor fails to initialize (a GCS message will be sent if this is the case), then try changing the bus number and rebooting.
 
 .. image:: ../images/airspeed_full_assembly_800px.jpg
     :target: ../_images/airspeed_full_assembly_800px.jpg
@@ -50,10 +50,10 @@ To enable the digital airspeed sensor, connect the autopilot to Mission
 Planner (or APM Planner for OS X), and select the Optional Hardware/Airspeed
 tab under the CONFIG menu. Using the drop-down box for Type, select your sensor's type. The Pin dropdown is not used and can be ignored. Check the "Use Airpeed" box to use it in control, or leave it unchecked during in-flight calibration discussed below to check its operation before use.
 
-UAVCAN
-------
+DroneCAN
+--------
 
-Attach the sensor to the AutoPilot's UAVCAN port and select UAVCAN in the above mentioned Type dropdown box and check the "Use Airspeed" box as appropriate. 
+Attach the sensor to the AutoPilot's DroneCAN port and select DroneCAN in the above mentioned Type dropdown box and check the "Use Airspeed" box as appropriate. 
 
 Analog Airspeed sensor
 ----------------------
@@ -83,6 +83,8 @@ sensor.
 If you are using Plane in an aircraft with the propeller in the nose,
 the pitot tube must be mounted out on one wing, at least a foot from the
 fuselage to be outside the prop flow.
+
+See :ref:`common-pitot-considerations` for more infomation on pitot tubes and placement considerations.
 
 Checking operation
 ==================
@@ -121,7 +123,7 @@ the value of :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` to 1. See :ref:`calibrating-an-
 Miscalibration Safeguards
 =========================
 
-In order to help prevent Airspeed sensor use when its been miscalibrated either during ground static calibration during the power up sequence, or by accidental parameter changes to offset or ratio, three parameters are available. If the ground speed is consistently lower than the reported airspeed for a few seconds by :ref:`ARSPD_WIND_MAX<ARSPD_WIND_MAX>`, i.e. the apparent wind speed is greater than that amount, the sensor can be disabled to avoid erroneous reporting. It can be allowed to re-enable if the apparent wind falls back below that value. These actions are controlled by :ref:`ARSPD_OPTIONs<ARSPD_OPTIONs>`.
+In order to help prevent Airspeed sensor use when its been miscalibrated either during ground static calibration during the power up sequence, or by accidental parameter changes to offset or ratio, three parameters are available. If the ground speed is consistently lower than the reported airspeed for a few seconds by :ref:`ARSPD_WIND_MAX<ARSPD_WIND_MAX>`, i.e. the apparent wind speed is greater than that amount, the sensor can be disabled to avoid erroneous reporting. It can be allowed to re-enable if the apparent wind falls back below that value. These actions are controlled by :ref:`ARSPD_OPTIONS<ARSPD_OPTIONS>`.
 
 You can also send a warning to the Ground Control Station if the apparent wind exceeds :ref:`ARSPD_WIND_WARN<ARSPD_WIND_WARN>`. This can be used instead of, or together with the above
 
@@ -155,21 +157,25 @@ I2C
     - `Matek 4525DO <http://www.mateksys.com/?portfolio=aspd-4525>`_
     - `mRobotics <https://store.mrobotics.io/mRo-I2C-Airspeed-Sensor-JST-GH-p/m10030a.htm>`_
 
-- 5033
-    - `Qiotek 5033 <https://www.qio-tek.com/ASP5033_I2C>`_
+- ASP5033
+    - `Qiotek ASP5033 <https://www.qio-tek.com/index.php/product/qiotek-asp5033-airspeed-sensor-and-pitot-tube>`_
 
 - DLVR
     - `Matek DLVR <http://www.mateksys.com/?portfolio=aspd-dlvr>`_
 
 
-UAVCAN
-------
+DroneCAN
+--------
 
 - DLVR
-    - `Matek UAVCAN DLVR <http://www.mateksys.com/?portfolio=aspd-dlvr>`_
+    - `Foxtech AEROFOX Airspeed/Compass <https://www.foxtechfpv.com/foxtech-aerofox-can-airspeed-compass.html>`__
+    - `Matek DroneCAN DLVR <http://www.mateksys.com/?portfolio=aspd-dlvr>`_
 
-- 5033 
-    - `Qiotek UAVCAN 5033 <https://www.qio-tek.com/index.php?route=product/product&product_id=309>`_
+- ASP5033 
+    - `Qiotek DroneCAN 5033 <https://www.qio-tek.com/index.php/product/qiotek-asp5033-dronecan-airspeed-and-compass-module>`_
+
+- 6897
+    - `Foxtech AEROFOX Airspeed/Compass <https://www.foxtechfpv.com/foxtech-aerofox-can-airspeed-compass.html>`__
 
 Other Topics
 ============
@@ -177,5 +183,6 @@ Other Topics
     :maxdepth: 1
 
     Calibrating an Airspeed Sensor <calibrating-an-airspeed-sensor>
+    Pitot Tube Considerations <common-pitot-considerations>
     Mocking an Airspeed Sensor for Bench Testing <mocking-an-airspeed-sensor-for-bench-testing>
     Analog Airspeed Sensors <analog-airspeed-sensors>

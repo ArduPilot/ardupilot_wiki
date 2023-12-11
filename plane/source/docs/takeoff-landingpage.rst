@@ -25,7 +25,7 @@ The keys to a successful hand launch are :
 - :ref:`Proper CG <guide-center-of-gravity>` 
 - Having flying surfaces centered and neutral at neutral RC stick positions
 - Having the "level" calibration setup such that the level horizon (0 deg pitch) in FBWA mode results in the wing chord line being a few degrees positive, which will result in a positive angle of attack in "level" flight, the normally cruising attitude for a plane.
-- Using FBWA mode or :ref:`automatic-takeoff` . While launching in MANUAL can be done, using a stabilized mode will eliminate a lot of pilot effort to overcome trim issues (see Tip at end of this page). If using FBWA mode, a few degrees of up elevator (~10%) during the launch will result in an automatic climb. Add this via a switch or stick pressure. Do not change TX trim positions used during RC calibration since it affects all other modes of flight.
+- Using FBWA mode or :ref:`automatic-takeoff`. While launching in MANUAL can be done, using a stabilized mode will eliminate a lot of pilot effort to overcome trim issues (see Tip at end of this page). If using FBWA mode, a few degrees of up elevator (~10%) during the launch will result in an automatic climb. Add this via a switch or stick pressure. Do not change TX trim positions used during RC calibration since it affects all other modes of flight.
 - Throttle up and firmly throw the plane level directly into the wind, not nose pointed up. Common mistakes are pointing the nose up, throwing it toward the ground, or rotating your wrist like a football throw. In the first second or so, the plane has low airspeed and the flying surfaces have no authority to correct non-level attitude until it accelerates to flying speed.
 
 Videos of hand launches

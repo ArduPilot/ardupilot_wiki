@@ -4,7 +4,7 @@
 NEO 3 Pro GPS
 =============
 
-NEO 3 pro is DroneCAN standard GPS developed by CUAV. It integrates industrial-grade compass, barometer, flight controller status light, buzzer, and safety switch all in one package. It has the characteristics of high safety and strong interference resistance.It integrates ublox m9n module and can receive signals from GPS, Galileo, GLONASS and Beidou at the same time.
+NEO 3 pro is DroneCAN standard GPS developed by CUAV. It integrates industrial-grade compass, barometer, autopilot status light, buzzer, and safety switch all in one package. It has the characteristics of high safety and strong interference resistance.It integrates ublox m9n module and can receive signals from GPS, Galileo, GLONASS and Beidou at the same time.
 
 .. image:: ../../../images/cuav-gnss/neo-3-pro.jpg
 	:target: ../_images/neo-3-pro.jpg
@@ -99,7 +99,7 @@ Connect to CUAV v5+
 
 .. note::
 
-    The connection to other flight controllers is similar.
+    The connection to other autopilots is similar.
 
 Enable CAN port, DroneCAN, and Configure for NEO-V2 Pro
 =======================================================
@@ -129,8 +129,8 @@ If you need to set up NEO 3 pro or upgrade its firmware, you need to enable SLCA
 
     ArduPilot 4.0 or later firmware supports SLCAN.
 
-- Please connect NEO 3 pro to the flight controller's CAN1 interface.
-- Open mission planner and connect flight controller.
+- Please connect NEO 3 pro to the autopilot's CAN1 interface.
+- Open mission planner and connect autopilot.
 
 Modify the following parameters in the Full Parameter tab of Mission Planner.
 
@@ -138,22 +138,22 @@ Modify the following parameters in the Full Parameter tab of Mission Planner.
 
 - :ref:`CAN_SLCAN_CPORT<CAN_SLCAN_CPORT>` set to 1
 - :ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>`  set to 22
-- Reboot flight controller
+- Reboot autopilot
 
 .. note::
 
-   CUAVV5 / NANO / FMUV5 flight controller running ArduPilot4.0 or later firmware will have two USB interfaces, one is flight controller's console port (SERIAL0) running MAVLINK  and one is an SLCAN interface port; if there are not two ports showing in the Mission Planner Comm Port drop-down box, please uninstall the driver and reinstall. If you continue to have problems, see :ref:`troubleshooting-composite-connections` 
+   CUAVV5 / NANO / FMUV5 autopilot running ArduPilot4.0 or later firmware will have two USB interfaces, one is autopilot's console port (SERIAL0) running MAVLINK  and one is an SLCAN interface port; if there are not two ports showing in the Mission Planner Comm Port drop-down box, please uninstall the driver and reinstall. If you continue to have problems, see :ref:`troubleshooting-composite-connections` 
    
 **For Pixhawk series / FMUv2 / FMU V3 / FMU V4**
 
 - :ref:`CAN_SLCAN_CPORT<CAN_SLCAN_CPORT>` Set to 1
 - :ref:`CAN_SLCAN_TIMOUT<CAN_SLCAN_TIMOUT>` Set to 0 (no timeout, reboot to return to normal operation)
 - :ref:`CAN_SLCAN_SERNUM<CAN_SLCAN_SERNUM>` Set to 0
-- Please do not reboot the flight controller until your operation is complete.
+- Please do not reboot the autopilot until your operation is complete.
 
 .. note::
 
-    STM32F4 does not support dual virtual USB ports, so  flight controllers using STM32F4 processor can only be used for SLCAN after the MAVLink connection on USB is closed; after writing the above settings, the USB interface becomes an SCLAN port; MAVLink connections can be made again after a reboot. Until then the USB connection can be used for SLCAN operations.
+    STM32F4 does not support dual virtual USB ports, so  autopilots using STM32F4 processor can only be used for SLCAN after the MAVLink connection on USB is closed; after writing the above settings, the USB interface becomes an SCLAN port; MAVLink connections can be made again after a reboot. Until then the USB connection can be used for SLCAN operations.
 
 NEO-V2 Internal Configuration
 =============================

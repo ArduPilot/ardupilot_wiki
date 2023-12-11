@@ -48,7 +48,7 @@ Setting Up A Tilt-Rotor
 The first thing you need to do is enable QuadPlane support by setting
 :ref:`Q_ENABLE<Q_ENABLE>` to 1 and Tilt Rotor support by setting :ref:`Q_TILT_ENABLE<Q_TILT_ENABLE>` = "1", and then choose the right quadplane frame class and frame type.
 
-The quadplane frame class is in :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` . The frame class is
+The quadplane frame class is in :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>`. The frame class is
 chosen based on your vehicles rotor configuration while
 hovering. Currently supported tilt-rotor frame classes are:
 
@@ -214,7 +214,7 @@ In order to setup the ranges of the servo movement, see :ref:`tilt-rotor-setup`.
 Vectored Yaw
 ============
 
-Vectored yaw aircraft tilt the left and right rotors separately to
+Vectored yaw aircraft tilt the left and right rotors (front and/or rear, if used) separately to
 control yaw in hover. This reduces mechanical complexity in
 tilt-tricopters as it avoids the need for a tilt servo for the rear
 motor for yaw control.
@@ -224,7 +224,7 @@ also set :ref:`Q_TILT_YAW_ANGLE<Q_TILT_YAW_ANGLE>` to the angle in degrees that 
 can go up past 90 degrees.
 
 For example, if you have a tilt-tricopter with vectored yaw, and your
-motors can tilt through a total of 110 degrees from forward flight,
+front motors can tilt through a total of 110 degrees from forward flight,
 then your :ref:`Q_TILT_YAW_ANGLE<Q_TILT_YAW_ANGLE>` would be 20, as that is the angle past 90
 degrees that the tilt mechanism can go.
 

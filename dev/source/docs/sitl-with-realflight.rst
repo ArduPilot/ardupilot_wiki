@@ -14,7 +14,7 @@ or version 9. Note that RealFlight-X does not work with ArduPilot. If
 you are installing for the first time then RealFlight version 9 is
 recommended.
 
-The quickest way to get started it to buy `RealFlight 9 <https://store.steampowered.com/app/1070820/RealFlight_9/>`__ in `Steam <https://store.steampowered.com/>`__.
+The quickest way to get started it to buy `RealFlight 9.5S <https://store.steampowered.com/app/1070820/RealFlight_95S/>`__ or `RealFlight Evolution <https://store.steampowered.com/app/2069310/RealFlight_Evolution//>`__ in `Steam <https://store.steampowered.com/>`__.
 
 The following instructions assume that you have setup your Flight Control box method, using either the Interlink Controller normally sold with RealFlight, a joystick, or your OpenTX transmitter in joystick mode.
 
@@ -25,8 +25,9 @@ See the last section on this page for setup instructions, if using an OpenTX tra
 Enabling RealFlight Link Feature
 ================================
 
-On RealFlight 9 go to Settings->Physics and enable the FlightAxis
-option then restart RealFlight.
+On RealFlight8/9, go to Settings->Physics and enable the FlightAxis option and set "Pause Sim When in Background" option to No and then restart RealFlight.
+
+In RealFlight Evolution, press ESC, go to Settings->Physics->Quality and enable the "RealFlight Link" option.
 
 Configure RealFlight
 ====================
@@ -34,8 +35,8 @@ Configure RealFlight
   - Start RealFlight (it should look exactly like regular RealFlight, there is no way to visually determine the difference)
   - Download the QuadcopterX from `ArduPilot/SITL_Models/RealFlight/Released_Models/MultiRotors/QuadCopterX/QuadcopterX-flightaxis_AV.RFX <https://github.com/ArduPilot/SITL_Models/blob/master/RealFlight/Released_Models/Multicopters/QuadCopterX/QuadcopterX-flightaxis_AV.RFX>`__.
   - Download the `parameter file for this model <https://github.com/ArduPilot/SITL_Models/blob/master/RealFlight/Released_Models/Multicopters/QuadCopterX/QuadCopterX.param>`__. Be sure its saved in text format.This will be used later.
-  - Select Simulation, Import, RealFlight Archive (RFX, G3X) and select the file QuadcopterX downloaded above.  A message, "..was successfully imported" should be displayed
-  - Select Aircraft, Select Aircraft, open "Custom Aircraft" section and select "QuadcopterX-flightaxis".  In the current state, the RC inputs come straight from the stick so it is not flyable.
+  - Select Simulation("My RealFlight" in Evolution), Import, RealFlight Archive (RFX, G3X) and select the file QuadcopterX downloaded above.  A message, "..was successfully imported" should be displayed
+  - Select Aircraft (under "Fly" in Evolution), Select Aircraft, (open "Custom Aircraft" section in Realflight) and select "QuadcopterX-flightaxis".  In the current state, the RC inputs come straight from the stick so it is not flyable.
 
   .. image:: ../images/realflight-select-aircraft.png
     :target: ../_images/realflight-select-aircraft.png
@@ -45,17 +46,19 @@ From within RealFlight, Reduce graphics options to improve performance:
   - Simulation, Settings, Graphics
   - Under "Quality" set all values to "No" or "Low" (i.e. set "Clouds" to "No", "Water Quality" to "Low", etc)
   - Under "Hardware" set "Resolution" to "800 x 600 Medium(16 bit) and select "Full Screen" mode
-  - Under "Physics" settings, change the option for "Pause Sim When in Background" to No, and "Automatic Reset Delay(sec)" to 2.0, and be sure RealFlight Link Enable is "Yes".
+  - Under "Physics" settings, change the option "Automatic Reset Delay(sec)" to 2.0, and be sure RealFlight Link Enable is "Yes".
    
   .. image:: ../images/realflight-settings-graphics.png
     :target: ../_images/realflight-settings-graphics.png
     
  .. note:: Under RealFlight's Simulation menu, Physics submenu, be sure its set at "Realistic" for best physics modeling and refresh rates.
+
+For Evolution, you may be able to use the defaults since its graphics performance is improved. You can check the performance after connecting to SITL, as discussed below, by opening the "NavGuides" widget in Realflight. The "Graphics Frames/Sec" count needs to be over 200 for the vehicle to fly well. If it is too low, you can change similar settings in the "Settings->Graphics" Hardware and Quality sub-menus for items as described above until sufficient frame rates are obtained.
    
 Connecting to Mission Planner's SITL
 ------------------------------------
 
-.. note:: On many older, yet Windows 10 compatible PCs, there may not be sufficient processing power to smoothly run the Mission Planner SITL simultaneously. See the next section on Dual PC setups, if you already have a Linux PC to split the processing loads.
+.. note:: On many older, yet Windows 10 compatible PCs, there may not be sufficient processing power to smoothly run the Mission Planner SITL simultaneously. ** This is more than just cosmetic. If RealFlight is lagging due to insufficient processing power, this WILL adversly affect the simulation, causing unexpected or strange behaviour and perhaps even crashes. ** See the next section on Dual PC setups, if you have another Windows PC, Linux box or Mac to split the processing loads.
 
 - On Config/Tuning, Planner set the Layout drop-down to "Advanced"
 - On the top menu bar, select Simulation
@@ -118,10 +121,14 @@ This technique spreads the processing requirements between two PCs: one Windows 
      - sim_vehicle.py -f flightaxis:192.168.x.x - -map - -console
 - back on RealFlight push the red "RESET" button on the transmitter, or spacebar on PC
 - after about a minute, the vehicle should be visible on the SITL map
-- from within SITL type ``param load <filename>``  to load the parameter found in the same directory as the model. You may have to load them again, after typing ``param fetch``, in order to load parameters that require enabling before presenting their parameter set.  And, in some cases, you may even need to restart SITL in order for some new parameters, such as output function changes, to take effect. This can be avoided if you add the parameter file during the start of SITL with the "--add-param-file=*pathtofile* "....ie: sim_vehicle.py -f flightaxis:192.168.x.x - -map - -console --add-param-file=*pathtofile* -w. This adds the param file as a default and then wipes any previous param changes that may exist in the simulation directory. 
-- the performance of the connection can be checked by opening the "ArduCopter" window (on the machine running SITL), the "FPS" (Frames Per Second) count needs to be over 150 for the vehicle to fly well (the average can be lower)
+- from within SITL type ``param load <filename>``  to load the parameter found in the same directory as the model. You may have to load them again, after typing ``param fetch``, in order to load parameters that require enabling before presenting their parameter set.  And, in some cases, you may even need to restart SITL in order for some new parameters, such as output function changes, to take effect. 
 
-.. note:: the above was for a Copter. Change the directory to ArduPlane or ArduRover for those types of vehicles before beginning sim_vehicle.py or add the -v <vehicletype> directive when starting it.
+.. tip:: the above can be avoided if you add the parameter file during the start of SITL with the "--add-param-file=*pathtofile* "....ie: sim_vehicle.py -f flightaxis:192.168.x.x - -map - -console --add-param-file=*pathtofile* -w. This adds the param file as a default and then wipes any previous param changes that may exist in the simulation directory.
+
+- The performance of the connection can be checked, after connecting to SITL, by opening the "NavGuides" widget in Realflight. The "Graphics Frames/Sec" count should be over 200 for the vehicle physics and interactions with the simulation to be accurate.
+
+
+.. note:: the above was for a Copter. Change the directory to ArduPlane or ArduRover for those types of vehicles before beginning sim_vehicle.py or add the -v <vehicle type> directive when starting it. You cannot use a host name for the the address of the windows machine, you must use an IP address.
 
 Using ready-made models
 -----------------------

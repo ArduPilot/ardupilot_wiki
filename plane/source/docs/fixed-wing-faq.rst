@@ -157,7 +157,7 @@ this test is less in recent releases of the firmware.
 
 The reason is the new :ref:`stall prevention code <stall-prevention>`. When the plane is on
 the ground the airspeed is very low, so is always under the minimum
-airspeed set in :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` . That means the maximum roll demand is
+airspeed set in :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>`. That means the maximum roll demand is
 limited to 25 degrees, which means the amount of demanded aileron
 surface movement is less than it would be without stall prevention.
 

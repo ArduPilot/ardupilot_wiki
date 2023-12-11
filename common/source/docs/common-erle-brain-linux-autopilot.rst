@@ -96,7 +96,7 @@ Hardware setup
 
 Typical hardware setup for flying drones is:
 
-.. image:: http://erlerobotics.com/docs/img/Artificial_Brains/Erle_Brain2/Hardware/Erle-Brain_Componentes.jpg
+.. image:: ../../../images/Erle-Brain_Componentes.jpg
     :target: ../_images/Erle-Brain_Componentes.jpg
 
 If you wish more info about hardware connections, go to our
@@ -109,9 +109,8 @@ Run the following instructions in the bash command prompt to build ArduPilot on 
 
 ::
 
-    $ git clone https://github.com/erlerobot/ardupilot
+    $ git clone --recurse-submodules https://github.com/erlerobot/ardupilot
     $ cd ardupilot
-    $ git submodule update --init --recursive
 
 ::
 
@@ -235,9 +234,8 @@ Run the following instructions in the bash command prompt to build ArduPilot on 
 
 ::
 
-    $ git clone https://github.com/erlerobot/ardupilot
+    $ git clone --recurse-submodules https://github.com/erlerobot/ardupilot
     $ cd ardupilot
-    $ git submodule update --init --recursive
 
 ::
 

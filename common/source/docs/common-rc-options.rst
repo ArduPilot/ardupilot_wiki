@@ -28,3 +28,5 @@ for example, to set this option to ignore receiver failsafe bits, you would set 
 
 
 There is also an :ref:`RC_PROTOCOLS<RC_PROTOCOLS>` bitmask that can be used to restrict which RC protocols are detected and used. This is useful in cases where the RC protocol autodetection fails and an incorrect RC protocol handler is chosen. This is rare, but if you do find it happens then you can lock in a single RC protocol that can be detected and used with this parameter.
+
+.. note:: Once ArduPilot decodes the RC protocol being used, it will send a message declaring which protocol is being decoded to the Ground Control Station.

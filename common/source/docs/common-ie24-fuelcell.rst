@@ -26,7 +26,7 @@ Setup
 Connecting the Device
 +++++++++++++++++++++
 
-Connect the UART from the port No 8 on the fuel cell to any serial port on your flight controller.  `See device user manual <https://www.intelligent-energy.com/our-products/support/>`__ for details on where to find port No 8.  Only the GND, UART TX, and UART RX connections are required.  See the diagram below:
+Connect the UART from the port No 8 on the fuel cell to any serial port on your autopilot.  `See device user manual <https://www.intelligent-energy.com/our-products/support/>`__ for details on where to find port No 8.  Only the GND, UART TX, and UART RX connections are required.  See the diagram below:
 
 .. figure:: ../../../images/ie2400_Connection.png
     :target: ../_images/ie2400_Connection.png
@@ -49,7 +49,7 @@ This fuel cell unit reports tank percentage remaining.  As such, the following p
 
 - Tank capacity related failsafes can be set using :ref:`BATTX_LOW_MAH <BATT_LOW_MAH>`, :ref:`BATTX_CRT_MAH <BATT_CRT_MAH>`, :ref:`BATTX_ARM_MAH <BATT_ARM_MAH>`.
 
-Reboot the flight controller after setting the parameters for the settings to take effect.
+Reboot the autopilot after setting the parameters for the settings to take effect.
 
 Normal battery monitor failsafes for battery capacity and battery voltage can be set on the monitor instance designated as 'Generator-Elec'.  However, keep in mind that the battery capacity on these units is small for the size of vehicle required to lift them.  Hence, if the battery voltage or capacity remaining failsafes are triggered there is not a lot of flight time left and you should land immediately.
 
@@ -197,7 +197,7 @@ Driver Not Healthy
 If you see the `Generator: Not Healthy` message in the GCS then ArduPilot has not received any data packets from the fuel cell for at least 5 seconds.  Check the following for common causes to this issue:
 
 - Fuel cell is powered on
-- Telemetry is connected to a flight controller serial port.
+- Telemetry is connected to an autopilot serial port.
 - The serial connection is wired correctly (TX->RX, RX->TX).
 - The :ref:`SERIALX_PROTOCOL <SERIAL1_PROTOCOL>` parameter is set to generator for the correct telemetry port.
 

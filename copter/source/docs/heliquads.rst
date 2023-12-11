@@ -7,7 +7,9 @@ HeliQuads (Variable Pitch Multicopters)
 ..  youtube:: J6WJSXm7zWQ
     :width: 100%
 
-Copter-3.6 (and higher) supports HeliQuads, also called Collective Pitch Quadcopters or Variable Pitch Multicopters.
+ArduPilot supports HeliQuads, also called Collective Pitch Quadcopters or Variable Pitch Multicopters.
+
+.. image:: ../../../images/heliquad.png
 
 .. note:: Heli quad requires a :ref:`traditional helicopter <traditional-helicopters>` as the base firmware. It is available for download from the `firmware server <https://firmware.ardupilot.org/>`__. When Copter is compiled, it now generates both traditional helicopter and multirotor firmware.
 

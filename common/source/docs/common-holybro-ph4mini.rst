@@ -5,7 +5,7 @@
 Pixhawk4-Mini Flight Controller
 ===============================
 
-The Pixhawk4-Mini flight controller is sold by `Holybro <https://shop.holybro.com/pixhawk4-mini_p1120.html>`__
+The Pixhawk4-Mini autopilot is sold by `Holybro <https://shop.holybro.com/pixhawk4-mini_p1120.html>`__
 
 Features
 ========
@@ -49,7 +49,7 @@ available as a general purpose UART with ArduPilot.
 
 RC Input
 ========
-The PPM pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true UART connection. However, bi-directional protocols which include telemetry, such as SRXL2 and FPort, when connected in this manner, will only provide RC without telemetry. 
+The PPM pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the RCIN port's RCIN pin can also be configured to be used as true UART RX or TX pin for use with bi-directional systems by setting the SERIAL4 parameters appropriately.
 
@@ -385,6 +385,7 @@ RCIN port
 Debug
 -----
 The Pixhawk4 supports SWD debugging on the debug port
+
 .. raw:: html
 
    <table border="1" class="docutils">

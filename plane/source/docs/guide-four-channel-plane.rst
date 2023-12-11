@@ -82,12 +82,7 @@ or from 1 to 0).
 
 The output can be reversed in Mission Planner on the SETUP/Mandatory Hardware/Servo Output page, just check the box for the channel that needs to be reversed. This will set the output's SERVOn_REVERSED parameter.
 
-.. note:: :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` mut not be set to 0 for rudder setup. If the 
-          plane actually needs 0, then reset it after this setup.
-
-          :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` should cause the tail surfaces point away from the 
-          direction of the lowered aileron. This corrects adverse yaw caused
-          by the additional drag of a lowered aileron.
+.. note:: :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` mut not be set to 0 (the default value is 0.5) for checking rudder movement in FBWA as the plane is rolled away from level. If no automatic coupling of rudder to aileron for coordinated turns by the autopilot is desired, then reset it to zero after this setup check.
 
 Confirm RC Transmitter Input
 ============================
@@ -107,7 +102,7 @@ Keep the plane level in FBWA mode and command the following inputs by moving the
    </table>
 
 If the control surfaces do not respond correctly, change the RCn_reversed
-parameter (from 0 to 1, or from 1 to 0). Do NOT reverse the output on your transmitter. It must be changed in the flight controller!
+parameter (from 0 to 1, or from 1 to 0). Do NOT reverse the output on your transmitter. It must be changed in the autopilot!
 Double check MANUAL mode for the
 same inputs. If everything is setup correctly, the plane should be almost
 ready to fly.
@@ -148,5 +143,5 @@ Final Setup
 After completing this guide, move onto the final setup of
 the aircraft.
 
-- :ref:`ESC Calibration <guide-esc-calibration>`
+- :ref:`ESC Calibration <common-esc-calibration>`
 - :ref:`Center of Gravity <guide-center-of-gravity>`

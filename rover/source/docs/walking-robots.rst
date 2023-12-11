@@ -104,7 +104,7 @@ Use a ground station to load Rover-4.1 (or higher) to the autopilot
 
     - Connect with a ground station and set :ref:`SCR_ENABLE <SCR_ENABLE>` = 1 to enable Lua scripting and reboot the autopilot
     - Download `quadruped.lua <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples>`__ from the ArduPilot Github repo to your PC
-    - Load the quadruped.lua script to the autopilot using MAVFTP or by directly copying to the SD Card's APM/scripts directory (`see video     <https://youtu.be/3n80dYoJQ60?t=71>`__)
+    - Load the quadruped.lua script to the autopilot using MAVFTP or by directly copying to the SD Card's APM/scripts directory (`see video     <https://youtu.be/3n80dYoJQ60&t=71s>`__)
  
 3) Additional Parameter Configuration
 =====================================
@@ -133,7 +133,7 @@ Supported Features
 
 - Connect the battery. Connect the autopilot board to GCS via USB or telemetry.
 
-- Keep the robot on its belly and then arm it. If arming is not successful check the error message on the GCS and identify the problem from the :ref:`rover arming page<arming-your-rover>` .
+- Keep the robot on its belly and then arm it. If arming is not successful check the error message on the GCS and identify the problem from the :ref:`rover arming page<arming-your-rover>`.
 
 - After the autopilot board arms, the robot should stand up on it's own
 

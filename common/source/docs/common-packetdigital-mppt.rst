@@ -9,6 +9,8 @@ Packet Digital MPPT
 
 The `Packet Digital MPPT solar controller <https://www.packetdigital.com/maximum-power-point-tracker/>`__ is specifically designed to help extend the range of unmanned vehicles through the use of solar panels.  This light weight controller includes a DroneCAN/DroneCAN interface allowing real-time monitoring of the solar system's performance.
 
+Normally, a conventional, bi-directional power monitor would also be included in this system directly on the battery's output to monitor the battery's current flow, either charging or discharging, and total consumed current of the battery.
+
 Where to Buy
 ------------
 
@@ -43,6 +45,9 @@ Connect a ground station (e.g. Mission Planner) to the autopilot and set the fol
 
 - :ref:`BATT_MONITOR <BATT_MONITOR>` = 8 (DroneCAN)
 - :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (DroneCAN)
+- :ref:`BATT_OPTIONS<BATT_OPTIONS>` provides several options for MPPT enable and disable depending on autopilot events.
+
+.. note:: the MPPT can be manually turned on or off using an RC channel switch setup with its ``RCx_OPTION`` = 172.
 
 Check the MPPT board's parameters by connecting through "SLCAN"
 
@@ -69,7 +74,8 @@ To allow the autopilot to connect to all the MPPTs:
 
 - Enable one battery monitor per MPPT by setting :ref:`BATTx_MONITOR <BATT_MONITOR>` = 8
 - Use Mission Planner's SETUP >> Optional Hardware >> UAVCAN(DroneCAN) page's "Menu" button to manually configure the uavcan.node_id of each MPPT
-- set :ref:`BATTx_SERIAL_NUM <BATT_SERIAL_NUM>` to match the uavcan.node_ids set above
+- set :ref:`BATTx_SERIAL_NUM <BATT_SERIAL_NUM>` to match the uavcan.node_ids set above.
+- You can sum all the MPPT currents using a "SUM (10)" power monitor type. See :ref:`common-power-module-configuration-in-mission-planner`.
 
 Videos
 ------

@@ -75,17 +75,14 @@ output/input, and connect it to the camera flash hotshoe (a universal
 camera hot shoe is required). The pin should be held for at least 2
 milliseconds for reliable trigger detection.
 
-The main steps are:
+The main steps are (example for Camera1 instance):
 
 #. Open *Mission Planner* and then click on **CONFIG/TUNING/Full
    Parameters List**
 #. Set at least two of the output pins as digital GPIO output/inputs as described in 
    :ref:`GPIOs <common-gpios>`.
-#. Set :ref:`CAM_FEEDBACK_PIN <CAM_FEEDBACK_PIN>`
-   to the pin number connected to the hotshoe.
-#. Set :ref:`CAM_FEEDBACK_POL <CAM_FEEDBACK_POL>`
-   to indicate whether the feedback pin (hotshoe voltage) goes high or
-   low when the picture is taken.
+#. Set :ref:`CAM1_FEEDBAK_PIN<CAM1_FEEDBAK_PIN>` to the pin number connected to the hotshoe.
+#. Set :ref:`CAM1_FEEDBAK_POL<CAM1_FEEDBAK_POL>` to indicate whether the feedback pin (hotshoe voltage) goes high or low when the picture is taken.
 
 .. _common-camera-shutter-with-servo_setting_values_for_different_cameras:
 

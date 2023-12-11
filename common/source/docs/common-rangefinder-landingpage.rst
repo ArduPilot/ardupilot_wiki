@@ -60,7 +60,7 @@ Unidirectional Rangefinders
 .. toctree::
     :maxdepth: 1
 
-    Aistein US-D1 Radar Altimeter <common-aerotenna-usd1>
+    Ainstein US-D1 Radar Altimeter <common-aerotenna-usd1>
     Attollo Engineering Wasp200 <common-wasp200-lidar>
     Avionics Anonymous DroneCAN LIDAR Interface <common-avanon-laserint>
     Benewake TF02 / TF03 <common-benewake-tf02-lidar>
@@ -79,6 +79,7 @@ Unidirectional Rangefinders
     Maxbotix Analog Sonar <common-rangefinder-maxbotix-analog>
     ST VL53L0X / VL53L1X Lidar <common-vl53l0x-lidar>
     TeraRanger One/EVO Rangefinders <common-teraranger-one-rangefinder>
+    TeraRanger NEO <common-teraranger-neo>
     Underwater Sonar <common-underwater-sonars-landingpage>
 
 Omnidirectional Proximity Rangefinders
@@ -90,7 +91,8 @@ Omnidirectional Proximity Rangefinders
     Lightware SF40/C (360 degree) <common-lightware-sf40c-objectavoidance>
     Lightware SF45/B (350 degree) <common-lightware-sf45b>
     RPLidar A2 360 degree laser scanner <common-rplidar-a2>
-    TerraRanger Tower (360 degree) <common-teraranger-tower-objectavoidance>
+    TerraRanger Tower/ Tower EVO (360 degree) <common-teraranger-tower-objectavoidance>
+    Cygbot D1 (120 degree) <https://www.cygbot.com/_files/ugd/f5911d_726a54fc4f6644bcbec0d9b00236ffda.pdf>
 
 [site wiki="copter,rover"]
 Vision Based Sensors

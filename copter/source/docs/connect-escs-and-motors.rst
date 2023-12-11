@@ -4,7 +4,7 @@
 Connect ESCs and Motors
 =======================
 
-This article explains how to connect the ESCs, motors and propellers to a autopilot.  The Pixhawk is used as an example but other autopilots are connected in a similar way.
+This article explains how to connect the ESCs, motors and propellers to an autopilot.  The Pixhawk is used as an example but other autopilots are connected in a similar way.
 
 Connect the power (+), ground (-), and signal (s) wires for each ESC to
 the autopilot's main output pins by motor number. Find your frame type
@@ -13,13 +13,13 @@ below to determine the assigned order of the motors.
 .. figure:: ../images/Pixhwak_outputs.jpg
    :target: ../_images/Pixhwak_outputs.jpg
 
-   Pixhawk Outputpins (numbered). First 4 pins are colour-coded for connecting a Quadframe
+   Pixhawk output pins (numbered). First 4 pins are colour-coded for connecting a Quadframe
 
 Motor order diagrams
 ====================
 
 The diagrams below show motor order for each frame type.
-The numbers indicate which output pin from the autopilot shoould be connected to each motor/propeller.
+The numbers indicate which output pin from the autopilot should be connected to each motor/propeller.
 The propeller direction is shown in green (clockwise, CW) or blue (counter-clockwise, CCW)
 
 .. figure:: ../images/MOTORS_CW_CCWLegend.jpg
@@ -32,6 +32,22 @@ Quadcopter
 
 .. image:: ../images/motororder-quad-x-2d.png
     :target: ../_images/motororder-quad-x-2d.png
+    :scale: 40%
+
+.. image:: ../images/motororder-betaflight-x-2d.png
+    :target: ../_images/motororder-betaflight-x-2d.png
+    :scale: 40%
+
+.. image:: ../images/motororder-bf-reversed-x-2d.png
+    :target: ../_images/motororder-bf-reversed-x-2d.png
+    :scale: 40%
+
+.. image:: ../images/motororder-dji-x-2d.png
+    :target: ../_images/motororder-dji-x-2d.png
+    :scale: 40%
+
+.. image:: ../images/motororder-quad-cw-x-2d.png
+    :target: ../_images/motororder-quad-cw-x-2d.png
     :scale: 40%
 
 .. image:: ../images/motororder-quad-plus-2d.png
@@ -53,6 +69,10 @@ Quadcopter
 .. image:: ../images/motororder-quad-atail-2d.png
     :target: ../_images/motororder-quad-atail-2d.png
     :scale: 35%
+
+.. image:: ../../../images/motororder-Y4a-2d.jpg
+    :target: ../_images/motororder-Y4a-2d.jpg
+    :scale: 40%
 
 Tricopter
 ---------
@@ -85,16 +105,13 @@ Hexacopter
     :target: ../_images/motororder-hexa-x-2d.png
     :scale: 40%
 
+.. image:: ../images/motororder-hexa-cw-x-2d.png
+    :target: ../_images/motororder-hexa-cw-x-2d.png
+    :scale: 40%
+
 .. image:: ../images/motororder-hexa-plus-2d.png
     :target: ../_images/motororder-hexa-plus-2d.png
     :scale: 40%
-
-Y4
---
-
-.. image:: ../../../images/motororder-Y4a-2d.jpg
-    :target: ../_images/motororder-Y4a-2d.jpg
-    :width: 35%
 
 Y6
 --
@@ -166,11 +183,11 @@ Custom Frames
 -------------
 
 It is possible to configure custom frame types using up-to 12 motors using :ref:`lua scripting<common-lua-scripts>`. The roll, pitch and yaw factors for each motor must be calculated and loaded from a script.
-This is enabled by setting :ref:`FRAME_CLASS <copter:FRAME_CLASS>` to 15 - Scripting Matrix. See: `plus quad example <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/MotorMatrix_setup.lua>`__ 
+This is enabled by setting :ref:`FRAME_CLASS <FRAME_CLASS>` to 15 - Scripting Matrix. See: `plus quad example <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/MotorMatrix_setup.lua>`__ 
 and `fault tolerant hex example <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/MotorMatrix_fault_tolerant_hex.lua>`__.
 
 .. note::
-    Not all flight controllers support scripting see: :ref:`firmware limitations <common-limited_firmware>`.
+    Not all autopilots support scripting see: :ref:`firmware limitations <common-limited_firmware>`.
 
 Recognizing clockwise and counterclockwise propellers
 -----------------------------------------------------

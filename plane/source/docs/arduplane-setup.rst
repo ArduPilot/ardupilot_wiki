@@ -8,7 +8,7 @@ Just want to get up and running as fast as possible? Here's a guide to
 the simplest approach. There's a lot more Plane can do, but this will
 give you a taste:
 
-.. note:: This section assumes that you’ve already chosen and built a frame (Plane, Flying Wing, V-Tail, QuadPlane, Tilt-Rotor, etc.) and have :ref:`selected your autopilot<common-choosing-a-flight-controller>` .
+.. note:: This section assumes that you’ve already chosen and built a frame (Plane, Flying Wing, V-Tail, QuadPlane, Tilt-Rotor, etc.) and have :ref:`selected your autopilot<common-autopilots>`.
 
 .. toctree::
     :maxdepth: 1

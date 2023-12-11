@@ -1,13 +1,23 @@
 .. _common-flywoo-f745:
 
-=====================
-FlyWoo F745 AIO BL_32
-=====================
+=========================================
+Flywoo GOKU GN 745 AIO with 40A ESC/ Nano
+=========================================
 
-.. image:: ../../../images/flywooF745.png
-   :target: ../_images/flywooF745.png
-   
-.. note:: This article also applies to other Flywoo GOKU F745 boards. Check `Flywoo website <https://flywoo.net>`__ for detailed pinouts. Use the FlywooF745 firmware on the `firmware server <https://firmware.ardupilot.org>`__ . For 16.5mm x 16.5mm F745 boards use the FlywooF745Nano firmware.
+The Flywoo GOKU GN 745 AIO is an autopilot produced by [Flywoo](https://flywoo.net/).
+
+.. image:: ../../../images/flywooF745AIO.jpg
+    :target: ../_images/flywooF745AIO.jpg
+
+The Nano version is a smaller reduced feature set version
+
+.. image:: ../../../images/flywoof745nano.jpg
+    :target: ../_images/flywoof745nano.jpg
+
+Where To Buy
+============
+
+`Flywoo <https://flywoo.net>`__
 
 Specifications
 ==============
@@ -15,19 +25,19 @@ Specifications
 -  **Processor**
 
    -  STM32F745VG  ARM (216MHz), 1MB Flash
-   -  Integrated 4 output, BLHeli-32 40A ESC
+   -  Integrated 4 output, BLHeli-32 40A ESC (AIO version only)
 
 
 -  **Sensors**
 
    -  InvenSense MPU6000 IMU (accel, gyro) 
    -  BMP280 barometer
-   -  Voltage & 100A Current sensor
+   -  Voltage & 100A Current sensor (AIO version only)
 
 
 -  **Power**
 
-   -  7.4V ~ 25V DC input power
+   -  7.4V ~ 25V DC input power (4S MAX for Nano version)
    -  5V 2A BEC for peripherals
    -  9V 1.5A BEC for video
 
@@ -42,17 +52,28 @@ Specifications
    -  Built-in OSD
 
 
--  **Size and Dimensions**
+   **Size and Dimensions AIO**
 
-   - 33.5mm x 333.5mm (25.6 x 25.6mm mount pattern)
+   - 33.5mm x 33.5mm (25.6 x 25.6mm mount pattern)
    - 8.5g
 
-Where to Buy
-============
+   **Size and Dimensions Nano**
+   
+   - 22mm x 23.5mm (16mm x16mm mount pattern)
+   - 2.3g
 
-https://flywoo.net/products/goku-gn745-40a-aio-bl_32-mpu6000-25-5-x-25-5
+Pinouts
+=======
+AIO
 
+.. image:: ../../../images/flywoo-f745AIO-wiring.jpg
+    :target: ../_images/flywoo-f745AIO-wiring.jpg
 
+Nano
+
+.. image:: ../../../images/GOKUGN745AIO-nano_Pinout.jpg
+    :target: ../_images/GOKUGN745AIO-nano_Pinout.jpg
+    
 Default UART order
 ==================
 
@@ -70,15 +91,30 @@ UART3 supports RX and TX DMA. UART1, UART2, UART4, and UART6 supports TX DMA. UA
 RC Input
 ========
 
-RC input is configured by default via the USART3 RX input. It supports all RC protocols except PPM. FPort and full duplex protocols will use both RX6 and TX6. The 4.5V output pin is powered when the USB is connected to allow setup of receiver without connecting to the main battery.
+RC input is configured on the RX3 (UART3_RX) pin. It supports all RC protocols except PPM. See :ref:`common-rc-systems` for details for a specific RC system. :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` is set to "23", by default, to enable this.
 
-.. note:: If the receiver is SBUS, then :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` must be set to "1" to provide inversion for detection. If the receiver is FPort, then the receiver must be tied to the USART3 TX pin and :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` = 7 (invert TX/RX, half duplex) and :ref:`RSSI_TYPE<RSSI_TYPE>` =3.
+- SBUS/DSM/SRXL connects to the RX3 pin but SBUS requires that the :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` be set to "3".
 
+- FPort requires connection to TX3 and :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` be set to "7".
 
-Dshot Capability
-================
+- CRSF also requires a TX3 connection, in addition to RX3, and automatically provides telemetry. Set :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` to "0".
 
-All motor 1-4 outputs are bi-directional Dshot and PWM capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs. The output groups that must be the same (PWM rate or Dshot, when configured as a normal servo/motor output) are: 1/2, 3/4/10, 5, 6, 7/8, 9.
+- SRXL2 requires a connection to TX6 and automatically provides telemetry.  Set :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` to "4".
+
+Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
+
+PWM Output
+==========
+
+The GOKU GN 745 AIO supports up to 8 PWM outputs. The pads for motor output ESC1 to ESC4 on the above diagram are the first 4 outputs, there are four additional pads for PWM 5-8. All 8 outputs support DShot as well as all PWM types.
+
+The Nano version has 4 esc signals, current and voltage sense inputs on an external connector. The remaining outputs are on solder pads.
+
+The PWM are in 5 groups: 1/2/7/8, 3/4, 5, 6
+
+Channels within the same group need to use the same output rate. If
+any channel in a group uses DShot then all channels in the group need
+to use DShot. PWM 1-4 support bidirectional DShot.
 
 Neopixel Output
 ===============
@@ -93,16 +129,32 @@ The board has a built-in voltage and current sensors.
 The correct battery monitor parameters are:
 
 -    :ref:`BATT_MONITOR<BATT_MONITOR>` =  4
--    :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 12
+-    :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 13
 -    :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` ~ 10.9
--    :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 13
--    :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` ~ 28.5
+-    :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 12
+-    :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` ~ 28.5 (when using AIO version)
 
 These are set by default in the firmware and shouldn't need to be adjusted.
 
-Flashing Firmware
-=================
+Compass
+=======
 
-Usually these boards are sold pre-flashed with Betaflight firmware and require both firmware and bootloader to be updated if you want to use ArduPilot. See :ref:`common-loading-firmware-onto-chibios-only-boards`.
+The GOKU GN 745 AIO does not have a builtin compass but it does have an external I2C connector.
+
+Loading ArduPilot onto the board
+================================
+
+Initial firmware load can be done with DFU by plugging in USB with the
+bootloader button pressed. Then you should load the "with_bl.hex"
+firmware, using your favourite DFU loading tool.
+
+Once the initial firmware is loaded you can update the firmware using
+any ArduPilot ground station software. Updates should be done with the xxxxxxxxxx.apj firmware files.
+
+Firmware
+========
+
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
+"FlywooF745" for the AIO or "FlywooF745Nano" for the Nano version.
 
 [copywiki destination="plane,copter,rover,blimp"]

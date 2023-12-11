@@ -37,7 +37,7 @@ is stored as the trim (default) position.
 That is basically all the setup required for flaps. If you find that
 your flaps are moving backwards from what you expect, change the
 reversing parameter for your flap channel, for example
-:ref:`SERVO5_REVERSED<SERVO5_REVERSED>` . Set it to 1 to reverse the flaps, set to 0 for normal
+:ref:`SERVO5_REVERSED<SERVO5_REVERSED>`. Set it to 1 to reverse the flaps, set to 0 for normal
 operation.
 
 Using flaps

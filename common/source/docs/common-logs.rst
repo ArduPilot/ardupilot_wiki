@@ -4,6 +4,17 @@
 Logs
 ====
 
+Log Types (Dataflash vs Tlogs)
+==============================
+
+There are two ways to record your flight data. With some exceptions, the
+two methods record very similar data but in different ways:
+
+-  :ref:`Dataflash logs <common-downloading-and-analyzing-data-logs-in-mission-planner>` are recorded on the autopilot (often to the SD card) so they must be downloaded from the autopilot after a flight
+-  :ref:`Telemetry logs <planner:mission-planner-telemetry-logs>` (also known as "Tlogs") are recorded by the ground station (i.e. Mission Planner) on the local PC when the autopilot is connected via a :ref:`telemetry link <common-telemetry-landingpage>`
+
+If you are not yet familiar with the basics of these log files, first review the introductory pages to understand where these logs are stored and how you can download and view the information held within them.
+
 Topics related to logging and analysis
 --------------------------------------
 
@@ -11,8 +22,9 @@ Topics related to logging and analysis
     :maxdepth: 1
 
 [site wiki="plane,copter,dev,planner,rover"]
-    Diagnosing problems using Logs <common-diagnosing-problems-using-logs>
     Dataflash Logs <common-downloading-and-analyzing-data-logs-in-mission-planner>
+    Telemetry Logs <https://ardupilot.org/planner/docs/mission-planner-telemetry-logs.html>
+    Diagnosing problems using Logs <common-diagnosing-problems-using-logs>
 [/site]
 [site wiki="plane"]
     Plane Log Messages <logmessages>
@@ -33,7 +45,6 @@ Topics related to logging and analysis
 [site wiki="plane,copter,rover,dev,planner"]
     Measuring Vibration <common-measuring-vibration>
     Measuring Vibration with "Batch Sampling" <common-imu-batchsampling>
-    Telemetry Logs <common-mission-planner-telemetry-logs>
 [/site]
 
 

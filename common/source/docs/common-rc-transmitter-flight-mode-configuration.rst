@@ -80,10 +80,11 @@ The flight mode channel is the input radio channel that ArduPilot
 monitors for mode changes.
 
 [site wiki="copter"]
-On Copter this is always channel 5.
+On Copter this is configurable using the :ref:`FLTMODE_CH <FLTMODE_CH>`
+parameter. 
 [/site]
 [site wiki="plane"]
-On Plane this is configurable using the :ref:`FLTMODE_CH <plane:FLTMODE_CH>`
+On Plane this is configurable using the :ref:`FLTMODE_CH <FLTMODE_CH>`
 parameter. 
 [/site]
 [site wiki="rover"]

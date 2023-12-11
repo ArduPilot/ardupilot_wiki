@@ -5,18 +5,15 @@ Copter Mission Command List
 ===========================
 
 This page provides details of all the mission commands 
-(i.e. `MAVLink commands <https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_WAYPOINT>`__) supported by Copter that can be run as part of a mission (i.e. :ref:`AUTO flight mode <auto-mode>`).
+(i.e. `MAVLink commands <https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_WAYPOINT>`__) supported by Copter that can be run as part of a mission (see :ref:`AUTO flight mode <auto-mode>`).
 
-Each of the commands below is either a "Navigation" command or a "Do"
-command.  Navigation commands (i.e. "TakeOff" and "Waypoint") affect the
-location of the vehicle while "Do" commands (i.e. "Do-Set-Servo" and
-"Do-Cam-Trigg-Dist") are for auxiliary functions and do not affect the
-vehicle's position.  During a mission at most one "Navigation" command
-and one "Do" command can be running at one time.  The "Do" commands will
-be run in order as soon as the preceding navigation command before them
-completes.  For more information on setting up missions please refer to the
-:ref:`Planning a Mission with Waypoints and Events <common-planning-a-mission-with-waypoints-and-events>`
-page.
+Each of the commands below is either a "Navigation" command or a "Do" command.  Navigation commands (e.g. "TakeOff" and "Waypoint") affect the
+location of the vehicle while "Do" commands (e.g. "Do-Set-Servo" and "Do-Cam-Trigg-Dist") are for auxiliary functions and do not affect the
+vehicle's position.
+
+During a mission at most one "Navigation" command and one "Do" command can be running at one time.  The "Do" commands will
+be run in order as soon as the preceding navigation command before them completes.  For more information on setting up missions please refer to the
+:ref:`Planning a Mission with Waypoints and Events <common-planning-a-mission-with-waypoints-and-events>` page.
 
 Takeoff
 ~~~~~~~
@@ -59,8 +56,7 @@ before it actually reaches the current waypoint
 degrees (0=north, 90 = east). Instead use a
 :ref:`CONDITION_YAW <mission-command-list_condition-yaw>` command.
 
-**Lat, Lon** - the latitude and longitude targets.  If left as zero it
-will hold the current location.
+**Lat, Lon** - the latitude and longitude targets.  If left as zero, current location will be substituted for waypoint location, making it appear as if the waypoint is simply skipped.
 
 **Alt** - the target altitude above home in meters.  If left as zero it
 will hold the current altitude.
@@ -109,12 +105,18 @@ Loiter_Turns
 The mission equivalent of the :ref:`Circle flight mode <circle-mode>`.  The vehicle will fly a circle around the
 specified lat, lon, and altitude (in meters).  The radius of the circle
 is controlled by the :ref:`CIRCLE_RADIUS<CIRCLE_RADIUS>` parameter (i.e. cannot be set as
-part of the mission).
+part of the mission).  The direction can be changed to counter-clockwise by setting :ref:`CIRCLE_RATE<CIRCLE_RATE>` to a negative number.
 
 **Turn** - the number of full rotations to complete around the point.
 
-**Dir 1=CW** - the direction to turn around the point. -1 = counter
-clockwise, +1 = clockwise.
+**Radius** - Loiter radius around waypoint. Units are in meters.
+
+-  0-255 is 0-255 meters.
+-  256-259 is 250 meters. Note: The radius will be smaller than the set value.
+-  260-269 is 260 meters.
+-  270-279 is 270 meters.
+-  :
+-  2550 and above, 2550 meters.
 
 **Lat, Lon** - the latitude and longitude targets.  If left as zero it
 will circle around the current location.
@@ -169,8 +171,6 @@ Delay
 .. image:: ../../../images/MissionList_NavDelay.png
     :target: ../_images/MissionList_NavDelay.png
 
-Support for the Delay command was added in Copter-3.4.
-
 The vehicle will remain at its current location until the specified number of seconds has passed or the absolute time is reached.
 The first column ("Seconds") holds the number of seconds to delay.  Set to -1 if this field should be ignored.
 The "hour UTC", "minute UTC" and "second UTC" fields can be used to specify an absolute time (`UTC <https://en.wikipedia.org/wiki/Coordinated_Universal_Time>`__).  The example above will cause the vehicle to take-off at 1:30pm UTC.  Note that the hour and/or minute field can also be ignored by setting them to -1.
@@ -180,18 +180,50 @@ This is a video made during the development of this feature.  Note in the video 
 ..  youtube:: 9VK3yjIyCSo
     :width: 100%
 
-Package Place
+Payload Place
 ~~~~~~~~~~~~~
 
 .. image:: ../../../images/MissionList_packageplace.png
     :target: ../_images/MissionList_packageplace.png
 
-Support for Package Place was added in Copter-3.5.
+The vehicle flies to the specified location and descends until it senses (using motor output) that the package has reached the ground.  The gripper is then released to unload the package and ascend back to the waypoint altitude.
+The first column ("Max Desc") holds the maximum descent (in meters) that the vehicle should descend.  If the package has still not reached the ground despite this descent, the package will not be released and the vehicle will return to  the waypoint altitude and advance to the next mission command.
+Parameters controlling this operation (besides :ref:`Gripper parameters <common-gripper-landingpage>`) are:
 
-The vehicle flies to the specified location and descends until it senses (using motor output) that the package has reached the ground.  The gripper is then released to unload the package.
-The first column ("Max Desc") holds the maximum descent (in meters) that the vehicle should descend.  If the package has still not reached the ground despite this descent, the package will not be released and the vehicle will advance to the next mission command.
+- :ref:`PLDP_SPEED_DN<PLDP_SPEED_DN>`: Descent speed, once the waypoint is reached, is either :ref:`LAND_SPEED<LAND_SPEED>` or this value, if non-zero.
+- :ref:`PLDP_THRESH<PLDP_THRESH>`: The percentage of thrust decrease that indicates payload touch-down. The reference thrust is measured over the first two seconds of descent.
+- :ref:`PLDP_RNG_MIN<PLDP_RNG_MIN>`: If non-zero, the minimum release height over ground obtained from a downward facing rangerfinder. Automatic gripper release can occur only if below this altitude above ground in addition to thrust reduction being obtained. If this value is non zero and no rangefinder is present, the place will be aborted and the vehicle will ascend and proceed to the next waypoint. 
+- :ref:`PLDP_DELAY<PLDP_DELAY>`: Delay in seconds after release the vehicle will remain in position after release before ascending. This allows payload replacement if the gripper is set to re-engage after a delay (see :ref:`GRIP_AUTOCLOSE<GRIP_AUTOCLOSE>`)
 
 ..  youtube:: m4GK4ALqluc
+    :width: 100%
+
+Attitude Time
+~~~~~~~~~~~~~
+
+.. image:: ../../../images/MissionList_AttitudeTime.png
+    :target: ../_images/MissionList_AttitudeTime.png
+
+Vehicle maintains the specified roll, pitch, yaw angle and climb rate for the specified time.  GPS is not required while this command is being executed
+
+- **Roll**: positive is lean right, negative is lean left
+- **Pitch**: positive is lean back, negative is lean forward
+- **Yaw**: 0 is North, 90 is East, 180 is South, 270 is West
+- **ClimbRate**: in m/s but most ground stations incorrectly scale this parameter so it is best to leave at 0m/s
+
+..  youtube:: cli1zmPoz3U
+    :width: 100%
+
+Script Time
+~~~~~~~~~~~
+
+.. image:: ../../../images/MissionList_ScriptTime.png
+    :target: ../_images/MissionList_ScriptTime.png
+
+Lua script runs for the specified time after which it will move onto the next command.  "command", "arg1" and "arg2" arguments are interpreted by the script.
+The demonstration below used this SCRIPT_TIME command to execute the "fast descent" script from within Auto mode.
+
+..  youtube:: YD50BxeQm84
     :width: 100%
 
 .. _mission-command-list_do-set-roi:
@@ -262,17 +294,12 @@ when "rel/abs" field is "0" (meaning absolute)
 OR the change in heading (in degrees) when "rel/abs" field is "1"
 (meaning relative)
 
-**Sec** - not supported.  meant to limit the rotation speed (in deg/sec)
+**Speed deg/s** - the rotation speed (in deg/sec)
 as the vehicle turns to the desired heading
 
-**Dir (1=CW, -1=CCW)** - Used only when relative heading is specified
-(i.e. "rel/abs" = "1") denotes whether the autopilot should add
-(CW) or subtract (CCW) the degrees (Deg) from the current heading to
-calculate the target heading. The vehicle will always turn in direction
-that most quickly gets it to the new target heading regardless if CW or
-CCW are used.
+**Dir 1=CW** - Used to denote the direction of rotation to achieve the target angle (1=CW, -1=CCW, 0= the vehicle will always turn in direction that most quickly gets it to the new target heading, but only when "rel/abs" = "0",).
 
-**rel/abs** - allows specifying the heading (i.e "Deg" field) as an
+**rel/abs (0=Abs, 1=Rel)** - allows specifying the heading (i.e "Deg" field) as an
 absolute heading (if "0") or relative to the current heading (if "1")
 
 Do-Jump
@@ -300,19 +327,25 @@ command.
 
    No more that one hundred (100) Do-Jump commands can be used in a mission. This value is further reduced to fifteen (15) Do-Jump commands for boards with less than 500kb of ram. Subsequent Do-Jumps will be ignored.
 
+Do-Aux-Function
+~~~~~~~~~~~~~~~
+
+.. image:: ../../../images/mission-list-do-aux-function.png
+    :target: ../_images/mission-list-do-aux-function.png
+
+Allows any :ref:`auxiliary function <common-auxiliary-functions>` to be executed from within a mission without setting up an auxiliary switch.  The "AuxFunction" field should be set to the "RCx_OPTION value" from the linked page.  The "Switch" fields corresponds to the auxiliary function switch position with "0" meaning "low", "1" meaning "middle" and "2" meaning high.
+
 Do-Change-Speed
 ~~~~~~~~~~~~~~~
 
 .. image:: ../../../images/MissionList_DoChangeSpeed.png
     :target: ../_images/MissionList_DoChangeSpeed.png
 
-Change the target horizontal speed (in meters/sec) of the vehicle.
+Change the desired maximum speed (in meters/sec) of the vehicle.  Normally the "Type" field is left at 0 meaning the horizontal speed is set.
 
-**speed m/s** - the desired maximum speed in meters/second.
+**Type** - 0:ground speed, 1:airspeed(if available) 2:climb rate, 3:descent rate
 
-.. warning::
-
-   The speed parameter should be in the SECOND COLUMN, not the first column as shown in the screenshot above
+**Speed m/s** - the desired maximum speed in meters/second.
 
 Do-Set-Home
 ~~~~~~~~~~~
@@ -415,8 +448,7 @@ Do-Digicam-Control
 .. image:: ../../../images/MissionList_DoDigicamControl.png
     :target: ../_images/MissionList_DoDigicamControl.png
 
-Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>`
-once. This command takes no additional arguments.
+Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>` once.  The "Shutter Cmd" field should be set to "1".
 
 Do-Fence-Enable
 ~~~~~~~~~~~~~~~~~~
@@ -425,6 +457,16 @@ Do-Fence-Enable
     :target: ../_images/MissionList_DoFenceEnable.png
 
 Enable(1) or Disable(0) the Copter :ref:`common-ac2_simple_geofence` and/or Copter :ref:`common-polygon_fence`. This command takes no additional arguments.
+
+Do-Gimbal-Manager-PitchYaw
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../../../images/mission-list-do-gimbal-manager-pitchyaw.png
+    :target: ../_images/mission-list-do-gimbal-manager-pitchyaw.png
+
+Moves the :ref:`camera gimbal <common-cameras-and-gimbals>` to the desired pitch and yaw angles (in degrees).  Positive pitch angles are up, Negative are down.  Positive yaw angles are clockwise, negative are counter clockwise.   If the "Flags" field is "0" the yaw angle is in "body frame" (e.g. 0 is forward).  If "Flags" is "16" the yaw angle is in "earth frame" (e.g. 0 is North).
+
+Alternatively Pitch Rate and Yaw Rate fields can be used to move the gimbal at a specified rate in deg/sec.  A Condition-Delay for a few seconds followed by another Do-Gimbal-Manager-PitchYaw should be used to eventually stop the gimbal from rotating.
 
 Do-Mount-Control
 ~~~~~~~~~~~~~~~~
@@ -442,3 +484,16 @@ Do-Gripper
 
 This command allows opening and closing a :ref:`servo gripper <common-gripper-servo>` or :ref:`EPM gripper <common-cameras-and-gimbals>`.
 Set the "drop/grab" column to 0 to close the gripper, 1 to open the gripper.  The first column, "Gripper No" is ignored because we currently only support a single gripper per vehicle.
+
+Do-Winch
+~~~~~~~~
+
+.. image:: ../../../images/MissionList_DoWinch.png
+    :target: ../_images/MissionList_DoWinch.png
+
+This command allows controlling a :ref:`winch <common-daiwa-winch>` to raise or lower a package.
+
+- "winch no" is not used
+- "action" should be 0 to relax the winch, 1 for Length control, 2 for Rate control
+- "length" should be filled in with the meters of line to release.  Positive numbers release the line, negative retract the line.  Note "action" should be "1".
+- "rate" should be filled in with the speed (in m/s) to release the line.  Positive numbers release the line, negative retract the line.  Note "action" should be "2".

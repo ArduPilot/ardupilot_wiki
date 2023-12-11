@@ -13,26 +13,49 @@ Depending on the autopilot type and configuration, the dataflash logs may be sav
 
 [copywiki destination="copter,plane,rover,dev,planner"]
 
-.. note::
+.. note:: :ref:`Telemetry logs <planner:mission-planner-telemetry-logs>` (also known as "tlogs") collect similar information to dataflash logs (see :ref:`Diagnosing problems using Logs <common-diagnosing-problems-using-logs>` for more information).
 
-   :ref:`Telemetry logs <common-mission-planner-telemetry-logs>` (also
-   known as "tlogs") collect similar information to dataflash logs (see
-   :ref:`Diagnosing problems using Logs <common-diagnosing-problems-using-logs>` for more information).
+.. note:: If your vehicle is having trouble producing dataflash logs - including the infamous "No IO heartbeat" diagnostic message - try a different SD card.  You may also choose to test the card using a dedicated tool, such as ``H2testw``.  Low board voltages are also known to cause logging issues.
 
-.. note::
-
-   If your vehicle is having trouble producing dataflash logs - including the infamous "No IO heartbeat" diagnostic message - try a different SD card.  You may also choose to test the card using a dedicated tool, such as ``H2testw``.  Low board voltages are also known to cause logging issues.
-   
 Logging Parameters
 ==================
 
 Some commonly used parameters are:
 
-- :ref:`LOG_BACKEND_TYPE<LOG_BACKEND_TYPE>` : Bitmask for where to save logs to. Common values are "0" to disable logging, "1" to log to SD card file, "2" to stream over MAVLink and "4" to log to board dataflash memory, if equipped.
-- :ref:`LOG_BITMASK<LOG_BITMASK>` : Bitmask for what items are logged. Normally, use default value, or "0" to disable logging.
-- :ref:`LOG_DISARMED<LOG_DISARMED>` : Setting to one will start logging when power is applied, rather than at the first arming of the vehicle. Usefull when debugging pre-arm failures.
-- :ref:`LOG_FILE_DSRMROT<LOG_FILE_DSRMROT>` : Setting this bit will force the creation of a new log file after disarming, waiting 15 seconds, and then re-arming. Normally, a log will be one file for every power cycle of the autopilot, beginning upon first arm.
-- :ref:`LOG_FILE_MB_FREE<LOG_FILE_MB_FREE>` : This parameter sets the minimum free space on the logging media before logging begins. If this is not available, then older logs will be deleted to provide it during initialization. Default is 500MB.
+- :ref:`LOG_BACKEND_TYPE<LOG_BACKEND_TYPE>`: Bitmask for where to save logs to. Common values are "0" to disable logging, "1" (bit 0 set) to log to SD card file, "2"(bit 1 set) to stream over MAVLink and "4"(bit 2 set) to log to board dataflash memory, if equipped.
+- :ref:`LOG_BITMASK<LOG_BITMASK>`: Bitmask for what items are logged. Normally, use default value, or "0" to disable logging.
+- :ref:`LOG_DISARMED<LOG_DISARMED>`: Setting to 1 will start logging when power is applied, rather than at the first arming of the vehicle. Useful when debugging pre-arm failures. Setting to 2 will only log on power application other than USB power to prevent logging while setting up on the bench. Setting to 3 will also erase any log in which the vehicle does not proceed to the armed stated. This prevents accumulating numerous logs while configuring on the bench or at the field. See :ref:`LOG_DARM_RATEMAX<LOG_DARM_RATEMAX>` also for managing log file sizes while logging disarmed.
+- :ref:`LOG_FILE_DSRMROT<LOG_FILE_DSRMROT>`: Setting this bit will force the creation of a new log file after disarming, waiting 15 seconds, and then re-arming. Normally, a log will be one file for every power cycle of the autopilot, beginning upon first arm.
+- :ref:`LOG_FILE_MB_FREE<LOG_FILE_MB_FREE>`: This parameter sets the minimum free space on the logging media before logging begins. If this is not available, then older logs will be deleted to provide it during initialization. Default is 500MB.
+- :ref:`LOG_FILE_RATEMAX<LOG_FILE_RATEMAX>`: This sets the maximum rate that streaming log messages will be logged to the file backend to limit file sizes. A value of zero(default) means no limit is applied to normal logging, which depends on the :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>` value ( 50Hz: Plane, 300Hz: QuadPlane/Rover, 400Hz: Copter, normally). Note that similarly, :ref:`LOG_BLK_RATEMAX<LOG_BLK_RATEMAX>` and :ref:`LOG_MAV_RATEMAX<LOG_MAV_RATEMAX>` perform the same optional limiting for the BLOCK logging and MAVLink logging streams, respectively.
+
+.. note:: If you suspect that you are missing logging entries due to excessive logging speed, you can check the DSF.Dp log message for the amount of missed entries.
+
+.. note:: Logging of the continuously streaming log messages, such as attitude, sensors, etc. can be paused by using the ``RCx_OPTION`` auxiliary function "164" on a transmitter channel. Switching this channel high will pause these messages, but not events, mode changes, warnings, etc. This allows autopilots with limited logging capabilites (ie using Block logging to chip memory and no SD card) to log only when desired during the flight, as during tuning phases or determination of TECs parameters, etc. You can also eliminate unneeded log messages using :ref:`LOG_BITMASK<LOG_BITMASK>` to reduce log size
+
+Replay Logging
+==============
+
+ArduPilot has the ability to log in a fashion that solutions to EKF/AHRS issues can be more easily verified by actually re-playing a log against code changes to see if the solution results in the desired, corrected behavior. This requires that the logs showing the issue to be worked on be made with logging active during disarmed periods (with :ref:`LOG_DISARMED<LOG_DISARMED>` set to a non-zero value, preferably 3) and :ref:`LOG_REPLAY<LOG_REPLAY>` =1 , thereby logging more sensor data than normal.
+
+On-Board DataFlash Logging
+==========================
+
+Some boards do not have SD card interfaces for logging, but rather a limited amount of dataflash, typically 16MB. This saves log files in a manner like a circular buffer. Once the flash is filled, the oldest log file is overwritten with the current logging data. If there is only one file on the flash when space runs out, logging is stopped instead.
+
+A new log file will be started after boot, upon arming, or, immediately if :ref:`LOG_DISARMED<LOG_DISARMED>` is 1.
+
+If :ref:`LOG_FILE_DSRMROT<LOG_FILE_DSRMROT>` is enabled, any disarm will stop logging and a new file started upon the next arm or immediately if :ref:`LOG_DISARMED<LOG_DISARMED>` is 1. Otherwise, logging to the current file will resume on a re-arm. Any reboot stops logging to the current file.
+
+In order to maximize the utility of the limited flash space several things can be done:
+
+- Reduce the things logged using :ref:`LOG_BITMASK<LOG_BITMASK>`.
+- Eliminate logging the EKF3 messages which are voluminous and usually needed only for problem diagnosis using the :ref:`EK3_LOG_LEVEL<EK3_LOG_LEVEL>` parameter.
+- Only log when needed during the flight, ie tuning, gathering data for TECS tuning, etc. using an RC Aux switch set to "164" to start and stop log writes.
+- Reduce the logging rate to a slower rate (below 10Hz) by setting :ref:`LOG_BLK_RATEMAX<LOG_BLK_RATEMAX>` which is by default unrestricted.
+- Download and erase the logs each flight and only log one file for a flight
+
+.. note:: some dataflash chips are particularly slow, leading to gaps in the logs. Setting :ref:`LOG_BLK_RATEMAX<LOG_BLK_RATEMAX>` to a lower value can help eliminate these gaps.
 
 .. _common-downloading-and-analyzing-data-logs-in-mission-planner_downloading_logs_via_mavlink:
 
@@ -127,10 +150,107 @@ press "Cancel" to clear the filter.
 Setting what data you want recorded
 ===================================
 
-The :ref:`LOG_BITMASK <LOG_BITMASK>` parameter controls what messages are recorded in the dataflash
+The :ref:`LOG_BITMASK <LOG_BITMASK>` parameter controls what messages are recorded in the logs. The bits differ between vehicles. The image above is for Copter.
 
 .. image:: ../../../images/mp_dataflash_log_bitmask.png
     :target: ../_images/mp_dataflash_log_bitmask.png
+
+[site wiki="plane"]
+
+Bitmask Table (Plane)
+---------------------
+
+====   =====================      ==============================================================
+Bit     BitMask Name                 What is logged if bit is set
+====   =====================      ==============================================================
+0       Fast Attitude               Attitude @ 25Hz
+1       Medium Attitude             Attitude @ 10Hz
+2       GPS                         GPS
+3       System Performance          CPU,etc. Performance monitoring
+4       Control Tuning              Control Data
+5       Navigation Tuning           Navigation Data
+7       IMU                         IMU (ACC/Gyro) Data
+8       Mission Commands            Mission/GCS Commands
+9       Battery Monitor             Battery Monitors data
+10      Compass                     Compasses Data
+11      TECS                        Speed/Height Controller Data
+12      Camera                      Camera Data (if present)
+13      RC Input & Output           RC input/Servo output data
+14      Rangefinder                 Rangefinder Data (if present)
+19      Raw IMU                     Raw IMU data, unprocessed
+20      Full Rate Attitude          Attitude at :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`
+21      Video Stabilization         GyroFlow Data logs
+====   =====================      ==============================================================
+
+ATTITUDE logging will occur at highest rate of the selections. 
+
+.. note:: the logging of EKF3 data is controlled by the :ref:`EK3_LOG_LEVEL<EK3_LOG_LEVEL>` parameter.
+
+[/site]
+[site wiki="copter"]
+
+Bitmask Table (Copter)
+----------------------
+
+====   =====================      ==============================================================
+Bit     BitMask Name                 What is logged if bit is set
+====   =====================      ==============================================================
+0       Fast Attitude               Attitude @ :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`
+1       Medium Attitude             Attitude @ 10Hz
+2       GPS                         GPS
+3       System Performance          CPU,etc. Performance monitoring
+4       Control Tuning              Control Data
+5       Navigation Tuning           Navigation Data
+6       RC Input                    RC Input data
+7       IMU                         IMU (ACC/Gyro) Data
+8       Mission Commands            Mission/GCS Commands
+9       Battery Monitor             Battery Monitors Data
+10      RC Output                   Servo Output
+11      Optical Flow                Optical Flow Data
+12      PID                         PID controllers Data
+13      Compass                     Compass Data
+15      Camera                      Camera Data
+17      Motors                      Motor Data
+19      Raw IMU                     Raw IMU data, unprocessed
+20      Video Stabilization         Attitude at :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`
+21      Fast harmonic notch         Fast harmonic notch
+====   =====================      ==============================================================
+
+ATTITUDE logging will occur at highest rate of the selections. 
+
+.. note:: the logging of EKF3 data is controlled by the :ref:`EK3_LOG_LEVEL<EK3_LOG_LEVEL>` parameter.
+
+[/site]
+[site wiki="rover"]
+Bitmask Table (Rover)
+---------------------
+
+====   =====================      ==============================================================
+Bit     BitMask Name                 What is logged if bit is set
+====   =====================      ==============================================================
+0       Fast Attitude               Attitude @ 400Hz
+1       Medium Attitude             Attitude @ 10Hz
+2       GPS                         GPS
+3       System Performance          CPU,etc. Performance monitoring
+4       Throttle                    Throttle/Speed Control Data
+5       Navigation Tuning           Navigation Data
+7       IMU                         IMU (ACC/Gyro) Data
+8       Mission Commands            Mission/GCS Commands
+9       Battery Monitor             Battery Monitors Data
+10      Rangefinder                 Rangefinder Data (if present)
+11      Compass                     Compasses Data
+12      Camera                      Camera Data (if present)
+13      Steering                    Steering rates and targets
+14      RC Input & Output           RC input/Servo output data
+19      Raw IMU                     Raw IMU data, unprocessed
+20      Video Stabilization         GyroFlow Data logs
+====   =====================      ==============================================================
+
+ATTITUDE logging will occur at highest rate of the selections. 
+
+.. note:: the logging of EKF3 data is controlled by the :ref:`EK3_LOG_LEVEL<EK3_LOG_LEVEL>` parameter.
+[/site]
+
 
 .. _common-downloading-and-analyzing-data-logs-in-mission-planner_message_details_copter_specific:
 
@@ -792,7 +912,7 @@ When you download the dataflash log files from the autopilot it will
 automatically create a KMZ file (file with extension .kmz). This file
 can be opened with Google Earth (just double click the file) to view
 your flight in Google Earth. Please see the instructions on the
-:ref:`Telemetry Logs Page <common-mission-planner-telemetry-logs_creating_3d_images_of_the_flight_path>`
+:ref:`Telemetry Logs Page <planner:mission-planner-telemetry-logs-creating-3d-images-of-the-flight-path>`
 for additional details.
 
 Video tutorials

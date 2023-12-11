@@ -80,9 +80,11 @@ Automatic calibration
 
 .. note:: The calculation automatically compensates for the effects of altitude on air density.
 
-.. note:: If you do not anticipate that the wind speed will vary rapidly or dramatically during flights, and you are not flying over terrain that would cause bad wind speed estimates (ie alongside steep hills or canyons), you may leave :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` enabled. But since the ratio should not vary once calibrated, doing a calibration flight and then disabling is usually recommended.
+.. note:: If you do not anticipate that the wind speed will vary rapidly or dramatically during flights, and you are not flying over terrain that would cause bad wind speed estimates (ie alongside steep hills or canyons), you may leave :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` enabled. But since the ratio should not vary once calibrated, doing a calibration flight and then disabling is highly recommended.
 
 .. warning:: Do not leave :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` enabled for long stretches of level flight. The calibration requires regular turns to get a good estimate. If flown for long distances without a turn then a very poor airspeed ratio can develop, resulting in very incorrect airspeed reporting, even to the point of causing a crash in some extreme cases.
+
+.. warning:: If you change or replace the pitot tube, reset :ref:`ARSPD_RATIO <ARSPD_RATIO>` (Default = 2.0) and recalibrate the sensor.
 
 .. note:: For those users chasing increased accuracy, between steps 2) and 3), the value of :ref:`BARO_GND_TEMP<BARO_GND_TEMP>`  can be set to the current air temperature at the take-off location. By default the calibration algorithm uses the board temperature at power on as an approximation to the ambient air temperature, but due to solar and electrical heating, this nearly always reads high. This step may be worthwhile if operating in extreme temperature conditions.
 

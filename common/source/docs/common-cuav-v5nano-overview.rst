@@ -67,8 +67,9 @@ Unboxing and Review Video
 Where to Buy
 ============
 
-Order from `here <https://store.cuav.net/index.php>`__. or from `here <https://store.jdrones.com/>`__
-Official retailers are listed `here  <https://leixun.aliexpress.com/>`__.
+Order from `here <https://store.cuav.net/index.php>`__.
+
+Official retailers are listed `here  <https://www.cuav.net/en/resellers/>`__.
 
 Quick Start
 ===========
@@ -115,7 +116,7 @@ Interfaces
 RC Input
 ========
 
-The RC pin on the MAIN/AUX interface and the DSM/SBUS RC pin are tied together, which by default is mappped to a timer input, and can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true full UART connection. Bi-directional protocols which include telemetry, such as SRXL2 and FPort, can also provide telemetry if the correct parameters are set when using these protocols since these pins are also tied to the TX input of UART6 (SERIAL5).
+The RC pin on the MAIN/AUX interface and the DSM/SBUS RC pin are tied together, which by default is mappped to a timer input, and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true full UART connection. Bi-directional protocols which include telemetry, such as CRSF/ELRS, SRXL2, and FPort, can also provide telemetry if the correct parameters are set when using these protocols, if the TX input of UART6 (SERIAL5) is also used.
 
 In order for SRXL2 and FPort to provide telemetry, :ref:`SERIAL5_PROTOCOL<SERIAL5_PROTOCOL>` should be set to "23", enabling the UART6 TX function instead of the timer interrupt, and:
 

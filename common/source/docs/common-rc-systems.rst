@@ -30,12 +30,14 @@ Connecting the Receiver
 
 For all protocols above, ArduPilot auto-detects the protocol of the RC receiver system. However, depending on the protocol and autopilot type, the physical connection to the autopilot may differ.
 
+Some protocols, most notably SRXL2, CRSF, and ELRS, require a full UART connection.
+
+In addition other protocols that also provide telemetry, like FPort, would generally require a bi-directional half-duplex connection in order to obtain telemetry. For these protocols the TX output of the UART should be connected to the serial input of the receiver. It is also possible on F7 and H7 boards to connect to the UART RX input with some additional configuration.
+
 PPM-Sum/SBus/IBus
 -----------------
 
 These receivers are usually connected to the RCin or SBUS input pin on the autopilot.
-
-Some protocols, most noticeably SRXL2, require a bi-directional, half-duplex UART connection. In addition protocols that provide telemetry also generally require a bi-directional half-duplex connection. For these protocols the TX output of the UART should be connected to the serial input of the receiver. It is also possible on F7 and H7 boards to connect to the UART RX input with some additional configuration.
 
 To connect a PPM-Sum receiver or an SBus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk.
 
@@ -45,7 +47,7 @@ To connect a PPM-Sum receiver or an SBus receiver to a Pixhawk, for example, plu
 .. tip::
 
    The parameter to enable the SBus output from the PixHawk style autopilots is
-   :ref:`BRD_SBUS_OUT<BRD_SBUS_OUT>` . This is only to pass SBus externally to other devices, like servos. Not to connect a receiver to RCin or SBus In.
+   :ref:`BRD_SBUS_OUT<BRD_SBUS_OUT>`. This is only to pass SBus externally to other devices, like servos. Not to connect a receiver to RCin or SBus In.
 
 
 DSM/DSM2/DSM-X/SRXL/SUM-D
@@ -62,6 +64,14 @@ FPort/FPort2
 FPort is a bi-directional protocol, using SBus RC in one direction, and serial telemetry in the other. The RC portion can be decoded when attached to an autopilot as if it were SBus, but the embedded telemetry would be lost. See the :ref:`FPort setup documentation<common-FPort-receivers>` for details on connection to one of the autopilots Serial Ports.
 
 
+:ref:`mLRS <common-mlrs-rc>`
+----------------------------
+
+mLRS can provide RC control and MAVLink telemetry. mLRS receivers have an RC output pin that can be configured for either SBUS or CRSF protocol (CRSF would be only RC data). For SBUS you can connect it to the autopilot's RCin pin. For CRSF or SBUS, it can be connected to any autopilot UART RX pin and that port configured for RC protocol. Using CRSF portocol, allows RSSI/LQ information to be delivered to the autopilot.
+
+For optional telemetry a separate TX/RX port is provided on the receiver to be connected to an autopilot MAVLink telemetry serial port. You can omit the single wire RC connection and configure the mLRS receiver to output RC channels over MAVLink if you are not using GCS RC overrides (eg, joystick)
+
+
 SRXL2/CRSF/ELRS
 ---------------
 
@@ -71,7 +81,7 @@ These bi-directional protocols require the use of a Serial Port. See links below
 RC input to Serial Port
 -----------------------
 
-.. note:: ArduPilot firmware releases 4.0 and later, any UART RX input will auto-detect all the protocols (except PPM), if the serial port protocol is set to 23 (for example :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` for the TELEM2 UART is used).
+.. note:: any UART RX input will auto-detect all the protocols (except PPM, or SRXL2/CRSF/ELRS which also require connection of the UART's TX pin), if the serial port protocol is set to 23 (for example, generally, :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` for the TELEM2 UART if used). The exception to this is for SBUS attached to UARTs on F4 based autopilots. This requires an external inverter since SBUS is inverted and F4 autopilots do not have selectable inversion on their UART pins.
 
 .. note:: The serial port baudrate is automatically set and controlled by the firmware when any serial RC protocol is detected.
 
@@ -125,6 +135,8 @@ Below is a table with some commonly  available systems showing these elements. N
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Graupner               |Short |    Yes   |    Medium  |   yes     |  SUM-D       |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
+|mLRS                   |Long  |  Bi-Dir  |  12K - 91K |via LUA    |SBUS/CRSF     |    5   |
++-----------------------+------+----------+------------+-----------+--------------+--------+
 |Multiplex              |Short |     No   |      -     |    -      |   SRXL       |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Spektrum               |Short |    No    |     -      |   -       |  DSM/DSM2    |        |
@@ -138,7 +150,9 @@ Note 2: See :ref:`common-frsky-yaapu`. Future firmware versions will offer the a
 
 Note 3: ArduPilot provides a means to send its telemetry data via CRSF such that it can be displayed on `OpenTX <https://www.open-tx.org/>`__ transmitters using the :ref:`Yaapu Telemetry LUA Script<common-frsky-yaapu>`.
 
-Note 4: ELRS (EpressLRS) is a system that uses the CRSF (TBS Crossfire) RC protocol with several minimizations to simplify the system. It has reduced features but it connected to ArduPilot just like CRSF when it uses CRSF instead of SBUS to communicate to ArduPilot. See `ExpressLRS site <https://www.expresslrs.org/2.0/>` for more information.
+Note 4: ELRS (EpressLRS) is a system that uses the CRSF (TBS Crossfire) RC protocol with several minimizations to simplify the system. It has reduced features but it connects to ArduPilot just like CRSF, when CRSF RXs are attached using a full UART, instead of SBUS protocol to communicate to ArduPilot. See `ExpressLRS site <https://www.expresslrs.org/2.0/>` for more information.
+
+Note 5: The mLRS project is firmware designed specifically to carry both RC and MAVLink. The usable telemetry speed varies by the chosen mode and is managed via RADIO_STATUS flow control. It uses the CRSF (TBS Crossfire) RC protocol on both the receiver and Tx module.  It also integrates full MAVLink telemetry via serial connections on the Tx module and the receiver.
 
 Links to Radio Control Systems
 ==============================
@@ -161,6 +175,7 @@ With integrated telemetry:
     DragonLink <common-dragonlink-rc>
     FRSky <common-frsky-rc>
     Graupner (HOTT) <common-graupner-rc>
+    mLRS <common-mlrs-rc>
     Multiplex (no support in ArduPilot for M-Link telemetry yet) <common-multiplex-rc>
     Spektrum SRXL2 <common-spektrum-rc>
     TBS CRSF <common-tbs-rc>
@@ -184,40 +199,11 @@ FRSky and Spektrum enjoy the largest established bases with Spektrum dominant in
 
 The Jumper T16 and RadioMaster T16 are FRSky Horus-like OpenTX based transmitter clones with multiple RC protocols built-in.
 
-
 PPM encoders
 ============
 
-A `PPM Encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ will
-allow you to use any older style RC receiver with only PWM outputs for each channel. Both the new and previous versions of the *3DR PPM-Sum encoder* (the linked encoder is compatible) are shown
-below:
-
-.. figure:: ../../../images/PPM_cables_-_Copy.jpg
-   :target: ../_images/PPM_cables_-_Copy.jpg
-
-   Newest 3DR PPM-Sum encoder
-
-.. figure:: ../../../images/PPMEncoderDesc.jpg
-   :target: ../_images/PPMEncoderDesc.jpg
-
-   Original 3DR PPM-Sumencoder
-
-There are some downsides of using this encoder:
-
--  The PPM Encoder does require quite a bit of additional wiring to the receiver.
--  It uses quite a bit of power making it likely you will need to plug
-   in your battery while doing radio setup with USB cable in Mission Planner.
--  The encoder also costs as much or more than several of the
-   available PPM-Sum receivers including the FrSky Delta 8 below.
-
-There is addition information :ref:`about connecting and configuring the encoder here <common-ppm-encoder>`.
-
-.. note::
-
-   If you are using this PPM Encoder it is important to know that
-   when you are calibrating your transmitter you may need
-   to hook up your flight battery to the autopilot because the USB port
-   alone can't supply enough power.
+A `PPM Encoder <https://www.amazon.com/s?k=ppm+encoder>`__ will
+allow you to use any older style RC receiver that has only PWM outputs for each channel instead of an SBUS or PPM output. See :ref:`common-ppm-encoders-new` for more information.
 
 .. toctree::
    :hidden:

@@ -4,6 +4,9 @@
 Elevon Planes
 =============
 
+.. image:: ../images/elevons.gif
+
+
 Elevon planes (also known as delta-wings) are popular for their
 simplicity and robustness.
 
@@ -67,14 +70,14 @@ PROVIDING RC INPUT is:
 If your movements are incorrect then you need to adjust which servo
 output is left/right and the reversals of each elevon.
 
-The parameters you should adjust are :ref:`SERVO1_REVERSED<SERVO1_REVERSED>` , :ref:`SERVO2_REVERSED<SERVO2_REVERSED>` ,
-:ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>` and :ref:`SERVO2_FUNCTION<SERVO2_FUNCTION>` .
+The parameters you should adjust are :ref:`SERVO1_REVERSED<SERVO1_REVERSED>`, :ref:`SERVO2_REVERSED<SERVO2_REVERSED>`,
+:ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>` and :ref:`SERVO2_FUNCTION<SERVO2_FUNCTION>`.
 
 If your left elevon on servo 1 is moving the wrong way for both pitch and
 roll corrections, set :ref:`SERVO1_REVERSED<SERVO1_REVERSED>` to 1.
 
 If your left elevon on servo 1 responds correctly to pitch, but incorrectly
-to roll, change the :ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>` .
+to roll, change the :ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>`.
 
 Repeat the servo reversal or function change for the right elevon.
 
@@ -166,5 +169,5 @@ Final Setup
 After completing the above you should move onto the final setup of
 your aircraft.
 
-- :ref:`ESC Calibration <guide-esc-calibration>`
+- :ref:`ESC Calibration <common-esc-calibration>`
 - :ref:`Center of Gravity <guide-center-of-gravity>`

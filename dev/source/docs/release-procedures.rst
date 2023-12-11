@@ -34,21 +34,21 @@ Create a new release branch or switch to an existing release branch
 
 Open a Git Bash terminal in the ardupilot repository.
 
-If this release involves a major or minor version increase (i.e. 3.5 to 3.6) create a new branch in your local ardupilot repository:
+If this release involves a major or minor version increase (i.e. 4.3 to 4.4) create a new branch in your local ardupilot repository:
 
-- ``git checkout -b Copter-3.6`` ("Copter-3.6" should be replaced with the correct major and minor version numbers)
+- ``git checkout -b Copter-4.4`` ("Copter-4.4" should be replaced with the correct major and minor version numbers)
 - ``git push`` to create the new directory in the shared repo
-- click the `"New Project" button <https://github.com/ArduPilot/ardupilot/projects>`__ on the GitHub projects page to create the corresponding "Copter 3.x Backports" project.  This is used to track features to be included in future releases
+- click the `"New Project" button <https://github.com/ArduPilot/ardupilot/projects?type=classic>`__ on the GitHub projects page to create the corresponding "Copter 4.x" project.  This is used to track features to be included in future releases
 
 Alternatively if this release is built on an earlier release branch checkout the branch:
 
-- ``git checkout Copter-3.6`` to switch to the existing release branch ("Copter-3.6" should be replaced with the correct major and minor version numbers)
+- ``git checkout Copter-4.3`` to switch to the existing release branch ("Copter-4.3" should be replaced with the correct major and minor version numbers)
 
 Pull in changes from master
 ---------------------------
 
-Check the `ArduPilot Github Projects <https://github.com/ArduPilot/ardupilot/projects>`__ to determine which PRs and commits should be included in this release.
-For example the `Copter 3.5 Backports project <https://github.com/ArduPilot/ardupilot/projects/4>`__ holds the list of PRs and commits that should be included in the next Copter-3.5 release.
+Check the `ArduPilot Github Projects <https://github.com/ArduPilot/ardupilot/projects?type=classic>`__ to determine which PRs and commits should be included in this release.
+For example the `Copter 4.3 project <https://github.com/ArduPilot/ardupilot/projects/25>`__ holds the list of PRs and commits that should be included in the next Copter-4.3 release.
 
 - ``git reset --hard origin/master``, ``git submodule update --recursive`` can be used to reset the release branch to master if all of master should be included (this is normal for at least the first few beta releases)
 
@@ -73,7 +73,7 @@ Steps 4 to 8 above should be repeated for the ``ArduCopter-beta-heli`` tag to re
 Check the versions are available in Mission Planner
 ---------------------------------------------------
 
-Wait 4hrs to 11hrs for the binaries to be built (check the `Build list <https://firmware.ardupilot.org/Tools/BuildSizes/builds.html>`__ and/or `autotest-output.txt <https://autotest.ardupilot.org/autotest-output.txt>`__ file for status) and then open the Mission Planner's Initial Setup > Install Firmware page and click the "Beta firmwares" link and ensure that the version displayed below each multicopter icon has updated.
+Wait 4hrs to 11hrs for the binaries to be built (check the `Build list <https://firmware.ardupilot.org/Tools/BuildSizes/builds.html>`__, `autotest-output.txt <https://autotest.ardupilot.org/autotest-output.txt>`__  and/or `manifest.json <https://firmware.ardupilot.org/manifest.json>`__ for status) and then open the Mission Planner's Initial Setup > Install Firmware page and click the "Beta firmwares" link and ensure that the version displayed below each multicopter icon has updated.
 
 .. image:: ../images/ReleaseProcedures_MPBetaFirmwares.jpg
     :target: ../_images/ReleaseProcedures_MPBetaFirmwares.jpg
@@ -83,13 +83,13 @@ Announce the release to the beta testers
 
 Let Beta testers know the new version is available by posting on these sites:
 
-- `Discourse's Copter category <https://discuss.ardupilot.org/c/arducopter>`__ (create a new category if required)
+- `Discuss's Copter category <https://discuss.ardupilot.org/c/arducopter>`__ (create a new category if required)
 - `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.  Include the contents of the ReleaseNotes.txt so people know what has changed and a video if possible
 
 Issue Tracking
 --------------
 
-- beta testers should report issues in the appropriate `discourse Copter forum <https://discuss.ardupilot.org/c/arducopter>`__
+- beta testers should report issues in the appropriate `Discuss Copter forum <https://discuss.ardupilot.org/c/arducopter>`__
 - the release manager (Randy) with help from other developers should investigate issues and respond with the cause of the problem
 - confirmed bugs should be added to the `ArduPilot Issues List <https://github.com/ArduPilot/ardupilot/issues>`__.  The issue's label should be set to "Copter" and Projects and Milestone set to the upcoming release if it should be addressed before release.
 
@@ -104,15 +104,15 @@ Releasing a stable version is the same as a beta version except the ``ArduCopter
 
 An additional tag is created including the patch release number:
 
-- ``git tag Copter-3.6.0``
-- ``git push origin Copter-3.6.0``
+- ``git tag Copter-4.3.0``
+- ``git push origin Copter-4.3.0``
 
 Announcements are done in much the same way as beta releases by posting on these sites:
 
-- `Discourse's Copter category <https://discuss.ardupilot.org/c/arducopter>`__ (create a new category if required)
+- `Discuss's Copter category <https://discuss.ardupilot.org/c/arducopter>`__ (create a new category if required)
 - `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.  Include the contents of the ReleaseNotes.txt so people know what has changed and a video if possible
 - `LinkedIn <https://www.linkedin.com>`__
-- Back on Github, `Draft a new release <https://github.com/ArduPilot/ardupilot/releases>`__ and add the Discourse link from above
+- Back on Github, `Draft a new release <https://github.com/ArduPilot/ardupilot/releases>`__ and add the Discuss link from above
 
 Mission Planner will also show a pop-up informing users that a new version is available.
 

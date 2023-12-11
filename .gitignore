@@ -76,6 +76,15 @@
 /antennatracker/source/docs/logmessages.rst
 /blimp/source/docs/logmessages.rst
 
+# Binary features files
+/copter/source/docs/binary-features.rst
+/plane/source/docs/binary-features.rst
+/rover/source/docs/binary-features.rst
+/antennatracker/source/docs/binary-features.rst
+/blimp/source/docs/binary-features.rst
+features.json.gz
+build_options.py
+
 # Javascript files
 /antennatracker/source/_static/useralerts.js
 /copter/source/_static/useralerts.js
@@ -91,4 +100,7 @@
 # Website
 /frontend/blog_posts.json
 /frontend/news_posts.json
+/frontend/source/_static/common_theme_override.css
 
+# Mac file
+.DS_Store

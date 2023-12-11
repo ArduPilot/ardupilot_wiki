@@ -26,7 +26,7 @@ Example: Connecting to Pixhawk
 
 Connect the GPS's 6-pin DF13 connector to the Pixhawk's "GPS" port and
 the compass's 4-pin connector to the I2C port.  Alternatively the
-compass can be first connected through an `I2C splitter <http://store.jdrones.com/Pixhawk_I2C_splitter_p/dstpx4i2c01.htm>`__
+compass can be first connected through an ``I2C splitter``
 if other I2C devices are to be attached.
 
 .. image:: ../../../images/pixhawk_with_dual_gps.jpg
@@ -40,7 +40,7 @@ Details on how to setup and use a 2nd GPS can be found on the :ref:`GPS Blending
 
 .. note::
 
-   ArduPilot supports many attached compasses, but only up to 3 compasses can be used during operation. See :ref:`common-compass-setup-advanced` .
+   ArduPilot supports many attached compasses, but only up to 3 compasses can be used during operation. See :ref:`common-compass-setup-advanced`.
 
 
 Mounting the GPS Module
@@ -62,8 +62,11 @@ When mounting the GPS+Compass module:
    position if appropriate) with a clear view of the sky, as far as
    possible from the motors and ESCs, with the arrow facing forward.
 -  Distance the module from DC power wiring and the batteries by at
-   least 10cm.  Use of `a GPS mast <http://store.jdrones.com/foldable_GPS_and_Compass_antenna_mast_p/mntgps01blk.htm>`__
-   is highly recommended.
+   least 10cm.  Use of a GPS mast is highly recommended.
+
+.. image:: ../../../images/gps-mast.jpg
+
+
 -  Place the module clear of nearby iron containing metallic objects.
    (Use nylon or non magnetic stainless steel hardware and nylon or
    aluminum standoffs to mount the module).

@@ -8,6 +8,8 @@ AIS (for boats)
 
 Rover-4.2.0 (and higher) support `Automatic identification system (AIS) <https://en.wikipedia.org/wiki/Automatic_identification_system>`__ sensors allowing the position of manned boats to be displayed on the ground station
 
+.. note:: Support for this peripheral is also available for Planes and Copters using the `Custom Firwmare Build Server <https://custom.ardupilot.org/>`__ , by creating a firmware build including this feature listed under the IDENT category.
+
 What to Buy
 -----------
 
@@ -39,8 +41,9 @@ dAISy2 Configuration and Testing
 - Connect dAISy2 to your PC using a USB cable
 - Download, install and run a terminal program such as `Putty <https://www.putty.org/>`__
 - Connect to the dAISy2's COM port at 38400 baud and press <ESC> to view the setup menu
-- Type "2" to enable the serial port.  "38400 8N1 serial output (NMEA HS w/ adapter)" should be displayed
-- Type "T" to enable entering a test NMEA message and then copy-paste this message, "!AIVDM,1,1,,A,3815;hUw00wfUdHMPfQ4s8WT0D`r,0*00"
+- Type "3" to enable the serial port.  "38400 8N1 serial output (NMEA HS w/ adapter)" should be displayed
+- Type "#" to save this change and retain this baudrate on boot
+- Type "T" to enable entering a test NMEA message and then copy-paste this message, "!AIVDM,1,1,,A,3815;hUw00wfUdHMPfQ4s8WT0D`r,0*00", or hit "Enter" and use the default location
 
 .. image:: ../../../images/ais-daisy2-console.png
   :target: ../_images/ais-daisy2-console.png
@@ -71,4 +74,3 @@ User Videos
 .. youtube:: pGluWMlIXho
     :width: 100%
 
-[copywiki destination="rover"]

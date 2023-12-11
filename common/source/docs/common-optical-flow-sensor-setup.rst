@@ -1,6 +1,6 @@
 .. _common-optical-flow-sensor-setup:
 
-[copywiki destination="copter,plane"]
+[copywiki destination="copter,plane,rover"]
 
 =====================================
 Optical Flow Sensor Testing and Setup
@@ -17,13 +17,27 @@ With the sensor connected to the autopilot, connect to the autopilot with the Mi
 Calibrating the sensor
 ======================
 #. Connect to your autopilot and ensure that logging while disarmed is enabled by setting :ref:`LOG_DISARMED <copter:LOG_DISARMED>` to 1
+[site wiki="rover"]
+#. Ensure the :ref:`FLOW_HGT_OVR <rover:FLOW_HGT_OVR>` parameter is set to the height of the sensor above ground
+[/site]
+
 #. Find a location with a textured surface and good lighting (natural light or strong incandescent)
+   [site wiki="plane,copter"]
 #. Remove Propellers (safety first)
 #. Power on the vehicle and hold level away from your body and at eye level
 #. Rotate about the vehicle in roll through a range from -15 to +15
    degrees in about a second and then back again. Repeat this 5 to 10
    times. By closing one eye you will be able to keep the centre of the
    sensor stationary against the background while you do the rotation.
+   [/site]
+   [site wiki="rover"]
+#. Power on the vehicle
+#. Rotate the vehicle (keeping it as close to the ground as practical)
+   in roll through a range from -15 to +15
+   degrees in about a second and then back again. Repeat this 5 to 10
+   times. By closing one eye you will be able to keep the centre of the
+   sensor stationary against the background while you do the rotation.
+   [/site]
 #. Repeat  about the vehicle pitch axis.
 #. Download the data flash logs and plot the ``OF.flowX``, ``OF.bodyX``
    and ``IMU.GyrX`` data. It should look something like this:
@@ -48,6 +62,7 @@ Calibrating the sensor
    the :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` parameter is probably set incorrectly or
    you do not have the flow sensor pointing downwards
 
+[site wiki="plane,copter"]
 Range Sensor Check
 ==================
 
@@ -58,6 +73,8 @@ sensor calibration test. Check the following:
 #. It outputs a range on the ground that is 10cm of the expected value
    (remember that measured range will increase when you roll or pitch
    the vehicle because the laser is then measuring on a slant)
+
+[/site]
 
 Pre-Arm checks
 ==============
@@ -72,6 +89,7 @@ and leave all other options checked.
 Because optical flow requires good sonar/range finder data when the
 optical flow is enabled, an additional pre-arm check is enforced.
 
+[site wiki="plane,copter"]
 **While the vehicle is disarmed you should lift the vehicle straight up
 to at least 50cm but no higher than 2m** (if the rangefinder sees a
 distance of over 2m you will need to restart the autopilot).
@@ -111,8 +129,10 @@ Second Flight
    now start experimenting with height changes and moving it around in
    the loiter mode
 
-Setup for Regular Flight
-========================
+[/site]
+
+Setup for Normal Operation
+==========================
 
 For EKF2:
 ---------
@@ -139,6 +159,8 @@ For EKF3:
 
 - Alternatively, GPS can work with OpticalFlow using EKF source switching.
 - See :ref:`GPS / Non-GPS Transitions <common-non-gps-to-gps>` for information on EKF source switching.
+[site wiki="plane,copter"]
+.. note:: When Copters have an optical flow sensor enabled (along with a rangefinder) and it is specified as the only horizontal position source (e.g. ``EK3_SRCx_VELXY``=OpticalFlow and ``EK3_SRCx_POSXY``=None) and the vehicle is flying in a pilot controlled mode requiring a position estimate (ie Loiter or PosHold) the vehicle will not climb above the rangefinder's maximum altitude specified in ``RNGFNDx_MAX_CM``. This is a safety mechanism because otherwise the EKF failsafe would trigger as the vehicle flew out of rangefinder range.
 
 Example Video (Copter-3.4)
 ==========================
@@ -147,6 +169,7 @@ Example Video (Copter-3.4)
     :width: 100%
 
 ---------------------------------
+
 
 Inflight Calibration
 ====================
@@ -206,9 +229,12 @@ An alternative method which avoids the need to land and change EKF3 parameters b
   - :ref:`EK3_SRC2_YAW <EK3_SRC1_YAW>` = 1 (Compass)
   - :ref:`EK3_SRC_OPTIONS <EK3_SRC_OPTIONS>` = 0 (Disable FuseAllVelocities)
 
+
+
 .. note::
 
    To use the inflight calibration EKF3 must be enabled.  This is the default for ArduPilot 4.1 and higher
 
 ..  youtube:: Crx97v1bwWo
     :width: 100%
+[/site]

@@ -64,8 +64,8 @@ Core Team
 MAVProxy is maintained by `Andrew Tridgell <https://github.com/tridge>`_, `Peter Barker <https://github.com/peterbarker>`_ and `Stephen Dade <https://github.com/stephendade>`_
 
 
-Full Table of Contents
-======================
+Table of Contents
+=================
 
 .. toctree::
    :maxdepth: 3
@@ -76,7 +76,6 @@ Full Table of Contents
    docs/analysis/index
    docs/development/index
    docs/common-appendix
-   Full Table of Contents <docs/common-table-of-contents>
 
 
 

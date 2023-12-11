@@ -7,7 +7,7 @@ Mamba F405 MK2 Flight Controller
 .. image:: ../../../images/mamba_f405mk2_board.jpeg
      :target: ../_images/mamba_f405mk2_board.jpeg
 
-The Mamba F405 MK2 is a flight controller produced by
+The Mamba F405 MK2 is an autopilot produced by
 `Diatone <https://www.diatone.us>`__.
 
 .. warning:: This autopilot does not have a barometer. An external barometer can be added, or operation with an alternate altitude sensor, such as GPS for outdoor use or rangefinder for indoor applications is supported, with caveats. In Plane, if GPS is lost, then the user should switch to a non-navigation, non-altitude holding mode immediately. In Copter, operation is allowed using GPS, but not recommended, due to the imprecision in altitude hold modes. Bear in mind if GPS fails and the vehicle is using it for altitude information, a crash can eventually result due to lack of accurate altitude information.See :ref:`common-gps-for-alt` for more information.
@@ -18,8 +18,8 @@ Features
 -  STM32F405RGT6 microcontroller
 -  MPU6000 IMU
 -  AT7456E OSD
--  4 UARTs
--  4 PWM outputs
+-  3 UARTs
+-  5 PWM outputs
 
 Where to buy
 ============
@@ -42,22 +42,22 @@ UART Mapping
 Name    Pin labels Function
 ======= ========== ===================
 SERIAL0            USB
-SERIAL1 PPM / SBUS RC Input (SBUS pin MUST be used for RC input)
-SERIAL3 TX3 / RX3  UART3 (Telem1)
-SERIAL6 TX6 / RX6  UART6 (GPS)
+SERIAL1 PPM / SBUS RC Input (SBUS pin MUST be used for RC input unless alt config used)
+SERIAL3 TX3 / RX3  UART3 (IRC Tramp)
+SERIAL6 TX6 / RX6  UART6 (ESC Telemetry)
 ======= ========== ===================
 
 =============== ================
 BRD_ALT_CONFIG  PPM pin function
 =============== ================
 ALT 0 (default) tied internally to an inverter, cannot be driven from the outside
-ALT 1           RX1/TX1   (NOTE: this feature is untested and unproven!)
+ALT 1           RX1(PPM)/TX1  
 =============== ================
 
 RC Input
 ========
 
-RC input is configured on the SBUS pin which drives the UART1 RX pin via an inverter. It supports all RC unidirectional protocols (ie Not FPORT or other bidirectional protocols with telemetry)
+RC input is configured on the SBUS pin which drives the UART1 RX pin via an inverter. It supports all RC unidirectional protocols (ie Not PPM, FPORT or other bidirectional protocols with telemetry). :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1 enables the RX1 pin for use with bidrectional RX like CRSF.
 
 OSD Support
 ===========
@@ -67,8 +67,8 @@ The Mamba F405 MK2 has an integrated OSD.
 PWM Output
 ==========
 
-The Mamba F405 MK2 supports up to 4 PWM outputs. The pads for motor
-output ESC1 to ESC4 on the above diagram are for the 4 outputs. All 4
+The Mamba F405 MK2 supports up to 5 PWM outputs. The pads for motor
+output ESC1 to ESC4 on the above diagram are for the 4 outputs. The first 4
 outputs support Bi-Directional DShot as well as all PWM types.
 
 All the output channels are in the same group.
@@ -76,6 +76,10 @@ All the output channels are in the same group.
 Channels within the same group need to use the same output rate and protocol. If any
 channel in a group uses DShot then all channels in the group need to use
 DShot.
+
+- PWM1,4 Group1
+- PWM 2,3 Group2
+- PMW5 Group 3
 
 Battery Monitoring
 ==================
@@ -87,9 +91,9 @@ The correct battery setting parameters are:
 
 -  :ref:`BATT_MONITOR<BATT_MONITOR>` = 3
 -  :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 11
--  :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` ~ 12.0
+-  :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.0
 -  :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` =  13
--  :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` ~ 39 with the Diattone 40A ESC sometimes bundled with the autopilot.
+-  :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` = 25 with the Diattone 40A ESC sometimes bundled with the autopilot.
 
 Compass
 =======

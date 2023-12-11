@@ -5,10 +5,7 @@ Mission Commands
 ================
 
 This article describes the mission commands that are supported by Copter, Plane and Rover when switched into Auto mode.
-
-.. warning::
-
-   This is a work-in-progress and has not been full reviewed.  A better list for :ref:`Copter can be found here <copter:mission-command-list>`
+A better list just for :ref:`Copter can be found here <copter:mission-command-list>`
 
 Overview
 ========
@@ -17,22 +14,22 @@ The MAVLink protocol defines a large number of
 `MAV_CMD <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml#L1008>`__
 waypoint command types (sent in a ``MAVLink_mission_item_message``).
 ArduPilot implements handling for the subset of these commands and
-command-parameters that are *most relevant* and meaningful for each of
+command parameters that are *most relevant* and meaningful for each of
 the vehicles. Unsupported commands that are sent to a particular
 autopilot will simply be dropped.
 
 This article lists and describes the commands and command-parameters
 that are supported on each of the vehicle types. Any parameter that is
 "grey" is not supported by the autopilot and will be ignored. They are
-still documented to make it clear which properties that are supported by
+still documented to make it clear which properties are supported by
 the `MAV_CMD protocol <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml#L1008>`__
 are not implemented by the vehicle.
 
-Some commands and command-parameters are not implemented because they
+Some commands and command parameters are not implemented because they
 are not relevant for particular vehicle types (for example
 "MAV_CMD_NAV_TAKEOFF" command makes sense for Plane and Copter but
-not Rover, and the pitch parameter only makes sense for Plane). There
-are also some potentially useful command-parameters that are not handled
+not Rover and the pitch parameter only makes sense for Plane). There
+are also some potentially useful command parameters that are not handled
 because there is a limit to the message size, and a decision has been
 made to prioritize some parameters over others.
 
@@ -54,7 +51,7 @@ missions:
    vehicle’s position (for example, setting the camera trigger distance,
    or setting a servo value).
 -  Condition commands are used to delay DO commands until some condition
-   is met, for example the UAV reaches a certain altitude or distance
+   is met, for example, the UAV reaches a certain altitude or distance
    from the waypoint.
 
 During a mission at most one “Navigation” command and one “Do” or
@@ -85,19 +82,19 @@ information. The information is provided relative to a particular "frame
 of reference", which is specified in the message's :ref:`common-mavlink-mission-command-messages-mav_cmd_navigation_commands_frames` field. Copter and Rover Mission use :ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>` command to set the
 "home position" in the global coordinate frame (MAV_FRAME_GLOBAL),
 `WGS84 coordinate system <https://en.wikipedia.org/wiki/World_Geodetic_System>`__, where
-altitude is relative to mean sea level. All other commands use the
+the altitude is relative to mean sea level. All other commands use the
 MAV_FRAME_GLOBAL_RELATIVE_ALT frame, which uses the same latitude
 and longitude, but sets altitude as relative to the *home position*
 (home altitude = 0).
 
 Plane commands can additionally use MAV_FRAME_GLOBAL_TERRAIN_ALT
 frame of reference. This again has the same WGS84 frame of reference for
-latitude/Longitude, but specifies altitude relative to ground height (as
+latitude/longitude, but specifies altitude relative to ground height (as
 defined in a terrain database).
 
 .. note::
 
-   The other frame types defined in the MAVLink protocol (see
+   The other frame types are defined in the MAVLink protocol (see
    `MAV_FRAME <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml#L795>`__)
    are not supported for mission commands.
 
@@ -123,8 +120,8 @@ by inspecting the command handlers for messages:
    and which parameters are passed to the handler.
 
 The above checks give a very accurate picture of what commands and
-parameters are not supported. They gives a fairly accurate picture of
-what commands/parameters are *likely to be supported*. However this
+parameters are not supported. They give a fairly accurate picture of
+what commands/parameters are *likely to be supported*. However, this
 indication is not guaranteed to be accurate because a command handler
 could just throw away all the information (and we have not fully checked
 all of these).
@@ -132,8 +129,8 @@ all of these).
 In addition to the above checks, we have also merged information from
 the :ref:`Copter Mission Command List <copter:mission-command-list>`.
 
-How to interpret the commands parameters
-----------------------------------------
+How to interpret the command parameters
+---------------------------------------
 
 The parameters for each command are listed in a table. The parameters
 that are "greyed out" are not supported. The command field column (param
@@ -157,7 +154,7 @@ alongside each of the parameters.
 
 Other GCSs (APM Planner 2, Tower etc.) may support some other subset of
 commands/parameters and use alternative names/labels for them. In most
-cases the mapping should be obvious.
+cases, the mapping should be obvious.
 
 [site wiki="copter"]
 Commands supported by Copter
@@ -175,12 +172,17 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_NAV_LOITER_TIME <mav_cmd_nav_loiter_time>`
 - :ref:`MAV_CMD_NAV_SPLINE_WAYPOINT <mav_cmd_nav_spline_waypoint>`
 - :ref:`MAV_CMD_NAV_GUIDED_ENABLE <mav_cmd_nav_guided_enable>` (NAV_GUIDED only)
+- :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
+- :ref:`MAV_CMD_NAV_PAYLOAD_PLACE <mav_cmd_nav_payload_place>`
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
+- :ref:`MAV_CMD_JUMP_TAG<mav_cmd_jump_tag>`
+- :ref:`MAV_CMD_DO_JUMP_TAG <mav_cmd_do_jump_tag>`
 - :ref:`MAV_CMD_MISSION_START <mav_cmd_mission_start>`
 - :ref:`MAV_CMD_COMPONENT_ARM_DISARM <mav_cmd_component_arm_disarm>`
 - :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
 - :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
 - :ref:`MAV_CMD_CONDITION_YAW <mav_cmd_condition_yaw>`
+- :ref:`MAV_CMD_DO_AUX_FUNCTION <mav_cmd_do_aux_function>`
 - :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
 - :ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
 - :ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
@@ -191,12 +193,14 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>`
-- :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
+- :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>` (Gimbal/mount enabled only)
+- :ref:`MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <mav_cmd_do_gimbal_manager_pitchyaw>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_PARACHUTE <mav_cmd_do_parachute>` (Parachute enabled only)
-- :ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>` (EPM enabled only)
+- :ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>`
 - :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>` (NAV_GUIDED only)
-- :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
+- :ref:`MAV_CMD_DO_SET_RESUME_REPEAT_DIST <mav_cmd_do_set_resume_repeat_dist>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
+- :ref:`MAV_CMD_DO_WINCH<mav_cmd_do_winch>`
 - :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
 [/site]
 
@@ -219,8 +223,11 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_NAV_CONTINUE_AND_CHANGE_ALT <mav_cmd_nav_continue_and_change_alt>`
 - :ref:`MAV_CMD_NAV_VTOL_TAKEOFF <mav_cmd_nav_vtol_takeoff>`
 - :ref:`MAV_CMD_NAV_VTOL_LAND <mav_cmd_nav_vtol_land>`
+- :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
+- :ref:`MAV_CMD_NAV_PAYLOAD_PLACE <mav_cmd_nav_payload_place>`
 - :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
 - :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
+- :ref:`MAV_CMD_DO_AUX_FUNCTION<mav_cmd_do_aux_function>`
 - :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
 - :ref:`MAV_CMD_DO_ENGINE_CONTROL <mav_cmd_do_engine_control>`
 - :ref:`MAV_CMD_DO_VTOL_TRANSITION <mav_cmd_do_vtol_transition>`
@@ -233,13 +240,16 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
+- :ref:`MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <mav_cmd_do_gimbal_manager_pitchyaw>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
+- :ref:`MAV_CMD_JUMP_TAG <mav_cmd_jump_tag>`
+- :ref:`MAV_CMD_DO_JUMP_TAG <mav_cmd_do_jump_tag>`
 - :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
 - :ref:`MAV_CMD_DO_INVERTED_FLIGHT <mav_cmd_do_inverted_flight>`
 - :ref:`MAV_CMD_DO_LAND_START <mav_cmd_do_land_start>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
 - :ref:`MAV_CMD_DO_AUTOTUNE_ENABLE <mav_cmd_do_autotune_enable>`
-- :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
+- :ref:`MAV_CMD_DO_SET_RESUME_REPEAT_DIST <mav_cmd_do_set_resume_repeat_dist>`
 - :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
 
 [/site]
@@ -257,9 +267,13 @@ This list of commands was inferred from the command handler in
 
 - :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
 - :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
+- :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
+- :ref:`MAV_CMD_JUMP_TAG<mav_cmd_jump_tag>`
+- :ref:`MAV_CMD_DO_JUMP_TAG <mav_cmd_do_jump_tag>`
 - :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
 - :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
+- :ref:`MAV_CMD_DO_AUX_FUNCTION<mav_cmd_do_aux_function>`
 - :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
 - :ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
 - :ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
@@ -271,7 +285,8 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
 - :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
-- :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
+- :ref:`MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <mav_cmd_do_gimbal_manager_pitchyaw>` (Gimbal/mount enabled only)
+- :ref:`MAV_CMD_DO_SET_RESUME_REPEAT_DIST <mav_cmd_do_set_resume_repeat_dist>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
 - :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
 
@@ -297,16 +312,14 @@ the first waypoint are dropped.
 MAV_CMD_NAV_WAYPOINT
 --------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Navigate to the specified position.
 
 [site wiki="copter" heading="off"]
-Copter
-~~~~~~
 
 The Copter will fly a straight line to the specified latitude, longitude
-and altitude. It will then wait at the point for a specified delay time
+, and altitude. It will then wait at the point for a specified delay time
 and then proceed to the next waypoint.
 
 **Command parameters**
@@ -323,29 +336,27 @@ and then proceed to the next waypoint.
    <tr>
    <td><strong>param1</strong></td>
    <td>Delay</td>
-   <td>Hold time at mission waypoint in decimal seconds - MAX 65535 seconds. (Copter/Rover only)
+   <td>Hold time at mission waypoint in integer seconds - MAX 65535 seconds.
    </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
    <td>
    </td>
-   <td>Acceptance radius in meters (when plain inside the sphere of this radius, the waypoint is considered reached) (Plane only).
+   <td>
    </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
    <td>
    </td>
-   <td>0 to pass through the WP, if > 0 radius in meters to pass by WP.
-   Positive value for clockwise orbit, negative value for counter-clockwise
-   orbit. Allows trajectory control.
+   <td>
    </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
    <td></td>
-   <td>Desired yaw angle at waypoint target.(rotary wing)</td>
+   <td></td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>
@@ -365,36 +376,16 @@ and then proceed to the next waypoint.
    </tbody>
    </table>
 
-Parameters 2-4 are not supported on Copter:
-
--  **Hit Rad** - is supposed to hold the distance (in meters) from the
-   target point that will qualify the waypoint as complete. This command
-   is not supported. Instead the
-   :ref:`WPNAV_RADIUS <copter:WPNAV_RADIUS>`
-   parameter should be used (see "WP Radius" field in screen shot or
-   adjust through the Standard Parameters List).  Even the WPNAV_RADIUS
-   is only used when the waypoint has a Delay. With no delay specified
-   the waypoint will be considered complete when the virtual point that
-   the vehicle is chasing reaches the waypoint. This can be 10m (or
-   more) ahead of the vehicle meaning that the vehicle will turn towards
-   the following waypoint long before it actually reaches the current
-   waypoint
--  **Yaw Ang** - is supposed to hold the resulting yaw angle in degrees
-   (0=north, 90 = east). Instead use a
-   :ref:`MAV_CMD_CONDITION_YAW <mav_cmd_condition_yaw>` command.
 
 **Mission Planner screenshots**
 
 .. figure:: ../../../images/WayPoint.jpg
    :target: ../_images/WayPoint.jpg
 
-   Copter: Mission Planner Settings forWAYPOINT command
+   Copter: Mission Planner Settings for WAYPOINT command
 [/site]
 
 [site wiki="plane" heading="off"]
-
-Plane
-~~~~~
 
 The vehicle will fly to the specified latitude, longitude and altitude.
 The waypoint is considered "complete" when Plane is within the specified
@@ -403,7 +394,7 @@ command.
 
 The protocol additionally provides for the plane to circle the waypoint
 with a specified radius and direction for a specified time (Delay).
-These parameters are not support by Copter.
+These parameters are not supported by Copter.
 
 **Command parameters**
 
@@ -420,16 +411,15 @@ These parameters are not support by Copter.
    <td><strong>param1</strong></td>
    <td>
    </td>
-   <td>Hold time at mission waypoint in decimal seconds (Copter/Rover only).</td>
+   <td></td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>
-   <td></td>
-   <td>Acceptance radius in meters (waypoint is complete when the plane is this close to the waypoint location (Plane only).</td>
+   <td>Acc radius</td>
+   <td>Acceptance radius in meters (waypoint is complete when the plane is this close to the waypoint location</td>
    </tr>
-   <tr style="color: #c0c0c0">
-   <td>param3</td>
-   <td></td>
+   <td><strong>param3</strong></td>
+   <td>Pass by</td>
    <td>0 to pass through the WP, if > 0 radius in meters to pass by WP.
    Positive value for clockwise orbit, negative value for counter-clockwise
    orbit. Allows trajectory control.</td>
@@ -437,7 +427,7 @@ These parameters are not support by Copter.
    <tr style="color: #c0c0c0">
    <td>param4</td>
    <td></td>
-   <td>Desired yaw angle at waypoint target (rotary wing).</td>
+   <td></td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>
@@ -460,10 +450,6 @@ These parameters are not support by Copter.
 
 [site wiki="rover" heading="off"]
 
-Rover
-~~~~~
-
-Change the target horizontal speed and/or the vehicle's throttle.
 
 **Command parameters**
 
@@ -479,25 +465,22 @@ Change the target horizontal speed and/or the vehicle's throttle.
    <tr>
    <td><strong>param1</strong></td>
    <td>Delay</td>
-   <td>Hold time at mission waypoint in decimal seconds - MAX 65535 seconds. (Copter/Rover only)</td>
+   <td>Hold time at mission waypoint in integer seconds - MAX 65535 seconds.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
    <td></td>
-   <td>Acceptance radius in meters (when plain inside the sphere of this radius, the waypoint is considered reached) (Plane only).</td>
+   <td></td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
    <td></td>
-   <td>0 to pass through the WP, if > 0 radius in meters to pass by WP.
-   Positive value for clockwise orbit, negative value for counter-clockwise
-   orbit. Allows trajectory control.
-   </td>
+   <td></td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
    <td></td>
-   <td>Desired yaw angle at waypoint target.(rotary wing)</td>
+   <td></td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>
@@ -527,20 +510,17 @@ MAV_CMD_NAV_TAKEOFF
 
 Supported by: Copter, Plane (not Rover).
 
-Takeoff (either from ground or by hand-launch). It should be the first
+Takeoff (either from the ground or by hand-launch). It should be the first
 command of nearly all Plane and Copter missions.
 [/site]
 
 [site wiki="copter" heading="off"]
 
-Copter
-~~~~~~
-
-The vehicle will climb straight up from it’s current location to the
+The vehicle will climb straight up from its current location to the
 specified altitude. If the mission is begun while the copter is already
 flying, the vehicle will climb straight up to the specified altitude, if
 the vehicle is already above the altitude the command will be ignored
-and the mission will move onto the next command immediately.
+and the mission will move on to the next command immediately.
 
 **Command parameters**
 
@@ -603,15 +583,12 @@ and the mission will move onto the next command immediately.
 
 [site wiki="plane" heading="off"]
 
-Plane
-~~~~~
-
 The plane climbs to the specified altitude (at the specified pitch/climb
 angle) before proceeding to the next waypoint.
 
 The plane is *only* attempting to climb at this point and can be pushed
 off its heading by wind. The pitch value is the *minimum* climb angle
-the when using an airspeed sensor, and *maximum* angle when **not**
+when using an airspeed sensor, and *maximum* angle when **not**
 using an airspeed sensor.
 
 .. raw:: html
@@ -626,7 +603,7 @@ using an airspeed sensor.
    <tr>
    <td><strong>param1</strong></td>
    <td>Pitch Angle</td>
-   <td>Pitch/climb angle in degrees (Plane only).</td>
+   <td>Pitch/climb angle in degrees</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param2</td>
@@ -671,16 +648,12 @@ Supported by:  Plane  (not Copter or Rover). Specifically QuadPlanes.
 
 Takeoff while in VTOL mode.
 
-
-QuadPlane
-~~~~~~~~~
-
-The vehicle will climb straight up at it’s current location to the
+The vehicle will climb straight up from it’s current location to the
 specified altitude as a delta above its current altitude. 
 
-However, if :ref:`Q_OPTIONS<Q_OPTIONS>` bit 3 is set (use altitude reference frames for VTOL takeoff), then the altitude value (in the specified reference frame) will be used for the target altitude, instead of a delta above current altitude. If the command is begun while the vehicle is already flying, the vehicle will climb straight up to the specified altitude, if
+However, if :ref:`Q_OPTIONS<Q_OPTIONS>` bit 3 is set (use altitude reference frames for VTOL takeoff), then the altitude value (in the specified reference frame) will be used for the target altitude, instead of a delta above the current altitude. If the command is begun while the vehicle is already flying, the vehicle will climb straight up to the specified altitude, if
 the vehicle is already above the altitude the command will be ignored
-and the mission will move onto the next command immediately.
+and the mission will move on to the next command immediately.
 
 **Command parameters**
 
@@ -742,14 +715,11 @@ and the mission will move onto the next command immediately.
 MAV_CMD_NAV_LOITER_UNLIM
 ------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Loiter at the specified location for an unlimited amount of time.
 
 [site wiki="copter" heading="off"]
-
-Copter
-~~~~~~
 
 Fly to the specified location and then loiter there indefinitely — where
 loiter means "wait in place" (rather than "circle"). If zero is
@@ -817,14 +787,11 @@ will restart).
 .. figure:: ../../../images/MissionList_LoiterUnlimited.png
    :target: ../_images/MissionList_LoiterUnlimited.png
 
-   Copter: Mission Planner Settings forLOITER_UNLIM command
+   Copter: Mission Planner Settings for LOITER_UNLIM command
 
 [/site]
 
 [site wiki="plane" heading="off"]
-
-Plane
-~~~~~
 
 Fly to the specified location and then loiter there indefinitely — where
 loiter means "circle the waypoint". If zero is specified for a
@@ -863,7 +830,7 @@ will restart).
    <tr>
    <td><strong>param3</strong></td>
    <td>Dir 1=CW</td>
-   <td>Radius around waypoint, in meters. Specify as a positive value to loiter clockwise, negative to move counter-clockwise.</td>
+   <td>Radius around waypoint, in meters. Specify as a positive value to loiter clockwise, as a negative to move counter-clockwise.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param4</strong></td>
@@ -898,12 +865,8 @@ MAV_CMD_NAV_LOITER_TURNS
 
 Supported by: Copter, Plane (not Rover).
 
-Loiter (circle) the specified location for a specified number of turns.
 [/site]
 [site wiki="copter" heading="off"]
-
-Copter
-~~~~~~
 
 Loiter (circle) the specified location for a specified number of turns,
 and then proceed to the next command. If zero is specified for a
@@ -940,7 +903,7 @@ This is the command equivalent of the :ref:`Circle flight mode <copter:circle-mo
    <tr>
    <td><strong>param3</strong></td>
    <td>Radius</td>
-   <td>Empty</td>
+   <td>Loiter radius around the waypoint. Units are in meters. Values over 255 will be in units of 10 meters. and values greater than 2550 will be 2550.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param4</strong></td>
@@ -976,9 +939,6 @@ This is the command equivalent of the :ref:`Circle flight mode <copter:circle-mo
 
 [site wiki="plane" heading="off"]
 
-Plane
-~~~~~
-
 Loiter (circle) the specified location for a specified number of turns
 at the given radius, and then proceed to the next command. If zero is
 specified for a latitude/longitude/altitude parameter then the current
@@ -1009,7 +969,7 @@ location value for the parameter will be used.
    <tr>
    <td><strong>param3</strong></td>
    <td>Radius</td>
-   <td>Radius around waypoint, in meters. Specify as a positive value to loiter clockwise, negative to move counter-clockwise.</td>
+   <td>Radius around waypoint, in meters. Specify as a positive value to loiter clockwise, as a negative to move counter-clockwise.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param4</strong></td>
@@ -1043,22 +1003,16 @@ MAV_CMD_NAV_LOITER_TIME
 -----------------------
 
 Supported by: Copter, Plane, Rover.
+[site wiki="copter,rover" heading="off"]
 
-Loiter at the specified location for a set time (in seconds).
-
-[site wiki="copter" heading="off"]
-
-Copter
-~~~~~~
-
-Fly to the specified location and then loiter there for the specified
+Fly/Drive to the specified location and then loiter there for the specified
 number of seconds — where loiter means "wait in place" (rather than
 "circle"). The timer starts when the waypoint is reached; when it
 expires the waypoint is complete. If zero is specified for a
 latitude/longitude/altitude parameter then the current location value
 for the parameter will be used.
 
-This is the mission equivalent of the :ref:`Loiter flight mode <copter:loiter-mode>`.
+This is the mission equivalent of the :ref:`Loiter flight mode <copter:loiter-mode>` or :ref:`Hold mode <rover:hold-mode>`.
 
 **Command parameters**
 
@@ -1084,7 +1038,7 @@ This is the mission equivalent of the :ref:`Loiter flight mode <copter:loiter-mo
    <tr style="color: #c0c0c0">
    <td><strong>param3</strong></td>
    <td>Dir 1=CW</td>
-   <td>Radius around waypoint, in meters. Specify as a positive value to loiter clockwise, negative to move counter-clockwise.</td>
+   <td>Radius around waypoint, in meters. Specify as a positive value to loiter clockwise, as a negative to move counter-clockwise.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param4</strong></td>
@@ -1114,14 +1068,11 @@ This is the mission equivalent of the :ref:`Loiter flight mode <copter:loiter-mo
 .. figure:: ../../../images/MissionList_LoiterTime.png
    :target: ../_images/MissionList_LoiterTime.png
 
-   Copter: Mission Planner Settings forLOITER_TIME command
+   Copter: Mission Planner Settings for LOITER_TIME command
 
 [/site]
 
 [site wiki="plane" heading="off"]
-
-Plane
-~~~~~
 
 Fly to the specified location and then loiter there for the specified
 number of seconds — where loiter means "circle the waypoint". The timer
@@ -1130,7 +1081,7 @@ complete. If zero is specified for a latitude/longitude/altitude
 parameter then the current location value for the parameter will be
 used. You can also specify the radius and direction for the loiter.
 
-The radius of loiter is set in the ``WP_LOITER_RAD`` parameter.
+The radius of the loiter is set in the ``WP_LOITER_RAD`` parameter.
 
 **Command parameters**
 
@@ -1156,7 +1107,7 @@ The radius of loiter is set in the ``WP_LOITER_RAD`` parameter.
    <tr>
    <td><strong>param3</strong></td>
    <td>Dir 1=CW</td>
-   <td>Radius around waypoint, in meters. Specify as a positive value to loiter clockwise, negative to move counter-clockwise.</td>
+   <td>Radius around waypoint, in meters. Specify as a positive value to loiter clockwise, as a negative to move counter-clockwise.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param4</strong></td>
@@ -1189,7 +1140,7 @@ The radius of loiter is set in the ``WP_LOITER_RAD`` parameter.
 MAV_CMD_NAV_RETURN_TO_LAUNCH
 ----------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Return to the *home location* or the nearest `Rally
 Point <common-rally-points>`__, if closer. The home location is where
@@ -1275,9 +1226,6 @@ command in the mission.
 
 [site wiki="plane" heading="off"]
 
-Plane
-~~~~~
-
 Return to the *home location* (or the nearest :ref:`Rally Point <common-rally-points>` if closer) and then "Loiter" (circle the
 point). The home location is where the vehicle was last armed (or when
 it first gets GPS lock after arming if the vehicle configuration allows
@@ -1347,13 +1295,11 @@ command in the mission.
 
 [site wiki="rover" heading="off"]
 
-Rover
-~~~~~
-
-Return to the *home location* (Rally Points are not supported on Rover).
+Return to the *home location* and HOLD (non-boat) or LOITER (boat).
 
 This command takes no parameters and generally should be the last
-command in the mission.
+command in the mission. Without using this command, end of mission behavior
+is set by the :ref:`MIS_DONE_BEHAVE<MIS_DONE_BEHAVE>` parameter.
 
 **Command parameters**
 
@@ -1415,13 +1361,8 @@ MAV_CMD_NAV_LAND
 ----------------
 
 Supported by: Copter, Plane (not Rover).
-
-Land the vehicle at the current or a specified location.
 [/site]
 [site wiki="copter"]
-
-Copter
-~~~~~~
 
 The copter will land at its current location or proceed at current altitude to the lat/lon
 coordinates provided (if non-zero) and land.  This is the mission equivalent of
@@ -1485,18 +1426,15 @@ the engines.
 .. figure:: ../../../images/MissionList_Land.png
    :target: ../_images/MissionList_Land.png
 
-   Copter: Mission Planner Settings for LANDcommand
+   Copter: Mission Planner Settings for LAND command
 
 [/site]
 
 [site wiki="plane" heading="off"]
 
-Plane
-~~~~~
-
 The plane will land at its current location or proceed to the (non-zero)
 lat/lon coordinates provided beginning with current altitude.  Information on the parameters used to
-control the landing are provided in :ref:`LAND flight mode <plane:land-mode>`.
+control the landing is provided in :ref:`LAND flight mode <plane:land-mode>`.
 
 **Command parameters**
 
@@ -1556,16 +1494,14 @@ Supported by: Plane (not Copter or Rover). Specifically QuadPlanes.
 
 Land the vehicle at the current or a specified location.
 
-QuadPlane
-~~~~~~~~~
+If the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 4 is not set (default),the vehicle will land at its current location or proceed at the current altitude to the lat/lon
+coordinates provided (if non-zero) and land. The ALT parameter is used to determine final landing phase initiation rather than :ref:`Q_LAND_FINAL_ALT<Q_LAND_FINAL_ALT>`. This is the mission equivalent of the :ref:`QLAND flight mode <plane:qland-mode>`.
 
-If the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 4 is not set (default),the vehicle will land at its current location or proceed at current altitude to the lat/lon
-coordinates provided (if non-zero) and land. The ALT parameter is used to determine final landing phase initiation rather than :ref:`Q_LAND_FINAL_ALT<Q_LAND_FINAL_ALT>` . This is the mission equivalent of the :ref:`QLAND flight mode <plane:qland-mode>`.
-
-If the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 4 is set (Use a fixed wind approach), the it will fly in plane mode to the lat/lon coordinates provided (if non-zero), climbing or descending to the altitude set in the NAV_VTOL_LAND waypoint. When it reaches within :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>` of the landing location, it will perform a LOITER_TO_ALT to finish the climb or descent to that ALT set in the waypoint, then, turning into the wind, transition to VTOL mode and proceed to the landing location and land.
+If the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 4 is set (Use a fixed wind spiral approach), the it will fly in plane mode to the lat/lon coordinates provided (if non-zero), climbing or descending to the altitude set in the NAV_VTOL_LAND waypoint. When it reaches within :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>` of the landing location, it will perform a LOITER_TO_ALT to finish the climb or descent to that ALT set in the waypoint, then, turning into the wind, transition to VTOL mode and proceed to the landing location and land.
 
 The motors will disarm on their own once landed
 
+.. note:: param1 of the command acts just like :ref:`Q_OPTIONS<Q_OPTIONS>` bit 4 above, if that option bit is not set. This allows the use of different approaches for different VTOL_LAND commands within the same mission.
 
 **Command parameters**
 
@@ -1578,10 +1514,10 @@ The motors will disarm on their own once landed
    <th>Mission Planner Field</th>
    <th>Description</th>
    </tr>
-   <tr style="color: #c0c0c0">
-   <td>param1</td>
+   <tr>
+   <td><strong>param1</strong></td>
    <td></td>
-   <td>Empty</td>
+   <td>Option:if set to 1,forces FW spiral approach</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param2</td>
@@ -1608,7 +1544,7 @@ The motors will disarm on their own once landed
    <td>Lon</td>
    <td>Longitude</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>param7</strong></td>
    <td>Alt</td>
    <td>Altitude</td>
@@ -1628,14 +1564,7 @@ MAV_CMD_NAV_CONTINUE_AND_CHANGE_ALT
 
 Supported by: Plane (not Copter, Rover).
 
-Continue on the current course and climb/descend to specified altitude.
-Move to the next command when the desired altitude is reached.
-
-
-Plane
-~~~~~
-
-Continue on the current course and climb/descend to specified altitude.
+Continue on the current course and climb/descend to a specified altitude.
 Move to the next command when the desired altitude is reached.
 
 .. note::
@@ -1702,24 +1631,19 @@ Move to the next command when the desired altitude is reached.
 
 .. _mav_cmd_nav_spline_waypoint:
 [site wiki="copter"]
+
 MAV_CMD_NAV_SPLINE_WAYPOINT
 ---------------------------
 
 Supported by: Copter (not Plane or Rover).
 
-Navigate to the target location using a spline path.
-
-
-Copter
-~~~~~~
-
 Fly to the target location using a `Spline path <https://en.wikipedia.org/wiki/Spline_%28mathematics%29>`__, then
-wait (hover) for specified time before proceeding to the next command.
+wait (hover) for a specified time before proceeding to the next command.
 
 The Spline commands take all the same arguments are regular waypoints
 (lat, lon, alt, delay) but when executed the vehicle will fly smooth
 paths (both vertically and horizontally) instead of straight lines. 
-Spline waypoints can be mixed with regular straight line waypoints as
+Spline waypoints can be mixed with regular straight-line waypoints as
 shown in the screenshot below.
 
 **Command parameters**
@@ -1734,12 +1658,12 @@ shown in the screenshot below.
    <th>Description</th>
    </tr>
    <tr>
-   <td>param1</td>
+   <td><strong>param1</strong></td>
    <td>Delay</td>
    <td>Hold time at target, in decimal seconds.</td>
    </tr>
    <tr style="color: #c0c0c0">
-   <td>param2</td>
+   <td><strong>param2</strong></td>
    <td></td>
    <td>Empty</td>
    </tr>
@@ -1754,17 +1678,17 @@ shown in the screenshot below.
    <td>Empty</td>
    </tr>
    <tr>
-   <td>param5</td>
+   <td><strong>param5</strong></td>
    <td>Lat</td>
    <td>Latitude/X of goal</td>
    </tr>
    <tr>
-   <td>param6</td>
+   <td><strong>param6</strong></td>
    <td>Long</td>
    <td>Longitude/Y of goal</td>
    </tr>
    <tr>
-   <td>param7</td>
+   <td><strong>param7</strong></td>
    <td>Alt</td>
    <td>Altitude/Z of goal</td>
    </tr>
@@ -1774,7 +1698,7 @@ shown in the screenshot below.
 .. figure:: ../../../images/MissionList_SplineWaypoint.jpg
    :target: ../_images/MissionList_SplineWaypoint.jpg
 
-   Copter: Mission Planner Settingsfor SPLINE_WAYPOINT command
+   Copter: Mission Planner Settings for SPLINE_WAYPOINT command
 
 The Mission Planner screenshot shows the path the vehicle will take.
 
@@ -1794,17 +1718,11 @@ MAV_CMD_NAV_GUIDED_ENABLE
 
 Supported by: Copter (not Plane or Rover).
 
-Enable ``GUIDED`` mode to hand over control to an external controller/:ref:`common-companion-computers`. The :ref:`common-companion-computers`  would then send MAVLink commands to control the vehicle.
+Enable ``GUIDED`` mode to hand over control to an external controller/:ref:`common-companion-computers`. ee :ref:`Guided Mode <copter:ac2_guidedmode>` for more information. The :ref:`common-companion-computers`  would then send MAVLink commands to control the vehicle.
 
 See also :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>`
 for information on how to apply time, altitude and distance limits on
 the external control.
-
-Copter
-~~~~~~
-
-Enable ``GUIDED`` mode to hand over control to an external controller. See :ref:`Guided Mode <copter:ac2_guidedmode>` for more information.
-
 
 **Command parameters**
 
@@ -1869,17 +1787,11 @@ MAV_CMD_NAV_ALTITUDE_WAIT
 
 Supported by: Plane (not Copter or Rover).
 
-Mission command to wait for an altitude or downwards vertical speed.
-
-
-Plane
-~~~~~
-
-Mission command to wait for an altitude or downwards vertical speed.
-This is meant for high altitude balloon launches, allowing the aircraft
+Mission command to wait for an altitude or downward vertical speed.
+This is meant for high-altitude balloon launches, allowing the aircraft
 to be idle until either an altitude is reached or a negative vertical
 speed is reached (indicating early balloon burst). The wiggle time is
-how often to wiggle the control surfaces to prevent them seizing up.
+how often to wiggle the control surfaces to prevent them from seizing up.
 
 **Command parameters**
 
@@ -1939,12 +1851,9 @@ MAV_CMD_NAV_LOITER_TO_ALT
 
 Supported by: Plane (not Copter or Rover).
 
-Plane
-~~~~~
-
 Loiter while climbing/descending to an altitude.
 
-Begin loiter at the specified Latitude and Longitude. If Lat=Lon=0, then
+Begin loitering at the specified Latitude and Longitude. If Lat=Lon=0, then
 loiter at the current position. Don't consider the navigation command
 complete (don't leave loiter) until the altitude has been reached.
 Additionally, if the Heading Required parameter is non-zero the aircraft
@@ -2001,12 +1910,204 @@ will not leave the loiter until heading toward the next waypoint.
 
 [/site]
 
+.. _mav_cmd_nav_delay:
+
+MAV_CMD_NAV_DELAY
+-----------------
+
+Supported by: Copter, Rover, Plane.
+
+[site wiki="copter,rover"]
+
+After reaching this waypoint, delay the execution of the next mission command
+until either the time in seconds has elapsed or the time entered(in the future) is reached. Execution of the next mission item
+then occurs. For Copters, they will loiter until then, and Rovers hold position.
+
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Time (sec)</td>
+   <td>Delay in seconds (integer)</td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>Time in hours(1-24)</td>
+   <td>Delay until this hour</td>
+   </tr>
+   <tr>
+   <td><strong>param3</strong></td>
+   <td>Time in minutes(0-59)</td>
+   <td>Delay until this minute</td>
+   </tr>
+   <tr>
+   <td><strong>param4</strong></td>
+   <td>Time in seconds (0-59)</td>
+   <td>Delay until this second</td>
+   </tr>
+   <tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
+
+[/site]
+[site wiki="plane"]
+
+After reaching this waypoint, if disarmed, delay the execution of the next mission command
+until the time in seconds has elapsed. This is used in a mission to allow a vehicle to land, disarm for a period (for a payload change for example), and then re-arm, and takeoff to resume the mission. If not disarmed, this mission item is skipped.
+
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Time (sec)</td>
+   <td>Delay in seconds (decimal).</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param2</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
+
+[/site]
+
+.. _mav_cmd_nav_payload_place:
+
+MAV_CMD_NAV_PAYLOAD_PLACE
+-------------------------
+
+Supported by: Copter and Plane.
+
+[site wiki="copter"]
+
+After reaching this waypoint, the vehicle will descend up to the maximum descent value. If the payload has not touched the ground before this limit is reached, the vehicle will climb back up to the waypoint altitude and continue to the next mission item. If it reaches the ground, it will automatically release the gripper if enabled, and optionally wait a period, re-grip, and ascend back to the waypoint altitude and continue the mission. Numerous parameters that control the payload touch-down detection, wait period, etc. are prefaced with ``PLDP_``.
+[/site]
+[site wiki="plane"]
+**QUADPLANE ONLY, fixed wing planes will skip this command**
+After reaching this waypoint, the vehicle will have transitioned to VTOL and will descend up to the maximum descent value. If the vehicle has not touched the ground before this limit is reached, the vehicle will climb back up to the waypoint altitude and continue to the next mission item. If it reaches the ground, it will stop its motors and wait for a LUA script command (see `Package Place LUA applet <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/plane_package_place.lua>`__ ) to send an abort_landing command to ascend back to the waypoint altitude and continue to the next mission item, be sent a disarm command, or the pilot uses the ``RCx_OPTION`` = 173 to send the abort_landing command, instead of via a LUA script.
+This allows the gripper to be commanded to be released, packages replaced, etc.
+[/site]
+[wiki site="copter,plane"]
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Maximum Descent</td>
+   <td>meters</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param2</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr>
+   <tr>
+   <td><strong>param5</strong></td>
+   <td>Lat</td>
+   <td>Latitude.</td>
+   </tr>
+   <tr>
+   <td><strong>param6</strong></td>
+   <td>Long</td>
+   <td>Longitude</td>
+   </tr>
+   <tr>
+   <td><strong>param7</strong></td>
+   <td>Alt</td>
+   <td>Altitude</td>
+   </tr>
+   </tbody>
+   </table>
+
+[/site]
+
 .. _mav_cmd_do_jump:
 
 MAV_CMD_DO_JUMP
 ---------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Jump to the specified command in the mission list. The jump command can
 be repeated either a specified number of times before continuing the
@@ -2083,20 +2184,159 @@ mission, or it can be repeated indefinitely.
 .. figure:: ../../../images/MissionList_DoJump.png
    :target: ../_images/MissionList_DoJump.png
 
-   Copter: Mission Planner Settings for DO_JUMP command
+   Mission Planner Settings for DO_JUMP command
 
 In the example above the vehicle would fly back-and-forth between
 waypoints #1 and #2 a total of 3 times before flying on to waypoint #4.
+
+.. _mav_cmd_jump_tag:
+
+MAV_CMD_JUMP_TAG
+----------------
+
+Supported by: Copter, Plane, Rover.
+
+This is a location marker in the mission command sequence that can be used as a "jump to" location for the :ref:`MAV_CMD_DO_JUMP_TAG<MAV_CMD_DO_JUMP_TAG>` command. The tag id in its parameter field can be any arbitrary number between 1 and 65535.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Tag#</td>
+   <td>The tag number for the DO_JUMP_TAG command.</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param2</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td>
+   </td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td>
+   </td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
+
+.. _mav_cmd_do_jump_tag:
+
+MAV_CMD_DO_JUMP_TAG
+-------------------
+
+Supported by: Copter, Plane, Rover.
+
+Jump to the specified :ref:`MAV_CMD_JUMP_TAG<MAV_CMD_JUMP_TAG>` item in the mission list. The jump tag command can be repeated, either a specified number of times before continuing the mission, or it can be repeated indefinitely.
+
+.. tip::
+
+   Despite the name, this command is really a "NAV\_" command rather
+   than a "DO\_" command. Conditional commands like CONDITION_DELAY don't
+   affect DO_JUMP (it will always perform the jump as soon as it reaches
+   the command).
+
+.. note::
+
+   -  There can be a maximum of 15 jump_tag commands in a mission after which new DO_JUMP_TAG commands are ignored.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>WP#</td>
+   <td>The tag number of the JUMP_TAG item to jump to.</td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>Repeat#</td>
+   <td>Number of times that the DO_JUMP_TAG command will execute before moving to
+   the next sequential command. If the value is zero the next command will
+   execute immediately. A value of -1 will cause the command to repeat
+   indefinitely.
+   </td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td>
+   </td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td>
+   </td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
+
+**Mission planner screenshots**
+
+TODO
 
 Conditional commands
 ====================
 
 Conditional commands control the execution of \_DO\_ commands. For
-example, a conditional command can prevent DO commands executing based
+example, a conditional command can prevent DO commands from executing based
 on a time delay, until the vehicle is at a certain altitude, or at a
 specified distance from the next target position.
 
-A conditional command may not complete before reaching the next
+A conditional command may not be complete before reaching the next
 waypoint. In this case, any unexecuted \_DO\_ commands associated with
 the last waypoint will be skipped.
 
@@ -2105,7 +2345,7 @@ the last waypoint will be skipped.
 MAV_CMD_CONDITION_DELAY
 -----------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 After reaching a waypoint, delay the execution of the next conditional
 "_DO_" command for the specified number of seconds (e.g.
@@ -2172,7 +2412,7 @@ After reaching a waypoint, delay the execution of the next conditional
 .. figure:: ../../../images/MissionList_ConditionDelay.png
    :target: ../_images/MissionList_ConditionDelay.png
 
-   Copter: Mission Planner Settingsfor CONDITION_DELAY command
+   Mission Planner Settings for CONDITION_DELAY command
 
 In the example above, Command #4 (``DO_SET_ROI``) is delayed so that it
 starts 5 seconds after the vehicle has passed Waypoint #2.
@@ -2183,7 +2423,7 @@ starts 5 seconds after the vehicle has passed Waypoint #2.
 MAV_CMD_CONDITION_DISTANCE
 --------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Delays the start of the next "``_DO_``\ " command until the vehicle is
 within the specified number of meters of the next waypoint.
@@ -2247,7 +2487,7 @@ within the specified number of meters of the next waypoint.
 .. figure:: ../../../images/MissionList_ConditionDistance.png
    :target: ../_images/MissionList_ConditionDistance.png
 
-   Copter: Mission PlannerSettings for CONDITION_DISTANCE command
+   Mission PlannerSettings for CONDITION_DISTANCE command
 
 In the example above, Command #4 (``DO_SET_ROI``) is delayed so that it
 only starts once the vehicle is within 50m of waypoint #5.
@@ -2264,17 +2504,11 @@ Supported by: Copter (not Plane or Rover).
 
 Point (yaw) the nose of the vehicle towards a specified heading.
 
-
-Copter
-~~~~~~
-
-Point (yaw) the nose of the vehicle towards a specified heading.
-
 The parameters allow you to specify whether the target direction is
 absolute or relative to the current yaw direction. If the direction is
 relative you can also (separately) specify whether the value is added or
 subtracted from the current heading (note that the vehicle will always
-turn in direction that most quickly gets it to the new target heading
+turn in the direction that most quickly gets it to the new target heading
 regardless of the ``param3`` value).
 
 
@@ -2299,20 +2533,18 @@ regardless of the ``param3`` value).
    </td>
    </tr>
    <td><strong>param2</strong></td>
-   <td>Sec</td>
+   <td>Speed deg/s</td>
    <td>Speed during yaw change:[deg per second].</td>
    </tr>
    <tr>
    <td><strong>param3</strong></td>
    <td>Dir 1=CW</td>
-   <td>If <code>param4=1</code> (relative) only: [-1 = CCW, +1 = CW]. This denotes
-   whether the autopilot should add (CW) or subtract (CCW) the
-   degrees (``param1``) from the current heading to calculate the target heading.
+   <td>Used to denote the direction of rotation to achieve the target angle (-1=CCW, 1=CW, 0=the vehicle will always turn in the direction that most quickly gets it to the new target heading, but only if <code>param4=0</code> (absolute), otherwise 0 = CW).
    </td>
    </tr>
    <tr>
    <td><strong>param4</strong></td>
-   <td>rel/abs</td>
+   <td>0=Abs 1=Rel</td>
    <td>Specify if <code>param1</code> ("Deg" field) is an absolute direction (0) or a relative to the current yaw direction (1).</td>
    </tr>
    <tr style="color: #c0c0c0">
@@ -2339,7 +2571,7 @@ regardless of the ``param3`` value).
 .. figure:: ../../../images/MissionList_ConditionYaw.png
    :target: ../_images/MissionList_ConditionYaw.png
 
-   Copter: Mission Planner Settingsfor CONDITION_YAW command
+   Copter: Mission Planner Settings for CONDITION_YAW command
 
 [/site]
 [site wiki="copter" heading="off"]
@@ -2347,7 +2579,7 @@ regardless of the ``param3`` value).
 Special Commands
 ================
 
-This section is for commands that may be relevant to missions, but but
+This section is for commands that may be relevant to missions, but
 which are not mission commands (part of the mission).
 
 .. _mav_cmd_mission_start:
@@ -2357,16 +2589,11 @@ MAV_CMD_MISSION_START
 
 Supported by: Copter
 
-Start running the current mission. This allows a GCS/companion computer
-to start a mission in AUTO without raising the throttle.
-
-Copter
-~~~~~~
-
 This command can be used to start a mission when the Copter is on the
 ground in AUTO mode. If the vehicle is already in the air then the
 mission will start as soon as you switch into AUTO mode (so this command
-is not needed/ignored).
+is not needed/ignored). This allows a GCS/companion computer
+to start a mission in AUTO without raising the throttle.
 
 .. note::
 
@@ -2392,43 +2619,43 @@ The parameters are all ignored.
    <th>Mission Planner Field</th>
    <th>Description</th>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td><strong>param1</strong></td>
    <td></td>
    <td>The first mission item to run.</td>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
    <td></td>
    <td>The last mission item to run (after this item is run, the mission ends).</td>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td>param3</td>
    <td></td>
    <td></td>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td>param4</td>
    <td></td>
    <td></td>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td>param5</td>
    <td></td>
    <td></td>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td>param6</td>
    <td></td>
    <td></td>
    </tr>
-   
+
    <tr style="color: #c0c0c0">
    <td>param7</td>
    <td></td>
@@ -2442,19 +2669,14 @@ The parameters are all ignored.
 .. figure:: ../../../images/MissionPlanner_MissionStartCommand.jpg
    :target: ../_images/MissionPlanner_MissionStartCommand.jpg
 
-   Mission Planner: MISSION_STARTcommand
+   Mission Planner: MISSION_START command
 
 .. _mav_cmd_component_arm_disarm:
 
 MAV_CMD_COMPONENT_ARM_DISARM
---------------------------------
+----------------------------
 
 Supported by: Copter
-
-Disarm the motors.
-
-Copter
-~~~~~~
 
 Disarm the motors.
 
@@ -2533,14 +2755,7 @@ MAV_CMD_DO_CHANGE_SPEED
 
 Supported by: Copter, Plane, Rover.
 
-Change the target horizontal speed and/or throttle of the vehicle. In most cases, the
-changes will be used until they are explicitly changed again or the
-device is rebooted.
-
 [site wiki="copter" heading="off"]
-
-Copter
-~~~~~~
 
 Sets the desired maximum speed in meters/second (only). Both the
 speed-type and throttle settings are ignored.
@@ -2556,9 +2771,9 @@ speed-type and throttle settings are ignored.
    <th>Mission Planner Field</th>
    <th>Description</th>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>param1</strong></td>
-   <td>speed m/s</td>
+   <td>Type</td>
    <td>Speed type (0,1=Ground Speed,  2=Climb Speed, 3=Descent Speed).</td>
    </tr>
    <tr>
@@ -2569,7 +2784,7 @@ speed-type and throttle settings are ignored.
    <tr style="color: #c0c0c0">
    <td>param3</td>
    <td></td>
-   <td>Trim throttle as a percentage (0-100%). A value of -1 indicates no change.</td>
+   <td>Empty</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
@@ -2599,19 +2814,16 @@ speed-type and throttle settings are ignored.
 .. figure:: ../../../images/MissionList_DoChangeSpeed.png
    :target: ../_images/MissionList_DoChangeSpeed.png
 
-   Copter: Mission Planner Settingsfor DO_CHANGE_SPEED command
+   Copter: Mission Planner Settings for DO_CHANGE_SPEED command
 
 [/site]
 
 [site wiki="plane" heading="off"]
 
-Plane
-~~~~~
-
 Change the target horizontal speed (airspeed or groundspeed) and/or the
-vehicle's throttle. If airspeed, this changes the :ref:`TRIM_ARSPD<TRIM_ARSPD_CM>` parameter during the flight until reboot or mode is changed to CRUISE or FBWB. If groundspeed option is used, then :ref:`MIN_GNDSPD<MIN_GNDSPD_CM>` parameter is changed to this value until rebooted or changed by this command again. If the throttle field is non-zero and equal to or below 100, then the :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` parameter is changed  until reboot or changed by this command again.
+vehicle's throttle. If the airspeed option is selected, this changes the :ref:`TRIM_ARSPD<TRIM_ARSPD_CM>` parameter during the flight until reboot or mode is changed to CRUISE or FBWB. If the groundspeed option is used, then :ref:`MIN_GNDSPD<MIN_GNDSPD_CM>` parameter is changed to this value until rebooted or changed by this command again. If the throttle field is non-zero and equal to or below 100, then the :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` parameter is changed  until reboot or changed by this command again.
 
-.. note:: Speed changes only have effect if an airspeed sensor is present, healthy, and in use. :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` changes impacts only flight with airspeed sensor not in use.
+.. note:: Speed changes only have an effect if an airspeed sensor is present, healthy, and in use. :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` changes impacts only flight with airspeed sensor not in use.
 
 **Command parameters**
 
@@ -2626,18 +2838,18 @@ vehicle's throttle. If airspeed, this changes the :ref:`TRIM_ARSPD<TRIM_ARSPD_CM
    </tr>
    <tr>
    <td><strong>param1</strong></td>
-   <td>Type (0=as 1=gs)</td>
+   <td>Type </td>
    <td>Speed type (0=Airspeed, 1=Ground Speed).</td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>
    <td>Speed (m/s)</td>
-   <td>Target speed (m/s). A value of -1 indicates no change.</td>
+   <td>Target speed (m/s). If airspeed, a value below or above min/max airspeed limits results in no change. a value of -2 uses :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`</td>
    </tr>
    <tr>
    <td><strong>param3</strong></td>
    <td>Throttle(%)</td>
-   <td>Throttle as a percentage (0-100%). A value of -1 indicates no change.</td>
+   <td>Throttle as a percentage (0-100%). A value of 0 or negative indicates no change.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
@@ -2667,9 +2879,6 @@ vehicle's throttle. If airspeed, this changes the :ref:`TRIM_ARSPD<TRIM_ARSPD_CM
 
 [site wiki="rover" heading="off"]
 
-Rover
-~~~~~
-
 Change the target horizontal speed and/or the vehicle's throttle.
 
 
@@ -2692,12 +2901,12 @@ Change the target horizontal speed and/or the vehicle's throttle.
    <tr>
    <td><strong>param2</strong></td>
    <td>Speed (m/s)</td>
-   <td>Target speed (m/s). A value of -1 indicates no change.</td>
+   <td>Target speed (m/s). </td>
    </tr>
-   <tr>
-   <td><strong>param3</strong></td>
-   <td>Throttle(%)</td>
-   <td>Throttle as a percentage (0-100%). A value of -1 indicates no change.</td>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
@@ -2729,10 +2938,10 @@ Change the target horizontal speed and/or the vehicle's throttle.
 MAV_CMD_DO_SET_HOME
 -------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Sets the home location either as the current location or at the location
-specified in the command.For SITL work, altitude input here needs to be with reference to absolute altitude, taking into account SRTM elevation.
+specified in the command. For SITL work, altitude input here needs to be with reference to absolute altitude, taking into account SRTM elevation.
 
 .. note::
 
@@ -2805,14 +3014,14 @@ specified in the command.For SITL work, altitude input here needs to be with ref
 .. figure:: ../../../images/MissionList_DoSetHome.png
    :target: ../_images/MissionList_DoSetHome.png
 
-   Copter: Mission Planner Settings forDO_SET_HOME command
+   Mission Planner Settings for DO_SET_HOME command
 
 .. _mav_cmd_do_set_relay:
 
 MAV_CMD_DO_SET_RELAY
-------------------------
+--------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Set a `Relay <common-relay>`__ pin's voltage high (on) or low (off).
 
@@ -2877,14 +3086,14 @@ Set a `Relay <common-relay>`__ pin's voltage high (on) or low (off).
 .. figure:: ../../../images/MissionPlanner_DO_SET_RELAY.png
    :target: ../_images/MissionPlanner_DO_SET_RELAY.png
 
-   Copter: MissionPlanner Settings for DO_SET_RELAY command
+   MissionPlanner Settings for DO_SET_RELAY command
 
 .. _mav_cmd_do_repeat_relay:
 
 MAV_CMD_DO_REPEAT_RELAY
----------------------------
+-----------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Toggle the :ref:`Relay <common-relay>` pin's voltage/state a specified
 number of times with a given period. Toggling the Relay will turn an off
@@ -2944,17 +3153,17 @@ relay on and vice versa
 .. figure:: ../../../images/MissionList_DoRepeatRelay.png
    :target: ../_images/MissionList_DoRepeatRelay.png
 
-   Copter: Mission Planner Settingsfor DO_RELAY_REPEAT command
+   Mission Planner Settings for DO_RELAY_REPEAT command
 
 In the example above, assuming the relay was off to begin with, it would
-be set high and then after 3 seconds it would be toggled low again.
+be set high and then after 3 seconds, it would be toggled low again.
 
 .. _mav_cmd_do_set_servo:
 
 MAV_CMD_DO_SET_SERVO
 --------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Set a given :ref:`servo pin <common-servo>` output to a specific PWM value.
 
@@ -3012,7 +3221,7 @@ Set a given :ref:`servo pin <common-servo>` output to a specific PWM value.
 .. figure:: ../../../images/MissionList_DoSetServo.png
    :target: ../_images/MissionList_DoSetServo.png
 
-   Copter: Mission Planner Settingsfor DO_SET_SERVO command
+   Mission Planner Settingsfor DO_SET_SERVO command
 
 In the example above, the servo attached to output channel 8 would be
 moved to PWM 1700 (servos generally accept PWM values between 1000 and
@@ -3025,7 +3234,7 @@ moved to PWM 1700 (servos generally accept PWM values between 1000 and
 MAV_CMD_DO_REPEAT_SERVO
 -----------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Cycle a :ref:`servo <common-servo>` PWM output pin between its mid-position
 value and a specified PWM value, for a given number of cycles and with a
@@ -3089,7 +3298,7 @@ the channel (``RC8_TRIM`` in the screenshot below). The default value is
 .. figure:: ../../../images/MissionList_DoRepeatServo.png
    :target: ../_images/MissionList_DoRepeatServo.png
 
-   Copter: Mission Planner Settingsfor DO_REPEAT_SERVO command
+   Mission Planner Settingsfor DO_REPEAT_SERVO command
 
 In the example above, the servo attached to output channel 8 would be
 moved to PWM 1700, then after 4 second, back to mid, after another 4
@@ -3176,9 +3385,6 @@ MAV_CMD_DO_VTOL_TRANSITION
 
 Supported by: Plane (not Copter or Rover).Specifically QuadPlanes.
 
-QuadPlane
-~~~~~~~~~
-
 Mission command to change to/from VTOL and fixed wing mode of flight. The mode is changed based on the first parameter: 3 = change to VTOL flight, 4 = change to fixed wing flight.
 
 **Command parameters**
@@ -3239,16 +3445,7 @@ MAV_CMD_DO_SET_ROI
 ------------------
 
 Supported by: Copter, Plane, Rover.
-
-Sets the region of interest (ROI) for a sensor set or the vehicle
-itself. This can then be used by the vehicles control system to control
-the vehicle attitude and the attitude of various sensors such as
-cameras.
-
 [site wiki="copter" heading="off"]
-
-Copter
-~~~~~~
 
 Points the :ref:`camera gimbal <common-cameras-and-gimbals>` at the "region
 of interest", and also rotates the nose of the vehicle if the
@@ -3315,7 +3512,7 @@ and Alt).
 .. figure:: ../../../images/MissionList_DoSetRoi.jpg
    :target: ../_images/MissionList_DoSetRoi.jpg
 
-   Copter: Mission Planner Settings forDO_SET_ROI command
+   Copter: Mission Planner Settings for DO_SET_ROI command
 
 In the example above the nose and camera would be pointed at the red
 marker.
@@ -3327,16 +3524,13 @@ marker.
 
 [site wiki="plane" heading="off"]
 
-Plane
-~~~~~
-
 Points the :ref:`camera gimbal <common-cameras-and-gimbals>` at the "region
 of interest".
 
 After setting the ROI, the camera will continue to follow it until the
 end of the mission, unless it is changed or cleared by setting another
 ROI. Clearing the ROI is achieved by setting a later DO_SET_ROI
-command with all zero for ``param5``-``param7`` (Lat, Lon and Alt).
+command with all zeros for ``param5``-``param7`` (Lat, Lon and Alt).
 
 
 **Command parameters**
@@ -3394,16 +3588,13 @@ command with all zero for ``param5``-``param7`` (Lat, Lon and Alt).
 
 [site wiki="rover" heading="off"]
 
-Rover
-~~~~~
-
 Points the :ref:`camera gimbal <common-cameras-and-gimbals>` at the "region
 of interest".
 
 After setting the ROI, the camera will continue to follow it until the
 end of the mission, unless it is changed or cleared by setting another
 ROI. Clearing the ROI is achieved by setting a later DO_SET_ROI
-command with all zero for ``param5``-``param7`` (Lat, Lon and Alt).
+command with all zeros for ``param5``-``param7`` (Lat, Lon, and Alt).
 
 **Command parameters**
 
@@ -3463,7 +3654,7 @@ command with all zero for ``param5``-``param7`` (Lat, Lon and Alt).
 MAV_CMD_DO_DIGICAM_CONFIGURE
 ----------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Configure an on-board camera controller system.
 
@@ -3539,13 +3730,13 @@ if one is present.
 MAV_CMD_DO_DIGICAM_CONTROL
 --------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>` once. This command takes no additional arguments.
 
 **Command parameters**
 
-In general if a command field is set to 0 it is ignored.
+In general, if a command field is set to 0 it is ignored.
 
 .. raw:: html
 
@@ -3560,7 +3751,7 @@ In general if a command field is set to 0 it is ignored.
    <td><strong>param1</strong></td>
    <td>On/Off</td>
    <td>Session control (on/off or show/hide lens):
-   
+
    0: Turn off the camera / hide the lens
 
    1: Turn on the camera /Show the lens
@@ -3610,14 +3801,14 @@ In general if a command field is set to 0 it is ignored.
 .. figure:: ../../../images/MissionList_DoDigicamControl.png
    :target: ../_images/MissionList_DoDigicamControl.png
 
-   Copter: Mission PlannerSettings for DO_DIGICAM_CONTROL command.
+   Mission PlannerSettings for DO_DIGICAM_CONTROL command.
 
 .. _mav_cmd_do_mount_control:
 
 MAV_CMD_DO_MOUNT_CONTROL
-----------------------------
+------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Mission command to control a camera or antenna mount.
 
@@ -3680,19 +3871,88 @@ in the mission.
 .. figure:: ../../../images/MissionList_DoMountControl.png
    :target: ../_images/MissionList_DoMountControl.png
 
-   Copter: Mission PlannerSettings for DO_MOUNT_CONTROL command
-   
-   
+   Mission Planner Settings for DO_MOUNT_CONTROL command
+
+.. _mav_cmd_do_gimbal_manager_pitchyaw:
+
+MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW
+----------------------------------
+
+Supported by: All vehicles.
+
+Mission command to move the gimbal to the desired pitch and yaw angles (in degrees).
+
+This command allows you to specify a pitch and yaw angle which
+will be sent to the :ref:`camera gimbal <common-cameras-and-gimbals>`. This
+can be used to point the camera in specific directions at various times
+in the mission. Positive pitch angles are up, Negative are down.  Positive yaw angles are clockwise, negative are counter clockwise.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td></td>
+   <td>Pitch, in degrees.</td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td></td>
+   <td>Yaw, in degrees.</td>
+   </tr>
+   <tr>
+   <td><strong>param3</strong></td>
+   <td></td>
+   <td>PitchRate, in deg/s.</td>
+   </tr>
+   <tr>
+   <td><strong>param4</strong></td>
+   <td></td>
+   <td>YawRate, in deg/s</td>
+   </tr>
+   <tr>
+   <td><strong>param5</strong></td>
+   <td></td>
+   <td>Flags: 0=boddyframe, 16=earthframe</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>reserved</td>
+   </tr>
+   <tr>
+   <td><strong>param7</strong></td>
+   <td></td>
+   <td> Gimbal instance ID</td>
+   </tr>
+   </tbody>
+   </table>
+
+**Mission planner screenshots**
+
+.. figure:: ../../../images/mission-list-do-gimbal-manager-pitchyaw.png
+   :target: ../_images/mission-list-do-gimbal-manager-pitchyaw.png
+
+   Mission PlannerSettings for DO_GIMBAL_MANAGE_PITCHYAW command
+
 .. _mav_cmd_do_set_cam_trigg_dist:
 
 MAV_CMD_DO_SET_CAM_TRIGG_DIST
 -----------------------------
 
-Supported by: Copter, Plane, Rover.
+Supported by: All vehicles.
 
 Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>` at
 regular distance intervals. This command is useful in :ref:`camera survey missions <common-camera-control-and-auto-missions-in-mission-planner>`. 
-To trigger the camera once, immediately after passing the DO command, set param3 to 1.  Trigger immediately parameter3 is available from ArduPilot 4.1 onwards.
+To trigger the camera once, immediately after passing the DO command, set param3 to 1.  Trigger immediately Parameter is available from ArduPilot 4.1 onwards.
 
 .. note::
 
@@ -3751,9 +4011,9 @@ To trigger the camera once, immediately after passing the DO command, set param3
 .. figure:: ../../../images/MissionList_DoSetCamTriggDist.png
    :target: ../_images/MissionList_DoSetCamTriggDist.png
 
-   Copter: Mission PlannerSettings for DO_SET_CAM_TRIGG_DIST command
+   Mission PlannerSettings for DO_SET_CAM_TRIGG_DIST command
 
-The above configuration above will cause the camera shutter to trigger
+The above configuration will cause the camera shutter to trigger
 after every 5m that the vehicle travels.
 
 .. _mav_cmd_do_fence_enable:
@@ -3762,7 +4022,7 @@ after every 5m that the vehicle travels.
 MAV_CMD_DO_FENCE_ENABLE
 -----------------------
 
-Supported by: Plane , Copter, Rover.
+Supported by: All vehicles.
 
 Mission commands to enable the Plane :ref:`GeoFence <plane:geofencing>`, Copter/Rover :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence`.
 
@@ -3816,6 +4076,64 @@ Mission commands to enable the Plane :ref:`GeoFence <plane:geofencing>`, Copter/
    </tbody>
    </table>
 
+.. _mav_cmd_do_aux_function:
+
+MAV_CMD_DO_AUX_FUNCTION
+-----------------------
+
+Supported by: All vehicles.
+
+Mission command to control an :ref:`Auxiliary Function<common-auxiliary-functions>` in the same manner as an RC channel switch.
+
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Aux Function</td>
+   <td>Auxiliary Function code,same as RCx_OPTIONS </td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>Switch Position</td>
+   <td> 0:Low, 1:Mid, 2:High</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
 
 .. _mav_cmd_do_parachute:
 [site wiki="copter" heading="off"]
@@ -3826,11 +4144,6 @@ MAV_CMD_DO_PARACHUTE
 Supported by: Copter (not Plane or Rover).
 
 Mission command to trigger a parachute (if enabled).
-
-Copter
-~~~~~~
-
-Mission command to trigger a parachute.
 
 **Command parameters**
 
@@ -3892,12 +4205,6 @@ MAV_CMD_DO_INVERTED_FLIGHT
 --------------------------
 
 Supported by: Plane (not Copter or Rover).
-
-Change to/from inverted flight.
-
-
-Plane
-~~~~~
 
 Change between normal and :ref:`inverted flight <plane:inverted-flight>`.
 
@@ -3967,13 +4274,6 @@ Supported by: Copter (not Plane or Rover).
 
 Mission command to operate EPM gripper.
 
-
-
-Copter
-~~~~~~
-
-Mission command to operate EPM gripper.
-
 .. note::
 
    The :ref:`instructions for integrating Copter with gripper <common-electro-permanent-magnet-gripper>` are out
@@ -4031,7 +4331,6 @@ Mission command to operate EPM gripper.
    </tbody>
    </table>
 
-
 .. _mav_cmd_do_guided_limits:
 
 MAV_CMD_DO_GUIDED_LIMITS
@@ -4039,13 +4338,7 @@ MAV_CMD_DO_GUIDED_LIMITS
 
 Supported by: Copter (not Plane or Rover).
 
-Set limits for external control.
-
-
-Copter
-~~~~~~
-
-This command sets time, altitude, and distance limits for external
+This command sets the time, altitude, and distance limits for external
 control (GUIDED mode). When these limits are exceeded, control will
 return from GUIDED mode to the mission. Setting any of these parameters
 to zero will remove the associated limit.
@@ -4087,9 +4380,9 @@ to zero will remove the associated limit.
    <tr>
    <td><strong>param4</strong></td>
    <td>max dist</td>
-   <td>Horizontal move limit (in meters, AMSL). If vehicle moves more than this
+   <td>Horizontal move limit (in meters, AMSL). If the vehicle moves more than this
    distance from its location at the moment the command was executed, the
-   command will be aborted and the mission will continue. Use 0 to indicate
+   the command will be aborted and the mission will continue. Use 0 to indicate
    that there is no horizontal limit.
    </td>
    </tr>
@@ -4122,14 +4415,7 @@ MAV_CMD_DO_AUTOTUNE_ENABLE
 
 Supported by: Plane (not Copter or Rover).
 
-Enable/disable autotune.
-(not included in Mission Planner,included in MAVProxy and QGC)
-
-Plane
-~~~~~
-
-This command sets the Plane to
-:ref:`AUTOTUNE <plane:autotune-mode>` mode.
+Enable/disable :ref:`AUTOTUNE <plane:autotune-mode>` mode.
 
 **Command parameters**
 
@@ -4187,11 +4473,7 @@ MAV_CMD_DO_ENGINE_CONTROL
 
 Supported by: Plane (not Copter or Rover).
 
-Stop or start internal combustion engine (ICE)
-
-
-Plane
-~~~~~
+Stop or start the internal combustion engine (ICE)
 
 This command can be used to start or stop the ICE before a NAV_VTOL_LAND or after a NAV_VTOL_TAKEOFF command for a QuadPlane to avoid potential prop strikes in the wind. It should be placed before either of those commands.
 
@@ -4217,7 +4499,7 @@ This command can be used to start or stop the ICE before a NAV_VTOL_LAND or afte
    </tr>
    <td><strong>param3</strong></td>
    <td></td>
-   <td>Altitude in cm. Altitude at which action is taken.</td>
+   <td>Altitude in meters. Altitude at which action is taken.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
@@ -4244,14 +4526,14 @@ This command can be used to start or stop the ICE before a NAV_VTOL_LAND or afte
 
 [/site]
 
-.. _mav_cmd_do_set_resume_dist:
+.. _mav_cmd_do_set_resume_repeat_dist:
 
-MAV_CMD_DO_SET_RESUME_DIST
---------------------------
+MAV_CMD_DO_SET_RESUME_REPEAT_DIST
+---------------------------------
 
-Supported by: Plane, Copter & Rover.
+Supported by: All vehicles.
 
-Set the distance that the mission will be rewound when resuming after an interupt (switching modes).  A full explanation of this feature can be found on the :ref:`Mission Rewind on Resume Page <common-mission-rewind>`.  After setting a rewind distance in a mission, setting the distance to zero will switch off the rewind feature from that point on the mission.
+Set the distance that the mission will be rewound when resuming after an interrupt (switching modes).  A full explanation of this feature can be found on the :ref:`Mission Rewind on Resume Page <common-mission-rewind>`.  After setting a rewind distance in a mission, setting the distance to zero will switch off the rewind feature from that point on the mission.
 
 **Command parameters**
 
@@ -4307,7 +4589,7 @@ Set the distance that the mission will be rewound when resuming after an interup
 MAV_CMD_STORAGE_FORMAT
 ----------------------
 
-Supported by: Plane, Copter & Rover.
+Supported by: All vehicles.
 
 Format SD Card. Useful for vehicles where SD card is inaccessible. Param1 and Param2 must be set to 1.
 
@@ -4359,5 +4641,65 @@ Format SD Card. Useful for vehicles where SD card is inaccessible. Param1 and Pa
    </tr>
    </tbody>
    </table>
+
+[site wiki="copter" heading="off"]
+.. _mav_cmd_do_winch:
+
+MAV_CMD_DO_WINCH
+----------------
+
+Supported by: Copter.
+
+Control Winch operation.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Winch no</td>
+   <td>Not currently used</td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>action</td>
+   <td>0 to relax the winch, 1 for Length control, 2 for Rate control</td>
+   </tr>
+   <tr>
+   <td><strong>param3</strong></td>
+   <td>length</td>
+   <td>should be filled in with the meters of the line to release.  Positive numbers release the line, negative retract the line.  Note "action" should be "1"</td>
+   </tr>
+   <tr>
+   <td><strong>param4</strong></td>
+   <td>rate</td>
+   <td>should be filled in with the speed (in m/s) to release the line.  Positive numbers release the line, negative retract the line.  Note "action" should be "2".</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
+[/site]
 
 [copywiki destination="copter,plane,rover,planner,dev"]

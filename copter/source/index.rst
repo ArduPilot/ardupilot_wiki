@@ -1,23 +1,18 @@
 .. _home:
 
-===========
-Copter Home
-===========
-
+================
+ArduPilot Copter
+================
+   
 ..  raw:: html
-
-    <h1 style="text-align:center;">ArduPilot</h1>
     
     <p style="text-align:center;color:red;"><strong>
-    Success with ArduPilot requires that the 'First Time Setup' and 'First Flight/Drive and Tuning' sections of this documentation be read and followed!</strong>
-    
-.. tip::
-
-    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
-
+    Success with Copter requires that the 'First Time Setup' and 'First Flight and Tuning' sections of this documentation be read and followed!</strong>
+    <br></br>
 
 .. image:: /images/home_copter.jpg
     :target: _images/home_copter.jpg
+
 
 ..  raw:: html
 
@@ -70,7 +65,11 @@ Copter Home
     </td>
     </tr>
     </table>
+    <br></br>
 
+.. tip::
+
+    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
 
 --------------
 
@@ -179,32 +178,19 @@ Getting more info
 .. toctree::
    :hidden:
    
-   Introducing Copter <docs/introduction>
-   AutoPilot Hardware Options <docs/common-autopilots>
+
+   Introduction to Copter <docs/copter-introduction>
+   Choosing an Autopilot <docs/common-autopilots>
+   Ground Control Stations <docs/common-GCS>
    First Time Setup <docs/initial-setup>
    First Flight and Tuning <docs/flying-arducopter>
-   If A Problem Arises <docs/common-when-problems-arise>
-   Flight Features <docs/copter-flight-features>
-   Advanced Configuration <docs/common-advanced-configuration>
-   Mission Planning <docs/common-mission-planning>
-   Logs <docs/common-logs>
-   Peripheral Hardware <docs/common-optional-hardware>
-   OEM Customization <docs/common-oem-customizations>
    Traditional Helicopters <docs/traditional-helicopters>
-   Tricopter <docs/tricopter>
-   SingleCopter and CoaxCopter <docs/singlecopter-and-coaxcopter>
-   HeliQuads <docs/heliquads>
-   SkyRocket <docs/skyrocket>
-   Solo <docs/solo_arducopter_upgrade>
-   Reference Frames <docs/reference-frames>
-   Use-Cases and Applications <docs/common-use-cases-and-applications>
-   Antenna Tracking <docs/common-antenna-tracking>
-   Simulation <docs/common-simulation>
-   Upcoming Features <docs/common-master-features>
+   Mission Planning <docs/common-mission-planning>
+   If A Problem Arises <docs/common-when-problems-arise>
+   Advanced Configuration <docs/common-advanced-configuration>
+   Peripheral Hardware <docs/common-optional-hardware>
+   Additional Information <docs/additional-information>
    User Alerts <docs/common-user-alerts>
-   Appendix <docs/common-appendix>
-   Full Table of Contents <docs/common-table-of-contents>
-
 
 
 .. |TOP_COL_LEFT| replace:: This is the full-featured, :ref:`open-source <dev:license-gplv3>` 

@@ -13,7 +13,7 @@ This is the first release of dedicated firmware for an ArduPilot based Blimp. Wh
 
 The first release is a simple flapping fin Blimp that can be easily constructed and is suitable for indoor use. It is capable of only lifting a few grams besides its own envelope but serves as a good testing and development platform. Follow these instructions to :ref:`build your own <building-a-blimp>`.
 
-It is expected that future development will be done to include the heavier commercially available LTA vehicles or large do-it-ourself version that could lift and utilize electric motors and/or control surfaces and heavier peripherals. Contributors and Partners to this development would be welcomed!
+It is expected that future development will be done to include the heavier commercially available LTA vehicles or large do-it-yourself version that could lift and utilize electric motors and/or control surfaces and heavier peripherals. Contributors and Partners to this development would be welcomed!
 
 5 or 6 channel (minimum) RC transmitter and receiver
 ====================================================
@@ -34,11 +34,11 @@ Autopilot
 Blimp requires an autopilot for control and autonomous flight.
 
 Building an indoor blimp such as this, weight will usually be the primary consideration,
-thus the "single board" type of flight controllers are likely to be most suitable, especially the "mini" (20x20mm or 16x16mm) versions.
+thus the "single board" type of autopilots are likely to be most suitable, especially the "mini" (20x20mm or 16x16mm) versions.
 
-For more options, see the topic :ref:`common-choosing-a-flight-controller` and :ref:`common-autopilots`.
+For more options, see the topic :ref:`Chosing an autopilot <common-autopilots>`.
 
-Four outputs are required for the actuators. Autpilot inputs for RC, telemetery, GPS or Position Sensor, and Compass are also required. Main battery voltage, and perhaps current sensing, are very useful also.
+Four outputs are required for the actuators. Autopilot inputs for RC, telemetry, GPS or Position Sensor, and Compass are also required. Main battery voltage, and perhaps current sensing, are very useful also.
 
 Position and Yaw Sensors
 ========================
@@ -97,9 +97,9 @@ your blimps.
 We recommend the telemetry radio solutions linked from the 
 :ref:`Telemetry Landing Page <common-telemetry-landingpage>`.
 
-A :ref:`Bluetooth<common-mission-planner-bluetooth-connectivity>` , or WIFI adapters, such as :ref:`common-esp32-telemetry` and :ref:`common-esp8266-telemetry`, are lightweight and have enough range for indoor operation.
+A :ref:`Bluetooth<common-mission-planner-bluetooth-connectivity>`, or WIFI adapters, such as :ref:`common-esp32-telemetry` and :ref:`common-esp8266-telemetry`, are lightweight and have enough range for indoor operation.
 
-Remember that if using an RF radio such as, the :ref:`SIK Radio <common-sik-telemetry-radio>` , you will need the version at the permitted frequency for your country - 915 MHz (Americas) and 433
+Remember that if using an RF radio such as, the :ref:`SIK Radio <common-sik-telemetry-radio>`, you will need the version at the permitted frequency for your country - 915 MHz (Americas) and 433
 MHz (Europe).
 
 .. image:: ../../../images/Telemetry_store.jpg
@@ -115,7 +115,6 @@ For control and propulsion, the Flapping Fin Blimp uses micro servos, such as`th
 .. toctree::
     :hidden:
 
-    common-choosing-a-flight-controller
     common-autopilots
     common-choosing-a-ground-station
     common-installing-3dr-ublox-gps-compass-module

@@ -15,7 +15,7 @@ and then performing initial configuration and calibration.
 .. note::
 
    This section assumes that you've already :ref:`chosen and built a frame <choosing-a-frame>` and have
-   :ref:`selected your autopilot <common-choosing-a-flight-controller>`.
+   :ref:`selected your autopilot <common-autopilots>`.
 
 For more information on each of these tasks (sorted by autopilot
 within the sections) see the topics below:

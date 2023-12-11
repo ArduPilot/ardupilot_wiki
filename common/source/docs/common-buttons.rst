@@ -27,7 +27,7 @@ Digital Logic/Analog Voltage Setup
 Digital logic level analog voltages can be used for the button input.  The parameter changes listed below are for the 1st button but the 2nd, 3rd and 4th buttons can be setup similarly, simply replace the "1" in the parameter names with "2", "3" or "4". In order to determine which GPIO pin number corresponds to which autopilot SERVO/MOTOR output pin or dedicated GPIO pin, the autopilot's hwdef.dat file must be consulted. See :ref:`common-gpios` for how to determine this.
 
 - Set :ref:`BTN_PIN1<BTN_PIN1>` to the number of the GPIO connected to the button/switch (e.g. "55" = "AUXOUT6")
-- Set :ref:`BTN_OPTIONS1<BTN_OPTIONS1>` = to "0" to trigger on high logic level voltage (>2.4V) and  be interpreted as a "HIGH" position by the Auxiliary function, "2" to trigger on low logic level voltage (<0.8V) and be interpreted as a "LOW" position by the Auxiliary Function.
+- Set :ref:`BTN_OPTIONS1<BTN_OPTIONS1>` = set to zero (no bits set in bitmask) to trigger on high logic level voltage (>2.4V) and  be interpreted as a "HIGH" position by the Auxiliary function. Setting bit 1 (PWM input) detects PWM above or below 1800/1200us instead of logic level. If PWM is not detected or is less than 800us or above 2200us the button will interpreted as low. Setting bit 2 (Invert) changes HIGH state to be logic low voltage on pin, or below 1200us, if PWM input.
 - Set :ref:`BTN_FUNC1<BTN_FUNC1>` to the :ref:`Auxiliary Function <common-auxiliary-functions>` to be triggered.  If set to 0, no function is to be triggered.
 
 The pin is automatically configured with an internal pullup meaning the button or switch is only required to pull the voltage low.

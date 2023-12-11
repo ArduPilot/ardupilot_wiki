@@ -6,6 +6,10 @@ FLIR Vue Pro
 
 The `FLIR Vue Pro <https://www.flir.com/products/vue-pro/>`__ infrared camera supports MAVLink which allows the camera to add position and attitude information to each image stored on its internal SD card
 
+.. warning::
+
+    The Flir Vue Pro MAVLink interface appears to be broken in the latest firmware from FLIR (ver 3.3.2) meaning pictures taken will not include EXIF data of the vehicle's position and attitude
+
 .. image:: ../../../images/flir-vue-pro.png
     :width: 400px
 
@@ -34,11 +38,13 @@ Set the following parameters on the autopilot (assuming Telem2/Serial2 is used):
 -  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 57 (57200 baud)
 -  :ref:`SR2_POSITION <SR2_POSITION>` = 5 to send the vehicle's position to the camera at 5hz
 
-To allow triggering the taking of pictures during a mission or from a transmitter's auxiliary switch connect the "P3" 3-pin servo connector to the one of the autopilot's servo outputs.  In this example AUX OUT 1 (aka SERVO9) is used.  Then set the following parameters
+To allow triggering the taking of pictures during a mission or from a transmitter's auxiliary switch connect the "P3" 3-pin servo connector to the one of the autopilot's servo outputs.  In this example AUX OUT 1 (aka SERVO9) is used.  Then set the following parameters (Assuming the Camera1 instance):
 
+
+- :ref:`CAM1_TYPE<CAM1_TYPE>` = 1 (Servo)
+- :ref:`CAM1_SERVO_ON<CAM1_SERVO_ON>` = 1900
 - :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` = 10 (Camera Trigger)
-- :ref:`CAM_SERVO_ON <CAM_SERVO_ON>` = 1900
-- `CH8_OPT`` or :ref:`RC8_OPTION <RC8_OPTION>` = 9 (Camera Trigger) to enable triggering from transmitter switch 8
+- :ref:`RC8_OPTION <RC8_OPTION>` = 9 (Camera Trigger) to enable triggering from transmitter switch 8
 
 Configure the Phone
 -------------------

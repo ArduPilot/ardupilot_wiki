@@ -43,7 +43,7 @@ the partner can ask questions, post logs for review or discuss
 features. We also have a shared channel that all partners can access
 to facilitate discussions between partners.
 
-The partners program funds 3 highly qualified support engineers to
+The partners program funds 4 highly qualified support engineers to
 help support the needs of partners. These support engineers are not
 full time, but we do strive to provide very timely support for
 partners and we're proud of our track record of providing top quality
@@ -83,6 +83,7 @@ are:
  - you will be added to the partners mailing list and partners discord channel
  - you will receive an invitation to the monthly partners development call
 
+If you have not received a reply from the Partners Program Coordinator in 2 business days, please check the SPAM folder of your inbox. Otherwise, fill out `this form <https://forms.gle/pZN81bcjiVez7QpN9>`__ and the Coordinator will reach out to you shortly. 
 
 Payment Methods
 ===============
@@ -98,7 +99,7 @@ in a number of ways.
 
 How are collected funds spent?
 ==============================
-Funds are first used to cover fixed costs including servers to host the wiki, forum, autotest and build servers and other running expenses. We also fund 3 part time highly qualified support engineers to help partners with support, and the partners coordinator position to ensure the partners program runs smoothly.
+Funds are first used to cover fixed costs including servers to host the wiki, forum, autotest and build servers and other running expenses. We also fund 3 part time highly qualified support engineers to help partners with support, a Wiki documentation maintainer, and the partners coordinator position to ensure the partners program runs smoothly.
 
 A Funding Committee of 3 members is voted on annually from within the Development Team to oversee and control financial matters.
 

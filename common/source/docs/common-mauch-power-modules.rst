@@ -76,8 +76,8 @@ HS-200-V2 (without any time limit). The maximum burst current is
 There is more information about hall current sensors and these PMs in
 this blog post: `Safety First: 100A & 200A Hall Sensor with BEC for Pixhawk / APM <https://diydrones.com/forum/topics/safety-first-100a-200a-hall-sensor-mit-bec-for-pixhawk-apm>`__.
 
-Connecting the PM to a autopilot board
-======================================
+Connecting the PM to an autopilot board
+=======================================
 
 .. figure:: ../../../images/MauchPowerModuleWiring.jpg
    :target: ../_images/MauchPowerModuleWiring.jpg

@@ -4,6 +4,8 @@
 Electronic Speed Controller (ESC) Calibration
 =============================================
 
+.. note:: This document applies ONLY to Copter setups, not Rover or Plane. Refer to those vehicles setup guides for ESC calibration
+
 Electronic speed controllers are responsible for spinning the motors at
 the speed requested by the autopilot. Most ESCs need to be calibrated so
 that they know the minimum and maximum pwm values that the flight
@@ -26,6 +28,7 @@ fails try the "Manual ESC-by-ESC" method.
 
 -  Refer to :ref:`common-brushless-escs` for setup of the ESC protocol (:ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>`) according to your type of ESC.
 -  Some ESCs like the DJI Opto ESCs do not require and do not support calibration, so skip this page completely.
+-  If you are using a digital esc protocol like DShot or are using CAN ESCs then you also don't need to calibrate them, so skip this page. The section at the end on ESC settings is still applicable, however.
 -  Some brands of ESC do not allow calibration and will not arm unless you adjust your radio's throttle end-points so that the minimum throttle is around 1000 PWM and maximum is around 2000.  Note that if you change the end-points on your TX you must re-do the :ref:`Radio Calibration <common-radio-control-calibration>`.  Alternatively, you may manually set the :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` to 1000 and :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` to 2000.
 -  Begin this procedure only after you have completed the :ref:`radio control calibration <common-radio-control-calibration>` and :ref:`Connect ESCs and motors <connect-escs-and-motors>` part of the :ref:`Autopilot System Assembly Instructions <autopilot-assembly-instructions>`.  Next follow these steps:
 
@@ -74,9 +77,7 @@ All at once calibration
     :width: 400px
     
 #. For Autopilots with a safety switch, push it until the LED displays solid red
-#. The autopilot is now in ESC calibration mode. (On an APM you may
-   notice the red and blue LEDs blinking alternatively on and off like a
-   police car).
+#. The autopilot is now in ESC calibration mode.
 #. Wait for your ESCs to emit the musical tone, the regular number of
    beeps indicating your battery's cell count (i.e. 3 for 3S, 4 for 4S)
    and then an additional two beeps to indicate that the maximum
@@ -119,7 +120,7 @@ Manual ESC-by-ESC Calibration
 #. If you are still having trouble after trying these methods (for
    example, ESCs still beep continuously) try lowering your throttle
    trim 50%.
-#. You can also try powering your APM board via the USB first to boot it
+#. You can also try powering your ArduPilot board via the USB first to boot it
    up before plugging in the LiPo.
 
 Semi Automatic ESC-by-ESC Calibration
@@ -129,7 +130,7 @@ Semi Automatic ESC-by-ESC Calibration
 #. Disconnect the battery and USB cable so the autopilot powers down
 #. Connect the battery
 #. The arming tone will be played (if the vehicle has a buzzer attached)
-#. If using a autopilot with a safety button (like the Pixhawk) press it until it displays solid red
+#. If using an autopilot with a safety button (like the Pixhawk) press it until it displays solid red
 #. You will hear a musical tone then two beeps
 #. A few seconds later you should hear a number of beeps (one for each battery cell you're using) and finally a single long beep indicating the end points have been set and the ESC is calibrated
 #. Disconnect the battery and power up again normally and test as described below
@@ -170,15 +171,18 @@ you will also need to do an additional final automatic calibration).
 Finally, there are a huge number of brands and types of ESCs available
 and some of them do not adhere to the normal programming conventions
 (sometimes even though they claim to) and they may simply not work with
-the APM the way it is now. This is an unfortunately necessary but true
+ArduPilot the way it is now. This is an unfortunately necessary but true
 disclaimer.
 
 Recommended ESC settings as follows:
+====================================
 
-#. Brake: OFF
-#. Battery Type: Ni-xx(NiMH or NiCd)  (even if you're using Li-po
-   batteries this setting reduces the likelihood that the ESC's low
-   voltage detection will turn off the motors)
+#. Brake on stop: OFF
+#. Active braking/"Damped light": ON (Also known as "Non Damped mode" set to OFF)
+#. Low voltage protection: OFF (alternatively, you can set battery type 
+   to Ni-xx(NiMH or NiCd) (even if you're using Li-po batteries because
+   this setting reduces the likelihood that the ESC's low voltage detection 
+   will turn off the motors)
 #. CutOff Mode: Soft-Cut (Default)
 #. CutOff Threshold: Low
 #. Start Mode: Normal (Default)

@@ -10,20 +10,17 @@ ball.  These servo(s) can be controlled either directly by the pilot via
 a switch on the transmitter, through commands sent from the ground
 station or as part of a mission.
 
-Either
-`analog <https://www.amazon.com/Hitec-31055S-HS-55-Economy-Universal/dp/B0006O3WNW>`__
-or `digital servos <https://www.amazon.com/Hitec-RCD-35076S-HS-A5076HB-Digital/dp/B003RXHMNK>`__
-may be used.
+Either analog or digital servos may be used such as provided by ArduPilot partner `Hitec <https://hitecrcd.com/products/servos>`__ or other vendors.
 
-Connecting the servo to a Pixhawk
-=================================
+Connecting the servo to an AutoPilot
+====================================
 
 .. image:: ../../../images/Servo_Pixhawk.jpg
     :target: ../_images/Servo_Pixhawk.jpg
 
 -  If using Copter Connect the servo to AUX OUT 1, 2, 3 or 4.  MAIN OUT
    1 ~ 8 should be avoided because these update at 400hz.
--  If using Plane or Rover where all pins update at 50hz, any unused
+-  If using Plane or Rover where all PWM outputs update at :ref:`SERVO_RATE<SERVO_RATE>`, which defaults to 50hz, any unused
    MAIN OUT or AUX OUT 1 ~ 4 may be used.
 -  AUX OUT 5 and 6 cannot be used by default because they are setup as
    :ref:`Relays <common-relay>`.  These pins can changed to Servo
@@ -32,7 +29,9 @@ Connecting the servo to a Pixhawk
 -  The Pixhawk autopilot cannot provide power to the servos so
    an external BEC or ESC that can provide 5V should be used.
 
-.. note:: in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR outputs to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
+.. note:: in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR output to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
+
+.. note:: when using digital servos they can provide faster and more precise control if a higher update rate for the PWM outputs is used by setting the :ref:`SERVO_RATE<SERVO_RATE>`  to a higher value such as 100Hz, 333Hz or even 400Hz, depending on the capabilities of the servos being used. This value affects **all** PWM outputs, other than motor control outputs, so only do this if all of the servos on the vehicle are digital servos that support this higher rate.
 
 Controlling the servo as a camera shutter
 =========================================

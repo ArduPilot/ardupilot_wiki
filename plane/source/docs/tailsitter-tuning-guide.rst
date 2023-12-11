@@ -6,7 +6,9 @@ Tailsitter VTOL Tuning
 
 Tuning a tailsitter is different than tuning a normal SLT (Separate Lift Thrust) or Tilt-Rotor Quadplane. Those QuadPlanes tune very similarly to a Multirotor since the attitude in VTOL is controlled by motor speed/thrust in all axes (the exception being YAW in vectored yaw tilt rotor QuadPlanes).
 
-In most tailsitters, VTOL attitude is usually controlled by some combination of fixed wing control surfaces and, in some configuratons, motor tilt for pitch and yaw. Roll is usually controlled by motor/speed thrust and can be tuned, and even AutoTuned, like a multicopter and follows the normal :ref:`QuadPlane<quadplane-vtol-tuning>` tuning for that axis.
+In most tailsitters, VTOL attitude is usually controlled by some combination of fixed wing control surfaces and, in some configuratons, motor tilt for pitch and yaw. Roll is usually controlled by motor/speed thrust and can be tuned, and even AutoTuned, like a multicopter and follows the normal :ref:`QuadPlane<quadplane-vtol-tuning>` tuning for that axis. Most of the instructions for tuning setup and phases are the same for Tailsitters, except as described below:
+
+.. _pitch-yaw-tuning:
 
 Pitch and Yaw Tuning
 ====================
@@ -20,7 +22,7 @@ For pitch and yaw, control is provided by the fixed wing control surfaces, somet
 
 .. code:: bash
 
-   PIQP.P+PIQP.P+PIQP.D 
+   PIQP.FF+PIQP.P+PIQP.D 
    X * (PIQP.Act) , where X is 0.2 to start
 
 - Next adjust the X value above until the magnitudes of both plots are about equal. This will now be value for the :ref:`Q_A_RAT_PIT_FF<Q_A_RAT_PIT_FF>` term. Set the :ref:`Q_A_RAT_PIT_I<Q_A_RAT_PIT_I>` term to equal this.
@@ -28,8 +30,8 @@ For pitch and yaw, control is provided by the fixed wing control surfaces, somet
 
 .. code:: bash
 
-   PIQY.P+PIQY.P+PIQY.D   
-   X * (PIQP.Act) , where X is 0.2 to start
+   PIQY.FF+PIQY.P+PIQY.D   
+   X * (PIQY.Act) , where X is 0.2 to start
 
 Below is an image of this where the X value is adjusted until the two curves are the same amplitude, with a value of x = 0.1. This is then set as the :ref:`Q_A_RAT_YAW_FF<Q_A_RAT_YAW_FF>` and :ref:`Q_A_RAT_YAW_I<Q_A_RAT_YAW_I>` values.
 
@@ -44,6 +46,15 @@ Roll Tuning
 ===========
 
 This should allow you to get a reasonable tune for Pitch and Yaw. Roll is tuned like STEP 10 for Roll in :ref:`QuadPlane<quadplane-vtol-tuning>`. Roll axis can even be AutoTuned using QAUTOTUNE, if restricted to only the roll axis using :ref:`Q_AUTOTUNE_AXES<Q_AUTOTUNE_AXES>`.
+
+Using the Quick Tune LUA Applet
+===============================
+
+For systems using an autopilot with sufficient memory to run :ref:`LUA scripts <common-lua-scripts>`, such as F7 and H7 based controllers, this process has been automated via a LUA Applet for non-Tailsitter class QuadPlanes, which do not use FF PID terms in their tuning. However, it still can be used for Tailsitters on those types of axes.
+
+See the `Quick VTOL Tune LUA script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/VTOL-quicktune.md>`__.
+
+For each FF dominated axis, proceed as above to determine the FF term and set the I term equal to it. Then the applet can be run since it will not change the I term during the process if the FF term is non-zero.
 
 VTOL Gain Scaling for Redundant Actuators
 =========================================

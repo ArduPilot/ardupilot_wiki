@@ -7,10 +7,12 @@ Differential Spoilers & Full House Wing
 Usage
 =====
 
+Flying Wing
+-----------
 Normal Flying-wing aircraft uses two control surfaces as Elevons to
 control pitch and roll. In some cases, rudders are added to the winglets
 to control yaw. Differential spoiler takes advantage of splitting
-elevons to 4 independent control surfaces: normal elevon functions are
+elevons into 4 independent control surfaces: normal elevon functions are
 reserved for pitch and roll control, but yaw control is done by using
 two surfaces on one side of the wing to create drag force thus
 controlling yaw motion, emulating rudder control. If calibrated correctly, it will ensure pilot
@@ -23,6 +25,17 @@ has smooth yaw control via rudder input during take-off and landing as well as a
 +-----------------------------------------------+-------------------------------------------------+
 
 The amount of rudder input into the differential spoilers is controlled by :ref:`DSPOILR_RUD_RATE<DSPOILR_RUD_RATE>`. A value of 0, totally disables this feature. The default is 100(%). Conventional planes and gliders will probably want to change this.
+
+Gliders
+-------
+
+Gliders can utilize differential spoilers to implement flaperon style functions but with the option of ``crow`` brakes. Crow operation is shown below, where the inner and outer spoiler panels on a wing side are moved in opposite directions to implement the crow brake, but move together as aileron panels. The inner panel can be extended further than the outer to provide flap effect. This allows aileron, flap, and crow action to be implemented from the two control surfaces on each side of the wing.
+
+.. image:: ../images/crow.jpg
+   :target: ../_images/crow.jpg
+
+.. image:: ../images/diffspoilers.gif
+
 
 Preparation
 ===========
@@ -50,7 +63,9 @@ Now setup your 4 channels using the SERVOn_FUNCTION parameters:
 You can adjust the direction of each servo using the SERVOn_REVERSED
 parameters, and swap channels to get the right movement direction for
 elevons and rudder. Flap operation is also possible. The weighting of flap input to the movement of the outer and inner control surfaces can be set
-using :ref:`DSPOILER_CROW_W1 <DSPOILER_CROW_W1>` and :ref:`DSPOILER_CROW_W2 <DSPOILER_CROW_W2>` respectively.
+using :ref:`DSPOILER_CROW_W1 <DSPOILER_CROW_W1>` and :ref:`DSPOILER_CROW_W2 <DSPOILER_CROW_W2>` respectively. The default value of "0" for each parameter is no flap action.
+
+.. note:: manual flap control is controlled by any RC channel whose ``RCx_OPTION`` is set to "208".
 
 Differential Spoiler options
 ============================
@@ -74,7 +89,7 @@ a bit-mask each, bit enables different functionality.
 |       | flaps first then crow brakes                                                                  |
 +-------+-----------------------------------------------------------------------------------------------+
 
-Defaults are bit 0 and bit 1 set to 1. Conventional planes and gliders will probably want to change bit 0 to "0".
+Defaults are bit 0 and bit 1 set to 1. **Conventional planes and gliders will probably want to change bit 0 to "0".**
 
 :ref:`DSPOILER_AILMTCH <DSPOILER_AILMTCH>` allows the downwards travel of the inner surfaces to be limited 
 to a percentage of their full downwards travel. This only affects the travel when the control surfaces are used 
@@ -90,7 +105,7 @@ travel can still be utilized for full span ailerons. Upwards travel of the contr
 Crow Mode Switch
 ================
 
-If Differential Spoilers are used, setting an ``RCx_OPTIONS`` channel to "87" will allow the control of CROW aileron (outer spoilers) operation. 
+If Differential Spoilers are used, setting an ``RCx_OPTION`` channel to "87" will allow the control of CROW aileron (outer spoilers) operation. 
 
 - HIGH position: No change to CROW deflection amount or use of progressive crow.
 - MIDDLE position: force progressive crow, assuming :ref:`DSPOILER_CROW_W1<DSPOILER_CROW_W1>` is non-zero, even if :ref:`DSPOILER_OPTS <DSPOILER_OPTS>` bit 2 is zero.

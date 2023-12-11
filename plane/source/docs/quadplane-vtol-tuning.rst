@@ -1,15 +1,15 @@
 .. _quadplane-vtol-tuning:
 
-=====================
-QuadPlane VTOL Tuning
-=====================
+==============================
+QuadPlane VTOL Tuning Overview
+==============================
 
 This section provides an overview of how to tune various QuadPlane VTOL parameters.
 
 Overview
 ========
 
-The default parameters controlling the VTOL motors PID loops should allow most frames to initially hover uncontrollably,  if the motors' mechanics are setup and aligned correctly and escs calibrated. 
+The default parameters controlling the VTOL motors PID loops should allow most frames to initially hover controllably, if the motors' mechanics are setup and aligned correctly and escs calibrated. 
 
 The most important parameters controlling stability are the Roll/Pitch/Yaw PIDS. For altitude control, the vertical position controller's parameters and Motor Thrust Scaling parameters, and for navigation/loiter the Loiter controllers's parameters
 
@@ -17,6 +17,8 @@ Normally, it's best to start by tuning the Rate Roll/Pitch P in QSTABILIZE
 mode then move onto tuning altitude hold in QHOVER mode, then QLOITER
 (which often needs no tuning) and finally the waypoint navigation
 performance in Auto mode.
+
+.. note:: for Tailsitter QuadPlanes, some axes need a slightly different PID tuning approach depending on the exact frame configuration used. Be sure to also read :ref:`TailSitter Tuning <tailsitter-tuning-guide>`.
 
 Filter tuning
 =============
@@ -27,7 +29,7 @@ QuadPlanes are often affected by vibration and tuning the various software filte
 Roll/Pitch tuning
 =================
 
-The ``Q_A_RAT_RLL_x`` and ``Q_A_RAT_PIT_x`` Roll/Pitch Rate parameters which convert the desired rotation rate into a motor output are the most important. 
+The ``Q_A_RAT_RLL_x`` and ``Q_A_RAT_PIT_x`` Roll/Pitch Rate parameters which convert the desired rotation rate into a motor output are the most important. If not a tailsitter, then the ``Q_A_RAT_PIT_FF`` will be zero and corrections are dominated by P/I/D. In tailsitters, then the FF terms dominate (Pitch axis only) and P/D are primarily for disturbance correction. For tuning tailsitter pitch axis, see :ref:`pitch-yaw-tuning`.
 
 The :ref:`Q_A_ANG_RLL_P<Q_A_ANG_RLL_P>` and :ref:`Q_A_ANG_PIT_P<Q_A_ANG_PIT_P>` Roll/Pitch P converts the desired angle into a desired rotation rate which is then fed to the Rate controller.
 
@@ -47,7 +49,7 @@ parameters using the :ref:`QAUTOTUNE mode <qautotune-mode>`.
 Yaw Tuning
 ==========
 
-The Angle Yaw and Rate Yaw parameters control the yaw response. With QuadPlanes, these often need tuning to get the desired YAW response, since configurations vary widely.
+The Angle Yaw and Rate Yaw parameters control the yaw response. With QuadPlanes, these often need tuning to get the desired YAW response, since configurations vary widely. In non-tailsitters, then the ``Q_A_RAT_YAW_FF`` will be zero and corrections are dominated by P/I/D. But in tailsitters, the FF term dominates and P/D are primarily for disturbance correction. For tuning a tailsitter yaw axis, see :ref:`pitch-yaw-tuning`.
 
 Similar to roll and pitch, if either :ref:`Q_A_RAT_YAW_P<Q_A_RAT_YAW_P>` or :ref:`Q_A_ANG_YAW_P<Q_A_RAT_YAW_P>` is too high the QuadPlane's heading will oscillate. If they are too low, the QuadPlane may be unable to maintain its heading.
 
@@ -64,7 +66,7 @@ The :ref:`Q_P_POSZ_P<Q_P_POSZ_P>` parameter is used to convert the altitude erro
 
 The :ref:`Q_P_VELZ_P<Q_P_VELZ_P>` (which normally requires no tuning) converts the desired climb or descent rate into a desired acceleration up or down.
 
-The :ref:`Q_P_ACCZ_P<Q_P_ACCZ_P>` ,:ref:`Q_P_ACCZ_I<Q_P_ACCZ_I>` ,:ref:`Q_P_ACCZ_D<Q_P_ACCZ_D>`   PID gains convert the acceleration error (i.e the difference between the desired acceleration and the actual acceleration) into a motor output. The 1:2 ratio of P to I (i.e. I is twice the size of P) should be maintained if you modify these parameters. These values should never be increased but for very powerful QuadPlane VTOL motors you may get better response by reducing both by 50% (i.e P to 0.5, I to 1.0).
+The :ref:`Q_P_ACCZ_P<Q_P_ACCZ_P>`, :ref:`Q_P_ACCZ_I<Q_P_ACCZ_I>`, and :ref:`Q_P_ACCZ_D<Q_P_ACCZ_D>` PID gains convert the acceleration error (i.e the difference between the desired acceleration and the actual acceleration) into a motor output. The 1:2 ratio of P to I (i.e. I is twice the size of P) should be maintained if you modify these parameters. These values should never be increased but for very powerful QuadPlane VTOL motors you may get better response by reducing both by 50% (i.e P to 0.5, I to 1.0).
 
 Loiter Tuning
 =============

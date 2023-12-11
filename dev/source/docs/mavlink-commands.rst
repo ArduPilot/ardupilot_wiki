@@ -18,8 +18,11 @@ ArduPilot supports the MAVLink protocol for communication with Ground Stations a
     Get and Set Home and/or EKF origin <mavlink-get-set-home-and-origin>
     Arm and Disarm <mavlink-arming-and-disarming>
     Get and Set FlightMode <mavlink-get-set-flightmode>
+    Camera Commands <mavlink-camera>
+    Gimbal / Camera Mount <mavlink-gimbal-mount>
     Mission Upload/Download <mavlink-mission-upload-download>
     Move a Servo <mavlink-move-servo>
+    Winch Commands <mavlink-winch>
     MAVLink Routing <mavlink-routing-in-ardupilot>
     Other Commands <mavlink-other-commands>
 

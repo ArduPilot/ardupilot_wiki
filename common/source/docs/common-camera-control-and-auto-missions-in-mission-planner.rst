@@ -29,6 +29,7 @@ Camera commands
    intervals. This is most commonly used for supporting area surveys.
 -  ``DO_DIGICAM_CONTROL`` — Trigger the camera shutter once every time
    this command is called.
+-  ``DO_AUX_FUNCTION`` — allows any :ref:`auxiliary function <common-auxiliary-functions>` to be executed from within a mission without setting up an auxiliary switch.  This includes camera start recording, camera zoom, camera manual focus and camera auto focus.
 
 Camera gimbal commands
 ----------------------
@@ -38,6 +39,7 @@ roll) or aim it at a specific region of interest (ROI):
 
 -  ``DO_SET_ROI`` — Target the camera towards a specified region of
    interest (position, including altitude).
+-  ``DO_GIMBAL_MANAGER_PITCHYAW`` — Move the gimbal to the desired pitch and yaw angles (in degrees).  Positive pitch angles are up, Negative are down.  Positive yaw angles are clockwise, negative are counter clockwise.   If the "Flags" field is "0" the yaw angle is in "body frame" (e.g. 0 is forward).  If "Flags" is "16" the yaw angle is in "earth frame" (e.g. 0 is North).
 -  ``DO_MOUNT_CONTROL`` — Position the gimbal with the specified roll,
    pitch and yaw.
 

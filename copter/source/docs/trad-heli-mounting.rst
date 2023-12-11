@@ -5,7 +5,9 @@ Traditional Helicopter – Mounting the Autopilot to the Frame
 ============================================================
 
 On larger helicopters of approximately 550-class or larger the autopilot has been mounted in various locations such as on the FBL unit tray, on
-top of the tail drive case, or even on the side of the frame (very popular).
+top of the tail drive case, or even on the side of the frame (very popular). The video below discusses some considerations when mounting your autopilot on a helicopter.
+
+.. youtube:: sJEO4CUhwjs
 
 
 Below is a possible method to mount a full-size autopilot on a smaller sized

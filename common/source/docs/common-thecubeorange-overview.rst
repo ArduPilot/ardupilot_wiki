@@ -1,8 +1,8 @@
 .. _common-thecubeorange-overview:
 
-=====================================
-The Cube Orange With ADSB-In Overview
-=====================================
+=======================================
+The Cube Orange/+ With ADSB-In Overview
+=======================================
 
 .. image:: ../../../images/Cube_orange_adsb.jpg
     :target: ../_images/Cube_orange_adsb.jpg
@@ -12,7 +12,6 @@ System Features
 ===============
 
 The Cube Orange autopilot is the latest and most powerful model in the Cubepilot ecosystem. Designed for hobby users, commercial system integrators and UAS manufacturers the Cube Orange autopilot is part of a wide ecosystem of autopilot modules and carrier boards. All Cube models are compatible with all carriers which allows users to choose an off the shelf carrier board that best suits their needs. System designers are able to integrate the Cube directly into their designs via published carrier board specifications. 
-
 
 The Cube Orange is available as a standalone module or as a package with a new updated version of the original carrier board that now includes an integrated ADS-B In module from uAvionics. 
 
@@ -27,8 +26,8 @@ The new ADS-B carrier boards overall footprint is identical to the standard vers
 
 All other specification and external connections remain identical to the original board as listed on the Cube Black page.
 
-Cube Orange Features
-====================
+Cube Orange/+ Features
+======================
 
 -  Faster H7 SOC with 1MB ram
 -  Upgraded triple redundant IMU sensors for extra redundancy
@@ -42,16 +41,24 @@ Specifications
 
 -  **Processor**
 
-   -  32bit ARM® STM32H753 Cortex®-M7（with DP-FPU）
+   -  32bit ARM® STM32H753 Cortex®-M7（with DP-FPU; Cube Orange+ uses ARM® STM32H757
    -  400 Mhz/1 MB RAM/2 MB Flash
    -  32 bit STM32F103 failsafe co-processor
 
 -  **Sensors**
 
-   - Three redundant IMUs (Accelerometers/Gyroscopes), Two Barometers, One Magnetometer
-   -  ICM 20649 integrated accelerometer / gyro, MS5611 barometer on base board
-   -  InvenSense ICM20602 IMU,ICM20948 IMU/MAG, MS5611 barometer on temperature controlled, vibration isolated board
+   -  Three redundant IMUs (Accelerometers/Gyroscopes), Two Barometers, One Magnetometer
    -  All sensors connected via SPI.
+   -  ICM 20649 integrated accelerometer / gyro, MS5611 barometer on base board
+
+   CubeOrange:
+   -  InvenSense ICM20602 IMU,ICM20948 IMU/MAG, MS5611 barometer on temperature controlled, vibration isolated board
+
+   CubeOrange+:
+   -  Invensense ICM42688 IMU, ICM20948 IMU/MAG, MS5611 barometer on temperature controlled, vibration isolated board
+
+   -  AK099916 MAG
+
 
 -  **Power**
 
@@ -81,7 +88,392 @@ Specifications
 The Cube connector pin assignments
 ==================================
 
-All other specification and external connections remain identical to the original board as listed on the Cube Black page.
+
+**TELEM1, TELEM2 ports**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin </th>
+   <th>Signal </th>
+   <th>Volt </th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>TX (OUT)</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>RX (IN)</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>CTS</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>5 (blk)</td>
+   <td>RTS</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>6 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+**GPS1 port**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>TX (OUT)</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>RX (IN)</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>SCL I2C2</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>5 (blk)</td>
+   <td>SDA I2C2</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>6 (blk)</td>
+   <td>Button</td>
+   <td>GND</td>
+   </tr>
+   <tr>
+   <td>7 (blk)</td>
+   <td>button LED</td>
+   <td>GND</td>
+   </tr>
+   <tr>
+   <td>8 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+
+**GPS2 port**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>TX (OUT)</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>RX (IN)</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>SCL I2C1</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>5 (blk)</td>
+   <td>SDA I2C1</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>6 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+**ADC**
+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>ADC IN</td>
+   <td>6.6Vmax,pin 8</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+**I2C2**
+
+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>SCL</td>
+   <td>+3.3 (pullups)</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>SDA</td>
+   <td>+3.3 (pullups)</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+**CAN1&2**
+
+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>CAN_H</td>
+   <td>+12V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>CAN_L</td>
+   <td>+12V</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+**POWER1**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>CURRENT</td>
+   <td>up to +3.3V,pin 15</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>VOLTAGE</td>
+   <td>up to +3.3V,pin 14</td>
+   </tr>
+   <td>5 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   <td>6 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+**POWER2**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>CURRENT</td>
+   <td>up to +3.3V,pin 4</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>VOLTAGE</td>
+   <td>up to +3.3V,pin 13</td>
+   </tr>
+   <td>5 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   <td>6 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+**USB**
+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin </th>
+   <th>Signal </th>
+   <th>Volt </th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>D_plus</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>D_minus</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   <tr>
+   <td>5 (blk)</td>
+   <td>BUZZER</td>
+   <td>battery voltage</td>
+   </tr>
+   <tr>
+   <td>6 (blk)</td>
+   <td>Boot/Error LED</td>
+   <td></td>
+   </tr>
+   </tbody>
+   </table>
+
+**RSSI Input**
+
+Analog/PWM RSSI Input is pin 103
+
 
 Cubepilot Ecosystem
 ===================

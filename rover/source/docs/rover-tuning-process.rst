@@ -16,7 +16,7 @@ Setup the :ref:`Transmitter flight mode switch <common-rc-transmitter-flight-mod
 Check that the vehicle can be driven in Manual mode.
 
 Tune the Speed and Throttle Controller
---------------------------------------
+======================================
 
 Follow the instructions on the :ref:`Tuning Speed and Throttle <rover-tuning-throttle-and-speed>` page.  The high level steps are:
 
@@ -32,7 +32,7 @@ Follow the instructions on the :ref:`Tuning Speed and Throttle <rover-tuning-thr
 3. If the vehicle accelerates too quickly or too slowly adjust the :ref:`ATC_ACCEL_MAX <ATC_ACCEL_MAX>`
 
 Tune the Turn Rate Controller
------------------------------
+=============================
 
 Follow the instructions on the :ref:`Tuning Steering Rate <rover-tuning-steering-rate>` page.  The high level steps are:
 
@@ -45,12 +45,17 @@ Follow the instructions on the :ref:`Tuning Steering Rate <rover-tuning-steering
 
 3. Set :ref:`ATC_STR_RAT_MAX <ATC_STR_RAT_MAX>` to the :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>` value and optionally reduce :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>`
 
+Rover QuickTune LUA Script
+==========================
+
+If the autopilot is capable of running :ref:`common-lua-scripts`, instead of manually tuning steering and speed/throttle controllers, it can be done automatically using the `rover-quicktune.lua applet <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/rover-quicktune.lua>`__. Read its `instruction file <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/rover-quicktune.md>`_ for setup and use information.
+
 Configure Pivot Turns (Skid Steering vehicles only)
----------------------------------------------------
+===================================================
 
 If the vehicle uses :ref:`Skid Steering <rover-motor-and-servo-connections-skid-steering>` follow the instructions on the :ref:`Tuning Pivot Turns <rover-tuning-pivot-turns>` page
 
 Tune the Navigation Controller
-------------------------------
+==============================
 
 Follow the instructions on the :ref:`Tuning Navigation <rover-tuning-navigation>` page

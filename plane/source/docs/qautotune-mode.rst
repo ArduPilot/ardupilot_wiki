@@ -4,13 +4,13 @@
 QAUTOTUNE
 =========
 
-As of Plane-4.0, autotuning PIDs in QuadPlane is supported with this flight mode. This uses the same system as the AUTOTUNE mode for copter. It should allow you to improve the tune without having to manually adjust PIDs. It is not recommended to use QAUTOTUNE for Tailsitter pitch or yaw axis, or any axis which requires feed forward pid contributions.
+Autotuning PIDs in QuadPlane is supported with this flight mode. This uses the same system as the AUTOTUNE mode for copter. It should allow you to improve the tune without having to manually adjust PIDs. It is not recommended to use QAUTOTUNE for Tailsitter pitch or yaw axis, or any axis which requires feed forward pid contributions.
 
 Configuration
 =============
 
 - Set QAUTOTUNE mode (mode 22) on one of your mode switch positions. It may not show up as an available mode in your GCS, so you may need to set the ``FLTMODEn`` parameter in the full parameter list
-- Select which axes you want to tune with :ref:`Q_AUTOTUNE_AXES<Q_AUTOTUNE_AXES>` .
+- Select which axes you want to tune with :ref:`Q_AUTOTUNE_AXES<Q_AUTOTUNE_AXES>`.
 
 Operation
 =========
@@ -25,7 +25,7 @@ You can tell that QAUTOTUNE has finished when it stops twitching. You need to th
 
 You can reposition while tuning by moving your sticks. Once you re-center the sticks the tune will continue. If you change modes then the tune stops immediately.
 
-You can read more about AutoTune for copters here: :ref:`autotune` . The autotune for quadplanes works the same way.
+You can read more about AutoTune for copters here: :ref:`autotune`. The autotune for quadplanes works the same way.
 
 .. note:: Like Copter, entering QAUTOTUNE from QLOITER will attempt a loose position hold.
 

@@ -8,7 +8,7 @@ This article explains how to use SRXL receivers with ArduPilot.
 
 Overview
 ========
-SRXL is a serial protocol which transfers control data of a R/C receiver to a autopilot or other device. In case of ArduPilot, the R/C receiver transfers servo outputs as a sum signal. ArduPilot is decoding the SRXL datastream of the R/C receiver depending on the SRXL variant identified and extracts the servo output signals. This technique enables the user to connect a SRXL R/C receiver to the pixhawk using a single cable connection similar to a PPM sum signal.
+SRXL is a serial protocol which transfers control data of a R/C receiver to an autopilot or other device. In case of ArduPilot, the R/C receiver transfers servo outputs as a sum signal. ArduPilot is decoding the SRXL datastream of the R/C receiver depending on the SRXL variant identified and extracts the servo output signals. This technique enables the user to connect a SRXL R/C receiver to the pixhawk using a single cable connection similar to a PPM sum signal.
 
 .. note::
 

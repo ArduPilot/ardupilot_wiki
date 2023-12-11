@@ -9,7 +9,8 @@ This feature is available in Copter 4.0 and later.
 
 ProfiLEDs are spaced at 20mm resulting in 50 LED's per meter. ProfiLEDs are supplyed in 2m strips with the servo header pre-attached, simply plug them in. The strips can be cut at any point and extended or have a new header added and plugged into a second pair of output pins. ProfiLED's require both clock and data signal. As supplied the clock is the yellow wire and green is data. Both the clock and data pins must be in the same PWM group. It is possible to share a clock pin over multiple strips in the same group. If there are spare pins it may be more convenient to setup two clock pins for that group. ProfiLED's require 5 volts and can draw a significant amount of current if all turned on at once. ProfiLED's default to white until a valid signal is received.
 
-.. image:: ../../../images/ProfiLED-install.png
+.. image:: ../../../images/ProfiLED-install.jpg
+     :target: ../_images/ProfiLED-install.png
 
 .. image:: ../../../images/ProfiLED-connections.png
 

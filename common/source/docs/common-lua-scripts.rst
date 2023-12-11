@@ -12,7 +12,7 @@ Scripts are stored on the SD card and run in parallel with the flight code.
 
 This page describes how to setup scripts on your autopilot, the scripting API, scripting applets,and some examples to help get started.
 
-While scripting normally requires at least some LUA programming and editing, there are some **Applets** available which require no user editing and are ready to use. See links below.
+While scripting normally requires at least some LUA programming and editing, there are some `Applets <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`__  available which require no user editing and are ready to use. See links below.
 
 .. note::
 
@@ -34,14 +34,27 @@ Getting Started
       :target: ../_images/scripting-MP-mavftp.png
       :width: 450px
 
-- **Sample Scripts** can be found `here for stable Plane <https://github.com/ArduPilot/ardupilot/tree/ArduPlane-stable/libraries/AP_Scripting/examples>`__, `Copter <https://github.com/ArduPilot/ardupilot/tree/ArduCopter-stable/libraries/AP_Scripting/examples>`__ and `Rover <https://github.com/ArduPilot/ardupilot/tree/APMrover2-stable/libraries/AP_Scripting/examples>`__.  The latest development scripts can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples>`__.
+- **Sample/Example Scripts** can be found `here for stable Plane <https://github.com/ArduPilot/ardupilot/tree/ArduPlane-stable/libraries/AP_Scripting/examples>`__, `Copter <https://github.com/ArduPilot/ardupilot/tree/ArduCopter-stable/libraries/AP_Scripting/examples>`__ and `Rover <https://github.com/ArduPilot/ardupilot/tree/APMrover2-stable/libraries/AP_Scripting/examples>`__.  The latest development scripts can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples>`__.
 
-- **Applets** which are scripts that require no user editing before use, can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ . Each of these has a .md file of the same name detailing its capabilities, use, and setup. For example, there is a script to allow a user to change a SmartAudio capable video transmitter's output power level from a transmitter channel and set its power-up value via parameter.
+- **Applets** which are scripts that require no user editing before use, can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ for the "latest" firmware branch, and may require code extensions included in that branch to function properly. Each of these has a .md file of the same name detailing its capabilities, use, and setup. For example, there is a script to allow a user to change a SmartAudio capable video transmitter's output power level from a transmitter channel and set its power-up value via parameter. See :ref:`common-scripting-applets`.
 
-- Up to 8 RC channels can be assigned as scripting inputs/controls using the``RCX_OPTION`` = "300-307" options. In addition, four dedicated script parameters are available: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER4<SCR_USER4>` and are accessed with the same method as any other parameter, but these are reserved for script use.
-- When the autopilot is powered on it will load and start all scripts.
+- **Drivers** Lua scripts can actually provide hardware drivers for new peripheral hardware that is not directly supported in the ArduPilot firmware, such a new EFIs or Gimbals. Examples of these can be found `here <https://github.com/ArduPilot/ardupilot/tree/ArduPlane-stable/libraries/AP_Scripting/drivers>`__ for the "latest" firmware branch, and may require code extensions included in that branch to function properly.
+
+.. note:: To download from the github locations, first click the script name, then select "raw" in upper right corner, then right mouse click to "Save Page as" a text file with the ".lua" file extension
+
+- Up to 8 RC channels can be assigned as scripting inputs/controls using the``RCX_OPTION`` = "300-307" options to be used by scripts. In addition, four dedicated script parameters are available: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER4<SCR_USER4>` and are accessed with the same method as any other parameter, but these are reserved for script use. Scripts can also generate their own parameters (see :ref:`common-scripting-parameters`)to be used within the scripts.
+- When the autopilot is powered on it will load and start all scripts. By default it will look in the ROMFS file system for scripts included in the firmware image by a manufacturer, and the APM/scripts directory on the SD Card (or if a SITL simulation, the base directory where the simulation was started.) This can be modified by used the :ref:`SCR_DIR_DISABLE<SCR_DIR_DISABLE>` parameter.
 - Messages and errors are sent to the ground station and, if using Mission Planner, can be viewed in the Data screen's "Messages" tab.
-- :ref:`SCR_HEAP_SIZE <SCR_HEAP_SIZE>` can be adjusted to increase or decrease the amount of memory available for scripts. The default of 43 kB is sufficient for small scripts and fits onto most autopilots. The autopilot's free memory depends highly upon which features and peripherals are enabled. If this parameter is set too low, scripts may fail to run. If set too high other autopilot features such as Terrain Following or even the EKF may fail to initialize. On autopilots with a STM32F4 microcontroller, Smart RTL (Rover, Copter) and Terrain Following (Plane, Copter) need to be nearly always disabled. These features are usually enabled by default, set :ref:`SRTL_POINTS <SRTL_POINTS>` = 0, :ref:`TERRAIN_ENABLE <TERRAIN_ENABLE>` = 0).
+- :ref:`SCR_HEAP_SIZE <SCR_HEAP_SIZE>` can be adjusted to increase or decrease the amount of memory available for scripts. The default , which varies from 43K to 204.8K depending on cpu being used, is sufficient at its smallest (43K) for small scripts, but many will require more (some applets now need 300K). The autopilot's free memory depends highly upon which features and peripherals are enabled. If this parameter is set too low, scripts may fail to run and give an out of memory pre-arm error. If set too high other autopilot features such as Terrain Following or even the EKF may fail to initialize. On autopilots with a STM32F4 microcontroller, Smart RTL (Rover, Copter) and Terrain Following (Plane, Copter) need to be nearly always disabled. These features are usually enabled by default, set :ref:`SRTL_POINTS <SRTL_POINTS>` = 0, :ref:`TERRAIN_ENABLE <TERRAIN_ENABLE>` = 0). See also :ref:`RAM Limitations<ram_limitations>` section.
+
+Step by Step Setup and Use Examples
+===================================
+
+.. toctree::
+   :maxdepth: 1
+
+   common-scripting-step-by-step
+
 
 What Scripts Can Do
 ===================
@@ -94,8 +107,7 @@ The last line of the script is also used to schedule the function to be run for 
 
 Script Crashes and Errors
 =========================
-If scripts run out of memory (or panic for any reason) all currently running scripts are terminated, and the scripting engine will restart, and reload all scripts from the disk.
-This is allowed to happen at all flight stages, even while the vehicle is armed and flying.
+If scripts run out of memory (or panic for any reason) all currently running scripts are terminated. If an indivdual script has an errror, it will terminate. If either occurs before arming, a pre-arm failure will be generated. A scripting restart command or reboot would be needed to restart the script or scripting as a whole.
 
 Scripting and Parameters
 ========================
@@ -409,7 +421,8 @@ The terrain library provides access to checking heights against a terrain databa
 
 - :code:`height_amsl( Location )` - Returns the height (in meters) above mean sea level at the provided Location userdata, or returns nil if that is not available.
 
-- :code:`height_terrain_difference_home( Location )` - Returns the difference in height (in meters) between the provided location and home, or returns nil if that is not available.
+- :code:`height_terrain_difference_home( difference, extrapolate)` -  find the difference between home terrain height and the terrain
+       height at the current location in meters. Returns false if not available. If extrapolate is true, will return based on last valid terrain data.
 
 - :code:`height_above_terrain()` - Returns the height (in meters) that the vehicle is currently above the terrain, or returns nil if that is not available.
 
@@ -527,7 +540,8 @@ Further Information
     :hidden: 
 
     Bindings <common-lua-binding-syntax>
-    
+    common-scripting-applets
+
 For more background on technical decisions made before this point you can reference the presentation from the 2019 ArduPilot Unconference.
 
 ..  youtube:: ZUNOZMxOwsI

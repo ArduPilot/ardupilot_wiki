@@ -40,6 +40,7 @@ Tutorial steps
     Copter - Motors Library <code-overview-copter-motors-library>
     Copter - PosControl and Navigation <code-overview-copter-poscontrol-and-navigation>
     Copter - Object Avoidance <code-overview-object-avoidance>
+    Copter - Adding Custom Attitude Controller <copter-adding-custom-controller>
     Rover - Adding a new drive mode <rover-adding-a-new-drive-mode>
     Rover - L1 navigation controller <rover-L1>
     Plane - Architecture overview <plane-architecture>

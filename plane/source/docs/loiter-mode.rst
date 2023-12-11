@@ -12,6 +12,8 @@ navigation tuning. As with :ref:`Return To Launch (RTL) <rtl-mode>` and
 :ref:`AUTO <auto-mode>` mode you can "nudge" the plane while in LOITER
 using stick mixing, if enabled.
 
+If :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 12 is set (+4096 to value) and :ref:`STICK_MIXING<STICK_MIXING>` is set to 1 or 2, then altitude of the loiter can be changed using the pitch stick, as in FBWB mode.
+
 .. warning::
 
    "Home" position is always supposed to be your Plane's actual

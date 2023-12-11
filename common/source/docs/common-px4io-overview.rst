@@ -43,7 +43,7 @@ The Top of the PX4IO Board
 .. image:: ../../../images/PX4io-top.jpg
     :target: ../_images/PX4io-top.jpg
 
-A Breif Description of the PX4IO Board
+A Brief Description of the PX4IO Board
 ======================================
 
 .. image:: ../../../images/PX4IOdiagram.jpg

@@ -117,9 +117,8 @@ Parameters List and set the :ref:`SERVO9_FUNCTION<SERVO9_FUNCTION>` (or RC9_FUNC
 Note that if the EPM is connected to Pixhawk's AUX OUT 2 then
 :ref:`SERVO10_FUNCTION<SERVO10_FUNCTION>` (or RC10_FUNCTION) should be set instead, etc.
 
-Create the mission you wish to fly and add pairs of ``DO_SET_SERVO``
-commands to grip or release the cargo and then return the EPM to
-neutral.
+Create the mission you wish to fly and add pairs of ``DO_GRIPPER``
+commands to grip or release the cargo .The EPM is returned to neutral after each command.
 
 -  "Ser No" should be set according to which output the EPM is connected
    to (i.e. "9" = Pixhawk's AUX OUT 1, "10" = APM2's RC10).
@@ -129,7 +128,7 @@ neutral.
 .. image:: ../../../images/EPM_Mission.jpg
     :target: ../_images/EPM_Mission.jpg
 
-In the example above the vehicle takes off to 20m, flies west 150m where
+In the example above the vehicle takes off to 20ft, flies west 548ft where
 it delays for 5 seconds, releases the cargo, delays another 5 seconds
 and then returns home.
 
@@ -205,5 +204,5 @@ will also provide power the CPU and may hide any voltage disturbance.
 User Video
 ==========
 
-..  youtube:: _iyTo9H7HAk#t=190
+..  youtube:: _iyTo9H7HAk&t=190s
     :width: 100%

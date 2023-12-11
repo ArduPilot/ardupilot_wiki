@@ -20,9 +20,7 @@ You will need to remove the access cover in order to attach a USB cable to the a
 
 Connect to Mission Planner or QGC, and upload the Plane firmware for the SWAN-K1 located `here <https://firmware.ardupilot.org>`__. 
 
-.. note:: Currently, it is only available as a "latest" firmware. It will be in a Stable version in the near future.
-
-The firmware will have defaults already set for optimum tuning and operation.
+The firmware has defaults already set for optimum tuning and operation.
 
 Calibration
 ===========
@@ -48,7 +46,7 @@ Customization
 
 One of the benefits of using ArduPilot is that you can set transmitter functions easily.
 
-Some possibilities using :ref:`RC Auxiliary Functions<common-auxiliary-functions>` :
+Some possibilities using :ref:`RC Auxiliary Functions<common-auxiliary-functions>`:
 
  - Set one of the switches as ARM/DISARM for quick disarming instead of the rudder/throttle combination.
  - Set other flight modes, such as CRUISE or QLAND, on one of the other switches or buttons 

@@ -48,7 +48,7 @@ MAVLink2 supports "signing" of packets which improves security and flexible leng
 
 .. note:: MAVLink2 is required to upload and download complex fences from the Ground Control Station.
 
-As mentioned on the :ref:`Telemetry Logs page <common-mission-planner-telemetry-logs>` the rate messages are sent from the vehicle can be controlled using the ``SRx_*`` parameters (i.e. :ref:`SR1_POSITION <SR1_POSITION>`).
+As mentioned on the :ref:`Telemetry Logs page <planner:mission-planner-telemetry-logs>` the rate messages are sent from the vehicle can be controlled using the ``SRx_*`` parameters (i.e. :ref:`SR1_POSITION <SR1_POSITION>`).
 
 SRx parameters do not directly correlate to the SERIALx port, but rather to the order of the ports which have MAVLink protocol active.
 
@@ -58,6 +58,8 @@ The Mission Planner's **Config/Tuning |Planner** screen's **Telemetry Rates** dr
     :target: ../_images/mp_telemetry_rate.png
 
 Due to CPU or bandwidth limitations, the actual rate of the data sent may be lower than the rate requested.
+
+.. note:: Some telemetry systems require specific rates. In order to allow those to be set in the autopilot parameters and not overriden by the GCS, set the rates to "-1" for MP, or use the disable option in QGC. However, do not set these before doing the basic autopilot radio calibration in Mission Planner as it forces new values during the calibration and will not restore them after it is finished.
 
 .. note::
 

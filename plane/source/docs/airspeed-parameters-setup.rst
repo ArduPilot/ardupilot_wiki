@@ -22,9 +22,9 @@ Parameters
 
 Key parameters are:
 
-- :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` : This is the fastest normal flying speed for the vehicle. Normally, 2 times the nominal cruising speed is a good target.
-- :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` : This is the slowest flying speed for the vehicle. It should be set at least 25% above the stall speed of the vehicle.
-- :ref:`SCALING_SPEED<SCALING_SPEED>` : This is the center of the speed scaling range and should be set close to the normal cruising speed of the vehicle. PID tuning (see :ref:`tuning-quickstart`) should be done at this flying speed. The loop gains are scaled above and below this value with a multiplier determined base on the above min and max flying speeds.
+- :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>`: This is the fastest normal flying speed for the vehicle. Normally, 2 times the nominal cruising speed is a good target.
+- :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>`: This is the slowest flying speed for the vehicle. It should be set at least 25% above the stall speed of the vehicle.
+- :ref:`SCALING_SPEED<SCALING_SPEED>`: This is the center of the speed scaling range and should be set close to the normal cruising speed of the vehicle. PID tuning (see :ref:`tuning-quickstart`) should be done at this flying speed. The loop gains are scaled above and below this value with a multiplier determined base on the above min and max flying speeds.
 
 The above parameters determine the speed scaling characteristics.
 
@@ -33,8 +33,8 @@ The above parameters determine the speed scaling characteristics.
 
 And, if you use an airspeed sensor:
 
-- :ref:`ARSPD_TYPE<ARSPD_TYPE>` : This determines the type of sensor used. Set to "0" if no sensor is present. (see :ref:`airspeed`). If non-zero and the sensor is healthy, the system will use the sensor's measurements instead of the estimated speed calculation for speed scaling and speed controlled modes.
-- :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` : This determines the nominal cruising speed in speed controlled modes when using an airspeed sensor. (see :ref:`tuning-cruise` ). Also see :ref:`tuning-cruise` section if not using an airspeed sensor for the impact of the parameter - :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` on cruising speed in speed controlled modes like CRUISE.
+- :ref:`ARSPD_TYPE<ARSPD_TYPE>`: This determines the type of sensor used. Set to "0" if no sensor is present. (see :ref:`airspeed`). If non-zero and the sensor is healthy, the system will use the sensor's measurements instead of the estimated speed calculation for speed scaling and speed controlled modes.
+- :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`: This determines the nominal cruising speed in AUTO/GUIDED speed controlled modes when using an airspeed sensor. (see :ref:`tuning-cruise` ). Also see :ref:`tuning-cruise` section if not using an airspeed sensor for the impact of the parameter - :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` on cruising speed in speed controlled modes like CRUISE.
 
 ARSPD_USE
 ---------

@@ -4,7 +4,7 @@
 Proximity Sensors (landing page)
 ================================
 
-Copter/Rover have support for avoidance obstacles that may appear in front of the vehicle. The first step to enable these features is to have a working Proximity Sensor.
+Copter/Rover have support for avoidance obstacles that may appear in front of the vehicle. The first step to enable these features is to have a working Proximity Sensor. ArduPilot supports up to 4 sensors.
 
 360 degree Lidars are typically used in object avoidance as proximity sensors, but multiple rangefinders sensors or stereo depth cameras can also be used for proximity detection.
 
@@ -15,8 +15,8 @@ Copter/Rover have support for avoidance obstacles that may appear in front of th
 Configuration
 =============
 
-You will need to set up the parameter :ref:`PRX_TYPE <PRX_TYPE>` correctly as per the sensor you are using.
-Exclusion zones are provided for 360 degree Lidars, since these may have obstructions in their field of view. Exclusion zones are set via the PRX_IGN_ANGx and PRX_IGN_WIDx parameters, specifying a direction and width the frame obstruction presents and will be ignored. Up to 6 exclusion sectors can be specified.
+You will need to set up the parameter ``PRXx_TYPE`` correctly for the sensor(s) you are using.
+Exclusion zones are provided for 360 degree Lidars, since these may have obstructions in their field of view. Exclusion zones are set via the ``PRXx_IGN_ANGx`` and ``PRXx_IGN_WIDx`` parameters, specifying a direction and width the frame obstruction presents and will be ignored. Up to 6 exclusion sectors can be specified.
 
 Follow the links below for configuration information based upon your set-up:
 
@@ -58,8 +58,8 @@ Additional Features
 Filter
 ------
 
-Various sensors can be attached to the flight controller. However, depending on the quality and use case of the sensor, it might give noisy data.
-This noise will be stored onboard the flight controller as "obstacles" and the vehicle might suddenly start avoiding false objects. To counter this problem, Copter and Rover 4.1 have an inbuilt low pass filter on the raw sensor data.
+Various sensors can be attached to the autopilot. However, depending on the quality and use case of the sensor, it might give noisy data.
+This noise will be stored onboard the autopilot as "obstacles" and the vehicle might suddenly start avoiding false objects. To counter this problem, Copter and Rover 4.1 have an inbuilt low pass filter on the raw sensor data.
 The filter can be adjusted by :ref:`PRX_FILT <PRX_FILT>` (setting it to 0 will disable the feature).
 By default, only the filtered values get logged. However, by setting :ref:`PRX_LOG_RAW <PRX_LOG_RAW>` = 1, raw values from the sensors will also be logged. This can be used for debugging purposes.
 

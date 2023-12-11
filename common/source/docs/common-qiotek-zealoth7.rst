@@ -506,6 +506,8 @@ Dshot capability
 
 All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs. The output groups that must be the same (PWM rate or Dshot, when configured as a normal servo/motor output) are: 1/2, 3/4/13/14, 5/6/7/8, 9/10/11/12. Outputs 13 and 14 cannot support Dshot, only PWM, so if 3 and four are set to DShot, 13 and 14 cannot be used.
 
+.. note:: For BShot capability on outputs 9-14, use the firmware in the "QioTekZealotH743-bdshot" folder on the `Firmware Server <https://firmware.ardupilot.org>`__
+
 Battery Monitor Settings
 ========================
 
@@ -533,10 +535,14 @@ Then reboot.
 
 :ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT>` 17
 
+DroneCAN capability
+===================
+There are 2 CAN ports which allow connecting two independant CAN bus outputs. Each of these can have multiple CAN peripheral devices connected. A CAN splitter board is included with the autopilot. Please refer to :ref:`CAN Bus Setup <common-canbus-setup-advanced>` for information on how to configure CAN on the board. 
 
 Where to Buy
 ============
 
 `QIOTEK <http://www.Qio-Tek.com>`_
+`SmartFleet <https://smartfleet.systems/>`_
 
 [copywiki destination="plane,copter,rover,blimp"]

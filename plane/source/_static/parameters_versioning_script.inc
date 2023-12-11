@@ -1,11 +1,27 @@
-<p>You can change and check the parameters for another version: <script type="text/javascript" src="../_static/jquery-3.2.1.js">
-</script>
-
-<select class="selectpicker" onChange="window.document.location.href=this.options[this.selectedIndex].value;"></select>
+<p>You can change and check the parameters for another version:
+  <select class="selectpicker" id="selectPicker"></select>
+</p>
 
 <script type="text/javascript">
-jQuery.getJSON("../_static/parameters-Plane.json", {}, function(json) {
-    $.each(json, function(key, value) {
-        $('.selectpicker').append('<option value="' + json[key] + '">' + key + '</option>');
+document.addEventListener("DOMContentLoaded", function() {
+  fetch("../_static/parameters-Plane.json")
+    .then(function(response) { return response.json(); })
+    .then(function(json) {
+      appendToSelect(json);
     });
-}); </script>   </p>
+
+  document.getElementById('selectPicker').addEventListener('change', function() {
+    window.location.href = this.value;
+  });
+
+  function appendToSelect(json) {
+    var selectPicker = document.getElementById('selectPicker');
+    for (var key in json) {
+      var opt = document.createElement('option');
+      opt.value = json[key];
+      opt.innerHTML = key;
+      selectPicker.appendChild(opt);
+    }
+  }
+});
+</script>

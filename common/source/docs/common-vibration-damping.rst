@@ -33,7 +33,9 @@ autopilot is so small.
 
 One of the following three types of foam should be cut into small 1cm ~ 2cm cubes and attached to each of the four corners of the autopilot as described on the :ref:`Mounting the Autopilot wiki page <common-mounting-the-flight-controller>`:
 
-- `3M foam sold by mRobotics <https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm>`__ is sticky on both sides and comes pre-cut so that individual cubes can be easily attached to the autopilot
+- 3M Foam is sticky on both sides and comes pre-cut so that individual cubes can be easily attached to the autopilot
+   - `sold by mRobotics <https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm>`__ 
+   - `sold by Holybro <https://holybro.com/products/foam-pads-20pcs>`__
 - `Du-Bro 1/4" R/C foam <https://www.dubro.com/products/r-c-protective-foam-rubber>`__
 - `HobbyKing orange foam <https://hobbyking.com/en_us/anti-vibration-foam-orange-latex-190mm-x-140mm-x-6mm.html?___store=en_us>`__ (discontinued)
 
@@ -270,9 +272,6 @@ Additional Vibration Reduction Considerations
       minimized.
    -  If you put too much glue on it can be removed with an X-acto knife.
 
-#. Vibration damping motor mounts like
-   `this <http://store.jdrones.com/Anti_Vibration_MultiMount_for_Multicopters_p/mmset02.htm>`__
-   may or may not reduce vibration.
 #. Camera Mounts also need to be effectively isolated and damped from
    vibration, but they already have a number of "soft" mounting
    solutions.
@@ -291,7 +290,7 @@ Additional Vibration Reduction Considerations
 #. The amount and type of damping medium needs to be carefully matched
    to the weight (mass) of the item we are trying to isolate as well as
    the frequency and amplitude of the vibrations we are seeking to
-   damp. We are trying to isolate a autopilot that weighs
+   damp. We are trying to isolate an autopilot that weighs
    less than 2 ounces and this is a very small mass.
 #. Virtually all off the shelf solutions (either pad or stud type) are
    designed for an isolated mass that would weigh at least 5 to 10 times

@@ -110,7 +110,7 @@ Setting the ``SRx_`` parameters (and then rebooting the autopilot) will cause th
 Using REQUEST_DATA_STREAM
 -------------------------
 
-Most ground stations including the Mission Planner use this method.  See "Setting the datarate" section of the `Telemetry Logs wiki page <https://ardupilot.org/copter/docs/common-mission-planner-telemetry-logs.html#setting-the-datarate>`__.
+Most ground stations including the Mission Planner use this method.  See :ref:`Setting the Datarate <planner:mission-planner-telemetry-logs-setting-the-datarate>` in the Mission Planner wiki.
 
 Send a `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_DATA_STREAM>`__ message with the following fields
 
@@ -137,7 +137,7 @@ Send a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`_
 
 .. warning::
 
-   If the telemetry link is shared (i.e. multiple GCSs or a GCS and a companion computer) there can be conflicting requests.  The most common example is the Mission Planner using the REQUEST_DATA_STREAM method while a companion copmuter uses SET_MESSAGE_INTERVAL method.  Mission Planner at least allows turning off the REQUEST_DATA_STREAM requests by setting the rates to "-1" (see `Setting the datarate here <https://ardupilot.org/copter/docs/common-mission-planner-telemetry-logs.html#setting-the-datarate>`__).  MAVProxy users can ``set streamrate -1``.
+   If the telemetry link is shared (i.e. multiple GCSs or a GCS and a companion computer) there can be conflicting requests.  The most common example is the Mission Planner using the REQUEST_DATA_STREAM method while a companion copmuter uses SET_MESSAGE_INTERVAL method.  Mission Planner at least allows turning off the REQUEST_DATA_STREAM requests by setting the rates to "-1" (see :ref:`Setting the Datarate <planner:mission-planner-telemetry-logs-setting-the-datarate>`).  MAVProxy users can ``set streamrate -1``.
 
 Using REQUEST_MESSAGE
 ---------------------
@@ -159,7 +159,7 @@ Specifying Message Rates in a File
 
 At boot ArduPilot will populate the initial message intervals from files found in either ROMFS or in the filesystem.
 
-On ChibiOS-based boards the SD card will be searched for specially-named files in the APM subdirectory.
+On ChibiOS-based boards (with more than 1MB of flash) the SD card will be searched for specially-named files in the root directory.
 
 Each mavlink channel is configured in a separate configuration file.  The first serial port configured as mavlink is channel 0, the second serial port channel 1 etc.
 

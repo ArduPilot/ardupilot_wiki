@@ -1,11 +1,12 @@
 .. _common-scripted-aerobatics:
 
+[copywiki destination="plane"]
 ===================
 Scripted Aerobatics
 ===================
 
 
-.. note:: this capability is in ArduPlane 4.2 and higher
+.. note:: this capability is in ArduPlane 4.2 and higher. It is rapidly evolving. Its suggested that users uses load the current "Latest" firmware and refer to its matching doucmentation ( :ref:`common-scripted-aerobatics-4.4` ) for best perfoemance.
 
 ArduPilot has the capability of executing aerobatics from a LUA script. Either via AUTO mode mission items, or via scripts executed in many normal plane flight modes, usually controlled via a transmitter switch and selection RC channels.
 
@@ -66,7 +67,7 @@ The format of the SCRIPT_TIME item is:
    </tbody>
    </table>
 
-A LUA script would need to be running when the above mission command is encountered to recognize that it needs to take control, and start sending pitch/roll/yaw rate inputs into the flight controller to control its attitude and/or trajectory. It can use the two variable input parameters of the command to control aspects of the maneuver, such as rate of rolls/loops, repeat counts, time for certain segments of the maneuver, etc. An example is provided in the LUA Scripting examples directory called `plane_aerobatics.lua <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples/Aerobatics/Missions>`__ for several types of tricks.
+A LUA script would need to be running when the above mission command is encountered to recognize that it needs to take control, and start sending pitch/roll/yaw rate inputs into the autopilot to control its attitude and/or trajectory. It can use the two variable input parameters of the command to control aspects of the maneuver, such as rate of rolls/loops, repeat counts, time for certain segments of the maneuver, etc. An example is provided in the LUA Scripting examples directory called `plane_aerobatics.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/Aerobatics/FixedWing/plane_aerobatics.lua>`__ for several types of tricks.
 
 The execution of a script running during the NAV_SCRIPT_TIME item can easily be interrupted by switching modes out of AUTO.
 
@@ -95,7 +96,7 @@ This consists of a small control script to read the RC channels for trick select
 
 In order to create new tricks, a user needs to have some LUA script creation knowledge, but the task is simplified since they can use existing tricks as templates for the creation of new tricks.
 
-As above, using SITL, especially in conjunction with :ref:`RealFlight<dev:sitl-with-realflight>` and a RealFlight model like the `AddictionX <https://github.com/ArduPilot/SITL_Models/tree/master/RealFlight/Released_Models/Planes/Addiction_3D>`__ , makes development and debugging much easier without risking a real vehicle.
+As above, using SITL, especially in conjunction with :ref:`RealFlight<dev:sitl-with-realflight>` and a RealFlight model like the `AddictionX <https://github.com/ArduPilot/SITL_Models/tree/master/RealFlight/Released_Models/Planes/Addiction_3D>`__, makes development and debugging much easier without risking a real vehicle.
 
 Below is an introductory video to "Trick on a Switch":
 
@@ -114,8 +115,17 @@ Setup Instructions for Example Tricks on a Switch Scripts
 - Copy the https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples/Aerobatics/Via_Switch scripts into your SD card APM/scripts directory. Use the RAW view and copy to files on the SD card using the same names.
 - Assign an RC channel to ``RCx_OPTION`` = 300 for the trick activation switch (low=disable,mid=show trick number selected, high= do it) and one for 301 which is trick selection. You can use a three position for 0/5/10 trick id selection setup to ``RCx_OPTION`` = 301. 0 is disable, 5 is the knife edge, 10 is the loop/immelman example using the above scripts.
 - Upon boot you should see messages that show the trick 5(knife-edge) and 10(loop/immelman) are loaded. Setting the activation switch to mid position will identify the trick number selected by the selection channel on the ground station or TX, if running :ref:`Yaapu <common-frsky-yaapu>` telemetry.
-- In the Ground Control Station's parameter lists, you should see a set of "AERO" params....the ``AERO_TRICK_RAT`` sets the loop pitch rate, try 90deg/s, ``AERO_RPT_COUNT`` sets the number of loops or if 0, an immelman. ``AERO_TRICK_ANG`` set the knife-edge trick angle 0 to 180 or -180 deg that will be executed as long as you have the activation switch high. Using the GCS or :ref:`Yaapu GCS<common-yaapu-gcs>` or :ref:`CRSF parameter editor<common-crsf-telemetry>` , you can change these in air to vary the trick characteristics, if you wish
+- In the Ground Control Station's parameter lists, you should see a set of "AERO" params....the ``AERO_TRICK_RAT`` sets the loop pitch rate, try 90deg/s, ``AERO_RPT_COUNT`` sets the number of loops or if 0, an immelman. ``AERO_TRICK_ANG`` set the knife-edge trick angle 0 to 180 or -180 deg that will be executed as long as you have the activation switch high. Using the GCS or :ref:`Yaapu GCS<common-yaapu-gcs>` or :ref:`CRSF parameter editor<common-crsf-telemetry>`, you can change these in air to vary the trick characteristics, if you wish
 - You can bail out of the trick by putting activation switch low, change modes, or set selector to 0
 
 Remember: ALTITUDE IS YOUR FRIEND! dont attempt your first one below 200feet! and FPV is a good way to try it out first, if you have trouble with seeing the vehicle at that altitude.
-[copywiki destination="plane"]
+
+Tuning for Aerobatics
+=====================
+
+Normal ArduPilot Autotune provides a safe, stable PID tune for most vehicles. As such, its not optimized for precision aerobatics which require a tight tune. See below:
+
+.. toctree::
+   :maxdepth: 1
+
+   Aerobatic Tuning <common-aerobatics-tuning>

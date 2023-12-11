@@ -222,12 +222,12 @@ Filtering
 
 The new PID-FF controller in Plane also has a number of lowpass filters whose frequencies can be adjusted. The defaults should be satisfactory, however, experimentation on these may yield better response to external disturbances in certain situations, or when special requirements, such as video filming would suggest lowering the responsiveness as a trade-off for increased smoothness. These are:
 
-- :ref:`PTCH_RATE_FLTT<PTCH_RATE_FLTT>` :filter on target demanded pitch rate
-- :ref:`PTCH_RATE_FLTE<PTCH_RATE_FLTE>` :filter on pitch rate error
-- :ref:`PTCH_RATE_FLTD<PTCH_RATE_FLTD>` :filter on D term (tends to be noisy)
-- :ref:`RLL_RATE_FLTT<RLL_RATE_FLTT>` :filter on target demanded roll rate
-- :ref:`RLL_RATE_FLTE<RLL_RATE_FLTE>` :filter on roll rate error
-- :ref:`RLL_RATE_FLTD<RLL_RATE_FLTD>` :filter on D term (tends to be noisy)
+- :ref:`PTCH_RATE_FLTT<PTCH_RATE_FLTT>`: filter on target demanded pitch rate
+- :ref:`PTCH_RATE_FLTE<PTCH_RATE_FLTE>`: filter on pitch rate error
+- :ref:`PTCH_RATE_FLTD<PTCH_RATE_FLTD>`: filter on D term (tends to be noisy)
+- :ref:`RLL_RATE_FLTT<RLL_RATE_FLTT>`: filter on target demanded roll rate
+- :ref:`RLL_RATE_FLTE<RLL_RATE_FLTE>`: filter on roll rate error
+- :ref:`RLL_RATE_FLTD<RLL_RATE_FLTD>`: filter on D term (tends to be noisy)
 
 PID Controller Flow Diagram
 ===========================

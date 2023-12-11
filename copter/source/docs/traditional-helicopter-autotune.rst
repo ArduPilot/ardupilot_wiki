@@ -38,8 +38,8 @@ User can specify the tuning desired using the :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>` 
 | +-------+------------------------------------------+| |         |  & ``ATC_RAT_xxx_P``                   ||
 | | 3     | Max Gain Determination                   || +---------+----------------------------------------+|
 | +-------+------------------------------------------+| | 4       | ``ATC_ANG_xxx_P``                      ||
-|                                                     | +---------+----------------------------------------+|
-|                                                     | | 5       | ``ATC_RAT_xxx_FF`` & ``ATC_ANG_xxx_P`` ||
+| | 4     | Tune Check                               || +---------+----------------------------------------+|
+| +-------+------------------------------------------+| | 5       | ``ATC_RAT_xxx_FF`` & ``ATC_ANG_xxx_P`` ||
 |                                                     | +---------+----------------------------------------+|
 |                                                     | | 6       | ``ATC_RAT_xxx_D``, ``ATC_RAT_xxx_P``,  ||
 |                                                     | |         | & ``ATC_ANG_xxx_P``                    ||
@@ -48,6 +48,8 @@ User can specify the tuning desired using the :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>` 
 |                                                     | |         | ``ATC_RAT_xxx_P``, & ``ATC_ANG_xxx_P`` ||
 |                                                     | +---------+----------------------------------------+|
 |                                                     | | 8       | Max Gain Determination                 ||
+|                                                     | +---------+----------------------------------------+|
+|                                                     | | 16      | Tune Check                             ||
 |                                                     | +---------+----------------------------------------+|
 +-----------------------------------------------------+-----------------------------------------------------+
 
@@ -145,7 +147,7 @@ In any axis, it is recommended to conduct the feedforward gain tuning first, the
 |        +-------------------------------------------------------------+-----------------------+
 |        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`                           | 4 (Angle P)           |
 |        +-------------------------------------------------------------+-----------------------+
-|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`                     | 2.0                   |
+|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`                     | 1.8                   |
 +--------+-------------------------------------------------------------+-----------------------+
 |    5   | :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES__AC_AutoTune_Heli>`       | 4 (Yaw)               |
 |        +-------------------------------------------------------------+-----------------------+
@@ -157,7 +159,7 @@ In any axis, it is recommended to conduct the feedforward gain tuning first, the
 |        +-------------------------------------------------------------+-----------------------+
 |        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`                           | 4 (Angle P)           |
 |        +-------------------------------------------------------------+-----------------------+
-|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`                     | 1.2                   |
+|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`                     | 1.8                   |
 +--------+-------------------------------------------------------------+-----------------------+
 
 Tuning Flight Procedures
@@ -208,6 +210,16 @@ Tuning Maneuver Descriptions
         ``ATC_ANG_xxx_P`` tuning starts with conducting a frequency sweep from from the :ref:`AUTOTUNE_FRQ_MIN<AUTOTUNE_FRQ_MIN>` to :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>`.  This determines the approximate frequency for the maximum response gain.  Then dwells (oscillations at one frequency) are conducted to tune the ``ATC_ANG_xxx_P`` gain. The gain is raised or lowered to determine the ``ATC_ANG_xxx_P`` gain that corresponds to a response gain (output angle/input angle request) that matches :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`. During this tuning, you can’t make any inputs to hold position during the tuning however the logic includes position holding during the test maneuver but not between manuevers.   If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again. If it is drifting more than 10 meters during the maneuver then the :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>` can be increased to minimize drifting. In between the oscillation maneuvers, it may drift if the aircraft wasn't properly trimmed for hover. The  :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>` gain will not help with that. The tuning sweeps are 23 seconds in duration.  
 
 ..  youtube:: aI-uJuQAh-0
+
+Max Gain Determination
+++++++++++++++++++++++
+
+        This test determines the maximum ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` gains that can be safely tuned.  A frequency sweep is conducted from the :ref:`AUTOTUNE_FRQ_MIN<AUTOTUNE_FRQ_MIN>` to :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>`.  This determines the approximate frequency required for calculating the maximum allowable gains.  A series of dwells (oscillations at one frequency) are completed to more accurately determine the data required to calculate the maximum allowable ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` gains. The maximum allowable gains are provided in a GCS message.  Although these are termed maximum allowable gains, it is not recommended that these gains be used without any buildup as they would most likely cause feedback oscillations.  Experience has shown that ``ATC_RAT_xxx_D`` gains up to 25-35% of the maximum allowable value can be used safely and ``ATC_RAT_xxx_P`` gains of up to 50% of the maximum allowable gain can be used safely.  If you make any inputs, then it will stop the gain determination test and wait until you center the sticks before it begins again.  The aircraft will drift very little during the maneuver.  If it is drifting more than 10 meters during the maneuver then the :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>` can be increased to minimize drifting.  In between the oscillation maneuvers, it may drift if the aircraft wasn't properly trimmed for hover.  The  :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>` gain will not help with that. The frequency sweeps are 23 seconds in duration.
+
+Tune Check
+++++++++++
+
+        This test allows the user to look at the final tune in the frequency domain.  It consists of one frequency sweep to obtain the frequency domain data that can be viewed in the log file.  If you make any inputs during the frequency sweep, then it will stop the tune check test and wait until you center the sticks before it begins again, starting the sweep over.  The aircraft will drift very little during the maneuver.  If it is drifting more than 10 meters during the maneuver then the :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>` can be increased to minimize drifting. The frequency sweeps are 23 seconds in duration.
 
 Log Analysis
 ============

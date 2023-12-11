@@ -18,7 +18,7 @@ Other characteristics
 - Multi-satellite and multi-frequency receivers
 - UAVCAN/Dronecan protocol
 - Supports camera hotshoe and shutter trigger
-- Compatible with ArduPilot/PX4 flight controller software, and using a CUAV X7 series flight controller, it is plug and play.
+- Compatible with ArduPilot/PX4 autopilot software, and using a CUAV X7 series autopilot, it is plug and play.
 - HS_USB C and micro-SD disk interfaces
 
 Key Features
@@ -69,7 +69,7 @@ Key Features
 - Anti-jamming
    - Active CW detection and removal Onboard band pass ﬂter
 - Support flight control type
-   -  Compatible with flight controllers running ArduPilot/PX4 firmware
+   -  Compatible with autopilots running ArduPilot/PX4 firmware
 - Interfaces
    - 1 Hotshoe
    - 1 Shutter in

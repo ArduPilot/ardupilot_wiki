@@ -25,13 +25,14 @@ The lidar can be connected to any serial port but if powering the sensor directl
 
 Configuration through the Ground Station
 ----------------------------------------
+Example setup below shown for first proximity sensor:
 
 - :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = "11" ("Lidar360") if using Serial1
 - :ref:`SERIAL1_BAUD <SERIAL4_BAUD>` =  "115" if using Serial1
-- :ref:`PRX_TYPE <PRX_TYPE>` = "8" (LightwareSF45B)
-- :ref:`PRX_ORIENT <PRX_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle
-- :ref:`PRX_YAW_CORR <PRX_YAW_CORR>` allows adjusting for the forward direction of the lidar.  For example, if the lidar is facing forward this parameter can be left as 0.  If facing backwards it should be set to 180.
-- :ref:`PRX_IGN_ANG1 <PRX_IGN_ANG1>` and :ref:`PRX_IGN_WID1 <PRX_IGN_WID1>` parameters allow defining zones around the vehicle that should be ignored.  For example to avoid a 20deg area to the right, set :ref:`PRX_IGN_ANG1 <PRX_IGN_ANG1>` to 90 and :ref:`PRX_IGN_WID1 <PRX_IGN_WID1>` to 20.
+- :ref:`PRX1_TYPE <PRX1_TYPE>` = "8" (LightwareSF45B)
+- :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle
+- :ref:`PRX1_YAW_CORR <PRX1_YAW_CORR>` allows adjusting for the forward direction of the lidar.  For example, if the lidar is facing forward this parameter can be left as 0.  If facing backwards it should be set to 180.
+- :ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>` and :ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>` parameters allow defining zones around the vehicle that should be ignored.  For example to avoid a 20deg area to the right, set :ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>` to 90 and :ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>` to 20.
 
 More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
 

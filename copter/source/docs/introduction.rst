@@ -24,7 +24,7 @@ Key features include:
 -  :ref:`Auto-level <stabilize-mode>` and :ref:`Altitude Hold <altholdmode>` modes: Fly level and straight with ease or add :ref:`simple <simpleandsuper-simple-modes>` mode which removes the need for the pilot to keep track of the vehicle's heading. Just push the stick the way you want the vehicle to go, and the autopilot figures out what that means for whatever orientation the copter is in.
 -  :ref:`Loiter <loiter-mode>` and :ref:`PosHold <poshold-mode>` modes: the vehicle will hold its position using its GPS, accelerometers and barometer.
 -  :ref:`Return to launch <rtl-mode>`: Flip a switch to have Copter fly back to the launch location and land automatically.
--  :ref:`Ad-hoc commands in Flight <ac2_guidedmode>` : With a two-way telemetry radio installed, just click on the map and the vehicle will fly to the desired location.
+-  :ref:`Ad-hoc commands in Flight <ac2_guidedmode>`: With a two-way telemetry radio installed, just click on the map and the vehicle will fly to the desired location.
 -  :ref:`Autonomous missions <auto-mode>`: Use the ground station to define complex missions with up to hundreds of GPS waypoints.  Then switch the vehicle to "AUTO" and watch it take-off, execute the mission, then return home, land and disarm all without any human intervention.
 -  :ref:`Failsafes <failsafe-landing-page>`: The software monitors the state of the system and triggers an autonomous return-to-home in case of loss of contact with the pilot, low battery, or the vehicle strays outside a defined geofence.
 -  **Flexible and customizable**: Copter can fly :ref:`all shapes and sizes of vehicles <common-all-vehicle-types>` just how you want it to because the user has access to hundreds of parameters that control its behaviour.  You won't need to touch most of them but they are there if you need them.
@@ -51,22 +51,5 @@ Please start by reading this section in order to understand what a multicopter c
 and other essential components.
 Then proceed to :ref:`First Time Setup <initial-setup>` to learn how to assemble your Copter and then :ref:`First Flight <flying-arducopter>` to learn how to configure and tune it.
 
-Learn more about Copter
-=======================
-
-To find out more about Copter and your main configuration decisions,
-please see the topics below:
 
 
-.. toctree::
-    :maxdepth: 1
-
-    How Multicopters Work <what-is-a-multicopter-and-how-does-it-work>
-    Choosing a MultiCopter Frame <choosing-a-frame>
-    Choosing an Autopilot <common-choosing-a-flight-controller>
-    Choosing a Ground Station <common-choosing-a-ground-station>
-    Building Your Own Frame <what-you-need>
-    MultiCopter Safety <safety-multicopter>
-    Ready to Fly vehicles <common-rtf>
-    Supported vehicle types <common-all-vehicle-types>
-    Use-Case Overview <copter-use-case-overview>

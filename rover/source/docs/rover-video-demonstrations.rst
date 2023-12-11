@@ -4,12 +4,11 @@
 Rover Video Demonstrations
 ==========================
 
-This article shows a small number of videos demonstrating the Rover
-autopilot in real use use.
+This is a collection of videos, showcasing the Rover autopilot system in actual operational scenarios.
 
 .. tip::
 
-   Please let us know if you find other great videos/use cases we can show here!
+   Please add, or let a dev know, of any additional videos or use cases that are relevant to be included here!
 
 Ground Vehicles
 ===============
@@ -32,8 +31,8 @@ RC car
 ..  youtube:: jH5C6x9lYM0
     :width: 100%
 
-Boat
-====
+Water Vehicles
+==============
 
 ArduBoat MK4 - RC Boat
 ----------------------

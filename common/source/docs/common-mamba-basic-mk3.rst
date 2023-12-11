@@ -4,7 +4,7 @@
 Mamba Basic F405 Flight Controllers
 ===================================
 
-The Mamba Basic line of flight controllers are produced by [Diatone](https://www.diatone.us).
+The Mamba Basic line of autopilots are produced by [Diatone](https://www.diatone.us).
 
 Features
 ========
@@ -47,7 +47,7 @@ receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 RC Input
 ========
  
-The PPM pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true UART connection. However, bi-directional protocols which include telemetry, such as SRXL2 and FPort, when connected in this manner, will only provide RC without telemetry. 
+The PPM pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the SBUS pin can also be configured to be used as true UART1 RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL1 port's RX input pin.
 
@@ -57,7 +57,7 @@ With this option, :ref:`SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>` must be set to "23",
 
 - SBUS/DSM/SRXL connects to the PPM pin, but SBUS is not supported without an external inverter.
 
-- FPort requires connection to T1 and PPM(R1) via a bi-directional inverter. See :ref:`common-FPort-receivers` .
+- FPort requires connection to T1 and PPM(R1) via a bi-directional inverter. See :ref:`common-FPort-receivers`.
 
 - CRSF also requires a T1 connection, in addition to PPM (R1), and automatically provides telemetry.
 
@@ -99,7 +99,7 @@ The correct battery setting parameters are:
 Compass
 =======
 
-The Mamba Basic flight controllers do not have a builting compass, but you can attach an external compass using I2C on the SDA and SCL pads or refer to :ref:`common-compassless`.
+The Mamba Basic autopilots do not have a builting compass, but you can attach an external compass using I2C on the SDA and SCL pads or refer to :ref:`common-compassless`.
 
 Firmware
 ========

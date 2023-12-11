@@ -1,9 +1,11 @@
 .. _common-commercial-support:
 
-==================
-Commercial Support
-==================
+============================
+Commercial Support and Tools
+============================
 
+Consultation
+============
 The following is a list of individuals and companies that can provide commercial (i.e. paid)
 support for ArduPilot including vehicle design, tuning, log analysis, bug fixes and enhancements.
 
@@ -69,18 +71,6 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             <div class="line">other UAV ecosystems including emerging IoT and wearables tech</div>
             <div class="line">Ground Control Station development (Qt, iPhone/iPad/iOS, Android)</div>
             <div class="line">Autopilot Firmware Development &amp; Technical Support</div>
-            </div>
-        </td>
-    </tr>
-    <tr class="row-even">
-        <td><center><a class="first last reference external image-reference" href="http://jdrones.com/"><img alt="../_images/jdrones.png" src="../_images/jdrones.png" style="width: 90px;" /></a><br/><br/>Thailand</center></td>
-        <td><div class="first last line-block">
-            <div class="line">Jani Hirvinen, <a href="mailto:jani@jdrones.com?Subject=ArduPilot%20commercial%20support" target="_top">jani@jdrones.com</a>, +66 (0)2 726 8540</div>
-            <div class="line"><br/></div>
-            <div class="line">jDrones is a leading integrator of ArduPilot into small UAVs</div>
-            <div class="line">Autopilot/Airframe/Electronics design and manufacturing</div>
-            <div class="line">Accessory customization, Mechanical engineering/consulting</div>
-            <div class="line">Software engineering, Training services, Maintenace, GCS design</div>
             </div>
         </td>
     </tr>
@@ -249,6 +239,32 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
+    <tr class="row-odd">
+        <td><center><a class="first last reference external image-reference" href="https://www.fossuav.com/"><img alt="FOSS UAV Ltd" src="../_images/fossuav_logo.png" style="width: 90px;" /></a><br/><br/>UK</center></td>
+        <td><div class="first last line-block">
+            <div class="line">FOSS UAV Ltd, Andy Piper, <a href="mailto:sales@fossuav.com" target="_top">sales@fossuav.com</a></div>
+            <div class="line"><br/></div>
+            <div class="line">Consulting services include: ArduPilot code development (C++, Lua)</div>
+            <div class="line">Vehicle setup support and log analysis.</div>
+            <div class="line">For UK-based clients we offer an in-person tuning service.</div>
+            <div class="line">Remote tuning for non-UK-based clients is also available.</div>
+            <div class="line">Specializing in driver development, ChibiOS, small/fast copter tuning, filtering.  </div>
+            <div class="line">Please visit my channel on <a class="first last reference external image-reference" href="https://www.youtube.com/channel/UC6jQLyVeimsO5O_J5ncYgow"><img alt="YouTube Channel" src="../_images/youtube_logo.png" style="width: 90px;" /></a></div>
+            </div>
+        </td>
+    </tr>
+    <tr class="row-odd">
+        <td><center>EOSBANDI<br/><br/>Hungary</center></td>
+        <td><div class="first last line-block">
+            <div class="line">Andras Schaffer, <a href="mailto:eosbandi@gmail.com" target="_top">eosbandi@gmail.com</a></div>
+            <div class="line"><br/></div>
+            <div class="line">Consulting services include: Mission Planner code development</div>
+            <div class="line">Ardupilot extensions, LUA script development, device integration.</div>
+            <div class="line">Counter UAV systems consulting and testing</div>
+            <div class="line">Specializing in Mission Planner extensions and system integration.</div>
+            </div>
+        </td>
+    </tr>
     </tbody>
     </table>
 
@@ -273,9 +289,6 @@ listed here will be active participants in the community.
     :scale: 0%
 
 .. image:: ../../../images/logos/communistech.png
-    :scale: 0%
-
-.. image:: ../../../images/logos/jdrones.png
     :scale: 0%
 
 .. image:: ../../../images/logos/gmorph.jpeg
@@ -324,6 +337,20 @@ listed here will be active participants in the community.
     :scale: 0%
 
 .. image:: ../../../images/logos/Event38.png
+    :scale: 0%
+
+.. image:: ../../../images/logos/fossuav_logo.png
     :scale: 0%	
+
+.. image:: ../../../images/logos/youtube_logo.png
+    :scale: 0%	
+
+Fleet Management Systems
+========================
+
+- `Autrik <https://www.autrik.com/>`__
+- `AVCRM (AUS/NZ) <https://avcrm.net/aerodromes/>`__
+- `Drone LogBook <https://www.dronelogbook.com/hp/1/index.html>`__
+- `flyfreely <https://flyfreely.io/>`__
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

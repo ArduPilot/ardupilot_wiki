@@ -7,6 +7,8 @@ Sport Mode
 Sport Mode is also known as "rate controlled stabilize" plus Altitude
 Hold.
 
+.. note:: this mode is not included by default in the firmware built and available on the `Firmware Server <https://firmware.ardupilot.org>`__ . Either the user must build his own firmware with this mode enabled or use the `Custom Firmware Server <https://custom.ardupilot.org>`__
+
 Overview
 ========
 

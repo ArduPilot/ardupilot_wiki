@@ -8,6 +8,8 @@ Enabling SLCAN allows the autopilot to connect to CANBUS through USB on PC.
 It allows viewing, configuration and software updates of devices connected to the CANBUS.
 There are two different applications for using SLCAN to modify DroneCAN device parameter: DroneCAN GUI or Mission Planner. But first, the SLCAN interface must be enabled.
 
+.. note:: SLCAN access via COM port is disabled when armed to lower cpu load. Use SLCAN via MAVLink instead. MAVLink access is generally preferred in any case.
+
 Enabling SLCAN
 ==============
 
@@ -25,7 +27,7 @@ Click on SLCan Mode CAN1, and any attached DroneCAN nodes using Driver 1 will ap
 Making Changes to DroneCAN Devices
 ==================================
 
-Once SLCAN has been enabled, you can use :ref:`Mission Planner <common-mp-slcan>`  to make changes immediately to device parameters or firmware update.
+Once SLCAN has been enabled, you can use :ref:`Mission Planner <planner:dronecan-uavcan-slcan>`  to make changes immediately to device parameters or firmware update.
 
 :ref:`DroneCAN GUI tool <common-uavcan-gui>` can also be used, but requires a slightly different setup: 
 
@@ -38,7 +40,7 @@ Reconnect Mission Planner and set :ref:`CAN_SLCAN_SERNUM<CAN_SLCAN_SERNUM>` = 0.
 
 .. image:: ../../../images/can-slcan-srnum.png
 
-Do not reboot, and click SLCAN Mode CAN1 in the Initial Setup->Optional Hardware->UAVCAN(DroneCAN). Now open the :ref:`DroneCAN GUI tool<common-uavcan-gui>` .
+Do not reboot, and click SLCAN Mode CAN1 in the Initial Setup->Optional Hardware->UAVCAN(DroneCAN). Now open the :ref:`DroneCAN GUI tool<common-uavcan-gui>`.
 
 .. note:: In this mode, you can also use Mission Planner's DroneCAN page to make changes, but it will not connect normally as a MAVLink Ground Station. To re-connect Mission Planner, you will need to reboot the autopilot.
 

@@ -8,10 +8,12 @@ ArduPilot includes a suite of Pre-arm Safety Checks which will prevent the
 vehicle from arming its propulsion system if any of a fairly large number of issues are
 discovered before movement including missed calibration, configuration
 or bad sensor data. These checks help prevent crashes or fly-aways but
-they can also be disabled if necessary.
+some can also be disabled if necessary.
 
 ..  youtube:: gZ3H2eLmStI
     :width: 100%
+
+.. warning:: Never disable the arming checks (ie :ref:`ARMING_CHECK<ARMING_CHECK>` not = "1", except for bench testing. Always resolve any prearm or arming failures BEFORE attempting to fly. Doing otherwise may result in the loss of the vehicle.
 
 Recognising which Pre-Arm Check has failed using the GCS
 ========================================================
@@ -29,8 +31,22 @@ determine exactly which check has failed:
 #. The first cause of the Pre-Arm Check failure will be displayed in red
    on the HUD window
 
-Failure messages
-================
+Pre-arm checks that are failing will also be sent as messages to the GCS while disarmed, about every 30 seconds. If you wish to disable this and have them sent only when an attempt arm fails, then set the :ref:`ARMING_OPTIONS<ARMING_OPTIONS>` bit 1 (value 1).
+
+Most are obvious as to the issue, but some can have multiple sources and the message cant identify them all in its limited length. The most common of those are:
+
+**AHRS: waiting for home** : autopilot has not gotten a home location, usually because the GPS is detached or has not gotten a fix yet with enough precision. Common experience while indoors.
+
+**EKF3 Roll/Pitch inconsistent by X degs** : The autopilot is not using EKF3 because its roll or pitch disagrees with the current ARHS system being used (usually DCM). Normally due to EKF3 not getting good enough GPS accuracy (are you indoors??), but could be due to other sensors producing errors. Wait or go outdoors.
+
+**EKF3 Yaw inconsistent by x degs**: The autopilot is not using EKF3 because its yaw disagrees with the current ARHS system being used (usually DCM). Normally a compass issue caused by metal objects nearby.
+
+**AHRS: not using configured AHRS type**: Normally, if EKF3 is being used, it has not started or has fallen back to DCM because its not healthy yet. Can also be caused by misconfiguring which EKF is enabled versus being used by :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>`.
+
+**EKF3 waiting for GPS config data**: A DroneCAN GPS has been configured but is disconnected or not setup.
+
+Other Failure messages
+======================
 
 Failsafes:
 ----------
@@ -39,6 +55,8 @@ Any failsafe (RC, Battery, GCS,etc.) will display a message and prevent arming.
 
 RC failures:
 -------------------------------------------------
+
+**Waiting for RC** or **RC not found** : No RC has been detected. If operating with only a GCS, see :ref:`common-gcs-only-operation`.
 
 **RC not calibrated** : the :ref:`radio calibration <common-radio-control-calibration>` has not been
 performed.  :ref:`RC3_MIN<RC3_MIN>` and :ref:`RC3_MAX<RC3_MAX>` must have been changed from their
@@ -192,6 +210,8 @@ Airspeed:
 ---------
 
 If an airspeed sensor is configured, and it is not providing a reading or failed to calibrate, this check will fail.
+
+**Airspeed not healthy**
 
 Logging:
 --------

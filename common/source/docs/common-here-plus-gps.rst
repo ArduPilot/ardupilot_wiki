@@ -1,8 +1,8 @@
 .. _common-here-plus-gps:
 
-=============
-Here+ RTK GPS
-=============
+=======================
+CubePilot Here+ RTK GPS
+=======================
 
 This article provides a brief overview of how to setup a Here+ RTK GPS receiver which is based on the Ublox M8P.
 Like other RTK GPSs, the Here+ can provide much more accurate position estimates than regular GPSs but normally requires the use of a 2nd GPS connected to the ground station.
@@ -14,7 +14,7 @@ These instructions focus on the setup using Mission Planner on Windows, but HERE
 Where to buy
 ============
 
-See a list of `Proficnc resellers here <http://www.proficnc.com/stores>`__ or you can purchase directly from `Proficnc.com <http://www.proficnc.com/gps/77-gps-module.html>`__.
+Newer generation of this product can be purchased through CubePilot `resellers <https://cubepilot.org/#/reseller/list>`__
 
 Connecting the vehicle and base station GPSs
 ============================================
@@ -155,7 +155,11 @@ Select the correct base module com port in the top left corner and click connect
 
 During the survey process, the right box will show the current survey status: Position is invalid: base station has not yet reached a valid location; In Progress: survey is still in progress; Duration: The number of seconds that the current surveying task has been executed; Observation: the number of observations acquired; Current Acc: Absolute geographic accuracy that the current base station can achieve. The green bar at the lower part of the Mission Planner page shows the satellites being detected and the signal strength related to each satellite. 
  
-The base station needs a certain amount of time to meet the accuracy requirements of your input. Testing shows that, in an open area without shelter, to achieve the absolute accuracy of 2m takes a few minutes; to reach the absolute accuracy of less than 30cm takes around an hour; to reach the accuracy of 10cm takes a few hours. 
+The base station needs a certain amount of time to meet the accuracy requirements of your input. Testing shows that, in an open area without shelter, to achieve the absolute accuracy of 2m takes a few minutes; to reach the absolute accuracy of less than 30cm takes around an hour; to reach the accuracy of 10cm takes a few hours.
+
+.. note::
+
+   These duration could vary greatly by various factors. For example, to achieve the absolute accuracy of 2m could take an hour.
  
 It should be noted that the absolute geographic accuracy of the base station here will affect the absolute geographic accuracy of the rover module without affecting the relative accuracy between the base station and rover. If your application does not require UAV with high absolute geographic accuracy, you do not need to set the base station's precision too high, resulting in long survey time. Even if the accuracy of the base station is 1.5 to 2 m, the position accuracy of the rover module relative to the base station can still reach centimeter level.
 

@@ -4,7 +4,7 @@
 Terrain Following (in Auto, Guided, etc)
 ========================================
 
-Copter 3.4 (and higher) support "terrain following" in nearly all modes including autonomous modes like :ref:`AUTO <auto-mode>`, :ref:`Guided <ac2_guidedmode>`, :ref:`RTL <rtl-mode>` and :ref:`Land <land-mode>`.  This feature allows the vehicle to climb or descend to maintain a specified distance above the terrain using either a :ref:`downward facing Lidar or Sonar <common-rangefinder-landingpage>` or from `SRTM <https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission>`__ data (aka terrain altitude data) provided by the ground station using a mapping service such as Google maps.  Details of how the SRTM data is used can be found on the :ref:`plane terrain following page <plane:common-terrain-following>`
+Copter supports "terrain following" in nearly all autonomous modes :ref:`AUTO <auto-mode>`, :ref:`Guided <ac2_guidedmode>`, :ref:`RTL <rtl-mode>` and :ref:`Land <land-mode>`.  This feature allows the vehicle to climb or descend to maintain a specified distance above the terrain using either a :ref:`downward facing Lidar or Sonar <common-rangefinder-landingpage>` or from `SRTM <https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission>`__ data (aka terrain altitude data) provided by the ground station using a mapping service such as Google maps or stored on the autopilot's SD card in the "Terrain" subdirectory.  Details of how the SRTM data is used and stored can be found on the :ref:`plane terrain following page <plane:common-terrain-following>`
 
 ..  youtube:: mT67QOAxuG8
     :width: 100%
@@ -13,7 +13,7 @@ See :ref:`common-understanding-altitude` for altitude definitions.
 
 .. note::
 
-   :ref:`Loiter <loiter-mode>`, :ref:`PosHold <poshold-mode>` and :ref:`AltHold <altholdmode>` modes also support low altitude terrain following, called Surface Tracking.  Please refer to the :ref:`Surface Tracking <terrain-following-manual-modes>` wiki page.
+   :ref:`Loiter <loiter-mode>`, :ref:`PosHold <poshold-mode>` and :ref:`AltHold <altholdmode>` modes also support low altitude terrain following, called Surface Tracking. Please refer to the :ref:`Surface Tracking <terrain-following-manual-modes>` wiki page.
 
 Setting up a Mission to use Terrain data
 ========================================

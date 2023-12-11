@@ -4,9 +4,9 @@
 Surface Tracking
 ================
 
-Copter supports low altitude Surface Tracking in nearly all modes including pilot controlled modes like :ref:`AltHold <altholdmode>`, :ref:`Loiter <loiter-mode>` and :ref:`PosHold <poshold-mode>` and also fully autonomous modes including :ref:`AUTO <auto-mode>` and :ref:`Guided <ac2_guidedmode>`.
+Copter supports low altitude Surface Tracking, either a floor/ground or a ceiling, in nearly all modes including pilot controlled modes like :ref:`AltHold <altholdmode>`, :ref:`Loiter <loiter-mode>` and :ref:`PosHold <poshold-mode>`.
 
-Additionally, Terrain Following is supported in autonomous modes using a terrain height data base stored on the autopilot's SD card and/or obtained real-time from the Ground Control Station.
+Additionally, :ref:`Terrain Following<terrain-following>` is supported in autonomous modes using a terrain height data base stored on the autopilot's SD card and/or obtained real-time from the Ground Control Station.
 
 This page describes the Surface Following setup .  For autonomous modes using downloaded data for Terrain Following please see the :ref:`terrain following for autonomous modes <terrain-following>` wiki page.
 
@@ -16,8 +16,11 @@ This page describes the Surface Following setup .  For autonomous modes using do
 Setup and Configuration
 -----------------------
 
-- Connect a downward facing :ref:`lidar or sonar <common-rangefinder-landingpage>` to the vehicle
-- An :ref:`auxiliary switch <common-auxiliary-functions>` (Copter 4.0 and later), or  :ref:`channel-7-and-8-options`, can be configured to turn on/off use of the rangefinder.
+- Connect a downward facing rangefinder(for floor/ground tracking) and/or an upward facing rangefinder (for ceiling tracking) :ref:`lidar or sonar <common-rangefinder-landingpage>` to the vehicle. 
+
+- Which is being used is configured by the :ref:`SURFTRAK_MODE<SURFTRAK_MODE>` parameter or by: 
+- An :ref:`auxiliary switch <common-auxiliary-functions>` (function "75"), or  :ref:`channel-7-and-8-options`, can be configured to turn on/off use of the rangefinder.
+- the :ref:`SURFTRAK_TC<SURFTRAK_TC>` parameter controls the smoothing of the surface data. Increase if you are moving fast and getting perturbations in the flight path. Conversely, it can be lower to make the vehicle more responsive to the rangefinder data.
 
 .. warning::
 

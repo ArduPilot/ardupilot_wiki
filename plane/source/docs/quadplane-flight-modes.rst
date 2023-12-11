@@ -37,7 +37,7 @@ described :ref:`here <quadplane-flying>`.
 
    There is also a difference in throttle channel parameters from Copter: instead of :ref:`THR_DZ<THR_DZ>` for setting the deadzone, QuadPlane uses RCn_DZ (where n is the channel mapped to throttle input). 
    The default for throttle channel deadzone is 60 (+/- 6%).
-   If your QuadPlane does not hover at mid-stick (+/- 6%) in QSTABILIZE, you will need to center it using :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` to set the throttle percentage applied at mid-stick in QSTABILIZE such that switching to QHOVER or QLOITER does not result in an altitude change. This value can be automatically learned and applied during QLOITER and QHOVER modes, by enabling :ref:`Q_M_HOVER_LEARN<Q_M_HOVER_LEARN>` .
+   If your QuadPlane does not hover at mid-stick (+/- 6%) in QSTABILIZE, you will need to center it using :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` to set the throttle percentage applied at mid-stick in QSTABILIZE such that switching to QHOVER or QLOITER does not result in an altitude change. This value can be automatically learned and applied during QLOITER and QHOVER modes, by enabling :ref:`Q_M_HOVER_LEARN<Q_M_HOVER_LEARN>`.
 
 .. tip::
 
@@ -61,7 +61,7 @@ For this reason you should avoid the following flight modes in a quadplane:
 these modes are problematic as the stick input from the pilot is not sufficient to tell the autopilot what attitude the aircraft wants or what climb rate is wanted, so the quadplane logic does not engage the quad motors when in these modes. 
 These modes also make log analysis difficult. Please use FBWA mode instead of STABILIZE for manual flight.
 
-In the future we may adds ways to use the quad motors in these modes, but for now please avoid them.
+In the future we may add ways to use the quad motors in these modes, but for now please avoid them.
 
 The other mode where the quad motors are disabled is MANUAL mode. 
 That mode still can be useful for checking aircraft trim in fixed wing flight or for taxiing your aircraft.

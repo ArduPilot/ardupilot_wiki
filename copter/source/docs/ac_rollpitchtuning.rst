@@ -24,10 +24,10 @@ Each time the P term is changed set the I term equal to the P term. Those parame
 
 .. _ac_rollpitchtuning_in-flight_tuning:
 
-If using :ref:`Transmitter based tuning<common-transmitter-tuning>` , set the minimum value of the tuning range to the current safe value and the upper range to approximately 4 times the current value. Be careful not to move the slider before the parameter list is refreshed to recover the set value. Ensure the transmitter tuning is switched off before setting the parameter value or the tuning may immediately overwrite it.
+If using :ref:`Transmitter based tuning<common-transmitter-tuning>`, set the minimum value of the tuning range to the current safe value and the upper range to approximately 4 times the current value. Be careful not to move the slider before the parameter list is refreshed to recover the set value. Ensure the transmitter tuning is switched off before setting the parameter value or the tuning may immediately overwrite it.
 
 Video of in-flight tuning
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-..  youtube:: NOQPrTdrQJM#t=145
+..  youtube:: NOQPrTdrQJM&t=145s
     :width: 100%
