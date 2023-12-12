@@ -39,6 +39,7 @@ MAVProxy starts with several modules by default. They are:
     auxopt: auxopt command handling
     battery: battery commands
     calibration: calibration handling
+    chat: chat
     cmdlong: cmdlong handling
     fence: geo-fence management
     ftp: ftp handling
@@ -71,6 +72,7 @@ List of Modules
     auxopt
     battery
     cameraview
+    chat
     cmdlong
     console
     dataflash_logger
