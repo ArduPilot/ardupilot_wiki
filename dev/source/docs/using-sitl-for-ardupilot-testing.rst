@@ -177,7 +177,6 @@ telling it to use /dev/ttyUSB0 instead of the normal internal simulated
 GPS for the 2nd UART. You can find the SITL serial port mappings :ref:`here <learning-ardupilot-uarts-and-the-console>`
 
 Any of the 8 UARTs can be configured in this way, using serial0 to serial7.
-The standard serial ports SERIAL1 and SERIAL2 are uartC and uartD respectively.
 
 Typically serial devices can be connected to a computer's USB port through
 an FTDI adapter, but note that these generally do not support half-duplex.
@@ -279,7 +278,7 @@ Specify the schema and filename on the ``sim_vehicle.py`` command-line.  The fol
 
 ::
 
-   ./Tools/autotest/sim_vehicle.py  --gdb --debug -v plane -A --uartF=logic_async_csv:hobbywing-platinum-pro-v3.csv --speedup=1 -B AP_HobbyWing_Platinum_PRO_v3::update
+   ./Tools/autotest/sim_vehicle.py  --gdb --debug -v plane -A --serial5=logic_async_csv:hobbywing-platinum-pro-v3.csv --speedup=1 -B AP_HobbyWing_Platinum_PRO_v3::update
 
 .. note::
 

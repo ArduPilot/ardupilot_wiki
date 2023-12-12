@@ -136,8 +136,8 @@ Next start the simulator using one of the lines shown below.  This will start th
 
 ::
 
-    ../Tools/autotest/sim_vehicle.py -A --uartF=sim:sf45b -l 51.8752066,14.6487840,54.15,0
-    ../Tools/autotest/sim_vehicle.py -A --uartF=sim:rplidara2 -l 51.8752066,14.6487840,54.15,0
+    ../Tools/autotest/sim_vehicle.py -A --serial5=sim:sf45b -l 51.8752066,14.6487840,54.15,0
+    ../Tools/autotest/sim_vehicle.py -A --serial5=sim:rplidara2 -l 51.8752066,14.6487840,54.15,0
     
 To display the barriers on the map run type the following into the terminal
 
@@ -302,7 +302,7 @@ Enable EKF3, disable GPS and set Serial5 protocol to mavlink so as to accept vis
     param set ARMING_CHECK 388598 (optional, to disable GPS checks)
     param fetch
 
-Restart the simulation, attaching a simulated Vicon system to uartF (which corresponds to ``SERIAL5``):
+Restart the simulation, attaching a simulated Vicon system to ``SERIAL5``:
 
 ::
 
