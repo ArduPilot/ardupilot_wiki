@@ -156,7 +156,7 @@ traffic into the simulation.  You might invoke SITL in this way to achieve this 
 
 ::
 
-   sim_vehicle.py -v ArduCopter -A "--uartC uart:$SERIAL_DEVICE:57600"
+   sim_vehicle.py -v ArduCopter -A "--serial3 uart:$SERIAL_DEVICE:57600"
 
 Where SERIAL_DEVICE might be /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A4008ZND-if00-port0 on a Linux system (find a list of valid serial devices with the command ``ls /dev/serial/by-id/*`` or ``ls /dev/ttyS*`` for a COM port on Cygwin).  Once SITL has started it may be necessary to set the ``SERIAL3_`` parameters:
 
