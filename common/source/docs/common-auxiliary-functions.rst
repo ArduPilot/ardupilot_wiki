@@ -317,43 +317,80 @@ For example, if you have a "LOITER mode" switch active and then an "AUTO mode" s
 
 Other functions are:
 
-.. table:: Auxiliary Switch Functions
-   :width: 100%
-
-   ===================================== ==============================================================================
+   ===================================== =======================================================================
     Option                                Description
-   ===================================== ==============================================================================
-    Flip                                  The vehicle will flip on its roll or pitch axis depending upon the pilot's roll and pitch stick position. See :ref:`Flip Mode<flip-mode>`.
-    Save Trim                             In Rover, a high saves the current steering channel trim, see :ref:`Save Steering Trim <savetrim>`. In Copter, it adjusts the vehicle level position using the current roll and pitch stick inputs. See details :ref:`here <auto-trim>`.
-    Save Waypoint                         Save the current location (including altitude) as a waypoint in the mission. If in AUTO mode no waypoint will be saved, instead the vehicle will RTL
-    Camera Trigger                        The camera shutter will be activated. See more details :ref:`here <common-camera-shutter-with-servo>`.
-    Range Finder                          :ref:`RangeFinder <common-rangefinder-landingpage>` is disabled when the switch is in a low position, and enabled when in a high position.
-    Fence                                 Fence is disabled when the switch is in a low position, and enabled when in a high position.            
+   ===================================== =======================================================================
+    Flip                                 | The vehicle will flip on its roll or pitch axis depending upon the
+                                         | pilot's roll and pitch stick position. See :ref:`Flip Mode<flip-mode>`.
+    Save Trim                            | In Rover, a high saves the current steering channel trim,
+                                         | see :ref:`Save Steering Trim <savetrim>`.
+                                         | In Copter, it adjusts the vehicle level position using the current roll
+                                         | and pitch stick inputs. See details :ref:`here <auto-trim>`.
+    Save Waypoint                        | Save the current location (including altitude) as a waypoint in the
+                                         | mission.If in AUTO mode no waypoint will be saved, instead the 
+                                         | vehicle will RTL.
+    Camera Trigger                       | The camera shutter will be activated.
+                                         | See more details :ref:`here <common-camera-shutter-with-servo>`.
+    Range Finder                         | :ref:`RangeFinder <common-rangefinder-landingpage>` is disabled when
+                                         | the switch is in a low position, and enabled when in a high position.
+    Fence                                | Fence is disabled when the switch is in a low position, and enabled
+                                         |  when in a high position.
     Acro Trainer                          Turn on automatic leveling in the ACRO flight mode.
     Sprayer                               Turn on the :ref:`crop sprayer <sprayer>` when the switch is pulled high.
-    Gripper                               Operates the :ref:`gripper <common-gripper-landingpage>`. Switch pulled low releases the gripper, high closes or grabs.
-    Parachute Enable                      Enables the automatic release of the :ref:`parachute <common-parachute>` (this does not immediately trigger the release).
-    Parachute Release                     Immediately triggers the release of the :ref:`parachute <common-parachute>` as long as the vehicle is not landed or too low.
-    Parachute 3Pos                        Switch pulled low disables the :ref:`parachute <common-parachute>`. The switch in the middle position enables the parachute for automatic release. The switch pulled high triggers the release of the parachute as long as the vehicle is not landed or too low.
+    Gripper                              | Operates the :ref:`gripper <common-gripper-landingpage>`. Switch pulled
+                                         | low releases the gripper, high closes or grabs.
+    Parachute Enable                     | Enables the automatic release of the :ref:`parachute <common-parachute>`
+                                         | (this does not immediately trigger the release).
+    Parachute Release                    | Immediately triggers the release of the :ref:`parachute <common-parachute>`
+                                         | as long as the vehicle is not landed, or too low.
+    Parachute 3Pos                       | Switch pulled low disables the :ref:`parachute <common-parachute>`.
+                                         | The switch in the middle position enables the parachute for
+                                         | automatic release. The switch pulled high triggers the release of the
+                                         | parachute as long as the vehicle is not landed, or too low.
     Mission Reset                         Reset AUTO to run the first mission command in the command list.
-    AttCon Feed Forward                   Turns on/off attitude controllers feed forward. For developers only.
-    AttCon Accel Limits                   Turns on/off attitude controller acceleration limits. For developers only.
+    AttCon Feed Forward                  | Turns on/off attitude controllers feed forward.
+                                         | For developers only.
+    AttCon Accel Limits                  | Turns on/off attitude controller acceleration limits.
+                                         | For developers only.
     Retract Mount                         Move the :ref:`camera mount <common-cameras-and-gimbals>` to its retracted position.
-    Relay 1 On/Off                        Switch pulled low turns off the first :ref:`relay <common-relay>`, pulled high turns on the first relay.
+    Relay 1 On/Off                       | Switch pulled low turns off the first :ref:`relay <common-relay>`,
+                                         | pulled high turns on the first relay.
     Landing Gear                          Deploys or Retracts :ref:`Landing Gear <common-landing-gear>`
     Lost Vehicle Alarm                    Plays the `lost copter alarm <https://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__ through the buzzer
     Emergency Stop Motors                 Stops motors immediately (`video <https://www.youtube.com/watch?v=-Db4u8LJE5w>`__)
-    Motor Interlock                       | Motor Interlock controls the way the heliRSC (motor throttle control) output is generated in Traditional Helicopters and HeliQuads. If >1200us, it enables the Motor Interlock function, below it is disabled.
-                                          | When <1200us, it is similar to what is sometimes referred to as Throttle Hold in RC Helicopter terminology for Traditional Helicopters and HeliQuads. For Mulit-copters, it is used as a motor stop function when <1200us. (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__).
-    Brake                                 Invokes the :ref:`Brake flight mode <brake-mode>` when the switch goes high. Bringing the switch back to low will return the vehicle to the mode indicated by the ch5 flight mode switch.
-    Relay2 On/Off                         Switch pulled low turns off the second :ref:`relay <common-relay>`, pulled high turns on the second relay.
-    Relay3 On/Off                         Switch pulled low turns off the third :ref:`relay <common-relay>`, pulled high turns on the third relay.
-    Relay4 On/Off                         Switch pulled low turns off the fourth :ref:`relay <common-relay>`, pulled high turns on the fourth relay.
-    Throw                                 Invokes the :ref:`Throw flight mode <throw-mode>` when the switch goes high. Bringing the switch back to low will return the vehicle to the mode indicated by the ch5 flight mode switch.
-    ADSB-Avoidance                        When the switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>` (avoidance of manned aircraft) is enabled, otherwise it's disabled
-    Precision Loiter                      Turns on/off :ref:`Precision Loiter <precision-landing-with-irlock>`. (i.e. holding position above a target in Loiter mode using IR-Lock sensor)
-    Object Avoidance                      When the switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>` or :ref:`TeraRanger Tower<common-teraranger-tower-objectavoidance>`. When low, object avoidance is disabled.
-    Arm/Disarm(4.1 and earlier)           Arms the vehicle if the switch goes high (subject to arming checks). Disarms the vehicle if brought low.
+    Motor Interlock                      | Motor Interlock controls the way the heliRSC (motor throttle control) output
+                                         | is generated in Traditional Helicopters and HeliQuads. If >1200us,
+                                         | it enables theMotor Interlock function, below it is disabled.
+                                         | When <1200us, it is similar to what is sometimes referred to as
+                                         | Throttle Hold in RC Helicopter terminology.
+                                         | For Mulit-copters, it is used as a motor stop function when <1200us.
+                                         | (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__).
+    Brake                                | Invokes the :ref:`Brake flight mode <brake-mode>` when the switch goes high.
+                                         | Bringing the switch back to low will return the vehicle to the mode 
+                                         | indicated by the flight mode switch.
+    Relay2 On/Off                        | Switch pulled low turns off the second :ref:`relay <common-relay>`,
+                                         | pulled high turns on the second relay.
+    Relay3 On/Off                        | Switch pulled low turns off the third :ref:`relay <common-relay>`,
+                                         | pulled high turns on the third relay.
+    Relay4 On/Off                        | Switch pulled low turns off the fourth :ref:`relay <common-relay>`,
+                                         | pulled high turns on the fourth relay.
+    Throw                                | Invokes the :ref:`Throw flight mode <throw-mode>` when the switch
+                                         | goes high. Bringing the switch back to low will return the vehicle
+                                         | to the mode indicated by the ch5 flight mode switch.
+    ADSB-Avoidance                       | When the switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>`
+                                         | (avoidance of manned aircraft) is enabled, otherwise it's disabled
+    Precision Loiter                     | Turns on/off :ref:`Precision Loiter <precision-landing-with-irlock>`.
+                                         | (i.e. holding position above a target in Loiter mode
+                                         | using IR-Lock sensor)
+    Object Avoidance                     | When the switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>`
+                                         | or :ref:`TeraRanger Tower<common-teraranger-tower-objectavoidance>`. When low, object avoidance is disabled.
+    Arm/Disarm(4.1 and earlier)          | Arms the vehicle if the switch goes high (subject to arming checks).
+                                         | Disarms the vehicle if brought low.
+   ===================================== =======================================================================
+
+   ===================================== =======================================================================
+    Option                                Description
+   ===================================== =======================================================================
     Inverted Flight                       Enabling inverted flight only changes how ArduPilot stabilizes the vehicle. It will stabilize it with a roll of 180 degrees from normal whenever inverted flight is enabled in a stabilized mode. Unless the vehicle is capable of inverted flight, do **NOT** use this option.
     Winch Enable                          Enables Winch operation. The switch in the low position on this channel relaxes the winch.
     Winch Control                         Controls the speed and direction of the winch. Low: takeup, Middle: stop, High: unreel
@@ -376,7 +413,7 @@ Other functions are:
     Disarm                                Disarm the vehicle unconditionally and immediately. Unlike Emergency Stop Motors, which waits for :ref:`DISARM_DELAY<DISARM_DELAY>` in Copter.
     Q_Assist 3Pos SW                      Low: disable Q_Assist entirely, Middle: Normal Q_Assist operation, High: Q_Assist active at all times. See Assisted Fixed Wing Flight section of :ref:`quadplane-flying`.
     ZigZag Mode Auto Enable               Enable automatic zigzag and sprayer in ZIGZAG mode. See :ref:`zigzag-mode`.
-    AIRMODE (not a regular flight mode)   Enables and disables AIRMODE feature. See :ref:`airmode`
+    AIRMODE(not a flight mode)            Enables and disables AIRMODE feature. See :ref:`airmode`
     Generator                             Mode control for Richenpower Hybrid Power Generator
     Non Auto Terrain Follow Disable       Disables Terrain Following in CRUISE and FBWB modes
     CROW Mode Switch                      Selects between different CROW aileron operating modes
@@ -424,8 +461,7 @@ Other functions are:
     Airbrakes                             Controls deployment of :ref:`Airbrakes<airbrakes-on-plane>`
     Walking Robot Height                  Input channel for Walking Robot Height. See :ref:`walking-robots`.
     Scripting RC channels                 Allows reading a dedicated RC channel for script inputs
-   ===================================== ==============================================================================
-
+   ===================================== =======================================================================
 
 Check the channel range
 =======================
