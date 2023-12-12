@@ -26,6 +26,8 @@ Miss-alignment can also be seen in the dataflash log RCOUT values in a hover for
 
 For vectored thrust frames, fixed-wing mode alignment is also critical. Very small differences between motor thrust angles in forward flight will generate undesirable, and sometimes uncontrollable, roll trim tendencies. Careful bench checking and adjustment of forward fixed-wing mode positions with respect to airframe and one another is required.
 
+.. _h-vs-x-mixing:
+
 X vs H Quad Mixing
 ==================
 

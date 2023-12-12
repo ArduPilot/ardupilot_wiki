@@ -50,6 +50,8 @@ layout and rotation directions.
 -  10 for Y6B only
 -  11 for FireFly6Y6 (Y6F only)
 
+.. note:: if selecting X or H frame, see :ref:`Frame Twist Tips <h-vs-x-mixing>`
+
 VTOL Motor Ordering
 -------------------
 
