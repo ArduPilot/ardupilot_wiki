@@ -15,11 +15,6 @@ WSL Setup Steps
 
 #. The official instructions are `here <https://docs.microsoft.com/en-us/windows/wsl/install>`__.
 
-.. note:: if this system has been upgraded from Windows 10 to 11, be sure the following has been enabled.
-
-.. image:: ../../../images/win11-wsl2.jpg
-    :target: ../_images/win11-wsl2.jpg
-
 #. From the Start menu, start the "Ubuntu" application and then follow the :ref:`Ubuntu instructions to install ArduPilot development environment <building-setup-linux>`
 
     .. note:: Compilation speeds will be much faster if the ArduPilot repository is downloaded inside of WSL's file system and not externally in the normal Windows file structure.
