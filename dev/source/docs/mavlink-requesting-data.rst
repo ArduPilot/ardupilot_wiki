@@ -18,7 +18,7 @@ More details on the above methods can be found below.
 
 .. note::
 
-   If you find your message rates are reverting to some fixed value after you set them, it is probably a Ground Control station adjusting the stream rates to suit itself.  Most Ground Control Stations will have a control to stop the GCS doing this - for example in MAVProxy use ``set streamrate -1``
+   If you find your message rates are reverting to some fixed value after you set them, it is probably a Ground Control station adjusting the stream rates to suit itself.  Most Ground Control Stations will have a control to stop the GCS doing this - for example in MAVProxy use ``set streamrate -1``.  If adjusting the configuration of the GCS is infeasible, you can set bit 12 in the ``SERIALn_OPTIONS`` parameter corresponding to the serial port on which the mavlink traffic is being transfered to force ArduPilot to ignore attempts by the GCS to set message rates via streamrate commands.
 
 
 Using SRx Parameters
