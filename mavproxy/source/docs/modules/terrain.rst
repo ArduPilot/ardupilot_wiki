@@ -15,7 +15,7 @@ ground.
 By default, it uses the freely available `SRTM
 dataset <https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission>`_.
 For the purposes of this module, a copy of this dataset is hosted
-`here <https://firmware.ardupilot.org/SRTM/>`_ Level 1
+`here <https://terrain.ardupilot.org/SRTM3/>`_ Level 3
 resolution (90m) is used.
 
 Whilst this module does require an Internet connection to download the
@@ -31,11 +31,14 @@ The status of the module can be shown by entering ``terrain status``.
 To get the terrain height at a particular location, use 
 ``terrain check <lat> <lon>``` or right click on the map (module must be loaded to display)
 
+To use higher resolution SRTM data, a Level 1 dataset is `available <https://terrain.ardupilot.org/SRTM1/>`_.
+Use ``terrain set source SRTM1`` to use. To go back to the Level 3 dataset, use ``terrain set source SRTM3``
+
 In addition, you can prevent the downloading of tiles from the Internet for testing purposes, using the following command to disable it:
 
 .. code:: bash
 
-    terrain set enable 0
+    terrain set offline 1
 
 
 

@@ -1,4 +1,4 @@
-.. _ftp:
+.. _mavproxy-modules-ftp:
 
 ===
 FTP

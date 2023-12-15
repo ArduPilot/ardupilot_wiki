@@ -4,7 +4,7 @@
 Multiple Vehicles with MAVProxy
 ===============================
 
-MAVProxy has basic support for multi-vehicle operations.
+MAVProxy has support for multi-vehicle operations.
 
 .. figure:: ../../images/multi_veh.png
 
@@ -17,3 +17,4 @@ In the terminal, there are two options available:
 * Use ``alllinks <cmd>`` to send <cmd> to all vehicles in turn. For example, ``alllinks mode rtl`` will set RTL mode on all vehicles.
 * Use ``vehicle <n>`` to set the active vehicle
 
+See the :ref:`swarm module <mavproxy-modules-swarm>` for a GUI for automating swarm management and operations.

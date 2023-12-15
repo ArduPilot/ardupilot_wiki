@@ -2,7 +2,7 @@
 Windows Development Environment
 ===============================
 
-You will need to have `Python <http://www.python.org>`_ 2 or 3. Python 3 is preferred.
+You will need to have `Python <http://www.python.org>`_ 3
 
 It is assumed that Python and pip are on the system path. If not, see `here <https://datatofish.com/add-python-to-windows-path/>`_ for instructions.
 
@@ -10,9 +10,9 @@ To install the required libraries:
 
 .. code:: bash
 
-    pip install wheel
-    pip install pywin32 lxml pymavlink numpy matplotlib==3.2.2 pyserial opencv-python==4.5.3.56 PyYAML Pygame Pillow wxpython prompt-toolkit scipy
-    pip install pyinstaller==4.3 setuptools packaging 
+    pip install wheel setuptools
+    pip install pywin32 lxml pymavlink numpy matplotlib pyserial opencv-python PyYAML Pygame Pillow wxpython prompt-toolkit scipy
+    pip install pyinstaller packaging 
     
 Download the MAVProxy `source <https://github.com/ArduPilot/MAVProxy>`_.
 

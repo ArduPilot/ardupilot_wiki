@@ -45,7 +45,7 @@ Screenshots
 
 .. figure:: ./images/mavproxy_windows.jpg
 
-   MAVProxy running under Windows 7
+   MAVProxy running under Windows 10
 
 Quick Reference Card
 ====================
@@ -68,7 +68,7 @@ Table of Contents
 =================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    docs/getting_started/index
    docs/uav_configuration/index
@@ -76,7 +76,6 @@ Table of Contents
    docs/analysis/index
    docs/development/index
    docs/common-appendix
-
 
 
 

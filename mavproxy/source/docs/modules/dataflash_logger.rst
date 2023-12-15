@@ -6,7 +6,8 @@ DataFlash Logs
 
     module dataflash_logger
     
-This module allows dataflash logs to be downloaded from the autopilot.
+This module allows dataflash logs to be streamed in realtime from the autopilot. It requires the
+``LOG_BACKEND_TYPE`` parameter to include the "MAVLink" backend.
 
 The logs will be downloaded to the vehicle logging folder.
 
@@ -17,19 +18,20 @@ Control
 
     dataflash_logger start
     
-Start downloading dataflash logs
+Start streaming dataflash logs. Requires the dataflash logging
+to be started, typically when the vehicle is armed.
 
 .. code:: bash
 
     dataflash_logger stop
     
-Stop downloading dataflash logs
+Stop streaming dataflash logs
 
 .. code:: bash
 
     dataflash_logger status
     
-Print the progress of the dataflash log download    
+Print the progress of the dataflash log streaming    
 
 Settings
 ========

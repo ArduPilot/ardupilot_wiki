@@ -60,6 +60,18 @@ Set the desired attitude of the vehicle in quaternion format.
 Sets the target position according to the previous mouse click on the map and the target 
 velocity in North-East-Down format (m/s). Uses a global frame.
 
+.. code:: bash
+
+    pause
+    
+If in AUTO or GUIDED mode, pause the vehicle's travel.
+
+.. code:: bash
+
+    resume
+    
+If in AUTO or GUIDED mode, resume the vehicle's travel.
+
 Camera
 ======
 
