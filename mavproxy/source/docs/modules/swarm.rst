@@ -1,3 +1,5 @@
+.. _mavproxy-modules-swarm:
+
 =====
 Swarm
 =====

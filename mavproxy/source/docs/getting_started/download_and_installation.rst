@@ -51,6 +51,9 @@ For Fedora based systems:
     pip3 install PyYAML mavproxy --user
     echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
 
+.. note::
+    If MAVProxy is intended to run "headless" (non-GUI), the ``python3-wxgtk4.0`` or ``python3-wxpython4`` packages can be skipped.
+
 If you get a "permission denied" error message when connecting to serial devices,
 the user permissions may need to be changed:
 

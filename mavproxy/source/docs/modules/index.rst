@@ -49,8 +49,7 @@ MAVProxy starts with several modules by default. They are:
     log: log transfer
     misc: misc commands
     mode: mode handling
-    msg: 
-    output: output control
+    output: MAVLink output control
     param: parameter handling
     rally: rally point control
     rc: rc command handling
@@ -68,11 +67,13 @@ List of Modules
     :maxdepth: 1
     
     adsb
+    ais
     antenna
     auxopt
     battery
     cameraview
     chat
+    checklist
     cmdlong
     console
     dataflash_logger
@@ -83,8 +84,11 @@ List of Modules
     followtest
     ftp
     gasheli
+    generator
+    genobstacles
     gimbal
     GPSInput
+    gopro
     graph
     horizon
     joystick
@@ -93,12 +97,20 @@ List of Modules
     log
     magical
     map
+    messagerate
     misseditor
     movinghome
+    mqtt
+    nmeagps
+    ntrip
+    opendroneid
+    optitrack
     park
     ppp
+    proximity
     rcsetup
     relay
+    restserver
     sail
     sensors
     serial

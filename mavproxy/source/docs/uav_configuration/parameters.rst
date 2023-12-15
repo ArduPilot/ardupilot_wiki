@@ -8,6 +8,9 @@ following commands can be used to view and change the parameters:
 Any specific parameter can be tab-completed. Otherwise, a list of
 possible parameters is shown.
 
+A visual parameter editor is available from the Console drop-down menu, orcan be activated via
+``module load paramedit``.
+
 param show
 ==========
 
@@ -81,3 +84,35 @@ Shows further information (usage, notes) of the specified parameter.
 
     param help FLTMODE1
 
+param fetch
+===========
+
+Download all parameters, by default via MAVFTP. Otherwise it will fallback
+to using ``PARAM_REQUEST_LIST``. Useful for refreshing the full list of
+parameters.
+
+If a single parameter is specified, only that parameter will downloaded.
+
+.. code:: bash
+
+    param fetch RC1_MIN
+    param fetch
+
+param ftp
+=========
+
+Download all parameters via MAVFTP. Useful for refreshing the full list of
+parameters.
+
+.. code:: bash
+
+    param ftp
+
+param revert
+============
+
+Revert the specified parameter to it's default value.
+
+.. code:: bash
+
+    param revert FLTMODE1

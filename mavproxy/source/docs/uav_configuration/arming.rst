@@ -55,5 +55,5 @@ The individual arming checks can be enabled or disabled as per:
     arm uncheck X
     
 Where X can be: all, baro, compass, gps, ins, params, rc, voltage, battery, airspeed, 
-logging, switch, gps_config
+logging, switch, gps_config, mission, rangefinder, system
 
