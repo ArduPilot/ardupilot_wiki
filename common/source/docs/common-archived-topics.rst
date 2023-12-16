@@ -80,6 +80,7 @@ value to users with old hardware.
     Channel Output Functions <channel-output-functions>
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
     LAND mode <land-mode>
+    Geofencing prior to 4.1 <geofencing>
 [/site]
 [site wiki="dev"]
 .. toctree::
