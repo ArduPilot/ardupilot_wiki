@@ -20,7 +20,7 @@ Consider joining the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ 
 Step 1 - getting started
 ------------------------
 
-- determine which microcontroller the new flight controllers uses. If it is a MCU we already support, for example STM32F405, STM32F427, STM32F745, STM32F765, STM32F777 or STM32H743, then the port should be relatively straight forward. If it is another MCU, ping us on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ for advice on how to proceed.
+- determine which microcontroller the new flight controllers uses. If it is a MCU we already support, for example STM32F405, STM32F427, STM32F745, STM32F765, STM32F777, STM32H743, or STM32H757, then the port should be relatively straight forward. If it is another MCU, ping us on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ for advice on how to proceed.
 - determine the crystal frequency (normally 8Mhz or 24Mhz). Refer to the schematic or read the writing on the crystal which is normally a small silver square.
 
 .. note::
@@ -33,7 +33,7 @@ Step 2 - create a hwdef.dat file for the board
 ----------------------------------------------
 
 - make a subdir in `libraries/AP_HAL_ChibiOS/hwdef <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ for your board (i.e. “new-board”).  This directory name will eventually be used during the build process (i.e. “waf configure --board new-board”) so keep the name relatively short.
-- copy/rename an existing template hwdef.dat that is similar to the CPU for your board into the directory created above. For example, if the board has a STMF40x chip copy the `f405-min/hwdef.dat <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/f405-min>`__ file into the new directory.
+- copy/rename an existing template hwdef.dat that is similar to the CPU for your board into the directory created above. For example, if the board has a STMF40x chip, the `MatekF405 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/MatekF405/hwdef.dat>`__, `SpeedyBeeF405Mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SpeedyBeeF405Mini/hwdef.dat>`__, or `MambaF405v2 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/MambaF405v2/hwdef.dat>`__ hwdefs (among others) provide examples from which to start.
 
 .. tip:: The `FMUV3 board <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/fmuv3/hwdef.dat>`__ is commented heavily and contains most of the HAL directives used in hardware definition files. Also, the `scripts directory <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/scripts>`__ contains pin function assignments for the supported microprocessors for reference.
 
