@@ -45,10 +45,12 @@ Install Gazebo
 
 We currently support
 `Gazebo Garden <https://gazebosim.org/docs/garden/install>`__
-which is available for Ubuntu 20.04 (Focal) and 22.04 (Jammy) and macOS Big Sur
-and Monterey. 
+and
+`Gazebo Harmonic <https://gazebosim.org/docs/harmonic/install>`__
+which are available for Ubuntu 20.04 (Focal) and 22.04 (Jammy) and 
+macOS Big Sur (11), Monterey (12), and Ventura (13).
 
-#. `Install Gazebo <https://gazebosim.org/docs/garden/install>`__ following the instructions for your platform.
+#. Install Gazebo following the instructions for your platform.
 
 #. Check that the Gazebo installation is working:
 
