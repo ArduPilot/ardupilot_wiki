@@ -118,3 +118,43 @@ branch and commit it.
       :target: ../_images/GitHubForWindowsClient_Publish_Push.png
 
       GitHub for Windows Client: Pushing changes
+
+
+Updating a branch with upstream changes
+---------------------------------------
+
+Sometimes, your branch will get out date with master, or you will have merge conflicts to fix. 
+
+`sync your fork with upstream <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork>`__.
+
+Note: ArduPilot does not use a merge-strategy; instead it uses rebase.
+
+To add ArduPilot as remote named ``upstream``:
+
+   ::
+
+       git remote add upstream https://github.com/ArduPilot/ardupilot.git
+       git remote -v
+       > origin    https://github.com/YOUR_USERNAME/ardupilot.git (fetch)
+       > origin    https://github.com/YOUR_USERNAME/ardupilot.git (push)
+       > upstream  https://github.com/ArduPilot/ardupilot.git (fetch)
+       > upstream  https://github.com/ArduPilot/ardupilot.git (push)
+
+
+To sync your ``master`` branch with ``upstream``:
+
+   ::
+
+       git checkout master
+       git fetch upstream
+       git rebase upstream/master
+       git push origin
+
+To get your ``feature`` branch up to date with ``master``:
+
+   ::
+
+       git checkout ardupilot_git_tutorial
+       git rebase master
+
+If there are merge conflicts, you will need to fix them.
