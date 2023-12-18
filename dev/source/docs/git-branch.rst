@@ -125,7 +125,7 @@ Updating a branch with upstream changes
 
 Sometimes your branch will get out date with master - this may mean you have merge conflicts to fix. 
 
-`sync your fork with upstream <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork>`__.
+These conflicts will be evident when you attempt to `sync your fork with upstream <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork>`__.
 
 Note: ArduPilot does not use a merge-strategy; instead it uses rebase.
 
