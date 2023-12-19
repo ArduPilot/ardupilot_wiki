@@ -54,3 +54,9 @@ autopilots with microSD storage available. See the
    Make sure you only fly FPV if it is allowed by your country's
    flight and airspace control rules. Many countries do not allow
    non-line-of-sight flight without a special operating license.
+
+Advanced Configuration
+======================
+
+- :ref:`fly-by-wire-low-altitude-limit`
+- :ref:`Min/Max Altitude Fences <common-geofencing-landing-page>`
