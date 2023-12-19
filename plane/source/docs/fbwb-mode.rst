@@ -53,3 +53,9 @@ You should also have a look at CRUISE mode, as it is generally better
 than FBWB, especially if there is significant wind. In CRUISE mode the
 aircraft will hold a ground track as opposed to just leveling the wings
 when you don't input any roll with the aileron stick.
+
+Advanced Configuration
+======================
+
+- :ref:`fly-by-wire-low-altitude-limit`
+- :ref:`Min/Max Altitude Fences <common-geofencing-landing-page>`
