@@ -92,6 +92,10 @@ Advanced Configuration and Analysis
 - :ref:`INS_LOG_BAT_LGIN <INS_LOG_BAT_LGIN>` interval between pushing samples to the dataflash log, in ms.  Increase this to reduce the time taken to flush data to the dataflash log, reducing cycle time.  This will be at the expense of increased system load and possibly choking up the dataflash log for other messages
 - :ref:`INS_LOG_BAT_LGCT <INS_LOG_BAT_LGCT>` Number of samples to push to count every :ref:`INS_LOG_BAT_LGIN <INS_LOG_BAT_LGIN>` ms.  Increase this to push more samples each time they are sent to the dataflash log.  Increasing this may cause timing jitter, and possibly choke up the dataflash log for other messages
 
+.. note:: On an H7 based autopilot such as the CubeOrange or Zealot H743, raw IMU logging can be used and will provide better data for analysis. Set :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` = 0, set the raw IMU bit (bit 19) in :ref:`LOG_BITMASK <LOG_BITMASK>`, set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 0. Raw logging is very helpful when doing filter tuning, but will give you really large logs which generally means you don't want to leave it on. 
+
+The web based `Notch Filter Review tool <https://firmware.ardupilot.org/Tools/WebTools/FilterReview/>`on the ArduPilot Firmware "Web Tools" page can be used to analyse notch filter logs generated with either batch sampling or raw IMU logging. 
+
 The following two graphs are from the same flight on a PixRacer autopilot.  Accel[0] on the right is the InvenseSense IMU and shows higher frequencies than the slower IMU on the left
 
 .. image:: ../../../images/imu-batchsampling-fft-sensorrate-pixracer.png
