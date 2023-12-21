@@ -14,7 +14,7 @@ This document attempts to supply information about the virtual serial ports pres
 | ParamPrefix | Sim_vehicle Cmd Line | Def Role | Default Connection      |
 +=============+======================+==========+=========================+
 | \SERIAL0_   | \- -serial0=         | Console  | tcp:localhost:5760:wait |
-+-------------+--------------------- +----------+-------------------------+
++-------------+----------------------+----------+-------------------------+
 | \SERIAL1_   | \- -serial1=         | MAVLink  | tcp:localhost:5762      |
 +-------------+----------------------+----------+-------------------------+
 | \SERIAL2_   | \- -serial2=         | MAVLink  | tcp:localhost:5763      |
