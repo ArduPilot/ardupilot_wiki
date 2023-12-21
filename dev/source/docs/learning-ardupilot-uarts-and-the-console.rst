@@ -11,7 +11,7 @@ the UARTs via the HAL will help you understand a lot of ArduPilot code.
 The 8 UARTs
 ===========
 
-The ArduPilot HAL currently defines 8 UARTs. The HAL itself does not define any particular roles for these UARTs, but the other parts of ArduPilot assume they will be assigned particular functions. The command-line options for using with sim_vehicle.py the serial port should be preceded by :code:`-A` to pass along to the vehicle binary. Make sure to include the :code:`uart` protocol. Specifying a baudrate is not required, but is more consistent. For example, :code:`sim_vehicle.py --console --map -A --serial5=uart:/dev/ttyS15:115200`. The :code:`uartX` options are older and the :code:`serialX` options are newer and more convenient.
+The ArduPilot HAL currently defines 8 UARTs. The HAL itself does not define any particular roles for these UARTs, but the other parts of ArduPilot assume they will be assigned particular functions. The command-line options for using with sim_vehicle.py the serial port should be preceded by :code:`-A` to pass along to the vehicle binary. Make sure to include the :code:`uart` protocol. Specifying a baudrate is not required, but is more consistent. For example, :code:`sim_vehicle.py --console --map -A --serial5=uart:/dev/ttyS15:115200`.
 
 +-------------+----------------------+----------+-------------------------+
 | ParamPrefix | Sim_vehicle Cmd Line | Def Role | Default Connection      |
