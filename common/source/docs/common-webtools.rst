@@ -38,7 +38,7 @@ Bode plot tool to give insight into gyro low pass and notch filter setup. This t
 
 `PID Review <https://firmware.ardupilot.org/Tools/WebTools/PIDReview/>`__
 =========================================================================
-Review PID tune in the frequency domain. Step response estimate is generated. Results are split based on parameter changes. Advane user tool.
+Review PID tune in the frequency domain. Step response estimate is generated. Results are split based on parameter changes. Advance user tool.
 
 .. image:: ../../../images/PIDReview_Icon.png
 
