@@ -13,7 +13,7 @@ RTL mode has four different options for its behavior but basically uses fixed wi
 
 QRTL mode, by default, will return either in fixed wing mode and land in VTOL mode the same way as the RTL mode selected by :ref:`Q_RTL_MODE<Q_RTL_MODE>` = 3, or by using :ref:`Q_OPTIONS<Q_OPTIONS>` bit (16), as a pure VTOL return and land.
 
-.. note:: RC failsafe when in a VTOL mode will only result in either a switch to QLAND or QRTL, depending on the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 5 setting, independent of what the :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` or :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` setting is.
+.. note:: RC failsafe when in a VTOL mode will only result in either a switch to QLAND, RTL, or QRTL, depending on the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 5 (QRTL) and bit 20 (RTL) settings (bit 20 overrides bit 5), independent of what the :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` or :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` setting is.
 
 
 RTL Modes
