@@ -224,6 +224,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        108           | QRTL Mode                  |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        112           | SwitchExternalAHRS         |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
 |        150           | CRUISE Mode                |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
 |        151           | TURTLE Mode                |    X     |         |         |
@@ -429,6 +431,9 @@ Other functions are:
     GPS Disable Yaw                       Disables yaw for testing (advanced users only!)
     Disable Airspeed Use                  Forces Airspeed Use to be disabled for testing in the air.
     Enable Autotuning                     Allows tuning without entering AUTOTUNE mode. (i.e. if you place the vehicle in LOITER/AUTO with stick mixing enabled, it can autotune while the vehicle is loitering by using sticks, but enabling autotuning can occur in any mode other than MANUAL.)
+    SwitchExternalAHRS                    | If EKF3 and an external AHRS module are
+                                          | enabled, high on this switch switches from
+                                          | EKF3 to the external AHRS
     SIMPLE mode heading reset             Resets original heading reference to current heading for SIMPLE Mode.
     ARM/DISARM (4.2 and higher)           Arms the vehicle if the switch goes high (subject to arming checks). Disarms the vehicle unconditionally if brought low.
     ARM/DISARM with AIRMODE on            Arms the vehicle if the switch goes high (subject to arming checks) with AIRMODE active. Airmode rc option switch can subsequently enable or disable if it is configured. Disarms the vehicle unconditionally if brought low.
