@@ -17,6 +17,7 @@ GPS/Combos
     Avionics Anonymous GNSS/Mag: GNSS + Compass <common-avanon-laserint>
     CUAV Neo v2 Pro DroneCAN GPS <common-cuav-neo-v2-pro>
     CUAV Neo 3 Pro DroneCAN GPS <common-cuav-neo-3-pro>
+    CUAV Neo 3X（water proof）GPS <common-cuav-neo-3x>
     CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
     CUAV C-RTK2 HP Heading and RTK receiver<common-cuav-c-rtk2-hp>
     CubePilot Here 2 DroneCAN GPS/Gyro/IMU/Baro <https://docs.cubepilot.org/user-guides/here-2/updating-here-2-firmware>

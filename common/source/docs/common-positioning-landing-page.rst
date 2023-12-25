@@ -22,6 +22,7 @@ GPS/Compass
     CUAV Neo v2 Pro DroneCAN GPS <common-cuav-neo-v2-pro>
     CUAV Neo 3 Pro DroneCAN GPS <common-cuav-neo-3-pro>
     CUAV Neo 3（M9N) GPS <common-cuav-neo-3>
+    CUAV Neo 3X(Water proof) GPS <common-cuav-neo-3x>
     CubePilot Here 2 DroneCAN GPS/Gyro/IMU/Baro <https://docs.cubepilot.org/user-guides/here-2/updating-here-2-firmware>
     Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>    
     Holybro Micro M8N GPS Module <https://shop.holybro.com/micro-m8n-gps_p1009.html> 
