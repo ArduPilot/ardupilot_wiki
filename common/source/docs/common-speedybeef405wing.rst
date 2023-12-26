@@ -162,7 +162,7 @@ Set a ``RELAYx_PIN`` to “81” to control the  switching. Then select an RC ch
 
 For example, use Channel 10 to control the switch using Relay 2:
 
-    :ref:`RELAY_PIN2<RELAY_PIN2>` = “81”
+    ``RELAY_PIN2`` = “81”
 
     :ref:`RC10_OPTION<RC10_OPTION>` = “34” (Relay2 Control)
 
