@@ -50,7 +50,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     
     ArduSimple RTK GPS <common-gps-ardusimple>
     Ark RTK GPS <https://arkelectron.com/product/ark-rtk-gps/>
-    Blicube RTK GPS (Single Unit Moving Baseline) <https://wiki.blicube.com/grtk/>
+    Blicube RTK GPS (Single Unit Moving Baseline NMEA) <https://wiki.blicube.com/grtk/>
     CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
     CUAV C-RTK 9Ps RTK Receiver <https://store.cuav.net/shop/c-rtk-9ps/>
     CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
@@ -59,7 +59,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     CubePilot HERE 3/3+ DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-3/here-3-manual>
     CubePilot HERE 4 DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-4/here-4-manual>
     CubePilot Here+ RTK Base/Rover Receiver <common-here-plus-gps>
-    CubePilot HEREPRO DroneCAN RTK GPS/Compass <https://docs.cubepilot.org/user-guides/herepro/herepro-manual>
+    CubePilot HEREPRO DroneCAN F9P RTK GPS/Compass <https://docs.cubepilot.org/user-guides/herepro/herepro-manual>
     Freefly RTK GPS Ground Station <https://store.freeflysystems.com/products/rtk-gps-ground-station>
     Foxteck AEROFOX F9P-RTK <https://www.foxtechfpv.com/aerofox-f9p-rtk-unit.html>
     Hitec PositionPro GNSS <https://www.hiteccs.com/drones/peripheral-details/positionpro-gnss-receiver/>
@@ -77,6 +77,27 @@ These GPS can incorporate real time kinematic data, either internally generated 
     Trimble BD930 RTK GPS <common-gps-trimble>
 
 .. note:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
+
+
+Moving Baseline (GPS for Yaw) Capable
+=====================================
+
+    Ark RTK GPS <https://arkelectron.com/product/ark-rtk-gps/>    Blicube RTK GPS (Single Unit Moving Baseline) <https://wiki.blicube.com/grtk/>
+    CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
+    CUAV C-RTK 9Ps RTK Receiver <https://store.cuav.net/shop/c-rtk-9ps/>
+    CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
+    CUAV C-RTK2 HP  Heading and RTK receiver<common-cuav-c-rtk2-hp>
+    CubePilot HERE 4 DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-4/here-4-manual>
+    CubePilot HEREPRO DroneCAN RTK GPS/Compass <https://docs.cubepilot.org/user-guides/herepro/herepro-manual>
+    Foxteck AEROFOX F9P-RTK <https://www.foxtechfpv.com/aerofox-f9p-rtk-unit.html>
+    Freefly RTK GPS Ground Station <https://store.freeflysystems.com/products/rtk-gps-ground-station>
+    Holybro DroneCAN H-RTK F9P Rover <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-rover>
+    Holybro DroneCAN H-RTK F9P Helical <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-helical>
+    Holybro RTK F9P Family <common-holybro-rtk-f9p>
+    Holybro RTK F9P Ultralight <https://holybro.com/products/h-rtk-f9p-ultralight>
+    Holybro RTK Unicore UM982 GPS <https://holybro.com/products/h-rtk-unicore-um982>
+    Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
+    Synerx MDU-2000 RTK + LTE GPS <common-synerex-mdu-2000>
 
 GPS Driver Options
 ==================
