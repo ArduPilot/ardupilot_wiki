@@ -147,9 +147,9 @@ Set a RELAYx_PIN to “81” to control the switching. Then select an RC channel
 
 For example, use Channel 10 to control the switch using Relay 2:
 
-    RELAY_PIN2 = “81”
+    :ref:`RELAY2_PIN<RELAY2_PIN>` = “81”
 
-    RC10_OPTION = “34” (Relay2 Control)
+    :ref:`RC10_OPTION<RC10_OPTION>` = “34” (Relay2 Control)
 
 .. warning:: PINIO1 is for 9V DC-DC control (HIGH:on; LOW:off). Default 9V DC is ON. Please install an antenna on VTX when battery powered.
 
