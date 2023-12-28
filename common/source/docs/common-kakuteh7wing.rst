@@ -132,7 +132,7 @@ Then select an RC channel for control (Chx) and set its ``RCx_OPTION`` to the ap
 
 For example, use Channel 10 to control the camera switch using Relay 2:
 
-- ``RELAY_PIN2`` = "81"
+- :ref:`RELAY2_PIN<RELAY2_PIN>` = "81"
 - :ref:`RC10_OPTION<RC10_OPTION>` = "34" (Relay2 Control)
 
 .. note:: setting Relay on/high assigned for 9V pin will turn on that supply. Likewise, setting on/high for the Relay assigned for camera, will switch from Camera 1 to Camera 2.
