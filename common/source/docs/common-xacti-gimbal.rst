@@ -75,7 +75,7 @@ Connect to the autopilot with a ground station and set the following parameters 
 - To allow remotely powering on/off the camera the POWER_ON pin can be connected to an autopilot :ref:`relay pin <common-relay>` (see purple wire in image above) and then set the following parameters (assuming the autopilot's AUX OUT 5 pin is used)
 
    - Connect the camera's POWER_ON pin (shown in purple in the image above) to one of the autopilot's AUX OUT signal pins (e.g. AUX OUT 5's bottom row pin)
-   - `RELAY_PIN`` to 54 (AUX5) (if connected to AUX OUT 5)
+   - :ref:`RELAY1_PIN<RELAY1_PIN>` to 54 (AUX5) (if connected to AUX OUT 5)
    - :ref:`SERVO13_FUNCTION <SERVO13_FUNCTION>` to -1 (GPIO) (if connected to AUX OUT 5)
    - The camera can be powered off/on using an :ref:`auxiliary switch <common-auxiliary-functions>` set to "Relay 1 On/Off" or Mission Planner's Aux Function screen can be used.  Pulling the relay high will turn the camera off, low will turn it back on.
 
