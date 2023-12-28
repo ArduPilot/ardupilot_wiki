@@ -142,7 +142,7 @@ The 9V output supply can be turned off by using the RELAY function in ArduPilot.
 
 or example, use RC Channel 10 to control the supply switch using Relay 2:
 
-- ``RELAY_PIN2`` = "81"
+- :ref:`RELAY2_PIN<RELAY2_PIN>`  = "81"
 - :ref:`RC10_OPTION<RC10_OPTION>` = "34" (Relay2 Control)
 
 A low on the switch will turn off the supply to the 9V pad.

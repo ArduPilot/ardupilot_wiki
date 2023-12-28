@@ -34,7 +34,7 @@ For other boards, you will need to find its hwdef.dat file `here <ttps://github.
 
 .. image:: ../../../images/GPIO_numbers.png
 
-In the above case, you could set the BRD_PWM_COUNT down to 8, freeing PWM9 and PWM10 for GPIO use, then use GPIO pin 58 (which is PWM output 9 on the board) for a relay pin. Use its GPIO number to set ``RELAY_PIN`` parameter in the above Mission Planner parameter entry ignoring the drop-down selections or, directly in the parameter itself, using the CONFIG/Full Parameter List screen.
+In the above case, you could set the BRD_PWM_COUNT down to 8, freeing PWM9 and PWM10 for GPIO use, then use GPIO pin 58 (which is PWM output 9 on the board) for a relay pin. Use its GPIO number to set ``RELAYx_PIN`` parameter in the above Mission Planner parameter entry ignoring the drop-down selections or, directly in the parameter itself, using the CONFIG/Full Parameter List screen.
 
 .. note:: any change to relay pin setup requires a reboot to take effect.
 
