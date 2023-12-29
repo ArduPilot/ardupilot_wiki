@@ -4,39 +4,47 @@
 Relay Switch
 ============
 
-A "Relay" is an digital output pin on the autopilot that can be switched between 0 volts and either 3.3V or 5V, depending on the autopilot.  Similar to a servo it allows the autopilot to invoke some action from another device on the vehicle.  Up to 6 pins can be defined as relays.
+A "Relay" is an digital output pin on the autopilot that can be switched between 0 volts and either 3.3V or 5V, depending on the autopilot.  Similar to a servo it allows the autopilot to invoke some action from another device on the vehicle.  Up to 6 relays can be implemented.
 
-Relay pins on IOMCU equipped autopilots
-=======================================
+The digital outputs that can be used as a relay are GPIOs. Normal servo/motor outputs can be configured for GPIO use. Occasionally, an autopilot will dedicate some pins for purely GPIO use as internal power controls, general purpose use,.etc. Consult the autopilot's documentation for pin number and information. In addition, it is possible to create a DroneCAN peripheral that has dedicated pins for relay use and these can be controlled as remote relays.
 
-Autopilots having an IOMCU (IO co-processor providing the "MAIN" PWM outputs) can have their AUX outputs configured as :ref:`GPIOs <common-gpios>` instead of Servo/Motor outputs and used as RELAY outputs.
+Relay Parameter Setup
+=====================
 
-For example, the Pixhawk default defines set up AUX OUT 5 (pin 54) and AUX OUT 6 (pin 55) as the "First" (or #0) and "Second" (or #1) Relays respectively.
+Setup of a relay requires that which pin it controls be set, and its default state. In addition, some autopilot functions can be assigned to the relay.
 
-.. image:: ../../../images/Relay_Pixhawk.jpg
-    :target: ../_images/Relay_Pixhawk.jpg
+Example below for the second Relay:
 
-The number of available Relays can be increased to a maximum of 6 by reducing the number of AUX pins used as :ref:`Servo <common-servo>` outputs.  This can be accomplished by reducing the ``BRD_PWM_COUNT`` from 4 to 2 or even 0.
+- :ref:`RELAY2_FUNCTION<RELAY2_FUNCTION>`: the control of the relay pin can be assigned as a normal relay, controlled by GCS or RC switch, or as the output of other features like parachute release, camera, brushed motor reversing relay, etc.. See table below for values. A non-zero value will show the remaining parameters after a parameter refresh.
 
-.. note:: in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR output to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
+===============    ========
+RELAYx_FUNCTION    FUNCTION
+===============    ========
+0                   None
+1                   Relay
+2                   ICE Ignition (Plane Only)
+3                   Parachute(Plane/Copter Only)
+4                   Camera
+5                   Bushed motor reverse 1 throttle or throttle-left or omni motor 1 (Rover Only)
+6                   Bushed motor reverse 2 throttle-right or omni motor 2 (Rover Only)
+7                   Bushed motor reverse 3 omni motor 3 (Rover Only)
+8                   Bushed motor reverse 4 omni motor 4 (Rover Only)
+9                   ICE Starter (Plane Only)
+===============    ========
 
-Likewise, on other controllers which have only PWM outputs and no IOMCU, setting ``BRD_PWM_COUNT`` to a lower number will free up their higher numbered outputs for use as GPIOs for controlling relays.
+- :ref:`RELAY2_PIN<RELAY2_PIN>`: the autopilot designated GPIO pin to be used for the function. See  the :ref:`common-gpios` page for information on how to determine the pin numbers and setup for using autopilot servo/motor outputs. DroneCAN peripherals with remote relay outputs have pin numbers in the 1000 to 1015 range. Consult the peripheral's documentation for proper pin number to use.
+- :ref:`RELAY2_DEFAULT<RELAY2_DEFAULT>`: After boot up, should the relay default to on or off. This only applies to RELAYx_FUNC "Relay" (1). All other uses will pick the appropriate default output state from within the controlling function's parameters.
 
-Defining the relay pins through the Mission Planner
-===================================================
-
-The First ~ Sixth relay pins can be setup most easily using the Mission Planner's CONFIG/Standard Params list as shown below after "Find"ing the term relay. Pin designations for several different autopilots are shown in the drop-down box. 
-
-.. image:: ../../../images/Relay_SetupWithMP.png
-    :target: ../_images/Relay_SetupWithMP.png
-
-For other boards, you will need to find its hwdef.dat file `here <ttps://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ and determine the GPIO pin number listed beside its output number, as shown below:
-
-.. image:: ../../../images/GPIO_numbers.png
-
-In the above case, you could set the BRD_PWM_COUNT down to 8, freeing PWM9 and PWM10 for GPIO use, then use GPIO pin 58 (which is PWM output 9 on the board) for a relay pin. Use its GPIO number to set ``RELAYx_PIN`` parameter in the above Mission Planner parameter entry ignoring the drop-down selections or, directly in the parameter itself, using the CONFIG/Full Parameter List screen.
 
 .. note:: any change to relay pin setup requires a reboot to take effect.
+
+
+Parameter setup is shown below using Mission Planner:
+
+.. image:: ../../../images/Relay_SetupWithMP.png
+   :target: ../_images/Relay_SetupWithMP.png
+
+the RELAYx_PIN dropdown box shows some of the common pin numbers, but any appropriate number can be manually entered.
 
 Pilot control of the relay
 ==========================
@@ -46,7 +54,7 @@ The relays can be controlled with the auxiliary switches. These can be set using
 .. image:: ../../../images/User_params.png
     :target: ../_images/User_params.png
 
-.. note:: This screen allows setting RC5 thru RC14, but any RC channel (1-16) can have its RCx_OPTION set as a RELAY, if its not already being used as another control function using the CONFIG/Full Parameter List screen.
+.. note:: This screen allows setting RC5 thru RC14, but any RC channel (1-16) can have its ``RCx_OPTION`` (See :ref:`common-auxiliary-functions`) set as a RELAY, if its not already being used as another control function using the CONFIG/Full Parameter List screen.
 
 Mission control of the relay
 ============================
@@ -62,3 +70,5 @@ Mission Planner control of the relay
 Mission Planner allows the user to use buttons to set any of the first four relay pin's outputs low, high or set it low and briefly toggle it high using the DATA screen and the Servo/Relay sub-window, as show below:
 
 .. image:: ../../../images/MP_relay_control.png
+
+.. note:: since this is using MAVLink control the first relay is labeled "Relay0" corresponding to RELAY1 in the parameters.
