@@ -306,12 +306,18 @@ Add the parameter:
 Add RTL mode for Blimp
 ======================
 
-see https://github.com/ArduPilot/ardupilot_wiki/pull/5410
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5410
 [/site]
 [site wiki="rover"]
 Add Rover CIRCLE mode AUX switch
 ================================
 
-see https://github.com/ArduPilot/ardupilot_wiki/pull/5600
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5600
 [/site]
+[site wiki="rover,copter"]
 
+Add fast waypoint Dijkstras option
+==================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5688
+[/site]
