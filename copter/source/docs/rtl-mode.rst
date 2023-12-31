@@ -12,11 +12,16 @@ to use and customize RTL mode.
 Overview
 ========
 
-When RTL mode is selected, the copter will return to the home location.
-The copter will first rise to :ref:`RTL_ALT <RTL_ALT>` before returning home or maintain the current altitude if the current altitude is higher than :ref:`RTL_ALT <RTL_ALT>`.  The default value for :ref:`RTL_ALT <RTL_ALT>` is 15m.
+When RTL mode is selected, the copter will return to the home location, or if rally points have been setup, the closet rally point.
+
+The copter will first rise a minimum of :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>` or to  :ref:`RTL_ALT <RTL_ALT>`, whichever is higher, before returning home.  The default value for :ref:`RTL_ALT <RTL_ALT>` is 15m. Under no circumstances will this altitude be below 2m.
+
+The altitude reference frame is set by either the rally point, if proceeding to one of those, or by :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` to select relative to HOME, or Terrain. If :ref:`WPNAV_RFND_USE<WPNAV_RFND_USE>` = 1 and Terrain is selected, then rangefinder will be used.
 
 .. image:: ../images/RTL.jpg
     :target: ../_images/RTL.jpg
+
+If RTL is entered close to its return point, the altitude Copter climbs to may be limited to avoid unneeded climbs and descents. The :ref:`RTL_CONE_SLOPE<RTL_CONE_SLOPE>` parameter determines the slope of an inverted cone centered on the return point. This reduces the above return altitude according to: distance from return point * :ref:`RTL_CONE_SLOPE<RTL_CONE_SLOPE>`. So if the mode is entered 10m from the return point, using the default slope of "3", then the altitude rise would be limited to 30m before returning. It may be less depending on the other parameters, but not higher. If the slope were set to "0.5", then the initial climb would be no higher than 5m altitude before proceeding to the return point. A value of "0" disables this limit. "0.5" is the minimum slope. Again, 2m is the minimum return altitude.
 
 RTL mode requires a reliable position estimate to work properly, most commonly provided by GPS and compass. Default prearm checks will ensure a 3D GPS lock with sufficient HDOP is acquired and your mag is working as expected prior to arming. When using non-default arming checks, make sure you do have a sufficient GPS lock and / or a reliable position estimate for RTL to perform as expected.
 
@@ -79,8 +84,7 @@ Options (User Adjustable Parameters)
 
 -  :ref:`RTL_CLIMB_MIN <RTL_CLIMB_MIN>`:
    The vehicle will climb at least this many meters at the first stage
-   of the RTL.  By default this value is zero.  (only Copter-3.3 and
-   above)
+   of the RTL.  By default this value is zero.
 
 -  :ref:`RTL_SPEED <RTL_SPEED>`:
    The horizontal speed (in cm/s) at which the vehicle will return to
@@ -92,7 +96,6 @@ Options (User Adjustable Parameters)
    to limit the amount the vehicle climbs when RTL-ing from close
    to home. Low values lead to a wide cone meaning the vehicle
    will climb less, High values will lead to the vehicle climbing more.
-   (supported in Copter-3.4 and higher)
 
 Notes
 =====
