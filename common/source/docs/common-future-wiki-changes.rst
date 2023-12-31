@@ -301,15 +301,14 @@ Add the parameter:
 - :ref:`FOLL_OPTIONS<FOLL_OPTIONS>`: set bit 0 to "1" to enable the :ref:`common-mount-targeting` to follow the target vehicle.
 
 [/site]
-[/site wiki="blimp"]
+[site wiki="blimp"]
 
 Add RTL mode for Blimp
 ======================
 
 see https://github.com/ArduPilot/ardupilot_wiki/pull/5410
 [/site]
-[/site wiki="rover"]
-
+[site wiki="rover"]
 Add Rover CIRCLE mode AUX switch
 ================================
 
