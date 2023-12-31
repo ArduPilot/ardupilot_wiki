@@ -70,7 +70,7 @@ The following should be considered when using Rally Points:
 #. On Plane, loiter radius for a Rally Point is the same as all other
    loiter points; determined by the :ref:`WP_LOITER_RAD <plane:WP_LOITER_RAD>`
    parameter.
-#. The :ref:`ALT_HOLD_RTL <plane:ALT_HOLD_RTL>` 
+#. The :ref:`ALT_HOLD_RTL <plane:ALT_HOLD_RTL>` or 
    :ref:`RTL_ALT <copter:RTL_ALT>` parameters are NOT used with Rally Points! 
    The aircraft will transit to the Rally Point at the altitude 
    specified when adding that point.
