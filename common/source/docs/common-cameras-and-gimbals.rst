@@ -17,47 +17,53 @@ Gimbals
 
 ArduPilot supports both brushless direct drive gimbals (Tarot, SimpleBGC, SToRM32)
 that have their own self-stabilization controllers and the simpler servo-driven
-gimbals in which ArduPilot controls the stabilisation.
+gimbals in which ArduPilot controls the stabilisation. Some gimbals also integrate still or video cameras.
 
+-  :ref:`Servo Gimbals <common-camera-gimbal>` — older-style servo-driven gimbal where ArduPilot provides stabilisation
 -  :ref:`Brushless PWM <common-brushless-pwm-gimbal>` - brushless gimbals that accept PWM or SBUS input for angle control
 -  :ref:`DJI RS2 and RS3-Pro gimbals <common-djirs2-gimbal>`
 -  :ref:`Gremsy Mio, Pixy, S1, T3, T7 and ZIO <common-gremsy-pixyu-gimbal>` - high quality 3-axis gimbals
--  :ref:`Servo Gimbals <common-camera-gimbal>` — older-style servo-driven gimbal where ArduPilot provides stabilisation
 -  :ref:`SimpleBGC (aka AlexMos) Gimbal Controller <common-simplebgc-gimbal>` - a popular 2-axis or 3-axis brushess gimbal controller which uses a custom serial interface
 -  :ref:`Siyi ZR10, ZR30 and A8 <common-siyi-zr10-gimbal>` - 3-axis gimbal and camera
 -  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an inexpensive 2-axis or 3-axis brushless gimbal controller which responds to MAVLink commands (a richer format than PWM) over a serial interface
 -  :ref:`ViewPro gimbals <common-viewpro-gimbal>`
 -  :ref:`Xacti gimbals <common-xacti-gimbal>`
 
-Mount control is covered on the :ref:`common-mount-targeting` page.
+Gimbals may be attached to retractable mounts to prevent ground contact or to reduce air resistant in flight. Mount control is covered on the :ref:`common-mount-targeting` page.
 
 .. _common-cameras-and-gimbals_camera_shutter_triggering:
 
 Cameras
 =======
 
-Camera manufacturers use their own mechanisms for remote control of the
-camera (including its shutter). The topics explain how to configure the
-camera shutter, and list a number of different approaches for converting
-the output signal into the form expected by your particular camera:
+Camera manufacturers use many differing mechanisms for remote control of the
+camera (including its shutter or video recording). The following topics explain how to configure camera shutter and controls, and list a number of different approaches for converting
+the output signal into the form expected by your particular camera. If the camera is integrated with the gimbal, control of the camera is detailed in that gimbals setup.
+
+General Camera Control and Parameters
+-------------------------------------
+
+-  :ref:`Camera General Parameters and Control<common-camera-controls>`
+
+Shutter Controllers
+-------------------
 
 -  :ref:`Servo or Relay controlled camera shutter <common-camera-shutter-with-servo>` (servo, relay).
--  :ref:`Airpixel Entire Geotagger <common-geotagging-airpixel-entire>`
--  :ref:`FLIR Vue Pro Thermal Camera <common-flir-vue-pro>`
+-  :ref:`Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>`
+-  :ref:`Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>` (non-standard integration)
 -  :ref:`Seagull IR Camera Trigger <common-camera-trigger-seagull-ir>`
 -  :ref:`Seagull MAP2 Camera Trigger <common-camera-trigger-seagull-map2>`
 -  :ref:`Seagull MAP-X2 Camera Trigger and Logger <common-camera-trigger-seagull-mapx2>`
 -  :ref:`Seagull REC Camera Trigger <common-camera-trigger-seagull-rec>`
 -  :ref:`StratosnapperV2 Camera Trigger <common-camera-trigger-stratosnapperv2>`
--  :ref:`Camera Triggering Directly from AUX Ports <common-pixhawk-camera-trigger-setup>`
--  :ref:`Camera Triggering Configuration <common-camera-shutter-with-servo>`
--  :ref:`Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>`
--  :ref:`Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>` (non-standard integration)
+
+Control of Specific Camera Models
+---------------------------------
+
+-  :ref:`Airpixel Entire Geotagger <common-geotagging-airpixel-entire>`
+-  :ref:`FLIR Vue Pro Thermal Camera <common-flir-vue-pro>`
 -  :ref:`RunCam Camera Control <common-camera-runcam>`
 
-.. note:: be sure to set the ``CAMx_INTRVAL_MIN`` to be greater than the fastest the camera can take photos when using the camera trigger functions.
-
-Camera controls including during missions are covered on the :ref:`common-camera-controls` page.
 
 Common fixes for poor video quality
 ===================================
@@ -87,11 +93,8 @@ deviation from vertical to obtain mainly ground photos but with an oblique
 view. About 70 degrees off vertical will give you a lot more sky thus giving
 more scenic photos. ArduPilot will stabilize the gimbal to whatever position you set.
 
-Detail topics
-=============
-
 .. toctree::
-    :maxdepth: 1
+    :hidden:
 
     Brushless PWM <common-brushless-pwm-gimbal>
     DJI RS2 and RS3-Pro gimbals <common-djirs2-gimbal>
