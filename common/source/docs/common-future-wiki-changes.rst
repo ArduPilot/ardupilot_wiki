@@ -256,6 +256,11 @@ on :ref:`quadplane-vtol-tuning-process` page:
 
 [/site]
 [site wiki="copter"]
+Add RTL altitude control improvement
+====================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5691
+
 Add Fast Precision Landing speed option
 =======================================
 
