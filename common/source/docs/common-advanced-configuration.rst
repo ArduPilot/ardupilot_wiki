@@ -84,6 +84,7 @@ tuning options for the vehicle.
 [/site]
     Moving Vehicle Initialization <common-moving-vehicle-initialization>
     Multiple Radio Control Receivers <common-multiple-rx>
+    Network/Ethernet Setup <common-network>
 [site wiki="copter,rover"]
     Non-GPS Navigation <common-non-gps-navigation-landing-page>
 [/site]
