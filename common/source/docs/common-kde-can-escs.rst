@@ -12,6 +12,8 @@ KDECAN ESCs are high-end ESCs that allow control and feedback using a custom CAN
 
     Please use Copter-4.1 (or higher), Plane-4.1 (or higher) or Rover-4.1 (or higher) with these ESCs because while earlier versions of ArduPilot supported them, there were issues with the range and motor ordering which made the setup difficult.
 
+.. note:: KDE has released new firmware that offers the option of using standard DroneCAN protocol or their custom CAN protocol. The following page details setup using older firmware or newer firmware when the custom CAN protocol is selected. To setup for use as a standard DroneCAN ESC see the firmware update and setup instructions `here <https://cdn.shopify.com/s/files/1/0496/8205/files/DroneCAN_QuickStart_1.0.3.pdf>`__.
+
 Where To Buy
 ------------
 
