@@ -53,6 +53,7 @@ For Fedora based systems:
 
 .. note::
     If MAVProxy is intended to run "headless" (non-GUI), the ``python3-wxgtk4.0`` or ``python3-wxpython4`` packages can be skipped.
+    If for some reason 'module load console' fails, then it means u don't have all the required GUI prerequisites [typically wx], and 'pip3 install --upgrade WxPython' might help you , this can be slow as it has to compile a bunch of stuff for wx/python integration.
 
 If you get a "permission denied" error message when connecting to serial devices,
 the user permissions may need to be changed:
