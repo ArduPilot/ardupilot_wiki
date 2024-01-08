@@ -28,7 +28,7 @@ Manual Forward Throttle in VTOL Modes
 
 By setting an RC channel option (``RCx_OPTION``) to "209", that channel can provide a separate throttle input to the forward motor(s) in QSTABILIZE, QACRO, and QHOVER VTOL modes. This allows forward movement without having to tilt the QuadPlane forward requiring throttle stick repositioning in QSTABILIZE and QACRO to maintain altitude, and present more forward flat plate resistance to forward movement in all modes. The maximum percentage throttle that will be applied by this channel is set by :ref:`Q_FWD_MANTHR_MAX<Q_FWD_MANTHR_MAX>`.
 
-.. _qaudplane_failsafe:
+.. _quadplane_failsafe:
 
 Radio or Throttle Failsafe
 ==========================
