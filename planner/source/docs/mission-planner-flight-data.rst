@@ -46,7 +46,7 @@ The Control and Status area of the Flight Data screen is in the lower left-hand 
 - Actions: Use this area to control your Auto Pilot either for testing (using USB and no motor battery) or for controlling your vehicle. You can switch modes, arm/disarm (while on the ground), enable an attached joystick, restart a mission in the air, control a camera mount, etc.
    - The dropdown menus on the left are for (in order from top to bottom) choosing a MAVLink action, choosing a waypoint to set, choosing a mode to set, and choosing the state of the camera mount. The buttons directly to the right of each dropdown send the selected action to the connected vehicle.
    - There are shortcut buttons for Auto, Loiter, and RTL modes
-   - Joystick: Allows the user to set up a joystick attached to the ground station
+   - Joystick: Allows the user to set up a joystick attached to the ground station. See :ref:`common-joystick` for more information.
    - Set Home Alt: Set current altitude to zero
    - Restart Mission: Set the current waypoint to the start of the current mission
    - Raw Sensor View: Shows roll, pitch, and yaw angles. Also shows gyro, accelerometer, 8 RC input channels, and 8 servo output channels.

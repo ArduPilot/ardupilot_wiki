@@ -41,7 +41,7 @@ Before operating the vehicle, you must setup:
 
 Optional Hardware
 =================
-This submenu allows the configuration of optional devices, many of which can be configured while Mission Planner is unconnected. Programming of the Sik  Telemetry Radio, UAVCAN setup, PX4 Optical Flow sensor, and Antenna Tracker can be done here, as well as the setup of a joystick to be used in conjunction with Mission Planner.
+This submenu allows the configuration of optional devices, many of which can be configured while Mission Planner is unconnected. Programming of the Sik  Telemetry Radio, UAVCAN setup, PX4 Optical Flow sensor, and Antenna Tracker can be done here, as well as the setup of a :ref:`joystick <common-joystick>` to be used in conjunction with Mission Planner.
 
 When connected, peripherals such as Battery Monitors, Integrated OSD, Airspeed Sensors, and Rangefinders can be configured. Also, this submenu has a Motor Test function allowing you to test the direction and order of Copter and QuadPlane Motors.
 
