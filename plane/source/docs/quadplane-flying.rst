@@ -28,12 +28,14 @@ Manual Forward Throttle in VTOL Modes
 
 By setting an RC channel option (``RCx_OPTION``) to "209", that channel can provide a separate throttle input to the forward motor(s) in QSTABILIZE, QACRO, and QHOVER VTOL modes. This allows forward movement without having to tilt the QuadPlane forward requiring throttle stick repositioning in QSTABILIZE and QACRO to maintain altitude, and present more forward flat plate resistance to forward movement in all modes. The maximum percentage throttle that will be applied by this channel is set by :ref:`Q_FWD_MANTHR_MAX<Q_FWD_MANTHR_MAX>`.
 
+.. _qaudplane_failsafe:
+
 Radio or Throttle Failsafe
 ==========================
 
 If flying in a plane mode or AUTO, behaviour is determined by the :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` and :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter settings (see Plane Failsafe Function). QuadPlanes can be set such that instead of normal plane behaviour on Failsafe induced RTLs, to transition to QRTL and land once at the rally point or home, if  :ref:`Q_RTL_MODE<Q_RTL_MODE>` =1. If :ref:`Q_RTL_MODE<Q_RTL_MODE>` =2, then a fixed wing approach followed by a loiter to alt and QRTL will be executed, similar to that described in the "AUTO VTOL Landing" section of :ref:`quadplane-auto-mode`.
 
-If not flying a mission, and are flying in any copter mode (QHOVER,QSTAB,etc.), failsafe will evoke QLAND or QRTL, depending on how :ref:`Q_OPTIONS<Q_OPTIONS>`, bit 5, is set.
+If lying in any VTOL mode (QHOVER,QSTAB,etc.) and not flying a mission, failsafe will evoke QLAND , QRTL or RTL, depending on how :ref:`Q_OPTIONS<Q_OPTIONS>`, bits 5 and 20, are set.
 
 .. _what-will-happen:
 
