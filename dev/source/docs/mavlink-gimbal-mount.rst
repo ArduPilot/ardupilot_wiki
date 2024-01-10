@@ -11,6 +11,7 @@ This page explains how MAVLink can be used to control a gimbal (aka camera mount
 - use MAV_CMD_DO_SET_ROI_LOCATION to point at a Location
 - use MAV_CMD_DO_SET_ROI_NONE to stop point at a Location or vehicle
 - use MAV_CMD_DO_SET_ROI_SYSID to point at another vehicle
+- use MAV_CMD_DO_GIMBAL_MANAGER_CONFIGURE to take control of the gimbal (optional)
 
 The gimbal's attitude (in body-frame Quaternion form) can be monitored by decoding the `GIMBAL_DEVICE_ATTITUDE_STATUS <https://mavlink.io/en/messages/common.html#GIMBAL_DEVICE_ATTITUDE_STATUS>`__ message.
 
@@ -512,3 +513,98 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 +===================================================+===============================+
 | ``message COMMAND_LONG 0 0 198 0 2 0 0 0 0 0 0``  | Point at vehicle with SysId=2 |
 +---------------------------------------------------+-------------------------------+
+
+MAV_CMD_DO_GIMBAL_MANAGER_CONFIGURE to take control of the gimbal (optional)
+----------------------------------------------------------------------------
+
+The `MAVLink Gimbalv2 protocol <https://mavlink.io/en/services/gimbal_v2.html#starting--configuring-gimbal-control>`__ includes support for deconflicting commands received simultaneously from multiple MAVLink enabled ground stations using the DO_GIMBAL_MANAGER_CONFIGURE command.  ArduPilot consumes these commands and reports who is in control using the GIMBAL_MANAGER_STATUS message but does not actually enforce their use due to concerns around backwards compatibility and the number of support calls this would generate.
+
+A ground station (or other MAVLink enabled device) can take control of the gimbal by sending a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the
+command and param1 fields set as specified for the `MAV_CMD_DO_GIMBAL_MANAGER_CONFIGURE <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_GIMBAL_MANAGER_CONFIGURE>`__ command.
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Type</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>target_system</strong></td>
+   <td>uint8_t</td>
+   <td>System ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>target_component</strong></td>
+   <td>uint8_t</td>
+   <td>Component ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>command</strong></td>
+   <td>uint16_t</td>
+   <td>MAV_CMD_DO_GIMBAL_MANAGER_CONFIGURE=1001</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>confirmation</strong></td>
+   <td>uint8_t</td>
+   <td>0</td>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>float</td>
+   <td>System ID for primary control (0:no one, -1:leave unchanged, -2:set self in control, -3:release control)</td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>float</td>
+   <td>Component ID for primary control</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param3</strong></td>
+   <td>float</td>
+   <td>System ID for secondary control (unused)</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param4</strong></td>
+   <td>float</td>
+   <td>Component ID for secondary control (unused)</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param5</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param6</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param7</strong></td>
+   <td>float</td>
+   <td>Gimbal device ID (0 is primary gimbal, 1 is 1st gimbal, 2 is 2nd gimbal)</td>
+   </tr>
+   </tbody>
+   </table>
+
+The example commands below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter:
+
+- module load message
+
++----------------------------------------------------------+--------------------------------------+
+| Example MAVProxy/SITL Command                            | Description                          |
++==========================================================+======================================+
+| ``message COMMAND_LONG 0 0 511 0 281 1000000 0 0 0 0 0`` | request GIMBAL_MANAGER_STATUS at 1hz |
++----------------------------------------------------------+--------------------------------------+
+| ``message COMMAND_LONG 0 0 1001 0 -2 0 0 0 0 0 0``       | set self in control                  |
++----------------------------------------------------------+--------------------------------------+
+| ``message COMMAND_LONG 0 0 1001 0 -3 0 0 0 0 0 0``       | release control                      |
++----------------------------------------------------------+--------------------------------------+
+| ``message COMMAND_LONG 0 0 1001 0 123 1 0 0 0 0 0``      | set sysid:123 / compid:1 in control  |
++----------------------------------------------------------+--------------------------------------+
+
+You can see the results of by monitoring the GIMBAL_MANAGER_STATUS message
+
+- status GIMBAL_MANAGER_STATUS
