@@ -23,7 +23,7 @@ Below are the 6 supported modes.
 
 1. Neutral Mode: the gimbal will move to the roll, pitch and yaw angles held in the :ref:`MNT1_NEUTRAL_X<MNT1_NEUTRAL_X>`, :ref:`MNT1_NEUTRAL_Y<MNT1_NEUTRAL_Y>`, :ref:`MNT1_NEUTRAL_Z<MNT1_NEUTRAL_Z>` respectively
 
-2. MAVLink Targeting: the gimbal will move according to real-time commands received from the ground stations or Auto mode mission commands
+2. MAVLink Targeting: the gimbal will move according to real-time commands received from the ground stations, companion computers or other MAVLink command source, and/or Auto mode mission commands
 
 3. RC Targeting: the pilot controls the gimbal in real-time using the RC transmitter
 
@@ -82,6 +82,10 @@ To point the gimbal at a particular location (e.g. lat, lon, alt), on the Data s
     :target: ../_images/mount-mp-point-camera-here.png
 
 MAVLink mount commands can be sent from other sources, such as companion computers. See :ref:`mavlink-gimbal-mount` for a commands list and more information.
+
+Cameras may also be controlled via MAVLink commands from a companion computer or other source.
+See :ref:`dev:mavlink-camera` documentation.
+
 
 Control during Auto mode missions
 ---------------------------------
