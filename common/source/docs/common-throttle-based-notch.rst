@@ -9,7 +9,7 @@ Throttle Based Dynamic Notch Setup
 
 If you do not have ESC telemetry or an RPM sensor, and are not using an autopilot capable of using the in-flight FFT mode, then throttle-based (:ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 1 , or :ref:`INS_HNTC2_MODE <INS_HNTC2_MODE>` = 1) center frequency control is best.
 
-In order to configure the throttle-based dynamic harmonic notch filter it is important to identify  the motor noise at the hover throttle level. To do this we need to use the :ref:`batch sampler<common-imu-batchsampling>` to obtain logs for analysis.
+In order to configure the throttle-based dynamic harmonic notch filter it is important to identify  the motor noise at the hover throttle level. To do this we need to use the :ref:`common-raw-imu-logging` to obtain logs for analysis.
 
 Once this is done, the center frequency of the notch(s) can be set and other parameters configured:
 
@@ -23,7 +23,7 @@ Harmonic Notch Configuration for Throttle Based Mode
 - Set :ref:`INS_HNTCH_BW <INS_HNTCH_BW>` and/or :ref:`INS_HNTC2_BW <INS_HNTC2_BW>` = *hover_freq* / 2 to set the harmonic notch bandwidth
 - Set :ref:`INS_HNTCH_FM_RAT<INS_HNTCH_FM_RAT>` and/or :ref:`INS_HNTC2_FM_RAT<INS_HNTC2_FM_RAT>` to the percentage of :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` that you desire the notch frequency to track below hover throttle. Note that lower frequency notch filters will have more phase lag and can impact stability. If you want throttle based notch filtering to be effective at a throttle up to 30% below the configured notch frequency then set this parameter to 0.7. The default of 1.0 means the notch will not go below the frequency in the :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` parameter.
 
-Check the performance of the filter(s) after setup by doing another post filter configuration test flight as discussed in the :ref:`batch sampler<common-imu-batchsampling>` section and analyzing the logs.
+Check the performance of the filter(s) after setup by doing another post filter configuration test flight as discussed in the :ref:`common-imu-batchsampling` or :ref:`common-raw-imu-logging` page for this and analyze the logs.
 
 Advanced Notch Frequency Scaling Adjustment in Throttle Based Mode
 ==================================================================
