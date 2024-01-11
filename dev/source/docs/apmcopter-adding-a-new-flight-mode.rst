@@ -12,7 +12,7 @@ As a reference the diagram below provides a high level view of Copter's architec
     :target: ../_images/copter-architecture.png
     :width: 450px
 
-#. Pick a name for the new mode and add it to the bottom of the control_mode_t enum in `modes.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h#L14>`__ just like "NEW_MODE" has been added below.
+#. Pick a name for the new mode and add it to the bottom of the control_mode_t enum in `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h#L14>`__ just like "NEW_MODE" has been added below.
 
    ::
 
