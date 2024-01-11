@@ -84,7 +84,7 @@ Here is an example from the same 5" quad with the harmonic notch configured and 
 .. note:: be sure to reset the :ref:`INS_LOG_BAT_MASK<INS_LOG_BAT_MASK>` to "0" when finished with analysis flights to free up the RAM consumed by this feature. In some autopilots, you cannot do other memory intensive tasks like Compass Calibration or MAVftp if this batch logging is enabled.
 
 Advanced Configuration and Analysis
------------------------------------
+===================================
 
 - Set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 1 to enable batch sampling at the sensor's highest rate which allows analysis above 500hz for very fast IMUs from InvenseSense
 - :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` can be used to sample just a single sensor.  This will increase the number of samples retrieved from a single sensor (e.g. the best on the platform), which may provide better data for analysis
@@ -94,7 +94,7 @@ Advanced Configuration and Analysis
 
 .. note:: On an H7 based autopilot such as the CubeOrange or Zealot H743, raw IMU logging can be used and will provide better data for analysis. Set :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` = 0, set the raw IMU bit (bit 19) in :ref:`LOG_BITMASK <LOG_BITMASK>`, set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 0. Raw logging is very helpful when doing filter tuning, but will give you really large logs which generally means you don't want to leave it on. 
 
-The web based `Notch Filter Review tool <https://firmware.ardupilot.org/Tools/WebTools/FilterReview/>`__ on the ArduPilot Firmware "Web Tools" page can be used to analyse notch filter logs generated with either batch sampling or raw IMU logging. 
+The web based `Notch Filter Review tool <https://firmware.ardupilot.org/Tools/WebTools/FilterReview/>`__ on the ArduPilot Firmware "Web Tools" page can be used to analyze notch filter logs generated with either batch sampling or raw IMU logging. 
 
 The following two graphs are from the same flight on a PixRacer autopilot.  Accel[0] on the right is the InvenseSense IMU and shows higher frequencies than the slower IMU on the left
 

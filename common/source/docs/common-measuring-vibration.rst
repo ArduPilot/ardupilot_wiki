@@ -99,7 +99,7 @@ The image below shows a typical log in which the attitudes match well
 Advanced Analysis with FFT
 --------------------------
 
-Refer to the :ref:`Measuring Vibration with IMU Batch Sampler <common-imu-batchsampling>` page for instructions on how to collect large amounts of IMU data and perform an FFT analysis to determine the frequencies with the most vibration.
+Refer to the :ref:`Measuring Vibration with "Raw IMU Logging" <common-raw-imu-logging>` page for instructions on how to collect large amounts of IMU data and perform an FFT analysis to determine the frequencies with the most vibration.
 
 IMU Dataflash Log message
 -------------------------

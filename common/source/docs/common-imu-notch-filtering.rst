@@ -26,13 +26,6 @@ The harmonic notch is enabled overall by setting :ref:`INS_HNTCH_ENABLE<INS_HNTC
 
 Various methods of dynamically adjusting the notch(s) center frequency to track motor speed under different thrust conditions is provided, ie Dynamic Harmonic Notch filtering.
 
-Determining Notch Filter Center Frequency
-=========================================
-
-Before actually setting up a dynamic notch filter, the frequencies that are desired to be rejected must first be determined. This is crucial if :ref:`common-throttle-based-notch` is used. While the other methods do not require this knowledge apriori, its still worthwhile as a comparison point for the post filter activation analysis of the filter's effectiveness
-
-See the :ref:`common-imu-batchsampling` page for this step. Once the noise frequency is determined, the notch filter(s) can be setup.
-
 Notch Filter Control Types
 ==========================
 
@@ -47,6 +40,16 @@ Key to the dynamic notch filter operation is control of its center frequency. Th
 All of the above are repeated, independently, for the second notch and are prefaced with ``INS_HNTC2_`` instead of ``INS_HNTCH_``. The following will explain setup for the first set of notches.
 
 .. note:: only one filter can be mode 4(FFT).
+
+
+Determining Notch Filter Center Frequency
+=========================================
+
+Before actually setting up a dynamic notch filter, the frequencies that are desired to be rejected must first be determined. This is crucial if :ref:`common-throttle-based-notch` is used. While the other methods do not require this knowledge apriori, its still worthwhile as a comparison point for the post filter activation analysis of the filter's effectiveness
+
+Once the noise frequency is determined, the notch filter(s) can be further setup. Historically, :ref:`common-imu-batchsampling` has been used for this (also for slow cpu's like F4-based autopilots), logging short bursts of raw IMU data for spectral analysis.
+
+As of firmware version 4.5 and later, a better method has been developed using continuous raw IMU data, if the autopilot is H7-based, and using a new web based tool. :ref:`This method is now preferred <common-raw-imu-logging>`.
 
 Number of Harmonics Filtered
 ============================
@@ -65,7 +68,7 @@ FFT mode tracking sets the base frequency to the largest noise peak. Normally, w
 Checking Notch Filter Effectiveness
 ===================================
 
-Once the notch filter(s) are setup, the effectiveness of them can be checked by again measuring the  frequency spectrum of the output of the filters (which are the new inputs to the IMU sensors). Refer back to the :ref:`common-imu-batchsampling`  page for this.
+Once the notch filter(s) are setup, the effectiveness of them can be checked by again measuring the  frequency spectrum of the output of the filters (which are the new inputs to the IMU sensors). Refer back to the :ref:`common-imu-batchsampling`  or :ref:`common-raw-imu-logging` page for this.
 
 Multi Notch
 ===========

@@ -37,7 +37,8 @@ Slewing ensures that the step changes at each update tick are smooth, but for op
 
 Checking Harmonic Notch Effectiveness
 =====================================
-Once the notch filter(s) are setup, the effectiveness of them can be checked by again measuring the  frequency spectrum of the output of the filters (which are the new inputs to the IMU sensors). Refer back to the :ref:`common-imu-batchsampling`  page for this.
+Once the notch filter(s) are setup, the effectiveness of them can be checked by again measuring the  frequency spectrum of the output of the filters. Refer back to the :ref:`common-imu-batchsampling`  or :ref:`common-raw-imu-logging` page for this.
+
 
 While the log analysis of noise frequencies is not absolutely required prior to notch setup for RPM based mode, the logging and analysis done for the Confirmation flight using that method can be done in order to confirm the noise elimination, if desired.
 

@@ -14,6 +14,7 @@ RPM Sensor Based Dynamic Notch Setup
 
 Checking Harmonic Notch Effectiveness
 =====================================
-Once the notch filter(s) are setup, the effectiveness of them can be checked by again measuring the  frequency spectrum of the output of the filters (which are the new inputs to the IMU sensors). Refer back to the :ref:`common-imu-batchsampling`  page for this.
+Check the performance of the filter(s) after setup by doing another post filter configuration test flight as discussed in the :ref:`common-imu-batchsampling` or :ref:`common-raw-imu-logging` page for this and analyze the logs.
+
 
 While the log analysis of noise frequencies is not absolutely required prior to notch setup for RPM based mode, the logging and analysis done for the Confirmation flight using that method can be done in order to confirm the noise elimination, if desired.

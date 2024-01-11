@@ -45,6 +45,7 @@ Topics related to logging and analysis
 [site wiki="plane,copter,rover,dev,planner"]
     Measuring Vibration <common-measuring-vibration>
     Measuring Vibration with "Batch Sampling" <common-imu-batchsampling>
+    Measuring Vibration with "Raw IMU Logging" (Preferred) <common-raw-imu-logging>
 [/site]
 
 
