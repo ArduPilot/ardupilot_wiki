@@ -43,7 +43,7 @@ If using a firmware version prior to 4.0. CH7_OPT or CH8_OPT can be used to cont
 Controlling Gripper during a mission
 ====================================
 
-The gripper position can be controlled during a mission in AUTO mode using the :ref:`DO_GRIPPER <common-mavlink-mission-command-messages-mav_cmd>` command.  Set the "drop/grab" column to 0 to close the gripper, 1 to open the gripper.
+The gripper position can be controlled during a mission in AUTO mode using the :ref:`DO_GRIPPER <common-mavlink-mission-command-messages-mav_cmd>` command.  Set the "drop/grab" column to 0 to drop (open the gripper), 1 to grab (close the gripper).
 
 .. image:: ../../../images/MissionList_DoGripper.png
     :target: ../_images/MissionList_DoGripper.png
