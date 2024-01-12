@@ -76,6 +76,7 @@ Other things to check:
 - make sure your failsafe settings are setup correctly. Try turning off your transmitter with your plane on the ground (and propeller removed or made safe) and check how the plane reacts
 - setup a rally point for a safe place to RTL if needed other than home
 - make sure that the :ref:`PTCH_RATE_SMAX<PTCH_RATE_SMAX>` and :ref:`RLL_RATE_SMAX<RLL_RATE_SMAX>` parameters are appropriately set for your servos speeds. See :ref:`common-servo-limit-cycle-detection`. If these are set too low, then the tune will be impacted.
+- if this is a **QuadPlane**, and the :ref:`INS_GYRO_FILTER<INS_GYRO_FILTER>` has been raised significantly from 20Hz to facilitate better VTOL tuning and notch filter use, then AUTOTUNE may set its fixed wing control loop filters too high resulting in a poorer Fixed Wing tune. In this case, :ref:`AUTOTUNE_OPTIONS<AUTOTUNE_OPTIONS>` can be used to prevent AUTOTUNE from changing them as part of the tune.
 
 Flying in AUTOTUNE
 ==================
