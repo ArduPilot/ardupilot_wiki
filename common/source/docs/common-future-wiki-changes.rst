@@ -232,6 +232,11 @@ Dropped included bootloader on some 1MB flash boards:
 See https://github.com/ArduPilot/ardupilot_wiki/pull/5242
 
 [site wiki="plane"]
+Add AUTOTUNE_OPTIONS
+====================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5713
+
 Add AHRS_OPTIONS
 ================
 
