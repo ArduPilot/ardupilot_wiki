@@ -135,8 +135,15 @@ Optical Sensors
 Again, the setup of optical sensors is much the same as the hall effect sensor.  The only difference is the scaling value.  :ref:`RPM2_SCALING<RPM2_SCALING>` should be set to be the reciprocal 
 of the number of reflective obstacles that pass the sensor in a single rotation.
 
-
 Harmonic Notch Center Frequency
 ===============================
 
 If ``RPMx_TYPE`` = 4, then the center frequency of the harmonic notch is reported.  See :ref:`common-imu-notch-filtering` for how this value is obtained.
+
+Heli Magnetic Sensors Known to Work with ArduPilot
+==================================================
+
+- `Align Magenetic Sensor <https://modelhelicopters.co.uk/products/align-beastx-governor-sensor-hegbp002t?variant=42819003220168>`__
+- `HoTT RPM Magnetic Sensor <https://www.controlhobbies.com/Telemetry-magnetic-sensor-to-measure-RPM-33616.html>`__
+- `SMModelBau Magnetic Sensor <https://www.sm-modellbau.de/magnetischer-Drehzahlsensor-fuer-UniTest-2-UniLog-1-2>`__
+
