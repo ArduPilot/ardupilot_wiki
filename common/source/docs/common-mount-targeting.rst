@@ -35,6 +35,8 @@ Below are the 6 supported modes.
 
 The gimbal's default mode on startup can be set with the :ref:`MNT1_DEFLT_MODE<MNT1_DEFLT_MODE>` parameter.
 
+.. note:: (firmware versions 4.5 and later)in all modes except RETRACT Mode, if the pilot moves any configured Roll/Pitch/Yaw RC targeting input (see below) greater than its ``RCx_DZ`` or 10uS if that param is less than 10uS) while in any non RC Targeting Mode, it will switch modes to RC_Targeting automatically.
+
 Control with an RC transmitter (aka RC Targeting)
 -------------------------------------------------
 
