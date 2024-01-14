@@ -286,6 +286,11 @@ on :ref:`quadplane-vtol-tuning-process` page:
 
 [/site]
 [site wiki="copter"]
+Add altitude limits to THROW Mode
+=================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5720
+
 Add RTL altitude control improvement
 ====================================
 
