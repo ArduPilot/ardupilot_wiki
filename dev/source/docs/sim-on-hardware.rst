@@ -54,7 +54,7 @@ An flexible firmware building script is located `here <https://github.com/ArduPi
 
 .. code:: bash
 
-    ./Tools/scripts/sitl-on-hardware/sitl-on-hw.py --board CubeOrange --vehicle plane --simclass QuadPlane --frame quadplane-tilttri --defaults ./Tools/autotest/default_params/quadplane-tilttri.parm --upload
+    ./Tools/scripts/sitl-on-hardware/sitl-on-hw.py --board CubeOrange-SimOnHardWare --vehicle plane --simclass QuadPlane --frame quadplane-tilttri --defaults ./Tools/autotest/default_params/quadplane-tilttri.parm --upload
 
 - board: board target for firmware
 - vehicle: plane/rover/copter/blimp, same as used by sim_vehicle.py
