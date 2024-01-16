@@ -17,8 +17,8 @@ This section contains articles about creating missions that will run when the ve
 .. toctree::
     :maxdepth: 1
     
-[site wiki="rover"]
-    Learning a Mission <learning-a-mission>
+[site wiki="rover,copter"]
+    Recording Waypoints for a Mission <common-learning-a-mission>
 [/site] 
 
     Planning a Mission with Waypoints and Events <common-planning-a-mission-with-waypoints-and-events>
