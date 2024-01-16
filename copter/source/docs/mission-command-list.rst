@@ -109,6 +109,8 @@ part of the mission).  The direction can be changed to counter-clockwise by sett
 
 **Turn** - the number of full rotations to complete around the point.
 
+Fractional turns between 0 and 1 are supported, while turns greater than 1 must be integers.
+
 **Radius** - Loiter radius around waypoint. Units are in meters.
 
 -  0-255 is 0-255 meters.

@@ -871,7 +871,8 @@ Supported by: Copter, Plane (not Rover).
 Loiter (circle) the specified location for a specified number of turns,
 and then proceed to the next command. If zero is specified for a
 latitude/longitude/altitude parameter then the current location value
-for the parameter will be used.
+for the parameter will be used. Fractional turns between
+0 and 1 are supported, while turns greater than 1 must be integers.
 
 The radius of the circle is controlled by the
 :ref:`CIRCLE_RADIUS <copter:CIRCLE_RADIUS>`
@@ -942,7 +943,8 @@ This is the command equivalent of the :ref:`Circle flight mode <copter:circle-mo
 Loiter (circle) the specified location for a specified number of turns
 at the given radius, and then proceed to the next command. If zero is
 specified for a latitude/longitude/altitude parameter then the current
-location value for the parameter will be used.
+location value for the parameter will be used. Fractional turns between
+0 and 1 are supported, while turns greater than 1 must be integers.
 
 **Command parameters**
 
