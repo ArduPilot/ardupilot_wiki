@@ -666,7 +666,7 @@ AutoTest Output
     AUTOTEST: #
     AUTOTEST: PASSED: Check for syntax mistake in autotest lambda
     AUTOTEST: Starting simulator
-    Running: "/home/pbarker/rc/ardupilot/build/sitl/bin/arducopter" "-w" "-S" "--home" "-35.362938,149.165085,584,270" "--model" "+" "--speedup" "8" "--uartF=sim:vicon:"
+    Running: "/home/pbarker/rc/ardupilot/build/sitl/bin/arducopter" "-w" "-S" "--home" "-35.362938,149.165085,584,270" "--model" "+" "--speedup" "8" "--serial5=sim:vicon:"
     Set parameter SIM_SPEEDUP to 8.000000
     Creating model + at speed 8.0
     Home: -35.362938 149.165085 alt=584.000000m hdg=270.000000

@@ -758,5 +758,37 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://www.ascentvision.com.au/
 
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_aocoda.jpg
+            :width: 250px
+            :align: center
+            :target:  https://www.aocoda-rc.com
+
+      - .. image:: ../../../images/supporters/supporters_logo_uaxtech.png
+            :width: 250px
+            :align: center
+            :target:  https://uaxtech.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_hargrave.jpg
+            :width: 250px
+            :align: center
+            :target:  https://hargravetechnologies.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_Nanoradar.png
+            :width: 250px
+            :align: center
+            :target:  http://www.nanoradar.cn/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_aerofox.png
+            :width: 250px
+            :align: center
+            :target:  http://www.aero-fox.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_danaero.png
+            :width: 250px
+            :align: center
+            :target:  https://www.danaero.com/
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

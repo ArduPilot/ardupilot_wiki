@@ -80,6 +80,7 @@ value to users with old hardware.
     Channel Output Functions <channel-output-functions>
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
     LAND mode <land-mode>
+    Geofencing prior to 4.1 <geofencing>
 [/site]
 [site wiki="dev"]
 .. toctree::
@@ -104,6 +105,7 @@ value to users with old hardware.
     Building for Erle-Brain 2 <building-for-erle-brain-2>
     Building for Erle-Brain <building-for-erle-brain>
     Building for Navio on RPI 2<building-for-navio-on-rpi2>
+    Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>
     Intel Edison <intel-edison>
     Interfacing with Pixhawk Using the NSH <interfacing-with-pixhawk-using-the-nsh>
     BeaglePilot Project <beaglepilot>

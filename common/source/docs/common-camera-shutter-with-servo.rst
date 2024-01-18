@@ -7,7 +7,7 @@ Camera Shutter Configuration
 ArduPilot allows you to configure a particular port (servo or relay) as
 the camera trigger, which will then be activated when :ref:`camera commands are specified in missions <common-camera-control-and-auto-missions-in-mission-planner>`.
 
-This article explains what settings you need to configure for both servos and relays.
+This article explains what settings you need to configure for both servos and relays. For a typical relay based trigger, see this DIY article using a Pixhawk as an example autopilot: :ref:`common-pixhawk-camera-trigger-setup`.
 
 .. note::
 
@@ -21,6 +21,8 @@ This article explains what settings you need to configure for both servos and re
 Shutter configuration with Pixhawk or IOMCU Equipped Autopilots
 ===============================================================
 
+.. note:: on autopilots not using an IOMCU (most that do, label outputs as MAIN/AUX), ANY output can be used for a relay or servo. See :ref:`common-gpios` for how to designate an output as a GPIO for relay use.
+
 Pixhawk has 6 AUX Ports (AUX1-AUX6, referred to as SERVO9-SERVO14 in *Mission
 Planner*) that can be configured as :ref:`servos <common-servo>`,
 :ref:`relays <common-relay>`, or 
@@ -32,7 +34,6 @@ The image and configuration below is for the Pixhawk with SERVO10 (labeled RC10/
 
    Pixhawk Detail View highlighting AUXPorts
 
-.. note:: on autopilots not using an IOMCU (most that do, label outputs as MAIN/AUX), any output can be used for a relay or servo. See :ref:`common-gpios` for how to designate an output as a GPIO for relay use.
 
 .. tip::
 

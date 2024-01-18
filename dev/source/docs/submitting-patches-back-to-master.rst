@@ -17,10 +17,9 @@ This page provides advice to make the process go smoothly.
 Preparing commits
 -----------------
 
-- Commits should be **in a new branch** of your :ref:`fork <git-fork>`/:ref:`clone <git-clone>` (i.e. not "master").
+- Commits should be **in a new branch** of your :ref:`fork <git-fork>`/:ref:`clone <git-clone>` (i.e. not "master"). These should be done on a local branch and then pushed to your web-based fork of ArduPilot.
 
-- The new branch should be :ref:`up-to-date <git-rebase>` with `ArduPilot/master <https://github.com/ArduPilot/ardupilot>`__
-  and should not include any other changes.
+- The new branch should be :ref:`up-to-date <git-rebase>` with `ArduPilot/master <https://github.com/ArduPilot/ardupilot>`__  and should not include any other changes.
 
 - **Commits should be small and do just one thing.** If a change touches
   multiple libraries then there should be a separate commit per library,
@@ -52,8 +51,9 @@ Preparing commits
   to `online resources <http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html>`__
   to understand how to use this tool.
 
-- Do not submit patches with commented-out code or code that is never
-  reachable within ``#define`` s.
+- The commits of the change should be squashed (see :ref:`git-interactive-rebase`) into one commit and then the "Tools/gittools/git-subsystems-split" script run to create a single commit for each library module affected.
+
+- Do not submit patches with commented-out code or code that is never reachable within ``#define`` s.
 
 - Try to follow the :ref:`style guide <style-guide>` so your code fits in with the existing code.
   In particular, ensure your editor uses 4 spaces intead of tabs.

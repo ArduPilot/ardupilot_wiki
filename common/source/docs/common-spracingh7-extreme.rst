@@ -64,7 +64,7 @@ Then select an RC channel for control (Chx) and set its ``RCx_OPTION`` to the ap
 
 For example, use Channel 10 to control the power using Relay 2:
 
-- :ref:`RELAY_PIN2<RELAY_PIN2>` = "81" (Relay 2 is set by default, but can be changed)
+- ``RELAY_PIN2`` = "81" (Relay 2 is set by default, but can be changed)
 - :ref:`RC10_OPTION<RC10_OPTION>` = "34" (Relay2 Control)
 
 .. note:: setting the above Relay on/high will turn off that supply. If nothing is assigned, default is powered on.

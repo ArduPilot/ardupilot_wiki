@@ -1,4 +1,4 @@
-.. _common-uavlogviewer.rst:
+.. _common-uavlogviewer:
 
 =============
 UAV LogViewer

@@ -19,6 +19,7 @@ List of DroneCAN ESCs
 - :ref:`Currawong Velocity ESC <common-velocity-can-escs>`
 - :ref:`Hobbywing CAN ESCs <common-hobbywing-dronecan-esc>`
 - `Holybro Kotleta20 <https://holybro.com/products/kotleta20>`__
+- :ref:`KDE UVC ESCs <common-kde-can-escs>`
 - `Zubax Mitochondrik <https://zubax.com/products/mitochondrik>`__
 - `Zubax Myxa <https://zubax.com/products/myxa/>`__
 - `Zubax Orel 20 <https://files.zubax.com/products/io.px4.sapog/Zubax_Orel_20_Datasheet.pdf>`__

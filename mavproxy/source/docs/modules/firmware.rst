@@ -6,8 +6,7 @@ Firmware Management
 
     module load firmware
     
-The firmware module provides downloading and listing of available APM firmware. It 
-does not currently handle firmware flashing
+The firmware module provides downloading and listing of available ArduPilot firmware.
 
 List
 ====
@@ -37,5 +36,16 @@ Download the specified firmware. It uses the same ``FILTERS`` as fw list.
 .. code:: bash
 
     fw download FILTERS
+
+
+Flash
+=====
+
+Flash the specified firmware specified by ``FILENAME``. Requires ArduPilot's ``uploader.py``
+to be on the system path.
+
+.. code:: bash
+
+    fw flash FILENAME
     
-   
+

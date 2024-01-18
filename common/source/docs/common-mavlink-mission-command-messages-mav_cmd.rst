@@ -1547,7 +1547,7 @@ The motors will disarm on their own once landed
    <tr>
    <td><strong>param7</strong></td>
    <td>Alt</td>
-   <td>Altitude</td>
+   <td>additional altitude above Q_LAND_FINAL_ALT to switch to final landing phase</td>
    </tr>
    </tbody>
    </table>

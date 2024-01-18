@@ -69,7 +69,7 @@ Setup with the Mission Planner
    channel), it is better to set individual buttons to initiate a flight
    mode by selecting **Change Mode** and then push the **Settings**
    button and select the flight mode from the drop-down (see pic above)
--  When done, push the **Save** button
+-  When done, push the **Save** button. This records the min and max calibrations and records the neutral positions of the joystick for the trim value. Mission Planner will then scale the joystick signal to the RC channel's ``RCx_MIN/MAX/TRIM`` parameters in the autopilot when sending RC override commands by the Joystick.
 -  In the **CONFIG/TUNING \| Full Parameter List**, check that the
    :ref:`SYSID_MYGCS <SYSID_MYGCS>`
    parameter matches the system ID of your GCS. This parameter limits
@@ -92,7 +92,7 @@ Setup with the Mission Planner
    This error is caused because *Mission Planner* maps the Joystick exactly
    to the RC min and max range, but the pre-arm checks assume that if the
    values are not at least 1 PWM us off the default value, that calibration
-   has not been done. If you have RC calibrated your transmitter/receiver system already, this will not be necessary. DO NOT RC CALIBRATE THE JOYSTICK, it is not the same control mechanism as is used for RC systems. It uses MAVLink override messages.
+   has not been done. If you have RC calibrated your transmitter/receiver system already, this will not be necessary. **DO NOT RC CALIBRATE THE JOYSTICK**, it is not the same control mechanism as is used for RC systems. It uses MAVLink override messages.
 
 
 Testing the controls before flying

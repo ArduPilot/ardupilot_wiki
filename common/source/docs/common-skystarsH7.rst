@@ -176,17 +176,17 @@ VTX Voltage Selection/Control
 
 A solder jumper pad (VTX+)is provided to allow selection of 5V or 10V output to the "10V" pads. Another solder pad (Jp) selects if the supply is always on or switchable for Pit mode operation.
 
-If configured for switchable operation, set :ref:`RELAY_PIN<RELAY_PIN>` = 81 to control on or off with RELAY1 in ArduPilot
+If configured for switchable operation, set ``RELAY_PIN`` = 81 to control on or off with RELAY1 in ArduPilot
 
 Camera Selection
 ================
 
-Two camera inputs are provided. C1 is selected by default. In order to switch to camera 2 (C2), set :ref:`RELAY_PIN2<RELAY_PIN2>` = 82 to allow RELAY2 to control selection of cameras.
+Two camera inputs are provided. C1 is selected by default. In order to switch to camera 2 (C2), set ``RELAY_PIN2`` = 82 to allow RELAY2 to control selection of cameras.
 
 GPIO Output
 ===========
 
-An additional GPIO output is provided via the OSD pin. It can be controlled by setting :ref:`RELAY_PIN3<RELAY_PIN3>` = 82 and using RELAY3 to change its level.
+An additional GPIO output is provided via the OSD pin. It can be controlled by setting ``RELAY_PIN3`` = 83 and using RELAY3 to change its level.
 
 Battery Monitoring
 ==================

@@ -30,6 +30,9 @@ The following joysticks and RC transmitter dongles are compatible:
 - `IPACS easyFly2 Interface <http://www.ikarus.net/deutsch-infos-zubehor/die-ikarus-interfacekabel/?lang=en>`_
 - `FRSky Taranis <https://hobbyking.com/en_us/frsky-2-4ghz-accst-taranis-x9d-plus-and-x8r-combo-digital-telemetry-radio-system-mode-2.html/?___store=en_us>`_
 - `OrangeRX DSMX DSM2 USB Dongle <https://hobbyking.com/en_us/orange-rx-dsmx-dsm2-compatible-protocol-usb-dongle-flight-simulator.html>`_
+- Logicool F310
+- FRSky Taranis (via USB cable)
+- XBox 360 controller
 
 The following commands are available with the module:
 

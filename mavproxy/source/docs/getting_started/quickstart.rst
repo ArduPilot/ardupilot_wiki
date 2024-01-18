@@ -10,7 +10,7 @@ or network address to connect to.
 Over USB
 ========
 
-If there is only 1 autopilot connected and it does not present multiple ports (CAN enabled devices present two ports), the ``--master`` is not required.
+If there is only 1 autopilot connected, the ``--master`` is not required.
 MAVProxy will autodetect the correct port.
 
 Linux:

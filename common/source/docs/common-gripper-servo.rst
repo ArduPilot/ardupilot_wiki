@@ -17,7 +17,7 @@ Connecting the servo to an autopilot
     :target: ../_images/Servo_Pixhawk.jpg
 
 -  If using Copter, connect the servo to AUX OUT 1, 2, 3 or 4 if the autopilot includes an IOMCU for the first 8 MAIN outputs, or any output operating at 50Hz if the autopilot does not use an IOMCU.  MAIN OUT 1 ~ 8 should be avoided because these normally update at 400hz.  If using Plane or Rover where all PWM output pins usually update at 50hz, any unused output may be used.
--  In autopilots with IOMCUs, AUX OUT 5 and 6 cannot be used by default because they are setup as :ref:`Relays <common-relay>`.  These pins can changed to Servo outputs by setting the ``BRD_PWM_COUNT`` parameter to 6 and setting :ref:`RELAY_PIN <RELAY_PIN>` and :ref:`RELAY_PIN2 <RELAY_PIN2>` to -1.
+-  In autopilots with IOMCUs, AUX OUT 5 and 6 cannot be used by default because they are setup as :ref:`Relays <common-relay>`.  These pins can changed to Servo outputs by setting the ``BRD_PWM_COUNT`` parameter to 6 and setting ``RELAY_PIN`` and ``RELAY_PIN2`` to -1.
 -  If the autopilot cannot provide power to the servos, an external BEC or ESC that can provide 5V should be used.
 
 Configuration
@@ -43,7 +43,7 @@ If using a firmware version prior to 4.0. CH7_OPT or CH8_OPT can be used to cont
 Controlling Gripper during a mission
 ====================================
 
-The gripper position can be controlled during a mission in AUTO mode using the :ref:`DO_GRIPPER <common-mavlink-mission-command-messages-mav_cmd>` command.  Set the "drop/grab" column to 0 to close the gripper, 1 to open the gripper.
+The gripper position can be controlled during a mission in AUTO mode using the :ref:`DO_GRIPPER <common-mavlink-mission-command-messages-mav_cmd>` command.  Set the "drop/grab" column to 0 to drop (open the gripper), 1 to grab (close the gripper).
 
 .. image:: ../../../images/MissionList_DoGripper.png
     :target: ../_images/MissionList_DoGripper.png

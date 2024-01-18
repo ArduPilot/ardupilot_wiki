@@ -6,8 +6,8 @@ ADS-B Tracking
 
     module load adsb
     
-The adsb module takes in any ADS-B data from the autopilot and shows any 
-nearby aircraft on the map. It also warns if any aircraft get too close.
+The adsb module takes in any ADS-B data from the autopilot (via the ``ADSB_VEHICLE`` MAVLink message)
+and shows any nearby aircraft on the map. It also warns if any aircraft get too close.
 
 
 Status

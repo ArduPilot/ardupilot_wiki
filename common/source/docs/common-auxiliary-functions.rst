@@ -315,983 +315,251 @@ For example, if you have a "LOITER mode" switch active and then an "AUTO mode" s
 
 .. note:: If mapped to a three-position switch then the SUPERSIMPLE mode function will allow **SUPERSIMPLE** and **SIMPLE** modes to be enabled using the high and middle switch positions, respectively (a two-position switch will enable/disable SUPERSIMPLE mode only). :ref:`See here for more details<simpleandsuper-simple-modes>`.
 
-
-
 Other functions are:
 
-.. raw:: html
-
-   <table border="1" class="docutils">
-   <tbody>
-   <tr>
-   <th>Option</th>
-   <th>Description</th>
-   </tr>
-   <tr>
-   <td><strong>Flip</strong></td>
-   <td>
-
-The vehicle will flip on its roll or pitch axis depending upon the pilot's roll and pitch stick position. See :ref:`Flip Mode<flip-mode>`.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Save Trim</strong></td>
-   <td>
-
-In Rover, a high saves the current steering channel trim, see :ref:`Save Steering Trim <savetrim>`. In Copter, it adjusts the vehicle level position using the current roll and pitch stick inputs. See details :ref:`here <auto-trim>`.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Save Waypoint</strong></td>
-   <td>Save the current location (including altitude) as a waypoint in the
-   mission. If in AUTO mode no waypoint will be saved, instead the vehicle will RTL
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Camera Trigger</strong></td>
-   <td>
-
-The camera shutter will be activated. See more details :ref:`here <common-camera-shutter-with-servo>`.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Range Finder</strong></td>
-   <td>
-
-:ref:`RangeFinder <common-rangefinder-landingpage>` is disabled when the switch is in a low position, enabled when in a high position.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Fence</strong></td>
-   <td>Fence is disabled when the switch is in a low position, enabled when in a high position.
-
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Acro Trainer</strong></td>
-   <td>
-
-Turn on automatic leveling in the ACRO flight mode.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Sprayer</strong></td>
-   <td>
-   
-Turn on the :ref:`crop sprayer <sprayer>` when the switch is pulled high.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Gripper</strong></td>
-   <td>
-
-Operates the :ref:`gripper <common-gripper-landingpage>`.  Switch pulled low releases the gripper, high closes or grabs.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Parachute Enable</strong></td>
-   <td>
-
-Enables the automatic release of the :ref:`parachute <common-parachute>` (this does not immediately trigger the release).
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Parachute Release</strong></td>
-   <td>
-
-Immediately triggers the release of the :ref:`parachute <common-parachute>` as long as the vehicle is not landed or too low.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Parachute 3Pos</strong></td>
-   <td>
-
-Switch pulled low disables the :ref:`parachute <common-parachute>`.  Switch in middle enables the parachute for automatic release.  Switch pulled high triggers release of the parachute as long as the vehicle is not landed or too low.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Mission Reset</strong></td>
-   <td>
-
-Reset AUTO to run the first mission command in the command list.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>AttCon Feed Forward</strong></td>
-   <td>Turns on/off attitude controllers feed forward. For developers only.
-   </td>
-   </tr>
-   <tr>
-   <td><strong>AttCon Accel Limits</strong></td>
-   <td>Turns on/off attitude controller acceleration limits. For developers only.
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Retract Mount</strong></td>
-   <td>
-
-Move the :ref:`camera mount <common-cameras-and-gimbals>` to its retracted position.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Relay 1 On/Off</strong></td>
-   <td>
-
-Switch pulled low turns off the first :ref:`relay <common-relay>`, pulled high turns on the first relay.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Landing Gear</strong></td>
-   <td>
-
-Deploys or Retracts :ref:`Landing Gear <common-landing-gear>`
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Lost Vehicle Alarm</strong></td>
-   <td>
-
-Plays the `lost copter alarm <https://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__ though the buzzer
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Emergency Stop Motors</strong></td>
-   <td>
-
-Stops motors immediately
-(`video <https://www.youtube.com/watch?v=-Db4u8LJE5w>`__)
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Motor Interlock</strong></td>
-   <td>
-
-Motor Interlock controls the way the heliRSC (motor throttle control) output is generated in Traditional Helicopters and HeliQuads. If > 1200us, it enables the Motor Interlock function, below it is disabled. When <1200us, it is similar to what is sometimes referred to as Throttle Hold in RC Helicopter terminology for Traditional Helicopters and HeliQuads. For Mulit-copters, it is used as a motor stop function when <1200us. (`video <https://youtu.be/-Db4u8LJE5w&t=51s>`__).
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Brake</strong></td>
-   <td>
-
-Invokes the :ref:`Brake flight mode <brake-mode>` when the switch goes high.
-Bringing the switch back to low will return the vehicle to the mode
-indicated by the ch5 flight mode switch.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Relay2 On/Off</strong></td>
-   <td>
-
-Switch pulled low turns off the second :ref:`relay <common-relay>`, pulled high turns on the second relay.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Relay3 On/Off</strong></td>
-   <td>
-
-Switch pulled low turns off the third :ref:`relay <common-relay>`, pulled high turns on the third relay.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Relay4 On/Off</strong></td>
-   <td>
-
-Switch pulled low turns off the fourth :ref:`relay <common-relay>`, pulled high turns on the fourth relay.
-
-.. raw:: html
-
-   <tr>
-   <td><strong>Throw</strong></td>
-   <td>
-
-Invokes the :ref:`Throw flight mode <throw-mode>` when the switch goes high.
-Bringing the switch back to low will return the vehicle to the mode
-indicated by the ch5 flight mode switch. 
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>ADSB-Avoidance</strong></td>
-   <td>
-
-When the switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>` (avoidance of manned aircraft) is enabled, otherwise it's disabled
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Precision Loiter</strong></td>
-   <td>
-
-Turns on/off :ref:`Precision Loiter <precision-landing-with-irlock>`.  I.e. holding position above a target in Loiter mode using IR-Lock sensor.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Object Avoidance</strong></td>
-   <td>
-
-When switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>` or :ref:`TeraRanger Tower<common-teraranger-tower-objectavoidance>`. When low, object avoidance is disabled.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Arm/Disarm(4.1 and earlier)</strong></td>
-   <td>
-
-Arms the vehicle if the switch goes high (subject to arming checks).
-Disarms the vehicle if brought low.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Inverted Flight</strong></td>
-   <td>
-
-Enabling inverted flight only changes how ArduPilot stabilizes the vehicle. It will stabilize it with a roll of 180 degrees from normal whenever inverted flight is enabled in a stabilized mode. Unless the vehicle is capable of inverted flight, do **NOT** use this option.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Winch Enable</strong></td>
-   <td>
-
-Enables Winch operation.A low on this channel relaxes the winch.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Winch Control</strong></td>
-   <td>
-
-Controls the speed and direction of the winch.Low: takeup, Middle: stop, High: unreel
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>RC Override Enable</strong></td>
-   <td>
-
-This is a 3-position switch that enables (high) or disables (low) the use of RC overrides from the Ground Control Station.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Learn Cruise</strong></td>
-   <td>
-
-This starts the cruise speed and the throttle learning sequence on Rover when switched to high. See :ref:`rover-tuning-throttle-and-speed`.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Clear Waypoints</strong></td>
-   <td>
-
-Clears currently loaded mission waypoints.
-
-.. raw:: html
-
-   </td>
-   <tr>
-   <td><strong>Compass Learn</strong></td>
-   <td>
-
-Inflight compass offset learning. See Automatic Offset Calibration section of :ref:`common-compass-setup-advanced`.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Sailboat Tack</strong></td>
-   <td>
-
-Any high to low, or low to high change on this channel will start a tack in the opposite direction to the last tack. See Sailboat :ref:`sailboat-configure`.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Reverse Throttle</strong></td>
-   <td>
-
-When switched high, forces throttle reverse in Plane for steepening descents. Normally, this is controlled by flight mode via the :ref:`USE_REV_THRUST<USE_REV_THRUST>` parameter. See :ref:`automatic-landing` for more information on the setup of reverse thrust.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>GPS Disable</strong></td>
-   <td>
-
-Simulates GPS failure by disabling GPS.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Relay 5 On/Off</strong></td>
-   <td>
-
-Switch pulled low turns off the third :ref:`relay <common-relay>`, pulled high turns on the fifth relay.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Relay 6 On/Off</strong></td>
-   <td>
-
-Switch pulled low turns off the third :ref:`relay <common-relay>`, pulled high turns on the sixth relay.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Sailboat Motor 3Pos Switch</strong></td>
-   <td>
-
-This 3-position switch controls the Sailboat motor. The motor is always used when high, never used when low, and as needed, otherwise.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Surface Tracking Up/Down</strong></td>
-   <td>
-
-This 3-position switch determines if surface tracking via rangefinder is toward the ground (low) or ceiling (high), or disabled, otherwise.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Standby</strong></td>
-   <td>
-
-This puts the autopilot control loops into a soft standby mode so that a parallel, redundant autopilot or companion computer can assume control of the vehicle. The PID loops, position, and altitude controllers are modified such that the autopilot can smoothly resume control of the vehicle when standby is subsequently disabled. Switching of outputs or other peripherals must be done by external circuitry.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>RunCam Control</strong></td>
-   <td>
-
-Allows starting and stopping video recording of compatible RunCam cameras. See :ref:`common-camera-runcam`
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>RunCam OSD Control</strong></td>
-   <td>
-
-Enables control of RunCam cameras OSDs. See :ref:`common-camera-runcam`
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>VISO Align</strong></td>
-   <td>
-
-Aligns external Visual Odometry with current autopilot AHRS
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Disarm</strong></td>
-   <td>
-
-Disarm the vehicle unconditionally and immediately. Unlike Emergency Stop Motors, which waits for :ref:`DISARM_DELAY<DISARM_DELAY>` in Copter.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Q_Assist 3Pos SW</strong></td>
-   <td>
-
-Low: disable Q_Assist entirely, Middle: Normal Q_Assist operation, High: Q_Assist active at all times. See Assisted Fixed Wing Flight section of :ref:`quadplane-flying`
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>ZigZag Mode Auto Enable</strong></td>
-   <td>
-
-Enable automatic zigzag and sprayer in ZIGZAG mode. See :ref:`zigzag-mode`
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>AIRMODE (not a regular flight mode)</strong></td>
-   <td>
-
-Enables and disables AIRMODE feature. See :ref:`airmode`
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Generator</strong></td>
-   <td>
-
-Mode control for Richenpower Hybrid Power Generator
-
-.. raw:: html
-
-   </td>
-   <tr>
-   <td><strong>Non Auto Terrain Follow Disable</strong></td>
-   <td>
-
-Disables Terrain Following in CRUISE and FBWB modes
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>CROW Mode Switch</strong></td>
-   <td>
-
-Selects between different CROW aileron operating modes
-
-.. raw:: html
-
-   </td>
-   </tr>
-      <tr>
-   <td><strong>Soaring Enable</strong></td>
-   <td>
-
-Enables Soaring function operating modes
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Force Flare</strong></td>
-   <td>
-
-Moves tilt motors to the upright position and optionally sets pitch for flare when landing Tilt Rotor QuadPlanes. Middle: The pilot retains pitch control during a flare. High: Pitch set to :ref:`LAND_PITCH_CD<LAND_PITCH_CD>`.
-
-.. raw:: html
-
-   </td>
-   </tr>
-      <tr>
-   <td><strong>EKF Position Source</strong></td>
-   <td>
-
-Allows switching between up to three source sets manually for EKF3 (only). See :ref:`common-non-gps-to-gps`
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Airspeed Ratio Calibrate</strong></td>
-   <td>
-
-Activates calibration of airspeed ratio in flight. Best results occur while executing course changes over 360 degrees over time, as in LOITER mode. See :ref:`calibrating-an-airspeed-sensor`.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>VTX Power</strong></td>
-   <td>
-
-Allows reading up to a 6-position switch for controlling Video Transmitter Power. See :ref:`common-vtx`.
-
-.. raw:: html
-
-   </td>
-   </tr>
-      <tr>
-   <td><strong>FBWA_TAILDRAGGER</strong></td>
-   <td>
-
-Enables FBWA taildragger takeoff mode holding elevator and tail on the ground until airspeed is reached
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>MODE_SWITCH_RESET</strong></td>
-   <td>
-
-Forces mode switch to be re-read.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>WindVane home direction offset</strong></td>
-   <td>
-
-This is a continuous input channel providing a -45 to +45 degree offset of the initial wind direction when using :ref:`WNDVN_TYPE<WNDVN_TYPE>` = 2.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Camera Mode Toggle</strong></td>
-   <td>
-
-Toggle camera mode (Photo/Video/etc.). Ideally, this should be on a momentary switch since only low to high transitions toggle the camera mode. Used only with Solo gimbals presently.
-
-.. raw:: html
-
-   </td>
-   </tr>
-
-   <tr>
-   <td><strong>GPS Disable Yaw</strong></td>
-   <td>
-   
-Disables yaw for testing (advanced users only!)
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Disable Airspeed Use</strong></td>
-   <td>
-
-Forces Airspeed Use to be disabled for testing in the air.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Enable Autotuning</strong></td>
-   <td>
-
-Allows tuning without entering AUTOTUNE mode. (i.e. if you place the vehicle in LOITER/AUTO with stick mixing enabled, it can autotune while the vehicle is loitering by using sticks, but enabling autotuning can occur in any mode other than MANUAL.) 
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>SIMPLE mode heading reset</strong></td>
-   <td>
-
-Resets original heading reference to current heading for SIMPLE Mode.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>ARM/DISARM (4.2 and higher)</strong></td>
-   <td>
-
-Arms the vehicle if the switch goes high (subject to arming checks).
-Disarms the vehicle unconditionally if brought low.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>ARM/DISARM with AIRMODE on</strong></td>
-   <td>
-
-Arms the vehicle if the switch goes high (subject to arming checks) with AIRMODE active. Airmode rc option switch can subsequently enable or disable if it is configured. Disarms the vehicle unconditionally if brought low.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>TRIM RC/SERVO Save</strong></td>
-   <td>
-
-Saves current RC input trim and SERVO output trim for pitch. roll, and yaw in Plane and for Steering in Rover.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Torqeedo Error Clear</strong></td>
-   <td>
-
-Clears error condition in Torqeedo motor controller.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Force FBWA as Long FS Action</strong></td>
-   <td>
-
-Forces mode change to FBWA in Long FS, overriding the :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter value for emergency landings beyond RC control range to prevent normal failasfe action from occurring.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Optflow Calibration</strong></td>
-   <td>
-
-Enables calibration of optical flow parameters.
-
-.. raw:: html
-
-   </td>
-   </tr> 
-   <tr>
-   <td><strong>Force Flying</strong></td>
-   <td>
-
-Disables the landing detection heuristic to prevent false landing detections during a mission or manual flight if sudden Z changes can occur due to wind gusts, etc.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>WeatherVane Enable</strong></td>
-   <td>
-
-Enables or disables weathervaning in Quadplane VTOL modes.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Turbine Start (Heli)</strong></td>
-   <td>
-
-When armed and RSC is idle, the high position signals the helicopter rotor speed governor to ramp the throttle to full and back to idle, which signals the turbine engine ECU to initiate the start sequence. The switch must be set back low and the aircraft has to be disarmed to re-enable this feature.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>In-Flight FFT AutoSetup</strong></td>
-   <td>
-
-Allows automatic setup of in-flight FFT notch parameters. Set :ref:`FFT_ENABLE<FFT_ENABLE>` =1, takeoff with switch low, hover 30 seconds with switch high,switch low, and land and notch parameters will have been configured.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Mount Lock</strong></td>
-   <td>
-
-If high, locks the heading of all mounts to earth-frame, otherwise, yaw is heading locked to vehicle heading. If pilot controlled positioning is active, the pilot's inputs changes the heading target appropriately in whatever frame is selected. Without this switch, its vehicle heading.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Pause Streaming Logging</strong></td>
-   <td>
-
-If high, will not log streaming type log messages (sensors,attitudes,ekf,etc.) to allow logging only when desired for autopilots with limited logging capabilites (ie no SD card). Events, mode changes, etc. are still logged. Logging is unaffected if switch is low.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>ARM/Motor Emergency Stop</strong></td>
-   <td>
-
-Three position switch. If high, will request arming. If switched to low position, will emergency stop any rotating motor output like the Motor Emergency Stop switch. If switched to middle position, will de-activate the Motor Emergency Stop, but not request an arm condition. This is a safer alternative to ARM/DISARM in that accidental switching to low position will not disarm, and will allow recovery in the air if switched back to middle or high quickly.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Camera Record Video</strong></td>
-   <td>
-
-Controls video recording on some cameras/mounts.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Camera Zoom</strong></td>
-   <td>
-
-Controls camera zoom on some cameras/mounts.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Camera Manual Focus</strong></td>
-   <td>
-
-Changes manual focus on some cameras/mounts.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Camera AutoFocus</strong></td>
-   <td>
-
-Controls autofocus on some cameras/mounts.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Compass Calibration</strong></td>
-   <td>
-
-Switching to high will behave the same as if the Start button for :ref:`onboard calibration <onboard_calibration>` had been pressed. Returning the switch to low will cancel the calibration if still in progress.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Plane AUTO Mode Landing Abort</strong></td>
-   <td>
-
-If switched to the HIGH position, will abort any landing that is currently in progress while in AUTO mode, This includes the VTOL, or fixed wing, landing phase of any AUTO mission, and the :ref:`PAYLOAD_PLACE <mav_cmd_nav_payload_place>` mission command. It does not affect the fixed wing approach phase of a VTOL landing, QLAND or QRTL modes.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>ROLL Input</strong></td>
-   <td>
-
-ROLL input channel. (replaces RCMAP)
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>PITCH Input</strong></td>
-   <td>
-
-PITCH input channel. (replaces RCMAP)
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>THROTTLE Input</strong></td>
-   <td>
-
-THROTTLE input channel. (replaces RCMAP)
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>YAW Input</strong></td>
-   <td>
-
-YAW input channel. (replaces RCMAP)
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Mainstail</strong></td>
-   <td>
-
-This RC channel will drive the output of the MainSail output ( ``SERVOx_FUNCTION`` = 89) instead of being 
-set from the Throttle Input channel (useful if it has an auxiliary motor using that input). See Sailboat :ref:`sailboat-configure` for more information about the main sail setup.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Flaps</strong></td>
-   <td>
-
-This RC channel provides manual control the amount of FLAP deflection and can also be used in conjunction with :ref:`automatic-flaps` and/or :ref:`flaperons<flaperons-on-plane>`. (Replaces the old FLAP_IN_CHANNEL parameter)
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Forward Throttle </strong></td>
-   <td>
-
-Manual forward motor throttle in QSTABILIZE, QACRO, and QHOVER modes
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Airbrakes </strong></td>
-   <td>
-
-Controls deployment of :ref:`Airbrakes<airbrakes-on-plane>`
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Walking Robot Height </strong></td>
-   <td>
-
-Input channel for Walking Robot Height. See :ref:`walking-robots`.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td><strong>Scripting RC channels </strong></td>
-   <td>
-
-Allows reading a dedicated RC channel for script inputs
-
-.. raw:: html
-
-   </td>
-   </tr>
-   </tbody>
-   </table>
+   ===================================== =======================================================================
+    Option                                Description
+   ===================================== =======================================================================
+    Flip                                 | The vehicle will flip on its roll or pitch axis depending upon the
+                                         | pilot's roll and pitch stick position. See :ref:`Flip Mode<flip-mode>`.
+    Save Trim                            | In Rover, a high saves the current steering channel trim,
+                                         | see :ref:`Save Steering Trim <savetrim>`.
+                                         | In Copter, it adjusts the vehicle level position using the current roll
+                                         | and pitch stick inputs. See details :ref:`here <auto-trim>`.
+    Save Waypoint                        | Save the current location (including altitude) as a waypoint in the
+                                         | mission.If in AUTO mode no waypoint will be saved, instead the 
+                                         | vehicle will RTL.
+    Camera Trigger                       | The camera shutter will be activated.
+                                         | See more details :ref:`here <common-camera-shutter-with-servo>`.
+    Range Finder                         | :ref:`RangeFinder <common-rangefinder-landingpage>` is disabled when
+                                         | the switch is in a low position, and enabled when in a high position.
+    Fence                                | Fence is disabled when the switch is in a low position, and enabled
+                                         | when in a high position.
+    Acro Trainer                          Turn on automatic leveling in the ACRO flight mode.
+    Sprayer                               Turn on the :ref:`crop sprayer <sprayer>` when the switch is pulled high.
+    Gripper                              | Operates the :ref:`gripper <common-gripper-landingpage>`. Switch pulled
+                                         | low releases the gripper, high closes or grabs.
+    Parachute Enable                     | Enables the automatic release of the :ref:`parachute <common-parachute>`
+                                         | (this does not immediately trigger the release).
+    Parachute Release                    | Immediately triggers the release of the :ref:`parachute <common-parachute>`
+                                         | as long as the vehicle is not landed, or too low.
+    Parachute 3Pos                       | Switch pulled low disables the :ref:`parachute <common-parachute>`.
+                                         | The switch in the middle position enables the parachute for
+                                         | automatic release. The switch pulled high triggers the release of the
+                                         | parachute as long as the vehicle is not landed, or too low.
+    Mission Reset                         Reset AUTO to run the first mission command in the command list.
+    AttCon Feed Forward                  | Turns on/off attitude controllers feed forward.
+                                         | For developers only.
+    AttCon Accel Limits                  | Turns on/off attitude controller acceleration limits.
+                                         | For developers only.
+    Retract Mount                         Move the :ref:`camera mount <common-cameras-and-gimbals>` to its retracted position.
+    Relay 1 On/Off                       | Switch pulled low turns off the first :ref:`relay <common-relay>`,
+                                         | pulled high turns on the first relay.
+    Landing Gear                          Deploys or Retracts :ref:`Landing Gear <common-landing-gear>`
+    Lost Vehicle Alarm                    Plays the `lost copter alarm <https://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__ through the buzzer
+    Emergency Stop Motors                 Stops motors immediately (`video <https://www.youtube.com/watch?v=-Db4u8LJE5w>`__)
+    Motor Interlock                      | Motor Interlock controls the way the heliRSC (motor throttle control)
+                                         | output is generated in Traditional Helicopters and HeliQuads. If
+                                         | >1200us, it enables the Motor Interlock function, below it is disabled.
+                                         | When <1200us, it is similar to what is sometimes referred to as
+                                         | Throttle Hold in RC Helicopter terminology.
+                                         | For Mulit-copters, it is used as a motor stop function when <1200us.
+                                         | (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__).
+    Brake                                | Invokes the :ref:`Brake flight mode <brake-mode>` when the switch goes high.
+                                         | Bringing the switch back to low will return the vehicle to the mode 
+                                         | indicated by the flight mode switch.
+    Relay2 On/Off                        | Switch pulled low turns off the second :ref:`relay <common-relay>`,
+                                         | pulled high turns on the second relay.
+    Relay3 On/Off                        | Switch pulled low turns off the third :ref:`relay <common-relay>`,
+                                         | pulled high turns on the third relay.
+    Relay4 On/Off                        | Switch pulled low turns off the fourth :ref:`relay <common-relay>`,
+                                         | pulled high turns on the fourth relay.
+    Throw                                | Invokes the :ref:`Throw flight mode <throw-mode>` when the switch
+                                         | goes high. Bringing the switch back to low will return the vehicle
+                                         | to the mode indicated by the ch5 flight mode switch.
+    ADSB-Avoidance                       | When the switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>`
+                                         | (avoidance of manned aircraft) is enabled, otherwise it's disabled
+    Precision Loiter                     | Turns on/off :ref:`Precision Loiter <precision-landing-with-irlock>`.
+                                         | (i.e. holding position above a target in Loiter mode
+                                         | using IR-Lock sensor)
+    Object Avoidance                     | When the switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>`
+                                         | or :ref:`TeraRanger Tower<common-teraranger-tower-objectavoidance>`. When low, object avoidance is disabled.
+    Arm/Disarm(4.1 and earlier)          | Arms the vehicle if the switch goes high (subject to arming checks).
+                                         | Disarms the vehicle if brought low.
+   ===================================== =======================================================================
+
+   ===================================== =======================================================================
+    Option                                Description
+   ===================================== =======================================================================
+    Inverted Flight                      | Enabling inverted flight only changes how ArduPilot stabilizes
+                                         | the vehicle. It will stabilize it with a roll of 180 degrees from
+                                         | normal whenever inverted flight is enabled in a stabilized mode.
+                                         | Unless the vehicle is capable of inverted flight, do **NOT** use
+                                         | this option.
+    Winch Enable                         | Enables Winch operation. The switch in the low position on this
+                                         | channel relaxes the winch.
+    Winch Control                        | Controls the speed and direction of the winch. Low: takeup,
+                                         | Middle: stop, High: unreel
+    RC Override Enable                   | This is a 3-position switch that enables (high) or disables (low)
+                                         | the use of RC overrides from the Ground Control Station.
+    Learn Cruise                         | This starts the cruise speed and the throttle learning sequence
+                                         | on Rover when switched to high. See :ref:`rover-tuning-throttle-and-speed`.
+    Clear Waypoints                       Clears currently loaded mission waypoints.
+    Compass Learn                        | Inflight compass offset learning. See Automatic Offset
+                                         | Calibration section of :ref:`common-compass-setup-advanced`.
+    Sailboat Tack                        | Any high to low, or low to high change on this channel will start
+                                         | a tack in the opposite direction
+                                         | to the last tack. See Sailboat :ref:`sailboat-configure`.
+    Reverse Throttle                     | When switched high, forces throttle reverse in Plane for
+                                         | steepening descents. Normally, this is
+                                         | controlled by flight mode via the :ref:`USE_REV_THRUST<USE_REV_THRUST>`
+                                         | parameter. See :ref:`automatic-landing` for more information on
+                                         | the setup of reverse thrust.
+    GPS Disable                           Simulates GPS failure by disabling GPS.
+    Relay 5 On/Off                       | Switch pulled low turns off the third :ref:`relay <common-relay>`, pulled
+                                         | high turns on the fifth relay.
+    Relay 6 On/Off                       | Switch pulled low turns off the third :ref:`relay <common-relay>`, pulled
+                                         | high turns on the sixth relay.
+    Sailboat Motor 3Pos Switch           | This 3-position switch controls the Sailboat motor. The motor is
+                                         | always used when high, never used 
+                                         | when low, and as needed, otherwise.
+    Surface Tracking Up/Down             | This 3-position switch determines if surface tracking via
+                                         | rangefinder is toward the ground (low) or ceiling (high),
+                                         | or disabled, otherwise.
+    Standby                              | This puts the autopilot control loops into a soft standby mode
+                                         | so that a parallel,redundant autopilot or
+                                         | companion computer can assume control of the vehicle.
+                                         | The PID loops, position, and altitude controllers are modified
+                                         | such that the autopilot can smoothly resum autopilot can
+                                         | smoothly resume control of the vehicle when standby is
+                                         | subsequently disabled. Switching of outputs or other peripherals
+                                         | must be done by external circuitry.
+    RunCam Control                       | Allows starting and stopping video recording of compatible
+                                         | RunCam cameras. See :ref:`common-camera-runcam`.
+    RunCam OSD Control                   | Enables control of RunCam cameras OSDs.
+                                         | See :ref:`common-camera-runcam`.
+    VISO Align                            Aligns external Visual Odometry with current autopilot AHRS
+    Disarm                               | Disarm the vehicle unconditionally and immediately. Unlike
+                                         | Emergency Stop Motors, which waits for :ref:`DISARM_DELAY<DISARM_DELAY>`
+                                         | in Copter.
+    Q_Assist 3Pos SW                     | Low: disable Q_Assist entirely, Middle: Normal Q_Assist
+                                         | operation, High: Q_Assist active at all times. See Assisted Fixed
+                                         | Wing Flight section of :ref:`quadplane-flying`.
+    ZigZag Mode Auto Enable              | Enable automatic zigzag and sprayer in ZIGZAG mode.
+                                         | See :ref:`zigzag-mode`.
+    AIRMODE(not a flight mode)            Enables and disables AIRMODE feature. See :ref:`airmode`
+    Generator                             Mode control for Richenpower Hybrid Power Generator
+    Non Auto Terrain Follow Disable       Disables Terrain Following in CRUISE and FBWB modes
+    CROW Mode Switch                      Selects between different CROW aileron operating modes
+    Soaring Enable                        Enables Soaring function operating modes
+    Force Flare                          | Moves tilt motors to the upright position and optionally sets
+                                         | pitch for flare when landing Tilt Rotor QuadPlanes.
+                                         | Middle: The pilot retains pitch control during a flare.
+                                         | High: Pitch set to :ref:`LAND_PITCH_CD<LAND_PITCH_CD>`. Allows switching
+    EKF Position Source                  | between up to three source sets manually for EKF3 (only).
+                                         | See :ref:`common-non-gps-to-gps`.
+    Airspeed Ratio Calibrate             | Activates calibration of airspeed ratio in flight. Best results
+                                         | occur while executing course changes over 360 degrees over
+                                         | time, as in LOITER mode. See :ref:`calibrating-an-airspeed-sensor`.
+    VTX Power                            | Allows reading up to a 6-position switch for controlling Video
+                                         | Transmitter Power. See :ref:`common-vtx`.
+    FBWA_TAILDRAGGER                     | Enables FBWA taildragger takeoff mode using elevator to
+                                         | hold tail on the ground until airspeed is reached
+    MODE_SWITCH_RESET                     Forces mode switch to be re-read.
+    WindVane home direction offset       | This is a continuous input channel providing a -45 to +45
+                                         | degree offset of the initial wind direction when using
+                                         | :ref:`WNDVN_TYPE<WNDVN_TYPE>` = 2.
+    Camera Mode Toggle                   | Toggle camera mode (Photo/Video/etc.). Ideally, this should be
+                                         | on a momentary switch since only low to high transitions
+                                         | toggle the camera mode. Used only with Solo gimbals
+                                         | presently.
+    GPS Disable Yaw                       Disables yaw for testing (advanced users only!)
+    Disable Airspeed Use                  Forces Airspeed Use to be disabled for testing in the air.
+    Enable Autotuning                    | Allows tuning without entering AUTOTUNE mode. (i.e. if you
+                                         | place the vehicle in LOITER/AUTO with stick mixing enabled,
+                                         | it can autotune while the vehicle is loitering by using sticks,
+                                         | but enabling autotuning can occur in any mode other
+                                         | than MANUAL.)
+    SIMPLE mode heading reset            | Resets original heading reference to current heading
+                                         | for SIMPLE Mode.
+    ARM/DISARM (4.2 and higher)          | Arms the vehicle if the switch goes high (subject to arming
+                                         | checks). Disarms the vehicle unconditionally if brought low.
+    ARM/DISARM with AIRMODE on           | Arms the vehicle if the switch goes high (subject to arming
+                                         | checks) with AIRMODE active. Airmode RC option switch can
+                                         | subsequently enable or disable if it is configured. Disarms
+                                         | the vehicle unconditionally if brought low.
+    TRIM RC/SERVO Save                   | Saves current RC input trim and SERVO output trim for pitch,
+                                         | roll, and yaw in Plane and for Steering in Rover.
+    Torqeedo Error Clear                  Clears error condition in Torqeedo motor controller.
+    Force FBWA as Long FS Action         | Forces mode change to FBWA in Long FS, overriding the
+                                         | :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter value for emergency
+                                         | landings beyond RC control range to prevent normal
+                                         | failsafe action from occurring.
+    Optflow Calibration                   Enables calibration of optical flow parameters.
+    Force Flying                         | Disables the landing detection heuristic to prevent false
+                                         | landing detections during a mission or manual flight
+                                         | if sudden Z changes can occur due to wind gusts, etc.
+    WeatherVane Enable                    Enables or disables weathervaning in Quadplane VTOL modes.
+    Turbine Start (Heli)                 | When armed and RSC is idle, the high position signals the
+                                         | helicopter rotor speed governor to ramp the throttle to full and
+                                         | back to idle, which signals the turbine engine ECU to
+                                         | initiate the start sequence. The switch must be set back low and
+                                         | the aircraft has to be disarmed to re-enable this feature.
+    In-Flight FFT AutoSetup              | Allows automatic setup of in-flight FFT notch parameters. Set
+                                         | :ref:`FFT_ENABLE<FFT_ENABLE>` =1, takeoff with switch low,
+                                         | hover 30 seconds with switch high,switch low, and land and
+                                         | notch parameters will have been configured.
+    Mount Lock                           | If high, locks the heading of all mounts to earth-frame,
+                                         | otherwise, yaw is heading locked to vehicle heading.
+                                         | If pilot controlled positioning is active, the pilot's inputs changes
+                                         | the heading target appropriately in whatever frame is selected.
+                                         | Without this switch,it's vehicle heading.
+    Pause Streaming Logging              | If high, will not log streaming type log messages (sensors,
+                                         | attitudes, EKF, etc.) to allow logging only when desired
+                                         | for autopilots with limited logging capabilities
+                                         | (i.e. no SD card). Events, mode changes, etc. are still logged.
+                                         | Logging is unaffected if the switch is low.
+    ARM/Motor Emergency Stop             | Three position switch. If high, will request arming. If switched to
+                                         | low position, will emergency stop any rotating motor output
+                                         | like the Motor Emergency Stop switch. If switched to middle
+                                         | position,will de-activate the Motor Emergency Stop, but not
+                                         | request an arm condition. This is a safer alternative to
+                                         | ARM/DISARM in that accidental switching to low position
+                                         | will not disarm, and will allow recovery in the air if
+                                         | switched back to middle or high quickly.
+    Camera Record Video                   Controls video recording on some cameras/mounts.
+    Camera Zoom                           Controls camera zoom on some cameras/mounts.
+    Camera Manual Focus                   Changes manual focus on some cameras/mounts.
+    Camera AutoFocus                      Controls autofocus on some cameras/mounts.
+    Compass Calibration                  | Switching to high will behave the same as if the Start button 
+                                         | for :ref:`onboard calibration <onboard_calibration>` had
+                                         | been pressed. Returning the switch to low will cancel the
+                                         | calibration if still in progress.
+    Plane AUTO Mode Landing Abort        | If switched to the HIGH position, will abort any landing that
+                                         | is currently in progress while in AUTO mode.
+                                         | This includes the VTOL, or fixed wing,
+                                         | landing phase of any AUTO mission, and the :ref:`PAYLOAD_PLACE <mav_cmd_nav_payload_place>`
+                                         | mission command. It does not  affect the fixed wing
+                                         | approach phase of a VTOL landing, QLAND or QRTL modes.
+    ROLL Input                            ROLL input channel. (replaces RCMAP)
+    PITCH Input                           PITCH input channel. (replaces RCMAP)
+    THROTTLE Input                        THROTTLE input channel. (replaces RCMAP)
+    YAW Input                             YAW input channel. (replaces RCMAP)
+    Mainsail                             | This RC channel will drive the output of the MainSail 
+                                         | output ( ``SERVOx_FUNCTION`` = 89)instead of being set from 
+                                         | the Throttle Input channel (useful if it has an auxiliary motor
+                                         | using that input). See Sailboat :ref:`sailboat-configure` for 
+                                         | more information about the main sail setup.
+    Flaps                                | This RC channel provides manual control the amount of FLAP 
+                                         | deflection and can also be used in conjunction with
+                                         |  :ref:`automatic-flaps` and/or :ref:`flaperons<flaperons-on-plane>`.
+                                         | (Replaces the old FLAP_IN_CHANNEL parameter)
+    Forward Throttle                     | Manual forward motor throttle in QSTABILIZE, QACRO, and
+                                         | QHOVER modes
+    Airbrakes                             Controls deployment of :ref:`Airbrakes<airbrakes-on-plane>`
+    Walking Robot Height                  Input channel for Walking Robot Height. See :ref:`walking-robots`.
+    Scripting RC channels                 Allows reading a dedicated RC channel for script inputs
+   ===================================== =======================================================================
 
 Check the channel range
 =======================
@@ -1299,6 +567,6 @@ Check the channel range
 .. image:: ../../../images/aux-switch-check.png
     :target: ../_images/aux-switch-check.png
 
-The configured feature will be triggered when the auxiliary switch's pwm value becomes higher than 1800.  It will be deactivated when the value falls below 1200.
+The configured feature will be triggered when the auxiliary switch's PWM value becomes higher than 1800.  It will be deactivated when the value falls below 1200.
 
-You can check the pwm value sent from the transmitter when the switch is high and low using the Mission Planner's Initial Setup >> Mandatory Hardware >> Radio Calibration screen.  If it does not climb higher than 1800 or lower than 1200, it is best to adjust the servo end points in the transmitter.
+You can check the PWM value sent from the transmitter when the switch is high and low using the Mission Planner's Initial Setup >> Mandatory Hardware >> Radio Calibration screen.  If it does not climb higher than 1800 or lower than 1200, it is best to adjust the servo endpoints in the transmitter.

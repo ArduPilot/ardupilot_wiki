@@ -55,8 +55,8 @@ The pilot can retract the gimbal with the "Retract Mount1" auxiliary switch
 
 - :ref:`RC10_OPTION <RC10_OPTION>` = 27 ("Retract Mount1") to change the gimbal to Retract mode
 
-Control from a Ground Station (aka MAVLink Targeting)
------------------------------------------------------
+Control from a Ground Station or Companion Computer (aka MAVLink Targeting)
+---------------------------------------------------------------------------
 
 Ground stations can send MAVLink commands to control the gimbal.  While each GCS's interface is different below are the controls provided by Mission Planner.
 
@@ -78,6 +78,8 @@ To point the gimbal at a particular location (e.g. lat, lon, alt), on the Data s
 
 .. image:: ../../../images/mount-mp-point-camera-here.png
     :target: ../_images/mount-mp-point-camera-here.png
+
+MAVLink mount commands can be sent from other sources, such as companion computers. See :ref:`mavlink-gimbal-mount` for a commands list and more information.
 
 Control during Auto mode missions
 ---------------------------------

@@ -114,7 +114,7 @@ Example launch.json File
                     "--home", "36.146,-113.89,1429.75,90",   // Grand Canyon Plateau for terrain following
                     "--config", "-G",                        // "-G" option sets debug symbols
                     "--speedup", "8",                        // Set the how much faster relative to real-time the simulation runs
-                    // "--uartE=sim:lightwareserial",        // Used to attach simulated serial devices
+                    // "--serial4=sim:lightwareserial",        // Used to attach simulated serial devices
                     "--defaults",
                     "${workspaceRoot}/ArduCopter/mav.parm",  // set path to defaults file
                     "-I0",

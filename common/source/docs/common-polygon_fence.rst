@@ -8,7 +8,7 @@ Inclusion and Exclusion Fences
 Overview
 ========
 
-ArduPilot includes support for polygon fences with up to 70 points and for pure circular fences with specified radii. Unlike the home-based cylindrical fence :ref:`cylindrical fence <common-ac2_simple_geofence>`, the circular inclusion/exclusion fence can be placed anywhere. Either the polygonal or circular fences may be selected to be inclusion or exclusion type, and may be mixed. The purpose of these fences are to attempt to stop your vehicle from flying into (exclusion), or out of (inclusion), the fences by initiating a failsafe action like RTL or, if flying in Loiter mode for Copter and :ref:`common-object-avoidance-landing-page` is setup, the vehicle will normally stop before breaching the fence and in some cases, plan paths around the boundaries.
+ArduPilot includes support for polygon fences with up to 70 points and for pure circular fences with specified radii. Unlike the home-based cylindrical fence :ref:`cylindrical fence <common-ac2_simple_geofence>`, the circular inclusion/exclusion fence can be placed anywhere. Either the polygonal or circular fences may be selected to be inclusion or exclusion type, and may be mixed. The purpose of these fences are to attempt to stop your vehicle from flying into (exclusion), or out of (inclusion), the fences by initiating a failsafe action like RTL (See :ref:`FENCE_ACTION<FENCE_ACTION>`) or, if flying in Loiter mode for Copter and :ref:`common-object-avoidance-landing-page` is setup, the vehicle will normally stop before breaching the fence and in some cases, plan paths around the boundaries.
 
 This feature is an extension of the simpler home-based :ref:`cylindrical fence <common-ac2_simple_geofence>` and can be combined with it.
 
@@ -17,93 +17,15 @@ You can have multiple circular or polygon inclusion or exclusion fences, all act
 .. image:: ../../../images/fence_examples.png
    :target: ../_images/fence_examples.png
 
-[site wiki="copter"]
-Like the :ref:`cylindrical fence <common-ac2_simple_geofence>`, Copter will stop increasing altitude at :ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` in Loiter, PosHold, and AltHold modes. In other modes, it will execute the :ref:`FENCE_ACTION<FENCE_ACTION>` if the altitude limit is exceeded and active. 
-[/site]
-[site wiki="plane"]
-Like the :ref:`cylindrical fence <common-ac2_simple_geofence>`, Plane will execute the :ref:`FENCE_ACTION<FENCE_ACTION>` if the boundary or altitude limits are breached.
-[/site]
+See :ref:`common-geofencing-landing-page` for fence setup parameters common to all fences.
 
-These fences are created and treated in a similar way to mission command lists and rally point lists and loaded into the autopilot. Each item in the list specifies a point in the polygonal boundary or a circular item, whether its inclusion or exclusion type, and radius if circular.
-[site wiki="plane"]
-For Plane a fence breach return point can also be specified in the list.
-[/site]
+These fences are created and treated in a similar way to mission command lists and rally point lists and loaded into the autopilot. Each item in the list specifies a point in the polygonal boundary or a circular item, whether its inclusion or exclusion type, and radius if circular. Most GCS provide a graphical drawing facility to add in the design of the fence boundaries and inclusion/exclusion type.
 
 Multiple fences can be specified of differing types and shapes in the list.
 
 
 ..  youtube:: U3Z8bO3KbyM
     :width: 100%
-
-
-
-Enabling Fences in Mission Planner
-==================================
-
-To enable Fences, go to the Mission Planner full parameter list (CONFIG->Full Parameter Tree), search for items with ``FENCE_``:
-
-.. image:: ../../../images/fence_enable.png
-    :target: ../_images/fence_enable.png
-
-Plane Parameter List (Copter/Rover have fewer)
-
--  Set :ref:`FENCE_ACTION<FENCE_ACTION>` = to whatever you wish for a breach action. These will vary depending on vehicle type.
--  Set :ref:`FENCE_OPTIONS<FENCE_OPTIONS>` to "1" to prevent mode changes after a fence breach until the vehicle returns within the fence boundary (Plane only, Copter/Rover do not allow mode changes while in breach)
--  Set :ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` = to the altitude limit you want (in meters). This is unavailable in Rover.
--  Set :ref:`FENCE_ENABLE<FENCE_ENABLE>` =1 to enable FENCEs.
--  Set :ref:`FENCE_MARGIN<FENCE_MARGIN>` = to the distance from the fence horizontal boundary the vehicle must maintain in order to prevent a breach.
--  Set :ref:`FENCE_RADIUS<FENCE_RADIUS>` to the maximum distance from HOME you want (in meters). This should normally be at least 50m. This value must be larger than :ref:`FENCE_MARGIN<FENCE_MARGIN>` and greater than 30m.
--  :ref:`FENCE_TOTAL<FENCE_TOTAL>` should not be changed manually and indicates the number of inclusion/exclusion fence points stored. (See :ref:`common-polygon_fence`)
--  Set :ref:`FENCE_TYPE<FENCE_TYPE>` = is a bitmap set to enable the various fence types: MIN or MAX altitude, simple CIRCLE tin can around HOME, or POLYGON fences. The POLYGON fences must also have been loaded via a fence list from a ground control station in order to be active.
-
-.. note:: Polygon fence type includes the circular fences specified in the Inclusion/Exclusion fence list. The simple home centered CIRCLE fence is a separate fence. Rover ignores altitudes, if set.
-
-Defaults for :ref:`FENCE_TYPE<FENCE_TYPE>` are:
-
-- Rover: CIRCLE and POLYGON
-- Copter: ALT MAX, CIRCLE, and POLYGON
-- Plane: POLYGON
-
-If Plane, you can also:
-
--  Set the :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>` as a breach boundary.
--  Set :ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>` = to allow automatic temporary (until reboot)forcing of :ref:`FENCE_ENABLE<FENCE_ENABLE>` =1 under certain vehicle conditions, such as upon arming or takeoff. A value of 0 disables this feature.
--  :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` allows returning to the nearest RALLY point (See: :ref:`common-rally-points`), if loaded, instead of HOME.
-
-
-..  youtube:: yhNrtTERnJk
-    :width: 100%
-
-
-
-Copter GeoFence Tab
--------------------
-
-Copter and Traditional Heli, when connected to Mission Planner, present a CONFIG tab called GeoFence which provides another way to access these parameters in those vehicles.
-
-.. image:: ../../../images/Fence_MPSetup.png
-    :target: ../_images/Fence_MPSetup.png
-
-Enabling the fence with an RC Channel Auxiliary Switch
-======================================================
-
-It is not necessary to set-up a switch to enable or disable the fence
-but if you wish to control the fence with a switch follow these
-steps:
-
-for firmware versions before 4.0:
-
--  Go to the Mission Planner's Config/Tuning > Extended Tuning screen (or other GCS's parameter setup screen) and set  either "Ch7 Opt" OR "Ch8 Opt" to Fence. These parameters can also be directly set from the Config/Tuning > Full Parameter List screen
-   
-.. image:: ../../../images/Fence_MPCh78.png
-    :target: ../_images/Fence_MPCh78.png
-   
-Alternatively, for firmware versions 4.0 or later, an RCx_OPTION can be set via the Config/Tuning > Full Parameter List screen:
-
--  Use an RCx_OPTION set to Fence
--  setting the switch high (i.e. PWM > 1800) will enable the fence, low
-   (under 1800) will disable the fence.
-
 
 Warnings:
 =========

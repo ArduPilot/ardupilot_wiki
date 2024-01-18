@@ -174,10 +174,9 @@ To use a real serial device you can use a command like this:
 
 what that does it pass the --serial2 argument to the ardupilot code,
 telling it to use /dev/ttyUSB0 instead of the normal internal simulated
-GPS for the 2nd UART. You can find the SITL serial port mappings :ref:`here <learning-ardupilot-uarts-and-the-console>`
+GPS. You can find the SITL serial port mappings :ref:`here <learning-ardupilot-uarts-and-the-console>`
 
 Any of the 8 UARTs can be configured in this way, using serial0 to serial7.
-The standard serial ports SERIAL1 and SERIAL2 are uartC and uartD respectively.
 
 Typically serial devices can be connected to a computer's USB port through
 an FTDI adapter, but note that these generally do not support half-duplex.
@@ -279,7 +278,7 @@ Specify the schema and filename on the ``sim_vehicle.py`` command-line.  The fol
 
 ::
 
-   ./Tools/autotest/sim_vehicle.py  --gdb --debug -v plane -A --uartF=logic_async_csv:hobbywing-platinum-pro-v3.csv --speedup=1 -B AP_HobbyWing_Platinum_PRO_v3::update
+   ./Tools/autotest/sim_vehicle.py  --gdb --debug -v plane -A --serial5=logic_async_csv:hobbywing-platinum-pro-v3.csv --speedup=1 -B AP_HobbyWing_Platinum_PRO_v3::update
 
 .. note::
 
@@ -472,4 +471,4 @@ Then to use the joystick in MAVProxy run:
 
 If you want to add support for a new joystick type then you need to add a file for it following these `instructions <https://github.com/ArduPilot/MAVProxy/blob/master/docs/JOYSTICKS.md>`__ . Note that you can also use this information to customize the operation of your joystick if it already supported. Just modify it file appropriately.
 
-To use a joystick in Mission Planner under Windows, be sure to setup the joystick using Window's Game Controller control panel, then under Mission Planners DATA screen Actions tab, click Joystick, then setup the axes and buttons, and enable it.
+To use a joystick in Mission Planner under Windows, be sure to setup the joystick using Window's Game Controller control panel, then under Mission Planners DATA screen Actions tab, click Joystick, then setup the axes and buttons, and enable it. See :ref:`common-joystick` for more information.

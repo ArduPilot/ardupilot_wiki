@@ -17,12 +17,14 @@ ArduPilot autopilots are compatible with the following receiver output protocols
 
     #. PPM-Sum receivers
     #. SBus receivers 
+    #. Fast SBus (from DJI HDL video/RC systems)
     #. IBUS receivers
     #. :ref:`common-FPort-receivers`
     #. :ref:`Spektrum SRXL2,DSM, DSM2, and DSM-X Satellite receivers<common-spektrum-rc>`
     #. :ref:`Multiplex SRXL version 1 and version 2 receivers<common-srxl-receivers>`
     #. :ref:`CRSF receivers <common-tbs-rc>` (including ExpressLRS systems)
     #. :ref:`Graupner SUM-D<common-graupner-rc>`
+    #. DroneCAN peripherals can decode these RC protocols on a peripheral and pass to the autopilot
     #. Parallel PWM outputs encoded to PPM-Sum using an external encoder (see below)
 
 Connecting the Receiver

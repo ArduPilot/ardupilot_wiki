@@ -40,8 +40,8 @@ Common Parameter Setup
 
 .. note:: Do not use :ref:`GPS_AUTO_SWITCH<GPS_AUTO_SWITCH>` = 2 (Blend) when using Moving Baseline configurations.
 
-Dual Serial GPS
----------------
+Dual Serial F9P GPS
+-------------------
 
 - :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` = 5 ("GPS") assuming the 1st GPS is connected to SERIAL3.
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 5 ("GPS") assuming the 2nd GPS is connected to serial port 4
@@ -52,8 +52,8 @@ Dual Serial GPS
 - Set the :ref:`GPS_POS1_X <GPS_POS1_X>`/Y/Z and :ref:`GPS_POS2_X <GPS_POS2_X>`/Y/Z parameters for the GPSs (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`). You must establish the relative positions of each GPS location on the vehicle with respect the vehicle's motion.
 
 
-Dual DroneCAN GPS
------------------
+Dual DroneCAN F9P GPS
+---------------------
 
 If DroneCAN GPS are used, then configure the CAN/DroneCAN ports as explained in :ref:`common-uavcan-setup-advanced` and instead of setting up the SERIAL port protocols above, make sure that no SERIAL ports are setup with GPS protocol ("5"). Also be sure that the two DroneCAN GPS are on the same physical CAN bus from the autopilot. This usually requires that a CAN bus splitter be used. Then set these parameters:
 
@@ -73,65 +73,44 @@ the two GPS modules to go via the autopilot board.
 Single Unit Systems
 -------------------
 
+These have a single module with dual antennas.
+
 .. note:: ArduPilot allows for up to two GPSes. The following parameter examples are for setting up the first GPS instance.
 
-Blicube GRTK
-~~~~~~~~~~~~
-For the Blicube GRTK, it only requires that the GPS be attached to a SERIALx port using ``SERIALx_PROTOCOL`` = 5 (GPS) and setting only:
+NMEA
+~~~~
 
 - :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` = 5 ("GPS") assuming the GPS is connected to SERIAL3 (be sure any lower numbered port does not use this protocol unless a GPS is attached).
 - :ref:`GPS_TYPE<GPS_TYPE>` = 5 (NMEA)
 
-This system requires that the "Master" antenna and "Slave" antenna (see manufacturer's documentation for which is antenna is designated the "Master") be mounted on the vehicle front to back in line with the 0 degree yaw of the vehicle and at the same vertical level and be at least 30cm apart.
+Some of these systems require that the "Master" antenna and "Slave" antenna (see manufacturer's documentation for which is antenna is designated the "Master") be mounted on the vehicle front to back in line with the 0 degree yaw of the vehicle and at the same vertical level and be at least 30cm apart. Otherwise , the antenna offset distances in the x/y/z directions must be entered detailed in the :ref:`Master-Slave Antenna Offsets<antenna-offsets>` section below.
 
-.. note:: this unit can be used with only its "Master" antenna connected, if desired, but no yaw information should be used.
+.. note:: these units can be used with only its "Master" antenna connected, if desired, but no yaw information should be used.
 
-For Unicore UM982 based GPSes, the "Master" and "Slave" antennas have more mounting flexibility, but must be mounted at least 30cm apart on the vehicle. The offset distances in the x/y/z directions must be entered detailed in the :ref:`Master-Slave Antenna Offsets<antenna-offsets>` section below.
-
-Holybro UM982
+Unicore UM982
 -------------
-The Holybro Unicore UM982 GPS should have the following parameters set:
 
 - :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` = 5 ("GPS") assuming the GPS is connected to SERIAL3 (be sure any lower numbered port does not use this protocol unless a GPS is attached).
 - :ref:`GPS_TYPE<GPS_TYPE>` = 25 (UnicoreMovingBaseline)
 
-.. note:: this unit can be used with only its "Master" antenna connected, if desired, but no yaw information should be used. In this case set :ref:`GPS_TYPE<GPS_TYPE>` = 24 (UnicoreMaster)
+.. note:: thes units can be used with only its "Master" antenna connected, if desired, but no yaw information should be used. In this case set :ref:`GPS_TYPE<GPS_TYPE>` = 24 (UnicoreMaster)
 
-CUAV DroneCAN C-RTK2 HP
------------------------
-
-C-RTK2 HP supports connection either via serial or DroneCAN port to the autopilot.
+For Unicore UM982 based GPSes, the "Master" and "Slave" antennas must be mounted at least 30cm apart on the vehicle. The offset distances in the x/y/z directions must be entered detailed in the :ref:`Master-Slave Antenna Offsets<antenna-offsets>` section below.
 
 DroneCAN
-~~~~~~~-
-The diagram below shows the C-RTK2-HP being connected via its CAN port to an autopilot's CAN port.
+--------
 
 - setup the autopilot's CAN port parameters for DroneCAN: :ref:`common-uavcan-setup-advanced`
 - :ref:`GPS_TYPE<GPS_TYPE>` = 9 (DroneCAN GPS)
 
-.. image:: ../../../images/c-rtk2-hp/c-rtk2-hp-connection-en.jpg
-	:target: ../images/c-rtk2-hp/c-rtk2-hp-connection-en.jpg
-
-Serial
-~~~~~~
-The diagram below shows the C-RTK2 HP being connected via its UART2 port to an autopilot's serial port setup for GPS Protocol.
-
-.. image:: ../../../images/c-rtk2-hp/c-rtk2-hp-connection-en2.jpg
-	:target: ../images/c-rtk2-hp/c-rtk2-hp-connection-en2.jpg
-
-- :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` = 5 ("GPS") assuming the GPS is connected to SERIAL3 (be sure any lower numbered port does not use this protocol unless a GPS is attached).
-- :ref:`GPS_TYPE<GPS_TYPE>` = 25 (UnicoreMovingBaseline)
-
-.. note:: this unit can be used with only its "Master" antenna connected, if desired, but no yaw information should be used. In this case set :ref:`GPS_TYPE<GPS_TYPE>` = 24 (UnicoreMaster)
-
-See :ref:`CUAV C-RTK2 HP  Heading and RTK receiver<common-cuav-c-rtk2-hp>` for more information and setup details.
+The antenna offset distances in the x/y/z directions must be entered detailed in the :ref:`Master-Slave Antenna Offsets<antenna-offsets>` section below.
 
 .. _antenna-offsets:
 
 Master-Slave Antenna Offsets
 ============================
 
-Dual unit or single unit/dual antenna systems (except Blicube GRTK) need the relative positions for the "Master" and "Slave" antennas specified:
+Dual unit or single unit/dual antenna systems (except Blicube NEMA GRTK) need the relative positions for the "Master" and "Slave" antennas specified:
 
 - :ref:`GPS_MB1_TYPE<GPS_MB1_TYPE>` = 1 (GPS1 Moving Baseline master antenna offsets relative to slave antenna, also enables the next parameters to be shown)
 - :ref:`GPS_MB1_OFS_X<GPS_MB1_OFS_X>`: offset in meters from the "Slave" to "Master" antenna in the X axis (in direction of 0 deg yaw, positive offsets are if "Master" is in front of the "Slave".

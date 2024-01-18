@@ -12,7 +12,8 @@ firmware server.  Please refer to the `README text <https://github.com/ArduPilot
 Flash the bootloader
 ====================
 
-We have currently two ways to flash the ArduPilot bootloader :
+We have currently two ways to flash the ArduPilot bootloader:
+
 - flashing the one embedded into the firmware with MAVLink (recommended) via a GCS
 - using DFU mode to flash. For this method, refer to :ref:`using-DFU-to-load-bootloader`
 

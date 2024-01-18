@@ -30,8 +30,8 @@ This lists features or changes merged in master and build in the "latest" firmwa
     Nooploop TOF-Sense F <common-rangefinder-nooploop-tofsense-f>
     Nanoradar NRA24 <common-rangefinder-nra24>
     Xacti Camera Gimbals <common-xacti-gimbal>
-    Other wiki changes <common-future-wiki-changes>
     New Circle Mode <circle-mode>
+    Other wiki changes <common-future-wiki-changes>
 [/site]
 
 [site wiki="blimp"]

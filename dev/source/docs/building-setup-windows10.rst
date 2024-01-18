@@ -1,5 +1,7 @@
 .. _building-setup-windows10:
 
+**ARCHIVED** see :ref:`building-setup-windows10_new`
+
 ====================================================================
 Setting up the Build Environment on Windows 10/11 using WSL1 or WSL2
 ====================================================================
@@ -89,7 +91,7 @@ As of July 2022, Microsoft's solution of providing USB access to WSL2 via usbipd
 .. note:: WSL1 can upload to boards by default with no additional changes. This is due to differences in how USB devices are handled.
 
 
-.. _building-setup-windows10_XWindows:
+
 
 Using SITL with WSL and XWindows (Windows 10 only)
 --------------------------------------------------

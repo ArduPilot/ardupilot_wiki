@@ -1,5 +1,7 @@
 .. _geofencing:
 
+ARCHIVED: See :ref:`common-geofencing-landing-page` for info for firmware versions 4.1 and later
+
 ====================
 Geo-Fencing in Plane
 ====================

@@ -6,6 +6,41 @@ Future Wiki Changes (in Master branch now)
 Will be in future 4.5 release and is currently in master ("latest")
 
 [copywiki destination="plane,copter,rover,blimp"]
+Add RC_Targeting automatic mode change to Mount
+===============================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5718
+
+Add IMU RAW logging option and update Notch Filter Setup Guide
+==============================================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5709
+
+Add CAM/MNT instance parameter
+==============================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5704
+
+Add Camera Options parameter
+============================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5694
+
+Add new Relay Functions
+=======================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5686
+
+Add extAHRS RC switch option
+============================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5677
+
+Add Networking Features
+=======================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5656
+
 Add HERE4 AP_Periph Firmware
 ============================
 
@@ -26,8 +61,8 @@ Add Trimble PX-1 GSOF GPS
 
 See https://github.com/ArduPilot/ardupilot_wiki/pull/5540
 
-Add MicroStrain7 external AHRS
-==============================
+Add MicroStrain7 and InertialLabs external AHRS
+===============================================
 
 See https://github.com/ArduPilot/ardupilot_wiki/pull/5632
 
@@ -202,6 +237,11 @@ Dropped included bootloader on some 1MB flash boards:
 See https://github.com/ArduPilot/ardupilot_wiki/pull/5242
 
 [site wiki="plane"]
+Add AUTOTUNE_OPTIONS
+====================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5713
+
 Add AHRS_OPTIONS
 ================
 
@@ -246,6 +286,16 @@ on :ref:`quadplane-vtol-tuning-process` page:
 
 [/site]
 [site wiki="copter"]
+Add altitude limits to THROW Mode
+=================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5720
+
+Add RTL altitude control improvement
+====================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5691
+
 Add Fast Precision Landing speed option
 =======================================
 
@@ -286,18 +336,23 @@ Add the parameter:
 - :ref:`FOLL_OPTIONS<FOLL_OPTIONS>`: set bit 0 to "1" to enable the :ref:`common-mount-targeting` to follow the target vehicle.
 
 [/site]
-[/site wiki="blimp"]
+[site wiki="blimp"]
 
 Add RTL mode for Blimp
 ======================
 
-see https://github.com/ArduPilot/ardupilot_wiki/pull/5410
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5410
 [/site]
-[/site wiki="rover"]
-
+[site wiki="rover"]
 Add Rover CIRCLE mode AUX switch
 ================================
 
-see https://github.com/ArduPilot/ardupilot_wiki/pull/5600
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5600
 [/site]
+[site wiki="rover,copter"]
 
+Add fast waypoint Dijkstras option
+==================================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/5688
+[/site]

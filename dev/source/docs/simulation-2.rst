@@ -25,7 +25,7 @@ In addition, the ArduPilot firmware simulator element can also be interfaced to 
 
    .. tip::
 
-      We recommend starting with ArduPilot's native :ref:`Software In The Loop (SITL) <sitl-simulator-software-in-the-loop>` because the setup is easiest, it does not require a flight controller, and all vehicle types are supported.
+      For code developers, we recommend starting with ArduPilot's native :ref:`Software In The Loop (SITL) <sitl-simulator-software-in-the-loop>` because the setup is easiest, it does not require a flight controller, and all vehicle types are supported. For non-developers, using Mission Planners integrated simulator does not require setting up a code building environment, for those only wishing to explore simulated behavior of vehicles using existing code.
 
 The most commonly used simulators are:
 
