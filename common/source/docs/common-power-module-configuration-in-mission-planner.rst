@@ -83,7 +83,7 @@ Other Parameters
 ----------------
 
 - :ref:`BATT_OPTIONS<BATT_OPTIONS>` bit 0, if set, will ignore the State Of Charge field in DroneCAN monitors, since some do not populate this field with meaningful data. Also various options for MPPT type monitors are provided. Bit 6 allows the resting voltage to be sent in place of battery voltage, which is sometime more useful.
-- :ref:`BATT_SUM_MASK<BATT_SUM_MASK>` is used if the monitor is type "10" (Sum Of Selected Monitors) to select which monitors' reported voltages will be averaged, and current values will be summed, and reported for this monitor. Selecting this monitor's own instance number has no effect. If no bits are set, it will average all lower numbered instance's reports.
+- :ref:`BATT_SUM_MASK<BATT_SUM_MASK>` is used if the monitor is type "10" (Sum Of Selected Monitors) to select which monitors' reported voltages will be averaged, and current values will be summed, and reported for this monitor. Selecting this monitor's own instance number has no effect. If no bits are set, it will average all higher numbered instance's reports.
 - :ref:`BATT_ARM_VOLT<BATT_ARM_VOLT>` is the minimum voltage reported from this monitor that will allow arming to occur.
 - :ref:`BATT_ARM_MAH<BATT_ARM_MAH>` is the minimum capacity remaining reported from this monitor that will allow arming to occur.
 - :ref:`BATT_CURR_MULT<BATT_CURR_MULT>` allows adjusting the current scale for DroneCAN(UAVCAN) monitors which do not have a CAN parameter exposed for adjustment.
