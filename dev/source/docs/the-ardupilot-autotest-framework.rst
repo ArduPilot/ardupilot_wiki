@@ -138,11 +138,19 @@ AutoTest can run the ArduPilot binary under gdb:
 
 In an X Windowing System environment, an xterm window will contain the GDB terminal; stderr from the ArduPilot binary will also appear in this window.  Where X is not available but `GNU screen <https://www.gnu.org/software/screen/>`__ is, a detached screen will be created with the same content.
 
+You can insert breakpoints on the command-line (use multiple times to insert multiple breakpoints):
+
+::
+
+   ./Tools/autotest/autotest.py --no-clean --gdb --debug -B Copter::update build.Copter test.Copter
+
 You can insert a Python method call into your test to cause the autopilot to enter the attached debugger:
 
 ::
 
    self.send_debug_trap()
+
+This feature works well when combined with the ``--disable-breakpoints`` command-line option as you can enable the breakpoints when the debug trap is sent.
 
 Using with Valgrind
 ...................
