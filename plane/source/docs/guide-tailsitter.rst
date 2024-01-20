@@ -97,7 +97,7 @@ All the copter motor layouts are supported as CopterMotor tailsitters if :ref:`Q
 .. note:: (firmware 4.1 and earlier)it is possible to have a CopterMotor Tailsitter using no fixed wing control surfaces, ie basically a quadcopter with a wing. For that configuration, all Copter motors would be set to be active in fixed wing modes via :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` and :ref:`Q_OPTIONS<Q_OPTIONS>` bitmask would have bit 7 (Force QASSIST) set to have QASSIST active in all modes. With firmware 4.2 and later, for this configuration, use :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` = 2 which forces QASSIT all the time. :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is ignored in that case.
 
 
-In addition, two Copter tailsitter specific configurations are available which provide No Yaw Torque (NYT) control to the copter style motors: :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` = 15 (Plus) and =16 (X).
+In addition, two Copter tailsitter specific configurations are available which provide No Yaw Torque (NYT) control to the copter style motors: :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` = 16 (Plus) and =17 (X).
 
 (looking down on nose from above)
 
