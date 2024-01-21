@@ -84,9 +84,9 @@ Disaster recovery
 
 If things have gone very badly wrong with your git tree the simplest
 thing to do it to remove the modules/ directory completely from your local repo and run these commands
-to reinitialise and update the submodules:
+to delete and reinitialise and update the submodules:
 
 ::
 
-    git submodule init
-    git submodule update --recursive
+    ./waf submodule_force_clean
+    ./waf submodule_sync

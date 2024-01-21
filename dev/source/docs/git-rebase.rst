@@ -47,6 +47,11 @@ the "Git Shell" or "Git Bash" utility that should already be :ref:`installed <gi
 
        git remote add upstream https://github.com/ArduPilot/ardupilot.git
 
+#. Ensure that your git config for ArduPilot does not automatically recurse through submodules
+
+    ::
+        git config submodule.recurse false
+
 #. Fetch changes from the upstream repository (this simply downloads changes into a local cache, it will not overwrite or modify your changes in any way).
    If you are rebasing your branch on your own fork's master branch, replace upstream with origin
 
