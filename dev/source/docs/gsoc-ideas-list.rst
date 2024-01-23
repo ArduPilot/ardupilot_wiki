@@ -1,10 +1,10 @@
 .. _gsoc-ideas-list:
     
 ========================================
-List of Suggested Projects for GSoC 2023
+List of Suggested Projects for GSoC 2024
 ========================================
 
-This is a list of projects suggested by ArduPilot developers for `GSoC 2023 <https://summerofcode.withgoogle.com/>`__. These are only suggestions so if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2023.
+This is a list of projects suggested by ArduPilot developers for `GSoC 2024 <https://summerofcode.withgoogle.com/>`__. These are only suggestions so if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2024.
 
 - Rover AutoTune
 - Camera and Gimbal enhancements
@@ -16,7 +16,7 @@ See lower down on this page for more details for some of the projects listed abo
 Timeline
 ========
 
-The timeline for `GSoC 2023 is here <https://developers.google.com/open-source/gsoc/timeline>`__
+The timeline for `GSoC 2024 is here <https://developers.google.com/open-source/gsoc/timeline>`__
 
 How to improve your chances of being accepted
 =============================================
@@ -111,6 +111,16 @@ A previous GSoC made good progress on this project (see `Dds prototype PR <https
 
 Projects Completed in past years
 --------------------------------
+In 2023, students completed the following projects:
+
+- `Improvements for ROS2 Support for Ardupilot <https://discuss.ardupilot.org/t/gsoc-23-wrapping-up-improvements-to-the-native-dds-support-in-ardupilot/105643>`__
+
+- `Camera and Gimbal enhancements <https://discuss.ardupilot.org/t/gsoc-2023-wrapping-up-camera-and-gimbal-enhancements/105600>`__
+
+- `GPS-Denied Autonomous Exploration with ROS 2 <https://discuss.ardupilot.org/t/gsoc-2023-gps-denied-autonomous-exploration-with-ros-2/101121>`__
+
+- `MultiCopter Swarm Avoidance <https://discuss.ardupilot.org/t/gsoc-2023-multicopter-swarm-avoidance/102108>`__
+
 
 In 2022, students worked on these projects:
 
