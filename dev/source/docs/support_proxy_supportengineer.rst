@@ -76,6 +76,14 @@ Using MAVProxy as a Support Engineer
 An example shell script for connecting as a support engineer using
 MAVProxy is `available here <https://github.com/ArduPilot/UDPProxy/blob/main/mav_support.sh>`__.
 
+DroneCAN GUI Tool
+------------------------------------
+
+Enter "mavcan:udpout:support.ardupilot.org:" followed by your support engineer port number for the CAN interface and add your signing key.
+
+.. image:: ../images/Support_DroneCAN_GUI.png
+    :target: ../_images/Support_DroneCAN_GUI.png
+
 Source Code
 -----------
 
