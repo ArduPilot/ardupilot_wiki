@@ -7,6 +7,31 @@ cd $HOME/build_wiki || exit 1
 
 START=$(date +%s)
 
+############################
+# grab a lock file. Not atomic, but close :)
+# tries to cope with NFS
+lock_file() {
+        lck="$1"
+        pid=`cat "$lck" 2> /dev/null`
+
+        if test -f "$lck" && kill -0 $pid 2> /dev/null; then
+	    LOCKAGE=$(($(date +%s) - $(stat -c '%Y' "build.lck")))
+	    test $LOCKAGE -gt 30000 && {
+                echo "old lock file $lck is valid for $pid with age $LOCKAGE seconds"
+	    }
+            return 1
+        fi
+        /bin/rm -f "$lck"
+        echo "$$" > "$lck"
+        return 0
+}
+
+
+lock_file build.lck || {
+    echo "$(date +%s) already locked" >>build.lck.log
+    exit 1
+}
+
 test -n "$FORCEBUILD" || {
     (cd ardupilot_wiki && git fetch > /dev/null 2>&1)
     (cd sphinx_rtd_theme && git fetch > /dev/null 2>&1)
@@ -56,32 +81,6 @@ test -n "$FORCEBUILD" || {
 
     [ $changed = 1 ] || exit 0
 }
-
-############################
-# grab a lock file. Not atomic, but close :)
-# tries to cope with NFS
-lock_file() {
-        lck="$1"
-        pid=`cat "$lck" 2> /dev/null`
-
-        if test -f "$lck" && kill -0 $pid 2> /dev/null; then
-	    LOCKAGE=$(($(date +%s) - $(stat -c '%Y' "build.lck")))
-	    test $LOCKAGE -gt 30000 && {
-                echo "old lock file $lck is valid for $pid with age $LOCKAGE seconds"
-	    }
-            return 1
-        fi
-        /bin/rm -f "$lck"
-        echo "$$" > "$lck"
-        return 0
-}
-
-
-lock_file build.lck || {
-    echo "already locked"
-    exit 1
-}
-
 
 (
 date
