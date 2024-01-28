@@ -12,7 +12,7 @@ for more information.
 
 Circle mode is deliberately a very conservative mode, and doesn't rely
 on GPS positioning as it is used when GPS fails. It will do a large
-circle, The bank angle is set to the ``LIM_ROLL_CD`` divided by 3, to
+circle, The bank angle is set to the ``ROLL_LIMIT_DEG`` divided by 3, to
 try to ensure the plane remains stable even without GPS velocity data
 for accelerometer correction. That is why the circle radius is so large.
 

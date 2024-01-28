@@ -149,7 +149,7 @@ To set OSD5 parameter1 to TRIM_THROTTLE, type :code:`osd param-show 5 1 TRIM_THR
 
 To set OSD6 parameter2 to FLTMODE1 using respective mnemonics, type :code:`osd param-set 6 2 FLTMODE1 FLIGHT_MODE`
 
-To set OSD5 parameter2 to LIM_ROLL_CD, limiting range from 2000 - 6000 with increments of 100, type :code:`osd param-set 5 2 LIM_ROLL_CD 2000 6000 100`
+To set OSD5 parameter2 to ROLL_LIMIT_DEG, limiting range from 20 - 60 with increments of 1 degree, type :code:`osd param-set 5 2 ROLL_LIMIT_DEG 20 60 10
 
 To show what OSD6 parameter2 is set to, type :code:`osd param-show 6 2`
 

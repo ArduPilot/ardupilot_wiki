@@ -57,7 +57,7 @@ carefully at the key nav parameters you have:
 -  WP_RADIUS: 8
 -  NAVL1_PERIOD: 18
 -  NAVL1_DAMPING: 0.8
--  LIM_ROLL_CD: 6000
+-  ROLL_LIMIT_DEG: 60
 
 The one that is furthest off for this sort of track is WP_RADIUS. You
 are flying at about 18 m/s on average, and your uBlox GPS will have a
@@ -66,7 +66,7 @@ means you are not turning until you are past the waypoint. If that is
 what you want then that's fine, but if you want the plane to turn neatly
 onto the next track then you'll need to turn earlier.
 
-Your LIM_ROLL_CD of 60 degrees at 18 m/s corresponds to a turn radius
+Your ROLL_LIMIT_DEG of 60 degrees at 18 m/s corresponds to a turn radius
 of 19.1 m. The plane also takes a second or two to change attitude. (The
 X8 is not a fast response plane! It's more like flying a manta ray). If
 we add 1 second of flight time for the attitude change plus the GPS lag
@@ -79,7 +79,7 @@ I also think you could lower NAVL1_PERIOD a bit more. I don't see any
 weaving there, just xtrack changes, so I'd try 15 and see if it weaves.
 You may even find 13 works well. You'll need to experiment as the right
 value is very airframe dependent (and even depends on the type of servo
-you have!). You may also like to increase LIM_ROLL_CD to 6500 for a
+you have!). You may also like to increase ROLL_LIMIT_DEG to 65 for a
 bit faster turns.
 
 Finally let's look at your altitude handling:
@@ -124,7 +124,7 @@ The RC limits you had set were:
 -  RC1_MIN         1012
 -  RC2_MAX         1927
 -  RC2_MIN         986
--  LIM_ROLL_CD  6000
+-  ROLL_LIMIT_DEG  60
 
 We can also see from this graph that you had a bit of transmitter trim.
 The part of the graph where the nav_roll is zero shows your RC input

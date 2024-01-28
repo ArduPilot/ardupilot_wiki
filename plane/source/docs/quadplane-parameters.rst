@@ -101,7 +101,7 @@ In addition, the behavior of QuadPlane can be modified by the setting of the :re
 -  bit 11(+2048), if set, will delay VTOL motor spin up until 2 seconds after arming.
 -  bit 12(+4096), if set, disable speed based Qassist when using synthetic airspeed
 -  bit 13(+8192), if set, will disable Ground Effect Compensation of baro due to ground effect pressures
--  bit 14(+16384), if set, ignore forward flight angle limits in Qmodes, otherwise LIM_PITCH_CD and LIM_ROLL_CD can constrain Q_ANG_MAX in VTOL modes.
+-  bit 14(+16384), if set, ignore forward flight angle limits in Qmodes, otherwise LIM_PITCH_CD and ROLL_LIMIT_DEG can constrain Q_ANG_MAX in VTOL modes.
 -  bit 15(+32768), if set, will allow pilot to control descent during VTOL AUTO-LAND phases, similar to throttle stick action during QHOVER or QLOITER. However, this will not become active until the throttle stick is raised above 70% during the descent at least once.
 -  bit 16(+65536), if set, will disable the fixed wing approach in QRTL mode and VTOL_LANDING mission items, see Hybrid RTL modes section of :ref:`quadplane-flying` for details of this hybrid landing approach.
 -  bit 17(+131072), if set, will enable pilot horizontal re-positioning during VTOL auto LAND phases, momentarily pausing the descent while doing so.

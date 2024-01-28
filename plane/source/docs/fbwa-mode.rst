@@ -8,9 +8,9 @@ This is the most popular mode for assisted flying in Plane, and is the
 best mode for inexperienced flyers. In this mode Plane will hold the
 roll and pitch specified by the control sticks. So if you hold the
 aileron stick hard right then the plane will hold its pitch level and
-will bank right by the angle specified in the ``LIM_ROLL_CD`` option (in
-centidegrees). It is not possible to roll the plane past the roll limit
-specified in ``LIM_ROLL_CD``, and it is not possible to pitch the plane
+will bank right by the angle specified in the ``ROLL_LIMIT_DEG`` parameter (in
+degrees). It is not possible to roll the plane past the roll limit
+specified in ``ROLL_LIMIT_DEG``, and it is not possible to pitch the plane
 beyond the ``LIM_PITCH_MAX``/``LIM_PITCH_MIN``\ settings.
 
 Note that holding level pitch does not mean the plane will hold

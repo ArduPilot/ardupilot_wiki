@@ -280,7 +280,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Check Q_ANGLE_MAX                                       Set above 80 degrees                                Reduce :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` below 80; 30 degrees is typical
     In landing sequence                                     Trying to arm while still in landing sequence       Reset mission;change to mission item not in a landing sequence
     Invalid THR_FS_VALUE for reversed throttle input        THR_FS_VALUE pwm is not ABOVE the max throttle      Set :ref:`THR_FS_VALUE<THR_FS_VALUE>` above throttle maximum pwm
-    LIM_ROLL_CD too small x                                 Parameter set under 3 degrees                       Increase, 45 deg recommended minimum for adequate control
+    ROLL_LIMIT_DEG too small x                              Parameter set under 3 degrees                       Increase, 45 deg recommended minimum for adequate control
     LIM_PITCH_MAX too small x                               Parameter set under 3 degrees                       Increase, 45 deg recommended minimum for adequate control
     LIM_PITCH_MIN too large x                               Parameter set over 3 degrees                        Increase, 45 deg recommended minimum for adequate control
     Mode not armable                                        Cannot arm from this mode                           Change Mode
