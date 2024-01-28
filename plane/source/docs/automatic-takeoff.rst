@@ -27,7 +27,7 @@ for a wide range of aircraft.
 During takeoff the wings will be held level to within
 :ref:`LEVEL_ROLL_LIMIT <LEVEL_ROLL_LIMIT>`
 degrees until 5 meters of altitude is reached, gradually allowing more roll until
-the normal :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` limit is allowed once 15 meters of altitude is
+the normal :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` limit is allowed once 15 meters of altitude is
 reached. This prevents a sharp roll from causing the wings to hit the
 runway for ground takeoffs.
 

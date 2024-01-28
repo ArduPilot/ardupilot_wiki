@@ -178,7 +178,7 @@ The parameter :ref:`SOAR_THML_BANK<SOAR_THML_BANK>` sets the bank angle when the
 
 If the aircraft is not achieving this average bank angle when thermalling, you should check - 
 
- - that the limiting bank angle :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` is set a bit larger than SOAR_THML_BANK (note the units are different) to give some room for manoeuvring;
+ - that the limiting bank angle :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` is set a bit larger than SOAR_THML_BANK (note the units are different) to give some room for manoeuvring;
 
  - that the navigation parameter NAVL1_PERIOD is no larger than the time needed for a complete turn at the specified bank angle.
 

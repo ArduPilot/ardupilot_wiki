@@ -12,7 +12,7 @@ roll to the :ref:`Stall Prevention <stall-prevention>` roll limits.
 
 More specifically:
 
--  If the roll is less the :ref:`LIM_ROLL_CD <LIM_ROLL_CD>`
+-  If the roll is less the :ref:`ROLL_LIMIT_DEG <ROLL_LIMIT_DEG>`
    parameter than the pilot has manual roll control. If the plane tries
    to roll past that limit then the roll will be held at that limit. The
    plane will not automatically roll back to level flight, but it will
