@@ -4,7 +4,7 @@
 QLAND Mode
 ==========
 
-QLAND Mode attempts to bring the QuadPlane straight down at the position the vehicle is located when the mode is entered, descending to :ref:`Q_LAND_FINAL_ALT <Q_LAND_FINAL_ALT>` at :ref:`Q_WP_SPEED_DN <Q_WP_SPEED_DN>` until it reaches :ref:`Q_LAND_FINAL_ALT <Q_LAND_FINAL_ALT>`, at which point it continues to descend at :ref:`Q_LAND_SPEED <Q_LAND_SPEED>` until landing.
+QLAND Mode attempts to bring the QuadPlane straight down at the position the vehicle is located when the mode is entered, descending to :ref:`Q_LAND_FINAL_ALT <Q_LAND_FINAL_ALT>` at :ref:`Q_WP_SPEED_DN <Q_WP_SPEED_DN>` until it reaches :ref:`Q_LAND_FINAL_ALT <Q_LAND_FINAL_ALT>`, at which point it continues to descend at :ref:`Q_LAND_FINAL_SPD <Q_LAND_FINAL_SPD>` until landing.
 
 
 .. note::

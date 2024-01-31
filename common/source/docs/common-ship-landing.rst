@@ -143,7 +143,7 @@ Landing Procedure
 =================
 When you are ready to land you can switch the vehicle to RTL mode. When in RTL mode the aircraft will fly towards the landing location (you can see this location before you land from the HOME icon on the GCS, which moves with the beacon).
 
-The aircraft will initially approach the “hold-off” position. The altitude of the holdoff position is set by the :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>` parameter (in centimeters above the landing location). A good value of this is around 9000, which is 90 meters above the landing location.
+The aircraft will initially approach the “hold-off” position. The altitude of the holdoff position is set by the :ref:`RTL_ALTITUDE<RTL_ALTITUDE>` parameter (in centimeters above the landing location). A good value of this is around 9000, which is 90 meters above the landing location.
 
 The description below will assume that ``SHIP_LAND_ANGLE`` = 0 which means landing happens from behind the beacon. The approach and landing is rotated by the value of this parameter in degrees.
 With ``SHIP_LAND_ANGLE`` = 0, the hold-off position will be behind and above the beacon. The distance depends on the beacon speed, wind speed and the :ref:`Q_TRANS_DECEL<Q_TRANS_DECEL>` parameter (which controls the deceleration of the aircraft).
@@ -152,7 +152,7 @@ Once the aircraft arrives at the hold-off position it will circle until the thro
 
 Throttle stick controls are:
 
--  Throttle at 40% or above means to hold at the hold-off position (at :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>` height above beacon in centimeters)
+-  Throttle at 40% or above means to hold at the hold-off position (at :ref:`RTL_ALTITUDE<RTL_ALTITUDE>` height above beacon in centimeters)
 -  Throttle below 40% and above 10% means to descend while loitering to the approach altitude. The approach altitude is giving by :ref:`Q_RTL_ALT<Q_RTL_ALT>` in meters above the beacon. A good value for testing may be 40 meters.
 -  Throttle below 10% means to start landing approach once the aircraft is at the :ref:`Q_RTL_ALT<Q_RTL_ALT>` and lined up with the ``SHIP_LAND_ANGLE`` to move toward the vehicle.
 

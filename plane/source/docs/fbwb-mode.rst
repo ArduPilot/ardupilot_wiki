@@ -34,9 +34,9 @@ This can be disconcerting for people used to flying in FBWA mode, where
 you have much more direct control over pitch.
 
 If you have an airspeed sensor then the throttle will control the target
-airspeed in the range :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` to :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>`. If
-throttle is minimum then the plane will try to fly at :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>`.
-If it is maximum it will try to fly at :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>`.
+airspeed in the range :ref:`AIRSPEED_MIN<AIRSPEED_MIN>` to :ref:`AIRSPEED_MAX<AIRSPEED_MAX>`. If
+throttle is minimum then the plane will try to fly at :ref:`AIRSPEED_MIN<AIRSPEED_MIN>`.
+If it is maximum it will try to fly at :ref:`AIRSPEED_MAX<AIRSPEED_MAX>`.
 
 If you don't have an airspeed sensor then the throttle input will set the
 target throttle of the plane, which is :ref:`TRIM_THROTTLE<TRIM_THROTTLE>`, at throttle midstick and lower positions, and Plane will adjust the throttle around

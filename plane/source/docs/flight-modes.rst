@@ -60,7 +60,7 @@ of functionality available.
    <tr><td>SPD</td><td>Controls speed</td></tr>
    </table>
 
-.. note:: Automatic throttle controlled modes can optionally have pilot-based speed adjustments using the throttle stick via the :ref:`THROTTLE_NUDGE<THROTTLE_NUDGE>` parameter. Otherwise, the autopilot will attempt to maintain :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` airspeed if an airspeed sensor is being used, or :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` as a target throttle, as in FBWA and CRUISE modes.
+.. note:: Automatic throttle controlled modes can optionally have pilot-based speed adjustments using the throttle stick via the :ref:`THROTTLE_NUDGE<THROTTLE_NUDGE>` parameter. Otherwise, the autopilot will attempt to maintain :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` airspeed if an airspeed sensor is being used, or :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` as a target throttle, as in FBWA and CRUISE modes.
 
 .. note:: Most altitude controlled modes can optionally maintain altitude with respect to Terrain instead of relative to HOME. See :ref:`common-terrain-following` for more information.
 

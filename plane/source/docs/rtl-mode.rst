@@ -10,13 +10,13 @@ alternate instructions (or it runs out of fuel!). As with :ref:`AUTO <auto-mode>
 you can also "nudge" the aircraft manually in this mode using stick
 mixing (assuming the RTL was not a result of RC failsafe).
 
-The target altitude for RTL mode is set using the :ref:`ALT_HOLD_RTL <ALT_HOLD_RTL>` parameter in centimeters. When initiated below :ref:`ALT_HOLD_RTL <ALT_HOLD_RTL>`, Plane will immediately climb at maximum allowable rate to reach that altitude, if above, it will descend in a linear manner versus distance to home, reaching that altitude at the home loiter point.
+The target altitude for RTL mode is set using the :ref:`RTL_ALTITUDE <RTL_ALTITUDE>` parameter in centimeters. When initiated below :ref:`RTL_ALTITUDE <RTL_ALTITUDE>`, Plane will immediately climb at maximum allowable rate to reach that altitude, if above, it will descend in a linear manner versus distance to home, reaching that altitude at the home loiter point.
 
 The loiter radius at home is determined by :ref:`RTL_RADIUS<RTL_RADIUS>`, if it's non-zero, otherwise :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` is used. Clock-wise or Counter-Clock-wise circling can be set by positive or negative values for the radius.
 
 Additionally, in firmware versions 4.0.6 and later, by setting :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>` to a non-zero value, the plane will climb that many meters, limited in bank angle by :ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>` degrees until the additional altitude is reached, then begin the above return to home action from that altitude.
 
-To prevent the vehicle from turning until the return atlitude is reached, if below that value(:ref:`ALT_HOLD_RTL <ALT_HOLD_RTL>` + :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>`), set bit 4 of the :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bitmask.
+To prevent the vehicle from turning until the return atlitude is reached, if below that value(:ref:`RTL_ALTITUDE <RTL_ALTITUDE>` + :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>`), set bit 4 of the :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bitmask.
 
 Alternatively, you may :ref:`configure the plane to return to a Rally Point <common-rally-points>`, rather than the home location.
 

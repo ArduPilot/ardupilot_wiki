@@ -62,7 +62,7 @@ However, there is a better way for non-tailsitter QuadPlanes. If mechanically po
 
 .. note:: Those fabricating their mounts via a 3D printer, this is very easy to do, as well as tilt for yaw enhancement discussed above.
 
-.. note:: Fixed wing pitch "level" trim is set by the AHRS "level" done during accelerometer calibration, which adjusts the :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` values, PLUS any :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` (in centidegrees). See :ref:`common-accelerometer-calibration` and :ref:`tuning-cruise` for more details.
+.. note:: Fixed wing pitch "level" trim is set by the AHRS "level" done during accelerometer calibration, which adjusts the :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` values, PLUS any :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` (in centidegrees). See :ref:`common-accelerometer-calibration` and :ref:`tuning-cruise` for more details.
 
 Trimming VTOL "Level" thru Accelerometer LeveL only Calibration
 ---------------------------------------------------------------

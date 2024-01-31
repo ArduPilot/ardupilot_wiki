@@ -56,7 +56,7 @@ The key parameters that control automatic landing are:
 
 -  :ref:`LAND_FLARE_ALT <LAND_FLARE_ALT>`
 -  :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>`
--  :ref:`LAND_PITCH_CD <LAND_PITCH_CD>`
+-  :ref:`LAND_PITCH_DEG <LAND_PITCH_DEG>`
 -  :ref:`TECS_LAND_SINK <TECS_LAND_SINK>`
 -  :ref:`TECS_SINK_MAX<TECS_SINK_MAX>`
 -  :ref:`TECS_SINK_MIN<TECS_SINK_MIN>`
@@ -126,7 +126,7 @@ touchdown vertical speed for most models. To achieve that speed the TECS control
 
 The primary parameters which affect the ability of the aircraft to
 achieve the desired descent rate are
-:ref:`LAND_PITCH_CD <LAND_PITCH_CD>`, 
+:ref:`LAND_PITCH_DEG <LAND_PITCH_DEG>`, 
 :ref:`TECS_LAND_DAMP <TECS_LAND_DAMP>`
 and the main pitch tuning parameters.
 
@@ -136,7 +136,7 @@ The landing controller sets a point before the touchdown as the expected flare s
 
 The transition from the glide-slope sink rate to the flare sink rate is controlled by the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` parameter and should normally be set below :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>`. The start of the flare will occur at :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` and the sink rate will be gradually adjusted to :ref:`TECS_LAND_SINK<TECS_LAND_SINK>` at the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` to avoid a rapid pitch change at the beginning of the flare, which would tend to create a "ballooning" effect at the start of the flare. See note at the end of this section for a possible exception to having :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` set lower than :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>`.
 
-The :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` parameter sets the minimum pitch target at the very end of the
+The :ref:`LAND_PITCH_DEG <LAND_PITCH_DEG>` parameter sets the minimum pitch target at the very end of the
 flare (in centi-degrees). This parameter is very airframe specific and
 is designed to prevent the nose of the aircraft being too far down on
 touchdown causing issues with damaging the landing gear or breaking a
@@ -146,10 +146,10 @@ small negative number can be good, to allow the nose to be kept down a
 small amount to reduce the chance of stall if the flare happens too far
 off the ground.
 
-Note that the actual pitch of the aircraft can be quite a bit above :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` as the TECS controller tries to control the descent rate. The maximum pitch is controlled by the :ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>`
-parameter if it is non-zero, otherwise by the :ref:`LIM_PITCH_MAX <LIM_PITCH_MAX>` parameter.
+Note that the actual pitch of the aircraft can be quite a bit above :ref:`LAND_PITCH_DEG <LAND_PITCH_DEG>` as the TECS controller tries to control the descent rate. The maximum pitch is controlled by the :ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>`
+parameter if it is non-zero, otherwise by the :ref:`PTCH_LIM_MAX_DEG <PTCH_LIM_MAX_DEG>` parameter.
 
-However, if the vehicle cannot maintain the demanded pitch attitude in the later stages of the flare due to CG, tuning, etc. :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` may never be reached resulting in nose/nose wheel first touchdowns. In that case, set the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` ABOVE the :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` parameter, effectively allowing the :ref:`LAND_PITCH_CD <LAND_PITCH_CD>` limit to take effect immediately, increasing the rate at which its demanded (i.e. at the beginning of the flare as opposed to the end)
+However, if the vehicle cannot maintain the demanded pitch attitude in the later stages of the flare due to CG, tuning, etc. :ref:`LAND_PITCH_DEG <LAND_PITCH_DEG>` may never be reached resulting in nose/nose wheel first touchdowns. In that case, set the :ref:`TECS_FLARE_HGT<TECS_FLARE_HGT>` ABOVE the :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` parameter, effectively allowing the :ref:`LAND_PITCH_DEG <LAND_PITCH_DEG>` limit to take effect immediately, increasing the rate at which its demanded (i.e. at the beginning of the flare as opposed to the end)
 
 The :ref:`TECS_LAND_DAMP<TECS_LAND_DAMP>` parameter is a damping constant for the pitch
 control during flare. A larger number will cause the pitch demand to change
@@ -233,7 +233,7 @@ If a Lidar isn't fitted then there are a few things you can do to minimize barom
 Alternatively, you can use a high precision GPS as the altitude source instead of the barometer. See
 
 With planes that belly land it can also work well to setup the landing
-with a shallow pitch (in :ref:`LAND_PITCH_CD<LAND_PITCH_CD>`) and set a slightly higher
+with a shallow pitch (in :ref:`LAND_PITCH_DEG<LAND_PITCH_DEG>`) and set a slightly higher
 altitude to flare at. That will only work if your stall speed is low
 enough that gliding for a while will work reliably.
 

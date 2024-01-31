@@ -123,7 +123,7 @@ about airspeed squared over ~10 (for 45 degrees) or ~6 (for 30 degrees), from th
 
 The tangent is for the desired bank angle. The resulting radius will be in meters. Use g  = 9.81 m/s/s, and velocity (v) is in m/s. For example, if the airspeed in loiter is 20m/s, then the :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` should be 40m for a 45 degree bank.
 
-You should make sure that the limiting bank angle :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` is set a bit larger than the desired bank angle to give some room for manoeuvring.
+You should make sure that the limiting bank angle :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` is set a bit larger than the desired bank angle to give some room for manoeuvring.
 
 
 Set limits

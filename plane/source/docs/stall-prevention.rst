@@ -49,7 +49,7 @@ There are two key parameters that control stall prevention:
    parameter. If this is set to zero then no stall prevention is done.
    This may be useful if you have no airspeed sensor and the synthetic
    airspeed estimate is not good enough
--  The :ref:`ARSPD_FBW_MIN <ARSPD_FBW_MIN>`
+-  The :ref:`AIRSPEED_MIN <AIRSPEED_MIN>`
    parameter, which is the configured minimum airspeed for level flight.
    It is this value that is scaled with the bank angle to calculate the
    safe airspeed for any demanded bank angle

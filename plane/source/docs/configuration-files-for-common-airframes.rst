@@ -342,8 +342,8 @@ It flies well with the following parameters:
 -  ``RLL2SRV_P`` : 1.5
 -  ``PTCH2SRV_P`` : 1.5
 -  :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: 17
--  :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>`: 9
--  :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>`: 20
--  :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`: 1200
+-  :ref:`AIRSPEED_MIN<AIRSPEED_MIN>`: 9
+-  :ref:`AIRSPEED_MAX<AIRSPEED_MAX>`: 20
+-  :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>`: 1200
 
 For a more complete guide `see this review <https://diydrones.com/profiles/blogs/tuning-the-techpod>`__.

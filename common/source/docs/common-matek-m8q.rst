@@ -49,7 +49,7 @@ DroneCAN
 - :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>`   = 1
 - :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>`       = 1
 - :ref:`GPS_TYPE<GPS_TYPE>`                 = 9 (DroneCAN)
-- :ref:`COMPASS_TYPEMASK<COMPASS_TYPEMASK>` = 0 (or make sure DroneCAN bit is not checked)
+- :ref:`COMPASS_DISBLMSK<COMPASS_DISBLMSK>` = 0 (or make sure DroneCAN bit is not checked)
 
 if Airspeed sensor is connected to I2C port,
 
@@ -73,7 +73,7 @@ MSP
 - :ref:`GPS_TYPE<GPS_TYPE>`                 = 19 (MSP)
 - :ref:`BARO_PROBE_EXT<BARO_PROBE_EXT>`     = 4096  (MSP Baro)
 - :ref:`BARO_PRIMARY<BARO_PRIMARY>`         = 1  (If you want to use MSP baro as primary baro, otherwise leave as default)
-- :ref:`COMPASS_TYPEMASK<COMPASS_TYPEMASK>` = 0 (or make sure MSP bit is not checked)
+- :ref:`COMPASS_DISBLMSK<COMPASS_DISBLMSK>` = 0 (or make sure MSP bit is not checked)
 
 MSP Firmware Update
 ===================

@@ -16,7 +16,7 @@ the autopilot control. Whether this is enabled is determined by the
 :ref:`STICK_MIXING <STICK_MIXING>`
 option. By default stick mixing behaves the same as :ref:`FLY BY WIRE_A (FBWA) <fbwa-mode>` mode.
 
-The speed during the mission is nominally at :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` when using an airspeed sensor, or at whatever speed results from :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` without an airspeed sensor. Setting :ref:`THROTTLE_NUDGE<THROTTLE_NUDGE>` = 1 allows the speed to be increased if the throttle stick is above mid-stick up to :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` or :ref:`THR_MAX<THR_MAX>`, when using or not using an airspeed sensor, respectively.
+The speed during the mission is nominally at :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` when using an airspeed sensor, or at whatever speed results from :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` without an airspeed sensor. Setting :ref:`THROTTLE_NUDGE<THROTTLE_NUDGE>` = 1 allows the speed to be increased if the throttle stick is above mid-stick up to :ref:`AIRSPEED_MAX<AIRSPEED_MAX>` or :ref:`THR_MAX<THR_MAX>`, when using or not using an airspeed sensor, respectively.
 
 .. warning::
 

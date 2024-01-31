@@ -135,7 +135,7 @@ perform the full calibration. For the level position carefully level the wings l
 set a few degrees (~ 3 deg) nose up, since this is the normal cruise attitude for level flight for most planes.
 This can be reset using the LEVEL only calibration button at any time.
 
-.. note:: this can only change the difference between the autopilot's plane and "level" by 10 degrees maximum. If more is needed (in the case that the autopilot is mounted slightly downward, for example), then you can use :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` to alter the AOA manually. See :ref:`common-accelerometer-calibration` and :ref:`tuning-cruise` for more details.
+.. note:: this can only change the difference between the autopilot's plane and "level" by 10 degrees maximum. If more is needed (in the case that the autopilot is mounted slightly downward, for example), then you can use :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` to alter the AOA manually. See :ref:`common-accelerometer-calibration` and :ref:`tuning-cruise` for more details.
 
 Also check that the orientation of the autopilot is correct. Moving the plane should be correctly reflected in the HUD display of MP. 
 Otherwise, you will need to manually change the :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` parameter appropriately and re-calibrate. A reboot is required after changing this parameter.
@@ -239,7 +239,7 @@ good basic performance. In order to display this in the OSD, you will need to se
 5. ARMING: Leave all arming parameters at default. There is no reason to disable these safety checks. You should be able to get a GPS lock even indoors with modern GPS units. Inability to arm due to one of these checks failing means something has to be corrected. This adds noticeable safety by keeping you from accidentally starting your flight without your autopilot being in a fully functional state.
 
 All other parameters can be left to default. However, after you get some flights, you might want to play with:
-:ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>`, :ref:`LIM_ROLL_CD<LIM_ROLL_CD>`, and :ref:`FBWB_CLIMB_RATE<FBWB_CLIMB_RATE>`. These are pretty docile at default values.
+:ref:`PTCH_LIM_MAX_DEG<PTCH_LIM_MAX_DEG>`, :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>`, and :ref:`FBWB_CLIMB_RATE<FBWB_CLIMB_RATE>`. These are pretty docile at default values.
 
 -  ESC Calibration
 
