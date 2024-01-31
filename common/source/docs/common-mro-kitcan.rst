@@ -81,7 +81,7 @@ Verify the following parameters are set on your autopilot via your ground statio
 - :ref:`GPS_TYPE2<GPS_TYPE2>` = 9 (DroneCAN)
 - Reboot
 
-Make sure the DroneCAN compass driver is not disabled. (:ref:`COMPASS_TYPEMASK<COMPASS_TYPEMASK>` bit 9 should not be set). 
+Make sure the DroneCAN compass driver is not disabled. (:ref:`COMPASS_DISBLMSK<COMPASS_DISBLMSK>` bit 9 should not be set). 
 
 If your controller has multiple compasses attached already, you may want to set the attached compass as a higher priority than others, if it has better precision or performance.
 

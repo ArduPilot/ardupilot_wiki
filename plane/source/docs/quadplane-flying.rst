@@ -66,8 +66,8 @@ a right roll at low speed will cause the aircraft to move to the right.
 It will also cause the aircraft to yaw to the right (as the QuadPlane
 code interprets right aileron in fixed wing mode as a commanded turn).
 
-Once the aircraft reaches an airspeed of :ref:`ARSPD_FBW_MIN <ARSPD_FBW_MIN>`
-(or :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` if that is set and is greater than :ref:`ARSPD_FBW_MIN <ARSPD_FBW_MIN>`)
+Once the aircraft reaches an airspeed of :ref:`AIRSPEED_MIN <AIRSPEED_MIN>`
+(or :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` if that is set and is greater than :ref:`AIRSPEED_MIN <AIRSPEED_MIN>`)
 the amount of assistance the quad motors provide will decrease over 5
 seconds. After that time the aircraft will be flying purely as a fixed wing.
 
@@ -102,7 +102,7 @@ setup then the aircraft will follow the mission configuration.
 I switch into QRTL close to HOME
 --------------------------------
 
-If closer than 1.5X the larger of either :ref:`RTL_RADIUS<RTL_RADIUS>` or :ref:`WP_LOITER_RAD<RTL_RADIUS>`, then the vehicle will proceed toward home in VTOL mode and land. If greater, it will transition to fixed wing, climbing toward :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>` and executing a normal QRTL. Depending on how far from home, the vehicle may only briefly climb and then switch back to approach or airbrake phases. The further away, the higher the climb as it flies back toward home. If the approach behavior has ben disabled with :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16, then it will just switch to VTOL (if not already in that mode, navigate to home and land).
+If closer than 1.5X the larger of either :ref:`RTL_RADIUS<RTL_RADIUS>` or :ref:`WP_LOITER_RAD<RTL_RADIUS>`, then the vehicle will proceed toward home in VTOL mode and land. If greater, it will transition to fixed wing, climbing toward :ref:`RTL_ALTITUDE<RTL_ALTITUDE>` and executing a normal QRTL. Depending on how far from home, the vehicle may only briefly climb and then switch back to approach or airbrake phases. The further away, the higher the climb as it flies back toward home. If the approach behavior has ben disabled with :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16, then it will just switch to VTOL (if not already in that mode, navigate to home and land).
 
 I have an EKF Failsafe
 ----------------------

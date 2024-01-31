@@ -21,7 +21,7 @@ ARSPD_USE
 
 :ref:`ARSPD_USE<ARSPD_USE>` enables airspeed use for automatic throttle modes instead of :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` as the target throttle setting (altered by :ref:`tecs-total-energy-control-system-for-speed-height-tuning-guide` as needed during altitude control) . The autopilot continues to display and log airspeed if set to 0, but only airspeed sensor readings are used for control if set to 1. It will only use airspeed sensor readings for control when throttle is idle, if set to 2 (useful for gliders with airspeed sensors behind propellers).
 
-If an airspeed sensor is used, the throttle stick will set the target airspeed in CRUISE and FBWB, while maintaining altitude target. In AUTO and GUIDED, it will use the :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` value unless :ref:`THROTTLE_NUDGE<THROTTLE_NUDGE>` is enabled and throttle stick is used to alter it, or a MAVLink command to change speed is sent to the vehicle.
+If an airspeed sensor is used, the throttle stick will set the target airspeed in CRUISE and FBWB, while maintaining altitude target. In AUTO and GUIDED, it will use the :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` value unless :ref:`THROTTLE_NUDGE<THROTTLE_NUDGE>` is enabled and throttle stick is used to alter it, or a MAVLink command to change speed is sent to the vehicle.
 
 Airspeed Sensor Type
 ====================

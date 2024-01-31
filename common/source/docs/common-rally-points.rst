@@ -7,9 +7,9 @@ Rally Points
 Overview
 ========
 
-Ordinarily when a plane or copter enters :ref:`Return to Launch (RTL) <plane:rtl-mode>` mode (typically
+Ordinarily when a plane or copter enters :ref:`Return to Launch (RTL) <rtl-mode>` mode (typically
 triggered by an
-autopilot \ :ref:`failsafe <plane:apms-failsafe-function>`),
+autopilot \ :ref:`failsafe <apms-failsafe-function>`),
 the default behaviour is to return to the \ :ref:`Home point <common-planning-a-mission-with-waypoints-and-events_setting_the_home_position>`,
 but there are often cases when that can be undesirable. For example it
 may be an area full of people or property and a system running in RTL
@@ -59,7 +59,7 @@ The following steps are for specifying Rally Points in Mission Planner:
 
 The following should be considered when using Rally Points:
 
-#. If using a :ref:`geofence <plane:geofencing>`:
+#. If using a :ref:`geofence <geofencing>`:
    its HIGHLY recommended the Rally Points you intend to use at your event
    are inside the geofence.
 #. Make sure Rally Point altitudes are high enough to clear terrain and
@@ -68,24 +68,24 @@ The following should be considered when using Rally Points:
    number of Rally Points is restricted to 10 on Plane and 6 on Copter
    -- this limit may be expanded on other platforms such as Pixhawk in the future.
 #. On Plane, loiter radius for a Rally Point is the same as all other
-   loiter points; determined by the :ref:`WP_LOITER_RAD <plane:WP_LOITER_RAD>`
+   loiter points; determined by the :ref:`WP_LOITER_RAD <WP_LOITER_RAD>`
    parameter.
-#. The :ref:`ALT_HOLD_RTL <plane:ALT_HOLD_RTL>` or 
+#. The :ref:`RTL_ALTITUDE <RTL_ALTITUDE>` or 
    :ref:`RTL_ALT <copter:RTL_ALT>` parameters are NOT used with Rally Points! 
    The aircraft will transit to the Rally Point at the altitude 
    specified when adding that point.
 
 The following MAVLink parameters control Rally Point behavior:
 
-#. :ref:`RALLY_LIMIT_KM <plane:RALLY_LIMIT_KM>`
+#. :ref:`RALLY_LIMIT_KM <RALLY_LIMIT_KM>`
    is the maximum distance a Rally Point may be from the aircraft to be
    considered for an RTL event.  If all Rally Points are greater than
    this distance from the aircraft, then the Home location is used for
-   RTL events (at altitude :ref:`ALT_HOLD_RTL <plane:ALT_HOLD_RTL>`)
+   RTL events (at altitude :ref:`RTL_ALTITUDE <RTL_ALTITUDE>`)
    This parameter is to prevent fly offs if Rally Points have been specified for multiple
    flying fields. This parameter can be disabled if set to 0.
 #. :ref:`RALLY_INCL_HOME<RALLY_INCL_HOME>` allows Home to be included in the RALLY points, allowing it to return to home if closer than any RALLY point.
-#. :ref:`RALLY_TOTAL <plane:RALLY_TOTAL>` is
+#. :ref:`RALLY_TOTAL <RALLY_TOTAL>` is
    the number of Rally Points currently specified. This parameter will
    be set for you by your ground control station (e.g., Mission Planner)
    when you add and remove Rally Points.  **IT IS HIGHLY UNLIKELY YOU

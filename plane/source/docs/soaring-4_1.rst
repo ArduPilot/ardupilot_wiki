@@ -43,9 +43,9 @@ functionality:
 Airspeed Control
 ================
 
-When in SOARING, the target airspeed while cruising is set via throttle stick position for FBWB and CRUISE modes, even while gliding. For AUTO mode, it is set at  :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`, unless the :ref:`SOAR_CRSE_ARSPD<SOAR_CRSE_ARSPD>` parameter is set to a non-zero value ("0" is default). If it is set to "-1", then the :ref:`soaring-speed-to-fly` computed value will be used. If greater than zero, then that value in meters/sec will be used for target airspeed.
+When in SOARING, the target airspeed while cruising is set via throttle stick position for FBWB and CRUISE modes, even while gliding. For AUTO mode, it is set at  :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>`, unless the :ref:`SOAR_CRSE_ARSPD<SOAR_CRSE_ARSPD>` parameter is set to a non-zero value ("0" is default). If it is set to "-1", then the :ref:`soaring-speed-to-fly` computed value will be used. If greater than zero, then that value in meters/sec will be used for target airspeed.
 
-While in THERMAL mode, the target airspeed will be :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`, unless the :ref:`SOAR_THML_ARSPD<SOAR_THML_ARSPD>` parameter is set to a non-zero value ("0" is default). Then that value in meters/sec will be used for target airspeed instead.
+While in THERMAL mode, the target airspeed will be :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>`, unless the :ref:`SOAR_THML_ARSPD<SOAR_THML_ARSPD>` parameter is set to a non-zero value ("0" is default). Then that value in meters/sec will be used for target airspeed instead.
 
 
 Hardware
@@ -178,7 +178,7 @@ The parameter :ref:`SOAR_THML_BANK<SOAR_THML_BANK>` sets the bank angle when the
 
 If the aircraft is not achieving this average bank angle when thermalling, you should check - 
 
- - that the limiting bank angle :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` is set a bit larger than SOAR_THML_BANK (note the units are different) to give some room for manoeuvring;
+ - that the limiting bank angle :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` is set a bit larger than SOAR_THML_BANK (note the units are different) to give some room for manoeuvring;
 
  - that the navigation parameter NAVL1_PERIOD is no larger than the time needed for a complete turn at the specified bank angle.
 

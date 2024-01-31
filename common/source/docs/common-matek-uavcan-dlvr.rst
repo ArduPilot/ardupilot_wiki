@@ -110,7 +110,7 @@ if optional GPS is connected to UART2, then set
 
 - Reboot
 
-Make sure the DroneCAN compass driver is not disabled if an optional external Compass is connected to the rear I2C pads:. (:ref:`COMPASS_TYPEMASK<COMPASS_TYPEMASK>` bit 9 should not be set). 
+Make sure the DroneCAN compass driver is not disabled if an optional external Compass is connected to the rear I2C pads:. (:ref:`COMPASS_DISBLMSK<COMPASS_DISBLMSK>` bit 9 should not be set). 
 
 
 I2C Mode

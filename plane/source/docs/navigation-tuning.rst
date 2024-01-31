@@ -25,7 +25,7 @@ Steps to tuning the L1 controller
 -  Make sure you have already tuned the roll and pitch controller,
    correctly trimmed your plane, and have ensured the plane does not
    gain or lose altitude in turns
--  Make sure you have setup :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` to an appropriate value for
+-  Make sure you have setup :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` to an appropriate value for
    the bank angle you are comfortable with your plane flying without
    stalling. For slow flying electric gliders a value of around 5000 (50
    degrees) is a good start. For fast flying aerobatic planes you may

@@ -27,7 +27,7 @@ for a wide range of aircraft.
 During takeoff the wings will be held level to within
 :ref:`LEVEL_ROLL_LIMIT <LEVEL_ROLL_LIMIT>`
 degrees until 5 meters of altitude is reached, gradually allowing more roll until
-the normal :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` limit is allowed once 15 meters of altitude is
+the normal :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` limit is allowed once 15 meters of altitude is
 reached. This prevents a sharp roll from causing the wings to hit the
 runway for ground takeoffs.
 
@@ -99,7 +99,7 @@ front then you may want to use the default values of :ref:`TKOFF_THR_DELAY <TKOF
 The final parameter you should think about is the :ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>`
 parameter. That controls the maximum pitch which the autopilot will
 demand in auto flight. When set to a non-zero value this replaces the
-:ref:`LIM_PITCH_MAX <LIM_PITCH_MAX>` parameter for all auto-throttle flight modes. Setting
+:ref:`PTCH_LIM_MAX_DEG <PTCH_LIM_MAX_DEG>` parameter for all auto-throttle flight modes. Setting
 this parameter to a value which is small enough to ensure the aircraft
 can climb reliably at full throttle will make takeoff much more
 reliable. A value of 20 is good for most aircraft.

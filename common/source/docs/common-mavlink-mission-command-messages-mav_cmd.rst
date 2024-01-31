@@ -1234,10 +1234,10 @@ this).
 If the return is to a rally point, the plane will loiter at the position
 and altitude set in the rally point. If the return is to the home
 location, then the parameter
-:ref:`ALT_HOLD_RTL <plane:ALT_HOLD_RTL>`
+:ref:`RTL_ALTITUDE <RTL_ALTITUDE>`
 is used for the loiter height (default 100m). The radius of the loiter
 is defined in the parameter
-:ref:`WP_LOITER_RAD <plane:WP_LOITER_RAD>`.
+:ref:`WP_LOITER_RAD <WP_LOITER_RAD>`.
 
 This command takes no parameters and generally should be the last
 command in the mission.
@@ -1434,7 +1434,7 @@ the engines.
 
 The plane will land at its current location or proceed to the (non-zero)
 lat/lon coordinates provided beginning with current altitude.  Information on the parameters used to
-control the landing is provided in :ref:`LAND flight mode <plane:land-mode>`.
+control the landing is provided in :ref:`LAND flight mode <land-mode>`.
 
 **Command parameters**
 
@@ -1495,7 +1495,7 @@ Supported by: Plane (not Copter or Rover). Specifically QuadPlanes.
 Land the vehicle at the current or a specified location.
 
 If the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 4 is not set (default),the vehicle will land at its current location or proceed at the current altitude to the lat/lon
-coordinates provided (if non-zero) and land. The ALT parameter is used to determine final landing phase initiation rather than :ref:`Q_LAND_FINAL_ALT<Q_LAND_FINAL_ALT>`. This is the mission equivalent of the :ref:`QLAND flight mode <plane:qland-mode>`.
+coordinates provided (if non-zero) and land. The ALT parameter is used to determine final landing phase initiation rather than :ref:`Q_LAND_FINAL_ALT<Q_LAND_FINAL_ALT>`. This is the mission equivalent of the :ref:`QLAND flight mode <qland-mode>`.
 
 If the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 4 is set (Use a fixed wind spiral approach), the it will fly in plane mode to the lat/lon coordinates provided (if non-zero), climbing or descending to the altitude set in the NAV_VTOL_LAND waypoint. When it reaches within :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>` of the landing location, it will perform a LOITER_TO_ALT to finish the climb or descent to that ALT set in the waypoint, then, turning into the wind, transition to VTOL mode and proceed to the landing location and land.
 
@@ -2821,7 +2821,7 @@ speed-type and throttle settings are ignored.
 [site wiki="plane" heading="off"]
 
 Change the target horizontal speed (airspeed or groundspeed) and/or the
-vehicle's throttle. If the airspeed option is selected, this changes the :ref:`TRIM_ARSPD<TRIM_ARSPD_CM>` parameter during the flight until reboot or mode is changed to CRUISE or FBWB. If the groundspeed option is used, then :ref:`MIN_GNDSPD<MIN_GNDSPD_CM>` parameter is changed to this value until rebooted or changed by this command again. If the throttle field is non-zero and equal to or below 100, then the :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` parameter is changed  until reboot or changed by this command again.
+vehicle's throttle. If the airspeed option is selected, this changes the :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` parameter during the flight until reboot or mode is changed to CRUISE or FBWB. If the groundspeed option is used, then :ref:`MIN_GROUNDSPEED<MIN_GROUNDSPEED>` parameter is changed to this value until rebooted or changed by this command again. If the throttle field is non-zero and equal to or below 100, then the :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` parameter is changed  until reboot or changed by this command again.
 
 .. note:: Speed changes only have an effect if an airspeed sensor is present, healthy, and in use. :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` changes impacts only flight with airspeed sensor not in use.
 
@@ -2844,7 +2844,7 @@ vehicle's throttle. If the airspeed option is selected, this changes the :ref:`T
    <tr>
    <td><strong>param2</strong></td>
    <td>Speed (m/s)</td>
-   <td>Target speed (m/s). If airspeed, a value below or above min/max airspeed limits results in no change. a value of -2 uses :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`</td>
+   <td>Target speed (m/s). If airspeed, a value below or above min/max airspeed limits results in no change. a value of -2 uses :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>`</td>
    </tr>
    <tr>
    <td><strong>param3</strong></td>
@@ -3327,7 +3327,7 @@ If ``RTL_AUTOLAND`` is set to 2, the plane will jump to the nearest
 .. note::
 
    General information on landing a plane is provided in the topic
-   :ref:`Automatic Landing <plane:automatic-landing>`.
+   :ref:`Automatic Landing <automatic-landing>`.
 
 **Command parameters**
 
@@ -4024,7 +4024,7 @@ MAV_CMD_DO_FENCE_ENABLE
 
 Supported by: All vehicles.
 
-Mission commands to enable the Plane :ref:`GeoFence <plane:geofencing>`, Copter/Rover :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence`.
+Mission commands to enable the Plane :ref:`GeoFence <geofencing>`, Copter/Rover :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence`.
 
 
 **Command parameters**
@@ -4206,7 +4206,7 @@ MAV_CMD_DO_INVERTED_FLIGHT
 
 Supported by: Plane (not Copter or Rover).
 
-Change between normal and :ref:`inverted flight <plane:inverted-flight>`.
+Change between normal and :ref:`inverted flight <inverted-flight>`.
 
 **Command parameters**
 
@@ -4415,7 +4415,7 @@ MAV_CMD_DO_AUTOTUNE_ENABLE
 
 Supported by: Plane (not Copter or Rover).
 
-Enable/disable :ref:`AUTOTUNE <plane:autotune-mode>` mode.
+Enable/disable :ref:`AUTOTUNE <autotune-mode>` mode.
 
 **Command parameters**
 

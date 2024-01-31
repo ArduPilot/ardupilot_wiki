@@ -157,7 +157,7 @@ this test is less in recent releases of the firmware.
 
 The reason is the new :ref:`stall prevention code <stall-prevention>`. When the plane is on
 the ground the airspeed is very low, so is always under the minimum
-airspeed set in :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>`. That means the maximum roll demand is
+airspeed set in :ref:`AIRSPEED_MIN<AIRSPEED_MIN>`. That means the maximum roll demand is
 limited to 25 degrees, which means the amount of demanded aileron
 surface movement is less than it would be without stall prevention.
 
@@ -224,11 +224,11 @@ sensor data. The techniques are:
 When no airspeed sensor is available some parameters are not used for
 some purposes:
 
--  the :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` parameter is not used as an airspeed target in
+-  the :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` parameter is not used as an airspeed target in
    auto flight. Instead the :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` parameter is used as base
    throttle, with extra throttle added/removed to retain the target
    altitude
--  the :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` and :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` parameters are not used for
+-  the :ref:`AIRSPEED_MIN<AIRSPEED_MIN>` and :ref:`AIRSPEED_MAX<AIRSPEED_MAX>` parameters are not used for
    airspeed limiting in TECS, but they are still used for the stall
    prevention code, using the synthetic airspeed value
 

@@ -249,8 +249,8 @@ If you set ``FENCE_MINALT`` and ``FENCE_MAXALT`` to other than zero (and have
 will be half way between ``FENCE_MINALT`` and ``FENCE_MAXALT``.
 
 If you don't setup ``FENCE_MINALT`` and ``FENCE_MAXALT`` (ie. leave them at
-zero) then the return point altitude will be given by the :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>`
-parameter, which is also used for RTL mode. Note that :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>` is
+zero) then the return point altitude will be given by the :ref:`RTL_ALTITUDE<RTL_ALTITUDE>`
+parameter, which is also used for RTL mode. Note that :ref:`RTL_ALTITUDE<RTL_ALTITUDE>` is
 in centimetres, whereas ``FENCE_MINALT`` and ``FENCE_MAXALT`` are in meters.
 
 If your flying club and local flying rules don't set a maximum altitude

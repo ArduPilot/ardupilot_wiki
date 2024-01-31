@@ -8,7 +8,7 @@ This function of Plane allows you to set a minimum altitude for FBWB and CRUISE
 modes (even if you don't have airspeed sensor) which your airplane will
 try to stay above.
 
-When :ref:`ALT_HOLD_FBWCM<ALT_HOLD_FBWCM>` is enabled, if your airplane goes lower than
+When :ref:`CRUISE_ALT_FLOOR<CRUISE_ALT_FLOOR>` is enabled, if your airplane goes lower than
 defined altitude relative to HOME, it will level up and/or climb back to this altitude. After
 it is reached you will regain altitude control.
 
@@ -21,7 +21,7 @@ Use for R/C training
 
 This function will help those of us who doesn't have that much flying
 skills to fly safely. It is really useful for FPV flying as FBWB or CRUISE modes
-provide easy control and the :ref:`ALT_HOLD_FBWCM<ALT_HOLD_FBWCM>` limit will help you avoid
+provide easy control and the :ref:`CRUISE_ALT_FLOOR<CRUISE_ALT_FLOOR>` limit will help you avoid
 crashing into the ground ;-)
 
 `Here <http://youtu.be/9wysVRrOmcQ>`__ is a video demo. APM is in FBW-B
@@ -33,7 +33,7 @@ How to setup Alt Limit
 ======================
 
 Using your APM Mission Planner you will have to set parameter
-:ref:`ALT_HOLD_FBWCM<ALT_HOLD_FBWCM>` to the desired alt **in centimeters!** If it
+:ref:`CRUISE_ALT_FLOOR<CRUISE_ALT_FLOOR>` to the desired alt **in centimeters!** If it
 is **0** then it is turned off.
 
 Choosing the right altitude

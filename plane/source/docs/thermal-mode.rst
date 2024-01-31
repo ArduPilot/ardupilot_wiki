@@ -21,4 +21,4 @@ The flight mode will be returned to whatever it was before THERMAL was triggered
 
 This mode can be triggered by the pilot from any mode (like FBWA) using the GCS or RC transmitter, in which case THERMAL mode will begin searching for lift until THERMAL mode exit conditions are met or the pilot commands a mode change
 
-While in THERMAL mode, the airspeed target is set to :ref:`SOAR_THML_ARSPD<SOAR_THML_ARSPD>` (meters/sec) if its non-zero, otherwise, if "0" (default) it will be set to :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`.
+While in THERMAL mode, the airspeed target is set to :ref:`SOAR_THML_ARSPD<SOAR_THML_ARSPD>` (meters/sec) if its non-zero, otherwise, if "0" (default) it will be set to :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>`.

@@ -455,7 +455,7 @@ Other functions are:
     Force Flare                          | Moves tilt motors to the upright position and optionally sets
                                          | pitch for flare when landing Tilt Rotor QuadPlanes.
                                          | Middle: The pilot retains pitch control during a flare.
-                                         | High: Pitch set to :ref:`LAND_PITCH_CD<LAND_PITCH_CD>`. Allows switching
+                                         | High: Pitch set to :ref:`LAND_PITCH_DEG<LAND_PITCH_DEG>`. Allows switching
     EKF Position Source                  | between up to three source sets manually for EKF3 (only).
                                          | See :ref:`common-non-gps-to-gps`.
     Airspeed Ratio Calibrate             | Activates calibration of airspeed ratio in flight. Best results

@@ -59,7 +59,7 @@ You also need to make sure that all of the basic settings for your
 airframe are correct. In particular, ensure that all surface reversals
 are correct and that you have a reasonable value set for the minimum
 airspeed. Autotune won't do anything until you are above the minimum
-airspeed you have set in the :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` parameter. If you don't
+airspeed you have set in the :ref:`AIRSPEED_MIN<AIRSPEED_MIN>` parameter. If you don't
 have an airspeed sensor then that value is still used, along with an
 airspeed estimate from other sensors. Also make sure you have done RC
 calibration, as AUTOTUNE will only work if you have full control
