@@ -203,7 +203,7 @@ To use this tool, load your flight log file using the **Load BIN** button, selec
 .. image:: ../../../images/plot3d.png
     :target: ../_images/plot3d.png
 
-Overlaid on the above image is the second tool: using the ``AERT.Perr`` log message which shows the 3D position error from programmed path in meters. The above shows that the vehicle was blown downwind in high crosswinds out of the rolling circle by 15m at one point. This was greatly improved in later flights by increasing the speed at which the plane did the routine (increased TRIM_ARSPD_CM)
+Overlaid on the above image is the second tool: using the ``AERT.Perr`` log message which shows the 3D position error from programmed path in meters. The above shows that the vehicle was blown downwind in high crosswinds out of the rolling circle by 15m at one point. This was greatly improved in later flights by increasing the speed at which the plane did the routine (increase :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>`)
 
 
 Simulation

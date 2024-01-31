@@ -231,8 +231,8 @@ autopilot can refuse to arm are (See the :ref:`common-prearm-safety-checks` topi
    itself after 30 seconds then you will need to reboot.
 -  **Limit errors**. The arming checks some of your parameter settings
    to make sure they are in a reasonable range. The checks are
-   "LIM_ROLL_CD too small", "LIM_PITCH_MAX too small",
-   "LIM_PITCH_MIN too large", "invalid THR_FS_VALUE".
+   "ROLL_LIMIT_DEG too small", "PTCH_LIM_MAX_DEG too small",
+   "PTCH_LIM_MIN_DEG too large", "invalid THR_FS_VALUE".
 -  **GPS n has not been fully configured**. This happens with a uBlox
    GPS where the GPS driver is unable to fully configure the GPS for
    the settings that are being requested. This can be caused by a bad

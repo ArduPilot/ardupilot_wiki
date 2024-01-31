@@ -267,7 +267,7 @@ Also recheck your battery is properly placed to for the desired CG. ARM the plan
 Switch into AUTO mode. Now the TAKEOFF command will be activated and the plane will go to :ref:`THR_MAX<THR_MAX>` even though the throttle stick is at idle. Toss it and it will climb straight up to desired altitude. It will then go into RTL since no other waypoint is loaded.
 Be sure to move the throttle stick from idle to midstick after launch to avoid unexpected
 throttle idle if you have to switch to STAB or MANUAL for some reason. Also be prepared for
-another :ref:`THR_MAX<THR_MAX>` climb to the RTL altitude (ALT_HOLD_RTL) if your TAKEOFF altitude is below this.
+another :ref:`THR_MAX<THR_MAX>` climb to the RTL altitude (RTL_ALTITUDE) if your TAKEOFF altitude is below this.
 
 Now switch to CRUISE mode and let the airframe cruise level without input for several intervals of ten seconds.
 This allows the :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` function to adjust the servo trims accordingly. After having performed level flight with no inputs for a sufficiently long accumulated periods (trim is updated every 10 seconds of flight with no pilot inputs), switch into Manual mode to verify correct trims are now set.

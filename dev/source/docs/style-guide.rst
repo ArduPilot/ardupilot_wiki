@@ -444,7 +444,7 @@ The total length of the parameter name must be 16 characters or less.
 Display Name
 ------------
 
-The display name is typically a 2-5 word phrase that describes what the parameter changes. Often this is the Parameter Name spelled out in full words. Do not start with nondescriptive word like "the." A good Display Name for LIM_PITCH_MAX is "Maximum Pitch Angle".
+The display name is typically a 2-5 word phrase that describes what the parameter changes. Often this is the Parameter Name spelled out in full words. Do not start with nondescriptive word like "the." A good Display Name for PTCH_LIM_MAX_DEG is "Maximum Pitch Angle".
 
 
 Description
