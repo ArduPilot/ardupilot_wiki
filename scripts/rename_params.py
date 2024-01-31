@@ -9,7 +9,6 @@ examples:
 '''
 
 import os
-import sys
 import glob
 
 from argparse import ArgumentParser
@@ -24,8 +23,9 @@ parser.add_argument("files", nargs="+", default=None, help="directories or files
 
 args = parser.parse_args()
 
+
 def load_param_map(fname):
-    lines = open(fname,'r').readlines()
+    lines = open(fname, 'r').readlines()
     ret = {}
     for line in lines:
         if line.startswith("#"):
@@ -49,8 +49,8 @@ def process_file(fname, param_map):
     needs_write = False
     txt = open(fname, "r").read()
 
-    replacements = [ ":ref:`PARAMNAME <PARAMNAME>`",
-                     ":ref:`PARAMNAME<PARAMNAME>`"]
+    replacements = [":ref:`PARAMNAME <PARAMNAME>`",
+                    ":ref:`PARAMNAME<PARAMNAME>`"]
     if args.nonref:
         replacements.extend(["PARAMNAME"])
 
@@ -66,6 +66,7 @@ def process_file(fname, param_map):
         return
     print("Updating %s" % fname)
     open(fname, "w").write(txt)
+
 
 param_map = load_param_map(args.param_map)
 print("Loaded param map for %u parameters" % len(param_map.keys()))
