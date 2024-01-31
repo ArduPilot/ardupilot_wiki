@@ -16,7 +16,7 @@ QLAND Mode attempts to bring the QuadPlane straight down at the position the veh
 
 -  If the QuadPlane appears to bounce or balloon back up a couple of times
    before settling down and turning the props off, try lowering the
-   ``Q_LAND_SPEED`` parameter a bit.
+   ``Q_LAND_FINAL_SPD`` parameter a bit.
 -  If the vehicle has GPS lock the landing controller will attempt to
    control its horizontal position but the pilot can adjust the target
    horizontal position just as in QLOITER mode.

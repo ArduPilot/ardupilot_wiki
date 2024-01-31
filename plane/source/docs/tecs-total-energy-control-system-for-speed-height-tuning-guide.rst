@@ -49,8 +49,8 @@ measurements, whilst the plane is being flown at the speed set by :ref:`AIRSPEED
 which represents the speed that you are most likely going to be flying
 at. Flying these tests at :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` is impractical unless you
 have an assistant calling out airspeed, so where these instructions ask
-for the plane to be flown at :ref:`AIRSPEED_CRUISE <AIRSPEED_CRUISE>`, fly at a speed in the middle zone between your :ref:`ARSPD_FBW_MIN <tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_min>` and
-:ref:`ARSPD_FBW_MAX <tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_max>` and that will be good enough for
+for the plane to be flown at :ref:`AIRSPEED_CRUISE <AIRSPEED_CRUISE>`, fly at a speed in the middle zone between your :ref:`AIRSPEED_MIN <tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_min>` and
+:ref:`AIRSPEED_MAX <tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_max>` and that will be good enough for
 most applications. Those users wanting to extract maximum performance
 can dial the numbers in over a number of flights, using the log data.
 
@@ -70,7 +70,7 @@ can dial the numbers in over a number of flights, using the log data.
    capable of in level flight with the throttle set to :ref:`THR_MAX<THR_MAX>`.
    :ref:`AIRSPEED_MIN<AIRSPEED_MIN>` should be set to the slowest speed your aircraft
    can safely fly without stalling in level flight.
-#. Set the maximum pitch angle :ref:`LIM_PITCH_MAX <tecs-total-energy-control-system-for-speed-height-tuning-guide_lim_pitch_max>` (in
+#. Set the maximum pitch angle :ref:`PTCH_LIM_MAX_DEG <tecs-total-energy-control-system-for-speed-height-tuning-guide_lim_pitch_max>` (in
    centi-degrees) your aircraft can fly with the throttle set to
    :ref:`THR_MAX<THR_MAX>`. This can be determined by performing maximum pitch angle
    climbs in FBWA with the throttle set to the maximum and checking the
@@ -82,7 +82,7 @@ can dial the numbers in over a number of flights, using the log data.
    in power due to reduced battery voltage or other effects. Remember
    that the amount of power from an electric power system at the end of
    flight will only be 80% of what you have at the start.
-#. Set the minimum pitch angle :ref:`LIM_PITCH_MIN <tecs-total-energy-control-system-for-speed-height-tuning-guide_lim_pitch_min>`
+#. Set the minimum pitch angle :ref:`PTCH_LIM_MIN_DEG <tecs-total-energy-control-system-for-speed-height-tuning-guide_lim_pitch_min>`
    (in centi-degrees) your aircraft can fly with the throttle set to
    :ref:`THR_MIN <tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_min>` that can be flown without over-speeding the
    aircraft.

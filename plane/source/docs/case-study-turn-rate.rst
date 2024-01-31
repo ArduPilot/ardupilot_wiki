@@ -45,7 +45,7 @@ sequence number.
     :target: ../_images/nav-output-and-roll-attitude.png
 
 In the takeoff nav_roll is small, as its flight is straight ahead. It
-then goes to -30 degrees, as that is the LIM_ROLL_CD you have
+then goes to -30 degrees, as that is the ROLL_LIMIT_DEG you have
 specified. The problem is that the actual roll only goes to around -10
 degrees. So the plane is not achieving the roll that APM is asking for.
 

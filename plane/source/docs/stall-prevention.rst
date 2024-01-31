@@ -75,7 +75,7 @@ In each of these modes the aircraft is either calculating a desired bank
 angle for the navigation code, or the user is inputting a desired bank
 angle via the aileron stick. In both cases the stall prevention code
 will limit the bank angle based on the amount of margin between
-``ARSPD_FBW_MIN`` and the current airspeed.
+``AIRSPEED_MIN`` and the current airspeed.
 
 The following modes are affected by the automatic speed increase in TECS
 when the bank angle is limited by stall prevention:

@@ -274,15 +274,15 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     ======================================================= =================================================== ====================================================
     ADSB threat detected                                    ADSB failsafe.  Manned vehicles nearby              See :ref:`ADSB configuration<common-ads-b-receiver>`
     AHRS not healthy                                        AHRS/EKF is not yet ready                           Wait.  Reboot autopilotFS_LONG_TIMEOUT < FS_SHORT_TIMEOUT
-    ARSPD_FBW_MIN too low x<5 m/s                           Parameter set too low, under 5m/s                   Raise to at least 20% above stall speed
+    AIRSPEED_MIN too low x<5 m/s                            Parameter set too low, under 5m/s                   Raise to at least 20% above stall speed
     Bad parameter: ATC_ANG_PIT_P must be > 0                Attitude controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
     Bad parameter: PSC_POSXY_P must be > 0                  Position controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
     Check Q_ANGLE_MAX                                       Set above 80 degrees                                Reduce :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` below 80; 30 degrees is typical
     In landing sequence                                     Trying to arm while still in landing sequence       Reset mission;change to mission item not in a landing sequence
     Invalid THR_FS_VALUE for reversed throttle input        THR_FS_VALUE pwm is not ABOVE the max throttle      Set :ref:`THR_FS_VALUE<THR_FS_VALUE>` above throttle maximum pwm
-    LIM_ROLL_CD too small x                                 Parameter set under 3 degrees                       Increase, 45 deg recommended minimum for adequate control
-    LIM_PITCH_MAX too small x                               Parameter set under 3 degrees                       Increase, 45 deg recommended minimum for adequate control
-    LIM_PITCH_MIN too large x                               Parameter set over 3 degrees                        Increase, 45 deg recommended minimum for adequate control
+    ROLL_LIMIT_DEG too small x                              Parameter set under 3 degrees                       Increase, 45 deg recommended minimum for adequate control
+    PTCH_LIM_MAX_DEG too small x                            Parameter set under 3 degrees                       Increase, 45 deg recommended minimum for adequate control
+    PTCH_LIM_MIN_DEG too large x                            Parameter set over 3 degrees                        Increase, 45 deg recommended minimum for adequate control
     Mode not armable                                        Cannot arm from this mode                           Change Mode
     Mode not QMODE                                          Q_OPTION set to prevent arming except in QMODE/AUTO Change Mode or reset :ref:`Q_OPTIONS<Q_OPTIONS>` bit 18
     Motors: Check frame class and type                      Unknown or misconfigured frame class or type        Enter valid frame class and/or type
