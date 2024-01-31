@@ -22,20 +22,14 @@ The following instructions assume that you have setup your Flight Control box me
 
 If using an OpenTX transmitter as your joystick, see the last section on this page for setup instructions. After installing RealFlight, familiarize yourself with its operation a bit before proceeding.
 
-Enabling RealFlight Link Feature
-================================
-
-On RealFlight8/9, go to Settings->Physics and enable the FlightAxis option and set "Pause Sim When in Background" option to No and then restart RealFlight.
-
-In RealFlight Evolution, press ESC, go to Settings->Physics->Quality and enable the "RealFlight Link" option.
-
 Configure RealFlight
 ====================
 
   - Start RealFlight.
-  - On RealFlight8/9, go to Settings->Physics and enable the FlightAxis option and set "Pause Sim When in Background" and "Pause Sim when in Menu" options to No and then restart RealFlight.
-  - In RealFlight Evolution, press ESC, go to Settings->Physics->Quality and enable the "RealFlight Link" option and set "Pause Sim When in Background" and "Pauses Sim when in Menu" options to No and then restart RealFlight.
+  - On RealFlight8/9, go to Settings->Physics and enable the "RealFlight Link" option and set "Pause Sim When in Background" and "Pause Sim when in Menu" options to No.
+  - In RealFlight Evolution, press ESC, go to Settings->Physics->Quality and enable the "RealFlight Link" option and set "Pause Sim When in Background" and "Pauses Sim when in Menu" options to No.
   - Under "Physics" settings, change the option "Automatic Reset Delay(sec)" to 2.0.
+  - Restart RealFlight.
 
 If using RealFlight8/9, depending on your graphics card/processor and cpu power, you probably will need to reduce graphics to improve performance. You need to be running 200Hz or greater refresh rates in order to get best simulator performance. RealFlight Evolution has greatly improved performance and these reductions may not be required:
 
