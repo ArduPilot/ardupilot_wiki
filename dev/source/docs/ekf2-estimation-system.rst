@@ -91,7 +91,7 @@ Using EKF2
 
    -  To use only IMU1, set EK2_IMU_MASK = 1 (this is the default)
    -  To use only IMU2, set EK2_IMU_MASK = 2
-   -  To run dual EKF2 using IMU1 and IMU2,  set :ref:`EK2_IMU_MASK<EK2_IMU_MASK> = 3
+   -  To run dual EKF2 using IMU1 and IMU2,  set :ref:`EK2_IMU_MASK<EK2_IMU_MASK>` = 3
 
 #. After setting the parameters you will need to reboot.
 

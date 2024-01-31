@@ -130,5 +130,5 @@ use the Flight Planner Tab in the MP to setup a waypoint course. Make
 sure to set the Waypoint Radius to around 2 meters for good performance.
 
 A more complete guide to using the Mission Planner with Rover is
-described in \ :ref:`Learning a Mission <learning-a-mission>`.
+described in \ :ref:`Learning a Mission <common-learning-a-mission>`.
 
