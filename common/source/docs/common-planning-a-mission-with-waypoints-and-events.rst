@@ -10,7 +10,7 @@ This page describes generic waypoint setup for all types of vehicles.
 .. note::
 
    Rover users: For a simpler Rover specific guide to setting up
-   waypoints please see :ref:`Learning a Mission <rover:learning-a-mission>`.
+   waypoints please see :ref:`Learning a Mission <common-learning-a-mission>`.
 [/site]
 
 .. _common-planning-a-mission-with-waypoints-and-events_setting_the_home_position:
