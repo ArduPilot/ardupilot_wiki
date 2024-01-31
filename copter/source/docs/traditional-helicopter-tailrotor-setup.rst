@@ -75,21 +75,21 @@ Setting the trim value of the Servo output is important to ensuring that the int
 For DDFP tails using V4.5 or later
 ++++++++++++++++++++++++++++++++++
 
-If no :ref:`<collective-to-tailrotor-compensation>` is used, then it is recommended that the :ref:`H_YAW_TRIM<H_YAW_TRIM>` parameter is set to minimize the yaw I term in the hover.  To determine this:
+If no :ref:`collective-to-tailrotor-compensation` is used, then it is recommended that the :ref:`H_YAW_TRIM<H_YAW_TRIM>` parameter is set to minimize the yaw I term in the hover.  To determine this:
 
 - Ensure PID logging is switched on in the :ref:`LOG_BITMASK<LOG_BITMASK>` parameter.
 - Hover the aircraft, maintaining altitude.  For best results, this is preferentially done on a light wind day. If possible, leave the aircraft drift with the wind and mintain a fixed height (ALT HOLD is very useful for this).
 - After the flight, download the log and find the ``PIDY.I`` message.  Zoom in the on that portion of the flight with the hovering (should be a relatively flat line). Determine the average value of the I term. Enter this average value in the :ref:`H_YAW_TRIM<H_YAW_TRIM>` parameter.
 - To confirm this has been done correctly repeat the flight.  Now, in the hovering portion of the flight, the yaw I Term should be close to zero.
 
-If :ref:`<collective-to-tailrotor-compensation>` is used, then set the :ref:`H_YAW_TRIM<H_YAW_TRIM>` sufficient to compensate for the main rotor zero blade pitch drag.
+If :ref:`collective-to-tailrotor-compensation` is used, then set the :ref:`H_YAW_TRIM<H_YAW_TRIM>` sufficient to compensate for the main rotor zero blade pitch drag.
 
 Other Tail Types and DDFP using firmware before V4.5
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-If no :ref:`<collective-to-tailrotor-compensation>` is used,  then it is recommended that the ``SERVOx_TRIM`` for the tailrotor servo is set to the PWM that corresponds to the tailrotor pitch required for hover, or the motor speed for DDFP. To determine this, hover the aircraft.  After the flight, pull the log and determine the average PWM value for the servo for hovering flight.  Either set that as the ``SERVOx_TRIM`` or mechanically adjust the tail pitch (non-DDFP tail types) for the tail pitch corresponding to the PWM.  Then set the ``SERVOx_TRIM`` to the servo midpoint. The latter approach is usually preferable.
+If no :ref:`collective-to-tailrotor-compensation` is used,  then it is recommended that the ``SERVOx_TRIM`` for the tailrotor servo is set to the PWM that corresponds to the tailrotor pitch required for hover, or the motor speed for DDFP. To determine this, hover the aircraft.  After the flight, pull the log and determine the average PWM value for the servo for hovering flight.  Either set that as the ``SERVOx_TRIM`` or mechanically adjust the tail pitch (non-DDFP tail types) for the tail pitch corresponding to the PWM.  Then set the ``SERVOx_TRIM`` to the servo midpoint. The latter approach is usually preferable.
 
-If If no :ref:`<collective-to-tailrotor-compensation>` is used,  the set the ``SERVOx_TRIM`` for the PWM that corresponds to zero tailrotor pitch.  Or, the tailrotor pitch can be mechanically adjusted to zero pitch for the servo midpoint.
+If If no :ref:`collective-to-tailrotor-compensation` is used,  the set the ``SERVOx_TRIM`` for the PWM that corresponds to zero tailrotor pitch.  Or, the tailrotor pitch can be mechanically adjusted to zero pitch for the servo midpoint.
 
 .. _collective-to-tailrotor-compensation:
 

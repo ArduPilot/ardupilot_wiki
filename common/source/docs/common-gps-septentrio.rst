@@ -51,7 +51,7 @@ If a single unit with two antennas is used please set the following parameters:
 - :ref:`GPS_MB1_OFS_X <GPS_MB1_OFS_X>`, :ref:`GPS_MB1_OFS_Y <GPS_MB1_OFS_Y>` and :ref:`GPS_MB1_OFS_Z <GPS_MB1_OFS_Z>` to match the offset of the main antenna from the second in meters.  For example if the second antenna is 50cm to the right of main antenna set :ref:`GPS_MB1_OFS_Y <GPS_MB1_OFS_Y>` = -0.5.
 - :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 2 (GPS)
 
-See the :ref:`<antenna_offsets>` section for a diagram illustrating the directions of these offsets.
+See the :ref:`Antenna Offsets<antenna-offsets>` section for a diagram illustrating the directions of these offsets.
 
 Note that the yaw calculation requires the GPS have an RTK fixed lock and the yaw calculation is only correct while the vehicle is upright so it should not be used on vehicle that spend significant time at extreme lean angles (e.g tail sitters).
 
