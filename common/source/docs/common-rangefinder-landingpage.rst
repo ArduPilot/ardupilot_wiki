@@ -69,7 +69,9 @@ Unidirectional Rangefinders
     GY-US42 Sonar <common-rangefinder-gy-us42>
     Hondex Sonar<common-hondex-sonar>
     HC-SR04 Sonar <common-rangefinder-hcsr04>
+    JAE JRE-30 <common-rangefinder-jae-jre-30>
     JSN-SR04T Sonar <common-jsn-sr04t>
+    LD-06 TOF Lidar <common-ld06>
     LeddarTech Leddar One <common-leddar-one-lidar>
     LeddarTech LeddarVu8 <common-leddartech-leddarvu8-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>

@@ -18,6 +18,7 @@ The full list of modes in alphabetical order is:
 
     Acro <acro-mode>
     Auto <auto-mode>
+    Circle<circle-mode>
     Dock <dock-mode>
     Follow <follow-mode>
     Guided <guided-mode>
