@@ -79,6 +79,9 @@ three ways:
 
 -  **Rudder Arming**. Hold the rudder stick fully to the right and the
    throttle stick fully down for 3 seconds.
+
+.. note:: when rudder arming in QuadPlanes with an autotakeoff, the motors will spin at :ref:`Q_M_SPIN_ARM<Q_M_SPIN_ARM>` and not takeoff until the rudder stick is returned to neutral. Similarly, for normal plane MODE TAKEOFF, or NAV_TAKEOFFs, the arming will not actually occur until the rudder stick is returned to neutral to prevent the takeoff starting with full right rudder.
+
 -  If setup, you can use one of the **RC_xOPTION switches** that includes that function. See switch option "153", "154, or "160".
 -  **GCS Arming**. Press the arming button on your ground station
 
