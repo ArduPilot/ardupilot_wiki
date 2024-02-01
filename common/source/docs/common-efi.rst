@@ -72,6 +72,15 @@ For the example below, the unit will be assumed to be attached to the first CAN 
 - :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` = 4 (PiccoloCAN)
 - :ref:`CAN_D1_PC_ECU_ID<CAN_D1_PC_ECU_ID>`: Node ID to send throttle commands (Set to 0 to only receive telemetry)
 
+MAVLink Setup
+=============
+
+Some EFIs connect to the autopilot via MAVLink, instead of by a Serial port or DroneCAN. The following parameter should be set to connect such an EFI via MAVLink:
+
+- :ref:`EFI_TYPE<EFI_TYPE>` = 9 (MAV)
+
+.. note:: the MAVLink library does not differentiate between different EFIs connected to the same MAVLink network
+
 DLA Setup
 =========
 
