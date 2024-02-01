@@ -1,4 +1,4 @@
-.. _common_dronecan_serial:
+.. _common-dronecan-serial:
 
 ===========================
 DroneCAN Serial PassThrough

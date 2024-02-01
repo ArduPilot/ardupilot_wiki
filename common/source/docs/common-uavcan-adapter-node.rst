@@ -135,4 +135,4 @@ Several devices are manufactured specifically for use as general-purpose adapter
 .. toctree::
     :hidden:
 
-    DroneCAN Serial Port Passthrough <common_dronecan_serial>
+    DroneCAN Serial Port Passthrough <common-dronecan-serial>
