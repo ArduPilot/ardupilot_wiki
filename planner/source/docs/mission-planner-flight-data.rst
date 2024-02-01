@@ -65,6 +65,8 @@ The Control and Status area of the Flight Data screen is in the lower left-hand 
 - Data Flash Logs:  This provides a means to download data flash logs, analyze them, or create KML/gpx files from them. Click Review a Log to open a log file and establish a new window to view/analyze the log. Details :ref:`here <common-downloading-and-analyzing-data-logs-in-mission-planner>`.
 - :ref:`Scripts: <using-python-scripts-in-mission-planner>`: Automation using Python scripts and vehicle state
 
+.. note:: the ability to change modes from the ground station can be restricted, by mode, using the :ref:`FLTMODE_GCSBLOCK<FLTMODE_GCSBLOCK>` parameter.
+
 Map Area
 ========
 The map area on the right side of the Flight Data screen displays the vehicle track as it moves, provides other information, and allows the user to enter some control actions - which send commands to the vehicle (telemetry required)

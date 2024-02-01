@@ -22,6 +22,8 @@ This page includes setup instructions for the following features
 - `BLHeli_S BlueJay <https://github.com/mathiasvr/bluejay>`__ is free, open source software and 16bit
 - `Web-based ESC Configurator for the above <https://esc-configurator.com/>`__  (due to timing variations, being internet based, reliability of connection thru ArduPilot is variable).
 
+.. note:: firmware 4.5 or later required to use this ESC Configurator tool.
+
 Pass-Through Support
 --------------------
 

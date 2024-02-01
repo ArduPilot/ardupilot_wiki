@@ -9,35 +9,6 @@ Will be in future 4.5 release and is currently in master ("latest")
 
 
 
-on :ref:`common-blheli32-passthru` page add note for ESC-Configurator tool:
-===========================================================================
-
-.. note:: firmware 4.5 or later required to use this tool.
-
-
-
-on :ref:`common-matekf765-wse` page:
-====================================
-
-- add that outputs 1-4 are bi-directional dshot capable
-
-on :ref:`common-dshot-escs` page, change the param setup under DShot commands to:
-=================================================================================
-
-- set :ref:`SERVO_DSHOT_ESC<SERVO_DSHOT_ESC>` should be set to the type of DShot ESCs being used. This is required especially if Bi-Directional DShot telemetry or Extended Telemetry is being used.
-
-
-
-on :ref:`planner:mission-planner-flight-data` page, under the ACTIONs list, add a note:
-=======================================================================================
-
-.. note:: the ability to change modes from the ground station can be restricted, by mode, using the :ref:`FLTMODE_GCSBLOCK<FLTMODE_GCSBLOCK>` parameter.
-
-on :ref:`common-cuav-pixhawkv6X` and :ref:`common-holybro-pixhawk6X` pages, add:
-================================================================================
-
-to their firmware and output sections, that Bi-Directiona DShot firmware variations are available.
-
 on :ref:`common-rcoutput-mapping` page under, RCIN1Scaled to RCIN16Scaled¶ section, add note:
 =============================================================================================
 
