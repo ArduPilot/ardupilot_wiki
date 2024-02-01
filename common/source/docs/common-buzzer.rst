@@ -50,6 +50,10 @@ If an active buzzer is used, it can indicate the following:
     +------------------+-----------------------------------+
     | LOST VEHICLE     | Beep-Beep repeating every 3 sec   |
     +------------------+-----------------------------------+
+    | GYRO INIT DONE   | 7 short beeps                     |
+    +------------------+-----------------------------------+
+    | READY TO ARM     | Beep-Beep-Beep-Beeeeeep           |
+    +------------------+-----------------------------------+
 
 .. note:: For many boards, the GPIO pin numbers are assigned to PWM outputs for alternate use can only be found by looking at that board's hwdef.dat file `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ .
 

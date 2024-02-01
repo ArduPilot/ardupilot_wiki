@@ -21,3 +21,4 @@ The following parameters can be used to tune Follow Mode's performance:
 -  :ref:`FOLL_YAW_BEHAVE <FOLL_YAW_BEHAVE>`: controls whether follow points in the same direction as lead vehicle or always towards it
 -  :ref:`FOLL_POS_P <FOLL_POS_P>`: gain which controls how aggressively this vehicle moves towards lead vehicle (limited by :ref:`WPNAV_SPEED <WPNAV_SPEED>`)
 -  :ref:`FOLL_ALT_TYPE <FOLL_ALT_TYPE>`: allows selecting whether to use lead vehicle's relative-to-home or relative-to-sea-level altitude
+-  :ref:`FOLL_OPTIONS<FOLL_OPTIONS>`: set bit 0 to "1" to enable the :ref:`common-mount-targeting` to follow the target vehicle.
