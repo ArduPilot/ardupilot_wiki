@@ -186,4 +186,6 @@ compatible ground station.
 
 Firmware for these boards can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "Pixhawk6X".
 
+Bi-Directional DShot firmware variations are available also.
+
 [copywiki destination="plane,copter,rover,blimp"]

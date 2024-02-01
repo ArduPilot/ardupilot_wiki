@@ -102,7 +102,7 @@ DShot Commands
 
 On certain ESCs DShot commands are supported. These allow functions such as ESC LEDs, beeps and motor direction to be manipulated by the autopilot. In order to use DShot commands:
 
-- set :ref:`SERVO_DSHOT_ESC<SERVO_DSHOT_ESC>` = 1 (BLHeli32/BLHeli_S/Kiss)
+- set :ref:`SERVO_DSHOT_ESC<SERVO_DSHOT_ESC>` should be set to the type of DShot ESCs being used. This is required especially if Bi-Directional DShot telemetry or Extended Telemetry is being used.
 - set :ref:`NTF_LED_TYPES<NTF_LED_TYPES>`'s "DShot" checkbox to enable controlling the ESCs LEDs
 - set :ref:`NTF_BUZZ_TYPES<NTF_BUZZ_TYPES>`'s "DShot" checkbox to enable usingthe motors as buzzers
 
