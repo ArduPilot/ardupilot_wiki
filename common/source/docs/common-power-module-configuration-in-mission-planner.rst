@@ -5,7 +5,7 @@ Power Monitor/Module Configuration in Mission Planner
 =====================================================
 
 
-.. note:: Up to 16 battery monitors may be used in ArduPilot, with parameter groups named BATT\_ through BATT9\_ for the first 10, and BATTA_ thru BATTF_ for the last 6 monitors. For this article all parameter name references will be shown for the first monitor, BATT\_
+.. note:: Up to 16 battery monitors may be used in ArduPilot, with parameter groups named BATT\_ through BATT9\_ for the first 10, and BATTA\_ thru BATTF\_ for the last 6 monitors. For this article all parameter name references will be shown for the first monitor, BATT\_
 
 A power monitor can be used to measure the battery voltage and current for use in the battery failsafe and a power module can also provide a stable power supply to the autopilot.
 
