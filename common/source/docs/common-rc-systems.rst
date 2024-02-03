@@ -24,6 +24,7 @@ ArduPilot autopilots are compatible with the following receiver output protocols
     #. :ref:`Multiplex SRXL version 1 and version 2 receivers<common-srxl-receivers>`
     #. :ref:`CRSF receivers <common-tbs-rc>` (including ExpressLRS systems)
     #. :ref:`Graupner SUM-D<common-graupner-rc>`
+    #. `IRC Ghost <https://www.immersionrc.com/fpv-products/ghost/>`__
     #. DroneCAN peripherals can decode these RC protocols on a peripheral and pass to the autopilot
     #. Parallel PWM outputs encoded to PPM-Sum using an external encoder (see below)
 
@@ -79,6 +80,16 @@ SRXL2/CRSF/ELRS
 
 These bi-directional protocols require the use of a Serial Port. See links below for setup and connections.
 
+IRC Ghost
+---------
+
+This requires a connection to a full UART port via its TX pin. The port should be set for half-duplex RC input:
+
+using SERIAL2 as the port:
+
+- :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 23 (RCinput)
+- :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` = 4 (Half-Duplex)
+- :ref:`RSSI_TYPE<RSSI_TYPE>` = 3
 
 RC input to Serial Port
 -----------------------
@@ -123,7 +134,7 @@ Below is a table with some commonly  available systems showing these elements. N
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |CRSF                   |Long  |  Bi-Dir  |   Variable |via LUA    |SBUS/CRSF     |    3   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
-|ELRS                   |Long  |  Limited |     -      |   -       |CRSF          |    4   |
+|ELRS                   |Long  |  Yes     |     -      |   -       |CRSF          |    4   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |FLYSKY                 |Short |    No    |     -      |   -       |  IBus        |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
@@ -136,6 +147,8 @@ Below is a table with some commonly  available systems showing these elements. N
 |Futaba                 |Short |    No    |     -      |   -       |  SBus        |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Graupner               |Short |    Yes   |    Medium  |   yes     |  SUM-D       |        |
++-----------------------+------+----------+------------+-----------+--------------+--------+
+|IRC Ghost              |Medium| Limited  |            |           | IRC Ghost    |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |mLRS                   |Long  |  Bi-Dir  |  12K - 91K |via LUA    |SBUS/CRSF     |    5   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
