@@ -10,6 +10,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2024 <htt
 - Camera and Gimbal enhancements
 - Multicopter Swarm Avoidance
 - ROS2 support
+- WebTools automated log analysis
 
 See lower down on this page for more details for some of the projects listed above
 
@@ -108,6 +109,20 @@ ROS2 support
 Currently, there is no MAVROS equivalent for ROS2, with `OSRF <https://www.openrobotics.org>`__ quickly moving to make ROS2 the standard version of ROS, supporting it has become a growing interest in our community. An initial port of the basic features of MAVROS would be a big step towards integrating ArduPilot and ROS2.
 
 A previous GSoC made good progress on this project (see `Dds prototype PR <https://github.com/ArduPilot/ardupilot/pull/17779>`__)
+
+WebTools automated log analysis
+-------------------------------
+
+- Skills required: HTML, JavaScript
+- Mentor: Peter Hall
+- Expected Size: 175h to 350h
+- Level of Difficulty: Medium
+- Expected Outcome: A new WebTool with the ability to automatically highlight and diagnose common issues from flight logs.
+
+ArduPilot has several `WebTools <https://firmware.ardupilot.org/Tools/WebTools/>`__ for log review, these run in any browser with all computation on the client side. So far we have tools for setup tasks (FilterReivew, PIDReview, MAGFit) and a tool that focuses on hardware issues (HarwareReport).
+The next evolution is a tool to look for in-flight issues. There are two existing automated log review tools. `MissionPlanner <https://ardupilot.org/copter/docs/common-downloading-and-analyzing-data-logs-in-mission-planner.html#automatic-analysis-of-logs>`__ includes a basic analysis tool.
+`Dronekit log analyzer <https://github.com/dronekit/dronekit-la/tree/master>`__ has a larger number of checks (see: `analyzers <https://github.com/dronekit/dronekit-la/blob/master/docs/reference/analyzers.rst>`__) and would be the initial benchmark for this project.
+Once a framework for the tool is up and running checks for as many issues as possible can be added, the tool should focus on making the checks easy to add and update rather than a fancy-looking interface.
 
 Projects Completed in past years
 --------------------------------
