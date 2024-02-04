@@ -9,7 +9,7 @@ The development team includes experienced mentors who will help students make gr
 
 To help you get started:
 
-- The timeline for `GSoC 2023 is here <https://developers.google.com/open-source/gsoc/timeline>`__
+- The timeline for `GSoC 2024 is here <https://developers.google.com/open-source/gsoc/timeline>`__
 - The :ref:`suggested projects list <gsoc-ideas-list>` is updated before GSoC begins each year. This is a list of our ideas of what would be good to work on but we are open to other suggestions you make in your application.
 - The #GSOC channel in the `ArduPilot Discord server <https://ardupilot.org/discord>`__ is a place to ask questions about our GSOC program, submit ideas for projects, etc. Mentors will respond to your posts in this GSoC channel.
 - The :ref:`ArduPilot WIKI <ardupilot:home>` and, specifically, the :ref:`ArduPilot Developers WIKI <dev:home>` are good sources of information on ArduPilot and how to contribute to its code.
