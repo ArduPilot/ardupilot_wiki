@@ -116,9 +116,11 @@ FrSky Horus Transmitter running Yaapu LUA script
 
 .. image:: ../../../images/x10-horus.png
 
-Some systems provide transparent radio modems to the telemetry from the autopilot, and others have proprietary protocols. Those with proprietary protocols often have means of displaying  telemetry data on the transmitter display itself, like FRSky or other `OpenTX <https://www.open-tx.org/>`__ based Transmitters.
+Some systems provide transparent radio modems sending the telemetry from the autopilot, and others have proprietary protocols. Those with proprietary protocols often have means of displaying  telemetry data on the transmitter display itself, like FRSky or `OpenTX <https://www.open-tx.org/>`__ based Transmitters.
 
 Telemetry speeds vary from 56K to 1-2K baud depending on protocol and, in some cases, distance. Often telemetry range will be less than radio control range.
+
+Consult
 
 Number of channels
 ------------------
@@ -132,7 +134,7 @@ Below is a table with some commonly  available systems showing these elements. N
 +=======================+======+==========+============+===========+==============+========+
 |DragonLink             |Long  |  Bi-dir  |     56K    |via MTP/LUA|PPM_SUM/SBUS  |    1   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
-|CRSF                   |Long  |  Bi-Dir  |   Variable |via LUA    |SBUS/CRSF     |    3   |
+|CRSF                   |Long  |  Bi-Dir  |   Variable |  yes      |SBUS/CRSF     |    3   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |ELRS                   |Long  |  Yes     |     -      |   -       |CRSF          |    4   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
@@ -148,26 +150,29 @@ Below is a table with some commonly  available systems showing these elements. N
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Graupner               |Short |    Yes   |    Medium  |   yes     |  SUM-D       |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
-|IRC Ghost              |Medium| Limited  |            |           | IRC Ghost    |        |
+|IRC Ghost              |Medium| Vendor   |            |   yes     | IRC Ghost    |        |
+|                       |      | Specific |            |           |              |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |mLRS                   |Long  |  Bi-Dir  |  12K - 91K |via LUA    |SBUS/CRSF     |    5   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Multiplex              |Short |     No   |      -     |    -      |   SRXL       |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
-|Spektrum               |Short |    No    |     -      |   -       |  DSM/DSM2    |        |
-|                       |      |          |            |           |  DSM-X/      |        |
+|Spektrum               |Short |Vendor    |     -      |  yes      |  DSM/DSM2    |        |
+|                       |      |Specific  |            |           |  DSM-X/      |        |
 |                       |      |          |            |           |  SRXL        |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 
 Note 1: DragonLink provides a 56Kbaud transparent link for telemetry, allowing full MAVLink telemetry to/from the vehicle from the transmitter module. Dragonlink is an add-on module to the transmitter, such as an FRSky Taranis or RadioMaster T16. See :ref:`common-dragonlink-rc`. `MTP (Mavlink to Passthru) converters <https://www.rcgroups.com/forums/showthread.php?3089648-Mavlink-To-FrSky-Passthrough-Converter>`__ are available to allow direct display of MAVLink Telemetry data on OpenTX transmitters using :ref:`Yaapu Telemetry LUA Script<common-frsky-yaapu>`.
 
-Note 2: See :ref:`common-frsky-yaapu`. Future firmware versions will offer the ability to change parameters over FRSky telemetry from an Open TX compatible transmitter in addition to displaying the telemetry data. Most FRSky compatible transmitters use `OpenTX <https://www.open-tx.org/>`__. Note that R9 systems are not quite Long Range, but much further range than normal FRSky systems, themselves at the very high end of the Short Range category at 1.6-2km range.
+Note 2: See :ref:`common-frsky-yaapu`. The ability to change parameters over FRSky telemetry from an Open TX compatible transmitter in addition to displaying the telemetry data is possible. Most FRSky compatible transmitters use `OpenTX <https://www.open-tx.org/>`__. Note that R9 systems are not quite Long Range, but much further range than normal FRSky systems, themselves at the very high end of the Short Range category at 1.6-2km range.
 
-Note 3: ArduPilot provides a means to send its telemetry data via CRSF such that it can be displayed on `OpenTX <https://www.open-tx.org/>`__ transmitters using the :ref:`Yaapu Telemetry LUA Script<common-frsky-yaapu>`.
+Note 3: ArduPilot provides a means to send its telemetry data via CRSF such that it can be displayed on `OpenTX <https://www.open-tx.org/>`__ transmitters using the :ref:`Yaapu Telemetry LUA Script<common-frsky-yaapu>`. The ability to change parameters over CRSF telemetry from an Open TX compatible transmitter in addition to displaying the telemetry data is also possible. See :ref:`common-crsf-telemetry`
 
 Note 4: ELRS (EpressLRS) is a system that uses the CRSF (TBS Crossfire) RC protocol with several minimizations to simplify the system. It has reduced features but it connects to ArduPilot just like CRSF, when CRSF RXs are attached using a full UART, instead of SBUS protocol to communicate to ArduPilot. See `ExpressLRS site <https://www.expresslrs.org/2.0/>` for more information.
 
 Note 5: The mLRS project is firmware designed specifically to carry both RC and MAVLink. The usable telemetry speed varies by the chosen mode and is managed via RADIO_STATUS flow control. It uses the CRSF (TBS Crossfire) RC protocol on both the receiver and Tx module.  It also integrates full MAVLink telemetry via serial connections on the Tx module and the receiver.
+
+Note 6: Vendor Specific Telem means that they accomodate sensor additions to the vehicle and can display the information on certain Vendor specific TXs but do not send ArduPilot telemetry from the vehicle to ArduPilot compatible GCS or OpenTX display scripts.
 
 Links to Radio Control Systems
 ==============================
