@@ -274,6 +274,10 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        173           | Plane AUTO Landing Abort   |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        174           | Camera Image Tracking      |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        175           | Camera Lens                |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
 
 Intended as continuous PWM range control inputs:
 
@@ -297,6 +301,18 @@ Intended as continuous PWM range control inputs:
 |        210           | Airbrakes                  |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
 |        211           | Walking Robot Height       |          |         |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        212           | Mount1 Roll                |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        213           | Mount1 Pitch               |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        214           | Mount1 Yaw                 |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        215           | Mount2 Roll                |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        216           | Mount2 Pitch               |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        217           | Mount2 Yaw                 |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        300-307       | Scripting RC channels      |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
@@ -548,6 +564,8 @@ Other functions are:
                                          | landing phase of any AUTO mission, and the :ref:`PAYLOAD_PLACE <mav_cmd_nav_payload_place>`
                                          | mission command. It does not  affect the fixed wing
                                          | approach phase of a VTOL landing, QLAND or QRTL modes.
+    Camera Image Tracking                 Activate Camera Image Tracking (only supported by ViewPro camera gimbals)
+    Camera Lens                           Select the active camera lens (only supported by ViewPro camera gimbals)
     ROLL Input                            ROLL input channel. (replaces RCMAP)
     PITCH Input                           PITCH input channel. (replaces RCMAP)
     THROTTLE Input                        THROTTLE input channel. (replaces RCMAP)
@@ -565,6 +583,12 @@ Other functions are:
                                          | QHOVER modes
     Airbrakes                             Controls deployment of :ref:`Airbrakes<airbrakes-on-plane>`
     Walking Robot Height                  Input channel for Walking Robot Height. See :ref:`walking-robots`.
+    Mount1 Roll                           1st camera gimbal's roll control
+    Mount1 Pitch                          1st camera gimbal's pitch control
+    Mount1 Yaw                            1st camera gimbal's yaw control
+    Mount2 Roll                           2nd camera gimbal's roll control
+    Mount2 Pitch                          2nd camera gimbal's pitch control
+    Mount2 Yaw                            2nd camera gimbal's yaw control
     Scripting RC channels                 Allows reading a dedicated RC channel for script inputs
    ===================================== =======================================================================
 
