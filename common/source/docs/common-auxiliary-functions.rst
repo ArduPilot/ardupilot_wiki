@@ -266,9 +266,11 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        169           | Camera Auto Focus          |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
-|       170            |  QSTABILIZE mode           |          |    X    |         |
+|        170           | QSTABILIZE mode            |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
-|       171            |  Compass Calibration       |    X     |    X    |    X    |
+|        171           | Compass Calibration        |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        172           | Battery MPPT Enable        |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        173           | Plane AUTO Landing Abort   |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
@@ -280,7 +282,7 @@ Intended as continuous PWM range control inputs:
 +----------------------+----------------------------+----------+---------+---------+
 |        201           | ROLL Input                 |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
-|        202           | PTCH Input                 |    X     |    X    |    X    |
+|        202           | PITCH Input                |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        203           | THROTTLE Input             |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
@@ -539,6 +541,7 @@ Other functions are:
                                          | for :ref:`onboard calibration <onboard_calibration>` had
                                          | been pressed. Returning the switch to low will cancel the
                                          | calibration if still in progress.
+    Battery MPPT Enable                   Enable the Packet Digital MPPT solar panel power monitor
     Plane AUTO Mode Landing Abort        | If switched to the HIGH position, will abort any landing that
                                          | is currently in progress while in AUTO mode.
                                          | This includes the VTOL, or fixed wing,
