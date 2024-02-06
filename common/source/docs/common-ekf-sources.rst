@@ -23,8 +23,14 @@ The options for these are generally self-explanatory. However, the :ref:`EK3_SRC
 Source Switching
 ================
 
-Three set of EKF position and velocity source parameters are provided which can be selected via an :ref:`RC switch <common-auxiliary-functions>` set to "90". Otherwise, the SRC1 set is used.
+Three set of EKF position and velocity source parameters are provided which can be selected via an :ref:`RC switch RCx_OPTION <common-auxiliary-functions>` set to "90". Otherwise, the _SRC1 set is used.
 
 This feature is especially helpful when using :ref:`common-non-gps-to-gps`.
 
+Velocity Source Fusing
+======================
+
+There is an option to fuse all sources of velocity into the EKF.  This will take velocity information from the XY and Z sources defined by :ref:`EK3_SRCx_VELXY<EK3_SRCx_VELXY>` and :ref:`EK3_SRCx_VELZ<EK3_SRCx_VELZ>`, where 'x' is the source number (1-3).  To enable this option set the first bit in the :ref:`EK3_SRC_OPTIONS<EK3_SRC_OPTIONS>` bitmask.
+
+.. warning:: When using this option, users should ensure that the velocity measurements being provided to the EKF are both in the same reference frame/co-ordinate system.
 
