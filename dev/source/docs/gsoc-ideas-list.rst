@@ -6,10 +6,8 @@ List of Suggested Projects for GSoC 2024
 
 This is a list of projects suggested by ArduPilot developers for `GSoC 2024 <https://summerofcode.withgoogle.com/>`__. These are only suggestions so if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2024.
 
-- Rover AutoTune
-- Camera and Gimbal enhancements
-- Multicopter Swarm Avoidance
-- ROS2 support
+- Visual Follow-me using AI
+- MAVProxy AI chat enhancements
 - WebTools automated log analysis
 
 See lower down on this page for more details for some of the projects listed above
@@ -29,86 +27,53 @@ When making the difficult decision about which students to accept, we look for:
 - Experience contributing to ArduPilot or other open source projects
 - Understanding of Git and/or GitHub
 
-Rover AutoTune
---------------
+Visual Follow-me using AI
+-------------------------
 
-- Skills required: C++, Lua
-- Mentor: Randy Mackay
-- Expected Size: 175h or 350h
-- Level of Difficulty: Hard
-- Expected Outcome: Autotune mode added that automatically calculates the frame limits, speed control gains and steering control gains for `Ackermann <https://ardupilot.org/rover/docs/rover-motor-and-servo-connections.html#separate-steering-and-throttle>`__ and `skid steering vehicles <https://ardupilot.org/rover/docs/rover-motor-and-servo-connections.html#skid-steering>`__.
-
-This project involves `adding a new AutoTune mode to the Rover firmware <https://ardupilot.org/dev/docs/rover-adding-a-new-drive-mode.html>`__ to calculate the frame limits, speed control and steering control gains.  This is essentially an automated version of the manual tuning process documented in `this section of the Rover wiki <https://ardupilot.org/rover/docs/rover-first-drive.html>`__.
-
-Similar to `Copter's autotune mode <https://ardupilot.org/copter/docs/autotune.html>`__ and `VTOL-quicktune.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/VTOL-quicktune.lua>`__ script this new mode should include a state machine that provides various throttle and steering outputs and then monitors the response by checking the AHRS/EKF outputs.
-
-The list of parameters that should be tuned includes:
-
-- :ref:`ATC_ACCEL_MAX <rover:ATC_ACCEL_MAX>` and :ref:`ATC_DECEL_MAX <rover:ATC_DECEL_MAX>`
-- :ref:`ATC_STR_RAT_FF <rover:ATC_STR_RAT_FF>`
-- :ref:`ATC_STR_RAT_MAX <rover:ATC_STR_RAT_MAX>`
-- :ref:`ATC_TURN_MAX_G <rover:ATC_TURN_MAX_G>`
-- :ref:`CRUISE_SPEED <rover:CRUISE_SPEED>` and :ref:`CRUISE_THROTTLE <rover:CRUISE_THROTTLE>` (or :ref:`ATC_SPEED_FF <rover:ATC_SPEED_FF>`)
-
-See `Issue #8851 <https://github.com/ArduPilot/ardupilot/issues/8851>`__
-
-Some of the development can be completed using the :ref:`SITL simulator <sitl-simulator-software-in-the-loop>` but funding will also be provided for the RC car frame and autopilot
-
-Camera and Gimbal enhancements
-------------------------------
-
-- Skills required: C++, mavlink
+- Skills required: Python, Yolo, C++
 - Mentor: Randy Mackay
 - Expected Size: 175h or 350h
 - Level of Difficulty: Medium
-- Expected Outcome: Improved camera and gimbal support in both pilot controlled and autonomous modes (Auto, Guided)
+- Expected Outcome: Copter or Rover follows a user while also keeping the camera mount pointed at them
 
-This project involves numberous small and medium sized enhancements and bug fixes to ArduPilot's camera and gimbal support (see `Camera enhancement <https://github.com/ArduPilot/ardupilot/issues/23151>`__ and `Gimbal enhancement <https://github.com/ArduPilot/ardupilot/issues/20985>`__ lists).  These include:
+There are two steps to this project
 
-- Camera Zoom position support
-- Camera Focus position support
-- Improve compliance with `MAVLink Camera Protocol <https://mavlink.io/en/services/camera.html>`__ (see AP's :ref:`MAVLink Interface Camera Controls wiki <mavlink-camera>`)
-- Multiple gimbal support (see `Mount: issues with multi-gimbal support <https://github.com/ArduPilot/ardupilot/issues/21665>`__)
-- Resolve any other known issues with the Siyi, Gremsy drivers (e.g. `Siyi should use angle control <https://github.com/ArduPilot/ardupilot/issues/23149>`__)
-- Support for pointing gimbal at :ref:`Circle center <copter:circle-mode>`
-- DroneCAN gimbal driver (see `Connect a Gimbal via DroneCAN <https://github.com/ArduPilot/ardupilot/issues/22148>`__)
-- Enhance SITL gimbal support including adding multiple gimbals to a RealFlight model
-- Work with AP QGC developer to ensure AP provides all info required for new camera gimbal control screen
-- Mission Planner fixes to `Camera Gimbal setup <https://github.com/ArduPilot/MissionPlanner/issues/3049>`__ and Payload Control screens
+Step #1 is to add Visual Follow-me support for all `ArduPilot camera gimbals <https://ardupilot.org/copter/docs/common-cameras-and-gimbals.html>`__:
 
-Funding will be provided for the required hardware which will likely include a camera gimbal, transmitter and autopilot.
+- Users will start "image tracking" using the existing `Image Tracking auxiliary function <https://ardupilot.org/copter/docs/common-auxiliary-functions.html>`__ or by sending a `DO_TRIGGER_CONTROL <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_TRIGGER_CONTROL>`__ command from a ground station (no GCSs support sending this yet)
+- ArduPilot's `GCS_MAVLink <https://github.com/ArduPilot/ardupilot/tree/master/libraries/GCS_MAVLink>`__ and `AP_Mount <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Mount>`__ libraries will be enhanced to forward this command onto the companion computer (e.g. NVidia Nano, RPI5, etc)
+- The companion computer will run a new Python program using `Yolov8 <https://docs.ultralytics.com/>`__ (or similar) to recognise objects (e.g. people) and then send `mavlink gimbal commands <https://ardupilot.org/dev/docs/mavlink-gimbal-mount.html>`__ to keep the gimbal pointed at the object
+- The Python program could first be written as a MAVProxy module before being migrated to a stand-alone program
 
-Multicopter Swarm Avoidance
----------------------------
+Step #2 is to allow the vehicle to follow the object
 
-- Skills required: C++, python, mavlink
-- Mentor: Peter Barker, Rishabh Singh
-- Expected Size: 175h or 350h
+- Extend the Python program to calculate the object's Location (e.g. lat, lon, altitude) (see `AP_Mount_Backend::get_poi() <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Mount/AP_Mount_Backend.cpp#L489>`__ or `AP_Scripting's mount-poi.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/mount-poi.lua>`__ to see how this can be done).  This location should be sent to the vehicle using the `CAMERA_TRACKING_GEO_STATUS <https://mavlink.io/en/messages/common.html#CAMERA_TRACKING_GEO_STATUS>`__ message
+- Enhance `Copter's Follow mode <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_follow.cpp>`__ (`over Rover's <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode_follow.cpp>`__) to consume and use the `CAMERA_TRACKING_GEO_STATUS <https://mavlink.io/en/messages/common.html#CAMERA_TRACKING_GEO_STATUS>`__ message
+
+An important output of the project is to document the setup for future developers and users.
+
+Some of the development can be completed using the :ref:`SITL simulator <sitl-simulator-software-in-the-loop>` but funding will also be provided for an RC car frame, autopilot and companion computer (e.g. NVidia Nano, RPI5, etc) if required.
+
+MAVProxy AI Chat Enhancements
+-----------------------------
+
+- Skills required: Python, AI
+- Mentor: Randy Mackay
+- Expected Size: 175h
 - Level of Difficulty: Medium
-- Expected Outcome: vehicles in a swarm should avoid each other
+- Expected Outcome: The MAVProxy chat module can better control Copters, Planes and Rovers including creating new missions
 
-This project involves enhanceing ArduPilot's Copter software so that vehicles flying in a swarm avoid each other.  The control logic should run primarily on each drone's flight controller (e.g. not on the ground station nor a companion computer).
+This project involves numerous small enhancements and bug fixes to `MAVProxy's AI chat module <https://ardupilot.org/mavproxy/docs/modules/chat.html>`__ (`see blog here <https://discuss.ardupilot.org/t/ardupilot-openais-chatgpt-using-mavproxys-chat-module/111336>`__) including:
 
-- AC_Avoidance class should be enhanced to consume the location and speed of other vehicles.  The "simple avoidance" feature (see :ref:`Copter's object avoidance wiki page <copter:common-object-avoidance-landing-page>`) should then cause the vehicle to stop before hitting another vehicle in most modes (Loiter, Auto, Guided, etc).  Ideally the vehicle should also backaway from other vehicles if they get too close.
-- SITL should be used to develop and test this feature
-- by centralising remote vehicle knowledge and generalising the follow database.  Allow AC_Avoidance to work on this new database
+- Arming and control of Planes
+- Arming and control of Rovers and Boats
+- Camera gimbal controls (point gimbal, take pictures, record video)
+- Create simple missions
+- Improve reliability of existing functions
 
-Once complete, it should be possible to run a demonstration in SITL in which three vehicle are visible on the map.  Two should be acting as obstacles (flying in Guided mode) while the third is flown by a pilot in Loiter mode.  We should be able to move the two "obstacle" vehicles around while the third vehicle will not run into the others regardless of what inputs the pilot provides.
+A stretch goal is to replace the use of OpenAI with a locally installed, open source LLM.
 
-Development should be possible with only an Ubuntu or Windows PC but funding for hardware will also be provided if required.
-
-ROS2 support
-------------
-
-- Skills required: ROS2, C++, python, mavlink
-- Mentor: Andrew Tridgell
-- Expected Size: 175h or 350h
-- Level of Difficulty: Medium
-- Expected Outcome: ArduPilot vehicles can communicate with ROS2
-
-Currently, there is no MAVROS equivalent for ROS2, with `OSRF <https://www.openrobotics.org>`__ quickly moving to make ROS2 the standard version of ROS, supporting it has become a growing interest in our community. An initial port of the basic features of MAVROS would be a big step towards integrating ArduPilot and ROS2.
-
-A previous GSoC made good progress on this project (see `Dds prototype PR <https://github.com/ArduPilot/ardupilot/pull/17779>`__)
+Most of the development can be completed using the :ref:`SITL simulator <sitl-simulator-software-in-the-loop>` and any OpenAI usage costs will be covered. Funding for an autopilot and frame will be provided if required.
 
 WebTools automated log analysis
 -------------------------------
