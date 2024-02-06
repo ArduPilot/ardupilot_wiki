@@ -31,7 +31,7 @@ Additional Parts
 - RC transmitter with at least 6 channels
 - (Optional) four `5cm (2inch) C-clamps <https://www.amazon.com/C-Clamp-Industrial-Strength-Woodworking-Building/dp/B0BLC44XHT>`__ to ease assembly
 - (Optional) `solder sleeves <https://www.amazon.com/TICONN-Connectors-Waterproof-Insulated-Electrical/dp/B07GDDKJ1D>`__ to shorten ESC wires
-- (Optional) 2cm x 50cm velcro battery straps to replace very short straps provided
+- (Optional) 2.5cm x 40cm velcro battery straps to replace very short straps provided
 
 Connection and Setup
 --------------------
