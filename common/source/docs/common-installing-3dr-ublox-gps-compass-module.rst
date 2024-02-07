@@ -18,7 +18,7 @@ Connecting the Autopilot
 .. _common-installing-3dr-ublox-gps-compass-module_connecting_to_pixhawk:
 
 .. image:: ../../../images/gps-connection.jpg
-     :target: ../_iamges/gps-connection.jpg
+     :target: ../_images/gps-connection.jpg
 
 
 Example: Connecting to Pixhawk
