@@ -26,7 +26,7 @@ Pinout
 ======
 
 .. image:: ../../../images/PH4-mini-pinout.jpg
-    :target: ../_iamges/PH4-mini-pinout.jpg
+    :target: ../_images/PH4-mini-pinout.jpg
 
 UART Mapping
 ============
