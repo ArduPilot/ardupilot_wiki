@@ -41,7 +41,7 @@ Connection and Setup
 
 Connect the four ESC wires to the back of the autopilot as shown in the :ref:`QuadX configuration <connect-escs-and-motors>`
 
-Parameter file: `hexsoon-td650.param <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/hexsoon-td650.param>`__
+Parameter file: `hexsoon-edu650.param <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/hexsoon-edu650.param>`__
 
 This parameter file can also be loaded using the Mission Planner's Config/Tuning >> Full Parameter Tree page by selecting "hexsoon-td650" from the drop down on the middle right and then push the "Load Presaved" button.
 
