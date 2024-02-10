@@ -85,10 +85,19 @@ is hosted on GitHub at: `https://github.com/ArduPilot/ardupilot_gazebo <https://
 
     Ubuntu
 
-    ::
+      For Gazebo garden
 
-      sudo apt update
-      sudo apt install libgz-sim7-dev rapidjson-dev
+      ::
+
+        sudo apt update
+        sudo apt install libgz-sim7-dev rapidjson-dev
+
+      For Gazebo Harmonic
+
+      ::
+
+        sudo apt update
+        sudo apt install libgz-sim8-dev rapidjson-dev
 
     macOS
 
@@ -106,8 +115,11 @@ is hosted on GitHub at: `https://github.com/ArduPilot/ardupilot_gazebo <https://
 
 #. Build the plugin
 
+    Set GZ_VERSION environment variable according to installed gazebo version (replace harmonic with garden if required):
+
     ::
 
+      export GZ_VERSION=harmonic
       cd ardupilot_gazebo
       mkdir build && cd build
       cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
