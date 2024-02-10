@@ -116,7 +116,7 @@ MAVProxy
 MAVProxy can be used to send commands to the flight controller from the Pi. 
 It can also be used to route telemetry to other network endpoints.
 
-This assumes you have a SSH connection to the Pi. If not, see see the 
+This assumes you have a SSH connection to the Pi. If not, see 
 the `RPi Documentation <https://www.raspberrypi.org/documentation/remote-access/ssh/>`__.
 
 See the :ref:`MAVProxy Documentation<mavproxy:mavproxy-downloadinstalllinux>` for install instructions
