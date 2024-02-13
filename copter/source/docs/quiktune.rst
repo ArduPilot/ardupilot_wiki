@@ -12,6 +12,8 @@ The `VTOL QuikTune <https://github.com/ArduPilot/ardupilot/blob/Copter-4.5/libra
 The script slowly increases the relevant gains until it detects an oscillation.  It then reduces the gains by 60% and moves onto the next gain.
 Once all the gains have been tuned the tune completes and the user can decide to save or discard the new gains.
 
+..note: be sure that you have prepared the vehicle for tuning by setting up parameters discussed here: :ref`setting-up-for-tuning`. Also to assure the best tune, setup the noise notch filtering, see :ref:`common-imu-notch-filtering`. You may run QuickTune without this step to obtain general stability, see :ref`ac_rollpitchtuning` if the vehicle cant do an initial hover stably. Then setup the filters and retune for best results.
+
 The script attempts to tune all these parameters (in the given order)
 
 - :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Multi>`
