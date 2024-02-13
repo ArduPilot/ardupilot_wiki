@@ -10,6 +10,8 @@ AutoTune attempts to automatically tune the Stabilize P, Rate P and D, and maxim
 
    AutoTune is not always able to determine a good tune for the vehicle and may result in gains that lead to an unflyable vehicle that may crash.  Please follow the :ref:`Tuning Process Instructions <tuning-process-instructions>` before attempting to use AutoTune. After following those instructions, and have :ref:`evaluated your initial tune <evaluating-the-aircraft-tune>`, should to try AutoTune.
 
+.. note:: using :ref:`quiktune` before AUTOTUNE, AND setting up the noise notch filtering, see :ref:`common-imu-notch-filtering`, is highly recommended in order to get the best tune and avoid possible crashes when using AUTOTUNE.
+
 ..  youtube:: js2GzeRysAc
     :width: 100%
 
