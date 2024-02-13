@@ -18,7 +18,8 @@ parameters. The following topics show you how.
     Initial Tuning Flight <initial-tuning-flight>
     Evaluating the Tune <evaluating-the-aircraft-tune>
     Manual Tuning <ac_rollpitchtuning>
-    AUTOTUNE <autotune>
+    QuikTune <quiktune>
+    AutoTune <autotune>
     Input Shaping <input-shaping>
     Throttle Boost <throttle-boost>
     Transmitter Based Tuning <common-transmitter-tuning>
