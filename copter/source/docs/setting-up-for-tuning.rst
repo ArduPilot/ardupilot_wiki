@@ -27,7 +27,7 @@ Parameters used to linearise your motor thrust curve.
 
 - :ref:`MOT_BAT_VOLT_MAX <MOT_BAT_VOLT_MAX>`: 4.2v x No. Cells
 - :ref:`MOT_BAT_VOLT_MIN <MOT_BAT_VOLT_MIN>`: 3.3v x No. Cells
-- :ref:`Q_M_OPTIONS<Q_M_OPTIONS>` = 0 (default). The default is to use sag compensated voltage for the above and during tuning computations. It can be set to 1 to use raw voltage instead of sag compensated voltage, which may improve tuning results for light vehicles.
+- :ref:`MOT_OPTIONS<MOT_OPTIONS>` = 0 (default). The default is to use sag compensated voltage for the above and during tuning computations. It can be set to 1 to use raw voltage instead of sag compensated voltage, which may improve tuning results for light vehicles.
 
 Next setup the thrust expo. If you are setting up a professional
 aircraft then you should invest in a thrust stand so you can
