@@ -14,12 +14,12 @@ Once all the gains have been tuned the tune completes and the user can decide to
 
 The script attempts to tune all these parameters (in the given order)
 
-- ATC_RAT_RLL_D
-- ATC_RAT_RLL_P and ATC_RAT_RLL_I
-- ATC_RAT_PIT_D
-- ATC_RAT_PIT_P and ATC_RAT_PIT_I
-- ATC_RAT_YAW_D
-- ATC_RAT_YAW_P and ATC_RAT_YAW_I
+- :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Multi>`
+- :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Multi>` and :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Multi>`
+- :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Multi>`
+- :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Multi>` and :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Multi>`
+- :ref:`ATC_RAT_YAW_D<ATC_RAT_YAW_D__AC_AttitudeControl_Multi>`
+- :ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Multi>` and :ref:`ATC_RAT_YAW_I<ATC_RAT_YAW_I__AC_AttitudeControl_Multi>`
 
 The advantage over :ref:`AutoTune <autotune>` is that QuikTune is safer because the vehicle does not need to move or twitch.
 The disadvantage is that QuikTune cannot find the vehicle's maximum rotational accelerations (e.g. :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>`, :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`, :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>`)
