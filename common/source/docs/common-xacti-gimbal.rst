@@ -92,6 +92,16 @@ Control and Testing
 
 See :ref:`Gimbal / Mount Controls <common-mount-targeting>` and :ref:`Camera Controls <common-camera-controls>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
 
+Additional Settings
+-------------------
+
+Many more settings not directly supported by ArduPilot can be changed using DroneCAN.
+If using Mission Planner, use the Setup, Optional Hardware, DroneCAN/UAVCAN screen as shown below.
+
+.. image:: ../../../images/xacti-settings-via-dronecan.png
+    :target: ../_images/xacti-settings-via-dronecan.png
+    :width: 450px
+
 Firmware Updates
 ----------------
 
