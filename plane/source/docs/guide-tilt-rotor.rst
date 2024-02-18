@@ -62,6 +62,7 @@ hovering. Currently supported tilt-rotor frame classes are:
    <tr><td>Octaquad</td><td>4</td></tr>
    <tr><td>Y6</td><td>5</td></tr>
    <tr><td>Tricopter</td><td>7</td></tr>
+   <tr><td>Bicopter</td><td>10</td></tr>
    </table>
 
 .. note: the BiCopter tilt-rotor QuadPlane is a special case. It requires that :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` be set to 10 which is reserved for Tailsitter configurations only, normally. See :ref:`BiCopter <bicopter>`  below.
