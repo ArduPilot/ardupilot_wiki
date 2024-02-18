@@ -30,41 +30,31 @@ Below is a diagram showing how to connect the Here+ to a Pixhawk.
 .. image:: ../../../images/here-plus-pixhawk.png
 	:target: ../_images/here-plus-pixhawk.png
 
-Installing the Drivers
-======================
+Installing the Drivers and U-Center
+===================================
 
-Windows 10 users (and perhaps others) will need to download and install the `u-blox GNSS Standard Driver for Windows, v1.2.0.8 <https://www.u-blox.com/sites/default/files/products/tools/UBX-GNSS-CDC-ACM-windows_Driver_%28UBX-drv-v1.2.0.8%29.exe.zip>`__.
-
-If this link is broken you may find a newer version is available under the "Driver" section of `this ublox page <https://www.u-blox.com/en/product-resources?f[0]=property_file_product_filter%3A2779>`__.
-
-When first installed, the device may show up in the "sensors" category in device manager.  If this happens, please right click on it and "update driver" 
-select 
-"Browse my computer for driver software"
-then select 
-"Let me pick from a list of devices"
-the next screen will show a list of possible drivers.  Select..
-"USB Serial Device"
-Select next and finish.
+Windows  users  will need to download and install the `u-blox u-center application and drivers <https://www.u-blox.com/en/product/u-center>`__ in order to update the firmware to The new version of 1.30 firmware which includes new feature of fusing other satellite systems (Glonass / beidou) with GPS for RTK operations, effectively increasing the RTK positioning accuracy. Therefore, it is recommended that all users upgrade to 1.30 or later firmware before using HERE+. 
 
 If installed correctly, when plugged in, the GPS should appear in the Device Manager as "USB Serial Device".
 
 .. image:: ../../../images/here-plus-gps-windows-device.png
 	:target: ../_images/here-plus-gps-windows-device.png
 
-Upgrading to U-blox 1.30 Firmware
+Upgrading U-blox Firmware
 =================================
-The default firmware version of the HERE + modules is ublox-1.10 firmware. The new version of 1.30 firmware includes new feature of fusing other satellite systems (Glonass / beidou) with GPS for RTK operations, effectively increasing the RTK positioning accuracy. Therefore, it is recommended that all users upgrade to 1.30 firmware before using HERE+. 
+The default firmware version of the HERE + modules is ublox-1.10 firmware. The newer version of 1.30  or later firmware includes new feature of fusing other satellite systems (Glonass / beidou) with GPS for RTK operations, effectively increasing the RTK positioning accuracy. Therefore, it is recommended that all users upgrade to 1.30 or later firmware before using HERE+. 
  
-During the preparation of this guide, ublox-1.40 version of the firmware has also been released. 1.40 version firmware introduced a new feature called the mobile base station, that is, the base station need not be fixed in a location. For example, a base station may be placed on a moving vehicle or boat. Upgrading to Ublox-1.40 version is similar to upgrading to 1.30. For users who do not need to use the mobile baseline feature, upgrading to version 1.30 is sufficient.
+Later versions have also been released. 1.40 version firmware introduced a new feature called the mobile base station, that is, the base station need not be fixed in a location. For example, a base station may be placed on a moving vehicle or boat. Upgrading to Ublox-1.40 version is similar to upgrading to 1.30. For users who do not need to use the mobile baseline feature, upgrading to version 1.30 is sufficient.
 
-Downloading U-centre UI and 1.30 Firmware
-=========================================
+Firmware releases can be found `here <https://www.u-blox.com/en/product/neo-m8p-series?legacy=Current#Documentation-&-resources>`__. Download the base (reference) and/or rover version , as appropriate to use in the following step.
+
+Upgrading Firmware
+==========================
 Upgrading firmware requires the use of Ublox's Windows software U-center. To download U-center, please go to the `official website <https://www.u-blox.com/en/product/u-center-windows>`__. Then follow the prompts to install U-cent software. During the installation process, you will be prompted to install the device Driver, please ensure that only the Standard Driver For Windows is checked, as shown below. 
 
 .. image:: ../../../images/HERE+_Ublox_standard_drivers.png
 	:target: ../_images/HERE+_Ublox_standard_drivers.png
 
-You will also need to download firmware `here <https://www.ublox.com/en/search?keywords=HPG+1.30>`__. Click the choice: u-blox M8 Flash Firmware 3.01 HPG 1.30 - ONLY for High Precision GNSS products.
 
 Connect your HERE+ Base and Rover to Computer
 =============================================
@@ -91,7 +81,6 @@ Click tools->u-blox 5 – 8 Flash Firmware Update, and click the settings as sho
 .. image:: ../../../images/HERE+_Firmware_update_settings.png
 	:target: ../_images/HERE+_Firmware_update_settings.png
 	
-In Firmware image, unzip and select the downloaded 1.30 Firmware. For base module, chose the firmware with title: UBX_M8_301_HPG_130_REFERENCE_NEOM8P2.59a07babb501ba6a89ff87cac2f 2765f.bin  For rover module, choose the firmware: UBX_M8_301_HPG_130_ROVER_NEOM8P0.3ee86a9e4775e3335e742b53527fa5 d0.bin 
 
 .. image:: ../../../images/HERE+_Select_firmware.png
 	:target: ../_images/HERE+_Select_firmware.png
