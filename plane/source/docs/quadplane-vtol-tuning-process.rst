@@ -100,7 +100,7 @@ vehicle. These parameters are critical to the tuning process.
 - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>`: 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props
 - :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`: 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
 - :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>`: 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
-- :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>`: 27000 for 10 inch props, 18000 for 20 inch props, 9000 for 30 inch props
+- :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>`: 7500 for 6 inch props,6750 for 10 inch props, 4500 for 20 inch props, 2250 for 30 inch props
 - :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>`: 0.5 x :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` / 4500
 
 
@@ -108,7 +108,7 @@ vehicle. These parameters are critical to the tuning process.
 - :ref:`Q_A_RAT_PIT_FLTT <Q_A_RAT_PIT_FLTT>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
 - :ref:`Q_A_RAT_RLL_FLTD <Q_A_RAT_RLL_FLTD>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
 - :ref:`Q_A_RAT_RLL_FLTT <Q_A_RAT_RLL_FLTT>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`Q_A_RAT_YAW_FLTE <Q_A_RAT_YAW_FLTE>`: 2
+- :ref:`Q_A_RAT_YAW_FLTE <Q_A_RAT_YAW_FLTE>`: 0 for vectored yaw; 2.5 for other types of QuadPlanes
 - :ref:`Q_A_RAT_YAW_FLTT <Q_A_RAT_YAW_FLTT>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
 
 
