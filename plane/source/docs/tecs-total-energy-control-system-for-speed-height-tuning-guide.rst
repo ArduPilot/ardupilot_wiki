@@ -415,7 +415,7 @@ values make it faster to respond, larger values make it slower to respond.
 .. _tecs-total-energy-control-system-for-speed-height-tuning-guide_lim_pitch_max:
 
 :ref:`PTCH_LIM_MAX_DEG <PTCH_LIM_MAX_DEG>`:
-This is the maximum pitch angle (in centidegrees) that the controller
+This is the maximum pitch angle (in degrees) that the controller
 will demand. It should be set to a value that the aircraft can achieve
 whilst maintaining airspeed with the throttle set to :ref:`THR_MAX`. 
 
@@ -423,7 +423,7 @@ whilst maintaining airspeed with the throttle set to :ref:`THR_MAX`.
 .. _tecs-total-energy-control-system-for-speed-height-tuning-guide_lim_pitch_min:
 
 :ref:`PTCH_LIM_MIN_DEG <PTCH_LIM_MIN_DEG>`:
-This is the minimum pitch angle (in centidegrees) that the controller
+This is the minimum pitch angle (in degrees) that the controller
 will demand. It should be set to a value that the aircraft can achieve
 without over-speeding with the throttle set to :ref:`THR_MIN<THR_MIN>`.
 
