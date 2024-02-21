@@ -9,6 +9,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2024 <htt
 - Visual Follow-me using AI
 - MAVProxy AI chat enhancements
 - WebTools automated log analysis
+- Improvements to the Custom Build Server
 
 See lower down on this page for more details for some of the projects listed above
 
@@ -88,6 +89,36 @@ ArduPilot has several `WebTools <https://firmware.ardupilot.org/Tools/WebTools/>
 The next evolution is a tool to look for in-flight issues. There are two existing automated log review tools. `MissionPlanner <https://ardupilot.org/copter/docs/common-downloading-and-analyzing-data-logs-in-mission-planner.html#automatic-analysis-of-logs>`__ includes a basic analysis tool.
 `Dronekit log analyzer <https://github.com/dronekit/dronekit-la/tree/master>`__ has a larger number of checks (see: `analyzers <https://github.com/dronekit/dronekit-la/blob/master/docs/reference/analyzers.rst>`__) and would be the initial benchmark for this project.
 Once a framework for the tool is up and running checks for as many issues as possible can be added, the tool should focus on making the checks easy to add and update rather than a fancy-looking interface.
+
+Improvements to the Custom Build Server
+---------------------------------------
+
+- Skills required: Python, Flask, Javascript, Docker
+- Mentor: Shiv Tyagi, Peter Barker
+- Expected Size: 175h to 350h
+- Level of Difficulty: Medium
+- Expected Outcome: Enhanced custom build server with automated build size estimation and operational/security improvements
+
+The custom build server stands as a valuable utility, empowering users to tailor their software builds by selectively enabling or disabling features deemed less crucial for their specific requirements, thereby conserving flash memory on flight controllers. 
+Originally developed as part of the Google Summer of Code program in 2020, this application has demonstrated its effectiveness in enhancing flexibility and resource management. However, there remains room for improvement to further elevate its usability and broaden its appeal, ensuring it meets the diverse needs of an expanding user base.
+
+Some of the problems we observe in the custom build server are as follows:
+- Build failures occur due to the excessive selection of features that cannot fit into the memory of the intended board.
+- Application can become unresponsive due to unexpected exceptions during the build step or any other step in the process.
+- The manual addition of branches is required every time a release is made at github.com/ardupilot/ardupilot.
+- The testing environment is inadequate. There is no easy way for a developer to test feature additions and deletions.
+
+Some possible improvements to address these issues can be:-
+- Come up with a mathematical algorithm to estimate the approximate size of each feature on a branch. This can be achieved by leveraging the `test_build_options.py <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/test_build_options.py>` script to measure the size of the binary when each feature is sequentially enabled and disabled. An algorithm should be developed to estimate the size of individual features while accounting for their dependencies. Remember, when a feature is enabled, it also activates any dependent features.
+- Implement containerisation for running the application. By containerising the application, it can also be divided into multiple services, such as the main application and micro-services responsible for tasks such as reporting the status of server builds. Containerization not only enhances application security but also facilitates scalability and ease of deployment.
+- Develop a service responsible for monitoring the GitHub repository (github.com/ardupilot/ardupilot) or firmware.ardupilot.org for new releases. This service can automatically add relevant entries to the main application, enabling it to serve customised builds for newly released branches. This automation streamlines the process of integrating new releases into the build server.
+- Enhance the build server to support builds from any repository, not just the upstream repository. While implementing this feature, careful consideration must be given to potential complexities and challenges associated with supporting builds from multiple repositories. 
+
+Some github issues having feature requests for Custom Build Server:-
+- https://github.com/ArduPilot/ardupilot/issues/21345
+- https://github.com/ArduPilot/CustomBuild/issues/2
+
+Remember, these are just suggestions. The contributors can use the application at `custom.ardupilot.org <https://custom.ardupilot.org>`, read the source code `here <https://www.github.com/ardupilot/CustomBuild>`` and suggest any other improvement which they would like to see in the app.
 
 Projects Completed in past years
 --------------------------------
