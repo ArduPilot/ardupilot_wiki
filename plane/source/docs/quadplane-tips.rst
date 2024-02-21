@@ -31,14 +31,10 @@ For vectored thrust frames, fixed-wing mode alignment is also critical. Very sma
 X vs H Quad Mixing
 ==================
 
-In theory, it does not matter which is used. With perfectly rigid mounting, no performance or flight difference will be noted as far as motor control dynamics. However, the actual implementation of the mounting can result in differences in drag and efficiency.
+If the airframe is perfectly rigid, the performance difference between X and H mixing schemes is negligible. However, quadplanes structures are often less rigid than traditional multirotors and torsional effects must be considered. When a yaw input results in most of a quadplane's weight being supported by a diagonal pair of motors, the fuselage or wing of a quadplane may twist and distort the thrust vectors of some or all motors. This distortion often induces a yaw moment that can reduce or even completely disable yaw effectiveness unless the appropriate mixing scheme is used. While this effect is airframe dependent, it usually can be summarized in one of two ways:
 
-- X frame mounting or horizontal H frame type mounting creates the most drag.
-- H frame mounting fore-aft (i.e., on the wings in line with wing chord) is the least drag, but also can result in a lot of flexing, depending on wing construction
-
-In addition, if the mounting method allows ANY twist to occur, serious performance degradation can occur. For example, a conventional style plane airframe can have the motors mounted on cross members in the nose and rear fuselage. If the fuselage allows a minor twist to occur (like during yaw with one diagonal supporting most of the plane's weight), which most foam style planes will, then if X mixing is used, the twist induced during yaw actually acts to decrease the yaw. In some cases, it can completely disable yaw effectiveness. However, the same configuration using H mixing, the twist will actually aid the desired yaw.
-
-In general, in a Quad configuration, use H mixing and not X mixing, independent of the actual physical mounting arrangement.
+- Airframes with quad motors mounted to arms extending forward and aft of the wings, aligned with the chord direction. X mixing scheme should be used such that any induced twist complements the desired yaw. If the H mixing scheme is used with this configuration, yaw inputs may induce wing twist that counteracts the desired yaw.
+- Airframes with quad motors mounted to arms extending left and right from the fuselage, usually attached near the nose and tail. H mixing scheme should be used such that any induced twist complements the desired yaw. If the X mixing scheme is used with this configuration, yaw inputs can induce fuselage twist that counteracts the desired yaw.
 
 Increasing YAW Authority
 ========================
