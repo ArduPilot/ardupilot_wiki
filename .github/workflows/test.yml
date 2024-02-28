@@ -35,4 +35,5 @@ jobs:
           flake8 .
       - name: Test build
         run: |
+          export AP_SPHINXOPTS=-W
           ./update.py --parallel 4 --verbose --destdir=/tmp/web
