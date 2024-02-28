@@ -6,6 +6,8 @@ JAE JRE-30 Radar
 
 The JAE (Japan Aviation Electronics Industry) JRE-30 radar is a light weight (110g) radar with a maximum range of over 50m.  The relatively wide beam width (about 20 deg) and reliable ranging even in difficult environments can make it a better choice than lidar for some applications.
 
+The sensor supports both CAN and Serial interfaces.
+
 .. image:: ../../../images/jae-jre-30.jpg
     :target: ../_images/jae-jre-30.jpg
 
@@ -54,15 +56,14 @@ The radar has an 12-pin PicoBlade Molex connector with the following pinout
 |  9~12  | NC     | Not connected          |
 +--------+--------+------------------------+
 
-
 If you choose to build a custom cable BPH-002T-PO.5S socket connectors should be used.
+
+Setup using Serial
+==================
 
 .. image:: ../../../images/jae-jre-30-autopilot.png
     :target: ../_images/jae-jre-30-autopilot.png
     :width: 450px
-
-Setup
-=====
 
 Set the following parameters which assume the radar is connected to the autopilot's Serial1 port
 
@@ -71,3 +72,19 @@ Set the following parameters which assume the radar is connected to the autopilo
 - Set :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = 41 (JRE Serial)
 - Set :ref:`RNGFND1_MIN_CM<RNGFND1_MIN_CM>` = 10 (cm)
 - Set :ref:`RNGFND1_MAX_CM<RNGFND1_MAX_CM>` = 5000 (cm)
+
+Setup using CAN
+===============
+
+.. image:: ../../../images/jae-jre-30-autopilot-can.png
+    :target: ../_images/jae-jre-30-autopilot-can.png
+    :width: 450px
+
+Set the following parameters which assume the radar is connected to the autopilot's CAN1 port
+
+- Set :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1 (First Driver)
+- Set :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` = 1 (DroneCAN)
+- Set :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = 24 (DroneCAN)
+- Set :ref:`RNGFND1_MIN_CM<RNGFND1_MIN_CM>` = 10 (cm)
+- Set :ref:`RNGFND1_MAX_CM<RNGFND1_MAX_CM>` = 5000 (cm)
+- Set :ref:`RNGFND1_ADDR<RNGFND1_ADDR>` = 1
