@@ -32,7 +32,7 @@ lock_file build.lck || {
     exit 1
 }
 # activate Python venv on more recent releases:
-if [ ${DISTRIBUTION_CODENAME} == 'lunar' ]; then
+if [ ${DISTRIBUTION_CODENAME} == 'noble' ]; then
     SOURCE_LINE="source $HOME/venv-ardupilot-wiki/bin/activate"
     $SOURCE_LINE
 fi

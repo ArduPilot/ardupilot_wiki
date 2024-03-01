@@ -10,23 +10,23 @@ fi
 DISTRIBUTION_ID=$(lsb_release -i -s)
 if [ ${DISTRIBUTION_ID} = 'Ubuntu' ]; then
   DISTRIBUTION_CODENAME=$(lsb_release -c -s)
-  if [ ${DISTRIBUTION_CODENAME} = 'focal' ] || [ ${DISTRIBUTION_CODENAME} = 'bionic' ] || [ ${DISTRIBUTION_CODENAME} = 'lunar' ]; then
+  if [ ${DISTRIBUTION_CODENAME} = 'focal' ] || [ ${DISTRIBUTION_CODENAME} = 'bionic' ] || [ ${DISTRIBUTION_CODENAME} = 'noble' ]; then
     sudo add-apt-repository universe -y
   fi
 fi
 
+sudo apt-get -y update
+sudo apt-get install -y unzip git imagemagick curl wget make python3
+
 # create a Python venv on more recent releases:
-if [ ${DISTRIBUTION_CODENAME} == 'lunar' ]; then
-    sudo apt install python3.11-venv
+if [ ${DISTRIBUTION_CODENAME} = 'noble' ]; then
+    sudo apt install python3-venv
     python3 -m venv $HOME/venv-ardupilot-wiki --upgrade-deps
 
     # activate it:
     SOURCE_LINE="source $HOME/venv-ardupilot-wiki/bin/activate"
     $SOURCE_LINE
 fi
-
-sudo apt-get -y update
-sudo apt-get install -y unzip git imagemagick curl wget make python3
 
 # Install packages release specific
 if [ ${DISTRIBUTION_CODENAME} = 'bionic' ]; then
