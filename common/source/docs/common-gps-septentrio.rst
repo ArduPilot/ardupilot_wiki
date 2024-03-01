@@ -4,7 +4,7 @@
 Septentrio AsteRx UAS GPS Family
 ================================
 
-The Septentrio `AsteRx-m2 UAS <http://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m2-uas/>`__ RTK GPS and other AsteRX-m RTK GPS are relatively expensive but also highly accurate RTK GPS.
+The Septentrio `AsteRx-m2 UAS <http://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m2-uas/>`__ RTK GPS and other AsteRX-m RTK GPS are relatively expensive but also highly accurate RTK GPS receivers.
 
 .. image:: ../../../images/gps-septrino.png
 	:target: ../_images/gps-septrino.png
@@ -32,6 +32,9 @@ To setup this using GPS2 input (serial4) configure these parameters:
 - :ref:`SERIAL4_BAUD<SERIAL4_BAUD>` = 115
 - :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` = 5 (GPS)
 
+The Septentrio driver currently does not use `GPS_RATE_MS` and `GPS_RATE_MS2`.
+It is still important to set them to the expected value of 100 (10Hz) as they are used as weights when combining GPS results.
+
 If you want to inject RTCM corrections to both GPS1 and GPS2 then use:
 
 - :ref:`GPS_INJECT_TO<GPS_INJECT_TO>` = 127 (send to all)
@@ -53,9 +56,10 @@ If a single unit with two antennas is used please set the following parameters:
 
 See the :ref:`Antenna Offsets<antenna-offsets>` section for a diagram illustrating the directions of these offsets.
 
-Note that the yaw calculation requires the GPS have an RTK fixed lock and the yaw calculation is only correct while the vehicle is upright so it should not be used on vehicle that spend significant time at extreme lean angles (e.g tail sitters).
+Note that the yaw calculation is only correct while the vehicle is upright,
+so it should not be used on vehicle that spend significant time at extreme lean angles (e.g tail sitters).
 
-Video including setup instructions
-==================================
+RTK setup with Mission Planner and Septentrio AsteRx-m rover
+============================================================
 ..  youtube:: HWJnG3tu9iM
     :width: 100%

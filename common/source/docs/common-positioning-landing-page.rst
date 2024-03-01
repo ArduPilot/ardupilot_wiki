@@ -72,7 +72,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     LOCOSYS HAWK R1 RTK GNSS / R2 RTK GNSS + Compass<common-gps-locosys>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
-    Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
+    Septentrio AsteRx-m UAS RTK GPS <common-gps-septentrio>
     Synerx MDU-2000 RTK + LTE GPS <common-synerex-mdu-2000>
     Trimble BD930 RTK GNSS <common-gps-trimble-bd930>
     Trimble PX-1 RTX GNSS+INS <common-gps-trimble-px1>
