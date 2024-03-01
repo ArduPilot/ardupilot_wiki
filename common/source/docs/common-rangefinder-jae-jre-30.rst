@@ -83,6 +83,7 @@ Setup using CAN
 Set the following parameters which assume the radar is connected to the autopilot's CAN1 port
 
 - Set :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1 (First Driver)
+- Set :ref:`CAN_P1_BITRATE<CAN_P1_BITRATE>` = 1000000 (1 Mbps)
 - Set :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` = 1 (DroneCAN)
 - Set :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = 24 (DroneCAN)
 - Set :ref:`RNGFND1_MIN_CM<RNGFND1_MIN_CM>` = 10 (cm)
