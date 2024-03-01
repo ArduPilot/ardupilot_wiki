@@ -4,8 +4,10 @@
 GPS for Yaw (aka Moving Baseline)
 =================================
 
-New RTK GPS modules, such as a pair of Ublox F9's or devices based on the Unicore UM-982, can be used to estimate yaw, in addition to providing position information. This removes the need for a compass which may suffer from magnetic interference from the ground or the vehicle's motors and ESCs.  This works even if the
-GPSs do not have an RTK fix (RTCM data from a fixed RTK station or NTRIP server).
+New RTK GPS modules, such as a pair of Ublox F9's, devices based on the Unicore UM-982 or some dual-antenna devices can be used to estimate yaw,
+in addition to providing position information.
+This removes the need for a compass which may suffer from magnetic interference from the ground or the vehicle's motors and ESCs.
+This works even if the GPSs do not have an RTK fix (RTCM data from a fixed RTK station or NTRIP server).
 
 GPSes from ArduPilot Partners that are known to work are shown on the :ref:`common-positioning-landing-page`
 
@@ -20,7 +22,7 @@ Hardware Setup
 GPS Yaw estimation relies on the detection of signal delays from each satellite as they reach two separated antennas. The GPS system may consist of dual or a single module, but two antennas are required in each case.
 
 - The antennas must be separated by at least 30cm on the vehicle.
-- For dual unit systems, the 1st GPS and 2nd GPS should be connected to a serial/telem ports on the
+- For dual unit systems, the 1st GPS and 2nd GPS should be connected to the serial/telem ports on the
   autopilot or via DroneCAN.  The following parameter instructions assume Serial3 and Serial4 are used for serial connecting GPSes but any serial port(s) should work as long as the first port using protocol 5 is connected to one of the GPS.
 - Dual unit Serial GPS modules must be connected to ArduPilot via their (not the autopilots's) UART1 connectors, DroneCAN modules via CAN , or interconnected per their manufacturer instructions.
 
