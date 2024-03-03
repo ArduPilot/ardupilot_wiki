@@ -217,30 +217,49 @@ This test will allow to test the altitude controller and ensure the stability of
 
  If the QuadPlane in QHOVER starts to move up and down, the vertical position and velocity controllers may need to be reduced by 50%. These values are: :ref:`Q_P_POSZ_P <Q_P_POSZ_P>` and :ref:`Q_P_VELZ_P <Q_P_POSZ_P>`.
 
+.. note:: If the :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` learned should be ~0.3-0.6. Higher values indicate that insufficient thrust is available, either due to motor system design, obstructed prop air flow by the fuselage or wings, or excessive yaw bias (see next section)
+
 Step 8: Yaw Bias
 ----------------
 
 A common problem in QuadPlanes is excessive amount of VTOL power being
-used to maintain yaw. This can be caused by:
+used to maintain yaw hold instead of providing lift. This can be caused by:
 
 - small misalignment of the VTOL motors
 - frame twist (often caused by wing twist) as thrust is applied
+- obstructed prop air flow by wings in :ref:`TVBS type tailsitters<tvbs>` making vectored yaw by motor tilt less effective. This can also cause enough reduction in normal thrust to make hovering and VTOL climb difficult.
 
 If too much power is needed to maintain yaw then the aircraft could
 lose yaw control during transitions, or could lose roll and pitch
-stability. For larger QuadPlanes it is common to need to deliberately
+stability. The most common symptom is a high hover throttle point, or even the inability to rise into a hover at high throttle stick position. For larger QuadPlanes it is common to need to deliberately
 tilt the motors by a couple of degrees to increase yaw authority.
+
+.. note:: for an X frame type (:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` = 1), 
+    the motors should be tilted outwards. 
+    For an H frame (:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` = 3) they should be tilted inwards.
 
 You should check the amount of thrust being used to maintain yaw by
 looking at the RATE YOut value in your hover logs. If it is over 10%
-(a value of 0.1) when hovering in no wind then you have a problem with
-yaw asymmetry that should be fixed.
+(a value of 0.1) when hovering in no wind with no pilot input,then you have a problem with
+yaw asymmetry that should be fixed. Just hovering in place may look fine 
+and you may not see the problem until you examine the log.
 
-Note that some QuadPlanes will benefit from being setup as H frames
+The log below shows RATE.YOut (orange) increasing dramatically while motor 1 (RCOUT.C5) 
+is idling and motor 2 (RCOUT.C6) is barely working,
+but at the same time motor 3 (RCOUT.C7) and motor 4 (RCOUT.C8) are are running > 50% output. This limits how much higher the firmware could raise the overall thrust due to these motors maxing out.
+
+.. image:: ../../../images/yaw-asymmetry-log.png
+    :target: ../_images/yaw-asymmetry-log.png
+
+Fixing yaw asymmetry can involve mechanical improvements such as stiffening the
+airframe to resist twisting, making sure prop flow is unobstructed by the wings on TVBS frames,or correcting/adjusting motor tilt angles
+
+Some QuadPlanes will benefit from being setup as H frames
 instead of X frames. Which works best depends on the way the motor
 mounts twist when under thrust. If you have a persistent problem with
 yaw control then consider trying to change the frame type between X
-and H.
+and H, however a quadplane with motors mounted on booms secured
+to the wings would normally be setup as an X frame.
 
 Step 9: Notch Filtering
 -----------------------
