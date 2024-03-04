@@ -188,6 +188,8 @@ Tilt Rotor Movement Setup
 =========================
 See :ref:`Tilt Rotor Setup Tips<tilt-rotor-tips>` and :ref:`Tilt Rotor Servo Setup<tilt-rotor-setup>`
 
+.. _tvbs:
+
 TVBS (Thrust Vectored Belly Sitter)
 ===================================
 
