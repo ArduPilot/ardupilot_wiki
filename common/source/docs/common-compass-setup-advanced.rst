@@ -189,4 +189,4 @@ The compass offsets, scales, diagonals, and even motor compensation can be deter
 .. toctree::
     :maxdepth: 1
 
-    Magfit Python Utility <common-magfit>
+    Magfit WebTools Utilty<common-magfit>
