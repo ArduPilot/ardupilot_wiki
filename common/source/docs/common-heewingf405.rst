@@ -48,7 +48,7 @@ Specifications
    -  I2C port for external compass, airspeed, etc.
    -  USB-C port on remote dongle
 
-.. note:: the original version has no logging capability. The V2 version has a microSD card for logging, etc.
+.. note:: the original version has no logging capability. The V2 version has an internal flash (i.e no SD Card) for logging, etc.
 
 -  **Size and Dimensions**
 
@@ -169,7 +169,7 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 V2 Version
 ----------
 
-The upcoming V2 version with SD card logging should ship with a correct bootloader with ArduPilot firmware installed. Updating firmware can be done normally with Mission Planner or other GCS.
+The upcoming V2 version with internal flash logging should ship with a correct bootloader with ArduPilot firmware installed. Updating firmware can be done normally with Mission Planner or other GCS.
 
 Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "HEEWING-F405v2".
