@@ -102,23 +102,18 @@ Loiter_Turns
 .. image:: ../../../images/MissionList_LoiterTurns.png
     :target: ../_images/MissionList_LoiterTurns.png
 
-The mission equivalent of the :ref:`Circle flight mode <circle-mode>`.  The vehicle will fly a circle around the
-specified lat, lon, and altitude (in meters).  The radius of the circle
-is controlled by the :ref:`CIRCLE_RADIUS<CIRCLE_RADIUS>` parameter (i.e. cannot be set as
-part of the mission).  The direction can be changed to counter-clockwise by setting :ref:`CIRCLE_RATE<CIRCLE_RATE>` to a negative number.
+The mission equivalent of the :ref:`Circle flight mode <circle-mode>`.  Loiter (circle) the specified location for at least the specified number of complete turns, and then proceed to the next command upon intersection of the course to it with the circle's perimeter. If zero is specified for a latitude/longitude/altitude parameter then the current location value
+for the parameter will be used. Fractional turns between
+0 and 1 are supported, while turns greater than 1 must be integers.
+
+The radius of the circle is controlled by the command parameter. A radius of 0 will result in the copter loitering at the location and pirouetting the specified number of turns. Negative radius values result in counter-clockwise turns instead of clockwise turns. Radius values over 255 meters will be rounded down to the nearest 10 meter mark
+.
 
 **Turn** - the number of full rotations to complete around the point.
 
 Fractional turns between 0 and 1 are supported, while turns greater than 1 must be integers.
 
 **Radius** - Loiter radius around waypoint. Units are in meters.
-
--  0-255 is 0-255 meters.
--  256-259 is 250 meters. Note: The radius will be smaller than the set value.
--  260-269 is 260 meters.
--  270-279 is 270 meters.
--  :
--  2550 and above, 2550 meters.
 
 **Lat, Lon** - the latitude and longitude targets.  If left as zero it
 will circle around the current location.

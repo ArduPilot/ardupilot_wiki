@@ -868,15 +868,13 @@ Supported by: Copter, Plane (not Rover).
 [/site]
 [site wiki="copter" heading="off"]
 
-Loiter (circle) the specified location for a specified number of turns,
-and then proceed to the next command. If zero is specified for a
-latitude/longitude/altitude parameter then the current location value
+Loiter (circle) the specified location for at least the specified number of complete turns,
+and then proceed to the next command upon intersection of the course to it with the circle's perimeter. If zero is specified for a latitude/longitude/altitude parameter then the current location value
 for the parameter will be used. Fractional turns between
 0 and 1 are supported, while turns greater than 1 must be integers.
 
 The radius of the circle is controlled by the
-:ref:`CIRCLE_RADIUS <copter:CIRCLE_RADIUS>`
-parameter and can also be set by the command.
+command parameter. A radius of 0 will result in the copter loitering at the location and pirouetting the specified number of turns. Negative radius values result in counter-clockwise turns instead of clockwise turns. Radius values over 255 meters will be rounded down to the nearest 10 meter mark.
 
 This is the command equivalent of the :ref:`Circle flight mode <copter:circle-mode>`.
 
@@ -904,10 +902,10 @@ This is the command equivalent of the :ref:`Circle flight mode <copter:circle-mo
    <tr>
    <td><strong>param3</strong></td>
    <td>Radius</td>
-   <td>Loiter radius around the waypoint. Units are in meters. Values over 255 will be in units of 10 meters. and values greater than 2550 will be 2550.</td>
+   <td>Loiter radius around the waypoint. Units are in meters. Values over 255 will be rounded to units of 10 meters. and values greater than 2550 will be clamped to 2550 m. Negative values indicate counter-clockwise turns. If zero, vehicle will pirouette at location</td>
    </tr>
    <tr style="color: #c0c0c0">
-   <td><strong>param4</strong></td>
+   <td>param4</td>
    <td></td>
    <td>Empty</td>
    </tr>
@@ -940,11 +938,12 @@ This is the command equivalent of the :ref:`Circle flight mode <copter:circle-mo
 
 [site wiki="plane" heading="off"]
 
-Loiter (circle) the specified location for a specified number of turns
-at the given radius, and then proceed to the next command. If zero is
-specified for a latitude/longitude/altitude parameter then the current
-location value for the parameter will be used. Fractional turns between
-0 and 1 are supported, while turns greater than 1 must be integers.
+Loiter (circle) the specified location for at least the specified number of complete turns,
+and then proceed to the next command upon intersection of the course to it with the circle's perimeter. If zero is specified for a latitude/longitude/altitude parameter then the current location value
+for the parameter will be used. Fractional turns between 0 and 1 are supported, while turns greater than 1 must be integers.
+
+The radius of the circle is controlled by the
+command parameter. A radius of 0 will result in :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` being used as the radius. Negative radius values result in counter-clockwise turns instead of clockwise turns. Radius values over 255 meters will be rounded down to the nearest 10 meter mark. Instead of exiting at the intersection if the next waypoint's course with the circle's perimeter, a tangential intersection exit point can be selected by setting EXIT =1.
 
 **Command parameters**
 
@@ -971,12 +970,11 @@ location value for the parameter will be used. Fractional turns between
    <tr>
    <td><strong>param3</strong></td>
    <td>Radius</td>
-   <td>Radius around waypoint, in meters. Specify as a positive value to loiter clockwise, as a negative to move counter-clockwise.</td>
+   <td>Loiter radius around the waypoint. Units are in meters. Values over 255 will be rounded to units of 10 meters. and values greater than 2550 will be clamped to 2550 m. Negative values indicate counter-clockwise turns. A value of zero will use WP_LOITER_RAD </td>
    </tr>
-   <tr style="color: #c0c0c0">
    <td><strong>param4</strong></td>
-   <td></td>
-   <td>Desired yaw angle.</td>
+   <td>Exit</td>
+   <td>if 0, exit will occur where path to next waypoint intersects the loiter path after completion of the specified number of turns. if 1, exit will be where next waypoint path is tangential to loiter path </td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>
