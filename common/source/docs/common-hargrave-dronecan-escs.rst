@@ -1,14 +1,14 @@
 .. _common-hargrave-dronecan-escs:
 
-======================
-Hargrave DroneCAN ESCs
-======================
+===================================
+Hargrave Technologies DroneCAN ESCs
+===================================
 
 .. image:: ../../../images/hargrave-dronecan-esc.png
 
 Hargrave Technologies is an Australian power electronics engineering company specialising in the professional design and manufacturing of NDAA-compliant electronic speed controllers (ESCs).
 
-Hargrave's ESCs are designed for space and weight-limited applications and optimized for power density while maintaining optimum thermal performance. `The full range can be found here <https://www.hargravetechnologies.com/>`__.
+Hargrave's ESCs are designed for space and weight-limited applications and optimised for power density while maintaining optimum thermal performance. `The full range can be found here <https://www.hargravetechnologies.com/>`__.
 
 The ESCs support DroneCAN natively, providing an interface for control, telemetry, parameter configuration and firmware updates. The following guide describes how to get set up and outlines the main features of the DroneCAN interface.
 
@@ -45,7 +45,11 @@ Each ESC should be connected in a daisy chain configuration, where one end of th
 
     Ensure the flight controller is appropriately terminated. For example, models such as the Pixhawk Cube have CAN termination resistors installed by default.  
 
-The CAN H, CAN L and GND should be connected to the flight controller ports in the same order. On the ESC that is physically furthest along the daisy chain (in reference to the flight controller), the CAN terminator param should be enabled.
+The CAN H, CAN L and GND should be connected to the flight controller ports in the same order. On 
+
+.. note::
+
+    The ESCs have a software-selectable CAN termination resistor for ease of integration, which should be enabled on the ESC that is physically furthest along the daisy chain (in reference to the flight controller).
 
 The following diagram shows the wiring of the CAN lines communicating from the flight controller, and terminating on the final ESC (which should have the terminator activated):
 

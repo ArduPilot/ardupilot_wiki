@@ -49,7 +49,7 @@ Protocols
     DroneCAN ESCs <common-uavcan-escs>
     Currawong Velocity ESCs <common-velocity-can-escs>
     Hobbywing DroneCAN ESCs <common-hobbywing-dronecan-esc>
-    Hargrave DroneCAN ESCs <common-hargrave-dronecan-escs>
+    Hargrave Technologies DroneCAN ESCs <common-hargrave-dronecan-escs>
     FETtec OneWire ESCs <common-fettec-onewire>
 
 
