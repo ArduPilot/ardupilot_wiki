@@ -24,7 +24,7 @@ By default, the ESCs will accept a CAN Bus communications input. The ESCs can be
 
 .. note::
 
-    To enable CAN, the `CAN Bus Enabled <https://docs.hargravetechnologies.com/communication-settings>`__ setting should be set as required. The settings names are abreviated for CAN transmissions.
+    To enable CAN, the `CAN Bus Enabled <https://docs.hargravetechnologies.com/communication-settings>`__ setting should be set as required. The settings names are abbreviated for CAN transmissions.
 
 When running DroneCAN, it's recommended to set the DroneCAN Node ID as required by the system, noting there should be no duplicates. By default, Hargrave ESCs will seek a Node ID automatically (the flight controller will negotiate and provide one through dynamic node allocation). However, this can result in changing IDs over time. The following ESC settings will change this behaviour:
 
@@ -101,11 +101,11 @@ Once the firmware is successfully downloaded, the unit will automatically verify
 
     The ESCs have a built in recovery in the event the update process is interrupted or fails to complete. If an issue occurs, reboot the unit and restart the update attempt. The previous firmware version is retained in the event of interruption.
 
-The firmware can be updated through the DroneCAN GUI or other DroneCAN-supported interfaces (such as Mission Planner). The image below highlights some key DroneCAN GUI features; double click on a node to open the node properties panel:
+The firmware can be updated through the DroneCAN GUI or other DroneCAN-supported interfaces (such as Mission Planner). The image below highlights some key DroneCAN GUI features; double-click on a node to open the node properties panel:
 
 .. image:: ../../../images/hargrave-dronecan-fw-update-screen.png
 
-After a firmware update completes and the unit reboots, confirm the firmware version matches expectations.
+After a firmware update is complete and the unit reboots, confirm the reported firmware version matches expectations.
 
 Further Information
 -------------------
