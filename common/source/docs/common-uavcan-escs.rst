@@ -17,6 +17,7 @@ List of DroneCAN ESCs
 
 
 - :ref:`Currawong Velocity ESC <common-velocity-can-escs>`
+- :ref:`Hargrave DroneCAN ESCs <common-hargrave-dronecan-escs>`
 - :ref:`Hobbywing CAN ESCs <common-hobbywing-dronecan-esc>`
 - `Holybro Kotleta20 <https://holybro.com/products/kotleta20>`__
 - :ref:`KDE UVC ESCs <common-kde-can-escs>`
