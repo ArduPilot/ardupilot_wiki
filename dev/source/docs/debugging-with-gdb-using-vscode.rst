@@ -38,9 +38,6 @@ With VSCode open to the ArduPilot directory. Open the `Run and Debug` menu (Ctrl
 .. image:: ../images/VSCode-config1.png
     :target: ../_images/VSCode-config1.png
 
-
-
-
 Example launch.json File
 ------------------------
 
@@ -196,15 +193,12 @@ Launch SITL with using ``sim_vehicle.py`` : be sure to add ``-D`` to build and l
 
     sim_vehicle.py -v ArduCopter -f quad --console --map -D
 
-Click and select ``C/C++ : (gdb) Attach`` option.
+From the Run and Debug menu select ``(gdb) Attach``, push the green arrow and select the process name for your vehicle's binary (e.g. ``arducopter``)
 
 .. image:: ../images/VSCode-config2.png
     :target: ../_images/VSCode-config2.png
 
-To start debugging with VSCode, select the process name for your vehicle's binary : example ``arducopter``.
-
-.. image:: ../images/VSCode-attach1.png
-    :target: ../_images/VSCode-attach1.png
+Note that you can switch between the Debug and SITL terminals by clicking in the areas shown in yellow above.
 
 Before or after attaching you may put breakpoints in the code to start debugging.
 
