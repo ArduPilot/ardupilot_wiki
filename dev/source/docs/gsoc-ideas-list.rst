@@ -10,6 +10,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2024 <htt
 - MAVProxy AI chat enhancements
 - WebTools automated log analysis
 - Improvements to the Custom Build Server
+- High Altitude Non-GPS Position Estimation
 
 See lower down on this page for more details for some of the projects listed above
 
@@ -103,22 +104,58 @@ The custom build server stands as a valuable utility, empowering users to tailor
 Originally developed as part of the Google Summer of Code program in 2020, this application has demonstrated its effectiveness in enhancing flexibility and resource management. However, there remains room for improvement to further elevate its usability and broaden its appeal, ensuring it meets the diverse needs of an expanding user base.
 
 Some of the problems we observe in the custom build server are as follows:
+
 - Build failures occur due to the excessive selection of features that cannot fit into the memory of the intended board.
 - Application can become unresponsive due to unexpected exceptions during the build step or any other step in the process.
 - The manual addition of branches is required every time a release is made at github.com/ardupilot/ardupilot.
 - The testing environment is inadequate. There is no easy way for a developer to test feature additions and deletions.
 
-Some possible improvements to address these issues can be:-
-- Come up with a mathematical algorithm to estimate the approximate size of each feature on a branch. This can be achieved by leveraging the `test_build_options.py <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/test_build_options.py>` script to measure the size of the binary when each feature is sequentially enabled and disabled. An algorithm should be developed to estimate the size of individual features while accounting for their dependencies. Remember, when a feature is enabled, it also activates any dependent features.
+Some possible improvements to address these issues can be:
+
+- Come up with a mathematical algorithm to estimate the approximate size of each feature on a branch. This can be achieved by leveraging the `test_build_options.py <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/test_build_options.py>`__ script to measure the size of the binary when each feature is sequentially enabled and disabled. An algorithm should be developed to estimate the size of individual features while accounting for their dependencies. Remember, when a feature is enabled, it also activates any dependent features.
 - Implement containerisation for running the application. By containerising the application, it can also be divided into multiple services, such as the main application and micro-services responsible for tasks such as reporting the status of server builds. Containerization not only enhances application security but also facilitates scalability and ease of deployment.
 - Develop a service responsible for monitoring the GitHub repository (github.com/ardupilot/ardupilot) or firmware.ardupilot.org for new releases. This service can automatically add relevant entries to the main application, enabling it to serve customised builds for newly released branches. This automation streamlines the process of integrating new releases into the build server.
 - Enhance the build server to support builds from any repository, not just the upstream repository. While implementing this feature, careful consideration must be given to potential complexities and challenges associated with supporting builds from multiple repositories. 
 
-Some github issues having feature requests for Custom Build Server:-
+Some github issues having feature requests for Custom Build Server:
+
 - https://github.com/ArduPilot/ardupilot/issues/21345
 - https://github.com/ArduPilot/CustomBuild/issues/2
 
-Remember, these are just suggestions. The contributors can use the application at `custom.ardupilot.org <https://custom.ardupilot.org>`, read the source code `here <https://www.github.com/ardupilot/CustomBuild>`` and suggest any other improvement which they would like to see in the app.
+Remember, these are just suggestions. The contributors can use the application at `custom.ardupilot.org <https://custom.ardupilot.org>`__, read the source code `here <https://www.github.com/ardupilot/CustomBuild>`__ and suggest any other improvement which they would like to see in the app.
+
+High Altitude Non-GPS Position Estimation
+-----------------------------------------
+
+- Skills required: Python, C++
+- Mentor: Randy Mackay
+- Expected Size: 175h or 350h
+- Level of Difficulty: Hard
+- Expected Outcome: Copter can maintain position at high altitudes without a GPS
+
+ArduPilot copter supports numerous methods of `Non-GPS navigation <https://ardupilot.org/copter/docs/common-non-gps-navigation-landing-page.html>`__ but most are designed for indoor use
+and do not work at altitudes above about 40m meaning that in practice they are not useful to protect against loss of GPS.
+
+This project aims to allow Copters to maintain an adequate position estimate at altitudes of at least 100m using downward facing camera (in a gimbal).
+
+- A set of base images will be captured with known Locations (latitude, longitude, altitude, altitude above terrain).  These might be taken by the vehicle itself while GPS is operating normally or they could be satellite images of the area
+- A companion computer (e.g. RPI or NVidia Nano) will capture images from a downward facing camera and compare them to the base images to calculate a new latitude, longitude and altitude.  Lag is important as the EKF may struggle if the estimates are over 0.25 seconds old.
+- This estimated Location should then be sent to the autopilot using one of these supported mavlink messages
+
+    - `VISION_POSITION_ESTIMATE <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml#L4978>`__ (recommended)
+    - `VISION_SPEED_ESTIMATE <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml#L4991>`__
+    - `ODOMETRY <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml#L6262>`__
+    - `MAV_CMD_EXTERNAL_POSITION_ESTIMATE <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml#L333>`__ (requires the vehicle be dead-reckoning using `wind speed estimates <https://ardupilot.org/copter/docs/airspeed-estimation.html>`__ but is also less sensitive to lag)
+    - `GLOBAL_VISION_POSITION_ESTIMATE <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml#L4965>`__
+    - `VICON_POSITION_ESTIMATE <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml#L5001>`__
+    - `ATT_POS_MOCAP <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml#L5392>`__
+
+- Some EKF tuning will likely be required to allow the EKF to expect very noisy position estimates
+- If time permits a `GPS/Non-GPS transition <https://ardupilot.org/copter/docs/common-non-gps-to-gps.html>`__ Lua script (`like this one <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/ahrs-source-gps-optflow.lua>`__) could be developed
+
+An important output of the project is to document the setup for future developers and users.
+
+Most of the development can probably be done using :ref:`SITL <sitl-simulator-software-in-the-loop>`, `Gazebo <https://ardupilot.org/dev/docs/sitl-with-gazebo.html>`__ and/or `Realflight <https://ardupilot.org/dev/docs/sitl-with-realflight.html>`__  but funding will also be provided for a multicopter frame and camera gimbal if required.
 
 Projects Completed in past years
 --------------------------------
