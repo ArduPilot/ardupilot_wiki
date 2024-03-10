@@ -51,6 +51,11 @@ Protocols
     Hobbywing DroneCAN ESCs <common-hobbywing-dronecan-esc>
     FETtec OneWire ESCs <common-fettec-onewire>
 
+.. toctree::
+   :hidden:
+
+   common-hargrave-dronecan-escs
+
 
 ESCs using BLHeli32 or BLHeli-S Configuration Firmware
 ------------------------------------------------------
