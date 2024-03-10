@@ -49,8 +49,12 @@ Protocols
     DroneCAN ESCs <common-uavcan-escs>
     Currawong Velocity ESCs <common-velocity-can-escs>
     Hobbywing DroneCAN ESCs <common-hobbywing-dronecan-esc>
-    Hargrave Technologies DroneCAN ESCs <common-hargrave-dronecan-escs>
     FETtec OneWire ESCs <common-fettec-onewire>
+
+.. toctree::
+   :hidden:
+
+   common-hargrave-dronecan-escs
 
 
 ESCs using BLHeli32 or BLHeli-S Configuration Firmware

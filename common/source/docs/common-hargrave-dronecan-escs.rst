@@ -45,7 +45,7 @@ Each ESC should be connected in a daisy chain configuration, where one end of th
 
     Ensure the flight controller is appropriately terminated. For example, models such as the Pixhawk Cube have CAN termination resistors installed by default.  
 
-The CAN H, CAN L and GND should be connected to the flight controller ports in the same order. On 
+The CAN H, CAN L and GND should be connected to the flight controller ports in the same order.
 
 .. note::
 
