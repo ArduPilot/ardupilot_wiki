@@ -17,6 +17,8 @@ The tuning process consists of the following steps:
 
 The initial tune of the aircraft should be done **in the aircrafts most agile configuration**. This generally means that the aircraft will be at its minimum take off weight with fully charged batteries.
 
+.. note:: Following each of the above steps will usually result in a safe tuning process and adequate tune for  most users. For commercial, expensive and/or high lift capacity vehicles, `this extensive, very detailed tuning procedure <https://discuss.ardupilot.org/t/how-to-methodically-tune-almost-any-multicopter-using-arducopter-4-4-x/110842>`__ is recommended, but is probably "overkill" for hobbyist/casual users.
+
 Advanced Tuning
 ---------------
 

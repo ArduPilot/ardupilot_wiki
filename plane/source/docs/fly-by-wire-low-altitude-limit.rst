@@ -14,8 +14,6 @@ it is reached you will regain altitude control.
 
 .. note:: the minimum MSL altitude target will be the higher of: this altitude, or the current altitude target above terrain in FBWB or CRUISE modes if :ref:`common-terrain-following` is enabled, or the :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>` above HOME if that fence (See :ref:`common-geofencing-landing-page`) is enabled.
 
-.. warning:: this parameter is in centimeters, not meters!
-
 Use for R/C training
 ====================
 
