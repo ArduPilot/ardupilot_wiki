@@ -15,8 +15,7 @@ We will clone the required repositories using `vcstool <https://github.com/dirk-
 .. code-block:: bash
 
     cd ~/ros2_ws
-    wget https://raw.githubusercontent.com/ArduPilot/ardupilot_gz/main/ros2_gz.repos
-    vcs import --recursive src < ros2_gz.repos
+    vcs import --input https://raw.githubusercontent.com/ArduPilot/ardupilot_gz/main/ros2_gz.repos --recursive src
 
 Set the gazebo version to either ``garden`` or ``harmonic``
 

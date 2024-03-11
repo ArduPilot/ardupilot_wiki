@@ -28,7 +28,8 @@ This page assumes that your workspace is named `ros2_ws`.
 
 Before anything else, make sure that you have `sourced your ROS 2 environment <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#source-the-setup-files>`__ and check if it is `configured correctly <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#check-environment-variables>`__.
 
-Follow the `Installing Build Dependencies <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_DDS#installing-build-dependencies>`__ section of `AP_DDS`'s README.
+Follow the `Installing Build Dependencies <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_DDS#installing-build-dependencies>`__ section of `AP_DDS`'s README
+to install MicroXRCEDDSGen.
 
 Finally, ensure you have `set up your ArduPilot build environment <https://ardupilot.org/dev/docs/building-the-code.html#setting-up-the-build-environment>`__.
 
@@ -39,9 +40,8 @@ To make installation easy, we will install the required packages using `vcs` and
 
 .. code-block:: bash
 
-    cd ~/ros2_ws/src
-    wget https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos
-    vcs import --recursive < ros2.repos
+    cd ~/ros2_ws
+    vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos src
 
 Now update all dependencies:
 
@@ -77,9 +77,8 @@ To make installation easy, we will install the required packages using `vcs` and
 
 .. code-block:: bash
 
-    cd ~/ros2_ws/src
-    wget https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2_macos.repos
-    vcs import --recursive < ros2_macos.repos
+    cd ~/ros2_ws
+    vcs import --recursive --input https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2_macos.repos src
 
 Now update all dependencies:
 
