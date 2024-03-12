@@ -11,6 +11,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2024 <htt
 - WebTools automated log analysis
 - Improvements to the Custom Build Server
 - High Altitude Non-GPS Position Estimation
+- Improve web server for file management and parameter management
 
 See lower down on this page for more details for some of the projects listed above
 
@@ -156,6 +157,22 @@ This project aims to allow Copters to maintain an adequate position estimate at 
 An important output of the project is to document the setup for future developers and users.
 
 Most of the development can probably be done using :ref:`SITL <sitl-simulator-software-in-the-loop>`, `Gazebo <https://ardupilot.org/dev/docs/sitl-with-gazebo.html>`__ and/or `Realflight <https://ardupilot.org/dev/docs/sitl-with-realflight.html>`__  but funding will also be provided for a multicopter frame and camera gimbal if required.
+
+Improve Web Server for file and parameter management
+----------------------------------------------------
+
+In ArduPilot 4.5.x we have networking support and a web server builtin
+and we expect quite a few aicraft to use this in the future.
+
+We would like the web server to be extended to allow for:
+
+ - file management, with upload and download of files
+ - parameter management, with a nice UI for displaying and editing parameters
+
+the GSoC student for this project would need good JavaScript and HTML
+skills to create a nice user interface. They would also need to know
+some lua, although most of the code would be in JavaScript.
+
 
 Projects Completed in past years
 --------------------------------
