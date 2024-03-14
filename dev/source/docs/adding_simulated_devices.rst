@@ -184,10 +184,6 @@ You can test two virtual wheel encoders like this:
 
 ::
 
-    param set AHRS_EKF_TYPE 3
-    param set EK2_ENABLE 0
-    param set EK3_ENABLE 1
-    param fetch
     param set EK3_SRC1_POSXY 0
     param set EK3_SRC1_VELXY 7
     param set EK3_SRC1_VELZ 0
@@ -208,10 +204,6 @@ You can test a virtual range beacons by setting the following parameters
 
 ::
 
-    param set AHRS_EKF_TYPE 3
-    param set EK2_ENABLE 0
-    param set EK3_ENABLE 1
-    param fetch
     param set EK3_GPS_TYPE 3
     param set GPS_TYPE 0
     param set BCN_TYPE 10
@@ -287,10 +279,6 @@ Enable EKF3, disable GPS and set Serial5 protocol to mavlink so as to accept vis
 
 ::
 
-    param set AHRS_EKF_TYPE 3
-    param set EK2_ENABLE 0
-    param set EK3_ENABLE 1
-    param fetch
     param set EK3_SRC1_POSXY 6
     param set EK3_SRC1_POSZ 6
     param set EK3_SRC1_VELXY 6
