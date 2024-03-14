@@ -56,6 +56,7 @@ Connect to the autopilot with a ground station (i.e. Mission Planner) and check 
 - Optionally set :ref:`SERIAL2_OPTIONS <SERIAL2_OPTIONS>` = 1024 (Don't forward mavlink to/from) to disable the camera's odometry messages from being sent to the GCS
 - :ref:`VISO_TYPE <VISO_TYPE>` = 3 (VOXL)
 - Set :ref:`VISO_POS_X <VISO_POS_X>`, :ref:`VISO_POS_Y <VISO_POS_Y>`, :ref:`VISO_POS_Z <VISO_POS_Z>` to the camera's position on the drone relative to the center-of-gravity.  See :ref:`sensor position offset compensation <common-sensor-offset-compensation>` for more details
+- Optionally increase :ref:`VISO_QUAL_MIN <VISO_QUAL_MIN>` to 10 (or higher) to only consume estimates from the camera when the quality is 10% (or higher)
 
 If only the VOXL camera will be used for position estimation and heading (e.g. No GPS):
 
@@ -85,6 +86,8 @@ For indoor/outdoor transitions (e.g. VOXL camera indoors, GPS+Compass outdoors):
 After the parameters are modified, reboot the autopilot.
 
 More details on :ref:`GPS/Non-GPS Transitions can be found here <common-non-gps-to-gps>`
+
+To use an optical flow and rangefinder for backup in case the VOXL fails, a Lua applet for `ExternalNav/Optical flow transitions is here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/ahrs-source-extnav-optflow.lua>`__
 
 Videos
 ------
