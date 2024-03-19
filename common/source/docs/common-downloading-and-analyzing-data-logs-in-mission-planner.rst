@@ -39,6 +39,20 @@ Replay Logging
 
 ArduPilot has the ability to log in a fashion that solutions to EKF/AHRS issues can be more easily verified by actually re-playing a log against code changes to see if the solution results in the desired, corrected behavior. This requires that the logs showing the issue to be worked on be made with logging active during disarmed periods (with :ref:`LOG_DISARMED<LOG_DISARMED>` set to a non-zero value, preferably 3) and :ref:`LOG_REPLAY<LOG_REPLAY>` =1 , thereby logging more sensor data than normal.
 
+SD Card Logging Issues
+======================
+
+If you are running into problems with bad logging errors on SD cards, here are some things you can try.
+
+- Format the card to FAT32 or vFAT (newer formats can work with new versions of Ardupilot and better hardware).
+- Perform a full format to check for bad sectors.
+- Check that the card is not write protected.
+- Check card contacts.
+- Some cards are problematic, try using a different one.
+- Ensure that the card is fast enough to keep up with logging demands (Class 10 works for many, but lower speeds can work too).
+- Reduce the amount of data included with the logs in LOG_BITMASK.
+- Incrementally increase BRD_SD_SLOWDOWN up to a maximum of 32 (default is 0).
+
 On-Board DataFlash Logging
 ==========================
 
