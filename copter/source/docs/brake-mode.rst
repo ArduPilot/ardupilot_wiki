@@ -5,8 +5,13 @@ Brake Mode
 ==========
 
 This very simple flight mode simply stops the vehicle as soon as
-possible using the Loiter controller.  Once invoked, this mode does not
-accept any input from the pilot. This mode requires GPS.
+possible.  Once invoked, this mode does not accept any input from
+the pilot. This mode requires GPS.
+
+Brake mode is subject to acceleration and angle limits imposed by the
+position and attitude controllers. For more aggressive braking, you can
+also try increasing PSC_JERK_XY. As an example use case, a value of 15
+to 30 works well for a small copter.
 
 Overview
 ========
