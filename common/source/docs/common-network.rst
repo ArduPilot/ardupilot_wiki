@@ -31,7 +31,7 @@ In addition, LUA Scripting running on an autopilot can access these data ports.
 Configuration
 =============
 
-- :ref:`NET_ENABLED<NET_ENABLED>` must be set to "1" and autopilot rebooted in order to see the network parameters:
+- :ref:`NET_ENABLE<NET_ENABLE>` must be set to "1" and autopilot rebooted in order to see the network parameters:
 
 Ethernet MAC Configuration
 --------------------------
