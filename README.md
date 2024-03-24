@@ -11,3 +11,4 @@ All members of the community are welcome to contribute to this wiki! You can hel
 To participate, all you need is a GitHub account. You can sign up [__here__](https://github.com/join).
 
 Contribute to the ArduPilot Wiki by joining us today!
+
