@@ -55,6 +55,8 @@ There are a number of way of using Git/Github - including a number of different 
        git add the_name_of_file_you_changed.rst
        git commit -m "A short explanation of the change"
 
+#. "Squash" your commmits. See :ref:`git-interactive-rebase`. There should be onlt one commit for changes related to a given topical change, even if multiple pages wuth changes are involved.
+
 #. Push your commits to your fork on GitHub
 
    .. code-block:: bash
