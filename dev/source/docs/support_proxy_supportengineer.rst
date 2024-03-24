@@ -79,7 +79,9 @@ MAVProxy is `available here <https://github.com/ArduPilot/UDPProxy/blob/main/mav
 DroneCAN GUI Tool
 ------------------------------------
 
-Enter "mavcan:udpout:support.ardupilot.org:" followed by your support engineer port number for the CAN interface and add your signing key.
+Enter "mavcan:udpout:support.ardupilot.org:" followed by your support engineer port number for the CAN interface and add your signing key. 
+
+.. note:: The signing key in DroneCAN GUI Tool is the password entered into Mission Planner during key generation. It is not the key that Mission Planner displays.
 
 .. image:: ../images/Support_DroneCAN_GUI.png
     :target: ../_images/Support_DroneCAN_GUI.png
