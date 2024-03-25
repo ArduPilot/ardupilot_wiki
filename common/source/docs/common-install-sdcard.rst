@@ -17,13 +17,13 @@ There are several reasons this technique may be of use:
 
   - There is no convenient, reliable access to the vehicle's USB port
   - It is desired to update the vehicle firmware over a telemetry radio
-  - The vehicle is remote and the local operators may struggle with the normal interfaces to update the firmware. This allows OEMs to remotely add an updated file onto users' SD cards which woukkd upload on the next boot of the vehicle.
+  - The vehicle is remote and the local operators may struggle with the normal interfaces to update the firmware. This allows OEMs to remotely add an updated file onto users' SD cards which would upload on the next boot of the vehicle.
 
 
 The Bootloader
 ==============
 
-Currently, no autopilot ships with a bootloader capable of flashing from the SD card.  Updating the bootloader is required to support flashing from SD card.  Note that updating the autopilot's bootloader is an operation which can make your board non-operational, and difficult to recover.  More-so with boards which do not expose a "boot0" pin, such as the CubeOrange.  Be aware of this risk, and be prepared to spend considerable time recovering a board if something bad happens when updating the bootloader.
+Currently, no autopilot ships with a bootloader capable of flashing from the SD card.  Updating the bootloader is required to support flashing from SD card.  Note that updating the autopilot's bootloader is an operation which can make your board non-operational, and difficult to recover.  More-so with boards that do not expose a "boot0" pin, such as the CubeOrange.  Be aware of this risk, and be prepared to spend considerable time recovering a board if something bad happens when updating the bootloader.
 
 :ref:`The instructions on updating the bootloader <common-bootloader-update>` can be followed to update your bootloader; be aware that you must use a "latest" firmware to obtain a suitable bootloader.
 
