@@ -206,9 +206,10 @@ reset, including changing firmware type. This allows a vendor to ship
 autopilots pre-calibrated from the factory which is a great
 convenience for users.
 
-To save parameters persistently you should perform a temperature
-calibration as described above then as a final step send a "flash
-bootloader" mavlink command to the autopilot. This will
+To save parameters persistently, you should set the desired bits in
+:ref:`INS_TCAL_OPTIONS <INS_TCAL_OPTIONS>` to indicate persistence of
+Temperature Calibration and Accel Calibrations. As a final step send a
+"flash bootloader" mavlink command to the autopilot. This will
 re-flash the bootloader with calibration parameters embedded in the
 final part of the bootloader sector in flash. You can inspect these
 parameters using the @SYS/persistent.parm sysfs file using a mavftp
