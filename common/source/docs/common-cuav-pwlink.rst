@@ -17,3 +17,8 @@ Connecting to the Ground Station
 ================================
 
 Open WIFI connection dialog on PC or Android Phone and select the ``CUAVWLINKxxxx`` SSID and connect using the password ``cuavwlink``. Once connected use the UDP connection with port = 14550 (which is default) to connect using Mission Planner. QGC should auto-detect and connect.
+The PW-LINK ahs a default IP address of ``192.168.4.1``, which is used for a mavproxy connection.
+
+.. code-block:: bash
+  
+    mavproxy.py --master=udpout:192.168.4.1:14550
