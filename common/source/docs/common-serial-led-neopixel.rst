@@ -5,11 +5,15 @@ NeoPixel
 
 .. image:: ../../../images/neopixel-string.jpeg
 
-A "NeoPixel" style (WS2812B compatible) RGB LED can be attached to any PWM output by setting its SERVOx_FUNCTION to one of the ``NeoPixelx`` output functions and setting :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` parameter to ``NeoPixel``. Multiple ``NeoPixelx`` output functions are provided for connecting multiple strings (up to 4).
+Up to four "NeoPixel" style (WS2812B compatible) RGB LEDs can be used to display the same LED patterns as other RGB LEDs including those commonly installed on GPS/compass units
 
-If used for notification purposes, be sure to set :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` "Neopixel" bit(8).
+Attach each LED to a separate PWM output and set the following parameters
 
-.. note:: a few "NeoPixel" LED types have a different data order for the red and green data instead of the normal green/red/blue orde. If you are not displaying the desired colors, try setting the ref:`NTF_LED_TYPES<NTF_LED_TYPES>` parameter to ``NeoPixelRGB`` tpe instead.
+- Set :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` to include ``NeoPixel`` (bit 8)
+- Set :ref:`NTF_LED_LEN<NTF_LED_LEN>` to the number of LEDs connected (up to 4)
+- Set SERVOx_FUNCTION to ``NeoPixel1``, ``NeoPixel2``, ``NeoPixel3`` or ``NeoPixel4`` where "x" corresponds to the PWM output channel that the LED is connected to
+
+.. note:: a few "NeoPixel" LED types have a different data order for the red and green data instead of the normal green/red/blue orde. If you are not displaying the desired colors, try setting the :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` parameter to ``NeoPixelRGB`` tpe instead.
 
 .. warning:: Most WS2812 style LED and strings will operate correctly when connected to the autopilot. However, if you get intermittent or non-operation, you may need to implement one of the configurations below. This is due to the fact that the autopilot outputs swing to 3.3V but the worst case input signal high spec for the LED is 4.3V at a 5V supply. So at extremes of tolerance/manufacturing spec, you can get a combination which will not work correctly. In that case the easiest solution is to lower the LED supply as shown below.
 
