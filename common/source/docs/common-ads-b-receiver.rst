@@ -25,7 +25,7 @@ The sensors can be purchased directly from `uAvionix <https://uavionix.com/produ
    -  USA: `Unmanned Systems Source <https://www.unmannedsystemssource.com/product-category/atc-devices/>`__
    -       `R Cubed Engineering <http://www.rcubedengineering.com/>`__
    -  U.K.: `Unmanned Tech <http://www.unmannedtech.co.uk/>`__
-   -  Germany: `UAV Store <http://www.uav-store.de/ads-b-receivers/>`__
+
 
 Connecting to the autopilot
 ===========================
