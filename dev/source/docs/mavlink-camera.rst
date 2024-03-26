@@ -27,6 +27,10 @@ These commands and messages are supported in ArduPilot 4.5.0 and higher:
 - CAMERA_INFORMATION includes vendor and model name, firmware version, etc for use by GCS
 - CAMERA_SETTINGS includes zoom and focus level for use by GCS
 
+These commands are supported in ArduPilot 4.6.0 and higher:
+
+- MAV_CMD_SET_CAMERA_SOURCE to set which lens (aka image sensor) is used
+
 These commands and messages are not yet supported but may be in future releases
 
 - MAV_CMD_REQUEST_CAMERA_CAPTURE_STATUS
@@ -577,6 +581,98 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 | ``message COMMAND_LONG 0 0 532 0 1 0 0 0 0 0 0``   | Manual focus hold                           |
 +----------------------------------------------------+---------------------------------------------+
 | ``message COMMAND_LONG 0 0 532 0 4 0 0 0 0 0 0``   | Auto focus                                  |
++----------------------------------------------------+---------------------------------------------+
+
+MAV_CMD_SET_CAMERA_SOURCE to set which lens (aka image sensor) is used
+----------------------------------------------------------------------
+
+The camera zoom can be controlled by sending a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the command and param fields set as specified for the `MAV_CMD_SET_CAMERA_SOURCE <https://mavlink.io/en/messages/common.html#MAV_CMD_SET_CAMERA_SOURCE>`__ command.
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Type</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>target_system</strong></td>
+   <td>uint8_t</td>
+   <td>System ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>target_component</strong></td>
+   <td>uint8_t</td>
+   <td>Component ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>command</strong></td>
+   <td>uint16_t</td>
+   <td>MAV_CMD_SET_CAMERA_SOURCE=534</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>confirmation</strong></td>
+   <td>uint8_t</td>
+   <td>0</td>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>float</td>
+   <td>Camera Id (all=0, 1=1st, 2=2nd)</td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>float</td>
+   <td>Primary Source (0=default, 1=RGB, 2=IR, 3=NDVI, 4=WideAngleRGB)</td>
+   </tr>
+   <tr>
+   <td><strong>param3</strong></td>
+   <td>float</td>
+   <td>Secondary Source (0=default, 1=RGB, 2=IR, 3=NDVI, 4=WideAngleRGB)</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param4</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param5</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param6</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param7</strong></td>
+   <td>float</td>
+   <td>unused</td>
+   </tr>
+   </tbody>
+   </table>
+
+The example commands below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter:
+
+- module load message
+
++----------------------------------------------------+---------------------------------------------+
+| Example MAVProxy/SITL Command                      | Description                                 |
++====================================================+=============================================+
+| ``message COMMAND_LONG 0 0 534 0 0 0 0 0 0 0 0``   | All cameras use default source (e.g. RGB)   |
++----------------------------------------------------+---------------------------------------------+
+| ``message COMMAND_LONG 0 0 534 0 1 0 0 0 0 0 0``   | 1st camera uses default source (e.g. RGB)   |
++----------------------------------------------------+---------------------------------------------+
+| ``message COMMAND_LONG 0 0 534 0 1 1 0 0 0 0 0``   | 1st camera uses RGB only                    |
++----------------------------------------------------+---------------------------------------------+
+| ``message COMMAND_LONG 0 0 534 0 1 2 0 0 0 0 0``   | 1st camera uses IR/Thermal only             |
++----------------------------------------------------+---------------------------------------------+
+| ``message COMMAND_LONG 0 0 534 0 1 1 2 0 0 0 0``   | 1st camera uses Picture-in-picture RGB+IR   |
++----------------------------------------------------+---------------------------------------------+
+| ``message COMMAND_LONG 0 0 534 0 1 2 1 0 0 0 0``   | 1st camera uses Picture-in-picture IR+RGB   |
 +----------------------------------------------------+---------------------------------------------+
 
 MAV_CMD_VIDEO_START_CAPTURE, MAV_CMD_VIDEO_STOP_CAPTURE to start or stop recording video
