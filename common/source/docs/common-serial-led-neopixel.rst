@@ -9,7 +9,7 @@ A "NeoPixel" style (WS2812B compatible) RGB LED can be attached to any PWM outpu
 
 If used for notification purposes, be sure to set :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` "Neopixel" bit(8).
 
-.. note:: a few "NeoPixel" LED types have a different data order for the red and green data instead of the normal green/red/blue orde. If you are not displaying the desired colors, try setting the ref:`NTF_LED_TYPES<NTF_LED_TYPES>` parameter to ``NeoPixelRGB`` tpe instead.
+.. note:: a few "NeoPixel" LED types have a different data order for the red and green data instead of the normal green/red/blue orde. If you are not displaying the desired colors, try setting the :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` parameter to ``NeoPixelRGB`` tpe instead.
 
 .. warning:: Most WS2812 style LED and strings will operate correctly when connected to the autopilot. However, if you get intermittent or non-operation, you may need to implement one of the configurations below. This is due to the fact that the autopilot outputs swing to 3.3V but the worst case input signal high spec for the LED is 4.3V at a 5V supply. So at extremes of tolerance/manufacturing spec, you can get a combination which will not work correctly. In that case the easiest solution is to lower the LED supply as shown below.
 
