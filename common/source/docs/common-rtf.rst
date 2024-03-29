@@ -55,6 +55,7 @@ VTOL/QuadPlanes from Partners
 * `Event38 - E455 <https://event38.com/fixed-wing/e455-vtol-drone/>`__
 * `FlyDragonDroneTech - FDG30 <https://www.droneassemble.com/product/vtol-uav-6-hours-endurance-with-1kg-payload-for-survey-serveillance/>`__
 * `FlyDragonDroneTech - FDG50F <https://www.droneassemble.com/product/hybrid-vtol-uav-7-hours-endurance-with-10kgs-payload/>`__
+* :ref:`Holybro Swan-K1 <common-Swan-K1>`
 * :ref:`MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>`
 * `MakeFLyEasy - Freeman 2300 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_3>`__
 * `MakeFLyEasy - Freeman 2100 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_2>`__
@@ -62,7 +63,6 @@ VTOL/QuadPlanes from Partners
 * `SpektreWorks - Cobalt 55 E-VTOL <https://www.spektreworks.com/cobalt>`__
 * `SpektreWorks - Cobalt 55 G-VTOL <https://www.spektreworks.com/cobalt>`__
 * `SpektreWorks - Cobalt 110 G-VTOL <https://www.spektreworks.com/cobalt>`__  
-*  :ref:`Swan-K1 <common-Swan-K1>`
 
 Rovers from Partners
 ====================
