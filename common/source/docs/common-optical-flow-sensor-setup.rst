@@ -103,7 +103,7 @@ check.
 First Flight
 ============
 
-#. For EKF2, set :ref:`EK2_GPS_TYPE <EK2_GPS_TYPE>` = 0; for EKF3, set :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 0 (we don't want the optical flow being used by the EKF at this stage) 
+#. Set :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 0 (we don't want the optical flow being used by the EKF at this stage) 
 #. Perform a short test flight hovering in STABILIZE or AltHold for copter, or QSTABILIZE or QHOVER for QuadPlane, at small lean angles at heights ranging from 50cm to 3m with 
 #. Download the flash log and plot the following in mission planner
 #. EKF5.meaRng should correlate with the change in vehicle height
@@ -118,7 +118,7 @@ Second Flight
    You will need at least 15m of clear space around the vehicle to do this flight safely.
    If the optical flow velocity estimates are bad, you will have little warning and the copter may lean to its maximum lean angle very quickly.
 
-#. For EKF2, set :ref:`EK2_GPS_TYPE <EK2_GPS_TYPE>` = 3; for EKF3, set :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 5 and :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` = 0 to make the EKF ignore GPS and use the flow sensor
+#. Set :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 5 and :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` = 0 to make the EKF ignore GPS and use the flow sensor
 #. Ensure you have a loiter and hover mode available on you transmitter.
 #. Set "EKF Origin" on Ground Control Station map. In Mission Planner, right click, select "Set Home here", and choose to set "set EKF origin here".
 #. Take-off in loiter and bring the Copter/QuadPlane to about 1m height
@@ -134,21 +134,6 @@ Second Flight
 Setup for Normal Operation
 ==========================
 
-For EKF2:
----------
-
-#. Verify that :ref:`EK2_ENABLE <EK2_ENABLE>` = 1, enabling EKF2
-#. Set :ref:`EK2_FLOW_DELAY <EK2_FLOW_DELAY>` depending on your optical flow sensor
-#. To only use the optical flow sensor and not use the GPS, set :ref:`EK2_GPS_TYPE <EK2_GPS_TYPE>` = 3; to use the GPS with the optical flow sensor, set this to 0.
-
-For EKF3:
----------
-.. note::
-
-   EKF3 is enabled and used by default in ArduPilot firmware 4.1 and higher
-
-#. Verify that :ref:`EK3_ENABLE <EK3_ENABLE>` = 1, enabling EKF3
-#. Set :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` = 3 to use EKF3
 #. Set :ref:`EK3_SRC_OPTIONS <EK3_SRC_OPTIONS>` = 0 to disable FuseAllVelocities
 #. Set :ref:`EK3_FLOW_DELAY <EK3_FLOW_DELAY>` depending on your optical flow sensor
 #. Set :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` = 3 (Primary horizontal position from GPS, set this to 0 to only use the optical flow sensor)
