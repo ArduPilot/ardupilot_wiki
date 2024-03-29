@@ -150,20 +150,6 @@ and leave all other options checked.
 .. image:: ../../../images/OptFlow_ArmingChecks.png
     :target: ../_images/OptFlow_ArmingChecks.png
 
-Because optical flow requires good sonar/range finder data when the
-optical flow is enabled, an additional pre-arm check is enforced.
-
-[site wiki="plane,copter"]
-**While the vehicle is disarmed you should lift the vehicle straight up
-to at least 50cm but no higher than 2m** (if the rangefinder sees a
-distance of over 2m you will need to restart the autopilot).
-
-The error message when arming fails this check is "PreArm: check range
-finder"
-
-This check can be disabled by unchecking the "Parameter/Sonar" arming
-check.
-
 First Flight
 ============
 
