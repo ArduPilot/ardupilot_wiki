@@ -66,7 +66,6 @@ VTOL/QuadPlanes from Partners
 Rovers from Partners
 ====================
 
-* `AION ROBOTICS - R1 UGV <https://www.aionrobotics.com/r1>`__
 * `AION ROBOTICS - R6 UGV <https://www.aionrobotics.com/r6>`__
 * `AION ROBOTICS - M6 UGV <https://www.aionrobotics.com/m6-commercial-ugv>`__
 * `TT Robotix - Rhino 6x6 <http://www.ttrobotix.com/products/detail/906.html>`__
