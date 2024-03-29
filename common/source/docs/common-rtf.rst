@@ -73,6 +73,11 @@ Rovers from Partners
 * `TT Robotix - Rhino 6x6 <http://www.ttrobotix.com/products/detail/906.html>`__
 * `TT Robotix - Base 1 Rover <http://www.ttrobotix.com/products/detail/907.html>`__
 
+Boats from Partners
+===================
+
+* `BlueRobotics BlueBoat <https://bluerobotics.com/store/boat/blueboat/blueboat/>`__
+
 Subs from Partners
 ==================
 
