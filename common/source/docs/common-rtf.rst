@@ -20,7 +20,6 @@ Copters from Partners
 * `Hitec - SUI Endurance <https://hitecnology.com/drones/sui-endurance-multipurpose-professional-multirotor>`__
 * `Holybro - S500 V2 Kit <https://shop.holybro.com/s500-v2-kitmotor2216-880kv-propeller1045_p1153.html>`__
 * `Holybro - X500 Kit <https://shop.holybro.com/x500-kit_p1180.html>`__
-* `SkyRocket - Journey <http://sky-viper.com/journey/>`__
 * `TT Robotix - X-1300 EagleEyes Quadcopter <http://www.ttrobotix.com/products/detail/923.html>`__
 * `TT Robotix - H2-X6 Phoenix H6 Multirotor <http://www.ttrobotix.com/products/detail/926.html>`__
 * `TT Robotix - X-450 Scout Quadcopter <http://www.ttrobotix.com/products/detail/928.html>`__
@@ -90,6 +89,7 @@ Vehicles from Non-Partners
 * `Aton <https://traxxas.com/products/models/heli/Aton-Plus>`__ and `Aton-Plus from traxxas <https://traxxas.com/products/models/heli/Aton-Plus>`__ (firmware loaded using an SD Card)
 * DRONEE  Easy to Use Mapping Plane Drone `DRONEE PLANE <https://dronee.aero/pages/droneeplane>`__
 * `MotoDoro Farm Mapper (Plane) <https://motodoro.com/blog/detail/00005-farm-mapper-vtol.html>`__
+* `SkyRocket - Journey <http://sky-viper.com/journey/>`__
 * `UAV Mapper from TuffWing <http://www.tuffwing.com/products/drone_mapper.html>`__
 * 3DR Solo from `Amazon <https://www.amazon.com/3DR-Solo-Quadcopter-No-Gimbal/dp/B00ZPM7BOG>`__
 * `LP Mini Orca HVTOL Drone <https://lpbond.com/productos/miniorca.html>`__
