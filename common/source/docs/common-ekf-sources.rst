@@ -12,7 +12,17 @@ The EKF position and velocity sources used for its internal updates can be set u
 - :ref:`EK3_SRC1_VELZ<EK3_SRC1_VELZ>`: Velocity Vertical Source
 - :ref:`EK3_SRC1_YAW<EK3_SRC1_YAW>`: Yaw Source
 
-The options for these are generally self-explanatory. However, the :ref:`EK3_SRC1_YAW<EK3_SRC1_YAW>`  source options need a bit more explanation:
+The options for these are generally self-explanatory however a couple of items are explained in more detail below
+
+The :ref:`EK3_SRC1_POSZ<EK3_SRC1_POSZ>` source options are:
+
+- Option 1: Baro is the default and works well for most vehicles and situations.  If a GPS is also present the EKF may be configured to slowly correct the altitude to match the GPS by setting :ref:`EK3_OGN_HGT_MASK <EK3_OGN_HGT_MASK>` to 5 (e.g. 1:Correct when using Baro height + 4:Apply corrections to local position).
+- Option 2: RangeFinder should almost never be used.  This is only appropriate for indoor use where the floor is flat with no ground clutter (e.g. no chairs, boxes, etc).  Please note that :ref:`Surface Tracking <copter:terrain-following-manual-modes>` and :ref:`Terrain Following <terrain-following>` do not require the EKF to use the rangefinder at all
+- Option 3: GPS is only recommended if the vehicle will fly long duration flights where the air pressure may change significantly **and** the vehicle has a high quality GPS (e.g. UBlox F9P dual band).  In case of GPS failure the EKF will fallback to using the barometer (if present)
+- Option 4: Beacon may be useful when beacons are used in place of a GPS
+- Option 6: ExternalNav may be used when a companion device provides a position estimate
+
+The :ref:`EK3_SRC1_YAW<EK3_SRC1_YAW>` source options are:
 
 - Option 1: Compass is the normal default.
 - Option 2: GPS is used with GPS that can supply yaw (see :ref:`common-gps-for-yaw`)
@@ -23,7 +33,11 @@ The options for these are generally self-explanatory. However, the :ref:`EK3_SRC
 Source Switching
 ================
 
-Three set of EKF position and velocity source parameters are provided which can be selected via an :ref:`RC switch RCx_OPTION <common-auxiliary-functions>` set to "90". Otherwise, the _SRC1 set is used.
+Three sets of EKF position and velocity source parameters are provided and by default the 1st set is used (e.g. the _SRC1 set).
+
+The active set can be selected via an :ref:`RC auxiliary switch <common-auxiliary-functions>` (e.g. set ``RCx_OPTION`` to "90" / "EKF Position Source").
+
+Ground stations or companion computers may set the source by sending a `MAV_CMD_SET_EKF_SOURCE_SET  <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_SET_EKF_SOURCE_SET>`__ mavlink command but no GCSs are currently known to implement this.
 
 This feature is especially helpful when using :ref:`common-non-gps-to-gps`.
 
