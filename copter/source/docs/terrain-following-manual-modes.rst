@@ -24,9 +24,9 @@ Setup and Configuration
 
 .. warning::
 
-    Do not set the :ref:`EK2_ALT_SOURCE <EK2_ALT_SOURCE>` or ``EK3_ALT_SOURCE`` parameters.  These parameters should be left at "0" (barometer).
+    Do not set the :ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>` to Rangefinder.  This parameter should be left at the default.
 
-    Do not set the :ref:`EK2_RNG_USE_HGT <EK2_RNG_USE_HGT>`  or :ref:`EK3_RNG_USE_HGT <EK3_RNG_USE_HGT>` parameters.  These parameters should be left at "-1".
+    Do not set :ref:`EK3_RNG_USE_HGT <EK3_RNG_USE_HGT>` parameter.  This parameter should be left at "-1".
 
 How does it work?
 -----------------
