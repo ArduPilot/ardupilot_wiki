@@ -61,7 +61,7 @@ If the vehicle is moved over a ground object 1m tall. The Estimated ALT will rem
 
 If the RF's measurements change too rapidly (>2m for 3 reports), or the RF moves out of range, then they will be ignored and current altitude from the Estimated ALT set as new Target ALT. This prevents rapid climbs/descents with fast moving RF data. It also means that tracking requiring large,rapid changes, such as quickly approaching a tall object, will result in a possible impact. See :ref:`Object Avoidance <common-object-avoidance-landing-page>` in those cases.
 
-This is called ``Surface Tracking`` in ArduPilot.
+This is called :ref:`Surface Tracking <copter:terrain-following-manual-modes>` in ArduPilot.
 
 Optionally (normally recommended only for indoor use), the RF can be used as an additional sensor source for the EKF for altitude estimation. This is normally only used when the only altitude sensor available is a RF, since they have very limited range and more subject to environmental impacts to accuracy.
 
