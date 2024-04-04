@@ -47,11 +47,11 @@ Dual Serial F9P GPS
 
 - :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` = 5 ("GPS") assuming the 1st GPS is connected to SERIAL3.
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 5 ("GPS") assuming the 2nd GPS is connected to serial port 4
-- :ref:`GPS_TYPE <GPS_TYPE>` = 17 ("UBlox moving baseline base") 
-- :ref:`GPS_TYPE2 <GPS_TYPE2>` = 18 ("UBlox moving baseline rover")
+- :ref:`GPS1_TYPE <GPS1_TYPE>` = 17 ("UBlox moving baseline base") 
+- :ref:`GPS2_TYPE <GPS2_TYPE>` = 18 ("UBlox moving baseline rover")
 - :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` = 1 (AutoConfig Serial)
 - :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` = 1
-- Set the :ref:`GPS_POS1_X <GPS_POS1_X>`/Y/Z and :ref:`GPS_POS2_X <GPS_POS2_X>`/Y/Z parameters for the GPSs (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`). You must establish the relative positions of each GPS location on the vehicle with respect the vehicle's motion.
+- Set the :ref:`GPS1_POS_X <GPS1_POS_X>`/Y/Z and :ref:`GPS2_POS_X <GPS2_POS_X>`/Y/Z parameters for the GPSs (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`). You must establish the relative positions of each GPS location on the vehicle with respect the vehicle's motion.
 
 
 Dual DroneCAN F9P GPS
@@ -59,12 +59,12 @@ Dual DroneCAN F9P GPS
 
 If DroneCAN GPS are used, then configure the CAN/DroneCAN ports as explained in :ref:`common-uavcan-setup-advanced` and instead of setting up the SERIAL port protocols above, make sure that no SERIAL ports are setup with GPS protocol ("5"). Also be sure that the two DroneCAN GPS are on the same physical CAN bus from the autopilot. This usually requires that a CAN bus splitter be used. Then set these parameters:
 
-- :ref:`GPS_TYPE <GPS_TYPE>` = 22 ("DroneCAN moving baseline base")
-- :ref:`GPS_TYPE2 <GPS_TYPE2>` = 23 ("DroneCAN moving baseline rover")
+- :ref:`GPS1_TYPE <GPS1_TYPE>` = 22 ("DroneCAN moving baseline base")
+- :ref:`GPS2_TYPE <GPS2_TYPE>` = 23 ("DroneCAN moving baseline rover")
 - :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` = 2 (AutoConfig DroneCAN)
 - :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` = 1
-- Set the :ref:`GPS_POS1_X <GPS_POS1_X>`/Y/Z and :ref:`GPS_POS2_X <GPS_POS2_X>`/Y/Z parameters for the GPS antennas (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`). You must establish the relative positions of each GPS location on the vehicle with respect the vehicle's motion.
-- :ref:`GPS1_CAN_OVRIDE<GPS1_CAN_OVRIDE>` (Base NODEID) and :ref:`GPS2_CAN_OVRIDE<GPS2_CAN_OVRIDE>` (Rover NODEID) determine which physical DroneCAN GPS is used for GPS1 and GPS2. These are automatically populated at boot from the detected addresses, which are also shown in :ref:`GPS_CAN_NODEID1<GPS_CAN_NODEID1>` and :ref:`GPS_CAN_NODEID2<GPS_CAN_NODEID2>`, but can be overriden, if needed. You will need to determine which physical CAN GPS is assigned as GPS1 and GPS2 in order to setup the position offsets (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`)
+- Set the :ref:`GPS1_POS_X <GPS1_POS_X>`/Y/Z and :ref:`GPS2_POS_X <GPS2_POS_X>`/Y/Z parameters for the GPS antennas (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`). You must establish the relative positions of each GPS location on the vehicle with respect the vehicle's motion.
+- :ref:`GPS1_CAN_OVRIDE<GPS1_CAN_OVRIDE>` (Base NODEID) and :ref:`GPS2_CAN_OVRIDE<GPS2_CAN_OVRIDE>` (Rover NODEID) determine which physical DroneCAN GPS is used for GPS1 and GPS2. These are automatically populated at boot from the detected addresses, which are also shown in :ref:`GPS1_CAN_NODEID<GPS1_CAN_NODEID>` and :ref:`GPS2_CAN_NODEID<GPS2_CAN_NODEID>`, but can be overriden, if needed. You will need to determine which physical CAN GPS is assigned as GPS1 and GPS2 in order to setup the position offsets (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`)
 
 The above dual unit configurations assumes that you want the RTCMv3 data between
 the two GPS modules to go via the autopilot board.
@@ -83,7 +83,7 @@ NMEA
 ~~~~
 
 - :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` = 5 ("GPS") assuming the GPS is connected to SERIAL3 (be sure any lower numbered port does not use this protocol unless a GPS is attached).
-- :ref:`GPS_TYPE<GPS_TYPE>` = 5 (NMEA)
+- :ref:`GPS1_TYPE<GPS1_TYPE>` = 5 (NMEA)
 
 Some of these systems require that the "Master" antenna and "Slave" antenna (see manufacturer's documentation for which is antenna is designated the "Master") be mounted on the vehicle front to back in line with the 0 degree yaw of the vehicle and at the same vertical level and be at least 30cm apart. Otherwise , the antenna offset distances in the x/y/z directions must be entered detailed in the :ref:`Master-Slave Antenna Offsets<antenna-offsets>` section below.
 
@@ -93,9 +93,9 @@ Unicore UM982
 -------------
 
 - :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` = 5 ("GPS") assuming the GPS is connected to SERIAL3 (be sure any lower numbered port does not use this protocol unless a GPS is attached).
-- :ref:`GPS_TYPE<GPS_TYPE>` = 25 (UnicoreMovingBaseline)
+- :ref:`GPS1_TYPE<GPS1_TYPE>` = 25 (UnicoreMovingBaseline)
 
-.. note:: thes units can be used with only its "Master" antenna connected, if desired, but no yaw information should be used. In this case set :ref:`GPS_TYPE<GPS_TYPE>` = 24 (UnicoreMaster)
+.. note:: thes units can be used with only its "Master" antenna connected, if desired, but no yaw information should be used. In this case set :ref:`GPS1_TYPE<GPS1_TYPE>` = 24 (UnicoreMaster)
 
 For Unicore UM982 based GPSes, the "Master" and "Slave" antennas must be mounted at least 30cm apart on the vehicle. The offset distances in the x/y/z directions must be entered detailed in the :ref:`Master-Slave Antenna Offsets<antenna-offsets>` section below.
 
@@ -103,7 +103,7 @@ DroneCAN
 --------
 
 - setup the autopilot's CAN port parameters for DroneCAN: :ref:`common-uavcan-setup-advanced`
-- :ref:`GPS_TYPE<GPS_TYPE>` = 9 (DroneCAN GPS)
+- :ref:`GPS1_TYPE<GPS1_TYPE>` = 9 (DroneCAN GPS)
 
 The antenna offset distances in the x/y/z directions must be entered detailed in the :ref:`Master-Slave Antenna Offsets<antenna-offsets>` section below.
 
@@ -114,10 +114,10 @@ Master-Slave Antenna Offsets
 
 Dual unit or single unit/dual antenna systems (except Blicube NEMA GRTK) need the relative positions for the "Master" and "Slave" antennas specified:
 
-- :ref:`GPS_MB1_TYPE<GPS_MB1_TYPE>` = 1 (GPS1 Moving Baseline master antenna offsets relative to slave antenna, also enables the next parameters to be shown)
-- :ref:`GPS_MB1_OFS_X<GPS_MB1_OFS_X>`: offset in meters from the "Slave" to "Master" antenna in the X axis (in direction of 0 deg yaw, positive offsets are if "Master" is in front of the "Slave".
-- :ref:`GPS_MB1_OFS_Y<GPS_MB1_OFS_Y>`: offset in meters from the "Slave" to "Master" antenna in the Y axis (in direction 90 deg (right) of 0 deg yaw, positive offsets are if "Master" to the right of the "Slave".
-- :ref:`GPS_MB1_OFS_Z<GPS_MB1_OFS_Z>`: offset in meters from the "Slave" to "Master" antenna in the Z axis (in direction up and down, positive offsets are if "Master" below the "Slave".
+- :ref:`GPS1_MB_TYPE<GPS1_MB_TYPE>` = 1 (GPS1 Moving Baseline master antenna offsets relative to slave antenna, also enables the next parameters to be shown)
+- :ref:`GPS1_MB_OFS_X<GPS1_MB_OFS_X>`: offset in meters from the "Slave" to "Master" antenna in the X axis (in direction of 0 deg yaw, positive offsets are if "Master" is in front of the "Slave".
+- :ref:`GPS1_MB_OFS_Y<GPS1_MB_OFS_Y>`: offset in meters from the "Slave" to "Master" antenna in the Y axis (in direction 90 deg (right) of 0 deg yaw, positive offsets are if "Master" to the right of the "Slave".
+- :ref:`GPS1_MB_OFS_Z<GPS1_MB_OFS_Z>`: offset in meters from the "Slave" to "Master" antenna in the Z axis (in direction up and down, positive offsets are if "Master" below the "Slave".
 
 This figure and photo illustrates these parameters and their settings:
 
@@ -140,9 +140,9 @@ Master Antenna Offset from Vehicle CG
 
 For ultimate positioning precision in the centimeter ranges, the offset of the "Master" antenna from the vehicle's CG can optionally be entered to compensate for attitude effects on GPS accuracy. The offsets from the CG are entered into:
 
-- :ref:`GPS_POS1_X<GPS_POS1_X>`: offset in meters from the Center of Gravity to "Master" antenna in the X axis (in direction of 0 deg yaw, positive offsets are if "Master" is in front of the Center of Gravity.
-- :ref:`GPS_POS1_Y<GPS_POS1_Y>`: offset in meters from the Center of Gravity to "Master" antenna in the Y axis (in direction 90 deg (right) of 0 deg yaw, positive offsets are if "Master" to the right of the Center of Gravity.
-- :ref:`GPS_POS1_Z<GPS_POS1_Z>`: offset in meters from the Center of Gravity to "Master" antenna in the Z axis (in direction up and down, positive offsets are if "Master" below the Center of Gravity.
+- :ref:`GPS1_POS_X<GPS1_POS_X>`: offset in meters from the Center of Gravity to "Master" antenna in the X axis (in direction of 0 deg yaw, positive offsets are if "Master" is in front of the Center of Gravity.
+- :ref:`GPS1_POS_Y<GPS1_POS_Y>`: offset in meters from the Center of Gravity to "Master" antenna in the Y axis (in direction 90 deg (right) of 0 deg yaw, positive offsets are if "Master" to the right of the Center of Gravity.
+- :ref:`GPS2_POS_Z<GPS1_POS_Z>`: offset in meters from the Center of Gravity to "Master" antenna in the Z axis (in direction up and down, positive offsets are if "Master" below the Center of Gravity.
 
 This figure and photo illustrates these parameters and their settings:
 

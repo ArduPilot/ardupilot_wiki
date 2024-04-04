@@ -44,7 +44,7 @@ Example setup below shown for first proximity sensor:
 - set :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` to 3 (means use EKF3)
 - set :ref:`EK2_ENABLE <EK2_ENABLE>` to 0 (disable EKF2)
 - set :ref:`EK3_ENABLE <EK3_ENABLE>` to 1 (enable EKF3)
-- set :ref:`GPS_TYPE <GPS_TYPE>` to 0 (disable the GPS)
+- set :ref:`GPS1_TYPE <GPS1_TYPE>` to 0 (disable the GPS)
 - set :ref:`VISO_TYPE <VISO_TYPE>` to 1 (enable visual odometry)
 - optionally set :ref:`PRX1_TYPE <PRX1_TYPE>` to 2 (enable using ZED's depth map for object avoidance)
 

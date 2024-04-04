@@ -58,7 +58,7 @@ Next setup the EKF3 to use the ExternalNav for position and velocity:
 - :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 6 (ExternalNav)
 - :ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>` = 1 (Baro which is safer because of the camera's weakness to high vibrations)
 - :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` = 6 (ExternalNav)
-- Optionally set :ref:`GPS_TYPE <GPS_TYPE>`  = 0 to disable the GPS
+- Optionally set :ref:`GPS1_TYPE <GPS1_TYPE>`  = 0 to disable the GPS
 
 If you wish to use the camera's heading:
 

@@ -81,8 +81,8 @@ This sets up the required parameters a user would normally have to enter into th
   - :ref:`DID_MAVPORT<DID_MAVPORT>` X  where x is the serial port attached to OpenDroneID module
   - :ref:`DID_CANDRIVER<DID_CANDRIVER>` 0
   - :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` 3 
-  - :ref:`GPS_TYPE<GPS_TYPE>` 1
-  - :ref:`GPS_TYPE2<GPS_TYPE2>` 0
+  - :ref:`GPS1_TYPE<GPS1_TYPE>` 1
+  - :ref:`GPS2_TYPE<GPS2_TYPE>` 0
 
 - If its a CAN module these parameters should be substituted:
 

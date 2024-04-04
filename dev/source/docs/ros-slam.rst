@@ -169,7 +169,7 @@ Connect to the flight controller with a ground station (i.e. Mission Planner) an
 -  :ref:`AHRS_EKF_TYPE <copter:AHRS_EKF_TYPE>` = 2 (the default) to use EKF2 (at the time this page was written the EKF3 did not yet support external position estimates)
 -  :ref:`EK2_ENABLE <copter:EK2_ENABLE>` = 1 (the default)
 -  :ref:`EK3_ENABLE <copter:EK3_ENABLE>` = 0 (the default)
--  :ref:`GPS_TYPE <copter:GPS_TYPE>` = 0 to disable the GPS
+-  :ref:`GPS1_TYPE <GPS1_TYPE>` = 0 to disable the GPS
 -  :ref:`EK2_GPS_TYPE <copter:EK2_GPS_TYPE>` = 3 to disable the EKF's use of the GPS
 -  :ref:`COMPASS_ENABLE<copter:COMPASS_ENABLE>` = 0, :ref:`COMPASS_USE <copter:COMPASS_USE>` = 0, :ref:`COMPASS_USE2 <copter:COMPASS_USE2>` = 0, :ref:`COMPASS_USE3 <copter:COMPASS_USE3>` = 0 to disable the EKF's use of the compass and instead rely on the heading from ROS and Hector SLAM
 

@@ -113,7 +113,7 @@ Set the following parameters in all parameter tables of Mission planner and rest
 - :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` set to 1.
 - :ref:`CAN_D2_PROTOCOL<CAN_D2_PROTOCOL>` set to 1.
 - :ref:`NTF_LED_TYPES<NTF_LED_TYPES>`     set to 231.
-- :ref:`GPS_TYPE<GPS_TYPE>`               set to 9.
+- :ref:`GPS1_TYPE<GPS1_TYPE>`               set to 9.
 
 .. image:: ../../../images/cuav-neo-v2-pro/fc-set.png
 	:target: ../_images/fc-set.png

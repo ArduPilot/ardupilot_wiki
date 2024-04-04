@@ -17,8 +17,8 @@ high-precision barometer and a 3-axis compass.
 The following parameter should be set on the autopilot (and then reboot the autopilot):
 
 - :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (to enable the 1st CAN port)
-- :ref:`GPS_TYPE <GPS_TYPE>` = 9 (DroneCAN)
+- :ref:`GPS1_TYPE <GPS1_TYPE>` = 9 (DroneCAN)
 
-If the device does not work please follow the instructions on enabling the CANBUS in the :ref:`common-canbus-setup-advanced` page, followed by :ref:`common-uavcan-setup-advanced` steps and then set the :ref:`GPS_TYPE <GPS_TYPE>` or :ref:`GPS_TYPE2 <GPS_TYPE2>` parameter to 9.
+If the device does not work please follow the instructions on enabling the CANBUS in the :ref:`common-canbus-setup-advanced` page, followed by :ref:`common-uavcan-setup-advanced` steps and then set the :ref:`GPS1_TYPE <GPS1_TYPE>` or :ref:`GPS2_TYPE <GPS2_TYPE>` parameter to 9.
 
 The `manufacturer's product page is here <https://zubax.com/products/gnss_2>`__ for general information about the device.
