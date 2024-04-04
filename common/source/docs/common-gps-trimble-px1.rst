@@ -16,14 +16,14 @@ Parameter Setup
 
 The following instructions assume the PX-1 is your first GPS. If you have configured it as a second GPS, change all parameter names.
 
-- :ref:`GPS_COM_PORT <GPS_COM_PORT>` must be set per the documented values
-- :ref:`GPS_TYPE <GPS_TYPE>` = 11 (for GSOF)
+- :ref:`GPS1_COM_PORT <GPS1_COM_PORT>` must be set per the documented values
+- :ref:`GPS1_TYPE <GPS1_TYPE>` = 11 (for GSOF)
 - :ref:`SERIAL3_PROTOCOL <SERIAL3_PROTOCOL>` = 5 (to use GPS)
 
 The following parameters are not yet supported by GSOF:
-- :ref:`GPS_RATE_MS<GPS_RATE_MS>`
+- :ref:`GPS1_RATE_MS<GPS1_RATE_MS>`
 - :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>`
 - :ref:`GPS_SAVE_CFG<GPS_SAVE_CFG>`
-- :ref:`GPS_GNSS_MODE<GPS_GNSS_MODE>`
+- :ref:`GPS1_GNSS_MODE<GPS1_GNSS_MODE>`
 - :ref:`GPS_RAW_DATA<GPS_RAW_DATA>`
 - :ref:`GPS_NAVFILTER<GPS_NAVFILTER>`

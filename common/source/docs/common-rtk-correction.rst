@@ -31,7 +31,7 @@ It is possible to program the RTK Base's exact location directly into it if it i
 Setup
 -----
 
-Vehicle: normal setup for serial GPS (:ref:`GPS_TYPE<GPS_TYPE>` = 1) or DroneCAN GPS (:ref:`GPS_TYPE<GPS_TYPE>` = 9)
+Vehicle: normal setup for serial GPS (:ref:`GPS1_TYPE<GPS1_TYPE>` = 1) or DroneCAN GPS (:ref:`GPS1_TYPE<GPS1_TYPE>` = 9)
 
 Attach RTK GPS via USB to PC running Mission Planner or QGC.
 

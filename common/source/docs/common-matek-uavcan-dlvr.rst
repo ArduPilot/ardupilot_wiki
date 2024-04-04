@@ -103,8 +103,8 @@ Verify the following parameters are set on your autopilot via your ground statio
 
 if optional GPS is connected to UART2, then set
 
-- :ref:`GPS_TYPE<GPS_TYPE>` = 9 (DroneCAN) or if it will be the secondary GPS, set instead
-- :ref:`GPS_TYPE2<GPS_TYPE2>` = 9 (DroneCAN)
+- :ref:`GPS1_TYPE<GPS1_TYPE>` = 9 (DroneCAN) or if it will be the secondary GPS, set instead
+- :ref:`GPS2_TYPE<GPS2_TYPE>` = 9 (DroneCAN)
 
 
 

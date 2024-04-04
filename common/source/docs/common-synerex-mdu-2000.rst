@@ -30,9 +30,9 @@ The unit is connected to two autopilot UARTs. In this example SERIAL3 and SERIAL
 - :ref:`SERIAL3_PROTOCOL <SERIAL3_PROTOCOL>` = 5
 - :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 38
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 5
-- :ref:`GPS_TYPE <GPS_TYPE>` = 17 ("UBlox moving baseline base")
-- :ref:`GPS_TYPE2 <GPS_TYPE2>` = 18 ("UBlox moving baseline rover")
-- Set the :ref:`GPS_POS1_X <GPS_POS1_X>`/Y/Z and :ref:`GPS_POS2_X <GPS_POS2_X>`/Y/Z parameters for the GPSs (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`)
+- :ref:`GPS1_TYPE <GPS1_TYPE>` = 17 ("UBlox moving baseline base")
+- :ref:`GPS2_TYPE <GPS2_TYPE>` = 18 ("UBlox moving baseline rover")
+- Set the :ref:`GPS1_POS_X <GPS1_POS_X>`/Y/Z and :ref:`GPS2_POS_X <GPS2_POS_X>`/Y/Z parameters for the GPSs (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`)
 - :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` = 1
 - :ref:`EK2_ENABLE<EK2_ENABLE>` = 0 (to disable EKF2)
 - :ref:`EK3_ENABLE<EK3_ENABLE>` = 1 (to enable EKF3)

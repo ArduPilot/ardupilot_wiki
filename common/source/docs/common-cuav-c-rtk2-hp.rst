@@ -66,7 +66,7 @@ DroneCAN
 The diagram below shows the C-RTK2-HP being connected via its CAN port to an autopilot's CAN port.
 
 - setup the autopilot's CAN port parameters for DroneCAN: :ref:`common-uavcan-setup-advanced`
-- :ref:`GPS_TYPE<GPS_TYPE>` = 9 (DroneCAN GPS)
+- :ref:`GPS1_TYPE<GPS1_TYPE>` = 9 (DroneCAN GPS)
 
 .. image:: ../../../images/c-rtk2-hp/c-rtk2-hp-connection-en.jpg
 	:target: ../images/c-rtk2-hp/c-rtk2-hp-connection-en.jpg
@@ -79,9 +79,9 @@ The diagram below shows the C-RTK2 HP being connected via its UART2 port to an a
 	:target: ../images/c-rtk2-hp/c-rtk2-hp-connection-en2.jpg
 
 - set the autopilot's ``SERIALx_PROTOCOL`` = '5' (be sure any lower numbered port does not use this protocol unless a GPS is attached)
-- :ref:`GPS_TYPE<GPS_TYPE>` = 25 (UnicoreMovingBaseline)
+- :ref:`GPS1_TYPE<GPS1_TYPE>` = 25 (UnicoreMovingBaseline)
 
-.. note:: this unit can be used with only its "Master" antenna connected, if desired, but no yaw information should be used. In this case set :ref:`GPS_TYPE<GPS_TYPE>` = 24 (UnicoreMaster)
+.. note:: this unit can be used with only its "Master" antenna connected, if desired, but no yaw information should be used. In this case set :ref:`GPS1_TYPE<GPS1_TYPE>` = 24 (UnicoreMaster)
 
 Common Setup
 ------------

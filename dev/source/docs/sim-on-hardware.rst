@@ -72,7 +72,7 @@ Connect a GCS.
 In order for the simulation to work, the IMUs, GPS, and Compass sensors must be simulated. The script above sets up these sensors so you do not have to, as well as disabling the safety switch and IMU heater limits :
 
 - :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` = 10
-- :ref:`GPS_TYPE<GPS_TYPE>` = 100
+- :ref:`GPS1_TYPE<GPS1_TYPE>` = 100
 - :ref:`SIM_MAG1_DEVID<SIM_MAG1_DEVID>` =  97539
 
 You may also need to have the correct parameters for your specific vehicle frame, as mentioned above.

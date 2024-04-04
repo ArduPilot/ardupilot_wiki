@@ -64,7 +64,7 @@ Ensure that Copter-4.1 (or higher) is loaded onto the autopilot and connect with
 - set :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` to 0 ("None")
 - set :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` to 0 ("None")
 - set :ref:`EK3_SRC1_YAW<EK3_SRC1_YAW>` to 1 ("Compass") since a compass must be used in conjunction with this device.
-- set :ref:`GPS_TYPE <GPS_TYPE>` to 0 to disable the GPS
+- set :ref:`GPS1_TYPE <GPS1_TYPE>` to 0 to disable the GPS
 - set :ref:`ARMING_CHECK <ARMING_CHECK>` to -9 to disable the GPS arming check
 - set :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` to 921 to set SERIAL1's baud rate to 921600
 - set :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` to 13 to enable reading the IndoorLoiter2 protocol

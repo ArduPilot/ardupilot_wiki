@@ -59,7 +59,7 @@ The vehicle drives well, but randomly topples
 ---------------------------------------------
 This happens when GPS lock occurs while the vehicle is indoors. The best solution is to disable GPS while the vehicle is used indoors. Set parameter:
 
-- :ref:`GPS_TYPE<GPS_TYPE>` = 0 (Set this to 1 when outdoors)
+- :ref:`GPS1_TYPE<GPS1_TYPE>` = 0 (Set this to 1 when outdoors)
 
 The vehicle topples at higher speeds
 ------------------------------------

@@ -27,8 +27,8 @@ Verify the following parameters are set on your autopilot via your ground statio
 
 - :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1 (assuming its on the first CAN bus of the autopilot and will be using the first driver)
 - :ref:`CAN_D1_DRIVER<CAN_D1_PROTOCOL>` = 1 (DroneCAN)(assuming its the first driver)
-- :ref:`GPS_TYPE<GPS_TYPE>` = 9 (DroneCAN) or if it will be the secondary GPS, set instead
-- :ref:`GPS_TYPE2<GPS_TYPE2>` = 9 (DroneCAN)
+- :ref:`GPS1_TYPE<GPS1_TYPE>` = 9 (DroneCAN) or if it will be the secondary GPS, set instead
+- :ref:`GPS2_TYPE<GPS2_TYPE>` = 9 (DroneCAN)
 - Reboot
 
 Make sure the DroneCAN compass driver is not disabled. (:ref:`COMPASS_DISBLMSK<COMPASS_DISBLMSK>` bit 9 should not be set). 

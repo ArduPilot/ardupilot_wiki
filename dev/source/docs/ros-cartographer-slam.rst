@@ -279,7 +279,7 @@ Connect to the flight controller with a ground station (i.e. Mission Planner) an
 -  :ref:`EK3_SRC1_VELXY <copter:EK3_SRC1_VELXY>` = 6 to set velocity horizontal source to ExternalNAV
 -  :ref:`EK3_SRC1_VELZ <copter:EK3_SRC1_VELZ>` = 6 to set vertical velocity source to ExternalNAV
 -  :ref:`EK3_SRC1_YAW <copter:EK3_SRC1_YAW>` = 6 to set yaw source to ExternalNAV
--  :ref:`GPS_TYPE <copter:GPS_TYPE>` = 0 to disable the GPS
+-  :ref:`GPS1_TYPE <GPS1_TYPE>` = 0 to disable the GPS
 -  :ref:`VISO_TYPE <copter:VISO_TYPE>` = 1 to enable visual odometry
 -  :ref:`ARMING_CHECK <copter:ARMING_CHECK>` = 388598 (optional, to disable GPS checks)
 

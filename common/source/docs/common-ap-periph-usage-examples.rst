@@ -12,7 +12,7 @@ GPS Setup
 =========
 Attach the GPS to a DroneCAN Adapter's serial port
 
-- set :ref:`GPS_TYPE<GPS_TYPE>` = 9 on the autopilot
+- set :ref:`GPS1_TYPE<GPS1_TYPE>` = 9 on the autopilot
 - set the DroneCAN adapter's ``SERIALx_PROTOCOL`` on which the GPS is connected to 5 (GPS)
 
 Compass Setup
