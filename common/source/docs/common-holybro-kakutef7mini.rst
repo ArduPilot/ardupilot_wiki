@@ -64,7 +64,7 @@ The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive p
 - SERIAL2 -> UART2 (Telem2)
 - SERIAL3 -> UART3 (GPS)
 - SERIAL4 -> UART4
-- SERIAL6 -> UART6 (TX only unless :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1, then RX available also)
+- SERIAL6 -> UART6 (RC input)
 - SERIAL7 -> UART7 (Receive only, ESC Telemetry)
 
 RC Input
