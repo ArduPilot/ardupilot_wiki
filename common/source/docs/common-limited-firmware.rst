@@ -8,7 +8,9 @@ The ArduPilot firmware in some configurations exceeds 1 MB in size. Some autopil
 
 For the affected autopilots, a reduced firmware is generated. This firmware omits less-commonly used features in order to reduce the firmware size to less than 1 MB.
 
-The missing features are listed on :ref:`this page<binary-features>` for each board type for the current "latest" firmware. If you require any of these features, you can try to create a build with them in it (at the expense of other non-needed features) using the `Custom Firmware Build Server <https://custom.ardupilot.org>`__. The missing features list for a board are listed in the same groups and labels as those shown on the Custom Firmware Build Server.
+:ref:`The missing features are listed on this page<binary-features>` for each board type for the current "latest" firmware. If you require any of these features, you can try to create a build with them in it (at the expense of other non-needed features) using the `Custom Firmware Build Server <https://custom.ardupilot.org>`__. The missing features list for a board are listed in the same groups and labels as those shown on the Custom Firmware Build Server.
+
+.. note:: Currently the above page of missing features is auto-generated and has a bug, While this is being investigated and corrected, the definitive list for a given board and firmware version can be found in its firmware folder on `the firmware server<https://firmware.ardupilot.org/>`__ in its "features.txt' file.
 
 Using the server does require you to know which features you DO want to have and check them, as well as the ones desired that are currently missing.
 A table of all current build options that can be selected are shown :ref:`here<all-features>`.
