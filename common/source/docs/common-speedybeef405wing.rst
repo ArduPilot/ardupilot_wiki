@@ -1,10 +1,10 @@
 .. _common-speedybeef405wing:
 
-=================
-SpeedyBeeF405WING
-=================
+============================
+SpeedyBeeF405WING/ Wing Mini
+============================
 
-The SpeedyBeeF405wing integrates all the highly desired features for a Plane autopilot:
+The SpeedyBeeF405wing/Wing Mini integrates all the highly desired features for a Plane autopilot:
 
 - Sufficient outputs for QuadPlane applications as well as normal complex Fixed Wing applications
 - Full peripheral capabiliy: GPS/Compass/Analog or Digital Airspeed/SBUS,PPM or Serial RC/HD Video/Rangefinders,etc.
@@ -22,6 +22,11 @@ Plus several unique features:
 .. image:: ../../../images/SpeedyBeeF405WING.png
     :target: ../_images/SpeedyBeeF405WING.png
     :width: 450px
+
+.. image:: ../../../images/SpeedyBeeF405WING-Mini.jpg
+   :target: ../_images/SpeedyBeeF405WING-Mini.jpg
+   :width: 250px
+
 
 the above image and some content courtesy of `SpeedyBee <http://speedybee.com/>`__
 
@@ -66,8 +71,8 @@ Specifications
 
 -  **Size and Dimensions**
 
-   - 52mm x 32mm x 19mm
-   - 2??g
+   - Wing: 52mm x 32mm x 19mm , Mini:37mm x 26mm x 14mm
+   - Wing: 35g, Muini:19G
 
 Where to Buy
 ============
@@ -118,19 +123,17 @@ RC Input
 
 The SBUS pin, is passed by an inverter to RX2 (UART2 RX), which by default is mapped to a timer input instead of the UART, and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry. 
 
-To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the RX2 pin can also be configured to be used as true UART2 RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL2 port's RX input pin.
-
-With this option, :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` must be set to "23", and:
+To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the UART1 should be used. With this option, :ref:`SERIAL11_PROTOCOL<SERIAL1_PROTOCOL>` must be set to "23" (already set by default), and:
 
 - PPM is not supported.
 
-- DSM/SRXL connects to the RX2  pin, but SBUS would still be connected to SBUS.
+- DSM/SRXL connects to the RX1  pin, but SBUS would still be connected to SBUS.
 
-- FPort requires connection to TX2 and RX2 via a bi-directional inverter. See :ref:`common-FPort-receivers`.
+- FPort requires connection to TX1 and RX1 via a bi-directional inverter. See :ref:`common-FPort-receivers`.
 
-- CRSF also requires a TX2 connection, in addition to RX2, and automatically provides telemetry.
+- CRSF also requires a TX1 connection, in addition to RX1 and automatically provides telemetry. ELRS is connected in the same way, but bit 13 of :ref:`RC_OPTIONS<RC_OPTIONS>` should be set.
 
-- SRXL2 requires a connection to TX2 and automatically provides telemetry.  Set :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` to "4".
+- SRXL2 requires a connection to TX1 and automatically provides telemetry.  Set :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` to "4".
 
 .. note:: UART1 is configured by default for serial receivers. You can also have more than one receiver in the system at a time (usually used for long range hand-offs to a remote TX). See :ref:`common-multiple-rx` for details.
 

@@ -146,7 +146,7 @@ Closed Hardware
     SpeedyBee F4 (this board currently is non-verified) <common-speedybeef4>
     SpeedyBee F4 V3/V4 <common-speedybeef4-v3>
     SpeedyBee F405 Mini <common-speedybeef405-mini>
-    SpeedyBeeF405WING <common-speedybeef405wing>
+    SpeedyBeeF405WING/WING Mini <common-speedybeef405wing>
     ThePeach FCC-K1 <common-thepeach-k1>
     ThePeach FCC-R1 <common-thepeach-r1>
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
