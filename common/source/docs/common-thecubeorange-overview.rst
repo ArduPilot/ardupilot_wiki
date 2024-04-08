@@ -474,6 +474,20 @@ The Cube connector pin assignments
 
 Analog/PWM RSSI Input is pin 103
 
+.. note::
+
+   Cubes have strong protection on many of its pins to prevent damage from over current, slight over voltage, and to ensure compatibility with 5v signaling, ESD and other sources of electrical noise. Part of this protection involves a Protection component that is called the TXS108E which has an internal 40kΩ resistor, used to pull signal pins up to Vcc. These pull-up resistors are present on the servo pin headers and on UART including the CTS/RTS pins.
+
+   This has implications for pins to be used as GPIO; the internal STM32 pull-down resistors are unable to overcome this 40kΩ resistor, so if a pin must be used as a "pull-up to assert" input additional circuitry will be required.
+
+   Best practice would be to configure the pin floating (default state after setting mode), and then:
+
+    * If you have an input device that transitions between Floating or (3.3-5V) and driven to ground with less than 10K resistor, you don't need to place any resistor, it will work out of the box.
+
+    * If you have an input device that transition between High level (3.3-5V) and floating, then recommendation is to add a 10K resistor to pull down.
+
+    * For the "main" RC pins (ie, I/O pins) the protection also allows output of 5V signals, and are unidirectional signals, ie, just output. these allow higher current drive strength to overcome limitations with PWM signaling. this uses a different component, it is the SN74LVC8T245 which allows higher drive strength per pin and a total of 100mA for the 8 Main outputs combined, this is also more compatible with opto escs etc. If using DSHOT, connect the telemetry to a telemetry port.
+
 
 Cubepilot Ecosystem
 ===================
