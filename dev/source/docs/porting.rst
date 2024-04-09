@@ -130,11 +130,9 @@ For boards using Flash, the bootloader load address needs to be selected so that
 
 It is also possible to use ardupilot on a board with no storage.  In this case configuration parameters will have their default values at startup.
 
-The paramter defaults can be defined by creating a new file in the `/Tools/Frame_params <https://github.com/ArduPilot/ardupilot/tree/master/Tools/Frame_params>`__ directory and then add a reference to this file at the bottom of the hwdef.dat file like this:
+The paramter defaults can be defined by creating a defaults.parm file in the same directory as the hwdef.dat file.  In the case that you are including another hwdef.dat, you may also consider using ``@include PATH_TO_OTHER_DEFAULTS_PARM`` in your new defaults.parm file.
 
-- ``env DEFAULT_PARAMETERS '<path to defaults file>’``
-
-Here is `how it was done for the skyviper <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/skyviper-v2450/hwdef.dat#L56>`__
+Here is `how it was done for the skyviper <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/skyviper-v2450/defaults.parm>`__
 
 Creating a Bootloader
 ---------------------
