@@ -29,7 +29,7 @@ Below are the 6 supported modes.
 
 4. GPS Point: same as MAVLink targeting but the gimbal points at a specific location.  Users never need to actively set the gimbal to this mode
 
-5. SysId Target: the gimbal points at another vehicle with a specified MAVLink system id.  Users never need to actively set the gimbal to this mode and there are no known GCSs that support setting the system id
+5. SysId Target: the gimbal points at another vehicle with the MAVLink system id specified.  Users never need to actively set the gimbal to this mode and there are no known GCSs that support setting the system id, but the parameter can be set by updating the value of `MNT1_SYSID_DFLT<MNT1_SYSID_DFLT>` directly.
 
 6. Home Location: the gimbal points at home (normally its takeoff location)
 
