@@ -4,7 +4,7 @@
 Luxonis OAK-D
 =============
 
-[copywiki destination="copter"]
+[copywiki destination="copter,rover,blimp"]
 
 .. youtube:: Xxh8CUwEE1M
 
