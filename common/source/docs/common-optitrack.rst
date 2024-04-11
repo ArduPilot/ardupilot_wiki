@@ -39,9 +39,12 @@ Please refer to OptiTrack `quick start guides <https://v20.wiki.optitrack.com/in
 Required softwares
 ==================
 
-* `Motive:Tracker <https://optitrack.com/products/motive/tracker/>`__
+* `Motive 2 Tracker <https://optitrack.com/products/motive/tracker/>`__
 * `MAVProxy <https://github.com/ArduPilot/MAVProxy>`__
 
+.. note::
+
+   Motive 3 is not supported
 
 Prepare the drone
 =================
@@ -112,7 +115,11 @@ If you set Motive data streaming local interface to other than loopback , it is 
 
    The coordinate system of both Motive and ArduPilot are right-handed. While Z axis of ArduPilot is pointing down, Y axis of Motive is pointing up.  
 
-Save and build the project
+After all parameters is set, start sending pose to ardupilot:
+
+.. code:: bash
+
+   optitrack start
 
 Ground testing
 ==============
