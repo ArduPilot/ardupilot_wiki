@@ -54,13 +54,13 @@ There are two methods to allow these to be restored.
 Using Mission Planner
 ---------------------
 
-#. In the  **CONFIG/Full Parameter Tree** page, find the ``COMPASS_DEV_IDx`` (s) corresponding to the system's attached compasses. For each compass, copy  the current device id, then write the ``COMPASS_DEV_IDx`` to "0", and then write the original id back again.Do this for every compass attached and calibrated.
+#. Press ALT+F to get to advanced commands.
  
-#. Next, find the ``INS_ACC_IDx`` (s) corresponding to the system's attached accelerometers. For each one, copy  the current device id, then write the id to "0", and then write the original id back again.Do this for every accelerometer attached and calibrated.
-
 #. Now restore your previously stored parameters (could have also been done as first step), which includes the calibration parameters, to the autopilot and reboot. Calibration should not be required to arm now.
 
-.. youtube:: HhYF-Z0xFCQ
+#. Press the "Force Accel Cal" and/or "Force Compass Cal" to set the flag which indicates the cal has been done.
+
+.. image:: ../../../images/ForceCal.png
 
 Using MAVProxy
 --------------
