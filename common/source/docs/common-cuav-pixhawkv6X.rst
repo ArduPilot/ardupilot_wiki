@@ -102,7 +102,7 @@ PWM Output
 ==========
 
 The Pixhawkv6X supports up to 16 PWM outputs. All 16 outputs
-support all normal PWM output formats. All FMU outputs, except 7 and 8, also support DShot.
+support all normal PWM output formats. All FMU outputs support DShot, except 7 and 8. These do not support serial LEDS either.
 
 The 8 FMU PWM outputs are in 4 groups:
 
@@ -186,6 +186,6 @@ compatible ground station.
 
 Firmware for these boards can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "Pixhawk6X".
 
-Bi-Directional DShot firmware variations are available also.
+Bi-Directional DShot firmware variations are available also providing BDShot capability on outputs 1-6.
 
 [copywiki destination="plane,copter,rover,blimp"]
