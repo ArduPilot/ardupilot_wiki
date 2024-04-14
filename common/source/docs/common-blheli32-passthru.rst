@@ -6,9 +6,9 @@ BLHeli32 and BLHeli_S ESCs
 
 The BLHeli firmware and configuration applications were developed to allow the configuration of ESCs and provide additional features. ESCs with this firmware allow configuring timing, motor direction, LEDs, motor drive frequency, etc.  Before attempting to use BLHeli please follow the :ref:`DShot setup instructions <common-dshot-escs>`.
 
-This page includes setup instructions for the following features
+Depending on ESC, BLHeli/BLHeli_S/BLHeli32 provides the following features
 
-- Pass-Through support allows the BLHeli application to be used to configure the ESCs while remaining connected to the autopilot
+- Pass-Through support in ArdduPilot allows the BLHeliSuite and other ESC configurators to be used to configure the ESCs while remaining connected to the autopilot via USB cable.
 - :ref:`Reversible DShot <blheli32-reversible-dshot>` (aka 3D mode) allows the motor to be spun in either direction
 - :ref:`Bi-directional DShot <bidir-dshot>` allows the ESCs to send RPM back to the autopilot without the need for an additional telemetry connection
 - :ref:`ESC Telemetry <blheli32-esc-telemetry>` allows the ESCs to send RPM, voltage and current information back to the autopilot so that it can be logged, viewed in real-time or even allow the removal of a :ref:`battery monitor <esc-telemetry-based-battery-monitor>`
@@ -26,6 +26,8 @@ This page includes setup instructions for the following features
 
 Pass-Through Support
 --------------------
+
+..note:: This feature is only available on NON IOMCU outputs. Autopilots which have an IOMCU co-processsor (usually marked as having "MAIN" outputs from the IOMCU and "AUX" outputs from the main cpu) will not pass-through on those outputs. Use this features on "AUX" or "FMU" outputs with DShot capability.
 
 The Pass-Through feature allows BLHeli32 and BLHeli_S ESCs to be upgraded and configured using the corresponding BLHeliSuite32 or BLHeliSuite application (running on the user's PC) while the ESCs remain connected to the autopilot.  To use this feature please follow these steps
 
