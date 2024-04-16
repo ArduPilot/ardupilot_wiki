@@ -32,6 +32,7 @@ Connection to Autopilot
 - Set :ref:`FLOW_TYPE <FLOW_TYPE>` = 6 (DroneCAN)
 - Set :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 to enable DroneCAN
 - Set :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 1 (DroneCAN)
+- Optionally set :ref:`BRD_BOOT_DELAY <BRD_BOOT_DELAY>` = 3000 (3 seconds) to slow the autopilot's startup which allows the flow sensor to boot up first and avoid initialisation issues
 
 To use the onboard lidar (not recommended):
 
