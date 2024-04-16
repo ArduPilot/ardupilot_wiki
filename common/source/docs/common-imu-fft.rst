@@ -26,6 +26,13 @@ For most uses with other FFT-related advanced parameters at their default, this 
 
 .. note:: Using In-Flight FFT can result in poorer performance than a properly set up :ref:`Throttle-Based <common-throttle-based-notch>` notch filter since the FFT computations take time and can lag the actual required center frequency. In-Flight FFT is useful when the rotor frequencies of the vehicle vary widely as in heavy lift vehicles operating with high and low loads. It can be useful in setting up :ref:`Throttle-Based <common-throttle-based-notch>` notch filters, however, see :ref:`In-flight FFT Advanced Setup <common-imu-fft-advanced-setup>` instructions for more information.
 
+FFT Dynamic Harmonic Notch Frequency Tracking
+=============================================
+
+FFT mode tracking sets the base frequency to the largest noise peak. Normally, when multiple harmonic notch filters are then enabled, the center frequency of each harmonic is locked to the base frequency of the first filter as an integer multiple, as determined by :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>`. Setting bit 1 of :ref:`INS_HNTCH_OPTS<INS_HNTCH_OPTS>`, or :ref:`INS_HNTC2_OPTS<INS_HNTC2_OPTS>`, will enable each harmonic filter to track the largest noise peaks, individually.
+
+.. note:: setting bit 1 of the notch options will also change the default value of :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>` to 1 instead of its normal 3. This is to maintain backwards compatibility with previous fimware versions. You can set :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>` back to 3, or whatever is desired, after setting bit 1 of :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>`.
+
 FFT Options
 ===========
 
