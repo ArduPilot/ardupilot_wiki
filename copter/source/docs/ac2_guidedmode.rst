@@ -16,9 +16,9 @@ Overview
 
 Guided mode is not a traditional flight mode that would be assigned to a
 mode switch like other flight modes. The guided mode capability is
-enabled using a ground station application (such as Mission Planner) and
-telemetry radio (such as a :ref:`SiK Telemetry Radio <common-sik-telemetry-radio>`). 
-This capability allows you to
+enabled using a ground station application (such as Mission Planner) and a
+:ref:`telemetry radio <common-telemetry-landingpage>`. 
+This capability allows the pilot to
 interactively command the copter to travel to a target location by
 clicking on a point on the Mission Planner Flight Data map. Once the
 location is reached, the copter will hover at that location, waiting for
@@ -43,8 +43,7 @@ Instructions
    over wireless telemetry between your copter and your laptop.
 -  On your laptop, using the software that came with the telemetry
    module, make sure that it's working and that you have a GPS lock.
--  Take off in :ref:`Stabilize Mode <stabilize-mode>` and once
-   at a reasonable altitude, switch to Loiter.
+-  Take off in :ref:`Loiter Mode <loiter-mode>` and climb to a safe altitude
 -  In the Mission Planner Flight Data screen map, try right-clicking on
    a nearby spot and select "Fly to Here".
 -  You will be asked for a guided mode altitude. Enter an above home
@@ -78,12 +77,28 @@ Bit 	Meaning
 ===    ==========
 0 	   Allow Arming from Transmitter
 2 	   Ignore pilot yaw input
-3 	   SetAttitudeTarget_ThrustAsThrust 
+3 	   SetAttitudeTarget interprets Thrust As Thrust
+4      Do not stabilize PositionXY
+5      Do not stabilize VelocityXY
+6      Waypoint navigation used for position targets
+7      Allow weathervaning
 ===    ==========
 
-Bit 3 makes interpretation of SET_ATTITUDE_TARGET MAVLink command's ``thrust`` field as pure thrust from 0 to 1 , instead of a climb rate. See `Commands in Guided Mode <https://ardupilot.org/dev/docs/copter-commands-in-guided-mode.html>`__
+Bit 0 (e.g. "1") allowing arming in Guided mode from the RC transmitter
 
-The :ref:GUID_TIMEOUT<GUID_TIMEOUT> parameter holds the timeout (in seconds) when the vehicle is being controlled using attitude, velocity and/or acceleration commands. If no commands are received from the companion computer for this many seconds, the vehicle will slow to a stop (if velocity and/or acceleration commands were being provided) or hold a level hover (if attitude commands were provided). The default setting is 3 seconds.
+Bit 2 (e.g. "4") disables the pilot's ability to change the vehicle's heading using the RC transmitter
+
+Bit 3 (e.g. "8") changes the interpretation of the `SET_ATTITUDE_TARGET MAVLink <https://mavlink.io/en/messages/common.html#SET_ATTITUDE_TARGET>`__ command's ``thrust`` field to be pure thrust expressed as a value between 0 and 1, instead of a climb rate. See :ref:`Copter Commands in Guided Mode <copter-commands-in-guided-mode>` for more details
+
+Bit 4 (e.g. "16") disables the position controller's XY axis position error correction.  This may be useful if an external controller is providing high speed targets which already include position error correction
+
+Bit 5 (e.g. "32") is the same as above but affects the position controller's velocity error correction
+
+Bit 6 (e.g. "64") enables S-Curve path planning (the same as is used in :ref:`Auto mode <auto-mode>`) to reach the position target.  This may result a smoother acceleration and deceleration but the position target cannot be updated quickly.  This also allows :ref:`object avoidance path planning <common-object-avoidance-landing-page>` (e.g. :ref:`Bendy Ruler <common-oa-bendyruler>` and :ref:`Dijkstras<common-oa-dijkstras>`) to be used in Guided mode
+
+Bit 7 (e.g. "128") enables :ref:`weathervaning <weathervaning>`
+
+The :ref:`GUID_TIMEOUT<GUID_TIMEOUT>` parameter holds the timeout (in seconds) when the vehicle is being controlled using attitude, velocity and/or acceleration commands. If no commands are received from the companion computer for this many seconds, the vehicle will slow to a stop (if velocity and/or acceleration commands were being provided) or hold a level hover (if attitude commands were provided). The default setting is 3 seconds.
 
 .. _guided_nogps:
 
