@@ -143,5 +143,6 @@ tuning options for the vehicle.
     Vibration Damping <common-vibration-damping>
 [/site]
 [site wiki="copter"]
+    Weathervaning <weathervaning>
     Windspeed Estimation and Baro Compensation <airspeed-estimation>
 [/site]
