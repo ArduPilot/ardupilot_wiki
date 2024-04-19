@@ -15,7 +15,7 @@ ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka R
 Prerequisites
 =============
 
-- Learn on to use ArduPilot first by following the relevant wiki for `Rover <https://ardupilot.org/rover/index.html>`__, `Copter <https://ardupilot.org/copter/index.html>`__ or `Plane <https://ardupilot.org/plane/index.html>`__. In particular, make sure the vehicle works well in Manual and Autonomous modes like Guided and Auto before trying to use ROS.
+- Learn to use ArduPilot first by following the relevant wiki for `Rover <https://ardupilot.org/rover/index.html>`__, `Copter <https://ardupilot.org/copter/index.html>`__ or `Plane <https://ardupilot.org/plane/index.html>`__. In particular, make sure the vehicle works well in Manual and Autonomous modes like Guided and Auto before trying to use ROS.
 - Learn how to use ROS 2 by reading the `beginner tutorials <https://docs.ros.org/en/humble/Tutorials.html>`__.  In the case of a problem with ROS, it is best to ask on ROS community forums first (or google your error).
 
     We are keen to improve ArduPilot's support of ROS 2 so if you find issues (such as commands that do not seem to be supported), please report them in the `ArduPilot issues list <https://github.com/ArduPilot/ardupilot/issues>`__. A maintainer can add the `ROS` tag.
@@ -59,6 +59,12 @@ And finally, build your workspace:
 
     cd ~/ros2_ws
     colcon build --packages-up-to ardupilot_dds_tests
+
+If the build fails, when you request help, please re-run the build in verbose mode like so:
+
+.. code-block:: bash
+
+    colcon build --packages-up-to ardupilot_dds_tests --event-handlers=console_cohesion+
 
 If you'd like to test your installation, run:
 
