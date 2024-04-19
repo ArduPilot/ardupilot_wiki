@@ -17,4 +17,5 @@ Additional Information and Topics of Interest
     SkyRocket <skyrocket> 
     OEM Customization <common-oem-customizations>
     Use Cases and Applications<common-use-cases-and-applications>
+    Web Tools <https://firmware.ardupilot.org/Tools/WebTools/>
     Appendix <common-appendix>
