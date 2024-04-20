@@ -18,7 +18,7 @@ If ESCs with telemetry are used (either via a separate telemety wire or bi-direc
 
 .. note::
 
-   If you set the dynamic harmonics option (i.e. a notch per motor) mentioned below, the bandwidth should not be half the frequency. It should be greatly reduced as more notches cause more phase lag (i.e. latency), thus the bandwidth needs to be reduced to maintain a reasonable phase lag, else oscillation and a poorer tune will result despite the more accurate filtering compared to throttle-based filtering. For example, with four motors, :ref:`INS_HNTCH_FREQ<INS_HNTCH_FREQ>` / 4 is suggested as a starting point.
+   If you set the multi-source option (i.e. a notch per motor) mentioned below, the bandwidth should not be half the frequency. It should be greatly reduced as more notches cause more phase lag (i.e. latency), thus the bandwidth needs to be reduced to maintain a reasonable phase lag, else oscillation and a poorer tune will result despite the more accurate filtering compared to throttle-based filtering. The suggested starting point is :ref:`INS_HNTCH_FREQ<INS_HNTCH_FREQ>` / number of motors. For example, with a quadcopter, :ref:`INS_HNTCH_FREQ<INS_HNTCH_FREQ>` / 4 is suggested as a starting point.
    This is because for notch filters, a wider bandwidth causes a greater phase lag per notch.
    You can also use the `Filter Tool <https://firmware.ardupilot.org/Tools/FilterTool/>`__ to check the phase lag for your chosen filtering settings. If your phase lag is higher than it was with the throttle-based notch, then you can try reducing the bandwidth even further, balancing the phase lag and the amount of noise in the system.
 
@@ -42,9 +42,10 @@ Once the notch filter(s) are setup, the effectiveness of them can be checked by 
 
 While the log analysis of noise frequencies is not absolutely required prior to notch setup for RPM based mode, the logging and analysis done for the Confirmation flight using that method can be done in order to confirm the noise elimination, if desired.
 
-Dynamic Harmonics
-=================
+Multi-Source
+============
 
-By default the ESC based harmonic notch will use an average of the individual motor frequencies in order to drive the center frequency of the notch, this average is then used as the first harmonic and other harmonic notches are added at higher frequency multiples of the first harmonic. It is also possible to configure the harmonics to instead be first harmonics per motor. This gives four notches - one for each motor - that exactly tracks the motor speed. In dynamic flight this can give much better noise attenuation.
+By default the ESC based harmonic notch will use an average of the individual motor frequencies in order to drive the center frequency of the notch, this average is then used as the first harmonic and other harmonic notches are added at higher frequency multiples of the first harmonic. It is possible to configure the harmonics to instead be first harmonics per motor. This gives four notches - one for each motor - that exactly tracks the motor speed. In dynamic flight this can give much better noise attenuation.
 
-To configure this option set :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` and/or :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` to "2"
+To configure this option set :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` and/or :ref:`INS_HNTC2_OPTS <INS_HNTC2_OPTS>` to "2". You also need to reduce the bandwidth of the notch filter to around :ref:`INS_HNTCH_FREQ<INS_HNTCH_FREQ>` / number of motors, otherwise you will likely have too high phase lag leading to worse PID performance. See the note above for more details.
+
