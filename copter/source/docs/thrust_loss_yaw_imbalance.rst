@@ -23,6 +23,8 @@ If these messages are seen in hover or relaxed flight, the problem must be fixed
 
 If only seen in climbing and aggressive maneuvers it may be sufficient to lower the requested accelerations and speeds. Again the vehicle's thrust to weight ratio can be increased to allow higher accelerations and speeds.
 
+.. _yaw_imbalance:
+
 Yaw Imbalance
 =============
 
