@@ -73,6 +73,8 @@ Once the noise frequency is determined, the notch filter(s) can be further setup
 
 As of firmware version 4.5 and later, a better method has been developed using continuous raw IMU data, if the autopilot is H7-based, and using a new web based tool. :ref:`This method is now preferred <common-raw-imu-logging>`.
 
+.. note:: if you see two noise peaks close together, it may be that your copter has significant yaw imbalance. See the :ref:`Yaw Imbalance section <copter:yaw_imbalance>`.
+
 .. _notch_harmonics:
 
 
