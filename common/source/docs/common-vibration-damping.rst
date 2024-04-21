@@ -78,13 +78,15 @@ has a video demonstrating vibration isolation using Moon Gel on a Go-Pro camera.
 3D Printed Anti-Vibration Platform
 ----------------------------------
 
-`GuyMcCaldin's <https://diydrones.com/profiles/profile/show?id=GuyMcCaldin&>`__ 3D Printed vibration mount (available from `Shapeways <https://www.shapeways.com/product/45H92T5RS/omnimac-apm-mount-v1-5>`__ and `Thingiverse <https://www.thingiverse.com/thing:160655>`__) using `these Hobbyking dampers <https://hobbyking.com/en_us/general-purpose-anti-vibration-rubber-w-m3-x-11mm-screw-and-m3-nylock-nut-4pcs-set.html?___store=en_us>`__
+GuyMcCaldin's 3D Printed vibration mount on `Thingiverse <https://www.thingiverse.com/thing:3794194>`__  using `dampers like these <https://www.amazon.com/MECCANIXITY-Anti-Vibration-Absorption-M3-5x13mm-Quadcopter/dp/B0BZNWDVF5?th=1>`__
 
 .. image:: ../../../images/guymccaldin-vibration-mount.jpg
    :target: ../_images/guymccaldin-vibration-mount.jpg
    :width: 450px
 
-The mount can be installed using double sided tape, or M3 screws spaced at 45mm x 45mm.
+The mount can be installed using double sided tape, or M3 screws.
+
+Another variation from 
 
 3D Printed Anti-Vibration Platform for NAVIO2
 ---------------------------------------------
