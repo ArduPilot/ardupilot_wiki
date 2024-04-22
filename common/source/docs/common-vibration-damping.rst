@@ -86,8 +86,6 @@ GuyMcCaldin's 3D Printed vibration mount on `Thingiverse <https://www.thingivers
 
 The mount can be installed using double sided tape, or M3 screws.
 
-Another variation from 
-
 3D Printed Anti-Vibration Platform for NAVIO2
 ---------------------------------------------
 
