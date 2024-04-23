@@ -36,7 +36,6 @@ New Features
 
 - Full parsing of RTCM stream options for special cases, see https://github.com/ArduPilot/ardupilot_wiki/pull/5924
 - Crash dump pre-arm, see https://github.com/ArduPilot/ardupilot_wiki/pull/5920
-- Correct the motor GPIO and grouping for the AocodaH743Dual autopilot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5896
 - Add ability to store fence list on SD card, see https://github.com/ArduPilot/ardupilot_wiki/pull/5967
 - Fix MambaH743 serial defaults, see https://github.com/ArduPilot/ardupilot_wiki/pull/6021
 - Add AUX switch to disable RF in mount, see https://github.com/ArduPilot/ardupilot_wiki/pull/5974
