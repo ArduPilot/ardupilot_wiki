@@ -11,8 +11,8 @@ ModalAI VOXL
 
 This article explains how to setup a `ModalAI VOXL-CAM <https://www.modalai.com/en-jp/pages/voxl-cam-perception-engine>`__ for use with ArduPilot as a substitude for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto to work.
 
-The VOXL board in the VOXL-CAM can be purchased individually and used as a companion computer. The newer and more powerful VOXL 2 board also
-makes a great companion computer.
+The VOXL board in the VOXL-CAM can be purchased `individually <https://www.modalai.com/collections/voxl/products/voxl>`__ and be used as a companion computer. The newer and more powerful VOXL 2 companion computer is also
+available.
 
 .. note::
 
