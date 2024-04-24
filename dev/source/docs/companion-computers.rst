@@ -40,7 +40,7 @@ tools/suites are listed below.
     :maxdepth: 1
 
     APSync <apsync-intro>
-    BlueOS <https://blueos.cloud/docs/blueos/1.1/overview/>
+    BlueOS <https://blueos.cloud/>
     DroneKit <droneapi-tutorial>
     FlytOS <flytos>
     Maverick <https://goodrobots.github.io/maverick/#/>
