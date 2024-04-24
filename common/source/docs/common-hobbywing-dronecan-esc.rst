@@ -21,6 +21,8 @@ Connection and Configuration
 
 Connect the ESCs (perhaps using a 4-pin I2C splitter) to the autopilot's CAN1 (or CAN2) port.
 
+.. note:: the CAN_H wire color varies from red to gray depending on product
+
 .. image:: ../../../images/hobbywing-dronecan-esc-autopilot.png
    :target: ../_images/hobbywing-dronecan-esc-autopilot.png
    :width: 450px
