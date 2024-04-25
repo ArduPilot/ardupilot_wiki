@@ -1,4 +1,4 @@
-.. _common-oem-customization:
+.. _common-oem-customizations:
 
 =================
 OEM Customization
@@ -10,7 +10,7 @@ ArduPilot provides several ways for an OEM to provide firmware on their products
 - Ability to provide Lua scripts in ROM for special functions without the end-user having to load them on the SD card. Read more about Lua scripting in ArduPilot :ref:`here<common-lua-scripts>`.
 - Ability to change the firmware string displayed to the user.
 - Ability to include pictures and informational files in available free flash space.
-- Ability to change parameters and mark them as read-only so that users cannot change them using :ref:`APJ Tools<dev:apjtools-intro>`.
+- Ability to change parameters and mark them as read-only so that users cannot change them using :ref:`APJ Tools<dev:apjtools-intro>`. (as of version 4.5 firmware, this is no longer available)
 
 Customization Steps
 ===================
