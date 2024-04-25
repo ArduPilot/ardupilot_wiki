@@ -4,9 +4,11 @@
 APJ Tools for Custom Parameter Defaults
 =======================================
 
+.. note:: this capability has been removed as of ArduPilot version 4.5 and later. See instead :ref:`common-oem-customizations`.
+
 `APJ Tools <https://github.com/ArduPilot/ardupilot/blob/master/Tools/scripts/apj_tool.py>`__ is a command-line `Python <https://www.python.org/downloads/>`__ program which can be used to add custom default parameter values to a pre-built ArduPilot firmware.  It can also mark these parameters as read-only to avoid users accidentally overwriting them.  This can help companies reduce the time required to set up many identical vehicles.
 
-Additional customization options are possible by creating a new build target for a specific vehicle. :ref:`OEM Customization<common-oem-customization>`
+Additional customization options are possible by creating a new build target for a specific vehicle. :ref:`OEM Customization<common-oem-customizations>`
 
 How to Install APJ Tools
 ------------------------
