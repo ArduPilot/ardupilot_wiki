@@ -74,20 +74,6 @@ The SERIAL7 port (UART7) is normally for ESC telemetry, and has an R7 pin on
 both of the ESC connectors.
 
 
-Servo Output Mapping
-====================
-
-The PWM outputs are marked M1-M8 in the above pinouts. The corresponding servo outputs are:
-
-    - M1 -> Servo Output 4
-    - M2 -> Servo Output 1
-    - M3 -> Servo Output 2
-    - M4 -> Servo Output 3
-    - M5 -> Servo Output 5
-    - M6 -> Servo Output 6
-    - M7 -> Servo Output 7
-    - M8 -> Servo Output 8
-
 RC Input
 ========
 
@@ -137,6 +123,15 @@ The PWM is in 3 groups:
 Channels within the same group need to use the same output rate, whether PWM or Dshot. If
 any channel in a group uses DShot then all channels in the group need
 to use DShot.
+
+.. note:: for users migrating from Betaflight quads, the board markings for M1-8 correspond to the ArduPilot output numbers, not motor numbers. Motors are assigned to these outputs using the SERVOx_FUNCTION parameters. If the autopilot is currently being used with Betaflight, the following parameters should be set after loading ArduPilot in order to avoid wiring changes to the motors:
+
+- :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
+- :ref:`FRAME_TYPE<>` = 12 (BetaFlightX) or 18 (BetaflightX-reversed)  See :ref:`connect-escs-and-motors`
+- :ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>` = 36 (Motor4)
+- :ref:`SERVO2_FUNCTION<SERVO2_FUNCTION>` = 33 (Motor1)
+- :ref:`SERVO3_FUNCTION<SERVO3_FUNCTION>` = 34 (Motor2)
+- :ref:`SERVO4_FUNCTION<SERVO4_FUNCTION>` = 35 (Motor3)
 
 LED Output
 ==========
