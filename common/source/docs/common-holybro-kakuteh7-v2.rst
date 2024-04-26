@@ -198,7 +198,7 @@ to use DShot.
 .. note:: for users migrating from Betaflight quads, the board markings for M1-8 correspond to the ArduPilot output numbers, not motor numbers. Motors are assigned to these outputs using the SERVOx_FUNCTION parameters. If the autopilot is currently being used with Betaflight, the following parameters should be set after loading ArduPilot in order to avoid wiring changes to the motors:
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<>` = 12 (BetaFlightX) or 18 (BetaflightX-reversed)  See :ref:`connect-escs-and-motors`
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) or 18 (BetaflightX-reversed)  See :ref:`connect-escs-and-motors`
 - :ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>` = 36 (Motor4)
 - :ref:`SERVO2_FUNCTION<SERVO2_FUNCTION>` = 33 (Motor1)
 - :ref:`SERVO3_FUNCTION<SERVO3_FUNCTION>` = 34 (Motor2)
