@@ -6,7 +6,7 @@ ROS 2 with Gazebo
 
 Once ROS2 is correctly :ref:`installed <ros2>` and running :ref:`SITL <ros2-sitl>`, we can integrate ArduPilot with Gazebo. 
 
-First, install `Gazebo Garden <https://gazebosim.org/docs/garden/install>`__ or `Gazebo Harmonic <https://gazebosim.org/docs/harmonic/install>`__
+First, install `Gazebo Harmonic (recommneded) <https://gazebosim.org/docs/harmonic/install>`__ or `Gazebo Garden <https://gazebosim.org/docs/garden/install>`__.
 
 Next, set up all the necessary ROS 2 packages in the workspace.
 
@@ -17,11 +17,12 @@ We will clone the required repositories using `vcstool <https://github.com/dirk-
     cd ~/ros2_ws
     vcs import --input https://raw.githubusercontent.com/ArduPilot/ardupilot_gz/main/ros2_gz.repos --recursive src
 
-Set the gazebo version to either ``garden`` or ``harmonic``
+Set the Gazebo version to either ``harmonic`` (recommended) or ``garden``.
+It's recommended to set this in your `~/.bashrc` file.
 
 .. code-block:: bash
 
-    export GZ_VERSION=garden
+    export GZ_VERSION=harmonic
 
 Update ROS dependencies:
 
