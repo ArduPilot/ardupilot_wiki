@@ -17,7 +17,7 @@ Ensure you have the prerequisites complete and working before beginning this Gaz
 Install Gazebo
 ==============
 
-First, install `Gazebo Harmonic (recommneded) <https://gazebosim.org/docs/harmonic/install>`__ or `Gazebo Garden <https://gazebosim.org/docs/garden/install>`__.
+First, install `Gazebo Harmonic (recommended) <https://gazebosim.org/docs/harmonic/install>`__ or `Gazebo Garden <https://gazebosim.org/docs/garden/install>`__.
 
 Next, set up all the necessary ROS 2 packages in the workspace.
 
