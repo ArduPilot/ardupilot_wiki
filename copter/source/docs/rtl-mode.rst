@@ -14,7 +14,7 @@ Overview
 
 When RTL mode is selected, the copter will return to the home location, or if rally points have been setup, the closet rally point.
 
-The copter will first rise a minimum of :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>` or to  :ref:`RTL_ALT <RTL_ALT>`, whichever is higher, before returning home.  The default value for :ref:`RTL_ALT <RTL_ALT>` is 15m. Under no circumstances will this altitude be below 2m.
+The copter will first rise a minimum of :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>` or to  :ref:`RTL_ALT <RTL_ALT>`, whichever is higher, before returning home.  The default value for :ref:`RTL_ALT <RTL_ALT>` is 15m. Under no circumstances will this altitude be below 30cm.
 
 The altitude reference frame is set by either the rally point, if proceeding to one of those, or by :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` to select relative to HOME, or Terrain. If :ref:`WPNAV_RFND_USE<WPNAV_RFND_USE>` = 1 and Terrain is selected, then rangefinder will be used.
 
