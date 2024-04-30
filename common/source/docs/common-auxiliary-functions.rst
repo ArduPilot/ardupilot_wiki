@@ -284,8 +284,11 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        177           | Mount LRF Enable           |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
+|        178           | FlightMode Pause/Resume    |    X     |         |         |
++----------------------+----------------------------+----------+---------+---------+
 |        180           | Autotune_test_gains        |    X     |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+
 
 Intended as continuous PWM range control inputs:
 
@@ -577,6 +580,7 @@ Other functions are:
     Camera Lens                           Select the active camera lens (only supported by ViewPro camera gimbals)
     VTOL Fwd Throttle disable             Overrides use of forward throttle in VTOL modes
     Mount LRF Enable                      Enable(switch high) ranging updates
+    FlightMode Pause                      In Guided/Auto modes, pauses mission
     Autotune_test_gains                   After autotune,allows selecting tune(high) or pretune gains
     ROLL Input                            ROLL input channel. (replaces RCMAP)
     PITCH Input                           PITCH input channel. (replaces RCMAP)
