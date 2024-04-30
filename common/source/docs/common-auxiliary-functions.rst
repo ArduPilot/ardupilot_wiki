@@ -278,6 +278,9 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        175           | Camera Lens                |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
+|        178           | FlightMode Pause/Resume    |    X     |         |         |
++----------------------+----------------------------+----------+---------+---------+
+
 
 Intended as continuous PWM range control inputs:
 
@@ -566,6 +569,7 @@ Other functions are:
                                          | approach phase of a VTOL landing, QLAND or QRTL modes.
     Camera Image Tracking                 Activate Camera Image Tracking (only supported by ViewPro camera gimbals)
     Camera Lens                           Select the active camera lens (only supported by ViewPro camera gimbals)
+    FlightMode Pause                      In Guided/Auto modes, pauses mission
     ROLL Input                            ROLL input channel. (replaces RCMAP)
     PITCH Input                           PITCH input channel. (replaces RCMAP)
     THROTTLE Input                        THROTTLE input channel. (replaces RCMAP)
