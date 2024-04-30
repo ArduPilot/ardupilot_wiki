@@ -47,6 +47,8 @@ A WDOG log message should also appear with the following columns that may be use
 - FP : Thread Priority (see list of priorities starting with APM_MONITOR_PRIORITY in `AP_HAL_ChibiOS/Scheduler.h <https://github.com/ardupilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/Scheduler.h#L25>`__)
 - ICSR : Interrupt Control and State Register (see "ICSR bit assignments" in ST datasheets)
 
+.. _crash_dump:
+
 CRASH DUMP
 ==========
 
@@ -59,3 +61,5 @@ In addition to the crash_dump.bin file, the preceding dataflash log or the git-h
 
 .. image:: ../../../images/git-hash.png
    :target: ../_images/git-hash.png
+
+As of version 4.5.1, if a crash_dump.bin file has been created, a pre-arm failure will be activated to warn the user of the crash dump so that it may be reported. The pre-arm may be cleared by either re-flashing firmware to the autopilot or by setting the :ref:`ARMING_CRSDP_IGN<ARMING_CRSDP_IGN>` param to 1 (not recommended).
