@@ -138,6 +138,7 @@ Closed Hardware
     MFT-SEMA100 <common-mft-sema100>
     MicoAir405v2/Mini <common-MicoAir405v2>
     ModalAI Flight core <https://www.modalai.com/products/flight-core>
+    MicoAir743 <common-MicoAir743>
     mRo ControlZero Classic <https://store.mrobotics.io/product-p/m10048d.htm>
     mRo ControlZero F7 <common-mro-control-zero-F7>
     mRo ControlZero H7 <https://store.mrobotics.io/mRo-Control-Zero-H7-p/mro-ctrl-zero-h7.htm>
