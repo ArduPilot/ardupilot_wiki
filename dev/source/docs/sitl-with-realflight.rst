@@ -189,8 +189,8 @@ To setup a six position mode switch, you would do so just as explained :ref:`her
     Interlink Emulation <interlink-emulation>
     Understanding SITL using RealFlight <flightaxis>
 
-Creating A REalflight Model for Simulation
+Creating a RealFlight Model for Simulation
 ==========================================
 
-See `this blog post <https://discuss.ardupilot.org/t/creating-a-realflight-model-with-blender>`__ for details on creating a RF model for flightaaxis simulation.
+See `this blog post <https://discuss.ardupilot.org/t/creating-a-realflight-model-with-blender>`__ for details on creating a RF model for flightaxis simulation.
 
