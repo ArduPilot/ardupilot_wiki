@@ -108,11 +108,13 @@ Failsafe Action
 
 Plane also provides for a parachute release failsafe action for :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` and ``BATTx_FS_CRT_ACT``.
 
+[/site]
 Parachute Options
 -----------------
 
-Plane provides an option to force the release servo or relay to remain active forever (until reboot) once triggered. This used in high altitude situations where the servo or relay may be frozen due to extremely low temperatures, until lower altitude, and warmer temperatures allow opertion. This can be enabled by setting the :ref:`CHUTE_OPTIONS<CHUTE_OPTIONS>` bit 0 high.
-[/site]
+An option to force the release servo or relay to remain active forever (until reboot) once triggered. This used in high altitude situations where the servo or relay may be frozen due to extremely low temperatures, until lower altitude, and warmer temperatures allow operation. This can be enabled by setting the :ref:`CHUTE_OPTIONS<CHUTE_OPTIONS>` bit 0 high.
+
+Setting bit 1 high of :ref:`CHUTE_OPTIONS<CHUTE_OPTIONS>` will not disarm the vehicle before releasing the chute.
 
 RC Disable/Enable of Parachute
 ------------------------------
