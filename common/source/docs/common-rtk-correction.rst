@@ -95,6 +95,15 @@ See `blog post on setup <https://discuss.ardupilot.org/t/simple-portable-rtk-bas
 
 .. note:: some RTK GPSes are already configured for dedicated BASE operation with automatic "survey-in" being done every power up. The base model of the `Blicube GRTK <https://wiki.blicube.com/grtk/>`__ system is an example.
 
+RTCM Message Parsing
+====================
+
+.. note:: these options are needed only in very special situations. They are not needed for normal use cases.
+
+Normally, only a single source of RTCM messages is provided to the autopilot and the RTCM messages are NOT fully parsed, only extracting the normally required information to be forwarded to the GPS for RTK corrections.If multiple sources of correction data are received by the autopilot, full parsing of the RTCM messages is done automatically and all RTCN message data sent to the GPS to provide multiple correction sources to be applied to the GPS position. This "full parsing" of RTCM messages also provides additional logged data which may be helpful in diagnosing RTK problems even with a single RTCM data source. Setting :ref:`GPS_DRV_OPTIONS<GPS_DRV_OPTIONS>` bit 6 high, will enable this extended parsing and logging for diagnosing RTK issues by a skilled development team member from the log.
+
+In some cases, specialized custom GPS commands using the RTCM message framework may be used in some systems and full parsing may result in problems with the GPS. Setting bit 7 of :ref:`GPS_DRV_OPTIONS<GPS_DRV_OPTIONS>` disables the automatic full parsing with multiple RTCM data sources being sent to the autopilot if this is causing a problem
+
 Acknowledgment
 ==============
 
