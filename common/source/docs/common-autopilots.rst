@@ -139,6 +139,7 @@ Closed Hardware
     Mateksys H743-Wing/MINI/SLIM/WLITE <common-matekh743-wing>
     MFT-SEMA100 <common-mft-sema100>
     MicoAir405v2/Mini <common-MicoAir405v2>
+    MicoAir NxtPX4v2 <common-NxtPX4v2>
     ModalAI Flight core <https://www.modalai.com/products/flight-core>
     MicoAir743 <common-MicoAir743>
     mRo ControlZero Classic <https://store.mrobotics.io/product-p/m10048d.htm>
