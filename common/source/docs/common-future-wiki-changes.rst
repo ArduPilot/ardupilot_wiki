@@ -12,6 +12,7 @@ New Board Support
 
 - MicoAir405v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/5926
 - MicoAir743, see https://github.com/ArduPilot/ardupilot_wiki/pull/5921
+- MicoAir NxtPx4v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/5928
 
 New Peripheral Support
 ======================
