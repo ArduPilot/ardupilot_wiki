@@ -17,6 +17,8 @@ New Board Support
 New Peripheral Support
 ======================
 
+- Aibstein LR-D1 Long Range Radar Altimeter see https://github.com/ArduPilot/ardupilot_wiki/pull/5930
+
 New Features
 ============
 
