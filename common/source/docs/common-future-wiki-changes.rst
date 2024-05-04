@@ -22,24 +22,17 @@ New Peripheral Support
 New Features
 ============
 
-- New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
+
 - Full parsing of RTCM stream options for special cases, see https://github.com/ArduPilot/ardupilot_wiki/pull/5924
 - Crash dump pre-arm, see https://github.com/ArduPilot/ardupilot_wiki/pull/5920
-- Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
-- Copter RTL Alt minimum reduced to 30cm, see https://github.com/ArduPilot/ardupilot_wiki/pull/5915
-- Option to report airspeed sensor offset calibration to gcs during boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5913
 - Correct the motor GPIO and grouping for the AocodaH743Dual autopilot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5896
-
 [site wiki="plane"]
-
-
-
+- New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
+- Option to report airspeed sensor offset calibration to gcs during boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5913
 [/site]
 [site wiki="copter"]
-
-
+- Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
+- Copter RTL Alt minimum reduced to 30cm, see https://github.com/ArduPilot/ardupilot_wiki/pull/5915
 [/site]
 [site wiki="blimp"]
-
-
 [/site]
