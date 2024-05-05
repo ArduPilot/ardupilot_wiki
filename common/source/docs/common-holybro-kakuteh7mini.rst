@@ -96,6 +96,12 @@ The PWM is in 5 groups:
 - PWM 7,8 in group4
 - PWM 9 in group5 (NeoPixel LED by default)
 
+.. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
+
+- :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+
+
 Channels within the same group need to use the same output rate. If any channel in a group uses DShot then all channels in the group need to use DShot.
 
 Battery Monitoring
