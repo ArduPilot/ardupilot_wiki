@@ -105,6 +105,11 @@ The PWM is in 5 groups:
 
 Channels within the same group need to use the same output protocol. If any channel in a group uses DShot then all channels in the group need to use DShot. Channels 1-4 also support bi-directional DShot (V4 only).
 
+.. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
+
+- :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+
 OSD Support
 ===========
 
@@ -132,6 +137,21 @@ Compass
 =======
 
 The SpeedyBee F405 v3 does not have a builtin compass, but you can attach an external compass using I2C on the SDA and SCL pads.
+
+Firmware
+========
+
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "speedybeef4v3" or "speedybeef4v4".
+
+Loading ArduPilot onto the board
+================================
+
+Initial firmware load can be done with DFU by plugging in USB with the
+bootloader button pressed. Then you should load the "with_bl.hex"
+firmware, using your favourite DFU loading tool.
+
+Once the initial firmware is loaded you can update the firmware using
+any ArduPilot ground station software. Updates should be done with the xxxxxxxxxx.apj firmware files.
 
 Where to Buy
 ============
