@@ -166,6 +166,12 @@ Channels within the same group need to use the same output rate, whether PWM or 
 any channel in a group uses DShot then all channels in the group need
 to use DShot.
 
+.. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
+
+- :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+
+
 LED Output
 ==========
 
