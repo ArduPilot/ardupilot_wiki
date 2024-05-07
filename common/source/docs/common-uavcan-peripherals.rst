@@ -71,6 +71,8 @@ Rangefinder
     :maxdepth: 1
 
     Avionics Anonymous LIDAR Interface <common-avanon-mag>
+    Nanoradar NRA24 <common-rangefinder-nra24>
+    Nooploop TOF-Sense P <common-rangefinder-nooploop-tofsense-p>
 
 Servos
 ======
