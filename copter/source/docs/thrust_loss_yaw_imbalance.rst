@@ -6,13 +6,13 @@ Thrust Loss and Yaw Imbalance Warnings
 
 If you see thrust loss or yaw imbalance warnings this page outlines some checks and modifications that should be done to resolve the issue. In the majority of cases these warnings are the result of incorrect hardware selection or setup.
 
-These warnings are designed to detect hardware failures in the propulsion system, if they begin to occur on a vehicle that has been flying without warnings the propulsion system should be checked.
-Warning are more likely to happen with larger payloads and in strong/gusty winds.
+These warnings are designed to detect hardware failures in the propulsion system. If they begin to occur on a vehicle that has been flying without warnings the propulsion system should be checked.
+Warnings are more likely to occur with larger payloads and in strong/gusty winds.
 
 Potential Thrust Loss
 =====================
 
-If potential thrust loss messages are seen on the GCS or in the data-flash logs investigation should be done to find the cause and remedy. The warning will give a motor number, for example:
+If potential thrust loss messages are seen either on GCS or in the data-flash logs, then an investigation should be done to find the cause and remedy. The warning will give a motor number, for example:
 
 ```Potential Thrust Loss (3)```
 
