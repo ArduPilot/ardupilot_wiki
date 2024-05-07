@@ -35,9 +35,9 @@ Set the following parameters:
 
 -  :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL4_BAUD<SERIAL4_BAUD>` = 230400 (Or as set in NAssistant)
--  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = “37" (Reboot after setting this)
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = "800" (i.e. 8m max range)
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MIN_CM>` = "2"
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 37 (NoopLoop_TOFSense) Reboot after setting this.
+-  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 800 (i.e. 8m max range)
+-  :ref:`RNGFND1_MAX_CM <RNGFND1_MIN_CM>` = 2
 
 
 Connecting via CAN
@@ -61,13 +61,13 @@ For a CAN connection you can use any spare CAN port. Since this is not a DroneCA
 
 Set the following parameters
 
--  :ref:`CAN_P2_DRIVER <CAN_P2_DRIVER>` = 1 (to enable the 1st CAN port)
+-  :ref:`CAN_P2_DRIVER <CAN_P2_DRIVER>` = 1 (to enable the CAN port and use driver 2)
 -  :ref:`CAN_P2_BITRATE<CAN_P2_BITRATE>` = 1000000 (Or as set in NAssistant)
--  :ref:`CAN_D2_PROTOCOL<CAN_D2_PROTOCOL>` = 13
--  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = “38" (Reboot after setting this)
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = "8000" (i.e. 8m max range)
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MIN_CM>` = "2"
--  :ref:`RNGFND1_RECV_ID <RNGFND1_RECV_ID>` = ID of the sensor (0 to accept all sensors connected)
+-  :ref:`CAN_D2_PROTOCOL<CAN_D2_PROTOCOL>` = 13 (TOFSenseP protocol)
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 38 (NoopLoop_TOFSense_CAN) Reboot after setting this.
+-  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 8000 (i.e. 8m max range)
+-  :ref:`RNGFND1_MAX_CM <RNGFND1_MIN_CM>` = 2
+-  :ref:`RNGFND1_RECV_ID <RNGFND1_RECV_ID>` = ID of the sensor (0 to accept data from all CAN sensor IDs)
 
 
 Testing the sensor

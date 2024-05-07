@@ -18,15 +18,7 @@ Configuration
 You will need to set up the parameter ``PRXx_TYPE`` correctly for the sensor(s) you are using.
 Exclusion zones are provided for 360 degree Lidars, since these may have obstructions in their field of view. Exclusion zones are set via the ``PRXx_IGN_ANGx`` and ``PRXx_IGN_WIDx`` parameters, specifying a direction and width the frame obstruction presents and will be ignored. Up to 6 exclusion sectors can be specified.
 
-Follow the links below for configuration information based upon your set-up:
-
-
--    :ref:`RangeFinders <common-rangefinder-setup>`
--    :ref:`Intel RealSense Depth Camera <common-realsense-depth-camera>`
--    :ref:`Lightware SF40/C (360 degree) <common-lightware-sf40c-objectavoidance>`
--    :ref:`Lightware SF45/B (350 degree) <common-lightware-sf45b>`
--    :ref:`RPLidar A2 360 degree laser scanner <common-rplidar-a2>`
--    :ref:`TerraRanger Tower (360 degree) <common-teraranger-tower-objectavoidance>`
+A list of supported units is shown on the :ref:`common-rangefinder-landingpage` under "Omnidirectional Proximity Rangefinders"
 
 Testing
 =======
