@@ -35,7 +35,9 @@ Radio or Throttle Failsafe
 
 If flying in a plane mode or AUTO, behaviour is determined by the :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` and :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter settings (see Plane Failsafe Function). QuadPlanes can be set such that instead of normal plane behaviour on Failsafe induced RTLs, to transition to QRTL and land once at the rally point or home, if  :ref:`Q_RTL_MODE<Q_RTL_MODE>` =1. If :ref:`Q_RTL_MODE<Q_RTL_MODE>` =2, then a fixed wing approach followed by a loiter to alt and QRTL will be executed, similar to that described in the "AUTO VTOL Landing" section of :ref:`quadplane-auto-mode`.
 
-If lying in any VTOL mode (QHOVER,QSTAB,etc.) and not flying a mission, failsafe will evoke QLAND , QRTL or RTL, depending on how :ref:`Q_OPTIONS<Q_OPTIONS>`, bits 5 and 20, are set.
+If flying in any VTOL mode (QHOVER,QSTAB,etc.) and not flying a mission, failsafe will evoke QLAND , QRTL or RTL, depending on how :ref:`Q_OPTIONS<Q_OPTIONS>`, bits 5 and 20, are set.
+
+.. note:: if failsafe occurs during a VTOL takeoff, it will immediately switch to QLAND mode
 
 .. _what-will-happen:
 
