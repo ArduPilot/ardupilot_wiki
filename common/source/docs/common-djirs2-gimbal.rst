@@ -52,6 +52,8 @@ Control and Testing
 
 See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
 
+.. Warning:: Yaw rate control is always "follow" mode (aka "earth frame") meaning that if the user control the gimbal's yaw rotation rate from the RC (e.g. :ref:`MNT1_RC_RATE<MNT1_RC_RATE>` > 0) the gimbal will rotate in "lock" mode (e.g. "earth frame", e.g. will not rotate with the vehicle). A workaround is to always use yaw angle control (e.g. :ref:`MNT1_RC_RATE<MNT1_RC_RATE>` = 0) or switch the mount to "Neutral" whenever the user wishes to re-center it.
+
 Videos
 ======
 
