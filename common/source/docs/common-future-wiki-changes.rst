@@ -30,6 +30,7 @@ New Features
 [site wiki="plane"]
 - New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
 - Option to report airspeed sensor offset calibration to gcs during boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5913
+- Switch to QLAND mode if  a failsafe occurs during VTOL takeoffs, see https://github.com/ArduPilot/ardupilot_wiki/pull/5941
 [/site]
 [site wiki="copter"]
 - Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
