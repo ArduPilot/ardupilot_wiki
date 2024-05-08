@@ -17,7 +17,8 @@ New Board Support
 New Peripheral Support
 ======================
 
-- Aibstein LR-D1 Long Range Radar Altimeter see https://github.com/ArduPilot/ardupilot_wiki/pull/5930
+- Ainstein LR-D1 Long Range Radar Altimeter see https://github.com/ArduPilot/ardupilot_wiki/pull/5930
+- NanoRadar MR72 Object Avoidance Radar see https://github.com/ArduPilot/ardupilot_wiki/pull/5938
 
 New Features
 ============
