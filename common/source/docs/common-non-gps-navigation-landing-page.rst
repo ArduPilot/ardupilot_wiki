@@ -36,11 +36,13 @@ These are the available options that allow a vehicle to estimate its position wi
 [/site]
     GPS/Non-GPS Transitions <common-non-gps-to-gps>
 
-.. note::
+.. note:: Most of the above systems (except Beacons) require that the ORIGIN be set manually, except if a GPS is present. In order to do this the user must either use the GCS to set Origin, as shown below using Mission Planner, or use a lua script like this `one <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/ahrs-set-origin.lua>`__
 
+.. image:: ../../../images/setorigin.jpg
+
+.. note::
    The low cost IMUs (accelerometers, gyros, compass) used in most autopilots drift too quickly to allow position estimation without an external velocity or position source.  In other words, low-cost IMUs on their own are not sufficient for estimating position.
    
 .. note::
-
-   A board with more than 1MB of flash is required to run non-GPS navigation, except for Vicon as 1MB boards still support the GPS_INPUT message, although they don't support the GLOBAL_VISION_POSITION_ESTIMATE so they have to be run using the GPS_INPUT message. See :ref:`Firmware Limitations <common-limited_firmware>` for details. 
+  A board with more than 1MB of flash is required to run non-GPS navigation, except for Vicon as 1MB boards still support the GPS_INPUT message, although they don't support the GLOBAL_VISION_POSITION_ESTIMATE so they have to be run using the GPS_INPUT message. See :ref:`Firmware Limitations <common-limited_firmware>` for details. 
    
