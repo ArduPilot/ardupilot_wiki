@@ -36,5 +36,7 @@ New Features
 - Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
 - Copter RTL Alt minimum reduced to 30cm, see https://github.com/ArduPilot/ardupilot_wiki/pull/5915
 [/site]
-[site wiki="blimp"]
+[site wiki="rover"]
+- Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
+- Renamed Torqueedo Motor params and allowed for two motors, see - Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
 [/site]
