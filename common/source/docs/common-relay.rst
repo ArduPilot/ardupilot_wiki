@@ -16,7 +16,7 @@ Relay Parameter Setup
 
 Setup of a relay requires that which pin it controls be set, and its default state. In addition, some autopilot functions can be assigned to the relay.
 
-Example below for the second Relay:
+Examples below for the second Relay:
 
 - :ref:`RELAY2_FUNCTION<RELAY2_FUNCTION>`: the control of the relay pin can be assigned as a normal relay, controlled by GCS or RC switch, or as the output of other features like parachute release, camera, brushed motor reversing relay, etc.. See table below for values. A non-zero value will show the remaining parameters after a parameter refresh.
 
@@ -35,9 +35,9 @@ RELAYx_FUNCTION    FUNCTION
 9                   ICE Starter (Plane Only)
 ===============    ========
 
-- :ref:`RELAY2_PIN<RELAY2_PIN>`: the autopilot designated GPIO pin to be used for the function. See the :ref:`common-gpios` page for information on how to determine the pin numbers and setup for using autopilot servo/motor outputs. DroneCAN peripherals with remote relay outputs have pin numbers in the 1000 to 1015 range. Consult the peripheral's documentation for proper pin number to use.
-- :ref:`RELAY2_DEFAULT<RELAY2_DEFAULT>`: After boot up, should the relay default to on or off. This only applies to RELAYx_FUNC "Relay" (1). All other uses will pick the appropriate default output state from within the controlling function's parameters.
-
+- :ref:`RELAY2_PIN<RELAY2_PIN>`: the autopilot designated GPIO pin to be used for the function. See  the :ref:`common-gpios` page for information on how to determine the pin numbers and setup for using autopilot servo/motor outputs. DroneCAN peripherals with remote relay outputs have pin numbers in the 1000 to 1015 range. Consult the peripheral's documentation for proper pin number to use.
+- :ref:`RELAY2_DEFAULT<RELAY2_DEFAULT>`: After boot up, should the relay default to ON (1) or OFF (0, default), or 2 = no change from bootloader state for the relay output pin. This only applies to RELAYx_FUNC "Relay" (1). All other uses will pick the appropriate default output state from within the controlling function's parameters.
+- :ref:`RELAY2_INVERTED<RELAY2_INVERTED>`: this parameter controls the actual output voltage level corresponding to the "ON"  state. If set to "1", the ON will actually be a low output, versus the normal high output voltage level. Will also impact the :ref:`RELAY2_DEFAULT<RELAY2_DEFAULT>` output voltage level.
 
 .. note:: any change to relay pin setup requires a reboot to take effect.
 
