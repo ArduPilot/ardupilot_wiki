@@ -50,6 +50,8 @@ The above shows a planned approach with the pre-approach waypoint 440m away from
 
 .. note:: You can use QGroundControl to automatically setup your approach and landing waypoints, but it will use a slightly different approach. Using the "LAND" button on the Plan screen, QGroundControl will add a "LOITER_TO_ALT" waypoint (NAV_LOITER_TO_ALT) at a distance determined by its wizard's glide slope parameter to bring the vehicle down (or up) to approach altitude, add a DO_LAND_START (See :ref:`aborting-autolanding`) marker, and a NAV_LAND. 
 
+.. note:: Very low drag vehicles will normally require a much shallower approach angle (glide slope) since they cannot lose altitude quickly while maintaining :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` (for vehicles with airspeed sensors) during the glide slope. Often a much steeper approach is required to clear obstacles. In those cases, there is an option (:ref:`TECS_OPTIONS<TECS_OPTIONS>` bit 1) that when set allows the speed in descents to exceed :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` up to :ref:`AIRSPEED_MAX<AIRSPEED_MAX>` in order to get up the the :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` descent rate,if required. This would apply not only to autolandings but any TECS speed controlled flight stage.
+
 .. _automatic-landing_key_parameters:
 
 The key parameters that control automatic landing are:
