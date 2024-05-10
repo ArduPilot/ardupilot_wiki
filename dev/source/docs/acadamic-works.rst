@@ -13,3 +13,5 @@ Applying Adaptive Control to ArduPlane's L1 controller: `ENGINEERING OF FAST AND
 Using SITL for developing system identification techniques: `DEVELOPMENT OF A SOFTWARE IN THE LOOP SIMULATION APPROACH FOR RISK MITIGATION IN UNMANNED AERIAL SYSTEM DEVELOPMENT <https://shareok.org/handle/11244/329959>`__
 
 Implementation of Balance Bots: `Implementation of an autonomous self-balancing robot using cascaded pid strategy <https://ieeexplore.ieee.org/abstract/document/9108049/>`__
+
+Determining automation or handling qualities using froude scaling of manned handling qualities specification: `Unmanned Aerial System Handling Qualities Framework Applicability to Heavy Gross Weight Mission-Configured UAS <https://www.researchgate.net/publication/371920692_Unmanned_Aerial_System_Handling_Qualities_Framework_Applicability_to_Heavy_Gross_Weight_Mission-Configured_UAS>`__
