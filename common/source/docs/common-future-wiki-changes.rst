@@ -10,7 +10,7 @@ Will be in future 4.6 release and is currently in master ("latest")
 New Board Support
 =================
 
-- MicoAir405v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/5926
+- MicoAir405v2/Mini, see https://github.com/ArduPilot/ardupilot_wiki/pull/5926
 - MicoAir743, see https://github.com/ArduPilot/ardupilot_wiki/pull/5921
 - MicoAir NxtPx4v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/5928
 
