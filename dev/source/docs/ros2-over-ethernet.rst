@@ -65,7 +65,7 @@ Then, you would configure all of the below parameters.
      - 2019
    * - :ref:`NET_DHCP<NET_DHCP>`
      - 0
-   * - :ref:`NET_ENABLED<NET_ENABLED>`
+   * - :ref:`NET_ENABLE<NET_ENABLE>`
      - 1
    * - :ref:`NET_IPADDR0<NET_IPADDR0>`
      - 192
