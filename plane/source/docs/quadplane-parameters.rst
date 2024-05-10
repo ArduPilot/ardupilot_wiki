@@ -28,7 +28,13 @@ Key Parameters
    quad motors). Please be careful not to use hard left rudder and zero
    throttle while flying or you risk disarming your motors.
 -  The default :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>` for a QuadPlane is to 300 (Hz). Most QuadPlanes do not need this to be rasied. Some very small vehicles (< 1Kg) might benefit from setting it to 400. In heavier vehicles, their higher inertia results in lower effective control response rates, so they do not benefit from a higher loop rate. Raising above 300 only leads to larger log files in these vehicles.
--  The pitch and roll limits in VTOL modes are controlled by the lesser of :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`, or the fixed wing limits (:ref:`PTCH_LIM_MAX_DEG<PTCH_LIM_MAX_DEG>`, :ref:`PTCH_LIM_MIN_DEG<PTCH_LIM_MIN_DEG>`, and :ref:` ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>`), but conformance to only :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` can be controlled with :ref:`Q_OPTIONS<Q_OPTIONS>` bit 14.
+
+Attitude Limiting Parameters
+----------------------------
+
+The pitch and roll limits in VTOL modes are controlled by the lesser of :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`, or the fixed wing limits (:ref:`PTCH_LIM_MAX_DEG<PTCH_LIM_MAX_DEG>`, :ref:`PTCH_LIM_MIN_DEG<PTCH_LIM_MIN_DEG>`, and :ref:` ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>`), but conformance to only :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` can be controlled with :ref:`Q_OPTIONS<Q_OPTIONS>` bit 14.
+
+In addition, :ref:`Q_BCK_PIT_LIM<Q_BCK_PIT_LIM>` sets the maximum number of degrees of back or pitch up in Q modes when the airspeed is at :ref:`AIRSPEED_MIN<AIRSPEED_MIN>`, and is used to prevent excessive structural loads when pitching up to decelerate. The backwards/up pitch limit controlled by this parameter is in addition to limiting applied by the params above. The :ref:`Q_BCK_PIT_LIM<Q_BCK_PIT_LIM>` limit is only applied when :ref:`Q_FWD_THR_USE<Q_FWD_THR_USE>` is set to 1 or 2 and the vehicle is flying in a mode that uses forward throttle instead of forward tilt to generate forward speed. A value 0 to deactivates this limit.
 
 .. _return_behavior_setup:
 
