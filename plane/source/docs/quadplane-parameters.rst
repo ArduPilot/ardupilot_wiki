@@ -28,6 +28,7 @@ Key Parameters
    quad motors). Please be careful not to use hard left rudder and zero
    throttle while flying or you risk disarming your motors.
 -  The default :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>` for a QuadPlane is to 300 (Hz). Most QuadPlanes do not need this to be rasied. Some very small vehicles (< 1Kg) might benefit from setting it to 400. In heavier vehicles, their higher inertia results in lower effective control response rates, so they do not benefit from a higher loop rate. Raising above 300 only leads to larger log files in these vehicles.
+-  The pitch and roll limits in VTOL modes are controlled by the lesser of :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`, or the fixed wing limits (:ref:`PTCH_LIM_MAX_DEG<PTCH_LIM_MAX_DEG>`, :ref:`PTCH_LIM_MIN_DEG<PTCH_LIM_MIN_DEG>`, and :ref:` ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>`), but conformance to only :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` can be controlled with :ref:`Q_OPTIONS<Q_OPTIONS>` bit 14.
 
 .. _return_behavior_setup:
 
