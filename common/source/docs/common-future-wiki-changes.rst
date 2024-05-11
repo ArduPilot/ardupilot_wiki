@@ -27,6 +27,7 @@ New Features
 - Full parsing of RTCM stream options for special cases, see https://github.com/ArduPilot/ardupilot_wiki/pull/5924
 - Crash dump pre-arm, see https://github.com/ArduPilot/ardupilot_wiki/pull/5920
 - Correct the motor GPIO and grouping for the AocodaH743Dual autopilot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5896
+- Add ability to store fence list on SD card, see https://github.com/ArduPilot/ardupilot_wiki/pull/5967
 [site wiki="plane"]
 - New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
 - Option to report airspeed sensor offset calibration to gcs during boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5913
