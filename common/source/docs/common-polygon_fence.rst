@@ -27,6 +27,11 @@ Multiple fences can be specified of differing types and shapes in the list.
 ..  youtube:: U3Z8bO3KbyM
     :width: 100%
 
+Number of fences
+================
+
+Fences are stored in a separate reserved area of flash in the autopilot from mission items and rally points. The number that can be stored depends on their complexity, but when you go to "Write" them to the autopilot, an error message will be displayed if storage limit is exceeded. In this case, you can enable storage on the SD Card by setting the :ref:`BRD_SD_FENCE<BRD_SD_FENCE>` parameter to a non-zero size, which will store the fences on SD card instead of internal memory.
+
 Warnings:
 =========
 
