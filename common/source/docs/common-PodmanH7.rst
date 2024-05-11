@@ -55,8 +55,8 @@ Specifications
 Pinout
 ======
 
-.. image:: ../../../images/PodmanH7_FrontView.jpg
-    :target: ../_images/PodmanH7_FrontView.jpg
+.. image:: ../../../images/PodmanH7-pinout.png
+    :target: ../_images/PodmanH7-pinout.png
 
 POWER1 port
 
