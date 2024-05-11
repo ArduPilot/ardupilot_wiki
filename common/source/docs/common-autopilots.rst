@@ -136,6 +136,7 @@ Closed Hardware
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
 [/site]
     Parrot C.H.U.C.K <common-CHUCK-overview>
+    PodmanH7 <common-PodmanH7>
     RadioLink MiniPix <common-radiolink-minipix>
     QioTek Zealot F427 <common-qiotek-zealot>
     QioTek Zealot H743 <common-qiotek-zealoth7>
