@@ -37,19 +37,34 @@ For example, for the multicopter code change to **ardupilot/ArduCopter**:
    cd ardupilot/ArduCopter
 
 Then start the simulator using **sim_vehicle.py**. The first time you
-run it you should use the -w option to wipe the virtual EEPROM and load
-the right default parameters for your vehicle.
+run it you should use the ``-w`` option.  This will both wipe the virtual 
+EEPROM, removing any user-changed defaults, and also load the right 
+default parameters for your vehicle.
 
 ::
 
     sim_vehicle.py -w
 
 After the default parameters are loaded you can start the simulator
-normally.  First kill the sim_vehicle.py you are running using Ctrl-C.  Then:
+normally.  First kill the sim_vehicle.py you are running using Ctrl-C.  
+Then run sim_vehicle.py with no parameters:
 
 ::
 
-    sim_vehicle.py --console --map
+    sim_vehicle.py 
+
+Note that sim_vehicle.py will also automatically start mavproxy inside the
+SITL instance.  You will see a mavproxy ``MAV>`` prompt when everything has 
+finished starting.
+
+Note that normally the SITL instance does not have the dependencies installed 
+for the mavproxy GUI options, --console and --map.  To use the mavproxy ``--console`` 
+and ``--map`` features, you can, instead, run mavproxy locally, i.e. on your host 
+machine.  To do this, run sim_vehicle.py with the ``--no-mavproxy`` parameter.   
+
+Note that for mavproxy to connect to SITL inside the docker instance, you will need 
+to add the parameter ``-p 5760:5760`` to the ``docker run`` command, to export SITL's 
+mavlink port to your host machine.
 
 .. tip::
 
