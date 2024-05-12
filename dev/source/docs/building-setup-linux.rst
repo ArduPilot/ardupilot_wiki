@@ -170,6 +170,8 @@ Then add /usr/lib/ccache to the front of your $PATH
 Setup using Docker
 ==================
 
+.. note:: this is not recommended except for special cases where an isolated build environment is required. Using this setup below will prevent the use of graphical elements in SITL unless custom options are added.
+
 Clone ArduPilot repository
 --------------------------
 
