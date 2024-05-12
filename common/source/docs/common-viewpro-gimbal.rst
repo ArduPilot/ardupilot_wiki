@@ -69,6 +69,11 @@ Control and Testing
 
 See :ref:`Gimbal / Mount Controls <common-mount-targeting>` and :ref:`Camera Controls <common-camera-controls>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
 
+Rangerfinder Control
+====================
+
+Some versions of the ViewPro Gimbals have a rangefinder that displays range in the OSD. This continuous ranging updating can be disabled using an RC switch whose ``RCx_OPTIONS`` is set to "177".
+
 Testing Video Streaming
 =======================
 
