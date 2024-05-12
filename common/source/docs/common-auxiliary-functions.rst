@@ -282,6 +282,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        176           | VTOL Fwd Throttle disable  |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        177           | Mount LRF Enable           |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
 |        180           | Autotune_test_gains        |    X     |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
 
@@ -574,6 +576,7 @@ Other functions are:
     Camera Image Tracking                 Activate Camera Image Tracking (only supported by ViewPro camera gimbals)
     Camera Lens                           Select the active camera lens (only supported by ViewPro camera gimbals)
     VTOL Fwd Throttle disable             Overrides use of forward throttle in VTOL modes
+    Mount LRF Enable                      Enable(switch high) ranging updates
     Autotune_test_gains                   After autotune,allows selecting tune(high) or pretune gains
     ROLL Input                            ROLL input channel. (replaces RCMAP)
     PITCH Input                           PITCH input channel. (replaces RCMAP)
