@@ -278,6 +278,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        175           | Camera Lens                |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
+|        176           | VTOL Fwd Throttle disable  |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
 
 Intended as continuous PWM range control inputs:
 
@@ -566,6 +568,7 @@ Other functions are:
                                          | approach phase of a VTOL landing, QLAND or QRTL modes.
     Camera Image Tracking                 Activate Camera Image Tracking (only supported by ViewPro camera gimbals)
     Camera Lens                           Select the active camera lens (only supported by ViewPro camera gimbals)
+    VTOL Fwd Throttle disable             Overrides use of forward throttle in VTOL modes
     ROLL Input                            ROLL input channel. (replaces RCMAP)
     PITCH Input                           PITCH input channel. (replaces RCMAP)
     THROTTLE Input                        THROTTLE input channel. (replaces RCMAP)
