@@ -72,7 +72,7 @@ Check servo movements
 =====================
 
 **BEFORE EVERY FLIGHT**: before take off, hold the aircraft in your
-hands and switch to :ref:`FBWA <fbwa-mode>` mode, then pitch and tilt the plane it to
+hands and switch to :ref:`FBWA <fbwa-mode>` mode, then pitch and tilt the plane to
 confirm that the control surfaces move the correct way to return it to
 level flight. (The ailerons and elevators will move; the rudder only
 coordinates turns with the ailerons in flight, so it won't move much on
