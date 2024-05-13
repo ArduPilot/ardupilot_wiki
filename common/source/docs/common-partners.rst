@@ -792,7 +792,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target:  https://cellenh2.com/
 
     *
-      - .. image:: ../../../images/supporters/supporters_liaz.PNG
+      - .. image:: ../../../images/supporters/supporters_liaz.png
             :width: 250px
             :align: center
             :target:  https://www.liaz-uav.com/
