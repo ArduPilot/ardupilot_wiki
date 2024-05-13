@@ -221,6 +221,9 @@ Note: there are 2 versions of the ST-link debugger on eBay, so if
 the command does not work, change the first line to ``source [find interface/stlink-v2-1.cfg]``.
 
 
+Note: Plugging a Cube Red into your computer with a debugger, without OpenOCD running, can potentially interfere with keyboard functionality.
+If that happens, unplug the Cube, start OpenOCD, and plug the cube back in.
+
 Starting GDB and running some commands
 ======================================
 
