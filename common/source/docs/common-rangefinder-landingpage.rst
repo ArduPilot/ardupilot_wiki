@@ -95,7 +95,8 @@ Omnidirectional Proximity Rangefinders
 
     Lightware SF40/C (360 degree) <common-lightware-sf40c-objectavoidance>
     Lightware SF45/B (350 degree) <common-lightware-sf45b>
-    RPLidar A2/S1 360 degree Laser/TOF LIDAR <common-rplidar-a2>
+    Nanoradar MK72 (112 degree) <common-rangefinder-mr72>
+    RPLidar A2/C1/S1 360 degree Laser/TOF LIDAR <common-rplidar-a2>
     TerraRanger Tower/ Tower EVO (360 degree) <common-teraranger-tower-objectavoidance>
     Cygbot D1 (120 degree) <https://www.cygbot.com/_files/ugd/f5911d_726a54fc4f6644bcbec0d9b00236ffda.pdf>
 

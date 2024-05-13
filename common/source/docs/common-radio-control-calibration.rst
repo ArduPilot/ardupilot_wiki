@@ -41,9 +41,9 @@ Check the Transmitter's Setup
   - On Copter and Rover, any remaining two or three position switches can be setup to control auxiliary functions by mapping them to channels 7 to 12
 - Move the transmitter's roll, pitch, throttle and yaw sticks and ensure the green bars move in the correct direction:
 
-  - for roll, throttle and yaw channels, the green bars should move in the same direction as the transmitter's physical sticks
-  - for pitch, the green bar should move in the opposite direction to the transmitter's physical stick
-  - if one of the green bars moves in the incorrect direction reverse the channel in the transmitter itself.  If it is not possible to reverse the channel in the transmitter you may reverse the channel in ArduPilot by checking the "Reversed" checkbox (Plane and Rover only).  If the checkbox is not visible it is possible to reverse the channel by directly changing the RCx_REVERSED parameter (where "x" is the input channel from 1 to 4).
+  - For roll, throttle and yaw channels, the green bars should move in the same direction as the transmitter's physical sticks.
+  - For pitch, the green bar should move in the **opposite** direction to the transmitter's physical stick. **This is not the default for many transmitters.**
+  - If one of the green bars moves in the incorrect direction reverse the channel in the transmitter itself.  If it is not possible to reverse the channel in the transmitter you may reverse the channel in ArduPilot by checking the "Reversed" checkbox (Plane and Rover only).  If the checkbox is not visible it is possible to reverse the channel by directly changing the ``RCx_REVERSED`` parameter (where "x" is the input channel from 1 to 4). Again, always get the bar movement directions correctly setup using the transmitter's channel reversing feature, if possible, rather than the ``RCx_REVERSED`` parameter for the channel.
 
 .. figure:: ../../../images/mp_radio_calibration.png
    :target: ../_images/mp_radio_calibration.png
