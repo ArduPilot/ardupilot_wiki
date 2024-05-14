@@ -195,6 +195,7 @@ With integrated telemetry:
     DragonLink <common-dragonlink-rc>
     FRSky <common-frsky-rc>
     Graupner (HOTT) <common-graupner-rc>
+    Herelink RC/Telemetry/HD Video System <common-herelink>
     mLRS <common-mlrs-rc>
     Multiplex (no support in ArduPilot for M-Link telemetry yet) <common-multiplex-rc>
     Spektrum SRXL2 <common-spektrum-rc>

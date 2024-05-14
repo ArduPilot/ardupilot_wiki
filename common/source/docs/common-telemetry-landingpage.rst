@@ -50,6 +50,7 @@ Long Range
     CUAV P8 Radio <common-cuav-p8>
     CUAV P9 Radio <common-cuav-p9>
     DragonLink <common-dragonlink-rc>
+    Herelink <common-herelink>
     Holybro 900Mhz XBP9X Telemetry Radio <https://shop.holybro.com/xbp9x-radio_p1268.html>
     Holybro Microhard P900 Radio Telemetry Radio <http://www.holybro.com/product/microhard-p900-radio/>
     LTM telemetry <common-ltm-telemetry>
