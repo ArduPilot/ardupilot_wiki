@@ -10,7 +10,7 @@ information based upon your set-up.
 
 .. note:: Some RC systems incorporate telemetry in addition to RC control
 .. note:: most pure telemetry radios connect to the autopilot via a serial UART using MAVLink 1 or 2 protocol. See :ref:`common-telemetry-port-setup`
-.. note:: ArduPilot will automatically fall back to back to MAVLink1 if MAVLink 2 serial port protocol is selected and no MAVLink 2 data is received from the groundstation in response in fimware versions before 4.2, but not after
+.. note:: ArduPilot will automatically fall back to MAVLink1 if MAVLink 2 serial port protocol is selected and no MAVLink 2 data is received from the groundstation in response in fimware versions before 4.2, but not after
 .. image:: ../../../images/Telemetry_LandingImage.jpg
     :target: ../_images/Telemetry_LandingImage.jpg
 
