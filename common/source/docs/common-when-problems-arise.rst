@@ -6,14 +6,14 @@ When Problems Arise
 
 ArduPilot, is extremely capable and flexible. But with high performance and flexibility comes a lot of configurations, parameters, and complexity.
 
-This WIKI documentation attempts to reduce the effort of configuring and operating your ArduPilot based vehicle by providing as much accurate information on configuration, parameters, and operating modes as possible, and is continuously being updated as new releases occur or areas needing further explanation arise. Your assistance in that effort is welcomed and solicited. See :ref:`common_wiki_editing_guide`
+This WIKI documentation attempts to reduce the effort of configuring and operating your ArduPilot based vehicle by providing as much accurate information on configuration, parameters, and operating modes as possible, and is continuously being updated as new releases occur or areas needing further explanation arise. Your assistance in that effort is welcomed and solicited. See :ref:`common_wiki_editing_guide`.
 
 .. note:: Enabling and using the logging capability of ArduPilot is usually a key requirement when seeking assistance from other in diagnosing issues that you cannot resolve yourself by following the suggestions below.
 
 .. toctree::
    :maxdepth: 1
 
-   Logs <common-logs>
+Logs <common-logs>
 
 
 What to do if you have an issue
@@ -68,12 +68,12 @@ Copter Common Problems
 Free RAM issues
 ===============
 
-During initialization, it is possible for some features/subsystems to fail to get enough RAM allocated. Sometimes this will be announced such as in the case of insufficient memory to start a LUA script: "Scripting requires a larger minimum stack size", or for terrain: "Terrain: Allocation failed", etc. Also, insufficient free memory can result in compass calibration failing or MAVftp not initializing. See  :ref:`RAM Limitations <ram_limitations>` for more information.
+During initialization, it is possible for some features/subsystems fail to get enough RAM allocated. Sometimes this will be announced such as in the case of insufficient memory to start a LUA script: "Scripting requires a larger minimum stack size", or for terrain: "Terrain: Allocation failed", etc. Also, insufficient free memory can result in compass calibration failing or MAVftp not initializing. See  :ref:`RAM Limitations <ram_limitations>` for more information.
 
 H7 AutoPilot Will Not Initialize
 ================================
 
-AutoPilots utilizing the H7 series of processors can, on rare occasions, get into a state where they will no longer complete initialization. Symptoms are: never exiting the bootloader (rapidly flashing led right after power application never stops) or the autopilot freezes during initialization, and connection to it is impossible. 
+AutoPilots utilizing the H7 series of processors can, on rare occasions, get into a state where they will no longer complete initialization. Symptoms are: never exiting the bootloader (rapidly flashing LED right after power application never stops) or the autopilot freezes during initialization, and connection to it is impossible. 
 
 It is believed that this may be a memory corruption problem which can be caused by interrupting a flash memory write (as when changing parameters). Unfortunately, due to the processor's architecture, there is no way in the firmware to correct this automatically. If the autopilot  seems "bricked", try this to completely reset the autopilot to a fully un-programmed state. This should allow the firmware to be installed and the corruption issue resolved.
 
