@@ -33,37 +33,26 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target:  http://www.cuav.net
 
     *
-      - .. image:: ../../../images/supporters/supporters_logo_Craft_and_Theory.png
-            :width: 250px
-            :align: center
-            :target:  http://craftandtheoryllc.com
-
       - .. image:: ../../../images/supporters/supporters_logo_LightWare.png
             :width: 250px
             :align: center
             :target:  https://lightwarelidar.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_SpektreWorks.png
             :width: 250px
             :align: center
             :target:  https://spektreworks.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Dronebility.png
             :width: 250px
             :align: center
             :target:  http://dronebility.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Drone_Japan.jpg
             :width: 250px
             :align: center
             :target:  https://drone-j.com
-
-      - .. image:: ../../../images/supporters/supporters_logo_RobSense.png
-            :width: 250px
-            :align: center
-            :target:  http://robsense.com
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_BlueRobotics.png
