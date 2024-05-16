@@ -129,6 +129,13 @@ Example launch.json File
                         "text": "-enable-pretty-printing",
                         "ignoreFailures": true
                     }
+                ],
+                "postRemoteConnectCommands": [
+                    {
+                        "description": "Set breakpoint at AP_HAL::panic",
+                        "text": "-break-insert AP_HAL::panic",
+                        "ignoreFailures": false
+                    }
                 ]
             },
             {
@@ -146,7 +153,21 @@ Example launch.json File
                 ],
                 "miDebuggerPath": "/usr/bin/gdb",
                 "MIMode": "gdb",
-                "launchCompleteCommand": "exec-run"
+                "launchCompleteCommand": "exec-run",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ],
+                "postRemoteConnectCommands": [
+                    {
+                        "description": "Set breakpoint at AP_HAL::panic",
+                        "text": "-break-insert AP_HAL::panic",
+                        "ignoreFailures": false
+                    }
+                ]
             },
 
         // Autotest Debugging Profile

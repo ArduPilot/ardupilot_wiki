@@ -10,7 +10,7 @@ Ensure you have ROS 2 :ref:`installed <ros2>` and have run :ref:`SITL <ros2-sitl
 
 Additionally, make sure you understand the :ref:`basics of networking in ArduPilot. <common-network>`
 
-==========
+
 Motivation
 ==========
 
@@ -22,7 +22,6 @@ Compared to connecting an autopilot over serial, ethernet has the following adva
 * Ethernet is easier to debug with tools such as ``tcpdump`` or ``Wireshark``
 * Ethernet uses standard cabling, so it's more difficult to mix up TX and RX
 
-==================
 Physical Equipment
 ==================
 
@@ -31,7 +30,6 @@ The following equipment is required to complete this tutorial:
 * A computer that can run the MicroROS Agent and the ROS 2 CLI
 * An autopilot with ethernet support
 
-=============================================
 Necessary parameters for static configuration
 =============================================
 
@@ -79,7 +77,6 @@ Then, you would configure all of the below parameters.
 
 Modify the addresses to suit your needs; the rest can remain the same.
 
-=====
 Steps
 =====
 
