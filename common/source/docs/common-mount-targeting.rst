@@ -106,6 +106,6 @@ ArduPilot maps the MNTn gimbals to the configured physical mount points as follo
 2. If there are SERIALn_PROTOCOL values set to "8: Gimbal" then the remaining mounts will be mapped to the relevant SERIAL ports (UARTS) starting with the lowest.
 3. If there are NETn_PROTOCOL values set to "8: Gimbal" then the remaining mounts will be mapped to the relevant NET ports starting with the lowest first.
 
-
+If only one of the gimbals uses Serial or Ethernet then I’d recommend setting up the serial/ethernet mount as Mount1 and the servo gimbal as Mount2. The reason is that the 2nd serial/ethernet mount will use the 2nd configured serial/ethernet port regardless of what protocol Mount1 uses. So if SERIAL2_PROTOCOL<SERIAL2_PROTOCOL> = 8 and SERIAL4_PROTOCOL<SERIAL4_PROTOCOL> = 8 then Mount2 would use Serial4 even if Mount1 was defined as a servo gimbal which doesn’t use serial.
 
 
