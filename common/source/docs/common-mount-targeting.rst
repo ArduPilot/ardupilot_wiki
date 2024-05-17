@@ -98,7 +98,7 @@ ArduPilot supports one or two gimbals on a vehicle which are addressed as MNT1 a
 parameters refering to MNT1 would work for the second gimbal by replacing the 1 with 2. For example Retract Mode for the 2nd gimbal mount would be specified as 
 Retract Mode: the gimbal will move to the roll, pitch and yaw angles held in the :ref:`MNT2_RETRACT_X<MNT2_RETRACT_X>`, :ref:`MNT2_RETRACT_Y<MNT1_RETRACT_Y>`, :ref:`MNT2_RETRACT_Z<MNT2_RETRACT_Z>` parameters respectively
 
-Each gimbal can be connected as either a servo gimbal, controlled by SERVO functions, or to either a UART or a network port. Theese ports are configured by specifying the relevant 
+Each gimbal can be connected as either a servo gimbal, controlled by SERVO functions, or to either a UART or a network port. These ports are configured by specifying the relevant 
 protocol as 8: Gimbal. Other gimbal types such as including Gremsy, Solo, Xacti and Scripting gimbals have their own specific configuration.
 
 eg. for a gimbal attached to the UART which is SERIAL2 then SERIAL2_PROTOCOL<SERIAL2_PROTOCOL> will 8
