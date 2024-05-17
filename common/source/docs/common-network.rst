@@ -139,5 +139,11 @@ Most Ethernet devices are interconnected with CAT5(or higher) cables with RJ-45 
 
 Using full CAT5 cables to interconnect vehicle components for longer runs may be required, but runs 1-2 meters or less can be done with two twisted pairs of 22-24 AWG wire. Runs from autopilot to switch and to peripherals may all be implemented with short twisted pair runs and JST-GH/Picoblade connectors.
 
+Example Ethernet Connected Vehicle System
+=========================================
 
+.. toctree::
+    :maxdepth: 1
+
+    Ethernet Connected ArduPilot Vehicle Example <common-ethernet-vehicle>
 

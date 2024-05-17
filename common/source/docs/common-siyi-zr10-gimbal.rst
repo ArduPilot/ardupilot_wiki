@@ -80,6 +80,13 @@ Configuring the Gimbal
 .. image:: ../../../images/siyi-gimbal-firmversion.png
     :target: ../_images/siyi-gimbal-firmversion.png
 
+Ethernet Connectivity
+---------------------
+
+Instead of using a UART serial connection to control the gimbal, an Ethernet virtual serial connection may also be used, as well as transmitting a video stream from the camera.
+
+An example of the setup of the gimbal in a networked ArduPilot vehicle system is detailed in :ref:`common-ethernet-vehicle`
+
 Control and Testing
 -------------------
 
