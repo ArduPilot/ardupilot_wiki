@@ -99,7 +99,7 @@ parameters refering to MNT1 would work for the second gimbal by replacing the 1 
 Retract Mode: the gimbal will move to the roll, pitch and yaw angles held in the :ref:`MNT2_RETRACT_X<MNT2_RETRACT_X>`, :ref:`MNT2_RETRACT_Y<MNT1_RETRACT_Y>`, :ref:`MNT2_RETRACT_Z<MNT2_RETRACT_Z>` parameters respectively
 
 Each gimbal can be connected as either a servo gimbal, controlled by SERVO functions, or to either a UART or a network port. These ports are configured by specifying the relevant 
-protocol as 8: Gimbal. Other gimbal types such as including Gremsy, Solo, Xacti and Scripting gimbals have their own specific configuration.
+protocol as 8: Gimbal. Other gimbal types including Gremsy, Solo, Xacti and Scripting gimbals have their own specific configuration.
 
 eg. for a gimbal attached to the UART which is SERIAL2 then SERIAL2_PROTOCOL<SERIAL2_PROTOCOL> will 8
 or for a gimbal attached to a NET port which is NET_P3 then NET_P3_PROTOCOL<NET_P3_PROTOCOL> will be 8
