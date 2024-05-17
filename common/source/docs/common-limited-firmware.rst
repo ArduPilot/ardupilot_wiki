@@ -37,7 +37,7 @@ If this occurs, several possible options are available to allow temporary use of
 - Disable SmartRTL on Copter by setting :ref:`SRTL_POINTS<SRTL_POINTS>` = 0.
 - If using DroneCAN, try reducing the memory allocation from the default of 16KB (for two nodes) using the ``CAN_Dx_UC_POOL`` parameters.
 
-.. note:: in Mission Planner's STATUS tab, you can monitor the "freemem" status for current free RAM. Be aware, that its a total of unallocated memory and that everything that requires a memory allocation needs it to be one, contiguous block. But the status will give an indication of what is available. For example, MAVftp needs ~ 12K contiguous block to start.
+.. note:: in Mission Planner's STATUS tab, you can monitor the "freemem" status for current free RAM. Be aware, that it's a total of unallocated memory and that everything that requires a memory allocation needs it to be one, contiguous block. But the status will give an indication of what is available. For example, MAVftp needs ~ 12K contiguous block to start.
 
 .. toctree::
     :hidden:
