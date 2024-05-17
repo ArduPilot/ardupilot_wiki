@@ -91,3 +91,21 @@ Control during Auto mode missions
 ---------------------------------
 
 Commands to control the gimbal are listed on the  :ref:`Camera Control in Auto Missions <common-camera-control-and-auto-missions-in-mission-planner>`, :ref:`Copter Mission Command List <mission-command-list>` and :ref:`Mission Commands <common-mavlink-mission-command-messages-mav_cmd>` pages
+
+Multiple Gimbal/mounts on a vehicle
+-----------------------------------
+ArduPilot supports one or two gimbals on a vehicle which are addressed as MNT1 and MNT2. So all of the above 
+parameters refering to MNT1 would work for the second gimbal by replacing the 1 with 2. For example Retract Mode for the 2nd gimbal mount would be specified as 
+Retract Mode: the gimbal will move to the roll, pitch and yaw angles held in the :ref:`MNT2_RETRACT_X<MNT2_RETRACT_X>`, :ref:`MNT2_RETRACT_Y<MNT1_RETRACT_Y>`, :ref:`MNT2_RETRACT_Z<MNT2_RETRACT_Z>` parameters respectively
+
+Each gimbal can be connected as either a servo gimbal, controlled by SERVO functions, or to either a UART or a network port and is configured by specifying the relevant 
+protocol as 8: Gimbal. eg. for a gimbal attached to the UART which is SERIAL2 then SERIAL2_PROTOCOL<SERIAL2_PROTOCOL> = 8.
+ArduPilot maps the MNTn gimbals to the configured physical mount points as follows:
+
+1. If there are servo functions specifying "Mount 1" or "Mount 2", then the relevant Mount (MNTn) will be mapped to that specifi servo gimbal.
+2. If there are SERIALn_PROTOCOL values set to "8: Gimbal" then the remaining mounts will be mapped to the relevant SERIAL ports (UARTS) starting with the lowest.
+3. If there are NETn_PROTOCOL values set to "8: Gimbal" then the remaining mounts will be mapped to the relevant NET ports starting with the lowest first.
+
+
+
+
