@@ -106,8 +106,8 @@ or for a gimbal attached to a NET port which is NET_P3 then NET_P3_PROTOCOL<NET_
 
 For Alexmos, Siyi, SToRM32 and ViewPro gimbals ArduPilot maps the MNTn gimbals to the configured physical mount points by searching the serial ports and network ports in order for the next available port where the PROTOCOL = 8. The mapping first looks for SERIAL ports and then looks for NET ports. For example if there are two gimbal mounts then:
 
-MNT1 will be mapped to the lowest numbered SERIAL or NET port which has protocol = 8
-MNT2 will be mapped to the next hightest numbered SERIAL or NET port which has protocol = 8
+- MNT1 will be mapped to the lowest numbered SERIAL or NET port which has protocol = 8
+- MNT2 will be mapped to the next hightest numbered SERIAL or NET port which has protocol = 8
 
 For Servo gimbals, the relevant SERVOn_functions will specify which gimbal is controlling them.
 
