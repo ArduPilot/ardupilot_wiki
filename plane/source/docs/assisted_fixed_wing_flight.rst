@@ -5,29 +5,29 @@ Assisted Fixed-Wing Flight
 ==========================
 
 The QuadPlane code can also be configured to provide assistance to the
-fixed wing code in any flight mode except :ref:`MANUAL <manual-mode>` or :ref:`ACRO <acro-mode>`. VTOL motor assistance is enabled if :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>` is non-zero. 
+fixed wing code in any flight mode except :ref:`MANUAL <manual-mode>` or :ref:`ACRO <acro-mode>`. VTOL motor assistance is enabled if :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>` is non-zero. If left at its default value (0), a pre-arm warning will occur telling the user to set this parameter. a value of -1 disables assistance features and suppresses the pre-arm warning.
 
-When :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` is non-zero then the quad motors will assist with
+When :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` is non-zero and positive then the quad motors will assist with
 both stability and lift whenever the airspeed drops below that
 threshold. This can be used to allow flying at very low speeds in
 :ref:`FBWA <fbwa-mode>` mode for example, or for assisted automatic fixed
 wing takeoffs.
 
-.. warning:: If you are not using an airspeed sensor, airspeed will be determined by the synthetic airspeed generated internally as a backup in case of airspeed sensor failure. This estimate can be very inaccurate at times. You may want to consider not enabling  Assisted Fixed Wing Flight if not using an airspeed sensor to prevent false activations when airspeed really  is above the threshold but is being misrepresented by the internal airspeed. Setting :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` to -1 will disable the pre-arm warning to set this parameter to a non-zero value to enable the feature, allowing it to remain disabled, if undesired.
+.. warning:: If you are not using an airspeed sensor, airspeed will be determined by the synthetic airspeed generated internally as a backup in case of airspeed sensor failure. This estimate can be very inaccurate at times. You may want to consider not enabling  Assisted Fixed Wing Flight if not using an airspeed sensor to prevent false activations when airspeed really  is above the threshold but is being misrepresented by the internal airspeed. Setting :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` to -1 will disable the pre-arm warning and assistance except in transitions.
 
 It is suggested that you do initial flights with
-:ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` set to zero
+:ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` disabled
 just to test the basic functionality and tune the airframe. Then try
 with :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` above plane stall speed if you want that
 functionality.
 
-A second assistance type is available if :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>` is non-zero
+A second assistance type is available if :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>` is a positive value
 based on attitude error. If :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>` is
 non-zero then this parameter gives an attitude error in degrees above
 which assistance will be enabled even if the airspeed is above
 :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`. 
 
-A third trigger to provide assistance. if :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>` is non-zero, is :ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>`. This is the altitude below which QuadPlane assistance will be triggered. This acts the same way as :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>` and :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`, but triggers if the aircraft drops below the given altitude while the VTOL motors are not running. A value of zero disables this feature. The altitude is calculated as being above ground level. The height above ground is given from a Lidar used if available and :ref:`RNGFND_LANDING<RNGFND_LANDING>` =1 or from terrain data if :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` =1, or comes from the height above home otherwise.
+A third trigger to provide assistance. if :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>` is positive, is :ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>`. This is the altitude below which QuadPlane assistance will be triggered. This acts the same way as :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>` and :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`, but triggers if the aircraft drops below the given altitude while the VTOL motors are not running. A value of zero disables this feature. The altitude is calculated as being above ground level. The height above ground is given from a Lidar used if available and :ref:`RNGFND_LANDING<RNGFND_LANDING>` =1 or from terrain data if :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` =1, or comes from the height above home otherwise.
 
 Assistance will be activated :ref:`Q_ASSIST_DELAY<Q_ASSIST_DELAY>` after any of the above enabling thresholds are reached.
 
