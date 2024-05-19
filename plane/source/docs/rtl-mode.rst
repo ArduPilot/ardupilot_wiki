@@ -10,7 +10,7 @@ alternate instructions (or it runs out of fuel!). As with :ref:`AUTO <auto-mode>
 you can also "nudge" the aircraft manually in this mode using stick
 mixing (assuming the RTL was not a result of RC failsafe).
 
-The target altitude for RTL mode is set using the :ref:`RTL_ALTITUDE <RTL_ALTITUDE>` parameter in centimeters. When initiated below :ref:`RTL_ALTITUDE <RTL_ALTITUDE>`, Plane will immediately climb at maximum allowable rate to reach that altitude, if above, it will descend in a linear manner versus distance to home, reaching that altitude at the home loiter point.
+The target altitude for RTL mode is set using the :ref:`RTL_ALTITUDE <RTL_ALTITUDE>` parameter in meters. When initiated below :ref:`RTL_ALTITUDE <RTL_ALTITUDE>`, Plane will immediately climb at maximum allowable rate to reach that altitude, if above, it will descend in a linear manner versus distance to home, reaching that altitude at the home loiter point.
 
 The loiter radius at home is determined by :ref:`RTL_RADIUS<RTL_RADIUS>`, if it's non-zero, otherwise :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` is used. Clock-wise or Counter-Clock-wise circling can be set by positive or negative values for the radius.
 
