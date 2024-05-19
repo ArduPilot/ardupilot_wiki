@@ -5,20 +5,22 @@ iFlight BLITZ F745/Mini
 =======================
 
 .. image:: ../../../images/BLITZ-F745.png
-    :target: ../BLITZ-F745.png
+    :target: ../_images/BLITZ-F745.png
     :width: 50%
+
+BLITZ F745
 
 .. image:: ../../../images/BLITZ-mini_F745.jpg
-    :target: ../BLITZ-mini_F745.jpg
+    :target: ../_images/BLITZ-mini_F745.jpg
     :width: 50%
 
-MINI
+BLITZ MINI
 
 .. image:: ../../../images/BLITZ-mini_F745_stack.png
     :target: ../_images/BLITZ-mini_F745_stack.png
     :width: 50%
 
-MINI STACK
+BLITZ MINI STACK
 
 *above image and some content courtesy of* `iFlight <http://https://www.iflight.com>`__
 
