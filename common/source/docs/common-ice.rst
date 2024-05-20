@@ -37,7 +37,7 @@ If using an onboard starter, it is important to configure an RPM sensor for the 
 
 In order to configure an RPM sensor, the following parameters must be set:
 
-- Set :ref:`RPM1_TYPE <RPM1_TYPE>` to 2 for a standard GPIO input pin. 
+- Set :ref:`RPM1_TYPE <RPM1_TYPE>` to 2 for a standard GPIO input pin.
 - Set :ref:`RPM1_PIN <RPM1_PIN>` to the appropriate value for the auxiliary pin you are using.
 - Set the remaining 'RPM_*' parameters as appropriate for your system.
 - Set :ref:`ICE_RPM_CHAN <ICE_RPM_CHAN>` to 1.
@@ -56,7 +56,7 @@ Advanced Starter Configuration
 ------------------------------
 A variety of parameters are available for configuring the engine start routine. The auto-start functionality will attempt to start the engine any time the vehicle is armed, the engine is enabled, and the measured RPM is below the :ref:`ICE_RPM_THRESH <ICE_RPM_THRESH>`. If the engine is not successfully started within a configurable amount of time, the program will wait for a configurable delay before attempting to start again. It is important to remember that the starter will run in pulses. DO NOT approach the engine between failed start attempts as the starter will attempt to start again if the engine is still enabled.
 
-- :ref:`ICE_START_PCT <ICE_START_PCT>` overrides the throttle setting during start. 
+- :ref:`ICE_START_PCT <ICE_START_PCT>` overrides the throttle setting during start.
 - :ref:`ICE_START_TIME <ICE_STARTER_TIME>` controls the maximum amount of time the starter will run in each start attempt.
 - :ref:`ICE_START_DELAY <ICE_START_DELAY>` sets a delay between start attempts. This can be useful when your starter has a limited duty cycle.
 - :ref:`ICE_RPM_THRESH <ICE_RPM_THRESH>` sets the minimum RPM reading for the engine to be considered running. This should be set to a value below your idle RPM.
@@ -91,7 +91,7 @@ To stop the motor with RC control:
 
 QuadPlanes can also automatically stop the engine once the final phase of a VTOL landing is entered by setting the :ref:`Q_LAND_ICE_CUT<Q_LAND_ICE_CUT>` parameter to 1.
 
-.. note:: The engine can be started and stopped in autonomous missions by using the ``DO_ENGINE_CONTROL`` mission command. This useful preceding NAV_VTOL_TAKEOFF or NAV_VTOL_LAND to start or stop the engine to prevent prop strikes while landing in wind with a low clearance prop. See :ref:`common-mavlink-mission-command-messages-mav_cmd` section. 
+.. note:: The engine can be started and stopped in autonomous missions by using the ``DO_ENGINE_CONTROL`` mission command. This useful preceding NAV_VTOL_TAKEOFF or NAV_VTOL_LAND to start or stop the engine to prevent prop strikes while landing in wind with a low clearance prop. See :ref:`common-mavlink-mission-command-messages-mav_cmd` section.
 
 Idle and redline governors
 --------------------------
@@ -100,10 +100,10 @@ These features rely on having a source for engine RPM. See :ref:`common-rpm` for
 
 The idle governor allows the autopilot to adjust the throttle to maintain an RPM value when the commanded throttle is low. This can be useful when the engine is waiting for takeoff and reduces the workload on the pilot during that time. Increasing the throttle command will give the expected throttle response.
 
-:ref:`ICE_IDLE_PCT<ICE_IDLE_PCT>` This is the minimum percentage throttle output while running, this includes being disarmed, but not while outputs are disabled by the safety switch .
+- :ref:`ICE_IDLE_PCT<ICE_IDLE_PCT>` This is the minimum percentage throttle output while running, this includes being disarmed, but not while outputs are disabled by the safety switch.
 - :ref:`ICE_IDLE_RPM<ICE_IDLE_RPM>` This configures the RPM that will be commanded by the idle governor. Set to -1 to disable.
 - :ref:`ICE_IDLE_DB<ICE_IDLE_DB>` This configures the RPM deadband that is tolerated before adjusting the idle setpoint.
-- :ref:`ICE_IDLE_SLEW<ICE_IDLE_SLEW>` This configures the slewrate used to adjust the idle setpoint in percentage points per second
+- :ref:`ICE_IDLE_SLEW<ICE_IDLE_SLEW>` This configures the slewrate used to adjust the idle setpoint in percentage points per second.
 
 The redline governor will slowly reduce the throttle if the RPM remains above the given RPM value. Generally, this RPM value is provided by the manufacturer of the engine. If the commanded throttle drops faster or lower than the point the governor started, then the governor will be released and normal control of the throttle will return to normal throttle response. A warning message will appear on the GCS. Setting :ref:`ICE_OPTIONS<ICE_OPTIONS>` bit 1 allows disabling the throttle actions of the redline governor, but still displays the GCS warning message.
 
