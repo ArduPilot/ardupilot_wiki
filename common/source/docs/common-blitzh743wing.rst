@@ -43,7 +43,6 @@ Specifications
 
 -  **Physical**
 
-   -  Mount pattern: 30.5*30.5mm/?4
    -  Dimensions: 36.9*52mm
    -  Weight: 35g
 
