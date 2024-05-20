@@ -17,7 +17,6 @@ Specifications
 
    -  STM32H743 32-bit processor, 480 MHz
    -  AT7456E OSD
-   -  32 MB (16MB on Mini) flash for logging
 
 -  **Sensors**
 
