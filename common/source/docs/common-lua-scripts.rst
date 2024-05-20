@@ -532,6 +532,7 @@ To give Lua scripts access to more features of ArduPilot the API can be extended
 
 - Find the method or function you would like to expose to Lua. For example if you wanted to expose an additional feature of AHRS you would first find the method within `libraries/AP_AHRS/AP_AHRS.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_AHRS/AP_AHRS.h>`__. This can be an already existing method (function) or a method (function) newly added to the code.
 - Edit the `libraries/AP_Scripting/generator/description/bindings.desc <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/generator/description/bindings.desc>`__ and add a new line in the appropriate section for the method, or add a new section if a new class shall be added by following the examples of the other sections.
+- Add the method or function to `libraries/AP_Scripting/docs/docs.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/docs/docs.lua>`__.
 - For releases before Copter/Rover/Plane 4.1: Open a command line prompt and cd to the `/libraries/AP_Scripting/generator <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/generator>`__ directory and type "make run". 
 - For 4.1 onwards, clean the distribution (./waf distclean) and restart compilation from there as usual.
 
