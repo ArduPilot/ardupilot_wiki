@@ -128,10 +128,10 @@ The numbering of the GPIOs for PIN variables in ArduPilot is:
  - PWM2 51
  - PWM3 52
  - PWM4 53
- - PWM5 54
- - PWM6 55
- - PWM7 56
- - PWM8 57
+ - PWM5 57
+ - PWM6 56
+ - PWM7 55
+ - PWM8 54
  - PWM9 58
  - PWM10 59
  - PWM11 60
