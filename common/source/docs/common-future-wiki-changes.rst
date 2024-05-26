@@ -13,6 +13,8 @@ New Board Support
 - MicoAir405v2/Mini, see https://github.com/ArduPilot/ardupilot_wiki/pull/5926
 - MicoAir743, see https://github.com/ArduPilot/ardupilot_wiki/pull/5921
 - MicoAir NxtPx4v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/5928
+- CSKY405 see https://github.com/ArduPilot/ardupilot_wiki/pull/6014
+- iFlight Blitz H743 Pro see https://github.com/ArduPilot/ardupilot_wiki/pull/6007
 
 New Peripheral Support
 ======================
