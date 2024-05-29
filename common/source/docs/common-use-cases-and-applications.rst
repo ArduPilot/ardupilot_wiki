@@ -17,6 +17,11 @@ Use Cases
 .. image:: ../../../images/case-sub.jpg
 
 
+- Bathymetry Boat
+
+.. image:: ../../../images/case-boat.jpg
+
+
 - Autonomous Mowers and Tractors
 
 .. image:: ../../../images/case-tractor.jpg
