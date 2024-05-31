@@ -57,9 +57,9 @@ The UARTs are marked RXn and TXn in the above pinouts. The RXn pin is the receiv
 
 -   SERIAL0 -> USB
 -   SERIAL1 -> USART1 (RX/SBUS, DMA-enabled)
--   SERIAL2 -> USART2 (TELEM2)
+-   SERIAL2 -> USART2 (GPS)
 -   SERIAL3 -> USART3 (GPS)
--   SERIAL4 -> UART4 (GPS, DMA-enabled)
+-   SERIAL4 -> UART4 (WIFI, DMA-enabled)
 -   SERIAL5 -> UART5 
 -   SERIAL6 -> USART6 (ESC Telemetry)
 -   SERIAL7 -> UART7 (DMA-enabled)
