@@ -28,6 +28,8 @@ value to users with old hardware.
     Erle-Brain2 Wiring Quick Start <common-erle-brain2-wiring-quick-start>
     PXFmini Wiring Quick Start <common-pxfmini-wiring-quick-start>
     Web Apps <common-web-apps>
+    Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>
+    Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>
 
 [/site]
 [site wiki="copter,plane,rover"]
