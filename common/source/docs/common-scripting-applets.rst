@@ -12,6 +12,7 @@ Below is a list of applets and their use as of this writing. More are being adde
 ==========================================  ===========
 Applet Name                                 Description
 ==========================================  ===========
+ahrs-source-extnav-optflow.lua              Help vehicles automatically switch between ExternalNav and optical flow
 BattEstimate.lua                            Battery state of charge estimator
 Gimbal_Camera_Mode.lua                      Select auto or manual gimbal/camera control mode
 Heli_IM_COL_Tune.lua                        Traditional IM_COL_TUNE tuning applet
@@ -25,11 +26,19 @@ SmartAudio.lua                              Smart Audio control
 VTOL-quicktune.lua                          VTOL-quicktuning applet
 copter-deadreckon-home.lua                  flies towards home on loss of GPS
 forward_flight_motor_shutdown.lua           Forward flight motor shutdown
+leds_on_a_switch.lua                        Control NTF_LED_BRIGHT value using an AUX switch
 motor_failure_test.lua                      Motor failure testing script
 mount-poi.lua                               Displays the location (lat, lon and altitude) that the gimbal is currently pointing towards
+net_webserver.lua                           This implements a web server for boards that have networking support
+pelco_d_antennatracker.lua                  Maps AntennaTracker outputs to corresponding Pelco-D messages
 plane_aerobatics.lua(in Aerobatics subdir)  Autonomous trajectory precise aerobatics
 plane_package_place.lua                     Quadplane payload place script
+plane_precland.lua                          Precision landing system for QuadPlanes
 plane_ship_landing.lua                      Script to automate moving vehicle landing with a beacon
+revert_param.lua                            Easy parameter reversion system to help with manual in-flight tuning.
+rover-quicktune.lua                         QuicK tuning applet for Rovers
 runcam_on_arm.lua                           Starts/stops video recording on arm/disarm 
 sport_aerobatics.lua(in Aerobatics subdir)  Autonomous rate based aerobatics
+winch-control.lua                           Allows the winch to be deployed or retracted using an auxiliary switch
+copter_terrain_brake.lua                    Useful when flying in LOITER mode in steep terrain
 ==========================================  ===========
