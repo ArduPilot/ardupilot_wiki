@@ -32,7 +32,7 @@ Set the following parameters to enable BLHeli32/AM32 telemetry feedback to the a
 - :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed.  Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM.
 
 .. note:: using the RPM value reported using single wire telemetry for the center frequency adjustment of the :ref:`harmonic notch feature <common-imu-notch-filtering>`  works well, but the responsiveness is slower than using telemetry provided by bi-directional DShot. See next section.
-
+.. _bidir-dshot:
 Bi-directional DShot
 ====================
 
@@ -96,7 +96,5 @@ If an ESC connected via bidirectional DShot supports this extension, this inform
 Use as Battery Monitor
 ======================
 
-By setting a battery monitor instance to BLHeli32/AM32 ESC type (for example :ref:`BATT2_MONITOR<BATT2_MONITOR>` = 9), all connected BLHeli32/AM32 ESCs with connected telemetry wiring to the configured autopilot serial port, will be aggregated as a single source. The voltages reported will be averaged, the currents totaled, and the consumed current accumulated.
-
-.. _bidir-dshot:
+By setting a battery monitor instance to BLHeli32 ESC type (for example :ref:`BATT2_MONITOR<BATT2_MONITOR>` = 9), all connected BLHeli32 ESCs with connected telemetry wiring to the configured autopilot serial port, will be aggregated as a single source. Normally all the ESC's reported voltages and temperatures reported will be averaged, their currents totaled, and the consumed current accumulated. However, an individual monitor may select which ESC's values will be used, instead of all, by setting (Battery Monitor 3 will used for example here) :ref:`BATT3_ESC_MASK<BATT3_ESC_MASK>` bits for the indexes of which ESC's values will be used. Default is to use all ESCs setup to report power telemetry.
 
