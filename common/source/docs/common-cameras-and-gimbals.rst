@@ -54,6 +54,7 @@ Shutter Controllers
 -  :ref:`Seagull MAP-X2 Camera Trigger and Logger <common-camera-trigger-seagull-mapx2>`
 -  :ref:`Seagull REC Camera Trigger <common-camera-trigger-seagull-rec>`
 -  :ref:`StratosnapperV2 Camera Trigger <common-camera-trigger-stratosnapperv2>`
+-  :ref:`DIY Camera Trigger using Relay <common-pixhawk-camera-trigger-setup>`
 
 Control of Specific Camera Models
 ---------------------------------
@@ -110,7 +111,7 @@ more scenic photos. ArduPilot will stabilize the gimbal to whatever position you
     Seagull MAP-X2 Camera Trigger and Logger <common-camera-trigger-seagull-mapx2>
     Seagull REC Camera Trigger <common-camera-trigger-seagull-rec>
     StratosnapperV2 Camera Trigger <common-camera-trigger-stratosnapperv2>
-    Camera Trigger Directly from AUX Ports <common-pixhawk-camera-trigger-setup>
+    DIY Camera Trigger using Relay <common-pixhawk-camera-trigger-setup>
     Camera Triggering Configuration <common-camera-shutter-with-servo>
     RunCam Camera Control <common-camera-runcam>
     Gimbal / Mount Controls <common-mount-targeting>
