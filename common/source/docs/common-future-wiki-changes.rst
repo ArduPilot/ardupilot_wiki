@@ -32,6 +32,7 @@ New Features
 - Add ability to store fence list on SD card, see https://github.com/ArduPilot/ardupilot_wiki/pull/5967
 - Fix MambaH743 serial defaults, see https://github.com/ArduPilot/ardupilot_wiki/pull/6021
 - Add AUX switch to disable RF in mount, see https://github.com/ArduPilot/ardupilot_wiki/pull/5974
+- Add mask to select which ESCs are used in a given ESC Battery Monitor, see https://github.com/ArduPilot/ardupilot_wiki/pull/6023
 [site wiki="plane"]
 - New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
 - Option to report airspeed sensor offset calibration to gcs during boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5913
