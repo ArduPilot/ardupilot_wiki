@@ -15,7 +15,8 @@ New Board Support
 - MicoAir NxtPx4v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/5928
 - CSKY405 see https://github.com/ArduPilot/ardupilot_wiki/pull/6014
 - iFlight Blitz H743 Pro see https://github.com/ArduPilot/ardupilot_wiki/pull/6007
-- Flywoo F405 HD 1-2S see:https://github.com/ArduPilot/ardupilot_wiki/pull/6025
+- Flywoo F405 HD 1-2S see https://github.com/ArduPilot/ardupilot_wiki/pull/6025
+- OrqaF405 see: https://github.com/ArduPilot/ardupilot_wiki/pull/6028
 
 New Peripheral Support
 ======================
