@@ -17,6 +17,7 @@ New Board Support
 - iFlight Blitz H743 Pro see https://github.com/ArduPilot/ardupilot_wiki/pull/6007
 - Flywoo F405 HD 1-2S see https://github.com/ArduPilot/ardupilot_wiki/pull/6025
 - OrqaF405 see: https://github.com/ArduPilot/ardupilot_wiki/pull/6028
+- 3DR Control Zero H7 OEM RevG, see https://github.com/ArduPilot/ardupilot_wiki/pull/6033
 
 New Peripheral Support
 ======================
