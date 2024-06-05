@@ -27,19 +27,18 @@ An example of the top function being used can be found in `Compass_learn.cpp <ht
 
        AP::logger().Write("COFS", "TimeUS,OfsX,OfsY,OfsZ,Var,Yaw,WVar,N", "QffffffI",
                                                AP_HAL::micros64(),
-                                               (double)best_offsets.x,
-                                               (double)best_offsets.y,
-                                               (double)best_offsets.z,
-                                               (double)best_error,
-                                               (double)best_yaw_deg,
-                                               (double)worst_error,
+                                               best_offsets.x,
+                                               best_offsets.y,
+                                               best_offsets.z,
+                                               best_error,
+                                               best_yaw_deg,
+                                               worst_error,
                                                num_samples);
 
 - the 1st argument is the message name.  This should be 4 characters or less and be unique
 - the 2nd argument is a comma separated list of up to 16 field names; with a limit of 64 characters in total
 - the 3rd argument is a format string (maximum of 16 characters) with each letter holding the format for the corresponding field.  The meaning of each letter can be found `here in AP_Logger/LogStructure.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L6>`__
 - the remaining arguments are the actual values that will be logged.
-  You may notice in the example above, some fields have a format of float ("f") but are cast to ``(double)`` this is correct and necessary to avoid a compiler warning.
 
 The 2nd Log_Write function is the same as the first except that it accepts two additional string arguments,
 `"units" <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L42>`__ and
@@ -58,7 +57,7 @@ For example, below is a "TEST" log message which outputs the current system time
                           "FB", // mult: 1e-6, 1e-2
                           "Qf", // format: uint64_t, float
                           AP_HAL::micros64(),
-                          (double)alt_in_cm);
+                          alt_in_cm);
 
 - the time has units of seconds ("s"), multiplier of "F" to indicate the value should be divided by 1 million and format of "Q" to indicate it is output as a 64 bit unsigned integer.
 - the altitude has units of meters ("m"), multiplier of "B" to indicate the value should be divided by 100 (to convert from centimeters to meters) and format of "f" because the value is a float.
