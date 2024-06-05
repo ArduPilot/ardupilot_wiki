@@ -129,7 +129,11 @@ API Documentation
 
 The API documentation described here is not a complete list, but rather some examples.  For a **full list of the methods** currently available, the LUA auto-generated document file is a complete list, It can be found `here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/docs/docs.lua>`__ and lists all the available bindings and their parameters.
 
-.. note:: If you use VScode for your editor, by installing `this <https://marketplace.visualstudio.com/items?itemName=sumneko.lua>`__ lua extension (version 2.4.1 only as of now), you can get this information integrated as suggestions and autocomplete in the editor. 
+.. note::
+  If you use VScode for your editor, by installing `this <https://marketplace.visualstudio.com/items?itemName=sumneko.lua>`__ lua extension (version 2.4.1 only as of now), you can get this information integrated as suggestions and autocomplete in the editor.
+
+  | If you are still getting "Undefined global" errors and no completions, you may need to set path in your local copy of ``ardupilot`` repository in the `settings <https://code.visualstudio.com/docs/getstarted/settings>`_, for example:
+  | ``"Lua.workspace.library": [ "~/repos/ardupilot/libraries/AP_Scripting/docs" ]``
 
 For complete information on how a binding works the source can be found in the `binding generator descriptions <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/generator/description/bindings.desc>`_ .
 
