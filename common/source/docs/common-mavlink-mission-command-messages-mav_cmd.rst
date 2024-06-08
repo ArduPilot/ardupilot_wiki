@@ -1942,7 +1942,7 @@ then occurs. For Copters, they will loiter until then, and Rovers hold position.
    </tr>
    <tr>
    <td><strong>param2</strong></td>
-   <td>Time in hours(1-24)</td>
+   <td>Time in hours(0-23)</td>
    <td>Delay until this hour</td>
    </tr>
    <tr>
