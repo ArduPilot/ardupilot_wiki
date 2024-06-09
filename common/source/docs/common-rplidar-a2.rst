@@ -62,7 +62,7 @@ Be sure that the autopilot's 5V supply is capable of supplying the unit's requir
 Example setup below shown for first proximity sensor:
 
 - :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = "11" ("Lidar360") if using Serial1
-- :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` =  "115" for C1/A2, "256" for S1, if using Serial1
+- :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` =  "115" for C1/A2, "256" for S1,A2M12 if using Serial1
 - :ref:`PRX1_TYPE <PRX1_TYPE>` = "5"
 - :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
 
