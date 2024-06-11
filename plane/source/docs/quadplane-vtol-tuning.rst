@@ -6,6 +6,10 @@ QuadPlane VTOL Tuning Overview
 
 This section provides an overview of how to tune various QuadPlane VTOL parameters.
 
+- For normal Quadplanes follow :ref:'quadplane-tuning-process` for detailed tuning steps
+- For Tailsitters, see :ref:`tailsitter-tuning-guide`
+- For non-tailsitter Quadplanes with tilt rotors for vectored YAW, see :ref:`tilt-vectored-yaw-tuning` in addition to :ref:'quadplane-tuning-process`
+
 Overview
 ========
 
