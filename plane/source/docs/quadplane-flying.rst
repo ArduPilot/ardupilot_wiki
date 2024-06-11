@@ -37,6 +37,21 @@ If flying in a plane mode or AUTO, behaviour is determined by the :ref:`FS_SHORT
 
 If lying in any VTOL mode (QHOVER,QSTAB,etc.) and not flying a mission, failsafe will evoke QLAND , QRTL or RTL, depending on how :ref:`Q_OPTIONS<Q_OPTIONS>`, bits 5 and 20, are set.
 
+VTOL Landing Repositioning
+==========================
+
+During the final descent phase of QRTL/QLAND or a mission VTOL LAND command, repositioning the vehicle or pausing the descent is usually not possible unless switching to a pilot controlled mode like QLOITER. However, there are two options that can be enabled to give the pilot control:
+
+Throttle Descent Control
+------------------------
+
+If :ref:`Q_OPTIONS<Q_OPTIONS>` bit 15(+32768 to param value), is set, it will allow pilot to control descent during VTOL AUTO-LAND phases, similar to throttle stick action during QHOVER or QLOITER. However, this will not become active until the throttle stick is raised above 70% momentarily during the descent at least once.
+
+Horizontal Repositioning
+------------------------
+
+If :ref:`Q_OPTIONS<Q_OPTIONS>` bit 17(+131072 to param value), is set, it will enable pilot horizontal re-positioning during VTOL auto LAND phases using the pitch and roll sticks like QLOITER, momentarily pausing the descent while doing so.
+
 .. _what-will-happen:
 
 What Will Happen?
