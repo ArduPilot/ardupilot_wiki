@@ -129,7 +129,8 @@ Set up directories/paths and extra packages in Cygwin
 
     ln -s /usr/bin/python3.7 /usr/bin/python
     ln -s /usr/bin/pip3.7 /usr/bin/pip
-    pip install empy pyserial pymavlink
+    pip install pyserial pymavlink
+    pip install empy==3.3.4
 
 Download ArduPilot Source
 =========================
