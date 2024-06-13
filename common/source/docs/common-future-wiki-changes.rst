@@ -18,7 +18,8 @@ New Board Support
 - Flywoo F405 HD 1-2S see https://github.com/ArduPilot/ardupilot_wiki/pull/6025
 - OrqaF405 see: https://github.com/ArduPilot/ardupilot_wiki/pull/6028
 - 3DR Control Zero H7 OEM RevG, see https://github.com/ArduPilot/ardupilot_wiki/pull/6033
-- CBUnmanned Stamp H743 <common-StampH743>
+- CBUnmanned Stamp H743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6037
+- PixFlamingo-F767, see https://github.com/ArduPilot/ardupilot_wiki/pull/6048
 
 New Peripheral Support
 ======================
