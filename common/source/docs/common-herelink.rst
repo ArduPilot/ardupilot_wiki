@@ -23,9 +23,45 @@ Features
 * Onboard Arm Cortex A53 & Cortex A53 SOC in both air and ground units for custom applications. 
 
 
-`Herelink System Overview <https://docs.cubepilot.org/user-guides/herelink/herelink-overview>`_
+`Herelink System Overview <https://docs.cubepilot.org/user-guides/herelink/herelink-overview>`__
 
 `Herelink User Manual <https://docs.cubepilot.org/user-guides/herelink/herelink-user-guides>`__
+
+Updating QGC
+------------
+
+As of June 2024 the Herelink comes pre-installed with QGC-4.0.8.  If you wish to upgrade to QGC-4.4 (or higher) which includes improved camera and gimbal support follow these instructions:
+
+1. Open the `QGC releases page <https://github.com/mavlink/qgroundcontrol/releases>`__
+2. Click on the "Herelink" link and download the QGroundControl-Herelink.apk file
+3. On the Herelink
+
+  - Open settings by pulling down from the top of the screen and select the gear icon
+  - Select "About Phone", scroll down and click "Build Number" multiple times to enable developer mode
+  - Return to settings by clicking the back arrow button
+  - Scroll down to "Developer Options" and enable "USB debugging"
+  - Connect the Herelink to a PC via USB cable
+  - Pull down from the top and select "USB charging this device" and change to "Use USB to Transfer files"
+
+4. On the PC
+
+  - Open a windows file explorer
+  - Open the Herelink's filesystem (check under "This PC")
+  - Drag-and-drop the Herelink-QGroundControl.apk file (downloaded above) to the Herelink's internal file system
+
+5. On the Herelink
+
+  - Pull down from the top and select "USB for file transfer" and restore "Use USB to" "Charge this device"
+  - Open settings by pulling down from the top of the screen and select the gear icon
+  - Select "Storage", "Internal shared storage", scroll down and select "Explore"
+  - Click on "Herelink-QGroundControl.apk" and select "INSTALL"
+  - To ease starting Herelink open the Herelink Launcher application, select the grid icon on the bottom right, click on "Herelink-QGroundControl" and select, "Add to Favorites"
+  - When QGC is first started it will ask for various permission (select "Allow" for all), preferred units and Vehicle firmware (select "ArduPilot"
+
+`This video <https://www.youtube.com/watch?v=a-cLzYD7HBk>`__ demonstrates how to update the QGC version in a general sense
+
+`CubePilot instructions for installing a custom app <https://docs.cubepilot.org/user-guides/herelink/herelink-user-guides/installing-a-custom-app>`__ may also be useful
+
 
 More Info on Herelink can be found on 
 
