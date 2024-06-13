@@ -109,6 +109,7 @@ To point the gimbal at a Location
 
 - While the vehicle is flying, maximise the map
 - Click anywhere on the map and select "ROI at location"
+- To stop pointing at the location, click on the "ROI here" icon and select "Cancel ROI".  The gimbal will return to the mode held in the :ref:`MNT1_DEFLT_MODE<MNT1_DEFLT_MODE>` parameter
 
 .. image:: ../../../images/mount-targeting-qgc-roi.png
     :target: ../_images/mount-targeting-qgc-roi.png
