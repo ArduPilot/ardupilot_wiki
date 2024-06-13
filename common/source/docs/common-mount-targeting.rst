@@ -29,13 +29,13 @@ Below are the 6 supported modes.
 
 4. GPS Point: same as MAVLink targeting but the gimbal points at a specific location.  Users never need to actively set the gimbal to this mode
 
-5. SysId Target: the gimbal points at another vehicle with the MAVLink system id specified.  Users never need to actively set the gimbal to this mode and there are no known GCSs that support setting the system id, but the parameter can be set by updating the value of `MNT1_SYSID_DFLT<MNT1_SYSID_DFLT>` directly.
+5. SysId Target: the gimbal points at another vehicle with the MAVLink system id specified.  Users never need to actively set the gimbal to this mode and there are no known GCSs that support setting the system id, but the parameter can be set by updating the value of :ref:`MNT1_SYSID_DFLT<MNT1_SYSID_DFLT>` directly.
 
 6. Home Location: the gimbal points at home (normally its takeoff location)
 
 The gimbal's default mode on startup can be set with the :ref:`MNT1_DEFLT_MODE<MNT1_DEFLT_MODE>` parameter.
 
-.. note:: (firmware versions 4.5 and later)in all modes except RETRACT Mode, if the pilot moves any configured Roll/Pitch/Yaw RC targeting input (see below) greater than its ``RCx_DZ`` or 10uS if that param is less than 10uS) while in any non RC Targeting Mode, it will switch modes to RC_Targeting automatically.
+.. note:: ArduPilot 4.5 (and higher) automatically switches the gimbal to RC Targeting Mode if the pilot moves any configured Roll/Pitch/Yaw RC targeting inputs (see below) by the larger of 10uS or ``RCx_DZ``.  The only exception is if the gimbals is in RETRACT mode in which case the gimbal mode will not be automatically changed.
 
 Control with an RC transmitter (aka RC Targeting)
 -------------------------------------------------
