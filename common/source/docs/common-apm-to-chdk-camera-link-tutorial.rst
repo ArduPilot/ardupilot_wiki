@@ -1,5 +1,7 @@
 .. _common-apm-to-chdk-camera-link-tutorial:
 
+**ARCHIVED: page considered obsolete**
+
 ====================================
 Camera Shutter Triggering using CHDK
 ====================================

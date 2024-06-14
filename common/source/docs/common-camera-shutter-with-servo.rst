@@ -30,19 +30,19 @@ Configure the autopilot by setting these parameters:
 Relay control connection and configuration
 ==========================================
 
-Connect one of the autopilot's GPIO pins to the camera or the camera control cable that accepts high/low voltage input.  As mentioned on the :ref:`relay wiki page<common-relay>` normally the autopilot's servo/motor outputs can be used but in additional some autopilots have dedicated pins purely for use as relays/GPIOs.
+Connect one of the autopilot's GPIO pins to the camera or the camera control cable that accepts high/low voltage input.  As mentioned on the :ref:`relay wiki page<common-relay>` the autopilot's servo/motor outputs can normally be used but, in addition, some autopilots have dedicated pins purely for use as relays/GPIOs.
 
 Configure the autopilot by setting these parameters:
 
-- If using 4.5 (or earlier) only the 1st relay can be used so set `RELAY_PIN` to the GPIO pin used
+- If using 4.5 (or earlier) only the 1st relay can be used so set ``RELAY_PIN`` to the GPIO pin used
 - If using 4.6 (or higher) any relay can be used.  Below are settings if the first relay is used.
 
   - Set :ref:`RELAY1_FUNCTION<RELAY1_FUNCTION>` = 4 (Camera) 
   - Set :ref:`RELAY1_PIN<RELAY1_PIN>` to the GPIO pin used
 
-- Set `SERVOx_FUNCTION` = -1 (GPIO) where "x" is the servo output channel used.  This is not required in the rare case where the autopilot's dedicated GPIO pins are useds
+- Set ``SERVOx_FUNCTION`` = -1 (GPIO) where "x" is the servo output channel used.  This is not required in the rare case where an autopilot's dedicated GPIO pins are used.
 - Set :ref:`CAM1_DURATION<CAM1_DURATION>` to the time (in seconds) that the relay is held high
-- Set :ref:`CAM1_RELAY_ON<CAM1_RELAY_ON>` = 0 to swap the relay voltage.  E.g. high by default, low to trigger the camera shutter
+- Set :ref:`CAM1_RELAY_ON<CAM1_RELAY_ON>` = 0 to swap the relay voltage.  E.g. GPIO output would now be normally high by default, and then low to trigger the camera shutter
 
 .. _common-camera-shutter-with-servo_enhanced_camera_trigger_logging:
 
