@@ -24,13 +24,7 @@ Equipment you will need
 `Plane <https://ardupilot.org/plane/index.html>`_ or
 :ref:`Multicopter <copter:home>`
 
-A digital still camera:
-
-`Canon cameras capable of CHDK <http://chdk.wikia.com/wiki/For_Developers>`__ including the S100,
-S110, Elph 110 HS and SX230HS
-
-Other camera types including Canon ELPH 520 HS (not CHDK capable) with
-some method of triggering the camera shutter
+A digital still camera  with some method of triggering the camera shutter
 
 GoPro cameras are not recommended because of their fish-eye lenses
 
@@ -60,8 +54,8 @@ overlap in pictures from adjacent tracks.
 
 The camera shutter needs to be triggered throughout the mission (i.e
 every 2 to 5 seconds or at regular distance intervals).  Many cameras
-include a feature to take pictures at regular time intervals.  `Canon cameras loaded with CHDK can run a script <http://chdk.wikia.com/wiki/User_Written_Scripts>`__ that does
-this.  Alternatively :ref:`Copter/Plane/Rover can trigger a Canon CHDK camera at timed or distance based intervals <common-chdk-camera-control-tutorial>`.
+include a feature to take pictures at regular time intervals. If not, then a
+camera shutter release method must be implemented via a relay control, see :ref:`common-camera-shutter-with-servo` for example.
 
 A mission to accomplish this would include some or all of these
 commands:
@@ -75,7 +69,7 @@ column.  Adding "1" to the "Delay" columns will cause the copter to
 momentarily stop at each waypoint.
 
 **DO_DIGICAM_CONTROL** will cause the camera shutter to be pushed once
-immediately if the autopilot has been connected using CHDK or a
+immediately if the autopilot has been connected using a
 servo.  This command takes no arguments and like other "do" commands it
 executes immediately after the preceding waypoint command begins.
 
