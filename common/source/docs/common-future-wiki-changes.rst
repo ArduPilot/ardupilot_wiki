@@ -20,6 +20,7 @@ New Board Support
 - 3DR Control Zero H7 OEM RevG, see https://github.com/ArduPilot/ardupilot_wiki/pull/6033
 - CBUnmanned Stamp H743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6037
 - PixFlamingo-F767, see https://github.com/ArduPilot/ardupilot_wiki/pull/6048
+- RadioLinkPix6, see https://github.com/ArduPilot/ardupilot_wiki/pull/6054
 
 New Peripheral Support
 ======================
