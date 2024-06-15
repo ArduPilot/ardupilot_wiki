@@ -113,6 +113,19 @@ Firmware updates are available from Xacti directly and normally include a "firmw
 - Optionally power down the gimbal, remove the SD card and check that the "firmware.bin" and/or "UPDATE.txt" files have been deleted.  If either was deleted then the firmware update was successful
 - Power up the gimbal and it should operate normally
 
+Remote Download of Images
+-------------------------
+
+Images and videos captured by the camera can be remotely downloaded to a companion computer (e.g. RPI) via USB using the `xacti-config tool <https://github.com/ArduPilot/ardupilot/tree/master/Tools/cameras_gimbals/xacti-config>`__
+
+- Connect the camera's USB port to the companion computer
+- On the companion computer:
+
+  - Follow the `Install Instructions <https://github.com/ArduPilot/ardupilot/tree/master/Tools/cameras_gimbals/xacti-config>`__ to download, install and compile the tool on the companion computer
+  - Follow the `Execution instructions <https://github.com/ArduPilot/ardupilot/tree/master/Tools/cameras_gimbals/xacti-config>`__ to switch the camera into "msc mode" (mass storage class mode)
+  - The camera's internal storage should appear as a new drive on the companion computer allowing file copy commands to move the images and videos to a local drive
+  - While in "msc mode" the camera will not respond to DroneCAN commands but it can be restored to normal operation by rebooting it.  Please refer to the POWER_ON pin setup under "Connecting to the Autopilot" above
+
 Videos
 ------
 
