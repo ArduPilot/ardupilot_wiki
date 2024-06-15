@@ -44,7 +44,7 @@ If you are on a debian based system (such as Ubuntu or Mint), we provide `a scri
 
     Tools/environment_install/install-prereqs-ubuntu.sh -y
 
-Reload the path (log-out and log-in to make it permanent):
+This script installs all required dependencies including cross compilers, creates a python virtual environment at ~/venv.ardupilot, and updates your .profile and your .bashrc. Reload the path using this command (or log-out and log-in to make it permanent):
 
 ::
 
@@ -67,6 +67,12 @@ If there have been updates to some git submodules you may need to do a full clea
     ./waf clean
 
 That will remove the build artifacts so you can do a `build <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ from scratch
+
+Some changes such as updating lua bindings or hwdef files may require a full "distclean" which will force waf to rebuild the complete environment. To do that use:
+
+::
+
+    ./waf distclean
 
 --------------------
 
