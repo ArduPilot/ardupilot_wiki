@@ -17,6 +17,7 @@ Follow the links below (or in the sidebar) for configuration information based u
     Lowrance Elite Ti2 Sonar <common-lowrance-elite-ti2-sonar>
     Underwater Sonar (Analog) <common-underwater-sonar-analog>
     Triducer <common-underwater-triducer>
+    Sonar L04xMTW/GL04xMT <common-sonar-L04xMTW-GL04xMT>
 
 [site wiki="rover"]
 Bathymetry Tools
