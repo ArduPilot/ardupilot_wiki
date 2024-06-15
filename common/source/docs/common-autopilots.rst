@@ -138,6 +138,7 @@ Closed Hardware
 [/site]
     Parrot C.H.U.C.K <common-CHUCK-overview>
     RadioLink MiniPix <common-radiolink-minipix>
+    RadioLinkPIX6 <common-radiolinkpix6>
     QioTek Zealot F427 <common-qiotek-zealot>
     QioTek Zealot H743 <common-qiotek-zealoth7>
     SDMODEL SDH7V1 <https://www.sdmodel.com.tw/content.php?cn=item&tid=1320&start=0>
