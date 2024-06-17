@@ -74,6 +74,7 @@ Rovers from Partners
 
 * `AION ROBOTICS - R6 UGV <https://www.aionrobotics.com/r6>`__
 * `AION ROBOTICS - M6 UGV <https://www.aionrobotics.com/m6-commercial-ugv>`__
+* `Robot to Society - SPARK Kit <https://www.robot-to-society.com/products/sparkkit>`__
 * `TT Robotix - Rhino 6x6 <http://www.ttrobotix.com/products/detail/906.html>`__
 * `TT Robotix - Base 1 Rover <http://www.ttrobotix.com/products/detail/907.html>`__
 
