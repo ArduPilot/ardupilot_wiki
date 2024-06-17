@@ -24,7 +24,7 @@ The pilot can control the copter's position with the control sticks.
    :ref:`AltHold mode <altholdmode_controls>`
 -  The heading can be set with the Yaw control stick
 
-The vehicle can be armed in Loiter mode but only once the GPS has 3D lock and the HDOP has dropped below 2.0.  :ref:`More details on LED patterns here <common-leds-pixhawk>`.
+The vehicle can be armed in Loiter mode but only once the GPS has 3D lock and the HDOP has dropped below 1.4.  :ref:`More details on LED patterns here <common-leds-pixhawk>`.
 
 .. _loiter-mode_tuning:
 
