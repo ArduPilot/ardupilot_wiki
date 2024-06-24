@@ -40,6 +40,8 @@ intersphinx_mapping = {'copter': (intersphinx_base_url % 'copter',
                                   None),  # noqa: E127
                        'rover': (intersphinx_base_url % 'rover',
                                   None),  # noqa: E127
+                       'sub': (intersphinx_base_url % 'sub',
+                                  None),  # noqa: E127
                        'planner': (intersphinx_base_url % 'planner',
                                   None),  # noqa: E128
                        'planner2': (intersphinx_base_url % 'planner2',

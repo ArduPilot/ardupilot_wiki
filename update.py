@@ -72,6 +72,7 @@ ALL_WIKIS = [
     'copter',
     'plane',
     'rover',
+    'sub',
     'antennatracker',
     'dev',
     'planner',
@@ -87,6 +88,7 @@ WIKI_NAME_TO_VEHICLE_NAME = {
     'copter': 'Copter',
     'plane': 'Plane',
     'rover': 'Rover',
+    'sub': 'Sub',
     'blimp': 'Blimp',
 }
 
@@ -96,6 +98,7 @@ PARAMETER_SITE = {
     'rover': 'APMrover2',
     'copter': 'ArduCopter',
     'plane': 'ArduPlane',
+    'sub': 'ArduSub',
     'antennatracker': 'AntennaTracker',
     'AP_Periph': 'AP_Periph',
     'blimp': 'Blimp',
@@ -104,6 +107,7 @@ LOGMESSAGE_SITE = {
     'rover': 'Rover',
     'copter': 'Copter',
     'plane': 'Plane',
+    'sub': 'Sub',
     'antennatracker': 'Tracker',
     'blimp': 'Blimp',
 }
@@ -852,6 +856,8 @@ def create_features_pages(site):
             destination_filepath = "dev/source/docs/periph-binary-features.rst"
         else:
             destination_filepath = "%s/source/docs/binary-features.rst" % wiki
+        # make .../docs/ directory if it doesn't already exist
+        os.makedirs(os.path.dirname(destination_filepath), exist_ok=True)
         with open(destination_filepath, "w") as f:
             f.write(content)
 
