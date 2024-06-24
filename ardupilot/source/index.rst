@@ -225,7 +225,7 @@ Features
    Copter <https://ardupilot.org/copter/index.html>
    Plane <https://ardupilot.org/plane/index.html>
    Rover <https://ardupilot.org/rover/index.html>
-   Sub <http://ardusub.com/>
+   Sub <http://ardupilot.org/sub/index.html>
    Blimp <https://ardupilot.org/blimp/index.html>
    AntennaTracker <https://ardupilot.org/antennatracker/index.html>
 
