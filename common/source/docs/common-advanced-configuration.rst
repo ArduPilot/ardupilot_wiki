@@ -48,6 +48,9 @@ tuning options for the vehicle.
 [site wiki="copter,rover"]
     Fence Failsafes  <common-geofencing-landing-page>
 [/site]
+[site wiki="copter"]
+    Flight Options <flight-options>
+[/site]
     Flight Time Recorder <common-flight-time-recorder>
 [site wiki="plane"]
     Flight Options <flight-options>
