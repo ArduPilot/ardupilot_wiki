@@ -79,6 +79,7 @@ tuning options for the vehicle.
     Limit Cycle Prevention <common-servo-limit-cycle-detection>
     LUA Scripting <common-lua-scripts>
     Magnetic Interference <common-magnetic-interference>
+    Magnetometer GeoPhys Array <common-hires-mag-array>
     MAVLink2 Packet Signing (Security) <common-MAVLink2-signing>
 [site wiki="rover"]
     Motor Thrust Scaling <rover-motor-thrust-scaling>
