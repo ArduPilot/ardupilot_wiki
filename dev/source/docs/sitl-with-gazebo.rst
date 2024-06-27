@@ -61,6 +61,8 @@ macOS Big Sur (11), Monterey (12), and Ventura (13).
 Install the ArduPilot Gazebo Plugin
 -----------------------------------
 
+These instructions can also be found in the `ardupilot_gazebo/README.md <https://github.com/ArduPilot/ardupilot_gazebo/blob/main/README.md>`__
+
 We use a standard version of ArduPilot with a custom plugin for Gazebo which
 is hosted on GitHub at: `https://github.com/ArduPilot/ardupilot_gazebo <https://github.com/ArduPilot/ardupilot_gazebo>`__.
 
