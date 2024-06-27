@@ -89,6 +89,7 @@ is hosted on GitHub at: `https://github.com/ArduPilot/ardupilot_gazebo <https://
 
         sudo apt update
         sudo apt install libgz-sim7-dev rapidjson-dev
+        sudo apt install libopencv-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl
 
       For Gazebo Harmonic
 
@@ -96,6 +97,7 @@ is hosted on GitHub at: `https://github.com/ArduPilot/ardupilot_gazebo <https://
 
         sudo apt update
         sudo apt install libgz-sim8-dev rapidjson-dev
+        sudo apt install libopencv-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl
 
     macOS
 
@@ -103,6 +105,7 @@ is hosted on GitHub at: `https://github.com/ArduPilot/ardupilot_gazebo <https://
 
       brew update
       brew install rapidjson
+      brew install opencv gstreamer
 
 #. Create a workspace folder and clone the repository
 
