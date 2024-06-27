@@ -65,6 +65,7 @@ ROS 2
         ROS 2 with SITL <ros2-sitl>
         ROS 2 with SITL in Gazebo <ros2-gazebo>
         ROS 2 over Ethernet <ros2-over-ethernet>
+        ROS 2 waypoint goal interface <ros2-waypoint-goal-interface>
         Cartographer SLAM with ROS 2 in SITL <ros2-cartographer-slam>
 
 
