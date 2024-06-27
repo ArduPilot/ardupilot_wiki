@@ -20,14 +20,10 @@ external simulator for ArduPilot Rover, Coper and Plane.
 .. youtube:: rJCEN5Htu2s
     :width: 100%
 
-|
-
-.. tip::
-
-   Gazebo is particularly useful for defining autonomous indoor flights,
-   swarms, non-flying vehicle types such as rovers and boats,
-   and multi-vehicle scenarios such as the ship landing simulation in the
-   video above.
+Gazebo is particularly useful for defining autonomous indoor flights,
+swarms, non-flying vehicle types such as rovers and boats,
+and multi-vehicle scenarios such as the ship landing simulation in the
+video above.
 
 
 Install ArduPilot SITL
