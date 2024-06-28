@@ -82,11 +82,11 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Safety Switch <common-safety-switch-pixhawk>
     Servos <common-servo-landingpage>
     Smart Batteries <common-smart-battery-landingpage>
-    Temperature Sensors <common-temperature-sensor>
 [site wiki="rover"]
     Start/Stop Switch <startstop-switch>
 [/site]
     Telemetry Radio <common-telemetry-landingpage>
+    Temperature Sensors <common-temperature-sensor>
     Video (High Definition) <common-video-landingpage>
     Winch <common-daiwa-winch>
 [site wiki="rover"]

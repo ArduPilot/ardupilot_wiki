@@ -110,7 +110,7 @@ To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receive
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
 
-RX6 can be configured for RCin coming from DJI air units by setting `:ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` to something other than "23" and setting `:ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` to "23".
+RX6 can be configured for RCin coming from DJI air units by setting :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` to something other than "23" and setting :ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` to "23".
 
 
 Motor/Servo Outputs

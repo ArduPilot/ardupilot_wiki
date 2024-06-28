@@ -17,7 +17,6 @@ Specifications
 
    -  STM32H743 32-bit processor, 480 MHz
    -  AT7456E OSD
-   -  32 MB (16MB on Mini) flash for logging
 
 -  **Sensors**
 
@@ -44,7 +43,6 @@ Specifications
 
 -  **Physical**
 
-   -  Mount pattern: 30.5*30.5mm/?4
    -  Dimensions: 36.9*52mm
    -  Weight: 35g
 

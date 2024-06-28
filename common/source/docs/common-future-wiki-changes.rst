@@ -13,6 +13,15 @@ New Board Support
 - MicoAir405v2/Mini, see https://github.com/ArduPilot/ardupilot_wiki/pull/5926
 - MicoAir743, see https://github.com/ArduPilot/ardupilot_wiki/pull/5921
 - MicoAir NxtPx4v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/5928
+- CSKY405 see https://github.com/ArduPilot/ardupilot_wiki/pull/6014
+- iFlight Blitz H743 Pro see https://github.com/ArduPilot/ardupilot_wiki/pull/6007
+- Flywoo F405 HD 1-2S see https://github.com/ArduPilot/ardupilot_wiki/pull/6025
+- OrqaF405 see: https://github.com/ArduPilot/ardupilot_wiki/pull/6028
+- 3DR Control Zero H7 OEM RevG, see https://github.com/ArduPilot/ardupilot_wiki/pull/6033
+- CBUnmanned Stamp H743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6037
+- PixFlamingo-F767, see https://github.com/ArduPilot/ardupilot_wiki/pull/6048
+- RadioLinkPix6, see https://github.com/ArduPilot/ardupilot_wiki/pull/6054
+- JHEMCU-H743HD, see https://github.com/ArduPilot/ardupilot_wiki/pull/6066
 
 New Peripheral Support
 ======================
@@ -28,6 +37,11 @@ New Features
 - Crash dump pre-arm, see https://github.com/ArduPilot/ardupilot_wiki/pull/5920
 - Correct the motor GPIO and grouping for the AocodaH743Dual autopilot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5896
 - Add ability to store fence list on SD card, see https://github.com/ArduPilot/ardupilot_wiki/pull/5967
+- Fix MambaH743 serial defaults, see https://github.com/ArduPilot/ardupilot_wiki/pull/6021
+- Add AUX switch to disable RF in mount, see https://github.com/ArduPilot/ardupilot_wiki/pull/5974
+- Add mask to select which ESCs are used in a given ESC Battery Monitor, see https://github.com/ArduPilot/ardupilot_wiki/pull/6023
+- Add EKF3 option to help mediate operation in GPS jamming environments, see https://github.com/ArduPilot/ardupilot_wiki/pull/6069
+- Add hires DroneCAN magnetometer array info, see https://github.com/ArduPilot/ardupilot_wiki/pull/6071
 [site wiki="plane"]
 - New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
 - Option to report airspeed sensor offset calibration to gcs during boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5913

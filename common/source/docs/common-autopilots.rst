@@ -141,6 +141,7 @@ Closed Hardware
     QioTek Zealot F427 <common-qiotek-zealot>
     QioTek Zealot H743 <common-qiotek-zealoth7>
     SDMODEL SDH7V1 <https://www.sdmodel.com.tw/content.php?cn=item&tid=1320&start=0>
+    SDMODEL H7 V2 <common-SDMODELH7V2>
     Sky-Drones AIRLink <common-skydrones-airlink>
     SkystarsH7HD <common-skystarsH7>
     SPRacing H7 Extreme <common-spracingh7-extreme>

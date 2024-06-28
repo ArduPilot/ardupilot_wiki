@@ -29,13 +29,13 @@ Below are the 6 supported modes.
 
 4. GPS Point: same as MAVLink targeting but the gimbal points at a specific location.  Users never need to actively set the gimbal to this mode
 
-5. SysId Target: the gimbal points at another vehicle with the MAVLink system id specified.  Users never need to actively set the gimbal to this mode and there are no known GCSs that support setting the system id, but the parameter can be set by updating the value of `MNT1_SYSID_DFLT<MNT1_SYSID_DFLT>` directly.
+5. SysId Target: the gimbal points at another vehicle with the MAVLink system id specified.  Users never need to actively set the gimbal to this mode and there are no known GCSs that support setting the system id, but the parameter can be set by updating the value of :ref:`MNT1_SYSID_DFLT<MNT1_SYSID_DFLT>` directly.
 
 6. Home Location: the gimbal points at home (normally its takeoff location)
 
 The gimbal's default mode on startup can be set with the :ref:`MNT1_DEFLT_MODE<MNT1_DEFLT_MODE>` parameter.
 
-.. note:: (firmware versions 4.5 and later)in all modes except RETRACT Mode, if the pilot moves any configured Roll/Pitch/Yaw RC targeting input (see below) greater than its ``RCx_DZ`` or 10uS if that param is less than 10uS) while in any non RC Targeting Mode, it will switch modes to RC_Targeting automatically.
+.. note:: ArduPilot 4.5 (and higher) automatically switches the gimbal to RC Targeting Mode if the pilot moves any configured Roll/Pitch/Yaw RC targeting inputs (see below) by the larger of 10uS or ``RCx_DZ``.  The only exception is if the gimbals is in RETRACT mode in which case the gimbal mode will not be automatically changed.
 
 Control with an RC transmitter (aka RC Targeting)
 -------------------------------------------------
@@ -57,12 +57,10 @@ The pilot can retract the gimbal with the "Retract Mount1" auxiliary switch
 
 - :ref:`RC10_OPTION <RC10_OPTION>` = 27 ("Retract Mount1") to change the gimbal to Retract mode
 
-Control from a Ground Station or Companion Computer (aka MAVLink Targeting)
----------------------------------------------------------------------------
+Mission Planner Gimbal Controls
+-------------------------------
 
-Ground stations can send MAVLink commands to control the gimbal.  While each GCS's interface is different below are the controls provided by Mission Planner.
-
-The gimbal's angles can be controlled as follows
+Mission Planner uses MAVLink commands to control the gimbal.  The gimbal's angles can be controlled as follows
 
 - Set the mode to "MAVLink Targeting" using the Data screen's Actions tab's bottom left drop-down and then push the "Set Mount" button (see image above)
 - Use the Payload Control tab to adjust the gimbal's roll, pitch or yaw angles
@@ -81,11 +79,48 @@ To point the gimbal at a particular location (e.g. lat, lon, alt), on the Data s
 .. image:: ../../../images/mount-mp-point-camera-here.png
     :target: ../_images/mount-mp-point-camera-here.png
 
-MAVLink mount commands can be sent from other sources, such as companion computers. See :ref:`mavlink-gimbal-mount` for a commands list and more information.
+QGC Gimbal Controls
+-------------------
+
+`QGC-4.4 (and higher) <https://github.com/mavlink/qgroundcontrol/releases>`__ supports controlling the gimbal from a Toolbar or by directly clicking on the real-time video.  The vehicle must be using ArduPilot 4.5 (or higher)
+
+The gimbal control toolbar should appear at the top once a gimbal is detected.  Click on the toolbar to display the gimbal control buttons
+
+.. image:: ../../../images/mount-targeting-qgc-toolbar.png
+    :target: ../_images/mount-targeting-qgc-toolbar.png
+
+- "Yaw Lock" / "Yaw Follow" controls whether the gimbal maintains an earth-frame yaw target (aka "lock") or moves with the vehicle's yaw (aka "follow")
+- "Center" centers the gimbal (or more precisely moves it to the roll, pitch and yaw angles held in :ref:`MNT1_NEUTRAL_X<MNT1_NEUTRAL_X>`, :ref:`MNT1_NEUTRAL_Y<MNT1_NEUTRAL_Y>`, :ref:`MNT1_NEUTRAL_Z<MNT1_NEUTRAL_Z>`)
+- "Tilt 90" points the gimbal directly downwards
+- "Point Home" points the gimbal at the home location
+- "Retract" retracts the gimbal (or more precisely moves it to the roll, pitch and yaw angles held in :ref:`MNT1_RETRACT_X<MNT1_RETRACT_X>`, :ref:`MNT1_RETRACT_Y<MNT1_RETRACT_Y>`, :ref:`MNT1_RETRACT_Z<MNT1_RETRACT_Z>`)
+
+The gimbal may also be controlled by clicking on the real-time video screen
+
+- Push the "Setting" button
+- Check "Enable on Screen Camera Control" and set "Control type" to "Click to point"
+- Enter the camera's Horizontal FOV and Vertical FOV
+- Maximise the real-time video and click anywhere on the screen and the gimbal should move appropriately
+
+.. image:: ../../../images/mount-targeting-qgc-clicktopoint.png
+    :target: ../_images/mount-targeting-qgc-clicktopoint.png
+
+To point the gimbal at a Location
+
+- While the vehicle is flying, maximise the map
+- Click anywhere on the map and select "ROI at location"
+- To stop pointing at the location, click on the "ROI here" icon and select "Cancel ROI".  The gimbal will return to the mode held in the :ref:`MNT1_DEFLT_MODE<MNT1_DEFLT_MODE>` parameter
+
+.. image:: ../../../images/mount-targeting-qgc-roi.png
+    :target: ../_images/mount-targeting-qgc-roi.png
+
+Companion Computer Gimbal Controls
+----------------------------------
+
+MAVLink mount commands can also be sent from other sources, such as companion computers. See :ref:`mavlink-gimbal-mount` for a commands list and more information.
 
 Cameras may also be controlled via MAVLink commands from a companion computer or other source.
 See :ref:`dev:mavlink-camera` documentation.
-
 
 Control during Auto mode missions
 ---------------------------------

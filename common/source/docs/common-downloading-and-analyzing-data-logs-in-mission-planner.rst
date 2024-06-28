@@ -372,7 +372,8 @@ a mission):**
 +---------------------+----------------------------------------------------------------------------------------+
 | Field               | Description                                                                            |
 +---------------------+----------------------------------------------------------------------------------------+
-| MagX, MagY. MagZ    | Raw magnetic field values for x, y and z axis                                          |
+| MagX, MagY, MagZ    | Raw magnetic field values for x, y, and z axis. These are magnetometer readings with   |
+|                     | calibration applied, not raw magnetometer readings.                                    |
 +---------------------+----------------------------------------------------------------------------------------+
 | OfsX, OfsY, OfsZ    | Raw magnetic offsets (will only change if COMPASS_LEARN parameter is 1)                |
 +---------------------+----------------------------------------------------------------------------------------+

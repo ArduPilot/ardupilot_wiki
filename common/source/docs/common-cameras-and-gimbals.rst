@@ -49,13 +49,12 @@ Shutter Controllers
 -------------------
 
 -  :ref:`Servo or Relay controlled camera shutter <common-camera-shutter-with-servo>` (servo, relay).
--  :ref:`Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>`
--  :ref:`Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>` (non-standard integration)
 -  :ref:`Seagull IR Camera Trigger <common-camera-trigger-seagull-ir>`
 -  :ref:`Seagull MAP2 Camera Trigger <common-camera-trigger-seagull-map2>`
 -  :ref:`Seagull MAP-X2 Camera Trigger and Logger <common-camera-trigger-seagull-mapx2>`
 -  :ref:`Seagull REC Camera Trigger <common-camera-trigger-seagull-rec>`
 -  :ref:`StratosnapperV2 Camera Trigger <common-camera-trigger-stratosnapperv2>`
+-  :ref:`DIY Camera Trigger using Relay <common-pixhawk-camera-trigger-setup>`
 
 Control of Specific Camera Models
 ---------------------------------
@@ -112,10 +111,8 @@ more scenic photos. ArduPilot will stabilize the gimbal to whatever position you
     Seagull MAP-X2 Camera Trigger and Logger <common-camera-trigger-seagull-mapx2>
     Seagull REC Camera Trigger <common-camera-trigger-seagull-rec>
     StratosnapperV2 Camera Trigger <common-camera-trigger-stratosnapperv2>
-    Camera Trigger Directly from AUX Ports <common-pixhawk-camera-trigger-setup>
+    DIY Camera Trigger using Relay <common-pixhawk-camera-trigger-setup>
     Camera Triggering Configuration <common-camera-shutter-with-servo>
-    Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>
-    Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>
     RunCam Camera Control <common-camera-runcam>
     Gimbal / Mount Controls <common-mount-targeting>
     Camera Controls <common-camera-controls>

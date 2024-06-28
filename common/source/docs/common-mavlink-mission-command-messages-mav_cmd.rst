@@ -2328,7 +2328,12 @@ mission, or it can be repeated indefinitely.
 
 **Mission planner screenshots**
 
-TODO
+.. figure:: ../../../images/MissionList_DoJump_Tag.png
+   :target: ../_images/MissionList_DoJump_Tag.png
+
+   Mission Planner Settings for DO_JUMP_TAG command
+
+   In the example above, the vehicle would fly back-and-forth between waypoints #3 and #4 a total of 3 times before completing the mission. This is because the DO_JUMP_TAG redirects the vehicle to JUMP_TAG #565 twice.
 
 Conditional commands
 ====================

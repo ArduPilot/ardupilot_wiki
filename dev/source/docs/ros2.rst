@@ -52,6 +52,35 @@ Now update all dependencies:
     rosdep update
     source /opt/ros/humble/setup.bash
     rosdep install --from-paths src --ignore-src
+    # Ignore the rosdep warnings at the end if any
+
+Installing build dependencies:
+
+.. code-block:: bash
+    
+    sudo apt install default-jre
+    cd ~/ros2_ws
+    git clone --recurse-submodules https://github.com/ardupilot/Micro-XRCE-DDS-Gen.git
+    cd Micro-XRCE-DDS-Gen
+    ./gradlew assemble
+    echo "export PATH=\$PATH:$PWD/scripts" >> ~/.bashrc
+
+Test `microxrceddsgen` installation:
+
+.. code-block:: bash
+
+    source ~/.bashrc
+    microxrceddsgen -version 
+    # openjdk version "11.0.18" 2023-01-17
+    # OpenJDK Runtime Environment (build 11.0.18+10-post-Ubuntu-0ubuntu122.04)
+    # OpenJDK 64-Bit Server VM (build 11.0.18+10-post-Ubuntu-0ubuntu122.04, mixed mode, sharing)
+    # microxrceddsgen version: 1.0.0beta2
+
+::
+    ⚠️ If you have installed FastDDS or FastDDSGen globally on your system: eProsima's libraries and the packaging system in 
+    Ardupilot are not deterministic in this scenario. You may experience the wrong version of a library brought in, or runtime 
+    segfaults. For now, avoid having simultaneous local and global installs. If you followed the `global install <https://fast-dds.docs.eprosima.com/en/latest/installation/sources/sources_linux.html#global-installation/>`_ section, 
+    you should remove it and switch to local install.
 
 And finally, build your workspace:
 
