@@ -28,6 +28,7 @@ New Peripheral Support
 
 - Ainstein LR-D1 Long Range Radar Altimeter see https://github.com/ArduPilot/ardupilot_wiki/pull/5930
 - NanoRadar MR72 Object Avoidance Radar see https://github.com/ArduPilot/ardupilot_wiki/pull/5938
+- DroneCAN temperature sensors, see https://github.com/ArduPilot/ardupilot_wiki/pull/6079
 
 New Features
 ============
