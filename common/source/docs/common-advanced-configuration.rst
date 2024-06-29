@@ -10,6 +10,7 @@ tuning options for the vehicle.
 .. toctree::
     :maxdepth: 1
 
+    Analog Pins <common-analog-pins>
 [site wiki="copter"]
     Autopilot Output Mapping <common-rcoutput-mapping>
     AutoTune <autotune>
