@@ -11,7 +11,7 @@ SDMODELH7V2
 Where to Buy
 ============
 
-- Available from `SDMODEL <www.sdmodel.com.tw>`__
+- Available from `SDMODEL <https://www.sdmodel.com.tw>`__
 
 Specifications
 ==============
