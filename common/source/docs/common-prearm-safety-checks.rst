@@ -157,6 +157,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     OpenDroneID: UA_TYPE required in BasicID                OpenDroneID misconfiguration                        see :ref:`Remote ID configuration<common-remoteid>`
     OSD_TYPE2 not compatible with first OSD                 OSD1 and OSD2 configurations are incompatible       Disable 2nd OSD (set :ref:`OSD_TYPE2<OSD_TYPE2>` to zero) or check :ref:`OSD configuration <common-osd-overview>`
     Param storage failed                                    Eeprom hardware failure                             Check power supply or replace autopilot
+    parameter storage full                                  Eeprom storage full                                 Save params. Reset to defaults. Reload saved parameters.
     PiccoloCAN: Servo x not detected                        PiccoloCAN misconfiguration or servo issue          Check :ref:`Currawong Velocity ESC setup instructions <common-velocity-can-escs>`
     Pin x disabled (ISR flood)                              Sensor connected to GPIO pin is rapidly changing    Check sensor attached to specified pin
     Pitch (RCx) is not neutral                              RC transmitter's pitch stick is not centered        Move RC pitch stick to center or repeat :ref:`radio calibration <common-radio-control-calibration>`
