@@ -66,6 +66,8 @@ Example setup below shown for first proximity sensor:
 - :ref:`PRX1_TYPE <PRX1_TYPE>` = "5"
 - :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
 
+.. note:: Only on RPLidar A2M12 :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` should be set to "256". 
+
 It may be necessary to turn off flow control if using Telem1 (aka Serial1) or Telem2 (aka Serial2)
 
 - :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` =  "0" if using Serial1
