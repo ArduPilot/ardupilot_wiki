@@ -134,6 +134,11 @@ When using two GPS units there are a number of switching options that can be sel
 
 An additional variation with GPS switching is :ref:`EKF3 affinity and lane switching <common-ek3-affinity-lane-switching>`. An EKF lane can be setup to use either GPS and the whole EKF lane is then switched based on its health. If the :ref:`GPS_PRIMARY <GPS_PRIMARY>` is used for a lane, and :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` is enabled, then the lane will use GPS info as determined by the :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` setting.
 
+GPS Jamming Mediation
+=====================
+
+Setting the "JammingExpected", :ref:`EK3_OPTIONS<EK3_OPTIONS>` bit 0, will change the EKF3 behaviour such that if dead reckoning navigation is possible it will require the preflight alignment GPS quality checks controlled by :ref:`EK3_GPS_CHECK<EK3_GPS_CHECK>` and :ref:`EK3_CHECK_SCALE<EK3_CHECK_SCALE>` to pass again before resuming GPS use if GPS lock is lost for more than 2 seconds (presumably due to jamming). This is to prevent bad GPS data from being used, since the GPS data will be immediately used upon re-lock otherwise and could be corrupt.
+
 Advanced Uses
 =============
 
