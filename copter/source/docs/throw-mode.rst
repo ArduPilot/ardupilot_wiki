@@ -29,7 +29,7 @@ After the motors start this flight mode will first try to control it's attitude 
 
 Settings
 ========
-- :ref:`THROW_TYPE <THROW_TYPE>`: set to 0 if throwing the vehicle up, 1 if dropping the vehicle.  If dropping, drop from a height of at least 10m.
+- :ref:`THROW_TYPE <THROW_TYPE>`: set to 0 if throwing the vehicle up, 1 if dropping the vehicle, 2 if throwing the vehicle like a frisbee.  If dropping, drop from a height of at least 10m. If throwing like a frisbee, the drone will detect spinning (2 turns/sec) and going up (as in mode 0). Be sure to have a good EKF and not make it spin too hard.
 - :ref:`THROW_MOT_START <THROW_MOT_START>`: controls whether the motors will spin slowly or not at all while waiting for the throw (0 = stopped, 1 = spinning slowly).  The default is 0 (will not spin after arming).
 - :ref:`THROW_NEXTMODE <THROW_NEXTMODE>`: the vehicle will switch into this flight mode after stopping (Auto, Guided, RTL, Land and Brake are support).  Set to "Throw" (the default) to simply remain in Throw mode and wait for the pilot to switch modes manually
 - :ref:`THROW_ALT_MIN<THROW_ALT_MIN>` and :ref:`THROW_ALT_MAX<THROW_ALT_MAX>`: set the altitude limits for THROW mode launch. Throw must happen above the minimum and below the maximum altitude above home after arming. Useful for plane or balloon drop launches, allowing arming on ground to establish home altitude, then rising in secondary release vehicle and dropping to launch.
