@@ -55,6 +55,7 @@ New Features
 [site wiki="copter"]
 - Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
 - Copter RTL Alt minimum reduced to 30cm, see https://github.com/ArduPilot/ardupilot_wiki/pull/5915
+- Option to require valid position before arming, in all modes. See https://github.com/ArduPilot/ardupilot_wiki/pull/6087
 [/site]
 [site wiki="rover"]
 - Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
