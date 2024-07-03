@@ -110,6 +110,7 @@ In addition, the behavior of QuadPlane can be modified by the setting of the :re
 -  bit 19(+524288), if set, will allow the forcing of VTOL to Fixed Wing transitions if :ref:`Q_TRANS_FAIL<Q_TRANS_FAIL>` is not zero and exceeded, and if the airspeed is greater than 1/2 of :ref:`AIRSPEED_MIN<AIRSPEED_MIN>`, then the transition to fixed wing will immediately complete, rather than taking the :ref:`Q_TRANS_FAIL_ACT<Q_TRANS_FAIL_ACT>` action. See :ref:`quadplane-transitions`.
 -  bit 20(+1048576), if set overrides bit 5, if set, and forces an RTL on RC failsafe while in a VTOL mode. This is useful in over-water operations where either an QLAND or QRTL is undesirable.
 -  bit 21(+2097152), if set tilts tilt motors up when disarmed in FW modes (except manual) to prevent ground strikes.
+-  bit 22(+4194304), if set scale fixed wing FF pid gains by the ratio of VTOL/fixed wing angle P gains in VTOL modes rather than reducing VTOL angle P based on airspeed. Used only if experiencing oscillations in back transitions at high airspeeds.
 
 Behavior can be modified as well as by the :ref:`Q_RTL_MODE<Q_RTL_MODE>` and :ref:`Q_GUIDED_MODE<Q_GUIDED_MODE>` parameters.
 
