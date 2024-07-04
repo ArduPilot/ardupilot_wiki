@@ -119,7 +119,7 @@ Once powered the gimbal should point to its Pitch Angle Min (i.e. straight down)
 .. image:: ../../../images/Tarot_BenchTestROI.jpg
     :target: ../_images/Tarot_BenchTestROI.jpg
 
-Pilot control of the gimbal can be restored by setting up an :ref:`auxiliary function switch <common-auxiliary-functions>` to "Retract Mount" (i.e. RCx_OPTION = 27) and then move the switch to the lower position.
+Pilot control of the gimbal can be restored by setting up an :ref:`auxiliary function switch <common-auxiliary-functions>` either “Retract Mount1” (i.e. RCx_OPTION = 27) or "Retract Mount2" (i.e. RCx_OPTION = 113), and then move the switch to the lower position.
 
 Updating the gimbal software
 ============================
