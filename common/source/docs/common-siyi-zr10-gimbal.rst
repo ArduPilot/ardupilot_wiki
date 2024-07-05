@@ -2,9 +2,9 @@
 
 [copywiki destination="plane,copter,rover"]
 
-==============================
-SIYI ZR10, ZR30 and A8 Gimbals
-==============================
+==========================================
+SIYI ZR10, ZR30, ZT6, ZT30, and A8 Gimbals
+==========================================
 
 The `SIYI ZR10 <https://shop.siyi.biz/products/siyi-zr10>`__, `ZR30 <https://shop.siyi.biz/products/siyi-zr30>`__ and `A8 <https://shop.siyi.biz/products/siyi-a8-mini>`__  are 3-axis gimbals and camera which can communicate with ArduPilot using a custom serial protocol.
 
