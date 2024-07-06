@@ -43,7 +43,6 @@ New Features
 - Add mask to select which ESCs are used in a given ESC Battery Monitor, see https://github.com/ArduPilot/ardupilot_wiki/pull/6023
 - Add EKF3 option to help mediate operation in GPS jamming environments, see https://github.com/ArduPilot/ardupilot_wiki/pull/6069
 - Add hires DroneCAN magnetometer array info, see https://github.com/ArduPilot/ardupilot_wiki/pull/6071
-- Add EEPROM full pre-arm warning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6082
 [site wiki="plane"]
 - New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
 - Option to report airspeed sensor offset calibration to gcs during boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5913
