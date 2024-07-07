@@ -35,8 +35,8 @@ To enable MSP OSD, set the following parameters (example below is using SERIAL p
 
 .. note:: DJI OSD must be enabled: in SETTINGS->DISPLAY->CUSTOM OSD menu of goggles
 
-OSD Panel Items
-===============================
+MSP OSD Panel Items
+==================+
 
 +---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | OSD Parameter | Notes                                                                                                                                                                                                                                                                                                |
