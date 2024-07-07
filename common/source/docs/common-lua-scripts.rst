@@ -467,17 +467,30 @@ RC Channels (rc:)
 - :code:`get_pwm()` - Returns the RC input PWM value given a channel number. Note that channel here is indexed from 1. Returns false if channel is not available.
 
 
-Serial/UART (serial:)
+Serial (serial:)
 ~~~~~~~~~~~~~~~~~~~~~
 
-- :code:`find_serial(instance)` - Returns the UART instance that allows connections from scripts (those with :code:`SERIALx_PROTOCOL = 28`). For :code:`instance = 0`, returns first such UART, second for :code:`instance = 1`, and so on. If such an instance is not found, returns :code:`nil`.
+The serial library provides access to ArduPilot's serial port infrastructure and associated devices and drivers. The script can communicate with a device attached to the autopilot using the ``find_serial(instance)`` function. The script can also itself simulate being a device attached to the autopilot using the ``find_simulated_device(protocol, instance)`` function and ``SCR_SDEV*`` parameters.
 
-	- :code:`UART:begin(baud)` - Start serial connection at given baud rate.
-	- :code:`UART:read()` - Returns a sequence of bytes from UART instance.
-	- :code:`UART:write(number)` - Writes a sequence of bytes to UART instance.
-	- :code:`UART:available()` -  Returns integer of currently available bytes.
-	- :code:`UART:set_flow_control(flow_control)` - Sets flow control for UART instance.
+- ``find_serial(instance)`` - Returns a serial access object that allows a script to interface with a device over a port set to protocol 28 (Scripting) (e.g. ``SERIALx_PROTOCOL``, though CAN/NET/etc ports work as well). Instance 0 is the first such port, instance 1 the second, and so on. If the requested instance is not found, returns ``nil``.
 
+- ``find_simulated_device(protocol, instance)`` - Returns a serial access object that allows a script to simulate a device attached via a specific protocol. The device protocol is configured by the parameter ``SCR_SDEVx_PROTO``. Instance 0 is the first such protocol, instance 1 the second, and so on. If the requested instance is not found, or the parameter ``SCR_SDEV_EN`` is disabled, returns ``nil``.
+
+The objects returned by the above functions support the following methods:
+
+- ``port:begin(baud_rate)`` - Start communication at the given baud rate. Must be called to initialize scripting protocol ports (those from ``find_serial``). No effect for device simulation ports (those from ``find_simulated_device``).
+
+- ``port:write(value)`` - Write a single byte. Returns 1 if successful, or 0 if failed (i.e. buffer space full).
+
+- ``port:writestring(data)`` - Write a string. The number of bytes actually written, i.e. the length of the written prefix of the string, is returned. It may be 0 up to the length of the string.
+
+- ``port:read()`` - Read a single byte. Returns the byte if successful, or -1 if failed (i.e. none available or some other error).
+
+- ``port:readstring(count)`` - Read up to ``count`` bytes and return the bytes read as a string. No bytes may be read, in which case a 0-length string is returned. If there is an error, ``nil`` is returned.
+
+- ``port:available()`` - Returns the number of bytes available to read. A read of the given number of bytes may fail on certain errors or if there is another reader (e.g. mavlink passthrough), though these are extremely unlikely occurrences.
+
+- ``port:set_flow_control(fcs)`` - Set flow control setting for scripting protocol ports (those from ``find_serial``). No effect for device simulation ports (those from ``find_simulated_device``). ``fcs`` can be 0 to disable, 1 to enable, or 2 for automatic mode.
 
 Barometer (baro:)
 ~~~~~~~~~~~~~~~~~
