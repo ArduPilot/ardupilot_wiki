@@ -168,9 +168,9 @@ Panel Name    Description
  WIND         Wind Speed and Direction
  ASPEED       System Airspeed
  VSPEED       Climb Rate
- ESCTEMP      ESC Temperature
- ESCRPM       ESC RPM
- ESCAMPS      ESC Current
+ ESCTEMP      ESC Temperature (if ESC Telem available, ESC used is selected by OSDx_ESC_IDX)
+ ESCRPM       ESC RPM (if ESC Telem available, ESC used is selected by OSDx_ESC_IDX)
+ ESCAMPS      ESC Current (if ESC Telem available, ESC used is selected by OSDx_ESC_IDX)
  GPSLAT       GPS Latitude
  GPSLONG      GPS Longitude
  ROLL         Roll degrees
@@ -199,15 +199,22 @@ Panel Name    Description
  CELLVOLT     Calculated Cell Voltage for Primary Battery (MSPOSD only)
  BATTBAR      Battery Health Bar (MSPOSD only)
  ARMING       Arming Status (MSPOSD only)
- PLUSCODE     Open Location Code
+ PLUSCODE     Open Location Code (if feature is enabled in firmware)
  CALLSIGN     Callsign from SD card callsign.txt
  CURRENT2     2nd Battery Current
  VTX_PWR      Video TX power setting
  TER_HGT      Altitude above Terrain
  AVGCELLV     Calculated Cell Voltage for Primary Battery
  RESTVOLT     Calculated Resting Voltage for Primary Battery
- FENCE        EENCE enabled status
+ FENCE        FENCE enabled status
  RNGF         Rangefinder Distance
  ACRVOLT      Calculated Cell Resting Voltage for Primary Battery
  LINK_Q       RC Link Quality
+ RPM          Rpm reported from RPM sensor
+ FENCE        Fence(s) enabled/disabled status
+ RC_PWR       CRSF RX link transmit power (if "OSD panels with extended link stats data" feature enabled in a custom build)
+ RSSIDBM      CRSF RSSI in dBm (if "OSD panels with extended link stats data" feature enabled in a custom build)
+ RC_SNR       CRSF RC SNR  (if "OSD panels with extended link stats data" feature enabled in a custom build)
+ RC_ANT       CRSF active antenna (if "OSD panels with extended link stats data" feature enabled in a custom build)
+ RC_LQ        CRSF Link Quality (if "OSD panels with extended link stats data" feature enabled in a custom build)
 ==========    ===========
