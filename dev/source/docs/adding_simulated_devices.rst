@@ -173,7 +173,14 @@ You can add an RPM sensor like this:
 
 ::
 
-    param set RPM_TYPE 1
+    param set RPM_TYPE 10
+
+When using RealFlight with the flightaxis link, the second instace should be used:
+
+::
+
+
+   param set RPM2_TYPE 10
 
 This allows to display and log your virtual motor's rotational speed.
 
