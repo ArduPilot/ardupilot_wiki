@@ -368,21 +368,10 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  http://www.sparkletech.hk/
 
-      - .. image:: ../../../images/supporters/supporters_vulcan_logo.jpg
-            :width: 250px
-            :align: center
-            :target:  https://vulcanuav.com/
-
-    *
       - .. image:: ../../../images/supporters/supporters_fly_dragon_logo.png
             :width: 250px
             :align: center
             :target:  https://www.droneassemble.com/
-
-      - .. image:: ../../../images/supporters/supporters_horizon31_logo.png
-            :width: 250px
-            :align: center
-            :target:  https://www.horizon31.com/
 
     *
       - .. image:: ../../../images/supporters/supporters_skylift_logo.png
@@ -781,36 +770,80 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target:  https://idi.com.gt/
 
     *
+      - .. image:: ../../../images/supporters/supporters_iflight.png
+            :width: 250px
+            :align: center
+            :target:  https://www.iflight.com
+
       - .. image:: ../../../images/supporters/supporters_everdrone.png
             :width: 250px
             :align: center
             :target:  https://everdrone.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_rtos.png
             :width: 250px
             :align: center
             :target:  https://www.robot-to-society.com/
 
-    *
       - .. image:: ../../../images/supporters/supporters_overhead.png
             :width: 250px
             :align: center
             :target:  https://www.overheadintelligence.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_zeroone.jpg
             :width: 250px
             :align: center
             :target:  https://www.01aero.cn/
 
-    *
       - .. image:: ../../../images/supporters/supporters_lefeirc.jpg
             :width: 250px
             :align: center
             :target:  https://www.lefeirc.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_Innoflight.png
             :width: 250px
             :align: center
             :target:  https://innoflighttechnology.com/
+
+      - .. image:: ../../../images/supporters/supporters_echomav.png
+            :width: 250px
+            :align: center
+            :target:  https://echomav.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporter_skydrone.png
+            :width: 250px
+            :align: center
+            :target:  https://skydrone-robotics.com/en/
+
+      - .. image:: ../../../images/supporters/supporter_Iyobe.jpg
+            :width: 250px
+            :align: center
+            :target:  http://www.9129.co.jp/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_arc.png
+            :width: 250px
+            :align: center
+            :target:  http://arkelectron.com/
+
+      - .. image:: ../../../images/supporters/supporter_Flyby_Robotics.png
+            :width: 250px
+            :align: center
+            :target:  https://www.flybydev.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporter_attraclab.png
+            :width: 250px
+            :align: center
+            :target:  http://attraclab.com/
+
+      - .. image:: ../../../images/supporters/supporter_ARCO.png
+            :width: 250px
+            :align: center
+            :target:  https://arcoworldwide.ng/
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
