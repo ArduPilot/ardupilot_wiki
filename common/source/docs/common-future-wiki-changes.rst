@@ -21,6 +21,8 @@ New Board Support
 - CBUnmanned Stamp H743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6037
 - PixFlamingo-F767, see https://github.com/ArduPilot/ardupilot_wiki/pull/6048
 - JHEMCU-H743HD, see https://github.com/ArduPilot/ardupilot_wiki/pull/6066
+- iflight Thunder H7, see https://github.com/ArduPilot/ardupilot_wiki/pull/6105
+- LongbowF405WING, see https://github.com/ArduPilot/ardupilot_wiki/pull/6106
 
 New Peripheral Support
 ======================
