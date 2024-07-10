@@ -169,20 +169,35 @@ Go for a flight and see if you get reasonable data.
 Adding an RPM sensor
 ====================
 
+Depending on the frame/vehicle you are simulating, its physics model might provide either the first or second RPM sensor, or both:
+
 You can add an RPM sensor like this:
 
 ::
 
-    param set RPM_TYPE 10
+    param set RPM1_TYPE 10
 
-When using RealFlight with the flightaxis link, the second instace should be used:
+
+ or
 
 ::
 
-
    param set RPM2_TYPE 10
 
-This allows to display and log your virtual motor's rotational speed.
+the rpm sensor(s) can be associated with any motor output using the ``SIM_VIB_MOT_MASK`` parameter. For example, to associate an RPM sensor to the SITL plane model's forward motor, which is default assigned to output 3, set the third bit in ``SIM_VIB_MOT_MASK`` parameter(value = 4).
+
+The RPM can be displayed using:
+
+::
+
+  graph RPM.rpm1 or RPM.rpm2 
+
+or
+
+::
+
+  status RPM
+
 
 Adding Wheel Encoders
 =====================
