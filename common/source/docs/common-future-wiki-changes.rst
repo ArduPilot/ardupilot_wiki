@@ -44,6 +44,7 @@ New Features
 - Add EKF3 option to help mediate operation in GPS jamming environments, see https://github.com/ArduPilot/ardupilot_wiki/pull/6069
 - Add hires DroneCAN magnetometer array info, see https://github.com/ArduPilot/ardupilot_wiki/pull/6071
 - New Notch Filter Option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6108
+- Add Mount2 retract aux switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/6111
 [site wiki="plane"]
 - New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
 - Option to report airspeed sensor offset calibration to gcs during boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5913
