@@ -111,6 +111,7 @@ Closed Hardware
     iFlight Blitz Whoop F7 AIO <common-iflight-blitzf7AIO>
     iFlight Blitz Wing H743 <common-blitzh743wing>
     JAE JFB-110 <common-jae-jfb110>
+    LongBowF405WING <common-longbowf405wing>
     Mamba F405 MK2 <common-mamba405-mk2>
     Mamba MK4 F405Mini <common-mambaf405-mini>
     Mamba Basic F405 mk3 <common-mamba-basic-mk3>
