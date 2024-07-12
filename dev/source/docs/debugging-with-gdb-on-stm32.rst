@@ -126,6 +126,9 @@ Some useful commands:
 the "setup" function. Note a class name can be prepended such as
 ``b AC_AttitudeControl::init``
 
+.. note::
+   If you are debugging a board using external flash and you receive "Failed to read memory at 0x.....", try "set mem inaccessible-by-default off"
+
 ``Ctrl-C`` -- stops the code from executing so you can set breakpoints,
 etc
 
