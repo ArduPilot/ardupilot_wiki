@@ -97,7 +97,7 @@ control from :ref:`Loiter mode <loiter-mode>`.
 The maximum horizontal speed of the copter can be adjusted with the
 **Speed** (:ref:`WPNAV_SPEED<WPNAV_SPEED>`) parameter from the Mission Planner's
 Config/Tuning >> Copter Pids screen (see blue box above).  The default
-is 500 meaning 5m/s.  A typical copter can reach top speeds of 10m/s ~
+is 1000 meaning 10m/s.  A typical copter can reach top speeds of 10m/s ~
 13m/s (i.e. 1000 ~ 1300) before it becomes unable to both maintain
 altitude and horizontal speed.
 
