@@ -38,7 +38,7 @@ Getting Started
 
 - **Applets** which are scripts that require no user editing before use, can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ for the "latest" firmware branch, and may require code extensions included in that branch to function properly. Each of these has a .md file of the same name detailing its capabilities, use, and setup. For example, there is a script to allow a user to change a SmartAudio capable video transmitter's output power level from a transmitter channel and set its power-up value via parameter. See :ref:`common-scripting-applets`.
 
-- **Drivers** Lua scripts can actually provide hardware drivers for new peripheral hardware that is not directly supported in the ArduPilot firmware, such a new EFIs or Gimbals. Examples of these can be found `here <https://github.com/ArduPilot/ardupilot/tree/ArduPlane-stable/libraries/AP_Scripting/drivers>`__ for the "latest" firmware branch, and may require code extensions included in that branch to function properly.
+- **Drivers** Lua scripts can actually provide hardware drivers for new peripheral hardware that is not directly supported in the ArduPilot firmware, such a new EFIs or Gimbals. Examples of these can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/drivers>`__ for the "latest" firmware branch, and may require code extensions included in that branch to function properly.
 
 .. note:: To download from the github locations, first click the script name, then select "raw" in upper right corner, then right mouse click to "Save Page as" a text file with the ".lua" file extension
 
