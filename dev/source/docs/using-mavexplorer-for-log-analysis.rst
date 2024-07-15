@@ -16,8 +16,8 @@ Linux do this:
 
 ::
 
-    sudo apt-get install python-matplotlib python-serial python-wxgtk3.0 python-lxml
-    sudo apt-get install python-scipy python-opencv  python-pip python-pexpect python-tk
+    sudo apt-get install python3-matplotlib python3-serial python3-wxgtk3.0 python3-lxml
+    sudo apt-get install python3-scipy python3-opencv  python3-pip python3-pexpect python3-tk
     sudo pip install --upgrade pymavlink mavproxy
 
 after running that you should have a new command "MAVExplorer.py" in
