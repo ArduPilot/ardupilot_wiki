@@ -89,7 +89,7 @@ Options (User Adjustable Parameters)
 -  :ref:`RTL_SPEED <RTL_SPEED>`:
    The horizontal speed (in cm/s) at which the vehicle will return to
    home.  By default this value is zero meaning it will use
-   :ref:`WPNAV_SPEED <WPNAV_SPEED>`. (only Copter-3.4 and higher)
+   :ref:`WPNAV_SPEED <WPNAV_SPEED>`.
 
 -  :ref:`RTL_CONE_SLOPE <RTL_CONE_SLOPE>`:
    Defines the slope of an inverted cone above home which is used
