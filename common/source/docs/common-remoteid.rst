@@ -118,4 +118,4 @@ If you know of other available devices please `add a comment in this issue <http
 Video Tutorial for OEMs Adding Remote ID to ArduPilot Systems
 =============================================================
 
-.. youtube:: Az8v4Kx4hS0
+.. youtube:: VhCXEKIkrjo
