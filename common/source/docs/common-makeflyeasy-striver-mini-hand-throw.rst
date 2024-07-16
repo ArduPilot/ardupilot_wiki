@@ -38,5 +38,5 @@ Where to Buy
 
 `Aliexpress <https://www.aliexpress.com/item/1005002723370301.html>`__
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="plane,copter,rover,blimp"]
 

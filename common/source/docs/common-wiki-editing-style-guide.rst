@@ -381,4 +381,4 @@ Note that the path is absolute, and relative to the source directory for the wik
 
     .. image:: /images/image_file_name.jpg
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="copter,plane,rover,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
