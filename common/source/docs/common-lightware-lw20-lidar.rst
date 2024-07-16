@@ -4,7 +4,7 @@
 LightWare SF20 / LW20
 =====================
 
-The `Lightware SF20 <https://lightware.co.za/collections/frontpage/products/sf20-c-100-m>`__ and `LW20 <https://lightware.co.za/collections/frontpage/products/lw20-c-100-m>`__ are small but long range (100m) and accurate range finders.
+The `Lightware SF20 <https://lightwarelidar.com/shop/sf20-c-100-m/>`__ and `LW20 <https://lightwarelidar.com/shop/lw20-c-100-m/>`__ are small but long range (100m) and accurate range finders.
 There are two models, the LW20/Ser which uses a serial interface and LW20/I2C which uses an I2C interface.
 
 .. image:: ../../../images/lightware-lw20.png
