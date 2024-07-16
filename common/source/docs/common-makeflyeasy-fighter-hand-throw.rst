@@ -35,12 +35,4 @@ Where to Buy
 
 `Aliexpress <https://www.aliexpress.com/item/10000223175280.html>`__
 
-.. toctree::
-   :hidden:
-    
-   MakeFLyEasy - Striver Mini <common-makeflyeasy-striver-mini-hand-throw>
-   MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>
-   MakeFLyEasy - Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>
-   
-
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="plane,copter,rover,blimp"]

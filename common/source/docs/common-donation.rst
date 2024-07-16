@@ -19,4 +19,4 @@ Australian non-profit incorporated association.
 
 `How are donations spent? <https://ardupilot.org/copter/docs/common-partners-program.html#how-are-collected-funds-spent>`__
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="copter,plane,rover,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

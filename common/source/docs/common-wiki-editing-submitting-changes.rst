@@ -87,4 +87,4 @@ How to get changes approved
 
 All changes to the wiki are `reviewed <https://github.com/ArduPilot/ardupilot_wiki/pulls>`__ by the wiki "maintainers" to help reduce the chance of misleading or incorrect information being posted.  Feel free to post comments in the PullRequest and/or attend the :ref:`weekly dev meeting <dev:ardupilot-discord-server>` to escalate getting your changes submitted.
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="copter,plane,rover,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
