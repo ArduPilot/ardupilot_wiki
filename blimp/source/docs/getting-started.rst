@@ -54,6 +54,8 @@ For indoor use, please see :ref:`the non-GPS options. <common-non-gps-navigation
 .. image:: ../../../images/GPS_TopAndSide.jpg
     :target: ../_images/GPS_TopAndSide.jpg
 
+:ref:`common-ekf-sources` may be of interest also
+
 
 LiPo Batteries and Charger
 ==========================
@@ -121,3 +123,4 @@ For control and propulsion, the Flapping Fin Blimp uses micro servos, such as`th
     common-non-gps-navigation-landing-page
     common-rc-systems
     common-telemetry-landingpage
+    common-ekf-sources
