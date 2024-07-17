@@ -48,3 +48,23 @@ There is an option to fuse all sources of velocity into the EKF.  This will take
 
 .. warning:: When using this option, users should ensure that the velocity measurements being provided to the EKF are both in the same reference frame/co-ordinate system.
 
+.. _extnav-optiflow-transitions:
+
+ExternalNAV/Optical Flow Transitions
+====================================
+
+When switching between Optical Flow XY velocity and/or positioning as sources for EKF3 to an ExternalNAV source, such as 3D Camera, you can set :ref:`EK3_SRC_OPTIONS<EK3_SRC_OPTIONS>` bit 1 to keep the ExternalNAV aligned with the OpticalFlow to avoid position/velocity bumps upon switching.
+
+For example, you could setup a 3D camera as an external position and velocity source:
+
+- :ref:`EK3_SRC1_POSXY<EK3_SRC1_POSXY>` = 6 (ExternalNAV XY Position)
+- :ref:`EK3_SRC1_VELXY<EK3_SRC1_VELXY>` = 6 (ExternalNAV XY Velocity) (assuming the camera provides velocity reports)
+
+and OpticalFLow as the second source:
+
+- :ref:`EK3_SRC1_POSXY<EK3_SRC1_POSXY>` = 0 (None, position is relative when using OpticalFlow)
+- :ref:`EK3_SRC1_VELXY<EK3_SRC1_VELXY>` = 5 (OpticalFlow for XY velocity)
+
+and use an :ref:`auxiliary RC switch <common-auxiliary-functions>` to switch between the two.
+
+[copywiki destination="copter,plane,rover,blimp"]
