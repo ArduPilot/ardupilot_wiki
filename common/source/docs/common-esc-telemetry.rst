@@ -10,7 +10,7 @@ If the ESC has this capability, it allows monitoring and logging of performance 
 
 Telemetry data may be conveyed to the autopilot either by a separate wire connection to an autopilot's UART RX pin or across the signal wire used to convey motor speed information (Bi-Directional DShot) or CAN messages for CAN based ESCs. For non-CAN ESCs, this capability is available primarily in selected BLHeli ESCs running stock or BlueJay firmware. But it is possible for an ESC not to implement the BLHeli firmware and still provide this capability. Currenly, ArduPilot only supports this for BLHeli/BlueJay telemetry compatible ESCs.
 
-ESC telemetry of motor rpm is especially useful for controlling the center frequency of harmonic notch filters to control noise. See :ref:`common-esc-telem-based-notch` for more information.
+ESC telemetry of motor RPM is especially useful for controlling the center frequency of harmonic notch filters to control noise. See :ref:`common-esc-telem-based-notch` for more information.
 
 .. note:: ArduPilot does not currently support the polling of the ESCs for telemetry data via throttle idle messages over the signal line in non DShot protocols.
 
@@ -31,7 +31,7 @@ Set the following parameters to enable BLHeli32 telemetry feedback to the autopi
 
 - :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed.  Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM.
 
-.. note:: using the rpm value reported using single wire telemetry for the center frequency adjustment of the :ref:`harmonic notch feature <common-imu-notch-filtering>`  works well, but the responsiveness is slower than using telemetry provided by Bi_directional DShot. See  next section.
+.. note:: using the RPM value reported using single wire telemetry for the center frequency adjustment of the :ref:`harmonic notch feature <common-imu-notch-filtering>`  works well, but the responsiveness is slower than using telemetry provided by bi-directional DShot. See next section.
 
 Bi-directional DShot
 ====================
@@ -43,7 +43,7 @@ Some autopilots with IOMCUs can not only support Dshot on their "Main" outputs (
 Setup
 -----
 
-First ensure that you have an appropriate version of BLHeli32 or BLHeli_S installed on your ESCs. The majority of ESCs do not come pre-installed with these versions. The official 32.7 version of BLHeli32 supports bi-directional DShot. Official versions of BLHeli_S do not support bi-directional DShot, you will need to either buy a version from `BLHeli_S JESC <https://jflight.net/index.php?route=common/home&language=en-gb>`__ or use `BLHeli_S BlueJay <https://github.com/mathiasvr/bluejay>`__ . If you try and enable bi-directional DShot with the wrong firmware version then unpredictable motor operation can occur. ESC rpm telemetry is especially useful for controlling the center frequencies of harmonic notch noise filters, see :ref:`common-esc-telem-based-notch`
+First ensure that you have an appropriate version of BLHeli32 or BLHeli_S installed on your ESCs. The majority of ESCs do not come pre-installed with these versions. The official 32.7 version of BLHeli32 supports bi-directional DShot. Official versions of BLHeli_S do not support bi-directional DShot, you will need to either buy a version from `BLHeli_S JESC <https://jflight.net/index.php?route=common/home&language=en-gb>`__ or use `BLHeli_S BlueJay <https://github.com/bird-sanctuary/bluejay/>`__ . If you try and enable bi-directional DShot with the wrong firmware version then unpredictable motor operation can occur. ESC RPM telemetry is especially useful for controlling the center frequencies of harmonic notch noise filters, see :ref:`common-esc-telem-based-notch`
 
 .. image:: ../../../images/blheli-version-check.png
     :target: ../_images/blheli-version-check.png
@@ -81,6 +81,15 @@ This data can also be viewed in real-time using a ground station.  If using the 
    Sending BLHeli32 telemetry data to the GCS requires the telemetry connection use MAVLink2.  ArduPilot uses MAVLink2 by default on the USB port but if another port is used it may be necessary to set the SERIALx_PROTOCOL parameter to 2 (where "x" is the serial port number used for the telemetry connection).
 
 In addition, some telemetry values can be displayed on the integrated :ref:`on-board OSD <common-osd-overview>`, if your autopilot has one.
+
+Newer firmware versions (such as BlHeli32 starting at version 32.10, and Bluejay starting at version 0.19) report some of the information above also via bi-directional DShot, using a protocol extension known as `Extended DShot Telemetry <https://github.com/bird-sanctuary/extended-dshot-telemetry>`__. The version 2 of this protocol, EDTv2, also specifies the following information that can be reported by an ESC:
+
+- Commutation stress
+- Error events (such as propeller stalls)
+- Warning events (such as desyncs)
+- Alert events (such as demagnetization events)
+
+If an ESC connected via bidirectional DShot supports this extension, this information is automatically sent to the flight controller, where it is logged as EDT2 messages. This information is typically sent on a best-efforts basis, and is intended mainly for post-flight analysis.
 
 .. _esc-telemetry-based-battery-monitor:
 
