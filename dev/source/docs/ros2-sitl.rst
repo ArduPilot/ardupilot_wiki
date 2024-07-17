@@ -6,13 +6,31 @@ ROS 2 with SITL
 
 Once ROS2 is correctly :ref:`installed <ros2>`, and SITL is also :ref:`installed <sitl-simulator-software-in-the-loop>`, source your workspace and launch ArduPilot SITL with ROS 2!
 
+Build the project:
+
 .. code-block:: bash
 
     source /opt/ros/humble/setup.bash
     cd ~/ros2_ws/
     colcon build --packages-up-to ardupilot_sitl
+
+In release `4.5` the `dds_xrce_profile.xml` XML file that defines the topics and services must be supplied
+to the launch command. In later versions, including the `master` branch, the topic registration process has changed
+and this argument should not be set.
+
+**4.5**
+
+.. code-block:: bash
+
     source ~/ros2_ws/install/setup.bash
     ros2 launch ardupilot_sitl sitl_dds_udp.launch.py transport:=udp4 refs:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/dds_xrce_profile.xml synthetic_clock:=True wipe:=False model:=quad speedup:=1 slave:=0 instance:=0 defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm sim_address:=127.0.0.1 master:=tcp:127.0.0.1:5760 sitl:=127.0.0.1:5501
+
+**master**
+
+.. code-block:: bash
+
+    source ~/ros2_ws/install/setup.bash
+    ros2 launch ardupilot_sitl sitl_dds_udp.launch.py transport:=udp4 synthetic_clock:=True wipe:=False model:=quad speedup:=1 slave:=0 instance:=0 defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm sim_address:=127.0.0.1 master:=tcp:127.0.0.1:5760 sitl:=127.0.0.1:5501
 
 If the ROS 2 topics aren't being published, set the ardupilot parameter DDS_ENABLE to 1 manually and reboot the launch.
 
