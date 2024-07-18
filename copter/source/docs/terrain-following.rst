@@ -55,8 +55,10 @@ You can also download .zip files for entire continents, or individual tiles from
 
 Using Terrain Altitude during RTL and Land
 ==========================================
-Set the :ref:`TERRAIN_FOLLOW <TERRAIN_FOLLOW>` parameter to 1 to enable using terrain data in :ref:`RTL <rtl-mode>` and :ref:`Land <land-mode>` flight modes.  If set the vehicle will interpret the :ref:`RTL_ALT <RTL_ALT>` as an altitude-above-terrain meaning it will generally climb over hills on it's return path to home.  Similarly Land will slow to the :ref:`LAND_SPEED <LAND_SPEED>` (normally 50cm/s) when it is 10m above the terrain (instead of 10m above home).
+Set the :ref:`TERRAIN_FOLLOW <TERRAIN_FOLLOW>` parameter to 1 to enable using terrain data in :ref:`RTL <rtl-mode>` and :ref:`Land <land-mode>` flight modes. Also set :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` = 1.  If set the vehicle will interpret the :ref:`RTL_ALT <RTL_ALT>` as an altitude-above-terrain instead of above home altitude, meaning it will generally climb over hills on its return path to home.  Similarly Land will slow to the :ref:`LAND_SPEED <LAND_SPEED>` (normally 50cm/s) when it is 10m above the terrain (instead of 10m above home).
 Currently setting this parameter is not recommended because of the edge case mentioned below involving the somewhat unlikely situation in which the vehicle is unable to retrieve terrain data during the :ref:`RTL <rtl-mode>`.  In these cases the :ref:`RTL_ALT <RTL_ALT>` will be interpreted as an alt-above home. 
+
+In addition, if :ref:`WPNAV_RFND_USE<WPNAV_RFND_USE>` is also set to 1, the rangefinder will be used instead of the terrain database during RTL. Of course the :ref:`RTL_ALT <RTL_ALT>` must be within the rangefinder's operating range and it must be healthy.
 
 Failsafe in case of no Terrain data
 ===================================
