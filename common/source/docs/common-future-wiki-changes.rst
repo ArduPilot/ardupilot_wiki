@@ -62,4 +62,5 @@ New Features
 [site wiki="rover"]
 - Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
 - Renamed Torqueedo Motor params and allowed for two motors, see - Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
+- Add Omni3 Mecanum frame, see https://github.com/ArduPilot/ardupilot_wiki/pull/6130
 [/site]
