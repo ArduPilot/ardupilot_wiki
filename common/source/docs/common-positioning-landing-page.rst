@@ -85,6 +85,9 @@ These GPS can incorporate real time kinematic data, either internally generated 
 Moving Baseline (GPS for Yaw) Capable
 =====================================
 
+.. toctree::
+    :maxdepth: 1
+
     Ark RTK GPS <https://arkelectron.com/product/ark-rtk-gps/>    Blicube RTK GPS (Single Unit Moving Baseline) <https://wiki.blicube.com/grtk/>
     CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
     CUAV C-RTK 9Ps RTK Receiver <https://store.cuav.net/shop/c-rtk-9ps/>
