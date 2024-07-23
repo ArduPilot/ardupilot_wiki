@@ -37,8 +37,3 @@ Additional information
 ======================
 
 - `SMBus specifications (see ver 1.1, ver 2.0) <http://smbus.org/specs/>`__
-
-Limitations
-===========
-
--  Battery "address discovery" is not supported so the battery must use the I2C address 0x0B (7 bit address).  Most smart batteries use this address.
