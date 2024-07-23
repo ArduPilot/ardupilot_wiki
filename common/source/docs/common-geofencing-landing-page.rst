@@ -170,11 +170,11 @@ Automatic Altitude Breach Avoidance
 
 For landing modes (NAV_LAND,QLAND,LAND,etc.) in Copter and Plane, the :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>` limit is automatically disabled.
 
-[wiki site="copter"]
+[site wiki="copter"]
 
 For Polygonal fences, Copter will stop increasing altitude at :ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` in Loiter, PosHold, and AltHold modes.
 [/site]
-[wiki site="plane"]
+[site wiki="plane"]
 
 When in Mode FBWB or CRUISE, Plane will attempt to limit altitude target changes by the pilot (ie using Pitch stick for climb/descent rate demand inputs) to avoid breaching a maximum or minimum altitude fence.
 [/site]
@@ -196,7 +196,7 @@ To enable Fences, go to the Mission Planner full parameter list (CONFIG->Full Pa
     :width: 100%
 
 
-[wiki site="copter"]
+[site wiki="copter"]
 
 Copter GeoFence Tab
 -------------------
@@ -222,7 +222,7 @@ Geo-fencing can be combined with any flight mode. So for a raw
 beginner, you would combine it with one of the stabilised flight modes
 . Once the pilot has gained some confidence you could combine it with ACRO mode in Copter or MANUAL mode in Plane, which gives direct control of the vehicle and allows for the most interesting aerobatic manoeuvres. 
 
-[wiki site="plane"]
+[site wiki="plane"]
 
 Stick-mixing on fence breach
 ============================
