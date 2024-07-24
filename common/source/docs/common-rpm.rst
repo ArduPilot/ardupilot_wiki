@@ -87,7 +87,7 @@ First the board needs to be configured to allow PWM pins to be set for GPIO.  Th
 
 Now the RPM library must be enabled. In the following sections, we will use the second instance of RPM sensor for parameter examples.
 
-Set the parameter :ref:`RPM2_TYPE<RPM2_TYPE>` to 1 for a GPIO pin based sensor.  Write the parameter to ArduPilot then refresh/fetch the 
+Set the parameter :ref:`RPM2_TYPE<RPM2_TYPE>` to 2 for a GPIO pin based sensor.  Write the parameter to ArduPilot then refresh/fetch the 
 parameters.  You will now find that the instance of RPM (e.g. RPM2) has a number of other parameters available for editing, allowing you to complete your setup.
 
 Now the autopilot needs to be told which pin to find the RPM signal on.  To do this you will need to find the pin number in the hwdef.dat file for your
@@ -127,7 +127,7 @@ via serial telemetry with ESCs.  For information on how to set up RPM reporting 
 
 The setup for electrical commutation RPM sensors is much the same as hall effect sensors, so the steps above are applicable.  The only difference is the scaling value 
 to be entered in the :ref:`RP2_SCALING<RPM2_SCALING>` parameter.  Now, the scaling value is a function of the number of poles in the motor and should be the reciprocal of the number of 
-poles.  E.g. A 4 pole motor will need a scaling value of 0.25.
+pole pairs.  E.g. A motor with 20 poles, therefore 10 pole pairs, needs a scaling value of 1/10 = 0.1.
 
 Optical Sensors
 ===============
