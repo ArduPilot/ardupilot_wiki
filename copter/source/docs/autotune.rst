@@ -205,10 +205,5 @@ If you stopped the tune and dis-armed while still in AUTOTUNE, and an axis tune 
 .. tip:: If you do happen to accidentally discard a session's AUTOTUNE values by disarming when not in AUTOTUNE, you can examine the dataflash log for the GCS messages it sent during the tune and manually set them on the bench.
 
 
------
-
-.. image:: ../../../images/banner-freespace.png
-   :target: https://freespacesolutions.com.au/
-
 .. |AutoTuneCh7Switch| image:: ../images/AutoTuneCh7Switch.png
     :target: ../_images/AutoTuneCh7Switch.png

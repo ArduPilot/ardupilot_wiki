@@ -26,10 +26,6 @@ parameters. The following topics show you how.
     Configuring Notch Filtering <common-imu-notch-filtering>
     Configuring In-Flight FFT <common-imu-fft>
 
------
-
-.. image:: ../../../images/banner-freespace.png
-   :target: https://freespacesolutions.com.au/
 
 
 [/site]
