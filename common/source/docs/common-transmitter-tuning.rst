@@ -286,11 +286,11 @@ can do a full tune in a bit over a minute.
 [/site]
 [site wiki="copter"]
 
-With transmitter based tuning you can tune single or multiple parameters in flight using Channel 6 of the transmitter.
+First you should set ``RCx_OPTION`` = 219, where ``x`` is a free RC channel that will be used for transmitter tuning.
 
 The :ref:`TUNE<TUNE>` parameter determines which parameter is being tuned.
 
-The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the parameter when the channel is at :ref:`RC6_MAX<RC6_MAX>`, while the :ref:`TUNE_MIN<TUNE_MIN>` parameter determines the value when RC channel 6 is at :ref:`RC6_MIN<RC6_MIN>`.
+The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the parameter when the channel is at ``RCx_MAX``, while the :ref:`TUNE_MIN<TUNE_MIN>` parameter determines the value when tuning RC channel is at ``RCx_MIN``.
 
 :ref:`TUNE<TUNE>` Values
 ========================
@@ -393,22 +393,23 @@ Rate Roll P and Rate Pitch P will be used in the following example procedure
     :target: ../_images/RollPitchTuning.png
 
 #. Connect your autopilot to Mission Planner
+#. From parameter list, assign channel ``x`` to transmitter tuning with ``RCx_OPTION`` = 219.
 #. On Mission Planner, select CONFIG>>Extended Tuning
 #. Set the TUNE drop down box option to "Rate Roll/Pitch kP"
 #. Set Min to 0.08, Max to 0.20 (most copters ideal gain is within this
    range although from a small number of copter the Max can be as high
    as 0.25)
 #. Push the "Write Params" button
-#. Turn your transmitter's CH6 tuning knob to the minimum position,
+#. Turn your transmitter's CHx tuning knob to the minimum position,
    press the "Refresh Params" button and ensure that the Rate Roll P and
    Rate Pitch P values become 0.08 (or something very close)
-#. Turn the CH6 knob to its maximum position, press "Refresh Params"
+#. Turn the CHx knob to its maximum position, press "Refresh Params"
    and ensure the Rate Roll P moves to 0.20
-#. Move the CH6 knob back to the middle
-#. Arm and fly your copter in Stabilize mode adjusting the ch6 knob
+#. Move the CHx knob back to the middle
+#. Arm and fly your copter in Stabilize mode adjusting the CHx knob
    until you get a copter that is responsive but not wobbly
 #. After the flight, disconnect your LiPo battery and reconnect the autopilot to the mission planner
-#. With the CH6 knob in the position that gave the best performance,
+#. With the CHx knob in the position that gave the best performance,
    return to the Copter Pids screen and push the "Refresh Params" button
 #. In the Rate Roll P and Rate Pitch P fields re-type the value that you
    see but just slightly modified so that the mission planner recognizes
@@ -416,11 +417,11 @@ Rate Roll P and Rate Pitch P will be used in the following example procedure
    exactly the same number as what appears in Rate Roll P it won't be
    updated).  So for example, if the Rate Roll P appears as "0.1213" make
    it "0.1200"
-#. Set Ch6 Opt back to "None" and push "Write Params"
+#. Set CHx Opt back to "None" and push "Write Params"
 #. Push the Disconnect button on the top right, and the Connect
 #. Ensure that the Rate Roll P value is the value that you retyped in
-   step #12
+   step #13
 
-.. note:: While you are moving the tuning knob the values update at 3 times per second.  The need to press the Refresh button in the mission planner in steps #6 and #7 above is just because the Copter is not sending the updates to the mission planner in real-time.
+.. note:: While you are moving the tuning knob the values update at 3 times per second.  The need to press the Refresh button in the mission planner in steps #7 and #8 above is just because the Copter is not sending the updates to the mission planner in real-time.
 
 [/site]
