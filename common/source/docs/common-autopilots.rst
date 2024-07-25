@@ -124,6 +124,7 @@ Closed Hardware
     Mateksys F405 TE Family <common-matekf405-te>
     Mateksys H743-Wing/MINI/SLIM/WLITE <common-matekh743-wing>
     ModalAI Flight core <https://www.modalai.com/products/flight-core>
+    MicoAir743 <common-MicoAir743>
     mRo ControlZero Classic <https://store.mrobotics.io/product-p/m10048d.htm>
     mRo ControlZero F7 <common-mro-control-zero-F7>
     mRo ControlZero H7 <https://store.mrobotics.io/mRo-Control-Zero-H7-p/mro-ctrl-zero-h7.htm>
