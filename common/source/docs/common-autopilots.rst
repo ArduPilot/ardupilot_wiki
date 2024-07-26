@@ -88,6 +88,7 @@ Closed Hardware
     brainFPV RADIX2 HD <common-radix2hd>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Flywoo F405 Pro <common-flywoof405pro>
+    Flywoo F405HD 1-2S <common-flywoof405hd>
     Flywoo F745 AIO BL_32/ Nano <common-flywoo-f745>
     Foxeer F405v2 <common-foxeerf405v2>
     Foxeer H743 MPU600 <common-foxeerh743v1>
