@@ -79,6 +79,7 @@ Closed Hardware
 .. toctree::
     :maxdepth: 1
 
+    3DR Control Zero H7 OEM <common-3DR_Control_Zero_OEM_G>
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
     AnyleafH7 <common-anyleafh7>
