@@ -8,14 +8,14 @@ EKF3 Affinity and Lane Switching
 The :ref:`EKF <dev:extended-kalman-filter>` instantiates multiple instances of the filter called 'lanes'. The primary lane is the one that provides state estimates, rest are updated in the background and available for switching to. The number of possible lanes is exactly equal to the number of IMUs enabled for use. Conventionally, each lane uses the primary instance of the Airspeed, Barometer, GPS and Magnetometer sensors. The primary sensor can be set as a user-modifiable parameter, but can be later changed by the system, even in-flight, in case of a driver-level fault. However, modern-day vehicles are known to have multiple sensors installed of good quality. Affinity is a way for the EKF lanes to use non-primary sensors within any running lane. This provides a statistically consistent way to make use of multiple high quality sensors and use lane-switching to select the lane which has best performing combination of sensors. The lane error score takes into account innovations from all sensors used by a lane. This way, the vehicle can be saved from mishaps using noisy non-IMU sensors as well.
 
 
-**A simple example of an affinity configuration for a vehicle which has 1 Barometer, 2 GPS, 2 Airspeeds, 3 Magnetometers and 3 IMUs -**
+**A simple example of an affinity configuration for a vehicle which has 2 Barometers, 2 GPS, 2 Airspeeds, 3 Magnetometers and 3 IMUs -**
 
 .. raw:: html
 
    <table border="1" class="docutils">
    <tr><th>LANE</th><th>1</th><th>2</th><th>3</th></tr>
    <tr><td>AIRSPEED</td><td>1</td><td>2</td><td>1</td></tr>
-   <tr><td>BAROMETER</td><td>1</td><td>1</td><td>1</td></tr>
+   <tr><td>BAROMETER</td><td>1</td><td>2</td><td>1</td></tr>
    <tr><td>GPS</td><td>1</td><td>2</td><td>1</td></tr>
    <tr><td>MAGNETOMETER</td><td>1</td><td>2</td><td>3</td></tr>
    </table>
