@@ -66,8 +66,8 @@ should move its control surfaces to level itself.
    <tr><td>Roll Plane Left</td><td>Left aileron moves down and right aileron moves up</td><tr>
    <tr><td>Pitch plane up</td><td>Both tail surfaces move down</td></tr>
    <tr><td>Pitch plane down</td><td>Both tail surfaces move up</td></tr>
-   <tr><td>Roll Plane Right</td><td>Both tail surfaces move left</td></tr>
-   <tr><td>Roll Plane Left</td><td>Both tail surfaces move right</td></tr>
+   <tr><td>Yaw Plane Right</td><td>Both tail surfaces move left</td></tr>
+   <tr><td>Yaw Plane Left</td><td>Both tail surfaces move right</td></tr>
    </table>
 
 If the ailerons do not respond correctly, reverse the output by changing 
