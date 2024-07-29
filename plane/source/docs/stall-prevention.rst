@@ -49,10 +49,7 @@ There are two key parameters that control stall prevention:
    parameter. If this is set to zero then no stall prevention is done.
    This may be useful if you have no airspeed sensor and the synthetic
    airspeed estimate is not good enough
--  The :ref:`AIRSPEED_MIN <AIRSPEED_MIN>`
-   parameter, which is the configured minimum airspeed for level flight.
-   It is this value that is scaled with the bank angle to calculate the
-   safe airspeed for any demanded bank angle
+-  The :ref:`AIRSPEED_STALL<AIRSPEED_STALL>`parameter. If stall prevention is enabled this speed is used to calculate the minimum airspeed while banking. If this is set to 0 then the stall speed is assumed to be the :ref:`AIRSPEED_MIN<AIRSPEED_MIN>`. Typically it is set slightly higher then true stall speed. It is this value that is scaled with the bank angle to calculate the safe airspeed for any demanded bank angle.
 
 Affected modes
 ==============
