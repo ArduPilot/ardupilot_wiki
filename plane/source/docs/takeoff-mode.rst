@@ -9,15 +9,14 @@ Automatic takeoff can be accomplished either as a mission control command in AUT
 NAV_TAKEOFF Mission Command
 ===========================
 
-The takeoff mission command specifies a takeoff pitch and a target altitude. During auto-takeoff
-Plane will use the maximum throttle set by the :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>` parameter.
+The takeoff mission command specifies a takeoff pitch and a target altitude.
 The takeoff mission item is considered complete when the plane has
 reached the target altitude specified in the mission. The mission will then execute its normal end of mission behavior if it runs out of commands in the mission list. For Plane, this is RTL.
 
 TAKEOFF Flight Mode
 ===================
 
-In ArduPlane 4.0 and later, Automatic Takeoff is also a mode itself. When entered, the plane will use maximum throttle as set by the :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>` parameter, climbing with :ref:`TKOFF_LVL_PITCH<TKOFF_LVL_PITCH>` maximum and takeoff roll limits (:ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>` ) ,climbing to the :ref:`TKOFF_ALT<TKOFF_ALT>` altitude and proceeding at the initial launch heading until :ref:`TKOFF_DIST<TKOFF_DIST>` from the point where the mode is entered. It will then loiter, as in LOITER mode, at :ref:`TKOFF_ALT<TKOFF_ALT>` altitude until the mode is changed.
+In ArduPlane 4.0 and later, Automatic Takeoff is also a mode itself. When entered, the plane will use maximum throttle as set by the :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>` parameter, climbing with :ref:`TKOFF_LVL_PITCH<TKOFF_LVL_PITCH>` maximum and takeoff roll limits (:ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>` ), climbing to the :ref:`TKOFF_ALT<TKOFF_ALT>` altitude and proceeding at the initial launch heading until :ref:`TKOFF_DIST<TKOFF_DIST>` from the point where the mode is entered. It will then loiter, as in LOITER mode, at :ref:`TKOFF_ALT<TKOFF_ALT>` altitude until the mode is changed.
 
 Once :ref:`TKOFF_LVL_ALT<TKOFF_LVL_ALT>` is reached, or the loiter point distance is reached, maximum throttle and takeoff roll limits (:ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>` ) are stopped and normal navigation begins to the loiter point and altitude. Normally, :ref:`TKOFF_LVL_ALT<TKOFF_LVL_ALT>` is 5-10 meters and is intended to limit navigation (roll) in order to prevent wing tip ground strikes.
 
@@ -36,8 +35,27 @@ highly recommended that a compass be enabled and properly configured for
 auto takeoff, as takeoff with a GPS heading can lead to poor initial heading
 control such that heading can different from the initial heading by tens of degrees during the climb. While this may not be an issue for hand launches, runway takeoffs require a compass for adequate heading control during the takeoff rollout.
 
-
 If you are using a wheeled aircraft then you should look at the
 ``WHEELSTEER_*`` PID settings for controlling ground steering. If you
 are hand launching or using a catapult you should look at the
-``TKOFF_THR_MINACC`` and ``TKOFF_THR_MINSPD`` parameters.
+:ref:`TKOFF_THR_MINACC<TKOFF_THR_MINACC>` and :ref:`TKOFF_THR_MINSPD<TKOFF_THR_MINSPD>` parameters.
+
+.. _takeoff-throttle:
+
+TAKEOFF Throttle
+================
+
+By default, Plane will set the throttle to :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>` (or if that is 0, to :ref:`THR_MAX<THR_MAX>`) up until it reaches :ref:`TKOFF_ALT<TKOFF_ALT>`.
+This behaviour is reflected in the :ref:`TKOFF_OPTIONS<TKOFF_OPTIONS>` bit 0 setting, which by default is 0.
+
+In case more fine-grained throttle control is required, an airspeed sensor must be installed and enabled via the :ref:`ARPSD_USE<ARSPD_USE>` parameter and :ref:`TKOFF_OPTIONS<TKOFF_OPTIONS>` bit 0 must be set to 1.
+
+In this configuration, right after takeoff the throttle is set to :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>` for :ref:`TKOFF_THR_MAX_T<TKOFF_THR_MAX_T>` or until :ref:`TKOFF_LVL_ALT<TKOFF_LVL_ALT>` (whichever lasts longer).
+
+Finally, the throttle will be managed to achieve a controlled climb, ranging between :ref:`TKOFF_THR_MIN<TKOFF_THR_MIN>` and :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>`.
+
+The difference between these two throttle control options can be seen in the following diagrams:
+
+.. image:: ../images/plane_takeoff_throttle_option_0.png
+
+.. image:: ../images/plane_takeoff_throttle_option_1.png
