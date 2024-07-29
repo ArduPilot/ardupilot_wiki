@@ -54,6 +54,7 @@ New Features
 - Add ability to change the ON output voltage polarity for a Relay, see https://github.com/ArduPilot/ardupilot_wiki/pull/5950
 - Add TECS option for steep descents for low drag vehicles, see https://github.com/ArduPilot/ardupilot_wiki/pull/5956
 - Add Q_BCK_PIT_LIM parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/5962
+- Add AIRSPEED_STALL parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/6147
 [/site]
 [site wiki="copter"]
 - Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
