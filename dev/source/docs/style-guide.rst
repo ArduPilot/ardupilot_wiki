@@ -318,7 +318,7 @@ Names
 Private members
 ---------------
 
-Private members in classes should be prefixed with an underscore:
+Private members in classes may be prefixed with an underscore:
 
 **Right:**
 
@@ -329,7 +329,7 @@ Private members in classes should be prefixed with an underscore:
         int _field;
     };
 
-**Wrong:**
+**Right:**
 
 ::
 
@@ -337,6 +337,8 @@ Private members in classes should be prefixed with an underscore:
     private:
         int field;
     };
+
+The ArduPilot codebase contains a mixture of the two styles.  Either is acceptable, with a preference for no-leading-underscores in new code.
 
 Class names
 -----------
