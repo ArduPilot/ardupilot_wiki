@@ -5,7 +5,7 @@ Nanoradar MR72
 ==============
 
 .. note::
-    Support for this sensor is available in firmware versions 4.6 and later. Plane does not support this sensor since its a Proximity sensor.
+    Support for this sensor is available in firmware versions 4.5 and later. Plane does not support this sensor since its a Proximity sensor.
 
 The `MR72 <http://en.nanoradar.cn/Article/detail/id/488.html>`__ is 77Ghz-band radar commonly used for object avoidance/detection. Currently only connection via CAN is supported. Serial versions of this Radar isn't officially supported.
 
