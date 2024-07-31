@@ -31,25 +31,25 @@ autopilot is so small.
 3M, Du-Bro or HobbyKing Foam
 ----------------------------
 
-One of the following three types of foam should be cut into small 1cm ~ 2cm cubes and attached to each of the four corners of the autopilot as described on the :ref:`Mounting the Autopilot wiki page <common-mounting-the-flight-controller>`:
+One of the following three types of foam should be cut into small 1cm ~ 2cm squares and attached to each of the four corners of the autopilot as described on the :ref:`Mounting the Autopilot wiki page <common-mounting-the-flight-controller>`:
 
-- 3M Foam is sticky on both sides and comes pre-cut so that individual cubes can be easily attached to the autopilot
+- 3M Foam is sticky on both sides and comes pre-cut so that individual squares can be easily attached to the autopilot
    - `sold by mRobotics <https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm>`__ 
    - `sold by Holybro <https://holybro.com/products/foam-pads-20pcs>`__
 - `Du-Bro 1/4" R/C foam <https://www.dubro.com/products/r-c-protective-foam-rubber>`__
 - `HobbyKing orange foam <https://hobbyking.com/en_us/anti-vibration-foam-orange-latex-190mm-x-140mm-x-6mm.html?___store=en_us>`__ (discontinued)
 
-For the last two options "carpet fixing tape" will be required to attach the foam to the autopilot and vehicle frame
+For the last two options "carpet fixing tape" will be required to attach the foam to the autopilot and vehicle frame.
 
 .. image:: ../../../images/Vibration_3MFoam.jpg
     :target: ../_images/Vibration_3MFoam.jpg
 
-For vehicles with :ref:`internal combustion engines <common-ice>`, the autopilot should be mounted on an intermediate plate with `self adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass
+For vehicles with :ref:`internal combustion engines <common-ice>`, the autopilot should be mounted on an intermediate plate with `self adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass.
 
 Gel pads
 --------
 
-#. Cut one of the recommended gels into 1cm ~ 2cm cubes and attach to each corner of the autopilot.  Possible gels include:
+#. Cut one of the recommended gels into 1cm ~ 2cm squares and attach to each corner of the autopilot.  Possible gels include:
 
    -  `Kyosho Zeal Gel Tape <https://www.amainhobbies.com/kyosho-zeal-vibration-absorption-gyro-reciever-mounting-gel-1-sheet-kyoz8006/p19713>`__ performs best and is available from Amazon, E-Bay and A-Main Hobbies
    -  `United States Silicone Gel Tape and Pads (V10Z62MGT5 tape recommended) <http://www.vibrationmounts.com/RFQ/VM08010.htm>`__
@@ -78,13 +78,13 @@ has a video demonstrating vibration isolation using Moon Gel on a Go-Pro camera.
 3D Printed Anti-Vibration Platform
 ----------------------------------
 
-`GuyMcCaldin's <https://diydrones.com/profiles/profile/show?id=GuyMcCaldin&>`__ 3D Printed vibration mount (available from `Shapeways <https://www.shapeways.com/product/45H92T5RS/omnimac-apm-mount-v1-5>`__ and `Thingiverse <https://www.thingiverse.com/thing:160655>`__) using `these Hobbyking dampers <https://hobbyking.com/en_us/general-purpose-anti-vibration-rubber-w-m3-x-11mm-screw-and-m3-nylock-nut-4pcs-set.html?___store=en_us>`__
+GuyMcCaldin's 3D Printed vibration mount on `Thingiverse <https://www.thingiverse.com/thing:3794194>`__  using `dampers like these <https://www.amazon.com/MECCANIXITY-Anti-Vibration-Absorption-M3-5x13mm-Quadcopter/dp/B0BZNWDVF5?th=1>`__.
 
 .. image:: ../../../images/guymccaldin-vibration-mount.jpg
    :target: ../_images/guymccaldin-vibration-mount.jpg
    :width: 450px
 
-The mount can be installed using double sided tape, or M3 screws spaced at 45mm x 45mm.
+The mount can be installed using double sided tape, or M3 screws.
 
 3D Printed Anti-Vibration Platform for NAVIO2
 ---------------------------------------------
@@ -141,7 +141,7 @@ Ear Plug Mount
 --------------
 
 #. Purchase slow response silicon or urethane foam or PVC foam earplugs
-   such as `these from 3M <https://www.3m.com/3M/en_US/company-us/all-3m-products/~/3M-E-A-R-Classic-Earplugs-390-1000-Uncorded-Value-Pack-2000-Pair-Case/?N=5002385+3294755285&rt=rud>`__
+   such as `these from 3M <https://www.3m.com/3M/en_US/company-us/all-3m-products/~/3M-E-A-R-Classic-Earplugs-390-1000-Uncorded-Value-Pack-2000-Pair-Case/?N=5002385+3294755285&rt=rud>`__.
 #. Create a platform upon which to mount your autopilot with
    holes at the four corners. The holes should be large enough to allow
    the ear plugs to be inserted into them but not so loose that the
@@ -233,12 +233,12 @@ Summary of the vibrations that should be damped
 Additional Vibration Reduction Considerations
 =============================================
 
-#. `Hard Disk Drive Anti-Vibration Grommets <http://www.frozencpu.com/products/8869/scr-138/Hard_Disk_Drive_Anti-Vibration_Screw_Shoulder_Screw_Type.html?tl=g33c113&id=gdASxUFI>`__
+#. `Hard Disk Drive Anti-Vibration Grommets <http://www.frozencpu.com/products/8869/scr-138/Hard_Disk_Drive_Anti-Vibration_Screw_Shoulder_Screw_Type.html?tl=g33c113&id=gdASxUFI>`__.
    can provide sufficient or supplemental vibration reduction
 #. Significant gains in vibration isolation can also be realized by
    using a high flex wire and strain relief approach to all wires
    connected to the autopilot (and using the minimum number
-   of wires necessary as well.)
+   of wires necessary as well).
 #. Some frames have lower than normal vibration characteristics due to
    frame stiffness / flex and isolated centralized mass can greatly
    influence motor/prop vibration transfer to the central fight

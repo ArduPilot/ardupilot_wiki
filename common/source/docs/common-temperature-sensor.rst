@@ -15,10 +15,12 @@ ArduPilot supports up to nine individual temperature sensors with I2C interfaces
 .. image:: ../../../images/temperature-sensor.jpg
    :target: ../_images/temperature-sensor.jpg
 
+In addition, analog temperature monitors can be used.
+
 ArduPilot already has numerous possible sources for temperature reports: ESCs, Smart Batteries, Motor EFI and these independent sensors can be used to replace those devices temperature reports which already exist in ArduPilot. They can also just be logged.
 
-Setup
-=====
+I2C Sensor Setup
+================
 
 Attach sensor to one of the autopilot's I2C ports using SDA and SCL pins. Then set (examples shown for first sensor):
 
@@ -27,6 +29,23 @@ Attach sensor to one of the autopilot's I2C ports using SDA and SCL pins. Then s
 - :ref:`TEMP1_ADDR<TEMP1_ADDR>` = the sensor's I2C address (0-127)
 - :ref:`TEMP1_SRC<TEMP1_SRC>` = which other temperature reporting device type should have its temperature report replaced with this sensor's.
 - :ref:`TEMP1_SRC_ID<TEMP1_SRC_ID>` = this identifies which individual device, of the above type, should have its report replaced.
+
+Analog Sensor Setup
+===================
+
+Atttch the sensor to an analog input pin. The pin number can be determined from the autopilot's wiki page. Then set (examples shown for first sensor):
+
+- :ref:`TEMP1_TYPE<TEMP1_TYPE>` = 5 : Analog
+- :ref:`TEMP1_PIN<TEMP1_PIN>` = the analog pin number (for example: 2:Pixhawk/Pixracer/Navio2/Pixhawk2_PM1, 5:Navigator, 13:Pixhawk2_PM2/CubeOrange_PM2, 14:CubeOrange, 16:Durandal, 100:PX4-v1, etc.)
+
+The output voltage vs temperature curve of the sensor can be adjusted to match its characteristic via an up to 4th order polynomial (deg = a0 + a1\*voltage + a2\*voltage^2 + a3\*voltage^3 + a4\*voltage^4) : 
+
+- :ref:`TEMP1_A0<TEMP1_A0>` = a0 
+- :ref:`TEMP1_A1<TEMP1_A1>` = a1
+- :ref:`TEMP1_A2<TEMP1_A2>` = a2
+- :ref:`TEMP1_A3<TEMP1_A3>` = a3
+- :ref:`TEMP1_A4<TEMP1_A4>` = a4
+
 
 Logging
 =======

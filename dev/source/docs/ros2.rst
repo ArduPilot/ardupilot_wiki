@@ -15,7 +15,7 @@ ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka R
 Prerequisites
 =============
 
-- Learn on to use ArduPilot first by following the relevant wiki for `Rover <https://ardupilot.org/rover/index.html>`__, `Copter <https://ardupilot.org/copter/index.html>`__ or `Plane <https://ardupilot.org/plane/index.html>`__. In particular, make sure the vehicle works well in Manual and Autonomous modes like Guided and Auto before trying to use ROS.
+- Learn to use ArduPilot first by following the relevant wiki for `Rover <https://ardupilot.org/rover/index.html>`__, `Copter <https://ardupilot.org/copter/index.html>`__ or `Plane <https://ardupilot.org/plane/index.html>`__. In particular, make sure the vehicle works well in Manual and Autonomous modes like Guided and Auto before trying to use ROS.
 - Learn how to use ROS 2 by reading the `beginner tutorials <https://docs.ros.org/en/humble/Tutorials.html>`__.  In the case of a problem with ROS, it is best to ask on ROS community forums first (or google your error).
 
     We are keen to improve ArduPilot's support of ROS 2 so if you find issues (such as commands that do not seem to be supported), please report them in the `ArduPilot issues list <https://github.com/ArduPilot/ardupilot/issues>`__. A maintainer can add the `ROS` tag.
@@ -52,6 +52,35 @@ Now update all dependencies:
     rosdep update
     source /opt/ros/humble/setup.bash
     rosdep install --from-paths src --ignore-src
+    # Ignore the rosdep warnings at the end if any
+
+Installing build dependencies:
+
+.. code-block:: bash
+    
+    sudo apt install default-jre
+    cd ~/ros2_ws
+    git clone --recurse-submodules https://github.com/ardupilot/Micro-XRCE-DDS-Gen.git
+    cd Micro-XRCE-DDS-Gen
+    ./gradlew assemble
+    echo "export PATH=\$PATH:$PWD/scripts" >> ~/.bashrc
+
+Test `microxrceddsgen` installation:
+
+.. code-block:: bash
+
+    source ~/.bashrc
+    microxrceddsgen -version 
+    # openjdk version "11.0.18" 2023-01-17
+    # OpenJDK Runtime Environment (build 11.0.18+10-post-Ubuntu-0ubuntu122.04)
+    # OpenJDK 64-Bit Server VM (build 11.0.18+10-post-Ubuntu-0ubuntu122.04, mixed mode, sharing)
+    # microxrceddsgen version: 1.0.0beta2
+
+::
+    ⚠️ If you have installed FastDDS or FastDDSGen globally on your system: eProsima's libraries and the packaging system in 
+    Ardupilot are not deterministic in this scenario. You may experience the wrong version of a library brought in, or runtime 
+    segfaults. For now, avoid having simultaneous local and global installs. If you followed the `global install <https://fast-dds.docs.eprosima.com/en/latest/installation/sources/sources_linux.html#global-installation/>`_ section, 
+    you should remove it and switch to local install.
 
 And finally, build your workspace:
 
@@ -59,6 +88,12 @@ And finally, build your workspace:
 
     cd ~/ros2_ws
     colcon build --packages-up-to ardupilot_dds_tests
+
+If the build fails, when you request help, please re-run the build in verbose mode like so:
+
+.. code-block:: bash
+
+    colcon build --packages-up-to ardupilot_dds_tests --event-handlers=console_cohesion+
 
 If you'd like to test your installation, run:
 

@@ -89,6 +89,7 @@ Closed Hardware
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Flywoo F405 Pro <common-flywoof405pro>
     Flywoo F745 AIO BL_32/ Nano <common-flywoo-f745>
+    Foxeer F405v2 <common-foxeerf405v2>
     Foxeer H743 MPU600 <common-foxeerh743v1>
     Foxeer Reaper F745-AIO V2 <common-foxeerf745aio>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
@@ -104,9 +105,11 @@ Closed Hardware
     Holybro Pixhawk 4 Mini <common-holybro-ph4mini>
     Holybro Pixhawk5X <common-holybro-ph5x>
     Horizon31 PixC4-Jetson <common-horizon31-pixc4-jetson>
-    IFlight Beast F7 45A AIO <common-iflight-beastf7AIO>
-    IFlight BeastH7 AIO <common-iflight-beasth7AIO>
-    IFlight Blitz Whoop F7 AIO <common-iflight-blitzf7AIO>
+    iFlight Beast F7 45A AIO <common-iflight-beastf7AIO>
+    iFlight BeastH7 AIO <common-iflight-beasth7AIO>
+    iFlight Blitz F745/F745 Mini <common-blitz-f745>
+    iFlight Blitz Whoop F7 AIO <common-iflight-blitzf7AIO>
+    iFlight Blitz Wing H743 <common-blitzh743wing>
     JAE JFB-110 <common-jae-jfb110>
     Mamba F405 MK2 <common-mamba405-mk2>
     Mamba MK4 F405Mini <common-mambaf405-mini>
@@ -135,9 +138,11 @@ Closed Hardware
 [/site]
     Parrot C.H.U.C.K <common-CHUCK-overview>
     RadioLink MiniPix <common-radiolink-minipix>
+    RadioLinkPIX6 <common-radiolinkpix6>
     QioTek Zealot F427 <common-qiotek-zealot>
     QioTek Zealot H743 <common-qiotek-zealoth7>
-    SDMODEL SDH7V! <https://www.sdmodel.com.tw/content.php?cn=item&tid=1320&start=0>
+    SDMODEL SDH7V1 <https://www.sdmodel.com.tw/content.php?cn=item&tid=1320&start=0>
+    SDMODEL H7 V2 <common-SDMODELH7V2>
     Sky-Drones AIRLink <common-skydrones-airlink>
     SkystarsH7HD <common-skystarsH7>
     SPRacing H7 Extreme <common-spracingh7-extreme>

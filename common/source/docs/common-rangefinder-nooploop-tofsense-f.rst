@@ -36,7 +36,7 @@ For a I2C connection you can use any spare I2C port.
 
 Set the following parameters
 
--  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = “40" (Reboot after setting this)
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 40 (NoopLoop_TOFSenseF_I2C) Reboot after setting this.
 -  :ref:`RNGFND1_ADDR <RNGFND1_ADDR>` = I2C slave address of the sensor (Default is 8, which corresponds to ID 0 in the NAssistant software)
 
 

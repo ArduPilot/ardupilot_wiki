@@ -28,6 +28,7 @@ Key Parameters
    quad motors). Please be careful not to use hard left rudder and zero
    throttle while flying or you risk disarming your motors.
 -  The default :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>` for a QuadPlane is to 300 (Hz). Most QuadPlanes do not need this to be rasied. Some very small vehicles (< 1Kg) might benefit from setting it to 400. In heavier vehicles, their higher inertia results in lower effective control response rates, so they do not benefit from a higher loop rate. Raising above 300 only leads to larger log files in these vehicles.
+-  The pitch and roll limits in VTOL modes are controlled by the lesser of :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`, or the fixed wing limits (:ref:`PTCH_LIM_MAX_DEG<PTCH_LIM_MAX_DEG>`, :ref:`PTCH_LIM_MIN_DEG<PTCH_LIM_MIN_DEG>`, and :ref:` ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>`), but conformance to only :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` can be controlled with :ref:`Q_OPTIONS<Q_OPTIONS>` bit 14.
 
 .. _return_behavior_setup:
 
@@ -101,7 +102,7 @@ In addition, the behavior of QuadPlane can be modified by the setting of the :re
 -  bit 11(+2048), if set, will delay VTOL motor spin up until 2 seconds after arming.
 -  bit 12(+4096), if set, disable speed based Qassist when using synthetic airspeed
 -  bit 13(+8192), if set, will disable Ground Effect Compensation of baro due to ground effect pressures
--  bit 14(+16384), if set, ignore forward flight angle limits in Qmodes, otherwise :ref:`PTCH_LIM_MAX_DEG<PTCH_LIM_MAX_DEG>`, :ref:`PTCH_LIM_MIN_DEG<PTCH_LIM_MIN_DEG>`, and :ref:` ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` can constrain :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` in VTOL modes.
+-  bit 14(+16384), if set, ignore forward flight angle limits in Qmodes, otherwise :ref:`PTCH_LIM_MAX_DEG<PTCH_LIM_MAX_DEG>`, :ref:`PTCH_LIM_MIN_DEG<PTCH_LIM_MIN_DEG>`, and :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` can constrain :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` in VTOL modes.
 -  bit 15(+32768), if set, will allow pilot to control descent during VTOL AUTO-LAND phases, similar to throttle stick action during QHOVER or QLOITER. However, this will not become active until the throttle stick is raised above 70% during the descent at least once.
 -  bit 16(+65536), if set, will disable the fixed wing approach in QRTL mode and VTOL_LANDING mission items, see Hybrid RTL modes section of :ref:`quadplane-flying` for details of this hybrid landing approach.
 -  bit 17(+131072), if set, will enable pilot horizontal re-positioning during VTOL auto LAND phases, momentarily pausing the descent while doing so.
@@ -109,6 +110,7 @@ In addition, the behavior of QuadPlane can be modified by the setting of the :re
 -  bit 19(+524288), if set, will allow the forcing of VTOL to Fixed Wing transitions if :ref:`Q_TRANS_FAIL<Q_TRANS_FAIL>` is not zero and exceeded, and if the airspeed is greater than 1/2 of :ref:`AIRSPEED_MIN<AIRSPEED_MIN>`, then the transition to fixed wing will immediately complete, rather than taking the :ref:`Q_TRANS_FAIL_ACT<Q_TRANS_FAIL_ACT>` action. See :ref:`quadplane-transitions`.
 -  bit 20(+1048576), if set overrides bit 5, if set, and forces an RTL on RC failsafe while in a VTOL mode. This is useful in over-water operations where either an QLAND or QRTL is undesirable.
 -  bit 21(+2097152), if set tilts tilt motors up when disarmed in FW modes (except manual) to prevent ground strikes.
+-  bit 22(+4194304), if set scale fixed wing FF pid gains by the ratio of VTOL/fixed wing angle P gains in VTOL modes rather than reducing VTOL angle P based on airspeed. Used only if experiencing oscillations in back transitions at high airspeeds.
 
 Behavior can be modified as well as by the :ref:`Q_RTL_MODE<Q_RTL_MODE>` and :ref:`Q_GUIDED_MODE<Q_GUIDED_MODE>` parameters.
 

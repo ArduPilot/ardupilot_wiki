@@ -23,7 +23,7 @@ WSL Setup Steps
 
 #. Windows 11 WSL2 includes a graphical interface for Linux programs. Programs such as ``gedit`` and ``retext`` editors, ``nautilus`` file manager, etc do not need anything additional installed to display graphical interfaces.
 
-#. If USB connectivity from within WSL2 is desired, `install USBIPD <https://learn.microsoft.com/en-us/windows/wsl/connect-usb>`__
+#. If USB connectivity from within WSL2 is desired, `install USBIPD <https://learn.microsoft.com/en-us/windows/wsl/connect-usb>`__ or use its GUI application, `WSL USB Manager <https://gitlab.com/alelec/wsl-usb-gui/-/blob/main/README.md>`__.
 
 File System Access between WSL and Windows
 ==========================================

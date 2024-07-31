@@ -28,7 +28,7 @@ even 1000s of metres from your location.
 Stabilize
 ---------
 
-:ref:`Stabilize <stabilize-mode>` mode does not use GPS, and as the
+:ref:`Stabilize <stabilize-mode>` mode does not use GPS, and has the
 least problems, but the pilot will need good control of the copter.
 
 Altitude Hold

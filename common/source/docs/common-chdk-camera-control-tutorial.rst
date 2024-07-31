@@ -1,5 +1,7 @@
 .. _common-chdk-camera-control-tutorial:
 
+**ARCHIVED: page considered obsolete**
+
 ============================
 CHDK Camera Control Tutorial
 ============================

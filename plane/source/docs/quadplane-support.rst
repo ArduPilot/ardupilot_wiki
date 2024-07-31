@@ -10,7 +10,7 @@ multicopter aircraft, also known as a "QuadPlane".
 ..  raw:: html
 
     <p style="text-align:center;color:red;"><strong>
-    Since a Quadplane is also functions as a conventional fixed wing Plane, success with ArduPilot requires that not only the 'First Time Setup' and 'First Flight/Drive and Tuning' sections below be read and followed, but also those same sections for a conventional Plane!</strong>
+    Since a Quadplane also functions as a conventional fixed wing Plane, success with ArduPilot requires that not only the 'First Time Setup' and 'First Flight/Drive and Tuning' sections below be read and followed, but also those same sections for a conventional Plane!</strong>
 
  
 

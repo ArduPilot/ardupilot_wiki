@@ -68,5 +68,5 @@ See these pages for details on controlling the camera during Auto mode missions 
 Control from a Companion Computer or MAVLink
 ============================================
 
-Cameras may also be controlled via MAVLink commands from a companion computer or other source.
-See :ref:`dev:mavlink-camera` documentation.
+Cameras and mounts may also be controlled via MAVLink commands from a companion computer or other source.
+See :ref:`dev:mavlink-camera`  and :ref:`dev:mavlink-gimbal-mount` documentation.

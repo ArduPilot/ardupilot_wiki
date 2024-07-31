@@ -15,8 +15,12 @@ Please check with the vendor prior to purchase.
 Copters from Partners
 =====================
 
+* `3DR QUAD ZERO Kit <https://store.3dr.com/3dr-quad-zero-kit/>`__
+* `ARACE Angel <https://araceuas.com/sirin/>`__
 * `Bask Aerospace - AeroDrone MR4 <http://www.baskaerospace.com.au/aerodrone/mr4>`__
 * `CUAV - Xunwing X4 <https://store.cuav.net/shop/xunwing-x4/>`__
+* `Drone Engr (Various Platforms) <https://www.droneassemble.com/product-category/agriculture-drone/spraying-drone/>`__
+* `NWBlue Hexsoon EDU450/EDU650 <https://nwblue.com/collections/vendors?q=hexsoon>`__
 * `Hitec - SUI Endurance <https://hitecnology.com/drones/sui-endurance-multipurpose-professional-multirotor>`__
 * `Holybro - S500 V2 Kit <https://shop.holybro.com/s500-v2-kitmotor2216-880kv-propeller1045_p1153.html>`__
 * `Holybro - X500 Kit <https://shop.holybro.com/x500-kit_p1180.html>`__
@@ -25,6 +29,7 @@ Copters from Partners
 * `TT Robotix - X-450 Scout Quadcopter <http://www.ttrobotix.com/products/detail/928.html>`__
 * Various from `UAVSystems <https://uavsystemsinternational.com/pages/heavy-lift-payload-drones/>`__
 * VimDrones `Mazzy Star Drone - Light Show RTF <https://vimdrones.com/products/e5586543-cf6d-452d-9e6b-f4ea43eabb52--Mazzy-Star-Drone>`__
+*  `WattsInnovations Prism Lite <https://wattsinnovations.com/pages/prismlite>`__
 
 Helicopters from Partners
 =========================
@@ -48,9 +53,13 @@ Planes from Partners
 
 VTOL/QuadPlanes from Partners
 =============================
+
+* `ARACE ROC QuadPlane <https://araceuas.com/roc/>`__
+* `ARACE Griffin QuadPlane <https://araceuas.com/griffin/>`__
 * `CUAV - Raefly <https://store.cuav.net/shop/raefly/>`__
 * `CUAV - Raefly VT260 <https://store.cuav.net/shop/raefly-vt260-vtol-uav/>`__
 * `Event38 - E400 <https://event38.com/fixed-wing/e400-vtol-drone/>`__
+* `Drone Engr (Various VTOL Platforms) <https://www.droneassemble.com/product-category/vtol-drone-uav/>`__
 * `Event38 - E455 <https://event38.com/fixed-wing/e455-vtol-drone/>`__
 * `FlyDragonDroneTech - FDG30 <https://www.droneassemble.com/product/vtol-uav-6-hours-endurance-with-1kg-payload-for-survey-serveillance/>`__
 * `FlyDragonDroneTech - FDG50F <https://www.droneassemble.com/product/hybrid-vtol-uav-7-hours-endurance-with-10kgs-payload/>`__
@@ -59,15 +68,13 @@ VTOL/QuadPlanes from Partners
 * `MakeFLyEasy - Freeman 2300 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_3>`__
 * `MakeFLyEasy - Freeman 2100 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_2>`__
 * :ref:`MakeFLyEasy - Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>`
-* `SpektreWorks - Cobalt 55 E-VTOL <https://www.spektreworks.com/cobalt>`__
-* `SpektreWorks - Cobalt 55 G-VTOL <https://www.spektreworks.com/cobalt>`__
-* `SpektreWorks - Cobalt 110 G-VTOL <https://www.spektreworks.com/cobalt>`__  
 
 Rovers from Partners
 ====================
 
 * `AION ROBOTICS - R6 UGV <https://www.aionrobotics.com/r6>`__
 * `AION ROBOTICS - M6 UGV <https://www.aionrobotics.com/m6-commercial-ugv>`__
+* `Robot to Society - SPARK Kit <https://www.robot-to-society.com/products/sparkkit>`__
 * `TT Robotix - Rhino 6x6 <http://www.ttrobotix.com/products/detail/906.html>`__
 * `TT Robotix - Base 1 Rover <http://www.ttrobotix.com/products/detail/907.html>`__
 

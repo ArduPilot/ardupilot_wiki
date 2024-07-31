@@ -71,7 +71,7 @@ can dial the numbers in over a number of flights, using the log data.
    :ref:`AIRSPEED_MIN<AIRSPEED_MIN>` should be set to the slowest speed your aircraft
    can safely fly without stalling in level flight.
 #. Set the maximum pitch angle :ref:`PTCH_LIM_MAX_DEG <tecs-total-energy-control-system-for-speed-height-tuning-guide_lim_pitch_max>` (in
-   centi-degrees) your aircraft can fly with the throttle set to
+   degrees) your aircraft can fly with the throttle set to
    :ref:`THR_MAX<THR_MAX>`. This can be determined by performing maximum pitch angle
    climbs in FBWA with the throttle set to the maximum and checking the
    airspeed during climb. If the airspeed rises above :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` during
@@ -83,7 +83,7 @@ can dial the numbers in over a number of flights, using the log data.
    that the amount of power from an electric power system at the end of
    flight will only be 80% of what you have at the start.
 #. Set the minimum pitch angle :ref:`PTCH_LIM_MIN_DEG <tecs-total-energy-control-system-for-speed-height-tuning-guide_lim_pitch_min>`
-   (in centi-degrees) your aircraft can fly with the throttle set to
+   (in degrees) your aircraft can fly with the throttle set to
    :ref:`THR_MIN <tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_min>` that can be flown without over-speeding the
    aircraft.
 #. Set the maximum climb rate :ref:`TECS_CLMB_MAX <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_clmb_max>` (in

@@ -265,6 +265,28 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
+    <tr class="row-odd">
+        <td><center><a class="first last reference external image-reference" href="https://www.ardux.jp/"><img alt="ArduXJapan" src="../_images/arduxjapan.jpg" style="width: 90px;" /></a><br/><br/>Japan</center></td>
+        <td><div class="first last line-block">
+            <div class="line">ArduXJapan, <a href="mailto:info@ardux.jp" target="_top">info@ardux.jp</a></div>
+            <div class="line"><br/></div>
+            <div class="line">ArduPilot software development (C++, Lua) and training</div>
+            <div class="line">We solve real world problems using ArduPilot primarily for customers in Japan</div>
+            <div class="line">CTO: Randy Mackay (ArduPilot Copter, Rover and Boat lead)</div>
+            </div>
+        </td>
+    </tr>
+    <tr class="row-odd">
+        <td><center><a class="first last reference external image-reference" href="https://controlled-ascent.com/"><img alt="Controlled Ascent" src="../_images/controlled_ascent.png" style="width: 90px;" /></a><br/><br/>Netherlands</center></td>
+        <td><div class="first last line-block">
+            <div class="line">George Zogopoulos, Controlled Ascent, <a href="mailto:controlled-ascent@proton.me" target="_top">controlled-ascent@proton.me</a></div>
+            <div class="line"><br/></div>
+            <div class="line">ArduPilot software development (C++, Lua), simulation, log analysis, tuning.</div>
+            <div class="line">Additionally, compliance services for the EU regulations are provided</div>
+            <div class="line">(SORA framework).</div>
+            </div>
+        </td>
+    </tr>
     </tbody>
     </table>
 
@@ -343,6 +365,12 @@ listed here will be active participants in the community.
     :scale: 0%	
 
 .. image:: ../../../images/logos/youtube_logo.png
+    :scale: 0%	
+
+.. image:: ../../../images/logos/arduxjapan.jpg
+    :scale: 0%	
+
+.. image:: ../../../images/logos/controlled_ascent.png
     :scale: 0%	
 
 Fleet Management Systems

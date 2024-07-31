@@ -1,10 +1,10 @@
 .. _common-video-landingpage:
 
 ======================================
-High Definition Live Video FPV Systems 
+High Definition Live Video FPV Systems
 ======================================
 
-This sections covers live video systems which can provide a high definition first-person video (FPV) from the vehicle back to either a ground station or FPV goggles. For other FPV systems, see :ref:`common-fpv-first-person-view` section.
+This sections covers live video systems which can provide a high definition (HD) first-person video (FPV) from the vehicle back to either a ground station or FPV goggles. For other standard definition (SD) FPV systems, see :ref:`common-fpv-first-person-view` section.
 
 
 Herelink HD Video Transmission System
@@ -20,28 +20,8 @@ Overview
 
 Herelink is an integrated remote controller, ground station and wireless digital transmission system designed to be used with the Cube and other autopilots, using ArduPilot or PX4 firmware.  
 
-Herelink allows RC control, HD video and telemetry data to be transmitted upto 20km between the ground station and air unit, the Herelink remote controller features custom Solex TX and QGC applications and both air unit and ground station feature an integrated 8 core SOC for custom application development.
 
-
-
-Features
---------
-* Android based smart device with 5.46 inch 1080P capacitive touch screen.
-* Integrated digital transmission system simultaneously transmitting video, telemetry and control. 
-* Custom Solex TX and QGC ground station software with MAVLink support for ArduPilot and PX4.
-* Dual hall effect self centering gimbals with removable sticks. 
-* 1080P HD video with dual digital video inputs. 
-* Dual S.bus signal output for simultaneous control of autopilot and pan/tilt cameras.
-* 6 customizable MAVLink buttons and Mavlink/Sbus hardware wheel. 
-* RC gimbal control on dedicated service independent from Solex TX / QGC. 
-* Tether and share video and telemetry via wifi ground station such as Mission Planner. 
-* Onboard Arm Cortex A53 & Cortex A53 SOC in both air and ground units for custom applications. 
-
-More Info on Herelink can be found on 
-
--   `Cubepilot <https://docs.cubepilot.org/user-guides/herelink/herelink-overview>`_
--   `Hex HereLink Website <http://www.proficnc.com/all-products/211-gps-module.html>`_
--   `Cubepilot Support Forum <https://discuss.cubepilot.org>`_
+More Info on Herelink can be found on the :ref:`Herelink page <common-herelink>`
 
 ------------------------------------------------
 
@@ -50,7 +30,7 @@ CUAV H16 series HD Video Transmission and remote control system
 
 .. figure:: ../../../images/cuav-video/h16.jpg
    :target: ../_images/cuav-video/h16.jpg
-     
+
 Overview
 --------
 

@@ -10,6 +10,7 @@ tuning options for the vehicle.
 .. toctree::
     :maxdepth: 1
 
+    Analog Pins <common-analog-pins>
 [site wiki="copter"]
     Autopilot Output Mapping <common-rcoutput-mapping>
     AutoTune <autotune>
@@ -47,6 +48,9 @@ tuning options for the vehicle.
     EKF Sources and Selection <common-ekf-sources>
 [site wiki="copter,rover"]
     Fence Failsafes  <common-geofencing-landing-page>
+[/site]
+[site wiki="copter"]
+    Flight Options <flight-options>
 [/site]
     Flight Time Recorder <common-flight-time-recorder>
 [site wiki="plane"]

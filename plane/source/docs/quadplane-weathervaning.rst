@@ -122,6 +122,8 @@ This method uses the position controller to control the forward motor thrust in 
 
 The :ref:`Q_FWD_THR_GAIN<Q_FWD_THR_GAIN>` parameter sets the gain from forward accel/tilt to forward throttle in Q modes. The Q modes this feature operates in is controlled by the :ref:`Q_FWD_THR_USE<Q_FWD_THR_USE>` parameter. Vehicles using separate forward thrust motors, eg quadplanes, should set this parameter to (all up weight) / (maximum combined thrust of forward motors) with a value of 2 being typical. Vehicles that tilt lifting rotors to provide forward thrust should set this parameter to (all up weight) / (weight lifted by tilting rotors) which for most aircraft can be approximated as (total number of lifting rotors) / (number of lifting rotors that tilt). When using this method of forward throttle control, the forward tilt angle limit is controlled by the :ref:`Q_FWD_PIT_LIM<Q_FWD_PIT_LIM>` parameter.
 
+.. note:: this use of forward motor can be disabled using an RC switch whose ``RCx_OPTIONS`` param has been set to "176" and the switch is moved to mid or low position.
+
 Note that you can also use reverse thrust on the forward motor using either method. If
 your :ref:`THR_MIN <THR_MIN>` parameter is less than zero then reverse
 thrust is available and the motor will use reverse thrust to slow down

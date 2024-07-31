@@ -17,3 +17,14 @@ Connecting to the Ground Station
 ================================
 
 Open WIFI connection dialog on PC or Android Phone and select the ``CUAVWLINKxxxx`` SSID and connect using the password ``cuavwlink``. Once connected use the UDP connection with port = 14550 (which is default) to connect using Mission Planner. QGC should auto-detect and connect.
+The PW-LINK default IP address is ``192.168.4.1``.
+
+
+MAVProxy
+--------
+
+The following command can be used to connect a MAVProxy ground station to the vehicle.
+
+.. code-block:: bash
+  
+    mavproxy.py --master :14550

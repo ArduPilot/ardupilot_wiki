@@ -4,7 +4,18 @@
 ROS 2 with Gazebo
 =================
 
-Once ROS2 is correctly :ref:`installed <ros2>` and running :ref:`SITL <ros2-sitl>`, we can integrate ArduPilot with Gazebo. 
+The purpose of this guide is to show how to integrate ArduPilot with Gazebo using ROS 2.
+
+Prerequisites
+=============
+
+Ensure you have the prerequisites complete and working before beginning this Gazebo tutorial.
+
+#. :ref:`Install ROS 2 <ros2>` 
+#. :ref:`Install and Run ROS 2 with ArduPilot SITL <ros2-sitl>`
+
+Install Gazebo
+==============
 
 First, install `Gazebo Harmonic (recommended) <https://gazebosim.org/docs/harmonic/install>`__ or `Gazebo Garden <https://gazebosim.org/docs/garden/install>`__.
 
@@ -34,6 +45,9 @@ Update ROS dependencies:
     rosdep update
     rosdep install --from-paths src --ignore-src -r
 
+Build and Run Tests
+===================
+
 Build:
 
 .. code-block:: bash
@@ -46,16 +60,24 @@ If you'd like to test your installation, run:
 .. code-block:: bash
 
     cd ~/ros2_ws
-    source ./install/setup.bash
+    source install/setup.bash
     colcon test --packages-select ardupilot_sitl ardupilot_dds_tests ardupilot_gazebo ardupilot_gz_applications ardupilot_gz_description ardupilot_gz_gazebo ardupilot_gz_bringup
     colcon test-result --all --verbose
+
+Run the Simulation
+==================
 
 Finally, you can source the workspace and launch one of the example Gazebo simulations: 
 
 .. code-block:: bash
 
-    source ~/ros2_ws/install/setup.sh
+    source install/setup.bash
     ros2 launch ardupilot_gz_bringup iris_runway.launch.py
+
+By default, this launch file starts ArduPilot SITL, Gazebo, and RViz with a single command.
+
+.. image:: ../images/IrisRunway.png
+    :target: ../_images/IrisRunway.png
 
 For more information regarding the `ardupilot_gz` package refer to `ardupilot_gz/README.md <https://github.com/ArduPilot/ardupilot_gz#ardupilot_gz>`__.
 
@@ -73,6 +95,12 @@ Examples available
 .. code-block:: bash
 
     ros2 launch ardupilot_gz_bringup iris_maze.launch.py
+
+- WildThumper (Rover)
+
+.. code-block:: bash
+
+    ros2 launch ardupilot_gz_bringup wildthumper.launch.py
 
 Here is a demo video of ArduPilot working with ROS 2 and Gazebo:
 

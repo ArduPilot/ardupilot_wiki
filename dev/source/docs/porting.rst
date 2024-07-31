@@ -134,8 +134,8 @@ The paramter defaults can be defined by creating a defaults.parm file in the sam
 
 Here is `how it was done for the skyviper <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/skyviper-v2450/defaults.parm>`__
 
-Creating a Bootloader
----------------------
+Step 9 - Creating a Bootloader
+------------------------------
 
 When doing an initial port you may be happy to use a bootloader that
 was built for another board. That gets you going quickly, but also
@@ -161,6 +161,22 @@ To build the bootloader you do the following:
 - ``./waf clean``
 - ``./waf bootloader``
 
+Step 10 - Board Testing
+-----------------------
+
+A board port submitted to ArduPilot should be tested before submitting to ArduPilot for inclusion in the project.
+
+The test setup should have a receiver and GPS/Compass attached to the board. Load the firmware and test the following:
+
+- the board boots and connects to a GCS via USB (Mission Planner, QGC, MAVProxy,etc.)
+- the GPS and Compass is recognized.
+- the RC is recognized and RC input follows the TX
+- the pitch and roll reports (ie HUD horizon) follows autopilot movement correctly (ie IMU is oriented properly and working). test each IMU individually using the INSx_USE parameters.
+- the board arms with default arming checks(may need to force arm if GPS is indoors)
+- attach a battery either directly if onboard power sensors or via external power module and make sure voltage is correctly displayed and current indication present
+- attach a test servo to each output after setting the output to a normal function like elevator, and exercise each one with TX while in MANUAL mode to check output functionality. Bdshot capable outputs should be tested with a BLHeli32 esc for passthrough mode communication (non-IOMCU outputs).
+- move the GPS to each UART output after setting all other UART protocols to NONE and the tested UART to GPS to assure the UART is functioning.
+- UARTs with CTS/RTS lines should use a telemetry radio with those connected to be sure they function with BRD_SERx__CTSRTS=1
 
 Next Steps
 ----------

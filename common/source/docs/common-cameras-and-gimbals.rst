@@ -24,7 +24,7 @@ gimbals in which ArduPilot controls the stabilisation. Some gimbals also integra
 -  :ref:`DJI RS2 and RS3-Pro gimbals <common-djirs2-gimbal>`
 -  :ref:`Gremsy Mio, Pixy, S1, T3, T7 and ZIO <common-gremsy-pixyu-gimbal>` - high quality 3-axis gimbals
 -  :ref:`SimpleBGC (aka AlexMos) Gimbal Controller <common-simplebgc-gimbal>` - a popular 2-axis or 3-axis brushess gimbal controller which uses a custom serial interface
--  :ref:`Siyi ZR10, ZR30 and A8 <common-siyi-zr10-gimbal>` - 3-axis gimbal and camera
+-  :ref:`Siyi ZR10, ZR30, ZT6, ZT30, and A8 <common-siyi-zr10-gimbal>` - 3-axis gimbal and camera
 -  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an inexpensive 2-axis or 3-axis brushless gimbal controller which responds to MAVLink commands (a richer format than PWM) over a serial interface
 -  :ref:`ViewPro gimbals <common-viewpro-gimbal>`
 -  :ref:`Xacti gimbals <common-xacti-gimbal>`
@@ -49,13 +49,12 @@ Shutter Controllers
 -------------------
 
 -  :ref:`Servo or Relay controlled camera shutter <common-camera-shutter-with-servo>` (servo, relay).
--  :ref:`Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>`
--  :ref:`Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>` (non-standard integration)
 -  :ref:`Seagull IR Camera Trigger <common-camera-trigger-seagull-ir>`
 -  :ref:`Seagull MAP2 Camera Trigger <common-camera-trigger-seagull-map2>`
 -  :ref:`Seagull MAP-X2 Camera Trigger and Logger <common-camera-trigger-seagull-mapx2>`
 -  :ref:`Seagull REC Camera Trigger <common-camera-trigger-seagull-rec>`
 -  :ref:`StratosnapperV2 Camera Trigger <common-camera-trigger-stratosnapperv2>`
+-  :ref:`DIY Camera Trigger using Relay <common-pixhawk-camera-trigger-setup>`
 
 Control of Specific Camera Models
 ---------------------------------
@@ -112,10 +111,8 @@ more scenic photos. ArduPilot will stabilize the gimbal to whatever position you
     Seagull MAP-X2 Camera Trigger and Logger <common-camera-trigger-seagull-mapx2>
     Seagull REC Camera Trigger <common-camera-trigger-seagull-rec>
     StratosnapperV2 Camera Trigger <common-camera-trigger-stratosnapperv2>
-    Camera Trigger Directly from AUX Ports <common-pixhawk-camera-trigger-setup>
+    DIY Camera Trigger using Relay <common-pixhawk-camera-trigger-setup>
     Camera Triggering Configuration <common-camera-shutter-with-servo>
-    Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>
-    Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>
     RunCam Camera Control <common-camera-runcam>
     Gimbal / Mount Controls <common-mount-targeting>
     Camera Controls <common-camera-controls>

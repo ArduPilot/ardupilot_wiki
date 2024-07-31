@@ -148,7 +148,7 @@ Table of Contents
     MAVLink Interface <docs/mavlink-commands>
     CAN and DroneCAN/UAVCAN <docs/can-bus>
     Companion Computers <docs/companion-computers>
-    ROS/ROS2 <docs/ros>
+    ROS1/ROS2 <docs/ros>
     Lua Scripts <docs/common-lua-scripts>
     Porting to a new Flight Controller <docs/porting>
     OEM Customization <docs/common-oem-customizations>

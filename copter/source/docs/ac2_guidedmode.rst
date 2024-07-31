@@ -67,6 +67,20 @@ Instructions
    modes as "Guided". This may not be the case for other Ground Control
    Stations.
 
+Speed Control
+=============
+
+The maximum horizontal speed of the copter can be adjusted with the
+**Speed** (:ref:`WPNAV_SPEED<WPNAV_SPEED>`) parameter from the Mission Planner's
+Config/Tuning >> Copter Pids screen (see blue box above).  The default
+is 1000 meaning 10m/s.  A typical copter can reach top speeds of 10m/s ~
+13m/s (i.e. 1000 ~ 1300) before it becomes unable to both maintain
+altitude and horizontal speed.
+
+The vertical speeds up and down can similar be adjusted with the **Speed Up** (:ref:`WPNAV_SPEED_UP<WPNAV_SPEED_UP>`) and **Speed Dn** (:ref:`WPNAV_SPEED_DN<WPNAV_SPEED_DN>`) parameters. :ref:`WPNAV_ACCEL_Z<WPNAV_ACCEL_Z>` determines how fast the speed can change.
+
+Speed can also be controlled while in GUIDED mode with :ref:`MAVLink commands <common-mavlink-mission-command-messages-mav_cmd>` like :ref:`DO_CHANGE_SPEED<mav_cmd_do_change_speed>`.
+
 Guided Mode Options
 ===================
 

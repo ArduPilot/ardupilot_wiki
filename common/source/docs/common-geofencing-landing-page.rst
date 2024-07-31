@@ -26,7 +26,7 @@ General Setup
 -  Set :ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` = to the altitude limit you want (in meters). This is unavailable in Rover.
 -  Set :ref:`FENCE_MARGIN<FENCE_MARGIN>` = to the distance from the fence horizontal boundary the vehicle must maintain in order to prevent a breach.
 -  Set the :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>` as a minimum altitude breach boundary.
--  Set :ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>` = (Plane Only)to allow automatic enabling of the fence (different than :ref:`FENCE_ENABLE<FENCE_ENABLE>`) under certain vehicle conditions, such as upon arming or takeoff. A value of 0 disables this feature. :ref:`FENCE_ENABLE<FENCE_ENABLE>` is ignored if this feature is enabled.
+-  Set :ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>` = (Plane Only)to allow automatic enabling of the fence (different than :ref:`FENCE_ENABLE<FENCE_ENABLE>`) under certain vehicle conditions, such as upon arming or takeoff. A value of 0 disables this feature. :ref:`FENCE_ENABLE<FENCE_ENABLE>` is ignored if this feature is enabled. Using :ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>` = 3 (enable on ARM) is the only recommended use. "1" or "2" functions are being deprecated shortly since they can produce undesirable results in terms of containment.
 -  :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` allows returning to the nearest RALLY point (See: :ref:`common-rally-points`), if loaded, instead of HOME.
 -  Set :ref:`FENCE_TYPE<FENCE_TYPE>` = is a bitmap set to enable the various fence types: MIN or MAX altitude, simple CIRCLE tin can around HOME, or POLYGON fences. The POLYGON fences must also have been loaded via a fence list from a ground control station in order to be active. See below for detailed setup of :ref:`common-ac2_simple_geofence` and :ref:`common-polygon_fence`.
 
@@ -162,19 +162,21 @@ steps:
 An ``RCx_OPTION`` can be set via the Config/Tuning > Full Parameter List screen, for example using RC channel 7:
 
 -  Set :ref:`RC7_OPTION<RC7_OPTION>` = 11 (Fence Enable)
--  setting the switch high (i.e. PWM > 1800) will enable the fence, low
-   (under 1800) will disable the fence.
+-  setting the switch high (i.e. PWM > 1800) will enable all configured fences, low
+   (under 1800) will disable all fences.
+
+.. note:: if the Minimun Altitude fence is enabled by the switch while on the ground and disarmed, a pre-arm failure will occur preventing arming.
 
 Automatic Altitude Breach Avoidance
 ===================================
 
 For landing modes (NAV_LAND,QLAND,LAND,etc.) in Copter and Plane, the :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>` limit is automatically disabled.
 
-[wiki site="copter"]
+[site wiki="copter"]
 
 For Polygonal fences, Copter will stop increasing altitude at :ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` in Loiter, PosHold, and AltHold modes.
 [/site]
-[wiki site="plane"]
+[site wiki="plane"]
 
 When in Mode FBWB or CRUISE, Plane will attempt to limit altitude target changes by the pilot (ie using Pitch stick for climb/descent rate demand inputs) to avoid breaching a maximum or minimum altitude fence.
 [/site]
@@ -196,7 +198,7 @@ To enable Fences, go to the Mission Planner full parameter list (CONFIG->Full Pa
     :width: 100%
 
 
-[wiki site="copter"]
+[site wiki="copter"]
 
 Copter GeoFence Tab
 -------------------
@@ -222,7 +224,7 @@ Geo-fencing can be combined with any flight mode. So for a raw
 beginner, you would combine it with one of the stabilised flight modes
 . Once the pilot has gained some confidence you could combine it with ACRO mode in Copter or MANUAL mode in Plane, which gives direct control of the vehicle and allows for the most interesting aerobatic manoeuvres. 
 
-[wiki site="plane"]
+[site wiki="plane"]
 
 Stick-mixing on fence breach
 ============================

@@ -1,8 +1,8 @@
 .. _common-pixhawk-camera-trigger-setup:
 
-================================
-Camera Trigger Setup for Pixhawk
-================================
+==============================
+DIY Camera Trigger using Relay
+==============================
 
 .. image:: ../../../images/CTimage0.png
     :width: 450px

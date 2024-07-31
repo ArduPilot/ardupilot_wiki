@@ -78,7 +78,7 @@ Mission scripting, failsafe, takeoff, landing, etc.
 Aug 2010 - `the Mission Planner <https://diydrones.com/profiles/blogs/ardupilot-mega-mission-planner>`__
 is released by Michael Oborne
 
-Aug 2010 - `TradHeli support <https://vimeo.com/14135066>`__\ added by
+Aug 2010 - `TradHeli support <https://vimeo.com/14135066>`__ added by
 Randy
 
 Dec 2010 - First successful fork of ArduPilot code as `MegaPirates group extends original CopterNG code <https://diydrones.com/profiles/blogs/arducopter-ng-taken-over-by>`__
@@ -154,12 +154,9 @@ Mar 2014 - `Emlid presented Navio <https://diydrones.com/profiles/blogs/navio-ra
 Aug 2014 - `First Plane flight on Linux <https://diydrones.com/profiles/blogs/first-flight-of-ardupilot-on-linux>`__
 board (Pixhawk Fire cape)
 
-Sep 2014 - `Tridge & Canberra UAV win the Outback Challenge <https://diydrones.com/profiles/blogs/congratulations-canberra-uav-stunning-outback-challenge-win>`__
-with an ArduPilot based UAV plane (`Tridge's
-debrief <https://diydrones.com/profiles/blogs/canberrauav-outback-challenge-2014-debrief>`__).
+Sep 2014 - `Tridge & Canberra UAV win the Outback Challenge <https://diydrones.com/profiles/blogs/congratulations-canberra-uav-stunning-outback-challenge-win>`__ with an ArduPilot based UAV plane (`Tridge's debrief <https://diydrones.com/profiles/blogs/canberrauav-outback-challenge-2014-debrief>`__ ).
 
-Sep 2014 - `First Copter flight on Linux <https://diydrones.com/profiles/blogs/apm4-0-first-copter-flight>`__
- +board (Pixhawk Fire cape)
+Sep 2014 - `First Copter flight on Linux <https://diydrones.com/profiles/blogs/apm4-0-first-copter-flight>`__ +board (Pixhawk Fire cape)
 
 Oct 2014 - `DroneCode foundation <https://www.dronecode.org/>`__ is
 formed
@@ -191,7 +188,7 @@ March 2016 - Formation of the `ardupilot.org non profit organisation <https://di
 
 May 2016 - `Flirtey delivery drone (using ArduPilot) is entered into Smithsonian Air and Space Museum <https://www.smithsonianmag.com/smart-news/first-delivery-drone-united-states-lands-spot-smithsonian-180958964/>`__.
 
-Sep 2016 - Flymaple board support removed ( not actively tested or used , also lacks a maintainer see PR #4191 ).
+Sep 2016 - Flymaple board support removed (not actively tested or used, also lacks a maintainer see PR #4191).
 
 Sep 2016 - Relationship with 3DR, Chris Anderson and PX4 team lead sours as DroneCode Platinum board members outvote Silver board members to remove GPLv3 projects including ArduPilot from DroneCode.
 

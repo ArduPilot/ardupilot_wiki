@@ -26,7 +26,7 @@ Clone ArduPilot repository
     :end-before: Cloning with the GitHub GUI (Windows or MAC)
 
 
-.. note:: in case some firewalls do not allow ssh access which can cause the above submodule updates to fail, in this instance you can tell git to unilaterally use https through the following command:
+.. note:: In case some firewalls do not allow ssh access which can cause the above submodule updates to fail, in this instance, you can tell git to unilaterally use https through the following command:
 
     ::
 
@@ -39,12 +39,12 @@ Clone ArduPilot repository
 Install some required packages
 ------------------------------
 
-If you are on a debian based system (such as Ubuntu or Mint), we provide `a script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/environment_install/install-prereqs-ubuntu.sh>`__ that will do it for you. From ardupilot directory :
+If you are on a debian based system (such as Ubuntu or Mint), we provide `a script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/environment_install/install-prereqs-ubuntu.sh>`__ that will do it for you. From the cloned ardupilot directory :
 ::
 
     Tools/environment_install/install-prereqs-ubuntu.sh -y
 
-Reload the path (log-out and log-in to make permanent):
+Reload the path (log-out and log-in to make it permanent):
 
 ::
 
@@ -52,7 +52,7 @@ Reload the path (log-out and log-in to make permanent):
 
 Now you should be able to build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
-.. note:: At this point you have already installed the MAVProxy Ground Control Station (MAVProxy GCS) and are also ready to do Software In the Loop (SITL) simulations of the vehicle code. See :ref:`sitl-simulator-software-in-the-loop`  and :ref:`setting-up-sitl-on-linux`. You are ready to not only build the code, but run your build in the ArduPilot SITL simulator.
+.. note:: At this point you have already installed the MAVProxy Ground Control Station (MAVProxy GCS) and are also ready to do Software In the Loop (SITL) simulations of the vehicle code. See :ref:`sitl-simulator-software-in-the-loop`  and :ref:`setting-up-sitl-on-linux`. You are ready to not only build the code but run your build in the ArduPilot SITL simulator.
 
 
 .. youtube:: 4B8BVskH0vc
@@ -66,7 +66,7 @@ If there have been updates to some git submodules you may need to do a full clea
 
     ./waf clean
 
-that will remove the build artifacts so you can do a `build <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ from scratch
+That will remove the build artifacts so you can do a `build <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ from scratch
 
 --------------------
 
@@ -80,7 +80,7 @@ Add some directories to your search path (Facultative)
 
 .. note::
 
-    ONLY if you didn't run the install-prereqs script from previous step.
+    ONLY if you didn't run the install-prereqs script from the previous step.
 
 Add the following lines to the end of your ".bashrc" in your home
 directory (notice the . on the start of that filename. Also, this is a
@@ -103,7 +103,7 @@ Then reload your PATH by using the "dot" command in a terminal
     Do not use this if you have already use the ``install-prereqs-ubuntu.sh`` script !
 
 
-To build for a autopilot target on Linux you need the
+To build for an autopilot target on Linux you need the
 following tools and git repositories:
 
 -  The gcc-arm cross-compiler from `here <https://firmware.ardupilot.org/Tools/STM32-tools/>`__
@@ -170,6 +170,8 @@ Then add /usr/lib/ccache to the front of your $PATH
 Setup using Docker
 ==================
 
+.. note:: This is not recommended except for special cases where an isolated build environment is required. Using this setup below will prevent the use of graphical elements in SITL unless custom options are added.
+
 Clone ArduPilot repository
 --------------------------
 
@@ -188,8 +190,8 @@ Build the docker image and tag it with the name ardupilot:
 Run ArduPilot Container
 -----------------------
 The following command runs the docker container, linking your current directory with
-the ardupilot source, and launches an interactive shell inside the container. From here
-you can build ardupilot:
+the Ardupilot source, and launches an interactive shell inside the container. From here
+you can build Ardupilot:
 ::
 
     docker run --rm -it -v `pwd`:/ardupilot ardupilot:latest bash

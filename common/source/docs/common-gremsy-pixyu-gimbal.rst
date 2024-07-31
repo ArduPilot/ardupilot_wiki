@@ -19,6 +19,8 @@ Gremsy `Mio <https://gremsy.com/products/mio>`__, `Pixy F <https://gremsy.com/pr
 
    PixyWE gimbals are not supported.
 
+   ZIO gimbals cannot be used as a secondary mount (e.g. "Connecting Two Gimbals" below does not work with the ZIO)
+
 Where to Buy
 ============
 

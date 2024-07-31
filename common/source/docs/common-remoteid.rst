@@ -19,7 +19,7 @@ There are basically two differing Remote ID requirements, although specifics var
 
 For the ones users will be adding, there are variations on whether the device gets GPS position information via an integrated GPS or from the autopilot using its position and other information for its GPS. If connected to the autopilot for position and other information via MAVLink, either proprietary firmware or firmware conforming to the OpenDroneID standard is used to implement Remote ID(see following section) can be used. Power can be supplied either from the vehicle (MAVLink connection or to the vehicle's power), or via a small rechargeable battery (completely self contained units which can be transferred between vehicles easily).
 
-Avaliable Devices
+Available Devices
 =================
 
 .. note:: this list will periodically be updated and may not contain all devices at any given time.
@@ -118,4 +118,4 @@ If you know of other available devices please `add a comment in this issue <http
 Video Tutorial for OEMs Adding Remote ID to ArduPilot Systems
 =============================================================
 
-.. youtube:: Az8v4Kx4hS0
+.. youtube:: VhCXEKIkrjo

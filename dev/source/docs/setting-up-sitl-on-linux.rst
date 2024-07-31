@@ -30,26 +30,27 @@ Start SITL simulator
 --------------------
 
 To start the simulator first change directory to the vehicle directory.
-For example, for the multicopter code change to **ardupilot/ArduCopter**:
+For examples below, for the Multicopter code change to **ardupilot/ArduCopter**:
 
 ::
 
    cd ardupilot/ArduCopter
 
+.. note: see the option in the startup command below to start SITL in the base **ardupilot** directoty if desired.
+
 Then start the simulator using **sim_vehicle.py**. The first time you
-run it you should use the -w option to wipe the virtual EEPROM and load
-the right default parameters for your vehicle.
+run it, you should use the ``-w`` option to wipe the virtual EEPROM of user changed parameters and load
+the default parameters for your vehicle.
 
 ::
 
-    sim_vehicle.py -w
+   sim_vehicle.py --console --map -w
 
-After the default parameters are loaded you can start the simulator
-normally.  First kill the sim_vehicle.py you are running using Ctrl-C.  Then:
-
+Alternatively, if not starting in the ArduCopter directory, but at the base **ardupilot** directoty:
 ::
 
-    sim_vehicle.py --console --map
+   sim_vehicle.py -v copter --console --map -w
+
 
 .. tip::
 

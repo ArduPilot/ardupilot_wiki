@@ -23,11 +23,13 @@ Takeoff
 
 The vehicle will climb straight up from its current location to the
 altitude specified (in meters). This should be the first command of
-nearly all missions. If the mission is begun while the copter is already
+nearly all missions.
+
+If the mission is begun while the copter is already
 flying, the vehicle will climb straight up to the specified altitude, if
 the vehicle is already above the specified altitude the takeoff command
 will be ignored and the mission will move onto the next command
-immediately.
+immediately.  In this case any "DO" commands immediately following the TAKEOFF will also be ignored.
 
 Waypoint
 ~~~~~~~~

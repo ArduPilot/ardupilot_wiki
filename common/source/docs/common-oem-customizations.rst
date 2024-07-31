@@ -1,4 +1,4 @@
-.. _common-oem-customization:
+.. _common-oem-customizations:
 
 =================
 OEM Customization
@@ -10,7 +10,7 @@ ArduPilot provides several ways for an OEM to provide firmware on their products
 - Ability to provide Lua scripts in ROM for special functions without the end-user having to load them on the SD card. Read more about Lua scripting in ArduPilot :ref:`here<common-lua-scripts>`.
 - Ability to change the firmware string displayed to the user.
 - Ability to include pictures and informational files in available free flash space.
-- Ability to change parameters and mark them as read-only so that users cannot change them using :ref:`APJ Tools<dev:apjtools-intro>`.
+- Ability to change parameters and mark them as read-only so that users cannot change them using :ref:`APJ Tools<dev:apjtools-intro>`. (as of version 4.5 firmware, this is no longer available)
 
 Customization Steps
 ===================
@@ -66,6 +66,14 @@ This section assumes that the OEM has set up the build environment (:ref:`buildi
 Alternative To Customizing hwdef.dat
 ------------------------------------
 
-Instead of creating a separate branch and modifying the hwdef file, you can also insert Lua scripts or even informational files into the ROMFS of the build. Simply go to the local ardupilot repository's "build" folder and create a sub-folder named "ROMFS_custom". Place your LUA scripts in a sub-folder in this directory, named "scripts" (i.e. the path ``ardupilot/ROMFS_custom/scripts``). You can have other sub-folders for informational files and these will be included and viewable when examining the @ROMFS folder with MAVFtp.
+Instead of creating a separate branch and modifying the hwdef file,
+you can also insert Lua scripts or even informational files into the
+ROMFS of the build. Simply go to the top level of your ArduPilot git
+checkout and create a sub-folder named "ROMFS_custom" in the root of
+the source tree. Place your LUA scripts in a sub-folder in this
+directory, named "scripts" (i.e. the path
+``ardupilot/ROMFS_custom/scripts``). You can have other sub-folders
+for informational files and these will be included and viewable when
+examining the @ROMFS folder with MAVFtp.
 
 [copywiki destination="plane,copter,rover,dev"]

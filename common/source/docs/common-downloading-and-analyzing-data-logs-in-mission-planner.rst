@@ -5,7 +5,7 @@ Downloading and Analyzing Data Logs in Mission Planner
 ======================================================
 
 Dataflash logs are stored on the autopilot
-and can be download after a flight. By default, they are created after you first
+and can be downloaded after a flight. By default, they are created after you first
 arm the vehicle. This topic explains how to configure and access
 Dataflash logs.
 
@@ -372,7 +372,8 @@ a mission):**
 +---------------------+----------------------------------------------------------------------------------------+
 | Field               | Description                                                                            |
 +---------------------+----------------------------------------------------------------------------------------+
-| MagX, MagY. MagZ    | Raw magnetic field values for x, y and z axis                                          |
+| MagX, MagY, MagZ    | Raw magnetic field values for x, y, and z axis. These are magnetometer readings with   |
+|                     | calibration applied, not raw magnetometer readings.                                    |
 +---------------------+----------------------------------------------------------------------------------------+
 | OfsX, OfsY, OfsZ    | Raw magnetic offsets (will only change if COMPASS_LEARN parameter is 1)                |
 +---------------------+----------------------------------------------------------------------------------------+

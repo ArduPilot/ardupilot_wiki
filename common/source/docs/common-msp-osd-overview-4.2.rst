@@ -137,7 +137,7 @@ DisplayPort OSD
 ===============
 DisplayPort, is an MSP protocol extension that allows an autopilot to remotely draw text on compatible external OSDs. DisplayPort, is an MSP protocol extension that allows to remotely draw text characters/icons on compatible external OSDs and allows High Definition (HD) as well as Standard Definition (SD) displays.
 
-HDZero, Walksnail, and DJI with WTF-OSD modifications are capapable of DisplayPort operation.
+HDZero, Walksnail, and DJI with WTF-OSD modifications are capable of DisplayPort operation.
 
 Features
 --------
@@ -208,13 +208,20 @@ Each OSD panel item uses a set of three variables to be set:
 
 .. _display_resolution:
 
-Display Resolution
-------------------
+Display Resolution and Fonts
+----------------------------
 When using DisplayPort, you can select to display either the SD or HD fonts using ``OSDx_TXT_RES`` for each OSD screen enabled. 0 = SD (30x16), 1 = HD (50x18), 3 = HD (60x22).
 
 For HDZero you should set ``OSDx_TXT_RES`` to 0 or 1 for each enabled OSD screen. If you set it to 2, the text displayed will be garbled.
 
 The SD font's positions are set on a 30x16 X/Y position grid as normal, the HD uses a (1) 50x18 or (2) 60x22 grid. The 50x18 grid has margins at the top/bottom/left/right of the screen before the grid begins.
+
+ArduPilot compatible fonts for WTFOS modified DJI goggles can be found `**HERE** <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts/HDFonts/WTFOS-DJI>`__ .
+
+Walksnail/Avatar HD Goggles can select which font they use via a goggle menu. A set of different style fonts that are ArduPilot compatible can be found `**HERE** <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts/HDFonts/WalkSnail>`__ . The following image shows the font styles included.
+
+.. image:: ../../../images/font_maps.png
+    :target: ../_images/font_maps.png
 
 Screens and screen switching
 ----------------------------

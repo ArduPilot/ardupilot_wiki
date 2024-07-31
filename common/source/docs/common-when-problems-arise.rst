@@ -33,6 +33,20 @@ Vehicle Will Not Arm
 
 See :ref:`common-prearm-safety-checks`. Do not disable arming checks except for bench setup testing. Doing so puts your vehicle at risk for a crash. Always track down the reason why a pre-arm check failure is occurring and correct it before operating the vehicle!
 
+Interference issues on Electric Vehicles
+========================================
+
+Routing high current carrying wiring for motors in close proximity to ESCs or Servo Control wiring can result in interference with those peripherals controls due to electromagnetic coupling. Below is a video of aileron servos having their operation disrupted due to induced noise from adjacent motor high current wiring:
+
+.. youtube:: kY8VCUVSCf4
+
+.. image:: ../../../images/EMI.png
+
+This can be resolved by separating the power conducting and the signaling wiring by several inches or by using a more noise tolerant servo such as DroneCAN servos.
+
+See also :ref:`common-esc-issues` for similar issues with ESCs.
+
+
 [site wiki="copter"]
 
 

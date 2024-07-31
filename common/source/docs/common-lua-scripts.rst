@@ -38,7 +38,7 @@ Getting Started
 
 - **Applets** which are scripts that require no user editing before use, can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ for the "latest" firmware branch, and may require code extensions included in that branch to function properly. Each of these has a .md file of the same name detailing its capabilities, use, and setup. For example, there is a script to allow a user to change a SmartAudio capable video transmitter's output power level from a transmitter channel and set its power-up value via parameter. See :ref:`common-scripting-applets`.
 
-- **Drivers** Lua scripts can actually provide hardware drivers for new peripheral hardware that is not directly supported in the ArduPilot firmware, such a new EFIs or Gimbals. Examples of these can be found `here <https://github.com/ArduPilot/ardupilot/tree/ArduPlane-stable/libraries/AP_Scripting/drivers>`__ for the "latest" firmware branch, and may require code extensions included in that branch to function properly.
+- **Drivers** Lua scripts can actually provide hardware drivers for new peripheral hardware that is not directly supported in the ArduPilot firmware, such a new EFIs or Gimbals. Examples of these can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/drivers>`__ for the "latest" firmware branch, and may require code extensions included in that branch to function properly.
 
 .. note:: To download from the github locations, first click the script name, then select "raw" in upper right corner, then right mouse click to "Save Page as" a text file with the ".lua" file extension
 
@@ -129,7 +129,11 @@ API Documentation
 
 The API documentation described here is not a complete list, but rather some examples.  For a **full list of the methods** currently available, the LUA auto-generated document file is a complete list, It can be found `here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/docs/docs.lua>`__ and lists all the available bindings and their parameters.
 
-.. note:: If you use VScode for your editor, by installing `this <https://marketplace.visualstudio.com/items?itemName=sumneko.lua>`__ lua extension (version 2.4.1 only as of now), you can get this information integrated as suggestions and autocomplete in the editor. 
+.. note::
+  If you use VScode for your editor, by installing `this <https://marketplace.visualstudio.com/items?itemName=sumneko.lua>`__ lua extension (version 2.4.1 only as of now), you can get this information integrated as suggestions and autocomplete in the editor.
+
+  | If you are still getting "Undefined global" errors and no completions, you may need to set path in your local copy of ``ardupilot`` repository in the `settings <https://code.visualstudio.com/docs/getstarted/settings>`_, for example:
+  | ``"Lua.workspace.library": [ "~/repos/ardupilot/libraries/AP_Scripting/docs" ]``
 
 For complete information on how a binding works the source can be found in the `binding generator descriptions <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/generator/description/bindings.desc>`_ .
 
@@ -532,6 +536,7 @@ To give Lua scripts access to more features of ArduPilot the API can be extended
 
 - Find the method or function you would like to expose to Lua. For example if you wanted to expose an additional feature of AHRS you would first find the method within `libraries/AP_AHRS/AP_AHRS.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_AHRS/AP_AHRS.h>`__. This can be an already existing method (function) or a method (function) newly added to the code.
 - Edit the `libraries/AP_Scripting/generator/description/bindings.desc <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/generator/description/bindings.desc>`__ and add a new line in the appropriate section for the method, or add a new section if a new class shall be added by following the examples of the other sections.
+- Add the method or function to `libraries/AP_Scripting/docs/docs.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/docs/docs.lua>`__.
 - For releases before Copter/Rover/Plane 4.1: Open a command line prompt and cd to the `/libraries/AP_Scripting/generator <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/generator>`__ directory and type "make run". 
 - For 4.1 onwards, clean the distribution (./waf distclean) and restart compilation from there as usual.
 

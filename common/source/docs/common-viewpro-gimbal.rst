@@ -88,6 +88,22 @@ To test video streaming works using a Windows PC, connect the camera's ethernet 
 - Open VLC media player, Select Media, Open Network Stream, Network and enter "rtsp://192.168.2.119:554"
 - Once completed testing, restore your internet by reverting the PC's "IP assignment" to "Automatic (DHCP)"
 
+Video can also be streamed to QGroundControl
+
+- Open a web browser and enter the URL, "http://192.168.2.119:8554/index.html" to open the Viewpro System settings
+- Change the "Stream Type" to "h.265" as shown below
+
+.. image:: ../../../images/viewpro-config-for-qgc44.png
+    :target: ../_images/viewpro-config-for-qgc44.png
+    :width: 450px
+
+- Open QGC's Application Settings, General, and set Video Settings, Source to RTSP Video Stream
+- Set RTSP URL to "rtsp://192.168.2.119:554" as shown below
+
+.. image:: ../../../images/viewpro-qgc-video.png
+    :target: ../_images/viewpro-qgc-video.png
+    :width: 450px
+
 Downloading Images and Videos
 =============================
 

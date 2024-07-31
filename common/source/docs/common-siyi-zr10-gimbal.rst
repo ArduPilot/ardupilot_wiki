@@ -2,9 +2,9 @@
 
 [copywiki destination="plane,copter,rover"]
 
-==============================
-SIYI ZR10, ZR30 and A8 Gimbals
-==============================
+==========================================
+SIYI ZR10, ZR30, ZT6, ZT30, and A8 Gimbals
+==========================================
 
 The `SIYI ZR10 <https://shop.siyi.biz/products/siyi-zr10>`__, `ZR30 <https://shop.siyi.biz/products/siyi-zr30>`__ and `A8 <https://shop.siyi.biz/products/siyi-a8-mini>`__  are 3-axis gimbals and camera which can communicate with ArduPilot using a custom serial protocol.
 
@@ -79,6 +79,13 @@ Configuring the Gimbal
 
 .. image:: ../../../images/siyi-gimbal-firmversion.png
     :target: ../_images/siyi-gimbal-firmversion.png
+
+Ethernet Connectivity
+---------------------
+
+Instead of using a UART serial connection to control the gimbal, an Ethernet virtual serial connection may also be used, as well as transmitting a video stream from the camera.
+
+An example of the setup of the gimbal in a networked ArduPilot vehicle system is detailed in :ref:`common-ethernet-vehicle`
 
 Control and Testing
 -------------------

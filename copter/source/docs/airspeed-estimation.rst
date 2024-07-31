@@ -6,9 +6,7 @@ Windspeed Estimation and Baro Compensation
 
 ArduPilot's :ref:`EKF<common-apm-navigation-extended-kalman-filter-overview>` can estimate the windspeed a multicopter is flying in without requiring an airspeed sensor.  This can be useful information for the pilot but it can also be used to compensate for wind related barometer interference.  This interference can occur on vehicles where the autopilot is exposed to the open air and can lead to the vehicle climbing or descending a few meters especialy after slowing down from fast-forward flight.
 
-The mechanism and setup are explained below.
-
-.. youtube:: xVVtvVuZGQE
+.. youtube:: Xq-ecwgFKzA
 
 Calculate the Body Drag Coefficient
 -----------------------------------
@@ -111,3 +109,7 @@ Enable the compensation and copy the calculated position error coefficients into
 - :ref:`BARO1_WCF_LFT <BARO1_WCF_LFT>`: Pressure error coefficient in positive Y direction (left)
 - :ref:`BARO1_WCF_UP<BARO1_WCF_UP>`: Pressure error coefficient in positive Z direction (climbing)
 - :ref:`BARO1_WCF_DN<BARO1_WCF_DN>`: Pressure error coefficient in negative Z direction (descending)
+
+The mechanism and setup are explained below.
+
+.. youtube:: xVVtvVuZGQE

@@ -22,6 +22,8 @@ Overview
 
 AUTO mode navigates between each waypoint in a straight line and as it approaches each waypoint follows a smooth curving path towards the next waypoint (S-Curve). It controls the path as it approaches a waypoint to be within the WPNAV_RADIUS of each waypoint. The speed is lowered below :ref:`WPNAV_SPEED<WPNAV_SPEED>`, as necessary, to keep the path within the set corner lateral acceleration limit parameter (:ref:`WPNAV_ACCEL_C<WPNAV_ACCEL_C>`).
 
+.. note:: this smooth curving path as it changes direction to the next waypoint will not occur if the next naviation mission item after the waypoint is anything other than a normal waypoint, ie LAND, LOITER_TURNS, etc., etc. In these cases the copter will approach the waypoint, stop, and then proceed to the next navigation waypoint instead of smoothly curving in front of it and proceeding to that next navigation waypoint. Also, small :ref:`WPNAV_RADIUS<WPNAV_RADIUS>` values will require that the curve be very small, effectively appearing like the non-S-Curve behavior explained above.
+
 AUTO mode incorporates the altitude control from :ref:`AltHold mode <altholdmode>` and position
 control from :ref:`Loiter mode <loiter-mode>` and should not
 be attempted before these modes are flying well.  All the same
@@ -95,7 +97,7 @@ control from :ref:`Loiter mode <loiter-mode>`.
 The maximum horizontal speed of the copter can be adjusted with the
 **Speed** (:ref:`WPNAV_SPEED<WPNAV_SPEED>`) parameter from the Mission Planner's
 Config/Tuning >> Copter Pids screen (see blue box above).  The default
-is 500 meaning 5m/s.  A typical copter can reach top speeds of 10m/s ~
+is 1000 meaning 10m/s.  A typical copter can reach top speeds of 10m/s ~
 13m/s (i.e. 1000 ~ 1300) before it becomes unable to both maintain
 altitude and horizontal speed.
 
