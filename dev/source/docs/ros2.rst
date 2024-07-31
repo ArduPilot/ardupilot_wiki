@@ -15,7 +15,8 @@ ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka R
 Prerequisites
 =============
 
-- Learn to use ArduPilot first by following the relevant wiki for `Rover <https://ardupilot.org/rover/index.html>`__, `Copter <https://ardupilot.org/copter/index.html>`__ or `Plane <https://ardupilot.org/plane/index.html>`__. In particular, make sure the vehicle works well in Manual and Autonomous modes like Guided and Auto before trying to use ROS.
+- Learn to use ArduPilot first by following the relevant wiki for `Rover <https://ardupilot.org/rover/index.html>`__, `Copter <https://ardupilot.org/copter/index.html>`__ or `Plane <https://ardupilot.org/plane/index.html>`__.
+- In particular, make sure the vehicle works well in Manual and Autonomous modes like Guided and Auto before trying to use ROS.
 - Learn how to use ROS 2 by reading the `beginner tutorials <https://docs.ros.org/en/humble/Tutorials.html>`__.  In the case of a problem with ROS, it is best to ask on ROS community forums first (or google your error).
 
     We are keen to improve ArduPilot's support of ROS 2 so if you find issues (such as commands that do not seem to be supported), please report them in the `ArduPilot issues list <https://github.com/ArduPilot/ardupilot/issues>`__. A maintainer can add the `ROS` tag.
@@ -23,25 +24,25 @@ Prerequisites
 First, make sure that you have successfully installed `ROS 2 Humble <https://docs.ros.org/en/humble/Installation.html>`__ .
 Currently, ROS 2 Humble is the only version supported.
 
-Create a `ROS 2 workspace <https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#id4>`__.
-This page assumes that your workspace is named `ros2_ws`.
+You are about to create a new `ROS 2 workspace <https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#id4>`__.
+This page assumes that your workspace is named `ros2_ws` in your home directory, but feel free to adjust to your preferred location.
 
-Before anything else, make sure that you have `sourced your ROS 2 environment <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#source-the-setup-files>`__ and check if it is `configured correctly <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#check-environment-variables>`__.
-
-Follow the `Installing Build Dependencies <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_DDS#installing-build-dependencies>`__ section of `AP_DDS`'s README
-to install MicroXRCEDDSGen.
+Before anything else, make sure that you have `sourced your ROS 2 environment <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#source-the-setup-files>`__
+and check if it is `configured correctly <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#check-environment-variables>`__.
 
 Finally, ensure you have `set up your ArduPilot build environment <https://ardupilot.org/dev/docs/building-the-code.html#setting-up-the-build-environment>`__.
 
 Installation (Ubuntu)
 =====================
 
-To make installation easy, we will install the required packages using `vcs` and a `ros2.repos` files:
+To make installation easy, we will clone the required repositories using `vcs` and a `ros2.repos` files:
 
 .. code-block:: bash
 
     cd ~/ros2_ws
     vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos src
+
+This will take a few minutes to clone all the repositories your first time.
 
 Now update all dependencies:
 
@@ -52,9 +53,8 @@ Now update all dependencies:
     rosdep update
     source /opt/ros/humble/setup.bash
     rosdep install --from-paths src --ignore-src
-    # Ignore the rosdep warnings at the end if any
 
-Installing build dependencies:
+Installing the `MicroXRCEDDSGen` build dependency:
 
 .. code-block:: bash
     
@@ -103,6 +103,13 @@ If you'd like to test your installation, run:
     source ./install/setup.bash
     colcon test --packages-select ardupilot_dds_tests
     colcon test-result --all --verbose
+
+While `colcon` provides a convenient way for building multiple repositories in the correct order,
+it hides all of the `./waf` options that ArduPilot developers are familiar with.
+Most `ROS` packages written in C++ use a `CMake` build system, but ArduPilot uses `waf` and
+has been wrapped by `CMake`.
+If you would like all the `waf` options exposed, consider upvoting this
+`issue. <https://github.com/ArduPilot/ardupilot/issues/27714>`__
 
 
 Installation (MacOS)
