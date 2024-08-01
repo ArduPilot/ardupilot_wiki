@@ -6,15 +6,31 @@ ROS 2 with SITL
 
 Once ROS2 is correctly :ref:`installed <ros2>`, and SITL is also :ref:`installed <sitl-simulator-software-in-the-loop>`, source your workspace and launch ArduPilot SITL with ROS 2!
 
-.. code-block:: bash
+You will need to run this command on every new shell you open to have access to the ROS 2 commands, like so:
 
-    source /opt/ros/humble/setup.bash
-    cd ~/ros2_ws/
-    colcon build --packages-up-to ardupilot_sitl
-    source ~/ros2_ws/install/setup.bash
-    # ArduPilot 4.5
-    ros2 launch ardupilot_sitl sitl_dds_udp.launch.py transport:=udp4 refs:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/dds_xrce_profile.xml synthetic_clock:=True wipe:=False model:=quad speedup:=1 slave:=0 instance:=0 defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm sim_address:=127.0.0.1 master:=tcp:127.0.0.1:5760 sitl:=127.0.0.1:5501
-    # ArduPilot 4.6 removed the refs argument
+.. tabs::
+
+   .. group-tab:: ArduPilot 4.5
+
+      .. code-block:: bash
+
+        source /opt/ros/humble/setup.bash
+        cd ~/ros2_ws/
+        colcon build --packages-up-to ardupilot_sitl
+        source install/setup.bash
+        ros2 launch ardupilot_sitl sitl_dds_udp.launch.py transport:=udp4 refs:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/dds_xrce_profile.xml synthetic_clock:=True wipe:=False model:=quad speedup:=1 slave:=0 instance:=0 defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm sim_address:=127.0.0.1 master:=tcp:127.0.0.1:5760 sitl:=127.0.0.1:5501
+
+
+   .. group-tab:: ArduPilot 4.6 and later
+
+      .. code-block:: bash
+
+        source /opt/ros/humble/setup.bash
+        cd ~/ros2_ws/
+        colcon build --packages-up-to ardupilot_sitl
+        source install/setup.bash
+        ros2 launch ardupilot_sitl sitl_dds_udp.launch.py transport:=udp4 synthetic_clock:=True wipe:=False model:=quad speedup:=1 slave:=0 instance:=0 defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm sim_address:=127.0.0.1 master:=tcp:127.0.0.1:5760 sitl:=127.0.0.1:5501
+
 
 
 For more information refer to `ardupilot/Tools/ros2/README.md <https://github.com/ArduPilot/ardupilot/tree/master/Tools/ros2#readme>`__.
