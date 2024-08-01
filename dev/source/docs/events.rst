@@ -1,7 +1,7 @@
 .. _events:
     
 ===============
-Events for 2023
+Events for 2024
 ===============
 
 This is a list of events where ArduPilot developers and/or their `Partners <https://ardupilot.org/about/Partners>`__ can be found
@@ -9,11 +9,12 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
-- Mar 31st ~ Apr 2nd 2023: Developer Un-conference in Canberra, Australia (`discussion <https://discuss.ardupilot.org/t/ardupilot-developer-conference-2023/91558>`__)
+- Oct 25th ~ Oct 27th 2024: Developer Un-conference in Kaga, Japan (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-oct-25th-27-2024-in-kaga-japan/119429>`__)
 
 Past Events
 -----------
 
+- Mar 31st ~ Apr 2nd 2023: Developer Un-conference in Canberra, Australia (`discussion <https://discuss.ardupilot.org/t/ardupilot-developer-conference-2023/91558>`__)
 - Apr 8th ~ 10th 2022: Developer Un-conference in Canberra, Australia (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-2022>`__)
 - Apr 9th ~ 11th 2021: Developer Un-conference (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-2021/67561>`__)
 - Mar 27th ~ 29th 2020: Developer Un-conference in Canberra, Australia (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-march-2020/48633>`__)
