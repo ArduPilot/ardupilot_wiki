@@ -23,7 +23,9 @@ the wiki.
     History of ArduPilot <common-history-of-ardupilot>
     Partners <common-partners>
     Partners Program <common-partners-program>
+[site wiki="plane, copter, rover, sub, blimp"]
     Ready-To-Use vehicles <common-rtf>
+[/site]
     Stores <common-stores>
     Top Contributors <common-team>
 [site wiki="plane, copter, rover"]    
@@ -56,4 +58,4 @@ the wiki.
 
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,dev,antennatracker,mavproxy,ardupilot"]
+[copywiki destination="copter,plane,rover,blimp,planner,planner2,dev,antennatracker,mavproxy,ardupilot"]

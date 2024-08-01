@@ -35,3 +35,4 @@ Getting more info
    Complete log message list <docs/logmessages>
    Simulation<docs/simulation>
    Upcoming Features <docs/common-master-features>
+   docs/common-appendix

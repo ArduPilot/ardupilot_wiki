@@ -154,7 +154,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             <div class="line">ArduPilot Initiative provides tailored services to professional</div>
             <div class="line">and commercial users of ArduPilot. Services include log analysis,</div>
             <div class="line">new features, integrating sensors/payloads, developing hardware</div>
-            <div class="line">and tuning assitance</div>
+            <div class="line">and tuning assistance</div>
             </div>
         </td>
     </tr>
@@ -225,7 +225,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
-	    <tr class="row-odd">
+        <tr class="row-odd">
         <td><center><a class="first last reference external image-reference" href="https://www.Event38.com/"><img alt="Event 38 Unmanned Systems" src="../_images/Event38.png" style="width: 90px;" /></a><br/><br/>USA</center></td>
         <td><div class="first last line-block">
             <div class="line">Event38 Unmanned Systems, <a href="mailto:help@event38.com" target="_top">help@event38.com</a></div>
@@ -234,8 +234,8 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             <div class="line">Customizations of any part of ArduPilot code</div>
             <div class="line">Airframe design and manufacturing</div>
             <div class="line">Systems integration</div>
-			<div class="line">Aircraft Tuning</div>
-			<div class="line">Companion Computers and offboard navigation</div>
+            <div class="line">Aircraft Tuning</div>
+            <div class="line">Companion Computers and offboard navigation</div>
             </div>
         </td>
     </tr>
@@ -381,4 +381,4 @@ Fleet Management Systems
 - `Drone LogBook <https://www.dronelogbook.com/hp/1/index.html>`__
 - `flyfreely <https://flyfreely.io/>`__
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="copter,plane,rover,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

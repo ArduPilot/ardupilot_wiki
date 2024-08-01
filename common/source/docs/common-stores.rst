@@ -42,4 +42,4 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 
 The `ArduPilot Swag store is here <https://www.redbubble.com/people/ardupilot/shop?asc=u>`__.
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="copter,plane,rover,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

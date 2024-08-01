@@ -64,9 +64,11 @@ VTOL/QuadPlanes from Partners
 * `FlyDragonDroneTech - FDG30 <https://www.droneassemble.com/product/vtol-uav-6-hours-endurance-with-1kg-payload-for-survey-serveillance/>`__
 * `FlyDragonDroneTech - FDG50F <https://www.droneassemble.com/product/hybrid-vtol-uav-7-hours-endurance-with-10kgs-payload/>`__
 * :ref:`Holybro Swan-K1 <common-Swan-K1>`
+* :ref:`MakeFLyEasy - Fighter Hand Throw <common-makeflyeasy-fighter-hand-throw>`
 * :ref:`MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>`
 * `MakeFLyEasy - Freeman 2300 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_3>`__
 * `MakeFLyEasy - Freeman 2100 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_2>`__
+* :ref:`MakeFLyEasy - Striver Mini Hand Throw <common-makeflyeasy-striver-mini-hand-throw>`
 * :ref:`MakeFLyEasy - Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>`
 
 Rovers from Partners
@@ -105,4 +107,12 @@ Vehicles from Non-Partners
 
    If you are a manufacturer of a RTF vehicle based on ArduPilot and do not appear in this list, please get in touch through one of the methods listed on our :ref:`Contact Us page <common-contact-us>`.
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+.. toctree::
+   :hidden:
+
+    MakeFLyEasy Fighter Hand Throw <common-makeflyeasy-fighter-hand-throw>
+    MakeFLyEasy Fighter VTOL <common-makeflyeasy-fighter-vtol>
+    MakeFLyEasy Striver Mini Hand Throw <common-makeflyeasy-striver-mini-hand-throw>
+    MakeFLyEasy Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>
+
+[copywiki destination="plane,copter,rover,blimp"]

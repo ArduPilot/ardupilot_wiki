@@ -1,4 +1,4 @@
-.. common-abbreviations:
+.. _common-abbreviations:
 
 ====================
 Common Abbreviations
@@ -30,4 +30,4 @@ TECS    Total Energy Control System (altitude/speed controller for Plane)
 WP      Waypoint
 ======  =====================================================================
 
-[copywiki destination="copter,plane,rover,planner,planner2,dev,antennatracker,mavproxy,ardupilot"]
+[copywiki destination="copter,plane,rover,blimp,planner,planner2,dev,antennatracker,mavproxy,ardupilot"]

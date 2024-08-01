@@ -45,4 +45,4 @@ DroneKit
 - `DroneKit for Android Gitter chat <https://gitter.im/dronekit/dronekit-android>`__
 - `DroneKit for Python Gitter chat <https://gitter.im/dronekit/dronekit-python>`__
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="copter,plane,rover,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

@@ -241,4 +241,4 @@ Dec 2019 - Copter 4.0.0 with RCx_OPTION support, LUA Scripting support, new mode
    for a more complete list of contributors to the project.
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="copter,plane,rover,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
