@@ -18,7 +18,7 @@ ArduPilot autopilots are compatible with the following receiver output protocols
     #. PPM-Sum receivers
     #. SBus receivers 
     #. Fast SBus (from DJI HDL video/RC systems)
-    #. IBUS receivers
+    #. i-BUS receivers
     #. :ref:`common-FPort-receivers`
     #. :ref:`Spektrum SRXL2,DSM, DSM2, and DSM-X Satellite receivers<common-spektrum-rc>`
     #. :ref:`Multiplex SRXL version 1 and version 2 receivers<common-srxl-receivers>`
@@ -37,8 +37,8 @@ Some protocols, most notably SRXL2, CRSF, and ELRS, require a full UART connecti
 
 In addition other protocols that also provide telemetry, like FPort, would generally require a bi-directional half-duplex connection in order to obtain telemetry. For these protocols the TX output of the UART should be connected to the serial input of the receiver. It is also possible on F7 and H7 boards to connect to the UART RX input with some additional configuration.
 
-PPM-Sum/SBus/IBus
------------------
+PPM-Sum/SBus/i-BUS
+------------------
 
 These receivers are usually connected to the RCin or SBUS input pin on the autopilot.
 
@@ -54,7 +54,7 @@ To connect a PPM-Sum receiver or an SBus receiver to a Pixhawk, for example, plu
 
 
 DSM/DSM2/DSM-X/SRXL/SUM-D
---------------------------
+-------------------------
 
 For autopilots that do not provide a separate ``DSM`` input, these can be connected as above. However, for performance reasons on autopilots that use an IOMCU (The Pixhawk/Cube family), the autopilot's ``DSM`` input connection is highly recommended.
 
@@ -134,11 +134,11 @@ Below is a table with some commonly  available systems showing these elements. N
 +=======================+======+==========+============+===========+==============+========+
 |DragonLink             |Long  |  Bi-dir  |     56K    |via MTP/LUA|PPM_SUM/SBUS  |    1   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
-|CRSF                   |Long  |  Bi-Dir  |   Variable |  yes      |SBUS/CRSF     |    3   |
+|CRSF                   |Long  |  Bi-dir  |   Variable |   yes     |SBUS/CRSF     |    3   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |ELRS                   |Long  |  Yes     |     -      |   -       |CRSF          |    4   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
-|FLYSKY                 |Short |    No    |     -      |   -       |  IBus        |        |
+|Flysky                 |Short |  Yes     |     -      |   yes     | i-BUS/SBUS   |    7   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |FrSky  X series        |Short |  Bi-dir  |    Medium  |   yes     | PPM-SUM/SBUS/|    2   |
 |                       |      |          |            |           | FPort        |        |
@@ -153,7 +153,7 @@ Below is a table with some commonly  available systems showing these elements. N
 |IRC Ghost              |Medium| Vendor   |            |   yes     | IRC Ghost    |        |
 |                       |      | Specific |            |           |              |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
-|mLRS                   |Long  |  Bi-Dir  |  12K - 91K |via LUA    |SBUS/CRSF     |    5   |
+|mLRS                   |Long  |  Bi-dir  |  12K - 91K |via LUA    |SBUS/CRSF     |    5   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Multiplex              |Short |     No   |      -     |    -      |   SRXL       |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
@@ -174,6 +174,8 @@ Note 5: The mLRS project is firmware designed specifically to carry both RC and 
 
 Note 6: Vendor Specific Telem means that they accomodate sensor additions to the vehicle and can display the information on certain Vendor specific TXs but do not send ArduPilot telemetry from the vehicle to ArduPilot compatible GCS or OpenTX display scripts.
 
+Note 7: The receiver must support i-BUS telemetry (look for a SENS port on the receiver or check the product specifications).
+
 Links to Radio Control Systems
 ==============================
 
@@ -182,7 +184,7 @@ Without integrated telemetry:
 .. toctree::
     :maxdepth: 1
 
-    FLYSKY <common-flysky-rc>
+    Flysky (no SENS port) <common-flysky-rc>
     Futaba <common-futaba-rc>
     Spektrum <common-spektrum-rc>
 
@@ -193,6 +195,7 @@ With integrated telemetry:
     :maxdepth: 1
 
     DragonLink <common-dragonlink-rc>
+    Flysky (with SENS port) <common-flysky-rc>
     FRSky <common-frsky-rc>
     Graupner (HOTT) <common-graupner-rc>
     Herelink RC/Telemetry/HD Video System <common-herelink>
@@ -214,7 +217,7 @@ Its difficult to make a recommendations since there is such a wide spectrum of c
 
 In Europe, Multiplex and Graupner are well established systems and comply with EU radiation recommendations (as do many other brands as an option).
 
-FLYSKY produces very low cost, low end systems.
+Flysky produces very low cost, low end systems.
 
 FRSky and Spektrum enjoy the largest established bases with Spektrum dominant in park flyer and entry level RC systems. FRSky has telemetry capabilities and utilizes `OpenTX <https://www.open-tx.org/>`__ which is very flexible and is continually adding features in the firmware.
 

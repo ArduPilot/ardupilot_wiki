@@ -27,6 +27,7 @@ Short Range (<10KM)
     ESP8266 wifi telemetry <common-esp8266-telemetry>
     ESP32 wifi telemetry <common-esp32-telemetry>
     FrSky telemetry <common-frsky-telemetry>
+    i-BUS telemetry <common-ibus-telemetry>
     Yaapu Bi-Directional Telemetry GCS <common-yaapu-gcs>
     HOTT telemetry <common-hott-telemetry>
     MSP (MultiWii Serial Protocol)(version 4.1) <common-msp-overview>
