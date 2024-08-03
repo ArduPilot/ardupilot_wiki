@@ -25,8 +25,8 @@ There are 3 common causes of a non-linear thrust curve.
 Start with setting up the voltage range to cope with voltage sag.
 Parameters used to linearise your motor thrust curve.
 
-- :ref:`MOT_BAT_VOLT_MAX <MOT_BAT_VOLT_MAX>`: 4.2v x No. Cells
-- :ref:`MOT_BAT_VOLT_MIN <MOT_BAT_VOLT_MIN>`: 3.3v x No. Cells
+- :ref:`MOT_BAT_VOLT_MAX <MOT_BAT_VOLT_MAX>` should be set to the maximum voltage of your batteries, e.g. 4.2v x No. Cells for standard LiPos.
+- :ref:`MOT_BAT_VOLT_MIN <MOT_BAT_VOLT_MIN>` should be set to the minumum voltage of your batteries, e.g. 3.3v x No. Cells for standard LiPos.
 - :ref:`MOT_OPTIONS<MOT_OPTIONS>` = 0 (default). The default is to use sag compensated voltage for the above and during tuning computations. It can be set to 1 to use raw voltage instead of sag compensated voltage, which may improve tuning results for light vehicles.
 
 Next setup the thrust expo. If you are setting up a professional
