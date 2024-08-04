@@ -8,7 +8,7 @@ mLRS project
 
 `mLRS documentation <https://github.com/olliw42/mLRS-docu/blob/master/README.md>`__
 
-`"Off the shelf" systems from MatekSys <https://www.mateksys.com/?portfolio=mr900-30-tx>`__
+`"Off the shelf" systems from MatekSys <https://www.mateksys.com/?page_id=12174>`__
 
 The mLRS project is open source firmware which implements a long range integrated RC and full MAVLink telemetry system which can run on a few off the shelf and DIY hardware platforms.  It supports 433 MHz, 868/915 MHz, and 2.4 GHz bands.  It is capable of reaching ranges of 7 to 87 km in LoRa modes, depending on the message rate, output power, and frequency band supported by the chosen hardware.  A MAVLink ground station (phone or PC) may be connected to the transmitter module via USB, serial, WiFi or Bluetooth depending on the hardware selected.
 
