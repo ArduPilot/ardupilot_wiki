@@ -23,6 +23,7 @@ ArduPilot autopilots are compatible with the following receiver output protocols
     #. :ref:`Spektrum SRXL2,DSM, DSM2, and DSM-X Satellite receivers<common-spektrum-rc>`
     #. :ref:`Multiplex SRXL version 1 and version 2 receivers<common-srxl-receivers>`
     #. :ref:`CRSF receivers <common-tbs-rc>` (including ExpressLRS systems)
+    #. :ref:`mLRS (with telemetry) <common-mlrs-rc>` (MAVLink)
     #. :ref:`Graupner SUM-D<common-graupner-rc>`
     #. `IRC Ghost <https://www.immersionrc.com/fpv-products/ghost/>`__
     #. DroneCAN peripherals can decode these RC protocols on a peripheral and pass to the autopilot
