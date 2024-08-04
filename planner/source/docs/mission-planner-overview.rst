@@ -1,7 +1,7 @@
 .. _mission-planner-overview:
 
 ========================
-Mission Planner Overview
+Agmay Overview
 ========================
 
 Mission Planner is a full-featured ground station application for the
