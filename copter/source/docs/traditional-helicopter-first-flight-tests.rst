@@ -43,25 +43,19 @@ by the autopilot. Therefore the actual pitch attitude the aircraft
 hovers may be 5 deg nose high but the autopilot AHRS Trim value is set
 to make it think the attitude is zero deg. 
 
-In order to trim the aircraft, set the :ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>` parameter to zero. 
 During the initial setup of the autopilot, the ``AHRS_TRIM_x`` values are set 
-during the accelerometer calibration on the last step that has you level the 
+during the accelerometer calibration on the step that has you level the
 aircraft. For that step you should have made certain that the shaft was 
-perfectly straight up in pitch and roll. For this trim procedure, it is 
-recommended that you check it and using the method below.
+perfectly straight up in pitch and roll. If the accelerometers are already calibrated, the AHRS trim
+can be set without having to redo the entire calibration process.  In QGround Control, go to Vehicle Setup
+and click on the sensors tab on the left.  Use the Level Horizon button to set the AHRS TRIM's.  In Mission Planner,
+goto the Setup Page and click on Accel Calibration under Mandatory Hardware on the left side.  Use the
+Calibrate Level button to set AHRS_TRIM's.
 
-Measure the actual frame angle (on a portion of the frame that is perpendicular 
-to the mainshaft) in pitch and roll with your digital pitch gauge. Connected to 
-your ground station software with MavLink, note the pitch and roll angle the 
-autopilot is "seeing". Adjust the :ref:`AHRS_TRIM_X<AHRS_TRIM_X>` and :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` 
-values so the autopilot "sees" the identical frame angle you measured with the digital pitch gauge. 
-You can use the Level Horizon function in your ground station to level the horizon with the helicopter 
-at actual level. That function will make the adjustments to the AHRS_TRIM's for you.
+The autopilot now "knows" when the mainshaft is perfectly vertical.  The above is necessary so roll angle
+to set the :ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>` can be accurately measured.
 
-The above is necessary so we can accurately measure the roll angle to set the
-:ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>`. The autopilot now "knows" when the mainshaft is
-perfectly vertical.
-
+In order to trim the aircraft, set the :ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>` parameter to zero.
 Load the helicopter with its normal payload, and hover the helicopter
 in no-wind conditions in Stabilize flight mode. Land it and pull the log, noting
 the roll angle and pitch angle that you had to hold with the stick to keep the helicopter from
