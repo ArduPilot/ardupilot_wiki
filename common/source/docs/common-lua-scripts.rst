@@ -14,15 +14,11 @@ This page describes how to setup scripts on your autopilot, the scripting API, s
 
 While scripting normally requires at least some LUA programming and editing, there are some `Applets <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`__  available which require no user editing and are ready to use. See links below.
 
-.. note::
-
-    Lua scripting support was released with Copter-4.0, Rover-4.0, and Plane-3.9.11.
-
 
 Getting Started
 ===============
 
-- Ensure your autopilot has at least 2 MB of flash and 70 kB of memory.  High powered autopilots like the CubePilot Cube Orange and HolyBro Durandal will certainly work well but check the specifications of your :ref:`autopilot <common-autopilots>`.
+- Ensure your autopilot has at least 2 MB of flash and 80 kB of memory.  High powered autopilots like the CubePilot Cube Orange and HolyBro Durandal will certainly work well but check the specifications of your :ref:`autopilot <common-autopilots>`. Scripting is not available in F4 based autopilots. Autopilots must have an SD card to store the script unless the user builds his own firmware and embeds it directly in the firmware (see :ref:`common-oem-customizations`).
 - Set :ref:`SCR_ENABLE <SCR_ENABLE>` to 1 to enable scripting (refresh or reboot to see all ``SCR_`` parameters).
 - Upload scripts (files with extension .lua) to the autopilot's SD card's ``APM/scripts`` folder.
 
