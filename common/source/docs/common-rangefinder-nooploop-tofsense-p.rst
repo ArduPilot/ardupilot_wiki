@@ -1,13 +1,13 @@
 .. _common-rangefinder-nooploop-tofsense-p:
 
-===================
-Nooploop TOFSense P
-===================
+=========================
+Nooploop TOFSense/-UART/S
+=========================
 
 .. note::
     Support for this sensor is available in firmware versions 4.5 and later.
 
-The `TOFSense P/PS <https://ftp.nooploop.com/software/products/tof/doc/TOFSense_User_Manual_V2.5_en.pdf>`__ is
+The `TOFSense/-UART/S <https://ftp.nooploop.com/downloads/tofsense/TOFSense_Datasheet_V3.0_en.pdf>`__ is
 lightweight rangefinder module that provides fast and accurate distance measurements up to 8 meters.
 It also has an adjustable field of view (FOV), ranging from 15 to 27 degrees with a measurement resolution of 1mm.
 ArduPilot currently supports this sensor via both UART and CAN.
