@@ -7,9 +7,9 @@ Nooploop TOFSense F
 .. note::
     Support for this sensor is available in firmware versions 4.5 and later.
 
-The `TOFSense F/FP <https://ftp.nooploop.com/software/products/tofsense-f/doc/TOFSense-F_Datasheet_V1.2_en.pdf>`__ is
-lightweight rangefinder module that provides fast and accurate distance measurements up to 25 meters (FP variant only).
-ArduPilot currently supports this sensor only via UART. I2C support will be added in the future.
+The `TOFSense F/FP/F2 Mini/F2/F2 P <https://ftp.nooploop.com/downloads/tofsense/TOFSense-F_Datasheet_V2.0_en.pdf>`__ is
+lightweight rangefinder module that provides fast and accurate distance measurements up to 50 meters (F2 P variant only).
+ArduPilot currently supports this sensor through UART or IIC.
 
 
 Connecting via UART to Autopilot
