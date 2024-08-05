@@ -15,6 +15,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinxcontrib.youtube',  # For youtube embedding
     'sphinxcontrib.jquery',
+    'sphinx_tabs.tabs'        # For clickable tabs
 ]
 
 # Set False to re-enable warnings for non-local images.

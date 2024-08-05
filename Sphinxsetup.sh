@@ -51,7 +51,7 @@ rm -f get-pip.py
 
 # Install python packages using known working versions
 # Install sphinx with a specific docutils version
-python3 -m pip install --user --upgrade sphinx==${SPHINX_VERSION} "docutils<0.19"  "requests>=2.31.0"
+python3 -m pip install --user --upgrade sphinx==${SPHINX_VERSION} "docutils<0.19"  "requests>=2.31.0" sphinx-tabs==3.*
 
 # lxml for parameter parsing:
 python3 -m pip install --user --upgrade lxml
