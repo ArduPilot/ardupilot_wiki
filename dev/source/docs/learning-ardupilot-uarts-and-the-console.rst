@@ -33,6 +33,36 @@ The ArduPilot HAL currently defines 8 UARTs. The HAL itself does not define any 
 | \SERIAL7_   | \- -serial7=         |          |                         |
 +-------------+----------------------+----------+-------------------------+
 
+The following are options for connecting a SITL serial port:
+
+-  Passthrough to a real serial device: ``--serialX=uart:<device>:<baudrate>`` 
+-  TCP server: ``--serialX=tcp:<port>:wait``
+-  TCP client: ``--serialX=tcpclient:<remote IP>:<port>``
+-  UDP client: ``--serialX=udpclient:<remote IP>:<port>``
+-  UDP multicast: ``--serialX=mcast:<multicast IP>:<port>``
+-  Log to file: ``--serialX=file:<path and filename>``
+-  Simulated sensor: ``--serialX=sim:<device name>``
+
+A few examples of usage are:
+
+::
+
+    --serial1=uart:/dev/ttyUSB0:57600
+    --serial1=uart:/dev/ttyS15:115200  #Cygwin comm ports are ttyS and they start at 0, so 15 is equivalent to COM16
+    --serial1=tcp:5800:wait # wait means pause SITL startup until a connection is established. Otherwise use nowait
+    --serial1=tcpclient:192.168.1.110:5760
+    --serial1=udpclient:192.168.1.110:14550
+    --serial1=mcast:239.255.145.50:14550
+    --serial1=file:/tmp/my-device-capture.BIN
+    --serial1=sim:ParticleSensor_SDS021:
+
+When using with ``sim_vehicle.py``, ensure that the ``-A`` option is used to pass the configuration
+option to the SITL executable. For example:
+
+::
+
+    sim_vehicle.py -v ArduCopter -A "--serial1=uart:/dev/ttyUSB0:115200" --console --map
+
 If you are writing your own sketch using the ArduPilot HAL then you can
 use these UARTs for any purpose you like, but if possible you should try
 to use the above assignments as it will allow you to fit in more easily
