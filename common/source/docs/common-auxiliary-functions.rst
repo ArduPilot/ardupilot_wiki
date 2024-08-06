@@ -250,7 +250,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        161           | Turbine Start (Heli)       |    X     |         |         |
 +----------------------+----------------------------+----------+---------+---------+
-|        162           | In-Flight FFT AutoSetup    |    X     |    X    |         |
+|        162           | Auto Throttle Notch Setup  |    X     |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
 |        163           | Mount Lock                 |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
@@ -529,7 +529,7 @@ Other functions are:
                                          | back to idle, which signals the turbine engine ECU to
                                          | initiate the start sequence. The switch must be set back low and
                                          | the aircraft has to be disarmed to re-enable this feature.
-    In-Flight FFT AutoSetup              | Allows automatic setup of in-flight FFT notch parameters. Set
+    Auto Throttle Notch Setup            | Allows automatic setup of throttle notch parameters. Set
                                          | :ref:`FFT_ENABLE<FFT_ENABLE>` =1, takeoff with switch low,
                                          | hover 30 seconds with switch high,switch low, and land and
                                          | notch parameters will have been configured.
