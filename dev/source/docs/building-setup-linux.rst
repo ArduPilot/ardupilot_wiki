@@ -185,7 +185,12 @@ How to Build the Docker Image
 Build the docker image and tag it with the name ardupilot:
 ::
 
-    docker build . -t ardupilot
+    docker build -t ardupilot .
+
+For a local development environment use the build arguments to specify your current user as this will prevent permissions issues when mounting the volume in the next step:    
+
+::
+    docker build -t ardupilot --build-arg UID=$(id -u) --build-arg GID=$(id -g) .
 
 Run ArduPilot Container
 -----------------------
