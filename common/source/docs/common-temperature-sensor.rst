@@ -15,7 +15,7 @@ ArduPilot supports up to nine individual temperature sensors with I2C interfaces
 .. image:: ../../../images/temperature-sensor.jpg
    :target: ../_images/temperature-sensor.jpg
 
-In addition, analog temperature monitors can be used.
+In addition, analog temperature monitors and DroneCAN based sensors can be used.
 
 ArduPilot already has numerous possible sources for temperature reports: ESCs, Smart Batteries, Motor EFI and these independent sensors can be used to replace those devices temperature reports which already exist in ArduPilot. They can also just be logged.
 
@@ -46,6 +46,17 @@ The output voltage vs temperature curve of the sensor can be adjusted to match i
 - :ref:`TEMP1_A3<TEMP1_A3>` = a3
 - :ref:`TEMP1_A4<TEMP1_A4>` = a4
 
+DroneCAN Setup
+==============
+
+Make sure the CAN port is setup. (example below for first CAN port using first driver):
+
+- :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1 (First driver)
+- :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` = 1 (DroneCAN)
+
+Then set (examples shown for first sensor):
+
+- :ref:`TEMP1_TYPE<TEMP1_TYPE>` = 6 (DroneCAN)
 
 Logging
 =======
