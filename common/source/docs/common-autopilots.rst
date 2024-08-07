@@ -154,6 +154,7 @@ Closed Hardware
     SpeedyBeeF405WING/WING Mini <common-speedybeef405wing>
     ThePeach FCC-K1 <common-thepeach-k1>
     ThePeach FCC-R1 <common-thepeach-r1>
+    TmotorH7Mini <common-tmotor-h7-mini>
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
     YJUAV A6SE <common-yjuav-a6se>
