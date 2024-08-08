@@ -13,6 +13,8 @@ In order to configure the throttle-based dynamic harmonic notch filter it is imp
 
 Once this is done, the center frequency of the notch(s) can be set and other parameters configured:
 
+.. note:: if the autopilot is capable of running the FFT (most F4 based autopilots are NOT), then by enabling the :ref:`FFT_ENABLE<FFT_ENABLE>` and using the RC Auxiliary function "162" (Auto Throttle Notch Setup) during a sustained hover, the center frequency, :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>`, :ref:`INS_HNTCH_ENABLE <INS_HNTCH_ENABLE>`, and :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` will automatically be setup for the first notch, avoiding log analysis to determine center frequency as outline below:
+
 Harmonic Notch Configuration for Throttle Based Mode
 ====================================================
 
