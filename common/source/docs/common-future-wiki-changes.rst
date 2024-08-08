@@ -46,7 +46,7 @@ New Features
 - Add EKF3 option to help mediate operation in GPS jamming environments, see https://github.com/ArduPilot/ardupilot_wiki/pull/6069
 - Add hires DroneCAN magnetometer array info, see https://github.com/ArduPilot/ardupilot_wiki/pull/6071
 - New Notch Filter Option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6108
-- Add Mount2 retract aux switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/6111
+- Add Mount2 retract aux switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/6090
 - Add EKF3 option to align ExternalNAV with OpticalFlow, see https://github.com/ArduPilot/ardupilot_wiki/pull/6124
 - iBUS Telemetry, see https://github.com/ArduPilot/ardupilot_wiki/pull/6154
 [site wiki="plane"]
