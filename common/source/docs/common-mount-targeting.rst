@@ -53,9 +53,10 @@ By default the yaw control is in "follow" mode (aka "body frame") meaning that t
 
 - set :ref:`RC9_OPTION <RC9_OPTION>` = 163 ("Mount Lock") to switch between "lock" and "follow" mode with RC channel 9
 
-The pilot can retract the gimbal with the "Retract Mount1" auxiliary switch
+The pilot can retract the gimbal with the "Retract Mount1" or "Retract Mount2" auxiliary switch
 
 - :ref:`RC10_OPTION <RC10_OPTION>` = 27 ("Retract Mount1") to change the gimbal to Retract mode
+- :ref:`RC10_OPTION <RC10_OPTION>` = 113 ("Retract Mount2") to change the gimbal to Retract mode
 
 Mission Planner Gimbal Controls
 -------------------------------

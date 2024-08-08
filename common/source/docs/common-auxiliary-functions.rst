@@ -72,7 +72,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        26            | Attitude Controller AccLim |    X     |         |         |
 +----------------------+----------------------------+----------+---------+---------+
-|        27            | Retract Mount              |    X     |         |         |
+|        27            | Retract Mount1             |    X     |         |         |
 +----------------------+----------------------------+----------+---------+---------+
 |        28            | Relay 1 On/off             |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
@@ -226,6 +226,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        112           | SwitchExternalAHRS         |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
+|        113           | Retract Mount2             |    X     |         |         |
++----------------------+----------------------------+----------+---------+---------+
 |        150           | CRUISE Mode                |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
 |        151           | TURTLE Mode                |    X     |         |         |
@@ -374,7 +376,8 @@ Other functions are:
                                          | For developers only.
     AttCon Accel Limits                  | Turns on/off attitude controller acceleration limits.
                                          | For developers only.
-    Retract Mount                         Move the :ref:`camera mount <common-cameras-and-gimbals>` to its retracted position.
+    Retract Mount1                        Move the :ref:`camera mount <common-cameras-and-gimbals>` to its retracted position.
+    Retract Mount2                        Move the :ref:`camera mount <common-cameras-and-gimbals>` to its retracted position.
     Relay 1 On/Off                       | Switch pulled low turns off the first :ref:`relay <common-relay>`,
                                          | pulled high turns on the first relay.
     Landing Gear                          Deploys or Retracts :ref:`Landing Gear <common-landing-gear>`

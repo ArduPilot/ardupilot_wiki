@@ -107,4 +107,4 @@ This should cause the gimbal to point down at about 45 degrees.
 .. image:: ../../../images/Tarot_BenchTestROI.jpg
     :target: ../_images/Tarot_BenchTestROI.jpg
 
-Pilot control of the gimbal can be restored by setting up an :ref:`auxiliary function switch <common-auxiliary-functions>` to "Retract Mount" (i.e. RCx_OPTION = 27) and then move the switch to the lower position
+Pilot control of the gimbal can be restored by setting up an :ref:`auxiliary function switch <common-auxiliary-functions>` to either “Retract Mount1” (i.e. RCx_OPTION = 27) or "Retract Mount2" (i.e. RCx_OPTION = 113), and then move the switch to the lower position
