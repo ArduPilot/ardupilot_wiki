@@ -24,6 +24,7 @@ New Board Support
 - iflight Thunder H7, see https://github.com/ArduPilot/ardupilot_wiki/pull/6105
 - LongbowF405WING, see https://github.com/ArduPilot/ardupilot_wiki/pull/6106
 - CUAV-7-Nano, see https://github.com/ArduPilot/ardupilot_wiki/pull/6145
+- MFT-SEMA100, see https://github.com/ArduPilot/ardupilot_wiki/pull/6163
 
 New Peripheral Support
 ======================
@@ -47,6 +48,7 @@ New Features
 - New Notch Filter Option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6108
 - Add Mount2 retract aux switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/6111
 - Add EKF3 option to align ExternalNAV with OpticalFlow, see https://github.com/ArduPilot/ardupilot_wiki/pull/6124
+- iBUS Telemetry, see https://github.com/ArduPilot/ardupilot_wiki/pull/6154
 [site wiki="plane"]
 - New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
 - Option to report airspeed sensor offset calibration to gcs during boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5913
