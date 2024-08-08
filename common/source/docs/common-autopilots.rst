@@ -109,6 +109,7 @@ Closed Hardware
     iFlight BeastH7 AIO <common-iflight-beasth7AIO>
     iFlight Blitz F745/F745 Mini <common-blitz-f745>
     iFlight Blitz Whoop F7 AIO <common-iflight-blitzf7AIO>
+    iFlight Blitz H743 Pro <common-blitzh743pro>
     iFlight Blitz Wing H743 <common-blitzh743wing>
     JAE JFB-110 <common-jae-jfb110>
     Mamba F405 MK2 <common-mamba405-mk2>
