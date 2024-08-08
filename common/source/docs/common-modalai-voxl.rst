@@ -91,6 +91,11 @@ More details on :ref:`GPS/Non-GPS Transitions can be found here <common-non-gps-
 
 To use an optical flow and rangefinder for backup in case the VOXL fails, a Lua applet for `ExternalNav/Optical flow transitions is here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/ahrs-source-extnav-optflow.lua>`__
 
+EKF3 Source Transitions with OpticalFlow
+========================================
+
+If switching between this and OpticalFlow is desired, see :ref:`extnav-optiflow-transitions`
+
 Videos
 ------
 
