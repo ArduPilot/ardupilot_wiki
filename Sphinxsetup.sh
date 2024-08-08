@@ -42,7 +42,7 @@ PYTHON_VERSION=$(python3 --version | cut -d' ' -f2)
 if [[ "${PYTHON_VERSION:0:3}" = "3.8" ]]; then
     SPHINX_VERSION="7.1.2"
 else
-    SPHINX_VERSION="7.2.6"
+    SPHINX_VERSION="7.4.4"
 fi
 
 curl "$GET_PIP_URL" -o get-pip.py
@@ -51,7 +51,7 @@ rm -f get-pip.py
 
 # Install python packages using known working versions
 # Install sphinx with a specific docutils version
-python3 -m pip install --user --upgrade sphinx==${SPHINX_VERSION} "docutils<0.19"  "requests>=2.31.0"
+python3 -m pip install --user --upgrade sphinx==${SPHINX_VERSION} "docutils<0.21"  "requests>=2.31.0"
 
 # lxml for parameter parsing:
 python3 -m pip install --user --upgrade lxml
