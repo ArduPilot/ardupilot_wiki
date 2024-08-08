@@ -42,13 +42,13 @@ The range of the motor ESC is controlled by its output's ``SERVOx_MIN/MAX`` para
 Direct Drive Fixed Pitch :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` = 3 or 4
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The Direct Drive Fixed Pitch (DDFP) tail type uses a fixed pitch tail rotor and separate motor. The stabilization and yaw is controlled by the speed of this motor. It has two options: one where the main rotor rotates clockwise when viewed from above and the other where the main rotor rotates counter-clockwise when viewed from above.  Be sure to select the DDFP tail type for the main rotor rotation.  In this case, the control of tailrotor thrust is accomplished through tailrotor speed since it is a fixed pitch propeller. The ``SERVOx_FUNCTION`` of "32" (HeliTailRSC) should be assigned to the servo channel (default is output 7) to which the tailrotor ESC is physically connected.
+The Direct Drive Fixed Pitch (DDFP) tail type uses a fixed pitch tail rotor and separate motor. The stabilization and yaw is controlled by the speed of this motor. It has two options: one where the main rotor rotates clockwise when viewed from above and the other where the main rotor rotates counter-clockwise when viewed from above.  Be sure to select the DDFP tail type for the main rotor rotation.  In this case, the control of tailrotor thrust is accomplished through tailrotor speed since it is a fixed pitch propeller. The ``SERVOx_FUNCTION`` of "36" (Motor4) should be assigned to the servo channel to which the tailrotor ESC is physically connected.
 
 There are several parameters that provide the ability to linearize the thrust produced by the tail rotor motor and therefore provide better control:
 
-- :ref:`H_DDFP_THST_EXPO<H_DDFP_THST_EXPO>` - Tail rotor DDFP motor thrust curve exponent (0.0 for linear to 1.0 for second order curve). Default = 0.55
-- :ref:`H_DDFP_SPIN_MIN<H_DDFP_SPIN_MIN>` - Point at which the DDFP motor thrust starts expressed as a number from 0 to 1 in the entire output range.  Default = 0.15
-- :ref:`H_DDFP_SPIN_MAX<H_DDFP_SPIN_MAX>` - Point at which the DDFP motor thrust saturates expressed as a number from 0 to 1 in the entire output range. Default = 0.95
+- :ref:`H_DDFP_THST_EXPO<H_DDFP_THST_EXPO>` - Tail rotor DDFP motor thrust curve exponent (0.0 for linear to 1.0 for second order curve). Default = 0
+- :ref:`H_DDFP_SPIN_MIN<H_DDFP_SPIN_MIN>` - Point at which the DDFP motor thrust starts expressed as a number from 0 to 1 in the entire output range.  Default = 0
+- :ref:`H_DDFP_SPIN_MAX<H_DDFP_SPIN_MAX>` - Point at which the DDFP motor thrust saturates expressed as a number from 0 to 1 in the entire output range. Default = 1
 - :ref:`H_DDFP_BAT_IDX<H_DDFP_BAT_IDX>` - Index of battery to be used for voltage compensation. Default = 0.
 - :ref:`H_DDFP_BAT_V_MAX<H_DDFP_BAT_V_MAX>` - Battery voltage compensation maximum voltage (voltage above this will have no additional scaling effect on thrust). Recommend 4.2 * cell count, 0 = Disabled. Default = 0.
 - :ref:`H_DDFP_BAT_V_MIN<H_DDFP_BAT_V_MIN>` - Battery voltage compensation minimum voltage (voltage below this will have no additional scaling effect on thrust). Recommend 3.3 * cell count, 0 = Disabled. Default = 0.
