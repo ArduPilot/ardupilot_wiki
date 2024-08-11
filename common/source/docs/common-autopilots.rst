@@ -97,6 +97,7 @@ Closed Hardware
     Holybro Kakute F4 <common-holybro-kakutef4>
     Holybro Kakute F4 Mini <common-holybro-kakutef4-mini>
     Holybro Kakute F7 AIO <common-holybro-kakutef7aio>
+    Holybro Kakute F4 Wing <common-KakuteF4-Wing>
     Holybro Kakute F7 Mini (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
     Holybro Kakute H7 V1 <common-holybro-kakuteh7.rst>
     Holybro Kakute H7 V2 <common-holybro-kakuteh7-v2>
