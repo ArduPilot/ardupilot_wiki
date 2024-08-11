@@ -94,7 +94,7 @@ Custom Firmware Build Server
 
 ArduPilot is currently experimentally testing a custom firmware build server that will allow users to generate firmware builds for their autopilots with selectable features. Since all 1MB flash sized boards now have feature restrictions to allow the code to fit, this will give a path to enable a user to select which features will or will not be included, giving some flexibility to users of 1MB autopilots.
 
-The server is located `here <https://custom.ardupilot.org>`__
+The server is located `here <https://custom.ardupilot.org>`__ and instructions for its use are :ref:`on this page here <common-custom-firmware>`.
 
 It allows creating a custom build, which can be downloaded, and flashed to the autopilot using Mission Planner's "Load Custom Firmware" option on its **Install Firmware Page**.
 
@@ -116,7 +116,7 @@ Firmware Limitations
 
 - For a list of what features are **not** included in the current "latest" firmware for any given autopilot, see :ref:`this page<binary-features>`.
 - All the feature options currently **not** included in the 1MB autopilots, by default, are on the list of options on the Custom Firmware Build Server. There are also many features still included in the 1MB autopilots that may not be required for your application. So it is possible to create a build that includes some of the currently excluded features while removing some of the unneeded features. The list of feature options will be continuously expanded, allowing other large features to be dropped and more restricted features added to the custom build. For example, not including QuadPlane features will save space for Planes not requiring it. Drivers and peripheral support may be individually selected, allowing only those used to be in the code thus allowing other features to be included in the custom firmware.
-- Current build is from the daily master branch only ("latest"). In the future, Stable and Beta branches will be selectable.
+- Current build is from the daily master branch, Stable and Beta branches.
 
 Testing
 =======
@@ -130,3 +130,4 @@ information on connecting to Mission Planner.
    :hidden:
 
    common-install-sdcard
+   common-custom-firmware
