@@ -25,6 +25,7 @@ New Board Support
 - LongbowF405WING, see https://github.com/ArduPilot/ardupilot_wiki/pull/6106
 - CUAV-7-Nano, see https://github.com/ArduPilot/ardupilot_wiki/pull/6145
 - MFT-SEMA100, see https://github.com/ArduPilot/ardupilot_wiki/pull/6163
+- Holybro KakuteF4-Wing , see https://github.com/ArduPilot/ardupilot_wiki/pull/6176
 
 New Peripheral Support
 ======================
