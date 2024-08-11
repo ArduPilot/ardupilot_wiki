@@ -6,6 +6,8 @@ Building the code
 
 The linked articles below explain how to setup your build environment on Linux/Ubuntu, MacOS or Windows and then build ArduPilot with `waf <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
+.. note:: it is possible to use the `Custom code build server <https://custom.ardupilot.org>`__ to generate code with selectable feature sets without creating a code development environment, but code change proposals will require it.
+
 The instructions below assume that you have already :ref:`installed git <git-install>`, :ref:`forked <git-fork>` and :ref:`cloned <git-clone>` the ArduPilot repo.
 
 Setting up the Build Environment
@@ -67,4 +69,5 @@ Links to other pages of interest or advanced topics
     Building for BeagleBone Black <building-for-beaglebone-black-on-linux>
     Building Mission Planner with Visual Studio <building-mission-planner>
     ArduPilot Pre-Built Binaries <pre-built-binaries>
+    Custom Build Server <custom-build-server>
 
