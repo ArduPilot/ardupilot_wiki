@@ -50,6 +50,7 @@ New Features
 - Add Mount2 retract aux switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/6090
 - Add EKF3 option to align ExternalNAV with OpticalFlow, see https://github.com/ArduPilot/ardupilot_wiki/pull/6124
 - iBUS Telemetry, see https://github.com/ArduPilot/ardupilot_wiki/pull/6154
+- More RPM sensors allowed, see https://github.com/ArduPilot/ardupilot_wiki/pull/6182
 [site wiki="plane"]
 - New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
 - Option to report airspeed sensor offset calibration to gcs during boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5913
