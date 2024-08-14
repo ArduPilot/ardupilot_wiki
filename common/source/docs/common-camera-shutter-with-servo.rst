@@ -30,6 +30,9 @@ Configure the autopilot by setting these parameters:
 Relay control connection and configuration
 ==========================================
 
+.. warning::
+    :ref:`This function is a GPIO and has limited current capabilities.<gpio-warning>`
+
 Connect one of the autopilot's GPIO pins to the camera or the camera control cable that accepts high/low voltage input.  As mentioned on the :ref:`relay wiki page<common-relay>` the autopilot's servo/motor outputs can normally be used but, in addition, some autopilots have dedicated pins purely for use as relays/GPIOs.
 
 Configure the autopilot by setting these parameters:

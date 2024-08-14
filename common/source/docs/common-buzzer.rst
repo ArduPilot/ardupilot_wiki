@@ -31,6 +31,9 @@ First, the active buzzer can simply replace the passive piezo on autopilots desi
 
 Alternatively, you can set the :ref:`NTF_BUZZ_PIN<NTF_BUZZ_PIN>` to a GPIO pin, like those used for :ref:`relay control <common-relay>`, and attach an active buzzer to that pin with its negative lead, and apply power (usually +5V) to the buzzer's positive lead. This is usually how the "BUZZ" or "BUZZ-" output pin on some autopilots is intended to be used
 
+.. warning::
+    :ref:`This function is a GPIO and has limited current capabilities.<gpio-warning>`
+
 If an active buzzer is used, the :ref:`NTF_BUZZ_ON_LVL<NTF_BUZZ_ON_LVL>` parameter determines the pin level needed to activate it.
 
 If an active buzzer is used, it can indicate the following:
