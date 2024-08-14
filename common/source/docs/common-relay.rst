@@ -4,7 +4,10 @@
 Relay Switch
 ============
 
-A "Relay" is an digital output pin on the autopilot that can be switched between 0 volts and either 3.3V or 5V, depending on the autopilot.  Similar to a servo it allows the autopilot to invoke some action from another device on the vehicle.  Up to 6 relays can be implemented.
+.. warning::
+    :ref:`This function is a GPIO and has limited current capabilities.<gpio-warning>`
+
+A "Relay" is a digital output pin on the autopilot that can be switched between 0 volts and either 3.3V or 5V, depending on the autopilot.  Similar to a servo it allows the autopilot to invoke some action from another device on the vehicle.  Up to 6 relays can be implemented.
 
 The digital outputs that can be used as a relay are GPIOs. Normal servo/motor outputs can be configured for GPIO use. Occasionally, an autopilot will dedicate some pins for purely GPIO use as internal power controls, general purpose use,.etc. Consult the autopilot's documentation for pin number and information. In addition, it is possible to create a DroneCAN peripheral that has dedicated pins for relay use and these can be controlled as remote relays.
 
@@ -32,7 +35,7 @@ RELAYx_FUNCTION    FUNCTION
 9                   ICE Starter (Plane Only)
 ===============    ========
 
-- :ref:`RELAY2_PIN<RELAY2_PIN>`: the autopilot designated GPIO pin to be used for the function. See  the :ref:`common-gpios` page for information on how to determine the pin numbers and setup for using autopilot servo/motor outputs. DroneCAN peripherals with remote relay outputs have pin numbers in the 1000 to 1015 range. Consult the peripheral's documentation for proper pin number to use.
+- :ref:`RELAY2_PIN<RELAY2_PIN>`: the autopilot designated GPIO pin to be used for the function. See the :ref:`common-gpios` page for information on how to determine the pin numbers and setup for using autopilot servo/motor outputs. DroneCAN peripherals with remote relay outputs have pin numbers in the 1000 to 1015 range. Consult the peripheral's documentation for proper pin number to use.
 - :ref:`RELAY2_DEFAULT<RELAY2_DEFAULT>`: After boot up, should the relay default to on or off. This only applies to RELAYx_FUNC "Relay" (1). All other uses will pick the appropriate default output state from within the controlling function's parameters.
 
 

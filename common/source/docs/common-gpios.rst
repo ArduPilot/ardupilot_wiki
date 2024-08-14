@@ -8,6 +8,9 @@ GPIOs
 
 .. warning:: When upgrading to 4.2 or later from pre 4.2 firmware, be aware that previously defined GPIOs MAY have to be re-designated using the SERVOx_FUNCTION or, alternatively, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter and that after upgrade any GPIO dependent release mechanisms (parachute, sprayers, etc.) may actuate until this re-definition is done.
 
+.. _gpio-warning:
+.. warning:: GPIOs should only source or sink 8mA (20mA absolute maximum). They are intended as logic-level IO and must not be used to directly drive relay coils, motors, LED strings, etc. Directly connecting electromechanical or high-current devices to GPIOs can permanently damage the autopilot.
+
 General Purpose Input/Outputs (GPIOs) are used in ArduPilot for control of :ref:`relays<common-relay>`, actuators, LEDs, :ref:`camera triggers<common-camera-shutter-with-servo>`, :ref:`Start Button<startstop-switch>` etc. Some functions also use a GPIO pin as an input, like :ref:`common-rpm`. Some autopilots provide dedicated GPIO pins (sometimes labeled "CAPTURE" pins). In addition, GPIOs can be obtained by re-configuring the PWM outputs.
 
 Configuring GPIOS
@@ -32,7 +35,7 @@ in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR out
 
 .. note:: for autopilots using IOMCUs, if a "MAIN" output is configured as a GPIO, it can only function as an output (ie RELAY,etc.) not an input. "AUX" outputs can function either as inputs or outputs when configures as a GPIO.
 
-Everytime the autopilot initializes, it sends a log message to the ground control station, showing which outputs are PWM/Oneshot/or DShot. The remaining higher numbered outputs are assigned as GPIOs.
+Every time the autopilot initializes, it sends a log message to the ground control station, showing which outputs are PWM/Oneshot/or DShot. The remaining higher numbered outputs are assigned as GPIOs.
 
 .. image:: ../../../images/RCOutbanner.jpg
 
@@ -40,7 +43,7 @@ Everytime the autopilot initializes, it sends a log message to the ground contro
 GPIO "PIN" NUMBER
 =================
 
-Some GPIO-based functions require that the GPIO "pin number" to be entered into an associated parameter.This pin number is assigned in the autopilot's hardware definition file. Usually, the first GPIO capable output is assigned pin 50, the second 51, etc. So in the above case of the Pixhawk, AUX OUT 6 is pin 55.
+Some GPIO-based functions require that the GPIO "pin number" to be entered into an associated parameter. This pin number is assigned in the autopilot's hardware definition file. Usually, the first GPIO capable output is assigned pin 50, the second 51, etc. So in the above case of the Pixhawk, AUX OUT 6 is pin 55.
 
 You can verify an output's GPIO pin number assignment easily. First, find its hwdef.dat file `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ and determine the GPIO pin number listed beside its output number, as shown below:
 

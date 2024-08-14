@@ -68,6 +68,9 @@ Servo Release
 Relay Release
 -------------
 
+.. warning::
+    :ref:`This function is a GPIO and has limited current capabilities.<gpio-warning>`
+
 - Determine/Configure a pin to be a GPIO (see :ref:`common-gpios`).
 - Set that pin number as one of the RELAY functions. ie For GPIO pin 51 using the first RELAY function, set :ref:`RELAY1_PIN<RELAY1_PIN>` = 51.
 - Since GPIOs are always set low initially during the bootloader period, to avoid accidental release, always use a release mechanism that needs a high output level to trigger and set:
