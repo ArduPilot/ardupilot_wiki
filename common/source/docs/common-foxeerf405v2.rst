@@ -38,7 +38,7 @@ Specifications
 
 -  **Interfaces**
 
-   -  9x PWM outputs (9th pwm output is for NeoPixel LED string via the LED pad)
+   -  10x PWM outputs (9th pwm output is for NeoPixel LED string via the LED pad, 10th is labeled SER)
    -  1x RC input
    -  6x UARTs/serial for GPS and other peripherals
    -  1x I2C port for external compass
@@ -77,6 +77,7 @@ M5                Motor/Servo signal output 5
 M6                Motor/Servo signal output 6
 M7                Motor/Servo signal output 7
 M8                Motor/Servo signal output 8
+SER               Motor/Servo signal output 10
 =============     =================================================
 
 GPS Connector
@@ -188,19 +189,21 @@ The FoxeerF405v2  supports OSD using :ref:`OSD_TYPE<OSD_TYPE>` 1 (MAX7456 driver
 PWM Output
 ==========
 
-The FoxeerF405v2 supports up to 9 PWM outputs (PWM 9  is defaulted to serial LED support). Outputs are available via two JST-SH connectors. All outputs support DShot,as well as all PWM types. 
+The FoxeerF405v2 supports up to 10 PWM outputs (PWM 9  is defaulted to serial LED support). Outputs are available via two JST-SH connectors. All outputs support DShot,as well as all PWM types. 
 
 The PWM is in 3 groups:
 
- - PWM 1, 2 in group1
- - PWM 3, 4 in group2
- - PWM 5, 6 in group3
- - PWM 7, 8 in group4
- - PWM 9 (LED) in group5
+ - PWM 1, 4 in group1
+ - PWM 2, 3 in group2
+ - PWM 6-8  in group3
+ - PWM 5, 9 (LED) in group4
+ - PWM 10 in group5
 
 Channels within the same group need to use the same output rate, whether PWM or Dshot. If
 any channel in a group uses DShot then all channels in the group need
 to use DShot.
+
+.. note:: by default PWM9 is configured as an LED output, making PWM5 only usable as a serial LED also. You can re-assign PWM9's function to something else if you wish to use PWM5 normally.
 
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
