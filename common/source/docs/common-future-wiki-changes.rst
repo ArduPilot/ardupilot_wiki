@@ -26,6 +26,7 @@ New Board Support
 - CUAV-7-Nano, see https://github.com/ArduPilot/ardupilot_wiki/pull/6145
 - MFT-SEMA100, see https://github.com/ArduPilot/ardupilot_wiki/pull/6163
 - Holybro KakuteF4-Wing , see https://github.com/ArduPilot/ardupilot_wiki/pull/6176
+- GEPRC Taker F745, see https://github.com/ArduPilot/ardupilot_wiki/pull/6184
 
 New Peripheral Support
 ======================
