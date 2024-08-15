@@ -93,6 +93,7 @@ Closed Hardware
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Flywoo F405 Pro <common-flywoof405pro>
     Flywoo F745 AIO BL_32/ Nano <common-flywoo-f745>
+    Flywoo H743 <common-flywoo-h743>
     Foxeer F405v2 <common-foxeerf405v2>
     Foxeer H743 MPU600 <common-foxeerh743v1>
     Foxeer Reaper F745-AIO V2/V3/V4 <common-foxeerf745aio>
