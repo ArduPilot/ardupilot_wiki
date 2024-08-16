@@ -19,6 +19,7 @@ ArduPilot comes pre-configured with appropriate defaults for all FFT settings. T
 - Set :ref:`INS_HNTCH_ENABLE <INS_HNTCH_ENABLE>` and/or :ref:`INS_HNTC2_ENABLE <INS_HNTC2_ENABLE>` = 1 to enable the harmonic notch = 1 to enable the harmonic notch
 - Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` and/or :ref:`INS_HNTC2_MODE <INS_HNTC2_MODE>` = 4 to use the FFT detected frequency for controlling the harmonic notch frequency.
 - Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` and/or :ref:`INS_HNTC2_REF <INS_HNTC2_REF>` = 1 to set the harmonic notch reference value, which for FFT analysis generally means no scaling
+- The harmonic notch reference frequency parameter, :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>`, is used to indicate the lowest motor speed for which the ESC telemetry should be used to dynamically set the harmonic notch reference frequency.
 
 For most uses with other FFT-related advanced parameters at their default, this is all that is required. The user can do optimization of the filtering setup by analyzing the test flight logs and adjusting notch bandwidth, if desired, by following the :ref:`In-flight FFT Advanced Setup <common-imu-fft-advanced-setup>` instructions.
 
@@ -29,9 +30,14 @@ For most uses with other FFT-related advanced parameters at their default, this 
 FFT Dynamic Harmonic Notch Frequency Tracking
 =============================================
 
-FFT mode tracking sets the base frequency to the largest noise peak. Normally, when multiple harmonic notch filters are then enabled, the center frequency of each harmonic is locked to the base frequency of the first filter as an integer multiple, as determined by :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>`. Setting bit 1 of :ref:`INS_HNTCH_OPTS<INS_HNTCH_OPTS>`, or :ref:`INS_HNTC2_OPTS<INS_HNTC2_OPTS>`, will enable each harmonic filter to track the largest noise peaks, individually.
+FFT mode tracking sets the base frequency to the largest noise peak. Normally, when multiple harmonic notch filters are then enabled, the center frequency of each harmonic is locked to the base frequency of the first filter as an integer multiple, as determined by :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>`. The bandwidth of the notch (and any enabled harmonic notches) will maintain a ratio set by the _FREQ/_BW params as the center frequency moves. Setting bit 1 of :ref:`INS_HNTCH_OPTS<INS_HNTCH_OPTS>`, or :ref:`INS_HNTC2_OPTS<INS_HNTC2_OPTS>`, will enable each harmonic filter to track the three largest noise peaks, individually.
 
-.. note:: setting bit 1 of the notch options will also change the default value of :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>` to 1 instead of its normal 3. This is to maintain backwards compatibility with previous fimware versions. You can set :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>` back to 3, or whatever is desired, after setting bit 1 of :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>`.
+.. note:: setting bit 1 of the notch options will also change the default value of :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>` to 1 instead of its normal 3. This is to maintain backwards compatibility with previous firmware versions. You can set :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>` back to 3, or whatever is desired, after setting bit 1 of :ref:`INS_HNTCH_HMNCS <INS_HNTCH_HMNCS>`
+
+.. warning:: If you set bit 1 of :ref:`INS_HNTCH_OPTS<INS_HNTCH_OPTS>`, or :ref:`INS_HNTC2_OPTS<INS_HNTC2_OPTS>`, the bandwidth should not be half the frequency(default). It should be greatly reduced as more notches (3x more since now tracking three noise peaks) cause more phase lag (i.e. latency), thus the bandwidth needs to be reduced to maintain a reasonable phase lag, else oscillation and a poorer tune will result despite the more accurate filtering compared to throttle-based filtering. The suggested starting point is setting the _FREQ/_BW params to 4/1 ratio instead of the default 2/1.
+ This is because for notch filters, a wider bandwidth causes a greater phase lag per notch.
+ You can also use the `Filter Tool <https://firmware.ardupilot.org/Tools/FilterTool/>`__ to check the phase lag for your chosen filtering settings. If your phase lag is higher than it was with the single peak filtering, then you can try reducing the bandwidth even further, balancing the phase lag and the amount of noise in the system.
+
 
 FFT Options
 ===========
