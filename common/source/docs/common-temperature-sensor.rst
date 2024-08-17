@@ -55,4 +55,4 @@ Several peripherals have the possibility of reporting temperature, if their hard
 - :ref:`TEMP1_SRC<TEMP1_SRC>` will designate which device's temperature report will be replaced by this temperature sensor's data. ie: if set to 1, then an esc's report of temperature(usually nullm otherwise due to lack of hardware capability).
 - :ref:`TEMP1_SRC_ID<TEMP1_SRC_ID>` replaces a specific instance of a system component's temperature report with this temp sensor's. ie: if set to 4, with the above param set to 1, the fourth instance of an ESC (ie 4th motor/servo output with a motor/throttle function) will have its temperature report replaced.
 
-- :ref:`TEMP_LOG<TEMP_LOG>` = 0: No logging, 1: Log temperature reports from all temperature sensors, including those also being reported in other device reports.
+- :ref:`TEMP_LOG<TEMP_LOG>` = 0: No logging, 1: Log temperature reports from all temperature sensors, including those also being reported in other device reports, 2: Only those with ``TEMPx_SRC`` set to NONE, eg. not being logged elsewhere.
