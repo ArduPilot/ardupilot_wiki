@@ -54,6 +54,7 @@ New Features
 - iBUS Telemetry, see https://github.com/ArduPilot/ardupilot_wiki/pull/6154
 - More RPM sensors allowed, see https://github.com/ArduPilot/ardupilot_wiki/pull/6182
 - Per motor throttle baased notch filters, see https://github.com/ArduPilot/ardupilot_wiki/pull/6191
+- New Temp sensor logging option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6197
 
 [site wiki="plane"]
 - New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
