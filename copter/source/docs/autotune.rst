@@ -102,6 +102,11 @@ AutoTune performs a weak position hold if invoked from Loiter or PosHold flight 
 - To twitch perpendicular to the wind direction, the vehicle may suddenly rotate in either direction up to 90 degrees as it drifts 5m (or more) from the target location.
 - If there is little or no wind, the vehicle's gentle position control may mean it moves back and forth, ping-ponging around the target point changing yaw each time it strays more than 5m from the target.  In these cases, it may be more comfortable to revert to the simpler AltHold-based AutoTune. 
 
+Testing Tune in Other Modes
+===========================
+
+The completed suceesfull tune obtained can be tested in any mode, not just the one (ALTHOLD or LOITER) used for entry. A switch can be setup,``RCx_OPTION`` = 180 (AUTOTUNE_TEST_GAINS) that will allow switching between original and autotuned gains in any mode, after autotune has completed. If this switch is setup, but not changed after the auotune has completed, it has no effect. Otherwise if switched high the tuned gains are in effect, if low the original gains. Then they apply to any flight mode and will be made permanent upon the next disarm, based on  switch position.
+
 If AutoTune fails
 =================
 
