@@ -10,21 +10,19 @@ Will be in future 4.6 release and is currently in master ("latest")
 New Board Support
 =================
 
-- MicoAir405v2/Mini, see https://github.com/ArduPilot/ardupilot_wiki/pull/5926
 - MicoAir743, see https://github.com/ArduPilot/ardupilot_wiki/pull/5921
 - MicoAir NxtPx4v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/5928
 - CSKY405 see https://github.com/ArduPilot/ardupilot_wiki/pull/6014
 - iFlight Blitz H743 Pro see https://github.com/ArduPilot/ardupilot_wiki/pull/6007
 - Flywoo F405 HD 1-2S see https://github.com/ArduPilot/ardupilot_wiki/pull/6025
-- OrqaF405 see: https://github.com/ArduPilot/ardupilot_wiki/pull/6028
-- 3DR Control Zero H7 OEM RevG, see https://github.com/ArduPilot/ardupilot_wiki/pull/6033
+
+
 - CBUnmanned Stamp H743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6037
-- PixFlamingo-F767, see https://github.com/ArduPilot/ardupilot_wiki/pull/6048
+
 - JHEMCU-H743HD, see https://github.com/ArduPilot/ardupilot_wiki/pull/6066
-- iflight Thunder H7, see https://github.com/ArduPilot/ardupilot_wiki/pull/6105
+
 - LongbowF405WING, see https://github.com/ArduPilot/ardupilot_wiki/pull/6106
-- CUAV-7-Nano, see https://github.com/ArduPilot/ardupilot_wiki/pull/6145
-- MFT-SEMA100, see https://github.com/ArduPilot/ardupilot_wiki/pull/6163
+
 - Holybro KakuteF4-Wing , see https://github.com/ArduPilot/ardupilot_wiki/pull/6176
 - GEPRC Taker F745, see https://github.com/ArduPilot/ardupilot_wiki/pull/6184
 - Flywoo H743 Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6186
