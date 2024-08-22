@@ -32,10 +32,7 @@ New Peripheral Support
 New Features
 ============
 
-
-- Full parsing of RTCM stream options for special cases, see https://github.com/ArduPilot/ardupilot_wiki/pull/5924
 - Crash dump pre-arm, see https://github.com/ArduPilot/ardupilot_wiki/pull/5920
-- Add ability to store fence list on SD card, see https://github.com/ArduPilot/ardupilot_wiki/pull/5967
 - Fix MambaH743 serial defaults, see https://github.com/ArduPilot/ardupilot_wiki/pull/6021
 - Add AUX switch to disable RF in mount, see https://github.com/ArduPilot/ardupilot_wiki/pull/5974
 - Add mask to select which ESCs are used in a given ESC Battery Monitor, see https://github.com/ArduPilot/ardupilot_wiki/pull/6023
@@ -46,7 +43,7 @@ New Features
 - Add EKF3 option to align ExternalNAV with OpticalFlow, see https://github.com/ArduPilot/ardupilot_wiki/pull/6124
 - iBUS Telemetry, see https://github.com/ArduPilot/ardupilot_wiki/pull/6154
 - More RPM sensors allowed, see https://github.com/ArduPilot/ardupilot_wiki/pull/6182
-- Per motor throttle baased notch filters, see https://github.com/ArduPilot/ardupilot_wiki/pull/6191
+- Per motor throttle based notch filters, see https://github.com/ArduPilot/ardupilot_wiki/pull/6191
 - New Temp sensor logging option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6197
 
 [site wiki="plane"]
@@ -54,7 +51,6 @@ New Features
 - Option to report airspeed sensor offset calibration to gcs during boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5913
 - Switch to QLAND mode if  a failsafe occurs during VTOL takeoffs, see https://github.com/ArduPilot/ardupilot_wiki/pull/5941
 - Add ability to change the ON output voltage polarity for a Relay, see https://github.com/ArduPilot/ardupilot_wiki/pull/5950
-- Add TECS option for steep descents for low drag vehicles, see https://github.com/ArduPilot/ardupilot_wiki/pull/5956
 - Add Q_BCK_PIT_LIM parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/5962
 - Add AIRSPEED_STALL parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/6147
 - Add AUX switch to test completed Autotune gains in any flight mode, see https://github.com/ArduPilot/ardupilot_wiki/pull/6194
