@@ -23,32 +23,13 @@ Where to buy
 
 - Slamtec.com includes a `list of resellers here <https://www.slamtec.com/en/Home/Buy>`__
 
-Specifications
---------------
-A2:
-
-- rotation rate: 10hz / 600 RPM
-- sample rate: 4000 to 8000 samples/s
-- range: 6m to 18m
-- resolution: 0.9 degrees
-- voltage/current requirement: 5V / 1.5A
-
-S1:
-
-- rotation rate: 8-15hz
-- sample rate: 92000 samples/s
-- range: 10m to 40m
-- resolution: 0.39 degrees
-- voltage/current requirement: 5V / 0.5A
-
 Connecting and Configuring
 --------------------------
-A2:
+
    .. image:: ../../../images/rplidar-a2-pixhawk.jpg
        :target: ../_images/rplidar-a2-pixhawk.jpg
        :width: 600px
 
-S1:
    .. image:: ../../../images/rplidar-s2-cube.png
        :target: ../_images/rplidar-s2-cube.png
        :width: 600px
@@ -59,10 +40,10 @@ Ensure the sensor's view is not obstructed by any portion of the vehicle includi
 The lidar can be connected to the autopilot's serial input as shown above.
 Be sure that the autopilot's 5V supply is capable of supplying the unit's required current. Otherwise provide an independent 5V supply to the unit.
 
-Example setup below shown for first proximity sensor:
+Example setup below shown for first proximity sensor using SERIAL1 UART:
 
-- :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = "11" ("Lidar360") if using Serial1
-- :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` =  "115" for C1/A2, "256" for S1,A2M12 if using Serial1
+- :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = "11" ("Lidar360")
+- :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` =  "115" for C1/A2, "256" for S1,A2M12 
 - :ref:`PRX1_TYPE <PRX1_TYPE>` = "5"
 - :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
 
