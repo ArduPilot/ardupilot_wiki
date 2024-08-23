@@ -10,7 +10,7 @@ Features:
 =========
 
 - **MCU**
-   - STM32H753IIK6 32-bit processor running at 480MH
+   - STM32H743 32-bit processor running at 480MH
    - 2MB Flash
    - 1MB RAM
 
@@ -33,7 +33,7 @@ Features:
    - SPI port
    - Buzzer
    - RCin port
-   - 13 motor/servo outputs, 8 supporting BiDirDSHOT, 11 suporting DShot
+   - 13 motor/servo outputs, 8 supporting BiDirDShot, 11 suporting DShot
 
 Pinout
 ======
