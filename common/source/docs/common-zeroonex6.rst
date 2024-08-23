@@ -21,7 +21,7 @@ Features:
       - Triple Synced IMUs, BalancedGyro technology, low noise and more shock-resistant:
       - IMU1-ICM45686(With vibration isolation) 
       - IMU2-BMI088(With vibration isolation) 
-      - IMU3- ICM45686(No vibration isolation)
+      - IMU3-ICM45686(No vibration isolation)
    - Baros:
       - Two barometers:2 x ICP20100
       - Magnetometer: Built-in RM3100 magnetometer
@@ -34,7 +34,7 @@ Features:
    - 2 CAN Power Monitor inputs
    - 2 CAN ports
    - SPI and I2C ports
-   - 16 motor/servo outputs, 8 supporting BiDirDAHOT, 14 suporting DShot
+   - 16 motor/servo outputs, 8 supporting BiDirDShot, 14 suporting DShot
 
 Pinout
 ======
