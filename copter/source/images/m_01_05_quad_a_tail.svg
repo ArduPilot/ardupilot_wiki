@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="motor-diagram" width="720.1955459355801" height="720.1955459355801" viewBox="-360.09777296779004 -242.41000000000003 720.1955459355801 670.9590095997562">
+    <defs id="svg-defs">
+        <g id="frame-half-2d" fill="#ebebeb">
+            <path d="M 1 64 L -30 64 A 12 12 0 0 1 -42 52 L -42 -28 A 12 12 0 0 1 -38 -36 L -5 -62 A 12 12 0 0 1 0 -63 L 1 -63" stroke-width="12" />
+            <circle cx="-17" cy="-29" r="5" stroke-width="0" fill="#60507f" />
+            <line x1="-17" y1="-29" x2="1" y2="-29" stroke-width="10" />
+        </g>
+        <g id="frame-2d">
+            <use xlink:href="#frame-half-2d" />
+            <use xlink:href="#frame-half-2d" transform="scale(-1 1)" />
+        </g>
+        <path id="prop-half-arc" d="M -90 -6 A 91 91 0 0 1 89 -23 L 74 -21 L 101 4 A 101 101 0 0 0 -100 -14 Z" />
+        <g id="prop-arc">
+            <use xlink:href="#prop-half-arc" />
+            <use xlink:href="#prop-half-arc" transform="rotate(180)" />
+        </g>
+        <mask id="cw-arc-mask">
+            <circle cx="0" cy="0" r="101" fill="white" />
+            <rect x="-36" y="-102" width="72" height="20" fill="black" />
+        </mask>
+        <mask id="ccw-arc-mask">
+            <circle cx="0" cy="0" r="101" fill="white" />
+            <rect x="-50" y="-101" width="100" height="25" fill="black" />
+        </mask>
+        <g id="motor-center">
+            <circle cx="0" cy="0" r="75" fill="#c4c4c4" opacity="0.5" />
+            <circle cx="0" cy="0" r="35" />
+        </g>
+        <g id="CW" fill="#33cc33">
+            <use xlink:href="#motor-center" />
+            <use xlink:href="#prop-arc" mask="url(#cw-arc-mask)" />
+            <text x="0" y="-100">CW</text>
+        </g>
+        <g id="CW-normal">
+            <use xlink:href="#CW" />
+        </g>
+        <g id="CW-flipped" fill="#33cc33">
+            <use xlink:href="#CW" mask="url(#cw-arc-mask)" transform="scale(-1 -1)" />
+            <text x="0" y="100">CW</text>
+        </g>
+        <g id="CCW" fill="#00b8e6">
+            <use xlink:href="#motor-center" />
+            <use xlink:href="#prop-arc" mask="url(#ccw-arc-mask)" transform="scale(-1 1)" />
+            <text x="0" y="-100">CCW</text>
+        </g>
+        <g id="CCW-normal">
+            <use xlink:href="#CCW" />
+        </g>
+        <g id="CCW-flipped" fill="#00b8e6">
+            <use xlink:href="#CCW" mask="url(#ccw-arc-mask)" transform="scale(-1 -1)" />
+            <text x="0" y="100">CCW</text>
+        </g>
+        <g id="NYT" fill="#60507f" stroke="#60507f">
+            <use xlink:href="#motor-center" />
+            <circle cx="0" cy="0" r="101" stroke-width="10" fill-opacity="0" />
+        </g>
+        <g id="NYT-flipped">
+            <use xlink:href="#NYT" />
+        </g>
+        <g id="tail-servo" fill="black">
+            <rect x="-20" y="-30" width="40" height="60" />
+            <rect x="14" y="-45" width="6" height="90" />
+            <rect x="20" y="-10" width="5" height="20" />
+            <rect x="25" y="-20" width="5" height="40" />
+            <rect x="30" y="-3" width="4" height="6" />
+        </g>
+        <g id="tail-servo-flipped">
+            <use xlink:href="#tail-servo" />
+        </g>
+    </defs>
+    <g id="motor-diagram-layers" text-anchor="middle" dominant-baseline="central" font-family="sans-serif" font-size="48" font-weight="bold">
+        <g id="layer-background" fill="white" stroke="white"><rect x="-360.09777296779004" y="-242.41000000000003" width="720.1955459355801" height="670.9590095997562" fill="white" /></g>
+        <g id="layer-frame" stroke="#60507f" stroke-width="12"><line x1="0.0" y1="0.0" x2="192.50000000000003" y2="-102.41000000000003" /><line x1="0.0" y1="0.0" x2="-192.50000000000003" y2="-102.41" /><line x1="0.0" y1="0.0" x2="7.072335265075965e-15" y2="115.5" /><line x1="3.0800000000000085" y1="115.5" x2="-154.00000000000006" y2="192.5" /><line x1="-3.0799999999999943" y1="115.5" x2="154.00000000000003" y2="192.5" /><use x="0" y="-5" xlink:href="#frame-2d" /></g>
+        <g id="layer-motors" font-size="36">
+            <g id="layer-motors-bottom" style="transform: rotate3d(1, 0, 0, -55deg) translateZ(30px)" />
+            <g id="layer-frame-3d" stroke="#60507f" stroke-width="12" style="transform: rotate3d(1, 0, 0, -55deg)" />
+            <g id="layer-motors-middle" style="transform: rotate3d(1, 0, 0, -55deg)" />
+            <g id="layer-motors-top" style="transform: rotate3d(1, 0, 0, -55deg) translateZ(-30px)" />
+        <use x="192.50000000000003" y="-102.41000000000003" xlink:href="#NYT" /><use x="-115.49999999999996" y="192.50000000000003" xlink:href="#CCW-flipped" style="transform: rotate3d(-1, 1, 0, 45deg)" /><use x="-192.50000000000003" y="-102.41" xlink:href="#NYT" /><use x="115.49999999999999" y="192.5" xlink:href="#CW-flipped" style="transform: rotate3d(1, 1, 0, 45deg)" /></g>
+        <g id="layer-motor-numbers" fill="white" font-weight="normal">
+            <g id="layer-numbers-bottom" style="transform: rotate3d(1, 0, 0, -55deg) translateZ(30px)" />
+            <g id="layer-numbers-middle" style="transform: rotate3d(1, 0, 0, -55deg)" />
+            <g id="layer-numbers-top" style="transform: rotate3d(1, 0, 0, -55deg) translateZ(-30px)" />
+        <text x="192.50000000000003" y="-102.41000000000003">1</text><text x="-115.49999999999996" y="192.50000000000003" style="transform: rotate3d(-1, 1, 0, 45deg)">2</text><text x="-192.50000000000003" y="-102.41">3</text><text x="115.49999999999999" y="192.5" style="transform: rotate3d(1, 1, 0, 45deg)">4</text></g>
+        <g id="layer-motor-letters" fill="red">
+            <g id="layer-letters-bottom" style="transform: rotate3d(1, 0, 0, -55deg) translateZ(30px)" />
+            <g id="layer-letters-middle" style="transform: rotate3d(1, 0, 0, -55deg)" />
+            <g id="layer-letters-top" style="transform: rotate3d(1, 0, 0, -55deg) translateZ(-30px)" />
+        <text x="316.09777296779004" y="-168.1640152188643">A</text><text x="-187.52940575985363" y="312.54900959975623" style="transform: rotate3d(-1, 1, 0, 45deg)">C</text><text x="-316.09777296779004" y="-168.16401521886428">D</text><text x="187.5294057598537" y="312.5490095997562" style="transform: rotate3d(1, 1, 0, 45deg)">B</text></g>
+        <g id="layer-frame-name" fill="black" font-style="italic"><text x="0" y="384.54900959975623">QUAD A TAIL</text></g>
+        <g id="layer-frame-notes" font-size="36" font-weight="normal" font-style="italic" />
+    </g>
+</svg>

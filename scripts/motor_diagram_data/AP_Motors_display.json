@@ -1,0 +1,741 @@
+{
+    "Document": {
+        "Version": "1.0",
+        "Description1": "Amplifies output from AP_Motors_test.json for select frame types.",
+        "Description2": "Update this file if auto-generated diagrams are not clear to the user.",
+        "Description3": "'layouts' array appends frames not included by AP_Motors_test."
+    },
+    "1": {
+        "ClassName": "QUAD",
+        "2": {
+            "Comments": "Motor vectors adjusted to show accurate diagram",
+            "TypeName": "V",
+            "motors": [
+                {
+                    "Number": 1,
+                    "TestOrder": 1,
+                    "Rotation": "CCW",
+                    "Roll": -0.55,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 2,
+                    "TestOrder": 3,
+                    "Rotation": "CCW",
+                    "Roll": 0.35,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 3,
+                    "TestOrder": 4,
+                    "Rotation": "CW",
+                    "Roll": 0.55,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 4,
+                    "TestOrder": 2,
+                    "Rotation": "CW",
+                    "Roll": -0.35,
+                    "Pitch": -0.5
+                }
+            ]
+        },
+        "3": {
+            "TypeName": "H",
+            "FrameLines": [
+                [0, 0.5, 0, -0.5],
+                [-0.5, 0.5, 0.5, 0.5],
+                [0.5, -0.5, -0.5, -0.5]
+            ]
+        },
+        "4": {
+            "Comments": "Motor vectors adjusted to show accurate diagram",
+            "TypeName": "V TAIL",
+            "FrameLines": [
+                [0, 0, -0.5, 0.266],
+                [0, 0, 0.5, 0.266],
+                [0, 0, 0, -0.55],
+                [-0.008, -0.55, 0.4, -0.33],
+                [0.008, -0.55, -0.4, -0.33]
+            ],
+            "motors": [
+                {
+                    "Number": 1,
+                    "TestOrder": 1,
+                    "Rotation": "?",
+                    "Roll": -0.5,
+                    "Pitch": 0.266
+                },
+                {
+                    "Number": 2,
+                    "TestOrder": 3,
+                    "Rotation": "CW",
+                    "Roll": 0.5,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 3,
+                    "TestOrder": 4,
+                    "Rotation": "?",
+                    "Roll": 0.5,
+                    "Pitch": 0.266
+                },
+                {
+                    "Number": 4,
+                    "TestOrder": 2,
+                    "Rotation": "CCW",
+                    "Roll": -0.5,
+                    "Pitch": -0.5
+                }
+            ]
+        },
+        "5": {
+            "Comments": "Motor vectors adjusted to show accurate diagram",
+            "TypeName": "A TAIL",
+            "WikiNotes": ["Quad A Tail and V Tail frames do not use the front motors for yaw control (NYT). Motor rotation direction does not matter for these motors."],
+            "FrameLines": [
+                [0, 0, -0.5, 0.266],
+                [0, 0, 0.5, 0.266],
+                [0, 0, 0, -0.3],
+                [-0.008, -0.3, 0.4, -0.5],
+                [0.008, -0.3, -0.4, -0.5]
+            ],
+            "motors": [
+                {
+                    "Number": 1,
+                    "TestOrder": 1,
+                    "Rotation": "?",
+                    "Roll": -0.5,
+                    "Pitch": 0.266
+                },
+                {
+                    "Number": 2,
+                    "TestOrder": 3,
+                    "Rotation": "CCW",
+                    "Roll": 0.3,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 3,
+                    "TestOrder": 4,
+                    "Rotation": "?",
+                    "Roll": 0.5,
+                    "Pitch": 0.266
+                },
+                {
+                    "Number": 4,
+                    "TestOrder": 2,
+                    "Rotation": "CW",
+                    "Roll": -0.3,
+                    "Pitch": -0.5
+                }
+            ]
+        },
+        "6": {
+            "TypeName": "PLUS (REVERSED)"
+        },
+        "12": {
+            "TypeName": "X (BETAFLIGHT)"
+        },
+        "13": {
+            "TypeName": "X (DJI)"
+        },
+        "14": {
+            "TypeName": "X (CLOCKWISE)"
+        },
+        "16": {
+            "TypeName": "PLUS (NO YAW TORQUE)"
+        },
+        "17": {
+            "TypeName": "X (NO YAW TORQUE)",
+            "WikiNotes": [
+                "Quad 'No Yaw Torque' (NYT) frames are primarily intended for :ref:`VTOL Tailsitter<guide-tailsitter>` configurations. Motor rotation direction does not matter for these motors."
+            ]
+        },
+        "18": {
+            "TypeName": "X (BF REVERSED)"
+        }
+    },
+    "2": {
+        "ClassName": "HEXA",
+        "13": {
+            "TypeName": "X (DJI)"
+        },
+        "14": {
+            "TypeName": "X (CLOCKWISE)"
+        }
+    },
+    "3": {
+        "ClassName": "OCTO",
+        "2": {
+            "TypeName": "V",
+            "FrameLines": [
+                [0, 0, 0.415, 0.17],
+                [0, 0, -0.335, -0.16],
+                [0, 0, 0.335, -0.16],
+                [0, 0, -0.415, 0.17],
+                [-0.25, -0.5, -0.5, 0.5],
+                [0.5, 0.5, 0.25, -0.5]
+            ]
+        },
+        "3": {
+            "TypeName": "H",
+            "FrameLines": [
+                [0, 0, -0.5, 0.1665],
+                [0, 0, 0.5, -0.1665],
+                [0, 0, 0.5, 0.1665],
+                [0, 0, -0.5, -0.1665],
+                [-0.5, 0.5, -0.5, -0.5],
+                [0.5, -0.5, 0.5, 0.5]
+            ]
+        },
+        "13": {
+            "TypeName": "X (DJI)"
+        },
+        "14": {
+            "TypeName": "X (CLOCKWISE)"
+        },
+        "15": {
+            "TypeName": "I",
+            "FrameLines": [
+                [0, 0, 0.1665, -0.5],
+                [0, 0, -0.1665, 0.5],
+                [0, 0, 0.1665, 0.5],
+                [0, 0, -0.1665, -0.5],
+                [0.5, -0.5, -0.5, -0.5],
+                [-0.5, 0.5, 0.5, 0.5]
+            ]
+        }
+    },
+    "4": {
+        "ClassName": "OCTO QUAD",
+        "0": {
+            "Comments": "Motor vectors adjusted for display",
+            "TypeName": "PLUS",
+            "motors": [
+                {
+                    "Number": 1,
+                    "TestOrder": 1,
+                    "Rotation": "CCW",
+                    "Roll": -0.0,
+                    "Pitch": 0.65
+                },
+                {
+                    "Number": 2,
+                    "TestOrder": 7,
+                    "Rotation": "CW",
+                    "Roll": 0.55,
+                    "Pitch": -0.0
+                },
+                {
+                    "Number": 3,
+                    "TestOrder": 5,
+                    "Rotation": "CCW",
+                    "Roll": 0.0,
+                    "Pitch": -0.65
+                },
+                {
+                    "Number": 4,
+                    "TestOrder": 3,
+                    "Rotation": "CW",
+                    "Roll": -0.55,
+                    "Pitch": -0.0
+                },
+                {
+                    "Number": 5,
+                    "TestOrder": 8,
+                    "Rotation": "CCW",
+                    "Roll": 0.55,
+                    "Pitch": -0.0
+                },
+                {
+                    "Number": 6,
+                    "TestOrder": 2,
+                    "Rotation": "CW",
+                    "Roll": -0.0,
+                    "Pitch": 0.65
+                },
+                {
+                    "Number": 7,
+                    "TestOrder": 4,
+                    "Rotation": "CCW",
+                    "Roll": -0.55,
+                    "Pitch": -0.0
+                },
+                {
+                    "Number": 8,
+                    "TestOrder": 6,
+                    "Rotation": "CW",
+                    "Roll": 0.0,
+                    "Pitch": -0.65
+                }
+            ]
+        },
+        "2": {
+            "Comments": "Motor vectors adjusted to show accurate diagram",
+            "TypeName": "V",
+            "motors": [
+                {
+                    "Number": 1,
+                    "TestOrder": 1,
+                    "Rotation": "CCW",
+                    "Roll": -0.5,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 2,
+                    "TestOrder": 7,
+                    "Rotation": "CW",
+                    "Roll": 0.5,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 3,
+                    "TestOrder": 5,
+                    "Rotation": "CCW",
+                    "Roll": 0.35,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 4,
+                    "TestOrder": 3,
+                    "Rotation": "CW",
+                    "Roll": -0.35,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 5,
+                    "TestOrder": 8,
+                    "Rotation": "CCW",
+                    "Roll": 0.5,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 6,
+                    "TestOrder": 2,
+                    "Rotation": "CW",
+                    "Roll": -0.5,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 7,
+                    "TestOrder": 4,
+                    "Rotation": "CCW",
+                    "Roll": -0.35,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 8,
+                    "TestOrder": 6,
+                    "Rotation": "CW",
+                    "Roll": 0.35,
+                    "Pitch": -0.5
+                }
+            ]
+        },
+        "3": {
+            "TypeName": "H",
+            "FrameLines": [
+                [0, -0.5, 0, 0.5],
+                [0.5, 0.5, -0.5, 0.5],
+                [-0.5, -0.5, 0.5, -0.5]
+            ]
+        },
+        "12": {
+            "TypeName": "X (BETAFLIGHT)"
+        },
+        "14": {
+            "TypeName": "X (CLOCKWISE)"
+        },
+        "18": {
+            "TypeName": "X (BF REVERSED)"
+        }
+    },
+    "5": {
+        "ClassName": "Y6",
+        "Comments": "Y6 has a lot of repeated/redundant frame types",
+        "0": {
+            "TypeName": "A"
+        },
+        "1": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "2": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "3": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "4": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "5": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "6": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "7": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "8": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "9": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "10": {
+            "TypeName": "B"
+        },
+        "11": {
+            "TypeName": "F"
+        },
+        "12": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "13": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "14": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "15": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "16": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "17": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "18": {
+            "TypeName": "Default",
+            "Skip": true
+        }
+    },
+    "7": {
+        "ClassName": "TRICOPTER",
+        "0": {
+            "Comments": "Redefines motor vectors to scale with Y6",
+            "TypeName": "",
+            "FrameLines": [
+                [0, 0, -0.5, 0.25],
+                [0, 0, 0.5, 0.25],
+                [0, 0, 0, -0.55]
+            ],
+            "motors": [
+                {
+                    "Number": 1,
+                    "TestOrder": 1,
+                    "Rotation": "?",
+                    "Roll": -0.5,
+                    "Pitch": 0.25
+                },
+                {
+                    "Number": 2,
+                    "TestOrder": 4,
+                    "Rotation": "?",
+                    "Roll": 0.5,
+                    "Pitch": 0.25
+                },
+                {
+                    "Number": 4,
+                    "TestOrder": 2,
+                    "Rotation": "?",
+                    "Roll": 0.0,
+                    "Pitch": -0.55
+                },
+                {
+                    "Number": 7,
+                    "TestOrder": 3,
+                    "Rotation": "tail-servo",
+                    "Roll": -0.1,
+                    "Pitch": -0.26
+                }
+            ]
+        },
+        "1": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "2": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "3": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "4": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "5": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "6": {
+            "TypeName": "PITCH REVERSED",
+            "Comments": "Redefines motor vectors to scale with Y6",
+            "WikiNotes": [
+                "Since the tail (or nose) servo is used for yaw control, Tricopter motor rotation direction does not matter. If the direction of your tail (or nose) servo is going the wrong way in response to yaw then either the ``RCn_REVERSE`` RC input direction or the tilt servo's ``SERVOn_REVERSE`` parameter should be set to 1 (from 0), See :ref:`TriCopter setup page <tricopter>` for details."
+            ],
+            "FrameLines": [
+                [0, 0, 0.5, -0.25],
+                [0, 0, -0.5, -0.25],
+                [0, 0, 0, 0.55]
+            ],
+            "motors": [
+                {
+                    "Number": 1,
+                    "TestOrder": 3,
+                    "Rotation": "?",
+                    "Roll": -0.5,
+                    "Pitch": -0.25
+                },
+                {
+                    "Number": 2,
+                    "TestOrder": 4,
+                    "Rotation": "?",
+                    "Roll": 0.5,
+                    "Pitch": -0.25
+                },
+                {
+                    "Number": 4,
+                    "TestOrder": 1,
+                    "Rotation": "?",
+                    "Roll": 0.0,
+                    "Pitch": 0.55
+                },
+                {
+                    "Number": 7,
+                    "TestOrder": 2,
+                    "Rotation": "tail-servo",
+                    "Roll": -0.1,
+                    "Pitch": 0.26
+                }
+            ]
+        },
+        "7": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "8": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "9": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "10": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "11": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "12": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "13": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "14": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "15": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "16": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "17": {
+            "TypeName": "Default",
+            "Skip": true
+        },
+        "18": {
+            "TypeName": "Default",
+            "Skip": true
+        }
+    },
+    "10": {
+        "ClassName": "BICOPTER",
+        "0": {
+            "TypeName": "",
+            "Notes": [
+                "L = Left Throttle, Left Tilt",
+                "R = Right Throttle, Right Tilt"
+            ]
+        }
+    },
+    "14": {
+        "ClassName": "DECA",
+        "1": {
+            "TypeName": "X (and  CW X)"
+        },
+        "14": {
+            "TypeName": "X (CLOCKWISE)",
+            "Comments": "Diagram does not change vs default X; no diagram needed.",
+            "Skip": true
+        }
+    },
+    "layouts": [
+        {
+            "Class": 1,
+            "ClassName": "QUAD",
+            "Type": 19,
+            "TypeName": "Y4A",
+            "Comments": "Not output by AP_Motors_test; Motor vectors adjusted slightly for display",
+            "motors": [
+                {
+                    "Number": 1,
+                    "TestOrder": 1,
+                    "Rotation": "CCW-normal",
+                    "Roll": -0.45,
+                    "Pitch": 0.266
+                },
+                {
+                    "Number": 2,
+                    "TestOrder": 2,
+                    "Rotation": "CW",
+                    "Roll": -0.0,
+                    "Pitch": -0.66
+                },
+                {
+                    "Number": 3,
+                    "TestOrder": 3,
+                    "Rotation": "CCW",
+                    "Roll": -0.0,
+                    "Pitch": -0.66
+                },
+                {
+                    "Number": 4,
+                    "TestOrder": 4,
+                    "Rotation": "CW-normal",
+                    "Roll": 0.45,
+                    "Pitch": 0.266
+                }
+            ]
+        },
+        {
+            "Class": 7,
+            "ClassName": "TRI",
+            "Type": 0,
+            "TypeName": "default",
+            "Comments": "Ensures problematic tricopter frames are output",
+            "motors": [
+                {
+                    "Number": 1,
+                    "TestOrder": 1,
+                    "Rotation": "?",
+                    "Roll": -1.0,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 2,
+                    "TestOrder": 4,
+                    "Rotation": "?",
+                    "Roll": 1.0,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 4,
+                    "TestOrder": 2,
+                    "Rotation": "?",
+                    "Roll": 0.0,
+                    "Pitch": -1.0
+                },
+                {
+                    "Number": 7,
+                    "TestOrder": 3,
+                    "Rotation": "?",
+                    "Roll": 0.0,
+                    "Pitch": 0.0
+                }
+            ]
+        },
+        {
+            "Class": 7,
+            "ClassName": "TRI",
+            "Type": 6,
+            "TypeName": "pitch-reversed",
+            "Comments": "Ensures problematic tricopter frames are output",
+            "motors": [
+                {
+                    "Number": 1,
+                    "TestOrder": 3,
+                    "Rotation": "?",
+                    "Roll": -1.0,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 2,
+                    "TestOrder": 4,
+                    "Rotation": "?",
+                    "Roll": 1.0,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 4,
+                    "TestOrder": 1,
+                    "Rotation": "?",
+                    "Roll": 0.0,
+                    "Pitch": 1.0
+                },
+                {
+                    "Number": 7,
+                    "TestOrder": 2,
+                    "Rotation": "?",
+                    "Roll": 0.0,
+                    "Pitch": -0.0
+                }
+            ]
+        },
+        {
+            "Class": 10,
+            "ClassName": "BI",
+            "Type": 0,
+            "TypeName": "COPTER",
+            "Comments": "Not output by AP_Motors_test",
+            "motors": [
+                {
+                    "Number": "L",
+                    "TestOrder": 1,
+                    "Rotation": "CCW",
+                    "Roll": 0.5,
+                    "Pitch": 0.0
+                },
+                {
+                    "Number": "R",
+                    "TestOrder": 2,
+                    "Rotation": "CW",
+                    "Roll": -0.5,
+                    "Pitch": 0.0
+                }
+            ]
+        }
+    ]
+}
