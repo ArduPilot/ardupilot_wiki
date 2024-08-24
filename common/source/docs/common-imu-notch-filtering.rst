@@ -105,7 +105,7 @@ The software notch filters used are very "spikey" being relatively narrow but go
 :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` Bit      Action
 ==========================================      =======================
 0                                               Double overlapping Notches
-1                                               MultiSource: if using FFT Mode, the three largest noise sources will have a notch assigned. If ESC Telemetry Mode, then each motor will have a notch assigned at its RPM.
+1                                               MultiSource: if using FFT Mode, the three largest noise sources will have a notch assigned. If ESC Telemetry Mode, then each motor will have a notch assigned at its RPM. If throttle mode, then each motor will have a notch assigned at its throttle input rather than the average overall throttle.
 2                                               Updates the filters at the loop rate. This is cpu intensive, but tracks noise variations faster. Only valid if frequency source updates at loop rate, ie Bi-Directional DShot telemetry.
 3                                               Enables notches on every IMU instead of just the primary. This is cpu intensive, but allows better lane switching decisions in noisy situations and for debugging. Not recommended for F4 boards.
 4                                               Triple overlapping Notches
