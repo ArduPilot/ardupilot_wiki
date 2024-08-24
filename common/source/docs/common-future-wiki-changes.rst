@@ -38,12 +38,12 @@ New Features
 - Add mask to select which ESCs are used in a given ESC Battery Monitor, see https://github.com/ArduPilot/ardupilot_wiki/pull/6023
 - Add EKF3 option to help mediate operation in GPS jamming environments, see https://github.com/ArduPilot/ardupilot_wiki/pull/6069
 - Add hires DroneCAN magnetometer array info, see https://github.com/ArduPilot/ardupilot_wiki/pull/6071
-- New Notch Filter Option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6108
+- New Notch Filter Option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6213
 - Add Mount2 retract aux switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/6090
 - Add EKF3 option to align ExternalNAV with OpticalFlow, see https://github.com/ArduPilot/ardupilot_wiki/pull/6124
 - iBUS Telemetry, see https://github.com/ArduPilot/ardupilot_wiki/pull/6154
 - More RPM sensors allowed, see https://github.com/ArduPilot/ardupilot_wiki/pull/6182
-- Per motor throttle based notch filters, see https://github.com/ArduPilot/ardupilot_wiki/pull/6191
+- Per motor throttle based notch filters, see https://github.com/ArduPilot/ardupilot_wiki/pull/6214
 - New Temp sensor logging option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6197
 
 [site wiki="plane"]
