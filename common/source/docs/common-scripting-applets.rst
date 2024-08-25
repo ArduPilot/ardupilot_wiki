@@ -33,7 +33,7 @@ net_webserver.lua                           This implements a web server for boa
 pelco_d_antennatracker.lua                  Maps AntennaTracker outputs to corresponding Pelco-D messages
 plane_aerobatics.lua(in Aerobatics subdir)  Autonomous trajectory precise aerobatics
 plane_package_place.lua                     Quadplane payload place script
-plane_precland.lua                          Precision landing system for QuadPlanes
+plane_precland.lua                          Precision landing/loitering system for QuadPlanes
 plane_ship_landing.lua                      Script to automate moving vehicle landing with a beacon
 revert_param.lua                            Easy parameter reversion system to help with manual in-flight tuning.
 rover-quicktune.lua                         QuicK tuning applet for Rovers
