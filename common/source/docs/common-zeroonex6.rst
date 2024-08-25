@@ -140,3 +140,5 @@ Where to Buy
 ============
 
 `AeroOne <https://www.01aero.cn>`__
+
+[copywiki destination="plane,copter,rover,blimp"]
