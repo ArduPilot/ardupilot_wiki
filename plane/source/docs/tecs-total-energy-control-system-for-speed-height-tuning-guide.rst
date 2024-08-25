@@ -164,7 +164,7 @@ Flight Testing
       or the maximum sink rate :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` needs to be reduced.
 
 If the height response oscillates you can try increasing the value of
-`TECS_PTCH_DAMP <#TECS_PTCH_DAMP>`__ in increments of 0.1 (don't go
+:ref:`TECS_PTCH_DAMP <TECS_PTCH_DAMP>` in increments of 0.1 (don't go
 above 0.5 unless you know how to check for excessive noise in the
 nav_pitch signal using the mission planner tuning window) and then try
 increasing the value of :ref:`TECS_TIME_CONST<TECS_TIME_CONST>` in increments of 1.0.
@@ -279,7 +279,7 @@ To tune this parameter, either use FBWB to manually input speed demand changes,
 or set up a mission involving DO_CHANGE_SPEED items. Set TECS_PTCH_FF_V0 to the
 normal flight speed of your aircraft. This should also be the speed it glides at
 with no pitch input in FBWA mode (i.e. when flying at a pitch attitude specified
-by the STAB_PTCH_DOWN parameter). When reviewing the log from such a flight, look
+by the :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` parameter). When reviewing the log from such a flight, look
 at the TECS pitch integrator item (TECS.iph) in the onboard logs. Usually this 
 reduces (becomes more negative) to trim the aircraft nose-down for a higher airspeed,
 and vice versa. The goal is to use the feed-forward gain to reduce the required 
