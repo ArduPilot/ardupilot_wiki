@@ -18,4 +18,5 @@ Additional Information and Topics of Interest
     OEM Customization <common-oem-customizations>
     Use Cases and Applications<common-use-cases-and-applications>
     Web Tools <https://firmware.ardupilot.org/Tools/WebTools/>
+    Generating Motor Diagrams <generating-motor-diagrams>
     Appendix <common-appendix>

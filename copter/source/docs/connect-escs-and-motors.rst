@@ -425,3 +425,8 @@ For more information see `this video <https://youtu.be/6C1YG1e2aTo>`__.
 .. |prop_direction| image:: ../images/prop-direction.png
     :target: ../_images/prop-direction.png
     :width: 450px
+
+Adding and Editing Motor Diagrams
+=================================
+
+Motor diagram images can be procedurally generated via a script in the :ref:`ArduPilot Wiki build environment<common-wiki-editing-setup>`. See :ref:`Generating Copter Motor Diagrams<generating-motor-diagrams>` for instructions.
