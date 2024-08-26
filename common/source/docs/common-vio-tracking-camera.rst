@@ -17,7 +17,7 @@ What to Buy
 - `Intel RealSense Tracking Camera T265 <https://www.intelrealsense.com/tracking-camera-t265/>`__
 - `Raspberry Pi 4 <https://www.raspberrypi.org/products/raspberry-pi-4-model-b/>`__ (2GB or 4GB recommended, 8GB has issues) or `Raspberry Pi 3 <https://www.raspberrypi.org/products/raspberry-pi-3-model-b/>`__
 - 16GB (or larger) SD card
-- `PiConnectLite <https://www.rpanion.com/product/pi-connect-lite/>`__ to connect the RPI to the autopilot (optional)
+- `PiConnectLite <https://www.rpanion.com/product/pi-connect-lite-v2/>`__ to connect the RPI to the autopilot (optional)
 
 .. note::
 
