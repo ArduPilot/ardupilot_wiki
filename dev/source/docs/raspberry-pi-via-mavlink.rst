@@ -24,7 +24,7 @@ functions can be found
 
 The RPi can be powered by connecting +5V source to the +5V pin  **or** from USB in.
 
-Addon boards such as the `Pi-Connect <https://www.rpanion.com/product/pi-connect-lite/>`__
+Addon boards such as the `Pi-Connect <https://www.rpanion.com/product/pi-connect-lite-v2/>`__
 can simplify the connection of the RPi by providing a power supply and telemetry port. 
 
 .. tip::
