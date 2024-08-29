@@ -42,6 +42,8 @@
 
 # VSCode
 /.vscode
+/.idea
+/.venv
 
 # Parameters multiversioning
 /copter/source/docs/parameters-Copter-*.rst
