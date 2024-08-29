@@ -28,7 +28,6 @@ Build notes:
 Parameters files are fetched from autotest using requests
 
 """
-from __future__ import print_function, unicode_literals
 
 import argparse
 import distutils
@@ -49,8 +48,7 @@ import time
 import requests
 from urllib.parse import urlparse
 from concurrent.futures import ThreadPoolExecutor
-from typing import Optional, Dict, List
-
+from typing import Optional, Dict, List, Union
 
 import rst_table
 
@@ -61,6 +59,30 @@ from datetime import datetime
 from distutils import dir_util  # noqa: F401
 
 from frontend.scripts import get_discourse_posts
+import logging
+
+
+class ErrorStoreHandler(logging.Handler):
+    """Allow to store errors for later usage."""
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.error_messages = []
+
+    def emit(self, record):
+        self.error_messages.append(record.getMessage())
+
+
+logger = logging.getLogger(__name__)
+
+# The ErrorStoreHandler stores the messages
+error_store_handler = ErrorStoreHandler()
+error_store_handler.setLevel(logging.ERROR)
+logger.addHandler(error_store_handler)
+
+# The StreamHandler logs to the console
+stream_handler = logging.StreamHandler(sys.stdout)
+stream_handler.setLevel(logging.ERROR)
+logger.addHandler(stream_handler)
 
 if sys.version_info < (3, 8):
     print("Minimum python version is 3.8")
@@ -106,32 +128,32 @@ LOGMESSAGE_SITE = {
     'antennatracker': 'Tracker',
     'blimp': 'Blimp',
 }
-error_log = list()
+
 N_BACKUPS_RETAIN = 10
 
-VERBOSE = False
+
+def info(str_to_print: str) -> None:
+    """Show and count the errors."""
+    logging.info(str_to_print)
 
 
-def debug(str_to_print):
+def debug(str_to_print: str) -> None:
     """Debug output if verbose is set."""
-    if VERBOSE:
-        print(f"[update.py]: {str_to_print}")
+    logging.debug(str_to_print)
 
 
-def error(str_to_print):
+def error(str_to_print: Union[str, Exception]) -> None:
     """Show and count the errors."""
-    global error_log
-    error_log.append(str_to_print)
-    print(f"[update.py][error]: {str_to_print}", file=sys.stderr)
+    logging.error(f"{str_to_print}")
 
 
-def fatal(str_to_print):
+def fatal(str_to_print: Union[str, Exception]) -> None:
     """Show and count the errors."""
-    error(str_to_print)
+    logging.critical(f"{str_to_print}")
     sys.exit(1)
 
 
-def remove_if_exists(filepath):
+def remove_if_exists(filepath: str) -> None:
     try:
         os.remove(filepath)
     except OSError as e:
@@ -141,13 +163,13 @@ def remove_if_exists(filepath):
 
 def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
     fetch_url(fetchurl, fpath=new_name, verbose=False)
-    print(f"Renaming {new_name} to {target_file}")
+    info(f"Renaming {new_name} to {target_file}")
     os.replace(new_name, target_file)
 
 
 def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) -> None:
     """Fetches content at url and puts it in a file corresponding to the filename in the URL"""
-    print(f"Fetching {fetchurl}")
+    info(f"Fetching {fetchurl}")
 
     if verbose:
         total_size = get_request_file_size(fetchurl)
@@ -162,7 +184,7 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
 
     with open(filename, 'wb') as out_file:
         if verbose:
-            print(f"Completed : 0%", end='')
+            info("Completed : 0%")
         completed_last = 0
         for chunk in response.iter_content(chunk_size=chunk_size):
             out_file.write(chunk)
@@ -172,10 +194,10 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
             if verbose:
                 completed = downloaded_size * 100 // total_size
                 if completed - completed_last > 10 or completed == 100:
-                    print(f"..{completed}%", end='')
+                    info(f"..{completed}%")
                     completed_last = completed
         if verbose:
-            print()  # Newline to correct the console cursor position
+            info("")  # Newline to correct the console cursor position
 
 
 def get_request_file_size(url: str) -> int:
@@ -232,8 +254,8 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
 
 
 def build_one(wiki, fast):
-    '''build one wiki'''
-    print(f'Using make for sphinx: {wiki}')
+    """build one wiki"""
+    info(f'Using make for sphinx: {wiki}')
     if platform.system() == "Windows":
         # This will fail if there's no folder to clean, so no check_call here
         if not fast:
@@ -297,10 +319,10 @@ def check_build(site):
             continue
         index_html = os.path.join(wiki, "build", "html", "index.html")
         if not os.path.exists(index_html):
-            fatal("%s site not built - missing %s" % (wiki, index_html))
+            fatal(f"{wiki} site not built - missing {index_html}")
 
 
-def copy_build(site, destdir):
+def copy_build(site, destdir) -> None:
     """
     Copies each site into the target location
     """
@@ -320,7 +342,7 @@ def copy_build(site, destdir):
             shutil.rmtree(olddir)
         os.makedirs(olddir)
         if os.path.exists(targetdir):
-            debug('Moving %s into %s' % (targetdir, olddir))
+            debug(f'Moving {targetdir} into {olddir}')
             shutil.move(targetdir, olddir)
         # copy new dir to targetdir
         # print("DEBUG: targetdir: %s" % targetdir)
@@ -346,7 +368,7 @@ def copy_build(site, destdir):
         shutil.rmtree(olddir)
 
 
-def make_backup(site, destdir, backupdestdir):
+def make_backup(building_time, site, destdir, backupdestdir):
     """
     backup current site
     """
@@ -368,11 +390,11 @@ def make_backup(site, destdir, backupdestdir):
         bkdir = os.path.join(backupdestdir, str(building_time + '-wiki-bkp'), str(wiki))
         debug('Checking %s' % bkdir)
         distutils.dir_util.mkpath(bkdir)
-        debug('Copying %s into %s' % (targetdir, bkdir))
+        debug(f'Copying {targetdir} into {bkdir}')
         try:
             subprocess.check_call(["rsync", "-a", "--delete", targetdir + "/", bkdir])
         except subprocess.CalledProcessError as ex:
-            print(ex)
+            error(ex)
             fatal("Failed to backup %s" % wiki)
 
 
@@ -437,7 +459,7 @@ def generate_copy_dict(start_dir=COMMON_DIR):
                 for wiki in targets:
                     # print("CopyTarget: %s" % wiki)
                     content = strip_content(source_content, wiki)
-                    targetfile = '%s/source/docs/%s' % (wiki, file)
+                    targetfile = f'{wiki}/source/docs/{file}'
                     debug(targetfile)
                     destination_file = open(targetfile, 'w', 'utf-8')
                     destination_file.write(content)
@@ -455,7 +477,7 @@ def generate_copy_dict(start_dir=COMMON_DIR):
                 # print("JS: " + str(targets))
                 for wiki in targets:
                     content = strip_content(source_content, wiki)
-                    targetfile = '%s/source/_static/%s' % (wiki, file)
+                    targetfile = f'{wiki}/source/_static/{file}'
                     debug(targetfile)
                     destination_file = open(targetfile, 'w', 'utf-8')
                     destination_file.write(content)
@@ -519,9 +541,9 @@ def logmatch_code(matchobj, prefix):
 
     for i in range(9):
         try:
-            print("%s m%d: %s" % (prefix, i, matchobj.group(i)))
+            info("%s m%d: %s" % (prefix, i, matchobj.group(i)))
         except IndexError:  # The object has less groups than expected
-            print("%s: except m%d" % (prefix, i))
+            error("%s: except m%d" % (prefix, i))
 
 
 def is_the_same_file(file1, file2):
@@ -592,9 +614,9 @@ def fetch_versioned_parameters(site=None):
 
                 # Moves the updated JSON file
                 if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % ("AntennaTracker", "AntennaTracker")  # noqa: E501
+                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/{}/parameters-{}.json'.format("AntennaTracker", "AntennaTracker")  # noqa: E501
                 else:
-                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value, key.title())
+                    vehicle_json_file = os.getcwd() + f'/../new_params_mversion/{value}/parameters-{key.title()}.json'
                 new_file = (
                     key +
                     "/source/_static/" +
@@ -624,22 +646,22 @@ def fetch_versioned_parameters(site=None):
                                     "/source/docs/" +
                                     filename[str(filename).rfind("/")+1:])
                         if not os.path.isfile(new_file):
-                            debug("Copying %s to %s (target file does not exist)" % (filename, new_file))
+                            debug(f"Copying {filename} to {new_file} (target file does not exist)")
                             shutil.copy2(filename, new_file)
                         elif os.path.isfile(filename.replace("new_params_mversion", "old_params_mversion")): # The cached file exists?  # noqa: E501
 
                             # Temporary debug messages to help with cache tasks.
-                            debug("Check cache: %s against %s" % (filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
+                            debug("Check cache: {} against {}".format(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
                             debug("Check cache with filecmp.cmp: %s" % filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
                             debug("Check cache with sha256: %s" % is_the_same_file(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
 
                             if ("parameters.rst" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.  # noqa: E501
-                                debug("Overwriting %s to %s" % (filename, new_file))
+                                debug(f"Overwriting {filename} to {new_file}")
                                 shutil.copy2(filename, new_file)
                             else:
                                 debug("It will reuse the last build of " + new_file)
                         else:   # If not cached, copy it anyway.
-                            debug("Copying %s to %s" % (filename, new_file))
+                            debug(f"Copying {filename} to {new_file}")
                             shutil.copy2(filename, new_file)
 
                     except Exception as e:
@@ -710,7 +732,7 @@ def cache_parameters_files(site=None):
 
 def put_cached_parameters_files_in_sites(site=None):
     """
-    For each vechile: put built .html files in site folder
+    For each vehicle: put built .html files in site folder
 
     """
     for key, value in PARAMETER_SITE.items():
@@ -725,12 +747,12 @@ def put_cached_parameters_files_in_sites(site=None):
                 debug("Site %s getting previously built files from %s" %
                       (site, built_folder))
                 for built in built_parameters_files:
-                    if ("latest" not in built):  # latest parameters files must be built every time
+                    if "latest" not in built:  # latest parameters files must be built every time
                         debug("Reusing built %s in %s " %
                               (built, vehicle_folder))
                         shutil.copy(built, vehicle_folder)
             except Exception as e:
-                error(e)
+                error(str(e))
                 pass
 
 
@@ -742,7 +764,7 @@ def update_frontend_json():
     try:
         get_discourse_posts.main()
     except Exception as e:
-        error(e)
+        error(str(e))
         pass
 
 
@@ -760,12 +782,12 @@ def copy_static_html_sites(site, destdir):
             shutil.rmtree(targetdir, ignore_errors=True)
             shutil.copytree(site_folder, targetdir)
         except Exception as e:
-            error(e)
+            error(str(e))
             pass
 
 
 def check_imports():
-    '''check key imports work'''
+    """check key imports work"""
     import pkg_resources
     # package names to check the versions of. Note that these can be different than the string used to import the package
     requires = ["sphinx_rtd_theme>=1.3.0", "sphinxcontrib.youtube>=1.2.0", "sphinx>=7.1.2", "docutils<0.19"]
@@ -774,13 +796,13 @@ def check_imports():
         try:
             pkg_resources.require(r)
         except pkg_resources.ResolutionError as ex:
-            print(ex)
+            error(str(ex))
             fatal("Require %s\nPlease run the wiki build setup script \"Sphinxsetup\"" % r)
     debug("Imports OK")
 
 
 def check_ref_directives():
-    '''check formatting around ref directive that sphinx does not warn about'''
+    """check formatting around ref directive that sphinx does not warn about"""
     character_before_ref_tag = re.compile(r"[a-zA-Z0-9_:]:ref:")
     character_after_ref_tag = re.compile(r"(:ref:`.*?`[_]{0,2}) ([\.,:])")
 
@@ -800,8 +822,8 @@ def check_ref_directives():
 
 
 def create_features_pages(site):
-    '''for each vehicle, write out a page containing features for each
-    supported board'''
+    """for each vehicle, write out a page containing features for each
+    supported board"""
 
     debug("Creating features pages")
 
@@ -819,7 +841,7 @@ def create_features_pages(site):
     fetch_url("https://firmware.ardupilot.org/features.json.gz")
     features_json = json.load(gzip.open("features.json.gz"))
     if features_json["format-version"] != "1.0.0":
-        print("bad format version")
+        error("bad format version")
         return
     features = features_json["features"]
 
@@ -841,8 +863,8 @@ def create_features_pages(site):
 
 
 def reference_for_board(board):
-    '''return a string suitable for creating an anchor in RST to make
-    board's feture table linkable'''
+    """return a string suitable for creating an anchor in RST to make
+    board's feture table linkable"""
     return "FEATURE_%s" % board
 
 
@@ -871,7 +893,7 @@ def create_features_page(features, build_options_by_define, vehicletype):
                 build_options = build_options_by_define[feature]
             except KeyError:
                 # mismatch between build_options.py and features.json
-                print("feature %s (%s,%s) not in build_options.py" %
+                error("feature %s (%s,%s) not in build_options.py" %
                       (feature, platform_key, vehicletype))
                 continue
             if feature_in:
@@ -901,25 +923,25 @@ def create_features_page(features, build_options_by_define, vehicletype):
         else:
             t = rst_table.tablify(rows, headings=column_headings)
         underline = "-" * len(platform_key)
-        all_tables += ('''
-.. _%s:
+        all_tables += ("""
+.. _{}:
 
-%s
-%s
+{}
+{}
 
-%s
-''' % (reference_for_board(platform_key), platform_key, underline, t))
+{}
+""".format(reference_for_board(platform_key), platform_key, underline, t))
 
     index = ""
     for board in sorted(features_by_platform.keys(), key=lambda x : x.lower()):
-        index += '- :ref:`%s<%s>`\n\n' % (board, reference_for_board(board))
+        index += f'- :ref:`{board}<{reference_for_board(board)}>`\n\n'
 
     all_features_rows = []
     for feature in sorted(build_options_by_define.values(), key=lambda x : (x.category + x.label).lower()):
         all_features_rows.append([feature.category, feature.label, feature.description])
     all_features = rst_table.tablify(all_features_rows, headings=["Category", "Feature", "Description"])
 
-    return '''
+    return """
 .. _binary-features:
 
 =====================================
@@ -928,150 +950,160 @@ List of Firmware Limitations by Board
 
 **Dynamically generated by update.py.  Do not edit.**
 
-%s Omitted features by board type in "latest" builds from build server
+{} Omitted features by board type in "latest" builds from build server
 
 
 Board Index
 ===========
 
-%s
+{}
 
 .. _all-features:
 
 All Features
 ============
 
-%s
+{}
 
 Boards
 ======
 
-%s
-''' % (vehicletype, index, all_features, all_tables)
+{}
+""".format(vehicletype, index, all_features, all_tables)
 
 #######################################################################
 
 
-if __name__ == "__main__":
+class WikiUpdater:
+    def __init__(self) -> None:
+        if platform.system() == "Windows":
+            multiprocessing.freeze_support()
 
-    if platform.system() == "Windows":
-        multiprocessing.freeze_support()
+        # Set up option parsing to get connection string
+        parser = argparse.ArgumentParser(
+            description='Copy Common Files as needed, stripping out non-relevant wiki content',
+        )
+        parser.add_argument(
+            '--site',
+            help="If you just want to copy to one site, you can do this. Otherwise will be copied.",
+        )
+        parser.add_argument(
+            '--clean',
+            action='store_true',
+            help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).",
+        )
+        parser.add_argument(
+            '--cached-parameter-files',
+            action='store_true',
+            help="Do not re-download parameter files",
+        )
+        parser.add_argument(
+            '--parallel',
+            type=int,
+            help="limit parallel builds, -1 for unlimited",
+            default=1,
+        )
+        parser.add_argument(
+            '--destdir',
+            default=None,
+            help="Destination directory for compiled docs",
+        )
+        parser.add_argument(
+            '--enablebackups',
+            action='store_true',
+            default=False,
+            help="Enable several backups up to const N_BACKUPS_RETAIN in --backupdestdir folder",
+        )
+        parser.add_argument(
+            '--backupdestdir',
+            default="/var/sites/wiki-backup/web",
+            help="Destination directory for compiled docs",
+        )
+        parser.add_argument(
+            '--paramversioning',
+            action='store_true',
+            default=False,
+            help="Build multiple parameters pages for each vehicle based on its firmware repo.",
+        )
+        parser.add_argument(
+            '--verbose',
+            dest='verbose',
+            action='store_true',
+            default=False,
+            help="show debugging output",
+        )
+        parser.add_argument(
+            '--fast',
+            dest='fast',
+            action='store_true',
+            default=False,
+            help=("Incremental build using already downloaded parameters, "
+                  "log messages, and video thumbnails rather than cleaning "
+                  "before build."),
+        )
+        self.args, unknown = parser.parse_known_args()
+        self.verbose: bool = self.args.verbose
 
-    # Set up option parsing to get connection string
-    parser = argparse.ArgumentParser(
-        description='Copy Common Files as needed, stripping out non-relevant wiki content',
-    )
-    parser.add_argument(
-        '--site',
-        help="If you just want to copy to one site, you can do this. Otherwise will be copied.",
-    )
-    parser.add_argument(
-        '--clean',
-        action='store_true',
-        help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).",
-    )
-    parser.add_argument(
-        '--cached-parameter-files',
-        action='store_true',
-        help="Do not re-download parameter files",
-    )
-    parser.add_argument(
-        '--parallel',
-        type=int,
-        help="limit parallel builds, -1 for unlimited",
-        default=1,
-    )
-    parser.add_argument(
-        '--destdir',
-        default=None,
-        help="Destination directory for compiled docs",
-    )
-    parser.add_argument(
-        '--enablebackups',
-        action='store_true',
-        default=False,
-        help="Enable several backups up to const N_BACKUPS_RETAIN in --backupdestdir folder",
-    )
-    parser.add_argument(
-        '--backupdestdir',
-        default="/var/sites/wiki-backup/web",
-        help="Destination directory for compiled docs",
-    )
-    parser.add_argument(
-        '--paramversioning',
-        action='store_true',
-        default=False,
-        help="Build multiple parameters pages for each vehicle based on its firmware repo.",
-    )
-    parser.add_argument(
-        '--verbose',
-        dest='verbose',
-        action='store_true',
-        default=False,
-        help="show debugging output",
-    )
-    parser.add_argument(
-        '--fast',
-        dest='fast',
-        action='store_true',
-        default=False,
-        help=("Incremental build using already downloaded parameters, log messages, and video thumbnails rather than cleaning "
-              "before build."),
-    )
+        logging_level = logging.DEBUG if self.verbose else logging.INFO
+        logging.basicConfig(level=logging_level, format='[update.py]: [%(levelname)s]: %(message)s')
 
-    args = parser.parse_args()
-    # print(args.site)
-    # print(args.clean)
+    def run(self) -> None:
+        now = datetime.now()
+        building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
 
-    VERBOSE = args.verbose
+        check_imports()
+        check_ref_directives()
+        create_features_pages(self.args.site)
 
-    now = datetime.now()
-    building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
+        if not self.args.fast:
+            if self.args.paramversioning:
+                # Parameters for all versions availble on firmware.ardupilot.org:
+                fetch_versioned_parameters(self.args.site)
+            else:
+                # Single parameters file. Just present the latest parameters:
+                fetchparameters(self.args.site, self.args.cached_parameter_files)
 
-    check_imports()
-    check_ref_directives()
-    create_features_pages(args.site)
+            # Fetch most recent LogMessage metadata from autotest:
+            fetchlogmessages(self.args.site, self.args.cached_parameter_files)
 
-    if not args.fast:
-        if args.paramversioning:
-            # Parameters for all versions availble on firmware.ardupilot.org:
-            fetch_versioned_parameters(args.site)
+        copy_static_html_sites(self.args.site, self.args.destdir)
+        generate_copy_dict()
+        sphinx_make(self.args.site, self.args.parallel, self.args.fast)
+
+        if self.args.paramversioning:
+            put_cached_parameters_files_in_sites(self.args.site)
+            cache_parameters_files(self.args.site)
+
+        check_build(self.args.site)
+
+        if self.args.enablebackups:
+            make_backup(building_time, self.args.site, self.args.destdir, self.args.backupdestdir)
+            delete_old_wiki_backups(self.args.backupdestdir, N_BACKUPS_RETAIN)
+
+        if self.args.destdir:
+            copy_build(self.args.site, self.args.destdir)
+
+        # To navigate locally and view versioning script for parameters
+        # working is necessary run Chrome as "chrome
+        # --allow-file-access-from-files". Otherwise it will appear empty
+        # locally and working once is on the server.
+
+        error_count = len(error_store_handler.error_messages)
+        if error_count > 0:
+            error("Reprinting error messages:")
+            for error_msg in error_store_handler.error_messages:
+                error(f"\033[1;31m[update.py][error]: {error_msg}\033[0m")
+            fatal(f"{error_count} errors during Wiki build")
         else:
-            # Single parameters file. Just present the latest parameters:
-            fetchparameters(args.site, args.cached_parameter_files)
+            info("Build completed without errors")
 
-        # Fetch most recent LogMessage metadata from autotest:
-        fetchlogmessages(args.site, args.cached_parameter_files)
+        sys.exit(0)
 
-    copy_static_html_sites(args.site, args.destdir)
-    generate_copy_dict()
-    sphinx_make(args.site, args.parallel, args.fast)
 
-    if args.paramversioning:
-        put_cached_parameters_files_in_sites(args.site)
-        cache_parameters_files(args.site)
+def main():
+    updater = WikiUpdater()
+    updater.run()
 
-    check_build(args.site)
 
-    if args.enablebackups:
-        make_backup(args.site, args.destdir, args.backupdestdir)
-        delete_old_wiki_backups(args.backupdestdir, N_BACKUPS_RETAIN)
-
-    if args.destdir:
-        copy_build(args.site, args.destdir)
-
-    # To navigate locally and view versioning script for parameters
-    # working is necessary run Chrome as "chrome
-    # --allow-file-access-from-files". Otherwise it will appear empty
-    # locally and working once is on the server.
-
-    error_count = len(error_log)
-    if error_count > 0:
-        print("Reprinting error messages:", file=sys.stderr)
-        for msg in error_log:
-            print(f"\033[1;31m[update.py][error]: {msg}\033[0m", file=sys.stderr)
-        fatal(f"{error_count} errors during Wiki build")
-    else:
-        print("Build completed without errors")
-
-    sys.exit(0)
+if __name__ == "__main__":
+    main()
