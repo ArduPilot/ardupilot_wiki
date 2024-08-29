@@ -124,11 +124,6 @@ The :ref:`Q_FWD_THR_GAIN<Q_FWD_THR_GAIN>` parameter sets the gain from forward a
 
 .. note:: this use of forward motor can be disabled using an RC switch whose ``RCx_OPTIONS`` param has been set to "176" and the switch is moved to mid or low position.
 
-Note that you can also use reverse thrust on the forward motor using either method. If
-your :ref:`THR_MIN <THR_MIN>` parameter is less than zero then reverse
-thrust is available and the motor will use reverse thrust to slow down
-or move backwards as needed. See the :ref:`reverse thrust <reverse-thrust-autolanding>` section for more details.
-
 :ref:`Q_VFWD_ALT<Q_VFWD_ALT>`: when below this relative to home altitude, forward motor assist is disabled. This can be useful to keep the motor propeller from hitting the ground. Rangefinder height data is used when available.
 
 .. note::
