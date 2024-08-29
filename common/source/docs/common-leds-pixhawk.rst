@@ -8,19 +8,19 @@ This topic explains how to interpret the colours and flash sequence of
 the main and/or external LED(s), if the :ref:`NTF_LED_OVERRIDE<NTF_LED_OVERRIDE>` parameter is set to its ``standard`` default setting. Some of the LED patterns have associated sound/tone
 patterns as listed in :ref:`Sounds (Pixhawk) <common-sounds-pixhawkpx4>`.
 
-Boards with 2 Notify LEDS
-=========================
+Boards with 1 or 2 Notify LEDS
+==============================
 
-These boards have two leds on the board: LED A and LED B, normally, but not always, green and blue, respectively.
+These boards have one(LED A) or two(LED A and LED B) leds on the board, normally, but not always, green and blue, respectively.
 
 After boot, LED A usually shows system status, while LED B shows GPS status. Each sequence of flashes shown below repeats every second. So, LED A will flash with a 50% duty cycle at 4Hz , alternating with LED B, when the autopilot is in ESC calibration mode.
 
-The states and events are shown in order of precedence. For example, LED A will flash the battery failsafe sequence even if RC is in failsafe also.
+The states and events are shown in order of precedence. For example, LED A will flash the battery failsafe sequence even if RC is in failsafe also, in the two LED case.
 
 +-----------------------------------------------+--------------------+-----------------+
 | STATE                                         | LED A              | LED B           |
 +===============================================+====================+=================+
-| Initializing (calibrating gyros,etc.)         |     |init|         |                 |
+| Initializing (calibrating gyros,etc.) \*      |     |init|         |                 |
 +-----------------------------------------------+--------------------+-----------------+
 | Save Trim or ESC Calibration                  |     |savetrima|    | |savetrimb|     |
 +-----------------------------------------------+--------------------+-----------------+
@@ -31,18 +31,20 @@ The states and events are shown in order of precedence. For example, LED A will 
 | | Failed                                      | | |atf|            |                 |
 +-----------------------------------------------+--------------------+-----------------+
 | |  ARMED:                                     | |                  |                 |
-| |  Battery failsafe                           | | |battfs|         |                 |
+| |  Battery failsafe \*                        | | |battfs|         |                 |
 | |  RC or GCS failsafe                         | | |fs|             |                 |
-| |  Readytofly                                 | | |armed|          |                 |
+| |  Readytofly(ARMED) \*                       | | |armed|          |                 |
 +-----------------------------------------------+--------------------+-----------------+
 | |  DISARMED:                                  | |                  |                 |
-| |  pre-arm checks failing                     | | |prearm|         |                 |
-| |  ready to arm                               | | |ready|          |                 |
+| |  pre-arm checks failing \*                  | | |prearm|         |                 |
+| |  ready to arm \*                            | | |ready|          |                 |
 +-----------------------------------------------+--------------------+-----------------+
 | |  GPS:                                       |                    | |               |
 | |  No lock or No GPS                          |                    | | not lit       |
 | |  Lock (flashs = # sats/2)                   |                    | | |gps| 8sats   |
 +-----------------------------------------------+--------------------+-----------------+
+
+\* in the single LED case, only these indications are shown. The battery failsafe indication also is shown for GCS and RC failsafes.
 
 .. |init| image:: ../../../images/initializinga.gif
   :width: 30pt
@@ -105,11 +107,12 @@ The states and events are shown in order of precedence.
 +-----------------------------------------------+--------------------+
 | |  DISARMED:                                  | |                  |
 | |  pre-arm checks failing                     | | |rgbprearm|      |
-| |  good DGPS fix                              | | |rgbready1|      |
-| |  good GPS fix                               | | |rgbready2|      |
+| |  good DGPS fix \*                           | | |rgbready1|      |
+| |  good GPS fix  \*                           | | |rgbready2|      |
 | |  bad GPS fix                                | | |rgbbadgps|      |
 +-----------------------------------------------+--------------------+
 
+\* GPS lock is shown only if position has become valid which requires more than just GPS lock
 
 .. |rgbinit| image:: ../../../images/rgb-initializing.gif
   :width: 30pt
