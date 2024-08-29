@@ -232,7 +232,7 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
         executor.map(fetch_and_rename, urls, targetfiles, names, timeout=5*60)
 
 
-def build_one(wiki, fast):
+def build_one(wiki, fast, procs_num):
     """build one wiki"""
     print('Using sphinx-build for sphinx: %s' % wiki)
 
@@ -246,7 +246,7 @@ def build_one(wiki, fast):
         shutil.rmtree(output_dir)
 
     app = Sphinx(srcdir=source_dir, confdir=source_dir, outdir=html_dir, doctreedir=doctree_dir, buildername='html',
-                 parallel=2)
+                 parallel=procs_num)
     app.build()
 
 
@@ -257,6 +257,17 @@ def sphinx_make(site, parallel, fast):
     done = set()
     wikis = set(ALL_WIKIS[:])
     procs = []
+    num_processors = os.cpu_count()
+    if parallel == -1:
+        # illimited parallelism so focus on vehicle wikis to split the load
+        procs_per_task = num_processors // len(WIKI_NAME_TO_VEHICLE_NAME)
+    else:
+        if parallel == 1:
+            # build one at a time, so max procs minus one.
+            procs_per_task = max(1, num_processors - 1)
+        else:
+            # split the load accross the tasks
+            procs_per_task = num_processors // parallel
 
     while len(done) != len(wikis):
         wiki = list(wikis.difference(done))[0]
@@ -267,7 +278,7 @@ def sphinx_make(site, parallel, fast):
             continue
         if site is not None and not site == wiki:
             continue
-        p = multiprocessing.Process(target=build_one, args=(wiki, fast))
+        p = multiprocessing.Process(target=build_one, args=(wiki, fast, procs_per_task))
         p.start()
         procs.append(p)
         while parallel != -1 and len(procs) >= parallel:
