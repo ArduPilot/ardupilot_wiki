@@ -82,11 +82,11 @@ def get_latest_branch(owner, repo, prefix=""):
         re_prefix = ""
     version_regex = re.compile(rf"{re_prefix}(\d+\.\d+\.\d+|\d+\.\d+)")
     branches = fetch_branches(owner, repo)
-    version_branches = [
-        (branch, Version(match.group(1)))
-        for branch in branches
-        if (match := version_regex.search(branch["name"]))
-    ]
+    version_branches = []
+    for branch in branches:
+        match = version_regex.search(branch["name"])
+        if match:
+            version_branches.append((branch, Version(match.group(1))))
     try:
         return sorted(version_branches, key=lambda bv: bv[1])[-1][0]
     except IndexError:
