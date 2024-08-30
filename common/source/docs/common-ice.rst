@@ -121,6 +121,7 @@ Bit (Set to enable)     Function
 1                       Disable the Redline Governor feature (but still display GCS warnings)
 2                       Allows throttle servo output while disarmed in MANUAL mode
 3                       Prevent starting while disarmed
+4                       Reverse engine cranking direction on starters which support this
 ===================     ========
 
 Vibration isolation
