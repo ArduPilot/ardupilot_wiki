@@ -17,3 +17,11 @@ In order to connect MATLAB run the standard SITL command followed with ``-f JSON
 by the IP of the machine where MATLAB is running. There is no requirement for MATLAB and SITL to be on the same system, however firewall 
 exceptions may need to be added for both. Both MATLAB and SITL can be stopped and restarted and the other should re-connect. Break-points 
 will work as normal.
+
+.. note::
+    If you're running Matlab (within windows) and SITL (within WSL2) in the same machine:
+
+    1. If you've enabled mirrored mode networking in WSL2 you have to disable it first. You can read more about this in this article: https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking. (Note: To apply changes you've made to the .wslconfig file, you'll have to restart the WSL.)
+    2. You can find the ip address that you should replace 127.0.0.1 with by running ``ipconfig`` command in windows PowerShell. (You have to use the ip address under the Ethernet Adapter vEthernet (WSL (Hyper-V 
+       firewall). eg: 172.xx.xx.x)
+
