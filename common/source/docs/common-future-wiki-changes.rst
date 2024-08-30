@@ -46,6 +46,7 @@ New Features
 - Per motor throttle based notch filters, see https://github.com/ArduPilot/ardupilot_wiki/pull/6214
 - New Temp sensor logging option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6197
 - Single board LED notify capability, see https://github.com/ArduPilot/ardupilot_wiki/pull/6221
+- Option to set reverse cranking direction for ICE starter, see https://github.com/ArduPilot/ardupilot_wiki/pull/6230
 
 [site wiki="plane"]
 - New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
