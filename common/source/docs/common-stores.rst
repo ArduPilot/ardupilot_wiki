@@ -20,6 +20,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Craft & Theory <http://www.craftandtheoryllc.com/store/>`__ (FrSky telemetry, MAUCH power modules)
 * `CUAV <https://store.cuav.net/>`__
 * `CubePilot <https://www.cubepilot.org>`__
+* `DH Research <https://dh-research.com/>`__
 * `Drotek <https://drotek.com/>`__
 * `Emlid <https://store.emlid.com/>`__
 * `EAMS Robotics <https://store.shopping.yahoo.co.jp/elab-store/>`__
