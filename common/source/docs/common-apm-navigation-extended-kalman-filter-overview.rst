@@ -71,15 +71,11 @@ EKF3 supports in-flight switching of sensors which can be useful for transitioni
 Commonly modified parameters
 ============================
 
-:ref:`EK2_ALT_SOURCE <EK2_ALT_SOURCE>` which sensor to use as the primary altitude source
+EKF sensor sources, see :ref:`common-ekf-sources`.
 
--  0 : use barometer (default)
--  1 : use range finder.  **Do not use this option unless the vehicle is being flown indoors where the ground is flat**.  For terrain following please see :ref:`copter <terrain-following>` and :ref:`plane specific terrain following instructions <common-terrain-following>` which do not require changing this parameter.
--  2 : use GPS.  Useful when GPS quality is very good and barometer drift could be a problem.  For example if the vehicle will perform long distance missions with altitude changes of >100m.
+:ref:`EK3_ALT_M_NSE <dev:extended-kalman-filter_ekf_alt_noise>`: Default is "1.0".  Lower number reduces reliance on accelerometers, increases reliance on barometer.
 
-:ref:`EK2_ALT_M_NSE <dev:extended-kalman-filter_ekf_alt_noise>`: Default is "1.0".  Lower number reduces reliance on accelerometers, increases reliance on barometer.
-
-:ref:`EK2_GPS_TYPE <dev:extended-kalman-filter_ekf_gps_type>`:
+:ref:`EK3_GPS_TYPE <dev:extended-kalman-filter_ekf_gps_type>`:
 Controls how GPS is used.
 
 -  0 : use 3D velocity & 2D position from GPS
@@ -88,7 +84,7 @@ Controls how GPS is used.
 -  2: use 2D position
 -  3 : no GPS (will use :ref:`optical flow <copter:common-optical-flow-sensors-landingpage>` only if available)
 
-:ref:`EK2_YAW_M_NSE <EK2_YAW_M_NSE>`: Controls the weighting between GPS and Compass when calculating the heading.  Default is "0.5", lower values will cause the compass to be trusted more (i.e. higher weighting to the compass)
+:ref:`EK3_YAW_M_NSE <EK3_YAW_M_NSE>`: Controls the weighting between GPS and Compass when calculating the heading.  Default is "0.5", lower values will cause the compass to be trusted more (i.e. higher weighting to the compass)
    
 As mentioned above, a more detailed overview of EKF theory and tuning parameters is available on the developer wiki's :ref:`Extended Kalman Filter Navigation Overview and Tuning <dev:extended-kalman-filter>`.
 
