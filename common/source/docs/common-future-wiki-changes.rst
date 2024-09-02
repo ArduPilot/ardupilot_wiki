@@ -62,6 +62,7 @@ New Features
 - Copter RTL Alt minimum reduced to 30cm, see https://github.com/ArduPilot/ardupilot_wiki/pull/5915
 - Option to require valid position before arming, in all modes. See https://github.com/ArduPilot/ardupilot_wiki/pull/6087
 - Add AUX switch to test completed Autotune gains in any flight mode, see https://github.com/ArduPilot/ardupilot_wiki/pull/6194
+- Ground resonance mitigation, see https://github.com/ArduPilot/ardupilot_wiki/pull/6239
 [/site]
 [site wiki="rover"]
 - Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
