@@ -11,6 +11,8 @@ Dataflash logs.
 
 Depending on the autopilot type and configuration, the dataflash logs may be saved on a SD card, dataflash chip or streamed over MAVLink telemetry ports. The MAVLink option does require a high-speed telemetry port, typically 921600 baud.
 
+.. note:: In addition to using Mission Planner, many other tools are avaialble to users for log analysis: :ref:`MAVExplorer(part of MAVProxy installation) <using-mavexplorer-for-log-analysis>` and :ref:`Web-based tools <common-webtools>`.
+
 [copywiki destination="copter,plane,rover,dev,planner"]
 
 .. note:: :ref:`Telemetry logs <planner:mission-planner-telemetry-logs>` (also known as "tlogs") collect similar information to dataflash logs (see :ref:`Diagnosing problems using Logs <common-diagnosing-problems-using-logs>` for more information).
