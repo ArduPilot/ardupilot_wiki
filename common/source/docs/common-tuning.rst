@@ -25,6 +25,7 @@ parameters. The following topics show you how.
     Transmitter Based Tuning <common-transmitter-tuning>
     Configuring Notch Filtering <common-imu-notch-filtering>
     Configuring In-Flight FFT <common-imu-fft>
+    Coping with Ground Resonance Oscillation <common-ground-resonance>
 
 
 
