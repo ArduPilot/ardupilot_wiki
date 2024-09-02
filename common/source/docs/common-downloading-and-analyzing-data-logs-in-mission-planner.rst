@@ -89,26 +89,8 @@ Then, select the log you want to download. This will save that log to
 your MissionPlanner/logs directory, in a folder named after the vehicle
 type, such as QUADCOPTER.
 
-Automatic Analysis of logs
-==========================
-
-.. figure:: ../../../images/MissionPlanner_AutomaticLogAnalysis_Buttons.png
-   :target: ../_images/MissionPlanner_AutomaticLogAnalysis_Buttons.png
-
-   Mission Planner: Start LogAnalysis
-
-The simplest analysis is to generate a basic automated report that will
-highlight common problem areas. For that, click on "Log Analysis"
-and select a log that you've already saved to the MissionPlanner/logs
-directory.  They will be in folders named after the vehicle type, such
-as QUADCOPTER or ROVER. Once you pick the log you want, it will generate
-a report that looks like this:
-
-.. image:: ../../../images/Capture3.png
-    :target: ../_images/Capture3.png
-
-Manually review a log
-=====================
+Review a log
+============
 
 For more detailed analysis, click on "Review a Log" and select a log
 that you've already saved to the MissionPlanner/logs directory.  Once
