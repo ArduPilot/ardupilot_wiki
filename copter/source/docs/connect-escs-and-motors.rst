@@ -20,14 +20,12 @@ Motor order diagrams
 
 The diagrams below show motor order for each frame type.
 Propeller direction is shown in green (clockwise, CW) or blue (counter-clockwise, CCW).
-The letters shown in red indicate which motor should turn when using Mission Planner's Motor Test feature.
+The letters shown in red indicate which motor should turn when using Mission Planner's **Motor Test** feature found under its SETUP->Optional Hardware tab.
 
 .. figure:: ../images/MOTORS_CW_CCWLegend.jpg
    :target: ../_images/MOTORS_CW_CCWLegend.jpg
 
    Legend for motor-order diagrams
-
-.. (DO NOT EDIT OR DELETE THIS LINE) BEGIN MOTOR DIAGRAMS
 
 QUAD FRAMES
 -----------
@@ -39,73 +37,73 @@ QUAD FRAMES
 
 .. image:: ../images/m_01_01_quad_x.svg
     :target: ../_images/m_01_01_quad_x.svg
-    :scale: 44%
+    :scale: 40%
     :alt: QUAD X
 
 .. image:: ../images/m_01_02_quad_v.svg
     :target: ../_images/m_01_02_quad_v.svg
-    :scale: 43%
+    :scale: 40%
     :alt: QUAD V
 
 .. image:: ../images/m_01_03_quad_h.svg
     :target: ../_images/m_01_03_quad_h.svg
-    :scale: 44%
+    :scale: 40%
     :alt: QUAD H
 
 .. image:: ../images/m_01_04_quad_v_tail.svg
     :target: ../_images/m_01_04_quad_v_tail.svg
-    :scale: 50%
-    :alt: QUAD V TAIL
+    :scale: 40%
+    :alt: QUAD VTAIL
 
 .. image:: ../images/m_01_05_quad_a_tail.svg
     :target: ../_images/m_01_05_quad_a_tail.svg
-    :scale: 49%
-    :alt: QUAD A TAIL
+    :scale: 40%
+    :alt: QUAD ATAIL
 
 .. note::
-    Quad A Tail and V Tail frames do not use the front motors for yaw control (NYT). Motor rotation direction does not matter for these motors.
+    Quad A Tail and V Tail frames do not use the front motors for yaw control (NYT). The direction of motor rotation is not critical for basic operation, but unless the front motors spin in opposite directions, roll and pitch inputs will result in adverse yaw, resulting in less dynamic range of the yaw control.
 
 .. image:: ../images/m_01_06_quad_plus_rev.svg
     :target: ../_images/m_01_06_quad_plus_rev.svg
     :scale: 40%
-    :alt: QUAD PLUS (REVERSED)
+    :alt: QUAD PLUS(REVERSED)
 
 .. image:: ../images/m_01_12_quad_x_bf.svg
     :target: ../_images/m_01_12_quad_x_bf.svg
-    :scale: 44%
-    :alt: QUAD X (BETAFLIGHT)
+    :scale: 40%
+    :alt: QUAD X(BETAFLIGHT)
 
 .. image:: ../images/m_01_13_quad_x_dji.svg
     :target: ../_images/m_01_13_quad_x_dji.svg
-    :scale: 44%
-    :alt: QUAD X (DJI)
+    :scale: 40%
+    :alt: QUAD X(DJI)
 
 .. image:: ../images/m_01_14_quad_x_cw.svg
     :target: ../_images/m_01_14_quad_x_cw.svg
-    :scale: 44%
-    :alt: QUAD X (CLOCKWISE)
+    :scale: 40%
+    :alt: QUAD X(CLOCKWISE)
 
 .. image:: ../images/m_01_16_quad_plus_nyt.svg
     :target: ../_images/m_01_16_quad_plus_nyt.svg
     :scale: 40%
-    :alt: QUAD PLUS (NO YAW TORQUE)
+    :alt: QUAD PLUS(NO YAW TORQUE)
 
 .. image:: ../images/m_01_17_quad_x_nyt.svg
     :target: ../_images/m_01_17_quad_x_nyt.svg
-    :scale: 44%
-    :alt: QUAD X (NO YAW TORQUE)
+    :scale: 40%
+    :alt: QUAD X(NO YAW TORQUE)
 
 .. note::
-    Quad 'No Yaw Torque' (NYT) frames are primarily intended for :ref:`VTOL Tailsitter<guide-tailsitter>` configurations. Motor rotation direction does not matter for these motors.
+    Quad 'No Yaw Torque' (NYT) frames are primarily intended for :ref:`VTOL Tailsitter<guide-tailsitter>` configurations with large control surfaces. Motor rotation direction does not matter for these motors, but unless the motor's spin directions are setup as any kind of normal QUAD frame, roll and pitch inputs will result in adverse yaw, resulting in less dynamic range of the yaw control of the fixed wing control surfaces.
 
 .. image:: ../images/m_01_18_quad_x_bf_rev.svg
     :target: ../_images/m_01_18_quad_x_bf_rev.svg
-    :scale: 44%
-    :alt: QUAD X (BF REVERSED)
+    :scale: 40%
+    :alt: QUAD X(BF REVERSED)
 
 .. image:: ../images/m_01_19_quad_y4a.svg
     :target: ../_images/m_01_19_quad_y4a.svg
-    :scale: 42%
+    :scale: 40%
     :alt: QUAD Y4A
 
 HEXA FRAMES
@@ -118,7 +116,7 @@ HEXA FRAMES
 
 .. image:: ../images/m_02_01_hexa_x.svg
     :target: ../_images/m_02_01_hexa_x.svg
-    :scale: 37%
+    :scale: 39%
     :alt: HEXA X
 
 .. image:: ../images/m_02_03_hexa_h.svg
@@ -128,13 +126,13 @@ HEXA FRAMES
 
 .. image:: ../images/m_02_13_hexa_x_dji.svg
     :target: ../_images/m_02_13_hexa_x_dji.svg
-    :scale: 37%
-    :alt: HEXA X (DJI)
+    :scale: 39%
+    :alt: HEXA X(DJI)
 
 .. image:: ../images/m_02_14_hexa_x_cw.svg
     :target: ../_images/m_02_14_hexa_x_cw.svg
-    :scale: 37%
-    :alt: HEXA X (CLOCKWISE)
+    :scale: 39%
+    :alt: HEXA X(CLOCKWISE)
 
 OCTO FRAMES
 -----------
@@ -162,12 +160,12 @@ OCTO FRAMES
 .. image:: ../images/m_03_13_octo_x_dji.svg
     :target: ../_images/m_03_13_octo_x_dji.svg
     :scale: 31%
-    :alt: OCTO X (DJI)
+    :alt: OCTO X(DJI)
 
 .. image:: ../images/m_03_14_octo_x_cw.svg
     :target: ../_images/m_03_14_octo_x_cw.svg
     :scale: 31%
-    :alt: OCTO X (CLOCKWISE)
+    :alt: OCTO X(CLOCKWISE)
 
 .. image:: ../images/m_03_15_octo_i.svg
     :target: ../_images/m_03_15_octo_i.svg
@@ -179,38 +177,38 @@ OCTO QUAD FRAMES
 
 .. image:: ../images/m_04_00_octo_quad_plus.svg
     :target: ../_images/m_04_00_octo_quad_plus.svg
-    :scale: 42%
-    :alt: OCTO QUAD PLUS
+    :scale: 40%
+    :alt: OCTOQUAD PLUS
 
 .. image:: ../images/m_04_01_octo_quad_x.svg
     :target: ../_images/m_04_01_octo_quad_x.svg
-    :scale: 45%
-    :alt: OCTO QUAD X
+    :scale: 40%
+    :alt: OCTOQUAD X
 
 .. image:: ../images/m_04_02_octo_quad_v.svg
     :target: ../_images/m_04_02_octo_quad_v.svg
-    :scale: 45%
-    :alt: OCTO QUAD V
+    :scale: 40%
+    :alt: OCTOQUAD V
 
 .. image:: ../images/m_04_03_octo_quad_h.svg
     :target: ../_images/m_04_03_octo_quad_h.svg
-    :scale: 45%
-    :alt: OCTO QUAD H
+    :scale: 40%
+    :alt: OCTOQUAD H
 
-.. image:: ../images/m_04_12_octo_quad_x_bf.svg
-    :target: ../_images/m_04_12_octo_quad_x_bf.svg
-    :scale: 45%
-    :alt: OCTO QUAD X (BETAFLIGHT)
+.. image:: ../images/m_04_12_octo_quad_x_bf.jpg
+    :target: ../_images/m_04_12_octo_quad_x_bf.jpg
+    :scale: 40%
+    :alt: OCTOQUAD X(BETAFLIGHT)
 
-.. image:: ../images/m_04_14_octo_quad_x_cw.svg
-    :target: ../_images/m_04_14_octo_quad_x_cw.svg
-    :scale: 45%
-    :alt: OCTO QUAD X (CLOCKWISE)
+.. image:: ../images/m_04_14_octo_quad_x_cw.jpg
+    :target: ../_images/m_04_14_octo_quad_x_cw.jpg
+    :scale: 40%
+    :alt: OCTOQUAD X(CLOCKWISE)
 
-.. image:: ../images/m_04_18_octo_quad_x_bf_rev.svg
-    :target: ../_images/m_04_18_octo_quad_x_bf_rev.svg
-    :scale: 45%
-    :alt: OCTO QUAD X (BF REVERSED)
+.. image:: ../images/m_04_18_octo_quad_x_bf_rev.jpg
+    :target: ../_images/m_04_18_octo_quad_x_bf_rev.jpg
+    :scale: 40%
+    :alt: OCTOQUAD X(BF REVERSED)
 
 Y6 FRAMES
 ---------
@@ -235,16 +233,16 @@ TRICOPTER FRAMES
 
 .. image:: ../images/m_07_00_tricopter.svg
     :target: ../_images/m_07_00_tricopter.svg
-    :scale: 42%
+    :scale: 35%
     :alt: TRICOPTER 
 
 .. image:: ../images/m_07_06_tricopter_pitch_rev.svg
     :target: ../_images/m_07_06_tricopter_pitch_rev.svg
-    :scale: 42%
+    :scale: 35%
     :alt: TRICOPTER PITCH REVERSED
 
 .. note::
-    Since the tail (or nose) servo is used for yaw control, Tricopter motor rotation direction does not matter. If the direction of your tail (or nose) servo is going the wrong way in response to yaw then either the ``RCn_REVERSE`` RC input direction or the tilt servo's ``SERVOn_REVERSE`` parameter should be set to 1 (from 0), See :ref:`TriCopter setup page <tricopter>` for details.
+    Since the tail (or nose) servo is used for yaw control, Tricopter motor rotation direction is not critical for basic operation, but unless the front motors spin in opposite directions, roll and pitch inputs will result in adverse yaw, resulting in less dynamic range of the yaw control. If the direction of your tail (or nose) servo is going the wrong way in response to yaw then either the ``RCn_REVERSE`` RC input direction or the tilt servo's ``SERVOn_REVERSE`` parameter should be set to 1 (from 0), See :ref:`TriCopter setup page <tricopter>` for details.
 
 BICOPTER FRAMES
 ---------------
@@ -279,8 +277,6 @@ DECA FRAMES
     :target: ../_images/m_14_01_deca_x_and__cw_x.svg
     :scale: 29%
     :alt: DECA X (and  CW X)
-
-.. END MOTOR DIAGRAMS (DO NOT DELETE OR EDIT THIS LINE)
 
 .. _connect-escs-and-motors_attach_propellers:
 
@@ -425,8 +421,3 @@ For more information see `this video <https://youtu.be/6C1YG1e2aTo>`__.
 .. |prop_direction| image:: ../images/prop-direction.png
     :target: ../_images/prop-direction.png
     :width: 450px
-
-Adding and Editing Motor Diagrams
-=================================
-
-Motor diagram images can be procedurally generated via a script in the :ref:`ArduPilot Wiki build environment<common-wiki-editing-setup>`. See :ref:`Generating Copter Motor Diagrams<generating-motor-diagrams>` for instructions.

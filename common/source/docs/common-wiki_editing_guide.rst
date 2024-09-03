@@ -16,6 +16,7 @@ All members of the ArduPilot community are encouraged to contribute to the wiki,
     Submitting Changes <common-wiki-editing-submitting-changes>
     Style Guide <common-wiki-editing-style-guide>
     Archiving and Deleting pages <common-wiki-editing-archiving>
+    Auto-generating a new copter frame motor diagram <common-generating-motor-diagrams>
 
 License
 =======
