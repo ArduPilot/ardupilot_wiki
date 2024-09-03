@@ -1,4 +1,4 @@
-.. _generating-motor-diagrams:
+.. _common-generating-motor-diagrams:
 
 ================================
 Generating Copter Motor Diagrams
@@ -6,7 +6,7 @@ Generating Copter Motor Diagrams
 
 Motor diagrams such as the one below can be automatically generated and (optionally) automatically included in the :ref:`Connect ESCs and Motors<connect-escs-and-motors>` page.
 
-.. image:: ../images/m_01_01_quad_x.svg
+.. image:: ../../../images/m_01_01_quad_x.svg
     :target: ../_images/m_01_01_quad_x.svg
     :scale: 44%
     :alt: QUAD X
@@ -177,3 +177,6 @@ The following Quad A-Tail example showcases many of the available options:
             }
         }
     }
+
+
+[copywiki destination="copter,plane,rover,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
