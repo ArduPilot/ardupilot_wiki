@@ -7,6 +7,10 @@ Throw Mode
 This slightly dangerous flight mode allows the pilot to throw the vehicle into the air (or drop the vehicle) in order to start the motors.
 Once in the air, this mode does not accept any input from the pilot.  This mode requires GPS.
 
+.. note::
+
+    This flight mode is available for multirotors only. 
+
 .. warning::
 
    Use with caution!  It is dangerous to get close to an armed multicopter as is required to throw the vehicle.  It is recommended to takeoff normally instead of using throw mode whenever possible.

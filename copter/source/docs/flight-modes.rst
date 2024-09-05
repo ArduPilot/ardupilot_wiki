@@ -46,8 +46,8 @@ The table below shows for each flight mode whether it provides altitude or posit
    <tr><td>Sport</td><td>s</td><td>s</td><td></td><td>Alt-hold, but holds pitch & roll when sticks centered</td></tr>
    <tr><td>Stabilize</td><td>-</td><td>+</td><td></td><td>Self-levels the roll and pitch axis</td></tr>
    <tr><td>SysID</td><td>-</td><td>+</td><td></td><td>Special diagnostic/modeling mode</td></tr>
-   <tr><td>Throw</td><td>A</td><td>A</td><td>Y</td><td>Holds position after a throwing takeoff</td></tr>
-   <tr><td>Turtle</td><td>-</td><td>-</td><td></td><td>Allows reversing and spinning up adjacent pairs of motors in order to flip a crashed, inverted vehicle back upright</td></tr>
+   <tr><td>Throw</td><td>A</td><td>A</td><td>Y</td><td>Holds position after a throwing takeoff. Multirotors only.</td></tr>
+   <tr><td>Turtle</td><td>-</td><td>-</td><td></td><td>Allows reversing and spinning up adjacent pairs of motors in order to flip a crashed, inverted vehicle back upright. Multirotors only.</td></tr>
    <tr><td>ZigZag</td><td>A</td><td>A</td><td>Y</td><td>Useful for crop spraying</td></tr>
    </table>
 
@@ -93,12 +93,12 @@ Additional flight modes:
 -  :ref:`Land <land-mode>`
 -  :ref:`PosHold <poshold-mode>`
 -  :ref:`Sport <sport-mode>`
--  :ref:`Throw <throw-mode>`
+-  :ref:`Throw <throw-mode>` for multirotors only.
 -  :ref:`Follow Me <ac2_followme>`
 -  :ref:`Simple and Super Simple <simpleandsuper-simple-modes>`
 -  :ref:`Smart RTL (Return-to-Launch) <smartrtl-mode>`
 -  :ref:`SysID (System Identification) <systemid-mode>`
--  :ref:`Turtle <turtle-mode>`
+-  :ref:`Turtle <turtle-mode>` for multirotors only.
 -  :ref:`ZigZag <zigzag-mode>`
 -  :ref:`Avoid_ADSB <common-ads-b-receiver>` for ADS-B based avoidance of manned aircraft.  Should not be set-up as a pilot selectable flight mode.
 

@@ -66,6 +66,7 @@ value to users with old hardware.
     Advanced Tuning <tuning>
     Basic Tuning <basic-tuning>
     Auxiliary Function Switches (3.6 and earlier) <channel-7-and-8-options>
+    TradHeli Loading Firmware <loading-the-code>
 [/site]
 [site wiki="rover"]
     Pre-4.0 Rover Avoidance <rover-object-avoidance>

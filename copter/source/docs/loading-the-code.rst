@@ -1,5 +1,7 @@
 .. _loading-the-code:
 
+**ARCHIVED**
+
 =============================================
 Traditional Helicopter – Loading the Firmware
 =============================================
