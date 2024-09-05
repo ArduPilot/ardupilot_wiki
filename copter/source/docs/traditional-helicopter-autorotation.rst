@@ -26,4 +26,4 @@ Enable manual autoratation by setting :ref:`H_RSC_AROT_MN_EN <H_RSC_AROT_MN_EN>`
 Semi-Autonomous Autorotation Setup
 ==================================
 
-Future enhancement to provide autonomous pitch control during autorotation is planned.
+Future enhancement to provide autonomous control during autorotation is planned as a new flight mode. Currently under development, the current state of the project can be tried under :ref:`SITL Simulation <sitl-simulator-software-in-the-loop>`. See :ref:`traditional-helicopter-autorotation-mode`

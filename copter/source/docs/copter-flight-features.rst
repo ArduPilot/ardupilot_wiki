@@ -12,11 +12,13 @@ a full set of features see the :doc:`full parameter list <parameters>` and the `
 .. toctree::
     :maxdepth: 1
 
+    Autorotation(Helicopter only) <traditional-helicopter-autorotation>
     common-geofencing-landing-page
     common-object-avoidance-landing-page
     terrain-following
     terrain-following-manual-modes
-    motor-thrust-scaling
+    Inverted Flight(Helicopter only) <traditional-helicopter-inverted-flight>
+    Motor Thrust Scaling(MultiCopter only) <motor-thrust-scaling>
     Notch Filtering <common-imu-notch-filtering>
     common-moving-vehicle-initialization
     common-non-gps-navigation-landing-page
