@@ -4,7 +4,7 @@
 Introducing Copter
 ==================
 
-Copter is an advanced open-source autopilot system for multicopters, helicopters, and other rotor vehicles.  It offers a :ref:`wide variety of flight modes <flight-modes>` from fully manual to fully autonomous.
+Copter is an advanced open-source autopilot system for multicopters, :ref:`traditional single/dual rotor helicopters <traditional-helicopters>`, and other rotor vehicles.  It offers a :ref:`wide variety of flight modes <flight-modes>` from fully manual to fully autonomous.
 
 .. image:: ../images/copter-introduction-diagram.jpg
     :target: ../_images/copter-introduction-diagram.jpg
