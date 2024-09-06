@@ -47,6 +47,7 @@ New Features
 - New Temp sensor logging option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6197
 - Single board LED notify capability, see https://github.com/ArduPilot/ardupilot_wiki/pull/6221
 - Option to set reverse cranking direction for ICE starter, see https://github.com/ArduPilot/ardupilot_wiki/pull/6230
+- MAVLink command execution from within LUA scripts, see https://github.com/ArduPilot/ardupilot_wiki/pull/6250
 
 [site wiki="plane"]
 - New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
