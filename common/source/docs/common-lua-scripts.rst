@@ -58,6 +58,7 @@ What Scripts Can Do
 - Multiple scripts can be run at once
 - Monitor the vehicle state
 - Start to manipulate vehicle state
+- Execute MAVLink commands
 
 Lua is a garbage collected, imperative programming language.
 Scripts are run at a low priority on the system, which ensures that the core flight code will continue to execute even if a script is taking a long time to process.
@@ -120,10 +121,15 @@ Scripting and Parameters
    
    Accessing/Adding Parameters via Scripts <common-scripting-parameters>
 
+MAVLink commands
+================
+
+The full set of MAVLink commands can be executed from within a LUA script. An `example is shown here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/command_int.lua>`_.
+
 API Documentation
 =================
 
-The API documentation described here is not a complete list, but rather some examples.  For a **full list of the methods** currently available, the LUA auto-generated document file is a complete list, It can be found `here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/docs/docs.lua>`__ and lists all the available bindings and their parameters.
+The API documentation described here is not a complete list, but rather some examples.  For a full list of the methods currently available, the LUA auto-generated document file is a complete list. `It can be found here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/docs/docs.lua>`__  and lists all the available bindings and their parameters.
 
 .. note::
   If you use VScode for your editor, by installing `this <https://marketplace.visualstudio.com/items?itemName=sumneko.lua>`__ lua extension (version 2.4.1 only as of now), you can get this information integrated as suggestions and autocomplete in the editor.
