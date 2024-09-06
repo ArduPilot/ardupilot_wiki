@@ -33,7 +33,7 @@ Canberra Team in Australia.
 
     First Time Setup <traditional-helicopter-first-time-setup>
     First Flights and Tuning <traditional-helicopter-first-flight>
-    Autorotation <traditional-helicopter-autorotation>
+    Flight Features <copter-flight-features>
     Dual Helicopters <dual-helicopter>
     HeliQuads <heliquads>
     Tips <traditional-helicopter-tips>
