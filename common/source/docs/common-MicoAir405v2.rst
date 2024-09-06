@@ -91,7 +91,7 @@ The default RC input is SBUS only on SBUS pin. PPM is not supported. Other RC pr
 OSD Support
 ===========
 
-The MicoAir405v2 supports analog OSD using OSD_TYPE 1 (MAX7456 driver) using the CAM and VTX connectors. DisplayPort HD OSD via the DJI connector can be enabled simultaneously by setting :ref:`OSD_TYPE<OSD_TYPE>` = 5. See below.
+The MicoAir405v2 supports analog OSD using OSD_TYPE 1 (MAX7456 driver) using the CAM and VTX connectors. DisplayPort HD OSD via the DJI connector is enabled simultaneously by :ref:`OSD_TYPE2<OSD_TYPE2>` = 5.
 
 HD VTX Support
 ==============
