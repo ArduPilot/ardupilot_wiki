@@ -4,7 +4,7 @@
 Foxeer Reaper F745 AIO 
 =======================
 
-The Foxeer Reaper F745 AIO V2/V3 features an F7 autopilot and an integrated 45A 2-6S BLHeli_S 4-in-1 Bluejay ESC.
+The Foxeer Reaper F745 AIO V2/V3/V4 features an F7 autopilot and an integrated 45A 2-6S BLHeli_S 4-in-1 Bluejay ESC.
 
 .. note:: ArduPilot does not currently support the V3 version.
 
@@ -28,7 +28,7 @@ Specifications
 
 -  **Sensors**
 
-   -  (Accelerometer/Gyro) BMI-270 IMU on V2, ICM-42688 on V3
+   -  (Accelerometer/Gyro) BMI-270 IMU on V2, ICM-42688 on V3, MPU6000 on V4
    -  Voltage & 130A Current sensor
 
 -  **Power**
