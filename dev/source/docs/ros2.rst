@@ -95,13 +95,13 @@ If the build fails, when you request help, please re-run the build in verbose mo
 
     colcon build --packages-up-to ardupilot_dds_tests --event-handlers=console_cohesion+
 
-If you'd like to test your installation, run:
+If you'd like to test your ArduPilot ROS 2 installation, run:
 
 .. code-block:: bash
 
     cd ~/ros2_ws
     source ./install/setup.bash
-    colcon test --packages-select ardupilot_dds_tests
+    colcon test --executor sequential --parallel-workers 0 --base-paths src/ardupilot --event-handlers=console_cohesion+
     colcon test-result --all --verbose
 
 While `colcon` provides a convenient way for building multiple repositories in the correct order,
@@ -111,6 +111,10 @@ has been wrapped by `CMake`.
 If you would like all the `waf` options exposed, consider upvoting this
 `issue. <https://github.com/ArduPilot/ardupilot/issues/27714>`__
 
+The ``base-paths`` is used to limit testing only to ArduPilot.
+We use a sequential executor and no parallel works because otherwise the tests try
+to open multiple SITL processes on the same port, and the DDS traffic has cross-talk between
+parallel tests.
 
 Installation (MacOS)
 ====================
