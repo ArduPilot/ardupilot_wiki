@@ -47,6 +47,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     DroneCAN Adapter Node <common-uavcan-adapter-node>
     DroneCAN Peripherals <common-uavcan-peripherals>
+    Ethernet Adapters <common-ethernet-adapters>
     First Person View Video <common-fpv-first-person-view>
     Fuel Flow and Level Sensors <common-fuel-sensors>
     Generators <common-generators>
