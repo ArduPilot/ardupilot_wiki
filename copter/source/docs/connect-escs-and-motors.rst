@@ -32,7 +32,7 @@ QUAD FRAMES
 
 .. image:: ../images/m_01_00_quad_plus.svg
     :target: ../_images/m_01_00_quad_plus.svg
-    :scale: 40%
+    :scale: 39%
     :alt: QUAD PLUS
 
 .. image:: ../images/m_01_01_quad_x.svg
@@ -53,45 +53,45 @@ QUAD FRAMES
 .. image:: ../images/m_01_04_quad_v_tail.svg
     :target: ../_images/m_01_04_quad_v_tail.svg
     :scale: 40%
-    :alt: QUAD VTAIL
+    :alt: QUAD V TAIL
 
 .. image:: ../images/m_01_05_quad_a_tail.svg
     :target: ../_images/m_01_05_quad_a_tail.svg
     :scale: 40%
-    :alt: QUAD ATAIL
+    :alt: QUAD A TAIL
 
 .. note::
     Quad A Tail and V Tail frames do not use the front motors for yaw control (NYT). The direction of motor rotation is not critical for basic operation, but unless the front motors spin in opposite directions, roll and pitch inputs will result in adverse yaw, resulting in less dynamic range of the yaw control.
 
 .. image:: ../images/m_01_06_quad_plus_rev.svg
     :target: ../_images/m_01_06_quad_plus_rev.svg
-    :scale: 40%
-    :alt: QUAD PLUS(REVERSED)
+    :scale: 39%
+    :alt: QUAD PLUS (REVERSED)
 
 .. image:: ../images/m_01_12_quad_x_bf.svg
     :target: ../_images/m_01_12_quad_x_bf.svg
     :scale: 40%
-    :alt: QUAD X(BETAFLIGHT)
+    :alt: QUAD X (BETAFLIGHT)
 
 .. image:: ../images/m_01_13_quad_x_dji.svg
     :target: ../_images/m_01_13_quad_x_dji.svg
     :scale: 40%
-    :alt: QUAD X(DJI)
+    :alt: QUAD X (DJI)
 
 .. image:: ../images/m_01_14_quad_x_cw.svg
     :target: ../_images/m_01_14_quad_x_cw.svg
     :scale: 40%
-    :alt: QUAD X(CLOCKWISE)
+    :alt: QUAD X (CLOCKWISE)
 
 .. image:: ../images/m_01_16_quad_plus_nyt.svg
     :target: ../_images/m_01_16_quad_plus_nyt.svg
-    :scale: 40%
-    :alt: QUAD PLUS(NO YAW TORQUE)
+    :scale: 39%
+    :alt: QUAD PLUS (NO YAW TORQUE)
 
 .. image:: ../images/m_01_17_quad_x_nyt.svg
     :target: ../_images/m_01_17_quad_x_nyt.svg
     :scale: 40%
-    :alt: QUAD X(NO YAW TORQUE)
+    :alt: QUAD X (NO YAW TORQUE)
 
 .. note::
     Quad 'No Yaw Torque' (NYT) frames are primarily intended for :ref:`VTOL Tailsitter<guide-tailsitter>` configurations with large control surfaces. Motor rotation direction does not matter for these motors, but unless the motor's spin directions are setup as any kind of normal QUAD frame, roll and pitch inputs will result in adverse yaw, resulting in less dynamic range of the yaw control of the fixed wing control surfaces.
@@ -99,11 +99,11 @@ QUAD FRAMES
 .. image:: ../images/m_01_18_quad_x_bf_rev.svg
     :target: ../_images/m_01_18_quad_x_bf_rev.svg
     :scale: 40%
-    :alt: QUAD X(BF REVERSED)
+    :alt: QUAD X (BF REVERSED)
 
 .. image:: ../images/m_01_19_quad_y4a.svg
     :target: ../_images/m_01_19_quad_y4a.svg
-    :scale: 40%
+    :scale: 45%
     :alt: QUAD Y4A
 
 HEXA FRAMES
@@ -111,35 +111,35 @@ HEXA FRAMES
 
 .. image:: ../images/m_02_00_hexa_plus.svg
     :target: ../_images/m_02_00_hexa_plus.svg
-    :scale: 35%
+    :scale: 36%
     :alt: HEXA PLUS
 
 .. image:: ../images/m_02_01_hexa_x.svg
     :target: ../_images/m_02_01_hexa_x.svg
-    :scale: 39%
+    :scale: 35%
     :alt: HEXA X
 
 .. image:: ../images/m_02_03_hexa_h.svg
     :target: ../_images/m_02_03_hexa_h.svg
-    :scale: 39%
+    :scale: 35%
     :alt: HEXA H
 
 .. image:: ../images/m_02_13_hexa_x_dji.svg
     :target: ../_images/m_02_13_hexa_x_dji.svg
-    :scale: 39%
-    :alt: HEXA X(DJI)
+    :scale: 35%
+    :alt: HEXA X (DJI)
 
 .. image:: ../images/m_02_14_hexa_x_cw.svg
     :target: ../_images/m_02_14_hexa_x_cw.svg
-    :scale: 39%
-    :alt: HEXA X(CLOCKWISE)
+    :scale: 35%
+    :alt: HEXA X (CLOCKWISE)
 
 OCTO FRAMES
 -----------
 
 .. image:: ../images/m_03_00_octo_plus.svg
     :target: ../_images/m_03_00_octo_plus.svg
-    :scale: 31%
+    :scale: 30%
     :alt: OCTO PLUS
 
 .. image:: ../images/m_03_01_octo_x.svg
@@ -149,27 +149,27 @@ OCTO FRAMES
 
 .. image:: ../images/m_03_02_octo_v.svg
     :target: ../_images/m_03_02_octo_v.svg
-    :scale: 32%
+    :scale: 33%
     :alt: OCTO V
 
 .. image:: ../images/m_03_03_octo_h.svg
     :target: ../_images/m_03_03_octo_h.svg
-    :scale: 33%
+    :scale: 30%
     :alt: OCTO H
 
 .. image:: ../images/m_03_13_octo_x_dji.svg
     :target: ../_images/m_03_13_octo_x_dji.svg
     :scale: 31%
-    :alt: OCTO X(DJI)
+    :alt: OCTO X (DJI)
 
 .. image:: ../images/m_03_14_octo_x_cw.svg
     :target: ../_images/m_03_14_octo_x_cw.svg
     :scale: 31%
-    :alt: OCTO X(CLOCKWISE)
+    :alt: OCTO X (CLOCKWISE)
 
 .. image:: ../images/m_03_15_octo_i.svg
     :target: ../_images/m_03_15_octo_i.svg
-    :scale: 31%
+    :scale: 33%
     :alt: OCTO I
 
 OCTO QUAD FRAMES
@@ -177,55 +177,55 @@ OCTO QUAD FRAMES
 
 .. image:: ../images/m_04_00_octo_quad_plus.svg
     :target: ../_images/m_04_00_octo_quad_plus.svg
-    :scale: 40%
-    :alt: OCTOQUAD PLUS
+    :scale: 38%
+    :alt: OCTO QUAD PLUS
 
 .. image:: ../images/m_04_01_octo_quad_x.svg
     :target: ../_images/m_04_01_octo_quad_x.svg
     :scale: 40%
-    :alt: OCTOQUAD X
+    :alt: OCTO QUAD X
 
 .. image:: ../images/m_04_02_octo_quad_v.svg
     :target: ../_images/m_04_02_octo_quad_v.svg
     :scale: 40%
-    :alt: OCTOQUAD V
+    :alt: OCTO QUAD V
 
 .. image:: ../images/m_04_03_octo_quad_h.svg
     :target: ../_images/m_04_03_octo_quad_h.svg
     :scale: 40%
-    :alt: OCTOQUAD H
+    :alt: OCTO QUAD H
 
-.. image:: ../images/m_04_12_octo_quad_x_bf.jpg
-    :target: ../_images/m_04_12_octo_quad_x_bf.jpg
+.. image:: ../images/m_04_12_octo_quad_x_bf.svg
+    :target: ../_images/m_04_12_octo_quad_x_bf.svg
     :scale: 40%
-    :alt: OCTOQUAD X(BETAFLIGHT)
+    :alt: OCTO QUAD X (BETAFLIGHT)
 
-.. image:: ../images/m_04_14_octo_quad_x_cw.jpg
-    :target: ../_images/m_04_14_octo_quad_x_cw.jpg
+.. image:: ../images/m_04_14_octo_quad_x_cw.svg
+    :target: ../_images/m_04_14_octo_quad_x_cw.svg
     :scale: 40%
-    :alt: OCTOQUAD X(CLOCKWISE)
+    :alt: OCTO QUAD X (CLOCKWISE)
 
-.. image:: ../images/m_04_18_octo_quad_x_bf_rev.jpg
-    :target: ../_images/m_04_18_octo_quad_x_bf_rev.jpg
+.. image:: ../images/m_04_18_octo_quad_x_bf_rev.svg
+    :target: ../_images/m_04_18_octo_quad_x_bf_rev.svg
     :scale: 40%
-    :alt: OCTOQUAD X(BF REVERSED)
+    :alt: OCTO QUAD X (BF REVERSED)
 
 Y6 FRAMES
 ---------
 
 .. image:: ../images/m_05_00_y6_a.svg
     :target: ../_images/m_05_00_y6_a.svg
-    :scale: 39%
+    :scale: 36%
     :alt: Y6 A
 
 .. image:: ../images/m_05_10_y6_b.svg
     :target: ../_images/m_05_10_y6_b.svg
-    :scale: 39%
+    :scale: 36%
     :alt: Y6 B
 
 .. image:: ../images/m_05_11_y6_f.svg
     :target: ../_images/m_05_11_y6_f.svg
-    :scale: 39%
+    :scale: 36%
     :alt: Y6 F
 
 TRICOPTER FRAMES
@@ -233,12 +233,12 @@ TRICOPTER FRAMES
 
 .. image:: ../images/m_07_00_tricopter.svg
     :target: ../_images/m_07_00_tricopter.svg
-    :scale: 35%
+    :scale: 36%
     :alt: TRICOPTER 
 
 .. image:: ../images/m_07_06_tricopter_pitch_rev.svg
     :target: ../_images/m_07_06_tricopter_pitch_rev.svg
-    :scale: 35%
+    :scale: 36%
     :alt: TRICOPTER PITCH REVERSED
 
 .. note::
@@ -249,20 +249,23 @@ BICOPTER FRAMES
 
 .. image:: ../images/m_10_00_bicopter.svg
     :target: ../_images/m_10_00_bicopter.svg
-    :scale: 46%
+    :scale: 40%
     :alt: BICOPTER 
+
+.. note::
+    If desired, Bicopter motors may rotate opposite the directions shown (e.g., CW left, CCW right).
 
 DODECAHEXA FRAMES
 -----------------
 
 .. image:: ../images/m_12_00_dodecahexa_plus.svg
     :target: ../_images/m_12_00_dodecahexa_plus.svg
-    :scale: 35%
+    :scale: 32%
     :alt: DODECAHEXA PLUS
 
 .. image:: ../images/m_12_01_dodecahexa_x.svg
     :target: ../_images/m_12_01_dodecahexa_x.svg
-    :scale: 35%
+    :scale: 32%
     :alt: DODECAHEXA X
 
 DECA FRAMES
@@ -270,13 +273,13 @@ DECA FRAMES
 
 .. image:: ../images/m_14_00_deca_plus.svg
     :target: ../_images/m_14_00_deca_plus.svg
-    :scale: 29%
+    :scale: 28%
     :alt: DECA PLUS
 
-.. image:: ../images/m_14_01_deca_x_and__cw_x.svg
-    :target: ../_images/m_14_01_deca_x_and__cw_x.svg
-    :scale: 29%
-    :alt: DECA X (and  CW X)
+.. image:: ../images/m_14_01_deca_x_and_cw_x.svg
+    :target: ../_images/m_14_01_deca_x_and_cw_x.svg
+    :scale: 28%
+    :alt: DECA X (and CW X)
 
 .. _connect-escs-and-motors_attach_propellers:
 

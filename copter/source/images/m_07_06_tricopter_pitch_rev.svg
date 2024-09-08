@@ -87,7 +87,7 @@
             <g id="layer-letters-middle" style="transform: rotate3d(1, 0, 0, -55deg)" />
             <g id="layer-letters-top" style="transform: rotate3d(1, 0, 0, -55deg) translateZ(-30px)" />
         <text x="365.8448067399882" y="182.9224033699941">C</text><text x="-365.8448067399882" y="182.92240336999416">D</text><text x="2.4779962576497224e-14" y="-404.6875">A</text><text x="108.125" y="-125.12499999999999">B</text></g>
-        <g id="layer-frame-name" fill="black" font-style="italic"><text x="0" y="288.31250000000006">TRICOPTER PITCH REVERSED</text></g>
+        <g id="layer-frame-name" fill="black" font-style="italic" font-size="40"><text x="0" y="288.31250000000006">TRICOPTER PITCH REVERSED</text></g>
         <g id="layer-frame-notes" font-size="36" font-weight="normal" font-style="italic" />
     </g>
 </svg>

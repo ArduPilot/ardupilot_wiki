@@ -72,14 +72,18 @@ SVG_TEMPLATE_FILE = THIS_SCRIPT.parent / "motor_diagram_data/motor_diagram_templ
 WIKI_OUTPUT_FILE = (
     THIS_SCRIPT.parent / "../copter/source/docs/connect-escs-and-motors.rst"
 )
-WIKI_BEGIN_COMMENT = "BEGIN MOTOR DIAGRAMS"
-WIKI_END_COMMENT = ".. END MOTOR DIAGRAMS"
+# TODO: future use for inserting wiki text automatically
+# WIKI_BEGIN_COMMENT = "BEGIN MOTOR DIAGRAMS"
+# WIKI_END_COMMENT = ".. END MOTOR DIAGRAMS"
 
 XLINK_NAMESPACE = "http://www.w3.org/1999/xlink"
-BASE_IMAGE_SIZE = 330  # nominal wiki page display size
+BASE_IMAGE_WIDTH = 300  # nominal wiki page display size
+MAX_DISPLAY_SCALE = 40  # max scale for wiki page display
 FRAME_BASE_RADIUS = 385  # base diameter of the frame display
 SINGLE_MOTOR_RADIUS = 120  # display radius of a single motor's rotor arc
 DIAGRAM_PADDING = 20  # minimum padding around the motor diagram
+LONG_FRAME_NAME_THRESHOLD = 22  # max character count before using smaller font
+LONG_FRAME_NAME_FONT_SIZE = 40  # font size for long frame names
 DODECAHEXA_MULTIPLIER = 1.2  # multiplier to give dodecahexa a little more room
 COAXIAL_Y_SCALE = 0.66  # scale factor for coaxial frame 3d skew
 CHAR_CODE_BASE = 64  # base character code for lettering (ord('A') - 1)
@@ -163,6 +167,8 @@ def get_motors_json():
             layout.setdefault("FrameLines", []).extend(type_overrides["FrameLines"])
         if "WikiNotes" in type_overrides:
             layout["WikiNotes"] = type_overrides["WikiNotes"]
+        if "DisplayScale" in type_overrides:
+            layout["DisplayScale"] = type_overrides["DisplayScale"]
 
     return motors_json
 
@@ -206,7 +212,9 @@ def get_filename(frame_class, frame_type, frame_name):
         filename = filename.replace(old, new)
 
     filename = filename.strip("_")  # remove leading and trailing underscores
-    return f"m_{frame_class:02d}_{frame_type:02d}_{filename}.svg"
+    filename = f"m_{frame_class:02d}_{frame_type:02d}_{filename}.svg"
+    # replace double underscores with singles and return
+    return filename.replace("__", "_")
 
 
 def get_translated_coordinates(x, y, radius):
@@ -409,6 +417,9 @@ def append_footer_text(
     textElem = append_svg_element(
         layer_frame_name, "text", 0, extents.maxY + base_font_size, frame_name
     )
+    # reduce font size for frame names that may exceed svg extents
+    if len(frame_name) > LONG_FRAME_NAME_THRESHOLD:
+        layer_frame_name.set("font-size", str(LONG_FRAME_NAME_FONT_SIZE))
     extents.maxY += base_font_size * 1.5
 
     # add frame notes
@@ -615,6 +626,8 @@ def generate_diagram(
     }
     if "WikiNotes" in layout:
         list_entry["wiki_notes"] = layout["WikiNotes"]
+    if "DisplayScale" in layout:
+        list_entry["display_scale"] = layout["DisplayScale"]
     diagram_list.append(list_entry)
 
     return output_file
@@ -688,14 +701,19 @@ def generate_single_diagram():
 
 def generate_wiki_image_tag(diagram):
     # calculate scale (generated images vary in size slightly)
-    scale = int(100 * BASE_IMAGE_SIZE / diagram["height"])
-    # if aspect ratio is a bit wide, adjust for display
-    if diagram["width"] / diagram["height"] > 1.25:
-        scale = int(100 * BASE_IMAGE_SIZE / diagram["width"])
+    scale = min(MAX_DISPLAY_SCALE, int(100 * BASE_IMAGE_WIDTH / diagram["width"]))
+
+    # override scale if provided by AP_Motors_display.json
+    if "display_scale" in diagram:
+        scale = diagram["display_scale"]
+
+    alt_text = f'{diagram["ClassName"]} {diagram["TypeName"]}'
+    alt_text = alt_text.replace("  ", " ")
+
     wiki_image_str = f'.. image:: ../images/{diagram["filename"]}\n'
     wiki_image_str += f'    :target: ../_images/{diagram["filename"]}\n'
     wiki_image_str += f"    :scale: {scale}%\n"
-    wiki_image_str += f'    :alt: {diagram["ClassName"]} {diagram["TypeName"]}\n\n'
+    wiki_image_str += f"    :alt: {alt_text}\n\n"
     if "wiki_notes" in diagram:
         for note in diagram["wiki_notes"]:
             wiki_image_str += f".. note::\n    {note}\n\n"
@@ -762,23 +780,24 @@ def generate_wiki_page(diagram_list, preview=True):
         print(f"\n\n{wiki_diagram_str.strip()}\n\n")
         return
 
-    with open(WIKI_OUTPUT_FILE, "r") as file:
-        file_contents = file.read()
-        file.close()
+    # TODO: future use for inserting wiki text automatically
+    # with open(WIKI_OUTPUT_FILE, "r") as file:
+    #     file_contents = file.read()
+    #     file.close()
 
     # insert file content
-    file_start = file_contents.split(WIKI_BEGIN_COMMENT)[0]
-    file_end = file_contents.split(WIKI_END_COMMENT)[1]
-    file_contents = ("\n\n").join(
-        [
-            file_start + WIKI_BEGIN_COMMENT,
-            wiki_diagram_str.strip(),
-            WIKI_END_COMMENT + file_end,
-        ]
-    )
+    # file_start = file_contents.split(WIKI_BEGIN_COMMENT)[0]
+    # file_end = file_contents.split(WIKI_END_COMMENT)[1]
+    # file_contents = ("\n\n").join(
+    #     [
+    #         file_start + WIKI_BEGIN_COMMENT,
+    #         wiki_diagram_str.strip(),
+    #         WIKI_END_COMMENT + file_end,
+    #     ]
+    # )
 
-    with open(WIKI_OUTPUT_FILE, "w") as file:
-        file.write(file_contents)
+    # with open(WIKI_OUTPUT_FILE, "w") as file:
+    #     file.write(file_contents)
 
     print("done.", file=stderr)
 
@@ -861,12 +880,13 @@ if __name__ == "__main__":
         action="store_true",
         help="Generate all motor diagrams and preview the copter wiki page diagram section (outputs to stdout).",
     )
-    parser.add_argument(
-        "-b",
-        "--build",
-        action="store_true",
-        help="Generate all motor diagrams and insert them into the wiki page.",
-    )
+    # TODO: future use for inserting wiki text automatically
+    # parser.add_argument(
+    #     "-b",
+    #     "--build",
+    #     action="store_true",
+    #     help="Generate all motor diagrams and insert them into the wiki page.",
+    # )
     parser.add_argument(
         "-c",
         "--clean",
@@ -892,6 +912,10 @@ if __name__ == "__main__":
         generate_all_diagrams()
         exit(0)
 
-    if args.build or args.preview:
+    # TODO: future use for inserting wiki text automatically
+    # if args.build or args.preview:
+        build_all(preview=args.preview)
+        exit(0)
+    if args.preview:
         build_all(preview=args.preview)
         exit(0)
