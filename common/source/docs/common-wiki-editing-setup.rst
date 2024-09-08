@@ -122,6 +122,15 @@ This will build a docker image with all package setup to build the wiki and name
 
        docker run --rm -it -v "${PWD}:/ardupilot_wiki" -u "$(id -u):$(id -g)" ardupilot_wiki python3 update.py
 
+#. Alternately, use the bash utility script in the ``ardupilot_wiki`` root directory:
+
+   .. code-block:: bash
+
+       ./docker_update_py.sh  # presents a brief menu of build options
+
+       # or, to build the copter site with the --fast flag, for example:
+       ./docker_update_py.sh --fast --site copter
+
 That will build the wiki with the ``update.py`` similarly as in `Build the Wiki`_. The `-v` is used to share the content of the current directory, that holds all the documentation, to the container. The `-u` is used to make docker use the same permission as your current user. With those two commands, the resulting build is accessible as in `Check the Results`_
 
 Build the Wiki
