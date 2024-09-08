@@ -126,7 +126,8 @@ This will build a docker image with all package setup to build the wiki and name
 
    .. code-block:: bash
 
-       ./docker_update_py.sh  # presents a brief menu of build options
+       # presents a brief menu of build options
+       ./docker_update_py.sh  
 
        # or, to build the copter site with the --fast flag, for example:
        ./docker_update_py.sh --fast --site copter
