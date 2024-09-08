@@ -37,11 +37,13 @@ Possible Solutions:
 Autopilots with :ref:`BRD_PWM_VOLT_SEL<BRD_PWM_VOLT_SEL>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+- :ref:`CUAV-7 Nano <common-CUAV-7-Nano>`
 - :ref:`CubeOrange<common-thecubeorange-overview>`
 - :ref:`CubeYellow<common-thecubeyellow-overview>`
 - `mRo Control Zero Classic <https://store.mrobotics.io/product-p/m10048d.htm>`__
 - :ref:`mRo Pixracer Pro<common-pixracer-pro>`
-- :ref:`MakeFlyEasy PixPilot V6 <common-makeflyeasy-PixPilot-V6>`
+- :ref:`MakeFlyEasy PixPilot C3 <common-makeflyeasy-PixPilot-C3>`
+- :ref:`ZeroOne X6 <common-zeroonex6>`
 
 Induced Noise
 =============
