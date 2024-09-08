@@ -87,7 +87,7 @@
             <g id="layer-letters-middle" style="transform: rotate3d(1, 0, 0, -55deg)" />
             <g id="layer-letters-top" style="transform: rotate3d(1, 0, 0, -55deg) translateZ(-30px)" />
         <text x="332.5" y="0.0">B</text><text x="-332.5" y="4.0719506071649494e-14">D</text><text x="2.0359753035824747e-14" y="-332.5">A</text><text x="2.0359753035824747e-14" y="332.5">C</text></g>
-        <g id="layer-frame-name" fill="black" font-style="italic"><text x="0" y="404.5">QUAD PLUS (NO YAW TORQUE)</text></g>
+        <g id="layer-frame-name" fill="black" font-style="italic" font-size="40"><text x="0" y="404.5">QUAD PLUS (NO YAW TORQUE)</text></g>
         <g id="layer-frame-notes" font-size="36" font-weight="normal" font-style="italic" />
     </g>
 </svg>

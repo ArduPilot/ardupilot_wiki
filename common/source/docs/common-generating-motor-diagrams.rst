@@ -4,11 +4,11 @@
 Generating Copter Motor Diagrams
 ================================
 
-Motor diagrams such as the one below can be automatically generated and (optionally) automatically included in the :ref:`Connect ESCs and Motors<connect-escs-and-motors>` page.
+Motor diagrams such as the one below can be automatically generated for inclusion in the :ref:`Connect ESCs and Motors<connect-escs-and-motors>` page.
 
 .. image:: ../../../images/m_01_01_quad_x.svg
     :target: ../_images/m_01_01_quad_x.svg
-    :scale: 44%
+    :scale: 40%
     :alt: QUAD X
 
 Prerequisites
@@ -81,10 +81,8 @@ If ``AP_Motors_test.json`` or ``AP_Motors_display.json`` are changed, the follow
     cd ardupilot_wiki # or wherever your ardupilot_wiki repo is cloned
     # optionally preview wiki image tags before building
     ./scripts/build_motor_diagrams.py --preview
-    # generate copter motor diagrams and modify connect-escs-and-motors.rst 
-    ./scripts/build_motor_diagrams.py --build
 
-The ``--build`` option will build all copter motor diagrams and output them to ``copter/source/images/``. Additionally, it will replace the existing copter motor diagram images with the newly generated ones in ``copter/source/docs/connect-escs-and-motors.rst``. The ``--preview`` option will create the diagrams but stops short of altering the wiki page.
+Preview output can be pasted into the :ref:`Connect ESCs and Motors<connect-escs-and-motors>` page.
 
 There are a number of other options for the script. Run ``./scripts/build_motor_diagrams.py -h`` for a full list.
 

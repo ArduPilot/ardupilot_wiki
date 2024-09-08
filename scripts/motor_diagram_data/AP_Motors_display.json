@@ -93,7 +93,9 @@
         "5": {
             "Comments": "Motor vectors adjusted to show accurate diagram",
             "TypeName": "A TAIL",
-            "WikiNotes": ["Quad A Tail and V Tail frames do not use the front motors for yaw control (NYT). Motor rotation direction does not matter for these motors."],
+            "WikiNotes": [
+                "Quad A Tail and V Tail frames do not use the front motors for yaw control (NYT). The direction of motor rotation is not critical for basic operation, but unless the front motors spin in opposite directions, roll and pitch inputs will result in adverse yaw, resulting in less dynamic range of the yaw control."
+            ],
             "FrameLines": [
                 [0, 0, -0.5, 0.266],
                 [0, 0, 0.5, 0.266],
@@ -150,7 +152,7 @@
         "17": {
             "TypeName": "X (NO YAW TORQUE)",
             "WikiNotes": [
-                "Quad 'No Yaw Torque' (NYT) frames are primarily intended for :ref:`VTOL Tailsitter<guide-tailsitter>` configurations. Motor rotation direction does not matter for these motors."
+                "Quad 'No Yaw Torque' (NYT) frames are primarily intended for :ref:`VTOL Tailsitter<guide-tailsitter>` configurations with large control surfaces. Motor rotation direction does not matter for these motors, but unless the motor's spin directions are setup as any kind of normal QUAD frame, roll and pitch inputs will result in adverse yaw, resulting in less dynamic range of the yaw control of the fixed wing control surfaces."
             ]
         },
         "18": {
@@ -494,7 +496,7 @@
             "TypeName": "PITCH REVERSED",
             "Comments": "Redefines motor vectors to scale with Y6",
             "WikiNotes": [
-                "Since the tail (or nose) servo is used for yaw control, Tricopter motor rotation direction does not matter. If the direction of your tail (or nose) servo is going the wrong way in response to yaw then either the ``RCn_REVERSE`` RC input direction or the tilt servo's ``SERVOn_REVERSE`` parameter should be set to 1 (from 0), See :ref:`TriCopter setup page <tricopter>` for details."
+                "Since the tail (or nose) servo is used for yaw control, Tricopter motor rotation direction is not critical for basic operation, but unless the front motors spin in opposite directions, roll and pitch inputs will result in adverse yaw, resulting in less dynamic range of the yaw control. If the direction of your tail (or nose) servo is going the wrong way in response to yaw then either the ``RCn_REVERSE`` RC input direction or the tilt servo's ``SERVOn_REVERSE`` parameter should be set to 1 (from 0), See :ref:`TriCopter setup page <tricopter>` for details."
             ],
             "FrameLines": [
                 [0, 0, 0.5, -0.25],
@@ -588,6 +590,9 @@
             "Notes": [
                 "L = Left Throttle, Left Tilt",
                 "R = Right Throttle, Right Tilt"
+            ],
+            "WikiNotes": [
+                "If desired, Bicopter motors may rotate opposite the directions shown (e.g., CW left, CCW right)."
             ]
         }
     },
@@ -609,6 +614,7 @@
             "Type": 19,
             "TypeName": "Y4A",
             "Comments": "Not output by AP_Motors_test; Motor vectors adjusted slightly for display",
+            "DisplayScale": 45,
             "motors": [
                 {
                     "Number": 1,
