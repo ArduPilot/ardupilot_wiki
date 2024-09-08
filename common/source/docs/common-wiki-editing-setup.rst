@@ -112,7 +112,7 @@ Setup with Docker
    .. code-block:: bash
 
        cd ardupilot_wiki
-       docker build . -t ardupilot_wiki
+       docker build . -t ardupilot_wiki --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)
 
 This will build a docker image with all package setup to build the wiki and name it ``ardupilot_wiki``.
 
