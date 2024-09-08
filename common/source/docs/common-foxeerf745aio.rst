@@ -6,7 +6,6 @@ Foxeer Reaper F745 AIO
 
 The Foxeer Reaper F745 AIO V2/V3/V4 features an F7 autopilot and an integrated 45A 2-6S BLHeli_S 4-in-1 Bluejay ESC.
 
-.. note:: ArduPilot does not currently support the V3 version.
 
 .. image:: ../../../images/foxeerf745aio.png
     :target: ../_images/foxeerf745aio.png
