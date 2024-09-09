@@ -846,4 +846,37 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://arcoworldwide.ng/
 
+    *
+      - .. image:: ../../../images/supporters/supporters_Tattu.png
+            :width: 250px
+            :align: center
+            :target:  https://genstattu.com/
+
+      - .. image:: ../../../images/supporters/supporters_19labs.png
+            :width: 250px
+            :align: center
+            :target:  https://www.19labs.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_linkingdrone.png
+            :width: 250px
+            :align: center
+            :target:  https://linkingdrones.com
+
+      - .. image:: ../../../images/supporters/supporters_viewpro.png
+            :width: 250px
+            :align: center
+            :target:  https://www.viewprotech.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_Remoteaero.jpg
+            :width: 250px
+            :align: center
+            :target:  https://www.remote.aero/
+
+      - .. image:: ../../../images/supporters/supporters_Airbot.png
+            :width: 250px
+            :align: center
+            :target:  https://www.airbot-systems.com/
+
 [copywiki destination="copter,plane,rover,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
