@@ -22,18 +22,29 @@ Connection and Configuration
 ----------------------------
 The engine's ignition power switch and (optional) starter should be connected to the autopilot's servo outputs, ``Ignition`` and ``Starter`` (see ICE section in :ref:`common-rcoutput-mapping`).
 
-- Set :ref:`ICE_ENABLE <ICE_ENABLE>` = 1 to enable the ICE feature (you may need to reload parameters after setting this in order to see below parameters)
-- Set ``ICE_START_CHAN`` to the channel number corresponding to a switch on the transmitter which will be used to start the engine. This channel can start the engine or stop the engine via the ``Ignition`` and ``Starter`` outputs. Normally, the "kill" PWM value is anything below 1300us, but this can be changed using the :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` parameter. Setting up this channel and its RC control is required for operation in order to provide a "kill" function on the throttle, even if there is no ignition or starter control.
+.. tabs::
+   .. tab:: ArduPilot 4.6 and later
 
-These parameters may also need to be adjusted:
+      - Set :ref:`ICE_ENABLE <ICE_ENABLE>` = 1 to enable the ICE feature (you may need to reload parameters after setting this in order to see below parameters).
+      - Set an RC auxiliary switch (``RCx_OPTION`` = 179) be used to start the engine. This channel can start the engine or stop the engine via the ``Ignition`` and ``Starter`` motor/servo outputs (see :ref:`common-rcoutput-mapping`). Normally, the "kill" PWM value is anything below 1300us, but this can be changed using the :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` parameter. Setting up this channel and its RC control is required for operation in order to provide a "kill" function on the throttle, even if there is no ignition or starter control.
+      - the PWM value sent to the ignition power switch when the engine should be running or stopped is set by the  ``SERVOx_MIN`` and ``SERVOx_MAX`` value of the output used for the `Ignition`` function.
+      - 
+   .. tab:: ArduPilot prior to 4.6
 
-- ``ICE_PWM_STRT_ON`` is the PWM value sent to the starter to start the engine
-- :ref:`ICE_STARTER_TIME <ICE_STARTER_TIME>` is the time (in seconds) that the starter motor should run to start the engine
-- ``ICE_PWM_IGN_ON`` is the PWM value sent to the ignition power switch when the engine should be running
-- ``ICE_PWM_IGN_OFF`` is the PWM value sent to the ignition power switch when the engine should be stopped
-- :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` is the minimum PWM below which the start channel input will be ignored. This is a safety feature to prevent bad RC input from stopping the motor while the aircraft is beyond line of sight, if the RC protocol is incorrectly configured. Default is zero, meaning disabled.
+      - Set :ref:`ICE_ENABLE <ICE_ENABLE>` = 1 to enable the ICE feature (you may need to reload parameters after setting this in order to see below parameters)
+      - Set ``ICE_START_CHAN`` to the channel number corresponding to a switch on the transmitter which will be used to start the engine. This channel can start the engine or stop the engine via the ``Ignition`` and ``Starter`` outputs. Normally, the "kill" PWM value is anything below 1300us, but this can be changed using the :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` parameter. Setting up this channel and its RC control is required for operation in order to provide a "kill" function on the throttle, even if there is no ignition or starter control.
+
+      These parameters may also need to be adjusted:
+
+      - ``ICE_PWM_STRT_ON`` is the PWM value sent to the starter to start the engine
+      - :ref:`ICE_STARTER_TIME <ICE_STARTER_TIME>` is the time (in seconds) that the starter motor should run to start the engine
+      - ``ICE_PWM_IGN_ON`` is the PWM value sent to the ignition power switch when the engine should be running
+      - ``ICE_PWM_IGN_OFF`` is the PWM value sent to the ignition power switch when the engine should be stopped
+      - :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` is the minimum PWM below which the start channel input will be ignored. This is a safety feature to prevent bad RC input from stopping the motor while the aircraft is beyond line of sight, if the RC protocol is incorrectly configured. Default is zero, meaning disabled.
+
 
 If using an onboard starter, it is important to configure an RPM sensor for the engine. This will allow the ArduPilot to detect an in-flight engine failure and attempt to restart the engine. ArduPilot supports generic pulse tachometers connected to GPIO pins (such as the Aux servo pins on a PixHawk or Cube). A tachometer may be made using a simple hall effect switch IC. Alternatively, some ignition modules support a tachometer output that can be connected directly to the GPIO pins. Desert Aircraft Electronic Ignition V2 modules support tachometer output on the signal pin of the power input connector. Note that when connecting an RPM sensor to an AUX pin, it is important to make sure that this pin is not configured to output a PWM value and, instead, be a GPIO pin. See :ref:`common-gpios`.
+
 
 In order to configure an RPM sensor, the following parameters must be set:
 
