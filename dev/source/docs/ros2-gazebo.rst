@@ -25,7 +25,7 @@ We will clone the required repositories using `vcstool <https://github.com/dirk-
 
 .. code-block:: bash
 
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     vcs import --input https://raw.githubusercontent.com/ArduPilot/ardupilot_gz/main/ros2_gz.repos --recursive src
 
 Set the Gazebo version to either ``harmonic`` (recommended) or ``garden``.
@@ -39,7 +39,7 @@ Update ROS dependencies:
 
 .. code-block:: bash
 
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     source /opt/ros/humble/setup.bash
     sudo apt update
     rosdep update
@@ -52,14 +52,14 @@ Build:
 
 .. code-block:: bash
 
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     colcon build --packages-up-to ardupilot_gz_bringup
 
 If you'd like to test your installation, run:
 
 .. code-block:: bash
 
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     source install/setup.bash
     colcon test --packages-select ardupilot_sitl ardupilot_dds_tests ardupilot_gazebo ardupilot_gz_applications ardupilot_gz_description ardupilot_gz_gazebo ardupilot_gz_bringup
     colcon test-result --all --verbose

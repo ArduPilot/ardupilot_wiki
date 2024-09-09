@@ -15,7 +15,7 @@ You will need to run this command on every new shell you open to have access to 
       .. code-block:: bash
 
         source /opt/ros/humble/setup.bash
-        cd ~/ros2_ws/
+        cd ~/ardu_ws/
         colcon build --packages-up-to ardupilot_sitl
         source install/setup.bash
         ros2 launch ardupilot_sitl sitl_dds_udp.launch.py transport:=udp4 refs:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/dds_xrce_profile.xml synthetic_clock:=True wipe:=False model:=quad speedup:=1 slave:=0 instance:=0 defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm sim_address:=127.0.0.1 master:=tcp:127.0.0.1:5760 sitl:=127.0.0.1:5501
@@ -26,7 +26,7 @@ You will need to run this command on every new shell you open to have access to 
       .. code-block:: bash
 
         source /opt/ros/humble/setup.bash
-        cd ~/ros2_ws/
+        cd ~/ardu_ws/
         colcon build --packages-up-to ardupilot_sitl
         source install/setup.bash
         ros2 launch ardupilot_sitl sitl_dds_udp.launch.py transport:=udp4 synthetic_clock:=True wipe:=False model:=quad speedup:=1 slave:=0 instance:=0 defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm sim_address:=127.0.0.1 master:=tcp:127.0.0.1:5760 sitl:=127.0.0.1:5501
@@ -43,7 +43,7 @@ Once everything is running, you can now interact with ArduPilot through the ROS 
 
 .. code-block:: bash
 
-    source ~/ros2_ws/install/setup.bash
+    source ~/ardu_ws/install/setup.bash
     # See the node appear in the ROS graph
     ros2 node list
     # See which topics are exposed by the node
@@ -55,7 +55,7 @@ If the ROS 2 topics aren't being published, ensure the ardupilot parameter ref:`
 
 .. code-block:: bash
 
-    export PATH=$PATH:~/ros2_ws/src/ardupilot/Tools/autotest
+    export PATH=$PATH:~/ardu_ws/src/ardupilot/Tools/autotest
     sim_vehicle.py -w -v ArduPlane --console -DG --enable-dds
 
     param set DDS_ENABLE 1

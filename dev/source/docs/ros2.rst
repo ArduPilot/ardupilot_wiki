@@ -25,7 +25,7 @@ First, make sure that you have successfully installed `ROS 2 Humble <https://doc
 Currently, ROS 2 Humble is the only version supported.
 
 You are about to create a new `ROS 2 workspace <https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#id4>`__.
-This page assumes that your workspace is named `ros2_ws` in your home directory, but feel free to adjust to your preferred location.
+This page assumes that your workspace is named `ardu_ws` in your home directory, but feel free to adjust to your preferred location.
 
 Before anything else, make sure that you have `sourced your ROS 2 environment <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#source-the-setup-files>`__
 and check if it is `configured correctly <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#check-environment-variables>`__.
@@ -39,7 +39,8 @@ To make installation easy, we will clone the required repositories using `vcs` a
 
 .. code-block:: bash
 
-    cd ~/ros2_ws
+    mkdir -p ~/ardu_ws/src
+    cd ~/ardu_ws
     vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos src
 
 This will take a few minutes to clone all the repositories your first time.
@@ -48,7 +49,7 @@ Now update all dependencies:
 
 .. code-block:: bash
 
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     sudo apt update
     rosdep update
     source /opt/ros/humble/setup.bash
@@ -59,7 +60,7 @@ Installing the `MicroXRCEDDSGen` build dependency:
 .. code-block:: bash
     
     sudo apt install default-jre
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     git clone --recurse-submodules https://github.com/ardupilot/Micro-XRCE-DDS-Gen.git
     cd Micro-XRCE-DDS-Gen
     ./gradlew assemble
@@ -86,7 +87,7 @@ And finally, build your workspace:
 
 .. code-block:: bash
 
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     colcon build --packages-up-to ardupilot_dds_tests
 
 If the build fails, when you request help, please re-run the build in verbose mode like so:
@@ -99,7 +100,7 @@ If you'd like to test your ArduPilot ROS 2 installation, run:
 
 .. code-block:: bash
 
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     source ./install/setup.bash
     colcon test --executor sequential --parallel-workers 0 --base-paths src/ardupilot --event-handlers=console_cohesion+
     colcon test-result --all --verbose
@@ -123,7 +124,7 @@ To make installation easy, we will install the required packages using `vcs` and
 
 .. code-block:: bash
 
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     vcs import --recursive --input https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2_macos.repos src
 
 Now update all dependencies:
@@ -137,7 +138,7 @@ Build microxrcedds_gen:
 
 .. code-block:: bash
 
-    cd ~/ros2_ws/src/microxrcedds_gen
+    cd ~/ardu_ws/src/microxrcedds_gen
     ./gradlew assemble
     export PATH=$PATH:$(pwd)/scripts
 
@@ -145,7 +146,7 @@ And finally, build your workspace:
 
 .. code-block:: bash
 
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     colcon build --symlink-install --cmake-args \
     -DBUILD_TESTING=ON \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -161,7 +162,7 @@ If you'd like to test your installation, run:
 
 .. code-block:: bash
 
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     colcon test \
     --pytest-args -s -v \
     --event-handlers console_cohesion+ desktop_notification- \
