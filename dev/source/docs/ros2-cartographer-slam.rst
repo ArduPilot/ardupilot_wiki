@@ -15,19 +15,19 @@ Once that's done, simply run:
 
 .. code-block:: bash
 
-    cd ~/ros2_ws/src
+    cd ~/ardu_ws/src
     git clone git@github.com:ArduPilot/ardupilot_ros.git
 
 .. code-block:: bash
     
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     rosdep install --from-paths src --ignore-src -r --skip-keys gazebo-ros-pkgs
 
 Now source your workspace and build `ardupilot_ros`:
 
 .. code-block:: bash
 
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     source ./install/setup.bash
     colcon build --packages-up-to ardupilot_ros ardupilot_gz_bringup
 
@@ -39,7 +39,7 @@ To launch rviz and gazebo, run:
 
 .. code-block:: bash
     
-    source ~/ros2_ws/install/setup.sh
+    source ~/ardu_ws/install/setup.sh
     ros2 launch ardupilot_gz_bringup iris_maze.launch.py
 
 Now, we can launch Google Cartographer to generate SLAM, check if a map is being generated correctly in RVIZ.
@@ -47,7 +47,7 @@ In another terminal, run:
 
 .. code-block:: bash
     
-    source ~/ros2_ws/install/setup.sh
+    source ~/ardu_ws/install/setup.sh
     ros2 launch ardupilot_ros cartographer.launch.py
 
 Configure ArduPilot

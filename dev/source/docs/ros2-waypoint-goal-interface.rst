@@ -20,15 +20,15 @@ Once that's done, simply run:
 
 .. code-block:: bash
 
-    cd ~/ros2_ws/src
-    source ~/ros2_ws/install/setup.bash
+    cd ~/ardu_ws/src
+    source ~/ardu_ws/install/setup.bash
     cd ardupilot/libraries/AP_DDS
     ros2 run micro_ros_agent micro_ros_agent udp4 -p 2019 -r dds_xrce_profile.xml
 
 .. code-block:: bash
 
-    cd ~/ros2_ws/src/ardupilot
-    source ~/ros2_ws/install/setup.bash
+    cd ~/ardu_ws/src/ardupilot
+    source ~/ardu_ws/install/setup.bash
     ./Tools/autotest/sim_vehicle.py -w -v ArduPlane --console  --enable-dds --map -DG
 
 Now that SITL is running, you have two options: run the ROS2 Node or use CLI commands.
@@ -78,7 +78,7 @@ Using ROS2 Node
 
 .. code-block:: bash
 
-    cd ~/ros2_ws
+    cd ~/ardu_ws
     source ./install/setup.bash
     ros2 run ardupilot_dds_tests plane_waypoint_follower
 
