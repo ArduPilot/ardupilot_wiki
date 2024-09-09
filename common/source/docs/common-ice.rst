@@ -23,14 +23,14 @@ Connection and Configuration
 The engine's ignition power switch and (optional) starter should be connected to the autopilot's servo outputs, ``Ignition`` and ``Starter`` (see ICE section in :ref:`common-rcoutput-mapping`).
 
 - Set :ref:`ICE_ENABLE <ICE_ENABLE>` = 1 to enable the ICE feature (you may need to reload parameters after setting this in order to see below parameters)
-- Set :ref:`ICE_START_CHAN <ICE_START_CHAN>` to the channel number corresponding to a switch on the transmitter which will be used to start the engine. This channel can start the engine or stop the engine via the ``Ignition`` and ``Starter`` outputs. Normally, the "kill" PWM value is anything below 1300us, but this can be changed using the :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` parameter. Setting up this channel and its RC control is required for operation in order to provide a "kill" function on the throttle, even if there is no ignition or starter control.
+- Set ``ICE_START_CHAN`` to the channel number corresponding to a switch on the transmitter which will be used to start the engine. This channel can start the engine or stop the engine via the ``Ignition`` and ``Starter`` outputs. Normally, the "kill" PWM value is anything below 1300us, but this can be changed using the :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` parameter. Setting up this channel and its RC control is required for operation in order to provide a "kill" function on the throttle, even if there is no ignition or starter control.
 
 These parameters may also need to be adjusted:
 
-- :ref:`ICE_PWM_STRT_ON <ICE_PWM_STRT_ON>` is the PWM value sent to the starter to start the engine
+- ``ICE_PWM_STRT_ON`` is the PWM value sent to the starter to start the engine
 - :ref:`ICE_STARTER_TIME <ICE_STARTER_TIME>` is the time (in seconds) that the starter motor should run to start the engine
-- :ref:`ICE_PWM_IGN_ON <ICE_PWM_IGN_ON>` is the PWM value sent to the ignition power switch when the engine should be running
-- :ref:`ICE_PWM_IGN_OFF <ICE_PWM_IGN_OFF>` is the PWM value sent to the ignition power switch when the engine should be stopped
+- ``ICE_PWM_IGN_ON`` is the PWM value sent to the ignition power switch when the engine should be running
+- ``ICE_PWM_IGN_OFF`` is the PWM value sent to the ignition power switch when the engine should be stopped
 - :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` is the minimum PWM below which the start channel input will be ignored. This is a safety feature to prevent bad RC input from stopping the motor while the aircraft is beyond line of sight, if the RC protocol is incorrectly configured. Default is zero, meaning disabled.
 
 If using an onboard starter, it is important to configure an RPM sensor for the engine. This will allow the ArduPilot to detect an in-flight engine failure and attempt to restart the engine. ArduPilot supports generic pulse tachometers connected to GPIO pins (such as the Aux servo pins on a PixHawk or Cube). A tachometer may be made using a simple hall effect switch IC. Alternatively, some ignition modules support a tachometer output that can be connected directly to the GPIO pins. Desert Aircraft Electronic Ignition V2 modules support tachometer output on the signal pin of the power input connector. Note that when connecting an RPM sensor to an AUX pin, it is important to make sure that this pin is not configured to output a PWM value and, instead, be a GPIO pin. See :ref:`common-gpios`.
@@ -76,7 +76,7 @@ When using the ArduPilot ICE library to control an engine, the engine can be ena
 - Mid: Keep the current state of the engine, but allow MAVLink commands and mission items to change the state of the engine.
 - High: Force the engine to be enabled. This ignores MAVLink commands and mission items that attempt to control the engine's state.
 
-If an :ref:`ICE_START_CHAN <ICE_START_CHAN>` is not configured, the behavior will be the same as when the switch is in the middle position.
+If an ``ICE_START_CHAN`` is not configured, the behavior will be the same as when the switch is in the middle position.
 
 To start the motor with RC control:
 
@@ -117,7 +117,7 @@ Several options are provided using the :ref:`ICE_OPTIONS<ICE_OPTIONS>` bitmask p
 ===================     ========
 Bit (Set to enable)     Function
 ===================     ========
-0                       Set ignition output to :ref:`ICE_PWM_IGN_OFF <ICE_PWM_IGN_OFF>` during any RC failsafe
+0                       Set ignition output to ``ICE_PWM_IGN_OFF`` during any RC failsafe
 1                       Disable the Redline Governor feature (but still display GCS warnings)
 2                       Allows throttle servo output while disarmed in MANUAL mode
 3                       Prevent starting while disarmed
