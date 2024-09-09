@@ -8,6 +8,21 @@ YELLOW='\e[33m'
 MAGENTA='\e[35m'
 NC='\e[0m' # no color
 
+# check for docker image and offer to build if not present
+check_docker_image() {
+    if ! docker image inspect ardupilot_wiki > /dev/null 2>&1; then
+        echo -e "\n${BOLD}${RED}Docker image ${NC}${YELLOW}'ardupilot_wiki'${NC}${BOLD}${RED} not found.${NC}"
+        echo -en "\nBuild image? (Y/n): "
+        read build_choice
+        if [[ -z "$build_choice" || "$build_choice" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+            echo # newline
+            docker build . -t ardupilot_wiki --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)
+        else
+            exit 1
+        fi
+    fi
+}
+
 show_menu() {
     echo -e "\n${BOLD}${YELLOW}Select ArduPilot Wiki site to build:${NC}\n"
     echo -e "  ${MAGENTA}1) Copter${NC}"
@@ -42,6 +57,8 @@ show_menu() {
 run_command() {
     docker run --rm -it -v "${PWD}:/ardupilot_wiki" -u "$(id -u):$(id -g)" ardupilot_wiki python3 update.py "$@"
 }
+
+check_docker_image
 
 if [ "$#" -eq 0 ]; then
     # if no arguments given, show menu of options for building
