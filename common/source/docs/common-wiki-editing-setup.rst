@@ -109,10 +109,22 @@ Setup with Docker
 
 #. Open a command prompt in the root of the ardupilot_wiki repo and build the docker container for the wiki:
 
-   .. code-block:: bash
+.. tabs::
 
-       cd ardupilot_wiki
-       docker build . -t ardupilot_wiki --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)
+   .. group-tab:: Linux
+
+      .. code-block:: bash
+
+        cd ardupilot_wiki
+        docker build . -t ardupilot_wiki --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)
+
+
+   .. group-tab:: Windows
+
+      .. code-block:: powershell
+
+        cd ardupilot_wiki
+        docker build . -t ardupilot_wiki
 
 This will build a docker image with all package setup to build the wiki and name it ``ardupilot_wiki``.
 
@@ -120,7 +132,7 @@ This will build a docker image with all package setup to build the wiki and name
 
    .. code-block:: bash
 
-       docker run --rm -it -v "${PWD}:/ardupilot_wiki" -u "$(id -u):$(id -g)" ardupilot_wiki python3 update.py
+       docker run --rm -it -v "$(pwd):/ardupilot_wiki" -u "$(id -u):$(id -g)" ardupilot_wiki python3 update.py
 
 #. Alternately, use the bash utility script in the ``ardupilot_wiki`` root directory:
 
