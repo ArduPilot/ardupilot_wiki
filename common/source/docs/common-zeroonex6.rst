@@ -139,6 +139,6 @@ The X6 flight controller supports switching between 5V and 3.3V motro/servo outp
 Where to Buy
 ============
 
-`AeroOne <https://www.01aero.cn>`__
+`ZeroOne <https://www.01aero.cn>`__
 
 [copywiki destination="plane,copter,rover,blimp"]
