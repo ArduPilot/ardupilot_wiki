@@ -54,8 +54,8 @@ The *MAVProxy Command Prompt*, *Console* and *Map* should be arranged
 conveniently so you can observe the status and send commands at the same
 time.
 
-.. image:: ../images/mavproxy_sitl_console_and_map.jpg
-    :target: ../_images/mavproxy_sitl_console_and_map.jpg
+.. image:: ../images/mavproxy_sitl_console_and_map_plane.jpg
+    :target: ../_images/mavproxy_sitl_console_and_map_plane.jpg
 
 Taking off
 ==========
@@ -155,8 +155,8 @@ the map:
 
 #. Right-click on the map and then select **Mission \| Draw**.
 
-   .. figure:: ../images/MAVProxyCopter_Mission_Draw.jpg
-      :target: ../_images/MAVProxyCopter_Mission_Draw.jpg
+   .. figure:: ../images/MAVProxyPlane_Mission_Draw.jpg
+      :target: ../_images/MAVProxyPlane_Mission_Draw.jpg
 
       MAVProxy: Draw Mission Menu
 
@@ -215,8 +215,8 @@ First change the mode:
 The easiest way to set a target point is to right-click on the map where
 you want to go, select **Fly to**, and then enter the target altitude.
 
-.. figure:: ../images/MAVProxyCopter_flyto.jpg
-   :target: ../_images/MAVProxyCopter_flyto.jpg
+.. figure:: ../images/MAVProxyPlane_flyto.jpg
+   :target: ../_images/MAVProxyPlane_flyto.jpg
 
    MAVProxy: Fly toLocation
 
