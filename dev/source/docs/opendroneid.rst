@@ -34,7 +34,7 @@ An experimental firmware version can be built for any autopilot by:
 
 Here is a video illustrating the entire process:
 
-.. youtube:: Az8v4Kx4hS0
+.. youtube:: VhCXEKIkrjo 
 
 Testing
 =======
