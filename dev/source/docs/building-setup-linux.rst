@@ -185,7 +185,7 @@ How to Build the Docker Image
 Build the docker image and tag it with the name ardupilot:
 ::
 
-    docker build . -t ardupilot
+    docker build . -t ardupilot --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)
 
 Run ArduPilot Container
 -----------------------
@@ -194,6 +194,6 @@ the Ardupilot source, and launches an interactive shell inside the container. Fr
 you can build Ardupilot:
 ::
 
-    docker run --rm -it -v `pwd`:/ardupilot ardupilot:latest bash
+    docker run --rm -it -v "$(pwd):/ardupilot" -u "$(id -u):$(id -g)" ardupilot:latest bash
 
 
