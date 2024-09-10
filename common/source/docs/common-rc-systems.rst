@@ -27,7 +27,8 @@ ArduPilot autopilots are compatible with the following receiver output protocols
     #. :ref:`Graupner SUM-D<common-graupner-rc>`
     #. `IRC Ghost <https://www.immersionrc.com/fpv-products/ghost/>`__
     #. DroneCAN peripherals can decode these RC protocols on a peripheral and pass to the autopilot
-    #. Parallel PWM outputs encoded to PPM-Sum using an external encoder (see below)
+    #. MAVLink connected RC (not to be confused with MAVLink RC Overrides used for CS joystick control of RC functions)
+    #. Parallel PWM outputs encoded to PPM-Sum using an external encoder (see below, not supported on many autopilots now)
 
 Connecting the Receiver
 =======================
@@ -225,7 +226,7 @@ PPM encoders
 ============
 
 A `PPM Encoder <https://www.amazon.com/s?k=ppm+encoder>`__ will
-allow you to use any older style RC receiver that has only PWM outputs for each channel instead of an SBUS or PPM output. See :ref:`common-ppm-encoders-new` for more information.
+allow you to use any older style RC receiver that has only PWM outputs for each channel instead of an SBUS or PPM output. See :ref:`common-ppm-encoders-new` for more information. This protocol is not being included on many new autopilots and is being slowly obsoleted.
 
 .. toctree::
    :hidden:
