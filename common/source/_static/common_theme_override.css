@@ -68,7 +68,8 @@ table.partners-table td {
 .wy-menu .toctree-l1 a[href*="apmrover-setup.html"],
 .wy-menu .toctree-l1 a[href*="rover-first-drive.html"],
 .wy-menu .toctree-l1 a[href*="quadplane-setup.html"],
-.wy-menu .toctree-l1 a[href*="quadplane-first-flight.html"],
+.wy-menu .toctree-l1 a[href*="quadplane-flying"],
+.wy-menu .toctree-l1 a[href*="quadplane-tuning-landingpage"],
 .wy-menu .toctree-l1 a[href*="traditional-helicopter-first-time-setup"],
 .wy-menu .toctree-l1 a[href*="traditional-helicopter-first-flight"] {
     color: red;

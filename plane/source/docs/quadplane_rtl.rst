@@ -45,6 +45,9 @@ aircraft until it is close to the return point at which time it
 switches to VTOL QRTL mode and land vertically at the return point. To enable this type of
 hybrid RTL behavior you need to set the :ref:`Q_RTL_MODE <Q_RTL_MODE>` parameter to 1, 2, or 3.
 
+.. note:: for the code to judge when to start the transition to VTOL in order to arrive at the point it should be totally VTOL, the :ref:`Q_TRANS_DECEL<Q_TRANS_DECEL>` parameter is used to calculate the when to start the transition. If the vehicle is overshooting, this value can be lowered, and vice-versa.
+
+
 :ref:`Q_RTL_MODE <Q_RTL_MODE>` = 1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **RETURN FIXED WING, SWITCH TO QRTL, and LAND**

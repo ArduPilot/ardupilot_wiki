@@ -22,8 +22,9 @@ multicopter aircraft, also known as a "QuadPlane".
 
     Overview <quadplane-overview>
     Building a QuadPlane <quadplane-building>
+    Flying a QuadPlane <quadplane-flying>
     First Time Setup <quadplane-setup>
-    First Flight and VTOL Tuning <quadplane-first-flight>
+    First Flight and VTOL Tuning <quadplane-tuning-landingpage>
     Weathervaning <quadplane-weathervaning>
     AUTO Missions <quadplane-auto-mode>
     Simulation <quadplane-simulation>
