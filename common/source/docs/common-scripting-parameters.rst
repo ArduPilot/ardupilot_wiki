@@ -8,7 +8,7 @@ LUA scripts have the ability to access and change ArduPilot parameters setup by 
 
 for example: ::
 
-    local parameter = parm:get('SCR_ENABLE')
+    local parameter = param:get('SCR_ENABLE')
 
 will retrieve the SCR_ENABLE parameter and assign it to the variable "parameter"
 
