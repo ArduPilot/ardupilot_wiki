@@ -129,6 +129,11 @@ Very light, agile aircraft may fail to complete the tune, or result in a tune th
 
 .. note:: increasing the gyro filter cutof may allow more system noise into the control loops and setting up a :ref:`dynamic throttle notch filter<common-throttle-based-notch>` or :ref:`in-flight FFT<common-imu-fft>` is recommended (if your autopilot firmware includes this feature.. see: :ref:`Firmware Limitations<common-limited_firmware>` ).
 
+Testing Tune in Other Modes
+===========================
+
+The completed suceesfull tune obtained can be tested in any mode, not just the one (QHOVER or QLOITER) used for entry. A switch can be setup,``RCx_OPTION`` = 180 (AUTOTUNE_TEST_GAINS) that will allow switching between original and autotuned gains in any mode, after autotune has completed. If this switch is setup, but not changed after the auotune has completed, it has no effect. Otherwise if switched high the tuned gains are in effect, if low the original gains. Then they apply to any flight mode and will be made permanent upon the next disarm, based on  switch position.
+
 ACRO Mode YAW Rate Controller
 =============================
 
