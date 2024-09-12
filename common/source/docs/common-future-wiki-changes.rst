@@ -59,6 +59,7 @@ New Features
 - Add AIRSPEED_STALL parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/6147
 - Add AUX switch to test completed Autotune gains in any flight mode, see https://github.com/ArduPilot/ardupilot_wiki/pull/6194
 - Change ICE starter channel setup, see https://github.com/ArduPilot/ardupilot_wiki/pull/6259
+- Add Q_APPROACH_DIST param, see https://github.com/ArduPilot/ardupilot_wiki/pull/6271
 [/site]
 [site wiki="copter"]
 - Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
