@@ -1,8 +1,8 @@
-.. _2021-conference:
+.. _dev-conference:
 
-==========================
-2021 Developers Conference
-==========================
+=====================
+Developers Conference
+=====================
 
 Conference was held April 9-11.
 
