@@ -87,6 +87,11 @@ Instead of using a UART serial connection to control the gimbal, an Ethernet vir
 
 An example of the setup of the gimbal in a networked ArduPilot vehicle system is detailed in :ref:`common-ethernet-vehicle`
 
+Downloading Images and Video
+----------------------------
+
+Images and videos captured by the camera can be remotely downloaded to a companion computer or PC via Ethernet using `this siyi-download.py Python script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/cameras_gimbals/siyi-download/siyi-download.py>`__
+
 Control and Testing
 -------------------
 
