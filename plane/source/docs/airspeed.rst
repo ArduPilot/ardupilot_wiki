@@ -103,8 +103,7 @@ Calibration
 ===========
 
 The airspeed sensor reading is automatically zeroed by the autopilot during
-initialization, so it is good practice during windy conditions to place
-a loose fitting cover over the pitot tube that shields the front hole
+initialization and value set in the :ref:`ARSPD_OFFSET<ARSPD_OFFSET>` automatically, so it is good practice during windy conditions to placea loose fitting cover over the pitot tube that shields the front hole
 and the four small side holes from the wind. This cover should be fitted
 prior to power on and removed before flight. If you forget to do this,
 you can always place the cover and repeat the airspeed auto-zero using
@@ -123,7 +122,9 @@ the value of :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` to 1. See :ref:`calibrating-an-
 Miscalibration Safeguards
 =========================
 
-In order to help prevent Airspeed sensor use when its been miscalibrated either during ground static calibration during the power up sequence, or by accidental parameter changes to offset or ratio, three parameters are available. If the ground speed is consistently lower than the reported airspeed for a few seconds by :ref:`ARSPD_WIND_MAX<ARSPD_WIND_MAX>`, i.e. the apparent wind speed is greater than that amount, the sensor can be disabled to avoid erroneous reporting. It can be allowed to re-enable if the apparent wind falls back below that value. These actions are controlled by :ref:`ARSPD_OPTIONS<ARSPD_OPTIONS>`.
+In order to help prevent Airspeed sensor use when its been miss-calibrated either during ground static calibration during the power up sequence, or by accidental parameter changes to offset or ratio, three parameters are available. If the ground speed is consistently lower than the reported airspeed for a few seconds by :ref:`ARSPD_WIND_MAX<ARSPD_WIND_MAX>`, i.e. the apparent wind speed is greater than that amount, the sensor can be disabled to avoid erroneous reporting. It can be allowed to re-enable if the apparent wind falls back below that value. These actions are controlled by :ref:`ARSPD_OPTIONS<ARSPD_OPTIONS>`.
+
+You can also elect to have a GCS text message sent after the ground static calibration which reports the value of the calibration (:ref:`ARSPD_OFFSET<ARSPD_OFFSET>`). This value should not change significantly (10-20 points) from power-up to power-up significantly. If it does, then you may have forgotten to cover the pitot during power up and need to recalibrate. This option can be selected in the :ref:`ARSPD_OPTIONS<ARSPD_OPTIONS>` bitmask parameter.
 
 You can also send a warning to the Ground Control Station if the apparent wind exceeds :ref:`ARSPD_WIND_WARN<ARSPD_WIND_WARN>`. This can be used instead of, or together with the above
 
