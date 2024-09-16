@@ -50,7 +50,27 @@ Reload the path (log-out and log-in to make it permanent):
 
     . ~/.profile
 
-Now you should be able to build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
+Build the code for an autopilot or peripheral board
+---------------------------------------------------
+
+Now you should be able to build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__. For example, for a Copter build for the MatekH743 board:
+
+::
+
+    ./waf configure --board MatekH743
+    ./waf copter
+
+    The first configure command should be called only once or when you want to change a
+    configuration option. One configuration often used is the `--board` option to
+    switch from one board to another one. For example we could switch to
+    SkyViper GPS drone and build again:
+
+::
+
+    ./waf configure --board skyviper-v2450
+    ./waf copter
+
+.. note:: the - -help option will list many build options as well as a list of features that can be enabled or disabled, just as in the `Custom Firmware Build Server <https://custom.ardupilot.org/>`__
 
 .. note:: At this point you have already installed the MAVProxy Ground Control Station (MAVProxy GCS) and are also ready to do Software In the Loop (SITL) simulations of the vehicle code. See :ref:`sitl-simulator-software-in-the-loop`  and :ref:`setting-up-sitl-on-linux`. You are ready to not only build the code but run your build in the ArduPilot SITL simulator.
 
