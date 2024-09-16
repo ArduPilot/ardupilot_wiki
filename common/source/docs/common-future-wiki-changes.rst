@@ -72,4 +72,5 @@ New Features
 - Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
 - Renamed Torqueedo Motor params and allowed for two motors, see - Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
 - Add Omni3 Mecanum frame, see https://github.com/ArduPilot/ardupilot_wiki/pull/6130
+- Add automatic speed slow down in CIRCLE mode if track is overshooting, see https://github.com/ArduPilot/ardupilot_wiki/pull/6280
 [/site]
