@@ -54,7 +54,7 @@ There are two methods to allow these to be restored.
 Using Mission Planner
 ---------------------
 
-#. Press ALT+F to get to advanced commands.
+#. Press CTRL+F to get to advanced commands.
  
 #. Now restore your previously stored parameters (could have also been done as first step), which includes the calibration parameters, to the autopilot and reboot. Calibration should not be required to arm now.
 
