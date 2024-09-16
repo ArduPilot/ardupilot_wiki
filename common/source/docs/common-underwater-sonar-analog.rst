@@ -60,3 +60,12 @@ Data screen's Status tab. Look closely for "sonarrange".
 .. image:: ../../../images/mp_rangefinder_lidarlite_testing.jpg
     :target: ../_images/mp_rangefinder_lidarlite_testing.jpg
 
+Preflight Check
+==================
+For an easy depth check add the following to your preflight CheckListEditor:
+
+Field: rangefinder1
+Comparison: NONE
+Trigger: 0,5 (in my case)
+Description/Value: Sonarrange
+                   {value}m
