@@ -7,12 +7,15 @@ ESP8266 wifi telemetry
 .. image:: ../../../images/esp8266-telemetry.jpg
     :target: ../_images/esp8266-telemetry.jpg
 
+.. image:: ../../../images/Kahuna_ESP8266.jpg
+    :target: ../_images/Kahuna_ESP8266.jpg
+
 The ESP8266 wifi module is an inexpensive programmable wifi modules available from many sources.  It also comes included with most :ref:`Pixracers <common-pixracer-overview>`.
 
 Where to Buy
 ------------
-
-The `adafruit HUZZAH ESP8266 breakout board <https://www.adafruit.com/product/2471>`__ is recommended because it can be connected to an autopilot without the need for 3.3V regulator or level shifters.
+- The `adafruit HUZZAH ESP8266 breakout board <https://www.adafruit.com/product/2471>`__ can be connected to an autopilot without the need for 3.3V regulator or level shifters.
+- The `Beyond Robotix - Kahuna <https://www.beyondrobotix.com/products/kahuna>`__ is a ready to use ESP8266 module that connects directly to an autopilot. The Kahuna is pre-flashed with a fork of ArduPilot firmware, has a JST-GH connector to connect easily to several off-the-shelf autopilots and has a u.fl connector for an external antenna. Further documentation for this unit is found `here <https://docs.google.com/document/d/1VyOsp9_q6dIAdYdWuDFcWoqqrNy_vbFMANubZA3Uz5g/edit?usp=sharing>`__.
 
 Connecting to an autopilot
 ---------------------------------
