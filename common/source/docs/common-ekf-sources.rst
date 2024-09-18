@@ -35,7 +35,7 @@ Source Switching
 
 Three sets of EKF position and velocity source parameters are provided and by default the 1st set is used (e.g. the _SRC1 set).
 
-The active set can be selected via an :ref:`RC auxiliary switch <common-auxiliary-functions>` (e.g. set ``RCx_OPTION`` to "90" / "EKF Position Source").
+The active set can be selected via an :ref:`RC auxiliary switch <common-auxiliary-functions>` (e.g. set ``RCx_OPTION`` to "90" / "EKF Source Set").
 
 Ground stations or companion computers may set the source by sending a `MAV_CMD_SET_EKF_SOURCE_SET  <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_SET_EKF_SOURCE_SET>`__ mavlink command but no GCSs are currently known to implement this.
 
