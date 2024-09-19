@@ -39,6 +39,9 @@ Once the autopilot is using signing, USB connections are unaffected, but any lin
 
 When you connect Mission Planner over a link that is signing, it will see if it has the correct key stored in its keys table that you would have setup previously. If it does, the connection will use that key and commands will be acted upon by the autopilot, including parameter download at connection. If you connect, but parameter download does not occur, then the key was not present. Add the key, and re-connect.
 
+.. note:
+
+   In simulation, port 5760 effectively functions as your "USB" port.  This is also the port that ``sim_vehicle.py``'s MAVProxy connects to.  If you forward traffic from this MAVProxy (eg. via "output add") then it will also bypass ArduPilot's MAVLink2-signature checking code.   If you want to test MAVLink signature-checking is functional connect to TCP port 5762 instead.
 
 [copywiki destination="plane,copter,rover,planner"]
 
