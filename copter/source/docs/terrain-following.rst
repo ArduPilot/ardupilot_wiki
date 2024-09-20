@@ -49,6 +49,18 @@ It will create tiles for the specified radius around a geographic location. Then
 
 You can also download .zip files for entire continents, or individual tiles from `here <https://terrain.ardupilot.org/data/>`__. Note that ArduPilot 4.0.x and 4.1.x have different tilesets. Use the "continents"/"tiles" folders for ArduPilot 4.0.x, or use the "continentsapm41"/"tilesapm41" folders for ArduPilot 4.1.x. 
 
+Beginning with the beta version released on 20th September 2024 you can create terrain dat files from Mission Planner and upload them to the SD card. 
+
+- Go to FlightPlanner.
+- Select area with ALT+MouseCLICK and drag
+- Open context menu and select Make Terrain DAT
+
+if no area is selected the actual displayed area is used.
+
+If you loaded Digital Elevation Model files into Mission Planner, then the generated terrain file will use them as source. You can specify the spacing between 5 and 100 meters. (Smaller spacing is not possible due to a bug in Ardupilot code, which does not allow files larger than 2Gbyte)
+
+Terrain data files are always created as one file per one-by-one degree area, the file size depends on the spacing.
+
 .. warning:: A long standing bug in the downloaded terrain data files, which occasionally caused terrain data to be missing, even though supposedly downloaded, was fixed in Plane 4.0.6, Copter 4.0.4, and Rover 4.1. It will automatically be re-downloaded when connected to a compatible GCS. However, if you are relying on SD terrain data for an area and don't plan on being connected to a GCS when flying over it, or its not part of a mission, you should download the area data using the utility above, or from the linked tiles data repository and place on your SD card in the Terrain directory.
 
 .. warning:: ArduPilot 4.0.x and 4.1.x use different terrain tilesets. When upgrading from 4.0.x to 4.1.x, any tiles on the SD card will need to be re-downloaded. This will happen automatically when your GCS is connected to the Internet for areas covered by loaded missions and/or home location. Otherwise, you may set the :ref:`TERRAIN_MARGIN <TERRAIN_MARGIN>` to 50 to continue using the old tileset.
