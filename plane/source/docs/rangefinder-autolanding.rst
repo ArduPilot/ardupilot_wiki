@@ -8,7 +8,7 @@ If you have :ref:`fitted a rangefinder <common-rangefinder-landingpage>`
 to your aircraft then you can use it for much more accurate landing
 control. To allow the rangefinder to be used for landing you need to set
 the :ref:`RNGFND_LANDING <RNGFND_LANDING>` parameter to 1. The first rangefinder
-with "down" orientation found, will be used.
+with :ref:`RNGFND_LND_ORNT<RNGFND_LND_ORNT>` orientation found, will be used. Normally, this will be "down" (25) for most planes, but Tailsitter Quadplanes would normally use "back" (4) so that the rangefinder is pointing at the ground during a tailsitter landing with its nose vertical.
 
 When using a rangefinder for landing the altitude given by the
 rangefinder is used only in the landing approach and to determine the
