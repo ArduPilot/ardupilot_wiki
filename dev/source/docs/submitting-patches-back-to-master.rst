@@ -51,7 +51,7 @@ Preparing commits
   to `online resources <http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html>`__
   to understand how to use this tool.
 
-- The commits of the change should be squashed (see :ref:`git-interactive-rebase`) into one commit and then the "Tools/gittools/git-subsystems-split" script run to create a single commit for each library module affected.
+- Each commit should involve only a single library. The commits of the changes in each library should be squashed (see :ref:`git-interactive-rebase`) into the minimal number of commits per library that allows readability and clarity when reviewing (usually only one commit). The "Tools/gittools/git-subsystems-split" script can be run on any commit spanning multiple libraries to create a single commit for each library module affected before submitting. if needed.
 
 - Do not submit patches with commented-out code or code that is never reachable within ``#define`` s.
 
