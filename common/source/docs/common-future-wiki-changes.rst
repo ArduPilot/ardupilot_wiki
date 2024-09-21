@@ -62,6 +62,7 @@ New Features
 - Change ICE starter channel setup, see https://github.com/ArduPilot/ardupilot_wiki/pull/6259
 - Add Q_APPROACH_DIST param, see https://github.com/ArduPilot/ardupilot_wiki/pull/6271
 - Add glider drop pullup, see https://github.com/ArduPilot/ardupilot_wiki/pull/6283
+- Add the orientation parameter for rangefinders used in rangefinder assisted auto-landings, see https://github.com/ArduPilot/ardupilot_wiki/pull/6293
 [/site]
 [site wiki="copter"]
 - Mission pausing via RC switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/5919
