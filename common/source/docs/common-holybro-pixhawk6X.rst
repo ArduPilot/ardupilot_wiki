@@ -1,8 +1,8 @@
 .. _common-holybro-pixhawk6X:
 
 ============================
-Pixhawk 6X Flight Controller
-============================
+Pixhawk 6X/6X Pro Flight Controller
+===================================
 
 Pixhawk6X®  is the latest update to the successful family of Pixhawk® autopilots made by Holybro, featuring STM32H7 cpus, vibration isolation of IMUs, redundant IMUs, double redundant barometers on separate buses, IMU heating, and integrated Ethernet for high speed connections to companion computers.
 
@@ -19,48 +19,10 @@ The Pixhawk6 autopilots are sold by `Holybro <https://shop.holybro.com/c/flight-
 
 Features of Pixhawk6 Series
 ===========================
+(click table below to expand)
 
-+---------------------+-----------------------------+-----------------+----------------------+
-|                     |Pixhawk 6X                   |Pixhawk 6C       |Pix32 v6 (Coming Soon)|
-+=====================+=============================+=================+======================+
-|Key Design Point     |Additional Redundancy        |Low profile      |Cost effective        |
-|                     +-----------------------------+-----------------+----------------------+
-|                     |Modular design, allowing     |Cost effective   |Modular design,       |
-|                     |customized baseboard         |                 |allowing customized   |
-|                     |                             |                 |baseboard             |
-+---------------------+-----------------------------+-----------------+----------------------+
-|Processor            |STM32H753                    |               STM32H743                |
-+---------------------+-----------------------------+-----------------+----------------------+
-|Clock Speed          |                              480 MHz                                 |
-+---------------------+-----------------------------+-----------------+----------------------+
-|IO Processor         |                              STM32F103                               |
-+---------------------+-----------------------------+-----------------+----------------------+
-|IMU Redundancy       |Triple                       |Double           |Double                |
-+---------------------+-----------------------------+-----------------+----------------------+
-|IMU Temperature      |                             Yes                                      |
-|Control              |                                                                      |
-+---------------------+-----------------------------+-----------------+----------------------+
-|Barometer            |                             |                 |                      |
-|Redundancy           |Double                       |N/A              | N/A                  |
-+---------------------+-----------------------------+-----------------+----------------------+
-|Power Monitor        |I2C                          |Analog           |Analog                |
-+---------------------+-----------------------------+-----------------+----------------------+
-|UART                 |8                            |7                |7                     |
-+---------------------+-----------------------------+-----------------+----------------------+
-|CAN Bus              |                              2                                       |
-+---------------------+-----------------------------+-----------------+----------------------+
-|GPS/Compass Ports    |                             2                                        |
-+---------------------+-----------------------------+-----------------+----------------------+
-|UART Flow Control    |3 Ports                      |2 Ports          |2 Ports               |
-+---------------------+-----------------------------+-----------------+----------------------+
-|Additional I2C	      |                             Yes                                      |
-+---------------------+-----------------------------+-----------------+----------------------+
-|Ethernet Support     |Yes                          |No               |No                    |
-+---------------------+-----------------------------+-----------------+----------------------+
-|SPI Port             |Yes                          |No               |No                    |
-+---------------------+-----------------------------+-----------------+----------------------+
-|A/D                  |6.6V,3.3V,RSSI               |RSSI             |RSSI                  |
-+---------------------+-----------------------------+-----------------+----------------------+
+.. image:: ../../../images/Holybro_6_Comparison.png
+    :target: ../_images/Holybro_6_Comparison.png
 
 Typical Wiring Diagram
 ======================
