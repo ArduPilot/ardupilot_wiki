@@ -5,6 +5,10 @@ CUAV-7-Nano Flight Controller
 =============================
 
 The CUAV-7-Nano flight controller produced by `CUAV <https://www.cuav.net>`_.
+It has an ultra-small size and a 100M Ethernet interface. Supports 3.3V/5V PWM output.
+
+.. image:: ../../../images/7-nano/7-nano.jpg
+   :target: ../_images/7-nano/7-nano.jpg
 
 Features
 ========
@@ -23,11 +27,18 @@ Features
 * Analog RSSI input
 * 3.3V/5V configurable PWM ouput voltage
 
+Size 
+====
+
+.. image:: ../../../images/7-nano/7-nano-size.png
+   :target: ../_images/7-nano/7-nano-size.png
+
 Pinout
 ======
 
-.. image:: ../../../images/CUAV-7-Nano-pinout.png
-   :target: ../_images/CUAV-7-Nano-pinout.png
+.. image:: ../../../images/7-nano/7-nano-pinouts.png
+   :target: ../_images/7-nano/7-nano-pinouts.png
+
 
 UART Mapping
 ============
@@ -123,3 +134,8 @@ Firmware for these boards can be found at https://firmware.ardupilot.org in sub-
 The board comes pre-installed with an ArduPilot compatible bootloader, allowing the loading of \*.apj firmware files with any ArduPilot compatible ground station.
 
 [copywiki destination="plane,copter,rover,blimp"]
+
+
+CUAV docs
+=========
+`CUAV 7-Nano <https://https://doc.cuav.net/flight-controller/7-nano/en/>`__
