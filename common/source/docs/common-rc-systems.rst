@@ -137,7 +137,8 @@ Below is a table with some commonly  available systems showing these elements. N
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |CRSF                   |Long  |  Bi-Dir  |   Variable |  yes      |SBUS/CRSF     |    3   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
-|ELRS                   |Long  |  Yes     |     -      |   -       |CRSF          |    4   |
+|ELRS                   |Long  |  Bi-Dir  |   Variable |  optional |SBUS/CRSF     |    4   |
+|                       |      |          |            |           | Mavlink      |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |FLYSKY                 |Short |    No    |     -      |   -       |  IBus        |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
@@ -169,7 +170,7 @@ Note 2: See :ref:`common-frsky-yaapu`. The ability to change parameters over FRS
 
 Note 3: ArduPilot provides a means to send its telemetry data via CRSF such that it can be displayed on `OpenTX <https://www.open-tx.org/>`__ transmitters using the :ref:`Yaapu Telemetry LUA Script<common-frsky-yaapu>`. The ability to change parameters over CRSF telemetry from an Open TX compatible transmitter in addition to displaying the telemetry data is also possible. See :ref:`common-crsf-telemetry`
 
-Note 4: ELRS (EpressLRS) is a system that uses the CRSF (TBS Crossfire) RC protocol with several minimizations to simplify the system. It has reduced features but it connects to ArduPilot just like CRSF, when CRSF RXs are attached using a full UART, instead of SBUS protocol to communicate to ArduPilot. See `ExpressLRS site <https://www.expresslrs.org/2.0/>` for more information.
+Note 4: ELRS (ExpressLRS) is a flexible open-source system that can output CRSF, SBUS, or MAVLink (with embedded RC) protocols. Telemetry requires the use of CRSF or Mavlink, and the receiver must be wired to a full UART.  See `ExpressLRS site <https://www.expresslrs.org/>`  and :ref:`TBS CRSF/ ELRS <common-tbs-rc>` for more information.
 
 Note 5: The mLRS project is firmware designed specifically to carry both RC and MAVLink. The usable telemetry speed varies by the chosen mode and is managed via RADIO_STATUS flow control. It uses the CRSF (TBS Crossfire) RC protocol on both the receiver and Tx module.  It also integrates full MAVLink telemetry via serial connections on the Tx module and the receiver.
 
@@ -200,7 +201,7 @@ With integrated telemetry:
     mLRS <common-mlrs-rc>
     Multiplex (no support in ArduPilot for M-Link telemetry yet) <common-multiplex-rc>
     Spektrum SRXL2 <common-spektrum-rc>
-    TBS CRSF <common-tbs-rc>
+    TBS CRSF/ ELRS <common-tbs-rc>
 
 Multi-Protocol:
 
