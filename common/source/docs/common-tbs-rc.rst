@@ -8,7 +8,8 @@ Any Crossfire/ELRS compatible receiver can be used with ArduPilot.
 
 .. note::  ELRS (ExpressLRS) RC systems use the CRSF protocol and are connected in a similar manner as Crossfire receivers. Also, on F4/F7 based autopilots the UART MUST be DMA enabled for reliable operation. Consult :ref:`common-autopilots`.
 
-If you do not wish to use telemetry then the receiver can be connected to the **RCIN** port using :ref:`SBUS <common-rc-systems>`. You must configure the Receiver to output SBUS, of course.
+If you do not wish to use telemetry then a TBS Crossfire or ELRS receiver can be connected to the **RCIN** port using :ref:`SBUS <common-rc-systems>`. You must configure the receiver to output SBUS, of course.
+
 
 CRSF Receivers 
 ==============
@@ -46,6 +47,17 @@ Instead of CRSF protocol, MAVLink protocol can be used. In this case, using SERI
 - Set :ref:`RSSI_TYPE <RSSI_TYPE>` = 5
 
 If the ELRS transmitter module has WIFI capability, then the telemetry data can be forwarded wirelessly to a PC or phone based GCS close to the transmitter.
+
+MAVLink Option
+--------------
+
+In addition to SBUS and CRSF protocols, ELRS can be configured to use MAVLink protocol for telemetry and embedded RC control. To utilize this attach to SERIAL port 4(as an example) and configure:
+
+- Set :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 2
+- Set :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 460
+- Set :ref:`RSSI_TYPE <RSSI_TYPE>` =  5
+
+If the ELRS transmitter module has WIFI, the MAVLink telemetry can be wirelessly forwarded to a phone or PC GCS.
 
 CRSF Video Transmitters
 =======================
