@@ -59,6 +59,9 @@ if no area is selected the actual displayed area is used.
 
 If you loaded Digital Elevation Model files into Mission Planner, then the generated terrain file will use them as source. You can specify the spacing between 5 and 100 meters. (Smaller spacing is not possible due to a bug in Ardupilot code, which does not allow files larger than 2Gbyte)
 
+A grid spacing of 100 meters is adequate for most uses, especially for fast-flying vehicles. Using a smaller grid spacing often results in unnecessary SD card storage consumption. However, in specific cases where precise terrain following is required—such as when spraying with a copter over uneven terrain—a smaller grid spacing can be beneficial.
+Don't forget to match the terrain spacing parameter with the grid size you generated and uploaded.
+
 Terrain data files are always created as one file per one-by-one degree area, the file size depends on the spacing.
 
 .. warning:: A long standing bug in the downloaded terrain data files, which occasionally caused terrain data to be missing, even though supposedly downloaded, was fixed in Plane 4.0.6, Copter 4.0.4, and Rover 4.1. It will automatically be re-downloaded when connected to a compatible GCS. However, if you are relying on SD terrain data for an area and don't plan on being connected to a GCS when flying over it, or its not part of a mission, you should download the area data using the utility above, or from the linked tiles data repository and place on your SD card in the Terrain directory.
