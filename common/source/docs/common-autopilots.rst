@@ -62,7 +62,7 @@ Open Hardware
     Holybro Durandal H7 <common-durandal-overview>
     Holybro Pix32 v5 <common-holybro-pix32v5>
     Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
-    Holybro Pixhawk6X/6X Pero <common-holybro-pixhawk6X>
+    Holybro Pixhawk6X/6X Pro <common-holybro-pixhawk6X>
     Holybro Pixhawk6C/ 6C Mini <common-holybro-pixhawk6C>
     Holybro Pix32v6(Pixhawk6C variant) <common-holybro-pix32v6>
     mRo Pixhawk <common-pixhawk-overview>
