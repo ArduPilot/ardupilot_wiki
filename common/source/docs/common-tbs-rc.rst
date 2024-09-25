@@ -6,14 +6,14 @@ Crossfire and ELRS RC Systems
 
 Any Crossfire/ELRS compatible receiver can be used with ArduPilot. 
 
-.. note::  ELRS (ExpressLRS) RC systems use the Crossfire protocol and are connected in a similar manner. However, ERLS telemetry does not provide bi-directional telemetry like Crossfire. Also, on F4/F7 based autopilots the UART MUST be DMA enabled for reliable operation. Consult :ref:`common-autopilots`.
+.. note::  ELRS (ExpressLRS) RC systems use the CRSF protocol and are connected in a similar manner as Crossfire receivers. Also, on F4/F7 based autopilots the UART MUST be DMA enabled for reliable operation. Consult :ref:`common-autopilots`.
 
-If you do not wish to use telemetry then a **TBS Crossfire** receiver can be connected to the **RCIN** port using :ref:`SBUS <common-rc-systems>`. You must configure the Receiver to output SBUS, of course.
+If you do not wish to use telemetry then the receiver can be connected to the **RCIN** port using :ref:`SBUS <common-rc-systems>`. You must configure the Receiver to output SBUS, of course.
 
 CRSF Receivers 
 ==============
 
-If you wish to use telemetry then a TBS receiver can be connected to a UART utilizing the `CRSF <https://www.team-blacksheep.com/products/prod:crossfire_tx>`__ protocol.
+If you wish to use telemetry then a receiver can be connected to a UART utilizing the `CRSF <https://www.team-blacksheep.com/products/prod:crossfire_tx>`__ protocol.
 
 CRSF is a full-duplex protocol that supports integrated telemetry and a number of other features. Connect the RX pin of the UART to the CRSF TX pin of the CRSF device and vice versa.
 Currently a full-duplex UART connection is required. For best performance a UART with DMA capability on its RX port is desirable, but not required. A message will be displayed once on the GCS console, if connected to a UART without this capability on an F4/F7 based autopilot.
@@ -34,7 +34,18 @@ See :ref:`common-crsf-telemetry` for information about telemetry data sent, disp
 ELRS Receivers
 ==============
 
-ELRS can be setup in the same manner as CRSF above , however, bit 13 of :ref:`RC_OPTIONS<RC_OPTIONS>` should be set to alter the baudrate from 416KBaud that CRSF uses, to 420KBaud that ELRS uses. As mentioned above, the UART selected must have DMA capability.
+ELRS can be setup in the same manner as CRSF above , however, bit 13 of :ref:`RC_OPTIONS<RC_OPTIONS>` should be set to alter the baudrate from 416KBaud that CRSF uses, to 420KBaud that ELRS uses. As mentioned above, the UART selected must have DMA capability. ELRS can also be configured to output MAVLink, enabling full bidirectional Mavlink telemetry and RC control over the same link. See :ref:`ELRS <common-rc-systems>` for more information.
+
+ELRS MAVLink Configuration
+--------------------------
+
+Instead of CRSF protocol, MAVLink protocol can be used. In this case, using SERIAL 4 for example:
+
+- Set :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 2
+- Set :ref:SERIAL4_BBAUD <SERIAL4_BAUDL>` = 460
+- Set :ref:`RSSI_TYPE <RSSI_TYPE>` = 5
+
+If the ELRS transmitter module has WIFI capability, then the telemetry data can be forwarded wirelessly to a PC or phone based GCS close to the transmitter.
 
 CRSF Video Transmitters
 =======================
