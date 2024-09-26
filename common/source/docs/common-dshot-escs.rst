@@ -12,13 +12,13 @@ DShot is a digital ESC protocol which allows fast, high resolution digital commu
 - Clock differences between the ESC and autopilot don't affect flight performance
 - ESC calibration is not required
 
-DShot is the underlying ESC control protocol used by :ref:`BLHeli <common-blheli32-passthru>` ESCs.  Many BLHeli ESC versions offer even more features such as ESC configuration, :ref:`ESC telemetry <blheli32-esc-telemetry>`, LED control and/or :ref:`Bi-directional dshot <bidir-dshot>`.  If choosing a DShot enabled ESC we recommend using one that also supports BLHeli32 or BLHeli_S.
+DShot is the underlying ESC control protocol used by :ref:`BLHeli/AM32 <common-blheli32-passthru>` ESCs.  Many BLHeli/AM32 ESC versions offer even more features such as ESC configuration, :ref:`ESC telemetry <blheli32-esc-telemetry>`, LED control and/or :ref:`Bi-directional dshot <bidir-dshot>`.  If choosing a DShot enabled ESC we recommend using one that also supports BLHeli32, AM32, or BLHeli_S.
 
 .. note::
    Only try DShot on ESCs that are known to support it or you will get unpredictable results.
 
 .. note::
-   Recently there is a growing number of proprietary and non-proprietary 16 / 32 bit ESCs with firmware that support DShot and other digital ESC protocols, but not BLHeli32 specific features like passthrough and telemetry. See your ESC's manual for further detail on supported features.
+   Recently there is a growing number of proprietary and non-proprietary 16 / 32 bit ESCs with firmware that support DShot and other digital ESC protocols, but not BLHeli32/AM32 specific features like passthrough and telemetry. See your ESC's manual for further detail on supported features.
 
 .. note:: most DShot ESCs normally will also operate as normal :ref:`PWM ESCs <common-brushless-escs>`.
 
@@ -61,7 +61,7 @@ For smaller craft, DShot600 is by far the most widely used and can therefore be 
 
 Higher rates (e.g. DShot600 and DShot1200) are more susceptible to noise but have the advantage that they tie up the allocated DMA channel for less time which can be beneficial on autopilots with a lot of DMA sharing.
 
-If :ref:`Bi-directional DShot <bidir-dshot>` will be used, DShot300 and DShot600 are preferred, because this feature requires a longer pulse width as it has to wait for the response from the ESC before it can send another pulse.  Bi-directional DShot does not share DMA channels and so there is no impact on other peripherals.  Bi-directional DShot is only supported on BLHeli32 ESCs
+If :ref:`Bi-directional DShot <bidir-dshot>` will be used, DShot300 and DShot600 are preferred, because this feature requires a longer pulse width as it has to wait for the response from the ESC before it can send another pulse.  Bi-directional DShot does not share DMA channels and so there is no impact on other peripherals.  Bi-directional DShot is only supported on BLHeli32/AM32 ESCs
 
 Configure the Servo Functions
 =============================
@@ -122,7 +122,7 @@ Reversible DShot ESCs
 
 Reversible DShot (aka 3D mode) allows the motor to be spun in either direction which is important for Rover, Boats and :ref:`Planes with reverse thrust <plane:reverse-thrust-setup>`.
 
-Currently, only BLHeli32 and BLHeli_S capable reversible DShot ESCs are supported. In order to use one, the output which drives it must be designated with the appropriate bit in the :ref:`SERVO_BLH_3DMASK<SERVO_BLH_3DMASK>` bitmask parameter. This will map the outputs 1000-1500-2000 values to the correct digital values for the ESC to provide FullReverse-Idle-FullForward range operation, respectively.
+Currently, only BLHeli32, AM32, and BLHeli_S capable reversible DShot ESCs are supported. In order to use one, the output which drives it must be designated with the appropriate bit in the :ref:`SERVO_BLH_3DMASK<SERVO_BLH_3DMASK>` bitmask parameter. This will map the outputs 1000-1500-2000 values to the correct digital values for the ESC to provide FullReverse-Idle-FullForward range operation, respectively.
 
 If :ref:`DShot commands <dshot-commands>` have been enabled then ArduPilot will automatically configure the ESCs to reversible mode (3D mode) at startup, according to the :ref:`SERVO_BLH_3DMASK<SERVO_BLH_3DMASK>`. Enabling :ref:`DShot commands <dshot-commands>` will allow the other DShot commands to be sent to any other ESC configured as DShot by the DShot mask parameters discussed in :ref:`DShot setup instructions <common-dshot-escs>`.
 

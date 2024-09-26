@@ -57,13 +57,13 @@ Protocols
    common-hargrave-dronecan-escs
 
 
-ESCs using BLHeli32 or BLHeli-S Configuration Firmware
-------------------------------------------------------
+ESCs using BLHeli32, AM32, or BLHeli-S Configuration Firmware
+-------------------------------------------------------------
 
 .. toctree::
     :maxdepth: 1
 
-    BLHeli/BLHeli32 Capable ESCs <common-blheli32-passthru>
+    BLHeli/BLHeli32/AM32 Capable ESCs <common-blheli32-passthru>
 
 
 Telemetry
