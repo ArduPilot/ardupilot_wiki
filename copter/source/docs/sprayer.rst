@@ -25,7 +25,7 @@ A multicopter such as the `EnRoute AC 940-D <https://www.nttedt.co.jp/product?pg
 
 The pump controls the rate of flow of the fertilizer.
 
-The optional spinner should be attached to the end of the spraying nozzles and distributes the fertilizer to a wider area.
+The optional spinner (rotary atomizer) should be attached to the end of the spraying nozzles and enables control over spray droplet size. Higher PWM, faster rotation, smaller droplets. 
 
 Enabling the Sprayer
 ====================
