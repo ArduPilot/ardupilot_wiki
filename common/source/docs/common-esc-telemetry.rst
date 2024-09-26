@@ -23,7 +23,7 @@ Connecting the ESCs Telemetry wire
 
 Connect all ESC telemetry wires to a single serial port's RX pin on the autopilot (above diagram uses Serial5 as an example).  A pin or wire for ESC telemetry is pre-soldered on most BLHeli32 ESCs. If the wire isn't pre-soldered you will need to solder it yourself. CubePilot serial port pinsouts can be found :ref:`here <common-thecube-overview>`.
 
-Set the following parameters to enable BLHeli32 telemetry feedback to the autopilot's serial port:
+Set the following parameters to enable BLHeli32/AM32 telemetry feedback to the autopilot's serial port:
 
 - :ref:`SERIALx_PROTOCOL <SERIAL5_PROTOCOL>` 16 (= ESC telemetry) where "x" is the autopilot serial port number connected to the ESCs telemetry wire.  The mapping between serial port numbering and UART physical ports for you autopilot should be documented in its description page linked :ref:`here <common-autopilots>`.
 
@@ -36,7 +36,7 @@ Set the following parameters to enable BLHeli32 telemetry feedback to the autopi
 Bi-directional DShot
 ====================
 
-Newer versions of BLHeli32 (32.7 and higher) and BLHeli_S (16.73 and higher) support returning motor RPM values over the DShot signal line. Supporting bi-directional DShot requires exclusive use of one or more DMA channels and thus not all autopilots support it. Versions that support bi-directional DShot have this stated in their wiki pages, see :ref:`common-autopilots` for your autopilot.
+Newer versions of AM32, BLHeli32 (32.7 and higher), and BLHeli_S (16.73 and higher) support returning motor RPM values over the DShot signal line. Supporting bi-directional DShot requires exclusive use of one or more DMA channels and thus not all autopilots support it. Versions that support bi-directional DShot have this stated in their wiki pages, see :ref:`common-autopilots` for your autopilot.
 
 Some autopilots with IOMCUs can not only support Dshot on their "Main" outputs (see :ref:`common-dshot-escs` for setup and more information), but also bi-directional DShot on their first four outputs. Currently, this is limited only to Pixhawk6X/C autopilots.
 
@@ -51,7 +51,7 @@ First ensure that you have an appropriate version of BLHeli32 or BLHeli_S instal
 
 Set the following parameters to enable BLHeli32 and BLHeli_S bi-directional DShot:
 
-- :ref:`SERVO_BLH_BDMASK <SERVO_BLH_BDMASK>`: a bitmap used to enable BLHeli32 or BLHeli_S bi-directional DShot support. On autopilots without IOMCU this would normally be set to 15 to indicate four active channels. On autopilots with an IOMCU this can be set to 3840 to indicate four active AUX channels (bi-directional DShot will only work on the AUX outputs).
+- :ref:`SERVO_BLH_BDMASK <SERVO_BLH_BDMASK>`: a bitmap used to enable BLHeli32, AM32, or BLHeli_S bi-directional DShot support. On autopilots without IOMCU this would normally be set to 15 to indicate four active channels. On autopilots with an IOMCU this can be set to 3840 to indicate four active AUX channels (bi-directional DShot will only work on the AUX outputs).
 
 - :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed. Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM (small motors might have 12 poles).
 
@@ -87,7 +87,7 @@ In addition, some telemetry values can be displayed on the integrated :ref:`on-b
 Use as Battery Monitor
 ======================
 
-By setting a battery monitor instance to BLHeli32 ESC type (for example :ref:`BATT2_MONITOR<BATT2_MONITOR>` = 9), all connected BLHeli32 ESCs with connected telemetry wiring to the configured autopilot serial port, will be aggregated as a single source. The voltages reported will be averaged, the currents totaled, and the consumed current accumulated.
+By setting a battery monitor instance to BLHeli32/AM32 ESC type (for example :ref:`BATT2_MONITOR<BATT2_MONITOR>` = 9), all connected BLHeli32/AM32 ESCs with connected telemetry wiring to the configured autopilot serial port, will be aggregated as a single source. The voltages reported will be averaged, the currents totaled, and the consumed current accumulated.
 
 .. _bidir-dshot:
 
