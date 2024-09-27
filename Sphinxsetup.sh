@@ -10,7 +10,7 @@ fi
 DISTRIBUTION_ID=$(lsb_release -i -s)
 if [ ${DISTRIBUTION_ID} = 'Ubuntu' ]; then
   DISTRIBUTION_CODENAME=$(lsb_release -c -s)
-  if [ ${DISTRIBUTION_CODENAME} = 'focal' ] || [ ${DISTRIBUTION_CODENAME} = 'bionic' ] || [ ${DISTRIBUTION_CODENAME} = 'noble' ]; then
+  if [ ${DISTRIBUTION_CODENAME} = 'focal' ] || [ ${DISTRIBUTION_CODENAME} = 'bionic' ]; then
     sudo add-apt-repository universe -y
   fi
 fi
