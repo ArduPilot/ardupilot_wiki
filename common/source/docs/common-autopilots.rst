@@ -87,6 +87,7 @@ Closed Hardware
     AnyleafH7 <common-anyleafh7>
     AocodaRC H743Dual <common-aocoda-h743dual>
     AtomRC F405-NAVI <common-atomrcf405-navi>
+    AtomRC F405-NAVI-Deluxe <common-atomrcf405-navi-deluxe>
     BetaFPV F4 1S 12A AIO V3 <common-betafpvf405>
     brainFPV RADIX2 HD <common-radix2hd>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
