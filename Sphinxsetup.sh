@@ -38,13 +38,6 @@ if [ "$(python --version)" == "Python 3.6.9" ]; then
     GET_PIP_URL="https://bootstrap.pypa.io/pip/3.6/get-pip.py"
 fi
 
-PYTHON_VERSION=$(python3 --version | cut -d' ' -f2)
-if [[ "${PYTHON_VERSION:0:3}" = "3.8" ]]; then
-    SPHINX_VERSION="7.1.2"
-else
-    SPHINX_VERSION="7.2.6"
-fi
-
 curl "$GET_PIP_URL" -o get-pip.py
 python3 get-pip.py
 rm -f get-pip.py
