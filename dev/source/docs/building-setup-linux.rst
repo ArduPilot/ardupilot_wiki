@@ -53,6 +53,8 @@ Reload the path (log-out and log-in to make it permanent):
 
     . ~/.profile
 
+.. warning:: if you update your Linux distribution to a later version, then you will need to repeat this step to assure that all the packages needed will be re-installed for this Linux version
+
 Build the code for an autopilot or peripheral board
 ---------------------------------------------------
 
