@@ -73,5 +73,3 @@ Mission Planner control of the relay
 Mission Planner allows the user to use buttons to set any of the first four relay pin's outputs low, high or set it low and briefly toggle it high using the DATA screen and the Servo/Relay sub-window, as show below:
 
 .. image:: ../../../images/MP_relay_control.png
-
-.. note:: since this is using MAVLink control the first relay is labeled "Relay0" corresponding to RELAY1 in the parameters.
