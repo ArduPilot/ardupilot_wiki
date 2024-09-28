@@ -70,6 +70,6 @@ the Do-Set-Relay mission command.  This is described on the :ref:`Copter Mission
 Mission Planner control of the relay
 ====================================
 
-Mission Planner allows the user to use buttons to set any of the first four relay pin's outputs low, high or set it low and briefly toggle it high using the DATA screen and the Servo/Relay sub-window, as show below:
+Mission Planner allows the user to use buttons to set any relay outputs to low, high or set it low and briefly toggle it high using the DATA screen and the Servo/Relay sub-window, as shown below:
 
 .. image:: ../../../images/MP_relay_control.png
