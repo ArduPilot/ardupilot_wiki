@@ -6,7 +6,7 @@ Crossfire and ELRS RC Systems
 
 Any Crossfire/ELRS compatible receiver can be used with ArduPilot. 
 
-.. note::  ELRS (ExpressLRS) RC systems use the CRSF protocol and are connected in a similar manner as Crossfire receivers. Also, on F4/F7 based autopilots the UART MUST be DMA enabled for reliable operation. Consult :ref:`common-autopilots`.
+.. note::  ELRS (ExpressLRS) RC systems use the CRSF protocol and are connected in a similar manner as Crossfire receivers to an autopilot UART. ELRS can also be configured to be MAVLink protocol with embedded RC control (See below). On  F4/F7 based autopilots the UART MUST be DMA enabled for reliable operation in CRSF protocol mode. Consult :ref:`common-autopilots`.
 
 If you do not wish to use telemetry then a TBS Crossfire or ELRS receiver can be connected to the **RCIN** port using :ref:`SBUS <common-rc-systems>`. You must configure the receiver to output SBUS, of course.
 
@@ -58,6 +58,13 @@ In addition to SBUS and CRSF protocols, ELRS can be configured to use MAVLink pr
 - Set :ref:`RSSI_TYPE <RSSI_TYPE>` =  5
 
 If the ELRS transmitter module has WIFI, the MAVLink telemetry can be wirelessly forwarded to a phone or PC GCS.
+
+ELRS bootloader "lockup"
+------------------------
+
+Some ELRS receivers can appear to be locked up in "bootloader" mode when the autopilot system is powered on. This is usually due to the UART RX pin to which they are attached being held low during power application, which ELRS interprets as being forced into bootloader mode. 
+
+The most common cause for this is when the autopilot board also has a DJI HD VTX attached and the SBUS pin of that interface is directly tied to the UART RX pin being used for RC input from the ELRS. If the VTX is not powered up at the same time as the ELRS, the SBUS output will act as a current sink for the ELRS TX pin and force it into bootloader. This occurs if the autopilot is only being powered from USB or the autopilot bootloader forces the HD VTX power supply off on boot(so that the pilot must toggle a transmitter switch to actively turn it on, for power/heat saving). The simple solution is to remove the SBUS wire going from the HD VTX to the DJI connector.
 
 CRSF Video Transmitters
 =======================
