@@ -36,7 +36,7 @@ RC Failsafe
 Radio Signal Failure
 --------------------
 
-If the received signal is lost or the control information corrupted, or the receiver sets its "failsafe bit" in protocols which have this (like Sbus, FPort, etc.), then an RC Failsafe condition occurs and the actions described in the :ref:`RC Failsafe Actions<fs_actions>` section below will be taken, if the :ref:`THR_FAILSAFE<THR_FAILSAFE>` parameter is 1.
+If the received signal is lost or the control information corrupted, or the receiver sets its "failsafe bit" in protocols which have this (like Sbus, FPort, etc.), or RC_OVERRIDES are lost if :ref:`using a GCS only <common-gcs-only-operation>` is being used, then an RC Failsafe condition occurs and the actions described in the :ref:`RC Failsafe Actions<fs_actions>` section below will be taken, if the :ref:`THR_FAILSAFE<THR_FAILSAFE>` parameter is 1.
 
 .. note:: by setting :ref:`RC_OPTIONS<RC_OPTIONS>` bit 2, you can force ArduPilot to ignore the "failsafe" bits in the protocol, and only initiate RC Failsafe due to missing or corrupted control information.
 
