@@ -17,7 +17,8 @@ This failsafe is triggered if the connection between the user's transmitter and 
 - the loss of transmitter/receiver connection is detected by:
 
   - no signals being sent from the receiver to the autopilot board OR
-  - the throttle channel (normally input channel 3) value falling below the :ref:`FS_THR_VALUE <FS_THR_VALUE>` parameter value
+  - the throttle channel (normally input channel 3) value falling below the :ref:`FS_THR_VALUE <FS_THR_VALUE>` parameter value OR
+  - RC_OVERRIDES are lost if :ref:`using a GCS only <common-gcs-only-operation>` is being used,
 
 - set :ref:`FS_THR_ENABLE <FS_THR_ENABLE>` to "1" to enable this failsafe
 - if :ref:`FS_ACTION <FS_ACTION>` is "1", the vehicle will :ref:`RTL <rtl-mode>` to home, if "2" the vehicle will :ref:`Hold <hold-mode>`, if "3" or "4" the vehicle will attempt to use :ref:`SmartRTL <smartrtl-mode>` but if this mode cannot be engaged the vehicle will :ref:`RTL <rtl-mode>` or :ref:`Hold <hold-mode>` respectively.
