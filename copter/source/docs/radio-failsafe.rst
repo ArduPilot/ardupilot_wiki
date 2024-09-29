@@ -25,6 +25,7 @@ If enabled and set-up correctly the radio failsafe will trigger if any of these 
 -  The pilot turns off the RC transmitter.
 -  The vehicle travels outside of RC range and signal is lost.
 -  The pilot forces the throttle channel below :ref:`FS_THR_VALUE<FS_THR_VALUE>` from the transmitter.
+-  RC_OVERRIDES are lost if :ref:`using a GCS only <common-gcs-only-operation>` is being used.
 -  The receiver loses power (unlikely).
 -  The wires connecting the receiver to the autopilot are broken
    (unlikely).
