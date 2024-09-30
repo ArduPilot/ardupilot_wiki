@@ -4,6 +4,8 @@
 ESC Grounding and Wiring Considerations
 =======================================
 
+On larger, heavier vehicles, very high motor currents can be present leading to several types of signaling issues which may impact reliable motor operation. On smaller vehicles the use of the ESC's BEC (when provided by the ESC) if an autopilot has on-board supply for servos requires special handling.
+
 ESC grounding issues are made up 3 forms of ESC signalling/coupling problems, resistive, capacitive and inductive. All three should be considered when building an aircraft.
 
 Inductive
@@ -43,3 +45,8 @@ So what does all that mean from a practical standpoint…
 - Avoid routing next to noisy components like other ESC’s, ESC wiring, and radios.
 - Where possible add additional ground connections between the autopilot and system ground.
 - Ensure all connections, solder joints, bullets, plugs etc are clean and make good contact.
+
+ESC BEC Considerations
+======================
+
+Smaller vehicels often employ autopilots that have integrated power supplies for attached servos. ESCs used in these smaller vehicles often also provide their own BEC for powering servos in receiver only base systems. It is recommended to not attach the ESC's BEC leads to the autopilot's servo supply rail if it provides its own supply.
