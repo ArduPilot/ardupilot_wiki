@@ -4,6 +4,8 @@
 Electro Permanent Magnet Gripper (OpenGrab EPM v3)
 ==================================================
 
+**OpenGrab EPM v3 is no longer in production. Please use** `Zubax EPM <https://zubax.com/epm>`__ **as a replacement.**
+
 This article shows how to use the `Electro Permanent Magnet Gripper (OpenGrab EPM v3) <http://nicadrone.com/index.php?id_product=66&controller=product>`__ with ArduPilot.
 
 
@@ -23,7 +25,7 @@ A significant amount of power is only required for about 1 second when it first 
 Useful links
 ============
 
-* `Documentation <https://docs.zubax.com/opengrab_epm_v3>`__
+* `Documentation <https://wiki.zubax.com/en/public/fluxgrip/opengrab-epm-v3>`__
 * `PCB / Schematic <https://upverter.com/ctech4285/b9557d6903c36f55/OpenGrab-EPM-V3R4B/>`__  (Revision is printed on PCB).
 * `Source code <https://github.com/Zubax/opengrab_epm_v3>`__
 * `Store <http://NicaDrone.com>`__
