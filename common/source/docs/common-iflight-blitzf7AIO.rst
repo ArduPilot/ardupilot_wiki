@@ -35,7 +35,7 @@ Specifications
 
 -  **Interfaces**
 
-   -  5x PWM outputs, 4 Bi-Directiona DShot capable connected in onboard ESC + integrated NeoPixel LED on board(
+   -  5x PWM outputs, 4 Bi-Directionla DShot capable connected in onboard ESC + integrated NeoPixel LED on board(
    -  4x UARTs/serial for GPS and other peripherals
    -  I2C port for external compass, airspeed, etc.
    -  USB-C port
@@ -81,7 +81,7 @@ Serial protocols shown are defaults, but can be adjusted to personal preferences
 Servo/Motor Outputs
 ===================
 
-AThe BLITZ Whoop F7 AIO has 4 PWM outputs internally connected to its 4-in-1 ESC. The pads for motor output are M1 to M4 on the board. All 4 outputs support bi-directional DShot and DShot, as well as all PWM types. The default configuration is for bi-directional DShot using the already installed BlueJay firmware.
+The BLITZ Whoop F7 AIO has 4 PWM outputs internally connected to its 4-in-1 ESC. The pads for motor output are M1 to M4 on the board. All 4 outputs support bi-directional DShot and DShot, as well as all PWM types. The default configuration is for bi-directional DShot using the already installed BlueJay firmware.
 
 The PWM are in in two groups:
 
@@ -118,17 +118,14 @@ These settings are set as defaults when the firmware is loaded (except :ref:`BAT
 
 Enable Battery monitor.
 
-:ref:`BATT_MONITOR<BATT_MONITOR>` =4
+- :ref:`BATT_MONITOR<BATT_MONITOR>` =4
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 12
-
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 13
-
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 10.9
-
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 50
+-  :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 13
+- :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 12
+- :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 10.9
+- :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 50
 
 Connecting a GPS/Compass module
 ===============================
@@ -154,7 +151,7 @@ Firmware
 ========
 
 Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
-"BlitxF745AIO" n.
+"BlitzF745AIO" n.
 
 
 [copywiki destination="plane,copter,rover,blimp"]
