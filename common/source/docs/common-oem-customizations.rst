@@ -45,7 +45,7 @@ This section assumes that the OEM has set up the build environment (:ref:`buildi
 
     .. note:: Custom frame type strings can be created through Lua the scripting method ``motors:set_frame_string("Custom frame name")``.
 
-#. Now in that same directory, copy the base board's ``hwdef_bl.dat`` bootloader file, and then include a file named ``defaults.parm``. This file will be the parameter overrides of the standard defaults to match your system's configuration. Things like output function assignments, auxiliary RC switches, flight and tuning parameters, etc.
+#. Now in that same directory, copy the base board's ``hwdef-bl.dat`` bootloader file, and then include a file named ``defaults.parm``. This file will be the parameter overrides of the standard defaults to match your system's configuration. Things like output function assignments, auxiliary RC switches, flight and tuning parameters, etc.
 
     .. warning:: The ``defaults.parm`` file should be as small as possible. Some boards only allow 1024 bytes total for this file. Every ASCII byte in the file counts against this limit (except for comment lines). Use integer values where possible. Below is a simple example. Serial port protcols,baud rate,and options defaults can be set directly in the hwdef, as well as NTF_LED_TYPES, and battery monitor defaults, and should be done there instead of a defaults file.
 
