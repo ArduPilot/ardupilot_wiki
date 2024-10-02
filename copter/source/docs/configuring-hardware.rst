@@ -28,3 +28,8 @@ camera gimbal, antenna tracker etc.
     Configure Motor Range (optional) <set-motor-range>
     Failsafe Mechanisms <failsafe-landing-page>
     Flight Modes <flight-modes>
+
+
+
+.. note:: Following each of the above steps followed by :ref:`the instructions for first flights and tuning here <flying-arducopter>` will usually result in a safe setup and tuning process and adequate tune for most users. For commercial, expensive and/or high lift capacity vehicles, this `extensive, very detailed tuning procedure <https://github.com/ArduPilot/MethodicConfigurator/blob/master/QUICKSTART.md>`_ is recommended, but is probably "overkill" for hobbyist/casual users.
+
