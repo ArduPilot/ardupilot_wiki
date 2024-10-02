@@ -22,7 +22,7 @@ worth the effort. Instructions on how to calibrate an airspeed sensor
 
 .. note::
 
-   *Glider Pilots:* Set :ref:`TECS_SPDWEIGHT <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_spdweight>` to 2.0,
+   **Glider Pilots:** Set :ref:`TECS_SPDWEIGHT <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_spdweight>` to 2.0,
    and you can also use an airspeed sensor and take advantage of TECS
    ability to control your airspeed.
 
@@ -82,6 +82,11 @@ can dial the numbers in over a number of flights, using the log data.
    in power due to reduced battery voltage or other effects. Remember
    that the amount of power from an electric power system at the end of
    flight will only be 80% of what you have at the start.
+
+.. note::
+
+   **Glider Pilots:** If a pure glider (no motor), set :ref:`PTCH_LIM_MAX_DEG<PTCH_LIM_MAX_DEG>` to a value low enough to assure that the glider will not stall if the autopilot demands that pitch angle.
+
 #. Set the minimum pitch angle :ref:`PTCH_LIM_MIN_DEG <tecs-total-energy-control-system-for-speed-height-tuning-guide_lim_pitch_min>`
    (in degrees) your aircraft can fly with the throttle set to
    :ref:`THR_MIN <tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_min>` that can be flown without over-speeding the
