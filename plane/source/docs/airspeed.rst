@@ -143,6 +143,11 @@ By default, these functions are disabled.
 
 :ref:`EKF3 affinity and lane switching <common-ek3-affinity-lane-switching>` is another option for dealing with airspeed sensor failure.
 
+Balloon Drop
+------------
+
+In the special case of a high altitude balloon drop, the EKF will declare the airspeed sensor faulty since there is gps speed but no airspeed due to air density. This can result in TECS miss-applying pitch. In this special case , the :ref:`AHRS_OPTIONS<AHRS_OPTIONS>` bit 2 can be set to prevent EKF from declaring the airspeed sensor as faulty and continue to use it.
+
 .. _arspd-sensor-list:
 
 Airspeed sensors available from ArduPilot Partners:
