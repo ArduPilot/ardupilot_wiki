@@ -51,6 +51,7 @@ New Features
 - MAVLink command execution from within LUA scripts, see https://github.com/ArduPilot/ardupilot_wiki/pull/6250
 - Rename EKF3 source set aux switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/6287
 - AHRS_OPTIONS bit for airspeed during balloon drops, see https://github.com/ArduPilot/ardupilot_wiki/pull/6317
+- Option to have the SUM battery monitor report the lowest voltage of following monitors instead of average, see https://github.com/ArduPilot/ardupilot_wiki/pull/6319
 
 [site wiki="plane"]
 - New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
