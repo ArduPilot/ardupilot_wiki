@@ -53,7 +53,7 @@ New Features
 - Rename EKF3 source set aux switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/6287
 - AHRS_OPTIONS bit for airspeed during balloon drops, see https://github.com/ArduPilot/ardupilot_wiki/pull/6317
 - Option to have the SUM battery monitor report the lowest voltage of following monitors instead of average, see https://github.com/ArduPilot/ardupilot_wiki/pull/6319
-
+- Max retires on ICE starter , see https://github.com/ArduPilot/ardupilot_wiki/pull/6324
 [site wiki="plane"]
 - New parachute option, see https://github.com/ArduPilot/ardupilot_wiki/pull/5925
 - Option to report airspeed sensor offset calibration to gcs during boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/5913
