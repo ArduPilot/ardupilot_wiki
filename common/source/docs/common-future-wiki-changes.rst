@@ -21,6 +21,7 @@ New Board Support
 - Holybro KakuteF4-Wing , see https://github.com/ArduPilot/ardupilot_wiki/pull/6176
 - GEPRC Taker F745, see https://github.com/ArduPilot/ardupilot_wiki/pull/6184
 - Flywoo H743 Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6186
+- X-MAV-H743v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/6322
 
 New Peripheral Support
 ======================
