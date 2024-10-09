@@ -4,43 +4,42 @@
 Automatic Takeoff
 =================
 
-Plane can automatically launch a wide range of aircraft types. The
+Plane can automatically takeoff in AUTO modee a wide range of aircraft types. The
 instructions below will teach you how to setup your mission to support
-automatic takeoff. Automatic takeoff can also be accomplished by the :ref:`takeoff-mode` supported in 
-ArduPlane 4.0 and later versions.
+automatic takeoff. Automatic takeoff can also be accomplished by the :ref:`takeoff-mode`.
 
 Basic Instructions
 ==================
 
-The basic idea of automatic takeoff is for the autopilot to set the
-throttle to maximum and climb until a designated altitude is reached. To
-cause the plane to execute a takeoff, add a NAV_TAKEOFF command to your
+To cause the plane to execute a takeoff, add a NAV_TAKEOFF command to your
 mission, usually as the first command. There are two parameters to this
-command - the minimum pitch, and the takeoff altitude. The minimum pitch
-controls how steeply the aircraft will climb during the takeoff. A value
+command - the minimum ``pitch``, and the takeoff altitude. The minimum pitch
+controls how steeply the aircraft will climb, at a minimum, during the takeoff. A value
 of between 10 and 15 degrees is recommended for most aircraft. The
-takeoff altitude controls the altitude above home at which the takeoff
+takeoff ``altitude`` controls the altitude above home at which the takeoff
 is considered complete. Make sure that this is high enough that the
 aircraft can safely turn after takeoff. An altitude of 40 meters is good
-for a wide range of aircraft.
+for a wide range of aircraft. After the takeoff is complete, the mission will move to the next mission item, or, if there are none, switch to RTL mode.
 
 During takeoff the wings will be held level to within
 :ref:`LEVEL_ROLL_LIMIT <LEVEL_ROLL_LIMIT>`
-degrees until 5 meters of altitude is reached, gradually allowing more roll until
-the normal :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` limit is allowed once 15 meters of altitude is
-reached. This prevents a sharp roll from causing the wings to hit the
-runway for ground takeoffs.
+degrees until :ref:`TKOFF_LVL_ALT<TKOFF_LVL_ALT>` (10m by default) meters of altitude is reached, gradually allowing more roll until
+the normal :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` limit is allowed once 3x :ref:`TKOFF_LVL_ALT<TKOFF_LVL_ALT>` meters of altitude is
+reached. This prevents a sharp roll from causing the wings to hit the runway for ground takeoffs.
 
 Note that the takeoff direction is set from the direction the plane is
-pointing when the automatic takeoff command is started. So you need to
+pointing when the automatic takeoff command is started, if a compass is used, or the heading once a valid GPS heading is obtained with sufficient ground speed. So you need to
 point the plane in the right direction, then switch to AUTO mode. During
 the first stage of the takeoff the autopilot will use the gyroscope as
 the principal mechanism for keeping the aircraft flying straight, or the compass if
 equipped. After sufficient speed for a good GPS heading is reached the aircraft will
-switch to using the GPS ground track (and compass if so equipped) which allows it to account for a
+switch to using the GPS ground track if not using compass, or the initial compass heading which allows it to account for a
 cross-wind.
 
 You should try to launch into the wind whenever possible.
+
+By default, the throttle will be set at :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>`
+during all of the climb. For more fine-grained control, please read :ref:`takeoff-throttle`.
 
 Hand Launching
 ==============
@@ -57,7 +56,7 @@ The keys to a good hand launch are:
 -  ensuring that the aircraft does not try to climb out too steeply
 -  assuring that the parameters are set to actually start the motor after the vehicle leaves your hand
 
-.. note:: default values for the following parameters will usually start the motor as soon at takeoff is selected (mode or mission item). This may be fine for certain hand launch situations/vehicles, but adjusting the following parameters to non-default values may be needed for safety in other situations.
+.. note:: default values for the following parameters will usually start the motor as soon as takeoff is selected (mode or mission item). This may be fine for certain hand launch situations/vehicles, but adjusting the following parameters to non-default values may be needed for safety in other situations.
 
 The main parameters that control the hand launch motor start are:
 
@@ -239,7 +238,3 @@ Speed Scaling Issues with no Airspeed Sensor
 ============================================
 
 Since control effectiveness varies with airspeed, ArduPilot automatically scales the control gains in stabilized modes with airspeed to allow stability at low speeds and to avoid oscillations at high airspeeds. However, when an airspeed sensor is not used, an estimated airspeed based on GPS speed, accelerometer inputs, and position changes is used. During takeoffs into strong head wind, this estimate can be wrong and the gains scaled up, resulting in oscillations during the climb into the wind. Setting :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 7 to 1, the speed scaling will be limited during the takeoff phase of automatic takeoffs to eliminate oscillations, particularly on tightly tuned vehicles.
-
-Catapult Launch without an Airspeed Sensor
-==========================================
-Taking off without an airspeed sensor using a catapult may cause less than maximum throttle to be used due to high initial climb rates. For heavy vehicles, this may result in a stall due to the long time constants used in TECS to adjust throttle after the initial launch. The parameter :ref:`TKOFF_THR_MAX_T<TKOFF_THR_MAX_T>` can be used to force maximum throttle for a time, irrespective of climb rates from an initial catapult launch to allow the vehicle to obtain sufficient speed.
