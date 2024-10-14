@@ -60,6 +60,7 @@ A variety of parameters are available for configuring the engine start routine. 
 - :ref:`ICE_START_TIME <ICE_STARTER_TIME>` controls the maximum amount of time the starter will run in each start attempt.
 - :ref:`ICE_START_DELAY <ICE_START_DELAY>` sets a delay between start attempts. This can be useful when your starter has a limited duty cycle.
 - :ref:`ICE_RPM_THRESH <ICE_RPM_THRESH>` sets the minimum RPM reading for the engine to be considered running. This should be set to a value below your idle RPM.
+- :ref:`ICE_STRT_MX_RTRY<ICE_STRT_MX_RTRY>` if set to a value greater than 0 then the engine will retry starting the engine this many times before giving up.
 
 To allow the pilot to directly control the ignition and (optional) starter from the transmitter, RC pass-through should be set up:
 
