@@ -11,6 +11,7 @@ ArduPilot supports up to nine individual temperature sensors:
 - `MCP9600 <https://ww1.microchip.com/downloads/en/DeviceDoc/MCP960X-Data-Sheet-20005426.pdf>`__
 - `TSYS01 <https://www.te.com/usa-en/product-G-NICO-018.datasheet.pdf>`__
 - `TSYS03 <https://www.te.com/usa-en/product-CAT-DTS0001.datasheet.pdf>`__
+- `MLX90614 <https://media.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf>`__
 - Analog sensors (thermistors, `LM35 <https://www.ti.com/product/LM35>`__, `TMP36 <https://www.analog.com/media/en/technical-documentation/data-sheets/TMP35_36_37.pdf>`__, etc)
 
 .. image:: ../../../images/temperature-sensor.jpg
@@ -23,7 +24,7 @@ I2C Sensor Setup
 
 Attach the sensor to one of the autopilot's I2C ports using SDA and SCL pins. Then set (examples shown for the first sensor):
 
-- :ref:`TEMP1_TYPE<TEMP1_TYPE>` = 0:Disabled, 1:TSYS01, 2:MCP9600, 3:MAX31865, 4: TSYS03
+- :ref:`TEMP1_TYPE<TEMP1_TYPE>` = 0:Disabled, 1:TSYS01, 2:MCP9600, 3:MAX31865, 4: TSYS03, 7: MLX90614
 - :ref:`TEMP1_BUS<TEMP1_BUS>` = the I2C port on which the sensor is attached (0-3).
 - :ref:`TEMP1_ADDR<TEMP1_ADDR>` = the sensor's I2C address (0-127).
 - :ref:`TEMP1_SRC<TEMP1_SRC>` = the temperature reporting device type that should have its temperature report replaced with this sensor's.
@@ -32,6 +33,8 @@ Attach the sensor to one of the autopilot's I2C ports using SDA and SCL pins. Th
 .. note:: Each I2C device on any single bus must have a unique address. If more than one of the same type of I2C temperature sensor is used, ensure each is configured with a unique address. Some breakout boards include jumpers for this purpose. Refer to the product datasheet for specific instructions regarding I2C address configuration.
 
 .. note:: The MAX31865 is an SPI device, which uses the same parameters and basic configuration procedure as I2C sensors but must be connected to an SPI port rather than an I2C port. Some autopilots do not expose an external SPI port, in which case the MAX31865 cannot be easily used.
+
+.. note:: The MLX90614 sensor is an infrared thermometer for non-contact temperature measurements. Its I2C address is 90 so :ref:`TEMP1_BUS<TEMP1_BUS>` = 90 for this type of sensor.
 
 Analog Sensor Setup
 ===================
