@@ -27,6 +27,7 @@ RUN echo "${USER_NAME} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USER_NAME} \
 USER ${USER_NAME}
 
 COPY Sphinxsetup.sh ${WORKDIRECTORY}/Sphinxsetup.sh
+COPY requirements.txt ${WORKDIRECTORY}/requirements.txt
 RUN --mount=type=cache,target=/var/cache/apt \
     bash -c "${WORKDIRECTORY}/Sphinxsetup.sh" && rm Sphinxsetup.sh
 
