@@ -36,7 +36,6 @@ the wiki.
 [site wiki="planner"]
     Archived - Recording and Playing Back Missions<common-recording-and-playing-back-missions>
     Archived - Loading ChiBios Firmware Onto Pixhawk<common-loading-chibios-firmware-onto-pixhawk>
-    Mission Planner – Proposed Table Of Contents (TOC) <mission-planner-toc-planning>
 [/site]
 
 [site wiki="plane"]
