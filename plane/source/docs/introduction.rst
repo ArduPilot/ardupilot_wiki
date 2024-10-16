@@ -20,15 +20,10 @@ Follow the steps patiently, and you will get your vehicle safely up in
 the air.
 
 - :ref:`Selecting an autopilot controller for your system <common-autopilots>`
-- :ref:`First Time Setup <arduplane-setup>`- Installing: hardware, software, and
-   firmware. Plugging in: Sensors, radios, batteries, motors, etc.
--  :ref:`Configuration <plane-configuration-landing-page>`- Designate control outputs for flying surfaces. Establish
-   telemetry and control between: vehicle, ground-station, and RC-control
-   transmitter. Set up flight modes, program failsafe behavior,
-   calibrate sensors and motor-controllers, and verify correct motor
-   operation.
--  :ref:`First Flight and Tuning <first-flight-landing-page>`- First test flight and tuning stabilization, and speed/height controller
--  :ref:`Mission planning <common-mission-planning>` - Programming missions.
+- :ref:`First Time Setup <arduplane-setup>`- Installing: hardware, software, and firmware. Plugging in: Sensors, radios, batteries, motors, etc.
+- :ref:`Configuration <plane-configuration-landing-page>`- Designate control outputs for flying surfaces. Establish telemetry and control between: vehicle, ground-station, and RC-control transmitter. Set up flight modes, program failsafe behavior, calibrate sensors and motor-controllers, and verify correct motor operation.
+- :ref:`First Flight and Tuning <first-flight-landing-page>`- First test flight and tuning stabilization, and speed/height controller
+- :ref:`Mission planning <common-mission-planning>` - Programming missions.
 
 
 .. warning::
