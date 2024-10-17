@@ -17,6 +17,34 @@ Where to Buy
 
 - `DATAGNSS website <https://www.datagnss.com/>`_
 
+Features
+========
+
+- Full constellation, multi-frequency GNSS satellite receiver
+- Support RTK
+- Standard UART serial interface
+- Lightweight only 50g
+
+Key Features
+=============
+
+=======================       ======================================================================
+Receiver                      Allystar CYNOSURE IV GNSS SOC
+GNSS                          BDS/GPS/GLONASS/Galileo/QZSS
+BAND                          GPS/QZSS L1,L5, BDS B1,B2,GLONASS L1, GALILEO E1/E5a                                 
+Position accuracy(RMS)        3D： **1.5m** (Horizontal, 2.5m（Vertical),
+                              RTK: **1.5cm** +1PPM（Horizontal), 3.0cm+1PPM（Vertical）                                   
+Acquisition                   Cold starts<30S, RTK coverage time<10s
+Data update rate              5Hz
+Baud rate                     230400bps default
+Differential data             RTCM3.X 
+Data protocol                 NMEA-0184 V3.0,4.x
+Operating Voltage             4.7~5.2V
+Operating temperature         -20~85℃
+Size                          50*50*12mm
+Weigh                         50g
+=======================       ======================================================================
+
 Pin definition
 ==============
 
