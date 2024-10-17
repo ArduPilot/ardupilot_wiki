@@ -10,7 +10,6 @@ GEM1305 is based on the new generation Allystar dual-core GNSS SoC. It supports 
 
 .. image:: ../../../images/gem1305/datagnss-gem1305-01.png
 	:target: ../images/gem1305/datagnss-gem1305-01.png
-    :width: 400px
 
 
 Where to Buy
