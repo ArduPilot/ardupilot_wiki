@@ -41,7 +41,7 @@ Differential data             RTCM3.X
 Data protocol                 NMEA-0184 V3.0,4.x
 Operating Voltage             4.7~5.2V
 Operating temperature         -20~85℃
-Size                          50*50*12mm
+Size                          55*55*12mm
 Weigh                         50g
 =======================       ======================================================================
 
