@@ -126,3 +126,28 @@ Control during Auto mode missions
 ---------------------------------
 
 Commands to control the gimbal are listed on the  :ref:`Camera Control in Auto Missions <common-camera-control-and-auto-missions-in-mission-planner>`, :ref:`Copter Mission Command List <mission-command-list>` and :ref:`Mission Commands <common-mavlink-mission-command-messages-mav_cmd>` pages
+
+Multiple Gimbal/mounts on a vehicle
+-----------------------------------
+ArduPilot supports one or two gimbals on a vehicle which are addressed as MNT1 and MNT2. So all of the above 
+parameters refering to MNT1 would work for the second gimbal by replacing the 1 with 2. For example Retract Mode for the 2nd gimbal mount would be specified as 
+Retract Mode: the gimbal will move to the roll, pitch and yaw angles held in the :ref:`MNT2_RETRACT_X<MNT2_RETRACT_X>`, :ref:`MNT2_RETRACT_Y<MNT1_RETRACT_Y>`, :ref:`MNT2_RETRACT_Z<MNT2_RETRACT_Z>` parameters respectively
+
+Each gimbal can be connected as either a servo gimbal, controlled by SERVO functions, or to either a UART or a network port. These ports are configured by specifying the relevant 
+protocol as 8: Gimbal. Other gimbal types including Gremsy, Solo, Xacti and Scripting gimbals have their own specific configuration.
+
+eg. for a gimbal attached to the UART which is SERIAL2 then SERIAL2_PROTOCOL<SERIAL2_PROTOCOL> will 8
+or for a gimbal attached to a NET port which is NET_P3 then NET_P3_PROTOCOL<NET_P3_PROTOCOL> will be 8
+
+For Alexmos, Siyi, SToRM32 and ViewPro gimbals ArduPilot maps the MNTn gimbals to the configured physical mount points by searching the serial ports and network ports in order for the next available port where the PROTOCOL = 8. The mapping first looks for SERIAL ports and then looks for NET ports. For example if there are two gimbal mounts then:
+
+- MNT1 will be mapped to the lowest numbered SERIAL or NET port which has protocol = 8
+- MNT2 will be mapped to the next hightest numbered SERIAL or NET port which has protocol = 8
+
+For Servo gimbals, the relevant SERVOn_functions will specify which gimbal is controlling them.
+
+For all other gimbals including Gremsy, Solo, Xacti and Scripting gimbals the mappings are based on the specific driver. Refer to the relevant wiki page in each case.
+
+If only one of the gimbals uses Serial or Ethernet then setting up the serial/ethernet mount as Mount1 and the servo gimbal as Mount2 is recommended. The reason is that the 2nd serial/ethernet mount will use the 2nd configured serial/ethernet port regardless of what protocol Mount1 uses. So if SERIAL2_PROTOCOL<SERIAL2_PROTOCOL> = 8 and SERIAL4_PROTOCOL<SERIAL4_PROTOCOL> = 8 then Mount2 would use Serial4 even if Mount1 was defined as a servo gimbal which doesn’t use serial.
+
+
