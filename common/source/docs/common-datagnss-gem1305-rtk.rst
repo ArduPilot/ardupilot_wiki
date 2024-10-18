@@ -132,19 +132,20 @@ Setup the NANO RTK Receiver as a base station, and it is recommended to use Satr
 4. Config the base station fixed coordinates
 
 There are two methods to set the coordinates of the base station:
-A. According to the diagram below, directly "Get Now" and then proceed with the setup.
+A. According to the diagram below, Input the known coordinates.
 
-Press "Get now", then "send" to apply the fixed coordinates.
+Press "Get now", and modify the coordinates to the known values, then "send" to apply the fixed coordinates.
 
 .. image:: ../../../images/gem1305/satrack-cfg-fixedecef.png
 	:target: ../_images/gem1305/satrack-cfg-fixedecef.png
  
 
-B. According to the CFG-SURVEY method, automatically calculate the average before proceeding with the setup.
+B. According to the CFG-SURVEY method, config miniDuration and AccLimit, then automatically calculate the average before proceeding with the setup.
 
 .. image:: ../../../images/gem1305/satrack-cfg-survey.png
 	:target: ../_images/gem1305/satrack-cfg-survey.png
- 
+
+After completing the above operation, you can save the current configuration with CFG-SAVE. 
 
 5. After above configuration, open Mission Planner
 
