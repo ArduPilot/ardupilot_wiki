@@ -19,13 +19,15 @@ Where to Buy
 
 - `DATAGNSS website <https://www.datagnss.com/>`_
 
-Features
-========
+Key Features
+============
 
 - Full constellation, multi-frequency GNSS satellite receiver
-- Support RTK, L1+L5 or L1+L2
+- Support RTK
 - Standard UART serial interface
 - Lightweight only 50g or 26g(NANO RTK receiver)
+- High performance antenna
+
 
 Frequencies
 ===========
