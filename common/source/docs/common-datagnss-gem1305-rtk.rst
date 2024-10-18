@@ -71,6 +71,9 @@ Pin definition
 
 The board is connected to the autopilot via UART interface.
 
+.. image:: ../../../images/gem1305/GEM1305-connector.png
+	:target: ../_images/gem1305/GEM1305-connector.png
+
 The 1.25mm pitch 6P connector (from Left PIN1 to PIN6) :
 
    -  1: GND
