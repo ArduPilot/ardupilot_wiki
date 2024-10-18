@@ -106,6 +106,7 @@ We suggest using the NANO RTK Receiver as the configuration for the base station
 .. image:: ../../../images/gem1305/nano-rtk-rcv-patchAnt.png
 	:target: ../_images/gem1305/nano-rtk-rcv-patchAnt.png
 
+Connect the NANO RTK Receiver to your Laptop via USB.
 
 Setup the NANO RTK Receiver as a base station, and it is recommended to use Satrack software.
 
@@ -152,8 +153,15 @@ After completing the above operation, you can save the current configuration wit
 .. image:: ../../../images/gem1305/mp-connect-base.png
 	:target: ../_images/gem1305/mp-connect-base.png
  
-
 6. Finish other configuration in Mission Planner
+
+**NOTE**:
+
+If the NANO RTK Receiver and Telemetry radio are properly configured, you can directly power the NANO RTK Receiver using an external Power bank (USB), 
+and then connect the NANO to the Telemetry Radio through a cable. After powering on, the NANO's RTCM data will be transmitted directly through the Radio.
+
+Please make sure to check the wiring order.
+
 
 Rover station (Aircraft) setup
 ==============================
