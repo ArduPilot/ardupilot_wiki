@@ -89,6 +89,15 @@ The 1.25mm pitch 6P connector (from Left PIN1 to PIN6) :
 
 Please note that the board only includes RTK and doesn't inlcude compass.
 
+ArduPilot Setup
+===============
+
+Assuming GEM1305 is connected to AP's SERIAL4(2nd GPS), it should work with the default configuration.
+
+- :ref:`SERIAL3_PROTOCOL <SERIAL4_PROTOCOL>` = 5
+- :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 230
+- :ref:`GPS2_RATE_MS <GPS2_RATE_MS>` = 200
+
 Configuration
 =============
 
