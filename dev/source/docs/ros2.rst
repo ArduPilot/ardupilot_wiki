@@ -71,7 +71,7 @@ Test `microxrceddsgen` installation:
 .. code-block:: bash
 
     source ~/.bashrc
-    microxrceddsgen -version 
+    microxrceddsgen -h
     # openjdk version "11.0.18" 2023-01-17
     # OpenJDK Runtime Environment (build 11.0.18+10-post-Ubuntu-0ubuntu122.04)
     # OpenJDK 64-Bit Server VM (build 11.0.18+10-post-Ubuntu-0ubuntu122.04, mixed mode, sharing)
