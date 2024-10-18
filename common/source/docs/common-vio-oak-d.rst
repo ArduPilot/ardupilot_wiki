@@ -114,4 +114,8 @@ For your first flight:
 
 If everything works as expected, next time you can arm and takeoff in Loiter mode.
 
+EKF3 Source Transitions with OpticalFlow
+========================================
+
+If switching between this and OpticalFlow is desired, see :ref:`extnav-optiflow-transitions`
 
