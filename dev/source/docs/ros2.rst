@@ -71,11 +71,22 @@ Test `microxrceddsgen` installation:
 .. code-block:: bash
 
     source ~/.bashrc
-    microxrceddsgen -version 
-    # openjdk version "11.0.18" 2023-01-17
-    # OpenJDK Runtime Environment (build 11.0.18+10-post-Ubuntu-0ubuntu122.04)
-    # OpenJDK 64-Bit Server VM (build 11.0.18+10-post-Ubuntu-0ubuntu122.04, mixed mode, sharing)
-    # microxrceddsgen version: 1.0.0beta2
+    microxrceddsgen -help
+    # microxrceddsgen usage:
+    #     microxrceddsgen [options] <file> [<file> ...]
+    #     where the options are:
+    #             -help: shows this help
+    #             -version: shows the current version of eProsima Micro XRCE-DDS Gen.
+    #             -example: Generates an example.
+    #             -replace: replaces existing generated files.
+    #             -ppDisable: disables the preprocessor.
+    #             -ppPath: specifies the preprocessor path.
+    #             -I <path>: add directory to preprocessor include paths.
+    #             -d <path>: sets an output directory for generated files.
+    #             -t <temp dir>: sets a specific directory as a temporary directory.
+    #             -cs: IDL grammar apply case sensitive matching.
+    #     and the supported input files are:
+    #     * IDL files.
 
 ::
     ⚠️ If you have installed FastDDS or FastDDSGen globally on your system: eProsima's libraries and the packaging system in 
