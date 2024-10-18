@@ -106,3 +106,4 @@ build_options.py
 
 # Mac file
 .DS_Store
+.vscode/settings.json

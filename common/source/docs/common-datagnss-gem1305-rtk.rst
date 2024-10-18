@@ -71,7 +71,7 @@ Pin definition
 
 The board is connected to the autopilot via UART interface.
 
-The 1.25mm pitch 6P connector :
+The 1.25mm pitch 6P connector (from Left PIN1 to PIN6) :
 
    -  1: GND
    -  2: NC

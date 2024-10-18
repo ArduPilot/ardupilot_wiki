@@ -17,5 +17,6 @@
         "planner/**/common-*": true,
         "planner2/**/common-*": true,
         "rover/**/common-*": true,
-    }
+    },
+    "makefile.configureOnOpen": false
 }
