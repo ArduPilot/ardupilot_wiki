@@ -72,16 +72,16 @@ The data from the base needs to be transmitted to the drone end via telemetry ra
 
 Base station setup
 
-.. image:: ../../../images/gem1305/base-station-01.png.png
-	:target: ../images/gem1305/base-station-01.png.png
+.. image:: ../../../images/gem1305/base-station-01.png
+	:target: ../images/gem1305/base-station-01.png
 
 We suggest using the NANO RTK Receiver as the configuration for the base station(ground base station), which is more convenient and user-friendly.
 
-.. image:: ../../../images/gem1305/nano-rtk-rcv-helix.png.png
-	:target: ../images/gem1305/nano-rtk-rcv-helix.png.png
+.. image:: ../../../images/gem1305/nano-rtk-rcv-helix.png
+	:target: ../images/gem1305/nano-rtk-rcv-helix.png
 
-.. image:: ../../../images/gem1305/nano-rtk-rcv-patchAnt.png.png
-	:target: ../images/gem1305/nano-rtk-rcv-patchAnt.png.png
+.. image:: ../../../images/gem1305/nano-rtk-rcv-patchAnt.png
+	:target: ../images/gem1305/nano-rtk-rcv-patchAnt.png
 
 Setup the NANO RTK Receiver as a base station, and it is recommended to use Satrack software.
 
