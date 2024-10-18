@@ -155,12 +155,6 @@ After completing the above operation, you can save the current configuration wit
  
 6. Finish other configuration in Mission Planner
 
-**NOTE**:
-
-If the NANO RTK Receiver and Telemetry radio are properly configured, you can directly power the NANO RTK Receiver using an external Power bank (USB), 
-and then connect the NANO to the Telemetry Radio through a cable. After powering on, the NANO's RTCM data will be transmitted directly through the Radio.
-
-Please make sure to check the wiring order.
 
 
 Rover station (Aircraft) setup
