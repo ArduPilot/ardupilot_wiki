@@ -10,8 +10,12 @@ GEM1305 is a RTK receiver with antenna designed and manufactured by DATAGNSS.
 
 GEM1305 is based on the new generation Allystar dual-core GNSS SoC. It supports RTK functionality with a maximum data update rate of 5Hz. 
 
-.. image:: ../../../images/gem1305/datagnss-gem1305-01.png
-	:target: ../_images/gem1305/datagnss-gem1305-01.png
+.. image:: ../../../images/gem1305/datagnss-gem1305-02.png
+	:target: ../_images/gem1305/datagnss-gem1305-02.png
+
+.. image:: ../../../images/gem1305/datagnss-gem1305-03.png
+	:target: ../_images/gem1305/datagnss-gem1305-03.png
+
 
 GEM1305/NANO RTK Receiver doesn't support Moving Base mode.
 
