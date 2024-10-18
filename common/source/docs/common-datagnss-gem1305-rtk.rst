@@ -160,6 +160,8 @@ Rover station (Aircraft) setup
 
 For drones, NANO RTK Receiver or GEM1305 can be chosen as the Rover for RTK.
 
+   - Please note that NANO RTK Receiver supports Ardupilot starting from **V3.0**.
+
 Whether you choose NANO RTK Receiver or GEM1305, you need to confirm in the Satrack software that all RTCM data outputs are disabled and all NMEA outputs are enabled.
 
 Note: NANO RTK Receiver and GEM1305 do not support safety switch, so BRD_SAFETY_DEFLT needs to be set to 0 or a separate safety switch should be connected to the flight controller.
