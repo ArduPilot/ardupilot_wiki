@@ -70,11 +70,11 @@ RTK technology requires a base and a rover, with the base placed on the ground e
 
 The data from the base needs to be transmitted to the drone end via telemetry radio and inputted into the RTK receiver on the rover end.
 
+.. image:: ../../../images/gem1305/setup-rtk-00.png
+	:target: ../images/gem1305/setup-rtk-00.png
+
 Base station setup
 ==================
-
-.. image:: ../../../images/gem1305/base-station-01.png
-	:target: ../images/gem1305/base-station-01.png
 
 We suggest using the NANO RTK Receiver as the configuration for the base station(ground base station), which is more convenient and user-friendly.
 
@@ -131,9 +131,6 @@ Rover station (Aircraft) setup
 For drones, NANO RTK Receiver or GEM1305 can be chosen as the Rover for RTK.
 
 Whether you choose NANO RTK Receiver or GEM1305, you need to confirm in the Satrack software that all RTCM data outputs are disabled and all NMEA outputs are enabled.
-
-.. image:: ../../../images/gem1305/rover-setup-00.png
-	:target: ../images/gem1305/rover-setup-00.png
 
 Note: NANO RTK Receiver and GEM1305 do not support safety switch, so BRD_SAFETY_DEFLT needs to be set to 0 or a separate safety switch should be connected to the flight controller.
 
