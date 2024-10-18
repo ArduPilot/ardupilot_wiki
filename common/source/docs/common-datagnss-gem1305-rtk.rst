@@ -103,13 +103,11 @@ We suggest using the NANO RTK Receiver as the configuration for the base station
 
 .. image:: ../../../images/gem1305/nano-rtk-rcv-helix.png
 	:target: ../_images/gem1305/nano-rtk-rcv-helix.png
-   :scale: 80%
-   :alt: NANO RTK receiver
+
 
 .. image:: ../../../images/gem1305/nano-rtk-rcv-patchAnt.png
 	:target: ../_images/gem1305/nano-rtk-rcv-patchAnt.png
-   :scale: 80%
-   :alt: NANO RTK receiver
+
 
 Setup the NANO RTK Receiver as a base station, and it is recommended to use Satrack software.
 
@@ -119,19 +117,19 @@ Setup the NANO RTK Receiver as a base station, and it is recommended to use Satr
 
 .. image:: ../../../images/gem1305/satrack-connect-device.png
 	:target: ../_images/gem1305/satrack-connect-device.png
-   :scale: 80%
+
 
 2. Enable RTCMv3 output
 
 .. image:: ../../../images/gem1305/satrack-rtcm-output.png
 	:target: ../_images/gem1305/satrack-rtcm-output.png
-   :scale: 80%
+
 
 3. Disable NMEA data output
 
 .. image:: ../../../images/gem1305/satrack-disable-nmea.png
 	:target: ../_images/gem1305/satrack-disable-nmea.png
-   :scale: 80%
+
 
 4. Config the base station fixed coordinates
 
@@ -142,19 +140,19 @@ Press "Get now", then "send" to apply the fixed coordinates.
 
 .. image:: ../../../images/gem1305/satrack-cfg-fixedecef.png
 	:target: ../_images/gem1305/satrack-cfg-fixedecef.png
-   :scale: 80%
+ 
 
 B. According to the CFG-SURVEY method, automatically calculate the average before proceeding with the setup.
 
 .. image:: ../../../images/gem1305/satrack-cfg-survey.png
 	:target: ../_images/gem1305/satrack-cfg-survey.png
-   :scale: 80%
+ 
 
 5. After above configuration, open Mission Planner
 
 .. image:: ../../../images/gem1305/mp-connect-base.png
 	:target: ../_images/gem1305/mp-connect-base.png
-   :scale: 80%
+ 
 
 6. Finish other configuration in Mission Planner
 
