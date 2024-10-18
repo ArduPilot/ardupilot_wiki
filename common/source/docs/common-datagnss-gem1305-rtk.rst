@@ -71,6 +71,7 @@ RTK technology requires a base and a rover, with the base placed on the ground e
 The data from the base needs to be transmitted to the drone end via telemetry radio and inputted into the RTK receiver on the rover end.
 
 Base station setup
+==================
 
 .. image:: ../../../images/gem1305/base-station-01.png
 	:target: ../images/gem1305/base-station-01.png
@@ -125,6 +126,7 @@ B. According to the CFG-SURVEY method, automatically calculate the average befor
 6. Finish other configuration in Mission Planner
 
 Rover station (Aircraft) setup
+==============================
 
 For drones, NANO RTK Receiver or GEM1305 can be chosen as the Rover for RTK.
 
