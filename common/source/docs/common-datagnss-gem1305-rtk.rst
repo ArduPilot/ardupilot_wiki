@@ -85,7 +85,7 @@ We suggest using the NANO RTK Receiver as the configuration for the base station
 
 Setup the NANO RTK Receiver as a base station, and it is recommended to use Satrack software.
 
-`Download Satrack <https://wiki.datagnss.com/images/e/ee/Satrack.zip>`
+- `Download Satrack <https://wiki.datagnss.com/images/e/ee/Satrack.zip>`_
 
 1. Open Satrack, then choose the com port, baud rate then connect the nano-rtk-rcv.
 
