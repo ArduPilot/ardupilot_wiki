@@ -163,26 +163,29 @@ Unboxing video
 
 --------------------------------------------------------
 
-XBLink 4G LTE Transmission System
+XBLink Plus
 =================================
-.. figure:: https://xbstation.com/assets/images/xblink.png
-   :target:  https://xbstation.com/store/xblink
+.. figure:: https://cdn-images.xbstation.com/only_xblink_plus.png
+   :target:  https://xbstation.com/store/xblink-plus
    
 Overview
 --------
-XBLink is a Plug and Play hardware for BVLOS Flight based on Real time 4G LTE connective. Perfect fit with Cube.
+The XBLink 4G Plus is a plug-and-play hardware solution for BVLOS drone operations, offering seamless control, secure data transmission, and high-quality video streaming. Compatible with multiple platforms and payloads, it’s designed to enhance the capabilities of UAV systems for professional applications, perfect fit with CubePilot.
 
 Features
 --------
 * Control UAV via MissionPlanner and QGroundControl
-* Platform supported: MacOS, WindowsOS, AndroidOS
+* Supported platforms: MacOS, Windows, Android
 * MAVLink compatible
 * HD video streaming
-* AES 256 encryption
-* HTTPS, WebSockets over SSL/TLS
-* Video and telemetry streaming sharing
+* Compatible with Herelink, Siyi, and other remote controller systems
+* Secondary pilot control
+* RTK NTRIP via 4G
+* Supports various payloads for UAV systems, including USB cameras, IP cameras, RTK GPS, and more
+* Sony camera control
+* Gremsy gimbal control
 
-More info about XBLink can be found on `XBStation <https://xbstation.com/store/xblink>`_
+More info about XBLink can be found on `XBStation <https://xbstation.com/store/xblink-plus>`_
 
 Other Systems
 =============
