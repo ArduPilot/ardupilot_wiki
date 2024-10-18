@@ -94,10 +94,8 @@ ArduPilot Setup
 
 Assuming GEM1305 is connected to AP's SERIAL4(2nd GPS), it should work with the default configuration.
 
-- :ref:`GPS_INJECT_TO <GPS_INJECT_TO>` = 1
 - :ref:`SERIAL3_PROTOCOL <SERIAL4_PROTOCOL>` = 5
 - :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 230
-- :ref:`GPS2_RATE_MS <GPS2_RATE_MS>` = 200
 
 Configuration
 =============
