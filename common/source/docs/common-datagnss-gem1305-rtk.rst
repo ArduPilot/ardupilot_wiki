@@ -12,8 +12,7 @@ GEM1305 is based on the new generation Allystar dual-core GNSS SoC. It supports 
 
 .. image:: ../../../images/gem1305/datagnss-gem1305-01.png
 	:target: ../_images/gem1305/datagnss-gem1305-01.png
-   :scale: 80%
-   :alt: GEM1305 RTK receiver
+
 
 GEM1305/NANO RTK Receiver doesn't support Moving Base mode.
 
