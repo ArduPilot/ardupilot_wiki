@@ -11,8 +11,11 @@ GEM1305 is a RTK receiver with antenna designed and manufactured by DATAGNSS.
 GEM1305 is based on the new generation Allystar dual-core GNSS SoC. It supports RTK functionality with a maximum data update rate of 5Hz. 
 
 .. image:: ../../../images/gem1305/datagnss-gem1305-01.png
-	:target: ../images/gem1305/datagnss-gem1305-01.png
+	:target: ../_images/gem1305/datagnss-gem1305-01.png
+   :scale: 80%
+   :alt: GEM1305 RTK receiver
 
+GEM1305/NANO RTK Receiver doesn't support Moving Base mode.
 
 Where to Buy
 ============
@@ -65,7 +68,6 @@ Dimession and weight
    - 50g (GEM1305) 26g (NANO with Helix)
 
 
-
 Pin definition
 ==============
 
@@ -92,7 +94,7 @@ RTK technology requires a base and a rover, with the base placed on the ground e
 The data from the base needs to be transmitted to the drone via telemetry radio and inputted into the RTK receiver on the rover.
 
 .. image:: ../../../images/gem1305/setup-rtk-00.png
-	:target: ../images/gem1305/setup-rtk-00.png
+	:target: ../_images/gem1305/setup-rtk-00.png
 
 Base station setup
 ==================
@@ -100,10 +102,14 @@ Base station setup
 We suggest using the NANO RTK Receiver as the configuration for the base station(ground base station), which is more convenient and user-friendly.
 
 .. image:: ../../../images/gem1305/nano-rtk-rcv-helix.png
-	:target: ../images/gem1305/nano-rtk-rcv-helix.png
+	:target: ../_images/gem1305/nano-rtk-rcv-helix.png
+   :scale: 80%
+   :alt: NANO RTK receiver
 
 .. image:: ../../../images/gem1305/nano-rtk-rcv-patchAnt.png
-	:target: ../images/gem1305/nano-rtk-rcv-patchAnt.png
+	:target: ../_images/gem1305/nano-rtk-rcv-patchAnt.png
+   :scale: 80%
+   :alt: NANO RTK receiver
 
 Setup the NANO RTK Receiver as a base station, and it is recommended to use Satrack software.
 
@@ -112,17 +118,20 @@ Setup the NANO RTK Receiver as a base station, and it is recommended to use Satr
 1. Open Satrack, then choose the com port, baud rate then connect the nano-rtk-rcv.
 
 .. image:: ../../../images/gem1305/satrack-connect-device.png
-	:target: ../images/gem1305/satrack-connect-device.png
+	:target: ../_images/gem1305/satrack-connect-device.png
+   :scale: 80%
 
 2. Enable RTCMv3 output
 
 .. image:: ../../../images/gem1305/satrack-rtcm-output.png
-	:target: ../images/gem1305/satrack-rtcm-output.png
+	:target: ../_images/gem1305/satrack-rtcm-output.png
+   :scale: 80%
 
 3. Disable NMEA data output
 
 .. image:: ../../../images/gem1305/satrack-disable-nmea.png
-	:target: ../images/gem1305/satrack-disable-nmea.png
+	:target: ../_images/gem1305/satrack-disable-nmea.png
+   :scale: 80%
 
 4. Config the base station fixed coordinates
 
@@ -132,17 +141,20 @@ A. According to the diagram below, directly "Get Now" and then proceed with the 
 Press "Get now", then "send" to apply the fixed coordinates.
 
 .. image:: ../../../images/gem1305/satrack-cfg-fixedecef.png
-	:target: ../images/gem1305/satrack-cfg-fixedecef.png
+	:target: ../_images/gem1305/satrack-cfg-fixedecef.png
+   :scale: 80%
 
 B. According to the CFG-SURVEY method, automatically calculate the average before proceeding with the setup.
 
 .. image:: ../../../images/gem1305/satrack-cfg-survey.png
-	:target: ../images/gem1305/satrack-cfg-survey.png
+	:target: ../_images/gem1305/satrack-cfg-survey.png
+   :scale: 80%
 
 5. After above configuration, open Mission Planner
 
 .. image:: ../../../images/gem1305/mp-connect-base.png
-	:target: ../images/gem1305/mp-connect-base.png
+	:target: ../_images/gem1305/mp-connect-base.png
+   :scale: 80%
 
 6. Finish other configuration in Mission Planner
 
