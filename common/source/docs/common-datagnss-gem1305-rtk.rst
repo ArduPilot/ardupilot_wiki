@@ -170,8 +170,15 @@ After completing the above settings, you can write parameters to the flight cont
 
 Package List
 ============
-- GEM1305
+
+- GEM1305 RTK Receiver
 - DG-6P-C01,GH-1.25mm-6P cable
+
+Resource
+========
+   - `GEM1305 2D drawing file <https://wiki.datagnss.com/index.php/GEM1305>`__
+   - `NANO RTK Receiver 2D drawing file <https://wiki.datagnss.com/images/3/31/EVK-DG-1206_V.2.0.pdf>`__
+
 
 More information
 ================
