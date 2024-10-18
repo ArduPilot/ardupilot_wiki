@@ -87,7 +87,7 @@ Configuration
 
 RTK technology can greatly improve the accuracy of positioning. 
 
-RTK technology requires a base and a rover, with the base placed on the ground end, which is referred to as the rover end on the drone. 
+RTK technology requires a base and a rover, with the base placed on the ground, which is referred to as the rover on the drone. 
 
 The data from the base needs to be transmitted to the drone via telemetry radio and inputted into the RTK receiver on the rover.
 
