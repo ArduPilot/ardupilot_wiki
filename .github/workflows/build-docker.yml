@@ -1,0 +1,17 @@
+name: Build dockerfile
+
+on: [push, pull_request]
+
+jobs:
+
+  build-docker:
+
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false  # don't cancel if a job from the matrix fails
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: |
+          docker build . -t ardupilot_wiki --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)
