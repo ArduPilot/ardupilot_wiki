@@ -161,6 +161,7 @@ Setup the NANO RTK Receiver as a base station, and it is recommended to use Satr
 5. Config the base station fixed coordinates
 
    There are two methods to set the coordinates of the base station:
+   
    5.1 According to the diagram below, Input the known coordinates.
 
    Press "Get now", and modify the coordinates to the known values, then "send" to apply the fixed coordinates.
