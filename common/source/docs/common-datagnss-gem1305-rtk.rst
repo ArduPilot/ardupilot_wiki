@@ -89,6 +89,11 @@ The 1.25mm pitch 6P connector (from Left PIN1 to PIN6) :
 
 Please note that the board only includes RTK and doesn't inlcude compass.
 
+If using the GEM1305 with a case, you can directly insert the connector into the GPS2 port.
+
+.. image:: ../../../images/gem1305/GEM1305-with-case.png
+	:target: ../_images/gem1305/GEM1305-with-case.png
+
 
 ArduPilot Setup
 ===============
