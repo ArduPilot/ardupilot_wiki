@@ -151,8 +151,14 @@ Setup the NANO RTK Receiver as a base station, and it is recommended to use Satr
 .. image:: ../../../images/gem1305/satrack-disable-nmea.png
 	:target: ../_images/gem1305/satrack-disable-nmea.png
 
+4. Config output rate to 1Hz
 
-4. Config the base station fixed coordinates
+   In base station mode, the RTCM data output rate must be set to 1Hz.
+
+.. image:: ../../../images/gem1305/satrack-outputrate-1hz.png
+	:target: ../_images/gem1305/satrack-outputrate-1hz.png
+   
+5. Config the base station fixed coordinates
 
 There are two methods to set the coordinates of the base station:
 A. According to the diagram below, Input the known coordinates.
@@ -170,12 +176,12 @@ B. According to the CFG-SURVEY method, config miniDuration and AccLimit, then au
 
 After completing the above operation, you can save the current configuration with CFG-SAVE. 
 
-5. After above configuration, open Mission Planner
+6. After above configuration, open Mission Planner
 
 .. image:: ../../../images/gem1305/mp-connect-base.png
 	:target: ../_images/gem1305/mp-connect-base.png
  
-6. Finish other configuration in Mission Planner
+7. Finish other configuration in Mission Planner
 
 
 
@@ -187,6 +193,8 @@ For drones, NANO RTK Receiver or GEM1305 can be chosen as the Rover for RTK.
    - Please note that NANO RTK Receiver supports Ardupilot starting from **V3.0**.
 
 Whether you choose NANO RTK Receiver or GEM1305, you need to confirm in the Satrack software that all RTCM data outputs are disabled and all NMEA outputs are enabled.
+
+In Rover mode, the output rate must be set to 5Hz.
 
 Note: NANO RTK Receiver and GEM1305 do not support safety switch, so BRD_SAFETY_DEFLT needs to be set to 0 or a separate safety switch should be connected to the flight controller.
 
