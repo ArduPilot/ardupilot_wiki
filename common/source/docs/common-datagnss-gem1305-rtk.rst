@@ -16,8 +16,12 @@ GEM1305 is based on the new generation Allystar dual-core GNSS SoC. It supports 
 .. image:: ../../../images/gem1305/datagnss-gem1305-03.png
 	:target: ../_images/gem1305/datagnss-gem1305-03.png
 
-
 GEM1305/NANO RTK Receiver doesn't support Moving Base mode.
+
+GEM1305 also has a version with a casing.
+
+.. image:: ../../../images/gem1305/GEM1305-with-case.png
+	:target: ../_images/gem1305/GEM1305-with-case.png
 
 Where to Buy
 ============
@@ -161,7 +165,7 @@ Setup the NANO RTK Receiver as a base station, and it is recommended to use Satr
 5. Config the base station fixed coordinates
 
    There are two methods to set the coordinates of the base station:
-   
+
    5.1 According to the diagram below, Input the known coordinates.
 
    Press "Get now", and modify the coordinates to the known values, then "send" to apply the fixed coordinates.
