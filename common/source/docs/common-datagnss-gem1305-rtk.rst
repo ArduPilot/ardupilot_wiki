@@ -95,7 +95,6 @@ ArduPilot Setup
 Assuming GEM1305 is connected to the autopilot's SERIAL4 port, it should work with :
 
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 5
-- :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 230
 
 Configuration
 =============
