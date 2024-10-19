@@ -26,9 +26,10 @@ RUN echo "${USER_NAME} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USER_NAME} \
 
 USER ${USER_NAME}
 
-COPY Sphinxsetup.sh ${WORKDIRECTORY}/Sphinxsetup.sh
 RUN --mount=type=cache,target=/var/cache/apt \
-    bash -c "${WORKDIRECTORY}/Sphinxsetup.sh" && rm Sphinxsetup.sh
+    --mount=type=bind,source=Sphinxsetup.sh,target=${WORKDIRECTORY}/Sphinxsetup.sh \
+    --mount=type=bind,source=requirements.txt,target=${WORKDIRECTORY}/requirements.txt \
+    bash -c "./Sphinxsetup.sh"
 
 RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
