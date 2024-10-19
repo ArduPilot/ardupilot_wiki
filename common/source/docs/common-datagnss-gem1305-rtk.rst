@@ -50,15 +50,15 @@ GNSS
 
 Interface
 =========
-   - UART, 230400bps
-   - SMA for antenna
-   - Output rate 5Hz
+   - UART, 230400bps default
+   - SMA connector for antenna
+   - Output rate 5Hz default
    - Main power supply,4.7~5.2V
 
 Protocol
 ========
-   - NMEA output
-   - RTCM v3 input/output
+   - NMEA-0183 output
+   - RTCMv3 input/output
 
 Environment
 ===========
