@@ -44,6 +44,10 @@ html {
 
 }
 
+#carouselExampleIndicators{
+    margin-top: 35px;
+}
+
 .carousel-inner{
     width:100%;
     height: auto;
