@@ -136,50 +136,50 @@ Setup the NANO RTK Receiver as a base station, and it is recommended to use Satr
 
 1. Open Satrack, then choose the com port, baud rate then connect the nano-rtk-rcv.
 
-.. image:: ../../../images/gem1305/satrack-connect-device.png
-	:target: ../_images/gem1305/satrack-connect-device.png
+   .. image:: ../../../images/gem1305/satrack-connect-device.png
+      :target: ../_images/gem1305/satrack-connect-device.png
 
 
 2. Enable RTCMv3 output
 
-.. image:: ../../../images/gem1305/satrack-rtcm-output.png
-	:target: ../_images/gem1305/satrack-rtcm-output.png
+   .. image:: ../../../images/gem1305/satrack-rtcm-output.png
+      :target: ../_images/gem1305/satrack-rtcm-output.png
 
 
 3. Disable NMEA data output
 
-.. image:: ../../../images/gem1305/satrack-disable-nmea.png
-	:target: ../_images/gem1305/satrack-disable-nmea.png
+   .. image:: ../../../images/gem1305/satrack-disable-nmea.png
+      :target: ../_images/gem1305/satrack-disable-nmea.png
 
 4. Config output rate to 1Hz
 
    In base station mode, the RTCM data output rate must be set to 1Hz.
 
-.. image:: ../../../images/gem1305/satrack-outputrate-1hz.png
-	:target: ../_images/gem1305/satrack-outputrate-1hz.png
+   .. image:: ../../../images/gem1305/satrack-outputrate-1hz.png
+      :target: ../_images/gem1305/satrack-outputrate-1hz.png
    
 5. Config the base station fixed coordinates
 
-There are two methods to set the coordinates of the base station:
-A. According to the diagram below, Input the known coordinates.
+   There are two methods to set the coordinates of the base station:
+   5.1 According to the diagram below, Input the known coordinates.
 
-Press "Get now", and modify the coordinates to the known values, then "send" to apply the fixed coordinates.
+   Press "Get now", and modify the coordinates to the known values, then "send" to apply the fixed coordinates.
 
-.. image:: ../../../images/gem1305/satrack-cfg-fixedecef.png
-	:target: ../_images/gem1305/satrack-cfg-fixedecef.png
+   .. image:: ../../../images/gem1305/satrack-cfg-fixedecef.png
+	   :target: ../_images/gem1305/satrack-cfg-fixedecef.png
  
 
-B. According to the CFG-SURVEY method, config miniDuration and AccLimit, then automatically calculate the average before proceeding with the setup.
+   5.2 According to the CFG-SURVEY method, config miniDuration and AccLimit, then automatically calculate the average before proceeding with the setup.
 
-.. image:: ../../../images/gem1305/satrack-cfg-survey.png
-	:target: ../_images/gem1305/satrack-cfg-survey.png
+   .. image:: ../../../images/gem1305/satrack-cfg-survey.png
+	   :target: ../_images/gem1305/satrack-cfg-survey.png
 
-After completing the above operation, you can save the current configuration with CFG-SAVE. 
+   After completing the above operation, you can save the current configuration with CFG-SAVE. 
 
 6. After above configuration, open Mission Planner
 
-.. image:: ../../../images/gem1305/mp-connect-base.png
-	:target: ../_images/gem1305/mp-connect-base.png
+   .. image:: ../../../images/gem1305/mp-connect-base.png
+	   :target: ../_images/gem1305/mp-connect-base.png
  
 7. Finish other configuration in Mission Planner
 
