@@ -51,6 +51,6 @@ For GPS-for-Yaw, please refer to :ref:`GPS-for-Yaw <common-gps-for-yaw>`, but Ar
 
 `simpleRTK3B instructions <https://www.ardusimple.com/ardupilot-simplertk3b-heading-configuration/>`__
 
-.. note:: ArduPilot does not currently configure UBlox F9P GPS constellations. User must assure that the GPS is properly configured for his region and application. See :ref:`common-gps-ublox-firmware-update`
+.. note:: ArduPilot does not currently configure UBlox F9P GPS constellations. User must assure that the GPS is properly configured for their region and application. See :ref:`common-gps-ublox-firmware-update`
 
 

@@ -226,7 +226,7 @@ momentary switch, such as the trainer switch), or the channel's ``RCx_OPTION`` t
 autopilot will check if you have configured the :ref:`TKOFF_TDRAG_ELEV <TKOFF_TDRAG_ELEV>` and
 :ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` parameters. If they have been set to non-zero
 values then the elevator will be controlled in FBWA in an identical
-manner to how it is controller for an AUTO takeoff. The elevator will go
+manner to how it is controlled for an AUTO takeoff. The elevator will go
 to the :ref:`TKOFF_TDRAG_ELEV <TKOFF_TDRAG_ELEV>` value (usually 100% for a tail dragger) as
 soon as that RC channel goes high, and will stay there until the
 aircraft reaches an airspeed (if airspeed sensor is used) or groundspeed (if airspeed sensor is not used) of :ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` meters per second.
