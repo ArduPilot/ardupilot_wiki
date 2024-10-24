@@ -63,6 +63,7 @@ ROS 2
 
         Install ROS 2 <ros2>
         ROS 2 with SITL <ros2-sitl>
+        ROS 2 Interfaces <ros2-interfaces>
         ROS 2 with SITL in Gazebo <ros2-gazebo>
         ROS 2 over Ethernet <ros2-over-ethernet>
         ROS 2 waypoint goal interface <ros2-waypoint-goal-interface>
