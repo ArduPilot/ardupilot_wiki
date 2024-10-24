@@ -26,7 +26,7 @@ In the same directory (your home directory) run these commands:
 
 ::
 
-    git clone git://github.com/JSBSim-Team/jsbsim.git
+    git clone https://github.com/JSBSim-Team/jsbsim.git
     cd jsbsim
     mkdir build
     cd build
