@@ -56,6 +56,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
     CUAV C-RTK2 HP  Heading and RTK receiver<common-cuav-c-rtk2-hp>
     DATAGNSS GEM1305 RTK Receiver<common-datagnss-gem1305-rtk>
+    DATAGNSS NANO Helix RTK Receiver<common-datagnss-nano-rcv-rtk>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
     CubePilot HERE 3/3+ DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-3/here-3-manual>
     CubePilot HERE 4 DroneCAN RTK GPS/IMU/Compass (see note below) <https://docs.cubepilot.org/user-guides/here-4/here-4-manual>
