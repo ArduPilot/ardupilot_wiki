@@ -1,118 +1,90 @@
 .. _common-esp32-telemetry:
 [copywiki destination="plane,copter,rover,blimp"]
-======================
-ESP32 WiFi telemetry
-======================
+==================================
+ESP32 WiFi telemetry - DroneBridge
+==================================
 
-The ESP32 are readily available Wi-Fi modules with full TCP/IP stack and
+ESP32 are readily available Wi-Fi modules with full TCP/IP stack and
 microcontroller capability. They offer dedicated UART, SPI and I2C
-interfaces. They can be used with any ArduPilot autopilot controller.
+interfaces.
 
-DroneBridge for ESP32
----------------------
+**DroneBridge for ESP32** for the popular ESP32 modules from Espressif Systems offers a transparent and bi-directional serial  to WiFi bridge. In addition it features a custom ESP-NOW implementation which allows for ranges of up to 1km. It is one of the cheapest ways to communicate with ardupilot wirelessly.
 
-| **DroneBridge for ESP32 offers a transparent and bi-directional serial
-  to WiFi bridge.**
-| Using WiFi protocol does not offer the same range as the other
-  DroneBridge implementations. Typical WiFi range is ~50m-200m depending
-  on the antennas. High gain directional antennas would offer even more
-  range.
+It also allows for a fully transparent serial to WiFi pass-through link with variable packet size.| DroneBridge for ESP32 is a telemetry/low data rate-only solution. There is no support for cameras connected to the ESP32 since it does not support video encoding.
 
 .. image:: https://raw.githubusercontent.com/DroneBridge/ESP32/master/wiki/db_ESP32_setup.png
-   :alt: DroneBridge for ESP32 connection concept
+   :alt: DroneBridge for ESP32 and WiFi connections
+
+DroneBridge for ESP32 supports standard WiFi connections to an access point but can also operate as a standalone access point.
+
+.. image:: https://raw.githubusercontent.com/DroneBridge/ESP32/refs/heads/master/wiki/DB_ESP32_NOW_Illistration.png
+   :alt: DroneBridge for ESP32 using ESP-NOW for drone swarms
+
+The ESP-NOW mode offers a connectionless and encrypted alternative to traditional WiFi. While the data rate is reduced to ~250 kbit/s the range is increased up to 1 km.
+This mode has no limit on how many clients are connected on the autopilot side. Only channel capacity and processing capacity limit the number of clients.
+This mode requires ESP32 devices on the GCS side as well as on the autopilot side.
+
+Features
+========
+
+-  Bidirectional: serial-to-WiFi, serial-to-WiFi Long-Range (LR), serial-to-ESP-NOW link
+-  Support for MAVLink, MSP, LTM or any other payload using transparent option
+-  Affordable, Reliable & low latency
+-  Weight: <8 g
+-  Up to 150m range using standard WiFi
+-  Up to 1km of range using ESP-NOW or Wi-Fi LR Mode - sender & receiver must be ESP32 with LR-Mode enabled
+-  Fully encrypted in all modes including ESP-NOW broadcasts secured using AES-GCM 256 bit!
+-  Supported by: QGroundControl, Mission Planner, mwptools, impload etc.
+-  Easy to set up: Power connection + UART connection to flight controller
+-  Fully configurable through an easy-to-use web interface
+-  Parsing of LTM & MSPv2 for more reliable connection and less packet loss
+-  Parsing of MAVLink with the injection of Radio Status packets for the display of RSSI in the GCS
+-  Fully transparent telemetry down-link option
+-  Support for drone swarms of almost any size using ESP-NOW with its custom & encrypted broadcast mode
 
 Recommended Hardware
---------------------
+====================
 
-Almost every ESP32 development board is capable to run DroneBridge for
-ESP32. Boards and modules with an external antenna connector are
-recommended, since those will offer more range.
+Every ESP32 board is capable of running DroneBridge for ESP32.
+Boards and modules with an external antenna connector are recommended,
+since those will likely offer more range.
 
-.. warning:: Most modules support 3.3V input (only), while some autopilots serial ports provide only 5V . You will need to check compatibility and step down the voltage if needed. It is not generally recommended to use the autopilot's 3.3V supply unless you are certain it can provide enough current for the ESP32 board you are using.
+.. warning:: Most modules support 3.3V input (only), while some autopilots serial ports provide 5V . You will need to check compatibility and step down the voltage if needed. It is not generally recommended to use the autopilot's 3.3V supply unless you are certain it can provide enough current for the ESP32 board you are using.
 
-Some examples for modules and DevKits that accept 3.3V supply:
+Officially Supported and Tested Boards
+======================================
 
--  AZDelivery DevKit C
--  `TinyPICO - ESP32 Development Board - V2 <https://www.adafruit.com/product/4335>`_
--  `Adafruit HUZZAH32 – ESP32 Feather Board <https://www.adafruit.com/product/3405>`_
--  `Adafruit AirLift – ESP32 WiFi Co-Processor Breakout Board <https://www.adafruit.com/product/4201>`_ (requires FTDI adapter for flashing firmware)
--  `Adafruit HUZZAH32 <https://www.adafruit.com/product/4172>`_ (requires FTDI adapter for flashing firmware)
--  ESP32-WROOM-32UE (module only - requires custom PCB)
--  ESP32-WROOM-32E  (module only - requires custom PCB)
+Do the project and yourself a favour and use one of the officially supported and tested boards below.
+These boards are very low in price, have everything you need and are also very small. Perfect for use on any drone.
 
-.. note::
-  NodeMCU style DevKit Boards with an IPEX port for an external antenna
-  often also offer an onboard antenna that is activated by default. You
-  may need to re-solder a resistor to activate the external antenna port.
+`You can find all the latest information on the official boards on the website.`_
+
 
 Downloading and Flashing the Firmware
--------------------------------------
+=====================================
 
-`Download the firmware from the GitHub repository`_ and `follow the
-flashing instructions there`_. They are always up to date.
-
-.. note::
-
-  `Follow the flashing instructions inside the GitHub Repository.`_ The
-  exact parameters may differ from release to release of DroneBridge for
-  ESP32.
-
-For convenience reasons some short instructions are given here:
-
--  `Download the pre-compiled firmware binaries`_
--  Connect your DEVKit to your computer via USB/Serial bridge (most
-   DevKits already offer a USB port for flashing and debugging)
--  Erase the flash and flash the DroneBridge for ESP32 firmware onto
-   your ESP32
-
-   -  Using `Espressif Flash Download Tool`_ (Windows only)
-   -  Using esp-idf/esptool (all platforms)
-
--  Power Cycle the ESP32
--  Connect to the "DroneBridge for ESP32" WiFi network and configure
-   the firmware for your application
+An easy-to-use online flashing tool is available on the official website.
+Just connect your ESP32 and click flash!
+`For more detailed information please visit the official Wiki!`_
 
 Configuring DroneBridge for ESP32
----------------------------------
+=================================
 
-You can change the default configuration via the Webinterface.
+You can change the default configuration via the Web Interface.
 Connect to the ESP32 via WiFi and enter ``dronebridge.local``, ``http://dronebridge.local`` or ``192.168.2.1`` in the address
 bar of your browser.
 
-Default Configuration
-~~~~~~~~~~~~~~~~~~~~~
-
--  SSID: ``DroneBridge for ESP32``
--  Password: ``dronebridge``
--  Transparent/MAVLink
--  UART baud rate ``115200``
--  UART TX pin ``17``
--  UART RX pin ``16``
--  Gateway IP: ``192.168.2.1``
-
-Custom Settings & Webinterface
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| You can change the default configuration via the Webinterface.
-| Connect to the ESP32 via WiFi and enter ``dronebridge.local``,
-  ``http://dronebridge.local`` or ``192.168.2.1`` in the address bar of
-  your browser.
-
 .. image:: https://raw.githubusercontent.com/DroneBridge/ESP32/master/wiki/dbesp32_webinterface.png
    :alt: DroneBridge for ESP32 Webinterface
-
-.. note::
-
-  Some settings require you to reboot the ESP32 to take effect.
 
 Wiring
 ======
 
 Wiring is very simple and mostly the same for all devices connected to
-any serial port (eg TELEM1 or TELEM2) of the autopilot. This guide does not go into
-detail here, but provides an outline for wiring below.
+any serial port (ie. TELEM1 or TELEM2) of the autopilot. This guide does not go into
+detail here but provides an outline for wiring below.
 
--  Connect UART of ESP32 to a UART of your autopilot (e.g. TELEM
+-  Connect UART of ESP32 to a UART of your autopilot (ie. TELEM
    1 or TELEM 2 port). Make sure the voltage levels match! Most ESP32
    DevKits can only take 3.3V!
 
@@ -120,13 +92,11 @@ detail here, but provides an outline for wiring below.
    -  RX to TX
    -  GND to GND
    -  Stable 3.3V or 5V power supply to the ESP32 (depending on the
-      available inputs of your DevKit and capabilities of the autopilot)
+      available inputs of your ESP32 and capabilities of the autopilot)
 
 -  Set the autopilot port to MAVLINK 1 or 2 protocol.
 
-Some manufacturers of ESP32 DevKits have wrong labels for the
-pins on their products. Make sure that the PINs on your board are
-labeled correctly if you encounter issues.
+.. note:: Some manufacturers of ESP32 DevKits have the wrong labels for the pins on their products. Make sure that the PINs on your board are labeled correctly if you encounter issues.
 
 Make sure to always follow the instructions of the ESP32 board manufacturer when it comes to wiring. Especially the power supply.
 
@@ -137,12 +107,9 @@ Make sure to always follow the instructions of the ESP32 board manufacturer when
 ArduPilot configuration
 =======================
 
-Configure the UART of the autopilot that is wired to the ESP32. The default configuration of DroneBridge is:
+Configure the UART of the autopilot that is wired to the ESP32 to have matching baud rates and MAVLink set as protocol for optimal performance.
 
--  Protocol: MAVLink (v1 or v2)
--  Baudrate: 115200 baud
-
-If connected to Serial2 these parameters should be set on the autopilot (if using another serial port, replace the "2" in the parameter name with the serial port's number):
+for example, if connected to SERAIL2 port on the autopilot these parameters should be set:
 
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 2 (MAVLink2) or 1 (MAVLink1)
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115 (115200 baud)
@@ -150,7 +117,7 @@ If connected to Serial2 these parameters should be set on the autopilot (if usin
 If you have problems connecting, it may help to set :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` = 0 to disable flow control although this is not normally necessary
 
 
-Connecting to the GCS
+Connection to the GCS
 =====================
 
 The following connection options are available:
@@ -163,73 +130,10 @@ connected WiFi devices via UDP to port 14550. QGroundControl or Mission Planner 
 auto-detect the connection and no further actions should be necessary.
 
 
-Toubleshooting
-==============
+APIs,Troubleshooting & Support
+==============================
 
--  Always erase the flash of the ESP32 before flashing a new
-   release/firmware
--  Check if the pins on your ESP board are labeled correctly.
--  Enter the IP address in your browsers address bar
-   ``http://192.168.2.1``. No https supported! You may need to
-   disconnect from the cellular network when using a phone to be able to
-   access the webinterface.
--  If your network is operating in the same IP range as DB for ESP32 you
-   need to change the Gateway IP address in the Webinterface to
-   something like ``192.168.5.1``.
+`For more detailed information please visit the official Wiki!`_
 
-API
-===
-
-DroneBridge for ESP32 offers a REST:API that allows you to read and
-write configuration options. You are not limited to the options
-presented by the Webinterface (e.g. baud rates). You can use the API to
-set custom baud rates or to integrate the system into your own setup.
-
-**To request the settings**
-
-::
-
-   http://dronebridge.local/api/settings/request
-
-**To request stats**
-
-::
-
-   http://dronebridge.local/api/system/stats
-
-**Trigger a reboot**
-
-::
-
-   http://dronebridge.local/api/system/reboot
-
-**Trigger a settings change:** Send a valid JSON
-
-.. code:: json
-
-   {
-     "wifi_ssid": "DroneBridge ESP32",
-     "wifi_pass": "dronebridge",
-     "ap_channel": 6,
-     "tx_pin": 17,
-     "rx_pin": 16,
-     "telem_proto": 4,
-     "baud": 115200,
-     "msp_ltm_port": 0,
-     "ltm_pp": 2,
-     "trans_pack_size": 64,
-     "ap_ip": "192.168.2.1"
-   }
-
-to
-
-::
-
-   http://dronebridge.local/api/settings/change
-
-
-.. _Download the firmware from the GitHub repository: https://github.com/DroneBridge/ESP32/releases
-.. _follow the flashing instructions there: https://github.com/DroneBridge/ESP32#installationflashing-using-precompiled-binaries
-.. _Follow the flashing instructions inside the GitHub Repository.: https://github.com/DroneBridge/ESP32#installationflashing-using-precompiled-binaries
-.. _Download the pre-compiled firmware binaries: https://github.com/DroneBridge/ESP32/releases
-.. _Espressif Flash Download Tool: https://www.espressif.com/en/support/download/other-tools
+.. _You can find all the latest information on the official boards on the website.: https://dronebridge.github.io/ESP32/
+.. _For more detailed information please visit the official Wiki!: https://dronebridge.gitbook.io/docs/dronebridge-for-esp32/untitled
