@@ -2,9 +2,9 @@
 # Docutils version is for correct bullet point rendering. Can be rolled forward after the theme is updated to >=0.5.1
 # See https://stackoverflow.com/a/68685753/2578171
 sphinx==7.1.2; python_version=="3.8"
-sphinx==7.2.6; python_version>"3.8"
+sphinx==7.4.7; python_version>"3.8"
 sphinx-tabs==3.*
-docutils<0.19
+docutils<0.21
 requests>=2.31.0
 
 # lxml for parameter parsing:
