@@ -27,7 +27,7 @@ autopilot as shown above.
 Configuration
 =============
 
-Click on the diagram at the top of this page to see the individual wire 
+Click on the diagram at the top of this page to see the individual wire
 connections that must be made between the autopilot and Xbee
 module.  Note that in the diagram above only 4 wires are connected (GND,
 5V, Transmit, Receiver).  The CTS and RTS (Ready-to-send) pins are left
