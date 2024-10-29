@@ -22,6 +22,7 @@ popular Companion Computer hardware are listed below.
     :maxdepth: 1
 
     Arduino family <https://discuss.ardupilot.org/t/mavlink-and-arduino-step-by-step/25566/1>
+    ARK Jetson PAB Carrier <https://arkelectron.com/product/ark-jetson-pab-carrier/>
     LYCHEE (Cube Carrier Board for Raspberry Pi Compute Module) <https://dronee.aero/pages/lychee>
     ModalAI VOXL <https://www.modalai.com/collections/voxl/products/voxl>
     ModalAI VOXL2 <https://www.modalai.com/collections/blue-uas-framework-components/products/voxl-2>
