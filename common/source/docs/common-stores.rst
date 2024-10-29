@@ -12,6 +12,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Air-Supply Aerial <https://www.airsupply.com>`__
 * `AltiGator <http://www.altigator.com/>`__
 * `ArduSimple <https://www.ardusimple.com/>`__
+* `ARK Electronics <https://arkelectron.com/>`__
 * `Bask Aerospace <https://baskaerospace.com.au/>`__
 * `Benewake <https://beixingguangzi.en.alibaba.com/>`__
 * `Blicube <https://www.blicube.com/>`__
