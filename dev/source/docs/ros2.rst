@@ -53,7 +53,7 @@ Now update all dependencies:
     sudo apt update
     rosdep update
     source /opt/ros/humble/setup.bash
-    rosdep install --from-paths src --ignore-src
+    rosdep install --from-paths src --ignore-src -r -y
 
 Installing the `MicroXRCEDDSGen` build dependency:
 
