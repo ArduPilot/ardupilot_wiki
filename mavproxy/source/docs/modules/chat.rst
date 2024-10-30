@@ -23,6 +23,7 @@ Prerequisites
 - On Linux/Ubuntu the pyaudio, wave and openai python packages must be installed manually
 - `OpenAI API key  <https://platform.openai.com/docs/quickstart/account-setup>`__
 - Setup the OpenAI Assistant (not required for core developers using ArduPilot's API key)
+- Vehicle must be running ArduPilot 4.6 (or higher)
 
 Installing Python Packages on Linux/Ubuntu
 ------------------------------------------
