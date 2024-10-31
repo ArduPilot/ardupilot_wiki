@@ -42,6 +42,7 @@ CAN/DroneCAN Power Monitors and Batteries
 .. toctree::
     :maxdepth: 1
 
+    ARK PAB Power Modules <common-ark-power-modules>
     CUAV CAN/DroneCAN PMU<common-can-pmu>
     Matek CAN-L4-BM DroneCan PMU <http://www.mateksys.com/?portfolio=can-l4-bm>
     Packet Digital MPPT Solar Controller <common-packetdigital-mppt>

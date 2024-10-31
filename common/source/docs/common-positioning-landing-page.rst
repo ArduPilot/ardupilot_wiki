@@ -16,6 +16,8 @@ GPS/Compass
 .. toctree::
     :maxdepth: 1
 
+    ARK GPS <common-ark-gps>
+    ARK TESEO GPS <common-ark-teseo-gps>
     Avionics Anonymous GNSS + Compass<common-avanon-gnss-mag>
     Avionics Anonymous Compass<common-avanon-mag>
     Beitain BN-220 GPS / BN-880 GPS + Compass Module <common-beitian-gps>
@@ -49,7 +51,9 @@ These GPS can incorporate real time kinematic data, either internally generated 
     :maxdepth: 1
     
     ArduSimple RTK GPS <common-gps-ardusimple>
-    Ark RTK GPS <https://arkelectron.com/product/ark-rtk-gps/>
+    ARK MOSAIC-X5 RTK GPS <common-ark-mosaic-rtk-gps>
+    ARK RTK Base <common-ark-rtk-base>
+    ARK RTK F9P <common-ark-rtk-f9p-gps>
     Blicube RTK GPS (Single Unit Moving Baseline NMEA) <https://wiki.blicube.com/grtk/>
     CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
     CUAV C-RTK 9Ps RTK Receiver <https://store.cuav.net/shop/c-rtk-9ps/>
