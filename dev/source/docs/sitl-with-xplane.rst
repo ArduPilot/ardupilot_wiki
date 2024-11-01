@@ -59,8 +59,8 @@ default). If using loopback (ie. 127.0.0.1) then you also need to make
 sure the "port that we send from" is not 49001. In the example below
 49002 is used.
 
-.. figure:: ../images/xplane-network-data.jpg
-   :target: ../_images/xplane-network-data.jpg
+.. figure:: ../images/xplane-network-data.png
+   :target: ../_images/xplane-network-data.png
 
 You will also need to output data from X-Plane. Click on *Settings*, then *Data Input & Output*. Copy at least 1 setting from the screenshot below. ArduPilot will then send commands to X-Plane that will enable all of the output data fields that it needs to operate.
 

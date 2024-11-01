@@ -5,7 +5,7 @@ Foxeer H7 MPU6000
 =================
 
 
-.. image:: ../../../images/foxeerh743.jpg
+.. image:: ../../../images/foxeerh743.png
 
 
 Where to Buy

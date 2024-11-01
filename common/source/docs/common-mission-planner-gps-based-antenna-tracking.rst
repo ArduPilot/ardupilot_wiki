@@ -351,8 +351,8 @@ Planner window. I'll then right click and say Tracker Home -> Set here.
 it. That should get me pretty close to where my antenna tracker is
 placed.*
 
-.. image:: ../../../images/mp_gps_antennatracker_10.png
-    :target: ../_images/mp_gps_antennatracker_10.png
+.. image:: ../../../images/mp_gps_antennatracker_10.jpg
+    :target: ../_images/mp_gps_antennatracker_10.jpg
 
 *After that I'll flip over to the Initial Setup tab under Antenna
 Tracker and pull down the COM port for the Pololu servo controller and

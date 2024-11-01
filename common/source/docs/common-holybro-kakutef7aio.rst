@@ -4,8 +4,8 @@
 Holybro Kakute F7 and KAKUTE F7 AIO
 ===================================
 
-.. image:: ../../../images/holybro-kakutef7aio.png
-    :target: ../_images/holybro-kakutef7aio.png
+.. image:: ../../../images/holybro-kakutef7aio.jpg
+    :target: ../_images/holybro-kakutef7aio.jpg
 
 *above image and some content courtesy of* `Holybro <http://www.holybro.com/product/kakute-f7-aio-v1-5/>`__
 

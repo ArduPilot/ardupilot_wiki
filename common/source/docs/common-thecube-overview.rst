@@ -63,8 +63,8 @@ The Cube connector pin assignments
 ==================================
 This section details the pin assignments of the standard carrier board of The Cube. There are other types of carrier boards available, please refer to the manufacturer pages for pinouts of specific carrier board.
 
-.. image:: ../../../images/thecube/pixhawk2-pinout.jpg
-    :target: ../_images/pixhawk2-pinout.jpg
+.. image:: ../../../images/thecube/pixhawk2-pinout.png
+    :target: ../_images/pixhawk2-pinout.png
     :width: 240px
 
 **TELEM1, TELEM2 ports**
