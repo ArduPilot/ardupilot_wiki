@@ -13,8 +13,8 @@ ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka R
 ROS1 is being replaced by `ROS 2 <http://design.ros2.org/articles/why_ros2.html>`__
 
 
-.. image:: ../images/logos/ros2_logo.jpg
-    :target: ../_images/logos/ros2_logo.jpg
+.. image:: ../images/logos/ros2_logo.png
+    :target: ../_images/logos/ros2_logo.png
 
 The tutorials below are split between ROS 1 and ROS 2.
 If you aren't sure which version to use, the ArduPilot development team recommends ROS 2 because ROS 1 is end-of-life in 2025.

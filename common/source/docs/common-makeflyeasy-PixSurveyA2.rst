@@ -4,8 +4,8 @@
 makeflyeasy PixSurveyA2
 =======================
 
-.. figure:: ../../../images/PixSurveyA2.png
-   :target: ../_images/PixSurveyA2.png
+.. figure:: ../../../images/PixSurveyA2.jpg
+   :target: ../_images/PixSurveyA2.jpg
    :width: 450px
 
 

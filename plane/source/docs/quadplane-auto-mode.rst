@@ -95,8 +95,8 @@ within :ref:`RTL_RADIUS <RTL_RADIUS>` of the return point. That makes
 it easier to plan missions with a VTOL landing from anywhere in the
 flying area.
 
-.. image:: ../images/quadplane_RTL.jpg
-    :target: ../_images/quadplane_RTL.jpg
+.. image:: ../images/quadplane_RTL.png
+    :target: ../_images/quadplane_RTL.png
 
 Mixing VTOL and Fixed Wing Flight
 ---------------------------------
@@ -125,8 +125,8 @@ your quadplane will handle loiter commands in :ref:`GUIDED mode
 <guided-mode>` and in AUTO missions as a VTOL aircraft. For example, the
 following mission:
 
-.. image:: ../images/quadplane-loiter-time.jpg
-    :target: ../_images/quadplane-loiter-time.jpg
+.. image:: ../images/quadplane-loiter-time.png
+    :target: ../_images/quadplane-loiter-time.png
 
 the aircraft will pause while hovering for 10 seconds at
 waypoint 3. It will fly the rest of the mission as a fixed wing

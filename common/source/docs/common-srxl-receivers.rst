@@ -68,18 +68,18 @@ To do the configuration follow the following steps:
 - Start the MULTIPLEX Launcher Software and connect PC-cable # 85149 to the PC.
 - MULTIPLEX Launcher will detect the connected device automatically and will open the “RX/RF DataManager”-Window.
 
-.. image:: ../../../images/Multiplex_Launcher_01.jpg
-    :target: ../_images/Multiplex_Launcher_01.jpg
+.. image:: ../../../images/Multiplex_Launcher_01.png
+    :target: ../_images/Multiplex_Launcher_01.png
 
 - In the “RX/RF DataManager”-Window click “Options” and the “RX Options”-Window will be opened.
 
-.. image:: ../../../images/Multiplex_Launcher_02.jpg
-    :target: ../_images/Multiplex_Launcher_02.jpg
+.. image:: ../../../images/Multiplex_Launcher_02.png
+    :target: ../_images/Multiplex_Launcher_02.png
 
 - In the “RX-Options” Window scroll down to “More Settings”. In the “More Settings” section double-click “* Options…” to open the “More setting”-Window and select “Serial servodata SRXL” as data output at B/D port. Close the “More setting”-Windows by clicking “Accept”.
 
-.. image:: ../../../images/Multiplex_Launcher_03.jpg
-    :target: ../_images/Multiplex_Launcher_03.jpg
+.. image:: ../../../images/Multiplex_Launcher_03.png
+    :target: ../_images/Multiplex_Launcher_03.png
 
 - Upload data to the receiver by clicking “Send data” in the “RX Options”-Window.
 
@@ -92,5 +92,5 @@ To do the configuration follow the following steps:
 - Connect receivers to the autopilot as described :ref:`here <common-rc-systems>`.
 - Test and adjust servo channel assignments in Mission planner if required. MULTIPLEX radios without free servo assignment (e.g. Cockpit SX) have the following standard servo assignment:
    
-.. image:: ../../../images/Multiplex_SRXL_Receivers_Standard_Servo_Assignment.jpg
-    :target: ../_images/Multiplex_SRXL_Receivers_Standard_Servo_Assignment.jpg
+.. image:: ../../../images/Multiplex_SRXL_Receivers_Standard_Servo_Assignment.png
+    :target: ../_images/Multiplex_SRXL_Receivers_Standard_Servo_Assignment.png

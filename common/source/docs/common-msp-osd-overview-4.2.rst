@@ -275,8 +275,8 @@ A graphical DJI style MSP OSD simulation in a separate window will be opened wit
 .. image:: ../../../images/msp_osd_python.png
    :target: ../_images/msp_osd_python.png
 
-.. image:: ../../../images/msp_osd_python_stats.png
-   :target: ../_images/msp_osd_python_stats.png
+.. image:: ../../../images/msp_osd_python_stats.jpg
+   :target: ../_images/msp_osd_python_stats.jpg
 
 By changing the OSD panel items' parameters, a live update of their placement can be seen in this emulator.
 

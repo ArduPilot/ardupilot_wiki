@@ -87,8 +87,8 @@ User Manual
 Wiring Diagram
 ==============
 
-.. image:: ../../../images/SpeedyBeeF405WING_wiring.png
-    :target: ../_images/SpeedyBeeF405WING_wiring.png
+.. image:: ../../../images/SpeedyBeeF405WING_wiring.jpg
+    :target: ../_images/SpeedyBeeF405WING_wiring.jpg
 
 
 Default UART order

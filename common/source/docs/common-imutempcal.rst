@@ -146,11 +146,11 @@ graphs. One set is for the gyroscopes the other is for the accelerometers.
 
 The image below shows the results of a run on a log file for 3 IMU board:
 
-.. image:: ../../../images/tempcal_gyro.jpg
-    :target: ../_images/tempcal_gyro.jpg
+.. image:: ../../../images/tempcal_gyro.png
+    :target: ../_images/tempcal_gyro.png
 
-.. image:: ../../../images/tempcal_accel.jpg
-    :target: ../_images/tempcal_accel.jpg
+.. image:: ../../../images/tempcal_accel.png
+    :target: ../_images/tempcal_accel.png
 
 The key features of the graphs are:
 

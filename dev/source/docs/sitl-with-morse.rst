@@ -83,8 +83,8 @@ The following steps will get you running with the Skid Rover example.
 
 - A window like below should appear:
 
-  .. image:: ../images/morse_rover_sitl.jpg
-    :target: ../_images/morse_rover_sitl.jpg
+  .. image:: ../images/morse_rover_sitl.png
+    :target: ../_images/morse_rover_sitl.png
 
 - Use the ArduPilot SITL console to control the vehicle (i.e. "arm throttle" to arm the vehicle, "rc 3 1800" to raise throttle to 80%, etc)
 
@@ -119,8 +119,8 @@ To run the Quadcopter example:
 
 - A window like below should appear:
 
-  .. image:: ../images/morse_quad.jpg
-    :target: ../_images/morse_quad.jpg
+  .. image:: ../images/morse_quad.png
+    :target: ../_images/morse_quad.png
              
 Note that in the image above a wire-frame view is shown instead of a
 rendered 3D view. That is configured by setting fastmode=True in the

@@ -36,8 +36,8 @@ Hardware Setup
 - Connect the PiConnectLite's power cable to the battery (7V to 30V)
 - Connect the PiConnectLite's serial cable to one of the autopilot's telemetry ports (i.e. Telem1, Telem2). The only signals used in this cable are TX, RX and GND. The other signals are NC.
 
-.. image:: ../../../images/t265-mount.png
-    :target: ../_images/t265-mount.png
+.. image:: ../../../images/t265-mount.jpg
+    :target: ../_images/t265-mount.jpg
     :width: 500px
 
 `David Sastre's T265 mount <https://www.dropbox.com/s/e3ias30czsn2q4t/Intel_RealSense_Tracking_Camera_T265_holder.STL?dl=0>`__

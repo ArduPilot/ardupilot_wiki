@@ -577,7 +577,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://www.sdmodel.com.tw/
 
-      - .. image:: ../../../images/supporters/supporters_adti.jpg
+      - .. image:: ../../../images/supporters/supporters_adti.png
             :width: 250px
             :align: center
             :target:  https://www.adti.camera/
@@ -742,7 +742,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://dh-research.com/
 
-      - .. image:: ../../../images/supporters/supporters_micoair.png
+      - .. image:: ../../../images/supporters/supporters_micoair.jpg
             :width: 250px
             :align: center
             :target:  https://micoair.com/

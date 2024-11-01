@@ -66,8 +66,8 @@ If you are using the Adafruit HUZZAH ESP8266 board and are flashing from a Windo
   - on the Config page push the gear and select the firmware downloaded above
   - on the Operation page select the "COM Port" and push the "Flash" button.  If successful the blue bar will slowly stretch from left to right and the icon on the bottom left will turn green.
 
-    .. image:: ../../../images/esp8266-telemetry-flash.jpg
-        :target: ../_images/esp8266-telemetry-flash.jpg
+    .. image:: ../../../images/esp8266-telemetry-flash.png
+        :target: ../_images/esp8266-telemetry-flash.png
 
 - Mac users should use the `esptool <https://github.com/espressif/esptool>`__
 
