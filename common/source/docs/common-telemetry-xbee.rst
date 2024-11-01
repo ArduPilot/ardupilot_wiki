@@ -50,7 +50,7 @@ application can be used to configure the XBee modules.
 Xbee ZB (S2C)
 =============
 
-Settings for a 
+Settings for an Xbee ZB (S2C) module.
 
 +-------------------+-----------------------------------------------+-----------------------------------------------+
 |                   |                                      Setting Parameters                                       |
@@ -88,6 +88,9 @@ Settings for a
 | I/O Sampling      |IR=0, IC=0, V+=0                               |IR=0, IC=0, V+=0                               |
 +-------------------+-----------------------------------------------+-----------------------------------------------+
 
+
+Xbee SX 868
+=============
 
 Example for XBee SX 868 (based on Firmware A00A).
 Everything is kept at default except the listed settings.
