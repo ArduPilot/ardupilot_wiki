@@ -16,7 +16,7 @@ In versions 4.4 and later, the ability to conduct power re-engagement from an au
 ESC Governor
 ------------
 
-Enable manual autoratation by setting :ref:`H_RSC_AROT_ENBL <H_RSC_AROT_ENBL>` to 1.  Leave :ref:`H_RSC_AROT_ENG_T <H_RSC_AROT_ENG_T>` at the default setting of 1 second to quickly signal the ESC for fast spool-up.  Set the throttle idle value, :ref:`H_RSC_AROT_IDLE <H_RSC_AROT_IDLE>`, to the percent of throttle given by the ESC manual that signals the ESC to perform a fast spool-up.
+Enable manual autoratation by setting :ref:`H_RSC_AROT_ENBL <H_RSC_AROT_ENBL>` to 1.  Leave :ref:`H_RSC_AROT_RAMP <H_RSC_AROT_RAMP>` at the default setting of 1 second to quickly signal the ESC for fast spool-up.  Set the throttle idle value, :ref:`H_RSC_AROT_IDLE <H_RSC_AROT_IDLE>`, to the percent of throttle given by the ESC manual that signals the ESC to perform a fast spool-up.
 
 Ardupilot's Throttle Curve or Built-in Governor
 -----------------------------------------------
