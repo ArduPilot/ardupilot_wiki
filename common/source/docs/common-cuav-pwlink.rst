@@ -28,3 +28,8 @@ The following command can be used to connect a MAVProxy ground station to the ve
 .. code-block:: bash
   
     mavproxy.py --master :14550
+
+More information
+================
+
+`CUAV docs <https://doc.cuav.net/data-transmission/pw-link/en/>`__.

@@ -75,4 +75,4 @@ Set the following parameters in all parameter tables of Mission planner and rest
 More information
 ================
 
-`CUAV docs <https://doc.cuav.net/en/>`__.
+`CUAV docs <https://doc.cuav.net/gps/neo-series-gnss/en/neo-3x.html>`__.

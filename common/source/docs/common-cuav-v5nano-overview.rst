@@ -181,7 +181,9 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 More Information
 ================
 
-CUAV V5 Nano PDF `here <http://manual.cuav.net/V5-nano.pdf>`__
+`CUAV docs <https://doc.cuav.net/controller/v5-autopilot/en/v5-nano.html>`__.
+
+CUAV V5 Nano PDF `here <https://manual.cuav.net/V5-nano.pdf>`__
 
 `Schematics <https://github.com/ArduPilot/Schematics/tree/master/CUAV>`__
 

@@ -138,4 +138,4 @@ The board comes pre-installed with an ArduPilot compatible bootloader, allowing 
 
 CUAV docs
 =========
-`CUAV 7-Nano <https://https://doc.cuav.net/flight-controller/7-nano/en/>`__
+`CUAV 7-Nano <https://doc.cuav.net/controller/7-nano/en/>`__

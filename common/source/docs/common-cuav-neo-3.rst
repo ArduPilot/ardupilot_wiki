@@ -110,4 +110,4 @@ Pinouts
 More information
 ================
 
-`CUAV docs <http://doc.cuav.net/gps/neo-series-gnss/en/>`__.
+`CUAV docs <https://doc.cuav.net/gps/neo-series-gnss/en/neo-3.html>`__.

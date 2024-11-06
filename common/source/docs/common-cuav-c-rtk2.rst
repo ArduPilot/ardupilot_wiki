@@ -178,7 +178,7 @@ PPK+RTK
 User Manual
 ===========
 
-`C-RTK2 Quick start <https://doc.cuav.net/gps/c-rtk2/en/quick-start-c-rtk2.html>`__
+`C-RTK2 Quick start <https://doc.cuav.net/gps/c-rtk-series/en/c-rtk2/quick-start-c-rtk2.html>`__
 
 Video
 =====
@@ -189,13 +189,13 @@ Video
 Additional CUAV Documentation
 =============================
 
-- `C-RTK2 Quick start <https://doc.cuav.net/gps/c-rtk2/en/quick-start-c-rtk2.html>`__
-- `Setting up aerial survey control points <https://doc.cuav.net/gps/c-rtk2/en/surveying-points.html>`__
-- `Setting up the base station <https://doc.cuav.net/gps/c-rtk2/en/base-station.html>`__
-- `Aerial survey mission planning <https://doc.cuav.net/gps/c-rtk2/en/mapping-waypoints.html>`__
-- `PPK solutions and data processing <https://doc.cuav.net/gps/c-rtk2/en/ppk-solution.html>`__
-- `Modeling with Aerial Three Modeling Software <https://doc.cuav.net/gps/c-rtk2/en/ppk-solution.md.html>`__
+- `C-RTK2 Quick start <https://doc.cuav.net/gps/c-rtk-series/en/c-rtk2/quick-start-c-rtk2.html>`__
+- `Setting up aerial survey control points <https://doc.cuav.net/gps/c-rtk-series/en/c-rtk2/surveying-points.html>`__
+- `Setting up the base station <https://doc.cuav.net/gps/c-rtk-series/en/c-rtk2/base-station.html>`__
+- `Aerial survey mission planning <https://doc.cuav.net/gps/c-rtk-series/en/c-rtk2/mapping-waypoints.html>`__
+- `PPK solutions and data processing <https://doc.cuav.net/gps/c-rtk-series/en/c-rtk2/ppk-solution.html>`__
+- `Modeling with Aerial Three Modeling Software <https://doc.cuav.net/gps/c-rtk-series/en/c-rtk2/ppk-solution.html#3d>`__
 
 More information
 ================
-`CUAV Docs <https://doc.cuav.net>`__
+`CUAV Docs <https://doc.cuav.net/gps/c-rtk-series/en/c-rtk2/>`__

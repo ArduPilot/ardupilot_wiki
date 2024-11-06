@@ -232,4 +232,4 @@ Upgrade with DroneCAN GUI TOOL software
 More information
 ================
 
-`CUAV docs <http://doc.cuav.net/gps/neo-series-gnss/en/>`__.
+`CUAV docs <https://doc.cuav.net/gps/neo-series-gnss/en/neo-3-pro.html>`__.

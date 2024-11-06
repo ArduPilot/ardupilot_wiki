@@ -123,7 +123,9 @@ Interfaces
 More Information
 ================
 
-CUAV V5 Plus PDF Manual `here <http://manual.cuav.net/V5-Plus.pdf>`__
+`CUAV docs <https://doc.cuav.net/controller/v5-autopilot/en/v5+.html>`__.
+
+CUAV V5 Plus PDF Manual `here <https://manual.cuav.net/V5-Plus.pdf>`__
 
 `Schematics <https://github.com/ArduPilot/Schematics/tree/master/CUAV>`__
 
