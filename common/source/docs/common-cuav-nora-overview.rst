@@ -113,7 +113,7 @@ Flight video
 More Information
 ================
 
-* `CUAV docs <http://doc.cuav.net/flight-controller/x7/en/nora.html>`_
+* `CUAV docs <https://doc.cuav.net/controller/x7/en/nora-plus.html>`_
 
 * `Nora schematic <https://github.com/cuav/hardware/tree/master/X7_Autopilot>`_
 

@@ -223,5 +223,5 @@ Upgrade with DroneCAN GUI TOOL software
 More information
 ================
 
-`CUAV docs <http://doc.cuav.net/gps/neo-v2-pro/en/>`__.
+`CUAV docs <https://doc.cuav.net/gps/neo-series-gnss/en/neo-v2-pro.html>`__.
 

@@ -137,4 +137,4 @@ C-RTK 9P estimated Yaw
 More information
 ================
 
-`User guide <http://doc.cuav.net/gps/c-rtk/en/c-rtk-9p.html>`__.
+`User guide <https://doc.cuav.net/gps/c-rtk-series/en/c-rtk-9p.html>`__.

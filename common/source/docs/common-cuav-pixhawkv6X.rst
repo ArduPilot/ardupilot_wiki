@@ -188,4 +188,9 @@ Firmware for these boards can be found `here <https://firmware.ardupilot.org>`_ 
 
 Bi-Directional DShot firmware variations are available also providing BDShot capability on outputs 1-6.
 
+More information
+================
+
+`CUAV docs <https://doc.cuav.net/controller/pixhawk-v6x/en/>`__.
+
 [copywiki destination="plane,copter,rover,blimp"]
