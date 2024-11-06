@@ -27,6 +27,6 @@ changes to the source code. This can be done by:
 
 .. code:: bash
 
-    python setup.py build install --user
+    python3 -m pip install .
 
 MAVProxy can then be run as per normal.
