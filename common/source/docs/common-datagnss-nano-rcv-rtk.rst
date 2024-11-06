@@ -80,7 +80,9 @@ ArduPilot Setup
 For example, NANO Helix RTK Receiver is connected to the autopilot's SERIAL4 port, it should work with :
 
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 5
+- :ref:`GPS1_TYPE <GPS1_TYPE>` = 5
 
+.. note:: if you use 4.5 or earlier firmware, it should be GPS_TYPE = 5.
 
 Configuration
 =============
@@ -98,77 +100,13 @@ NANO RTK Receiver family for UAV:
 
 Base station setup
 ==================
-
-.. image:: ../../../images/datagnss-nano/NANO-GCS-01-600x.png
-	:target: ../_images/datagnss-nano/NANO-GCS-01-600x.png
-
-Connect the NANO RTK Receiver to your Laptop via USB.
-
-Setup the NANO RTK Receiver as a base station, and it is recommended to use Satrack software.
-
-- `Download Satrack <https://wiki.datagnss.com/images/e/ee/Satrack.zip>`_
-
-1. Open Satrack, then choose the com port, baud rate then connect the nano-rtk-rcv.
-
-   .. image:: ../../../images/gem1305/satrack-connect-device.png
-      :target: ../_images/gem1305/satrack-connect-device.png
-
-
-2. Enable RTCMv3 output
-
-   .. image:: ../../../images/gem1305/satrack-rtcm-output.png
-      :target: ../_images/gem1305/satrack-rtcm-output.png
-
-
-3. Disable NMEA data output
-
-   .. image:: ../../../images/gem1305/satrack-disable-nmea.png
-      :target: ../_images/gem1305/satrack-disable-nmea.png
-
-4. Config output rate to 1Hz
-
-   In base station mode, the RTCM data output rate must be set to 1Hz.
-
-   .. image:: ../../../images/gem1305/satrack-outputrate-1hz.png
-      :target: ../_images/gem1305/satrack-outputrate-1hz.png
-   
-5. Config the base station fixed coordinates
-
-   There are two methods to set the coordinates of the base station:
-
-   5.1 According to the diagram below, Input the known coordinates.
-
-   Press ``Get now``, and modify the coordinates to the known values, then ``Send`` to apply the fixed coordinates.
-
-   .. image:: ../../../images/gem1305/satrack-cfg-fixedecef.png
-       :target: ../_images/gem1305/satrack-cfg-fixedecef.png
-
-   5.2 or, using the ``CFG-SURVEY`` meassage, config ``miniDuration`` and ``AccLimit``, then automatically calculate the average before proceeding with the setup.
-
-   .. image:: ../../../images/gem1305/satrack-cfg-survey.png
-       :target: ../_images/gem1305/satrack-cfg-survey.png
-
-   After completing the above operation, you can save the current configuration with ``CFG-SAVE`` message. 
-
-6. After completing the above configuration, open Mission Planner and finish the configuration on this page:
-
-.. image:: ../../../images/gem1305/mp-connect-base.png
-    :target: ../_images/gem1305/mp-connect-base.png
-
+Please refer to the following link for the full base station setup guide:
+- `Base station setup <https://wiki.datagnss.com/index.php/Faq-how-to-setup-base-or-rover>`__
 
 Rover station (Aircraft) setup
 ==============================
-
-.. image:: ../../../images/datagnss-nano/NANO-RCV-02-Total-800x.png
-	:target: ../_images/datagnss-nano/NANO-RCV-02-Total-800x.png
-
-You need to confirm in the Satrack software that all RTCM data outputs are disabled and all NMEA outputs are enabled.
-
-In Rover mode, the output rate must be set to 5Hz.
-
-.. note:: NANO Helix RTK Receiver do not support safety switch, so BRD_SAFETY_DEFLT needs to be set to 0 or a separate safety switch should be connected to the flight controller.
-
-After completing the above settings, you can write parameters to the flight controller.
+Please refer to the following link for the full rover setup guide:
+- `Rover station setup <https://wiki.datagnss.com/index.php/Faq-how-to-setup-base-or-rover>`__
 
 Resource
 ========
