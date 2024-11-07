@@ -17,49 +17,59 @@ Prerequisites
 
 - Learn to use ArduPilot first by following the relevant wiki for `Rover <https://ardupilot.org/rover/index.html>`__, `Copter <https://ardupilot.org/copter/index.html>`__ or `Plane <https://ardupilot.org/plane/index.html>`__.
 - In particular, make sure the vehicle works well in Manual and Autonomous modes like Guided and Auto before trying to use ROS.
-- Learn how to use ROS 2 by reading the `beginner tutorials <https://docs.ros.org/en/humble/Tutorials.html>`__.  In the case of a problem with ROS, it is best to ask on ROS community forums first (or google your error).
+- Learn how to use ROS 2 by reading the `beginner tutorials <https://docs.ros.org/en/rolling/Tutorials.html>`__.  In the case of a problem with ROS, it is best to ask on ROS community forums first (or google your error).
 
     We are keen to improve ArduPilot's support of ROS 2 so if you find issues (such as commands that do not seem to be supported), please report them in the `ArduPilot issues list <https://github.com/ArduPilot/ardupilot/issues>`__. A maintainer can add the `ROS` tag.
 
-First, make sure that you have successfully installed `ROS 2 Humble <https://docs.ros.org/en/humble/Installation.html>`__ .
-Currently, ROS 2 Humble is the only version supported.
+First, make sure that you have successfully installed and configured your ROS 2 environment. ArduPilot supports ROS 2 `Humble <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html>`__ and `Jazzy <https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html>`__.
 
-You are about to create a new `ROS 2 workspace <https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#id4>`__.
-This page assumes that your workspace is named `ardu_ws` in your home directory, but feel free to adjust to your preferred location.
-
-Before anything else, make sure that you have `sourced your ROS 2 environment <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#source-the-setup-files>`__
-and check if it is `configured correctly <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#check-environment-variables>`__.
-
-Finally, ensure you have `set up your ArduPilot build environment <https://ardupilot.org/dev/docs/building-the-code.html#setting-up-the-build-environment>`__.
+This document suggests creating a new ROS 2 workspace from scratch, named `ardu_ws`, located in your home folder. If you already have a working ROS 2 workspace, feel free to adapt the instructions to your needs.
 
 Installation (Ubuntu)
 =====================
 
-To make installation easy, we will clone the required repositories using `vcs` and a `ros2.repos` files:
+To make installation easy, we will clone the required repositories using `vcs` and a `.repos` files:
 
-.. code-block:: bash
+.. tabs::
 
-    mkdir -p ~/ardu_ws/src
-    cd ~/ardu_ws
-    vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos src
+    .. tab:: Jazzy
+
+        .. code-block:: bash
+
+            mkdir -p ~/ardu_ws/src
+            cd ~/ardu_ws
+            vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/jazzy.repos src
+            
+    .. tab:: Humble
+
+        .. code-block:: bash
+
+            mkdir -p ~/ardu_ws/src
+            cd ~/ardu_ws
+            vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/humble.repos src
 
 This will take a few minutes to clone all the repositories your first time.
 
-Now update all dependencies:
+.. warning::
+    The `ardupilot` repository will be cloned in the `~/ardu_ws/src` folder during this process. Before proceeding, `set up your ArduPilot build environment <https://ardupilot.org/dev/docs/building-the-code.html#setting-up-the-build-environment>`__ inside the ROS 2 workspace.
+    If you already have a working ArduPilot build environment, you may move it inside the workspace instead, but be sure to change all script references too. It might be a good idea to check your `.bashrc` and `.profile`.
+
+Now update all dependencies using `rosdep`:
 
 .. code-block:: bash
 
     cd ~/ardu_ws
     sudo apt update
     rosdep update
-    source /opt/ros/humble/setup.bash
     rosdep install --from-paths src --ignore-src -r -y
 
 Installing the `MicroXRCEDDSGen` build dependency:
 
 .. code-block:: bash
     
-    sudo apt install default-jre
+    # Gradle 7.6 is not supported by java versions >= 20
+    # https://docs.gradle.org/current/userguide/compatibility.html
+    sudo apt install openjdk-17-jre 
     cd ~/ardu_ws
     git clone --recurse-submodules https://github.com/ardupilot/Micro-XRCE-DDS-Gen.git
     cd Micro-XRCE-DDS-Gen
@@ -133,10 +143,23 @@ Installation (MacOS)
 
 To make installation easy, we will install the required packages using `vcs` and a `ros2_macos.repos` files:
 
-.. code-block:: bash
+.. tabs::
 
-    cd ~/ardu_ws
-    vcs import --recursive --input https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2_macos.repos src
+    .. tab:: Jazzy
+
+        .. code-block:: bash
+
+            mkdir -p ~/ardu_ws/src
+            cd ~/ardu_ws
+            vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/jazzy_macos.repos src
+
+    .. tab:: Humble
+
+        .. code-block:: bash
+
+            mkdir -p ~/ardu_ws/src
+            cd ~/ardu_ws
+            vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/humble_macos.repos src
 
 Now update all dependencies:
 

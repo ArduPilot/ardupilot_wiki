@@ -17,16 +17,28 @@ Ensure you have the prerequisites complete and working before beginning this Gaz
 Install Gazebo
 ==============
 
-First, install `Gazebo Harmonic (recommended) <https://gazebosim.org/docs/harmonic/install>`__ or `Gazebo Garden <https://gazebosim.org/docs/garden/install>`__.
+First, install `Gazebo Harmonic (recommended) <https://gazebosim.org/docs/harmonic/install>`__ or `Gazebo Garden <https://gazebosim.org/docs/garden/install>`__. Please check the `Compatibility Matrix between ROS and Gazebo versions <https://gazebosim.org/docs/latest/ros_installation/#summary-of-compatible-ros-and-gazebo-combinations>`__.
 
 Next, set up all the necessary ROS 2 packages in the workspace.
 
-We will clone the required repositories using `vcstool <https://github.com/dirk-thomas/vcstool>`__ and a `ros2.repos` files:
+We will clone the required repositories using `vcstool <https://github.com/dirk-thomas/vcstool>`__ and a `.repos` files:
 
-.. code-block:: bash
+.. tabs::
 
-    cd ~/ardu_ws
-    vcs import --input https://raw.githubusercontent.com/ArduPilot/ardupilot_gz/main/ros2_gz.repos --recursive src
+    .. tab:: Jazzy
+
+        .. code-block:: bash
+
+            cd ~/ardu_ws
+            vcs import --input https://raw.githubusercontent.com/ArduPilot/ardupilot_gz/main/jazzy_gz.repos --recursive src
+            
+    .. tab:: Humble
+
+        .. code-block:: bash
+
+            cd ~/ardu_ws
+            vcs import --input https://raw.githubusercontent.com/ArduPilot/ardupilot_gz/main/humble_gz.repos --recursive src
+
 
 Set the Gazebo version to either ``harmonic`` (recommended) or ``garden``.
 It's recommended to set this in your `~/.bashrc` file.
@@ -40,7 +52,7 @@ Update ROS dependencies:
 .. code-block:: bash
 
     cd ~/ardu_ws
-    source /opt/ros/humble/setup.bash
+    source /opt/ros/$ROS_DISTRO/setup.bash
     sudo apt update
     rosdep update
     rosdep install --from-paths src --ignore-src -r
