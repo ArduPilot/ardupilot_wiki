@@ -124,6 +124,7 @@ tuning options for the vehicle.
     Ship(Moving Vehicle) Takeoff/Landing <common-ship-landing>
 [/site]
 [site wiki="copter"]
+    Slung Payload <slung-payload>
     Surface Tracking  <terrain-following-manual-modes>
 [/site]
 [site wiki="rover"]
