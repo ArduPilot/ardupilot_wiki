@@ -92,7 +92,7 @@ ArduPilot Setup
 For example, if GEM1305 is connected to the autopilot's SERIAL4 port, set:
 
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 5
-- :ref:`GPS_TYPE <GPS_TYPE>` = 5
+- :ref:`GPS1_TYPE <GPS1_TYPE>` = 5
 
 .. note:: if you use 4.5 or earlier firmware, it should be GPS_TYPE = 5.
 
