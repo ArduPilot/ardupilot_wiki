@@ -26,6 +26,7 @@ gimbals in which ArduPilot controls the stabilisation. Some gimbals also integra
 -  :ref:`SimpleBGC (aka AlexMos) Gimbal Controller <common-simplebgc-gimbal>` - a popular 2-axis or 3-axis brushess gimbal controller which uses a custom serial interface
 -  :ref:`Siyi ZR10, ZR30, ZT6, ZT30, and A8 <common-siyi-zr10-gimbal>` - 3-axis gimbal and camera
 -  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an inexpensive 2-axis or 3-axis brushless gimbal controller which responds to MAVLink commands (a richer format than PWM) over a serial interface
+-  :ref:`Topotek Gimbal <common-topotek-gimbal>`
 -  :ref:`ViewPro gimbals <common-viewpro-gimbal>`
 -  :ref:`Xacti gimbals <common-xacti-gimbal>`
 
