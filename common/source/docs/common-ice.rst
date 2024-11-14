@@ -28,7 +28,7 @@ The engine's ignition power switch and (optional) starter should be connected to
       - Set :ref:`ICE_ENABLE <ICE_ENABLE>` = 1 to enable the ICE feature (you may need to reload parameters after setting this in order to see below parameters).
       - Set an RC auxiliary switch (``RCx_OPTION`` = 179) be used to start the engine. This channel can start the engine or stop the engine via the ``Ignition`` and ``Starter`` motor/servo outputs (see :ref:`common-rcoutput-mapping`). Normally, the "kill" PWM value is anything below 1300us, but this can be changed using the :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` parameter. Setting up this channel and its RC control is required for operation in order to provide a "kill" function on the throttle, even if there is no ignition or starter control.
       - the PWM value sent to the ignition power switch when the engine should be running or stopped is set by the  ``SERVOx_MIN`` and ``SERVOx_MAX`` value of the output used for the `Ignition`` function.
-      - 
+       
    .. tab:: ArduPilot prior to 4.6
 
       - Set :ref:`ICE_ENABLE <ICE_ENABLE>` = 1 to enable the ICE feature (you may need to reload parameters after setting this in order to see below parameters)
