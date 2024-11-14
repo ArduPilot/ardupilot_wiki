@@ -286,6 +286,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        178           | FlightMode Pause/Resume    |    X     |         |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        179           | ICEngine start / stop      |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
 |        180           | Autotune_test_gains        |    X     |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
 
@@ -581,6 +583,7 @@ Other functions are:
     VTOL Fwd Throttle disable             Overrides use of forward throttle in VTOL modes
     Mount LRF Enable                      Enable(switch high) ranging updates
     FlightMode Pause                      In Guided/Auto modes, pauses mission
+    ICEngine start / stop                 Controls ICE engine starter output :ref:`ICE engines<common-ice>`
     Autotune_test_gains                   After autotune,allows selecting tune(high) or pretune gains
     ROLL Input                            ROLL input channel. (replaces RCMAP)
     PITCH Input                           PITCH input channel. (replaces RCMAP)

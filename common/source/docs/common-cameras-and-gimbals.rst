@@ -117,3 +117,4 @@ more scenic photos. ArduPilot will stabilize the gimbal to whatever position you
     RunCam Camera Control <common-camera-runcam>
     Gimbal / Mount Controls <common-mount-targeting>
     Camera Controls <common-camera-controls>
+    Topotek Gimbal <common-topotek-gimbal>

@@ -32,7 +32,9 @@ Set the following parameters to enable BLHeli32/AM32 telemetry feedback to the a
 - :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed.  Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM.
 
 .. note:: using the RPM value reported using single wire telemetry for the center frequency adjustment of the :ref:`harmonic notch feature <common-imu-notch-filtering>`  works well, but the responsiveness is slower than using telemetry provided by bi-directional DShot. See next section.
+
 .. _bidir-dshot:
+
 Bi-directional DShot
 ====================
 
