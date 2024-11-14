@@ -1,11 +1,11 @@
 .. _common-X_MAV_H743v2:
-
+[copywiki destination="plane,copter,rover,blimp"]
 
 =========
 AP-H743v2
 =========
 
-The AP-H743v2 is n autopilot designed and produced by X-MAV
+The AP-H743v2 is an autopilot designed and produced by X-MAV
 
 Features
 ========
