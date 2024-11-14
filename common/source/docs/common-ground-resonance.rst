@@ -19,3 +19,5 @@ Evaluating Ground Resonance Oscillation
 #.Back off axis where oscillation is observed in 25% steps until oscillation is manageable.
 
 .. note:: Extreme care should be taken if :ref:`ATC_LAND_R_MULT<ATC_LAND_R_MULT>` or :ref:`ATC_LAND_P_MULT<ATC_LAND_P_MULT>` is reduced below 0.5.
+
+[copywiki destination="copter"]

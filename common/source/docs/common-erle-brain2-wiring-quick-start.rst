@@ -146,8 +146,7 @@ Use a Bluetooth dongle to connect additional devices, such as joysticks.
    work
 
 .. figure:: ../../../images/Erle-Brain_DongleWifi.jpg
-    :target: .. figure:: ../../../images/
-
+ 
 Connect other peripherals
 =========================
 

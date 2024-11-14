@@ -47,11 +47,9 @@ When bit 3 is set of the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` parameter the mou
 Other Notes
 ===========
 
-- The pilot does not have any control over the roll and pitch but can
-change the altitude with the throttle stick as in :ref:`altholdmode` or :ref:`loiter-mode`.
+- The pilot does not have any control over the roll and pitch but can change the altitude with the throttle stick as in :ref:`altholdmode` or :ref:`loiter-mode`.
 
-- The pilot can control the yaw of the copter, but the autopilot will not
-retake control of the yaw until circle mode is re-engaged.
+- The pilot can control the yaw of the copter, but the autopilot will not retake control of the yaw until circle mode is re-engaged.
 
 - If the Rover cannot maintain a track close the  circle desired it will automatically decrease speed until it can maintain the desired track.
 
