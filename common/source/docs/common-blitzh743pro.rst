@@ -4,10 +4,6 @@
 iFlight BLITZ Pro H743
 ======================
 
-.. image:: ../../../images/
-    :target: ../_images/
-
-
 The BLITZ H743 Pro is a flight controller produced by `iFlight <https://shop.iflight.com/BLITZ-H7-Pro-Flight-Controller-Pro2203>`_.
 
 Specifications
