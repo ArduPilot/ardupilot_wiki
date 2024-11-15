@@ -13,6 +13,8 @@ To autoland the plane you need to add a :ref:`NAV_LAND <mav_cmd_nav_land>` comma
 
 In most cases, the altitude should be set to 0. During the final flare portion of the landing, the autopilot will shut down the throttle and hold the current heading, controlled by the parameters described below.
 
+.. note:: the altitude is relative to home, which is set at arming. If you arm while holding for a hand launch, this means home altitude will be several meters above the ground!
+
 For many vehicles, most of the parameters associated with autolanding can be left at their defaults. The basic parameters are covered below in the Basic Autolanding Section for vehicles not using an airspeed sensor and/or rangefinder. For more advanced configuration, see the sections listed below:
 
 .. toctree::
