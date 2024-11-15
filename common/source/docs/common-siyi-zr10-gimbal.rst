@@ -2,11 +2,11 @@
 
 [copywiki destination="plane,copter,rover"]
 
-==========================================
-SIYI ZR10, ZR30, ZT6, ZT30, and A8 Gimbals
-==========================================
+=========================================
+SIYI A8, ZR10, ZR30, ZT6 and ZT30 Gimbals
+=========================================
 
-The `SIYI ZR10 <https://shop.siyi.biz/products/siyi-zr10>`__, `ZR30 <https://shop.siyi.biz/products/siyi-zr30>`__ and `A8 <https://shop.siyi.biz/products/siyi-a8-mini>`__  are 3-axis gimbals and camera which can communicate with ArduPilot using a custom serial protocol.
+The `SIYI A8 <https://shop.siyi.biz/products/siyi-a8-mini>`__, `ZR10 <https://shop.siyi.biz/products/siyi-zr10>`__, `ZR30 <https://shop.siyi.biz/products/siyi-zr30>`__, `ZT6 <https://shop.siyi.biz/products/siyi-zt6>`__ and `ZT30 <https://shop.siyi.biz/products/siyi-zt30>`__ are 3-axis gimbals and camera which can communicate with ArduPilot using a custom serial protocol
 
 .. image:: ../../../images/siyi-zr10-gimbal.png
     :target: https://shop.siyi.biz/products/zr10
@@ -83,6 +83,30 @@ Instead of using a UART serial connection to control the gimbal, an Ethernet vir
 
 An example of the setup of the gimbal in a networked ArduPilot vehicle system is detailed in :ref:`common-ethernet-vehicle`
 
+To view the Siyi cammera's live video over Ethernet use the Siyi Assistant to set the "IP Config", "Coding Format" and Video Output mode as shown below.  Note that the IP's first three numbers should match the telemetry system being used (e.g. :ref:`Herelink <common-herelink>`, Siyi MK32, etc) or PC the camera is connected to.  In image below shows the default IP address for Siyi gimbals
+
+.. image:: ../../../images/SIYI-Assistant.jpg
+    :target: ../_images/SIYI-Assistant.jpg
+
+The video is available using an RTSP URL which can vary by camera type.  Note the URL's IP address should match the camera's IP address that was entered into the Siyi Assistant above
+
+- A8, ZR10: rtsp://192.168.144.25:8554/main.264
+- ZT6 (IR): rtsp://192.168.144.25:8554/video1
+- ZT6 (rgb): rtsp://192.168.144.25:8554/video2
+
+If connected to a PC, `VLC <https://www.videolan.org/>`__ can be used to test the feed
+
+- Open VLC
+- Select "Media", "Open Network Stream" and enter the RTSP URL
+
+.. image:: ../../../images/siyi-a8-vlc.png
+    :target: ../_images/siyi-a8-vlc.png
+
+If using QGC, the live video can be configured from the "Application Settings", "General" screen.  Set "Source" to "RTSP Video Stream" and "RTSP URL" to one of the RTSP URLs listed above
+
+.. image:: ../../../images/siyi-a8-qgc.png
+    :target: ../_images/siyi-a8-qgc.png
+
 Downloading Images and Video
 ----------------------------
 
@@ -91,4 +115,4 @@ Images and videos captured by the camera can be remotely downloaded to a compani
 Control and Testing
 -------------------
 
-See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
+See :ref:`Gimbal / Mount Controls <common-mount-targeting>` and :ref:`Camera Controls <common-camera-controls>`  for details on how to control the camera and gimbal using RC, GCS or Auto mode mission commands
