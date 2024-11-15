@@ -15,7 +15,9 @@ System Configuration
 
 Equipment Used
 --------------
+
 (donated by CUAV , SIYI, CubePilot, and BotBlox for this article)
+
 - Hexsoon EDU650 Multicopter from CubePilot
 - CUAV Pixhawk V6X
 - SIYI A8 Mini Gimbal/HD Camera
@@ -23,7 +25,10 @@ Equipment Used
 - BotBlox ArduPilot Ethernet Switch
 
 Note: many other brands of gimbals/cameras/radio control systems/autopilots are Ethernet capable and can be used in similar configurations
-# Ethernet Connectivity
+
+Ethernet Switch
+---------------
+
 Since there are more than 2 Ethernet devices in the system, it is truly a network and to provide interconnectivity an Ethernet Switch is used. It forms the "heart" of the system. In this case, it's a small BotBlox switch specifically designed for ArduPilot applications with convenient JST_GH 1.25mm connectors:
 
 .. image:: ../../../images/botblox_switch.png
