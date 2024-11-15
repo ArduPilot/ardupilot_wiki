@@ -13,10 +13,6 @@ The `SIYI ZR10 <https://shop.siyi.biz/products/siyi-zr10>`__, `ZR30 <https://sho
 
 .. warning::
 
-    Support for these gimbals is available in ArduPilot 4.3.1 (and higher)
-
-.. warning::
-
     The Siyi A2 is not supported
 
 Where to Buy
