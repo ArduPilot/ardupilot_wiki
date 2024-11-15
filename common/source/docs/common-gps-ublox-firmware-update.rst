@@ -10,9 +10,9 @@ Firmware Upgrade Procedure
 --------------------------
 
 - `Download u-center from u-blox.com <https://www.u-blox.com/en/product/u-center>`__ and install on your PC (Windows only)
-- Open the `u-Blox ZED-F9P website <https://www.u-blox.com/en/product/zed-f9p-module#tab-documentation-resources>`__
+- Open the `u-Blox ZED-F9P website <https://www.u-blox.com/en/product/zed-f9p-module?legacy=Current#Documentation-&-resources>`__
 - Scroll down and click on the "Documentation & resources" button
-- Scroll down to the "Firmware Update" section and download the latest firmware ("ZED-F9P HPG 1.13 firmware" as of Oct 2020)
+- Scroll down to the "Firmware Update" section and download the latest firmware ("ZED-F9P L1/L2 HPG 1.50 firmware" as of Jul 2024)
 - Connect the GPS to your PC using a USB cable
 - Open u-center, select the COM port and connect
 
@@ -37,13 +37,4 @@ Firmware Upgrade Procedure
 
   .. image:: ../../../images/gps-ublox-f9p-firmware-update.png
       :target: ../_images/gps-ublox-f9p-firmware-update.png
-      :width: 450px
-
-Configure Satellite Constellations
-----------------------------------
-
-ArduPilot does not automatically configure the F9's enabled constellations so this should be set manually using u-center as shown below
-
-  .. image:: ../../../images/gps-ublox-f9p-satellite-config.png
-      :target: ../_images/gps-ublox-f9p-satellite-config.png
       :width: 450px
