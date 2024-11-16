@@ -15,7 +15,6 @@ Where to Buy
 
 - `AliExpress <https://www.aliexpress.com/item/3256805858003783.html>`__
 
-==============
 Specifications
 ==============
 
