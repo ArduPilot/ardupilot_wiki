@@ -139,15 +139,16 @@ Closed Hardware
     Mateksys H743-Wing/MINI/SLIM/WLITE <common-matekh743-wing>
     MFT-SEMA100 <common-mft-sema100>
     MicoAir405v2/Mini <common-MicoAir405v2>
-    MicoAir NxtPX4v2 <common-NxtPX4v2>
-    ModalAI Flight core <https://www.modalai.com/products/flight-core>
     MicoAir743 <common-MicoAir743>
+    NxtPX4v2 <common-NxtPX4v2>
+    ModalAI Flight core <https://www.modalai.com/products/flight-core>
     mRo ControlZero Classic <https://store.mrobotics.io/product-p/m10048d.htm>
     mRo ControlZero F7 <common-mro-control-zero-F7>
     mRo ControlZero H7 <https://store.mrobotics.io/mRo-Control-Zero-H7-p/mro-ctrl-zero-h7.htm>
     mRo COntrolZero H7 OEM <https://store.mrobotics.io/product-p/m10059d.htm>
     mRo Pixracer Pro (H7) <common-pixracer-pro>
     mRo Nexus <common-mro-nexus>
+    MUPilot <common-MUPilot>
     Omnibus F4 AIO/Pro <common-omnibusf4pro>
     OmnibusNanoV6 <common-omnibusnanov6>
     Omnibus F7V2 <common-omnibusf7>
