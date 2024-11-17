@@ -72,7 +72,6 @@ Unidirectional Rangefinders
     HC-SR04 Sonar <common-rangefinder-hcsr04>
     JAE JRE-30 <common-rangefinder-jae-jre-30>
     JSN-SR04T Sonar <common-jsn-sr04t>
-    LD-06 TOF Lidar <common-ld06>
     LeddarTech Leddar One <common-leddar-one-lidar>
     LeddarTech LeddarVu8 <common-leddartech-leddarvu8-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
@@ -94,6 +93,7 @@ Omnidirectional Proximity Rangefinders
 .. toctree::
     :maxdepth: 1
 
+    LDRobot LD-06 TOF <common-ld06>
     Lightware SF40/C (360 degree) <common-lightware-sf40c-objectavoidance>
     Lightware SF45/B (350 degree) <common-lightware-sf45b>
     Nanoradar MK72 (112 degree) <common-rangefinder-mr72>
