@@ -41,6 +41,7 @@ Then one of the following will happen:
   - **3** : SmartRTL or RTL - the vehicle will switch to :ref:`SmartRTL <smartrtl-mode>` mode if possible, if not possible (because SmartRTL's position buffer is full) the vehicle will switch to :ref:`RTL <rtl-mode>`. If RTL is also not possible (because of no good position estimate) the vehicle will switch to :ref:`Land <land-mode>`
   - **4** : SmartRTL or Land - the vehicle will switch to :ref:`SmartRTL <smartrtl-mode>` mode if possible, if not possible (because SmartRTL's position buffer is full) the vehicle will switch to :ref:`Land <land-mode>`
   - **5** : Terminate - the vehicle will disarm the motors. This is a dangerous option that should not be used in most cases
+  - **6** : Auto DO_LAND_START or RTL - the vehicle will jump to the nearest "DO_LAND_START" mission item or RTL if no "DO_LAND_START" mission item has been programmed.
 
 As with all failsafes, the user can re-take control of the vehicle by changing the flight mode switch to another mode. The battery failsafe will not trigger again unless the two-layer failsafe is setup (see below)
 
