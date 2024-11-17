@@ -1,15 +1,14 @@
 .. _common-ld06:
 
 [copywiki destination ="plane,copter,rover,blimp"]
-===========
-LD-06 Lidar
-===========
+===================
+LDRobot LD-06 Lidar
+===================
 
 This Lidar is supplied by numerous sources:
 
 - `innomaker <https://www.inno-maker.com/product/lidar-ld06/>`__
-- `Yaboom <https://category.yahboom.net/products/ld06-dtof>`__
-- `LDROBOT <https://www.ldrobot.com>`__
+- `LDROBOT <https://www.ldrobot.com/SensorIndex>`__
 
 .. image:: ../../../images/ld-06.jpg
        :width: 480px
