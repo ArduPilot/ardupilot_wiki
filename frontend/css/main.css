@@ -14,8 +14,8 @@
 html {
     font-family: Oxygen;
     font-weight: 400;
-    font-size: 15px;
-    line-height: 1.42857143;
+    font-size: 1em;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -74,6 +74,7 @@ html {
 
 .col_min {
     min-height: 300px;
+    aspect-ratio: 4/3;
 }
 
 .bg-dark {
