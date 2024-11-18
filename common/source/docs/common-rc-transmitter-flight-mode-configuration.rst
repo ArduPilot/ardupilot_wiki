@@ -5,7 +5,7 @@ RC Transmitter Flight Mode Configuration
 ========================================
 
 This article shows how you can enable up to 6 autopilot control/flight
-modes to be set from your RC transmitter.
+modes to be set from your RC transmitter via the flight mode channel (:ref:`FLTMODE_CH` for plane/copter, :ref:`MODE_CH` for rover). Flight mode changes can also be made via RC channels setup as :ref:`common-auxiliary-functions`.
 
 .. _common-rc-transmitter-flight-mode-configuration_flight_modes_configuration:
 
@@ -81,14 +81,14 @@ monitors for mode changes.
 
 [site wiki="copter"]
 On Copter this is configurable using the :ref:`FLTMODE_CH <FLTMODE_CH>`
-parameter. 
+parameter. Default is channel 5. 
 [/site]
 [site wiki="plane"]
 On Plane this is configurable using the :ref:`FLTMODE_CH <FLTMODE_CH>`
-parameter. 
+parameter. DEfault is channel 8.
 [/site]
 [site wiki="rover"]
-On Rover this is configurable using the :ref:`MODE_CH <rover:MODE_CH>` parameter
+On Rover this is configurable using the :ref:`MODE_CH <rover:MODE_CH>` parameter. Default is channel 8,
 [/site]
 
 Transmitter configuration
@@ -148,6 +148,13 @@ Simply select two switches (one must be three position) and add these mixes on t
 
 .. image:: ../../../images/OpenTX-flight-mode-setup.jpg
     :target: ../_images/OpenTX-flight-mode-setup.jpg
+
+- **TX16 style transmitters with 6 position switch**
+
+Setup your flight mode channel using "6P', the six position switch, as its source, but with a weighted curve to move each position to be centered in ArduPilot's required PWM values for each mode selection as shown below:
+
+.. image:: ../../../images/mode_curve.png
+    :target: ../_images/mode_curve.png
 
 -  `JR XG8 DMSS <https://www.diydrones.com/forum/topics/how-to-set-up-6-apm-flight-modes-on-1-channel-of-jr-xg8-rc>`__
 -  `JR9303 <https://diydrones.com/profiles/blogs/how-to-program-6-flight-modes>`__
