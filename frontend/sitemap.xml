@@ -6,11 +6,72 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
-<url>
-  <loc>https://ardupilot.org/</loc>
-  <lastmod>2021-10-23</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
+  <url>
+    <loc>https://ardupilot.org/</loc>
+    <lastmod>2024-01-12T02:15:03+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://ardupilot.org/ardupilot/index.html</loc>
+    <lastmod>2024-11-18T08:48:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://ardupilot.org/dev/index.html</loc>
+    <lastmod>2024-11-18T08:49:58+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ardupilot.org/copter/index.html</loc>
+    <lastmod>2024-11-18T08:14:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ardupilot.org/plane/index.html</loc>
+    <lastmod>2024-11-18T08:47:21+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ardupilot.org/rover/index.html</loc>
+    <lastmod>2024-11-18T07:40:58+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ardupilot.org/antennatracker/index.html</loc>
+    <lastmod>2024-11-18T07:16:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ardupilot.org/blimp/index.html</loc>
+    <lastmod>2024-11-18T07:43:49+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ardupilot.org/planner/index.html</loc>
+    <lastmod>2024-11-18T08:50:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ardupilot.org/planner2/index.html</loc>
+    <lastmod>2024-11-18T08:48:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ardupilot.org/mavproxy/index.html</loc>
+    <lastmod>2024-11-18T07:41:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
 
 
 </urlset>
