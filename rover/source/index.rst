@@ -43,4 +43,3 @@ You can explore a few of these applications in our :ref:`Video Demos <rover-vide
     Peripheral Hardware <docs/common-optional-hardware>
     Additional Information <docs/additional-information>
     User Alerts <docs/common-user-alerts>
-    Records <docs/records>
