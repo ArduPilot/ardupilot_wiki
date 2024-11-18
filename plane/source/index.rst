@@ -109,7 +109,6 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
 .. toctree::
    :maxdepth: 4
    :hidden:
-   
 
     Introduction to Plane <docs/plane-introduction>
     Choosing an Autopilot <docs/common-autopilots>
@@ -123,5 +122,5 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
     Peripheral Hardware <docs/common-optional-hardware>
     Additional Information <docs/additional-information>
     User Alerts <docs/common-user-alerts>
-    Records <docs/records>
+
 

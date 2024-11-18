@@ -191,7 +191,6 @@ Getting more info
    Peripheral Hardware <docs/common-optional-hardware>
    Additional Information <docs/additional-information>
    User Alerts <docs/common-user-alerts>
-   Records <docs/records>
 
 
 .. |TOP_COL_LEFT| replace:: This is the full-featured, :ref:`open-source <dev:license-gplv3>` 

@@ -26,6 +26,15 @@ the wiki.
 [site wiki="plane, copter, rover, sub, blimp"]
     Ready-To-Use vehicles <common-rtf>
 [/site]
+[site wiki="plane"]
+    Records <records>
+[/site]
+[site wiki="copter"]
+    Records <records>
+[/site]
+[site wiki="rover"]
+    Records <records>
+[/site]
     Stores <common-stores>
     Top Contributors <common-team>
 [site wiki="plane, copter, rover"]    
