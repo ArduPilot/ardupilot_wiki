@@ -16,15 +16,15 @@ Features
 * 5 UARTs
 * 12 PWM outputs
 * 2 CANs
-* 2 I2Cs
+* 3 I2Cs
 
 
 Physical
 ========
-.. image:: ../../../images/MFT-SEMA100_TopView.jpeg
-   :target: ../_images/MFT-SEMA100_TopView.jpeg
-.. image:: ../../../images/MFT-SEMA100_BottomView.jpeg
-   :target: ../_images/MFT-SEMA100_BottomView.jpeg
+.. image:: ../../../images/MFT-SEMA100_TopView.png
+   :target: ../_images/MFT-SEMA100_TopView.png
+.. image:: ../../../images/MFT-SEMA100_BottomView.png
+   :target: ../_images/MFT-SEMA100_BottomView.png
 
 
 UART Mapping
