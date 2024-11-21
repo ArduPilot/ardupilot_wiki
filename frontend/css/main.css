@@ -13,10 +13,17 @@
 html {
     font-family: Oxygen;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 1.2vw; /* Adjust this value based on the appearance you want */
     line-height: 1.42857143;
     -webkit-font-smoothing: antialiased;
 }
+
+@media (max-width: 600px) {
+    html {
+        font-size: 14px; /* or your preferred px value */
+    }
+}
+
 
 /*
 // This code below if uncomment makes the dropdown "automatic". It means, it is not necessary to click it, just pass the mouse over.
