@@ -39,23 +39,6 @@
 
     <link rel="stylesheet" href="css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script>
-        function loadContent(elementId, file) {
-            fetch(file)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.text();
-                })
-                .then(text => document.getElementById(elementId).innerHTML = text)
-                .catch(e => console.error('Error:', e));
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            loadContent("headerID", "includes/_topbar.html");
-        });
-    </script>
     <script defer data-domain="ardupilot.org"
             src="https://plausible.ardupilot.org/js/script.outbound-links.js"></script>
 
@@ -64,9 +47,98 @@
 <body>
 
 <header>
-    <div id="headerID">
-        <!-- NAVBAR -->
-    </div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                <picture>
+                    <source media="(max-height: 480px)" type="image/webp"
+                            srcset="images/ArduPilot-Motto.webp">
+                    <source media="(max-height: 480px)" type="image/png" srcset="images/ArduPilot-Motto.png">
+                    <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid">
+                </picture>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav mr-auto  ">
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://www.ardupilot.org">HOME</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">ABOUT</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="https://ardupilot.org/dev/docs/events.html">Events</a>
+                            <a class="dropdown-item"
+                               href="https://ardupilot.org/dev/docs/common-history-of-ardupilot.html">History</a>
+                            <a class="dropdown-item" href="https://ardupilot.org/dev/docs/license-gplv3.html">License</a>
+                            <a class="dropdown-item"
+                               href="https://ardupilot.org/ardupilot/docs/common-partners.html">Partners</a>
+                            <!-- There is a partners.html waiting for be enhanced -->
+                            <a class="dropdown-item"
+                               href="https://ardupilot.org/dev/docs/common-training-centers.html">Schools</a>
+                            <a class="dropdown-item" href="https://ardupilot.org/ardupilot/docs/common-team.html">Team</a>
+                            <!-- There is a team.html waiting for be enhanced -->
+                            <a class="dropdown-item" href="https://ardupilot.org/dev/docs/common-team.html">Top
+                                Contributors</a>
+                            <a class="dropdown-item" href="https://ardupilot.org/dev/docs/job-openings.html">Volunteer</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discuss.ardupilot.org/c/blog">BLOGS </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-nowrap"
+                           href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html">USE CASES</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ardupilot.org/ardupilot">DOCUMENTATION</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ardupilot.org/ardupilot/docs/common-stores.html">STORES</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">COMMUNITY</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown02">
+                            <a class="dropdown-item"
+                               href="https://ardupilot.org/ardupilot/docs/common-commercial-support.html">Commercial
+                                Support</a>
+                            <a class="dropdown-item"
+                               href="https://ardupilot.org/ardupilot/docs/common-contact-us.html">Contact Us</a>
+                            <a class="dropdown-item"
+                               href="https://ardupilot.org/dev/docs/ardupilot-discord-server.html">Developer Chat</a>
+                            <a class="dropdown-item" href="https://discuss.ardupilot.org">Discuss Forums</a>
+                            <a class="dropdown-item" href="https://www.facebook.com/groups/ArduPilot.org">Facebook</a>
+                            <a class="dropdown-item" href="https://ardupilot.org/dev/docs/gsoc.html">GSOC</a>
+                            <a class="dropdown-item" href="https://twitter.com/hashtag/Ardupilot?src=hash">Twitter</a>
+                            <a class="dropdown-item"
+                               href="https://www.youtube.com/channel/UCtqkaA8BWDpISGNAfivUSHw">YouTube</a>
+                            <a class="dropdown-item"
+                               href="https://www.instagram.com/explore/tags/ardupilot/?hl=en">Instagram</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
 </header>
 
 <main role="main" class="container">
