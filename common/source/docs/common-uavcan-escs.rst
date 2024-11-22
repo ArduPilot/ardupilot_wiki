@@ -16,6 +16,7 @@ List of DroneCAN ESCs
 =====================
 
 
+- :ref:`AM32 ESCs <common-am32-escs>`
 - :ref:`Currawong Velocity ESC <common-velocity-can-escs>`
 - :ref:`Hargrave Technologies DroneCAN ESCs <common-hargrave-dronecan-escs>`
 - :ref:`Hobbywing CAN ESCs <common-hobbywing-dronecan-esc>`
