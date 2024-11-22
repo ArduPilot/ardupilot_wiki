@@ -18,6 +18,7 @@ These are the available options that allow a vehicle to estimate its position wi
     Luxonis OAK-D <common-vio-oak-d>
     MarvelMind Beacons <common-marvelmind>
     ModalAI VOXL <common-modalai-voxl>
+	ModalAI VOXL2 <common-modalai-voxl2>
     Nooploop Beacons <common-nooploop>
 [site wiki="copter"]
     Nokov Indoor Optical Tracking <https://discuss.ardupilot.org/t/nokov-indoor-optical-tracking-system>
