@@ -42,7 +42,6 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `uAvionix <https://uavionix.com/>`__
 * `UAV Systems International <https://uavsystemsinternational.com/collections/all>`__
 * `3DXR <https://www.3dxr.co.uk/>`__
-* `Pogo <https://shop384515901.taobao.com/>`__
 
 The `ArduPilot Swag store is here <https://www.redbubble.com/people/ardupilot/shop?asc=u>`__.
 
