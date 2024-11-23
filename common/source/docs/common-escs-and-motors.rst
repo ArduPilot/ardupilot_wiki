@@ -45,18 +45,17 @@ Protocols
 
     PWM, OneShot and OneShot125 ESCs <common-brushless-escs>
     DShot ESCs <common-dshot-escs>
-    KDE CAN ESCs <common-kde-can-escs>
     DroneCAN ESCs <common-uavcan-escs>
-    AM32 ESCs <common-am32-escs>
-    Currawong Velocity ESCs <common-velocity-can-escs>
-    Hobbywing DroneCAN ESCs <common-hobbywing-dronecan-esc>
+    Currawong Velocity PiccoloCAN ESCs <common-velocity-can-escs>
+    KDE CAN ESCs <common-kde-can-escs>
     FETtec OneWire ESCs <common-fettec-onewire>
 
 .. toctree::
    :hidden:
 
    common-hargrave-dronecan-escs
-
+   common-hobbywing-dronecan-esc
+   common-am32-escs
 
 ESCs using BLHeli32, AM32, or BLHeli-S Configuration Firmware
 -------------------------------------------------------------
@@ -101,5 +100,3 @@ ESC wiring and Large QuadPlane ESC Issues
     ESC Grounding and Wiring Considerations<common-esc-grounding>
     ESC Signalling Issues <common-esc-issues>
     ESC Terminology <common-esc-guide>
-
-
