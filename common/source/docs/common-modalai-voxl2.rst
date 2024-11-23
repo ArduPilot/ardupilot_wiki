@@ -1,55 +1,56 @@
-.. _common-modalai-voxl:
+.. _common-modalai-voxl2:
 
-============
-ModalAI VOXL
-============
+==============
+ModalAI VOXL 2
+==============
 
-[copywiki destination="copter,rover,blimp"]
+[copywiki destination="copter,plane,rover,blimp"]
 
-.. image:: ../../../images/modalai-voxl.png
+.. image:: ../../../images/modalai-voxl2.png
     :width: 450px
 
-This article explains how to setup a `ModalAI VOXL-CAM <https://www.modalai.com/en-jp/pages/voxl-cam-perception-engine>`__ for use with ArduPilot as a substitude for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto to work.
-
-The VOXL board in the VOXL-CAM can be purchased `individually <https://www.modalai.com/collections/voxl/products/voxl>`__ and be used as a companion computer. The newer and more powerful :ref:`VOXL 2 companion computer <common-modalai-voxl2>` is also available.
+This article explains how to setup a `ModalAI VOXL 2 <https://www.modalai.com/en-jp/products/voxl-2>`__ for use with ArduPilot allowing position control without a GPS in modes including Loiter, PosHold, RTL and Auto.
 
 .. note::
 
-    VOXL camera support is available in ArduPilot 4.3 (and higher).
+    VOXL 2 support is available in ArduPilot 4.6 (and higher).
 
 What to Buy
 -----------
 
-- `VOXL CAM + TOF Dev Kit <https://www.modalai.com/products/voxl-cam?variant=39593458827315>`__
-- `Flight Controller Telemetry Cable <https://www.modalai.com/collections/accessories/products/voxl-to-flight-controller-telemetry-cable>`__
-- Optionally an 8GB or larger SD Card
+Any of the following products can run ArduPilot
+
+- `VOXL 2 Flight Deck <https://www.modalai.com/products/voxl-2-flight-deck>`__
+- `Starling 2 <https://www.modalai.com/products/starling-2>`__
+- `Starling 2 Max <https://www.modalai.com/products/starling-2-max>`__
 
 Hardware Setup
 --------------
 
-.. image:: ../../../images/modalai-voxl-autpilot.png
-    :target: ../_images/modalai-voxl-autpilot.png
-    :width: 500px
+- Install ArduPilot as described `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_QURT/ap_host/service>`__
+- Pre-built binaries can be found here for `Copter <https://firmware.ardupilot.org/Copter/latest/QURT/>`__, `Plane <https://firmware.ardupilot.org/Plane/latest/QURT/>`__ and `Rover <https://firmware.ardupilot.org/Rover/latest/QURT/>`__
+- To install copy files as follows
 
-- Connect the VOXL camera to the autopilot as shown above.  In these instructions the autopilot's Telem2 port is used.
-- Mount the VOXL camera on the front of the vehicle oriented so that the wifi antennas extend from the bottom of the camera
+    - voxl-ardupilot.service to /etc/systemd/system/
+    - voxl-ardupilot to /usr/bin/
+    - build/QURT/ardupilot to /usr/bin/
+    - build/QURT/bin/arducopter to /usr/lib/rfsa/adsp/ArduPilot.so
+    - copy the right parameter file from `Tools/Frame_params/ModalAI/ <https://github.com/ArduPilot/ardupilot/tree/master/Tools/Frame_params/ModalAI>`__ to /data/APM/defaults.parm
+
+- You can then use
+
+    - systemctl enable voxl-ardupilot.service
+    - systemctl start voxl-ardupilot
 
 VOXL Camera Configuration
 -------------------------
 
-`ModalAI's VOX-CAM setup instructions here <https://docs.modalai.com/voxl-cam-user-guide-core/>`__
-
-The minimum steps to get the camera working include
-
-- `Setup adb <https://docs.modalai.com/setup-adb/>`__ on an Ubuntu workstation
-- Connect the camera to the Ubuntu workstation, start and adb shell and `run voxl-configure-vision-px4 <https://docs.modalai.com/voxl-vision-px4-installation/>`__ (Note: you may simply press <enter> when asked for an IP address)
-- run "systemctl enable voxl-mavlink-server" to configure the mavlink server to start automatically
-- Optionally `run "systemctl status voxl-vision-px4" <https://docs.modalai.com/voxl-cam-user-guide-core/#view-visual-inertial-odometry-data>`__ to check if VOXL is producing good position estimates
+Details coming soon
 
 Autopilot Configuration
 -----------------------
 
-Connect to the autopilot with a ground station (i.e. Mission Planner) and check that the following parameters are set:
+Connect to the autopilot with a ground station (i.e. Mission Planner) and check that the following parameters are set
 
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 2 (MAVLink2).  Note this assumes the camera is connected to the autopilot's "Telem2" port.
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 921 (921600 baud)
@@ -59,7 +60,7 @@ Connect to the autopilot with a ground station (i.e. Mission Planner) and check 
 - Set :ref:`VISO_POS_X <VISO_POS_X>`, :ref:`VISO_POS_Y <VISO_POS_Y>`, :ref:`VISO_POS_Z <VISO_POS_Z>` to the camera's position on the drone relative to the center-of-gravity.  See :ref:`sensor position offset compensation <common-sensor-offset-compensation>` for more details
 - Optionally increase :ref:`VISO_QUAL_MIN <VISO_QUAL_MIN>` to 10 (or higher) to only consume estimates from the camera when the quality is 10% (or higher)
 
-If only the VOXL camera will be used for position estimation and heading (e.g. No GPS):
+If only the VOXL 2 camera will be used for position estimation and heading (e.g. No GPS):
 
 - :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` = 6 (ExternalNav)
 - :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 6 (ExternalNav)
@@ -90,13 +91,8 @@ More details on :ref:`GPS/Non-GPS Transitions can be found here <common-non-gps-
 
 To use an optical flow and rangefinder for backup in case the VOXL fails, a Lua applet for `ExternalNav/Optical flow transitions is here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/ahrs-source-extnav-optflow.lua>`__
 
-EKF3 Source Transitions with OpticalFlow
-========================================
-
-If switching between this and OpticalFlow is desired, see :ref:`extnav-optiflow-transitions`
-
 Videos
 ------
 
-..  youtube:: CikqIRzXlRc
+..  youtube:: tsLEcEUyBYs
     :width: 100%

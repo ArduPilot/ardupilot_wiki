@@ -185,11 +185,12 @@ If you have gotten this far, congratulations you have ported ArduPilot to a new 
 
 For widely available boards it is very likely we will help you get the board on the official list of supported boards including automatic firmware builds, easy uploading through the ground stations and onto our wiki! In any case, we welcome new ports so please contact us.
 
-In order to add the board to the official build list, get a board ID number reserved by submitting a change PR to this `list <https://github.com/ArduPilot/ardupilot/blob/master/Tools/AP_Bootloader/board_types.txt>`__ ,for a new board ID next in the list above 1000.
+In order to add the board to the official build list, get a board ID number reserved by submitting a change PR to this `list <https://github.com/ArduPilot/ardupilot/blob/master/Tools/AP_Bootloader/board_types.txt>`__ ,for a new board ID next in the list above 1000. Use the text identifier for the hwdef files, not the board number directly.
 
 Then submit a pull request, adding the following to the board's subfolder in the AP_HAL_ChibiOS/hwdef library folder, and containing:
-
+A commit titled hwdef:add <your board name here> and containing:
 - hwdef.dat with correct board id
 - hwdef-bl.dat with correct board id
 - README.md with board pinout, images, and configuration data needed for a wiki page
-- defaults.parm if board specific defaults are needed
+- defaults.parm if board specific defaults are needed. Note do not define things already defaulted. Put Serial port protocol default changes and Battery monitor params in the hwdef file,not in the defautls.param file.
+and a commit tilted Tools: add your board name here> bootloader containing the bootloader.
