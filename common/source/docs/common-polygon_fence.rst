@@ -12,6 +12,8 @@ ArduPilot includes support for polygon fences with up to 70 points and for pure 
 
 This feature is an extension of the simpler home-based :ref:`cylindrical fence <common-ac2_simple_geofence>` and can be combined with it.
 
+.. warning:: While Copter and Rover can use :ref:`common-object-avoidance-landing-page` strategies to avoid most fence breaches, Plane only has airborne aircraft :ref:`ADSB avoidance <common-ads-b-receiver>`. For safety, plan your polygon fences anticipating the path of whatever :ref:`FENCE_ACTION<FENCE_ACTION>` is selected upon breach. This usually means significantly larger fence boundaries than what is being protected.
+
 You can have multiple circular or polygon inclusion or exclusion fences, all active at the same time. The example PLAN screen from Mission Planner, below, shows examples of each. Note that they can overlap, with one another. So in the example below the Plane could fly within the union of the large polygonal fence AND within the circular overlapping fence without breaching. The example below is not realistic, since with the large inclusion fence, the outside exclusion fences would never be reached and are superfluous, but it shows all the different kinds of fences that can be created.
 
 .. image:: ../../../images/fence_examples.png
@@ -32,8 +34,9 @@ Number of fences
 
 Fences are stored in a separate reserved area of flash in the autopilot from mission items and rally points. The number that can be stored depends on their complexity, but when you go to "Write" them to the autopilot, an error message will be displayed if storage limit is exceeded. In this case, you can enable storage on the SD Card by setting the :ref:`BRD_SD_FENCE<BRD_SD_FENCE>` parameter to a non-zero size, which will store the fences on SD card instead of internal memory.
 
-Warnings:
-=========
+
+Other Warnings:
+===============
 
 -  The minimum recommended fence radius is 30m
 -  The fence requires the GPS to be functioning well so do not disable
