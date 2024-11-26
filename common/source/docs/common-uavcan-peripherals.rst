@@ -31,6 +31,8 @@ GPS/Combos
     Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>
     Holybro DroneCAN H-RTK F9P Rover <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-rover>
     Holybro DroneCAN H-RTK F9P Helical <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-helical>
+    Holybro H-RTK ZED-F9P Rover <https://holybro.com/products/h-rtk-zed-f9p-rover>
+    Holybro H-RTK NEO-F9P GPS Series <https://holybro.com/collections/h-rtk-neo-f9p-series>    
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     Matek M10Q-3100 DroneCAN GPS+Compass <http://www.mateksys.com/?portfolio=m10q-3100>
     Matek DroneCAN GNSS M10-L4-3100 <http://www.mateksys.com/?portfolio=m10-l4-3100>
@@ -54,6 +56,7 @@ Airspeed
 .. toctree::
     :maxdepth: 1
 
+    Holybro High Precision DroneCAN Airspeed Sensor - DLVR <https://holybro.com/products/high-precision-dronecan-airspeed-sensor-dlvr>
     Avionics Anonymous Airspeed + Temp <common-avanon-adc>
     FoxTech DroneCAN Airspeed/Compass <https://www.foxtechfpv.com/foxtech-aerofox-can-airspeed-compass.html>
     Matek DroneCAN DLVR-10 Airspeed Sensor <common-matek-uavcan-dlvr>
@@ -64,6 +67,7 @@ Smart Battery/Power Module
 .. toctree::
     :maxdepth: 1
 
+    Holybro PM08-CAN Power Module<https://holybro.com/products/dronecan-pm08-power-module-14s-200a>
     Aerotate DroneCAN Smart Battery<common-aerotate-dronecan-battery>
     CUAV DroneCAN Power Module <common-can-pmu>
     Matek CAN-L4-BM DroneCan PMU <http://www.mateksys.com/?portfolio=can-l4-bm>
