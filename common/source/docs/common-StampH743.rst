@@ -1,172 +1,266 @@
 .. _common-StampH743:
 
-=====================
-CBUnmanned H743 Stamp
-=====================
+=========================================
+H743 Stamp Flight Controller (& Low Cost)
+=========================================
 
-The `CBUnmanned H743 Stamp <https://cbunmanned.com/store>`_ is a flight controller loosely based on the FMUv6 standards & is designed for low volume OEMs as a drop in way to add ArduPilot to their custom hardware builds. It is a part of CBUnmanned's wider `"Stamp" Eco-System <https://wiki.cbunmanned.com/wiki/cbunmanned-stamp-eco-system>`_ , which brings together all the typical avionics hardware into a neat custom carrier PCB. Mounting footprints and symbols are available along with examples of basic usage on the  `Wiki <https://wiki.cbunmanned.com/wiki/cbunmanned-stamp-eco-system/h743-flight-controller>`_.
+The `CBUnmanned H743 Stamp <https://cbunmanned.com/store>`__ is a flight
+controller loosely based on the FMUv6 standards & is designed for low
+volume OEMs as a drop in way to add ArduPilot to their custom hardware
+builds. It is a part of CBUnmanned’s wider `“Stamp”
+Eco-System <https://cbunmanned.com/>`__, which brings together all the
+typical avionics hardware into a neat custom carrier PCB. Mounting
+footprints and symbols are available along with examples of basic usage
+on the `Wiki <https://wiki.cbunmanned.com/>`__.
+
+A “Low Cost” version is available with a limited feature set.
 
 
-.. image:: ../../../images/H743StampFrontBack.png
-   :target: ../_images/H743StampFrontBack.png
++----------------------+----------------------+
+| Full Featured Stamp  | Low Cost Stamp       |
++======================+======================+
+| |image1|             |  |image2|            |
++----------------------+----------------------+
 
+     
 Features
 ========
 
+-  Class leading H7 SOC.
 
-* Class leading H7 SOC.
-* Triple IMU sensors for extra redundancy.
-* Based on the FMU-V6 standards.
-* Micro SD Card for Logging/LUA Scripting.
-* Direct solder mounting or optional 1.27mm header.
-* x1 Ethernet and x2 CAN for easy integration with the next generation of UAV accessories.
-* All complicated/supporting circuitry is on-board, just power with 5v.
-* Just 22mm x 24.25mm & 1.9g.
+-  Direct solder mounting or optional 1.27mm header.
 
-Specifications
-==============
+-  All complicated/supporting circuitry is on-board, just power with 5v.
 
--  **Processor**
-
-  * STM32H743IIK6 microcontroller
-  * 480MHz
-  * 2Mb Flash
-  * 1Mb RAM
-
--  **Sensors**
+-  From Just 22mm x 24.25mm
 
 
-  * x2 Ivensense ICM-42688 IMU
-  * x1 Ivensense ICM-42670 IMU
-  * x1 Infineon DPS310 Barometer
-  * x1 Bosch BMM150 Magnetometer
++----------------------+----------------------+----------------------+
+| Item                 | Full Featured Stamp  | Low Cost Stamp       |
++======================+======================+======================+
+| Dimensions           | 22mm x 24mm          | 23mm x 25mm          |
++----------------------+----------------------+----------------------+
+| Weight               | 3g                   | 3g                   |
++----------------------+----------------------+----------------------+
+| **Processor**        | STM32H743IIK6        | STM32H743VIH6        |
++----------------------+----------------------+----------------------+
+|                      | 480MHz               | 480MHz               |
++----------------------+----------------------+----------------------+
+|                      | 2Mb Flash            | 2Mb Flash            |
++----------------------+----------------------+----------------------+
+|                      | 1Mb RAM              | 1Mb RAM              |
++----------------------+----------------------+----------------------+
+| **Sensors**          |                      |                      |
++----------------------+----------------------+----------------------+
+| IMU 1                | Ivensense ICM-42688  | Ivensense ICM-42670  |
++----------------------+----------------------+----------------------+
+| IMU 2                | Ivensense ICM-42688  | Not Fitted           |
++----------------------+----------------------+----------------------+
+| IMU 3                | Ivensense ICM-42670  | Not Fitted           |
++----------------------+----------------------+----------------------+
+| Barometer            | BMP280               | BMP280               |
++----------------------+----------------------+----------------------+
+| Compass              | BMM150               | Not Fitted           |
++----------------------+----------------------+----------------------+
+| Micro SD Card        | Yes                  | Yes                  |
++----------------------+----------------------+----------------------+
+| **IO**               |                      |                      |
++----------------------+----------------------+----------------------+
+| PWM                  | 10                   | 10                   |
++----------------------+----------------------+----------------------+
+| CAN                  | 2                    | 2                    |
++----------------------+----------------------+----------------------+
+| UART                 | 8 (3 with flow       | 8 (None with flow    |
+|                      | control)             | control)             |
++----------------------+----------------------+----------------------+
+| I2C                  | 2                    | 2                    |
++----------------------+----------------------+----------------------+
+| External SPI         | 1 (With custom FW    | 1 (With custom FW    |
+|                      | build)               | build)               |
++----------------------+----------------------+----------------------+
+| Ethernet             | Yes                  | No                   |
++----------------------+----------------------+----------------------+
+| Safety Button        | Yes                  | Yes                  |
++----------------------+----------------------+----------------------+
+| Analog               | 2                    | 2                    |
++----------------------+----------------------+----------------------+
+| Buzzer (PWM 11)      | Yes                  | Yes                  |
++----------------------+----------------------+----------------------+
+| USB                  | Yes                  | Yes                  |
++----------------------+----------------------+----------------------+
+| **Power**            |                      |                      |
++----------------------+----------------------+----------------------+
+| Input Voltage        | 5v                   | 5v                   |
++----------------------+----------------------+----------------------+
+| Typical Current      | 0.4 A                | 0.4 A                |
+| Consumption          |                      |                      |
++----------------------+----------------------+----------------------+
+| Independent Power    | 6 Separate Power     | No                   |
+| Domains              | Domains              |                      |
++----------------------+----------------------+----------------------+
 
--  **Power**
 
 
-  * 5v Main Power in
-  * x6 Independent Power Regulators
-  * x2 ADC Inputs for Voltage and Current Sense
+UART Mapping
+============
 
--  **Interfaces**
+Ardupilot -> STM32
 
+-  SERIAL0 -> USB
 
-  * x1 MicroSD card slot
-  * x8 UARTs inc RC, x3 with flow control
-  * x10 PWM outputs
-  * x2 I2C 
-  * x2 CAN
-  * x1 External SPI
-  * x1 Ethernet
-  * External Buzzer
-  * External Safety Switch 
-  * External USB connectors 
+-  SERIAL1 -> USART1
 
-Pinout
-======
+-  SERIAL2 -> USART2 (With RTS/CTS)\*
 
-.. image:: ../../../images/H743Pinout.png
-   :target: ../_images/H743Pinout.png
+-  SERIAL3 -> USART3
 
+-  SERIAL4 -> UART4
 
-UART Mapping (Yellow Fade)
-==========================
+-  SERIAL5 -> UART5 (With RTS/CTS)\*
 
-* SERIAL0 -> USB
-* SERIAL1 -> USART1
-* SERIAL2 -> USART2    (With RTS/CTS, DMA-enabled)
-* SERIAL3 -> USART3    (GPS1, DMA-enabled)
-* SERIAL4 -> UART4     (GPS2, DMA-enabled)
-* SERIAL5 -> UART5     (With RTS/CTS, DMA-enabled)
-* SERIAL6 -> USART6    (RCIN / IO coprocessor if fitted, DMA-enabled)
-* SERIAL7 -> UART7     (With RTS/CTS, DMA-enabled) 
-* SERIAL8 -> UART8
+-  SERIAL6 -> USART6 (Sbus In / IO coprocessor if fitted)
+
+-  SERIAL7 -> UART7 (With RTS/CTS)\*
+
+-  SERIAL8 -> UART8
+
+\*Serial 2, 5 & 7 have RTS/CTS pins (not available on the low cost
+version), the other UARTs do not have RTS/CTS.
+
+GPS 1 & 2 are on Serial 3 & 4 respectively.
+
 
 RC Input
 ========
 
-RC input is configured on the USART 6 Rx Pin. This pin allows all unidirectional RC protocols supported by ArduPilot. PPM is NOT supported. USART 6 Tx is available for use with bi-directional protocols, such as CRSF/ELRS.
+RC input is configured on the USART 6 Rx Pin. This pin allows all RC
+protocols compatible with direct connection to a H7 IC (SBus, CRSF etc),
+PPM is NOT supported.
 
-An optional IOMCU can be connected to this serial port, but a compatible custom build of the firmware would be required.
+USART 6 Tx is available for use with bi directional protocols.
 
-CAN Ports (Light Green Fade)
-============================
-
-2 CAN buses are available, each with a built in 120 ohm termination resistors.
-
-I2C (Maroon Fade)
-=================
-
-- I2C 3 - External With internal 2.2k Pull Up.
-- I2C 4 - External With internal 2.2k Pull Up.
-
-SPI (Cyan Fade)
-===============
-
-SPI 4 is available for use with external sensors alongside a Chip Select and Data Ready pin using custom built firwmare.
-
-PWM Output (Blue Fade)
-======================
-
-The Stamp supports up to 10 PWM outputs with D-Shot. The PWM outputs are in 3 groups:
-
-* PWM 1 - 4 in group 1 (Timer 5)
-* PWM 5 - 8 in group 2 (Timer 4)
-* PWM 9 & 10 in group 3 (Timer 2)
-
-Channels within the same group need to use the same output rate. If any channel in a group uses D-Shot then all channels in the group need to use D-Shot. BiDirectional DShot available on the first 8 outputs.
+An optional IOMCU can be connected to this serial port, a compatible
+custom build of the firmware required.
 
 
-Analog Inputs (Purple Fade)
-===========================
+CAN Ports
+=========
 
-The board has two ADC input channels for Voltage (0-3.3v) and Current (0-3.3v) measurement. Settings are dependent on the external hardware used. 
+2 CAN buses are available, each with a built in 120 ohm termination
+resistor.
 
-Ethernet (Green Fade)
-=====================
 
-Ethernet is available on 4 output pads and has internal magnetics supporting direct connection to external equipment, no need for a large RJ45 connector.
+I2C
+===
+
+I2C 1 - Internal for BMM150 Compass (not available on the low cost
+version)
+
+I2C 2 - Internal for BMP280 Barometer
+
+I2C 3 - External With internal 2.2k Pull Up
+
+I2C 4 - External With internal 2.2k Pull Up
+
+
+SPI
+===
+
+SPI 4 is available for use with external sensors alongside a Chip Select
+and Data Ready pin, compatible custom build of the firmware required.
+
+
+PWM Output
+==========
+
+The Stamp supports up to 10 PWM outputs with D-Shot.
+
+The PWM outputs are in 3 groups:
+
+-  PWM 1 - 4 in group 1
+
+-  PWM 5 - 8 in group 2
+
+-  PWM 9 & 10 in group 3
+
+Channels within the same group need to use the same output rate. If any
+channel in a group uses D-Shot then all channels in the group need to
+use D-Shot.
+
+BiDirectional DShot available on the first 8 outputs.
+
+A buzzer alarm signal is available on PWM 11.
+
+
+Analog Inputs
+=============
+
+The board has two ADC input channels for Voltage (0-3.3v) and Current
+(0-3.3v) measurement. Settings are dependent on the external hardware
+used.
+
+
+Ethernet
+========
+
+Ethernet is available on 4 output pads and has internal magnetics
+supporting direct connection to external equipment, without the need for
+a large RJ45 connector. (Not available on the low cost version).
+
 
 Compass
 =======
 
-The H743 Stamp has a built in compass, the BMM150. Due to potential interference the board is usually used with an external I2C or CAN compass as part of a GPS/Compass combination.
+The H743 Stamp has a built in compass, the BMM150. Due to potential
+interference the board is usually used with an external I2C or CAN
+compass as part of a GPS/Compass combination. (Not available on the low
+cost version).
+
 
 USB
 ===
 
-USB Signals D+ & D- are available to route to a suitable connector for your project.
+USB Signals D+ & D- are available to route to a suitable connector for
+your project.
+
 
 Safety Button
 =============
 
-Optional, if it is not fitted remove the check from arming mask. To activate short this pad to 3.3v with a momentary push button (Press & Hold).
+Optional, if it is not fitted remove the check from arming mask. To
+activate short this pad to 3.3v with a momentary push button (Press &
+Hold)
+
 
 Power
-=====
+=========
 
-A regulated 3.3v output is available from the stamp for use with the safety button. WARNING! This is shared with the main IC - Do NOT use for accessories. Keep current draw under 0.1A!
+A regulated 3.3v output is available from the stamp for use with the
+safety button. WARNING! This is shared with the main IC - Do NOT use for
+accessories. Keep current draw under 0.1A!
 
-The Stamp requires a stable 5v supply input of at least 1.5A. This directly powers the 5v components and supplies the 3.3v LDOs with power. Typical idle usage is 0.35A @ 5v.
+The Stamp requires a stable 5v supply input of at least 1.5A. This
+directly powers the 5v components and supplies the 3.3v LDOs with power.
+Typical idle usage is 0.35A @ 5v.
 
-Battery Monitoring
-==================
 
-The board has a built-in voltage sensor via the ``Voltage Sense`` pin, but no internal current sensor. An external current sensor can be connected to the ``Current Sense`` pin. Default parameters for both internal voltage and external current monitoring are set by default to the below :
-
- - :ref:`BATT_MONITOR<BATT_MONITOR>` 4
- - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 18
- - :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 19
- - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.1
- - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 64
- 
 Loading Firmware
 ================
 
-The board comes pre-installed with an ArduPilot compatible bootloader, allowing the loading of \*.apj firmware files with any ArduPilot compatible ground station. 
+The board comes pre-installed with an ArduPilot compatible bootloader,
+allowing the loading of \*.apj firmware files with any ArduPilot
+compatible ground station.
 
-Firmware Taget = CBU-H7-Stamp
+A built in button can be used to activate DFU Mode by pressing during
+power up. The DFU Activate pin is broken out to allow remote mounting of
+this button if required.
 
-A built in button can be used to activate DFU Mode by being pressed during power up. The DFU Activate pin is broken out to allow remote mounting of this button if required. 
+For the full featured please use firmware “CBU-H7-Stamp”
 
-[copywiki destination="plane,copter,rover,blimp"]
+For the low cost please use “CBU-H7-Stamp-LC”
+
+.. |image1| image:: ../../../images/fc-cbu-h7-stamp.jpg
+            :target: ../images/fc-cbu-h7-stamp.jpg
+.. |image2| image:: ../../../images/fc-cbu-h7-stamp-lc.jpg
+            :target: ../_images/fc-cbu-h7-stamp-lc.jpg
+
