@@ -31,7 +31,6 @@ Parameters files are fetched from autotest using requests
 from __future__ import print_function, unicode_literals
 
 import argparse
-import distutils
 import errno
 import filecmp
 import json
@@ -51,17 +50,19 @@ from urllib.parse import urlparse
 from concurrent.futures import ThreadPoolExecutor
 from typing import Optional, Dict, List
 
-
-from sphinx.application import Sphinx
+from frontend.scripts import get_discourse_posts
 import rst_table
 
 from codecs import open
 from datetime import datetime
-# while flake8 says this is unused, distutils.dir_util.mkpath fails
-# without the following import on old versions of Python:
-from distutils import dir_util  # noqa: F401
 
-from frontend.scripts import get_discourse_posts
+try:
+    from sphinx.application import Sphinx  # noqa: F401
+except ModuleNotFoundError as e:
+    print("Please make sure that you have run the SphinxSetup script for your system and that you have activated the",
+          "arudpilot-wiki-venv if it was created on your system")
+    print(e)
+    sys.exit(1)
 
 if sys.version_info < (3, 8):
     print("Minimum python version is 3.8")
@@ -365,14 +366,14 @@ def make_backup(site, destdir, backupdestdir):
         debug('Backing up: %s' % wiki)
 
         targetdir = os.path.join(destdir, wiki)
-        distutils.dir_util.mkpath(targetdir)
+        os.makedirs(targetdir, exist_ok=True)
 
         if not os.path.exists(targetdir):
             fatal("FAIL backup when looking for folder %s" % targetdir)
 
         bkdir = os.path.join(backupdestdir, str(building_time + '-wiki-bkp'), str(wiki))
         debug('Checking %s' % bkdir)
-        distutils.dir_util.mkpath(bkdir)
+        os.makedirs(bkdir, exist_ok=True)
         debug('Copying %s into %s' % (targetdir, bkdir))
         try:
             subprocess.check_call(["rsync", "-a", "--delete", targetdir + "/", bkdir])
@@ -771,7 +772,11 @@ def copy_static_html_sites(site, destdir):
 
 def check_imports():
     '''check key imports work'''
-    import pkg_resources
+    try:
+        import pkg_resources
+    except ModuleNotFoundError:
+        debug("Unable to check imports using pkg_resources")
+        return
     # package names to check the versions of. Note that these can be different than the string used to import the package
     requires = ["sphinx_rtd_theme>=1.3.0", "sphinxcontrib.youtube>=1.2.0", "sphinx>=7.1.2", "docutils<0.19"]
     for r in requires:
