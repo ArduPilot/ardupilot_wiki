@@ -75,3 +75,10 @@ table.partners-table td {
     color: red;
     font-weight: bold;
 }
+
+label.parameter_input_label {
+    display: inline-block;
+    width: 17ch;
+    text-align: right;
+    margin:10px 0px;
+}
