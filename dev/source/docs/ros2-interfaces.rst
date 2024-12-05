@@ -25,7 +25,8 @@ ArduPilot exposes "sensor" type data over DDS, that usually corresponds to a phy
    <td>ap/navsat/navsat0</td>
    <td>sensor_msgs/msg/NavSatFix</td> 
    <td>This is the reported GPS sensor position from the GPS subsystem.
-   TODO It will include a frame ID as instance number</td>
+      The frame ID is the instance number of the GPS.
+   </td>
    </tr>
    <tr>
    <td>ap/battery</td>
@@ -87,6 +88,33 @@ Pose, Rates, and Coordinates
    </tr>
    </tbody>
    </table>
+
+By default, the altitude datum used in ``geographic_msgs/msg/GeoPoint`` is the same what
+the GPS device reports data in Mean Sea Level (MSL). 
+While the EGM-96 datum is common, certain GPS devices such as older 
+UBLOX GPS's use an `approximated version that is not quite the same <https://portal.u-blox.com/s/question/0D52p00008l7VQACA2/what-is-the-egm96-grid-size>`_.
+
+MAVLink also uses MSL for ``MAV_FRAME_GLOBAL``.
+MAVROS converts MSL to WGS-84 ellipsoid height, but
+`assumes EGM-96 datum <https://github.com/mavlink/mavros/blob/b49095727a6ff160e1e913b90a4ce50e383e8863/mavros/include/mavros/mavros_uas.hpp#L163>`_,
+which is not the correct datum for all GPS's that ArduPilot supports.
+
+According to the ``GeoPoint`` message documentation, height should always be above the WGS84 ellipsoid.
+Due to resource constraints, ArduPilot can not automatically convert between the datums.
+
+To enable this behavior to populate ``GeoPoint`` data with WGS-84 ellipsoid height, use the parameter :ref:`GPS_DRV_OPTIONS<GPS_DRV_OPTIONS>` to enable 
+"Use ellipsoid height instead of AMSL". While this will allow ArduPilot to comply with the intent of
+the portable WGS-84 ellipsoid model, it currently has known limitations:
+
+* Avoid using the default terrain data from ArduPilot's servers because it in EGM-96 geoid height if you want to fly low.
+* All of your GLOBAL MAVLink commands and state data are now in ellipsoid height which does NOT follow the MAVLink specification. Most GCS's are not aware of this and will report incorrect data.
+* A geofence altitude ceiling in MSL (common for airspaces) will not be obeyed - this can cause your vehicle to break airspace regulations.
+
+Using :ref:`GPS_DRV_OPTIONS<GPS_DRV_OPTIONS>` to use ellipsoid height in this manner is thus recommended only for advanced users with specialized needs such as surveying.
+
+If you do not have a need for precise altitude, you use a rangefinder for terrain height, or you generally operate at higher altitudes, it is simpler to just neglect the MSL/WGS-84 ellipsoid complexity.
+ 
+For more information, see `MAVLink #2167 <https://github.com/mavlink/mavlink/issues/2167>`_.
 
 Time
 ====
@@ -201,7 +229,7 @@ For more information on the coordinate systems used, review `ROS REP-105 <https:
    Other frame configurations will be gracefully ignored, so feel free to populate this topic with other transforms if that's convenient.
 
 For more information on how to setup ArduPilot with an external odometry source, 
-see the :ref:`cartographer SLAM example<ros2-cartographer-slam>.
+see the :ref:`cartographer SLAM example<ros2-cartographer-slam>`.
 
 Configuring Interfaces at Compile Time
 ======================================
