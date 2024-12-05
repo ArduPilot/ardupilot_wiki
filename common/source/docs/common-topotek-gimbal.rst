@@ -53,7 +53,36 @@ Connect with a ground station and set the following parameters.  The params belo
   - :ref:`RC9_OPTION <RC9_OPTION>` = 168 ("Camera Manual Focus") to adjust focus in and out
   - :ref:`RC9_OPTION <RC9_OPTION>` = 169 ("Camera Auto Focus") to trigger auto focus
 
+Configuring the Gimbal
+----------------------
+
+.. image:: ../../../images/topotek-gimbal-config-app.png
+    :target: ../_images/topotek-gimbal-config-app.png
+    :width: 450px
+
+The camera gimbal can be configured using the "GimbalControl" application which can be downloaded from the `Topotek Download Resources page <https://topotek.com/pages/TOPOTEK-Download-Resources-11763444.html>`__
+
+Ethernet Connectivity
+---------------------
+
+Instead of using a UART serial connection, an Ethernet connection may be used to both control the gimbal and display live video stream from the camera
+
+An example setup of a networked ArduPilot vehicle system is detailed in :ref:`common-ethernet-vehicle`
+
+Two video streams are available on different RTSP URLs
+
+- "rtsp://192.168.144.108:554/stream=0" provides a 1080p stream
+- "rtsp://192.168.144.108:554/stream=1" provides a 480p stream
+
+If connected to a PC, `VLC <https://www.videolan.org/>`__ can be used to test the feed
+
+- Set the PC's IP address so the first three octets match the camera's IP address which, by default, is 192.168.144.108
+- Open VLC
+- Select "Media", "Open Network Stream" and enter one of the RTSP URLS listed above
+
+If using QGC, the live video can be configured from the "Application Settings", "General" screen.  Set "Source" to "RTSP Video Stream" and "RTSP URL" to one of the RTSP URLs listed above
+
 Control and Testing
 -------------------
 
-See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
+See :ref:`Gimbal / Mount Controls <common-mount-targeting>` and :ref:`Camera Controls <common-camera-controls>`  for details on how to control the camera and gimbal using RC, GCS or Auto mode mission commands
