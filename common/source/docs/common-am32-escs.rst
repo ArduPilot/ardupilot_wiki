@@ -42,7 +42,7 @@ By default, all configured motor channels are used to send control commands to t
 ESC Configuration
 =================
 
-The AM32 ESC can be setup using the `AM32 configurator <https://am32.ca/configurator>`__
+The AM32 ESCs can be setup using the :ref:`DroneCAN GUI Tool <common-uavcan-gui>` with the ESC connected to the autopilot, or alternatively, the `AM32 configurator <https://am32.ca/configurator>`__ can be used by directly connecting to the ESC's PWM connection
 
 Logging and Reporting
 ---------------------
@@ -52,3 +52,9 @@ ESCs RPM, voltage, current and temperature are recorded in the autopilot's onboa
 .. image:: ../../../images/dshot-realtime-esc-telem-in-mp.jpg
     :target: ../_images/dshot-realtime-esc-telem-in-mp.jpg
     :width: 450px
+
+Videos
+------
+
+..  youtube:: lM22MPgsbQw
+    :width: 100%
