@@ -4,23 +4,33 @@
 Ethernet Adapters
 =================
 
-Ardupilot has the ability to use Ethernet peripherals and networking (see :ref:`common-network`), but most H7 based autopilots do not include the Ethernet controller. Ethernet networking capability can be added using an Ethernet Adapter which provides connectivity to the autopilot using PPP protocol over a serial port of the autopilot.
+Ardupilot has the ability to use Ethernet peripherals and networking (see :ref:`common-network`).  This page includes various switches and adapters known to work
 
 .. image:: ../../../images/Net_Adapter.png
     :target: ../_images/Net_Adapter.png
 
-Requirements
-============
+Most H7 based autopilots do not include native ethernet support but ethernet networking capability can be added using an Ethernet Adapter (see `BotBlox DroneNet <https://botblox.io/dronenet-for-ardupilot/>`__ and `CubeLAN 8-Port Switch <https://irlock.com/products/cubelan-8-port-switch>`__ below) which provide connectivity using PPP protocol over the autopilot's serial port
 
-- PPP capability is not included by default on standard H7 autopilot firmware, so the `Custom Firmware Build Server <https://custom.ardupilot.org/>`__ must be used to include it.
+Hardware
+========
+
+- `BotBlox SwitchBlox for Ardupilot <https://botblox.io/switchblox-for-ardupilot/>`__ : ethernet switch to allow connecting multiple devices together
+- `BotBlox DroneNet for Ardupilot <https://botblox.io/dronenet-for-ardupilot/>`__ : ethernet switch with CAN, USART, RS485, and GPIO/PWM adapters allowing non-ethernet devices including autopilots to work over ethernet
+- `BotBlox SwitchBlox Cable Adapter for Ardupilot <https://botblox.io/switchblox-cable-adapter-for-ardupilot/>`__ : adapter to ease the ethernet port differences across different device manufacturers
+- `CubeNode ETH <https://docs.cubepilot.org/user-guides/cubenode/cubenode-eth>`__ : serial to ethernet adapter to allow non-ethernet autopilots to work over ethernet
+- `CubeLAN 8-Port Switch <https://irlock.com/products/cubelan-8-port-switch>`__ : ethernet switch using the CubePilot preferred 5-pin connector
+
+PPP Setup
+=========
+
+- PPP capability is not included by default on standard H7 autopilot firmware, so the `Custom Firmware Build Server <https://custom.ardupilot.org/>`__ must be used to build an firmware that includes it
 
 .. image:: ../../../images/build-server-ppp.jpg
     :target: ../_images/build-server-ppp.jpg
 
 .. note:: if using a local build environment (:ref:`building-the-code`), you can include PPP capability by using the ``--enable-ppp`` waf configuration option when building the code for an autopilot locally.
 
-- H7 based autopilot with an unused, flow controlled (for optimum transfer speeds) SERIAL port. (SERIAL2 used in the following setup examples)
-- Ethernet to PPP adapter (see below)
+- Connect one of the H7 based autopilot's serial ports to the ethernet switch's or Ethernet-to-PPP-adapter's USART port. For optimum performance a serial port with flow control should be used (e.g. normally SERIAL1 or SERIAL2).  In the following instructions SERIAL2 is used
 
 Autopilot Setup
 ===============
@@ -44,6 +54,7 @@ Adapters
 
 .. image:: ../../../images/BotBlox_DroneNet.jpg
     :target: ../_images/BotBlox_DroneNet.jpg
+    :width: 450px
 
 Video
 =====
