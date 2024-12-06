@@ -106,7 +106,7 @@ To enable this behavior to populate ``GeoPoint`` data with WGS-84 ellipsoid heig
 "Use ellipsoid height instead of AMSL". While this will allow ArduPilot to comply with the intent of
 the portable WGS-84 ellipsoid model, it currently has known limitations:
 
-* Avoid using the default terrain data from ArduPilot's servers because it in EGM-96 geoid height if you want to fly low.
+* Avoid using the default terrain data from ArduPilot's servers, which is respect to EGM-96 geoid height, if you want to fly low.
 * All of your GLOBAL MAVLink commands and state data are now in ellipsoid height which does NOT follow the MAVLink specification. Most GCS's are not aware of this and will report incorrect data.
 * A geofence altitude ceiling in MSL (common for airspaces) will not be obeyed - this can cause your vehicle to break airspace regulations.
 
