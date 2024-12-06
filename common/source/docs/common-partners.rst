@@ -918,7 +918,21 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://www.team-blacksheep.com
 
-      -
+      - .. image:: ../../../images/supporters/supporters_logo_geprc.png
+            :width: 250px
+            :align: center
+            :target:  https://geprc.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_droneer.png
+            :width: 250px
+            :align: center
+            :target:  nan
+
+      - .. image:: ../../../images/supporters/supporters_logo_topotek.png
+            :width: 250px
+            :align: center
+            :target:  https://topotek.com/
 
 
 [copywiki destination="copter,plane,rover,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
