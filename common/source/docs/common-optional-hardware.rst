@@ -40,14 +40,14 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Crop Sprayer <sprayer>
 [/site]
     Display (Onboard) <common-display-onboard>
-    ESCs and Motors <common-escs-and-motors>
-    External AHRS Systems <common-external-ahrs>
 [site wiki="plane"]
     Drive Calculator Motor/Propeller Analyzer <drivecalculator-guide>
 [/site]
     DroneCAN Adapter Node <common-uavcan-adapter-node>
     DroneCAN Peripherals <common-uavcan-peripherals>
+    ESCs and Motors <common-escs-and-motors>
     Ethernet Adapters <common-ethernet-adapters>
+    External AHRS Systems <common-external-ahrs>
     First Person View Video <common-fpv-first-person-view>
     Fuel Flow and Level Sensors <common-fuel-sensors>
     Generators <common-generators>
