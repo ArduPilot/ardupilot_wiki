@@ -28,11 +28,11 @@ GPS/Combos
     CubePilot HERE 3/3+ DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-3/here-3-manual>
     CubePilot HERE 4 DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-4/here-4-manual>
     CubePilot HEREPRO DroneCAN RTK GPS/Compass <https://docs.cubepilot.org/user-guides/herepro/herepro-manual>
-    Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>
+    Holybro DroneCAN M8/M9 GPS <https://holybro.com/collections/dronecan-gps-module>
     Holybro DroneCAN H-RTK F9P Rover <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-rover>
     Holybro DroneCAN H-RTK F9P Helical <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-helical>
-    Holybro H-RTK ZED-F9P Rover <https://holybro.com/products/h-rtk-zed-f9p-rover>
-    Holybro H-RTK NEO-F9P GPS Series <https://holybro.com/collections/h-rtk-neo-f9p-series>    
+    Holybro H-RTK ZED-F9P Rover (RM3100 Compass, Barometer, IP66 Waterproof) <https://holybro.com/collections/h-rtk-gps/products/h-rtk-zed-f9p-rover>
+    Holybro H-RTK NEO-F9P Family <https://holybro.com/collections/h-rtk-neo-f9p-series> 
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     Matek M10Q-3100 DroneCAN GPS+Compass <http://www.mateksys.com/?portfolio=m10q-3100>
     Matek DroneCAN GNSS M10-L4-3100 <http://www.mateksys.com/?portfolio=m10-l4-3100>

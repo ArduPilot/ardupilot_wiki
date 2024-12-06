@@ -29,8 +29,8 @@ popular Companion Computer hardware are listed below.
     NVidia TX1 <companion-computer-nvidia-tx1>
     NVidia TX2 <companion-computer-nvidia-tx2>
     ODroid <odroid-via-mavlink>
-    Pixhawk Rasberry Pi CM4 Baseboard <https://holybro.com/products/pixhawk-rpi-cm4-baseboard>
-    Pixhawk Jetson Baseboard <https://holybro.com/products/pixhawk-jetson-baseboard>
+    Holybro Pixhawk Rasberry Pi CM4/CM5 Baseboard <https://holybro.com/products/pixhawk-rpi-cm4-baseboard>
+    Holybro Pixhawk Jetson Baseboard <https://holybro.com/products/pixhawk-jetson-baseboard>
     Raspberry Pi <raspberry-pi-via-mavlink>
 
 The Companion Computer software refers to the programs and tools that run on the Companion

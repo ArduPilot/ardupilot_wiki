@@ -53,7 +53,7 @@ Long Range
     DragonLink <common-dragonlink-rc>
     Herelink <common-herelink>
     Holybro 900Mhz XBP9X Telemetry Radio <https://shop.holybro.com/xbp9x-radio_p1268.html>
-    Holybro Microhard P900 Radio Telemetry Radio <http://www.holybro.com/product/microhard-p900-radio/>
+    Holybro Microhard Radio Telemetry Radio (P900/P840/P400-C1S) <https://holybro.com/products/microhard-radio>
     LTM telemetry <common-ltm-telemetry>
     mLRS <common-mlrs-rc.rst>
     RFD900 <common-rfd900>
