@@ -8,14 +8,16 @@ Pixhawk6X®  is the latest update to the successful family of Pixhawk® autopilo
 
 Pixhawk6X:
 
-.. image:: ../../../images/holybro-pixhawk6/Pixhawk6X.png
-    :target: ../_images/Pixhawk6X.png
+.. image:: ../../../images/holybro-pixhawk6/Pixhawk6X-internal.jpg
+    :target: ../_images/Pixhawk6X-internal.jpg
     :width: 450px
 
 Where To Buy
 ============
 
-The Pixhawk6 autopilots are sold by `Holybro <https://shop.holybro.com/c/flight-controllers_0456>`__
+The Pixhawk 6X autopilots are sold by Holybro 
+ - `Pixhawk 6X <https://holybro.com/collections/autopilot-flight-controllers/products/pixhawk-6x>`__
+ - `Pixhawk 6X Pro <https://holybro.com/collections/autopilots-peripheral/products/pixhawk-6x-pro>`__
 
 Features of Pixhawk6 Series
 ===========================
