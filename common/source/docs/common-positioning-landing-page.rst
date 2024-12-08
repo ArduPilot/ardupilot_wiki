@@ -75,6 +75,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     Holybro DroneCAN H-RTK F9P Rover <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-rover>
     Holybro DroneCAN H-RTK F9P Helical <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-helical>
     Holybro RTK F9P Family <common-holybro-rtk-f9p>
+    Holybro RTK M8P <common-holybro-rtk-m8p>
     Holybro RTK F9P Ultralight <https://holybro.com/products/h-rtk-f9p-ultralight>
     Holybro RTK ZED-F9P Rover (RM3100 Compass, Barometer, IP66 Waterproof) <https://holybro.com/collections/h-rtk-gps/products/h-rtk-zed-f9p-rover>
     Holybro RTK NEO-F9P Family <https://holybro.com/collections/h-rtk-neo-f9p-series>
