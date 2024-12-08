@@ -165,6 +165,7 @@ Closed Hardware
     SDMODEL SDH7V1 <https://www.sdmodel.com.tw/content.php?cn=item&tid=1320&start=0>
     SDMODEL H7 V2 <common-SDMODELH7V2>
     Sky-Drones AIRLink <common-skydrones-airlink>
+    SkySakuraH743 <common-SkySakuraH743>
     SkystarsH7HD <common-skystarsH7>
     SPRacing H7 Extreme <common-spracingh7-extreme>
     SPRacing H7 RF <common-spracingh7-rf>
