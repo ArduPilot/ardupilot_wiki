@@ -10,7 +10,7 @@ Content is organized by functional area the data is used.
 Sensors
 =======
 
-ArduPilot exposes "sensor" type data over DDS, that usually corresponds to a physical component, or some filterered version of it.
+ArduPilot exposes "sensor" type data over DDS, that usually corresponds to a physical component, or some filtered version of it.
 
 .. raw:: html
 
@@ -200,7 +200,7 @@ For more information on the coordinate systems used, review `ROS REP-105 <https:
    Only the dynamic transformations on ``/ap/tf`` that have parent_frame ``odom`` and child_frame ``base_link`` are fed into ``AP_VisualOdom``. 
    Other frame configurations will be gracefully ignored, so feel free to populate this topic with other transforms if that's convenient.
 
-For more information on how to setup ArduPilot with an external odometry source, see the :ref:`cartographer SLAM example<ros2-cartographer-slam>.
+For more information on how to setup ArduPilot with an external odometry source, see the :ref:`cartographer SLAM example<ros2-cartographer-slam>`.
 
 Configuring Interfaces at Compile Time
 ======================================
