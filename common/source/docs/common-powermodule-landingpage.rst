@@ -29,6 +29,8 @@ Power Monitors Connecting to AutoPilot Power Monitor Port
 .. toctree::
     :maxdepth: 1
     
+    Holybro Analog Power Modules (PM02,PM06,PM07) <https://holybro.com/collections/power-modules-pdbs/Analog>
+    Holybro Digital I2C Power Modules (PM02D,PM03D,PM06D) <https://holybro.com/collections/power-modules-pdbs/Digital>
     Common Power Module <common-3dr-power-module>
     AirbotPower Power Module <common-airbotpower-power-module>
     CUAV HV PM<common-hv-pm>
@@ -42,6 +44,7 @@ CAN/DroneCAN Power Monitors and Batteries
 .. toctree::
     :maxdepth: 1
 
+    Holybro PM08-CAN Power Modules <https://holybro.com/collections/power-modules-pdbs/products/dronecan-pm08-power-module-14s-200a>
     ARK PAB Power Modules <common-ark-power-modules>
     CUAV CAN/DroneCAN PMU<common-can-pmu>
     Matek CAN-L4-BM DroneCan PMU <http://www.mateksys.com/?portfolio=can-l4-bm>
@@ -56,6 +59,7 @@ I2C Power Monitor
 .. toctree::
     :maxdepth: 1
 
+    Holybro Digital I2C Power Modules (PM02D,PM03D,PM06D) <https://holybro.com/collections/power-modules-pdbs/Digital>
     Rotoye BatMon Smart Battery <common-smart-battery-rotoye.rst>
 
 Power Monitoring Via Telemetry Equipped AM32/BLHeli32/S ESCs

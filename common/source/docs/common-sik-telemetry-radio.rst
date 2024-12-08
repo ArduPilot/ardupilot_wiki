@@ -39,7 +39,7 @@ many different sources, including ArduPilot Partners:
 
 -  Search EBay for `SiK Telemetry Radio <https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=SiK+telemetry+radio&_sacat=0&LH_TitleDesc=0&_osacat=0&_odkw=3dr+telemetry+radio>`__ (be aware, many "clones" have incorrect analog modules and will interoperate fine with themselves, although with reduced range, but not with the original "3DR" design. OEM versions below do not have this issue)
 -  `mRo SiK Telemetry Radio <https://store.mrobotics.io/product-p/mro-sikv2airgnd-mr.htm>`__ (mRobotics)
--  `Holybro SiK Telemetry Radio <https://shop.holybro.com/transceiver-telemetry-radio-v3_p1103.html>`__ (Holybro)
+-  `Holybro SiK Telemetry Radio <https://holybro.com/products/sik-telemetry-radio-v3>`__ (Holybro)
 
 .. tip::
 
