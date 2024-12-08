@@ -85,6 +85,7 @@ Closed Hardware
     3DR Control Zero H7 OEM <common-3DR_Control_Zero_OEM_G>
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
+    AET-H743-Basic <common-AET-H743-Basic>
     AnyleafH7 <common-anyleafh7>
     AocodaRC H743Dual <common-aocoda-h743dual>
     AtomRC F405-NAVI <common-atomrcf405-navi>
