@@ -4,13 +4,24 @@
 Ethernet Adapters
 =================
 
-Ardupilot has the ability to use Ethernet peripherals and networking (see :ref:`common-network`), but most H7 based autopilots do not include the Ethernet controller. Ethernet networking capability can be added using an Ethernet Adapter which provides connectivity to the autopilot using PPP protocol over a serial port of the autopilot.
+Ardupilot has the ability to use Ethernet peripherals and networking (see :ref:`common-network`).  This page includes various switches and adapters known to work
 
 .. image:: ../../../images/Net_Adapter.png
     :target: ../_images/Net_Adapter.png
 
-Requirements
-============
+Hardware
+========
+
+- `BotBlox SwitchBlox for Ardupilot <https://botblox.io/switchblox-for-ardupilot/>`__ : ethernet switch to allow connecting multiple devices together
+- `BotBlox DroneNet for Ardupilot <https://botblox.io/dronenet-for-ardupilot/>`__ : ethernet switch with CAN, USART, RS485, and GPIO/PWM adapters allowing non-ethernet devices including autopilots to work over ethernet
+- `BotBlox SwitchBlox Cable Adapter for Ardupilot <https://botblox.io/switchblox-cable-adapter-for-ardupilot/>`__ : adapter to ease the ethernet port differences across different device manufacturers
+- `CubeNode ETH <https://docs.cubepilot.org/user-guides/cubenode/cubenode-eth>`__ : serial to ethernet adapter to allow non-ethernet autopilots to work over ethernet
+- `CubeLAN 8-Port Switch <https://irlock.com/products/cubelan-8-port-switch>`__ : ethernet switch using the CubePilot preferred 5-pin connector
+
+Most H7 based autopilots do not include native ethernet support but ethernet networking capability can be added using an Ethernet Adapter (see `BotBlox DroneNet <https://botblox.io/dronenet-for-ardupilot/>`__ and `CubeLAN 8-Port Switch <https://irlock.com/products/cubelan-8-port-switch>`__ above) which provides connectivity using PPP protocol over the autopilot's serial port
+
+PPP Setup
+=========
 
 - PPP capability is not included by default on standard H7 autopilot firmware, so the `Custom Firmware Build Server <https://custom.ardupilot.org/>`__ must be used to include it.
 
@@ -44,6 +55,7 @@ Adapters
 
 .. image:: ../../../images/BotBlox_DroneNet.jpg
     :target: ../_images/BotBlox_DroneNet.jpg
+    :width: 450px
 
 Video
 =====

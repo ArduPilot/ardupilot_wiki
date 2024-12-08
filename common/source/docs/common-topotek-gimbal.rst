@@ -7,6 +7,7 @@ Topotek Gimbals
 ===============
 
 `Topotek <https://topotek.com/>`__ provides a wide variety of camera gimbals which communicate with ArduPilot using a custom serial protocol.
+The smallest is the `GIP335 <https://topotek.com/gip335-gip335-2k-ultra-lightweight-network-gimbal-camera-p5888810.html>`__  which weighs 60g
 
 .. image:: ../../../images/topotek-gimbal.png
     :target: https://topotek.com/kiy10s4k-4k-resolution-10x-optical-zoom-3-axis-small-gimbal-p5127630.html
