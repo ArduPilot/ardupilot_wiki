@@ -10,6 +10,7 @@ Will be in future 4.7 release and is currently in master ("latest")
 New Board Support
 =================
 AET-H743-Basic, see https://github.com/ArduPilot/ardupilot_wiki/pull/6425
+SkysakuraH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6427
 
 New Peripheral Support
 ======================
