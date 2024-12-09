@@ -90,7 +90,7 @@ Closed Hardware
     AtomRC F405-NAVI <common-atomrcf405-navi>
     BetaFPV F4 1S 12A AIO V3 <common-betafpvf405>
     brainFPV RADIX2 HD <common-radix2hd>
-    CBUnmanned H743 Stamp <common-StampH743>
+    CBUnmanned H743 Stamp & -LC <common-StampH743>
     CSKY405 <common-CSKYF405>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Flywoo F405 Pro <common-flywoof405pro>
