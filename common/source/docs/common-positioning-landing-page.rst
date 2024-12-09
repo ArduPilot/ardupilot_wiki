@@ -35,6 +35,7 @@ GPS/Compass
     Holybro M9N GPS Module (DroneCAN) <https://holybro.com/collections/gps/products/dronecan-m9n-gps>
     Holybro M10 GPS Module <https://holybro.com/collections/gps/products/m10-gps>
     Holybro DroneCAN RM3100 Professional Grade Compass <https://holybro.com/products/dronecan-rm3100-compass>
+    MakeFlyEasy POS3 DroneCAN GPS/Compass <common-mfe-pos3>
     Matek DroneCAN AP_Periph GNSS M10-L4-3100 <http://www.mateksys.com/?portfolio=m10-l4-3100>
     Matek SAM-M8Q <http://www.mateksys.com/?portfolio=sam-m8q>
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
