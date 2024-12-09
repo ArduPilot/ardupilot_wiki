@@ -40,7 +40,7 @@ The gimbal's default mode on startup can be set with the :ref:`MNT1_DEFLT_MODE<M
 Control with an RC transmitter (aka RC Targeting)
 -------------------------------------------------
 
-While the gimbal is in "RC Targeting" mode (see above for how to change modes), the pilot can control the gimbal's target roll, pitch and yaw angles using an RC transmitter channel for each axis. For example:
+While the gimbal is in "RC Targeting" mode (see above for how to change modes), the pilot can control the gimbal's target roll, pitch and yaw angles using an RC transmitter channel for each axis. For example (RC channels shown are for example only, and can be any channel not otherwise used):
 
 - set :ref:`RC6_OPTION <RC6_OPTION>` = 212 ("Mount1 Roll") to control the gimbal's roll angle with RC channel 6
 - set :ref:`RC7_OPTION <RC7_OPTION>` = 213 ("Mount1 Pitch") to control the gimbal's pitch angle with RC channel 7
@@ -51,7 +51,9 @@ By default the RC input specifies the **angle** but this can be changed to **rat
 
 By default the yaw control is in "follow" mode (aka "body frame") meaning that the gimbal's heading will rotate as the vehicle rotates.  The alternative is "lock" mode (aka "earth frame") meaning the gimbal's heading will stay locked onto a particular heading regardless of the vehicle's yaw.  The pilot can switch between these two modes with an auxiliary switch.
 
-- set :ref:`RC9_OPTION <RC9_OPTION>` = 163 ("Mount Lock") to switch between "lock" and "follow" mode with RC channel 9
+- set :ref:`RC9_OPTION <RC9_OPTION>` = 163 ("Mount Lock") to switch between "lock", or yaw lock in earth-frame when switched to high, and "follow" mode or body frame yaw  with RC channel 9
+
+.. note:: normally, the yaw lock will revert to "follow" mode on any targeting mode change. Then ``MNTx_OPTIONS`` bit 0, when set will allow the yaw lock mode to persist until changed by RC switch or MAVLink command.
 
 The pilot can retract the gimbal with the "Retract Mount1" or "Retract Mount2" auxiliary switch
 
