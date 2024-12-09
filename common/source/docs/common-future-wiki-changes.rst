@@ -17,7 +17,8 @@ New Peripheral Support
 
 New Features
 ============
-- Option to change Mounts to Neutral on rc failsafe, see https://github.com/ArduPilot/ardupilot_wiki/pull/6430 
+- Option to change Mounts to Neutral on rc failsafe, see https://github.com/ArduPilot/ardupilot_wiki/pull/6430
+- Auto-resizing scripting heap if needed at runtime, see https://github.com/ArduPilot/ardupilot_wiki/pull/6432
 
 [site wiki="plane"]
 
