@@ -14,6 +14,7 @@ New Board Support
 
 New Peripheral Support
 ======================
+MakeFlyEasy POS3 Dronecan GPS/Compass, see https://github.com/ArduPilot/ardupilot_wiki/pull/6434
 
 New Features
 ============
