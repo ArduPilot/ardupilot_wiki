@@ -53,6 +53,10 @@ Most mounts have internal controls for each axis to determine how to interpret t
 
 The yaw axis is forced to Earth frame for the GPS Point, Home, and SysID modes, and is otherwise body frame controlled.
 
+Mount RC failsafe position
+--------------------------
+In the event of an RC failsafe, the mount can be moved to the Neutral mode position if the ``MNTx_OPTIONS`` bit 1 is set.
+
 Control with an RC transmitter (aka RC Targeting)
 =================================================
 While the mount is in "RC Targeting" mode (see above for how to change modes), the pilot can control the mount's target roll, pitch and yaw angles using an RC transmitter channel for each axis. For example (RC channels shown are for example only, and can be any channel not otherwise used):
