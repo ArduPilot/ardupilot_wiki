@@ -43,6 +43,8 @@ Getting Started
 - Messages and errors are sent to the ground station and, if using Mission Planner, can be viewed in the Data screen's "Messages" tab.
 - :ref:`SCR_HEAP_SIZE <SCR_HEAP_SIZE>` can be adjusted to increase or decrease the amount of memory available for scripts. The default , which varies from 43K to 204.8K depending on cpu being used, is sufficient at its smallest (43K) for small scripts, but many will require more (some applets now need 300K). The autopilot's free memory depends highly upon which features and peripherals are enabled. If this parameter is set too low, scripts may fail to run and give an out of memory pre-arm error. If set too high other autopilot features such as Terrain Following or even the EKF may fail to initialize. On autopilots with a STM32F4 microcontroller, Smart RTL (Rover, Copter) and Terrain Following (Plane, Copter) need to be nearly always disabled. These features are usually enabled by default, set :ref:`SRTL_POINTS <SRTL_POINTS>` = 0, :ref:`TERRAIN_ENABLE <TERRAIN_ENABLE>` = 0). See also :ref:`RAM Limitations<ram_limitations>` section.
 
+.. note:: upon script load, if insufficient memory has been allocated, an error message will be sent to the GCS. Unfortunately, eliminating this by changing the :ref:`SCR_HEAP_SIZE <SCR_HEAP_SIZE>` does not guarantee that while running after aming, the LUA script could require even more and fail. In order to mitigate this, ArduPilot in versions 4.7 and later, will automatically try to increase the allocated memory and print a warning message to the GCS to allow the user to resize before the next arm, but if the additional memory is NOT available, the script will still fail.
+
 Step by Step Setup and Use Examples
 ===================================
 
