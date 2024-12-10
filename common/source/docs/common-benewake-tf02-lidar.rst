@@ -4,26 +4,22 @@
 Benewake TF02 / TF03 lidar/ TF-Luna
 ===================================
 
-The Benewake TF02 lidar has an indoor range of 22m, an outdoor range of 10m, an update rate of 100Hz and weighs only 52g.
+The TF02 lidar has an indoor range of 22m, an outdoor range of 10m, an update rate of 100Hz and weighs only 52g.
 
-The `TF03 <http://en.benewake.com/product/detail/5c345cc2e5b3a844c472329a.html>`__ has a range of 50m to 180m (depending upon the surface) and weighs 77g.
+The `TF02 Pro <https://en.benewake.com/TF02Pro/index.html>`__ has an indoor range of 40m, an outdoor range of 13.5m, an update rate of 100Hz and weighs only 50g.
 
-The `TF-Luna <http://en.benewake.com/product/detail/5e1c1fd04d839408076b6255.html>`__ has a range of 8m indoor, and 3m outdoor and weighs 5g.
+The `TF03 <https://en.benewake.com/TF03/index.html>`__ has a range of 50m to 180m (depending upon the surface) and weighs 77g.
 
-The `TF02 Pro <http://en.benewake.com/product/detail/5c345c9de5b3a844c4723299.html>`__ has an indoor range of 40m, an outdoor range of 13.5m, an update rate of 100Hz and weighs only 50g.
+The `TF-Luna <https://en.benewake.com/TFLuna/index.html>`__ has a range of 8m indoor, and 3m outdoor and weighs 5g.
 
-More details on both these lidar can be found in the `benewake.com's downloads area <http://en.benewake.com/download>`__
+More details on both these lidar can be found in the `benewake.com's downloads area <https://en.benewake.com/DataDownload>`__
 
 .. image:: ../../../images/benewake-tf02-topimage.jpg
-
-.. note::
-
-   Support for this sensor is available in Copter-3.6 (and higher) and Rover-3.4 (and higher)
 
 Where to Buy
 ------------
 
-- `Benewake.com Agents <http://en.benewake.com/news/detail/602f56204d839408076b62a3.html>`__ including `3DXR <https://www.3dxr.co.uk/sensors-c5/lidar-range-and-flow-sensors-c4>`__ and `Unmanned Tech UK <https://www.unmannedtechshop.co.uk/benewake-tf02-lidar-rangefinder-ip65-22m/>`__
+- `Benewake.com Distributors <https://en.benewake.com/Agent/index.html>`__ including `3DXR <https://www.3dxr.co.uk/sensors-c5/lidar-range-and-flow-sensors-c4>`__ and `Unmanned Tech UK <https://www.unmannedtechshop.co.uk/benewake-tf02-lidar-rangefinder-ip65-22m/>`__
 - `Benewake's store on Alibaba.com <https://beixingguangzi.en.alibaba.com>`__
 
 Connecting to the Autopilot
