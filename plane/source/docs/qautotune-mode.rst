@@ -4,6 +4,8 @@
 QAUTOTUNE
 =========
 
+``DEPRICATED: still available in custom builds.`` Use :ref:`quicktune`.
+
 Autotuning PIDs in QuadPlane is supported with this flight mode. This uses the same system as the AUTOTUNE mode for copter. It should allow you to improve the tune without having to manually adjust PIDs. It is not recommended to use QAUTOTUNE for Tailsitter pitch or yaw axis, or any axis which requires feed forward pid contributions.
 
 Configuration

@@ -290,6 +290,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        180           | Autotune_test_gains        |    X     |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        181           | VTOL QuickTune             |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
 
 
 Intended as continuous PWM range control inputs:
@@ -585,6 +587,7 @@ Other functions are:
     FlightMode Pause                      In Guided/Auto modes, pauses mission
     ICEngine start / stop                 Controls ICE engine starter output :ref:`ICE engines<common-ice>`
     Autotune_test_gains                   After autotune,allows selecting tune(high) or pretune gains
+    VTOL QuickTune                        Autotunes QuadPlane VTOL PIDs, see :ref:`quicktune`
     ROLL Input                            ROLL input channel. (replaces RCMAP)
     PITCH Input                           PITCH input channel. (replaces RCMAP)
     THROTTLE Input                        THROTTLE input channel. (replaces RCMAP)

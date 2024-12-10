@@ -47,8 +47,7 @@ An objective view of the overall Roll and Pitch performance can be seen
 by graphing the :ref:`dataflash log's <common-downloading-and-analyzing-data-logs-in-mission-planner>` ATT message's DesRoll vs Roll and DesPit vs Pitch. The "Roll" (i.e.
 actual roll) should closely follow the "DesRoll" while in stabilized modes. Pitch should similarly closely follow DesPit.
 
-Alternatively you may wish to try tuning both the rate and angle
-parameters using the :ref:`QAUTOTUNE mode <qautotune-mode>`.
+Alternatively you may wish to try automatically tuning the rate parameters using the :ref:`QUICKTUNE <quicktune>`.
 
 Yaw Tuning
 ==========
