@@ -374,12 +374,12 @@ Set :ref:`Q_A_RATE_FF_ENAB <Q_A_RATE_FF_ENAB>` to 1 after the tests are complete
 
 Step 12: Autotuning
 -------------------
-Often, a good manual tune will be sufficient. However, autotuning can sometimes improve the tune.
+Often, the default params or a good manual tune will be sufficient. However, autotuning can usually improve the tune.
 
 If the aircraft appears stable enough to attempt autotuning and you
 have sufficient battery to last through an autotuning session then you can autotune using one of two methods:
 
-- Quick Tune LUA Applet (the preferred method if your autopilot is capable of running LUA scripts)
+- :ref:`QwikTune <qwiktune>` (the preferred method if your autopilot is capable of running LUA scripts)
 - QAUTOTUNE Mode (no longer the recommended method, but can be used if using LUA scripts is not possible)
 
 Using the Quick VTOL Tune LUA Applet to Automate Tuning
