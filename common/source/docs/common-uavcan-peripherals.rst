@@ -32,7 +32,8 @@ GPS/Combos
     Holybro DroneCAN H-RTK F9P Rover <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-rover>
     Holybro DroneCAN H-RTK F9P Helical <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-helical>
     Holybro H-RTK ZED-F9P Rover (RM3100 Compass, Barometer, IP66 Waterproof) <https://holybro.com/collections/h-rtk-gps/products/h-rtk-zed-f9p-rover>
-    Holybro H-RTK NEO-F9P Family <https://holybro.com/collections/h-rtk-neo-f9p-series> 
+    Holybro H-RTK NEO-F9P Family <https://holybro.com/collections/h-rtk-neo-f9p-series>
+    MakeFlyEasy POS3 DroneCAN GPS/Compass <common-mfe-pos3>
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     Matek M10Q-3100 DroneCAN GPS+Compass <http://www.mateksys.com/?portfolio=m10q-3100>
     Matek DroneCAN GNSS M10-L4-3100 <http://www.mateksys.com/?portfolio=m10-l4-3100>
