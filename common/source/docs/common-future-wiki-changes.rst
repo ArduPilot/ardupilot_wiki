@@ -22,7 +22,7 @@ New Features
 - Auto-resizing scripting heap if needed at runtime, see https://github.com/ArduPilot/ardupilot_wiki/pull/6432
 
 [site wiki="plane"]
-
+- QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
 [/site]
 [site wiki="copter"]
 
