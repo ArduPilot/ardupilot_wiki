@@ -48,7 +48,7 @@ by graphing the :ref:`dataflash log's <common-downloading-and-analyzing-data-log
 actual roll) should closely follow the "DesRoll" while in stabilized modes. Pitch should similarly closely follow DesPit.
 
 Alternatively you may wish to try tuning both the rate and angle
-parameters using the :ref:`QAUTOTUNE mode <qautotune-mode>`.
+parameters using the :ref:`QwikTune <qwiktune>`.
 
 Yaw Tuning
 ==========
