@@ -14,7 +14,8 @@ New Board Support
 
 New Peripheral Support
 ======================
-MakeFlyEasy POS3 Dronecan GPS/Compass, see https://github.com/ArduPilot/ardupilot_wiki/pull/6434
+- MakeFlyEasy POS3 Dronecan GPS/Compass, see https://github.com/ArduPilot/ardupilot_wiki/pull/6434
+- UltraMotion CAN Servos, see https://github.com/ArduPilot/ardupilot_wiki/pull/6442
 
 New Features
 ============
