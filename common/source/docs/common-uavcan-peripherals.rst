@@ -97,6 +97,9 @@ Servos
 
     DroneCAN Servos <common-dronecan-servos>
     Himark CAN Servos <http://himarkuaveng.com/cate-21898-23052.html>
+    UltraMotion Can Servos* <https://www.ultramotion.com/servo-cylinder/>
+
+    * requires `LUA Scripting <common-lua-scripts> be setup and `LUA driver<https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/UltraMotion.lua>`__ used.
 
 ESCs/Output Expanders
 =====================
