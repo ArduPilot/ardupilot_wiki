@@ -1,10 +1,10 @@
 .. _common-network:
 
-===========================
-ArduPilot Network Interface
-===========================
+=================
+Network Interface
+=================
 
-As of firmware 4.5 and later, ArduPilot provides a network interface framework to allow local and wide-area network connections. Several later generation autopilots, like Pixhawk6X and CubePilot CubeRed, provide Ethernet MAC interfaces, which allows ArduPilot to connect to vehicle peripherals, data servers, and even the wide area network via IP using transport layer UDP or TCP protocols.
+ArduPilot 4.5 (and higher) provides a network interface framework to allow local and wide-area network connections. Several later generation autopilots, like Pixhawk6X and CubePilot CubeRed, provide Ethernet MAC interfaces, which allows ArduPilot to connect to vehicle peripherals, data servers, and even the wide area network via IP using transport layer UDP or TCP protocols.
 
 In addition, custom builds for H7 based processors that do not have an Ethernet MAC integrated can be created with the `ArduPilot Custom Firmware Server <https://firmware.ardupilot.org/>`__ that includes PPP(Point-To-Point Protocol) allowing network connections over a serial port of the autopilot using PPP.
 
