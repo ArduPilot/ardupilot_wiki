@@ -90,6 +90,7 @@ Closed Hardware
     ACNS-CM4Pilot <common-acns-cm4pilot>
     AEDROX H7 <common-aedroxh7>
     AeroCogito H7Digital <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/AeroCogito-H7Digital/README.md>
+    AeroFox H7 <common-aerofox-h7>
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
     AIRBRAINH743 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/AIRBRAINH743/README.md>
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
