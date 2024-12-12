@@ -12,6 +12,7 @@ New Board Support
 - AET-H743-Basic, see https://github.com/ArduPilot/ardupilot_wiki/pull/6425
 - SkysakuraH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6427
 - AeroFox H7 , see https://github.com/ArduPilot/ardupilot_wiki/pull/6446
+- GEPRC TAKER H7 BT, see https://github.com/ArduPilot/ardupilot_wiki/pull/6450
 
 New Peripheral Support
 ======================
