@@ -68,9 +68,9 @@ The ARK 12S PAB Power Module is a 5V 6A power supply and digital power monitor d
 Specifications
 ==============
 
--  **TI INA226 Digital Power Monitor**
+-  **TI INA238 Digital Power Monitor**
 
-   -  0.1mOhm Shunt
+   -  0.0001 Ohm Shunt
    -  I2C Interface
    
 -  **5.2V 6A Step-Down Regulator**
