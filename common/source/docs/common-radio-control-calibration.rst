@@ -49,7 +49,7 @@ Check the Transmitter's Setup
 
   - For roll, throttle and yaw channels, the green bars should move in the same direction as the transmitter's physical sticks.
   - For pitch, the green bar should move in the **opposite** direction to the transmitter's physical stick. **This is not the default for many transmitters.**
-  - If one of the green bars moves in the incorrect direction, reverse the channel in the transmitter itself. If it is not possible to reverse the channel in the transmitter you may reverse the channel in ArduPilot by checking the "Reversed" checkbox (Plane and Rover only).  If the checkbox is not visible it is possible to reverse the channel by directly changing the ``RCx_REVERSED`` parameter (where "x" is the input channel from 1 to 4). Again, always get the bar movement directions correctly set up using the transmitter's channel reversing feature, if possible, rather than the ``RCx_REVERSED`` parameter for the channel.
+  - If one of the green bars moves in the incorrect direction, reverse the channel in the transmitter itself so that logging and outputs etc. are consistent. You may instead reverse the channel in ArduPilot by checking the "Reversed" checkbox (if shown), or directly changing the ``RCx_REVERSED`` parameter (where "x" is the input channel from 1 to 4).
 
 .. figure:: ../../../images/mp_radio_calibration.png
    :target: ../_images/mp_radio_calibration.png
