@@ -45,8 +45,11 @@ Check the Transmitter's Setup
 
   .. note:: For Plane, it is possible to use an AUX RC switch to provide easie reverse thrust control using the entire throttle stick range on non-sprung throttle sticks. Also, many set up a switch controlled mix in their RC transmitter to map throttle low stick position to output ``RCx_TRIM`` after calibration and either output RC as the stick is raised for reverse or forward operation depending on the TX switch position, giving full throttle stick range to forward or reverse operation.
 
-- Move the transmitter's roll, pitch, throttle and yaw sticks and ensure the green bars move in the correct direction:
-  - If one of the green bars moves in the incorrect direction reverse the channel in the transmitter itself.  If it is not possible to reverse the channel in the transmitter you may reverse the channel in ArduPilot by checking the "Reversed" checkbox (Plane and Rover only).  If the checkbox is not visible it is possible to reverse the channel by directly changing the ``RCx_REVERSED`` parameter (where "x" is the input channel from 1 to 4). Again, always get the bar movement directions correctly setup using the transmitter's channel reversing feature, if possible, rather than the ``RCx_REVERSED`` parameter for the channel.
+- Move the transmitter's roll, pitch, throttle, and yaw sticks and ensure the green bars move in the correct direction:
+
+  - For roll, throttle and yaw channels, the green bars should move in the same direction as the transmitter's physical sticks.
+  - For pitch, the green bar should move in the **opposite** direction to the transmitter's physical stick. **This is not the default for many transmitters.**
+  - If one of the green bars moves in the incorrect direction, reverse the channel in the transmitter itself. If it is not possible to reverse the channel in the transmitter you may reverse the channel in ArduPilot by checking the "Reversed" checkbox (Plane and Rover only).  If the checkbox is not visible it is possible to reverse the channel by directly changing the ``RCx_REVERSED`` parameter (where "x" is the input channel from 1 to 4). Again, always get the bar movement directions correctly set up using the transmitter's channel reversing feature, if possible, rather than the ``RCx_REVERSED`` parameter for the channel.
 
 .. figure:: ../../../images/mp_radio_calibration.png
    :target: ../_images/mp_radio_calibration.png
