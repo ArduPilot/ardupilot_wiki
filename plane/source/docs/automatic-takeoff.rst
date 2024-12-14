@@ -91,7 +91,7 @@ recommended for a hand launch. More may be needed.
 The :ref:`TKOFF_THR_MINSPD <TKOFF_THR_MINSPD>` parameter is a minimum ground speed (as measured
 by the GPS) before the motor starts after the above dealy. This is an additional safety
 measure to ensure the aircraft is out of your hand before the motor
-starts. A value of 4m/s is a good starting point if you wish this safety feature to be active. The default is 0, which would allow the motor to start immediately after the above delay with most GPSes since their velocity estimate is usually a bit  noisey.
+starts. A value of 4m/s is a good starting point if you wish this safety feature to be active. The default is 0, which would allow the motor to start immediately after the above delay with most GPSes since their velocity estimate is usually a bit noisy.
 
 Note that if your aircraft is a "tractor" type with the motor at the
 front then you may want to use the default values of :ref:`TKOFF_THR_DELAY <TKOFF_THR_DELAY>` and :ref:`TKOFF_THR_MINSPD <TKOFF_THR_MINSPD>`, or use low values.
@@ -139,6 +139,19 @@ should have a much higher value of :ref:`TKOFF_THR_DELAY <TKOFF_THR_DELAY>`, mak
 enough that the aircraft will have released the bungee before the motor
 starts. A value of around 50 (giving a 5 second delay) may be a good
 starting point.
+
+Idle Throttle
+======================
+
+By default the throttle is suppressed until the takeoff conditions are
+satisfied, but In some cases it is beneficial to have it running at some Idle
+level while the aircraft is awaiting to be launched.
+
+Setting :ref:`TKOFF_THR_IDLE <TKOFF_THR_IDLE>` greater than zero will force
+the throttle to run at this percentage level between arming and the takeoff
+conditions being met.
+
+It is applicable for takeoffs in AUTO and TAKEOFF modes.
 
 Runway Takeoffs (CTOL)
 ======================
