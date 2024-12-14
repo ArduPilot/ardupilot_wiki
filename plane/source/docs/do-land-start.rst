@@ -1,6 +1,4 @@
 .. _do-land-start:
-.. _do_land_start:
-
 ===================
 Using DO_LAND_START
 ===================
