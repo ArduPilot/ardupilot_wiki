@@ -42,10 +42,10 @@ Configuration
 Most ground stations provide a battery monitor interface but the parameters can also be set manually:
 
 - :ref:`BATT_MONITOR <BATT_MONITOR>` = **3** to measure only voltage or **4** to measure both voltage and current (you will need to reboot the board after changing this)
-- :ref:`BATT_VOLT_PIN <BATT_VOLT_PIN>` = **2**. The autopilot pin connected to the power module's voltage pin
-- :ref:`BATT_VOLT_MULT <BATT_VOLT_MULT>` converts the analog voltage received from the power module's voltage pin to the battery's voltage
-- :ref:`BATT_CURR_PIN <BATT_CURR_PIN>` = **3**. The autopilot pin connected to the power module's current pin
-- :ref:`BATT_AMP_PERVLT <BATT_AMP_PERVLT>` converts the analog voltage received from the power module's current pin to the battery's current
+- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = **2**. The autopilot pin connected to the power module's voltage pin
+- :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` converts the analog voltage received from the power module's voltage pin to the battery's voltage
+- :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = **3**. The autopilot pin connected to the power module's current pin
+- :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` converts the analog voltage received from the power module's current pin to the battery's current
 - :ref:`BATT_AMP_OFFSET <BATT_AMP_OFFSET>` voltage offset received from the power module's current pin when ther is no current being pulled from the battery
 
 Instructions for setup and calibration using the :ref:`Mission Planner can be found here <common-power-module-configuration-in-mission-planner>`
