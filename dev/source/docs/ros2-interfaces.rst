@@ -160,10 +160,66 @@ Commands
 
 ArduPilot exposes service servers for the following purposes:
 
-* Pre-arm check
-* Arming
-* Changing modes
-* Takeoff (copter only)
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Service Name</th>
+   <th>Service Type</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td>/ap/arm_motors</td>
+   <td>ardupilot_msgs/srv/ArmMotors</td> 
+   <td>Arm or disarm the vehicle</td>
+   </tr>
+   <tr>
+   <td>/ap/experimental/takeoff</td>
+   <td>ardupilot_msgs/srv/Takeoff</td> 
+   <td>Command a copter to take off</td>
+   </tr>
+   <tr>
+   <td>/ap/get_parameters</td>
+   <td>rcl_interfaces/srv/GetParameters</td>
+   <td>Get a parameter; works with "ros2 param get ..."</td>
+   </tr>
+   <tr>
+   <td>/ap/mode_switch</td>
+   <td>ardupilot_msgs/srv/ModeSwitch</td>
+   <td>Change the drive/flight mode</td>
+   </tr>
+   <tr>
+   <td>/ap/prearm_check</td>
+   <td>std_srvs/srv/Trigger</td>
+   <td>Check if the vehicle can be armed</td>
+   </tr>
+   <tr>
+   <td>/ap/set_parameters</td>
+   <td>rcl_interfaces/srv/SetParameters</td>
+   <td>Set a parameter; works with "ros2 param set ..."</td>
+   </tr>
+   </tbody>
+   </table>
+
+After building ``ardupilot_msgs`` and sourcing your workspace, you can inspect the message definitions likes so:
+
+.. code-block:: bash
+  
+    ros2 interface show ardupilot_msgs/srv/ArmMotors
+
+To check the vehicle can be armed using the ROS 2 CLI:
+
+.. code-block:: bash
+
+    ros2 service call /ap/prearm_check std_srvs/srv/Trigger
+
+To arm the vehicle using the ROS 2 CLI:
+
+.. code-block:: bash
+  
+    ros2 service call /ap/arm_motors ardupilot_msgs/srv/ArmMotors "{arm: true}"
+
 
 Odometry
 ========
