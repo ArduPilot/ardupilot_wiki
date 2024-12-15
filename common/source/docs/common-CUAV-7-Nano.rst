@@ -102,10 +102,10 @@ Enable Battery monitor with these parameter settings :
 
 Then reboot.
 
-- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 9
-- :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 8
-- :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 31.0
-- :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 24.0
+- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 9
+- :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 8
+- :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 31.0
+- :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 24.0
 
 
 Compass

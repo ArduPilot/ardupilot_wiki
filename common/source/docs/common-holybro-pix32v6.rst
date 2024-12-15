@@ -75,15 +75,15 @@ The board has 2 dedicated power monitor ports with a 6 pin
 connector. The Pix32v6 uses analog power monitors on these ports.
 
 - :ref:`BATT_MONITOR<BATT_MONITOR>` = 4
-- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 8
-- :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 4
-- :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` = 18.182
-- :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` = 36.364
+- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 8
+- :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 4
+- :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` = 18.182
+- :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` = 36.364
 
-- :ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN>` = 5
-- :ref:`BATT2_CURR_PIN<BATT2_CURR_PIN>` = 14
-- :ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT>` = 18.182
-- :ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT>` = 36.364
+- :ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN__AP_BattMonitor_Analog>` = 5
+- :ref:`BATT2_CURR_PIN<BATT2_CURR_PIN__AP_BattMonitor_Analog>` = 14
+- :ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT__AP_BattMonitor_Analog>` = 18.182
+- :ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT__AP_BattMonitor_Analog>` = 36.364
 
 Compass
 =======

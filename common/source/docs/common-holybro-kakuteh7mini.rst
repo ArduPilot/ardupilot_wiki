@@ -114,10 +114,10 @@ sensor can be attached to pin 4 on the ESC connector.
 The correct battery setting parameters are:
 
  - :ref:`BATT_MONITOR<BATT_MONITOR>` 4, if external sensor used; 3 for voltage only
- - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 10
- - :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 11 , if external sensor used.
- - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.1
- - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` should be set to match external current sensor, if used. For example, if the Holybro Teeko32 4in1 ESC is used, this value would be 59.5
+ - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 10
+ - :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 11 , if external sensor used.
+ - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 11.1
+ - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` should be set to match external current sensor, if used. For example, if the Holybro Teeko32 4in1 ESC is used, this value would be 59.5
  
  .. note:: these values are already set by default, but can be changed to trim the voltage and/or current as needed, or to suit other ESCs.
  

@@ -109,10 +109,10 @@ LiPo batteries. An external current sense input is also provided.
 The correct battery setting parameters are:
 
  - :ref:`BATT_MONITOR<BATT_MONITOR>` = 3 for voltage only or = 4 if external current sense is also used.
- - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 11
- - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` = 11.0
- - :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 13
- - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` depends on external current sensor used
+ - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 11
+ - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` = 11.0
+ - :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 13
+ - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` depends on external current sensor used
 
 Compass
 =======

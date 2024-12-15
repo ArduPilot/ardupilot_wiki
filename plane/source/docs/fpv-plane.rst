@@ -200,13 +200,13 @@ On the bench while connected to MP and with propellor removed, make sure that FS
 Do NOT use the SETUP tab to setup the Battery Monitor for the newer
 Chibios boards. These boards have the default configuration already loaded when installing
 the firmware.
-You will probably have to slightly adjust the :ref:`BATT_AMP_OFFSET<BATT_AMP_OFFSET>` and :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>`
+You will probably have to slightly adjust the :ref:`BATT_AMP_OFFSET<BATT_AMP_OFFSET>` and :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>`
 parameters. Most systems will draw 400 to 600 ma when the motor is not running. This is set
-with the :ref:`BATT_AMP_OFFSET<BATT_AMP_OFFSET>` parameter. You can adjust the :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` parameter to match the capacity used 
+with the :ref:`BATT_AMP_OFFSET<BATT_AMP_OFFSET>` parameter. You can adjust the :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` parameter to match the capacity used 
 during your flight by taking the amount of current you recharge the battery with, and the displayed amount of mah used 
 using the following formula:
 
-    new :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` = old :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` * MAH -recharged/ MAH shown as used.
+    new :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` = old :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` * MAH -recharged/ MAH shown as used.
 
 .. Note:: 
     this isn't 100% accurate due to several factors, but is close enough. You may have to iterate a few times. 

@@ -108,10 +108,10 @@ up to 6S LiPo batteries. An external current sensor input is also provided on th
 The correct battery setting parameters are:
 
 -  :ref:`BATT_MONITOR<BATT_MONITOR>` = 3
--  :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 11
--  :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.0
--  :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` =  13
--  :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` = 25 with the Diattone 40A ESC sometimes bundled with the autopilot.
+-  :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 11
+-  :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 11.0
+-  :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` =  13
+-  :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` = 25 with the Diattone 40A ESC sometimes bundled with the autopilot.
 
 Compass
 =======

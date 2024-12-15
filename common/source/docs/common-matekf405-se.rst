@@ -116,7 +116,7 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 
 Battery Monitor Configuration
 =============================
-These settings are set as defaults when the firmware is loaded, except  :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` which needs to be changed from 31.7 to 55.9 . However, if they are ever lost, you can manually set the parameters:
+These settings are set as defaults when the firmware is loaded, except  :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` which needs to be changed from 31.7 to 55.9 . However, if they are ever lost, you can manually set the parameters:
 
 Enable Battery monitor.
 
@@ -124,13 +124,13 @@ Enable Battery monitor.
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 10
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 10
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 11
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 11
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.0
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 11.0
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 55.9
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 55.9
 
 .. note:: this autopilot uses a high precision current sensor which is sensitive to ESC switching noise. Be sure to use the bypass capacitor provided. In some cases, the ESCs themselves will need additional 200-330uF low ESR capacitors on their power inputs, if they do not incorporate them already. See `Matek FAQs <http://www.mateksys.com/?p=5712#tab-id-12>`__ for more information.
 

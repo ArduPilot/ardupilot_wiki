@@ -155,13 +155,13 @@ Enable Battery monitor.
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 8
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 8
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 4
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 4
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 18.18
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 18.18
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 36.6
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 36.6
 
 Connecting a GPS/Compass module
 ===============================

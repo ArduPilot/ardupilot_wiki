@@ -100,10 +100,10 @@ Battery Monitoring
 The board has a built-in voltage sensor via the VBAT pin, but no internal current sensor. An external current sensor can be connected to the Curr pin. Default parameters for both internal voltage and external current monitoring are set by default to :
 
  - :ref:`BATT_MONITOR<BATT_MONITOR>` 4
- - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 13
- - :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 12
- - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 8.3
- - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 92.6
+ - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 13
+ - :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 12
+ - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 8.3
+ - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 92.6
 
 Compass
 =======

@@ -198,13 +198,13 @@ BATT_MONITOR=4
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 12
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 12
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 11
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 11
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.0
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 11.0
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 38.0 (note, this value may vary from 18 to 38, depending on specific board manufacturer...will need to be calibrated to match actual current)
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 38.0 (note, this value may vary from 18 to 38, depending on specific board manufacturer...will need to be calibrated to match actual current)
 
 
 How to trigger a camera with relay pin

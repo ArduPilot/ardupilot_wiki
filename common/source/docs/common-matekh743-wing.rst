@@ -139,19 +139,19 @@ Enable Battery monitor with these parameter settings :
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 10
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 10
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 11
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 11
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 10.5 (note: WLITE needs this changed to 21)
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 10.5 (note: WLITE needs this changed to 21)
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 40.0 (note: WLITE and WING V2/V3 needs this changed to 66.7)
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 40.0 (note: WLITE and WING V2/V3 needs this changed to 66.7)
 
-:ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN>` 18
+:ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN__AP_BattMonitor_Analog>` 18
 
-:ref:`BATT2_CURR_PIN<BATT2_CURR_PIN>` 7
+:ref:`BATT2_CURR_PIN<BATT2_CURR_PIN__AP_BattMonitor_Analog>` 7
 
-:ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT>` 11.0
+:ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT__AP_BattMonitor_Analog>` 11.0
 
 .. note:: this autopilot uses a high precision current sensor which is sensitive to ESC switching noise. Be sure to use the bypass capacitor provided. In some cases, the ESCs themselves will need additional 200-330uF low ESR capacitors on their power inputs, if they do not incorporate them already. See `Matek FAQs <http://www.mateksys.com/?p=5712#tab-id-12>`__ for more information.
 

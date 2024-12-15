@@ -143,9 +143,9 @@ The autopilot includes a DroneCAN power module and battery monitor, :ref:`common
 If you are using an analog battery monitor instead, connect to the Power A connector and set the following parameters (if used as second monitor use the BATT2 parameters instead):
 
 - :ref:`BATT_MONITOR<BATT_MONITOR>` = 4
-- :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 17
-- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 16
-- Set the :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` and :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` as required for the analog PMU used.
+- :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 17
+- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 16
+- Set the :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` and :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` as required for the analog PMU used.
 
 RC Input
 ========

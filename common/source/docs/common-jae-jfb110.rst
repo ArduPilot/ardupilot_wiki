@@ -351,21 +351,21 @@ Enable Battery monitor with these parameter settings :
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 16
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 16
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 6
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 6
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` = 18.182
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` = 18.182
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` = 36.364
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` = 36.364
 
-:ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN>` = 9
+:ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN__AP_BattMonitor_Analog>` = 9
 
-:ref:`BATT2_CURR_PIN<BATT2_CURR_PIN>` = 18
+:ref:`BATT2_CURR_PIN<BATT2_CURR_PIN__AP_BattMonitor_Analog>` = 18
 
-:ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT>` = 18.182
+:ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT__AP_BattMonitor_Analog>` = 18.182
 
-:ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT>` = 36.364
+:ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT__AP_BattMonitor_Analog>` = 36.364
 
 Compass
 =======

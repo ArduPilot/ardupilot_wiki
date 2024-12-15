@@ -123,13 +123,13 @@ The following settings are set by default on the board to work with a Power Zero
 
 :ref:`BATT_MONITOR<BATT_MONITOR>` =4
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 14
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 14
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 15
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 15
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 15.3
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 15.3
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 50
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 50
 
 Other Power Module will need to adjust these values.
 
