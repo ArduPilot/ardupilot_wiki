@@ -179,7 +179,7 @@ The :ref:`MIS_OPTIONS<MIS_OPTIONS>` parameter bits can be set to modify how miss
 ref:`MIS_OPTIONS<MIS_OPTIONS>` bit   Option
 ==================================   ================================
 0                                    Clears the loaded mission on boot. Must be loaded after each boot.
-1 (Plane only)                       Use distance to land calculation on battery failsafe. See :ref:`do_land_start`
+1 (Plane only)                       Use distance to land calculation on battery failsafe. See :ref:`common-do-land-start`
 2                                    Continue after landing. Advances mission item pointer to next mission item after landing complete. If no item exists, RTL.
 ==================================   ================================
 
