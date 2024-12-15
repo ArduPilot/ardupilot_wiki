@@ -540,18 +540,18 @@ The correct battery setting parameters are:
 Battery1 monitor:
 
 - :ref:`BATT_MONITOR<BATT_MONITOR>` = 4
-- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 2
-- :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 4
-- :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` = 21.0 (may need adjustment if supplied monitor is not used)
-- :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` = 34.6 (may need adjustment if supplied monitor is not used)
+- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 2
+- :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 4
+- :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` = 21.0 (may need adjustment if supplied monitor is not used)
+- :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` = 34.6 (may need adjustment if supplied monitor is not used)
 
 Battery2 monitor:
 
 - :ref:`BATT2_MONITOR<BATT2_MONITOR>` = 4
-- :ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN>` = 12
-- :ref:`BATT2_CURR_PIN<BATT2_CURR_PIN>` = 16
-- :ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT>` = 21.0 (may need adjustment if supplied monitor is not used)
-- :ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT>` = 34.6 (may need adjustment if supplied monitor is not used)
+- :ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN__AP_BattMonitor_Analog>` = 12
+- :ref:`BATT2_CURR_PIN<BATT2_CURR_PIN__AP_BattMonitor_Analog>` = 16
+- :ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT__AP_BattMonitor_Analog>` = 21.0 (may need adjustment if supplied monitor is not used)
+- :ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT__AP_BattMonitor_Analog>` = 34.6 (may need adjustment if supplied monitor is not used)
 
 
 Loading Firmware

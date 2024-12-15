@@ -30,8 +30,8 @@ You can also enable it by setting the following parameters (shown for first batt
 
 - :ref:`BATT_MONITOR<BATT_MONITOR>` to 4 to Set to analog voltage and current.
 - Restart Mission Planner and autopilot
-- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` to 0 (for CUAV V5).
-- :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` to 1 (for CUAV V5).
-- :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` to 18
-- :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` to 24
+- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` to 0 (for CUAV V5).
+- :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` to 1 (for CUAV V5).
+- :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` to 18
+- :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` to 24
 - Restart Mission Planner and autopilot

@@ -114,10 +114,10 @@ The default battery parameters are:
 
 
    - :ref:`BATT_MONITOR<BATT_MONITOR>` = 4
-   - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 10
-   - :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 11
-   - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` = 21.2
-   - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` = 40.2
+   - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 10
+   - :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 11
+   - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` = 21.2
+   - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` = 40.2
 
 Compass
 =======

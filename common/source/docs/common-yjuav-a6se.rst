@@ -311,13 +311,13 @@ Enable Battery monitor.
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 2
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 2
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 4
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 4
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 18.0
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 18.0
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 24.0 (may need adjustment if supplied monitor is not used)
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 24.0 (may need adjustment if supplied monitor is not used)
 
 Compass
 =======

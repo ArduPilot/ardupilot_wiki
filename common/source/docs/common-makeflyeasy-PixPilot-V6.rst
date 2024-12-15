@@ -367,21 +367,21 @@ Enable Battery monitor with these parameter settings :
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 14
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 14
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 15
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 15
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 18.0
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 18.0
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 24.0
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 24.0
 
-:ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN>` 13
+:ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN__AP_BattMonitor_Analog>` 13
 
-:ref:`BATT2_CURR_PIN<BATT2_CURR_PIN>` 4
+:ref:`BATT2_CURR_PIN<BATT2_CURR_PIN__AP_BattMonitor_Analog>` 4
 
-:ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT>` 18.0
+:ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT__AP_BattMonitor_Analog>` 18.0
 
-:ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT>` 24.0
+:ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT__AP_BattMonitor_Analog>` 24.0
 
 DroneCAN capability
 ===================
