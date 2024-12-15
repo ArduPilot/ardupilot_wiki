@@ -46,7 +46,7 @@ Most ground stations provide a battery monitor interface but the parameters can 
 - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` converts the analog voltage received from the power module's voltage pin to the battery's voltage
 - :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = **3**. The autopilot pin connected to the power module's current pin
 - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` converts the analog voltage received from the power module's current pin to the battery's current
-- :ref:`BATT_AMP_OFFSET <BATT_AMP_OFFSET>` voltage offset received from the power module's current pin when ther is no current being pulled from the battery
+- :ref:`BATT_AMP_OFFSET <BATT_AMP_OFFSET__AP_BattMonitor_Analog>` voltage offset received from the power module's current pin when ther is no current being pulled from the battery
 
 Instructions for setup and calibration using the :ref:`Mission Planner can be found here <common-power-module-configuration-in-mission-planner>`
 A Blog post with instructions for `set-up using QGC can be found here <https://discuss.ardupilot.org/t/power-monitor-setup-on-ardupilot-copter-3-6/35441>`__
@@ -56,11 +56,11 @@ Dual Battery Monitoring
 
 If the autopilot has additional analog-to-digital pins available, a second battery can be monitored by setting up the ``BATT2_`` parameters.  The values below allow reading a second battery's voltage and current using :ref:`The Cube's <common-thecube-overview>` POWER2 port.
 
-- :ref:`BATT2_MONITOR <BATT_MONITOR>` = **4** to measure both voltage and current (you will need to reboot the board after changing this)
-- :ref:`BATT2_VOLT_PIN <BATT_VOLT_PIN>` = **13**
-- :ref:`BATT2_CURR_PIN <BATT_CURR_PIN>` = **14**
+- :ref:`BATT2_MONITOR <BATT2_MONITOR>` = **4** to measure both voltage and current (you will need to reboot the board after changing this)
+- :ref:`BATT2_VOLT_PIN <BATT2_VOLT_PIN__AP_BattMonitor_Analog>` = **13**
+- :ref:`BATT2_CURR_PIN <BATT2_CURR_PIN__AP_BattMonitor_Analog>` = **14**
 
-The :ref:`BATT2_VOLT_MULT <BATT_VOLT_MULT>` and :ref:`BATT2_AMP_PERVLT <BATT_AMP_PERVLT>` should also be set by comparing the reported values vs values collected using a hand held voltage meter
+The :ref:`BATT2_VOLT_MULT <BATT2_VOLT_MULT__AP_BattMonitor_Analog>` and :ref:`BATT2_AMP_PERVLT <BATT2_AMP_PERVLT__AP_BattMonitor_Analog>` should also be set by comparing the reported values vs values collected using a hand held voltage meter
 
 .. image:: ../../../images/powermodule-dual-monitoring.png
     :target: ../_images/powermodule-dual-monitoring.png

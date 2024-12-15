@@ -73,4 +73,4 @@ Set battery parameters as following:
 - :ref:`BATT_MONITOR<BATT_MONITOR>` to 4 to Set to analog voltage and current.
 - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` to 18.4615
 - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` to 37.2300
-- :ref:`BATT_AMP_OFFSET<BATT_AMP_OFFSET>` to 0.63
+- :ref:`BATT_AMP_OFFSET<BATT_AMP_OFFSET__AP_BattMonitor_Analog>` to 0.63

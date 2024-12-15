@@ -23,7 +23,7 @@ For Voltage, the normal Analog Sensor parameters apply:
 For the Current, some of the normal analog current sensor parameters have been re-tasked to save flash and their names are therefore a bit misleading in this application:
 
 - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` is the MAXIMUM current at full battery voltage in amps.
-- :ref:`BATT_AMP_OFFSET <BATT_AMP_OFFSET>` is the idle current (zero throttle) of the system in amps accounting for peripherals, video,etc. Normally in the 0.3 to 0.5 range.
+- :ref:`BATT_AMP_OFFSET <BATT_AMP_OFFSET__AP_BattMonitor_Analog>` is the idle current (zero throttle) of the system in amps accounting for peripherals, video,etc. Normally in the 0.3 to 0.5 range.
 - :ref:`BATT_MAX_VOLT<BATT_MAX_VOLT>` is the MAXIMUM fresh battery voltage. Used to scale the estimate as the battery voltage decreases during use.
 
 Calibration of the :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` value can either be done on the bench with a current meter, or iteratively by estimating an initial value, operating for while, measuring the amount of current needed to restore the battery to full charge, and using that value and a flight log's or OSD's total consumed mah for the flight to adjust the parameter value:
