@@ -550,10 +550,10 @@ Power1 port(Analog)
 The parameters should be set:
 
 * :ref:`BATT_MONITOR <BATT_MONITOR>` = 4, then reboot.
-* :ref:`BATT_VOLT_PIN <BATT_VOLT_PIN>` = 2
-* :ref:`BATT_CURR_PIN <BATT_CURR_PIN>` = 5
-* :ref:`BATT_VOLT_MULT <BATT_VOLT_MULT>` = 18
-* :ref:`BATT_AMP_PERVLT <BATT_AMP_PERVLT>` = 24
+* :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 2
+* :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 5
+* :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` = 18
+* :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` = 24
 
 Power2 port(I2C)
 ================
