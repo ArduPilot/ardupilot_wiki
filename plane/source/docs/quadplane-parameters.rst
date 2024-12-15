@@ -78,7 +78,7 @@ Setup
 
 3. Anytime you switch to RTL (due either to manual mode change or failsafe action), do you want to execute an autoland sequence (does not need to actually have a land command, if some other action is desired), rather than just return and loiter around home?
 
-- If yes,then set up a DO_LAND_START mission sequence and enable the :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` parameter. See :ref:`do_land_start` for details of setup.
+- If yes,then set up a DO_LAND_START mission sequence and enable the :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` parameter. See :ref:`common-do-land-start` for details of setup.
 
 4. If in a VTOL mode, and you switch to RTL (due either to manual mode change or failsafe action), then set the :ref:`Q_RTL_MODE<Q_RTL_MODE>` parameter value as follows to determine the behavior:
 
