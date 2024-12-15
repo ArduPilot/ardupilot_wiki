@@ -89,7 +89,7 @@ Then reboot.
 
 :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 13
 
-:ref:`BATT_AMP_OFFSET<BATT_AMP_OFFSET>` 0.008
+:ref:`BATT_AMP_OFFSET<BATT_AMP_OFFSET__AP_BattMonitor_Analog>` 0.008
 
 :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 12
 

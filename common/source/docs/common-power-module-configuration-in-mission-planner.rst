@@ -87,7 +87,7 @@ Other Parameters
 - :ref:`BATT_ARM_MAH<BATT_ARM_MAH>` is the minimum capacity remaining reported from this monitor that will allow arming to occur.
 - :ref:`BATT_CURR_MULT<BATT_CURR_MULT>` allows adjusting the current scale for DroneCAN(UAVCAN) monitors which do not have a CAN parameter exposed for adjustment.
 - :ref:`BATT_SERIAL_NUM<BATT_SERIAL_NUM>` is used to designate which battery an SMBUS or DroneCAN monitor is associated, since multiple instances of these monitors are possible.
-- :ref:`BATT_MAX_AMPS<BATT_MAX_AMPS>` applies only to INA2xx sensors. Controls the maximum current which can be reported. This sensor is usually integrated onto the autopilot board and this value preset appropriately in the firmware. Normally, the user would only adjust this if the power monitor OEM suggest that it be set to a certain value.
+- :ref:`BATT_MAX_AMPS<BATT_MAX_AMPS__AP_BattMonitor_INA2XX>` applies only to INA2xx sensors. Controls the maximum current which can be reported. This sensor is usually integrated onto the autopilot board and this value preset appropriately in the firmware. Normally, the user would only adjust this if the power monitor OEM suggest that it be set to a certain value.
 
 Failsafe
 --------
