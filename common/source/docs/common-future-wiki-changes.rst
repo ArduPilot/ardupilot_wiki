@@ -26,6 +26,7 @@ New Features
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
+- DO_RETURN_PATH_START mission item, seee https://github.com/ArduPilot/ardupilot_wiki/pull/6460
 [/site]
 [site wiki="copter"]
 
