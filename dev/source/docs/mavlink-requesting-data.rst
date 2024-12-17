@@ -120,6 +120,24 @@ Send a `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_
 - req_message_rate : the rate (in hz) of the message
 - start_stop : "1" to start sending, "0" to stop
 
+**Examples**
+
+Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter the following
+
+- module load message
+
++-------------------------------------------+------------------------------------------------------+
+| Example MAVProxy/SITL Command             | Description                                          |
++===========================================+======================================================+
+| ``message REQUEST_DATA_STREAM 1 0 1 5 1`` | Request sysid:1, compid:0 send sensor data at 5hz    |
++-------------------------------------------+------------------------------------------------------+
+| ``message REQUEST_DATA_STREAM 1 0 1 0 0`` | Request sysid:1, compid:0 stop sending sensor data   |
++-------------------------------------------+------------------------------------------------------+
+| ``message REQUEST_DATA_STREAM 1 0 6 5 1`` | Request sysid:1, compid:0 send position data at 5hz  |
++-------------------------------------------+------------------------------------------------------+
+| ``message REQUEST_DATA_STREAM 1 0 6 0 0`` | Request sysid:1, compid:0 stop sending position data |
++-------------------------------------------+------------------------------------------------------+
+
 Using SET_MESSAGE_INTERVAL
 --------------------------
 
@@ -134,6 +152,24 @@ Send a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`_
 - param1: desired MAVLink message's id (i.e. 33 for `GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#GLOBAL_POSITION_INT>`__)
 - param2: time interval between messages in microseconds (i.e. 100000 for 10hz, 1000000 for 1hz)
 - param3 to param7: 0 (not used)
+
+**Examples**
+
+Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter the following
+
+- module load message
+
++---------------------------------------------------------+---------------------------------------------+
+| Example MAVProxy/SITL Command                           | Description                                 |
++=========================================================+=============================================+
+| ``message COMMAND_LONG 1 0 511 0 33 100000 0 0 0 0 0``  | Request GLOBAL_POSITION_INT at 10hz         |
++---------------------------------------------------------+---------------------------------------------+
+| ``message COMMAND_LONG 1 0 511 0 33 1000000 0 0 0 0 0`` | Request GLOBAL_POSITION_INT at 1hz          |
++---------------------------------------------------------+---------------------------------------------+
+| ``message COMMAND_LONG 1 0 511 0 33 0 0 0 0 0 0``       | Request GLOBAL_POSITION_INT at default rate |
++---------------------------------------------------------+---------------------------------------------+
+| ``message COMMAND_LONG 1 0 511 0 33 -1 0 0 0 0 0``      | Request GLOBAL_POSITION_INT not be sent     |
++---------------------------------------------------------+---------------------------------------------+
 
 .. warning::
 
@@ -153,6 +189,18 @@ Send a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`_
 - param1: desired MAVLink message's id (i.e. 33 for `GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#GLOBAL_POSITION_INT>`__)
 - param2: depends on message requested; see that message's definition for details.
 - param3 to param7: 0 (not used)
+
+**Examples**
+
+Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter the following
+
+- module load message
+
++---------------------------------------------------+------------------------------------------+
+| Example MAVProxy/SITL Command                     | Description                              |
++===================================================+==========================================+
+| ``message COMMAND_LONG 1 0 512 0 33 0 0 0 0 0 0`` | Request GLOBAL_POSITION_INT be sent once |
++---------------------------------------------------+------------------------------------------+
 
 Specifying Message Rates in a File
 ----------------------------------
