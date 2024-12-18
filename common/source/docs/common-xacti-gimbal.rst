@@ -4,16 +4,16 @@
 Xacti Gimbals
 =============
 
-The `Xacti Camera Gimbals <https://xacti-co.com/service/drone_camera/>`__ are relatively lightweight 3-axis camera gimbals which communicate with ArduPilot using the DroneCAN protocol.  Real time video output is available simulataneously through HDMI and USB.  Pictures taken include the vehicle's location (lat, lon, alt) stored using EXIF.
+The `Xacti Camera Gimbals <https://xacti-co.com/solution/drone/ardupilot/>`__ are relatively lightweight 3-axis camera gimbals which communicate with ArduPilot using the DroneCAN protocol.  Real time video output is available simulataneously through HDMI and USB.  Pictures taken include the vehicle's location (lat, lon, alt) stored using EXIF.
 
 .. image:: ../../../images/xacti-gimbal.png
 
 The four supported models are:
 
-- CX-GB100 : 20MP RGB
-- CX-GB200 : 12MP RGB + 640x512 pixel IR
-- CX-GB300 : Multispectral NDVI
-- CX-GB400 : 12MP RGB with 2.5x optical zoom
+- CX-GB110 : 20MP RGB
+- CX-GB210 : 12MP RGB + 640x512 pixel IR
+- CX-GB310 : Multispectral NDVI
+- CX-GB410 : 12MP RGB with 2.5x optical zoom
 
 .. note::
 
@@ -24,7 +24,7 @@ Some images courtesy of xacti-co.com
 Where to Buy
 ------------
 
-These gimbals can be purchased directly from `Xacti <https://xacti-co.com/service/drone_camera/>`__
+These gimbals can be purchased directly from `Xacti <https://xacti-co.com/solution/drone/ardupilot/>`__
 
 Compatible connector and jumper wires are available from digikey
 
