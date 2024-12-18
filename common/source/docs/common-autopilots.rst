@@ -1,4 +1,4 @@
-.. _common-autopilots:
+.. _common-autopilots: 
 
 =====================
 Choosing an Autopilot
