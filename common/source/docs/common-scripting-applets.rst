@@ -27,13 +27,13 @@ SmartAudio.lua                              Smart Audio control
 UniversalAutoLand.lua                       Allow easy, unpre-planned operation at any location with the protection of a do-land-start autoland sequence
 VTOL-quicktune.lua                          VTOL-quicktuning applet
 advance-wp.lua                              Advance the current mission waypoint via an RC switch
-ahrs-source-ext.lua                         Sets the AHRS/EKF origin to a specified Location
-ahrs-source-nav-optflow.lua                 Help vehicles automatically switch between ExternalNav and optical flow
+ahrs-set-origin.lua                         Sets the AHRS/EKF origin to a specified Location
+ahrs-source-extnav-optflow.lua              Help vehicles automatically switch between ExternalNav and optical flow
 camera-change-setting.lua                   Allows changing some camera settings that are not normally used by the autopilot
-revert_param.lua                            Easy parameter reversion system to help with manual in-flight tuning.
 copter-deadreckon-home.lua                  Flies towards home on loss of GPS
 copter-slung-payload.lua                    Reduce a slung payload's oscillation
 copter_terrain_brake.lua                    Useful when flying in LOITER mode in steep terrain
+follow-target-send.lua                      Sends the FOLLOW_TARGET mavlink message to allow other vehicles to follow this one
 forward_flight_motor_shutdown.lua           Forward flight motor shutdown
 leds_on_a_switch.lua                        Control NTF_LED_BRIGHT value using an AUX switch
 motor_failure_test.lua                      Motor failure testing script
