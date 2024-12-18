@@ -29,7 +29,7 @@ New Features
 - DO_RETURN_PATH_START mission item, seee https://github.com/ArduPilot/ardupilot_wiki/pull/6460
 [/site]
 [site wiki="copter"]
-
+- Fast Attitude loop option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6470
 [/site]
 [site wiki="rover"]
 
