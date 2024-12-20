@@ -81,6 +81,10 @@ Ethernet Connectivity
 
 Instead of using a UART serial connection to control the gimbal, an Ethernet virtual serial connection may also be used, as well as transmitting a video stream from the camera.
 
+.. image:: ../../../images/siyi-a8-botblox-ethernet.png
+    :target: ../_images/siyi-a8-botblox-ethernet.png
+    :width: 450px
+
 An example of the setup of the gimbal in a networked ArduPilot vehicle system is detailed in :ref:`common-ethernet-vehicle` but in short, to control the gimbal over Ethernet
 
 - Connect the gimbal and autopilot using an :ref:`ethernet adapter <common-ethernet-adapters>`
