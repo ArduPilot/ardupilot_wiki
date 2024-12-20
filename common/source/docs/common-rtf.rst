@@ -90,6 +90,7 @@ Vehicles from Non-Partners
 ==========================
 
 * `Aton <https://traxxas.com/products/models/heli/Aton-Plus>`__ and `Aton-Plus from traxxas <https://traxxas.com/products/models/heli/Aton-Plus>`__ (firmware loaded using an SD Card)
+* `BathyDrone mapping boats <https://www.bathydrone-usv.com/>`__
 * `DRONEE Easy to Use Mapping Plane <https://dronee.aero/pages/droneeplane>`__
 * `MotoDoro Farm Mapper (Plane) <https://motodoro.com/blog/detail/00005-farm-mapper-vtol.html>`__
 * `SkyRocket - Journey <http://sky-viper.com/journey/>`__
