@@ -2,9 +2,9 @@
 
 [copywiki destination="copter,plane,rover,planner,blimp"]
 
-===========================
-Loading Firmware via sdcard
-===========================
+============================
+Loading Firmware via SD Card
+============================
 
 It is possible to update the ArduPilot firmware on certain autopilots by placing a specifically-named file onto an SD card and running the autopilot's bootloader (e.g. by power-cycling the board.
 
