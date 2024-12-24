@@ -52,6 +52,6 @@ These MAV_CMDs can be processed if packaged within a `COMMAND_LONG <https://mavl
 These MAV_CMDs can be processed if packaged within a `COMMAND_INT <https://mavlink.io/en/messages/common.html#COMMAND_INT>`__ message
 
 - `MAV_CMD_DO_REPOSITION <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_REPOSITION>`__
-
-
-
+- `MAV_CMD_GUIDED_CHANGE_SPEED <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_CHANGE_SPEED>`__
+- `MAV_CMD_GUIDED_CHANGE_ALTITUDE <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_CHANGE_ALTITUDE>`__
+- `MAV_CMD_GUIDED_CHANGE_HEADING <https://mavlink.io/en/messages/common.html#MAV_CMD_GUIDED_CHANGE_HEADING>`__
