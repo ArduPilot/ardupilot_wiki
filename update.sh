@@ -115,11 +115,17 @@ find -name "parameters*rst" -delete # Clean possible built and cached parameters
 
 END_UPDATES=$(date +%s)
 
-echo "[Buildlog] Starting to build multiple parameters pages at $(date '+%Y-%m-%d-%H-%M-%S')"
-python3 build_parameters.py
-END_BUILD_MPARAMS=$(date +%s)
-MPARAMS_TIME=$(echo "($END_BUILD_MPARAMS - $END_UPDATES)" | bc)
-echo "[Buildlog] Time to run build_parameters.py: $MPARAMS_TIME seconds"
+DO_PARAM_VERSIONING=true
+if $DO_PARAM_VERSIONING; then
+    echo "[Buildlog] Starting to build multiple parameters pages at $(date '+%Y-%m-%d-%H-%M-%S')"
+    python3 build_parameters.py
+    END_BUILD_MPARAMS=$(date +%s)
+    MPARAMS_TIME=$(echo "($END_BUILD_MPARAMS - $END_UPDATES)" | bc)
+    echo "[Buildlog] Time to run build_parameters.py: $MPARAMS_TIME seconds"
+else
+    # we use this hwne calculating times, below
+    END_BUILD_MPARAMS=$END_UPDATES
+fi
 
 echo "[Buildlog] Starting to build the wiki at $(date '+%Y-%m-%d-%H-%M-%S')"
 # python3 update.py --clean --parallel 4 # Build without versioning for parameters. It is better for editing wiki.
