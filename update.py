@@ -245,8 +245,14 @@ def build_one(wiki, fast):
     if not fast and os.path.exists(output_dir):
         shutil.rmtree(output_dir)
 
-    app = Sphinx(srcdir=source_dir, confdir=source_dir, outdir=html_dir, doctreedir=doctree_dir, buildername='html',
-                 parallel=2)
+    app = Sphinx(
+        buildername='html',
+        confdir=source_dir,
+        doctreedir=doctree_dir,
+        outdir=html_dir,
+        parallel=2,
+        srcdir=source_dir,
+    )
     app.build()
 
 
