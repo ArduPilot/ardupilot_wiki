@@ -413,9 +413,9 @@ def create_dir_if_not_exists(dir_path: str) -> None:
         pass
 
 
-def generate_copy_dict(start_dir=COMMON_DIR):
+def copy_common_source_files(start_dir=COMMON_DIR):
     """
-    This creates a dict which indexes copy targets for all common docs.
+    copies files common to all Wikis to the source directories for each Wiki
     """
 
     # Clean existing common topics (easiest way to guarantee old ones
@@ -435,10 +435,11 @@ def generate_copy_dict(start_dir=COMMON_DIR):
         create_dir_if_not_exists(f'{wiki}/source/docs')
         create_dir_if_not_exists(f'{wiki}/source/_static')
 
+    debug("Copying common source files to each Wiki")
     for root, dirs, files in os.walk(start_dir):
         for file in files:
             if file.endswith(".rst"):
-                debug("FILE: %s" % file)
+                debug("  FILE: %s" % file)
                 source_file_path = os.path.join(root, file)
                 source_file = open(source_file_path, 'r', 'utf-8')
                 source_content = source_file.read()
@@ -449,7 +450,7 @@ def generate_copy_dict(start_dir=COMMON_DIR):
                     # print("CopyTarget: %s" % wiki)
                     content = strip_content(source_content, wiki)
                     targetfile = '%s/source/docs/%s' % (wiki, file)
-                    debug(targetfile)
+                    debug(f"    {targetfile}")
                     destination_file = open(targetfile, 'w', 'utf-8')
                     destination_file.write(content)
                     destination_file.close()
@@ -467,7 +468,7 @@ def generate_copy_dict(start_dir=COMMON_DIR):
                 for wiki in targets:
                     content = strip_content(source_content, wiki)
                     targetfile = '%s/source/_static/%s' % (wiki, file)
-                    debug(targetfile)
+                    debug(f"    {targetfile}")
                     destination_file = open(targetfile, 'w', 'utf-8')
                     destination_file.write(content)
                     destination_file.close()
@@ -1055,7 +1056,7 @@ if __name__ == "__main__":
         fetchlogmessages(args.site, args.cached_parameter_files)
 
     copy_static_html_sites(args.site, args.destdir)
-    generate_copy_dict()
+    copy_common_source_files()
     sphinx_make(args.site, args.parallel, args.fast)
 
     if args.paramversioning:
