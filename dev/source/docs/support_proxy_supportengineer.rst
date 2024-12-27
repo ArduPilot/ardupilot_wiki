@@ -37,7 +37,7 @@ Once the signing key is setup you can start to accept connections from
 users. You should direct your users to the instructions at the top of
 this page.
 
-To connect to your side of the proxy use the UDPCI connection method
+To connect to your side of the proxy use a TCP or UDPCI connection method
 in MissionPlanner:
 
 .. image:: ../images/MissionPlanner_connect_UDPCI.jpg
