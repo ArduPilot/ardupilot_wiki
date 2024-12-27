@@ -20,4 +20,8 @@ OUTDIR_OLD=/var/sites/wiki/web/old
 mkdir -p "$OUTDIR_OLD"
 chown -R vagrant.vagrant "$OUTDIR"
 
+mkdir -p /var/sites/wiki-backup
+chown -R vagrant.vagrant /var/sites/wiki-backup
+
+
 echo "---------- $0 end ----------"
