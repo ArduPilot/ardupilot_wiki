@@ -61,14 +61,34 @@ Configuring the Gimbal
     :target: ../_images/topotek-gimbal-config-app.png
     :width: 450px
 
-The camera gimbal can be configured using the "GimbalControl" application which can be downloaded from the `Topotek Download Resources page <https://topotek.com/pages/TOPOTEK-Download-Resources-11763444.html>`__
+The camera gimbal can be configured over an Ethernet connection using the "GimbalControl" application which can be downloaded from the `Topotek Download Resources page <https://topotek.com/pages/TOPOTEK-Download-Resources-11763444.html>`__
+
+To configure using the serial port use the "Angle control" or "Speed control" applications which can also be downloaded from `Topotek Download Resources page <https://topotek.com/pages/TOPOTEK-Download-Resources-11763444.html>`__
 
 Ethernet Connectivity
 ---------------------
 
 Instead of using a UART serial connection, an Ethernet connection may be used to both control the gimbal and display live video stream from the camera
 
+.. image:: ../../../images/topotek-botblox-ethernet.png
+    :target: ../_images/topotek-botblox-ethernet.png
+    :width: 450px
+
 An example setup of a networked ArduPilot vehicle system is detailed in :ref:`common-ethernet-vehicle`
+
+- Connect the gimbal and autopilot using an :ref:`ethernet adapter <common-ethernet-adapters>`
+- Ensure the autopilot and gimbal are on the same subnet (e.g the first 3 octets of the IP address match, 4th octet is different)
+
+  - The gimbal's IP address can be set using the "GimbalControl" application (see image above)
+  - Set the autopilot's :ref:`NET_ENABLE<NET_ENABLE>` = 1 and reboot to enable networking
+  - Set the autopilot's IP address using :ref:`NET_IPADDR0<NET_IPADDR0>`, :ref:`NET_IPADDR1<NET_IPADDR1>`, :ref:`NET_IPADDR2<NET_IPADDR2>`, :ref:`NET_IPADDR3<NET_IPADDR3>` (e.g. 192.168.144.14)
+
+- Create a serial connection over ethernet
+
+  - Set :ref:`NET_P1_TYPE<NET_P1_TYPE>` = 1 (UDP Client) and reboot the autopilot
+  - Set :ref:`NET_P1_IP0<NET_P1_IP0>`, :ref:`NET_P1_IP1<NET_P1_IP1>`, :ref:`NET_P1_IP2<NET_P1_IP2>`, :ref:`NET_P1_IP3<NET_P1_IP3>` to the gimbal's IP address (e.g. 192.168.144.108)
+  - Set :ref:`NET_P1_PORT<NET_P1_PORT>` = 9003 (port that gimbal listens for commands on)
+  - Set :ref:`NET_P1_PROTOCOL<NET_P1_PROTOCOL>` = 8 (Gimbal)
 
 Two video streams are available on different RTSP URLs
 
