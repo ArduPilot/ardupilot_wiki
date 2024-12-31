@@ -19,10 +19,11 @@ ArduPilot supports both brushless direct drive gimbals (Tarot, SimpleBGC, SToRM3
 that have their own self-stabilization controllers and the simpler servo-driven
 gimbals in which ArduPilot controls the stabilisation. Some gimbals also integrate still or video cameras.
 
--  :ref:`Servo Gimbals <common-camera-gimbal>` — older-style servo-driven gimbal where ArduPilot provides stabilisation
+-  :ref:`ADTi cameras and gimbals <common-adti-cameras-and-gimbals>`
 -  :ref:`Brushless PWM <common-brushless-pwm-gimbal>` - brushless gimbals that accept PWM or SBUS input for angle control
 -  :ref:`DJI RS2 and RS3-Pro gimbals <common-djirs2-gimbal>`
 -  :ref:`Gremsy Mio, Pixy, S1, T3, T7 and ZIO <common-gremsy-pixyu-gimbal>` - high quality 3-axis gimbals
+-  :ref:`Servo Gimbals <common-camera-gimbal>` — older-style servo-driven gimbal where ArduPilot provides stabilisation
 -  :ref:`SimpleBGC (aka AlexMos) Gimbal Controller <common-simplebgc-gimbal>` - a popular 2-axis or 3-axis brushess gimbal controller which uses a custom serial interface
 -  :ref:`Siyi ZR10, ZR30, ZT6, ZT30, and A8 <common-siyi-zr10-gimbal>` - 3-axis gimbal and camera
 -  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an inexpensive 2-axis or 3-axis brushless gimbal controller which responds to MAVLink commands (a richer format than PWM) over a serial interface
@@ -60,6 +61,7 @@ Shutter Controllers
 Control of Specific Camera Models
 ---------------------------------
 
+-  :ref:`ADTi cameras and gimbals <common-adti-cameras-and-gimbals>`
 -  :ref:`Airpixel Entire Geotagger <common-geotagging-airpixel-entire>`
 -  :ref:`FLIR Vue Pro Thermal Camera <common-flir-vue-pro>`
 -  :ref:`RunCam Camera Control <common-camera-runcam>`
@@ -96,6 +98,7 @@ more scenic photos. ArduPilot will stabilize the gimbal to whatever position you
 .. toctree::
     :hidden:
 
+    ADTi Cameras and Gimbals <common-adti-cameras-and-gimbals>
     Brushless PWM <common-brushless-pwm-gimbal>
     DJI RS2 and RS3-Pro gimbals <common-djirs2-gimbal>
     Gremsy Pixy U Gimbal <common-gremsy-pixyu-gimbal>

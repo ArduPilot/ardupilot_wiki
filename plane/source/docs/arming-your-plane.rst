@@ -163,7 +163,7 @@ issues follow this guide
 In Landing Sequence Pre-Arm Failure
 -----------------------------------
 
-If the last mission item was a landing sequence or land command, then arming is prevented and a "Prearm: In Landing Sequence" message is presented. This can occur after an autoland, or if the autopilot is booted before RC is established and the failsafe mode uses a landing sequence (ie :ref:`do-land-start` and :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` is set, QLAND, etc.). 
+If the last mission item was a landing sequence or land command, then arming is prevented and a "Prearm: In Landing Sequence" message is presented. This can occur after an autoland, or if the autopilot is booted before RC is established and the failsafe mode uses a landing sequence (ie :ref:`common-do-land-start` and :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` is set, QLAND, etc.). 
 
 This may be cleared by restarting the mission using the GCS or :ref:`common-auxiliary-functions` switch, or rebooting with RC active.
 

@@ -4,20 +4,16 @@
 Benewake TFmini / TFmini Plus lidar
 ===================================
 
-The `Benewake TFmini lidar <http://en.benewake.com/product/detail/5c345e26e5b3a844c472329c.html>`__ and `TFmini Plus <http://en.benewake.com/product/detail/5c345cd0e5b3a844c472329b.html>`__ have an indoor range of 12m, an outdoor range of 7m and weigh only (5g).
+The `TFmini <https://en.benewake.com/TFminiS/index.html>`__  and `TFmini Plus <https://en.benewake.com/TFminiPlus/index.html>`__ lidars have an indoor range of 12m, an outdoor range of 7m and weigh 5g and 11g respectively.
 
-More details on both these lidar can be found in the `benewake.com's downloads area <http://en.benewake.com/download>`__
+More details on both these lidar can be found in the `benewake.com's downloads area <https://en.benewake.com/DataDownload/>`__
 
 .. image:: ../../../images/benewake-tfmini-topimage.jpg
-
-.. note::
-
-   Support for this sensor is available in Copter-3.6 (and higher) and Rover-3.4 (and higher)
 
 Where to Buy
 ------------
 
-- `Benewake.com Agents <http://en.benewake.com/news/detail/602f56204d839408076b62a3.html>`__
+- `Benewake.com Distributors <https://en.benewake.com/Agent/index.html>`__
 - `Benewake's store on Alibaba.com <https://beixingguangzi.en.alibaba.com/>`__
 
 Connecting to the Autopilot

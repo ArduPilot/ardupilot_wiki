@@ -1,10 +1,10 @@
 .. _common-network:
 
-===========================
-ArduPilot Network Interface
-===========================
+=================
+Network Interface
+=================
 
-As of firmware 4.5 and later, ArduPilot provides a network interface framework to allow local and wide-area network connections. Several later generation autopilots, like Pixhawk6X and CubePilot CubeRed, provide Ethernet MAC interfaces, which allows ArduPilot to connect to vehicle peripherals, data servers, and even the wide area network via IP using transport layer UDP or TCP protocols.
+ArduPilot 4.5 (and higher) provides a network interface framework to allow local and wide-area network connections. Several later generation autopilots, like Pixhawk6X and CubePilot CubeRed, provide Ethernet MAC interfaces, which allows ArduPilot to connect to vehicle peripherals, data servers, and even the wide area network via IP using transport layer UDP or TCP protocols.
 
 In addition, custom builds for H7 based processors that do not have an Ethernet MAC integrated can be created with the `ArduPilot Custom Firmware Server <https://firmware.ardupilot.org/>`__ that includes PPP(Point-To-Point Protocol) allowing network connections over a serial port of the autopilot using PPP.
 
@@ -52,7 +52,7 @@ This is the global 6 byte MAC address. The default is automatically generated fr
 - :ref:`NET_IPADDR2<NET_IPADDR2>`
 - :ref:`NET_IPADDR3<NET_IPADDR3>`
 
-This is the autopilot's 4 byte IP address. It defaults to ``192.168.13.14``. It can be dynamically assigned if the network has a DHCP server by enabling ArduPilot's DHCP client using the :ref:`NET_DHCP<NET_DHCP>` parameter, or manually set as desired.
+This is the autopilot's 4 byte IP address. It defaults to ``192.168.144.14``. It can be dynamically assigned if the network has a DHCP server by enabling ArduPilot's DHCP client using the :ref:`NET_DHCP<NET_DHCP>` parameter, or manually set as desired.
 
 - :ref:`NET_NETMASK<NET_NETMASK>` is the number of leading bits set in the subnet mask. For example, if its set to 24, then the subnet mask is  255.255.255.0, which is the default.
 - :ref:`NET_GWADDR0<NET_GWADDR0>`
@@ -60,7 +60,7 @@ This is the autopilot's 4 byte IP address. It defaults to ``192.168.13.14``. It 
 - :ref:`NET_GWADDR2<NET_GWADDR2>`
 - :ref:`NET_GWADDR3<NET_GWADDR3>`
 
-This is the gateway's IP address out of the local sub-net defined by the :ref:`NET_NETMASK<NET_NETMASK>` mask. Any destination IPs that are outside the masked subnet range will be sent to the gateway's MAC address with the final destinations IP address.
+This is the gateway's IP address out of the local sub-net defined by the :ref:`NET_NETMASK<NET_NETMASK>` mask. Any destination IPs that are outside the masked subnet range will be sent to the gateway's MAC address with the final destinations IP address. The default is ``192.168.144.1``.
 
 PPP Configuration
 -----------------

@@ -460,10 +460,10 @@ The board has two dedicated power monitor ports on 6 pin connectors. The correct
 In order to enable monitoring, the :ref:`BATT_MONITOR<BATT_MONITOR>` or :ref:`BATT2_MONITOR<BATT2_MONITOR>` parameter must be set. By default :ref:`BATT_MONITOR<BATT_MONITOR>` is set to "4" for the included power module..
 
 Default params for the first monitor are set and are:
-* :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 2
-* :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 1
-* :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` = 18.0
-* :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` = 24.0 (may need adjustment if supplied monitor is not used)
+* :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 2
+* :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 1
+* :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` = 18.0
+* :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` = 24.0 (may need adjustment if supplied monitor is not used)
 
 Compass
 =======

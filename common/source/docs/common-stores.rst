@@ -23,6 +23,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `CubePilot <https://www.cubepilot.org>`__
 * `DATAGNSS <https://www.datagnss.com>`__
 * `DH Research <https://dh-research.com/>`__
+* `Drone Engr <https://www.droneassemble.com/>`__
 * `Drotek <https://drotek.com/>`__
 * `Emlid <https://store.emlid.com/>`__
 * `EAMS Robotics <https://store.shopping.yahoo.co.jp/elab-store/>`__

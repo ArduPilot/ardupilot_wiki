@@ -105,7 +105,7 @@ protocols except bi-directional serial protocols such as CRSF, ELRS, etc. Instea
 
 Battery Monitor Configuration
 =============================
-These settings are set as defaults when the firmware is loaded (except :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` which needs to be changed from the default value). However, if they are ever lost, you can manually set the parameters:
+These settings are set as defaults when the firmware is loaded (except :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` which needs to be changed from the default value). However, if they are ever lost, you can manually set the parameters:
 
 Enimages/CSKY405_wiring.pngable Battery monitor.
 
@@ -113,10 +113,10 @@ Enimages/CSKY405_wiring.pngable Battery monitor.
 
 Then reboot.
 
-- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 14
-- :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 7
-- :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 21
-- :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 10.35
+- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 14
+- :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 7
+- :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 21
+- :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 10.35
 
 VTX power control
 =================

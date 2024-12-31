@@ -19,10 +19,10 @@ Equipment Used
 (donated by CUAV , SIYI, CubePilot, and BotBlox for this article)
 
 - Hexsoon EDU650 Multicopter from CubePilot
-- CUAV Pixhawk V6X
-- SIYI A8 Mini Gimbal/HD Camera
-- CUAV Herelink UAV Remote Control System
-- BotBlox ArduPilot Ethernet Switch
+- :ref:`CUAV Pixhawk V6X <common-cuav-pixhawkv6X>`
+- :ref:`SIYI A8 Mini Gimbal/HD Camera <common-siyi-zr10-gimbal>`
+- :ref:`CubePilot Herelink Telemetry System <common-herelink>`
+- `BotBlox ArduPilot Ethernet Switch <https://botblox.io/switchblox-for-ardupilot/>`__
 
 Note: many other brands of gimbals/cameras/radio control systems/autopilots are Ethernet capable and can be used in similar configurations
 
@@ -39,8 +39,10 @@ The gimbal, autopilot, and wireless air unit all plug into this and the Ethernet
 
 AutoPilot Basic Setup
 ---------------------
-To enable Ethernet on the autopilot the following parameters are set (other NET params stay at default):
-NET_ENABLE,1 then reboot
+To enable Ethernet on the autopilot the following parameters are set (other NET params stay at default) and reboot the autopilot
+
+- :ref:`NET_ENABLE<NET_ENABLE>` = 1
+
 then set the autopilot's IP address, it must be in the 192.168.144.x to be in the Herelink's listening range..this will drive other addresses to be set later also:
 
 - :ref:`NET_IPADDR0<NET_IPADDR0>` = 192
@@ -98,7 +100,7 @@ reboot for the params to show:
 - :ref:`NET_P1_IP2<NET_P1_IP2>` = 144
 - :ref:`NET_P1_IP3<NET_P1_IP3>` = 25   <- the IP address we set for the Gimbal previously
 - :ref:`NET_P1_PORT<NET_P1_PORT>` = 37260 <- this is the port that Gimbal listens for commands
-- :ref:`NET_P1_PROTOCOL<NET_P1_PROTOCOL>` = 8 <-Gimbal serial protocol
+- :ref:`NET_P1_PROTOCOL<NET_P1_PROTOCOL>` = 8 <- Gimbal serial protocol
 
 Now gimbal/camera commands from the autopilot (MAVLink or AUX functions translated to SIYI commands) will be sent to the SIYI gimbal
 
@@ -115,7 +117,7 @@ rebooot for the params to show:
 - :ref:`NET_P2_IP2<NET_P2_IP2>` = 144
 - :ref:`NET_P2_IP3<NET_P2_IP3>` = 11 <- this is the IP address of the Herelink air unit
 - :ref:`NET_P2_PORT<NET_P2_PORT>` = 14550 <- on this port
-- :ref:`NET_P2_PROTOCOL<NET_P2_PROTOCOL>` = 2 <-using MAVLink2 protocol
+- :ref:`NET_P2_PROTOCOL<NET_P2_PROTOCOL>` = 2 <- using MAVLink2 protocol
 
 now telemetry will be sent to/from the Herelink ground unit. Opening the GCS app on the ground controller should automatically connect to the UDP telemetry stream.
 

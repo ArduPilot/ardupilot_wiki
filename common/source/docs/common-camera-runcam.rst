@@ -40,11 +40,11 @@ Setup
 
   When the camera is connected correctly and the serial port configured correctly you will see a message similar to the following at boot: ``APM: RunCam initialized, features 0x0077, 2-key OSD`` otherwise you will see ``APM: RunCam device not found``.
 
-  The camera must be powered and fully booted in order to accept commands. This can take some time and the delay between the autopilot booting and the camera being probed can be controlled through :ref:`CAM_RC_BT_DELAY <CAM_RC_BT_DELAY>`. The camera will be probed repeatedly until :ref:`CAM_RC_BT_DELAY <CAM_RC_BT_DELAY>` elapses, but once that has expired the camera will not be probed again.
+  The camera must be powered and fully booted in order to accept commands. This can take some time and the delay between the autopilot booting and the camera being probed can be controlled through `CAM_RC_BT_DELAY``. The camera will be probed repeatedly until ``CAM_RC_BT_DELAY`` elapses, but once that has expired the camera will not be probed again.
 
-* Some split-style cameras support three modes - video standby, video start and picture mode. It is not possible to tell from the RunCam device protocol whether this is the type of camera in use and so this must be configured. Set :ref:`CAM_RC_TYPE <CAM_RC_TYPE>` = 2. Most other cameras should be fine with the default, however some of the later cameras have a bug where video start/stop protocol commands are not properly supported and a workaround has to be used. Cameras known to have this problem are the RunCam Split4k and require setting :ref:`CAM_RC_TYPE <CAM_RC_TYPE>` = 3. In addition to this problem RunCam Hybrid cameras have a QR code mode which can also cause problems for recording control. For RunCam Hybrids set :ref:`CAM_RC_TYPE <CAM_RC_TYPE>` = 4. For RunCam2 4K camera, set :ref:`CAM_RC_TYPE<CAM_RC_TYPE>` = 5.
+* Some split-style cameras support three modes - video standby, video start and picture mode. It is not possible to tell from the RunCam device protocol whether this is the type of camera in use and so this must be configured. Set `CAM_RC_TYPE`` = 2. Most other cameras should be fine with the default, however some of the later cameras have a bug where video start/stop protocol commands are not properly supported and a workaround has to be used. Cameras known to have this problem are the RunCam Split4k and require setting ``CAM_RC_TYPE`` = 3. In addition to this problem RunCam Hybrid cameras have a QR code mode which can also cause problems for recording control. For RunCam Hybrids set ``CAM_RC_TYPE`` = 4. For RunCam2 4K camera, set ``CAM_RC_TYPE<CAM_RC_TYPE`` = 5.
 
-Note that RunCam are bringing out new cameras all the time and seem to change the video controls with almost every camera, so if you are having issues - particularly with video control - try one of the other camera types for :ref:`CAM_RC_TYPE <CAM_RC_TYPE>`.
+Note that RunCam are bringing out new cameras all the time and seem to change the video controls with almost every camera, so if you are having issues - particularly with video control - try one of the other camera types for ``CAM_RC_TYPE``.
 
 * In order to control start and stop of video recording from a radio transmitter set a free rc channel to ``RCx_OPTION`` = 78 to enable triggering from that RC input channel. If the switch is in the low position then video recording is stopped, if in the high position then video recording is started.
 
@@ -53,7 +53,7 @@ Note that RunCam are bringing out new cameras all the time and seem to change th
 OSD Menu Control
 ================
 
-A big part of the RunCam feature is support for the OSD menu. The OSD menu allows various properties of a connected camera to be controlled via RC stick gestures. The easiest way to enter the OSD menu is to push the stick for Roll hard right. This gesture is enabled by default but can be changed by setting :ref:`CAM_RC_CONTROL <CAM_RC_CONTROL>`. Once in the menu, the Pitch stick will allow you to navigated between menu items and Roll right will usually allow you to select items or navigate into sub-menus. The OSD menu can only be entered while disarmed.
+A big part of the RunCam feature is support for the OSD menu. The OSD menu allows various properties of a connected camera to be controlled via RC stick gestures. The easiest way to enter the OSD menu is to push the stick for Roll hard right. This gesture is enabled by default but can be changed by setting ``CAM_RC_CONTROL``. Once in the menu, the Pitch stick will allow you to navigated between menu items and Roll right will usually allow you to select items or navigate into sub-menus. The OSD menu can only be entered while disarmed.
 
 The transmitter sticks can be used to control the OSD menu as follows:
 

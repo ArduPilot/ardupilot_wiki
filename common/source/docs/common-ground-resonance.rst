@@ -11,12 +11,12 @@ The three parameters used to address ground resonance oscillation are :ref:`ATC_
 Evaluating Ground Resonance Oscillation
 =======================================
 
-#.Arm the throttle in Stabilize Mode
-#.Lift the throttle to the point where the motors increase to MOT_SPIN_MIN
-#.Observe the axis off oscillation,
-#.Back off :ref:`ATC_LAND_Y_MULT<ATC_LAND_Y_MULT>` to 0.5
-#.Revaluate Roll and Pitch oscillation for improvement
-#.Back off axis where oscillation is observed in 25% steps until oscillation is manageable.
+#. Arm the throttle in Stabilize Mode
+#. Lift the throttle to the point where the motors increase to MOT_SPIN_MIN
+#. Observe the axis off oscillation,
+#. Back off :ref:`ATC_LAND_Y_MULT<ATC_LAND_Y_MULT>` to 0.5
+#. Revaluate Roll and Pitch oscillation for improvement
+#. Back off axis where oscillation is observed in 25% steps until oscillation is manageable.
 
 .. note:: Extreme care should be taken if :ref:`ATC_LAND_R_MULT<ATC_LAND_R_MULT>` or :ref:`ATC_LAND_P_MULT<ATC_LAND_P_MULT>` is reduced below 0.5.
 

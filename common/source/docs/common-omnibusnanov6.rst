@@ -133,9 +133,9 @@ Set :ref:`BATT_MONITOR <BATT_MONITOR>` to 3 (= analog voltage only) and reboot.
 
 Default pin values:
 
-:ref:`BATT_VOLT_PIN <BATT_VOLT_PIN>` = 12
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 12
 
-:ref:`BATT_VOLT_MULT <BATT_VOLT_MULT>` = 11
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` = 11
 
 Optionally add voltage and / or current monitoring using ESC telemetry capable ESCs. See instructions :ref:`here <blheli32-esc-telemetry>`.
 
@@ -145,15 +145,15 @@ V6.x revision
 
 V6.x revision has an additional ADC available for external current sensor hardware / PDB connection in 4in1 socket / respective pads.
 
-:ref:`BATT_CURR_PIN <BATT_CURR_PIN>` = 11
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 11
 
-:ref:`BATT_AMP_PERVLT <BATT_AMP_PERVLT>` = 18.2
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` = 18.2
 
 Set :ref:`BATT_MONITOR <BATT_MONITOR>` to 4 (= analog voltage and current) and reboot for full battery monitoring support.
 
 .. note::
    
-   Current pin defaults to pin 11 in ardupilot runtime. Alternatively, it can be used for analog RSSI input or connecting an analog airspeed sensor. Adjust :ref:`BATT_AMP_PERVLT <BATT_AMP_PERVLT>` default of 18.2 as required by the individual current sensor hardware used.
+   Current pin defaults to pin 11 in ardupilot runtime. Alternatively, it can be used for analog RSSI input or connecting an analog airspeed sensor. Adjust :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` default of 18.2 as required by the individual current sensor hardware used.
 
 
 Flashing Firmware

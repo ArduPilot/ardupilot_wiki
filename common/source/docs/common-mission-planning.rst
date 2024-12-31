@@ -29,6 +29,7 @@ This section contains articles about creating missions that will run when the ve
     Mission Command List <common-mavlink-mission-command-messages-mav_cmd>
     Camera Control in Auto Missions <common-camera-control-and-auto-missions-in-mission-planner>
     Rally Points <common-rally-points>
+    DO_LAND_START <common-do-land-start>
     Geotagging Images with Mission Planner <common-geotagging-images-with-mission-planner>
 
 [site wiki="plane"]

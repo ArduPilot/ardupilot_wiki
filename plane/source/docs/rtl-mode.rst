@@ -23,7 +23,7 @@ Alternatively, you may :ref:`configure the plane to return to a Rally Point <com
 RTL_AUTOLAND
 ============
 
-It is possible to setup an :ref:`automatic-landing` to be executed when entering RTL. See :ref:`do_land_start` for details. You must have setup your vehicle to properly do a automatic landing, of course.
+It is possible to setup an :ref:`automatic-landing` to be executed when entering RTL. See :ref:`common-do-land-start` for details. You must have setup your vehicle to properly do a automatic landing, of course.
 
 .. warning::
 

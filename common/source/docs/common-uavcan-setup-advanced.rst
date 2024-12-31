@@ -74,19 +74,19 @@ For the examples below, the values are shown for CAN driver #1.
 
 -  :ref:`CAN_D1_UC_NODE<CAN_D1_UC_NODE>` - which is the node ID of the autopilot sending the commands to the ESCs so that there can be differentiation between multiple sources on the CAN bus
 -  :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` - bitmask that determines which autopilot servo/motor output signals are sent to the DroneCAN ESCs.
--  :ref:`CAN_D1_UC_ESC_SRV<CAN_D1_UC_SRV_BM>` - bitmask that determines which autopilot servo/motor output signals are sent to the Servos on DroneCAN Servos
+-  :ref:`CAN_D1_UC_SRV_BM<CAN_D1_UC_SRV_BM>` - bitmask that determines which autopilot servo/motor output signals are sent to the Servos on DroneCAN Servos
 
 In the bitmap masks, each bit position represents an ESC or servo ID number
 that the corresponding autopilot servo/motor channel command will be directed to. For example, 00001111 (15 decimal) would send commands to ESC or SERVO IDs 0 through 3.
 
 .. note:: When using DroneCAN ESCs/Servos, you can set the ``SERVOx_FUNCTION`` for those, but still use those outputs on the autopilot for GPIOs using the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter. The autopilot outputs will become GPIOS and the corresponding ``SERVOx_FUNCTION`` will be sent out DroneCAN.
 
-To reduce bandwidth, the :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` and :ref:`CAN_D1_UC_ESC_SRV_BM<CAN_D1_UC_SRV_BM>` params should be set
+To reduce bandwidth, the :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` and :ref:`CAN_D1_UC_SRV_BM<CAN_D1_UC_SRV_BM>` params should be set
 to enable only the motor and servo channels you need CAN signals to be sent to. In addition, the :ref:`CAN_D1_UC_ESC_OF<CAN_D1_UC_ESC_OF>` parameter lets you further maximize bandwidth by offsetting the ESC position to the first time slots on the bus, eliminating empty time slots. For example, if the ESCs are on outputs 5 to 8, an offset of 4 will transport them in the first 4 timeslots which would otherwise be empty and consume bandwidth.
 
 -  Example: For a configuration of CAN servos on channels 1,2,4 and ESC motor on channel 3, set:
--  Example: :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` = 0x0B
--  Example: :ref:`CAN_D1_UC_ESC_SRV<CAN_D1_UC_SRV_BM>` = 0x04
+-  Example: :ref:`CAN_D1_UC_SRV_BM<CAN_D1_UC_SRV_BM>` = 0x0B
+-  Example: :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` = 0x04
 
 
 GPS configuration settings

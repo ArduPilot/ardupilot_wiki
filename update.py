@@ -119,6 +119,10 @@ def debug(str_to_print):
         print(f"[update.py]: {str_to_print}")
 
 
+def progress(message, file=sys.stdout, end="\n"):
+    print(f"[update.py]: {message}", file=file, end=end)
+
+
 def error(str_to_print):
     """Show and count the errors."""
     global error_log
@@ -142,13 +146,13 @@ def remove_if_exists(filepath):
 
 def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
     fetch_url(fetchurl, fpath=new_name, verbose=False)
-    print(f"Renaming {new_name} to {target_file}")
+    progress(f"Renaming {new_name} to {target_file}")
     os.replace(new_name, target_file)
 
 
 def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) -> None:
     """Fetches content at url and puts it in a file corresponding to the filename in the URL"""
-    print(f"Fetching {fetchurl}")
+    progress(f"Fetching {fetchurl}")
 
     if verbose:
         total_size = get_request_file_size(fetchurl)
@@ -163,7 +167,7 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
 
     with open(filename, 'wb') as out_file:
         if verbose:
-            print(f"Completed : 0%", end='')
+            progress("Completed : 0%", end='')
         completed_last = 0
         for chunk in response.iter_content(chunk_size=chunk_size):
             out_file.write(chunk)
@@ -234,7 +238,7 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
 
 def build_one(wiki, fast):
     """build one wiki"""
-    print('Using sphinx-build for sphinx: %s' % wiki)
+    progress(f'build_one: {wiki}')
 
     source_dir = os.path.join(wiki, 'source')
     output_dir = os.path.join(wiki, 'build')
@@ -245,8 +249,14 @@ def build_one(wiki, fast):
     if not fast and os.path.exists(output_dir):
         shutil.rmtree(output_dir)
 
-    app = Sphinx(srcdir=source_dir, confdir=source_dir, outdir=html_dir, doctreedir=doctree_dir, buildername='html',
-                 parallel=2)
+    app = Sphinx(
+        buildername='html',
+        confdir=source_dir,
+        doctreedir=doctree_dir,
+        outdir=html_dir,
+        parallel=2,
+        srcdir=source_dir,
+    )
     app.build()
 
 
@@ -328,11 +338,11 @@ def copy_build(site, destdir):
             debug('Moving %s into %s' % (targetdir, olddir))
             shutil.move(targetdir, olddir)
         # copy new dir to targetdir
-        # print("DEBUG: targetdir: %s" % targetdir)
+        # progress("DEBUG: targetdir: %s" % targetdir)
         # sourcedir='./%s/build/html/*' % wiki
         sourcedir = './%s/build/html/' % wiki
-        # print("DEBUG: sourcedir: %s" % sourcedir)
-        # print('DEBUG: mv %s %s' % (sourcedir, destdir) )
+        # progress("DEBUG: sourcedir: %s" % sourcedir)
+        # progress('DEBUG: mv %s %s' % (sourcedir, destdir) )
 
         html_moved_dir = os.path.join(destdir, 'html')
         try:
@@ -377,7 +387,7 @@ def make_backup(site, destdir, backupdestdir):
         try:
             subprocess.check_call(["rsync", "-a", "--delete", targetdir + "/", bkdir])
         except subprocess.CalledProcessError as ex:
-            print(ex)
+            progress(ex)
             fatal("Failed to backup %s" % wiki)
 
 
@@ -407,9 +417,9 @@ def create_dir_if_not_exists(dir_path: str) -> None:
         pass
 
 
-def generate_copy_dict(start_dir=COMMON_DIR):
+def copy_common_source_files(start_dir=COMMON_DIR):
     """
-    This creates a dict which indexes copy targets for all common docs.
+    copies files common to all Wikis to the source directories for each Wiki
     """
 
     # Clean existing common topics (easiest way to guarantee old ones
@@ -429,21 +439,22 @@ def generate_copy_dict(start_dir=COMMON_DIR):
         create_dir_if_not_exists(f'{wiki}/source/docs')
         create_dir_if_not_exists(f'{wiki}/source/_static')
 
+    debug("Copying common source files to each Wiki")
     for root, dirs, files in os.walk(start_dir):
         for file in files:
             if file.endswith(".rst"):
-                debug("FILE: %s" % file)
+                debug("  FILE: %s" % file)
                 source_file_path = os.path.join(root, file)
                 source_file = open(source_file_path, 'r', 'utf-8')
                 source_content = source_file.read()
                 source_file.close()
                 targets = get_copy_targets(source_content)
-                # print(targets)
+                # progress(targets)
                 for wiki in targets:
-                    # print("CopyTarget: %s" % wiki)
+                    # progress("CopyTarget: %s" % wiki)
                     content = strip_content(source_content, wiki)
                     targetfile = '%s/source/docs/%s' % (wiki, file)
-                    debug(targetfile)
+                    debug(f"    {targetfile}")
                     destination_file = open(targetfile, 'w', 'utf-8')
                     destination_file.write(content)
                     destination_file.close()
@@ -457,11 +468,11 @@ def generate_copy_dict(start_dir=COMMON_DIR):
                 source_content = source_file.read()
                 source_file.close()
                 targets = get_copy_targets(source_content)
-                # print("JS: " + str(targets))
+                # progress("JS: " + str(targets))
                 for wiki in targets:
                     content = strip_content(source_content, wiki)
                     targetfile = '%s/source/_static/%s' % (wiki, file)
-                    debug(targetfile)
+                    debug(f"    {targetfile}")
                     destination_file = open(targetfile, 'w', 'utf-8')
                     destination_file.write(content)
                     destination_file.close()
@@ -492,7 +503,7 @@ def strip_content(content, site):
         result of re)
         """
         # logmatch_code(matchobj, 'STRIP')
-        # print("STRIPPED")
+        # progress("STRIPPED")
         return ''
 
     # Remove the copywiki from content
@@ -504,12 +515,12 @@ def strip_content(content, site):
     def fix_site_shortcode(matchobj):
         # logmatch_code(matchobj, 'SITESC_')
         sitelist = matchobj.group(1)
-        # print("SITES_BLOCK: %s" % sitelist)
+        # progress("SITES_BLOCK: %s" % sitelist)
         if site not in sitelist:
-            # print("NOT")
+            # progress("NOT")
             return ''
         else:
-            # print("YES")
+            # progress("YES")
             return matchobj.group(2)
     # Remove the site shortcode from content
     newText = re.sub(r'\[site\s.*?wiki\=\"(.*?)\".*?\](.*?)\[\/site\]',
@@ -524,9 +535,9 @@ def logmatch_code(matchobj, prefix):
 
     for i in range(9):
         try:
-            print("%s m%d: %s" % (prefix, i, matchobj.group(i)))
+            progress("%s m%d: %s" % (prefix, i, matchobj.group(i)))
         except IndexError:  # The object has less groups than expected
-            print("%s: except m%d" % (prefix, i))
+            progress("%s: except m%d" % (prefix, i))
 
 
 def is_the_same_file(file1, file2):
@@ -779,7 +790,7 @@ def check_imports():
         try:
             pkg_resources.require(r)
         except pkg_resources.ResolutionError as ex:
-            print(ex)
+            progress(ex)
             fatal("Require %s\nPlease run the wiki build setup script \"Sphinxsetup\"" % r)
     debug("Imports OK")
 
@@ -824,11 +835,11 @@ def create_features_pages(site):
     fetch_url("https://firmware.ardupilot.org/features.json.gz")
     features_json = json.load(gzip.open("features.json.gz"))
     if features_json["format-version"] != "1.0.0":
-        print("bad format version")
+        progress("bad format version")
         return
     features = features_json["features"]
 
-    # print("features: (%s)" % str(features))
+    # progress("features: (%s)" % str(features))
     for wiki in WIKI_NAME_TO_VEHICLE_NAME.keys():
         debug(wiki)
         if site is not None and site != wiki:
@@ -854,7 +865,7 @@ def reference_for_board(board):
 def create_features_page(features, build_options_by_define, vehicletype):
     features_by_platform = {}
     for build in features:
-        # print("build: (%s)" % str(build))
+        # progress("build: (%s)" % str(build))
         if build["vehicletype"] != vehicletype:
             continue
         features_by_platform[build["platform"]] = build["features"]
@@ -876,8 +887,8 @@ def create_features_page(features, build_options_by_define, vehicletype):
                 build_options = build_options_by_define[feature]
             except KeyError:
                 # mismatch between build_options.py and features.json
-                print("feature %s (%s,%s) not in build_options.py" %
-                      (feature, platform_key, vehicletype))
+                progress("feature %s (%s,%s) not in build_options.py" %
+                         (feature, platform_key, vehicletype))
                 continue
             if feature_in:
                 some_list = sorted_platform_features_in
@@ -1025,8 +1036,8 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
-    # print(args.site)
-    # print(args.clean)
+    # progress(args.site)
+    # progress(args.clean)
 
     VERBOSE = args.verbose
 
@@ -1049,7 +1060,7 @@ if __name__ == "__main__":
         fetchlogmessages(args.site, args.cached_parameter_files)
 
     copy_static_html_sites(args.site, args.destdir)
-    generate_copy_dict()
+    copy_common_source_files()
     sphinx_make(args.site, args.parallel, args.fast)
 
     if args.paramversioning:
@@ -1072,7 +1083,7 @@ if __name__ == "__main__":
 
     error_count = len(error_log)
     if error_count > 0:
-        print("Reprinting error messages:", file=sys.stderr)
+        progress("Reprinting error messages:", file=sys.stderr)
         for msg in error_log:
             print(f"\033[1;31m[update.py][error]: {msg}\033[0m", file=sys.stderr)
         fatal(f"{error_count} errors during Wiki build")

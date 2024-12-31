@@ -44,7 +44,7 @@ In Mission Planner's  full parameter list or full parameter tree, set the :ref:`
 -  **Enabled SmartRTL or RTL** (Value 3) will switch the copter to SmartRTL mode. If SmartRTL is not available, the copter will switch to RTL Mode instead.  If the GPS position is not usable, the copter will change to Land Mode instead.
 -  **Enabled SmartRTL or Land** (Value 4) will switch the copter to SmartRTL mode. If SmartRTL is not available, the copter will switch to Land Mode instead.
 -  **Enabled Always Land** (Value 5) will switch the copter to Land Mode.
--  **Auto DO_LAND_START or RTL** (Value 6) will execute a DO_LAND_START auto mission sequence (see :ref:`do_land_start`) or and RTL if no DO_LAND_START sequence exists.
+-  **Auto DO_LAND_START or RTL** (Value 6) will execute a DO_LAND_START auto mission sequence or and RTL if no DO_LAND_START sequence exists(see :ref:`common-do-land-start`).
 - **BRAKE or LAND** (Value 7): switch to BRAKE mode if included in firmware or to LAND mode, if not included.
 -  Any invalid value (Such as accidentally enter 99 as a parameter value) will will behave the same as **Enabled Always RTL**
 

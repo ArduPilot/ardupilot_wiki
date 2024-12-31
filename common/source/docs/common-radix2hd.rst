@@ -158,7 +158,7 @@ to use the same pin for battery voltage monitoring and for powering the board.
 
 In addition to voltage sensing, the board also has an input for an external current sensor.
 
-Parameters for use with a typical 4in1 ESC are already set by default. The value of the :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` may need to be changed to match your ESC:
+Parameters for use with a typical 4in1 ESC are already set by default. The value of the :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` may need to be changed to match your ESC:
 
 The default parameter settings are:
 
@@ -168,13 +168,13 @@ Enable Battery monitor with these parameter settings :
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 10
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 10
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 3
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 3
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 17.6
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 17.6
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 28.5
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 28.5
 
 Loading Firmware
 ================

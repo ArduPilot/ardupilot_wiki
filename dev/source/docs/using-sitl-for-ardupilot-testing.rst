@@ -227,11 +227,13 @@ When using a swarm offset line, the option ``--auto-offset-line 90,10`` will spa
 vehicles out at a line with heading of 90 degrees orientation. The vehicles will be spaced 10
 meters apart. Thus, they will be spread out east-west.
 
+To send all mavlink data between the vehicles add ``--mcast``.
+
 Putting it all together for five Copter vehicles on an auto-offset-line at CMAC:
 
 ::
 
-    sim_vehicle.py -v Copter --map --console --count 5 --auto-sysid --location CMAC --auto-offset-line 90,10
+    sim_vehicle.py -v Copter --map --console --count 5 --auto-sysid --location CMAC --auto-offset-line 90,10 --mcast
 
 
 The other way to spawn the vehicles is the swarm configuration file.

@@ -507,21 +507,21 @@ Enable Battery monitor with these parameter settings :
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 13
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 13
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 12
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 12
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 20
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 20
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 17
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 17
 
-:ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN>` 9
+:ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN__AP_BattMonitor_Analog>` 9
 
-:ref:`BATT2_CURR_PIN<BATT2_CURR_PIN>` 8
+:ref:`BATT2_CURR_PIN<BATT2_CURR_PIN__AP_BattMonitor_Analog>` 8
 
-:ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT>` 20
+:ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT__AP_BattMonitor_Analog>` 20
 
-:ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT>` 17
+:ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT__AP_BattMonitor_Analog>` 17
 
 
 Where to Buy

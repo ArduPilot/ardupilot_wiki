@@ -126,10 +126,10 @@ The board has a internal voltage sensor and connections on the ESC connector for
 The default battery parameters are:
 
 -    :ref:`BATT_MONITOR<BATT_MONITOR>` = 4
--    :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 13
--    :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 12
--    :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` = 11.0
--    :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` = 58.8 (will need to be adjusted for whichever current sensor is attached)
+-    :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 13
+-    :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 12
+-    :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` = 11.0
+-    :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` = 58.8 (will need to be adjusted for whichever current sensor is attached)
 
 Compass
 =======

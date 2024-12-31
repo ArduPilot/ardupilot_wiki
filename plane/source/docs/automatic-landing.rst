@@ -24,7 +24,7 @@ For many vehicles, most of the parameters associated with autolanding can be lef
     Precision Autolanding <precision-autolanding>
     RangeFinder Autolanding <rangefinder-autolanding>
     Using Reverse Thrust in Autolanding <reverse-thrust-autolanding>
-    Using DO_LAND_START <do-land-start>
+    Using DO_LAND_START <common-do-land-start>
 
 Basic Autolanding
 =================

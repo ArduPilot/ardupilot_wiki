@@ -17,16 +17,16 @@ the following examples are for the first Battery Monitor. The parameter names wi
 
 For Voltage, the normal Analog Sensor parameters apply:
 
-- :ref:`BATT_VOLT_PIN <BATT_VOLT_PIN>` The autopilot pin connected to the power module's voltage pin
-- :ref:`BATT_VOLT_MULT <BATT_VOLT_MULT>` converts the analog voltage received from the power module's voltage pin to the battery's voltage. Provided on the :ref:`autopilot's hardware page:<common-autopilots>` or manufacturers page.
+- :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` The autopilot pin connected to the power module's voltage pin
+- :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` converts the analog voltage received from the power module's voltage pin to the battery's voltage. Provided on the :ref:`autopilot's hardware page:<common-autopilots>` or manufacturers page.
 
 For the Current, some of the normal analog current sensor parameters have been re-tasked to save flash and their names are therefore a bit misleading in this application:
 
-- :ref:`BATT_AMP_PERVLT <BATT_AMP_PERVLT>` is the MAXIMUM current at full battery voltage in amps.
-- :ref:`BATT_AMP_OFFSET <BATT_AMP_OFFSET>` is the idle current (zero throttle) of the system in amps accounting for peripherals, video,etc. Normally in the 0.3 to 0.5 range.
+- :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` is the MAXIMUM current at full battery voltage in amps.
+- :ref:`BATT_AMP_OFFSET <BATT_AMP_OFFSET__AP_BattMonitor_Analog>` is the idle current (zero throttle) of the system in amps accounting for peripherals, video,etc. Normally in the 0.3 to 0.5 range.
 - :ref:`BATT_MAX_VOLT<BATT_MAX_VOLT>` is the MAXIMUM fresh battery voltage. Used to scale the estimate as the battery voltage decreases during use.
 
-Calibration of the :ref:`BATT_AMP_PERVLT <BATT_AMP_PERVLT>` value can either be done on the bench with a current meter, or iteratively by estimating an initial value, operating for while, measuring the amount of current needed to restore the battery to full charge, and using that value and a flight log's or OSD's total consumed mah for the flight to adjust the parameter value:
+Calibration of the :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` value can either be done on the bench with a current meter, or iteratively by estimating an initial value, operating for while, measuring the amount of current needed to restore the battery to full charge, and using that value and a flight log's or OSD's total consumed mah for the flight to adjust the parameter value:
 
 new value = old value * (mah returned to batt/log or OSD value of consumed mah)
 

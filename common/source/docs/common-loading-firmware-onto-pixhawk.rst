@@ -118,6 +118,11 @@ Firmware Limitations
 - All the feature options currently **not** included in the 1MB autopilots, by default, are on the list of options on the Custom Firmware Build Server. There are also many features still included in the 1MB autopilots that may not be required for your application. So it is possible to create a build that includes some of the currently excluded features while removing some of the unneeded features. The list of feature options will be continuously expanded, allowing other large features to be dropped and more restricted features added to the custom build. For example, not including QuadPlane features will save space for Planes not requiring it. Drivers and peripheral support may be individually selected, allowing only those used to be in the code thus allowing other features to be included in the custom firmware.
 - Current build is from the daily master branch, Stable and Beta branches.
 
+Loading Firmware via SD Card
+============================
+
+The firmware on some autopilots may be uploaded by copying an 'ardupilot.abin' firmware file to the SD card and then power cycling the board.  Details on how to :ref:`update the firmware via SD Card can be found here <common-install-sdcard>`.
+
 Testing
 =======
 

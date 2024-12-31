@@ -172,7 +172,7 @@ For example, use Channel 10 to control the switch using Relay 2:
 
 Battery Monitor Configuration
 =============================
-These settings are set as defaults when the firmware is loaded (except :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` which needs to be changed from the default value). However, if they are ever lost, you can manually set the parameters:
+These settings are set as defaults when the firmware is loaded (except :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` which needs to be changed from the default value). However, if they are ever lost, you can manually set the parameters:
 
 Enable Battery monitor.
 
@@ -180,13 +180,13 @@ Enable Battery monitor.
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 10
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 10
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 11
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 11
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.05
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 11.05
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 50
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 50
 
 Connecting a GPS/Compass module
 ===============================

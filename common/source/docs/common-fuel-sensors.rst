@@ -55,8 +55,8 @@ Parameter Setup
 Like analog battery current and capacity monitoring, the key parameters are:
 
 -  :ref:`BATT_MONITOR<BATT_MONITOR>` This sets the type of sensor. In this case, type 11 for pulse fuel flow sensors, and 12 for PWM fuel level sensors.
--  :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` This is the GPIO pin where the sensor is attached.
--  :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` This is set in milliliters per pulse for fuel flow sensors.
+-  :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` This is the GPIO pin where the sensor is attached.
+-  :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` This is set in milliliters per pulse for fuel flow sensors.
 -  :ref:`BATT_CAPACITY<BATT_CAPACITY>` This is the capacity in milliliters.
 -  :ref:`BATT_LOW_MAH<BATT_LOW_MAH>` This is set in milliliters instead of mAh.
 -  :ref:`BATT_CRT_MAH<BATT_CRT_MAH>` This is set in milliliters instead of mAh.

@@ -123,7 +123,7 @@ The FoxeerH743 does not have a builtin compass, but you can attach an external c
 
 Battery Monitor Configuration
 =============================
-These settings are set as defaults when the firmware is loaded (except :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` which needs to be changed from the default value). However, if they are ever lost, you can manually set the parameters:
+These settings are set as defaults when the firmware is loaded (except :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` which needs to be changed from the default value). However, if they are ever lost, you can manually set the parameters:
 
 Enable Battery monitor.
 
@@ -131,13 +131,13 @@ Enable Battery monitor.
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 13
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 13
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 12
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 12
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.0
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 11.0
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 35.4
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 35.4
 
 Connecting a GPS/Compass module
 ===============================
