@@ -21,6 +21,7 @@ gimbals in which ArduPilot controls the stabilisation. Some gimbals also integra
 
 -  :ref:`ADTi cameras and gimbals <common-adti-cameras-and-gimbals>`
 -  :ref:`Brushless PWM <common-brushless-pwm-gimbal>` - brushless gimbals that accept PWM or SBUS input for angle control
+-  :ref:`CADDX GM1, GM2, GM3 gimbals <common-caddx-gimbal>`
 -  :ref:`DJI RS2 and RS3-Pro gimbals <common-djirs2-gimbal>`
 -  :ref:`Gremsy Mio, Pixy, S1, T3, T7 and ZIO <common-gremsy-pixyu-gimbal>` - high quality 3-axis gimbals
 -  :ref:`Servo Gimbals <common-camera-gimbal>` — older-style servo-driven gimbal where ArduPilot provides stabilisation
@@ -100,6 +101,7 @@ more scenic photos. ArduPilot will stabilize the gimbal to whatever position you
 
     ADTi Cameras and Gimbals <common-adti-cameras-and-gimbals>
     Brushless PWM <common-brushless-pwm-gimbal>
+    CADDXFPV GM1, GM2, GM3 gimbals <common-caddx-gimbal>
     DJI RS2 and RS3-Pro gimbals <common-djirs2-gimbal>
     Gremsy Pixy U Gimbal <common-gremsy-pixyu-gimbal>
     Servo Gimbal <common-camera-gimbal>
