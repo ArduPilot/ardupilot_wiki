@@ -14,7 +14,7 @@ This is useful when programming a mission with a ``DO_LAND_START`` landing seque
 
 Operation
 =========
-To use simply make an automatic takeoff and at any point later switch into AUTOLAND. A final approach waypoint will be created behind the HOME landing target at :ref:`AUTOLAND_WP_DIST<AUTOLAND_WP_DIST>` (400m by default) at :ref:`AUTOLAND_WP_ALT<AUTOLAND_WP_ALT>`  (55m by default)using the takeoff direction plus :ref:`AUTOLAND_DIR_OFF<AUTOLAND_DIR_OFF>` ("0" default) and land using all the parametrics of a normal autolanding. This is shown below:
+To use simply make an automatic takeoff and at any point later switch into AUTOLAND. A final approach waypoint will be created behind the HOME landing target at :ref:`AUTOLAND_WP_DIST<AUTOLAND_WP_DIST>` (400m by default) at :ref:`AUTOLAND_WP_ALT<AUTOLAND_WP_ALT>`  (55m by default)using the takeoff direction plus :ref:`AUTOLAND_DIR_OFF<AUTOLAND_DIR_OFF>` ("0" default) and land using all the parametrics of a normal autolanding. A base leg to the final approach waypoint is also created at the same altitude and 1/3 :ref:`AUTOLAND_WP_DIST<AUTOLAND_WP_DIST>` from the final approach waypoint as shown below:
 
 .. image:: ../../../images/autoland_mode.png
     :target: ../_images/autoland_mode.png
