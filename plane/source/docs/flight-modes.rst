@@ -47,6 +47,7 @@ of functionality available.
    <tr><td>Return To Launch (RTL)</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Returns to and circles home or rally point</td></tr>
    <tr><td>TAKEOFF</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Automatic takeoff to specific altitude, and loiter at distance from takeoff until mode is changed</td></tr>
    <tr><td>THERMAL</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Mode entered to search for thermal lift by SOARING feature or manually if lift is encountered. See :ref:`THERMAL Mode <thermal-mode>`</td></tr>
+   <tr><td>AUTOLAND</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Fixed wing Autoland See :ref:`AUTOLAND Mode <mode_autoland>`</td></tr>
    </table>
 
 .. raw:: html
@@ -83,6 +84,7 @@ Flight Mode List
 
     ACRO Mode <acro-mode>
     AUTO Mode <auto-mode>
+    AUTOLAND <mode_autoland>
     AUTOTUNE Mode <autotune-mode>
     CRUISE Mode <cruise-mode>
     CIRCLE Mode <circle-mode>
