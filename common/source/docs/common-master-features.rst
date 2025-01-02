@@ -10,11 +10,20 @@ This lists features or changes merged in master and build in the "latest" firmwa
 
 
 [site wiki="plane,copter,rover"]
-
+New Peripherals
+===============
 .. toctree::
     :maxdepth: 1
 
     CADDXFPV GM1, GM2, GM3 gimbals <common-caddx-gimbal>
+[/site]
+[site wiki="plane"]
+New Features
+============
+.. toctree::
+    :maxdepth: 1
+
+    AUTOLAND Mode <mode_autoland>
 [/site]
 [site wiki="rover"]
 
