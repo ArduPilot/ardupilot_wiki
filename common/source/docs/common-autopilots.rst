@@ -135,6 +135,7 @@ Closed Hardware
     MakeFlyEasy PixPilot-C3 <common-makeflyeasy-PixPilot-C3>
     MakeFlyEasy PixPilot-V3 <common-makeflyeasy-PixPilot-V3>
     MakeFlyEasy PixPilot-V6 <common-makeflyeasy-PixPilot-V6>
+    MakeFlyEasy PixPilot-V6PRO <common-makeflyeasy-PixPilot-V6PRO>
     Mateksys F405 TE Family <common-matekf405-te>
     Mateksys H743-Wing/MINI/SLIM/WLITE <common-matekh743-wing>
     MFT-SEMA100 <common-mft-sema100>
