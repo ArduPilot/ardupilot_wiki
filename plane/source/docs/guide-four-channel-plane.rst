@@ -72,8 +72,8 @@ and coordinate its turns.
    <tr><td>Roll Plane Left</td><td>Left aileron moves down and right aileron moves up</td><tr>
    <tr><td>Pitch plane up</td><td>Elevator moves down</td></tr>
    <tr><td>Pitch plane down</td><td>Elevator moves up</td></tr>
-   <tr><td>Roll Plane Right</td><td>Rudder moves left</td></tr>
-   <tr><td>Roll Plane Left</td><td>Rudder moves right</td></tr>
+   <tr><td>Yaw Plane Right</td><td>Rudder moves left</td></tr>
+   <tr><td>Yaw Plane Left</td><td>Rudder moves right</td></tr>
    </table>
 
 If the any of the control surfaces do not respond correctly, reverse the 
@@ -82,7 +82,7 @@ or from 1 to 0).
 
 The output can be reversed in Mission Planner on the SETUP/Mandatory Hardware/Servo Output page, just check the box for the channel that needs to be reversed. This will set the output's SERVOn_REVERSED parameter.
 
-.. note:: :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` mut not be set to 0 (the default value is 0.5) for checking rudder movement in FBWA as the plane is rolled away from level. If no automatic coupling of rudder to aileron for coordinated turns by the autopilot is desired, then reset it to zero after this setup check.
+.. note:: :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` must not be set to 0 (the default value is 0.5) for checking rudder movement in FBWA as the plane is rolled away from level. If no automatic coupling of rudder to aileron for coordinated turns by the autopilot is desired, then reset it to zero after this setup check.
 
 Confirm RC Transmitter Input
 ============================
