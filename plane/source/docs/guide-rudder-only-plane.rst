@@ -84,8 +84,8 @@ and coordinate its turns.
    <tr><td>Roll Plane Left</td><td>Left aileron moves down and right aileron moves up</td><tr>
    <tr><td>Pitch plane up</td><td>Elevator moves down</td></tr>
    <tr><td>Pitch plane down</td><td>Elevator moves up</td></tr>
-   <tr><td>Yaw Plane Right</td><td>Rudder moves left</td></tr>
-   <tr><td>Yaw Plane Left</td><td>Rudder moves right</td></tr>
+   <tr><td>Yaw Plane Right</td><td>By default, no surfaces react</td></tr>
+   <tr><td>Yaw Plane Left</td><td>By default, no surfaces react</td></tr>
    </table>
 
 If the any of the control surfaces do not respond correctly, reverse the 

@@ -97,8 +97,8 @@ Keep the plane level in FBWA mode and command the following inputs by moving the
    <tr><td>Roll Left</td><td>Left aileron moves up and right aileron moves down</td><tr>
    <tr><td>Pitch up</td><td>Elevator moves up</td><tr>
    <tr><td>Pitch down</td><td>Elevator moves down</td><tr>
-   <tr><td>Yaw right</td><td>Rudder moves right</td><tr>
-   <tr><td>Yaw left</td><td>Rudder moves left</td><tr>
+   <tr><td>Roll right</td><td>Rudder moves right</td><tr>
+   <tr><td>Roll left</td><td>Rudder moves left</td><tr>
    </table>
 
 If the control surfaces do not respond correctly, change the RCn_reversed
