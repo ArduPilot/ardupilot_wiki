@@ -14,6 +14,7 @@ New Board Support
 - AeroFox H7 , see https://github.com/ArduPilot/ardupilot_wiki/pull/6446
 - GEPRC TAKER H7 BT, see https://github.com/ArduPilot/ardupilot_wiki/pull/6450
 - MicoAir743-AIO, see https://github.com/ArduPilot/ardupilot_wiki/pull/6511
+- CrazyF405 ELRS, see https://github.com/ArduPilot/ardupilot_wiki/pull/6513
 
 New Peripheral Support
 ======================
