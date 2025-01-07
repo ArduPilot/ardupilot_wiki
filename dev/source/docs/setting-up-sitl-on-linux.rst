@@ -128,7 +128,13 @@ The main steps (tested on Ubuntu Linux 14.04 LTS) are:
 
    ::
 
-       sim_vehicle.py -L KSFO
+       sim_vehicle.py -v ArduCopter -L KSFO --enable-fgview
+
+   If *FlightGear* is running on a different host, for instance if you are running Windows WSL, you can pass in the IP of the machine running *FlightGear*:
+
+   ::
+
+      sim_vehicle.py -v ArduCopter -L KSFO --enable-fgview -A "--fg <ip address>"
 
    .. note::
 
