@@ -47,18 +47,8 @@ In addition, it may implement its own Web Browser interface for status and confi
 .. image:: ../../../images/PPP_web_server.jpg
     :target: ../_images/PPP_web_server.jpg
 
-Adapters
-========
-
-- `BotBlox DroneNet adapter and Ethernet Switch <https://botblox.io/dronenet-for-ardupilot/>`__
-
-.. image:: ../../../images/BotBlox_DroneNet.jpg
-    :target: ../_images/BotBlox_DroneNet.jpg
-    :width: 450px
-
 Video
 =====
-
 
 .. youtube:: bN6iDP4Zjzg
 
