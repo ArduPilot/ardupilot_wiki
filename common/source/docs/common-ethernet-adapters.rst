@@ -28,7 +28,7 @@ PPP Setup
 .. image:: ../../../images/build-server-ppp.jpg
     :target: ../_images/build-server-ppp.jpg
 
-.. note:: if using a local build environment (:ref:`building-the-code`), you can include PPP capability by using the ``--enable-ppp`` waf configuration option when building the code for an autopilot locally.
+.. note:: if using a local build environment (:ref:`building-the-code`), you can include PPP capability by using the ``\-\-enable-PPP`` waf configuration option when building the code for an autopilot locally.
 
 - Connect one of the H7 based autopilot's serial ports to the ethernet switch's or Ethernet-to-PPP-adapter's USART port. For optimum performance a serial port with flow control should be used (e.g. normally SERIAL1 or SERIAL2).  In the following instructions SERIAL2 is used
 
