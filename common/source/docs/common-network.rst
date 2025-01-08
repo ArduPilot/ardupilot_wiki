@@ -135,7 +135,7 @@ In order to connect an autopilot running the webserver to the local network to a
 Cable Adapters, Cabling, and Wiring
 ===================================
 
-Most Ethernet devices are interconnected with CAT5(or higher) cables with RJ-45 connectors. These connectors are obviously too bulky for use on an autopilot or vehicle Ethernet switches. Instead 4 or 5 pin JST-GH or Picoblade connectors are used. Therefore, cable adapters such as the `BotBox adapter <https://botblox.io/switchblox-cable-adapter-for-ardupilot/>`__ , or other RJ45 breakout boards, need to be used if connecting from them to classic RJ45 interfaces.
+Most Ethernet devices are interconnected with CAT5 (or higher) cables with RJ-45 connectors. These connectors are obviously too bulky for use on an autopilot or vehicle Ethernet switches. Instead 4 or 5 pin JST-GH or Picoblade connectors are used. See the :ref:`Ethernet adapters <common-ethernet-adapters>` page for a list of known devices
 
 Using full CAT5 cables to interconnect vehicle components for longer runs may be required, but runs 1-2 meters or less can be done with two twisted pairs of 22-24 AWG wire. Runs from autopilot to switch and to peripherals may all be implemented with short twisted pair runs and JST-GH/Picoblade connectors.
 
