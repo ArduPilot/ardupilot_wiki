@@ -8,7 +8,7 @@ ArduPilot 4.5 (and higher) provides a network interface framework to allow local
 
 In addition, custom builds for H7 based processors that do not have an Ethernet MAC integrated can be created with the `ArduPilot Custom Firmware Server <https://firmware.ardupilot.org/>`__ that includes PPP(Point-To-Point Protocol) allowing network connections over a serial port of the autopilot using PPP.
 
-.. note:: for those :ref:`building firmware locally <building-the-code>`, PPP can be included with the --enable-ppp configuration option.
+.. note:: for those :ref:`building firmware locally <building-the-code>`, PPP can be included with the \-\-enable-PPP configuration option.
 
 Currently, hooks into the normal serial manager within ArduPilot now allow serial protocols not only to be connected to the autopilot via the normal UART connections, but also via network connections. These can be used either with Etnernet or PPP interfaces.
 
@@ -69,7 +69,7 @@ This feature allows an H7 cpu-based autopilot to connect to networks via a Seria
 
 .. note:: this cannot be used with autopilots having a built-in Ethernet MAC. Only one network connection per autopilot is allowed currently. Also, only one serial port on the autopilot can be configured for PPP.
 
-To enable this feature, it first must be present in the autopilot firmware. This can be done using the `Custom Firmware Build Server <https://firmware.ardupilot.org/>`__ or by building the code locally using the "--enable-ppp" waf configuration option (See :ref:`building-the-code`)
+To enable this feature, it first must be present in the autopilot firmware. This can be done using the `Custom Firmware Build Server <https://firmware.ardupilot.org/>`__ or by building the code locally using the "\-\-enable-PPP" waf configuration option (See :ref:`building-the-code`)
 
 To configure a serial port for PPP (Serial2 is used in this example):
 
