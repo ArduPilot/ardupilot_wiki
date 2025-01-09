@@ -51,3 +51,8 @@ To set the tickresolution along the horizontal axis (1/<number of ticks>):
 
     graph timespan 0.2
        
+To graph a ``NAMED_VALUE_FLOAT`` value that has a name``NAME``, which can be used for freeform data:
+
+.. code:: bash
+
+    graph NAMED_VALUE_FLOAT[NAME].value
