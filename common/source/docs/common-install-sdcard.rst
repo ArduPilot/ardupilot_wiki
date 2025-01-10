@@ -6,7 +6,7 @@
 Loading Firmware via SD Card
 ============================
 
-It is possible to update the ArduPilot firmware on certain autopilots by placing a specifically-named file onto an SD card and running the autopilot's bootloader (e.g. by power-cycling the board.
+It is possible to update the ArduPilot firmware on certain autopilots by placing a specifically-named file onto an SD card and running the autopilot's bootloader (e.g. by power-cycling the board).
 
 .. note:: at this time only a few autopilots have this capability. See instructions below to determine if an autopilot has this feature. Only H7 based autopilots using MMC connected SD cards are capable of this and not all that do have had the feature added as of yet.
 
@@ -25,7 +25,7 @@ The Bootloader
 
 Currently, no autopilot ships with a bootloader capable of flashing from the SD card.  Updating the bootloader is required to support flashing from SD card.  Note that updating the autopilot's bootloader is an operation which can make your board non-operational, and difficult to recover.  More-so with boards that do not expose a "boot0" pin, such as the CubeOrange.  Be aware of this risk, and be prepared to spend considerable time recovering a board if something bad happens when updating the bootloader.
 
-:ref:`The instructions on updating the bootloader <common-bootloader-update>` can be followed to update your bootloader; be aware that you must use a "latest" firmware to obtain a suitable bootloader.
+:ref:`The instructions on updating the bootloader <common-bootloader-update>` can be followed to update your bootloader; be aware that you must use a recent firmware (4.5 or higher) to obtain a suitable bootloader.
 
 
 The Firmware File
@@ -58,7 +58,6 @@ If you are building your own firmware, and the board is configured to support fl
 Boards which support flash-from-sdcard will also have ``.abin`` files available for download from `firmware.ardupilot.org <https://firmware.ardupilot.org/>`__
 
 
-
 Firmware File Name
 ==================
 
@@ -70,7 +69,7 @@ There is only one correct filename that may be used to flash-from-sdcard; this i
 Transferring the File to the SD card
 ====================================
 
-This can be done in your operating system as you would ordinarily interact with the SD card (e.g. file browser.).
+This can be done in your operating system as you would ordinarily interact with the SD card (e.g. file browser).
 
 You can also transfer the file to the SD card via ``MAVFTP``.
 
@@ -92,7 +91,7 @@ After the transfer is complete, the directory listing should look something like
 Triggering the Flash Update
 ===========================
 
-Power cycle the board to enter the bootloader which will automaticallt check for the firmware update file and begin flashing it.
+Power cycle the board to enter the bootloader which will automatically check for the firmware update file and begin flashing it.  Alternatively to avoid the powercycle the autopilot may be rebooted via a `PREFLIGHT_REBOOT_SHUTDOWN <https://mavlink.io/en/messages/common.html#MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN>`__ command with the 'Param1' field set to 3 (ie. "Reboot autopilot and keep it in the bootloader until upgraded")
 
 It should take roughly 1 minute to verify the firmware and flash it to the vehicle's internal flash.
 
@@ -109,3 +108,9 @@ Several things can go wrong with the firmware flash, but some diagnostics are av
   - if the file is called ``ardupilot-verify-failed.abin`` then the checksum the bootloader calculated did not match the bootloader in the ``.abin`` metadata.
   - if the file is called ``ardupilot-flash.abin`` the process failed when writing the firmware, or the board was interrupted while doing so.  The board is unlikely to boot into an ArduPilot firmware if this has happened, so a re-flash will be required.
   - if the file is called ``ardupilot-flashed.abin`` you should not need this "troubleshooting" section, as the flash process has succeeded!
+
+Demo Video
+==========
+
+.. youtube:: HjiT-Yk4flk
+  :width: 100%

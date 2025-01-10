@@ -103,7 +103,7 @@ Calculating the other parameters is explained under tuning.
 RC switch (Optional)
 ~~~~~~~~~~~~~~~~~~~~
 
-You can use a 2-position RC switch to control when the autopilot can use soaring. Set the parameter SOAR_ENABLE_CH to the corresponding channel number. The 2 positions have the following effect.
+You can use a 2-position RC switch to control when the autopilot can use soaring. Use any available RC Option with ``RCx_OPTION`` value 88. The 2 positions have the following effect.
 
  - Below 1700us. Soaring is disabled (equivalent to setting SOAR_ENABLE = 0). Throttle will be used as normal. Switching to this from either of the positions below, will disable Soaring and maintain the current flight mode.
  

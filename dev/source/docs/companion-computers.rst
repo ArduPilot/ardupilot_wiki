@@ -32,6 +32,7 @@ popular Companion Computer hardware are listed below.
     Holybro Pixhawk Rasberry Pi CM4/CM5 Baseboard <https://holybro.com/products/pixhawk-rpi-cm4-baseboard>
     Holybro Pixhawk Jetson Baseboard <https://holybro.com/products/pixhawk-jetson-baseboard>
     Raspberry Pi <raspberry-pi-via-mavlink>
+    VoidRay <https://idrobots.com/product/void-ray>
 
 The Companion Computer software refers to the programs and tools that run on the Companion
 Computer. They will take in MAVLink telemetry from the Flight Controller and can route and 
@@ -48,6 +49,7 @@ tools/suites are listed below.
     Maverick <https://goodrobots.github.io/maverick/#/>
     ROS <ros>
     Rpanion-server <https://www.docs.rpanion.com/software/rpanion-server>
+    Skyhub <https://idrobots.com/>
 
 A number of vendors also offer turnkey systems. See the below link for details.
 
