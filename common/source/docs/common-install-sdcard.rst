@@ -71,7 +71,10 @@ Transferring the File to the SD card
 
 This can be done in your operating system as you would ordinarily interact with the SD card (e.g. file browser).
 
-You can also transfer the file to the SD card via ``MAVFTP``.
+You can also transfer the file to the SD card's base directory via ``MAVFTP`` using Mission Planner or similar GCS
+
+.. image:: ../../../images/MP-install-firmware-sdcard.png
+    :target: ../_images/MP-install-firmware-sdcard.png
 
 Ensure the file is the correct size before continuing.
 
@@ -112,5 +115,5 @@ Several things can go wrong with the firmware flash, but some diagnostics are av
 Demo Video
 ==========
 
-.. youtube:: HjiT-Yk4flk
+.. youtube:: hCdXe1UTjK4
   :width: 100%
