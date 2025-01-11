@@ -32,7 +32,7 @@ Connecting and Configuring
        :target: ../_images/ld06-wiring.jpg
        :width: 600px
 
-The lidar should be mounted horizontally on the top or bottom of the vehicle with the black cable pointing towards the rear of the vehicle.
+The lidar should be mounted horizontally on the top or bottom of the vehicle with the arrow on top of the unit pointing towards the front of the vehicle.
 Ensure the sensor's view is not obstructed by any portion of the vehicle including GPS mast, vehicle legs etc.
 
 The lidar can be connected to the autopilot's serial input as shown above.
