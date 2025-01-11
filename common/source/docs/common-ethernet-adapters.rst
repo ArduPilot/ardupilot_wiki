@@ -17,7 +17,7 @@ Hardware
 - `BotBlox SwitchBlox for Ardupilot <https://botblox.io/switchblox-for-ardupilot/>`__ : ethernet switch to allow connecting multiple devices together
 - `BotBlox DroneNet for Ardupilot <https://botblox.io/dronenet-for-ardupilot/>`__ : ethernet switch with CAN, USART, RS485, and GPIO/PWM adapters allowing non-ethernet devices including autopilots to work over ethernet
 - `BotBlox SwitchBlox Cable Adapter for Ardupilot <https://botblox.io/switchblox-cable-adapter-for-ardupilot/>`__ : adapter to ease the ethernet port differences across different device manufacturers
-- `CubeNode ETH <https://docs.cubepilot.org/user-guides/cubenode/cubenode-eth>`__ : serial to ethernet adapter to allow non-ethernet autopilots to work over ethernet
+- `CubeNode ETH <https://docs.cubepilot.org/user-guides/cubenode/cubenode-eth>`__ : serial to ethernet adapter to allow non-ethernet autopilots to work over ethernet using PPP
 - `CubeLAN 8-Port Switch <https://irlock.com/products/cubelan-8-port-switch>`__ : ethernet switch using the CubePilot preferred 5-pin connector
 
 PPP Setup
@@ -28,7 +28,7 @@ PPP Setup
 .. image:: ../../../images/build-server-ppp.jpg
     :target: ../_images/build-server-ppp.jpg
 
-.. note:: if using a local build environment (:ref:`building-the-code`), you can include PPP capability by using the ``--enable-ppp`` waf configuration option when building the code for an autopilot locally.
+.. note:: if using a local build environment (:ref:`building-the-code`), you can include PPP capability by using the ``\-\-enable-PPP`` waf configuration option when building the code for an autopilot locally.
 
 - Connect one of the H7 based autopilot's serial ports to the ethernet switch's or Ethernet-to-PPP-adapter's USART port. For optimum performance a serial port with flow control should be used (e.g. normally SERIAL1 or SERIAL2).  In the following instructions SERIAL2 is used
 
@@ -47,18 +47,8 @@ In addition, it may implement its own Web Browser interface for status and confi
 .. image:: ../../../images/PPP_web_server.jpg
     :target: ../_images/PPP_web_server.jpg
 
-Adapters
-========
-
-- `BotBlox DroneNet adapter and Ethernet Switch <https://botblox.io/dronenet-for-ardupilot/>`__
-
-.. image:: ../../../images/BotBlox_DroneNet.jpg
-    :target: ../_images/BotBlox_DroneNet.jpg
-    :width: 450px
-
 Video
 =====
-
 
 .. youtube:: bN6iDP4Zjzg
 

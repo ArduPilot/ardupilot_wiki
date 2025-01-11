@@ -1,14 +1,14 @@
 .. _common-network:
 
-=================
-Network Interface
-=================
+========================
+Ethernet / Network Setup
+========================
 
 ArduPilot 4.5 (and higher) provides a network interface framework to allow local and wide-area network connections. Several later generation autopilots, like Pixhawk6X and CubePilot CubeRed, provide Ethernet MAC interfaces, which allows ArduPilot to connect to vehicle peripherals, data servers, and even the wide area network via IP using transport layer UDP or TCP protocols.
 
 In addition, custom builds for H7 based processors that do not have an Ethernet MAC integrated can be created with the `ArduPilot Custom Firmware Server <https://firmware.ardupilot.org/>`__ that includes PPP(Point-To-Point Protocol) allowing network connections over a serial port of the autopilot using PPP.
 
-.. note:: for those :ref:`building firmware locally <building-the-code>`, PPP can be included with the --enable-ppp configuration option.
+.. note:: for those :ref:`building firmware locally <building-the-code>`, PPP can be included with the \-\-enable-PPP configuration option.
 
 Currently, hooks into the normal serial manager within ArduPilot now allow serial protocols not only to be connected to the autopilot via the normal UART connections, but also via network connections. These can be used either with Etnernet or PPP interfaces.
 
@@ -36,7 +36,7 @@ Configuration
 Ethernet MAC Configuration
 --------------------------
 
-If the autopilot has an Ethernet MAC the following parameters apply:
+If the autopilot has an Ethernet MAC the following parameters apply.  This is the global 6 byte MAC address. The default is automatically generated from the autopilot's CPU unique id, but can be changed if desired.
 
 - :ref:`NET_MACADDR0<NET_MACADDR0>`
 - :ref:`NET_MACADDR1<NET_MACADDR1>`
@@ -45,22 +45,31 @@ If the autopilot has an Ethernet MAC the following parameters apply:
 - :ref:`NET_MACADDR4<NET_MACADDR4>`
 - :ref:`NET_MACADDR5<NET_MACADDR5>`
 
-This is the global 6 byte MAC address. The default is automatically generated from the autopilot's CPU unique id, but can be changed if desired.
+Autopilot IP address
+--------------------
 
-- :ref:`NET_IPADDR0<NET_IPADDR0>`
-- :ref:`NET_IPADDR1<NET_IPADDR1>`
-- :ref:`NET_IPADDR2<NET_IPADDR2>`
-- :ref:`NET_IPADDR3<NET_IPADDR3>`
+The following parameters holds the autopilot's 4 byte IP address.  It defaults to ``192.168.144.14``
 
-This is the autopilot's 4 byte IP address. It defaults to ``192.168.144.14``. It can be dynamically assigned if the network has a DHCP server by enabling ArduPilot's DHCP client using the :ref:`NET_DHCP<NET_DHCP>` parameter, or manually set as desired.
+- :ref:`NET_IPADDR0<NET_IPADDR0>` (e.g. 192)
+- :ref:`NET_IPADDR1<NET_IPADDR1>` (e.g. 168)
+- :ref:`NET_IPADDR2<NET_IPADDR2>` (e.g. 144)
+- :ref:`NET_IPADDR3<NET_IPADDR3>` (e.g. 14)
 
-- :ref:`NET_NETMASK<NET_NETMASK>` is the number of leading bits set in the subnet mask. For example, if its set to 24, then the subnet mask is  255.255.255.0, which is the default.
-- :ref:`NET_GWADDR0<NET_GWADDR0>`
-- :ref:`NET_GWADDR1<NET_GWADDR1>`
-- :ref:`NET_GWADDR2<NET_GWADDR2>`
-- :ref:`NET_GWADDR3<NET_GWADDR3>`
+These can be dynamically assigned if the network has a DHCP server by enabling ArduPilot's DHCP client using the :ref:`NET_DHCP<NET_DHCP>` parameter, or manually set as desired.
 
-This is the gateway's IP address out of the local sub-net defined by the :ref:`NET_NETMASK<NET_NETMASK>` mask. Any destination IPs that are outside the masked subnet range will be sent to the gateway's MAC address with the final destinations IP address. The default is ``192.168.144.1``.
+Subnet Mask and Gateway
+-----------------------
+
+The subnet mask limits the IP addresses that the autopilot may directly communicate with.
+
+- :ref:`NET_NETMASK<NET_NETMASK>` is the number of leading bits set in the subnet mask. For example, if set to 24 (the default) then the subnet mask is 255.255.255.0.
+
+The gateway IP address is used for routing when communicating with IP addresses out of the local subnet defined by :ref:`NET_NETMASK<NET_NETMASK>`. Any destination IPs that are outside the masked subnet range will be sent to the gateway's MAC address with the final destinations IP address. The default is ``192.168.144.1``.
+
+- :ref:`NET_GWADDR0<NET_GWADDR0>` (e.g. 192)
+- :ref:`NET_GWADDR1<NET_GWADDR1>` (e.g. 168)
+- :ref:`NET_GWADDR2<NET_GWADDR2>` (e.g. 144)
+- :ref:`NET_GWADDR3<NET_GWADDR3>` (e.g. 1)
 
 PPP Configuration
 -----------------
@@ -69,7 +78,7 @@ This feature allows an H7 cpu-based autopilot to connect to networks via a Seria
 
 .. note:: this cannot be used with autopilots having a built-in Ethernet MAC. Only one network connection per autopilot is allowed currently. Also, only one serial port on the autopilot can be configured for PPP.
 
-To enable this feature, it first must be present in the autopilot firmware. This can be done using the `Custom Firmware Build Server <https://firmware.ardupilot.org/>`__ or by building the code locally using the "--enable-ppp" waf configuration option (See :ref:`building-the-code`)
+To enable this feature, it first must be present in the autopilot firmware. This can be done using the `Custom Firmware Build Server <https://firmware.ardupilot.org/>`__ or by building the code locally using the "\-\-enable-PPP" waf configuration option (See :ref:`building-the-code`)
 
 To configure a serial port for PPP (Serial2 is used in this example):
 
@@ -135,7 +144,7 @@ In order to connect an autopilot running the webserver to the local network to a
 Cable Adapters, Cabling, and Wiring
 ===================================
 
-Most Ethernet devices are interconnected with CAT5(or higher) cables with RJ-45 connectors. These connectors are obviously too bulky for use on an autopilot or vehicle Ethernet switches. Instead 4 or 5 pin JST-GH or Picoblade connectors are used. Therefore, cable adapters such as the `BotBox adapter <https://botblox.io/switchblox-cable-adapter-for-ardupilot/>`__ , or other RJ45 breakout boards, need to be used if connecting from them to classic RJ45 interfaces.
+Most Ethernet devices are interconnected with CAT5 (or higher) cables with RJ-45 connectors. These connectors are obviously too bulky for use on an autopilot or vehicle Ethernet switches. Instead 4 or 5 pin JST-GH or Picoblade connectors are used. See the :ref:`Ethernet adapters <common-ethernet-adapters>` page for a list of known devices
 
 Using full CAT5 cables to interconnect vehicle components for longer runs may be required, but runs 1-2 meters or less can be done with two twisted pairs of 22-24 AWG wire. Runs from autopilot to switch and to peripherals may all be implemented with short twisted pair runs and JST-GH/Picoblade connectors.
 

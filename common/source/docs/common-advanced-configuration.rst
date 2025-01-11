@@ -46,6 +46,7 @@ tuning options for the vehicle.
     EKF (Extended Kalman Filter) <common-apm-navigation-extended-kalman-filter-overview>
     EKF Affinity & Lane Switching <common-ek3-affinity-lane-switching>
     EKF Sources and Selection <common-ekf-sources>
+    Ethernet/Network Setup <common-network>
 [site wiki="copter,rover"]
     Fence Failsafes  <common-geofencing-landing-page>
 [/site]
@@ -89,7 +90,6 @@ tuning options for the vehicle.
 [/site]
     Moving Vehicle Initialization <common-moving-vehicle-initialization>
     Multiple Radio Control Receivers <common-multiple-rx>
-    Network/Ethernet Setup <common-network>
 [site wiki="copter,rover"]
     Non-GPS Navigation <common-non-gps-navigation-landing-page>
 [/site]
