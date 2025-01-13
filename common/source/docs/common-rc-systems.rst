@@ -134,35 +134,39 @@ Below is a table with some commonly  available systems showing these elements. N
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Original Manufacturer  |Range | Telemetry| Telem Speed| TX Display| RC Protocol  |  Notes |
 +=======================+======+==========+============+===========+==============+========+
-|DragonLink             |Long  |  Bi-dir  |     56K    |via MTP/LUA|PPM_SUM/SBUS  |    1   |
-+-----------------------+------+----------+------------+-----------+--------------+--------+
-|CRSF                   |Long  |  Bi-dir  |   Variable |   yes     |SBUS/CRSF     |    3   |
-+-----------------------+------+----------+------------+-----------+--------------+--------+
-|ELRS                   |Long  |  Bi-Dir  |   Variable |  optional |SBUS/CRSF     |    4   |
-|                       |      |          |            |           | Mavlink      |        |
-+-----------------------+------+----------+------------+-----------+--------------+--------+
 |Flysky                 |Short |  Yes     |     -      |   yes     | i-BUS/SBUS   |    7   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |FrSky  X series        |Short |  Bi-dir  |    Medium  |   yes     | PPM-SUM/SBUS/|    2   |
-|                       |      |          |            |           | FPort        |        |
-+-----------------------+------+----------+------------+-----------+--------------+--------+
-|FrSky  R9 series       |Medium|  Bi-dir  |    Medium  |   yes     | PPM-SUM/SBUS/|    2   |
 |                       |      |          |            |           | FPort        |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Futaba                 |Short |    No    |     -      |   -       |  SBus        |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Graupner               |Short |    Yes   |    Medium  |   yes     |  SUM-D       |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
-|IRC Ghost              |Medium| Vendor   |            |   yes     | IRC Ghost    |        |
-|                       |      | Specific |            |           |              |        |
-+-----------------------+------+----------+------------+-----------+--------------+--------+
-|mLRS                   |Long  |  Bi-dir  |  12K - 91K |via LUA    |SBUS/CRSF     |    5   |
-+-----------------------+------+----------+------------+-----------+--------------+--------+
 |Multiplex              |Short |     No   |      -     |    -      |   SRXL       |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Spektrum               |Short |Vendor    |     -      |  yes      |  DSM/DSM2    |        |
 |                       |      |Specific  |            |           |  DSM-X/      |        |
 |                       |      |          |            |           |  SRXL        |        |
++-----------------------+------+----------+------------+-----------+--------------+--------+
+|FrSky  R9 series       |Medium|  Bi-dir  |    Medium  |   yes     | PPM-SUM/SBUS/|    2   |
+|                       |      |          |            |           | FPort        |        |
++-----------------------+------+----------+------------+-----------+--------------+--------+
+|IRC Ghost              |Medium| Vendor   |            |   yes     | IRC Ghost    |        |
+|                       |      | Specific |            |           |              |        |
++-----------------------+------+----------+------------+-----------+--------------+--------+
+|CRSF                   |Long  |  Bi-dir  |   Variable |   yes     |SBUS/CRSF     |    3   |
++-----------------------+------+----------+------------+-----------+--------------+--------+
+|DragonLink             |Long  |  Bi-dir  |     56K    |via MTP/LUA|PPM_SUM/SBUS  |    1   |
++-----------------------+------+----------+------------+-----------+--------------+--------+
+|ELRS                   |Long  |  Bi-Dir  |   Variable |  optional |SBUS/CRSF     |    4   |
+|                       |      |          |            |           | Mavlink      |        |
++-----------------------+------+----------+------------+-----------+--------------+--------+
+|HereLink               |Long  |  Bi-dir  |     56K    |integrated |     SBUS     |    8   |
++-----------------------+------+----------+------------+-----------+--------------+--------+
+|mLRS                   |Long  |  Bi-dir  |  12K - 91K |via LUA    |SBUS/CRSF     |    5   |
++-----------------------+------+----------+------------+-----------+--------------+--------+
+|SIYI                   |Long  |  Bi-dir  |     56K    |integrated |        SBUS  |    8   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 
 Note 1: DragonLink provides a 56Kbaud transparent link for telemetry, allowing full MAVLink telemetry to/from the vehicle from the transmitter module. Dragonlink is an add-on module to the transmitter, such as an FRSky Taranis or RadioMaster T16. See :ref:`common-dragonlink-rc`. `MTP (Mavlink to Passthru) converters <https://www.rcgroups.com/forums/showthread.php?3089648-Mavlink-To-FrSky-Passthrough-Converter>`__ are available to allow direct display of MAVLink Telemetry data on OpenTX transmitters using :ref:`Yaapu Telemetry LUA Script<common-frsky-yaapu>`.
@@ -178,6 +182,8 @@ Note 5: The mLRS project is firmware designed specifically to carry both RC and 
 Note 6: Vendor Specific Telem means that they accomodate sensor additions to the vehicle and can display the information on certain Vendor specific TXs but do not send ArduPilot telemetry from the vehicle to ArduPilot compatible GCS or OpenTX display scripts.
 
 Note 7: The receiver must support i-BUS telemetry (look for a SENS port on the receiver or check the product specifications).
+
+Note 8: These systems have integrated HD video transmission from Ethernet or HDMI camera systems in addition to RC control and vehicle telemetry.
 
 Links to Radio Control Systems
 ==============================
@@ -204,6 +210,7 @@ With integrated telemetry:
     Herelink RC/Telemetry/HD Video System <common-herelink>
     mLRS <common-mlrs-rc>
     Multiplex (no support in ArduPilot for M-Link telemetry yet) <common-multiplex-rc>
+    SIYI <common-siyi-rc>
     Spektrum SRXL2 <common-spektrum-rc>
     TBS CRSF/ ELRS <common-tbs-rc>
 
