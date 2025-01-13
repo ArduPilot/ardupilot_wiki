@@ -155,6 +155,8 @@ This is a special level that does not change the rates or time constant (ie like
 Completing the tune
 ===================
 
+.. _automatic-tuning-with-autotune-completing-the-tune:
+
 Once you have learned reasonable tuning parameters with
 autotune you should complete the tune by manually tuning some other key
 parameters.
@@ -181,6 +183,10 @@ If you need to go above 1.3 or below 0.8 then there is probably a
 problem with your setup (such as incorrect center of gravity, poor
 thrust line, poor airspeed calibration, too soft a tune on the pitch
 loop, or bad compass errors). You should try and fix the setup.
+
+.. note::
+
+   If you have successfully tuned your plane with Autotune and see slow oscillations on the pitch axis (around ~1-2 Hz), lower :ref:`PTCH_RATE_I<PTCH_RATE_I>` to half of it's value. And test fly again. Also, if you do not use an airspeed sensor, and get oscillations on full throttle takeoffs, you might try setting the :ref:`FLIGHT_OPTIONS <FLIGHT_OPTIONS>` bit 6 (+64 in value) to avoid increased PIDs due to takeoff climb speed being lower than the speed at which the vehicle was autotuned.
 
 There are many other parameters which can improve the performance of
 your aircraft, but these are the ones that most people need. Please read

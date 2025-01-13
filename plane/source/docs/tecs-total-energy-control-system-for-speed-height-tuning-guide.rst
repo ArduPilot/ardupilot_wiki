@@ -31,8 +31,7 @@ Tune the Pitch to Servo Loop
 
 The performance of the TECS speed and height controller is dependent on
 having the pitch to servo control loop tuned correctly. Before tuning
-TECS you need to have tuned the pitch loop following the instructions
-in :ref:`Roll, Pitch and Yaw Controller Tuning <roll-pitch-controller-tuning>`.
+TECS you need to have tuned the pitch loop following the instructions either in :ref:`automatic-tuning-with-autotune` or manually using :ref:`Roll, Pitch and Yaw Controller Tuning <roll-pitch-controller-tuning>`.
 
 Set initial parameters — throttle, pitch, airspeed and vertical speed limits
 ============================================================================
@@ -180,9 +179,9 @@ increasing the value of :ref:`TECS_TIME_CONST<TECS_TIME_CONST>` in increments of
    pitch and height oscillation using the default parameters, then it
    usually indicates that your pitch to servo loop has not been tuned
    properly or your model could have a significant thrust line misalignment
-   where throttle changes cause noticeable pitch angle changes. Ideally you
-   should improve your pitch loop tuning first, before adjusting
-   :ref:`TECS_PTCH_DAMP<TECS_PTCH_DAMP>` and :ref:`TECS_TIME_CONST<TECS_TIME_CONST>` as described here.
+   where throttle changes cause noticeable pitch angle changes. You
+   should make sure your pitch loop tuning is adequate, before adjusting
+   :ref:`TECS_PTCH_DAMP<TECS_PTCH_DAMP>` and :ref:`TECS_TIME_CONST<TECS_TIME_CONST>` as described above.
 
 If using airspeed sensing, adjust the value of :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` so
 that it matches the average amount of throttle required by the
