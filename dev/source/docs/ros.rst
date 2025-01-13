@@ -68,6 +68,7 @@ ROS 2
         ROS 2 over Ethernet <ros2-over-ethernet>
         ROS 2 waypoint goal interface <ros2-waypoint-goal-interface>
         Cartographer SLAM with ROS 2 in SITL <ros2-cartographer-slam>
+        ROS 2 on Raspberry Pi <ros2-pi>
 
 
 Conclusion
