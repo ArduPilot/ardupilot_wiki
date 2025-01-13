@@ -30,7 +30,7 @@ Specifications
 -  **Processor**
 
    -  STM32F745VG  ARM (216MHz), 1MB Flash
-   -  Integrated 4 output, BLHeli-32 40A ESC (AIO version only)
+   -  Integrated 4 output, BLHeli-32 40A ESC (AIO V1.2) or BLHeli-32 45A ESC (AIO V3)
 
 
 -  **Sensors**
@@ -158,6 +158,11 @@ Compass
 =======
 
 The GOKU GN 745 AIO does not have a builtin compass but it does have an external I2C connector.
+
+IMU
+=======
+
+The AIO V3 has its IMU at a different orientation to V1.2. This means :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` = 5 (Yaw225).
 
 Loading ArduPilot onto the board
 ================================
