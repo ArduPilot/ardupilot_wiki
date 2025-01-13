@@ -1,8 +1,8 @@
 .. _common-flywoo-f745:
 
-=========================================
+=================================================
 Flywoo GOKU GN 745 AIO with 40A ESC/45A ESC/ Nano
-=========================================
+=================================================
 
 The Flywoo GOKU GN 745 AIO is an autopilot produced by [Flywoo](https://flywoo.net/).
 
@@ -162,7 +162,7 @@ The GOKU GN 745 AIO does not have a builtin compass but it does have an external
 IMU
 =======
 
-The AIO V3 has its IMU at a different orientation to V1.2. This means :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` = 5 (Yaw225).
+The AIO V3 has its IMU at a different orientation to V1.2. This means :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` = 5 (Yaw225) needs to be set for V3.
 
 Loading ArduPilot onto the board
 ================================
