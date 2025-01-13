@@ -1872,14 +1872,16 @@ will not leave the loiter until heading toward the next waypoint.
    </tr>
    <tr>
    <td><strong>param1</strong></td>
-   <td>Heading</td>
-   <td>Heading Required (0 = False)</td>
-   </tr>
-   <tr>
-   <td><strong>param2</strong></td>
    <td>Radius</td>
    <td>Radius in meters. If positive loiter clockwise, negative counter-clockwise, 0 means no change to standard loiter.</td>
    </tr>
+   <tr>
+   <tr style="color: #c0c0c0">
+   <td>param2</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
    <td></td>
