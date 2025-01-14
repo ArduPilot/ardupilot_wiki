@@ -27,6 +27,32 @@ Features
 
 `Herelink User Manual <https://docs.cubepilot.org/user-guides/herelink/herelink-user-guides>`__
 
+Ethernet Connectivity
+---------------------
+
+Instead of using a UART serial connection to connect the autopilot to the AirUnit, an Ethernet virtual serial connection may be used
+
+An example of the setup of the Herelink in a networked ArduPilot vehicle system is detailed in :ref:`common-ethernet-vehicle` but a short form of the instructions is below
+
+.. image:: ../../../images/herelink-botblox-ethernet.png
+    :target: ../_images/herelink-botblox-ethernet.png
+
+- Connect the AirUnit and autopilot using an :ref:`ethernet adapter <common-ethernet-adapters>`.  The wiring for the AirUnit when used with a BotBlox SwitchBox is shown above but CubePilot's CubeLAND 8-Port Switch can also be used
+- Ensure the AirUnit and autopilot are on the same subnet (e.g the first 3 octets of the IP address match, 4th octet is different)
+
+  - Herelink AirUnit's IP address is 192.168.144.10, GroundUnit's is 192.168.144.11
+  - Set the autopilot's :ref:`NET_ENABLE<NET_ENABLE>` = 1 and reboot to enable networking
+  - Set the autopilot's IP address using :ref:`NET_IPADDR0<NET_IPADDR0>`, :ref:`NET_IPADDR1<NET_IPADDR1>`, :ref:`NET_IPADDR2<NET_IPADDR2>`, :ref:`NET_IPADDR3<NET_IPADDR3>` (e.g. 192.168.144.14)
+
+- Create a serial connection over ethernet for MAVLink telemetry
+
+  - Set :ref:`NET_P1_TYPE<NET_P1_TYPE>` = 1 (UDP Client) and reboot the autopilot
+  - Set :ref:`NET_P1_IP0<NET_P1_IP0>`, :ref:`NET_P1_IP1<NET_P1_IP1>`, :ref:`NET_P1_IP2<NET_P1_IP2>`, :ref:`NET_P1_IP3<NET_P1_IP3>` to the Herelink AirUnit's IP address (e.g. 192.168.144.11)
+  - Set :ref:`NET_P1_PORT<NET_P1_PORT>` = 14550 (port that AirUnit listens on)
+  - Set :ref:`NET_P1_PROTOCOL<NET_P1_PROTOCOL>` = 2 (MAVLink2)
+
+For information on how to include a camera gimbal to the system, please see the individual wiki pages for the :ref:`Siyi <common-siyi-zr10-gimbal>`, :ref:`Topotek <common-topotek-gimbal>` and :ref:`ViewPro <common-viewpro-gimbal>` gimbals
+
 Updating QGC
 ------------
 
