@@ -227,12 +227,12 @@ Install pip for Python3 `(pip3) <https://linuxize.com/post/how-to-install-pip-on
 .. code-block:: bash
 
     sudo apt-get install python3-pip
-    pip3 install pyrealsense2
-    pip3 install transformations
-    pip3 install dronekit
-    pip3 install apscheduler
-    pip3 install pyserial # For serial connection
-    pip3 install opencv-python
+    python3 -m pip install pyrealsense2
+    python3 -m pip install transformations
+    python3 -m pip install dronekit
+    python3 -m pip install apscheduler
+    python3 -m pip install pyserial # For serial connection
+    python3 -m pip install opencv-python
     sudo apt -y install python3-gst-1.0 gir1.2-gst-rtsp-server-1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly libx264-dev
 
     # Only necessary if you installed the minimal version of Ubuntu

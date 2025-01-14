@@ -413,8 +413,8 @@ In order to use the built-in Bluetooth connection as MAVLink some steps are requ
 
 ::
 
-    sudo pip3 install pybluez
-    sudo pip3 install pyserial
+    sudo python3 -m pip install pybluez
+    sudo python3 -m pip install pyserial
 
     sudo mkdir /usr/bin/bluetooth-serial
     sudo nano /usr/bin/bluetooth-serial/bluetooth-serial.py

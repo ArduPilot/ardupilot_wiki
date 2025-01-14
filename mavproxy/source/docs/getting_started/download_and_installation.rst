@@ -39,7 +39,7 @@ For Debian based systems (including Ubuntu, WSL, Raspian):
 .. code:: bash
 
     sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-lxml python3-pygame
-    pip3 install PyYAML mavproxy --user
+    python3 -m pip install PyYAML mavproxy --user
     echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
 
 
@@ -48,7 +48,7 @@ For Fedora based systems:
 .. code:: bash
 
     sudo dnf install python3-devel python3-opencv python3-wxpython4 python3-pip python3-matplotlib python3-pygame python3-lxml python3-yaml redhat-rpm-config
-    pip3 install PyYAML mavproxy --user
+    python3 -m pip install PyYAML mavproxy --user
     echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
 
 .. note::
@@ -70,13 +70,13 @@ To update an existing installation with the current release:
 
 .. code:: bash
 
-    pip3 install mavproxy pymavlink --user --upgrade
+    python3 -m pip install mavproxy pymavlink --user --upgrade
 
 To update an existing installation with the current development version (ie, from its master branch):
 
 .. code:: bash
 
-    pip3 install mavproxy --user git+https://github.com/ArduPilot/mavproxy.git@master
+    python3 -m pip install mavproxy --user git+https://github.com/ArduPilot/mavproxy.git@master
 
 .. _mavproxy-downloadinstallmac:
 
@@ -93,14 +93,14 @@ Uninstall python-dateutil (OSX and Windows come bundled with a version that is n
 
 .. code:: bash
 
-    sudo pip3 uninstall python-dateutil
+    sudo python3 -m pip uninstall python-dateutil
 
 Install MAVProxy and its remaining dependencies from the public PyPi repository:
 
 .. code:: bash
 
-    sudo pip3 install wxPython
-    sudo pip3 install gnureadline
-    sudo pip3 install billiard
-    sudo pip3 install numpy pyparsing
-    sudo pip3 install MAVProxy
+    sudo python3 -m pip install wxPython
+    sudo python3 -m pip install gnureadline
+    sudo python3 -m pip install billiard
+    sudo python3 -m pip install numpy pyparsing
+    sudo python3 -m pip install MAVProxy

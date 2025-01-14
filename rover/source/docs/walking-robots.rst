@@ -152,7 +152,7 @@ The following steps will get you running with the quadruped example.
 
 :: 
 
-   pip3 install pybullet
+   python3 -m pip install pybullet
    
 - cd to the ardupilot/Rover directory  
 - create a "scripts" directory and copy `quadruped.lua <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples>`_ into it

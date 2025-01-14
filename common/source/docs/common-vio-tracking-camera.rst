@@ -142,12 +142,12 @@ Python Packages Installation
 
     # pip install may require sudo, so proceed accordingly
     pip install pyrealsense2
-    pip3 install transformations
-    pip3 install dronekit
-    pip3 install apscheduler
+    python3 -m pip install transformations
+    python3 -m pip install dronekit
+    python3 -m pip install apscheduler
 
     # Install serial packages for serial connection
-    sudo pip3 install pyserial
+    sudo python3 -m pip install pyserial
 
 - Download the script `t265_to_mavlink.py <https://github.com/thien94/vision_to_mavros/blob/master/scripts/t265_to_mavlink.py>`__. In case you have downloaded the `vision_to_mavros <https://github.com/thien94/vision_to_mavros>`__ package, it can be found in the script folder.
 
