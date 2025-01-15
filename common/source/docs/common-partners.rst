@@ -934,6 +934,25 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://topotek.com/
 
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_karshak_drones_private_limited.jpg
+            :width: 250px
+            :align: center
+            :target:  https://karshakdrones.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_speedybee.png
+            :width: 250px
+            :align: center
+            :target:  https://www.speedybee.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_manifold_robotics.png
+            :width: 250px
+            :align: center
+            :target:  https://www.manifoldrobotics.com/
+
+      -
+
 
 [copywiki destination="copter,plane,rover,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
 
