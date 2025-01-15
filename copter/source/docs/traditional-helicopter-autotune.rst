@@ -3,8 +3,7 @@
 ========
 AutoTune
 ========
-The AutoTune for tradheli is completely different from multicopter AutoTune.  It can tune any combination of feedforward (``ATC_RAT_xxx_FF``), 
-the rate gains (``ATC_RAT_xxx_P`` and ``ATC_RAT_xxx_D``), or angle P gain (``ATC_ANG_xxx_P``).  The tuning for rate gains begins with finding the maximum allowable value for the rate gains and then tunes them.  Knowing the maximum value enables the AutoTune feature to keep from creating an instability.
+The AutoTune for tradheli is completely different from multicopter AutoTune.  It can tune any combination of feedforward (``ATC_RAT_xxx_FF``), the rate gains (``ATC_RAT_xxx_P`` and ``ATC_RAT_xxx_D``), or angle P gain (``ATC_ANG_xxx_P``).  The tuning for rate gains begins with finding the maximum allowable value for the rate gains and then tunes them.  Knowing the maximum value enables the AutoTune feature to keep from creating an instability.  In Copter 4.6, rate and acceleration limiting were added to allow users to protect aircraft that may not be able to handle the dynamic oscillations of the autotune maneuver.
 
 Before you start AutoTune, you must:
 
@@ -105,6 +104,15 @@ The :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>` parameter specifies the maximum fr
 
 The :ref:`AUTOTUNE_VELXY_P<AUTOTUNE_VELXY_P>` parameter specifies P gain for velocity feedback.  This aids the AutoTune in maintaining aircraft position during the frequency sweeps and dwells.  It does not apply to ``ATC_RAT_xxx_FF`` tuning.  Keep this at 0.1 unless the aircraft is drifting more than 10 meters during the dwell and frequency sweeps.  It only affects position holding while the aircraft is oscillating during these tests.  If it does drift more than 10 meters during the dwell adn frequency sweep tests then increase this parameter but don't increase much beyond 0.2. In between the oscillations, it may drift if the aircraft wasn't properly trimmed for hover.  This gain will not help with that.  
 
+:ref:`Maximum Allowable Angular Acceleration<AUTOTUNE_ACC_MAX>`
+---------------------------------------------------------------
+
+The :ref:`AUTOTUNE_ACC_MAX<AUTOTUNE_ACC_MAX>` parameter specifies maximum allowable angular acceleration in deg/s/s during autotune maneuvers.  This is only available in version Copter-4.6 and subsequent. This parameter limits the requested acceleration.  This does not guarantee the actual aircraft acceleration will be that which was requested.  It is likely that the response will be less than the requested acceleration.  If the response is too low, the resulting analysis may not be good enough for autotune to work well.  If the actual response is much lower, consider increasing the acceleration parameter so that there is a larger response for analysis.  The rate response can be used to estimate the actual acceleration by multiplying the magnitude in deg/s of the oscillatory response by the frequency in rad/s.
+
+:ref:`Maximum Allowable Angular Rate<AUTOTUNE_RAT_MAX>`
+-------------------------------------------------------
+
+The :ref:`AUTOTUNE_RAT_MAX<AUTOTUNE_RAT_MAX>` parameter specifies maximum allowable angular rate in deg/s during autotune maneuvers.  This is only available in version Copter-4.6 and subsequent. This parameter limits the requested rate.  This does not guarantee the actual aircraft rate will be that which was requested.  It is likely that the response will be less than the requested acceleration.  If the response is too low, the resulting analysis may not be good enough for autotune to work well.  If the actual response is much lower, consider increasing the rate parameter so that there is a larger response for analysis.  The actual rate can be evaluated from the RATE log message.
 
 Preparing for AutoTune
 ======================
@@ -193,7 +201,11 @@ Tuning Maneuver Descriptions
 ``ATC_RAT_xxx_FF`` Tuning
 +++++++++++++++++++++++++
 
-        The ``ATC_RAT_xxx_FF`` tuning is accomplished by achieving a constant angular rate of 50 deg/s and determining the steady state command required to maintain the 50 deg/s.  The maneuver to achieve the constant angular rate consists of changing attitude by 15 deg in one direction then reversing direction to achieve a constant rate of 50 deg/s before reaching 15 deg in the opposite direction.  Finally it returns to the starting attitude.   During ``ATC_RAT_xxx_FF`` tuning there is no position holding logic and the aircraft may drift, reposition the aircraft between maneuvers as needed to keep it from drifting.  Making any inputs during this test will stop the tuning and won’t begin again unless the sticks are centered.  The following video demonstrates the ``ATC_RAT_xxx_FF`` tuning.
+        In versions 4.6 and subsequent, the ``ATC_RAT_xxx_FF`` tuning is accomplished by performing low frequency oscillations targeting an amplitude of 5 deg.  The test will conduct 5 to 6 oscillations which will take 15 to 20 seconds.  This will be repeated to refine the feedforward gain.  Although the requested amplitude is 5 deg, the actual amplitude may be larger.  If the amplitude exceeds 10 to 15 deg or the oscillations are growing, the autotune testing should be stopped. The following video demonstrates the ``ATC_RAT_xxx_FF`` tuning.  It shows the tuning in progress where approximately 6 oscillations are done to test the gain with a short pause and then another 6 oscillations.  During the pause, the gains are being updated and the test is conducted again until the tuning is complete.
+
+..  youtube:: mquYOOVxWTo
+        
+        In versions prior to 4.6, the ``ATC_RAT_xxx_FF`` tuning is accomplished by achieving a constant angular rate of 50 deg/s and determining the steady state command required to maintain the 50 deg/s.  The maneuver to achieve the constant angular rate consists of changing attitude by 15 deg in one direction then reversing direction to achieve a constant rate of 50 deg/s before reaching 15 deg in the opposite direction.  Finally it returns to the starting attitude.   During ``ATC_RAT_xxx_FF`` tuning there is no position holding logic and the aircraft may drift, reposition the aircraft between maneuvers as needed to keep it from drifting.  Making any inputs during this test will stop the tuning and won’t begin again unless the sticks are centered.  The following video demonstrates the ``ATC_RAT_xxx_FF`` tuning.
 
 ..  youtube:: 2XLBIycPiq0
 
