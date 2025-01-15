@@ -74,7 +74,7 @@ The gateway IP address is used for routing when communicating with IP addresses 
 PPP Configuration
 -----------------
 
-This feature allows an H7 cpu-based autopilot to connect to networks via a Serial port using PPP. 
+This feature allows any H7 cpu-based autopilot to connect to networks via a Serial port using PPP. This can be to a serial PPP device or to an "PPP to Ethernet Adapter <common-ethernet-adapters>`.
 
 .. note:: this cannot be used with autopilots having a built-in Ethernet MAC. Only one network connection per autopilot is allowed currently. Also, only one serial port on the autopilot can be configured for PPP.
 
