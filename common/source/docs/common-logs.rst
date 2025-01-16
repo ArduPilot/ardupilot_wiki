@@ -61,6 +61,7 @@ Tools for Log Analysis
     MissionPLanner <https://ardupilot.org/planner/>
     QGroundControl <http://qgroundcontrol.com/>
     Dronee Plotter <https://plot.dronee.aero/>
+    PlotJuggler <https://discuss.ardupilot.org/t/log-inspection-with-plotjuggler/122216>
 
 
 [copywiki destination="copter,plane,rover,dev,antennatracker,planner"]
