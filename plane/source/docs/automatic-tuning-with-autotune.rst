@@ -159,13 +159,11 @@ parameters.
 
 The parameters that are needed for most airframes are:
 
-:ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: This defaults to 25, which is a very conservative value
+:ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: This default is a very conservative value
 designed to cope with badly tuned airframes. It controls how sharply the
 aircraft will turn in automatic modes (such as AUTO, RTL and LOITER).
-Most aircraft should use a significantly lower value. Once you have
-completed a successful autotune of roll and pitch values you should drop
-:ref:`NAVL1_PERIOD<NAVL1_PERIOD>` to 18 if you have not tuned it yet. To tune beyond that
-level you should fly a rectangular mission in AUTO mode and adjust
+Most aircraft should use a significantly lower value.
+To tune it, you should fly a rectangular mission in AUTO mode and adjust
 :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` down by 1 at a time until the aircraft turns at a rate you
 are happy with, and does not "wag its tail" in flight.
 
