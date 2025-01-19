@@ -28,7 +28,17 @@ jobs:
           ./Sphinxsetup.sh
       - name: Check image formats
         run: |
-          find ./images/ -exec file {} + | grep RIFF -vzq
+          for i in $(find ./images/); do
+              BAD=false
+              if file "$i" | grep RIFF; then
+                  echo "$i contains RIFF metadata; process file to remove"
+                  BAD=true
+              fi
+              if $BAD; then
+                  echo "Bad images found"
+                  exit 1
+              fi
+          done
       - name: Check python3 flake8 formatting
         run : |
           set -eux -o pipefail
