@@ -1,13 +1,18 @@
 .. _common-flywoo-f745:
 
-=========================================
-Flywoo GOKU GN 745 AIO with 40A ESC/ Nano
-=========================================
+=================================================
+Flywoo GOKU GN 745 AIO with 40A ESC/45A ESC/ Nano
+=================================================
 
 The Flywoo GOKU GN 745 AIO is an autopilot produced by [Flywoo](https://flywoo.net/).
 
 .. image:: ../../../images/flywooF745AIO.jpg
     :target: ../_images/flywooF745AIO.jpg
+
+The Flywoo GOKU GN 745 45A AIO V3 is an updated version of the above, with 45A ESC.
+
+.. image:: ../../../images/flywooF745AIOv3.jpg
+    :target: ../_images/flywooF745AIOv3.jpg
 
 The Nano version is a smaller reduced feature set version
 
@@ -25,7 +30,7 @@ Specifications
 -  **Processor**
 
    -  STM32F745VG  ARM (216MHz), 1MB Flash
-   -  Integrated 4 output, BLHeli-32 40A ESC (AIO version only)
+   -  Integrated 4 output, BLHeli-32 40A ESC (AIO V1.2) or BLHeli-32 45A ESC (AIO V3)
 
 
 -  **Sensors**
@@ -39,7 +44,7 @@ Specifications
 
    -  7.4V ~ 25V DC input power (4S MAX for Nano version)
    -  5V 2A BEC for peripherals
-   -  9V 1.5A BEC for video
+   -  9V 1.5A BEC for video (no 9V rail on V3 AIO)
 
 
 -  **Interfaces**
@@ -55,7 +60,7 @@ Specifications
    **Size and Dimensions AIO**
 
    - 33.5mm x 33.5mm (25.6 x 25.6mm mount pattern)
-   - 8.5g
+   - 8.5g for V1.2, 9.4g for V3
 
    **Size and Dimensions Nano**
    
@@ -64,10 +69,15 @@ Specifications
 
 Pinouts
 =======
-AIO
+AIO V1.2
 
 .. image:: ../../../images/flywoo-f745AIO-wiring.jpg
     :target: ../_images/flywoo-f745AIO-wiring.jpg
+
+AIO V3
+
+.. image:: ../../../images/flywooF745AIOv3Connections.jpg
+    :target: ../_images/flywooF745AIOv3Connections.jpg
 
 Nano
 
@@ -102,6 +112,8 @@ RC input is configured on the RX3 (UART3_RX) pin. It supports all RC protocols e
 - SRXL2 requires a connection to TX6 and automatically provides telemetry.  Set :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` to "4".
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
+
+.. note:: the V3 AIO moves this to UART2.
 
 PWM Output
 ==========
@@ -138,14 +150,19 @@ The correct battery monitor parameters are:
 -    :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 13
 -    :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` ~ 10.9
 -    :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 12
--    :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` ~ 28.5 (when using AIO version)
+-    :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` ~ 28.5 (when using AIO version 1.2) (or approx 8.1 for AIO version 3)
 
-These are set by default in the firmware and shouldn't need to be adjusted.
+These are set by default in the firmware and shouldn't need to be adjusted (apart from for V3).
 
 Compass
 =======
 
 The GOKU GN 745 AIO does not have a builtin compass but it does have an external I2C connector.
+
+IMU
+=======
+
+The AIO V3 has its IMU at a different orientation to V1.2. This means :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` = 5 (Yaw225) needs to be set for V3.
 
 Loading ArduPilot onto the board
 ================================

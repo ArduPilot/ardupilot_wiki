@@ -65,7 +65,6 @@ Parameters
 
 :ref:`SID_AXIS<SID_AXIS>`: Controls which axis and control loop injection point are being excited
 
-
 =====    ===========
 Value    Description
 =====    ===========
@@ -85,8 +84,7 @@ Value    Description
 13       Mixer Thrust
 =====    ===========
 
-
-:ref:`SID_MAGNITUDE<SID_MAGNITUDE>`: System identification Chirp Magnitude. Depending on the injection point, units will be in either deg, deg/s, or 0-1 for mixer outputs. The magnitude can be changed in flight easily using the :ref:`tuning knob<TUNE>` using the 58 option.
+:ref:`SID_MAGNITUDE<SID_MAGNITUDE>`: System identification Chirp Magnitude. Depending on the injection point, units will be in either deg, deg/s, 0-1 for mixer outputs, m/s for velocity, and m for position. The magnitude can be changed in flight easily using the :ref:`tuning knob<TUNE>` using the 58 option.
 
 :ref:`SID_F_START_HZ<SID_F_START_HZ>`: System identification Start Frequency. Range: 0.01-100 Hz
 
@@ -129,6 +127,22 @@ The next figure depicts the :ref:`SID_AXIS<SID_AXIS>` injection points in yellow
 .. figure:: ../images/arducopter4.1_pid_loops_ff_en.png
 
 ArduCopter control loops with ATC_RATE_FF_ENAB=1
+
+Position controller diagram showing the chirp being input at the desired velocity.  Both the velocity and position feedback loops are being used.  This input would be used to analyze data to determine position or tracking bandwidth.
+
+.. figure:: ../images/Pos_Ctrl_Pos_BW.png
+
+Position controller diagram showing the chirp being input at the desired velocity.  Only the velocity feedback loop is being used.  This input would be used to analyze data to determine the velocity bandwidth.
+
+.. figure:: ../images/Pos_Ctrl_Vel_BW.png
+
+Position controller diagram showing the chirp being input at the measured position.  Both the velocity and position feedback loops are being used.  This input would be used to analyze data to determine the position disturbance rejection bandwidth.
+
+.. figure:: ../images/Pos_Ctrl_Pos_DRB.png
+
+Position controller diagram showing the chirp being input at the measured velocity.  Only the velocity feedback loop is being used.  This input would be used to analyze data to determine the velocity disturbance rejection bandwidth.
+
+.. figure:: ../images/Pos_Ctrl_Vel_DRB.png
 
 Identification of a Multicopter
 ===============================
