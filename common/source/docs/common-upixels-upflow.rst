@@ -20,7 +20,7 @@ Here are some links:
 
 For those in China:
 
-- `UPIXELS UP-FLOW  LC-302-3C <https://item.taobao.com/item.htm?id=616234104077&spm=a8919.3000000002019401.0.1>`__
+- `UPIXELS UP-FLOW  LC-302-3C <https://item.taobao.com/item.htm?id=584321417799&pisk=ggrKjpOWP1fhIFCATk7iEb7vCWBg2N2EXWyXqbcHP5FTFWGnZ4gBfFMqE3tId8MS25NlLX25T7E-1Dgz-bcnw0ezMOfcmi2UL0u5isj0Hl78nDMIFYi5FAMmFODIsETik0o5i_LMV2Sx4SuAADtB5AGZeYGSF7g6fvl6dBNSOVOsHxoSV0NSfFMqdYtIFHt_CfkvN3GIPcMsExRBdeN7COHr1biSRAdDpbvIw3Uvj1RxaNEXV3ZtpV_gdfNzZTDIJiyK131bXvIqGJG9V3Gh3bmYBJfp0RmUmSH0tGtLM8w4PVEJ1shzXRZQPRRdNAz7tcGncw9txkyQl4ZfaUNxv73bAVpWcJyI_cH_cTYqslh3Nk31nn3ofo0jAPbNt4mKH7ZU9LK7GR20YVrRMCGz-xoseuWXyb354Oq0DiTHijHkROB9zUuIQyknD7ndTo1jBjXMSU8rSAktiOB9zUuIQAhcIGYyzVDN.&spm=a21xtw.29178619.product_shelf.4.454c62ad8JqGor>`__
 
 Connection to Autopilot
 -------------------------------
