@@ -18,7 +18,7 @@ The default outputs for a standard plane frame are very simple:
 - servo output 4 is rudder
 
 This is fine for many simple aircraft, but will need to be changed if
-you have elevons, a vtail, flaps or any other more complex setup, such as QuadPlane or Tail-sitter.
+you have elevons, a vtail, flaps, no ailerons, or any other more complex setup, such as QuadPlane or Tail-sitter.
 
 Overview
 ========
@@ -105,6 +105,7 @@ setup your :ref:`RC inputs <rc-throw-trim>`.
     :maxdepth: 1
     
     Four Channel Planes <guide-four-channel-plane>
+    Rudder Only Planes <guide-rudder-only-plane>
     Elevon Planes <guide-elevon-plane>
     VTail Planes <guide-vtail-plane>
     Orinthopter <ornithopter>
