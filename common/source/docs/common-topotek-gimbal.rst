@@ -103,6 +103,50 @@ If connected to a PC, `VLC <https://www.videolan.org/>`__ can be used to test th
 
 If using QGC, the live video can be configured from the "Application Settings", "General" screen.  Set "Source" to "RTSP Video Stream" and "RTSP URL" to one of the RTSP URLs listed above
 
+Firmware Updates
+----------------
+
+At least some Topotek gimbals support upgrading the firmware via SD card
+
+- Email Topotek and request the latest firmware.  The email address can be found at the bottom of the `topotek.com <https://topotek.com/>`__ website
+- Eject the gimbal's SD card and insert it into a computer
+- Copy the firmware into a file folder named "topotek" in the root directory of the SD card
+- Replace the SD card back into the gimbal
+- Powerup the Gimbal and it should update within 20 seconds
+- Remove the SD card, delete the firmware file and reinsert the SD card into the gimbal
+
+Downloading Images and Video
+----------------------------
+
+Images and videos captured by the camera gimbal can be remotely downloaded via Ethernet
+
+If a Windows PC is used:
+
+- Enable SMB file sharing support (`Microsoft instructions are here <https://learn.microsoft.com/en-us/windows-server/storage/file-server/troubleshoot/detect-enable-and-disable-smbv1-v2-v3>`__)
+
+  - From the Start menu search for "Turn Windows Features on or off"
+  - Enable "SMB 1.0/CIFS File Sharing Support"
+
+  .. image:: ../../../images/topotek-enable-windows-smb.png
+      :target: ../_images/topotek-enable-windows-smb.png
+
+  - Open Settings, Network & internet, Ethernet and set the PC's IP address so the first three octets match the camera's IP address (e.g. setting to 192.168.144.99 should work)
+  - Open a file explorer and enter the camera's IP address, ``\\192.168.144.108``, into the address bar
+  - Images and videos can be found in the ``camera/DCIM/snap`` and ``camera/DCIM/record`` directories respectively
+
+If a Linux/Ubuntu PC is used:
+
+- Install "smbclient" and "cifs-utils" packages (e.g. ``sudo apt-get install smbclient cifs-utils``)
+- Edit the "/etc/fstab" file and add an entry to the bottom like below
+
+::
+
+      //192.168.144.108/camera /media/windowsshare cifs vers=1.0,guest,uid=1000 0 0
+
+- Set the PC's IP address so the first three octets match the camera's IP address (e.g. setting to 192.168.144.99 should work)
+- Mount the shared directory (e.g. ``sudo mount /media/windowsshare``)
+- The images and videos can be found in the ``/media/windowsshare/DCIM/snap`` and ``/media/windowsshare/DCIM/record`` directories respectively
+
 Control and Testing
 -------------------
 
