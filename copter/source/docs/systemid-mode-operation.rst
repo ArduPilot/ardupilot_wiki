@@ -65,9 +65,26 @@ Parameters
 
 :ref:`SID_AXIS<SID_AXIS>`: Controls which axis and control loop injection point are being excited
 
-Values: 0:None (prevents entry into mode and display of other mode parameters), 1:Input Roll Angle, 2:Input Pitch Angle, 3:Input Yaw Angle, 4:Recovery Roll Angle,
-5:Recovery Pitch Angle, 6:Recovery Yaw Angle, 7:Rate Roll, 8:Rate Pitch, 9:Rate Yaw, 10:Mixer Roll,
-11:Mixer Pitch, 12:Mixer Yaw, 13:Mixer Thrust
+
+=====    ===========
+Value    Description
+=====    ===========
+0        None (prevents entry into mode and display of other mode parameters)
+1        Input Roll Angle
+2        Input Pitch Angle
+3        Input Yaw Angle
+4        Recovery Roll Angle,
+5        Recovery Pitch Angle
+6        Recovery Yaw Angle
+7        Rate Roll
+8        Rate Pitch
+9        Rate Yaw
+10       Mixer Roll,
+11       Mixer Pitch
+12       Mixer Yaw
+13       Mixer Thrust
+=====    ===========
+
 
 :ref:`SID_MAGNITUDE<SID_MAGNITUDE>`: System identification Chirp Magnitude. Depending on the injection point, units will be in either deg, deg/s, or 0-1 for mixer outputs. The magnitude can be changed in flight easily using the :ref:`tuning knob<TUNE>` using the 58 option.
 
