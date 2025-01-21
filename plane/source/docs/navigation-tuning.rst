@@ -34,7 +34,7 @@ Steps to tuning the L1 controller
    repeats the mission continuously. Ensure that the size of the mission
    is small enough that you will have a good view of the aircraft at all
    times
--  Set :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` to the default value of 20, and :ref:`NAVL1_DAMPING<NAVL1_DAMPING>` to
+-  Set :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` to the default value of 17, and :ref:`NAVL1_DAMPING<NAVL1_DAMPING>` to
    the default value of 0.75. Set :ref:`WP_RADIUS<WP_RADIUS>` to the distance your plane
    would fly in 2 seconds at cruise speed.
 -  Takeoff and put the plane in AUTO using your transmitter switch
