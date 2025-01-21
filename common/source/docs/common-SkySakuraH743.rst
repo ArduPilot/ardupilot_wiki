@@ -98,17 +98,18 @@ A second battery monitor can be also used but must be enabled. Its voltage senso
 The default battery setting parameters are:
 
 * :ref:`BATT_MONITOR<BATT_MONITOR>` = 4
-* :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 10
-* :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` = 34
-* :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 11
+* :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 10
+* :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` = 34
+* :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 11
+* :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` = 40
 
 A second battery monitor can be enabled:
 
 * set :ref:`BATT2_MONITOR<BATT2_MONITOR>` = 4
-* :ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN>` = 12
-* :ref:`BATT2_CURR_PIN<BATT2_CURR_PIN>` = 13
-* :ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT>` = 10
-* :ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT>` set  to appropriate value for second current sensor
+* :ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN__AP_BattMonitor_Analog>` = 12
+* :ref:`BATT2_CURR_PIN<BATT2_CURR_PIN__AP_BattMonitor_Analog>` = 13
+* :ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT__AP_BattMonitor_Analog>` = 10
+* :ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT__AP_BattMonitor_Analog>` set  to appropriate value for second current sensor
 
 Compass
 =======
