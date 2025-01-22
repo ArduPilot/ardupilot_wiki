@@ -16,7 +16,7 @@ For Triggered Pulse mode, tie the center pad to "L" and set the :ref:`RNGFND1_TY
 
 For Serial Mode, tie the center pad to "H" and set  :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “31". And set the Serial Port used to communicate with it to ``SERIALx_PROTOCOL`` = "9" (Rangefinder) and ``SERIALx_BAUD`` = 9 (9600).
 
-This device has a maximum useful range of 4m, so set -  :ref:`RNGFND1_MAX_CM<RNGFND1_MAX_CM>` = "400".
+This device has a maximum useful range of 4m, so set -  :ref:`RNGFND1_MAX<RNGFND1_MAX>` = "400".
 
 Pinout:
 

@@ -27,9 +27,9 @@ The following parameters should be set
 -  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115 (115200 baud)
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 29 (LeddarVu8-Serial)
--  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 15
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 16000.  *This is the distance in centimeters that the rangefinder can reliably read.*
--  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 15
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 16000.  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 If you instead were using the Serial4 port on the autopilot then you would set :ref:`SERIAL4_PROTOCOL <SERIAL2_PROTOCOL>` = 9, and :ref:`SERIAL4_BAUD <SERIAL2_BAUD>` to 115
 

@@ -31,9 +31,9 @@ If the SERIAL4 port on an autopilot is being used then the following parameters 
 
 .. note:: :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 20 works for TFminiPlus or TFmini, via its UART connection. If TFminiPlus is connected via I2C to the autopilot, use :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 25 (Benewake TFminiPlus-I2C) and also set :ref:`RNGFND1_ADDR<RNGFND1_ADDR>` = 16 (I2C Address of lidar in decimal). *The sensor’s default I2C address is 0x10 hexadecimal which is 16 in decimal.* 
 
--  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 30 for TFmini, =10 for TFminiPlus
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = **1000** for indoor use OR **600** for outdoors.  *This is the distance in centimeters that the rangefinder can reliably read.*
--  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 30 for TFmini, =10 for TFminiPlus
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **1000** for indoor use OR **600** for outdoors.  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 If instead the Telem2 port was used then the serial parameters listed above should instead be:
 

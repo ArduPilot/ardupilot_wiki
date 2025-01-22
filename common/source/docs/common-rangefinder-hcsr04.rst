@@ -12,7 +12,7 @@ indoor use but which has been successfully used outdoors on Copter. The very sho
 
 .. warning::
    
-   ``RNGFNDx_MAX_CM`` must be set to a tested, appropriate value.  If ``RNGFNDx_MAX_CM`` is set to a value  greater than 2m, the autopilot will not respond correctly to the data provided.
+   ``RNGFNDx_MAX`` must be set to a tested, appropriate value.  If ``RNGFNDx_MAX`` is set to a value  greater than 2m, the autopilot will not respond correctly to the data provided.
 
 Connection to the autopilot
 ===========================
@@ -23,8 +23,8 @@ Two :ref:`GPIOs <common-gpios>` are required for the Trigger pin (starts the son
 
 To setup as the first rangefinder. Reboot after setting parameters:
 
--  :ref:`RNGFND1_MAX_CM<RNGFND1_MAX_CM>` = "200" (i.e. 2m max range)
--  :ref:`RNGFND1_MIN_CM<RNGFND1_MIN_CM>` = "20" (i.e. 20cm min range)
+-  :ref:`RNGFND1_MAX<RNGFND1_MAX>` = "200" (i.e. 2m max range)
+-  :ref:`RNGFND1_MIN<RNGFND1_MIN>` = "20" (i.e. 20cm min range)
 -  :ref:`RNGFND1_STOP_PIN<RNGFND1_STOP_PIN>` = Enter GPIO number for pin attached to HC-SRO4 "Trigger" pin. For example, on PixHawk with ``BRD_PWM_COUNT`` = 4, AUX6 (GPIO 55) could be used here, and AUX5 (GPIO54) could be used below.
 -  :ref:`RNGFND1_PIN<RNGFND1_PIN>` = Enter GPIO number for pin attached to HC-SRO4 "Echo" pin.
 -  :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “30" (HC-SR04 sonar)

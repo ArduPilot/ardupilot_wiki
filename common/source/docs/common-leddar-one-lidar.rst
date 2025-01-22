@@ -34,9 +34,9 @@ following parameters for the first rangefinder (this is done on the Mission Plan
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115200
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 12 (LeddarOne)
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1
--  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 5
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = **4000** (40m) *This is the distance in centimeters that the rangefinder can reliably read.*
--  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 5
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **4000** (40m) *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 If you instead were using the Telem2 port on the Pixhawk then you would set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9, and :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115200
 

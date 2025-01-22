@@ -16,7 +16,7 @@ Connecting via UART to Autopilot
 ================================
 
 The same steps as the Nooploop TOFSense P (UART) can be followed, as linked :ref:`here <common-rangefinder-nooploop-tofsense-p>`.
-:ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` can be changed as per the sensor specifications (1500 for TOFSense F and 2500 for TOFSense FP)
+:ref:`RNGFND1_MAX <RNGFND1_MAX>` can be changed as per the sensor specifications (1500 for TOFSense F and 2500 for TOFSense FP)
 
 Connecting via I2C
 ==================

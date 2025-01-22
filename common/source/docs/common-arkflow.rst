@@ -39,7 +39,7 @@ Connection to Autopilot
 To use the onboard lidar:
 
 - Set :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 24 (DroneCAN)
-- Set :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 3000 to set range finder's maximum range to 30m
+- Set :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 3000 to set range finder's maximum range to 30m
 
 Additional Notes
 -----------------

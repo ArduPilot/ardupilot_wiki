@@ -34,9 +34,9 @@ following parameters if its the first rangefinder in the system (this can be don
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud) for newer sensors, 19 (19200 baud) for sensors manufactured before mid 2018
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 8 (LightWareSerial)
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1
--  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 5
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = **9500**.  *This is the distance in centimeters that the rangefinder can reliably read.*
--  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 5
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **9500**.  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 If you instead were using the Telem2 port on the Pixhawk then you would set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9, and :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to 115 (115200 baud) or 19 (19200 baud)
 
@@ -59,9 +59,9 @@ You then need to configure the rangefinder parameters as shown below
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 7 (LightWareI2C)
 -  :ref:`RNGFND1_ADDR <RNGFND1_ADDR>` = 102 (I2C Address of lidar in decimal).  *Note that this setting is in decimal. The default address is 0x66 hexadecimal which is 102 in decimal.*
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1
--  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 5
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = **9500**.  *This is the distance in centimeters that the rangefinder can reliably read.*
--  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 5
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **9500**.  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 Testing the sensor
 ==================
