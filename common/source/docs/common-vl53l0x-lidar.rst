@@ -39,9 +39,9 @@ Please set the rangefinder parameters as shown below (this can be done using the
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 16 (VL53L0X)
 -  :ref:`RNGFND1_ADDR <RNGFND1_ADDR>` = 41 (I2C Address of lidar in decimal).  *The sensor's default I2C address is 0x29 hexadecimal which is 41 in decimal.*
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1
--  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 5
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = **120** for the VL53L0X, **360** for the VL53L1X.  *This is the distance in cm that the rangefinder can reliably read.*
--  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in cm from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 5
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **120** for the VL53L0X, **360** for the VL53L1X.  *This is the distance in cm that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 10 *or more accurately the distance in cm from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 Testing the sensor
 ==================

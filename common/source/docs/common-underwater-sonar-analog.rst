@@ -47,8 +47,8 @@ Connect with a ground station to the autopilot and set the following parameters 
 Then the following range finder related parameters should be set:
 
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 17 (NMEA)
--  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 13
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 30000 (i.e. 300m).  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 13
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 30000 (i.e. 300m).  *This is the distance in centimeters that the rangefinder can reliably read.*
 -  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (i.e. down) if mounted on a boat
 
 Testing the sensor

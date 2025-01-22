@@ -22,7 +22,7 @@ A forward facing rangefinders can also be used for Obstacle Avoidance. See Range
 
    Downward facing rangefinders are automatically used in flight modes which have height control, such
    as Altitude Hold, Loiter and PosHold Mode.  The data from the sensor
-   will be used until you exceed ``RNGFNDx_MAX_CM``, after that it switches to
+   will be used until you exceed ``RNGFNDx_MAX``, after that it switches to
    the barometer.
 
    Copter includes support for :ref:`Terrain Following <terrain-following>` in Auto mode.
@@ -33,7 +33,7 @@ A forward facing rangefinders can also be used for Obstacle Avoidance. See Range
    
 .. warning::
    
-   ``RNGFNDx_MAX_CM`` must be set to a tested, appropriate value.  If ``RNGFNDx_MAX_CM`` is set to a value
+   ``RNGFNDx_MAX`` must be set to a tested, appropriate value.  If ``RNGFNDx_MAX`` is set to a value
    greater than the range of the sensor, the autopilot will not respond correctly to the 
    data provided.
 

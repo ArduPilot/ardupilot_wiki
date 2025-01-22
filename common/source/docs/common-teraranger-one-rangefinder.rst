@@ -74,9 +74,9 @@ Setup in Mission Planner
 To use the TeraRanger EVO sensor as rangefinder, connect with *Mission
 Planner* and open the **CONFIG/Full Parameter List** menu and set:
 
--  ``RNGFNDx_MAX_CM``: This parameter sets the maximum
+-  ``RNGFNDx_MAX``: This parameter sets the maximum
    distance that the rangefinder is used by the autopilot.
--  ``RNGFNDx_MIN_CM``: This parameter set the minimum distance that
+-  ``RNGFNDx_MIN``: This parameter set the minimum distance that
    the rangefinder is used by the autopilot.
 -  ``RNGFNDx_ADDR``: 48 (for TeraRanger One) or 49 (for EVO series), 0 will disable the rangefinder setup.
 -  ``RNGFNDx_TYPE``: 14
@@ -87,9 +87,9 @@ Values for the rangefinders are shown below:
 +---------------+---------+---------+--------+---------+-----------+------------+---------------+
 +               | EVO60M  | EVO40M  | EVO15M | EVO3M   | EVOMini   +  EVO600Hz  + Terranger One +
 +---------------+---------+---------+--------+---------+-----------+------------+---------------+
-+RNGFNDx_MAX_CM |  6000   |   4000  |  1500  |   300   |    330    +   800      +     1400      +
++RNGFNDx_MAX    |  6000   |   4000  |  1500  |   300   |    330    +   800      +     1400      +
 +---------------+---------+---------+--------+---------+-----------+------------+---------------+
-+RNGFNDx_MIN_CM |    50   |   50    |   50   |   50    |    3      +   75       +    20         +
++RNGFNDx_MIN    |    50   |   50    |   50   |   50    |    3      +   75       +    20         +
 +---------------+---------+---------+--------+---------+-----------+------------+---------------+
 +RNGFNDx_ADDR   |    49   |   49    |   49   |   49    |    49     +   49       +     48        +
 +---------------+---------+---------+--------+---------+-----------+------------+---------------+

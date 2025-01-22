@@ -18,8 +18,8 @@ Connection to the autopilot
 
 To setup as the first rangefinder. Reboot after setting parameters:
 
--  :ref:`RNGFND1_MAX_CM<RNGFND1_MAX_CM>` = "450" (i.e. 4.5m max range for v2.0 ver)
--  :ref:`RNGFND1_MIN_CM<RNGFND1_MIN_CM>` = "25" (i.e. 25cm min range for v2.0 ver)
+-  :ref:`RNGFND1_MAX<RNGFND1_MAX>` = "450" (i.e. 4.5m max range for v2.0 ver)
+-  :ref:`RNGFND1_MIN<RNGFND1_MIN>` = "25" (i.e. 25cm min range for v2.0 ver)
 -  :ref:`RNGFND1_STOP_PIN<RNGFND1_STOP_PIN>` = Enter GPIO number for pin attached to JSN-SR04T "Trigger" pin. See :ref:`common-gpios`.
 -  :ref:`RNGFND1_PIN<RNGFND1_PIN>` = Enter GPIO number for pin attached to JSN-SR04T "Echo" pin.
 -  :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “30" (HC-SR04 sonar)

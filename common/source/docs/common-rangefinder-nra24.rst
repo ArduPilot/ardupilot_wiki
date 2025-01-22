@@ -34,8 +34,8 @@ Set the following parameters
 -  :ref:`CAN_P2_BITRATE <CAN_P2_BITRATE>` = 500000 (Or as set in NSM tools)
 -  :ref:`CAN_D2_PROTOCOL <CAN_D2_PROTOCOL>` = 14 (NanoRadar)
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 39 (NRA-24). Reboot after setting this.
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 19000 (i.e. 200m max range with 10m buffer)
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MIN_CM>` = 50 (0.5m min range)
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 19000 (i.e. 200m max range with 10m buffer)
+-  :ref:`RNGFND1_MAX <RNGFND1_MIN>` = 50 (0.5m min range)
 -  :ref:`RNGFND1_RECV_ID <RNGFND1_RECV_ID>` = ID of the sensor (0 to accept all CAN ids for distance)
 
 
@@ -52,8 +52,8 @@ Set the following parameters (Example for setup on TELEM1/SERIAL1)
 -  :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = 115 (Baud rate as per the official documentation `here <http://en.nanoradar.cn/File/view/id/436.html>`__)
 -  :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = 9 (which translates to Rangefinder)
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 11 (which is USD1_Serial). Reboot after setting this.
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 19000 (i.e. 200m max range with 10m buffer)
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MIN_CM>` = 50 (0.5m min range)
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 19000 (i.e. 200m max range with 10m buffer)
+-  :ref:`RNGFND1_MAX <RNGFND1_MIN>` = 50 (0.5m min range)
 
 
 Testing the sensor

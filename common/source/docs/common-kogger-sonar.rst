@@ -61,8 +61,8 @@ The sensor can be connected to any available serial/uart port on the autopilot. 
 Then the following range finder related parameters should be set:
 
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 17 (NMEA)
--  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 30
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 5000 (i.e. 50m).  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 30
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 5000 (i.e. 50m).  *This is the distance in centimeters that the rangefinder can reliably read.*
 -  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (i.e. down) if mounted on a boat
 
 

@@ -32,8 +32,8 @@ If the autopilot's Serial2 port (aka Telem2) is used then the following paramete
 These rangefinder parameters should also be set:
 
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 17 (NMEA)
--  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 13
--  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 30000 (300m)
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 13
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 30000 (300m)
 -  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (down)
 
 Testing the sensor
