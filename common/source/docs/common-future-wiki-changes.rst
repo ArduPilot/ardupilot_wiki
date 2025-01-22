@@ -9,13 +9,12 @@ Will be in future 4.7 release and is currently in master ("latest")
 
 New Board Support
 =================
-- AET-H743-Basic, see https://github.com/ArduPilot/ardupilot_wiki/pull/6425
-- SkysakuraH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6427
 - AeroFox H7 , see https://github.com/ArduPilot/ardupilot_wiki/pull/6446
 - GEPRC TAKER H7 BT, see https://github.com/ArduPilot/ardupilot_wiki/pull/6450
 - MicoAir743-AIO, see https://github.com/ArduPilot/ardupilot_wiki/pull/6511
 - CrazyF405 ELRS, see https://github.com/ArduPilot/ardupilot_wiki/pull/6513
 - MicoAir743v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/6525
+- ARK FPV, see https://github.com/ArduPilot/ardupilot_wiki/pull/6560
 
 New Peripheral Support
 ======================
