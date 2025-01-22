@@ -29,7 +29,8 @@ New Features
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
-- DO_RETURN_PATH_START mission item, seee https://github.com/ArduPilot/ardupilot_wiki/pull/6460
+- DO_RETURN_PATH_START mission item, see https://github.com/ArduPilot/ardupilot_wiki/pull/6460
+- Add some new TX tuning sets, see https://github.com/ArduPilot/ardupilot_wiki/pull/6553
 [/site]
 [site wiki="copter"]
 - Fast Attitude loop option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6470
