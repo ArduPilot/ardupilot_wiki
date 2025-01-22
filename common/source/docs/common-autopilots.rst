@@ -47,7 +47,6 @@ Open Hardware
 
     AcctonGodwit GA1 <common-acctongodwit-ga1>
     ARKV6X DS-10 Pixhawk6 <common-ark-v6x-overview>
-    ARK FPV <common-ark-fpv-overview>
     CUAV V5 Plus <common-cuav-v5plus-overview>
     CUAV V5 Nano <common-cuav-v5nano-overview>
     CUAV Nora <common-cuav-nora-overview>
@@ -96,6 +95,7 @@ Closed Hardware
     AET-H743-Basic <common-AET-H743-Basic>
     AnyleafH7 <common-anyleafh7>
     AocodaRC H743Dual <common-aocoda-h743dual>
+    ARK FPV <common-ark-fpv>
     ARK_PI6X <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/ARK_PI6X/README.md>
     Atlas-Control <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Atlas-Control/README.md>
     AtomRC F405-NAVI <common-atomrcf405-navi>
@@ -228,14 +228,11 @@ Closed Hardware
     SpeedyBee F4 V5 <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/speedybeef4v5>
     SpeedyBee F405 Mini <common-speedybeef405-mini>
     SpeedyBeeF405WING/WING Mini <common-speedybeef405wing>
-<<<<<<< HEAD
     StellarF4 <common-stellarf4>
     StellarF4V2 <common-stellarf4v2>
     StellarH7V2 <common-stellarh7v2>
     SVehicle E2 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SVehicle-E2/README.md>
-=======
     StellarF4V2 <common-stellarf4v2>
->>>>>>> 0cc7f7174 (4.7:StellarF4V2)
     TBS Lucid H7 <common-tbs-lucidh7>
     TBS Lucid H7 Wing <common-tbs-lucid-h7-wing>
     TBS Lucid H7 Wing AIO <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/TBS_LUCID_H7_WING_AIO/README.md>
