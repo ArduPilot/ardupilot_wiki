@@ -260,7 +260,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     RTL mode not armable                                    Vehicle cannot be armed in RTL mode                 Switch to another flight mode
     RTL_ALT_TYPE is above-terrain but no rangefinder        RTL uses rangefinder but rangefinder unavailable    Check :ref:`rangefinder configuration<common-rangefinder-landingpage>` including RNGFNDx_ORIENT=251
     RTL_ALT_TYPE is above-terrain but no terrain data       RTL uses terrain but Terrain database unavailable   Set :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` = 1.  See :ref:`Terrain Following<terrain-following>`
-    RTL_ALT_TYPE is above-terrain but RTL_ALT>RNGFND_MAX RTL return altitude above rangefinder range         Reduce :ref:`RTL_ALT<RTL_ALT>` to less than RNGFNDx_MAX. See :ref:`Terrain Following<terrain-following>`
+    RTL_ALT_TYPE is above-terrain but RTL_ALT>RNGFND_MAX    RTL return altitude above rangefinder range         Reduce :ref:`RTL_ALT<RTL_ALT>` to less than RNGFNDx_MAX. See :ref:`Terrain Following<terrain-following>`
     Safety Switch                                           Hardware safety switch has not been pushed          Push safety switch (normally on top of GPS) or disable by setting :ref:`BRD_SAFETY_DEFLT<BRD_SAFETY_DEFLT>` to zero and reboot autopilot
     Throttle below failsafe                                 RC throttle input is below FS_THR_VALUE             Turn on RC transmitter or check :ref:`FS_THR_VALUE<FS_THR_VALUE>`.  Check :ref:`RC failsafe setup<radio-failsafe>`
     Vehicle too far from EKF origin                         Vehicle is more than 50km from EKF origin           Reboot autopilot to reset EKF origin to current Location
