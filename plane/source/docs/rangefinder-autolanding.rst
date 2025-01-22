@@ -26,7 +26,7 @@ Also note that if you have a longer range rangefinder then it is a very
 good idea to set the minimum range of the rangerfinder well above zero.
 For example, the PulsedLight Lidar has a typical range of over 40
 meters, and when it gets false readings it tends to read ranges of less
-than 1 meter. And setting :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` to 150 , if its the first system rangefinder, will discard any rangefinder readings below 1.5 meters, and will
+than 1 meter. And setting :ref:`RNGFND1_MIN <RNGFND1_MIN>` to 150 , if its the first system rangefinder, will discard any rangefinder readings below 1.5 meters, and will
 greatly improve the robustness of the Lidar for landing.
 
 If the autopilot has a good rangefinder (:ref:`such as LIDAR <common-rangefinder-lidarlite>`) then you can safely choose quite small numbers for :ref:`LAND_FLARE_SEC<LAND_FLARE_SEC>` and :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>`, and flare closer to the ground than with the default values. 
