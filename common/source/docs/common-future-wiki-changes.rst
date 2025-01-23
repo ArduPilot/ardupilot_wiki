@@ -15,6 +15,7 @@ New Board Support
 - CrazyF405 ELRS, see https://github.com/ArduPilot/ardupilot_wiki/pull/6513
 - MicoAir743v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/6525
 - ARK FPV, see https://github.com/ArduPilot/ardupilot_wiki/pull/6560
+- DroneerF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/6567
 
 New Peripheral Support
 ======================
