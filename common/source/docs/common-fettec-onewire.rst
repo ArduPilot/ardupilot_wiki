@@ -186,7 +186,7 @@ Optional features can be configured using the instructions at their respective w
 SITL simulation
 ---------------
 
-The ESCs can be simulated in SITL by adding ``--serial5=sim:fetteconewireesc`` to the SITL command line and setting the following additional parameters:
+The ESCs can be simulated in SITL by adding ``-A --serial5=sim:fetteconewireesc`` to the ``sim_vehicle.py`` command-line and setting the following additional parameters:
 
 - :ref:`SERIAL5_PROTOCOL<SERIAL5_PROTOCOL>` = 38
 - ``SIM_FTOWESC_ENA`` = 1
