@@ -31,6 +31,15 @@ In order to use GDB, you need to configure your SITL build with debug symbols. U
 
     ./waf configure --debug
 
+Generate launch.json Variables
+===================================
+
+Add ``--vs-launch`` to the configure command after ``--debug`` will auto copy ``.vscode/launch.default.json`` to ``.vscode/launch.json``, if there is no launch.json existing. When you build the target, it will generate the build info to ``.vscode/setting.json``. This will allow you to use them in the launch.json file. Example variables: ``${config:wscript.elf_file_path}`` for .elf file path, ``${config:wscript.board}`` for board name, for STM32 target it will also generate a openocd.cfg under the build board folder based on board MCU model. Example command:
+
+::
+
+    ./waf configure --board sitl --debug --vs-launch
+
 Setting up VSCode Debugger
 ==========================
 With VSCode open to the ArduPilot directory. Open the `Run and Debug` menu (Ctrl+Shift+D). Within the `Run and Debug` menu, select `create a launch.json file`. Then select `Add Configuration`, it should open a launch.json file for setting up debugging configurations.  An example launch.json file can be found below.  Copy-paste the example into the newly created launch.json file in VSCode, overwitting anything that has was pre-defined in the file, and save the file.  This example file is a good place to start but can be modified to your liking.  Should you need to access or edit the file in the future, you can find it in the .vscode directory, or you can simply click on the cog icon in the `Run and Debug` menu.
