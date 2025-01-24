@@ -234,3 +234,10 @@ Users should set :ref:`FLOW_TYPE<FLOW_TYPE>` = 5 (MAVLink) and then perform the 
    </table>
 
 Please see this `issue 29131 <https://github.com/ArduPilot/ardupilot/issues/29131>`__ for improvements we should make to the handling of this message
+
+GPS/Non-GPS Transitions
+-----------------------
+
+The user wiki page for :ref:`GPS/Non-GPS transitions is here <copter:common-non-gps-to-gps>`
+
+The EKF's active source set can be changed in real-time by sending a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ or `COMMAND_INT <https://mavlink.io/en/messages/common.html#COMMAND_INT>`__ message with the "command" field set to `MAV_CMD_SET_EKF_SOURCE_SET (42007) <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml#L144>`__ and "param1" set to a number between 1 and 3
