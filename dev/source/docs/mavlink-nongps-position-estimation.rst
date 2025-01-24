@@ -12,7 +12,7 @@ This is also called "External Navigation" although to be more precise it involve
 
     The user wiki pages for :ref:`Non-GPS navigation is here <copter:common-non-gps-navigation-landing-page>` and :ref:`GPS/Non-GPS transitions is here <copter:common-non-gps-to-gps>`
 
-Any of the following messages should be sent in at 4hz or higher:
+Any of the following messages should be sent to the autopilot at 4hz or higher:
 
 - `ODOMETRY <https://mavlink.io/en/messages/common.html#ODOMETRY>`__ (the preferred method)
 - `VISION_POSITION_ESTIMATE <https://mavlink.io/en/messages/common.html#VISION_POSITION_ESTIMATE>`__ and optionally `VISION_SPEED_ESTIMATE <https://mavlink.io/en/messages/common.html#VISION_SPEED_ESTIMATE>`__
@@ -116,10 +116,10 @@ The preferred method is to send an `ODOMETRY <https://mavlink.io/en/messages/com
    <td>Yaw angular speed in rad/s (clockwise is positive)</td>
    </tr>
    <tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>pos_covariance</strong></td>
    <td>float[21]</td>
-   <td>not used</td>
+   <td>elements 0, 6 and 11 are x, y and z-axis position error. 15, 18, 20 are roll, pitch and yaw angle error. Ignored if NaN</td>
    </tr>
    <tr>
    <tr style="color: #c0c0c0">
@@ -145,3 +145,92 @@ The preferred method is to send an `ODOMETRY <https://mavlink.io/en/messages/com
    </tr>
    </tbody>
    </table>
+
+Six "pos_covariance" array elements are used to calculate the position error and angle error
+
+- 0: x-axis position error (m)
+- 6: y-axis position error (m)
+- 11: z-axis position error (m)
+- 15: roll angle error (rad)
+- 18: pitch angle error (rad)
+- 20: yaw angle error (rad)
+
+For both position and angle error, the 3 elements are combined to create a single error which is used during EKF sensor fusion
+
+.. image:: ../images/nongps-position-estimation-poserr.png
+    :target: ../_images/nongps-position-estimation-poserr.png
+
+In addition the position error is constrained to be between :ref:`VISO_POS_M_NSE <VISO_POS_M_NSE>` and 100 and the angle error between :ref:`VISO_YAW_M_NSE <VISO_YAW_M_NSE>` and 1.5
+
+Messages with "quality" below the :ref:`VISO_QUAL_MIN <VISO_QUAL_MIN>` parameter value are ignored
+
+OPTICAL_FLOW message
+--------------------
+
+An offboard optical flow sensor can send its horizontal flow sensor data to the autopilot using the `OPTICAL_FLOW <https://mavlink.io/en/messages/common.html#OPTICAL_FLOW>`__ message
+
+Users should set :ref:`FLOW_TYPE<FLOW_TYPE>` = 5 (MAVLink) and then perform the :ref:`Optical Flow Setup procedure <copter:common-optical-flow-sensor-setup>` before use
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Field Name</th>
+   <th>Type</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>time_usec</strong></td>
+   <td>uint64_t</td>
+   <td>Timestamp since system boot.  This does not need to be syncronised with the autopilot's time</td>
+   </tr>
+   <tr>
+   <td>sensor_id</td>
+   <td>uint8_t</td>
+   <td>not used</td>
+   </tr>
+   <tr>
+   <td><strong>flow_x</strong></td>
+   <td>int16_t</td>
+   <td>Flow rate around X-axis</td>
+   </tr>
+   <tr>
+   <td><strong>flow_x</strong></td>
+   <td>int16_t</td>
+   <td>Flow rate around Y-axis</td>
+   </tr>
+   <tr>
+   <td>flow_comp_m_x</td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   <tr>
+   <td>flow_comp_m_y</td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   <tr>
+   <td><strong>quality</strong></td>
+   <td>uint8_t</td>
+   <td>Optical flow quality 0:bad, 255:best</td>
+   </tr>
+   <tr>
+   <td>ground_distance</td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   <tr>
+   <td>flow_rate_x</td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   <tr>
+   <td>flow_rate_y</td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   </tbody>
+   </table>
+
+Please see this `issue 29131 <https://github.com/ArduPilot/ardupilot/issues/29131>`__ for improvements we should make to the handling of this message
