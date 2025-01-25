@@ -20,6 +20,7 @@ ArduPilot supports the MAVLink protocol for communication with Ground Stations a
     Get and Set FlightMode <mavlink-get-set-flightmode>
     Camera Commands <mavlink-camera>
     Gimbal / Camera Mount <mavlink-gimbal-mount>
+    MAVFTP <mavlink-mavftp>
     Mission Upload/Download <mavlink-mission-upload-download>
     Move a Servo <mavlink-move-servo>
     Non-GPS Position Estimation <mavlink-nongps-position-estimation>
