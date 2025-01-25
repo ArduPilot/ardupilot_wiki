@@ -34,6 +34,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `JapanDrones <http://japandrones.com/>`__
 * `Lightware <https://lightware.co.za/>`__
 * `mRobotics <http://mrobotics.io/>`__
+* `NW Blue <https://nwblue.com/>`__
 * `Qiotek <http://www.qio-tek.com/>`__
 * `RF Design <http://store.rfdesign.com.au/>`__
 * `Rotoye <https://rotoye.com/>`__ (Smart Batteries)
@@ -41,7 +42,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Sky-Drones <https://sky-drones.com/store>`__
 * `Topotek <https://topotek.com/>`__
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
-* `uAvionix <https://uavionix.com/>`__
+* `uAvionix <https://uavionix.com/>`__NW Blue <
 * `UAV Systems International <https://uavsystemsinternational.com/collections/all>`__
 * `3DXR <https://www.3dxr.co.uk/>`__
 
