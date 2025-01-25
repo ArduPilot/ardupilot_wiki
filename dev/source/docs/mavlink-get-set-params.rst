@@ -10,19 +10,20 @@ This page explains how a ground station or companion computer can retrieve the l
 
 Most ground stations (aka GCS) provide an editable list of parameters to the user to allow them to customise the vehicle.  Below are links to the human and machine readable parameter names, descriptions and valid ranges but please note that the parameters are different depending upon the vehicle type and also change slightly with each firmware release so GCSs and companion computers should retrieve the list of parameters directly from the flight controller.  Many GCSs also parse the machine readable parameter list (linked below) to provide the description and valid range to the user.
 
-+---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| Vehicle       | Human readable                                                     | Machine Readable                                                                       |
-+===============+====================================================================+========================================================================================+
-|AntennaTracker |`html <https://ardupilot.org/antennatracker/docs/parameters.html>`__|`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/AntennaTracker/apm.pdef.xml>`__|
-+---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-|Copter         |`html <https://ardupilot.org/copter/docs/parameters.html>`__        |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/ArduCopter/apm.pdef.xml>`__    |
-+---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-|Plane          |`html <https://ardupilot.org/plane/docs/parameters.html>`__         |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/ArduPlane/apm.pdef.xml>`__     |
-+---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-|Rover          |`html <https://ardupilot.org/rover/docs/parameters.html>`__         |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/Rover/apm.pdef.xml>`__         |
-+---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-|Submarine      | unavailable                                                        |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/ArduSub/apm.pdef.xml>`__       |
-+---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
++---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| Vehicle       | Human readable                                                     | Machine Readable (XML)                                                                 | Machine Readable (JSON)                                                                  |
++===============+====================================================================+========================================================================================+==========================================================================================+
+|AntennaTracker |`html <https://ardupilot.org/antennatracker/docs/parameters.html>`__|`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/AntennaTracker/apm.pdef.xml>`__|`apm.pdef.json <https://autotest.ardupilot.org/Parameters/AntennaTracker/apm.pdef.json>`__|
++---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+|Copter         |`html <https://ardupilot.org/copter/docs/parameters.html>`__        |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/ArduCopter/apm.pdef.xml>`__    |`apm.pdef.json <https://autotest.ardupilot.org/Parameters/ArduCopter/apm.pdef.json>`__    |
++---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+|Plane          |`html <https://ardupilot.org/plane/docs/parameters.html>`__         |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/ArduPlane/apm.pdef.xml>`__     |`apm.pdef.json <https://autotest.ardupilot.org/Parameters/ArduPlane/apm.pdef.json>`__     |
++---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+|Rover          |`html <https://ardupilot.org/rover/docs/parameters.html>`__         |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/Rover/apm.pdef.xml>`__         |`apm.pdef.json <https://autotest.ardupilot.org/Parameters/Rover/apm.pdef.json>`__         |
++---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+|Submarine      | unavailable                                                        |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/ArduSub/apm.pdef.xml>`__       |`apm.pdef.json <https://autotest.ardupilot.org/Parameters/ArduSub/apm.pdef.json>`__       |
++---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+
 
 Retrieving All Parameters
 -------------------------
