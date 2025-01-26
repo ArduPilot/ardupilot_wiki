@@ -43,7 +43,8 @@ python3 get-pip.py
 rm -f get-pip.py
 
 # Install required python packages
-python3 -m pip install --user --upgrade -r requirements.txt
+SCRIPT_DIR=$(dirname $(realpath ${BASH_SOURCE[0]}))
+python3 -m pip install --user --upgrade -r "$SCRIPT_DIR"/requirements.txt
 
 # Reset the value of DISPLAY
 if grep -qi -E '(Microsoft|WSL)' /proc/version; then
