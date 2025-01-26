@@ -509,4 +509,4 @@ generate_rst_files(commits_to_checkout_and_parse)
 generate_json(VEHICLES)
 move_results(VEHICLES)
 
-# sys.exit(error_count)
+sys.exit(error_count)
