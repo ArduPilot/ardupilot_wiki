@@ -305,6 +305,8 @@ def get_commit_dict(releases_parsed):
     for i in commits_and_codes:
         if commits_and_codes[i][0] != 'error':
             commite_and_codes_cleanned[i] = commits_and_codes[i]
+    if len(commite_and_codes_cleanned) == 0:
+        error("Expected at least one commit")
     return commite_and_codes_cleanned
 
 
