@@ -1,9 +1,12 @@
 #!/bin/bash
 # check for changes in docs and run sphinx
 
+set -e
+set -x
+
 export PYTHONUNBUFFERED=1
 
-cd $HOME/build_wiki || exit 1
+cd $HOME/build_wiki
 
 START=$(date +%s)
 
