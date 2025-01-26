@@ -30,7 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
     focal.vm.provision "shell", path: "./scripts/initvagrant.sh"
     focal.vm.provider "virtualbox" do |vb|
-        vb.customize ["modifyvm", :id, "--memory", "2048"]
+        vb.customize ["modifyvm", :id, "--memory", "16384"]
     end
   end
 end
