@@ -18,7 +18,7 @@ Flight modes are controlled through the radio (via a :ref:`transmitter switch <c
 via mission commands, or using commands from a ground station (GCS) or
 companion computer.
 
-The table below shows for each flight mode whether it provides altitude or position control, and whether it requires valid position information from a sensor (typically a GPS) in order to arm or switch into this mode.
+The table below shows for each flight mode whether it provides altitude or position control, and whether it requires valid position information from a sensor (typically a GPS) in order to arm or switch into this mode. Position Control also requires a compass for good performance. In addition ALT_HOLD requires an altitude sensor.
 
 .. raw:: html
 
