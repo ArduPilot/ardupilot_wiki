@@ -91,12 +91,14 @@ First the amount of FF term can be determined by analyzing the data log after th
 here is an example plot using `UAV LogViwer online <https://ardupilot.org/plane/docs/common-uavlogviewer.html>`__.
 
 .. image:: ../../../images/ff1.png
+    :target: ../_images/ff1.png
 
 you can see that the second curve exceeds the third, indicating that the FF term (0.345 used in the first curve) is too high....re-plotting the same data with the first curve multiplied by a lower FF proposal of 0.11:
 
 - .11*PIDR.Act*AETR.SS (.11 was the actual FF gain result of an Autotune done later)
 
 .. image:: ../../../images/ff2.png
+    :target: ../_images/ff2.png
 
 you can see that the two curves match in magnitude, indicating that the FF term should be .11.
 
@@ -126,7 +128,7 @@ P and D term
 - :ref:`PTCH_RATE_D<PTCH_RATE_D>`
 - :ref:`RLL_RATE_D<RLL_RATE_D>`
 
-Now vehicle can be flown again to start trimming P and D. Starting with D and P at 0:
+Now, the vehicle can be flown again to start trimming P and D. Starting with D and P at 0:
 
 #. With the model in FBWA mode, increase P in 0.01 increments. Check each change by putting in a rapid angle demand, hold
    it and release. Do the same in the other direction. You want the
