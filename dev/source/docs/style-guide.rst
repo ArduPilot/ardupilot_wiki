@@ -402,22 +402,23 @@ Functions that return a single physical value or variables that represent a phys
     uint16 get_angle() { ... };
     float distance;
 
-Functions or variables that represent a value relative to a frame should be suffixed with the frame first, then with the physical unit (if any).
+Functions or variables that represent a value relative to a frame should be suffixed with the frame first, then with the physical unit (if different than SI units). SI suffixes are occasionally used to avoid confusion in modules with similar variables of different units, but only if necessary to avoid confusion.
 
 **Right:**
 
 ::
 
-    uint16 get_distance_ned_cm() { ... };
-    uint16 get_distance_enu_m() { ... };
+    uint16_t get_distance_ned_cm() { ... };
     float position_neu_mm;
+    float course; //if in degrees
 
 **Wrong:**
 
 ::
 
-    uint16 get_distance() { ... };
+    uint16_t get_distance_ned() { ... };
     float position;
+    float course_deg;
 
 
 Commenting
