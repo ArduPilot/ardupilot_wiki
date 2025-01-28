@@ -18,9 +18,10 @@ While scripting normally requires at least some LUA programming and editing, the
 Getting Started
 ===============
 
-- Ensure your autopilot has at least 2 MB of flash and 80 kB of memory.  High powered autopilots like the CubePilot Cube Orange and HolyBro Durandal will certainly work well but check the specifications of your :ref:`autopilot <common-autopilots>`. Scripting is not available in F4 based autopilots. Autopilots must have an SD card to store the script unless the user builds his own firmware and embeds it directly in the firmware (see :ref:`common-oem-customizations`).
-- Set :ref:`SCR_ENABLE <SCR_ENABLE>` to 1 to enable scripting (refresh or reboot to see all ``SCR_`` parameters).
-- Upload scripts (files with extension .lua) to the autopilot's SD card's ``APM/scripts`` folder.
+- Ensure your autopilot has at least 2 MB of flash and 80 kB of memory.  Higher powered autopilots like the CubePilot Cube Orange and HolyBro Durandal will certainly work well but check the specifications of your :ref:`autopilot <common-autopilots>`. Scripting is not available on 1 MB autopilots.
+- Autopilots must have an SD card or compatible dataflash to store the script, unless the user builds his own firmware and embeds it directly in the firmware (see :ref:`common-oem-customizations`). Compatible autopilots include ``AP_SCRIPTING_ENABLED`` in their firmware limitation list (see :ref:`common-limited_firmware` for directions on how to check this).
+- Set :ref:`SCR_ENABLE <SCR_ENABLE>` to 1 to enable scripting (refresh or reboot after to see other ``SCR_`` parameters).
+- Upload scripts (files with extension .lua) to the autopilot's ``/APM/scripts`` folder. This can be done using MAVFTP to access the storage while in the autopilot, or by removing the SD card and using a PC.
 
   - If this folder does not exist, you can create it by setting :ref:`SCR_ENABLE<SCR_ENABLE>` to 1 and rebooting. This folder can also be created manually on the SD card. 
   - If using Mission Planner, this can be done using MAVFTP.
