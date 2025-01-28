@@ -236,6 +236,8 @@ You can test a virtual range beacons by setting the following parameters
 
 The restart SITL and the vehicle should appear on the map.  After perhaps 30seconds it should shift to its normal starting position.
 
+.. _testing_precison_landing:
+
 Testing Precision Landing
 -------------------------
 
