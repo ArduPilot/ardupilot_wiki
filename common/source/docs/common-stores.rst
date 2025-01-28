@@ -42,7 +42,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Sky-Drones <https://sky-drones.com/store>`__
 * `Topotek <https://topotek.com/>`__
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
-* `uAvionix <https://uavionix.com/>`__NW Blue <
+* `uAvionix <https://uavionix.com/>`__
 * `UAV Systems International <https://uavsystemsinternational.com/collections/all>`__
 * `3DXR <https://www.3dxr.co.uk/>`__
 
