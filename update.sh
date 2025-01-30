@@ -39,7 +39,8 @@ progress() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] update.sh: $*"
 }
 
-LOGFILE="logs/update-latest.log"
+LOG_TIMESTAMP="$(date '+%Y-%m-%d-%H:%M:%S')"
+LOGFILE="logs/update-$LOG_TIMESTAMP.log"
 progress "update.sh starting (see $LOGFILE)"
 
 test -n "$FORCEBUILD" || {
@@ -155,7 +156,7 @@ SCRIPT_TIME=$(echo "($END_BUILD_WIKI - $START)/60" | bc)
 progress "Time to run the full script: $SCRIPT_TIME minutes"
 
 
-) >$LOGFILE 2>&1 || {
+) 2>&1 | tee logs/update-latest.log >$LOGFILE || {
     progress "update.sh failed; see $LOGFILE"
 }
 
