@@ -74,17 +74,21 @@ vehicle_old_to_new_name = { # Used because git-version.txt use APMVersion with o
 }
 
 
+def progress(str_to_print):
+    print(f"[build_parameters.py] {str_to_print}")
+
+
 def debug(str_to_print):
     """Debug output if verbose is set."""
     if args.verbose:
-        print("[build_parameters.py] " + str(str_to_print))
+        progress(str_to_print)
 
 
 def error(str_to_print):
     """Show and count the errors."""
     global error_count
     error_count += 1
-    print("[build_parameters.py][error]: " + str(str_to_print))
+    progress("[error]: " + str(str_to_print))
 
 
 def check_temp_folders():
@@ -116,9 +120,9 @@ def setup():
     if args.single_vehicle in ALLVEHICLES:
         global VEHICLES
         VEHICLES = [args.single_vehicle]
-        print("[build_parameters.py] Running only for " + str(args.single_vehicle))
+        progress("Running only for " + str(args.single_vehicle))
     else:
-        print("[build_parameters.py] Vehicle %s not recognized, running for all vehicles." % str(args.single_vehicle))
+        progress("Vehicle %s not recognized, running for all vehicles." % str(args.single_vehicle))
 
     try:
         # Goes to ardupilot folder and clean it and update to make sure that is the most recent one.
@@ -236,7 +240,7 @@ def get_commit_dict(releases_parsed):
         """
         fetch_link = version_link + '/' + board + '/' + file
 
-        print("Processing link...\t" + fetch_link)
+        progress("Processing link...\t" + fetch_link)
 
         try:
             fecth_response = ""
@@ -397,7 +401,10 @@ def generate_rst_files(commits_to_checkout_and_parse):
                 os.remove("Parameters.rst")
                 debug("File " + filename + " generated. ")
             else:
-                error("Parameters.rst not found to rename to  %s" % filename)
+                # this was an error, but turns out we are missing a
+                # bunch of these, eg.
+                # [build_parameters.py][error]: Parameters.rst not found to rename to  parameters-Copter-stable-V4.0.0.rst
+                progress("Parameters.rst not found to rename to  %s" % filename)
 
             os.chdir(BASEPATH)
         except Exception as e:
