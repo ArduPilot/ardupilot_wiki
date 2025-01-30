@@ -255,7 +255,7 @@ def get_commit_dict(releases_parsed):
             version_number = version.split(" ")[2]
             vehicle = version.split(" ")[1]
 
-            regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]')  # noqa: W605
+            regex = re.compile(r'[@_!#$%^&*()<>?/\|}{~:]')
 
             if (regex.search(vehicle) is None):  # there are some non standart names
                 vehicle = vehicle_old_to_new_name[vehicle.strip()]   # Names may not be standart as expected
