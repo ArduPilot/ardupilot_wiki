@@ -36,8 +36,8 @@ Necessary parameters for static configuration
 This list of parameters is given as an example.
 If you had the following static IP addresses:
 
-* An autopilot has the IP address ``192.168.1.6``
-* A Computer running the MicroROS agent has the IP address ``192.168.1.5``
+* An autopilot has the IP address ``192.168.1.5``
+* A Computer running the MicroROS agent has the IP address ``192.168.1.6``
 * The MicroROS agent is running on port ``2019``
 
 Then, you would configure all of the below parameters.
