@@ -25,6 +25,7 @@ ArduPilot supports the MAVLink protocol for communication with Ground Stations a
     Move a Servo <mavlink-move-servo>
     Non-GPS Position Estimation <mavlink-nongps-position-estimation>
     Precision Landing <mavlink-precision-landing>
+    RC Input (aka Pilot Input) <mavlink-rcinput>
     Winch Commands <mavlink-winch>
     MAVLink Routing <mavlink-routing-in-ardupilot>
     Other Commands <mavlink-other-commands>
