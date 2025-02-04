@@ -36,8 +36,8 @@ Necessary parameters for static configuration
 This list of parameters is given as an example.
 If you had the following static IP addresses:
 
-* An autopilot has the IP address ``192.168.1.6``
-* A Computer running the MicroROS agent has the IP address ``192.168.1.5``
+* An autopilot has the IP address ``192.168.144.14``
+* A Computer running the MicroROS agent has the IP address ``192.168.144.6``
 * The MicroROS agent is running on port ``2019``
 
 Then, you would configure all of the below parameters.
@@ -56,7 +56,7 @@ Then, you would configure all of the below parameters.
    * - :ref:`DDS_IP1<DDS_IP1>`
      - 168
    * - :ref:`DDS_IP2<DDS_IP2>`
-     - 1
+     - 144
    * - :ref:`DDS_IP3<DDS_IP3>`
      - 6
    * - :ref:`DDS_UDP_PORT<DDS_UDP_PORT>`
@@ -70,9 +70,9 @@ Then, you would configure all of the below parameters.
    * - :ref:`NET_IPADDR1<NET_IPADDR1>`
      - 168
    * - :ref:`NET_IPADDR2<NET_IPADDR2>`
-     - 1
+     - 144
    * - :ref:`NET_IPADDR3<NET_IPADDR3>`
-     - 5
+     - 14
 
 
 Modify the addresses to suit your needs; the rest can remain the same.
