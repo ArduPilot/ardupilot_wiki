@@ -49,7 +49,7 @@ Preparing commits
   a logical set of patches for review. It can take a bit of effort to get
   used to interactive rebase, but it is definitely worth learning. Refer
   to `online resources <http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html>`__
-  to understand how to use this tool.
+  to understand how to use this tool. Also see this video: https://youtu.be/iMUWQUD_Rsg
 
 - Each commit should involve only a single library. The commits of the changes in each library should be squashed (see :ref:`git-interactive-rebase`) into the minimal number of commits per library that allows readability and clarity when reviewing (usually only one commit). The "Tools/gittools/git-subsystems-split" script can be run on any commit spanning multiple libraries to create a single commit for each library module affected before submitting. if needed.
 
