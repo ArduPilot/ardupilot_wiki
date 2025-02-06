@@ -15,6 +15,7 @@ Select the links below for information on the available sensors.
 
     Optical Flow Setup <common-optical-flow-sensor-setup>
     ARK Flow <common-arkflow>
+    ARK Flow MR <common-arkflow_mr>
     Cheerson CX-OF <common-cheerson-cxof>
     HereFlow <common-hereflow>
     Holybro H-Flow <https://holybro.com/products/h-flow>

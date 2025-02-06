@@ -91,6 +91,7 @@ Optical Flow Sensors
     :maxdepth: 1
 
     ARK Flow Open Source Optical Flow and Distance Sensor <common-arkflow>
+    ARK Flow MR Open Source Optical Flow and Distance Sensor <common-arkflow_mr>
 
 Servos
 ======
