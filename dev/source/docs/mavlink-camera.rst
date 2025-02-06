@@ -839,13 +839,17 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 
 - module load message
 
-+--------------------------------------------------------+----------------------------------------------------------+
-| Example MAVProxy/SITL Command                          | Description                                              |
-+========================================================+==========================================================+
-| ``message COMMAND_LONG 0 0 2004 0 0.5 0.5 0 0 0 0 0``  | Start tracking a point on the middle of the video stream |
-+--------------------------------------------------------+----------------------------------------------------------+
-| ``message COMMAND_LONG 0 0 2010 0 0 0 0 0 0 0 0``      | Stop tracking                                            |
-+--------------------------------------------------------+----------------------------------------------------------+
++-------------------------------------------------------+----------------------------------------------------------+
+| Example MAVProxy/SITL Command                         | Description                                              |
++=======================================================+==========================================================+
+| ``message COMMAND_LONG 0 0 2004 0 0.5 0.5 0 0 0 0 0`` | Start tracking a point in the middle of the video stream |
++-------------------------------------------------------+----------------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2004 0 0.1 0.5 0 0 0 0 0`` | Start tracking a point on the left of the video stream   |
++-------------------------------------------------------+----------------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2004 0 0.5 0.1 0 0 0 0 0`` | Start tracking a point on the top of the video stream    |
++-------------------------------------------------------+----------------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2010 0 0 0 0 0 0 0 0``     | Stop tracking                                            |
++-------------------------------------------------------+----------------------------------------------------------+
 
 MAV_CMD_CAMERA_TRACK_RECTANGLE to start tracking a rectangle on the live video stream
 -------------------------------------------------------------------------------------
@@ -889,7 +893,7 @@ To start tracking a rectangle on the live video stream send a `COMMAND_LONG <htt
    <tr>
    <td><strong>param2</strong></td>
    <td>float</td>
-   <td>Point Y (0 to 1, 0 is top, 1 is bottom)</td>
+   <td>Top Left Y (0 to 1, 0 is top, 1 is bottom)</td>
    </tr>
    <tr>
    <td><strong>param3</strong></td>
@@ -926,9 +930,15 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 +-----------------------------------------------------------+--------------------------------------------------------------+
 | Example MAVProxy/SITL Command                             | Description                                                  |
 +===========================================================+==============================================================+
-| ``message COMMAND_LONG 0 0 2005 0 0.4 0.4 0.6 0.6 0 0 0`` | Start tracking a rectangle on the middle of the video stream |
+| ``message COMMAND_LONG 0 0 2005 0 0.4 0.4 0.6 0.6 0 0 0`` | Start tracking a rectangle in the middle of the video stream |
 +-----------------------------------------------------------+--------------------------------------------------------------+
-| ``message COMMAND_LONG 0 0 2005 0 0.4 0.0 0.6 0.1 0 0 0`` | Start tracking a rectangle in the top middle                 |
+| ``message COMMAND_LONG 0 0 2005 0 0.0 0.4 0.2 0.6 0 0 0`` | Start tracking a rectangle in the left portion of the video  |
++-----------------------------------------------------------+--------------------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2005 0 0.4 0.0 0.6 0.2 0 0 0`` | Start tracking a rectangle in the upper portion of the video |
++-----------------------------------------------------------+--------------------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2005 0 0.8 0.4 1.0 0.6 0 0 0`` | Start tracking a rectangle in the right portion of the video |
++-----------------------------------------------------------+--------------------------------------------------------------+
+| ``message COMMAND_LONG 0 0 2005 0 0.4 0.8 0.6 1.0 0 0 0`` | Start tracking a rectangle in the lower portion of the video |
 +-----------------------------------------------------------+--------------------------------------------------------------+
 | ``message COMMAND_LONG 0 0 2010 0 0 0 0 0 0 0 0``         | Stop tracking                                                |
 +-----------------------------------------------------------+--------------------------------------------------------------+
