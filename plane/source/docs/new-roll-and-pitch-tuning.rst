@@ -3,21 +3,13 @@
 =====================================
 Roll, Pitch and Yaw Controller Tuning
 =====================================
-
-As of versions 4.1 and later, the PID controllers have significantly changed, as well as the algorithm used for :ref:`Autotuning <automatic-tuning-with-autotune>`, although the procedure remains almost identical as in the past.
-
 Except for very heavy, slow, or extremely nimble vehicles, Autotune should produce very acceptable results. Manual tuning should be reserved for vehicles that do not fly well after Autotune has been done.
 
 .. note::
 
-   The default values for the roll and pitch controllers in Plane prior to Autotuning are quite deliberately a bit small for
-   most aircraft. This is because small values will cause ArduPilot to not
-   navigate as well and be sluggish, but are less likely to cause the aircraft
-   to crash.
+   The default values for the roll and pitch controllers in Plane prior to Autotuning are quite deliberately a bit small for most aircraft. This is because small values may cause ArduPilot to not navigate as well and be sluggish, but are less likely to cause the aircraft to crash.
 
-.. note:: If you upgrade to 4.1 or later firmware from a previous version, the existing PID values will be converted automatically to the new system. Re-autotuning is still recommended as the new AUTOTUNE system produces a better tune in most cases. If you wish to manually convert your old PID values to the new system's values, you can use this `web based converter <https://uav.tridgell.net/convert_pid.html>`__
-
-.. note:: as of firmware version 4.2, there is a new YAW controller which can be used in ACRO mode (previous versions had no YAW rate stabilization in ACRO mode). This controller can be AutoTuned just like roll and pitch during an AutoTuning session using AUTOTUNE mode or RCx_OPTION = 107 on a switch.
+.. note:: There is a new YAW controller which can be used in ACRO mode (previous versions had no YAW rate stabilization in ACRO mode). This controller can be AutoTuned just like roll and pitch during an AutoTuning session using AUTOTUNE mode or RCx_OPTION = 107 on a switch. This is independent of the yaw dampner and side-slip controller used in other angle stablized modes such as CRUISE or AUTO (see :ref:`yaw-controller-tuning`) below.
 
 
 Preconditions
@@ -253,7 +245,7 @@ this feature, but can still benefit from the yaw damper provided they
 have a yaw control (rudder, differential airbrakes, etc)
 
 Tuning the yaw damper
-=====================
+---------------------
 
 #. Verify that the :ref:`YAW2SRV_SLIP<YAW2SRV_SLIP>` and :ref:`YAW2SRV_INT<YAW2SRV_INT>` gain terms are
    set to zero, the ``YAW2SRV_RLL`` gain term is set to 1.0 and the
@@ -281,7 +273,7 @@ Tuning the yaw damper
    calibration if airspeed is being used.
 
 Tuning the sideslip controller
-==============================
+------------------------------
 
 #. Tune the yaw damper first
 #. Bring up the tuning graph window in the mission planner and plot the

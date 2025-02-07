@@ -1,5 +1,7 @@
 .. _roll-pitch-controller-tuning:
 
+**ARCHIVED** (applied to 4.1 firmware and earlier)
+
 =====================================
 Roll, Pitch and Yaw Controller Tuning
 =====================================
