@@ -89,6 +89,6 @@ Steps
 
     .. code-block:: bash
 
-        ros2 run micro_ros_agent micro_ros_agent udp4 -p 2019 -r dds_xrce_profile.xml
+        ros2 run micro_ros_agent micro_ros_agent udp4 -p 2019
 
 #. Use the ROS 2 CLI to interact with the autopilot
