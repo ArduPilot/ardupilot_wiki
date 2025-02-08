@@ -27,8 +27,6 @@ Pinout
 .. image:: ../../../images/tbs-lucidpro.png
    :target: ../_images/tbs-lucidpro.pngTopBottom.png
 
-.. note:: pins PC2 and PC3 are undefined
-
 UART Mapping
 ============
 The UARTs are marked RXn and TXn in the above pinouts. The RXn pin is the
