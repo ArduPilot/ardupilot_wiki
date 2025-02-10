@@ -119,7 +119,7 @@ Common Problems
    stabilize.  Normally this is caused by not having the throttle stick
    in the mid position.  This commonly happens when the pilot is
    switching into an altitude holding mode from a manual flight mode (like QSTABILIZE) on
-   a QuadPlane that does not hover at mid throttle. Usually it is desired to hover in any mode at mid-stick on throttle, so that transitions between modes is easily accomplished without throttle position changes. This can be adjusted using the :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` parameter, or automatically learned in QHOVER or QLOITER modes by enabling :ref:`Q_M_HOVER_LEARN<Q_M_HOVER_LEARN>`.
+   a QuadPlane that does not hover at mid throttle. Usually it is desired to hover in any mode at mid-stick on throttle, so that transitions between modes is easily accomplished without throttle position changes. This can be adjusted using the :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` parameter, or by having its value automatically learned in QHOVER or QLOITER modes when hovering hands- off at mid-throttle stick if  :ref:`Q_M_HOVER_LEARN<Q_M_HOVER_LEARN>` is enabled.
 
 Adequate Power
 ==============
