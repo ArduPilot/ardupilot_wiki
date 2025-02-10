@@ -73,6 +73,7 @@ In 2024, students completed the following projects:
 
 - `Visual Follow-Me <https://discuss.ardupilot.org/t/gsoc-2024-wrapping-up-visual-follow-me/123232>`__
 - `High Altitude Non-GPS Navigation <https://discuss.ardupilot.org/t/gsoc-2024-wrapping-up-high-altitude-non-gps-navigation/122905>`__
+- `MAVProxy AI Chat Enhancements <https://discuss.ardupilot.org/t/gsoc-2024-wrapping-up-mavproxy-ai-chat-enhancements/122793>`__
 - `All-in-One System Identification Toolkit <https://discuss.ardupilot.org/t/gsoc24-all-in-one-system-identification-toolkit-for-ardupilot-update/121116>`__
 
 In 2023, students completed the following projects:
