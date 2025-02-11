@@ -8,9 +8,13 @@ AUTOLAND mode provides a fully automatic fixed wing landing which can also be us
 
 In TAKEOFF, FBWA, MANUAL, TRAINING, ACRO,  STABILIZE modes, and during a NAV_TAKEOFF in AUTO, the takeoff direction will be captured from the GPS ground course once a GPS ground speed of 5m/s is obtained. This usually occurs early in the takeoff run of a rolling takeoff or almost immediately during a hand or bungee launch.
 
-It will setup a parameterized LOITER-TO-ALT base waypoint and final approach waypoint/altitude, based on the takeoff direction, and proceed to then and then switch to an automatic landing at home. It can also be selected as a :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` for RC failsafes.
+It will setup a parameterized LOITER-TO-ALT base waypoint and final approach waypoint/altitude, based on the takeoff direction, and proceed to it, loiter down in altitude if required, and then switch to an automatic landing at home. It can also be selected as a :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` for RC failsafes.
 
-This is useful when programming a mission with a ``DO_LAND_START`` landing sequence is not convenient since it requires a GCS on a laptop or phone, such as traveling with impromptu stops to fly FPV or photograph. Simply takeoff in one of the previously mentioned modes and the AUTOLAND will be setup. It is also useful for fields which have varying wind directions, which would prevent using a single home-loaded autolanding mission or require using the MissionSelector LUA script to slect from several missions with different approaches.
+This is useful when programming a mission with a ``DO_LAND_START`` landing sequence is not convenient since it requires a GCS on a laptop or phone, such as traveling with impromptu stops to fly FPV or photograph. Simply takeoff in one of the previously mentioned modes and the AUTOLAND will be setup. It is also useful for fields which have varying wind directions, which would prevent using a single home-loaded autolanding mission or require using the MissionSelector LUA script to select from several missions with different approaches.
+
+Upon entry, an optional minimum climb before turn can be programmed, which can be useful if it is used for RC failsafe when this occurs during takeoff to climb to an altitude to clear obstacles before turning toward the landing approach.
+
+If :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` is set to 1 or "AUTOLAND", then the vehicle will terrain follow as it flies to the LOITER-TO-ALT base waypoint.
 
 Operation
 =========
@@ -25,6 +29,9 @@ Options
 =======
 
 The :ref:`AUTOLAND_OPTIONS <AUTOLAND_OPTIONS>` bitmask provides optional behavior. Currently, if bit 0 is set, then instead of capturing takeoff direction( and therefore autolanding direction), the landing direction will be captured immediately at arming if a compass is being used. This allows the direction to be set "manually" by orienting the plane at homw in the desired landing direction and arming. The  :ref:`AUTOLAND_DIR_OFF<AUTOLAND_DIR_OFF>` parameter is ignored in this case.
+
+
+A minimum climb of :ref:`AUTOLAND_CLIMB<AUTOLAND_CLIMB>` can be set, during which navigation (roll) is limited to :ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>`. If AUTOLAND is being used as a :ref:`FS_LONG_ACTN<FS_LONG_ACTN>`, then setting this to allow clearing takeoff obstacles to the sides is recommended.
 
 Notes:
 ======
