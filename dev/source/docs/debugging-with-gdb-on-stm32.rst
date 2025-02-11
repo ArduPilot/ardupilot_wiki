@@ -9,23 +9,19 @@ This page describes how to setup GDB on Linux to debug issues on STM32. The spec
 Introduction
 ============
 
-GDB (the GNU Debugger) "allows you to see what is going on \`inside'
+GDB (the GNU Debugger) allows you to see what is going on inside
 another program while it executes or what another program was doing at
-the moment it crashed." which can be useful when investigating very
-low-level failures with the STM32 (it cannot be used with the
-APM1/APM2)
+the moment it crashed which can be useful when investigating very
+low-level failures with the STM32
 
 This guide assumes that you have already successfully built the firmware
-on your machine following the instructions for
-:ref:`Windows <building-setup-windows>`,
-:ref:`Mac <building-setup-mac>` or
-:ref:`Linux <building-setup-linux>`.
+on your machine following the instructions for :ref:`Windows <building-setup-windows>`, :ref:`Mac <building-setup-mac>` or :ref:`Linux <building-setup-linux>`.
 
-A `BlackMagic probe <http://www.blacksphere.co.nz/main/index.php/blackmagic>`__ or `ST-Link V2 JST debugger <https://www.ebay.com/itm/ST-Link-V2-Stlink-Emulator-Downloader-Programming-Mini-Unit-STM8-STM32-KK/223056820813>`__ is
-also required.  A BlackMagic probe can be purchased in the US from `Transition Robotics <http://transition-robotics.com/products/black-magic-probe-mini>`__,
-`1 Bit Squared <http://1bitsquared.com/collections/frontpage/products/black-magic-probe>`__
-or in NewZealand from
-`Greenstage <http://shop.greenstage.co.nz/product/black-magic-debug-probe>`__.
+One the the following debuggers is required:
+
+- `BlackMagic probe <http://www.blacksphere.co.nz/main/index.php/blackmagic>`__ (available from `1 Bit Squared <http://1bitsquared.com/collections/frontpage/products/black-magic-probe>`__)
+- `ST-Link V2 JST debugger <https://www.ebay.com/sch/i.html?_nkw=ST-Link-V2-Stlink-Emulator-Downloader-Programming-Mini-Unit-STM8-STM32>`__
+- `VM Probe <https://dev.vimdrones.com/products/vimdrones_stlinkv3_probe/>`__
 
 A small plug (`FTSH-105-04-L-DV <https://au.element14.com/samtec/ftsh-105-04-l-dv/connector-header-1-27mm-smt-10way/dp/2308438?scope=partnumberlookahead&ost=FTSH-105-04-L-DV&searchref=searchlookahead&exaMfpn=true&ddkey=https%3Aen-AU%2FElement14_Australia%2Fw%2Fsearch>`__) may be required to solder on to the JTAG port of the flight controller.
 
