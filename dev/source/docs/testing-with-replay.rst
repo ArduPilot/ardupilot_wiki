@@ -62,7 +62,7 @@ For example, to change the EKF I gate value to 1,000, run the command:
 
 .. code-block:: bash
 
-    build/sitl/tools/Replay --parm EK2_VEL_I_GATE=1000 log_1.bin
+    build/sitl/tool/Replay --parm EK2_VEL_I_GATE=1000 log_1.bin
 
 Checking that new code has no effect on the EKF
 ===============================================
@@ -99,7 +99,7 @@ When modifying the EKF code it can be useful to confirm your changes have no imp
 
 .. code-block:: bash
 
-    build/sitl/tools/Replay test-00000001.BIN
+    build/sitl/tool/Replay test-00000001.BIN
 
 - Move the resulting log file to a safe place.  This new log contains all the information of the original log plus what the new-branch's EKF would have produced
 
