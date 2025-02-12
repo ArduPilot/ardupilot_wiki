@@ -152,6 +152,7 @@ Closed Hardware
     mRo Pixracer Pro (H7) <common-pixracer-pro>
     mRo Nexus <common-mro-nexus>
     MUPilot <common-MUPilot>
+    NarinFC-H7 <common-NarinFC-H7>
     NxtPX4v2 <common-NxtPX4v2>
     Omnibus F4 AIO/Pro <common-omnibusf4pro>
     OmnibusNanoV6 <common-omnibusnanov6>
