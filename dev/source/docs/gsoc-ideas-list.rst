@@ -8,6 +8,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2025 <htt
 
 - Non-GPS Position Estimation Using 3D Camera and Pre-Generated Map
 - AI Chat WebTool for use with MP and/or QGC
+- AI Chat Integration with all Web Tools
 
 See lower down on this page for more details on each project
 
@@ -63,6 +64,26 @@ Once complete the WebTool should be capable of:
 - Arming the vehicle
 - Issuing takeoff commands and flying the vehicle a specified distance in any direction
 - Changing the vehicle's flight mode
+
+Most of the development can be completed using the :ref:`SITL simulator <sitl-simulator-software-in-the-loop>` and any OpenAI or Google Gemini usage costs will be covered
+
+AI Chat Integration with all WebTools
+--------------------------------------
+
+- Skills required: JavaScript, OpenAI, Google Gemini
+- Mentor: Randy Mackay
+- Expected Size: 175h
+- Level of Difficulty: Medium
+- Expected Outcome: All WebTools include AI chat to help users understand and use the tool
+
+This project involves adding an OpenAI or Google Gemini chat window into some or all of the `ArduPilot Webtools <https://firmware.ardupilot.org/Tools/WebTools/>`__
+
+Once complete some or all of the WebTools should:
+
+- Include a new chat widget allowing users to ask an AI assistant questions about the tool using text or voice
+- Allow the AI assistant to operate the tool based on user input (e.g. push buttons, change zoom of graphs, etc)
+
+The top priority WebTool is the "UAV Log viewer" although simpler tools like the "Hardware Report" could be a good starting point
 
 Most of the development can be completed using the :ref:`SITL simulator <sitl-simulator-software-in-the-loop>` and any OpenAI or Google Gemini usage costs will be covered
 
