@@ -9,6 +9,9 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2025 <htt
 - Non-GPS Position Estimation Using 3D Camera and Pre-Generated Map
 - AI Chat WebTool for use with MP and/or QGC
 - AI Chat Integration with all Web Tools
+- Gazebo Plug-in Model of a Motor
+- SITL AI Reinforcement Learning Concept Script
+- SITL Test Script for Controls Testing
 
 See lower down on this page for more details on each project
 
@@ -86,6 +89,39 @@ Once complete some or all of the WebTools should:
 The top priority WebTool is the "UAV Log viewer" although simpler tools like the "Hardware Report" could be a good starting point
 
 Most of the development can be completed using the :ref:`SITL simulator <sitl-simulator-software-in-the-loop>` and any OpenAI or Google Gemini usage costs will be covered
+
+Gazebo Plug-in Model of a Motor
+-------------------------------
+
+- Skills required: Gazebo, C++
+- Mentor: Nate Mailhot
+- Expected Size: 175h
+- Level of Difficulty: Medium
+- Expected Outcome: ArduPilot Gazebo plugin simulates a Motor
+
+As part of the ArduPilot_Gazebo plugin, we ask a student to model the electromechanical properties of a motor (no thrust/aero, just the motor angular acceleration/power itself)
+
+SITL AI Reinforcement Learning Concept Script
+---------------------------------------------
+
+- Skills required: Gaazebo, Lua, AI
+- Mentor: Nate Mailhot
+- Expected Size: 175h
+- Level of Difficulty: Medium
+- Expected Outcome: Lua script that uses re-inforcement learning to automate changing some parameters
+
+An AP-SITL reinforcement learning script concept, focuses on using Lua applets or some python to automate parameter changes according to some basic implementation of online reinforcement learning (actor-critic/SARSA/Q-learning)
+
+SITL Test Script for Controls Testing
+-------------------------------------
+
+- Skills required: Gaazebo, Python
+- Mentor: Nate Mailhot
+- Expected Size: 175h
+- Level of Difficulty: Medium
+- Expected Outcome: Python code that allows easily setting up an AP vehicle in SITL for controls testing
+
+A safe "for education/rookies" SITL test script that strips away the majority of complexity in set-up and gives a Copter (and Plane if time permits) that requires some basic tuning and gives hints/pointers in a UI (this could lower the threshold for earlier year mech/electrical engineers to get their hands dirty on some software and try out basic controls testing)
 
 Projects Completed in past years
 --------------------------------
