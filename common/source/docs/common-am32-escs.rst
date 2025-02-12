@@ -19,8 +19,13 @@ AM32 ESCs that support DroneCAN
 
 More ESCs may be found from the `AM32 targets.h <https://github.com/am32-firmware/AM32/blob/main/Inc/targets.h>`__ file (seach for _CAN)
 
-ArduPilot Configuration
-=======================
+ArduPilot Connection and Configuration
+======================================
+
+The ESCs should be connected to the autopilot's CAN port.  Below shows the ESCs connected to the autopilot's CAN1 port but CAN2 may also be used.
+
+.. image:: ../../../images/am32-autopilot-wiring.png
+    :width: 450px
 
 To enable communication with the AM32 ESCs using DroneCAN, set the following parameters:
 
