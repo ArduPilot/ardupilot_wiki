@@ -177,7 +177,6 @@ Closed Hardware
     SpeedyBee F405 Mini <common-speedybeef405-mini>
     SpeedyBeeF405WING/WING Mini <common-speedybeef405wing>
     TBS Lucid H7 <common-tbs-lucidh7>
-    TBS Lucid Pro <common-tbs-lucidpro>
     ThePeach FCC-K1 <common-thepeach-k1>
     ThePeach FCC-R1 <common-thepeach-r1>
     TmotorH7Mini <common-tmotor-h7-mini>
@@ -252,6 +251,11 @@ Schematics
 ==========
 
 Schematics for some of the "Open Hardware" autopilots `can be found here <https://github.com/ArduPilot/Schematics>`__
+
+.. toctree::
+    :hidden:
+
+    TBS Lucid Pro <common-tbs-lucidpro>
 
 
 [copywiki destination="plane,copter,rover,blimp"]
