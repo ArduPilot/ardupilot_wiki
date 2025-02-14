@@ -76,6 +76,7 @@ Open Hardware
     SULIGH7 <common-suligh7>
     TauLabs Sparky2 <common-taulabs-sparky2>
     ZeroOneX6/X6 Pro <common-zeroonex6>
+    ZeroOneX6-Air/Air+ <common-zeroonex6-air>
 
 \* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
