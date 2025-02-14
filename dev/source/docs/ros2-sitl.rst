@@ -47,7 +47,7 @@ Once everything is running, you can now interact with ArduPilot through the ROS 
     # See the node appear in the ROS graph
     ros2 node list
     # See which topics are exposed by the node
-    ros2 node info /ardupilot_dds
+    ros2 node info /ap
     # Echo a topic published from ArduPilot
     ros2 topic echo /ap/geopose/filtered
 
