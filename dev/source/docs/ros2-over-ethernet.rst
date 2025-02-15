@@ -87,8 +87,18 @@ Steps
 #. Reboot the flight controller
 #. Start the MicroROS Agent with the same port as the parameter for ``DDS_UDP_PORT``
 
-    .. code-block:: bash
+  .. tabs::
 
-        ros2 run micro_ros_agent micro_ros_agent udp4 -p 2019
+    .. group-tab:: ArduPilot 4.5
+
+        .. code-block:: bash
+
+          ros2 run micro_ros_agent micro_ros_agent udp4 -p 2019 -r dds_xrce_profile.xml
+
+    .. group-tab:: ArduPilot 4.6 and later
+
+        .. code-block:: bash
+
+          ros2 run micro_ros_agent micro_ros_agent udp4 -p 2019
 
 #. Use the ROS 2 CLI to interact with the autopilot
