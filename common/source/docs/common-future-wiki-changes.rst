@@ -39,6 +39,7 @@ New Features
 - Fast Attitude loop option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6470
 - Selecting Throttle based notch results in a config error at boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/6551
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600
+- Changed AUTO_TRIM function, see https://github.com/ArduPilot/ardupilot_wiki/pull/6622
 [/site]
 [site wiki="rover"]
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600
