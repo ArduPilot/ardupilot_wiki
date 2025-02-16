@@ -10,10 +10,43 @@ Wind of course has a strong effect on your copter and will push it around. Howev
 
     For most users this procedure is not necessary because the :ref:`accelerometer calibration <common-accelerometer-calibration>` does a good job of setting the trim values.
 
+AHRS AutoTrim
+~~~~~~~~~~~~~
+
+With AHRS AutoTrim the roll and pitch corrections are captured as you fly in a stable hover. Setup a :ref:`common-auxiliary-functions` switch to "In Flight AHRS trim adjust" ("182"). We will use CH7 in the following:
+
+1. Check that your CH7 switch goes above 1800 on the MissionPlanner's Hardware > Mandatory Hardware > Radio Calibration screen
+
+.. image:: ../images/MP_SaveTrim_Ch7PWMCheck.png
+    :target: ../_images/MP_SaveTrim_Ch7PWMCheck.png
+
+2. Set the CH7 Option to "AHRS AutoTrim" on the Software > Copter Pids screen and press the "Write Params" button
+
+3. Find a wind free environment with sufficient space to fly your copter without crashing into something
+
+4. Put the vehicle in STABILIZE or ALT_HOLD mode.
+
+5. Arm the vehicle and lift into a hover. The vehicle must be flying in order to enable autotrim. Flip the switch that you setup(CH7) to its High position (>1800us). "Autotrim running" message will be sent to the GCS.
+
+6. Fly your copter for about 25 seconds in a stable hover in position, keeping it from drifting with the pitch and roll sticks. As the trim is adjusted, less and less corrections with the sticks will be required.
+
+7. Once satisfied, flip the switch low, saving the trims, and land. "Trim save" message will be sent to the GCS.
+
+8. Take off again in stabilize mode and check if your copter is flying level now. If not repeat steps 4 - 7 again.
+
+.. note::
+
+     You can manually set the trim by modifying the :ref:`AHRS_TRIM_X <AHRS_TRIM_X>` and :ref:`AHRS_TRIM_Y <AHRS_TRIM_Y>`. Roll trim is :ref:`AHRS_TRIM_X <AHRS_TRIM_X>`, Pitch trim is :ref:`AHRS_TRIM_Y <AHRS_TRIM_Y>`. Both values are in radians with left roll and forward pitch being negative numbers.
+
+.. note::
+
+    It is nearly impossible to get rid of all drift so that your copter remains completely motionless without any input.
+
 Save Trim
 ~~~~~~~~~
+.. note:: the above AHRS AutoTrim method is preferred since it does not involve moving transmitter trims after RC calibration.
 
-Save trim is the simpler method and involves essentially transferring your radio transmitter's trims to the autopilot (`video demo here <https://www.youtube.com/watch?v=ayA0uYOqKX4>`__).
+Save trim involves essentially transferring your radio transmitter's trims to correct the autopilot's accelerometer trim. Normally, once :ref:`common-accelerometer-calibration` is done, you never want to change the transmitter's trims, but in this case it is done **temporarily**. The "Save Trim" function ("5") is assigned to any free RC channel, usually a switch based one, using an :ref:`common-auxiliary-functions`. For the example below, Channel 7 will be used.
 
 1. Check that your CH7 switch goes above 1800 on the MissionPlanner's Hardware > Mandatory Hardware > Radio Calibration screen
 
@@ -25,54 +58,13 @@ Save trim is the simpler method and involves essentially transferring your radio
 .. image:: ../images/MP_SaveTrim_Ch7.png
     :target: ../_images/MP_SaveTrim_Ch7.png
 
-3. With your CH7 switch in the off position, fly your copter in Stabilize mode and use your transmitters's roll and pitch trim to get it flying level
+3. With your CH7 switch in the off (Low) position, fly your copter in Stabilize mode and use your transmitters's roll and pitch trim to get it flying level
 
 4. Land and put your throttle to zero
 
 5. Release the roll and pitch sticks and switch the CH7 switch high for at least 1 second.  The words "Trim saved" should appear in the MP's Flight Data screen's Messages tab
 
 6. Reset your transmitters roll and pitch trims back to the center and fly again and it should fly level now. If it does not repeat steps 3, 4 & 5
-
-Auto Trim
-~~~~~~~~~
-
-With auto trim the roll and pitch trim are captured as you fly in a stable hover.
-
-1. Find a wind free environment with sufficient space to fly your copter without crashing into something
-
-2. Put the vehicle in Stabilize mode
-
-3. Hold throttle down and rudder right for 15seconds or until you see the small red, blue and yellow leds flash in a cyclic pattern
-
-4. Fly your copter for about 25 seconds in a stable hover
-
-5. Land and put your throttle to zero and wait for a few seconds (the trims parameters are being saved)
-
-6. Take off again in stabilize mode and check if your copter is flying level now. If not repeat steps 2, 3 and 4
-
-.. note::
-
-    You can also test these procedures above are operational on the ground with your battery disconnected. Connect your autopilot to the mission planner and observing the Flight Data screen as you simulate completing the steps above.
-
-.. image:: ../images/MP_SaveTrim_FlightDataScreen.jpg
-    :target: ../_images/MP_SaveTrim_FlightDataScreen.jpg
-
-.. note::
-
-    You can manually set the trim by modifying the :ref:`AHRS_TRIM_X <AHRS_TRIM_X>` and :ref:`AHRS_TRIM_Y <AHRS_TRIM_Y>`. Roll trim is :ref:`AHRS_TRIM_X <AHRS_TRIM_X>`, Pitch trim is :ref:`AHRS_TRIM_Y <AHRS_TRIM_Y>`. Both values are in radians with left roll and forward pitch being negative numbers.
-
-.. note::
-
-    It is nearly impossible to get rid of all drift so that your copter remains completely motionless without any input.
-
-Video demonstrations of Save Trim and Auto Trim
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-..  youtube:: 5z0zuwicZh8
-    :width: 100%
-
-..  youtube:: e3OF9ih50PU
-    :width: 100%
 
 Desktop method
 ~~~~~~~~~~~~~~
@@ -88,7 +80,7 @@ lower "Calibrate Level" button.
 Please note though that making the HUD level while the vehicle is on the
 ground does not necessarily mean it won't drift horizontally while
 flying because of other small frame issues including the flight
-controller not being perfectly level on the frame and slightly tilted
+controller not being perfectly level on the frame, CG placement, an/ord slightly tilted
 motors.
 
 .. |MP_SaveTrim_Ch7| image:: ../images/MP_SaveTrim_Ch7.png
