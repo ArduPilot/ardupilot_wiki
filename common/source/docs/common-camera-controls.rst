@@ -18,7 +18,7 @@ ArduPilot supports up to two cameras. The following is for the first camera:
 - :ref:`CAM1_TRIGG_DIST<CAM1_TRIGG_DIST>`: Camera trigger distance. If this value is non-zero then the camera will trigger whenever the position changes by this number of meters regardless of what mode the autopilot is in.
 - :ref:`CAM1_RELAY_ON<CAM1_RELAY_ON>`: Camera relay ON value. This sets whether the relay goes high or low when it triggers. Note that you should also set RELAY_DEFAULT appropriately for your camera(Relay type shutter only).
 - :ref:`CAM1_INTRVAL_MIN<CAM1_INTRVAL_MIN>`: Camera minimum time interval between photos
-- :ref:`CAM1__MNT_INST<CAM1_MNT_INST>`: If the camera is associated with a MOUNTx instance, this indicates which MOUNTx instance. For example if CAM1 is associated with MOUNT2, then this value will be 2. The default value of 0 for this parameter means that the Mount instance is the same as the Camera instance, ie. CAM1 is in MOUNT1 and is the same as value "1" in this case. This allows Camera commands to be directed to the correct MOUNT instance.
+- :ref:`CAM1_MNT_INST<CAM1_MNT_INST>`: If the camera is associated with a MOUNTx instance, this indicates which MOUNTx instance. For example if CAM1 is associated with MOUNT2, then this value will be 2. The default value of 0 for this parameter means that the Mount instance is the same as the Camera instance, ie. CAM1 is in MOUNT1 and is the same as value "1" in this case. This allows Camera commands to be directed to the correct MOUNT instance.
 - :ref:`CAM1_OPTIONS<CAM1_OPTIONS>`: if bit 0 set and camera/mount has the ability to start/stop video recording, then it will start on arm and stop on disarm events.
 
 
