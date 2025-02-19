@@ -215,6 +215,10 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        102           | Camera Mode Toggle         |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
+|        103           | Trigger EKF lane switch    |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        104           | Trigger EKF yaw reset      |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
 |        105           | GPS Disable Yaw            |    X     |    X    |    X    |
 |                      | (testing only!)            |          |         |         |
 +----------------------+----------------------------+----------+---------+---------+
@@ -509,6 +513,8 @@ Other functions are:
                                          | on a momentary switch since only low to high transitions
                                          | toggle the camera mode. Used only with Solo gimbals
                                          | presently.
+    Trigger EKF lane switch               Attempts to force an EKF lane switch
+    Trigger EKF Yaw reset                 Force EKF Yaw reset
     GPS Disable Yaw                       Disables yaw for testing (advanced users only!)
     Disable Airspeed Use                  Forces Airspeed Use to be disabled for testing in the air.
     Enable Autotuning                    | Allows tuning without entering AUTOTUNE mode. (i.e. if you

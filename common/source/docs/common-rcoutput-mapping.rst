@@ -325,7 +325,7 @@ This provides an output that reflects the ARM/DISARM state of the vehicle to con
 Landing Gear
 ++++++++++++
 
-This output controls the landing gear servo(s) in Copter and Plane. See :ref:`landing-gear` for more information.
+This output controls the landing gear servo(s) in Copter and Plane. See :ref:`common-landing-gear` for more information.
 
 Airbrakes
 +++++++++
