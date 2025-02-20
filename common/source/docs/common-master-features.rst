@@ -16,7 +16,6 @@ New Peripherals
     :maxdepth: 1
 
     Hexsoon 77G MWW Radar <common-rangefinder-hexsoon-radar>
-    CADDXFPV GM1, GM2, GM3 gimbals <common-caddx-gimbal>
 [/site]
 [site wiki="plane"]
 New Features
