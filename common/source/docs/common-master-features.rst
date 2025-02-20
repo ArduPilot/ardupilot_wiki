@@ -15,7 +15,7 @@ New Peripherals
 .. toctree::
     :maxdepth: 1
 
-    CADDXFPV GM1, GM2, GM3 gimbals <common-caddx-gimbal>
+    Hexsoon 77G MWW Radar <common-rangefinder-hexsoon-radar>
 [/site]
 [site wiki="plane"]
 New Features

@@ -13,7 +13,7 @@ CADDX Gimbals
 
 .. warning::
 
-    Support for these gimbals is available in ArduPilot 4.7 (and higher) and requires the gimbal's firmware be 3.4 (or higher)
+    Support for these gimbals is available in ArduPilot 4.6 (and higher) and requires the gimbal's firmware be 3.4 (or higher)
 
 The `user manual can be found here <https://cdn.shopify.com/s/files/1/0036/3921/4169/files/GM_Series_Manual_V1.0_1.pdf>`__
 
