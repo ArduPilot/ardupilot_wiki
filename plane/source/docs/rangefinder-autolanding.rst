@@ -33,3 +33,12 @@ If the autopilot has a good rangefinder (:ref:`such as LIDAR <common-rangefinder
 That will generally produce a better landing. 
 
 A value for :ref:`LAND_FLARE_SEC<LAND_FLARE_SEC>` of 1.5 and :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` of 2 is a good place to start with a LiDAR. 
+
+Impact of Glide Slope Terrain variation
+=======================================
+
+If using rangefinder during landing, the rangefinder readings, once engaged (ie when getting good readings below the :ref:`RNGFND1_MAX<RNGFND1_MAX>` altitude on approach), will continuosly adjust the glide slope target altitudes as it approaches. If the terrain is irregular, or there is a deep ditch before the runway threshold, using the rangefinder can actually be worse than just using the barometeric altitude.
+
+In these cases, you may wish to lower the :ref:`RNGFND1_MAX<RNGFND1_MAX>` altitude to a value closer to the expected vehicle altitude at the end of the runway so that it engages and is used shortly before the flare.
+
+Alternatively, if the terrain is sloping toward or away from the runway, you may use the :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` parameter (bit 1(all modes) or 3(AUTO mode only) set to provide additional corrections to the rangefinder readings for the difference between landing point terrain altitude and current approach altitude above terrain to help prevent landing overshoots and undershoots. Be sure to carefully test for your particular situation and be ready to abort the autolanding if it does not look safe.
