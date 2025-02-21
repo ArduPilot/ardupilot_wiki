@@ -14,6 +14,7 @@ Most H7 based autopilots do not include native ethernet support but ethernet net
 Hardware
 ========
 
+- `BlueRobotics Ethernet Switch <https://bluerobotics.com/store/comm-control-power/tether-interface/ethswitch/>`__ : 5-port ethernet switch designed in collaboration with BotBlox
 - `BotBlox SwitchBlox for Ardupilot <https://botblox.io/switchblox-for-ardupilot/>`__ : ethernet switch to allow connecting multiple devices together
 - `BotBlox DroneNet for Ardupilot <https://botblox.io/dronenet-for-ardupilot/>`__ : ethernet switch with CAN, USART, RS485, and GPIO/PWM adapters allowing non-ethernet devices including autopilots to work over ethernet
 - `BotBlox SwitchBlox Cable Adapter for Ardupilot <https://botblox.io/switchblox-cable-adapter-for-ardupilot/>`__ : adapter to ease the ethernet port differences across different device manufacturers
