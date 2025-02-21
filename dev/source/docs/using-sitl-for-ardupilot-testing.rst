@@ -8,7 +8,7 @@ This article describes how :ref:`SITL <sitl-simulator-software-in-the-loop>` can
 
 SITL can be run under Linux using a tool named ``sim_vehicle.py`` from a Linux or WSL2 command line, or through :ref:`Mission Planner's Simulation feature <mission-planner-simulation>`. It can also be run in conjunction with a graphics visualization and/or physics modeling program like :ref:`Realflight<sitl-with-realflight>`.
 
-In addition to running the simulation, a ground control station program will need to be run concurrently in order to control the simultion. With ``sim_vehicle.py``, `MAVProxy <https://ardupilot.org/mavproxy/index.html>`__ is automatically started. When using Mission Planner's simulation feature, it is used. You can also have more than one GCS attached, see :ref:`connect to different GCSs <using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations>`.
+In addition to running the simulation, a ground control station program will need to be run concurrently in order to control the simulation. With ``sim_vehicle.py``, `MAVProxy <https://ardupilot.org/mavproxy/index.html>`__ is automatically started. When using Mission Planner's simulation feature, it is used. You can also have more than one GCS attached, see :ref:`connect to different GCSs <using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations>`.
 
 .. note::
 
@@ -37,10 +37,21 @@ Using sim_vehicle.py
 
 A startup script, ```sim_vehicle.py`` is provided to automatically build the SITL firmware version for the current code branch, load the simulation models, start the simulator, setup environment and vehicle parameters, and start the MAVProxy GCS. Many script start-up parameters can be specified, type this for a full list:
 
+Generally, you can run SITL from the root of your ArduPilot clone.
+
+::
+
+    cd /path/to/ardupilot
+    ./Tools/autotest/sim_vehicle.py --help
+
+
+Alternatively, when you initially configured your environment, if you elected to install ``Tools/autotest`` onto your path, you can run SITL from any directory like so:
+
 ::
 
     sim_vehicle.py --help
 
+If you work with multiple clones of ArduPilot in different workspaces, it's recommend to call SITL directly to avoid accidentally running the wrong simulator.
 
 Selecting a vehicle/frame type
 ------------------------------
