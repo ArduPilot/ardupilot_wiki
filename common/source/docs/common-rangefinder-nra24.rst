@@ -32,7 +32,7 @@ Set the following parameters
 
 -  :ref:`CAN_P2_DRIVER <CAN_P2_DRIVER>` = 2 (to enable the second CAN driver)
 -  :ref:`CAN_P2_BITRATE <CAN_P2_BITRATE>` = 500000 (Or as set in NSM tools)
--  :ref:`CAN_D2_PROTOCOL <CAN_D2_PROTOCOL>` = 14 (NanoRadar)
+-  :ref:`CAN_D2_PROTOCOL <CAN_D2_PROTOCOL>` = 14 (RadarCAN)
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 39 (NRA-24). Reboot after setting this.
 -  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 19000 (i.e. 200m max range with 10m buffer)
 -  :ref:`RNGFND1_MAX <RNGFND1_MIN>` = 50 (0.5m min range)
