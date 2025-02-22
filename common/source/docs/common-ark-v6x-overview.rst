@@ -57,37 +57,37 @@ Specifications
 Serial Port Mapping
 ===================
 
-.. list-table:: Serial Port Mapping
+.. list-table:: Serial Port Mapping for Default Firmware with No IOMCU
    :widths: 15 25 15
    :header-rows: 1
 
    * - UART
-     - Device
+     - Serial Number
      - Port
-   * - USART1
-     - /dev/ttyS0
-     - GPS
-   * - USART2
-     - /dev/ttyS1
-     - TELEM3
-   * - USART3
-     - /dev/ttyS2
-     - Debug Console
-   * - UART4
-     - /dev/ttyS3
-     - UART4 & I2C
-   * - UART5
-     - /dev/ttyS4
-     - TELEM2
-   * - USART6
-     - /dev/ttyS5
-     - PX4IO/RC
    * - UART7
-     - /dev/ttyS6
+     - SERIAL1
      - TELEM1
+   * - UART5
+     - SERIAL2
+     - TELEM2
+   * - USART1
+     - SERIAL3
+     - GPS
    * - UART8
-     - /dev/ttyS7
+     - SERIAL4
      - GPS2
+   * - USART2
+     - SERIAL5
+     - TELEM3
+   * - UART4
+     - SERIAL6
+     - UART4 & I2C
+   * - USART3
+     - SERIAL7
+     - Debug Console
+   * - USART6
+     - SERIAL8
+     - PX4IO/RC
 
 
 More Information
