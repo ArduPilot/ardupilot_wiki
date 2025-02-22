@@ -18,6 +18,7 @@ New Board Support
 - DroneerF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/6567
 - Updates to BETAFPVF405 family of boards, see https://github.com/ArduPilot/ardupilot_wiki/pull/6578
 - ZeroOneX6-Air/Air+, see https://github.com/ArduPilot/ardupilot_wiki/pull/6616
+- SULIGH7 Reference Design, see https://github.com/ArduPilot/ardupilot_wiki/pull/6637
 
 New Peripheral Support
 ======================
