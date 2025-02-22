@@ -103,7 +103,7 @@ CAN_Dx_PROTOCOL     Protocol Type
 11                  Benewake (RangeFinder)
 12                  Scripting2 (allows two drivers)
 13                  NoopLoop TOFSenseP (RangeFinder)
-14                  NanoRadar NRA24 (RangeFinder)
+14                  RadarCAN (NanoRadar/Hexsoon RangeFinders)
 ===============     =============
 
 After the change to protocol the autopilot has to be rebooted for the changes to take place.
