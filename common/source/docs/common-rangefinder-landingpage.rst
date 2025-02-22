@@ -93,6 +93,7 @@ Omnidirectional Proximity Rangefinders
 .. toctree::
     :maxdepth: 1
 
+    Hexsoon Radar <common-rangefinder-hexsoon-radar>
     LDRobot LD-06 TOF <common-ld06>
     Lightware SF40/C (360 degree) <common-lightware-sf40c-objectavoidance>
     Lightware SF45/B (350 degree) <common-lightware-sf45b>

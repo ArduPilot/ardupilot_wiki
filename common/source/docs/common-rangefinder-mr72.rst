@@ -35,7 +35,7 @@ Set the following parameters
 
 -  :ref:`CAN_P2_DRIVER <CAN_P2_DRIVER>` = 2 (to enable the 2nd CAN port using the second CAN driver)
 -  :ref:`CAN_P2_BITRATE<CAN_P2_BITRATE>` = 500000 (Or as set in NAssistant)
--  :ref:`CAN_D2_PROTOCOL<CAN_D2_PROTOCOL>` = 14 (NanoRadar)
+-  :ref:`CAN_D2_PROTOCOL<CAN_D2_PROTOCOL>` = 14 (RadarCAN)
 -  :ref:`PRX1_TYPE <PRX1_TYPE>` = 17 (MR72_CAN) Reboot afer setting this.
 -  :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
 -  :ref:`PRX1_YAW_CORR <PRX1_YAW_CORR>` allows adjusting the forward direction of the unit.  One way to determine this angle is to use the Mission Planner's Setup >> Advanced, Proximity viewer and then walk around the vehicle and ensure that the sector distances shorten appropriately.
