@@ -71,6 +71,7 @@ Open Hardware
     mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/m10021a.htm>
     mRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/m10022a.htm>
     OpenPilot Revolution <common-openpilot-revo-mini>
+    SULIGH7 <common-suligh7>
     TauLabs Sparky2 <common-taulabs-sparky2>
     ZeroOneX6 <common-zeroonex6>
 
