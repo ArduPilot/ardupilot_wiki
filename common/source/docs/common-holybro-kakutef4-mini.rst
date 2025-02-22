@@ -20,7 +20,7 @@ Specifications
 -  **Sensors**
 
    -  MPU6000 IMU (accel, gyro)
-   -  BMP280 barometer
+   -  SPL06 barometer
 
 -  **Power**
 
