@@ -16,6 +16,8 @@ Upon entry, an optional minimum climb before turn can be programmed, which can b
 
 If :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` is set to 1 or "AUTOLAND", then the vehicle will terrain follow as it flies to the LOITER-TO-ALT base waypoint.
 
+AUTOLAND mode may be entered either as a :ref:`normal flight mode switch <flight-modes>` or as an :ref:`RC Auxiliary switch <common-auxiliary-functions>` set to "183".
+
 Operation
 =========
 To use simply make a takeoff and at any point later switch into AUTOLAND. A final approach waypoint will be created behind the HOME landing target at :ref:`AUTOLAND_WP_DIST<AUTOLAND_WP_DIST>` (400m by default) at :ref:`AUTOLAND_WP_ALT<AUTOLAND_WP_ALT>`  (55m by default)using the takeoff direction plus :ref:`AUTOLAND_DIR_OFF<AUTOLAND_DIR_OFF>` ("0" default) and land using all the parametrics of a normal autolanding. A loiter to alt waypoint tangential to the final approach waypoint is also created at the same altitude and at 1/3 :ref:`AUTOLAND_WP_DIST<AUTOLAND_WP_DIST>` or :ref:`WP_LOITER_RAD<WP_LOITER_RAD>`, whichever is smaller, from the final approach waypoint as shown below:
