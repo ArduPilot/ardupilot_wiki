@@ -36,7 +36,7 @@ GPS/Combos
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     Matek M10Q-3100 DroneCAN GPS+Compass <https://www.mateksys.com/?portfolio=m10q-3100>
     Matek DroneCAN GNSS M10-L4-3100 <https://www.mateksys.com/?portfolio=m10-l4-3100>
-    MAtek DroneCAN GNSS M9N-G4-3100 <https://www.mateksys.com/?portfolio=m9n-g4-3100>
+    Matek DroneCAN GNSS M9N-G4-3100 <https://www.mateksys.com/?portfolio=m9n-g4-3100>
     mRo GPS, GPS+Compass,RTK, and DroneCAN modules <https://store.mrobotics.io/category-s/109.htm>
     mRo Location One GPS GPS+Compass+LED+Safety Switch <common-mrobotics-location-one-gps>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
