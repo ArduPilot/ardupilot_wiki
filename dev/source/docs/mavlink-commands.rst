@@ -49,6 +49,10 @@ MAVLink not only has command messages but also incoming messages. A complete lis
 
       :ref:`Rover_MAVLink_Messages`
 
+   .. group-tab:: Sub
+
+      :ref:`ArduSub_MAVLink_Messages`
+
 External References
 ===================
 -  `MAVLink Common Message Set (HTML) <https://mavlink.io/en/messages/common.html>`__ and `XML <https://github.com/mavlink/mavlink/blob/master/message_definitions/v1.0/common.xml>`__ (Protocol Definition)
