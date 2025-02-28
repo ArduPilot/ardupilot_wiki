@@ -23,7 +23,7 @@ the wiki.
     History of ArduPilot <common-history-of-ardupilot>
     Partners <common-partners>
     Partners Program <common-partners-program>
-[site wiki="plane, copter, rover, sub, blimp"]
+[site wiki="plane, copter, rover, sub"]
     Ready-To-Use vehicles <common-rtf>
 [/site]
 [site wiki="plane"]
