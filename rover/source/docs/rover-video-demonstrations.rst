@@ -41,3 +41,9 @@ This video originates from `this DIYDrones blog post <https://diydrones.com/prof
 
 ..  youtube:: Ad7d_S9cHiU
     :width: 100%
+
+BlueBoat - Autonomous Skid-Steer Boat
+-------------------------------------
+
+..  youtube:: DmZ8c4DY0kI
+    :width: 100%
