@@ -6,7 +6,7 @@ DroneCAN Serial PassThrough
 
 Normally, any serial port on an AP-Peripheral device, like a :ref:`common-uavcan-adapter-node` will be pre-configured for a specific peripheral (like a GPS or Rangefinder)to be attached to one or more of its UARTs.
 
-However, firmware versions V4.5 and later have added the ability to bibidirectionally pass through data to a DrooneCAN peripheral device that has serial ports defined.
+However, firmware versions V4.5 and later have added the ability to bibidirectionally pass through data to a DroneCAN peripheral device that has serial ports defined.
 
 Up to three ports can be mapped into the vehicle from the peripheral and their baud rate and protocol programmed with ArduPilot parameters:
 
