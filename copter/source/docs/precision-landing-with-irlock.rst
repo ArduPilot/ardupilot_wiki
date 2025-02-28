@@ -36,7 +36,7 @@ Parameters
 ==========
 
 - :ref:`PLND_ENABLED <PLND_ENABLED>` set to 1 to enable this feature, refresh parameters to see following:
-- :ref:`PLND_TYPE <PLND_TYPE>` sets the type of landing position source, IR-LOCK, MAVLink LaANDING_TARGET messages,SITL, or GAZEBO sims. 0 disables.
+- :ref:`PLND_TYPE <PLND_TYPE>` sets the type of landing position source, IR-LOCK, `MAVLink LANDING_TARGET message <https://mavlink.io/en/messages/common.html#LANDING_TARGET>`__, SITL, or GAZEBO sims. 0 disables.
 - :ref:`PLND_XY_DIST_MAX<PLND_XY_DIST_MAX>` The vehicle will not start descending if the landing target is detected and it is further than this many meters away. Set 0 to always descend.
 - :ref:`PLND_STRICT<PLND_STRICT>` How strictly should the vehicle land on the target if target is lost
 - :ref:`PLND_TIMEOUT<PLND_TIMEOUT>` Time for which vehicle continues descend even if target is lost. After this time period, vehicle will attempt a landing retry depending on :ref:`PLND_STRICT<PLND_STRICT>` parameter.

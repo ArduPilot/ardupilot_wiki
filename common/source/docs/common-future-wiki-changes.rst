@@ -18,6 +18,7 @@ New Board Support
 - DroneerF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/6567
 - Updates to BETAFPVF405 family of boards, see https://github.com/ArduPilot/ardupilot_wiki/pull/6578
 - ZeroOneX6-Air/Air+, see https://github.com/ArduPilot/ardupilot_wiki/pull/6616
+- SULIGH7 Reference Design, see https://github.com/ArduPilot/ardupilot_wiki/pull/6637
 
 New Peripheral Support
 ======================
@@ -41,6 +42,7 @@ New Features
 - Selecting Throttle based notch results in a config error at boot, see https://github.com/ArduPilot/ardupilot_wiki/pull/6551
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600
 - Changed AUTO_TRIM function, see https://github.com/ArduPilot/ardupilot_wiki/pull/6622
+- Add ability to tune LOIT_SPEED from transmitter, see see https://github.com/ArduPilot/ardupilot_wiki/pull/6640
 [/site]
 [site wiki="rover"]
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600

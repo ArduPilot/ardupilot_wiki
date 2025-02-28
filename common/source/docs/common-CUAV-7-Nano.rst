@@ -8,7 +8,7 @@ The CUAV-7-Nano flight controller produced by `CUAV <https://www.cuav.net>`_.
 It has an ultra-small size and a 100M Ethernet interface. Supports 3.3V/5V PWM output.
 
 .. image:: ../../../images/7-nano/7-nano.jpg
-   :target: ../_images/7-nano/7-nano.jpg
+   :target: ../_images/7-nano.jpg
 
 Features
 ========
@@ -31,13 +31,13 @@ Size
 ====
 
 .. image:: ../../../images/7-nano/7-nano-size.png
-   :target: ../_images/7-nano/7-nano-size.png
+   :target: ../_images/7-nano-size.png
 
 Pinout
 ======
 
 .. image:: ../../../images/7-nano/7-nano-pinouts.png
-   :target: ../_images/7-nano/7-nano-pinouts.png
+   :target: ../_images/7-nano-pinouts.png
 
 
 UART Mapping
