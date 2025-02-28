@@ -12,6 +12,7 @@ Please check with the vendor prior to purchase.
 
    We recommend, when possible, to purchase from our `Partners <https://ardupilot.org/about/Partners>`__ because they directly support ArduPilot and we are more confident that users can upgrade the firmware on the vehicle.
 
+[site wiki="copter"]
 Copters from Partners
 =====================
 
@@ -37,7 +38,9 @@ Helicopters from Partners
 * `TT Robotix - SIRIUS Helicopter <http://www.ttrobotix.com/products/detail/905.html>`__
 * `TT Robotix - T-150 Maverick Helicopter <http://www.ttrobotix.com/products/detail/924.html>`__
 * `TT Robotix - Thunder Hawk Helicopter <http://www.ttrobotix.com/products/detail/902.html>`__
+[/site]
 
+[site wiki="plane"]
 Planes from Partners
 ====================
 
@@ -68,7 +71,9 @@ VTOL/QuadPlanes from Partners
 * `MakeFLyEasy - Freeman 2300 <https://www.uavmodel.com/collections/vtol/products/makeflyeasy-freeman-4-1-2300mm-uav-vtol>`__
 * :ref:`MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>`
 * :ref:`MakeFLyEasy - Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>`
+[/site]
 
+[site wiki="rover"]
 Rovers from Partners
 ====================
 
@@ -80,28 +85,40 @@ Boats from Partners
 ===================
 
 * `BlueRobotics BlueBoat <https://bluerobotics.com/store/boat/blueboat/blueboat/>`__
+[/site]
 
+[site wiki="sub"]
 Subs from Partners
 ==================
 
 * `Blue Robotics - BlueROV2 <https://bluerobotics.com/store/rov/bluerov2/>`__
+[/site]
 
+[site wiki="copter,plane,rover"]
 Vehicles from Non-Partners
 ==========================
+[/site]
 
+[site wiki="copter"]
 * `Aton <https://traxxas.com/products/models/heli/Aton-Plus>`__ and `Aton-Plus from traxxas <https://traxxas.com/products/models/heli/Aton-Plus>`__ (firmware loaded using an SD Card)
-* `BathyDrone mapping boats <https://www.bathydrone-usv.com/>`__
+* `SkyRocket - Journey <http://sky-viper.com/journey/>`__
+* 3DR Solo from `Amazon <https://www.amazon.com/3DR-Solo-Quadcopter-No-Gimbal/dp/B00ZPM7BOG>`__
+[/site]
+[site wiki="plane"]
 * `DRONEE Easy to Use Mapping Plane <https://dronee.aero/pages/droneeplane>`__
 * `MotoDoro Farm Mapper (Plane) <https://motodoro.com/blog/detail/00005-farm-mapper-vtol.html>`__
-* `SkyRocket - Journey <http://sky-viper.com/journey/>`__
 * `UAV Mapper from TuffWing <http://www.tuffwing.com/products/drone_mapper.html>`__
-* 3DR Solo from `Amazon <https://www.amazon.com/3DR-Solo-Quadcopter-No-Gimbal/dp/B00ZPM7BOG>`__
 * `LP Mini Orca HVTOL Drone <https://lpbond.com/productos/miniorca.html>`__
+[/site]
+[site wiki="rover"]
+* `BathyDrone mapping boats <https://www.bathydrone-usv.com/>`__
+[/site]
 
 .. note::
 
    If you are a manufacturer of a RTF vehicle based on ArduPilot and do not appear in this list, please get in touch through one of the methods listed on our :ref:`Contact Us page <common-contact-us>`.
 
+[site wiki="plane"]
 .. toctree::
    :hidden:
 
@@ -109,5 +126,6 @@ Vehicles from Non-Partners
     MakeFLyEasy Fighter VTOL <common-makeflyeasy-fighter-vtol>
     MakeFLyEasy Striver Mini Hand Throw <common-makeflyeasy-striver-mini-hand-throw>
     MakeFLyEasy Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>
+[/site]
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,sub"]
