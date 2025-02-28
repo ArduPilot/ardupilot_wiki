@@ -23,6 +23,7 @@ Getting more info
     
 .. toctree::
    :hidden:
-   
+
+   Ready to Dive/Use Vehicles <docs/common-rtf>
    Complete parameter list <docs/parameters>
    Complete log message list <docs/logmessages>
