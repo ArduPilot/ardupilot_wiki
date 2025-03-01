@@ -30,6 +30,10 @@ Real-time distances can be seen in the Mission Planner's proximity viewer
 
 .. image:: ../../../images/copter-object-avoidance-radar-view.png
 
+Press the plus and minus key while the proximity window is open to change the range of the display.
+
+
+
 This window can be opened by moving to the MP's Flight Data screen, press Ctrl-F and push the Proximity button.
 
 .. image:: ../../../images/copter-object-avoidance-show-radar-view.png
