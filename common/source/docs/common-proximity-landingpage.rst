@@ -29,6 +29,10 @@ Real-time view
 Real-time distances can be seen in the Mission Planner's proximity viewer
 
 .. image:: ../../../images/copter-object-avoidance-radar-view.png
+    :width: 50%
+
+.. image:: ../../../images/copter-object-avoidance-radar-view2.png
+    :width: 50%
 
 Press the plus and minus key while the proximity window is open to change the range of the display.
 
