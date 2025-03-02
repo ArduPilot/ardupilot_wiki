@@ -27,6 +27,7 @@ When selecting the operating system, we will install Ubuntu 22 Server.
 Find it in "Other general-purpose OS -> Ubuntu -> Ubuntu Server 22.04.5 LTS (64-bit) which is supported
 by `ROS 2 humble <https://www.ros.org/reps/rep-2000.html#humble-hawksbill-may-2022-may-2027>`__.
 When prompted to do "OS Customisation", select that.
+
 * In "General", Configure wireless LAN
 * In "Services", enable SSH
 * Save and flash the image onto the device
