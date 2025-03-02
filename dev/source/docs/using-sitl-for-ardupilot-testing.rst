@@ -8,7 +8,7 @@ This article describes how :ref:`SITL <sitl-simulator-software-in-the-loop>` can
 
 SITL can be run under Linux using a tool named ``sim_vehicle.py`` from a Linux or WSL2 command line, or through :ref:`Mission Planner's Simulation feature <mission-planner-simulation>`. It can also be run in conjunction with a graphics visualization and/or physics modeling program like :ref:`Realflight<sitl-with-realflight>`.
 
-In addition to running the simulation, a ground control station program will need to be run concurrently in order to control the simultion. With ``sim_vehicle.py``, `MAVProxy <https://ardupilot.org/mavproxy/index.html>`__ is automatically started. When using Mission Planner's simulation feature, it is used. You can also have more than one GCS attached, see :ref:`connect to different GCSs <using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations>`.
+In addition to running the simulation, a ground control station program will need to be run concurrently in order to control the simulation. With ``sim_vehicle.py``, `MAVProxy <https://ardupilot.org/mavproxy/index.html>`__ is automatically started. When using Mission Planner's simulation feature, it is used. You can also have more than one GCS attached, see :ref:`connect to different GCSs <using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations>`.
 
 .. note::
 
