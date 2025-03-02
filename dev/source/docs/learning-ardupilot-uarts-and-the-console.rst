@@ -13,25 +13,25 @@ The 8 UARTs
 
 The ArduPilot HAL currently defines 8 UARTs. The HAL itself does not define any particular roles for these UARTs, but the other parts of ArduPilot assume they will be assigned particular functions. The command-line options for using with sim_vehicle.py the serial port should be preceded by :code:`-A` to pass along to the vehicle binary. Make sure to include the :code:`uart` protocol. Specifying a baudrate is not required, but is more consistent. For example, :code:`sim_vehicle.py --console --map -A --serial5=uart:/dev/ttyS15:115200`.
 
-+-------------+----------------------+----------+-------------------------+
-| ParamPrefix | Sim_vehicle Cmd Line | Def Role | Default Connection      |
-+=============+======================+==========+=========================+
-| \SERIAL0_   | \- -serial0=         | Console  | tcp:localhost:5760:wait |
-+-------------+----------------------+----------+-------------------------+
-| \SERIAL1_   | \- -serial1=         | MAVLink  | tcp:localhost:5762      |
-+-------------+----------------------+----------+-------------------------+
-| \SERIAL2_   | \- -serial2=         | MAVLink  | tcp:localhost:5763      |
-+-------------+----------------------+----------+-------------------------+
-| \SERIAL3_   | \- -serial3=         | GPS      | Simulated GPS           |
-+-------------+----------------------+----------+-------------------------+
-| \SERIAL4_   | \- -serial4=         | GPS      | Simulated GPS           |
-+-------------+----------------------+----------+-------------------------+
-| \SERIAL5_   | \- -serial5=         |          |                         |
-+-------------+----------------------+----------+-------------------------+
-| \SERIAL6_   | \- -serial6=         |          |                         |
-+-------------+----------------------+----------+-------------------------+
-| \SERIAL7_   | \- -serial7=         |          |                         |
-+-------------+----------------------+----------+-------------------------+
++-------------+----------------------+--------------+-------------------------+
+| ParamPrefix | Sim_vehicle Cmd Line | Default Role | Default Connection      |
++=============+======================+==============+=========================+
+| \SERIAL0_   | \- -serial0=         | Console      | tcp:localhost:5760:wait |
++-------------+----------------------+--------------+-------------------------+
+| \SERIAL1_   | \- -serial1=         | MAVLink      | tcp:localhost:5762      |
++-------------+----------------------+--------------+-------------------------+
+| \SERIAL2_   | \- -serial2=         | MAVLink      | tcp:localhost:5763      |
++-------------+----------------------+--------------+-------------------------+
+| \SERIAL3_   | \- -serial3=         | GPS          | Simulated GPS           |
++-------------+----------------------+--------------+-------------------------+
+| \SERIAL4_   | \- -serial4=         | GPS          | Simulated GPS           |
++-------------+----------------------+--------------+-------------------------+
+| \SERIAL5_   | \- -serial5=         |              |                         |
++-------------+----------------------+--------------+-------------------------+
+| \SERIAL6_   | \- -serial6=         |              |                         |
++-------------+----------------------+--------------+-------------------------+
+| \SERIAL7_   | \- -serial7=         |              |                         |
++-------------+----------------------+--------------+-------------------------+
 
 The following are options for connecting a SITL serial port:
 
