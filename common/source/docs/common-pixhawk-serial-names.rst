@@ -9,7 +9,7 @@ Cube where ArduPilot is concerned.  This document attempts to supply a
 mapping between them.
 
 +-----------+-------------+------------+--------------+--------------+-----------------+----------------+
-| DataSheet | ParamPrefix | HW Label   | Cube Full CB | Def Role     | SERIAL_CONTROL* | Notes          |
+| DataSheet | ParamPrefix | HW Label   | Cube Full CB | Default Role | SERIAL_CONTROL* | Notes          |
 +===========+=============+============+==============+==============+=================+================+
 |           | \SERIAL0_   |            | Console      | Console      |                 | Micro-USB Plug |
 +-----------+-------------+------------+--------------+--------------+-----------------+----------------+
