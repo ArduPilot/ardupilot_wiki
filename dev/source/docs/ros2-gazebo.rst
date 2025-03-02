@@ -11,7 +11,7 @@ Prerequisites
 
 Ensure you have the prerequisites complete and working before beginning this Gazebo tutorial.
 
-#. :ref:`Install ROS 2 <ros2>` 
+#. :ref:`Install ROS 2 <ros2>`
 #. :ref:`Install and Run ROS 2 with ArduPilot SITL <ros2-sitl>`
 
 Install Gazebo
@@ -35,7 +35,23 @@ It's recommended to set this in your `~/.bashrc` file.
 
     export GZ_VERSION=harmonic
 
-Update ROS dependencies:
+Add Gazebo APT sources.
+
+.. code-block:: bash
+
+  sudo apt install wget
+  wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+  sudo apt update
+
+Add Gazebo sources to `rosdep` for the non-default pairing of ROS 2 Humble and Gazebo Harmonic.
+
+.. code-block:: bash
+
+  wget https://raw.githubusercontent.com/osrf/osrf-rosdep/master/gz/00-gazebo.list -O /etc/ros/rosdep/sources.list.d/00-gazebo.list
+  rosdep update
+
+Update ROS and Gazebo dependencies:
 
 .. code-block:: bash
 
@@ -43,7 +59,7 @@ Update ROS dependencies:
     source /opt/ros/humble/setup.bash
     sudo apt update
     rosdep update
-    rosdep install --from-paths src --ignore-src -r
+    rosdep install --from-paths src --ignore-src -y
 
 Build and Run Tests
 ===================
@@ -67,7 +83,7 @@ If you'd like to test your installation, run:
 Run the Simulation
 ==================
 
-Finally, you can source the workspace and launch one of the example Gazebo simulations: 
+Finally, you can source the workspace and launch one of the example Gazebo simulations:
 
 .. code-block:: bash
 
