@@ -87,3 +87,4 @@ Vehicle Parameter References
     ArduPlane_MAVLink_Messages
     ArduCopter_MAVLink_Messages
     Rover_MAVLink_Messages
+    ArduSub_MAVLink_Messages
