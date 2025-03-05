@@ -48,8 +48,8 @@ For the following we will assume it will be connected to Serial1 port of the aut
 - Set :ref:`FLOW_TYPE<FLOW_TYPE>` = 5 (MAVLink)
 - Set :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = 10 (MAVLink)
 - Reboot autopilot to see rangefinder parameters
-- Set :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 800 to set range finder's maximum range to 8m
-- Set :ref:`RNGFND1_MIN<RNGFND1_MIN>` = 1
+- Set :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 8 to set range finder's maximum range to 8m
+- Set :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.01
 - Set :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = 25 (Downward) 
 
 Once the sensor is active you should be able to observe the optical flow and range sensor data on the Mission Planner’s “Status” page. The “opt_qua” and “rangefinder1” should have some value.

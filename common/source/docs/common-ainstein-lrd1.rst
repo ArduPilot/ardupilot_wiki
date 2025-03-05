@@ -30,9 +30,9 @@ For a serial connection you can use any spare Serial/UART port.  The example bel
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud)
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 42 (Ainstein_LR_D1)
--  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 100
--  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 50000
--  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 10 *or more accurately the distance in centimeters from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 1.0
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 500
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *or more accurately the distance in meters from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 Testing the sensor
 ==================

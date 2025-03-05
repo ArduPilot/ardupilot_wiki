@@ -36,9 +36,9 @@ If the SERIAL4 is being used then the following parameters should be set for the
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud)
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 19 (Benewake TF02) for TF02, =20 (Benewake-Serial) for TF03 if Copter 3.6.12, =27 (Benewake TF03) for TF03 and TF02 Pro for Copter 4.0 and later, and =20 for TF-Luna. Note: using type = 20 on a TF03 will restrict its maximum range to that of a TF02.
--  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 30 for TFMini, 10 for TFminiPlus and TF-Luna.
--  :ref:`RNGFND1_MAX <RNGFND1_MAX>`: for TF02 use **2000** for indoor, **1000** for outdoor.  For TF03 use **3500** for indoor, **12000** for outdoor. For TF-Luna use **800** for indoor, **300** for outdoor. *This is the distance in centimeters that the rangefinder can reliably read.*
--  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.3 for TFMini, 0.1 for TFminiPlus and TF-Luna.
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>`: for TF02 use **20** for indoor, **10** for outdoor.  For TF03 use **35** for indoor, **12** for outdoor. For TF-Luna use **8** for indoor, **3** for outdoor. *This is the distance in meters that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *or more accurately the distance in metres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 If instead the Telem2 port was used then the serial parameters listed above should instead be:
 

@@ -58,9 +58,9 @@ following parameters in the case of the first rangefinder(this is done in the *M
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud) 
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 8 (LightWareSerial)
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1
--  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 5
--  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **2500** (for SF10A), **5000** (for SF10B), **10000** (for SF10C) or **12000** (for SF11C).  *This is the distance in centimeters that the rangefinder can reliably read. The value depends on the model of the lidar.*
--  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.05
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **25** (for SF10A), **50** (for SF10B), **100** (for SF10C) or **120** (for SF11C).  *This is the distance in meters that the rangefinder can reliably read. The value depends on the model of the lidar.*
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *or more accurately the distance in metres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 If you instead were using the Telem2 port on the Pixhawk then you would set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9, and :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115
 
@@ -85,9 +85,9 @@ List** page):
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 7 (LightWareI2C)
 -  :ref:`RNGFND1_ADDR <RNGFND1_ADDR>` = 102 (I2C Address of lidar in decimal).  *Please note that this setting is in decimal and not hexadecimal as shown in the lidar settings screen. The default address is 0x66 which is 102 in decimal.*
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1
--  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 5
--  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **2500** (for SF10A), **5000** (for SF10B), **10000** (for SF10C) or **12000** (for SF11C).  *This is the distance in centimeters that the rangefinder can reliably read. The value depends on the model of the lidar.*
--  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.05
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **25** (for SF10A), **50** (for SF10B), **100** (for SF10C) or **120** (for SF11C).  *This is the distance in meters that the rangefinder can reliably read. The value depends on the model of the lidar.*
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *or more accurately the distance in metres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 It may be necessary to enable the sensor's "I2C compatibility mode (Pixhawk)".  This can be done by connecting the lidar to your PC using a USB cable, then download `Lightware Studio <https://lightwarelidar.com/pages/lightware-studio>`__, connect and check the checkbox shown below
 
@@ -123,9 +123,9 @@ List** page):
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 1 (Analog)
 -  :ref:`RNGFND1_PIN <RNGFND1_PIN>` = 14 (2nd pin of 3.3V ADC connector)
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = **9.76** (for SF10A), **19.531** (for SF10B), **39.06** (for SF10C), **46.87** (for SF11C)
--  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 5
--  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **2000** (for SF10A), **4500** (for SF10B), **9500** (for SF10C) or **11500** (for SF11C).  *This is the distance in centimeters that the rangefinder can reliably read. The value depends on the model of the lidar.  Note the range is 5m less than using Serial or I2C protocols so that out-of-range can be reliably detected*
--  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.05
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **20** (for SF10A), **45** (for SF10B), **95** (for SF10C) or **115** (for SF11C).  *This is the distance in meters that the rangefinder can reliably read. The value depends on the model of the lidar.  Note the range is 5m less than using Serial or I2C protocols so that out-of-range can be reliably detected*
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *or more accurately the distance in metres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 The :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` value depends on the voltage on the rangefinders output pin at the maximum range. By default the SF10/B will output 2.56V at 50m, so the scaling factor is 50m / 2.56v ≈ 19.53 (the analog
 distance range for each of the rangefinder variants can be found in the `SF10 Manual <http://documents.lightware.co.za/SF10%20-%20Laser%20Altimeter%20Manual%20-%20Rev%2011.pdf>`__).

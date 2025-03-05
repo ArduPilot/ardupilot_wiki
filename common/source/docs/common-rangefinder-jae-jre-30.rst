@@ -70,8 +70,8 @@ Set the following parameters which assume the radar is connected to the autopilo
 - Set :ref:`SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>` =  9 (Rangefinders)
 - Set :ref:`SERIAL1_BAUD<SERIAL1_BAUD>` = 460 (460800 Baud)
 - Set :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = 41 (JRE Serial)
-- Set :ref:`RNGFND1_MIN<RNGFND1_MIN>` = 10 (cm)
-- Set :ref:`RNGFND1_MAX<RNGFND1_MAX>` = 5000 (cm)
+- Set :ref:`RNGFND1_MIN<RNGFND1_MIN>` = 0.1 (meters)
+- Set :ref:`RNGFND1_MAX<RNGFND1_MAX>` = 50 (meters)
 
 Setup using CAN
 ===============
@@ -86,6 +86,6 @@ Set the following parameters which assume the radar is connected to the autopilo
 - Set :ref:`CAN_P1_BITRATE<CAN_P1_BITRATE>` = 1000000 (1 Mbps)
 - Set :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` = 1 (DroneCAN)
 - Set :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = 24 (DroneCAN)
-- Set :ref:`RNGFND1_MIN<RNGFND1_MIN>` = 10 (cm)
-- Set :ref:`RNGFND1_MAX<RNGFND1_MAX>` = 5000 (cm)
+- Set :ref:`RNGFND1_MIN<RNGFND1_MIN>` = 0.1 (meters)
+- Set :ref:`RNGFND1_MAX<RNGFND1_MAX>` = 50 (meters)
 - Set :ref:`RNGFND1_ADDR<RNGFND1_ADDR>` = 1

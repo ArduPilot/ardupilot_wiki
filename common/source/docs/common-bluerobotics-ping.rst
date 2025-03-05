@@ -29,8 +29,8 @@ If the SERIAL2 port on the autopilot is being used then the following parameters
 -  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115 (115200 baud)
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 23 (BlueRoboticsPing)
--  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 30
--  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 2600.  This is the distance in centimeters that the rangefinder can reliably read.
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.3
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 26.  This is the distance in meters that the rangefinder can reliably read.
 -  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (down) if mounted on a boat
 
 PingViewer to test and upgrade the sensor

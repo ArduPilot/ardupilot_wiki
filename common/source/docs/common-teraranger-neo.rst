@@ -37,8 +37,8 @@ As a Plane altitude rangefinder used in auto landings:
 - Set :ref:`RNGFND_LANDING<RNGFND_LANDING>` = 1 to enable used of the rangefinder during landing phases of Plane and QuadPlane. The first rangefinder with "down" orientation will be used.
 
 - Set :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = 25 (down)
-- Set :ref:`RNGFND1_MIN<RNGFND1_MIN>` = 50 (.5m)
-- Set :ref:`RNGFND1_MAX<RNGFND1_MAX>` = 2200 (22m since grass landings will reduce reliable range down to this range instead of 30m)
+- Set :ref:`RNGFND1_MIN<RNGFND1_MIN>` = 0.5 (meters)
+- Set :ref:`RNGFND1_MAX<RNGFND1_MAX>` = 22 (22m since grass landings will reduce reliable range down to this range instead of 30m)
 
 .. image:: ../../../images/terabee-neo-landing.png
     :target: ../_images/terabee-neo-landing.png
