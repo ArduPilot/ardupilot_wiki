@@ -36,10 +36,8 @@ Config/Tuning >> Full Parameter List page and set the following
 parameters (example shown if first rangefinder:
 
 -  :ref:`RNGFND1_PIN<RNGFND1_PIN>` = "14" for Pixhawk's ADC 3.3v pin #2
--  :ref:`RNGFND1_MAX<RNGFND1_MAX>` = "700" (i.e. 7m max range) if using EZ0 or EZ4,
-   "1000" if using EZL0
--  :ref:`RNGFND1_SCALING<RNGFND1_SCALING>` = "2.04" (i.e. 7m / 5v) if using EZ0 or EZ4, "4.08"
-   (i.e. 10m / 5v) if using EZL0
+-  :ref:`RNGFND1_MAX<RNGFND1_MAX>` = "7" (i.e. 7m max range) if using EZ0 or EZ4, "10" if using EZL0
+-  :ref:`RNGFND1_SCALING<RNGFND1_SCALING>` = "2.04" (i.e. 7m / 5v) if using EZ0 or EZ4, "4.08" (i.e. 10m / 5v) if using EZL0
 -  :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “1" (Analog)
 
 .. note::

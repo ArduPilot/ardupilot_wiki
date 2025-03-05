@@ -32,9 +32,9 @@ If the SERIAL4 port on an autopilot is being used then the following parameters 
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
 - :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud)
 - :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 20 (Benewake-Serial)
-- :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 30 for TFmini, 10 for TFminiPlus
-- :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **1000** for indoor use OR **600** for outdoors.  *This is the distance in centimeters that the rangefinder can reliably read.*
-- :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+- :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.3 for TFmini, 0.1 for TFminiPlus
+- :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **10** for indoor use OR **6** for outdoors.  *This is the distance in meters that the rangefinder can reliably read.*
+- :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *or more accurately the distance in metres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 Connecting using I2C
 --------------------
@@ -46,9 +46,9 @@ The diagram below shows how to connect to the autopilot's I2C port.
 
 - :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 25 (Benewake TFminiPlus-I2C)
 - :ref:`RNGFND1_ADDR<RNGFND1_ADDR>` = 16 (I2C address of lidar in decimal, equivalent to 0x10 hexadecimal)
-- :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 30 for TFmini, 10 for TFminiPlus
-- :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **1000** for indoor use OR **600** for outdoors.  *This is the distance in centimeters that the rangefinder can reliably read.*
-- :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+- :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.3 for TFmini, 0.1 for TFminiPlus
+- :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **10** for indoor use OR **6** for outdoors.  *This is the distance in meters that the rangefinder can reliably read.*
+- :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *or more accurately the distance in metres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 Testing the sensor
 ==================

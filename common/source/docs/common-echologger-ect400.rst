@@ -40,8 +40,8 @@ If the SERIAL2 is used then the following parameters should be set:
 Then the following range finder related parameters should be set:
 
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 17 (NMEA)
--  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 13
--  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 10000 (i.e. 100m).  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.13
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 100 (i.e. 100m).  *This is the distance in meters that the rangefinder can reliably read.*
 -  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (i.e. down) if mounted on a boat
 
 Configuring the sensor

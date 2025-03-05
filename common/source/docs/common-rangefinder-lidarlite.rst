@@ -71,8 +71,8 @@ The power to the rangefinder should be supplied from a separate external BEC as 
 Set the following parameters:
 
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 3 "LidarLite-I2c"
--  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 3500 (the maximum range the lidar can accurately report in cm)
--  :ref:`RNGFND1_MIN <RNGFND1_MAX>` = 20 (the mininum range the lidar can accurately report in cm)
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 35 (the maximum range the lidar can accurately report in m)
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.20 (the mininum range the lidar can accurately report in m)
 
 Connecting via PWM
 ==================
@@ -90,8 +90,8 @@ Set the following parameters:
 
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 5 "PWM"
 -  :ref:`RNGFND1_PIN <RNGFND1_PIN>` = 54 "AUX5" (if using 4.0.0 or higher any Auxiliary output may be used)
--  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 3500 (the maximum range the lidar can accurately report in cm)
--  :ref:`RNGFND1_MIN <RNGFND1_MAX>` = 20 (the mininum range the lidar can accurately report in cm)
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 35 (the maximum range the lidar can accurately report in m)
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.2 (the mininum range the lidar can accurately report in m)
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1 ("0.8" may produce more accurate readings for some units)
 -  :ref:`RNGFND1_OFFSET <RNGFND1_OFFSET>` = 0
 -  ``BRD_PWM_COUNT`` = 4 (ensures AUX5 is not used as a servo output)
