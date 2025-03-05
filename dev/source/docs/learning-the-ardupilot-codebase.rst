@@ -58,4 +58,4 @@ Other Tutorials
 
 Although not strictly part of ArduPilot this tutorial may also be useful
 
-- `DroneKit <https://dronekit-python.readthedocs.io/en/latest/>`__
+- `DroneKit <https://dronekit.io>`__
