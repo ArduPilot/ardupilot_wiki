@@ -17,6 +17,7 @@ GPS/Compass
     :maxdepth: 1
 
     ARK GPS <common-ark-gps>
+    ARK SAM GPS <common-ark-sam-gps>
     ARK TESEO GPS <common-ark-teseo-gps>
     Avionics Anonymous GNSS + Compass<common-avanon-gnss-mag>
     Avionics Anonymous Compass<common-avanon-mag>
