@@ -81,7 +81,7 @@ If the vehicle is executing a mission command that requires terrain data but it 
 
 Note that because it does not immediately have access to terrain data in this situation it will perform a normal RTL interpreting the :ref:`RTL_ALT <RTL_ALT>` as an altitude-above-home regardless of whether :ref:`TERRAIN_FOLLOW <TERRAIN_FOLLOW>` has been set to "1" or not.
 
-One common problem reported by users is the vehicle immediately disarms when the user switches to AUTO mode to start a mission while the vehicle is on the ground.  The cause is the altitude reported by the range finder (which can be checked from the MP's Flight Data screen's Status tab's sonar_range field) is shorter than the RNGFNDx_MIN_CM (for example :ref:`RNGFND1_MIN <RNGFND1_MIN>`)parameter which means the range finder reports "unhealthy" when on the ground.  The solution is to reduce the RNGFNDx_MIN_CM value (to perhaps "5").
+One common problem reported by users is the vehicle immediately disarms when the user switches to AUTO mode to start a mission while the vehicle is on the ground.  The cause is the altitude reported by the range finder (which can be checked from the MP's Flight Data screen's Status tab's sonar_range field) is shorter than the RNGFNDx_MIN (for example :ref:`RNGFND1_MIN <RNGFND1_MIN>`)parameter which means the range finder reports "unhealthy" when on the ground.  The solution is to reduce the RNGFNDx_MIN value (to perhaps "0.05").
 
 Terrain Spacing and Accuracy
 ============================
