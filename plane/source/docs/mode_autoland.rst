@@ -12,7 +12,7 @@ It will setup a parameterized LOITER-TO-ALT base waypoint and final approach way
 
 This is useful when programming a mission with a ``DO_LAND_START`` landing sequence is not convenient since it requires a GCS on a laptop or phone, such as traveling with impromptu stops to fly FPV or photograph. Simply takeoff in one of the previously mentioned modes and the AUTOLAND will be setup. It is also useful for fields which have varying wind directions, which would prevent using a single home-loaded autolanding mission or require using the MissionSelector LUA script to select from several missions with different approaches.
 
-Upon entry, an optional minimum climb before turn can be programmed, which can be useful if it is used for RC failsafe when this occurs during takeoff to climb to an altitude to clear obstacles before turning toward the landing approach.
+Upon entry, an optional minimum climb to an above ground alt before turning can be programmed, which can be useful if it is used for RC failsafe when this occurs during takeoff to climb to an altitude to clear obstacles or to get a minimum altitude above current terrain before turning toward the landing approach.
 
 If :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` is set to 1 or "AUTOLAND", then the vehicle will terrain follow as it flies to the LOITER-TO-ALT base waypoint.
 
@@ -33,7 +33,7 @@ Options
 The :ref:`AUTOLAND_OPTIONS <AUTOLAND_OPTIONS>` bitmask provides optional behavior. Currently, if bit 0 is set, then instead of capturing takeoff direction( and therefore autolanding direction), the landing direction will be captured immediately at arming if a compass is being used. This allows the direction to be set "manually" by orienting the plane at homw in the desired landing direction and arming. The  :ref:`AUTOLAND_DIR_OFF<AUTOLAND_DIR_OFF>` parameter is ignored in this case.
 
 
-A minimum climb of :ref:`AUTOLAND_CLIMB<AUTOLAND_CLIMB>` can be set, during which navigation (roll) is limited to :ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>`. If AUTOLAND is being used as a :ref:`FS_LONG_ACTN<FS_LONG_ACTN>`, then setting this to allow clearing takeoff obstacles to the sides is recommended.
+A minimum climb  of :ref:`AUTOLAND_CLIMB<AUTOLAND_CLIMB>` can be set, during which navigation (roll) is limited to :ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>`. If AUTOLAND is being used as a :ref:`FS_LONG_ACTN<FS_LONG_ACTN>`, then setting this to allow clearing takeoff obstacles to the sides is recommended. The climb altitude will be above terrain, if enabled, or using rangefinder, if enabled and in range, or just relative to current altitude if neither is available.
 
 Notes:
 ======
