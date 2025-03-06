@@ -16,6 +16,7 @@ New Peripherals
     :maxdepth: 1
 
     Hexsoon 77G MWW Radar <common-rangefinder-hexsoon-radar>
+    Hexsoon 24G Radar <common-rangefinder-hexsoon-24g>
 [/site]
 [site wiki="plane"]
 New Features
