@@ -173,7 +173,7 @@ Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) 
 
 .. warning::
 
-   If the telemetry link is shared (i.e. multiple GCSs or a GCS and a companion computer) there can be conflicting requests.  The most common example is the Mission Planner using the REQUEST_DATA_STREAM method while a companion copmuter uses SET_MESSAGE_INTERVAL method.  Mission Planner at least allows turning off the REQUEST_DATA_STREAM requests by setting the rates to "-1" (see :ref:`Setting the Datarate <planner:mission-planner-telemetry-logs-setting-the-datarate>`).  MAVProxy users can ``set streamrate -1``.
+   If the telemetry link is shared (i.e. multiple GCSs or a GCS and a companion computer) there can be conflicting requests.  The most common example is the Mission Planner using the REQUEST_DATA_STREAM method while a companion computer uses SET_MESSAGE_INTERVAL method.  Mission Planner at least allows turning off the REQUEST_DATA_STREAM requests by setting the rates to "-1" (see :ref:`Setting the Datarate <planner:mission-planner-telemetry-logs-setting-the-datarate>`).  MAVProxy users can ``set streamrate -1``.
 
 Using REQUEST_MESSAGE
 ---------------------
