@@ -14,7 +14,7 @@ Known :ref:`unsupported messages <mavlink_missing_messages>` (and commands) are 
 The autopilot includes a set of :ref:`mavlink_stream_groups` for convenience, which allow configuring the stream rates of groups of requestable messages by setting parameter values. It is also possible to manually request messages, and request individual messages be streamed at a specified rate. 
 
 
-.. _mavlink_incoming_messages:
+.. _ArduSub_mavlink_incoming_messages:
 
 Incoming Messages
 =================
@@ -127,7 +127,7 @@ Messages the autopilot handles when received.
   `VISION_POSITION_ESTIMATE <https://mavlink.io/en/messages/common.html#VISION_POSITION_ESTIMATE>`_, `GCS_MAVLink/GCS_Common.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/GCS_MAVLink/GCS_Common.cpp>`_, common
   `VISION_SPEED_ESTIMATE <https://mavlink.io/en/messages/common.html#VISION_SPEED_ESTIMATE>`_, `GCS_MAVLink/GCS_Common.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/GCS_MAVLink/GCS_Common.cpp>`_, common
 
-.. _mavlink_incoming_commands:
+.. _ArduSub_mavlink_incoming_commands:
 
 Incoming Commands
 =================
@@ -253,7 +253,7 @@ Commands the autopilot handles when received.
   `MAV_CMD_VIDEO_START_CAPTURE <https://mavlink.io/en/messages/common.html#MAV_CMD_VIDEO_START_CAPTURE>`_, `AP_Camera/AP_Camera.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Camera/AP_Camera.cpp>`_, common
   `MAV_CMD_VIDEO_STOP_CAPTURE <https://mavlink.io/en/messages/common.html#MAV_CMD_VIDEO_STOP_CAPTURE>`_, `AP_Camera/AP_Camera.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Camera/AP_Camera.cpp>`_, common
 
-.. _mavlink_requestable_messages:
+.. _ArduSub_mavlink_requestable_messages:
 
 Requestable Messages
 ====================
@@ -347,7 +347,7 @@ Messages that can be requested/streamed from the autopilot.
   `WINCH_STATUS <https://mavlink.io/en/messages/common.html#WINCH_STATUS>`_, `GCS_MAVLink/GCS_Common.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/GCS_MAVLink/GCS_Common.cpp>`_, common
   `WIND <https://mavlink.io/en/messages/ardupilotmega.html#WIND>`_, `GCS_MAVLink/GCS_Common.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/GCS_MAVLink/GCS_Common.cpp>`_, ardupilotmega
 
-.. _mavlink_outgoing_messages:
+.. _ArduSub_mavlink_outgoing_messages:
 
 Outgoing Messages
 =================
@@ -450,7 +450,7 @@ Messages the autopilot will send automatically (unrequested).
   `WINCH_STATUS <https://mavlink.io/en/messages/common.html#WINCH_STATUS>`_, `AP_Winch/AP_Winch_Daiwa.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Winch/AP_Winch_Daiwa.cpp>`_, common
   `WIND <https://mavlink.io/en/messages/ardupilotmega.html#WIND>`_, `AP_WindVane/AP_WindVane.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_WindVane/AP_WindVane.cpp>`_, ardupilotmega
 
-.. _mavlink_named_floats:
+.. _ArduSub_mavlink_named_floats:
 
 Named Floats
 ============
@@ -471,7 +471,7 @@ Breakout of named floating-point (numerical) values sent by the autopilot.
   `NAMED_VALUE_FLOAT:RollPitch <https://mavlink.io/en/messages/common.html#NAMED_VALUE_FLOAT>`_, `ArduSub/GCS_Mavlink.cpp <https://github.com/ArduPilot/ardupilot/tree/master/ArduSub/GCS_Mavlink.cpp>`_, common
   `NAMED_VALUE_FLOAT:TetherTrn <https://mavlink.io/en/messages/common.html#NAMED_VALUE_FLOAT>`_, `ArduSub/GCS_Mavlink.cpp <https://github.com/ArduPilot/ardupilot/tree/master/ArduSub/GCS_Mavlink.cpp>`_, common
 
-.. _mavlink_stream_groups:
+.. _ArdduSub_mavlink_stream_groups:
 
 Stream Groups
 =============
@@ -529,7 +529,7 @@ Message groups with stream rates requestable by ``SRn_*`` parameters. Messages i
   `VIBRATION <https://mavlink.io/en/messages/common.html#VIBRATION>`_, SRn_EXTRA3, common
   `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`_, SRn_PARAMS, common
 
-.. _mavlink_missing_messages:
+.. _ArduSub_mavlink_missing_messages:
 
 Missing Messages
 ================
@@ -660,7 +660,7 @@ Unsupported / unhandled messages.
   `WIFI_CONFIG_AP <https://mavlink.io/en/messages/common.html#WIFI_CONFIG_AP>`_, UNSUPPORTED, common
   `WIND_COV <https://mavlink.io/en/messages/common.html#WIND_COV>`_, UNSUPPORTED, common
 
-.. _mavlink_missing_commands:
+.. _ArduSub_mavlink_missing_commands:
 
 Missing Commands
 ================
