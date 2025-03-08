@@ -9,9 +9,9 @@ The `MAVLink <https://mavlink.io/en/>`_ protocol supports a variety of features 
 
 This page is auto-generated from analysing the ArduPlane source code, and provides an indication of which messages (and commands) are handled by, requestable from, and sent from the firmware. A message being handled does not guarantee full support, but at least shows that the autopilot is aware it exists, and will try to do something meaningful with it.
 
-Known :ref:`unsupported messages <mavlink_missing_messages>` (and commands) are shown at the end.
+Known :ref:`unsupported messages <ArduPlane_mavlink_missing_messages>` (and commands) are shown at the end.
 
-The autopilot includes a set of :ref:`mavlink_stream_groups` for convenience, which allow configuring the stream rates of groups of requestable messages by setting parameter values. It is also possible to manually request messages, and request individual messages be streamed at a specified rate. 
+The autopilot includes a set of :ref:`ArduPlane_mavlink_stream_groups` for convenience, which allow configuring the stream rates of groups of requestable messages by setting parameter values. It is also possible to manually request messages, and request individual messages be streamed at a specified rate. 
 
 
 .. _ArduPlane_mavlink_incoming_messages:
