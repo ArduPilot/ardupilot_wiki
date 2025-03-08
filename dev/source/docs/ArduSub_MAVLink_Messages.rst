@@ -9,9 +9,9 @@ The `MAVLink <https://mavlink.io/en/>`_ protocol supports a variety of features 
 
 This page is auto-generated from analysing the ArduSub source code, and provides an indication of which messages (and commands) are handled by, requestable from, and sent from the firmware. A message being handled does not guarantee full support, but at least shows that the autopilot is aware it exists, and will try to do something meaningful with it.
 
-Known :ref:`unsupported messages <mavlink_missing_messages>` (and commands) are shown at the end.
+Known :ref:`unsupported messages <ArduSub_mavlink_missing_messages>` (and commands) are shown at the end.
 
-The autopilot includes a set of :ref:`mavlink_stream_groups` for convenience, which allow configuring the stream rates of groups of requestable messages by setting parameter values. It is also possible to manually request messages, and request individual messages be streamed at a specified rate. 
+The autopilot includes a set of :ref:`ArduSub_mavlink_stream_groups` for convenience, which allow configuring the stream rates of groups of requestable messages by setting parameter values. It is also possible to manually request messages, and request individual messages be streamed at a specified rate. 
 
 
 .. _ArduSub_mavlink_incoming_messages:
@@ -471,7 +471,7 @@ Breakout of named floating-point (numerical) values sent by the autopilot.
   `NAMED_VALUE_FLOAT:RollPitch <https://mavlink.io/en/messages/common.html#NAMED_VALUE_FLOAT>`_, `ArduSub/GCS_Mavlink.cpp <https://github.com/ArduPilot/ardupilot/tree/master/ArduSub/GCS_Mavlink.cpp>`_, common
   `NAMED_VALUE_FLOAT:TetherTrn <https://mavlink.io/en/messages/common.html#NAMED_VALUE_FLOAT>`_, `ArduSub/GCS_Mavlink.cpp <https://github.com/ArduPilot/ardupilot/tree/master/ArduSub/GCS_Mavlink.cpp>`_, common
 
-.. _ArdduSub_mavlink_stream_groups:
+.. _ArduSub_mavlink_stream_groups:
 
 Stream Groups
 =============
