@@ -39,15 +39,15 @@ Non-GPS Position Estimation Using 3D Camera and Pre-Generated Map
 - Level of Difficulty: Hard
 - Expected Outcome: Copter with low-cost 3D camera estimates its local position by comparing the camera point cloud to a pre-generated 3D map
 
-The goal of this project is to allow a Copter to estimate its local position using a low-cost 3D camera (e.g. Intel D465) by comparing the camera's point cloud to a pre-generated 3D map.  The steps involved include:
+The goal of this project is to allow a Copter to estimate its local position using a low-cost 3D camera (e.g. `Intel D455 <https://www.intelrealsense.com/depth-camera-d455>`__) by comparing the camera's point cloud to a pre-generated 3D map.  The steps involved include:
 
 - Create a tool to capture a 3D map of the flight area.  The resulting map should be loaded onto the vehicle's companion computer (e.g. RPI5)
-- Mount a low-cost 3D camera (e.g. Intel D465) onto an ArduPilot copter (e.g. EDU650 or similar) equipped with a companion computer
+- Mount a low-cost 3D camera (e.g. `Intel D455 <https://www.intelrealsense.com/depth-camera-d455>`__) onto an ArduPilot copter (e.g. EDU650 or similar) equipped with a companion computer
 - Write localisation software (e.g. python code) to compare the output of the 3D camera to the pre-generated 3D map and send the estimated position to the vehicle's EKF (see :ref:`Non-GPS Position Estimation <mavlink-nongps-position-estimation>`)
 - Implement a simulator of the system (e.g. gazebo)
 - Document the setup and operation for future developers and users
 
-Funding will be provided for hardware including a copter (e.g. Hexsoon EDU650), companion computer and 3D camera (e.g. Intel D465) if necessary
+Funding will be provided for hardware including a copter (e.g. Hexsoon EDU650), companion computer and 3D camera (e.g. `Intel D455 <https://www.intelrealsense.com/depth-camera-d455>`__) if necessary
 
 AI Chat WebTool for use with MP and/or QGC
 ------------------------------------------
