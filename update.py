@@ -782,16 +782,16 @@ def copy_static_html_sites(site, destdir):
 
 def check_imports():
     '''check key imports work'''
-    import pkg_resources
+    import importlib.metadata
     # package names to check the versions of. Note that these can be different than the string used to import the package
-    requires = ["sphinx_rtd_theme>=1.3.0", "sphinxcontrib.youtube>=1.2.0", "sphinx>=7.1.2", "docutils<0.19"]
-    for r in requires:
-        debug("Checking for %s" % r)
+    required_packages = ["sphinx_rtd_theme>=1.3.0", "sphinxcontrib.youtube>=1.2.0", "sphinx>=7.1.2", "docutils<0.19"]
+    for package in required_packages:
+        debug("Checking for %s" % package)
         try:
-            pkg_resources.require(r)
-        except pkg_resources.ResolutionError as ex:
+            importlib.metadata.version(package.split("<")[0].split(">=")[0])
+        except importlib.metadata.PackageNotFoundError as ex:
             progress(ex)
-            fatal("Require %s\nPlease run the wiki build setup script \"Sphinxsetup\"" % r)
+            fatal("Require %s\nPlease run the wiki build setup script \"Sphinxsetup\"" % package)
     debug("Imports OK")
 
 
