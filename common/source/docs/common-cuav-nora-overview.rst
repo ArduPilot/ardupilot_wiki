@@ -101,7 +101,7 @@ Pinouts
 =======
 
 .. image:: ../../../images/cuav_autopilot/nora/nora-pinouts.jpg
-    :target: ../_images/cuav_autopilot/nora/nora-pinouts.jpg
+    :target: ../_images/nora-pinouts.jpg
     
 Flight video
 ============
