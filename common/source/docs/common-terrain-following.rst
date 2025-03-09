@@ -69,9 +69,11 @@ Terrain Following in CRUISE and FBWB modes can be disabled with an RC switch ass
 Use of terrain following in AUTO missions is controlled on a waypoint by
 waypoint basis using the reference frame of the waypoint. Normal (non
 terrain following) waypoints have a "Relative" reference frame, and
-altitudes are specified relative to the home location. Terrain following
+altitudes are specified relative to the home location. Not by the :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` parameter. Terrain following
 waypoints have a "Terrain" reference frame, and altitudes are relative
 to the ground level given in the terrain database.
+
+.. note:: in AUTO mode autolandings, the :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` parameter does have an impact, when a rangefinder is also used. See :ref:`rangefinder-autolanding`.
 
 See :ref:`common-understanding-altitude` for altitude definitions.
 
