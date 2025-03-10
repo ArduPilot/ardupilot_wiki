@@ -21,9 +21,9 @@ Support
 Development
 ===========
 
-- `Mon/Tue Weekly Meetings on Discord <https://ardupilot.org/dev/docs/ardupilot-discord-server.html>`__
+- `Weekly Developer Meeting on Discord <https://ardupilot.org/dev/docs/ardupilot-discord-server.html>`__ (Mon 11pm Greenwich Mean Time, GMT)
+- `Weekly EU Developer Meeting on Discord <https://ardupilot.org/dev/docs/ardupilot-discord-server.html>`__ (Wed 7am Greenwich Mean Time, GMT)
 - `ArduPilot Discord (live chat) <https://ardupilot.org/discord>`__ live chat for ArduPilot developers (not for support questions)
-
 
 Facebook
 ========
