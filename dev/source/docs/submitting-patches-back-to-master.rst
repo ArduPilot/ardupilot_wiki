@@ -112,6 +112,15 @@ PRs are more likely to be merged quickly if:
 
 - The PR clearly states what changes in behaviour are expected
 - Good testing evidence is provided.  This could be graphs of logs recorded before and after the change
-- The PR is discussed on the :ref:`weekly dev call <ardupilot-discord-server>`.  To get the PR discussed add the "DevCallTopic" label.  If you are unable to add the label ping one of the developers on `ArduPilot Discord <https://ardupilot.org/discord>`__
+- Code follows the :ref:`style guide <style-guide>`
+- Each commit in the PR affects only one subsystem and the commit title is prefixed with the subsystem name (e.g. "AP_GPS: correct uBlox logging parameter descriptions").  The `Tools/gittools/git-subsystems-split <https://github.com/ArduPilot/ardupilot/blob/master/Tools/gittools/git-subsystems-split>`__ script may be useful for this
+- PR passes all automated CI tests.  CI tests sometimes fail for reason unrelated to your PR (e.g. dependency failures, "flapping tests").  Please force push the PR to re-run the tests
+- The PR is discussed on one of the :ref:`weekly dev calls <ardupilot-discord-server>`.  To get the PR discussed add the "DevCallTopic" or "DevCallEU" label.  If you are unable to add the label ping one of the core developers on `ArduPilot Discord <https://ardupilot.org/discord>`__ (see the "code-review" channel).  "Core developers" can be identified by the "dev-team" badge in Discord and some also appear as `top contributors in Github <https://github.com/ArduPilot/ardupilot/graphs/contributors>`__
 
 It is very common, especially for large changes, for the core developers to ask you to modify the pull request to fit in better with the existing code base or resolve some knock-on impact that you may not have known about. Please don't take this the wrong way, we're definitely not trying to make your life difficult!
+
+If your PR gets stuck please understand that this is likely just because ArduPilot receives a lot of code contributions and it is difficult for the core dev team to review and merge them all.  Here's some advice to get a PR "unstuck":
+
+- Review the advice above titled "PRs are more likely to be merged quickly if"
+- Attend one of the two :ref:`weekly dev calls <ardupilot-discord-server>`
+- Send a note to a "core developer" in the code-review channel.  These can be identified by the "dev-team" badge in Discord and some also appear as `top contributors in Github <https://github.com/ArduPilot/ardupilot/graphs/contributors>`__
