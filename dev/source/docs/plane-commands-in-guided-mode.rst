@@ -48,8 +48,8 @@ MAV_CMDs
 
 These MAV_CMDs can be processed if packaged within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message
 
-- :ref:`MAV_CMD_NAV_LOITER_UNLIM <plane:mav_cmd_nav_loiter_unlim>`
-- :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <plane:mav_cmd_nav_return_to_launch>`
+- `MAV_CMD_NAV_LOITER_UNLIM <https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_LOITER_UNLIM>`__ : changes to :ref:`Loiter mode <plane:loiter-mode>` (see :ref:`Get and Set FlightMode <mavlink-get-set-flightmode>`)
+- `MAV_CMD_NAV_RETURN_TO_LAUNCH <https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_RETURN_TO_LAUNCH>`__ : changes to :ref:`RTL mode <plane:rtl-mode>` (see :ref:`Get and Set FlightMode <mavlink-get-set-flightmode>`)
 
 These MAV_CMDs can be processed if packaged within a `COMMAND_INT <https://mavlink.io/en/messages/common.html#COMMAND_INT>`__ message
 
