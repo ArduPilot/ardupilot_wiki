@@ -36,7 +36,7 @@ Attach the sensor to one of the autopilot's I2C ports using SDA and SCL pins. Th
 
 .. note:: The MAX31865 is an SPI device, which uses the same parameters and basic configuration procedure as I2C sensors but must be connected to an SPI port rather than an I2C port. Some autopilots do not expose an external SPI port, in which case the MAX31865 cannot be easily used.
 
-.. note:: The MLX90614 sensor is an infrared thermometer for non-contact temperature measurements. Its I2C address is 90 so :ref:`TEMP1_BUS<TEMP1_BUS>` = 90 for this type of sensor.
+.. note:: The MLX90614 sensor is an infrared thermometer for non-contact temperature measurements. Its I2C address is 90 so :ref:`TEMP1_ADDR<TEMP1_ADDR>` = 90 for this type of sensor.
 
 Analog Sensor Setup
 ===================
