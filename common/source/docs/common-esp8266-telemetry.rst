@@ -18,7 +18,7 @@ Where to Buy
 - The `Beyond Robotix - Kahuna <https://www.beyondrobotix.com/products/kahuna>`__ is a ready to use ESP8266 module that connects directly to an autopilot. The Kahuna is pre-flashed with a fork of ArduPilot firmware, has a JST-GH connector to connect easily to several off-the-shelf autopilots and has a u.fl connector for an external antenna. Further documentation for this unit is found `here <https://docs.google.com/document/d/1VyOsp9_q6dIAdYdWuDFcWoqqrNy_vbFMANubZA3Uz5g/edit?usp=sharing>`__.
 
 Connecting to an autopilot
----------------------------------
+--------------------------
 
 .. image:: ../../../images/esp8266-telemetry-pixhawk.jpg
     :target: ../_images/esp8266-telemetry-pixhawk.jpg
