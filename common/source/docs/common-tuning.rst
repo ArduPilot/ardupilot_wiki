@@ -27,7 +27,10 @@ parameters. The following topics show you how.
     Configuring In-Flight FFT <common-imu-fft>
     Coping with Ground Resonance Oscillation <common-ground-resonance>
 
+Videos
+======
 
+- `Chris Rosser's Ultimate ArduPilot Tuning Guide <https://www.youtube.com/playlist?list=PLFPBjpbd5xKSGFJfuQJBPWOm-sGv0VxD1>`__
 
 [/site]
 
