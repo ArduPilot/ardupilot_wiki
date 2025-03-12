@@ -20,6 +20,7 @@ New Board Support
 - ZeroOneX6-Air/Air+, see https://github.com/ArduPilot/ardupilot_wiki/pull/6616
 - SULIGH7 Reference Design, see https://github.com/ArduPilot/ardupilot_wiki/pull/6637
 - SpeedyBee F405 AIO, see https://github.com/ArduPilot/ardupilot_wiki/pull/6664
+- StellarH7V2, see https://github.com/ArduPilot/ardupilot_wiki/pull/6681
 
 New Peripheral Support
 ======================
