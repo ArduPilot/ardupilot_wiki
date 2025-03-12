@@ -48,7 +48,7 @@ error_count = 0
 # Parameters
 COMMITFILE = "git-version.txt"
 BASEURL = "https://firmware.ardupilot.org/"
-ALLVEHICLES = ["AntennaTracker", "Copter" , "Plane", "Rover", "Blimp"]
+ALLVEHICLES = ["AntennaTracker", "Copter" , "Plane", "Rover", "Sub", "Blimp"]
 VEHICLES = ALLVEHICLES
 
 BASEPATH = ""

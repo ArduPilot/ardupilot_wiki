@@ -35,4 +35,4 @@ Where to Buy
 
 `Aliexpress <https://www.aliexpress.com/item/10000223175280.html>`__
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane"]
