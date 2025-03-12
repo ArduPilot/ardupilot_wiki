@@ -202,6 +202,9 @@ The following is a description of the actions that can be taken for battery fail
 + 6   | LOITER_TO_QLAND  | If QuadPlane, switch to LOITER_TO_QLAND mode,                               +
 +     |                  | otherwise do nothing                                                        +
 +-----+------------------+-----------------------------------------------------------------------------+
++ 7   | AUTOLAND or RTL  | If Fixed Wing, switch to AUTOLAND if available (see :ref:`mode_autoland`. If+
++     |                  | unavailable or QuadPlane switch to RTL                                      +
++-----+------------------+-----------------------------------------------------------------------------+
 
 .. _failsafe-parameters:
 
