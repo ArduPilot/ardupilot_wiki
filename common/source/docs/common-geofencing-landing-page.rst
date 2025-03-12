@@ -142,6 +142,9 @@ If enabled, and  the fence boundaries or altitudes(:ref:`FENCE_ALT_MAX<FENCE_ALT
 +            |  point with pilot  +
 +            |  throttle control  +
 +------------+--------------------+
++     8      | AUTOLAND mode, or  +
++            | RTL                +
++------------+--------------------+
 
 The return (and loiter) point, unless :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` is enabled, is the geometric center of the breached fence boundary. If :ref:`FENCE_ACTION<FENCE_ACTION>` is set to a guided return mode (6 or 7), the altitude at which it returns is determined by :ref:`FENCE_RET_ALT<FENCE_RET_ALT>` or if  :ref:`FENCE_RET_ALT<FENCE_RET_ALT>` is zero, midway between the altitude limits, if non-zero. If both altitude limits are zero, then it will return at current altitude.
 
