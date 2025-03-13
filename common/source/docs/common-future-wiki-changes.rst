@@ -38,6 +38,7 @@ New Features
 - DO_RETURN_PATH_START mission item, see https://github.com/ArduPilot/ardupilot_wiki/pull/6460
 - Add some new TX tuning sets, see https://github.com/ArduPilot/ardupilot_wiki/pull/6553
 - Add FWD_BAT_THR_CUT parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/6624
+- Add AUTOLAND as battery failsafe and/or fence action, see https://github.com/ArduPilot/ardupilot_wiki/pull/6685
 [/site]
 [site wiki="copter"]
 - Fast Attitude loop option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6470
