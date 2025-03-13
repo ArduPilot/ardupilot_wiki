@@ -153,6 +153,17 @@ This is a special level that does not change the rates or time constant (ie like
 Completing the tune
 ===================
 
+.. _automatic-tuning-with-autotune-completing-the-tune:
+
+.. warning::
+
+   If you have successfully tuned your plane with Autotune and see oscillations on the pitch axis around 1 Hz,
+   check if :ref:`PTCH_RATE_I<PTCH_RATE_I>` far exceeds :ref:`PTCH_RATE_P<PTCH_RATE_P>`.
+   This is an unwanted result of Autotune for Plane and it typically becomes visible if you fly straight for
+   a longer distance. Autotune does blindly copy the value of :ref:`PTCH_RATE_FF<PTCH_RATE_FF>` to 
+   :ref:`PTCH_RATE_I<PTCH_RATE_I>` due to a wrong design decision. In this case reduce the value of
+   :ref:`PTCH_RATE_I<PTCH_RATE_I>` to half of it's value.
+
 Once you have learned reasonable tuning parameters with
 autotune you should complete the tune by manually tuning some other key
 parameters.
