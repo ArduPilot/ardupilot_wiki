@@ -5,8 +5,8 @@ MSP OSD
 =======
 ArduPilot supports several types of On Screen Displays (OSD) using MSP (MultiWii Serial Protocol) based protocols:
 
- - MSP Telemetry based OSDs such as DJI FPV Goggles V1/V2, DJI Goggles RE, FatShark ByteFrost, FatShark SharkByte (before fw 09042021), `MWOSD <http://www.mwosd.com/>`__ , etc.
- - DisplayPort based OSDs such as HDZero (previously known as FatShark SharkByte (fw 09042021 and later)), Walksnail, DJI goggles using the `wtf-os <https://github.com/fpv-wtf/wtfos>`__ firmware and `msdp-osd module <https://github.com/fpv-wtf/msp-osd>`__, and MWOSD's DisplayPort mode/firmware
+ - MSP Telemetry based OSDs such as DJI FPV Goggles V1/V2, DJI Goggles RE, FatShark ByteFrost, FatShark SharkByte (before fw 09042021), older `MWOSD <http://www.mwosd.com/>`__ (newer versions support MAVLink, see :ref:`common-minim-osd-quick-installation-guide>`) , etc.
+ - :ref:`DisplayPort <dosplayport>` based OSDs such as HDZero (previously known as FatShark SharkByte (fw 09042021 and later)), Walksnail, DJI goggles using the `wtf-os <https://github.com/fpv-wtf/wtfos>`__ firmware and `msdp-osd module <https://github.com/fpv-wtf/msp-osd>`__, and MWOSD's DisplayPort mode/firmware
 
 Telemetry only based OSDs will render OSD panel items on screen with their own engine based on the standard MSP telemetry sensor messages sent using Serial port protocol "32", so ArduPilot has no control of how the items look.
 
@@ -132,6 +132,8 @@ To enable this, set the following parameters (example using SERIAL port 2 as the
 .. note:: Serial port buad rate default is changed to 115.2Kbaud automatically when setting the above protocol type. However, if the user has previously or subsequently changes the baud, this default will not be used. 115.2Kbaud is required by most video goggle systems.
 
 .. note:: DJI Custom OSD must be enabled: in SETTINGS->DISPLAY->CUSTOM OSD menu of goggles.
+
+.. _displayport:
 
 DisplayPort OSD
 ===============
