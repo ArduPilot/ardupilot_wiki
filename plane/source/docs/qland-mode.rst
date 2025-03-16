@@ -10,8 +10,8 @@ QLAND Mode attempts to bring the QuadPlane straight down at the position the veh
 .. note::
 
     QuadPlane will recognize that it has landed if the motors are at
-    minimum but its altitude does not change more than 0.2m for one
-    second.  It does not use the altitude itself to decide whether to shut off the
+    minimum for 5 seconds and its altitude has not changed more than 0.2m for 4
+    seconds.  It does not use the altitude itself to decide whether to shut off the
     motors except that the QuadPlane must also be below :ref:`Q_LAND_FINAL_ALT<Q_LAND_FINAL_ALT>` above home(ie in the LAND FINAL phase). The altitude change for the decision can be increased, in case the altitude determination from the EKF is excessively noisy by increasing the :ref:`Q_LAND_ALTCHG<Q_LAND_ALTCHG>` value from its default value of 0.2m.
 
 -  If the QuadPlane appears to bounce or balloon back up a couple of times
