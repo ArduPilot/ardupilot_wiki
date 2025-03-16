@@ -37,6 +37,10 @@ The gimbal's default mode on startup can be set with the :ref:`MNT1_DEFLT_MODE<M
 
 .. note:: ArduPilot 4.5 (and higher) automatically switches the gimbal to RC Targeting Mode if the pilot moves any configured Roll/Pitch/Yaw RC targeting inputs (see below) by the larger of 10uS or ``RCx_DZ``.  The only exception is if the gimbals is in RETRACT mode in which case the gimbal mode will not be automatically changed.
 
+Mount RC failsafe position
+--------------------------
+In the event of an RC failsafe, the mount can be moved to the Neutral mode position if the ``MNTx_OPTIONS`` bit 1 is set.
+
 Control with an RC transmitter (aka RC Targeting)
 -------------------------------------------------
 
