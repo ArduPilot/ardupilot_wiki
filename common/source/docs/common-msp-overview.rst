@@ -1,5 +1,6 @@
 .. _common-msp-overview:
-[copywiki destination="plane,copter,rover,blimp"]
+
+**ARCHIVED TOPIC**
 ==============================
 Multiwii Serial Protocol (MSP)
 ==============================

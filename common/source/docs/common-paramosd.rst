@@ -9,7 +9,7 @@ There's two additional OSD screens available (OSD5 and OSD6), with 9 "slots" eac
 display a default set of parameters to start with. Additionally, it is possible to change the parameter used in a 
 respective slot directly (on-screen) using stick inputs, or using MAVProxy's osd-module command-line setup. 
 
-
+.. note:: OpenTX/EdgeTX CRSF lua scripts allow access to this feature in some radio transmitters.
 
 Copter default screens:
 -----------------------

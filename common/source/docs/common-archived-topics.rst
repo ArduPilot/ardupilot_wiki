@@ -41,6 +41,7 @@ value to users with old hardware.
     common-tarot-gimbal
     DROTAG x Geotagger <common-geotagging-drotagx>
     Robsense SwarmLink <common-telemetry-robsense-swarmlink>
+    MSP OSD (version 4.1) <common-msp-osd-overview>
 
 [/site]
 [site wiki="copter"]
