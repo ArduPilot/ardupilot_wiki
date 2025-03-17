@@ -133,7 +133,6 @@ To enable this, set the following parameters (example using SERIAL port 2 as the
 
 .. note:: DJI Custom OSD must be enabled: in SETTINGS->DISPLAY->CUSTOM OSD menu of goggles.
 
-<<<<<<< HEAD
 .. _displayport:
 
 DisplayPort OSD
@@ -309,5 +308,3 @@ Video
 =====
 
 .. youtube:: gT4R3E_7Z_0
-=======
->>>>>>> 7c09deed8c (Reorg OSD pages for quicker reference)
