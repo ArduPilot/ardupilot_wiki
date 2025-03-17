@@ -1,8 +1,8 @@
 .. _common-minim-osd-quick-installation-guide:
 
-==================================
-Minim OSD Quick Installation Guide
-==================================
+========================================
+Minim/MWOSD OSD Quick Installation Guide
+========================================
 
 `MinimOSD <https://code.google.com/archive/p/arducam-osd/wikis/minimosd.wiki>`__
 "On-Screen Display" is a small circuit board that pulls telemetry data
@@ -69,12 +69,13 @@ Core functionality is broadly similar between the two firmwares.
 
 
 MWOSD
-===============================
+=====
 
 * The project is located `here <https://github.com/ShikOfTheRa/scarab-osd>`__.
 * The documentation is located `here <https://github.com/ShikOfTheRa/scarab-osd/wiki>`__.
 * The support thread is located `here <https://fpvlab.com/forums/showthread.php?34250-MWOSD-for-BETAFLIGHT-CLEANFLIGHT-RACEFLIGHT-PIXHAWK-KISS-DRONIN-INAV-and-others>`__.
 
+.. note:: MWOSD not has a DisplayPort Mode
 
 MWOSD is a very popular OSD which has been around for many years initially supporting the muiltiwii based autopilots - iNav, betaflight, etc. Recent versions now provides full support for ArduPilot based FC.
 
@@ -105,8 +106,7 @@ The following links contain a quick start overview and an ardupilot specific ins
 - https://github.com/ShikOfTheRa/scarab-osd/wiki/MAVLINK-installation
 
 MinimOSD-extra NG
-===============================
-
+=================
 * The project is located `here <https://github.com/night-ghost/minimosd-extra>`__.
 * The documentation is located `here <https://github.com/night-ghost/minimosd-extra/wiki>`__.
 * The support thread is located `here <https://www.rcgroups.com/forums/showthread.php?2591835-New-MinimOSD-fork>`__.

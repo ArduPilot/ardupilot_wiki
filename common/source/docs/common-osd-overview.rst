@@ -113,6 +113,22 @@ Each OSD panel item uses a set of three variables to be set:
 
 .. note::    ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. :ref:`ARSPD_TYPE<ARSPD_TYPE>` must be set to zero in order to display this value as the airspeed item, if no sensor is present.
 
+Displaying statistics on a dedicated screen
+===========================================
+Displaying statistics on a dedicated screen requires enabling at least one extra screen by setting the respective ``OSDn_ENABLE`` to 1.
+By default, ArduPilot has only one screen active so in a typical setup one would set (:ref:`OSD2_ENABLE<OSD2_ENABLE>`) = 1 and then enabling the OSD stats panel on screen 2 by setting (:ref:`OSD2_STATS_EN<OSD2_STATS_EN>`) = 1.
+
+When the OSD switches to this screen it will check the value of the :ref:`OSD2_STATS_EN<OSD2_STATS_EN>` parameter and if enabled it will override the default behavior of the following OSD items:
+
+ - OSDn_MESSAGE will display STATS followed by flight time
+ - OSDn_ALTITUDE will display max altitude
+ - OSDn_BAT_VOLT will display min voltage
+ - OSDn_CURRENT will display max current
+ - OSDn_GSPEED will display max ground speed (or airspeed if ``OSDn_ASPEED_EN`` is set to 1)
+ - OSDn_HOMEDIST will alternates max distance from home and total traveled distance every 2 seconds
+ - OSDn_RSSI will display min rssi
+
+
 Callsign panel
 ==============
 
@@ -127,23 +143,6 @@ Several user defined warnings can be set which will flash the respective osd pan
 - :ref:`OSD_W_BATVOLT<OSD_W_BATVOLT>` - Blinks battery voltage panel if less than this value. 0-100V with up tenth volt precision
 - :ref:`OSD_W_RSSI<OSD_W_RSSI>` - Blinks rssi panel if less than this integet percentage value. 0-99%
 - :ref:`OSD_W_NSAT<OSD_W_NSAT>` - Blinks #Sat panel if less than this number. 0-30
-
-Testing OSD with SITL
-=====================
-
-OSD functionality can be tested without autopilot- or video-hardware using a :ref:`Software In The Loop (SITL) simulator <dev:sitl-simulator-software-in-the-loop>` setup. Follow the SITL-Instructions to setup a simulation environment. Run the simulator on current source code. 
-
-A graphical OSD simulation in a separate window can be opened by adding the following option to sim_vehicle.py::
-
-   --osd
-   
-The simulated OSD can now be set and configured via parameters.
-
-.. tip::
-
-   To see all available options type::
-   
-      ./sim_vehicle.py -help
 
 List of OSD Panels
 ==================
