@@ -14,7 +14,9 @@ if [ ${DISTRIBUTION_ID} == 'Ubuntu' ]; then
   fi
 fi
 
-sudo -H -u vagrant /vagrant/Sphinxsetup.sh
+pushd /vagrant
+sudo -H -u vagrant ./Sphinxsetup.sh
+popd
 OUTDIR=/var/sites/wiki/web
 OUTDIR_OLD=/var/sites/wiki/web/old
 mkdir -p "$OUTDIR_OLD"
