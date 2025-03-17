@@ -14,8 +14,8 @@ Analog Video OSD
 .. toctree::
     :maxdepth: 1
 
-    Onboard OSD for FPV and simulation <common-osd-overview>
-    Minim OSD <common-minim-osd-quick-installation-guide>
+    Onboard OSD and OSD screens setup <common-osd-overview>
+    Minim and MWOSD OSDs <common-minim-osd-quick-installation-guide>
 
 Digital Video OSD
 =================

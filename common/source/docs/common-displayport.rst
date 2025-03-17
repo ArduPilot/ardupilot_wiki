@@ -77,7 +77,7 @@ Each OSD panel item uses a set of three variables to be set:
 .. _display_resolution:
 
 Display Resolution and Fonts
-----------------------------
+============================
 When using DisplayPort, you can select to display either the SD or HD fonts using ``OSDx_TXT_RES`` for each OSD screen enabled. 0 = SD (30x16), 1 = HD (50x18), 3 = HD (60x22).
 
 For HDZero you should set ``OSDx_TXT_RES`` to 0 or 1 for each enabled OSD screen. If you set it to 2, the text displayed will be garbled.
@@ -92,7 +92,7 @@ Walksnail/Avatar HD Goggles can select which font they use via a goggle menu. A 
     :target: ../_images/font_maps.png
 
 Screens and screen switching
-----------------------------
+============================
 For multiple screen layouts, each screen's "OSD" parameter label is trailed by a number, starting with "1". For example,  ``OSDn_<ITEM>_x`` is a parameter "x" associated with screen 1's "ITEM" panel.
 
 .. note:: multiple screen layout switching is not avaialable on MSP telemetry only OSDs unless the OSD itself provides the capability themselves.
@@ -110,7 +110,7 @@ The options are:
 A limitation of telemetry based OSDs is that there's no way for ArduPilot to add new panel items at will, it's the vendor's responsibility to add new features by rolling out new firmware releases. 
 
 Displaying statistics on a dedicated screen
--------------------------------------------
+===========================================
 Displaying statistics on a dedicated screen requires enabling at least one extra screen by setting the respective ``OSDn_ENABLE`` to 1.
 By default, ArduPilot has only one screen active so in a typical setup one would set (:ref:`OSD2_ENABLE<OSD2_ENABLE>`) = 1 and then enabling the OSD stats panel on screen 2 by setting (:ref:`OSD2_STATS_EN<OSD2_STATS_EN>`) = 1.
 
