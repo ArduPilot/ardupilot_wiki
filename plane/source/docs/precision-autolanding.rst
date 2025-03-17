@@ -6,6 +6,9 @@ Precision AutoLanding
 
 In the case where the landing touch down point must be tightly controlled (ie narrow and/or short landing area), the precision of the flare height and approach speed (and therefore flare duration) must greater. This requires either an accurate GPS (ie, :ref:`common-rtk-correction`), or ground facing rangefinder or LIDAR, to obtain more precise altitude readings than a barometer usually can provide due to impacts of air pressure changes in the fuselage due to speed and angle of attack. Using an airspeed sensor is also recommended to control approach speeds. All the same basic considerations, previously discussed in the Basic Autolanding section also apply.
 
+
+.. note:: this feature applies only to fixed wind landings. Copter style precision vertical landings using IRLOCK and rangefinder is possible using a LUA script for QuadPlanes, see `Precision Landing LUA applet <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/plane_precland.lua>`__.
+
 Precision Altitude Source
 =========================
 
