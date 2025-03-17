@@ -82,7 +82,7 @@ individual tunable parameters whereas values of 101 or higher
 correspond to sets of related parameters that can be tuned one after
 the other in a flight.
 
-.. note:: Most of the tuneable parameters apply to the VTOL operation of QuadPlanes. Only :ref:`TUNE_PARAM<TUNE_PARAM>` values in the 50-57 range are for fixed wing operation.
+.. note:: Most of the tuneable parameters apply to the VTOL operation of QuadPlanes. Only :ref:`TUNE_PARAM<TUNE_PARAM>` values in the 50-57 and 111-113 ranges are for fixed wing operation.
 
 Use your ground stations parameter interface to see see the full list
 of tunable parameters and parameter sets available for :ref:`TUNE_PARAM<TUNE_PARAM>`. For
@@ -199,6 +199,15 @@ set.
 +    109                      + Set_RateRollDP    +     :ref:`Q_A_RAT_RLL_D<Q_A_RAT_RLL_D>` / :ref:`Q_A_RAT_RLL_P<Q_A_RAT_RLL_P>`                                       +
 +-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
 +    110                      + Set_RateYawDP     +     :ref:`Q_A_RAT_YAW_D<Q_A_RAT_YAW_D>` /  :ref:`Q_A_RAT_YAW_P<Q_A_RAT_YAW_P>`                                      +
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++    111                      + Set_DPRollPitch   +     :ref:`RLL_RATE_D<RLL_RATE_D>` / :ref:`RLL_RATE_P<RLL_RATE_P>` /                                                 +  
++                             +                   +     :ref:`PTCH_RATE_D<PTCH_RATE_D>` / :ref:`PTCH_RATE_P<PTCH_RATE_P>`                                               +
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++    112                      + Set_PIDFFRoll     +     :ref:`RLL_RATE_P<RLL_RATE_P>` / :ref:`RLL_RATE_I<RLL_RATE_I>` /                                                 +  
++                             +                   +     :ref:`RLL_RATE_D<RLL_RATE_D>` / :ref:`RLL_RATE_FF<RLL_RATE_FF>`                                                 +  
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++    113                      + Set_PIDFFPitch    +     :ref:`PTCH_RATE_P<PTCH_RATE_P>` / :ref:`PTCH_RATE_I<PTCH_RATE_I>` /                                             +  
++                             +                   +     :ref:`PTCH_RATE_D<PTCH_RATE_D>` / :ref:`PTCH_RATE_FF<PTCH_RATE_FF>`                                             +  
 +-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
 
 
