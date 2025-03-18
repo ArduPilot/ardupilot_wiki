@@ -951,6 +951,39 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://www.manifoldrobotics.com/
 
+      - .. image:: ../../../images/supporters/supporters_logo_light_dynamix_ltd.png
+            :width: 250px
+            :align: center
+            :target:  https://www.lightdynamix.co.uk
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_ucandrone_societe_anonyme_.png
+            :width: 250px
+            :align: center
+            :target:  https://ucandrone.com/en/
+
+      - .. image:: ../../../images/supporters/supporters_logo_ceres_seeding.png
+            :width: 250px
+            :align: center
+            :target:  https://www.ceresseeding.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_theseus.png
+            :width: 250px
+            :align: center
+            :target:  https://www.theseus.us/
+
+      - .. image:: ../../../images/supporters/supporters_logo_brother_hobby.png
+            :width: 250px
+            :align: center
+            :target:  https://www.brotherhobby.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_robomotic.png
+            :width: 250px
+            :align: center
+            :target:  https://www.robomotic.cl/
+
       -
 
 
