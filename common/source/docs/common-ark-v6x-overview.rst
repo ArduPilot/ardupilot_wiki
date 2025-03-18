@@ -90,6 +90,8 @@ Serial Port Mapping
      - PX4IO/RC
 
 
+.. note:: Serial ports 5 - 8 by default have no protocol assigned. User must set the protocol to the shown port protocol themselves in order to use the port in the manner listed.
+
 More Information
 ================
 
