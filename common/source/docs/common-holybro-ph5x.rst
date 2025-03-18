@@ -5,11 +5,15 @@
 Pixhawk 5X Flight Controller
 ============================
 
-Pixhawk 5X® is the latest update to the successful family of Pixhawk® autopilots made by Holybro, featuring vibration isolation of IMUs, triple redundant IMUs, double redundant barometers on separate buses, IMU heating, and integrated Ethernet for high speed connections to companion computers.
+Pixhawk 5X® is the latest update to the successful family of Pixhawk® autopilots made by Holybro, featuring vibration isolation of IMUs, triple redundant IMUs, double redundant barometers on separate buses, and IMU heating.
 
 .. image:: ../../../images/holybro-pixhawk5x/pixhawk5x_exploded_diagram.jpg
     :target: ../_images/pixhawk5x_exploded_diagram.jpg
     :width: 450px
+
+.. note:: 
+
+    This board also includes integrated Ethernet but ArduPilot's networking support is not enabled on F7 boards (`see issue here <https://github.com/ArduPilot/ardupilot/issues/26397>`__)
 
 Where To Buy
 ============
