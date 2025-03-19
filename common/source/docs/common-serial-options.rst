@@ -348,7 +348,7 @@ Winch
    <td>32</td>
    <td>
 
-MSP Telemetry see :ref:`common-msp-overview`
+MSP Telemetry see :ref:`common-msp-overview-4.2`
 
 .. raw:: html
 
@@ -358,7 +358,7 @@ MSP Telemetry see :ref:`common-msp-overview`
    <td>33</td>
    <td>
 
-DJI FPV telemetry see :ref:`common-msp-osd-overview`
+DJI FPV telemetry see :ref:`common-msp-osd-overview-4.2`
 
 .. raw:: html
 
@@ -448,7 +448,7 @@ CoDevESC
    <td>42</td>
    <td>
 
-DisplayPort, see :ref:`common-msp-osd-overview-4.2`
+DisplayPort, see :ref:`common-displayport`
 
 .. raw:: html
 

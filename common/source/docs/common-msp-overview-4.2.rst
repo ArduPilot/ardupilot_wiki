@@ -4,7 +4,7 @@
 Multiwii Serial Protocol (MSP)
 ==============================
 
-ArduPilot supports the MSP protocol for telemetry, OSDs, and sensors via any of its serial ports. This allows ArduPilot to send its telemetry data to MSP compatible devices, such as DJI goggles, for On Screen Display (OSD) (See :ref:`common-msp-osd-overview`). It can also be used by external OSDS, such as MWOSD, when setup for MSP protocol (ie betaflight/Inav).
+ArduPilot supports the MSP protocol for telemetry, OSDs, and sensors via any of its serial ports. This allows ArduPilot to send its telemetry data to MSP compatible devices, such as DJI goggles, for On Screen Display (OSD) (See :ref:`common-msp-osd-overview-4.2`). It can also be used by external OSDS, such as MWOSD, when setup for MSP protocol (ie betaflight/Inav).
 
 Protocol overview
 -----------------
