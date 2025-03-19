@@ -65,7 +65,7 @@ DJI Digital FPV System
 .. figure:: ../../../images/DJI_FPV.jpg
    :target: ../_images/DJI_FPV.jpg
    
-See :ref:`common-msp-osd-overview` for setup instructions for OSD display on DJI goggles.
+See :ref:`common-msp-osd-overview-4.2` for setup instructions for OSD display on DJI goggles.
 
 Overview
 --------
