@@ -31,6 +31,7 @@ tuning options for the vehicle.
     Auxiliary Functions <common-auxiliary-functions>
     Battery Voltage Compensation <battery-voltage-compensation>
     Bootloader Update <common-bootloader-update>
+    Flying without GPS or Airspeed <no-gps-airspeed>
 [/site]
     BLHeli ESCs <common-blheli32-passthru>
     CAN Bus Setup <common-canbus-setup-advanced>
