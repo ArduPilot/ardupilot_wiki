@@ -26,3 +26,4 @@ Getting more info
    
    Complete parameter list <docs/parameters>
    Complete log message list <docs/logmessages>
+   Board Feature List <docs/binary-features>
