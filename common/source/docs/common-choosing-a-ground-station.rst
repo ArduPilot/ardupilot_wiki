@@ -128,10 +128,6 @@ Supports multi-node installation, meaning that it is possible to connect multipl
 
 -  **Platform**: Windows, Mac OS X, Ubuntu
 -  **Licence**: Proprietary with a free licence available as well (UgCS Open)
-
-.. image:: https://www.ugcs.com/files/2016-04/1459769168_elevation-profile.jpeg
-    :target:  https://www.ugcs.com/files/2016-04/1459769168_elevation-profile.jpeg
-
 -  `UgCS Website <http://www.ugcs.com>`__
 -  `DIY Drones Group for UgCS Users <https://diydrones.com/group/ugcs>`__
 -  `UgCS Github Repository <https://github.com/ugcs>`__
@@ -269,13 +265,12 @@ Android
 For Android devices, you will need:
 
 -  Android based tablet or smartphone. *QGroundControl* can utilize Bluetooth, WIFI, or USB connectivity to the autopilot from the phone. For USB the device must be ablke to act as a USB host (OTG). 
-
-A connectivity method to vehicle's autopilot:
--  :ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` or other radio telemetry (:ref:`common-telemetry-landingpage`) with OTG cable can be used for long range, in-the-air, connectivity to a similar vehicle telemetry unit.
--  WIFI (:ref:`common-esp8266-telemetry`)
--  Bluetooth (:ref:`common-mission-planner-bluetooth-connectivity`)
--  for benchtop USB connectivity, a USB OTG cable (typically less than $2 on `ebay <http://www.ebay.com/sch/i.html?_trksid=m570.l3201&_nkw=usb+otg+cable&_sacat=0>`__ and`Amazon <http://www.amazon.com/T-Flash-Adapter-Samsung-GT-i9100-GT-N7000/dp/B005FUNYSA/ref=sr_1_5?ie=UTF8&qid=1376262351&sr=8-5&keywords=android+otg+cable>`__).
--  Some other telemetry method (:ref:`common-telemetry-landingpage`)
+- A connectivity method to vehicle's autopilot:
+   - :ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` or other radio telemetry (:ref:`common-telemetry-landingpage`) with OTG cable can be used for long range, in-the-air, connectivity to a similar vehicle telemetry unit.
+   - WIFI (:ref:`common-esp8266-telemetry`)
+   - Bluetooth (:ref:`common-mission-planner-bluetooth-connectivity`)
+   - for benchtop USB connectivity, a USB OTG cable (typically less than $2 on `ebay <http://www.ebay.com/sch/i.html?_trksid=m570.l3201&_nkw=usb+otg+cable&_sacat=0>`__ and `Amazon <http://www.amazon.com/T-Flash-Adapter-Samsung-GT-i9100-GT-N7000/dp/B005FUNYSA/ref=sr_1_5?ie=UTF8&qid=1376262351&sr=8-5&keywords=android+otg+cable>`__ ).
+   - Some other telemetry method (:ref:`common-telemetry-landingpage`)
 
 iOS
 ---
