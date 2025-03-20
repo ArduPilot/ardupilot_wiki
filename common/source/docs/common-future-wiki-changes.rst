@@ -21,6 +21,8 @@ New Board Support
 - SULIGH7 Reference Design, see https://github.com/ArduPilot/ardupilot_wiki/pull/6637
 - SpeedyBee F405 AIO, see https://github.com/ArduPilot/ardupilot_wiki/pull/6664
 - StellarH7V2, see https://github.com/ArduPilot/ardupilot_wiki/pull/6681
+- StellarF4, https://github.com/ArduPilot/ardupilot_wiki/pull/6702
+- StellarF4V2, https://github.com/ArduPilot/ardupilot_wiki/pull/6700
 
 New Peripheral Support
 ======================
