@@ -25,6 +25,7 @@ Getting more info
    :hidden:
 
    Ready to Dive/Use Vehicles <docs/common-rtf>
+   Choosing a Ground Control Stations <docs/common-choosing-a-ground-station>
    Complete parameter list <docs/parameters>
    Complete log message list <docs/logmessages>
    MAVLink message support <https://ardupilot.org/dev/docs/ArduSub_MAVLink_Messages.html>
