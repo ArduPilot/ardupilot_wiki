@@ -227,10 +227,14 @@ Closed Hardware
     SpeedyBee F4 V5 <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/speedybeef4v5>
     SpeedyBee F405 Mini <common-speedybeef405-mini>
     SpeedyBeeF405WING/WING Mini <common-speedybeef405wing>
+<<<<<<< HEAD
     StellarF4 <common-stellarf4>
     StellarF4V2 <common-stellarf4v2>
     StellarH7V2 <common-stellarh7v2>
     SVehicle E2 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SVehicle-E2/README.md>
+=======
+    StellarF4V2 <common-stellarf4v2>
+>>>>>>> 0cc7f7174 (4.7:StellarF4V2)
     TBS Lucid H7 <common-tbs-lucidh7>
     TBS Lucid H7 Wing <common-tbs-lucid-h7-wing>
     TBS Lucid H7 Wing AIO <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/TBS_LUCID_H7_WING_AIO/README.md>
