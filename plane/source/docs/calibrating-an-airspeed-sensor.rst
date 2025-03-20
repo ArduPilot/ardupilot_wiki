@@ -19,15 +19,26 @@ If you have an airspeed sensor installed then it is critical that you do
 pre-flight checks to ensure that it is working correctly, and ensure
 that it is correctly zeroed.
 
-After you start up the autopilot on your aircraft you should wait at least 1
+During initialization, the firmware checks if you have enabled an airspeed sensor and that it is healthy, otherwise a warning will be given, but arming will still be allowed, so checking the ground station messages is important.
+
+The :ref:`ARSPD_OFFSET<ARSPD_OFFSET>` (and ``ARSPD2_OFFSET`` if a second sensor is enabled)  offset is measured and set at bootup or if manually commanded from the ground station.
+
+.. warning:: It is very important to cover the pitot tube during power up, or when you wait and then re-calibrate. An inaccurate static calibration can result in the airspeed being reported too high, causing auto-throttle controlled modes to use very low throttle and potentially cause a crash.
+
+If the offset has changed a lot since the last bootup, a warning will be issued. This is often an indication that you forget to cover the pitot during boot or manual calibration. The sensitivity of this warning is set by :ref:`ARSPD_OFF_PCNT<ARSPD_OFF_PCNT>` which applies to both sensors.
+
+:ref:`ARSPD_SKIP_CAL<ARSPD_SKIP_CAL>` and :ref:`ARSPD2_SKIP_CAL<ARSPD2_SKIP_CAL>` allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration or requiring a manual calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.
+
+After you start up the autopilot on your aircraft its recommended that you wait at least 1
 minute for your electronics to warm up, preferably longer, and then do a
-pre-flight calibration of your airspeed sensor. Your ground station
-software should have a menu for doing this, usually called "Preflight
+pre-flight manual calibration of your airspeed sensor. This is important if your sensor temperature does not match the ambient, but may be skipped if its close to ambient temperature.
+
+Manual Offset Calibration
+=========================
+Your ground station software should have a menu for doing this, usually called "Preflight
 Calibration". You need to loosely cover your airspeed sensor to stop
 wind from affecting the result, then press the button. The calibration
 will take a couple of seconds.
-
-.. warning:: It is very important to cover the pitot tube during power up, or when you wait and then re-calibrate as above. An inaccurate static calibration can result in the airspeed being reported too high, causing auto-throttle controlled modes to use very low throttle and potentially cause a crash.
 
 .. image:: ../images/preflight.jpg
     :target: ../_images/preflight.jpg
@@ -40,8 +51,8 @@ before takeoff. To do that you should blow into the airspeed sensor and
 make sure that the "AS" airspeed sensor value in your HUD rises as you
 blow into it.
 
-Calibrating the airspeed sensor
-===============================
+Calibrating the airspeed sensor gain
+====================================
 
 The :ref:`ARSPD_RATIO <ARSPD_RATIO>` parameter
 determines how ArduPilot maps the differential pressure from your airspeed
@@ -58,7 +69,7 @@ Adjusting
 are presented below.
 
 Automatic calibration
-=====================
+---------------------
 
 1. Go to Mission Planner => CONFIG/TUNING => Full Parameter List, change :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` to 1 and click 'Write Params' to send the value to the autopilot.
 2. Take-off and fly a repeated circuit or circular loiter for 5 minutes. This can be done in any mode, but if the autopilot is already tuned
@@ -91,7 +102,7 @@ Automatic calibration
 .. note:: You do not have to have :ref:`ARSPD_USE<ARSPD_USE>` enabled to do automatic airspeed calibration. You can set :ref:`ARSPD_USE<ARSPD_USE>` = 0 if you would prefer not to use the sensor until it is calibrated.
 
 Manual calibration
-==================
+------------------
 
 To determine the right airspeed ratio manually you should do a test
 flight in FBWA mode, with the following procedure:
