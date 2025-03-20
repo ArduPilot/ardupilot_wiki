@@ -176,6 +176,7 @@ Closed Hardware
     SpeedyBee F4 V3/V4 <common-speedybeef4-v3>
     SpeedyBee F405 Mini <common-speedybeef405-mini>
     SpeedyBeeF405WING/WING Mini <common-speedybeef405wing>
+    StellarF4 <common-stellarf4>
     TBS Lucid H7 <common-tbs-lucidh7>
     ThePeach FCC-K1 <common-thepeach-k1>
     ThePeach FCC-R1 <common-thepeach-r1>
