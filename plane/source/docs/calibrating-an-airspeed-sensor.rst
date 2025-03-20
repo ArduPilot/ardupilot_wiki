@@ -46,6 +46,8 @@ will take a couple of seconds.
 Choosing that action will re-calibrate both your ground barometric
 pressure and your airspeed sensor.
 
+.. note:: setting :ref:`ARSPD_SKIP_CAL<ARSPD_SKIP_CAL>` or :ref:`ARSPD2_SKIP_CAL<ARSPD2_SKIP_CAL>` to "2", will force you to manually recalibrate the offset in order to arm, each boot in order to remind users that need to allow the sensor to settle to ambient temperature.
+
 Next you should check that your airspeed sensor is working correctly
 before takeoff. To do that you should blow into the airspeed sensor and
 make sure that the "AS" airspeed sensor value in your HUD rises as you
