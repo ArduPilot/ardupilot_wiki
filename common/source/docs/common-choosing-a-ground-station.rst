@@ -1,5 +1,5 @@
 .. _common-choosing-a-ground-station:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 =========================
 Choosing a Ground Station
 =========================
@@ -289,4 +289,37 @@ Desktop PCs (Windows/Mac/Linux)
 For Desktop devices you will need:
 
 -  A USB cable, BT module, WIFI adapter, or other connectivity means as listed here (:ref:`common-telemetry-landingpage`)
+
+[site wiki="plane"]
+
+.. toctree::
+   :hidden:
+
+   ArduPlane_MAVLink_Messages
+
+[/site]
+[site wiki="copter"]
+
+.. toctree::
+   :hidden:
+
+   ArduCopter_MAVLink_Messages
+
+[/site]
+[site wiki="rover"]
+
+.. toctree::
+   :hidden:
+
+   Rover_MAVLink_Messages
+
+[/site]
+[site wiki="sub"]
+
+.. toctree::
+   :hidden:
+
+   ArduSub_MAVLink_Messages
+
+[/site]
 
