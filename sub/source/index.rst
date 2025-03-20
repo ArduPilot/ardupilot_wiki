@@ -26,4 +26,5 @@ Getting more info
    
    Complete parameter list <docs/parameters>
    Complete log message list <docs/logmessages>
+   MAVLink message support <https://ardupilot.org/dev/docs/ArduSub_MAVLink_Messages.html>
    Board Feature List <docs/binary-features>
