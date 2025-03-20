@@ -34,6 +34,7 @@ New Features
 ============
 - Option to change Mounts to Neutral on rc failsafe, see https://github.com/ArduPilot/ardupilot_wiki/pull/6430
 - Auto-resizing scripting heap if needed at runtime, see https://github.com/ArduPilot/ardupilot_wiki/pull/6432
+- New Airspeed sensor bootup skip cal option, see see https://github.com/ArduPilot/ardupilot_wiki/pull/6706
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
