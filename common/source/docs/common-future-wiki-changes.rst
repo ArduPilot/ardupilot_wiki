@@ -23,6 +23,7 @@ New Board Support
 - StellarH7V2, see https://github.com/ArduPilot/ardupilot_wiki/pull/6681
 - StellarF4, https://github.com/ArduPilot/ardupilot_wiki/pull/6702
 - StellarF4V2, https://github.com/ArduPilot/ardupilot_wiki/pull/6700
+- Lumineer LUXF765-NDAA, see https://github.com/ArduPilot/ardupilot_wiki/pull/6711
 
 New Peripheral Support
 ======================
