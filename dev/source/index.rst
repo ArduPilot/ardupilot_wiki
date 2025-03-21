@@ -55,25 +55,25 @@ different projects which are listed below.  Those marked with an asterix
 (\*) are peer projects that have their own owners outside the core
 ArduPilot dev team.
 
--  Plane (`wiki <http://plane.ardupilot.com/>`__,
+-  Plane (:ref:`wiki <plane:home>`,
    `code <https://github.com/ArduPilot/ardupilot>`__) - autopilot for
    planes
--  Copter (`wiki <http://copter.ardupilot.com/>`__,
+-  Copter (:ref:`wiki <copter:home>`,
    `code <https://github.com/ArduPilot/ardupilot>`__) - autopilot for
    multicopters and traditional helicopters
--  Rover (`wiki <http://rover.ardupilot.com/>`__,
+-  Rover (:ref:`wiki <rover:home>`,
    `code <https://github.com/ArduPilot/ardupilot>`__) - autopilot for
    ground vehicles
--  Sub (`wiki <https://www.ardusub.com/>`__,
+-  Sub (:ref:`wiki <sub:home>`,
    `code <https://github.com/ArduPilot/ardupilot>`__) - autopilot for
    submersible vehicles
--  Antenna Tracker (`wiki <https://ardupilot.org/antennatracker/index.html>`__,
+-  Antenna Tracker (:ref:`wiki <antennatracker:home>`,
    `code <https://github.com/ArduPilot/ardupilot>`__) - for automatically aiming an antenna at a vehicle
--  Mission Planner (`wiki <http://planner.ardupilot.com/>`__,
+-  Mission Planner (:ref:`wiki <planner:home>`,
    `code <https://github.com/ArduPilot/MissionPlanner>`__) - the most
    commonly used ground station written in C# for windows but also runs
    on Linux and MacOS via mono
--  APM Planner 2.0 (`wiki <http://planner2.ardupilot.com/>`__,
+-  APM Planner 2.0 (:ref:`wiki <planner2:home>`,
    `code <https://github.com/ArduPilot/apm_planner>`__) is a ground
    station specifically for APM written in C++ using the Qt libraries
 -  :ref:`MAVProxy <mavproxy:home>`
@@ -87,7 +87,7 @@ ArduPilot dev team.
    - android ground station
 -  `QGroundControl* <http://www.qgroundcontrol.org/>`__ is an alternative ground station written in C++ using the Qt libraries
 -  `PX4* <https://pixhawk.org/start>`__ - designers of the original PX4FMU hardware (from which the Pixhawk was developed)
--  `MAVLink* <http://www.qgroundcontrol.org/mavlink/start>`__ -
+-  `MAVLink* <https://mavlink.io>`__ -
    the protocol for communication between the ground station, flight
    controller and some peripherals including the OSD. A "Dummy's Guide" to
    working with MAVLink is

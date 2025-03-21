@@ -78,7 +78,7 @@ Vehicle Parameter References
 - :ref:`Copter Parameters <copter:parameters>`
 - :ref:`Plane Parameters <plane:parameters>`
 - :ref:`Rover Parameters <rover:parameters>`
-- `Sub Parameters <http://www.ardusub.com/developers/full-parameter-list.html>`_
+- :ref:`Sub Parameters <sub:parameters>`
 
 .. toctree::
     :maxdepth: 1
