@@ -8,8 +8,11 @@ Torqeedo Electric Motors
 
 Rover-4.2.0 (and higher) supports controlling a single `Torqeedo Travel <https://www.torqeedo.com/en/products/outboards/travel>`__, `Ultralight <https://www.torqeedo.com/en/products/outboards/ultralight>`__ or `Cruise <https://www.torqeedo.com/en/products/outboards/cruise>`__ motor using its custom RS485 protocol.
 
-Some images from this page are courtesy of torqeedo.com
+Rover-4.7 (and higher) supports controlling single or dual Torqeedo motors that use ``TorqLink`` CAN protocol for motor control.
 
+Some images from this page are courtesy of torqeedo.com
+RS485 Controlled Motors
+=======================
 What to Buy
 -----------
 
@@ -112,6 +115,11 @@ Introduction Videos
 
 .. youtube:: Wt7vfV4CcFc
     :width: 100%
+
+TorqLink Controlled Motors
+==========================
+
+A LUA driver is provided 'here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/torqeedo-torqlink.lua>`__ for control of one or two motors via the ``SERVOx_FUNCTION`` of "Throttle" or "ThrottleLeft, ThrottleRight". The motor(s) control is attached to the autopilot's CAN port. Follow the `readme <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/torqeedo-torqlink.md>`__ for the driver.
 
 [copywiki destination="rover"]
 
