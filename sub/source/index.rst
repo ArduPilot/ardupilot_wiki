@@ -28,5 +28,5 @@ Getting more info
    Choosing a Ground Control Stations <docs/common-choosing-a-ground-station>
    Complete parameter list <docs/parameters>
    Complete log message list <docs/logmessages>
-   MAVLink message support <https://ardupilot.org/dev/docs/ArduSub_MAVLink_Messages.html>
+   MAVLink message support <docs/ArduSub_MAVLink_Messages>
    Board Feature List <docs/binary-features>
