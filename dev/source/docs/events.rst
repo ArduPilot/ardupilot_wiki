@@ -9,7 +9,7 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
-- Sep 5th ~ 7th 2025: Developer conference in Yorshire, UK (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-2025-september-5th-7th-in-yorkshire-uk/128501>`__)
+- Sep 5th ~ 7th 2025: Developer conference in Yorkshire, UK (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-2025-september-5th-7th-in-yorkshire-uk/128501>`__)
 
 Past Events
 -----------
