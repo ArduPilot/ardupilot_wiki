@@ -74,7 +74,10 @@ Open Hardware
     TauLabs Sparky2 <common-taulabs-sparky2>
     ZeroOneX6 <common-zeroonex6>
 
-\* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
+\* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:
+Camera Switch
+=============
+GPIO 81 controls which camera input (CAM1 or CAM2) is applied to the internal OSD. A RELAY function (see :ref:`common-relay`)can be enabled to control the switching.`Firmware Limitations <common-limited_firmware>` for details.
 
 Closed Hardware
 ===============
@@ -176,6 +179,7 @@ Closed Hardware
     SpeedyBee F4 V3/V4 <common-speedybeef4-v3>
     SpeedyBee F405 Mini <common-speedybeef405-mini>
     SpeedyBeeF405WING/WING Mini <common-speedybeef405wing>
+    StellarH7V2 <common-stellarh7v2>
     TBS Lucid H7 <common-tbs-lucidh7>
     ThePeach FCC-K1 <common-thepeach-k1>
     ThePeach FCC-R1 <common-thepeach-r1>
