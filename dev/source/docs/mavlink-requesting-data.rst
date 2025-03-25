@@ -10,7 +10,8 @@ The ground station or companion computer can request the data it wants (and the 
    - Send `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_DATA_STREAM>`__ messages to set the rate for groups of messages
    - Send a `SET_MESSAGE_INTERVAL <https://mavlink.io/en/messages/common.html#MAV_CMD_SET_MESSAGE_INTERVAL>`__ command (within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message) to precisely control the rate of an individual message.  Note this is only supported on ArduPilot 4.0 and higher
    - Send a `REQUEST_MESSAGE <https://mavlink.io/en/messages/common.html#MAV_CMD_REQUEST_MESSAGE>`__ command (within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message) to request a single instance of a message.  Note this is only supported on ArduPilot 4.0 and higher
-   - create configuration files stored on SD card or in ROMFS specifying message stream rates on a per-channel basis
+   - Create configuration files stored on the SD card or in ROMFS specifying message stream rates on a per-channel basis
+   - Install a Lua script to set individual messages rates (e.g. Set Message Interval via a Lua script).  See "Using a LUA Script" section below.
 
 Note that the stream rates will temporarily be 4 or more times slower than requested while parameters and waypoints are being sent.
 
@@ -18,8 +19,7 @@ More details on the above methods can be found below.
 
 .. note::
 
-   If you find your message rates are reverting to some fixed value after you set them, it is probably a Ground Control station adjusting the stream rates to suit itself.  Most Ground Control Stations will have a control to stop the GCS doing this - for example in MAVProxy use ``set streamrate -1``.  If adjusting the configuration of the GCS is infeasible, you can set bit 12 in the ``SERIALn_OPTIONS`` parameter corresponding to the serial port on which the mavlink traffic is being transfered to force ArduPilot to ignore attempts by the GCS to set message rates via streamrate commands.
-
+   If you find your message rates are reverting to some fixed value after you set them, see the "Rates Reverting to some Fixed value" section at the bottom of this page
 
 Using SRx Parameters
 --------------------
@@ -233,6 +233,16 @@ The second parameter is a path relative to the ArduPilot checkout's root directo
 
 Example use cases of this include locking telemetry rates on boards that can't run scripting, or before scripting can be run.
 
+Using a Lua Script
+------------------
+
+- Download the `message_interval.lua <https://raw.githubusercontent.com/ArduPilot/ardupilot/refs/heads/master/libraries/AP_Scripting/examples/message_interval.lua>`__ Lua script
+- Open the script in an editor (like Notepad)
+- Ensure each mavlink message you wish to enable or disable is listed in the "mavlink message ids" (around line 13) and "intervals" array (around line 36)
+- Upload the script to the autopilot by following :ref:`these instructions <copter:common-lua-scripts>`
+- Restart the autopilot and confirm no errors appear on the ground stations's Messages tab
+- Follow the instructions below to ensure the messages are appearing at the desired rate.  If the rates are variable, this may be because of a conflict between the Lua script and a GCS, please see the "Rates Reverting to some Fixed value" section below
+
 Checking The Message Rates
 --------------------------
 
@@ -252,3 +262,16 @@ If using MAVProxy:
 
  - module load messagerate
  - messagerate status
+
+Rates Reverting to some Fixed value
+-----------------------------------
+
+If you find the message rates are reverting to some fixed rate (often 4hz) after you set them, it is probably a Ground Control station adjusting the rates.
+
+Most Ground Control Stations have a control to disable this behaviour.  For example:
+
+- If using MAVProxy type ``set streamrate -1`` into the console
+- If using Misison Planner, open the Config, Planner screen and set the "Telemetry Rates" dropdowns to -1
+- If using QGroundControl, open Application Settings, Telemetry and move the "Controlled By vehicle" slider to the right
+
+If adjusting the GCS behaviour is impossible, set the appropriate ``SERIALn_OPTIONS`` parameter's bit 12 ("Ignore Streamrate") to ignore attempts by the GCS to set message rates via streamrate commands.  For example if Serial1/Telem1's rates are being inconveniently adjusted by the GCS, set the :ref:`SERIAL1_OPTIONS <SERIAL1_OPTIONS>` parameter value
