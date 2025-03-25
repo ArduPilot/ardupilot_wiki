@@ -132,7 +132,6 @@ Closed Hardware
     Mamba H743 v4 <common-mambaH743v4>
     MakeFlyEasy PixSurveyA1 <common-makeflyeasy-PixSurveyA1>
     MakeFlyEasy PixSurveyA1-IND <common-makeflyeasy-PixSurveyA1-IND>
-    MakeFlyEasy PixSurveyA2 <common-makeflyeasy-PixSurveyA2>
     MakeFlyEasy PixPilot-C3 <common-makeflyeasy-PixPilot-C3>
     MakeFlyEasy PixPilot-V3 <common-makeflyeasy-PixPilot-V3>
     MakeFlyEasy PixPilot-V6 <common-makeflyeasy-PixPilot-V6>
