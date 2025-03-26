@@ -4,6 +4,9 @@
 makeflyeasy PixSurveyA2
 =======================
 
+
+**ARCHIVED! Information on this page is no longer valid**
+
 .. figure:: ../../../images/PixSurveyA2.jpg
    :target: ../_images/PixSurveyA2.jpg
    :width: 450px
