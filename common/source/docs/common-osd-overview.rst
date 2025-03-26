@@ -96,6 +96,7 @@ The options are:
 - 0 = switches to next screen if the set RC channel's (:ref:`OSD_CHAN<OSD_CHAN>`) value is changed
 - 1 = directly selects a screen based on the set pwm limits for each respective screen. RC channel value must change for new pwm value to be recognized.
 - 2 = toggles screens on a low to high transition of set RC channel. keeps toggling to next screen every 1s while channel value is kept high
+- 3 = switches to next screen if the sticks in the next position: roll - middle, pitch - high, throttle - middle, yaw - left. Keeps toggling to next screen every 1s while sticks in mentioned positions.
 
 
 
