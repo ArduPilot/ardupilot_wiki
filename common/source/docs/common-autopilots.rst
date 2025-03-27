@@ -257,4 +257,4 @@ Schematics for some of the "Open Hardware" autopilots `can be found here <https:
     TBS Lucid Pro <common-tbs-lucidpro>
 
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

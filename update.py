@@ -67,7 +67,7 @@ if sys.version_info < (3, 8):
     print("Minimum python version is 3.8")
     sys.exit(1)
 
-DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover']
+DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover', 'sub']
 ALL_WIKIS = [
     'copter',
     'plane',
