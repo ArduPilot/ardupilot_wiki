@@ -54,4 +54,4 @@ More Information
 
 * `ARK FPV documentation <https://arkelectron.gitbook.io/ark-documentation/flight-controllers/ark-fpv>`_
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

@@ -51,4 +51,4 @@ Where to Buy
 
 - Available from various retailers and directly from the manufacturer `SpeedyBee <https://www.speedybee.com/speedy-bee-f4-aio-flight-controller/>`__
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

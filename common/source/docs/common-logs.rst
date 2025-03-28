@@ -21,7 +21,7 @@ Topics related to logging and analysis
 .. toctree::
     :maxdepth: 1
 
-[site wiki="plane,copter,dev,planner,rover"]
+[site wiki="plane,copter,dev,planner,rover,sub"]
     Dataflash Logs <common-downloading-and-analyzing-data-logs-in-mission-planner>
     Telemetry Logs <https://ardupilot.org/planner/docs/mission-planner-telemetry-logs.html>
     Diagnosing problems using Logs <common-diagnosing-problems-using-logs>
@@ -38,11 +38,14 @@ Topics related to logging and analysis
 [site wiki="antennatracker"]
     Antenna Tracker Log Messages <logmessages>
 [/site]
+[site wiki="sub"]
+    Sub Log Messages <logmessages>
+[/site]
 [site wiki="plane"]
     Log Analysis Case Study: Fly-by-Wire <case-study-fly-by-wire>
     Log Analysis Case Study: Turn Rate Adjustment <case-study-turn-rate>
 [/site]
-[site wiki="plane,copter,rover,dev,planner"]
+[site wiki="plane,copter,rover,sub,dev,planner"]
     Measuring Vibration <common-measuring-vibration>
     Measuring Vibration with "Batch Sampling" <common-imu-batchsampling>
     Measuring Vibration with "Raw IMU Logging" (Preferred) <common-raw-imu-logging>
@@ -64,4 +67,4 @@ Tools for Log Analysis
     PlotJuggler <https://discuss.ardupilot.org/t/log-inspection-with-plotjuggler/122216>
 
 
-[copywiki destination="copter,plane,rover,dev,antennatracker,planner"]
+[copywiki destination="copter,plane,rover,dev,sub,antennatracker,planner"]

@@ -106,7 +106,7 @@ Example Flight
    :target: ../_images/mp_rally_point_dialog.jpg
 
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover,sub,planner"]
 
 Appendix
 ========

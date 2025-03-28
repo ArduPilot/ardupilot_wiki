@@ -48,3 +48,4 @@ Avoidance Types
     Dijkstra's with BendyRuler Path Planning Around Obstacles and Fences<common-oa-dijkstrabendyruler>
 [/site]
 
+[copywiki destination="plane,copter,rover"]

@@ -138,4 +138,4 @@ Layout and Dimensions
 =====================
 
 See `Pix32v6 dimensions <https://docs.holybro.com/autopilot/pix32-v6/dimensions>`__
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

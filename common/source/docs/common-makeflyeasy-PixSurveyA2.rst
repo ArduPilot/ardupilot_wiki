@@ -1,11 +1,11 @@
-.. _common-makeflyeasy-PixSurveyA1:
+.. _common-makeflyeasy-PixSurveyA2:
 
 =======================
-makeflyeasy PixSurveyA1
+makeflyeasy PixSurveyA2
 =======================
 
-.. figure:: ../../../images/PixSurveyA1.jpg
-   :target: ../_images/PixSurveyA1.jpg
+.. figure:: ../../../images/PixSurveyA2.jpg
+   :target: ../_images/PixSurveyA2.jpg
    :width: 450px
 
 
@@ -14,34 +14,36 @@ Specifications
 
 -  **Processor**:
 
-   -  32-bit STM32F427VIT6 ARM Cortex M4 core with FPU
-   -  168 Mhz/256 KB RAM/2 MB Flash
+   -  32-bit STM32H743VIT6 ARM Cortex M7 core with FPU
+   -  480 Mhz/1 MB RAM/2 MB Flash
    -  32-bit failsafe co-processor (STMF103)
 
 -  **Sensors**
 
    -  Three redundant IMUs (accels, gyros and compass)
-   -  Gyro/Accelerometers: ICM20948 or MPU9250, ICM20602, MPU6000
+   -  Gyro/Accelerometers: two IIM42652 , one ICM-42688-P
    -  Barometers: Two redundant MS5611 barometers
-   -  Compass: AK8960 or AK09916
+   -  Compass: IST8310
 
 -  **Power**
 
    -  Redundant power supply with automatic failover
-   -  Power supply 4.8V-5.8V
+   -  Power supply 4V-6V
 
 -  **Interfaces**
 
    -  14x PWM servo outputs (8 from IO, 6 from FMU)
    -  S.Bus servo output
    -  R/C inputs for CPPM, Spektrum / DSM and S.Bus
-   -  5x general purpose serial ports
+   -  4x general purpose serial ports
    -  2x I2C ports
    -  2x CAN Bus interface
    -  MicroSD card reader
    -  Type-C USB
    -  High-powered piezo buzzer driver (on expansion board)
    -  Safety switch / LED
+   -  12V Power output
+   -  Servo rail BEC independent power input for servos
 
 -  **Dimensions**
 
@@ -52,13 +54,13 @@ UART Mapping
 ============
 
  - SERIAL0 -> console (primary mavlink, usually USB)
- - SERIAL1 -> USART2 (telem1)
- - SERIAL2 -> USART3 (Telem2) RTS/CTS pins
- - SERIAL3 -> UART4 (primary GPS)
- - SERIAL4 -> UART8 (GPS2)
+ - SERIAL1 -> USART2  (telem1,DMA-enabled)
+ - SERIAL2 -> USART3  (Telem2,DMA-enabled)
+ - SERIAL3 -> UART4   (GPS1)
+ - SERIAL4 -> UART8   (GPS2)
 
 Connector pin assignments
-==========================
+=========================
 
 TELEM1, TELEM2 ports
 --------------------
@@ -289,29 +291,38 @@ The PPM/SBus.in pin, which by default is mapped to a timer input, can be used fo
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL4 (UART8) would need to be used for receiver connections. Below are setups using UART4. :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` should be set to "23".
 
-- FPort would require :ref:`SERIAL4_OPTIONS<SERIAL6_OPTIONS>` be set to "15".
+- FPort would require :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` be set to "15".
 
-- CRSF would require :ref:`SERIAL4_OPTIONS<SERIAL6_OPTIONS>` be set to "0".
+- CRSF would require :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` be set to "0".
 
-- SRXL2 would require :ref:`SERIAL4_OPTIONS<SERIAL6_OPTIONS>` be set to "4" and connects only the UART4 TX pin.
+- SRXL2 would require :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` be set to "4" and connects only the UART4 TX pin.
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
 
 PWM Output
 ==========
 
-The PixSurveyA1 supports up to 14 PWM outputs. All 14 outputs
-support all normal PWM output formats. All FMU outputs (9-14) support DShot.
+The PixSurveyA2 supports up to 14 PWM outputs. First first 8 outputs (1 to 8) are controlled by a dedicated STM32F103 IO controller. These 8
+outputs support all PWM output formats, but not DShot.
 
-The 6 FMU outputs are in 4 groups:
-
- - Outputs 9, 10, 11 and 12 in group1
- - Outputs 13 and 14 in group2
-
+The remaining 6 outputs (9 to 14) are the "auxiliary"
+outputs. These are directly attached to the STM32F427 and support all
+PWM protocols as well as DShot.
 
 
-FMU outputs within the same group need to use the same output rate and protocol. If
-any output in a group uses DShot then all channels in that group need
+The 8 main PWM outputs are in 3 groups:
+
+ - PWM 1 and 2 in group1
+ - PWM 3 and 4 in group2
+ - PWM 5, 6, 7 and 8 in group3
+
+The 6 auxiliary PWM outputs are in 2 groups:
+
+ - PWM 1, 2, 3 and 4 in group1
+ - PWM 5 and 6 in group2
+
+Channels within the same group need to use the same output rate. If
+any channel in a group uses DShot then all channels in the group need
 to use DShot.
 
 
@@ -326,9 +337,9 @@ Enable Battery monitor with these parameter settings :
 
 Then reboot.
 
-:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 2
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 14
 
-:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 3
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 15
 
 :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 18
 
@@ -336,17 +347,24 @@ Then reboot.
 
 :ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN__AP_BattMonitor_Analog>` 13
 
-:ref:`BATT2_CURR_PIN<BATT2_CURR_PIN__AP_BattMonitor_Analog>` 14
+:ref:`BATT2_CURR_PIN<BATT2_CURR_PIN__AP_BattMonitor_Analog>` 4
 
 :ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT__AP_BattMonitor_Analog>` 18
 
 :ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT__AP_BattMonitor_Analog>` 24
 
+Loading Firmware
+================
+
+The board comes pre-installed with an ArduPilot compatible bootloader,
+allowing the loading of xxxxxx.apj firmware files with any ArduPilot
+compatible ground station.
+
+Firmware for these boards can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "PixSurveyA2".
 
 Where to Buy
 ============
 
 `makeflyeasy <https://www.makeflyeasy.com>`_
-`aliexpress <https://th.aliexpress.com/item/1005003505282459.html?pdp_npi=2%40dis%21USD%21US%20%24175.00%21US%20%24175.00%21%21%21%21%21%402132e4d516582952034474821e775e%2112000026091310279%21sh&spm=a2g0o.store_pc_home.productList_2002152534578.subject_1&gatewayAdapt=4itemAdapt>`_
 
 [copywiki destination="plane,copter,rover,blimp,sub"]

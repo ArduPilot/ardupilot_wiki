@@ -1,5 +1,5 @@
 .. _common-cuav-pwlink:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ============
 CUAV PW-Link
 ============

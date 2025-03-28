@@ -137,4 +137,4 @@ Subsequently, you can update firmware using Mission Planner or QGroundControl.
 
 \*.apj firmware files.
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

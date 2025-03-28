@@ -1,6 +1,6 @@
 .. _common-MUPilot:
 
-[copywiki destination="copter,plane,rover,blimp"]
+[copywiki destination="copter,plane,rover,sub,blimp"]
 
 =========================
 MUPilot Flight Controller

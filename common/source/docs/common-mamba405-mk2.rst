@@ -125,4 +125,4 @@ Usually these boards are sold pre-flashed with betaflight / INav firwares and re
 
 See :ref:`common-loading-firmware-onto-chibios-only-boards`
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

@@ -1,5 +1,5 @@
 .. _common-telemetry-rockblock:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 =========================
 RockBLOCK Satellite Modem
 =========================

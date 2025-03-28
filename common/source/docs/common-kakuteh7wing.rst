@@ -175,5 +175,5 @@ This board does not come with ArduPilot firmware pre-installed. Use instructions
 Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "KakuteH7-Wing".
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 

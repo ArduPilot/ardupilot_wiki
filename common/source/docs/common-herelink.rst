@@ -1,5 +1,5 @@
 .. _common-herelink:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ========================================
 Herelink RC/HD Video Transmission System
 ========================================

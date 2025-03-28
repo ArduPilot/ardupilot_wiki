@@ -87,4 +87,4 @@ Three widgets are available when you click the widgets menu at the top left of t
 These are sizable (bottom right corners) and movable (upper left corner) panels that display the log messages up to the cursor point, the joystick positions (first 4 rc channels), and a searchable parameter list. These can be shown or dismissed with their buttons when in this setup menu. Click "Plot" or "3D" to return to those screens.
 
 
-[copywiki destination="copter,plane,rover,dev,antennatracker,planner"]
+[copywiki destination="copter,plane,rover,dev,sub,antennatracker,planner"]

@@ -151,4 +151,4 @@ Since this board stores the flight control software on external flash the initia
 A `convenient script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/scripts/ssbl_uploader.sh>`__ is also available to perform the required steps.
 
 It should also be possible to load the ArduPilot firmware and bootloader via DFU <common-loading-firmware-onto-chibios-only-boards>`__ , but doing so will invalidate your warranty.
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

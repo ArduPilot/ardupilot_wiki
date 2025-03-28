@@ -1,6 +1,6 @@
 .. _common-caddx-gimbal:
 
-[copywiki destination="plane,copter,rover"]
+[copywiki destination="plane,copter,rover,sub"]
 
 =============
 CADDX Gimbals

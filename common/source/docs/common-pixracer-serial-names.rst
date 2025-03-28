@@ -32,4 +32,4 @@ Notes:
 
    ## can be used for firmware upload instead of USB port, if needed.
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

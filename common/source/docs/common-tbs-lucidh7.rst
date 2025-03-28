@@ -1,6 +1,6 @@
 .. _common-tbs-lucidh7:
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ==============================
 TBS LUCID H7 Flight Controller
 ==============================

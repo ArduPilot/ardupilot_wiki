@@ -23,4 +23,4 @@ In addition:
 
 - Set :ref:`AHRS_GPS_USE<AHRS_GPS_USE>` to 2 (Use GPS for DCM position and height).
 
-
+[copywiki destination="plane,copter,rover"]

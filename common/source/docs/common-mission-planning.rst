@@ -25,13 +25,15 @@ This section contains articles about creating missions that will run when the ve
 [site wiki="copter"]
     mission-command-list
 [/site]
-    
+
     Mission Command List <common-mavlink-mission-command-messages-mav_cmd>
     Camera Control in Auto Missions <common-camera-control-and-auto-missions-in-mission-planner>
     Rally Points <common-rally-points>
     DO_LAND_START <common-do-land-start>
-    Geotagging Images with Mission Planner <common-geotagging-images-with-mission-planner>
 
+[site wiki="copter,plane"]
+    Geotagging Images with Mission Planner <common-geotagging-images-with-mission-planner>
+[/site]
 [site wiki="plane"]
     Terrain Following <common-terrain-following>
 [/site]
@@ -44,6 +46,6 @@ This section contains articles about creating missions that will run when the ve
     Continue Mission After Landing <common-continue-mission>
 
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover,sub,planner"]
 
 

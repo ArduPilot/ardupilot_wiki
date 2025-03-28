@@ -48,4 +48,4 @@ Review PID tune in the frequency domain. Step response estimate is generated. Re
 
     UAV LogViewer <common-uavlogviewer>
 
-[copywiki destination="copter,plane,rover,dev,antennatracker,planner"]
+[copywiki destination="copter,plane,rover,dev,sub,antennatracker,planner"]

@@ -39,15 +39,6 @@ of any particular GCS.
     Antenna Design Overview <common-antenna-design>
 [/site]
 
-[site wiki="planner"]
-
-.. toctree::
-    :maxdepth: 1
-
-    Mission Planner Antenna Tracking <common-mission-planner-gps-based-antenna-tracking>
-    Antenna Design Overview <common-antenna-design>
-[/site]
-
 [site wiki="copter"]
 
 .. toctree::
@@ -65,3 +56,5 @@ of any particular GCS.
     Mission Planner Antenna Tracking <common-mission-planner-gps-based-antenna-tracking>
     Antenna Design Overview <common-antenna-design>
 [/site]
+
+[copywiki destination="plane,copter,rover"]

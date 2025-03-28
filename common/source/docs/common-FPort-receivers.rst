@@ -1,5 +1,5 @@
 .. _common-FPort-receivers:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ===============
 FPort Receivers
 ===============

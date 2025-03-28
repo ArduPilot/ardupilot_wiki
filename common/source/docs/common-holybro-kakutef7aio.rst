@@ -190,4 +190,4 @@ Firmware for this board which supports :ref:`bi-directional Dshot <bidir-dshot>`
 
 .. note:: Output 5 is disabled in bi-directional Dshot firmware and Output 6 only supports normal Dshot and PWM.
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

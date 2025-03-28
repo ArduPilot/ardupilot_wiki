@@ -1,6 +1,6 @@
 .. _common-install-sdcard:
 
-[copywiki destination="copter,plane,rover,planner,blimp"]
+[copywiki destination="copter,plane,rover,planner,blimp,sub"]
 
 ============================
 Loading Firmware via SD Card

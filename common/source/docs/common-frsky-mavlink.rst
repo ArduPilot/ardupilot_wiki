@@ -1,5 +1,5 @@
 .. _common-frsky-mavlink:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ===========================
 MavLink to FrSky Converters
 ===========================
