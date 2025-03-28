@@ -185,6 +185,7 @@ Closed Hardware
     YJUAV A6SE <common-yjuav-a6se>
     YJUAV A6SE H743<common-yjuav-a6se-h743>
     YJUAV-A6Ultra <common-yjuav-a6ultra>
+    NarinFC-H7 <common-narinfc-h7>
 
 .. note:: due to flash memory limitations, most F4 based, and some other boards, do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
