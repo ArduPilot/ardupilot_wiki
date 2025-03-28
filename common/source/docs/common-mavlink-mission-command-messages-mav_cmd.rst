@@ -5,7 +5,9 @@ Mission Commands
 ================
 
 This article describes the mission commands that are supported by Copter, Plane, Sub and Rover when switched into Auto mode.
+[site wiki="copter"]
 A simpler list just for :ref:`Copter can be found here <copter:mission-command-list>`
+[/site]
 
 Overview
 ========
@@ -209,7 +211,7 @@ Commands supported by Sub
 =========================
 
 This list of commands was inferred from the command handler in
-`/ArduSub/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/masteer/ArduSub/commands_logic.cpp#L7>`__. 
+`/ArduSub/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduSub/commands_logic.cpp#L7>`__. 
 
 - :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
 - :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
@@ -220,7 +222,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_NAV_GUIDED_ENABLE <mav_cmd_nav_guided_enable>` (NAV_GUIDED only)
 - :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
-- :ref:`MAV_CMD_JUMP_TAG<mav_cmd_jump_tag>`
+- :ref:`MAV_CMD_JUMP_TAG <mav_cmd_jump_tag>`
 - :ref:`MAV_CMD_DO_JUMP_TAG <mav_cmd_do_jump_tag>`
 - :ref:`MAV_CMD_MISSION_START <mav_cmd_mission_start>`
 - :ref:`MAV_CMD_COMPONENT_ARM_DISARM <mav_cmd_component_arm_disarm>`
@@ -245,7 +247,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>` (NAV_GUIDED only)
 - :ref:`MAV_CMD_DO_SET_RESUME_REPEAT_DIST <mav_cmd_do_set_resume_repeat_dist>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
-- :ref:`MAV_CMD_DO_WINCH<mav_cmd_do_winch>`
+- :ref:`MAV_CMD_DO_WINCH <mav_cmd_do_winch>`
 - :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
 [/site]
 
