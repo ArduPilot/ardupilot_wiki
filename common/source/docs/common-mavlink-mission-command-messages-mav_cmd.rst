@@ -4,8 +4,8 @@
 Mission Commands
 ================
 
-This article describes the mission commands that are supported by Copter, Plane and Rover when switched into Auto mode.
-A better list just for :ref:`Copter can be found here <copter:mission-command-list>`
+This article describes the mission commands that are supported by Copter, Plane, Sub and Rover when switched into Auto mode.
+A simpler list just for :ref:`Copter can be found here <copter:mission-command-list>`
 
 Overview
 ========
@@ -174,6 +174,51 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_NAV_GUIDED_ENABLE <mav_cmd_nav_guided_enable>` (NAV_GUIDED only)
 - :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
 - :ref:`MAV_CMD_NAV_PAYLOAD_PLACE <mav_cmd_nav_payload_place>`
+- :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
+- :ref:`MAV_CMD_JUMP_TAG<mav_cmd_jump_tag>`
+- :ref:`MAV_CMD_DO_JUMP_TAG <mav_cmd_do_jump_tag>`
+- :ref:`MAV_CMD_MISSION_START <mav_cmd_mission_start>`
+- :ref:`MAV_CMD_COMPONENT_ARM_DISARM <mav_cmd_component_arm_disarm>`
+- :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
+- :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
+- :ref:`MAV_CMD_CONDITION_YAW <mav_cmd_condition_yaw>`
+- :ref:`MAV_CMD_DO_AUX_FUNCTION <mav_cmd_do_aux_function>`
+- :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
+- :ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
+- :ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
+- :ref:`MAV_CMD_DO_SET_RELAY <mav_cmd_do_set_relay>`
+- :ref:`MAV_CMD_DO_REPEAT_SERVO <mav_cmd_do_repeat_servo>`
+- :ref:`MAV_CMD_DO_REPEAT_RELAY <mav_cmd_do_repeat_relay>`
+- :ref:`MAV_CMD_DO_DIGICAM_CONFIGURE <mav_cmd_do_digicam_configure>` (Camera enabled only)
+- :ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera enabled only)
+- :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
+- :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>`
+- :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>` (Gimbal/mount enabled only)
+- :ref:`MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <mav_cmd_do_gimbal_manager_pitchyaw>` (Gimbal/mount enabled only)
+- :ref:`MAV_CMD_DO_PARACHUTE <mav_cmd_do_parachute>` (Parachute enabled only)
+- :ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>`
+- :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>` (NAV_GUIDED only)
+- :ref:`MAV_CMD_DO_SET_RESUME_REPEAT_DIST <mav_cmd_do_set_resume_repeat_dist>`
+- :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
+- :ref:`MAV_CMD_DO_WINCH<mav_cmd_do_winch>`
+- :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
+[/site]
+
+[site wiki="sub"]
+Commands supported by Sub
+=========================
+
+This list of commands was inferred from the command handler in
+`/ArduSub/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/masteer/ArduSub/commands_logic.cpp#L7>`__. 
+
+- :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
+- :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
+- :ref:`MAV_CMD_NAV_LAND <mav_cmd_nav_land>`
+- :ref:`MAV_CMD_NAV_LOITER_UNLIM <mav_cmd_nav_loiter_unlim>`
+- :ref:`MAV_CMD_NAV_LOITER_TURNS <mav_cmd_nav_loiter_turns>`
+- :ref:`MAV_CMD_NAV_LOITER_TIME <mav_cmd_nav_loiter_time>`
+- :ref:`MAV_CMD_NAV_GUIDED_ENABLE <mav_cmd_nav_guided_enable>` (NAV_GUIDED only)
+- :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
 - :ref:`MAV_CMD_JUMP_TAG<mav_cmd_jump_tag>`
 - :ref:`MAV_CMD_DO_JUMP_TAG <mav_cmd_do_jump_tag>`
@@ -4710,4 +4755,4 @@ Control Winch operation.
    </table>
 [/site]
 
-[copywiki destination="copter,plane,rover,planner,dev"]
+[copywiki destination="plane,copter,rover,sub,planner,dev"]
