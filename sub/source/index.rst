@@ -24,19 +24,14 @@ Getting more info
 .. toctree::
    :hidden:
 
-   Introduction to Sub (docs/sub-introducton>
+   *Introduction to Sub <docs/introduction>
    Choosing an Autopilot <docs/common-autopilots>
-   Ready to Dive/Use Vehicles <docs/common-rtf>
-   Choosing a Ground Control Stations <docs/common-choosing-a-ground-station>
-   Complete parameter list <docs/parameters>
-   Complete log message list <docs/logmessages>
-   MAVLink message support <docs/ArduSub_MAVLink_Messages>
-   Board Feature List <docs/binary-features>
-..   Ground Control Stations <docs/common-GCS>
-..   First Time Setup <docs/arduplane-setup>
-..   First Flight and Tuning <docs/first-flight-landing-page>
-..   Mission Planning <docs/common-mission-planning>
-..   If A Problem Arises <docs/common-when-problems-arise>
-..   Advanced Configuration <docs/common-advanced-configuration>
-..   Peripheral Hardware <docs/common-optional-hardware>
-..   Additional Information <docs/additional-information>
+   Ground Control Stations <docs/common-GCS>
+   *First Time Setup <docs/ardusub-setup>
+   *First Swim and Tuning <docs/sub-tuning>
+   Mission Planning <docs/common-mission-planning>
+   If A Problem Arises <docs/common-when-problems-arise>
+   Peripheral Hardware <docs/common-optional-hardware>
+   Advanced Configuration <docs/common-advanced-configuration>
+   Additional Information <docs/additional-information>
+
