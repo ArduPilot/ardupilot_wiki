@@ -124,4 +124,4 @@ Where to Buy
 
 Order from `ThePeach <https://thepeach.shop>`_
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

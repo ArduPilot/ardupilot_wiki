@@ -158,4 +158,4 @@ Where to Buy
 
 - Available from various retailers and directly from the manufacturer `SpeedyBee <https://www.speedybee.com/speedybee-f405-v3-bls-50a-30x30-fc-esc-stack/>`__
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

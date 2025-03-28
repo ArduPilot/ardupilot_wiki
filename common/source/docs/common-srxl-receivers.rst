@@ -1,5 +1,5 @@
 .. _common-srxl-receivers:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ==================
 SRXL R/C Receivers
 ==================

@@ -34,4 +34,4 @@ mapping between them.
 
    On MAVProxy one can use ``module load nsh`` followied by ``nsh port 0`` to talk to a Hayes modem connected to TELEM1
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

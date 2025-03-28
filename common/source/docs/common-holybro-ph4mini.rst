@@ -445,4 +445,4 @@ Thanks to
 [PX4](https://docs.px4.io/en/flight_controller/pixhawk4_mini.html) for
 images used under the [CC-BY 4.0 license](https://creativecommons.org/licenses/by/4.0/)
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

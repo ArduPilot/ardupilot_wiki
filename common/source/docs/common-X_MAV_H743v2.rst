@@ -1,5 +1,5 @@
 .. _common-X_MAV_H743v2:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 
 =========
 AP-H743v2

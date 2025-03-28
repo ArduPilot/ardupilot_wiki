@@ -311,5 +311,5 @@ This tutorial was created to show you how does it work. Original work
 from Sandro Benigno and Guto Santaella updated by Jesus Alvarez.
 
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,planner"]
 

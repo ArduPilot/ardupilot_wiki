@@ -169,4 +169,4 @@ Initial firmware load can be done with DFU by plugging in USB with the bootloade
 
 Once the initial firmware is loaded you can update the firmware using any ArduPilot ground station software. Updates should be done with the "\*.apj" firmware files.
 
-[copywiki destination="plane,rover,copter,blimp"]
+[copywiki destination="plane,rover,copter,sub,blimp"]

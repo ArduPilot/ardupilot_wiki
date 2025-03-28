@@ -19,3 +19,5 @@ for any vehicle hardware, and can be run on Linux, Windows and Mac OSX.
 It is also the easiest form of simulation to set up.
 
 Some users may wish to fly "virtually" with their hardware in the loop.  This is possible with :ref:`Simulation on Hardware <dev:sim-on-hardware>`
+
+[copywiki destination="plane,copter,rover"]

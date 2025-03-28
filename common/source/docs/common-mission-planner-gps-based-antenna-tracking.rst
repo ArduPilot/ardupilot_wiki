@@ -410,3 +410,5 @@ can rely on.
 
 Other bells and whistles might include weather vanes, barometers,
 anemometers, beer can holders, cameras etc. go wild!
+
+[copywiki destination="plane,copter,rover"]

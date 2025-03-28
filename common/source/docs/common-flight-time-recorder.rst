@@ -1,6 +1,6 @@
 .. _common-flight-time-recorder:
 
-[copywiki destination="copter,plane,rover"]
+[copywiki destination="copter,plane,rover,sub"]
 
 ====================
 Flight Time Recorder

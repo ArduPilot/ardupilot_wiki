@@ -143,4 +143,4 @@ images:
 .. |surveyexample| image:: ../../../images/surveyexample.jpg
     :target: ../_images/surveyexample.jpg
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="plane,copter,rover,sub,planner"]

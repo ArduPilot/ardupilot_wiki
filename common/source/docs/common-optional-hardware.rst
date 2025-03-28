@@ -28,12 +28,12 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     AIS (Automatic Identification System) <common-ais>
     Barometer (external) <common-baro-external>
     BlackBox Logger using an AutoPilot <common-blackboxlogger>
-[site wiki="copter,plane,rover"]
+[site wiki="copter,plane,rover,sub"]
     Button Inputs <common-buttons>
     Buzzer <common-buzzer>
 [/site]
     Cameras & Gimbals <common-cameras-and-gimbals>
-[site wiki="copter,plane,rover"]
+[site wiki="copter,plane,rover,sub"]
     Companion Computers <common-companion-computers>
 [/site]
 [site wiki="copter"]

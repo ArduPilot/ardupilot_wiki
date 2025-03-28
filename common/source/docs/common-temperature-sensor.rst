@@ -1,5 +1,5 @@
 .. _common_temperature_sensors:
-[copywiki destination="plane,copter,rover"]
+[copywiki destination="plane,copter,rover,sub"]
 
 ===================
 Temperature Sensors

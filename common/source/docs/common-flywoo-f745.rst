@@ -180,4 +180,4 @@ Firmware
 Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "FlywooF745" for the AIO or "FlywooF745Nano" for the Nano version.
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

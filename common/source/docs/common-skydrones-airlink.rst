@@ -1015,4 +1015,4 @@ Purchase from the original Sky-Drones Store `here  <https://sky-drones.com/sets/
  - Worldwide shipping with 1-2 days order processing time
  - Distributors information coming soon
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

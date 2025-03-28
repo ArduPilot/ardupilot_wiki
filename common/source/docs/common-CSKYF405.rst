@@ -144,5 +144,5 @@ firmware, using your favorite DFU loading tool.
 
 Subsequently, you can update firmware with Mission Planner.
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 

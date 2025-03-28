@@ -635,5 +635,5 @@ More Links
 - `Enabling the UIO Drivers on the Beaglebone Black <http://www.ofitselfso.com/BeagleNotes/Enabling_the_UIO_Drivers_on_the_Beaglebone_Black.php>`__
 
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 

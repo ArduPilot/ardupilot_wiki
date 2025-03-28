@@ -1,5 +1,5 @@
 .. _common-blicube-rlink:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 =============
 Blicube RLINK
 =============

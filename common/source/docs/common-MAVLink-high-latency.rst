@@ -1,5 +1,5 @@
 .. _common-MAVLink-high-latency:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 =========================
 MAVLink High Latency Mode
 =========================

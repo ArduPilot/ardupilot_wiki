@@ -117,4 +117,4 @@ More Information
 
 * `Nora schematic <https://github.com/cuav/hardware/tree/master/X7_Autopilot>`_
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

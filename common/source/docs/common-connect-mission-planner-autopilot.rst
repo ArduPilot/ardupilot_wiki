@@ -144,4 +144,4 @@ Related topics
 
 :ref:`Mission Planner Bluetooth Connectivity <common-mission-planner-bluetooth-connectivity_detailed_connecting_with_mission_planner>`
 
-[copywiki destination="plane,copter,rover,planner,blimp"]
+[copywiki destination="plane,copter,rover,planner,sub,blimp"]

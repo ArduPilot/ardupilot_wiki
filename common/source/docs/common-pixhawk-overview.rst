@@ -777,4 +777,4 @@ See also
     Compatible RC Transmitter and Receiver Systems <common-rc-systems>
 [/site]
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

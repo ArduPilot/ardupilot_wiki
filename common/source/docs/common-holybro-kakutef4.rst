@@ -155,4 +155,4 @@ Videos
 ..  youtube:: tg179GXu6LQ
     :width: 100%
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

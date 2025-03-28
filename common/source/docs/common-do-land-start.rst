@@ -1,5 +1,5 @@
 .. _common-do-land-start:
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,sub,rover,planner"]
 ===================
 Using DO_LAND_START
 ===================

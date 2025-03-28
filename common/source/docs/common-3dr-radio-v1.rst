@@ -1,5 +1,5 @@
 .. _common-3dr-radio-v1:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ============
 3DR Radio v1
 ============

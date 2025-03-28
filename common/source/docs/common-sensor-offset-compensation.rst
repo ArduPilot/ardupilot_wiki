@@ -1,6 +1,6 @@
 .. _common-sensor-offset-compensation:
 
-[copywiki destination="copter,plane,rover"]
+[copywiki destination="copter,plane,rover,sub"]
 
 ===================================
 Sensor Position Offset Compensation

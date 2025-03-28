@@ -1,5 +1,5 @@
 .. _common-flysky-rc:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 =================
 Flysky RC Systems
 =================

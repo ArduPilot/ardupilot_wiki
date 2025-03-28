@@ -144,4 +144,4 @@ Where to Buy
 
 `ZeroOne <https://www.01aero.cn>`__
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

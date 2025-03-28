@@ -73,4 +73,4 @@ Where to Buy
 
 `mRobotics <https://store.mrobotics.io/>`_
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

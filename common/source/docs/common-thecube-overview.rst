@@ -488,4 +488,4 @@ More Images
     :target: ../_images/pixhawk2-overhead.jpg
     :width: 360px
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

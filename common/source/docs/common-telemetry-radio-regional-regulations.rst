@@ -1,5 +1,5 @@
 .. _common-telemetry-radio-regional-regulations:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ====================================
 Telemetry Radio Regional Regulations
 ====================================

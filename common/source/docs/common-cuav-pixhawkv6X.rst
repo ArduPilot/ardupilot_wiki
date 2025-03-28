@@ -193,4 +193,4 @@ More information
 
 `CUAV docs <https://doc.cuav.net/controller/pixhawk-v6x/en/>`__.
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

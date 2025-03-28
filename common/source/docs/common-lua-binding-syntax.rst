@@ -1,6 +1,6 @@
 .. _common-lua-binding-syntax:
 
-[copywiki destination="plane,copter,rover,dev"]
+[copywiki destination="plane,copter,rover,sub,dev"]
 =====================================
 Decoding the LUA Binding Descriptions
 =====================================

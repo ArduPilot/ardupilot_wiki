@@ -145,4 +145,4 @@ Technical specifications
 | **Input signal**   | Standard R/C PWM between 1000 – 2000μS                                   |
 +--------------------+--------------------------------------------------------------------------+
 
-[copywiki destination="copter,plane,rover"]
+[copywiki destination="copter,plane,rover,sub"]

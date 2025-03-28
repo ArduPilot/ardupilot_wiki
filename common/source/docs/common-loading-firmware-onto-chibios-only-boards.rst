@@ -18,7 +18,7 @@ Installing ArduPilot to these autopilot involves:
 
    Instructions for ArduPilot already using ChibiOS firmware on the autopilot can be found :ref:`here <common-loading-chibios-firmware-onto-pixhawk>`.
 
-[copywiki destination="copter,plane,rover,planner,blimp"]
+[copywiki destination="copter,plane,rover,planner,blimp,sub"]
 
 Download driver and flashing tool
 =================================

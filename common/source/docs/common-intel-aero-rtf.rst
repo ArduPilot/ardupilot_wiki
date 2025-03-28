@@ -92,4 +92,4 @@ More flight videos
 ..  youtube:: 3lu9xq8Cm1E
     :width: 100%
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

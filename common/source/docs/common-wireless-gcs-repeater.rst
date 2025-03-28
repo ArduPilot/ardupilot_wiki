@@ -1,5 +1,5 @@
 .. _common-wireless-gcs-repeater:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 
 ================================================
 Repeater for Wireless Ground Station Connections
