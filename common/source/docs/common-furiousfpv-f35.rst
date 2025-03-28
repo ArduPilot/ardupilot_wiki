@@ -93,4 +93,4 @@ arduplane auto mission using the Wing FC10:
    :width: 400
    :height: 400
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

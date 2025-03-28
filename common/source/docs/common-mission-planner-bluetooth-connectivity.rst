@@ -1,5 +1,5 @@
 .. _common-mission-planner-bluetooth-connectivity:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 =========================
 Bluetooth Telemetry radio
 =========================

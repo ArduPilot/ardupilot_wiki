@@ -1,6 +1,6 @@
 .. _common-loading-firmware-onto-pixhawk:
 
-[copywiki destination="copter,plane,rover,planner,blimp"]
+[copywiki destination="copter,plane,rover,planner,blimp,sub"]
 
 ================
 Loading Firmware

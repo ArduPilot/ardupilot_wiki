@@ -32,6 +32,6 @@ Some controllers have multiple instances of sensors for redundancy, a key featur
 
 
 
-[copywiki destination="plane,copter,rover"]
+[copywiki destination="plane,copter,rover,sub"]
 
 

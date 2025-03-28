@@ -1,5 +1,5 @@
 .. _common-esp32-telemetry:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ==================================
 ESP32 WiFi telemetry - DroneBridge
 ==================================

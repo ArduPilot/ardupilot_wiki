@@ -1,6 +1,6 @@
 .. _common-viewpro-gimbal:
 
-[copywiki destination="copter,plane,rover"]
+[copywiki destination="copter,plane,rover,sub"]
 
 ===============
 ViewPro Gimbals

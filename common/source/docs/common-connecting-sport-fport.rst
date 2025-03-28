@@ -1,5 +1,5 @@
 .. _common-connecting-sport-fport:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ===================================
 Connecting to FrSky Sport and FPort
 ===================================

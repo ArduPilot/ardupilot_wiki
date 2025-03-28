@@ -41,4 +41,4 @@ This is normally not required but in some rare cases is required after a firmwar
 
    Many autopilots have two CPUs, the main CPU (aka FMU) is where ArduPilot runs. The IOMCU is a separate I/O CPU which is responsible for some I/O including PWM outputs to the MAIN OUT channels. Other autopilots do not have an IOMCU, just the main CPU.
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

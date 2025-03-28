@@ -46,4 +46,4 @@ custom-beta
 Before deploying new features to the main instance of the application, we test them on a dedicated testing instance. This testing environment is accessible at `custom-beta.ardupilot.org <https://custom-beta.ardupilot.org>`__. Feel free to use the beta features and provide your valuable feedback to help us improve the application.
 
 
-[copywiki destination="copter,plane,rover,planner,blimp"]
+[copywiki destination="copter,plane,rover,planner,blimp,sub"]

@@ -1,6 +1,6 @@
 .. _common-mission-rewind:
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover,sub,planner"]
 
 ========================
 Mission Rewind on Resume

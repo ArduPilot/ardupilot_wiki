@@ -1,6 +1,6 @@
 .. _common-topotek-gimbal:
 
-[copywiki destination="plane,copter,rover"]
+[copywiki destination="plane,copter,rover,sub"]
 
 ===============
 Topotek Gimbals

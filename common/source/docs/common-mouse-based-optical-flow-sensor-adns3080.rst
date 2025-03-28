@@ -170,3 +170,5 @@ Acknowledgements:
 
 #. research paper re `optical flow for position hold <http://www.araa.asn.au/acra/acra2007/papers/paper181final.pdf>`__
 #. research paper re `optical flow for object avoidance <https://www.scribd.com/document/241321239/2006-Thesis-Remote-Terrain-Navigation-for-Unmanned-Air-Vehicles>`__
+
+[copywiki destination="plane,copter,rover"]

@@ -1,5 +1,5 @@
 .. _common-scripting-step-by-step:
-[copywiki destination="plane,copter,rover,dev"]
+[copywiki destination="plane,copter,rover,sub,dev"]
 
 =============================
 Script Setup and Use Examples

@@ -55,3 +55,6 @@ Video
 -----
 
 ..  youtube:: 3xW9hj-lxNU
+
+
+[copywiki destination="plane,copter,rover"]

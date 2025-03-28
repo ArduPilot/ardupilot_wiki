@@ -76,4 +76,4 @@ directory, named "scripts" (i.e. the path
 for informational files and these will be included and viewable when
 examining the @ROMFS folder with MAVFtp.
 
-[copywiki destination="plane,copter,rover,dev"]
+[copywiki destination="plane,copter,rover,sub,dev"]

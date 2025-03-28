@@ -1,5 +1,5 @@
 .. _common-telemetry-xbee:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ==============
 Telemetry-XBee
 ==============

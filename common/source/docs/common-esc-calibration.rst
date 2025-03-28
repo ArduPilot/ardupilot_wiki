@@ -1,7 +1,7 @@
 .. _common-esc-calibration:
 
 
-[copywiki destination="plane,rover"]
+[copywiki destination="plane,rover,sub"]
 ===============
 ESC Calibration
 ===============

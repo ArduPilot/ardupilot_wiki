@@ -1,5 +1,5 @@
 .. _common-tbs-rc:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 =============================
 Crossfire and ELRS RC Systems
 =============================

@@ -87,5 +87,5 @@ Drotag writes the location information directly into the .jpg images files using
             yaw: 24.959999,
         }
 
-[copywiki destination="copter,plane,rover"]
+[copywiki destination="copter,plane,rover,sub"]
 

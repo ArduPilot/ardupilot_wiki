@@ -1,6 +1,6 @@
 .. _common-underwater-triducer:
 
-[copywiki destination="copter,plane,rover"]
+[copywiki destination="copter,plane,rover,sub"]
 
 ========
 Triducer

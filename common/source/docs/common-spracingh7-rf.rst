@@ -157,4 +157,4 @@ This board stores the flight control software on external flash and requires ins
 - flash the file using a tool like https://www.st.com/en/development-tools/stm32cubeprog.html
 
 Now it should be possible to load the ArduPilot firmware via the normal :ref:`firmware update procedure <common-loading-firmware-onto-pixhawk>`
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

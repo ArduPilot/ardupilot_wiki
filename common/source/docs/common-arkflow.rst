@@ -4,7 +4,7 @@
 ARK Flow Open Source Optical Flow and Distance Sensor
 =====================================================
 
-[copywiki destination="copter,plane,rover"]
+[copywiki destination="copter,plane,rover,sub"]
 
 The `ARK Flow Open Source Optical Flow and Distance Sensor <https://arkelectron.com/product/ark-flow/>`__ is an open source optical flow sensor including a Broadcom AFBR lidar which uses the CAN protocol to communicate with the autopilot.  This can be used to improve horizontal position control especially in GPS denied environments.
 

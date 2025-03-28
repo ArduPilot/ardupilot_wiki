@@ -52,4 +52,4 @@ If this occurs, several possible options are available to allow temporary use of
 
    </strike>
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

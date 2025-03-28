@@ -1,6 +1,6 @@
 .. _common-adti-cameras-and-gimbals:
 
-[copywiki destination="plane,copter,rover"]
+[copywiki destination="plane,copter,rover,sub"]
 
 ========================
 ADTi Cameras and Gimbals

@@ -159,4 +159,4 @@ firmware, using your favourite DFU loading tool. See :ref:`common-loading-firmwa
 Once the initial firmware is loaded you can update the firmware using
 any ArduPilot ground station software. Updates should be done with the KakuteF4Mini firmware files. See :ref:`common-loading-firmware-onto-pixhawk`.
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

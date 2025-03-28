@@ -1,5 +1,5 @@
 .. _common-airvolute-DroneCore-Suite:
-[copywiki destination="copter,plane,rover,blimp"]
+[copywiki destination="copter,plane,rover,sub,blimp"]
 =========================
 Airvolute DroneCore.Suite
 =========================

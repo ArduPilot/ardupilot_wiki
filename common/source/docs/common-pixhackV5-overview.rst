@@ -84,4 +84,4 @@ More Images
     :target: ../_images/pixhackv5_2.jpg
     :width: 360px
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

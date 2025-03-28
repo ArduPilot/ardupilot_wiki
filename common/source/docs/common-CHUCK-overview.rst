@@ -60,4 +60,4 @@ The use of the airspeed sensor and sonar will be dependent on the
 physical shape of the airframe and whether the positioning of these
 sensors is suitable for the layout of the C.H.U.C.K.
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
