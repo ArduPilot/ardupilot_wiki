@@ -20,10 +20,8 @@ components, including those required for the operation of the autopilot.
     :maxdepth: 1
 
     Basic System Overview <common-basic-operation>
-    Radio Control Calibration <common-radio-control-calibration>
     Accelerometer Calibration <common-accelerometer-calibration>
     Compass Calibration <common-compass-calibration-in-mission-planner>
-    RC Transmitter Mode Setup <common-rc-transmitter-flight-mode-configuration>
     ESC Calibration <common-esc-calibration>
 
 
