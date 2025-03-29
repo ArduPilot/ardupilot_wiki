@@ -10,7 +10,14 @@ This article shows how to manually setup a minimal build environment on MacOS (v
     :width: 100%
 
 
-There is a pre-built script at /ardupilot/Tools/environment_install/install-prereqs-mac.sh that will install these pre-requisites.
+There is a `pre-built script  <https://github.com/ArduPilot/ardupilot/blob/master/Tools/environment_install/install-prereqs-mac.sh>`__ that will install these pre-requisites.
+
+How to use it, cd to your ardupilot directory, and execute:
+
+::
+
+    sh ./Tools/environment_install/install-prereqs-mac.sh
+
 
 Setup steps
 -----------
