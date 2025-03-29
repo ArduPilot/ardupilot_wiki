@@ -28,13 +28,16 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     AIS (Automatic Identification System) <common-ais>
     Barometer (external) <common-baro-external>
     BlackBox Logger using an AutoPilot <common-blackboxlogger>
-[site wiki="copter,plane,rover"]
+[site wiki="copter,plane,rover,sub"]
     Button Inputs <common-buttons>
     Buzzer <common-buzzer>
 [/site]
     Cameras & Gimbals <common-cameras-and-gimbals>
-[site wiki="copter,plane,rover"]
+[site wiki="copter,plane,rover,sub"]
     Companion Computers <common-companion-computers>
+[/site]
+[site wiki="sub"]
+    Compass <common-positioning-landing-page>
 [/site]
 [site wiki="copter"]
     Crop Sprayer <sprayer>
@@ -51,7 +54,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     First Person View Video <common-fpv-first-person-view>
     Fuel Flow and Level Sensors <common-fuel-sensors>
     Generators <common-generators>
+[site wiki="copter,plane,rover"]
     GPS/Compass <common-positioning-landing-page>
+[/site]
     Grippers <common-gripper-landingpage>
     Joystick or Gamepad <common-joystick>
 [site wiki="copter,plane"]
@@ -74,7 +79,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="copter"]
     Precision Landing and Loiter using IRLock <precision-landing-with-irlock>
 [/site]
+[site wiki="copter,plane,rover"]
     Radio Control Systems <common-rc-systems>
+[/site]
     Rangefinders (Sonar, Lidar, Depth Cameras) <common-rangefinder-landingpage>
     Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
     Relay Switch <common-relay>

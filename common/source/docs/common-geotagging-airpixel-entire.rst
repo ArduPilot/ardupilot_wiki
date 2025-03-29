@@ -25,5 +25,5 @@ Airpixel Entire for Camera Control and EXIF Geotagging
 More info at `www.airpixel.cz <https://airpixel.cz/photogrammetry/>`_
 Documentation at `www.airpixel.cz/docs <https://airpixel.cz/docs>`_
 
-[copywiki destination="copter,plane,rover"]
+[copywiki destination="copter,plane,rover,sub"]
 

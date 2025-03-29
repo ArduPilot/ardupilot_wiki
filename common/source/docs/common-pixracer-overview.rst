@@ -452,4 +452,4 @@ See also
 
 `Schematics <https://github.com/ArduPilot/Schematics/tree/master/mRobotics>`__
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

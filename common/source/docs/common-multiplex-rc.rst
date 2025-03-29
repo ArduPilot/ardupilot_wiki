@@ -1,5 +1,5 @@
 .. _common-multiplex-rc:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ===================
 Multiplex RC System
 ===================

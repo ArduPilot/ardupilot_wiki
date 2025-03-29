@@ -23,4 +23,4 @@ Filter Setup Process
 #. Save those parameters and load them into the autopilot.
 #. Do another flight to confirm the filter setup. This this flight more normal flight maneuvers can be done.
 #. Once verified, clear the :ref:`INS_RAW_LOG_OPT<INS_RAW_LOG_OPT>` parameter to avoid large logs from being saved unnecessarily.
-[copywiki destination="copter,plane,rover,dev,planner"]
+[copywiki destination="copter,plane,rover,dev,sub,planner"]

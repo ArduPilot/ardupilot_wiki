@@ -1,6 +1,6 @@
 .. _common-mambaf405-mini:
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ==================
 Mamba MK4 F405Mini
 ==================

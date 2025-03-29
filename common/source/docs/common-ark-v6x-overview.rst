@@ -97,4 +97,4 @@ More Information
 
 * `ARKV6X documentation <https://arkelectron.gitbook.io/ark-documentation/flight-controllers/arkv6x>`_
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

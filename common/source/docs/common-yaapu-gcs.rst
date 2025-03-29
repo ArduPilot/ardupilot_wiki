@@ -1,5 +1,5 @@
 .. _common-yaapu-gcs:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ====================================================
 Yaapu FrSky GCS using FrSky Bi-Directional Telemetry
 ====================================================

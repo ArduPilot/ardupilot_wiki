@@ -52,4 +52,4 @@ Testing
 
 More details on connecting a GCS to the autopilot are described :ref:`here <common-connect-mission-planner-autopilot>`.
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover,sub,planner"]

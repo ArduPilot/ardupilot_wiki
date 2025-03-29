@@ -4,7 +4,7 @@
 Archived: Recording and Playing Back Missions
 =============================================
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover,sub,planner"]
 
 If you are using wireless telemetry and have connected to APM via the
 Mission Planner, your flight data will automatically recorded as a

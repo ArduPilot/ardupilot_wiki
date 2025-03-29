@@ -1,5 +1,5 @@
 .. _common-jumperT16pro:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ==========================
 Jumper T16 Pro Transmitter
 ==========================

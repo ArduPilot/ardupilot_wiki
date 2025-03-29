@@ -1,6 +1,6 @@
 .. _common-brushless-pwm-gimbal:
 
-[copywiki destination="plane,copter,rover"]
+[copywiki destination="plane,copter,rover,sub"]
 
 ====================
 Brushless PWM Gimbal

@@ -1,5 +1,5 @@
 .. _common-tbs-lucidpro:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ===============================
 TBS LUCID PRO Flight Controller
 ===============================

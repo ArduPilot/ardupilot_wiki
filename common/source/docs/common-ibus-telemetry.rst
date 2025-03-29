@@ -1,5 +1,5 @@
 .. _common-ibus-telemetry:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ===============
 i-BUS Telemetry
 ===============

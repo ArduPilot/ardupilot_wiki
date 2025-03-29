@@ -1,5 +1,5 @@
 .. _common-futaba-rc:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 =================
 Futaba RC Systems
 =================

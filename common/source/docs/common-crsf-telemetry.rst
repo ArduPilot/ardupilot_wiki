@@ -1,5 +1,5 @@
 .. _common-crsf-telemetry:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 =======================
 TBS Crossfire Telemetry
 =======================

@@ -138,5 +138,5 @@ This board does not come with ArduPilot firmware pre-installed. Use instructions
 
 Firmware (Copter/Heli only)for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "FlywooF405HD-AIOv2".
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 

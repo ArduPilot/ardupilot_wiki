@@ -193,4 +193,4 @@ failure
 
 `SOS tone sequence <https://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/NoSDCard_short.wav>`__ : SD Card missing (or other SD error like bad format etc.)
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

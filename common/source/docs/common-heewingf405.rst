@@ -175,5 +175,5 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 "HEEWING-F405v2".
 
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 

@@ -1,6 +1,6 @@
 .. _common-buzzer:
 
-[copywiki destination="copter,plane,rover"]
+[copywiki destination="copter,plane,rover,sub"]
 
 =======================
 Buzzer (aka Tone Alarm)

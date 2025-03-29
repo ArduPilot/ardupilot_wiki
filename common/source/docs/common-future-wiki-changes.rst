@@ -5,7 +5,7 @@ Future Wiki Changes (in Master branch now)
 ==========================================
 Will be in future 4.7 release and is currently in master ("latest")
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 
 New Board Support
 =================

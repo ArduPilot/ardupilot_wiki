@@ -545,4 +545,4 @@ Where to Buy
 `QIOTEK <http://www.Qio-Tek.com>`_
 `SmartFleet <https://smartfleet.systems/>`_
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

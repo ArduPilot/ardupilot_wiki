@@ -1,5 +1,5 @@
 .. _common-frsky-yaapu:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 =======================================
 Yaapu FrSky Telemetry Script for OpenTX
 =======================================

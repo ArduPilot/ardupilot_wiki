@@ -1,5 +1,5 @@
 .. _common-configuring-a-telemetry-radio-using-mission-planner:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ===================================================
 Configuring a Telemetry Radio using Mission Planner
 ===================================================

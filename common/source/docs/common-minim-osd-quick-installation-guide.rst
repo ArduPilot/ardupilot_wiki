@@ -123,7 +123,7 @@ Some of the differences from the old traditional firmware are:
 * 4 screens instead of 2
 * Individual control of sign icon visibility of each panel per screen
 * voltage, current & RSSI can be measured on external pins (which can be found on some MinimOSD boards)
-* TLOG player in configurator - now settings can be checked without working plane/copter!
+* TLOG player in configurator - now settings can be checked without working plane,copter!
 * Small panels can be placed in unused areas of big panels
 * RADAR (like in MiniNAZAosd) and ILS in Horizon, can be enabled individually
 * Horizon angles can be adjusted via configurator, independently for PAL and NTSC

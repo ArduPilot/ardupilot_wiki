@@ -1,5 +1,5 @@
 .. _common-airlink-telemetry:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 =================================
 ClearSky Airlink 4G LTE Telemetry
 =================================

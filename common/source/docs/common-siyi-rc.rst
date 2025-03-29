@@ -1,5 +1,5 @@
 .. _common-siyi-rc:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ====================================
 SIYI RC/HD Video Transmission System
 ====================================

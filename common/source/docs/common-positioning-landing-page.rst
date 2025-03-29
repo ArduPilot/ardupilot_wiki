@@ -5,7 +5,7 @@ GPS/Compass (landing page)
 ==========================
 
 Copter/Plane/Rover support integration with GPS, Compass and other
-positioning technologies:
+non-GPS positioning technologies. Sub supports only Compass, so some device below can only utilize the Compass portion of the hardware:
 
 .. figure:: ../../../images/gps-landing-page.jpg
    :target: ../_images/gps-landing-page.jpg
@@ -54,7 +54,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
 
 .. toctree::
     :maxdepth: 1
-    
+
     ArduSimple RTK GPS <common-gps-ardusimple>
     ARK MOSAIC-X5 RTK GPS <common-ark-mosaic-rtk-gps>
     ARK RTK Base <common-ark-rtk-base>

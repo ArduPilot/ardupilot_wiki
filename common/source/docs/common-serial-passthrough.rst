@@ -1,6 +1,6 @@
 .. _common-serial-passthrough:
 
-[copywiki destination="copter,plane,rover"]
+[copywiki destination="copter,plane,rover,sub"]
 
 ==================
 Serial Passthrough
