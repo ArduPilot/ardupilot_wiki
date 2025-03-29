@@ -12,7 +12,7 @@ This topic covers the wiring/connection of basic/mandatory peripherals to the au
 GPS/Compass
 -----------
 
-GPS is usually mandatory in all vehicles, except when some other position determining :ref:`sensor or system is used <common-non-gps-navigation-landing-page>`. Compass is also usually required for Copter and Rover and QuadPlane types of Plane (see :ref:`common-compassless` for compass alternatives), but not for Conventional Planes, however it is recommended.
+GPS is usually mandatory in plane,copter,and rover vehicles, except when some other position determining :ref:`sensor or system is used <common-non-gps-navigation-landing-page>`. Sub does not use GPS. Compass is also usually required for Copter, Rover, Sub, and QuadPlane types of Plane (see :ref:`common-compassless` for compass alternatives), but not for Conventional Planes, however it is recommended.
 
 .. note:: Some Copter and Rover modes can operate without GPS and Compass (see vehicle documentation for its flight modes).
 
@@ -32,6 +32,8 @@ As a wiring example, the topic :ref:`3DR UBlox GPS + Compass Module <common-inst
 
 RC input
 --------
+
+.. note::   Sub does not currently use RC control but it is under development.
 
 Radio Control Receivers are normally used for pilot control. While exclusive pilot control via ground stations using telemetry is possible, it is not recommended.
 (However, it is possible to control the vehicle via ground station software using a joystick. See :ref:`Joysticks <common-joystick>`.
@@ -90,9 +92,9 @@ An example for Copters using only motors. In this case, only ESC signal lines ar
 .. image:: ../../../images/pixhawk_motor_outputs.jpg
     :target: ../_images/pixhawk_motor_outputs.jpg
     :width: 450px
-    
+
 [site wiki="copter"]
-For Copter see :ref:`Connect ESCs and Motors <copter:connect-escs-and-motors>`.
+For Copter also see :ref:`Connect ESCs and Motors <copter:connect-escs-and-motors>`.
 
 In overview, for copters connect each signal wire from the PDB to the
 main output signal (S) pins by motor number:
@@ -123,6 +125,9 @@ signal pins. The default settings are:
 -  Output 1 = Steering
 
 The skid-steer output function parameters are used to configure vehicles that have fixed wheels and steer like tank tracks (ie. do not use servos to steer the wheels but rather use differential speed between the left and right wheels). The SERVOx_FUNCTION for the outputs used for each side's motor are set using the ``Throttle Left`` and ``Throttle Right`` output functions. See :ref:`Rover Motor Functions <rover-motor-and-servo-configuration>` 
+[/site]
+[site wiki="sub"]
+**Sub connection guide under development**
 [/site]
 
 Connect buzzer and safety switch
@@ -163,11 +168,3 @@ Related information
 [site wiki="copter"]
     Advanced Pixhawk Quadcopter Wiring Chart <advanced-pixhawk-quadcopter-wiring-chart>
 [/site]
-
-
-
-
-
-
-
-
