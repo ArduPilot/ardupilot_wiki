@@ -1,7 +1,5 @@
 .. _common-xfrobot-gimbal:
 
-[copywiki destination="plane,copter,rover"]
-
 ===============
 XFRobot Gimbals
 ===============
