@@ -26,3 +26,9 @@ components, including those required for the operation of the autopilot.
 
 
 **Needs pages on modes, and other basic setup, including something pointing to companion computers**
+
+* Frame and Motor Layout
+* Failsafes
+* Pilot Control
+* Button Inputs
+* Swim Modes
