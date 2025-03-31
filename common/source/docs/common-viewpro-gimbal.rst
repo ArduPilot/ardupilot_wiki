@@ -9,7 +9,7 @@ ViewPro Gimbals
 .. image:: ../../../images/viewpro-gimbal.png
     :height: 450px
 
-ArduPilot 4.4 (and higher) support the `ViewPro <http://www.viewprotech.com/index.php?ac=article&at=list&tid=127>`__ gimbals using a :ref:`Lua script <common-lua-scripts>` that understands ViewPro's custom serial protocol.
+ArduPilot 4.4 (and higher) support the `ViewPro <http://www.viewprotech.com/index.php?ac=article&at=list&tid=127>`__ gimbals using ViewPro's custom serial protocol.
 
 Connection and Configuration
 ============================
