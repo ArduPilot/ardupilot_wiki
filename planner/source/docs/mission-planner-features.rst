@@ -27,9 +27,9 @@ window.
    Mission Planner and a flight simulator to 'simulate' flying.
 -  :ref:`HELP <mission-planner-overview_support>` - About the help screen,
    and how to get help with your questions about Mission Planner.
-
 -  :ref:`Advanced Mission Planner Features <other-mission-planner-features>` -
    Mission Planner has a large number of additional functions and features. This section documents many of them.
+- :ref:`Live Video <live-video>` - how to display live video on the Data screen
 
 .. note:
    Additional information about many of the screens can be found in the
@@ -55,3 +55,4 @@ window.
    Accelerometer Calibration <common-accelerometer-calibration>
    Radio Control Calibration <common-radio-control-calibration>
    RC Transmitter Flight Mode Configuration <common-rc-transmitter-flight-mode-configuration>
+   Live Video <live-video>
