@@ -9,8 +9,8 @@ features like automated aiming of the camera at a Region of Interest
 (ROI), and automatic triggering of a camera shutter.  Follow the links below
 to explanations of how to configure gimbals and shutter triggering.
 
-.. image:: ../../../images/Cameras_Gimbals.jpg
-    :target: ../_images/Cameras_Gimbals.jpg
+.. image:: ../../../images/cameras-and-gimbals-title.png
+    :target: ../_images/cameras-and-gimbals-title.png
 
 Gimbals
 =======
