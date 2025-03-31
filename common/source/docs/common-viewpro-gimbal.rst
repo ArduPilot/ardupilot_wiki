@@ -109,6 +109,8 @@ Video can also be streamed to QGroundControl
     :target: ../_images/viewpro-qgc-video.png
     :width: 450px
 
+If using Mission Planner, the live video can be displayed on the Data screen by following :ref:`these instructions <planner:live-video>`
+
 Downloading Images and Videos
 =============================
 

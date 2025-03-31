@@ -124,6 +124,8 @@ If using QGC, the live video can be configured from the "Application Settings", 
 .. image:: ../../../images/siyi-a8-qgc.png
     :target: ../_images/siyi-a8-qgc.png
 
+If using Mission Planner, the live video can be displayed on the Data screen by following :ref:`these instructions <planner:live-video>`
+
 Downloading Images and Video
 ----------------------------
 

@@ -103,6 +103,8 @@ If connected to a PC, `VLC <https://www.videolan.org/>`__ can be used to test th
 
 If using QGC, the live video can be configured from the "Application Settings", "General" screen.  Set "Source" to "RTSP Video Stream" and "RTSP URL" to one of the RTSP URLs listed above
 
+If using Mission Planner, the live video can be displayed on the Data screen by following :ref:`these instructions <planner:live-video>`
+
 Firmware Updates
 ----------------
 
