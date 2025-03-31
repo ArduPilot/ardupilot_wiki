@@ -6,7 +6,7 @@ NANO Helix RTK receiver
 NANO Helix RTK receiver is a high-precision RTK receiver designed and manufactured by DATAGNSS. 
 
 It's based on the new generation Allystar dual-core GNSS SoC. It supports RTK functionality with a maximum data update rate of 5Hz. 
-It includes two models, one is v1.0.0 without compass, and another is Rev.A with compass.
+It includes compass IST8310.
 
 .. image:: ../../../images/datagnss-nano/NANO-RCV-02-main.png
 	:target: ../_images/datagnss-nano/NANO-RCV-02-main.png
