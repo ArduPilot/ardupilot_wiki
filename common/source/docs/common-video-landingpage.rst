@@ -10,10 +10,8 @@ This sections covers live video systems which can provide a high definition (HD)
 Herelink HD Video Transmission System
 =====================================
 
-.. figure:: ../../../images/Herelink1-2.jpg
-   :target: ../_images/Herelink1-2.jpg
-
-
+.. figure:: ../../../images/herelink.jpg
+   :target: ../_images/herelink.jpg
 
 Overview
 --------
