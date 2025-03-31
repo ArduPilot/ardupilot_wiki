@@ -75,6 +75,10 @@ The camera's live video is available at rtsp://192.168.144.108.  If connected to
 - Open VLC
 - Select "Media", "Open Network Stream" and enter the RTSP URL, rtsp://192.168.144.108
 
+If using QGC, the live video can be configured from the "Application Settings", "General" screen.  Set "Source" to "RTSP Video Stream" and "RTSP URL" to rtsp://192.168.144.108
+
+If using Mission Planner, the live video can be displayed on the Data screen by following :ref:`these instructions <planner:live-video>`
+
 Firmware Upgrades
 -----------------
 
