@@ -125,6 +125,95 @@ MAVLink mount commands can also be sent from other sources, such as companion co
 Cameras may also be controlled via MAVLink commands from a companion computer or other source.
 See :ref:`dev:mavlink-camera` documentation.
 
+
+Mount Targeting – Making a Gimbal Follow a Vehicle
+--------------------------------------------------
+
+This section explains how to configure a camera mount or gimbal to follow and track another moving vehicle, such as shown in `@timtuxworth's video <https://www.youtube.com/watch?v=FX60mqi9WMQ>`__.
+
+This setup is useful for applications like autonomous filming, visual tracking, or observation of a target vehicle from a drone or another vehicle.
+
+Requirements
+^^^^^^^^^^^^
+
+- A flight controller running ArduPilot firmware
+- A MAVLink-compatible gimbal (e.g., Storm32, Gremsy, or servo-based mount)
+- A ground station or companion computer capable of sending ``MOUNT_TARGET`` messages
+- Optionally, a second vehicle (target) with GPS and telemetry broadcasting position
+
+Parameter Setup
+^^^^^^^^^^^^^^^
+
+Set the following parameters on the vehicle **carrying the gimbal**:
+
++----------------------+------------------------+-----------------------------------------------------------+
+| Parameter            | Value                  | Description                                               |
++======================+========================+===========================================================+
+| ``MNT_TYPE``         | Depends on gimbal type | Example: 1 for servo, 4 for Storm32                       |
++----------------------+------------------------+-----------------------------------------------------------+
+| ``MNT1_MODE``        | 3 (MAVLink Targeting)  | Enables MAVLink control via ``MOUNT_TARGET`` messages     |
++----------------------+------------------------+-----------------------------------------------------------+
+| ``MNT_RC_IN_TILT``   | -1                     | Disables RC input control for tilt                        |
++----------------------+------------------------+-----------------------------------------------------------+
+| ``MNT_RC_IN_PAN``    | -1                     | Disables RC input control for pan                         |
++----------------------+------------------------+-----------------------------------------------------------+
+
+Gimbal must be correctly wired and calibrated to respond to MAVLink control commands.
+
+Sending Mount Target (MAVLink)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can send ``MOUNT_POSITION_TARGET_GLOBAL_INT`` messages from a companion computer or ground station to point the gimbal at a global coordinate (latitude, longitude, altitude).
+
+Example using ``pymavlink`` in Python:
+
+.. code-block:: python
+
+    from pymavlink import mavutil
+
+    # Connect to the vehicle
+    master = mavutil.mavlink_connection('udp:127.0.0.1:14550')
+
+    # Send mount targeting message
+    master.mav.mount_position_target_global_int_send(
+        0,                      # time_boot_ms
+        master.target_system,
+        master.target_component,
+        mavutil.mavlink.MAV_FRAME_GLOBAL,
+        0b0000111111111000,     # type_mask to ignore velocity and acceleration
+        int(37.7749 * 1e7),     # lat (degrees * 1e7)
+        int(-122.4194 * 1e7),   # lon (degrees * 1e7)
+        100000,                 # alt (meters * 1000)
+        0, 0, 0,                # velocity (not used)
+        0, 0, 0,                # acceleration (not used)
+        0, 0                    # yaw, yaw_rate (optional)
+    )
+
+This message should be sent **periodically (e.g., 10Hz)** to keep the gimbal locked onto a moving target.
+
+How It Works
+^^^^^^^^^^^^
+
+- The gimbal is set to ``MAVLink Targeting`` mode.
+- A script or system sends the current GPS coordinates of the target using ``MOUNT_TARGET``.
+- The mount angles are automatically calculated by ArduPilot firmware to point the camera.
+
+Troubleshooting Tips
+^^^^^^^^^^^^^^^^^^^^
+
+- Ensure the ``MNT_TYPE`` and servo functions are correctly configured.
+- Check if the gimbal supports MAVLink and is responding to commands.
+- Confirm the coordinate frame is compatible (`GLOBAL`, `GLOBAL_RELATIVE_ALT`, etc.).
+- Make sure to send messages frequently enough to update tracking.
+
+Related Links
+^^^^^^^^^^^^^
+
+- :ref:`common-camera-gimbal`
+- :ref:`mavlink-gimbal-mount`
+- `MAVLink MOUNT messages <https://mavlink.io/en/messages/common.html#MOUNT_POSITION_TARGET_GLOBAL_INT>`__
+
+
 Control during Auto mode missions
 ---------------------------------
 
