@@ -16,7 +16,7 @@ The `Hexsoon HS77G MMW radar <http://www.hexsoon.com/en/list-4-27.html>`__ (avai
 
 .. note::
 
-    Support is available in Copter and Rover versions 4.7 and higher
+    Support is available in Copter and Rover versions 4.6 and higher
 
 Connecting to the Autopilot
 ===========================

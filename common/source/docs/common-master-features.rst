@@ -15,8 +15,6 @@ New Peripherals
 .. toctree::
     :maxdepth: 1
 
-    Hexsoon 77G MWW Radar <common-rangefinder-hexsoon-radar>
-    Hexsoon 24G Radar <common-rangefinder-hexsoon-24g>
     XFRobot camera gimbals <common-xfrobot-gimbal>
 [/site]
 [site wiki="plane"]

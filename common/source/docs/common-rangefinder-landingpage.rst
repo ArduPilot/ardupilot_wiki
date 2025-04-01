@@ -68,6 +68,7 @@ Unidirectional Rangefinders
     Benewake TFmini / TFmini Plus / TF-Luna <common-benewake-tfmini-lidar>
     Garmin Lidar-Lite <common-rangefinder-lidarlite>
     GY-US42 Sonar <common-rangefinder-gy-us42>
+    Hexsoon 24G Radar <common-rangefinder-hexsoon-24g>
     Hondex Sonar<common-hondex-sonar>
     HC-SR04 Sonar <common-rangefinder-hcsr04>
     JAE JRE-30 <common-rangefinder-jae-jre-30>
@@ -93,6 +94,7 @@ Omnidirectional Proximity Rangefinders
 .. toctree::
     :maxdepth: 1
 
+    Hexsoon 77G MWW Radar <common-rangefinder-hexsoon-radar>
     LDRobot LD-06 TOF <common-ld06>
     Lightware SF40/C (360 degree) <common-lightware-sf40c-objectavoidance>
     Lightware SF45/B (350 degree) <common-lightware-sf45b>
