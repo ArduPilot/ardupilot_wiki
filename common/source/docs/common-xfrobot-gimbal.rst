@@ -18,6 +18,17 @@ Where and What to Buy
 
 - XFRobot gimbals can be purchased directly from `allxianfei.com <https://www.allxianfei.com/en/uav-payloads/>`__
 
+Install ArduPilot with XFRobot Support
+--------------------------------------
+
+Support for the XFRobot gimbals is available in ArduPilot 4.7 (and higher) and also requires the 'HAL_MOUNT_XFROBOT_ENABLED' build option to be enabled which can be done using the `Custom Build Server <https://custom.ardupilot.org/add_build>`__
+
+.. image:: ../../../images/xfrobot-custom-build-server.png
+    :target: ../_images/xfrobot-custom-build-server.png
+    :width: 450px
+
+More instructions on using the :ref:`Custom Build Server can be found here <common-custom-firmware>`
+
 Connecting to the Autopilot
 ---------------------------
 
