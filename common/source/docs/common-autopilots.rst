@@ -77,7 +77,7 @@ Open Hardware
 \* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:
 Camera Switch
 =============
-GPIO 81 controls which camera input (CAM1 or CAM2) is applied to the internal OSD. A RELAY function (see :ref:`common-relay`)can be enabled to control the switching.`Firmware Limitations <common-limited_firmware>` for details.
+GPIO 81 controls which camera input (CAM1 or CAM2) is applied to the internal OSD. A RELAY function (see :ref:`common-relay`) can be enabled to control the switching.`Firmware Limitations <common-limited_firmware>` for details.
 
 Closed Hardware
 ===============
