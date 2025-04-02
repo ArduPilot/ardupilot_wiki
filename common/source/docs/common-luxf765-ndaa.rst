@@ -44,7 +44,7 @@ Pinout
 
 UART Mapping
 ============
- Default protocols are shown below. Default protocols are shown below and can be changed by the user.
+ Default protocols are shown below and can be changed by the user.
 
 * SERIAL0 -> USB
 * SERIAL1 -> USART1 (TElem1, DMA enabled)
