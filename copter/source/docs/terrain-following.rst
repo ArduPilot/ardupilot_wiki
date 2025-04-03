@@ -70,7 +70,7 @@ Terrain data files are always created as one file per one-by-one degree area, th
 
 Using Terrain Altitude during RTL and Land
 ==========================================
-Set the :ref:`TERRAIN_FOLLOW <TERRAIN_FOLLOW>` parameter to 1 to enable using terrain data in :ref:`RTL <rtl-mode>` and :ref:`Land <land-mode>` flight modes. Also set :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` = 1.  If set the vehicle will interpret the :ref:`RTL_ALT <RTL_ALT>` as an altitude-above-terrain instead of above home altitude, meaning it will generally climb over hills on its return path to home.  Similarly Land will slow to the :ref:`LAND_SPEED <LAND_SPEED>` (normally 50cm/s) when it is 10m above the terrain (instead of 10m above home).
+Set the :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` parameter to 1 to enable using terrain data in the :ref:`RTL <rtl-mode>` flight mode.  If set the vehicle will interpret the :ref:`RTL_ALT <RTL_ALT>` as an altitude-above-terrain instead of above home altitude, meaning it will generally climb over hills on its return path to home.  Similarly Land will slow to the :ref:`LAND_SPEED <LAND_SPEED>` (normally 50cm/s) when it is 10m above the terrain (instead of 10m above home).
 Currently setting this parameter is not recommended because of the edge case mentioned below involving the somewhat unlikely situation in which the vehicle is unable to retrieve terrain data during the :ref:`RTL <rtl-mode>`.  In these cases the :ref:`RTL_ALT <RTL_ALT>` will be interpreted as an alt-above home. 
 
 In addition, if :ref:`WPNAV_RFND_USE<WPNAV_RFND_USE>` is also set to 1, the rangefinder will be used instead of the terrain database during RTL. Of course the :ref:`RTL_ALT <RTL_ALT>` must be within the rangefinder's operating range and it must be healthy.
@@ -79,7 +79,7 @@ Failsafe in case of no Terrain data
 ===================================
 If the vehicle is executing a mission command that requires terrain data but it is unable to retrieve terrain data for two seconds (normally because the range finder fails, goes out of range or the Ground Station is unable to provide terrain data) the vehicle will switch to RTL mode (if it is flying) or disarm (if it is landed).
 
-Note that because it does not immediately have access to terrain data in this situation it will perform a normal RTL interpreting the :ref:`RTL_ALT <RTL_ALT>` as an altitude-above-home regardless of whether :ref:`TERRAIN_FOLLOW <TERRAIN_FOLLOW>` has been set to "1" or not.
+Note that because it does not immediately have access to terrain data in this situation it will perform a normal RTL interpreting the :ref:`RTL_ALT <RTL_ALT>` as an altitude-above-home regardless of whether :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` has been set to "1" or not.
 
 One common problem reported by users is the vehicle immediately disarms when the user switches to AUTO mode to start a mission while the vehicle is on the ground.  The cause is the altitude reported by the range finder (which can be checked from the MP's Flight Data screen's Status tab's sonar_range field) is shorter than the RNGFNDx_MIN (for example :ref:`RNGFND1_MIN <RNGFND1_MIN>`)parameter which means the range finder reports "unhealthy" when on the ground.  The solution is to reduce the RNGFNDx_MIN value (to perhaps "0.05").
 
