@@ -1,6 +1,6 @@
 .. _speedybeef405aio:
 
-[copywiki destination="plane,copter,rover,blimp']
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ==============================
 SpeedyBee F405 AIO 40A Bluejay
 ==============================
