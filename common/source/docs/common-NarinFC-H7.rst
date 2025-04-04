@@ -98,15 +98,15 @@ Wire Diagram
 UART Mapping (Port Diagram & Pinouts)
 =====================================
 
-- SERIAL0 = console = USB (MAVLink2)
-- SERIAL1 = Telemetry1 (MAVlink2 default)= USART2 DMA-enabled
-- SERIAL2 = Telemetry2 (MAVlink2 default)= USART6 DMA-enabled
-- SERIAL3 = GPS1 = USART1
-- SERIAL4 = GPS2 = UART4
-- SERIAL5 = USER = UART8 (not available except on custom carrier boards) DMA-enabled
-- SERIAL6 = USER = UART7 DMA-enabled
-- SERIAL7 = USB2 (Default protocol is MAVLink2)
-  
+- SERIAL0 = USB (MAVLink2 default)
+- SERIAL1 = USART2,Telemetry1 (MAVlink2 default,DMA-enabled)
+- SERIAL2 = USART6,Telemetry2 (MAVlink2 default,DMA-enabled)
+- SERIAL3 = USART1,GPS1 (GPS default, DMA-enabled)
+- SERIAL4 = UART4,GPS2 (GPS2 defualt)
+- SERIAL5 = UART8 (not available except on custom carrier boards)(USER default,DMA-enabled)
+- SERIAL6 = UART7,DEBUG (USER)
+- SERIAL7 = USB2 (MAVLink2 default)
+
 Serial protocols can be adjusted to personal preferences.
 
 .. image:: ../../../images/NarinFC/4.Port_Diagram_Pin_outs_Diagram-A.png
@@ -207,9 +207,9 @@ Serial protocols can be adjusted to personal preferences.
 PWM Output
 ==========
 
-The NarinFC-H7 supports up to 14 PWM outputs.
+The NarinFC-H7 supports up to 14 PWM outputs.All outputs except M13 and M14 support DShot. Outputs 1-8 support Bi-Directional DShot.
 
-The 14 PWM outputs are in 4 groups :
+The 14 PWM outputs are in 4 groups:
 
    - Outputs 1, 2, 3 and 4 in group1
    - Outputs 5, 6, 7 and 8 in group2
@@ -266,14 +266,14 @@ The NarinFC-H7 has 2 analog inputs, one 6V tolerant and one 3.3V tolerant
 Battery Monitor
 ===============
 
-The board has two dedicated power monitor ports on 6 pin connectors. The correct battery setting parameters are dependent on the type of power brick which is connected.
+The board has two dedicated power monitor ports on 6 pin connectors. The correct battery setting parameters are dependent on the type of power brick which is connected. By default, use of a CAN battery monitor is enabled.
 
 
 
 RC Input
 ========
 
-The RCIN pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The RCIN pin, which by default is mapped to a timer input, can be used for all ArduPilot supported unidirectionalreceiver protocols.Bi-directional protocols such as CRSF/ELRS and SRXL2 require a full UART connection. FPort, when connected to RCIN, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL6 (UART7) would need to be used for receiver connections. Below are setups using Serial6.
 
@@ -282,18 +282,15 @@ To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receive
    - CRSF would require :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "0". 
    - SRXL2 would require :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "4" and connects only the TX pin. 
 
-Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. 
-See :ref:`common-rc-systems` for details.  The power rail associated with this connector position is powered via USB or PMU. 
+Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:common-rc-systems for details. The power rail associated with this connector position is powered via USB or PMU. 
 
 
 
 Loading Firmware
 ================
 
-This board comes with ArduPilot firmware pre-installed and other vehicle/revision Ardupilot firmware can be loaded using most Ground Control Stations. 
+This board comes with ArduPilot firmware pre-installed and other vehicle/revision Ardupilot firmware can be loaded using most Ground Control Stations.
 
-Firmware for these boards can be found at https://firmware.ardupilot.org in sub-folders labeled “NarinFC-H7”. 
+Firmware for these boards can be found here `https://firmware.ardupilot.org <https://firmware.ardupilot.org>`_ in sub-folders labeled “NarinFC-H7”.
 
-The board comes pre-installed with an NarinFC-H7 bootloader, allowing the loading of *.apj firmware files with any ArduPilot compatible ground station. 
-
-you can update firmware with Mission Planner.
+The board comes pre-installed with an ArduPilot bootloader, allowing the loading of *.apj firmware files with any ArduPilot compatible ground station, such as Mission Planner.
