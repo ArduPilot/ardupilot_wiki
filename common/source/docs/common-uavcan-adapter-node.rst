@@ -18,6 +18,11 @@ They utilize the `AP_Periph <https://github.com/ArduPilot/ardupilot/tree/master/
 
 This provides an easy method to develop integrated DroneCAN peripherals which can be used with ArduPilot or other systems that support DroneCAN.
 
+For example, a serial GPS adapted to DroneCAN:
+
+.. image:: ../../../images/uavcan-node-gps.jpg
+   :width: 450px
+
 Features
 ========
 The AP_Periph DroneCAN firmware can be configured to enable a wide range of
@@ -50,7 +55,7 @@ The AP_Periph DroneCAN firmware supports these DroneCAN features:
  - Firmware update via MissionPlanner or DroneCAN-gui-tool
 
 Developers
-========
+==========
 Developers might find the :ref:`AP_Periph section <dev:ap-peripheral-landing-page>` of the dev docs useful for more details about creating AP_Periph nodes.
 
 Firmware
