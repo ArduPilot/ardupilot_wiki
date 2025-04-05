@@ -100,3 +100,37 @@ The CubeNodeETH's parameters can be set using Mission Planner's DroneCAN screen 
     :target: ../_images/botblox-dronenet-mp-messages.png
 
 The IP addresses chosen above are somewhat arbitrary but work well for many systems.  In general all ethernet devices on the drone should be in the same subnet meaning the first three octets of the IP address (e.g. 192.168.144.x) should match while the last octet should be unique to each device.
+
+Firmware Updates
+================
+
+The CubeNodeETH firmware can be updated by following the instructions below
+
+- Download the `stable <https://firmware.ardupilot.org/AP_Periph/stable/CubePilot-PPPGW>`__, `beta <https://firmware.ardupilot.org/AP_Periph/beta/CubePilot-PPPGW>`__ or `latest <https://firmware.ardupilot.org/AP_Periph/latest/CubeNode-ETH/>`__ AP_Periph.bin file from firmware.ardupilot.org
+- Download, install and run the `DroneCAN GUI Tool <https://dronecan.github.io/GUI_Tool/Overview>`__.  For Windows users download and run `the .msi file found here <https://firmware.ardupilot.org/Tools/CAN_GUI>`__
+- Connect the autopilot to your PC using a USB cable
+- Run the DroneCAN GUI Tool:
+
+  - Select the autopilot's COM port
+  - Optionally set the "Bus Number" to the CAN port that the CubeNodeETH is connected To
+  - Press "OK"
+
+    .. image:: ../../../images/cubepilot-cubenodeeth-firmwareupdate1.png
+        :target: ../_images/cubepilot-cubenodeeth-firmwareupdate1.png
+
+  - Uncheck the check box to the right of "Local node ID" to set the DroneCAN GUI Tool's DroneCAN node ID
+  - Double click on line containing "org.ardupilot.CubePilot-PPPGW" or "org.ardupilot.CubeNode-ETH" to open the "Node Properties" window
+
+    .. image:: ../../../images/cubepilot-cubenodeeth-firmwareupdate2.png
+        :target: ../_images/cubepilot-cubenodeeth-firmwareupdate2.png
+        :width: 450px
+
+  - Push the "Update Firmware" button and select the AP_Periph.bin file downloaded above, press Open
+
+    .. image:: ../../../images/cubepilot-cubenodeeth-firmwareupdate3.png
+        :target: ../_images/cubepilot-cubenodeeth-firmwareupdate3.png
+        :width: 450px
+
+  - After the update has completed you should see the firmware version change (see the green underline above) 
+
+Reboot the autopilot and CubeNodeETH.  There should be no need to backup and restore any parameters as part of the upgrade process
