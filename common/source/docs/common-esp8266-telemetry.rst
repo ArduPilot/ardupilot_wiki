@@ -6,9 +6,15 @@ ESP8266 wifi telemetry
 
 .. image:: ../../../images/esp8266-telemetry.jpg
     :target: ../_images/esp8266-telemetry.jpg
+    :width: 450px
 
 .. image:: ../../../images/Kahuna_ESP8266.jpg
     :target: ../_images/Kahuna_ESP8266.jpg
+    :width: 450px
+
+.. image:: ../../../images/bask-aero/AeroLinkWiFi.jpg
+    :target: ../_images/bask-aero/AeroLinkWiFi.jpg
+    :width: 450px
 
 The ESP8266 wifi module is an inexpensive programmable wifi modules available from many sources.  It also comes included with most :ref:`Pixracers <common-pixracer-overview>`.
 
@@ -16,6 +22,7 @@ Where to Buy
 ------------
 - The `adafruit HUZZAH ESP8266 breakout board <https://www.adafruit.com/product/2471>`__ can be connected to an autopilot without the need for 3.3V regulator or level shifters.
 - The `Beyond Robotix - Kahuna <https://www.beyondrobotix.com/products/kahuna>`__ is a ready to use ESP8266 module that connects directly to an autopilot. The Kahuna is pre-flashed with a fork of ArduPilot firmware, has a JST-GH connector to connect easily to several off-the-shelf autopilots and has a u.fl connector for an external antenna. Further documentation for this unit is found `here <https://docs.google.com/document/d/1VyOsp9_q6dIAdYdWuDFcWoqqrNy_vbFMANubZA3Uz5g/edit?usp=sharing>`__.
+- `AeroLink:WiFi from Bask Aerospace <https://baskaerospace.com.au/shop/telemetry/aerolink-wifi/>`__ is a ready to use ESP8266 module that connects directly to an autopilot through a Serial Port. The AeroLink:WiFi is pre-flashed with a fork of ArduPilot ESP8266 firmware, has a JST-GH connector to connect easily to several off-the-shelf autopilots and has a built-in antenna. Further documentation the AeroLink:WiFi see the `Manual <https://baskaerospace.com.au/support/manual/aerolink-wifi-user-manual/>`__.
 
 Connecting to an autopilot
 --------------------------
