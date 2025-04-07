@@ -47,7 +47,12 @@ Bask Aerospace offer the AeroLink range of products that are built to work with 
 They offer two different variants that meet the needs of the ground and airside radios.
 
 -  `AeroLink Base <https://baskaerospace.com.au/shop/telemetry/aerolink-base/>`__
+.. image:: ../../../images/bask-aero/AeroLinkBase.jpg
+    :target: ../_images/bask-aero/AeroLinkBase.jpg
+
 -  `AeroLink RFD Adapter Board <https://baskaerospace.com.au/shop/telemetry/aerolink-rfd-adapter-board/>`__
+.. image:: ../../../images/bask-aero/AeroLinkRFDAdapter.jpg
+    :target: ../_images/bask-aero/AeroLinkRFDAdapter.jpg
 
 The AeroLink RFD Adapter Board makes it easy to power your RFD modem from a separate 5V BEC as recommended above.
 
