@@ -111,14 +111,14 @@ Connecting to SITL running in WSL on the same machine
 Depending on your PC's power and version of RealFlight, it may be possible to run SITL under WSL and connect to RealFlight for the graphics and physics modeling. In this case you open the WSL instance and start SITL:
 
      - cd ArduCopter (See Note below)
-     - for WSL1: type ``sim_vehicle.py -f flightaxis:127.0.0.1 - -map - -console``
-     - for WSL2: you will need to determine the gateway for the virtual machine by using the command ``route -n``, then using the gateway ip in the SITL startup command for flightaxis: ``sim_vehicle.py -f flightaxis:<gateway ip addr> - -map - -console``
+     - for WSL1: type "sim_vehicle.py -f flightaxis:127.0.0.1 -\-map -\-console"
+     - for WSL2: you will need to determine the gateway for the virtual machine by using the command ``route -n``, then using the gateway ip in the SITL startup command for flightaxis: "sim_vehicle.py -f flightaxis:<gateway ip addr> -\-map -\-console"
 
 - back on RealFlight push the red "RESET" button on the transmitter, or spacebar on PC
 - after about a minute, the vehicle should be visible on the SITL map
 - from within SITL type ``param load <filename>``  to load the parameter found in the same directory as the model. You may have to load them again, after typing ``param fetch``, in order to load parameters that require enabling before presenting their parameter set.  And, in some cases, you may even need to restart SITL in order for some new parameters, such as output function changes, to take effect. 
 
-.. tip:: the above can be avoided if you add the parameter file during the start of SITL with the "--add-param-file=*pathtofile* "....ie: sim_vehicle.py -f flightaxis:x.x.x.x - -map - -console --add-param-file=*pathtofile* -w. This adds the param file as a default and then wipes any previous param changes that may exist in the simulation directory.
+.. tip:: the above can be avoided if you add the parameter file during the start of SITL with the "--add-param-file=*pathtofile* "....ie: sim_vehicle.py -f flightaxis:x.x.x.x -\-map -\-console --add-param-file=*pathtofile* -w. This adds the param file as a default and then wipes any previous param changes that may exist in the simulation directory.
 
 - The performance of the connection can be checked, after connecting to SITL, by opening the "NavGuides" widget in Realflight. The "Graphics Frames/Sec" count should be over 200 for the vehicle physics and interactions with the simulation to be accurate.
 
@@ -137,10 +137,10 @@ This technique spreads the processing requirements between two PCs: one Windows 
 
 .. note:: be sure that there is no firewall preventing communication between the PCs. You should be able to "ping" one from the other.
 
-- on the separate machine where SITL will run, start SITL sim_vehicle.py with "-f flightaxis:192.168.x.x" or if using a traditional helicopter, "-f heli - -model flightaxis:192.168.x.x".
+- on the separate machine where SITL will run, start SITL sim_vehicle.py with "-f flightaxis:192.168.x.x" or if using a traditional helicopter, "-f heli -\-model flightaxis:192.168.x.x".
 
      - cd ArduCopter (See Note below)
-     - sim_vehicle.py -f flightaxis:192.168.x.x - -map - -console.
+     - sim_vehicle.py -f flightaxis:192.168.x.x -\-map -\-console.
      - then follow the remaining commands as in the :ref:`SITL under WSL <sitl-on-wsl>` section
 
 
