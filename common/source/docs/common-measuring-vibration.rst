@@ -96,6 +96,11 @@ The image below shows a typical log in which the attitudes match well
     :target: ../_images/vibration-measuring-leans.png
     :width: 450px
 
+The image below shows a typical log with **The Leans** on the Yaw Axis.
+.. image:: ../../../images/vibration-with-leans.png
+    :target: ../_images/vibration-with-leans.png
+    :width: 450px
+
 Advanced Analysis with FFT
 --------------------------
 
