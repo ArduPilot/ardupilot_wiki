@@ -70,8 +70,14 @@ Connect with a ground station and set the following parameters.  The params belo
 Configuring the Gimbal
 ----------------------
 
-- Download, install and run "SIYI PC Assistant" which can be found on the `SIYI ZR10 web page's Downloads tab <https://shop.siyi.biz/products/siyi-zr10>`__
+- Download, install and run "SIYI PC Assistant" which can be found on any of the links below
 - Ensure the gimbal is running a recent firmware.  For ZR10 use 0.2.1 or higher.  For A8 use 0.1.7 or higher.
+
+  - `A8's downloads page <https://siyi.biz/en/index.php?id=downloads&asd=22>`__
+  - `ZR10's download page <https://siyi.biz/en/index.php?id=downloads&asd=27>`__
+  - `ZR30's download page <https://siyi.biz/en/index.php?id=downloads&asd=25>`__
+  - `ZT6's download page <https://siyi.biz/en/index.php?id=downloads&asd=602>`__
+  - `ZT30's download page <https://siyi.biz/en/index.php?id=downloads&asd=25>`__
 
 .. image:: ../../../images/siyi-gimbal-firmversion.png
     :target: ../_images/siyi-gimbal-firmversion.png
