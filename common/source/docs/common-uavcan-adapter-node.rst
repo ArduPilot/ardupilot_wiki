@@ -16,20 +16,12 @@ These nodes allow existing ArduPilot supported peripherals to be adapted to the 
 
 They utilize the `AP_Periph <https://github.com/ArduPilot/ardupilot/tree/master/Tools/AP_Periph>`__ library to use existing ArduPilot drivers on a supported hardware board. Translating UART, SPI, I2C, or GPIO-based peripheral devices supported by ArduPilot into DroneCAN devices on the CAN bus or MSP.
 
+This provides an easy method to develop integrated DroneCAN peripherals which can be used with ArduPilot or other systems that support DroneCAN.
+
 For example, a serial GPS adapted to DroneCAN:
 
 .. image:: ../../../images/uavcan-node-gps.jpg
    :width: 450px
-
-This provides an easy method to develop integrated DroneCAN peripherals which can be used with ArduPilot or other systems that support DroneCAN.
-
-The first adapter was manufactured by `mRobotics <https://store.mrobotics.io/product-p/mro10042.htm>`__, is shown below, and provides socketed outputs for a UART+I2C and another I2C connection, and solder pads for a second UART, SPI bus, GPIOs, and ADC inputs.
-
-.. image:: ../../../images/mRo-can-node.jpg
-
-The first generation was based on the f103 processor, while the current generation uses an f303 for more memory, allowing more peripheral options to be accommodated simultaneously in the firmware. The L431 processor is now supported, as well as any ArduPilot compatible autopilot can be adapted for use as a DroneCAN Adapter Node.
-
-Developers might find the :ref:`AP_Periph section <dev:ap-peripheral-landing-page>` of the dev docs useful for more details about creating AP_Periph nodes.
 
 Features
 ========
@@ -61,6 +53,10 @@ The AP_Periph DroneCAN firmware supports these DroneCAN features:
  - Easy bootloader update
  - High resilience features using watchdog, CRC, and board checks
  - Firmware update via MissionPlanner or DroneCAN-gui-tool
+
+Developers
+==========
+Developers might find the :ref:`AP_Periph section <dev:ap-peripheral-landing-page>` of the dev docs useful for more details about creating AP_Periph nodes.
 
 Firmware
 ========
@@ -129,8 +125,20 @@ DroneCAN Adapter Nodes
 Several devices are manufactured specifically for use as general-purpose adapter nodes:
 
 - :ref:`ARK CANnode <common-ark-can-node>`
+- `Beyond Robotix Node <https://beyond-robotix.gitbook.io/docs/can-node-system>`_
 - `MatekL431 DroneCAN Adapter Node <http://www.mateksys.com/?portfolio=can-l431>`_
 - :ref:`mRo DroneCAN Adapter Node <common-mro-uavcan-adapter-node>`
+
+
+History
+======================
+
+The first adapter was manufactured by `mRobotics <https://store.mrobotics.io/product-p/mro10042.htm>`__, is shown below, and provides socketed outputs for a UART+I2C and another I2C connection, and solder pads for a second UART, SPI bus, GPIOs, and ADC inputs.
+
+.. image:: ../../../images/mRo-can-node.jpg
+
+The first generation was based on the f103 processor, while the current generation uses an f303 for more memory, allowing more peripheral options to be accommodated simultaneously in the firmware. The L431 processor is now supported, as well as any ArduPilot compatible autopilot can be adapted for use as a DroneCAN Adapter Node.
+
 
 .. toctree::
     :hidden:
