@@ -57,34 +57,150 @@ USB is provided as the primary port for configuration of the autopilot. It alway
 UART
 ----
 
-Usually several UART ports are provided. These provide connections to Telemetry radios, GPS, Rangefinders, and even SBUS servos. In addition,as of firmware versions 4.0, serial RC receiver inputs can be connected to any UART. See :ref:`Serial Port Configuration <common-serial-options>` 
+UART (Universal Asynchronous Receiver/Transmitter) ports are commonly provided by autopilots to connect peripherals such as telemetry radios, GPS receivers, rangefinders, radio modems, and even SBUS servos. Additionally, starting from firmware version 4.0, serial RC receiver inputs can be connected to any UART. See :ref:`Serial Port Configuration <common-serial-options>`. Usually, several UART ports are provided. 
+
+By default, UART connections are point-to-point and do not support bus-style networking. Each UART line directly connects two devices. The connecting cable is typically straight (1:1), meaning no crossing is performed within the cable itself. Therefore, the peripheral devices must internally cross RX/TX signals as required.
+
 Signals
 +++++++
 
-- TX: Data Output, connects to peripherals RX signal
-- RX: Data Input, connect to peripheral TX signal
+.. list-table:: UART Signals
+   :header-rows: 1
+   :widths: 15 20 15 20 15 15
 
-usually +5V and GND are provided in the connector, or close by if a board style autopilot
+   * - Signal
+     - Description
+     - Autopilot Pin
+     - Peripheral Pin
+     - Wire Color (Pixhawk)
+     - Wire Color (ThunderFly)
+   * - +5V
+     - Power supply (5V)
+     - +5V
+     - +5V
+     - Red
+     - Red
+   * - TX
+     - Data output from autopilot
+     - TX
+     - RX
+     - Black
+     - White
+   * - RX
+     - Data input to autopilot
+     - RX
+     - TX
+     - Black
+     - Green
+   * - CTS
+     - Clear To Send, autopilot ready to receive data
+     - CTS (optional)
+     - RTS (optional)
+     - Black
+     - Blue
+   * - RTS
+     - Request To Send, autopilot ready to send data
+     - RTS (optional)
+     - CTS (optional)
+     - Black
+     - Yellow
+   * - GND
+     - Ground reference
+     - GND
+     - GND
+     - Black
+     - Black
 
-Sometimes flow control signals are optionally provided in the connector. Some Telemetry radios utilize these signals:
+CTS (Clear To Send) and RTS (Request To Send) signals form a hardware handshake mechanism that improves reliability by preventing data overflow. If the peripheral does not utilize these signals, they can typically remain disconnected.
 
-- CTS: Clear to Send Output to peripheral's labeled CTS input
-- RTS: Request to Send Input from peripheral's labeled RTS output
+Cable Recommendations
++++++++++++++++++++++
+
+UART signals, particularly at higher baud rates, can generate electromagnetic interference (EMI). To minimize EMI:
+
+- Keep UART cable lengths as short as practical.
+- Separate UART cables from high-power wires and sensitive sensors, such as GPS receivers and magnetometers.
+
+Unlike twisted-pair cables used for differential protocols (CAN, I2C), cable twisting is generally not applicable for UART signals due to their single-ended nature.
+
 
 I2C
 ---
 
-I2C is used to connect certain sensors or peripherals. Most notably compasses (which are mandatory in many vehicles) and digital airspeed sensors.
+The I2C bus is widely used by autopilots to connect low-bandwidth peripheral components such as magnetometers (compasses), digital airspeed sensors, rangefinders, tachometers, and other sensors. Multiple devices can be connected to a single I2C bus, each identified by a unique address. I2C employs a two-wire open-drain communication method using Serial Clock (SCL) and Serial Data (SDA) lines. The bus lines are typically pulled up to a positive voltage (3.3V or 5V) through resistors, ensuring a default idle state at logic high.
 
 Signals
 +++++++
 
-- SCL: Clock Output, connects to peripherals SCL pin
-- SDA: Bi-directional Data, connects to peripherals SDA pin
+.. list-table:: I2C Signals
+   :header-rows: 1
+   :widths: 15 25 20 20 10 10
 
-While I2C uses 3.3V signaling, often +5V is supplied in the connector along with the signals, since many I2C devices actually use this as main power. If not enough ports are provided, I2C expansion boards can allow more than one device to be connected.
+   * - Signal
+     - Description
+     - Autopilot Pin
+     - Peripheral Pin
+     - Wire Color (Pixhawk)
+     - Wire Color (ThunderFly)
+   * - +5V
+     - Power supply (5V)
+     - +5V
+     - +5V
+     - Red
+     - Red
+   * - SCL
+     - Serial Clock Line
+     - SCL
+     - SCL
+     - Black
+     - Yellow
+   * - SDA
+     - Serial Data Line
+     - SDA
+     - SDA
+     - Black
+     - Green
+   * - GND
+     - Ground reference
+     - GND
+     - GND
+     - Black
+     - Black
 
-.. note:: Some board level autopilots require external 2K ohm pullups on the signal lines to 3.3V since they are not provided on the board, while some I2C peripherals provide the pull-ups. If the device does not operate properly, one should first be sure that the pull-ups are provided somewhere.
+Cable Recommendations
++++++++++++++++++++++
+
+Proper cable handling is mandatory for reliable I2C communication, as inappropriately routed I2C signals could be prone to electromagnetic interference (EMI) and crosstalk.
+
+- Keep cables as short as possible.
+- Use twisted pairs to reduce crosstalk:
+  - Twist each pair (SCL/+5V and SDA/GND) about 10 turns per 30 cm.
+  - Twist both pairs together about 4 turns per 30 cm.
+- For larger vehicles or long cables, consider using CAN bus or other differential signaling interfaces instead.
+
+Pull-up Resistors
++++++++++++++++++
+
+Pull-up resistors on both SDA and SCL lines are essential. Autopilots or peripheral devices typically have these resistors built-in. An oscilloscope measurement is sometimes required to check correct value of pull-up resistors. If the signal amplitude is too low, increase resistor values. If the signals are rounded, decrease resistor values.
+
+Common Problems
++++++++++++++++
+
+- **Address Clashes**: Occur when multiple devices on the bus share the same address, preventing proper communication. Possible solutions include:
+  - Changing the device address via hardware or software configuration, if supported.
+  - Using address translators, such as the `ThunderFly TFI2CADT01 <https://docs.thunderfly.cz/avionics/TFI2CADT01/>`_, which allows multiple devices with identical addresses to coexist by remapping their addresses.
+
+- **Excessive Wiring Capacitance**: Long cables or multiple devices connected to a single bus significantly increase cable capacitance, resulting in degraded signal quality. Possible solutions include:
+  - Reducing cable length or using higher-quality cables.
+  - Splitting devices across multiple I2C buses.
+  - Employing I2C bus accelerators or extenders, such as the `ThunderFly TFI2CEXT01 <https://docs.thunderfly.cz/avionics/TFI2CEXT01/>`_, to boost signal quality over extended cable lengths.
+
+I2C Bus Accelerators and Translators
+++++++++++++++++++++++++++++++++++++
+
+- **I2C Bus Accelerators** (e.g., `ThunderFly TFI2CEXT01 <https://docs.thunderfly.cz/avionics/TFI2CEXT01/>`_) physically divide the bus into segments, amplifying signals and reducing the impact of wiring capacitance, thus improving signal integrity and reliability on longer cables. The TFI2CEXT01 can also perform voltage level translation between 3.3V and 5V logic levels.
+- **I2C Address Translators** (e.g., `ThunderFly TFI2CADT01 <https://docs.thunderfly.cz/avionics/TFI2CADT01/>`_) allow multiple identical devices with the same I2C address to be connected by remapping device addresses dynamically, resolving conflicts and simplifying sensor integration.
+
 
 GPS
 ---
@@ -154,25 +270,118 @@ CAN
 Signals
 +++++++
 
-- CAN_H: CAN high side signal, connects to peripherals CAN_H pin
-- CAN_L: CAN low side signal, connects to peripherals CAN_L pin
+Power and ground lines are typically provided alongside the CAN signals on standard 4-pin connectors (e.g., JST-GH).
 
-Power and ground are usually also provide on a standard 4 pin JST-GH connector.
+.. list-table:: CAN Signals
+   :header-rows: 1
+   :widths: 15 25 20 20 10 10
+
+   * - Signal
+     - Description
+     - Autopilot Pin
+     - Peripheral Pin
+     - Wire Color (Pixhawk)
+     - Wire Color (ThunderFly)
+   * - +5V
+     - Power supply (5V)
+     - +5V
+     - +5V
+     - Red
+     - Red
+   * - CAN_H
+     - CAN high differential signal
+     - CAN_H
+     - CAN_H
+     - Black
+     - White
+   * - CAN_L
+     - CAN low differential signal
+     - CAN_L
+     - CAN_L
+     - Black
+     - Yellow
+   * - GND
+     - Ground reference
+     - GND
+     - GND
+     - Black
+     - Black
+
+Cable Recommendations
++++++++++++++++++++++
+
+CAN cables should use twisted pairs to reduce electromagnetic interference (EMI) and maintain signal integrity:
+
+- Twist each signal pair (CAN_H/CAN_L and +5V/GND) approximately 10 turns per 30 cm.
+- Twist both pairs together about 4 turns per 30 cm.
+- Maintain separation from high-power and high-noise cables.
+
+Due to its differential signaling and robust protocol, CAN is particularly suitable for applications requiring reliability over longer cable lengths and in electrically noisy environments.
 
 SPI
 ---
 
-Most autopilots have processors with multiple SPI ports. While some ports are used for onboard peripherals, often one or more are provided externally for the addition of sensor chips such as barometers or IMUs, for redundancy.
+SPI (Serial Peripheral Interface) is a synchronous serial communication protocol used by autopilots to connect higher-bandwidth peripherals and sensors, such as optical flow sensors, specialized telemetry modems, barometers, IMUs, and other advanced digital sensors. It supports full-duplex communication using separate lines for data input and output. Most autopilots have processors with multiple SPI ports. 
 
 Signals
 +++++++
 
-- CSx:  One or more chip selects for enabling the SPI peripheral
-- MOSI: Master Out/Slave In Data, connects to same signal on SPI peripheral
-- MISO: Master In/Slave Out Data, connects to same signal on SPI peripheral
-- SCK:  Clock Signal
+.. list-table:: SPI Signals
+   :header-rows: 1
+   :widths: 15 25 20 20 10 10
+
+   * - Signal
+     - Description
+     - Autopilot Pin
+     - Peripheral Pin
+     - Wire Color (Pixhawk)
+     - Wire Color (ThunderFly)
+   * - +5V
+     - Power supply (5V)
+     - +5V
+     - +5V
+     - Red
+     - Red
+   * - SCK
+     - Serial Clock, synchronizes data transfer
+     - SCK
+     - SCK
+     - Black
+     - Yellow
+   * - MISO
+     - Master Input, Slave Output (data from peripheral to autopilot)
+     - MISO
+     - MISO
+     - Black
+     - Blue
+   * - MOSI
+     - Master Output, Slave Input (data from autopilot to peripheral)
+     - MOSI
+     - MOSI
+     - Black
+     - Green
+   * - CS
+     - Chip Select, activates the specific peripheral
+     - CS
+     - CS
+     - Black
+     - White
+   * - GND
+     - Ground reference
+     - GND
+     - GND
+     - Black
+     - Black
 
 .. note:: SPI signal names can be labeled in many different ways. See the `SPI Wikipedia entry <https://en.wikipedia.org/wiki/Serial_Peripheral_Interface>`__ for more information.
+
+Cable Recommendations
++++++++++++++++++++++
+
+SPI signals can be sensitive to electromagnetic interference (EMI) and crosstalk, especially at higher clock rates. To minimize these issues:
+
+- Keep cable lengths as short as possible.
+- Ensure signal cables are separated from high-power and noisy cables.
 
 SAFETY SW/LED
 -------------
@@ -186,7 +395,6 @@ Signals
 - LED:     Drives the ground side of the notification LED
 - SW:      Senses if +3.3V is present to indicate switch closure
 
-
 BUZZER
 ------
 
@@ -196,3 +404,48 @@ ANALOG INPUTS
 -------------
 
 Often analog voltage measurement pins are provided. These are used for current and/or voltage sensing from a power monitor (if a dedicated connector has not been provided), other system voltage monitor points, or for analog :ref:`RSSI<common-rssi-received-signal-strength-indication>` input.
+
+Cable Colour Coding
+-------------------
+
+A clear and consistent cable colour-coding system is essential for quick identification and correct assembly of drone cables. Although different manufacturers may use slightly varying schemes, adhering to a standardized colour-coding method helps significantly in identifying cables quickly, reducing wiring mistakes, and simplifying maintenance or troubleshooting procedures. This practice is especially beneficial when referencing photographs in manuals or documentation, as it helps users visually distinguish between different cable types and their intended use.
+
+Recommended Cable Colour Coding
++++++++++++++++++++++++++
+
+The following table illustrates a recommended cable colour coding based on commonly used conventions:
+
+.. list-table:: Recommended Cable Colour Coding
+   :header-rows: 1
+   :widths: 15 55
+
+   * - Color
+     - Preferred Usage
+   * - Red
+     - Power voltage (+5V, +12V, main power)
+   * - Black
+     - Ground, power return ground
+   * - Green
+     - General-purpose signals, data lines
+   * - White
+     - General-purpose signals, data lines
+   * - Yellow
+     - General-purpose signals, data lines
+   * - Blue
+     - Power return, open-collector control signals
+
+General Rules
++++++++++++++
+
+To enhance clarity and avoid mistakes, adhere to the following rules when designing cable harnesses:
+
+- Reserve red and black strictly for power and ground lines, respectively.
+- Use the same colour consistently for the same type of signal throughout the harness.
+- Avoid repeating the same colour for adjacent wires in a connector.
+- Ensure wiring harnesses with the same pin count have a unique colour sequence to clearly identify the cable type.
+
+Using a clear colour-coding scheme greatly simplifies documentation processes. Photographs used in manuals or assembly instructions become clearer and easier to understand when cable colours distinctly identify their function. 
+
+The above recommendations are adopted by ThunderFly s.r.o and reflect common industry best practices. For more details, refer to the `Pixhawk Connector Standard <https://github.com/PX4/Pixhawk-Standards/blob/master/DS-009%20Pixhawk%20Connector%20Standard.pdf>`_.
+
+
