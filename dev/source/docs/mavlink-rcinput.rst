@@ -12,7 +12,7 @@ For reference here are some user focused RC related wiki pages:
 - :ref:`RC Input Channel Mapping (aka RCMAP) <copter:common-rcmap>`
 - :ref:`Auxiliary Functions <copter:common-auxiliary-functions>`
 
-The autopilot will ignore the RC input messages if the sender's system id does not match the autopilot's :ref:`SYSID_MYGCS <copter:SYSID_MYGCS>` and :ref:`SYSID_ENFORCE <copter:SYSID_ENFORCE>` = 1
+The autopilot will ignore the RC input messages if the sender's system id does not match the autopilot's :ref:`MAV_GCS_SYSID <MAV_GCS_SYSID>` and :ref:`MAV_OPTIONS <MAV_OPTIONS>` = 1
 
 RC input via MAVlink typically results in a laggy response caused by telemetry system lag and/or bandwidth limitations (these messages normally share bandwidth with other MAVLink messages passed between GCS and the vehicle)
 
