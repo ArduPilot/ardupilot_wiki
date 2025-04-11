@@ -36,7 +36,7 @@ Set the following parameters on the autopilot (assuming Telem2/Serial2 is used):
 
 -  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 1 (MAVLink 1)
 -  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 57 (57200 baud)
--  :ref:`SR2_POSITION <SR2_POSITION>` = 5 to send the vehicle's position to the camera at 5hz
+-  :ref:`MAV3_POSITION <MAV3_POSITION>` = 5 to send the vehicle's position to the camera at 5hz
 
 To allow triggering the taking of pictures during a mission or from a transmitter's auxiliary switch connect the "P3" 3-pin servo connector to the one of the autopilot's servo outputs.  In this example AUX OUT 1 (aka SERVO9) is used.  Then set the following parameters (Assuming the Camera1 instance):
 

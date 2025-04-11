@@ -48,7 +48,7 @@ MAVLink2 supports "signing" of packets which improves security and flexible leng
 
 .. note:: MAVLink2 is required to upload and download complex fences from the Ground Control Station.
 
-As mentioned on the :ref:`Telemetry Logs page <planner:mission-planner-telemetry-logs>` the rate messages are sent from the vehicle can be controlled using the ``SRx_*`` parameters (i.e. :ref:`SR1_POSITION <SR1_POSITION>`).
+As mentioned on the :ref:`Telemetry Logs page <planner:mission-planner-telemetry-logs>` the rate messages are sent from the vehicle can be controlled using the ``SRx_*`` parameters (i.e. :ref:`MAV2_POSITION <MAV2_POSITION>`).
 
 SRx parameters do not directly correlate to the SERIALx port, but rather to the order of the ports which have MAVLink protocol active.
 

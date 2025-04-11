@@ -72,9 +72,9 @@ In your Ground Control Station set the following parameters, if using the first 
 
 - :ref:`MNT1_TYPE <MNT1_TYPE>` to 4 ("SToRM32 MAVLink")
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 1 ("MAVlink1")
-- :ref:`SR2_EXTRA1 <SR2_EXTRA1>` to 20
-- :ref:`SR2_POSITION <SR2_POSITION>` to 10
-- :ref:`SR2_RC_CHAN <SR2_RC_CHAN>` to 20 and all other SR2_* variables to 0.
+- :ref:`MAV3_EXTRA1 <MAV3_EXTRA1>` to 20
+- :ref:`MAV3_POSITION <MAV3_POSITION>` to 10
+- :ref:`MAV3_RC_CHAN <MAV3_RC_CHAN>` to 20 and all other SR2_* variables to 0.
 
 If you wish to control the pitch angle manually you can set:
 
