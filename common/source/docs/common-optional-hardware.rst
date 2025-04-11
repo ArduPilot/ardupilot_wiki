@@ -7,6 +7,9 @@ Peripheral Hardware
 This section groups hardware that may (or may not be) present on your
 frame, including rangefinders, camera mounts, telemetry radios etc. For
 information related to Autopilot selection see :ref:`Autopilot Hardware Options <common-autopilots>`.
+For guidance on cable design, colour coding, and EMI-compliant wiring, see :ref:`Cable Wiring Guidelines <common-cabling-guide>`.
+
+
 
 .. note::
 
