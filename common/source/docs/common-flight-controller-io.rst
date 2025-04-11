@@ -46,7 +46,7 @@ All ArduPilot Autopilots provide inputs and outputs for connecting:
 I/O Port Types
 ==============
 
-.. note:: See the individual :ref:`autopilot's<common-autopilots>`  description page for what specific ports are provided and exact pinouts of each port.
+.. note:: See the individual :ref:`autopilot's<common-autopilots>`  description page for what specific ports are provided and the exact pinouts of each port.
 
 
 .. note:: For detailed guidance on cable design, signal routing, and color coding schemes, see :ref:`Cable Design Guidelines <common-cabling-guide>`.
@@ -55,19 +55,20 @@ I/O Port Types
 USB
 ---
 
-USB is provided as the primary port for configuration of the autopilot. It always appears as the first Serial port (0) to the autopilot. See :ref:`Serial Port Configuration <common-serial-options>` 
+USB is provided as the primary port for the autopilot configuration. It always appears as the first serial port (0) on autopilot. See :ref:`Serial Port Configuration <common-serial-options>` 
 
 UART
 ----
 
-Usually several UART ports are provided. These provide connections to Telemetry radios, GPS, Rangefinders, and even SBUS servos. In addition,as of firmware versions 4.0, serial RC receiver inputs can be connected to any UART. See :ref:`Serial Port Configuration <common-serial-options>` 
+Usually, several UART ports are provided. These provide connections to Telemetry radios, GPS, Rangefinders, and even SBUS servos. In addition, as of firmware version 4.0, serial RC receiver inputs can be connected to any UART. See :ref:`Serial Port Configuration <common-serial-options>` 
+
 Signals
 +++++++
 
 - TX: Data Output, connects to peripherals RX signal
 - RX: Data Input, connect to peripheral TX signal
 
-usually +5V and GND are provided in the connector, or close by if a board style autopilot
+usually, +5V and GND are provided in the connector, or close by if a board-style autopilot
 
 Sometimes flow control signals are optionally provided in the connector. Some Telemetry radios utilize these signals:
 
@@ -87,7 +88,7 @@ Signals
 
 While I2C uses 3.3V signaling, often +5V is supplied in the connector along with the signals, since many I2C devices actually use this as main power. If not enough ports are provided, I2C expansion boards can allow more than one device to be connected.
 
-.. note:: Some board level autopilots require external 2K ohm pullups on the signal lines to 3.3V since they are not provided on the board, while some I2C peripherals provide the pull-ups. If the device does not operate properly, one should first be sure that the pull-ups are provided somewhere.
+.. note:: Some board-level autopilots require external 2K ohm pullups on the signal lines to 3.3V since they are not provided on the board, while some I2C peripherals provide the pull-ups. If the device does not operate properly, one should first be sure that the pull-ups are provided somewhere.
 
 GPS
 ---
@@ -102,7 +103,7 @@ Signals
 
 .. note:: Note the swapping of signals between autopilot and peripheral.
 
-usually +5V and GND are provided in the connector. If its a GPS/Compass port, then the I2C signals will also be provided and attached to the same named signals on the compass sub-module of a GPS/Compass module.
+usually +5V and GND are provided in the connector. If it is a GPS/Compass port, then the I2C signals will also be provided and attached to the same named signals on the compass sub-module of a GPS/Compass module.
 
 
 PMU
@@ -118,13 +119,13 @@ Signals
 +++++++
 
 - +5V: Regulated supply to autopilot
-- CUR: Current Monitor output. Usually a 0-3.3v analog voltage represents current draw level
-- VLT: Voltage Monitor output. Usually a  0-3.3V analog voltage representing battery voltage
+- CUR: Current Monitor output. Usually, a 0-3.3v analog voltage represents the current draw level
+- VLT: Voltage Monitor output. Usually, a  0-3.3V analog voltage representing battery voltage
 - GND: Ground
 
 Some "smart" battery/power monitors replace the CUR and VLT pins with I2C signals to provide digital information on battery status.
 
-Many board style autopilots fully integrate the PMU as part of the board with internal connections to the processor.
+Many board-style autopilots fully integrate the PMU as part of the board with internal connections to the processor.
 
 In addition, many autopilots offer multiple PMU connections since ArduPilot firmware versions 4.0 and later support up to 10 PMUs/Battery Monitors.
 
@@ -142,16 +143,16 @@ The primary outputs for controlling motors (via ESCs) and servos are provided by
 
 Those controllers with MAIN/AUX output labels usually indicate that a IOMCU co-processor is being employed. These provide outputs intended for use as the motor/servo outputs and provide a redundant means of control via RC if the main autopilot fails. The MAIN outputs come from this co-processor, while the AUX designated outputs are controlled directly from the autopilot. Most board level autopilots do not use an IOMCU and have outputs only labeled OUTPUTx or Mx.
 
-This distinction is important, since AUX outputs(and OUTPUTs from autopilots without an IOMCU) can be used as GPIOs as well as PWM or Dshot. While MAIN outputs can only be used for PWM, except for use as a RELAY GPIOs. See :ref:`GPIOs <common-gpios>`
+This distinction is important since AUX outputs(and OUTPUTs from autopilots without an IOMCU) can be used as GPIOs as well as PWM or Dshot. While MAIN outputs can only be used for PWM, except for use as RELAY GPIOs. See :ref:`GPIOs <common-gpios>`
 
 .. note:: A few autopilots that do NOT use an IOMCU label their outputs as MAIN, so actually do have the capability of use as GPIOs and/or Dshot ESC control on these outputs. CUAV V5 Nano and Holybro Pixhawk 4 Mini are examples.
 
-Often these outputs are provided on 3 pin connector strips supplying or distributing servo power and ground, in addition to the individual output signals. This power is usually provided externally, such as by the ESC or a BEC, although some autopilots provide this power from internal regulators.
+Often these outputs are provided on 3-pin connector strips supplying or distributing servo power and ground, in addition to the individual output signals. This power is usually provided externally, such as by the ESC or a BEC, although some autopilots provide this power from internal regulators.
 
 CAN
 ---
 
-:ref:`CAN <common-canbus-setup-advanced>` bus is provided on many autopilots for use with :ref:`DroneCAN <common-uavcan-setup-advanced>` peripherals. ESCs, GPS/Compass, Rangefinders, and many other peripherals and sensors are being added to the list of available DroneCAN devices everyday. CAN provides a robust method of communicating with peripherals with data integrity, even with long leads.
+:ref:`CAN <common-canbus-setup-advanced>` bus is provided on many autopilots for use with :ref:`DroneCAN <common-uavcan-setup-advanced>` peripherals. ESCs, GPS/Compass, Rangefinders, and many other peripherals and sensors are being added to the list of available DroneCAN devices every day. CAN provides a robust method of communicating with peripherals with data integrity, even with long leads.
 
 
 Signals
@@ -160,7 +161,7 @@ Signals
 - CAN_H: CAN high side signal, connects to peripherals CAN_H pin
 - CAN_L: CAN low side signal, connects to peripherals CAN_L pin
 
-Power and ground are usually also provide on a standard 4 pin JST-GH connector.
+Power and ground are usually also provided on a standard 4-pin JST-GH connector.
 
 SPI
 ---
@@ -171,8 +172,8 @@ Signals
 +++++++
 
 - CSx:  One or more chip selects for enabling the SPI peripheral
-- MOSI: Master Out/Slave In Data, connects to same signal on SPI peripheral
-- MISO: Master In/Slave Out Data, connects to same signal on SPI peripheral
+- MOSI: Master Out/Slave In Data, connects to the same signal on SPI peripheral
+- MISO: Master In/Slave Out Data, connects to the same signal on SPI peripheral
 - SCK:  Clock Signal
 
 .. note:: SPI signal names can be labeled in many different ways. See the `SPI Wikipedia entry <https://en.wikipedia.org/wiki/Serial_Peripheral_Interface>`__ for more information.
@@ -180,7 +181,7 @@ Signals
 SAFETY SW/LED
 -------------
 
-Many autopilots provide dedicated GPIOs on a connector for adding the optional safety switch and notification leds that ArduPilot support. Usually these are offered on autopilots that utilize an IOMCU co-processor.
+Many autopilots provide dedicated GPIOs on a connector for adding the optional safety switch and notification LEDs that ArduPilot supports. Usually, these are offered on autopilots that utilize an IOMCU co-processor.
 
 Signals
 +++++++
