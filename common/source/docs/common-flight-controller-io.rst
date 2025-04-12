@@ -68,7 +68,7 @@ Signals
 - TX: Data Output, connects to peripherals RX signal
 - RX: Data Input, connect to peripheral TX signal
 
-usually, +5V and GND are provided in the connector, or close by if a board-style autopilot
+Usually, +5V and GND are provided in the connector, or close by if a board-style autopilot
 
 Sometimes flow control signals are optionally provided in the connector. Some Telemetry radios utilize these signals:
 
