@@ -9,11 +9,11 @@ This guide provides detailed recommendations for cabling with a focus on signal 
 Cable Colour Coding
 -------------------
 
-A consistent cable colour-coding system is usefull for correct assembly and maintenance. It also improves clarity in documentation and field repairs.
+A consistent cable colour-coding system is useful for correct assembly and maintenance. It also improves clarity in documentation and field repairs.
 
 .. list-table:: Recommended Cable Colour Coding
    :header-rows: 1
-   :widths: 15 30 55
+   :widths: 15 55
 
    * - Colour
      - Preferred Usage
@@ -32,7 +32,7 @@ A consistent cable colour-coding system is usefull for correct assembly and main
 
 General Rules:
 
-- Red and black reserved for power and ground.
+- Red and black are reserved for power and ground.
 - Use consistent colours per signal type across harnesses.
 - Avoid repeating colours for adjacent wires in a connector.
 - Cables with the same pin count should have unique colour sequences — this improves identification in manuals and photos.
