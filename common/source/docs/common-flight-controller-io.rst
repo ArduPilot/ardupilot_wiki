@@ -55,7 +55,7 @@ I/O Port Types
 USB
 ---
 
-USB is provided as the primary port for the autopilot configuration. It always appears as the first serial port (0) on autopilot. See :ref:`Serial Port Configuration <common-serial-options>` 
+USB is provided as the primary port for the autopilot configuration. It always appears as the first serial port (SERIAL0) on the autopilot. See :ref:`Serial Port Configuration <common-serial-options>` 
 
 UART
 ----
