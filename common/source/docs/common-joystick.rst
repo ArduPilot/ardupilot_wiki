@@ -71,7 +71,7 @@ Setup with the Mission Planner
    button and select the flight mode from the drop-down (see pic above)
 -  When done, push the **Save** button. This records the min and max calibrations and records the neutral positions of the joystick for the trim value. Mission Planner will then scale the joystick signal to the RC channel's ``RCx_MIN/MAX/TRIM`` parameters in the autopilot when sending RC override commands by the Joystick.
 -  In the **CONFIG/TUNING \| Full Parameter List**, check that the
-   :ref:`SYSID_MYGCS <SYSID_MYGCS>`
+   :ref:`MAV_GCS_SYSID <MAV_GCS_SYSID>`
    parameter matches the system ID of your GCS. This parameter limits
    which GCS can send override signals to the vehicle.
 

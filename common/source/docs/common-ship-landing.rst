@@ -18,7 +18,7 @@ The beacon system needs the following:
 
 - a reliable yaw source. Using dual-F9P GPS with :ref:`moving baseline yaw<common-gps-for-yaw>` is recommended if the moving platform will cause problems with compasses.
 - a telemetry radio setup so that the aircraft can see GLOBAL_POSITION_INT mavlink messages from the beacon autopilot. There are multiple methods of achieving that, see the section below on radio setup
-- the beacon needs a different mavlink system ID to the aircraft and the GCS. You set this with the :ref:`SYSID_THISMAV<SYSID_THISMAV>` parameter. In the example below, :ref:`SYSID_THISMAV<SYSID_THISMAV>` = 17, has been set.
+- the beacon needs a different mavlink system ID to the aircraft and the GCS. You set this with the :ref:`MAV_SYSID<MAV_SYSID>` parameter. In the example below, :ref:`MAV_SYSID<MAV_SYSID>` = 17, has been set.
 - the beacon can be offset from the actual landing location. The beacon should be placed for optimal radio performance, then the instructions below can be used to setup the actual landing location relative to the beacon.
 
 Here are examples a nice setups for the beacon (courtesy of FreeSpace Operations and Offshore Aviation):

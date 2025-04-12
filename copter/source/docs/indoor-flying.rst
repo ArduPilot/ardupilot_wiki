@@ -4,14 +4,14 @@
 Indoor Flying Guidelines
 ========================
 
-This article provides important guidelines for flying your multicopter
-inside.
+This article provides guidelines for flying your multicopter inside without any position or velocity source (e.g. no GPS, no optical flow).
+For indoor flight using a non-GPS position or velocity source please refer to the :ref:`Non-GPS Navigation <common-non-gps-navigation-landing-page>` page.
 
 .. warning::
 
-   -  When flying indoor make sure you have plenty of space and follow
+   -  When flying indoors make sure you have plenty of space and follow
       safety procedures.
-   -  GPS does not work indoors and needs to be disabled. (no exceptions)
+   -  GPS does not work indoors and needs to be disabled (no exceptions)
 
 Overview
 --------
@@ -41,21 +41,19 @@ climate control devices like fans and air-conditioning will also cause
 pressure changes. The likely outcome is a sudden crash in the floor or
 ceiling.
 
-Sonar
------
+Sonar or Lidar
+--------------
 
-Downward facing :ref:`sonar or lidar <common-rangefinder-landingpage>` can help avoid with
-sudden changes in altitude in AltHold mode causing crashes into the
-floor or ceiling.
+Using a downward facing :ref:`sonar or lidar <common-rangefinder-landingpage>` when flying in :ref:`AltHold <altholdmode>` can help avoid sudden changes in altitude causing crashes into the floor or ceiling.  See :ref:`Surface Tracking <terrain-following-manual-modes>` for more details.
 
 Safe Indoor Flying Dos
 ----------------------
 
--  Disable GPS in non-auto\*\* modes - set :ref:`AHRS_GPS_USE<AHRS_GPS_USE>` to 0
--  Enable Battery_failsafe to LAND only or disable (not RTL) - set :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` 
--  Enable Throttle Failsafe to LAND only or disable (not RTL or continue) - set :ref:`FS_THR_ENABLE <FS_THR_ENABLE>` = 0 or 3
--  Disable FENCE - set :ref:`FENCE_ENABLE <FENCE_ENABLE>` = 0
--  Use Sonar (if available)
+-  Disable the GPS by setting :ref:`GPS1_TYPE<GPS1_TYPE>` to 0
+-  Configure the :ref:`battery failsafe <failsafe-battery>` to "Land" by setting :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` = 1
+-  Configure the :ref:`radio failsafe <radio-failsafe>` to "Enabled always Land" by setting :ref:`FS_THR_ENABLE <FS_THR_ENABLE>` = 3
+-  Disable the :ref:`fence <common-geofencing-landing-page>` by setting :ref:`FENCE_ENABLE <FENCE_ENABLE>` = 0
+-  Use a downward facing sonar or lidar (if available)
 
 Safe Indoor Flying Don'ts
 -------------------------
@@ -64,7 +62,6 @@ Safe Indoor Flying Don'ts
    warehouse with a high roof = OK, bedroom = not OK.
 -  Don't use Auto\* modes
 
-\* Auto Modes are ones that requires GPS i.e. Loiter, Position Hold,
-Guided, Auto
+\* Autonomous and semi-autonomous modes requires GPS (e.g. :ref:`Loiter <loiter-mode>`, :ref:`Guided <ac2_guidedmode>`, :ref:`Auto <auto-mode>`, :ref:`RTL <rtl-mode>`)
 
-\*\* Non-auto modes are Stabilize and Altitude Hold
+\*\* Non-autonomous modes include :ref:`Stabilize <stabilize-mode>` and :ref:`AltHold <altholdmode>`
