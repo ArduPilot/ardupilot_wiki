@@ -200,3 +200,9 @@ ANALOG INPUTS
 -------------
 
 Often analog voltage measurement pins are provided. These are used for current and/or voltage sensing from a power monitor (if a dedicated connector has not been provided), other system voltage monitor points, or for analog :ref:`RSSI<common-rssi-received-signal-strength-indication>` input.
+
+
+.. toctree::
+   :hidden:
+
+   common-cabling-guide
