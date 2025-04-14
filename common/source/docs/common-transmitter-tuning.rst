@@ -377,6 +377,8 @@ The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the para
 |59      |Position Control Max     |  :ref:`PSC_ANGLE_MAX<PSC_ANGLE_MAX>`                                 |
 |        | Lean Angle              |                                                                      |
 +--------+-------------------------+----------------------------------------------------------------------+
+|60      |Loiter Max X/Y Speed     | :ref:`loiter-mode`                                                   |
++--------+-------------------------+----------------------------------------------------------------------+
 
 
 ** Traditional Heli Only
