@@ -212,7 +212,7 @@ Swarming with SITL
 SITL has support for launching multiple vehicles from a single command.
 With this method, SITL is restricted to launching vehicles of the same type.
 
-When launching multiple vehicles, each one will need a unique SysId parameter: :ref:`SYSID_THISMAV<SYSID_THISMAV>`.
+When launching multiple vehicles, each one will need a unique SysId parameter: :ref:`MAV_SYSID<MAV_SYSID>`.
 The easiest method to avoid SysId conflicts is with the ``--auto-sysid`` option.
 
 The number of vehicles is set with ``--count`` option.
