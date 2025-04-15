@@ -39,7 +39,7 @@ UP-T201 Wiring Diagram:
 - Connect the sensor's GND and TX pin to one of the autopilot's serial ports. Note that the TX pin of the sensor should be connected to the RX pin of the autopilot. In the image above the sensor is connected to a Pixhawk's Telem2 port.
 - Connect the sensor's VCC to a 3.3V or 5V power source.
 
-Configuration and Parameter
+Configuration and Parameters
 ===========================
 - Set :ref:`FLOW_TYPE<FLOW_TYPE>` = 9
 - Set :ref:`SR1_EXTRA3<SR1_EXTRA3>` = 50
