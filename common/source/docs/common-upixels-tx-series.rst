@@ -36,7 +36,7 @@ UP-T201 Wiring Diagram:
    :target: ../_images/upixels-t201.png
 
 - The flow sensor should be mounted on the underside of the copter with the camera lens pointing downwards.
-- Connect the sensor's GND and TX pin to one of the autopilot's serial ports. Note that the TX pin of the sensor should be connected to the RX pin of the autopilot. In the image above the sensor is connected to a Pixhawk's Telem2 port.
+- Connect the sensor's GND and TX pin to one of the autopilot's serial ports. Note that the TX pin of the sensor should be connected to the RX pin of the autopilot. In the image above the sensor is connected to the Telem2 port.
 - Connect the sensor's VCC to a 3.3V or 5V power source.
 
 Configuration and Parameters
