@@ -55,7 +55,9 @@ These GPS can incorporate real time kinematic data, either internally generated 
 .. toctree::
     :maxdepth: 1
 
-    ArduSimple RTK GPS <common-gps-ardusimple>
+    ArduSimple RTK GPS simpleRTK2B Budget (u-blox ZED-F9P) <common-ardusimple-rtk-gps-simplertk2b-budget>
+    ArduSimple RTK GPS simpleRTK3B Pro (Septentrio Mosaic-X5) <common-ardusimple-rtk-gps-simplertk3b-pro>
+    ArduSimple RTK GPS simpleRTK3B Compass (Unicore UM982, Dual antenna heading) <common-ardusimple-rtk-gps-simplertk3b-compass>
     ARK MOSAIC-X5 RTK GPS <common-ark-mosaic-rtk-gps>
     ARK RTK Base <common-ark-rtk-base>
     ARK RTK F9P <common-ark-rtk-f9p-gps>
