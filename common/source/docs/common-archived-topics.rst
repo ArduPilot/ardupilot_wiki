@@ -42,6 +42,7 @@ value to users with old hardware.
     DROTAG x Geotagger <common-geotagging-drotagx>
     Robsense SwarmLink <common-telemetry-robsense-swarmlink>
     MSP OSD (version 4.1) <common-msp-overview>
+    ArduSimple GPS <common-gps-ardusimple>
 
 [/site]
 [site wiki="copter"]
