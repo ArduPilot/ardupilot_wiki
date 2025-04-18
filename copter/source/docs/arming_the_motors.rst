@@ -47,6 +47,8 @@ AUTOTUNE
 
 .. note:: If setup, you can use one of the **RC_xOPTION switches** that includes the arm function. See switch option "153", "154, or "160".
 
+.. warning:: Copter will allow arming in some modes without a good GPS location being obtained before arming. If you want any of the modes such as RTL, LOITER, etc. to work properly, you should enable the "Need location" pre-arm check by setting the :ref:`ARMING_NEED_LOC<ARMING_NEED_LOC>` parameter to "1" to be sure you have position infomation available.
+
 Disarming the motors
 ====================
 
