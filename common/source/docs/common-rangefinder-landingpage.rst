@@ -64,8 +64,8 @@ Unidirectional Rangefinders
     Ainstein LR-D1 Radar Altimerer <common-ainstein-lrd1>
     Attollo Engineering Wasp200 <common-wasp200-lidar>
     Avionics Anonymous DroneCAN LIDAR Interface <common-avanon-laserint>
-    Benewake TF02 / TF03 <common-benewake-tf02-lidar>
-    Benewake TFmini / TFmini Plus / TF-Luna <common-benewake-tfmini-lidar>
+    Benewake TF02 / TF03 / TF-Luna <common-benewake-tf02-lidar>
+    Benewake TFmini / TFmini Plus <common-benewake-tfmini-lidar>
     Garmin Lidar-Lite <common-rangefinder-lidarlite>
     GY-US42 Sonar <common-rangefinder-gy-us42>
     Hexsoon 24G Radar <common-rangefinder-hexsoon-24g>
