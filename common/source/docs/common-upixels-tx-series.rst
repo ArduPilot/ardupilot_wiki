@@ -47,7 +47,7 @@ Configuration and Parameters
 - Set :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 16
 - Set :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = 45
 - Set :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = 45
-- Set :ref:`RNGFND1_MAX<RNGFND1_MAX>` = 4 (The UP-T101-Plus is set to 400 and the UP-T201 is set to 1500)
+- Set :ref:`RNGFND1_MAX<RNGFND1_MAX>` = 4 (The UP-T101-Plus is set to 4 and the UP-T201 is set to 15)
 - Set :ref:`RNGFND1_MIN<RNGFND1_MIN>` = 0.02 (The UP-T101-Plus is set to 0.02 and the UP-T201 is set to 0.05)
 
 Once the sensor is activated, you should be able to observe the optical flow and distance sensor data on the Status page of the task planner. "opt_m_x", "opt_m_y", "opt_qua" and "rangefinder1" data have been updated.
