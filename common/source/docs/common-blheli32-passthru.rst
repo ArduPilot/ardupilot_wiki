@@ -28,14 +28,19 @@ Depending on the ESC, BLHeli/BLHeli_S/BLHeli32/AM32 provides the following featu
 Pass-Through Support
 --------------------
 
-..note:: This feature is only available on NON IOMCU outputs. Autopilots which have an IOMCU co-processsor (usually marked as having "MAIN" outputs from the IOMCU and "AUX" outputs from the main cpu) will not pass-through on those outputs. Use this features on "AUX" or "FMU" outputs with DShot capability.
+.. note:: 
+   This feature is only available on NON IOMCU outputs. Autopilots which have an IOMCU co-processsor (usually marked as having "MAIN" outputs from the IOMCU and "AUX" outputs from the main cpu) will not pass-through on those outputs.
+   Use this feature on "AUX" or "FMU" outputs with DShot capability. Be mindful that using AUX outputs for flight-critical controls removes the benefits of IOMCU.
+   For maximum robustness, switch your motors to "AUX" or "FMU" only when configuring with passthrough, and move them back to "MAIN" once configuration is complete.
 
 The Pass-Through feature allows BLHeli32, AM32, and BLHeli_S ESCs to be upgraded and configured using the corresponding BLHeliSuite32, AM32 Configurator, or BLHeliSuite application (running on the user's PC) while the ESCs remain connected to the autopilot.  To use this feature please follow these steps
 
 - Download and install `Linux or Windows AM32 configurator <https://am32.ca/downloads>`__ (for use with AM32 ESCs), `BLHeliSuite32 <https://github.com/bitdump/BLHeli/releases>`__ (for use with BLHeli32/AM32 ESCs), `BLHeliSuite <https://github.com/bitdump/BLHeli>`__ (for BLHeli_S ESC) or `JESC configurator <https://github.com/jflight-public/jesc-configurator/releases>`__ (for use with BLHeli_S JESC) on your PC.
 - Connect your PC to the autopilot using a USB cable and then connect with a ground station (e.g. Mission Planner, QGC).
+- Disconnect your propellers
 - Set :ref:`SERVO_BLH_AUTO <SERVO_BLH_AUTO>` to 1 to automatically enable pass-through on all outputs configured as motors (e.g. :ref:`SERVOx_FUNCTION <SERVO9_FUNCTION>` = "Motor1", "Motor2", etc) for multicopters and quadplanes or throttle (e.g. those with :ref:`SERVOx_FUNCTION <SERVO9_FUNCTION>` set to 70 ("throttle"), 73 ("throttle left") or 74 ("throttle right")) on rovers.  For most multicopters, quadplanes and rovers this will do the right thing but for planes, set :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` to enable pass-through on the appropriate servo outputs.
 - If your PC is connected to the autopilot using a telemetry radio (instead of using USB cable as recommended above) set :ref:`SERVO_BLH_PORT <SERVO_BLH_PORT>` to the autopilot port connected to the telemetry radio.  Beware that this is does NOT specify the port used for :ref:`ESC telemetry <blheli32-esc-telemetry>` feedback to your autopilot!
+- Plug in the vehicle's battery to power the ESC's
 - If using a safety switch ensure it is pushed (or disabled by setting :ref:`BRD_SAFETY_DEFLT <BRD_SAFETY_DEFLT>` = 0).  (``BRD_SAFETYENABLE`` in older firmware versions)
 - Disconnect the ground station (but leave the USB cable connected)
 - Start the ESC configuration software and connect to the autopilot's COM port by selecting "BLHeli32/AM32 Bootloader (Betaflight/Cleanflight)" from the interfaces menu.  Press "Connect" and "Read Setup".  You should be able to upgrade and configure all connected ESCs
@@ -48,7 +53,7 @@ The Pass-Through feature allows BLHeli32, AM32, and BLHeli_S ESCs to be upgraded
    ArduPilot firmware supports the pass-through protocol with up-to-date BLHeli32, AM32 firmware and BLHeliSuite32, or BLHeli_S firmware and BLHeliSuite only.
 
 .. warning::
-   For pass-through to function, the autopilot must be configured to use one of the DShot protocols.  If you wish to eventually use one of the other protocols (e.g. PWM, OneShot125) that the ESC supports, you may still configure the ESCs using Pass-Through (e.g. change motor directions, set min/max values, etc) but then finally re-configure the autopilot to *not* use DShot.  Once the autopilot and ESCs are rebooted the ESC should auto-detect that the ESCs are no longer using DShot.
+   For pass-through to function, the autopilot must be configured to use one of the DShot protocols using :ref:`SERVO_BLH_OTYPE <SERVO_BLH_OTYPE>` even if you use PWM.  If you wish to eventually use one of the other protocols (e.g. PWM, OneShot125) that the ESC supports, you may still configure the ESCs using Pass-Through (e.g. change motor directions, set min/max values, etc) but then finally re-configure the autopilot to *not* use DShot.  Once the autopilot and ESCs are rebooted the ESC should auto-detect that the ESCs are no longer using DShot.
 
 ..  youtube:: np7xXY_e5sA
     :width: 100%
