@@ -28,7 +28,4 @@ create your own robots based on the design. The board can be purchased
 Quick start
 -----------
 
-All the documentation related to this product (specs, software,
-schematics,...) can be found in the Erle Robotics `documentation site <http://erlerobotics.com/docs/>`__.
-
 [copywiki destination="plane,copter,rover,blimp,sub"]
