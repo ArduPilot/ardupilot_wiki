@@ -6,9 +6,7 @@ Ethernet / Network Setup
 
 ArduPilot 4.5 (and higher) provides a network interface framework to allow local and wide-area network connections. Several later generation autopilots, like Pixhawk6X and CubePilot CubeRed, provide Ethernet MAC interfaces, which allows ArduPilot to connect to vehicle peripherals, data servers, and even the wide area network via IP using transport layer UDP or TCP protocols.
 
-In addition, custom builds for H7 based processors that do not have an Ethernet MAC integrated can be created with the `ArduPilot Custom Firmware Server <https://firmware.ardupilot.org/>`__ that includes PPP(Point-To-Point Protocol) allowing network connections over a serial port of the autopilot using PPP.
-
-.. note:: for those :ref:`building firmware locally <building-the-code>`, PPP can be included with the \-\-enable-PPP configuration option.
+In addition, autopilots with H7 based processors can connect to Ethernet over a serial port using PPP (Point-to-Point Protocol), a :ref:`PPP to Ethernet Adapter <common-ethernet-adapters>` and a custom firmware build.  See the :ref:`PPP Configuration section <ppp-config>` below for more details.
 
 Currently, hooks into the normal serial manager within ArduPilot now allow serial protocols not only to be connected to the autopilot via the normal UART connections, but also via network connections. These can be used either with Etnernet or PPP interfaces.
 
@@ -71,6 +69,8 @@ The gateway IP address is used for routing when communicating with IP addresses 
 - :ref:`NET_GWADDR2<NET_GWADDR2>` (e.g. 144)
 - :ref:`NET_GWADDR3<NET_GWADDR3>` (e.g. 1)
 
+.. _ppp-config:
+
 PPP Configuration
 -----------------
 
@@ -80,13 +80,15 @@ This feature allows any H7 cpu-based autopilot to connect to networks via a Seri
 
 To enable this feature, it first must be present in the autopilot firmware. This can be done using the `Custom Firmware Build Server <https://firmware.ardupilot.org/>`__ or by building the code locally using the "\-\-enable-PPP" waf configuration option (See :ref:`building-the-code`)
 
+.. image:: ../../../images/build-server-ppp.jpg
+    :target: ../_images/build-server-ppp.jpg
+
+Connect one of the H7 based autopilot's serial ports to the ethernet switch's or Ethernet-to-PPP-adapter's USART port. For optimum performance a serial port with flow control should be used (e.g. normally SERIAL1 or SERIAL2).  If a port without flow control if used, the baud rate may be set as high as 921000
+
 To configure a serial port for PPP (Serial2 is used in this example):
 
 - set :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 48 (PPP) requires a reboot to take effect.
 - set :ref:`SERIAL2_BAUD<SERIAL2_BAUD>` = 12500000 (12.5MBaud)
-
-.. note:: to get best throughput, the Serial port should have flow control (RTS/CTS) and it be enabled and used. If using a port without flow control, you may be able to set the baud rate as high as 921000, however.
-
 
 ArduPilot Port Configuration
 ----------------------------
