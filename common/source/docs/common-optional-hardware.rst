@@ -46,7 +46,7 @@ For guidance on cable design, colour coding, and EMI-compliant wiring, especiall
     DroneCAN Adapter Node <common-uavcan-adapter-node>
     DroneCAN Peripherals <common-uavcan-peripherals>
     ESCs and Motors <common-escs-and-motors>
-    Ethernet Adapters <common-ethernet-adapters>
+    Ethernet Adapters and Switches <common-ethernet-adapters>
     External AHRS Systems <common-external-ahrs>
     First Person View Video <common-fpv-first-person-view>
     Fuel Flow and Level Sensors <common-fuel-sensors>
