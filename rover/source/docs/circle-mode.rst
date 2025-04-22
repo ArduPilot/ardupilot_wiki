@@ -1,4 +1,4 @@
-.. circle-mode:
+.. _circle-mode:
 
 ===========
 Circle Mode
