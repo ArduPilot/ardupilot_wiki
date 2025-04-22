@@ -22,7 +22,7 @@ Incoming Messages
 Messages the autopilot handles when received.
 
 .. csv-table::
-  :header: MAVLink Message, Code Source, MAVLink Dialect
+  :header: MAVLink number, MAVLink Message, Code Source, MAVLink Dialect
 
 
   #246,  `ADSB_VEHICLE <https://mavlink.io/en/messages/common.html#ADSB_VEHICLE>`_, `AP_ADSB/AP_ADSB.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_ADSB/AP_ADSB.cpp>`_, common
@@ -132,7 +132,7 @@ Incoming Commands
 Commands the autopilot handles when received.
 
 .. csv-table::
-  :header: MAVLink Message, Code Source, MAVLink Dialect
+  :header: MAVLink number, MAVLink Message, Code Source, MAVLink Dialect
 
 
   #42429,  `MAV_CMD_ACCELCAL_VEHICLE_POS <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_ACCELCAL_VEHICLE_POS>`_, `AP_Frsky_Telem/AP_Frsky_MAVliteMsgHandler.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Frsky_Telem/AP_Frsky_MAVliteMsgHandler.cpp>`_, ardupilotmega
@@ -258,7 +258,7 @@ Requestable Messages
 Messages that can be requested/streamed from the autopilot.
 
 .. csv-table::
-  :header: MAVLink Message, Code Source, MAVLink Dialect
+  :header: MAVLink number, MAVLink Message, Code Source, MAVLink Dialect
 
 
   #246,  `ADSB_VEHICLE <https://mavlink.io/en/messages/common.html#ADSB_VEHICLE>`_, `GCS_MAVLink/GCS_Common.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/GCS_MAVLink/GCS_Common.cpp>`_, common
@@ -352,7 +352,7 @@ Outgoing Messages
 Messages the autopilot will send automatically (unrequested).
 
 .. csv-table::
-  :header: MAVLink Message, Code Source, MAVLink Dialect
+  :header: MAVLink number, MAVLink Message, Code Source, MAVLink Dialect
 
 
   #246,  `ADSB_VEHICLE <https://mavlink.io/en/messages/common.html#ADSB_VEHICLE>`_, `AP_ADSB/AP_ADSB.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_ADSB/AP_ADSB.cpp>`_, common
@@ -457,7 +457,7 @@ Stream Groups
 Message groups with stream rates requestable by ``SRn_*`` parameters. Messages in a group are only sent if the corresponding feature is active.
 
 .. csv-table::
-  :header: MAVLink Message, Stream Group Parameter, MAVLink Dialect
+  :header: MAVLink number, MAVLink Message, Stream Group Parameter, MAVLink Dialect
 
 
   #295,  `AIRSPEED <https://mavlink.io/en/messages/development.html#AIRSPEED>`_, SRn_RAW_SENSORS, development
@@ -519,7 +519,7 @@ Missing Messages
 Unsupported / unhandled messages.
 
 .. csv-table::
-  :header: MAVLink Message, Code Source, MAVLink Dialect
+  :header: MAVLink number, MAVLink Message, Code Source, MAVLink Dialect
 
 
   #139,  `ACTUATOR_CONTROL_TARGET <https://mavlink.io/en/messages/common.html#ACTUATOR_CONTROL_TARGET>`_, UNSUPPORTED, common
@@ -651,7 +651,7 @@ Missing Commands
 Unsupported / unhandled commands.
 
 .. csv-table::
-  :header: MAVLink Message, Code Source, MAVLink Dialect
+  :header: MAVLink number, MAVLink Message, Code Source, MAVLink Dialect
 
 
   #3001,  `MAV_CMD_ARM_AUTHORIZATION_REQUEST <https://mavlink.io/en/messages/common.html#MAV_CMD_ARM_AUTHORIZATION_REQUEST>`_, UNSUPPORTED, common
