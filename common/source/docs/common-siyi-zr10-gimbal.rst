@@ -6,7 +6,7 @@
 SIYI A8, ZR10, ZR30, ZT6 and ZT30 Gimbals
 =========================================
 
-The `SIYI A8 <https://shop.siyi.biz/products/siyi-a8-mini-gimbal-camera>`__, `ZR10 <https://shop.siyi.biz/products/siyi-zr10>`__, `ZR30 <https://shop.siyi.biz/products/siyi-zr30>`__, `ZT6 <https://shop.siyi.biz/products/siyi-zt6>`__ and `ZT30 <https://shop.siyi.biz/products/siyi-zt30>`__ are 3-axis gimbals and camera which can communicate with ArduPilot using a custom serial protocol
+The `SIYI A8 <https://shop.siyi.biz/products/siyi-a8-mini-gimbal-camera>`__, `ZR10 <https://shop.siyi.biz/products/siyi-zr10-gimbal-camera>`__, `ZR30 <https://shop.siyi.biz/products/zr30-4k-8mp-ultra-hd-180x-hybrid-30x-optical-gimbal-camera>`__, `ZT6 <https://siyi.biz/en/index.php?id=602>`__ and `ZT30 <https://shop.siyi.biz/products/siyi-zt30>`__ are 3-axis gimbals and camera which can communicate with ArduPilot using a custom serial protocol
 
 .. image:: ../../../images/siyi-zr10-gimbal.png
     :target: https://shop.siyi.biz/products/zr10
