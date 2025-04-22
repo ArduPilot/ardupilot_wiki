@@ -43,7 +43,7 @@ Be sure that the autopilot's 5V supply is capable of supplying the unit's requir
 Example setup below shown for first proximity sensor using SERIAL1 UART:
 
 - :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = "11" ("Lidar360")
-- :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` =  "115" for C1/A2, "256" for S1,A2M12 
+- :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = "460800" for C1, "115" for A2, "256" for S1,A2M12 
 - :ref:`PRX1_TYPE <PRX1_TYPE>` = "5"
 - :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
 

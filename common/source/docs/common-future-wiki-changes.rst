@@ -24,6 +24,7 @@ New Board Support
 - StellarF4, https://github.com/ArduPilot/ardupilot_wiki/pull/6702
 - StellarF4V2, https://github.com/ArduPilot/ardupilot_wiki/pull/6700
 - Lumineer LUXF765-NDAA, see https://github.com/ArduPilot/ardupilot_wiki/pull/6711
+- NarinFC-H7, see https://github.com/ArduPilot/ardupilot_wiki/pull/6611
 
 New Peripheral Support
 ======================
@@ -36,6 +37,7 @@ New Features
 - Option to change Mounts to Neutral on rc failsafe, see https://github.com/ArduPilot/ardupilot_wiki/pull/6430
 - Auto-resizing scripting heap if needed at runtime, see https://github.com/ArduPilot/ardupilot_wiki/pull/6432
 - New Airspeed sensor bootup skip cal option, see see https://github.com/ArduPilot/ardupilot_wiki/pull/6706
+- Gyro rate pre-arm, see https://github.com/ArduPilot/ardupilot_wiki/pull/6776
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
