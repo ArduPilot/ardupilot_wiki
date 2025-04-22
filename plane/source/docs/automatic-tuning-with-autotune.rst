@@ -34,6 +34,8 @@ You can also autotune the yaw axis during AUTOTUNE for yaw rate control in :ref:
 
 The :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES>` bitmask selects which axes will be tuned while in Autotune. Default is roll, pitch and yaw.
 
+.. warning:: AUTOTUNE is not designed to work well with :ref:`RUDDER_ONLY<RUDDER_ONLY>` vehicles for tuning roll. :ref:`Manually tune the roll <new-roll-pitch-tuning>` axis instead.
+
 You also should choose a tuning level by setting the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`
 parameter in the advanced parameter screen of your ground station. The
 :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` parameter controls how aggressive you want the tune to
