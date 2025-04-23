@@ -58,6 +58,7 @@ MAVftp might be a convenient option to upload files to your SD card without havi
 To enable the use of external MSP OSDs or DisplayPort systems see:
 
 - :ref:`common-minim-osd-quick-installation-guide`
+- :ref:`common-displayport`
 - :ref:`common-msp-osd-overview-4.2`
 - :ref:`common-paramosd`
 
