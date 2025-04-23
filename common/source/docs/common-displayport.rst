@@ -31,7 +31,7 @@ To enable MSP DisplayPort OSDs set the following parameters (using SERIAL port n
  - :ref:`OSD_TYPE<OSD_TYPE>` = 5 (MSP_DISPLAYPORT)
  - :ref:`SERIALn_PROTOCOL<SERIAL1_PROTOCOL>` = 42 (DisplayPort)
  - :ref:`SERIALn_BAUD<SERIAL1_BAUD>` = 115
- - :ref:`MSP_OPTIONS<MSP_OPTIONS>` set bit 0 = 0 (do NOT EnableTelemetryMode)
+ - :ref:`MSP_OPTIONS<MSP_OPTIONS>` set bit 0 = 0 (do NOT EnableTelemetryMode). Set bit 3 (+8 to value) to use iNAV style font table (only certain DJI goggles (N3,etc.) have this capability.
  - See :ref:`Display Resolution <display_resolution>` section below for resolution settings.
 
 
