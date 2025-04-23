@@ -39,6 +39,7 @@ New Features
 - Auto-resizing scripting heap if needed at runtime, see https://github.com/ArduPilot/ardupilot_wiki/pull/6432
 - New Airspeed sensor bootup skip cal option, see see https://github.com/ArduPilot/ardupilot_wiki/pull/6706
 - Gyro rate pre-arm, see https://github.com/ArduPilot/ardupilot_wiki/pull/6776
+- Add iNav fonts to DisplayPort for DJI Goggles 3/N3, see https://github.com/ArduPilot/ardupilot_wiki/pull/6794
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
