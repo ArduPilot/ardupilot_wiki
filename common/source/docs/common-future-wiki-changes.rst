@@ -27,6 +27,7 @@ New Board Support
 - NarinFC-H7, see https://github.com/ArduPilot/ardupilot_wiki/pull/6611
 - BrotherHobby H743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6792
 - BrotherHobby F405v3, see https://github.com/ArduPilot/ardupilot_wiki/pull/6799
+- TBS LUCIDH7 Wing <common-tbs-lucid-h7-wing>
 
 New Peripheral Support
 ======================
