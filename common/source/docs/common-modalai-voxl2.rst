@@ -9,7 +9,8 @@ ModalAI VOXL 2
 .. image:: ../../../images/modalai-voxl2.png
     :width: 450px
 
-This article explains how to setup a `ModalAI VOXL 2 <https://www.modalai.com/en-jp/products/voxl-2>`__ for use with ArduPilot allowing position control without a GPS in modes including Loiter, PosHold, RTL and Auto.
+This article explains how to setup a `ModalAI VOXL 2 <https://www.modalai.com/en-jp/products/voxl-2>`__ to work with ArduPilot.  This also applies to the `VOXL 2 Flight Deck <https://www.modalai.com/products/voxl-2-flight-deck>`__, `Starling 2 <https://www.modalai.com/products/starling-2>`__ and `Starling 2 Max <https://www.modalai.com/products/starling-2-max>`__
+
 
 .. note::
 
@@ -20,27 +21,81 @@ What to Buy
 
 Any of the following products can run ArduPilot
 
+- `VOXL 2 <https://www.modalai.com/en-jp/products/voxl-2>`__
 - `VOXL 2 Flight Deck <https://www.modalai.com/products/voxl-2-flight-deck>`__
 - `Starling 2 <https://www.modalai.com/products/starling-2>`__
 - `Starling 2 Max <https://www.modalai.com/products/starling-2-max>`__
 
-Hardware Setup
---------------
+Learning About the VOXL 2
+-------------------------
 
-- Install ArduPilot as described `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_QURT/ap_host/service>`__
-- Pre-built binaries can be found here for `Copter <https://firmware.ardupilot.org/Copter/latest/QURT/>`__, `Plane <https://firmware.ardupilot.org/Plane/latest/QURT/>`__ and `Rover <https://firmware.ardupilot.org/Rover/latest/QURT/>`__
-- To install copy files as follows
+The setup and configuration of the VOXL 2 is very different from the other autopilots supported by ArduPilot.  Please consider reading the `VOXL Developer Bootcamp instructions <https://docs.modalai.com/voxl-developer-bootcamp>`__ before proceeding further 
 
-    - voxl-ardupilot.service to /etc/systemd/system/
-    - voxl-ardupilot to /usr/bin/
-    - build/QURT/ardupilot to /usr/bin/
-    - build/QURT/bin/arducopter to /usr/lib/rfsa/adsp/ArduPilot.so
-    - copy the right parameter file from `Tools/Frame_params/ModalAI/ <https://github.com/ArduPilot/ardupilot/tree/master/Tools/Frame_params/ModalAI>`__ to /data/APM/defaults.parm
+Connecting to the VOXL 2 via USB
+--------------------------------
 
-- You can then use
+Please follow these instructions to connect an Ubuntu PC to a VOXL2
 
-    - systemctl enable voxl-ardupilot.service
-    - systemctl start voxl-ardupilot
+- Connect a USB C cable from the Ubuntu PC to the autopilot.  On the Starling 2 Max, the USB C port is just below the bright green LED on the back of the vehicle
+- Follow ModalAI's `Setting Up ADB instructions <https://docs.modalai.com/setting-up-adb/>`__
+- If after running "lsb devices" an error similar to, "no permissions (missing udev rules? user is in the plugdev group)" please see the "Permission Issues" section at the bottom of the `Setting Up ADB instructions <https://docs.modalai.com/setting-up-adb/>`__
+- Test logging into the VOXL 2 using ``adb shell`` and ``voxl-version``
+
+Connecting to the VOXL 2 via Wifi
+---------------------------------------
+
+- Power on the vehicle or autopilot
+- By default, most VOXL 2 will create a Wifi Access Point soon after startup named "VOXL-xxxxxxxxxx" (where "xxxxxxxxxx" is the MAC address of the VOXL 2)
+- Connect to the Wifi Access Point from your PC, the default password is "1234567890"
+- To connect to the `VOXL Web Portal <https://docs.modalai.com/voxl-portal/>`__, open a web browser to http://192.168.8.1
+- More details on the Wifi setup can be found `here <https://docs.modalai.com/voxl-2-wifi-setup/>`__
+
+Installing ArduPilot
+--------------------
+
+`ModalAI's official instructions for installing ArduPilot are here <https://docs.modalai.com/voxl-ardupilot/>`__.
+
+Pre-built installation packages (.deb files) for Ardupilot can be found here on firmare.ardupilot.org:
+
+- Copter: `latest <https://firmware.ardupilot.org/Copter/latest/QURT/>`__, `beta <https://firmware.ardupilot.org/Copter/beta/QURT/>`__
+- Plane: `latest <https://firmware.ardupilot.org/Plane/latest/QURT/>`__, `beta <https://firmware.ardupilot.org/Plane/beta/QURT/>`__
+- Rover: `latest <https://firmware.ardupilot.org/Rover/latest/QURT/>`__, `beta <https://firmware.ardupilot.org/Rover/beta/QURT/>`__
+
+Install the ArduPilot firmware:
+
+- Ensure the Ubuntu PC has a good internet connection
+- Connect the PC to the vehicle via USB (see above)
+- Disable the px4 service using, ``adb shell systemctl disable voxl-px4``
+- Open a web browser and click on the "latest" or "beta" link above that is suitable for your vehicle type and download the .deb package
+- Open a terminal and find the .deb package downloaded above
+- Push the .deb file to the autopilot's root directory using, ``adb push *.deb /``
+- Log onto the VOXL2 and install the deb package
+    - ``adb shell``
+    - ``cd /``
+    - ``dpkg -i voxl-ardupilot_*.deb``
+    - ``exit``
+
+Setup the default parameters (optional because you may do it later via a GCS instead)
+
+- Download latest parameter files for your frame from `here <https://github.com/ArduPilot/ardupilot/tree/master/Tools/Frame_params/ModalAI>`__ (be sure to use the "Download raw file" button)
+
+    .. image:: ../../../images/modalai-voxl2-param-download.png
+        :width: 450px
+
+- From the Ubuntu PC, push the parameter file to the autopilot's /data/APM directory using, ``adb push *.parm /data/APM``
+- Log onto the VOXL2 and add a link to the default parameters in /data/APM
+    - ``adb shell``
+    - ``cd /data/APM``
+    - ``ln -s Starling2Max.parm defaults.parm``
+    - ``exit``
+
+- Log onto the VOXL2 and enable the ArduPilot service
+    - ``adb shell``
+    - ``systemctl enable voxl-ardupilot``
+    - ``systemctl start voxl-ardupilot``
+    - ``exit``
+
+- Reboot the vehicle, connect with a GCS and complete the vehicle setup including accelerometer, compass and RC calibration
 
 VOXL Camera Configuration
 -------------------------
@@ -91,8 +146,19 @@ More details on :ref:`GPS/Non-GPS Transitions can be found here <common-non-gps-
 
 To use an optical flow and rangefinder for backup in case the VOXL fails, a Lua applet for `ExternalNav/Optical flow transitions is here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/ahrs-source-extnav-optflow.lua>`__
 
+Building ArduPilot
+------------------
+
+`Build instructions can be found here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_QURT/ap_host/service>`__
+
 Videos
 ------
 
 ..  youtube:: tsLEcEUyBYs
+    :width: 100%
+
+..  youtube:: l6c65-E-lzg
+    :width: 100%
+
+..  youtube:: 7sUJ27zkxC4
     :width: 100%
