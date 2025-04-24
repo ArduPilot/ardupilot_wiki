@@ -91,6 +91,7 @@ Closed Hardware
     AtomRC F405-NAVI <common-atomrcf405-navi>
     BetaFPV F405 family <common-betafpvf405>
     brainFPV RADIX2 HD <common-radix2hd>
+    Brother Hobby F405v3 <common-brotherhobbyf405v3>
     CBUnmanned H743 Stamp <common-StampH743>
     CSKY405 <common-CSKYF405>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
