@@ -4,6 +4,11 @@
 Simple Overview of ArduPilot Operation
 ======================================
 
+[site wiki="sub]
+.. note:: Sub is a special sub case of the generalized vehicle system explained below, with a specific ROV configuration as its default configuration. This configuration by default does not use RC control but uses MAVLink commands from a tethered surface ground control station usually imploying a joystick and many buttons for most controls.
+
+[/site]
+
 This is a very basic overview of the functions of ArduPilot firmware running on an autopilot. Shown below is a simple block diagram of the basic functional operation. This will give you a better understanding of ArduPilot basic functions as you configure your system.
 
 .. image:: ../../../images/block-diagram.jpg
