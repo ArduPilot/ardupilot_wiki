@@ -19,7 +19,7 @@ Communication Protocols
 
 The ESC may be compatible with one or more of the following protocols:
 
-- :ref:`PWM, OneShot, OneShot125<common-brushless-escs>` are pulse based protocols. Almost all ESCs are compatible with PWM signaling. And this is the default configuration of ArduPilot firmware for serov/motor outputs.
+- :ref:`PWM, OneShot, OneShot125<common-brushless-escs>` are pulse based protocols. Almost all ESCs are compatible with PWM signaling. And this is the default configuration of ArduPilot firmware for servo/motor outputs.
 - :ref:`DShot<common-dshot-escs>` is a digital protocol in which the speed is encoded as digital commands to the ESC. Speed of the signaling can be DShot150, DShot300, etc. depending on the ESC's capability. Other ESC commands for ESC led control, etc. can be sent to the ESC if it has the capability.
 - :ref:`Bi-Directional DShot<bidir-dshot>` is a variation of Dshot that allows the ESC to return to the autopilot telemetry data. What type of data is ESC dependent. Sometimes referred to as BDShot.
 - :ref:`FETtec OneWire<common-fettec-onewire>` ESC is another bi-directional protocol that sends speed commands and returns telemetry.
