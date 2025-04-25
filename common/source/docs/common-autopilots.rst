@@ -143,7 +143,9 @@ Closed Hardware
     MicoAir743 <common-MicoAir743>
     NxtPX4v2 <common-NxtPX4v2>
     ModalAI Flight core <https://www.modalai.com/products/flight-core>
+[site wiki ="copter,rover,blimo"]
     ModalAI VOXL2 <common-modalai-voxl2>
+[/site]
     mRo ControlZero Classic <https://store.mrobotics.io/product-p/m10048d.htm>
     mRo ControlZero F7 <common-mro-control-zero-F7>
     mRo ControlZero H7 <https://store.mrobotics.io/mRo-Control-Zero-H7-p/mro-ctrl-zero-h7.htm>
