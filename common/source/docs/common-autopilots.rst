@@ -141,9 +141,8 @@ Closed Hardware
     MFT-SEMA100 <common-mft-sema100>
     MicoAir405v2/Mini <common-MicoAir405v2>
     MicoAir743 <common-MicoAir743>
-    NxtPX4v2 <common-NxtPX4v2>
     ModalAI Flight core <https://www.modalai.com/products/flight-core>
-[site wiki ="copter,rover,blimp"]
+[site wiki="copter,rover,blimp"]
     ModalAI VOXL2 <common-modalai-voxl2>
 [/site]
     mRo ControlZero Classic <https://store.mrobotics.io/product-p/m10048d.htm>
@@ -153,6 +152,7 @@ Closed Hardware
     mRo Pixracer Pro (H7) <common-pixracer-pro>
     mRo Nexus <common-mro-nexus>
     MUPilot <common-MUPilot>
+    NxtPX4v2 <common-NxtPX4v2>
     Omnibus F4 AIO/Pro <common-omnibusf4pro>
     OmnibusNanoV6 <common-omnibusnanov6>
     Omnibus F7V2 <common-omnibusf7>
