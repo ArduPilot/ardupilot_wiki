@@ -193,6 +193,7 @@ Closed Hardware
 [/site]
     Parrot C.H.U.C.K <common-CHUCK-overview>
     PixFlamingo- F767 <common-pixflamingo-f767>
+    PixSurveyA2-IND <common-pixsurveya2-ind>
     RadioLink MiniPix <common-radiolink-minipix>
     RadioLinkF405 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/RadiolinkF405/README.md>
     RadioLinkPIX6 <common-radiolinkpix6>
