@@ -162,6 +162,7 @@ Closed Hardware
 [/site]
     Parrot C.H.U.C.K <common-CHUCK-overview>
     PixFlamingo- F767 <common-pixflamingo-f767>
+    PixSurveyA2-IND <common-pixsurveya2-ind>
     RadioLink MiniPix <common-radiolink-minipix>
     RadioLinkPIX6 <common-radiolinkpix6>
     QioTek Zealot F427 <common-qiotek-zealot>
