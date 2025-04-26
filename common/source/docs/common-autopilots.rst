@@ -106,6 +106,7 @@ Closed Hardware
     Brother Hobby H743 <common-brotherhobbyh743>
     CORVON743V1 <common-corvon743v1>
     CBUnmanned H743 Stamp <common-StampH743>
+    CORVONF405V2.1 <common-corvonf405v2_1>
     CSKY405 <common-CSKYF405>
     DAKEFPVH743Pro <common-dakefpvh743pro>
     DAKEFPVH743-SLIM <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/DAKEFPVH743_SLIM/README.md>
