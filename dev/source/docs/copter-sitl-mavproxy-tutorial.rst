@@ -302,3 +302,10 @@ itself some parameters simulate the performance/failure of specific
 hardware components and the environment (for example, the wind). These
 can be listed using: ``param show sim*``. The topic :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>` explains more about how
 you can test using SITL.
+
+Customizing Launch Location and Parameters in SITL
+==================================================
+You can start SITL at a specific GPS location using the ``-l`` option during launch.  
+See "Setting vehicle start location" in :ref:`using-sitl-for-ardupilot-testing`.
+
+If you wish to use a specific set of default parameters, rather than manually changing them in the simulation with ``param set`` commands, you can load them at simulation startup from a file. See :ref:`SITL_simulation_parameters` section "Loading a parameter set".
