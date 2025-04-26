@@ -22,7 +22,7 @@ General Setup
 
 -  Set :ref:`FENCE_ENABLE<FENCE_ENABLE>` = 1 to enable fences. This enables any fences that are setup, except the ALT_MIN fence, which must be enabled by using any fence enable means (GCS message, AUTOENABLE in plane, RC switch)
 -  Set :ref:`FENCE_ACTION<FENCE_ACTION>` = to whatever you wish for a breach action. These will vary depending on vehicle type. See :ref:`fence_breach_actions` above.
--  Set :ref:`FENCE_OPTIONS<FENCE_OPTIONS>` to "1" to prevent mode changes after a fence breach until the vehicle returns within the fence boundary (Plane only, Copter/Rover do not allow mode changes while in breach)
+-  Set :ref:`FENCE_OPTIONS<FENCE_OPTIONS>` Set bit 1 to prevent mode changes after a fence breach until the vehicle returns within the fence boundary (Plane only, Copter/Rover do not allow mode changes while in breach). Set bit 2 to use the Union of inclusion areas instead of just Intersects. Set bit 3 to provide GCS warning when vehicle is less than :ref:`FENCE_MARGIN<FENCE_MARGIN>` from a breach. This parameter is also used in avoidance and path planning.
 -  Set :ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` = to the altitude limit you want (in meters). This is unavailable in Rover.
 -  Set :ref:`FENCE_MARGIN<FENCE_MARGIN>` = to the distance from the fence horizontal boundary the vehicle must maintain in order to prevent a breach.
 -  Set the :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>` as a minimum altitude breach boundary.
