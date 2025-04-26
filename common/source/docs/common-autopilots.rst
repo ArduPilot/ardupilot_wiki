@@ -92,6 +92,7 @@ Closed Hardware
     BetaFPV F405 family <common-betafpvf405>
     brainFPV RADIX2 HD <common-radix2hd>
     CBUnmanned H743 Stamp <common-StampH743>
+    CORVONF405V2.1 <common-corvonf405v2_1>
     CSKY405 <common-CSKYF405>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Flywoo F405 Pro <common-flywoof405pro>
