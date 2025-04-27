@@ -90,6 +90,7 @@ Closed Hardware
     AocodaRC H743Dual <common-aocoda-h743dual>
     AtomRC F405-NAVI <common-atomrcf405-navi>
     BetaFPV F405 family <common-betafpvf405>
+    BrahmaF4 <common-brahmaf4>
     brainFPV RADIX2 HD <common-radix2hd>
     CBUnmanned H743 Stamp <common-StampH743>
     CSKY405 <common-CSKYF405>
