@@ -30,17 +30,7 @@ if grep -qi -E '(Microsoft|WSL)' /proc/version; then
   export DISPLAY=
 fi
 
-# Get pip through the official website to get the latest release
-GET_PIP_URL="https://bootstrap.pypa.io/get-pip.py"
-
-# accomodate default Python on bionic:
-if [ "$(python --version)" == "Python 3.6.9" ]; then
-    GET_PIP_URL="https://bootstrap.pypa.io/pip/3.6/get-pip.py"
-fi
-
-curl "$GET_PIP_URL" -o get-pip.py
-python3 get-pip.py
-rm -f get-pip.py
+sudo apt-get install -y python3-pip
 
 # Install required python packages
 SCRIPT_DIR=$(dirname $(realpath ${BASH_SOURCE[0]}))
