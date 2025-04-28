@@ -16,7 +16,7 @@ These stages can be seen in the diagram above and include:
 - ``ahrs_update`` calls the EKF to consume the latest sensor data and produce a attitude and position estimate.
 - ``read_radio`` reads in the pilot's input and calculates the appropriate attitude or position targets
 - ``navigate`` calls the L1 and TECS controllers (see below) to convert position targets for the roll, pitch and throttle controllers
-- ``update_flight_mode`` copies the L1 controller's roll and pitch targets to nav_roll_cd and nav_pitch_cd global variables
+- ``update_control_mode`` copies the L1 controller's roll and pitch targets to nav_roll_cd and nav_pitch_cd global variables
 - ``stabilize`` executes the lower level roll, pitch and throttle controllers
 - ``set_servos`` sends the output from the roll, pitch and throttle controllers to the appropriate servo outputs
 
