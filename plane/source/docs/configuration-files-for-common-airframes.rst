@@ -39,7 +39,7 @@ just what base airframe type is being used:
 -  different users have different optional sensors, which changes what
    configuration options are needed. For example, some users install an
    airspeed sensor or an external compass.
--  new APM firmware releases frequently change the defaults for some
+-  new Ardupilot firmware releases frequently change the defaults for some
    critical parameters to avoid problems found by users. If you load a
    config file from a user of an older firmware then that will revert
    those changes
