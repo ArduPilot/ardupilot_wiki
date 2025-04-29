@@ -421,6 +421,137 @@ Functions or variables that represent a value relative to a frame should be suff
     float course_deg;
 
 
+Preferred Abbreviations for Units
+---------------------------------
+
+Variables that reference units of measure should normally be suffixed so that it's easier to 
+understand the values when reading the code. No suffix is required when a variable is in seconds, meters, or (angular) degrees or degrees-Celsius.
+
+.. list-table:: Standard name suffixes for Units
+   :widths: 25 25 25 25 75
+   :header-rows: 1
+
+   * - Measure
+     - Unit
+     - Preferred Suffix
+     - Deprecated Suffix
+     - Comments
+   * - Acceleration
+     - meters/second/second
+     - _mss
+     - 
+     - Acceleration
+   * - Acceleration
+     - centimeters/second/second
+     - _cmss
+     - 
+     - 
+   * - Angle
+     - degrees 
+     - _deg
+     - _d
+     - Angular Measurement
+   * - Angle
+     - centi-degrees 
+     - _cd
+     - _cdeg
+     - Angular Measurement - often used internally
+   * - Angle 
+     - radians
+     - _rad
+     - 
+     - Angular Measurement, preferred for internal variables
+   * - Angular acceleration
+     - degrees/second/second
+     - _degss
+     - _dss
+     - Angular acceleration
+   * - Angular acceleration
+     - radians/second/second
+     - _radss
+     - 
+     - Angular acceleration
+   * - Angluar Velocity
+     - degrees/second
+     - _degs
+     - 
+     - Angular change/second
+   * - Angular Velocity
+     - radians/second
+     - _rads
+     - 
+     - Angular Change/Second
+   * - Force
+     - Newtons
+     - _n
+     - 
+     - 
+   * - Current
+     - Ampere
+     - _amp
+     - 
+     - 
+   * - Distance
+     - meter
+     - _m or none
+     - 
+     - 
+   * - Distance 
+     - centimeter
+     - _cm
+     - 
+     - 
+   * - Frequency
+     - Hertz
+     - _hz
+     - 
+     - 
+   * - Jerk
+     - degrees/second/second/second
+     - _degsss
+     - 
+     - 
+   * - Pressure
+     - Pascal
+     - _p
+     - 
+     - 
+   * - Temperature
+     - degrees Celcius
+     - _degc
+     - 
+     - 
+   * - Time
+     - seconds
+     - _s
+     - 
+     - 
+   * - Time
+     - milliseconds
+     - _ms
+     - 
+     - Overloaded with meters/second
+   * - Time
+     - microseconds
+     - _us
+     - 
+     - 
+   * - Velocity
+     - meters/second
+     - _ms
+     - _mps
+     - Overloaded with milliseconds
+   * - Velocity
+     - centimeters/second
+     - _cms
+     - 
+     - Valid for internal values
+   * - Volts
+     - Volt
+     - _v
+     - 
+     - 
+
 Commenting
 ==========
 
