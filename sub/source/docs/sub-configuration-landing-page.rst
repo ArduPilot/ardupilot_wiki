@@ -22,6 +22,7 @@ components, including those required for the operation of the autopilot.
     Basic System Overview <common-basic-operation>
     Default Hardware Configuration <sub-hardware>
     Frame Types and Motor Layout<sub-frames>
+    Sub Mode <modes>
     Accelerometer Calibration <common-accelerometer-calibration>
     Compass Calibration <common-compass-calibration-in-mission-planner>
     ESC Calibration <common-esc-calibration>
@@ -32,4 +33,3 @@ components, including those required for the operation of the autopilot.
 * Failsafes
 * Pilot Control
 * Button Inputs
-* Swim Modes
