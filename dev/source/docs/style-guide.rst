@@ -421,6 +421,141 @@ Functions or variables that represent a value relative to a frame should be suff
     float course_deg;
 
 
+Abbreviations
+-------------
+
+Variables that reference units of measure should normally be suffixed so that it's easier to 
+understand the values when reading the code.
+
+In general no suffix is required when a variable is in `SI units <https://en.wikipedia.org/wiki/International_System_of_Units>`__ 
+such as seconds, meters, but its not wrong to include it for _m, _s. Otherwise these suffixes listed below
+should be used in any new code.
+
+.. list-table:: Standard name suffixes for Units
+   :widths: 25 25 25 25 75
+   :header-rows: 1
+
+   * - Measure
+     - Unit
+     - Preferred Suffix
+     - Deprecated Suffix
+     - Comments
+   * - Distance
+     - meter
+     - _m or none
+     - 
+     - Using no suffix is preferred for SI units, but _m is allowed for safety/clarity
+   * - Distance 
+     - centimeter
+     - _cm
+     - 
+     - 
+   * - Velocity
+     - meters/second
+     - _ms
+     - _mps
+     - Overloaded with milliseconds
+   * - Velocity
+     - centimeters/second
+     - _cms
+     - 
+     - 
+   * - Acceleration
+     - meters/second/second
+     - _mss
+     - 
+     - Acceleration
+   * - Acceleration
+     - centimeters/second/second
+     - _cmss
+     - 
+     - 
+   * - Time
+     - seconds
+     - _s
+     - 
+     - 
+   * - Time
+     - milliseconds
+     - _ms
+     - 
+     - Overloaded with meters/second
+   * - Time
+     - microseconds
+     - _us
+     - 
+     - 
+   * - Angle
+     - degrees 
+     - _deg
+     - _d
+     - Angular Measurement
+   * - Angle
+     - centi-degrees 
+     - _cd
+     - _cdeg
+     - Angular Measurement - often used internally
+   * - Angle 
+     - radians
+     - _rad
+     - 
+     - Angular Measurement, preferred for internal variables
+   * - Angluar Velocity
+     - degrees/second
+     - _degs
+     - 
+     - Angular Change/Second
+   * - Angular acceleration
+     - degrees/second/second
+     - _degss
+     - _dss
+     - Angular acceleration
+   * - Jerk
+     - degrees/second/second/second
+     - _degsss
+     - 
+     - 
+   * - Angular Velocity
+     - radians/second
+     - _rads
+     - 
+     - Angular Change/Second
+   * - Angular acceleration
+     - radians/second/second
+     - _radss
+     - 
+     - Angular acceleration
+   * - Force
+     - Newtons
+     - _n
+     - 
+     - 
+   * - Torque
+     - Newton meters
+     - _nm
+     - 
+     - SI uses Newton Meters for torque
+   * - Work
+     - Joule
+     - _j
+     - 
+     - SI uses Joules for work/energy, but this is rarely (never) used in AP
+   * - Volts
+     - Volt
+     - _v
+     - 
+     - 
+   * - Current
+     - Ampere
+     - _amp
+     - 
+     - 
+   * - Pressure
+     - Pascal
+     - _p
+     - 
+     - 
+
 Commenting
 ==========
 
