@@ -13,8 +13,8 @@ Sub has a number of failsafe mechanisms to ease vehicle recovery/prevent wanderi
 
     Radio Failsafe <radio-failsafe>
     Battery Failsafe <failsafe-battery>
+    GCS Failsafe <gcs-failsafe>
 
-GCS Failsafe <gcs-failsafe>
 EKF Failsafe <ekf-inav-failsafe>
 Vibration Failsafe <vibration-failsafe>
 Terrain Data Loss Failsafe <terrain-following>
