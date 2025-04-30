@@ -4099,10 +4099,10 @@ Mission commands to enable the Plane :ref:`GeoFence <geofencing>`, Copter/Rover 
    <td></td>
    <td>Set GeoFence enable state (0=disable, 1=enable, 2= disable only floor (Plane only)).</td>
    </tr>
-   <tr style="color: #c0c0c0">
-   <td>param2</td>
-   <td></td>
-   <td>Empty</td>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>bitmask</td>
+   <td>The target fence is specified by the bitmask value of FENCE_TYPE.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
