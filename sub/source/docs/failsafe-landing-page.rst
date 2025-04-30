@@ -12,8 +12,8 @@ Sub has a number of failsafe mechanisms to ease vehicle recovery/prevent wanderi
     :maxdepth: 1
 
     Radio Failsafe <radio-failsafe>
+    Battery Failsafe <failsafe-battery>
 
-Battery Failsafe <failsafe-battery>
 GCS Failsafe <gcs-failsafe>
 EKF Failsafe <ekf-inav-failsafe>
 Vibration Failsafe <vibration-failsafe>
