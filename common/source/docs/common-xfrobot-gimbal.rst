@@ -137,3 +137,8 @@ Control and Testing
 The camera and gimbal can be tested using the Dragonfly application which is available from each product page's Download tab.  Alternatively VLC can be used, select Media, Network Stream and enter rtsp://192.168.144.108
 
 See :ref:`Gimbal / Mount Controls <common-mount-targeting>` and :ref:`Camera Controls <common-camera-controls>`  for details on how to control the camera and gimbal using RC, GCS or Auto mode mission commands
+
+Downloading Images and Video
+----------------------------
+
+Images and videos captured by the camera can be remotely downloaded to a companion computer or PC via Ethernet using `this xfrobot-download.py Python script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/cameras_gimbals/xfrobot-download/xfrobot-download.py>`__
