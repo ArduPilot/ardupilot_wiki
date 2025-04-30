@@ -14,6 +14,7 @@ Sub has a number of failsafe mechanisms to ease vehicle recovery/prevent wanderi
     Radio Failsafe <radio-failsafe>
     Battery Failsafe <failsafe-battery>
     GCS Failsafe <gcs-failsafe>
+    Pilot Control Failsafe <pilot-failsafe>
 
 EKF Failsafe <ekf-inav-failsafe>
 Vibration Failsafe <vibration-failsafe>
