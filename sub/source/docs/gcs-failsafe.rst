@@ -20,7 +20,7 @@ The following situations can cause a loss of GCS MAVLink heartbeat, triggering a
 
 What will happen
 ================
-When a GCS failsafe is triggered, the sub can be configured via parameters to do nothing, send the GCS a warning message, disarm, or change to ALTHOLD or SURFACE modes. 
+When a GCS failsafe is triggered, the sub can be configured via parameters to do nothing, attempt to send the GCS a warning message, disarm, or change to ALTHOLD or SURFACE modes. 
 
 If the failsafe clears (i.e. GCS reconnects and MAVLink heartbeat is restored) the sub will remain in its failsafe mode. It will **not** automatically return to the flight mode that was active before the failsafe was triggered, if it was changed.
 
