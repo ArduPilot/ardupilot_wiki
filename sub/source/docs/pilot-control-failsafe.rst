@@ -14,9 +14,9 @@ If :ref:`FS_PILOT_INPUT<FS_PILOT_INPUT>` is non-zero, then lack of both valid RC
 
 What will happen
 ================
-When a Pilot Control failsafe is triggered, the sub can be configured via parameters to do nothing, send the GCS a warning message, or Disarm.
+When a Pilot Control failsafe is triggered, the vehicle can be configured via parameters to do nothing, send the GCS a warning message, or Disarm.
 
-If the failsafe clears (i.e. RC control or MAVLink overrides from GCS is restored) the sub will remain in its failsafe mode. If it is disarmed, and the pilot wished to re-take control he/she would need to rearm the sub . This can be done via RC or GCS.
+If the failsafe clears (i.e. RC control or MAVLink overrides from GCS is restored) the vehicle will remain in its failsafe mode. If it is disarmed, and the pilot wished to re-take control he/she would need to rearm the vehicle . This can be done via RC or GCS.
 
 Setting the failsafe
 ====================
