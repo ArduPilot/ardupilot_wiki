@@ -100,23 +100,35 @@ Setup the default parameters (optional because you may do it later via a GCS ins
 
 - Reboot the vehicle, connect with a GCS and complete the vehicle setup including accelerometer, compass and RC calibration
 
-VOXL Camera Configuration
--------------------------
+Disable Figure Eight:
 
-Details coming soon
+If the vehicle is changed to Guided mode the VOXL2 may send commands to fly a figure of eight.  This can be disabled using the following commands:
+
+- ``adb shell``
+- ``cd /etc/modalai``
+- Use your favourite editor (eg "vi" or "vim") to edit voxl-vision-hub.conf
+- Search for "offboard_mode" and replace "figure_eight" with "off" as shown below:
+
+    ``"offboard_mode":      "off",``
 
 Autopilot Configuration
 -----------------------
 
 Connect to the autopilot with a ground station (i.e. Mission Planner) and check that the following parameters are set
 
-- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 2 (MAVLink2).  Note this assumes the camera is connected to the autopilot's "Telem2" port.
-- :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 921 (921600 baud)
-- Optionally set :ref:`SERIAL2_OPTIONS <SERIAL2_OPTIONS>` = 1024 (Don't forward mavlink to/from) to disable the camera's odometry messages from being sent to the GCS
+- :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = 2 (MAVLink2).  This is the serial port used to connect the autopilot with the vision system
+- :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = 57600 ( baud)
+- Optionally set :ref:`SERIAL1_OPTIONS <SERIAL1_OPTIONS>` = 1024 (Don't forward mavlink to/from) to disable the camera's odometry messages from being sent to the GCS
 - Optionally set :ref:`MAV3_EXTRA3 <MAV3_EXTRA3>` = 0 to disable sending the SYSTEM_TIME message to the camera which has been known to cause the camera to lose its position estimate (e.g. quality falls to -1).  Note this assumes the camera is connected to the autopilot's second mavlink port (e.g. usually Telem2)
 - :ref:`VISO_TYPE <VISO_TYPE>` = 3 (VOXL)
-- Set :ref:`VISO_POS_X <VISO_POS_X>`, :ref:`VISO_POS_Y <VISO_POS_Y>`, :ref:`VISO_POS_Z <VISO_POS_Z>` to the camera's position on the drone relative to the center-of-gravity.  See :ref:`sensor position offset compensation <common-sensor-offset-compensation>` for more details
+- Set :ref:`VISO_POS_X <VISO_POS_X>`, :ref:`VISO_POS_Y <VISO_POS_Y>` and :ref:`VISO_POS_Z <VISO_POS_Z>` to 0 because the VOXL2 already compensates for the camera's position relative to the IMU.  See :ref:`sensor position offset compensation <common-sensor-offset-compensation>` for more details
 - Optionally increase :ref:`VISO_QUAL_MIN <VISO_QUAL_MIN>` to 10 (or higher) to only consume estimates from the camera when the quality is 10% (or higher)
+
+To enable the downward and forward facing lidars:
+
+- :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 10 (MAVLink)
+- :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0 (cm)
+- :ref:`PRX1_TYPE <PRX1_TYPE>` = 2 (MAVLink)
 
 If only the VOXL 2 camera will be used for position estimation and heading (e.g. No GPS):
 
