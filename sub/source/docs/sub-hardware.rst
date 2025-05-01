@@ -73,12 +73,12 @@ Button      Function
 6           Arm
 7           Center Mount1
 8           Joystick Input Hold Set
-9           Tilt Mount1 Down/Pan Mount Left
-10          Tilt Mount1 Up/Pan Mount Right
-11          Joystick Sensitivity Gain Increase/Trim Pitch Decrease
-12          Joystick Sensitivity Gain Decrease/Trim Pitch Increase
-13          Lights1 Dimmer/Trim Roll Decrease
-14          Lights1 Brighter/Trim Roll Increase
+9           Tilt Mount1 Down / Pan Mount Left
+10          Tilt Mount1 Up / Pan Mount Right
+11          Joystick Sensitivity Gain Increase / Trim Pitch Decrease
+12          Joystick Sensitivity Gain Decrease / Trim Pitch Increase
+13          Lights1 Dimmer / Trim Roll Decrease
+14          Lights1 Brighter / Trim Roll Increase
 ======      ========
 
 
