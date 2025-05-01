@@ -15,7 +15,8 @@ Sub has a number of failsafe mechanisms to ease vehicle recovery/prevent wanderi
     Battery Failsafe <failsafe-battery>
     GCS Failsafe <gcs-failsafe>
     Pilot Control Failsafe <pilot-failsafe>
-    Internal Leak <internal-leak>
+    Internal Leak Failsafe<internal-leak>
+    Internal Pressure Failsafe<internal-pressure>
 
 EKF Failsafe <ekf-inav-failsafe>
 Vibration Failsafe <vibration-failsafe>
