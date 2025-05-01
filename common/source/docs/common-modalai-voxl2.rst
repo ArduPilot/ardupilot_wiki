@@ -70,12 +70,13 @@ Install the ArduPilot firmware:
 - Open a terminal and find the .deb package downloaded above
 - Push the .deb file to the autopilot's root directory using, ``adb push *.deb /``
 - Log onto the VOXL2 and install the deb package
+
     - ``adb shell``
     - ``cd /``
     - ``dpkg -i voxl-ardupilot_*.deb``
     - ``exit``
 
-Setup the default parameters (optional because you may do it later via a GCS instead)
+Setup the default parameters (optional because you may do it later via a GCS instead):
 
 - Download latest parameter files for your frame from `here <https://github.com/ArduPilot/ardupilot/tree/master/Tools/Frame_params/ModalAI>`__ (be sure to use the "Download raw file" button)
 
@@ -84,12 +85,14 @@ Setup the default parameters (optional because you may do it later via a GCS ins
 
 - From the Ubuntu PC, push the parameter file to the autopilot's /data/APM directory using, ``adb push *.parm /data/APM``
 - Log onto the VOXL2 and add a link to the default parameters in /data/APM
+
     - ``adb shell``
     - ``cd /data/APM``
     - ``ln -s Starling2Max.parm defaults.parm``
     - ``exit``
 
 - Log onto the VOXL2 and enable the ArduPilot service
+
     - ``adb shell``
     - ``systemctl enable voxl-ardupilot``
     - ``systemctl start voxl-ardupilot``
