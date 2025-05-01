@@ -27,7 +27,7 @@ What will happen when the failsafe triggers?
 - The autopilot's `LED will flash red-yellow or blue-yellow and the tone-alarm will sound <https://www.youtube.com/watch?v=j-CMLrAwlco&feature=player_detailpage&t=60s>`__
 - "EKF variance" will appear on the ground station's HUD if telemetry is connected
 - In manual flight modes that do not require position (i.e. Stabilize, Acro, AltHold) nothing further will happen but the pilot will be unable to switch into autonomous flight modes (PosHold, Guided, Auto) until the failure clears
-- In autonomous modes that require position (i.e. PosHold, Guided, Auto, etc) the :ref:`FS_EKF_ACTION <FS_EKF_ACTION>` controls the behaviour.  By default this is "0" meaning the sub will take no action. "1" will send a GCS warning message. "2" will Disarm the sub. 
+- In autonomous modes that require position (i.e. PosHold, Guided, Auto, etc) the :ref:`FS_EKF_ACTION <FS_EKF_ACTION>` controls the behaviour.  By default this is "0" meaning the vehicle will take no action. "1" will send a GCS warning message. "2" will Disarm the sub. 
 - An EKF failsafe error will be written to the dataflash logs
 
 After an EKF failsafe occurs, the pilot can re-take control (using the flight mode switch) in a manual flight mode such as :ref:`AltHold <altholdmode>` to bring the vehicle home.

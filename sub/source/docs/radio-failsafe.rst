@@ -10,7 +10,7 @@ Sub supports several configurable failsafe options in cases where contact betwee
 
 .. note::
 
-   Sub also supports other failsafes, including: :ref:`Battery <failsafe-battery>`, :ref:`Ground Station <gcs-failsafe>` and :ref:`EKF/DCM failsafes <ekf-inav-failsafe>`. See the :ref:`failsafe-landing-page` for more details.
+   Sub also supports other failsafes, see the :ref:`failsafe-landing-page`.
 
 When the failsafe will trigger
 ==============================
@@ -25,9 +25,9 @@ If enabled and set-up correctly the radio failsafe will trigger if any of these 
 
 What will happen
 ================
-When a radio failsafe is triggered, the sub can be configured via parameters to do nothing, warn the GCS, or switch mode to SURFACE.
+When a radio failsafe is triggered, the vehicle can be configured via parameters to do nothing, warn the GCS, or switch mode to SURFACE.
 
-If the rc failsafe clears (i.e. transmitter and receiver regain contact) the sub will remain in its failsafe mode. It will **not** automatically return to the flight mode that was active before the failsafe was triggered. If the pilot wished to re-take control he/she would need to change the RC flight mode switch to another position.
+If the rc failsafe clears (i.e. transmitter and receiver regain contact) the vehicle will remain in its failsafe mode. It will **not** automatically return to the flight mode that was active before the failsafe was triggered. If the pilot wished to re-take control he/she would need to change the RC flight mode switch to another position.
 
 Receiver Configuration
 ======================
