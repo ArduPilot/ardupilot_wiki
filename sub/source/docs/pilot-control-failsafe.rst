@@ -4,7 +4,7 @@
 Pilot Control Failsafe
 ======================
 
-Sub provides a failsafe mechanism in case pilot manual control is lost. Pilot control in Sub is provided by either or both of two ways: via GCS MAVLink RC override messages( stimulated by GCS Joystick) or by the optional RC control link.
+Sub provides a failsafe mechanism in case pilot manual control is lost. Pilot control in Sub is provided by either or both of two ways: via GCS MAVLink RC override or Manual Control messages (stimulated by GCS Joystick) or by the optional RC control link.
 
 When the failsafe will trigger
 ==============================

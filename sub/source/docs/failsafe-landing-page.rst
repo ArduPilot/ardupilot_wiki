@@ -14,15 +14,11 @@ Sub has a number of failsafe mechanisms to ease vehicle recovery/prevent wanderi
     Radio Failsafe <radio-failsafe>
     Battery Failsafe <failsafe-battery>
     GCS Failsafe <gcs-failsafe>
-    Pilot Control Failsafe <pilot-failsafe>
-    Internal Leak Failsafe<internal-leak>
-    Internal Pressure Failsafe<internal-pressure>
+    Pilot Control Failsafe <pilot-control-failsafe>
+    Internal Leak Failsafe <internal-leak-failsafe>
+    Internal Pressure Failsafe <internal-pressure-failsafe>
+    Internal Temperature Failsafe <internal-temperature-failsafe>
+    EKF Failsafe <ekf-inav-failsafe>
+    Crash Check <crash_check>
+    Independent Watchdog <common-watchdog>
 
-EKF Failsafe <ekf-inav-failsafe>
-Vibration Failsafe <vibration-failsafe>
-Terrain Data Loss Failsafe <terrain-following>
-Crash Check <crash_check>
-
-Internal Pressure <internal-pressure>
-Internal Temp <internal-temp>
-Independent Watchdog <common-watchdog>

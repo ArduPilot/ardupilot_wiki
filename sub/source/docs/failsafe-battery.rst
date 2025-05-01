@@ -24,7 +24,7 @@ When the failsafe is triggered:
 
 -  Buzzer will play a loud low-battery alarm
 -  LEDs will flash yellow
--  "Low Battery!" will be displayed on the ground stations HUD (if telemetry is connected)
+-  "Low Battery!" will be displayed on the ground station's HUD (if telemetry is connected)
 
 Then one of the following will happen, depending on :ref:`BATT_FS_LOW_ACT<BATT_FS_LOW_ACT>`:
 
