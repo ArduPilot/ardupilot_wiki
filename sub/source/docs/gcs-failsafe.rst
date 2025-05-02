@@ -33,6 +33,6 @@ In Mission Planner's  full parameter list or full parameter tree, set the :ref:`
 -  **Disabled** (Value 0) will disable the GCS failsafe entirely.
 -  **Warn Only** (Value 1) will send a GCS warning message.
 -  **Disarm** (Value 2)
--  **Enter ALTHOLD mode** (Value 3)
--  **Enter SURFACE mode** (Value 4) 
+-  **Enter ALTHOLD mode** (Value 3), if armed.
+-  **Enter SURFACE mode** (Value 4), if armed.
 
