@@ -60,7 +60,7 @@ Output       Function
 Button Assignments
 ------------------
 
-Default Sub uses GCS joystick buttons to implement mode switching, light activation, etc.
+Default Sub uses GCS  buttons to implement mode switching, light activation, etc. Button information is sent from the GCS using MAVLink Manual Control messages (the GCS must have this capability)
 
 ======      ========
 Button      Function
