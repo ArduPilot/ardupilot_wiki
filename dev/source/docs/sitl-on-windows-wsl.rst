@@ -28,6 +28,13 @@ Running SITL
       :target: ../_images/sitl-on-windows-wsl-vscode.png
       :width: 450px
 
+.. note:: if you have configured WSL2 for mirrored networking (ie using the``set networkingMode=mirrored`` command), then use
+
+   ::
+
+       cd ~/ardupilot/ArduCopter
+       ../Tools/autotest/sim_vehicle.py --map --console --no-wsl2-network
+
 #. SITL and *MAVProxy* will start. *MAVProxy* displays three windows:
 
    -  command prompt in which you enter commands to SITL
