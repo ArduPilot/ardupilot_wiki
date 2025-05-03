@@ -2193,7 +2193,7 @@ mission, or it can be repeated indefinitely.
    <td><strong>param2</strong></td>
    <td>Repeat#</td>
    <td>Number of times that the DO_JUMP command will execute before moving to
-   the next sequential command. If the value is zero the next command will
+   the next sequential command.  However, if MIS_OPTIONS bit 2 is not set, then the repeat count will be used again if the command is encountered again after the last repeat. If the value is zero the next command will
    execute immediately. A value of -1 will cause the command to repeat
    indefinitely.
    </td>
