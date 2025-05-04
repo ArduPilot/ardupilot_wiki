@@ -86,6 +86,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     DroneCAN: Node x unhealthy!                             A DroneCAN device is not providing data             Check sensor's physical connection and power supply
     Duplicate Aux Switch Options                            Two auxiliary function switches for same feature    Check :ref:`auxiliary function<common-auxiliary-functions>` setup.  Check for :ref:`RCx_OPTION<RC1_OPTION>` parameters with same values
     EKF3 Roll/Pitch inconsistent by x degs                  Roll or Pitch lean angle estimates are inconsistent Normally due to EKF3 not getting good enough GPS accuracy, but could be due to other sensors producing errors. Go outdoors, wait or reboot autopilot.
+    EKF3x vel error y                                       EKF3 has velocity innovation of "y"                 EKF3 getting high position velocity innovations. Check GPS, wait or reboot.
     EKF3 waiting for GPS config data                        automatic GPS configuration has not completed       Check GPS connection and configuration especially if using DroneCAN GPS
     EKF3 Yaw inconsistent by x degs                         Yaw angle estimates are inconsistent                Wait or reboot autopilot
     Failed to open mission.stg                              Failed to load mission from SD Card                 Check SD card.  Try to re-save mission to SD card
