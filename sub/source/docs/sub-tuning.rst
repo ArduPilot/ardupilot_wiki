@@ -10,3 +10,8 @@ First Swim and Tuning
     :maxdepth: 1
 
     Pre-Arm Safety Checks <common-prearm-safety-checks>
+    Tuning <manual-tuning>
+
+to be added:
+    Arming and Disarming
+
