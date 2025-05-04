@@ -22,14 +22,14 @@ components, including those required for the operation of the autopilot.
     Basic System Overview <common-basic-operation>
     Default Hardware Configuration <sub-hardware>
     Frame Types and Motor Layout<sub-frames>
-    Sub Mode <modes>
+    Sub Modes <modes>
     Accelerometer Calibration <common-accelerometer-calibration>
     Compass Calibration <common-compass-calibration-in-mission-planner>
+    Pilot Control <pilot-control>
     Failsafes <failsafe-landing-page>
     ESC Calibration <common-esc-calibration>
 
 
 **Needs pages on modes, and other basic setup, including something pointing to companion computers**
 
-* Pilot Control
 * Button Inputs
