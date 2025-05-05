@@ -9,7 +9,7 @@ Sub has several control mechanisms for axis stabilization in certain modes, manu
 Axis Stabilization
 ==================
 
-Manual tuning may be required to provide maximum stabilization without oscillation in the Roll,Pitch, and Yaw axes. Depending on frame configuration and mode, Sub can provide attitude/heading stabilization in those axes, but tuning of their attitude controllers may be required to obatin the optimum stabilization, ie. rapid approach to rate/angle targets with minimal overshoot or oscillation).
+Manual tuning may be required to provide maximum stabilization without oscillation in the Roll,Pitch, and Yaw axes. Depending on frame configuration and mode, Sub can provide attitude/heading stabilization in those axes, but tuning of their attitude controllers may be required to obtain the optimum stabilization, ie. rapid approach to rate/angle targets with minimal overshoot or oscillation).
 
 This can be accomplished by manually adjusting each axis' attitude rate and angle controllers' parameter values.
 
@@ -27,7 +27,7 @@ For each axis:
 
 If the vehicle already oscillates in an axis, first lower the P, D, and I terms in 50% steps until stable, before starting manual tuning.
 
-When oscillations start do not make large or sudden stick inputs and reduce the parameter increased as soon as possible.
+When oscillations start do not make large or sudden stick inputs, and reduce the parameter increased as soon as possible.
 
 1. Increase the D term in steps of 50% until oscillation is observed
 2. Reduce the D term in steps of 10% until the oscillation disappears
@@ -36,7 +36,7 @@ When oscillations start do not make large or sudden stick inputs and reduce the 
 5. Reduce the P term in steps of 10% until the oscillation disappears
 6. Reduce the P term by a further 25%
 
-Each time the P term is changed set the I term approximately 3/4 the P term. Those parameters can be changed on the surface and preferably disarmed.
+Each time the P term is changed set the I term to approximately 3/4 the P term. Those parameters can be changed on the surface, and preferably when disarmed.
 
 The other ``ATC_`` rarely need changing from the defaults.
 

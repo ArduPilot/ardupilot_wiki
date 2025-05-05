@@ -1,4 +1,4 @@
-.. _sub-tuning:
+.. _first-swim:
 
 **UNDER CONSTRUCTION**
 
@@ -10,8 +10,6 @@ First Swim and Tuning
     :maxdepth: 1
 
     Pre-Arm Safety Checks <common-prearm-safety-checks>
+    Arming and Disarming <arming-the-motors>
     Tuning <manual-tuning>
-
-to be added:
-    Arming and Disarming
 
