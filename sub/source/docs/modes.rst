@@ -43,7 +43,7 @@ Depth Control Related
 Stabilization Related
 ---------------------
 * :ref:`ANGLE_MAX<ANGLE_MAX>`
-* :ref:`JS_GAIN<JS_GAIN>`
+* :ref:`JS_GAIN_DEFAULT<JS_GAIN_DEFAULT>`
 
 Auto/Guided Waypoint Navigation Related
 ---------------------------------------
