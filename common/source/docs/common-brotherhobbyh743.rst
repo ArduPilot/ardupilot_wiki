@@ -1,4 +1,4 @@
-. _common-brotherhobbyh743:
+.. _common-brotherhobbyh743:
 
 ==================
 BROTHER HOBBY H743
