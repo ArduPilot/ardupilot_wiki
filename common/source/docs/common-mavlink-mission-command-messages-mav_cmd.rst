@@ -4102,7 +4102,7 @@ Mission commands to enable the Plane :ref:`GeoFence <geofencing>`, Copter/Rover 
    <tr>
    <td><strong>param2</strong></td>
    <td>bitmask</td>
-   <td>The target fence is specified by the bitmask value of FENCE_TYPE.</td>
+   <td>The target fence is specified by the bitmask value of FENCE_TYPE. 0 is ALL configured fences.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
