@@ -1,4 +1,5 @@
 .. _brotherhobbyf405v3:
+[copywiki destination=
 
 ==================
 BROTHERHOBBYF405v3
@@ -112,3 +113,5 @@ Loading Firmware
 Initial firmware load can be done with DFU by plugging in USB with the bootloader button pressed. Then you should load the "with_bl.hex" firmware, using your favorite DFU loading tool.
 
 Once the initial firmware is loaded you can update the firmware using any ArduPilot ground station software. Updates should be done with the "\*.apj" firmware files.
+
+[copywiki destination="plane,copter,rover,blimp,sub"]
