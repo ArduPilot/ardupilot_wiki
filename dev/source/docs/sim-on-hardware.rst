@@ -48,7 +48,7 @@ Simulation on Hardware is not compiled into the ArduPilot firmware by default.
 
 If you have setup an :ref:`ArduPilot development environment <dev:building-the-code>` you can add it to any ChibiOS hwdef file by adding the line ``env SIM_ENABLED 1``.  Use the CubeOrange-SimOnHardware hwdef file (and default parameter file!) as a reference.
 
-An flexible firmware building script is located `here <https://github.com/ArduPilot/ardupilot/tree/master/Tools/scripts/sitl-on-hardware/sitl-on-hardware.py>`__, which uses existing board's hwdef and builds the firmware with the simulator.I
+An flexible firmware building script is located `here <https://github.com/ArduPilot/ardupilot/blob/master/Tools/scripts/sitl-on-hardware/sitl-on-hw.py>`__, which uses existing board's hwdef and builds the firmware with the simulator.I
 
 - first configure the build (example shown for CubeOrange, for QuadPlane Tilt Tricopter) and upload to board
 
