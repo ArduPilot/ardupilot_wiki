@@ -1,4 +1,5 @@
 .. _common-brotherhobbyh743:
+[copywiki destination="plane,copter,rover,blimp,sub"]
 
 ==================
 BROTHER HOBBY H743

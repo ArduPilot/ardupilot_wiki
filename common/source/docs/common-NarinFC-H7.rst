@@ -1,4 +1,5 @@
 .. _common-NarinFC-H7:
+[copywiki destination="plane,copter,rover,blimp,sub"]
 
 ==========
 NarinFC-H7

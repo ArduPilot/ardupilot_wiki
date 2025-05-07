@@ -1,4 +1,5 @@
 .. _tbs-lucid-h7-wing:
+[copywiki destination="plane,copter,rover,blimp,sub"]
 
 =================
 TBS Lucid H7 Wing
