@@ -1,5 +1,5 @@
 .. _brotherhobbyf405v3:
-[copywiki destination=
+[copywiki destination="plane,copter,rover,blimp,sub"]
 
 ==================
 BROTHERHOBBYF405v3
