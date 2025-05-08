@@ -1,9 +1,9 @@
 .. _common-NarinFC-H7:
 
-==========
-NarinFC-H7
-==========
-The NarinFC-H7 is an advanced autopilot family designed in-house by `VOLOLAND CO., LTD <https://vololand.com/>`_.
+=============
+NarinFC-H7/H5
+=============
+The NarinFC-H7/H5 is an advanced autopilot family designed in-house by `VOLOLAND CO., LTD <https://vololand.com/>`_.
 It uses a high performance STM32H7 processor and integrates industrial-grade sensors.
 
 .. image:: ../../../images/NarinFC/NarinFC_Header.jpg
@@ -17,8 +17,8 @@ Features/Specifications
     - STM32H743
 
 -  **Sensors**
-    - Accelerometer/Gyroscope: ADIS16470
-    - Accelerometer/Gyroscope: ICM-20649
+    - Accelerometer/Gyroscope: ADIS16470(H7) or ICM-45686(H5)
+    - Accelerometer/Gyroscope: ICM-20649(H7 or ICM-45686(H5)
     - Accelerometer/Gyroscope: BMI088
     - Magnetometer: RM3100
     - Barometer: MS5611*2
