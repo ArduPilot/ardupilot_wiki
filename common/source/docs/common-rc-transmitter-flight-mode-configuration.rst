@@ -11,10 +11,10 @@ modes to be set from your RC transmitter via the flight mode channel (:ref:`FLTM
 
 Flight modes configuration
 ==========================
-
+[site wiki="plane,copter,rover,blimp"]
 The mapping between switch position and flight mode is set in the
 *Mission Planner Flight Mode* screen.
-
+[/site]
 [site wiki="copter"]
 .. figure:: ../../../images/mp_setup_flight_mode.png
    :target: ../_images/mp_setup_flight_mode.png
@@ -35,7 +35,7 @@ The mapping between switch position and flight mode is set in the
 
    Mission Planner: Flight ModeScreen (Rover).
 [/site]
-
+[site wiki="plane,copter,rover,blimp"]
 You can set up the flight modes available on the transmitter by doing
 the following:
 
@@ -51,7 +51,7 @@ the following:
 
 -  Use the drop-down on each line to select the flight mode for that
    switch position.
-
+[/site]
 [site wiki="copter"]
 -  (Copter) Ensure that at least one switch position is left assigned to
    STABILISE.
@@ -64,13 +64,16 @@ the following:
    If both Simple mode and Super Simple mode checkboxes are checked
    Super Simple will be used.
 [/site]
-
+[site wiki="plane,copter,rover,blimp"]
 -  When finished press the **Save Modes** button.
-
+[/site]
 [site wiki="copter"]
 (Copter) Some modes can also be invoked from the :ref:`auxiliary switches <copter:channel-7-and-8-options>`
 (a.k.a. ch7, ch8 option switches). For example, to set a dedicated
 switch for RTL.
+[/site]
+[/site wiki="sub"]
+Flight modes are assigned to up to 6 PWM ranges for the :ref:`FLTMODE_CH<FLTMODE_CH>`.This is done via the GCS parameter editor. See :ref:`Sub modes<modes>` for the available operating modes.
 [/site]
 
 Setting the flight mode channel
@@ -90,7 +93,9 @@ parameter. DEfault is channel 8.
 [site wiki="rover"]
 On Rover this is configurable using the :ref:`MODE_CH <rover:MODE_CH>` parameter. Default is channel 8,
 [/site]
-
+[site wiki="sub"]
+By default, :ref:`FLTMODE_CH<FLTMODE_CH>` is set to "0", disabling the ability to select modes via RC, but can be set to any otherwise unused available RC channel.
+[/site]
 Transmitter configuration
 =========================
 
@@ -264,4 +269,4 @@ Modes setup to monitor the Current PWM for these adjustments.
       262 us = 1553 us = mode 4)
 
       
-[copywiki destination="copter,plane,rover,planner,blimp"]
+[copywiki destination="copter,plane,rover,planner,blimp,sub"]
