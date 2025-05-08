@@ -185,7 +185,7 @@ Closed Hardware
     mRo Pixracer Pro (H7) <common-pixracer-pro>
     mRo Nexus <common-mro-nexus>
     MUPilot <common-MUPilot>
-    NarinFC-H7 <common-NarinFC-H7>
+    NarinFC-H7/H5 <common-NarinFC-H7>
     NarinFC-X3 <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/NarinFC-X3/README.md>
     NxtPX4v2 <common-NxtPX4v2>
     Omnibus F4 AIO/Pro <common-omnibusf4pro>
