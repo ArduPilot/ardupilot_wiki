@@ -225,6 +225,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        108           | QRTL Mode                  |          |    X    |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
+|        111           | Loweheiser Starter         |    X     |    X    |    X    |  X    |
++----------------------+----------------------------+----------+---------+---------+-------+
 |        112           | SwitchExternalAHRS         |    X     |    X    |    X    |  X    |
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        113           | Retract Mount2             |    X     |         |         |       |
@@ -329,6 +331,8 @@ Intended as continuous PWM range control inputs:
 |        216           | Mount2 Pitch               |    X     |    X    |    X    |  X    |
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        217           | Mount2 Yaw                 |    X     |    X    |    X    |  X    |
++----------------------+----------------------------+----------+---------+---------+-------+
+|        218           | Loweheiser Throttle        |    X     |    X    |    X    |  X    |
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        219           | Transmitter Tuning Channel |    X     |         |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
@@ -521,6 +525,7 @@ Other functions are:
                                          | it can autotune while the vehicle is loitering by using sticks,
                                          | but enabling autotuning can occur in any mode other
                                          | than MANUAL.)
+    Loweheiser Starter                   | Enable starter on Loweheiser generator
     SwitchExternalAHRS                   | If EKF3 and an external AHRS module are enabled, high on this
                                          | switch switches from EKF3 to the external AHRS
     SIMPLE mode heading reset            | Resets original heading reference to current heading
