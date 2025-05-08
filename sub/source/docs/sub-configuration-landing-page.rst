@@ -23,6 +23,7 @@ components, including those required for the operation of the autopilot.
     Default Hardware Configuration <sub-hardware>
     Frame Types and Motor Layout<sub-frames>
     Sub Mode <modes>
+    Radio Control <rc-setup>
     Accelerometer Calibration <common-accelerometer-calibration>
     Compass Calibration <common-compass-calibration-in-mission-planner>
     Failsafes <failsafe-landing-page>
