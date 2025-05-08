@@ -31,6 +31,7 @@ New Board Support
 - PixSurveyA2-IND, see https://github.com/ArduPilot/ardupilot_wiki/pull/6811
 - CORVON405V2.1, see https://github.com/ArduPilot/ardupilot_wiki/pull/6816
 - BrahmaF4, see https://github.com/ArduPilot/ardupilot_wiki/pull/6820
+- JHEMCUF405Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6853
 
 New Peripheral Support
 ======================
