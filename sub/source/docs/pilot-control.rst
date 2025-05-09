@@ -8,7 +8,7 @@ Control of the vehicle can be accomplished in three ways:
 
 - Via Ground Control Stations using:
    - GCS attached Joysticks, or command lines, to send MAVLink `RC override <https://mavlink.io/en/messages/common.html#RC_CHANNELS_OVERRIDE>`__ commands that act as RC inputs (even if no RC receiver is attached)
-   - MAVLink ` MANUAL CONTROL <https://mavlink.io/en/messages/common.html#MANUAL_CONTROL>`__ messages which includes axis commands and button states.
+   - MAVLink `MANUAL CONTROL <https://mavlink.io/en/messages/common.html#MANUAL_CONTROL>`__ messages which includes axis commands and button states.
 
 - RC control (not enabled by default)
 
