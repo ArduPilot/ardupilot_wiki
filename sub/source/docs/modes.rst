@@ -33,6 +33,10 @@ CIRCLE Mode
 * :ref:`CIRCLE_RATE<CIRCLE_RATE>`
 * :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>`
 
+ALT_HOLD Mode
+-------------
+* :ref:`SURFACE_MAX_THR<SURFACE_MAX_THR>`
+
 Depth Control Related
 ---------------------
 * :ref:`SURFACE_DEPTH<SURFACE_DEPTH>`
