@@ -26,10 +26,11 @@ components, including those required for the operation of the autopilot.
     Accelerometer Calibration <common-accelerometer-calibration>
     Compass Calibration <common-compass-calibration-in-mission-planner>
     Pilot Control <pilot-control>
+    Button Inputs <buttons>
     Failsafes <failsafe-landing-page>
     ESC Calibration <common-esc-calibration>
 
 
-**Needs pages on modes, and other basic setup, including something pointing to companion computers**
+**Needs pages on**
 
-* Button Inputs
+* Companion Computers
