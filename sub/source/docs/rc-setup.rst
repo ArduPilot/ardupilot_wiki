@@ -26,7 +26,7 @@ If a flight mode switch is used, it can be set up as follows:
 
 - :ref:`common-rc-transmitter-flight-mode-configuration`
 
-Once the rc receiver is attached to the autopilot and configured as described in :ref:`common-rc-systems` it must be calibrated:
+Once the RC receiver is attached to the autopilot and configured as described in :ref:`common-rc-systems` it must be calibrated:
 
 - :ref:`common-radio-control-calibration`
 
