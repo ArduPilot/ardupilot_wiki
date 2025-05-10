@@ -22,7 +22,7 @@ The mapping of which incoming rc channel controls which axis/directional control
 - :ref:`RCMAP_FORWARD<RCMAP_FORWARD>`
 - :ref:`RCMAP_LATERAL<RCMAP_LATERAL>`
 
-If a flight mode switch is used, it can be setup as follows:
+If a flight mode switch is used, it can be set up as follows:
 
 - :ref:`common-rc-transmitter-flight-mode-configuration`
 
