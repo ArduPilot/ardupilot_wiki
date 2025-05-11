@@ -22,6 +22,8 @@ MAVLink Overrides
 -----------------
 ArduPilot vehicles normally use radio control (RC) to provide pilot directional control. Since Sub has RC disabled by default, it instead provides directional control with MAVLink RC overrides, and the channel mapping is fixed:
 
+.. note:: the ``RCMMAP_xxx`` parameters can be used to change the Roll/Pitch/Yaw/Vertical/Forward/Lateral control channel assignments
+
 ===============  ===================
 Pilot control    RC channel override
 ===============  ===================
