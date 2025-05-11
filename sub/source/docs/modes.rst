@@ -22,7 +22,7 @@ MOTOR_DETECT    Automatically determine motor rotation and adjust   D
 SURFTRAK        Hold distance above seafloor while stabilizing      R
 =============   =================================================  =========
 
-See Pilot Control(to be added) for more details on modes.
+See :ref:`Pilot Control <pilot-control>` for more details on modes.
 
 Mode Specific Parameters
 ========================
