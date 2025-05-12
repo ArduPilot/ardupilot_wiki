@@ -180,7 +180,7 @@ The test setup should have a receiver and GPS/Compass attached to the board. Loa
 
 Next Steps
 ----------
-.. note:: if the autopilot has SD card capability, you may want to include the capability of loading firmware directly from the SD card. See :ref:`common-install-sdcard` for more information on this feature and instructions on how to modify your files to allow this capability to the included in your autopilot firmware.
+.. note:: if the autopilot has SD card capability, you may want to include the capability of loading firmware directly from the SD card. See :ref:`Building autoflash firmware <building-autoflash-firmware>` for more information on this feature and instructions on how to modify your files to allow this capability to the included in your autopilot firmware.
 
 If you have gotten this far, congratulations you have ported ArduPilot to a new board!  Please reach out to the other developers on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ to announce your success.
 
@@ -201,3 +201,4 @@ Then submit a pull request, adding the following to the board's subfolder in the
     :hidden:
     
     readme_file
+    common-install-sdcard
