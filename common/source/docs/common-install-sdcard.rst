@@ -1,6 +1,6 @@
 .. _common-install-sdcard:
 
-[copywiki destination="copter,plane,rover,planner,blimp,sub"]
+[copywiki destination="copter,plane,rover,planner,blimp,sub,dev"]
 
 ============================
 Loading Firmware via SD Card
@@ -95,15 +95,26 @@ Several things can go wrong with the firmware flash, but some diagnostics are av
 Building the firmware yourself
 ==============================
 
-If the autopilot has an SD card capability but no firmware is present on the `Firmware build server <https://firmware.ardupilot.org>`__, you can build the firmware yourself. You must setup a build environment and then modify the autopilot's hwdefs to build a capable bootloader and an ``xxxx.abin`` firmware, see :ref:`building-the-code`.
+If the autopilot has an SD card capability but no SD Card flash-able firmware is present on the `Firmware build server <https://firmware.ardupilot.org>`__, you can build the firmware yourself. You must setup a build environment and then modify the autopilot's hwdefs to build a capable bootloader and an ``xxxx.abin`` firmware, see :ref:`building-the-code`.
 
 In the ``hwdef-bl.dat`` file you must include this:
 
 .. code::
 
     define AP_BOOTLOADER_FLASH_FROM_SD_ENABLED 1
+    define FATFS_HAL_DEVICE SDCD1
+    define HAL_OS_FATFS_IO 1
+    # FATFS support:
+    define CH_CFG_USE_MEMCORE 1
+    define CH_CFG_USE_HEAP 1
+    define CH_CFG_USE_SEMAPHORES 0
+    define CH_CFG_USE_MUTEXES 1
+    define CH_CFG_USE_DYNAMIC 1
+    define CH_CFG_USE_WAITEXIT 1
+    define CH_CFG_USE_REGISTRY 1
 
-Also you must include the SD card setup. See the `MatekH743 autopilot definition <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/MatekH743/hwdef-bl.dat>`__ for an example.
+
+* Also you must include the SD card setup. See the `MatekH743 autopilot definition <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/MatekH743/hwdef-bl.dat>`__ for an example.
 
 In the ``hwdef.dat`` file you must include this:
 
