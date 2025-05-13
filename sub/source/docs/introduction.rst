@@ -4,11 +4,10 @@
 Introduction to Sub
 ===================
 
-**UNDER CONSTRUCTION**
 Sub is an advanced open-source autopilot system for submersible ROVs (Remote Operated Vehicle) that supports multiple vehicle configurations. It offers a variety of operating modes from fully manual to fully autonomous.
 
-.. image:: ../images/sub-system.png
-    :target: ../_images/sub-system.png
+.. image:: ../images/sub-system.jpg
+    :target: ../_images/sub-system.jpg
 
 
 Vehicle Configuration Options
@@ -25,13 +24,15 @@ Vehicle Configuration Options
 * Optional Linux based companion computer interface to autopilot for image processing, beacon data processing, sonar displays in the GCS, custom applications, etc.
 * Analog and Digital Video camera and OSD (On Screen Display) support
 * Optional Buoyancy Control instead of vertical thrusters/neutral buoyancy
+* Optional Grabber for object retrieval or manipulation
+
 
 Swim Features
 =============
 
 * Automatic Attitude Stabilization, Depth Control, Position Control (assuming configuration and installed sensors allow it)
 * Fully Autonomous Missions, see :ref:`common-mission-planning`
-* Configurable Failsafes for system component failures, see :ref:`sub-failsafes`
+* Configurable Failsafes for system component failures, see :ref:`failsafe-landing-page`
 * Subsurface Terrain Following and Surface Tracking, see :ref:`modes`
 * Extensive GCS Button Action Support, see :ref:`buttons`
 
