@@ -24,7 +24,7 @@ Getting more info
 .. toctree::
    :hidden:
 
-   *Introduction to Sub <docs/introduction>
+   Introduction to Sub <docs/introduction>
    Choosing an Autopilot <docs/common-autopilots>
    Ground Control Stations <docs/common-GCS>
    *First Time Setup <docs/ardusub-setup>
