@@ -19,38 +19,13 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
-/*
-// This code below if uncomment makes the dropdown "automatic". It means, it is not necessary to click it, just pass the mouse over.
-*/
-.navbar-nav li:hover .dropdown-menu {
-    display: block;
-}
 
-.navbar-nav .dropdown-menu {
-    position: static;
-    float: none;
-    border: none;
-    content: none;
-}
-
-.navbar-brand {
-    display: inline-block;
-    padding-top: 1rem;
-    padding-right: 10rem;
-    padding-bottom: 0.3125rem;
-    margin-right: 1rem;
-    font-size: 1.25rem;
-    line-height: inherit;
-    white-space: nowrap;
-
-}
-
-.carousel-inner{
-    width:100%;
+.carousel-inner {
+    width: 100%;
     height: auto;
 }
 
-.carousel-inner img{
+.carousel-inner img {
     max-height: 480px;
 }
 
@@ -68,269 +43,23 @@ html {
 
 }
 
-/*#blog_posts .row .col-md-4 a {*/
-/*    min-height: 485px; !* Modify to your preference *!*/
-/*}*/
-
 .col_min {
-    min-height: 300px;
     aspect-ratio: 4/3;
+    width: 100%;
+    min-height: 0; /* This is important! */
 }
 
-.bg-dark {
-    /* background-color: #343a40 !important; */
-    background-color: #000000 !important;
-
+.card-header {
+    min-height: 85px; /* Adjust this value as needed */
+    display: flex;
+    align-items: center;
 }
 
-.nav-link {
+.card-header h3 {
+    margin-bottom: 0;
+}
+
+/* Make dropdown menu appear on hover */
+.navbar-nav li:hover .dropdown-menu {
     display: block;
-    padding: 0.5rem 1rem;
-    color: white !important; /* ArduPilot */
 }
-
-.nav-link:hover {
-    color: rgb(176, 176, 176) !important;
-    text-decoration: underline;
-}
-
-.dropdown-toggle::after {
-/*display: inline-block;*/
-margin-left: 0.255em;
-vertical-align: 0.255em;
-content: "";
-border-top: 0.3em solid;
-border-right: 0.3em solid transparent;
-border-bottom: 0;
-border-left: 0.3em solid transparent;
-display: none;
-}
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-    resize: vertical;
-}
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-    display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.visually-hidden {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    /* 1 */
-}
-
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    white-space: inherit;
-    width: auto;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-    content: "";
-    display: table;
-}
-
-.clearfix::after {
-    clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 1.25dppx),
-(min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-    *,
-    *::before,
-    *::after {
-        background: #fff !important;
-        color: #000 !important;
-        /* Black prints faster */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]::after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]::after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-    a[href^="#"]::after,
-    a[href^="javascript:"]::after {
-        content: "";
-    }
-
-    pre {
-        white-space: pre-wrap !important;
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-}
-
