@@ -4,10 +4,6 @@
 FETtec OneWire ESCs
 ===================
 
-.. note::
-
-   This feature is available on firmware revisions 4.1.1 and higher
-
 .. image:: ../../../images/FETtec_4in1_ESC.jpg
 
 OneWire is an `ESC bi-directional communication protocol <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_FETtecOneWire>`_ from FETtec.

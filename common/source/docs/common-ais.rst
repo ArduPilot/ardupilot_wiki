@@ -6,7 +6,7 @@ AIS (for boats)
 
 .. image:: ../../../images/ais-daisy2.png
 
-Rover-4.2.0 (and higher) support `Automatic identification system (AIS) <https://en.wikipedia.org/wiki/Automatic_identification_system>`__ sensors allowing the position of manned boats to be displayed on the ground station
+Rover supports `Automatic identification system (AIS) <https://en.wikipedia.org/wiki/Automatic_identification_system>`__ sensors allowing the position of manned boats to be displayed on the ground station
 
 .. note:: Support for this peripheral is also available for Planes and Copters using the `Custom Firwmare Build Server <https://custom.ardupilot.org/>`__ , by creating a firmware build including this feature listed under the IDENT category.
 
