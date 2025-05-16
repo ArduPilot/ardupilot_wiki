@@ -16,11 +16,8 @@ Connection and Setup
 .. image:: ../../../images/wheel-encoder-pixhawk.png
     :target: ../_images/wheel-encoder-pixhawk.png
 
-- connect motor encoder's A and B outputs to the autopilot (i.e. Pixhawk's) AUX OUT 3,4,5 and 6 pins.  Normally 3,4 should be used for the left motor's encoder, 5,6 for the right's.
-- set ``BRD_PWM_COUNT`` to 2 to allow AUX OUT 3 and 4 to be used as inputs
-
-.. note:: in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR output to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
-
+- connect motor encoder's A and B outputs to the autopilot (A Pixhawk using AUX OUT 3,4,5 and 6 pins is shown for example above).
+- set those output's ``SERVOx_FUNCTION`` to -1 to allow them to be used as GPIO inputs. See :ref:`common-gpios` for more information. For the example above, set :ref:`SERVO11_FUNCTION<SERVO11_FUNCTION>`, :ref:`SERVO12_FUNCTION<SERVO12_FUNCTION>`, :ref:`SERVO13_FUNCTION<SERVO13_FUNCTION>`, and :ref:`SERVO14_FUNCTION<SERVO14_FUNCTION>` to "-1".
 - set :ref:`WENC_TYPE <WENC_TYPE>` and :ref:`WENC2_TYPE <WENC_TYPE>` to 1 to enable reading from two wheel encoders
 - set :ref:`WENC_CPR <WENC_CPR>` and :ref:`WENC2_CPR <WENC2_CPR>` to the counts-per-revolution of the encoder.  This is the number of "pings" the encoder will produce for each full revolution of the wheel
 - set :ref:`WENC_RADIUS <WENC_RADIUS>` and :ref:`WENC2_RADIUS <WENC2_RADIUS>` to the radius (in meters) of each wheel (i.e. 5cm radius would be 0.05)
