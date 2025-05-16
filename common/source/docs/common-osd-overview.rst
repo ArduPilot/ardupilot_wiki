@@ -10,7 +10,7 @@ OSD
 OSD functionality is provided for on-board OSDs using MAX7456-type chips and external MSP based OSDs, including DJI Goggles, and goggles using DisplayPort.
 This enables overlay of FC data on the video. Once enabled, it uses various panel items that can individually be set active and positioned on the screen using respective parameters. It allows to setup multiple screen layouts and switch between those using a spare RC channel. It also allows the display and change of sets of parameters using stick gestures or RC transmitters, in certain cases.
 
-.. note:: 
+.. note::
 
   Being an integral library of ArduPilot firmware, the OSD code provides the prerequisites to be redirected to various backends other than MAX-type chipsets, including testing on SITL setups without actual autopilot- or video-hardware needed.
 
@@ -51,7 +51,7 @@ Several font sets are included and can be changed during runtime (and those who 
 - ``3`` = Bold. A bolder version of Betaflight
 - ``4`` = Digital. 80's LED clock radio style
 
-.. note::    In firmware 4.1 and above, onboard font options might be limited on 1 MB boards to save memory for other features. However, font upload from SD card is supported. This allows the user to choose from up to 10 font files (named "font0.bin" - "font9.bin") placed in the root directory of your SD card. Additionally, this allows the user to easily add individualized and/or customized language charsets for the onboard OSD without the need to compile  individual firmware. Runtime font changing using the parameter :ref:`OSD_FONT<OSD_FONT>` is unaffected. 
+.. note:: Onboard font options might be limited on 1 MB boards to save memory for other features. However, font upload from SD card is supported. This allows the user to choose from up to 10 font files (named "font0.bin" - "font9.bin") placed in the root directory of your SD card. Additionally, this allows the user to easily add individualized and/or customized language charsets for the onboard OSD without the need to compile  individual firmware. Runtime font changing using the parameter :ref:`OSD_FONT<OSD_FONT>` is unaffected. 
 
 MAVftp might be a convenient option to upload files to your SD card without having to physically remove it from your autopilot. Font files, font editor, and utilities to convert to a .bin file from .mcm are `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts>`__. If downloading the editor or a font's .bin file from this site, be sure to use the ``Download` button, rather than selecting ``Raw``, and then right click saving, as you would the .mcm or .py files.
 
@@ -134,8 +134,6 @@ Callsign panel
 ==============
 
 This panel allows to display your amateur radio callsign (or any other individual character string) on your onboard OSD screen. It will read the character string from a file named "callsign.txt" placed in the root of your SD card. Mind that the default ardupilot charsets require to use capital letters for correct display. Using MAVftp is a convenient option to upload the file to your SD card without having to physically remove it from your flightcontroller.
-
-.. note::    You will find this feature in firmware 4.1 and later
 
 User Programmable Warnings
 ============================

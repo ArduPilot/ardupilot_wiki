@@ -8,8 +8,6 @@ UPixels UPFlow Optical Flow
 
 The UPixels UPFlow optical flow sensor is a lightweight and low cost optical flow sensor which can be used to improve horizontal position control especially in GPS denied environments.
 
-Support for this sensor is available in Copter-4.1 (and higher)
-
 Where to Buy
 ------------
 

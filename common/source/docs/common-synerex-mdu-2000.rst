@@ -38,12 +38,6 @@ The unit is connected to two autopilot UARTs. In this example SERIAL3 and SERIAL
 - :ref:`EK3_ENABLE<EK3_ENABLE>` = 1 (to enable EKF3)
 - :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` = 3 (to use EKF3)
 
-If using 4.0 firmware in autopilot:
-
-- :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` = 5 ("Use external yaw sensor")
-
-If using 4.1 (or higher):
-
 - :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` is not used for this feature so it can be left at its default value ("0" for Plane, "3" for Copter, "2" for Rover)
 - :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 2 ("GPS") or 3 ("GPS with Compass Fallback")
 
