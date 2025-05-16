@@ -4,7 +4,7 @@
 Using GPS for Altitude Sensing
 ==============================
 
-Until version 4.1, ArduPilot required a barometer altitude sensor in order to boot up. Now, it is possible to boot an autopilot without barometer present, and use GPS (outdoor use) or other altitude sensor (rangefinder, range beacon) for indoor use. 
+It is possible to boot an autopilot without barometer present, and use GPS (outdoor use) or other altitude sensor (rangefinder, range beacon) for indoor use. 
 
 .. warning:: Without a barometer as a backup sensor, loss of the primary altitude sensor can result in a crash if in an altitude holding mode or autonomous mode. Be prepared to switch to a non altitude holding mode in case of loss of primary sensor.
 
