@@ -4008,7 +4008,7 @@ Supported by: All vehicles.
 
 Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>` at
 regular distance intervals. This command is useful in :ref:`camera survey missions <common-camera-control-and-auto-missions-in-mission-planner>`. 
-To trigger the camera once, immediately after passing the DO command, set param3 to 1.  Trigger immediately Parameter is available from ArduPilot 4.1 onwards.
+To trigger the camera once, immediately after passing the DO command, set param3 to 1.
 
 .. note::
 
