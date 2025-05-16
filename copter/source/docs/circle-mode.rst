@@ -9,9 +9,7 @@ of the vehicle with the nose of the vehicle pointed at the center.
 
 .. note::
 
-   The units are **centimeters** from AC 3.2 (previously metres).
-   Mission Planner reports the units as cm for all versions of the
-   code.
+   The units are **centimeters**.
 
 Setting the :ref:`CIRCLE_RADIUS<CIRCLE_RADIUS>` to zero will cause the copter to simply stay
 in place and slowly rotate (useful for panorama shots).
@@ -28,7 +26,7 @@ The circle rate set above can be dynamically adjusted in flight by two methods. 
 Circle Control Option
 =====================
 
-When enabled, the ``CIRCLE_CONTROL`` parameter allows the adjustment of the circle's radius and angular velocity, in firmware versions prior to 4.1. In 4.1 and later, the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` bitmask parameter controls what actions the pilot can adjust with his sticks and circle mode operation.
+The :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` bitmask parameter controls what actions the pilot can adjust with his sticks and circle mode operation.
 
 When bit 0 is set of the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` parameter the pilot can adjust circle's radius and angular velocity with the control sticks:
 
