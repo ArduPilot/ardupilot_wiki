@@ -12,10 +12,6 @@ These instructions were provided by `OlavA at the bottom of this ardupilot.org b
 
 *images courtesy of lowarnace.com and actisense.com*
 
-.. note::
-
-   Support for this sensor was added to Rover-3.4.
-
 Recommended Hardware
 --------------------
 

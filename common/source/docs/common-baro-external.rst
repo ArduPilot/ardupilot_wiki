@@ -8,10 +8,6 @@ Barometer (external)
 
 Most autopilots include a barometer directly on the autopilot but attaching an external barometer can be useful in order to place the barometer away from air pressure disturbances.  It can also allow monitoring the environmental or an internal component's temperature within a typical range of -40 - +85°C.
 
-.. warning::
-
-   Copter-3.6 only supports the Drotek MS5611.  BMP280 support will be released with Copter-4.0.
-
 .. note::
 
    Copter users can partially reduce the effect of air pressure disurbances by enabling :ref:`Ground Effect Compensation <Copter:ground-effect-compensation>`

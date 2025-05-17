@@ -151,9 +151,7 @@ Setting up for terrain following
 To setup your fixed wing aircraft for terrain following follow these
 steps
 
--  make sure you have Plane 3.0.4 or later loaded
--  make sure you have the latest MissionPlanner installed (version 1.3.9
-   or later)
+-  make sure you have the latest MissionPlanner installed 
 -  set :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` to 1 and :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` to 1
 -  connect to your vehicle over USB when you have GPS lock
 -  check the FlightData->Status page in MissionPlanner and look for the
