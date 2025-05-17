@@ -75,7 +75,7 @@ executes immediately after the preceding waypoint command begins.
 
 **DO_TRIGG_DISTANCE** is the same as do-digicam-control (above) except
 the camera shutter will trigger every X meters.  Where X can be defined
-in the first column labelled "Dist (m)".  Note: in AC3.1.2 there is no
+in the first column labelled "Dist (m)".  There is no
 mission command to stop the command from running so the shutter will be
 triggered continuously until the vehicle is switched out of AUTO mode.
 
