@@ -34,8 +34,7 @@ In general, we recommend users stick with the EKF3, which is now the default. In
 Choosing the EKF and number of cores
 ====================================
 
-:ref:`AHRS_EKF_USE <dev:extended-kalman-filter_ahrs_ekf_use>`: set to "1" to use the EKF, "0" to use DCM for attitude control and
-inertial nav  or ahrs dead reckoning (Plane) for position control.  In Copter this parameter is forced to "1" and cannot be changed.
+:ref:`AHRS_EKF_USE <dev:extended-kalman-filter_ahrs_ekf_use>`: set to "1" to use the EKF, "0" to use DCM for attitude control and ahrs dead reckoning (Plane) for position control.  In Copter this parameter is forced to "1" and cannot be changed.
 
 :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>`: set to "2" to use EKF2 for attitude and position estimation, "3" for EKF3.
 
