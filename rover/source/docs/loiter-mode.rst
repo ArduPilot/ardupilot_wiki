@@ -9,12 +9,6 @@ Loiter Mode
 
 Loiter mode allows boats to hold position in a strong current.
 
-.. note::
-
-   This mode is available in Rover-3.4 (and higher).
-
-   If the mode does not appear in the :ref:`Flight mode setup screen <common-rc-transmitter-flight-mode-configuration>` you can manually set a MODEx parameter to '5'.
-
 The way this mode works is:
 
 - the user switches into Loiter mode and the vehicle’s current position, velocity and maximum deceleration are used to project a reasonable stopping point
