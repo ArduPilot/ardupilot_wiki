@@ -18,8 +18,7 @@ In order to use a button, an autopilot pin must be configured as a GPIO. Many au
 For autopilots with an IOMCU (e.g. Pixhawk, CubeOrange) the external button or switch should be connected to the autopilot's AUX outputs (not the MAIN outputs).  To ease configuration and avoid timer conflicts it may be best to use AUX outputs at the high end (e.g. AUX5 or AUX6) far from outputs used for motors and servos.  For autopilots without an IOMCU (e.g. pixracer, etc) the normal SERVO/MOTOR outputs may be used.
 
 - Set :ref:`BTN_ENABLE<BTN_ENABLE>` = 1 (Enable) and refresh parameters
-- If using 4.2 (or later) set the ``SERVOx_FUNCTION`` = -1 (GPIO) where "x" is the servo output channel connected to the button . For example, if the AUX6 output on an autopilot with an IOMCU is to be used as a GPIO, set :ref:`SERVO14_FUNCTION<SERVO14_FUNCTION>` = -1.
-- If using 4.1 (or earlier) on an autopilot with an IOMCU (e.g. Pixhawk, CubeOrange) set ``BRD_PWM_COUNT`` low enough so that the servo desired and all other higher outputs may be used for a GPIO input.  E.g. ``BRD_PWM_COUNT`` = 4 means only AUX outputs 5 and 6 can be used as GPIOs, BRD_PWM_COUNT = 0 means AUX outputs 1 to 6 can be used. For boards not using an IOMCU, ``BRD_PWM_COUNT`` less than the total output number, will configure those higher outputs as GPIOs.
+- Set the ``SERVOx_FUNCTION`` = -1 (GPIO) where "x" is the servo output channel connected to the button . For example, if the AUX6 output on an autopilot with an IOMCU is to be used as a GPIO, set :ref:`SERVO14_FUNCTION<SERVO14_FUNCTION>` = -1.
 
 Digital Logic/Analog Voltage Setup
 ----------------------------------

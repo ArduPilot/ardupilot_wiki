@@ -80,4 +80,4 @@ but not so powerful to cause the aircraft to roll over.
 
 The second is to use ArduPilot's landing and takeoff detection algorithms to zero the I terms when on the ground, and allow it to operate normally after takeoff.
 
-Which method is used is determined by the :ref:`H_OPTIONS<H_OPTIONS>` bitmask. Setting bit 0 (ie "1" for the parameter value) will use the first method with a leaky integrator. Since this was the only method used in versions prior to 4.1, it is the default method to avoid changes in behavior upon upgrading to version 4.1. But clearing that bit (value = "0"), will use the second method, which is now usually preferred.
+Which method is used is determined by the :ref:`H_OPTIONS<H_OPTIONS>` bitmask. Setting bit 0 (ie "1" for the parameter value) will use the first method with a leaky integrator.It is the default method. But clearing that bit (value = "0"), will use the second method, which is now usually preferred.

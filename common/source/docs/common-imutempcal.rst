@@ -3,7 +3,7 @@
 IMU Temperature Calibration
 ===========================
 
-ArduPilot supports IMU temperature calibration in versions 4.1 and later. Calibrating the IMU for temperature changes can greatly reduce the amount of variation in the IMU and helps with flying in conditions where the temperature varies a lot between bootup and flight.
+ArduPilot supports IMU temperature calibration. Calibrating the IMU for temperature changes can greatly reduce the amount of variation in the IMU and helps with flying in conditions where the temperature varies a lot between bootup and flight.
 
 .. note:: this feature is only available currently on 2MB autopilots.
 

@@ -32,7 +32,7 @@ Connection and Setup
 
 Complete build instructions are given in the `blog <https://discuss.ardupilot.org/t/arducopter-7-long-range-standard-build/77368>`__ and `video series <https://youtube.com/playlist?list=PL_O9QDs-WAVwjoukkLInqQHmelJzSSNx3>`__
 
-Firmware used: Copter-4.1 and Copter-4.2 of MatekH743-bdshot
+Firmware used: Copter-4.2 of MatekH743-bdshot
 
 Parameter file: `iflight-chimera7.param <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/iflight-chimera7.param>`__
 

@@ -160,13 +160,8 @@ GPS for yaw
 ===========
 
 ArduPilot supports the use of GPS heading information to reduce malfunctions caused by changes in the magnetic field in certain environments.
-  - `Configure GPS for yaw <https://ardupilot.org/copter/docs/common-gps-for-yaw.html>`__
-  
-  .. note::
 
-   This feature is available in Copter 4.0.4 (and higher), Plane 4.0.6 (and higher) and Rover 4.1.0 (and higher);Ublox F9p must run firmware version 1.13 or higher.
-
-
+- `Configure GPS for yaw <https://ardupilot.org/copter/docs/common-gps-for-yaw.html>`__
 
 .. youtube:: Kh_6TynYqEI
     :width: 100%

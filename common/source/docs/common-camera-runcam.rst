@@ -4,8 +4,6 @@
 RunCam Camera Support
 =====================
 
-*Note that this feature will be released in ArduPilot 4.1*
-
 Description
 ===========
 

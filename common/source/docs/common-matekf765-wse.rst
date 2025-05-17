@@ -9,10 +9,6 @@ Mateksys F765-WSE
 
 the above image and some content courtesy of `mateksys.com <http://www.mateksys.com/?portfolio=f765-wse>`__
 
-.. note::
-
-   Support for this board is available with ArduPilot 4.1 and higher
-
 Specifications
 ==============
 

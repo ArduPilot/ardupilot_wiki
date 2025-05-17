@@ -12,16 +12,6 @@ Improvements to rotor spool up were also made.  The governor uses a torque limit
 
 The governor settings are:
 
-**Versions 4.1 and Earlier:**
-
-- ``H_RSC_GOV_DISGAG``:The disengage point: recommended setting 2% above your flight idle power setting (first point on the throttle curve). The default value is that the governor disengages at 20% throttle.
-- ``H_RSC_GOV_DROOP``:Droop Response setting: 0-100%. This sets how aggressive the governor is. A droop response setting too high in relation to how your prime mover reacts to throttle can cause the governor to surge or over-react to load change. Around 85% should work good for most piston engines. A little higher for turbines. A lot lower for electrics.
-- ``H_RSC_GOV_RANGE``:RPM range above or below ``H_RSC_GOV_SETPNT`` setting where governor is operational. If speed sensor fails, or rpm falls outside of this range, the governor will disengage and return to throttle curve. Recommended range is 100 rpm.
-- ``H_RSC_GOV_SETPNT``:RPM setpoint - set to desired headspeed in RPM
-- ``H_RSC_GOV_TCGAIN``:Throttle Curve Gain - set to provide feedforward from the throttle curve for sudden change in load. If it over-runs on a sudden punchout, reduce the TC gain, etc… Can be set from 50-100%
-
-**Versions 4.2 and Later:**
-
 - :ref:`H_RSC_GOV_COMP<H_RSC_GOV_COMP>`: Governor Torque Compensator - Determines how fast the governor will adjust the base torque reference to compensate for changes in density altitude.
 - :ref:`H_RSC_GOV_DROOP<H_RSC_GOV_DROOP>`: Governor Droop Compensator - Proportional gain to compensate for error in rotor speed from the desired rotor speed.
 - :ref:`H_RSC_GOV_FF<H_RSC_GOV_FF>`: Governor Feedforward - Feedforward governor gain to throttle response during sudden loading/unloading of the rotor system.

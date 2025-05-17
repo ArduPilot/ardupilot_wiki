@@ -8,7 +8,7 @@ Simple Object Avoidance
 Copter supports simple object avoidance horizontally and upward, while Rover avoids simple objects by only stopping. Both use proximity sensors such as:
 
 - 360 degree lidar including the :ref:`Lightware SF40C <copter:common-lightware-sf40c-objectavoidance>`, :ref:`TeraRanger Tower <copter:common-teraranger-tower-objectavoidance>` or :ref:`RPLidarA2/A3 <copter:common-rplidar-a2>`. See the :ref:`Proximity Sensor page<common-proximity-landingpage>` for more details.
-- Any of the supported :ref:`Rangefinders <common-rangefinder-landingpage>`.As of ArduPilot firmware versions 4.0 and higher, up to 9 rangefinders can be used for object avoidance. See :ref:`common-rangefinder-setup` for more information.
+- Any of the supported :ref:`Rangefinders <common-rangefinder-landingpage>`.A Up to 9 rangefinders can be used for object avoidance. See :ref:`common-rangefinder-setup` for more information.
 - Sensors capable of providing `MAVLink Distance Sensor <https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR>`__ messages (like `OpenKai with a 3D camera <https://www.youtube.com/watch?v=qk_hEtRASqg>`__)
 - 3D Obstacle Avoidance via the new Mavlink message `OBSTACLE_DISTANCE_3D <https://mavlink.io/en/messages/ardupilotmega.html#OBSTACLE_DISTANCE_3D>`__ . Depth cameras can use this message.
 

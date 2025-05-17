@@ -4,7 +4,7 @@
 Object Avoidance using Dijkstra's with BendyRuler
 =================================================
 
-Copter and Rover 4.1 (and higher) support path planning with a fusion of Dijkstras and BendyRuler.
+Copter and Rover support path planning with a fusion of Dijkstras and BendyRuler.
 BendyRuler does not guarantee a shortest path, and can be called a local planner. Although Dijkstra's gives us the ability to navigate around complex fences with the shortest path, yet due to the computational complexity it cannot be used for to avoid Proximity based obstacles. Therefore, the advantages of both of these algorithms are used together.
 
 .. note::

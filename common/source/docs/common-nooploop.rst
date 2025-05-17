@@ -53,7 +53,7 @@ It is possible to directly connect UART port of the tag to the FC. However, UART
 Configuration through the Ground Station
 ========================================
 
-Ensure that Copter-4.1 (or higher) is loaded onto the autopilot and connect with a Ground Station (i.e. Mission Planner).
+Ensure that Copter is loaded onto the autopilot and connect with a Ground Station (i.e. Mission Planner).
 
 - set :ref:`BCN_TYPE <BCN_TYPE>` to 3 (means using Nooploop system)
 - set :ref:`BCN_LATITUDE <BCN_LATITUDE>`, :ref:`BCN_LONGITUDE <BCN_LONGITUDE>` and :ref:`BCN_ALT <BCN_ALT>` to match your actual location.  Getting these values exactly correct is not particularly important although getting them close is required in order for the compass's declination to be correctly looked up from the database held within ArduPilot.

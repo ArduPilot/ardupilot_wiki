@@ -169,8 +169,6 @@ angle measures the desired minimum collective blade pitch.
 
 .. note:: Overall collective measurements must be made using the :ref:`H_SV_MAN <H_SV_MAN>` parameter since these would be impacted and inaccurate if the autopilot stabilization was active.
 
-Version 4.2 and later
----------------------
 Minimum and Maximum Collective Blade Pitch Angle
 ++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -187,19 +185,6 @@ Minimum Landed Collective
 The :ref:`H_COL_LAND_MIN <H_COL_LAND_MIN>` parameter is used as the lower collective pitch limit in degrees for modes that use altitude hold in the vertical axis.  This keeps the autopilot from driving collective too low resulting in ground resonance and is also used to detect landing in these modes. The default angle for :ref:`H_COL_LAND_MIN <H_COL_LAND_MIN>` parameter is set to -2 degrees collective blade pitch angle and would allow symmetrical blade equipped vehicles to descend at a reasonable rate, yet avoid being too negative on the ground.  If you have non-symmetrical blades, then set it to a blade pitch that is lower by the amount used as the zero thrust pitch angle.  For example, if the :ref:`H_COL_ZERO_THRST <H_COL_ZERO_THRST>` is determined to be -3 deg then :ref:`H_COL_LAND_MIN <H_COL_LAND_MIN>` should be set to -5 degrees.
 
 .. note:: The default value for this parameter should be low enough to protect most helicopters from in-flight disarm during autonomous flight due to false landing detections.  This most likely will occur in conditions where the aircraft experiences updrafts in hover or during landing phases of flight which causes the collective to decrease below this parameter value.  Acrobatic helicopter setups or heli's using non-symmetric blades should consider lowering this value.
-
-Version 4.1 and earlier
------------------------
-Zero Thrust Point
-+++++++++++++++++
-
-The ``H_COL_MID`` parameter is used used as the lower collective pitch limit for modes that use altitude hold in the vertical axis.  This keeps the autopilot from driving collective to low resulting in ground resonance. The ``H_COL_MID`` parameter is set to zero 
-thrust point which is normally zero degrees for symmetrical blades. If you have non-symmetrical blades, then set it to the negative blade pitch that produces zero thrust.
-
-.. warning:: This setting is also used in position/altitude holding modes, like LOITER, to determine if a landing has occurred in order to disable inputs which might tip over the vehicle on the ground. If not set at the zero thrust point, updrafts and/or wind could cause false landing decisions. If the pitch range between the hover point and zero thrust is very small, as is some aggressive 3D aerobatic designs with high head speeds, this is more likely to happen. Setting ``H_COL_MID`` to a -1 deg pitch might provide some safety margin if the vehicle can tolerate operating on the ground at that pitch and full head speed, in those cases.
-
-Set :ref:`H_SV_MAN <H_SV_MAN>` to 3 to have the swashplate move to the mid position.  Adjust ``H_COL_MID`` until the blade
-pitch angle measures the desired collective blade pitch that corresponds to zero thrust.
 
 STABILIZED Collective Curve
 ===========================

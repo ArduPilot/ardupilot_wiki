@@ -8,9 +8,6 @@ The `Wasp200 <https://www.attolloengineering.com/wasp-200-lrf.html>`__ has a ran
 
 .. image:: ../../../images/wasp200-lidar.png
 
-.. note::
-
-   Support for this sensor is available in Plane-3.9 (and higher), Copter-3.6 (and higher) and Rover-3.4 (and higher)
 
 Where to Buy
 ------------

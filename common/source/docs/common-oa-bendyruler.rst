@@ -7,7 +7,7 @@ Object Avoidance with Bendy Ruler
 ..  youtube:: E0KYLpXnD1A
     :width: 100%
 
-Copter and Rover 4.0 (and higher) support "BendyRuler" for path planning around obstacles and fences.  The BendyRuler algorithm probes around the vehicle in many directions looking for open spaces and then tries to pick the direction that is sufficiently open while also moving the vehicle towards the final destination.
+Copter and Rover support "BendyRuler" for path planning around obstacles and fences.  The BendyRuler algorithm probes around the vehicle in many directions looking for open spaces and then tries to pick the direction that is sufficiently open while also moving the vehicle towards the final destination.
 
 .. note::
 

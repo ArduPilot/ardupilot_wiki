@@ -9,10 +9,6 @@ ZigZag mode is a semi-autonomous mode designed to make it easier for a pilot to 
 ..  youtube:: _qNmLX4QmPU
     :width: 100%
 
-.. note::
-
-   ZigZag is available in Copter-4.0 (and higher)
-
 The way it works is:
 
 - A two or preferably three position :ref:`auxiliary switch <channel-7-and-8-options>` is set to "ZigZag SaveWP" (i.e. :ref:`RC7_OPTION <RC7_OPTION>` = 61)

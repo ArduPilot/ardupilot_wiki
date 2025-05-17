@@ -18,9 +18,6 @@ The `Daiwa winch <http://www.ele.okaya.co.jp/index_en.html>`__ is a high quality
 - Interface: 4xPWM or UART
 - Designed and manufactured in Japan
 
-.. note::
-
-    The driver for this winch will be released with Copter-4.1.0.  For earlier versions the winch can be controlled using the autopilot's servo outputs which allows the winch to be operated from the pilot's transmitter and/or from DO_SET_SERVO mission commands
 
 Where To Buy
 ============
