@@ -6,6 +6,9 @@ Script to get last blog entries on Discourse (https://discuss.ardupilot.org/)
 import argparse
 import json
 import re
+import hashlib
+import os
+import platform
 from pathlib import Path
 
 import requests
@@ -53,18 +56,36 @@ class BlogPostsFetcher:
         return args
 
     @staticmethod
+    def _get_cache_path(url: str) -> Path:
+        if platform.system() == "Windows":
+            home = Path(os.environ.get('USERPROFILE', Path.cwd()))
+        else:
+            home = Path(os.environ.get('HOME', Path.cwd()))
+        cache_dir = home / "WebCache"
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        url_hash = hashlib.sha256(url.encode()).hexdigest()
+        return cache_dir / f"{url_hash}.json"
+
+    @staticmethod
     def execute_http_request_json(url: str) -> Any:
         try:
             headers = {
                 'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotBot/1.0)',
                 'Accept': 'application/json',
             }
-            # Configure session with proper cookie handling
             session = requests.Session()
-            response = session.get(url, headers=headers, verify=True)
+            response = session.get(url, headers=headers, verify=True, timeout=10)
             response.raise_for_status()
-            return response.json()
+            data = response.json()
+            cache_path = BlogPostsFetcher._get_cache_path(url)
+            with open(cache_path, "w", encoding="utf-8") as f:
+                json.dump(data, f)
+            return data
         except requests.exceptions.RequestException as err:
+            cache_path = BlogPostsFetcher._get_cache_path(url)
+            if cache_path.exists():
+                with open(cache_path, "r", encoding="utf-8") as f:
+                    return json.load(f)
             raise RequestExecutionError(f"Request failed with {err}. URL: {url}")
 
     @staticmethod
