@@ -23,6 +23,8 @@ Roll                                  Pitch                                YAW
 :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D>`   :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D>`  :ref:`ATC_RAT_YAW_D<ATC_RAT_YAW_D>`
 ===================================   ===================================  ===================================
 
+.. note:: depending on frame type, roll and pitch axis control may not be implemented, so tuning is obviously unnecessary. Yaw control is always implemented in Sub frames.
+
 For each axis:
 
 If the vehicle already oscillates in an axis, first lower the P, D, and I terms in 50% steps until stable, before starting manual tuning.
@@ -58,3 +60,11 @@ Several parameters impact speed or speed limits:
 - :ref:`PILOT_SPEED<PILOT_SPEED>`
 - :ref:`PILOT_SPEED_UP<PILOT_SPEED_UP>`
 - :ref:`PILOT_SPEED_DN<PILOT_SPEED_DN>`
+
+Depth Control
+=============
+
+Vertical position holding modes (ALT_HOLD,etc.) have these primary tuning parameters, which can be lowered if depth oscillation occurs:
+
+- :ref:`PSC_POSZ_P<PSC_POSZ_P>`
+- :ref:`PSC_VELZ_P<PSC_VELZ_P>`
