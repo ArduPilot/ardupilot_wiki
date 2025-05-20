@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false  # don't cancel if a job from the matrix fails
       matrix:
-        python-version: ["3.8", "3.10"]
+        python-version: ["3.10"]
 
     steps:
       - uses: actions/checkout@v4
