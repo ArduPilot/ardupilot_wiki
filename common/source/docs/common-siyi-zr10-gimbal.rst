@@ -1,12 +1,12 @@
 .. _common-siyi-zr10-gimbal:
 
-[copywiki destination="plane,copter,rover"]
+[copywiki destination="plane,copter,rover,sub"]
 
 =========================================
 SIYI A8, ZR10, ZR30, ZT6 and ZT30 Gimbals
 =========================================
 
-The `SIYI A8 <https://shop.siyi.biz/products/siyi-a8-mini>`__, `ZR10 <https://shop.siyi.biz/products/siyi-zr10>`__, `ZR30 <https://shop.siyi.biz/products/siyi-zr30>`__, `ZT6 <https://shop.siyi.biz/products/siyi-zt6>`__ and `ZT30 <https://shop.siyi.biz/products/siyi-zt30>`__ are 3-axis gimbals and camera which can communicate with ArduPilot using a custom serial protocol
+The `SIYI A8 <https://shop.siyi.biz/products/siyi-a8-mini-gimbal-camera>`__, `ZR10 <https://shop.siyi.biz/products/siyi-zr10-gimbal-camera>`__, `ZR30 <https://shop.siyi.biz/products/zr30-4k-8mp-ultra-hd-180x-hybrid-30x-optical-gimbal-camera>`__, `ZT6 <https://siyi.biz/en/index.php?id=602>`__ and `ZT30 <https://shop.siyi.biz/products/siyi-zt30>`__ are 3-axis gimbals and camera which can communicate with ArduPilot using a custom serial protocol
 
 .. image:: ../../../images/siyi-zr10-gimbal.png
     :target: https://shop.siyi.biz/products/zr10
@@ -52,8 +52,8 @@ Connect with a ground station and set the following parameters.  The params belo
 - :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Lock") to switch between "lock" and "follow" mode with RC channel 8
 - Enable camera controls with one of the following AP version specific parameters
 
-  - For AP4.3 (or earlier) set ``CAM_TRIGG_TYPE`` to 3 / "Mount (Siyi)" to allow control of the camera
-  - For AP4.4 (or later) set :ref:`CAM1_TYPE<CAM1_TYPE>` to 4 / "Mount (Siyi)" to allow control of the camera
+
+- set :ref:`CAM1_TYPE<CAM1_TYPE>` to 4 / "Mount (Siyi)" to allow control of the camera
 
 - Optionally these auxiliary functions are also available
 
@@ -70,8 +70,14 @@ Connect with a ground station and set the following parameters.  The params belo
 Configuring the Gimbal
 ----------------------
 
-- Download, install and run "SIYI PC Assistant" which can be found on the `SIYI ZR10 web page's Downloads tab <https://shop.siyi.biz/products/siyi-zr10>`__
+- Download, install and run "SIYI PC Assistant" which can be found on any of the links below
 - Ensure the gimbal is running a recent firmware.  For ZR10 use 0.2.1 or higher.  For A8 use 0.1.7 or higher.
+
+  - `A8's downloads page <https://siyi.biz/en/index.php?id=downloads&asd=22>`__
+  - `ZR10's download page <https://siyi.biz/en/index.php?id=downloads&asd=27>`__
+  - `ZR30's download page <https://siyi.biz/en/index.php?id=downloads&asd=25>`__
+  - `ZT6's download page <https://siyi.biz/en/index.php?id=downloads&asd=602>`__
+  - `ZT30's download page <https://siyi.biz/en/index.php?id=downloads&asd=25>`__
 
 .. image:: ../../../images/siyi-gimbal-firmversion.png
     :target: ../_images/siyi-gimbal-firmversion.png
@@ -123,6 +129,8 @@ If using QGC, the live video can be configured from the "Application Settings", 
 
 .. image:: ../../../images/siyi-a8-qgc.png
     :target: ../_images/siyi-a8-qgc.png
+
+If using Mission Planner, the live video can be displayed on the Data screen by following :ref:`these instructions <planner:live-video>`
 
 Downloading Images and Video
 ----------------------------

@@ -1,5 +1,5 @@
 .. _common-installing-3dr-ublox-gps-compass-module:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ==========================
 UBlox GPS + Compass Module
 ==========================

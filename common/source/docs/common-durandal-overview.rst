@@ -679,4 +679,4 @@ Acknowledgments
 
 Thanks to [Holybro](http://www.holybro.com) for images
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

@@ -349,4 +349,4 @@ Where to Buy
 `makeflyeasy <https://www.makeflyeasy.com>`_
 `aliexpress <https://th.aliexpress.com/item/1005003505282459.html?pdp_npi=2%40dis%21USD%21US%20%24175.00%21US%20%24175.00%21%21%21%21%21%402132e4d516582952034474821e775e%2112000026091310279%21sh&spm=a2g0o.store_pc_home.productList_2002152534578.subject_1&gatewayAdapt=4itemAdapt>`_
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

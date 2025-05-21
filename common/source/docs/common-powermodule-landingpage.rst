@@ -29,11 +29,11 @@ Power Monitors Connecting to AutoPilot Power Monitor Port
 .. toctree::
     :maxdepth: 1
     
+    AirbotPower Power Module <common-airbotpower-power-module>
+    Common Power Module <common-3dr-power-module>
+    CUAV HV PM<common-hv-pm>
     Holybro Analog Power Modules (PM02,PM06,PM07) <https://holybro.com/collections/power-modules-pdbs/Analog>
     Holybro Digital I2C Power Modules (PM02D,PM03D,PM06D) <https://holybro.com/collections/power-modules-pdbs/Digital>
-    Common Power Module <common-3dr-power-module>
-    AirbotPower Power Module <common-airbotpower-power-module>
-    CUAV HV PM<common-hv-pm>
     Mauch Power Monitor <common-mauch-power-modules>
     SmartAP Power Distribution Board<common-smartap-pdb>
     Synthetic Current Sensor/Analog Voltage Monitor <common-synthetic-current-monitor>
@@ -44,14 +44,14 @@ CAN/DroneCAN Power Monitors and Batteries
 .. toctree::
     :maxdepth: 1
 
-    Holybro PM08-CAN Power Modules <https://holybro.com/collections/power-modules-pdbs/products/dronecan-pm08-power-module-14s-200a>
-    ARK PAB Power Modules <common-ark-power-modules>
+    Aerotate DroneCAN Smart Battery<common-aerotate-dronecan-battery>
     CUAV CAN/DroneCAN PMU<common-can-pmu>
+    Holybro PM08-CAN Power Modules <https://holybro.com/collections/power-modules-pdbs/products/dronecan-pm08-power-module-14s-200a>
     Matek CAN-L4-BM DroneCan PMU <http://www.mateksys.com/?portfolio=can-l4-bm>
     Packet Digital MPPT Solar Controller <common-packetdigital-mppt>
     Pomegranate Systems<common-pomegranate-systems-pm>
     Tattu DroneCan Battery<common-tattu-dronecan-battery>
-    Aerotate DroneCAN Smart Battery<common-aerotate-dronecan-battery>
+
 
 I2C Power Monitor
 =================
@@ -59,6 +59,7 @@ I2C Power Monitor
 .. toctree::
     :maxdepth: 1
 
+    ARK PAB Power Modules <common-ark-power-modules>
     Holybro Digital I2C Power Modules (PM02D,PM03D,PM06D) <https://holybro.com/collections/power-modules-pdbs/Digital>
     Rotoye BatMon Smart Battery <common-smart-battery-rotoye.rst>
 

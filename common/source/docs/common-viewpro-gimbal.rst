@@ -1,6 +1,6 @@
 .. _common-viewpro-gimbal:
 
-[copywiki destination="copter,plane,rover"]
+[copywiki destination="copter,plane,rover,sub"]
 
 ===============
 ViewPro Gimbals
@@ -9,7 +9,7 @@ ViewPro Gimbals
 .. image:: ../../../images/viewpro-gimbal.png
     :height: 450px
 
-ArduPilot 4.4 (and higher) support the `ViewPro <http://www.viewprotech.com/index.php?ac=article&at=list&tid=127>`__ gimbals using a :ref:`Lua script <common-lua-scripts>` that understands ViewPro's custom serial protocol.
+ArduPilot 4.4 (and higher) support the `ViewPro <http://www.viewprotech.com/index.php?ac=article&at=list&tid=127>`__ gimbals using ViewPro's custom serial protocol.
 
 Connection and Configuration
 ============================
@@ -108,6 +108,8 @@ Video can also be streamed to QGroundControl
 .. image:: ../../../images/viewpro-qgc-video.png
     :target: ../_images/viewpro-qgc-video.png
     :width: 450px
+
+If using Mission Planner, the live video can be displayed on the Data screen by following :ref:`these instructions <planner:live-video>`
 
 Downloading Images and Videos
 =============================

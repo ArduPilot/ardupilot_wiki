@@ -35,7 +35,7 @@ In addition to running the simulation, a ground control station program will nee
 Using sim_vehicle.py
 ====================
 
-A startup script, ```sim_vehicle.py`` is provided to automatically build the SITL firmware version for the current code branch, load the simulation models, start the simulator, setup environment and vehicle parameters, and start the MAVProxy GCS. Many script start-up parameters can be specified, type this for a full list:
+A startup script, ``sim_vehicle.py`` is provided to automatically build the SITL firmware version for the current code branch, load the simulation models, start the simulator, setup environment and vehicle parameters, and start the MAVProxy GCS. Many script start-up parameters can be specified, type this for a full list:
 
 ::
 
@@ -212,7 +212,7 @@ Swarming with SITL
 SITL has support for launching multiple vehicles from a single command.
 With this method, SITL is restricted to launching vehicles of the same type.
 
-When launching multiple vehicles, each one will need a unique SysId parameter: :ref:`SYSID_THISMAV<SYSID_THISMAV>`.
+When launching multiple vehicles, each one will need a unique SysId parameter: :ref:`MAV_SYSID<MAV_SYSID>`.
 The easiest method to avoid SysId conflicts is with the ``--auto-sysid`` option.
 
 The number of vehicles is set with ``--count`` option.

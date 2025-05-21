@@ -402,4 +402,4 @@ Where to Buy
 `makeflyeasy <http://www.makeflyeasy.com>`_
 `aliexpress <https://www.aliexpress.com/store/1101471828>`_
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

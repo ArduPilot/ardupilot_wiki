@@ -5,8 +5,8 @@ Peripheral Hardware
 ===================
 
 This section groups hardware that may (or may not be) present on your
-frame, including rangefinders, camera mounts, telemetry radios etc. For
-information related to Autopilot selection see :ref:`Autopilot Hardware Options <common-autopilots>`.
+frame, including rangefinders, camera mounts, telemetry radios etc. For information related to Autopilot selection see :ref:`Autopilot Hardware Options <common-autopilots>`.
+For guidance on cable design, colour coding, and EMI-compliant wiring, especially for larger vehicles with longer wiring runs, see :ref:`Cable Wiring Guidelines <common-cabling-guide>`.
 
 .. note::
 
@@ -28,12 +28,12 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     AIS (Automatic Identification System) <common-ais>
     Barometer (external) <common-baro-external>
     BlackBox Logger using an AutoPilot <common-blackboxlogger>
-[site wiki="copter,plane,rover"]
+[site wiki="copter,plane,rover,sub"]
     Button Inputs <common-buttons>
     Buzzer <common-buzzer>
 [/site]
     Cameras & Gimbals <common-cameras-and-gimbals>
-[site wiki="copter,plane,rover"]
+[site wiki="copter,plane,rover,sub"]
     Companion Computers <common-companion-computers>
 [/site]
 [site wiki="copter"]
@@ -46,7 +46,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     DroneCAN Adapter Node <common-uavcan-adapter-node>
     DroneCAN Peripherals <common-uavcan-peripherals>
     ESCs and Motors <common-escs-and-motors>
-    Ethernet Adapters <common-ethernet-adapters>
+    Ethernet Adapters and Switches <common-ethernet-adapters>
     External AHRS Systems <common-external-ahrs>
     First Person View Video <common-fpv-first-person-view>
     Fuel Flow and Level Sensors <common-fuel-sensors>

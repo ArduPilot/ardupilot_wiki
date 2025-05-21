@@ -26,10 +26,8 @@ Where to Buy
 
 These gimbals can be purchased from the `Gremsy store <https://gremsy.com/online-store>`__
 
-Connecting to the Autopilot (4.3 or higher)
-===========================================
-
-If using ArduPilot 4.3 (or higher) please follow these setup instructions
+Connecting to the Autopilot
+===========================
 
 .. image:: ../../../images/gremsy-pixyu-autopilot.png
     :target: ../_images/gremsy-pixyu-autopilot.png
@@ -50,7 +48,7 @@ See the "Control with an RC transmitter" section of :ref:`this page <common-moun
 When the autopilot has successfully connected to the gimbal, "Mount: GREMSY PixyU fw:7.7.1.0" (or similar) will be sent to the ground station.  Looking for this message may be useful in determining if the autopilot and gimbal are communicating successfully.
 
 Configuring the Gimbal
-----------------------
+======================
 
 - Download and install `gTune Desktop <https://github.com/Gremsy/gTuneDesktop/releases>`__
 - Connect the gimbal to your Desktop PC using a USB cable and power on the gimbal
@@ -89,12 +87,12 @@ Configuring the Gimbal
 - Select the "STIFFNESS" tab and adjust the Tilt, Roll, and Pan gains so that the gimbal holds the camera in position without shaking
 
 Control and Testing
--------------------
+===================
 
 See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
 
 Connecting Two Gimbals
-----------------------
+======================
 
 If two Gremsy gimbals are used, each gimbal can be directly connected to one of the autopilot's serial ports or they can can be daisy-chained together with only one connected to one of the autopilot's serial ports.
 
@@ -109,32 +107,8 @@ If two Gremsy gimbals are used, each gimbal can be directly connected to one of 
     - :ref:`MNT2_TYPE <MNT2_TYPE>` to "6" for "Gremsy" and reboot the autopilot
     - set the appropriate SERIALx_BAUD, SERIALx_PROTOCOL and SERIALx_OPTIONS parameters as described above
 
-Connecting to the Autopilot (4.2 or earlier)
-============================================
-
-.. image:: ../../../images/gremsy-pixyu-autopilot.png
-    :target: ../_images/gremsy-pixyu-autopilot.png
-    :width: 450px
-
-We recommend connecting the Gimbals's COM2 port to one of the autopilot's Serial/Telemetry ports like Telem2 as shown above.
-
-Connect with a ground station and set the following parameters, if using the first mount:
-
-- :ref:`MNT1_TYPE <MNT1_TYPE>` to "4" for "SToRM32 MavLink" and reboot the autopilot
-- :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps.  "SERIAL2" can be replaced with another serial port (i.e. SERIAL1) depending upon the physical connection
-- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
-- :ref:`SR2_EXTRA1 <SR2_EXTRA1>` to 10
-- :ref:`SR2_POSITION <SR2_POSITION>` to 10
-
-The gimbal's maximum angles can be set using these parameters (shown for the first mount):
-
-- :ref:`MNT1_ROLL_MIN <MNT1_ROLL_MIN>` to -30 to allow leaning left up to 30deg
-- :ref:`MNT1_ROLL_MAX <MNT1_ROLL_MAX>` to 30 to allow leaning right up to 30deg
-- :ref:`MNT1_PITCH_MIN <MNT1_PITCH_MIN>` to -90 to allow pointing 90deg down
-- :ref:`MNT1_PITCH_MAX <MNT1_PITCH_MAX>` to 30 to allow pointing 30deg up
-- :ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>` to -180 to allow turning around to the left
-- :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to 180 to allow turning around to the right
-
+Pilot Control
+=============
 To control the gimbal's lean angles from a transmitter set the RC controls for roll, pitch, or yaw using ``RCx_OPTION`` 212 (Mount1 Roll), 213 (Mount1 Pitch), 214 (Mount1 Yaw) for the first mount, or 215-217 for the second mount, respectively.
 
 Gremsy's instructions can be found below:

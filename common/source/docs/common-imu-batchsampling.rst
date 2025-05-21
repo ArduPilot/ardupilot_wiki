@@ -150,4 +150,4 @@ This multicopter frame clearly shows vibrations in the 80Hz range.
 
 This multicopter frame clearly shows rotational vibrations in the 80Hz range.
 
-[copywiki destination="copter,plane,rover,dev,planner"]
+[copywiki destination="copter,plane,rover,dev,sub,planner"]

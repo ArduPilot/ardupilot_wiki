@@ -4,7 +4,7 @@
 Accelerometer Calibration
 =========================
 
-[copywiki destination="copter,plane,rover,planner,blimp"]
+[copywiki destination="copter,plane,rover,planner,blimp,sub"]
 
 This article shows how to perform basic accelerometer calibration (using
 *Mission Planner*). The accelerometers in the autopilot must be calibrated to correct for their bias offsets in all three axes, as well as any off-axis variations.

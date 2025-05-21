@@ -1,16 +1,12 @@
 .. _common-mission-rewind:
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover,sub,planner"]
 
 ========================
 Mission Rewind on Resume
 ========================
 
 This page explains what the mission rewind-on-resume feature is and how to use the feature.
-
-.. note::
-
-    This feature is available for Plane, Copter, and Rover from 4.1 onwards.
 
 In certain applications or operating areas it can be common to interrupt a mission, for the purposes 
 of deconfliction, by changing to another mode and manoeuvring the vehicle away from the planned mission 

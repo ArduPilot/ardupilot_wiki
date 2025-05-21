@@ -37,7 +37,7 @@ the wiki.
 [/site]
     Stores <common-stores>
     Top Contributors <common-team>
-[site wiki="plane, copter, rover"]    
+[site wiki="plane, copter,rover,sub"]
     Training Centers <common-training-centers>
 [/site]
     Wiki Editing Guide <common-wiki_editing_guide>
@@ -60,10 +60,10 @@ the wiki.
     trademark
 [/site]
 
-[site wiki="copter,plane,rover,dev"]
+[site wiki="copter,plane,rover,dev,sub"]
     Archived Topics <common-archived-topics>
 [/site]
 
 
 
-[copywiki destination="copter,plane,rover,blimp,planner,planner2,dev,antennatracker,mavproxy,ardupilot"]
+[copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,dev,antennatracker,mavproxy,ardupilot"]

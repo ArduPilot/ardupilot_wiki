@@ -140,5 +140,5 @@ This board comes with ArduPilot firmware pre-installed and other vehicle/revisio
 Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "3DRControlZeroG".
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 

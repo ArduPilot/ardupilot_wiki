@@ -1,6 +1,6 @@
 .. _common-ld06:
 
-[copywiki destination ="plane,copter,rover,blimp"]
+[copywiki destination ="plane,copter,rover,blimp,sub"]
 ===================
 LDRobot LD-06 Lidar
 ===================

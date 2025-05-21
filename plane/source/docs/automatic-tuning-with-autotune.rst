@@ -34,6 +34,8 @@ You can also autotune the yaw axis during AUTOTUNE for yaw rate control in :ref:
 
 The :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES>` bitmask selects which axes will be tuned while in Autotune. Default is roll, pitch and yaw.
 
+.. warning:: AUTOTUNE is not designed to work well with :ref:`RUDDER_ONLY<RUDDER_ONLY>` vehicles for tuning roll. :ref:`Manually tune the roll <new-roll-and-pitch-tuning>` axis instead.
+
 You also should choose a tuning level by setting the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`
 parameter in the advanced parameter screen of your ground station. The
 :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` parameter controls how aggressive you want the tune to
@@ -91,7 +93,7 @@ When you engage AUTOTUNE mode a few things will happen:
    rates and angle error to demanded rate gain. These values depend on the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` 
 -  the autotune system will monitor your demanded roll and pitch rates
    (as determined by your transmitter stick movements). When the
-   demanded roll or pitch rate (or yaw rate if :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1) exceeds 40% of the maximum tuning target axis rate set by the ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`,(not stick deflection) the autotune system will use the response of the aircraft to learn the tuning values. So sharp stick movements are required with a slight pause at moderate to maximum stick deflections in each direction.
+   demanded roll or pitch rate (or yaw rate if :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1) exceeds 40% of the maximum tuning target axis rate set by the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`,(not stick deflection) the autotune system will use the response of the aircraft to learn the tuning values. So sharp stick movements are required with a slight pause at moderate to maximum stick deflections in each direction.
 -  the autotune system will save the P and D parameters once the tune has been completed for an axis.  When you switch out of AUTOTUNE mode the FF and I values will be saved. Switching out of AUTOTUNE in the midst of tuning an axis will revert the PID values to their original values.
 -  If you are starting with the default parameters for roll and pitch
    you may find the plane is quite sluggish when you first enter

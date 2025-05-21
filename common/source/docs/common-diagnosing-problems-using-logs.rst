@@ -6,7 +6,7 @@ Diagnosing some common problems using Logs
 
 This page show how to diagnose the six most common problems affecting Copter in particular but to some extent Plane and Rover as well.
 
-[copywiki destination="copter,plane,rover,dev,planner"]
+[copywiki destination="copter,plane,rover,dev,sub,planner"]
 
 .. _common-diagnosing-problems-using-logs_mechanical_failures:
 

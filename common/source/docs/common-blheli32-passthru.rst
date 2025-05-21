@@ -4,6 +4,8 @@
 BLHeli32,AM32, and BLHeli_S ESCs
 ================================
 
+.. warning:: if you are using BLHeli32 ESCs, be sure to update to the latest BLHeliSuite32 Rev32.10.0.0 firmware, to avoid surprise uncontrollable motor starts due to a BLHel32 firmware bug!
+
 The BLHeli firmware and configuration applications were developed to allow the configuration of ESCs and provide additional features. ESCs with this firmware allow configuring timing, motor direction, LEDs, motor drive frequency, etc.  Before attempting to use BLHeli please follow the :ref:`DShot setup instructions <common-dshot-escs>`.
 
 Depending on the ESC, BLHeli/BLHeli_S/BLHeli32/AM32 provides the following features:

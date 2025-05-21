@@ -288,6 +288,8 @@ can do a full tune in a bit over a minute.
 
 First you should set ``RCx_OPTION`` = 219, where ``x`` is a free RC channel that will be used for transmitter tuning.
 
+.. note: prior to version 4.6, Channel 6 was hard coded to be the "tuning" channel and setting ``RCx_OPTION`` = 219 was not required to be set.
+
 The :ref:`TUNE<TUNE>` parameter determines which parameter is being tuned.
 
 The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the parameter when the channel is at ``RCx_MAX``, while the :ref:`TUNE_MIN<TUNE_MIN>` parameter determines the value when tuning RC channel is at ``RCx_MIN``.

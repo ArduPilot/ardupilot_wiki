@@ -8,7 +8,7 @@ This is the parent topic for grouping "archived" topics - topics that
 are no longer considered relevant to most users, but which may have some
 value to users with old hardware.
 
-[site wiki="copter,plane,rover,planner"]
+[site wiki="copter,plane,rover,sub,planner"]
 .. toctree::
     :maxdepth: 1
 
@@ -32,7 +32,7 @@ value to users with old hardware.
     Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>
 
 [/site]
-[site wiki="copter,plane,rover"]
+[site wiki="copter,plane,rover,sub"]
     Edge Quick Start <common-edge-quick-start>
     Skysight Mono Camera Trigger <common-camera-trigger-skysight-mono>
     PPM Encoders <common-ppm-encoder-8-channel-standalone-encoder>
@@ -42,6 +42,7 @@ value to users with old hardware.
     DROTAG x Geotagger <common-geotagging-drotagx>
     Robsense SwarmLink <common-telemetry-robsense-swarmlink>
     MSP OSD (version 4.1) <common-msp-overview>
+    ArduSimple GPS <common-gps-ardusimple>
 
 [/site]
 [site wiki="copter"]
@@ -132,4 +133,4 @@ value to users with old hardware.
 [/site]
 
 
-[copywiki destination="copter,plane,rover,dev"]
+[copywiki destination="copter,plane,rover,dev,sub"]

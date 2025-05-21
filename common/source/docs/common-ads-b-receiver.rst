@@ -67,7 +67,7 @@ You will need to reboot your board after making those changes.
 
 To enable streaming the ADSB data to the GCS you'll want to check your StreamRate param. In some cases it is already set but it's good to check. These rates are adjustable per telemetry like in the case of having both a high-bandwidth and a low-bandwitdh link attached. The param to adjust the rate would depend on which one your GCS is connected to. In most cases, it is telem1.
 
--  :ref:`SR1_ADSB <SR1_ADSB>` 5 (meaning 5Hz)
+-  :ref:`MAV2_ADSB <MAV2_ADSB>` 5 (meaning 5Hz)
 
 Once operational aircraft within about 50km should appear on the ground
 station map.

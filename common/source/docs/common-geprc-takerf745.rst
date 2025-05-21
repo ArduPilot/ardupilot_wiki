@@ -123,4 +123,4 @@ any ArduPilot ground station software. Updates should be done with the
 \*.apj firmware files.
 
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

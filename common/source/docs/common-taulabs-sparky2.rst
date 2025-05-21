@@ -72,4 +72,4 @@ Videos
 
 * 2nd flight using PosHold, RTL*
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

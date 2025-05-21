@@ -5,7 +5,7 @@ Future Wiki Changes (in Master branch now)
 ==========================================
 Will be in future 4.7 release and is currently in master ("latest")
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 
 New Board Support
 =================
@@ -24,6 +24,14 @@ New Board Support
 - StellarF4, https://github.com/ArduPilot/ardupilot_wiki/pull/6702
 - StellarF4V2, https://github.com/ArduPilot/ardupilot_wiki/pull/6700
 - Lumineer LUXF765-NDAA, see https://github.com/ArduPilot/ardupilot_wiki/pull/6711
+- NarinFC-H7, see https://github.com/ArduPilot/ardupilot_wiki/pull/6611
+- BrotherHobby H743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6792
+- BrotherHobby F405v3, see https://github.com/ArduPilot/ardupilot_wiki/pull/6799
+- TBS LUCIDH7 Wing, see https://github.com/ArduPilot/ardupilot_wiki/pull/6802
+- PixSurveyA2-IND, see https://github.com/ArduPilot/ardupilot_wiki/pull/6811
+- CORVON405V2.1, see https://github.com/ArduPilot/ardupilot_wiki/pull/6816
+- BrahmaF4, see https://github.com/ArduPilot/ardupilot_wiki/pull/6820
+- JHEMCUF405Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6853
 
 New Peripheral Support
 ======================
@@ -36,6 +44,10 @@ New Features
 - Option to change Mounts to Neutral on rc failsafe, see https://github.com/ArduPilot/ardupilot_wiki/pull/6430
 - Auto-resizing scripting heap if needed at runtime, see https://github.com/ArduPilot/ardupilot_wiki/pull/6432
 - New Airspeed sensor bootup skip cal option, see see https://github.com/ArduPilot/ardupilot_wiki/pull/6706
+- Gyro rate pre-arm, see https://github.com/ArduPilot/ardupilot_wiki/pull/6776
+- Add iNav fonts to DisplayPort for DJI Goggles 3/N3, see https://github.com/ArduPilot/ardupilot_wiki/pull/6794
+- Fence breach warning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6814
+- Add JUMP count option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6818
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439

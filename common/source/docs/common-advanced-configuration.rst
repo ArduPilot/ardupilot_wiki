@@ -32,22 +32,30 @@ tuning options for the vehicle.
     Battery Voltage Compensation <battery-voltage-compensation>
     Bootloader Update <common-bootloader-update>
 [/site]
+[site wiki="sub"]
+    Autopilot Output Mapping <common-rcoutput-mapping>
+    Auxiliary Functions <common-auxiliary-functions>
+    Bootloader Update <common-bootloader-update>
+[/site]
     BLHeli ESCs <common-blheli32-passthru>
     CAN Bus Setup <common-canbus-setup-advanced>
     Compass Setup (Advanced) <common-compass-setup-advanced>
+[site wiki="plane,copter,rover"]
     Compass-less Operation<common-compassless>
+[/site]
 [site wiki="copter"]
     Current Limiting and Voltage Scaling <current-limiting-and-voltage-scaling>
 [/site]
 [site wiki="plane"]
     Crash Detection <crash-detect>
 [/site]
+    DisplayPort <common-displayport>
     DroneCAN Setup <common-uavcan-setup-advanced>
     EKF (Extended Kalman Filter) <common-apm-navigation-extended-kalman-filter-overview>
     EKF Affinity & Lane Switching <common-ek3-affinity-lane-switching>
     EKF Sources and Selection <common-ekf-sources>
     Ethernet/Network Setup <common-network>
-[site wiki="copter,rover"]
+[site wiki="copter,rover,sub"]
     Fence Failsafes  <common-geofencing-landing-page>
 [/site]
 [site wiki="copter"]
@@ -63,9 +71,11 @@ tuning options for the vehicle.
     GeoFencing Failsafe  <common-geofencing-landing-page>
 [/site]
     GPIOs <common-gpios>
+[site wiki="plane,copter,rover"]
     GPS for Yaw (aka Moving Baseline) <common-gps-for-yaw>
     GPS for Altitude <common-gps-for-alt>
     GPS/Non-GPS Transitions <common-non-gps-to-gps>
+[/site]
     Ground Control Station Only Operation <common-gcs-only-operation>
 [site wiki="copter"]
     Ground Effect Compensation <ground-effect-compensation>
@@ -97,8 +107,8 @@ tuning options for the vehicle.
 [site wiki="copter,plane"]
     Notch Filter Configuration <common-imu-notch-filtering>
 [/site]
-    Object Avoidance <common-object-avoidance-landing-page>
 [site wiki="copter,plane,rover"]
+    Object Avoidance <common-object-avoidance-landing-page>
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>
 [/site]
     On Screen Displays (OSD) <common-osd-overview>
@@ -142,10 +152,10 @@ tuning options for the vehicle.
 [/site]
     Video Stabilization (Gyroflow) <common-gyroflow>
     Video Transmitter Control <common-vtx>
-[site wiki="copter,plane,rover,planner"]
+[site wiki="copter,plane,rover,sub,planner"]
     UBlox GPS Configuration <common-ublox-gps>
 [/site]
-[site wiki="plane,planner,rover"]
+[site wiki="plane,planner,rover,sub"]
     Vibration Damping <common-vibration-damping>
 [/site]
 [site wiki="copter"]

@@ -64,10 +64,11 @@ Unidirectional Rangefinders
     Ainstein LR-D1 Radar Altimerer <common-ainstein-lrd1>
     Attollo Engineering Wasp200 <common-wasp200-lidar>
     Avionics Anonymous DroneCAN LIDAR Interface <common-avanon-laserint>
-    Benewake TF02 / TF03 <common-benewake-tf02-lidar>
-    Benewake TFmini / TFmini Plus / TF-Luna <common-benewake-tfmini-lidar>
+    Benewake TF02 / TF03 / TF-Luna <common-benewake-tf02-lidar>
+    Benewake TFmini / TFmini Plus <common-benewake-tfmini-lidar>
     Garmin Lidar-Lite <common-rangefinder-lidarlite>
     GY-US42 Sonar <common-rangefinder-gy-us42>
+    Hexsoon 24G Radar <common-rangefinder-hexsoon-24g>
     Hondex Sonar<common-hondex-sonar>
     HC-SR04 Sonar <common-rangefinder-hcsr04>
     JAE JRE-30 <common-rangefinder-jae-jre-30>
@@ -93,10 +94,11 @@ Omnidirectional Proximity Rangefinders
 .. toctree::
     :maxdepth: 1
 
+    Hexsoon 77G MWW Radar <common-rangefinder-hexsoon-radar>
     LDRobot LD-06 TOF <common-ld06>
     Lightware SF40/C (360 degree) <common-lightware-sf40c-objectavoidance>
     Lightware SF45/B (350 degree) <common-lightware-sf45b>
-    Nanoradar MK72 (112 degree) <common-rangefinder-mr72>
+    Nanoradar MR72 (112 degree) <common-rangefinder-mr72>
     RPLidar A2/C1/S1 360 degree Laser/TOF LIDAR <common-rplidar-a2>
     TerraRanger Tower/ Tower EVO (360 degree) <common-teraranger-tower-objectavoidance>
     Cygbot D1 (120 degree) <https://www.cygbot.com/_files/ugd/f5911d_726a54fc4f6644bcbec0d9b00236ffda.pdf>

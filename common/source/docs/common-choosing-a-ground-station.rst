@@ -1,5 +1,5 @@
 .. _common-choosing-a-ground-station:
-[copywiki destination="plane,copter,rover,blimp,sub"]
+[copywiki destination="plane,copter,rover,blimp,sub""]
 =========================
 Choosing a Ground Station
 =========================

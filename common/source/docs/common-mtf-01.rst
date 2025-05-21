@@ -58,4 +58,3 @@ Optical Flow Use and Calibration
 ================================
 
 Be sure to follow the setup and calibration instructions and parameters for :ref:`Optical Flow setup <common-optical-flow-sensor-setup>` and how to switch between outdoor(GPS) and indoor (Optical Flow) positioning.
-

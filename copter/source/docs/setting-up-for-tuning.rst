@@ -72,9 +72,6 @@ The PID controller default values for axis P/D/I values are usually safe for fir
 - :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`: 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
 - :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>`: 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
 - :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>`: 27000 for 10 inch props, 18000 for 20 inch props, 9000 for 30 inch props
-
-For Copter-4.1 (and later):
-
 - :ref:`ATC_RAT_PIT_FLTD <ATC_RAT_PIT_FLTD__AC_AttitudeControl_Multi>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
 - :ref:`ATC_RAT_PIT_FLTT <ATC_RAT_PIT_FLTT__AC_AttitudeControl_Multi>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
 - :ref:`ATC_RAT_RLL_FLTD <ATC_RAT_RLL_FLTD__AC_AttitudeControl_Multi>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2

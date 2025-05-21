@@ -67,4 +67,4 @@ and OpticalFLow as the second source:
 
 and use an :ref:`auxiliary RC switch <common-auxiliary-functions>` to switch between the two.
 
-[copywiki destination="copter,plane,rover,blimp"]
+[copywiki destination="copter,plane,rover,sub,blimp"]

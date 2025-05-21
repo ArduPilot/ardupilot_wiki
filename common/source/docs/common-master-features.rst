@@ -9,14 +9,13 @@ This lists features or changes merged in master and build in the "latest" firmwa
 .. note:: Currently firmware is in the 4.6 beta or stable stage. Items listed are in "latest" (4.7dev) but not 4.6 beta or stable releases.
 
 
-[site wiki="plane,copter,rover"]
+[site wiki="plane,copter,rover,sub"]
 New Peripherals
 ===============
 .. toctree::
     :maxdepth: 1
 
-    Hexsoon 77G MWW Radar <common-rangefinder-hexsoon-radar>
-    Hexsoon 24G Radar <common-rangefinder-hexsoon-24g>
+    XFRobot camera gimbals <common-xfrobot-gimbal>
 [/site]
 [site wiki="plane"]
 New Features
@@ -39,4 +38,6 @@ New Features
 
 [/site]
     Other wiki changes <common-future-wiki-changes>
-[copywiki destination="plane,copter,rover,blimp"]
+
+
+[copywiki destination="plane,copter,rover,blimp,sub"]

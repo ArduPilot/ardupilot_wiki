@@ -7,14 +7,14 @@ GPS / Non-GPS Transitions
 ..  youtube:: MbILnbbWqDg
     :width: 100%
 
-ArduPilot 4.1 (and higher) support in-flight transitions between GPS and Non-GPS environments.
+ArduPilot supports in-flight transitions between GPS and Non-GPS environments.
 
 .. note:: Non-GPS navigation is available for all vehicles. However, it is not applicable to fast or high flying vehicles such as conventional Planes. QuadPlanes can utilize this when in VTOL operation and close to the ground, as when docking inside a hangar using 3D cameras or beacons.
 
 Setup
 -----
 
-To enable transitions the EKF3 must be used (the default estimator for 4.1 and higher).  Instructions for enabling EKF3 can be found on the :ref:`Extended Kalman Filter page <common-apm-navigation-extended-kalman-filter-overview>` but in short it requires setting the following parameters:
+To enable transitions, the EKF3 must be used, which is the default.  Instructions for enabling EKF3 can be found on the :ref:`Extended Kalman Filter page <common-apm-navigation-extended-kalman-filter-overview>` but in short it requires setting the following parameters:
 
 - :ref:`EK3_ENABLE <EK3_ENABLE>` = 1
 - :ref:`EK2_ENABLE <EK2_ENABLE>` = 0

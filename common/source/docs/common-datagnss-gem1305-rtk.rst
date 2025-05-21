@@ -7,6 +7,8 @@ GEM1305 is a RTK receiver with antenna designed and manufactured by `DATAGNSS <h
 
 GEM1305 is based on the new generation Allystar dual-core GNSS SoC. It supports RTK functionality with a maximum data update rate of 5Hz. 
 
+It includes compass IST8310.
+
 .. image:: ../../../images/gem1305/datagnss-gem1305-02.png
     :target: ../_images/gem1305/datagnss-gem1305-02.png
     :width: 45%
@@ -85,7 +87,6 @@ The 1.25mm pitch 6P connector (from Left PIN1 to PIN6) :
    -  5: Tx
    -  6: 5V
 
-Please note that the board only includes RTK and doesn't include compass.
 
 ArduPilot Setup
 ===============

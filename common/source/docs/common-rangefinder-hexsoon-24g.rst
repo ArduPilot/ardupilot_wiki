@@ -16,7 +16,7 @@ The `Hexsoon 24G radar <http://www.hexsoon.com/en/list-4-27.html>`__ (available 
 
 .. note::
 
-    Support is available in ArduPilot versions 4.7 and higher
+    Support is available in ArduPilot versions 4.6 and higher
 
 Connecting to the Autopilot
 ===========================

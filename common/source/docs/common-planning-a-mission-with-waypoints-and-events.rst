@@ -205,4 +205,4 @@ Occasionally You will see some really big Numbers
 ..  youtube:: J5ClTnggZKk
     :width: 100%
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover,sub,planner"]

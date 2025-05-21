@@ -1,5 +1,5 @@
 .. _common-telemetry-rockblock:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 =========================
 RockBLOCK Satellite Modem
 =========================
@@ -19,7 +19,7 @@ Due to the very low datarate of the RockBLOCK, there are a few key limitations:
 
 - A single `HIGH_LATENCY2 <https://mavlink.io/en/messages/common.html#HIGH_LATENCY2>`__ packet will be sent every ``RCK_PERIOD`` sec. This will give basic position and status information.
 - No heartbeats, statustexts, parameters and waypoints will be sent from the vehicle to the GCS.
-- The RockBLOCK only sends a subset of command MAVlink messages (see below list) from the GCS to Vehicle. Parameters and waypoints will not be sent.
+- The RockBLOCK only sends a subset of MAVlink messages (see below list) from the GCS to Vehicle. Parameters and waypoints will not be sent.
 - Only 1 command message can be sent per ``RCK_PERIOD`` from the GCS to vehicle. Any additional commands will overwrite the previous command
 
 In practice, this means the RockBLOCK can only be used whilst monitoring a vehicle during automated flight modes. Any sort 
@@ -28,36 +28,59 @@ of manual control (outside of low-rate GUIDED mode "fly to" locations) is not po
 The RockBLOCK has a latency of 20-60 seconds and is only able to send 1 message per 30 second period (or greater). This period is
 configurable via the ``RCK_PERIOD`` parameter.
 
+If desired, the RockBlock can automatically activate on loss-of-GCS-telemetry. This is done by setting the ``RCK_FORCEHL`` parameter to 2.
+The RockBLOCK will then automatically activate when telemetry is lost for ``RCK_TIMEOUT`` seconds. When telemetry is restored,
+the RockBLOCK will deactivate.
+
 .. note:: Any modem using the Iridium 9602 or 9603 chipset *should* work, though only the RockBLOCK 9603N modem has been tested.
 
-Supported MAVLink command messages
-==================================
+Supported MAVLink messages
+==========================
 
-- CMD_NAV_RETURN_TO_LAUNCH
-- CMD_NAV_LAND
-- CMD_NAV_TAKEOFF
-- CMD_NAV_VTOL_TAKEOFF
-- CMD_NAV_VTOL_LAND
-- CMD_DO_SET_MODE
-- CMD_MISSION_START
-- CMD_COMPONENT_ARM_DISARM
-- CMD_CONTROL_HIGH_LATENCY
+The following MAVLink messages are supported from the GCS to the vehicle:
 
-Setup
-=====
+- COMMAND_LONG
+- COMMAND_INT
+- MISSION_ITEM_INT
+- MISSION_SET_CURRENT
 
-Due to limitations of the RockBLOCK web service, all packets in the Vehicle to GCS direction need to go via a public-facing web service.
-See `here <https://docs.rockblock.rock7.com/docs/integration-with-application>`__ for details.
-For the purposes of this configuration, the free `adafruit.io <https://io.adafruit.com/>`__ service is used.
+Within the COMMAND_LONG and COMMAND_INT messages, the following commands are supported:
+
+- MAV_CMD_NAV_RETURN_TO_LAUNCH
+- MAV_CMD_NAV_LAND
+- MAV_CMD_NAV_TAKEOFF
+- MAV_CMD_NAV_VTOL_TAKEOFF
+- MAV_CMD_NAV_VTOL_LAND
+- MAV_CMD_DO_SET_MODE
+- MAV_CMD_DO_CHANGE_SPEED
+- MAV_CMD_DO_SET_SERVO
+- MAV_CMD_DO_PARACHUTE
+- MAV_CMD_MISSION_START
+- MAV_CMD_COMPONENT_ARM_DISARM
+- MAV_CMD_DO_REPOSITION
+- MAV_CMD_CONTROL_HIGH_LATENCY
+
+Vehicle Setup
+=============
 
 #.  Connect the RockBLOCK modem to a spare UART on the flight controller. Only the +5V, RX, TX and GND lines need to be connected
 #.  Ensure the modem is activated in your RockBLOCK account
-#.  Create a `new feed on adafuit.io <https://learn.adafruit.com/using-the-rockblock-iridium-modem/forwarding-messages>`__. Ensure the Feed History is OFF and a webhook is active. Connect this feed to your RockBLOCK account.
 #.  Copy the `Ardupilot RockBLOCK Lua script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/RockBlock.lua>`__ to the flight controller's SD card.
 #.  Ensure :ref:`LUA Scripts<common-lua-scripts>` are enabled and the RockBLOCK UART is set as a scripting UART.
-#.  Run the RockBLOCK gateway `rockblock2mav.py <https://github.com/stephendade/rockblock2mav>`__ on the GCS to send/receive telemetry on 127.0.0.1:16000. Ensure the GCS software is connected to this ip/port.
 
-.. note:: QGroundControl and Mission Planner have very limited support for RockBLOCK MAVLink telemetry. It is highly recommended to use MAVProxy, which fully supports this telemetry.
+
+Ground Setup
+============
+
+The RockBLOCK messages are sent and received via the Rock7 gateway. It has an API that allows for
+sending and receiving messages via a web service.
+
+The `Rockblock2MAV <https://github.com/stephendade/rockblock2mav>`__ software is a companion to the RockBlock Lua
+script. Use this software on the GCS to send and receive MAVLink messages from the RockBLOCK modem via the Rock7 gateway.
+
+See the `Rockblock2MAV documentation <https://github.com/stephendade/rockblock2mav>`__ for installation and usage instructions.
+
+.. note:: QGroundControl and Mission Planner have limited support for RockBLOCK MAVLink telemetry. It is recommended to use MAVProxy, which fully supports this telemetry.
 
 
 Usage
@@ -87,12 +110,13 @@ Parameters
 
 The following parameters are available to control the script:
 
-========================  ==========================================================================
+========================  ============================================================================================
 Name                      Description
-========================  ==========================================================================
- RCK_FORCEHL              Automatically enables High Latency mode if not already enabled
+========================  ============================================================================================
+ RCK_FORCEHL              Mode of operation. 0 = start disabled, 1 = start enabled, 2 = enabled on loss of telemetry
  RCK_PERIOD               When in High Latency mode, send RockBLOCK updates every RCK_PERIOD seconds
  RCK_DEBUG                Sends RockBLOCK debug text to GCS via statustexts
  RCK_ENABLE               Enables the modem transmission
-========================  ==========================================================================
+ RCK_TIMEOUT              When RCK_FORCEHL=2, the number of seconds of no telemetry until High Latency mode is enabled
+========================  ============================================================================================
 

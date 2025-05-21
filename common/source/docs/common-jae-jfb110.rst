@@ -392,4 +392,4 @@ Video
 ..  youtube:: qA1bgznHKpY
     :width: 100%
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

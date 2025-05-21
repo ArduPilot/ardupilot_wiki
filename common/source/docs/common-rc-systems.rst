@@ -4,6 +4,7 @@
 Radio Control Systems
 =====================
 
+**Note: Sub does not currently support RC control, but it is under development**
 
 .. image:: ../../../images/rc_systems.png
 
@@ -244,4 +245,5 @@ allow you to use any older style RC receiver that has only PWM outputs for each 
 
    common-FPort-receivers
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,sub,blimp"]
+

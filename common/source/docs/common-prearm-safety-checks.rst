@@ -89,6 +89,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     EKF3 waiting for GPS config data                        automatic GPS configuration has not completed       Check GPS connection and configuration especially if using DroneCAN GPS
     EKF3 Yaw inconsistent by x degs                         Yaw angle estimates are inconsistent                Wait or reboot autopilot
     Failed to open mission.stg                              Failed to load mission from SD Card                 Check SD card.  Try to re-save mission to SD card
+    Failed to create log directory /APM/LOGS : ENOMEM       Failed to create log directory on SD card           Decrease :ref:`LOG_FILE_BUFSIZE<LOG_FILE_BUFSIZE>` or disable other features to reduce memory usage
     Fence requires position                                 If fences are enabled, position estimate required   Wait or move vehicle to a location with a clear view of the sky.  Reduce sources of radio-frequency interference
     FENCE_ALT_MAX < FENCE_ALT_MIN                           FENCE_ALT_MAX must be greater than FENCE_ALT_MIN    Increase :ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` or lower :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>`
     FENCE_MARGIN is less than FENCE_RADIUS                  FENCE_MARGIN must be larger than FENCE_RADIUS       Increase :ref:`FENCE_RADIUS<FENCE_RADIUS>` or reduce :ref:`FENCE_MARGIN<FENCE_MARGIN>`
@@ -109,6 +110,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     FFT: resolution is xHz, increase length                 FFT Harmonic Notch misconfiguration                 See :ref:`In-Flight FFT Harmonic Notch Setup<common-imu-fft>` completes
     Generator: Not healthy                                  Generator is not communicating with autopilot       Check :ref:`generator configuration <common-generators>`
     Generator: No backend driver                            Firmware does not include seelected generator       Build version of firmware with desired generator using custom.ardupilot.org
+    GPS alt error xm (see BARO_ALTERR_MAX)                  GPS and BARO alt disagree by a large amount         Read the :ref:`BARO_ALTERR_MAX<BARO_ALTERR_MAX>` parameter description
     GPS and AHRS differ by Xm                               GPS and EKF positions differ by at least 10m        Wait until GPS quality improves.  Move vehicle to a location with a clear view of the sky.  Reduce sources of radio-frequency interference
     GPS blending unhealthy                                  At least one GPS is not providing good data         Move vehicle to a location with a clear view of the sky.  Reduce sources of radio-frequency interference. Check :ref:`GPS blending configuration <common-gps-blending>`
     GPS Node x not set as instance y                        DroneCan GPS configuration error                    Check :ref:`GPS1_CAN_NODEID<GPS1_CAN_NODEID>` and :ref:`GPS2_CAN_NODEID<GPS2_CAN_NODEID>`

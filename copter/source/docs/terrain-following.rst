@@ -47,7 +47,7 @@ Alternatively, you can download a set of terrain data tiles for any anticipated 
 
 It will create tiles for the specified radius around a geographic location. Then you can download them, unzip and write in the APM/TERRAIN folder of the SD card.
 
-You can also download .zip files for entire continents, or individual tiles from `here <https://terrain.ardupilot.org/data/>`__. Note that ArduPilot 4.0.x and 4.1.x have different tilesets. Use the "continents"/"tiles" folders for ArduPilot 4.0.x, or use the "continentsapm41"/"tilesapm41" folders for ArduPilot 4.1.x. 
+You can also download .zip files for entire continents, or individual tiles from `here <https://terrain.ardupilot.org/data/>`__. Use the "continentsapm41"/"tilesapm41" folders.
 
 Beginning with the beta version released on 20th September 2024 you can create terrain dat files from Mission Planner and upload them to the SD card. 
 
@@ -64,13 +64,9 @@ Don't forget to match the terrain spacing parameter with the grid size you gener
 
 Terrain data files are always created as one file per one-by-one degree area, the file size depends on the spacing.
 
-.. warning:: A long standing bug in the downloaded terrain data files, which occasionally caused terrain data to be missing, even though supposedly downloaded, was fixed in Plane 4.0.6, Copter 4.0.4, and Rover 4.1. It will automatically be re-downloaded when connected to a compatible GCS. However, if you are relying on SD terrain data for an area and don't plan on being connected to a GCS when flying over it, or its not part of a mission, you should download the area data using the utility above, or from the linked tiles data repository and place on your SD card in the Terrain directory.
-
-.. warning:: ArduPilot 4.0.x and 4.1.x use different terrain tilesets. When upgrading from 4.0.x to 4.1.x, any tiles on the SD card will need to be re-downloaded. This will happen automatically when your GCS is connected to the Internet for areas covered by loaded missions and/or home location. Otherwise, you may set the :ref:`TERRAIN_MARGIN <TERRAIN_MARGIN>` to 50 to continue using the old tileset.
-
 Using Terrain Altitude during RTL and Land
 ==========================================
-Set the :ref:`TERRAIN_FOLLOW <TERRAIN_FOLLOW>` parameter to 1 to enable using terrain data in :ref:`RTL <rtl-mode>` and :ref:`Land <land-mode>` flight modes. Also set :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` = 1.  If set the vehicle will interpret the :ref:`RTL_ALT <RTL_ALT>` as an altitude-above-terrain instead of above home altitude, meaning it will generally climb over hills on its return path to home.  Similarly Land will slow to the :ref:`LAND_SPEED <LAND_SPEED>` (normally 50cm/s) when it is 10m above the terrain (instead of 10m above home).
+Be sure :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` is set to "1" to enable use of terrain data and allow the GCS to update the data (if internet connected) for current location and planned missions. Set the :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` parameter to 1 to enable using terrain data in the :ref:`RTL <rtl-mode>` flight mode.  If set the vehicle will interpret the :ref:`RTL_ALT <RTL_ALT>` as an altitude-above-terrain instead of above home altitude, meaning it will generally climb over hills on its return path to home.  Similarly Land will slow to the :ref:`LAND_SPEED <LAND_SPEED>` (normally 50cm/s) when it is 10m above the terrain (instead of 10m above home).
 Currently setting this parameter is not recommended because of the edge case mentioned below involving the somewhat unlikely situation in which the vehicle is unable to retrieve terrain data during the :ref:`RTL <rtl-mode>`.  In these cases the :ref:`RTL_ALT <RTL_ALT>` will be interpreted as an alt-above home. 
 
 In addition, if :ref:`WPNAV_RFND_USE<WPNAV_RFND_USE>` is also set to 1, the rangefinder will be used instead of the terrain database during RTL. Of course the :ref:`RTL_ALT <RTL_ALT>` must be within the rangefinder's operating range and it must be healthy.
@@ -79,7 +75,7 @@ Failsafe in case of no Terrain data
 ===================================
 If the vehicle is executing a mission command that requires terrain data but it is unable to retrieve terrain data for two seconds (normally because the range finder fails, goes out of range or the Ground Station is unable to provide terrain data) the vehicle will switch to RTL mode (if it is flying) or disarm (if it is landed).
 
-Note that because it does not immediately have access to terrain data in this situation it will perform a normal RTL interpreting the :ref:`RTL_ALT <RTL_ALT>` as an altitude-above-home regardless of whether :ref:`TERRAIN_FOLLOW <TERRAIN_FOLLOW>` has been set to "1" or not.
+Note that because it does not immediately have access to terrain data in this situation it will perform a normal RTL interpreting the :ref:`RTL_ALT <RTL_ALT>` as an altitude-above-home regardless of whether :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` has been set to "1" or not.
 
 One common problem reported by users is the vehicle immediately disarms when the user switches to AUTO mode to start a mission while the vehicle is on the ground.  The cause is the altitude reported by the range finder (which can be checked from the MP's Flight Data screen's Status tab's sonar_range field) is shorter than the RNGFNDx_MIN (for example :ref:`RNGFND1_MIN <RNGFND1_MIN>`)parameter which means the range finder reports "unhealthy" when on the ground.  The solution is to reduce the RNGFNDx_MIN value (to perhaps "0.05").
 

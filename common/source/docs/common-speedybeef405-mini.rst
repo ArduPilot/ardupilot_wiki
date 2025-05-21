@@ -159,5 +159,5 @@ This board does not come with ArduPilot firmware pre-installed. Use instructions
 
 Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "SpeedyBeeF405Mini". Only Copter firmware is pre-built since this autopilot is very targeted for that application.
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 

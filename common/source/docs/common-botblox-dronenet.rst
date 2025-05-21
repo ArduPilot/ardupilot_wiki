@@ -72,15 +72,15 @@ The DroneNet's parameters can be set using Mission Planner's DroneCAN screen or 
 - Press the "Menu" button on the right side and select "Parameters"
 - Set the following parameters and press the "Write" button
 
-  - NET_DHCP = 0 (to disable dynamic IP assignment)
-  - NET_IPADDR0 = 192 (default)
-  - NET_IPADDR1 = 168 (default)
-  - NET_IPADDR2 = 144
-  - NET_IPADDR3 = 14
-  - NET_GW_ADDR0 = 192 (default)
-  - NET_GW_ADDR1 = 168 (default)
-  - NET_GW_ADDR2 = 144
-  - NET_GW_ADDR3 = 1
+  - :ref:`NET_DHCP <NET_DHCP>` = 0 (to disable dynamic IP assignment)
+  - :ref:`NET_IPADDR0 <NET_IPADDR0>` = 192 (default)
+  - :ref:`NET_IPADDR1 <NET_IPADDR1>` = 168 (default)
+  - :ref:`NET_IPADDR2 <NET_IPADDR2>` = 144
+  - :ref:`NET_IPADDR3 <NET_IPADDR3>` = 14
+  - :ref:`NET_GWADDR0 <NET_GWADDR0>` = 192 (default)
+  - :ref:`NET_GWADDR1 <NET_GWADDR1>` = 168 (default)
+  - :ref:`NET_GWADDR2 <NET_GWADDR2>` = 144
+  - :ref:`NET_GWADDR3 <NET_GWADDR3>` = 1
 
 - Reboot the system or from the DroneCAN screen select "Menu", "Restart"
 - On the next autopilot reboot, messages like those shown below should appear.  Note that the autopilot's IP address's final octet is one higher (e.g. "15") than the DroneNet's IP address (e.g. "14")

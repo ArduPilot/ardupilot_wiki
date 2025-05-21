@@ -8,9 +8,7 @@ Servo Gimbal
     :width: 450px
 
 ArduPilot can stabilize a servo gimbal with up to three axis of motion using any of the free PWM output channels.
-Once connected the camera gimbal can be controlled by the pilot using an RC transmitter, by sending commands from the ground stations or autonomously during missions.
-
-This article explains how to connect and configure a gimbal using simple servos to stablize the attitude of a camera.  If using ArduPilot 4.2 (or earlier) the instructions lower down on this page may also be useful for Brushless PWM Gimbals.
+Once connected the camera gimbal can be controlled by the pilot using an RC transmitter, by sending commands from the ground stations or autonomously during missions
 
 Supported Gimbals
 =================
@@ -38,8 +36,8 @@ Connect the gimbal's roll, pitch, and/or yaw servos signal and ground pins to th
 .. image:: ../../../images/pixhawk_to_gimbal_connection.jpg
     :target: ../_images/pixhawk_to_gimbal_connection.jpg
 
-Configuration (4.3 or higher)
-=============================
+Configuration
+=============
 
 .. note::
 
@@ -75,80 +73,6 @@ Control and Testing
 
 See :ref:`Gimbal / Mount Controls <common-mount-targeting>` for details on how to control the gimbal using RC, GCS or Auto mode mission commands
 
-Configuration Using Mission Planner (4.2 or lower)
-==================================================
-
-Under the SETUP/Optional Hardware Menu, you will find a ``Camera
-Gimbal`` set-up screen. (see image below)
-
-The **Type** box should be set to the type of gimbal. "Servo" for either non-stabilized manual control, or ArduPilot stabilization, or use of an external gimbal stabilizer. The autopilot will need to be rebooted in order for this to take effect and allow changes to the options below.
-
-For each axis (**PITCH, ROLL, YAW**) of your camera gimbal select the appropriate output
-channel (although shown as "RCx" in the above, MP will now show the labels for output channel choices correctly as "SERVOx" in current MP releases) that you connected above and ensure the appropriate **"Stabilise"** checkbox is checked (DO NOT CHECK YAW, however, its not supported) .
-
-.. note:: if only directional control is desired without correcting for vehicle attitude, then leave the **"Stabilise"** checkbox unchecked.
-
-The **Servo Limits** should be adjusted to ensure the gimbal servos
-don't bind.
-
-The **Angle Limits** should correspond to the rotation angle of the gimbal
-itself at the servo limits. If you find during testing that your gimbal
-is not properly remaining stabilised (for example it's over or
-under correcting as you rotate the copter), adjust the angle limits up or
-down slightly.
-
-(These are not really 'angle' limits but how much the servo is commanded
-to move within the limits set by the Min/Max parameters set in **Servo Limits**.
-
-eg. If set to -60/+60 the output will reach Min/Max (its limit) when the
-'copter reaches -60°/+60°. If set to -15/+15 the servo will reach Min/Max (its limit) when the
-'copter reaches -15°/+15°)
-
-**Retract Angles** refer to the position of the gimbal when the
-mount's mode is "retracted" (i.e. MNT1_DEFLT_MODE=0). "Retracted" normally
-means when the gimbal is pulled into the body of the aircraft which is
-generally not relevant for multicopters.
-
-**Neutral Angles** refers to the position of the gimbal when the mount
-is first initialized. This is normally facing straight forward.
-
-**Control Angles** are parameters to allow control of the gimbal from
-a ground station perhaps using a joystick. These values are overwritten
-by the ground station so there's no point in updating them on the MP
-screen.
-
-If you find your gimbal is moving in the wrong direction, check the
-**Reverse** checkbox.
-
-.. figure:: ../../../images/MPCameraAndGimbalSetupScreen.jpg
-   :target: ../_images/MPCameraAndGimbalSetupScreen.jpg
-
-   Mission Planner: Camera and Gimbal Setup Screen
-
-If you wish to adjust the gimbal yaw, pitch, or roll while flying, you can
-set the RC controls for roll, pitch, or yaw using the **Input channel** selection box.
-
-.. tip:: If only manual yaw and/or pitch is desired using servos, you can use this setup without stabilization. In addition, by extending the ``SERVO LIMITS`` you can sometimes obtain almost 180-degree servo rotation, on some servos. Increase them slowly, testing as you do, and do not overextend the PWM values. Stop when the motion stops increasing.
-
-Aligning Min and Max PWM values with the full throw of the gimbal
------------------------------------------------------------------
-
-This section shows how to align the maximum and minimum PWM servo
-settings:
-
-- Roll the airframe over hard left (just past where the servo stops moving, or ~45 deg), and raise the "Roll" "Servo" "Min" value until the servo starts to physically move a tiny bit, stop there.
-- Roll the airframe over hard right (just past where the servo stops moving, or ~45 deg), and lower the "Roll" "Servo" "Max" value until the servo starts to physically move a tiny bit, stop there.
-
-- Repeat for Pitch (forward and backward motion)
-
-Leveling/centering the gimbal
------------------------------
-
-To level and center the gimbal:
-
--  Keep the airframe perfectly straight-and-level
--  If the gimbal is not quite perfectly level, tweak the hardware first, eg, get servo horn/s so that the gimbal is as close to level as possible before doing the next step(s). Do this by unscrewing the horn from the servo and repositioning it, and/or if using push-rods to the gimbal, by adjusting the length of them.
--  If "pitch" is still not quite level, you can "trim" it by adjusting the ``MNT_PITCH_MIN`` and ``MNT_PITCH_MAX`` ... BOTH by one click in the same direction (e.g. click both down arrows once each) This will ensure that the difference between them remains constant (important), but will adjust the "center" position of the gimbal by small amounts (do not do this too much as it affects the maximum throw/s at the extremities by the same amount).
 
 Shutter configuration
 =====================
@@ -166,14 +90,5 @@ Other Parameters
 Since servos in the gimbal may react slower to position/angle changes in the vehicle's roll and pitch as the vehicle moves about a target, the camera shot may have some visible lag in it. This can be reduced by using these parameters to have the gimbal outputs move a bit ahead of the movements of the vehicle.
 
 
-Revs 4.3 or higher
-------------------
-
 - :ref:`MNT1_LEAD_RLL<MNT1_LEAD_RLL>` 
 - :ref:`MNT1_LEAD_PTCH<MNT1_LEAD_PTCH>`
-
-Revs 4.2 or lower
------------------
-
-- ``MNT_LEAD_RLL``
-- ``MNT_LEAD_PTCH``

@@ -4,7 +4,7 @@
 Automatic Landing
 =================
 
-This article explains how to autonomously land Plane as part of a mission plan and includes information about how a landing can be safely aborted. Switching to AUTO mode and executing an autolanding can also be done as an RTL action using the ``DO_LAND_START`` mission command.
+This article explains how to autonomously land Plane as part of a mission plan or the new AUTOLAND mode (available in ver 4.7(dev/latest) and later, see :ref:`mode_autoland`), and includes information about how a landing can be safely aborted. Switching to AUTO mode and executing an autolanding can also be done as an RTL action using the ``DO_LAND_START`` mission command.
 
 Configuring for Automatic Landing
 =================================

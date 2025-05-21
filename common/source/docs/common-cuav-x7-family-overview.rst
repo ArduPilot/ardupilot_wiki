@@ -189,4 +189,4 @@ More Information
 
 - `CUAV docs <https://doc.cuav.net/controller/x7/en/>`__
 - `x7 schematic <https://github.com/cuav/hardware/tree/master/X7_Autopilot>`__
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

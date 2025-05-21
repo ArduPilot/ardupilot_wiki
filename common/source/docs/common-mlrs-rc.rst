@@ -1,5 +1,5 @@
 .. _common-mlrs-rc:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ============
 mLRS project
 ============

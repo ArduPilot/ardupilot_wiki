@@ -50,7 +50,7 @@ DataFlash logging
 Upward and downward facing range finder distances can be seen in the DataFlash Log's RFND message.
 
 The distance to the nearest object in 8 quadrants around the vehicle is recorded in the DataFlash log's PRX messages.
-Since Copter and Rover 4.1 have the ability to store 3D obstacles, various instances of PRX message log is used. 0th instance stands for obstacles detected between -75 to -45 degrees pitch. Similarly, PRX[1] stores from -45 to -15 degrees, and PRX[2] stores from -15 to + 15 degrees and so on.
+Since Copter and Rover have the ability to store 3D obstacles, various instances of PRX message log is used. 0th instance stands for obstacles detected between -75 to -45 degrees pitch. Similarly, PRX[1] stores from -45 to -15 degrees, and PRX[2] stores from -15 to + 15 degrees and so on.
 
 Additional Features
 ===================
@@ -59,7 +59,7 @@ Filter
 ------
 
 Various sensors can be attached to the autopilot. However, depending on the quality and use case of the sensor, it might give noisy data.
-This noise will be stored onboard the autopilot as "obstacles" and the vehicle might suddenly start avoiding false objects. To counter this problem, Copter and Rover 4.1 have an inbuilt low pass filter on the raw sensor data.
+This noise will be stored onboard the autopilot as "obstacles" and the vehicle might suddenly start avoiding false objects. To counter this problem, Copter and Rover have an inbuilt low pass filter on the raw sensor data.
 The filter can be adjusted by :ref:`PRX_FILT <PRX_FILT>` (setting it to 0 will disable the feature).
 By default, only the filtered values get logged. However, by setting :ref:`PRX_LOG_RAW <PRX_LOG_RAW>` = 1, raw values from the sensors will also be logged. This can be used for debugging purposes.
 

@@ -375,4 +375,4 @@ Much of this antenna information has been provided by Joe Noci as an
 extension of this discussion: `433 UHF LRS Antenna "Turn Stile" <https://diydrones.com/forum/topics/433-uhf-lrs-antenna-turn-stile>`__.
 
 
-
+[copywiki destination="plane,copter,rover"]

@@ -115,4 +115,4 @@ Compile ArduPilot
 To build your own firmware, see the instructions on setting up a build environment and compiling the source code:
 `Building the Code <https://ardupilot.org/dev/docs/building-the-code.html>`__
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]

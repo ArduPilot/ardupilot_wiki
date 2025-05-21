@@ -1,5 +1,5 @@
 .. _common-SkySakuraH743:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ================================
 SkySakura H743 Flight Controller
 ================================

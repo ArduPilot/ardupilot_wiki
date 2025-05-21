@@ -1,5 +1,5 @@
 .. _common-rfd900:
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ==================
 RFD900 Radio Modem
 ==================
@@ -14,6 +14,7 @@ designed for long range serial communication.  Ranges of `15km and much higher h
 
 .. image:: ../../../images/RFD900_telemetry_radio.jpg
     :target: ../_images/RFD900_telemetry_radio.jpg
+    :width: 450px
 
 Overview
 ========
@@ -47,7 +48,16 @@ Bask Aerospace offer the AeroLink range of products that are built to work with 
 They offer two different variants that meet the needs of the ground and airside radios.
 
 -  `AeroLink Base <https://baskaerospace.com.au/shop/telemetry/aerolink-base/>`__
+
+.. image:: ../../../images/bask-aero/AeroLinkBase.jpg
+    :target: ../_images/bask-aero/AeroLinkBase.jpg
+    :width: 450px
+
 -  `AeroLink RFD Adapter Board <https://baskaerospace.com.au/shop/telemetry/aerolink-rfd-adapter-board/>`__
+
+.. image:: ../../../images/bask-aero/AeroLinkRFDAdapter.jpg
+    :target: ../_images/bask-aero/AeroLinkRFDAdapter.jpg
+    :width: 450px
 
 The AeroLink RFD Adapter Board makes it easy to power your RFD modem from a separate 5V BEC as recommended above.
 
@@ -56,8 +66,8 @@ ProfiCNC
 
 - `ProfiCNC Store <http://www.proficnc.com/52-online-sales>`_
 
-Key Features
-============
+RFD900 Key Features
+===================
 
 -  Long range >40km depending on antennas and GCS setup
 -  2 x RP-SMA RF connectors, diversity switched.
@@ -93,6 +103,7 @@ Interfaces
 
 .. image:: ../../../images/RFD900_Physical_pins.jpg
     :target: ../_images/RFD900_Physical_pins.jpg
+    :width: 450px
 
 Configuring using the Mission Planner
 =====================================

@@ -16,12 +16,11 @@ Align Yaw to GPS (Plane only)
 
 On Plane, a steady GPS heading is used after takeoff to align the /attitude/velocity/position/heading estimation filters (EKFs) for yaw. This usually occurs a few seconds after takeoff on Planes without compass. However, this approach cannot be used for Quadplane's VTOL navigation, since it needs to be accurate very shortly after takeoffs with no GPS velocity or heading inputs.
 
-.. note:: in 4.3 firmware, GSF is used instead, see below.
 
 GSF
 ===
 
-ArduPilot 4.1 (and higher) supports a Gaussian Sum Filter (GSF) which takes IMU and GPS inputs to compute a probable heading, if a yaw source (like a compass) is unavailable, or unhealthy.
+ArduPilot supports a Gaussian Sum Filter (GSF) which takes IMU and GPS inputs to compute a probable heading, if a yaw source (like a compass) is unavailable, or unhealthy.
 
 .. warning:: Currently, it does not function well for QuadPlane VTOL tailsitters, since their nose is pointed vertically in VTOL flight. Compasses are still recommended for Tailsitters. Also, for this to work well at all, vibration should be low and the GPS velocity accurate, see below.
 
@@ -55,3 +54,6 @@ Video
 -----
 
 ..  youtube:: 3xW9hj-lxNU
+
+
+[copywiki destination="plane,copter,rover"]
