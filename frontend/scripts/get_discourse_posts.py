@@ -13,7 +13,7 @@ from pathlib import Path
 
 import requests
 from dataclasses import dataclass
-from typing import List, Any
+from typing import List, Any, Tuple
 
 
 class RequestExecutionError(Exception):
@@ -46,6 +46,8 @@ class BlogPostsFetcher:
             self.blog_url: (base_dir / "./frontend/blog_posts.json").resolve(),
             self.news_url: (base_dir / "./frontend/news_posts.json").resolve()
         }
+        # Configure session with proper cookie handling
+        self.session = requests.Session()
 
     @staticmethod
     def get_arguments() -> Any:
@@ -66,15 +68,14 @@ class BlogPostsFetcher:
         url_hash = hashlib.sha256(url.encode()).hexdigest()
         return cache_dir / f"{url_hash}.json"
 
-    @staticmethod
-    def execute_http_request_json(url: str) -> Any:
+    def execute_http_request_json(self, url: str) -> Any:
         try:
             headers = {
-                'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotBot/1.0)',
+                'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotPostGrabber/1.0)',
                 'Accept': 'application/json',
             }
-            session = requests.Session()
-            response = session.get(url, headers=headers, verify=True, timeout=10)
+
+            response = self.session.get(url, headers=headers, verify=True)
             response.raise_for_status()
             data = response.json()
             cache_path = BlogPostsFetcher._get_cache_path(url)
@@ -106,7 +107,7 @@ class BlogPostsFetcher:
         return str(litem[:140] + ' (...)')
 
     @staticmethod
-    def get_first_youtube_or_img_link(request: str) -> (str, bool):
+    def get_first_youtube_or_img_link(request: str) -> Tuple[str, bool]:
         """ Returns the first YouTube link or image link in the request, if any.
             True if the link is a Youtube link."""
         request_lines = request.splitlines()
