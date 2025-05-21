@@ -98,6 +98,8 @@ The vehicle will effectively be armed immediately at startup but please note tha
 modes requiring GPS (all modes except :ref:`Hold <hold-mode>` and :ref:`Manual <manual-mode>`)
 will not operate until after a good GPS lock (or more accurately a good EKF position estimate) is achieved.
 
+.. note:: setting the :ref:`ARMING_REQUIRE <ARMING_REQUIRE>` parameter to zero is NOT recommended. If you desire to automatically arm. set it to "3" to arm automatically once pre-arm checks are satisfied the first time after booting.
+
 LED and Buzzer
 ==============
 
