@@ -58,7 +58,7 @@ class BlogPostsFetcher:
     @staticmethod
     def _get_cache_path(url: str) -> Path:
         if platform.system() == "Windows":
-            home = Path(os.environ.get('USERPROFILE', Path.cwd()))
+            home = Path(os.environ.get('LOCALAPPDATA', Path.cwd()))
         else:
             home = Path(os.environ.get('HOME', Path.cwd()))
         cache_dir = home / "WebCache"
