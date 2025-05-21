@@ -48,6 +48,11 @@ class BlogPostsFetcher:
         }
         # Configure session with proper cookie handling
         self.session = requests.Session()
+        self.session.headers.update({
+            'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotPostGrabber/1.0)',
+            'Accept': 'application/json',
+            "Connection": "keep-alive",
+        })
 
     @staticmethod
     def get_arguments() -> Any:
@@ -70,12 +75,7 @@ class BlogPostsFetcher:
 
     def execute_http_request_json(self, url: str) -> Any:
         try:
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotPostGrabber/1.0)',
-                'Accept': 'application/json',
-            }
-
-            response = self.session.get(url, headers=headers, verify=True)
+            response = self.session.get(url, verify=True)
             response.raise_for_status()
             data = response.json()
             cache_path = BlogPostsFetcher._get_cache_path(url)
