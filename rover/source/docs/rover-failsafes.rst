@@ -113,6 +113,8 @@ If enabled by setting the :ref:`FS_CRASH_CHECK <FS_CRASH_CHECK>` parameter to "1
 - the vehicle is turning at less than 4.5 deg/s
 - demanded throttle to the motors (from the pilot or autopilot) is at least 5%
 
+In addition, the :ref:`CRASH_ANGLE <CRASH_ANGLE>` parameter immediately enables the same actions above if the vehicle's roll or pitch angle exceeds that value. "0" disables this check.
+
 Hold Mode Failsafes
 ===================
 
