@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="auto">
 
 <head>
     <!-- Required meta tags -->
@@ -35,10 +35,9 @@
     <meta name="msapplication-TileColor" content="#ffffff">
 
     <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer data-domain="ardupilot.org"
             src="https://plausible.ardupilot.org/js/script.outbound-links.js"></script>
 
@@ -46,21 +45,23 @@
 
 <body>
 
-<header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+<header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-        <div class="container">
+        <div class="container-fluid">
 
             <a class="navbar-brand" href="#">
                 <picture>
-                    <source media="(max-height: 480px)" type="image/webp"
+                    <source type="image/webp"
                             srcset="images/ArduPilot-Motto.webp">
-                    <source media="(max-height: 480px)" type="image/png" srcset="images/ArduPilot-Motto.png">
-                    <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid">
+                    <source type="image/png" srcset="images/ArduPilot-Motto.png">
+                    <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid"
+                         style="max-height: 60px; height: auto;">
                 </picture>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -68,31 +69,32 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <ul class="navbar-nav mr-auto  ">
+                <ul class="navbar-nav ms-auto fs-5">
 
-                    <li class="nav-item active">
-                        <a class="nav-link" href="https://www.ardupilot.org">HOME</a>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="https://www.ardupilot.org">HOME</a>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">ABOUT</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item" href="https://ardupilot.org/dev/docs/events.html">Events</a>
-                            <a class="dropdown-item"
-                               href="https://ardupilot.org/dev/docs/common-history-of-ardupilot.html">History</a>
-                            <a class="dropdown-item" href="https://ardupilot.org/dev/docs/license-gplv3.html">License</a>
-                            <a class="dropdown-item"
-                               href="https://ardupilot.org/ardupilot/docs/common-partners.html">Partners</a>
-                            <!-- There is a partners.html waiting for be enhanced -->
-                            <a class="dropdown-item"
-                               href="https://ardupilot.org/dev/docs/common-training-centers.html">Schools</a>
-                            <a class="dropdown-item" href="https://ardupilot.org/ardupilot/docs/common-team.html">Team</a>
-                            <!-- There is a team.html waiting for be enhanced -->
-                            <a class="dropdown-item" href="https://ardupilot.org/dev/docs/common-team.html">Top
-                                Contributors</a>
-                            <a class="dropdown-item" href="https://ardupilot.org/dev/docs/job-openings.html">Volunteer</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                            <li class="dropdown-item" href="https://ardupilot.org/dev/docs/events.html">Events</li>
+                            <li class="dropdown-item"
+                               href="https://ardupilot.org/dev/docs/common-history-of-ardupilot.html">History</li>
+                            <li class="dropdown-item"
+                               href="https://ardupilot.org/dev/docs/license-gplv3.html">License</li>
+                            <li class="dropdown-item"
+                               href="https://ardupilot.org/ardupilot/docs/common-partners.html">Partners</li>
+                            <li class="dropdown-item"
+                               href="https://ardupilot.org/dev/docs/common-training-centers.html">Schools</li>
+                            <li class="dropdown-item"
+                               href="https://ardupilot.org/ardupilot/docs/common-team.html">Team</li>
+                            <li class="dropdown-item" href="https://ardupilot.org/dev/docs/common-team.html">Top
+                                Contributors</li>
+                            <li class="dropdown-item"
+                               href="https://ardupilot.org/dev/docs/job-openings.html">Volunteer</li>
+                        </ul>
                     </li>
 
                     <li class="nav-item">
@@ -115,23 +117,23 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">COMMUNITY</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown02">
-                            <a class="dropdown-item"
+                        <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                            <li class="dropdown-item"
                                href="https://ardupilot.org/ardupilot/docs/common-commercial-support.html">Commercial
-                                Support</a>
-                            <a class="dropdown-item"
-                               href="https://ardupilot.org/ardupilot/docs/common-contact-us.html">Contact Us</a>
-                            <a class="dropdown-item"
-                               href="https://ardupilot.org/dev/docs/ardupilot-discord-server.html">Developer Chat</a>
-                            <a class="dropdown-item" href="https://discuss.ardupilot.org">Discuss Forums</a>
-                            <a class="dropdown-item" href="https://www.facebook.com/groups/ArduPilot.org">Facebook</a>
-                            <a class="dropdown-item" href="https://ardupilot.org/dev/docs/gsoc.html">GSOC</a>
-                            <a class="dropdown-item" href="https://twitter.com/hashtag/Ardupilot?src=hash">Twitter</a>
-                            <a class="dropdown-item"
-                               href="https://www.youtube.com/channel/UCtqkaA8BWDpISGNAfivUSHw">YouTube</a>
-                            <a class="dropdown-item"
-                               href="https://www.instagram.com/explore/tags/ardupilot/?hl=en">Instagram</a>
-                        </div>
+                                Support</li>
+                            <li class="dropdown-item"
+                               href="https://ardupilot.org/ardupilot/docs/common-contact-us.html">Contact Us</li>
+                            <li class="dropdown-item"
+                               href="https://ardupilot.org/dev/docs/ardupilot-discord-server.html">Developer Chat</li>
+                            <li class="dropdown-item" href="https://discuss.ardupilot.org">Discuss Forums</li>
+                            <li class="dropdown-item" href="https://www.facebook.com/groups/ArduPilot.org">Facebook</li>
+                            <li class="dropdown-item" href="https://ardupilot.org/dev/docs/gsoc.html">GSOC</li>
+                            <li class="dropdown-item" href="https://twitter.com/hashtag/Ardupilot?src=hash">Twitter</li>
+                            <li class="dropdown-item"
+                               href="https://www.youtube.com/channel/UCtqkaA8BWDpISGNAfivUSHw">YouTube</li>
+                            <li class="dropdown-item"
+                               href="https://www.instagram.com/explore/tags/ardupilot/?hl=en">Instagram</li>
+                        </ul>
                     </li>
 
                 </ul>
@@ -143,330 +145,312 @@
 
 <main role="main" class="container">
 
-    <div class="container" style="max-width: 920px">
-        <div id="carouselPictures" class="carousel slide">
+    <div id="carouselPictures" class="carousel slide mt-2">
 
-            <div class="carousel-inner" id="carousel_content">
-                <div class="carousel-item active img-fluid">
-                    <picture>
-                        <!-- first carousel element should have explicit height settled to improve performance and not lazy loaded-->
-                        <source media="(max-height: 480px)" type="image/webp"
-                                srcset="images/slides_01_Ardupilot42.webp">
-                        <source media="(max-height: 480px)" type="image/jpeg" srcset="images/slides_01_Ardupilot42.jpg">
-                        <img class="d-block w-100" src="images/slides_01_Ardupilot42.jpg"
-                             alt="Local Motors/Airbus VTOL UAV on its maiden flight">
-                    </picture>
-                </div>
+        <div class="carousel-inner" id="carousel_content">
+            <div class="carousel-item active">
+                <picture class="d-block w-100 img-fluid">
+                    <!-- first carousel element should have explicit height settled to improve performance and not lazy loaded-->
+                    <source type="image/webp"
+                            srcset="images/slides_01_Ardupilot42.webp">
+                    <source type="image/jpeg" srcset="images/slides_01_Ardupilot42.jpg">
+                    <img class="d-block w-100 img-fluid" src="images/slides_01_Ardupilot42.jpg"
+                         alt="Local Motors/Airbus VTOL UAV on its maiden flight">
+                </picture>
             </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPictures" data-bs-slide="prev" aria-label="Previous">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselPictures" data-bs-slide="next" aria-label="Next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
-
         </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPictures" data-bs-slide="prev"
+                aria-label="Previous">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPictures" data-bs-slide="next"
+                aria-label="Next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+
     </div>
 
 
-    <br>
-    <br>
-    <br>
-    <br>
+    <h1 class="mt-5"> What is ArduPilot?</h1>
+    <p class="text-justify lead">ArduPilot is a trusted, versatile, and open source autopilot system supporting many
+        vehicle types: multi-copters, traditional helicopters, fixed wing aircraft, boats, submarines, rovers and
+        more.
+        The source code is developed by a large community of professionals and enthusiasts. New developers are
+        always
+        welcome! The best way to start is by joining the Developer Team Forum, which is open to all and chock-full
+        of daily development goodness.</p>
 
+    <h1 class="mt-5"> Community</h1>
+    <p class="text-justify lead">Community is what really sets ArduPilot apart from many other offerings in the
+        market. Here are some of the places you can find ArduPilot users and developers:</p>
 
-    <div class="contentSection">
-        <h1>What is ArduPilot?</h1>
-        <p class="text-justify lead">ArduPilot is a trusted, versatile, and open source autopilot system supporting many
-            vehicle types: multi-copters, traditional helicopters, fixed wing aircraft, boats, submarines, rovers and
-            more.
-            The source code is developed by a large community of professionals and enthusiasts. New developers are
-            always
-            welcome! The best way to start is by joining the Developer Team Forum, which is open to all and chock-full
-            of
-            daily development goodness.</p>
-    </div>
-    <br>
-    <div class="contentSection">
-        <h1>Community</h1>
-
-        <p class="text-justify lead">Community is what really sets ArduPilot apart from many other offerings in the
-            market. Here are some of the places you can find ArduPilot users and developers:</p>
-
-
-        <div class="contentSection">
-            <h2>Latest posts on Community Blogs</h2>
-            <div id="blog_posts">
-                <div class="row">
-                    <div class="col-md-4">
-                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
-                            <picture>
-                                <source media="(max-height: 480px)" type="image/webp"
-                                        srcset="images/ArduPilot-Motto.webp">
-                                <source media="(max-height: 480px)" type="image/png" srcset="images/ArduPilot-Motto.png">
-                                <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min" loading="lazy">
-                                Loading Blog post
-                            </picture>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
-                            <picture>
-                                <source media="(max-height: 480px)" type="image/webp"
-                                        srcset="images/ArduPilot-Motto.webp">
-                                <source media="(max-height: 480px)" type="image/png" srcset="images/ArduPilot-Motto.png">
-                                <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min" loading="lazy">
-                                Loading Blog post
-                            </picture>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
-                            <picture>
-                                <source media="(max-height: 480px)" type="image/webp"
-                                        srcset="images/ArduPilot-Motto.webp">
-                                <source media="(max-height: 480px)" type="image/png" srcset="images/ArduPilot-Motto.png">
-                                <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min" loading="lazy">
-                                Loading Blog post
-                            </picture>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
-                            <picture>
-                                <source media="(max-height: 480px)" type="image/webp"
-                                        srcset="images/ArduPilot-Motto.webp">
-                                <source media="(max-height: 480px)" type="image/png" srcset="images/ArduPilot-Motto.png">
-                                <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min" loading="lazy">
-                                Loading Blog post
-                            </picture>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
-                            <picture>
-                                <source media="(max-height: 480px)" type="image/webp"
-                                        srcset="images/ArduPilot-Motto.webp">
-                                <source media="(max-height: 480px)" type="image/png" srcset="images/ArduPilot-Motto.png">
-                                <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min" loading="lazy">
-                                Loading Blog post
-                            </picture>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
-                            <picture>
-                                <source media="(max-height: 480px)" type="image/webp"
-                                        srcset="images/ArduPilot-Motto.webp">
-                                <source media="(max-height: 480px)" type="image/png" srcset="images/ArduPilot-Motto.png">
-                                <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min" loading="lazy">
-                                Loading Blog post
-                            </picture>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
-                            <picture>
-                                <source media="(max-height: 480px)" type="image/webp"
-                                        srcset="images/ArduPilot-Motto.webp">
-                                <source media="(max-height: 480px)" type="image/png" srcset="images/ArduPilot-Motto.png">
-                                <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min" loading="lazy">
-                                Loading Blog post
-                            </picture>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
-                            <picture>
-                                <source media="(max-height: 480px)" type="image/webp"
-                                        srcset="images/ArduPilot-Motto.webp">
-                                <source media="(max-height: 480px)" type="image/png" srcset="images/ArduPilot-Motto.png">
-                                <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min" loading="lazy">
-                                Loading Blog post
-                            </picture>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="d-block mb-4 h-100 text-dark embed-responsive">
-                            <picture>
-                                <source media="(max-height: 480px)" type="image/webp"
-                                        srcset="images/ArduPilot-Motto.webp">
-                                <source media="(max-height: 480px)" type="image/png" srcset="images/ArduPilot-Motto.png">
-                                <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-fluid img-thumbnail col_min" loading="lazy">
-                                Loading Blog post
-                            </picture>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-
-        <div class="contentSection">
-            <h2>Latest Community Forums posts</h2>
-            <ul id="news_posts">
-            </ul>
-        </div>
-        <br>
+    <h2 class="mt-4">Latest posts on Community Blogs</h2>
+    <div id="blog_posts">
         <div class="row">
-            <div class="col-sm-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Discussion Forum</h3>
-                    </div>
-                    <div class="panel-body">
-                        Get help and interact with other ArduPilot users on <a href="https://discuss.ardupilot.org/">Discussion
-                        Forum</a> and <a href="https://discuss.ardupilot.org/c/blog">related blogs on ArduPilot.org!</a><br><br>
+            <div class="col-md-4">
+                <a target="_blank" rel="noopener" class="btn-link" style="position: relative; display: inline-block;">
+                    <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-thumbnail col_min" style="display:block; cursor:pointer;"
+                         loading="lazy">
+                    <svg hidden viewBox='0 0 68 48' width='68px' style='position: absolute;top:50%;left:50%;transform:translate(-50%,-50%);cursor:pointer;' >
+                        <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                        <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener"
+                   style="display:block;">
+                    <p>Loading Blog post</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a target="_blank" rel="noopener" class="btn-link" style="position: relative; display: inline-block;">
+                    <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-thumbnail col_min" style="display:block; cursor:pointer;"
+                         loading="lazy">
+                    <svg hidden viewBox='0 0 68 48' width='68px' style='position: absolute;top:50%;left:50%;transform:translate(-50%,-50%);cursor:pointer;' >
+                        <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                        <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener"
+                   style="display:block;">
+                    <p>Loading Blog post</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a target="_blank" rel="noopener" class="btn-link" style="position: relative; display: inline-block;">
+                    <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-thumbnail col_min" style="display:block; cursor:pointer;"
+                         loading="lazy">
+                    <svg hidden viewBox='0 0 68 48' width='68px' style='position: absolute;top:50%;left:50%;transform:translate(-50%,-50%);cursor:pointer;' >
+                        <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                        <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener"
+                   style="display:block;">
+                    <p>Loading Blog post</p>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <a target="_blank" rel="noopener" class="btn-link" style="position: relative; display: inline-block;">
+                    <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-thumbnail col_min" style="display:block; cursor:pointer;"
+                         loading="lazy">
+                    <svg hidden viewBox='0 0 68 48' width='68px' style='position: absolute;top:50%;left:50%;transform:translate(-50%,-50%);cursor:pointer;' >
+                        <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                        <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener"
+                   style="display:block;">
+                    <p>Loading Blog post</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a target="_blank" rel="noopener" class="btn-link" style="position: relative; display: inline-block;">
+                    <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-thumbnail col_min" style="display:block; cursor:pointer;"
+                         loading="lazy">
+                    <svg hidden viewBox='0 0 68 48' width='68px' style='position: absolute;top:50%;left:50%;transform:translate(-50%,-50%);cursor:pointer;' >
+                        <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                        <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener"
+                   style="display:block;">
+                    <p>Loading Blog post</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a target="_blank" rel="noopener" class="btn-link" style="position: relative; display: inline-block;">
+                    <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-thumbnail col_min" style="display:block; cursor:pointer;"
+                         loading="lazy">
+                    <svg hidden viewBox='0 0 68 48' width='68px' style='position: absolute;top:50%;left:50%;transform:translate(-50%,-50%);cursor:pointer;' >
+                        <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                        <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener"
+                   style="display:block;">
+                    <p>Loading Blog post</p>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <a target="_blank" rel="noopener" class="btn-link" style="position: relative; display: inline-block;">
+                    <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-thumbnail col_min" style="display:block; cursor:pointer;"
+                         loading="lazy">
+                    <svg hidden viewBox='0 0 68 48' width='68px' style='position: absolute;top:50%;left:50%;transform:translate(-50%,-50%);cursor:pointer;' >
+                        <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                        <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener"
+                   style="display:block;">
+                    <p>Loading Blog post</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a target="_blank" rel="noopener" class="btn-link" style="position: relative; display: inline-block;">
+                    <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-thumbnail col_min" style="display:block; cursor:pointer;"
+                         loading="lazy">
+                    <svg hidden viewBox='0 0 68 48' width='68px' style='position: absolute;top:50%;left:50%;transform:translate(-50%,-50%);cursor:pointer;' >
+                        <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                        <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener"
+                   style="display:block;">
+                    <p>Loading Blog post</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a target="_blank" rel="noopener" class="btn-link" style="position: relative; display: inline-block;">
+                    <img src="images/ArduPilot-Motto.png" alt="ArduPilot" class="img-thumbnail col_min" style="display:block; cursor:pointer;"
+                         loading="lazy">
+                    <svg hidden viewBox='0 0 68 48' width='68px' style='position: absolute;top:50%;left:50%;transform:translate(-50%,-50%);cursor:pointer;' >
+                        <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                        <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener"
+                   style="display:block;">
+                    <p>Loading Blog post</p>
+                </a>
+            </div>
+        </div>
+    </div>
 
-                        <a href="https://discuss.ardupilot.org/c/blog">
-                            <picture>
-                                <source type="image/webp" srcset="images/ArduPilotDiscuss.webp">
-                                <source type="image/jpeg" srcset="images/ArduPilotDiscuss.png">
-                                <img src="images/ArduPilotDiscuss.png" class="img-fluid rounded" loading="lazy"
-                                     alt="https://discuss.ardupilot.org/c/blog">
-                            </picture>
-                        </a>
+
+    <h2 class="mt-4">Latest Community Forums posts</h2>
+    <ul id="news_posts">
+    </ul>
 
 
-                        <br><br><br>
-                    </div>
+    <div class="row mt-5">
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h3 class="card-title">Discussion Forum</h3>
                 </div>
-            </div><!-- /.col-sm-4 -->
-
-            <div class="col-sm-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Facebook ArduPilot group</h3>
-                    </div>
-                    <div class="panel-body">
-                        <a href="https://www.facebook.com/groups/ArduPilot.org/" rel="nofollow">Facebook ArduPilot group</a> have
-                        several post
-                        with most recent community cases.
-
-                        <br><br><br>
-
-                        <a href="https://www.facebook.com/groups/ArduPilot.org/" rel="nofollow">
-                            <picture>
-                                <source type="image/webp" srcset="images/FaceBookArduPilot.webp">
-                                <source type="image/jpeg" srcset="images/FaceBookArduPilot.png">
-                                <img src="images/FaceBookArduPilot.png" class="img-fluid rounded" loading="lazy"
-                                     alt="https://www.facebook.com/groups/ArduPilot.org/">
-                            </picture>
-                        </a>
-
-                    </div>
+                <div class="card-body">
+                    Get help and interact with other ArduPilot users on <a href="https://discuss.ardupilot.org/">Discussion
+                    Forum</a> and <a href="https://discuss.ardupilot.org/c/blog">related blogs on ArduPilot.org!</a>
                 </div>
-            </div><!-- /.col-sm-4 -->
-
-            <div class="col-sm-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Discord</h3>
-                    </div>
-                    <div class="panel-body">
-                        Developing questions? Check our <a href="https://ardupilot.org/discord" rel="nofollow">discord channels</a> and
-                        exchange
-                        your coding questions with other developers.
-
-                        <br><br>
-
-                        <a href="https://ardupilot.org/discord" rel="nofollow">
-                            <picture>
-                                <source type="image/webp" srcset="images/discord_mini.webp">
-                                <source type="image/jpeg" srcset="images/discord_mini.png">
-                                <img src="images/discord_mini.png" class="img-fluid rounded" loading="lazy"
-                                     alt="https://ardupilot.org/discord">
-                            </picture>
-                        </a>
-
-                    </div>
-                </div>
-            </div><!-- /.col-sm-4 -->
-
+                <a href="https://discuss.ardupilot.org/c/blog">
+                    <picture class="card-img-bottom img-fluid rounded">
+                        <source type="image/webp" srcset="images/ArduPilotDiscuss.webp">
+                        <source type="image/jpeg" srcset="images/ArduPilotDiscuss.png">
+                        <img src="images/ArduPilotDiscuss.png" class="card-img-bottom img-fluid rounded" loading="lazy"
+                             alt="https://discuss.ardupilot.org/c/blog">
+                    </picture>
+                </a>
+            </div>
         </div>
 
-        <br>
-
-
-        <div class="contentSection">
-            <h1>Developer Community</h1>
-            <p class="text-justify lead">
-                Working on the code? You can start with our <a href="https://ardupilot.org/dev/index.html">Developers
-                Guide</a> and chat with other developers at <a href="https://ardupilot.org/discord">our discord
-                channels</a>
-            </p>
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h3 class="card-title">Facebook ArduPilot Group</h3>
+                </div>
+                <div class="card-body">
+                    <a href="https://www.facebook.com/groups/ArduPilot.org/" rel="nofollow">Facebook ArduPilot Group</a>
+                    have several post with most recent community cases.
+                </div>
+                <a href="https://www.facebook.com/groups/ArduPilot.org/" rel="nofollow">
+                    <picture class="card-img-bottom img-fluid rounded">
+                        <source type="image/webp" srcset="images/FaceBookArduPilot.webp">
+                        <source type="image/jpeg" srcset="images/FaceBookArduPilot.png">
+                        <img src="images/FaceBookArduPilot.png" class="card-img-bottom img-fluid rounded" loading="lazy"
+                             alt="https://www.facebook.com/groups/ArduPilot.org/">
+                    </picture>
+                </a>
+            </div>
         </div>
-        <br><br>
 
+        <div class="col-sm-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h3 class="card-title">Discord</h3>
+                </div>
+                <div class="card-body">
+                    Developing questions? Check our <a href="https://ardupilot.org/discord" rel="nofollow">discord
+                    channels</a> and exchange your coding questions with other developers.
+                </div>
+                <a href="https://ardupilot.org/discord" rel="nofollow">
+                    <picture class="card-img-bottom img-fluid rounded">
+                        <source type="image/webp" srcset="images/discord_mini.webp">
+                        <source type="image/jpeg" srcset="images/discord_mini.png">
+                        <img src="images/discord_mini.png" class="card-img-bottom img-fluid rounded" loading="lazy"
+                             alt="https://ardupilot.org/discord">
+                    </picture>
+                </a>
+            </div>
+        </div>
 
     </div>
-    <br>
 
 
-    <div class="contentSection">
-        <h1>One autopilot for any mission</h1>
-        <p class="text-justify lead">ArduPilot enables the creation and use of trusted, autonomous, unmanned vehicle
-            systems for the peaceful benefit of all. ArduPilot provides a comprehensive suite of tools suitable for
-            almost
-            any vehicle and application. As an open source project, it is constantly evolving based on rapid feedback
-            from a
-            large community of users. The Development Team works with the community and commercial partners to add
-            functionality to ArduPilot that benefits everyone. Although ArduPilot does not manufacture any hardware,
-            ArduPilot firmware works on a wide variety of different hardware to control unmanned vehicles of all types.
-            Coupled with ground control software, unmanned vehicles running ArduPilot can have advanced functionality
-            including real-time communication with operators. ArduPilot has a huge online community dedicated to helping
-            users with questions, problems, and solutions.</p>
+    <h1 class="mt-5">Developer Community</h1>
+    <p class="text-justify lead">
+        Working on the code? You can start with our <a href="https://ardupilot.org/dev/index.html">Developers
+        Guide</a> and chat with other developers at <a href="https://ardupilot.org/discord">our discord
+        channels</a>
+    </p>
 
-        <p class="text-justify lead">The ArduPilot Project provides an advanced, full-featured and reliable open source
-            autopilot software system. The first ArduPilot open code repository was created in 2009 - since then it has
-            been
-            developed by a team of diverse professional engineers, academics, computer scientists, and other members of
-            our
-            global community. It is capable of controlling almost any vehicle system imaginable: conventional and VTOL
-            airplanes, gliders, multirotors, helicopters, sailboats, powered boats, submarines, ground vehicles and even
-            Balance-Bots. The supported vehicle types frequently expand as use cases emerge for new and novel
-            platforms.</p>
 
-        <p class="text-justify lead">Installed in over 1,000,000 vehicles world-wide, and with advanced data-logging,
-            analysis and simulation tools, ArduPilot is a deeply tested and trusted autopilot system. The open-source
-            code
-            base means that it is rapidly evolving, always at the cutting edge of technology development, whilst sound
-            release processes provide confidence to the end user. With many peripheral suppliers creating interfaces,
-            users
-            benefit from a broad ecosystem of sensors, companion computers and communication systems. Since the source
-            code
-            is open, it can be audited to ensure compliance with security and secrecy requirements.</p>
+    <h1 class="mt-5">One autopilot for any mission</h1>
+    <p class="text-justify lead">ArduPilot enables the creation and use of trusted, autonomous, unmanned vehicle
+        systems for the peaceful benefit of all. ArduPilot provides a comprehensive suite of tools suitable for
+        almost
+        any vehicle and application. As an open source project, it is constantly evolving based on rapid feedback
+        from a
+        large community of users. The Development Team works with the community and commercial partners to add
+        functionality to ArduPilot that benefits everyone. Although ArduPilot does not manufacture any hardware,
+        ArduPilot firmware works on a wide variety of different hardware to control unmanned vehicles of all types.
+        Coupled with ground control software, unmanned vehicles running ArduPilot can have advanced functionality
+        including real-time communication with operators. ArduPilot has a huge online community dedicated to helping
+        users with questions, problems, and solutions.</p>
 
-        <p class="text-justify lead">The software suite is installed in vehicles from many manufacturers, such as many
-            from our Partners, and more broadly throughout the global autonomous systems industry. It is also used for
-            testing and development by large institutions and corporations such as NASA, Intel and Insitu/Boeing, as
-            well as
-            countless colleges and universities around the world.</p>
-    </div>
-    <br><br>
+    <p class="text-justify lead">The ArduPilot Project provides an advanced, full-featured and reliable open source
+        autopilot software system. The first ArduPilot open code repository was created in 2009 - since then it has
+        been
+        developed by a team of diverse professional engineers, academics, computer scientists, and other members of
+        our
+        global community. It is capable of controlling almost any vehicle system imaginable: conventional and VTOL
+        airplanes, gliders, multirotors, helicopters, sailboats, powered boats, submarines, ground vehicles and even
+        Balance-Bots. The supported vehicle types frequently expand as use cases emerge for new and novel
+        platforms.</p>
 
-    <div class="text-center">
-        <picture>
+    <p class="text-justify lead">Installed in over 1,000,000 vehicles world-wide, and with advanced data-logging,
+        analysis and simulation tools, ArduPilot is a deeply tested and trusted autopilot system. The open-source
+        code
+        base means that it is rapidly evolving, always at the cutting edge of technology development, whilst sound
+        release processes provide confidence to the end user. With many peripheral suppliers creating interfaces,
+        users
+        benefit from a broad ecosystem of sensors, companion computers and communication systems. Since the source
+        code
+        is open, it can be audited to ensure compliance with security and secrecy requirements.</p>
+
+    <p class="text-justify lead">The software suite is installed in vehicles from many manufacturers, such as many
+        from our Partners, and more broadly throughout the global autonomous systems industry. It is also used for
+        testing and development by large institutions and corporations such as NASA, Intel and Insitu/Boeing, as
+        well as
+        countless colleges and universities around the world.</p>
+
+    <div class="text-center mt-5">
+        <picture class="img-fluid rounded">
             <source type="image/webp" srcset="images/home_ardupilot.webp">
             <source type="image/jpeg" srcset="images/home_ardupilot.jpg">
             <img loading="lazy" alt="images/home_ardupilot.jpg" src="images/home_ardupilot.jpg"
                  class="img-fluid rounded">
         </picture>
     </div>
-    <br><br><br>
 
 
-    <div class="contentSection">
-        <h1>Terms & Slices</h1>
-    </div>
-    <br>
+    <h1 class="mt-5">Terms & Slices</h1>
 
-    <div class="row">
+    <div class="row mt-4">
         <div class="col-sm-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -474,11 +458,10 @@
                 </div>
                 <div class="panel-body text-justify">
                     ArduPilot can control several types of hardwares such as multi-copters, traditional helicopters,
-                    fixed wing
-                    aircraft, boats, submarines, rovers and more. <br><br><br>
+                    fixed wing aircraft, boats, submarines, rovers and more.
                 </div>
             </div>
-        </div><!-- /.col-sm-4 -->
+        </div>
 
         <div class="col-sm-4">
             <div class="panel panel-default">
@@ -493,17 +476,15 @@
                     hardware package into it. Hardware packages begin with a controller. Using inputs from sensors, the
                     controller is able to send outputs to devices such as ESC's, servos, gimbals and other peripherals.
 
-                    <picture>
+                    <picture class="mt-2 img-fluid rounded">
                         <source type="image/webp" srcset="images/pixhawk_small.webp">
                         <source type="image/jpeg" srcset="images/pixhawk_small.jpg">
-                        <img src="images/pixhawk_small.jpg" class="img-fluid rounded" loading="lazy" alt="">
+                        <img src="images/pixhawk_small.jpg" class="mt-2 img-fluid rounded" loading="lazy" alt="">
                     </picture>
 
-
-                    <br><br><br>
                 </div>
             </div>
-        </div><!-- /.col-sm-4 -->
+        </div>
 
         <div class="col-sm-4">
             <div class="panel panel-default">
@@ -516,17 +497,17 @@
                         href="https://ardupilot.org/plane/index.html"> Plane</a>, <a
                         href="https://ardupilot.org/rover/index.html">Rover</a>, <a
                         href="https://ardupilot.org/copter/index.html">Sub</a>, or <a
-                        href="https://ardupilot.org/antennatracker/index.html">Antenna Tracker</a>.<br><br>
+                        href="https://ardupilot.org/antennatracker/index.html">Antenna Tracker</a>.
 
-                    <picture>
+                    <picture class="mt-2 img-fluid rounded">
                         <source type="image/webp" srcset="images/firmware_types.webp">
                         <source type="image/jpeg" srcset="images/firmware_types.jpg">
-                        <img src="images/firmware_types.jpg" class="img-fluid rounded" loading="lazy" alt="">
+                        <img src="images/firmware_types.jpg" class="mt-2 img-fluid rounded" loading="lazy" alt="">
                     </picture>
 
                 </div>
             </div>
-        </div><!-- /.col-sm-4 -->
+        </div>
 
         <div class="col-sm-4">
             <div class="panel panel-default">
@@ -541,7 +522,7 @@
                     packages allow autonomous mission planning, operation, and post-mission analysis.
                 </div>
             </div>
-        </div><!-- /.col-sm-4 -->
+        </div>
 
         <div class="col-sm-4">
             <div class="panel panel-default">
@@ -556,7 +537,7 @@
                     control systems typically allow for both piloting of the craft and streaming live video and data.
                 </div>
             </div>
-        </div><!-- /.col-sm-4 -->
+        </div>
 
         <div class="col-sm-4">
             <div class="panel panel-default">
@@ -565,131 +546,131 @@
                 </div>
                 <div class="panel-body text-justify">
                     Is a full-featured GCS supported by ArduPilot. It offers point-and-click interaction with your
-                    hardware,
-                    custom scripting, and simulation.
-                    <br><br>
-                    <picture>
+                    hardware, custom scripting, and simulation.
+
+                    <picture class="mt-2 img-fluid rounded">
                         <source type="image/webp" srcset="images/mission_planner_spline_waypoint.webp">
                         <source type="image/jpeg" srcset="images/mission_planner_spline_waypoint.jpg">
-                        <img src="images/mission_planner_spline_waypoint.jpg" class="img-fluid rounded" loading="lazy"
+                        <img src="images/mission_planner_spline_waypoint.jpg" class="mt-2 img-fluid rounded"
+                             loading="lazy"
                              alt="">
                     </picture>
 
                 </div>
             </div>
-        </div><!-- /.col-sm-4 -->
+        </div>
 
     </div>
 
-    <br><br>
-
-    <div class="contentSection">
-        <h1>ArduPilot Documentation</h1>
-        <p class="text-justify lead">ArduPilot has a large set of documentation available through its Wiki. See the link
-            DOCS in the top bar to check it. You need to choose your hardware (which you can get help in "AutoPilot
-            Hardware"), then you could follow vehicle's "First Time Setup" for installing the firmware and Ground
-            Station
-            software, connecting the components, and calibration steps.</p>
-    </div>
-    <br><br>
+    <h1 class="mt-5">ArduPilot Documentation</h1>
+    <p class="text-justify lead">ArduPilot has a large set of documentation available through its Wiki. See the link
+        DOCS in the top bar to check it. You need to choose your hardware (which you can get help in "AutoPilot
+        Hardware"), then you could follow vehicle's "First Time Setup" for installing the firmware and Ground
+        Station
+        software, connecting the components, and calibration steps.</p>
 
 
-    <div class="container">
+    <h1 class="mt-5">User Cases</h1>
 
-        <div class="page-header">
-            <h1>User Cases</h1>
-        </div>
-        <hr class="mt-2 mb-5">
+    <hr class="mt-2 mb-5">
 
-        <div class="row text-center text-lg-left">
+    <div class="row text-center text-lg-left">
 
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
-                   class="d-block mb-4 h-100">
-                    <picture>
-                        <source type="image/webp" srcset="images/cases_01_bluerov-dev-1-1024x466.webp">
-                        <source type="image/jpeg" srcset="images/cases_01_bluerov-dev-1-1024x466.jpg">
-                        <img class="img-fluid img-thumbnail" src="images/cases_01_bluerov-dev-1-1024x466.jpg"
-                             loading="lazy"
-                             alt=""> Underwater
-                        exploration for coral reefs, oilpipe inspections
-                    </picture>
-                </a>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
-                   class="d-block mb-4 h-100">
-                    <picture>
-                        <source type="image/webp" srcset="images/cases_02_case_vtol-quadplane.webp">
-                        <source type="image/jpeg" srcset="images/cases_02_case_vtol-quadplane.jpg">
-                        <img class="img-fluid img-thumbnail" src="images/cases_02_case_vtol-quadplane.jpg"
-                             loading="lazy"
-                             alt=""> VTOL QuadPlane for
-                        Search & Rescue operations
-                    </picture>
-                </a>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
-                   class="d-block mb-4 h-100">
-                    <picture>
-                        <source type="image/webp" srcset="images/cases_03_PX4-Tractor.webp">
-                        <source type="image/jpeg" srcset="images/cases_03_PX4-Tractor.jpg">
-                        <img class="img-fluid img-thumbnail" src="images/cases_03_PX4-Tractor.jpg" loading="lazy"
-                             alt="">
-                        Agricultural automatic
-                        robot tractors
-                    </picture>
-                </a>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-6">
-                <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
-                   class="d-block mb-4 h-100">
-                    <picture>
-                        <source type="image/webp" srcset="images/cases_04_SkyMapper_1152px.webp">
-                        <source type="image/jpeg" srcset="images/cases_04_SkyMapper_1152px.jpg">
-                        <img class="img-fluid img-thumbnail" src="images/cases_04_SkyMapper_1152px.jpg" loading="lazy"
-                             alt=""> Large area aerial
-                        mapping with fixedwing drones
-                    </picture>
-                </a>
-            </div>
-
-
+        <div class="col-lg-3 col-md-4 col-6">
+            <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
+               class="mb-4 h-100">
+                <picture class="img-fluid">
+                    <source type="image/webp" srcset="images/cases_01_bluerov-dev-1-1024x466.webp">
+                    <source type="image/jpeg" srcset="images/cases_01_bluerov-dev-1-1024x466.jpg">
+                    <img class="img-fluid img-thumbnail" src="images/cases_01_bluerov-dev-1-1024x466.jpg"
+                         loading="lazy"
+                         alt="">
+                </picture>
+                Underwater exploration for coral reefs, oilpipe inspections
+            </a>
         </div>
 
-        <br><br><br>
-        <div class="alert alert-warning" role="alert">
-            <strong>Warning!</strong> Every country has different regulations governing the operation of remote
-            controlled
-            and/or autonomous vehicles. <a href="https://droneregulations.info" rel="nofollow">This database</a> has country specific
-            information, but it is every operator's responsibility to be seek out and be aware of local, regional, and
-            federal
-            regulations.
-
+        <div class="col-lg-3 col-md-4 col-6">
+            <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
+               class="mb-4 h-100">
+                <picture class="img-fluid">
+                    <source type="image/webp" srcset="images/cases_02_case_vtol-quadplane.webp">
+                    <source type="image/jpeg" srcset="images/cases_02_case_vtol-quadplane.jpg">
+                    <img class="img-fluid img-thumbnail" src="images/cases_02_case_vtol-quadplane.jpg"
+                         loading="lazy"
+                         alt="">
+                </picture>
+                VTOL QuadPlane for Search & Rescue operations
+            </a>
         </div>
 
+        <div class="col-lg-3 col-md-4 col-6">
+            <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
+               class="mb-4 h-100">
+                <picture class="img-fluid">
+                    <source type="image/webp" srcset="images/cases_03_PX4-Tractor.webp">
+                    <source type="image/jpeg" srcset="images/cases_03_PX4-Tractor.jpg">
+                    <img class="img-fluid img-thumbnail" src="images/cases_03_PX4-Tractor.jpg" loading="lazy"
+                         alt="">
+                </picture>
+                Agricultural automatic robot tractors
+            </a>
+        </div>
 
+        <div class="col-lg-3 col-md-4 col-6">
+            <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html"
+               class="mb-4 h-100">
+                <picture class="img-fluid">
+                    <source type="image/webp" srcset="images/cases_04_SkyMapper_1152px.webp">
+                    <source type="image/jpeg" srcset="images/cases_04_SkyMapper_1152px.jpg">
+                    <img class="img-fluid img-thumbnail" src="images/cases_04_SkyMapper_1152px.jpg" loading="lazy"
+                         alt="">
+                </picture>
+                Large area aerial mapping with fixedwing drones
+            </a>
+        </div>
     </div>
 
+    <div class="mt-5 alert alert-warning" role="alert">
+        <strong>Warning!</strong> Every country has different regulations governing the operation of remote
+        controlled
+        and/or autonomous vehicles. <a href="https://droneregulations.info" rel="nofollow">This database</a> has country
+        specific
+        information, but it is every operator's responsibility to be seek out and be aware of local, regional, and
+        federal
+        regulations.
+
+    </div>
 </main>
 
 
 <footer>
     <div id="footerID">
-        <!-- Footer -->
         <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
             <div class="container text-center">
                 © 2024 Copyright: &copy; <a href="https://www.ardupilot.org/"> ArduPilot.org</a>
             </div>
         </footer>
-        <!-- Footer -->
     </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+<script>
+    ;(function () {
+        const htmlElement = document.querySelector("html")
+        if (htmlElement.getAttribute("data-bs-theme") === 'auto') {
+            function updateTheme() {
+                document.querySelector("html").setAttribute("data-bs-theme",
+                    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme)
+            updateTheme()
+        }
+    })()
+</script>
 <script defer>
     fetch('blog_posts.json', {
         headers: {
@@ -707,83 +688,62 @@
                     return false;
                 }
             }
+            function labnolIframe(div) {
+                let iframe = document.createElement('iframe');
+                iframe.setAttribute('src', div.dataset.id + '?autoplay=1');
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allowfullscreen', '1');
+                iframe.width = div.width;
+                iframe.height = div.height;
+                div.parentNode.replaceChild(iframe, div);
+            }
+
+
             const blogPostNodes = document.querySelectorAll('#blog_posts .col-md-4');
             data.forEach((val, index) => {
                 if (index < blogPostNodes.length) {
-                    const anchor = blogPostNodes[index].querySelector("a");
-                    const span = document.createElement('span');
-                    anchor.href = val.link;
-                    span.textContent = val.title;
+                    const anchors = blogPostNodes[index].querySelectorAll("a");
+                    const imganchor = anchors[0];
+                    const aanchor = anchors[1];
+                    const titleP = aanchor.querySelector("p");
+                    aanchor.href = val.link;
+                    const image = imganchor.querySelector("img");
 
                     if (val.has_image) {
-                        const img = document.createElement('img');
-                        img.classList.add("img-fluid", "img-thumbnail", "col_min");
-                        img.src = val.image;
-                        img.loading = "lazy";
-                        img.style.maxWidth = "640px";
-                        img.style.width = "100%";
-                        img.alt = val.title;
-
-                        anchor.innerHTML = '';
-                        anchor.appendChild(img);
+                        imganchor.href = val.link;
+                        image.src = val.image;
+                        image.alt = val.title;
+                        titleP.textContent = val.title;
                     } else if (isValidUrl(val.youtube_link)) {
-                        const iframe = document.createElement('iframe');
-                        anchor.classList.add("embed-responsive");
-                        iframe.classList.add("embed-responsive-item", "img-thumbnail", "col_min");
-                        //iframe.src = val.youtube_link;
-                        iframe.title = val.title;
-                        iframe.style.maxWidth = "640px";
-                        iframe.style.width = "100%";
-                        iframe.loading = "lazy";
                         const youtubeUrl = new URL(val.youtube_link);
                         const videoId = youtubeUrl.pathname.split('/')[2];
                         const video_thumbnail = "https://img.youtube.com/vi/" + videoId + "/hqdefault.jpg";
-                        iframe.srcdoc = `<style>
-                            body, .yt_img {
-                            width: 100%;
-                            height: 100%;
-                            margin: 0;
-                            position: absolute;
-                            display: flex;
-                            justify-content: center;
-                            object-fit: cover;
-                            }
-                            </style>
-                            <a href='${val.youtube_link}?autoplay=1' class='yt_img'>
-                            <img src='${video_thumbnail}' class='yt_img'  alt='${val.title}'/>
-                            <svg version='1.1' viewBox='0 0 68 48' width='68px' style='position: relative;' >
-                                <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
-                                <path d='M 45,24 27,14 27,34' fill='#fff'></path>
-                            </svg>
-                            </a>
-                            `;
+                        image.src = video_thumbnail;
+                        image.alt = val.title;
+                        image.dataset.id = val.youtube_link;
+                        image.style.display = "block";
+                        const svganchor= imganchor.querySelector("svg");
+                        svganchor.hidden = false;
+                        svganchor.classList.remove('hidden');
+                        svganchor.removeAttribute('hidden');
+                        image.onclick = function () {
+                            labnolIframe(this);
+                            svganchor.setAttribute('hidden', '');
+                        }
+                        svganchor.onclick = function () {
+                            labnolIframe(image);
+                            svganchor.setAttribute('hidden', '');
+                        }
+                        imganchor.removeAttribute('href');
+                        imganchor.removeAttribute("target");
+                        imganchor.removeAttribute("rel");
+                        imganchor.href = val.youtube_link;
+                        imganchor.onclick = function () {return false;}
 
-                        anchor.innerHTML = '';
-                        anchor.appendChild(iframe);
+                        titleP.textContent = val.title;
                     } else {
-                        const picture = document.createElement('picture');
-                        const source1 = document.createElement('source');
-                        source1.media = '(max-height: 480px)';
-                        source1.type = 'image/webp';
-                        source1.srcset = 'images/ArduPilot-Motto.webp';
-                        const source2 = document.createElement('source');
-                        source2.media = '(max-height: 480px)';
-                        source2.type = 'image/png';
-                        source2.srcset = 'images/ArduPilot-Motto.png';
-                        const img = document.createElement('img');
-                        img.src = 'images/ArduPilot-Motto.png';
-                        img.alt = 'ArduPilot';
-                        img.className = 'img-fluid img-thumbnail col_min';
-                        img.loading = 'lazy';
-                        img.textContent = 'Loading Blog post';
-                        picture.appendChild(source1);
-                        picture.appendChild(source2);
-                        picture.appendChild(img);
-                        anchor.innerHTML = '';
-                        anchor.appendChild(picture);
+                        titleP.textContent = val.title;
                     }
-
-                    anchor.appendChild(span);
                 }
             });
         })
@@ -835,7 +795,7 @@
         for (let i = 0; i < carouselData.length; i++) {
             carousel.innerHTML += `
         <div class="carousel-item img-fluid">
-          <picture>
+          <picture class="d-block w-100">
             <source type="image/webp" srcset="${carouselData[i].imgSrcWebp}">
             <source type="image/jpeg" srcset="${carouselData[i].imgSrcJpeg}">
             <img class="d-block w-100" src="${carouselData[i].imgSrcJpeg}" loading="lazy" alt="${carouselData[i].imgAlt}">
