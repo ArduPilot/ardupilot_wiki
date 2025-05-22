@@ -45,14 +45,15 @@ tools/suites are listed below.
 .. toctree::
     :maxdepth: 1
 
-    APSync <apsync-intro>
     BlueOS <https://blueos.cloud/>
     DroneKit <droneapi-tutorial>
     FlytOS <flytos>
     Maverick <https://goodrobots.github.io/maverick/#/>
+    Pymavlink <https://github.com/ArduPilot/pymavlink>
     ROS <ros>
     Rpanion-server <https://www.docs.rpanion.com/software/rpanion-server>
     Skyhub <https://idrobots.com/>
+    APSync (deprecated) <apsync-intro>
 
 A number of vendors also offer turnkey systems. See the below link for details.
 

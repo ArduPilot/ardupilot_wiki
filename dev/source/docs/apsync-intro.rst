@@ -4,6 +4,10 @@
 APSync
 ======
 
+.. warning::
+
+   APSync is deprecated.  Instead we recommend using `BlueOS <https://blueos.cloud/>`__ or `Rpanion-server <https://www.docs.rpanion.com/software/rpanion-server>`__
+
 APSync simplifies the setup of companion computers so that they can be used to provide additional functionality to ArduPilot and also to ease integration with internet services.
 
 The current release automatically creates a Wifi Access Point on startup, allows DataFlash logging to the companion computer and "simple" real-time video streaming from a camera on the drone to the ground station.
