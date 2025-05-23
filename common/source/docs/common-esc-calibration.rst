@@ -75,7 +75,15 @@ the sound of the motor as a guide.
 Reversing PWM based ESCs
 ========================
 
-If you are using a reversing ESC for reverse thrust ( see :ref:`Automatic Landing<automatic-landing>` section on Reverse Thrust Landing ), and its PWM based rather than CAN, OneShot, or DShot, then you may need to calibrate it. Usually, a button is provided for setting full forward, neutral, and full reverse. In this case, you will need to setup an RCx_OPTION on an RC channel to allow setting full reverse manually. Follow the manufacturers instructions for calibration.
+If you are using a reversing ESC for reverse thrust for Plane( see :ref:`Automatic Landing<automatic-landing>` section on Reverse Thrust Landing ) or normal Rovers/Subs, and its PWM based rather than CAN, OneShot, or DShot, then you may need to calibrate it for minimum and maximum PWM values. Sometimes, a button is provided for setting full forward, neutral, and full reverse. In this case, you will need to setup an RCx_OPTION on an RC channel to allow setting full reverse manually. Follow the manufacturers instructions for calibration.
+
+Some ESCs just fix the calibration, in which case you may need to adjust the servo/motor's output trim position to be slightly different than 1500 us to obtain zero thrust.
+
+.. note:: Copter/Sub MOTORx output's trim position cannot be changed, its always 1500us for bi-directional and 1000us for uni-directional motors. Plane and Rover's Throttle output's can have their ``SERVOx_MIN/MAX/TRIM`` values changed as required.
+
+BLHeli ESCs can be set for bi-directional operation using the "ROTATION" parameter. Usually they default to full reverse at 1000 us, full forward at 2000 us, and zero at 1500us, but these can be adjusted using the appropriate BLHeli suite application.
+
+AM32 ESCs have similar settings.
 
 Brushed Motor ESCS
 ==================
