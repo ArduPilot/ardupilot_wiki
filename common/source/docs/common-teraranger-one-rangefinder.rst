@@ -112,7 +112,7 @@ Testing the sensor
 The distances read by the *TeraRanger EVO* sensor can be displayed on
 the *Mission Planner Flight Data* menu. The Status button the
 left will show status values. Then choose
-“sonarrange”.
+“rangefinder1”.
 
 .. figure:: ../../../images/TeraRangerOne_MissionPlannerEnableFlightData.jpg
    :target: ../_images/TeraRangerOne_MissionPlannerEnableFlightData.jpg

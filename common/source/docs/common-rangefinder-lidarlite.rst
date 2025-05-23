@@ -122,7 +122,7 @@ Testing the sensor
 ==================
 
 Distances read by the sensor can be seen in the Mission Planner's Flight
-Data screen's Status tab.  Look closely for "sonarrange".
+Data screen's Status tab.  Look closely for "rangefinder1".
 It's best to place the Lidar several known distances (1m, 3m, 5m) from
 a large flat wall to test it.  If the Lidar is constantly reading
 wrong by a fixed offset e.g. it's always 50cm out at each distance then
