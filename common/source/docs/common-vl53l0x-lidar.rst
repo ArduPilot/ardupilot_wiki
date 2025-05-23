@@ -42,7 +42,7 @@ Testing the sensor
 ==================
 
 Distances read by the sensor can be seen in the Mission Planner's Flight
-Data screen's Status tab. Look closely for "sonarrange".(The value of this image is not a real value.)
+Data screen's Status tab. Look closely for "rangefinder1".(The value of this image is not a real value.)
 
 .. image:: ../../../images/mp_rangefinder_lidarlite_testing.jpg
     :target: ../_images/mp_rangefinder_lidarlite_testing.jpg
