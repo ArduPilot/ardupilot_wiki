@@ -15,11 +15,23 @@ Currently, ArduPilot supports these systems:
 - `VectorNav <https://www.vectornav.com/products>`__
 - `Inertialabs INS-P <https://inertiallabs.com/wp-content/uploads/2023/09/INS-B-P-D-DL_Datasheet_rev-6.27_August_2023.pdf>`__
 
-Setup
-=====
+Setup and Configuration
+=======================
+
+Install ArduPilot with External AHRS Support
+--------------------------------------------
+
+External AHRS support is only available by default in ArduPilot 4.6 (or earlier) on boards with 2MB (or more) of flash.
+If using 4.7 (or higher) and/or boards with less than 2MB flash, please use the `Custom Build Server <https://custom.ardupilot.org/add_build>`__ to build your preferred firmware including External AHRS support.
+
+.. image:: ../../../images/external-ahrs-custom-build-server.png
+    :target: ../_images/external-ahrs-custom-build-server.png
+    :width: 450 px
+
+More instructions on using the :ref:`Custom Build Server can be found here <common-custom-firmware>`
 
 VectorNav
-~~~~~~~~~
+---------
 Refer to :ref:`common-external-ahrs-vectornav` for setup.
 
 MicroStrain
