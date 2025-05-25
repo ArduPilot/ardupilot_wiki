@@ -100,7 +100,7 @@ For the pitch axis the plots are:
 
 #.  ATT.Pitch (as a reference on when the hard stick transitions occur)
 #. (proposed FF)\*PIDP.Act\*AETR.SS  (proposed FF is the proposed :ref:`PTCH_RATE_FF<PTCH_RATE_FF>` term as a starting point). This is taking the total output from the PID controller, which results in the surface deflection in the next graph, as a proposed feedforward.
-#.  AETR.Ele*0.01
+#.  AETR.Elev*0.01
 
 Now we can tune the other PID gains to take care of disturbances and miss-trims.
 
