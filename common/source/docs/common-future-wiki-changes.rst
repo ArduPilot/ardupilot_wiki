@@ -32,6 +32,7 @@ New Board Support
 - CORVON405V2.1, see https://github.com/ArduPilot/ardupilot_wiki/pull/6816
 - BrahmaF4, see https://github.com/ArduPilot/ardupilot_wiki/pull/6820
 - JHEMCUF405Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6853
+- CORVON743V1, see https://github.com/ArduPilot/ardupilot_wiki/pull/6891
 
 New Peripheral Support
 ======================
