@@ -93,6 +93,13 @@ Clicking on ``Inspector`` will open a popup window to view messages on the CAN b
 
 To return to normal Mission Planner operation, change to another tab, and re-connect. You may need to wait 2 seconds before re-connecting.
 
+.. _dronecan-firmware-flashing:
+
+DroneCAN Firmware Flashing Video
+================================
+
+.. youtube:: HqQWA60rNcY 
+
 Advanced
 ========
 This section is for advanced users.
