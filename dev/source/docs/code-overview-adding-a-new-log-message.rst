@@ -11,6 +11,8 @@ especially when trying to :ref:`diagnose why something went wrong <common-diagno
 
 This page explains how to write a new dataflash log message.
 
+.. note:: a guide to understanding the formats of data logger messages is `HERE <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/README.md>`__ and how the code for these messages is parsed and checked for inclusion in the documentation is `HERE <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/logger_metadata/README.md>`__
+
 The Easy Way
 ------------
 
