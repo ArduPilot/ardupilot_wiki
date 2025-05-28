@@ -52,6 +52,7 @@ Adapter Nodes
     Matek DroneCAN Adapter Node <https://www.mateksys.com/?portfolio=can-l431>
     mRo KitCAN CAN/DroneCAN Adapter Node+Compass+Baro <common-mro-kitcan>
     mRo DroneCAN Adapter Node <common-mro-uavcan-adapter-node>
+    VimDrones <https://dev.vimdrones.com/products/vimdrones_ap_periph_pico/>
 
 Airspeed
 ========
@@ -116,6 +117,7 @@ Servos and Actuators
     Hitec DroneCAN Linear Actuators <common-hitec-dronecan-linear-actuator>
     Himark CAN Servos <http://himarkuaveng.com/cate-21898-23052.html>
     UltraMotion Can Servos* <https://www.ultramotion.com/servo-cylinder/>
+    VimDrones <https://dev.vimdrones.com/products/vimdrones_can_servo_hub/>
 
     * requires `LUA Scripting <common-lua-scripts> be setup and `LUA driver<https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/UltraMotion.lua>`__ used.
 
