@@ -52,6 +52,7 @@ Adapter Nodes
     Matek DroneCAN Adapter Node <https://www.mateksys.com/?portfolio=can-l431>
     mRo KitCAN CAN/DroneCAN Adapter Node+Compass+Baro <common-mro-kitcan>
     mRo DroneCAN Adapter Node <common-mro-uavcan-adapter-node>
+    VimDrones <https://dev.vimdrones.com/products/vimdrones_ap_periph_pico/>
 
 Airspeed
 ========
@@ -101,6 +102,7 @@ Servos
 
     DroneCAN Servos <common-dronecan-servos>
     Himark CAN Servos <http://himarkuaveng.com/cate-21898-23052.html>
+    VimDrones <https://dev.vimdrones.com/products/vimdrones_can_servo_hub/>
 
 ESCs/Output Expanders
 =====================
