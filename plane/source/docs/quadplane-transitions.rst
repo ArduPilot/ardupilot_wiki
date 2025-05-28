@@ -60,6 +60,8 @@ for transitions to QuadPlane modes while flying at high speed. Tilt-rotors will,
 
 .. note:: this phased-in pitch limit is applied for all fixed wing to VTOL transitions, except for transitions to QACRO.
 
+.. note:: when the transition to Fixed Wing occurs, throttle control is changed instantly to TECS. This can result in momentary throttle demand glitches not smoothed by :ref:`THR_SLEWRATE <THR_SLEWRATE>`. The parameter :ref:`TECS_THR_ERATE <TECS_THR_ERATE>` is used to smooth this transition.
+
 The one exception to the forward motor stopping in QuadPlane VTOL
 modes is if you have the :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` parameter set to a non-zero
 value. In that case the forward motor will be used to hold the
