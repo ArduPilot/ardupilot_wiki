@@ -76,7 +76,6 @@ For guidance on cable design, colour coding, and EMI-compliant wiring, especiall
 [/site]
     Radio Control Systems <common-rc-systems>
     Rangefinders (Sonar, Lidar, Depth Cameras) <common-rangefinder-landingpage>
-    Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
     Relay Switch <common-relay>
     Remote Id (aka Drone Id) <common-remoteid>
     RPM Sensor <common-rpm>
