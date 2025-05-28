@@ -53,6 +53,7 @@ New Features
 - Fence breach warning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6814
 - Add JUMP count option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6818
 - Enhanced DroneCAN battery hotswap operation, see https://github.com/ArduPilot/ardupilot_wiki/pull/6904
+- Initializing PreArm warning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6908
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
