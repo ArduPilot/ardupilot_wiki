@@ -123,7 +123,7 @@ First, create a dockerfile like so on your laptop called ``Dockerfile``
             git cmake build-essential
 
     WORKDIR /ws
-    RUN git clone --branch humble https://github.com/micro-ROS/micro-ROS-Agent.git
+    RUN git clone  --depth 1 --branch humble https://github.com/micro-ROS/micro-ROS-Agent.git
     WORKDIR /ws/micro-ROS-Agent
     RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
         --mount=target=/var/cache/apt,type=cache,sharing=locked \
