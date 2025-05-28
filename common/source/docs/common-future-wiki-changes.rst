@@ -51,6 +51,7 @@ New Features
 - Add iNav fonts to DisplayPort for DJI Goggles 3/N3, see https://github.com/ArduPilot/ardupilot_wiki/pull/6794
 - Fence breach warning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6814
 - Add JUMP count option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6818
+- Enhanced DroneCAN battery hotswap operation, see https://github.com/ArduPilot/ardupilot_wiki/pull/6904
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
