@@ -120,6 +120,7 @@ tuning options for the vehicle.
 [/site]
     RC Input Channel Mapping (RCMAP) <common-rcmap>
     RC Options <common-rc-options>
+    Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
     Redundant Telemetry <common-redundant-telemetry>
 [site wiki="plane"]
     Reverse Thrust Setup<reverse-thrust-setup>
