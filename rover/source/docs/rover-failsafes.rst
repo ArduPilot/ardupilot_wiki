@@ -21,7 +21,7 @@ This failsafe is triggered if the connection between the user's transmitter and 
   - RC_OVERRIDES are lost if :ref:`using a GCS only <common-gcs-only-operation>` is being used,
 
 - set :ref:`FS_THR_ENABLE <FS_THR_ENABLE>` to "1" to enable this failsafe
-- if :ref:`FS_ACTION <FS_ACTION>` is "1", the vehicle will :ref:`RTL <rtl-mode>` to home, if "2" the vehicle will :ref:`Hold <hold-mode>`, if "3" or "4" the vehicle will attempt to use :ref:`SmartRTL <smartrtl-mode>` but if this mode cannot be engaged the vehicle will :ref:`RTL <rtl-mode>` or :ref:`Hold <hold-mode>` respectively.
+- if :ref:`FS_ACTION <FS_ACTION>` is "1", the vehicle will :ref:`RTL <rtl-mode>` to home, if "2" the vehicle will :ref:`Hold <hold-mode>`, if "3" or "4" the vehicle will attempt to use :ref:`SmartRTL <smartrtl-mode>` but if this mode cannot be engaged the vehicle will :ref:`RTL <rtl-mode>` or :ref:`Hold <hold-mode>` respectively. If "5", it will Disarm. "6" will switch to :ref:`Loiter mode <loiter-mode>` if possible, else to :ref:`Hold mode <hold-mode>`. switch 
 - once the transmitter/receiver connection is restored, the user must use the transmitter's mode switch to re-take control of the vehicle in :ref:`Manual <manual-mode>` (or any other mode)
 
 Battery Failsafe
@@ -49,7 +49,7 @@ When the failsafe is triggered:
 -  Buzzer will play a loud low-battery alarm
 -  LEDs will flash yellow
 -  A warning message will be displayed on the ground station's HUD (if telemetry is connected)
--  :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` configures the failsafe action to take.  "0" to take no action (default), "1" to change into :ref:`RTL <rtl-mode>`, "2" to change to :ref:`Hold <hold-mode>`, if "3" or "4" the vehicle will attempt to use :ref:`SmartRTL <smartrtl-mode>` but if this mode cannot be engaged the vehicle will :ref:`RTL <rtl-mode>` or :ref:`Hold <hold-mode>` respectively.  "5" will disarm the vehicle.
+-  :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` configures the failsafe action to take.  "0" to take no action (default), "1" to change into :ref:`RTL <rtl-mode>`, "2" to change to :ref:`Hold <hold-mode>`, if "3" or "4" the vehicle will attempt to use :ref:`SmartRTL <smartrtl-mode>` but if this mode cannot be engaged the vehicle will :ref:`RTL <rtl-mode>` or :ref:`Hold <hold-mode>` respectively.  "5" will disarm the vehicle. "6" will switch to :ref:`Loiter mode <loiter-mode>` if possible, else to :ref:`Hold mode <hold-mode>`.
 
 Two-Stage Battery Failsafe
 --------------------------
