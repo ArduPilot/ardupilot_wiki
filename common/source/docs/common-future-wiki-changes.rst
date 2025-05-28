@@ -33,6 +33,7 @@ New Board Support
 - BrahmaF4, see https://github.com/ArduPilot/ardupilot_wiki/pull/6820
 - JHEMCUF405Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6853
 - CORVON743V1, see https://github.com/ArduPilot/ardupilot_wiki/pull/6891
+- UAV DEV 743-UM982 <common-uav-dev-fc-um982>
 
 New Peripheral Support
 ======================
