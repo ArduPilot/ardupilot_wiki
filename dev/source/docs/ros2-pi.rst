@@ -96,6 +96,9 @@ The simplest solution is to wire an open telemetry port.
 .. figure:: ../images/PiZero2WTelem.png
    :target: ../_images/PiZero2WTelem.png
 
+..
+    Cosider documenting flow control setup, and also any configuration to enable /dev/ttyS0
+
 This allow GPIO13 and GPIO15 (/dev/ttySO) to communicate with ArduPilot.
 
 Cross Compile an application with Docker
@@ -142,7 +145,7 @@ Now, the following steps build the docker image and copy the ROS 2 install direc
 
 .. code-block:: bash
 
-    # Build with multiplatform support
+    # Build with multiplatform support.
     docker build . --platform linux/arm64 -t micro_ros_agent
 
     # Copy the installation directory from the docker image to the host.
@@ -150,28 +153,21 @@ Now, the following steps build the docker image and copy the ROS 2 install direc
     docker cp dummy:/ws/micro-ROS-Agent/install install
     docker rm -f dummy
 
-    # And now, from host to target's home directory
-    scp -r install/ ubuntu@ubuntu.local:/home/ubuntu
+    # And now, from host to target's home directory, but ignore COLCON_IGNORE.
+    rsync -aRv --exclude install/COLCON_IGNORE install ubuntu@ubuntu.local:/home/ubuntu
 
-..
-    TODO consider using rsync for when we get to larger workspaces
 
 Although we have copied the executable over, the runtime dependencies are not installed.
 Let's use rosdep to install those by cloning it on the target and invoking rosdep.
+The target only needs runtime dependencies, which are denoted with tag ``exec``.
 
 .. code-block:: bash
 
     cd ~
-    git clone --branch humble https://github.com/micro-ROS/micro-ROS-Agent.git
-    cd micro-ROS-Agent
     sudo rosdep init
+    apt update
     rosdep update
-    rosdep install --from-paths . --ignore-src -y
-    cd ..
-    sudo rm -r micro-ROS-Agent
-
-..
-    This is quite a hacky way to install runtime dependencies.
+    rosdep install --from-paths install --dependency-types exec
 
 Test the Micro ROS Agent
 ========================
@@ -215,6 +211,8 @@ Place the following contents inside:
     [Install]
     WantedBy=default.target
 
+.. TODO consider waiting on /dev/ttyS0 with a udev rule that has "SYSTEMD_WANTS_"
+
 .. note::
 
    If you are not using ``ubuntu`` as your username, be sure to change the ``WorkingDirectory`` and ``ExecStart`` fields above!
@@ -249,7 +247,6 @@ The MicroROS agent should show it has started. It is now waiting on a connection
 Once the autopilot is configured for the same baud rate as the Micro ROS Agent, it should connect.
 
 Because systemctl user services won't start until someone logs in, enable linger for login.
-Reference: 
 
 .. code-block:: bash
 
@@ -260,6 +257,8 @@ Once you start adding more service, you can check status like so:
 .. code-block:: bash
 
     systemctl --user status
+
+Now, reboot, and verify your systemd service is up.
 
 Coming Soon
 ===========
