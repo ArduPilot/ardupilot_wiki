@@ -34,7 +34,9 @@ Because most users use an external :ref:`GPS and Compass module <common-position
 Serially Connected Devices
 ==========================
 
-Currently, ArduPilot supports Neopixel and ProfiLED RGB LED strings. They can be used for NTF notifications from the autopilot on status and warnings like other RGB LEDs, or be programmed in unlimited ways using LUA scripts on the autopilot's SD card. For use with scripting the output function must be set to a scripting output function (94 - 109) the script then assignees this output to LEDs. See :ref:`common-lua-scripts` for more use examples using LUA scripts.
+.. warning:: Serial LEDs connected to an output require that the output be DMA capable for proper operation. If the output is DShot capable, then its DMA capable. Check the autopilot's documentation to determine if the output is DShot capable,
+
+Currently, ArduPilot supports Neopixel and ProfiLED RGB LED strings on the autopilot's output using ``SERVOx_FUNCTION`` 120 thru 123. They can be used for NTF notifications from the autopilot on status and warnings like other RGB LEDs, or be programmed in unlimited ways using LUA scripts on the autopilot's SD card. For use with scripting the output function must be set to a scripting output function (94 - 109) the script then assigns this output to LEDs. See :ref:`common-lua-scripts` for more use examples using LUA scripts.
 
 ..  youtube:: ytW538e_cQw
 
