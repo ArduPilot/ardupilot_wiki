@@ -89,6 +89,7 @@ Closed Hardware
     AnyleafH7 <common-anyleafh7>
     AocodaRC H743Dual <common-aocoda-h743dual>
     AtomRC F405-NAVI <common-atomrcf405-navi>
+    AtomRC F405-NAVI-Deluxe <common-atomrcf405-navi-deluxe>
     BetaFPV F405 family <common-betafpvf405>
     brainFPV RADIX2 HD <common-radix2hd>
     Brother Hobby F405v3 <common-brotherhobbyf405v3>
