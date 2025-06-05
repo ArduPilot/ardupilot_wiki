@@ -101,7 +101,7 @@ GCS Failsafe
 
 **How it works.** When flying while using telemetry on the GCS, the
 autopilot can be programmed to trigger into failsafe mode if it loses
-telemetry from its primary GCS (set by :ref:`SYSID_MYGCS_ID <SYSID_MYGCS_ID>`). In the event that the autopilot stops receiving MAVlink
+telemetry from its primary GCS (set by :ref:`MAV_GCS_ID <MAV_GCS_ID>`). In the event that the autopilot stops receiving MAVlink
 (telemetry protocol) heartbeat messages from it, :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` applies just as in the case of a long Throttle Failsafe. See :ref:`FS_LONG_ACTN parameter below <failsafe-parameters>` for how each mode responds to the selected action value.
 
 **Setup.**
