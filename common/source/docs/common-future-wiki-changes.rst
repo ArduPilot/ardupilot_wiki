@@ -54,6 +54,7 @@ New Features
 - Enhanced DroneCAN battery hotswap operation, see https://github.com/ArduPilot/ardupilot_wiki/pull/6904
 - Initializing PreArm warning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6908
 - Add MAV_CMD_DO_SET_ROI_LOCATION/_NONE commands, see https://github.com/ArduPilot/ardupilot_wiki/pull/6915
+- Add --embed option to waf firmware build command, see https://github.com/ArduPilot/ardupilot_wiki/pull/6921
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
