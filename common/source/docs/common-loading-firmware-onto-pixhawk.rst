@@ -94,7 +94,7 @@ Custom Firmware Build Server
 
 ArduPilot is currently experimentally testing a custom firmware build server that will allow users to generate firmware builds for their autopilots with selectable features. Since all 1MB flash sized boards now have feature restrictions to allow the code to fit, this will give a path to enable a user to select which features will or will not be included, giving some flexibility to users of 1MB autopilots.
 
-The server is located `here <https://custom.ardupilot.org>`__ and instructions for its use are :ref:`on this page here <common-custom-firmware>`.
+The server is located `HERE <https://custom.ardupilot.org>`__ and instructions for its use are :ref:`on this page HERE <common-custom-firmware>`.
 
 It allows creating a custom build, which can be downloaded, and flashed to the autopilot using Mission Planner's "Load Custom Firmware" option on its **Install Firmware Page**.
 
