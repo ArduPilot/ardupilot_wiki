@@ -57,6 +57,14 @@ This section assumes that the OEM has set up the build environment (:ref:`buildi
 
 #. You can also embed :ref:`Lua scripts<common-lua-scripts>` in the ROM of the chip that will automatically run. Since Lua is currently only run on autopilots with a lot of flash space, they are only restricted in total aggregate size to available free flash memory. Put the scripts in a sub-directory called ``scripts``, i.e. ``libraries/AP_HAL_ChibiOS/hwdef/OEM_CubeOrange/scripts``. Files must end in ``.lua``.
 
+Alternatively, you can select to include lua drivers or applet scripts at compilation time by using the ``--embed-<path to file>`` option:
+
+    ::
+
+       ./waf -v vehicle --embed-<path to file> 
+
+To see a list of drivers and applets just press tab twice after ``--embed-`` and a list will be presented to allow you to complete the command.
+
     .. warning:: The user may also run Lua scripts off the SD card, so care should be taken in naming the embedded script file names to not conflict with potential user file names. It is recommended that the file names of embedded Lua scripts be provided in the product documentation for the user.
 
 #. You can also imbed small pieces of documentation in the ROM of the chip that are readable when examining the @ROMFS folder via MAVFtp. These can be pictures or small informational documents. These must fit within the free flash space of the autopilot. These files can be located in sub-directories in ``libraries/AP_HAL_ChibiOS/hwdef/OEM_CubeOrange`` (e.g. ``libraries/AP_HAL_ChibiOS/hwdef/OEM_CubeOrange/AircraftManual``).
