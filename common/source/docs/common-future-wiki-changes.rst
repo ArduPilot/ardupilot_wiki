@@ -34,6 +34,7 @@ New Board Support
 - JHEMCUF405Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6853
 - CORVON743V1, see https://github.com/ArduPilot/ardupilot_wiki/pull/6891
 - UAV DEV 743-UM982 ,see https://github.com/ArduPilot/ardupilot_wiki/pull/6897
+
 New Peripheral Support
 ======================
 - MakeFlyEasy POS3 Dronecan GPS/Compass, see https://github.com/ArduPilot/ardupilot_wiki/pull/6434
