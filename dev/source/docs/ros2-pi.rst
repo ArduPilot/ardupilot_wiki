@@ -97,7 +97,7 @@ The simplest solution is to wire an open telemetry port.
    :target: ../_images/PiZero2WTelem.png
 
 ..
-    Cosider documenting flow control setup, and also any configuration to enable /dev/ttyS0
+    Consider documenting flow control setup, and also any configuration to enable /dev/ttyS0
 
 This allow GPIO13 and GPIO15 (/dev/ttySO) to communicate with ArduPilot.
 
@@ -107,9 +107,10 @@ Cross Compile an application with Docker
 ..
     Inspired by https://github.com/Ryanf55/ardupilot_ros/blob/docker-deploy-to-pi/docker/Dockerfile
 
-In order to run applications on a Raspberry Pi, we must cross compile them for the ARM architecture.
+In order to run applications on a Raspberry Pi, we can cross compile them for the ARM architecture.
 `Docker <https://www.docker.com/>`_ allows an easy way to cross compile. Because of the Pi's limited memory, 
-it is not recommended to attempt compiling on target hardware.
+it is not recommended to attempt compiling on target hardware. If you have a more powerful computer, see the 
+next section for direct compilation on ARM64.
 
 First, create a dockerfile like so on your laptop called ``Dockerfile``
 
@@ -129,7 +130,7 @@ First, create a dockerfile like so on your laptop called ``Dockerfile``
         --mount=target=/var/cache/apt,type=cache,sharing=locked \
         apt-get update && \
         rosdep update && \
-        rosdep install --from-paths . --ignore-src -y && \
+        rosdep install --from-paths . --ignore-src -y --dependency-types build && \
         apt-get -y --no-install-recommends install ros-humble-fastcdr
 
     RUN . /opt/ros/humble/setup.sh && colcon build
@@ -157,9 +158,14 @@ Now, the following steps build the docker image and copy the ROS 2 install direc
     rsync -aRv --exclude install/COLCON_IGNORE install ubuntu@ubuntu.local:/home/ubuntu
 
 
-Although we have copied the executable over, the runtime dependencies are not installed.
-Let's use rosdep to install those by cloning it on the target and invoking rosdep.
+Installing Dependencies
+=======================
+
+Although we have copied the executable(s) over, the runtime dependencies are not installed.
+Let's use rosdep to install those.
 The target only needs runtime dependencies, which are denoted with tag ``exec``.
+
+After SSH'ing into the target, run:
 
 .. code-block:: bash
 
@@ -168,6 +174,15 @@ The target only needs runtime dependencies, which are denoted with tag ``exec``.
     apt update
     rosdep update
     rosdep install --from-paths install --dependency-types exec
+
+Compiling the Micro ROS agent directly on ARM64
+===============================================
+
+Instead of cross compiling, some more powerful companion computers can support local compilation.
+
+.. note::
+
+    Instructions coming soon
 
 Test the Micro ROS Agent
 ========================
@@ -265,6 +280,8 @@ Coming Soon
 
 * Building and installing your own nodes alongside the Micro ROS Agent
 * Using DroneBridge as an alternative DHCP Server
+* Compiling ArduPilot with DDS, applying a custom hwdef to tune rates, and configuring parameters
+* Using the CLI to subscribe to topics on the remote laptop and ARM64 target
 
 References
 ==========
