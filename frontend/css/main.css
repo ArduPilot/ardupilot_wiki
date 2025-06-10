@@ -59,6 +59,9 @@ html {
     margin-bottom: 0;
 }
 
+.text-justify {
+  text-align: justify;
+}
 /* Make dropdown menu appear on hover */
 /* .navbar-nav li:hover .dropdown-menu {
     display: block;
