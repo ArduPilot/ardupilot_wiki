@@ -60,6 +60,6 @@ html {
 }
 
 /* Make dropdown menu appear on hover */
-.navbar-nav li:hover .dropdown-menu {
+/* .navbar-nav li:hover .dropdown-menu {
     display: block;
-}
+} */
