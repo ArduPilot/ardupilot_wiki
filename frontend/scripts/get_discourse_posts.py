@@ -12,6 +12,8 @@ import platform
 from pathlib import Path
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from dataclasses import dataclass
 from typing import List, Any, Tuple
 
@@ -53,6 +55,16 @@ class BlogPostsFetcher:
             'Accept': 'application/json',
             "Connection": "keep-alive",
         })
+        # Add retry logic for 429 and other errors
+        retries = Retry(
+            total=5,
+            backoff_factor=2,
+            status_forcelist=[429, 500, 502, 503, 504],
+            allowed_methods=["HEAD", "GET", "OPTIONS"]
+        )
+        adapter = HTTPAdapter(max_retries=retries)
+        self.session.mount("https://", adapter)
+        self.session.mount("http://", adapter)
 
     @staticmethod
     def get_arguments() -> Any:
