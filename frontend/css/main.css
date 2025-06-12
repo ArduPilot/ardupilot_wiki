@@ -59,7 +59,10 @@ html {
     margin-bottom: 0;
 }
 
-/* Make dropdown menu appear on hover */
-.navbar-nav li:hover .dropdown-menu {
-    display: block;
+.text-justify {
+  text-align: justify;
 }
+/* Make dropdown menu appear on hover */
+/* .navbar-nav li:hover .dropdown-menu {
+    display: block;
+} */
