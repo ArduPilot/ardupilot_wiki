@@ -58,10 +58,25 @@ Now update all dependencies:
 Installing the `MicroXRCEDDSGen` build dependency:
 
 .. code-block:: bash
-    
+
     sudo apt install default-jre
     cd ~/ardu_ws
-    git clone --recurse-submodules https://github.com/ardupilot/Micro-XRCE-DDS-Gen.git
+
+.. tabs::
+   .. tab:: ArduPilot 4.7 and later
+    .. code-block:: bash
+
+        git clone --recurse-submodules --branch v4.7.0 https://github.com/ardupilot/Micro-XRCE-DDS-Gen.git
+
+   .. tab:: ArduPilot prior to 4.7
+
+    .. code-block:: bash
+
+        git clone --recurse-submodules --branch v4.5.1 https://github.com/ardupilot/Micro-XRCE-DDS-Gen.git
+
+
+.. code-block:: bash
+
     cd Micro-XRCE-DDS-Gen
     ./gradlew assemble
     echo "export PATH=\$PATH:$PWD/scripts" >> ~/.bashrc
