@@ -85,12 +85,10 @@ Pin Definition
 
 .. image:: ../../../images/accton/ga1/pin_definition.png
 
-Wiring Overview
-===============
+Interface
+=========
 
-The diagram below shows G-A1 and the connections to its peripherals.
-
-.. image:: ../../../images/accton/ga1/wiring.png
+The table below shows G-A1 and the connections to its peripherals.
 
 +----------------------+------------------------------------------------------------------------------------+
 | Interface            | Function                                                                           |
@@ -198,9 +196,6 @@ the module, it should be mounted on a bracket,
 positioned away from other electronic devices, and 
 oriented towards the front of the carrier.
 
-.. image:: ../../../images/accton/ga1/gps.png
-
-
 Radio Control
 =============
 
@@ -214,8 +209,6 @@ interface, while PPM receivers should be connected to
 the PPM interface. For other protocols, refer to the 
 Ardupilot Radio Control System documentation for details.
 
-.. image:: ../../../images/accton/ga1/radio.png
-
 Power
 =====
 
@@ -228,26 +221,18 @@ When running Ardupilot, the universal controller
 operates as a plug-and-play device, requiring no 
 further configuration.
 
-.. image:: ../../../images/accton/ga1/power.png
-
-
 SD Card
 =======
 
 The SD card is NOT included in the package, you need 
 to prepare the SD card and insert it into the slot.
 
-.. image:: ../../../images/accton/ga1/sdcard.png
-
-
 Motors/Servo
 ============
 
 The motor and servo system should be connected to the 
-A1–A8/M1–M8 ports according to the order outlined 
+A1-A8/M1-M8 ports according to the order outlined 
 in the fuselage reference for your carrier.
-
-.. image:: ../../../images/accton/ga1/motor_servo.png
 
 Servo Power Supply
 ==================
