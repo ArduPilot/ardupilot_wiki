@@ -48,7 +48,7 @@ Connect the battery’s I2C interface to the autopilot’s I2C port. Below is th
      - I2C Data
    * - 4
      - VCC
-     - 3.3V or 5V (depending on design)
+     - 3.3V or 5V (I/P for Isolator on the BMS)
 
 ArduPilot Configuration
 -----------------------
@@ -70,10 +70,7 @@ Use Mission Planner or your preferred GCS to configure the following parameters:
 
 Additional Info
 ---------------
-
-- **Cycle Count** and **SOH** values are shown in the Mission Planner’s status tab as `battery_cycle_count` and `battery_soh`, respectively.
-- Ensure SMBus protocol compatibility — not all batteries follow the standard strictly.
-- For custom implementations or forks of SMBUS_Generic (like `Astra`), see :ref:`battery-monitor-dev`.
+- **Cycle Count** and **SOH** values are not shown in the Mission Planner’s status tab or anywhere else. Work in progress. Can fetch the data using 0x17 for Cycle Count and 0x4f for SOH.
 
 See Also
 --------
