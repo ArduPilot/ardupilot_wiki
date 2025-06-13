@@ -80,7 +80,7 @@ For guidance on cable design, colour coding, and EMI-compliant wiring, especiall
     Remote Id (aka Drone Id) <common-remoteid>
     RPM Sensor <common-rpm>
     Safety Switch <common-safety-switch-pixhawk>
-    Servos <common-servo-landingpage>
+    Servos and Actuators <common-servo-landingpage>
     Smart Batteries <common-smart-battery-landingpage>
 [site wiki="rover"]
     Start/Stop Switch <startstop-switch>
