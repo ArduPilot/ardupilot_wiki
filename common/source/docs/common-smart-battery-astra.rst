@@ -21,6 +21,7 @@ Features
   - State of Health (SOH)
   - Cycle count
   - Serial number
+    and lot more data
 - Plug-and-play I2C interface
 - Compatible with Cube Orange / Cube Orange+ / Cube Blue and similar autopilots
 
@@ -37,17 +38,17 @@ Connect the battery’s I2C interface to the autopilot’s I2C port. Below is th
      - Signal
      - Description
    * - 1
-     - SDA
-     - I2C Data
+     - GND
+     - Ground
    * - 2
      - SCL
      - I2C Clock
    * - 3
+     - SDA
+     - I2C Data
+   * - 4
      - VCC
      - 3.3V or 5V (depending on design)
-   * - 4
-     - GND
-     - Ground
 
 ArduPilot Configuration
 -----------------------
