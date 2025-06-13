@@ -62,7 +62,7 @@ Use Mission Planner or your preferred GCS to configure the following parameters:
    * - Parameter
      - Value / Description
    * - `BATT_MONITOR`
-     - `32` (or `Astra` if you've created a separate backend)
+     - `32` (or `Astra`)
    * - `BATT_I2C_BUS`
      - Set to the correct bus - 0
    * - `BATT_I2C_ADDRESS`
