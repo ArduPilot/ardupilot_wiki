@@ -73,6 +73,7 @@ New Features
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600
 - Changed AUTO_TRIM function, see https://github.com/ArduPilot/ardupilot_wiki/pull/6622
 - Add ability to tune LOIT_SPEED from transmitter, see see https://github.com/ArduPilot/ardupilot_wiki/pull/6640
+- Add EKF FS reporting only option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6937
 - Baro thrust compensation, see https://github.com/ArduPilot/ardupilot_wiki/pull/6687
 [/site]
 [site wiki="rover"]
