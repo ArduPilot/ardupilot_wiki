@@ -61,6 +61,8 @@ Reversing
 
 Rover vehicles may/or may not use reversing motors depending on configuration. If an ESC is used, usually 1500us is used to indicate idle for PWM and DShot systems. Brushed drivers this point will be 50% duty cycle, if reversible, unless the BRUSHED_WITH_RELAY type is used.
 
+Some ESCs need a brief pause at idle as they change direction. :ref:`MTR_REV_DELAY<MTR_REV_DELAY>` can be used to provide that delay.
+
 ESC Configuration
 -----------------
 
