@@ -79,4 +79,5 @@ New Features
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600
 - Add autoarmig option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6878
 - Add LOITER/HOLD failsafe action, see https://github.com/ArduPilot/ardupilot_wiki/pull/6911
+- Add MTR_REV_DELAY, see https://github.com/ArduPilot/ardupilot_wiki/pull/6935
 [/site]
