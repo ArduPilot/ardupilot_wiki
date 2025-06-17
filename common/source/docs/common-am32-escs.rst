@@ -23,7 +23,7 @@ More ESCs may be found from the `AM32 targets.h <https://github.com/am32-firmwar
 ArduPilot Connection and Configuration
 ======================================
 
-The ESCs should be connected to the autopilot's CAN port.  Below shows the ESCs connected to the autopilot's CAN1 port but CAN2 may also be used.
+The ESCs should be connected to the autopilot's CAN port.  Below shows the ESCs connected to the autopilot's CAN1 port but CAN2 may also be used.  The ESC furthest from the autopilot's CAN port should have a CAN bus terminator connecting the CAN_L and CAN_H pins.  The VimDrones ESC shown includes a solder pad for this purpose.
 
 .. image:: ../../../images/am32-autopilot-wiring.png
     :width: 450px
