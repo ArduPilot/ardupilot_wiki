@@ -106,7 +106,7 @@ Firmware Updates
 
 The CubeNodeETH firmware can be updated by following the instructions below
 
-- Download the `stable <https://firmware.ardupilot.org/AP_Periph/stable/CubePilot-PPPGW>`__, `beta <https://firmware.ardupilot.org/AP_Periph/beta/CubePilot-PPPGW>`__ or `latest <https://firmware.ardupilot.org/AP_Periph/latest/CubeNode-ETH/>`__ AP_Periph.bin file from firmware.ardupilot.org
+- Download the `stable <https://firmware.ardupilot.org/AP_Periph/stable/CubeNode-ETH/>`__, `beta <https://firmware.ardupilot.org/AP_Periph/beta/CubeNode-ETH/>`__ or `latest <https://firmware.ardupilot.org/AP_Periph/latest/CubeNode-ETH/>`__ AP_Periph.bin file from firmware.ardupilot.org
 - Download, install and run the `DroneCAN GUI Tool <https://dronecan.github.io/GUI_Tool/Overview>`__.  For Windows users download and run `the .msi file found here <https://firmware.ardupilot.org/Tools/CAN_GUI>`__
 - Connect the autopilot to your PC using a USB cable
 - Run the DroneCAN GUI Tool:
