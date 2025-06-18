@@ -73,6 +73,7 @@ Open Hardware
     OpenPilot Revolution <common-openpilot-revo-mini>
     TauLabs Sparky2 <common-taulabs-sparky2>
     ZeroOneX6 <common-zeroonex6>
+    ZeroOneX6-Air/Air+ <common-zeroonex6-air>
 
 \* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
