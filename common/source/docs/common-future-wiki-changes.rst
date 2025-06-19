@@ -35,6 +35,7 @@ New Board Support
 - CORVON743V1, see https://github.com/ArduPilot/ardupilot_wiki/pull/6891
 - UAV DEV 743-UM982 ,see https://github.com/ArduPilot/ardupilot_wiki/pull/6897
 - DAKEFPVF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/6949
+- OrbitH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6952
 
 New Peripheral Support
 ======================
