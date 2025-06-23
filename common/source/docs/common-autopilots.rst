@@ -187,6 +187,7 @@ Closed Hardware
     ThePeach FCC-K1 <common-thepeach-k1>
     ThePeach FCC-R1 <common-thepeach-r1>
     TmotorH7Mini <common-tmotor-h7-mini>
+    UAV-DEV 743 UM082 <common-uav-dev-fc-um982>
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
     X-MAV-AP-H743v2 <common-X_MAV_H743v2>
