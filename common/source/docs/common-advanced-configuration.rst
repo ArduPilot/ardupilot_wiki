@@ -16,6 +16,7 @@ tuning options for the vehicle.
     AutoTune <autotune>
     Auxiliary Function Switches <common-auxiliary-functions>
     Baro Temperature Compensation <common-baro-temp-comp>
+    Baro Thrust Compensation <common_baro_thrust_compensation>
     Boat mode <boat-mode>
     Bootloader Update <common-bootloader-update>
 [/site]
