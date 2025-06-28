@@ -360,7 +360,7 @@ Our general advice for images is:
 - Link to the image if it is larger than can be displayed on the page.
 - Name the file using all lower case, and underscores between words.
 - Name the file "descriptively" so it is easy to find, and possibly re-use. 
-  A name like **planner2_flight_screen.jpg** is much more useful than **image1.jpg**.
+  A name like **mission_planner_flight_screen.jpg** is much more useful than **image1.jpg**.
 - To change an image, simply replace the file in the source tree and commit the change.
     
 Display an image in a "common" article with a caption and target as shown below. Note the paths to the files are relative
@@ -381,4 +381,4 @@ Note that the path is absolute, and relative to the source directory for the wik
 
     .. image:: /images/image_file_name.jpg
 
-[copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="copter,plane,rover,sub,blimp,planner,antennatracker,dev,ardupilot,mavproxy"]

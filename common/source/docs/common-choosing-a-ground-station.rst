@@ -22,7 +22,7 @@ often also used to monitor the live video streams from a UAV’s cameras.
 A GCS is also required to setup the configuration of the autopilot prior to its use and to update the autopilot's firmware.
 
 There are at least ten different ground control stations. On desktop there is *Mission
-Planner*, *APM Planner 2*, *MAVProxy*, *QGroundControl*, *UgCS*, and *LOGOS*. For Tablet/Smartphone there are
+Planner*, *MAVProxy*, *QGroundControl*, *UgCS*, and *LOGOS*. For Tablet/Smartphone there are
 *QGroundControl*, *Tower* (DroidPlanner 3), *MAVPilot*, *AndroPilot* and *SidePilot* that can be
 used to communicate with ArduPilot.
 
@@ -34,7 +34,7 @@ and preferred computing platform:
    phone.
 -  **DIY/Kit** users and developers often have to access configuration
    and analysis tools, and would therefore need (at least initially)
-   *Mission Planner*, *QGroundControl*, *APM Planner 2* or another more full-featured GCS.
+   *Mission Planner*, *QGroundControl*, or another more full-featured GCS.
 -  **Code Developers** will appreciate some of *MAVProxy's* features.
 
 
@@ -58,24 +58,6 @@ Full featured and widely used GCS.
 -  `Support Forum <https://discuss.ardupilot.org/c/ground-control-software/mission-planner>`__
 -  `Issues List <https://github.com/ArduPilot/MissionPlanner/issues>`__
 -  `Source Code <https://github.com/ArduPilot/MissionPlanner>`__
-
-APM Planner 2.0
----------------
-
-The best autopilot for use on MAC and Linux platforms. It has a smaller
-user base and a reduced feature set when compared with Mission Planner.
-
-- **Platform**: Windows, Mac OS X, Linux
-- **Licence**: `Open source <https://github.com/ArduPilot/apm_planner/blob/master/license.txt>`__
-   (GPLv3)
-
-   .. image:: ../../../images/planner2_choose_agcs.jpg
-    :target: ../_images/planner2_choose_agcs.jpg
-
-- :ref:`Wiki <planner2:home>`
-- `Support Forum <https://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__
-- `Issues List <https://github.com/ArduPilot/apm_planner/issues>`__
-- `Source Code <https://github.com/ArduPilot/apm_planner>`__
 
 MAVProxy
 --------

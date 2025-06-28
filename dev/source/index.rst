@@ -73,9 +73,6 @@ ArduPilot dev team.
    `code <https://github.com/ArduPilot/MissionPlanner>`__) - the most
    commonly used ground station written in C# for windows but also runs
    on Linux and MacOS via mono
--  APM Planner 2.0 (:ref:`wiki <planner2:home>`,
-   `code <https://github.com/ArduPilot/apm_planner>`__) is a ground
-   station specifically for APM written in C++ using the Qt libraries
 -  :ref:`MAVProxy <mavproxy:home>`
    - command line oriented and scriptable ground station (mostly used by developers)
 -  `DroneKit <http://dronekit.io/>`__ - APM SDK for apps running on vehicles, mobile devices and/or in the cloud.

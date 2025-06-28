@@ -30,4 +30,4 @@ TECS    Total Energy Control System (altitude/speed controller for Plane)
 WP      Waypoint
 ======  =====================================================================
 
-[copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,dev,antennatracker,mavproxy,ardupilot"]
+[copywiki destination="copter,plane,rover,sub,blimp,planner,dev,antennatracker,mavproxy,ardupilot"]

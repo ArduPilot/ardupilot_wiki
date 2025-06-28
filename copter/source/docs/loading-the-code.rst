@@ -16,10 +16,7 @@ station software applications can be used to load firmware, if ArduPilot firmwar
 1. `Mission Planner (Windows only)
 <https://ardupilot.org/planner/>`_
 
-2. `APM Planner2 (Windows, Mac or Linux)
-<https://ardupilot.org/planner2/>`_
-
-3. `QGroundControl (Windows, Mac or Linux)
+2. `QGroundControl (Windows, Mac or Linux)
 <http://qgroundcontrol.com/>`_
 
 For autopilots loaded with non-ArduPilot firmware, follow the instructions on :ref:`this page <common-loading-firmware-onto-chibios-only-boards>`

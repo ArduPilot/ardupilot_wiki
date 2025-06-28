@@ -17,15 +17,14 @@ reliable. However, if you're interested in multiple-UAV coordination,
 this is a good place to start.
 
 More sophisticated swarming/multiple-UAV control is available in
-QGroundControl and APM Planner 2.0, which are both built on a
-multiple-vehicle architecture. But Mission Planner accomplishes this in
-a limited way by simply opening multiple serial port MAVLink connections
-simultaneously (see four-UAV USB hub above) and passing GPS position
-information from one ("leader", flying in any mode, from manual to auto)
-to the other ("followers", flying in Guided mode). The GPS position of
-the leader is adjusted by a set offset and then sent to the followers as
-a series of dynamic waypoints.  In this fashion the followers will
-follow the leader at set X,Y and Z offset distances.
+QGroundControl, which is both built on a multiple-vehicle architecture.
+But Mission Planner accomplishes this in a limited way by simply opening
+multiple serial port MAVLink connections simultaneously (see four-UAV USB
+hub above) and passing GPS position information from one ("leader", flying
+in any mode, from manual to auto) to the other ("followers", flying in
+Guided mode). The GPS position of the leader is adjusted by a set offset
+and then sent to the followers as a series of dynamic waypoints.  In this
+fashion the followers will follow the leader at set X,Y and Z offset distances.
 
 This interface can be entered by pressing Control-F in the Mission
 Planner. That will bring up a pretty crowded box of buttons (see below),

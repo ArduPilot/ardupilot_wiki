@@ -6,8 +6,8 @@ MAVProxy Developer GCS
 
 :ref:`MAVProxy <mavproxy:home>` is a powerful
 command-line based "developer" ground station software that complements
-your favorite GUI ground station, such as *Mission Planner*, *APM
-Planner 2* etc. It has a number of key features, including the ability
+your favorite GUI ground station, such as *Mission Planner*, *QGroundControl*,
+etc. It has a number of key features, including the ability
 to forward the messages from your UAV over the network via UDP to
 multiple other ground station software on other devices.
 

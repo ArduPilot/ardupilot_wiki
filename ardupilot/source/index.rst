@@ -236,7 +236,6 @@ Features
    :caption: Ground Control Stations
 
    Mission Planner <https://ardupilot.org/planner/index.html>
-   APM Planner 2 <https://ardupilot.org/planner2/index.html>
    MAVProxy <https://ardupilot.org/mavproxy/index.html>
    Drone Engage <https://cloud.ardupilot.org>
 

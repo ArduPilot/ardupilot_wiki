@@ -190,7 +190,7 @@ This tells us that we can connect *Mission Planner* to either UDP port
 
 .. tip::
 
-   We could connect *APM Planner 2* to the remaining port. If we
+   We could connect *QGroundControl* to the remaining port. If we
    needed a third port, we could add it as shown:
 
    ::
