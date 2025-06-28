@@ -12,7 +12,7 @@ It is impossible to list them all but if you wish to see at least some of the pe
 - `Wiki contributors <https://github.com/ArduPilot/ardupilot_wiki/graphs/contributors>`__
 - `Most active Support Forum users <https://discuss.ardupilot.org/u?order=post_count&period=quarterly>`__
 - `Mission Planner GCS contributors <https://github.com/ArduPilot/MissionPlanner/graphs/contributors>`__
-- `AP Planner 2.0 GCS contributors <https://github.com/ArduPilot/apm_planner/graphs/contributors>`__
+- `APM Planner 2.0 GCS contributors <https://github.com/ArduPilot/apm_planner/graphs/contributors>`__
 - `Partners who contribute financially <https://ardupilot.org/about/Partners>`__
 
 Collaboration with other projects
@@ -24,4 +24,4 @@ with some related projects, including:
 -  The `MatrixPilot team <https://github.com/MatrixPilot/MatrixPilot/wiki>`__
 
 
-[copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="copter,plane,rover,sub,blimp,planner,antennatracker,dev,ardupilot,mavproxy"]

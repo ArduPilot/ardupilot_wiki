@@ -77,10 +77,7 @@ Setup with the Mission Planner
 
    .. tip::
 
-      For Mission Planner the default GCS system ID is 255. The
-         default system ID for APM Mission Planner 2 is 252 (but the GCS will
-         automatically set its ID to match *SYSID_MYGCS* for RC Override
-         commands). 
+      For Mission Planner the default GCS system ID is 255.
 
 .. note::
 

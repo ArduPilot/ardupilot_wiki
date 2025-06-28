@@ -177,4 +177,4 @@ The following Quad A-Tail example showcases many of the available options:
     }
 
 
-[copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="copter,plane,rover,sub,blimp,planner,antennatracker,dev,ardupilot,mavproxy"]

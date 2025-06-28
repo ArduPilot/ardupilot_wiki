@@ -21,7 +21,6 @@ Copter to fit on the APM2.x board.
     The firmware server additionally hosts GCS installers and other tools:
     
     * `Mission Planner <https://firmware.ardupilot.org/Tools/MissionPlanner>`__ 
-    * `APM Planner 2.0 <https://firmware.ardupilot.org/Tools/APMPlanner>`__ 
     * `RadioSiK <https://firmware.ardupilot.org/SiK>`__ 
     * `Developer Builds <https://firmware.ardupilot.org/devbuild>`__ 
     * `Build and Development Tools <https://firmware.ardupilot.org/Tools>`__ 
@@ -102,4 +101,4 @@ Since we want you to have a great experience, please make sure that you do all o
 
 
 
-[copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="copter,plane,rover,sub,blimp,planner,antennatracker,dev,ardupilot,mavproxy"]

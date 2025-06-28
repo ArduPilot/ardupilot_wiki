@@ -71,7 +71,7 @@ Flaperon setup
 Tuning
 ======
 
--  Go to failsafe setup in *APM Planner 2* or *Mission Planner*, and
+-  Go to failsafe setup in *Mission Planner*, and
    make sure the max/min values match ``SERVO5_MIN``/``SERVO5_MAX`` (or adjust
    them) so that your flaps move all the way ( :ref:`SERVO1_TRIM <SERVO1_TRIM>` should also be set to 1500). - Setting the :ref:`FLAP_SLEWRATE <FLAP_SLEWRATE>`
    to 100 allows moving flaps from 0 to 100% in one second.  Lower this

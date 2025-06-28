@@ -76,7 +76,6 @@ ALL_WIKIS = [
     'antennatracker',
     'dev',
     'planner',
-    'planner2',
     'ardupilot',
     'mavproxy',
     'frontend',
@@ -188,7 +187,8 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
 
 
 def get_request_file_size(url: str) -> int:
-    headers = {'Accept-Encoding': 'identity'}  # needed as request use compression by default
+    # needed as request use compression by default
+    headers = {'Accept-Encoding': 'identity'}
     hresponse = requests.head(url, headers=headers)
 
     if 'Content-Length' in hresponse.headers:
@@ -229,7 +229,8 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
             targetfile = f'./dev/source/docs/AP_Periph-{sub_url}'
         if cache:
             if not os.path.exists(targetfile):
-                raise Exception(f"Asked to use cached files, but {targetfile} does not exist")
+                raise Exception(f"Asked to use cached files, but {
+                                targetfile} does not exist")
             continue
         if site == key or site is None or (site == 'dev' and key == 'AP_Periph'):
             urls.append(fetchurl)
@@ -384,12 +385,14 @@ def make_backup(site, destdir, backupdestdir):
         if not os.path.exists(targetdir):
             fatal("FAIL backup when looking for folder %s" % targetdir)
 
-        bkdir = os.path.join(backupdestdir, str(building_time + '-wiki-bkp'), str(wiki))
+        bkdir = os.path.join(backupdestdir, str(
+            building_time + '-wiki-bkp'), str(wiki))
         debug('Checking %s' % bkdir)
         distutils.dir_util.mkpath(bkdir)
         debug('Copying %s into %s' % (targetdir, bkdir))
         try:
-            subprocess.check_call(["rsync", "-a", "--delete", targetdir + "/", bkdir])
+            subprocess.check_call(
+                ["rsync", "-a", "--delete", targetdir + "/", bkdir])
         except subprocess.CalledProcessError as ex:
             progress(ex)
             fatal("Failed to backup %s" % wiki)
@@ -568,12 +571,12 @@ def fetch_versioned_parameters(site=None):
 
     for key, value in PARAMETER_SITE.items():
 
-        if key == 'AP_Periph': # workaround until create a versioning for AP_Periph in firmware server
+        if key == 'AP_Periph':  # workaround until create a versioning for AP_Periph in firmware server
             fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
             targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
             fetch_and_rename(fetchurl, targetfile, 'Parameters.rst')
 
-        else: # regular versining
+        else:  # regular versining
 
             if site == key or site is None:
                 # Remove old param single file
@@ -614,7 +617,8 @@ def fetch_versioned_parameters(site=None):
                 if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
                     vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % ("AntennaTracker", "AntennaTracker")  # noqa: E501
                 else:
-                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value, key.title())
+                    vehicle_json_file = os.getcwd(
+                    ) + '/../new_params_mversion/%s/parameters-%s.json' % (value, key.title())
                 new_file = (
                     key +
                     "/source/_static/" +
@@ -644,9 +648,10 @@ def fetch_versioned_parameters(site=None):
                                     "/source/docs/" +
                                     filename[str(filename).rfind("/")+1:])
                         if not os.path.isfile(new_file):
-                            debug("Copying %s to %s (target file does not exist)" % (filename, new_file))
+                            debug("Copying %s to %s (target file does not exist)" % (
+                                filename, new_file))
                             shutil.copy2(filename, new_file)
-                        elif os.path.isfile(filename.replace("new_params_mversion", "old_params_mversion")): # The cached file exists?  # noqa: E501
+                        elif os.path.isfile(filename.replace("new_params_mversion", "old_params_mversion")):  # The cached file exists?  # noqa: E501
 
                             # Temporary debug messages to help with cache tasks.
                             debug("Check cache: %s against %s" % (filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
@@ -654,7 +659,8 @@ def fetch_versioned_parameters(site=None):
                             debug("Check cache with sha256: %s" % is_the_same_file(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
 
                             if ("parameters.rst" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.  # noqa: E501
-                                debug("Overwriting %s to %s" % (filename, new_file))
+                                debug("Overwriting %s to %s" %
+                                      (filename, new_file))
                                 shutil.copy2(filename, new_file)
                             else:
                                 debug("It will reuse the last build of " + new_file)
@@ -675,7 +681,8 @@ def create_latest_parameter_redirect(default_param_file, vehicle):
     """
     out_line = "======================\nParameters List (Full)(\n======================\n"
     out_line += "\n.. raw:: html\n\n"
-    out_line += "   <script>location.replace(\"" + default_param_file[:-3] + "html" + "\")</script>"
+    out_line += "   <script>location.replace(\"" + \
+        default_param_file[:-3] + "html" + "\")</script>"
     out_line += "\n\n"
 
     filename = vehicle + "/source/docs/parameters.rst"
@@ -734,7 +741,7 @@ def put_cached_parameters_files_in_sites(site=None):
 
     """
     for key, value in PARAMETER_SITE.items():
-        if (site == key or site is None) and (key != 'AP_Periph'): # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server # noqa: E501
+        if (site == key or site is None) and (key != 'AP_Periph'):  # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server # noqa: E501
             try:
                 built_folder = (os.getcwd() +
                                 '/../old_params_mversion/%s/' % value)
@@ -788,14 +795,16 @@ def check_imports():
     '''check key imports work'''
     import importlib.metadata
     # package names to check the versions of. Note that these can be different than the string used to import the package
-    required_packages = ["sphinx_rtd_theme>=1.3.0", "sphinxcontrib.youtube>=1.2.0", "sphinx>=7.1.2", "docutils<0.19"]
+    required_packages = ["sphinx_rtd_theme>=1.3.0",
+                         "sphinxcontrib.youtube>=1.2.0", "sphinx>=7.1.2", "docutils<0.19"]
     for package in required_packages:
         debug("Checking for %s" % package)
         try:
             importlib.metadata.version(package.split("<")[0].split(">=")[0])
         except importlib.metadata.PackageNotFoundError as ex:
             progress(ex)
-            fatal("Require %s\nPlease run the wiki build setup script \"Sphinxsetup\"" % package)
+            fatal(
+                "Require %s\nPlease run the wiki build setup script \"Sphinxsetup\"" % package)
     debug("Imports OK")
 
 
@@ -814,9 +823,11 @@ def check_ref_directives():
         with open(f, "r", "utf-8") as file:
             for i, line in enumerate(file.readlines()):
                 if character_before_ref_tag.search(line):
-                    error(f"Remove character before ref directive in \"{f}\" on line number {i+1}")
+                    error(f"Remove character before ref directive in \"{
+                          f}\" on line number {i+1}")
                 if character_after_ref_tag.search(line):
-                    error(f"Remove character after ref directive in \"{f}\" on line number {i+1}")
+                    error(f"Remove character after ref directive in \"{
+                          f}\" on line number {i+1}")
 
 
 def create_features_pages(site):
@@ -828,7 +839,8 @@ def create_features_pages(site):
     # grab build_options which allows us to map from define to name
     # and description.  Create a convenience hash for it
     remove_if_exists("build_options.py")
-    fetch_url("https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/scripts/build_options.py")
+    fetch_url(
+        "https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/scripts/build_options.py")
     import build_options
     build_options_by_define = {}
     for f in build_options.BUILD_OPTIONS:
@@ -851,7 +863,8 @@ def create_features_pages(site):
         if wiki not in WIKI_NAME_TO_VEHICLE_NAME:
             continue
         vehicletype = WIKI_NAME_TO_VEHICLE_NAME[wiki]
-        content = create_features_page(features, build_options_by_define, vehicletype)
+        content = create_features_page(
+            features, build_options_by_define, vehicletype)
         if wiki == "AP_Periph":
             destination_filepath = "dev/source/docs/periph-binary-features.rst"
         else:
@@ -878,7 +891,7 @@ def create_features_page(features, build_options_by_define, vehicletype):
     rows = []
     column_headings = ["Category", "Feature", "Included", "Description"]
     all_tables = ""
-    for platform_key in sorted(features_by_platform.keys(), key=lambda x : x.lower()):
+    for platform_key in sorted(features_by_platform.keys(), key=lambda x: x.lower()):
         rows = []
         platform_features = features_by_platform[platform_key]
         sorted_platform_features_in = []
@@ -903,8 +916,8 @@ def create_features_page(features, build_options_by_define, vehicletype):
             some_list.append((build_options.category, feature))
 
         sorted_platform_features = (
-            sorted(sorted_platform_features_not_in, key=lambda x : x[0] + x[1]) +
-            sorted(sorted_platform_features_in, key=lambda x : x[0] + x[1]))
+            sorted(sorted_platform_features_not_in, key=lambda x: x[0] + x[1]) +
+            sorted(sorted_platform_features_in, key=lambda x: x[0] + x[1]))
 
         for (category, feature) in sorted_platform_features:
             build_options = build_options_by_define[feature]
@@ -933,13 +946,15 @@ def create_features_page(features, build_options_by_define, vehicletype):
 ''' % (reference_for_board(platform_key), platform_key, underline, t))
 
     index = ""
-    for board in sorted(features_by_platform.keys(), key=lambda x : x.lower()):
+    for board in sorted(features_by_platform.keys(), key=lambda x: x.lower()):
         index += '- :ref:`%s<%s>`\n\n' % (board, reference_for_board(board))
 
     all_features_rows = []
-    for feature in sorted(build_options_by_define.values(), key=lambda x : (x.category + x.label).lower()):
-        all_features_rows.append([feature.category, feature.label, feature.description])
-    all_features = rst_table.tablify(all_features_rows, headings=["Category", "Feature", "Description"])
+    for feature in sorted(build_options_by_define.values(), key=lambda x: (x.category + x.label).lower()):
+        all_features_rows.append(
+            [feature.category, feature.label, feature.description])
+    all_features = rst_table.tablify(all_features_rows, headings=[
+                                     "Category", "Feature", "Description"])
 
     return '''
 .. _binary-features:
@@ -1091,7 +1106,8 @@ if __name__ == "__main__":
     if error_count > 0:
         progress("Reprinting error messages:", file=sys.stderr)
         for msg in error_log:
-            print(f"\033[1;31m[update.py][error]: {msg}\033[0m", file=sys.stderr)
+            print(f"\033[1;31m[update.py][error]: {
+                  msg}\033[0m", file=sys.stderr)
         fatal(f"{error_count} errors during Wiki build")
     else:
         print("Build completed without errors")

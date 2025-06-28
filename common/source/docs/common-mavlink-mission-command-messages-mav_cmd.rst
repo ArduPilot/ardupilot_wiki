@@ -154,7 +154,7 @@ than the full command name: ``MAV_CMD_DO_SET_SERVO``). In addition, this
 document conveniently lists the column label used by Mission Planner
 alongside each of the parameters.
 
-Other GCSs (APM Planner 2, Tower etc.) may support some other subset of
+Other GCSs (QGroundControl, Tower etc.) may support some other subset of
 commands/parameters and use alternative names/labels for them. In most
 cases, the mapping should be obvious.
 

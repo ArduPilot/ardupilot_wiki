@@ -44,8 +44,6 @@ intersphinx_mapping = {'copter': (intersphinx_base_url % 'copter',
                                   None),  # noqa: E127
                        'planner': (intersphinx_base_url % 'planner',
                                   None),  # noqa: E128
-                       'planner2': (intersphinx_base_url % 'planner2',
-                                  None),  # noqa: E128
                        'dev': (intersphinx_base_url % 'dev',
                                   None),  # noqa: E127
                        'antennatracker': (intersphinx_base_url % 'antennatracker',

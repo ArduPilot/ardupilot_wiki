@@ -66,4 +66,4 @@ the wiki.
 
 
 
-[copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,dev,antennatracker,mavproxy,ardupilot"]
+[copywiki destination="copter,plane,rover,sub,blimp,planner,dev,antennatracker,mavproxy,ardupilot"]

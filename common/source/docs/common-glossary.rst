@@ -290,4 +290,4 @@ from \ `sparkfun <https://www.sparkfun.com/products/11812>`__.
 than Bluetooth but lower power consumption than WiFi.
 
 
-[copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+[copywiki destination="copter,plane,rover,sub,blimp,planner,antennatracker,dev,ardupilot,mavproxy"]
