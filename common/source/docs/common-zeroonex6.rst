@@ -1,9 +1,9 @@
 .. _common-zeroonex6:
 
-=========
-ZeroOneX6
-=========
-The ZeroOne X6 is a flight controller manufactured by ZeroOne, which is based on the open-source FMU v6X architecture and Pixhawk Autopilot Bus open source specifications.
+================
+ZeroOneX6/X6 Pro
+================
+The ZeroOne X6/X6 Pro are flight controllers manufactured by ZeroOne, which is based on the open-source FMU v6X architecture and Pixhawk Autopilot Bus open source specifications.
 
 .. image:: ../../../images/ZeroOneX6.png
      :target: ../_images/ZeroOneX6.png
@@ -22,9 +22,14 @@ Features:
       - Internal Vibration Isolation for IMUs
       - IMU constant temperature heating(1 W heating power).
       - Triple Synced IMUs, BalancedGyro technology, low noise and more shock-resistant:
-      - IMU1-ICM45686(With vibration isolation) 
-      - IMU2-BMI088(With vibration isolation) 
-      - IMU3-ICM45686(No vibration isolation)
+      - **X6**:  
+         - IMU1-ICM45686(With vibration isolation)
+         - IMU2-BMI088(With vibration isolation)
+         - IMU3-ICM45686(No vibration isolation)
+      - **X6 Pro**：  
+         - IMU1-IIM42653(With vibration isolation)
+         - IMU2-BMI088(With vibration isolation)
+         - IMU3-IIM42653(No vibration isolation)
    - Baros:
       - Two barometers:2 x ICP20100
       - Magnetometer: Built-in RM3100 magnetometer

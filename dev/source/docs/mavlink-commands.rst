@@ -80,3 +80,9 @@ Vehicle Parameter References
 - :ref:`Rover Parameters <rover:parameters>`
 - :ref:`Sub Parameters <sub:parameters>`
 
+Software Integration Tools
+==========================
+
+-   MAVSDK <https://github.com/ArduPilot/ardupilot-mavsdk>
+-   Pymavlink python script <https://github.com/ArduPilot/pymavlink>
+

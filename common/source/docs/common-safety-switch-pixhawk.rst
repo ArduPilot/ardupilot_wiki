@@ -9,6 +9,8 @@ Safety Switch
 
 A safety switch can be used to enable/disable the outputs to motors and servos. The switch controls the "Safety" state of the vehicle. When in this state, motors are prevented from operating (except in Plane's MANUAL mode if force armed and the :ref:`BRD_SAFETY_MASK <BRD_SAFETY_MASK>` enables outputs controlling the motors), a pre-arm error condition is generated to prevent accidental arming, and servo outputs have their PWM disabled.
 
+,, note:: the boards' hardware definition file must include this feature. it cannot be added by the user.
+
 LED meaning
 ===========
 

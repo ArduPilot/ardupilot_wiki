@@ -14,6 +14,7 @@ Where to Buy
 
 AM32 ESCs that support DroneCAN
 
+- `Pogo DroneCAN AM32 ESCs <https://item.taobao.com/item.htm?id=889937578158>`__
 - `VimDrones ESC Nano (20 Amp) <https://dev.vimdrones.com/products/vimdrones_esc_nano/>`__
 - `VimDrones ESC S50 (50 Amp) <https://dev.vimdrones.com/products/vimdrones_esc_s50/>`__
 - `VimDrones ESC Development Board <https://dev.vimdrones.com/products/vimdrones_esc_dev/>`__
