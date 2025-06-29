@@ -62,10 +62,10 @@ Full featured and widely used GCS.
 APM Planner 2.0
 ---------------
 
-The best autopilot for use on MAC and Linux platforms. It has a smaller
+An autopilot for use on macOS, Linux & Windows platforms. It has a smaller
 user base and a reduced feature set when compared with Mission Planner.
 
-- **Platform**: Windows, Mac OS X, Linux
+- **Platform**: Windows, macOS, Linux
 - **Licence**: `Open source <https://github.com/ArduPilot/apm_planner/blob/master/license.txt>`__
    (GPLv3)
 
