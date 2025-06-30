@@ -31,7 +31,7 @@ Installing Python Packages on Linux/Ubuntu
 From the command line, run the following commands:
 
 - sudo apt -y install python3-pyaudio
-- pip install openai
+- python3 -m pip install openai
 
 OpenAI API Key
 --------------
@@ -80,8 +80,8 @@ Start MAVProxy and in the console enter "module load chat".  The chat window sho
 .. image:: ../../images/chat-usage.png
 
 - Text can be typed into the upper text input area and sent to the assistant by pressing the "Send" button or by pressing the "Enter" key
-- If the Rec button is pressed, 5 seconds of audio are recorded, transcribed to text, and then sent to the assistant
-- In the bottom text area, the user's input is shown in red and the assistant's response is shown in black
+- If the Rec button is pressed 5 seconds of audio are recorded, transcribed to text, and then sent to the assistant
+- In the bottom text area the user's input is shown in red and the assistant's response is shown in black
 
 Sample Conversation
 -------------------
