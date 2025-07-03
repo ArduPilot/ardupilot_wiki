@@ -26,6 +26,11 @@ Features of Pixhawk6 Series
 .. image:: ../../../images/Holybro_6_Comparison.png
     :target: ../_images/Holybro_6_Comparison.png
 
+Baseboard Pinouts
+=================
+
+`Baseboard options and pinouts <https://docs.holybro.com/autopilot/pixhawk-baseboards>`__
+
 Typical Wiring Diagram
 ======================
 
