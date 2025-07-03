@@ -1,5 +1,5 @@
 .. _common-do-return-path-start:
-[copywiki destination="plane,copter,blimp,sub,planner"]
+[copywiki destination="plane,copter,sub,planner"]
 ==========================================
 Using DO_RETURN_PATH_START Mission Command
 ==========================================
