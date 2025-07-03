@@ -100,9 +100,9 @@ Current data costs are available from the `RockBlock website <https://docs.rockb
 
 1 RockBLOCK credit is used per MAVLink message. So, for example, if the RockBLOCK
 was configured to send 1 ``HIGH_LATENCY2`` message every 30 seconds that would give a data usage of
-60 credits per hour. If any commands are sent from the GCS to the vehicle via the RockBLOCK, they should be added too.
+120 credits per hour. If any commands are sent from the GCS to the vehicle via the RockBLOCK, they should be added too.
 For example, if 5 commands are sent in the same hour, 5 credits are used. Combining both sent and recieved messages,
-a total of 65 credits per hours are used.
+a total of 125 credits per hours are used.
 
 
 Parameters
