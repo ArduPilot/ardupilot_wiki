@@ -61,6 +61,7 @@ New Features
 - Add --embed option to waf firmware build command, see https://github.com/ArduPilot/ardupilot_wiki/pull/6921
 - Stream rates moved to MAVx parameters, see https://github.com/ArduPilot/ardupilot_wiki/pull/6923
 - Winch,Generator,and Beacons are no longer included in std firmware builds for autopilots <2048MB
+- EKF3 source option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6974
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
