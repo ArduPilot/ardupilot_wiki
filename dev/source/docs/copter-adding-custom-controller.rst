@@ -283,7 +283,9 @@ to
 
 **Step #9:** This is the bare minimum to compile and run your custom controller. You can add controller-related code to the ``AC_CustomControl_XYZ`` file without changing anything else.
 
-**Step #10:** You can add new parameters by following the directions in this `Adding a parameter to a library <https://ardupilot.org/dev/docs/code-overview-adding-a-new-parameter.html#adding-a-parameter-to-a-library>` wiki page.
+**Step #10:** You can add new parameters by following the instructions in the
+`Adding a parameter to a library <https://ardupilot.org/dev/docs/code-overview-adding-a-new-parameter.html#adding-a-parameter-to-a-library>`__ 
+wiki page.
 
 **Step #11:** Initialize the class object in the backend's constructor. For example in PID backend
 
