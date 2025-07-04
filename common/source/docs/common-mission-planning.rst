@@ -30,7 +30,7 @@ This section contains articles about creating missions that will run when the ve
     Camera Control in Auto Missions <common-camera-control-and-auto-missions-in-mission-planner>
     Rally Points <common-rally-points>
     DO_LAND_START <common-do-land-start>
-    DO_RETURN_PATH_START <common-do-return-path-start
+    DO_RETURN_PATH_START <common-do-return-path-start>
 
 [site wiki="copter,plane,planner"]
     Geotagging Images with Mission Planner <common-geotagging-images-with-mission-planner>
