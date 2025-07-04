@@ -98,6 +98,7 @@ AP_RCPROTOCOL_CRSF_ENABLED                      11648  11640  11648
 AP_BARO_PROBE_EXTERNAL_I2C_BUSES                11296  11296  11296   
 OSD_PARAM_ENABLED                               11116  11596  8152    
 HAL_VISUALODOM_ENABLED                          10616  10520  10648   
+AP_EXTERNAL_AHRS_SBG_ENABLED                    10428  10584  9844    
 AP_EXTERNAL_AHRS_INERTIALLABS_ENABLED           10328  10344  10224   
 HAL_CRSF_TELEM_ENABLED                          9680   9680   9680    
 AP_RPM_ENABLED                                  9616   5504   5648    
