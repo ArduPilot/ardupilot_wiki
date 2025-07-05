@@ -92,6 +92,16 @@ Serial Port Mapping
 
 .. note:: Serial ports 5 - 8 by default have no protocol assigned. User must set the protocol to the shown port protocol themselves in order to use the port in the manner listed.
 
+Firmware
+========
+
+Firmware for the autopilot is available from `ArduPilot Firmware Server <https://firmware.ardupilot.org>`_ under the ``ARKV6X`` folders. Bi-Directional DShot (outputs 1-4) version is in the ``ARKV6X-bdshot`` folders.
+
+Loading Firmware
+================
+See the instructions `HERE <https://arkelectron.gitbook.io/ark-documentation/flight-controller/arkv6x/ardupilot-instructions>`__
+
+
 More Information
 ================
 
