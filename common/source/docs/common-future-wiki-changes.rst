@@ -38,6 +38,7 @@ New Board Support
 - OrbitH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6952
 - PiPilot RPI Sheild, see https://github.com/ArduPilot/ardupilot_wiki/pull/6972
 - DAKEFPVH743Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6978
+- BDShot support for ARKV6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/6981
 
 New Peripheral Support
 ======================
