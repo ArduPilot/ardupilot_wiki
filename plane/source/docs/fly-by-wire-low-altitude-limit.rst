@@ -31,7 +31,7 @@ How to setup Alt Limit
 ======================
 
 Using your APM Mission Planner you will have to set parameter
-:ref:`CRUISE_ALT_FLOOR<CRUISE_ALT_FLOOR>` to the desired alt **in centimeters!** If it
+:ref:`CRUISE_ALT_FLOOR<CRUISE_ALT_FLOOR>` to the desired alt **in meters!** If it
 is **0** then it is turned off.
 
 Choosing the right altitude
