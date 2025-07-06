@@ -65,6 +65,7 @@ New Features
 - Winch,Generator,and Beacons are no longer included in std firmware builds for autopilots <2048MB
 - EKF3 source option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6974
 - Permanent serial passthrough, see https://github.com/ArduPilot/ardupilot_wiki/pull/6983
+- DroneCAN messaging from LUA, see https://github.com/ArduPilot/ardupilot_wiki/pull/6988
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
