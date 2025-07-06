@@ -4,7 +4,6 @@
 Autopilot Output Functions
 ==========================
 
-
 All autopilot servo/motor outputs may be mapped to any output function supported by
 ArduPilot. This page describes how to configure these output channels and what each
 of the available functions that can be assigned to an output are.
@@ -49,41 +48,43 @@ GENERIC FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |       Function                 | ID |        Available in:                  |
 +--------------------------------+----+---------------------------------------+
-|      Disabled                  | 0  |    Plane, Copter, Rover               |
+|      GPIO                      | -1 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru                | 1  |    Plane, Copter, Rover               |
+|      Disabled                  | 0  |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru1               | 51 |    Plane, Copter, Rover               |
+|      RCPassThru                | 1  |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru2               | 52 |    Plane, Copter, Rover               |
+|      RCPassThru1               | 51 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru3               | 53 |    Plane, Copter, Rover               |
+|      RCPassThru2               | 52 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru4               | 54 |    Plane, Copter, Rover               |
+|      RCPassThru3               | 53 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru5               | 55 |    Plane, Copter, Rover               |
+|      RCPassThru4               | 54 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru6               | 56 |    Plane, Copter, Rover               |
+|      RCPassThru5               | 55 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru7               | 57 |    Plane, Copter, Rover               |
+|      RCPassThru6               | 56 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru8               | 58 |    Plane, Copter, Rover               |
+|      RCPassThru7               | 57 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru9               | 59 |    Plane, Copter, Rover               |
+|      RCPassThru8               | 58 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru10              | 60 |    Plane, Copter, Rover               |
+|      RCPassThru9               | 59 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru11              | 61 |    Plane, Copter, Rover               |
+|      RCPassThru10              | 60 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru12              | 62 |    Plane, Copter, Rover               |
+|      RCPassThru11              | 61 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru13              | 63 |    Plane, Copter, Rover               |
+|      RCPassThru12              | 62 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru14              | 64 |    Plane, Copter, Rover               |
+|      RCPassThru13              | 63 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru15              | 65 |    Plane, Copter, Rover               |
+|      RCPassThru14              | 64 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCPassThru16              | 66 |    Plane, Copter, Rover               |
+|      RCPassThru15              | 65 |    Plane, Copter, Rover, Sub          |
++--------------------------------+----+---------------------------------------+
+|      RCPassThru16              | 66 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
 |      RCIN1Scaled               |140 |        Plane, Copter, Rover           |
 +--------------------------------+----+---------------------------------------+
@@ -338,29 +339,29 @@ COPTER / QUADPLANE FUNCTIONS
 +--------------------------------+----+-----------------------------------------------------------------+
 |       Function                 | ID |                  Available in:                                  |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Motor 1                   | 33 |    Copter, QuadPlane, HeliQuad, Traditional & Dual helicopters  |
+|      Motor 1                   | 33 |    Copter, Sub,  QuadPlane, HeliQuad, Traditional & Dual Heli   |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Motor 2                   | 34 |    Copter, QuadPlane, HeliQuad, Traditional & Dual helicopters  |
+|      Motor 2                   | 34 |    Copter, Sub,  QuadPlane, HeliQuad, Traditional & Dual Heli   |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Motor 3                   | 35 |    Copter, QuadPlane, HeliQuad, Traditional & Dual helicopters  |
+|      Motor 3                   | 35 |    Copter, Sub,  QuadPlane, HeliQuad, Traditional & Dual Heli   |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Motor 4                   | 36 |    Copter, QuadPlane, HeliQuad, Traditional & Dual helicopters  |
+|      Motor 4                   | 36 |    Copter, Sub,  QuadPlane, HeliQuad, Traditional & Dual Heli   |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Motor 5                   | 37 |    Copter, QuadPlane, Dual Helicopter                           |
+|      Motor 5                   | 37 |    Copter, Sub, QuadPlane, Dual Helicopter                      |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Motor 6                   | 38 |    Copter, QuadPlane, Dual Helicopter                           |
+|      Motor 6                   | 38 |    Copter, Sub, QuadPlane, Dual Helicopter                      |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Motor 7                   | 39 |    Copter, QuadPlane                                            |
+|      Motor 7                   | 39 |    Copter, Sub, QuadPlane                                       |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Motor 8                   | 40 |    Copter, QuadPlane                                            |
+|      Motor 8                   | 40 |    Copter, Sub, QuadPlane                                       |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Motor 9                   | 82 |    Copter                                                       |
+|      Motor 9                   | 82 |    Copter, Sub                                                  |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Motor 10                  | 83 |    Copter                                                       |
+|      Motor 10                  | 83 |    Copter, Sub                                                  |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Motor 11                  | 84 |    Copter                                                       |
+|      Motor 11                  | 84 |    Copter, Sub                                                  |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Motor 12                  | 85 |    Copter                                                       |
+|      Motor 12                  | 85 |    Copter, Sub                                                  |
 +--------------------------------+----+-----------------------------------------------------------------+
 |      Motor Tilt                | 41 |    QuadPlane                                                    |
 +--------------------------------+----+-----------------------------------------------------------------+
@@ -386,7 +387,7 @@ COPTER / QUADPLANE FUNCTIONS
 +--------------------------------+----+-----------------------------------------------------------------+
 |      Landing Gear              | 29 |    Copter, Plane                                                |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Winch                     | 88 |    Copter                                                       |
+|      Winch                     | 88 |    Copter, Sub                                                  |
 +--------------------------------+----+-----------------------------------------------------------------+
 |      Rotor Head Speed          | 31 |    Traditional & Dual Helicopter, HeliQuad                      |
 +--------------------------------+----+-----------------------------------------------------------------+
@@ -508,13 +509,13 @@ CAMERA/GIMBAL FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |       Function                 | ID |        Available in:                  |
 +--------------------------------+----+---------------------------------------+
-|      Mount Yaw                 | 6  |    Plane, Copter, Rover               |
+|      Mount Yaw                 | 6  |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      Mount Pitch               | 7  |    Plane, Copter, Rover               |
+|      Mount Pitch               | 7  |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      Mount Roll                | 8  |    Plane, Copter, Rover               |
+|      Mount Roll                | 8  |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      Mount Deploy/Retract      | 9  |    Plane, Copter, Rover               |
+|      Mount Deploy/Retract      | 9  |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
 |      Camera Trigger            | 10 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
@@ -526,13 +527,13 @@ CAMERA/GIMBAL FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |      Mount2 Deploy/Retract     | 15 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
-|      Camera ISO                | 90 |    Plane, Copter, Rover               |
+|      Camera ISO                | 90 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      Camera Aperture           | 91 |    Plane, Copter, Rover               |
+|      Camera Aperture           | 91 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      Camera Focus              | 92 |    Plane, Copter, Rover               |
+|      Camera Focus              | 92 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      Camera Shutter Speed      | 93 |    Plane, Copter, Rover               |
+|      Camera Shutter Speed      | 93 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
 
 Mount Yaw/Pitch/Roll/Deploy
@@ -590,7 +591,7 @@ MISCELLANEOUS FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |       Function                 | ID |        Available in:                  |
 +--------------------------------+----+---------------------------------------+
-|      Gripper                   | 28 |     Plane, Copter, Rover              |
+|      Gripper                   | 28 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
 |      EggDrop                   | 11 |     Deprecated                        |
 +--------------------------------+----+---------------------------------------+
@@ -598,12 +599,19 @@ MISCELLANEOUS FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |      Sprayer Mixer             | 23 |     Copter                            |
 +--------------------------------+----+---------------------------------------+
-| Output SERVOn_MIN PWM value    |134 |    Plane, Copter, Rover               |
+| Output SERVOn_MIN PWM value    |134 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-| Output SERVOn_TRIM PWM value   |135 |    Plane, Copter, Rover               |
+| Output SERVOn_TRIM PWM value   |135 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-| Output SERVOn_MAX PWM value    |136 |    Plane, Copter, Rover               |
+| Output SERVOn_MAX PWM value    |136 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
+| Lights1                        |181 |     Sub                               |
++--------------------------------+----+---------------------------------------+
+| Lights2                        |182 |     Sub                               |
++--------------------------------+----+---------------------------------------+
+| Video Switch                   |183 |     Sub                               |
++--------------------------------+----+---------------------------------------+
+
 
 Gripper
 +++++++
@@ -620,10 +628,32 @@ Output SERVOn MAX/MIN/TRIM
 
 Continuously outputs the parameter value set for that output. Used in button detection. See  :ref:`common-buttons`
 
+Lights1/2
++++++++++
+
+PWM controlled lights for Sub
+
+Video Switch
+++++++++++++
+
+PWM Video switch for Sub
+
 GENERAL PURPOSE LUA SCRIPTING OUTPUTS
 -------------------------------------
 
 :ref:`Lua Scripts <common-lua-scripts>` can also directly control autopilot outputs. Using ``Function IDs 94-109`` provides the ability to configure up to 16 of these outputs, if the autopilot is capable. This is available in all vehicles.
+
+Actuators
+---------
+
+PWM based actuators which can be incrementally controlled by Sub buttons or GCS commands
+
++--------------------------------+-----+---------------------------------------+
+|       Function                 | ID  |        Available in:                  |
++--------------------------------+-----+---------------------------------------+
+|      Actuator 1 thru           |184- |     Sub                               |
+|         Actuator 6             |189  |                                       |
++--------------------------------+-----+---------------------------------------+
 
 INTERNAL CONTROLLER ACCESS
 --------------------------
@@ -640,7 +670,7 @@ INTERNAL CONTROLLER ACCESS
 |      RateYaw                   | 127 |     Copter                            |
 +--------------------------------+-----+---------------------------------------+
 
-These outputs provide the FeedForward terms from the attitude control loops, scaled by the ATC_RAT_x_FF PID parameter values for roll/pitch/yaw for use with external vehicle controllers.
+These outputs provide the FeedForward terms fr   om the attitude control loops, scaled by the ATC_RAT_x_FF PID parameter values for roll/pitch/yaw for use with external vehicle controllers.
 
 DEFAULT VALUES
 --------------
