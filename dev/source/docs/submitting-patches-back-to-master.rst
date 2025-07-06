@@ -55,7 +55,7 @@ Preparing commits
 
 - Do not submit patches with commented-out code or code that is never reachable within ``#define`` s.
 
-- Do not include git merge commits in your commit history; rebase your branch on the master branch, do not ``git pull`` changes in.
+- Do not include git merge commits in your commit history; :ref:`rebase <git-rebase>`  your branch on the master branch, do not ``git pull`` changes in.
 
 - Do not include any git ``fixup!`` commits in your PR; these are only ever supposed to be a temporary part of a git workflow
 
