@@ -40,6 +40,7 @@ forward_flight_motor_shutdown.lua           Forward flight motor shutdown
 leds_on_a_switch.lua                        Control NTF_LED_BRIGHT value using an AUX switch
 motor_failure_test.lua                      Motor failure testing script
 mount-poi.lua                               Displays the location (lat, lon and altitude) that the gimbal is currently pointing towards
+net-ntrip.lua                               NTRIP applet to receive internet NTRIP casting of RTK data
 net_webserver.lua                           This implements a web server for boards that have networking support
 param-set.lua                               Allows only certain params to be changed via GCS
 pelco_d_antennatracker.lua                  Maps AntennaTracker outputs to corresponding Pelco-D messages
