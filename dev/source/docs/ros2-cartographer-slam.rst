@@ -40,7 +40,9 @@ To launch rviz and gazebo, run:
 .. code-block:: bash
     
     source ~/ardu_ws/install/setup.sh
-    ros2 launch ardupilot_gz_bringup iris_maze.launch.py
+    ros2 launch ardupilot_gz_bringup iris_maze.launch.py use_gz_tf:=false rviz:=false
+
+Notice that we have disabled gazebo as a source of odometry. This is a crucial step for this example, as our odometry source must be cartographer instead. Rviz is also disabled as the visualization will be handled in the next command.
 
 Now, we can launch Google Cartographer to generate SLAM, check if a map is being generated correctly in RVIZ.
 In another terminal, run:
