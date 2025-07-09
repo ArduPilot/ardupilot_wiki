@@ -273,11 +273,21 @@ to
         return;
     }
 
-**Step #8:** This is the bare minimum to compile and run your custom controller. You can add controller-related code to the ``AC_CustomControl_XYZ`` file without changing anything else.
+**Step #8:** Add the custom controller in ``AC_CustomControl_config.h`` file.
 
-**Step #9:** You can add new parameters by following the directions in this `Adding a parameter to a library <https://ardupilot.org/dev/docs/code-overview-adding-a-new-parameter.html#adding-a-parameter-to-a-library>` wiki page.
+.. code-block:: c++
 
-**Step #10:** Initialize the class object in the backend's constructor. For example in PID backend
+    #ifndef AP_CUSTOMCONTROL_XYZ_ENABLED
+    #define AP_CUSTOMCONTROL_XYZ_ENABLED AP_CUSTOMCONTROL_BACKEND_DEFAULT_ENABLED
+    #endif
+
+**Step #9:** This is the bare minimum to compile and run your custom controller. You can add controller-related code to the ``AC_CustomControl_XYZ`` file without changing anything else.
+
+**Step #10:** You can add new parameters by following the instructions in the
+`Adding a parameter to a library <https://ardupilot.org/dev/docs/code-overview-adding-a-new-parameter.html#adding-a-parameter-to-a-library>`__ 
+wiki page.
+
+**Step #11:** Initialize the class object in the backend's constructor. For example in PID backend
 
 .. code-block:: c++
 
@@ -309,11 +319,11 @@ above P or PID classes are initialized in the backend's constructors,
         AP_Param::setup_object_defaults(this, var_info);
     }
 
-**Step #11:** Add your controller inside update function of ``AC_CustomControl_XYZ.cpp`` file. This function returns a 3-dimensional vector consisting of roll, pitch, yaw, and mixer input, respectively.
+**Step #12:** Add your controller inside update function of ``AC_CustomControl_XYZ.cpp`` file. This function returns a 3-dimensional vector consisting of roll, pitch, yaw, and mixer input, respectively.
 
-**Step #12:** Add reset functionality inside reset function of ``AC_CustomControl_XYZ.cpp`` file. It is the user's responsibility to add proper controller resetting functionality. This highly depends on the controller and it should not be copy-pasted from another backend without testing it in SITL.
+**Step #13:** Add reset functionality inside reset function of ``AC_CustomControl_XYZ.cpp`` file. It is the user's responsibility to add proper controller resetting functionality. This highly depends on the controller and it should not be copy-pasted from another backend without testing it in SITL.
 
-**Step #13:** You can access target attitude and target rate values using ``atti_control->get_attitude_target_quat()`` and ``atti_control->rate_bf_targets()`` functions, respectively. You can also access latest gyro measurement using ``_ahrs->get_gyro_latest()`` function.
+**Step #14:** You can access target attitude and target rate values using ``atti_control->get_attitude_target_quat()`` and ``atti_control->rate_bf_targets()`` functions, respectively. You can also access latest gyro measurement using ``_ahrs->get_gyro_latest()`` function.
 
 
 Preparing Your Simulink Model For Code Generation
