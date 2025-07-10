@@ -12,10 +12,17 @@ repos:
         additional_dependencies:
           - tomli
 
+  # We run BOTH flake8 and ruff-check until we add ruff-format.
   - repo: https://github.com/pycqa/flake8
     rev: 7.3.0
     hooks:
       - id: flake8
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.5
+    hooks:
+      - id: ruff-check
+
   - repo: https://github.com/sphinx-contrib/sphinx-lint
     rev: v1.0.2
     hooks:
