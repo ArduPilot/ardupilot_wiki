@@ -92,4 +92,5 @@ New Features
 - Add autoarmig option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6878
 - Add LOITER/HOLD failsafe action, see https://github.com/ArduPilot/ardupilot_wiki/pull/6911
 - Add MTR_REV_DELAY, see https://github.com/ArduPilot/ardupilot_wiki/pull/6935
+- Add pivot turn max deceleration parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/7000
 [/site]
