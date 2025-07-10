@@ -57,7 +57,7 @@ from typing import Optional, Dict, List
 from sphinx.application import Sphinx
 import rst_table
 from datetime import datetime
-# while flake8 says this is unused, distutils.dir_util.mkpath fails
+# while ruff says this is unused, distutils.dir_util.mkpath fails
 # without the following import on old versions of Python:
 from distutils import dir_util  # noqa: F401
 
