@@ -85,6 +85,7 @@ New Features
 - Add EKF FS reporting only option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6937
 - Baro thrust compensation, see https://github.com/ArduPilot/ardupilot_wiki/pull/6687
 - Correct AUTO NAV_LAND behavior, see https://github.com/ArduPilot/ardupilot_wiki/pull/6945
+- Enable rev thrust in MANUAL Mode independent of USE_REV_THRUST param, see https://github.com/ArduPilot/ardupilot_wiki/pull/6998
 [/site]
 [site wiki="rover"]
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600
