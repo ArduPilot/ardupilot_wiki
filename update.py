@@ -30,9 +30,9 @@ Parameters files are fetched from autotest using requests
 """
 
 import argparse
-import distutils
 import errno
 import filecmp
+import io
 import json
 import glob
 import gzip
@@ -56,9 +56,6 @@ import rst_table
 
 from codecs import open
 from datetime import datetime
-# while flake8 says this is unused, distutils.dir_util.mkpath fails
-# without the following import on old versions of Python:
-from distutils import dir_util  # noqa: F401
 
 from frontend.scripts import get_discourse_posts
 import logging
@@ -85,6 +82,10 @@ logger.addHandler(error_store_handler)
 stream_handler = logging.StreamHandler(sys.stdout)
 stream_handler.setLevel(logging.ERROR)
 logger.addHandler(stream_handler)
+
+# Global HTTP session for connection reuse and caching
+_http_session = None
+_cache_dir = ".cache"
 
 if sys.version_info < (3, 8):
     print("Minimum python version is 3.8")
@@ -167,6 +168,106 @@ def remove_if_exists(filepath: str) -> None:
             raise e
 
 
+def get_http_session():
+    """Get or create a persistent HTTP session with connection pooling"""
+    global _http_session
+    if _http_session is None:
+        _http_session = requests.Session()
+        _http_session.headers.update({
+            'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotWikiUpdater/1.0)',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Connection': 'keep-alive'
+        })
+        # Add retry logic for better reliability
+        from requests.adapters import HTTPAdapter
+        from urllib3.util.retry import Retry
+
+        retries = Retry(
+            total=3,
+            backoff_factor=1,
+            status_forcelist=[429, 500, 502, 503, 504],
+            allowed_methods=["HEAD", "GET", "OPTIONS"]
+        )
+        adapter = HTTPAdapter(max_retries=retries)
+        _http_session.mount("https://", adapter)
+        _http_session.mount("http://", adapter)
+
+    return _http_session
+
+
+def get_cached_url_content(url, cache_dir=None, max_age_hours=1):
+    """Get URL content with caching to avoid repeated downloads"""
+    if cache_dir is None:
+        cache_dir = _cache_dir
+
+    os.makedirs(cache_dir, exist_ok=True)
+
+    # Create cache filename from URL
+    cache_filename = re.sub(r'[^\w\-_.]', '_', url) + '.cache'
+    cache_path = os.path.join(cache_dir, cache_filename)
+
+    # Check if cached version exists and is recent
+    if os.path.exists(cache_path):
+        cache_age = time.time() - os.path.getmtime(cache_path)
+        if cache_age < (max_age_hours * 3600):
+            debug(f"Using cached content for {url}")
+            with open(cache_path, 'rb') as f:
+                return f.read()
+
+    # Fetch fresh content
+    try:
+        debug(f"Fetching fresh content from {url}")
+        session = get_http_session()
+        response = session.get(url, timeout=30)
+        response.raise_for_status()
+        content = response.content
+
+        # Cache the content
+        with open(cache_path, 'wb') as f:
+            f.write(content)
+
+        return content
+    except Exception as e:
+        error(f"Failed to fetch {url}: {e}")
+        # Try to use old cached version if available
+        if os.path.exists(cache_path):
+            debug(f"Using stale cached content for {url}")
+            with open(cache_path, 'rb') as f:
+                return f.read()
+        raise
+
+
+def run_command_with_timeout(cmd, cwd=None, timeout=300, check=True):
+    """Run command with better error handling and timeout"""
+    debug(f"Running command: {cmd}")
+    try:
+        if isinstance(cmd, str):
+            cmd = cmd.split()
+
+        result = subprocess.run(
+            cmd,
+            cwd=cwd,
+            capture_output=True,
+            text=True,
+            check=check,
+            timeout=timeout
+        )
+
+        if result.stderr:
+            debug(f"Command stderr: {result.stderr}")
+
+        return result.stdout
+    except subprocess.CalledProcessError as e:
+        error(f"Command failed: {' '.join(cmd)}")
+        error(f"Error: {e.stderr}")
+        if check:
+            raise
+    except subprocess.TimeoutExpired:
+        error(f"Command timed out: {' '.join(cmd)}")
+        if check:
+            raise
+
+
 def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
     fetch_url(fetchurl, fpath=new_name, verbose=False)
     info(f"Renaming {new_name} to {target_file}")
@@ -177,19 +278,35 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
     """Fetches content at url and puts it in a file corresponding to the filename in the URL"""
     info(f"Fetching {fetchurl}")
 
-    if verbose:
-        total_size = get_request_file_size(fetchurl)
-
-    response = requests.get(fetchurl, stream=True)
-    response.raise_for_status()
-
     filename = fpath or os.path.basename(urlparse(fetchurl).path)
 
+    # Try to get from cache first for non-streaming downloads
+    if not verbose:  # Non-verbose usually means smaller files, use cache
+        try:
+            content = get_cached_url_content(fetchurl)
+            with open(filename, 'wb') as out_file:
+                out_file.write(content)
+            return
+        except Exception:
+            # Fall back to streaming download
+            pass
+
+    # For larger files or when cache fails, use streaming download with progress
+    session = get_http_session()
+    total_size = 0
+
+    if verbose:
+        # Get file size for progress bar
+        total_size = get_request_file_size(fetchurl)
+
+    response = session.get(fetchurl, stream=True, timeout=30)
+    response.raise_for_status()
+
     downloaded_size = 0
-    chunk_size = 10 * 1024
+    chunk_size = 64 * 1024  # Increased chunk size for better performance
 
     with open(filename, 'wb') as out_file:
-        if verbose:
+        if verbose and total_size > 0:
             info("Completed : 0%")
         completed_last = 0
         for chunk in response.iter_content(chunk_size=chunk_size):
@@ -197,7 +314,7 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
             downloaded_size += len(chunk)
 
             # progress bar
-            if verbose:
+            if verbose and total_size > 0:
                 completed = downloaded_size * 100 // total_size
                 if completed - completed_last > 10 or completed == 100:
                     info(f"..{completed}%")
@@ -207,12 +324,17 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
 
 
 def get_request_file_size(url: str) -> int:
-    headers = {'Accept-Encoding': 'identity'}  # needed as request use compression by default
-    hresponse = requests.head(url, headers=headers)
+    """Get file size from URL using HEAD request with session reuse"""
+    try:
+        session = get_http_session()
+        headers = {'Accept-Encoding': 'identity'}  # needed as request use compression by default
+        hresponse = session.head(url, headers=headers, timeout=30)
 
-    if 'Content-Length' in hresponse.headers:
-        size = int(hresponse.headers['Content-Length'])
-        return size
+        if 'Content-Length' in hresponse.headers:
+            size = int(hresponse.headers['Content-Length'])
+            return size
+    except Exception as e:
+        debug(f"Failed to get file size for {url}: {e}")
     return 0
 
 
@@ -255,8 +377,18 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
             targetfiles.append(targetfile)
             names.append(f"{value}_{document_name}")
 
-    with ThreadPoolExecutor() as executor:
-        executor.map(fetch_and_rename, urls, targetfiles, names, timeout=5*60)
+    with ThreadPoolExecutor(max_workers=4) as executor:  # Limit concurrent downloads
+        futures = []
+        for url, target, name in zip(urls, targetfiles, names):
+            future = executor.submit(fetch_and_rename, url, target, name)
+            futures.append(future)
+
+        # Wait for all downloads to complete
+        for future in futures:
+            try:
+                future.result(timeout=5*60)
+            except Exception as e:
+                error(f"Download failed: {e}")
 
 
 def build_one(wiki, fast):
@@ -398,17 +530,17 @@ def make_backup(building_time, site, destdir, backupdestdir):
         debug('Backing up: %s' % wiki)
 
         targetdir = os.path.join(destdir, wiki)
-        distutils.dir_util.mkpath(targetdir)
+        os.makedirs(targetdir, exist_ok=True)  # Replace distutils.dir_util.mkpath
 
         if not os.path.exists(targetdir):
             fatal("FAIL backup when looking for folder %s" % targetdir)
 
         bkdir = os.path.join(backupdestdir, str(building_time + '-wiki-bkp'), str(wiki))
         debug('Checking %s' % bkdir)
-        distutils.dir_util.mkpath(bkdir)
+        os.makedirs(bkdir, exist_ok=True)  # Replace distutils.dir_util.mkpath
         debug(f'Copying {targetdir} into {bkdir}')
         try:
-            subprocess.check_call(["rsync", "-a", "--delete", targetdir + "/", bkdir])
+            run_command_with_timeout(["rsync", "-a", "--delete", targetdir + "/", bkdir], timeout=600)
         except subprocess.CalledProcessError as ex:
             error(ex)
             fatal("Failed to backup %s" % wiki)
@@ -568,7 +700,7 @@ def is_the_same_file(file1, file2):
     digests = []
     for filename in [file1, file2]:
         hasher = hashlib.sha256()
-        with open(filename, 'rb') as f:
+        with open(filename, 'rb') as f:  # Open in binary mode
             buf = f.read()
             hasher.update(buf)
             a = hasher.hexdigest()
@@ -647,6 +779,7 @@ def fetch_versioned_parameters(site=None):
                     pass
 
                 # Copy all parameter files to vehicle folder IFF it is new
+                new_parameters_files = []
                 try:
                     new_parameters_folder = (os.getcwd() +
                                              '/../new_params_mversion/%s/' % value)
@@ -842,43 +975,160 @@ def check_ref_directives():
                 sys.exit(1)
 
 
+def load_build_options():
+    """Load build options with caching"""
+    try:
+        # Use cached download for build_options.py
+        content = get_cached_url_content(
+            "https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/scripts/build_options.py",
+            max_age_hours=6  # Cache for 6 hours
+        )
+        # Import module from content without writing temporary file
+        import importlib.util
+
+        # Create module from source code
+        spec = importlib.util.spec_from_loader("build_options", loader=None)
+        if spec is None:
+            raise ImportError("Failed to create module spec")
+        build_options = importlib.util.module_from_spec(spec)
+
+        # Decode content if it's bytes
+        source_code = content.decode('utf-8') if isinstance(content, bytes) else content
+        exec(source_code, build_options.__dict__)
+
+        build_options_by_define = {}
+        for f in build_options.BUILD_OPTIONS:
+            build_options_by_define[f.define] = f
+        return build_options_by_define
+    except Exception as e:
+        error(f"Failed to load build options: {e}")
+        return {}
+
+
+def load_features_data():
+    """Load features data with caching"""
+    try:
+        # Use cached download for features.json.gz
+        content = get_cached_url_content(
+            "https://firmware.ardupilot.org/features.json.gz",
+            max_age_hours=6  # Cache for 6 hours
+        )
+
+        # Process in-memory without writing to filesystem
+        with gzip.open(io.BytesIO(content), 'rt') as f:
+            features_json = json.load(f)
+
+        if features_json["format-version"] != "1.0.0":
+            error("bad format version")
+            return []
+        return features_json["features"]
+    except Exception as e:
+        error(f"Failed to load features data: {e}")
+        return []
+
+
+def process_platform_features(platform_features, build_options_by_define, platform_key, vehicletype):
+    """Process features for a single platform"""
+    sorted_platform_features_in = []
+    sorted_platform_features_not_in = []
+    features_in = {}
+
+    for feature in platform_features:
+        feature_in = not feature.startswith("!")
+        if not feature_in:
+            feature = feature[1:]
+        features_in[feature] = feature_in
+
+        try:
+            build_options = build_options_by_define[feature]
+        except KeyError:
+            # mismatch between build_options.py and features.json
+            error("feature %s (%s,%s) not in build_options.py" %
+                  (feature, platform_key, vehicletype))
+            continue
+
+        if feature_in:
+            sorted_platform_features_in.append((build_options.category, feature))
+        else:
+            sorted_platform_features_not_in.append((build_options.category, feature))
+
+    # Sort and combine features
+    sorted_platform_features = (
+        sorted(sorted_platform_features_not_in, key=lambda x: x[0] + x[1]) +
+        sorted(sorted_platform_features_in, key=lambda x: x[0] + x[1])
+    )
+
+    return sorted_platform_features, features_in
+
+
+def create_platform_table(sorted_platform_features, features_in, build_options_by_define, platform_key):
+    """Create table for a single platform"""
+    rows = []
+    column_headings = ["Category", "Feature", "Included", "Description"]
+
+    for (category, feature) in sorted_platform_features:
+        build_options = build_options_by_define[feature]
+        row = [category, build_options.label]
+        if features_in[feature]:
+            row.append("Yes")
+        else:
+            row.append("No")
+        row.append(build_options.description)
+
+        if not features_in[feature]:
+            # for now, do not include features that are on the
+            # board, just those that aren't, per Henry's request:
+            rows.append(row)
+
+    if len(rows) == 0:
+        return ""
+
+    table = rst_table.tablify(rows, headings=column_headings)
+    underline = "-" * len(platform_key)
+
+    return """
+.. _{}:
+
+{}
+{}
+
+{}
+""".format(reference_for_board(platform_key), platform_key, underline, table)
+
+
 def create_features_pages(site):
     """for each vehicle, write out a page containing features for each
     supported board"""
 
     debug("Creating features pages")
 
-    # grab build_options which allows us to map from define to name
-    # and description.  Create a convenience hash for it
-    remove_if_exists("build_options.py")
-    fetch_url("https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/scripts/build_options.py")
-    import build_options
-    build_options_by_define = {}
-    for f in build_options.BUILD_OPTIONS:
-        build_options_by_define[f.define] = f
-
-    # fetch and load most-recently-built features.json
-    remove_if_exists("features.json.gz")
-    fetch_url("https://firmware.ardupilot.org/features.json.gz")
-    features_json = json.load(gzip.open("features.json.gz"))
-    if features_json["format-version"] != "1.0.0":
-        error("bad format version")
+    # Load build options and features data with caching
+    build_options_by_define = load_build_options()
+    if not build_options_by_define:
+        error("Failed to load build options, skipping features pages")
         return
-    features = features_json["features"]
 
-    # progress("features: (%s)" % str(features))
+    features = load_features_data()
+    if not features:
+        error("Failed to load features data, skipping features pages")
+        return
+
+    # Process each vehicle
     for wiki in WIKI_NAME_TO_VEHICLE_NAME.keys():
-        debug(wiki)
+        debug(f"Processing features for {wiki}")
         if site is not None and site != wiki:
             continue
         if wiki not in WIKI_NAME_TO_VEHICLE_NAME:
             continue
+
         vehicletype = WIKI_NAME_TO_VEHICLE_NAME[wiki]
         content = create_features_page(features, build_options_by_define, vehicletype)
+
         if wiki == "AP_Periph":
             destination_filepath = "dev/source/docs/periph-binary-features.rst"
         else:
             destination_filepath = "%s/source/docs/binary-features.rst" % wiki
+
         # make .../docs/ directory if it doesn't already exist
         os.makedirs(os.path.dirname(destination_filepath), exist_ok=True)
         with open(destination_filepath, "w") as f:
@@ -892,79 +1142,40 @@ def reference_for_board(board):
 
 
 def create_features_page(features, build_options_by_define, vehicletype):
+    """Create features page content for a vehicle type"""
+    # Group features by platform
     features_by_platform = {}
     for build in features:
-        # progress("build: (%s)" % str(build))
         if build["vehicletype"] != vehicletype:
             continue
         features_by_platform[build["platform"]] = build["features"]
-    rows = []
-    column_headings = ["Category", "Feature", "Included", "Description"]
+
+    # Generate tables for each platform
     all_tables = ""
-    for platform_key in sorted(features_by_platform.keys(), key=lambda x : x.lower()):
-        rows = []
+    for platform_key in sorted(features_by_platform.keys(), key=str.lower):
         platform_features = features_by_platform[platform_key]
-        sorted_platform_features_in = []
-        sorted_platform_features_not_in = []
-        features_in = {}
-        for feature in platform_features:
-            feature_in = not feature.startswith("!")
-            if not feature_in:
-                feature = feature[1:]
-            features_in[feature] = feature_in
-            try:
-                build_options = build_options_by_define[feature]
-            except KeyError:
-                # mismatch between build_options.py and features.json
-                error("feature %s (%s,%s) not in build_options.py" %
-                      (feature, platform_key, vehicletype))
-                continue
-            if feature_in:
-                some_list = sorted_platform_features_in
-            else:
-                some_list = sorted_platform_features_not_in
-            some_list.append((build_options.category, feature))
+        sorted_platform_features, features_in = process_platform_features(
+            platform_features, build_options_by_define, platform_key, vehicletype
+        )
+        platform_table = create_platform_table(
+            sorted_platform_features, features_in, build_options_by_define, platform_key
+        )
+        all_tables += platform_table
 
-        sorted_platform_features = (
-            sorted(sorted_platform_features_not_in, key=lambda x : x[0] + x[1]) +
-            sorted(sorted_platform_features_in, key=lambda x : x[0] + x[1]))
-
-        for (category, feature) in sorted_platform_features:
-            build_options = build_options_by_define[feature]
-            row = [category, build_options.label]
-            if features_in[feature]:
-                row.append("Yes")
-            else:
-                row.append("No")
-            row.append(build_options.description)
-            if not features_in[feature]:
-                # for now, do not include features that are on the
-                # board, just those that aren't, per Henry's request:
-                rows.append(row)
-        if len(rows) == 0:
-            t = ""
-        else:
-            t = rst_table.tablify(rows, headings=column_headings)
-        underline = "-" * len(platform_key)
-        all_tables += ("""
-.. _{}:
-
-{}
-{}
-
-{}
-""".format(reference_for_board(platform_key), platform_key, underline, t))
-
+    # Generate board index
     index = ""
-    for board in sorted(features_by_platform.keys(), key=lambda x : x.lower()):
+    for board in sorted(features_by_platform.keys(), key=str.lower):
         index += f'- :ref:`{board}<{reference_for_board(board)}>`\n\n'
 
+    # Generate all features table
     all_features_rows = []
-    for feature in sorted(build_options_by_define.values(), key=lambda x : (x.category + x.label).lower()):
+    for feature in sorted(build_options_by_define.values(),
+                          key=lambda x: (x.category + x.label).lower()):
         all_features_rows.append([feature.category, feature.label, feature.description])
-    all_features = rst_table.tablify(all_features_rows, headings=["Category", "Feature", "Description"])
+    all_features = rst_table.tablify(all_features_rows,
+                                     headings=["Category", "Feature", "Description"])
 
-    return """
+    return f"""
 .. _binary-features:
 
 =====================================
@@ -973,26 +1184,26 @@ List of Firmware Limitations by Board
 
 **Dynamically generated by update.py.  Do not edit.**
 
-{} Omitted features by board type in "latest" builds from build server
+{vehicletype} Omitted features by board type in "latest" builds from build server
 
 
 Board Index
 ===========
 
-{}
+{index}
 
 .. _all-features:
 
 All Features
 ============
 
-{}
+{all_features}
 
 Boards
 ======
 
-{}
-""".format(vehicletype, index, all_features, all_tables)
+{all_tables}
+"""
 
 #######################################################################
 
@@ -1064,6 +1275,24 @@ class WikiUpdater:
                   "log messages, and video thumbnails rather than cleaning "
                   "before build."),
         )
+
+        # Get the directory where this script is located for cache directory
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        default_cache_dir = os.path.join(script_dir, '.cache')
+
+        parser.add_argument(
+            '--cache-dir',
+            dest='cache_dir',
+            default=default_cache_dir,
+            help="Directory to cache HTTP responses for faster subsequent builds",
+        )
+        parser.add_argument(
+            '--cache-max-age',
+            dest='cache_max_age',
+            type=int,
+            default=1,
+            help="Maximum age of cached files in hours (default: 1)",
+        )
         self.args, unknown = parser.parse_known_args()
         self.verbose: bool = self.args.verbose
 
@@ -1071,26 +1300,62 @@ class WikiUpdater:
         logging.basicConfig(level=logging_level, format='[update.py]: [%(levelname)s]: %(message)s')
 
     def run(self) -> None:
+        global _cache_dir
+        _cache_dir = self.args.cache_dir
+        tstart = time.time()
+
+        # Create cache directory
+        os.makedirs(_cache_dir, exist_ok=True)
+        info(f"Using cache directory: {_cache_dir}")
+
         now = datetime.now()
         building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
 
         check_imports()
         check_ref_directives()
+
+        info("=== Step 1: Creating features pages ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
         create_features_pages(self.args.site)
 
         if not self.args.fast:
-            if self.args.paramversioning:
-                # Parameters for all versions availble on firmware.ardupilot.org:
-                fetch_versioned_parameters(self.args.site)
-            else:
-                # Single parameters file. Just present the latest parameters:
-                fetchparameters(self.args.site, self.args.cached_parameter_files)
+            info("=== Step 2: Fetching parameters and log messages in parallel ===")
+            info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+            # Run parameters and log messages fetching in parallel for better performance
+            with ThreadPoolExecutor(max_workers=2) as executor:
+                # Submit both tasks based on paramversioning
+                if self.args.paramversioning:
+                    info("Using versioned parameters")
+                    param_future = executor.submit(fetch_versioned_parameters, self.args.site)
+                else:
+                    info("Using regular parameters")
+                    param_future = executor.submit(fetchparameters, self.args.site, self.args.cached_parameter_files)
 
-            # Fetch most recent LogMessage metadata from autotest:
-            fetchlogmessages(self.args.site, self.args.cached_parameter_files)
+                log_future = executor.submit(fetchlogmessages, self.args.site, self.args.cached_parameter_files)
 
+                # Wait for both to complete and handle any errors
+                try:
+                    param_future.result(timeout=15*60)  # 15 minute timeout for versioned params
+                    info("Parameters fetching completed")
+                except Exception as e:
+                    error(f"Parameters fetching failed: {e}")
+
+                try:
+                    log_future.result(timeout=10*60)  # 10 minute timeout for log messages
+                    info("Log messages fetching completed")
+                except Exception as e:
+                    error(f"Log messages fetching failed: {e}")
+
+        info("=== Step 3: Processing static sites ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
         copy_static_html_sites(self.args.site, self.args.destdir)
+
+        info("=== Step 4: Copying common source files ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
         copy_common_source_files()
+
+        info("=== Step 5: Building documentation with Sphinx ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
         sphinx_make(self.args.site, self.args.parallel, self.args.fast)
 
         if self.args.paramversioning:
@@ -1112,6 +1377,7 @@ class WikiUpdater:
         # locally and working once is on the server.
 
         error_count = len(error_store_handler.error_messages)
+        total_time = time.time() - tstart
         if error_count > 0:
             error("Reprinting error messages:")
             for error_msg in error_store_handler.error_messages:
@@ -1120,6 +1386,7 @@ class WikiUpdater:
         else:
             info("Build completed without errors")
 
+        info(f"Total execution time: {total_time:.2f} seconds ({total_time/60:.1f} minutes)")
         sys.exit(0)
 
 
