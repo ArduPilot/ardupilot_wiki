@@ -67,6 +67,7 @@ New Features
 - Permanent serial passthrough, see https://github.com/ArduPilot/ardupilot_wiki/pull/6983
 - DroneCAN messaging from LUA, see https://github.com/ArduPilot/ardupilot_wiki/pull/6988
 - NTRIP applet for autopilot, see https://github.com/ArduPilot/ardupilot_wiki/pull/6992
+- LUA applet/driver embedding at compile, see https://github.com/ArduPilot/ardupilot_wiki/pull/7002
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
