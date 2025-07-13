@@ -27,7 +27,7 @@
 """
 
 import os
-import shutil  # noqa: F401
+import shutil
 import sys
 import time  # noqa: F401
 from html.parser import HTMLParser
@@ -35,6 +35,9 @@ from urllib.request import urlopen
 import re
 import glob
 import argparse
+import subprocess
+import requests
+import json
 from concurrent.futures import ThreadPoolExecutor
 
 
@@ -43,9 +46,171 @@ parser.add_argument("--verbose", dest='verbose', action='store_false', default=T
 parser.add_argument("--ardupilotRepoFolder", dest='gitFolder', default="../ardupilot", help="Ardupilot git folder. ")
 parser.add_argument("--destination", dest='destFolder', default="../../../../new_params_mversion", help="Parameters*.rst destination folder.")  # noqa: E501
 parser.add_argument('--vehicle', dest='single_vehicle', help="If you just want to copy to one vehicle, you can do this. Otherwise it will work for all vehicles (Copter, Plane, Rover, AntennaTracker, Sub, Blimp)")  # noqa: E501
+parser.add_argument('--parallel-vehicles', dest='parallel_vehicles', action='store_true', default=True,
+                    help="Enable parallel processing of vehicles (default: enabled)")
+parser.add_argument('--no-parallel-vehicles', dest='parallel_vehicles', action='store_false',
+                    help="Disable parallel processing of vehicles")
+
+# Get the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+default_cache_dir = os.path.join(script_dir, '.cache')
+
+parser.add_argument("--cache-dir", dest='cache_dir', default=default_cache_dir, help="Directory to cache HTTP responses")
 args = parser.parse_args()
 
 error_count = 0
+
+# Global session for HTTP requests with connection pooling
+session = requests.Session()
+session.headers.update({
+    'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotWikiBuilder/1.0)',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Connection': 'keep-alive'
+})
+
+
+def get_cached_url(url, cache_dir=None):
+    """Get URL content with caching to avoid repeated downloads"""
+    if cache_dir is None:
+        cache_dir = args.cache_dir
+
+    os.makedirs(cache_dir, exist_ok=True)
+
+    # Create cache filename from URL
+    cache_filename = re.sub(r'[^\w\-_.]', '_', url) + '.cache'
+    cache_path = os.path.join(cache_dir, cache_filename)
+
+    # Check if cached version exists and is recent (less than 6 hours old)
+    if os.path.exists(cache_path):
+        cache_age = time.time() - os.path.getmtime(cache_path)
+        if cache_age < 6 * 3600:  # 6 hours
+            debug(f"Using cached content for {url}")
+            with open(cache_path, 'r', encoding='utf-8') as f:
+                return f.read()
+
+    # Fetch fresh content
+    try:
+        debug(f"Fetching fresh content from {url}")
+        response = session.get(url, timeout=30)
+        response.raise_for_status()
+        content = response.text
+
+        # Cache the content
+        with open(cache_path, 'w', encoding='utf-8') as f:
+            f.write(content)
+
+        return content
+    except Exception as e:
+        error(f"Failed to fetch {url}: {e}")
+        # Try to use old cached version if available
+        if os.path.exists(cache_path):
+            debug(f"Using stale cached content for {url}")
+            with open(cache_path, 'r', encoding='utf-8') as f:
+                return f.read()
+        raise
+
+
+def run_git_command(cmd, cwd=None, check=True):
+    """Run git command with better error handling and performance"""
+    if cwd is None:
+        cwd = os.getcwd()
+
+    debug(f"Running git command: {cmd}")
+    try:
+        result = subprocess.run(
+            cmd.split(),
+            cwd=cwd,
+            capture_output=True,
+            text=True,
+            check=check,
+            timeout=300  # 5 minute timeout
+        )
+        if result.stderr:
+            debug(f"Git stderr: {result.stderr}")
+        return result.stdout
+    except subprocess.CalledProcessError as e:
+        error(f"Git command failed: {cmd}")
+        error(f"Error: {e.stderr}")
+        if check:
+            raise
+    except subprocess.TimeoutExpired:
+        error(f"Git command timed out: {cmd}")
+        if check:
+            raise
+
+
+def cleanup_git_locks(repo_path):
+    """
+    Clean up any stale git lock files that might prevent git operations
+    """
+    lock_files = [
+        '.git/index.lock',
+        '.git/HEAD.lock',
+        '.git/config.lock',
+        '.git/refs/heads/master.lock'
+    ]
+    
+    cleaned = 0
+    for lock_file in lock_files:
+        lock_path = os.path.join(repo_path, lock_file)
+        if os.path.exists(lock_path):
+            try:
+                os.remove(lock_path)
+                debug(f"Removed stale git lock: {lock_file}")
+                cleaned += 1
+            except OSError as e:
+                debug(f"Could not remove git lock {lock_file}: {e}")
+    
+    if cleaned > 0:
+        debug(f"Cleaned up {cleaned} git lock file(s)")
+    return cleaned
+
+
+def run_git_command_with_retry(cmd, cwd=None, check=True, max_retries=3):
+    """Run git command with retry logic for lock conflicts"""
+    if cwd is None:
+        cwd = os.getcwd()
+
+    for attempt in range(max_retries):
+        try:
+            debug(f"Running git command (attempt {attempt + 1}): {cmd}")
+            result = subprocess.run(
+                cmd.split(),
+                cwd=cwd,
+                capture_output=True,
+                text=True,
+                check=check,
+                timeout=300  # 5 minute timeout
+            )
+            if result.stderr:
+                debug(f"Git stderr: {result.stderr}")
+            return result.stdout
+            
+        except subprocess.CalledProcessError as e:
+            # Check if it's a lock file issue
+            if 'index.lock' in str(e.stderr) or 'Unable to create' in str(e.stderr):
+                debug(f"Git lock detected on attempt {attempt + 1}, cleaning up...")
+                cleanup_git_locks(cwd)
+                if attempt < max_retries - 1:
+                    import time
+                    time.sleep(1)  # Wait a second before retry
+                    continue
+            
+            error(f"Git command failed: {cmd}")
+            error(f"Error: {e.stderr}")
+            if check:
+                raise
+                
+        except subprocess.TimeoutExpired:
+            error(f"Git command timed out: {cmd}")
+            if check:
+                raise
+
+    # If we get here, all retries failed
+    error(f"Git command failed after {max_retries} attempts: {cmd}")
+    if check:
+        raise subprocess.CalledProcessError(1, cmd)
+
 
 # Parameters
 COMMITFILE = "git-version.txt"
@@ -113,6 +278,240 @@ def check_temp_folders():
             os.makedirs(vehicle_new_to_old_name[vehicle])
 
 
+def replace_anchors(source_file, dest_file, version_tag):
+    """
+    For each parameter file generate by param_parse.py, it inserts a version tag in anchors
+    to do not make confusing in sphinx toctrees.
+    """
+    file_in = open(source_file, "r")
+    file_out = open(dest_file, "w")
+    found_original_title = False
+    if "latest" not in version_tag:
+        file_out.write(':orphan:\n\n')
+
+    for line in file_in:
+        if (re.match("(^.. _)(.*):$", line)) and ("latest" not in version_tag):
+            file_out.write(line[0:-2] + version_tag + ":\n")  # renames the anchors, but leave latest anchors "as-is" to maintaim compatibility with all links across the wiki  # noqa: E501
+
+        elif "Complete Parameter List" in line:
+            # Adjusting the page title
+            out_line = "Complete Parameter List\n=======================\n\n"
+            out_line += "\n.. raw:: html\n\n"
+            out_line += "   <h2>Full Parameter List of " + version_tag[1:].replace("-", " ") + "</h2>\n\n"  # rename the page identifier to insert the version  # noqa: E501
+
+            # Pigbacking and inserting the javascript selector
+            out_line += "\n.. raw:: html\n   :file: ../_static/parameters_versioning_script.inc\n\n"
+            file_out.write(out_line)
+
+        elif ("=======================" in line) and (not found_original_title): # Ignores the original mark
+            found_original_title = True
+
+        else:
+            file_out.write(line)
+
+    file_in.close()
+    file_out.close()
+
+
+def patch_cgi_escape_for_old_versions(version, param_metadata_dir):
+    """
+    Live patch all Python files in param_metadata for older firmware versions that use cgi.escape()
+    which was removed in Python 3.8. This affects htmlemit.py, rstemit.py, and potentially other files.
+    """
+    # Check if this is an old version that needs patching
+    try:
+        # Parse version to check if it's < 4.1.0
+        import re
+        version_match = re.search(r'(\d+)\.(\d+)\.(\d+)', version)
+        if version_match:
+            major, minor, patch = map(int, version_match.groups())
+            needs_patch = (major < 4) or (major == 4 and minor < 1)
+        else:
+            # If we can't parse version, assume it might need patching
+            needs_patch = True
+            
+        if not needs_patch:
+            debug(f"Version {version} doesn't need cgi.escape() patching")
+            return
+            
+        debug(f"Patching Python files for cgi.escape() in old version {version}")
+        
+        # Find all Python files that might contain cgi.escape()
+        import glob
+        python_files = glob.glob(os.path.join(param_metadata_dir, "*.py"))
+        files_patched = 0
+        
+        for file_path in python_files:
+            filename = os.path.basename(file_path)
+            
+            # Read the file
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+            except (UnicodeDecodeError, IOError):
+                debug(f"Could not read {filename}, skipping")
+                continue
+                
+            # Check if it needs patching (contains cgi.escape)
+            if 'cgi.escape' not in content:
+                continue
+                
+            debug(f"Patching {filename} for cgi.escape()")
+            
+            # Apply the patch
+            content = content.replace('cgi.escape', 'html.escape')
+            
+            # Add html import if not present
+            if 'import html' not in content and 'from html import' not in content:
+                # Find where to insert the import (after other imports)
+                import_lines = []
+                other_lines = []
+                in_imports = True
+                
+                for line in content.split('\n'):
+                    is_import_line = (line.startswith('import ') or line.startswith('from ') or
+                                      line.strip() == '' or line.startswith('#'))
+                    if in_imports and is_import_line:
+                        import_lines.append(line)
+                    else:
+                        in_imports = False
+                        other_lines.append(line)
+                
+                # Add html import
+                import_lines.append('import html')
+                content = '\n'.join(import_lines + other_lines)
+            
+            # Write back the patched file
+            try:
+                with open(file_path, 'w', encoding='utf-8') as f:
+                    f.write(content)
+                files_patched += 1
+                debug(f"Successfully patched {filename}")
+            except IOError as e:
+                error(f"Failed to write patched {filename}: {e}")
+                continue
+        
+        if files_patched > 0:
+            debug(f"Patched {files_patched} file(s) for cgi.escape() compatibility")
+        else:
+            debug("No files needed cgi.escape() patching")
+        
+    except Exception as e:
+        error(f"Failed to patch Python files for version {version}: {e}")
+        # Continue anyway, the error might be handled gracefully
+
+
+def process_single_parameter_file(commit_data):
+    """Process a single parameter file for better parallelization"""
+    vehicle, version, commit_id = commit_data
+
+    # Not elegant workaround:
+    # These versions present errors when parsing using param_parser.py. Needs more investigation?
+    if (
+        "3.2.1" in version or # last stable APM Copte
+        "3.4.0" in version or # last stable APM Plane
+        "3.4.6" in version or # Copter
+        "2.42" in version or  # last stable APM Rover?
+        "2.51" in version or  # last beta APM Rover?
+        "0.7.2" in version    # Antennatracker
+    ):
+        debug("Ignoring APM version:\t" + vehicle + "\t" + version)
+        return None
+
+    # Checkout an Commit ID in order to get its parameters
+    try:
+        debug("Git checkout on " + vehicle + " version " + version + " id " + commit_id)
+        run_git_command_with_retry(f"git checkout --force {commit_id}", cwd=BASEPATH, check=True)
+
+    except Exception as e:
+        error("GIT checkout error: " + str(e))
+        return None
+
+    debug("")
+
+    # Run param_parse.py tool from Autotest set in the desidered commit id
+    try:
+        param_metadata_dir = BASEPATH + "/Tools/autotest/param_metadata"
+        os.chdir(param_metadata_dir)
+
+        # Patch emit files for older versions that use deprecated cgi.escape()
+        patch_cgi_escape_for_old_versions(version, param_metadata_dir)
+
+        # Build the command
+        if ('rover' in vehicle.lower()) and ('v3.' not in version.lower()) and ('v4.0' not in version.lower()):
+            vehicle_name = 'Rover'
+        else:
+            vehicle_name = vehicle_new_to_old_name[vehicle]
+
+        cmd = ["python3", "./param_parse.py", "--vehicle", vehicle_name]
+
+        # Run with subprocess for better performance
+        result = subprocess.run(cmd, cwd=param_metadata_dir,
+                                capture_output=True, text=True, timeout=300)
+
+        if result.returncode != 0:
+            error(f"param_parse.py failed for {vehicle} {version}: {result.stderr}")
+            return None
+
+        # create a filename for new parameters file
+        filename = "parameters-" + vehicle
+        if ("beta" in version or "rc" in version): # Plane uses BETA, Copter and Rover uses RCn
+            filename += "-" + version  + ".rst"
+        elif ("latest" in version):
+            filename += "-" + version + ".rst"
+        else:
+            filename += "-stable-" + version + ".rst"
+
+        # Generate new anchors names in files to avoid toctree problems and links in sphinx.
+        if os.path.exists("Parameters.rst"):
+            replace_anchors("Parameters.rst", filename, filename[10:-4])
+            os.remove("Parameters.rst")
+            debug("File " + filename + " generated. ")
+            return filename
+        else:
+            # this was an error, but turns out we are missing a
+            # bunch of these, eg.
+            # [build_parameters.py][error]: Parameters.rst not found to rename to  parameters-Copter-stable-V4.0.0.rst
+            progress("Parameters.rst not found to rename to  %s" % filename)
+            return None
+
+    except Exception as e:
+        error("Error while parsing \"Parameters.rst\" | details:\t" + vehicle + "\t" + version  + "\t" + commit_id)
+        error(str(e))
+        return None
+    finally:
+        os.chdir(BASEPATH)
+
+
+def optimize_git_repo():
+    """Optimize git repository for faster operations"""
+    optimize_git_repo_for_path(BASEPATH)
+
+
+def optimize_git_repo_for_path(repo_path):
+    """Optimize git repository at a specific path for faster operations"""
+    try:
+        debug(f"Optimizing git repository at {repo_path}...")
+        # Clean any locks before optimization
+        cleanup_git_locks(repo_path)
+        
+        # Optimize git repo for faster operations
+        run_git_command_with_retry("git gc --aggressive --prune=now", cwd=repo_path, check=False)
+        run_git_command_with_retry("git config core.preloadindex true", cwd=repo_path, check=False)
+        run_git_command_with_retry("git config core.fscache true", cwd=repo_path, check=False)
+        run_git_command_with_retry("git config gc.auto 0", cwd=repo_path, check=False)  # Disable auto gc
+        # Suppress detached HEAD warnings
+        run_git_command_with_retry("git config advice.detachedHead false", cwd=repo_path, check=False)
+    except Exception as e:
+        debug(f"Git optimization failed for {repo_path} (non-critical): {e}")
+
+
+def show_progress(current, total, prefix="Progress"):
+    """Show a simple progress indicator"""
+    percentage = (current / total) * 100
+    progress(f"{prefix}: {current}/{total} ({percentage:.1f}%)")
+
+
 def setup():
     """
     Goes to the work folder, clean it and update.
@@ -131,18 +530,24 @@ def setup():
         # Goes to ardupilot folder and clean it and update to make sure that is the most recent one.
         debug("Recovering from a previous run...")
         os.chdir(args.gitFolder)
-        os.system("git reset --hard HEAD")
-        os.system("git clean -f -d")
-        os.system("git checkout -f master")
-        os.system("git fetch origin master")
-        os.system("git reset --hard origin/master")
-        os.system("git pull")
-        os.system("git submodule update --init --recursive --depth 1")
+
+        # Clean up any git locks first
+        cleanup_git_locks(os.getcwd())
+
+        # Use subprocess for better git operations with retry logic
+        run_git_command_with_retry("git reset --hard HEAD")
+        run_git_command_with_retry("git clean -f -d")
+        run_git_command_with_retry("git checkout -f master")
+        run_git_command_with_retry("git fetch origin master")
+        run_git_command_with_retry("git reset --hard origin/master")
+        run_git_command_with_retry("git pull")
+        run_git_command_with_retry("git submodule update --init --recursive --depth 1")
+        optimize_git_repo()  # Optimize git repo for faster operations
         BASEPATH = os.getcwd()
         check_temp_folders()
     except Exception as e:
         error("ArduPilot Repo folder not found (cd %s failed)" % args.gitFolder)
-        error(e)
+        error(str(e))
         sys.exit(1)
     finally:
         debug("\nThe current working directory is %s" % BASEPATH)
@@ -170,7 +575,8 @@ def fetch_releases(firmware_url, vehicles):
         html_parser = ParseText()
         try:
             debug("Fetching " + vehicle_url)
-            html_parser.feed(urlopen(vehicle_url).read().decode('utf8'))
+            content = get_cached_url(vehicle_url)
+            html_parser.feed(content)
         except Exception as e:
             error(f"Folders list download error: {e}")
             sys.exit(1)
@@ -230,16 +636,20 @@ def get_commit_dict(releases_parsed):
         # Feed HTML file into parsers
         try:
             debug("Fetching " + url)
-            lParser.feed(urlopen(url).read().decode('utf8'))
+            content = get_cached_url(url)
+            lParser.feed(content)
         except Exception as e:
             error(f"Folders list download error: {e}")
         finally:
-            lParser.links = []
             lParser.close()
-            last_item = links.pop()
-            last_folder = last_item['href']
-            debug("Returning link of the last board folder (" + last_folder[last_folder.rindex('/')+1:] + ")")
-            return last_folder[last_folder.rindex('/')+1:]  # clean the partial link
+            if links:  # Only proceed if we have links
+                last_item = links.pop()
+                last_folder = last_item['href']
+                debug("Returning link of the last board folder (" + last_folder[last_folder.rindex('/')+1:] + ")")
+                return last_folder[last_folder.rindex('/')+1:]  # clean the partial link
+            else:
+                error(f"No board folders found for {url}")
+                return None
     ####################################################################################################
 
     def fetch_commit_hash(version_link, board, file):
@@ -252,10 +662,7 @@ def get_commit_dict(releases_parsed):
         progress("Processing link...\t" + fetch_link)
 
         try:
-            fecth_response = ""
-            with urlopen(fetch_link) as response:
-                fecth_response = response.read().decode("utf-8")
-
+            fecth_response = get_cached_url(fetch_link)
             commit_details = fecth_response.split("\n")
             commit_hash = commit_details[0][7:]
             # version =  commit_details[6] the sizes cary
@@ -326,105 +733,295 @@ def get_commit_dict(releases_parsed):
     return commite_and_codes_cleanned
 
 
+def create_vehicle_git_repos():
+    """
+    Create separate git repository copies for each vehicle to enable parallel processing
+    """
+    vehicle_repos = {}
+    
+    # Use a writable temporary directory - try multiple locations
+    temp_base_options = [
+        "/tmp",
+        os.path.dirname(BASEPATH),
+        os.path.expanduser("~/tmp"),
+        "."
+    ]
+    
+    temp_base = None
+    for option in temp_base_options:
+        if os.path.exists(option) and os.access(option, os.W_OK):
+            temp_base = option
+            break
+    
+    if temp_base is None:
+        debug("No writable temporary directory found, falling back to serial processing")
+        progress("Warning: Parallel processing disabled due to permission constraints")
+        for vehicle in VEHICLES:
+            vehicle_repos[vehicle] = BASEPATH
+        return vehicle_repos
+    
+    debug(f"Using temporary directory base: {temp_base}")
+    
+    for vehicle in VEHICLES:
+        # Create temporary directory for this vehicle in a writable location
+        temp_repo_dir = os.path.join(temp_base, f"ardupilot_temp_{vehicle}")
+        
+        debug(f"Creating temporary git repo for {vehicle} at {temp_repo_dir}")
+        
+        try:
+            # Remove existing temp directory if it exists
+            if os.path.exists(temp_repo_dir):
+                shutil.rmtree(temp_repo_dir)
+            
+            # Clone the repository using git clone --shared for efficiency
+            # --shared creates a repository that shares objects with the original
+            run_git_command_with_retry(f"git clone --shared {BASEPATH} {temp_repo_dir}")
+            
+            # Configure and optimize the temporary repository
+            run_git_command_with_retry("git config advice.detachedHead false", cwd=temp_repo_dir, check=False)
+            
+            # Clean up any potential locks in the new repo
+            cleanup_git_locks(temp_repo_dir)
+            
+            # Optimize the temporary repository for faster operations
+            optimize_git_repo_for_path(temp_repo_dir)
+            
+            # Store the path for this vehicle
+            vehicle_repos[vehicle] = temp_repo_dir
+            
+        except Exception as e:
+            error(f"Failed to create temp repo for {vehicle}: {e}")
+            # Fallback to using the main repo
+            vehicle_repos[vehicle] = BASEPATH
+    
+    # Also clean up locks in the main repository
+    cleanup_git_locks(BASEPATH)
+    
+    return vehicle_repos
+
+
+def cleanup_vehicle_git_repos(vehicle_repos):
+    """
+    Clean up temporary git repositories
+    """
+    for vehicle, repo_path in vehicle_repos.items():
+        if repo_path != BASEPATH and os.path.exists(repo_path):
+            try:
+                debug(f"Cleaning up temp repo for {vehicle}")
+                shutil.rmtree(repo_path)
+            except Exception as e:
+                debug(f"Failed to cleanup temp repo for {vehicle}: {e}")
+
+
+def collect_generated_files(vehicle_repos):
+    """
+    Collect all generated parameter files from temporary repositories to the main repository
+    """
+    main_param_dir = BASEPATH + "/Tools/autotest/param_metadata"
+    
+    # Ensure we're in the main param directory
+    os.chdir(main_param_dir)
+    
+    # Clean any existing parameter files first
+    existing_files = glob.glob("parameters-*.rst") + glob.glob("parameters-*.json")
+    for old_file in existing_files:
+        try:
+            os.remove(old_file)
+        except OSError:
+            pass
+    
+    collected_count = 0
+    for vehicle, repo_path in vehicle_repos.items():
+        if repo_path == BASEPATH:
+            continue  # Skip if using main repo
+            
+        temp_param_dir = repo_path + "/Tools/autotest/param_metadata"
+        if not os.path.exists(temp_param_dir):
+            continue
+            
+        # Find parameter files in the temporary repo
+        temp_param_files = glob.glob(os.path.join(temp_param_dir, "parameters-*.rst"))
+        
+        for temp_file in temp_param_files:
+            filename = os.path.basename(temp_file)
+            dest_file = os.path.join(main_param_dir, filename)
+            
+            try:
+                shutil.copy2(temp_file, dest_file)
+                collected_count += 1
+                debug(f"Collected {filename} from {vehicle} temp repo")
+            except Exception as e:
+                error(f"Failed to collect {filename} from {vehicle}: {e}")
+    
+    debug(f"Collected {collected_count} parameter files to main repository")
+
+
+def process_vehicle_commits(vehicle_commits_data):
+    """
+    Process all commits for a specific vehicle in parallel
+    """
+    vehicle, commits, repo_path = vehicle_commits_data
+    results = []
+    
+    debug(f"Processing {len(commits)} commits for {vehicle} in {repo_path}")
+    
+    for commit_data in commits:
+        # Update the commit data to use the vehicle-specific repo
+        result = process_single_parameter_file_with_repo(commit_data, repo_path)
+        if result:
+            results.append(result)
+            debug(f"Successfully processed: {result}")
+    
+    return vehicle, results
+
+
+def process_single_parameter_file_with_repo(commit_data, repo_path):
+    """Process a single parameter file using a specific repository path"""
+    vehicle, version, commit_id = commit_data
+
+    # Not elegant workaround:
+    # These versions present errors when parsing using param_parser.py. Needs more investigation?
+    if (
+        "3.2.1" in version or # last stable APM Copte
+        "3.4.0" in version or # last stable APM Plane
+        "3.4.6" in version or # Copter
+        "2.42" in version or  # last stable APM Rover?
+        "2.51" in version or  # last beta APM Rover?
+        "0.7.2" in version    # Antennatracker
+    ):
+        debug("Ignoring APM version:\t" + vehicle + "\t" + version)
+        return None
+
+    # Checkout an Commit ID in order to get its parameters
+    try:
+        debug("Git checkout on " + vehicle + " version " + version + " id " + commit_id)
+        run_git_command_with_retry(f"git checkout --force {commit_id}", cwd=repo_path, check=True)
+
+    except Exception as e:
+        error("GIT checkout error: " + str(e))
+        return None
+
+    debug("")
+
+    # Run param_parse.py tool from Autotest set in the desidered commit id
+    try:
+        param_metadata_dir = repo_path + "/Tools/autotest/param_metadata"
+        os.chdir(param_metadata_dir)
+
+        # Patch emit files for older versions that use deprecated cgi.escape()
+        patch_cgi_escape_for_old_versions(version, param_metadata_dir)
+
+        # Build the command
+        if ('rover' in vehicle.lower()) and ('v3.' not in version.lower()) and ('v4.0' not in version.lower()):
+            vehicle_name = 'Rover'
+        else:
+            vehicle_name = vehicle_new_to_old_name[vehicle]
+
+        cmd = ["python3", "./param_parse.py", "--vehicle", vehicle_name]
+
+        # Run with subprocess for better performance
+        result = subprocess.run(cmd, cwd=param_metadata_dir,
+                                capture_output=True, text=True, timeout=300)
+
+        if result.returncode != 0:
+            error(f"param_parse.py failed for {vehicle} {version}: {result.stderr}")
+            return None
+
+        # create a filename for new parameters file
+        filename = "parameters-" + vehicle
+        if ("beta" in version or "rc" in version): # Plane uses BETA, Copter and Rover uses RCn
+            filename += "-" + version  + ".rst"
+        elif ("latest" in version):
+            filename += "-" + version + ".rst"
+        else:
+            filename += "-stable-" + version + ".rst"
+
+        # Generate new anchors names in files to avoid toctree problems and links in sphinx.
+        if os.path.exists("Parameters.rst"):
+            replace_anchors("Parameters.rst", filename, filename[10:-4])
+            os.remove("Parameters.rst")
+            debug("File " + filename + " generated. ")
+            return filename
+        else:
+            # this was an error, but turns out we are missing a
+            # bunch of these, eg.
+            # [build_parameters.py][error]: Parameters.rst not found to rename to  parameters-Copter-stable-V4.0.0.rst
+            progress("Parameters.rst not found to rename to  %s" % filename)
+            return None
+
+    except Exception as e:
+        error("Error while parsing \"Parameters.rst\" | details:\t" + vehicle + "\t" + version  + "\t" + commit_id)
+        error(str(e))
+        return None
+    finally:
+        os.chdir(repo_path)
+
+
 def generate_rst_files(commits_to_checkout_and_parse):
     """
     For each git hash it generates its Parameters file.
+    Uses parallel processing by vehicle if enabled.
     """
-
-    def replace_anchors(source_file, dest_file, version_tag):
-        """
-        For each parameter file generate by param_parse.py, it inserts a version tag in anchors
-        to do not make confusing in sphinx toctrees.
-        """
-        file_in = open(source_file, "r")
-        file_out = open(dest_file, "w")
-        found_original_title = False
-        if "latest" not in version_tag:
-            file_out.write(':orphan:\n\n')
-
-        for line in file_in:
-            if (re.match("(^.. _)(.*):$", line)) and ("latest" not in version_tag):
-                file_out.write(line[0:-2] + version_tag + ":\n")  # renames the anchors, but leave latest anchors "as-is" to maintaim compatibility with all links across the wiki  # noqa: E501
-
-            elif "Complete Parameter List" in line:
-                # Adjusting the page title
-                out_line = "Complete Parameter List\n=======================\n\n"
-                out_line += "\n.. raw:: html\n\n"
-                out_line += "   <h2>Full Parameter List of " + version_tag[1:].replace("-", " ") + "</h2>\n\n"  # rename the page identifier to insert the version  # noqa: E501
-
-                # Pigbacking and inserting the javascript selector
-                out_line += "\n.. raw:: html\n   :file: ../_static/parameters_versioning_script.inc\n\n"
-                file_out.write(out_line)
-
-            elif ("=======================" in line) and (not found_original_title): # Ignores the original mark
-                found_original_title = True
-
-            else:
-                file_out.write(line)
-
-    for i in commits_to_checkout_and_parse:
-        vehicle = str(commits_to_checkout_and_parse[i][0])
-        version = str(commits_to_checkout_and_parse[i][1])
-        commit_id = str(commits_to_checkout_and_parse[i][2])
-
-        # Not elegant workaround:
-        # These versions present errors when parsing using param_parser.py. Needs more investigation?
-        if (
-            "3.2.1" in version or # last stable APM Copte
-            "3.4.0" in version or # last stable APM Plane
-            "3.4.6" in version or # Copter
-            "2.42" in version or  # last stable APM Rover?
-            "2.51" in version or  # last beta APM Rover?
-            "0.7.2" in version    # Antennatracker
-        ):
-            debug("Ignoring APM version:\t" + vehicle + "\t" + version)
-            continue
-
-        # Checkout an Commit ID in order to get its parameters
-        try:
-            debug("Git checkout on " + vehicle + " version " + version + " id " + commit_id)
-            os.system("git checkout --force " + commit_id)
-
-        except Exception as e:
-            error("GIT checkout error: " + e)
-            sys.exit(1)
-        debug("")
-
-        # Run param_parse.py tool from Autotest set in the desidered commit id
-        try:
-            os.chdir(BASEPATH + "/Tools/autotest/param_metadata")
-            if ('rover' in vehicle.lower()) and ('v3.' not in version.lower()) and ('v4.0' not in version.lower()): # Workaround the vehicle renaming (Rover, APMRover2 ArduRover...)  # noqa: E501
-                os.system("python3 ./param_parse.py --vehicle " + 'Rover')
-            else: # regular case
-                os.system("python3 ./param_parse.py --vehicle " + vehicle_new_to_old_name[vehicle])  # option "param_parse.py --format rst" is not available in all commits where param_parse.py is found  # noqa: E501
-
-            # create a filename for new parameters file
-            filename = "parameters-" + vehicle
-            if ("beta" in version or "rc" in version): # Plane uses BETA, Copter and Rover uses RCn
-                filename += "-" + version  + ".rst"
-            elif ("latest" in version):
-                filename += "-" + version + ".rst"
-            else:
-                filename += "-stable-" + version + ".rst"
-
-            # Generate new anchors names in files to avoid toctree problems and links in sphinx.
-            if os.path.exists("Parameters.rst"):
-                replace_anchors("Parameters.rst", filename, filename[10:-4])
-                os.remove("Parameters.rst")
-                debug("File " + filename + " generated. ")
-            else:
-                # this was an error, but turns out we are missing a
-                # bunch of these, eg.
-                # [build_parameters.py][error]: Parameters.rst not found to rename to  parameters-Copter-stable-V4.0.0.rst
-                progress("Parameters.rst not found to rename to  %s" % filename)
-
-            os.chdir(BASEPATH)
-        except Exception as e:
-            error("Error while parsing \"Parameters.rst\" | details:\t" + vehicle + "\t" + version  + "\t" + commit_id)
-            error(e)
-            # sys.exit(1)
-        debug("")
-
+    if not args.parallel_vehicles or len(VEHICLES) == 1:
+        # Use serial processing (original method)
+        debug("Using serial processing for parameter files")
+        for i in commits_to_checkout_and_parse:
+            commit_data = commits_to_checkout_and_parse[i]
+            result = process_single_parameter_file(commit_data)
+            if result:
+                debug(f"Successfully processed: {result}")
+        return 0
+    
+    # Use parallel processing by vehicle
+    debug(f"Using parallel processing for {len(VEHICLES)} vehicles")
+    
+    # Group commits by vehicle
+    vehicle_commits = {}
+    for i, commit_data in commits_to_checkout_and_parse.items():
+        vehicle, version, commit_id = commit_data
+        if vehicle not in vehicle_commits:
+            vehicle_commits[vehicle] = []
+        vehicle_commits[vehicle].append(commit_data)
+    
+    # Create separate git repositories for each vehicle
+    vehicle_repos = create_vehicle_git_repos()
+    
+    # Check if we actually got separate repositories
+    unique_repos = set(vehicle_repos.values())
+    if len(unique_repos) == 1 and BASEPATH in unique_repos:
+        debug("All vehicles fell back to main repository, using serial processing")
+        for i in commits_to_checkout_and_parse:
+            commit_data = commits_to_checkout_and_parse[i]
+            result = process_single_parameter_file(commit_data)
+            if result:
+                debug(f"Successfully processed: {result}")
+        return 0
+    
+    try:
+        # Prepare data for parallel processing
+        vehicle_data = []
+        for vehicle, commits in vehicle_commits.items():
+            repo_path = vehicle_repos.get(vehicle, BASEPATH)
+            vehicle_data.append((vehicle, commits, repo_path))
+        
+        # Process vehicles in parallel
+        all_results = []
+        with ThreadPoolExecutor(max_workers=min(len(VEHICLES), 4)) as executor:
+            vehicle_results = list(executor.map(process_vehicle_commits, vehicle_data))
+            
+            for vehicle, results in vehicle_results:
+                all_results.extend(results)
+                debug(f"Completed processing {len(results)} files for {vehicle}")
+        
+        # Collect all generated files to the main repository
+        collect_generated_files(vehicle_repos)
+        
+        progress(f"Generated {len(all_results)} parameter files total")
+        
+    finally:
+        # Clean up temporary repositories
+        cleanup_vehicle_git_repos(vehicle_repos)
+    
     return 0
 
 
@@ -518,16 +1115,28 @@ def print_versions(commits_to_checkout_and_parse):
 
 
 # Step 1 - Select the versions for generate parameters
+start_time = time.time()
+progress("=== Step 1: Setup and fetch release information ===")
 setup()                                                             # Reset the ArduPilot folder/repo
 feteched_releases = fetch_releases(BASEURL, VEHICLES)               # All folders/releases.
 commits_to_checkout_and_parse = get_commit_dict(feteched_releases)  # Parse names, and git hashes.
 print_versions(commits_to_checkout_and_parse)                       # Present work dict.
 
 # Step 2 - Generates them in ArdupilotRepoFolder/Tools/autotest/param_metadata
+progress("=== Step 2: Generate parameter files ===")
+progress(f"Time elapsed so far: {time.time() - start_time:.2f} seconds")
+total_commits = len(commits_to_checkout_and_parse)
+progress(f"Processing {total_commits} commit(s)...")
 generate_rst_files(commits_to_checkout_and_parse)
 
-# Step 3 - Generates a JOSN file for each vehicle and mode files to folder new_params_mversion
+# Step 3 - Generates a JSON file for each vehicle and move files to folder new_params_mversion
+progress("=== Step 3: Generate JSON files and move results ===")
+progress(f"Time elapsed so far: {time.time() - start_time:.2f} seconds")
 generate_json(VEHICLES)
 move_results(VEHICLES)
 
+progress("=== Build completed ===")
+total_time = time.time() - start_time
+progress(f"Total execution time: {total_time:.2f} seconds ({total_time/60:.1f} minutes)")
+progress(f"Total errors encountered: {error_count}")
 sys.exit(error_count)
