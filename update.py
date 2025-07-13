@@ -977,7 +977,7 @@ def load_build_options():
         # Use cached download for build_options.py
         content = get_cached_url_content(
             "https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/scripts/build_options.py",
-            max_age_hours=24  # Cache for 24 hours
+            max_age_hours=6  # Cache for 6 hours
         )
         # Import module from content without writing temporary file
         import importlib.util
@@ -1352,7 +1352,6 @@ class WikiUpdater:
 
         info("=== Step 5: Building documentation with Sphinx ===")
         info(f"Time eslapsed so far: {time.time() - tstart:.2f} seconds")
-        sys.exit(0)
         sphinx_make(self.args.site, self.args.parallel, self.args.fast)
 
         if self.args.paramversioning:
