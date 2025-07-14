@@ -7,6 +7,8 @@ DisplayPort, is an MSP protocol extension that allows an autopilot to remotely d
 
 HDZero, Walksnail, and DJI with WTF-OSD modifications are capable of DisplayPort operation.
 
+.. note:: on F4 based autopilots, with extremely crowded OSDs (ie many panels), it is possible that if the UART used does not have DMA, that display corruption, artifacts, etc. can occur. In this rare case, move the DisplayPort connection to a UART that does have DMA.
+
 Features
 --------
 DisplayPort OSDs can render all the panel items supported by the ArduPilot's onboard OSD.
