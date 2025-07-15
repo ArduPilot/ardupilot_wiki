@@ -220,7 +220,7 @@ The ideal setup for good automatic landing is to have a
 :ref:`Lidar <common-rangefinder-landingpage>`. A Lidar can measure
 the distance to the ground very accurately, and doesn't suffer from
 drift. If you have a Lidar installed you can enable its use for landing
-with :ref:`RNGFND_LANDING<RNGFND_LANDING>` = 1.
+with :ref:`RNGFND_LANDING<RNGFND_LANDING>`bit 0 or 1 is set.
 
 If a Lidar isn't fitted then there are a few things you can do to minimize barometric error problems with auto-land
 
