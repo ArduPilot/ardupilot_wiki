@@ -65,7 +65,7 @@ Creating and editing common pages is similar to editing other pages except:
       [xcopywiki destination="copter,plane"]
 
 - If no copywiki shortcode is specified, common pages are automatically copied to the copter, 
-  plane and rover wikis
+  plane, rover, and sub wikis
 
 - Vehicle-specific content can be added to the common topic using the
   ``site`` shortcode. Text that is not applicable to a target wiki is stripped out 
