@@ -742,6 +742,136 @@
                     "Pitch": 0.0
                 }
             ]
+        },
+        {
+            "Class": 17,
+            "ClassName": "COROTATING",
+            "Type": 1,
+            "Comments": "Uses Tridge's X8-corotating.lua script",
+            "TypeName": "X",
+            "motors": [
+                {
+                    "Number": 1,
+                    "TestOrder": 1,
+                    "Rotation": "CCW",
+                    "Roll": -0.5,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 2,
+                    "TestOrder": 7,
+                    "Rotation": "CW",
+                    "Roll": 0.5,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 3,
+                    "TestOrder": 5,
+                    "Rotation": "CCW",
+                    "Roll": 0.5,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 4,
+                    "TestOrder": 3,
+                    "Rotation": "CW",
+                    "Roll": -0.5,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 5,
+                    "TestOrder": 8,
+                    "Rotation": "CW",
+                    "Roll": 0.5,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 6,
+                    "TestOrder": 2,
+                    "Rotation": "CCW",
+                    "Roll": -0.5,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 7,
+                    "TestOrder": 4,
+                    "Rotation": "CW",
+                    "Roll": -0.5,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 8,
+                    "TestOrder": 6,
+                    "Rotation": "CCW",
+                    "Roll": 0.5,
+                    "Pitch": -0.5
+                }
+            ]
+        },
+        {
+            "Class": 17,
+            "ClassName": "COROTATING",
+            "Type": 14,
+            "Comments": "Uses Tridge's X8-corotating.lua script",
+            "TypeName": "X (CW)",
+            "motors": [
+                {
+                    "Number": 1,
+                    "TestOrder": 1,
+                    "Rotation": "CCW",
+                    "Roll": -0.5,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 2,
+                    "TestOrder": 2,
+                    "Rotation": "CCW",
+                    "Roll": -0.5,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 3,
+                    "TestOrder": 3,
+                    "Rotation": "CW",
+                    "Roll": -0.5,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 4,
+                    "TestOrder": 4,
+                    "Rotation": "CW",
+                    "Roll": -0.5,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 5,
+                    "TestOrder": 5,
+                    "Rotation": "CCW",
+                    "Roll": 0.5,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 6,
+                    "TestOrder": 6,
+                    "Rotation": "CCW",
+                    "Roll": 0.5,
+                    "Pitch": -0.5
+                },
+                {
+                    "Number": 7,
+                    "TestOrder": 7,
+                    "Rotation": "CW",
+                    "Roll": 0.5,
+                    "Pitch": 0.5
+                },
+                {
+                    "Number": 8,
+                    "TestOrder": 8,
+                    "Rotation": "CW",
+                    "Roll": 0.5,
+                    "Pitch": 0.5
+                }
+            ]
         }
     ]
 }
