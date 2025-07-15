@@ -54,11 +54,8 @@ table.partners-table td {
     }
 }
 
-/* wiki top menu makes anchor links disappear under it, this hack fixes it */
-.section {
-    padding-top: 40px;
-    margin-top: -40px;
-}
+/* account for wiki top menu when jumping to anchor links */
+:target { scroll-margin-top: 40px; }
 
 /* make certain toc sidebar items red */
 .wy-menu .toctree-l1 a[href*="arduplane-setup.html"],
