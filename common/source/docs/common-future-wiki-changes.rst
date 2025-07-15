@@ -77,6 +77,7 @@ New Features
 - Add FWD_BAT_THR_CUT parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/6624
 - Add AUTOLAND as battery failsafe and/or fence action, see https://github.com/ArduPilot/ardupilot_wiki/pull/6685
 - Add VTOL-FW throttle smoothing parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/6902
+- Expand RNGFND_LANDING param to bitmask, see https://github.com/ArduPilot/ardupilot_wiki/pull/7014
 [/site]
 [site wiki="copter"]
 - Fast Attitude loop option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6470
