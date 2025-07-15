@@ -62,8 +62,8 @@ For example, you could setup a 3D camera as an external position and velocity so
 
 and OpticalFLow as the second source:
 
-- :ref:`EK3_SRC1_POSXY<EK3_SRC1_POSXY>` = 0 (None, position is relative when using OpticalFlow)
-- :ref:`EK3_SRC1_VELXY<EK3_SRC1_VELXY>` = 5 (OpticalFlow for XY velocity)
+- :ref:`EK3_SRC2_POSXY<EK3_SRC2_POSXY>` = 0 (None, position is relative when using OpticalFlow)
+- :ref:`EK3_SRC2_VELXY<EK3_SRC2_VELXY>` = 5 (OpticalFlow for XY velocity)
 
 and use an :ref:`auxiliary RC switch <common-auxiliary-functions>` to switch between the two.
 
