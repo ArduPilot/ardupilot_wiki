@@ -223,6 +223,29 @@ The new PID-FF controller in Plane also has a number of lowpass filters whose fr
 - :ref:`RLL_RATE_FLTE<RLL_RATE_FLTE>`: filter on roll rate error
 - :ref:`RLL_RATE_FLTD<RLL_RATE_FLTD>`: filter on D term (tends to be noisy)
 
+Speed Scaling (SS)
+==================
+
+ArduPilot automatically adjusts the stabilization gains in the PID-FF loops based on the airspeed. This helps avoid oscillations when 
+flying fast and ensures effective stabilization during slower flight, even if the aircraft doesn't have an airspeed sensor. 
+This parameter is :ref:`SCALING_SPEED<SCALING_SPEED>`. This should be set close to the normal cruising speed of the aircraft. 
+The loop gains are scaled above and below this value with a multiplier determined base on the above min  and max flying speeds. 
+These parameters are :ref:`AIRSPEED_MIN<AIRSPEED_MIN>` and :ref:`AIRSPEED_MAX<AIRSPEED_MAX>`, respectively. 
+See :ref:`airspeed-parameters-setup` for more details.
+
+.. warning::
+
+   Changing this parameter after tuning will affect your controller settings, and can cause poor performance of your aircraft. 
+   If you change the SCALING_SPEED after completing a tune, you must re-run AUTOTUNE or manually retune the controller gains.
+
+Slew Rate Limiter
+=================
+
+ArduPilot includes an algorithm that monitors the actuator slew rates. If the rates exceed the thresholds defined by the _SMAX parameters, 
+it automatically reduces the control loop gains to help stop the oscillations. One can set the slew rate limits for the pitch and 
+roll control surfaces using the following parameters: :ref:`PTCH_RATE_SMAX<PTCH_RATE_SMAX>` for pitch and :ref:`RLL_RATE_SMAX<RLL_RATE_SMAX>`
+for roll. See :ref:`common-servo-limit-cycle-detection` for more details.
+
 PID Controller Flow Diagram
 ===========================
 
