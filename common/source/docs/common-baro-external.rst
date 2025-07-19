@@ -6,6 +6,9 @@ Barometer (external)
 .. image:: ../../../images/baro-top-image.png
     :width: 450px
 
+.. image:: ../../../images/Beyond-Robotix-AUAV.jpg
+    :width: 450px
+
 Most autopilots include a barometer directly on the autopilot but attaching an external barometer can be useful in order to place the barometer away from air pressure disturbances.  It can also allow monitoring the environmental or an internal component's temperature within a typical range of -40 - +85°C.
 
 .. note::
@@ -15,7 +18,8 @@ Most autopilots include a barometer directly on the autopilot but attaching an e
 Where to Buy
 ------------
 
-- `MS5611 from Drotek <https://drotek.com/shop/en/imu/44-ms5611-pressure-barometric-board.html>`__ (recommended)
+- `Beyond Robotix Air Data Module (Amphenol AUAV) <https://www.beyondrobotix.com/products/air-data-module>`_
+- `MS5611 from Drotek <https://drotek.com/shop/en/imu/44-ms5611-pressure-barometric-board.html>`__
 - `BMP280 I2C from Adafruit <https://www.adafruit.com/product/2651>`__
 
 Connecting and Configuring
