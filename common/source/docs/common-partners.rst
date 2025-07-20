@@ -896,76 +896,76 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://topotek.com/
 
+      - .. image:: ../../../images/supporters/supporters_logo_jae.png
+            :width: 250px
+            :align: center
+            :target:  https://www.jae.com/
+
+    *
       - .. image:: ../../../images/supporters/supporters_logo_karshak_drones_private_limited.jpg
             :width: 250px
             :align: center
             :target:  https://karshakdrones.com/
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_speedybee.png
             :width: 250px
             :align: center
             :target:  https://www.speedybee.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_manifold_robotics.png
             :width: 250px
             :align: center
             :target:  https://www.manifoldrobotics.com/
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_light_dynamix_ltd.png
             :width: 250px
             :align: center
             :target:  https://www.lightdynamix.co.uk
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_ucandrone_societe_anonyme_.png
             :width: 250px
             :align: center
             :target:  https://ucandrone.com/en/
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_ceres_seeding.png
             :width: 250px
             :align: center
             :target:  https://www.ceresseeding.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_theseus.png
             :width: 250px
             :align: center
             :target:  https://www.theseus.us/
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_brother_hobby.png
             :width: 250px
             :align: center
             :target:  https://www.brotherhobby.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_robomotic.png
             :width: 250px
             :align: center
             :target:  https://www.robomotic.cl/
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_dakefpv.jpg
             :width: 250px
             :align: center
             :target:  https://www.dakefpv.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_fligensys.png
             :width: 250px
             :align: center
             :target:  https://www.fligensystems.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_silentarrow.png
             :width: 250px
             :align: center
             :target:  https://silent-arrow.com/
-
-      - .. image:: ../../../images/supporters/supporters_logo_rtos.png
-            :width: 250px
-            :align: center
-            :target:  https://www.robot-to-society.com/
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_sequre.jpg
@@ -999,6 +999,36 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :width: 250px
             :align: center
             :target:  https://skybrush.io/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_kite_aerospace.png
+            :width: 250px
+            :align: center
+            :target:  https://kite.aero/
+
+      - .. image:: ../../../images/supporters/supporters_logo_zht_technology.jpg
+            :width: 250px
+            :align: center
+            :target:  https://www.zhtaero.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_fliight_technologies.png
+            :width: 250px
+            :align: center
+            :target:  https://www.fliight.com.au/
+
+      - .. image:: ../../../images/supporters/supporters_logo_marine_drone_tech.jpg
+            :width: 250px
+            :align: center
+            :target:  http://marine-drone.co.kr/eng/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_xiang.png
+            :width: 250px
+            :align: center
+            :target:  https://www.sparknavi.com
+
+      -
 
 
 [copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
