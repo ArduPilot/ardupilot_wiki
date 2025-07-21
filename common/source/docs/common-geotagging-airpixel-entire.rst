@@ -8,7 +8,7 @@ AirPixel ENTIRE R3 for Camera Control and EXIF Geotagging
     :target: http://shop.airpixel.cz/product/air-commander-entire-r3/
     :width: 450px
 
-`The ENTIRE <https://airpixel.cz/entire-r3>`_ is a standalone device for GeoTagging of images in-camera SD card.  GPS data data is read from the autopilot's serial port (aka MAVLink bus) and is then saved directly into the photos using EXIF. The ENTIRE can also trigger the camera shutter via MAVLink commands, control video recording and zoom and many other commands.
+The `ENTIRE R3 <https://airpixel.cz/entire-r3>`_ is a standalone device for GeoTagging of images in-camera SD card.  GPS data data is read from the autopilot's serial port (aka MAVLink bus) and is then saved directly into the photos using EXIF. The ENTIRE can also trigger the camera shutter via MAVLink commands, control video recording and zoom and many other commands.
 
 - Compatible with Sony A7 series, A9 Series and many other Sony models
 - Compatible also with ADTi cameras, ShareUAV cameras or ViewPro cameras
