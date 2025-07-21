@@ -4,7 +4,6 @@
 AirPixel TAG-E for Camera Control and EXIF Geotagging of ILX-LR1
 ================================================================
 
-
 .. image:: https://airpixel.cz/wp-content/uploads/2025/07/shop-tage-coin.webp
     :target: https://airpixel.cz/tag-e/
     :width: 300px
@@ -26,7 +25,6 @@ TAG-E is using single USB-C connection to the camera, no WiFi, no additional mod
 - Automatic camera clock configuration by GPS time
 - Enhanced file/folder grouping per flight for better user exprience
 - Video geotagging by subtitles
-
 
 More info at `www.airpixel.cz <https://airpixel.cz/tag-e/>`_
 Documentation at `www.airpixel.cz/docs <https://airpixel.cz/docs>`_
