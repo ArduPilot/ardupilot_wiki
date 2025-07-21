@@ -5,7 +5,7 @@ Airpixel TAG-E for Camera Control and EXIF Geotagging of ILX-LR1
 ================================================================
 
 
-.. image:: https://airpixel.cz/wp-content/uploads/2025/07/tage-mini.webp
+.. image:: https://airpixel.cz/wp-content/uploads/2025/07/shop-tage-coin.webp
     :target: https://airpixel.cz/tag-e/
     :width: 300px
 
