@@ -86,7 +86,7 @@ Using CLI Commands
 
     .. code-block:: bash
 
-        ros2 topic pub /ap/cmd_gps_pose ardupilot_msgs/msg/GlobalPosition "{latitude: -35.345996, longitude: 149.159017, altitude: 635, coordinate_frame: 5}"
+        ros2 topic pub /ap/cmd_gps_pose ardupilot_msgs/msg/GlobalPosition "{header: {frame_id: 'map'}, coordinate_frame: 5, latitude: 40.08370, longitude: -105.21740, altitude: 1630.0}"
 
 Using ROS2 Node
 ===============
