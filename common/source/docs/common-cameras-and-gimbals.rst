@@ -64,6 +64,7 @@ Control of Specific Camera Models
 
 -  :ref:`ADTi cameras and gimbals <common-adti-cameras-and-gimbals>`
 -  :ref:`Airpixel Entire Geotagger <common-geotagging-airpixel-entire>`
+-  :ref:`Airpixel TAG-E Geotagger for ILX-LR1 <common-geotagging-airpixel-tag-e>`
 -  :ref:`FLIR Vue Pro Thermal Camera <common-flir-vue-pro>`
 -  :ref:`RunCam Camera Control <common-camera-runcam>`
 
@@ -111,7 +112,8 @@ more scenic photos. ArduPilot will stabilize the gimbal to whatever position you
     ViewPro gimbals <common-viewpro-gimbal>
     Xacti gimbals <common-xacti-gimbal>
     FLIR Vue Pro Thermal Camera <common-flir-vue-pro>
-    Airpixel Entire Geotagger <common-geotagging-airpixel-entire>
+    AirPixel Entire Geotagger <common-geotagging-airpixel-entire>
+    AirPixel TAG-E Geotagger <common-geotagging-airpixel-tag-e>
     Seagull IR Camera Trigger <common-camera-trigger-seagull-ir>
     Seagull MAP2 Camera Trigger <common-camera-trigger-seagull-map2>
     Seagull MAP-X2 Camera Trigger and Logger <common-camera-trigger-seagull-mapx2>
