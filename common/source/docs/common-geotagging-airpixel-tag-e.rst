@@ -12,17 +12,17 @@ The `TAG-E <https://airpixel.cz/tag-e/>`_ is new camera controller and geotagger
 TAG-E is using single USB-C connection to the camera, no WiFi, no additional modules. Geotagging is instant, without necessity of geoagging initiation. Triggering is available at full speed, no slow-down due to geotagging processing. TAG-E also automatically configure camera internal clock by GPS time received from the MAVLink, so images will have correct creation date every time.
 
 
-- Compatible only with Sony ILX-LR1.
-- Photos are automatically geotagged (via EXIF) with the Lat, Lon, Altitude and camera angles (read from the gimbal).
-- Optionally can geotags be expanded for GPS time, Rangefinder measurement, GPS/IMU accuracy, Focal plane distance and resolution or Custom user label.
-- HereLink camera control via QGC UI.
-- HereLink camera control via MavCam (optional).
-- Mission Planner implementation via plugin.
-- Precise lever arm calculations based on Antenna to Camera offsets.
-- GeoTagging is available at the *maximum speed of the camera*.
-- Automatic camera clock configuration by GPS time.
-- Enhanced file/folder grouping per flight for better user exprience.
-- Video geotagging by subtitles.
+- Compatible only with Sony ILX-LR1
+- Photos are automatically geotagged (via EXIF) with the Lat, Lon, Altitude and camera angles (read from the gimbal)
+- Optionally can geotags be expanded for GPS time, Rangefinder measurement, GPS/IMU accuracy, Focal plane distance and resolution or Custom user label
+- HereLink camera control via QGC UI
+- HereLink camera control via MavCam (optional)
+- Mission Planner implementation via plugin
+- Precise lever arm calculations based on Antenna to Camera offsets
+- GeoTagging is available at the *maximum speed of the camera*
+- Automatic camera clock configuration by GPS time
+- Enhanced file/folder grouping per flight for better user exprience
+- Video geotagging by subtitles
 
 
 More info at `www.airpixel.cz <https://airpixel.cz/tag-e/>`_
