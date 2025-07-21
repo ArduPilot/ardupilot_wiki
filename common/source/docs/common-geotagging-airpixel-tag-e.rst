@@ -1,7 +1,7 @@
 .. _common-geotagging-airpixel-tag-e:
 
 ================================================================
-Airpixel TAG-E for Camera Control and EXIF Geotagging of ILX-LR1
+AirPixel TAG-E for Camera Control and EXIF Geotagging of ILX-LR1
 ================================================================
 
 
