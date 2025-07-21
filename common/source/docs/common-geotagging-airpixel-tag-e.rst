@@ -4,15 +4,11 @@
 Airpixel TAG-E for Camera Control and EXIF Geotagging of ILX-LR1
 ================================================================
 
-.. container:: twocol
 
-   .. container:: leftside
-
-    .. image:: https://airpixel.cz/wp-content/uploads/2025/07/Cube-Tag-e.webp
-        :target: https://airpixel.cz/tag-e/
-        :width: 445px
-
-   .. container:: rightside
+.. image:: https://airpixel.cz/wp-content/uploads/2025/07/Cube-Tag-e.webp
+    :target: https://airpixel.cz/tag-e/
+    :width: 445px
+    :align: center
 
 The `TAG-E <https://airpixel.cz/tag-e/>`_ is new camera controller and geotagger for Sony ILX-LR1 camera. TAG-E uses MAVLink Camera Control protocol v2 to interface camera features to the user. QGC will automatically show exposure controls, triggering, timelapse and and configuration features in any Android device or PC/MAC. For MissionPlanner there is an plugin for camera and geotagging control.
 TAG-E is using single USB-C connection to the camera, no WiFi, no additional modules. Geotagging is instant, without necessity of geoagging initiation. Triggering is available at full speed, no slow-down due to geotagging processing. TAG-E also automatically configure camera internal clock by GPS time received from the MAVLink, so images will have correct creation date every time.
