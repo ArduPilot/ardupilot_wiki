@@ -1,8 +1,8 @@
 .. _common-geotagging-airpixel-entire:
 
-======================================================
+=========================================================
 AirPixel ENTIRE R3 for Camera Control and EXIF Geotagging
-======================================================
+=========================================================
 
 .. image:: https://airpixel.cz/wp-content/uploads/2021/08/entirer3drk_banner.jpg
     :target: http://shop.airpixel.cz/product/air-commander-entire-r3/
