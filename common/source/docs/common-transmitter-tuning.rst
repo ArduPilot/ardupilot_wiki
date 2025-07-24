@@ -288,7 +288,9 @@ can do a full tune in a bit over a minute.
 
 First you should set ``RCx_OPTION`` = 219, where ``x`` is a free RC channel that will be used for transmitter tuning.
 
-.. note: prior to version 4.6, Channel 6 was hard coded to be the "tuning" channel and setting ``RCx_OPTION`` = 219 was not required to be set.
+.. note:: prior to version 4.6, Channel 6 was hard coded to be the "tuning" channel and setting ``RCx_OPTION`` = 219 was not required to be set.
+
+.. note:: a second tuning channel can also be setup using ``RCx_OPTION`` = 220, and the ``TUNE2_xx`` parameters to allow two sets of tuning parameters to be adjusted in the same flight session.
 
 The :ref:`TUNE<TUNE>` parameter determines which parameter is being tuned.
 
