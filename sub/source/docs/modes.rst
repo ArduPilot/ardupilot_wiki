@@ -9,14 +9,14 @@ legend for requirements: P - needs Position(GPS,etc.), D - needs Depth sensor, R
 =============   =================================================  =========
 Mode            Description                                        Requires
 =============   =================================================  =========
-MANUAL          Pilot control with no stabilization                 -
-ACRO            Body-frame rate control, manual depth control       -
-STABILIZE       Manual angle control, manual depth control          -
+MANUAL          Pilot control with no stabilization                 \-
+ACRO            Body-frame rate control, manual depth control       \-
+STABILIZE       Manual angle control, manual depth control          \-
 ALT_HOLD        Stabilize with automatic depth control              D
 AUTO            Automatic mission command list execution            P/D
 GUIDED          Swim to location or velocity/direction using GCS    P/D
 CIRCLE          Circle swim with depth control                      P/D
-SURFACE         Return to surface, pilot directional control        -
+SURFACE         Return to surface, pilot directional control        \-
 POSHOLD         Loiter with depth control and pilot overrides       P/D
 MOTOR_DETECT    Automatically determine motor rotation and adjust   D
 SURFTRAK        Hold distance above seafloor while stabilizing      R
