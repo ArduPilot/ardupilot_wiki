@@ -55,3 +55,41 @@ Several failsafes are provided for pilot control methods, if they fail, any or a
 - :ref:`Pilot Control failsafe <pilot-control-failsafe>`
 - :ref:`RC Failsafe <radio-failsafe>` (if RC is enabled)
 - :ref:`GCS Failsafe <gcs-failsafe>`
+
+Responsiveness
+==============
+Depending on vehicle design and pilot experience, it can be desirable to limit how quickly and/or strongly the vehicle responds to control inputs. There are a few different approaches to doing this, which affect different parts of the control pipeline:
+
+- If a GCS joystick is used, the ``JS_GAIN_*`` parameters scale the pilot input range, which determines  how much pilot joystick inputs can affect motor outputs
+
+  - In MANUAL mode there are only pilot inputs, so the total output range (and hence power usage) of the vehicle is determined by the pilot's input control range, whether GCS joystick based or RC based
+  - In modes with autopilot stabilisation, stabilisation can still cause the vehicle to use its full power capacity (e.g. when operating in strong currents)
+  - Joystick gain can be controlled by the pilot using ``gain_*`` :ref:`buttons`, and/or can be configured with the parameters
+
+    - :ref:`JS_GAIN_MIN<JS_GAIN_MIN>`, :ref:`JS_GAIN_MAX<JS_GAIN_MAX>`, and :ref:`JS_GAIN_DEFAULT<JS_GAIN_DEFAULT>` for its limits and starting value
+    - :ref:`JS_THR_GAIN<JS_THR_GAIN>` for an additional scaling applied to vertical inputs, to either reduce them further or boost them relative to horizontal/turning inputs
+    - :ref:`JS_GAIN_STEPS<JS_GAIN_STEPS>` to determine how much the gain changes with each increment/decrement button press
+- When using radio channels for RC control of the vehicle, it is possible to ignore small RC stick adjustments and timing inconsistencies using :ref:`RCn_DZ<RC1_DZ>` to specify the deadzone for each RC channel
+- Attitude stabilisation limits the vehicle's maximum lean angle (roll/pitch away from level) to :ref:`ANGLE_MAX<ANGLE_MAX>`
+- Automatic depth control (in modes like ALT_HOLD, SURFTRAK, POSHOLD, and CIRCLE) can be configured with the parameters
+
+  - :ref:`THR_DZ<THR_DZ>` for the throttle deadzone, to avoid small joystick movements adjusting the current depth target
+  - :ref:`PILOT_SPEED_UP<PILOT_SPEED_UP>` and :ref:`PILOT_ACCEL_Z<PILOT_ACCEL_Z>`, for limiting maximum vertical speeds, and setting the vertical acceleration to reach those speeds
+
+    - :ref:`PILOT_SPEED_DN<PILOT_SPEED_DN>` can be optionally used to set the maximum descent rate independently, instead of defaulting to :ref:`PILOT_SPEED_UP<PILOT_SPEED_UP>`
+  - :ref:`SURFACE_MAX_THR<SURFACE_MAX_THR>` scales down upwards thrust when near the surface, to avoid pushing through the water surface and sucking air
+- Automatic horizontal velocity control in POSHOLD mode can be limited by :ref:`PILOT_SPEED<PILOT_SPEED>`
+- It is also possible to configure the outputs directly, using
+
+  - :ref:`MOT_SLEW_UP_TIME<MOT_SLEW_UP_TIME>` and :ref:`MOT_SLEW_DN_TIME<MOT_SLEW_DN_TIME>`, to limit the rate the motors can increase or decrease thrust levels when a change is commanded
+  - :ref:`MOT_PWM_MIN<MOT_PWM_MIN>` and :ref:`MOT_PWM_MAX<MOT_PWM_MAX>` define the available PWM range of all motor outputs
+
+    - This is typically used to ensure the motor output commands match the expected input range of the ESCs, but can also be used to intentionally set a reduced range, to reduce performance and/or power usage
+
+    .. note:: Dshot ESCs ignore these values. Range is fixed at 1000µs to 2000µs.
+
+    - If one or more PWM ESC controlled motors are moving while disarmed, it may be necessary to adjust the relevant :ref:`SERVOn_TRIM<SERVO1_TRIM>` parameter(s) to correct the neutral points
+- Motor output scaling can also be adjusted automatically, :ref:`in response to feedback from the power/battery monitoring system <current-limiting-and-voltage-scaling>`, using
+
+  - :ref:`MOT_BAT_CURR_MAX<MOT_BAT_CURR_MAX>` to reduce the power output after excessive current draw occurs for more than :ref:`MOT_BAT_CURR_TC<MOT_BAT_CURR_TC>`, and/or
+  - :ref:`MOT_BAT_VOLT_MIN<MOT_BAT_VOLT_MIN>` and :ref:`MOT_BAT_VOLT_MAX<MOT_BAT_VOLT_MAX>` to scale up motor outputs to compensate for sagging voltage over time
