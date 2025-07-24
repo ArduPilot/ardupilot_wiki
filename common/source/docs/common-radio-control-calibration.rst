@@ -96,7 +96,7 @@ There are two alternative configurations:
 -  *Mode 4*: left stick controls throttle and roll; the right stick will
    control pitch and yaw.
 
-As you can see, mode 3 is the opposite to mode 2 and mode 4 is the opposite to mode 1, giving complete right handed/left handed user options.
+Mode 3 is the opposite of Mode 2 and Mode 4 is the opposite of Mode 1, giving complete right handed/left handed user options.
 
 [site wiki="rover"]Rover users may prefer to control both throttle and roll from the same stick.[/site]
 
