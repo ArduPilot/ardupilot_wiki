@@ -42,11 +42,10 @@ UP-T201 Wiring Diagram:
 Configuration and Parameters
 ============================
 - Set :ref:`FLOW_TYPE<FLOW_TYPE>` = 9
-- Set :ref:`MAV2_EXTRA3<MAV2_EXTRA3>` = 50 (assuming that Telem1 is also MAVLink protocol)
 - Set :ref:`SERIAL2_BAUD<SERIAL2_BAUD>` = 115200
-- Set :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 16
+- Set :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 18
 - Set :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = 45
-- Set :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = 45
+- Set :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = 25
 - Set :ref:`RNGFND1_MAX<RNGFND1_MAX>` = 4 (The UP-T101-Plus is set to 4 and the UP-T201 is set to 15)
 - Set :ref:`RNGFND1_MIN<RNGFND1_MIN>` = 0.02 (The UP-T101-Plus is set to 0.02 and the UP-T201 is set to 0.05)
 
