@@ -1,5 +1,6 @@
 .. _modes:
 
+=========
 Sub Modes
 =========
 Sub has the following modes:
