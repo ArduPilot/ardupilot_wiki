@@ -7,9 +7,9 @@ Pilot Control
 Control of the vehicle can be accomplished in three ways:
 
 - Via Ground Control Stations using:
-   - GCS attached Joysticks, or command lines, to send MAVLink `RC override <https://mavlink.io/en/messages/common.html#RC_CHANNELS_OVERRIDE>`__ commands that act as RC inputs (even if no RC receiver is attached)
-   - MAVLink `MANUAL CONTROL <https://mavlink.io/en/messages/common.html#MANUAL_CONTROL>`__ messages which includes axis commands and button states.
 
+  - GCS attached Joysticks, or command lines, to send MAVLink `RC override <https://mavlink.io/en/messages/common.html#RC_CHANNELS_OVERRIDE>`__ commands that act as RC inputs (even if no RC receiver is attached)
+  - MAVLink `MANUAL CONTROL <https://mavlink.io/en/messages/common.html#MANUAL_CONTROL>`__ messages which includes axis commands and button states.
 - RC control (not enabled by default)
 
 Pilot Control Inputs
@@ -37,12 +37,12 @@ STABILIZE    ANG   ANG   RAT   RAT   RAT     RAT     No      No
 ALT_HOLD     ANG   ANG   RAT   RA    RAT     RAT     No      Yes
 SURFTRAK     ANG   ANG   RAT   RAT   RAT     RAT     No      Yes*
 POSHOLD      ANG   ANG   RAT   RAT   RAT     RAT     Yes     Yes
-SURFACE      ANG   ANG   RAT   -     RAT     RAT     No      No
-CIRCLE       ANG   ANG   RAT   RAT   -       -       Yes     Yes
-MOTORDETECT  -     -     -     -     -       -        -       -
+SURFACE      ANG   ANG   RAT   \-    RAT     RAT     No      No
+CIRCLE       ANG   ANG   RAT   RAT   \-      \-      Yes     Yes
+MOTORDETECT  \-    \-    \-    \-    \-      \-      \-      \-
 =========== ===== ===== ==== ===== ======= ======= ======= =========
 
-* SURFTRAK maintains depth as a relative position above the sea floor using a rangefinder when there in no depth input change requested by the pilot. 
+\*SURFTRAK maintains depth as a relative position above the sea floor using a rangefinder when there in no depth input change requested by the pilot. 
 
 - MODE AUTO: Autopilot commands necessary controls to navigate the mission.
 - MODE GUIDED: Pilot can control Roll and Pitch if in velocity control mode with stick input signifying angle targets if in HEADING HOLD, or rate targets, otherwise. Yaw input is rate demand. LATERAL and FORWARD inputs ignored.
@@ -54,7 +54,7 @@ Several failsafes are provided for pilot control methods, if they fail, any or a
 
 - :ref:`Pilot Control failsafe <pilot-control-failsafe>`
 - :ref:`RC Failsafe <radio-failsafe>` (if RC is enabled)
-- :ref:`GCS Failsafe <gcs-failsafe>`
+- :ref:`GCS (Heartbeat) Failsafe <gcs-failsafe>`
 
 Responsiveness
 ==============
