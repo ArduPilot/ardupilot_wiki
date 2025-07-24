@@ -7,10 +7,9 @@ Land Mode
 LAND Mode attempts to bring the copter straight down and has these
 features:
 
--  descends to 10m (or until the sonar senses something below the
-   copter) using the regular Altitude Hold controller which will descend
-   at the speed held in the :ref:`WPNAV_SPEED_DN<WPNAV_SPEED_DN>` parameter which can be
-   modified on the Mission Planner's Config/Tuning > Copter Pids screen.
+-  descends at :ref:`LAND_SPEED_HIGH<LAND_SPEED_HIGH>`, if non-zero, (or :ref:`WPNAV_SPEED_DN<WPNAV_SPEED_DN>` if zero) using the regular Altitude Hold controller.
+-  the pilot can reposition the vehicle using the pitch and roll sticks. The throttle stick has no effect.
+-  if a rangefinder is being used, or :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` =1 and terrain data is available, the descent speed will then switch to :ref:`LAND_SPEED<LAND_SPEED>` at 10m altitude above ground until landing occurs. If neither terrain data or rangefinder data is available, then altitude above HOME will be used for the speed switch point (if reached).
 
    .. image:: ../images/Land_DescentSpeed1.png
        :target: ../_images/Land_DescentSpeed1.png
@@ -54,7 +53,7 @@ features:
 .. warning::
 
     In any Alt Hold based mode including: Alt Hold, Loiter,
-    Auto, AutoLand or RTL if your copters operation becomes erratic when you
+    Auto, Auto NAV_Land or RTL if your copters operation becomes erratic when you
     are close to the ground or landing (and also if any auto landing
     procedure results in bouncing or failure to turn off motors properly
     after landing) you probably have the autopilot situated such that
