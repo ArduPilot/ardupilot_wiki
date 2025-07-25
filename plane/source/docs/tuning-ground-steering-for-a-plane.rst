@@ -161,9 +161,9 @@ the angle for steering is passed through without changes.
 When the speed increase, the steering angle starts to decrease at a setup
 rate until the minimum steering angle is reached.
 
--  **DRTSPD** - After this speed the steering angle gets reduced
--  **DRTFCT** - Amount of degrees to reduce per each additional m/s increase in speed
--  **DTRMIN** - minimum angle of steering that will not be decreased further
+- :ref:`STEER2SRV_DRTSPD<STEER2SRV_DRTSPD>`: After this speed the steering angle gets reduced. The units are m/s
+- :ref:`STEER2SRV_DRTFCT<STEER2SRV_DRTFCT>`: Amount of degrees to reduce per each additional m/s increase in speed. The units are in °/m/s
+- :ref:`STEER2SRV_DRTMIN<STEER2SRV_DRTMIN>`: Minimum angle in centi-degrees of steering that will not be decreased further
 
 The steering angle vs. speed can be illustrated with following chart:
 
