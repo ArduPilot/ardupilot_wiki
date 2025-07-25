@@ -198,6 +198,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     SERVOx_FUNCTION=y on disabled channel                   PWM output misconfigured                            SERVOx_FUNCTION is set for a servo output that has been disabled. See :ref:`BLHeli setup<common-blheli32-passthru>`
     SERVOx_MAX is less than SERVOx_TRIM                     PWM output misconfigured                            Set SERVOx_TRIM to be lower than SERVOx_MAX
     SERVOx_MIN is greater than SERVOx_TRIM                  PWM output misconfigured                            Set SERVOx_TRIM to be higher than SERVOx_MIN
+    System not intiialised                                  System still booting                                Wait a few seconds
     temperature cal running                                 Temperature calibration is running                  Wait until :ref:`temp calibration <common-imutempcal>` completes or reboot autopilot
     terrain disabled                                        Auto mission uses terrain but terrain disabled      Enable the terrain database (set :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` = 1) or remove auto mission items that use terrain altitudes.  For Copters also check RTL_ALT_TYPE.
     Terrain out of memory                                   Autopilot has run out of memory                     Disable features or replace with a higher powered autopilot
