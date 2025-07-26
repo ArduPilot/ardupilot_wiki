@@ -121,6 +121,8 @@ Scripting and Parameters
    
    Accessing/Adding Parameters via Scripts <common-scripting-parameters>
 
+In addition to creating accessing ArduPilot parameter values, and creating new parameters dedicated to a script's operation, up to 16 :ref:`Auxiliary switches <common-auxiliary-functions>` state can be read from a script. And auxiliary switch function "316" can be used to stop or restart scripting from the RC transmitter or GCS.
+
 MAVLink commands
 ================
 
