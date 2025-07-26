@@ -11,6 +11,7 @@ ArduPilot provides several ways for an OEM to provide firmware on their products
 - Ability to change the firmware string displayed to the user.
 - Ability to include pictures and informational files in available free flash space.
 - Ability to change parameters and mark them as read-only so that users cannot change them using :ref:`APJ Tools<dev:apjtools-intro>`. (as of version 4.5 firmware, this is no longer available)
+- Ability to :ref:`install a LUA script to vet parameters <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/param-set.md>`__ before allowing them to be set via MAVLink.
 
 Customization Steps
 ===================
@@ -58,6 +59,12 @@ This section assumes that the OEM has set up the build environment (:ref:`buildi
         NTF_LED_TYPES 256
 
 #. You can also embed :ref:`Lua scripts<common-lua-scripts>` in the ROM of the chip that will automatically run. Since Lua is currently only run on autopilots with a lot of flash space, they are only restricted in total aggregate size to available free flash memory. Put the scripts in a sub-directory called ``scripts``, i.e. ``libraries/AP_HAL_ChibiOS/hwdef/OEM_CubeOrange/scripts``. Files must end in ``.lua``.
+
+Alternatively, you can specify the LUA applet or driver at compile by using the "--embed-<filename> command, for example:
+
+    ::
+
+       ./waf plane --embed-LTE_modem 
 
     .. warning:: The user may also run Lua scripts off the SD card, so care should be taken in naming the embedded script file names to not conflict with potential user file names. It is recommended that the file names of embedded Lua scripts be provided in the product documentation for the user.
 
