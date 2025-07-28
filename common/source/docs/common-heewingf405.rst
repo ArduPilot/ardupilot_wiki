@@ -111,7 +111,7 @@ The RCIN pin, is passed by an inverter to RX2 (UART2 RX), which by default is ma
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the RX2 pin can also be configured to be used as true UART2 RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL2 port's RX input pin.
 
-With this option, :ref:`SERIAL6_PROTOCOL<SERIAL2_PROTOCOL>` must be set to "23", and:
+With this option, :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` must be set to "23", and:
 
 - PPM/SBUS is not supported.
 
@@ -119,7 +119,7 @@ With this option, :ref:`SERIAL6_PROTOCOL<SERIAL2_PROTOCOL>` must be set to "23",
 
 - CRSF also requires a TX2 connection, in addition to RX2, and automatically provides telemetry.
 
-- SRXL2 requires a connection to TX2 and automatically provides telemetry.  Set :ref:`SERIAL6_OPTIONS<SERIAL2_OPTIONS>` to "4".
+- SRXL2 requires a connection to TX2 and automatically provides telemetry.  Set :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` to "4".
 
 .. note:: UART2 is configured by default for serial receivers. You can also have more than one receiver in the system at a time (usually used for long range hand-offs to a remote TX). See :ref:`common-multiple-rx` for details.
 

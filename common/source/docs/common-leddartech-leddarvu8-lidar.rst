@@ -31,7 +31,7 @@ The following parameters should be set
 -  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 160.  *This is the distance in meters that the rangefinder can reliably read.*
 -  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *or more accurately the distance in metres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
-If you instead were using the Serial4 port on the autopilot then you would set :ref:`SERIAL4_PROTOCOL <SERIAL2_PROTOCOL>` = 9, and :ref:`SERIAL4_BAUD <SERIAL2_BAUD>` to 115
+If you instead were using the Serial4 port on the autopilot then you would set :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9, and :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` to 115
 
 Testing the sensor
 ==================
