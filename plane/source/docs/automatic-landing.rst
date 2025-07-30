@@ -15,6 +15,8 @@ In most cases, the altitude should be set to 0. During the final flare portion o
 
 .. note:: the altitude is relative to home, which is set at arming. If you arm while holding for a hand launch, this means home altitude will be several meters above the ground!
 
+.. warning:: often the internal temperature of the vehicle, and hence that of the baro, will change significantly during the flight. While most baros are temperature compensated, this is not usually extremely accurate, leading to the home alt potentially drifting a few meters. This can cause inaccurate flare height to occur. This often occurs when quickly arming the vehicle after riding to the flying site in a car on cold or hot days, or when heat from a component like a video transmitter raises the cabin temperature during a flight after arming.
+
 For many vehicles, most of the parameters associated with autolanding can be left at their defaults. The basic parameters are covered below in the Basic Autolanding Section for vehicles not using an airspeed sensor and/or rangefinder. For more advanced configuration, see the sections listed below:
 
 .. toctree::
