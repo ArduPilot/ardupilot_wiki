@@ -124,6 +124,10 @@ CAN_Dx_UC_OPTION bit      Function when set
 3                         IgnoreDNANodeUnhealthy, ignore disconnected node ids
 4                         SendServoAsPWM, instead of sending servo positions as -1 to -1, send as PWM values in us
 5                         SendGNSS, send GPS fix and status info over DroneCAN, used by some gimbals
+6                         UseHimarkServo, enable Himark Servo command set
+7                         HobbyWingESC, enable command set for this esc
+8                         EnableStats, enable peripheral to send bus stats
+9                         EnableFlexDebug, enable flexible debugging via LUA, see `this example <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/FlexDebug.lua>`__
 ====================      =================
 
 .. _dronecan_node_conflicts:
