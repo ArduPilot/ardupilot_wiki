@@ -310,7 +310,7 @@ To connect another GCS using the ``--no-mavproxy`` option and UDP requires addin
 
 ::
 
-    sim_vehicle.py -A "--serial0=udpclient<gcs ip>:14550" --console --map
+    sim_vehicle.py -A "--serial0=udpclient:<gcs ip>:14550" --console --map
 
 where <gcs ip> would be 127.0.0.1 if the GCS is on the same PC or the ip address of a remote PC running a GCS
 
