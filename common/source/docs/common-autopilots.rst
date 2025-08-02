@@ -92,6 +92,7 @@ Closed Hardware
     AtomRC F405-NAVI <common-atomrcf405-navi>
     BetaFPV F405 family <common-betafpvf405>
     BrahmaF4 <common-brahmaf4>
+    BOTWINGF405 <common-botwingf405>
     brainFPV RADIX2 HD <common-radix2hd>
     Brother Hobby F405v3 <common-brotherhobbyf405v3>
     Brother Hobby H743 <common-brotherhobbyh743>
