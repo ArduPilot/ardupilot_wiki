@@ -3,7 +3,7 @@
 ===================
 Auxiliary Functions
 ===================
-This page describes how to set up additional features which can be invoked from the transmitter's auxiliary function switches, from Mission Planner using the ``Aux function`` sub-tab of the ``Data`` tab, via MAVLink/Mission command (:ref:`MAV_CMD_DO_AUX_FUNCTION <mav_cmd_do_aux_function>` or from external :ref:`buttons <common-buttons>`.
+This page describes how to set up additional features which can be invoked from the transmitter's auxiliary function switches, from Mission Planner using the ``Aux function`` sub-tab of the ``Data`` tab, via MAVLink/Mission command (:ref:`MAV_CMD_DO_AUX_FUNCTION <mav_cmd_do_aux_function>`) or from external :ref:`buttons <common-buttons>`.
 
 Configuring which transmitter channel is used
 =============================================
