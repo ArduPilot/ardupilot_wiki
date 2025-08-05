@@ -1,4 +1,4 @@
-.. _systemid-mode:
+.. _common-systemid-mode:
 
 ==========================
 System Identification Mode
@@ -26,4 +26,5 @@ Information on this modes parameters and operation are given in the links below:
 .. toctree::
     :maxdepth: 1
 
-    System ID Mode Operation <systemid-mode-operation>
+    System ID Mode Operation <common-systemid-mode-operation>
+    System ID Model Development <systemid-model-development>

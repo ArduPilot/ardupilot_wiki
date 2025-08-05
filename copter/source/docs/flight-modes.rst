@@ -169,7 +169,7 @@ Full list of flight modes
     Smart RTL (Return-to-Launch) <smartrtl-mode>
     Sport <sport-mode>
     Stabilize <stabilize-mode>
-    System Identification <systemid-mode>
+    System Identification <common-systemid-mode>
     Throw <throw-mode>
     Turtle <turtle-mode>
     ZigZag <zigzag-mode>
