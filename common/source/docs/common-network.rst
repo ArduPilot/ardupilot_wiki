@@ -85,6 +85,14 @@ To enable this feature, it first must be present in the autopilot firmware. This
 
 Connect one of the H7 based autopilot's serial ports to the ethernet switch's or Ethernet-to-PPP-adapter's USART port. For optimum performance a serial port with flow control should be used (e.g. normally SERIAL1 or SERIAL2).  If a port without flow control if used, the baud rate may be set as high as 921000
 
+Alternatively, any Linux-based computer with a UART (or USB-UART) can be used with the "pppd" software. An example of the command to run this is:
+
+.. code-block:: bash
+
+    sudo pppd /dev/ttyAMA0 12500000 192.168.144.15:192.168.144.14 crtscts debug noauth nodetach local proxyarp ktune
+
+The above command will take the incoming stream from /dev/ttyAMA0 (at a 12.5M Baudrate) destined for 192.168.144.15 (the local IP of pppd) and defines the remote (the flight controller) as 192.168.144.14.
+
 To configure a serial port for PPP (Serial2 is used in this example):
 
 - set :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 48 (PPP) requires a reboot to take effect.
