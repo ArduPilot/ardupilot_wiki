@@ -19,6 +19,7 @@ extra modes. Most are identical to equivalent Copter modes:
     LOITER to QLAND (mode 25) <loiter-to-qland-mode>
     AIRMODE** <airmode>
     QUICKTUNE*** <quicktune>
+    SYSTEMID <common-systemid-mode>
 
 ** not actually a flight mode, but rather a feature of QACRO and QSTABILIZE
 
