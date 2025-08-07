@@ -19,11 +19,13 @@ extra modes. Most are identical to equivalent Copter modes:
     LOITER to QLAND (mode 25) <loiter-to-qland-mode>
     AIRMODE** <airmode>
     QUICKTUNE*** <quicktune>
-    SYSTEMID <common-systemid-mode>
+    SYSTEMID**** <common-systemid-mode>
 
 ** not actually a flight mode, but rather a feature of QACRO and QSTABILIZE
 
 \*\*\* not actually a flight mode, but a VTOL tuning feature
+
+\*\*\*\* not actually a flight mode, but a VTOL tuning and model development tool
 
 .. note:: RTL mode can behave differently than a normal fixed wing RTL, depending on the setting of the :ref:`Q_RTL_MODE<Q_RTL_MODE>` parameter. See :ref:`Hybrid RTLs <hybrid_rtl>`.
 .. tip::
