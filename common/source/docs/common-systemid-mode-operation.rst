@@ -1,5 +1,7 @@
 .. _common-systemid-mode-operation:
 
+[copywiki destination="plane,copter"]
+
 .. contents::
 
 System ID Mode Operation
@@ -26,7 +28,7 @@ Data Collection
 
 The data collection is initiated by switching to the System ID mode.
 Each time the mode is changed to the System ID flight mode a new data collection is initiated.
-To change the amplitude of the excitation the :ref:`SID_MAGNITUDE<SID_MAGNITUDE>` parameter can be tuned using the :ref:`Ch6 tuning knob<TUNE>` during the data collection.
+To change the amplitude of the excitation, the :ref:`SID_MAGNITUDE<SID_MAGNITUDE>` parameter can be tuned using the transmitter during the data collection using :ref:`common-transmitter-tuning` and setting the :ref:`TUNE<TUNE>` parameter in Copter, or the :ref:`TUNE_PARAM<TUNE_PARAM>` in Plane, to "58" .
 
 The System ID mode provides these capabilities:
 
@@ -82,15 +84,17 @@ Value    Description
 11       Mixer Pitch
 12       Mixer Yaw
 13       Mixer Thrust
+[site wiki="copter"]
 14       Measured Lateral Position
 15       Measured Longitudinal Position
 16       Measured Lateral Velocity
 17       Measured Longitudinal Velocity
 18       Input Lateral Velocity
 19       Input Longitudinal Velocity
+[/site]
 =====    ===========
 
-:ref:`SID_MAGNITUDE<SID_MAGNITUDE>`: System identification Chirp Magnitude. Depending on the injection point, units will be in either deg, deg/s, 0-1 for mixer outputs, m/s for velocity, and m for position. The magnitude can be changed in flight easily using the :ref:`tuning knob<TUNE>` using the 58 option.
+:ref:`SID_MAGNITUDE<SID_MAGNITUDE>`: System identification Chirp Magnitude. Depending on the injection point, units will be in either deg, deg/s, 0-1 for mixer outputs, m/s for velocity, and m for position. The magnitude can be changed in flight easily using :ref:`common-transmitter-tuning`, as explained previously.
 
 :ref:`SID_F_START_HZ<SID_F_START_HZ>`: System identification Start Frequency. Range: 0.01-100 Hz
 
@@ -122,17 +126,19 @@ main loop frequency divided by a sub-sample factor.
 +--------------+--------------+---------------+
 
 
-The next figure depicts the :ref:`SID_AXIS<SID_AXIS>` injection points in yellow and some details of the most inner PID loops when :ref:`ATC_RATE_FF_ENAB<ATC_RATE_FF_ENAB>` == 0.
+The next figure depicts the :ref:`SID_AXIS<SID_AXIS>` injection points in yellow and some details of the most inner PID loops when :ref:`ATC_RATE_FF_ENAB<ATC_RATE_FF_ENAB>` = 0.
 
 .. figure:: ../images/arducopter4.1_pid_loops_ff_dis.png
 
 ArduCopter control loops with ATC_RATE_FF_ENAB=0
 
-The next figure depicts the :ref:`SID_AXIS<SID_AXIS>` injection points in yellow and some details of the most inner PID loops when :ref:`ATC_RATE_FF_ENAB<ATC_RATE_FF_ENAB>` == 1.
+The next figure depicts the :ref:`SID_AXIS<SID_AXIS>` injection points in yellow and some details of the most inner PID loops when :ref:`ATC_RATE_FF_ENAB<ATC_RATE_FF_ENAB>` = 1.
 
 .. figure:: ../images/arducopter4.1_pid_loops_ff_en.png
 
-ArduCopter control loops with ATC_RATE_FF_ENAB=1
+ArduCopter control loops with :ref:`ATC_RATE_FF_ENAB<ATC_RATE_FF_ENAB>` = 1
+
+[site wiki="copter"]
 
 Position controller diagram showing the chirp being input at the desired velocity.  Both the velocity and position feedback loops are being used.  This input would be used to analyze data to determine position or tracking bandwidth.
 
@@ -150,3 +156,4 @@ Position controller diagram showing the chirp being input at the measured veloci
 
 .. figure:: ../images/Pos_Ctrl_Vel_DRB.png
 
+[/site]
