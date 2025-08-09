@@ -45,6 +45,7 @@ Open Hardware
 .. toctree::
     :maxdepth: 1
 
+    Accton Godwit G-A1 <common-accton-godwit-ga1-overview>
     ARKV6X DS-10 Pixhawk6 <common-ark-v6x-overview>
     ARK FPV <common-ark-fpv-overview>
     CUAV V5 Plus <common-cuav-v5plus-overview>
