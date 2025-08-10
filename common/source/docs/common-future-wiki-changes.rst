@@ -79,6 +79,7 @@ New Features
 - Add VTOL-FW throttle smoothing parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/6902
 - Expand RNGFND_LANDING param to bitmask, see https://github.com/ArduPilot/ardupilot_wiki/pull/7014
 - Add SYSID mode for vehicle model development, see https://github.com/ArduPilot/ardupilot_wiki/pull/7041
+- Add AutoFlap flight option for operation in manual modes, see https://github.com/ArduPilot/ardupilot_wiki/pull/7016
 [/site]
 [site wiki="copter"]
 - Fast Attitude loop option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6470
