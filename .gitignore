@@ -15,6 +15,7 @@
 # Build outputs
 *.html
 *.pyc
+.cache/
 
 # static html pages
 !/frontend/*.html
