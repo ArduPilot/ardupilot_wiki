@@ -4,16 +4,16 @@
 Precision Landing
 =================
 
-Copter, QuadPlane and Rover support precision landing using the `LANDING_TARGET <https://mavlink.io/en/messages/common.html#LANDING_TARGET>`__ mavlink message
+Copter, QuadPlane and Rover support Precision Landing using the MAVLink `LANDING_TARGET <https://mavlink.io/en/messages/common.html#LANDING_TARGET>`__ message.
 
 References:
 
-- :ref:`Copter's user wiki for precision landing <copter:precision-landing-with-irlock>`
+- :ref:`Copter's user wiki for precision landing <copter:precision-landing-and-loiter>`
 - `QuadPlane discussion of precision landing <https://discuss.ardupilot.org/t/quadplane-precision-landing-support-testers-needed/114072>`__
 - `MAVLink's Landing Target documentation <https://mavlink.io/en/services/landing_target.html>`__
 - :ref:`Testing Precision Landing in SITL <testing_precision_landing>`
 
-Users should follow the :ref:`user precision landing wiki page <copter:precision-landing-with-irlock>` including setting :ref:`PLND_TYPE <PLND_TYPE>` = 1 (MAVLink)
+Users should follow the :ref:`user precision landing wiki page <copter:precision-landing-and-loiter>` including setting :ref:`PLND_TYPE <PLND_TYPE>` = 1 (MAVLink)
 
 The external camera system should send the `LANDING_TARGET <https://mavlink.io/en/messages/common.html#LANDING_TARGET>`__ message to the autopilot at no less than 1hz (a higher rate is better).
 
