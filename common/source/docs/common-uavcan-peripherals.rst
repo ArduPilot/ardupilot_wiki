@@ -62,9 +62,10 @@ Airspeed
     Holybro High Precision DroneCAN Airspeed Sensor - DLVR <https://holybro.com/products/high-precision-dronecan-airspeed-sensor-dlvr>
     Avionics Anonymous Airspeed + Temp <common-avanon-adc>
     FoxTech DroneCAN Airspeed/Compass <https://www.foxtechfpv.com/foxtech-aerofox-can-airspeed-compass.html>
+    MakeFlyEasy DroneCAN Airspeed <https://en.makeflyeasy.com/index.php/mfe-can-airspeed-meter/>
+    Matek DroneCAN AUAV Airspeed/Baro <https://www.mateksys.com/?portfolio=aspd-auav>
     Matek DroneCAN DLVR-10 Airspeed Sensor <common-matek-uavcan-dlvr>
     Qiotek DroneCAN Airspeed Sensor <https://www.qio-tek.com/index.php/product/qiotek-asp5033-dronecan-airspeed-and-compass-module>
-    MakeFlyEasy DroneCAN Airspeed <https://en.makeflyeasy.com/index.php/mfe-can-airspeed-meter/>
 
 External Barometer
 ==================
