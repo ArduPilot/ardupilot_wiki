@@ -59,7 +59,7 @@ Installing the `MicroXRCEDDSGen` build dependency:
 
 .. code-block:: bash
     
-    sudo apt install default-jre
+    sudo apt install openjdk-17-jdk
     cd ~/ardu_ws
     git clone --recurse-submodules https://github.com/ardupilot/Micro-XRCE-DDS-Gen.git
     cd Micro-XRCE-DDS-Gen
