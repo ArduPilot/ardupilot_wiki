@@ -69,6 +69,7 @@ New Features
 - NTRIP applet for autopilot, see https://github.com/ArduPilot/ardupilot_wiki/pull/6992
 - LUA applet/driver embedding at compile, see https://github.com/ArduPilot/ardupilot_wiki/pull/7002
 - Parameter setting control applet, see https://github.com/ArduPilot/ardupilot_wiki/pull/7002
+- Network data capture in pcap for analysis, see https://github.com/ArduPilot/ardupilot_wiki/pull/7043
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
