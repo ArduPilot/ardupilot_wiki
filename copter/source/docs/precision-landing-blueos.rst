@@ -52,7 +52,7 @@ Once BlueOS has been :ref:`installed <dev:companion-computer-blueos>` on the com
    :target: ../_images/precision-landing-blueos-extension.png
    :width: 450px
 
-- Place the tag infront of the camera and press the "Test Detection" button.  Within a few seconds an image from the camera should be displayed with the AprilTag highlighted in red.
+- Place the tag in front of the camera and press the "Test Detection" button.  Within a few seconds an image from the camera should be displayed with the AprilTag highlighted in red.
 - Press the "Run" button to run the precision landing algorithm continuously.  This is persistent meaning the algorithm will start automatically if the companion computer is rebooted.
 
 AutoPilot Configuration
