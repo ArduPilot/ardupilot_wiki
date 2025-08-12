@@ -93,6 +93,7 @@ New Features
 - Correct AUTO NAV_LAND behavior, see https://github.com/ArduPilot/ardupilot_wiki/pull/6945
 - Enable rev thrust in MANUAL Mode independent of USE_REV_THRUST param, see https://github.com/ArduPilot/ardupilot_wiki/pull/6998
 - Add auto flap flight mode option, see https://github.com/ArduPilot/ardupilot_wiki/pull/7016
+- Ability to skip IMU pre-arm check for running ICE engines, see https://github.com/ArduPilot/ardupilot_wiki/pull/7044
 [/site]
 [site wiki="rover"]
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600
