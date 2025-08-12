@@ -1,8 +1,8 @@
 .. _common-servo-landingpage:
 
-======
-Servos
-======
+====================
+Servos and Actuators
+====================
 
 ArduPilot supports several types of servos.
 
@@ -14,6 +14,7 @@ ArduPilot supports several types of servos.
     :maxdepth: 1
 
     DroneCAN Servos <common-dronecan-servos>
+    Hitec DroneCAN Actuators <common-hitec-dronecan-linear-actuator>
     PWM Servos (PWM) <common-servo>
     SBus Servos <common-sbus-out>
     Robotis Servos <common-servo-robotis>

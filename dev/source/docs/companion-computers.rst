@@ -49,6 +49,7 @@ tools/suites are listed below.
     DroneKit <droneapi-tutorial>
     FlytOS <flytos>
     Maverick <https://goodrobots.github.io/maverick/#/>
+    MAVSDK <https://github.com/ArduPilot/ardupilot-mavsdk>
     Pymavlink <https://github.com/ArduPilot/pymavlink>
     ROS <ros>
     Rpanion-server <https://www.docs.rpanion.com/software/rpanion-server>

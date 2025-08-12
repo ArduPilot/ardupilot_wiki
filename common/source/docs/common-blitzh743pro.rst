@@ -17,7 +17,7 @@ Specifications
 -  **Sensors**
 
    -  ICM42688 IMU (accel and gyro only, no compass)
-   -  DPS310 barometer
+   -  DPS310 barometer (v1), SPA06 (v2)
 
 -  **Power**
 

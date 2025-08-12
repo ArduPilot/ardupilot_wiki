@@ -812,11 +812,15 @@ def check_ref_directives():
     files_to_check = wiki_glob.difference(skipped_files)
     for f in files_to_check:
         with open(f, "r", "utf-8") as file:
-            for i, line in enumerate(file.readlines()):
-                if character_before_ref_tag.search(line):
-                    error(f"Remove character before ref directive in \"{f}\" on line number {i+1}")
-                if character_after_ref_tag.search(line):
-                    error(f"Remove character after ref directive in \"{f}\" on line number {i+1}")
+            try:
+                for i, line in enumerate(file.readlines()):
+                    if character_before_ref_tag.search(line):
+                        error(f"Remove character before ref directive in \"{f}\" on line number {i+1}")
+                    if character_after_ref_tag.search(line):
+                        error(f"Remove character after ref directive in \"{f}\" on line number {i+1}")
+            except UnicodeDecodeError as ex:
+                print("UnicodeError in %s: " % f, ex)
+                sys.exit(1)
 
 
 def create_features_pages(site):

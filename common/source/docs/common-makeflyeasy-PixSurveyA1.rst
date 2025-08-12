@@ -289,11 +289,11 @@ The PPM/SBus.in pin, which by default is mapped to a timer input, can be used fo
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL4 (UART8) would need to be used for receiver connections. Below are setups using UART4. :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` should be set to "23".
 
-- FPort would require :ref:`SERIAL4_OPTIONS<SERIAL6_OPTIONS>` be set to "15".
+- FPort would require :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` be set to "15".
 
-- CRSF would require :ref:`SERIAL4_OPTIONS<SERIAL6_OPTIONS>` be set to "0".
+- CRSF would require :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` be set to "0".
 
-- SRXL2 would require :ref:`SERIAL4_OPTIONS<SERIAL6_OPTIONS>` be set to "4" and connects only the UART4 TX pin.
+- SRXL2 would require :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` be set to "4" and connects only the UART4 TX pin.
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
 

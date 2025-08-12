@@ -12,12 +12,21 @@ Configuration
 
 By default the RC input channels are:
 
+[site wiki="copter,plane,rover"]
 -  Channel 1: Roll input
 -  Channel 2: Pitch input
 -  Channel 3: Throttle input
 -  Channel 4: Yaw input
+[/site][site wiki="sub"]
+-  Channel 1: Pitch input
+-  Channel 2: Roll input
+-  Channel 3: Throttle input (vertical)
+-  Channel 4: Yaw input
+-  Channel 5: Forward input
+-  Channel 6: Lateral input
+[/site]
 
-These can be changed by setting the :ref:`RCMAP_ROLL <RCMAP_ROLL>`, :ref:`RCMAP_PITCH <RCMAP_PITCH>`, :ref:`RCMAP_THROTTLE <RCMAP_THROTTLE>` and :ref:`RCMAP_YAW <RCMAP_YAW>` parameters using the *Mission Planner*'s **Config/Tuning \| Full Parameter Tree** (or Full Parameter List) as shown below.
+These can be changed by setting the [site wiki="sub"]:ref:`RCMAP_FORWARD <RCMAP_FORWARD>`, :ref:`RCMAP_LATERAL <RCMAP_LATERAL>`,[/site] :ref:`RCMAP_ROLL <RCMAP_ROLL>`, :ref:`RCMAP_PITCH <RCMAP_PITCH>`, :ref:`RCMAP_THROTTLE <RCMAP_THROTTLE>` and :ref:`RCMAP_YAW <RCMAP_YAW>` parameters using the *Mission Planner*'s **Config/Tuning \| Full Parameter Tree** (or Full Parameter List) as shown below.
 
 .. image:: ../../../images/RCMAP_MPSetup.png
     :target: ../_images/RCMAP_MPSetup.png
@@ -30,9 +39,8 @@ For multicopters, the :ref:`RC calibration <common-radio-control-calibration>` a
 :ref:`ESC calibration <copter:esc-calibration>` should be re-done.
 [/site]
 
-Additional information about the ``RCMAP`` parameters can be found for the respective platforms in: 
-:ref:`Copter Parameters <copter:RCMAP_ROLL>`, :ref:`Plane Parameters <copter:RCMAP_ROLL>`
-and :ref:`Rover Parameters <rover:RCMAP_ROLL>`.
+Additional information about the ``RCMAP`` parameters can be found in the
+:ref:`Parameters <[site wiki="copter"]copter[/site][site wiki="plane"]plane[/site][site wiki="rover"]rover[/site][site wiki="sub"]sub[/site]:RCMAP_ROLL>` reference.
 
 [site wiki="rover"]
 Rover notes

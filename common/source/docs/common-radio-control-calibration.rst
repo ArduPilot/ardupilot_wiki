@@ -97,6 +97,15 @@ There are two main transmitter configurations:
 .. figure:: ../../../images/radio_setup_mode_1.png
    :target: ../_images/radio_setup_mode_1.png
 
+There are two alternative configurations:
+
+-  *Mode 3*: left stick controls pitch and roll, the right stick will
+   control throttle and yaw.
+-  *Mode 4*: left stick controls throttle and roll; the right stick will
+   control pitch and yaw.
+
+Mode 3 is the opposite of Mode 2 and Mode 4 is the opposite of Mode 1, giving complete right handed/left handed user options.
+
 [site wiki="rover"]Rover users may prefer to control both throttle and roll from the same stick.[/site]
 
 Channel mappings

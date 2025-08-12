@@ -14,15 +14,15 @@ OpenAI's ChatGPT Assistants can be used to control an ArduPilot vehicle using th
 
 .. warning::
 
-    This module is still under development and the assistant sometimes makes mistakes including switching to the wrong flight mode or commanding target positions that are many kilometers away
+    This module is still under development and the assistant sometimes makes mistakes including switching to the wrong flight mode or commanding target positions that are many kilometers away.
 
 Prerequisites
 =============
 
 - MAVProxy 1.8.69 (or higher)
-- On Linux/Ubuntu the pyaudio, wave and openai python packages must be installed manually
+- On Linux/Ubuntu the pyaudio and openai Python packages must be installed manually
 - `OpenAI API key  <https://platform.openai.com/docs/quickstart/account-setup>`__
-- Setup the OpenAI Assistant (not required for core developers using ArduPilot's API key)
+- Set up the OpenAI Assistant (not required for core developers using ArduPilot's API key)
 - Vehicle must be running ArduPilot 4.6 (or higher)
 
 Installing Python Packages on Linux/Ubuntu
@@ -31,8 +31,7 @@ Installing Python Packages on Linux/Ubuntu
 From the command line run the following commands:
 
 - sudo apt -y install python3-pyaudio
-- pip install wave
-- pip install openai
+- python3 -m pip install openai
 
 OpenAI API Key
 --------------
@@ -64,7 +63,7 @@ Assistant Setup
 
 This section is only required for users who are not using the ArduPilot OpenAI API key.
 
-- Download the contents of the the `mavproxy_chat / assistant_setup <https://github.com/ArduPilot/MAVProxy/tree/master/MAVProxy/modules/mavproxy_chat/assistant_setup>`__ directory
+- Download the contents of the `mavproxy_chat / assistant_setup <https://github.com/ArduPilot/MAVProxy/tree/master/MAVProxy/modules/mavproxy_chat/assistant_setup>`__ directory
 - run the setup.py script
 
 .. code:: bash

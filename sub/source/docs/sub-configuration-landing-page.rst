@@ -13,6 +13,8 @@ components, including those required for the operation of the autopilot.
    may also choose to :ref:`Configure Optional Hardware <common-optional-hardware>` including battery monitor, sonar,
    speed sensor, optical flow, OSD, camera gimbal,etc.
 
+.. note:: An example of a simple RC controlled FPV submersible is documented `HERE <https://discuss.ardupilot.org/t/simple-low-cost-diy-ardusub>`__
+
 
 .. toctree::
     :maxdepth: 1
@@ -28,5 +30,5 @@ components, including those required for the operation of the autopilot.
     Button Inputs <buttons>
     Failsafes <failsafe-landing-page>
     ESC Calibration <common-esc-calibration>
-    Companion Computers <sub-companion-computers>
+    Companion Computers <sub-companions-computers>
 

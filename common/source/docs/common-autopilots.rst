@@ -73,7 +73,7 @@ Open Hardware
     mRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/m10022a.htm>
     OpenPilot Revolution <common-openpilot-revo-mini>
     TauLabs Sparky2 <common-taulabs-sparky2>
-    ZeroOneX6 <common-zeroonex6>
+    ZeroOneX6/X6 Pro <common-zeroonex6>
 
 \* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
@@ -84,6 +84,7 @@ Closed Hardware
     :maxdepth: 1
 
     3DR Control Zero H7 OEM <common-3DR_Control_Zero_OEM_G>
+    AEDROX H7 <common-aedroxh7>
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
     AET-H743-Basic <common-AET-H743-Basic>
@@ -172,12 +173,17 @@ Closed Hardware
     QioTek Zealot H743 <common-qiotek-zealoth7>
     SDMODEL SDH7V1 <https://www.sdmodel.com.tw/content.php?cn=item&tid=1320&start=0>
     SDMODEL H7 V2 <common-SDMODELH7V2>
+    SequreH743 <common-sequreh743>
+    SIYI N7 <https://siyi.biz/siyi_file/N7/N7%20Autopilot%20User%20Manual%20(ArduPilot)%20v1.0.pdf>
     Sky-Drones AIRLink <common-skydrones-airlink>
     SkySakuraH743 <common-SkySakuraH743>
     SkystarsH7HD <common-skystarsH7>
+    SkystarsH7HDV2 <common-skystarsh7hdv2>
     SPRacing H7 Extreme <common-spracingh7-extreme>
     SPRacing H7 RF <common-spracingh7-rf>
     Swan-K1 <common-Swan-K1>
+    Spedix F405 <common-spedixf405>
+    Spedix H743 <common-spedixh743>
     SpeedyBee F4 (this board currently is non-verified) <common-speedybeef4>
     SpeedyBee F405 AIO <common-speedybeef405aio>
     SpeedyBee F4 V3/V4 <common-speedybeef4-v3>

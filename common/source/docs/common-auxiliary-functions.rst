@@ -3,12 +3,12 @@
 ===================
 Auxiliary Functions
 ===================
-This page describes how to set up additional features which can be invoked from the transmitter's auxiliary function switches, from Mission Planner using the ``Aux function`` sub-tab of the ``Data`` tab, via MAVLink/Mission command (ref:`MAV_CMD_DO_AUX_FUNCTION <mav_cmd_do_aux_function>` or from external :ref:`buttons <common-buttons>`.
+This page describes how to set up additional features which can be invoked from the transmitter's auxiliary function switches, from Mission Planner using the ``Aux function`` sub-tab of the ``Data`` tab, via MAVLink/Mission command (:ref:`MAV_CMD_DO_AUX_FUNCTION <mav_cmd_do_aux_function>`) or from external :ref:`buttons <common-buttons>`.
 
 Configuring which transmitter channel is used
 =============================================
 
-Any RC input channel can be assigned any auxiliary function. However, the RC channel should not be used by any other function, such as flight mode selection or flight controls. By default, channels 1-4 are used for flight controls (i.e. roll, pitch, throttle, and yaw). The default flight mode channel is 8 for Plane and Rover and 5 for Copter.
+Any RC input channel can be assigned any auxiliary function. However, the RC channel should not be used by any other function, such as flight mode selection or flight controls. By default, channels [site wiki="copter,plane,rover"]1-4 are used for flight controls (i.e. roll, pitch, throttle, and yaw). The default flight mode channel is 8 for Plane and Rover, and 5 for Copter.[/site][site wiki="sub"]1-6 are used for flight controls (i.e. pitch, roll, vertical, yaw, forward, and lateral), and channels 7 and 8 are used for camera mount gimbal yaw and pitch control. There is no default flight mode channel.[/site]
 
 Assigning the Feature
 =====================

@@ -25,7 +25,7 @@ Pre-Flight Setup
 - Set :ref:`INS_LOG_BAT_OPT<INS_LOG_BAT_OPT>` = 4 to do pre and post-filter 1KHz sampling
 - Set :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` = 1 to collect data from the first IMU
 - :ref:`INS_LOG_BAT_LGIN<INS_LOG_BAT_LGIN>` is the gap between batch samples and normally does not need to be changed. It can be lowered to increase accuracy of resulting FFT, but may be ineffective depending on the systems logging speed.
-- :ref:`LOG_BITMASK <copter:LOG_BITMASK>`'s IMU_RAW bit must **not** be checked.  The default :ref:`LOG_BITMASK<LOG_BITMASK>` value is fine. If it is checked the results can be confusing as you will get no samples if using post-filter or regular logging, you will however get samples if using sensor rate logging and your SD card is able to cope.
+- :ref:`LOG_BITMASK <LOG_BITMASK>`'s IMU_RAW bit must **not** be checked.  The default :ref:`LOG_BITMASK<LOG_BITMASK>` value is fine. If it is checked the results can be confusing as you will get no samples if using post-filter or regular logging, you will however get samples if using sensor rate logging and your SD card is able to cope.
 
 .. _common-imu-notch-filtering-flight-and-post-flight-analysis:
 

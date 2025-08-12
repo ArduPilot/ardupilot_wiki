@@ -44,6 +44,8 @@ Video Switch     10
 
 Output Assignments
 ------------------
+Output functions in Sub can be selected via ``SERVOx_FUNCTION`` parameters. See :ref:`common-rcoutput-mapping` for details.
+
 The default output assignments are:
 
 ======       ========

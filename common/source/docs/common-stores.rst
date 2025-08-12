@@ -7,6 +7,7 @@ Stores
 The following stores are known to stock quality versions of the controllers, telemetry radios, cables etc.
 recommended for use with ArduPilot (in alphabetical order).  You may also want to check the list of :ref:`Ready-to-Use vehicles <common-rtf>`.
 
+* `3DXR <https://www.3dxr.co.uk/>`__
 * `ADTi <https://www.adti.camera/>`__
 * `AION ROBOTICS <https://www.aionrobotics.com>`__
 * `Air-Supply Aerial <https://www.airsupply.com>`__
@@ -44,7 +45,8 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
 * `uAvionix <https://uavionix.com/>`__
 * `UAV Systems International <https://uavsystemsinternational.com/collections/all>`__
-* `3DXR <https://www.3dxr.co.uk/>`__
+* `VimDrones <https://shop.vimdrones.com/>`__
+* `ZeroOne <https://www.01aero.com/>`__
 
 The `ArduPilot Swag store is here <https://www.redbubble.com/people/ardupilot/shop?asc=u>`__.
 

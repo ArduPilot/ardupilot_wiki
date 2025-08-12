@@ -34,6 +34,11 @@ New Board Support
 - JHEMCUF405Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6853
 - CORVON743V1, see https://github.com/ArduPilot/ardupilot_wiki/pull/6891
 - UAV DEV 743-UM982 ,see https://github.com/ArduPilot/ardupilot_wiki/pull/6897
+- DAKEFPVF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/6949
+- OrbitH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6952
+- PiPilot RPI Sheild, see https://github.com/ArduPilot/ardupilot_wiki/pull/6972
+- DAKEFPVH743/H743Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6978
+- BDShot support for ARKV6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/6981
 
 New Peripheral Support
 ======================
@@ -57,6 +62,13 @@ New Features
 - Add MAV_CMD_DO_SET_ROI_LOCATION/_NONE commands, see https://github.com/ArduPilot/ardupilot_wiki/pull/6915
 - Add --embed option to waf firmware build command, see https://github.com/ArduPilot/ardupilot_wiki/pull/6921
 - Stream rates moved to MAVx parameters, see https://github.com/ArduPilot/ardupilot_wiki/pull/6923
+- Winch,Generator,and Beacons are no longer included in std firmware builds for autopilots <2048MB
+- EKF3 source option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6974
+- Permanent serial passthrough, see https://github.com/ArduPilot/ardupilot_wiki/pull/6983
+- DroneCAN messaging from LUA, see https://github.com/ArduPilot/ardupilot_wiki/pull/6988
+- NTRIP applet for autopilot, see https://github.com/ArduPilot/ardupilot_wiki/pull/6992
+- LUA applet/driver embedding at compile, see https://github.com/ArduPilot/ardupilot_wiki/pull/7002
+- Parameter setting control applet, see https://github.com/ArduPilot/ardupilot_wiki/pull/7002
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
@@ -65,6 +77,9 @@ New Features
 - Add FWD_BAT_THR_CUT parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/6624
 - Add AUTOLAND as battery failsafe and/or fence action, see https://github.com/ArduPilot/ardupilot_wiki/pull/6685
 - Add VTOL-FW throttle smoothing parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/6902
+- Expand RNGFND_LANDING param to bitmask, see https://github.com/ArduPilot/ardupilot_wiki/pull/7014
+- Add SYSID mode for vehicle model development, see https://github.com/ArduPilot/ardupilot_wiki/pull/7041
+- Add AutoFlap flight option for operation in manual modes, see https://github.com/ArduPilot/ardupilot_wiki/pull/7016
 [/site]
 [site wiki="copter"]
 - Fast Attitude loop option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6470
@@ -72,10 +87,16 @@ New Features
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600
 - Changed AUTO_TRIM function, see https://github.com/ArduPilot/ardupilot_wiki/pull/6622
 - Add ability to tune LOIT_SPEED from transmitter, see see https://github.com/ArduPilot/ardupilot_wiki/pull/6640
+- Add EKF FS reporting only option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6937
 - Baro thrust compensation, see https://github.com/ArduPilot/ardupilot_wiki/pull/6687
+- Correct AUTO NAV_LAND behavior, see https://github.com/ArduPilot/ardupilot_wiki/pull/6945
+- Enable rev thrust in MANUAL Mode independent of USE_REV_THRUST param, see https://github.com/ArduPilot/ardupilot_wiki/pull/6998
+- Add auto flap flight mode option, see https://github.com/ArduPilot/ardupilot_wiki/pull/7016
 [/site]
 [site wiki="rover"]
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600
 - Add autoarmig option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6878
 - Add LOITER/HOLD failsafe action, see https://github.com/ArduPilot/ardupilot_wiki/pull/6911
+- Add MTR_REV_DELAY, see https://github.com/ArduPilot/ardupilot_wiki/pull/6935
+- Add pivot turn max deceleration parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/7000
 [/site]

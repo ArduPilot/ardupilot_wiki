@@ -1,5 +1,6 @@
 .. _modes:
 
+=========
 Sub Modes
 =========
 Sub has the following modes:
@@ -9,14 +10,14 @@ legend for requirements: P - needs Position(GPS,etc.), D - needs Depth sensor, R
 =============   =================================================  =========
 Mode            Description                                        Requires
 =============   =================================================  =========
-MANUAL          Pilot control with no stabilization                 -
-ACRO            Body-frame rate control, manual depth control       -
-STABILIZE       Manual angle control, manual depth control          -
+MANUAL          Pilot control with no stabilization                 \-
+ACRO            Body-frame rate control, manual depth control       \-
+STABILIZE       Manual angle control, manual depth control          \-
 ALT_HOLD        Stabilize with automatic depth control              D
 AUTO            Automatic mission command list execution            P/D
 GUIDED          Swim to location or velocity/direction using GCS    P/D
 CIRCLE          Circle swim with depth control                      P/D
-SURFACE         Return to surface, pilot directional control        -
+SURFACE         Return to surface, pilot directional control        \-
 POSHOLD         Loiter with depth control and pilot overrides       P/D
 MOTOR_DETECT    Automatically determine motor rotation and adjust   D
 SURFTRAK        Hold distance above seafloor while stabilizing      R
@@ -27,11 +28,19 @@ See :ref:`Pilot Control <pilot-control>` for more details on modes.
 Mode Specific Parameters
 ========================
 
-CIRCLE Mode
------------
-* :ref:`CIRCLE_RADIUS<CIRCLE_RADIUS>`
-* :ref:`CIRCLE_RATE<CIRCLE_RATE>`
-* :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>`
+ACRO Mode
+---------
+* :ref:`ACRO_RP_P<ACRO_RP_P>`
+* :ref:`ACRO_YAW_P<ACRO_YAW_P>`
+* :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>`
+* :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>`
+* :ref:`ACRO_TRAINER<ACRO_TRAINER>`
+* :ref:`ACRO_EXPO<ACRO_EXPO>`
+
+Stabilization Related
+---------------------
+* :ref:`ANGLE_MAX<ANGLE_MAX>`
+* :ref:`JS_GAIN_DEFAULT<JS_GAIN_DEFAULT>`
 
 ALT_HOLD Mode
 -------------
@@ -44,11 +53,6 @@ Depth Control Related
 * :ref:`PILOT_SPEED_DN<PILOT_SPEED_DN>`
 * :ref:`PILOT_SPEED<PILOT_SPEED>`
 
-Stabilization Related
----------------------
-* :ref:`ANGLE_MAX<ANGLE_MAX>`
-* :ref:`JS_GAIN_DEFAULT<JS_GAIN_DEFAULT>`
-
 Auto/Guided Waypoint Navigation Related
 ---------------------------------------
 * :ref:`WPNAV_SPEED<WPNAV_SPEED>`
@@ -59,6 +63,12 @@ Auto/Guided Waypoint Navigation Related
 * :ref:`WPNAV_ACCEL_Z<WPNAV_ACCEL_Z>`
 * :ref:`WPNAV_RFND_USE<WPNAV_RFND_USE>`
 * :ref:`WP_YAW_BEHAVIOR<WP_YAW_BEHAVIOR>`
+
+CIRCLE Mode
+-----------
+* :ref:`CIRCLE_RADIUS<CIRCLE_RADIUS>`
+* :ref:`CIRCLE_RATE<CIRCLE_RATE>`
+* :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>`
 
 Mode Selection
 --------------

@@ -49,7 +49,7 @@ Autopilot Configuration
 See the ``PPP configuration`` and ``ArduPilot Port Configuration`` sections of :ref:`common-network` but in short set these parameters:
 
 - :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (First driver)
-- :ref:`CAN_D1_DRIVER <CAN_D1_PROTOCOL>` = 1 (DroneCAN)
+- :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 1 (DroneCAN)
 - :ref:`NET_ENABLE <NET_ENABLE>` = 1
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 48 (PPP)
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 12500000 (12.5MBaud)

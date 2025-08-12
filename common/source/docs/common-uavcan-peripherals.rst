@@ -58,12 +58,21 @@ Airspeed
 .. toctree::
     :maxdepth: 1
 
+    Beyond Robotix Air Data Module (Amphenol AUAV) <https://www.beyondrobotix.com/products/air-data-module>
     Holybro High Precision DroneCAN Airspeed Sensor - DLVR <https://holybro.com/products/high-precision-dronecan-airspeed-sensor-dlvr>
     Avionics Anonymous Airspeed + Temp <common-avanon-adc>
     FoxTech DroneCAN Airspeed/Compass <https://www.foxtechfpv.com/foxtech-aerofox-can-airspeed-compass.html>
+    MakeFlyEasy DroneCAN Airspeed <https://en.makeflyeasy.com/index.php/mfe-can-airspeed-meter/>
+    Matek DroneCAN AUAV Airspeed/Baro <https://www.mateksys.com/?portfolio=aspd-auav>
     Matek DroneCAN DLVR-10 Airspeed Sensor <common-matek-uavcan-dlvr>
     Qiotek DroneCAN Airspeed Sensor <https://www.qio-tek.com/index.php/product/qiotek-asp5033-dronecan-airspeed-and-compass-module>
-    MakeFlyEasy DroneCAN Airspeed <https://en.makeflyeasy.com/index.php/mfe-can-airspeed-meter/>
+
+External Barometer
+==================
+.. toctree::
+    :maxdepth: 1
+
+    Beyond Robotix Air Data Module (Amphenol AUAV) <https://www.beyondrobotix.com/products/air-data-module>
 
 Smart Battery/Power Module
 ==========================
@@ -94,13 +103,13 @@ Optical Flow Sensors
     ARK Flow Open Source Optical Flow and Distance Sensor <common-arkflow>
     ARK Flow MR Open Source Optical Flow and Distance Sensor <common-arkflow_mr>
 
-Servos
-======
+Servos and Actuators
+====================
 .. toctree::
     :maxdepth: 1
 
     DroneCAN Servos <common-dronecan-servos>
-    Himark CAN Servos <http://himarkuaveng.com/cate-21898-23052.html>
+    Hitec DroneCAN Linear Actuators <common-hitec-dronecan-linear-actuator>
 
 ESCs/Output Expanders
 =====================
@@ -109,8 +118,6 @@ ESCs/Output Expanders
 
     ARK 4IN1 ESC <common-ark-4in1-esc>
     DroneCAN ESCs <common-uavcan-escs>
-    DroneCAN Servos <common-dronecan-servos>
-    Himark CAN Servos <http://himarkuaveng.com/cate-21898-23052.html>
     Matek DroneCAN PWM <https://www.mateksys.com/?portfolio=can-l4-pwm>
 
 Compass Only

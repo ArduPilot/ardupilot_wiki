@@ -157,6 +157,8 @@ As shown in the last step of the vagrant instructions above, use update.py to bu
     python3 update.py --site copter  (to build just the copter wiki)
     python3 update.py --site plane   (to build just the plane wiki)
     python3 update.py --site rover   (to build just the rover wiki)
+    python3 update.py --site blimp   (to build just the blimp wiki)
+    python3 update.py --site sub     (to build just the sub wiki)
     python3 update.py --site dev     (to build just this developer wiki)
 
 The update.py script will copy the common files into each wiki subdirectory and then build each wiki.
@@ -175,6 +177,8 @@ With your favourite web browser, open the locally built wiki which should be nea
 - For Copter look for ``ardupilot_wiki/copter/build/html/index.html``
 - For Plane look for ``ardupilot_wiki/plane/build/html/index.html``
 - For Rover look for ``ardupilot_wiki/rover/build/html/index.html``
+- For Blimp look for ``ardupilot_wiki/blimp/build/html/index.html``
+- For Sub look for ``ardupilot_wiki/sub/build/html/index.html``
 - For Developer look for ``ardupilot_wiki/dev/build/html/index.html``
 
 

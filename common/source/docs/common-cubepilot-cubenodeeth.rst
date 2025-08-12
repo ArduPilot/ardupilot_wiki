@@ -60,7 +60,7 @@ Autopilot Configuration
 See the ``PPP configuration`` and ``ArduPilot Port Configuration`` sections of :ref:`common-network` but in short set these parameters:
 
 - :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (First driver)
-- :ref:`CAN_D1_DRIVER <CAN_D1_PROTOCOL>` = 1 (DroneCAN)
+- :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 1 (DroneCAN)
 - :ref:`NET_ENABLE <NET_ENABLE>` = 1
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 48 (PPP)
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 12500000 (12.5MBaud)
@@ -106,7 +106,7 @@ Firmware Updates
 
 The CubeNodeETH firmware can be updated by following the instructions below
 
-- Download the `stable <https://firmware.ardupilot.org/AP_Periph/stable/CubePilot-PPPGW>`__, `beta <https://firmware.ardupilot.org/AP_Periph/beta/CubePilot-PPPGW>`__ or `latest <https://firmware.ardupilot.org/AP_Periph/latest/CubeNode-ETH/>`__ AP_Periph.bin file from firmware.ardupilot.org
+- Download the `stable <https://firmware.ardupilot.org/AP_Periph/stable/CubeNode-ETH/>`__, `beta <https://firmware.ardupilot.org/AP_Periph/beta/CubeNode-ETH/>`__ or `latest <https://firmware.ardupilot.org/AP_Periph/latest/CubeNode-ETH/>`__ AP_Periph.bin file from firmware.ardupilot.org
 - Download, install and run the `DroneCAN GUI Tool <https://dronecan.github.io/GUI_Tool/Overview>`__.  For Windows users download and run `the .msi file found here <https://firmware.ardupilot.org/Tools/CAN_GUI>`__
 - Connect the autopilot to your PC using a USB cable
 - Run the DroneCAN GUI Tool:

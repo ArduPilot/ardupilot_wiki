@@ -55,6 +55,10 @@ Preparing commits
 
 - Do not submit patches with commented-out code or code that is never reachable within ``#define`` s.
 
+- Do not include git merge commits in your commit history; :ref:`rebase <git-rebase>`  your branch on the master branch, do not ``git pull`` changes in.
+
+- Do not include any git ``fixup!`` commits in your PR; these are only ever supposed to be a temporary part of a git workflow
+
 - Try to follow the :ref:`style guide <style-guide>` so your code fits in with the existing code.
   In particular, ensure your editor uses 4 spaces intead of tabs.
 

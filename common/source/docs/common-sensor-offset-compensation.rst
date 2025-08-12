@@ -50,8 +50,8 @@ Although individual position offsets can be set for each IMU, the difference bet
 
 **Range Finder (Sonar or Lidar):**
 
-- :ref:`RNGFND1_POS_X <RNGFND1_POS_X>`, :ref:`RNGFND1_POS_Y <RNGFND1_POS_Z>`, :ref:`RNGFND1_POS_Z <RNGFND1_POS_Z>` the first RangeFinder's position from the vehicle's IMU or center of gravity
-- :ref:`RNGFND2_POS_X <RNGFND2_POS_X>`, :ref:`RNGFND2_POS_Y <RNGFND2_POS_Z>`, :ref:`RNGFND2_POS_Z <RNGFND2_POS_Z>` the second RangeFinder's position from the vehicle's IMU or center of gravity
+- :ref:`RNGFND1_POS_X <RNGFND1_POS_X>`, :ref:`RNGFND1_POS_Y <RNGFND1_POS_Y>`, :ref:`RNGFND1_POS_Z <RNGFND1_POS_Z>` the first RangeFinder's position from the vehicle's IMU or center of gravity
+- :ref:`RNGFND2_POS_X <RNGFND2_POS_X>`, :ref:`RNGFND2_POS_Y <RNGFND2_POS_Y>`, :ref:`RNGFND2_POS_Z <RNGFND2_POS_Z>` the second RangeFinder's position from the vehicle's IMU or center of gravity
 
 **Optical Flow:**
 

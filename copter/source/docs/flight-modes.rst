@@ -97,7 +97,7 @@ Additional flight modes:
 -  :ref:`Follow Me <ac2_followme>`
 -  :ref:`Simple and Super Simple <simpleandsuper-simple-modes>`
 -  :ref:`Smart RTL (Return-to-Launch) <smartrtl-mode>`
--  :ref:`SysID (System Identification) <systemid-mode>`
+-  :ref:`SysID (System Identification) <common-systemid-mode>`
 -  :ref:`Turtle <turtle-mode>` for multirotors only.
 -  :ref:`ZigZag <zigzag-mode>`
 -  :ref:`Avoid_ADSB <common-ads-b-receiver>` for ADS-B based avoidance of manned aircraft.  Should not be set-up as a pilot selectable flight mode.
@@ -138,7 +138,7 @@ Do not require position information:
 -  :ref:`Alt Hold <altholdmode>`
 -  :ref:`Stabilize <stabilize-mode>`
 -  :ref:`Sport <sport-mode>`
--  :ref:`SysID <systemid-mode>`
+-  :ref:`SysID <common-systemid-mode>`
 -  :ref:`Turtle <turtle-mode>`
 -  :ref:`Land <land-mode>`
 
@@ -169,7 +169,7 @@ Full list of flight modes
     Smart RTL (Return-to-Launch) <smartrtl-mode>
     Sport <sport-mode>
     Stabilize <stabilize-mode>
-    System Identification <systemid-mode>
+    System Identification <common-systemid-mode>
     Throw <throw-mode>
     Turtle <turtle-mode>
     ZigZag <zigzag-mode>

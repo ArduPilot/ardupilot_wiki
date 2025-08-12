@@ -224,7 +224,7 @@ No Action is ever taken for Short FailSafe in these modes:
 
 :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` = 3 disables taking action in ANY mode
 
-.. note:: if in AutoLanding in AUTO, it will always continue to the landing
+.. note:: if in AutoLanding in AUTO or AUTOLAND, it will always continue to the landing
 
 In QuadPlanes, Short FailSafe will force QLAND by default, RTL if bit 20 of :ref:`Q_OPTIONS<Q_OPTIONS>` is set, or QRTL if bit 5 of :ref:`Q_OPTIONS<Q_OPTIONS>` is set, if entered from these modes:
 
@@ -450,7 +450,7 @@ Otherwise:
 |                      |GUIDED                  |                         |
 +----------------------+------------------------+-------------------------+
 
-.. note: in Mode TAKEOFF, Long Failsafe Action is postponed until :ref:`TKOFF_LVL_ALT<TKOFF_LVL_ALT>` is obtained unless action is GLIDE or PARACHUTE, which would occur immediately .
+.. note: in Mode TAKEOFF, Long Failsafe Action is postponed until :ref:`TKOFF_LVL_ALT<TKOFF_LVL_ALT>` is obtained unless action is GLIDE or PARACHUTE, which would occur immediately.
 
 GCS failsafe enable (:ref:`FS_GCS_ENABL<FS_GCS_ENABL>` )
 --------------------------------------------------------
