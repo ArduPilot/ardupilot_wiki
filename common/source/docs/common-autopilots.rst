@@ -155,6 +155,7 @@ Closed Hardware
     mRo Nexus <common-mro-nexus>
     MUPilot <common-MUPilot>
     NarinFC-H7 <common-NarinFC-H7>
+    NarinFC-X3 <common-NarinFC-X3>
     NxtPX4v2 <common-NxtPX4v2>
     Omnibus F4 AIO/Pro <common-omnibusf4pro>
     OmnibusNanoV6 <common-omnibusnanov6>
