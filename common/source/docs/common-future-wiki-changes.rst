@@ -39,6 +39,7 @@ New Board Support
 - PiPilot RPI Sheild, see https://github.com/ArduPilot/ardupilot_wiki/pull/6972
 - DAKEFPVH743/H743Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6978
 - BDShot support for ARKV6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/6981
+- AcctonGodwit_GA1, see https://github.com/ArduPilot/ardupilot_wiki/pull/7054
 
 New Peripheral Support
 ======================
