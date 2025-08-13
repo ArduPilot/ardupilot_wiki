@@ -178,7 +178,7 @@ plus M9-13 on a separate pads for LED strip and other PWM outputs.
 
 Channels within the same group need to use the same output rate.
 If any channel in a group uses DShot then all channels in the group need to use DShot. 
-Channels 1-10 support bi-directional dshot. ALL outputs within the same group need to use the same output rate and protocol.
+ ALL outputs within the same group need to use the same output rate and protocol.
 
 Battery Monitor
 ===============
