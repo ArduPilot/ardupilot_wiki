@@ -140,3 +140,17 @@ Vibration isolation
 -------------------
 
 The high vibration from internal combustion engines means that :ref:`vibration dampening <common-vibration-damping>` is critical.  It is often necessary to mount the autopilot on a plate with `self-adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass.
+
+.. note::
+
+   When using Internal Combustion Engine (ICE) motors, vibration during
+   engine run-up can cause the IMU consistency checks to fail, preventing
+   arming.
+   In ArduPilot 4.7 and later an option has been added to :ref:`ARMING_OPTIONS<ARMING_OPTIONS>`:
+
+   **Bit 2 – Skip IMU consistency checks when ICE motor running**
+
+   When this bit is set, ArduPilot will bypass the IMU consistency check
+   if an ICE motor is running. This is intended for setups
+   where ICE engines are typically started before arming, and their
+   vibration may otherwise trigger false failures.
