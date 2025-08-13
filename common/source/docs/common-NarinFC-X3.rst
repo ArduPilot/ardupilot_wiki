@@ -164,7 +164,7 @@ The NarinFC-X3 supports OSD using OSD_TYPE 1 (MAX7456 driver) and simultaneously
 PWM Output
 ==========
 
-The NarinFC-X3 supports up to 13 PWM or DShot outputs. 
+The NarinFC-X3 supports up to 13 PWM outputs. Outputs 1-10 support DShot and Bi-Directional DShot.
 The pads for motor output M1 to M4 are provided on both the motor connectors and on separate pads,
 plus M9-13 on a separate pads for LED strip and other PWM outputs.
 
