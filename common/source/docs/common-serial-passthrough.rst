@@ -24,7 +24,7 @@ Setup
    :width: 300px
 
 - The default for :ref:`SERIAL_PASS1<SERIAL_PASS1>` (the first serial port to be interconnected) defaults to SERIAL0, the primary USB port.
-- Set :ref:`SERIAL_PASSTIMO <SERIAL_PASSTIMO>` timeout to a length of time (in seconds) that gives you enough time to connect with the sensor's configuration software. 30 to 60 seconds is a good choice but setting it to zero will remain in passthrough until reboot occurs.
+- Set :ref:`SERIAL_PASSTIMO <SERIAL_PASSTIMO>` timeout to a length of time (in seconds) that gives you enough time to connect with the sensor's configuration software. 30 to 60 seconds is a good choice but setting it to zero will remain in passthrough until reboot occurs. Setting this to -1 will allow the connection to remain even after rebooting.
 - Set :ref:`SERIAL_PASS2 <SERIAL_PASS2>` to the number of the serial port connected to the sensor.  I.e. "2" if the sensor is connected to Telem2/Serial2.
 - Press the "Disconnect" button on the ground station but leave the USB cable from the PC to the autopilot connected.
 
