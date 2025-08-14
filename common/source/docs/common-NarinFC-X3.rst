@@ -178,7 +178,7 @@ plus M9-13 on a separate pads for LED strip and other PWM outputs.
 
 Channels within the same group need to use the same output rate.
 If any channel in a group uses DShot then all channels in the group need to use DShot. 
- ALL outputs within the same group need to use the same output rate and protocol.
+ALL outputs within the same group need to use the same output rate and protocol.
 
 Battery Monitor
 ===============
@@ -188,19 +188,17 @@ The current sensor can read up to 130 Amps. The voltage sensor can handle up to 
 
 The correct battery setting parameters are:
 
-   - BATT_MONITOR = 4
-   - BATT_VOLT_PIN = 10
-   - BATT_CURR_PIN = 11
-   - BATT_VOLT_MULT = 11.0
-   - BATT_AMP_PERVLT = 40
+   - :ref:BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog> = 10
+   - :ref:BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog> = 11
+   - :ref:BATT_MONITOR<BATT_MONITOR> = 4
+   - :ref:BATT_VOLT_SCALE<BATT_VOLT_SCALE__AP_BattMonitor_Analog> = 11.0
+   - :ref:BATT_CURR_SCALE<BATT_CURR_SCALE__AP_BattMonitor_Analog> = 40.0
 
 Pads for a second analog battery monitor are provided. To use:
 
-   - Set BATT2_MONIOTOR = 4
-   - BATT2_VOLT_PIN = 18
-   - BATT2_CURR_PIN = 7
-   - BATT2_VOLT_MULT = 11.0
-   - BATT2_AMP_PERVLT as required
+   - :ref:BATT2_VOLT_PIN<BATT2_VOLT_PIN__AP_BattMonitor_Analog> = 18
+   - :ref:BATT2_CURR_PIN<BATT2_CURR_PIN__AP_BattMonitor_Analog> = 7
+   - :ref:BATT2_VOLT_SCALE<BATT2_VOLT_SCALE__AP_BattMonitor_Analog> = 11.0
 
 Analog RSSI and AIRSPEED inputs
 ===============================
@@ -222,6 +220,6 @@ Loading Firmware
 ================
 
 This board comes with ArduPilot firmware pre-installed and other vehicle/revision ArduPilot firmware can be loaded using most Ground Control Stations.
-Firmware for these boards can be found ` https://firmware.ardupilot.org <https://firmware.ardupilot.org>`_ in sub-folders labeled "NarinFC-X3".
+Firmware for these boards can be found `https://firmware.ardupilot.org <https://firmware.ardupilot.org>`_ in sub-folders labeled "NarinFC-X3".
 The board comes pre-installed with an ArduPilot bootloader, 
 allowing the loading of *.apj firmware files with any ArduPilot compatible ground station, such as Mission Planner.
