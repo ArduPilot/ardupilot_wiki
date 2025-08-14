@@ -55,7 +55,6 @@ tuning options for the vehicle.
     EKF Affinity & Lane Switching <common-ek3-affinity-lane-switching>
     EKF Sources and Selection <common-ekf-sources>
     Ethernet/Network Setup <common-network>
-    Network Capture <common-network-capture>
 [site wiki="copter,rover,sub"]
     Fence Failsafes  <common-geofencing-landing-page>
 [/site]
