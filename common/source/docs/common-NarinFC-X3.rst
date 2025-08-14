@@ -159,7 +159,7 @@ You need to set the following parameters to enable support for FrSky S.PORT: SER
 OSD Support
 ===============
 
-The NarinFC-X3 supports OSD using OSD_TYPE 1 (MAX7456 driver) and simultaneously DisplayPort using TX3/RX3 on the HD VTX connector.
+The NarinFC-X3 supports analog OSD using its internal MAX7456 and simultaneously DisplayPort using TX3/RX3 on the HD VTX connector.
 
 PWM Output
 ==========
