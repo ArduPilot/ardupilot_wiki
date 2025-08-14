@@ -10,8 +10,8 @@ In general it is best to tune this controller before moving on to the steering c
 .. image:: ../images/rover-throttle-and-speed1.png
     :target: ../_images/rover-throttle-and-speed1.png
 
-Cruise Throttle and Cruise Speed
---------------------------------
+Cruise Throttle and Cruise Speed (Throttle Baseline)
+----------------------------------------------------
 
 The :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` and :ref:`CRUISE_SPEED <CRUISE_SPEED>` parameters set the baseline throttle output used by the Desired-Speed-to-Throttle controller.  It is important that these two values are reasonable and consistent with each other meaning that the :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` value (expressed as a percentage) should be close to the throttle required to achieve the :ref:`CRUISE_SPEED <CRUISE_SPEED>` (expressed in m/s).
 
@@ -28,7 +28,7 @@ Desired Speed to Throttle PID Tuning
 
 The Desired-Speed-to-Throttle controller attempts to achieve the desired speed (set by the pilot or autopilot) using a PID controller.  All modes except :ref:`Hold <hold-mode>` and :ref:`Manual <manual-mode>` use this controller.
 
-The P, I and D gains for this controller are held in :ref:`ATC_SPEED_P <ATC_SPEED_P>`, :ref:`ATC_SPEED_I <ATC_SPEED_I>` and :ref:`ATC_SPEED_D <ATC_SPEED_D>` parameters respectively.  :ref:`ATC_SPEED_FF <ATC_SPEED_FF>` is should be left at zero.
+The P, I and D gains for this controller are held in :ref:`ATC_SPEED_P <ATC_SPEED_P>`, :ref:`ATC_SPEED_I <ATC_SPEED_I>` and :ref:`ATC_SPEED_D <ATC_SPEED_D>` parameters respectively.  :ref:`ATC_SPEED_FF <ATC_SPEED_FF>` should be left at zero.
 
 Recommended steps for tuning this controller are:
 
@@ -46,18 +46,18 @@ Recommended steps for tuning this controller are:
 - The :ref:`D gain <ATC_SPEED_D>` is meant to stablize the output by fighting against short-term changes in speed.  This can be left at zero.
 - The :ref:`FF gain <ATC_SPEED_FF>` should be left at zero because the :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` and :ref:`CRUISE_SPEED <CRUISE_SPEED>` are used to calculate a base throttle output which removes the need for feed-forward.
 
-Acceleration Maximum
+Acceleration Limit
 --------------------
 
 Although less important than other tuning values, the :ref:`ATC_ACCEL_MAX <ATC_ACCEL_MAX>` and :ref:`ATC_DECEL_MAX <ATC_DECEL_MAX>` parameters should be set to match the vehicle's physical limits.  This helps the speed controller avoid attempting impossible accelerations and reduces overshoot.
 
-- Use the ground station to view the forward-back (aka x-axis) accelerations in real-time.  If using Mission Planner open the Flight Data screen, check the "Tuning" checkbox (bottom middle), double click on the graph and select "ax". Note that the values are in cm/s so they should be divided by 100 to get m/s.
+- Use the ground station to view the forward-back (aka x-axis) accelerations in real-time.  If using Mission Planner open the Flight Data screen, check the "Tuning" checkbox (bottom middle), double click on the graph and select "ax". Note that the values are in cm/s/s so they should be divided by 100 to get m/s/s.
 
   .. image:: ../images/rover-throttle-and-speed-accel.png
       :target: ../_images/rover-throttle-and-speed-accel.png
 
 - Drive the vehicle in Manual mode, apply full throttle to accelerate from stopped to full speed
-- Use the displayed accelerations as a guide to set the :ref:`ATC_ACCEL_MAX <ATC_ACCEL_MAX>` and :ref:`ATC_DECEL_MAX <ATC_DECEL_MAX>` parameters.  Note that the values displayed may be in cm/s while the parameter is in m/s.  If the vehicles acceleration and deceleration are similar :ref:`ATC_DECEL_MAX <ATC_DECEL_MAX>` can be left as zero
+- Use the displayed accelerations as a guide to set the :ref:`ATC_ACCEL_MAX <ATC_ACCEL_MAX>` and :ref:`ATC_DECEL_MAX <ATC_DECEL_MAX>` parameters.  Note that the values displayed may be in cm/s/s while the parameter is in m/s/s.  If the vehicles acceleration and deceleration are similar :ref:`ATC_DECEL_MAX <ATC_DECEL_MAX>` can be left as zero
 - Drive the vehicle in Acro mode to test the vehicle's accelerations are smooth and that decelerations are not too laggy
 
 Throttle Slew
