@@ -166,3 +166,7 @@ Example Ethernet Connected Vehicle System
 
     Ethernet Connected ArduPilot Vehicle Example <common-ethernet-vehicle>
 
+Network Capture
+===============
+
+In ArduPilot 4.7.x and later you can enable :ref:`network capture <common-network-capture>` to capture on-target network traffic for troubleshooting Ethernet and PPP links.
