@@ -10,6 +10,10 @@ In general it is best to tune this controller before moving on to the steering c
 .. image:: ../images/rover-throttle-and-speed1.png
     :target: ../_images/rover-throttle-and-speed1.png
 
+Controller Diagram
+-------------------
+.. image:: ../../../images/rover-throttle-speed-diagram.jpg
+
 Cruise Throttle and Cruise Speed (Throttle Baseline)
 ----------------------------------------------------
 
