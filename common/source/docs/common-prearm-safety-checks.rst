@@ -279,7 +279,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Message                                                 Cause                                               Solution
     ======================================================= =================================================== ====================================================
     ADSB threat detected                                    ADSB failsafe.  Manned vehicles nearby              See :ref:`ADSB configuration<common-ads-b-receiver>`
-    AHRS not healthy                                        AHRS/EKF is not yet ready                           Wait.  Reboot autopilotFS_LONG_TIMEOUT < FS_SHORT_TIMEOUT
+    AHRS not healthy                                        AHRS/EKF is not yet ready                           Wait.  Reboot autopilot.
     AIRSPEED_MIN too low x<5 m/s                            Parameter set too low, under 5m/s                   Raise to at least 20% above stall speed
     Bad parameter: ATC_ANG_PIT_P must be > 0                Attitude controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
     Bad parameter: PSC_POSXY_P must be > 0                  Position controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
