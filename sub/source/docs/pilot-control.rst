@@ -8,8 +8,11 @@ Control of the vehicle can be accomplished in three ways:
 
 - Via Ground Control Stations using:
 
-  - GCS attached Joysticks, or command lines, to send MAVLink `RC override <https://mavlink.io/en/messages/common.html#RC_CHANNELS_OVERRIDE>`__ commands that act as RC inputs (even if no RC receiver is attached)
-  - MAVLink `MANUAL CONTROL <https://mavlink.io/en/messages/common.html#MANUAL_CONTROL>`__ messages which includes axis commands and button states.
+  - GCS attached Joysticks, or command lines, to send `MAVLink RC overrides <https://mavlink.io/en/services/manual_control.html#alternatives>`__ that act as RC inputs (even if no RC receiver is attached)
+  - The `MAVLink Manual Control protocol <https://mavlink.io/en/services/manual_control.html>`__, which includes axis commands and button states.
+
+    .. warning:: For `legacy reasons <https://github.com/ardupilot/ardupilot/issues/8818>`__, ArduSub's `MANUAL_CONTROL <https://mavlink.io/en/messages/common.html#MANUAL_CONTROL>`__ support expects Z-axis values in range [0,1000], instead of the specification range [-1000,1000].
+
 - RC control (not enabled by default)
 
 Pilot Control Inputs
