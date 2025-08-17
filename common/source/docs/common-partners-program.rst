@@ -43,7 +43,7 @@ the partner can ask questions, post logs for review or discuss
 features. We also have a shared channel that all partners can access
 to facilitate discussions between partners.
 
-The partners program funds 4 highly qualified support engineers to
+The partners program funds highly qualified support engineers to
 help support the needs of partners. These support engineers are not
 full time, but we do strive to provide very timely support for
 partners and we're proud of our track record of providing top quality
@@ -75,7 +75,8 @@ are:
 
  - you will receive a link to a form to fill in giving details of your application
  - you will need to agree to abide by the `ArduPilot Code of Conduct <https://ardupilot.org/dev/docs/developer-code-of-conduct.html>`__
- - you will need to make a payment of a minimum of US$1000. For larger companies we strongly encourage larger contributions, with typical amounts of $5000 to $10000 for companies that rely on ArduPilot for their business. Details of payment methods are given below
+ - companies interested in joining the program must demonstrate compliance with the `ArduPilot Code of Conduct <https://ardupilot.org/dev/docs/developer-code-of-conduct.html>`__, either by providing a link to their official website or through other verifiable means.
+ - you will need to make a payment of a minimum of US$1500. For larger companies we strongly encourage larger contributions, with typical amounts of $5000 to $10000 for companies that rely on ArduPilot for their business. Details of payment methods are given below
  - you will need to send a logo to put on our website, unless you specifically ask not to be included in the public list of partners
  - once payment is received we will create the private support channel for your company (on `discord <https://ardupilot.org/discord>`__ or skype) and add you to the partners list
  - the partners coordinator will setup a time to have an onboarding call to get to know you and to learn how we can best support your use of ArduPilot
