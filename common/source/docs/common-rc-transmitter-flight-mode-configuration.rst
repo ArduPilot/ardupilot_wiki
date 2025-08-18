@@ -71,7 +71,7 @@ the following:
 (a.k.a. ch7, ch8 option switches). For example, to set a dedicated
 switch for RTL.
 [/site]
-[/site wiki="sub"]
+[site wiki="sub"]
 Flight modes are assigned to up to 6 PWM ranges for the :ref:`FLTMODE_CH<FLTMODE_CH>`. This is done via the GCS parameter editor. See :ref:`Sub modes<modes>` for the available operating modes.
 [/site]
 
