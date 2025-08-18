@@ -4,8 +4,6 @@
 Radio Control Systems
 =====================
 
-**Note: Sub does not currently support RC control, but it is under development**
-
 .. image:: ../../../images/rc_systems.png
 
 This article provides an overview of the RC Transmitter and Receiver
