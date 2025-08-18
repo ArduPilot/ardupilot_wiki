@@ -652,7 +652,7 @@ Gripper
 
 This is an output for controlling a servo or electromagnetic gripper for holding items for delivery applications. See :ref:`common-gripper-landingpage` for more information.
 
-[site wiki="copter"
+[site wiki="copter"]
 Sprayer Pump/Mixer
 ++++++++++++++++++
 
