@@ -54,6 +54,8 @@ At least three different Motor Driver (aka ESC) types are supported which allows
 - ":ref:`Brushed With Relay <common-brushed-motors>`" is for brushed motor drivers that use a :ref:`relay pin <common-relay>` to indicate whether it should rotate forward or backward. Output is 0-100% duty cycle waveform.
 - "Brushed BiPolar" is for brushed motor drivers that, a bit like "Normal" PWM. These devices interpret a low PWM value for reverse, a high PWM value for forward. Output is q 0-100% duty cycle waveform.
 
+.. note:: Brushed motors are updated at the :ref:`MOT_PWM_FREQ<MOT_PWM_FREQ>` rate. Make sure that it is set at a value compatible with the brushed motor/esc you are using.
+
 Reversing
 ---------
 
