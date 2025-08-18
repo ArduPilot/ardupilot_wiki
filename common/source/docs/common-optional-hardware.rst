@@ -28,8 +28,10 @@ For guidance on cable design, colour coding, and EMI-compliant wiring, especiall
     AIS (Automatic Identification System) <common-ais>
     Barometer (external) <common-baro-external>
     BlackBox Logger using an AutoPilot <common-blackboxlogger>
-[site wiki="copter,plane,rover,sub"]
+[site wiki="copter,plane,rover"]
     Button Inputs <common-buttons>
+[/site]
+[site wiki="copter,plane,rover,sub"]
     Buzzer <common-buzzer>
 [/site]
     Cameras & Gimbals <common-cameras-and-gimbals>
