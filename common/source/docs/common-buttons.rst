@@ -53,3 +53,5 @@ Additional Setup
 ----------------
 
 :ref:`BTN_REPORT_SEND<BTN_REPORT_SEND>` sets the length of time that a `BUTTON_CHANGE <https://mavlink.io/en/messages/common.html#BUTTON_CHANGE>`__ mavlink2 message is sent to the ground control station each time the button state changes.  At the time of this writing we do not know of any GCS that makes use of this message.
+
+[copywiki destination="copter,plane,rover"]
