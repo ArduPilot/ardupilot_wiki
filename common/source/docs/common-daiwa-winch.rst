@@ -18,6 +18,7 @@ The `Daiwa winch <http://www.ele.okaya.co.jp/index_en.html>`__ is a high quality
 - Interface: 4xPWM or UART
 - Designed and manufactured in Japan
 
+.. note:: unless added via a custom build (see :ref:`common-custom-firmware`), this feature is not included in standard firmware for autopilots having less than 2MB of flash.
 
 Where To Buy
 ============

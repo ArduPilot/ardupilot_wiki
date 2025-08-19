@@ -11,6 +11,8 @@ Non-GPS Navigation
 
 These are the available options that allow a vehicle to estimate its position without a GPS.  Once enabled this allows all autonomous and semi-autonomous modes just as they do would a GPS is available.
 
+.. note:: unless added via a custom build (see :ref:`common-custom-firmware`), Beacon functionality is not included in standard firmware for autopilots having less than 2MB of flash.
+
 .. toctree::
     :maxdepth: 1
 
