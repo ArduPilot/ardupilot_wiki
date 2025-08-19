@@ -39,6 +39,7 @@ leds_on_a_switch.lua                        Control NTF_LED_BRIGHT value using a
 motor_failure_test.lua                      Motor failure testing script
 mount-poi.lua                               Displays the location (lat, lon and altitude) that the gimbal is currently pointing towards
 net_webserver.lua                           This implements a web server for boards that have networking support
+net-ntrip.lua                               NTRIP applet to receive internet NTRIP casting of RTK data
 pelco_d_antennatracker.lua                  Maps AntennaTracker outputs to corresponding Pelco-D messages
 plane_aerobatics.lua(in Aerobatics subdir)  Autonomous trajectory precise aerobatics
 plane_package_place.lua                     Quadplane payload place script
