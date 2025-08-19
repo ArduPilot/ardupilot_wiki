@@ -18,7 +18,8 @@ While scripting normally requires at least some LUA programming and editing, the
 Getting Started
 ===============
 
-- Ensure your autopilot has at least 2 MB of flash and 80 kB of memory.  High powered autopilots like the CubePilot Cube Orange and HolyBro Durandal will certainly work well but check the specifications of your :ref:`autopilot <common-autopilots>`. Scripting is not available in F4 based autopilots. Autopilots must have an SD card to store the script unless the user builds his own firmware and embeds it directly in the firmware (see :ref:`common-oem-customizations`).
+- Ensure your autopilot has at least 2 MB of flash and 80 kB of memory.  Higher end 3MB autopilots with redundant IMUs will certainly work well but verify the specifications needed for your :ref:`autopilot <common-autopilots>` since even less expensive units with 2MB of flash will work also. Scripting is not available in F4 based autopilots.
+- Autopilots must have an SD card to store the script unless the user builds his own firmware and embeds it directly in the firmware (see :ref:`common-oem-customizations`), or certain dataflash logging chips are included on the board. Check the autopilot's firmware limitation list to be sure int includes ``AP_SCRIPTING_ENABLED`` (see :ref:`common-limited_firmware` for directions on how to do this)
 - Set :ref:`SCR_ENABLE <SCR_ENABLE>` to 1 to enable scripting (refresh or reboot to see all ``SCR_`` parameters).
 - Upload scripts (files with extension .lua) to the autopilot's SD card's ``APM/scripts`` folder.
 
