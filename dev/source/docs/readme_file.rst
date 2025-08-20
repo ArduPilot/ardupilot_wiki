@@ -31,7 +31,7 @@ Every autopilot board port should include a Readme.md file explaining the board'
 A good example is the `SpeedyBeeF405WING Readme.md <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SpeedyBeeF405WING/Readme.md>`_.
 
 `
-A template for a fictitious autopilot is `HERE <https://github.com/ArduPilot/ardupilot_wiki/blob/master/misc/readme_template.md>`__ which contains the proper formatting and sections (if applicable) that only requires text editing.
+A template for a fictitious autopilot is `HERE <https://raw.githubusercontent.com/ArduPilot/ardupilot_wiki/refs/heads/master/misc/readme_template.md>`__ which contains the proper formatting and sections (if applicable) that only requires text editing.
 
 .. _readme-intro:
 
