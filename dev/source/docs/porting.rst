@@ -17,9 +17,23 @@ Consider joining the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ 
 ..  youtube:: y2KCB0a3xMg
     :width: 100%
 
-Step 1 - getting started
-------------------------
 
+.. note:: Creating an fully functional, acceptable board port is a non-trivial task. Meeting the code, as well as required documentation, requirements can be a lengthy, iterative process. You may want to consider using outside consultation services such as `Foss UAV <https://fossuav.com/>`__  or  `ArduPilot Documentation Consulting <https://www.hwurzburg.com/>`__ . In addition, if you wish to have a dedicated wiki page for you board, wiki documentation consultants such as our `Wiki Maintainer <https://www.hwurzburg.com/>`__ can assist in this.
+
+Steps
+=====
+#. :ref:`Getting Started <getting_started>`
+#. :ref:`Create the hardware definition files<create-hwdefs>` for the bootloader and autopilot/peripheral
+#. :ref:`Build the firmware <build_firmware>`
+#. :ref:`Test the firmware<test-firmware>`
+#. :ref:`Create a acceptable PR (pull request) <submit-pr>` for dev team review with documentation that meets ArduPilot's requirements.
+
+.. _getting_started:
+
+Step 1 - Getting Started
+------------------------
+- Setup the local build environment on your computer. See :ref:`building-the-code` and create a local working branch for your board code development.
+- Create a PR against the Tools/AP_Bootloaders/board_types.txt file with a unique board ID for your device. This is usually quickly merged to reserve that board id and prevent other developers from claiming it for their board.
 - determine which microcontroller the new flight controllers uses. If it is a MCU we already support, for example STM32F405, STM32F427, STM32F745, STM32F765, STM32F777, STM32H743, or STM32H757, then the port should be relatively straight forward. If it is another MCU, ping us on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ for advice on how to proceed.
 - determine the crystal frequency (normally 8Mhz or 24Mhz). Refer to the schematic or read the writing on the crystal which is normally a small silver square.
 
@@ -29,125 +43,22 @@ Step 1 - getting started
 
 .. tip:: Choose your board name carefully! Use 13 characters or less for your board name, otherwise it may be truncated when the board name is sent from the flight controller to a ground station such as Mission Planner.
 
-Step 2 - create a hwdef.dat file for the board
-----------------------------------------------
+.. _create-hwdefs:
 
-- make a subdir in `libraries/AP_HAL_ChibiOS/hwdef <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ for your board (i.e. “new-board”).  This directory name will eventually be used during the build process (i.e. “waf configure --board new-board”) so keep the name relatively short.
-- copy/rename an existing template hwdef.dat that is similar to the CPU for your board into the directory created above. For example, if the board has a STMF40x chip, the `MatekF405 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/MatekF405/hwdef.dat>`__, `SpeedyBeeF405Mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SpeedyBeeF405Mini/hwdef.dat>`__, or `MambaF405v2 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/MambaF405v2/hwdef.dat>`__ hwdefs (among others) provide examples from which to start.
+Step 2 - create a hwdef.dat and hwdef-bl.dat files for the board
+----------------------------------------------------------------
+- make a local subdir in `libraries/AP_HAL_ChibiOS/hwdef <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ for your board (i.e. “/YourBoard”).  This directory name will eventually be used during the build process (i.e. “waf configure --board new-board”) so keep the name relatively short and descriptive of your board, similar, if not the same as, the board id you created above. This directory name will also be used as the firmware name and in MAVLink messages.
+- copy/rename an existing template hwdef.dat that is similar to the CPU for your board into the directory created above. For example, if the board has a STMF40x chip, the `MatekF405 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/MatekF405/hwdef.dat>`__, `SpeedyBeeF405Mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SpeedyBeeF405Mini/hwdef.dat>`__, or `MambaF405v2 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/MambaF405v2/hwdef.dat>`__ hwdefs (among others) provide examples from which to start. For H743 types with an IOMCU co-processor the `FMUV3 board <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/fmuv3/hwdef.dat>`__  or `Pixhawk6X <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk6X>`__ is a good starting point. If the boards does not include an IOMCU, then omitting the ``IOMCU_UART USART6`` is all that is required.
 
-.. tip:: The `FMUV3 board <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/fmuv3/hwdef.dat>`__ is commented heavily and contains most of the HAL directives used in hardware definition files. Also, the `scripts directory <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/scripts>`__ contains pin function assignments for the supported microprocessors for reference.
+.. tip:: The `FMUV3 board <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/fmuv3/hwdef.dat>`__ is commented heavily and contains most of the HAL directives used in hardware definition files.
 
-Step 3 - configure and build a minimal firmware for the board
--------------------------------------------------------------
+.. tip:: The `scripts directory <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/scripts>`__ contains pin function assignments for the ArduPilot supported microprocessors for reference.
 
-Follow the :ref:`Building the code <building-the-code>` instructions or take a shortcut and read the `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ file which includes doing the following:
+.. _build_firmware:
 
-- ``cd ardupilot`` (or wherever you have :ref:`cloned <git-clone>` ArduPilot to)
-- ``./waf configure --board new-board``
-- ``./waf copter``
-
-If successful the build should produce an .apj file in build/new-board/bin/arducopter.apj
-
-Step 4 - upload an ArduPilot compatible bootloader to the board
----------------------------------------------------------------
-
-Some boards come with a bootloader pre-installed while others rely on the board manufacturer to use `dfu <http://dfu-util.sourceforge.net/>`__ to install the firmware to the board.  In either case, in order to conveniently load ArduPilot to the board over USB, an ArduPilot compatible bootloader must be uploaded to the board using `dfu <http://dfu-util.sourceforge.net/>`__. "dfu" can be downloaded from `here <http://dfu-util.sourceforge.net/>`__.
-
-The source code for the bootloaders can be found in `AP_Bootloader
-<https://github.com/ArduPilot/ardupilot/tree/master/Tools/AP_Bootloader>`__
-but pre-compiled binaries are available for many boards in the
-`Tools/Bootloaders
-<https://firmware.ardupilot.org/Tools/Bootloaders>`__ directory on our
-firmware server. Please refer to the `README.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/README.md>`__ to see if one of the existing bootloaders is compatible for the new board.
-
-.. note::
-
-   Please see the section at the end of this document on how to create a bootloader for your board.
-
-.. note::
-
-   Your board must be plugged into USB *and* in DFU mode. DFU mode is usually entered by shorting two pins together on the board. Please see your board's documentation for details on how to accomplish this.
-
-Upload the bootloader to the board ``dfu-util -a 0 --dfuse-address 0x08000000 -D new-board-bootloader.bin -R``
-
-Step 5 - upload the minimal firmware onto the board
----------------------------------------------------
-
-If using Mission Planner to load the firmware to the board:
-
-- connect the board to the windows PC with a USB cable
-- go to MP’s Initial Setup >> Install Firmware screen and click on the **Load custom firmware** and select the .apj file and press OK. If the "Load custom firmware" link it not available go to the Config/Tuning >> Planner page and set the "Layout" to "Advanced"
-- if the MP fails to load the firmware to the board it is possible the “APJ_BOARD_ID” from your hwdef.dat file does not match the .apj firmware file.  The board-id in the bootloader is listed in the bootloader's `README.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/README.md>`__ file.  A temporary work around is to change the APJ_BOARD_ID in the hwdef.dat file to match the bootloader's. Longer term a bootloader specific to the new board needs to be created so that ground stations can differentiate this board from others and automatically load the correct firmware.
-
-  .. note::
-
-     Any time you make a change to the board definition file, you must clean up the build, and reconfigure WAF before re-compiling:
-- ``./waf distclean``
-- ``./waf configure --board new-board``
-
-.. note::
-
-    Windows7/8 users may need to create a .ini file to allow the USB device to be recognised. On Windows10 the board should be recognised automatically.
-
-If using waf to upload (Linux, MacOSX only):
-
-- connect the board to the PC with a USB cable
-- commands are in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ but in short, ``./waf copter --upload``
-
-After uploading, most likely no LEDs on the board will light up but it should be possible to connect to the board from your favourite ground station. An error message should appear on the ground station HUD complaining, “failed to init barometer”.
-
-Step 6 - fill in the hwdef.dat to specify pins used for each peripheral function
---------------------------------------------------------------------------------
-
-- read the `fmuv3 hwdef.dat file <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/fmuv3/hwdef.dat>`__ (used for The Cube) to understand the full list of hardware configurations that must be specified.
-- start filling in the new board’s hwdef.dat file for each bus (SPI, I2C, UART, CAN, etc). Ideally you can refer to the board’s schematic to determine how pins should be configured but if the schematic is not available a trial-and-error approach may work because on each CPU, there are a limited number of pins that can be used for each peripheral function. See the STM*.py scripts in the `AP_HAL_ChibiOS/hwdef/scripts directory <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/scripts>`__ as a guide as to what pins can be used for each peripheral function
-- as you enter new values into the hwdef.dat file you can re-compile and upload the firmware to test whether each peripheral function has begun working.
-
-.. tip::
-
-    to quickly check if the hwdef.dat file has any errors, run the `libraries/AP_HAL_ChibiOS/hwdef/scripts/chibios_hwdef.py <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/scripts/chibios_hwdef.py>`__ script on the new hwdef.dat file and look for errors and warnings in the output
-
-Step 7 - bring up the sensors
------------------------------
-
-similar to step 6, add the sensor related configuration to the hwdef.dat file
-start with the baro first, then IMU, then compass and finally any other sensors
-the default sensor orientation should also be filled in along with other things
-
-upload and the firmware and test the sensors are working.
-
-Step 8 - enable parameter storage
----------------------------------
-
-For boards with storage, the storage method used (either FRAM or Flash) should be specified in the hwdef.dat file.
-
-For an example of how FRAM is enabled, search for “ramtron” in the `fmuv3 hwdef.dat <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/fmuv3/hwdef.dat>`__ file.  In short you add a couple of lines like this:
-
-- ``# enable RAMTROM parameter storage``
-- ``define HAL_WITH_RAMTRON 1``
-
-For boards using Flash, the bootloader load address needs to be selected so that loading the code does not erase the parameters. See the FLASH_RESERVE_START_KB value in `skyviper-f412 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/skyviper-f412/hwdef.dat>`__ and `skyviper-v2450 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/skyviper-v2450/hwdef.dat>`__ as a reference.
-
-It is also possible to use ardupilot on a board with no storage.  In this case configuration parameters will have their default values at startup.
-
-The paramter defaults can be defined by creating a defaults.parm file in the same directory as the hwdef.dat file.  In the case that you are including another hwdef.dat, you may also consider using ``@include PATH_TO_OTHER_DEFAULTS_PARM`` in your new defaults.parm file.
-
-Here is `how it was done for the skyviper <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/skyviper-v2450/defaults.parm>`__
-
-Step 9 - Creating a Bootloader
-------------------------------
-
-When doing an initial port you may be happy to use a bootloader that
-was built for another board. That gets you going quickly, but also
-means the bootloader will not have the right board ID for your board,
-and may not have the right LED displays.
-
-To create a bootloader that is just right for your board you need to
-build the a hwdef-bl.dat for your board. That goes in the same
-directory as your hwdef.dat, and has the same format, but should not
-include things like I2C, SPI or CAN peripherals. There are lots of
-examples of hwdef-bl.dat files already in the hwdef directory you can
-use as examples.
+Step 3 - Build the firmware
+---------------------------
+- First, create the bootloader. To create a bootloader that is just right for your board you need to build the a hwdef-bl.dat for your board. That goes in the same directory as your hwdef.dat, and has the same format, but should not include things like I2C, SPI or CAN peripherals. There are lots of examples of hwdef-bl.dat files already in the hwdef directory you can use as examples.
 
 The key things you must have in your hwdef-bl.dat are:
 
@@ -155,14 +66,43 @@ The key things you must have in your hwdef-bl.dat are:
 - you must set FLASH_RESERVE_START_KB to zero (so the bootloader is placed at the start of flash)
 - Your SERIAL_ORDER will control what ports the bootloader will be active on. Just having OTG1 for USB is fine, or you can list some serial UARTs.
 
+.. note:: if the autopilot has SD card capability, you may want to include the capability of loading firmware directly from the SD card in the bootloader. See :ref:`Building autoflash firmware <building-autoflash-firmware>` for more information on this feature and instructions on how to modify your files to allow this capability to the included in your autopilot firmware.
+
 To build the bootloader you do the following:
 
-- ``./waf configure --board YourBoard --bootloader``
-- ``./waf clean``
-- ``./waf bootloader``
+.. code::
 
-Step 10 - Board Testing
------------------------
+    Tools/scripts/build_bootloaders.py YourBoard 
+
+- the bootloader will be created in  the local ``Tools/bootloaders`` directory in your local working branch.
+
+Then create the board firmware. Follow the :ref:`Building the code <building-the-code>` instructions or take a shortcut and read the `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ file which includes doing the following:
+
+.. code ::
+
+    cd ardupilot (or wherever you have :ref:`cloned <git-clone>` ArduPilot to)
+    ./waf configure --board YourBoard
+    ./waf copter  (or plane or whichever vehicle you are going to test the firmware on.)
+
+If successful the build should produce an .apj file in ``ardupilot/build/YourBoard/bin/``
+
+.. _test-firmware:
+
+Step 4 - Load and test the firmware
+-----------------------------------
+Use `dfu <http://dfu-util.sourceforge.net/>`__ to install the firmware to the board. See :ref:`common-loading-firmware-onto-chibios-only-boards`.
+
+.. note::
+
+   Your board must be plugged into USB *and* in DFU mode. DFU mode is usually entered by shorting two pins together on the board or using its "boot" button as it powers up. Please see your board's documentation for details on how to accomplish this.
+
+
+After the first firmware install with bootloader is done. You update changes  in (Linux, MacOSX only) as the same time the firmware build is done:
+
+- connect the board to the PC with a USB cable
+- commands are in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ but in short, ``./waf copter --upload``
+
+After uploading, it should be possible to connect to the board from your favourite ground station. Error messages should appear on the ground station HUD complaining, “failed to init xyz" if that sensor or peripheral has not been configured properly in the hwdef.dat
 
 A board port submitted to ArduPilot should be tested before submitting to ArduPilot for inclusion in the project.
 
@@ -178,23 +118,41 @@ The test setup should have a receiver and GPS/Compass attached to the board. Loa
 - move the GPS to each UART output after setting all other UART protocols to NONE and the tested UART to GPS to assure the UART is functioning.
 - UARTs with CTS/RTS lines should use a telemetry radio with those connected to be sure they function with BRD_SERx__CTSRTS=1
 
-Next Steps
-----------
-.. note:: if the autopilot has SD card capability, you may want to include the capability of loading firmware directly from the SD card. See :ref:`Building autoflash firmware <building-autoflash-firmware>` for more information on this feature and instructions on how to modify your files to allow this capability to the included in your autopilot firmware.
+.. _submit-pr:
 
-If you have gotten this far, congratulations you have ported ArduPilot to a new board!  Please reach out to the other developers on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ to announce your success.
+Submit the board to ArduPilot
+-----------------------------
+If you have gotten this far, congratulations you have ported ArduPilot to a new board!  Please reach out to the other developers on the `ArduPilot Discord Chat in the hardware channel <https://ardupilot.org/discord>`__ to announce your success.
 
-For widely available boards it is very likely we will help you get the board on the official list of supported boards including automatic firmware builds, easy uploading through the ground stations and onto our wiki! In any case, we welcome new ports so please contact us.
-
-In order to add the board to the official build list, get a board ID number reserved by submitting a change PR to this `list <https://github.com/ArduPilot/ardupilot/blob/master/Tools/AP_Bootloader/board_types.txt>`__ ,for a new board ID next in the list above 1000. Use the text identifier for the hwdef files, not the board number directly.
-
-Then submit a pull request, adding the following to the board's subfolder in the AP_HAL_ChibiOS/hwdef library folder, and containing a commit titled hwdef:add <your board name here> and containing:
+If you wish for the board firmware to be downloadable from ArduPilot and possibly be listed in its documentation, you will need to submit a PR (pull-request) to the ArduPilot repo. You can push your local branch to your web based ``fork`` and then submit a PR from it to ArduPilot which will be reviewed by Dev team members.The PR should contain the following files:
 
 - hwdef.dat with correct board id
 - hwdef-bl.dat with correct board id
-- :ref:`README.md <readme_file>` with board pinout, images, and configuration data needed for a wiki page
+- :ref:`README.md <readme_file>` with board pinout, images, and configuration data needed for a user.This has some fairly rigid requirements for content and format. A link to this file will be included in the ArduPilot wiki once the board is merged.If you wish a dedicated page in the Wiki for your board, you can develop a Wiki PR for it or have it created as a service by a contractor, like our `Wiki Maintainer <https://www.hwurzburg.com>`__
 - defaults.parm if board specific defaults are needed. Note do not define things already defaulted. Put Serial port protocol default changes and Battery monitor params in the hwdef file,not in the defautls.param file.
-- and a commit tilted Tools: add your board name here> bootloader containing the bootloader.
+- the above files should be in a single commit titled: "hwdef: YourBoard"
+- in Tools: add a commit for yur bootloader titled: "bootloaders:YourBoard" (so a total of two commits)
+- in the PR's description box, list the tests you have done on the board.
+- do **NOT** push "merge commits" after thid. You do not have to keep it up to date with master. If something is added to master since you last rebased your local branch on master that causes a CI failure, usee the "Update branch" button on the PR to REBASE (not merge)
+
+
+Notes on parameter storage
+--------------------------
+For boards with storage, the storage method used (either FRAM or Flash) should be specified in the hwdef.dat file.
+
+For an example of how FRAM is enabled, search for “ramtron” in the `fmuv3 hwdef.dat <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/fmuv3/hwdef.dat>`__ file.  In short you add a couple of lines like this:
+
+- ``# enable RAMTROM parameter storage``
+- ``define HAL_WITH_RAMTRON 1``
+
+For boards using Flash, the bootloader load address needs to be selected so that loading the code does not erase the parameters. See the FLASH_RESERVE_START_KB value in `skyviper-f412 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/skyviper-f412/hwdef.dat>`__ and `skyviper-v2450 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/skyviper-v2450/hwdef.dat>`__ as a reference.
+
+It is also possible to use ardupilot on a board with no storage.  In this case configuration parameters will have their default values at startup.
+
+The parameter defaults can be defined by creating a defaults.parm file in the same directory as the hwdef.dat file.  In the case that you are including another hwdef.dat, you may also consider using ``@include PATH_TO_OTHER_DEFAULTS_PARM`` in your new defaults.parm file.
+
+Here is `how it was done for the skyviper <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/skyviper-v2450/defaults.parm>`__
+
 
 
 .. toctree::
