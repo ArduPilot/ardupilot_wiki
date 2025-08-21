@@ -13,8 +13,8 @@ Any RC input channel can be assigned any auxiliary function. However, the RC cha
 Assigning the Feature
 =====================
 
-The RCx_OPTION parameters control these features. For example, the :ref:`RC7_OPTION <RC7_OPTION>` parameter controls which feature is assigned to RC input 7. Each RC channel has its
-own RCx_OPTION parameter that can be accessed in the full parameter list.
+The ``RCx_OPTION`` parameters control these features. For example, the :ref:`RC7_OPTION <RC7_OPTION>` parameter controls which feature is assigned to RC input 7. Each RC channel has its
+own ``RCx_OPTION`` parameter that can be accessed in the full parameter list.
 
 
 Supported Features
@@ -340,6 +340,8 @@ Intended as continuous PWM range control inputs:
 +----------------------+----------------------------+----------+---------+---------+-------+
 
 .. note:: 203-204 are not implemented for any vehicle, reserved for future use.
+
+.. note:: Motion axis/Attittude control channels can be remapped using :ref:`common-rcmap`.
 
 Description of Features
 =======================
