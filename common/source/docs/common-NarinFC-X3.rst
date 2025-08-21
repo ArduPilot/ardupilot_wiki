@@ -203,7 +203,7 @@ Pads for a second analog battery monitor are provided. To use:
 Analog RSSI and AIRSPEED inputs
 ===============================
 
-Analog RSSI uses RSSI_ANA_PIN = 8
+Analog RSSI uses :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` = 8
 Analog Airspeed sensor would use ARSPD_PIN = 4
 
 Compass
