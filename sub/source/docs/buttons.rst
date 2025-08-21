@@ -10,6 +10,8 @@ Instead, Sub uses "joystick" buttons associated with the GCS or GCS attached Joy
 
 Up to 32 buttons can be configured with a host of functions. In addition, by assigning a "shift" button function, each button can execute a "shifted" function, so up to 63 functions can be implemented.
 
+.. note:: See :ref:`sub-hardware` for the default assignments of button functions.
+
 Each button has two parameters:
 
 * ``BTNx_FUNCTION``
@@ -198,5 +200,3 @@ The possible values for the function or shifted function are:
 +---------+-----------------------+-------------------------------------------------------------------------------+
 | 111     | script_4              | Register :ref:`Lua script <common-lua-scripts>` input 4 as pressed/held.      |
 +---------+-----------------------+-------------------------------------------------------------------------------+
-
-* See :ref:`sub-hardware` for the default assignments of button functions.
