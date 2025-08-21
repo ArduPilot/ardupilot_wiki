@@ -40,6 +40,9 @@ New Board Support
 - DAKEFPVH743/H743Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6978
 - BDShot support for ARKV6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/6981
 - AcctonGodwit_GA1, see https://github.com/ArduPilot/ardupilot_wiki/pull/7054
+- YARIV6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
+- CUAV-X25-EVO, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
+- JHEMCUF405WING, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
 
 New Peripheral Support
 ======================
