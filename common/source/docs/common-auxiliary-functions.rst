@@ -422,7 +422,7 @@ Other functions are:
                                          | to the mode indicated by the ch5 flight mode switch.
     ADSB-Avoidance                       | When the switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>`
                                          | (avoidance of manned aircraft) is enabled, otherwise it's disabled
-    Precision Loiter                     | Turns on/off :ref:`Precision Loiter <precision-landing-with-irlock>`.
+    Precision Loiter                     | Turns on/off :ref:`Precision Loiter <precision-landing-and-loiter>`.
                                          | (i.e. holding position above a target in Loiter mode
                                          | using IR-Lock sensor)
     Object Avoidance                     | When the switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>`

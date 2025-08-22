@@ -74,7 +74,7 @@ For guidance on cable design, colour coding, and EMI-compliant wiring, especiall
     Power Tether <common-power-tether>
     PPM Encoder <common-ppm-encoders-new>
 [site wiki="copter"]
-    Precision Landing and Loiter using IRLock <precision-landing-with-irlock>
+    Precision Landing and Loiter <precision-landing-and-loiter>
 [/site]
     Radio Control Systems <common-rc-systems>
     Rangefinders (Sonar, Lidar, Depth Cameras) <common-rangefinder-landingpage>

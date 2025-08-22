@@ -116,7 +116,7 @@ tuning options for the vehicle.
     Parameter List (Full) <parameters>
     Parameter Reset <common-parameter-reset>
 [site wiki="copter"]
-    Precision Landing and Loiter <precision-landing-with-irlock>
+    Precision Landing and Loiter <precision-landing-and-loiter>
 [/site]
     RC Input Channel Mapping (RCMAP) <common-rcmap>
     RC Options <common-rc-options>
