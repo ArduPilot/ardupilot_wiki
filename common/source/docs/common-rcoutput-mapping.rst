@@ -10,7 +10,11 @@ of the available functions that can be assigned to an output are.
 
 ArduPilot supports up to 32 outputs. These may be via DroneCAN ESCs or directly from autopilot outputs, or a mixture of both.
 
-.. note:: see the left sidebar menu for major output categories to navigate to desired functions on this page quickly.
+.. note:: See the left sidebar menu for major output categories to navigate to desired functions on this page quickly.
+
+[site wiki="sub"]
+.. note:: See :ref:`sub-hardware` for the default output assignments.
+[/site]
 
 The SERVOn_FUNCTION parameters
 ------------------------------
