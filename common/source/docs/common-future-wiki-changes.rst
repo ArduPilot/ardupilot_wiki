@@ -11,9 +11,7 @@ New Board Support
 =================
 - AeroFox H7 , see https://github.com/ArduPilot/ardupilot_wiki/pull/6446
 - GEPRC TAKER H7 BT, see https://github.com/ArduPilot/ardupilot_wiki/pull/6450
-- MicoAir743-AIO, see https://github.com/ArduPilot/ardupilot_wiki/pull/6511
 - CrazyF405 ELRS, see https://github.com/ArduPilot/ardupilot_wiki/pull/6513
-- MicoAir743v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/6525
 - ARK FPV, see https://github.com/ArduPilot/ardupilot_wiki/pull/6560
 - DroneerF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/6567
 - Updates to BETAFPVF405 family of boards, see https://github.com/ArduPilot/ardupilot_wiki/pull/6578
