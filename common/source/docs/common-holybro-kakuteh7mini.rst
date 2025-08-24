@@ -1,7 +1,7 @@
 .. _common-holybro-kakuteh7mini:
 
 ===========================
-Holybro Kakute H7 Mini V1.3
+Holybro Kakute H7 Mini
 ===========================
 
 .. image:: ../../../images/holybro-kakuteh7mini.jpg
@@ -16,11 +16,11 @@ Specifications
 
    -  STM32H743 32-bit processor
    -  AT7456E Video processor for OSD
-   -  16MB data flash for logging
+   -  16 MByte (v1.1) / 128 MByte (v1.3, v1.5) data flash for logging
 
 -  **Sensors**
 
-   -  MPU6000 (accel & gyro)
+   -  V1.1: MPU6000, V1.3: BMI270, V1.5: ICM-42688-P (accel & gyro)
    -  BMP280 barometer
 
 -  **Power**
@@ -42,7 +42,7 @@ Specifications
 Where to Buy
 ============
 
-- Available from many retailers including `Holybro <https://shop.holybro.com/kakute-h7-mini_p1308.html>`__
+- v1.1 & v1.3 are discontinued. v1.5 has been unavailable since mid 2025. See `Holybro <https://holybro.com/collections/flight-controllers/products/kakute-h7-mini>`__ for current availability.
 
 
 Pinout
@@ -51,18 +51,71 @@ Pinout
 .. image:: ../../../images/kakuteh7-mini-pinout.jpg
     :target: ../_images/kakuteh7-mini-pinout.jpg
 
+=============     =================================================
+Pin               Function
+=============     =================================================
+VTX+              9V for HD System or other VTX, by default ON/OFF is
+                  controlled by RELAY2. See :ref:`common-relay`
+                  Can be controlled by RELAY2
+SDA, SCL          I2C connection (for peripherals)
+5v                5v output (1.5A max)
+3v3               3.3v output (0.25A max)
+Vi                Video input from FPV camera
+Vo                Video output to video transmitter
+CAM               To camera OSD control
+G or GND          Ground
+RSI               Analog RSSI (0-3.3v) input from receiver
+R2, T3            UART2 RX and TX
+R3, T3            UART3 RX and TX
+R4, T4            UART4 RX and TX
+R6, T6            UART6 RX and TX (UART6 RX is also located in the
+                  GH plug)
+LED               WS2182 addressable LED signal wire
+Z-                Piezo buzzer negative leg
+=============     =================================================
+
+ESC Port
+--------
+
+=============     =================================================
+Pin               Function
+=============     =================================================
+B+                Battery positive voltage (2S-6S)
+R7                UART7 RX
+GND               Ground
+CURRENT           CURRENT
+M1                Motor signal output 1
+M2                Motor signal output 2
+M3                Motor signal output 3
+M4                Motor signal output 4
+=============     =================================================
+
+VTX Port
+--------
+=============     =================================================
+Pin               Function
+=============     =================================================
+Vtx+              9V for HD System or other VTX, by default ON/OFF is
+                  controlled by RELAY2. See :ref:`common-relay`
+G                 Ground
+T1                UART1 TX
+R1                UART1 RX
+G                 Ground
+R6                UART6 RX
+=============     =================================================
+
 UART Mapping
 ============
 
 The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 
 - SERIAL0 -> USB
-- SERIAL1 -> UART1 (Telem1)
+- SERIAL1 -> UART1 (DJI Goggles OSD by default) DMA-Enabled
 - SERIAL2 -> UART2 (Telem2) No DMA
-- SERIAL3 -> UART3 (GPS)
-- SERIAL4 -> UART4
-- SERIAL6 -> UART6 (used for RC input and RC telemetry, PPM is not supported)
-- SERIAL7 -> UART7 (Receive only, ESC Telemetry) No DMA
+- SERIAL3 -> UART3 (GPS) DMA-Enabled
+- SERIAL4 -> UART4  DMA-Enabled
+- SERIAL6 -> UART6 (used for RC input and RC telemetry, PPM is not supported) DMA-Enabled
+- SERIAL7 -> UART7 (Receive only, ESC Telemetry by default) No DMA
 
 RC Input
 ========
@@ -82,7 +135,7 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 OSD Support
 ===========
 
-The KakuteH7 Mini supports OSD using :ref:`OSD_TYPE<OSD_TYPE>` 1 (MAX7456 driver).
+The KakuteH7 Mini supports OSD using :ref:`OSD_TYPE<OSD_TYPE>` 1 (MAX7456 driver). The defaults are also setup to allow DJI Goggle OSD support on UART1.
 
 PWM Output
 ==========
@@ -117,7 +170,7 @@ The correct battery setting parameters are:
  - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 10
  - :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 11 , if external sensor used.
  - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 11.1
- - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` should be set to match external current sensor, if used. For example, if the Holybro Teeko32 4in1 ESC is used, this value would be 59.5
+ - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` should be set to match external current sensor, if used. For example, if the Holybro Tekko32 4in1 ESC is used, this value would be 59.5
  
  .. note:: these values are already set by default, but can be changed to trim the voltage and/or current as needed, or to suit other ESCs.
  
@@ -141,6 +194,6 @@ Firmware
 ========
 
 Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
-"KakuteH7Mini".
+"KakuteH7Mini" (v1.1 & v1.5) and "KakuteH7Mini-Nand" (v1.3).
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
