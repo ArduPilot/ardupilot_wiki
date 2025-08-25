@@ -96,6 +96,7 @@ Closed Hardware
     Brother Hobby H743 <common-brotherhobbyh743>
     CBUnmanned H743 Stamp <common-StampH743>
     CSKY405 <common-CSKYF405>
+    CUAV-X25-EVO <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-X25-EVO>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Flywoo F405 Pro <common-flywoof405pro>
     Flywoo F405HD 1-2S <common-flywoof405hd>
@@ -127,6 +128,7 @@ Closed Hardware
     iFlight Blitz Wing H743 <common-blitzh743wing>
     iFlight Thunder H7 <common-iflight-thunder-H7>
     JAE JFB-110 <common-jae-jfb110>
+    JHEMCU F405WING <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/JHEMCUF405WING>
     JHEMCU H743HD <common-jhemcu-h743hd>
     LongBowF405WING <common-longbowf405wing>
     Mamba F405 MK2 <common-mamba405-mk2>
@@ -191,6 +193,7 @@ Closed Hardware
     SpeedyBee F4 V3/V4 <common-speedybeef4-v3>
     SpeedyBee F405 Mini <common-speedybeef405-mini>
     SpeedyBeeF405WING/WING Mini <common-speedybeef405wing>
+    SVehicle E2-Plus <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/SVehicle-E2>
     TBS Lucid H7 <common-tbs-lucidh7>
     TBS Lucid H7 Wing <common-tbs-lucid-h7-wing>
     ThePeach FCC-K1 <common-thepeach-k1>
@@ -199,6 +202,7 @@ Closed Hardware
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
     X-MAV-AP-H743v2 <common-X_MAV_H743v2>
+    YARIV6X <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/YARIV6X>
     YJUAV A6SE <common-yjuav-a6se>
     YJUAV A6SE H743<common-yjuav-a6se-h743>
     YJUAV-A6Ultra <common-yjuav-a6ultra>
