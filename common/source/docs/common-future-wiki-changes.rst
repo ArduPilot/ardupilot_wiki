@@ -41,6 +41,7 @@ New Board Support
 - YARIV6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
 - CUAV-X25-EVO, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
 - JHEMCUF405WING, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
+- SVehicle E2-Plus, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
 
 New Peripheral Support
 ======================
