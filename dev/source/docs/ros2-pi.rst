@@ -101,7 +101,7 @@ The simplest solution is to wire an open telemetry port.
 ..
     Consider documenting flow control setup, and also any configuration to enable /dev/ttyS0
 
-This allow GPIO13 and GPIO15 (/dev/ttySO) to communicate with ArduPilot.
+This allow GPIO14 and GPIO15 (/dev/ttySO) to communicate with ArduPilot.
 
 Cross Compile an application with Docker
 ========================================
