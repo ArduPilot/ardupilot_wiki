@@ -1,6 +1,6 @@
 .. _common-MicoAir743v2:
 
-[copywiki destination="plane,copter,rover,blimp,sub']
+[copywiki destination="plane,copter,rover,blimp,sub"]
 ============
 MicoAir743v2
 ============

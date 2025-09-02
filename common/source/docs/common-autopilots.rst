@@ -145,7 +145,6 @@ Closed Hardware
     MicoAir743 <common-MicoAir743>
     MicoAir743-AIO <common-MicoAir743-AIO>
     MicoAir743v2 <common-MicoAir743v2>
-    NxtPX4v2 <common-NxtPX4v2>
     ModalAI Flight core <https://www.modalai.com/products/flight-core>
 [site wiki="copter,rover,blimp"]
     ModalAI VOXL2 <common-modalai-voxl2>
