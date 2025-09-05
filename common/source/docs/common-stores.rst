@@ -45,6 +45,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
 * `uAvionix <https://uavionix.com/>`__
 * `UAV Systems International <https://uavsystemsinternational.com/collections/all>`__
+* `VECROS <https://store.vecros.com>`_
 * `VimDrones <https://shop.vimdrones.com/>`__
 * `ZeroOne <https://www.01aero.com/>`__
 
