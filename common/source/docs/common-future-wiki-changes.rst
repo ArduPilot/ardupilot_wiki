@@ -42,6 +42,7 @@ New Board Support
 - CUAV-X25-EVO, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
 - JHEMCUF405WING, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
 - SVehicle E2-Plus, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
+- CUAV Pixhawk6X V2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7091
 
 New Peripheral Support
 ======================
