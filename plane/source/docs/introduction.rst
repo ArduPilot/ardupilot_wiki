@@ -52,7 +52,12 @@ Vehicle Configuration Types
    - SLT - fixed wing motor plus separate VTOL motors 
    - Tilt-Rotors - which tilt motors from vertical for VTOL to horizontal for fixed wing operation
    - Tailsitters - which takeoff and land with the nose vertical instead of horizontal
+- Rocket Gliders (Model Rocket boosted gliders configured as Elevon based flying wings or tailsitters)
 
+Model Rocket Telemetry and Event controller
+===========================================
+
+Ardupilot can provide telemetry and event controls for many types of air vehicles using current baseline code with no additional code changes needed to support model rocket telemetry and event control (deploying parachutes, firing pyro charges for ejection, etc.).  The model rocket community is just beginning to discover the advanced capabilities of ardupilot and ardudrone for use in model rockets, especially rocket gliders and rocket drones.  The flight features of ardupilot on any of the approved flight controllers (Pixhawk, Matek, Omnibus F4 Pro V3, etc.) are far more advanced than most of the traditional altimeters, ejection controllers, and GPS tracking systems commonly used by the model rocket community.  Ardupilot flight controllers placed on electronic bay sleds between circular rocket bulkheads and coupler tubes can be used to control rocket boosted gliders configured as elevon based flying wings, or even as tailsitters boosted by rocket engines. The configuration is simple and easy to download and configure using the latest version of ardupilot, loading any required bootloaders and firmware described by specific types of flight control hardware, then setting parameters for the type of glider used by the rocket boost pod or rocket plane.  Unique features of advanced model rocket STEM technology such as Thrust Vector Control (TVC), or American Rocket Challenge (ARC) airbrake designs are not yet coded into a branch of ardupilot or ardudrone, but currently forked code work is attempting to also standardize TVC and Airbrake control.  Current Arduino code is typically re-invented over and over by students and members of the advanced model rocket community, when the capabilities of ardupilot and ardudrone are much safer and reliable alternatives. Links to "how to" guidance will be added as the TVC and airbrake capabilities are submitted for pull requests and approved by the ardupilot community standards.  
 
 Flight Features
 ===============
