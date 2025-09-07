@@ -173,5 +173,10 @@ const carouselData = [
         "imgSrcJpeg": "images/slides_35_BlueRov-920.jpg",
         "imgAlt": "slides_35_BlueRov-920"
     },
+    {
+        "imgSrcWebp": "images/slides_36_k1000ule.webp",
+        "imgSrcJpeg": "images/slides_36_k1000ule.jpg",
+        "imgAlt": "slides_36_k1000ule from Kraus Hamdani Aerospace"
+    },
     // continue listing all carousel items...
 ];
