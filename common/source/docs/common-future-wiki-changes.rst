@@ -43,6 +43,7 @@ New Board Support
 - JHEMCUF405WING, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
 - SVehicle E2-Plus, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
 - CUAV Pixhawk6X V2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7091
+- Greensight UltraBlue, see https://github.com/ArduPilot/ardupilot_wiki/pull/7095
 
 New Peripheral Support
 ======================
