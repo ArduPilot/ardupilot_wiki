@@ -90,7 +90,6 @@ AP_FRSKY_SPORT_PASSTHROUGH_ENABLED              18376  18240  18328
 HAL_WITH_MSP_DISPLAYPORT                        18328  18248  18240   
 AP_FENCE_ENABLED                                17488  50360  44748   
 HAL_SOLO_GIMBAL_ENABLED                         17432  17192  17424   
-AP_EXTERNAL_AHRS_SBG_ENABLED                    15776  15772  15764   
 HAL_EFI_ENABLED                                 14724  14816  14784   
 COMPASS_CAL_ENABLED                             14624  14592  14600   
 EK3_FEATURE_OPTFLOW_FUSION                      12824  12816  12832   
@@ -99,6 +98,7 @@ AP_RCPROTOCOL_CRSF_ENABLED                      11648  11640  11648
 AP_BARO_PROBE_EXTERNAL_I2C_BUSES                11296  11296  11296   
 OSD_PARAM_ENABLED                               11116  11596  8152    
 HAL_VISUALODOM_ENABLED                          10616  10520  10648   
+AP_EXTERNAL_AHRS_SBG_ENABLED                    10428  10584  9844    
 AP_EXTERNAL_AHRS_INERTIALLABS_ENABLED           10328  10344  10224   
 HAL_CRSF_TELEM_ENABLED                          9680   9680   9680    
 AP_RPM_ENABLED                                  9616   5504   5648    
