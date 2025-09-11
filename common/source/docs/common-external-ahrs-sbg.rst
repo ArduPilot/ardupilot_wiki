@@ -1,4 +1,4 @@
-.. _common-external-ahrs-sbgecom:
+.. _common-external-ahrs-sbg:
 
 =========================
 SBG Systems External AHRS
@@ -15,7 +15,7 @@ SBG Systems products provide a range of benefits to ArduPilot users and can be i
 - Improved positioning and attitude performance in GNSS-contested environments
 - Performance under challenging dynamic conditions (e.g. catapult launches, VTOL operations, high-g or high angular rate operations)
 
-The sbgECom driver is streamlined to provide a simple plug-and-play architecture, removing engineering obstacles and allowing the acceleration of the design, development, and launch of platforms to keep pace with the rapid rate of innovation.
+The SBG driver is streamlined to provide a simple plug-and-play architecture, removing engineering obstacles and allowing the acceleration of the design, development, and launch of platforms to keep pace with the rapid rate of innovation.
 
 The driver supports `all SBG Systems products <https://www.sbg-systems.com/products>`.
 In particular the following systems are recommended:
@@ -87,16 +87,20 @@ After the serial parameters have been configured, configure:
 Published Data
 ==============
 
-The sbgECom driver is configured to handle to following incomming messages:
+The SBG driver is configured to handle to following incomming messages:
 
-- `IMU Short <https://developer.sbg-systems.com/sbgECom/5.2/binary_messages.html#SBG_ECOM_LOG_IMU_SHORT>`: accelerations and rotation rates.
-- `Magnetic Data <https://developer.sbg-systems.com/sbgECom/5.2/binary_messages.html#SBG_ECOM_LOG_MAG>`: calibrated magnetometer data.
-- `GNSS Position <https://developer.sbg-systems.com/sbgECom/5.2/binary_messages.html#SBG_ECOM_LOG_GPSX_POS>`: position information from the GNSS receiver.
-- `GNSS Velocity <https://developer.sbg-systems.com/sbgECom/5.2/binary_messages.html#SBG_ECOM_LOG_GPSX_VEL>`: velocity and course information from the GNSS receiver.
-- `EKF Quaternion <https://developer.sbg-systems.com/sbgECom/5.2/binary_messages.html#SBG_ECOM_LOG_EKF_QUAT>`: INS orientation using quaternions.
-- `EKF Navigation <https://developer.sbg-systems.com/sbgECom/5.2/binary_messages.html#SBG_ECOM_LOG_EKF_NAV>`: INS velocity and position.
+- `UTC Time <https://developer.sbg-systems.com/sbgECom/5.3/binary_messages.html#SBG_ECOM_LOG_UTC_TIME>`: UTC time reference.
+- `IMU Data <https://developer.sbg-systems.com/sbgECom/5.3/binary_messages.html#SBG_ECOM_LOG_IMU_DATA>`: accelerations and rotation rates.
+- `IMU Short <https://developer.sbg-systems.com/sbgECom/5.3/binary_messages.html#SBG_ECOM_LOG_IMU_SHORT>`: accelerations and rotation rates.
+- `Magnetic Data <https://developer.sbg-systems.com/sbgECom/5.3/binary_messages.html#SBG_ECOM_LOG_MAG>`: calibrated magnetometer data.
+- `GNSS Position <https://developer.sbg-systems.com/sbgECom/5.3/binary_messages.html#SBG_ECOM_LOG_GPSX_POS>`: position information from the GNSS receiver.
+- `GNSS Velocity <https://developer.sbg-systems.com/sbgECom/5.3/binary_messages.html#SBG_ECOM_LOG_GPSX_VEL>`: velocity and course information from the GNSS receiver.
+- `EKF Euler <https://developer.sbg-systems.com/sbgECom/5.3/binary_messages.html#SBG_ECOM_LOG_EKF_EULER>`: INS orientation using Euler angles.
+- `EKF Quaternion <https://developer.sbg-systems.com/sbgECom/5.3/binary_messages.html#SBG_ECOM_LOG_EKF_QUAT>`: INS orientation using quaternions.
+- `EKF Navigation <https://developer.sbg-systems.com/sbgECom/5.3/binary_messages.html#SBG_ECOM_LOG_EKF_NAV>`: INS velocity and position.
+- `Air Data <https://developer.sbg-systems.com/sbgECom/5.3/binary_messages.html#SBG_ECOM_LOG_AIR_DATA>`: barometric altitude and true airspeed.
 
-Moreover, the sbgECom driver is also configured to send the following messages from the autopilot to the INS to improve Extended Kalman Filter from external sensors:
+Moreover, the SBG driver is also configured to send the following messages from the autopilot to the INS to improve Extended Kalman Filter from external sensors:
 
-- `Air Data <https://developer.sbg-systems.com/sbgECom/5.2/binary_messages.html#SBG_ECOM_LOG_AIR_DATA>`: barometric altitude and true airspeed.
-- `Magnetic Data <https://developer.sbg-systems.com/sbgECom/5.2/binary_messages.html#SBG_ECOM_LOG_MAG>`: calibrated magnetometer data.
+- `Air Data <https://developer.sbg-systems.com/sbgECom/5.3/binary_messages.html#SBG_ECOM_LOG_AIR_DATA>`: barometric altitude and true airspeed.
+- `Magnetic Data <https://developer.sbg-systems.com/sbgECom/5.3/binary_messages.html#SBG_ECOM_LOG_MAG>`: calibrated magnetometer data.

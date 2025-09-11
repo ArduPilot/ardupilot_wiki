@@ -37,7 +37,7 @@ Refer to :ref:`common-external-ahrs-vectornav` for setup.
 
 SBG Systems
 -----------
-Refer to :ref:`common-external-ahrs-sbgecom` for setup.
+Refer to :ref:`common-external-ahrs-sbg` for setup.
 
 MicroStrain
 -----------
@@ -109,5 +109,5 @@ With higher baud rates, MicroStrain7 should be suitable for Copter and QuadPlane
     :hidden:
 
     common-external-ahrs-vectornav
-    common-external-ahrs-sbgecom
+    common-external-ahrs-sbg
 
