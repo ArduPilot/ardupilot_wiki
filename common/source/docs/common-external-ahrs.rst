@@ -11,9 +11,10 @@ Supported Systems
 
 Currently, ArduPilot supports these systems:
 
-- `MicroStrain 3DM® Series <https://www.microstrain.com/inertial-sensors/all-sensors>`_
+- `MicroStrain 3DM® Series <https://www.microstrain.com/inertial-sensors/all-sensors>`__
 - `VectorNav <https://www.vectornav.com/products>`__
 - `Inertialabs INS-P <https://inertiallabs.com/wp-content/uploads/2023/09/INS-B-P-D-DL_Datasheet_rev-6.27_August_2023.pdf>`__
+- `SBG Systems <https://www.sbg-systems.com/ins/>`__
 
 Setup and Configuration
 =======================
@@ -34,12 +35,16 @@ VectorNav
 ---------
 Refer to :ref:`common-external-ahrs-vectornav` for setup.
 
+SBG Systems
+-----------
+Refer to :ref:`common-external-ahrs-sbg` for setup.
+
 MicroStrain
 -----------
 
     - :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` = 11 (External AHRS)
 
-    - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 1 (VectorNAV), 2 (MicroStrain5), 5(InertialLabs), or 7(MicroStrain7)
+    - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 1 (VectorNAV), 2 (MicroStrain5), 5(InertialLabs), 7(MicroStrain7), or 8(SBG Systems)
 
 This will replace ArduPilot’s internally generated INS/AHRS subsystems with the external system.
 The MicroStrain system must be configured via `Sensor Connect <https://www.microstrain.com/software/sensorconnect>`__ before use.
@@ -104,4 +109,5 @@ With higher baud rates, MicroStrain7 should be suitable for Copter and QuadPlane
     :hidden:
 
     common-external-ahrs-vectornav
+    common-external-ahrs-sbg
 
