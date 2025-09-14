@@ -44,6 +44,7 @@ plane_aerobatics.lua(in Aerobatics subdir)  Autonomous trajectory precise aeroba
 plane_package_place.lua                     Quadplane payload place script
 plane_precland.lua                          Precision landing/loitering system for QuadPlanes
 plane_ship_landing.lua                      Script to automate moving vehicle landing with a beacon
+quadplane_terrain_avoid.lua                 Quadplane terrain avoidance with cant make the climb check
 repl.lua                                    Interactive REPL (read-evaluate-print-loop) for the Lua scripting
 revert_param.lua                            Switch allows you toevert all the parameter changes to the values from startup
 rover-quicktune.lua                         QuicK tuning applet for Rovers
