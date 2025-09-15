@@ -102,6 +102,9 @@ Tips
    one end and selecting Measure Distance. Then right-click on the other
    end and select **Measure Distance** again. A dialog box will open
    with the distance between the two points.
+-  The altitude change between waypoints is normally a linear ramp of target altitude as the
+   vehicle progresses unless the altitude starts below 25m above home to prevent slow climbs potentially 
+   close to home. This value can be controlled with the :ref:`CLIMB_SLOPE_HGT<CLIMB_SLOPE_HGT>` parameter.
 
 Auto grid
 =========
