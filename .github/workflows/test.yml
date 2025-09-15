@@ -39,10 +39,11 @@ jobs:
                   exit 1
               fi
           done
-      - name: Check python3 flake8 formatting
-        run : |
+      - name: Check python formatting
+        run: |
           set -eux -o pipefail
           flake8 .
+          pipx run ruff check
       - name: Test build
         run: |
           export AP_SPHINXOPTS=-W
