@@ -78,6 +78,7 @@ New Features
 - Network data capture in pcap for analysis, see https://github.com/ArduPilot/ardupilot_wiki/pull/7043
 - Scripting start/stop aux switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/7102
 - SBG External AHRS, see https://github.com/ArduPilot/ardupilot_wiki/pull/7035
+- Add mission climb slope parameter, seehttps://github.com/ArduPilot/ardupilot_wiki/pull/7111
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
