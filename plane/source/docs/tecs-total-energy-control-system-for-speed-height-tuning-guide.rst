@@ -183,6 +183,9 @@ increasing the value of :ref:`TECS_TIME_CONST<TECS_TIME_CONST>` in increments of
    where throttle changes cause noticeable pitch angle changes. Ideally you
    should improve your pitch loop tuning first, before adjusting
    :ref:`TECS_PTCH_DAMP<TECS_PTCH_DAMP>` and :ref:`TECS_TIME_CONST<TECS_TIME_CONST>` as described here.
+   Low frequency pitch oscillations around 1Hz are an indicator that :ref:`PTCH_RATE_I<PTCH_RATE_I>` is
+   too high. Refer to the warning :ref:`Completing the tune <automatic-tuning-with-autotune-completing-the-tune>`.
+
 
 If using airspeed sensing, adjust the value of :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` so
 that it matches the average amount of throttle required by the
