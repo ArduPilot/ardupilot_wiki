@@ -126,6 +126,7 @@ Closed Hardware
     iFlight Blitz Wing H743 <common-blitzh743wing>
     iFlight Thunder H7 <common-iflight-thunder-H7>
     JAE JFB-110 <common-jae-jfb110>
+    JHEMCU F405Pro <common-jhemcuf405pro>
     JHEMCU H743HD <common-jhemcu-h743hd>
     LongBowF405WING <common-longbowf405wing>
     Mamba F405 MK2 <common-mamba405-mk2>
