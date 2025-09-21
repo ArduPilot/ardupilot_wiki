@@ -40,3 +40,5 @@ Once Script is running
 ======================
 
 Many scripts will require parameters created by the script to be setup or RC switches configured. This should be explained in the script's README.md file co-located with the script in the ArduPilot repo.
+
+You can stop or restart scripting operations from the RC transmitter (see :ref:`Auxiliary switches <common-auxiliary-functions>`) or via MAVLink command (GCS).
