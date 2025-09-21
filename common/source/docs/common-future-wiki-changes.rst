@@ -45,6 +45,7 @@ New Board Support
 - CUAV Pixhawk6X V2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7091
 - Greensight UltraBlue, see https://github.com/ArduPilot/ardupilot_wiki/pull/7095
 - Botwing F405, see https://github.com/ArduPilot/ardupilot_wiki/pull/7097
+- OrqaH743Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/7120
 
 New Peripheral Support
 ======================
