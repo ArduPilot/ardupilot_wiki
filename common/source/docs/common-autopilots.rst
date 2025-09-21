@@ -170,6 +170,7 @@ Closed Hardware
     OmnibusNanoV6 <common-omnibusnanov6>
     Omnibus F7V2 <common-omnibusf7>
     OrqaF405 <common-OrqaF405>
+    OrqaH743Pro <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/OrqaH743Pro>
 [site wiki="copter"]
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
 [/site]
