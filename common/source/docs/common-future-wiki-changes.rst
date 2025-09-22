@@ -81,6 +81,7 @@ New Features
 - SBG External AHRS, see https://github.com/ArduPilot/ardupilot_wiki/pull/7035
 - Add mission climb slope parameter, seehttps://github.com/ArduPilot/ardupilot_wiki/pull/7111
 - Add MAV_GSC_SYSID_HI parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/7123
+- New optical flow option for gimbal mounted sensors, see https://github.com/ArduPilot/ardupilot_wiki/pull/7125
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
