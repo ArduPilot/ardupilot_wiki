@@ -5,7 +5,7 @@ Building ArduPilot for BeagleBone Black on Linux
 ================================================
 .. warning::
 
-    This project is old and unmaintained, prefer `BBBMini project <http://bbbmini.com/>`__
+    This project is old and unmaintained, prefer `BBBMini project <https://github.com/mirkix/BBBMINI>`__
 
 Get your BeagleBone running Debian
 ==================================
