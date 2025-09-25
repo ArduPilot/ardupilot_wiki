@@ -115,3 +115,58 @@ Allowing actuators to move
 Servo/Motor outputs can be permitted to operate by setting the :ref:`SIM_OH_MASK<SIM_OH_MASK>` parameter.  The bits correspond to the servo output channels, so to allow the first 4 channels to move set :ref:`SIM_OH_MASK<SIM_OH_MASK>` to 15.
 
 Relay outputs can be permitted to operate by setting the :ref:`SIM_OH_RELAY_MSK<SIM_OH_RELAY_MSK>` parameter. The bits correspond to the relays, so to allow the first 2 relays to actuate set :ref:`SIM_OH_RELAY_MSK<SIM_OH_RELAY_MSK>` to 3.
+
+
+
+Using SimuLink for physics simulation
+=====================================
+
+Ordinarily Simulation-on-Hardware uses ArduPilot's in-built physics models for simulation.  Higher-fidelity simulations can be created in external programs such as SimuLink, and it *is* possible use these external physics models via the "JSON" mavlink backend.
+
+The mechanism for doing this is perhaps best described by a shell script which can be invoked to flash a CubeRedPrimary with a firmware which does this.
+
+.. code-block:: console
+
+   #!/bin/bash
+
+   BOARD=CubeRedPrimary
+
+   cat >/tmp/defaults.parm <<"EOF"
+   NET_ENABLE 1
+   NET_DHCP 0
+
+   NET_IPADDR0      172
+   NET_IPADDR1      16
+   NET_IPADDR2      3
+   NET_IPADDR3      100
+
+   # NET_OPTIONS 1
+   EOF
+
+   cat >/tmp/extra.hwdef <<"EOF"
+   define AP_SIM_JSON_ENABLED 1
+
+   define DISABLE_WATCHDOG 0
+   EOF
+
+   #./Tools/scripts/sitl-on-hardware/sitl-on-hw.py \
+   #    --board $BOARD \
+   #    --vehicle plane \
+   #    --extra-hwdef=/tmp/extra.hwdef \
+   #    --defaults=/tmp/defaults.parm \
+   #    --debug
+
+   #exit 0
+
+   ./Tools/scripts/sitl-on-hardware/sitl-on-hw.py \
+       --board $BOARD \
+       --vehicle plane \
+       --simclass JSON \
+       --frame json:172.16.3.160 \
+       --extra-hwdef=/tmp/extra.hwdef \
+       --defaults=/tmp/defaults.parm \
+       --debug
+
+When invoked this script will build a firmware suitable for flashing to a CubeRedPrimary board.
+
+The commented-out code does the same thing, but omits the actual sim-on-hardware bit.  This allows you to make sure the networking is correct without trying the sim-on-hardware bit.  Crucially, the board will not seem to boot if the external physics simulation is not available!
