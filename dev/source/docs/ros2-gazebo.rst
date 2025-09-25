@@ -14,6 +14,11 @@ Ensure you have the prerequisites complete and working before beginning this Gaz
 #. :ref:`Install ROS 2 <ros2>`
 #. :ref:`Install and Run ROS 2 with ArduPilot SITL <ros2-sitl>`
 
+.. note::
+    Ensure OpenGL hardware acceleration is enabled on your system before proceeding. Using software rendering
+    will result in very poor performance from Gazebo.
+
+
 Install Gazebo
 ==============
 
@@ -116,7 +121,7 @@ Examples available
 
 .. code-block:: bash
 
-    ros2 launch ardupilot_gz_bringup wildthumper.launch.py
+    ros2 launch ardupilot_gz_bringup wildthumper_playpen.launch.py
 
 Here is a demo video of ArduPilot working with ROS 2 and Gazebo:
 
