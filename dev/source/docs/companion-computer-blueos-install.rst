@@ -83,10 +83,18 @@ Configure RPI/BlueOS to connect to your local WiFi:
 - Leave the RPI4/RPI5 on the I/O board initially
 - Make sure a WiFi antenna is attached to the RPI4/RPI5 CM
 - Remove the Jumper and power-down/power-up the I/O board so the RPI boots normally
-- Connect a PC via ethernet to the I/O board's ethernet port
-- Set the PC's IP address to manual with IP 192.168.2.100 (the RPI's default IP address is 192.168.2.2 and we want the PC to be within the same ethernet subnet)
-- Open a Chrome browser to http://192.168.2.2, BlueOS should appear
-- A setup wizard should appear, select "Other vehicle setup"
+- Connect to BlueOS via Wifi
+
+    - Wait a few minutes for the "BlueOS" wifi access point to appear (password is "blueosap")
+    - Open a Chrome browser to http://blueos-hotspot.local, BlueOS should appear
+
+- OR connect directly via ethernet
+
+    - Connect a PC via ethernet to the I/O board's ethernet port
+    - Set the PC's IP address to manual with IP 192.168.2.100 (the RPI's default IP address is 192.168.2.2 and we want the PC to be within the same ethernet subnet)
+    - Open a Chrome browser to http://192.168.2.2, BlueOS should appear
+
+- Once BlueOS appears, a setup wizard should appear, select "Other vehicle setup"
 
   - Vehicle Name: MyCopter
   - MDNS Name: "blueos" (default)
