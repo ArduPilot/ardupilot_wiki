@@ -6,6 +6,10 @@
 Optical Flow Sensor Testing and Setup
 =====================================
 
+Be sure you have setup the sensor specific parameters according to its wiki page.
+
+If the sensor is mounted to a stabilized gimbal or mount, set :ref:`FLOW_OPTIONS<FLOW_OPTIONS>` bit 1 to "1".
+
 Testing the sensor
 ==================
 
