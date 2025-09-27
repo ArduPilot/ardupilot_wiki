@@ -22,6 +22,15 @@ Recommended Hardware
 - :ref:`BotBlox DroneNet ethernet switch <common-botblox-dronenet>` or :ref:`CubeNodeETH <common-cubepilot-cubenodeeth>` and `CubeLan 8-port ethernet switch <https://docs.cubepilot.org/user-guides/switch/cubelan-8-port-switch>`__ (see :ref:`ethernet adapters <common-ethernet-adapters>`)
 - (optionally) Ethernet enabled camera gimbal (e.g. :ref:`Siyi A8 <common-siyi-zr10-gimbal>`)
 
+Ochin Ethernet Solder Bridge
+----------------------------
+
+As mentioned `here in the Ochin wiki <https://github.com/ochin-space/ochin-CM4v2/tree/master>`__, four solder bridges as shown in red below are required to enable Ethernet support
+
+.. image:: ../images/blueos-ochinv2-eth-solder-bridge.png
+    :target: ../_images/blueos-ochinv2-eth-solder-bridge.png
+    :width: 300px
+
 Installing BlueOS on RPI4 or RPI5
 ---------------------------------
 
