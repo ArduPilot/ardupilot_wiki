@@ -46,6 +46,7 @@ New Board Support
 - Greensight UltraBlue, see https://github.com/ArduPilot/ardupilot_wiki/pull/7095
 - Botwing F405, see https://github.com/ArduPilot/ardupilot_wiki/pull/7097
 - OrqaH743Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/7120
+- ARK_PI6X , see https://github.com/ArduPilot/ardupilot_wiki/pull/7137
 
 New Peripheral Support
 ======================
