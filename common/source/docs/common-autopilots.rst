@@ -90,6 +90,7 @@ Closed Hardware
     AET-H743-Basic <common-AET-H743-Basic>
     AnyleafH7 <common-anyleafh7>
     AocodaRC H743Dual <common-aocoda-h743dual>
+    ARK_PI6X <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/ARK_PI6X/README.md>
     AtomRC F405-NAVI <common-atomrcf405-navi>
     BetaFPV F405 family <common-betafpvf405>
     BrahmaF4 <common-brahmaf4>
