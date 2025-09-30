@@ -73,5 +73,5 @@ No other fields in position target messages are currently supported. Use :ref:`m
 Attitude Targets
 ================
 
-The low level attitude of the vehicle can be controlled with `SET_ATTITUDE_TARGET <https://mavlink.io/en/messages/common.html#SET_ATTITUDE_TARGET>`__.
+The low level attitude of the vehicle can be controlled with `SET_ATTITUDE_TARGET <https://mavlink.io/en/messages/common.html#SET_ATTITUDE_TARGET>`__. Attitude command must be sent to the autopilot continuously. If attitude command is missing for more than :ref:`GUIDED_TIMEOUT<GUIDED_TIMEOUT>` seconds, then the autopilot will revert back to the “fly to” command using the previous commanded position.
 
