@@ -108,6 +108,7 @@ Closed Hardware
     DAKEFPVH743-SLIM <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/DAKEFPVH743_SLIM/README.md>
     CUAV-X25-EVO <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-X25-EVO>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
+    F4BY_H743 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/F4BY_H743/README.md>
     Flywoo F405 Pro <common-flywoof405pro>
     Flywoo F405HD 1-2S <common-flywoof405hd>
     Flywoo F745 AIO BL_32/ Nano <common-flywoo-f745>
