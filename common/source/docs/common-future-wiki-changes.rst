@@ -48,6 +48,7 @@ New Board Support
 - OrqaH743Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/7120
 - ARK_PI6X , see https://github.com/ArduPilot/ardupilot_wiki/pull/7137
 - BrahmaF4, see https://github.com/ArduPilot/ardupilot_wiki/pull/7147
+- F4BY_H743, see https://github.com/ArduPilot/ardupilot_wiki/pull/7148
 
 New Peripheral Support
 ======================
