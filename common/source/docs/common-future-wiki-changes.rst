@@ -47,6 +47,7 @@ New Board Support
 - Botwing F405, see https://github.com/ArduPilot/ardupilot_wiki/pull/7097
 - OrqaH743Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/7120
 - ARK_PI6X , see https://github.com/ArduPilot/ardupilot_wiki/pull/7137
+- BrahmaF4, see https://github.com/ArduPilot/ardupilot_wiki/pull/7147
 
 New Peripheral Support
 ======================
