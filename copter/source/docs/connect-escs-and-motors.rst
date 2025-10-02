@@ -210,6 +210,19 @@ OCTO QUAD FRAMES
     :scale: 40%
     :alt: OCTO QUAD X (BF REVERSED)
 
+.. image:: ../images/m_17_01_corotating_x.svg
+    :target: ../_images/m_17_01_corotating_x.svg
+    :scale: 40%
+    :alt: COROTATING X
+
+.. image:: ../images/m_17_14_corotating_x_cw.svg
+    :target: ../_images/m_17_14_corotating_x_cw.svg
+    :scale: 40%
+    :alt: COROTATING X (CW)
+
+.. note::
+    The Corotating X and X (CW) frames must be configured using FRAME_CLASS 17, and the autopilot must run the `X8-corotating.lua script <https://github.com/ArduPilot/ardupilot/libraries/AP_Scripting/examples/X8-corotating.lua>`__.
+
 Y6 FRAMES
 ---------
 
