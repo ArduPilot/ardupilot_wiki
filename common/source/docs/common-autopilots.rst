@@ -106,6 +106,7 @@ Closed Hardware
     Foxeer Reaper F745-AIO V2/V3/V4 <common-foxeerf745aio>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     GEPRC Taker F745 <common-geprc-takerf745>
+    GreenSightUltraBlue <common-greensightultrablue>
     HeeWing F405/F405V2 <common-heewingf405>
     Holybro Kakute F4 <common-holybro-kakutef4>
     Holybro Kakute F4 Mini <common-holybro-kakutef4-mini>
