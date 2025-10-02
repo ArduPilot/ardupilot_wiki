@@ -96,6 +96,7 @@ Closed Hardware
     Brother Hobby H743 <common-brotherhobbyh743>
     CBUnmanned H743 Stamp <common-StampH743>
     CSKY405 <common-CSKYF405>
+    DroneerF405 <common-DroneerF405>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Flywoo F405 Pro <common-flywoof405pro>
     Flywoo F405HD 1-2S <common-flywoof405hd>
