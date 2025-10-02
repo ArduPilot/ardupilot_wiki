@@ -336,7 +336,9 @@ Intended as continuous PWM range control inputs:
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        219           | Transmitter Tuning Channel |    X     |         |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
-|        300-307       | Scripting RC channels      |    X     |    X    |    X    |  X    |
+|        300-315       | Scripting RC channels      |    X     |    X    |    X    |  X    |
++----------------------+----------------------------+----------+---------+---------+-------+
+|        316           | Scripting Stop/Restart     |    X     |    X    |    X    |  X    |
 +----------------------+----------------------------+----------+---------+---------+-------+
 
 .. note:: 203-204 are not implemented for any vehicle, reserved for future use.
@@ -623,8 +625,9 @@ Other functions are:
     Mount2 Roll                           2nd camera gimbal's roll control
     Mount2 Pitch                          2nd camera gimbal's pitch control
     Mount2 Yaw                            2nd camera gimbal's yaw control
-    Transmitter Tuning Channel           Copter tuning knob channel, see :ref:`common-transmitter-tuning`
+    Transmitter Tuning Channel            Copter tuning knob channel, see :ref:`common-transmitter-tuning`
     Scripting RC channels                 Allows reading a dedicated RC channel for script inputs
+    Scripting Stop/Restart                High stops scripting, low restarts
    ===================================== =======================================================================
 
 Check the channel range
