@@ -65,7 +65,7 @@ RC Failsafe Operation
 ---------------------
 
 -  When RC Failsafe is entered, all RC inputs (except throttle in the case of Throttle Failsafe), are ignored as the autopilot takes its failsafe actions.
--  First, the autopilot will go into Short Failsafe when it detects RC Failsafe for more than ``FS_SHORT_TIMEOUT`` seconds.
+-  First, the autopilot will go into Short Failsafe when it detects RC Failsafe for more than 0.5 seconds.
 -  A message will be displayed on your Ground Control Station(GCS), or OSD, if its message panel is enabled, that a Short Failsafe is active, and the autopilot will take the :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>`, if enabled.  The default is CIRCLE mode. This is intended to possibly allow the vehicle's changing orientation to re-acquire the signal, but other actions can be assigned. See :ref:`FS_SHORT_ACTN parameter below <failsafe-parameters>` for how each mode responds to the selected action value.
 -  If the condition causing the Short Failsafe is removed, the vehicle will return to the previous mode, and a message will be displayed that Short Failsafe is cleared. If it was a Throttle Failsafe that caused the RC Failsafe, and throttle was increased in order to exit, then an additional message will be sent stating that the Throttle Failsafe is OFF.
 -  If the condition causing the Short Failsafe persists longer than :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds the autopilot will go into Long Failsafe, send a message to the GCS that it has been entered, and execute the :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` action, if enabled. The default setting for Long Failsafe action to take is RTL (Return to Launch). See :ref:`FS_LONG_ACTN parameter below <failsafe-parameters>` for how each mode responds to the selected action value.
@@ -76,8 +76,8 @@ RC Failsafe Operation
 Bench Testing RC Failsafe
 -------------------------
 
-#. Power up the system and verify that you are seeing RC control in the Mission Planner SETUP->Mandatory Hardware->Radio Calibration tab and in a non-auto mode (Manual, Stabilize, FBW are ok). Check that normal throttle movements to idle do NOT trigger a failsafe and normal control stick movements are observed.
-#. Switch to Mission Planners DATA View tab. Turn off the transmitter. After ``FS_SHORT_TIMEOUT`` seconds, if enabled, you should see the flight mode switch to :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>`. After :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` sec, if enabled, the flight mode should then switch to :ref:`FS_LONG_ACTN<FS_LONG_ACTN>`. Turn the transmitter back on and change flight modes. The Long Failsafe flight mode should change to the selected mode.
+#. Power up the system and verify that you are seeing RC control in the Mission Planner SETUP->Mandatory Hardware->Radio Calibration tab and in a non-auto mode (Manual, Stabilize, FBW are ok). Check that normal throttle movements to idle do NOT trigger a failsafe and normal control stick movements are observed
+#. Switch to Mission Planners DATA View tab. Turn off the transmitter. You should see the flight mode switch to :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>`. After :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` sec, if enabled, the flight mode should then switch to :ref:`FS_LONG_ACTN<FS_LONG_ACTN>`. Turn the transmitter back on and change flight modes. The Long Failsafe flight mode should change to the selected mode.
 #. If Throttle Failsafe is setup (ie via trim tab or transmitter switch). Check that it operates correctly by activating it and watching for Short and Long Failsafes to occur.
 
 If you observe this behavior, your RC Failsafe function has been set up correctly. If not, recheck that the parameters above have been set correctly.
@@ -210,8 +210,7 @@ Failsafe Parameters and their Meanings
 
 Short failsafe action (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` )
 ------------------------------------------------------------
-
-The action to take on a short (``FS_SHORT_TIMEOUT`` seconds) RC failsafe event .
+The action to immediately take on a RC failsafe event .
 
 No Action is ever taken for Short FailSafe in these modes:
 
@@ -329,7 +328,8 @@ Otherwise:
 Long failsafe action (:ref:`FS_LONG_ACTN<FS_LONG_ACTN>` )
 ---------------------------------------------------------
 
-The action to take on a long (:ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds) RC failsafe event. :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` should be set longer than ``FS_SHORT_TIMEOUT``.
+=======
+The action to take on a long (:ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds) RC failsafe event. 
 
 No Action is ever taken for Long FailSafe in these modes:
 
