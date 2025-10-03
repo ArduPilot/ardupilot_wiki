@@ -267,6 +267,7 @@ These autopilots use an underlying Linux OS. Linux boards usually have more CPU 
     Obal Board (Linux) <common-obal-overview>
     Pi PilotPi <https://docs.px4.io/main/uk/flight_controller/raspberry_pi_pilotpi.html>
     PocketPilot** (Linux) <https://github.com/PocketPilot/PocketPilot>
+    T3 Gemstone O1 (Linux) <common-t3-gem-o1-overview>
 
 \** these devices are sensor add-on boards for a Linux-based microcomputer. See board links for details.
 
