@@ -168,6 +168,7 @@ Closed Hardware
     Parrot C.H.U.C.K <common-CHUCK-overview>
     PixFlamingo- F767 <common-pixflamingo-f767>
     RadioLink MiniPix <common-radiolink-minipix>
+    RadioLinkF405 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/RadiolinkF405/README.md>
     RadioLinkPIX6 <common-radiolinkpix6>
     QioTek Zealot F427 <common-qiotek-zealot>
     QioTek Zealot H743 <common-qiotek-zealoth7>
