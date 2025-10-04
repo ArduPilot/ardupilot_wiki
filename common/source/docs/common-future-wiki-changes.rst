@@ -49,6 +49,8 @@ New Board Support
 - ARK_PI6X , see https://github.com/ArduPilot/ardupilot_wiki/pull/7137
 - BrahmaF4, see https://github.com/ArduPilot/ardupilot_wiki/pull/7147
 - F4BY_H743, see https://github.com/ArduPilot/ardupilot_wiki/pull/7148
+- RadioLinkF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/7153
+- AeroCogito H7Digital, see https://github.com/ArduPilot/ardupilot_wiki/pull/7154
 
 New Peripheral Support
 ======================
