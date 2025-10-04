@@ -97,6 +97,7 @@ Closed Hardware
     CBUnmanned H743 Stamp <common-StampH743>
     CSKY405 <common-CSKYF405>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
+    F4BY_H743 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/F4BY_H743/README.md>
     Flywoo F405 Pro <common-flywoof405pro>
     Flywoo F405HD 1-2S <common-flywoof405hd>
     Flywoo F745 AIO BL_32/ Nano <common-flywoo-f745>
