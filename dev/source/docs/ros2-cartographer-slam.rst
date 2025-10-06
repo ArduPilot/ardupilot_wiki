@@ -40,7 +40,7 @@ To launch rviz and gazebo, run:
 .. code-block:: bash
     
     source ~/ardu_ws/install/setup.sh
-    ros2 launch ardupilot_gz_bringup iris_maze.launch.py
+    ros2 launch ardupilot_gz_bringup iris_maze.launch.py lidar_dim:=2
 
 Now, we can launch Google Cartographer to generate SLAM, check if a map is being generated correctly in RVIZ.
 In another terminal, run:
@@ -48,7 +48,7 @@ In another terminal, run:
 .. code-block:: bash
     
     source ~/ardu_ws/install/setup.sh
-    ros2 launch ardupilot_ros cartographer.launch.py
+    ros2 launch ardupilot_cartographer cartographer.launch.py
 
 Configure ArduPilot
 ===================

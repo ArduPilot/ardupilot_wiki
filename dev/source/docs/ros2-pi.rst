@@ -4,6 +4,8 @@
 ROS 2 on Raspberry Pi
 =====================
 
+.. note:: ROS2 (via DDS) is not part of the standard ArduPilot build. Use the `Custom Build Server <https://custom.ardupilot.org/add_build>`__ and ensure "MicroXRCE DDS support for ROS 2" is checked.
+
 Purpose
 =======
 
@@ -99,7 +101,7 @@ The simplest solution is to wire an open telemetry port.
 ..
     Consider documenting flow control setup, and also any configuration to enable /dev/ttyS0
 
-This allow GPIO13 and GPIO15 (/dev/ttySO) to communicate with ArduPilot.
+This allow GPIO14 and GPIO15 (/dev/ttySO) to communicate with ArduPilot.
 
 Cross Compile an application with Docker
 ========================================

@@ -20,9 +20,9 @@ Sub Defaults
 
 MAVLink Overrides
 -----------------
-ArduPilot vehicles normally use radio control (RC) to provide pilot directional control. Since Sub has RC disabled by default, it instead provides directional control with MAVLink RC overrides, and the channel mapping is fixed:
+ArduPilot vehicles normally use radio control (RC) to provide pilot directional control. Since Sub has RC disabled by default, it instead provides directional control with `MAVLink RC overrides <https://mavlink.io/en/services/manual_control.html#alternatives>`__, and the channel mapping is fixed:
 
-.. note:: the ``RCMMAP_xxx`` parameters can be used to change the Roll/Pitch/Yaw/Vertical/Forward/Lateral control channel assignments
+.. note:: :ref:`common-rcmap` can be used to change the vehicle's Roll/Pitch/Yaw/Vertical/Forward/Lateral  control channel assignments.
 
 ===============  ===================
 Pilot control    RC channel override
@@ -64,7 +64,9 @@ Output       Function
 Button Assignments
 ------------------
 
-Default Sub uses GCS  buttons to implement mode switching, light activation, etc. Button information is sent from the GCS using MAVLink Manual Control messages (the GCS must have this capability)
+Default Sub uses GCS buttons to implement mode switching, light activation, etc. Button information is sent from the GCS using the `MAVLink Manual Control protocol <https://mavlink.io/en/services/manual_control.html>`__ (the GCS must have this capability).
+
+The default :ref:`button function <buttons>` assignments are:
 
 ======      ========
 Button      Function

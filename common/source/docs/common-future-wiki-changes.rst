@@ -11,9 +11,7 @@ New Board Support
 =================
 - AeroFox H7 , see https://github.com/ArduPilot/ardupilot_wiki/pull/6446
 - GEPRC TAKER H7 BT, see https://github.com/ArduPilot/ardupilot_wiki/pull/6450
-- MicoAir743-AIO, see https://github.com/ArduPilot/ardupilot_wiki/pull/6511
 - CrazyF405 ELRS, see https://github.com/ArduPilot/ardupilot_wiki/pull/6513
-- MicoAir743v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/6525
 - ARK FPV, see https://github.com/ArduPilot/ardupilot_wiki/pull/6560
 - DroneerF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/6567
 - Updates to BETAFPVF405 family of boards, see https://github.com/ArduPilot/ardupilot_wiki/pull/6578
@@ -37,8 +35,22 @@ New Board Support
 - DAKEFPVF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/6949
 - OrbitH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6952
 - PiPilot RPI Sheild, see https://github.com/ArduPilot/ardupilot_wiki/pull/6972
-- DAKEFPVH743Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6978
+- DAKEFPVH743/H743Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6978
 - BDShot support for ARKV6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/6981
+- AcctonGodwit_GA1, see https://github.com/ArduPilot/ardupilot_wiki/pull/7054
+- YARIV6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
+- CUAV-X25-EVO, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
+- JHEMCUF405WING, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
+- SVehicle E2-Plus, see https://github.com/ArduPilot/ardupilot_wiki/pull/7070
+- CUAV Pixhawk6X V2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7091
+- Greensight UltraBlue, see https://github.com/ArduPilot/ardupilot_wiki/pull/7095
+- Botwing F405, see https://github.com/ArduPilot/ardupilot_wiki/pull/7097
+- OrqaH743Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/7120
+- ARK_PI6X , see https://github.com/ArduPilot/ardupilot_wiki/pull/7137
+- BrahmaF4, see https://github.com/ArduPilot/ardupilot_wiki/pull/7147
+- F4BY_H743, see https://github.com/ArduPilot/ardupilot_wiki/pull/7148
+- RadioLinkF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/7153
+- AeroCogito H7Digital, see https://github.com/ArduPilot/ardupilot_wiki/pull/7154
 
 New Peripheral Support
 ======================
@@ -67,6 +79,14 @@ New Features
 - Permanent serial passthrough, see https://github.com/ArduPilot/ardupilot_wiki/pull/6983
 - DroneCAN messaging from LUA, see https://github.com/ArduPilot/ardupilot_wiki/pull/6988
 - NTRIP applet for autopilot, see https://github.com/ArduPilot/ardupilot_wiki/pull/6992
+- LUA applet/driver embedding at compile, see https://github.com/ArduPilot/ardupilot_wiki/pull/7002
+- Parameter setting control applet, see https://github.com/ArduPilot/ardupilot_wiki/pull/7002
+- Network data capture in pcap for analysis, see https://github.com/ArduPilot/ardupilot_wiki/pull/7043
+- Scripting start/stop aux switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/7102
+- SBG External AHRS, see https://github.com/ArduPilot/ardupilot_wiki/pull/7035
+- Add mission climb slope parameter, seehttps://github.com/ArduPilot/ardupilot_wiki/pull/7111
+- Add MAV_GSC_SYSID_HI parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/7123
+- New optical flow option for gimbal mounted sensors, see https://github.com/ArduPilot/ardupilot_wiki/pull/7125
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
@@ -75,6 +95,10 @@ New Features
 - Add FWD_BAT_THR_CUT parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/6624
 - Add AUTOLAND as battery failsafe and/or fence action, see https://github.com/ArduPilot/ardupilot_wiki/pull/6685
 - Add VTOL-FW throttle smoothing parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/6902
+- Expand RNGFND_LANDING param to bitmask, see https://github.com/ArduPilot/ardupilot_wiki/pull/7014
+- Add SYSID mode for vehicle model development, see https://github.com/ArduPilot/ardupilot_wiki/pull/7041
+- Add AutoFlap flight option for operation in manual modes, see https://github.com/ArduPilot/ardupilot_wiki/pull/7016
+- Add Quadplane terrain avoidance script with climb check, see https://github.com/ArduPilot/ardupilot_wiki/pull/7105
 [/site]
 [site wiki="copter"]
 - Fast Attitude loop option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6470
@@ -85,10 +109,15 @@ New Features
 - Add EKF FS reporting only option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6937
 - Baro thrust compensation, see https://github.com/ArduPilot/ardupilot_wiki/pull/6687
 - Correct AUTO NAV_LAND behavior, see https://github.com/ArduPilot/ardupilot_wiki/pull/6945
+- Enable rev thrust in MANUAL Mode independent of USE_REV_THRUST param, see https://github.com/ArduPilot/ardupilot_wiki/pull/6998
+- Add auto flap flight mode option, see https://github.com/ArduPilot/ardupilot_wiki/pull/7016
+- Ability to skip IMU pre-arm check for running ICE engines, see https://github.com/ArduPilot/ardupilot_wiki/pull/7044
+- Second TX based tuning channel, see https://github.com/ArduPilot/ardupilot_wiki/pull/7122
 [/site]
 [site wiki="rover"]
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600
 - Add autoarmig option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6878
 - Add LOITER/HOLD failsafe action, see https://github.com/ArduPilot/ardupilot_wiki/pull/6911
 - Add MTR_REV_DELAY, see https://github.com/ArduPilot/ardupilot_wiki/pull/6935
+- Add pivot turn max deceleration parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/7000
 [/site]

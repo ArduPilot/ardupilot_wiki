@@ -48,7 +48,7 @@ RC input is configured by default via the USART2. It supports all serial RC prot
 
 OSD Support
 ===========
-Onboard OSD using OSD_TYPE 1 (MAX7456 driver) is supported by default. Simultaneously, DisplayPort OSD is available on the HD VTX connector, if :ref:`OSD_TYPE<OSD_TYPE>` is edt to 5.
+Onboard OSD using OSD_TYPE 1 (MAX7456 driver) is supported by default. Simultaneously, DisplayPort OSD is available on the HD VTX connector.
 
 PWM Output
 ==========

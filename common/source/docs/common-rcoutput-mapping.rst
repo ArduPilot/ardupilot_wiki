@@ -10,7 +10,11 @@ of the available functions that can be assigned to an output are.
 
 ArduPilot supports up to 32 outputs. These may be via DroneCAN ESCs or directly from autopilot outputs, or a mixture of both.
 
-.. note:: see the left sidebar menu for major output categories to navigate to desired functions on this page quickly.
+.. note:: See the left sidebar menu for major output categories to navigate to desired functions on this page quickly.
+
+[site wiki="sub"]
+.. note:: See :ref:`sub-hardware` for the default output assignments.
+[/site]
 
 The SERVOn_FUNCTION parameters
 ------------------------------
@@ -86,7 +90,7 @@ GENERIC FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |      RCPassThru16              | 66 |    Plane, Copter, Rover, Sub          |
 +--------------------------------+----+---------------------------------------+
-|      RCIN1Scaled               |140 |        Plane, Copter, Rover           |
+[site wiki="plane, copter, rover"]|      RCIN1Scaled               |140 |        Plane, Copter, Rover           |
 +--------------------------------+----+---------------------------------------+
 |      RCIN2Scaled               |141 |        Plane, Copter, Rover           |
 +--------------------------------+----+---------------------------------------+
@@ -117,7 +121,7 @@ GENERIC FUNCTIONS
 |      RCIN15Scaled              |154 |        Plane, Copter, Rover           |
 +--------------------------------+----+---------------------------------------+
 |      RCIN16Scaled              |155 |        Plane, Copter, Rover           |
-+--------------------------------+----+---------------------------------------+
++--------------------------------+----+---------------------------------------+[/site]
 
 Disabled
 ++++++++
@@ -150,6 +154,7 @@ This operates the same as RCPassThru explained above. However, instead of the ``
 
 .. note:: normally passthru outputs will hold their last valid value during an RC failsafe. By setting the :ref:`SERVO_RC_FS_MSK<SERVO_RC_FS_MSK>`, selected passthru outputs can be set as if their input channel went to neutral. This is helpful for outputs controlling servo gimbals, or other manually controlled functions.
 
+[site wiki="plane, copter, rover"]
 RCIN1Scaled to RCIN16Scaled
 +++++++++++++++++++++++++++
 
@@ -163,8 +168,9 @@ The upper PWM range from the input trim value to its maximum input is translated
 .. note:: the SERVOx_MIN/MAX values can be larger than what Mission Planner allows in some presentations. Use the CONFIG/Full Parameter Tree view to set parametes beyong their normal "safe" ranges.
 
 .. note:: normally scaled passthru outputs will hold their last valid value during an RC failsafe. By setting the :ref:`SERVO_RC_FS_MSK<SERVO_RC_FS_MSK>`, selected passthru outputs can be set as if their input channel went to neutral. This is helpful for outputs controlling servo gimbals, or other manually controlled functions.
+[/site]
 
-
+[site wiki="plane, copter, rover"]
 PLANE FUNCTIONS (Also applies to QuadPlanes)
 --------------------------------------------
 
@@ -217,7 +223,9 @@ PLANE FUNCTIONS (Also applies to QuadPlanes)
 +--------------------------------+----+---------------------------------------+
 |      AirBrakes                 |110 |    Plane                              |
 +--------------------------------+----+---------------------------------------+
+[/site]
 
+[site wiki="plane"]
 Aileron
 +++++++
 
@@ -235,7 +243,9 @@ separate per-channel trim and range. This is useful when you want to
 trim each elevator separately, or if your main pitch control is setup as
 :ref:`ELEVONS<guide-elevon-plane>`, and you also want some
 normal elevator.
+[/site]
 
+[site wiki="plane, copter, rover"]
 Throttle
 ++++++++
 
@@ -245,8 +255,9 @@ Throttle Left/ Right
 ++++++++++++++++++++
 
 In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`. In Copter, theses outputs are used for the Bicopter motors.
+[/site]
 
-
+[site wiki="plane"]
 Rudder
 ++++++
 
@@ -301,7 +312,9 @@ Differential Spoilers Left/Right
 ++++++++++++++++++++++++++++++++
 
 See :ref:`Differential Spoilers <differential-spoilers>` section.
+[/site]
 
+[site wiki="plane, rover"]
 Ground Steering
 +++++++++++++++
 
@@ -311,7 +324,9 @@ function except that it only acts when the aircraft is below
 output will be the trim value for the channel.
 
 See the separate page on :ref:`setting up ground steering <tuning-ground-steering-for-a-plane>`
+[/site]
 
+[site wiki="plane, copter"]
 Boost Engine Throttle
 +++++++++++++++++++++
 
@@ -327,11 +342,14 @@ Landing Gear
 ++++++++++++
 
 This output controls the landing gear servo(s) in Copter and Plane. See :ref:`common-landing-gear` for more information.
+[/site]
 
+[site wiki="plane"]
 Airbrakes
 +++++++++
 
 This output is for air brake control. Manual input control is via ``RCx_OPTION`` = 210. For more information see :ref:`airbrakes-on-plane`.
+[/site]
 
 COPTER / QUADPLANE FUNCTIONS
 ----------------------------
@@ -406,15 +424,18 @@ These are the Copter and QuadPlane VTOL motor outputs. For Multi-Copters, see :r
 
    It is only possible to modify the output channel used, it is not possible to redefine the direction the motor spins with these parameters.
 [/site]
-
+[site wiki="plane"]
 For QuadPlanes, see :ref:`quadplane-frame-setup` for motor output configuration.
+[/site]
 
+[site wiki="plane, copter, rover"]
 Throttle Left/ Right
 ++++++++++++++++++++
+[/site]
 
-In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`. In Copter, theses outputs are used for the Bicopter motors.
+[site wiki="plane"]In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. [/site][site wiki="rover"]In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`.[/site][site wiki="copter"]In Copter, theses outputs are used for the Bicopter motors.[/site]
 
-
+[site wiki="plane, copter"]
 Tilt Motor/ Tilt Motor Left/ Tilt Motor Right/ Tilt Motor Rear/ Tilt Motor Rear Left/ Tilt Motor Rear Right
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -429,22 +450,30 @@ Motor Enable Switch
 +++++++++++++++++++
 
 This provides an output that reflects the ARM/DISARM state of the vehicle to control a motor enable/kill switch. When ARMED, it is at SERVOx_MAX pwm, and at SERVOx_MIN pwm when disarmed.
+[/site]
 
+[site wiki="copter"]
 Parachute Release
 +++++++++++++++++
 
 See :ref:`Parachute<common-parachute>` section.
+[/site]
 
+[site wiki="plane, copter"]
 Landing Gear
 ++++++++++++
 
 This output controls the landing gear servo(s) in Copter and Plane. See :ref:`landing-gear` for more information.
+[/site]
 
+[site wiki="copter, sub"]
 Winch
 +++++
 
 This output controls a winch for object delivery in Copter.
+[/site]
 
+[site wiki="copter"]
 Rotor Head Speed
 ++++++++++++++++
 
@@ -454,7 +483,9 @@ Tail Rotor Speed
 ++++++++++++++++
 
 Output to :ref:`Traditional Helicopter<traditional-helicopters>` tail rotor ESC/Governor (future enhancement).
+[/site]
 
+[site wiki="plane, copter, rover"]
 ROVER FUNCTIONS
 ---------------
 
@@ -481,11 +512,14 @@ Throttle Left/ Right
 ++++++++++++++++++++
 
 In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`. In Copter, theses outputs are used for the Bicopter motors.
+[/site]
 
+[site wiki="rover"]
 Main Sail Sheet
 ++++++++++++++++++++++
 
 This output is used to control the Main Sail in Rover based Sailboats. See :ref:`Sailing Vehicle Setup<sailboat-hardware>` setup for more information.
+[/site]
 
 ANTENNA TRACKER FUNCTIONS
 -------------------------
@@ -555,6 +589,7 @@ Camera ISO/Aperture/Focus/Shutter Speed
 
 These outputs are used to remotely control the above values for BMMC (Blackmagic Micro Cinema Camera) compatible devices.
 
+[site wiki="plane, copter, rover"]
 INTERNAL COMBUSTION ENGINE FUNCTIONS
 ------------------------------------
 
@@ -572,18 +607,21 @@ Ignition/Starter/Choke
 ++++++++++++++++++++++
 
 For control of an internal combustion engine's spark plug/igniter, starter motor, and choke. See :ref:`common-ice`.
+[/site]
 
 NEOPIXEL LED STRINGS
 --------------------
 
-:ref:`Neopixel LEDs/Strings<common-serial-led-neopixel>` can be controlled using ``Function IDs 120-123``, thereby supporting up to four strings independently controlled. These may be used for ArduPilot notifications and warnings (See :ref:`common-ntf-devices` ) or controlled via LUA scripting (See :ref:`common-lua-scripts`.
+:ref:`Neopixel LEDs/Strings<common-serial-led-neopixel>` can be controlled using ``Function IDs 120-123``, thereby supporting up to four strings independently controlled. These may be used for ArduPilot notifications and warnings (See :ref:`common-ntf-devices`) or controlled via LUA scripting (See :ref:`common-lua-scripts`).
+
 This is available in all vehicles.
 
 ProfiLEDs
 ---------
 
-:ref:`ProfiLEDs<common-serial-led-ProfiLED>` can be controlled using ``Function IDs 129-132``, thereby supporting up to three strings independently controlled with a common clock. These may be used for ArduPilot notifications and warnings (See :ref:`common-ntf-devices` ) or controlled via LUA scripting (See :ref:`common-lua-scripts`. This is available in all vehicles. See :ref:
+:ref:`ProfiLEDs<common-serial-led-ProfiLED>` can be controlled using ``Function IDs 129-132``, thereby supporting up to three strings independently controlled with a common clock. These may be used for ArduPilot notifications and warnings (See :ref:`common-ntf-devices`) or controlled via LUA scripting (See :ref:`common-lua-scripts`).
 
+This is available in all vehicles.
 
 MISCELLANEOUS FUNCTIONS
 -----------------------
@@ -618,16 +656,19 @@ Gripper
 
 This is an output for controlling a servo or electromagnetic gripper for holding items for delivery applications. See :ref:`common-gripper-landingpage` for more information.
 
+[site wiki="copter"]
 Sprayer Pump/Mixer
 ++++++++++++++++++
 
 These outputs are controlling a :ref:`sprayer`.
+[/site]
 
 Output SERVOn MAX/MIN/TRIM
 ++++++++++++++++++++++++++
 
 Continuously outputs the parameter value set for that output. Used in button detection. See  :ref:`common-buttons`
 
+[site wiki="sub"]
 Lights1/2
 +++++++++
 
@@ -637,12 +678,14 @@ Video Switch
 ++++++++++++
 
 PWM Video switch for Sub
+[/site]
 
 GENERAL PURPOSE LUA SCRIPTING OUTPUTS
 -------------------------------------
 
 :ref:`Lua Scripts <common-lua-scripts>` can also directly control autopilot outputs. Using ``Function IDs 94-109`` provides the ability to configure up to 16 of these outputs, if the autopilot is capable. This is available in all vehicles.
 
+[site wiki="sub"]
 Actuators
 ---------
 
@@ -654,7 +697,9 @@ PWM based actuators which can be incrementally controlled by Sub buttons or GCS 
 |      Actuator 1 thru           |184- |     Sub                               |
 |         Actuator 6             |189  |                                       |
 +--------------------------------+-----+---------------------------------------+
+[/site]
 
+[site wiki="copter"]
 INTERNAL CONTROLLER ACCESS
 --------------------------
 
@@ -671,7 +716,9 @@ INTERNAL CONTROLLER ACCESS
 +--------------------------------+-----+---------------------------------------+
 
 These outputs provide the FeedForward terms fr   om the attitude control loops, scaled by the ATC_RAT_x_FF PID parameter values for roll/pitch/yaw for use with external vehicle controllers.
+[/site]
 
+[site wiki="plane, copter, rover"]
 DEFAULT VALUES
 --------------
 
@@ -700,6 +747,9 @@ Either upon loading the firmware or selecting the frame type, certain default va
 +------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
 | Rover                              |26 |0  |70 |0  |0  |0  |0  |0  |0  |0   |0   |0   |
 +------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
+[/site]
 
- .. note:: Rover Skid Steered vehicles will need to manually change SERVO1 and SERVO3 to Throttle Left and Throttle Right to enable skid steering.
- 
+[site wiki="rover"]
+ .. note:: Rover Skid Steered vehicles will need to manually change SERVO1 and SERVO3 to Throttle Left and Throttle Right to enable skid steering. 
+[/site]
+

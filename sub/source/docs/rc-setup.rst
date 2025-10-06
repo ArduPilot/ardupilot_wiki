@@ -13,14 +13,7 @@ Any ArduPilot compatible :ref:`radio control system<common-rc-systems>` can be e
 Configuration
 =============
 
-The mapping of which incoming rc channel controls which axis/directional control is fixed when GCS only control is used, However, these can be remapped using:
-
-- :ref:`RCMAP_ROLL<RCMAP_ROLL>`
-- :ref:`RCMAP_PITCHL<RCMAP_PITCH>`
-- :ref:`RCMAP_YAW<RCMAP_YAW>`
-- :ref:`RCMAP_THROTTLE<RCMAP_THROTTLE>`
-- :ref:`RCMAP_FORWARD<RCMAP_FORWARD>`
-- :ref:`RCMAP_LATERAL<RCMAP_LATERAL>`
+* The mapping of which incoming RC channel controls which axis/directional control is fixed when GCS only control is used, however, these can be remapped using :ref:`common-rcmap`.
 
 * If a flight mode switch is used, it can be setup as following :ref:`common-rc-transmitter-flight-mode-configuration`.
 

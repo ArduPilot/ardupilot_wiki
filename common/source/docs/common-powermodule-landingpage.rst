@@ -47,6 +47,7 @@ CAN/DroneCAN Power Monitors and Batteries
     Aerotate DroneCAN Smart Battery<common-aerotate-dronecan-battery>
     CUAV CAN/DroneCAN PMU<common-can-pmu>
     Holybro PM08-CAN Power Modules <https://holybro.com/collections/power-modules-pdbs/products/dronecan-pm08-power-module-14s-200a>
+    MakeFlyEasy DroneCan PDB <https://www.uavmodel.com/products/makeflyeasy-pdb-can-distribution-board-dronecan-flight-control-board-ardupilot-flight-control>
     Matek CAN-L4-BM DroneCan PMU <http://www.mateksys.com/?portfolio=can-l4-bm>
     Packet Digital MPPT Solar Controller <common-packetdigital-mppt>
     Pomegranate Systems<common-pomegranate-systems-pm>

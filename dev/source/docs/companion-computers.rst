@@ -45,7 +45,7 @@ tools/suites are listed below.
 .. toctree::
     :maxdepth: 1
 
-    BlueOS <https://blueos.cloud/>
+    BlueOS <companion-computer-blueos>
     DroneKit <droneapi-tutorial>
     FlytOS <flytos>
     Maverick <https://goodrobots.github.io/maverick/#/>

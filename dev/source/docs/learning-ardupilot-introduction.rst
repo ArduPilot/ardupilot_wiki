@@ -21,7 +21,7 @@ The basic structure of ArduPilot is broken up into 5 main parts:
 -  shared libraries
 -  hardware abstraction layer (AP_HAL)
 -  tools directories
--  external support code (i.e. mavlink, dronekit)
+-  external support code (e.g. mavlink)
 
 Vehicle Code
 ------------
@@ -47,8 +47,8 @@ The AP_HAL layer (Hardware Abstraction Layer) is how we make ArduPilot
 portable to lots of different platforms. There is a top-level AP_HAL in
 libraries/AP_HAL that defines the interface that the rest of the code
 has to specific board features, and then there is a AP_HAL_XXX
-subdirectory for each board type, for example, AP_HAL_AVR for AVR based
-boards, AP_HAL_PX4 for Pixhawk boards and AP_HAL_Linux for Linux based
+subdirectory for each board type, for example, AP_HAL_ChibiOS for stm32-based
+boards, AP_HAL_ESP32 for ESP32 boards and AP_HAL_Linux for Linux based
 boards.
 
 Tools directories
@@ -65,13 +65,11 @@ External support code
 On some platforms we need external support code to provide additional
 features or board support. Currently the external trees are:
 
--  `PX4NuttX <https://github.com/ArduPilot/PX4NuttX>`__ - the core NuttX
-   RTOS used on Pixhawk boards
--  `PX4Firmware <https://github.com/ArduPilot/PX4Firmware>`__ - the base
-   PX4 middleware and drivers used on Pixhawk boards
--  `uavcan <https://github.com/ArduPilot/uavcan>`__ - the uavcan CANBUS
+-  `ChibiOS <https://github.com/ArduPilot/ChibiOS>`__ - the ChibiOS
+   RTOS used on stm32-based boards
+-  `DroneCAN <https://github.com/DroneCAN>`__ - the CANBUS
    implementation used in ArduPilot
--  `mavlink <https://github.com/mavlink/mavlink>`__ - the mavlink
+-  `mavlink <https://github.com/ArduPilot/mavlink>`__ - the mavlink
    protocol and code generator
 
 .. note::

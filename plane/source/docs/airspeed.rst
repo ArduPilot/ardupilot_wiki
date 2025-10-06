@@ -173,6 +173,10 @@ I2C
 DroneCAN
 --------
 
+- Amphenol AUAV (static and dynamic pressure)
+    - `Beyond Robotix Air Data Module <https://www.beyondrobotix.com/products/air-data-module>`_
+    - `Matek DroneCAN AUAV Airspeed/Baro <https://www.mateksys.com/?portfolio=aspd-auav>`__
+
 - DLVR
     - `Foxtech AEROFOX Airspeed/Compass <https://www.foxtechfpv.com/foxtech-aerofox-can-airspeed-compass.html>`__
     - `Holybro DroneCAN DLVR <https://holybro.com/products/high-precision-dronecan-airspeed-sensor-dlvr>`__

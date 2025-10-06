@@ -121,7 +121,7 @@ For clarification, this is not the same as the RPM that can be passed
 via serial telemetry with ESCs.  For information on how to set up RPM reporting with capable ESCs, see the :ref:`ESC Telemetry<blheli32-esc-telemetry>`.
 
 The setup for electrical commutation RPM sensors is much the same as hall effect sensors, so the steps above are applicable.  The only difference is the scaling value 
-to be entered in the :ref:`RP2_SCALING<RPM2_SCALING>` parameter.  Now, the scaling value is a function of the number of poles in the motor and should be the reciprocal of the number of 
+to be entered in the :ref:`RPMN2_SCALING<RPM2_SCALING>` parameter.  Now, the scaling value is a function of the number of poles in the motor and should be the reciprocal of the number of 
 pole pairs.  E.g. A motor with 20 poles, therefore 10 pole pairs, needs a scaling value of 1/10 = 0.1.
 
 Optical Sensors

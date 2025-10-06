@@ -4,8 +4,7 @@
 RC Transmitter Flight Mode Configuration
 ========================================
 
-This article shows how you can enable up to 6 autopilot control/flight
-modes to be set from your RC transmitter via the flight mode channel (:ref:`FLTMODE_CH` for plane,copter, :ref:`MODE_CH` for rover). Flight mode changes can also be made via RC channels setup as :ref:`common-auxiliary-functions`.
+This article shows how you can enable up to 6 autopilot control/flight modes to be set from your RC transmitter via the flight mode channel (:ref:`FLTMODE_CH<FLTMODE_CH>` for plane/copter/sub, :ref:`MODE_CH<MODE_CH>` for rover). Flight mode changes can also be made via RC channels setup as :ref:`common-auxiliary-functions`.
 
 .. _common-rc-transmitter-flight-mode-configuration_flight_modes_configuration:
 
@@ -72,8 +71,8 @@ the following:
 (a.k.a. ch7, ch8 option switches). For example, to set a dedicated
 switch for RTL.
 [/site]
-[/site wiki="sub"]
-Flight modes are assigned to up to 6 PWM ranges for the :ref:`FLTMODE_CH<FLTMODE_CH>`.This is done via the GCS parameter editor. See :ref:`Sub modes<modes>` for the available operating modes.
+[site wiki="sub"]
+Flight modes are assigned to up to 6 PWM ranges for the :ref:`FLTMODE_CH<FLTMODE_CH>`. This is done via the GCS parameter editor. See :ref:`Sub modes<modes>` for the available operating modes.
 [/site]
 
 Setting the flight mode channel

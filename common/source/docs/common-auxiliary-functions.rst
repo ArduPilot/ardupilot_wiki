@@ -3,18 +3,18 @@
 ===================
 Auxiliary Functions
 ===================
-This page describes how to set up additional features which can be invoked from the transmitter's auxiliary function switches, from Mission Planner using the ``Aux function`` sub-tab of the ``Data`` tab, via MAVLink/Mission command (ref:`MAV_CMD_DO_AUX_FUNCTION <mav_cmd_do_aux_function>` or from external :ref:`buttons <common-buttons>`.
+This page describes how to set up additional features which can be invoked from the transmitter's auxiliary function switches, from Mission Planner using the ``Aux function`` sub-tab of the ``Data`` tab, via MAVLink/Mission command (:ref:`MAV_CMD_DO_AUX_FUNCTION <mav_cmd_do_aux_function>`) or from external :ref:`buttons <common-buttons>`.
 
 Configuring which transmitter channel is used
 =============================================
 
-Any RC input channel can be assigned any auxiliary function. However, the RC channel should not be used by any other function, such as flight mode selection or flight controls. By default, channels 1-4 are used for flight controls (i.e. roll, pitch, throttle, and yaw). The default flight mode channel is 8 for Plane and Rover and 5 for Copter.
+Any RC input channel can be assigned any auxiliary function. However, the RC channel should not be used by any other function, such as flight mode selection or flight controls. By default, channels [site wiki="copter,plane,rover"]1-4 are used for flight controls (i.e. roll, pitch, throttle, and yaw). The default flight mode channel is 8 for Plane and Rover, and 5 for Copter.[/site][site wiki="sub"]1-6 are used for flight controls (i.e. pitch, roll, vertical, yaw, forward, and lateral), and channels 7 and 8 are used for camera mount gimbal yaw and pitch control. There is no default flight mode channel.[/site]
 
 Assigning the Feature
 =====================
 
-The RCx_OPTION parameters control these features. For example, the :ref:`RC7_OPTION <RC7_OPTION>` parameter controls which feature is assigned to RC input 7. Each RC channel has its
-own RCx_OPTION parameter that can be accessed in the full parameter list.
+The ``RCx_OPTION`` parameters control these features. For example, the :ref:`RC7_OPTION <RC7_OPTION>` parameter controls which feature is assigned to RC input 7. Each RC channel has its
+own ``RCx_OPTION`` parameter that can be accessed in the full parameter list.
 
 
 Supported Features
@@ -341,6 +341,8 @@ Intended as continuous PWM range control inputs:
 
 .. note:: 203-204 are not implemented for any vehicle, reserved for future use.
 
+.. note:: Motion axis/Attittude control channels can be remapped using :ref:`common-rcmap`.
+
 Description of Features
 =======================
 
@@ -422,7 +424,7 @@ Other functions are:
                                          | to the mode indicated by the ch5 flight mode switch.
     ADSB-Avoidance                       | When the switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>`
                                          | (avoidance of manned aircraft) is enabled, otherwise it's disabled
-    Precision Loiter                     | Turns on/off :ref:`Precision Loiter <precision-landing-with-irlock>`.
+    Precision Loiter                     | Turns on/off :ref:`Precision Loiter <precision-landing-and-loiter>`.
                                          | (i.e. holding position above a target in Loiter mode
                                          | using IR-Lock sensor)
     Object Avoidance                     | When the switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>`

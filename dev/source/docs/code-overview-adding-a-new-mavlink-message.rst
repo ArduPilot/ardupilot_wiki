@@ -50,9 +50,9 @@ file. If it is only for your personal use or only applicable to ArduPilot, then 
 
 **Step #4:** Add functions to the main vehicle code to handle sending or receiving the command to/from the ground station. A compile will be needed (ie. ./waf copter) to generate the MAVLink packet code so make sure to do that after editing the XML file. The MAVLink generation happens first, so it doesn't matter if the project compilation is successful or not due to other source code changes.
 
-The top-level of this code will most likely be in the vehicle's
-`GCS_MAVLink.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_Mavlink.cpp>`__
-file or in the
+The top-level of this code will most likely be in the vehicle's GCS_MAVLink_<vehicle>.cpp file
+(`GCS_MAVLink_Copter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_MAVLink_Copter.cpp>`__ for ArduCopter) 
+or in the
 `../libraries/GCS_MAVLink/GCS <https://github.com/ArduPilot/ardupilot/blob/master/libraries/GCS_MAVLink/GCS.h>`__
 class.
 

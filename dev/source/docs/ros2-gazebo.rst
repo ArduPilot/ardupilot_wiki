@@ -14,6 +14,11 @@ Ensure you have the prerequisites complete and working before beginning this Gaz
 #. :ref:`Install ROS 2 <ros2>`
 #. :ref:`Install and Run ROS 2 with ArduPilot SITL <ros2-sitl>`
 
+.. note::
+    Ensure OpenGL hardware acceleration is enabled on your system before proceeding. Using software rendering
+    will result in very poor performance from Gazebo.
+
+
 Install Gazebo
 ==============
 
@@ -41,14 +46,14 @@ Add Gazebo APT sources.
 
   sudo apt install wget
   wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
-  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
   sudo apt update
 
 Add Gazebo sources to `rosdep` for the non-default pairing of ROS 2 Humble and Gazebo Harmonic.
 
 .. code-block:: bash
 
-  wget https://raw.githubusercontent.com/osrf/osrf-rosdep/master/gz/00-gazebo.list -O /etc/ros/rosdep/sources.list.d/00-gazebo.list
+  sudo wget https://raw.githubusercontent.com/osrf/osrf-rosdep/master/gz/00-gazebo.list -O /etc/ros/rosdep/sources.list.d/00-gazebo.list
   rosdep update
 
 Update ROS and Gazebo dependencies:
@@ -116,7 +121,7 @@ Examples available
 
 .. code-block:: bash
 
-    ros2 launch ardupilot_gz_bringup wildthumper.launch.py
+    ros2 launch ardupilot_gz_bringup wildthumper_playpen.launch.py
 
 Here is a demo video of ArduPilot working with ROS 2 and Gazebo:
 

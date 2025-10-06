@@ -132,7 +132,7 @@ volt meter's reading by more than perhaps 0.2V) you can calibrate it by doing th
        :target: ../_images/CalibrateVoltage.png
 
 Using the power analyser you can also measure the current and compare to
-results displayed in the Mission Planner.
+results displayed in the Mission Planner. You can also empirically adjust the current scale and offset parameters as explained in :ref:`common-analog-current-calibration`.
 
 .. note::
 
@@ -177,4 +177,8 @@ using the ``BATT_VOLT_PIN`` and ``BATT_CURR_PIN`` parameters.
 The list of available analog input pins that can be used are listed on
 the Hardware Options page for the :ref:`Pixhawk <common-pixhawk-overview_pixhawk_analog_input_pins>`  board or its board description linked from the :ref:`common-autopilots` page
 
+.. toctree::
+    :hidden:
+
+    common-analog-current-calibration
 

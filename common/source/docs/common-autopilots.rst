@@ -114,7 +114,6 @@ Closed Hardware
     Holybro Kakute F7 Mini (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
     Holybro Kakute H7 V1 <common-holybro-kakuteh7.rst>
     Holybro Kakute H7 V2 <common-holybro-kakuteh7-v2>
-    Holybro Kakute H7 Mini v1.3 <common-holybro-kakuteh7mini-v13>
     Holybro Kakute H7 Wing <common-kakuteh7wing>
     Holybro Pixhawk 4 Mini <common-holybro-ph4mini>
     Holybro Pixhawk5X <common-holybro-ph5x>
@@ -144,6 +143,8 @@ Closed Hardware
     MFT-SEMA100 <common-mft-sema100>
     MicoAir405v2/Mini <common-MicoAir405v2>
     MicoAir743 <common-MicoAir743>
+    MicoAir743-AIO <common-MicoAir743-AIO>
+    MicoAir743v2 <common-MicoAir743v2>
     ModalAI Flight core <https://www.modalai.com/products/flight-core>
 [site wiki="copter,rover,blimp"]
     ModalAI VOXL2 <common-modalai-voxl2>
@@ -173,6 +174,7 @@ Closed Hardware
     SDMODEL SDH7V1 <https://www.sdmodel.com.tw/content.php?cn=item&tid=1320&start=0>
     SDMODEL H7 V2 <common-SDMODELH7V2>
     SequreH743 <common-sequreh743>
+    SIYI N7 <https://siyi.biz/siyi_file/N7/N7%20Autopilot%20User%20Manual%20(ArduPilot)%20v1.0.pdf>
     Sky-Drones AIRLink <common-skydrones-airlink>
     SkySakuraH743 <common-SkySakuraH743>
     SkystarsH7HD <common-skystarsH7>
