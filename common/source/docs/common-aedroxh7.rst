@@ -50,7 +50,7 @@ The default RC input is configured on the UART3 (RX3/SBUS). Non SBUS,  single wi
 
 OSD Support
 ===========
-Onboard OSD using OSD_TYPE 1 (MAX7456 driver) is supported by default. Simultaneously, DisplayPort OSD is available by default on the HD VTX connector.
+DisplayPort OSD is available by default on the HD VTX connector.
 
 VTX Support
 ===========

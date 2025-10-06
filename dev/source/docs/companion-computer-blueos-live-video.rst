@@ -57,9 +57,10 @@ To view the live video in Mission Planner or QGC, the RTSP Relay (aka MediaMTX) 
   paths:
     input:
       # Change this to the URL of the RTSP stream you want to proxy
-      # Default is the RTSP stream from the Syiy A8 camera
-      source: rtsp://192.168.144.108
-      rtspTransport: tcp
+      # Default is the RTSP stream from the Siyi A8 camera
+      # Most camera gimbals use "rtspTransport: udp" but XFRobot uses "tcp"
+      source: rtsp://192.168.144.25:8554/main.264
+      rtspTransport: udp
 
     compressed:
       runOnInit: >

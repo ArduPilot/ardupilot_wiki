@@ -99,7 +99,7 @@ Configure RPI/BlueOS to connect to your local WiFi:
   - Vehicle Name: MyCopter
   - MDNS Name: "blueos" (default)
 
-- On the top right, select the WiFi icon and connect to your local WiFi
+- On the top right, select the WiFi icon and connect to your local WiFi.  If you were connected to the RPI's WifiAP, you may need to reconnect using http://blueos-avahi.local
 
 Configure RPI/BlueOS's Ethernet IP to be the same subnet as the autopilot and camera:
 
@@ -109,7 +109,7 @@ Configure RPI/BlueOS's Ethernet IP to be the same subnet as the autopilot and ca
     - select "eth0"
     - select "ADD STATIC IP" and enter 192.168.144.20  (this will be the RPI's IP address on the vehicle)
     - select "DISABLE DHCP SERVER"
-    - beside "192.168.2.2 Static IP" push the trash can icon.  At this point you will lose contact with BlueOS but you can re-gain contact by changing the PC's manual IP address to 192.168.144.100 and reconnecting with the web browser to http://192.168.144.20
+    - beside "192.168.2.2 Static IP" push the trash can icon.  At this point if you were connected directly via ethernet you will lose contact with BlueOS but you can re-gain contact by changing the PC's manual IP address to 192.168.144.100 and reconnecting with the web browser to http://192.168.144.20
     - restore PC's IP address to automatic
 
 Connect RPI/BlueOS to Autopilot and Camera:
@@ -134,7 +134,8 @@ Connect RPI/BlueOS to Autopilot and Camera:
 - On the PC open a Chrome browser to http://blueos-avahi.local/ (BlueOS should appear)
 - Open BlueOS's Autopilot Firmware screen
 
-  - select "Master Endpoint"
+  - select "Change Board", "Manual"
+  - Under "Master Endpoint" enter the following
 
     - Connection Type: UDP Client
     - IP/Device: 192.168.144.15
