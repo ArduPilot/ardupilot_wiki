@@ -6,6 +6,8 @@
 Optical Flow Sensor Testing and Setup
 =====================================
 
+This page describes how to test and calibrate an optical flow sensor.  These instructions should normally be followed after performing the setup described on the individual sensor setup pages.
+
 Testing the sensor
 ==================
 
@@ -13,6 +15,32 @@ With the sensor connected to the autopilot, connect to the autopilot with the Mi
 
 .. image:: ../../../images/PX4Flow_CheckForData_MP.png
     :target: ../_images/PX4Flow_CheckForData_MP.png
+
+If the vehicle does not appear on the GCS map, please check the following:
+
+- Check the rangefinder is operating correctly (see below)
+- Use the Ground Station to set the EKF origin.  If using Mission Planner, right mouse button click on the map, select "Set Home here", and choose, "set EKF origin here"
+
+Once the vehicle appears on the map, move the vehicle horizontally and confirm the vehicle icon on the map moves accordingly
+
+[site wiki="plane,copter"]
+Rangefinder Check
+=================
+
+Check the rangefinder's reported distance is between the :ref:`RNGFND1_MIN <RNGFND1_MIN>` and :ref:`RNGFND1_MAX <RNGFND1_MAX>` parameter values when on the ground and when held up
+
+.. image:: ../../../images/mp_rangefinder_lidarlite_testing.jpg
+    :target: ../_images/mp_rangefinder_lidarlite_testing.jpg
+    :width: 250px
+
+You may also download an onboard log and check the ``EKF5.meaRng`` message to confirm
+
+#. There is continuous range measurement
+#. It outputs a range on the ground that is within 10cm of the expected value
+   (remember that measured range will increase when you roll or pitch
+   the vehicle because the laser is then measuring on a slant)
+
+[/site]
 
 Inflight Calibration
 ====================
@@ -125,30 +153,6 @@ To calibrate the sensor using Log file data please follow these steps:
 #. IF ``OF.bodyY`` is uncorrelated or opposite sign to ``IMU.GyrY``,
    the :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` parameter is probably set incorrectly or
    you do not have the flow sensor pointing downwards
-
-[site wiki="plane,copter"]
-Range Sensor Check
-==================
-
-Check the ``EKF5.meaRng`` message in the flashlog from your flow
-sensor calibration test. Check the following:
-
-#. There is continuous range measurement.
-#. It outputs a range on the ground that is 10cm of the expected value
-   (remember that measured range will increase when you roll or pitch
-   the vehicle because the laser is then measuring on a slant)
-
-[/site]
-
-Pre-Arm checks
-==============
-
-To allow arming and taking off in Loiter without a GPS the GPS arming
-check should be turned off as shown below.  Unchecking "All" and "GPS"
-and leave all other options checked.
-
-.. image:: ../../../images/OptFlow_ArmingChecks.png
-    :target: ../_images/OptFlow_ArmingChecks.png
 
 First Flight
 ============
