@@ -37,13 +37,17 @@ Windows files can be from within WSL2 using a file explorer such as ``nautilus``
 Uploading to a board using WSL2
 ===============================
 
-Uploading to boards (e.g. ``./waf plane --upload``) in WSL2 is possible; however, an installation of Python must exist on the Windows side. Install these packages in Windows Python.
+Uploading to boards (e.g. ``./waf plane --upload``) in WSL2 is possible using `usbipd <https://learn.microsoft.com/es-es/windows/wsl/connect-usb>`__. You need to run the usbipd attach command with the flag ``-a``, beacuase the board will connect and disconnect several times during the upload process. The ``-a`` flag ensures the board automatically reconnects.
+
+::
+
+    usbipd attach --wsl -a -i <device-id>
+
+If that doesn't work for you, you might have an outdated version of Windows or WSL. In that case try installing Python in the Windows side and installing the following modules:
 
 ::
 
     pip.exe install empy pyserial
-
-As of July 2022, Microsoft's solution of providing USB access to WSL2 via usbipd does not work for accessing the bootloader on the device due to slow mounting times.
 
 .. note:: WSL1 can upload to boards by default with no additional changes. This is due to differences in how USB devices are handled.
 
