@@ -382,6 +382,35 @@ you can then switch between whose outputs are being used by the simulation physi
 
 The second simulation could be running code from a different branch on the same computer.
 
+Adding a Slung Payload
+======================
+
+.. image:: ../images/sitl-slung-payload.jpg
+
+A vehicle with a slung payload can be simulated by first following the setup instructions for real vehicles  `here <https://ardupilot.org/copter/docs/slung-payload.html>`__ which includes:
+
+- param set :ref:`SCR_ENABLE <SCR_ENABLE>` 1
+- copy the `copter-slung-payload.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/copter-slung-payload.lua>`__ script to the "scripts" directory
+- copy the `modules/MAVLink <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/modules/MAVLink>`__ directory to the "scripts" directory
+
+Then set up the simulated payload by doing the following:
+
+- param set :ref:`SIM_SLUP_ENABLE <SIM_SLUP_ENABLE>` 1
+- optionally set other simulated payload features:
+
+    - :ref:`SIM_SLUP_LINELEN <SIM_SLUP_LINELEN>`: the length of the line between vehicle and payload (in meters)
+    - :ref:`SIM_SLUP_SYSID <SIM_SLUP_SYSID>`: system id of the payload
+    - :ref:`SIM_SLUP_WEIGHT <SIM_SLUP_WEIGHT>`: weight of the payload (in kg)
+    - :ref:`SIM_SLUP_DRAG <SIM_SLUP_DRAG>`: payload surface area drag.  Higher values will cause the payload to be affected more by wind
+
+- optionally add simulated wind:
+
+    - param set :ref:`SIM_WIND_DIR <SIM_WIND_DIR>` 90 (to add wind blowing from east to west)
+    - param set :ref:`SIM_WIND_SPD <SIM_WIND_SPD>` 4 (to add 4m/s of wind)
+
+- Create an auto mission with SCRIPT_TIME and/or PAYLOAD_PLACE mission commands
+- Fly the mission in Auto mode and confirm the vehicle counteracts the movement of the slung payload during SCRIPT_TIME and/or PAYLOAD_PLACE mission commands
+
 Adding a Winch
 ==============
 
