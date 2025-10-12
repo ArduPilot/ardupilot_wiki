@@ -37,7 +37,7 @@ Windows files can be from within WSL2 using a file explorer such as ``nautilus``
 Uploading to a board using WSL2
 ===============================
 
-Uploading to boards (e.g. ``./waf plane --upload``) in WSL2 is possible using `usbipd <https://learn.microsoft.com/es-es/windows/wsl/connect-usb>`__. You need to run the usbipd attach command with the flag ``-a``, beacuase the board will connect and disconnect several times during the upload process. The ``-a`` flag ensures the board automatically reconnects.
+Uploading to boards (e.g. ``./waf plane --upload``) in WSL2 is possible using `usbipd <https://learn.microsoft.com/en-us/windows/wsl/connect-usb>`__. You need to run the usbipd attach command with the flag ``-a``, beacuase the board will connect and disconnect several times during the upload process. The ``-a`` flag ensures the board automatically reconnects.
 
 ::
 
