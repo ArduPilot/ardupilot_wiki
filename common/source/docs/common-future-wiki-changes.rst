@@ -52,6 +52,7 @@ New Board Support
 - RadioLinkF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/7153
 - AeroCogito H7Digital, see https://github.com/ArduPilot/ardupilot_wiki/pull/7154
 - PocketBeagle2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7165
+- TBS Lucid H7 Wing AIO, see <https://github.com/ArduPilot/ardupilot_wiki/pull/7169>
 
 New Peripheral Support
 ======================
