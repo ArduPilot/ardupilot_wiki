@@ -28,6 +28,12 @@ Check Internet Connectivity
 
 - Power on the vehicle and wait a few minutes for BlueOS to start and for the modem to connect to the 4G/LTE network
 - On the PC open a Chrome browser to http://blueos-avahi.local/ (BlueOS should appear)
+- From the top right menu select the Networking icon, look for "usb1" and confirm it is using "Dynamic IP"
+
+  .. image:: ../images/blueos-lte-modem-dynamic-ip.png
+      :target: ../_images/blueos-lte-modem-dynamic-ip.png
+      :width: 400px
+
 - From the top right menu select the globe icon and confirm "usb" shows a green globe meaning internet is available
 - Optionally change the priority of 4G/LTE vs wifi by changing the order of "usb" and "wlan" in the list
 
