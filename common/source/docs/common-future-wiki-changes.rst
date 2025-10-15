@@ -61,6 +61,7 @@ New Peripheral Support
 - Torqeedo TorqLink controlled motors, see https://github.com/ArduPilot/ardupilot_wiki/pull/6584
 - Battery Tags, see https://github.com/ArduPilot/ardupilot_wiki/pull/6893
 - VimDrones DroneCAN peripherals, see https://github.com/ArduPilot/ardupilot_wiki/pull/6906
+- VSPeak fuel flow meter, see https://github.com/ArduPilot/ardupilot_wiki/pull/7175
 
 New Features
 ============
