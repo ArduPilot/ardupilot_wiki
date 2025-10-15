@@ -508,8 +508,8 @@ Bitmask Options
 - if bit 7 is set, then the TX pin has a weak pull up resistor activated.
 - if bit 8 is set, then the RX has no DMA activated (assuming DMA is available on this UART)
 - if bit 9 is set, then the TX has no DMA activated (assuming DMA is available on this UART)
-- if bit 10 is set, then MAVLink forwarding will not be active on this UART port.
+- if bit 10 is set, then MAVLink forwarding will not be active on this UART port. (moved to MAVx_OPTIONS in 4.7 and later)
 - if bit 11 is set, then the hardware FIFO in H7 autopilots is disabled
-- if bit 12 is set, the GCS are prevented from changing the MAVLink message stream rates set by the ``SRx_...`` parameters.
+- if bit 12 is set, the GCS are prevented from changing the MAVLink message stream rates set by the ``SRx_...`` parameters.(moved to MAVx_OPTIONS in 4.7 and later)
 
 .. note:: HalfDuplex is supported on all ChiBiOS based autopilots, but inversion and swap are only supported on boards with F7 or H7 microprocessors.
