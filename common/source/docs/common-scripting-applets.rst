@@ -13,6 +13,7 @@ Below is a list of applets and their use as of this writing. More are being adde
 Applet Name                                 Description
 ==========================================  ===========
 BattEstimate.lua                            Battery state of charge estimator
+CAN_playback.lua                            Plays back captured CAN frames from a flight log
 Gimbal_Camera_Mode.lua                      Select auto or manual gimbal/camera control mode
 Heli_IM_COL_Tune.lua                        Traditional IM_COL_TUNE tuning applet
 Heli_idle_control.lua                       Allows manual or automatic rpm control while in ground idle condition

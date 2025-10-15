@@ -128,6 +128,7 @@ CAN_Dx_UC_OPTION bit      Function when set
 7                         HobbyWingESC, enable command set for this esc
 8                         EnableStats, enable peripheral to send bus stats
 9                         EnableFlexDebug, enable flexible debugging via LUA, see `this example <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/FlexDebug.lua>`__
+10                        SecondaryAllowExtendedFrames, see https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/CAN_playback.lua
 ====================      =================
 
 .. _dronecan_node_conflicts:
