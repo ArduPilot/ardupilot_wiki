@@ -6,7 +6,7 @@ CubePilot HereFlow Optical Flow Sensor
 
 [copywiki destination="copter,plane,rover"]
 
-The `HereFlow optical flow sensor <https://cubepilot.com/#/accessory/features>`__ is a lightweight optical flow sensor including a short range lidar which uses the CAN protocol to communicate with the autopilot.  This can be used to improve horizontal position control especially in GPS denied environments.
+The `HereFlow optical flow sensor <https://docs.cubepilot.org/user-guides/flow-senor/here-flow>`__ is a lightweight optical flow sensor including a short range lidar which uses the CAN protocol to communicate with the autopilot.  This can be used to improve horizontal position control especially in GPS denied environments.
 
 ..  youtube:: MKJB_7cA_0s
     :width: 100%
@@ -18,7 +18,7 @@ The `HereFlow optical flow sensor <https://cubepilot.com/#/accessory/features>`_
 Where to Buy
 ------------
 
-The sensor is available from `CubePilot resellers <https://cubepilot.com/#/reseller/list>`__
+The sensor is available from `CubePilot resellers <https://www.cubepilot.org/#/reseller/list>`__
 
 Connection to Autopilot
 -----------------------
