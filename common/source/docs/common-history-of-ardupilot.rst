@@ -230,8 +230,21 @@ Nov 2019 - Rover 4.0.0 released with Boat and Sailboat improvements, OSD support
 
 Dec 2019 - Copter 4.0.0 with RCx_OPTION support, LUA Scripting support, new modes, up to ten battery monitors
 
+Oct 2021 - Plane, Copter, Rover `4.1.0 released <https://discuss.ardupilot.org/t/copter-4-1-0-released-as-the-official-default-version/76889>`__
 
+May 2022 - Plane, Copter, Rover `4.2.0 released <https://discuss.ardupilot.org/t/copter-4-2-0-has-been-released/85859>`__
 
+Oct 2022 - Plane, Copter `4.3.0 released <https://discuss.ardupilot.org/t/copter-4-3-0-released/92530>`__
+
+Aug 2023 - Plane, Copter, Rover `4.4.0 released <https://discuss.ardupilot.org/t/copter-4-4-0-released/105233>`__
+
+Apr 2024 - Plane, Copter, Rover, Tracker `4.5.0 released <https://discuss.ardupilot.org/t/copter-4-5-0-released/115614>`__
+
+Oct 2024 - `ArduPilot Developer Conference held in Kaga, Japan <https://discuss.ardupilot.org/t/ap-dev-conference-presentations/125861>`__
+
+May 2025 - Plane, Copter, Rover, Tracker `4.6.0 released <https://discuss.ardupilot.org/t/copter-4-6-0-released/134617>`__
+
+Oct 2025 - `ArduPilot Developer Conference held in Richmond, UK <https://discuss.ardupilot.org/t/ardupilot-conference-2025-thanks/138764>`__
 
 .. note::
 
