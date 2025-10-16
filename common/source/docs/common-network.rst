@@ -98,6 +98,22 @@ To configure a serial port for PPP (Serial2 is used in this example):
 - set :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 48 (PPP) requires a reboot to take effect.
 - set :ref:`SERIAL2_BAUD<SERIAL2_BAUD>` = 12500000 (12.5MBaud)
 
+Networking Options
+------------------
+Several setup options are available for networking operation via the :ref:`NET_OPTIONS<NET_OPTIONS>` bitmask parameter:
+
+=====   ==========================
+Bit     Function
+=====   ==========================
+0       EnablePPP Ethernet gateway
+1       Enable CAN1 multicast endpoint
+2       Enable CAN2 multicast endpoint
+3       Enable CAN1 multicast bridged
+4       Enable CAN2 multicast bridged
+5       DisablePPPTimeout
+6       DisablePPPEchoLimit
+=====   ==========================
+
 ArduPilot Port Configuration
 ----------------------------
 
