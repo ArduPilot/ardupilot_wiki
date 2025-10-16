@@ -483,6 +483,33 @@ DDS XRCE
 .. raw:: html
 
    </td>
+   <tr>
+   <td> 46</td>
+   <td>
+
+IMU Data
+
+.. raw:: html
+
+   </td>
+   <tr>
+   <td> 48</td>
+   <td>
+
+PPP
+
+.. raw:: html
+
+   </td>
+   <tr>
+   <td> 49</td>
+   <td>
+
+i-BUS Telemetry
+
+.. raw:: html
+
+   </td>
    </tr>
    </tbody>
    </table>
