@@ -86,7 +86,7 @@ Configuration of CAN driver
 ---------------------------
 
 The driver should be set to use some protocol. Currently there is support for DroneCAN devices,
-which is numbered 1, and numerous CAN ESCs and other devicess.
+which is numbered 1, and numerous CAN ESCs and other devices.
 The parameter ``CAN_Dx_PROTOCOL``, where x is the number of driver, should be filled
 with the number of protocol for this driver.
 
@@ -110,6 +110,9 @@ After the change to protocol the autopilot has to be rebooted for the changes to
 
 .. note:: only devices matching the selected protocol can be connected to a given CAN bus. Mixing of different protocol devices on a single CAN bus is not allowed. However, if the Protocol is set to DroneCAN, certain devices with different protocols can be attached. See :ref:`dronecan_mixed_protocols`.
 
+CAN Logging
+-----------
+Logging of all CAN frames can be enabled using the :ref:`CAN_P1_OPTIONS<CAN_P1_OPTIONS>` and/or :ref:`CAN_P2_OPTIONS<CAN_P2_OPTIONS>` parameters.
 
 CAN ESCs
 ========
