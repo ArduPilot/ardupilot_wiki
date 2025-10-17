@@ -91,6 +91,7 @@ Closed Hardware
     AocodaRC H743Dual <common-aocoda-h743dual>
     AtomRC F405-NAVI <common-atomrcf405-navi>
     BetaFPV F405 family <common-betafpvf405>
+    BrahmaF4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/BrahmaF4/README.md>
     brainFPV RADIX2 HD <common-radix2hd>
     Brother Hobby F405v3 <common-brotherhobbyf405v3>
     Brother Hobby H743 <common-brotherhobbyh743>
