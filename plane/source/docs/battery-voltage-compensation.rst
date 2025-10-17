@@ -22,6 +22,11 @@ If an airspeed sensor is used and healthy, then for speed controlled modes, such
 
 :ref:`FWD_BAT_VOLT_MIN<FWD_BAT_VOLT_MIN>` sets a lower limit on compensation to prevent excessive sag.
 
+Throttle Cutoff
+---------------
+
+:ref:`FWD_BAT_THR_CUT<FWD_BAT_THR_CUT>` parameter provides a low resting voltage cutoff of power to the forward motor as designated by :ref:`FWD_BAT_IDX<FWD_BAT_IDX>` to prevent losing power to any other circuitry (including the flight controller and servos if powered from this battery). The default value of "0" disables this feature.
+
 QuadPlane VTOL Motor Compensation
 =================================
 
