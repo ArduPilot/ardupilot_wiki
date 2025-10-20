@@ -104,7 +104,7 @@ The last line of the script is also used to schedule the function to be run for 
 
 Script Crashes and Errors
 =========================
-If scripts run out of memory (or panic for any reason) all currently running scripts are terminated. If an indivdual script has an errror, it will terminate. If either occurs before arming, a pre-arm failure will be generated. A scripting restart command or reboot would be needed to restart the script or scripting as a whole.
+If scripts run out of memory (or panic for any reason) all currently running scripts are terminated. If an individual script has an error, it will terminate. If either occurs before arming, a pre-arm failure will be generated. A scripting restart command or reboot would be needed to restart the script or scripting as a whole.
 
 In order to prevent arming if a script is missing (ie. SD card ejected or file corrupted) or if a script that is supposed to run once before arming and then terminate, but does not, then either, or both, of two checksum pre-arm checks can be enabled:
 
