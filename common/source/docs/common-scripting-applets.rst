@@ -7,7 +7,7 @@ Script Applets
 
 These are scripts that require no user editing before use, and can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ . Each of these has a .md file of the same name detailing its capabilities, use, and setup.
 
-Below is a list of applets and their use as of this writing. More are being added continually.
+Below is a list of applets and their use as of this writing. More are being added continually. They are ordered in Case Sensitive alphabetic order, so scipts using Capital Letters come first.
 
 ==========================================  ===========
 Applet Name                                 Description
@@ -29,6 +29,7 @@ VTOL-quicktune.lua                          VTOL-quicktuning applet
 advance-wp.lua                              Advance the current mission waypoint via an RC switch
 ahrs-set-origin.lua                         Sets the AHRS/EKF origin to a specified Location
 ahrs-source-extnav-optflow.lua              Help vehicles automatically switch between ExternalNav and optical flow
+arming_checks.lua                           Scripted Arming Checks that can be invidually enabled/disabled
 camera-change-setting.lua                   Allows changing some camera settings that are not normally used by the autopilot
 copter-deadreckon-home.lua                  Flies towards home on loss of GPS
 copter-slung-payload.lua                    Reduce a slung payload's oscillation
@@ -41,9 +42,11 @@ mount-poi.lua                               Displays the location (lat, lon and 
 net_webserver.lua                           This implements a web server for boards that have networking support
 pelco_d_antennatracker.lua                  Maps AntennaTracker outputs to corresponding Pelco-D messages
 plane_aerobatics.lua(in Aerobatics subdir)  Autonomous trajectory precise aerobatics
+plane_follow.lua                            Allows one or more ArduPlanes to follow a mavlink target, often another plane.
 plane_package_place.lua                     Quadplane payload place script
 plane_precland.lua                          Precision landing/loitering system for QuadPlanes
 plane_ship_landing.lua                      Script to automate moving vehicle landing with a beacon
+quadplane_terrain_avoid.lua                 Helps a QuadPlane with a rangefinder to avoid terrain when flying near the ground
 repl.lua                                    Interactive REPL (read-evaluate-print-loop) for the Lua scripting
 revert_param.lua                            Switch allows you toevert all the parameter changes to the values from startup
 rover-quicktune.lua                         QuicK tuning applet for Rovers
@@ -52,6 +55,4 @@ video-stream-information.lua                Populate the VIDEO_STREAM_INFORMATIO
 sport_aerobatics.lua(in Aerobatics subdir)  Autonomous rate based aerobatics
 winch-control.lua                           Allows the winch to be deployed or retracted using an auxiliary switch
 x-quad-cg-allocation.lua                    Scriptable control allocation matrix to request asymmeterical front and back thrust
-arming_checks.lua                           Scripted Arming Checks that can be invidually enabled/disabled
-plane_follow.lua                            Allows one or more ArduPlanes to follow a mavlink target, often another plane.
 ==========================================  ===========
