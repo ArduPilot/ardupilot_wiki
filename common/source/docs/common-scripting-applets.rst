@@ -52,4 +52,6 @@ video-stream-information.lua                Populate the VIDEO_STREAM_INFORMATIO
 sport_aerobatics.lua(in Aerobatics subdir)  Autonomous rate based aerobatics
 winch-control.lua                           Allows the winch to be deployed or retracted using an auxiliary switch
 x-quad-cg-allocation.lua                    Scriptable control allocation matrix to request asymmeterical front and back thrust
+arming_checks.lua                           Scripted Arming Checks that can be invidually enabled/disabled
+plane_follow.lua                            Allows one or more ArduPlanes to follow a mavlink target, often another plane.
 ==========================================  ===========
