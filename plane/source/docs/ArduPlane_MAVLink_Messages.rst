@@ -155,6 +155,7 @@ Commands the autopilot handles when received.
   #212,  `MAV_CMD_DO_AUTOTUNE_ENABLE <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_AUTOTUNE_ENABLE>`_, `ArduPlane/GCS_Mavlink.cpp <https://github.com/ArduPilot/ardupilot/tree/master/ArduPlane/GCS_Mavlink.cpp>`_, common
   #218,  `MAV_CMD_DO_AUX_FUNCTION <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_DO_AUX_FUNCTION>`_, `AP_Mission/AP_Mission.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Mission/AP_Mission.cpp>`_, ardupilotmega
   #42426,  `MAV_CMD_DO_CANCEL_MAG_CAL <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_DO_CANCEL_MAG_CAL>`_, `AP_Compass/AP_Compass_Calibration.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Compass/AP_Compass_Calibration.cpp>`_, ardupilotmega
+  #186,  `MAV_CMD_DO_CHANGE_ALTITUDE <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_CHANGE_ALTITUDE>`_, `ArduPlane/GCS_Mavlink.cpp <https://github.com/ArduPilot/ardupilot/tree/master/ArduPlane/GCS_Mavlink.cpp>`_, common
   #178,  `MAV_CMD_DO_CHANGE_SPEED <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_CHANGE_SPEED>`_, `ArduPlane/GCS_Mavlink.cpp <https://github.com/ArduPilot/ardupilot/tree/master/ArduPlane/GCS_Mavlink.cpp>`_, common
   #202,  `MAV_CMD_DO_DIGICAM_CONFIGURE <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_DIGICAM_CONFIGURE>`_, `AP_Camera/AP_Camera.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Camera/AP_Camera.cpp>`_, common
   #203,  `MAV_CMD_DO_DIGICAM_CONTROL <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_DIGICAM_CONTROL>`_, `AP_Camera/AP_Camera.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Camera/AP_Camera.cpp>`_, common
@@ -667,7 +668,6 @@ Unsupported / unhandled commands.
   #3001,  `MAV_CMD_ARM_AUTHORIZATION_REQUEST <https://mavlink.io/en/messages/common.html#MAV_CMD_ARM_AUTHORIZATION_REQUEST>`_, UNSUPPORTED, common
   #113,  `MAV_CMD_CONDITION_CHANGE_ALT <https://mavlink.io/en/messages/common.html#MAV_CMD_CONDITION_CHANGE_ALT>`_, UNSUPPORTED, common
   #159,  `MAV_CMD_CONDITION_LAST <https://mavlink.io/en/messages/common.html#MAV_CMD_CONDITION_LAST>`_, UNSUPPORTED, common
-  #186,  `MAV_CMD_DO_CHANGE_ALTITUDE <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_CHANGE_ALTITUDE>`_, UNSUPPORTED, common
   #200,  `MAV_CMD_DO_CONTROL_VIDEO <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_CONTROL_VIDEO>`_, UNSUPPORTED, common
   #33,  `MAV_CMD_DO_FOLLOW_REPOSITION <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_FOLLOW_REPOSITION>`_, UNSUPPORTED, common
   #221,  `MAV_CMD_DO_GUIDED_MASTER <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_GUIDED_MASTER>`_, UNSUPPORTED, common
