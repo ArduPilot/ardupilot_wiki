@@ -60,6 +60,8 @@ The pilot can retract the gimbal with the "Retract Mount1" or "Retract Mount2" a
 - :ref:`RC10_OPTION <RC10_OPTION>` = 27 ("Retract Mount1") to change the gimbal to Retract mode
 - :ref:`RC10_OPTION <RC10_OPTION>` = 113 ("Retract Mount2") to change the gimbal to Retract mode
 
+.. note:: if the gimbal is set to start in retracted mode by default (``MNTx_DEFLT_MODE`` set to 0), activating the switch puts the mount to the RC targetting mode (3) while the deactivation puts it back to the retracted mode (0).
+
 Mission Planner Gimbal Controls
 -------------------------------
 
