@@ -280,7 +280,6 @@ Messages that can be requested/streamed from the autopilot.
   #82,  `ATTITUDE_TARGET <https://mavlink.io/en/messages/common.html#ATTITUDE_TARGET>`_, `GCS_MAVLink/GCS_Common.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/GCS_MAVLink/GCS_Common.cpp>`_, common
   #286,  `AUTOPILOT_STATE_FOR_GIMBAL_DEVICE <https://mavlink.io/en/messages/common.html#AUTOPILOT_STATE_FOR_GIMBAL_DEVICE>`_, `GCS_MAVLink/GCS_Common.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/GCS_MAVLink/GCS_Common.cpp>`_, common
   #148,  `AUTOPILOT_VERSION <https://mavlink.io/en/messages/common.html#AUTOPILOT_VERSION>`_, `GCS_MAVLink/GCS_Common.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/GCS_MAVLink/GCS_Common.cpp>`_, common
-  #181,  `BATTERY2 <https://mavlink.io/en/messages/ardupilotmega.html#BATTERY2>`_, `GCS_MAVLink/GCS_Common.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/GCS_MAVLink/GCS_Common.cpp>`_, ardupilotmega
   #147,  `BATTERY_STATUS <https://mavlink.io/en/messages/common.html#BATTERY_STATUS>`_, `GCS_MAVLink/GCS_Common.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/GCS_MAVLink/GCS_Common.cpp>`_, common
   #262,  `CAMERA_CAPTURE_STATUS <https://mavlink.io/en/messages/common.html#CAMERA_CAPTURE_STATUS>`_, `GCS_MAVLink/GCS_Common.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/GCS_MAVLink/GCS_Common.cpp>`_, common
   #180,  `CAMERA_FEEDBACK <https://mavlink.io/en/messages/ardupilotmega.html#CAMERA_FEEDBACK>`_, `GCS_MAVLink/GCS_Common.cpp <https://github.com/ArduPilot/ardupilot/tree/master/libraries/GCS_MAVLink/GCS_Common.cpp>`_, ardupilotmega
@@ -546,6 +545,7 @@ Unsupported / unhandled messages.
   #61,  `ATTITUDE_QUATERNION_COV <https://mavlink.io/en/messages/common.html#ATTITUDE_QUATERNION_COV>`_, UNSUPPORTED, common
   #7,  `AUTH_KEY <https://mavlink.io/en/messages/common.html#AUTH_KEY>`_, UNSUPPORTED, common
    , `BAD_DATA <https://mavlink.io/en/messages/common.html#BAD_DATA>`_, UNSUPPORTED, common
+  #181,  `BATTERY2 <https://mavlink.io/en/messages/ardupilotmega.html#BATTERY2>`_, , UNSUPPORTED, common
   #257,  `BUTTON_CHANGE <https://mavlink.io/en/messages/common.html#BUTTON_CHANGE>`_, UNSUPPORTED, common
   #263,  `CAMERA_IMAGE_CAPTURED <https://mavlink.io/en/messages/common.html#CAMERA_IMAGE_CAPTURED>`_, UNSUPPORTED, common
   #179,  `CAMERA_STATUS <https://mavlink.io/en/messages/ardupilotmega.html#CAMERA_STATUS>`_, UNSUPPORTED, ardupilotmega
