@@ -35,7 +35,7 @@ The UARTs are marked Rx and Tx in the above pinouts.
  SERIAL 1  RX1/TX1    USART 1   RCin (DMA capable)
  SERIAL 2  RX3/TX3    USART 3   ESC (T3 pin also on ESC connector)
  SERIAL 3  RX6/TX6    USART 6   GPS1 (DMAcapable)
- SERIAL 4  RX4/TX4    USART 4   GPS2
+ SERIAL 4  RX4/TX4    USART 4   MSP DisplayPort
 ========== ========== =======  ====================
 
 * ESC Telemetry needs to be manually configured based upon esc used.
@@ -54,11 +54,11 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 OSD
 ===
 * Use of internal MAX7456 for analog OSD/VTX is enabled by default.
-* Simultaneous HD VTX OSD supportcan be configured on UART4 by setting :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` to "42" (DisplayPort).
+* Simultaneous HD VTX OSD supportcan is configured on UART4 (DisplayPort).
 
 PWM Outputs
 ===========
-The autopilot supports up to 9 PWM outputs (PWM 9 is defaulted to serial LED support). Outputs 1-4 are available via a standard ESC JST-SH connector and solder pads for M5-M8. All outputs support  DShot, as well as all PWM types. 
+The autopilot supports up to 9 PWM outputs (PWM 9 is defaulted to serial LED support). Outputs 1-4 are available via a standard ESC JST-SH connector and solder pads for M5-M8. All outputs support  all PWM types. PWM 1-4 and 6-9 support DShot. PWM 1-4 support bi-directional dshot. 
 
 The PWM is in 5 groups:
 
@@ -72,7 +72,7 @@ The PWM is in 5 groups:
 * Pads for Outputs 1-8 are available on bottom side of pcb
 * ESC port is a jst-sh V-G-C-R3-1-2-3-4
 
-  Channels within the same group need to use the same output rate. All channels in specific Timer groups are configured either as DSHOT or PWM, mixing of protocols within groups is not possible. Channel 9 is configured as NeoPixel by default but can be configured for and extra PWM output.
+  Channels within the same group need to use the same output rate. All channels in specific Timer groups are configured either as DSHOT or PWM, mixing of protocols within groups is not possible. Channel 9 is configured as NeoPixel by default but can be configured for and extra PWM output. PWM 8 cannot be used for DShot if PWM 9 is configured for NeoPixel. 
 
 Battery Monitoring
 ==================
