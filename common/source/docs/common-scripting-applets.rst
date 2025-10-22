@@ -7,7 +7,7 @@ Script Applets
 
 These are scripts that require no user editing before use, and can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ . Each of these has a .md file of the same name detailing its capabilities, use, and setup.
 
-Below is a list of applets and their use as of this writing. More are being added continually. They are ordered in Case Sensitive alphabetic order, so scipts using Capital Letters come first.
+Below is a list of applets and their use as of this writing. More are being added continually. They are ordered in Case Sensitive alphabetic order, so scripts using Capital Letters come first.
 
 ==========================================  ===========
 Applet Name                                 Description
