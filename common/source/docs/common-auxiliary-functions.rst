@@ -493,7 +493,7 @@ Other functions are:
     ZigZag Mode Auto Enable              | Enable automatic zigzag and sprayer in ZIGZAG mode.
                                          | See :ref:`zigzag-mode`.
     AIRMODE(not a flight mode)            Enables and disables AIRMODE feature. See :ref:`airmode`
-    Generator                             Mode control for Richenpower Hybrid Power Generator
+    Generator                             Mode control for onboard power generators
     Non Auto Terrain Follow Disable       Disables Terrain Following in CRUISE and FBWB modes
     CROW Mode Switch                      Selects between different CROW aileron operating modes
     Soaring Enable                        Enables Soaring function operating modes
