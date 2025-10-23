@@ -1,10 +1,10 @@
 .. _common-rplidar-a2:
 
 ======================================
-RPLidar C1, A2 and S1 360 degree lidar
+RPLidar A1, A2, A2M12, C1 and S1 360 degree lidar
 ======================================
 
-The `RPLidar C1 <https://www.slamtec.ai/product/slamtec-rplidar-c1/>`__, `RPLidar A2 <https://www.slamtec.ai/product/slamtec-rplidar-a2/>`__, or RPlidar S1 can be used for object avoidance in ArduPilot.  This page describes how to connect them directly to your autopilot.
+The `RPLidar C1 <https://www.slamtec.com/en/C1>`__, `RPLidar A1 <https://www.slamtec.com/en/Lidar/A1>`__, `RPLidar A2 <https://www.slamtec.com/en/Lidar/A2>`__, RPLidar A2M12, or RPlidar S1 can be used for object avoidance in ArduPilot.  This page describes how to connect them directly to your autopilot.
 See separate wiki pages on object avoidance for Copter and Rover for more details on how to setup the avoidance feature.
 
    .. image:: ../../../images/rplidar-a2.jpg
@@ -43,12 +43,13 @@ Be sure that the autopilot's 5V supply is capable of supplying the unit's requir
 Example setup below shown for first proximity sensor using SERIAL1 UART:
 
 - :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = "11" ("Lidar360")
-- :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = "460800" for C1, "115" for A2, "256" for S1,A2M12 
+- :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = "460800" for C1, "115" for A2, "256" for S1, A2M12
 - :ref:`PRX1_TYPE <PRX1_TYPE>` = "5"
 - :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
 
 It may be necessary to turn off flow control if using Telem1 (aka Serial1) or Telem2 (aka Serial2)
 
 - :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` =  "0" if using Serial1
+- :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` =  "0" if using Serial2
 
 More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
