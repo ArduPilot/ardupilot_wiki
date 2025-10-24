@@ -1,8 +1,8 @@
 .. _common-rplidar-a2:
 
-======================================
+=================================================
 RPLidar A1, A2, A2M12, C1 and S1 360 degree lidar
-======================================
+=================================================
 
 The `RPLidar C1 <https://www.slamtec.com/en/C1>`__, `RPLidar A1 <https://www.slamtec.com/en/Lidar/A1>`__, `RPLidar A2 <https://www.slamtec.com/en/Lidar/A2>`__, RPLidar A2M12, or RPlidar S1 can be used for object avoidance in ArduPilot.  This page describes how to connect them directly to your autopilot.
 See separate wiki pages on object avoidance for Copter and Rover for more details on how to setup the avoidance feature.
