@@ -34,4 +34,4 @@ Common Gripper Parameters
 
 The autopilot output channel which is attached to the gripper is selected by setting its ``SERVOx_FUNCTION`` = "28"(Gripper).
 
-The gripper is controlled by using the MAVLink Command :ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>` or, configuring and RC channel switch to ``RCx_OPTION`` = "19(Gripper). 
+The gripper is controlled by using the MAVLink Command :ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>` or, configuring and RC channel switch to ``RCx_OPTION`` = "19" (Gripper).
