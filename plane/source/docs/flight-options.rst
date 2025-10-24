@@ -25,6 +25,7 @@ Flight Options
 11                                      Disable suppression of fixed wing rate gains in ground mode.
 12                                      Enable FBWB style loiter altitude control if STICK_MIXING is enabled.
 14                                      In AUTO, climb to next waypoint altitude immediately instead of linear climb.
+15                                      Use minimum of target and actual speed for flap setting
 =====================================   ======================
 
 Default is no options enabled ("0"). Setting the bit will enable that function. For example, if forcing target airspeed in FBWB and CRUISE modes is desired, a value of "8" (bit 3 = 1) would be set.
