@@ -32,9 +32,7 @@ Configuration
 Controlling Gripper from the transmitter
 ========================================
 
-The transmitter's auxiliary switch can control the gripper.
-
-- In firmware versions 4.0 later, use an RC channel for control by setting is ``RCx_OPTION`` parameter to "19".
+One of the transmitter's auxiliary switches can control the gripper by setting an ``RCx_OPTION`` parameter to "19" (Gripper).
 
 Controlling Gripper during a mission
 ====================================
