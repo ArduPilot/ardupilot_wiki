@@ -10,7 +10,7 @@ roll and pitch specified by the control sticks. So if you hold the
 aileron stick hard right then the plane will hold its pitch level and
 will bank right by the angle specified in the :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` parameter (in
 degrees). It is not possible to roll the plane past the roll limit
-specified in :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>`, and it is not possible to pitch the plane
+specified in :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` (see also bit 16 in :ref:`flight-options`), and it is not possible to pitch the plane
 beyond the :ref:`PTCH_LIM_MIN_DEG<PTCH_LIM_MIN_DEG>` or :ref:`PTCH_LIM_MAX_DEG<PTCH_LIM_MAX_DEG>` settings.
 
 Note that holding level pitch does not mean the plane will hold
