@@ -35,7 +35,7 @@ Then, build Ardupilot for SITL with DDS enabled. The example below shows how to 
 
         cd ardu_ws/src/ardupilot
         ./waf distclean
-        ./waf configure --board sitl --enable-dds # Note --enable-DDS for version after 4.7
+        ./waf configure --board sitl --enable-DDS # Note --enable-DDS for version after 4.7
         ./waf copter
 
 You can build the ROS2 packages `ardupilot_msgs`, `micro_ros_agent`, `ardupilot_sitl` and `ardupilot_dds_tests` as 
