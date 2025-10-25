@@ -2,9 +2,11 @@
 
 ================
 Mission Commands
-================
-
+===============+
 This article describes the mission commands that are supported by Copter, Plane, Sub and Rover when switched into Auto mode.
+
+.. note:: there are many other MAVLink commands that a GCS or other device can send to the autopilot. See the ArduPilot/navlink repository, or the documentation for your GCS.
+
 [site wiki="copter"]
 A simpler list just for :ref:`Copter can be found here <copter:mission-command-list>`
 [/site]
