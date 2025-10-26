@@ -10,13 +10,12 @@ The `Wasp200 <https://www.attolloengineering.com/wasp-200-lrf.html>`__ has a ran
 
 
 Where to Buy
-------------
+============
 
 - The `Attollo Engineering online store <https://attolloengineering.com/store/>`__ sells the lidar directly
 
 Connecting to the Autopilot
------------------------------------
-
+===========================
 For a serial connection you can use any spare Serial/UART port.  The diagram below shows how to connect to SERIAL4.
 
 .. image:: ../../../images/wasp200-pixhawk.jpg
@@ -29,9 +28,21 @@ If the SERIAL4 port on a Pixhawk is being used then the following parameters sho
 -  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 200.  *This is the distance in meters that the rangefinder can reliably read.*
 -  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *or more accurately the distance in metres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
-If instead the Telem2 port was used then the serial parameters listed above should instead be:
+If instead the SERIAL 2 port (sometimes labeled Telem2) is used then the serial parameters listed above should instead be:
 
 -  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9
+
+Advanced parameters
+-------------------
+
+The following parameters do not normally need adjustment:
+
+-  :ref:`RNGFND1_WSP_AVG<RNGFND1_WSP_AVG>`
+-  :ref:`RNGFND1_WSP_BAUD<RNGFND1_WSP_BAUD>`
+-  :ref:`RNGFND1_WSP_FRQ<RNGFND1_WSP_FRQ>`
+-  :ref:`RNGFND1_WSP_MAVG<RNGFND1_WSP_MAVG>`
+-  :ref:`RNGFND1_WSP_MEDF<RNGFND1_WSP_MEDF>`
+-  :ref:`RNGFND1_WSP_THR<RNGFND1_WSP_THR>`
 
 Testing the sensor
 ==================
