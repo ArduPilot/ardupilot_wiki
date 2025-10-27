@@ -21,7 +21,7 @@ Flight Options
 7                                       Enable default airspeed EKF fusion for takeoff (Advanced users only).
 8                                       Remove :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` offset on the GCS horizon to show pitch relative to AHRS trim (i.e. the attitude at which the autopilot was calibrated, unless manually changed).
 9                                       Remove :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` on the OSD horizon to show pitch relative to AHRS trim (i.e. the attitude at which the autopilot was calibrated, unless manually changed).
-10                                      Adjust mid-throttle to be :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` in non-auto throttle modes except MANUAL,instead of midway between MAX and MIN stick values (note that the RCx_TRIM value for the throttle channel (x) MUST BE set to center stick value).
+10                                      Adjust mid-throttle to be :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` in non-auto throttle modes except MANUAL, instead of midway between MAX and MIN stick values (note that the RCx_TRIM value for the throttle channel (x) MUST BE set to center stick value).
 11                                      Disable suppression of fixed wing rate gains in ground mode.
 12                                      Enable FBWB style loiter altitude control if STICK_MIXING is enabled.
 14                                      In AUTO, climb to next waypoint altitude immediately instead of linear climb.
