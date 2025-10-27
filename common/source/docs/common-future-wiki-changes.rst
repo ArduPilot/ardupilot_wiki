@@ -104,6 +104,7 @@ New Features
 - Add SYSID mode for vehicle model development, see https://github.com/ArduPilot/ardupilot_wiki/pull/7041
 - Add AutoFlap flight option for operation in manual modes, see https://github.com/ArduPilot/ardupilot_wiki/pull/7016
 - Add Quadplane terrain avoidance script with climb check, see https://github.com/ArduPilot/ardupilot_wiki/pull/7105
+- Add Roll limit Flight Option, see https://github.com/ArduPilot/ardupilot_wiki/pull/7209
 [/site]
 [site wiki="copter"]
 - Fast Attitude loop option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6470
