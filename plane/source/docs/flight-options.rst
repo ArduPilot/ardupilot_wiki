@@ -18,7 +18,6 @@ Flight Options
 4                                       Climb to :ref:`RTL_ALTITUDE<RTL_ALTITUDE>` altitude before turning toward home in RTL.
 5                                       Enable :ref:`Yaw Damping Controller<yaw-controller-tuning>` to be active in ACRO mode.
 6                                       Suppress speed scaling during auto takeoffs to be 1 or less to prevent oscillations when not using an airspeed sensor.
-
 7                                       Enable default airspeed EKF fusion for takeoff (Advanced users only).
 8                                       Remove :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` offset on the GCS horizon to show pitch relative to AHRS trim (ie the attitude at which the autopilot was calibrated,unless manually changed).
 9                                       Remove :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` on the OSD horizon to show pitch relative to AHRS trim (ie the attitude at which the autopilot was calibrated,unless manually changed).
