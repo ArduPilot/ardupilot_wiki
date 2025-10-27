@@ -12,7 +12,7 @@ Flight Options
 :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>`   Function
 =====================================   ======================
 0                                       Allows rudder input to be used in only MANUAL, STABILIZE, and ACRO modes. In VTOL modes, rudder input mixing can be controlled by the :ref:`STICK_MIXING<STICK_MIXING>` parameter.
-1                                       Forces center throttle stick to be :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` instead of midway between :ref:`AIRSPEED_MAX<AIRSPEED_MAX>`and :ref:`AIRSPEED_MIN<AIRSPEED_MIN>` when using an airspeed sensor in FBWB and CRUISE modes.
+1                                       Forces center throttle stick to be :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` instead of midway between :ref:`AIRSPEED_MAX<AIRSPEED_MAX>` and :ref:`AIRSPEED_MIN<AIRSPEED_MIN>` when using an airspeed sensor in FBWB and CRUISE modes.
 2                                       Disable the attitude checks for AUTOTAKEOFF and TAKEOFF mode start which must be less than +/-30 degrees roll and 45 degrees pitch.
 3                                       Forces target airspeed to :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` in CRUISE and FBWB modes when airspeed sensor is being used, ignoring throttle stick position.
 4                                       Climb to :ref:`RTL_ALTITUDE<RTL_ALTITUDE>` altitude before turning toward home in RTL.
