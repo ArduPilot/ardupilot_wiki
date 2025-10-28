@@ -4,10 +4,11 @@
 PosHold Mode
 ============
 
-The PosHold flight mode is similar to Loiter in that the vehicle maintains a constant
-location, heading, and altitude but is generally more popular because
-the pilot stick inputs directly control the vehicle's lean angle
-providing a more "natural" feel.
+The PosHold flight mode is similar to :ref:`Loiter <loiter-mode>` in that when the transmitter sticks are centered
+the vehicle maintains a constant location, heading, and altitude.  The major difference is that the pilot's roll and pitch inputs
+directly control the vehicle's lean angle.
+
+In general :ref:`Loiter <loiter-mode>` is recommended over PosHold.
 
 Overview
 ========
