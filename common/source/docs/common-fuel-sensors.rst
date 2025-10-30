@@ -104,3 +104,10 @@ measured sensor voltage = vm
 modified voltage = (BATT_FL_FT * vm^3 + BATT_FL_FS * vm^2 + BATT_FL_FF * vm) + BATT_FL_OFF
 
 This allows the non-linearity to be compensated. The values for these parameters should be obtained from the sensor manufacturer, if applicable.
+
+Serial Port Sensor
+------------------
+
+These send information about fuel flow via connection to a Serial port on the autopilot.
+
+Currently, the `VSPeak flow meter <https://www.vspeak-modell.de/en/flow-meter>`__ is supported via a LUA script driver, `here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/VSPeak_flow_meter.lua>`__. Setup information is contained it the script's `.md  file <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/VSPeak_flow_meter.md>`__.
