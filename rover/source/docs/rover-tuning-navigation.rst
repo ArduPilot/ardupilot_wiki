@@ -18,11 +18,11 @@ S-Curves are used to plan a smooth path that brings the vehicle close to each wa
 
 Factors affecting the path include:
 
-- The vehicle will cut the corners but will always try to pass within WP_RADIUS or TURN_RADIUS (whichever is larger) of each waypoint
+- The vehicle will cut the corners but will always try to pass within :ref:`WP_RADIUS<WP_RADIUS>` or :ref:`TURN_RADIUS<TURN_RADIUS>` (whichever is larger) of each waypoint
 - The vehicle will cut the corners more at higher speeds
-- The vehicle will cut the corners more if the maximum accelerations are reduced (e.g. the lowest of ATC_ACCEL_MAX, ATC_DECEL_MAX and TURN_MAX_G * 9.81)
-- The vehicle will slow down in the corners if necessary to pass within WP_RADIUS of the waypoint without exceeding the maximum accelerations (e.g. the lowest of ATC_ACCEL_MAX, ATC_DECEL_MAX and TURN_MAX_G * 9.81)
-- Placing waypoints close together may lead to the vehicle travelling slowly
+- The vehicle will cut the corners more if the maximum accelerations are reduced (e.g. the lowest of :ref:`ATC_ACCEL_MAX<ATC_ACCEL_MAX>`, :ref:`ATC_DECEL_MAX<ATC_DECEL_MAX>` and :ref:`ATC_TURN_MAX_G<ATC_TURN_MAX_G>` * 9.81)
+- The vehicle will slow down in the corners if necessary to pass within :ref:`WP_RADIUS<WP_RADIUS>` of the waypoint without exceeding the maximum accelerations (e.g. the lowest of :ref:`ATC_ACCEL_MAX<ATC_ACCEL_MAX>`, :ref:`ATC_DECEL_MAX<ATC_DECEL_MAX>` and :ref:`ATC_TURN_MAX_G<ATC_TURN_MAX_G>` * 9.81)
+- Placing waypoints close together may lead to the vehicle traveling slowly
 
 Position Controller
 -------------------
