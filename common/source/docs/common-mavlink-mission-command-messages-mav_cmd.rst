@@ -1022,8 +1022,8 @@ command parameter. A radius of 0 will result in :ref:`WP_LOITER_RAD<WP_LOITER_RA
    <td>Loiter radius around the waypoint. Units are in meters. Values over 255 will be rounded to units of 10 meters. and values greater than 2550 will be clamped to 2550 m. Negative values indicate counter-clockwise turns. A value of zero will use WP_LOITER_RAD </td>
    </tr>
    <td><strong>param4</strong></td>
-   <td>Exit</td>
-   <td>if 0, exit will occur where path to next waypoint intersects the loiter path after completion of the specified number of turns. if 1, exit will be where next waypoint path is tangential to loiter path </td>
+   <td>Crosstrack</td>
+   <td>Determines which line the aircraft will track after exiting the loiter. If 0, track the line from the center of the circle to the next waypoint. If 1, track the line tangent to the circle to the next waypoint.</td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>
