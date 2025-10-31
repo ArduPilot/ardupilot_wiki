@@ -1905,8 +1905,6 @@ Loiter while climbing/descending to an altitude.
 Begin loitering at the specified Latitude and Longitude. If Lat=Lon=0, then
 loiter at the current position. Don't consider the navigation command
 complete (don't leave loiter) until the altitude has been reached.
-Additionally, if the Heading Required parameter is non-zero the aircraft
-will not leave the loiter until heading toward the next waypoint.
 
 **Command parameters**
 
@@ -1921,14 +1919,14 @@ will not leave the loiter until heading toward the next waypoint.
    </tr>
    <tr>
    <td><strong>param1</strong></td>
-   <td>Radius</td>
-   <td>Radius in meters. If positive loiter clockwise, negative counter-clockwise, 0 means no change to standard loiter.</td>
+   <td></td>
+   <td>Empty</td>
    </tr>
    <tr>
    <tr style="color: #c0c0c0">
    <td>param2</td>
-   <td></td>
-   <td>Empty</td>
+   <td>Radius</td>
+   <td>Radius in meters. If positive loiter clockwise, negative counter-clockwise, 0 means no change to standard loiter.</td>
    </tr>
    <tr>
    <tr style="color: #c0c0c0">
@@ -1938,8 +1936,8 @@ will not leave the loiter until heading toward the next waypoint.
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
-   <td></td>
-   <td>Empty</td>
+   <td>Crosstrack</td>
+   <td>Determines which line the aircraft will track after exiting the loiter. If 0, track the line from the center of the circle to the next waypoint. If 1, track the line tangent to the circle to the next waypoint.</td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>
