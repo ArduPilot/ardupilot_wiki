@@ -65,7 +65,7 @@ Firmware upgrade instructions are in the "Upgrade" section of the `user manual <
     :target: ../_images/caddx-firmware-update-PC.png
     :width: 450px
 
-- Ensure the channel drop-downs highlighted in orange above are set to CH01
+- Ensure the channel drop-downs highlighted in orange above are set to CH01 and then push the "Save Param To Flash" button
 
 Control and Testing
 -------------------
