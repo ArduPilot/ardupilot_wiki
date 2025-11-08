@@ -53,7 +53,7 @@ Firmware upgrade instructions are in the "Upgrade" section of the `user manual <
 
 - Download the GimbalConfig windows application and latest gimbal firmware from the `CADDXFPV Download Center <https://caddxfpv.com/pages/download-center>`__ (look for the "Firmware / GM Gimbal Firmware" link near the bottom of the page)
 - Extract the contents of the downloaded zip file and run the GimbalConfig application
-- Connect the `Upgrade Cable <https://caddxfpv.com/products/gl-and-gm-upgrade-cable>`__ to the upgrade port shown below, connect the other end to your PC
+- Connect the `Upgrade Cable <https://caddxfpv.com/products/gl-and-gm-upgrade-cable>`__ or FTSI adapter to the upgrade port shown below, connect the other end to your PC
 
 .. image:: ../../../images/caddx-firmware-update.png
     :target: ../_images/caddx-firmware-update.png
