@@ -21,7 +21,7 @@ Where and What to Buy
 ---------------------
 
 - The GM1, GM2 and GM3 gimbals can be purchased directly from `CADDXFPV <https://caddxfpv.com/products/caddxfpv-gm1-gm2-gm3.html>`__
-- The `GL and GM Upgrade Cable <https://caddxfpv.com/products/gl-and-gm-upgrade-cable>`__ is likely also required to upgrade the gimbal's firmware to 3.4 (or higher)
+- The `GL and GM Upgrade Cable <https://caddxfpv.com/products/gl-and-gm-upgrade-cable>`__ can be used to upgrade the gimbal's firmware to 3.4 (or higher). Any FTDI to serial adapter connected to a 3 pin .1mm SH cable can also be used.
 
 Connecting to the Autopilot
 ---------------------------
