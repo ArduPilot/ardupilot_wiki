@@ -1012,23 +1012,38 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target:  https://www.sparknavi.com
 
     *
+      - .. image:: ../../../images/supporters/supporters_logo_thedarkmatter.png
+            :width: 250px
+            :align: center
+            :target:  https://thedarkmatter.in/
+
       - .. image:: ../../../images/supporters/supporters_logo_flow_copter.jpg
             :width: 250px
             :align: center
             :target:  https://www.flowcopter.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_beyondrobotix.png
             :width: 250px
             :align: center
             :target:  https://www.beyondrobotix.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_taiphoon.jpg
             :width: 250px
             :align: center
             :target:  https://www.taiphoon.com.tw
 
-      -
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_pelicanautonomy.jpg
+            :width: 250px
+            :align: center
+            :target:  https://pelican-autonomy.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_kebni.png
+            :width: 250px
+            :align: center
+            :target:  https://www.kebni.com/
 
 
 [copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+
