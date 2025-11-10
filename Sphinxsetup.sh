@@ -17,7 +17,7 @@ else
 fi
 
 if [ ${DISTRIBUTION_ID} = 'Ubuntu' ]; then
-  if [ ${DISTRIBUTION_CODENAME} = 'focal' ] || [ ${DISTRIBUTION_CODENAME} = 'bionic' ]; then
+  if [ ${DISTRIBUTION_CODENAME} = 'focal' ] || [ ${DISTRIBUTION_CODENAME} = 'bionic' ] || [ ${DISTRIBUTION_CODENAME} = 'noble' ]; then
     sudo add-apt-repository universe
   fi
 fi
@@ -62,7 +62,11 @@ sudo apt-get install -y python3-pip
 
 # Install required python packages
 SCRIPT_DIR=$(dirname $(realpath ${BASH_SOURCE[0]}))
-python3 -m pip install --user --upgrade -r "$SCRIPT_DIR"/requirements.txt
+if [ "${DISTRIBUTION_CODENAME}" = "noble" ]; then
+    python3 -m pip install --upgrade -r "$SCRIPT_DIR"/requirements.txt
+else
+    python3 -m pip install --user --upgrade -r "$SCRIPT_DIR"/requirements.txt
+fi
 
 # Reset the value of DISPLAY
 if grep -qi -E '(Microsoft|WSL)' /proc/version; then
