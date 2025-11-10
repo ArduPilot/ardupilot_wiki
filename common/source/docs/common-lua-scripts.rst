@@ -59,6 +59,7 @@ What Scripts Can Do
 - Monitor the vehicle state
 - Start to manipulate vehicle state
 - Execute MAVLink commands
+- Communicate with DroneCAN peripherals (see `DroneCAN example <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/DroneCAN_test.lua>`__)
 
 Lua is a garbage collected, imperative programming language.
 Scripts are run at a low priority on the system, which ensures that the core flight code will continue to execute even if a script is taking a long time to process.
