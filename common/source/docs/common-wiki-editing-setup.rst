@@ -49,9 +49,26 @@ Setup in Linux (or WSL)
 
 Run the following command from the ardupilot_wiki directory you cloned:
 
+
 .. code-block:: bash
 
     ./Sphinxsetup.sh
+
+.. note::
+
+    Ubuntu 23.10+ and 24.04+ requires using a virtual environment for pip installations. If you encounter an "externally-managed-environment" error while running the above script follow the steps below:
+
+    .. code-block:: bash
+
+        # Install the required packages to create venv
+        sudo apt-get install python3-venv python3-pip
+
+        # Create and activate a virtual environment
+        python3 -m venv .venv
+        source .venv/bin/activate
+
+        # Now run the setup script again
+        ./Sphinxsetup.sh
 
 Then jump down to "Build the wiki".
 
