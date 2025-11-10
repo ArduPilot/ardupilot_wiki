@@ -5,21 +5,36 @@
 Script Setup and Use Examples
 =============================
 
-Testing a Script in SITL
+Running a Script in SITL
 ========================
 In Linux:
 
-#. Assuming you have setup the build and simulation environment, run the simulation. See :ref:`using-sitl-for-ardupilot-testing`. For example:
+#. Assuming you have setup the build and SITL environment, run SITL. See :ref:`using-sitl-for-ardupilot-testing`. For example:
 
-.. code::
+.. code-block:: bash
 
-    sim_vehicle.py -v plane -f quadplane
+    cd /path/to/ardupilot
+    ./Tools/autotest/sim_vehicle.py -v plane --console
 
 Mavproxy ground control station will automatically be started. You can also start QGC (using the QGroundControl.AppImage) and/or Mission Planner (using WISE to run under Linux). Any or all three can be used simultaneously.
 
-#. From your GCS, enable scripting by setting the :ref:`SCR_ENABLE<SCR_ENABLE>` parameter to "1". Restart the simulation.
-#. A "scripts" sub-directory will be created in the directory you started the simulation, if it did not already exist. Place the script you downloaded into this directory. Again, restart the simulation.
-#. If you get a "Scripting: out of memory" GCS message then you will need to increase :ref:`SCR_HEAP_SIZE<SCR_HEAP_SIZE>` parameter and try to restart the simulation.
+#. From your GCS, enable scripting by setting the :ref:`SCR_ENABLE<SCR_ENABLE>` parameter to "1". Restart the simulation, or in MAVProxy, type ``reboot``.
+#. A "scripts" sub-directory will be created in the directory you started the simulation, if it did not already exist. You should expect to see a line similar to the following: ``Lua: State memory usage: 4824 + 9263``. This shows that scripting is now enabled.
+#. Now, create your first script in the ``scripts`` folder. If it's your first time, try the hello world script
+
+    .. code-block:: bash
+
+        cp libraries/AP_Scripting/examples/hello_world.lua scripts/
+
+#. Again, restart the simulation. 
+#. You should now observe the following in console.
+
+    .. image:: ../../../images/LuaHelloWorld.png
+        :target: ../_images/LuaHelloWorld.png
+
+#. Now, you can try changing the script to say something else and saving the Lua script.
+#. In MAVProxy, once you you save changes to your Lua script, you can just restart the scripting engine with ``scripting restart``. This allows to you keep SITL running and quickly change your script.
+#. If you get a "Scripting: out of memory" GCS message then you will need to increase :ref:`SCR_HEAP_SIZE<SCR_HEAP_SIZE>` parameter and try to restart the simulation. The hello world script has enough memory.
 
 In Mission Planner (Windows):
 
