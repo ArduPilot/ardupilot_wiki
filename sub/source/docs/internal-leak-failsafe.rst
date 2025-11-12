@@ -10,7 +10,11 @@ For the remainder of this article, the first leak detector's parameters will use
 
 When the failsafe will trigger
 ==============================
-If :ref:`FS_LEAK_ENABLE<FS_LEAK_ENABLE>` is non-zero, then if the detector attached to a logical pin on the autopilot designated by :ref:`LEAK1_PIN<LEAK1_PIN>` is analog (:ref:`LEAK1_TYPE<LEAK1_TYPE>` = "0"), it's considered active ("1") if its voltage is > 2.0V. Digital sensors (:ref:`LEAK1_TYPE<LEAK1_TYPE>` = "1") present a logic level. Whether the active level of an analog sensor or the logic level from a digital sensor is taken as "dry" is determined by the :ref:`LEAK1_LOGIC<LEAK1_LOGIC>` parameter.
+If :ref:`FS_LEAK_ENABLE<FS_LEAK_ENABLE>` is non-zero, and a detector is attached to either an analog input or GPIO pin on the autopilot, set by the :ref:`LEAK1_PIN<LEAK1_PIN>`. Then if the detector is analog , it's considered active ("1") if its voltage is > 2.0V. Digital sensors present a normal digital logic level.
+
+Whether the active level of an analog sensor or the logic level from a digital sensor is taken as "dry" is determined by the :ref:`LEAK1_LOGIC<LEAK1_LOGIC>` parameter.
+
+.. note:: In ArduSub firmware prior or equal to 4.5, the input pin must be declared to be analog or digital with the ``LEAKx_TYPE`` parameter.
 
 What will happen
 ================
