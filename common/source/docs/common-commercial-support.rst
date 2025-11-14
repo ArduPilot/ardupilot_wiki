@@ -27,6 +27,18 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
     </tr>
     </thead>
     <tbody valign="top">
+    <tr class="row-odd">
+        <td><center><a class="first last reference internal image-reference"><img alt="../_images/uax.jpg" src="../_images/uax.jpg" style="width: 90px;" /></a><br/><br/>United States</center></td>
+        <td><div class="first last line-block">
+            <div class="line">UAX Technologies, <a href="mailto:info@uaxtech.com?Subject=ArduPilot%20commercial%20support" target="_top">info@uaxtech.com</a></div>
+            <div class="line"><br/></div>
+            <div class="line">Experts in UAV design and integration, specializing in complex systems engineering</div>
+            <div class="line">- Comprehensive aircraft tuning, log analysis, and professional flight testing services.</div>
+            <div class="line">- Advanced radio integration, networking, video streaming, and sensor payloads.</div>
+            <div class="line">- Bespoke UAV builds and collaborative assistance for in-progress projects.</div>
+            </div>
+        </td>
+    </tr>
     <tr class="row-even">
         <td><center><a class="first last reference external image-reference" href="http://element.aero"><img alt="../_images/element-aero.png" src="../_images/element-aero.png" style="width: 150px;" /></a><br/><br/>Mexico</center></td>
         <td><div class="first last line-block">
