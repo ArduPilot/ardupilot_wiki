@@ -46,6 +46,8 @@ Connect with a ground station and set the following parameters.  The params belo
 - :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw angle with RC channel 7
 - :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Lock") to switch between "lock" and "follow" mode with RC channel 8
 
+.. note :: "Mount Lock" is really an all axes earth frame lock of the mount to allow it to try to point at a fixed location (POI or HOME) independent of vehicle attitude.
+
 Configuring the Gimbal
 ----------------------
 
@@ -65,7 +67,9 @@ Firmware upgrade instructions are in the "Upgrade" section of the `user manual <
     :target: ../_images/caddx-firmware-update-PC.png
     :width: 450px
 
-- Ensure the channel drop-downs highlighted in orange above are set to CH01 and then push the "Save Param To Flash" button
+- Ensure the channel drop-downs highlighted in orange above are set to CH01 and then push the "Save Param To Flash" button.
+
+.. note :: ArduPilot sets the "sensitivity" to zero in every command. If you set the sensitivity channel to "Null" above instead of CH01, then whatever sensitivity you set in the configurator GUI will not be changed to "0" by ArduPilot.
 
 Control and Testing
 -------------------
