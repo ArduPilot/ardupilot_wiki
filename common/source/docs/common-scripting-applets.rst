@@ -21,7 +21,8 @@ MissionSelector.lua                         Selects between one of three mission
 ONVIF_Camera_Control.lua                    CNIF Camera Control
 Param_Controller.lua                        Allows switch selection of parameter sets at boot
 QuadPlane_Low_Alt_FW_mode_prevention.lua    Prevents changing to FW at low altitude
-RockBlock.lua                               Rockblock modem
+RockBlock.lua                               Send and receive MAVLink messages via a 9603 satellite modem
+RockBlock-9704.lua                          Send and receive MAVLink messages via a RockBLOCK 9704 satellite modem
 Script_Controller.lua                       Allows selection of multiple scripts and missions on SD Card
 SmartAudio.lua                              Smart Audio control
 UniversalAutoLand.lua                       Allow easy, unpre-planned operation at any location with the protection of a do-land-start autoland sequence
