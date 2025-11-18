@@ -20,6 +20,8 @@ Consider joining the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ 
 
 .. note:: Creating a fully functional, acceptable board port can be a non-trivial task. Meeting the code, as well as required documentation, requirements is sometimes a lengthy, iterative process. You may want to consider using outside consulting services such as `Foss UAV <https://fossuav.com/>`__  or  `ArduPilot Documentation Consulting <https://www.hwurzburg.com/>`__ . In addition, if you wish to have a dedicated wiki page for you board, wiki documentation consultants such as our `Wiki Maintainer <https://www.hwurzburg.com/>`__ can assist in this.
 
+.. warning:: Each additional board supported by the ArduPilot dev team adds maintenance burden. While the team wishes to support a wide variety of boards, we may be unable to accept your particular board into the project code and documentation. See the PR section below for guidelines. If you are unsure that your board will be accepted and would be disappointed if it weren't, please ask on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ before beginning work.
+
 Steps
 =====
 #. :ref:`Getting Started <getting_started>`
@@ -122,9 +124,28 @@ The test setup should have at least a receiver and GPS/Compass attached to the b
 
 Submit the board to ArduPilot
 -----------------------------
-If you have gotten this far, congratulations you have ported ArduPilot to a new board!  Please reach out to the other developers on the `ArduPilot Discord Chat in the hardware channel <https://ardupilot.org/discord>`__ to announce your success.
+If you have gotten this far, congratulations, you have ported ArduPilot to a new board!  Please reach out to the other members of the `ArduPilot Discord Chat in the hardware channel <https://ardupilot.org/discord>`__ to announce your success.
 
-If you wish for the board firmware to be downloadable from ArduPilot and possibly be listed in its documentation, you will need to submit a PR (pull-request) to the ArduPilot repo. You can push your local branch to your web based ``fork`` and then submit a PR from it to ArduPilot which will be reviewed by Dev team members.The PR should contain the following files:
+If you wish for the board firmware to be downloadable from ArduPilot and possibly be listed in its documentation, you will need to submit a PR (pull request) to the ArduPilot repo. However, due to the maintenance burden, ArduPilot cannot accept a PR for every possible board. It is ultimately up to the dev team to determine which boards are eligible for inclusion into the project code and documentation.
+
+Factors which can allow acceptance of your board (not all required):
+
+- It is (or will soon be) manufactured in production quantities and available for purchase by the general public, whether as a standalone item or part of a vehicle or kit
+- It demonstrates hardware, software, or capabilities which are likely to be of interest and use to others
+- It has high quality code and documentation created by a dev team member or associated contractor/consultant (consider soliciting the services listed at the top of the page)
+- Design and manufacturing documents are publicly available under a reasonable open source license
+
+Factors which may require rejection of your board:
+
+- It is a hobby, personal, student, or educational project created primarily for your own benefit
+- It is developed primarily for the internal use of your organization
+- It is excessively similar to an existing board
+- The submission requires excessive code or documentation revision from the dev team to bring up to the required standards
+- Sufficient testing on real hardware has not been performed, or cannot yet be done
+
+The above factors are not immediate acceptances or rejections, but all are considered and balanced when deciding the eligibility of a particular board. Even if your board is not eligible, you can keep your created files and migrate them to new versions as necessary; the team understands such "out-of-tree" boards exist and works to ease migration. If in doubt, please reach out before beginning work.
+
+To create a PR, you can push your local branch to your web based ``fork`` and then submit a PR from it to ArduPilot which will be reviewed by Dev team members. The PR should contain the following files:
 
 - hwdef.dat with correct board id
 - hwdef-bl.dat with correct board id
