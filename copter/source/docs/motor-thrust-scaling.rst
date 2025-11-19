@@ -43,7 +43,7 @@ The thrust stands listed below can be used to measure the PWM signal vs thrust o
 Parameter Calculation
 =====================
 
-A copy of `this spreadsheet <https://docs.google.com/spreadsheets/d/1_75aZqiT_K1CdduhUe4-DjRgx3Alun4p8V2pt6vM5P8/edit#gid=0>`__ can be used to calculate the appropriate values from the thrust stand data above.
+The WebTool: `ArduPilot Thrust Expo <https://firmware.ardupilot.org/Tools/WebTools/ThrustExpo/>`__ can be used to calculate the appropriate values from the thrust stand data above.
 
 
 
