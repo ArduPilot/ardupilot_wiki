@@ -52,4 +52,8 @@ It may be necessary to turn off flow control if using Telem1 (aka Serial1) or Te
 - :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` =  "0" if using Serial1
 - :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` =  "0" if using Serial2
 
+On rovers and boats it may be necessary to increase the main loop rate to 400 in order to reliably consume all the data from the sensor
+
+- :ref:`SCHED_LOOP_RATE <SCHED_LOOP_RATE>` =  "400"
+
 More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
