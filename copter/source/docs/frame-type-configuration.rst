@@ -48,3 +48,16 @@ Other Configurations
 
    Tricopter <tricopter>
    SingleCopter and CoaxCopter <singlecopter-and-coaxcopter>
+
+Ardurocket Drone Configurations
+====================
+
+The model rocketry user community is mostly unaware of the significant capability of Ardupilot (as is) for RocketPlanes and Ardudrone (as is) for RocketDrones.
+The mechanical equivalence of a rocket drone (a 66mm tube, fins, and nose cone built around a top and bottom coupler tube and quad drone X frame) is a short period of vertical powered thrust which operates similar to the toss mode (not recommended), but with higher drag and acceleration of 2-4 seconds. Prototypes in England have successfully been flown and recovered with simple and super simple drone control modes.  It is also possible to use stabilize mode, which works just like a regular drone in vertical flight.  Altitude hold and other modes are not recommended until the air vehicle is at peak altitude (apogee).  At this point a motor delay charge can deploy a parachute or streamer, or the parachute deployment of ardudrone can operate a parachute clamshell nose cone servo.  With an ejection charge, afer reaching apogee and deploying parachute recovery, the drone is carefully guided with hover power settings to a return spot landing.  If the rocket drone is powered with motors capable of 2x mass*g (thrust to weight >2) the motor ejection charge can be ignored (0) or ported without parachute, and the rocket drone can be recovered with any of the drone recovery modes.  It is extremely easy to configure and test prototypes of the rocketdrone.  Load ardudrone on any compatible flight controller which can be mounted on a quad X frame (Pixhawk, Matek, and my favorite Omnibus F4 Pro V3) using bootloaders as described in each flight controller configuration page, and then loading Copter using Mission Planner software. Configure a rocket drone just like a quad X frame, and most of the same modes and configuration parameters are identical for vertical flight orientation.  It is a little harder to know what is front and back, so use orientation lights on the frame or select simple control modes.    
+
+Any model rocket large enough to hold an ardupilot compatible flight controller can use a significant number of the existing modes, barometer, accelerometer, stability, and telemetry capabilities without any required code changes. Work is being done to fork and merge model rocket capability into ardupilot and ardudrone for thrust vector control (TVC) ascent and descent stability capability, and for American Rocketry Challenge (ARC) airbrake and altitude control systems which do require some changes in codebase, pull calls, and possible merges.  Ardurocket code which was forked and modified in 2012 was not very compatible with the community framework, and tried to use fin vector control, which is not automated and mostly unstable when controlled by human manual modes.  The current effort simply focuses on using the software as is, and to only provide automated control for TVC stability, airbrakes, telemetry, and ejection events (no active guidance to GPS targeting or waypoints).  
+
+.. toctree::
+   :maxdepth: 1
+
+   RocketDrone <rocketdrone>
