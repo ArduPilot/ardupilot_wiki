@@ -92,6 +92,7 @@ New Features
 - Add MAV_GSC_SYSID_HI parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/7123
 - New optical flow option for gimbal mounted sensors, see https://github.com/ArduPilot/ardupilot_wiki/pull/7125
 - DroneCAN playback from log, see https://github.com/ArduPilot/ardupilot_wiki/pull/7173
+- Throttle kill scripting applet, see https://github.com/ArduPilot/ardupilot_wiki/pull/7243
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
