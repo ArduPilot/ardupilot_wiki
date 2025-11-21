@@ -53,6 +53,7 @@ rover-quicktune.lua                         QuicK tuning applet for Rovers
 runcam_on_arm.lua                           Starts/stops video recording on arm/disarm
 video-stream-information.lua                Populate the VIDEO_STREAM_INFORMATION mavlink message 
 sport_aerobatics.lua(in Aerobatics subdir)  Autonomous rate based aerobatics
+throttle-kill.lua                           Forces servo channel below min to kill engines like turbines via switch
 winch-control.lua                           Allows the winch to be deployed or retracted using an auxiliary switch
 x-quad-cg-allocation.lua                    Scriptable control allocation matrix to request asymmeterical front and back thrust
 ==========================================  ===========
