@@ -31,11 +31,12 @@ Specifications
 
    -  STM32F745VG  ARM (216MHz), 1MB Flash
    -  Integrated 4 output, BLHeli-32 40A ESC (AIO V1.2) or BLHeli-32 45A ESC (AIO V3)
+   -  Onbord 8 Mbytes (versions 1.0 and 1.2) or 16 MBytes (version 3) for Blackbox logging
 
 
 -  **Sensors**
 
-   -  InvenSense MPU6000 IMU (accel, gyro) 
+   -  InvenSense MPU6000 IMU or ICM42668P (accel, gyro) 
    -  BMP280 barometer
    -  Voltage & 100A Current sensor (AIO version only)
 
@@ -50,7 +51,7 @@ Specifications
 -  **Interfaces**
 
    -  7x UARTS
-   -  10x PWM outputs, first 4 are internally connected to 4in1 40A BLHeli32 ESC.
+   -  10x PWM outputs, first 4 are internally connected to 4in1 BLHeli32 ESC (AM32 in V3).
    -  I2C port for external compass, airspeed sensor, etc.
    -  USB port
    -  Camera input/ VTX output
@@ -88,7 +89,7 @@ Default UART order
 ==================
 
 - SERIAL0 = console = USB
-- SERIAL1 = Telemetry1 = USART1 
+- SERIAL1 = Telemetry1 = USART1 (RX pin only in AIO V3)
 - SERIAL2 = Telemetry2 = USART2
 - SERIAL3 = RC Input = USART3 
 - SERIAL4 = USER = USART4
@@ -112,6 +113,8 @@ RC input is configured on the RX3 (UART3_RX) pin. It supports all RC protocols e
 - SRXL2 requires a connection to TX6 and automatically provides telemetry.  Set :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` to "4".
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
+
+.. note:: In version 3, the connector intended for RC input is on the UART2, so the default protocol will need to be changed for SERIAL 2 to "23" and SERIAL 3 protocol changed to something else.
 
 .. note:: the V3 AIO moves this to UART2.
 
@@ -150,7 +153,7 @@ The correct battery monitor parameters are:
 -    :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 13
 -    :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` ~ 10.9
 -    :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 12
--    :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` ~ 28.5 (when using AIO version 1.2) (or approx 8.1 for AIO version 3)
+-    :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` ~ 21 (when using AIO version 1.2) (or approx 14 for AIO version 3)
 
 These are set by default in the firmware and shouldn't need to be adjusted (apart from for V3).
 
