@@ -10,7 +10,7 @@ Volz Servos
 
 .. warning::
 
-    This wiki page is a work-in-progress and has not been verified to be correct
+    This wiki page is a work-in-progress and has not been verified to be correct. Support for this peripheral may not be included in standard firmware releases. If needed, use the `custom firmware server <https://custom.ardupilot.org>`__ to  create a firmware that does.
 
 Where To Buy
 ------------
