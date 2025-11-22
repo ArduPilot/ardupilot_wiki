@@ -307,6 +307,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     tailsitter setup not complete, reboot                   Enabled tiltrotor but have not rebooted yet         Reboot
     tiltrotor setup not complete, reboot                    Enabled tailsitter but have not rebooted yet        Reboot
     Throttle trim not near center stick %x                  RC trim for centered throttle stick use incorrect   Set throttle channels RC trim to center position (idle) if :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 10 is set.
+    unset one of RTL_AUTOLAND or Q_RTL_MODE                 Have both parameters set                            Only use one or the other parameter to set RTL behavior in VTOLs
     Waiting for RC                                          RC failsafe enabled but no RC signal                Turn on RC transmitter or check RC transmitters connection to autopilot. If operating with only a GCS, see :ref:`common-gcs-only-operation`
     ======================================================= =================================================== ====================================================
 [/site]
