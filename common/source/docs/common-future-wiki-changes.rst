@@ -128,4 +128,5 @@ New Features
 - Add LOITER/HOLD failsafe action, see https://github.com/ArduPilot/ardupilot_wiki/pull/6911
 - Add MTR_REV_DELAY, see https://github.com/ArduPilot/ardupilot_wiki/pull/6935
 - Add pivot turn max deceleration parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/7000
+- Add RTL_AUTOLAND/_RTL_MODE pre-arm check, see https://github.com/ArduPilot/ardupilot_wiki/pull/7249
 [/site]
