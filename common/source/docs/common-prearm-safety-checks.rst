@@ -73,7 +73,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Chute is released                                       Parachute has been released                         Reboot autopilot
     Compass calibrated requires reboot                      Autopilot must be rebooted after compass cal        Reboot autopilot
     Compass calibration running                             Compass calibration is running                      Complete or cancel the :ref:`compass calibration <common-compass-calibration-in-mission-planner>`
-    Compass not healthy                                     At least one compass is not providing data          Check compass's connection to autopilot and :ref:`configuration <common-positioning-landing-page>`
+    Compass X not healthy                                   Compass X is not providing data                     Check the connection between compass X and the autopilot, and review the :ref:`configuration <common-positioning-landing-page>`
     Compass offsets too high                                Compass offset params are too large                 Relocate compass away from metal in the frame and repeat :ref:`compass calibration <common-compass-calibration-in-mission-planner>`.  Disable internal compass.  Increase :ref:`COMPASS_OFFS_MAX <COMPASS_OFFS_MAX>`.
     Compasses inconsistent                                  Two compasses angles or field strength disagree     Check compass orientations (e.g. :ref:`COMPASS_ORIENT <COMPASS_ORIENT>`). Move compass away from metal in the frame.  repeat :ref:`compass calibration <common-compass-calibration-in-mission-planner>`.  Disable internal compass.
     CrashDump data detected                                 Crash Dump data has been logged                     A CPU crash has occurred and data logged. Plane is probably unsafe to fly! See :ref:`crash_dump`
@@ -335,8 +335,8 @@ be a barometer hardware issue.
 Compass failures:
 -----------------
 
-**Compass not healthy** : the compass sensor is reporting that it is
-unhealthy which is a sign of a hardware failure.
+**Compass X not healthy** : the compass X sensor is reporting that it is
+unhealthy, which is a sign of a possible hardware failure.
 
 **Compass not calibrated** : the :ref:`compass(es) has not been calibrated <common-compass-calibration-in-mission-planner>`.  the
 ``COMPASS_OFS_X, _Y, _Z`` parameters are zero or the number or type of
