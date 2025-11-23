@@ -8,6 +8,8 @@ Copter/Plane/Rover support a number of different rangefinders including Lidars (
 
 A forward facing rangefinders can also be used for Obstacle Avoidance. See Rangefinder :ref:`Setup Overview <common-rangefinder-setup>` to know more.
 
+.. warning:: Many rangefinders are not included in the standard builds. If you get a pre-arm message that it is not being detected on power up, check the firmware's included :ref:`features list <common-limited_firmware>`
+
 [site wiki="plane"]
 .. tip::
 
