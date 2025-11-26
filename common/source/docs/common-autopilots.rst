@@ -52,6 +52,7 @@ Open Hardware
     CUAV V5 Nano <common-cuav-v5nano-overview>
     CUAV Nora <common-cuav-nora-overview>
     CUAV Pixhawk v6X <common-cuav-pixhawkv6X>
+    CUAV Pixhawk v6X V2 <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-V6X-v2>
     CUAV X7/X7Pro/X7+/X7+ Pro <common-cuav-x7-family-overview>
     CUAV-7-Nano <common-CUAV-7-Nano>
     Drotek Pixhawk3 <https://drotek.gitbook.io/pixhawk-3-pro/>
