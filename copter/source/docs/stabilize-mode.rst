@@ -68,11 +68,10 @@ Other important parameters
 --------------------------
 -  :ref:`ANGLE_MAX<ANGLE_MAX>` controls the maximum lean angle which by default is 4500
    (i.e. 45 degrees)
--  ANGLE_RATE_MAX controls the maximum requested rotation rate in the
-   roll and pitch axis which by default is 18000 (180deg/sec).
 -  :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` controls how quickly copter rotates based on a pilot's
    yaw input.  The default of 4.5 commands a 200 deg/sec rate of
    rotation when the yaw stick is held fully left or right.  Higher
    values will make it rotate more quickly.
+-  :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` can be used to control the responsiveness to changes in pitch and roll angles requested by pilot's inputs.
 
 
