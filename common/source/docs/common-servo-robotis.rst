@@ -12,7 +12,7 @@ Robotis servos using the "`DYNAMIXEL Protocol 2.0 <http://emanual.robotis.com/do
 
 .. note::
 
-   Support for these servos is available in Copter-4.0, Plane-3.10 and Rover-3.5 (or higher)
+    Support for this peripheral may not be included in standard firmware releases. If needed, use the `custom firmware server <https://custom.ardupilot.org>`__ to  create a firmware that does.
 
 Where to Buy
 ------------
