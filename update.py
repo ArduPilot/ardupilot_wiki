@@ -45,13 +45,13 @@ import shutil
 import subprocess
 import sys
 import time
-import requests
+import requests  # type: ignore[import-untyped]
 from urllib.parse import urlparse
 from concurrent.futures import ThreadPoolExecutor
 from typing import Optional, Dict, List, Union
 
 
-from sphinx.application import Sphinx
+from sphinx.application import Sphinx  # type: ignore[import-untyped]
 import rst_table
 
 from codecs import open
@@ -195,16 +195,15 @@ def get_http_session():
     return _http_session
 
 
-def get_cached_url_content(url, cache_dir=None, max_age_hours=1):
+def get_cached_url_content(url: str, cache_dir: Optional[str] = None, max_age_hours: int = 1) -> bytes:
     """Get URL content with caching to avoid repeated downloads"""
-    if cache_dir is None:
-        cache_dir = _cache_dir
+    effective_cache_dir: str = cache_dir if cache_dir is not None else _cache_dir
 
-    os.makedirs(cache_dir, exist_ok=True)
+    os.makedirs(effective_cache_dir, exist_ok=True)
 
     # Create cache filename from URL
     cache_filename = re.sub(r'[^\w\-_.]', '_', url) + '.cache'
-    cache_path = os.path.join(cache_dir, cache_filename)
+    cache_path = os.path.join(effective_cache_dir, cache_filename)
 
     # Check if cached version exists and is recent
     if os.path.exists(cache_path):
@@ -212,7 +211,7 @@ def get_cached_url_content(url, cache_dir=None, max_age_hours=1):
         if cache_age < (max_age_hours * 3600):
             debug(f"Using cached content for {url}")
             with open(cache_path, 'rb') as f:
-                return f.read()
+                return bytes(f.read())
 
     # Fetch fresh content
     try:
@@ -220,7 +219,7 @@ def get_cached_url_content(url, cache_dir=None, max_age_hours=1):
         session = get_http_session()
         response = session.get(url, timeout=30)
         response.raise_for_status()
-        content = response.content
+        content: bytes = response.content
 
         # Cache the content
         with open(cache_path, 'wb') as f:
@@ -233,7 +232,7 @@ def get_cached_url_content(url, cache_dir=None, max_age_hours=1):
         if os.path.exists(cache_path):
             debug(f"Using stale cached content for {url}")
             with open(cache_path, 'rb') as f:
-                return f.read()
+                return bytes(f.read())
         raise
 
 
@@ -283,7 +282,7 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
     # Try to get from cache first for non-streaming downloads
     if not verbose:  # Non-verbose usually means smaller files, use cache
         try:
-            content = get_cached_url_content(fetchurl)
+            content: bytes = get_cached_url_content(fetchurl)
             with open(filename, 'wb') as out_file:
                 out_file.write(content)
             return
@@ -695,13 +694,13 @@ def logmatch_code(matchobj, prefix):
             error("%s: except m%d" % (prefix, i))
 
 
-def is_the_same_file(file1, file2):
+def is_the_same_file(file1: str, file2: str) -> bool:
     """ Compare two files using their SHA256 hashes"""
-    digests = []
+    digests: list[str] = []
     for filename in [file1, file2]:
         hasher = hashlib.sha256()
         with open(filename, 'rb') as f:  # Open in binary mode
-            buf = f.read()
+            buf: bytes = f.read()
             hasher.update(buf)
             a = hasher.hexdigest()
             digests.append(a)
@@ -1005,11 +1004,11 @@ def load_build_options():
         return {}
 
 
-def load_features_data():
+def load_features_data() -> list:
     """Load features data with caching"""
     try:
         # Use cached download for features.json.gz
-        content = get_cached_url_content(
+        content: bytes = get_cached_url_content(
             "https://firmware.ardupilot.org/features.json.gz",
             max_age_hours=6  # Cache for 6 hours
         )

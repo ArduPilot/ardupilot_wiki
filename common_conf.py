@@ -4,6 +4,11 @@
 # This information is imported by the conf.py files in each of the sub wikis
 
 
+# Parallel reading of source files (use all available CPUs)
+import multiprocessing
+parallel_read_safe = True
+parallel_write_safe = True
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
@@ -32,6 +37,11 @@ intersphinx_base_url = wiki_base_url + '%s/'
 # Where to point the base of the build for the main site menu
 html_context = {'target': '/'}
 # This needs to change to the actual URL root once the theme updated.
+
+# Don't generate search index for versioned parameter pages
+html_search_options = {
+    'dict_max_word_length': 40,  # Skip very long parameter names
+}
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'copter': (intersphinx_base_url % 'copter',
@@ -74,6 +84,12 @@ if disable_non_local_image_warnings:
 
     sphinx.environment.BuildEnvironment.warn_node = _warn_node
 # ENDPATH
+
+# Suppress warnings that slow down builds (already have nitpicky = False)
+suppress_warnings = [
+    'epub.unknown_project_files',  # Suppress epub warnings
+    'image.nonlocal_uri',  # Suppress external image warnings
+]
 
 
 def setup(app):
