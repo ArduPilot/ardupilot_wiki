@@ -30,6 +30,7 @@ import os
 import shutil
 import sys
 import time
+import logging
 from html.parser import HTMLParser
 import re
 import glob
@@ -57,6 +58,14 @@ parser.add_argument("--cache-dir", dest='cache_dir', default=default_cache_dir, 
 args = parser.parse_args()
 
 error_count = 0
+
+# Configure logging
+logging.basicConfig(
+    level=logging.DEBUG if args.verbose else logging.INFO,
+    format='[build_parameters.py] %(message)s',
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
+logger = logging.getLogger(__name__)
 
 # Global session for HTTP requests with connection pooling
 session = requests.Session()
@@ -210,21 +219,21 @@ vehicle_old_to_new_name = { # Used because git-version.txt use APMVersion with o
 }
 
 
-def progress(str_to_print):
-    print(f"[build_parameters.py] {str_to_print}")
+def progress(msg):
+    """Log info level message."""
+    logger.info(msg)
 
 
-def debug(str_to_print):
-    """Debug output if verbose is set."""
-    if args.verbose:
-        progress(str_to_print)
+def debug(msg):
+    """Log debug level message."""
+    logger.debug(msg)
 
 
-def error(str_to_print):
-    """Show and count the errors."""
+def error(msg):
+    """Log error and count errors."""
     global error_count
     error_count += 1
-    progress("[error]: " + str(str_to_print))
+    logger.error(msg)
 
 
 def check_temp_folders():
