@@ -198,6 +198,9 @@ VEHICLES = ALLVEHICLES
 
 BASEPATH = ""
 
+# Set to track files with duplicate parameter values (should be excluded from JSON)
+files_with_duplicates = set()
+
 # Dicts for name replacing
 vehicle_new_to_old_name = { # Used because "param_parse.py" args expect old names
     "Rover": "APMrover2",
@@ -813,6 +816,15 @@ def process_single_parameter_file_with_repo(commit_data, repo_path):
         if result.stderr:
             debug(f"param_parse.py stderr for {vehicle} {version}: {result.stderr[:500]}")
 
+        # Check for duplicate values in param_parse output
+        has_duplicates = False
+        if result.stdout and "Duplicate" in result.stdout:
+            has_duplicates = True
+            debug(f"Duplicate values detected for {vehicle} {version}")
+        if result.stderr and "Duplicate" in result.stderr:
+            has_duplicates = True
+            debug(f"Duplicate values detected for {vehicle} {version}")
+
         # create a filename for new parameters file
         filename = "parameters-" + vehicle
         if ("beta" in version or "rc" in version): # Plane uses BETA, Copter and Rover uses RCn
@@ -831,6 +843,12 @@ def process_single_parameter_file_with_repo(commit_data, repo_path):
             replace_anchors(parameters_rst_path, output_file_path, filename[10:-4])
             os.remove(parameters_rst_path)
             debug("File " + filename + " generated. ")
+
+            # Track files with duplicates to exclude from JSON
+            if has_duplicates:
+                files_with_duplicates.add(filename)
+                debug(f"File {filename} marked as having duplicates (will be excluded from JSON)")
+
             return filename
         else:
             error(f"Parameters.rst not found for {vehicle} {version}")
@@ -911,90 +929,135 @@ def generate_rst_files(commits_to_checkout_and_parse):
 
 def generate_json(vehicles):
     """
-        Generates a JSON with all parameters page to be live consumed by a javascript
+    Generates a JSON with all parameters page to be consumed by JavaScript.
+    Uses Python's json module for proper formatting.
     """
+    import json
+    from collections import OrderedDict
 
-    os.chdir(BASEPATH + "/Tools/autotest/param_metadata")
+    param_metadata_dir = os.path.join(BASEPATH, "Tools", "autotest", "param_metadata")
 
     for vehicle in vehicles:
-
         debug("Creating JSON files for " + vehicle)
 
-        # Creates the JSON lines from available rst files
-        parameters_files = [f for f in glob.glob("parameters-" + vehicle + "*.rst")]
+        # Get RST files, excluding those with duplicates
+        pattern = os.path.join(param_metadata_dir, f"parameters-{vehicle}*.rst")
+        all_parameters_files = [os.path.basename(f) for f in glob.glob(pattern)]
+        parameters_files = [f for f in all_parameters_files if f not in files_with_duplicates]
+
+        if len(all_parameters_files) != len(parameters_files):
+            excluded = len(all_parameters_files) - len(parameters_files)
+            debug(f"Excluded {excluded} file(s) with duplicate values from {vehicle} JSON")
+
         parameters_files.sort(reverse=True)
 
-        json_lines = []
-        json_lines.append("{")
-        first = True
+        # Build JSON data structure
+        data = OrderedDict()
+        base_prefix = f"parameters-{vehicle}-"
 
         for filename in parameters_files:
-            if first:
-                first = False
+            if "beta" in filename or "rc" in filename:
+                # Plane uses BETA, Copter and Rover use RCn
+                if "-beta-" in filename:
+                    version_suffix = filename[len(base_prefix + "beta") + 1:-4]
+                else:
+                    version_suffix = filename[len(base_prefix):-4]
+                key = f"{vehicle} beta {version_suffix}"
+                value = filename[:-4] + ".html"
+            elif "latest" in filename:
+                if len(filename) > len(base_prefix + "latest.rst"):
+                    version_suffix = filename[len(base_prefix + "latest") + 1:-4]
+                else:
+                    version_suffix = ""
+                key = f"{vehicle} latest {version_suffix}".strip()
+                # Force latest to use parameters.html for toc list on wiki
+                value = "parameters.html"
             else:
-                json_lines.append(",")
-            if ("beta" in filename or "rc" in filename): # Plane uses BETA, Copter and Rover uses RCn
-                json_lines.append("\"" + vehicle + " beta " + filename[(len("parameters-" + vehicle + "-beta")+1):-4] + "\" : \"" + filename[:-3] + "html\"")  # noqa: E501
-            elif ("latest" in filename):
-                # json_lines.append(",\"" +  vehicle + " latest " + filename[(len("parameters-" + vehicle + "-latest")+1):-4] + "\" : \"" + filename[:-3] + "html\"")  # noqa: E501
-                json_lines.append("\"" + vehicle + " latest " + filename[(len("parameters-" + vehicle + "-latest")+1):-4] + "\" : \"" + ("parameters.html\""))  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.  # noqa: E501
+                # Stable version
+                if "-stable-" in filename:
+                    version_suffix = filename[len(base_prefix + "stable") + 1:-4]
+                else:
+                    version_suffix = filename[len(base_prefix):-4]
+                key = f"{vehicle} stable {version_suffix}"
+                value = filename[:-4] + ".html"
 
-            else:
-                json_lines.append("\"" + vehicle + " stable " + filename[(len("parameters-" + vehicle + "-stable")+1):-4] + "\" : \"" + filename[:-3] + "html\"")  # noqa: E501
+            data[key] = value
 
-        json_lines.append("}")
-
-        # Saves the JSON
-        json_filename = "parameters-" + vehicle + ".json"
+        # Write JSON file
+        json_filename = os.path.join(param_metadata_dir, f"parameters-{vehicle}.json")
         try:
-            with open(json_filename, 'w') as f:
-                for lines in json_lines:
-                    f.write("%s\n" % lines)
+            with open(json_filename, 'w', encoding='utf-8') as f:
+                json.dump(data, f, separators=(', ', ': '), indent=2)
+            debug(f"Created {json_filename} with {len(data)} entries")
         except Exception as e:
-            error("Error while creating the JSON file " + vehicle + " in folder " + str(os.getcwd()))  # noqa: E501
-            error(e)
-            # sys.exit(1)
-        debug("")
+            error(f"Error while creating JSON file {json_filename}: {e}")
 
 
 def move_results(vehicles):
     """
-        Once all parameters files are created, moves for "new_params_mversion" as the last execution result
+    Once all parameters files are created, moves to "new_params_mversion" as the last execution result.
+    Uses copy instead of move for cross-device and permission compatibility.
     """
-
-    os.chdir(BASEPATH + "/Tools/autotest/param_metadata")
+    param_metadata_dir = os.path.join(BASEPATH, "Tools", "autotest", "param_metadata")
 
     for vehicle in vehicles:
         debug("Moving created files for " + vehicle)
         try:
-            folder = args.destFolder + "/" + vehicle_new_to_old_name[vehicle] + "/"
-            debug("Destination folder:\t" + folder)
-            debug("Current folder:\t" + str(os.getcwd()))
-            debug("Destination folder absolute path:\t" + os.path.abspath(folder))
+            folder = os.path.join(args.destFolder, vehicle_new_to_old_name[vehicle])
+            debug(f"Destination folder: {folder}")
+            debug(f"Source folder: {param_metadata_dir}")
 
-            # touch the folders
-            if not os.path.exists(args.destFolder):
-                os.makedirs(args.destFolder)
-            if not os.path.exists(folder):
-                os.makedirs(folder)
+            # Create destination folder if needed
+            os.makedirs(folder, exist_ok=True)
 
-            # Cleanning last run, iff exists
-            files_to_delete = [f for f in glob.glob(folder + "*")]
-            for old_file in files_to_delete:
-                os.remove(old_file)
+            # Clean destination folder - handle permission errors gracefully
+            try:
+                files_to_delete = glob.glob(os.path.join(folder, "*"))
+                for old_file in files_to_delete:
+                    try:
+                        os.remove(old_file)
+                    except PermissionError:
+                        debug(f"Permission denied deleting {old_file}, trying to overwrite instead")
+                    except Exception as e:
+                        debug(f"Could not delete {old_file}: {e}")
+            except Exception as e:
+                debug(f"Could not clean destination folder: {e}")
 
-            # Moving files (use shutil.move for cross-device compatibility)
-            files_to_move = [f for f in glob.glob("parameters-" + vehicle + "*")]
-            for file in files_to_move:
-                if "latest" not in file:  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.  # noqa: E501
-                    shutil.move(file, folder + file)
+            # Copy files to destination (more reliable than move for cross-device/permission issues)
+            files_to_copy = glob.glob(os.path.join(param_metadata_dir, f"parameters-{vehicle}*"))
+            files_copied = 0
+
+            for src_file in files_to_copy:
+                filename = os.path.basename(src_file)
+
+                # Determine destination filename
+                if "latest" in filename:
+                    # Rename latest to parameters.rst for wiki compatibility
+                    dest_file = os.path.join(folder, "parameters.rst")
                 else:
-                    shutil.move(file, str((folder + "parameters.rst")))
+                    dest_file = os.path.join(folder, filename)
+
+                try:
+                    # Use copy2 to preserve metadata, then remove source
+                    shutil.copy2(src_file, dest_file)
+                    os.remove(src_file)
+                    files_copied += 1
+                    debug(f"Copied {filename} to {folder}")
+                except PermissionError:
+                    # Try just copying without removing source
+                    try:
+                        shutil.copy2(src_file, dest_file)
+                        files_copied += 1
+                        debug(f"Copied {filename} to {folder} (source kept due to permissions)")
+                    except Exception as copy_error:
+                        error(f"Failed to copy {filename}: {copy_error}")
+                except Exception as e:
+                    error(f"Failed to move {filename}: {e}")
+
+            debug(f"Copied {files_copied} files for {vehicle}")
 
         except Exception as e:
-            error("Error while moving result files of vehicle " + vehicle + " pwd: " + str(os.getcwd()))
-            error(e)
-            # sys.exit(1)
+            error(f"Error while moving result files of vehicle {vehicle}: {e}")
 
 
 def print_versions(commits_to_checkout_and_parse):
