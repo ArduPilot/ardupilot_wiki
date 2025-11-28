@@ -15,6 +15,7 @@
 # Build outputs
 *.html
 *.pyc
+.cache/
 
 # static html pages
 !/frontend/*.html
@@ -36,6 +37,7 @@
 # Parameters files
 /*/source/docs/parameters*.rst
 /dev/source/docs/AP_Periph-Parameters.rst
+/*/source/_static/parameters*.json
 
 # Log messages files
 /*/source/docs/logmessages.rst
