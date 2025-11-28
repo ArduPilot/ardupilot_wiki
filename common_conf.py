@@ -3,6 +3,13 @@
 # This contains common configuration information for the ardupilot wikis.
 # This information is imported by the conf.py files in each of the sub wikis
 
+import sys
+import os
+
+# Add the wiki root and extensions directory to the path so our custom extensions can be found
+_wiki_root = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _wiki_root)
+sys.path.insert(0, os.path.join(_wiki_root, 'scripts', 'extensions'))
 
 # Parallel reading of source files (use all available CPUs)
 import multiprocessing
@@ -20,7 +27,8 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinxcontrib.youtube',  # For youtube embedding
     'sphinxcontrib.jquery',
-    'sphinx_tabs.tabs'        # For clickable tabs
+    'sphinx_tabs.tabs',       # For clickable tabs
+    'sphinx_skip_versioned_params',  # Skip labels for versioned parameter files (saves RAM/time)
 ]
 
 # Set False to re-enable warnings for non-local images.
