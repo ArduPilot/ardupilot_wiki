@@ -54,6 +54,7 @@ New Board Support
 - PocketBeagle2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7165
 - TBS Lucid H7 Wing AIO, see <https://github.com/ArduPilot/ardupilot_wiki/pull/7169>
 - MicoAir743-Lite, see https://github.com/ArduPilot/ardupilot_wiki/pull/7258
+- SkyRukh Surge H67, see https://github.com/ArduPilot/ardupilot_wiki/pull/7259
 
 New Peripheral Support
 ======================
