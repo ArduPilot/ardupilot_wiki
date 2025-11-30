@@ -23,6 +23,7 @@ The following units have been tested and are supported:
 - DroneCAN (adapted versions of the above serial units)
 - PiccoloCAN (`Currawong's ECU <https://www.currawong.aero/ecu/>`__ and `IntelliJect EFI <https://power4flight.com/uav-engine-products/uav-engine-control-units/intelliject-efi/>`__)
 - `Hirth Engines <https://hirthengines.com/2-stroke-engines/41-series/>`__
+- :ref:`common-loweheiser-generator`
 
 Using :ref:`LUA script drivers <common-lua-scripts>`:
 

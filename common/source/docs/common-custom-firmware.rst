@@ -182,6 +182,7 @@ AP_FILESYSTEM_MISSION_ENABLED                   2200   2200   2200
 AP_GPS_GSOF_ENABLED                             2192   2184   2184    
 AP_FILTER_ENABLED                               2168   2128   2136    
 AP_GENERATOR_RICHENPOWER_ENABLED                2168   2248   2168    
+AP_GENERATOR_LOWEHEISER_ENABLED                 4108   4104   4124    
 HAL_HIGH_LATENCY2_ENABLED                       2168   2024   1920    
 AP_COMPASS_LIS3MDL_ENABLED                      2128   2128   2128    
 AP_COMPASS_MMC3416_ENABLED                      2120   2112   2112    
