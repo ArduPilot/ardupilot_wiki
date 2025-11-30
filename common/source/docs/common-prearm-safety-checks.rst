@@ -211,7 +211,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     VisOdom: not healthy                                    VisualOdometry sensor is not providing data         Check visual odometry physical connection and :ref:`configuration<common-non-gps-navigation-landing-page>`
     VisOdom: out of memory                                  Autopilot has run out of memory                     Disable features or replace with a higher powered autopilot
     VTOL Fwd Throttle iz not zero                           RC transmitter's VTOL Fwd throttle stick is high    Lower VTOL Fwd throttle stick or repeat :ref:`radio calibration <common-radio-control-calibration>`
-    waiting for terrain data                                Waiting for GCS to provide required terrain data    Wait or move to location with better GPS reception
+    waiting for terrain data                                Waiting for GCS to provide required terrain data    Wait or move to location with better GPS reception;check :ref:`TERRAIN_OPTIONS<TERRAIN_OPTIONS>` is correctly set.
     Yaw (RCx) is not neutral                                RC transmitter's yaw stick is not centered          Move RC yaw stick to center or repeat :ref:`radio calibration <common-radio-control-calibration>`
     Yaw radio max too low                                   RC yaw channel max below 1700                       Repeat the :ref:`radio calibration <common-radio-control-calibration>` procedure or increase :ref:`RC2_MAX<RC2_MAX>` above 1700
     Yaw radio min too high                                  RC yaw channel min above 1300                       Repeat the :ref:`radio calibration <common-radio-control-calibration>` procedure or reduce :ref:`RC1_MIN<RC1_MIN>` below 1300
