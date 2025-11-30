@@ -494,6 +494,10 @@ The objects returned by the above functions support the following methods:
 
 - ``port:set_flow_control(fcs)`` - Set flow control setting for scripting protocol ports (those from ``find_serial``). No effect for device simulation ports (those from ``find_simulated_device``). ``fcs`` can be 0 to disable, 1 to enable, or 2 for automatic mode.
 
+- ``port:configure_parity(mode)`` - Configure the UART parity mode for scripting protocol ports (those from ``find_serial``). No effect for device simulation ports (those from ``find_simulated_device``). A value of 0 disables parity (default), 1 enables odd parity, and 2 enables even parity. An internal UART restart may occur when this setting is applied.
+
+- ``port:set_stop_bits(count)`` - Set the UART stop bit configuration for scripting protocol ports. No effect for device simulation ports. A value of 1 selects one stop bit (default), and a value of 2 selects two stop bits. Invalid values are ignored.
+
 Barometer (baro:)
 ~~~~~~~~~~~~~~~~~
 
