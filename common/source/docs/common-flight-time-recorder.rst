@@ -2,11 +2,11 @@
 
 [copywiki destination="copter,plane,rover,sub"]
 
-====================
-Flight Time Recorder
-====================
+=================
+Flight Statistics
+=================
 
-ArduPilot includes a flight time recorder which records the board's total flight time, total run time and number of times the board has been rebooted.  These are stored in user resettable parameters meaning they are not protected from being tampered with.
+ArduPilot includes a flight time recorder which records the board's total flight time, total run time and number of times the board has been rebooted. Numbers of flights and total distance flown (if location sensing is available) are also provided. These are stored in user re-settable parameters meaning they are not protected from being tampered with.
 
 .. image:: ../../../images/flight_time_recorder.jpg
 
@@ -17,6 +17,8 @@ Parameter Details
 -  :ref:`STAT_FLTTIME <STAT_FLTTIME>` holds the total number of seconds that the board/vehicle has been flying (including all previous flights)
 -  :ref:`STAT_RUNTIME <STAT_RUNTIME>` holds the total number of seconds that the board has been powered up (including all previous flights)
 -  :ref:`STAT_RESET <STAT_RESET>` hold the number of seconds after epoch (1st Jan 1970) since the statistics were reset if the board has a GPS to provide a real time.  Without a GPS the time will be something close to 1st Jan 1970.  The user can trigger a reset of all statistic by setting this parameter to "0".  This parameter will then immediately be reset again to the current time since epoch and all other parameters set back to zero.
+-  :ref:`STAT_FLTCNT <STAT_FLTCNT>` holds the total number of flights
+-  :ref:`STAT_DISTFLWN <STAT_DISTFLWN>` holds the total distance flown, assuming valid location is available during the flights
 
 When will counters be reset?
 ============================
