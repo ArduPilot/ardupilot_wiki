@@ -65,6 +65,7 @@ New Peripheral Support
 - VimDrones DroneCAN peripherals, see https://github.com/ArduPilot/ardupilot_wiki/pull/6906
 - VSPeak fuel flow meter, see https://github.com/ArduPilot/ardupilot_wiki/pull/7175
 - Lightware GRF250/500 Rangefinder, see https://github.com/ArduPilot/ardupilot_wiki/pull/7205
+- Currawong CORTEX Generator, see https://github.com/ArduPilot/ardupilot_wiki/pull/7266
 
 New Features
 ============
