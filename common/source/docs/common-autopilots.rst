@@ -152,6 +152,7 @@ Closed Hardware
     MicoAir405v2/Mini <common-MicoAir405v2>
     MicoAir743 <common-MicoAir743>
     MicoAir743-AIO <common-MicoAir743-AIO>
+    MicoAir743-Lite <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/MicoAir743-Lite/README.md>
     MicoAir743v2 <common-MicoAir743v2>
     ModalAI Flight core <https://www.modalai.com/products/flight-core>
 [site wiki="copter,rover,blimp"]
