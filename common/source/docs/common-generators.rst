@@ -14,10 +14,12 @@ The following are all currently supported within ArduPilot:
 .. toctree::
     :maxdepth: 1
 
-    RichenPower generator <common-richenpower-generator>
+    Currawong CORTEX Generator <https://www.currawongeng.com/chps/>
     Intelligent Energy 650W/800W Hydrogen Fuel Cell <common-ie650-fuelcell>
     Intelligent Energy 2.4kW Hydrogen Fuel Cell <common-ie24-fuelcell>
-    Shang Fei Aviation <http://www.svffi.com/en> 
+    RichenPower generator <common-richenpower-generator>
+    Shang Fei Aviation <http://www.svffi.com/en>
+    Loweheiser generator <common-loweheiser-generator>
 
 .. note:: Shang Fei generator uses a LUA script driver `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/drivers>`__
 
