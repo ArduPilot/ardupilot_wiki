@@ -20,7 +20,7 @@ Copter supports several configurable failsafe options in cases where contact bet
 When the failsafe will trigger
 ==============================
 
-If enabled and set-up correctly the radio failsafe will trigger if any of these conditions occur for more than :ref:`RC_FS_TIMEOUT<RC_FS_TIMEOUT>` seconds:
+If enabled and set-up correctly the radio failsafe will trigger if any of these conditions occur for more than :ref:`RC_FS_TIMEOUT<RC_FS_TIMEOUT>` seconds (default = 1 sec):
 
 -  The pilot turns off the RC transmitter.
 -  The vehicle travels outside of RC range and signal is lost.
