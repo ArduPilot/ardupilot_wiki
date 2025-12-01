@@ -18,6 +18,7 @@ GPS/Compass
 
     ARK GPS <common-ark-gps>
     ARK SAM GPS <common-ark-sam-gps>
+    ARK SAM GPS MINI <common-ark-sam-gps-mini>
     ARK TESEO GPS <common-ark-teseo-gps>
     Avionics Anonymous GNSS + Compass<common-avanon-gnss-mag>
     Avionics Anonymous Compass<common-avanon-mag>
