@@ -135,6 +135,8 @@ Input from the radio control receiver is input on this pin. Most serial RC proto
 
 As of firmware versions 4.0 and later, ArduPilot also allows an RC receiver to be attached to any UART port.
 
+.. _main-aux-out:
+
 MAIN/AUX/OUT
 ------------
 
