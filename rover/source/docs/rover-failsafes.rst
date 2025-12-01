@@ -12,7 +12,7 @@ Radio Failsafe (aka Throttle Failsafe)
 .. image:: ../images/rover-failsafe-rc.jpg
     :target: ../_images/rover-failsafe-rc.jpg
 
-This failsafe is triggered if the connection between the user's transmitter and the receiver on the vehicle is lost for at least :ref:`FS_TIMEOUT <FS_TIMEOUT>` seconds.
+This failsafe is triggered if the connection between the user's transmitter and the receiver on the vehicle is lost for at least :ref:`FS_TIMEOUT <FS_TIMEOUT>` seconds (default = 1 sec).
 
 - the loss of transmitter/receiver connection is detected by:
 
