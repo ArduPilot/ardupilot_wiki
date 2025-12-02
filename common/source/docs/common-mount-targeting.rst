@@ -72,7 +72,7 @@ The pilot can retract the mount with the "Retract Mount1" or "Retract Mount2" au
 Axis Lock Auxiliary Switches and Options
 ----------------------------------------
 
-If the mount is capable, the roll and pitch axes can be controlled in the RC Targeting mode with an auxiliary switch on an RC channel. For example using RC channel 9, set :ref:`RC9_OPTION <RC9_OPTION>` = 185 to enable this switch. Switching its position will force roll and/or pitch angles of the mount to be stabilized ('locked") in earth frame (ie with respect to the horizon) or body frame (with respect to the gimbals base)
+If the mount is capable, the roll and pitch axes can be controlled in the RC Targeting mode with an auxiliary switch on an RC channel, if you use ANGLE, not RATE controls (eg. :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` = 0. In the future this will be expanded to RATE control also). For example using RC channel 9, set :ref:`RC9_OPTION <RC9_OPTION>` = 185 to enable this switch. Switching its position will force roll and/or pitch angles of the mount to be stabilized ('locked") in earth frame (ie with respect to the horizon) or body frame (with respect to the gimbals base)
 
 ========   ===========   ===============  =========   ============================
 AUX FUNC   Roll          Pitch            Name        Description
@@ -82,7 +82,11 @@ Middle     Body Frame    Earth Frame      PITCH       Like HORIZON but vehicle b
 Low        Body Frame    Body Frame       FPV         Gimbal angles maintained with respect to its base. This is good for FPV flying since horizon moves normally with respect to vehicle attitude.
 ========   ===========   ===============  =========   ============================
 
+<<<<<<< HEAD
 .. note:: Currently only the CADDX, Storm32, SimpleBGC, Brushless, and Servo type mounts have the above capability.
+=======
+.. note:: Currently only the CADDX, Storm32, SimpleBGC, Brushless, Servo type mounts have the above capability.
+>>>>>>> 10d09ed32 (4.7:31461/31713/31792/31832/Mount_Enhancements)
 .. note:: If the Aux switch above is not used, HORIZON mode is the normal mode of gimbal operation
 
 - ``MOUNTx_OPTION`` bit 3 (+4 in value) provides the ability to obtain FPV lock above (on gimbals that are capable), without the need for the switch,
@@ -105,6 +109,13 @@ Low          POI location is cleared and gimbal targeting mode set to its defaul
 
 .. note:: This feature and gimbal drivers are NOT normally included on standard firmware for smaller flash (F4) boards. Use the `Custom Firmware Build Server <https://firmware.ardupilot.org/>`__ to create firmware that includes it.
 
+<<<<<<< HEAD
+=======
+POI Altitude
+~~~~~~~~~~~~
+If Terrain data is enabled and available, the gimbal's "boresight" POI will be set to whatever terrain elevation it is pointing. If not, the HOME altitude will be used for the POI point.
+
+>>>>>>> 10d09ed32 (4.7:31461/31713/31792/31832/Mount_Enhancements)
 Mission Planner Mount Controls
 ==============================
 Mission Planner uses MAVLink commands to control the mount.  The mount's angles can be controlled as follows
