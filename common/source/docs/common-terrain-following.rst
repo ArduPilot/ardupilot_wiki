@@ -165,6 +165,12 @@ When the autopilot has finished loading terrain data you should see
 showing up in "ter_alt". The "ter_pend" value is the number of terrain
 blocks that the autopilot is waiting to load from the ground station.
 
+Options
+-------
+There are two optional behaviors which can be selected via the :ref:`TERRAIN_OPTIONS<TERRAIN_OPTIONS>` bitmask parameter:
+- if bit 0 is set (value+1): downloading of terrain data is halted.
+- if bit 1 is set (value+2): enables using terrain data (via GCS) when no SD card is present.
+
 Terrain Look-ahead
 ==================
 
