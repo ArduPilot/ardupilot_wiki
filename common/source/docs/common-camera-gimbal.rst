@@ -17,6 +17,7 @@ Any servo gimbal accepting PWM input should work.  Specific examples include
 
 - Adafruit Mini Pan-Tilt Kit
 - `Quanum Pan-Tilt Servo Gimbal <https://hobbyking.com/en_us/quanum-servo-based-pan-tilt.html>`__
+- `AtomRC Gimbals <https://atomrc.com/products/atomrc-high-resolution-3d-print-wide-angle-range-gimbal-for-fpv-airplane-fixed-wing>`__
 
 Mounting the Camera and Gimbal
 ==============================
@@ -66,7 +67,22 @@ Typical input and output assignments are shown below, but any unused RC input ch
 - :ref:`SERVO11_MIN <SERVO11_MIN>` and :ref:`SERVO11_MAX <SERVO11_MAX>` to match the min and max range of the yaw servo
 - :ref:`RC6_OPTION <RC6_OPTION>` = 213 ("Mount Pitch") to control the gimbal's pitch rate with RC channel 6
 - :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw rate with RC channel 7
-- :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Lock") to switch between "lock" and "follow" mode with RC channel 8
+- :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Yaw Lock") to switch between normal yaw operation and locking mount heading with RC channel 8 (in RC Targeting mode only).
+- :ref:`RC9_OPTION <RC9_OPTION>` = 185 (Mount RP Lock) to roll and pitch axex locks as follows:
+
+=============================    ==========   ===========   ===================================================================
+Mount RP Lock Switch Position    Roll EF/BF   Pitch EF/BF   Description
+=============================    ==========   ===========   ===================================================================
+LOW                                BF            BF         FPV lock: pitch/roll RC sets locked angle with respect to mount;useful when flying via gimbal camera
+MID                                BF            EF         Pitch lock: roll RC sets locked angle with respect to mount
+HIGH                               EF            EF         Horizon lock:  pitch/roll RC sets locked angle with respect to horizon
+=============================    ==========   ===========   ===================================================================
+
+BF = Body frame, EF = Earth Frame
+
+.. note :: for full FPV lock the yaw axis should not be forced to Earth frame by a Mount Yaw Lock switch. See :ref:`common-mount-targeting` for more information on mount modes, pilot/autopilot targeting controls, and axes locks.
+
+- setting :ref:`MNT1_OPTIONS<MNT1_OPTIONS>` bit 2 (value +4) can be used to for force FPV lock as given in the above table without the need for RC switches when in RC Targeting Mount Mode.
 
 Control and Testing
 ===================
