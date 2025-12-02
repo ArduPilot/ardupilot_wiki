@@ -43,15 +43,34 @@ Connect to the autopilot with a ground station and set the following parameters.
 - :ref:`MNT1_ROLL_MAX <MNT1_ROLL_MAX>` to 30 (meaning the gimbal can roll left 30 deg)
 - :ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>` to -180 (meaning the gimbal can yaw to the left 180deg)
 - :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to 180 (meaning the gimbal can yaw to the right 180deg)
-- :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to 90 (deg/s) to control speed of gimbal when using RC targeting
+- :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to 90 (deg/s) to control speed of gimbal when using RC targeting. If RC value is intended to control the ANGLE, then set it to 0.
 - :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` to 8 (Mount1 Roll)
 - :ref:`SERVO10_FUNCTION <SERVO10_FUNCTION>` to 7 (Mount1 Pitch)
 - :ref:`SERVO11_FUNCTION <SERVO11_FUNCTION>` to 6 (Mount1 Yaw)
-- :ref:`RC6_OPTION <RC6_OPTION>` = 213 ("Mount Pitch") to control the gimbal's pitch rate with RC channel 6
-- :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw rate with RC channel 7
-- :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Lock") to switch between "lock" and "follow" mode with RC channel 8
 
-See the "Control with an RC transmitter" section of :ref:`this page <common-mount-targeting>` for more details on parameter changes required to control the gimbal through an RC Transmitter (aka "RC Targeting")
+Optional
+~~~~~~~~
+To allow pilot RC transmitter control of the gimbal:
+
+- :ref:`RC6_OPTION <RC6_OPTION>` = 213 ("Mount Pitch") to control the gimbal's pitch angle with RC channel 6
+- :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw angle with RC channel 7
+- :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Yaw Lock") to switch between normal yaw operation and locking mount heading with RC channel 8 (in RC Targeting mode only).
+- :ref:`RC9_OPTION <RC9_OPTION>` = 185 ("Mount RP Lock") to switch between three modes of earth frame/body frame locks for the roll and pitch axis in RC targeting mode.
+
+=============================    ==========   ===========   ===================================================================
+Mount RP Lock Switch Position    Roll EF/BF   Pitch EF/BF   Description
+=============================    ==========   ===========   ===================================================================
+LOW                                BF            BF         FPV lock: pitch/roll RC sets locked angle with respect to mount;useful when flying via gimbal camera
+MID                                BF            EF         Pitch lock: roll RC sets locked angle with respect to mount
+HIGH                               EF            EF         Horizon lock:  pitch/roll RC sets locked angle with respect to horizon
+=============================    ==========   ===========   ===================================================================
+
+BF = Body frame, EF = Earth Frame
+
+.. note :: for full FPV lock the yaw axis should not be forced to Earth frame by a Mount Yaw Lock switch. See :ref:`common-mount-targeting` for more information on mount modes, pilot/autopilot targeting controls, and axes locks.
+
+- setting :ref:`MNT1_OPTIONS<MNT1_OPTIONS>` bit 2 (value +4) can be used to for force FPV lock as given in the above table without the need for RC switches when in RC Targeting Mount Mode.
+
 
 Configuring the Gimbal
 ----------------------
