@@ -30,7 +30,7 @@ Then one of the following will happen, depending on :ref:`BATT_FS_LOW_ACT<BATT_F
 
 -  **Nothing**  (value 0)
 -  **Disarm motors** (value 1)
--  **Enter SURFACE mode** (value 2)item has been programmed (see :ref:`common-do-land-start`).
+-  **Enter SURFACE mode** (value 2)
 
 As with all failsafes, the user can re-take control of the vehicle by changing the flight mode switch to another mode. The battery failsafe will not trigger again unless the two-layer failsafe is setup (see below)
 
