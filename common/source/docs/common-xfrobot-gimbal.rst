@@ -53,11 +53,10 @@ Connect with a ground station and set the following parameters.  The params belo
 - :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to 60 (deg/s) to control speed of gimbal when using RC targetting
 - :ref:`RC6_OPTION <RC6_OPTION>` = 213 ("Mount Pitch") to control the gimbal's pitch angle with RC channel 6
 - :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw angle with RC channel 7
-- :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Lock") to switch between "lock" and "follow" mode with RC channel 8
+- :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Yaw Lock") to switch between normal yaw operation and locking mount heading with RC channel 8 (in RC Targeting mode only).
 
 Ethernet Connectivity
 ---------------------
-
 Instead of using a UART serial connection to control the gimbal, an Ethernet virtual serial connection may be used
 
 .. image:: ../../../images/xfrobot-autopilot-ethernet.png
