@@ -64,7 +64,7 @@ While the mount is in "RC Targeting" mode (see above for how to change modes), t
 
 By default the yaw control is in "follow" mode (aka "body frame") meaning that the mount's heading will rotate as the vehicle rotates.  The alternative is "lock" mode (aka "earth frame") meaning the mount's heading will stay locked onto a particular heading regardless of the vehicle's yaw.  The pilot can switch between these two modes with an auxiliary switch:
 
-- set :ref:`RC9_OPTION <RC9_OPTION>` = 163 ("Mount Lock") to switch between "lock", or yaw lock in earth-frame when switched to high, and "follow" mode or body frame yaw  with RC channel 9, for example.
+- set :ref:`RC9_OPTION <RC9_OPTION>` = 163 ("Mount Yaw Lock") to switch between "lock", or yaw lock in earth-frame when switched to high, and "follow" mode or body frame yaw  with RC channel 9
 
 .. note:: normally, the yaw lock will revert to "follow" mode on any targeting mode change. Then ``MNTx_OPTIONS`` bit 0, when set will allow the yaw lock mode to persist until changed by RC switch or MAVLink command.
 
