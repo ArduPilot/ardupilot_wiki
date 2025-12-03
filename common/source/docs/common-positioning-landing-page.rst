@@ -63,6 +63,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     ARK RTK Base <common-ark-rtk-base>
     ARK RTK F9P <common-ark-rtk-f9p-gps>
     ARK RTK GPS L1 L5 <common-ark-rtk-l1l5-gps>
+    ARK X20 RTK GPS <common-ark-x20-rtk-gps>
     Blicube RTK GPS (Single Unit Moving Baseline NMEA) <https://wiki.blicube.com/grtk/>
     CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
     CUAV C-RTK 9Ps RTK Receiver <https://store.cuav.net/shop/c-rtk-9ps/>
