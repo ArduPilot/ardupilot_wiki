@@ -130,17 +130,11 @@ RPi type:
     python3 mavproxy.py --master=/dev/serial0 --baudrate 921600 --aircraft MyCopter
     
 
-Once MAVProxy has started you should be able to type in the following
-command to display the ``ARMING_CHECK`` parameters value
+Once MAVProxy has started you should be able to use the following command to arm (ensure propellers are removed!):
 
 ::
 
-    param show ARMING_CHECK
-    param set ARMING_CHECK 0
-    arm throttle
-
-.. figure:: ../images/RaspberryPi_ArmTestThroughPutty.png
-    :target: ../_images/RaspberryPi_ArmTestThroughPutty.png
+    arm throttle force
 
 .. note::
 
