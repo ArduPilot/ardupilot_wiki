@@ -19,7 +19,7 @@ GUIDED          Swim to location or velocity/direction using GCS    P/D
 CIRCLE          Circle swim with depth control                      P/D
 SURFACE         Return to surface, pilot directional control        \-
 POSHOLD         Loiter with depth control and pilot overrides       P/D
-MOTOR_DETECT    Automatically determine motor rotation and adjust   D
+MOTOR_DETECT    Automatically determine motor rotation and adjust   \-
 SURFTRAK        Hold distance above seafloor while stabilizing      R
 =============   =================================================  =========
 
