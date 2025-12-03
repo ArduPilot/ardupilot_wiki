@@ -7,7 +7,7 @@ Precision Landing and Loiter
 Copter supports **Precision Landing** and **Precision Loiter**, which use an external position reference (aka "landing target") to achieve centimeter-level accuracy during landing or while hovering over a target.
 
 Precision Landing is supported via MAVLink `LANDING_TARGET <https://mavlink.io/en/messages/common.html#LANDING_TARGET>`__ messages
-sent from a companion computer such as the `Landmark system <https://landmarklanding.com/products/landmark-precision-landing-system>`__,
+sent from a companion computer such as :ref:`BlueOS <precision-landing-blueos>`, the `Landmark system <https://landmarklanding.com/products/landmark-precision-landing-system>`__,
 or using the `IR-LOCK sensor <https://irlock.com/products/ir-lock-sensor-precision-landing-kit>`__, `beacon <https://irlock.com/products/markone-beacon-v3-0-beta>`__,
 and a :ref:`rangefinder <common-rangefinder-landingpage>`.
 
@@ -28,6 +28,7 @@ Available Systems
 .. toctree::
     :maxdepth: 1
 
+    BlueOS Precision Landing Extension <precision-landing-blueos>
     IR-LOCK Sensor & Beacon <precision-landing-irlock>
     Landmark Precision Landing System <precision-landing-landmark>
 
