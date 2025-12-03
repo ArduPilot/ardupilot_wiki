@@ -47,7 +47,7 @@ Rover includes a suite of safety checks which prevent the vehicle from arming
 if any of a fairly large number of issues are discovered including missed
 calibration, configuration or bad sensor data.  These checks help prevent sudden
 motor startups and drive-aways but they can also be disabled by setting the
-``ARMING_CHECK`` parameter if necessary.
+:ref:`ARMING_SKIPCHK <ARMING_SKIPCHK>` parameter if necessary.
 
 The reason for the failure can be seen by connecting the autopilot to
 a ground station (using telemetry or a USB cable), after attempting to arm
@@ -77,11 +77,11 @@ A more complete list of failures can be found on the :ref:`Pre-Arm Safety Checks
 -  RC Control checks. The RC input must have be calibrated and not in failsafe (i.e. transmitter switched on).
 
 The pre-arm checks can be partially or completely disabled by setting the
-``ARMING_CHECK`` parameter.  The default of 1 means all checks are
-enabled.  If set to 0 all checks are disabled.  Ground Stations including the
-mission planner also allow disabling individual checks.
+:ref:`ARMING_SKIPCHK <ARMING_SKIPCHK>` parameter.  The default of 0 means all checks are
+enabled.  In extremely unusual circumstances, setting the parameter to -1 can be used to skip all current and future pre-arm checks (though mandatory checks still remain).
 
-In general the cause of a failure should be addressed and the ``ARMING_CHECK`` parameter should be reset back to 1. 
+In general the cause of a failure should be addressed and the :ref:`ARMING_SKIPCHK <ARMING_SKIPCHK>` parameter should be reset back to 0. 
+
 
 .. note::
 

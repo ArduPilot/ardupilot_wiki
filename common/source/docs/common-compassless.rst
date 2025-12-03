@@ -36,9 +36,9 @@ For configure EKF3 to always use GSF set :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 8 
 Operation
 ---------
 
-Currently, only Plane will arm if the ``ARMING_CHECK`` for compass (or ALL) is enabled, when no compasses are enabled. Copter and QuadPlane will give an pre-arming failure. Three possible methods to arm Copter and QuadPlane are:
+Currently, only Plane will arm if the :ref:`ARMING_SKIPCHK<ARMING_SKIPCHK>` for compass isn't skipped, when no compasses are enabled. Copter and QuadPlane will give an pre-arming failure. Three possible methods to arm Copter and QuadPlane are:
 
-#. Disable ``ARMING_CHECK`` for Compass (keep the others!).
+#. Enable :ref:`ARMING_SKIPCHK<ARMING_SKIPCHK>` for Compass (don't skip any others!).
 #. Force arming from ground station.
 #. Before arming, but after GPS lock has been obtained and EKF origin has been set and is "using GPS", pick up the vehicle and walk around in a circle a few meters in diameter. This should allow the GSF to acquire yaw alignment and the message "EKF yaw alignment complete" would be sent to the ground station.
 
