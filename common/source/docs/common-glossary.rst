@@ -54,6 +54,11 @@ project.
 **Rover**: Ground and water autopilot software variant of the ArduPilot
 project.
 
+**Sub**: Underwater autopilot software variant of the ArduPilot project.
+
+**Blimp**: Floating aerial autopilot software variant of the ArduPilot
+project.
+
 **BEC**: Battery Elimination Circuit. A voltage regulator found in ESCs
 (see below) and as a stand-alone product. Designed to provide constant
 5v voltage for RC equipment, autopilots and other onboard electronics.
