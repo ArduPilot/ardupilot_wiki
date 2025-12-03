@@ -43,7 +43,7 @@ Copter
 Copter has a few additional safety checks that must be accommodated in order to arm with no RC input.
 
 -  :ref:`FS_THR_ENABLE<FS_THR_ENABLE>` must be set to zero if no joystick is being used or you do not want a failsafe if the joystick fails or is disabled.
--  ``ARMING_CHECK`` should not include bit 6 (RC check). A value of 65470 will include all other checks. It is not recommended that ``ARMING_CHECK`` set for 0 (ARM immediately), since important system checks would be bypassed.
+-  :ref:`ARMING_SKIPCHK<ARMING_SKIPCHK>` should include bit 6 (RC check). It is not recommended to turn on other bits since important system checks may be bypassed.
 -  assuming that the :ref:`RCMAP_ROLL <RCMAP_ROLL>`, :ref:`RCMAP_PITCH <RCMAP_PITCH>`, :ref:`RCMAP_THROTTLE <RCMAP_THROTTLE>` and :ref:`RCMAP_YAW <RCMAP_YAW>` parameters are default, then the RC 1 thru 4 channels' maximum and minimum parameters must be changed slightly. This is because Copter checks to see that the RC calibration has been done. But since no RC is used in the system, this step will not have occurred. Therefore, to emulate that this has happened, the min and max values need to be changed from their defaults of 1100 and 1900, respectively. Values of 1101 and 1901, will do for the ``RCx_MIN`` and ``RCx_MAX`` for the roll,pitch, throttle, and yaw RC channels.
 
 The vehicle can then be armed after the GPS has obtained lock and internal initializations have completed, either by joystick rudder arming (if enabled, see :ref:`ARMING_RUDDER<ARMING_RUDDER>` ) or arming command from the GCS. 
