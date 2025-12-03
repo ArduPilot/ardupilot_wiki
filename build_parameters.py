@@ -201,6 +201,39 @@ BASEPATH = ""
 # Set to track files with duplicate parameter values (should be excluded from JSON)
 files_with_duplicates = set()
 
+
+def check_rst_for_duplicate_labels(filepath):
+    """
+    Check an RST file for duplicate label definitions.
+    Returns True if duplicates are found, False otherwise.
+
+    RST labels look like: .. _label_name:
+    """
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        # Find all RST label definitions
+        labels = re.findall(r'^\.\. _([^:]+):', content, re.MULTILINE)
+
+        # Check for duplicates
+        seen = set()
+        duplicates = []
+        for label in labels:
+            label_lower = label.lower()  # RST labels are case-insensitive
+            if label_lower in seen:
+                duplicates.append(label)
+            seen.add(label_lower)
+
+        if duplicates:
+            debug(f"Found {len(duplicates)} duplicate RST labels in {filepath}: {duplicates[:5]}")
+            return True
+        return False
+    except Exception as e:
+        debug(f"Error checking RST file {filepath}: {e}")
+        return False
+
+
 # Dicts for name replacing
 vehicle_new_to_old_name = { # Used because "param_parse.py" args expect old names
     "Rover": "APMrover2",
@@ -645,7 +678,7 @@ def create_vehicle_git_repos():
 
             # Clone the repository using git clone --shared for efficiency
             # --shared creates a repository that shares objects with the original
-            run_git_command_with_retry(f"git clone --shared {BASEPATH} {temp_repo_dir}")
+            run_git_command_with_retry(f"git clone -q --shared {BASEPATH} {temp_repo_dir}")
 
             # Configure and optimize the temporary repository
             run_git_command_with_retry("git config advice.detachedHead false", cwd=temp_repo_dir, check=False)
@@ -844,6 +877,11 @@ def process_single_parameter_file_with_repo(commit_data, repo_path):
             os.remove(parameters_rst_path)
             debug("File " + filename + " generated. ")
 
+            # Check for duplicate RST labels in the generated file
+            if check_rst_for_duplicate_labels(output_file_path):
+                has_duplicates = True
+                debug(f"RST duplicate labels detected in {filename}")
+
             # Track files with duplicates to exclude from JSON
             if has_duplicates:
                 files_with_duplicates.add(filename)
@@ -927,15 +965,152 @@ def generate_rst_files(commits_to_checkout_and_parse):
     return 0
 
 
+def parse_version(version_str):
+    """
+    Parse a version string like 'V4.6.3' or 'V4.3.0-beta13' into components.
+    Returns (major, minor, patch, suffix) where suffix handles beta/rc numbers.
+    """
+    import re
+    # Match versions like V4.6.3, V4.3.0-beta13, V4.5.0-rc1
+    match = re.match(r'V?(\d+)\.(\d+)\.(\d+)(?:-?(beta|rc)?(\d+)?)?', version_str, re.IGNORECASE)
+    if match:
+        major = int(match.group(1))
+        minor = int(match.group(2))
+        patch = int(match.group(3))
+        pre_type = match.group(4) or ''  # 'beta', 'rc', or ''
+        pre_num = int(match.group(5)) if match.group(5) else 0
+        return (major, minor, patch, pre_type, pre_num)
+    return (0, 0, 0, '', 0)
+
+
+def filter_commits_to_generate(commits_dict):
+    """
+    Filter commits to only keep:
+    - All latest versions (dev)
+    - Only the latest beta per vehicle
+    - Only the highest patch for each major.minor stable version per vehicle
+
+    This avoids generating RST files that will be discarded later.
+    """
+    # Group commits by vehicle
+    vehicle_commits = {}  # vehicle -> list of (idx, version_str, commit_hash)
+    for idx, (vehicle, version_str, commit_hash) in commits_dict.items():
+        if vehicle not in vehicle_commits:
+            vehicle_commits[vehicle] = []
+        vehicle_commits[vehicle].append((idx, version_str, commit_hash))
+
+    filtered = {}
+
+    for vehicle, commits in vehicle_commits.items():
+        latest_commits = []
+        beta_commits = []
+        stable_commits = {}  # (major, minor) -> (patch, idx, version_str, commit_hash)
+
+        for idx, version_str, commit_hash in commits:
+            if version_str.startswith("latest-"):
+                # Always keep all latest versions
+                latest_commits.append((idx, version_str, commit_hash))
+            elif version_str.startswith("beta-"):
+                # Parse beta version
+                version_part = version_str[5:]  # Remove "beta-" prefix
+                parsed = parse_version(version_part)
+                beta_commits.append((parsed, idx, version_str, commit_hash))
+            else:
+                # Stable version
+                parsed = parse_version(version_str)
+                major, minor, patch = parsed[0], parsed[1], parsed[2]
+                key = (major, minor)
+
+                # Keep only the highest patch version for each major.minor
+                if key not in stable_commits or patch > stable_commits[key][0]:
+                    stable_commits[key] = (patch, idx, version_str, commit_hash)
+
+        # Add all latest commits
+        for idx, version_str, commit_hash in latest_commits:
+            filtered[idx] = (vehicle, version_str, commit_hash)
+
+        # Add only the latest beta (highest version)
+        if beta_commits:
+            beta_commits.sort(reverse=True, key=lambda x: x[0])
+            _, idx, version_str, commit_hash = beta_commits[0]
+            filtered[idx] = (vehicle, version_str, commit_hash)
+
+        # Add the latest patch for each major.minor stable version
+        for (major, minor), (patch, idx, version_str, commit_hash) in stable_commits.items():
+            filtered[idx] = (vehicle, version_str, commit_hash)
+
+    original_count = len(commits_dict)
+    filtered_count = len(filtered)
+    skipped = original_count - filtered_count
+    progress(f"Filtered commits: {original_count} -> {filtered_count} (skipping {skipped} older versions)")
+
+    return filtered
+
+
+def filter_versions_for_json(parameters_files, vehicle):
+    """
+    Filter parameter files to keep only:
+    - Latest revision for each major.minor stable version
+    - Only the latest beta version
+    - Always include latest (dev) version
+    """
+    base_prefix = f"parameters-{vehicle}-"
+
+    stable_versions = {}  # (major, minor) -> (patch, filename)
+    beta_versions = []    # list of (parsed_version, filename)
+    latest_files = []     # latest/dev files
+
+    for filename in parameters_files:
+        if "latest" in filename:
+            latest_files.append(filename)
+        elif "beta" in filename or "rc" in filename:
+            # Extract version from beta filename
+            if "-beta-" in filename:
+                version_str = filename[len(base_prefix + "beta-"):-4]
+            else:
+                version_str = filename[len(base_prefix):-4]
+            parsed = parse_version(version_str)
+            beta_versions.append((parsed, filename))
+        elif "-stable-" in filename:
+            # Extract version from stable filename
+            version_str = filename[len(base_prefix + "stable-"):-4]
+            parsed = parse_version(version_str)
+            major, minor, patch = parsed[0], parsed[1], parsed[2]
+            key = (major, minor)
+
+            # Keep only the highest patch version for each major.minor
+            if key not in stable_versions or patch > stable_versions[key][0]:
+                stable_versions[key] = (patch, filename)
+
+    # Build filtered list
+    filtered = []
+
+    # Add all latest files
+    filtered.extend(latest_files)
+
+    # Add only the latest beta (highest version)
+    if beta_versions:
+        beta_versions.sort(reverse=True, key=lambda x: x[0])
+        filtered.append(beta_versions[0][1])
+
+    # Add the latest patch for each major.minor stable version
+    for (major, minor), (patch, filename) in sorted(stable_versions.items(), reverse=True):
+        filtered.append(filename)
+
+    return filtered
+
+
 def generate_json(vehicles):
     """
     Generates a JSON with all parameters page to be consumed by JavaScript.
     Uses Python's json module for proper formatting.
+    Returns a dict mapping vehicle -> list of RST files to keep.
     """
     import json
     from collections import OrderedDict
 
     param_metadata_dir = os.path.join(BASEPATH, "Tools", "autotest", "param_metadata")
+    files_to_keep = {}  # vehicle -> list of filenames to keep
 
     for vehicle in vehicles:
         debug("Creating JSON files for " + vehicle)
@@ -949,13 +1124,20 @@ def generate_json(vehicles):
             excluded = len(all_parameters_files) - len(parameters_files)
             debug(f"Excluded {excluded} file(s) with duplicate values from {vehicle} JSON")
 
-        parameters_files.sort(reverse=True)
+        # Filter to keep only latest revision per major.minor and latest beta
+        filtered_files = filter_versions_for_json(parameters_files, vehicle)
+        debug(f"Filtered from {len(parameters_files)} to {len(filtered_files)} versions for JSON")
+
+        # Store files to keep for this vehicle
+        files_to_keep[vehicle] = filtered_files
+
+        filtered_files.sort(reverse=True)
 
         # Build JSON data structure
         data = OrderedDict()
         base_prefix = f"parameters-{vehicle}-"
 
-        for filename in parameters_files:
+        for filename in filtered_files:
             if "beta" in filename or "rc" in filename:
                 # Plane uses BETA, Copter and Rover use RCn
                 if "-beta-" in filename:
@@ -987,16 +1169,19 @@ def generate_json(vehicles):
         json_filename = os.path.join(param_metadata_dir, f"parameters-{vehicle}.json")
         try:
             with open(json_filename, 'w', encoding='utf-8') as f:
-                json.dump(data, f, separators=(', ', ': '), indent=2)
+                json.dump(data, f, indent=2)
             debug(f"Created {json_filename} with {len(data)} entries")
         except Exception as e:
             error(f"Error while creating JSON file {json_filename}: {e}")
 
+    return files_to_keep
 
-def move_results(vehicles):
+
+def move_results(vehicles, files_to_keep):
     """
     Once all parameters files are created, moves to "new_params_mversion" as the last execution result.
     Uses copy instead of move for cross-device and permission compatibility.
+    Only moves files that are included in the JSON (filtered versions).
     """
     param_metadata_dir = os.path.join(BASEPATH, "Tools", "autotest", "param_metadata")
 
@@ -1023,8 +1208,20 @@ def move_results(vehicles):
             except Exception as e:
                 debug(f"Could not clean destination folder: {e}")
 
-            # Copy files to destination (more reliable than move for cross-device/permission issues)
-            files_to_copy = glob.glob(os.path.join(param_metadata_dir, f"parameters-{vehicle}*"))
+            # Build list of files to copy: only those in JSON + the JSON file itself
+            vehicle_files_to_keep = files_to_keep.get(vehicle, [])
+            files_to_copy = []
+            for rst_file in vehicle_files_to_keep:
+                src_path = os.path.join(param_metadata_dir, rst_file)
+                if os.path.exists(src_path):
+                    files_to_copy.append(src_path)
+
+            # Also include the JSON file
+            json_file = os.path.join(param_metadata_dir, f"parameters-{vehicle}.json")
+            if os.path.exists(json_file):
+                files_to_copy.append(json_file)
+
+            debug(f"Copying {len(files_to_copy)} files for {vehicle} (filtered from all generated)")
             files_copied = 0
 
             for src_file in files_to_copy:
@@ -1074,6 +1271,7 @@ progress("=== Step 1: Setup and fetch release information ===")
 setup()                                                             # Reset the ArduPilot folder/repo
 feteched_releases = fetch_releases(BASEURL, VEHICLES)               # All folders/releases.
 commits_to_checkout_and_parse = get_commit_dict(feteched_releases)  # Parse names, and git hashes.
+commits_to_checkout_and_parse = filter_commits_to_generate(commits_to_checkout_and_parse)  # Filter early
 print_versions(commits_to_checkout_and_parse)                       # Present work dict.
 
 # Step 2 - Generates them in ArdupilotRepoFolder/Tools/autotest/param_metadata
@@ -1086,8 +1284,8 @@ generate_rst_files(commits_to_checkout_and_parse)
 # Step 3 - Generates a JSON file for each vehicle and move files to folder new_params_mversion
 progress("=== Step 3: Generate JSON files and move results ===")
 progress(f"Time elapsed so far: {time.time() - start_time:.2f} seconds")
-generate_json(VEHICLES)
-move_results(VEHICLES)
+files_to_keep = generate_json(VEHICLES)
+move_results(VEHICLES, files_to_keep)
 
 progress("=== Build completed ===")
 total_time = time.time() - start_time
