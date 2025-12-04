@@ -23,8 +23,6 @@ equipment when you are using 2.4 Ghz onboard video transmitters, or use
 code to interpret the output from its sensors to establish a plane's XYZ
 and heading orientation.
 
-**APM**: `ArduPilotMega <https://www.sparkfun.com/products/retired/9710>`__.
-
 **AMA**: Academy of Model Aeronautics. The main US model aircraft
 association. The AMA works closely with the Federal Aviation
 Administration (FAA) to establish\ `reasonable rules <https://www.modelaircraft.org/aboutama/gov.aspx>`__\ for the use
@@ -37,7 +35,7 @@ FAA/NAS) rules.
 hardware standard currently based on the Atmel Atmega168 microprocessor
 and necessary supporting hardware, and a software programming
 environment based on the C-like Processing language. Official site
-is \ `here <http://www.arduino.cc/en/>`__.
+is \ `here <http://www.arduino.cc>`__.
 
 **APM (AutoPilot Mega)**: Autopilot providing capabilities for
 stabilized flight, position maintenance and automated mission (waypoint)
@@ -45,34 +43,27 @@ path following.
 
 **ATC**: This could be the Atitude Control library in Copter with params starting with "ATC\_" or it could mean Air Traffic Control. Usually located at an airport control tower but can also be an app or service such as \ `AirMap <http://www.airmap.com>`__ or \ `Altitude Angel <http://www.altitudeangel.com>`__.
 
-**Copter**: Rotary-wing autopilot software variant of the ArduPilot
-project.
-
-**Plane**: Fixed-wing autopilot software variant of the ArduPilot
-project.
-
-**Rover**: Ground and water autopilot software variant of the ArduPilot
-project.
-
-**Sub**: Underwater autopilot software variant of the ArduPilot project.
-
-**Blimp**: Floating aerial autopilot software variant of the ArduPilot
-project.
+**Autopilot**: A device that provides automatic vehicle control (stabilization, pilot commands via RC or GCS, etc.)
 
 **BEC**: Battery Elimination Circuit. A voltage regulator found in ESCs
 (see below) and as a stand-alone product. Designed to provide constant
 5v voltage for RC equipment, autopilots and other onboard electronics.
+
+**Blimp**: Floating aerial autopilot software variant of the ArduPilot
+project.
 
 **Bootloader**: Special software code stored in non-volatile memory in a
 microprocessor that can interface with a PC to download a user's
 program. Also see Firmware.
 
 **COA**: Certificate of Authorization. A FAA approval for a UAV flight.
-See
-the \ `faa.gov <http://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/systemops/aaim/organizations/uas/coa/>`__ web
+See the \ `faa.gov <http://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/systemops/aaim/organizations/uas/coa/>`__ web
 site for more details and the \ `DIY Drones Regulatory FAQ <https://www.diydrones.com/profiles/blogs/regulatory-faq>`__.
 
-**DCM**: Direction Cosine Matrix. A algorithm that is a less processing
+**Copter**: Rotary-wing autopilot software variant of the ArduPilot
+project.
+
+**DCM**: Discrete Cosine Matrix. A algorithm that is a less processing
 intensive equivalent of the Kalman Filter.
 See \ `this <https://diydrones.com/forum/topics/robust-estimator-of-the>`__ for
 more.
@@ -203,6 +194,9 @@ incorporate CPU and sensors in one board.
 information) into the real-time video stream the aircraft is sending to
 the ground.
 
+**Plane**: Fixed-wing autopilot software variant of the ArduPilot
+project.
+
 **PCB**: Printed circuit board. In our use, a specialized board designed
 and "fabbed" for a dedicated purpose, as opposed to a breadboard or
 prototype board, which can be used and resused for many projects.
@@ -242,6 +236,9 @@ for each channel. The width varies from 1000 to 2000 microseconds, depending on 
 
 **PX4FMU/PX4IO**: First version of Pixhawk-series autopilots (FMUv1). Discontinued.
 
+**Rover**: Ground and water autopilot software variant of the ArduPilot
+project.
+
 **RTL**: Return to Launch. Fly back to the "home" location where the aircraft took off.
 
 **SiRF III**: The standard used by most modern GPS modules. Includes
@@ -253,6 +250,8 @@ Arduinio IDE for a single project.
 
 **SVN**: Short for the Subversion version-control repository used by the
 DIY Drones and other teams for source code.
+
+**Sub**: Underwater autopilot software variant of the ArduPilot project.
 
 **Telemetry System**: A two way radio system to allow flight data to be
 sent from your aircraft and also to allow control or adjustment
