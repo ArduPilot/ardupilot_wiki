@@ -64,6 +64,8 @@ Unidirectional Rangefinders
 
     Ainstein US-D1 Radar Altimeter <common-aerotenna-usd1>
     Ainstein LR-D1 Radar Altimerer <common-ainstein-lrd1>
+    ARK DIST MR <common-ark-dist-mr>    
+    ARK DIST SR <common-ark-dist-sr>
     Attollo Engineering Wasp200 <common-wasp200-lidar>
     Avionics Anonymous DroneCAN LIDAR Interface <common-avanon-laserint>
     Benewake TF02-Pro / TF03 / TFS20-L / TF-Luna / TF-Nova / TF350 <common-benewake-tf02-lidar>
