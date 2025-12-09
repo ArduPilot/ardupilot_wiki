@@ -7,7 +7,8 @@ Long Commands
     module load cmdlong
     
 This module is a collection of ``command_long_send`` functions that may 
-be useful to the user.
+be useful to the user. It also adds the ``command_int`` function which 
+allows sending MAVLink COMMAND_INT messages.
 
 Control
 =======
@@ -121,5 +122,24 @@ Otherwise the full set of options can be specified, with M1=1 or 0 for engine st
     
 Send a general MAV_CMD_LONG message to the vehicle. ``COMMAND`` is the name of the command. The options
 follow in ``[arg1] [arg2] ...`` format.
+
+.. code:: bash
+
+    command_int FRAME COMMAND OPTIONS
+
+Send a general MAV_COMMAND_INT message to the vehicle ``COMMAND`` is the name of the command prefixed with ``MAV_``. 
+e.g. MAV_CMD_GUIDED_CHANGE_HEADING. The options follow seperated by spaces. 
+
+* [arg1] target system 
+* [arg2] target component
+* [arg3] param1
+* [arg5] param2
+* [arg6] param3
+* [arg7] param4
+* [arg8] param5
+* [arg9] latitude
+* [arg10] longitude
+* [arg11] altitude (in the frame specfied by FRAME)
+
 
 
