@@ -128,7 +128,7 @@ follow in ``[arg1] [arg2] ...`` format.
     command_int FRAME COMMAND OPTIONS
 
 Send a general MAV_COMMAND_INT message to the vehicle ``COMMAND`` is the name of the command prefixed with ``MAV_``. 
-e.g. MAV_CMD_GUIDED_CHANGE_HEADING. The options follow seperated by spaces. 
+e.g. MAV_CMD_GUIDED_CHANGE_HEADING. The options follow separated by spaces. 
 
 * [arg1] target system 
 * [arg2] target component
