@@ -25,7 +25,7 @@ Short Range (<10KM)
     Bluetooth <common-mission-planner-bluetooth-connectivity>
     CUAV PW-Link <common-cuav-pwlink>
     ESP8266 wifi telemetry <common-esp8266-telemetry>
-    ESP32 wifi telemetry <common-esp32-telemetry>
+    DroneBridge / ESP32 wifi telemetry <common-esp32-telemetry>
     FrSky telemetry <common-frsky-telemetry>
     i-BUS telemetry <common-ibus-telemetry>
     Yaapu Bi-Directional Telemetry GCS <common-yaapu-gcs>
