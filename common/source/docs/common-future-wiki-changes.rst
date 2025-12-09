@@ -68,6 +68,7 @@ New Peripheral Support
 - Lightware GRF250/500 Rangefinder, see https://github.com/ArduPilot/ardupilot_wiki/pull/7205
 - Currawong CORTEX Generator, see https://github.com/ArduPilot/ardupilot_wiki/pull/7266
 - Benewake TSF20L rangefinder, see https://github.com/ArduPilot/ardupilot_wiki/pull/7269
+- Enhanced CADDX Gimbal operation and AUX switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/7283
 
 New Features
 ============
