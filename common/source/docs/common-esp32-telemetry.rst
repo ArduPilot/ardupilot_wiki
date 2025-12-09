@@ -1,7 +1,7 @@
 .. _common-esp32-telemetry:
 [copywiki destination="plane,copter,rover,blimp,sub"]
 ==================================
-ESP32 WiFi telemetry - DroneBridge
+DroneBridge / ESP32 WiFi telemetry
 ==================================
 
 ESP32 are readily available Wi-Fi modules with full TCP/IP stack and
