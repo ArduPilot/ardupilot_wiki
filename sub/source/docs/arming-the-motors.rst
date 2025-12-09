@@ -8,7 +8,7 @@ Arming the vehicle allows the thrusters to start spinning.  Before arming, make 
 
 In order to arm:
 
-- Pre-Arm safety checks must be passing (See :ref:`common-prearm-safety-checks`). It is recommended that :ref:`ARMING_CHECK<ARMING_CHECK>` be enabled for all available systems/sensors checks to prevent arming with system issues present. You must have also provided a method to Disarm the vehicle, either by GCS button assignments (``BTNx_FUNCTION``), or :ref:`AUX_FUNCTION <common-auxiliary-functions>`.
+- Pre-Arm safety checks must be passing (See :ref:`common-prearm-safety-checks`). It is recommended that ``ARMING_CHECK`` be enabled for all available systems/sensors checks to prevent arming with system issues present. You must have also provided a method to Disarm the vehicle, either by GCS button assignments (``BTNx_FUNCTION``), or :ref:`AUX_FUNCTION <common-auxiliary-functions>`.
 - The throttle must be at idle value if :ref:`RC_OPTIONS<RC_OPTIONS>` bit 5 is set ("Arming check throttle for 0 input"). Normally, this would be a center stick if bi-directional vertical thrusters are used.
 - An arming pilot control must be activated, eg. GCS joystick button with "Arm" function assigned, GCS MAVLink ARM command given, or an :ref:`Auxiliary function <common-auxiliary-functions>` such as ARM/DISARM ("153") is used by either GCS command or RC channel switch (if enabled).
 
