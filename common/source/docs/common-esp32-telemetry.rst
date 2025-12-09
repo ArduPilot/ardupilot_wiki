@@ -129,6 +129,11 @@ DroneBridge for ESP32 will automatically forward all data to all
 connected WiFi devices via UDP to port 14550. QGroundControl or Mission Planner should
 auto-detect the connection and no further actions should be necessary.
 
+For use with Mission Planner it may be neessary to check the Config, Planner, "Disable RTS reset on ESP32 SerialUSB" checkbox as shown below
+
+.. image:: ../../../images/esp32-dronebridge-mp-option.png
+    :target: ../_images/esp32-dronebridge-mp-option.png
+    :width: 450px
 
 APIs,Troubleshooting & Support
 ==============================
