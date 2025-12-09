@@ -281,7 +281,7 @@ Connect to the flight controller with a ground station (i.e. Mission Planner) an
 -  :ref:`EK3_SRC1_YAW <copter:EK3_SRC1_YAW>` = 6 to set yaw source to ExternalNAV
 -  :ref:`GPS1_TYPE <GPS1_TYPE>` = 0 to disable the GPS
 -  :ref:`VISO_TYPE <copter:VISO_TYPE>` = 1 to enable visual odometry
--  :ref:`ARMING_CHECK <copter:ARMING_CHECK>` = 388598 (optional, to disable GPS checks)
+-  ``ARMING_CHECK`` = 388598 (optional, to disable GPS checks)
 
 
 After changing any of the values above, reboot the flight controller.
