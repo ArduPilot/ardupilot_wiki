@@ -57,6 +57,7 @@ New Board Support
 - SkyRukh Surge H67, see https://github.com/ArduPilot/ardupilot_wiki/pull/7259
 - Aeromind6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/7279
 - AIRBRAINH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/7287
+- X-MAV-AP-H743r1, see https://github.com/ArduPilot/ardupilot_wiki/pull/7288
 
 New Peripheral Support
 ======================
