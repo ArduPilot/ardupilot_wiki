@@ -79,7 +79,7 @@ Connection to Autopilot with UART/MAVLink:
 - Set :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 50 to set range finder's maximum range to 50m
 - Set :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = 1 (MAVLink) or the appropriate SERIALx_PROTOCOL for the selected serial port
 - Set :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = 115 to set the baud rate to 115200 or the appropriate SERIALx_BAUD for the selected serial port
-- Set :ref:`SERIALx_PROTOCOL <SERIALx_PROTOCOL>` = 2 (MAVLink2)
+- Set :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = 2 (MAVLink2)
 
 More Information
 -----------------
