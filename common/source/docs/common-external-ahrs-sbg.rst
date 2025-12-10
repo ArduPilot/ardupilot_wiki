@@ -66,11 +66,13 @@ If set up as an external sensor, SBG Systems' raw sensor data (IMU, GNSS, Compas
 
 - :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` = 3 (ArduPilot’s EKF3)
 - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 8 (SBG Systems)
-- :ref:`EAHRS_OPTIONS<EAHRS_OPTIONS>` bit 0 set to "1" value to disable ArduPilot's use of the bias-compensated IMU data, letting ArduPilot's filters do that (optional)
 - :ref:`GPS1_TYPE<GPS1_TYPE>` = 21 (External AHRS) (If using a GNSS-enabled unit)
 - :ref:`GPS2_TYPE<GPS2_TYPE>` = 21 (External AHRS) (If using a Dual GNSS-enabled unit)
 
-If desired, :ref:`EAHRS_SENSORS<EAHRS_SENSORS>` may be used to specify which sensor data should be used by ArduPilot's filters.
+If desired,
+  - :ref:`EAHRS_SENSORS<EAHRS_SENSORS>` may be used to specify which sensor data should be used by ArduPilot's filters.
+  - :ref:`EAHRS_OPTIONS<EAHRS_OPTIONS>` bit 1 may be set to "1" value to use SBG EKF Navigation logs as GNSS input instead of SBG GNSS logs.
+
 
 Use as an External AHRS
 -----------------------
