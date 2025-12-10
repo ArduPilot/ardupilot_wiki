@@ -39,7 +39,7 @@ Mounting the electronics
 
 Firmware used: Rover-3.4.1
 
-Parameter file: `ThunderTiger-ToyotaHilux-Rover <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/ThunderTiger-ToyotaHilux-Rover.param>`__
+Parameter file: `ThunderTiger-ToyotaHilux-Rover <https://github.com/ArduPilot/ardupilot/blob/APMrover2-stable/Tools/Frame_params/ThunderTiger-ToyotaHilux-Rover.param>`__
 
 This parameter file can be loaded using the Mission Planner:
 
