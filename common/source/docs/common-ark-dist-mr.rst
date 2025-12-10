@@ -71,13 +71,14 @@ Connection to Autopilot
 Connection to Autopilot CAN:
 
 - Set :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 24 (DroneCAN)
+- Set :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.08 to set range finder's minimum range to 8cm
 - Set :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 50 to set range finder's maximum range to 50m
 
 Connection to Autopilot with UART/MAVLink (SERIAL1 is shown as an example):
 
 - Set :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 10 (MAVLink)
+- Set :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.08 to set range finder's minimum range to 8cm
 - Set :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 50 to set range finder's maximum range to 50m
-- Set :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = 1 (MAVLink) or the appropriate SERIALx_PROTOCOL for the selected serial port
 - Set :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = 115 to set the baud rate to 115200
 - Set :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = 2 (MAVLink2)
 
