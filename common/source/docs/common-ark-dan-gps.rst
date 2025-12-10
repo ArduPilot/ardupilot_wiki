@@ -1,8 +1,8 @@
 .. _common-ark-dan-gps:
 
-============
+===========
 ARK DAN GPS
-============
+===========
 
 .. image:: ../../../images/arkflow/ark_dan_gps.jpg
    :target: ../_images/ark_dan_gps.jpg

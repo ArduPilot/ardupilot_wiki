@@ -1,8 +1,8 @@
 .. _common-ark-sam-gps:
 
-============
+===========
 ARK SAM GPS
-============
+===========
 
 .. image:: ../../../images/arkflow/ark_sam_gps.jpg
    :target: ../_images/ark_sam_gps.jpg
