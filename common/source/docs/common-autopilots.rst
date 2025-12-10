@@ -211,6 +211,7 @@ Closed Hardware
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
     X-MAV-AP-H743v2 <common-X_MAV_H743v2>
+    X-MAV-AP-H743v2 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/X-MAV-AP-H743r1/README.md>
     YARIV6X <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/YARIV6X>
     YJUAV A6SE <common-yjuav-a6se>
     YJUAV A6SE H743<common-yjuav-a6se-h743>
