@@ -86,6 +86,7 @@ Closed Hardware
     3DR Control Zero H7 OEM <common-3DR_Control_Zero_OEM_G>
     AEDROX H7 <common-aedroxh7>
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
+    AIRBRAINH743 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/AIRBRAINH743/README.md>
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
     AET-H743-Basic <common-AET-H743-Basic>
     AnyleafH7 <common-anyleafh7>
