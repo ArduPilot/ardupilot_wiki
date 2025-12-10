@@ -1,8 +1,8 @@
 .. _common-ark-dist-mr:
 
-=============
+===========
 ARK DIST MR
-=============
+===========
 
 [copywiki destination="copter,plane,rover,sub"]
 

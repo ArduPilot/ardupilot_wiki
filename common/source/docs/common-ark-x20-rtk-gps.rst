@@ -1,8 +1,8 @@
 .. _common-ark-x20-rtk-gps:
 
-================
+===============
 ARK X20 RTK GPS
-================
+===============
 
 
 .. image:: ../../../images/arkflow/ark_x20_rtk_gps.jpg
