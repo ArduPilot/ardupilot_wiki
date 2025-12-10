@@ -1,8 +1,8 @@
 .. _common-ark-sam-gps-mini :
 
-============
+=================
 ARK SAM GPS MINI
-============
+=================
 
 .. image:: ../../../images/arkflow/ark_sam_gps_mini.jpg
    :target: ../_images/ark_sam_gps_mini.jpg

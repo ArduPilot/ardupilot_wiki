@@ -1,19 +1,16 @@
-
 .. _common-ark-dist-sr:
 
-=====================================================
+============
 ARK DIST SR
-=====================================================
+============
 
 [copywiki destination="copter,plane,rover,sub"]
 
 The `ARK DIST SR <https://arkelectron.com/product/ark-dist-sr/>`__ ARK DIST SR is a low range, open source, DroneCAN, distance sensor. It has an approximate range of between 8cm to 30m.
-.. image:: ../../../images/arkflow/ark-dist.jpg
-   :target: ../_images/arkflow/ark-dist.jpg
-   :width: 450px
 
-..  youtube:: SAbRe1fi7bU
-    :width: 100%
+.. image:: ../../../images/arkflow/ark_dist.jpg
+   :target: ../_images/arkflow/ark_dist.jpg
+   :width: 450px
 
 Specifications
 ==============
@@ -92,4 +89,4 @@ More Information
 Testing and Setup
 -----------------
 
-See :ref:`common-rangefinder-setup
+See :ref:`common-rangefinder-setup`
