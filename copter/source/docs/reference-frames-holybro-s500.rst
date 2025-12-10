@@ -19,4 +19,4 @@ Connection and Setup
 --------------------
 
 - Follow the assembly instructions provided with the kit
-- Use Mission Planner (or another GCS) to load the `Holybro-S600.param <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/Holybro-S500.param>`__ parameter file.  This file can also be loaded using the Mission Planner's Config/Tuning >> Full Parameter Tree page by selecting "Holybro-S500" from the drop down on the middle right and then pushing the "Load Presaved" button.
+- Use Mission Planner (or another GCS) to load the `Holybro-S600.param <https://github.com/ArduPilot/ardupilot/blob/ArduCopter-stable/Tools/Frame_params/Holybro-S500.param>`__ parameter file.  This file can also be loaded using the Mission Planner's Config/Tuning >> Full Parameter Tree page by selecting "Holybro-S500" from the drop down on the middle right and then pushing the "Load Presaved" button.

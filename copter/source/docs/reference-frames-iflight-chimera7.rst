@@ -34,6 +34,6 @@ Complete build instructions are given in the `blog <https://discuss.ardupilot.or
 
 Firmware used: Copter-4.2 of MatekH743-bdshot
 
-Parameter file: `iflight-chimera7.param <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/iflight-chimera7.param>`__
+Parameter file: `iflight-chimera7.param <https://github.com/ArduPilot/ardupilot/blob/ArduCopter-stable/Tools/Frame_params/iflight-chimera7-4.2.param>`__
 
 This parameter file can also be loaded using the Mission Planner's Config/Tuning >> Full Parameter Tree page by selecting "iflight-chimera7" from the drop down on the middle right and then push the "Load Presaved" button.
