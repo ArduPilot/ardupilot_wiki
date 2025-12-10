@@ -6,7 +6,7 @@ ARK DIST MR
 
 [copywiki destination="copter,plane,rover,sub"]
 
-The `ARK DIST MR <https://arkelectron.com/product/ark-dist-mr/>`__ ARK DIST MR is a low range, open source, DroneCAN, distance sensor. It has an approximate range of between 8cm to 50m.
+The `ARK DIST MR <https://arkelectron.com/product/ark-dist-mr/>`__ ARK DIST MR is a low range, open source, DroneCAN rangefinder. It has an approximate range of between 8cm to 50m.
 
 .. image:: ../../../images/arkflow/ark_dist.jpg
    :target: ../_images/arkflow/ark_dist.jpg
