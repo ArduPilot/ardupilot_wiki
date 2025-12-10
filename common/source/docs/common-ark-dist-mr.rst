@@ -73,7 +73,7 @@ Connection to Autopilot CAN:
 - Set :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 24 (DroneCAN)
 - Set :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 50 to set range finder's maximum range to 50m
 
-Connection to Autopilot with UART/MAVLink:
+Connection to Autopilot with UART/MAVLink (SERIAL1 is shown as an example):
 
 - Set :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 10 (MAVLink)
 - Set :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 50 to set range finder's maximum range to 50m
