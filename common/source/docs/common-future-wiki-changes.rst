@@ -56,6 +56,7 @@ New Board Support
 - MicoAir743-Lite, see https://github.com/ArduPilot/ardupilot_wiki/pull/7258
 - SkyRukh Surge H67, see https://github.com/ArduPilot/ardupilot_wiki/pull/7259
 - Aeromind6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/7279
+- AIRBRAINH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/7287
 
 New Peripheral Support
 ======================
