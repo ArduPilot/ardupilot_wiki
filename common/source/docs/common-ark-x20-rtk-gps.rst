@@ -1,12 +1,12 @@
 .. _common-ark-x20-rtk-gps:
 
-=============
+================
 ARK X20 RTK GPS
-=============
+================
 
 
-.. image:: ../../../images/arkflow/ark_x20_rtk_gps.jpg.jpg
-    :target: ../_images/ark_x20_rtk_gps.jpg.jpg
+.. image:: ../../../images/arkflow/ark_x20_rtk_gps.jpg
+    :target: ../_images/ark_x20_rtk_gps.jpg
     :width: 450px
 
 Made in the USA and NDAA Compliant Dronecan RTK GPS, U-Blox X20, magnetometer, barometer, IMU, Safety Switch Module and buzzer module.

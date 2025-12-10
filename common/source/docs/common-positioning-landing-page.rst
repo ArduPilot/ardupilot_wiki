@@ -17,6 +17,7 @@ GPS/Compass
     :maxdepth: 1
 
     ARK GPS <common-ark-gps>
+    ARK DAN GPS <common-ark-dan-gps>
     ARK SAM GPS <common-ark-sam-gps>
     ARK SAM GPS MINI <common-ark-sam-gps-mini>
     ARK TESEO GPS <common-ark-teseo-gps>
