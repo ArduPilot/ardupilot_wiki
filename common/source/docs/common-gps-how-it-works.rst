@@ -26,8 +26,7 @@ precision.
     :target: ../_images/ag_GPS_Segments_low_res.jpg
 
 Some even more advanced GNSS receivers can combine DGPS and RTK
-corrections and can receive other GNSS satellite constellations (GLONASS
-and GALILEO) and other channels (L2C, L5...) at the same time to enhance
+corrections and can receive other GNSS satellite constellations (GLONASS, GALILEO, SBAS, Galileo, Beidou, IMES, QZSS, and/or NAVIC) and other channels (L2C, L5...) at the same time to enhance
 precision and fix reliability.
 
 Military GPS receivers are able to decode the P(Y) code available on L1
