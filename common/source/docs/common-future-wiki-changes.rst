@@ -71,6 +71,7 @@ New Peripheral Support
 - Currawong CORTEX Generator, see https://github.com/ArduPilot/ardupilot_wiki/pull/7266
 - Benewake TSF20L rangefinder, see https://github.com/ArduPilot/ardupilot_wiki/pull/7269
 - Enhanced CADDX Gimbal operation and AUX switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/7283
+- Add NAVIC constellation option, see https://github.com/ArduPilot/ardupilot_wiki/pull/7292
 
 New Features
 ============
