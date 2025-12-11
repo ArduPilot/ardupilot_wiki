@@ -85,7 +85,9 @@ tuning options for the vehicle.
     Independent Watchdog <common-watchdog>
 [site wiki="plane"]
     In-Flight FTT and filter control <common-imu-fft>
-    Limiting Maximum Power Draw <batt-watt-max>
+[/site]
+[site wiki="plane,rover"]
+    Limiting Maximum Power Draw <common-batt-watt-max>
 [/site]
     Limit Cycle Prevention <common-servo-limit-cycle-detection>
     LUA Scripting <common-lua-scripts>

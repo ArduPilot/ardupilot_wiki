@@ -1,9 +1,9 @@
-.. _batt-watt-max:
+.. _common-batt-watt-max:
 
 ===================================
 Limiting Maximum Battery Power Draw
 ===================================
-
+[site wiki="plane"]
 Often, long range vehicles utilize lower C rating batteries to maximize battery power to weight ratio. Unfortunately, some situations, especially QuadPlane transitions which have full throttle power applied to forward motors during the transition, can cause excessive battery voltage sag with lower C rated batteries. This can lead to permanent damage in some kinds of batteries (LiPo for example) if the cell voltage drops too low. In addition, this can cause premature battery failsafes, or even crashes. This topic discusses ways to limit the maximum power draw from batteries.
 
 Methods to Limit Maximum Power Draw
@@ -35,7 +35,14 @@ This has two effects if non-zero. First, it sets the lower limit for thrust scal
 
 .. tip:: Setting :ref:`Q_M_BAT_CURR_MAX<Q_M_BAT_CURR_MAX>` to 150% of hover current is a good starting point, while 3.3V * number of cells is a good value for :ref:`Q_M_BAT_VOLT_MIN<Q_M_BAT_VOLT_MIN>`.
 
+[/site]
+[site wiki="plane,rover"]
 How to Set Max Watts
---------------------
+====================
+By examining a post run dataflash log, and noting anywhere excessive battery voltage sag first occurs, you can take the battery voltage and current at that point, multiply to obtain the power, and set the :ref:`BATT_WATT_MAX<BATT_WATT_MAX>` to below that value. 80% to 70% of the value noted at the sag point would be a good value to start with.
+[/site]
+[site wiki="rover"]
 
-By examining a post flight log, and noting anywhere excessive battery voltage sag first occurs, you can take the battery voltage and current at that point, multiply to obtain the power, and set the :ref:`BATT_WATT_MAX<BATT_WATT_MAX>` to below that value. 80% to 70% of the value noted at the sag point would be a good value to start with.
+You can use :ref:`MOT_BAT_WATT_TC <MOT_BAT_WATT_TC>` to smooth the application of the :ref:`BATT_WATT_MAX<BATT_WATT_MAX>`limit.
+[/site]
+
