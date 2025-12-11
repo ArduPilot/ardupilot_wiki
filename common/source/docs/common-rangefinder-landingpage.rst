@@ -82,6 +82,7 @@ Unidirectional Rangefinders
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
     LightWare SF20 / LW20 Lidar <common-lightware-lw20-lidar>
     Lightware SF02 Lidar <common-rangefinder-sf02>
+    LightWare GRF250 / GRF500 Lidar <common-lightware-grf250-lidar>
     Maxbotix I2C Sonar <common-rangefinder-maxbotixi2c>
     Maxbotix Analog Sonar <common-rangefinder-maxbotix-analog>
     Nanoradar NRA24 <common-rangefinder-nra24>
