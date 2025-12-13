@@ -13,7 +13,7 @@ some can also be disabled if necessary.
 ..  youtube:: gZ3H2eLmStI
     :width: 100%
 
-.. warning:: Never disable the arming checks (ie ``ARMING_CHECK`` not = "1", except for bench testing. Always resolve any prearm or arming failures BEFORE attempting to fly. Doing otherwise may result in the loss of the vehicle.
+.. warning:: Never disable arming checks (ie :ref:`ARMING_SKIPCHK<ARMING_SKIPCHK>` not = "0", except for bench testing. Always resolve any prearm or arming failures BEFORE attempting to fly. Doing otherwise may result in the loss of the vehicle.
 
 Recognising which Pre-Arm Check has failed using the GCS
 ========================================================
@@ -500,7 +500,6 @@ See :ref:`ARMING_MIS_ITEMS<ARMING_MIS_ITEMS>`
 
 **Missing mission item: xxxx**: A required mission items is missing.
 
-
 Rangefinder:
 ------------
 
@@ -509,18 +508,7 @@ IF a rangefinder has been configured, a reporting error has occurred.
 Disabling the Pre-arm Safety Check
 ==================================
 
-.. warning:: Disabling pre-arm safety checks is not recommended. The cause of the pre-arm failure should be corrected before operation of the vehicle if at all possible. If you are confident that the pre-arm check failure is not a real problem, it is possible to disable a failing check.
+.. warning:: Disabling pre-arm safety checks is not recommended. The cause of the pre-arm failure should be corrected before operation of the vehicle if at all possible. If you are confident that the pre-arm check failure is not a real problem, it is possible to skip a failing check.
 
-Arming checks can be individually disabled by setting the ``ARMING_CHECK`` parameter to something other than 1. Setting to 0 completely removes all pre-arm checks. For example, setting to  4 only checks that the GPS has lock.
+Arming checks can be individually skipped by setting the :ref:`ARMING_SKIPCHK<ARMING_SKIPCHK>` parameter to something other than 0. For example, setting to 4 skips the checks that the GPS has lock. In extremely unusual circumstances, setting the parameter to -1 can be used to skip all current and future pre-arm checks (though mandatory checks still remain).
 
-This can also be configured using Mission Planner:
-
-.. image:: ../../../images/MP_PreArmCheckDisable.png
-    :target: ../_images/MP_PreArmCheckDisable.png
-
-
--  Connecting your Autopilot to the Mission Planner
--  Go to Mission Planner's Config/Tuning >> Standard Params screen
--  set the Arming Check drop-down to "Disabled" or one of the "Skip"
-   options which more effectively skips the item causing the failure.
--  Push the "Write Params" button

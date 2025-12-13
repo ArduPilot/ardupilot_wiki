@@ -62,7 +62,7 @@ Connect with a Ground Station and set the following parameters:
 - set :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` to 0 (None)
 - set :ref:`EK3_SRC1_POSZ<EK3_SRC1_POSZ>` to  4 (Beacon)
 - set :ref:`EK3_SRC1_YAW<EK3_SRC1_YAW>` to 1 (Compass) since a compass is required for use with this device.
-- set ``ARMING_CHECK`` to -9 to disable the GPS arming check
+- set :ref:`ARMING_SKIPCHK <ARMING_SKIPCHK>` to 8 to disable the GPS arming check
 - set :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` to 115 to set SERIAL1 port's baud rate to 115200 (if using a different SERIAL port set its baud rate to 115, instead)
 - set :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` to 13 (Beacon) to enable reading the IndoorLoiter2 protocol (If using a different port, set its protocol to 13 instead)
 - set :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` to 0 to ensure telem1 does not use flow control (If using Telem2 set :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` instead, not required if using a SERIAL port without flow control)
