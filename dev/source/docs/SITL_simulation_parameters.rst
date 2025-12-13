@@ -193,8 +193,3 @@ then do:
 This will start the vehicle moving through a "compass dance". You can
 start a compass calibration to test changes to the calibrator
 code. Using this in combination with the SIM_SPEEDUP parameter can be useful.
-
-The calibration vehicle module has a lot of other features too. See
-`http://guludo.me/posts/2016/05/27/compass-calibration-progress-with-geodesic-sections-in-ardupilot/
-<http://guludo.me/posts/2016/05/27/compass-calibration-progress-with-geodesic-sections-in-ardupilot/>`__
-for details.
