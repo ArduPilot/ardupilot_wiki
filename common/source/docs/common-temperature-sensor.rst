@@ -29,8 +29,8 @@ Attach the sensor to one of the autopilot's I2C ports using SDA and SCL pins. Th
 - :ref:`TEMP1_TYPE<TEMP1_TYPE>` = 0:Disabled, 1:TSYS01, 2:MCP9600, 3:MAX31865, 4: TSYS03, 7: MLX90614
 - :ref:`TEMP1_BUS<TEMP1_BUS>` = the I2C port on which the sensor is attached (0-3).
 - :ref:`TEMP1_ADDR<TEMP1_ADDR>` = the sensor's I2C address (0-127).
-- :ref:`TEMP1_SRC<TEMP1_SRC>` = the temperature reporting device type that should have its temperature report replaced with this sensor's.
-- :ref:`TEMP1_SRC_ID<TEMP1_SRC_ID>` = identifies the individual device, of the above type, that should have its report replaced.
+- :ref:`TEMP1_SRC<TEMP1_SRC>` = the temperature reporting device type that should have its temperature report replaced with this sensor's. (Optional)
+- :ref:`TEMP1_SRC_ID<TEMP1_SRC_ID>` = identifies the individual device, of the above type, that should have its report replaced. (Optional)
 
 .. note:: Each I2C device on any single bus must have a unique address. If more than one of the same type of I2C temperature sensor is used, ensure each is configured with a unique address. Some breakout boards include jumpers for this purpose. Refer to the product datasheet for specific instructions regarding I2C address configuration.
 
@@ -68,10 +68,10 @@ Then set (examples shown for first sensor):
 
 - :ref:`TEMP1_TYPE<TEMP1_TYPE>` = 6 (DroneCAN)
 
-Logging
-=======
+Logging/OSD
+===========
 
-Several peripherals have the possibility of reporting temperature if their hardware permits: ESCs, EFIs, Smart Batteries, etc. However, if their hardware does not include a temperature sensor, it's possible to redirect a discrete temperature sensor's report to be included with another device's report. We will use the first temperature sensor below as an example.
+Several peripherals have the possibility of reporting temperature if their hardware permits: ESCs, EFIs, Smart Batteries, etc. However, if their hardware does not include a temperature sensor, it's possible to redirect a discrete temperature sensor's report to be included with another device's report. We will use the first temperature sensor below as an example. This also allows the OSD ESC or Airspeed (if DroneCAN) temperature panel to be used for OSD display of the temperature sensor if an ESC temperature is not being reported.
 
 - :ref:`TEMP1_SRC<TEMP1_SRC>` will designate which device's temperature report will be replaced by this temperature sensor's data. ie: if set to 1, then an ESC's report of temperature(usually null due to lack of hardware capability).
 - :ref:`TEMP1_SRC_ID<TEMP1_SRC_ID>` replaces a specific instance of a system component's temperature report with this temp sensor's. ie: if set to 4, with the above param set to 1, the fourth instance of an ESC (ie 4th motor/servo output with a motor/throttle function) will have its temperature report replaced.
