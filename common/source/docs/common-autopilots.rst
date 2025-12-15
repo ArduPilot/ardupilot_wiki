@@ -170,6 +170,7 @@ Closed Hardware
     Omnibus F4 AIO/Pro <common-omnibusf4pro>
     OmnibusNanoV6 <common-omnibusnanov6>
     Omnibus F7V2 <common-omnibusf7>
+    OrbitH743 <common-orbith743>
     OrqaF405 <common-OrqaF405>
     Orqa H7 QuadCore <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/OrqaH7QuadCore>
 [site wiki="copter"]
