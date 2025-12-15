@@ -23,5 +23,6 @@ What will happen
 When the failsafe occurs, the action taken is determined by the value of :ref:`FS_LEAK_ENABLE<FS_LEAK_ENABLE>`:
 
 -  **Disabled** (Value 0) will disable the failsafe entirely.
--  **Warn Only** (Value 1) will send a GCS warning message.
+-  **Warn Only** (Value 1) will send a "Leak Detected" GCS warning message.
+    - On a flight controller with notifying hardware, status LEDs will flash yellow and white, and the buzzer will play a cycle of falling tones
 -  **Enter SURFACE Mode** (Value 2) will send a warning and return the vehicle to the surface.
