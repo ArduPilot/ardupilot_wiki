@@ -209,7 +209,7 @@ Analog Airspeed sensor would use :ref:`ARSPD_PIN<ARSPD_PIN>` = 4
 Compass
 =======
 
-The NarinFC-X3 does not have a builtin compass, but you can attach an external compass using I2C on the SDA and SCL pads.
+The NarinFC-X3 does not have a builtin compass.
 
 Firmware
 ========
