@@ -58,6 +58,7 @@ New Board Support
 - Aeromind6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/7279
 - AIRBRAINH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/7287
 - X-MAV-AP-H743r1, see https://github.com/ArduPilot/ardupilot_wiki/pull/7288
+- Atlas Control, see https://github.com/ArduPilot/ardupilot_wiki/pull/7302
 
 New Peripheral Support
 ======================
