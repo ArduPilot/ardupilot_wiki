@@ -9,12 +9,14 @@ Tuning Pivot Turns
 
 This page describes how to tune the "pivot turn" feature on a Rover (or boat) with :ref:`skid-steering <rover-motor-and-servo-configuration>`.
 
-A pivot turn involves the vehicle slowing or stopping, turning towards the destination and then continuing.  These turns are only triggered in :ref:`Auto <auto-mode>`, :ref:`Guided <guided-mode>`, :ref:`RTL <rtl-mode>` or :ref:`SmartRTL <smartrtl-mode>` modes and only as a vehicle first starts towards the next waypoint.
+A pivot turn involves the vehicle slowing or stopping, turning towards the destination and then continuing.  When enabled,these turns are only triggered in :ref:`Auto <auto-mode>`, :ref:`Guided <guided-mode>`, :ref:`RTL <rtl-mode>` or :ref:`SmartRTL <smartrtl-mode>` modes and only as a vehicle first starts towards the next waypoint.
+
+.. note:: By default, smooth "S-Curves" are used all the autonomous modes including :ref:`Auto<auto-mode>`, :ref:`Guided<guided-mode>`, :ref:`RTL<rtl-mode>` and :ref:`SmartRTL<smartrtl-mode>`.
 
 Parameters
 ----------
 
-- :ref:`WP_PIVOT_ANGLE <WP_PIVOT_ANGLE>` holds the minimum angle error that will trigger a pivot turn.  For example when set to the default of "60", a pivot turn will be triggered if the vehicle's heading is at least 60 degrees off from the next waypoint.  This parameter should normally not be set below 30 unless you wish to disable pivot-turns which can be done by setting this parameter to 0.  The vehicle will begin towards the next waypoints once its heading is within 10 degrees of the heading to the destination
+- :ref:`WP_PIVOT_ANGLE <WP_PIVOT_ANGLE>` holds the minimum angle error that will trigger a pivot turn.  By default, this value is "0" which disables Pivot Turn behavior and enables "S-Curves". For example when set to "60", a pivot turn will be triggered if the vehicle's heading is at least 60 degrees off from the next waypoint.  This parameter should normally not be set below 30 unless you wish to disable pivot-turns which can be done by setting this parameter to 0.  The vehicle will begin towards the next waypoints once its heading is within 10 degrees of the heading to the destination
 - :ref:`WP_PIVOT_RATE <WP_PIVOT_RATE>` holds the maximum turn rate of the vehicle (in degrees per second) during a pivot turn
 - :ref:`ATC_STR_ANG_P <ATC_STR_ANG_P>` converts the vehicle's heading error into a desired turn rate.  Higher values lead to a more aggressive turn towards the destination.
 - :ref:`ATC_STR_RAT_MAX <ATC_STR_RAT_MAX>` limits the vehicle's maximum turn rate (in degrees per second) in all modes including during pivot turns.
