@@ -55,6 +55,20 @@ Now update all dependencies:
     source /opt/ros/humble/setup.bash
     rosdep install --from-paths src --ignore-src -r -y
 
+Now we install some required packages:
+
+If you are on a debian based system (such as Ubuntu or Mint), we provide `a script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/environment_install/install-prereqs-ubuntu.sh>`__ that will do it for you. 
+This script does NOT support building on operating systems that have reached end of support such as Ubuntu Bionic (18.04).
+
+.. code-block:: bash
+
+    cd ~/ardu_ws/src/ardupilot/
+    Tools/environment_install/install-prereqs-ubuntu.sh -y
+    # Reload the path (log-out and log-in to make it permanent):
+    . ~/.profile
+
+.. warning:: if you update your Linux distribution to a later version, then you will need to repeat this (rerun the provided script) step to assure that all the packages needed will be re-installed for this Linux version
+
 Installing the `MicroXRCEDDSGen` build dependency:
 
 .. code-block:: bash
