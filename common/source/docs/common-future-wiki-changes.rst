@@ -107,6 +107,7 @@ New Features
 - Add new Terrain option allowing no SD card storage, see https://github.com/ArduPilot/ardupilot_wiki/pull/7262
 - Add new flight distance statistic, see https://github.com/ArduPilot/ardupilot_wiki/pull/7264
 - Add/modify RC_FS_TIMEOUT paran, see https://github.com/ArduPilot/ardupilot_wiki/pull/7268
+- Display unhealthy compass index in pre-arm messages, see https://github.com/ArduPilot/ardupilot_wiki/pull/7306
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
