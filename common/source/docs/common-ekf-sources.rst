@@ -41,6 +41,8 @@ Ground stations or companion computers may set the source by sending a `MAV_CMD_
 
 This feature is especially helpful when using :ref:`common-non-gps-to-gps`.
 
+Alternatively, setting :ref:`EK3_OPTIONS<>` bit 3 will force each SRC set to be used by each IMU lane, ie EKF3 primary IMU lane will use the _SRC1 set, _SRC2 for the next, etc.) at initialization. Note that using the ``RCx_OPTIONS`` auxiliary function "90" (EKF Source Set) will NOT override this behavior.
+
 Velocity Source Fusing
 ======================
 
