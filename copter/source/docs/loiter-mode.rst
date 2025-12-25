@@ -46,8 +46,8 @@ Loiter Parameters
 - :ref:`LOIT_BRK_ACCEL <LOIT_BRK_ACCEL>`: max acceleration in cm/s/s while braking (i.e. pilot has moved sticks to center).  Higher values will stop the vehicle more quickly
 - :ref:`LOIT_BRK_DELAY <LOIT_BRK_DELAY>`: the delay in seconds before braking starts once the pilot has centered the sticks
 - :ref:`LOIT_BRK_JERK <LOIT_BRK_JERK>`: max change in acceleration in cm/s/s/s while braking.  Higher numbers will make the vehicle reach the maximum braking angle more quickly, lower numbers will cause smoother braking
-- :ref:`PSC_POSXY_P <PSC_POSXY_P>`: (shown as "Position XY (Dist to Speed)" at the top right of the screen shot above) converts the horizontal position error (i.e difference between the desired position and the actual position) to a desired speed towards the target position.  **It is generally not required to adjust this**
-- :ref:`PSC_VELXY_P <PSC_VELXY_P>` (shown as "Velocity XY (Vel to Accel)") converts the desired speed towards the target to a desired acceleration.  The resulting desired acceleration becomes a lean angle which is then passed to the same angular controller used by :ref:`Stabilize mode <stabilize-mode>`.  **It is generally not required to adjust this**
+- ``PSC_POSXY_P``: (shown as "Position XY (Dist to Speed)" at the top right of the screen shot above) converts the horizontal position error (i.e difference between the desired position and the actual position) to a desired speed towards the target position.  **It is generally not required to adjust this**
+- ``PSC_VELXY_P`` (shown as "Velocity XY (Vel to Accel)") converts the desired speed towards the target to a desired acceleration.  The resulting desired acceleration becomes a lean angle which is then passed to the same angular controller used by :ref:`Stabilize mode <stabilize-mode>`.  **It is generally not required to adjust this**
 
 
 Common Problems

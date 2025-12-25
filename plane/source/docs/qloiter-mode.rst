@@ -40,7 +40,7 @@ Details for tuning are in :ref:`QHOVER <qhover-mode>` mode description.
 - :ref:`Q_LOIT_BRK_DELAY <Q_LOIT_BRK_DELAY>`: the delay in seconds before braking starts once the pilot has centered the sticks
 - :ref:`Q_LOIT_BRK_JERK <Q_LOIT_BRK_JERK>`: max change in acceleration in cm/s/s/s while braking.  Higher numbers will make the vehicle reach the maximum braking angle more quickly, lower numbers will cause smoother braking
 - :ref:`Q_P_POSXY_P <Q_P_POSXY_P>`: converts the horizontal position error (i.e difference between the desired position and the actual position) to a desired speed towards the target position.  **It is generally not required to adjust this**
-- :ref:`Q_P_VELXY_P <Q_P_VELXY_P>`  converts the desired speed towards the target to a desired acceleration.  The resulting desired acceleration becomes a lean angle which is then passed to the same angular controller used by :ref:`QSTABILIZE <qstabilize-mode>`.  **It is generally not required to adjust this**
+- ``Q_P_VELXY_P``  converts the desired speed towards the target to a desired acceleration.  The resulting desired acceleration becomes a lean angle which is then passed to the same angular controller used by :ref:`QSTABILIZE <qstabilize-mode>`.  **It is generally not required to adjust this**
 
 
 Common Problems
