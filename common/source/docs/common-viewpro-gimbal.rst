@@ -9,7 +9,7 @@ ViewPro Gimbals
 .. image:: ../../../images/viewpro-gimbal.png
     :height: 450px
 
-ArduPilot 4.4 (and higher) support the `ViewPro <http://www.viewprotech.com/index.php?ac=article&at=list&tid=127>`__ gimbals using ViewPro's custom serial protocol.
+ArduPilot 4.5 (and higher) support the `ViewPro <http://www.viewprotech.com/index.php?ac=article&at=list&tid=127>`__ gimbals using ViewPro's custom serial protocol.
 
 Connection and Configuration
 ============================
@@ -24,7 +24,8 @@ Connect one of the autopilot's serial ports to the gimbal as shown below.  The f
     :target: ../_images/viewpro-gimbal-autopilot-wiring.png
     :width: 450px
 
-If using 4.5.x (or higher):
+
+Using 4.5.x (or higher):
 
 - Set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 8 (Gimbal).  This assumes the gimbal is attached to the autopilot's Serial2 port but any serial port can be used.
 - Set :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115
@@ -40,29 +41,6 @@ If using 4.5.x (or higher):
   - :ref:`RC9_OPTION <RC9_OPTION>` = 169 ("Camera Auto Focus") to trigger auto focus
   - :ref:`RC9_OPTION <RC9_OPTION>` = 174 ("Camera Image Tracking") to track what is in the center of the image
   - :ref:`RC9_OPTION <RC9_OPTION>` = 175 ("Camera Lens") to select which video stream is sent to the GCS
-
-If using 4.4.x:
-
-- Set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 28 (Scripting).  This assumes the gimbal is attached to the autopilot's Serial2 port but any serial port can be used.
-- Set :ref:`SCR_ENABLE <SCR_ENABLE>` = 1 to enable scripting and reboot the autopilot
-- Set :ref:`MNT1_TYPE <MNT1_TYPE>` = 9 (Scripting) to enable the mount/gimbal scripting driver
-- Set :ref:`CAM1_TYPE<CAM1_TYPE>` = 4 (Mount) to enable the camera1 instance control using the mount driver
-- `Download mount-viewpro-driver.lua from here <https://github.com/ArduPilot/ardupilot/tree/Copter-4.4/libraries/AP_Scripting/drivers>`__ and copy it to the autopilot's SD card in the APM/scripts directory and reboot the autopilot
-- Optionally for gimbals with multiple cameras, an auxiliary switch can control the active camera by doing the following
-
-  - Set :ref:`RC9_OPTION <RC9_OPTION>` = 300 (Scripting1) to allow selecting the active camera with RC9.  Note that any auxiliary switch may be used.
-  - When the driver script is run, it creates three new parameters : VIEP_CAM_SWLOW, VIEP_CAM_SWMID, and VIEP_CAM_SWHIGH. These control the active camera when the aux switch is the low, medium and high position respectively.  Possible values are
-
-      - 0: No change in camera selection
-      - 1: EO1
-      - 2: IR thermal
-      - 3: EO1 + IR Picture-in-picture
-      - 4: IR + EO1 Picture-in-picture
-      - 5: Fusion
-      - 6: IR1 13mm
-      - 7: IR2 52mm
-
-- Set VIEP_ZOOM_SPEED parameter created by the driver script to control the speed of zoom (value between 0 and 7)
 
 Control and Testing
 -------------------
