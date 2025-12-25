@@ -58,9 +58,9 @@ VTOL/QuadPlanes from Partners
 
 * `ARACE ROC QuadPlane <https://araceuas.com/roc/>`__
 * `ARACE Griffin QuadPlane <https://araceuas.com/griffin/>`__
-* `CUAV - Raefly VT240 <https://store.cuav.net/shop/vt240-pro/>`__
-* `CUAV - Raefly VT290 <https://store.cuav.net/shop/cuav-new-vt290-vtol/>`__
-* `CUAV - Raefly VT370 Hybrid <https://store.cuav.net/shop/cuav-raefly-vt370-vtol-uav/>`__
+* `Raefly VT240 Pro <https://raefly.com/raefly-vt-240-pro/>`__
+* `Raefly VT290 <https://raefly.com/raefly-vt-290/>`__
+* `Raefly VT370 Hybrid <https://raefly.com/raefly-vt370/>`__
 * `Drone Engr (Various VTOL Platforms) <https://www.droneassemble.com/product-category/vtol-drone-uav/>`__
 * `Event38 - E400 <https://event38.com/fixed-wing/e400-vtol-drone/>`__
 * `Event38 - E455 <https://event38.com/fixed-wing/e455-vtol-drone/>`__
