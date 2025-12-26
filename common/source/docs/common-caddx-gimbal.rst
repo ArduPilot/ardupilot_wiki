@@ -6,7 +6,7 @@
 CADDX Gimbals
 =============
 
-`CADDX <https://caddxfpv.com/products/caddxfpv-gm1-gm2-gm3.html>`__ GM1, GM2, GM3 gimbals are small 1, 2 and 3-axis gimbals weighing between 16g and 46g and can be paired with 19mm x 19mm FPV cameras
+`CADDX <https://caddxfpv.com/products/caddxfpv-gm1-gm2-gm3.html>`__ GM1, GM2, GM3 gimbals are small 1, 2 and 3-axis gimbals weighing between 16g and 46g and can be paired with 19mm x 19mm FPV cameras. The gimbal mounted camera is always stabilized against short term movements in all axes.
 
 .. image:: ../../../images/caddxfpv-gimbal.png
     :target: https://caddxfpv.com/products/caddxfpv-gm1-gm2-gm3.html
@@ -26,13 +26,15 @@ Where and What to Buy
 Connecting to the Autopilot
 ---------------------------
 
+.. note:: the terms "Gimbal" and "Mount" are interchangeable in ArduPilot.
+
 .. image:: ../../../images/caddxfpv-gm3-autopilot.png
     :target: ../_images/caddxfpv-gm3-autopilot.png
     :width: 450px
 
 Connect the gimbal's RX, TX and GND pins to one of the autopilot's serial ports as shown above
 
-Connect with a ground station and set the following parameters.  The params below assume the autopilot's telem2 port is used
+Connect with a ground station and set the following parameters.  The params below assume the autopilot's telem2 port is used. Parameters shown for use of SERIAL2 port and first MOUNT instance. RC switch channels used can be determined by user.
 
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 8 ("Gimbal")
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps
@@ -42,11 +44,29 @@ Connect with a ground station and set the following parameters.  The params belo
 - :ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>` to -170
 - :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to 170
 - :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to 60 (deg/s) to control speed of gimbal when using RC targeting if controlling the movement RATE by RC is desired. If RC value is intended to control the ANGLE, then set it to 0.
+
+Optional
+~~~~~~~~
+To allow pilot RC transmitter control of the gimbal:
+
 - :ref:`RC6_OPTION <RC6_OPTION>` = 213 ("Mount Pitch") to control the gimbal's pitch angle with RC channel 6
 - :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw angle with RC channel 7
-- :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Lock") to switch between "lock" and "follow" mode with RC channel 8
+- :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Yaw Lock") to switch yaw between earth frame lock (lock to current heading) and body frame lock (lock yaw with respect to gimbal on vehicle)  in RC Targeting mount mode with RC channel 8
+- :ref:`RC9_OPTION <RC9_OPTION>` = 185 ("Mount RP Lock") to switch between three modes of earth frame/body frame locks for the roll and pitch axis in RC targeting mode.
 
-.. note :: "Mount Lock" is really an all axes earth frame lock of the mount to allow it to try to point at a fixed location (POI or HOME) independent of vehicle attitude.
+=============================    ==========   ===========   ===================================================================
+Mount RP Lock Switch Position    Roll EF/BF   Pitch EF/BF   Description
+=============================    ==========   ===========   ===================================================================
+LOW                                BF            BF         FPV lock: pitch/roll RC sets locked angle with respect to mount;useful when flying via gimbal camera
+MID                                BF            EF         Pitch lock: roll RC sets locked angle with respect to mount
+HIGH                               EF            EF         Horizon lock:  pitch/roll RC sets locked angle with respect to horizon
+=============================    ==========   ===========   ===================================================================
+
+BF = Body frame, EF = Earth Frame
+
+.. note :: for full FPV lock the yaw axis should not be forced to Earth frame by a Mount Yaw Lock switch. See :ref:`common-mount-targeting` for more information on mount modes, pilot/autopilot targeting controls, and axes locks.
+
+- setting :ref:`MNT1_OPTIONS<MNT1_OPTIONS>` bit 2 (value +4) can be used to for force FPV lock as given in the above table without the need for RC switches when in RC Targeting Mount Mode.
 
 Configuring the Gimbal
 ----------------------
