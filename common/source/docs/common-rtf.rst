@@ -25,6 +25,7 @@ Copters from Partners
 * `Hitec - SUI Endurance <https://hitecnology.com/drones/sui-endurance-multipurpose-professional-multirotor>`__
 * `Holybro - S500 V2 Kit <https://shop.holybro.com/s500-v2-kitmotor2216-880kv-propeller1045_p1153.html>`__
 * `Holybro - X500 Kit <https://shop.holybro.com/x500-kit_p1180.html>`__
+* `Raefly - Xunwing 2 </https://raefly.com/>`__
 * `TT Robotix - H2-X6 Phoenix H6 Multirotor <http://www.ttrobotix.com/products/detail/926.html>`__
 * `TT Robotix - X-450 Scout Quadcopter <http://www.ttrobotix.com/products/detail/928.html>`__
 * `TT Robotix - X-1300 EagleEyes Quadcopter <http://www.ttrobotix.com/products/detail/923.html>`__
@@ -34,6 +35,7 @@ Copters from Partners
 Helicopters from Partners
 =========================
 
+* `Raefly - HC600 <https://raefly.com/>`__
 * `TT Robotix - CX-180 ICEMAN Helicopter <http://www.ttrobotix.com/products/detail/925.html>`__
 * `TT Robotix - SIRIUS Helicopter <http://www.ttrobotix.com/products/detail/905.html>`__
 * `TT Robotix - T-150 Maverick Helicopter <http://www.ttrobotix.com/products/detail/924.html>`__
@@ -58,9 +60,6 @@ VTOL/QuadPlanes from Partners
 
 * `ARACE ROC QuadPlane <https://araceuas.com/roc/>`__
 * `ARACE Griffin QuadPlane <https://araceuas.com/griffin/>`__
-* `Raefly VT240 Pro <https://raefly.com/raefly-vt-240-pro/>`__
-* `Raefly VT290 <https://raefly.com/raefly-vt-290/>`__
-* `Raefly VT370 Hybrid <https://raefly.com/raefly-vt370/>`__
 * `Drone Engr (Various VTOL Platforms) <https://www.droneassemble.com/product-category/vtol-drone-uav/>`__
 * `Event38 - E400 <https://event38.com/fixed-wing/e400-vtol-drone/>`__
 * `Event38 - E455 <https://event38.com/fixed-wing/e455-vtol-drone/>`__
@@ -71,6 +70,9 @@ VTOL/QuadPlanes from Partners
 * `MakeFLyEasy - Freeman 2300 <https://www.uavmodel.com/collections/vtol/products/makeflyeasy-freeman-4-1-2300mm-uav-vtol>`__
 * :ref:`MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>`
 * :ref:`MakeFLyEasy - Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>`
+* `Raefly VT240 Pro <https://raefly.com/raefly-vt-240-pro/>`__
+* `Raefly VT290 <https://raefly.com/raefly-vt-290/>`__
+* `Raefly VT370 Hybrid <https://raefly.com/raefly-vt370/>`__
 [/site]
 
 [site wiki="rover"]
