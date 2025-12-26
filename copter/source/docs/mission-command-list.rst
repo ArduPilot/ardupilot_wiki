@@ -380,12 +380,11 @@ Do-Set-Relay
 .. image:: ../../../images/MissionList_DoSetRelay.png
     :target: ../_images/MissionList_DoSetRelay.png
 
-Set a :ref:`Relay <common-relay>` pin's voltage high or low.  The
-columns are mislabeled in the Mission Planner (issue here).
+Set a :ref:`Relay <common-relay>` pin's voltage high or low.
 
-**First column is Relay number** : 0 = First Relay, 1 = Second Relay
+**Relay No** : 0 = First Relay, 1 = Second Relay
 
-**Second column is On/Off** : 0 = Off (i.e. 0V), 1 = On (i.e. 3.3V on
+**off(0)/On(1)** : 0 = Off (i.e. 0V), 1 = On (i.e. 3.3V on
 most autopilots)
 
 Do-Repeat-Relay
