@@ -960,7 +960,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_raefly.png
             :width: 250px
             :align: center
-            :target:  https://www.cuav.net/
+            :target:  https://raefly.com/
 
       - .. image:: ../../../images/supporters/supporters_logo_makto.jpeg
             :width: 250px
