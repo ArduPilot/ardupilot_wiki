@@ -67,10 +67,8 @@ the motors will disarm!
 
 .. note::
 
-   At time of writing, Copter only supports takeoff in guided mode;
-   if you want to fly a mission you first have to take off and then switch
-   to ``AUTO`` mode. From AC3.3 it will be possible to take off in AUTO
-   mode too.
+   Copter by default only supports takeoff in ``GUIDED`` mode.
+   if you want to take off in ``AUTO`` mode, you need to set ``AUTO_OPTIONS`` parameter to 3.
 
 Enter the following commands in the *MAVProxy Command Prompt*.
 
@@ -91,6 +89,9 @@ During takeoff you can watch the altitude increase on the console in the
 
 Developers may find it useful to **graph** the takeoff by first entering
 the ``gtakeoff`` command.
+
+For the command to work, you need to set up the alias, the easiest way is to set up the :ref:`MAVProxy startup script <mavproxy:mavproxy-mavinit>`
+and ensure that the ``graph`` module is loaded.
 
 .. figure:: ../images/MAVProxyGraphCopter_gtakeoff_40.png
    :target: ../_images/MAVProxyGraphCopter_gtakeoff_40.png
