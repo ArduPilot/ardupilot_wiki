@@ -32,32 +32,32 @@ See :ref:`common-crsf-telemetry` for information about telemetry data sent, disp
 
 .. warning:: If the autopilot is rebooted via MAVLink, it will lose communication with the CRSF receiver until the receiver is power cycled. Also, the CRSF TX must be transmitting BEFORE the receiver is powered up.
 
+MAVLink Option
+--------------
+
+In addition to SBUS and CRSF protocols, CRSF receivers can be configured to use MAVLink protocol for telemetry and embedded RC control. To utilize this attach to SERIAL port 4(as an example) and configure:
+
+- Set :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 2
+- Set :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115
+- Set :ref:`RSSI_TYPE <RSSI_TYPE>` =  5
+
 ELRS Receivers
 ==============
 
-ELRS can be setup in the same manner as CRSF above , however, bit 13 of :ref:`RC_OPTIONS<RC_OPTIONS>` should be set to alter the baudrate from 416KBaud that CRSF uses, to 420KBaud that ELRS uses. As mentioned above, the UART selected must have DMA capability. ELRS can also be configured to output MAVLink, enabling full bidirectional Mavlink telemetry and RC control over the same link. See :ref:`ELRS <common-rc-systems>` for more information.
+ELRS can be setup in the same manner as CRSF above , however, bit 13 of :ref:`RC_OPTIONS<RC_OPTIONS>` should be set to alter the baudrate from 416KBaud that CRSF uses, to 420KBaud that ELRS uses when in CRSF compatible protocol mode. As mentioned above, the UART selected must have DMA capability.
+
+ELRS can also be configured to output MAVLink, enabling full bidirectional Mavlink telemetry and RC control over the same link.
 
 ELRS MAVLink Configuration
 --------------------------
 
-Instead of CRSF protocol, MAVLink protocol can be used. In this case, using SERIAL 4 for example:
+Instead of CRSF protocol, MAVLink protocol can be used if the receiver is configured for it. In this case, using SERIAL 4 for example:
 
 - Set :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 2
-- Set :ref:SERIAL4_BBAUD <SERIAL4_BAUDL>` = 460
+- Set :ref:SERIAL4_BBAUD <SERIAL4_BAUDL>` = 115
 - Set :ref:`RSSI_TYPE <RSSI_TYPE>` = 5
 
 If the ELRS transmitter module has WIFI capability, then the telemetry data can be forwarded wirelessly to a PC or phone based GCS close to the transmitter.
-
-MAVLink Option
---------------
-
-In addition to SBUS and CRSF protocols, ELRS can be configured to use MAVLink protocol for telemetry and embedded RC control. To utilize this attach to SERIAL port 4(as an example) and configure:
-
-- Set :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 2
-- Set :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 460
-- Set :ref:`RSSI_TYPE <RSSI_TYPE>` =  5
-
-If the ELRS transmitter module has WIFI, the MAVLink telemetry can be wirelessly forwarded to a phone or PC GCS.
 
 ELRS bootloader "lockup"
 ------------------------
