@@ -215,7 +215,7 @@ This test will allow to test the altitude controller and ensure the stability of
   - ``Q_P_ACCZ_I`` to 2 x :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
   - ``Q_P_ACCZ_P`` to :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
 
- If the QuadPlane in QHOVER starts to move up and down, the vertical position and velocity controllers may need to be reduced by 50%. These values are: ``Q_P_POSZ_P`` and ``Q_P_VELZ_P ``.
+ If the QuadPlane in QHOVER starts to move up and down, the vertical position and velocity controllers may need to be reduced by 50%. These values are: ``Q_P_POSZ_P`` and ``Q_P_VELZ_P``.
 
 .. note:: If the :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` learned should be ~0.3-0.6. Higher values indicate that insufficient thrust is available, either due to motor system design, obstructed prop air flow by the fuselage or wings, or excessive yaw bias (see next section)
 
