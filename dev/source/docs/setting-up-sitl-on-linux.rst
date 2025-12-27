@@ -36,7 +36,7 @@ For examples below, for the Multicopter code change to **ardupilot/ArduCopter**:
 
    cd ardupilot/ArduCopter
 
-.. note: see the option in the startup command below to start SITL in the base **ardupilot** directoty if desired.
+.. note: see the option in the startup command below to start SITL in the base **ardupilot** directory if desired.
 
 Then start the simulator using **sim_vehicle.py**. The first time you
 run it, you should use the ``-w`` option to wipe the virtual EEPROM of user changed parameters and load
@@ -46,7 +46,7 @@ the default parameters for your vehicle.
 
    sim_vehicle.py --console --map -w
 
-Alternatively, if not starting in the ArduCopter directory, but at the base **ardupilot** directoty:
+Alternatively, if not starting in the ArduCopter directory, but at the base **ardupilot** directory:
 ::
 
    sim_vehicle.py -v copter --console --map -w
