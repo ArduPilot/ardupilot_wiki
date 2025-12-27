@@ -19,6 +19,7 @@ Parameters
 - :ref:`ATC_STR_ANG_P <ATC_STR_ANG_P>` converts the vehicle's heading error into a desired turn rate.  Higher values lead to a more aggressive turn towards the destination.
 - :ref:`ATC_STR_RAT_MAX <ATC_STR_RAT_MAX>` limits the vehicle's maximum turn rate (in degrees per second) in all modes including during pivot turns.
 - :ref:`ATC_STR_ACC_MAX <ATC_STR_ACC_MAX>` limits the vehicle's maximum rotational acceleration (in deg/sec/sec) in all modes.  higher numbers lead to the vehicle getting up to its maximum turn rate more quickly
+- :ref:`ATC_STR_DEC_MAX<ATC_STR_DEC_MAX>` sets the steering control angular deceleration maximum (in deg/s/s) that the autopilot will use when approaching a pivot turn to lessen overshoots. If set to 0, the :ref:`ATC_STR_ACC_MAX<ATC_STR_ACC_MAX>` value will be used.
 
 Videos
 ------
