@@ -34,7 +34,8 @@ To submit a build request, follow these steps:
     - It is possible to select a set of features that will not fit on a board which will cause the build will fail.
 
 #. Click the **'Generate'** button. You will be redirected to the homepage, and a build log for the request you just submitted will appear.
-#. Once the build is complete, click the **'folder'** icon next to your build request entry in the build list table. This will take you to the directory on the server where your build artifacts are hosted. Download the .apj file
+#. Once the build is complete the build artifact will be downloaded automatically, You can also download it manually by clicking the **'Download'** button next to your build request in the build list table. The button will be enabled only after a successful build.
+#. Extract the downloaded build artifact. The extracted files will include the .apj firmware file along with other files
 #. Use your GCS to install the .apj file onto your autopilot.  If using Mission Planner, open the Install Firmware and click then "Load custom firmware" link
 
     .. image:: ../../../images/mission-planner-load-custom-firmware.png
