@@ -37,7 +37,7 @@ When a radio failsafe is triggered, the copter can be configured via parameters 
 
 - If the copter is disarmed, no failsafe will take place.
 - If the copter is armed but has landed, the copter will immediately disarm.
-- If the copter is armed in Stabilize or Acro modes, and the throttle input is at minimum, the copter will immediately disarm.
+- If the copter is armed in Stabilize or Acro modes, and the throttle input is at minimum, and the vehicle is not in :ref:`AirMode<airmode>` then the copter will immediately disarm. 
 - Otherwise, the copter will take the actions as configured in the parameters described below.
 
 If the failsafe clears (i.e. transmitter and receiver regain contact) the copter will remain in its failsafe mode. It will **not** automatically return to the flight mode that was active before the failsafe was triggered. This means that if, for example, the vehicle was in Loiter when the failsafe occurred and the flight mode was automatically changed to RTL, even after the transmitter and receiver regained contact, the vehicle would remain in RTL.  If the pilot wished to re-take control in Loiter he/she would need to change your flight mode switch to another position and then back to Loiter.
