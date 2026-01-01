@@ -231,6 +231,7 @@ These autopilots use an underlying Linux OS. Linux boards usually have more CPU 
     Blue Robotics Navigator** (Linux) <https://bluerobotics.com/store/comm-control-power/control/navigator/>
     Obal Board (Linux) <common-obal-overview>
     PocketPilot** (Linux) <https://github.com/PocketPilot/PocketPilot>
+    T3 Gemstone O1 (Linux) <common-t3-gem-o1-overview>
 
 \** these devices are sensor add-on boards for a Linux-based microcomputer. See board links for details.
 
