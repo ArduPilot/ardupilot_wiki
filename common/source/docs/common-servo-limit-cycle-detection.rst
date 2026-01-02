@@ -15,7 +15,7 @@ for the Pitch and Roll control surface detection limits on fixed wing.
 - :ref:`ATC_RAT_RLL_SMAX<ATC_RAT_RLL_SMAX__AC_AttitudeControl_Multi>` for roll
 - :ref:`ATC_RAT_PIT_SMAX<ATC_RAT_PIT_SMAX__AC_AttitudeControl_Multi>` for pitch
 - :ref:`ATC_RAT_YAW_SMAX<ATC_RAT_YAW_SMAX__AC_AttitudeControl_Multi>` for yaw
-- ``PSC_ACCZ_SMAX`` for position control
+- :ref:`PSC_D_ACC_SMAX<PSC_D_ACC_SMAX>` for position control
 [/site]
 [site wiki="rover"]
 - :ref:`ATC_BAL_SMAX<ATC_BAL_SMAX>` for balance bots loop
