@@ -35,7 +35,7 @@ For QuadPlane actuators (motors,surfaces,tilt servos depending on frame type):
 - :ref:`Q_A_RAT_PIT_SMAX<Q_A_RAT_PIT_SMAX>` for VTOL pitch
 - :ref:`Q_A_RAT_RLL_SMAX<Q_A_RAT_RLL_SMAX>` for VTOL roll
 - :ref:`Q_A_RAT_YAW_SMAX<Q_A_RAT_YAW_SMAX>` for VTOL yaw
-- ``Q_P_ACCZ_SMAX`` for VTOL position control
+- :ref:`Q_P_D_ACC_SMAX<Q_P_D_ACC_SMAX>` for VTOL position control
 
 These are in different units (full activations per second), and have 50 as the default, which effectively de-activates them because they are too high. Currently, setting these such that they are active interferes with the QAUTOTUNE and this will be corrected in the future, but it allows logging of the actual slew rates in the PIQx.SRate log messages. 
 [/site]
