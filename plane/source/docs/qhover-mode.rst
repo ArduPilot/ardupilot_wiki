@@ -56,7 +56,7 @@ to a jerky throttle response.
 The :ref:`Q_P_D_VEL_P<Q_P_D_VEL_P>` (which normally requires no tuning) converts the
 desired climb or descent rate into a desired acceleration up or down.
  
-The ``Q_P_ACCZ_P``, ``Q_P_ACCZ_I``, ``Q_P_ACCZ_D`` gains convert the acceleration error (i.e the
+The :ref:`Q_P_D_ACC_P<Q_P_D_ACC_P>`, :ref:`Q_P_D_ACC_I<Q_P_D_ACC_I>`, :ref:`Q_P_D_ACC_D<Q_P_D_ACC_D>` gains convert the acceleration error (i.e the
 difference between the desired acceleration and the actual acceleration)
 into a motor output.  The 1:2 ratio of P to I (i.e. I is twice the size
 of P) should be maintained if you modify these parameters.  These values

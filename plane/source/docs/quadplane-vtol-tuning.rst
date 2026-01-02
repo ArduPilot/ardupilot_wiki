@@ -69,7 +69,7 @@ The ``Q_P_POSZ_P`` parameter is used to convert the altitude error (the differen
 
 The :ref:`Q_P_D_VEL_P<Q_P_D_VEL_P>` (which normally requires no tuning) converts the desired climb or descent rate into a desired acceleration up or down.
 
-The ``Q_P_ACCZ_P``, ``Q_P_ACCZ_I``, and ``Q_P_ACCZ_D`` PID gains convert the acceleration error (i.e the difference between the desired acceleration and the actual acceleration) into a motor output. The 1:2 ratio of P to I (i.e. I is twice the size of P) should be maintained if you modify these parameters. These values should never be increased but for very powerful QuadPlane VTOL motors you may get better response by reducing both by 50% (i.e P to 0.5, I to 1.0).
+The :ref:`Q_P_D_ACC_P<Q_P_D_ACC_P>`, :ref:`Q_P_D_ACC_I<Q_P_D_ACC_I>`, and :ref:`Q_P_D_ACC_D<Q_P_D_ACC_D>` PID gains convert the acceleration error (i.e the difference between the desired acceleration and the actual acceleration) into a motor output. The 1:2 ratio of P to I (i.e. I is twice the size of P) should be maintained if you modify these parameters. These values should never be increased but for very powerful QuadPlane VTOL motors you may get better response by reducing both by 50% (i.e P to 0.5, I to 1.0).
 
 Loiter Tuning
 =============
