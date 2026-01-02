@@ -53,7 +53,7 @@ desired climb or descent rate.  A higher rate will make it more
 aggressively attempt to maintain it’s altitude but if set too high leads
 to a jerky throttle response.
 
-The ``Q_P_VELZ_P`` (which normally requires no tuning) converts the
+The :ref:`Q_P_D_VEL_P<Q_P_D_VEL_P>` (which normally requires no tuning) converts the
 desired climb or descent rate into a desired acceleration up or down.
  
 The ``Q_P_ACCZ_P``, ``Q_P_ACCZ_I``, ``Q_P_ACCZ_D`` gains convert the acceleration error (i.e the
