@@ -49,7 +49,9 @@ The above modes concern how pitch, roll, and yaw axis *TARGETs* are sent to the 
 
 For example, at 30 deg negative pitch target would be 30 deg down from the mount's zero point with respect to its mounting in Body frame, but 30 deg below the earth's horizon in Earth frame.
 
-Most mounts have internal controls for each axis to determine how to interpret the targets. ArduPilot sets the mount's pitch and roll axis frame (if configurable) to Earth frame interpretations for all Mount types via its driver. The yaw axis is forced to Earth frame for the GPS Point, Home, and SysID modes, and can be forced from Body or Earth frame in RC Targeting mode using an ``RCx_OPTION`` switch setting of "163" (Mount Lock).
+Most mounts have internal controls for each axis to determine how to interpret the targets. ArduPilot sets the mount's pitch and roll axis frame (if configurable) to Earth frame interpretations for all Mount types via its driver.
+
+The yaw axis is forced to Earth frame for the GPS Point, Home, and SysID modes, and is otherwise body frame controlled.
 
 Control with an RC transmitter (aka RC Targeting)
 =================================================
@@ -62,16 +64,30 @@ While the mount is in "RC Targeting" mode (see above for how to change modes), t
 
 .. note:: By default the RC input specifies the **angle** but this can be changed to **rate** control by setting :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to a **non-zero** desired rotation rate in deg/sec.
 
-By default the yaw control is in "follow" mode (aka "body frame") meaning that the mount's heading will rotate as the vehicle rotates.  The alternative is "lock" mode (aka "earth frame") meaning the mount's heading will stay locked onto a particular heading regardless of the vehicle's yaw.  The pilot can switch between these two modes with an auxiliary switch:
-
-- set :ref:`RC9_OPTION <RC9_OPTION>` = 163 ("Mount Lock") to switch between "lock", or yaw lock in earth-frame when switched to high, and "follow" mode or body frame yaw  with RC channel 9, for example.
-
-.. note:: normally, the yaw lock will revert to "follow" mode on any targeting mode change. Then ``MNTx_OPTIONS`` bit 0, when set will allow the yaw lock mode to persist until changed by RC switch or MAVLink command.
-
 The pilot can retract the mount with the "Retract Mount1" or "Retract Mount2" auxiliary switch (using RC 10 in the below example.)
 
 - :ref:`RC10_OPTION <RC10_OPTION>` = 27 ("Retract Mount1") to change the mount to Retract mode
 - :ref:`RC10_OPTION <RC10_OPTION>` = 113 ("Retract Mount2") to change the mount to Retract mode
+
+Axis Lock Auxiliary Switches and Options
+----------------------------------------
+
+If the mount is capable, the roll and pitch axes can be controlled in the RC Targeting mode with an auxiliary switch on an RC channel. For example using RC channel 9, set :ref:`RC9_OPTION <RC9_OPTION>` = 185 to enable this switch. Switching its position will force roll and/or pitch angles of the mount to be stabilized ('locked") in earth frame (ie with respect to the horizon) or body frame (with respect to the gimbals base)
+
+======   ===========   ===============  =========   ============================
+AUX SW   Roll          Pitch            Name        Description
+======   ===========   ===============  =========   ============================
+High     Earth Frame   Earth Frame      HORIZON     Gimbal's pilot-set roll and pitch angles stabilized with respect to the horizon. Horizon does not move in video.
+Middle   Body Frame    Earth Frame      PITCH       Like HORIZON but vehicle banks are seen in video.
+Low      Body Frame    Body Frame       FPV         Gimbal angles maintained with respect to its base. This is good for FPV flying since horizon moves normally with respect to vehicle attitude.
+======   ===========   ===============  =========   ============================
+
+.. note:: Currently only the CADDX mount has the above capability.
+.. note:: If the Aux switch above is not used, HORIZON mode is the normal mode of gimbal operation
+
+- ``MOUNTx_OPTION`` bit 3 (+4 in value) provides the ability to obtain FPV lock above (on gimbals that are capable), without the need for the switch,
+
+- Also in RC Targeting, an Auxiliary Switch function "163" (Mount Yaw Lock) can be used on an RC channel to switch from normal yaw operation, to capturing the heading that the gimbal is currently pointing and "locking" it to maintain that direction. RC yaw target controls can shift that heading point. Switching it low, or changing mount modes, returns normal operation.
 
 Mission Planner Mount Controls
 ==============================
@@ -144,6 +160,6 @@ Other Mount Parameters
 - :ref:`MNT1_ROLL_MAX<MNT1_ROLL_MAX>` and :ref:`MNT1_ROLL_MIN<MNT1_ROLL_MIN>` control the mount's roll axis movement range in degrees
 - :ref:`MNT1_PITCH_MAX<MNT1_PITCH_MAX>` and :ref:`MNT1_PITCH_MIN<MNT1_PITCH_MIN>` control the mount's pitch axis movement range in degrees
 - :ref:`MNT1_YAW_MAX<MNT1_YAW_MAX>` and :ref:`MNT1_YAW_MIN<MNT1_YAW_MIN>` control the mount's yaw axis movement range in degrees
-- :ref:`MNT1_OPTIONS<MNT1_OPTIONS>` bit 0 set will recover the yaw lock state of the previous mode. For example if the mount's yaw lock was body frame in RC Targeting mode and the mount mode switched to GPS Point (which forces earth frame yaw) and then switched back to RC Targeting, the yaw would be still earth frame unless this bit is set. Bit 1 set will force Neutral mode in RC failsafe to possibly re-center the camera in failsafe when user control has been lost.
+- :ref:`MNT1_OPTIONS<MNT1_OPTIONS>` bit 0 set will recover the yaw lock state of the previous mode. For example if the mount's yaw lock was body frame in RC Targeting mode and the mount mode switched to GPS Point (which forces earth frame yaw) and then switched back to RC Targeting, the yaw would be still earth frame unless this bit is set. Bit 1 set will force Neutral mode in RC failsafe to possibly re-center the camera in failsafe when user control has been lost. Bit 2 , in RC Targeting mode, force the roll and pitch axes to lock to the gimbal's body frame for FPV operation (ie horizon moves with vehicle roll and pitch in camera view)
 
 .. warning:: For MAVLink controlled mounts,the mount supplies its axes max and min angles. The user can override these to limit the gimbal, but this alters the defaults for those parameters and using a different MAVLink gimbal will NOT use its communicated limits unless the entire autopilot parameters are reset.

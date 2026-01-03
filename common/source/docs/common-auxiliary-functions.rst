@@ -257,7 +257,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        162           | Auto Throttle Notch Setup  |    X     |    X    |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
-|        163           | Mount Lock                 |    X     |    X    |    X    |  X    |
+|        163           | Mount Yaw Lock             |    X     |    X    |    X    |  X    |
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        164           | Pause Streaming Logging    |    X     |    X    |    X    |  X    |
 +----------------------+----------------------------+----------+---------+---------+-------+
@@ -295,7 +295,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        181           | VTOL QuickTune             |          |    X    |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
-
+|        185           | Mount RP Lock              |    X     |    X    |    X    |  X    |
++----------------------+----------------------------+----------+---------+---------+-------+
 
 Intended as continuous PWM range control inputs:
 
@@ -559,11 +560,10 @@ Other functions are:
                                          | :ref:`FFT_ENABLE<FFT_ENABLE>` =1, takeoff with switch low,
                                          | hover 30 seconds with switch high,switch low, and land and
                                          | notch parameters will have been configured.
-    Mount Lock                           | If high, locks the heading of all mounts to earth-frame,
-                                         | otherwise, yaw is heading locked to vehicle heading.
-                                         | If pilot controlled positioning is active, the pilot's inputs changes
-                                         | the heading target appropriately in whatever frame is selected.
-                                         | Without this switch,it's vehicle heading.
+    Mount Yaw Lock                       | In RC Targeting and MAVLink mount modes, if switched High, the 
+                                         | gimbal's heading is captured, and gimbal yaw locked to maintain that 
+                                         | heading. If switched low, or switch does not exist, yaw operates in
+                                         | body frame as the mount mode commands it.
     Pause Streaming Logging              | If high, will not log streaming type log messages (sensors,
                                          | attitudes, EKF, etc.) to allow logging only when desired
                                          | for autopilots with limited logging capabilities
@@ -600,6 +600,13 @@ Other functions are:
     ICEngine start / stop                 Controls ICE engine starter output :ref:`ICE engines<common-ice>`
     Autotune_test_gains                   After autotune,allows selecting tune(high) or pretune gains
     VTOL QuickTune                        Autotunes QuadPlane VTOL PIDs, see :ref:`quicktune`
+    Mount RP Lock                        | In RC targetting mode, if gimbal is capable, the roll and or pitch axes
+                                         | which normally are assumed to stabilize in earth frame at the target
+                                         | angle, can be switched to body frame. If switched low, then roll and
+                                         | pitch are locked to body frame (HORIZON). If mid, then only pitch is
+                                         | locked amd roll remains earth frame(PITCH only).And if low, then both
+                                         | are body frame (FPV) and maintain angles with respect to the gimbal
+                                         | base.
     ROLL Input                            ROLL input channel. (replaces RCMAP)
     PITCH Input                           PITCH input channel. (replaces RCMAP)
     THROTTLE Input                        THROTTLE input channel. (replaces RCMAP)
