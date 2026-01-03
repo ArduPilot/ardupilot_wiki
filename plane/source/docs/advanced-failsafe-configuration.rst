@@ -220,7 +220,7 @@ re-established. This counter is only incremented if the 2nd communication
 failure happens at least 30 seconds after the previous one (to account
 for a short period of communications failure).
 
-IF the GSC loss is recovered while in this failsafe state, then, normally, the mission item pointer is returned to whatever mission item was active when the failsafe occurred. To prevent this, and continue on with whatever missions sequence is executing due to the failsafe, you will need to set the :ref:`AFS_OPTIONS<AFS_OPTIONS>` bit 0 (+1 to the value).
+If the GSC loss is recovered while in this failsafe state, then, normally, the mission item pointer is returned to whatever mission item was active when the failsafe occurred. To prevent this, and continue on with whatever missions sequence is executing due to the failsafe, you will need to set the :ref:`AFS_OPTIONS<AFS_OPTIONS>` bit 0 (+1 to the value).
 
 .. note:: even if the GSC AFS failsafe was entered from a mode other than AUTO, and the :ref:`AFS_OPTIONS<AFS_OPTIONS>` bit 0 is set, the vehicle will start executing the current item pointed to when the failsafe was entered, even though it was not in AUTO mode.
 
@@ -268,7 +268,7 @@ The behavior of AFS due to GSC loss can be modified by the setting of the :ref:`
 
 - bit 0 (+1), if set, the aircraft will continue with the current mission item even after GCS connection is recovered. If not set, the aircraft will jump back to the mission item right before GCS failsafe occurs 
 - bit 1 (+2), if set, will also force entering AUTO when GCS failsafe occurs while in any throtlled controlled modes other than AUTO (ie CRUISE, GUIDED, etc.).
-
+- bit 2 (+4), if set and the vehicle is already in return path (the current mission item is already ahead of DO_RETURN_PATH_START mission item), then the aircraft will not take action when GCS failsafe occurs. For example, if GCS failsafe occurs during a landing attempt, the aircraft should just land instead of starting the landing sequence again.
 Example AFS failsafe mission
 ----------------------------
 
