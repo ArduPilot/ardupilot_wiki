@@ -88,10 +88,10 @@ This test will allow to test the altitude controller and ensure the stability of
 
 3. Set these parameters on ground and preferably disarm  (A confident pilot could set them in flight with GCS or CH6 tuning knob):
 
-  - ``PSC_ACCZ_I`` to 2 x :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
-  - ``PSC_ACCZ_P`` to :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
+  - :ref:`PSC_D_ACC_I<PSC_D_ACC_I>` to 2 x :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
+  - :ref:`PSC_D_ACC_P<PSC_D_ACC_P>` to :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
 
-if AltHold starts to oscillate up and down the position and velocity controllers may need to be reduced by 50%. These values are: ``PSC_POSZ_P`` and ``PSC_VELZ_P``.
+if AltHold starts to oscillate up and down the position and velocity controllers may need to be reduced by 50%. These values are: ``PSC_POSZ_P`` and :ref:`PSC_D_VEL_P<PSC_D_VEL_P>`.
 
 Harmonic Notch Filtering
 ========================
