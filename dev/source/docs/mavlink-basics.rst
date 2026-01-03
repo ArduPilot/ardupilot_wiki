@@ -38,11 +38,12 @@ High Level Message Flow
 
 - Ground station or companion computer send commands to the vehicle.  Details of the supported commands are :ref:`here for copter <copter-commands-in-guided-mode>` and :ref:`plane <plane-commands-in-guided-mode>`
 
-MAVLink1 vs MAVLink2
+MAVLink1(v1) vs MAVLink2(v2)
 --------------------
+In this document, MAVLink protocol versions v1 and v2 are referred to as MAVLink1 and MAVLink2 respectively.
 - MAVLink2 messages have a maximum of 280 bytes of length, as they implement compatibility flags and support for signature.
 - MAVLink2 extends MAVLink1 by allowing new fields to be added to existing MAVLink1 messages, supports new messages with ``Message ID`` over "255" and adds support for signing messages
-- MAVLink2 is backwards compatible with MAVLink1 meaning that if a device understands MAVlink2 messages it certainly understands MAVLink1 messages
+- MAVLink2 is backwards compatible with MAVLink1 meaning that if a device understands MAVLink2 messages it certainly understands MAVLink1 messages
 - If a device only capable of understanding MAVLink1 receives a message that includes additional fields (added under MAVLink2) the device will only see the original fields.  I.e. the device will be able to read the message but will not "see" the additional fields
 - A flight controller's serial port (presumably connected to a telemetry radio) can be set to use MAVLink2 by setting the ``SERIALx_PROTOCOL`` parameter to "2" (where "x" is the serial port number on the flight controller)
 -  See `Mavlink2 Documentation <https://mavlink.io/en/guide/mavlink_2.html>`__ for more information (especially on message extensions)
