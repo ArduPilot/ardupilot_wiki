@@ -287,6 +287,18 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
+    <tr class="row-odd">
+        <td><center><a class="first last reference external image-reference" href="https://www.rpanion.com/"><img alt="Rpanion Electronics" src="../_images/rpanion.png" style="width: 90px;" /></a><br/><br/>Australia</center></td>
+        <td><div class="first last line-block">
+            <div class="line">Stephen Dade, Rpanion Electronics, <a href="mailto:stephen@rpanion.com" target="_top">stephen@rpanion.com</a></div>
+            <div class="line"><br/></div>
+            <div class="line">ArduPilot support (log analysis, tuning) for rover/boat vehicles</div>
+            <div class="line">ArduPilot software development for MAVLink, ROS2 and rover/boat vehicles</div>
+            <div class="line">Consulting services for complex telemetry networks (satellite, LTE, mesh systems)</div>
+            <div class="line">Software integration with companion computers (Raspberry Pi, NVIDIA Jetson)</div>
+            </div>
+        </td>
+    </tr>
     </tbody>
     </table>
 
