@@ -42,8 +42,8 @@ Connect with a ground station and set the following parameters.  The params belo
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 8 ("SToRM32 Gimbal Serial")
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps
 - :ref:`MNT1_TYPE <MNT1_TYPE>` to "8" ("Siyi") and reboot the autopilot
-- :ref:`MNT1_PITCH_MIN <MNT1_PITCH_MIN>` to -90
-- :ref:`MNT1_PITCH_MAX <MNT1_PITCH_MAX>` to 25
+- :ref:`MNT1_PITCH_MIN <MNT1_PITCH_MIN>` to -25
+- :ref:`MNT1_PITCH_MAX <MNT1_PITCH_MAX>` to 90
 - :ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>` to -135
 - :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to 135
 - :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to 90 (deg/s) to control speed of gimbal when using RC targetting
