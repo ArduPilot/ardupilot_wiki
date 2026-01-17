@@ -40,40 +40,41 @@ Horizon31 - PixC4-Pi
 The `PixC4-Pi <https://horizon31.com/product/pixc4-pi/>`__ is a professional-quality NDAA Compliant Flight Management Unit (FMUv5) which supports ArduPilot and is tightly integrated with a Raspberry Pi 4 compute module and peripheral support system (USB, MIPI, Ethernet, M.2 slot, etc.). The PixC4-Pi is about the size of a business card (84x42mm) and weighs 67g (with heatsink). The PixC4-Pi includes the same software stack as the PixC4-Jetson, with the primary difference being the PixC4-Pi does not support h.265 encoding, only h.264.
 
    
-UAVcast-Pro - Raspberry Pi software for LTE / WiFi Drones
+UAVcast-Pro - Companion Software for Long-Range Drones
 =========================================================
 
-.. figure:: https://uavmatrix.com/wp-content/uploads/2018/08/ipad.png
-   :target:  https://uavmatrix.com/uavcast-pro/
+.. figure:: https://uavmatrix.com/assets/images/uavcast-pro/uavcast-pro-flightmap.png
+   :target:  https://uavmatrix.com
 
-`UAVcast-Pro <https://uavmatrix.com/uavcast-pro/>`__ is an application which simplifies the process to communicate with your ArduPilot
-flight controller over cell or WiFi network. Create the ultimate 4G / 5G / LTE Drone in couple of clicks.
+`UAVcast Pro <https://uavmatrix.com>`__ is professional companion software that enables long-range communication with your ArduPilot flight controller over cellular networks (4G/5G/LTE), satellite, or WiFi. Connect and control your drone from anywhere in the world.
 
-Everything can be configured from a responsive web interface which can be accessed from any devices such as phone, tablet, desktop.
+Everything is configured through a responsive web interface accessible from any device — phone, tablet, or desktop.
 
-Read the `Documentation <https://docs.uavmatrix.com/>`__  for installation and configuration.
+Read the `Documentation <https://docs.uavmatrix.com/>`__ for installation and configuration.
 
-
-**UAVcast-Pro supports the following:**
+**UAVcast Pro features:**
 
 * UDP & TCP Telemetry
-* Connect Flight Controller to RPI by **USB => USB** or **Telem => GPIO**
-* UDP & TCP Video Stream
-* HD Video
+* MAVLink support (ArduPilot, Pixhawk, PX4)
+* Connect Flight Controller via USB or UART (Telem → GPIO)
+* Real-time HD Video Streaming
+* Dual Camera Support — switch between two cameras using a radio channel
+* UDP Video Stream
 * Custom Video Pipelines
-* VPN with NAT Traversal (Zerotier)
+* VPN with NAT Traversal.
 * Multiple Telemetry Destinations
 
-**Supported Raspberry Models:**
+**Supported Hardware:**
 
-* Model Pi0w - (with Raspian stretch lite or desktop)
-* Model Pi2 - (with Raspian stretch lite or desktop)
-* Model Pi3 - (with Raspian stretch lite or desktop)
+* Raspberry Pi Zero 2W, Pi 3, Pi 4, Pi 5
+* Orange Pi, Banana Pi, Rock Pi
+* NVIDIA Jetson
+* Intel NUC, Mini PCs
+* Any ARM64 or AMD64 Linux system
 
-UAVcast-Pro supports a broad variety of modems. Open link below to see supported models.
-`Supported 4G / 5G / LTE Modems. <https://www.freedesktop.org/wiki/Software/ModemManager/SupportedDevices/>`__
+UAVcast Pro supports a broad variety of cellular modems. See `supported models <https://docs.uavmatrix.com/docs/6.x/configuration-cell-modem>`__ for compatible devices.
 
-Flying LTE has never been easier
+Long-range drone flights made simple.
 
 
 4Gmetry Companion Computer Kit
