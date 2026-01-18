@@ -41,7 +41,7 @@ The `PixC4-Pi <https://horizon31.com/product/pixc4-pi/>`__ is a professional-qua
 
    
 UAVcast-Pro - Companion Software for Long-Range Drones
-=========================================================
+======================================================
 
 .. figure:: https://uavmatrix.com/assets/images/uavcast-pro/uavcast-pro-flightmap.png
    :target:  https://uavmatrix.com
