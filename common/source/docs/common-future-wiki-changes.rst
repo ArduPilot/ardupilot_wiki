@@ -59,6 +59,7 @@ New Board Support
 - AIRBRAINH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/7287
 - X-MAV-AP-H743r1, see https://github.com/ArduPilot/ardupilot_wiki/pull/7288
 - Atlas Control, see https://github.com/ArduPilot/ardupilot_wiki/pull/7302
+- MatekH7A3-Wing, see https://github.com/ArduPilot/ardupilot_wiki/pull/7347
 
 New Peripheral Support
 ======================
