@@ -175,6 +175,9 @@ I2C
 DroneCAN
 --------
 
+- 3DR ASUAV
+    - `3DR ASUAV DroneCAN Airspeed/Barometer <https://store.3dr.com/slim-auav-can-airspeed-sensor/>`__
+
 - 6897
     - `Foxtech AEROFOX Airspeed/Compass <https://www.foxtechfpv.com/foxtech-aerofox-can-airspeed-compass.html>`__
 

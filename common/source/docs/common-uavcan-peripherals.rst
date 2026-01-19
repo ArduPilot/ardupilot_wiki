@@ -58,6 +58,7 @@ Airspeed
 .. toctree::
     :maxdepth: 1
 
+    3DR ASUAV DroneCAN Airspeed/Barometer <https://store.3dr.com/slim-auav-can-airspeed-sensor/>
     Beyond Robotix Air Data Module (Amphenol AUAV) <https://www.beyondrobotix.com/products/air-data-module>
     Holybro High Precision DroneCAN Airspeed Sensor - DLVR <https://holybro.com/products/high-precision-dronecan-airspeed-sensor-dlvr>
     Avionics Anonymous Airspeed + Temp <common-avanon-adc>
