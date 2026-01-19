@@ -73,6 +73,7 @@ New Peripheral Support
 - Benewake TSF20L rangefinder, see https://github.com/ArduPilot/ardupilot_wiki/pull/7269
 - Enhanced CADDX Gimbal operation and AUX switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/7283
 - Add NAVIC constellation option, see https://github.com/ArduPilot/ardupilot_wiki/pull/7292
+- 3DR ASUAV DroneCAN Airspeed/Barometer, see https://github.com/ArduPilot/ardupilot_wiki/pull/7343
 
 New Features
 ============
