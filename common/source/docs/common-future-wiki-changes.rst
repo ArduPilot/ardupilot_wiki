@@ -75,6 +75,8 @@ New Peripheral Support
 - Enhanced CADDX Gimbal operation and AUX switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/7283
 - Add NAVIC constellation option, see https://github.com/ArduPilot/ardupilot_wiki/pull/7292
 - 3DR ASUAV DroneCAN Airspeed/Barometer, see https://github.com/ArduPilot/ardupilot_wiki/pull/7343
+- Temperature sensors expanded to 15, see https://github.com/ArduPilot/ardupilot_wiki/pull/7349
+
 
 New Features
 ============
