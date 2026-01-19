@@ -5,7 +5,7 @@
 Temperature Sensors
 ===================
 
-ArduPilot supports up to nine individual temperature sensors:
+ArduPilot supports up to 15 individual temperature sensors:
 
 - `MAX31865 <https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf>`__
 - `MCP9600 <https://ww1.microchip.com/downloads/en/DeviceDoc/MCP960X-Data-Sheet-20005426.pdf>`__
