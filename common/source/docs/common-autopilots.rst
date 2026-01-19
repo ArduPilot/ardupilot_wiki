@@ -149,6 +149,7 @@ Closed Hardware
     Mateksys F405 TE Family <common-matekf405-te>
     Mateksys H743-Wing/MINI/SLIM/WLITE <common-matekh743-wing>
     Mateksys H7A3-Slim <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/MatekH7A3/Readme.md>
+    Mateksys H7A3-Wing <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/MatekH7A3-Wing>
     MFT-SEMA100 <common-mft-sema100>
     MicoAir405v2/Mini <common-MicoAir405v2>
     MicoAir743 <common-MicoAir743>
