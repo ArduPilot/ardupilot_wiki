@@ -205,6 +205,49 @@ The Zephyr is positioned for vertical takeoff.
       FBWA> rc 3 1800
       FBWA> mode circle
 
+Streaming Camera Video
+-----------------------------
+Images from camera sensors may be streamed with GStreamer using the GstCameraPlugin sensor plugin. The example gimbal models include the plugin element:
+element:
+
+  ::
+
+    <plugin name="GstCameraPlugin"
+        filename="GstCameraPlugin">
+      <udp_host>127.0.0.1</udp_host>
+      <udp_port>5600</udp_port>
+      <use_basic_pipeline>true</use_basic_pipeline>
+      <use_cuda>false</use_cuda>
+    </plugin>
+
+The *<image_topic>* and *<enable_topic>* parameters are deducted from the topic name for the camera sensor, but may be overriden if required.
+
+The **iris_runway.sdf** world includes a 3 degrees of freedom gimbal with a zoomable camera. 
+
+In order to get the desired gazebo topic of any world you can run:
+
+    ::
+
+      gz topic -l | grep -i "streaming"
+
+Then you can set the streaming for your topic:
+
+    ::
+
+      gz topic -t /world/iris_runway/model/iris_with_gimbal/model/gimbal/link/pitch_link/sensor/camera/image/enable_streaming -m gz.msgs.Boolean -p "data: 1"
+
+Display the streamed video:
+
+    ::
+
+      gst-launch-1.0 -v udpsrc port=5600 caps='application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264' ! rtph264depay ! avdec_h264 ! videoconvert ! autovideosink sync=false
+
+View the streamed video in QGroundControl:
+
+1. Open QGC
+2. Go to :menuselection:`Application Settings --> Video`
+3. Set ::guilabel:`Video Source` to :menuselection:`UDP h.264 Video Stream`
+4. Set :guilabel:`UDP URL` to :kbd:`127.0.0.1:5600`
 
 Changing the simulation speed
 -----------------------------
