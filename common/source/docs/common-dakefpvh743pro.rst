@@ -43,6 +43,7 @@ UART Mapping
 ============
 The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the
 receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
+
 * SERIAL0 -> USB
 * SERIAL1 -> UART1 (GPS) DMA capable
 * SERIAL2 -> UART2 (MAVLink2)

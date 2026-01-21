@@ -142,6 +142,8 @@ Commands to control the mount are listed on the  :ref:`Camera Control in Auto Mi
 Other Mount Parameters
 ======================
 - :ref:`MNT1_ROLL_MAX<MNT1_ROLL_MAX>` and :ref:`MNT1_ROLL_MIN<MNT1_ROLL_MIN>` control the mount's roll axis movement range in degrees
-- :ref:`MNT1_ROLL_MAX<MNT1_pitch_MAX>` and :ref:`MNT1_pitch_MIN<MNT1_pitch_MIN>` control the mount's pitch axis movement range in degrees
-- :ref:`MNT1_ROLL_MAX<MNT1_yaw_MAX>` and :ref:`MNT1_yaw_MIN<MNT1_yaw_MIN>` control the mount's yaw axis movement range in degrees
+- :ref:`MNT1_PITCH_MAX<MNT1_PITCH_MAX>` and :ref:`MNT1_PITCH_MIN<MNT1_PITCH_MIN>` control the mount's pitch axis movement range in degrees
+- :ref:`MNT1_YAW_MAX<MNT1_YAW_MAX>` and :ref:`MNT1_YAW_MIN<MNT1_YAW_MIN>` control the mount's yaw axis movement range in degrees
 - :ref:`MNT1_OPTIONS<MNT1_OPTIONS>` bit 0 set will recover the yaw lock state of the previous mode. For example if the mount's yaw lock was body frame in RC Targeting mode and the mount mode switched to GPS Point (which forces earth frame yaw) and then switched back to RC Targeting, the yaw would be still earth frame unless this bit is set. Bit 1 set will force Neutral mode in RC failsafe to possibly re-center the camera in failsafe when user control has been lost.
+
+.. warning:: For MAVLink controlled mounts,the mount supplies its axes max and min angles. The user can override these to limit the gimbal, but this alters the defaults for those parameters and using a different MAVLink gimbal will NOT use its communicated limits unless the entire autopilot parameters are reset.

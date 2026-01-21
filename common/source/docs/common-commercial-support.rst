@@ -287,6 +287,31 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
+    <tr class="row-odd">
+        <td><center><a class="first last reference external image-reference" href="https://www.rpanion.com/"><img alt="Rpanion Electronics" src="../_images/rpanion.png" style="width: 90px;" /></a><br/><br/>Australia</center></td>
+        <td><div class="first last line-block">
+            <div class="line">Stephen Dade, Rpanion Electronics, <a href="mailto:stephen@rpanion.com" target="_top">stephen@rpanion.com</a></div>
+            <div class="line"><br/></div>
+            <div class="line">ArduPilot support (log analysis, tuning) for rover/boat vehicles</div>
+            <div class="line">ArduPilot software development for MAVLink, ROS2 and rover/boat vehicles</div>
+            <div class="line">Consulting services for complex telemetry networks (satellite, LTE, mesh systems)</div>
+            <div class="line">Software integration with companion computers (Raspberry Pi, NVIDIA Jetson)</div>
+            </div>
+        </td>
+    </tr>
+    <tr class="row-even">
+        <td><center><a class="first last reference external image-reference" href="http://www.hwurzburg.com"><img alt="../_images/Centx.png" src="../_images/Centx.png" style="width: 90px;" /></a><br/><br/>USA</center></td>
+        <td><div class="first last line-block">
+            <div class="line">ArduPilot Board and Documentation, <a href="mailto:hwurzburg@yahoo.com?Subject=ArduPilot%20commercial%20support" target="_top">hwurzburg@yahoo.com</a></div>
+            <div class="line"><br/></div>
+            <div class="line">As ArduPilot Wiki Maintainer and AutoPilot board reviewer</div>
+            <div class="line">I can assist in developing new autopilots and their successful submission.</dev>
+            <div class="line">Services include board system architecture consulting,</div>
+            <div class="line">board porting and testing, board documentation, and</div>
+            <div class="line">ArduPilot Wiki documentation of any kind</div>
+            </div>
+        </td>
+    </tr>
     </tbody>
     </table>
 
@@ -372,6 +397,10 @@ listed here will be active participants in the community.
 
 .. image:: ../../../images/logos/controlled_ascent.png
     :scale: 0%	
+
+.. image:: ../../../images/logos/Centx.png
+    :scale: 0%	
+
 
 Fleet Management Systems
 ========================

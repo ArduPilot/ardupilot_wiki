@@ -1,4 +1,4 @@
-Q_LOIT_B.. _QLOITER-mode:
+.. _QLOITER-mode:
 
 ============
 QLOITER Mode
