@@ -112,8 +112,9 @@ New Features
 - Add new flight distance statistic, see https://github.com/ArduPilot/ardupilot_wiki/pull/7264
 - Add/modify RC_FS_TIMEOUT paran, see https://github.com/ArduPilot/ardupilot_wiki/pull/7268
 - Display unhealthy compass index in pre-arm messages, see https://github.com/ArduPilot/ardupilot_wiki/pull/7306
-- Added FPV modes to CADDX and Roll/Pitch Axes lock controls, see https://github.com/ArduPilot/ardupilot_wiki/pull/7324
+- Added FPV modes to CADDX and Roll/Pitch Axes lock controls, see https://github.com/ArduPilot/ardupilot_wiki/pull/7352
 - Many PSC and Q_P params change names, see https://github.com/ArduPilot/ardupilot_wiki/pull/7328
+- Added new POI Lock and tracking AUX Function, see https://github.com/ArduPilot/ardupilot_wiki/pull/7352
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
