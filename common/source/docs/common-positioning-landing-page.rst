@@ -15,7 +15,8 @@ GPS/Compass
 ===========
 .. toctree::
     :maxdepth: 1
-
+    
+    AeroNav-1 GPS <common-AeroNav-1>
     ARK GPS <common-ark-gps>
     ARK DAN GPS <common-ark-dan-gps>
     ARK SAM GPS <common-ark-sam-gps>
