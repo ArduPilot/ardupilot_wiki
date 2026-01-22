@@ -208,7 +208,6 @@ The Zephyr is positioned for vertical takeoff.
 Streaming Camera Video
 -----------------------------
 Images from camera sensors may be streamed with GStreamer using the GstCameraPlugin sensor plugin. The example gimbal models include the plugin element:
-element:
 
   ::
 
@@ -220,7 +219,7 @@ element:
       <use_cuda>false</use_cuda>
     </plugin>
 
-The *<image_topic>* and *<enable_topic>* parameters are deducted from the topic name for the camera sensor, but may be overriden if required.
+The *<image_topic>* and *<enable_topic>* parameters are deduced from the topic name for the camera sensor, but may be overridden if required.
 
 The **iris_runway.sdf** world includes a 3 degrees of freedom gimbal with a zoomable camera. 
 
