@@ -35,7 +35,7 @@ Overview
 -  Pilot's throttle input controls the average motor speed meaning that
    constant adjustment of the throttle is required to maintain
    altitude.  If the pilot puts the throttle completely down the motors
-   will go to their minimum rate (MOT_SPIN_ARMED) and if the vehicle
+   will go to their minimum rate (:ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>`) and if the vehicle
    is flying it will lose attitude control and tumble. However, this behavior can be changed
    by enabling :ref:`airmode` 
 -  The throttle sent to the motors is automatically adjusted based on
