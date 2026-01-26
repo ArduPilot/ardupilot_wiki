@@ -49,6 +49,9 @@ tuning options for the vehicle.
 [site wiki="plane"]
     Crash Detection <crash-detect>
 [/site]
+[site wiki="plane,copter"]
+    Damaged Motor/Prop RPM Checks <common-tkoff-rpm-min>
+[/site]
     DisplayPort <common-displayport>
     DroneCAN Setup <common-uavcan-setup-advanced>
     EKF (Extended Kalman Filter) <common-apm-navigation-extended-kalman-filter-overview>
