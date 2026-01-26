@@ -1212,7 +1212,7 @@ lock after arming if the vehicle configuration allows this).
 
 This is the mission equivalent of the :ref:`RTL flight mode <copter:rtl-mode>`.  The vehicle will
 first climb to the
-:ref:`RTL_ALT <copter:RTL_ALT>`
+`RTL_ALT``
 parameter's specified altitude (default is 15m) before returning home.
 
 This command takes no parameters and generally should be the last
