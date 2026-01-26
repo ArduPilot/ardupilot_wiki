@@ -72,7 +72,7 @@ ArduPilot's EKF assumes the landing target is stationary. Set :ref:`PLND_OPTIONS
 
 Repositioning manually by the pilot during the landing will abort the landing unless :ref:`PLND_OPTIONS <PLND_OPTIONS>` bit 1 (Allow Precision Landing after manual reposition)is set.
 
-Final landing speed may be reduced below :ref:`LAND_SPEED <LAND_SPEED>` as necessary to assure a precise touchdown.
+Final landing speed may be reduced below ``LAND_SPEED`` as necessary to assure a precise touchdown.
 This can be disabled for a faster final land speed by setting :ref:`PLND_OPTIONS <PLND_OPTIONS>` bit 2.
 
 ..  youtube:: plM5BJY34Bc

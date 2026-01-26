@@ -14,7 +14,7 @@ Overview
 
 When RTL mode is selected, the copter will return to the home location, or if rally points have been setup, the closet rally point.
 
-The copter will first rise a minimum of :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>` or to  :ref:`RTL_ALT <RTL_ALT>`, whichever is higher, before returning home.  The default value for :ref:`RTL_ALT <RTL_ALT>` is 15m. Under no circumstances will this altitude be below 30cm.
+The copter will first rise a minimum of :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>` or to  ``RTL_ALT``, whichever is higher, before returning home.  The default value for ``RTL_ALT`` is 15m. Under no circumstances will this altitude be below 30cm.
 
 The altitude reference frame is set by either the rally point, if proceeding to one of those, or by :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` to select relative to HOME, or Terrain. If :ref:`WPNAV_RFND_USE<WPNAV_RFND_USE>` = 1 and Terrain is selected, then rangefinder will be used.
 
@@ -46,14 +46,14 @@ Copter, it will return to the location where it was armed.
 Options (User Adjustable Parameters)
 ====================================
 
--  :ref:`RTL_ALT <RTL_ALT>`: The
+-  ``RTL_ALT``: The
    minimum altitude the copter will move to before returning to launch.
 
    -  Set to zero to return at the current altitude.
    -  The return altitude can be set from 1 to 8000 centimeters.
    -  The default return altitude Default is 15 meters (1500)
 
--  :ref:`RTL_ALT_FINAL <RTL_ALT_FINAL>`: The
+-  ``RTL_ALT_FINAL``: The
    altitude the copter will move to at the final stage of "Returning to
    Launch" or after completing a Mission.
 
@@ -75,7 +75,7 @@ Options (User Adjustable Parameters)
    -  2 = Face Next Waypoint except for RTL (i.e. during RTL vehicle
       will remain pointed at its last heading)
 
--  :ref:`LAND_SPEED <LAND_SPEED>`:
+-  ``LAND_SPEED``:
    The descent speed for the final stage of landing in centimeters per
    second.
 
