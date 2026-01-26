@@ -7,15 +7,15 @@ Land Mode
 LAND Mode attempts to bring the copter straight down and has these
 features:
 
--  descends at ``LAND_SPEED_HIGH``, if non-zero, (or :ref:`WP_SPD_DN<WP_SPD_DN>` if zero) using the regular Altitude Hold controller.
+-  descends at :ref:`LAND_SPD_HIGH_MS<LAND_SPD_HIGH_MS>`, if non-zero, (or :ref:`WP_SPD_DN <WP_SPD_DN>` if zero) using the regular Altitude Hold controller.
 -  the pilot can reposition the vehicle using the pitch and roll sticks. The throttle stick has no effect.
--  if a rangefinder is being used, or :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` =1 and terrain data is available, the descent speed will then switch to ``LAND_SPEED`` at ``LAND_ALT_LOW`` altitude (default is 10m) above ground until landing occurs. If neither terrain data or rangefinder data is available, then altitude above HOME will be used for the speed switch point (if reached).
+-  if a rangefinder is being used, or :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` =1 and terrain data is available, the descent speed will then switch to :ref:`LAND_SPD_MS<LAND_SPD_MS>` at :ref:`LAND_ALT_LOW_M<LAND_ALT_LOW_M>` altitude (default is 10m) above ground until landing occurs. If neither terrain data or rangefinder data is available, then altitude above HOME will be used for the speed switch point (if reached).
 
    .. image:: ../images/Land_DescentSpeed1.png
        :target: ../_images/Land_DescentSpeed1.png
 
 -  below 10m the copter should descend at the rate specified in the
-   ``LAND_SPEED`` parameter which defaults to 50cm/s.
+   :ref:`LAND_SPD_MS<LAND_SPD_MS>` parameter which defaults to 50cm/s.
 
    .. image:: ../images/Land_DescentSpeed2.png
        :target: ../_images/Land_DescentSpeed2.png
@@ -41,7 +41,7 @@ features:
 
 -  If the copter appears to bounce or balloon back up a couple of times
    before settling down and turning the props off, try lowering the
-   ``LAND_SPEED`` parameter a bit.
+   :ref:`LAND_SPD_MS<LAND_SPD_MS>` parameter a bit.
 -  If the vehicle has GPS lock the landing controller will attempt to
    control its horizontal position but the pilot can adjust the target
    horizontal position just as in Loiter mode.
