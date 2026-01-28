@@ -66,7 +66,7 @@ Auto/Guided Waypoint Navigation Related
 
 CIRCLE Mode
 -----------
-* :ref:`CIRCLE_RADIUS<CIRCLE_RADIUS>`
+* ``CIRCLE_RADIUS``
 * :ref:`CIRCLE_RATE<CIRCLE_RATE>`
 * :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>`
 
