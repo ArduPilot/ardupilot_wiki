@@ -9,10 +9,11 @@ Copter has a set of parameters that define the way the aircraft feels to fly. Th
 The most important of these parameters is:
 
 - :ref:`PILOT_Y_RATE<PILOT_Y_RATE>`: desired maximum yaw rate in deg/s
-- ``ANGLE_MAX``:  maximum lean angle
 - :ref:`ATC_ACC_P_MAX<ATC_ACC_P_MAX>`: Pitch rate acceleration
 - :ref:`ATC_ACC_R_MAX<ATC_ACC_R_MAX>`: Roll rate acceleration
 - :ref:`ATC_ACC_Y_MAX<ATC_ACC_Y_MAX>`: Yaw rate acceleration
+- :ref:`ATC_ANGLE_MAX<ATC_ANGLE_MAX>`:  maximum lean angle
+
 - :ref:`ATC_ANG_LIM_TC <ATC_ANG_LIM_TC>`: Aircraft smoothing time
 - :ref:`ATC_INPUT_TC <ATC_INPUT_TC>`: Time to achieve 63% seady state pitch and roll attitude. Multiply by 3 to determine time to achieve steady state attitude.
 - :ref:`PILOT_Y_RATE_TC <PILOT_Y_RATE_TC>`: Time to achieve 63% steady state yaw rate. Multiply by 3 to determine time to achieve steady state rate.
@@ -55,10 +56,10 @@ The full list of input shaping parameters are:
 - :ref:`ACRO_Y_EXPO <ACRO_Y_EXPO>`
 - :ref:`ACRO_Y_RATE <ACRO_Y_RATE>`
 - :ref:`ACRO_Y_RATE_TC <ACRO_Y_RATE_TC>`
-- ``ANGLE_MAX``
 - :ref:`ATC_ACC_P_MAX<ATC_ACC_P_MAX>`
 - :ref:`ATC_ACC_R_MAX<ATC_ACC_R_MAX>`
 - :ref:`ATC_ACC_Y_MAX<ATC_ACC_Y_MAX>`
+- :ref:`ATC_ANGLE_MAX<ATC_ANGLE_MAX>`
 - :ref:`ATC_INPUT_TC <ATC_INPUT_TC>`
 - :ref:`ATC_ANG_LIM_TC <ATC_ANG_LIM_TC>`
 - :ref:`ATC_RATE_P_MAX <ATC_RATE_P_MAX>`

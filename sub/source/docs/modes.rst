@@ -39,7 +39,7 @@ ACRO Mode
 
 Stabilization Related
 ---------------------
-* ``ANGLE_MAX``
+* :ref:`ATC_ANGLE_MAX<ATC_ANGLE_MAX>`
 * :ref:`JS_GAIN_DEFAULT<JS_GAIN_DEFAULT>`
 
 ALT_HOLD Mode

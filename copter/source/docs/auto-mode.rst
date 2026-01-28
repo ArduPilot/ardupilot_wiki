@@ -120,10 +120,10 @@ Below are a list of commonly reported problems and recommendations
 
 2. The vehicle does not reach the configured maximum horizontal speed (e.g. :ref:`WP_SPD<WP_SPD>`)
 
-   - Increase :ref:`WP_ACC<WP_ACC>` to allow the vehicle to accelerate to its maximum speed more quickly
-   - Increase :ref:`WP_JERK<WP_JERK>` to allow the vehicle to get to its maximum acceleration more quickly
-   - If the waypoint includes a climb or descent the vehicle's horizontal speed may be limited by :ref:`WP_SPD_UP<WP_SPD_UP>` or :ref:`WP_SPD_DN<WP_SPD_DN>`
-   - Ensure the vehicle's maximum lean angle (e.g. ``ANGLE_MAX``) is sufficient to reach the desired speed
+   - Increase :ref:`WPNAV_ACCEL <WPNAV_ACCEL>` to allow the vehicle to accelerate to its maximum speed more quickly
+   - Increase :ref:`WPNAV_JERK <WPNAV_JERK>` to allow the vehicle to get to its maximum acceleration more quickly
+   - If the waypoint includes a climb or descent the vehicle's horizontal speed may be limited by :ref:`WPNAV_SPEED_UP <WPNAV_SPEED_UP>` or :ref:`WPNAV_SPEED_DN <WPNAV_SPEED_DN>`
+   - Ensure the vehicle's maximum lean angle (e.g. :ref:`ATC_ANGLE_MAX<ATC_ANGLE_MAX>`) is sufficient to reach the desired speed
    - Ensure the vehicle has enough power to maintain both altitude and the desired speed
    - If the mission command uses :ref:`terrain following <terrain-following>` the vehicle may need to slow horizontally to maintain the desired altitude above terrain
    - Move the waypoints to be further apart.  S-Cruve navigation only looks forward two waypoints and plans a path that allows it to stop by the time it reaches the 2nd waypoints (`see this issue for more details <https://github.com/ArduPilot/ardupilot/issues/28953>`__)

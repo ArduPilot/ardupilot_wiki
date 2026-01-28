@@ -46,7 +46,7 @@ Maximum Attitude Angle Limits
 =============================
 These can be changed with:
 
-- ``ANGLE_MAX``
+- :ref:`ATC_ANGLE_MAX<ATC_ANGLE_MAX>`
 - :ref:`XTRACK_ANG_LIM<XTRACK_ANG_LIM>`
 
 Speeds
