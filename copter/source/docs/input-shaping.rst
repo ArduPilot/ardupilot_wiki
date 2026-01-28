@@ -9,7 +9,7 @@ Copter has a set of parameters that define the way the aircraft feels to fly. Th
 The most important of these parameters is:
 
 - :ref:`PILOT_Y_RATE<PILOT_Y_RATE>`: desired maximum yaw rate in deg/s
-- :ref:`ANGLE_MAX <ANGLE_MAX>`:  maximum lean angle
+- ``ANGLE_MAX``:  maximum lean angle
 - :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`: Pitch rate acceleration
 - :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>`: Roll rate acceleration
 - :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>`: Yaw rate acceleration
@@ -55,7 +55,7 @@ The full list of input shaping parameters are:
 - :ref:`ACRO_Y_EXPO <ACRO_Y_EXPO>`
 - :ref:`ACRO_Y_RATE <ACRO_Y_RATE>`
 - :ref:`ACRO_Y_RATE_TC <ACRO_Y_RATE_TC>`
-- :ref:`ANGLE_MAX <ANGLE_MAX>`
+- ``ANGLE_MAX``
 - :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`
 - :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>`
 - :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>`

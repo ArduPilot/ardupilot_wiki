@@ -66,7 +66,7 @@ than manually adjusting PIDs. However, see :ref:`ac_rollpitchtuning` for roll an
 
 Other important parameters
 --------------------------
--  :ref:`ANGLE_MAX<ANGLE_MAX>` controls the maximum lean angle which by default is 4500
+-  ``ANGLE_MAX`` controls the maximum lean angle which by default is 4500
    (i.e. 45 degrees)
 -  :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` controls how quickly copter rotates based on a pilot's
    yaw input.  The default of 4.5 commands a 200 deg/sec rate of

@@ -73,7 +73,7 @@ Depending on vehicle design and pilot experience, it can be desirable to limit h
     - :ref:`JS_THR_GAIN<JS_THR_GAIN>` for an additional scaling applied to vertical inputs, to either reduce them further or boost them relative to horizontal/turning inputs
     - :ref:`JS_GAIN_STEPS<JS_GAIN_STEPS>` to determine how much the gain changes with each increment/decrement button press
 - When using radio channels for RC control of the vehicle, it is possible to ignore small RC stick adjustments and timing inconsistencies using :ref:`RCn_DZ<RC1_DZ>` to specify the deadzone for each RC channel
-- Attitude stabilisation limits the vehicle's maximum lean angle (roll/pitch away from level) to :ref:`ANGLE_MAX<ANGLE_MAX>`
+- Attitude stabilisation limits the vehicle's maximum lean angle (roll/pitch away from level) to ``ANGLE_MAX``
 - Automatic depth control (in modes like ALT_HOLD, SURFTRAK, POSHOLD, and CIRCLE) can be configured with the parameters
 
   - :ref:`THR_DZ<THR_DZ>` for the throttle deadzone, to avoid small joystick movements adjusting the current depth target

@@ -97,7 +97,7 @@ Old Method (Q_VFWD_GAIN)
 
 The way it works is to look at two factors:
 
--  the navigation attitude pitch of the aircraft (which can be up to :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`)
+-  the navigation attitude pitch of the aircraft (which can be up to ``Q_ANGLE_MAX``)
 -  the difference between the desired forward velocity and the actual
    forward velocity
 

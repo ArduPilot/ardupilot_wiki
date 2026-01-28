@@ -441,7 +441,7 @@ QuadPlane has a set of parameters that define the way the aircraft feels to fly.
 The most important of these parameters is:
 
 - :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>`: yaw rate x 45 degrees/s
-- :ref:`Q_ANGLE_MAX <Q_ANGLE_MAX>`:  maximum lean angle
+- ``Q_ANGLE_MAX``:  maximum lean angle
 - :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`: Pitch rate acceleration
 - :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>`: Roll rate acceleration
 - :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>`: Yaw rate acceleration
@@ -467,7 +467,7 @@ The full list of input shaping parameters are:
 
 
 - :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>`
-- :ref:`Q_ANGLE_MAX <Q_ANGLE_MAX>`
+- ``Q_ANGLE_MAX``
 - :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`
 - :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>`
 - :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>`

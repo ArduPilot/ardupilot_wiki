@@ -233,7 +233,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Bad parameter: PSC_POSXY_P must be > 0                  Position controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
     Battery failsafe                                        Battery failsafe has triggered                      Plug in battery and check its voltage and capacity.  See ref:`battery failsafe configuration <failsafe-battery>`
     Check ACRO_BAL_ROLL/PITCH                               ACRO_BAL_ROLL or ACRO_BAL_PITCH too high            Reduce :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>` below :ref:`ATC_ANG_RLL_P<ATC_ANG_RLL_P>` and/or :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>` below :ref:`ATC_ANG_PIT_P<ATC_ANG_PIT_P>`.  See :ref:`Acro mode<acro-mode>`
-    Check ANGLE_MAX                                         ANGLE_MAX set too high                              Reduce :ref:`ANGLE_MAX<ANGLE_MAX>` to 8000 (e.g. 80 degrees) or lower
+    Check ANGLE_MAX                                         ANGLE_MAX set too high                              Reduce ``ANGLE_MAX`` to 8000 (e.g. 80 degrees) or lower
     Check FS_THR_VALUE                                      RC failsafe misconfiguration                        Set :ref:`FS_THR_VALUE<FS_THR_VALUE>` between 910 and RC throttle's min (e.g :ref:`RC3_MIN<RC3_MIN>`. See ref:`battery failsafe configuration <failsafe-battery>`
     Check PILOT_SPEED_UP                                    PILOT_SPEED_UP set too low                          Increase :ref:`PILOT_SPEED_UP<PILOT_SPEED_UP>` to a positive number (e.g. 100 = 1m/s).  See :ref:`AltHold mode<altholdmode>`
     Collective below failsafe (TradHeli only)               RC collective input is below FS_THR_VALUE           Turn on RC transmitter or check :ref:`FS_THR_VALUE<FS_THR_VALUE>`.  Check :ref:`RC failsafe setup<radio-failsafe>`
@@ -285,7 +285,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     AIRSPEED_MIN too low x<5 m/s                            Parameter set too low, under 5m/s                   Raise to at least 20% above stall speed
     Bad parameter: ATC_ANG_PIT_P must be > 0                Attitude controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
     Bad parameter: PSC_POSXY_P must be > 0                  Position controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
-    Check Q_ANGLE_MAX                                       Set above 80 degrees                                Reduce :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` below 80; 30 degrees is typical
+    Check Q_ANGLE_MAX                                       Set above 80 degrees                                Reduce ``Q_ANGLE_MAX`` below 80; 30 degrees is typical
     In landing sequence                                     Trying to arm while still in landing sequence       Reset mission;change to mission item not in a landing sequence
     Invalid THR_FS_VALUE for reversed throttle input        THR_FS_VALUE pwm is not ABOVE the max throttle      Set :ref:`THR_FS_VALUE<THR_FS_VALUE>` above throttle maximum pwm
     ROLL_LIMIT_DEG too small x                              Parameter set under 3 degrees                       Increase, 45 deg recommended minimum for adequate control
@@ -442,7 +442,7 @@ Parameter checks:
 
 **Check FS_THR_VALUE**: the :ref:`radio failsafe pwm value <radio-failsafe>` has been set too close to the throttle channels (i.e. ch3) minimum.
 
-**Check ANGLE_MAX**: the :ref:`ANGLE_MAX<ANGLE_MAX>` parameter which controls the
+**Check ANGLE_MAX**: the ``ANGLE_MAX`` parameter which controls the
 vehicle's maximum lean angle has been set below 10 degrees (i.e. 1000)
 or above 80 degrees (i.e. 8000).
 
