@@ -34,7 +34,7 @@ Operation Modes
 
 The StrobeIT changes its behavior based on the PWM signal received from the autopilot.
 
-.. youtube:: la5Cl2jRwp8
+.. youtube:: V1odmniQY-s
 
 .. list-table:: PWM Control Logic
    :widths: 20 50 30

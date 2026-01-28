@@ -58,7 +58,7 @@ High-intensity strobes often connect to standard servo outputs and are controlle
 .. image:: ../../../images/Teravolt/StrobeIT/StrobeIT_1.png
     :target: ../images/Teravolt/StrobeIT/StrobeIT_1.png
     
-.. youtube:: la5Cl2jRwp8
+.. youtube:: V1odmniQY-s
 
 .. toctree::
     :maxdepth: 1
