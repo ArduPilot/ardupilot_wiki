@@ -35,7 +35,7 @@ Details for tuning are in :ref:`QHOVER <qhover-mode>` mode description.
 
 - :ref:`Q_LOIT_SPEED_MS<Q_LOIT_SPEED_MS>`: max horizontal speed in m/s.
 - :ref:`Q_LOIT_ACC_MAX_M<Q_LOIT_ACC_MAX_M>`: max acceleration in m/s/s.  Higher values cause the QuadPlane to accelerate and stop more quickly
-- :ref:`Q_LOIT_ANG_MAX <Q_LOIT_ANG_MAX>`: max lean angle in centi-degrees (i.e. 3000 = 30deg).  By default this value is zero which causes the ``ANGLE_MAX`` parameter's value to be used
+- :ref:`Q_LOIT_ANG_MAX <Q_LOIT_ANG_MAX>`: max lean angle in centi-degrees (i.e. 3000 = 30deg).  By default this value is zero which causes the :ref:`ATC_ANGLE_MAX<ATC_ANGLE_MAX>` parameter's value to be used
 - :ref:`Q_LOIT_BRK_ACC_M<Q_LOIT_BRK_ACC_M>`: max acceleration in m/s/s while braking (i.e. pilot has moved sticks to center).  Higher values will stop the vehicle more quickly
 - :ref:`Q_LOIT_BRK_DELAY <Q_LOIT_BRK_DELAY>`: the delay in seconds before braking starts once the pilot has centered the sticks
 - :ref:`Q_LOIT_BRK_JRK_M<Q_LOIT_BRK_JRK_M>`: max change in acceleration in m/s/s/s while braking.  Higher numbers will make the vehicle reach the maximum braking angle more quickly, lower numbers will cause smoother braking

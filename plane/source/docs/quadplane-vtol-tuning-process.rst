@@ -441,10 +441,10 @@ QuadPlane has a set of parameters that define the way the aircraft feels to fly.
 The most important of these parameters is:
 
 - :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>`: yaw rate x 45 degrees/s
-- ``Q_ANGLE_MAX``:  maximum lean angle
-- :ref:`Q_A_ACC_P_MAX<Q_A_ACC_P_MAX>`: Pitch rate acceleration
-- :ref:`Q_A_ACC_R_MAX<Q_A_ACC_R_MAX>`: Roll rate acceleration
-- :ref:`Q_A_ACC_Y_MAX<Q_A_ACC_Y_MAX>`: Yaw rate acceleration
+- :ref:`Q_A_ANGLE_MAX <Q_A_ANGLE_MAX>`:  maximum lean angle
+- :ref:`Q_A_ACC_P_MAX <Q_A_ACC_P_MAX>`: Pitch rate acceleration
+- :ref:`Q_A_ACC_R_MAX <Q_A_ACC_R_MAX>`: Roll rate acceleration
+- :ref:`Q_A_ACC_Y_MAX <Q_A_ACC_Y_MAX>`: Yaw rate acceleration
 - :ref:`Q_A_ANG_LIM_TC <Q_A_ANG_LIM_TC>`: Aircraft smoothing time
 
 QAUTOTUNE mode tuning will set the :ref:`Q_A_ACC_P_MAX<Q_A_ACC_P_MAX>`, :ref:`Q_A_ACC_R_MAX<Q_A_ACC_R_MAX>` and :ref:`Q_A_ACC_Y_MAX<Q_A_ACC_Y_MAX>` parameters to their maximum based on measurements done during the QAUTOTUNE tests. These values should not be increased beyond what QAUTOTUNE suggests without careful testing. In most cases pilots will want to reduce these values significantly.
@@ -465,9 +465,8 @@ Aerobatic aircraft should keep the :ref:`Q_A_ACC_P_MAX<Q_A_ACC_P_MAX>`, :ref:`Q_
 
 The full list of input shaping parameters are:
 
-
 - :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>`
-- ``Q_ANGLE_MAX``
+- :ref:`Q_A_ANGLE_MAX<Q_A_ANGLE_MAX>`
 - :ref:`Q_A_ACC_P_MAX<Q_A_ACC_P_MAX>`
 - :ref:`Q_A_ACC_R_MAX<Q_A_ACC_R_MAX>`
 - :ref:`Q_A_ACC_Y_MAX<Q_A_ACC_Y_MAX>`
