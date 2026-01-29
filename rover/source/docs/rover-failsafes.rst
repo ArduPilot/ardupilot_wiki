@@ -31,7 +31,7 @@ Battery Failsafe
 
     This failsafe requires the vehicle have a working :ref:`Power Module <common-powermodule-landingpage>`.
 
-.. note:: ArduPilot firmware versions 4.0 and later support up to 10 batteries/power monitors. All the  discussion below applies to those optional batteries also. Each can trigger a failsafe and each can have different actions and setup values. In addition, a group of batteries can be treated as a single unit, see ``BATTx_MONITOR`` = 10.
+.. note:: ArduPilot supports up to 10 batteries/power monitors. All the  discussion below applies to those optional batteries also. Each can trigger a failsafe and each can have different actions and setup values. In addition, a group of batteries can be treated as a single unit, see ``BATTx_MONITOR`` = 10.
 
 When the failsafe will trigger
 ------------------------------
@@ -49,7 +49,7 @@ When the failsafe is triggered:
 -  Buzzer will play a loud low-battery alarm
 -  LEDs will flash yellow
 -  A warning message will be displayed on the ground station's HUD (if telemetry is connected)
--  :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` configures the failsafe action to take.  "0" to take no action (default), "1" to change into :ref:`RTL <rtl-mode>`, "2" to change to :ref:`Hold <hold-mode>`, if "3" or "4" the vehicle will attempt to use :ref:`SmartRTL <smartrtl-mode>` but if this mode cannot be engaged the vehicle will :ref:`RTL <rtl-mode>` or :ref:`Hold <hold-mode>` respectively.  "5" will disarm the vehicle.
+-  :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` configures the failsafe action to take.  "0" to take no action and warn only (default), "1" to change into :ref:`RTL <rtl-mode>`, "2" to change to :ref:`Hold <hold-mode>`, if "3" or "4" the vehicle will attempt to use :ref:`SmartRTL <smartrtl-mode>` but if this mode cannot be engaged the vehicle will :ref:`RTL <rtl-mode>` or :ref:`Hold <hold-mode>` respectively.  "5" will disarm the vehicle.
 
 Two-Stage Battery Failsafe
 --------------------------
@@ -69,17 +69,6 @@ Advanced Battery Failsafe Settings
 
 GCS Failsafe (aka Telemetry Failsafe)
 =====================================
-
-Prior to Rover-4.4
-------------------
-
-This failsafe is triggered if the vehicle stops receiving `heartbeat messages <https://mavlink.io/en/messages/common.html#HEARTBEAT>`__ from the ground station for at least :ref:`FS_TIMEOUT <FS_TIMEOUT>` seconds.
-
-Starting from Rover-4.4
------------------------
-
-Significant improvements have been made in Rover-4.4 and later for Ground Control Failsafe .
-
 The Ground Station Control (GCS) failsafe controls how Rover will behave if contact with the GCS is lost.
 The GCS failsafe monitors the time since the last MAVLink heartbeat from the GCS. If no heartbeat is received :ref:`FS_GCS_TIMEOUT <FS_GCS_TIMEOUT>` seconds (Default is 5 seconds), the GCS failsafe event will trigger based on your parameter settings. Note that if no GCS is ever connected, the GCS failsafe will remain inactive regardless of parameter settings.
 
