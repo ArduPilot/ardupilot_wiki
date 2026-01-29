@@ -35,7 +35,7 @@ Then one of the following will happen:
 -  **Disarm motors** if the vehicle is in Stabilize or Acro mode and the throttle is at zero OR the vehicle is landed
 -  The user configurable action held in the :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` parameter
 
-  - **0** : None - no action will be taken
+  - **0** : Warn Only - no action will be taken
   - **1** : Land - the vehicle will switch to :ref:`Land <land-mode>` mode
   - **2** : RTL - the vehicle will switch to :ref:`Return-to-Launch <rtl-mode>` mode if possible but if not possible (because of no good position estimate) the vehicle will :ref:`Land <land-mode>` (**Recommended**)
   - **3** : SmartRTL or RTL - the vehicle will switch to :ref:`SmartRTL <smartrtl-mode>` mode if possible, if not possible (because SmartRTL's position buffer is full) the vehicle will switch to :ref:`RTL <rtl-mode>`. If RTL is also not possible (because of no good position estimate) the vehicle will switch to :ref:`Land <land-mode>`
