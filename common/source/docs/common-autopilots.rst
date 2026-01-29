@@ -200,6 +200,7 @@ Closed Hardware
     SpeedyBee F4 (this board currently is non-verified) <common-speedybeef4>
     SpeedyBee F405 AIO <common-speedybeef405aio>
     SpeedyBee F4 V3/V4 <common-speedybeef4-v3>
+    SpeedyBee F4 V5 <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/speedybeef4v5>
     SpeedyBee F405 Mini <common-speedybeef405-mini>
     SpeedyBeeF405WING/WING Mini <common-speedybeef405wing>
     SVehicle E2 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SVehicle-E2/README.md>
