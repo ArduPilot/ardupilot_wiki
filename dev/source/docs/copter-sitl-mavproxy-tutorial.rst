@@ -68,7 +68,7 @@ the motors will disarm!
 .. note::
 
    Copter by default only supports takeoff in ``GUIDED`` mode.
-   if you want to take off in ``AUTO`` mode, you need to set ``AUTO_OPTIONS`` parameter to 3.
+   if you want to take off in ``AUTO`` mode, you need to set :ref:`AUTO_OPTIONS <AUTO_OPTIONS>` parameter to 3.
 
 Enter the following commands in the *MAVProxy Command Prompt*.
 
@@ -132,10 +132,7 @@ Changing flight mode - circle and land
 
 The command below shows how to put Copter into
 :ref:`CIRCLE <copter:circle-mode>`
-mode with a
-:ref:`CIRCLE_RADIUS <copter:CIRCLE_RADIUS>`
-of 2000cm. This will fly the Copter in a circle at a constant altitude,
-with the front pointed towards the centre of the circle.
+mode with a :ref:`CIRCLE_RADIUS_M <CIRCLE_RADIUS_M>` of 20m. This will fly the Copter in a circle at a constant altitude, with the front pointed towards the centre of the circle.
 
 ::
 
@@ -144,7 +141,7 @@ with the front pointed towards the centre of the circle.
 
 .. note::
 
-   If you set the ``CIRCLE_RADIUS`` to zero the vehicle will rotate
+   If you set the :ref:`CIRCLE_RADIUS_M <CIRCLE_RADIUS_M>` to zero the vehicle will rotate
    in place.
 
 Copter supports a :ref:`number of other flight modes <copter:flight-modes>`,
@@ -263,7 +260,7 @@ described in :ref:`Simple GeoFence <common-ac2_simple_geofence>`.
 When the radius or maximum altitude is breached, Copter returns to the
 launch point and/or lands.
 
-The fence is enabled (and its type selected) using the :ref:`Copter Fence Parameters <copter:parameters_FENCE_>`.
+The fence is enabled (and its type selected) using the ``FENCE_`` parameters.
 You can list the fence parameters with ``param show``:
 
 ::
@@ -276,13 +273,13 @@ You can list the fence parameters with ``param show``:
     FENCE_RADIUS     150.000000
     FENCE_TYPE       3.000000
 
-The fence has an altitude boundary of 100 metres (``FENCE_ALT_MAX``) and
-is bound by a circle of radius ``FENCE_RADIUS`` around the home
-location. The ``FENCE_TYPE=3`` means that both the radius and altitude
+The fence has an altitude boundary of 100 metres (:ref:`FENCE_ALT_MAX <FENCE_ALT_MAX>`) and
+is bound by a circle of radius :ref:`FENCE_RADIUS<FENCE_RADIUS>` around the home
+location. The `:ref:`FENCE_TYPE <FENCE_TYPE>`= "3" means that both the radius and altitude
 are used (you can change the type to other numbers have an altitude-only
 or circle only fence - or none at all).
-
-The fence is initially disabled (``FENCE_ENABLE=0``). To turn it on we
+FENCE_ENABLE
+The fence is initially disabled (:ref:`FENCE_ENABLE <>` = 0). To turn it on we
 set the value to one:
 
 ::
