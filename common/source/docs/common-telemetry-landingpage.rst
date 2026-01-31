@@ -35,6 +35,7 @@ Short Range (<10KM)
     SiK Radio v2 <common-sik-telemetry-radio>
     SiK Radio configuration <common-configuring-a-telemetry-radio-using-mission-planner>
     SiK Radio advanced configuration <common-3dr-radio-advanced-configuration-and-technical-information>
+    Teravolt AeroTel-24 <common-AeroTel-24>
     XBee <common-telemetry-xbee>
 
 Long Range
