@@ -84,6 +84,7 @@ Closed Hardware
     :maxdepth: 1
 
     3DR Control Zero H7 OEM <common-3DR_Control_Zero_OEM_G>
+    ACNS-CM4Pilot <common-acns-cm4pilot>
     AEDROX H7 <common-aedroxh7>
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
