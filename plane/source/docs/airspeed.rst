@@ -162,12 +162,14 @@ I2C
     - `Holybro <https://shop.holybro.com/digital-air-speed-sensor_p1029.html>`_
     - `Matek 4525DO <http://www.mateksys.com/?portfolio=aspd-4525>`_
     - `mRobotics <https://store.mrobotics.io/mRo-I2C-Airspeed-Sensor-JST-GH-p/m10030a.htm>`_
+    - `TBS <https://www.team-blacksheep.com/products/prod:lucid_dcass>`__
 
 - ASP5033
     - `Qiotek ASP5033 <https://www.qio-tek.com/index.php/product/qiotek-asp5033-airspeed-sensor-and-pitot-tube>`_
 
 - DLVR
     - `Matek DLVR <http://www.mateksys.com/?portfolio=aspd-dlvr>`_
+    - `TBS <https://www.team-blacksheep.com/products/prod:lucid_dcassp>`__
 
 
 DroneCAN
@@ -187,9 +189,11 @@ DroneCAN
     - `Foxtech AEROFOX Airspeed/Compass <https://www.foxtechfpv.com/foxtech-aerofox-can-airspeed-compass.html>`__
     - `Holybro DroneCAN DLVR <https://holybro.com/products/high-precision-dronecan-airspeed-sensor-dlvr>`__
     - :ref:`Matek DroneCAN DLVR <common-matek-uavcan-dlvr>`
+    - `TBS <https://www.team-blacksheep.com/products/prod:lucid_dcassp>`__
 
 - MS4525
-    -  `MakeFlyEasy DroneCAN Airspeed <https://en.makeflyeasy.com/index.php/mfe-can-airspeed-meter/>`__
+    - `MakeFlyEasy DroneCAN Airspeed <https://en.makeflyeasy.com/index.php/mfe-can-airspeed-meter/>`__
+    - `TBS <https://www.team-blacksheep.com/products/prod:lucid_dcass>`__
 
 - MS5611
     -  :ref:`Avionics Anonymous Airspeed + Temp <common-avanon-adc>`
