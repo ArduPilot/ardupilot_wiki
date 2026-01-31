@@ -1,5 +1,6 @@
 .. _common-aerotel-24:
 
+======================================
 TeraVolt AeroTel 2.4 - Telemetry Radio
 ======================================
 
@@ -69,8 +70,8 @@ Configuration
 -------------
 
 If you set these parameters, AeroTel-24 will work out of the box.
-Connect AeroTel to any available TELEM port (e.g., TELEM2) and configure the following parameters in Mission Planner:
-The module is plugh and play and does not require any configuration changes via web interface.
+Connect AeroTel to any available SERIAL port (e.g., SERIAL2) and configure the following parameters in Mission Planner:
+The module is plug and play and does not require any configuration changes via web interface.
 
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 2 (MAVLink2)
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115 (115200 baud)
