@@ -22,6 +22,7 @@ that have their own self-stabilization controllers and the simpler servo-driven
 gimbals in which ArduPilot controls the stabilisation. Some gimbals also integrate still or video cameras.
 
 -  :ref:`ADTi cameras and gimbals <common-adti-cameras-and-gimbals>`
+-  :ref:`AVT CM41/CM62 Gimbal/Cameras <common-avt-gimbal>`
 -  :ref:`Brushless PWM <common-brushless-pwm-gimbal>` - brushless gimbals that accept PWM or SBUS input for angle control
 -  :ref:`CADDX GM1, GM2, GM3 gimbals <common-caddx-gimbal>`
 -  :ref:`DJI RS2 and RS3-Pro gimbals <common-djirs2-gimbal>`
@@ -103,6 +104,7 @@ more scenic photos. ArduPilot will stabilize the gimbal to whatever position you
     :hidden:
 
     ADTi Cameras and Gimbals <common-adti-cameras-and-gimbals>
+    AVT Gimbals <common-avt-gimbal>
     Brushless PWM <common-brushless-pwm-gimbal>
     CADDXFPV GM1, GM2, GM3 gimbals <common-caddx-gimbal>
     DJI RS2 and RS3-Pro gimbals <common-djirs2-gimbal>
