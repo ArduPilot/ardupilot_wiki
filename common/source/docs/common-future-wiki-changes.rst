@@ -61,6 +61,7 @@ New Board Support
 - Atlas Control, see https://github.com/ArduPilot/ardupilot_wiki/pull/7302
 - MatekH7A3-Wing, see https://github.com/ArduPilot/ardupilot_wiki/pull/7347
 - SpeedyBee F4 V5, see https://github.com/ArduPilot/ardupilot_wiki/pull/7371
+- Morakot, see https://github.com/ArduPilot/ardupilot_wiki/pull/7385
 
 New Peripheral Support
 ======================
