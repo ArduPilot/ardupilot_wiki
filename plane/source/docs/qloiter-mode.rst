@@ -33,12 +33,12 @@ Tuning
 QLOITER mode incorporates the altitude controller from QHOVER mode.
 Details for tuning are in :ref:`QHOVER <qhover-mode>` mode description.
 
-- :ref:`Q_LOIT_SPEED <Q_LOIT_SPEED>`: max horizontal speed in cm/s (i.e. 1250 = 12.5m/s)
-- :ref:`Q_LOIT_ACC_MAX <Q_LOIT_ACC_MAX>`: max acceleration in cm/s/s.  Higher values cause the QuadPlane to accelerate and stop more quickly
+- ``Q_LOIT_SPEED``: max horizontal speed in cm/s (i.e. 1250 = 12.5m/s)
+- ``Q_LOIT_ACC_MAX``: max acceleration in cm/s/s.  Higher values cause the QuadPlane to accelerate and stop more quickly
 - :ref:`Q_LOIT_ANG_MAX <Q_LOIT_ANG_MAX>`: max lean angle in centi-degrees (i.e. 3000 = 30deg).  By default this value is zero which causes the ``ANGLE_MAX`` parameter's value to be used
-- :ref:`Q_LOIT_BRK_ACCEL <Q_LOIT_BRK_ACCEL>`: max acceleration in cm/s/s while braking (i.e. pilot has moved sticks to center).  Higher values will stop the vehicle more quickly
+- ``Q_LOIT_BRK_ACCEL``: max acceleration in cm/s/s while braking (i.e. pilot has moved sticks to center).  Higher values will stop the vehicle more quickly
 - :ref:`Q_LOIT_BRK_DELAY <Q_LOIT_BRK_DELAY>`: the delay in seconds before braking starts once the pilot has centered the sticks
-- :ref:`Q_LOIT_BRK_JERK <Q_LOIT_BRK_JERK>`: max change in acceleration in cm/s/s/s while braking.  Higher numbers will make the vehicle reach the maximum braking angle more quickly, lower numbers will cause smoother braking
+- ``Q_LOIT_BRK_JERK``: max change in acceleration in cm/s/s/s while braking.  Higher numbers will make the vehicle reach the maximum braking angle more quickly, lower numbers will cause smoother braking
 - :ref:`Q_P_NE_POS_P <Q_P_NE_POS_P>`: converts the horizontal position error (i.e difference between the desired position and the actual position) to a desired speed towards the target position.  **It is generally not required to adjust this**
 - ``Q_P_VELXY_P``  converts the desired speed towards the target to a desired acceleration.  The resulting desired acceleration becomes a lean angle which is then passed to the same angular controller used by :ref:`QSTABILIZE <qstabilize-mode>`.  **It is generally not required to adjust this**
 

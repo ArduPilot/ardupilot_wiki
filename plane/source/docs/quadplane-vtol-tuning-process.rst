@@ -478,10 +478,10 @@ The full list of input shaping parameters are:
 - :ref:`Q_A_SLEW_YAW <Q_A_SLEW_YAW>`
 - ``Q_P_JERK_XY``
 - ``Q_P_JERK_Z``
-- :ref:`Q_LOIT_ACC_MAX <Q_LOIT_ACC_MAX>`
+- ``Q_LOIT_ACC_MAX``
 - :ref:`Q_LOIT_ANG_MAX <Q_LOIT_ANG_MAX>`
-- :ref:`Q_LOIT_BRK_ACCEL <Q_LOIT_BRK_ACCEL>`
+- ``Q_LOIT_BRK_ACCEL``
 - :ref:`Q_LOIT_BRK_DELAY <Q_LOIT_BRK_DELAY>`
-- :ref:`Q_LOIT_BRK_JERK <Q_LOIT_BRK_JERK>`
-- :ref:`Q_LOIT_SPEED <Q_LOIT_SPEED>`
+- ``Q_LOIT_BRK_JERK``
+- ``Q_LOIT_SPEED``
 
