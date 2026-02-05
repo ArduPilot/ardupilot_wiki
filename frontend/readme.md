@@ -29,6 +29,6 @@ With this command, the server will start and listen on port 8080.
 ## Generating WebP images
 
  Install cwebp utility and then :
-`for file in images/*; do cwebp -resize 920 480 "$file" -o "${file%.*}.webp"; done`
+`for file in images/*; do cwebp "$file" -o "${file%.*}.webp"; done`
 
 Usage of Webp images : https://web.dev/serve-images-webp/
