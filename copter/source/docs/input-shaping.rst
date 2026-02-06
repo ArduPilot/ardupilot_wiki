@@ -73,9 +73,9 @@ The full list of input shaping parameters are:
 - :ref:`PILOT_TKO_ALT_M<PILOT_TKO_ALT_M>`
 - :ref:`PILOT_Y_RATE <PILOT_Y_RATE>`
 - :ref:`PILOT_Y_RATE_TC <PILOT_Y_RATE_TC>`
-- ``LOIT_ACC_MAX``
+- :ref:`LOIT_ACC_MAX_M<LOIT_ACC_MAX_M>`
 - :ref:`LOIT_ANG_MAX <LOIT_ANG_MAX>`
-- ``LOIT_BRK_ACCEL``
+- :ref:`LOIT_BRK_ACC_M<LOIT_BRK_ACC_M>`
 - :ref:`LOIT_BRK_DELAY <LOIT_BRK_DELAY>`
-- ``LOIT_BRK_JERK``
-- ``LOIT_SPEED``
+- :ref:`LOIT_BRK_JRK_M<LOIT_BRK_JRK_M>`
+- :ref:`LOIT_SPEED_MS<LOIT_SPEED_MS>`
