@@ -101,6 +101,7 @@ Closed Hardware
     CBUnmanned H743 Stamp <common-StampH743>
     CSKY405 <common-CSKYF405>
     DAKEFPVH743Pro <common-dakefpvh743pro>
+    DAKEFPVH743-SLIM <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/DAKEFPVH743_SLIM/README.md>
     CUAV-X25-EVO <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-X25-EVO>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Flywoo F405 Pro <common-flywoof405pro>
