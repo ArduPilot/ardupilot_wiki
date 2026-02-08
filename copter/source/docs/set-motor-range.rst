@@ -43,3 +43,7 @@ Once the vehicle is flying, we want to ensure that we never output a value that 
    The :ref:`MOT_SPIN_MAX <MOT_SPIN_MAX>` parameter to account for the very top of the ESC/motor range which generally produces no additional thrust.  By default this value is 0.95 (i.e. top 5% of the range produces no additional thrust).
 
 .. note:: if ESC RPM telemetry is being used, the :ref:`TKOFF_RPM_MIN<TKOFF_RPM_MIN>` parameter could be set slightly below the :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` parameter to prevent takeoff attempts, and subsequent flips on takeoff, if one or more motors are not spinning.
+
+IDLE State Time
+===============
+If needed, you can add delay between the time the motor idle state is reached and when increased throttle can be applied to the ESCs using the :ref:`MOT_IDLE_SEC <MOT_IDLE_SEC>` parameter (default is 0 seconds).
