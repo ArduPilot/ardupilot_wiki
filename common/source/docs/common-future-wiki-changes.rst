@@ -62,6 +62,8 @@ New Board Support
 - MatekH7A3-Wing, see https://github.com/ArduPilot/ardupilot_wiki/pull/7347
 - SpeedyBee F4 V5, see https://github.com/ArduPilot/ardupilot_wiki/pull/7371
 - Morakot, see https://github.com/ArduPilot/ardupilot_wiki/pull/7385
+- DAKEFPVH743-SLIM, see https://github.com/ArduPilot/ardupilot_wiki/pull/7391
+- ATOMRCNAVI-Deluxe, see https://github.com/ArduPilot/ardupilot_wiki/pull/6868
 
 New Peripheral Support
 ======================
@@ -145,6 +147,7 @@ New Features
 - Add auto flap flight mode option, see https://github.com/ArduPilot/ardupilot_wiki/pull/7016
 - Ability to skip IMU pre-arm check for running ICE engines, see https://github.com/ArduPilot/ardupilot_wiki/pull/7044
 - Second TX based tuning channel, see https://github.com/ArduPilot/ardupilot_wiki/pull/7122
+- Added Motor IDLE state minimum time, see https://github.com/ArduPilot/ardupilot_wiki/pull/7392
 [/site]
 [site wiki="rover"]
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600
