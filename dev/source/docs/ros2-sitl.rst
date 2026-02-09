@@ -79,7 +79,7 @@ If the ROS 2 topics aren't being published, ensure the ardupilot parameter ref:`
 .. code-block:: bash
 
     export PATH=$PATH:~/ardu_ws/src/ardupilot/Tools/autotest
-    sim_vehicle.py -w -v ArduPlane --console -DG --enable-dds
+    sim_vehicle.py -w -v ArduPlane --console -DG --enable-DDS
 
     param set DDS_ENABLE 1
 

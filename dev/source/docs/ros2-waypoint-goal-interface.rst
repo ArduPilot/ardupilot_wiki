@@ -44,7 +44,7 @@ And, in another terminal, run SITL.
 
     cd ~/ardu_ws/src/ardupilot
     source ~/ardu_ws/install/setup.bash
-    ./Tools/autotest/sim_vehicle.py -w -v ArduPlane --console  --enable-dds --map -DG
+    ./Tools/autotest/sim_vehicle.py -w -v ArduPlane --console  --enable-DDS --map -DG
 
 Now that SITL is running, you have two options: run the ROS2 Node or use CLI commands.
 
