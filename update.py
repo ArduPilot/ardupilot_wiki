@@ -57,8 +57,6 @@ from typing import Optional, Dict, List
 
 from sphinx.application import Sphinx
 import rst_table
-
-from codecs import open
 from datetime import datetime
 # while flake8 says this is unused, distutils.dir_util.mkpath fails
 # without the following import on old versions of Python:
@@ -202,14 +200,26 @@ def get_request_file_size(url: str) -> int:
 
 def fetchparameters(site: Optional[str] = None, cache: Optional[str] = None) -> None:
     dataname = "Parameters"
-    fetch_ardupilot_generated_data(PARAMETER_SITE, f'https://autotest.ardupilot.org/{dataname}', f'{dataname}.rst',
-                                   f'{dataname.lower()}.rst', site, cache)
+    fetch_ardupilot_generated_data(
+        PARAMETER_SITE,
+        f"https://autotest.ardupilot.org/{dataname}", # noqa: E231
+        f"{dataname}.rst",
+        f"{dataname.lower()}.rst",
+        site,
+        cache,
+    )
 
 
 def fetchlogmessages(site: Optional[str] = None, cache: Optional[str] = None) -> None:
     dataname = "LogMessages"
-    fetch_ardupilot_generated_data(LOGMESSAGE_SITE, f'https://autotest.ardupilot.org/{dataname}', f'{dataname}.rst',
-                                   f'{dataname.lower()}.rst', site, cache)
+    fetch_ardupilot_generated_data(
+        LOGMESSAGE_SITE,
+        f"https://autotest.ardupilot.org/{dataname}",  # noqa: E231
+        f"{dataname}.rst",
+        f"{dataname.lower()}.rst",
+        site,
+        cache,
+    )
 
 
 def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: str, document_name: str,
@@ -450,7 +460,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
         for file in files:
             if file.endswith(".rst"):
                 source_file_path = os.path.join(root, file)
-                with open(source_file_path, 'r', 'utf-8') as f:
+                with open(source_file_path, 'r', encoding='utf-8') as f:
                     source_content = f.read()
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
@@ -484,7 +494,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
             if file.endswith(".rst"):
                 debug("  FILE: %s" % file)
                 source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', 'utf-8')
+                source_file = open(source_file_path, 'r', encoding='utf-8')
                 source_content = source_file.read()
                 source_file.close()
                 targets = get_copy_targets(source_content)
@@ -517,7 +527,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                     shutil.copy2(src, dst)
             elif file.endswith(".js"):
                 source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', 'utf-8')
+                source_file = open(source_file_path, 'r', encoding='utf-8')
                 source_content = source_file.read()
                 source_file.close()
                 targets = get_copy_targets(source_content)
@@ -869,7 +879,7 @@ def check_ref_directives():
     wiki_glob = set(glob.glob("**/*.rst", recursive=True))
     files_to_check = wiki_glob.difference(skipped_files)
     for f in files_to_check:
-        with open(f, "r", "utf-8") as file:
+        with open(f, "r", encoding='utf-8') as file:
             try:
                 for i, line in enumerate(file.readlines()):
                     if character_before_ref_tag.search(line):
@@ -1152,7 +1162,7 @@ if __name__ == "__main__":
     if error_count > 0:
         progress("Reprinting error messages:", file=sys.stderr)
         for msg in error_log:
-            print(f"\033[1;31m[update.py][error]: {msg}\033[0m", file=sys.stderr)
+            print(f"\033[1;31m[update.py][error]: {msg}\033[0m", file=sys.stderr) # noqa: E702,E231
         fatal(f"{error_count} errors during Wiki build")
     else:
         print("Build completed without errors")
