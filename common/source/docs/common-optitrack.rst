@@ -122,8 +122,12 @@ Ground testing
 
 - Connect the drone to MAVProxy
 - Start Motive and make sure `data streaming <https://v20.wiki.optitrack.com/index.php?title=Data_Streaming>`__ is turned on.
-- load and start optitrack module.
-- If you see following message appearing (initial pos may vary), then the drone is receiving pose data from Optitrack system. 
+- Load and start optitrack module.
+- After starting the OptiTrack stream, verify that the position reported by ArduPilot closely matches the position shown in the OptiTrack (Motive) software.
+
+  Small offsets (a few centimeters) are acceptable. Large discrepancies indicate a configuration issue such as incorrect axis alignment, origin placement, or rigid body setup.
+
+- If you see the following message appearing (initial pos may vary), then the drone is receiving pose data from the Optitrack system.
 
 ``EKF3 IMU0 is using external nav data
 EKF3 IMU0 initial pos NED = 0.1,-0.2,0.0 (m)
@@ -136,7 +140,16 @@ Take off in AltHold mode and maintain a stable hover. Switch to Loiter but be re
 
 .. note::
 
-   In order to take off in guided or auto mode, you need to use `GPS_GLOBAL_ORIGIN <https://mavlink.io/en/messages/common.html#SET_GPS_GLOBAL_ORIGIN>`__ to set the GPS location of motion capture system origin. It is not need to be accurate, any valid lat/lng is ok.
+   In order to take off in Guided, Auto, or RTL modes, a valid GPS global origin must be set using
+   `GPS_GLOBAL_ORIGIN <https://mavlink.io/en/messages/common.html#SET_GPS_GLOBAL_ORIGIN>`__.
+
+   The latitude and longitude do not need to be highly accurate, but they must be valid coordinates.
+   It is recommended to use the approximate latitude and longitude of the building or test facility
+   where the motion capture system is installed (for example, obtained from Google Maps).
+   Altitude can be set to zero or an approximate value.
+
+   The GPS global origin is only used as a reference frame; all position information comes from the
+   OptiTrack system.
 
 .. youtube:: JKzuaVQZclI
    :width: 100%
