@@ -94,5 +94,7 @@ To add support for a new Multicopter Matrix frame type (i.e. a frame with downwa
 
 Detailed instructions are not yet available for adding more complex frame types (sorry!)
 
+Once the motor layout has been determined, the factor of each motor can be determined at the site `Motor mixing calculator <https://www.iforce2d.net/mixercalc>`__ used in the video.
+
 ..  youtube:: c6aCwSHr_is
     :width: 100%
