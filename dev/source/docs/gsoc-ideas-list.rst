@@ -7,6 +7,11 @@ List of Suggested Projects for GSoC 2026
 This is a list of projects suggested by ArduPilot developers for `GSoC 2026 <https://summerofcode.withgoogle.com/>`__. These are only suggestions so if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__
 
 - Fleet Management Webtool
+- SITL Model Generation from Flight Data
+- Multi-Drone Mesh Networking (MAVLink-aware)
+- ArduHumanoid (ArduPilot controlling a simple humanoid)
+- AI-Assisted Log Diagnosis & Root-Cause Detection
+- Real-Time Companion-Computer Health Monitoring & Failsafe
 
 See lower down on this page for more details on each project
 
@@ -42,6 +47,61 @@ The goal of this project is create a fleet management web tool that helps compan
 - Support both table views and map views of the uploaded data
 
 Funding will be provided for hardware and cloud server as required.
+
+SITL Model Generation from Flight Data
+--------------------------------------
+
+- Skills required: Python, C++ (ArduPilot/SITL), system identification
+- Mentors: Nathaniel Mailhot
+- Expected Size: 350h
+- Level of Difficulty: Hard
+- Expected Outcome: A toolchain that auto-builds or tunes SITL airframe models from real flight logs
+
+The goal of this project is to take ArduPilot logs and estimate the key dynamics/sensor parameters needed for SITL, then output an updated model + params that better match the real vehicle.
+
+Multi-Drone Mesh Networking (MAVLink-aware)
+-------------------------------------------
+
+- Skills required: Networking, C/C++, Linux, MAVLink
+- Mentors: Nathaniel Mailhot
+- Expected Size: 350h
+- Level of Difficulty: Hard
+- Expected Outcome: A practical mesh networking layer for multi-vehicle comms (telemetry + coordination)
+
+The goal of this project is to enable resilient multi-hop links between multiple ArduPilot vehicles, so telemetry and commands can route through the swarm when direct links drop.
+
+ArduHumanoid (ArduPilot controlling a simple humanoid)
+------------------------------------------------------
+
+- Skills required: C++, control, servo systems, simulation (Gazebo/Ignition)
+- Mentors: Nathaniel Mailhot
+- Expected Size: 175h
+- Level of Difficulty: Medium
+- Expected Outcome: A minimal humanoid "vehicle type" running on ArduPilot with SITL support
+
+The goal of this project is to prove ArduPilot can command a small humanoid-style jointed frame (think "servo robot"), with a basic control interface and a simple simulated model.
+
+AI-Assisted Log Diagnosis & Root-Cause Detection
+------------------------------------------------
+
+- Skills required: Python, ML (classification + retrieval), ArduPilot logs/parameters
+- Mentors: Nathaniel Mailhot
+- Expected Size: 350h
+- Level of Difficulty: Hard
+- Expected Outcome: A model/service that flags likely root causes from logs and suggests fixes with confidence
+
+The goal of this project is to automatically diagnose common failures and misconfigurations by learning from labeled log segments, known issue patterns, and parameter states. It should output a probable root cause, suggested fixes, and a confidence score (with links to the relevant evidence in the log).
+
+Real-Time Companion-Computer Health Monitoring & Failsafe
+---------------------------------------------------------
+
+- Skills required: C/C++ or Python, MAVLink, Linux companion computers
+- Mentors: Jaime Machuca
+- Expected Size: 175h
+- Level of Difficulty: Medium
+- Expected Outcome: A standard MAVLink-based health reporting + failsafe mechanism for companion computers
+
+The goal of this project is to define and implement a consistent "companion health" report (CPU/GPU load, heartbeat, critical services, watchdog) and connect it to configurable failsafes so ArduPilot can respond predictably when the companion degrades or dies.
 
 Projects Completed in past years
 --------------------------------
