@@ -66,6 +66,9 @@ Airspeed
     Matek DroneCAN AUAV Airspeed/Baro <https://www.mateksys.com/?portfolio=aspd-auav>
     Matek DroneCAN DLVR-10 Airspeed Sensor <common-matek-uavcan-dlvr>
     Qiotek DroneCAN Airspeed Sensor <https://www.qio-tek.com/index.php/product/qiotek-asp5033-dronecan-airspeed-and-compass-module>
+    TBS DLVR-10 <https://www.team-blacksheep.com/products/prod:lucid_dcassp>
+    TBS MS4525 <https://www.team-blacksheep.com/products/prod:lucid_dcass>
+
 
 External Barometer
 ==================

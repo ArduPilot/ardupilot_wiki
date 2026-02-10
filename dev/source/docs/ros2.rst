@@ -30,7 +30,8 @@ This page assumes that your workspace is named `ardu_ws` in your home directory,
 Before anything else, make sure that you have `sourced your ROS 2 environment <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#source-the-setup-files>`__
 and check if it is `configured correctly <https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#check-environment-variables>`__.
 
-Finally, ensure you have `set up your ArduPilot build environment <https://ardupilot.org/dev/docs/building-the-code.html#setting-up-the-build-environment>`__.
+
+.. _ros2_installation_ubuntu:
 
 Installation (Ubuntu)
 =====================
@@ -43,9 +44,9 @@ To make installation easy, we will clone the required repositories using `vcs` a
     cd ~/ardu_ws
     vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos src
 
-This will take a few minutes to clone all the repositories your first time.
+This will take a few minutes to clone all the repositories your first time. It downloads the ArduPilot and `micro-ROS-Agent` repositories. Note that the master branch of ArduPilot is cloned by default. If you wish to use a different version, you will need to use Git commands to check out your desired ArduPilot version.
 
-Now update all dependencies:
+Now update all dependencies for `micro-ROS-Agent`:
 
 .. code-block:: bash
 
@@ -55,7 +56,7 @@ Now update all dependencies:
     source /opt/ros/humble/setup.bash
     rosdep install --from-paths src --ignore-src -r -y
 
-Installing the `MicroXRCEDDSGen` build dependency:
+Installing the `Micro-XRCE-DDS-Gen` build dependency:
 
 .. code-block:: bash
     
@@ -66,7 +67,7 @@ Installing the `MicroXRCEDDSGen` build dependency:
     ./gradlew assemble
     echo "export PATH=\$PATH:$PWD/scripts" >> ~/.bashrc
 
-Test `microxrceddsgen` installation:
+Test `Micro-XRCE-DDS-Gen` installation:
 
 .. code-block:: bash
 

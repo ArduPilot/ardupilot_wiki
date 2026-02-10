@@ -130,7 +130,7 @@ The board includes a NeoPixel LED pad and is preconfigured for serial leds.
 VTX Power Switch
 ================
 
-The JST-GH-6P connector supports a standard DJI HD VTX connection. Pin 1 of the connector is 9v so be careful not to connect this to a peripheral requiring 5v. The 9v supply is controlled by a ``RELAY`` set to GPIO 81 and is on by default. It can be configured to be operated by an RC switch or via GCS command (Mission Planner AUX tab)
+The JST-GH-6P connector supports a standard DJI HD VTX connection. Pin 1 of the connector is 9v so be careful not to connect this to a peripheral requiring 5v. The 9v supply is controlled by either (depending on board version) RELAY 2 set to GPIO 81 or RELAY 3 set to GPIO 82, and they are on by default. These can be configured to be operated by an RC switch or via GCS command (Mission Planner AUX tab)
 
 Firmware
 ========

@@ -3,7 +3,7 @@
 ESC calibration
 ===============
 
-Most models of PWM based ESC need to be calibrated to ensure that all
+Most models of PWM based ESC (not DShot ESCs) need to be calibrated to ensure that all
 the ESCs respond to the same input with the same speed. To calibrate
 them they need to receive maximum PWM input when initially powered on,
 then receive minimum PWM input when they have beeped to indicate that

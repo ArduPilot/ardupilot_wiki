@@ -58,7 +58,7 @@ The table below shows for each flight mode whether it provides altitude or posit
    <tr><th>Symbol</th><th>Definition</th></tr>
    <tr><td>-</td><td>Manual control</td><tr>
    <tr><td>+</td><td>Manual control with limits & self-level</td><tr>
-   <tr><td>s</td><td>Pilot controls climb rate</td></tr>
+   <tr><td>s</td><td>Pilot controls rate of changes</td></tr>
    <tr><td>A</td><td>Automatic control</td></tr>
    </table>
 

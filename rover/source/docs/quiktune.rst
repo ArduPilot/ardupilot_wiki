@@ -7,7 +7,7 @@ QuikTune
 ..  youtube:: yGB9uLD4dkM
     :width: 100%
 
-The `Rover QuikTune <https://github.com/ArduPilot/ardupilot/blob/Rover-4.5/libraries/AP_Scripting/applets/rover-quicktune.md>`__ Lua script simplifies the process of finding good gains for a vehicle's steering and speed controllers.
+The `Rover QuikTune <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/rover-quicktune.md>`__ Lua script simplifies the process of finding good gains for a vehicle's steering and speed controllers.
 
 The script should be run while the vehicle is circling in :ref:`Circle mode <circle-mode>`.
 It records the steering and throttle outputs and the resulting response (e.g. vehicle's turn rate and speed) for at least 10 seconds in order to calculate the feed-forward gains.
@@ -27,7 +27,7 @@ Installing the Script
 =====================
 
 - Set :ref:`SCR_ENABLE <SCR_ENABLE>` = 1 to enable scripting and then reboot the autopilot
-- Download `rover-quicktune.lua <https://raw.githubusercontent.com/ArduPilot/ardupilot/Rover-4.5/libraries/AP_Scripting/applets/rover-quicktune.lua>`__ to your PC
+- Download `rover-quicktune.lua <https://raw.githubusercontent.com/ArduPilot/ardupilot/master/libraries/AP_Scripting/applets/rover-quicktune.lua>`__ to your PC
 - Copy the script to your autopilot's SD card's APM/scripts directory.  If using MP it may be easiest to use the Config, MAVFtp screen
 
   .. image:: ../images/quiktune-mp-mavftp.png

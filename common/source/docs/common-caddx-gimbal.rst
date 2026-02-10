@@ -21,7 +21,7 @@ Where and What to Buy
 ---------------------
 
 - The GM1, GM2 and GM3 gimbals can be purchased directly from `CADDXFPV <https://caddxfpv.com/products/caddxfpv-gm1-gm2-gm3.html>`__
-- The `GL and GM Upgrade Cable <https://caddxfpv.com/products/gl-and-gm-upgrade-cable>`__ is likely also required to upgrade the gimbal's firmware to 3.4 (or higher)
+- The `GL and GM Upgrade Cable <https://caddxfpv.com/products/gl-and-gm-upgrade-cable>`__ can be used to upgrade the gimbal's firmware to 3.4 (or higher). Any FTDI to serial adapter connected to a 3 pin .1mm SH cable can also be used.
 
 Connecting to the Autopilot
 ---------------------------
@@ -41,10 +41,12 @@ Connect with a ground station and set the following parameters.  The params belo
 - :ref:`MNT1_PITCH_MAX <MNT1_PITCH_MAX>` to 90
 - :ref:`MNT1_YAW_MIN <MNT1_YAW_MIN>` to -170
 - :ref:`MNT1_YAW_MAX <MNT1_YAW_MAX>` to 170
-- :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to 60 (deg/s) to control speed of gimbal when using RC targetting
+- :ref:`MNT1_RC_RATE <MNT1_RC_RATE>` to 60 (deg/s) to control speed of gimbal when using RC targeting if controlling the movement RATE by RC is desired. If RC value is intended to control the ANGLE, then set it to 0.
 - :ref:`RC6_OPTION <RC6_OPTION>` = 213 ("Mount Pitch") to control the gimbal's pitch angle with RC channel 6
 - :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw angle with RC channel 7
 - :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Lock") to switch between "lock" and "follow" mode with RC channel 8
+
+.. note :: "Mount Lock" is really an all axes earth frame lock of the mount to allow it to try to point at a fixed location (POI or HOME) independent of vehicle attitude.
 
 Configuring the Gimbal
 ----------------------
@@ -53,7 +55,7 @@ Firmware upgrade instructions are in the "Upgrade" section of the `user manual <
 
 - Download the GimbalConfig windows application and latest gimbal firmware from the `CADDXFPV Download Center <https://caddxfpv.com/pages/download-center>`__ (look for the "Firmware / GM Gimbal Firmware" link near the bottom of the page)
 - Extract the contents of the downloaded zip file and run the GimbalConfig application
-- Connect the `Upgrade Cable <https://caddxfpv.com/products/gl-and-gm-upgrade-cable>`__ to the upgrade port shown below, connect the other end to your PC
+- Connect the `Upgrade Cable <https://caddxfpv.com/products/gl-and-gm-upgrade-cable>`__ or FTDI adapter to the upgrade port shown below, connect the other end to your PC
 
 .. image:: ../../../images/caddx-firmware-update.png
     :target: ../_images/caddx-firmware-update.png
@@ -65,7 +67,9 @@ Firmware upgrade instructions are in the "Upgrade" section of the `user manual <
     :target: ../_images/caddx-firmware-update-PC.png
     :width: 450px
 
-- Ensure the channel drop-downs highlighted in orange above are set to CH01
+- Ensure the channel drop-downs highlighted in orange above are set to CH01 and then push the "Save Param To Flash" button.
+
+.. note :: ArduPilot sets the "sensitivity" to zero in every command. If you set the sensitivity channel to "Null" above instead of CH01, then whatever sensitivity you set in the configurator GUI will not be changed to "0" by ArduPilot.
 
 Control and Testing
 -------------------

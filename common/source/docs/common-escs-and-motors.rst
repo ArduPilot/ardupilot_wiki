@@ -64,6 +64,7 @@ ESCs using BLHeli32, AM32, or BLHeli-S Configuration Firmware
     :maxdepth: 1
 
     ARK 4IN1 ESC <common-ark-4in1-esc>
+    ARK 4IN1 ESC CONS <common-ark-4in1-esc_con>
     BLHeli/BLHeli32/AM32 Capable ESCs <common-blheli32-passthru>
 
 

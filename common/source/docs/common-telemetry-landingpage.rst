@@ -25,7 +25,7 @@ Short Range (<10KM)
     Bluetooth <common-mission-planner-bluetooth-connectivity>
     CUAV PW-Link <common-cuav-pwlink>
     ESP8266 wifi telemetry <common-esp8266-telemetry>
-    ESP32 wifi telemetry <common-esp32-telemetry>
+    DroneBridge / ESP32 wifi telemetry <common-esp32-telemetry>
     FrSky telemetry <common-frsky-telemetry>
     i-BUS telemetry <common-ibus-telemetry>
     Yaapu Bi-Directional Telemetry GCS <common-yaapu-gcs>
@@ -35,6 +35,7 @@ Short Range (<10KM)
     SiK Radio v2 <common-sik-telemetry-radio>
     SiK Radio configuration <common-configuring-a-telemetry-radio-using-mission-planner>
     SiK Radio advanced configuration <common-3dr-radio-advanced-configuration-and-technical-information>
+    Teravolt AeroTel-24 <common-AeroTel-24>
     XBee <common-telemetry-xbee>
 
 Long Range

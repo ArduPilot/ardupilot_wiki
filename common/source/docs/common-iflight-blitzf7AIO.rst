@@ -23,7 +23,7 @@ Specifications
 -  **Sensors**
 
    -  BMI270 IMU (accel, gyro)
-   -  DPS310 barometer
+   -  DPS310 or SPL06 barometer
    -  Voltage & 165A current sensor
 
 

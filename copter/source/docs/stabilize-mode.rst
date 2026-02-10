@@ -35,7 +35,7 @@ Overview
 -  Pilot's throttle input controls the average motor speed meaning that
    constant adjustment of the throttle is required to maintain
    altitude.  If the pilot puts the throttle completely down the motors
-   will go to their minimum rate (MOT_SPIN_ARMED) and if the vehicle
+   will go to their minimum rate (:ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>`) and if the vehicle
    is flying it will lose attitude control and tumble. However, this behavior can be changed
    by enabling :ref:`airmode` 
 -  The throttle sent to the motors is automatically adjusted based on
@@ -66,13 +66,12 @@ than manually adjusting PIDs. However, see :ref:`ac_rollpitchtuning` for roll an
 
 Other important parameters
 --------------------------
--  :ref:`ANGLE_MAX<ANGLE_MAX>` controls the maximum lean angle which by default is 4500
+-  ``ANGLE_MAX`` controls the maximum lean angle which by default is 4500
    (i.e. 45 degrees)
--  ANGLE_RATE_MAX controls the maximum requested rotation rate in the
-   roll and pitch axis which by default is 18000 (180deg/sec).
 -  :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` controls how quickly copter rotates based on a pilot's
    yaw input.  The default of 4.5 commands a 200 deg/sec rate of
    rotation when the yaw stick is held fully left or right.  Higher
    values will make it rotate more quickly.
+-  :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` can be used to control the responsiveness to changes in pitch and roll angles requested by pilot's inputs.
 
 

@@ -37,8 +37,8 @@ Connect the gimbals's COM2 port to one of the autopilot's Serial/Telemetry ports
 
 Connect to the autopilot with a ground station and set the following parameters, if using the first mount:
 
-- :ref:`MNT1_TYPE <MNT1_TYPE>` to "6" for "Gremsy" and reboot the autopilot
-- If using a ZIO with ArduPilot-4.5.0 (or higher) set :ref:`CAM1_TYPE <CAM1_TYPE>` to "6" (MAVLinkCamV2) and reboot the autopilot
+- :ref:`MNT1_TYPE <MNT1_TYPE>` to "6" for "MAVLink" and reboot the autopilot
+- If using a ZIO with ArduPilot-4.5.0 (or higher) set :ref:`CAM1_TYPE <CAM1_TYPE>` to "6" (MAVLink..Gimbal V2 compatible) and reboot the autopilot
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps.  "SERIAL2" can be replaced with another serial port (i.e. SERIAL1) depending upon the physical connection
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
 - :ref:`SERIAL2_OPTIONS <SERIAL2_OPTIONS>` to 1024 for "Don't forward mavlink to/from"

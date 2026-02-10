@@ -19,7 +19,7 @@ GUIDED          Swim to location or velocity/direction using GCS    P/D
 CIRCLE          Circle swim with depth control                      P/D
 SURFACE         Return to surface, pilot directional control        \-
 POSHOLD         Loiter with depth control and pilot overrides       P/D
-MOTOR_DETECT    Automatically determine motor rotation and adjust   D
+MOTOR_DETECT    Automatically determine motor rotation and adjust   \-
 SURFTRAK        Hold distance above seafloor while stabilizing      R
 =============   =================================================  =========
 
@@ -39,7 +39,7 @@ ACRO Mode
 
 Stabilization Related
 ---------------------
-* :ref:`ANGLE_MAX<ANGLE_MAX>`
+* ``ANGLE_MAX``
 * :ref:`JS_GAIN_DEFAULT<JS_GAIN_DEFAULT>`
 
 ALT_HOLD Mode
@@ -66,7 +66,7 @@ Auto/Guided Waypoint Navigation Related
 
 CIRCLE Mode
 -----------
-* :ref:`CIRCLE_RADIUS<CIRCLE_RADIUS>`
+* ``CIRCLE_RADIUS``
 * :ref:`CIRCLE_RATE<CIRCLE_RATE>`
 * :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>`
 

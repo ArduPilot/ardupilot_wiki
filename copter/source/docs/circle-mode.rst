@@ -4,14 +4,14 @@
 Circle Mode
 ===========
 
-Circle will orbit a point located :ref:`CIRCLE_RADIUS<CIRCLE_RADIUS>` centimeters in front
+Circle will orbit a point located ``CIRCLE_RADIUS`` centimeters in front
 of the vehicle with the nose of the vehicle pointed at the center.
 
 .. note::
 
    The units are **centimeters**.
 
-Setting the :ref:`CIRCLE_RADIUS<CIRCLE_RADIUS>` to zero will cause the copter to simply stay
+Setting the ``CIRCLE_RADIUS`` to zero will cause the copter to simply stay
 in place and slowly rotate (useful for panorama shots).
 
 The speed of the vehicle (in deg/second) can be modified by changing the

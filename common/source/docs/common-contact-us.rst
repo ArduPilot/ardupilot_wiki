@@ -46,3 +46,8 @@ DroneKit
 - `DroneKit for Python Gitter chat <https://gitter.im/dronekit/dronekit-python>`__
 
 [copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+
+Calendar
+========
+
+ArduPilot has a `calendar of events <https://calendar.google.com/calendar/embed?src=rgdbom27tb1vlo62kjjnmt8va4%40group.calendar.google.com>`__

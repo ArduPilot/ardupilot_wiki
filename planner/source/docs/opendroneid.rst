@@ -6,13 +6,13 @@ OpenDroneID Panel
 
 Mission Planner has a special Drone ID tab in its DATA view for use with OpenDroneID modules attached to the autopilot which allows monitoring status, attaching the required GPS for operator location of the GCS, and UAS and Operator ID string setup.
 
-.. note:: This feature is rapidly evolving and is available only on the latest Beta Mission Planner updates. Updates will be made frequently so check for the latest version, frequently.
+.. note:: This feature requires Mission Planner 1.3.78 or later.
 
 .. image:: ../../../images/mp_remoteid.png
     :target: ../_images/mp_remoteid.png
 
 This control manages the exchange of GCS/Operator information with the RID module, 
-via the AutoPilot connection. 
+via the AutoPilot connection. If the Drone ID tab does not appear, right click the Data view, select customize, and enable ``tabDroneID``.
 
 GPS
 ===

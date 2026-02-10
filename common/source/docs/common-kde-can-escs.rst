@@ -10,6 +10,8 @@ KDECAN ESCs are high-end ESCs that allow control and feedback using a custom CAN
 
 .. note:: KDE has released new firmware that offers the option of using standard DroneCAN protocol or their custom CAN protocol. The following page details setup using older firmware or newer firmware when the custom CAN protocol is selected. To setup for use as a standard DroneCAN ESC see the firmware update and setup instructions `here <https://cdn.shopify.com/s/files/1/0496/8205/files/DroneCAN_QuickStart_1.0.3.pdf>`__.
 
+.. note:: Support for these ESCs in autopilots with less than 2MB flash is not included in standard firmware builds, but may be included by building firmware with KDE CAN support using the `custom firmware build server <https://custom.ardupilot.org>`__
+
 Where To Buy
 ------------
 

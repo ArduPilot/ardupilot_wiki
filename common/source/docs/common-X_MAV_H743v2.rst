@@ -14,7 +14,7 @@ Features
 * STM32H743 microcontroller
 * BMI088/ICM42688P dual IMUs
 * DPS310 barometer
-* IST8310 magnetometer
+* QMC5883P magnetometer
 * AT7456E OSD
 * 9V 3A BEC; 5V 3A BEC
 * MicroSD Card Slot
@@ -97,7 +97,7 @@ The default battery parameters are:
 Compass
 =======
 
-The AP-H743v2 has a built-in compass sensor (IST8310), and you can also attach an external compass using I2C on the SDA and SCL connector. Due to potential interference, the autopilot is usually used with an external I2C compass as part of a GPS/Compass combination.
+The AP-H743v2 has a built-in compass sensor (QMC5883P), and you can also attach an external compass using I2C on the SDA and SCL connectors. Due to potential interference, the autopilot is usually used with an external I2C compass as part of a GPS/Compass combination.
 
 Firmware
 ========

@@ -81,7 +81,7 @@ Modify the addresses to suit your needs; the rest can remain the same.
 Steps
 =====
 
-#. Flash the autopilot with software compiled with ``--enable-dds``
+#. Flash the autopilot with software compiled with ``--enable-DDS``
 #. Connect the autopilot via ethernet to the computer
 #. Open a MavProxy session
 #. Configure the parameters described above, starting with the ``ENABLE`` parameters first. 

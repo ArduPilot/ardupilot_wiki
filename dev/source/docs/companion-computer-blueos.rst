@@ -34,3 +34,9 @@ Please follow the links below for detailed setup instructions.
     BlueOS Installation <companion-computer-blueos-install>
     BlueOS 4G/LTE Telemetry Setup <companion-computer-blueos-lte-telem>
     BlueOS Live Video Setup <companion-computer-blueos-live-video>
+
+Videos
+------
+
+..  youtube:: 3ZNHjfyfxRY
+    :width: 100%

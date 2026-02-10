@@ -46,7 +46,7 @@ How Drift Mode works
 -  Pilot’s throttle input controls the average motor speed meaning that
    constant adjustment of the throttle is required to maintain
    altitude.  If the pilot puts the throttle completely down the motors
-   will go to their minimum rate (MOT_SPIN_ARMED) and if the vehicle
+   will go to their minimum rate (:ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>`) and if the vehicle
    is flying it will lose attitude control and tumble.
 -  Drift Mode relies on your GPS for control.
 -  If you lose your GPS signal in flight while in Drift Mode, your

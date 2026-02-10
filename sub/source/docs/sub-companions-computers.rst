@@ -8,4 +8,4 @@ Underwater ROVs often employ a small companion computer, in addition to the :ref
 
 ArduPilot compatible companion computers are listed :ref:`HERE <companion-computers>`.
 
-`Blue Robotics <https://bluerobotics.com/>`__ offers a highly functional, open source, companion computer firmware system that runs on a Raspberry Pi 3, 4, or 5 <https://www.raspberrypi.com/products/raspberry-pi-3-model-b/>`__ for vehicles called `BlueOS <https://blueos.cloud/docs/latest/usage/overview/>`__.
+`Blue Robotics <https://bluerobotics.com/>`__ offers a highly functional, open source, companion computer firmware system that runs on a `Raspberry Pi 3, 4, or 5 <https://www.raspberrypi.com/products/raspberry-pi-3-model-b/>`__ for vehicles called `BlueOS <https://blueos.cloud/docs/latest/usage/overview/>`__.

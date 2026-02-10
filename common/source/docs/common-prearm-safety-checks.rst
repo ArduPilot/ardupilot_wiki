@@ -13,7 +13,7 @@ some can also be disabled if necessary.
 ..  youtube:: gZ3H2eLmStI
     :width: 100%
 
-.. warning:: Never disable the arming checks (ie :ref:`ARMING_CHECK<ARMING_CHECK>` not = "1", except for bench testing. Always resolve any prearm or arming failures BEFORE attempting to fly. Doing otherwise may result in the loss of the vehicle.
+.. warning:: Never disable the arming checks (ie ``ARMING_CHECK`` not = "1", except for bench testing. Always resolve any prearm or arming failures BEFORE attempting to fly. Doing otherwise may result in the loss of the vehicle.
 
 Recognising which Pre-Arm Check has failed using the GCS
 ========================================================
@@ -41,7 +41,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     ======================================================= =================================================== ====================================================
     3D Accel calibration needed                             Accelerometer calibration has not been done         Complete the :ref:`accel calibration <common-accelerometer-calibration>`
     Accels calibrated requires reboot                       Autopilot must be rebooted after accel calibration  Reboot autopilot
-    Accels inconsistent                                     Two accelerometers are inconsistent by 0.75 m/s/s   Re-do the :ref:`accel calibration <common-accelerometer-calibration>`.  Allow autopilot to warm-up and reboot.  If failure continues replace autopilot
+    Accels inconsistent                                     Two accelerometers are inconsistent by 0.75 m/s/s   Re-do the :ref:`accel calibration <common-accelerometer-calibration>`.  Allow autopilot to warm-up and reboot.  If failure continues replace autopilot. If ICE engine runs before arming, see :ref:`ARMING_OPTIONS<ARMING_OPTIONS>` bit 2 as a possible solution.
     ADSB out of memory                                      Autopilot has run out of memory                     Disable features or replace with a higher powered autopilot
     Accels not healthy                                      At least one accelerometer is not providing data    Reboot autopilot.  If failure continues replace autopilot
     AHRS: not using configured AHRS type                    EKF3 is not ready yet and vehicle is using DCM      If indoors, go outside.  Ensure good GPS lock.  Check for misconfiguration of EKF (see :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>`)
@@ -123,7 +123,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     GPS x: was not found                                    GPS disconnected or incorrectly configured          Check GPSs physical connection to autopilot and  :ref:`configuration <common-positioning-landing-page>`
     GPSx yaw not available                                  GPS-for-yaw configured but not working              Move to location with better GPS reception.  Check :ref:`GPS-for-yaw <common-gps-for-yaw>` configuration
     Gyro x rate yHz < loop rate z Hz                        Loop rate is faster than Gyro data                  Lower :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`
-    Gyros inconsistent                                      Two gyros are inconsistent by at least 5 deg/sec    Reboot autopilot and hold vehicle still until gyro calibration completes.  Allow autopilot to warm-up and reboot.  If failure continues replace autopilot
+    Gyros inconsistent                                      Two gyros are inconsistent by at least 5 deg/sec    Reboot autopilot and hold vehicle still until gyro calibration completes.  Allow autopilot to warm-up and reboot.  If failure continues replace autopilot. If ICE engine runs before arming, see :ref:`ARMING_OPTIONS<ARMING_OPTIONS>` bit 2 as a possible solution.
     Gyros not calibrated                                    Gyro calibration normally run at startup failed     Reboot autopilot and hold vehicle still until gyro calibration completes
     Gyros not healthy                                       At least one gyro is not providing data             Reboot autopilot.  If failure continues replace autopilot
     Hardware safety switch                                  Hardware safety switch has not been pushed          Push safety switch (normally on top of GPS) or disable by setting :ref:`BRD_SAFETY_DEFLT<BRD_SAFETY_DEFLT>` to zero and reboot autopilot
@@ -171,8 +171,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     PRXx: No Data                                           Proximity sensor is not providing data              Check proximity sensor physical connection and :ref:`configuration <common-proximity-landingpage>`
     PRXx: Not Connected                                     Proximity sensor is not providing data              Check proximity sensor physical connection and :ref:`configuration <common-proximity-landingpage>`
     Radio failsafe on                                       RC failsafe has triggered                           Turn on RC transmitter or check RC failsafe configuration
-    Rangefinder x: Not Connected                            Rangefinder is not providing data                   Check rangefinder's physical connection to autopilot and :ref:`configuration <common-rangefinder-landingpage>`
-    Rangefinder x: Not Detected                             Rangefinder is not providing data                   Check rangefinder's physical connection to autopilot and :ref:`configuration <common-rangefinder-landingpage>`
+    Rangefinder x: Not Connected                            Rangefinder is not providing data                   Check rangefinder's physical connection to autopilot and :ref:`configuration <common-rangefinder-landingpage>`. Also check that the rangefinder is actually included in the firmware, many are not and require addition via the `custom firmware server <https://custom.ardupilot.org>`__
     RC calibrating                                          RC calibration is in progress                       Complete the :ref:`radio calibration <common-radio-control-calibration>` procedure
     RC not calibrated                                       RC calibration has not been done                    Complete the :ref:`radio calibration <common-radio-control-calibration>`. :ref:`RC3_MIN<RC3_MIN>` and :ref:`RC3_MAX<RC3_MAX>` must have been changed from their default values (1100 and 1900), and for channels 1 to 4, MIN value must be 1300 or less, and MAX value 1700 or more.
     RC not found                                            RC failsafe enabled but no RC signal                Turn on RC transmitter or check RC transmitters connection to autopilot. If operating with only a GCS, see :ref:`common-gcs-only-operation`
@@ -199,9 +198,11 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     SERVOx_FUNCTION=y on disabled channel                   PWM output misconfigured                            SERVOx_FUNCTION is set for a servo output that has been disabled. See :ref:`BLHeli setup<common-blheli32-passthru>`
     SERVOx_MAX is less than SERVOx_TRIM                     PWM output misconfigured                            Set SERVOx_TRIM to be lower than SERVOx_MAX
     SERVOx_MIN is greater than SERVOx_TRIM                  PWM output misconfigured                            Set SERVOx_TRIM to be higher than SERVOx_MIN
+    System not Initialized                                  System still booting up                             Wait, if not resolved shortly there may be a sensor problem not caught by other diagnostics
     temperature cal running                                 Temperature calibration is running                  Wait until :ref:`temp calibration <common-imutempcal>` completes or reboot autopilot
     terrain disabled                                        Auto mission uses terrain but terrain disabled      Enable the terrain database (set :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` = 1) or remove auto mission items that use terrain altitudes.  For Copters also check RTL_ALT_TYPE.
     Terrain out of memory                                   Autopilot has run out of memory                     Disable features or replace with a higher powered autopilot
+    terrain required but disabled                           Auto mission uses terrain but not in firmware       Use custom build server and include the terrain database or remove auto mission items that use terrain altitudes.  For Copters also check RTL_ALT_TYPE.
     Throttle (RCx) is not neutral                           RC transmitter's throttle stick is too high         Lower throttle stick or repeat :ref:`radio calibration <common-radio-control-calibration>`
     Throttle radio max too low                              RC throttle channel max below 1700                  Repeat the :ref:`radio calibration <common-radio-control-calibration>` procedure or increase :ref:`RC2_MAX<RC2_MAX>` above 1700
     Throttle radio min too high                             RC throttle channel min above 1300                  Repeat the :ref:`radio calibration <common-radio-control-calibration>` procedure or reduce :ref:`RC1_MIN<RC1_MIN>` below 1300
@@ -232,7 +233,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Bad parameter: PSC_POSXY_P must be > 0                  Position controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
     Battery failsafe                                        Battery failsafe has triggered                      Plug in battery and check its voltage and capacity.  See ref:`battery failsafe configuration <failsafe-battery>`
     Check ACRO_BAL_ROLL/PITCH                               ACRO_BAL_ROLL or ACRO_BAL_PITCH too high            Reduce :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>` below :ref:`ATC_ANG_RLL_P<ATC_ANG_RLL_P>` and/or :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>` below :ref:`ATC_ANG_PIT_P<ATC_ANG_PIT_P>`.  See :ref:`Acro mode<acro-mode>`
-    Check ANGLE_MAX                                         ANGLE_MAX set too high                              Reduce :ref:`ANGLE_MAX<ANGLE_MAX>` to 8000 (e.g. 80 degrees) or lower
+    Check ANGLE_MAX                                         ANGLE_MAX set too high                              Reduce ``ANGLE_MAX`` to 8000 (e.g. 80 degrees) or lower
     Check FS_THR_VALUE                                      RC failsafe misconfiguration                        Set :ref:`FS_THR_VALUE<FS_THR_VALUE>` between 910 and RC throttle's min (e.g :ref:`RC3_MIN<RC3_MIN>`. See ref:`battery failsafe configuration <failsafe-battery>`
     Check PILOT_SPEED_UP                                    PILOT_SPEED_UP set too low                          Increase :ref:`PILOT_SPEED_UP<PILOT_SPEED_UP>` to a positive number (e.g. 100 = 1m/s).  See :ref:`AltHold mode<altholdmode>`
     Collective below failsafe (TradHeli only)               RC collective input is below FS_THR_VALUE           Turn on RC transmitter or check :ref:`FS_THR_VALUE<FS_THR_VALUE>`.  Check :ref:`RC failsafe setup<radio-failsafe>`
@@ -264,7 +265,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     RTL mode not armable                                    Vehicle cannot be armed in RTL mode                 Switch to another flight mode
     RTL_ALT_TYPE is above-terrain but no rangefinder        RTL uses rangefinder but rangefinder unavailable    Check :ref:`rangefinder configuration<common-rangefinder-landingpage>` including RNGFNDx_ORIENT=251
     RTL_ALT_TYPE is above-terrain but no terrain data       RTL uses terrain but Terrain database unavailable   Set :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` = 1.  See :ref:`Terrain Following<terrain-following>`
-    RTL_ALT_TYPE is above-terrain but RTL_ALT>RNGFND_MAX    RTL return altitude above rangefinder range         Reduce :ref:`RTL_ALT<RTL_ALT>` to less than RNGFNDx_MAX. See :ref:`Terrain Following<terrain-following>`
+    RTL_ALT_TYPE is above-terrain but RTL_ALT>RNGFND_MAX    RTL return altitude above rangefinder range         Reduce ``RTL_ALT`` to less than RNGFNDx_MAX. See :ref:`Terrain Following<terrain-following>`
     Safety Switch                                           Hardware safety switch has not been pushed          Push safety switch (normally on top of GPS) or disable by setting :ref:`BRD_SAFETY_DEFLT<BRD_SAFETY_DEFLT>` to zero and reboot autopilot
     Throttle below failsafe                                 RC throttle input is below FS_THR_VALUE             Turn on RC transmitter or check :ref:`FS_THR_VALUE<FS_THR_VALUE>`.  Check :ref:`RC failsafe setup<radio-failsafe>`
     Vehicle too far from EKF origin                         Vehicle is more than 50km from EKF origin           Reboot autopilot to reset EKF origin to current Location
@@ -284,7 +285,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     AIRSPEED_MIN too low x<5 m/s                            Parameter set too low, under 5m/s                   Raise to at least 20% above stall speed
     Bad parameter: ATC_ANG_PIT_P must be > 0                Attitude controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
     Bad parameter: PSC_POSXY_P must be > 0                  Position controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
-    Check Q_ANGLE_MAX                                       Set above 80 degrees                                Reduce :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` below 80; 30 degrees is typical
+    Check Q_ANGLE_MAX                                       Set above 80 degrees                                Reduce ``Q_ANGLE_MAX`` below 80; 30 degrees is typical
     In landing sequence                                     Trying to arm while still in landing sequence       Reset mission;change to mission item not in a landing sequence
     Invalid THR_FS_VALUE for reversed throttle input        THR_FS_VALUE pwm is not ABOVE the max throttle      Set :ref:`THR_FS_VALUE<THR_FS_VALUE>` above throttle maximum pwm
     ROLL_LIMIT_DEG too small x                              Parameter set under 3 degrees                       Increase, 45 deg recommended minimum for adequate control
@@ -441,7 +442,7 @@ Parameter checks:
 
 **Check FS_THR_VALUE**: the :ref:`radio failsafe pwm value <radio-failsafe>` has been set too close to the throttle channels (i.e. ch3) minimum.
 
-**Check ANGLE_MAX**: the :ref:`ANGLE_MAX<ANGLE_MAX>` parameter which controls the
+**Check ANGLE_MAX**: the ``ANGLE_MAX`` parameter which controls the
 vehicle's maximum lean angle has been set below 10 degrees (i.e. 1000)
 or above 80 degrees (i.e. 8000).
 
@@ -510,7 +511,7 @@ Disabling the Pre-arm Safety Check
 
 .. warning:: Disabling pre-arm safety checks is not recommended. The cause of the pre-arm failure should be corrected before operation of the vehicle if at all possible. If you are confident that the pre-arm check failure is not a real problem, it is possible to disable a failing check.
 
-Arming checks can be individually disabled by setting the :ref:`ARMING_CHECK<ARMING_CHECK>` parameter to something other than 1. Setting to 0 completely removes all pre-arm checks. For example, setting to  4 only checks that the GPS has lock.
+Arming checks can be individually disabled by setting the ``ARMING_CHECK`` parameter to something other than 1. Setting to 0 completely removes all pre-arm checks. For example, setting to  4 only checks that the GPS has lock.
 
 This can also be configured using Mission Planner:
 

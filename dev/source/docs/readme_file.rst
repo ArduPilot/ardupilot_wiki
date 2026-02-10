@@ -6,6 +6,8 @@ HWDEF Readme.md Guide
 
 Every autopilot board port should include a Readme.md file explaining the board's features, pinouts, a required setup information. This file is converted later into a Wiki page that users will reference when deciding on an autopilot to use, and when setting up the autopilot in a system. The required sections are:
 
+.. note:: Markdown linting is being enforced now on Readme.me files (ie. not embedded HTML, tables must be markdown format, urls in proper formaat, no improper whire spacing,etc.)
+
 - :ref:`Introduction <readme-intro>`
 - :ref:`Features/Specifications <readme-specs>`
 - :ref:`Where to Buy <readme-buy>`

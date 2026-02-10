@@ -38,7 +38,7 @@ Getting Started
 
 .. note:: To download from the github locations, first click the script name, then select "raw" in upper right corner, then right mouse click to "Save Page as" a text file with the ".lua" file extension
 
-- Up to 8 RC channels can be assigned as scripting inputs/controls using the``RCX_OPTION`` = "300-307" options to be used by scripts. In addition, four dedicated script parameters are available: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER4<SCR_USER4>` and are accessed with the same method as any other parameter, but these are reserved for script use. Scripts can also generate their own parameters (see :ref:`common-scripting-parameters`)to be used within the scripts.
+- Up to 8 RC channels can be assigned as scripting inputs/controls using the``RCX_OPTION`` = "300-307" options to be used by scripts. In addition, six dedicated script parameters are available: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER6<SCR_USER6>` and are accessed with the same method as any other parameter, but these are reserved for script use. Scripts can also generate their own parameters (see :ref:`common-scripting-parameters`)to be used within the scripts.
 - When the autopilot is powered on it will load and start all scripts. By default it will look in the ROMFS file system for scripts included in the firmware image by a manufacturer, and the APM/scripts directory on the SD Card (or if a SITL simulation, the base directory where the simulation was started.) This can be modified by used the :ref:`SCR_DIR_DISABLE<SCR_DIR_DISABLE>` parameter.
 - Messages and errors are sent to the ground station and, if using Mission Planner, can be viewed in the Data screen's "Messages" tab.
 - :ref:`SCR_HEAP_SIZE <SCR_HEAP_SIZE>` can be adjusted to increase or decrease the amount of memory available for scripts. The default , which varies from 43K to 204.8K depending on cpu being used, is sufficient at its smallest (43K) for small scripts, but many will require more (some applets now need 300K). The autopilot's free memory depends highly upon which features and peripherals are enabled. If this parameter is set too low, scripts may fail to run and give an out of memory pre-arm error. If set too high other autopilot features such as Terrain Following or even the EKF may fail to initialize. On autopilots with a STM32F4 microcontroller, Smart RTL (Rover, Copter) and Terrain Following (Plane, Copter) need to be nearly always disabled. These features are usually enabled by default, set :ref:`SRTL_POINTS <SRTL_POINTS>` = 0, :ref:`TERRAIN_ENABLE <TERRAIN_ENABLE>` = 0). See also :ref:`RAM Limitations<ram_limitations>` section.
@@ -104,7 +104,7 @@ The last line of the script is also used to schedule the function to be run for 
 
 Script Crashes and Errors
 =========================
-If scripts run out of memory (or panic for any reason) all currently running scripts are terminated. If an indivdual script has an errror, it will terminate. If either occurs before arming, a pre-arm failure will be generated. A scripting restart command or reboot would be needed to restart the script or scripting as a whole.
+If scripts run out of memory (or panic for any reason) all currently running scripts are terminated. If an individual script has an error, it will terminate. If either occurs before arming, a pre-arm failure will be generated. A scripting restart command or reboot would be needed to restart the script or scripting as a whole.
 
 In order to prevent arming if a script is missing (ie. SD card ejected or file corrupted) or if a script that is supposed to run once before arming and then terminate, but does not, then either, or both, of two checksum pre-arm checks can be enabled:
 
@@ -493,6 +493,10 @@ The objects returned by the above functions support the following methods:
 - ``port:available()`` - Returns the number of bytes available to read. A read of the given number of bytes may fail on certain errors or if there is another reader (e.g. mavlink passthrough), though these are extremely unlikely occurrences.
 
 - ``port:set_flow_control(fcs)`` - Set flow control setting for scripting protocol ports (those from ``find_serial``). No effect for device simulation ports (those from ``find_simulated_device``). ``fcs`` can be 0 to disable, 1 to enable, or 2 for automatic mode.
+
+- ``port:configure_parity(mode)`` - Configure the UART parity mode for scripting protocol ports (those from ``find_serial``). No effect for device simulation ports (those from ``find_simulated_device``). A value of 0 disables parity (default), 1 enables odd parity, and 2 enables even parity. An internal UART restart may occur when this setting is applied.
+
+- ``port:set_stop_bits(count)`` - Set the UART stop bit configuration for scripting protocol ports. No effect for device simulation ports. A value of 1 selects one stop bit (default), and a value of 2 selects two stop bits. Invalid values are ignored.
 
 Barometer (baro:)
 ~~~~~~~~~~~~~~~~~

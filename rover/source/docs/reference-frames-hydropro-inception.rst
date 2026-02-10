@@ -29,7 +29,7 @@ The battery power module was left in the main open area of the frame but partial
 
 Firmware used: Rover-3.5.0
 
-Parameter file: `HK-HydroProInception-Rover350.param <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/HK-HydroProInception-Rover350.param>`__
+Parameter file: `HK-HydroProInception-Rover350.param <https://github.com/ArduPilot/ardupilot/blob/APMrover2-stable/Tools/Frame_params/HK-HydroProInception-Rover350.param>`__
 
 This parameter file can also be loaded using the Mission Planner's Config/Tuning >> Full Parameter Tree page by selecting "HK-HydroProInception-Rover350" from the drop down on the middle right and then push the "Load Presaved" button.
 

@@ -32,7 +32,7 @@ Key Parameters
 Attitude Limiting Parameters
 ----------------------------
 
-The pitch and roll limits in VTOL modes are controlled by the lesser of :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`, or the fixed wing limits (:ref:`PTCH_LIM_MAX_DEG<PTCH_LIM_MAX_DEG>`, :ref:`PTCH_LIM_MIN_DEG<PTCH_LIM_MIN_DEG>`, and :ref:` ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>`), but conformance to only :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` can be controlled with :ref:`Q_OPTIONS<Q_OPTIONS>` bit 14.
+The pitch and roll limits in VTOL modes are controlled by the lesser of ``Q_ANGLE_MAX``, or the fixed wing limits (:ref:`PTCH_LIM_MAX_DEG<PTCH_LIM_MAX_DEG>`, :ref:`PTCH_LIM_MIN_DEG<PTCH_LIM_MIN_DEG>`, and :ref:` ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>`), but conformance to only ``Q_ANGLE_MAX`` can be controlled with :ref:`Q_OPTIONS<Q_OPTIONS>` bit 14.
 
 In addition, :ref:`Q_BCK_PIT_LIM<Q_BCK_PIT_LIM>` sets the maximum number of degrees of back or pitch up in Q modes when the airspeed is at :ref:`AIRSPEED_MIN<AIRSPEED_MIN>`, and is used to prevent excessive structural loads when pitching up to decelerate. The backwards/up pitch limit controlled by this parameter is in addition to limiting applied by the params above. The :ref:`Q_BCK_PIT_LIM<Q_BCK_PIT_LIM>` limit is only applied when :ref:`Q_FWD_THR_USE<Q_FWD_THR_USE>` is set to 1 or 2 and the vehicle is flying in a mode that uses forward throttle instead of forward tilt to generate forward speed. A value 0 to deactivates this limit.
 
@@ -108,7 +108,7 @@ In addition, the behavior of QuadPlane can be modified by the setting of the :re
 -  bit 11(+2048), if set, will delay VTOL motor spin up until 2 seconds after arming.
 -  bit 12(+4096), if set, disable speed based Qassist when using synthetic airspeed
 -  bit 13(+8192), if set, will disable Ground Effect Compensation of baro due to ground effect pressures
--  bit 14(+16384), if set, ignore forward flight angle limits in Qmodes, otherwise :ref:`PTCH_LIM_MAX_DEG<PTCH_LIM_MAX_DEG>`, :ref:`PTCH_LIM_MIN_DEG<PTCH_LIM_MIN_DEG>`, and :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` can constrain :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` in VTOL modes.
+-  bit 14(+16384), if set, ignore forward flight angle limits in Qmodes, otherwise :ref:`PTCH_LIM_MAX_DEG<PTCH_LIM_MAX_DEG>`, :ref:`PTCH_LIM_MIN_DEG<PTCH_LIM_MIN_DEG>`, and :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` can constrain ``Q_ANGLE_MAX`` in VTOL modes.
 -  bit 15(+32768), if set, will allow pilot to control descent during VTOL AUTO-LAND phases, similar to throttle stick action during QHOVER or QLOITER. However, this will not become active until the throttle stick is raised above 70% during the descent at least once.
 -  bit 16(+65536), if set, will disable the fixed wing approach in QRTL mode and VTOL_LANDING mission items, see Hybrid RTL modes section of :ref:`quadplane-flying` for details of this hybrid landing approach.
 -  bit 17(+131072), if set, will enable pilot horizontal re-positioning during VTOL auto LAND phases, momentarily pausing the descent while doing so.

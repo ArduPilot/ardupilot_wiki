@@ -3,8 +3,10 @@
 ================
 Mission Commands
 ================
-
 This article describes the mission commands that are supported by Copter, Plane, Sub and Rover when switched into Auto mode.
+
+.. note:: there are many other MAVLink commands that a GCS or other device can send to the autopilot. See the ArduPilot/navlink repository, or the documentation for your GCS.
+
 [site wiki="copter"]
 A simpler list just for :ref:`Copter can be found here <copter:mission-command-list>`
 [/site]
@@ -990,7 +992,9 @@ and then proceed to the next command upon intersection of the course to it with 
 for the parameter will be used. Fractional turns between 0 and 1 are supported, while turns greater than 1 must be integers.
 
 The radius of the circle is controlled by the
-command parameter. A radius of 0 will result in :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` being used as the radius. Negative radius values result in counter-clockwise turns instead of clockwise turns. Radius values over 255 meters will be rounded down to the nearest 10 meter mark. Instead of exiting at the intersection if the next waypoint's course with the circle's perimeter, a tangential intersection exit point can be selected by setting EXIT =1.
+command parameter. A radius of 0 will result in :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` being used as the radius. Negative radius values result in counter-clockwise turns instead of clockwise turns. Radius values over 255 meters will be rounded down to the nearest 10 meter mark. Once the number of turns is completed, continue to loiter until heading
+points to next nav waypoint. If XTrack Tangent param =1, proceed directly to next waypoint, otherwise, track to
+the path in a line between the waypoint centers. =1.
 
 **Command parameters**
 
@@ -1020,8 +1024,8 @@ command parameter. A radius of 0 will result in :ref:`WP_LOITER_RAD<WP_LOITER_RA
    <td>Loiter radius around the waypoint. Units are in meters. Values over 255 will be rounded to units of 10 meters. and values greater than 2550 will be clamped to 2550 m. Negative values indicate counter-clockwise turns. A value of zero will use WP_LOITER_RAD </td>
    </tr>
    <td><strong>param4</strong></td>
-   <td>Exit</td>
-   <td>if 0, exit will occur where path to next waypoint intersects the loiter path after completion of the specified number of turns. if 1, exit will be where next waypoint path is tangential to loiter path </td>
+   <td>XTrack Tangent</td>
+   <td>Determines which line the aircraft will track after exiting the loiter. If 0, track the line from the center of the circle to the next waypoint. If 1, track the line tangent to the circle to the next waypoint.</td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>
@@ -1126,7 +1130,11 @@ number of seconds — where loiter means "circle the waypoint". The timer
 starts when the waypoint is reached; when it expires the waypoint is
 complete. If zero is specified for a latitude/longitude/altitude
 parameter then the current location value for the parameter will be
-used. You can also specify the radius and direction for the loiter.
+used. You can also specify the radius and direction for the loiter. Once
+time has elapsed, continue to loiter until heading
+points to next nav waypoint. If XTrack Tangent param = gb1, proceed directly to next waypoint, otherwise, track to 
+the path in a line between the waypoint centers.
+
 
 The radius of the loiter is set in the ``WP_LOITER_RAD`` parameter.
 
@@ -1156,11 +1164,9 @@ The radius of the loiter is set in the ``WP_LOITER_RAD`` parameter.
    <td>Dir 1=CW</td>
    <td>Radius around waypoint, in meters. Specify as a positive value to loiter clockwise, as a negative to move counter-clockwise.</td>
    </tr>
-   <tr style="color: #c0c0c0">
    <td><strong>param4</strong></td>
-   <td>
-   </td>
-   <td>Desired yaw angle.</td>
+   <td>XTrack Tangent</td>
+   <td>Determines which line the aircraft will track after exiting the loiter. If 0, track the line from the center of the circle to the next waypoint. If 1, track the line tangent to the circle to the next waypoint.
    </tr>
    <tr>
    <td><strong>param5</strong></td>
@@ -1206,7 +1212,7 @@ lock after arming if the vehicle configuration allows this).
 
 This is the mission equivalent of the :ref:`RTL flight mode <copter:rtl-mode>`.  The vehicle will
 first climb to the
-:ref:`RTL_ALT <copter:RTL_ALT>`
+``RTL_ALT``
 parameter's specified altitude (default is 15m) before returning home.
 
 This command takes no parameters and generally should be the last
@@ -1902,9 +1908,11 @@ Loiter while climbing/descending to an altitude.
 
 Begin loitering at the specified Latitude and Longitude. If Lat=Lon=0, then
 loiter at the current position. Don't consider the navigation command
-complete (don't leave loiter) until the altitude has been reached.
-Additionally, if the Heading Required parameter is non-zero the aircraft
-will not leave the loiter until heading toward the next waypoint.
+complete (don't leave loiter) until the altitude has been reached. Continue to loiter until heading
+points to next nav waypoint. If XTrack Tangent param =1, proceed directly to next waypoint, otherwise, track to 
+the path in a line between the waypoint centers.
+
+
 
 **Command parameters**
 
@@ -1918,15 +1926,15 @@ will not leave the loiter until heading toward the next waypoint.
    <th>Description</th>
    </tr>
    <tr>
-   <td><strong>param1</strong></td>
-   <td>Radius</td>
-   <td>Radius in meters. If positive loiter clockwise, negative counter-clockwise, 0 means no change to standard loiter.</td>
-   </tr>
-   <tr>
    <tr style="color: #c0c0c0">
-   <td>param2</td>
+   <td><strong>param1</strong></td>
    <td></td>
    <td>Empty</td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>Radius</td>
+   <td>Radius in meters. If positive loiter clockwise, negative counter-clockwise, 0 means no change to standard loiter.</td>
    </tr>
    <tr>
    <tr style="color: #c0c0c0">
@@ -1934,10 +1942,9 @@ will not leave the loiter until heading toward the next waypoint.
    <td></td>
    <td>Empty</td>
    </tr>
-   <tr style="color: #c0c0c0">
    <td>param4</td>
-   <td></td>
-   <td>Empty</td>
+   <td>XTrack Tangent</td>
+   <td>Determines which line the aircraft will track after exiting the loiter. If 0, track the line from the center of the circle to the next waypoint. If 1, track the line tangent to the circle to the next waypoint.</td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>

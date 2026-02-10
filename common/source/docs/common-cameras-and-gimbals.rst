@@ -4,6 +4,8 @@
 Cameras and Gimbals
 ===================
 
+.. note:: This feature and gimbal drivers are NOT normally included on standard firmware for smaller flash (F4) boards. Use the `Custom Firmware Build Server <https://firmware.ardupilot.org/>`__ to create firmware that includes it.
+
 Copter, Plane and Rover support up to 3-axis gimbals, including advance
 features like automated aiming of the camera at a Region of Interest
 (ROI), and automatic triggering of a camera shutter.  Follow the links below

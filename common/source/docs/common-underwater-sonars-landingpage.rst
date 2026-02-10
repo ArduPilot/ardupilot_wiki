@@ -12,12 +12,15 @@ Follow the links below (or in the sidebar) for configuration information based u
     :maxdepth: 1
 
     BlueRobotics Ping <common-bluerobotics-ping>
+    CEELine single-beam echosounder <common-ceeline>
     EchoLogger ECT400 <common-echologger-ect400>
+    Hondex Sonar<common-hondex-sonar>
+    JSN-SR04T Sonar <common-jsn-sr04t>
     Kogger Sonar <common-kogger-sonar>
+    Lowrance HST-WSBL <common-underwater-sonar-analog>
     Lowrance Elite Ti2 Sonar <common-lowrance-elite-ti2-sonar>
-    Underwater Sonar (Analog) <common-underwater-sonar-analog>
+    L04 sonar <common-sonar-L04xMTW-GL04xMT.rst>
     Triducer <common-underwater-triducer>
-    Simple sonar <common-sonar-L04xMTW-GL04xMT.rst>
 
 [site wiki="rover"]
 Bathymetry Tools

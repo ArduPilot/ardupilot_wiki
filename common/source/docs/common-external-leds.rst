@@ -50,6 +50,22 @@ Serial LEDs require a whole pwm group, more information about your autopilot's P
 
 .. note:: Be sure the output is configures as normal PWM instead of a GPIO output. Flight controllers with a IOMCU can only use the AUX outputs for connecting serial LEDs. To check that the desired outputs have been setup correctly look for the PWM types message in your GCS's messages tab. See :ref:`common-gpios`
 
+PWM Connected Strobes
+=====================
+
+High-intensity strobes often connect to standard servo outputs and are controlled via PWM (RC pass-through) or specific LED functions.
+
+.. image:: ../../../images/Teravolt/StrobeIT/StrobeIT_1.png
+    :target: ../images/Teravolt/StrobeIT/StrobeIT_1.png
+    
+.. youtube:: V1odmniQY-s
+
+.. toctree::
+    :maxdepth: 1
+
+    StrobeIT <common-StrobeIT>
+    StrobeIT Pro <common-StrobeIT-Pro>
+    
 NTF LED Meaning
 ===============
 

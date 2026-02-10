@@ -80,7 +80,7 @@ position which is the location where the copter was armed.
 
 As the copter touches down at the end of the mission the vehicle should automatically disarm but occasionally the vehicle may not sense the landing and the pilot may need to hold the throttle down and takeoff in another mode like Stabilize or Loiter and then manually disarm the vehicle.
 
-.. note:: for a NAV_LAND, the :ref:`LAND_SPEED<LAND_SPEED>` and the :ref:`LAND_SPEED_HIGH<LAND_SPEED_HIGH>` parameters affect descent speed just like in the :ref:`land-mode`. The :ref:`PILOT_THR_BHV<PILOT_THR_BHV>` option bit 1, when set, allows high throttle stick position to cancel the landing, and the mission will move to the next mission item, or just hover in place until the mode is changed or mission restarted. During landing the pilot can re-position the vehicle using the pitch and roll sticks to avoid obstacles.
+.. note:: for a NAV_LAND, the ``LAND_SPEED`` and the ``LAND_SPEED_HIGH`` parameters affect descent speed just like in the :ref:`land-mode`. The :ref:`PILOT_THR_BHV<PILOT_THR_BHV>` option bit 1, when set, allows high throttle stick position to cancel the landing, and the mission will move to the next mission item, or just hover in place until the mode is changed or mission restarted. During landing the pilot can re-position the vehicle using the pitch and roll sticks to avoid obstacles.
 
 Tuning
 ======
@@ -123,7 +123,7 @@ Below are a list of commonly reported problems and recommendations
    - Increase :ref:`WPNAV_ACCEL <WPNAV_ACCEL>` to allow the vehicle to accelerate to its maximum speed more quickly
    - Increase :ref:`WPNAV_JERK <WPNAV_JERK>` to allow the vehicle to get to its maximum acceleration more quickly
    - If the waypoint includes a climb or descent the vehicle's horizontal speed may be limited by :ref:`WPNAV_SPEED_UP <WPNAV_SPEED_UP>` or :ref:`WPNAV_SPEED_DN <WPNAV_SPEED_DN>`
-   - Ensure the vehicle's maximum lean angle (e.g. :ref:`ANGLE_MAX <ANGLE_MAX>`) is sufficient to reach the desired speed
+   - Ensure the vehicle's maximum lean angle (e.g. ``ANGLE_MAX``) is sufficient to reach the desired speed
    - Ensure the vehicle has enough power to maintain both altitude and the desired speed
    - If the mission command uses :ref:`terrain following <terrain-following>` the vehicle may need to slow horizontally to maintain the desired altitude above terrain
    - Move the waypoints to be further apart.  S-Cruve navigation only looks forward two waypoints and plans a path that allows it to stop by the time it reaches the 2nd waypoints (`see this issue for more details <https://github.com/ArduPilot/ardupilot/issues/28953>`__)

@@ -70,7 +70,7 @@ The :ref:`ACRO_TRAINER <ACRO_TRAINER>` parameter can be set to:
 -  2 (Default) = automatic leveling and lean angle limited. Includes the
    automatic leveling as option #1 but in addition the vehicle will not
    lean more than 45 degrees (this angle can be configured with the
-   :ref:`ANGLE_MAX<ANGLE_MAX>` parameter).
+   ``ANGLE_MAX`` parameter).
 
 The trainer can be enabled/disabled using the Ch7/Ch8 switches or a channel setup via its ``RCx_OPTION`` parameter.  With a
 3 position switch the off position (i.e. PWM < 1200) will disable the

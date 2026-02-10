@@ -12,6 +12,7 @@ This includes:
 * `Rover <https://firmware.ardupilot.org/Rover>`__ 
 * `AntennaTracker <https://firmware.ardupilot.org/AntennaTracker>`__ 
 * `Sub <https://firmware.ardupilot.org/Sub>`__ 
+* `Blimp <https://firmware.ardupilot.org/Blimp>`__ 
 
 This page provides additional links to a number of specific builds that are considered "significant" - for example, the last builds of 
 Copter to fit on the APM2.x board.

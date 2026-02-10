@@ -8,6 +8,8 @@ Copter/Plane/Rover support a number of different rangefinders including Lidars (
 
 A forward facing rangefinders can also be used for Obstacle Avoidance. See Rangefinder :ref:`Setup Overview <common-rangefinder-setup>` to know more.
 
+.. warning:: Many rangefinders are not included in the standard builds. If you get a pre-arm message that it is not being detected on power up, check the firmware's included :ref:`features list <common-limited_firmware>`
+
 [site wiki="plane"]
 .. tip::
 
@@ -62,6 +64,8 @@ Unidirectional Rangefinders
 
     Ainstein US-D1 Radar Altimeter <common-aerotenna-usd1>
     Ainstein LR-D1 Radar Altimerer <common-ainstein-lrd1>
+    ARK DIST MR <common-ark-dist-mr>    
+    ARK DIST SR <common-ark-dist-sr>
     Attollo Engineering Wasp200 <common-wasp200-lidar>
     Avionics Anonymous DroneCAN LIDAR Interface <common-avanon-laserint>
     Benewake TF02-Pro / TF03 / TFS20-L / TF-Luna / TF-Nova / TF350 <common-benewake-tf02-lidar>
@@ -69,10 +73,8 @@ Unidirectional Rangefinders
     Garmin Lidar-Lite <common-rangefinder-lidarlite>
     GY-US42 Sonar <common-rangefinder-gy-us42>
     Hexsoon 24G Radar <common-rangefinder-hexsoon-24g>
-    Hondex Sonar<common-hondex-sonar>
     HC-SR04 Sonar <common-rangefinder-hcsr04>
     JAE JRE-30 <common-rangefinder-jae-jre-30>
-    JSN-SR04T Sonar <common-jsn-sr04t>
     LeddarTech Leddar One <common-leddar-one-lidar>
     LeddarTech LeddarVu8 <common-leddartech-leddarvu8-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
@@ -86,7 +88,13 @@ Unidirectional Rangefinders
     ST VL53L0X / VL53L1X Lidar <common-vl53l0x-lidar>
     TeraRanger One/EVO Rangefinders <common-teraranger-one-rangefinder>
     TeraRanger NEO <common-teraranger-neo>
-    Underwater Sonar <common-underwater-sonars-landingpage>
+
+Underwater Sonar
+================
+.. toctree::
+    :maxdepth: 1
+
+    Underwater Sonars <common-underwater-sonars-landingpage>
 
 Omnidirectional Proximity Rangefinders
 ======================================

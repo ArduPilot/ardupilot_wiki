@@ -30,7 +30,7 @@ Specifications
    -  13x PWM outputs (12 motor outputs and 1 LED output)
    -  1x RC input pre-configured on a UART
    -  7x total UARTs/serial for GPS and other peripherals
-   -  microSD Card
+   -  integrated microSD chip for logging
    -  2x I2C port for external compass,airspeed,etc.
    -  1x CAN port
    -  USB-C port

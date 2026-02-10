@@ -22,6 +22,6 @@ Connection and Setup
 
 Firmware used: Copter-4.0
 
-Parameter file: `amovlab-p200.param <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/amovlab-p200.param>`__
+Parameter file: `amovlab-p200.param <https://github.com/ArduPilot/ardupilot/blob/ArduCopter-stable/Tools/Frame_params/amovlab-p200.param>`__
 
 This parameter file can also be loaded using the Mission Planner's Config/Tuning >> Full Parameter Tree page by selecting "amovlab-p200" from the drop down on the middle right and then push the "Load Presaved" button.

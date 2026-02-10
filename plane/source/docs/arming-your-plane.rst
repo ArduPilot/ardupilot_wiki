@@ -39,7 +39,7 @@ There are three parameters which control how arming works:
    required. The default is 1, meaning that arming is required before
    takeoff. If set to 0 then arming is not required (the plane starts
    off armed).
--  :ref:`ARMING_CHECK<ARMING_CHECK>`: this controls what checks the autopilot does
+-  ``ARMING_CHECK``: this controls what checks the autopilot does
    before arming is allowed. The default is 1, meaning all checks are
    done. Most users should leave it at 1, as the arming checks are
    important to ensure the autopilot is ready. See below.

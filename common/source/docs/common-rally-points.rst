@@ -71,7 +71,7 @@ The following should be considered when using Rally Points:
    loiter points; determined by the :ref:`WP_LOITER_RAD <WP_LOITER_RAD>`
    parameter.
 #. The :ref:`RTL_ALTITUDE <RTL_ALTITUDE>` or 
-   :ref:`RTL_ALT <copter:RTL_ALT>` parameters are NOT used with Rally Points! 
+   ``RTL_ALT`` parameters are NOT used with Rally Points! 
    The aircraft will transit to the Rally Point at the altitude 
    specified when adding that point.
 

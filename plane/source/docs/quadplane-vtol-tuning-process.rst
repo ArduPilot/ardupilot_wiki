@@ -212,10 +212,10 @@ This test will allow to test the altitude controller and ensure the stability of
 
 3. Set these parameters on ground and preferably disarm  (A confident pilot could set them in flight with GCS):
 
-  - :ref:`Q_P_ACCZ_I <Q_P_ACCZ_I>` to 2 x :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
-  - :ref:`Q_P_ACCZ_P <Q_P_ACCZ_P>` to :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
+  - ``Q_P_ACCZ_I`` to 2 x :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
+  - ``Q_P_ACCZ_P`` to :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
 
- If the QuadPlane in QHOVER starts to move up and down, the vertical position and velocity controllers may need to be reduced by 50%. These values are: :ref:`Q_P_POSZ_P <Q_P_POSZ_P>` and :ref:`Q_P_VELZ_P <Q_P_POSZ_P>`.
+ If the QuadPlane in QHOVER starts to move up and down, the vertical position and velocity controllers may need to be reduced by 50%. These values are: ``Q_P_POSZ_P`` and ``Q_P_VELZ_P``.
 
 .. note:: If the :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` learned should be ~0.3-0.6. Higher values indicate that insufficient thrust is available, either due to motor system design, obstructed prop air flow by the fuselage or wings, or excessive yaw bias (see next section)
 
@@ -441,7 +441,7 @@ QuadPlane has a set of parameters that define the way the aircraft feels to fly.
 The most important of these parameters is:
 
 - :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>`: yaw rate x 45 degrees/s
-- :ref:`Q_ANGLE_MAX <Q_ANGLE_MAX>`:  maximum lean angle
+- ``Q_ANGLE_MAX``:  maximum lean angle
 - :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`: Pitch rate acceleration
 - :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>`: Roll rate acceleration
 - :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>`: Yaw rate acceleration
@@ -467,7 +467,7 @@ The full list of input shaping parameters are:
 
 
 - :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>`
-- :ref:`Q_ANGLE_MAX <Q_ANGLE_MAX>`
+- ``Q_ANGLE_MAX``
 - :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`
 - :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>`
 - :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>`
@@ -476,12 +476,12 @@ The full list of input shaping parameters are:
 - :ref:`Q_A_RATE_R_MAX <Q_A_RATE_R_MAX>`
 - :ref:`Q_A_RATE_Y_MAX <Q_A_RATE_Y_MAX>`
 - :ref:`Q_A_SLEW_YAW <Q_A_SLEW_YAW>`
-- :ref:`Q_P_JERK_XY<Q_P_JERK_XY>`
-- :ref:`Q_P_JERK_Z<Q_P_JERK_Z>`
-- :ref:`Q_LOIT_ACC_MAX <Q_LOIT_ACC_MAX>`
+- ``Q_P_JERK_XY``
+- ``Q_P_JERK_Z``
+- ``Q_LOIT_ACC_MAX``
 - :ref:`Q_LOIT_ANG_MAX <Q_LOIT_ANG_MAX>`
-- :ref:`Q_LOIT_BRK_ACCEL <Q_LOIT_BRK_ACCEL>`
+- ``Q_LOIT_BRK_ACCEL``
 - :ref:`Q_LOIT_BRK_DELAY <Q_LOIT_BRK_DELAY>`
-- :ref:`Q_LOIT_BRK_JERK <Q_LOIT_BRK_JERK>`
-- :ref:`Q_LOIT_SPEED <Q_LOIT_SPEED>`
+- ``Q_LOIT_BRK_JERK``
+- ``Q_LOIT_SPEED``
 

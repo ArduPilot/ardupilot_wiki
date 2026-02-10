@@ -47,16 +47,16 @@ Tuning
 ======
 
 
-The :ref:`Q_P_POSZ_P <Q_P_POSZ_P>` is used to convert the altitude error (the
+The ``Q_P_POSZ_P`` is used to convert the altitude error (the
 difference between the desired altitude and the actual altitude) to a
 desired climb or descent rate.  A higher rate will make it more
 aggressively attempt to maintain it’s altitude but if set too high leads
 to a jerky throttle response.
 
-The :ref:`Q_P_VELZ_P <Q_P_VELZ_P>` (which normally requires no tuning) converts the
+The ``Q_P_VELZ_P`` (which normally requires no tuning) converts the
 desired climb or descent rate into a desired acceleration up or down.
  
-The :ref:`Q_P_ACCZ_P <Q_P_ACCZ_P>`, :ref:`Q_P_ACCZ_I <Q_P_ACCZ_I>`, :ref:`Q_P_ACCZ_D <Q_P_ACCZ_D>` gains convert the acceleration error (i.e the
+The ``Q_P_ACCZ_P``, ``Q_P_ACCZ_I``, ``Q_P_ACCZ_D`` gains convert the acceleration error (i.e the
 difference between the desired acceleration and the actual acceleration)
 into a motor output.  The 1:2 ratio of P to I (i.e. I is twice the size
 of P) should be maintained if you modify these parameters.  These values

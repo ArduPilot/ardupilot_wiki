@@ -51,6 +51,19 @@ New Board Support
 - F4BY_H743, see https://github.com/ArduPilot/ardupilot_wiki/pull/7148
 - RadioLinkF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/7153
 - AeroCogito H7Digital, see https://github.com/ArduPilot/ardupilot_wiki/pull/7154
+- PocketBeagle2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7165
+- TBS Lucid H7 Wing AIO, see <https://github.com/ArduPilot/ardupilot_wiki/pull/7169>
+- MicoAir743-Lite, see https://github.com/ArduPilot/ardupilot_wiki/pull/7258
+- SkyRukh Surge H67, see https://github.com/ArduPilot/ardupilot_wiki/pull/7259
+- Aeromind6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/7279
+- AIRBRAINH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/7287
+- X-MAV-AP-H743r1, see https://github.com/ArduPilot/ardupilot_wiki/pull/7288
+- Atlas Control, see https://github.com/ArduPilot/ardupilot_wiki/pull/7302
+- MatekH7A3-Wing, see https://github.com/ArduPilot/ardupilot_wiki/pull/7347
+- SpeedyBee F4 V5, see https://github.com/ArduPilot/ardupilot_wiki/pull/7371
+- Morakot, see https://github.com/ArduPilot/ardupilot_wiki/pull/7385
+- DAKEFPVH743-SLIM, see https://github.com/ArduPilot/ardupilot_wiki/pull/7391
+- ATOMRCNAVI-Deluxe, see https://github.com/ArduPilot/ardupilot_wiki/pull/6868
 
 New Peripheral Support
 ======================
@@ -59,6 +72,16 @@ New Peripheral Support
 - Torqeedo TorqLink controlled motors, see https://github.com/ArduPilot/ardupilot_wiki/pull/6584
 - Battery Tags, see https://github.com/ArduPilot/ardupilot_wiki/pull/6893
 - VimDrones DroneCAN peripherals, see https://github.com/ArduPilot/ardupilot_wiki/pull/6906
+- VSPeak fuel flow meter, see https://github.com/ArduPilot/ardupilot_wiki/pull/7175
+- Lightware GRF250/500 Rangefinder, see https://github.com/ArduPilot/ardupilot_wiki/pull/7205
+- Currawong CORTEX Generator, see https://github.com/ArduPilot/ardupilot_wiki/pull/7266
+- Benewake TSF20L rangefinder, see https://github.com/ArduPilot/ardupilot_wiki/pull/7269
+- Enhanced CADDX Gimbal operation and AUX switch, see https://github.com/ArduPilot/ardupilot_wiki/pull/7283
+- Add NAVIC constellation option, see https://github.com/ArduPilot/ardupilot_wiki/pull/7292
+- 3DR ASUAV DroneCAN Airspeed/Barometer, see https://github.com/ArduPilot/ardupilot_wiki/pull/7343
+- Temperature sensors expanded to 15, see https://github.com/ArduPilot/ardupilot_wiki/pull/7349
+- AVT Gimbals, see https://github.com/ArduPilot/ardupilot_wiki/pull/7380
+
 
 New Features
 ============
@@ -87,6 +110,16 @@ New Features
 - Add mission climb slope parameter, seehttps://github.com/ArduPilot/ardupilot_wiki/pull/7111
 - Add MAV_GSC_SYSID_HI parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/7123
 - New optical flow option for gimbal mounted sensors, see https://github.com/ArduPilot/ardupilot_wiki/pull/7125
+- DroneCAN playback from log, see https://github.com/ArduPilot/ardupilot_wiki/pull/7173
+- Throttle kill scripting applet, see https://github.com/ArduPilot/ardupilot_wiki/pull/7243
+- Removed Robotis and Voltz servos from standard builds on small boards, see https://github.com/ArduPilot/ardupilot_wiki/pull/7245
+- Add new Terrain option allowing no SD card storage, see https://github.com/ArduPilot/ardupilot_wiki/pull/7262
+- Add new flight distance statistic, see https://github.com/ArduPilot/ardupilot_wiki/pull/7264
+- Add/modify RC_FS_TIMEOUT paran, see https://github.com/ArduPilot/ardupilot_wiki/pull/7268
+- Display unhealthy compass index in pre-arm messages, see https://github.com/ArduPilot/ardupilot_wiki/pull/7306
+- Added FPV modes to CADDX and Roll/Pitch Axes lock controls, see https://github.com/ArduPilot/ardupilot_wiki/pull/7352
+- Many PSC and Q_P params change names, see https://github.com/ArduPilot/ardupilot_wiki/pull/7328
+- Added new POI Lock and tracking AUX Function, see https://github.com/ArduPilot/ardupilot_wiki/pull/7352
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
@@ -99,6 +132,7 @@ New Features
 - Add SYSID mode for vehicle model development, see https://github.com/ArduPilot/ardupilot_wiki/pull/7041
 - Add AutoFlap flight option for operation in manual modes, see https://github.com/ArduPilot/ardupilot_wiki/pull/7016
 - Add Quadplane terrain avoidance script with climb check, see https://github.com/ArduPilot/ardupilot_wiki/pull/7105
+- Add Roll limit Flight Option, see https://github.com/ArduPilot/ardupilot_wiki/pull/7209
 [/site]
 [site wiki="copter"]
 - Fast Attitude loop option, see https://github.com/ArduPilot/ardupilot_wiki/pull/6470
@@ -113,6 +147,7 @@ New Features
 - Add auto flap flight mode option, see https://github.com/ArduPilot/ardupilot_wiki/pull/7016
 - Ability to skip IMU pre-arm check for running ICE engines, see https://github.com/ArduPilot/ardupilot_wiki/pull/7044
 - Second TX based tuning channel, see https://github.com/ArduPilot/ardupilot_wiki/pull/7122
+- Added Motor IDLE state minimum time, see https://github.com/ArduPilot/ardupilot_wiki/pull/7392
 [/site]
 [site wiki="rover"]
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600
@@ -120,4 +155,6 @@ New Features
 - Add LOITER/HOLD failsafe action, see https://github.com/ArduPilot/ardupilot_wiki/pull/6911
 - Add MTR_REV_DELAY, see https://github.com/ArduPilot/ardupilot_wiki/pull/6935
 - Add pivot turn max deceleration parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/7000
+- Add RTL_AUTOLAND/_RTL_MODE pre-arm check, see https://github.com/ArduPilot/ardupilot_wiki/pull/7249
+- Add WATT_MAX power limiter param, see https://github.com/ArduPilot/ardupilot_wiki/pull/7294
 [/site]

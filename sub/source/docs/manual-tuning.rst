@@ -46,7 +46,7 @@ Maximum Attitude Angle Limits
 =============================
 These can be changed with:
 
-- :ref:`ANGLE_MAX<ANGLE_MAX>`
+- ``ANGLE_MAX``
 - :ref:`XTRACK_ANG_LIM<XTRACK_ANG_LIM>`
 
 Speeds
@@ -66,5 +66,5 @@ Depth Control
 
 Vertical position holding modes (ALT_HOLD,etc.) have these primary tuning parameters, which can be lowered if depth oscillation occurs:
 
-- :ref:`PSC_POSZ_P<PSC_POSZ_P>`
-- :ref:`PSC_VELZ_P<PSC_VELZ_P>`
+- ``PSC_POSZ_P``
+- ``PSC_VELZ_P``
