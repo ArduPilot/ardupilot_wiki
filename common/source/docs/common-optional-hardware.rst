@@ -95,3 +95,6 @@ For guidance on cable design, colour coding, and EMI-compliant wiring, especiall
     Wind Vane <wind-vane>
     Wheel Encoders <wheel-encoder>
 [/site]
+[site wiki="copter,plane"]
+    Tracking Systems <common-tracking-systems>
+[/site]
