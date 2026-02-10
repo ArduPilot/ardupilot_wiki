@@ -25,7 +25,7 @@ camera gimbal, antenna tracker etc.
     Compass Calibration <common-compass-calibration-in-mission-planner>
     RC Transmitter Mode Setup <common-rc-transmitter-flight-mode-configuration>
     ESC Calibration <esc-calibration>
-    Configure Motor Range (optional) <set-motor-range>
+    Configure Motor Range <set-motor-range>
     Failsafe Mechanisms <failsafe-landing-page>
     Flight Modes <flight-modes>
 
