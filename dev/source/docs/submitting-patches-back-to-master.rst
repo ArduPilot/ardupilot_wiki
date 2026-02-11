@@ -117,7 +117,7 @@ You can track the state of your PR from the `Pull Requests list <https://github.
 PRs are more likely to be merged quickly if:
 
 - The PR clearly states what changes in behaviour are expected
-- Good testing evidence is provided.  This could be graphs of logs recorded before and after the change
+- Good testing evidence is provided.  This could be graphs of logs recorded before and after the change, possibly from a :ref:`simulation <simulation-2>`. Check for existing :ref:`autotests <the-ardupilot-autotest-framework>`, and update them if they get broken by the change. Add new ones to cover new functionality you're introducing, or bug fixes presently not tested, if you are capable.
 - Code follows the :ref:`style guide <style-guide>`
 - Each commit in the PR affects only one subsystem and the commit title is prefixed with the subsystem name (e.g. "AP_GPS: correct uBlox logging parameter descriptions").  The `Tools/gittools/git-subsystems-split <https://github.com/ArduPilot/ardupilot/blob/master/Tools/gittools/git-subsystems-split>`__ script may be useful for this
 - PR passes all automated CI tests.  CI tests sometimes fail for reason unrelated to your PR (e.g. dependency failures, "flapping tests").  Please force push the PR to re-run the tests
