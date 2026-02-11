@@ -110,7 +110,7 @@ In 2025, students completed the following projects:
 
 - `Non-GPS Position Estimation Using 3D Camera and Pre-Generated Map <https://discuss.ardupilot.org/t/gsoc-25-non-gps-position-estimation-using-3d-camera-and-pre-generated-map-final/138513>`__
 - `AI Chat WebTool for use with MP and/or QGC <https://discuss.ardupilot.org/t/gsoc-2025-ai-chat-webtool-final-project-summary/138287>`__
-- `AI Chat Integration with all Web Tools <https://discuss.ardupilot.org/t/gsoc-2025-ai-chat-webtool-final-project-summary/138287>`__
+- `AI Chat Integration with all Web Tools <https://medium.com/@anaschebili/gsoc-2025-with-ardupilot-67ef24a17e94>`__
 - `Gazebo Plug-in Model of a Motor <https://discuss.ardupilot.org/t/gsoc-2025-wrapping-up-gazebo-plug-in-model-of-a-motor/138509>`__
 - `SITL AI Reinforcement Learning Concept Script <https://discuss.ardupilot.org/t/gsoc-2025-wrapping-up-sitl-ai-reinforcement-learning-concept-script/138504>`__
 
