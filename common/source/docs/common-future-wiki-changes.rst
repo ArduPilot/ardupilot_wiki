@@ -149,6 +149,7 @@ New Features
 - Ability to skip IMU pre-arm check for running ICE engines, see https://github.com/ArduPilot/ardupilot_wiki/pull/7044
 - Second TX based tuning channel, see https://github.com/ArduPilot/ardupilot_wiki/pull/7122
 - Added Motor IDLE state minimum time, see https://github.com/ArduPilot/ardupilot_wiki/pull/7392
+- Add AUTOTUNE gain backoff parameter, see https://github.com/ArduPilot/ardupilot_wiki/pull/7406
 [/site]
 [site wiki="rover"]
 - Add option to require valid location before arming, see https://github.com/ArduPilot/ardupilot_wiki/pull/6600
