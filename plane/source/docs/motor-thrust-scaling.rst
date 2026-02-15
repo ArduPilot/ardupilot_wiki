@@ -5,7 +5,7 @@ Motor Thrust Scaling
 ====================
 
 QuadPlane includes *motor thrust scaling* which compensates for the
-non-linear thrust output of most ESCs and motors. 
+non-linear thrust output of most ESCs and motors used in VTOL. 
 
 .. tip::
 
@@ -27,8 +27,8 @@ The curve is controlled by two parameters:
 .. image:: ../images/MotThstExpo_graphs2.png
     :target: ../_images/MotThstExpo_graphs2.png
 
--  :ref:`MOT_SPIN_MAX<MOT_SPIN_MAX>` controls the point at which the thrust flattens
-   out near its maximum.  This is fixed at 0.95, meaning 95% of full
+-  :ref:`Q_M_SPIN_MAX<Q_M_SPIN_MAX>` controls the point at which the thrust flattens
+   out near its maximum.  This is commonly fixed at 0.95, whichs means 95% of full
    throttle.
 
 Thrust Stands
