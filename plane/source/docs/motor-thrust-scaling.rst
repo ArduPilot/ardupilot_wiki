@@ -28,7 +28,7 @@ The curve is controlled by two parameters:
     :target: ../_images/MotThstExpo_graphs2.png
 
 -  :ref:`Q_M_SPIN_MAX<Q_M_SPIN_MAX>` controls the point at which the thrust flattens
-   out near its maximum.  This is commonly fixed at 0.95, whichs means 95% of full
+   out near its maximum.  This is set at 0.95 as default, which means 95% of full
    throttle.
 
 Thrust Stands
