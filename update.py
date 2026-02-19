@@ -426,6 +426,32 @@ def delete_old_wiki_backups(folder, n_to_keep):
         error('Error on deleting some previous wiki backup folders: %s' % e)
 
 
+def write_if_different(path: str, content: str, encoding: str = 'utf-8') -> bool:
+    """Write ``content`` to ``path`` only when it's different from existing file.
+    - Returns True if the file was written/changed, False if unchanged.
+    - Raises exceptions from the underlying IO on failure.
+    """
+    # Ensure directory exists
+    dirpath = os.path.dirname(path)
+    if dirpath:
+        os.makedirs(dirpath, exist_ok=True)
+
+    # Text content
+    if os.path.exists(path):
+        try:
+            with open(path, 'r', encoding=encoding) as f:
+                existing = f.read()
+            if existing == content:
+                return False
+        except Exception:
+            # fall through to write
+            pass
+
+    with open(path, 'w', encoding=encoding) as f:
+        f.write(content)
+    return True
+
+
 def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False, site: Optional[str] = None):
     """
     copies files common to all Wikis (or a single wiki when `site` is provided) to the
@@ -487,10 +513,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False, site: Opt
             files = glob.glob('%s/source/docs/common-*.rst' % wiki)
             for f in files:
                 debug('Remove existing common: %s' % f)
-                try:
-                    os.remove(f)
-                except Exception:
-                    debug(f"Could not remove {f}")
+                os.remove(f)
 
     debug("Copying common source files to target wiki(s): %s" % (', '.join(sorted(allowed_wikis))))
     files_copied = 0
@@ -514,24 +537,39 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False, site: Opt
 
                     # Only write if content has changed (preserves timestamps for unchanged files)
                     if not clean_common and os.path.exists(targetfile):
+                        # Fast path: raw source == target (very common when there are no shortcodes)
                         try:
-                            if filecmp.cmp(source_file_path, targetfile, shallow=False):
+                            if filecmp.cmp(source_file_path, targetfile, shallow=True):
                                 files_skipped += 1
                                 continue
                         except Exception as e:
-                            debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
-                    debug(targetfile)
-                    with open(targetfile, 'w', encoding='utf-8') as destination_file:
-                        destination_file.write(content)
-                    files_copied += 1
+                            debug(f"filecmp shallow check failed for {source_file_path} vs {targetfile}: {e}")
+
+                    try:
+                        written = write_if_different(targetfile, content, encoding='utf-8')
+                        if written:
+                            files_copied += 1
+                        else:
+                            files_skipped += 1
+                    except Exception as e:
+                        error(f"Failed to write {targetfile}: {e}")
 
             elif file.endswith(".css"):
                 # Only copy CSS into allowed wikis
                 src = os.path.join(root, file)
                 for wiki in allowed_wikis:
                     dst = '%s/source/_static/%s' % (wiki, file)
-                    if not clean_common and os.path.exists(dst) and filecmp.cmp(src, dst, shallow=False):
-                        continue
+                    if not clean_common and os.path.exists(dst):
+                        try:
+                            if filecmp.cmp(src, dst, shallow=True):
+                                continue
+                        except Exception as e:
+                            debug(f"filecmp shallow failed for {src} vs {dst}: {e}")
+                        try:
+                            if filecmp.cmp(src, dst, shallow=False):
+                                continue
+                        except Exception as e:
+                            debug(f"filecmp full compare failed for {src} vs {dst}: {e}")
                     shutil.copy2(src, dst)
 
             elif file.endswith(".js"):
@@ -546,17 +584,22 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False, site: Opt
                     targetfile = f'{wiki}/source/_static/{file}'
 
                     if not clean_common and os.path.exists(targetfile):
+                        # Fast path: raw source file is identical to target
                         try:
-                            if filecmp.cmp(source_file_path, targetfile, shallow=False):
+                            if filecmp.cmp(source_file_path, targetfile, shallow=True):
                                 continue
                         except Exception as e:
-                            debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
+                            debug(f"filecmp shallow check failed for {source_file_path} vs {targetfile}: {e}")
 
-                    with open(targetfile, 'w', encoding='utf-8') as destination_file:
-                        destination_file.write(content)
+                    try:
+                        write_if_different(targetfile, content, encoding='utf-8')
+                    except Exception as e:
+                        error(f"Failed to write {targetfile}: {e}")
 
-    site_label = 'all' if site is None else site
-    progress("Common files (%s): %d copied, %d unchanged, %d removed" % (site_label, files_copied, files_skipped, files_removed))
+    site_label = site
+    if site_label is None:
+        site_label = "all"
+    progress(f"Common files ({site_label}): {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
 
 
 def get_copy_targets(content):
@@ -755,8 +798,14 @@ def create_latest_parameter_redirect(default_param_file, vehicle):
     out_line += "\n\n"
 
     filename = vehicle + "/source/docs/parameters.rst"
-    with open(filename, "w") as text_file:
-        text_file.write(out_line)
+
+    # Write only-if-different to avoid touching mtime unnecessarily
+    try:
+        changed = write_if_different(filename, out_line)
+        if not changed:
+            debug(f"No change for redirect {filename}")
+    except Exception as e:
+        error(f"Failed to write redirect {filename}: {e}")
 
     debug("Created html automatic redirection from parameters.html to %shtml" %
           default_param_file[:-3])
@@ -938,8 +987,15 @@ def create_features_pages(site):
             destination_filepath = "%s/source/docs/binary-features.rst" % wiki
         # make .../docs/ directory if it doesn't already exist
         os.makedirs(os.path.dirname(destination_filepath), exist_ok=True)
-        with open(destination_filepath, "w") as f:
-            f.write(content)
+
+        # Write only if content changed to avoid touching mtime and forcing
+        # unnecessary Sphinx rebuilds.
+        try:
+            changed = write_if_different(destination_filepath, content)
+            if not changed:
+                debug(f"No change for {destination_filepath}")
+        except Exception as e:
+            error(f"Failed to write {destination_filepath}: {e}")
 
 
 def reference_for_board(board):
