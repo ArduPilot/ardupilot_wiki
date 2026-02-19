@@ -51,30 +51,16 @@ html_search_options = {
     'dict_max_word_length': 40,  # Skip very long parameter names
 }
 
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'copter': (intersphinx_base_url % 'copter',
-                                  None),
-                       'plane': (intersphinx_base_url % 'plane',
-                                  None),  # noqa: E127
-                       'rover': (intersphinx_base_url % 'rover',
-                                  None),  # noqa: E127
-                       'sub': (intersphinx_base_url % 'sub',
-                                  None),  # noqa: E127
-                       'planner': (intersphinx_base_url % 'planner',
-                                  None),  # noqa: E128
-                       'planner2': (intersphinx_base_url % 'planner2',
-                                  None),  # noqa: E128
-                       'dev': (intersphinx_base_url % 'dev',
-                                  None),  # noqa: E127
-                       'antennatracker': (intersphinx_base_url % 'antennatracker',
-                                  None),  # noqa: E128
-                       'ardupilot': (intersphinx_base_url % 'ardupilot',
-                                  None),  # noqa: E128
-                       'mavproxy': (intersphinx_base_url % 'mavproxy',
-                                  None),  # noqa: E128
-                       'blimp': (intersphinx_base_url % 'blimp',
-                                  None),  # noqa: E127
-                      }  # noqa: E124
+# Known wiki keys (single source of truth)
+WIKI_KEYS = [
+    'copter', 'plane', 'rover', 'sub', 'planner',
+    'planner2', 'dev', 'antennatracker', 'ardupilot',
+    'mavproxy', 'blimp'
+]
+
+# Build mapping programmatically (remote auto-discovery by using None for objects.inv)
+intersphinx_mapping = {k: (intersphinx_base_url % k, None) for k in WIKI_KEYS}
+
 
 # PATCH REMOVE NON-LOCAL IMAGE WARNINGS
 # From:
