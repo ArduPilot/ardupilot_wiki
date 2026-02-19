@@ -39,7 +39,7 @@ import io
 import json
 import glob
 import gzip
-import hashlib
+
 import multiprocessing
 import os
 import platform
@@ -272,7 +272,24 @@ def run_command_with_timeout(cmd, cwd=None, timeout=300, check=True):
 
 
 def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
+    # Fetch into a temporary filename (new_name) and only replace the
+    # real target if content actually changed. This avoids touching
+    # mtimes when the fetched content is identical and prevents
+    # unnecessary Sphinx rebuilds.
     fetch_url(fetchurl, fpath=new_name, verbose=False)
+
+    try:
+        # If target exists and is identical, remove fetched temp and skip replace
+        if os.path.exists(target_file) and filecmp.cmp(new_name, target_file, shallow=False):
+            debug(f"No change for {target_file} (fetched content identical)")
+            try:
+                os.remove(new_name)
+            except Exception:
+                pass
+            return
+    except Exception as e:
+        debug(f"Failed to compare fetched file and target: {e}")
+
     info(f"Renaming {new_name} to {target_file}")
     os.replace(new_name, target_file)
 
@@ -850,6 +867,8 @@ def logmatch_code(matchobj, prefix):
 
 def is_the_same_file(file1: str, file2: str) -> bool:
     """ Compare two files using their SHA256 hashes"""
+    import hashlib
+
     def file_hash(path, algo="sha256", chunk_size=8192):
         h = hashlib.new(algo)
         with open(path, "rb") as f:
@@ -954,10 +973,10 @@ def fetch_versioned_parameters(site=None):
 
                             # Temporary debug messages to help with cache tasks.
                             debug("Check cache: {} against {}".format(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
-                            debug("Check cache with filecmp.cmp: %s" % filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
-                            debug("Check cache with sha256: %s" % is_the_same_file(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
+                            debug("Check cache with filecmp.cmp: %s" % filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion"), shallow=False))  # noqa: E501
+                            # debug("Check cache with sha256: %s" % is_the_same_file(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
 
-                            if ("parameters.rst" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.  # noqa: E501
+                            if ("parameters.rst" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion"), shallow=False)):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.  # noqa: E501
                                 debug(f"Overwriting {filename} to {new_file}")
                                 shutil.copy2(filename, new_file)
                             else:
