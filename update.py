@@ -584,18 +584,27 @@ def create_dir_if_not_exists(dir_path: str) -> None:
         pass
 
 
-def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
+def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False, site: Optional[str] = None):
     """
-    copies files common to all Wikis to the source directories for each Wiki
+    copies files common to all Wikis (or a single wiki when `site` is provided) to the
+    source directories for each Wiki.
 
     Args:
         start_dir: Directory containing common source files
         clean_common: If True, delete and recopy all common files (old behavior).
                      If False, only copy files that have changed (faster incremental builds).
+        site: If provided, restrict copy/remove operations to this single wiki only.
     """
 
+    # Determine which wikis we will operate on
+    if site:
+        allowed_wikis = {site}
+        debug(f"copy_common_source_files: restricted to site '{site}'")
+    else:
+        allowed_wikis = set(ALL_WIKIS)
+
     # Create destination folders that might be needed (if don't exist)
-    for wiki in ALL_WIKIS:
+    for wiki in allowed_wikis:
         create_dir_if_not_exists(wiki)
         create_dir_if_not_exists(f'{wiki}/source')
         create_dir_if_not_exists(f'{wiki}/source/docs')
@@ -603,7 +612,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
 
     # Build a set of expected common files per wiki (to detect stale files)
     # Format: {wiki: set of filenames that should exist}
-    expected_common_files = {wiki: set() for wiki in ALL_WIKIS}
+    expected_common_files = {wiki: set() for wiki in allowed_wikis}
 
     # First pass: determine which files should exist in each wiki
     for root, dirs, files in os.walk(start_dir):
@@ -613,47 +622,57 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                 with open(source_file_path, 'r', encoding='utf-8') as f:
                     source_content = f.read()
                 targets = get_copy_targets(source_content)
+                # Only record expected files for wikis we're operating on
                 for wiki in targets:
-                    expected_common_files[wiki].add(file)
+                    if wiki in allowed_wikis:
+                        expected_common_files[wiki].add(file)
 
-    # Remove stale common files (files that exist but shouldn't)
+    # Remove stale common files (files that exist but shouldn't) only for allowed_wikis
     files_removed = 0
-    for wiki in ALL_WIKIS:
+    for wiki in allowed_wikis:
         existing_common_files = glob.glob(f'{wiki}/source/docs/common-*.rst')
         for filepath in existing_common_files:
             filename = os.path.basename(filepath)
-            if filename not in expected_common_files[wiki]:
+            if filename not in expected_common_files.get(wiki, set()):
                 debug(f'Removing stale common file: {filepath}')
-                os.remove(filepath)
-                files_removed += 1
+                try:
+                    os.remove(filepath)
+                    files_removed += 1
+                except Exception as e:
+                    debug(f"Failed to remove stale common file {filepath}: {e}")
 
     if clean_common:
-        # Clean all existing common topics for full rebuild
-        for wiki in ALL_WIKIS:
+        # Clean existing common topics only for allowed_wikis
+        for wiki in allowed_wikis:
             files = glob.glob('%s/source/docs/common-*.rst' % wiki)
             for f in files:
                 debug('Remove existing common: %s' % f)
-                os.remove(f)
+                try:
+                    os.remove(f)
+                except Exception:
+                    debug(f"Could not remove {f}")
 
-    debug("Copying common source files to each Wiki")
+    debug("Copying common source files to target wiki(s): %s" % (', '.join(sorted(allowed_wikis))))
     files_copied = 0
     files_skipped = 0
 
     for root, dirs, files in os.walk(start_dir):
         for file in files:
             if file.endswith(".rst"):
-                # debug("  FILE: %s" % file)
                 source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', encoding='utf-8')
-                source_content = source_file.read()
-                source_file.close()
+                with open(source_file_path, 'r', encoding='utf-8') as source_file:
+                    source_content = source_file.read()
                 targets = get_copy_targets(source_content)
+
+                # Only copy into the intersection of declared targets and the allowed wikis
                 for wiki in targets:
+                    if wiki not in allowed_wikis:
+                        continue
+
                     content = strip_content(source_content, wiki)
                     targetfile = f'{wiki}/source/docs/{file}'
 
                     # Only write if content has changed (preserves timestamps for unchanged files)
-                    # Use byte-accurate file comparison against the source file.
                     if not clean_common and os.path.exists(targetfile):
                         try:
                             if filecmp.cmp(source_file_path, targetfile, shallow=False):
@@ -661,44 +680,43 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                                 continue
                         except Exception as e:
                             debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
-                            # treat as different and fall through to write
-
-                    # debug(targetfile)
+                    debug(targetfile)
                     with open(targetfile, 'w', encoding='utf-8') as destination_file:
                         destination_file.write(content)
                     files_copied += 1
+
             elif file.endswith(".css"):
-                for wiki in ALL_WIKIS:
-                    src = os.path.join(root, file)
+                # Only copy CSS into allowed wikis
+                src = os.path.join(root, file)
+                for wiki in allowed_wikis:
                     dst = '%s/source/_static/%s' % (wiki, file)
-                    # Only copy if different
                     if not clean_common and os.path.exists(dst) and filecmp.cmp(src, dst, shallow=False):
                         continue
                     shutil.copy2(src, dst)
+
             elif file.endswith(".js"):
                 source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', encoding='utf-8')
-                source_content = source_file.read()
-                source_file.close()
+                with open(source_file_path, 'r', encoding='utf-8') as source_file:
+                    source_content = source_file.read()
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
+                    if wiki not in allowed_wikis:
+                        continue
                     content = strip_content(source_content, wiki)
                     targetfile = f'{wiki}/source/_static/{file}'
 
-                    # Only write if content has changed
                     if not clean_common and os.path.exists(targetfile):
                         try:
                             if filecmp.cmp(source_file_path, targetfile, shallow=False):
                                 continue
                         except Exception as e:
                             debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
-                            # treat as different and fall through to write
 
-                    # debug(targetfile)
                     with open(targetfile, 'w', encoding='utf-8') as destination_file:
                         destination_file.write(content)
 
-    info(f"Common files: {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
+    site_label = 'all' if site is None else site
+    info("Common files (%s): %d copied, %d unchanged, %d removed" % (site_label, files_copied, files_skipped, files_removed))
 
 
 def get_copy_targets(content):
@@ -1419,7 +1437,7 @@ class WikiUpdater:
 
         info("=== Step 4: Copying common source files ===")
         info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-        copy_common_source_files(clean_common=self.args.clean_common)
+        copy_common_source_files(clean_common=self.args.clean_common, site=self.args.site)
 
         info("=== Step 5: Building documentation with Sphinx ===")
         info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
