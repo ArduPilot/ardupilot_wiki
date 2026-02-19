@@ -84,6 +84,9 @@ stream_handler = logging.StreamHandler(sys.stdout)
 stream_handler.setLevel(logging.ERROR)
 logger.addHandler(stream_handler)
 
+# Keep noisy third-party network logs quiet by default. Enable with --debug-http.
+logging.getLogger('urllib3').setLevel(logging.WARNING)
+
 # Global HTTP session for connection reuse and caching
 _http_session = None
 _cache_dir = ".cache"
