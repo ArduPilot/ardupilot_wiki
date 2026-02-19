@@ -642,7 +642,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
     for root, dirs, files in os.walk(start_dir):
         for file in files:
             if file.endswith(".rst"):
-                debug("  FILE: %s" % file)
+                # debug("  FILE: %s" % file)
                 source_file_path = os.path.join(root, file)
                 source_file = open(source_file_path, 'r', encoding='utf-8')
                 source_content = source_file.read()
@@ -663,7 +663,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                             debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
                             # treat as different and fall through to write
 
-                    debug(targetfile)
+                    # debug(targetfile)
                     with open(targetfile, 'w', encoding='utf-8') as destination_file:
                         destination_file.write(content)
                     files_copied += 1
@@ -694,7 +694,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                             debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
                             # treat as different and fall through to write
 
-                    debug(targetfile)
+                    # debug(targetfile)
                     with open(targetfile, 'w', encoding='utf-8') as destination_file:
                         destination_file.write(content)
 
