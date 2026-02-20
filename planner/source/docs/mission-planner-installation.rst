@@ -76,3 +76,9 @@ It is possible to run most Windows based programs on many Linux Distributions us
     
        mono MissionPlanner.exe
 
+.. note::
+
+   **Zorin OS users:** If you see errors with .exe 
+   files during build, run::
+
+      sudo apt install mono-complete
