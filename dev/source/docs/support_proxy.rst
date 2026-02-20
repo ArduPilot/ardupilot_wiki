@@ -54,7 +54,7 @@ Connecting with QGroundControl
 ------------------------------
 
 To forward your connection to the support engineer from QGroundControl
-you need to use this configration setting:
+you need to use this configuration setting:
 
 .. image:: ../images/QGroundControl_mavlink_mirror.jpg
     :target: ../_images/QGroundControl_mavlink_mirror.jpg
@@ -85,7 +85,7 @@ or instead you can do “output add support.ardupilot.org:10001” from an alrea
 CAN Management
 --------------
 
-Note that as CAN packets can be forwared over MAVLink you can
+Note that as CAN packets can be forwarded over MAVLink you can
 configure DroneCAN devices remotely via the proxy. Use the
 MAVLink-CAN1 or MAVLink-CAN2 buttons in Setup->Optional
 Hardware->DroneCAN to start looking at the remote CAN bus.

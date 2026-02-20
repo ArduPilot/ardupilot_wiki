@@ -7,7 +7,7 @@ Avionics Anonymous Air Data Computer - Airspeed, Barometer, and Air Temperature
 The `Avionics Anonymous Air Data Computer <https://docs.avionicsanonymous.com/devices/microadc>`__ is tiny, 
 richly-featured Air Data Computer (ADC) for small unmanned airplanes. It includes an MS5611 barometric 
 pressure sensor for 10cm-resolution altitude, a Honeywell RSC-series differential pressure transducer 
-for extremely accurate airspeed, and a thermistor interface with high-resolution convertor for air 
+for extremely accurate airspeed, and a thermistor interface with high-resolution converter for air 
 temperature measurement with better than 1 degree precision. The device interfaces to your autopilot 
 via a robust `DroneCAN <https://dronecan.org>`__ interface, which provides high reliability connections 
 to peripherals over greater distances than I2C.

@@ -34,7 +34,7 @@ New Board Support
 - UAV DEV 743-UM982 ,see https://github.com/ArduPilot/ardupilot_wiki/pull/6897
 - DAKEFPVF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/6949
 - OrbitH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6952
-- PiPilot RPI Sheild, see https://github.com/ArduPilot/ardupilot_wiki/pull/6972
+- PiPilot RPI Shield, see https://github.com/ArduPilot/ardupilot_wiki/pull/6972
 - DAKEFPVH743/H743Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6978
 - BDShot support for ARKV6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/6981
 - AcctonGodwit_GA1, see https://github.com/ArduPilot/ardupilot_wiki/pull/7054

@@ -8,7 +8,7 @@ VTOL QUICKTUNE
 
 ArduPlane provides a quick means of obtaining a good tune for Quadplanes in VTOL modes. The process slowly increases the relevant gains until it detects an oscillation.  It then reduces the gains by 60% and moves onto the next gain. Once all the gains have been tuned the tune completes and the user can decide to save or discard the new gains.
 
-.. note:: be sure that you have prepared the vehicle for tuning by setting up parameters discussed here: :ref:`quadplane-vtol-tuning-process` Steps 1 to 11 and then use this mechanism in Step 12. Also to assure the best tune, setup the noise notch filtering, see :ref:`common-imu-notch-filtering`. You may run QUICKTUNE without this step to obtain initial fine tune, see :ref:`ac_rollpitchtuning` if the vehicle cant do an initial hover stably. Then setup the filters and retune for best results.
+.. note:: be sure that you have prepared the vehicle for tuning by setting up parameters discussed here: :ref:`quadplane-vtol-tuning-process` Steps 1 to 11 and then use this mechanism in Step 12. Also to assure the best tune, setup the noise notch filtering, see :ref:`common-imu-notch-filtering`. You may run QUICKTUNE without this step to obtain initial fine tune, see :ref:`ac_rollpitchtuning` if the vehicle can't do an initial hover stably. Then setup the filters and retune for best results.
 
 The script attempts to automatically tune the P/I and D gain of each axis enabled for tuning when an two or three position RC switch, whose ``RCx_OPTION`` is "181", is moved to the "tune" position. It will, by default, also adjust some PID loop filter values based on the :ref:`INS_GYRO_FILTER<INS_GYRO_FILTER>` setting.
 

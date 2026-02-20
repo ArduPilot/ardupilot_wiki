@@ -47,7 +47,7 @@ Reboot your autopilot and power your video transmitter. At startup you should se
 ImmersionRC Tramp
 -----------------
 
-- Connect the telemtry pin of the video transmitter to the TX pin of the autopilot's UART used to control it.
+- Connect the telemetry pin of the video transmitter to the TX pin of the autopilot's UART used to control it.
 - Set :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` = 44 if using SERIAL5 for connection to VTX
 
 Video transmitter settings

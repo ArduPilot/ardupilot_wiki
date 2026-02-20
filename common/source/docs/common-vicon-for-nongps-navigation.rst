@@ -42,7 +42,7 @@ Hardware Setup
 ==============
 
 You will need a low-latency network link from your GCS computer to the
-copter, and from the GCS to your Vicon server. The recommened method
+copter, and from the GCS to your Vicon server. The recommended method
 is to use ethernet to the Vicon server and use a ESP8266 WiFi link
 running `mavest8266 <common-esp8266-telemetry>`_ on the copter.
 

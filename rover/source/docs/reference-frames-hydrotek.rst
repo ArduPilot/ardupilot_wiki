@@ -30,5 +30,5 @@ This parameter file can also be loaded using the Mission Planner's Config/Tuning
 
 .. warning::
 
-   The parameter file above includes setting the :ref:`COMPASS_ORIENT <COMPASS_ORIENT>` parameter "4" (Yaw 180) because the wiring was more convenient if the GPS arrow was pointin backwards
+   The parameter file above includes setting the :ref:`COMPASS_ORIENT <COMPASS_ORIENT>` parameter "4" (Yaw 180) because the wiring was more convenient if the GPS arrow was pointing backwards
 

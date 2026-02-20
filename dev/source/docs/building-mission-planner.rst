@@ -44,7 +44,7 @@ System Requirements
 Here is what you will need.
 
 -  Windows 10 or later (Windows 7 and older versions are not compatible).
--  Sufficient disk space (arround 20GB for VS installation), memory, processor power to comfortably run
+-  Sufficient disk space (around 20GB for VS installation), memory, processor power to comfortably run
    Visual Studio.
 -  An Internet connection.
 -  Visual Studio (**NOT VSCode**), at least version 2022. The Community Edition suffices.

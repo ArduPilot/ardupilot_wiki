@@ -9,7 +9,7 @@ Intel RealSense T265
 ..  youtube:: HCyTt0xK8CQ
     :width: 100%
 
-This article explains how to setup an `Intel Realsense T265 <https://store.intelrealsense.com/buy-intel-realsense-tracking-camera-t265.html?_ga=2.225595998.511560227.1566178471-459370638.1562639781>`__ for use with ArduPilot as a substitude for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto to work. This method uses a python script running on an RPI companion computer to send position information to ArduPilot without the use of `ROS <https://www.ros.org/>`__.  The `setup using ROS is here <https://ardupilot.org/dev/docs/ros-vio-tracking-camera.html>`__.
+This article explains how to setup an `Intel Realsense T265 <https://store.intelrealsense.com/buy-intel-realsense-tracking-camera-t265.html?_ga=2.225595998.511560227.1566178471-459370638.1562639781>`__ for use with ArduPilot as a substitute for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto to work. This method uses a python script running on an RPI companion computer to send position information to ArduPilot without the use of `ROS <https://www.ros.org/>`__.  The `setup using ROS is here <https://ardupilot.org/dev/docs/ros-vio-tracking-camera.html>`__.
 
 What to Buy
 -----------

@@ -72,7 +72,7 @@ There are four basic options for feeding RSSI to your autopilot:
 
 
 .. note::
-    To read analog voltage type RSSI,  :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>`  can be set to any free ADC pin available. On pixhawk / cube type boards, this includes the sBus out / RSSI input pin (103). When using dedicated ADC pins, the corresponding pin number usually matches the ADC1 channel used on that pin. See the DMA1 map in the `resepective processor's alternative function table <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/scripts>`__ for further reference.
+    To read analog voltage type RSSI,  :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>`  can be set to any free ADC pin available. On pixhawk / cube type boards, this includes the sBus out / RSSI input pin (103). When using dedicated ADC pins, the corresponding pin number usually matches the ADC1 channel used on that pin. See the DMA1 map in the `respective processor's alternative function table <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/scripts>`__ for further reference.
 
 
 Displaying the RC receiver's RSSI value in MissionPlanner's HUD
@@ -219,7 +219,7 @@ Special use cases
 Converting Non-standard PWM type RSSI to analog voltage
 -------------------------------------------------------
 
-For non-standard RSSI types like some FrSky receivers' high frequency PWM RSSI, an RC filter can be used to level the signal, rendering it useable for the autopilot's analog RSSI input pin:
+For non-standard RSSI types like some FrSky receivers' high frequency PWM RSSI, an RC filter can be used to level the signal, rendering it usable for the autopilot's analog RSSI input pin:
 
 **A 4.7k resistor and 10uF capacitor are used to filter out the pulses
 from the receiver's RSSI output.**
@@ -239,7 +239,7 @@ The FER information is implemented within the **Futaba S.BUS2** datastream. It i
 How to setup the Hardware
 -------------------------
 
-To extract the FER from the **Futaba S.BUS2** datastream, a `S.BUS2 to Analog DC voltage converter <http://shop.tje.dk/catalog/product_info.php?products_id=43>`__ can be used.
+To extract the FER from the **Futaba S.BUS2** datastream, a `S.BUS2 to Analog DC voltage converter <http://shop.the.dk/catalog/product_info.php?products_id=43>`__ can be used.
 
 A basic setup using a **Futaba R7008SB** receiver and an additional S.BUS2 GPS Multi Sensor is shown in the image below. A similar setup should work using a **Futaba R7003SB** receiver.
    
@@ -266,7 +266,7 @@ A basic setup using a **Futaba R7008SB** receiver and an additional S.BUS2 GPS M
 How to setup RSSI Feedback to your Futaba FASSTest Telemetry capable transmitter
 --------------------------------------------------------------------------------
 
-In addition to the S.BUS2 to Analog conversion, the `converter <http://shop.tje.dk/catalog/product_info.php?products_id=43>`__  is looping back the FER / RSSI value to the S.BUS2 datastream simultaniously. This feature enables all users of **FASSTest Telemetry capable transmitters** to setup a **Telemetry RSSI Feedback** as an option. Moreover an **audible and/or vibration alarm** can be set to notice when received signal quality is degrading.
+In addition to the S.BUS2 to Analog conversion, the `converter <http://shop.the.dk/catalog/product_info.php?products_id=43>`__  is looping back the FER / RSSI value to the S.BUS2 datastream simultaneously. This feature enables all users of **FASSTest Telemetry capable transmitters** to setup a **Telemetry RSSI Feedback** as an option. Moreover an **audible and/or vibration alarm** can be set to notice when received signal quality is degrading.
 
 To use this feature, the **"FASSTest-14CH" protocol** has to be enabled in your transmitter.
 
@@ -274,15 +274,15 @@ The following screenshots show the setup procedure for a Futaba T14SG. Other FAS
   - Enter the "LINKAGE MENU" by double clicking the "LNK" button [1].
   - Goto "SYSTEM" and press "RTN" [2].
   - Within "SYSTEM" menu, goto the protocol selection tab and choose "FASSTest-14CH" protocol [3] .
-  - In case you changed the protocol, eventualy you have to re "LINK" your receiver to your transmitter [4]. 
+  - In case you changed the protocol, eventually you have to re "LINK" your receiver to your transmitter [4]. 
   - Ensure, that TELEMETRY is set to "ACT" [5].
 
 .. image:: ../../../images/FASSTest_EnableProtocol.png
     :target: ../_images/FASSTest_EnableProtocol.png
 
-Due to the fact that Futabas Telemetry Sensors can't be renamed, the transmitted FER / RSSI value appears as a simple **"temperature sensor"**, wheras "0°C" means "Rx in failsafe" and "100°C" means "Rx received <= 100 % good frames".
+Due to the fact that Futabas Telemetry Sensors can't be renamed, the transmitted FER / RSSI value appears as a simple **"temperature sensor"**, whereas "0°C" means "Rx in failsafe" and "100°C" means "Rx received <= 100 % good frames".
 
-The `converter <http://shop.tje.dk/catalog/product_info.php?products_id=43>`__ is reporting the current FER / RSSI value into Slot 1 of S.Bus2 Telemetry datastream.
+The `converter <http://shop.the.dk/catalog/product_info.php?products_id=43>`__ is reporting the current FER / RSSI value into Slot 1 of S.Bus2 Telemetry datastream.
 
 In order to decode the FER / RSSI feedback of the converter, a standard "TEMP125" Sensor has to be assigned to Slot 1 of your transmitter:
   - Enter the "LINKAGE MENU" by double clicking the "LNK" button.

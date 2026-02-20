@@ -22,7 +22,7 @@ Required Hardware
 Placing the anchors
 ===================
 
-The anchors should be placed in a rectangular shape.  The anchor with the lowest ID (IDs are printed in hexidecimal on each device) will act as the "origin" and should be placed at the lower-left corner of the rectangle.  Each of the remaining three anchors should be placed in a corner so that the anchor IDs increase as you travel an "N" pattern within the rectangle.  The configuration is slightly simpler if the line from the origin anchor to the 2nd anchor is due North but it is not required as the :ref:`BCN_ORIENT_YAW <BCN_ORIENT_YAW>` parameter can be used to account this difference.
+The anchors should be placed in a rectangular shape.  The anchor with the lowest ID (IDs are printed in hexadecimal on each device) will act as the "origin" and should be placed at the lower-left corner of the rectangle.  Each of the remaining three anchors should be placed in a corner so that the anchor IDs increase as you travel an "N" pattern within the rectangle.  The configuration is slightly simpler if the line from the origin anchor to the 2nd anchor is due North but it is not required as the :ref:`BCN_ORIENT_YAW <BCN_ORIENT_YAW>` parameter can be used to account this difference.
 
 .. image:: ../../../images/pozyx-anchor-layout.png
     :target: ../_images/pozyx-anchor-layout.png
@@ -72,7 +72,7 @@ Ground Testing
 
 - Connect the Autopilot to a ground station.  You may need to connect the Lipo battery as well because some computers are unable to provide enough power through their USB port for the combined autopilot+Pozyx+Uno.
 - Press the UNO's white or red reset button which can be found next to the USB port (see image above)
-- After about 1 minute the vehicle's position should jump to the lattitude, longitude you input during the configuration step (above).  If it does not, connect a USB cable to the UNO's USB port and open the Arduino IDE's serial monitor and look for errors.
+- After about 1 minute the vehicle's position should jump to the latitude, longitude you input during the configuration step (above).  If it does not, connect a USB cable to the UNO's USB port and open the Arduino IDE's serial monitor and look for errors.
 - Check that the vehicle's position is relatively stable (i.e. moving around less than one meter)
 - Walk the vehicle around between the anchors and ensure that its position on the map updates correctly
 

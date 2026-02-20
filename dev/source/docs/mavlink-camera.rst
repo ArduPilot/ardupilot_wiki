@@ -442,7 +442,7 @@ Zoom Type=1 (continuous, aka rate control) is support in 4.4.0 (and higher).  Zo
    <tr>
    <td><strong>param1</strong></td>
    <td>float</td>
-   <td>Zoom Type=1 (continous=1, range=2)</td>
+   <td>Zoom Type=1 (continuous=1, range=2)</td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>
@@ -532,7 +532,7 @@ The camera zoom can be controlled by sending a `COMMAND_LONG <https://mavlink.io
    <tr>
    <td><strong>param1</strong></td>
    <td>float</td>
-   <td>Focus Type=1 OR 4 (step=0, continous=1, range=2, meters=3, auto=4, auto single=5, auto continuous=6)</td>
+   <td>Focus Type=1 OR 4 (step=0, continuous=1, range=2, meters=3, auto=4, auto single=5, auto continuous=6)</td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>

@@ -102,7 +102,7 @@ The :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>` parameter specifies the maximum fr
 :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>`
 ----------------------------------------
 
-The :ref:`AUTOTUNE_VELXY_P<AUTOTUNE_VELXY_P>` parameter specifies P gain for velocity feedback.  This aids the AutoTune in maintaining aircraft position during the frequency sweeps and dwells.  It does not apply to ``ATC_RAT_xxx_FF`` tuning.  Keep this at 0.1 unless the aircraft is drifting more than 10 meters during the dwell and frequency sweeps.  It only affects position holding while the aircraft is oscillating during these tests.  If it does drift more than 10 meters during the dwell adn frequency sweep tests then increase this parameter but don't increase much beyond 0.2. In between the oscillations, it may drift if the aircraft wasn't properly trimmed for hover.  This gain will not help with that.  
+The :ref:`AUTOTUNE_VELXY_P<AUTOTUNE_VELXY_P>` parameter specifies P gain for velocity feedback.  This aids the AutoTune in maintaining aircraft position during the frequency sweeps and dwells.  It does not apply to ``ATC_RAT_xxx_FF`` tuning.  Keep this at 0.1 unless the aircraft is drifting more than 10 meters during the dwell and frequency sweeps.  It only affects position holding while the aircraft is oscillating during these tests.  If it does drift more than 10 meters during the dwell and frequency sweep tests then increase this parameter but don't increase much beyond 0.2. In between the oscillations, it may drift if the aircraft wasn't properly trimmed for hover.  This gain will not help with that.  
 
 :ref:`Maximum Allowable Angular Acceleration<AUTOTUNE_ACC_MAX>`
 ---------------------------------------------------------------

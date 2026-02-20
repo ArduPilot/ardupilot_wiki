@@ -176,7 +176,7 @@ if it does have a compass:
 
 .. _readme-firmware:
 
-Firwmare
+Firmware
 ========
 *Firmware for {autopilot name here} can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "{autopilot config name}"*.
 

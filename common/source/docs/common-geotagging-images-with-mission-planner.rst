@@ -174,7 +174,7 @@ acceptable and write location information to the picture's EXIF data:
       :target: ../_images/geotag_google_earth_review.jpg
     
 - Check that they are OK. If you used *CAM Message* mode, there
-  shouldn't be any problem (iIf there is, just order pictures
+  shouldn't be any problem (if there is, just order pictures
   alphabetically and check that the first picture in the list is also
   the oldest one). If you used *Time Offset*, just try adding or
   subtracting seconds to time offset.

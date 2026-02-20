@@ -64,7 +64,7 @@ If DroneCAN GPS are used, then configure the CAN/DroneCAN ports as explained in 
 - :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` = 2 (AutoConfig DroneCAN)
 - :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` = 1
 - Set the :ref:`GPS1_POS_X <GPS1_POS_X>`/Y/Z and :ref:`GPS2_POS_X <GPS2_POS_X>`/Y/Z parameters for the GPS antennas (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`). You must establish the relative positions of each GPS location on the vehicle with respect the vehicle's motion.
-- :ref:`GPS1_CAN_OVRIDE<GPS1_CAN_OVRIDE>` (Base NODEID) and :ref:`GPS2_CAN_OVRIDE<GPS2_CAN_OVRIDE>` (Rover NODEID) determine which physical DroneCAN GPS is used for GPS1 and GPS2. These are automatically populated at boot from the detected addresses, which are also shown in :ref:`GPS1_CAN_NODEID<GPS1_CAN_NODEID>` and :ref:`GPS2_CAN_NODEID<GPS2_CAN_NODEID>`, but can be overriden, if needed. You will need to determine which physical CAN GPS is assigned as GPS1 and GPS2 in order to setup the position offsets (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`)
+- :ref:`GPS1_CAN_OVRIDE<GPS1_CAN_OVRIDE>` (Base NODEID) and :ref:`GPS2_CAN_OVRIDE<GPS2_CAN_OVRIDE>` (Rover NODEID) determine which physical DroneCAN GPS is used for GPS1 and GPS2. These are automatically populated at boot from the detected addresses, which are also shown in :ref:`GPS1_CAN_NODEID<GPS1_CAN_NODEID>` and :ref:`GPS2_CAN_NODEID<GPS2_CAN_NODEID>`, but can be overridden, if needed. You will need to determine which physical CAN GPS is assigned as GPS1 and GPS2 in order to setup the position offsets (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`)
 
 The above dual unit configurations assumes that you want the RTCMv3 data between
 the two GPS modules to go via the autopilot board.
@@ -133,7 +133,7 @@ Holybro X500V2 Mounting Example
 RTK Correction
 ==============
 
-ArduPilot will automatically foward RTCM correction data it receives over MAVLink from a GCS or telemetry radio (from a fixed baseline RTK base station) to these GPSes. See :ref:`common-rtk-correction`.
+ArduPilot will automatically forward RTCM correction data it receives over MAVLink from a GCS or telemetry radio (from a fixed baseline RTK base station) to these GPSes. See :ref:`common-rtk-correction`.
 
 Master Antenna Offset from Vehicle CG
 =====================================

@@ -76,7 +76,7 @@ The PWM is in 5 groups:
 
 Battery Monitoring
 ==================
-The board has a builtin voltage sensor and pin on ESC connector for external currrent sensor. Voltage sensor supports up to 6S LiPo.
+The board has a builtin voltage sensor and pin on ESC connector for external current sensor. Voltage sensor supports up to 6S LiPo.
 
 The default battery configuration is:
 

@@ -56,7 +56,7 @@ instructions/functions based on the signal pulse-length. When using a
 relay, the script can be very simple — all it needs to do is check the
 voltage (in a loop), and take a picture when it detects the relay
 voltage go high. More complicated scripts might first set the focus,
-zoom, or preform any other default behaviour.
+zoom, or perform any other default behaviour.
 
 The `CHDK Wiki <http://chdk.wikia.com/wiki/CHDK>`__ documentation
 explains which cameras are supported, how you install CHDK on you

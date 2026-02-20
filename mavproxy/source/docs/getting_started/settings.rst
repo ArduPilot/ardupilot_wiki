@@ -22,7 +22,7 @@ Setting                          Description                                    
 link                             Primary Link number                             -1 to 4
 streamrate                       Data stream rate on link 1                      -1 to 100
 streamrate2                      Data stream rate on link 2                      -1 to 100
-heartbeat                        GCS to UAV hearbeat rate (Hz)                   1 to 5
+heartbeat                        GCS to UAV heartbeat rate (Hz)                  1 to 5
 mavfwd                           Allow control from --out clients                True or False
 mavfwd_rate                      Allow --out clients to control streamrate       True or False
 shownoise                        Show any malformed or bad data                  True or False

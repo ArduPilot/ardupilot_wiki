@@ -9,7 +9,7 @@ ArduPilot on a flight controller using the MAVLink protocol.  By doing
 this your companion computer gets all the MAVLink data produced by the
 autopilot (including GPS data) and can use it to make intelligent
 decisions during flight. For example, "take a photo when the vehicle is
-at these GPS co-ordinates", gather and pre-process information from advanced
+at these GPS coordinates", gather and pre-process information from advanced
 sensors or actuate lights, auxiliary servos or any other interfaces.
 
 There are two major parts to Companion Computers - hardware and software.
@@ -32,7 +32,7 @@ popular Companion Computer hardware are listed below.
     NVidia TX2 <companion-computer-nvidia-tx2>
     Ochin Tiny Carrier Board V2 for Raspberry Pi CM4 <https://www.seeedstudio.com/Ochin-Tiny-Carrier-Board-V2-for-Raspberry-Pi-CM4-p-5887.html>
     ODroid <odroid-via-mavlink>
-    Holybro Pixhawk Rasberry Pi CM4/CM5 Baseboard <https://holybro.com/products/pixhawk-rpi-cm4-baseboard>
+    Holybro Pixhawk Raspberry Pi CM4/CM5 Baseboard <https://holybro.com/products/pixhawk-rpi-cm4-baseboard>
     Holybro Pixhawk Jetson Baseboard <https://holybro.com/products/pixhawk-jetson-baseboard>
     Raspberry Pi <raspberry-pi-via-mavlink>
     VoidRay <https://idrobots.com/product/void-ray>

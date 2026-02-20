@@ -95,6 +95,6 @@ While all the servo/motor outputs of an ArduPilot autopilot are capable of Norma
 
 #. Groups of outputs sharing a common timer, MUST have the same advanced configuration. Usually, these are specified in the autopilot's hardware description linked from the :ref:`common-autopilots` page. For example, if an output is configured for OneShot125 in a group, then you cannot use another output in that group for Normal PWM ESC **or** normal PWM servo operation.
 
-.. note:: Everytime the autopilot initializes, it sends the "RC Banner" to the ground control station, showing which outputs are PWM, OneShot, OneShot125 or DShot. The remaining higher numbered outputs are assigned as GPIOs.
+.. note:: Every time the autopilot initializes, it sends the "RC Banner" to the ground control station, showing which outputs are PWM, OneShot, OneShot125 or DShot. The remaining higher numbered outputs are assigned as GPIOs.
 
 .. image:: ../../../images/RCOutbanner.jpg

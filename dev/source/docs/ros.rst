@@ -47,7 +47,7 @@ ROS 1
         VIO tracking camera for non-GPS navigation <ros-vio-tracking-camera>
         Sending Commands from rviz <ros-rviz>
         Object Avoidance <ros-object-avoidance>
-        Clock/Time syncronisation <ros-timesync>
+        Clock/Time synchronisation <ros-timesync>
         Send data from AP to ROS/mavros <ros-data-from-ap>
         ROS with SITL <ros-sitl>
         ROS with SITL in Gazebo <ros-gazebo>

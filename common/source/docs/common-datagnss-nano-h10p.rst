@@ -27,7 +27,7 @@ Key Features
 - Support RTK,output rate 10Hz
 - Standard UART serial interface
 - Lightweight only 15g
-- Build-in High performance antenna
+- Built-in High performance antenna
 
 GNSS
 ====

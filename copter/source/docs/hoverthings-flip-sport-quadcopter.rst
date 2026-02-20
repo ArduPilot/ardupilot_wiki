@@ -56,7 +56,7 @@ What to get
    .. image:: ../../../images/3281_dimg2.jpg
        :target: ../_images/3281_dimg2.jpg
    
-#. `Two tabbed center sections <hhttp://www.hoverthings.com/flip4tabblack>`__ and *eight 7/8" standoffs* (e.g. `similar to these <http://hoverthings.com/standoff-nylon-f-f/>`__).
+#. `Two tabbed center sections <http://www.hoverthings.com/flip4tabblack>`__ and *eight 7/8" standoffs* (e.g. `similar to these <http://hoverthings.com/standoff-nylon-f-f/>`__).
 #. Four DJI motors for Flamewheel from `Amain Hobby <https://www.amainhobbies.com/dji-multirotor-replacement-brushless-motor-dji-motor01/p235238>`__
    for $24.00 each.
 #. A 20 or 25 Amp four in one ESC from `Off the Grid Water <http://mymobilemms.com/OFFTHEGRIDWATER.CA/ESC/4-in-1-Speed-Control-Quad-HOBBYWING-Quattro-Skywalker-25A-X-41?cPath=2_4>`__

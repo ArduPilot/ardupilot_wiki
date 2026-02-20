@@ -16,7 +16,7 @@ Features
 - Telemetry command and control.
 - Send data to `Flightradar24 <https://www.flightradar24.com>`__ and `Open Glider Network <https://www.glidernet.org/>`__ (ADS-B).
 - Multiple vehicles control.
-- Recieve RTK correction data for GNSS from Internet (in development).
+- Receive RTK correction data for GNSS from Internet (in development).
 
 Technical Specifications
 ========================
@@ -24,7 +24,7 @@ Technical Specifications
    +-----------------------------+--------------------------------------------------------------------------------+
    | Frequency Bands             | LTE-TDD: B38/B40; LTE-FDD: B1/B3/B5/B7/B8/B20; GSM/GPRS/EDGE 900/1800 MHz;     |
    +-----------------------------+--------------------------------------------------------------------------------+
-   | Airspeed                    | Transmit 5 MBit/s; Recieve 10 MBit/s                                           |
+   | Airspeed                    | Transmit 5 MBit/s; Receive 10 MBit/s                                           |
    +-----------------------------+--------------------------------------------------------------------------------+
    | UART speed                  | 9600/57600/115200 Baud/s                                                       |
    +-----------------------------+--------------------------------------------------------------------------------+

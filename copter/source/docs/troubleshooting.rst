@@ -134,7 +134,7 @@ The possible solutions are:
 
 --------------
 
-My copter motors spin but the copter wont take off (or motors may not spin at all)
+My copter motors spin but the copter won't take off (or motors may not spin at all)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 While there are a few different reasons for copters to be perceived as

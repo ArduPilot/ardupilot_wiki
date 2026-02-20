@@ -157,7 +157,7 @@ The All-at-once ESC calibration mode simply causes the autopilot to pass
 through the pilot's throttle directly through to the ESCs. If you power
 up the autopilot while in this mode you’ll send the same PWM signal to all the
 ESCs. That's all it does.  Many ESCs use full throttle at startup to
-enter programming mode, full throttle postition is then saved as the
+enter programming mode, full throttle position is then saved as the
 upper end point and when you pull the throttle down to zero, that
 position is saved as the lower end point.
 

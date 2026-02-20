@@ -179,7 +179,7 @@ Panel Name    Description
  XTRACK       Cross Track Error
  DIST         Total Distance Traveled
  STATS        Statistics Summary
- FLTIME       Elasped Time in Flight
+ FLTIME       Elapsed Time in Flight
  CLIMBEFF     Climb Efficiency
  EFF          Efficiency
  BTEMP        2nd Baro Temperature

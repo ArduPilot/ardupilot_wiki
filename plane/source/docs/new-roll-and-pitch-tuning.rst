@@ -9,7 +9,7 @@ Except for very heavy, slow, or extremely nimble vehicles, Autotune should produ
 
    The default values for the roll and pitch controllers in Plane prior to Autotuning are quite deliberately a bit small for most aircraft. This is because small values may cause ArduPilot to not navigate as well and be sluggish, but are less likely to cause the aircraft to crash.
 
-.. note:: There is a new YAW controller which can be used in ACRO mode (previous versions had no YAW rate stabilization in ACRO mode). This controller can be AutoTuned just like roll and pitch during an AutoTuning session using AUTOTUNE mode or RCx_OPTION = 107 on a switch. This is independent of the yaw dampner and side-slip controller used in other angle stablized modes such as CRUISE or AUTO (see :ref:`yaw-controller-tuning`) below.
+.. note:: There is a new YAW controller which can be used in ACRO mode (previous versions had no YAW rate stabilization in ACRO mode). This controller can be AutoTuned just like roll and pitch during an AutoTuning session using AUTOTUNE mode or RCx_OPTION = 107 on a switch. This is independent of the yaw dampner and side-slip controller used in other angle stabilized modes such as CRUISE or AUTO (see :ref:`yaw-controller-tuning`) below.
 
 
 Preconditions
@@ -146,7 +146,7 @@ Manual tuning adjustment follows the same methodology as explained above for the
 Roll to Pitch Compensation
 ==========================
 
-Another tuning parameter is :ref:`PTCH2SRV_RLL<PTCH2SRV_RLL>` which compenstates pitch in turns to avoid altitude loss due to loss of lift caused by the roll. To set this:
+Another tuning parameter is :ref:`PTCH2SRV_RLL<PTCH2SRV_RLL>` which compensates pitch in turns to avoid altitude loss due to loss of lift caused by the roll. To set this:
 
 Roll the model to maximum bank in each direction. The nose should
 stay fairly level during the turns without significant gain or loss
@@ -189,7 +189,7 @@ Tuning tips
    small enough so that it cannot stall the plane. The default for Plane is 2/3 of total throw, which could
    produce this problem.
 -  Be sure that :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` is setup to add 
-   negative pitch at low throttle in stablized modes.
+   negative pitch at low throttle in stabilized modes.
 -  The rate of pitch (and therefore the reduce the number of g's) used
    to correct pitch angle errors can be limited setting the pitch rate
    limit :ref:`PTCH2SRV_RMAX_DN<PTCH2SRV_RMAX_DN>` and :ref:`PTCH2SRV_RMAX_UP<PTCH2SRV_RMAX_UP>` 

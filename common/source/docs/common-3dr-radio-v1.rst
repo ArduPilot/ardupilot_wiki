@@ -69,7 +69,7 @@ Updating the Firmware
 
 Using Mission Planner, with the module connected to the autopilot for power and the base USB unit plugged into the computer:
 
-- determine the USB COMM port the base radio is using and enter that into the port selection box of Mission Planner along with the baud rate (57600 is defualt for the radios).
+- determine the USB COMM port the base radio is using and enter that into the port selection box of Mission Planner along with the baud rate (57600 is default for the radios).
 - WITHOUT connecting anything in Mission Planner, use the SETUP/Optional Hardware/Sik Radio utility tab to "Upload Firmware (local)" which will download the latest firmware and write it to the radios.
 - You may now CONNECT to the base radio COMM port with Mission Planner over MAVLink using the radio links.
 - If you have any problems, be sure that the autopilot's SERIAL port connected to the radio is set to the baud rate (57600 default) and the protocol is MAVLink2 ("2") 

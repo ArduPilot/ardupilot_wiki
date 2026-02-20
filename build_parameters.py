@@ -199,7 +199,7 @@ def fetch_releases(firmware_url, vehicles):
 
 def get_commit_dict(releases_parsed):
     """
-    For informed releases, return a dict git hashs of its build.
+    For informed releases, return a dict git hashes of its build.
 
     """
     def get_last_board_folder(url):
@@ -257,8 +257,8 @@ def get_commit_dict(releases_parsed):
 
             regex = re.compile(r'[@_!#$%^&*()<>?/\|}{~:]')
 
-            if (regex.search(vehicle) is None):  # there are some non standart names
-                vehicle = vehicle_old_to_new_name[vehicle.strip()]   # Names may not be standart as expected
+            if (regex.search(vehicle) is None):  # there are some non standard names
+                vehicle = vehicle_old_to_new_name[vehicle.strip()]   # Names may not be standard as expected
             else:
                 # tries to fix automatically
                 if re.search('copter', vehicle, re.IGNORECASE):
@@ -478,7 +478,7 @@ def move_results(vehicles):
             if not os.path.exists(folder):
                 os.makedirs(folder)
 
-            # Cleanning last run, iff exists
+            # Cleaning last run, iff exists
             files_to_delete = [f for f in glob.glob(folder + "*")]
             for old_file in files_to_delete:
                 os.remove(old_file)

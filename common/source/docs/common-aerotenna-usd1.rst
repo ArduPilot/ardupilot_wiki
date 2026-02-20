@@ -57,7 +57,7 @@ Data screen's Status tab. Look closely for "rangefinder1".
 
 Using the sensor with an AP Periph DroneCAN Node
 ================================================
-The USD1 is available in either CAN or Serial communication protocol versions. The USD1 CAN protocol is different than DroneCAN and hence requires a dedicated CAN port running this protocol. If the autopilot does not have a spare CAN port or spare serial port for conencting the USD1, but has a DroneCAN port setup, you can create another serial port in the system using an AP_Periph CAN node attached to the DroneCAN port. The USD1 MUST be the Serial version for this to work.
+The USD1 is available in either CAN or Serial communication protocol versions. The USD1 CAN protocol is different than DroneCAN and hence requires a dedicated CAN port running this protocol. If the autopilot does not have a spare CAN port or spare serial port for connecting the USD1, but has a DroneCAN port setup, you can create another serial port in the system using an AP_Periph CAN node attached to the DroneCAN port. The USD1 MUST be the Serial version for this to work.
 
 To use the USD1 with a CAN Node like the Matek AP_Periph CAN Node L431, use the following set up.
 

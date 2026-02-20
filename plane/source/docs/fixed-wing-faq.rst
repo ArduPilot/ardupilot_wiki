@@ -246,4 +246,4 @@ are the same, so that the stick inputs are the same in all flight modes and  mat
 you used for the RC calibration setup.
 
 Another, is that you are not using :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` to automatically adjust the trim
-of the pitch and roll controlling flying surfaces. Enabling this will assure that MANUAL mode trim matches that of the auto-leveled modes, like STABLIZE and FBWA.
+of the pitch and roll controlling flying surfaces. Enabling this will assure that MANUAL mode trim matches that of the auto-leveled modes, like STABILIZE and FBWA.

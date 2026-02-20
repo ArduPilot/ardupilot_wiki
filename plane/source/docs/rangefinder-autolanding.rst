@@ -37,7 +37,7 @@ A value for :ref:`LAND_FLARE_SEC<LAND_FLARE_SEC>` of 1.5 and :ref:`LAND_FLARE_AL
 Impact of Glide Slope Terrain variation
 =======================================
 
-If using rangefinder during landing, the rangefinder readings, once engaged (ie when getting good readings below the :ref:`RNGFND1_MAX<RNGFND1_MAX>` altitude on approach), will continuosly adjust the glide slope target altitudes as it approaches. If the terrain is irregular, or there is a deep ditch before the runway threshold, using the rangefinder can actually be worse than just using the barometeric altitude.
+If using rangefinder during landing, the rangefinder readings, once engaged (ie when getting good readings below the :ref:`RNGFND1_MAX<RNGFND1_MAX>` altitude on approach), will continuously adjust the glide slope target altitudes as it approaches. If the terrain is irregular, or there is a deep ditch before the runway threshold, using the rangefinder can actually be worse than just using the barometeric altitude.
 
 In these cases, you may wish to lower the :ref:`RNGFND1_MAX<RNGFND1_MAX>` altitude to a value closer to the expected vehicle altitude at the end of the runway so that it engages and is used shortly before the flare.
 

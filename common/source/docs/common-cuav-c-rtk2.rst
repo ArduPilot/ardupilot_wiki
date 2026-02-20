@@ -106,7 +106,7 @@ LED Indicators
    - 100ms flashing: In bootloader
    - 1000ms flashing: Normal working condition
 - TF LED(TF Card）
-   - Flashing: Noraml SD card reading and writing
+   - Flashing: Normal SD card reading and writing
    - Always bright: No TF card or file system error of TF card. Try cycling the power.
 - Shutter In led (on side)
    - Flashing： Camera shutter signal input

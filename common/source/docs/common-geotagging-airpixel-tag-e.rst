@@ -23,7 +23,7 @@ TAG-E is using single USB-C connection to the camera, no WiFi, no additional mod
 - Precise lever arm calculations based on Antenna to Camera offsets
 - GeoTagging is available at the *maximum speed of the camera*
 - Automatic camera clock configuration by GPS time
-- Enhanced file/folder grouping per flight for better user exprience
+- Enhanced file/folder grouping per flight for better user experience
 - Video geotagging by subtitles
 
 More info at `www.airpixel.cz <https://airpixel.cz/tag-e/>`_

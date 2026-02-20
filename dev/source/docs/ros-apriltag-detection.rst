@@ -13,7 +13,7 @@ The camera is downward looking and on the floor there is an AprilTag board like 
 System overview
 ===============
 
-The system uses `ROS <http://www.ros.org/>`__ for all the tasks it has to do. The images from a `USB camera module <https://www.tindie.com/products/exlene/8mp-usb-camera-module-for-linuxwind7wind8/>`__ are captured by `usb_cam node <http://wiki.ros.org/usb_cam>`__, the pose estimations are calculated by `apriltag_ros node <https://github.com/AprilRobotics/apriltag_ros>`__, then processed by `vision_to_mavros node <https://github.com/hoangthien94/vision_to_mavros>`__, and the relevant messages are sent to the Flight Controller using `MAVROS <http://wiki.ros.org/mavros>`__. All of theses ROS packages runs on the Raspberry Pi 3.
+The system uses `ROS <http://www.ros.org/>`__ for all the tasks it has to do. The images from a `USB camera module <https://www.tindie.com/products/exlene/8mp-usb-camera-module-for-linuxwind7wind8/>`__ are captured by `usb_cam node <http://wiki.ros.org/usb_cam>`__, the pose estimations are calculated by `apriltag_ros node <https://github.com/AprilRobotics/apriltag_ros>`__, then processed by `vision_to_mavros node <https://github.com/hoangthien94/vision_to_mavros>`__, and the relevant messages are sent to the Flight Controller using `MAVROS <http://wiki.ros.org/mavros>`__. All of these ROS packages runs on the Raspberry Pi 3.
 
 The ``usb_cam`` node publishes ``camera/image`` and ``camera/camera_info`` topics, the ``apriltag_ros`` node subscribes to these topics and publish a camera_pose message to the ``mavros/vision_pose/pose`` topic, ``mavros`` translates ROS messages in MAVLink messages and send it to the Flight Controller.
 

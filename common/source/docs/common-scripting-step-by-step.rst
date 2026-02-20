@@ -46,7 +46,7 @@ In Mission Planner (Windows):
 Running a script on your Autopilot
 ==================================
 
-#. Connect your GCS and navigate to its parameters screen (CONFIG->Full Parameter List in Mission Planner, Vehicle Setup->Parmeters in QGC) . Enable :ref:`SCR_ENABLE<SCR_ENABLE>` =1. Disconnect and reconnect the autopilot.
+#. Connect your GCS and navigate to its parameters screen (CONFIG->Full Parameter List in Mission Planner, Vehicle Setup->Parameters in QGC) . Enable :ref:`SCR_ENABLE<SCR_ENABLE>` =1. Disconnect and reconnect the autopilot.
 #. On your SD card, place the script in the APM/scripts directory. This directory will be created on the SD card when you have enabled the :ref:`SCR_ENABLE<SCR_ENABLE>` via your GCS. If it does not exist, create it and load the script. You can use Mission Planner's CONFIG->MAVFTP tab or take out the SD card and use a PC to write the script onto the card.
 #. Restart the autopilot with the SD card in and the script(s) on it will load and execute.
 #. If you get a "Scripting: out of memory" GCS message then you will need to increase :ref:`SCR_HEAP_SIZE<SCR_HEAP_SIZE>` parameter and try to restart the simulation. How much memory is needed is dependent on the script and the configuration of peripherals and features in use on the autopilot.

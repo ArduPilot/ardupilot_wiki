@@ -641,7 +641,7 @@ def fetch_versioned_parameters(site=None):
             targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
             fetch_and_rename(fetchurl, targetfile, 'Parameters.rst')
 
-        else: # regular versining
+        else: # regular versioning
 
             if site == key or site is None:
                 # Remove old param single file
@@ -721,7 +721,7 @@ def fetch_versioned_parameters(site=None):
                             debug("Check cache with filecmp.cmp: %s" % filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
                             debug("Check cache with sha256: %s" % is_the_same_file(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
 
-                            if ("parameters.rst" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.  # noqa: E501
+                            if ("parameters.rst" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built every time in order to enable Sphinx create the correct references across the wiki.  # noqa: E501
                                 debug("Overwriting %s to %s" % (filename, new_file))
                                 shutil.copy2(filename, new_file)
                             else:
@@ -836,7 +836,7 @@ def update_frontend_json():
 
 def copy_static_html_sites(site, destdir):
     """
-    Copy pure HMTL folder the same way that Sphinx builds it
+    Copy pure HTML folder the same way that Sphinx builds it
     """
     if (site in ['frontend', None]) and (destdir is not None):
         debug('Copying static sites (only frontend so far).')
@@ -936,7 +936,7 @@ def create_features_pages(site):
 
 def reference_for_board(board):
     '''return a string suitable for creating an anchor in RST to make
-    board's feture table linkable'''
+    board's feature table linkable'''
     return "FEATURE_%s" % board
 
 
@@ -1126,7 +1126,7 @@ if __name__ == "__main__":
 
     if not args.fast:
         if args.paramversioning:
-            # Parameters for all versions availble on firmware.ardupilot.org:
+            # Parameters for all versions available on firmware.ardupilot.org:
             fetch_versioned_parameters(args.site)
         else:
             # Single parameters file. Just present the latest parameters:

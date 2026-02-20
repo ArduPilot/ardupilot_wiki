@@ -30,7 +30,7 @@ Notch Filter Setup Overview
 #. Select how the notch center frequency will be controlled. See :ref:`center_freq_control`.
 #. If a static notch (not usually recommended), or :ref:`throttle-based<common-imu-notch-filtering-throttle-based-setup>` control is used, the dominant noise frequencies will need to be determined in order to setup the notch. See :ref:`notch_center_freq`.
 #. :ref:`Enable the notch filter<notch_enable>`.
-#. Setup the selected center frequency control method using :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>`. Then setup its associated parameters by reading its associated page linked in this secion :ref:`center_freq_control`.
+#. Setup the selected center frequency control method using :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>`. Then setup its associated parameters by reading its associated page linked in this section :ref:`center_freq_control`.
 #. After a test flight and log analysis with the notch enabled (See :ref:`notch_check`), the :ref:`number and placement of higher harmonic filters implemented can be adjusted <notch_harmonics>`, the use of the :ref:`multi-notch options<notch_options>`, or even a second harmonic notch set (:ref:`INS_HNTC2_ENABLE<INS_HNTC2_ENABLE>`) can be configured to improve noise reduction effectiveness. The web based `Filter Review Tool <https://firmware.ardupilot.org/Tools/WebTools/FilterReview/>`__ can be used to experiment with parameter changes based on the test flight log to determine best configurations without having to make iterative test flights.
 
 .. _notch_enable:

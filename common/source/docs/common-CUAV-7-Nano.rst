@@ -25,7 +25,7 @@ Features
 * 3 I2C ports
 * 3 CAN ports (two of which share a CAN bus and one is an independent CAN bus)
 * Analog RSSI input
-* 3.3V/5V configurable PWM ouput voltage
+* 3.3V/5V configurable PWM output voltage
 
 Size 
 ====

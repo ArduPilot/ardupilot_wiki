@@ -33,7 +33,7 @@ Now you got an SITL instance launched with TCP and UDP access, you should have s
 
     "mavproxy.py" "--master" "tcp:127.0.0.1:5760" "--sitl" "127.0.0.1:5501" "--out" "127.0.0.1:14550" "--out" "127.0.0.1:14551" "--map" "--console"
 
-Both "--out" refer to UDP connexion create by MAVProxy. We will use UDP access with mavros.
+Both "--out" refer to UDP connection create by MAVProxy. We will use UDP access with mavros.
 
 Get back to your ROS terminal. Let's create a new directory for our launch file.
 
@@ -65,7 +65,7 @@ Open it with your favorite editor, mine is gedit.
         <!-- vim: set ft=xml noet : -->
         <!-- example launch script for ArduPilotMega based FCU's -->
 
-        <arg name="fcu_url" default="/dev/ttyACM0:57600" /> <!-- Port et baudrate of the connexion with Pixhawk -->
+        <arg name="fcu_url" default="/dev/ttyACM0:57600" /> <!-- Port et baudrate of the connection with Pixhawk -->
         <arg name="gcs_url" default="" /> <!-- Retransmission to a GCS like Mavproxy does -->
         <arg name="tgt_system" default="1" /> <!-- MAVLink id of your drone, default is 1 -->
         <arg name="tgt_component" default="1" /> <!-- MAVLink component id of your drone, default is 1 -->
@@ -90,7 +90,7 @@ To connect to SITL we just need to modify the first line to ``<arg name="fcu_url
 
     roslaunch apm.launch
 
-You should see some verbose from MAVROS that read its configuration and some line that indicate a connexion:
+You should see some verbose from MAVROS that read its configuration and some line that indicate a connection:
 
 .. code-block:: none
 

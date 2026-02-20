@@ -10,7 +10,7 @@ The SPRacingH7 RF is an autopilot produced by `Seriously Pro Racing <http://www.
      :target: ../_images/spracingh7rf.jpg
      :width: 240px
 
-.. warning:: this autopilot does not come preloaded wit ArduPilot and installing the ArduPilot bootloader requires soldering and is recommended only for advanced users,
+.. warning:: this autopilot does not come preloaded with ArduPilot and installing the ArduPilot bootloader requires soldering and is recommended only for advanced users,
 
 Specifications
 ==============
@@ -75,7 +75,7 @@ RC Input
 Ardupilot does not currently support the integrated ELRS chip.
 
 RC input is configured on the R2 pin. It supports all serial RC
-protocols. PPM is not supoorted. For protocols requiring half-duplex serial to transmit
+protocols. PPM is not supported. For protocols requiring half-duplex serial to transmit
 telemetry (such as FPort) you should setup SERIAL2 as an RC input serial port,
 with half-duplex, pin-swap and inversion enabled. For duplex protocols, like CRSF/ELRS, T2 must also be connected to the receiver.
 
@@ -108,7 +108,7 @@ to use DShot.
 Battery Monitor Settings
 ========================
 
-The board has a built-in voltage sesnor and current sensor input from the ESC connectors. The voltage sensor can handle up to 8S LiPo batteries.
+The board has a built-in voltage sensor and current sensor input from the ESC connectors. The voltage sensor can handle up to 8S LiPo batteries.
 
 The correct battery setting parameters are (these aew already set by default):
 

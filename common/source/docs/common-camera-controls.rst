@@ -54,7 +54,7 @@ Use any of the auxiliary function controls listed above from the Data, Aux Funct
     :target: ../_images/camera-controls-mp-aux-functions.png
     :width: 450px
     
-Note that these buttons are "edge triggered" which means that to trigger a function multiple times you may need to push the "Low" or "Mid" button betrween pushes of "High".
+Note that these buttons are "edge triggered" which means that to trigger a function multiple times you may need to push the "Low" or "Mid" button between pushes of "High".
 
 Control during Auto mode missions
 =================================

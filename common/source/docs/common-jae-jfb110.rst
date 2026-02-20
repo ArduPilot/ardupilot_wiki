@@ -313,7 +313,7 @@ An alternate RC input is setup on SERIAL5 RX input and provides the same capabil
 
 To allow CRSF and embedded telemetry available in FPort, CRSF, and SRXL2 receivers, any full UART with DMA can be assigned to be used as the RC connection instead of the PPM pin. For example SERIAL4 could be re-assigned as RC input.
 
-With this option, :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` must be set to "23", :ref:`SERIAL5_PROTOCOL<SERIAL5_PROTOCOL>` must be cahnged to some other protocol than its default of "23" (only one UART is allowed to have that protocol in a system), and:
+With this option, :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` must be set to "23", :ref:`SERIAL5_PROTOCOL<SERIAL5_PROTOCOL>` must be changed to some other protocol than its default of "23" (only one UART is allowed to have that protocol in a system), and:
 
 - PPM is not supported.
 

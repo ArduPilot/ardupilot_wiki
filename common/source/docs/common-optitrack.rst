@@ -36,7 +36,7 @@ Please refer to OptiTrack `quick start guides <https://v20.wiki.optitrack.com/in
    Mark motion capture system coordinate system using tape
 
 
-Required softwares
+Required software
 ==================
 
 * `Motive 2 or 3 Tracker <https://optitrack.com/products/motive/tracker/>`__
@@ -47,11 +47,11 @@ Prepare the drone
 
 .. warning::
 
-   It is highly recommended that use small drone for indoor flight and deploy cage in your test flight enviorment.
+   It is highly recommended that use small drone for indoor flight and deploy cage in your test flight environment.
 
 .. tip::
 
-   If you are looking for a small drone for indoor flight test, Skyviper V2450 GPS drone or its successor journey GPS drone is a good choice. It is very affordable and running ArduPilot out-of-box. You can easily flash it wit custom build ArduPilot. If you perfer custom build small drone, there is a very good discuss `here <https://discuss.ardupilot.org/t/microarducopter-3-props-omnibus-nano-success/32568?u=chobitsfan>`__. The RTF quadcopter frame used in another example video is available from `sdmodel <https://goods.ruten.com.tw/item/show?21806678027603>`__.
+   If you are looking for a small drone for indoor flight test, Skyviper V2450 GPS drone or its successor journey GPS drone is a good choice. It is very affordable and running ArduPilot out-of-box. You can easily flash it with custom build ArduPilot. If you prefer custom build small drone, there is a very good discuss `here <https://discuss.ardupilot.org/t/microarducopter-3-props-omnibus-nano-success/32568?u=chobitsfan>`__. The RTF quadcopter frame used in another example video is available from `sdmodel <https://goods.ruten.com.tw/item/show?21806678027603>`__.
 
 First, you need to place markers on the drone. It is very important to place markers so that they form a stereoscopic, asymmetrical shape. Please refer to OptiTrack `rigid body marker placement <https://v20.wiki.optitrack.com/index.php?title=Rigid_Body_Tracking#Rigid_Body_Marker_Placement>`__ for details.
 
@@ -99,7 +99,7 @@ You need to set tracking rigid body id to match your setting in Motive:
 
     optitrack set obj_id RIGID_BODY_STREAMING_ID
 
-If you set Motive data streaming local interface to other than loopback , it is required to configuare optitrack module with:
+If you set Motive data streaming local interface to other than loopback , it is required to configure optitrack module with:
 
 .. code:: bash
 

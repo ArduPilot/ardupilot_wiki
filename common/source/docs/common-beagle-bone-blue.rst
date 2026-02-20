@@ -469,7 +469,7 @@ Paste the following script
         try:
             start_server_and_listen(master)
         except:
-            print("Exception occured, restarting server...")
+            print("Exception occurred, restarting server...")
 
     client.close()
     server.close()

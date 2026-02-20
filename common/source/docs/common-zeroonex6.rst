@@ -37,12 +37,12 @@ Features:
 - **Interfaces**
    - Ethernet
    - Micro-C USB
-   - 7 UARTs, 3 with hardware flow contrrol
+   - 7 UARTs, 3 with hardware flow control
    - Safety Switch
    - 2 CAN Power Monitor inputs
    - 2 CAN ports
    - SPI and I2C ports
-   - 16 motor/servo outputs, 8 supporting BiDirDShot, 14 suporting DShot
+   - 16 motor/servo outputs, 8 supporting BiDirDShot, 14 supporting DShot
 
 Pinout
 ======
@@ -75,7 +75,7 @@ PWM Output
 
 The X6 flight controller supports up to 16 PWM outputs. First 8 outputs (labeled 1 to 8) are controlled by a dedicated STM32F103 IO controller. The remaining 8 outputs (labeled 9 to 16) are the "auxiliary" outputs. These are directly attached to the STM32H753 FMU controller.
 
-All 16 outputs support normal PWM output formats. All 16 outputs support DShot, except 15 and 16. Outputs 1-8 supoort BiDirectional DShot.
+All 16 outputs support normal PWM output formats. All 16 outputs support DShot, except 15 and 16. Outputs 1-8 support BiDirectional DShot.
 
 The 8 IO PWM outputs are in 4 groups:
 

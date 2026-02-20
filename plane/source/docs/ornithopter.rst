@@ -28,7 +28,7 @@ known to work with an ardupilot autopilot. The `GosHawk25iV <https://discuss.ard
 
 Autopilot Setup Differences
 ---------------------------
-Fixed wing aircraft generally use 4 control ouputs: aileron, elevator, throttle and rudder.
+Fixed wing aircraft generally use 4 control outputs: aileron, elevator, throttle and rudder.
 
 In Orinthopters, these primary controls are:
 

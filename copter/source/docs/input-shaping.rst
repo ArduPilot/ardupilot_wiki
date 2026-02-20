@@ -14,7 +14,7 @@ The most important of these parameters is:
 - :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>`: Roll rate acceleration
 - :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>`: Yaw rate acceleration
 - :ref:`ATC_ANG_LIM_TC <ATC_ANG_LIM_TC>`: Aircraft smoothing time
-- :ref:`ATC_INPUT_TC <ATC_INPUT_TC>`: Time to achieve 63% seady state pitch and roll attitude. Mulitply by 3 to determine time to achieve steady state attitude.
+- :ref:`ATC_INPUT_TC <ATC_INPUT_TC>`: Time to achieve 63% seady state pitch and roll attitude. Multiply by 3 to determine time to achieve steady state attitude.
 - :ref:`PILOT_Y_RATE_TC <PILOT_Y_RATE_TC>`: Time to achieve 63% steady state yaw rate. Multiply by 3 to determine time to achieve steady state rate.
 
 

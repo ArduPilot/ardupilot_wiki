@@ -55,7 +55,7 @@ How Drift Mode works
 -  You should also be prepared to switch back to Stabilize Mode for
    manual recovery if necessary.
 
-Whats it Useful For
+What's it Useful For
 ===================
 
 -  FPV flyers who are looking for a dynamic, plane like flight as well

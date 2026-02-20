@@ -394,7 +394,7 @@ The GCS would then connect to SITL by listening on that UDP port.
 Using Mission Planner Forwarding
 --------------------------------
 
-Mission Planner can forward to other GCS using it Mavlink Mirror. Under SETUP/Advanced/Mavlink Mirror set the connection type (usually UDP Client), baud rate (11520 for UDP),optional write access to allow the connecting GCS to changes things, and press connect. A listening GCS will automtically connect to SITL.
+Mission Planner can forward to other GCS using it Mavlink Mirror. Under SETUP/Advanced/Mavlink Mirror set the connection type (usually UDP Client), baud rate (11520 for UDP),optional write access to allow the connecting GCS to changes things, and press connect. A listening GCS will automatically connect to SITL.
 
 .. image:: ../../../images/mavlink-forwarding.jpg
   :target: ../_images/mavlink-forwarding.jpg

@@ -72,7 +72,7 @@ There are a number of additional parameters that can control when WeatherVaning 
 - :ref:`Q_WVANE_SPD_MAX<Q_WVANE_SPD_MAX>`: below this ground speed weathervaning is permitted
 - :ref:`Q_WVANE_VELZ_MAX<Q_WVANE_VELZ_MAX>`: maximum climb or descent speed at which the vehicle will still attempt to weathervane
 - :ref:`Q_WVANE_TAKEOFF<Q_WVANE_TAKEOFF>`: override weathervaning direction in auto takeoffs*
-- :ref:`Q_WVANE_LAND<Q_WVANE_LAND>`: overide weathervaning directions in auto landings*
+- :ref:`Q_WVANE_LAND<Q_WVANE_LAND>`: override weathervaning directions in auto landings*
 
 note:* not QLOITER take-offs and landings
 

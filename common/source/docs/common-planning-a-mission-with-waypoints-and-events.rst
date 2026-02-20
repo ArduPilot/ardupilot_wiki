@@ -92,7 +92,7 @@ Tips
    and a little one inside of that, the little one will not be excluded
    from the big one
    (see `this <http://wiki.openstreetmap.org/wiki/Relation:multipolygon>`__ for
-   more). Also, in the case of any polygon that partialy doubles backs
+   more). Also, in the case of any polygon that partially doubles backs
    on itself (like the letter U), the open area in the center will be
    included as part of the flyover.
 -  Setting your home location to the current location is easy, just

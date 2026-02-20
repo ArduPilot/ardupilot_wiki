@@ -149,7 +149,7 @@ This controller can be AutoTuned in the same manner as the pitch and roll axes, 
 Autotune Level 0
 ================
 
-This is a special level that does not change the rates or time constant (ie like :ref:`RLL2SRV_RMAX<RLL2SRV_RMAX>` or :ref:`PTCH2SRV_TCONST<PTCH2SRV_TCONST>`) but tunes FF/P/I/D for the current values of those parameters. This may be useful when pitch is unstable at a lower :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` level than roll, for example. You can set the ROLL axis values at more agressive values than the pitch axis and proceed with a tune to re-optimize the FF/P/I/D values for that configuration.
+This is a special level that does not change the rates or time constant (ie like :ref:`RLL2SRV_RMAX<RLL2SRV_RMAX>` or :ref:`PTCH2SRV_TCONST<PTCH2SRV_TCONST>`) but tunes FF/P/I/D for the current values of those parameters. This may be useful when pitch is unstable at a lower :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` level than roll, for example. You can set the ROLL axis values at more aggressive values than the pitch axis and proceed with a tune to re-optimize the FF/P/I/D values for that configuration.
 
 
 Completing the tune

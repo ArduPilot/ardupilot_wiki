@@ -51,7 +51,7 @@ then set the autopilot's IP address, it must be in the 192.168.144.x to be in th
 - :ref:`NET_IPADDR3<NET_IPADDR3>` = 26 <- arbitrarily chosen but must not be 11 (Herelink fixed address)
 - :ref:`NET_NETMASK<NET_NETMASK>` = 24 <- this says we are in a subnet with addresses 192.168.144.1 to 192.168.144.254
 
-if the autopilot needs to communicate with IP addresses outside this range it will use a "gateway" in the subnet...we wont be doing this but it still needs to be set:
+if the autopilot needs to communicate with IP addresses outside this range it will use a "gateway" in the subnet...we won't be doing this but it still needs to be set:
 
 - :ref:`NET_GWADDR0<NET_GWADDR0>` = 192
 - :ref:`NET_GWADDR1<NET_GWADDR1>` = 168

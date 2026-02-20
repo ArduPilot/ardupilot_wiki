@@ -24,7 +24,7 @@ Overview of the Autorotation Manoeuvre
 
 Traditional helicopters are capable of landing safely after losing propulsive power.  This is achieved through 
 the autorotation manoeuvre, in which the descending aircraft can use the airflow being forced up through the main blades to
-drive the rotor and still produce some upwards thrust.  The primary goal of the manoeuvre is to use the aircrafts remaining energy 
+drive the rotor and still produce some upwards thrust.  The primary goal of the manoeuvre is to use the aircraft remaining energy 
 to bring the aircraft safely to the ground, landing softly.
 
 The manoeuvre can be broken down into phases.  The breakdown and description of those phases differs across the literature that 
@@ -64,7 +64,7 @@ A key difference to note between the two scenarios is the reversal of the vertic
 necessitates careful collective management when entering the autorotation.  The objective is to reduce the blade collective angle reducing the risk of blade 
 stall.  It is key that the collective is moved proportionally to the direction of the resultant velocity vector to minimize the blade drag generated, preventing 
 excessive loss of head speed.  As the descent velocity increases the lift vector will naturally rotate towards the leading edge of the blade, providing the 
-driving force to mainain rotor RPM.
+driving force to maintain rotor RPM.
 
 In addition to this, the forward airspeed must be either maintained or increased (if the failure is initiated from a low airspeed state).  This is done 
 through cyclic controls.

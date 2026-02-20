@@ -68,7 +68,7 @@ Instructions to use with Mission Planner:
 
 -  Connect Pixhawk to PC using a USB cable
 -  Go to the Flight Data screen, select the correct COM port and baud
-   (probalby 115200) and press the connect button
+   (probably 115200) and press the connect button
 -  Go to the Terminal screen, set the left-most drop down to "NSH" and
    push Connect.
 

@@ -38,7 +38,7 @@ The official instructions are `here <https://docs.microsoft.com/en-us/windows/ws
 
     * To reload the path variables in WSL either close the terminal and reopen it or use: ``logout``
 
-#. If using Windows 10 install an XWindows application to run graphical programs such as SITL by installing `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`_, `Cygwin X <https://x.cygwin.com/>`_ or `Xming <https://sourceforge.net/projects/xming/>`_ on Windows. For Winodws 11 this is not necessary.
+#. If using Windows 10 install an XWindows application to run graphical programs such as SITL by installing `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`_, `Cygwin X <https://x.cygwin.com/>`_ or `Xming <https://sourceforge.net/projects/xming/>`_ on Windows. For Windows 11 this is not necessary.
 
 #. If desired, change default WSL parameters as described `at this link <https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig>`_. These parameters allow you to set for example the amount of memory and number of processors used by WSL.
 
@@ -84,7 +84,7 @@ Uploading to boards (e.g. ``./waf plane --upload``) in WSL2 is possible; however
 
 ::
 
-    pip.exe install empy pyserial
+    pip.exe install empty pyserial
 
 As of July 2022, Microsoft's solution of providing USB access to WSL2 via usbipd does not work for accessing the bootloader on the device due to slow mounting times.
 
@@ -129,7 +129,7 @@ Using VcXsrv to Create XWindows Displays
         * Under ``Inbound Rules`` find ``VcXsrv windows xserver`` and ensure ``Allow Connection`` is enabled for your network type ``Private``, ``Public``, or both
         * Check ``Outbound Rules`` as well
 
-.. note:: this step is not required in Win11 since it already itegrates the grahical interface into its WSL2 environment.
+.. note:: this step is not required in Win11 since it already integrates the graphical interface into its WSL2 environment.
 
 Code Editing in WSL Using VSCode (Optional)
 -------------------------------------------

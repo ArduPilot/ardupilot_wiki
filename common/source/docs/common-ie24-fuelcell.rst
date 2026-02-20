@@ -208,7 +208,7 @@ Flight Log Data
 The telemetry data is stored across a few data groups in the flight data log.  This data can be found as follows:
 
 - Hydrogen percent used in BAT->CurrTot for the battery monitor instance set as Generator-Fuel.
-- Hydrogen remaing is also logged in IE24->FUEL as percentage remaining.
+- Hydrogen remaining is also logged in IE24->FUEL as percentage remaining.
 - Battery voltage in BAT->Volt for the battery monitor instance set as Generator-Elec.
 - Battery current in BAT->Curr for the battery monitor instance set as Generator-Elec.
 - Battery used in BAT->CurrTot for the battery monitor instance set as Generator-Elec.

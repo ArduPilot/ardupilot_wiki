@@ -73,7 +73,7 @@ The submodule MAVLink of the *develop* branch is now linked to a different repos
 
    git submodule sync
 
-the usual command below will then be updated with the approriate submodule according to the branch (*master* or *develop*) you are working on.
+the usual command below will then be updated with the appropriate submodule according to the branch (*master* or *develop*) you are working on.
 
 ::
 

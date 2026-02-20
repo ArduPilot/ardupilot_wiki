@@ -25,7 +25,7 @@ Moreover, some RC transmitters such as the Flysky FS-i6X can be modified with Op
 Setup
 =====
 
-.. note:: Support for this peripheral is included on all boards with *more* than 2MB flash memory. It is also available for other boards using the `Custom Firwmare Build Server <https://custom.ardupilot.org/>`__ , by creating a firmware build including this feature listed under the Telemetry category.
+.. note:: Support for this peripheral is included on all boards with *more* than 2MB flash memory. It is also available for other boards using the `Custom Firmware Build Server <https://custom.ardupilot.org/>`__ , by creating a firmware build including this feature listed under the Telemetry category.
 
 In order to use i-BUS telemetry, the following steps are required:
 

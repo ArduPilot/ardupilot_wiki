@@ -96,7 +96,7 @@ Instead of using the Stable or Master code branch for simulation, you can use an
 - Start RealFlight with the desired Realflight vehicle that has been modified for use with flightaxis.
 - In your GITHUB repository (not local) push your branch to it
 - Under ACTIONS in your web GITHUB repo, select Cygwin Build, and the select branch you pushed that you want the sim to use
-- Download and unzip its build aritfacts and select the ArduXXX.elf.exe file for the vehicle type and rename it, eliminating the .elf portion to a plain .exe file and place in your Documents/Mission Planner/sitl folder in place of the existing file, if present.
+- Download and unzip its build artifacts and select the ArduXXX.elf.exe file for the vehicle type and rename it, eliminating the .elf portion to a plain .exe file and place in your Documents/Mission Planner/sitl folder in place of the existing file, if present.
 - Start the Mission Planner vehicle sim for the appropriate vehicle with the "do not download" checkbox ticked and flightaxis selected as above.
 
 The simulation will begin using your code branch. Be sure to have the parameters set/updated for the RealFlight vehicle.
@@ -153,7 +153,7 @@ A number of custom models have been created by ArduPilot developers and stored i
 You should be able to :ref:`clone <git-clone>` this repo using ``git clone https://github.com/ArduPilot/SITL_Models.git`` and then load the models into RealFlight.
 In the directory for each model there is a .parm file that can be loaded into SITL so that appropriate tunings parameters are set.
 
-The SITL_Models folder has a RealFlight directory with a WIP sub-directory for models in progress, and a Released_Models directory, which have models that have been tested to work with the InterLink controllers and have README.md files describing thier setup and special features.
+The SITL_Models folder has a RealFlight directory with a WIP sub-directory for models in progress, and a Released_Models directory, which have models that have been tested to work with the InterLink controllers and have README.md files describing their setup and special features.
 
 To import one of these models:
 
@@ -177,7 +177,7 @@ There are three approaches you can use. Minimal: which only setups up the AETR f
 
 Minimal: power up the TX, program a new plane model for use with the sim with the wizard, plug in USB, select joystick (later OpenTX versions allow permanent selection in the main radio setup page). Select Simulation-> Select controller in RealFlight. Select Taranis, and proceed to setup the aileron,elevator,rudder, and throttle and calibrate them. Now to change modes or set switches, you will need to use MAVProxy or Mission Planner commands.
 
-Maximal: In additon to the above, setup the TX model with switches or sliders/pots for channels 5,6,7, and 8. Then add them for functions in the RealFlight controller setup. Do not be concerned about the function names, we just want them to be passed thru to the SITL model. Now you can assign ``RCx_OPTION`` functions to those channels in the model parameters.
+Maximal: In addition to the above, setup the TX model with switches or sliders/pots for channels 5,6,7, and 8. Then add them for functions in the RealFlight controller setup. Do not be concerned about the function names, we just want them to be passed thru to the SITL model. Now you can assign ``RCx_OPTION`` functions to those channels in the model parameters.
 
 InterLink DX/Elite controller emulation: This closely mimics these Interlink  controllers, normally sold with RealFlight. This allows the use of a transmitter with normal RealFlight simulations as well as SITL which closely matches the physical layout of the Interlink controllers. See :ref:`interlink-emulation` for setup details.
 

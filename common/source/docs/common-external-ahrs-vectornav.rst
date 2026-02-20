@@ -187,7 +187,7 @@ After the serial parameters have been configured, configure:
 
 .. tip::
   ArduPilot's internal navigation filters run even when configured to use a VectorNav as the canonical navigation source (unless internal filters are disabled). As such, it is recommended to additionally configure the VectorNav as an external sensor set. This allows ease of switching canonical PVTA between VectorNav's and ArduPilot's navigation filters, if necessary.
-  To do this, configure the necessary paramters in Use as an External Sensor Set, but leave `AHRS_EKF_TYPE<AHRS_EKF_TYPE>` as External AHRS.
+  To do this, configure the necessary parameters in Use as an External Sensor Set, but leave `AHRS_EKF_TYPE<AHRS_EKF_TYPE>` as External AHRS.
 
 Published Data
 ==============

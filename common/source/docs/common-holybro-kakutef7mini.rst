@@ -103,7 +103,7 @@ The KakuteF7 Mini supports OSD using :ref:`OSD_TYPE<OSD_TYPE>` 1 (MAX7456 driver
 PWM Output
 ==========
 
-TThe KakuteF7 Mini supports up to 6 outputs. M1 to M4 are accessed via the connector and are :ref:`bi-directional<bidir-dshot>` capable. M5 and M6 are the pads shown on the above diagram. M1-4 and M6 outputs support DShot as well as all PWM types.M5 only supports PWM.
+The KakuteF7 Mini supports up to 6 outputs. M1 to M4 are accessed via the connector and are :ref:`bi-directional<bidir-dshot>` capable. M5 and M6 are the pads shown on the above diagram. M1-4 and M6 outputs support DShot as well as all PWM types.M5 only supports PWM.
 
 The PWM is in 3 groups:
 

@@ -56,7 +56,7 @@ VTOL Motor Ordering
 -------------------
 
 The motor order and output channel is the same as for copter (see :ref:`Copter motor layout <copter:connect-escs-and-motors>`)
-except that the default output channel numbers usualy start at 5 instead of 1, since the basic plane control surfaces are usually setup by default already on outputs 1 thru 4 when Q_ENABLE is set to 1 and the autopilot rebooted to setup QuadPlane.
+except that the default output channel numbers usually start at 5 instead of 1, since the basic plane control surfaces are usually setup by default already on outputs 1 thru 4 when Q_ENABLE is set to 1 and the autopilot rebooted to setup QuadPlane.
 
 .. note:: :ref:`guide-tailsitter` configuration is a special case. See Tailsitter notes below
 
@@ -95,7 +95,7 @@ For a Tricopter configuration, the default output assignment is:
 
 The normal plane outputs are assumed to be on 1 to 4 as usual. Only
 vertical lift outputs (5 to 8 on a quad setup) normally should be run at high PWM rate
-(400Hz). When using these default configurations, you can assigne other outputs to whatever functions you desire.
+(400Hz). When using these default configurations, you can assign other outputs to whatever functions you desire.
 
 You can optionally move the motors to be on any other channel, using the procedure outlined in the section further below.
 

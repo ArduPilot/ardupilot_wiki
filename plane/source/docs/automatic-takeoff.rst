@@ -4,7 +4,7 @@
 Automatic Takeoff
 =================
 
-Plane can automatically takeoff in AUTO modee a wide range of aircraft types. The
+Plane can automatically takeoff in AUTO mode a wide range of aircraft types. The
 instructions below will teach you how to setup your mission to support
 automatic takeoff. Automatic takeoff can also be accomplished by the :ref:`takeoff-mode`.
 

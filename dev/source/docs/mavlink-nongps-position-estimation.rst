@@ -53,7 +53,7 @@ The preferred method is to send an `ODOMETRY <https://mavlink.io/en/messages/com
    <tr>
    <td><strong>time_usec</strong></td>
    <td>uint64_t</td>
-   <td>Timestamp since system boot.  This does not need to be syncronised with the autopilot's time</td>
+   <td>Timestamp since system boot.  This does not need to be synchronised with the autopilot's time</td>
    </tr>
    <tr>
    <td><strong>frame_id</strong></td>
@@ -183,7 +183,7 @@ Users should set :ref:`FLOW_TYPE<FLOW_TYPE>` = 5 (MAVLink) and then perform the 
    <tr>
    <td><strong>time_usec</strong></td>
    <td>uint64_t</td>
-   <td>Timestamp since system boot.  This does not need to be syncronised with the autopilot's time</td>
+   <td>Timestamp since system boot.  This does not need to be synchronised with the autopilot's time</td>
    </tr>
    <tr>
    <td>sensor_id</td>

@@ -64,7 +64,7 @@ There are a number of additional parameters that can control when WeatherVaning 
 - :ref:`WVANE_SPD_MAX<WVANE_SPD_MAX>`: below this ground speed weathervaning is permitted
 - :ref:`WVANE_VELZ_MAX<WVANE_VELZ_MAX>`: maximum climb or descent speed at which the vehicle will still attempt to weathervane
 - :ref:`WVANE_TAKEOFF<WVANE_TAKEOFF>`: override weathervaning direction in auto takeoffs*
-- :ref:`WVANE_LAND<WVANE_LAND>`: overide weathervaning directions in auto landings*
+- :ref:`WVANE_LAND<WVANE_LAND>`: override weathervaning directions in auto landings*
 
 .. note:: to allow weathervaning only on takeoffs and landing during an AUTO mission or in GUIDED mode, set :ref:`WVANE_ENABLE<WVANE_ENABLE>` =0 but use the :ref:`WVANE_LAND<WVANE_LAND>` and/or :ref:`WVANE_TAKEOFF<WVANE_TAKEOFF>` parameters to enable the weathervaning control.
 

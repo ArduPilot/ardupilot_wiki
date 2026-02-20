@@ -108,7 +108,7 @@ Wire the PX4FMU and PX4IO boards to Your Plane
    inputs.**
 
    #. The ESCs BEC or a separate UBEC can supply servo power to the
-      Servos via the PX4's Servo connector BUSS
+      Servos via the PX4's Servo connector BUS
 
       #. Run the 3 wire servo cables from the ESC (and its built in BEC)
          and Servos to the 3 x 9 Servo Connector on the PX4IO board.

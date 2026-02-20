@@ -8,7 +8,7 @@ Luxonis OAK-D
 
 .. youtube:: Xxh8CUwEE1M
 
-This article explains how to setup a Luxonis OAK-D camera for use with ArduPilot as a substitude for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto to work. This solution is based on HKUST Aerial Robotics Group's VINS-Fusion and Sara Lucia Contreras Ojeda’s thesis "Robot pose calculation based on Visual Odometry using Optical flow and Depth map"
+This article explains how to setup a Luxonis OAK-D camera for use with ArduPilot as a substitute for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto to work. This solution is based on HKUST Aerial Robotics Group's VINS-Fusion and Sara Lucia Contreras Ojeda’s thesis "Robot pose calculation based on Visual Odometry using Optical flow and Depth map"
 
 .. image:: ../../../images/oak_d_pi_quad_250.jpg
 

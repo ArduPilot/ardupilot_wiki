@@ -9,7 +9,7 @@ This article explains how to autonomously land Plane as part of a mission plan o
 Configuring for Automatic Landing
 =================================
 
-To autoland the plane you need to add a :ref:`NAV_LAND <mav_cmd_nav_land>` command to the end of your mission indicating the latitude, longitude and altitude of your desired touchdown point and if aborting the autoland is allowed. When the preceeding waypoint is reached, it will descend and navigate to the touchdown point.
+To autoland the plane you need to add a :ref:`NAV_LAND <mav_cmd_nav_land>` command to the end of your mission indicating the latitude, longitude and altitude of your desired touchdown point and if aborting the autoland is allowed. When the preceding waypoint is reached, it will descend and navigate to the touchdown point.
 
 In most cases, the altitude should be set to 0. During the final flare portion of the landing, the autopilot will shut down the throttle and hold the current heading, controlled by the parameters described below.
 

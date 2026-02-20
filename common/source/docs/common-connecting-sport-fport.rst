@@ -104,4 +104,4 @@ Or a more compact version using the following components:
 
       DIY FRSky Smartport adapter cable
 
-.. warning ::  DO NOT PLUG THE TELEMETRY CABLE TO THE AUTOPILOT OR RECIEVER WHILE POWER IS ON!
+.. warning ::  DO NOT PLUG THE TELEMETRY CABLE TO THE AUTOPILOT OR RECEIVER WHILE POWER IS ON!

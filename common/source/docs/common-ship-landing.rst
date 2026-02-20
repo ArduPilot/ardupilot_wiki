@@ -38,7 +38,7 @@ There are several ways to setup this type :ref:`Telemetry<common-telemetry-landi
 
 - WiFi, with a multicast network
 - a mesh-capable telemetry radio
-- using any kind of telemtry for GCS <-> vehicle and GCS <-> beacon, setup the GCS to forward GLOBAL_POSITION_INT packets from the beacon to the aircraft (for example, MAVProxy GCS can do this by setting the fwdpos to TRUE (ie type 'set fwdpos true' from the command line)
+- using any kind of telemetry for GCS <-> vehicle and GCS <-> beacon, setup the GCS to forward GLOBAL_POSITION_INT packets from the beacon to the aircraft (for example, MAVProxy GCS can do this by setting the fwdpos to TRUE (ie type 'set fwdpos true' from the command line)
 
 For mesh capable radios, you could use three RFD900x radios, with the radios setup for broadcast.(see :ref:`common-rfd900`)
 

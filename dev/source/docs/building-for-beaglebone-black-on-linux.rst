@@ -505,7 +505,7 @@ To be added……………
 Status
 ======
 
-The following table sumarizes the \ *driver development status*:
+The following table summarizes the \ *driver development status*:
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | Milestone                                              | Status                                                                                                          |

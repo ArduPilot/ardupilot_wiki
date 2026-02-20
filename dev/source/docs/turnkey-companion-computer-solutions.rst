@@ -110,7 +110,7 @@ Alfonce Remote Gateway - Companion Computer
 * Media server with MJPEG video streams
 * Computer vision scripts
 * Web management interface
-* Wifi and 3/4G connexion
+* Wifi and 3/4G connection
 * Open VPN client
 
 **It supports a large variety of cameras :**
@@ -130,7 +130,7 @@ XBStation - Platform For Internet Drone Base On Real Time 4G/5G Connectivity
 .. youtube:: JkNdeAKmSrg
         :width: 100%
 
-`XBStation <https://xb-uav.com>`__ is a solution for streaming video and controling UAV via internet (wifi, 3G/4G/5G cellular network).
+`XBStation <https://xb-uav.com>`__ is a solution for streaming video and controlling UAV via internet (wifi, 3G/4G/5G cellular network).
 
 `XBStation <https://xb-uav.com>`__ has been designed to provide the drone applications for delivery, surveys, security, ambulance and emergency response.
 
@@ -147,11 +147,11 @@ XBStation - Platform For Internet Drone Base On Real Time 4G/5G Connectivity
 * HD Video
 * Multiple Vehicles Control with MissionPlanner
 * Sharing Telemetry Data and Video Streaming to Your Partners/Customers
-* Realtime Vehicle Informations (GPS, Battery, Roll, Pitch, Yaw, ...) API
+* Realtime Vehicle Information (GPS, Battery, Roll, Pitch, Yaw, ...) API
 * HD Streaming Live ArduPilot Drone Footage to Your Application/Youtube/Facebook
 * OpenVPN
 * XB Server for reliable connections
 
 Read the `Documentation <https://xb-uav.com/getting-started/overview>`__  for manual setup and installation.
 
-Read the `Ready to Fly Kit <https://product.xb-uav.com/xbstation-kit>`__ pre-loaded with XBFirm softwares, you just plug and play.
+Read the `Ready to Fly Kit <https://product.xb-uav.com/xbstation-kit>`__ pre-loaded with XBFirm software, you just plug and play.

@@ -110,7 +110,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     FFT: calibrated xHz/xHz/xHz                             FFT Harmonic Notch issue                            See :ref:`In-Flight FFT Harmonic Notch Setup<common-imu-fft>` completes
     FFT: resolution is xHz, increase length                 FFT Harmonic Notch misconfiguration                 See :ref:`In-Flight FFT Harmonic Notch Setup<common-imu-fft>` completes
     Generator: Not healthy                                  Generator is not communicating with autopilot       Check :ref:`generator configuration <common-generators>`
-    Generator: No backend driver                            Firmware does not include seelected generator       Build version of firmware with desired generator using custom.ardupilot.org
+    Generator: No backend driver                            Firmware does not include selected generator        Build version of firmware with desired generator using custom.ardupilot.org
     GPS alt error xm (see BARO_ALTERR_MAX)                  GPS and BARO alt disagree by a large amount         Read the :ref:`BARO_ALTERR_MAX<BARO_ALTERR_MAX>` parameter description
     GPS and AHRS differ by Xm                               GPS and EKF positions differ by at least 10m        Wait until GPS quality improves.  Move vehicle to a location with a clear view of the sky.  Reduce sources of radio-frequency interference
     GPS blending unhealthy                                  At least one GPS is not providing good data         Move vehicle to a location with a clear view of the sky.  Reduce sources of radio-frequency interference. Check :ref:`GPS blending configuration <common-gps-blending>`
@@ -256,7 +256,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Motor Interlock not configured                          Helicopters require motor interlock be configured   Enable the motor interlock :ref:`auxiliary function<common-auxiliary-functions>` switch
     Motors: Check frame class and type                      Unknown or misconfigured frame class or type        Enter valid frame class and/or type
     Motors: Check MOT_PWM_MIN and MOT_PWM_MAX               MOT_PWM_MIN or MOT_PWM_MAX misconfigured            Set :ref:`MOT_PWM_MIN<MOT_PWM_MIN>` = 1000 and :ref:`MOT_PWM_MAX<MOT_PWM_MAX>` = 2000 and repeat the :ref:`ESC calibration <esc-calibration>`
-    Motors: MOT_SPIN_ARM > MOT_SPIN_MIN                     MOT_SPIN_ARM is too high or MOT_SPIN_MIN is too low Reducse :ref:`MOT_SPIN_ARM<MOT_SPIN_ARM>` to below :ref:`MOT_SPIN_MIN<MOT_SPIN_MIN>`.  See :ref:`Seting motor range<set-motor-range>`
+    Motors: MOT_SPIN_ARM > MOT_SPIN_MIN                     MOT_SPIN_ARM is too high or MOT_SPIN_MIN is too low Reducse :ref:`MOT_SPIN_ARM<MOT_SPIN_ARM>` to below :ref:`MOT_SPIN_MIN<MOT_SPIN_MIN>`.  See :ref:`Setting motor range<set-motor-range>`
     Motors: MOT_SPIN_MIN too high x > 0.3                   MOT_SPIN_MIN parameter value is too high            Reduce :ref:`MOT_SPIN_MIN<MOT_SPIN_MIN>` to below 0.3.  See :ref:`Setting motor range<set-motor-range>`
     Motors: no SERVOx_FUNCTION set to MotorX                At least one motor output has not been configured   Check SERVOx_FUNCTION values for "Motor1", "Motor2", etc.  Check :ref:`ESC and motor configuration <connect-escs-and-motors>`
     Need Alt Estimate                                       EKF has not yet calculated the altitude             Wait.  Allow autopilot to heat up.  Ensure :ref:`accelerometer calibration <common-accelerometer-calibration>` has been done.
@@ -295,7 +295,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Mode not QMODE                                          Q_OPTION set to prevent arming except in QMODE/AUTO Change Mode or reset :ref:`Q_OPTIONS<Q_OPTIONS>` bit 18
     Motors: Check frame class and type                      Unknown or misconfigured frame class or type        Enter valid frame class and/or type
     Motors: Check MOT_PWM_MIN and MOT_PWM_MAX               MOT_PWM_MIN or MOT_PWM_MAX misconfigured            Set :ref:`MOT_PWM_MIN<MOT_PWM_MIN>` = 1000 and :ref:`MOT_PWM_MAX<MOT_PWM_MAX>` = 2000 and repeat the :ref:`ESC calibration <esc-calibration>`
-    Motors: MOT_SPIN_ARM > MOT_SPIN_MIN                     MOT_SPIN_ARM is too high or MOT_SPIN_MIN is too low Reducse :ref:`MOT_SPIN_ARM<MOT_SPIN_ARM>` to below :ref:`MOT_SPIN_MIN<MOT_SPIN_MIN>`.  See :ref:`Seting motor range<set-motor-range>`
+    Motors: MOT_SPIN_ARM > MOT_SPIN_MIN                     MOT_SPIN_ARM is too high or MOT_SPIN_MIN is too low Reducse :ref:`MOT_SPIN_ARM<MOT_SPIN_ARM>` to below :ref:`MOT_SPIN_MIN<MOT_SPIN_MIN>`.  See :ref:`Setting motor range<set-motor-range>`
     Motors: MOT_SPIN_MIN too high x > 0.3                   MOT_SPIN_MIN parameter value is too high            Reduce :ref:`MOT_SPIN_MIN<MOT_SPIN_MIN>` to below 0.3.  See :ref:`Setting motor range<set-motor-range>`
     Motors: no SERVOx_FUNCTION set to MotorX                At least one motor output has not been configured   Check SERVOx_FUNCTION values for "Motor1", "Motor2", etc.  Check :ref:`ESC and motor configuration <connect-escs-and-motors>`
     Q_ASSIST_SPEED is not set                               Q_ASSIST_SPEED has not been set                     Set :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`, See :ref:`assisted_fixed_wing_flight`
@@ -392,7 +392,7 @@ Quick tab as shown below.
 .. image:: ../../../images/MP_QuicHDOP.jpg
     :target: ../_images/MP_QuicHDOP.jpg
 
-INS checks (i.e. Acclerometer and Gyro checks):
+INS checks (i.e. Accelerometer and Gyro checks):
 -----------------------------------------------
 
 **INS not calibrated**: some or all of the accelerometer's offsets are

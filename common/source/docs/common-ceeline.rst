@@ -12,7 +12,7 @@ The `CEE-LINE single-beam echosounder <https://ceehydrosystems.com/products/sing
 Hardware Setup
 --------------
 
-A standard CEE-LINE kit contains a USB cable.  To work with ardupilot you will need to purchase a CEE-LINE ardupilot cable, available from `CEE HydroSystems <https://ceehydrosystems.com/>`__.  Connect the CEE-LINE ardupilot cable to one of the serial ports (in this example we use Telem2).  The CEE-LINE ardupilot cable is built specifically to connect to telemetry ports and it should not be possible to plug it in incorreclty.  The CEE-LINE will be powered from the Telem2 port, no further connections are required.
+A standard CEE-LINE kit contains a USB cable.  To work with ardupilot you will need to purchase a CEE-LINE ardupilot cable, available from `CEE HydroSystems <https://ceehydrosystems.com/>`__.  Connect the CEE-LINE ardupilot cable to one of the serial ports (in this example we use Telem2).  The CEE-LINE ardupilot cable is built specifically to connect to telemetry ports and it should not be possible to plug it in incorrectly.  The CEE-LINE will be powered from the Telem2 port, no further connections are required.
 
 The CEE-LINE is small and can fit into even very small boats.
 

@@ -6,7 +6,7 @@ Scripted Aerobatics
 ===================
 
 
-.. note:: this capability is in ArduPlane 4.2 and higher. It is rapidly evolving. Its suggested that users uses load the current "Latest" firmware and refer to its matching doucmentation ( :ref:`common-scripted-aerobatics-4.4` ) for best perfoemance.
+.. note:: this capability is in ArduPlane 4.2 and higher. It is rapidly evolving. Its suggested that users uses load the current "Latest" firmware and refer to its matching documentation ( :ref:`common-scripted-aerobatics-4.4` ) for best performance.
 
 ArduPilot has the capability of executing aerobatics from a LUA script. Either via AUTO mode mission items, or via scripts executed in many normal plane flight modes, usually controlled via a transmitter switch and selection RC channels.
 
@@ -88,7 +88,7 @@ In addition to allowing LUA scripts to take over the vehicles rate controllers d
 
 - Enable the  feature with a specific call "vehicle:nav_scripting_enable(..)" which returns a boolean indicating  success or failure.
 
-- Call the "vehicle:set_target_throttle_rpy(....)" function regularly (at least every 50ms) to set the roll/pitch/yaw rates and throttle percentage. Failure to do so, will disable the control overide and return control to the original flight mode. Changing flight modes also disables script control.
+- Call the "vehicle:set_target_throttle_rpy(....)" function regularly (at least every 50ms) to set the roll/pitch/yaw rates and throttle percentage. Failure to do so, will disable the control override and return control to the original flight mode. Changing flight modes also disables script control.
 
 This allows the implementation of "Tricks on a Switch" where an activation switch driving an RC channel is used to enable an aerobatics trick script, which is selected by another RC channel. An example system is given `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples/Aerobatics/Via_Switch>`_.
 

@@ -41,7 +41,7 @@ Uploading to boards (e.g. ``./waf plane --upload``) in WSL2 is possible; however
 
 ::
 
-    pip.exe install empy pyserial
+    pip.exe install empty pyserial
 
 As of July 2022, Microsoft's solution of providing USB access to WSL2 via usbipd does not work for accessing the bootloader on the device due to slow mounting times.
 

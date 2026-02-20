@@ -28,7 +28,7 @@ All content on this wiki is licensed under the terms of the `Creative Commons At
    Only post content that you have the legal right to make
    available under the `CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0/>`__ license. If you
    do use images or content that belongs to others, seek permission for
-   re-use and clearly state their origin and terms for re-use.
+   reuse and clearly state their origin and terms for reuse.
 
 Translating wiki pages
 ======================

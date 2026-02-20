@@ -471,7 +471,7 @@ understand the values when reading the code. No suffix is required when a variab
      - _radss
      - 
      - Angular acceleration
-   * - Angluar Velocity
+   * - Angular Velocity
      - degrees/second
      - _degs
      - 
@@ -517,7 +517,7 @@ understand the values when reading the code. No suffix is required when a variab
      - 
      - 
    * - Temperature
-     - degrees Celcius
+     - degrees Celsius
      - _degc
      - 
      - 
@@ -568,7 +568,7 @@ Parameter with multiple words should have the words ordered from left to right b
 - the flight mode, feature or sensor should be the first word.  I.e. a parameter relevant only to the RTL flight mode should start with "RTL" like "RTL_ALT".
 - qualifiers like "MIN", "MAX" or units (in the rare case they appear in the name) should be on the far right.  I.e RTL_ALT_MIN is better than RTL_MIN_ALT.
 
-Re-use words from other parameters if possible instead of creating new words.  For example we use "MIN" and "MAX" so these should be used instead of equivalent words like "TOP" and "BOTTOM".
+Reuse words from other parameters if possible instead of creating new words.  For example we use "MIN" and "MAX" so these should be used instead of equivalent words like "TOP" and "BOTTOM".
 
 Parameters should be in the standard unit (meters for distances, degrees for angles) but in cases where they are not the unit may (optionally) be appended to the end.  This is definitely not a requirement but is up to the developer.
 
@@ -633,7 +633,7 @@ Floating Point Annotation
 
 ArduPilot is compiled with ``-fsingle-precision-constant``.
 
-That means it is currently allowable to leave off the float specifier from constants.  It is also permissable to have them.
+That means it is currently allowable to leave off the float specifier from constants.  It is also permissible to have them.
 
 **Right**
 

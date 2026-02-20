@@ -57,7 +57,7 @@ Rover-4.3 (and higher) includes automatic pitch limiting to reduce the chance of
 
 The parameters below can be used to tune this features although normally they can be left at their default values
 
-- :ref:`ATC_BAL_LIM_THR<ATC_BAL_LIM_THR>`: pitch limit feature's throttle threshold (expressed as a value betwee 0 and 1).  If the vehicle's throttle climbs above this limit the vehicle's maximum pitch angle will be reduced.
+- :ref:`ATC_BAL_LIM_THR<ATC_BAL_LIM_THR>`: pitch limit feature's throttle threshold (expressed as a value between 0 and 1).  If the vehicle's throttle climbs above this limit the vehicle's maximum pitch angle will be reduced.
 - :ref:`ATC_BAL_LIM_TC<ATC_BAL_LIM_TC>`: pitch limit feature's time constant.  Lower values will cause the pitch limit to be reduced quickly.  Higher values will limit the pitch more slowly.
 
 ..  youtube:: 8EATOJRzBqs

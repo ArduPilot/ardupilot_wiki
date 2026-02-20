@@ -12,7 +12,7 @@ connected to the BUS.
 
 Before the autopilot can be connected, SLCAN mode must be operational. See :ref:`common-slcan-f4` or :ref:`common-slcan-f7h7` for setup information.
 
-Start DroneCAN GUI and select the correct USB port for the SLCAN interface. The default CAN bus bit rate of 1,000,000 wont  need to be changed unless the :ref:`CAN_P1_BITRATE<CAN_P1_BITRATE>` or :ref:`CAN_P2_BITRATE<CAN_P2_BITRATE>` (if using the second autopilot CAN port) has been changed. The Adapter baud rate should match the autopilot's SERIALx port baud rate. The default value of 115.2KBaud should be correct.
+Start DroneCAN GUI and select the correct USB port for the SLCAN interface. The default CAN bus bit rate of 1,000,000 won't  need to be changed unless the :ref:`CAN_P1_BITRATE<CAN_P1_BITRATE>` or :ref:`CAN_P2_BITRATE<CAN_P2_BITRATE>` (if using the second autopilot CAN port) has been changed. The Adapter baud rate should match the autopilot's SERIALx port baud rate. The default value of 115.2KBaud should be correct.
 
 .. note:: Almost all ArduPilot autopilots use VCP USB connections and Adapter port baud rate value is irrelevant and can be any value.
 

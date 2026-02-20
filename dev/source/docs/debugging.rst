@@ -85,7 +85,7 @@ GPIO Assert Debugging
 
 It is possible to output debug assertions from ChibiOS (so the debug errors that you get if you build with --enable-asserts) using a GPIO pin. To do this you need to set "FAULT" in hwdef.dat to the GPIO pin you want to use and then connect a logic analyzer to the pin. You will also need to configure your logic analyzer to interpret the serial stream and print readable information but most modern logic analyzers are able to do this automatically.
 
-You can also use this pin defintion to output general debug messages using fault_printf(). This works in exactly the same way as printf() but outputs to the GPIO pin. Both of these methods are extremely useful for debugging situations where general IO is not available.
+You can also use this pin definition to output general debug messages using fault_printf(). This works in exactly the same way as printf() but outputs to the GPIO pin. Both of these methods are extremely useful for debugging situations where general IO is not available.
 
 
 .. toctree::

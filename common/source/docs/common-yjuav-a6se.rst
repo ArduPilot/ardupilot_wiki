@@ -53,7 +53,7 @@ Specifications
    -  1x TypeC USB port
    -  1x JST_GH1.25 USB port
    -  1x Analog battery monitor port
-   -  1x RC input (suport SBUS, PPM and DSM)
+   -  1x RC input (support SBUS, PPM and DSM)
    -  1x Safety switch and Buzzer port
    -  1x S.Bus servo output
 

@@ -11,7 +11,7 @@ Dataflash logs.
 
 Depending on the autopilot type and configuration, the dataflash logs may be saved on a SD card, dataflash chip or streamed over MAVLink telemetry ports. The MAVLink option does require a high-speed telemetry port, typically 921600 baud.
 
-.. note:: In addition to using Mission Planner, many other tools are avaialble to users for log analysis: :ref:`MAVExplorer(part of MAVProxy installation) <using-mavexplorer-for-log-analysis>` and :ref:`Web-based tools <common-webtools>`.
+.. note:: In addition to using Mission Planner, many other tools are available to users for log analysis: :ref:`MAVExplorer(part of MAVProxy installation) <using-mavexplorer-for-log-analysis>` and :ref:`Web-based tools <common-webtools>`.
 
 [copywiki destination="copter,plane,rover,dev,sub,planner"]
 
@@ -34,7 +34,7 @@ Some commonly used parameters are:
 
 .. note:: If you suspect that you are missing logging entries due to excessive logging speed, you can check the DSF.Dp log message for the amount of missed entries.
 
-.. note:: Logging of the continuously streaming log messages, such as attitude, sensors, etc. can be paused by using the ``RCx_OPTION`` auxiliary function "164" on a transmitter channel. Switching this channel high will pause these messages, but not events, mode changes, warnings, etc. This allows autopilots with limited logging capabilites (ie using Block logging to chip memory and no SD card) to log only when desired during the flight, as during tuning phases or determination of TECs parameters, etc. You can also eliminate unneeded log messages using :ref:`LOG_BITMASK<LOG_BITMASK>` to reduce log size
+.. note:: Logging of the continuously streaming log messages, such as attitude, sensors, etc. can be paused by using the ``RCx_OPTION`` auxiliary function "164" on a transmitter channel. Switching this channel high will pause these messages, but not events, mode changes, warnings, etc. This allows autopilots with limited logging capabilities (ie using Block logging to chip memory and no SD card) to log only when desired during the flight, as during tuning phases or determination of TECs parameters, etc. You can also eliminate unneeded log messages using :ref:`LOG_BITMASK<LOG_BITMASK>` to reduce log size
 
 Replay Logging
 ==============

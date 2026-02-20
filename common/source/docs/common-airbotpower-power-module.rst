@@ -134,7 +134,7 @@ For this specific module, use the settings as shown in the diagram below
 .. figure:: ../../../images/AirbotPower_PowerModule_MissionPlanner_Calibration_Currentvoltage.jpg
    :target: ../_images/AirbotPower_PowerModule_MissionPlanner_Calibration_Currentvoltage.jpg
 
-   Mission Planner:Configuraton for the AirbotPower Power Module
+   Mission Planner:Configuration for the AirbotPower Power Module
 
 The output of the ACS758 current sensor produces a voltage of +0,6V
 (offset) +20mV/A (i.e. set copter parameter “BATT_AMP_OFFSET” to a

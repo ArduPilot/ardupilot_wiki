@@ -130,7 +130,7 @@ With all of the above complete, it is time to take your first flight on ArduCopt
 
 ArduCopter Parameters
 ---------------------
-There are over 700 parameters in ArduCopter. For everyday use of the Solo, you still do not need to worry about any of them. They're all pre-set for you in the above processes and by way of defaults.  All the configuration parameters for the Solo that require a value different from the ArduCopter defaults can be found in the `ArduPilot GitHub repository /tools/frame_params/ directory <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/Solo_AC35.param>`_. These are the parameters that are loaded during the upgrade process. If you are not familiar with editting parameters and have no special use case to warrant changing them, altering them is not recommended. 
+There are over 700 parameters in ArduCopter. For everyday use of the Solo, you still do not need to worry about any of them. They're all pre-set for you in the above processes and by way of defaults.  All the configuration parameters for the Solo that require a value different from the ArduCopter defaults can be found in the `ArduPilot GitHub repository /tools/frame_params/ directory <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/Solo_AC35.param>`_. These are the parameters that are loaded during the upgrade process. If you are not familiar with editing parameters and have no special use case to warrant changing them, altering them is not recommended. 
 
 However, there are some advanced and special use cases that may require changing some parameters. Some key parameters for advanced users are detailed below. This list will likely grow as new use cases and modifications develop.
 
@@ -216,7 +216,7 @@ Value   Meaning
 =====   =======
 
 =====   =======
-:ref:`LOG_DISARMED <LOG_DISARMED>` enables and disables dataflash (\*.bin) logging when the Solo is disarmed.  It is currently enabled by default since it can be very useful for testing and troubleshooting. But it does result in large and often unneccessary logs.  If you are comfortable and confident in your Solo, you disable logging while disarmed.  The dataflash logs be much cleaner and volumnous.
+:ref:`LOG_DISARMED <LOG_DISARMED>` enables and disables dataflash (\*.bin) logging when the Solo is disarmed.  It is currently enabled by default since it can be very useful for testing and troubleshooting. But it does result in large and often unnecessary logs.  If you are comfortable and confident in your Solo, you disable logging while disarmed.  The dataflash logs be much cleaner and volumnous.
 ---------------
 Value   Meaning
 =====   =======

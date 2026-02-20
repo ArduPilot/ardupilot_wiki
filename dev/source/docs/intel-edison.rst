@@ -64,7 +64,7 @@ The easiest way to get started is to flash the Edison with the :ref:`APSync <aps
    - On Windows:
 
       - Download and extract `dfu-util-0.9.win64.zip <http://dfu-util.sourceforge.net/releases/dfu-util-0.9-win64.zip>`__ from `dfu-util.sourceforget.net/releases <http://dfu-util.sourceforge.net/releases/>`__
-      - Copy the ``dfu-util.exe`` and ``libusb-1.0.dll`` files into the ``toFlash`` directory created when extracing the image (see above)
+      - Copy the ``dfu-util.exe`` and ``libusb-1.0.dll`` files into the ``toFlash`` directory created when extracting the image (see above)
       - Download and install the latest `drivers from Intel <https://software.intel.com/edison-config/win/latest>`__.
    - On Ubuntu install with ``sudo apt-get install dfu-util``
 

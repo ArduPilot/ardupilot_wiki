@@ -29,7 +29,7 @@ Using an Ammeter
 .. warning:: be safe! make sure you or someone else cannot be injured while doing this!
 
 - The throttle level should stimulate current consumption close to the expected normal vehicle flight condition (ie like cruising level in Plane or hovering in Copter).
-- Note the difference betweeen the ammeter and what the GCS reports and adjust the :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` to match.
+- Note the difference between the ammeter and what the GCS reports and adjust the :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` to match.
 - Recheck the idle current and re-adjust the :ref:`BATT_AMP_OFFSET<BATT_AMP_OFFSET__AP_BattMonitor_Analog>`, if needed. There will be some interaction between it and the :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` so some repetition of the above may be needed.
 
 Its always good to use the process explained next to tweak the :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` parameter after a real flight or two.

@@ -46,7 +46,7 @@ The Direct Drive Fixed Pitch (DDFP) tail type uses a fixed pitch tail rotor and 
 
 There are several parameters that provide the ability to linearize the thrust produced by the tail rotor motor and therefore provide better control:
 
-- :ref:`H_DDFP_THST_EXPO<H_DDFP_THST_EXPO>` - Tail rotor DDFP motor thrust curve exponent (0.0 for linear to 1.0 for second order curve). A suggested starting point for tuning this parameter is .65 and will often give better better results than the default. Default = 0 (for legacy compatability reason)
+- :ref:`H_DDFP_THST_EXPO<H_DDFP_THST_EXPO>` - Tail rotor DDFP motor thrust curve exponent (0.0 for linear to 1.0 for second order curve). A suggested starting point for tuning this parameter is .65 and will often give better better results than the default. Default = 0 (for legacy compatibility reason)
 - :ref:`H_DDFP_SPIN_MIN<H_DDFP_SPIN_MIN>` - Point at which the DDFP motor thrust starts expressed as a number from 0 to 1 in the entire output range.  Default = 0
 - :ref:`H_DDFP_SPIN_MAX<H_DDFP_SPIN_MAX>` - Point at which the DDFP motor thrust saturates expressed as a number from 0 to 1 in the entire output range. Default = 1
 - :ref:`H_DDFP_BAT_IDX<H_DDFP_BAT_IDX>` - Index of battery to be used for voltage compensation. Default = 0.

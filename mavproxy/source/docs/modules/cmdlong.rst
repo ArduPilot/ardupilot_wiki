@@ -139,7 +139,7 @@ e.g. MAV_CMD_GUIDED_CHANGE_HEADING. The options follow separated by spaces.
 * [arg8] param5
 * [arg9] latitude
 * [arg10] longitude
-* [arg11] altitude (in the frame specfied by FRAME)
+* [arg11] altitude (in the frame specified by FRAME)
 
 
 

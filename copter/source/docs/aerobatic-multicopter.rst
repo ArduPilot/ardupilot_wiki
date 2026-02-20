@@ -14,7 +14,7 @@ Obviously, racing Mini-quad frames already meet these requirements, usually. The
 Setup
 =====
 
-Follow the normal ArduCopter wiki :ref:`setup guidlines <configuring-hardware>`. However, the key to getting the best performance will be determined by the care and precision of the :ref:`tuning and noise filtering setup<common-tuning>`. And key to getting highest performance from the filtering will be use of Bi-Directional DSHOT ESCs to provide individual motor rpm for setting individual notch filers to track each motor (see :ref:`common-esc-telemetry`.
+Follow the normal ArduCopter wiki :ref:`setup guidelines <configuring-hardware>`. However, the key to getting the best performance will be determined by the care and precision of the :ref:`tuning and noise filtering setup<common-tuning>`. And key to getting highest performance from the filtering will be use of Bi-Directional DSHOT ESCs to provide individual motor rpm for setting individual notch filers to track each motor (see :ref:`common-esc-telemetry`.
 
 GPS needed?
 ===========

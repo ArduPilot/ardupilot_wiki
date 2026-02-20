@@ -330,7 +330,7 @@ metres/sec
 **EK2_VELD_NOISE**
 
 This sets a lower limit on the speed accuracy reported by the GPS
-receiver that is used to set verical velocity observation noise in. If
+receiver that is used to set vertical velocity observation noise in. If
 the model of receiver used does not provide a speed accuracy estimate,
 then the parameter value will be used. Increasing it reduces the
 weighting of the GPS vertical velocity measurements. It has units of

@@ -76,7 +76,7 @@ types)
    polarization.
 -  A Helical antenna (looks like a coil of wire wound in a screw
    fashion) wound clockwise when viewed from behind will radiate
-   clockwise circular polarization, and vise versa.
+   clockwise circular polarization, and vice versa.
 
 For reception of maximum energy, the transmitting and receiving antennae
 must be identically polarized.

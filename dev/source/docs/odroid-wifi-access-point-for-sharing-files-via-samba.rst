@@ -69,7 +69,7 @@ try with another dongle.
     * AP 
 
 Use your favourite editor (nano or vi perhaps) to edit the
-``/etc/network/interfaces`` fileand add an entry for your wifi dongle. 
+``/etc/network/interfaces`` file and add an entry for your wifi dongle. 
 Note you should replace "wlan2" if your dongle has a different name:
 
 ``auto wlan2``

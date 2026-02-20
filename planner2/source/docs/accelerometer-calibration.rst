@@ -11,7 +11,7 @@ work with your vehicle configuration. For other calibration tasks see
 1 Prerequisites
 ===============
 
-Before preforming setup, ensure that:
+Before performing setup, ensure that:
 
 -  The vehicle is completely built to flight condition.
 -  :ref:`Firmware has been loaded onto the autopilot. <install-firmware>`

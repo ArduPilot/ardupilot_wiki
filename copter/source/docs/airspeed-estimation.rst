@@ -4,7 +4,7 @@
 Windspeed Estimation and Baro Compensation
 ==========================================
 
-ArduPilot's :ref:`EKF<common-apm-navigation-extended-kalman-filter-overview>` can estimate the windspeed a multicopter is flying in without requiring an airspeed sensor.  This can be useful information for the pilot but it can also be used to compensate for wind related barometer interference.  This interference can occur on vehicles where the autopilot is exposed to the open air and can lead to the vehicle climbing or descending a few meters especialy after slowing down from fast-forward flight.
+ArduPilot's :ref:`EKF<common-apm-navigation-extended-kalman-filter-overview>` can estimate the windspeed a multicopter is flying in without requiring an airspeed sensor.  This can be useful information for the pilot but it can also be used to compensate for wind related barometer interference.  This interference can occur on vehicles where the autopilot is exposed to the open air and can lead to the vehicle climbing or descending a few meters especially after slowing down from fast-forward flight.
 
 .. youtube:: Xq-ecwgFKzA
 
@@ -86,7 +86,7 @@ The EKF's wind speed estimate is recorded in the onboard log XKF2 message's VWN 
 Barometer Position Error Compensation
 -------------------------------------
 
-Once wind estimation has been enabled, it can be used to compensate for the wind's effect on each barometer in each of four directions (foward, back, left right).  The method to calculate each parameter's value is discussed `here in the video <https://youtu.be/xVVtvVuZGQE&t=3486s>`__.
+Once wind estimation has been enabled, it can be used to compensate for the wind's effect on each barometer in each of four directions (forward, back, left right).  The method to calculate each parameter's value is discussed `here in the video <https://youtu.be/xVVtvVuZGQE&t=3486s>`__.
 
 Perform a test flight
 

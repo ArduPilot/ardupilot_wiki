@@ -4,7 +4,7 @@
 Radio Control
 =============
 
-Due to the RF attenuation of even a short distance of water above a submersible, radio control must be accomplished by floating tethered bouy to the vehicle which contains the RF components and antenna. This applies also to RF based telemetry, whether independent of, or integrated into, the radio control system.
+Due to the RF attenuation of even a short distance of water above a submersible, radio control must be accomplished by floating tethered buoy to the vehicle which contains the RF components and antenna. This applies also to RF based telemetry, whether independent of, or integrated into, the radio control system.
 
 To enable radio control, the :ref:`RC_PROTOCOLS<RC_PROTOCOLS>` parameter must be set to a non-zero value, "1" is usually used. If rc control of the flight mode is desired, in addition to axis/directional control, the :ref:`FLTMODE_CH<FLTMODE_CH>` should be set to the RC channel that will control flight modes, if this is desired.
 

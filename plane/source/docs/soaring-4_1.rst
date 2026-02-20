@@ -150,7 +150,7 @@ If the original flight mode was AUTO mode, the drift distance is measured from t
 to where THERMAL was entered. Drift sideways or backwards, but not along the original mission track, is counted. This allows
 thermalling to continue if the wind is moving the aircraft in the direction of the next waypoint.
 
-The image below shows a scenerio where the mission track is north to south and the wind is causing thermals to drift east to west. The aircraft will follow them but will respect :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>`. Note that sometimes it will go a little beyond  :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` as it lines up its heading to the next waypoint before reverting to AUTO mode.
+The image below shows a scenario where the mission track is north to south and the wind is causing thermals to drift east to west. The aircraft will follow them but will respect :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>`. Note that sometimes it will go a little beyond  :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` as it lines up its heading to the next waypoint before reverting to AUTO mode.
 
 .. image:: ../../../images/SOAR_MAX_DRIFT.png
 

@@ -18,7 +18,7 @@ When SITL is started, it has a standard set of peripherals (ie GPS, ESCs, Servos
 Simulating On-Board OSD
 =======================
 
-When starting SITL, you can have it display a simulation of the integated OSD, if the autopilot includes one. Add the ``--osd`` option when starting SITL:
+When starting SITL, you can have it display a simulation of the integrated OSD, if the autopilot includes one. Add the ``--osd`` option when starting SITL:
 
 ::
 
@@ -357,7 +357,7 @@ Arm in loiter, takeoff and fly somewhere:
    rc 3 1800
    rc 2 1400
 
-Other SITL vicon settings are hel in SIM_VICON_xx parameters:
+Other SITL vicon settings are held in SIM_VICON_xx parameters:
 
 ::
 

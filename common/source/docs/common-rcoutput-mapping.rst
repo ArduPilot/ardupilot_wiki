@@ -165,7 +165,7 @@ The upper PWM range from the input trim value to its maximum input is translated
 .. image:: ../../../images/rcscaled-io.jpg
    :target: ../_images/rcscaled-io.jpg
    
-.. note:: the SERVOx_MIN/MAX values can be larger than what Mission Planner allows in some presentations. Use the CONFIG/Full Parameter Tree view to set parametes beyong their normal "safe" ranges.
+.. note:: the SERVOx_MIN/MAX values can be larger than what Mission Planner allows in some presentations. Use the CONFIG/Full Parameter Tree view to set parameters beyond their normal "safe" ranges.
 
 .. note:: normally scaled passthru outputs will hold their last valid value during an RC failsafe. By setting the :ref:`SERVO_RC_FS_MSK<SERVO_RC_FS_MSK>`, selected passthru outputs can be set as if their input channel went to neutral. This is helpful for outputs controlling servo gimbals, or other manually controlled functions.
 [/site]

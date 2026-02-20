@@ -31,4 +31,4 @@ Here are some general tips about inverted flight
 
 - Try it out in simulation first to get used to it, and ensure your
   transmitter is setup right.
-- make sure you have plenty of height before engaging or disengaging inverted flight for the first time. The aircraft should not lose much altitude during the transition but it is worth having the extra altitude incase something unexpected happens.  As you get more comfortable in the aircraft's ability to transition from upright to inverted and vice-versa, then you can lower the altitude where the transition is made.
+- make sure you have plenty of height before engaging or disengaging inverted flight for the first time. The aircraft should not lose much altitude during the transition but it is worth having the extra altitude in case something unexpected happens.  As you get more comfortable in the aircraft's ability to transition from upright to inverted and vice-versa, then you can lower the altitude where the transition is made.
