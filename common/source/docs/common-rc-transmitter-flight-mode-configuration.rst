@@ -203,7 +203,7 @@ Modes setup to monitor the Current PWM for these adjustments.
       Click roller bar.  Set switches as follows:
       
       -  Gear = Gear (Channel 5)
-      -  FMode = In  Not assigned to a channel – Used to mix with Gear Sw (Channel 5) for 6 modes
+      -  FMode = Inh  Not assigned to a channel – Used to mix with Gear Sw (Channel 5) for 6 modes
       
    -  Others anyway you want. One method is as follows:
 
@@ -236,7 +236,7 @@ Modes setup to monitor the Current PWM for these adjustments.
       set),click roller, Select Mix 1, Click roller.
    -  Set Mix: Gear > Gear. Gear changes Gear depending on Switch F Mode
       setting
-   -  Set Offset = 0, Trim = In.
+   -  Set Offset = 0, Trim = Inh.
    -  Set SW = FM 1
    -  Set the F Mode switch on the transmitter to position 1.
    -  Set the Gear switch on the transmitter to position 0.
@@ -255,7 +255,7 @@ Modes setup to monitor the Current PWM for these adjustments.
 
    -  Mix: Gear > Gear.  Gear changes Gear depending on Switch F Mode
       setting.
-   -  Set Offset = 0, Trim = In
+   -  Set Offset = 0, Trim = Inh
    -  Set SW = FM2
    -  Set the F Mode switch on the transmitter to position 2
    -  Set the Gear switch on the transmitter to position 0.

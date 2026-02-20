@@ -15,7 +15,7 @@ The tuning process consists of the following steps:
 7. Setting the :ref:`Input Shaping<input-shaping>` parameters to obtain the desired "feel"
 
 
-The initial tune of the aircraft should be done **in the aircraft most agile configuration**. This generally means that the aircraft will be at its minimum take off weight with fully charged batteries.
+The initial tune of the aircraft should be done **in the aircraft's most agile configuration**. This generally means that the aircraft will be at its minimum take off weight with fully charged batteries.
 
 .. note:: Following each of the above steps will usually result in a safe tuning process and adequate tune for most users. Alternatively consider using the `Methodic Configurator <https://ardupilot.github.io/MethodicConfigurator/>`__ for step-by-step setup
 

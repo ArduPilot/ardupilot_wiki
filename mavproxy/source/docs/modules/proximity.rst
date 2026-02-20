@@ -9,4 +9,4 @@ Proximity Sensor Visualisation
 Displays proximity sensor data on the map.
 
 Any ``DISTANCE_SENSOR`` or ``OBSTACLE_DISTANCE`` MAVLink messages (such
-as those sent by 360 degrees LiDAR units) are visualised on the MAVProxy map.
+as those sent by 360 degree LiDAR units) are visualised on the MAVProxy map.

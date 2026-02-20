@@ -24,7 +24,7 @@ Overview of the Autorotation Manoeuvre
 
 Traditional helicopters are capable of landing safely after losing propulsive power.  This is achieved through 
 the autorotation manoeuvre, in which the descending aircraft can use the airflow being forced up through the main blades to
-drive the rotor and still produce some upwards thrust.  The primary goal of the manoeuvre is to use the aircraft remaining energy 
+drive the rotor and still produce some upwards thrust.  The primary goal of the manoeuvre is to use the aircraft's remaining energy 
 to bring the aircraft safely to the ground, landing softly.
 
 The manoeuvre can be broken down into phases.  The breakdown and description of those phases differs across the literature that 

@@ -239,7 +239,7 @@ The FER information is implemented within the **Futaba S.BUS2** datastream. It i
 How to setup the Hardware
 -------------------------
 
-To extract the FER from the **Futaba S.BUS2** datastream, a `S.BUS2 to Analog DC voltage converter <http://shop.the.dk/catalog/product_info.php?products_id=43>`__ can be used.
+To extract the FER from the **Futaba S.BUS2** datastream, a `S.BUS2 to Analog DC voltage converter <http://shop.tje.dk/catalog/product_info.php?products_id=43>`__ can be used.
 
 A basic setup using a **Futaba R7008SB** receiver and an additional S.BUS2 GPS Multi Sensor is shown in the image below. A similar setup should work using a **Futaba R7003SB** receiver.
    
@@ -266,7 +266,7 @@ A basic setup using a **Futaba R7008SB** receiver and an additional S.BUS2 GPS M
 How to setup RSSI Feedback to your Futaba FASSTest Telemetry capable transmitter
 --------------------------------------------------------------------------------
 
-In addition to the S.BUS2 to Analog conversion, the `converter <http://shop.the.dk/catalog/product_info.php?products_id=43>`__  is looping back the FER / RSSI value to the S.BUS2 datastream simultaneously. This feature enables all users of **FASSTest Telemetry capable transmitters** to setup a **Telemetry RSSI Feedback** as an option. Moreover an **audible and/or vibration alarm** can be set to notice when received signal quality is degrading.
+In addition to the S.BUS2 to Analog conversion, the `converter <http://shop.tje.dk/catalog/product_info.php?products_id=43>`__  is looping back the FER / RSSI value to the S.BUS2 datastream simultaneously. This feature enables all users of **FASSTest Telemetry capable transmitters** to setup a **Telemetry RSSI Feedback** as an option. Moreover an **audible and/or vibration alarm** can be set to notice when received signal quality is degrading.
 
 To use this feature, the **"FASSTest-14CH" protocol** has to be enabled in your transmitter.
 
@@ -282,7 +282,7 @@ The following screenshots show the setup procedure for a Futaba T14SG. Other FAS
 
 Due to the fact that Futabas Telemetry Sensors can't be renamed, the transmitted FER / RSSI value appears as a simple **"temperature sensor"**, whereas "0°C" means "Rx in failsafe" and "100°C" means "Rx received <= 100 % good frames".
 
-The `converter <http://shop.the.dk/catalog/product_info.php?products_id=43>`__ is reporting the current FER / RSSI value into Slot 1 of S.Bus2 Telemetry datastream.
+The `converter <http://shop.tje.dk/catalog/product_info.php?products_id=43>`__ is reporting the current FER / RSSI value into Slot 1 of S.Bus2 Telemetry datastream.
 
 In order to decode the FER / RSSI feedback of the converter, a standard "TEMP125" Sensor has to be assigned to Slot 1 of your transmitter:
   - Enter the "LINKAGE MENU" by double clicking the "LNK" button.

@@ -102,7 +102,7 @@ Inexpensive, Ready To Fly Nano, Micro or Small QuadCopter
    X4) <http://www.amazon.com/Hubsan-X4-H107-Copter-2-4GHZ/dp/B009M1PO7W>`__ is
    identical to the Traxxas and for $70.00 you can get it with a still
    photo and 720P HD video
-   camera.\ `Husband <http://www.amazon.com/Hubsan-X4-H107-Copter-2-4GHZ/dp/B009M1PO7W>`__
+   camera.\ `Hubsan <http://www.amazon.com/Hubsan-X4-H107-Copter-2-4GHZ/dp/B009M1PO7W>`__
 #. For $200.00 there is even a really easy to fly **FPV** version of the
    `Hubsan <http://www.ebay.com/itm/like/171203630670?lpid=82">`__ that
    comes with a RC transmitter with an excellent LCD display.

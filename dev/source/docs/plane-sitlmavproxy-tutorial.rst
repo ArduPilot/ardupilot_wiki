@@ -243,7 +243,7 @@ movement of the vehicle (and move it to a safe location if control is
 lost). Plane allows you to specify an arbitrarily shaped region on the
 map for the fence, and an upper and lower altitude. If the fence is
 breached, Plane will fly to the centre of the fence and circle (or a
-rally point)t. :ref:`Geo-Fencing in Plane <plane:geofencing>`
+rally point). :ref:`Geo-Fencing in Plane <plane:geofencing>`
 describes the fence in more detail.
 
 The fence behaviour is set using the :ref:`Plane Fence Parameters <plane:FENCE_ACTION>`.

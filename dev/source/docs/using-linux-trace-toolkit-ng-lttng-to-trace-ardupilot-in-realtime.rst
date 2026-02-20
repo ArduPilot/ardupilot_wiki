@@ -164,7 +164,7 @@ tool that is able to translate the trace into text format:
 The result is a series of events with the according timestamps and the
 number of the CPU they have been running on.
 
-To go further with that, you can use `babeltrace's python bindings <http://diamond.org/babeltrace/docs/python/>`__ to write a
+To go further with that, you can use `babeltrace's python bindings <http://diamon.org/babeltrace/docs/python/>`__ to write a
 python program analyzing the trace you have captured.
 
 Trace compass
