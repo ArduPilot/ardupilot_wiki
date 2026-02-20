@@ -78,7 +78,7 @@ Below is a list of issues and recommendations
     - Mount the autopilot between the upper and lower plates allowing a single large batter to be mounted on top of the frame.  Note this will make accessing the autopilot difficult
 
 - The 30cm battery straps included in the kit are too short.  Replace with 2cm x 50cm velcro battery straps
-- The PDB has a 12V pin for "Video Transmitter" but note the 2-pin JST connector's GND and 12V pins are reversed compared to thes equivalent Herelink power cable
+- The PDB has a 12V pin for "Video Transmitter" but note the 2-pin JST connector's GND and 12V pins are reversed compared to the equivalent Herelink power cable
 
   .. image:: ../images/reference-frames-hexsoon-edu650-issue1.png
       :target: ../_images/reference-frames-hexsoon-edu650-issue1.png

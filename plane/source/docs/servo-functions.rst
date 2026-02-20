@@ -42,7 +42,7 @@ Available Output Functions
 Each of your servo outputs can be configured to a wide range of
 possible functions. See the Plane Functions section of :ref:`common-rcoutput-mapping` section.
 
-In addition, there are servo functions for control of internal combustion engines, pass-thru of
+In addition, there are servo functions for control of internal combustion engines, pass-through of
 controls from RC inputs, camera controls, control of motor tilt
 functions for tilt-rotors and many others. Those functions are
 also discussed in the :ref:`common-rcoutput-mapping` section.

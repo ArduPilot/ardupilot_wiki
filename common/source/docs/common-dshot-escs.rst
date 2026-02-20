@@ -27,7 +27,7 @@ DShot is the underlying ESC control protocol used by :ref:`BLHeli/AM32 <common-b
 Connecting the ESCs
 ===================
 
-For firmware versions prior to 4.5, autopilots with an IOMCU co-processor (e.g. Pixhawk, CubeOrange,etc.) the DShot ESCs should be connected to the AUX outputs and not the MAIN outputs of the IOMCU co-processor. In firmware versions 4.5 or later, the :ref:`BRD_IO_DSHOT<BRD_IO_DSHOT>` parameter may be set to load Dshot compatible IOMCU firmware on the next bootup for some autopilots using F103 IOMCUs. If this parameter is not present, then the autopilot does not have DShot capability on its IOMCU outoputs. See the :ref:`IOMCU Dshot Limitations <iomcu-dshot>` section for limitations and more information. 
+For firmware versions prior to 4.5, autopilots with an IOMCU co-processor (e.g. Pixhawk, CubeOrange,etc.) the DShot ESCs should be connected to the AUX outputs and not the MAIN outputs of the IOMCU co-processor. In firmware versions 4.5 or later, the :ref:`BRD_IO_DSHOT<BRD_IO_DSHOT>` parameter may be set to load Dshot compatible IOMCU firmware on the next boot-up for some autopilots using F103 IOMCUs. If this parameter is not present, then the autopilot does not have DShot capability on its IOMCU outoputs. See the :ref:`IOMCU Dshot Limitations <iomcu-dshot>` section for limitations and more information. 
 
 On CubeOrange DShot works on all channels.  AUX1 cannot be used for Bi-Directional DShot meaning only AUX2 to AUX6 can be used for Bi_directional DShot.  (`see issue <https://github.com/ArduPilot/ardupilot/issues/20362>`__).
 

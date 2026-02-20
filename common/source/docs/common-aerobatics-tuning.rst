@@ -23,7 +23,7 @@ Setup
 Verifying the Rate Capabilities
 ===============================
 
-The :ref:`ACRO_PITCH_RATE<ACRO_PITCH_RATE>`, :ref:`ACRO_ROLL_RATE<ACRO_ROLL_RATE>`, and :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` must be set to less than what the airframe is capable of doing. Values of 180, 360, and 90 degress per second, respectively, are adequate for aerobatics, but they should be verified to be less than the vehicles's maximum capabilities. 
+The :ref:`ACRO_PITCH_RATE<ACRO_PITCH_RATE>`, :ref:`ACRO_ROLL_RATE<ACRO_ROLL_RATE>`, and :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` must be set to less than what the airframe is capable of doing. Values of 180, 360, and 90 degrees per second, respectively, are adequate for aerobatics, but they should be verified to be less than the vehicles's maximum capabilities. 
 
 Do a flight in Manual mode, with full stick movements in all axes in order to determine the maximum rotation rates that can be obtained. Analysis of the flight logs using the IMU[0].GyrX for roll in radians/second, IMU[0].GyrY for pitch, and IMU[0].GyrZ for yaw log messages will show the obtained rates.
 

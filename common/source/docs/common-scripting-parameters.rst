@@ -37,7 +37,7 @@ In addition to accessing/modifying existing parameters created by the firmware, 
 
 However, unlike firmware parameters they behave slightly differently. Firmware parameters are reset to their default values upon a parameter reset or when changing firmware to a different vehicle type. Scripting created parameters do not. In fact, scripting created parameters are invisible unless a script actually "re-creates" them within a script.
 
-This is explained below in the section :ref:`How Parameters Work in ArduPilot <how-params-work>`. Suffice it to say that there must a script running that "creates" the new parameters as discussed below on any given bootup, in order to use them and for ground control stations like Mission Planer to list them.
+This is explained below in the section :ref:`How Parameters Work in ArduPilot <how-params-work>`. Suffice it to say that there must a script running that "creates" the new parameters as discussed below on any given boot-up, in order to use them and for ground control stations like Mission Planer to list them.
 
 Creating a Parameter Group
 --------------------------
@@ -76,7 +76,7 @@ Upon boot up, the firmware creates RAM variables for each parameter and initiali
 
 The string names of the parameters are only used by the Ground Control Stations and LUA scripts. Access from within the C++ code is directly to addresses of the initialized parameter variables in RAM while executing, not by name strings.
 
-LUA created parameters exist in the same manner as firmware created parameters. User/Script changes are stored in non-volatile memory. But their names only exist for a lookup if a "param:add_table" and "param:add_param" has been executed after bootup by a script. Then they will appear in the GCS parameter list and can be accessed by name from LUA scripts. Without this, the data would still exist in non-volatile memory, but is invisible and non-existent for all intents and purposes.
+LUA created parameters exist in the same manner as firmware created parameters. User/Script changes are stored in non-volatile memory. But their names only exist for a lookup if a "param:add_table" and "param:add_param" has been executed after boot-up by a script. Then they will appear in the GCS parameter list and can be accessed by name from LUA scripts. Without this, the data would still exist in non-volatile memory, but is invisible and non-existent for all intents and purposes.
 
 This also means that parameters created by one script, which are modified by a user or script, are still in storage. If that script is removed, another script with different parameters is run, then removed, and the original script re-run, those changed parameters will re-appear in the GCS with their last values and can be accessed again by the script. Resetting all the parameters to defaults will erase those changes, just like the firmware created parameters.
 

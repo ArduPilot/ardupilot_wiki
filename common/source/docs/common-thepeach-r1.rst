@@ -90,7 +90,7 @@ to use DShot.
 Battery Monitoring
 ==================
 
-The board has 1 dedicated power monitor port whit a pin connector. It is intended for use with the Analog power monitor supplied with the autopilot.
+The board has 1 dedicated power monitor port with a pin connector. It is intended for use with the Analog power monitor supplied with the autopilot.
 
 Compass
 =======

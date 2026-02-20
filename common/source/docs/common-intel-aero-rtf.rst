@@ -67,7 +67,7 @@ Connecting and configuring with a ground station
 Connecting the Transmitter
 ==========================
 
-The transmitter that comes with the RTF is an off the shelf DSM-X DXe and a SPM4648 receiver, which is of autobind mode. The transmitter should always be powered on before the receiver (which is normally powered together with the vehicle).  If powered on after the vehicle it won't connect.  To overcome this you can simply disconnect the cable from the receiver, or go through the binding process, which involves powering on the transmitter while holding the "BIND/PANIC/TRAINER" button pressed. More information about the binding and connectiong can be found on the `receiver documentation <https://www.horizonhobby.com/pdf/SPM4648-Manual-EN.pdf>`__.
+The transmitter that comes with the RTF is an off the shelf DSM-X DXe and a SPM4648 receiver, which is of autobind mode. The transmitter should always be powered on before the receiver (which is normally powered together with the vehicle).  If powered on after the vehicle it won't connect.  To overcome this you can simply disconnect the cable from the receiver, or go through the binding process, which involves powering on the transmitter while holding the "BIND/PANIC/TRAINER" button pressed. More information about the binding and connection can be found on the `receiver documentation <https://www.horizonhobby.com/pdf/SPM4648-Manual-EN.pdf>`__.
 
 Known Issues with the Transmitter
 =================================

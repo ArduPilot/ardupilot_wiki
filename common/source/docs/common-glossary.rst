@@ -199,7 +199,7 @@ project.
 
 **PCB**: Printed circuit board. In our use, a specialized board designed
 and "fabbed" for a dedicated purpose, as opposed to a breadboard or
-prototype board, which can be used and resused for many projects.
+prototype board, which can be used and reused for many projects.
 
 **PCM**: Pulse Code Modulation: The technique some modern RC
 transmitters/receivers communicate the RC channels information. It is

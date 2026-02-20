@@ -102,7 +102,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
 
 .. note:: a version of firmware for the CubePilot HERE 4 DroneCAN RTK GPS is available `here <https://firmware.ardupilot.org/AP_Periph/latest/Here4AP/>`__ that includes evolving ArduPilot improvements.
 
-.. warning:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
+.. warning:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during boot-up if not found on the first port configured for GPS protocol.
 
 
 Moving Baseline (GPS for Yaw) Capable

@@ -19,7 +19,7 @@ AM32 ESCs that support DroneCAN
 - `VimDrones ESC S50 (50 Amp) <https://dev.vimdrones.com/products/vimdrones_esc_s50/>`__
 - `VimDrones ESC Development Board <https://dev.vimdrones.com/products/vimdrones_esc_dev/>`__
 
-More ESCs may be found from the `AM32 targets.h <https://github.com/am32-firmware/AM32/blob/main/Inc/targets.h>`__ file (seach for _CAN)
+More ESCs may be found from the `AM32 targets.h <https://github.com/am32-firmware/AM32/blob/main/Inc/targets.h>`__ file (search for _CAN)
 
 ArduPilot Connection and Configuration
 ======================================

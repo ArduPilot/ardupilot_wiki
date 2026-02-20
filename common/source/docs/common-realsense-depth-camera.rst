@@ -180,7 +180,7 @@ In a nutshell, the script will convert the depth image provided by the Realsense
     :target: ../_images/example-depth-camera-filtered-image.png
     :width: 500px
 
-- Next, from the input/processed depth image, the distances need to be on the same **horizontal** line (depicted in the right image) since the message contains no field to distinguish different pitch angles. We devide the horizontal field of view of the camera into 72 evenly spaced rays. Along each ray, we select the pixel corresponding to the end of the ray and pick out the depth value.
+- Next, from the input/processed depth image, the distances need to be on the same **horizontal** line (depicted in the right image) since the message contains no field to distinguish different pitch angles. We divide the horizontal field of view of the camera into 72 evenly spaced rays. Along each ray, we select the pixel corresponding to the end of the ray and pick out the depth value.
 
 - Subsequently, the obstacle line will be kept "fixed" when the vehicle pitches up and down by compensating for the current pitch of the vehicle which is provided by the `ATTITUDE <https://mavlink.io/en/messages/common.html#ATTITUDE>`__  MAVLink message.
 

@@ -296,7 +296,7 @@ def get_commit_dict(releases_parsed):
         except Exception as e:
             error("An exception occurred: " + file + " DECODE ERROR. Link: " + fetch_link)
             error(e)
-            # sys.exit(1) #comment to make easer debug
+            # sys.exit(1) #comment to make easier debug
             return "error", "error", "error"
     ####################################################################################################
 
