@@ -4,9 +4,36 @@
 ROS 2 with SITL
 ===============
 
-Once ROS2 is correctly :ref:`installed <ros2>`, and SITL is also :ref:`installed <sitl-simulator-software-in-the-loop>`, source your workspace and launch ArduPilot SITL with ROS 2!
+After the ROS2 environment,  `Micro-XRCE-DDS-Gen` and the ROS2 package `micro-ROS-Agent` are correctly installed following :ref:`Install ROS2 <ros2>`, you still need to build the simulator of Ardupilot to launch SITL in ROS2.  
 
-You will need to run this command on every new shell you open to have access to the ROS 2 commands, like so:
+The simulator will be built from the source code in the `ardu_ws/src/ardupilot` that is cloned in :ref:`Installation (Ubuntu) <ros2_installation_ubuntu>`.
+
+You need to install the ArduPilot dependencies first.
+
+.. code-block:: bash
+
+    cd ardu_ws/src/ardupilot
+    ./Tools/environment_install/install-prereqs-ubuntu.sh -y
+
+Then, build Ardupilot for SITL with DDS enabled. The example below shows how to build the copter firmware, but you can replace `copter` with `plane`, `rover`, etc.
+
+You can build the ROS2 packages `ardupilot_msgs`, `micro_ros_agent`, `ardupilot_sitl` and `ardupilot_dds_tests` as 
+
+.. code-block:: bash
+
+    cd ardu_ws/
+    colcon build --packages-up-to ardupilot_sitl  
+
+
+Then, source your workspace 
+
+.. code-block:: bash
+
+    cd ~/ardu_ws
+    source ./install/setup.bash
+
+
+and you are able to launch the SITL in ROS2 with the following command
 
 .. tabs::
 
@@ -54,7 +81,13 @@ You will need to run this command on every new shell you open to have access to 
         master:=tcp:127.0.0.1:5760 \
         sitl:=127.0.0.1:5501
 
+More modules of `mavproxy` like `map` and `console` can be added in the above command, for example, `map:=True console:=True`.
 
+It launches three three processes:
+
+* `micro-ROS-Agent` is a wrapper around `Micro-XRCE-DDS-Agent` and provides connection to the ROS2,
+* `ardupilot_sitl`  is a ROS2 package that start the SITL binary connected to ROS2 through `micro-ROS-Agent`,
+* `mavproxy` is a GCS that connects to SITL through the MAVLink protocol. 
 
 For more information refer to `ardupilot/Tools/ros2/README.md <https://github.com/ArduPilot/ardupilot/tree/master/Tools/ros2#readme>`__.
 There you can find examples of launches using serial connection instead of udp, as well as a step-by-step breakdown of what the launch files are doing.
@@ -74,18 +107,19 @@ Once everything is running, you can now interact with ArduPilot through the ROS 
     # Echo a topic published from ArduPilot
     ros2 topic echo /ap/geopose/filtered
 
-If the ROS 2 topics aren't being published, ensure the ardupilot parameter ref:`DDS_ENABLE<DDS_ENABLE>` is set to 1 and reboot the launch.
+DDS is responsible for ROS2 communication. If the ROS2 topics are not published, first check if `DDS_ENABLE` is set to ``1`` or not. If not, set as ``1``. It can be done through Mission Planner, QGroundControl, or the commands in `mavproxy` as bellow, then reboot the launch.
 
 .. code-block:: bash
 
     export PATH=$PATH:~/ardu_ws/src/ardupilot/Tools/autotest
-    sim_vehicle.py -w -v ArduPlane --console -DG --enable-DDS
+    # a Copter is simulated in this example, but you can replace it with Plane, Rover, etc.
+    sim_vehicle.py -w -v ArduCopter --console -DG --enable-DDS 
 
     param set DDS_ENABLE 1
 
 
-Another aspect to check, ensure the ArduPilot parameter ref:`DDS_DOMAIN_ID<DDS_DOMAIN_ID>` matches your enviornment variable ``ROS_DOMAIN_ID``.
-The default is ``0`` for ArduPilot, which corresponds to the environment variable being unset.
+The second aspect to check, ensure the ArduPilot parameter `DDS_DOMAIN_ID` matches your environment variable ``ROS_DOMAIN_ID``.The default is ``0`` for ArduPilot, which corresponds to the environment variable being unset. You may need to relaunch the SITL after changing the parameters. 
+
 
 MAVProxy
 ========
