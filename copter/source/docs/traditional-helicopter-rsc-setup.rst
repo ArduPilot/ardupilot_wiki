@@ -67,20 +67,7 @@ When the motor interlock is disabled with the rotor at flight rotor speed, the r
 Battery Voltage Compensation (V4.7+)
 ==================================
 
-Battery compensation can be configured using :ref:`H_RSC_BAT_IDX <H_RSC_BAT_IDX>`, :ref:`H_RSC_BAT_V_MAX <H_RSC_BAT_V_MAX>`, :ref:`H_RSC_BAT_V_MIN <H_RSC_BAT_V_MIN>`, :ref:`H_RSC_BAT_EXP <H_RSC_BAT_EXP>`. It compensates for battery voltage changes in-flight. It should not be used with external governor ESCs.
-
-To tune :ref:`H_RSC_BAT_EXP <H_RSC_BAT_EXP>`:
-
-1. Enable reporting sag compensated voltage in :ref:`BATT_OPTIONS <BATTx_OPTIONS>`, this will be used to check that battery resistance estimate is correct.
-2. Set maximum and minimum voltage for your battery.
-3. Power the helicopter with a fully charged battery or PSU that is configured to deliver fully charged battery voltage.
-4. Arm the helicopter and engage the motor.
-5. Check that sag compensated battery voltage doesn't change in response to load changes, of it does pump the collective at about 0.5Hz without taking off until voltage change is negligible.
-6. Note RPM at fixed collective position eg. minimum or zero thrust.
-7. Replace ther battery with a discharged one (~10-20%) capacity left.
-8. Repeat the steps 3 to 5 with the discharged battery.
-9. Set collective as in step 6.
-10. Adjust :ref:`H_RSC_BAT_EXP <H_RSC_BAT_EXP>` until rotor RPM matches the value from step 6.
+Battery compensation can be configured using :ref:`H_RSC_BAT_IDX <H_RSC_BAT_IDX>`, :ref:`H_RSC_BAT_V_MAX <H_RSC_BAT_V_MAX>`, :ref:`H_RSC_BAT_V_MIN <H_RSC_BAT_V_MIN>`. It compensates for battery voltage changes during flight. It should not be used with external governor ESCs.
 
 ArduPilot Internal Governor Setup
 =================================
