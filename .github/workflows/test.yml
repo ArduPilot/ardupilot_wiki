@@ -43,6 +43,10 @@ jobs:
         run : |
           set -eux -o pipefail
           flake8 .
+      - name: Discover typos with codespell
+        run : |
+          set -eux -o pipefail
+          codespell  # config settings in .codespellrc
       - name: Test build
         run: |
           export AP_SPHINXOPTS=-W
