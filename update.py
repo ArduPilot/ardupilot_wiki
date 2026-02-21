@@ -130,7 +130,7 @@ def progress(message, file=sys.stdout, end="\n"):
 
 def error(str_to_print):
     """Show and count the errors."""
-    global error_log
+    global error_log  # noqa: F824
     error_log.append(str_to_print)
     print(f"[update.py][error]: {str_to_print}", file=sys.stderr)
 
