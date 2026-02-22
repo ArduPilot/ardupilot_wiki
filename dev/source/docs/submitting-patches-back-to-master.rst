@@ -31,6 +31,9 @@ Preparing commits
   "deletes" it from the old spot, and a separate one that "creates" it at
   the new spot.
 
+- Do not create 'only fix formatting' commits. The disruption they cause
+  to git history is more significant than their improvement to the code.
+
 - **Well-written, concise comments** are encouraged.
 
     Commit messages should be of the form:
