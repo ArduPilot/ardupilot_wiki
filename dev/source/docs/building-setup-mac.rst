@@ -54,7 +54,7 @@ Setup steps
    ::
 
        sudo easy_install pip
-       sudo pip install pyserial future empty
+       sudo pip install pyserial future empy
        
    ::
    
