@@ -42,6 +42,11 @@ Preparing commits
   "what" code does, they explain "why" (or perhaps "how" in a clever-but-
   difficult implementation).
 
+- Resist moving code within files/libraries. Preserving the in-file
+  location of code is preferred over rearranging the file(s) to improve
+  organization. Defer to a reviewer's judgement to resolve any
+  disagreements regarding this.
+
 - **Well-written, concise comments** are encouraged.
 
     Commit messages should be of the form:
