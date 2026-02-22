@@ -186,8 +186,7 @@ Trailing whitespaces
 --------------------
 
 Don't leave trailing whitespace on new code (a good editor can manage
-this for you). Fixing whitespace on existing code should be done as a
-separate commit (do not include with other changes).
+this for you).
 
 Line breaks
 ===========

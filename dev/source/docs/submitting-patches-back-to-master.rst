@@ -47,6 +47,8 @@ Preparing commits
   organization. Defer to a reviewer's judgement to resolve any
   disagreements regarding this.
 
+- Do not clean up whitespace, unless you are already changing the lines.
+
 - **Well-written, concise comments** are encouraged.
 
     Commit messages should be of the form:
