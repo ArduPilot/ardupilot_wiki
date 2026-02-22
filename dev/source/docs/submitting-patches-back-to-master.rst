@@ -34,6 +34,14 @@ Preparing commits
 - Do not create 'only fix formatting' commits. The disruption they cause
   to git history is more significant than their improvement to the code.
 
+- Only add "high value" comments to existing code. Comments disrupt the
+  git history, and the code should already be written clearly enough to
+  describe what it does. Be prepared to explain/defend the importance of
+  any new comments to reviewers, and defer to their judgement to resolve
+  any disagreement over a comment's value. Comments should not explain
+  "what" code does, they explain "why" (or perhaps "how" in a clever-but-
+  difficult implementation).
+
 - **Well-written, concise comments** are encouraged.
 
     Commit messages should be of the form:
