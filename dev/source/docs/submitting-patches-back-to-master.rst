@@ -26,7 +26,10 @@ Preparing commits
 - **Commits should be small and do just one thing.** If a change touches
   multiple libraries then there should be a separate commit per library,
   and a separate commit per vehicle directory. This is true even if it
-  means that intermediate commits break the build.
+  means that intermediate commits break the build. This also implies that
+  moving code from one library to another happens in two commits: one that
+  "deletes" it from the old spot, and a separate one that "creates" it at
+  the new spot.
 
 - **Well-written, concise comments** are encouraged.
 
