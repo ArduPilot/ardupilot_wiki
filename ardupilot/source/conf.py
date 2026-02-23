@@ -48,9 +48,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'ArduPilot'
-copyright = u'2024, ArduPilot Dev Team'
-author = u'ArduPilot Dev Team'
+project = 'ArduPilot'
+copyright = '2024, ArduPilot Dev Team'
+author = 'ArduPilot Dev Team'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -240,8 +240,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'ArduPilot.tex', u'ArduPilot Documentation',
-     u'ArduPilot Dev Team', 'manual'),
+    (master_doc, 'ArduPilot.tex', 'ArduPilot Documentation',
+     'ArduPilot Dev Team', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -270,7 +270,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'ardupilot', u'ArduPilot Documentation',
+    (master_doc, 'ardupilot', 'ArduPilot Documentation',
      [author], 1)
 ]
 
@@ -284,7 +284,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'ArduPilot', u'ArduPilot Documentation',
+    (master_doc, 'ArduPilot', 'ArduPilot Documentation',
      author, 'ArduPilot', 'One line description of project.',
      'Miscellaneous'),
 ]
