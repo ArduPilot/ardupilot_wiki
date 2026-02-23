@@ -46,7 +46,7 @@ function of each:
    pilot.  Better to use the Configuration Tuning section of Mission
    Planner
 -  Setup Radio: Goes to the setup section, radio and allows you to set
-   up the radio.  Better to use the Confiuration Tuning section of
+   up the radio.  Better to use the Configuration Tuning section of
    Mission Planner but sometimes this is useful.
 -  Tests: Goes to the tests section of CLI and lists the options. You
    can type any of the options, press Enter to run the test.

@@ -165,7 +165,7 @@ An ``RCx_OPTION`` can be set via the Config/Tuning > Full Parameter List screen,
 -  setting the switch high (i.e. PWM > 1800) will enable all configured fences, low
    (under 1800) will disable all fences.
 
-.. note:: if the Minimun Altitude fence is enabled by the switch while on the ground and disarmed, a pre-arm failure will occur preventing arming.
+.. note:: if the Minimum Altitude fence is enabled by the switch while on the ground and disarmed, a pre-arm failure will occur preventing arming.
 
 Automatic Altitude Breach Avoidance
 ===================================

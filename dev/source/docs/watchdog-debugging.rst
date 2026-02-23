@@ -35,7 +35,7 @@ There are three magic tasks:
    -2: Running the fast loop function
    -3: waiting for an IMU sample
 
-If in state -3 then the code was almost certainly in an interrupt handler when the fault occured.
+If in state -3 then the code was almost certainly in an interrupt handler when the fault occurred.
 
 Converting the LR field into a line of code
 ===========================================

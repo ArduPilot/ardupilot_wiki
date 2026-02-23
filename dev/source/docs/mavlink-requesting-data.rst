@@ -271,7 +271,7 @@ If you find the message rates are reverting to some fixed rate (often 4hz) after
 Most Ground Control Stations have a control to disable this behaviour.  For example:
 
 - If using MAVProxy type ``set streamrate -1`` into the console
-- If using Misison Planner, open the Config, Planner screen and set the "Telemetry Rates" dropdowns to -1
+- If using Mission Planner, open the Config, Planner screen and set the "Telemetry Rates" dropdowns to -1
 - If using QGroundControl, open Application Settings, Telemetry and move the "Controlled By vehicle" slider to the right
 
 If adjusting the GCS behaviour is impossible, set the appropriate ``SERIALn_OPTIONS`` parameter's bit 12 ("Ignore Streamrate") to ignore attempts by the GCS to set message rates via streamrate commands.  For example if Serial1/Telem1's rates are being inconveniently adjusted by the GCS, set the :ref:`SERIAL1_OPTIONS <SERIAL1_OPTIONS>` parameter value

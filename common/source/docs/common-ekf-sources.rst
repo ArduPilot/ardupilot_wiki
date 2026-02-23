@@ -46,7 +46,7 @@ Velocity Source Fusing
 
 There is an option to fuse all sources of velocity into the EKF.  This will take velocity information from the XY and Z sources defined by :``EK3_SRCx_VELXY`` and ``EK3_SRCx_VELZ``, where 'x' is the source number (1-3).  To enable this option set the first bit in the :ref:`EK3_SRC_OPTIONS<EK3_SRC_OPTIONS>` bitmask.
 
-.. warning:: When using this option, users should ensure that the velocity measurements being provided to the EKF are both in the same reference frame/co-ordinate system.
+.. warning:: When using this option, users should ensure that the velocity measurements being provided to the EKF are both in the same reference frame/coordinate system.
 
 .. _extnav-optiflow-transitions:
 

@@ -175,7 +175,7 @@ This data may come from visual sensors, however other technologies such as radar
 also provide odometry data. Regardless of the method of odometry, 
 ArduPilot has a single ROS interface to receive it.
 
-This data typically comes from a `TF2 Transfrom Tree <https://docs.ros.org/en/humble/Tutorials/Intermediate/Tf2/Tf2-Main.html>`_.
+This data typically comes from a `TF2 Transform Tree <https://docs.ros.org/en/humble/Tutorials/Intermediate/Tf2/Tf2-Main.html>`_.
 For more information on the coordinate systems used, review `ROS REP-105 <https://www.ros.org/reps/rep-0105.html>`_.
 
 .. raw:: html
@@ -215,7 +215,7 @@ at compile time. See
 Refer to the `AP_DDS_Config.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_DDS/AP_DDS_config.h>`_
 file on what is exposed.
 
-Additionally, publish rates form ArduPilot also all indivually configurable at compile time.
+Additionally, publish rates form ArduPilot also all individually configurable at compile time.
 
 When deploying ArduPilot on a resource constrained autopilot, developers
 can disable interfaces they do not use and tune data rates to only
@@ -251,7 +251,7 @@ can lead to receiving junk data without any errors, or cryptic serialization
 errors. Thus, ArduPilot will do it's best to avoid changing messages.
 If breaking changes are required, the ArduPilot release notes will make that clear.
 
-Developers should not expect ABI stability on ``exerimental`` interfaces.
+Developers should not expect ABI stability on ``experimental`` interfaces.
 
 Because ArduPilot does not follow the same release timeline as ROS 2, and
 the development team for the ROS interface is still in its early stages,

@@ -33,7 +33,7 @@ If only the body-frame angle to the target is known then "angle_x" and "angle_y"
    <tr>
    <td><strong>time_usec</strong></td>
    <td>uint64_t</td>
-   <td>Timestamp since system boot.  This does not need to be syncronised with the autopilot's time</td>
+   <td>Timestamp since system boot.  This does not need to be synchronised with the autopilot's time</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>target_num</td>

@@ -166,7 +166,7 @@ APM 2.x LED STATUS:
 * - RX – ON = Input signal(s) lost during flight and fail-safe activated
 * - TX – OFF= PPM output disabled
 * - TX – FAST TOGGLE = PPM output enabled
-* - TX – SLOW TOGGLE = PPM pass-trough mode
+* - TX – SLOW TOGGLE = PPM pass-through mode
 
 SERVO INPUT (PWM) MODE:
 +++++++++++++++++++++++
@@ -183,7 +183,7 @@ PPM PASS-THROUGH MODE (signal pin 2&3 shorted):
 
 * – PPM output will not be enabled unless a input signal has been detected
 * – Active signal on input channel 1 has been detected:
-* + Any input level changes will be passed directly to the PPM output (PPM pass-trough)
+* + Any input level changes will be passed directly to the PPM output (PPM pass-through)
 * + If no input level changes are detected within 250ms:
 * + PPM output is enabled and default fail-safe values for all eight channels transmitted
 * + Input level change detected again, PPM fail-safe output is terminated and normal PPM pass-through operation is restored
@@ -305,7 +305,7 @@ APM 2.x LED STATUS:
 * RX – ON = Input signal(s) lost during flight and fail-safe activated
 * TX – OFF= PPM output disabled
 * TX – FAST TOGGLE = PPM output enabled
-* TX – SLOW TOGGLE = PPM pass-trough mode
+* TX – SLOW TOGGLE = PPM pass-through mode
 
 SERVO INPUT (PWM) MODE:
 +++++++++++++++++++++++
@@ -322,7 +322,7 @@ PPM PASS-THROUGH MODE (signal pin 2&3 shorted):
 
 * – PPM output will not be enabled unless a input signal has been detected
 * – Active signal on input channel 1 has been detected:
-* + Any input level changes will be passed directly to the PPM output (PPM pass-trough)
+* + Any input level changes will be passed directly to the PPM output (PPM pass-through)
 * + If no input level changes are detected within 250ms:
 * + PPM output is enabled and default fail-safe values for all eight channels transmitted
 * + Input level change detected again, PPM fail-safe output is terminated and normal PPM pass-through operation is restored

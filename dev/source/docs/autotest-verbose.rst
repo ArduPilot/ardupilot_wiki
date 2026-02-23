@@ -5839,7 +5839,7 @@ AutoTest Output
     rc 3 1500
     rc 3 1500
     AUTO> AUTOTEST: set_rc (wc=0.0170772075653 st=0.0 r=None): ch=3 want=1500 got=1500
-    AUTOTEST: Waiting for text : gripper load releas
+    AUTOTEST: Waiting for text : gripper load release
     APM: EKF2 IMU0 in-flight yaw alignment complete
     APM: EKF2 IMU1 in-flight yaw alignment complete
     height 10
@@ -11990,7 +11990,7 @@ AutoTest Output
     AUTOTEST: ACK received: COMMAND_ACK {command : 410, result : 0} (0.000000s)
     AUTOTEST: home: HOME_POSITION {latitude : -353629380, longitude : 1491650850, altitude : 584010, x : 0.0, y : 0.0, z : 0.0, q : [1.0, 0.0, 0.0, 0.0], approach_x : 0.0, approach_y : 0.0, approach_z : 0.0, time_usec : 228845092}
     AUTOTEST: -
-    AUTOTEST: ---------- ensure we can't arm if ouside fence  ----------
+    AUTOTEST: ---------- ensure we can't arm if outside fence  ----------
     AUTOTEST: -
     fence load /home/pbarker/rc/ardupilot/Tools/autotest/fence-in-middle-of-nowhere.txt
     nowhere.txt/home/pbarker/rc/ardupilot/Tools/autotest/fence-in-middle-of-n
@@ -35247,7 +35247,7 @@ AutoTest Output
     AUTOTEST: GPS healthy
     AUTOTEST: Test gripper with RC9_OPTION
     AUTOTEST: Releasing load
-    AUTOTEST: Waiting for text : gripper load releas
+    AUTOTEST: Waiting for text : gripper load release
     rc 9 1000
     rc 9 1000
     STABILIZE> APM: Gripper load releasing
@@ -35260,7 +35260,7 @@ AutoTest Output
     APM: Gripper load grabbing
     AUTOTEST: Received expected text : gripper load grabbing
     AUTOTEST: Releasing load
-    AUTOTEST: Waiting for text : gripper load releas
+    AUTOTEST: Waiting for text : gripper load release
     rc 9 1000
     rc 9 1000
     STABILIZE> APM: Gripper load releasing
@@ -35277,7 +35277,7 @@ AutoTest Output
     AUTOTEST: Received expected text : gripper load grabbing
     AUTOTEST: Test gripper with MAVLink cmd
     AUTOTEST: Releasing load
-    AUTOTEST: Waiting for text : gripper load releas
+    AUTOTEST: Waiting for text : gripper load release
     APM: Gripper load releasing
     AUTOTEST: Received expected text : gripper load releasing
     AUTOTEST: Grabbing load
@@ -35287,7 +35287,7 @@ AutoTest Output
     Got MAVLink msg: COMMAND_ACK {command : 211, result : 0}
     AUTOTEST: Received expected text : gripper load grabbing
     AUTOTEST: Releasing load
-    AUTOTEST: Waiting for text : gripper load releas
+    AUTOTEST: Waiting for text : gripper load release
     APM: Gripper load releasing
     Got MAVLink msg: COMMAND_ACK {command : 211, result : 0}
     AUTOTEST: Received expected text : gripper load releasing
@@ -36665,10 +36665,10 @@ AutoTest Output
     AUTOTEST: ACK received: COMMAND_ACK {command : 204, result : 0} (0.000000s)
     AUTOTEST: start=lat=-35.362317,lon=149.165221,alt=613.8
     AUTOTEST: loc -35.362317 149.165221 613.789978
-    AUTOTEST: targetting -35.362137 149.165331 0.000000
+    AUTOTEST: targeting -35.362137 149.165331 0.000000
     AUTOTEST: Mount pitch incorrect: 0.000000 != -52.000000
     AUTOTEST: Mount pitch correct: -53.660000 degrees == -52.000000
-    AUTOTEST: Testing mount RC targetting
+    AUTOTEST: Testing mount RC targeting
     AUTOTEST: Levelling aircraft
     Got MAVLink msg: COMMAND_ACK {command : 204, result : 0}
     AUTOTEST: ACK received: COMMAND_ACK {command : 204, result : 0} (0.000000s)

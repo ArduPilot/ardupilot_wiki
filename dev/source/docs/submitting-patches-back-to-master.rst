@@ -62,7 +62,7 @@ Preparing commits
 - Do not include any git ``fixup!`` commits in your PR; these are only ever supposed to be a temporary part of a git workflow
 
 - Try to follow the :ref:`style guide <style-guide>` so your code fits in with the existing code.
-  In particular, ensure your editor uses 4 spaces intead of tabs.
+  In particular, ensure your editor uses 4 spaces instead of tabs.
 
 - Unix line endings (LF) are used. Git should take care of this
   automatically, but if you notice that you have a lot of files that show

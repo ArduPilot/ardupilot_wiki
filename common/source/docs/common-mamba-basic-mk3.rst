@@ -117,7 +117,7 @@ The correct battery setting parameters are:
 Compass
 =======
 
-The Mamba Basic autopilots do not have a builting compass, but you can attach an external compass using I2C on the SDA and SCL pads or refer to :ref:`common-compassless`.
+The Mamba Basic autopilots do not have a builtin compass, but you can attach an external compass using I2C on the SDA and SCL pads or refer to :ref:`common-compassless`.
 
 Firmware
 ========

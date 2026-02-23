@@ -4,7 +4,7 @@
 Simulation on Hardware
 ======================
 
-ArduPilot's Simulation on Hardware is similar to features sometimes known as "Hardware in the Loop".  Contrary to many of these systems, however, the simulation is not run externally (with the resulting environmental data passed to the vehicle), rather the vehicle's own autopilot runs both the flight control software and the simulation.  ArduPilot's native SITL simulation environment is re-used for this purpose.
+ArduPilot's Simulation on Hardware is similar to features sometimes known as "Hardware in the Loop".  Contrary to many of these systems, however, the simulation is not run externally (with the resulting environmental data passed to the vehicle), rather the vehicle's own autopilot runs both the flight control software and the simulation.  ArduPilot's native SITL simulation environment is reused for this purpose.
 
 Simulation on Hardware allows checking that:
 
@@ -59,7 +59,7 @@ An flexible firmware building script is located `here <https://github.com/ArduPi
 - board: board target for firmware
 - vehicle: plane/rover/copter/blimp, same as used by sim_vehicle.py
 - simclass: Plane/Multicopter/Helicopter/SimRover/Sailboat/QuadPlane
-- frame: same as used by sim_vehicle.py, this modifies the physics model according to which frame type is used, but unlike software based SITL it does not also load a defualt set of params for this frame (like :ref:`Q_TILT_ENABLE<Q_TILT_ENABLE>` = 1, etc.). So they must be manually added after the firmware is loaded.
+- frame: same as used by sim_vehicle.py, this modifies the physics model according to which frame type is used, but unlike software based SITL it does not also load a default set of params for this frame (like :ref:`Q_TILT_ENABLE<Q_TILT_ENABLE>` = 1, etc.). So they must be manually added after the firmware is loaded.
 - defaults: extra defaults file (optional). As shown,it will load the default param file that sim_vehicle.py loads for the example frame. If omitted, a minimal defaults.parm file is loaded to get most vehicles simulating. You may want to create a file that sets up these necessary parameters for the simulation (see below), the frame defaults, or the ones you are using on your vehicle including the other parameters for specific hardware devices you may wish to activate during the simulations(be sure not to change the required parameters below).
 
 In order for the simulation to work and emulate flight while the autopilot remains stationary, it will use simulated IMUs, GPS, and Compass.

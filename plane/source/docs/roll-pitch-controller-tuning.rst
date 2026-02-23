@@ -285,7 +285,7 @@ Tuning tips
    set to a value that is big enough to allow from trim changes, but
    small enough so that it cannot stall the plane. The default for Plane is 2/3 of total throw, which could
    produce this problem. Be sure that :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` is setup to add 
-   negative pitch at low throttle in stablized modes.
+   negative pitch at low throttle in stabilized modes.
 -  The rate of pitch (and therefore the reduce the number of g's) used
    to correct pitch angle errors can be limited setting the pitch rate
    limit :ref:`PTCH2SRV_RMAX_DN<PTCH2SRV_RMAX_DN>` and :ref:`PTCH2SRV_RMAX_UP<PTCH2SRV_RMAX_UP>` 

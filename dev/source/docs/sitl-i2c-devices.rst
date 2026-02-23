@@ -35,11 +35,11 @@ i2c devices vary in the structure of the on-wire protocol.  Some examples of pro
 Choosing a Device Style
 =======================
 
-When implementing a new simulator, care must be taken to choose the correct "style" of simulator to implement.  Several base classes can be inheritted from to prevent warrantless duplication.  As always, find a good example of something similar to the device you wish to simulate and "do what that thing does".  Working out what the protocol is requires study of the datasheet for the device.
+When implementing a new simulator, care must be taken to choose the correct "style" of simulator to implement.  Several base classes can be inherited from to prevent warrantless duplication.  As always, find a good example of something similar to the device you wish to simulate and "do what that thing does".  Working out what the protocol is requires study of the datasheet for the device.
 
-For devices which are strictly register-based, the ``I2CRegisters_8Bit`` (or ``I2CRegisters_16Bit``) base class should be inheritted from.  This allows your new simulator to describe the registers present on the device, and simply fill the register values in based on how ArduPilot manipulates other registers.  It is also possible to create simulates devices with both 8 and 16 bit registers - see ``I2CRegisters_ConfigurableLength``
+For devices which are strictly register-based, the ``I2CRegisters_8Bit`` (or ``I2CRegisters_16Bit``) base class should be inherited from.  This allows your new simulator to describe the registers present on the device, and simply fill the register values in based on how ArduPilot manipulates other registers.  It is also possible to create simulates devices with both 8 and 16 bit registers - see ``I2CRegisters_ConfigurableLength``
 
 For devices which are polled to start some sort of measurement and subsequently make available a 16-bit quantity for reading ``I2CCommandResponseDevice`` may be used to write a simple driver.
 
-For devices which simply return fixed-length readings when an i2c "read" is made - and for any other protocol which doesn't yet have an abstraction - your simulation will need to implement the virtual method ``rdwr(I2C::i2c_rdwr_ioctl_data *&data)`` inheritted from SITL::I2CDevice.
+For devices which simply return fixed-length readings when an i2c "read" is made - and for any other protocol which doesn't yet have an abstraction - your simulation will need to implement the virtual method ``rdwr(I2C::i2c_rdwr_ioctl_data *&data)`` inherited from SITL::I2CDevice.
 

@@ -74,7 +74,7 @@ Wiring Diagram
 
 UART Mapping
 ============
-The UARTs default protocol and serial port assigments are:
+The UARTs default protocol and serial port assignments are:
 
 * SERIAL0 -> USB
 * SERIAL1 -> USART1 (DMA capable,RX tied to SBUS RC input and pin used as an interrupt input, but can be used as normal UART if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` =1 ) 
@@ -88,7 +88,7 @@ RC Input
 ========
 The RX1 input by default is mapped to a timer input instead of UART`1, and can be used for all ArduPilot supported unidirectional receiver protocols. The SBUS pads are inverted and tied to this input and should not be connected to anything if the RX1 is used. Bi-directional procols such as CRSF/ELRS and SRXL2 which require a true UART connection to both R1 and TX1 (see below). FPort with tlemetery also requires a full UART AND an external bi-directional inverter.
 
-To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the RX1 pin must be configured to be used as true UART RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL1 port’s RX input pin.ref:\ ``SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>`` is alreaddy set by deault to “23” to allow RC reciever connection to UART1.
+To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the RX1 pin must be configured to be used as true UART RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL1 port’s RX input pin.ref:\ ``SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>`` is alreaddy set by default to “23” to allow RC receiver connection to UART1.
 
 With this option:
 * PPM is not supported.

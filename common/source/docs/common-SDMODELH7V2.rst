@@ -65,7 +65,7 @@ receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 
    -  SERIAL0 -> USB
    -  SERIAL1 -> UART1 (MSP DisplayPort)(DMA Capable)
-   -  SERIAL2 -> UART2 (TMAVLink) (connected to internal BT module, not useable by ArduPilot)
+   -  SERIAL2 -> UART2 (TMAVLink) (connected to internal BT module, not usable by ArduPilot)
    -  SERIAL3 -> UART3 (RCinput)(DMA Capable)
    -  SERIAL4 -> UART4 (GPS)
    -  SERIAL5 -> not available
@@ -111,7 +111,7 @@ The Cam pin is GPIO 84 and is set to be controlled by RELAY4 by default. Relay p
 PWM Output
 ==========
 
-The SDMODELH7V2 supports up to 8 PWM outputs. Outputs are available via two JST-SH connectors. All 8 outputs support DShot as well as all PWM types. Ouputs 1-4 also support Bi-Directional DSHOT.
+The SDMODELH7V2 supports up to 8 PWM outputs. Outputs are available via two JST-SH connectors. All 8 outputs support DShot as well as all PWM types. Outputs 1-4 also support Bi-Directional DSHOT.
 
 The PWM is in 3 groups:
 

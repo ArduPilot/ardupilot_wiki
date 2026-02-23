@@ -150,7 +150,7 @@ To create a PR, you can push your local branch to your web based ``fork`` and th
 - hwdef.dat with correct board id
 - hwdef-bl.dat with correct board id
 - :ref:`README.md <readme_file>` with board pinout, images, and configuration data needed for a user.This has some fairly rigid requirements for content and format. A link to this file will be included in the ArduPilot wiki once the board is merged.If you wish a dedicated page in the Wiki for your board, you can develop a Wiki PR for it or have it created as a service by a contractor, like our `Wiki Maintainer <https://www.hwurzburg.com>`__
-- defaults.parm if board specific defaults are needed. Note do not define things already defaulted. Put Serial port protocol default changes and Battery monitor params in the hwdef file, not in the defautls.param file.
+- defaults.parm if board specific defaults are needed. Note do not define things already defaulted. Put Serial port protocol default changes and Battery monitor params in the hwdef file, not in the defaults.param file.
 - the above files should be in a single commit titled: "hwdef: YourBoard"
 - in Tools: add a commit for your bootloader titled: "bootloaders:YourBoard" (so a total of two commits)
 - in the PR's description box, list the tests you have done on the board.

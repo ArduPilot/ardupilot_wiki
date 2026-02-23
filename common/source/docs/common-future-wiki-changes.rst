@@ -34,7 +34,7 @@ New Board Support
 - UAV DEV 743-UM982 ,see https://github.com/ArduPilot/ardupilot_wiki/pull/6897
 - DAKEFPVF405, see https://github.com/ArduPilot/ardupilot_wiki/pull/6949
 - OrbitH743, see https://github.com/ArduPilot/ardupilot_wiki/pull/6952
-- PiPilot RPI Sheild, see https://github.com/ArduPilot/ardupilot_wiki/pull/6972
+- PiPilot RPI Shield, see https://github.com/ArduPilot/ardupilot_wiki/pull/6972
 - DAKEFPVH743/H743Pro, see https://github.com/ArduPilot/ardupilot_wiki/pull/6978
 - BDShot support for ARKV6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/6981
 - AcctonGodwit_GA1, see https://github.com/ArduPilot/ardupilot_wiki/pull/7054
@@ -87,7 +87,7 @@ New Features
 ============
 - Option to change Mounts to Neutral on rc failsafe, see https://github.com/ArduPilot/ardupilot_wiki/pull/6430
 - Auto-resizing scripting heap if needed at runtime, see https://github.com/ArduPilot/ardupilot_wiki/pull/6432
-- New Airspeed sensor bootup skip cal option, see see https://github.com/ArduPilot/ardupilot_wiki/pull/6706
+- New Airspeed sensor boot-up skip cal option, see see https://github.com/ArduPilot/ardupilot_wiki/pull/6706
 - Gyro rate pre-arm, see https://github.com/ArduPilot/ardupilot_wiki/pull/6776
 - Add iNav fonts to DisplayPort for DJI Goggles 3/N3, see https://github.com/ArduPilot/ardupilot_wiki/pull/6794
 - Fence breach warning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6814

@@ -29,7 +29,7 @@ VTOL-quicktune.lua                          VTOL-quicktuning applet
 advance-wp.lua                              Advance the current mission waypoint via an RC switch
 ahrs-set-origin.lua                         Sets the AHRS/EKF origin to a specified Location
 ahrs-source-extnav-optflow.lua              Help vehicles automatically switch between ExternalNav and optical flow
-arming_checks.lua                           Scripted Arming Checks that can be invidually enabled/disabled
+arming_checks.lua                           Scripted Arming Checks that can be individually enabled/disabled
 camera-change-setting.lua                   Allows changing some camera settings that are not normally used by the autopilot
 copter-deadreckon-home.lua                  Flies towards home on loss of GPS
 copter-slung-payload.lua                    Reduce a slung payload's oscillation

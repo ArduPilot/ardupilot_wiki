@@ -78,7 +78,7 @@ For PPM and SBUS support on UART1_RX set BRD_ALT_CONFIG to 1.
 OSD Support
 ===========
 
-The Orqa FC 3030 F405 supports analog OSD using OSD_TYPE 1 (MAX7456 driver) using the CAM and VTX connectors. DisplayPort HD OSD can be enabled simultaneously by setting :ref:`OSD_TYPE<OSD_TYPE>` = 5 and using USART6 for telemtry to the HD air unit by setting :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` = 42.
+The Orqa FC 3030 F405 supports analog OSD using OSD_TYPE 1 (MAX7456 driver) using the CAM and VTX connectors. DisplayPort HD OSD can be enabled simultaneously by setting :ref:`OSD_TYPE<OSD_TYPE>` = 5 and using USART6 for telemetry to the HD air unit by setting :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` = 42.
 
 PWM Output
 ==========

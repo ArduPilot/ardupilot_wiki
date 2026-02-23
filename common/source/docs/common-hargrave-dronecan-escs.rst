@@ -73,7 +73,7 @@ ESC Primary Status
 ESC Extended Status
 ===================
 - Input Percent:  The percentage duty cycle currently requested by the autopilot.
-- Output Percent:  The percentage duty cycle currently output to the motor. If not equal to input percent, this indicates limiting is occuring within the ESC.
+- Output Percent:  The percentage duty cycle currently output to the motor. If not equal to input percent, this indicates limiting is occurring within the ESC.
 - Motor Temperature:  The temperature of the connected motor (requires NTC or PTC sensor connected to the ESC).
 - Motor Angle:  The currently measured angle of the motor, if sensor input is enabled. (requires external motor position sensing).
 - Status Flags:  The current general status of the ESC, non-error specific. 

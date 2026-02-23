@@ -234,7 +234,7 @@ First launch AirSim, after that launch the ArduPilot SITL using
 
     sim_vehicle.py -v Rover -f airsim-rover --console --map
 
-The other features, etc. described in this page have settings, commands and files specific for Copter, but can be used for Rover as well. Certain files such as scripts and ``settings.json`` will need to be modified for Rover, separate settings for Rover have not been added so as to keep the page managable and navigatable.
+The other features, etc. described in this page have settings, commands and files specific for Copter, but can be used for Rover as well. Certain files such as scripts and ``settings.json`` will need to be modified for Rover, separate settings for Rover have not been added so as to keep the page manageable and navigatable.
 
 You might need to tune the vehicle for proper usage, the param files for AirSim vehicles in `Tools/autotest/default_params <https://github.com/ArduPilot/ardupilot/tree/master/Tools/autotest/default_params>`__ can be modified directly, or you can create a new param file and pass its location to SITL using ``--add-param-file`` option in ``sim_vehicle.py``.
 

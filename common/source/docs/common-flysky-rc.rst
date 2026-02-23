@@ -12,7 +12,7 @@ Flysky RC Systems
 Flysky Receivers
 ----------------
 
-Flysky has many compatible receivers. Some ouput PWM, some i-BUS/SBus. Many offer telemetry through the i-BUS protocol. For more information about i-BUS telemetry, refer to the :ref:`i-BUS Telemetry page <common-ibus-telemetry>`.
+Flysky has many compatible receivers. Some output PWM, some i-BUS/SBus. Many offer telemetry through the i-BUS protocol. For more information about i-BUS telemetry, refer to the :ref:`i-BUS Telemetry page <common-ibus-telemetry>`.
 
 .. figure:: ../../../images/flysky-iA6B-rx.jpg
     :scale: 75 %

@@ -6,7 +6,7 @@ Yaapu FrSky Telemetry Script for OpenTX
 
 This is an open source LUA script to display :ref:`FrSky passthrough telemetry <common-frsky-passthrough>` on Horus X10,X12, Jumper T16,T18, Radiomaster TX16S, Taranis X9D,X9E,QX7 and Jumper T12 radios using OpenTX 2.2.3.
 
-This script can be used with FRSky, CRSF, or CRSF using the Passthru  option (:ref:`RC_OPTIONS<RC_OPTIONS>` bit 8 enbled when using CRSF).
+This script can be used with FRSky, CRSF, or CRSF using the Passthru  option (:ref:`RC_OPTIONS<RC_OPTIONS>` bit 8 enabled when using CRSF).
 
 Support for dual flight batteries is also provided.
 

@@ -60,7 +60,7 @@ Connecting via I2C
 
    Lidar-Lites manufactured before Feb 2015 have I2C interface communications issues.  For these lidar please connect using PWM.
 
-The connector cable has a 6-pin CLIK Mate connector on one end and tinned leads on the other.  The leads should be soldered to a DF13 or JST connector and connected to the autopilot's I2C port as shown below
+The connector cable has a 6-pin CLIK-Mate connector on one end and tinned leads on the other.  The leads should be soldered to a DF13 or JST connector and connected to the autopilot's I2C port as shown below
 
 The power to the rangefinder should be supplied from a separate external BEC as shown in the diagram below.
 
@@ -72,7 +72,7 @@ Set the following parameters:
 
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 3 "LidarLite-I2c"
 -  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 35 (the maximum range the lidar can accurately report in m)
--  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.20 (the mininum range the lidar can accurately report in m)
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.20 (the minimum range the lidar can accurately report in m)
 
 Connecting via PWM
 ==================
@@ -91,7 +91,7 @@ Set the following parameters:
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 5 "PWM"
 -  :ref:`RNGFND1_PIN <RNGFND1_PIN>` = 54 "AUX5" (if using 4.0.0 or higher any Auxiliary output may be used)
 -  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 35 (the maximum range the lidar can accurately report in m)
--  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.2 (the mininum range the lidar can accurately report in m)
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.2 (the minimum range the lidar can accurately report in m)
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1 ("0.8" may produce more accurate readings for some units)
 -  :ref:`RNGFND1_OFFSET <RNGFND1_OFFSET>` = 0
 -  ``BRD_PWM_COUNT`` = 4 (ensures AUX5 is not used as a servo output)

@@ -24,7 +24,7 @@ RC_CHANNELS_OVERRIDE
 The `RC_CHANNELS_OVERRIDE <https://mavlink.io/en/messages/common.html#RC_CHANNELS_OVERRIDE>`__ message allows setting the PWM equivalent value for each channel.
 This is normally a value between 1000 and 2000 but ArduPilot's RC input library uses the RCx_MIN, RCx_MAX and RCx_TRIM parameters to scale the input.  Note though that these parameters are normally set by the user during the RC Calibration stage.
 
-If both a regular transmitter (e.g. Futaba, Spektrum, etc) which sends actualy PWM values and a MAVLink enabled RC input system (sending messages via one of the message listed on this page) then care should be taken to ensure the RCx_MIN/MAX ranges are consistent between the two systems.
+If both a regular transmitter (e.g. Futaba, Spektrum, etc) which sends actually PWM values and a MAVLink enabled RC input system (sending messages via one of the message listed on this page) then care should be taken to ensure the RCx_MIN/MAX ranges are consistent between the two systems.
 If the MAVLink RC input stops, ArduPilot falls back to regular RC input within a few seconds.  This timeout is configurable using the :ref:`RC_OVERRIDE_TIME <copter:RC_OVERRIDE_TIME>` parameter.
 
 Be careful not to change the flight mode inadvertently.  By default either channel 5 or channel 8 (depending upon the vehicle type) is used to set the flight mode but this can be disabled by setting :ref:`FLTMODE_CH <copter:FLTMODE_CH>` or :ref:`MODE_CH <rover:MODE_CH>` to 0

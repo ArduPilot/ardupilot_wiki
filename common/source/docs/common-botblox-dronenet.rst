@@ -55,7 +55,7 @@ See the ``PPP configuration`` and ``ArduPilot Port Configuration`` sections of :
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 12500000 (12.5MBaud)
 
 To allow the autopilot to eventually communicate with other ethernet devices, the :ref:`NET_P1_TYPE <NET_P1_TYPE>`, :ref:`NET_P1_PROTOCOL <NET_P1_PROTOCOL>`, etc parameters will need to be set.
-More details on the settings required can be found in the "Ethernet Conectivity" sections of the ArduPilot wiki page for the device.  For example :ref:`Siyi camera setups can be found on this page <common-siyi-zr10-gimbal>`
+More details on the settings required can be found in the "Ethernet Connectivity" sections of the ArduPilot wiki page for the device.  For example :ref:`Siyi camera setups can be found on this page <common-siyi-zr10-gimbal>`
 
 DroneNet Setup
 ==============

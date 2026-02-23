@@ -25,7 +25,7 @@ To use simply make a takeoff and at any point later switch into AUTOLAND. A fina
 .. image:: ../../../images/autoland_mode.png
     :target: ../_images/autoland_mode.png
 
-``LAND`` parameter defaults are usually acceptable for most planes in the 1-2m wingspan, <2kg class) and should yeild a safe, if not optimally tuned, autolanding. ``LAND`` parameters can be optimized with test flights (See :ref:`automatic-landing`).
+``LAND`` parameter defaults are usually acceptable for most planes in the 1-2m wingspan, <2kg class) and should yield a safe, if not optimally tuned, autolanding. ``LAND`` parameters can be optimized with test flights (See :ref:`automatic-landing`).
 
 Options
 =======

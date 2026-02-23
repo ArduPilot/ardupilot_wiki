@@ -67,7 +67,7 @@ battery they can carry due to the requirements for reliable
 launch. During launch, and especially when using a flying launch such
 as a catapult or bungee, the aircraft needs to rapidly accelerate to
 an airspeed above its stall speed. If it fails to reach that speed
-suffiently quickly then it will crash. A QuadPlane avoids this problem
+sufficiently quickly then it will crash. A QuadPlane avoids this problem
 by taking off vertically, and can spend longer on the acceleration
 needed to sufficient speed for forward flight.
 

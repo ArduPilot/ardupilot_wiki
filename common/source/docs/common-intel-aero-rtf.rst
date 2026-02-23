@@ -32,7 +32,7 @@ Upgrading the vehicle's software
 The Aero RTF may not have the last BIOS and Linux operating system. The Linux distro on Aero needs to be updated to version 1.2
 in order for the autopilot to be flashed with ArduPilot.
 
-`Official Setup Instuctions from Intel <https://github.com/intel-aero/meta-intel-aero/wiki/02-Initial-setup>`__ should be followed which will ask you to:
+`Official Setup Instructions from Intel <https://github.com/intel-aero/meta-intel-aero/wiki/02-Initial-setup>`__ should be followed which will ask you to:
 
 - Download the latest OS image (aka "intel-aero-image-intel-aero.iso") and Capsule/BIOS (aka "capsule-01.00.12-r0.core2_64.rpm") from the `Intel Download Center <https://downloadcenter.intel.com/download/26500/UAV-installation-files-for-Intel-Aero-Platform>`__
 - `Flash the BIOS to Aero compute board <https://github.com/intel-aero/meta-intel-aero/wiki/02-Initial-setup#flashing-the-bios>`__
@@ -67,7 +67,7 @@ Connecting and configuring with a ground station
 Connecting the Transmitter
 ==========================
 
-The transmitter that comes with the RTF is an off the shelf DSM-X DXe and a SPM4648 receiver, which is of autobind mode. The transmitter should always be powered on before the receiver (which is normally powered together with the vehicle).  If powered on after the vehicle it won't connect.  To overcome this you can simply disconnect the cable from the receiver, or go through the binding process, which involves powering on the transmitter while holding the "BIND/PANIC/TRAINER" button pressed. More information about the binding and connectiong can be found on the `receiver documentation <https://www.horizonhobby.com/pdf/SPM4648-Manual-EN.pdf>`__.
+The transmitter that comes with the RTF is an off the shelf DSM-X DXe and a SPM4648 receiver, which is of autobind mode. The transmitter should always be powered on before the receiver (which is normally powered together with the vehicle).  If powered on after the vehicle it won't connect.  To overcome this you can simply disconnect the cable from the receiver, or go through the binding process, which involves powering on the transmitter while holding the "BIND/PANIC/TRAINER" button pressed. More information about the binding and connection can be found on the `receiver documentation <https://www.horizonhobby.com/pdf/SPM4648-Manual-EN.pdf>`__.
 
 Known Issues with the Transmitter
 =================================

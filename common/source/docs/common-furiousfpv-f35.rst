@@ -34,7 +34,7 @@ Specifications
 Where to Buy
 ============
 
-- Furious FPV F-35 Lightening is available from `FuriousFPV <https://furiousfpv.com/product_info.php?cPath=25&products_id=641>`__ (`Full options model here <https://furiousfpv.com/product_info.php?cPath=25&products_id=657>`__)
+- Furious FPV F-35 Lightning is available from `FuriousFPV <https://furiousfpv.com/product_info.php?cPath=25&products_id=641>`__ (`Full options model here <https://furiousfpv.com/product_info.php?cPath=25&products_id=657>`__)
 - Wing FC-10 is available from multiple retailers including `banggood.com <https://www.banggood.com/Wing-FC-10-DOF-Flight-Controller-INAV-OSD-Accelerometer-Barometer-Gyro-Compass-For-RC-Airplane-Drone-p-1318626.html>`__
 
 Peripheral Connections

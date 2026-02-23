@@ -33,7 +33,7 @@ Features:
    - SPI port
    - Buzzer
    - RCin port
-   - 13 motor/servo outputs, 8 supporting BiDirDShot, 11 suporting DShot
+   - 13 motor/servo outputs, 8 supporting BiDirDShot, 11 supporting DShot
 
 Pinout
 ======

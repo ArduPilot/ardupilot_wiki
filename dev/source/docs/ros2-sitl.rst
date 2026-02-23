@@ -84,7 +84,7 @@ If the ROS 2 topics aren't being published, ensure the ardupilot parameter ref:`
     param set DDS_ENABLE 1
 
 
-Another aspect to check, ensure the ArduPilot parameter ref:`DDS_DOMAIN_ID<DDS_DOMAIN_ID>` matches your enviornment variable ``ROS_DOMAIN_ID``.
+Another aspect to check, ensure the ArduPilot parameter ref:`DDS_DOMAIN_ID<DDS_DOMAIN_ID>` matches your environment variable ``ROS_DOMAIN_ID``.
 The default is ``0`` for ArduPilot, which corresponds to the environment variable being unset.
 
 MAVProxy

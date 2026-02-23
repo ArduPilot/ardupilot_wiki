@@ -67,7 +67,7 @@ the "Git Shell" or "Git Bash" utility that should already be :ref:`installed <gi
 
        git submodule update --init --recursive
 
-#. Check that the rebase was successfull. Using cmdline (``git log --oneline --decorate --all --graph`` , type q to exit) or a GUI tool like gitk, sourcetree, etc. Your commits should appear on top of ArduPilot master lastest commit, like show on previous picture.
+#. Check that the rebase was successful. Using cmdline (``git log --oneline --decorate --all --graph`` , type q to exit) or a GUI tool like gitk, sourcetree, etc. Your commits should appear on top of ArduPilot master latest commit, like show on previous picture.
 
 #. Now push the updated branch to your github repository
 
@@ -81,7 +81,7 @@ When things go wrong
 
 The rebase step (step 5) above may fail for a few reasons:
 
-- there are uncomitted changes to files in your local repo's branch.  Stage and commit these changes and then try again.
+- there are uncommitted changes to files in your local repo's branch.  Stage and commit these changes and then try again.
 - there are merge conflicts meaning that another developer has changed the same lines of code as your new commits have changed.  There are two choices
 
  - abort the rebase which will restore your branch to how it was before you began the rebase, ``git rebase --abort``.  If you are happy to throw away your new commits in your local repo's branch you can "reset" your branch so that it looks exactly like upstream master using ``git reset --hard upstream/master``.

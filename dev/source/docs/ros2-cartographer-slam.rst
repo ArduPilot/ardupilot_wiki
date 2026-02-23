@@ -34,7 +34,7 @@ Now source your workspace and build `ardupilot_ros`:
 Usage
 =====
 
-This package is used in combination with `ardupilot_gz`, first we will launch a simulation containing a copter equipped with a 360 degress 2D lidar in a maze world.
+This package is used in combination with `ardupilot_gz`, first we will launch a simulation containing a copter equipped with a 360 degree 2D lidar in a maze world.
 To launch rviz and gazebo, run:
 
 .. code-block:: bash

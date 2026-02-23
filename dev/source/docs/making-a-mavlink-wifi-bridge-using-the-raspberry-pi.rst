@@ -461,7 +461,7 @@ You should now see the following output if everything runs well:
     pi@MavStation ~ $ sudo service isc-dhcp-server start
     [ ok ] Starting ISC DHCP server: dhcpd.
 
-Now in order to set the services up so they run everytime the RPi boots,
+Now in order to set the services up so they run every time the RPi boots,
 type the following:
 
 ::

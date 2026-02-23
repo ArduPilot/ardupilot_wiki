@@ -66,7 +66,7 @@ Typical System
 ==============
 
 In this case, the Kitcan is connected to an :ref:`mRo Pixracer <common-pixracer-overview>` 
-autopilot via CAN and is providing the intefaces for a MS5525 airspeed sensor and a typical GPS/Compass combo, the `mRo SAM GPS + IST8308 Mag <https://store.mrobotics.io/product-p/mro10037.htm>`_
+autopilot via CAN and is providing the interfaces for a MS5525 airspeed sensor and a typical GPS/Compass combo, the `mRo SAM GPS + IST8308 Mag <https://store.mrobotics.io/product-p/mro10037.htm>`_
 
 .. image:: ../../../images/mro-kitcan-system.jpg
     :width: 450px

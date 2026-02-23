@@ -104,7 +104,7 @@ Battery Monitoring
 ==================
 
 The board has a built-in voltage sensor and current sensor. The current
-sensor can read up to 120A continuosly, 160 Amps peak. The voltage sensor can handle up to 6S
+sensor can read up to 120A continuously, 160 Amps peak. The voltage sensor can handle up to 6S
 LiPo batteries.
 
 The correct battery setting parameters are set by default and are:

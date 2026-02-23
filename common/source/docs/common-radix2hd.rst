@@ -116,7 +116,7 @@ RX6 can be configured for RCin coming from DJI air units by setting :ref:`SERIAL
 Motor/Servo Outputs
 ===================
 
-The RADIX 2 HD has a total of 10 PWM outputs. All support PWM and DShot. The first 8 outputs salso upport BDSHOT and
+The RADIX 2 HD has a total of 10 PWM outputs. All support PWM and DShot. The first 8 outputs also support BDSHOT and
 are on the two 4-in-1 ESC connectors. The PWM outputs are in groups of 2 channels each,
 all channels in the same group need to use the same configuration / rate.
 

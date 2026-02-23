@@ -63,7 +63,7 @@ Serial port protocols (Telem, GPS, etc.) can be adjusted to personal preferences
 RC Input
 ========
 
-The RCIN pin, which by default is mapped to timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connetion. However, Fport, when connected in this manner, will only provide RC without telemetry
+The RCIN pin, which by default is mapped to timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, Fport, when connected in this manner, will only provide RC without telemetry
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL4(UART8) would need to be used for receiver connections. Below are setups using UART8. :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` should be set to “23”.
 
@@ -90,7 +90,7 @@ to use DShot.
 Battery Monitoring
 ==================
 
-The board has 1 dedicated power monitor port whit a pin connector. It is intended for use with the Analog power monitor supplied with the autopilot.
+The board has 1 dedicated power monitor port with a pin connector. It is intended for use with the Analog power monitor supplied with the autopilot.
 
 Compass
 =======

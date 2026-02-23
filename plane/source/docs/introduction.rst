@@ -4,7 +4,7 @@
 Introduction to Plane
 =====================
 
-Plane is an advanced open-source autopilot firmwware system for conventional planes, flying wings, and VTOL capable QuadPlanes.  It offers a :ref:`wide variety of flight modes <flight-modes>` from fully manual to fully autonomous.
+Plane is an advanced open-source autopilot firmware system for conventional planes, flying wings, and VTOL capable QuadPlanes.  It offers a :ref:`wide variety of flight modes <flight-modes>` from fully manual to fully autonomous.
 
 .. image:: ../../../images/planes.png
 

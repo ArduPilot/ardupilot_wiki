@@ -4,7 +4,7 @@
 ARCHIVED: Analog Sonar (AC3.1)
 ==============================
 
-.. note:: this document superceded by :ref:`common-rangefinder-maxbotix-analog`
+.. note:: this document superseded by :ref:`common-rangefinder-maxbotix-analog`
 
 Copter supports the MaxSonar line of sonar sensors for "Terrain
 Following" while in Loiter or Alt Hold modes.  In these modes, the

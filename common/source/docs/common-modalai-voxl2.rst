@@ -55,7 +55,7 @@ Installing ArduPilot
 
 `ModalAI's official instructions for installing ArduPilot are here <https://docs.modalai.com/voxl-ardupilot/>`__.
 
-Pre-built installation packages (.deb files) for Ardupilot can be found here on firmare.ardupilot.org:
+Pre-built installation packages (.deb files) for Ardupilot can be found here on firmware.ardupilot.org:
 
 - Copter: `latest <https://firmware.ardupilot.org/Copter/latest/QURT/>`__, `beta <https://firmware.ardupilot.org/Copter/beta/QURT/>`__
 - Plane: `latest <https://firmware.ardupilot.org/Plane/latest/QURT/>`__, `beta <https://firmware.ardupilot.org/Plane/beta/QURT/>`__

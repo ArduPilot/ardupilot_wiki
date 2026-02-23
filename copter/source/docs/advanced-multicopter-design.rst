@@ -645,7 +645,7 @@ it is strong and light and easily manufactured.
    -  Carbon fiber in particular is tricky to cut, drill and machine, it
       can tear, shatter or de-laminate if not done smoothly and slowly.
 
-      -  A drill press is mandatory for carbon fiber, you cant center
+      -  A drill press is mandatory for carbon fiber, you can't center
          punch a pilot drill hole, so it needs to be held precisely in
          place.
       -  Avoid milling of carbon fiber if at all possible, it is very
@@ -789,7 +789,7 @@ Vacuum Formed Frames and Components.
 -  (Or you could just buy an Aquacopter frame!!!)
 
 
-Specific Building Examples and Techinques
+Specific Building Examples and Techniques
 =========================================
 
 -  Some design considerations for a medium large, high efficiency, heavy

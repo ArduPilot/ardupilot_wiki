@@ -61,7 +61,7 @@ This screen provides access to many parameters not normally adjusted by the aver
 OnBoard OSD
 ===========
 
-Some autopilots have integrated On Sceen Display (OSD) capability. This provides a means to easily setup the display elements, layout, and parameters associated with these displays.
+Some autopilots have integrated On Screen Display (OSD) capability. This provides a means to easily setup the display elements, layout, and parameters associated with these displays.
 
 MAVftp
 ======

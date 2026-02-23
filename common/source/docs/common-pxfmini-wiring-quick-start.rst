@@ -68,7 +68,7 @@ PXFmini is compatible with PPM remote control (RC) receivers. For
 traditional single-wire-per-channel (PWM) receivers a PPM encoder can be
 used to convert the receiver outputs to PPM-SUM.
 
-For more information see :ref:`Compatible RC Transmitter and Receiver Systems (Erle-Brain 2) <common-compatible-rc-transmitter-and-receiver-systems-erle-brain-2>`. The PXFmini is compatible with the tecnology used in Erle-Brain 2.
+For more information see :ref:`Compatible RC Transmitter and Receiver Systems (Erle-Brain 2) <common-compatible-rc-transmitter-and-receiver-systems-erle-brain-2>`. The PXFmini is compatible with the technology used in Erle-Brain 2.
 
 .. figure:: ../../../images/FRSkyTaranis.jpg
    :target: ../_images/FRSkyTaranis.jpg
@@ -78,7 +78,7 @@ For more information see :ref:`Compatible RC Transmitter and Receiver Systems (E
 GPS+Compass
 ===========
 
-The `uBlox GPS + Compass Module <hhttps://erlerobotics.com/blog/product/gpscompass-ublox-neo-m8n-gps-with-compass-kit/>`__
+The `uBlox GPS + Compass Module <https://erlerobotics.com/blog/product/gpscompass-ublox-neo-m8n-gps-with-compass-kit/>`__
 is the recommended GPS for PXFmini. The GPS port is connected with
 the six-position DF13 cable, and the Compass port is connected to the
 I2C port with the four-position JST-GH cable, as shown in the next image:

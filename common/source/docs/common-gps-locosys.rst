@@ -26,7 +26,7 @@ Key Features
 - Fast TTFF at low signal level
 - Free hybrid ephemeris prediction to achieve faster cold start
 - Default 5Hz, up to 10 Hz update rate, SBAS support 5Hz only
-- Build-in super capacitor to reserve system data for rapid satellite acquisition
+- Built-in super capacitor to reserve system data for rapid satellite acquisition
 - Three LED indicator for Power, Pulse per Second and Data transmit
 - HAWK R2 integrated with IST8310 compass via I2C bus
 - JST-GH cable (Dronecode standard) for direct connection to i.e. Cube Autopilot

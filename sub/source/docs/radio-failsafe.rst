@@ -93,12 +93,12 @@ LiPo battery but if you do connect a battery you should first be sure if the thr
 **Test #2** : retaking control after the failsafe has cleared
 
 * Continuing on from test #1, turn your transmitter back on
-* While the flight mode is still SURFACE, the pre-arm warnings should disappear(assuming nothing else is preventing arming) and a notice that RC has been reaquired sent to the GCS.
+* While the flight mode is still SURFACE, the pre-arm warnings should disappear(assuming nothing else is preventing arming) and a notice that RC has been reacquired sent to the GCS.
 * You should be able to arm the vechicle now and change modes via the RC flight mode control channel.
 
 **Test #3** (optional) : removing power from the receiver
 
--  Switch to STABLIZE mode, arm your motors and keep your throttle
+-  Switch to STABILIZE mode, arm your motors and keep your throttle
    above zero.
 -  Carefully disconnect the power wires connecting the receiver to the
    autopilot

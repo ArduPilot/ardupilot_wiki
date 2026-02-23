@@ -7,7 +7,7 @@ NTRIP Injection
     module load ntrip
 
 Connects to an NTRIP (GPS RTK correction) server and passes the correction messages
-to ArduPilot. This would allow a (compatible) GPS module to recieve RTCM corrections.
+to ArduPilot. This would allow a (compatible) GPS module to receive RTCM corrections.
 
 Use ``ntrip start`` to start sending correction data and ``ntrip stop`` to
 stop sending correction data.

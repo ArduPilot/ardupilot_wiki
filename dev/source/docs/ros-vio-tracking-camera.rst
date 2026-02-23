@@ -75,7 +75,7 @@ The following steps are intended for Ubuntu Linux. Since no Debian package is av
     sudo apt install git libssl-dev libusb-1.0-0-dev pkg-config -y
     sudo apt install cmake python3-dev raspberrypi-kernel-headers -y
 
-    # Clone the repository under directory of your chosing
+    # Clone the repository under directory of your choosing
     cd ~
     git clone https://github.com/IntelRealSense/librealsense.git
     cd librealsense

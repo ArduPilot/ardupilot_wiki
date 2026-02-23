@@ -385,7 +385,7 @@ copy was taken.
     // GCS is in use then this can mean a loss of communication with the GCS.  Such a failsafe will be 
     // classified as either short (greater than 1.5 seconds but less than 20) or long (greater than 20).
     // Also, if GCS_HEARTBEAT_FAILSAFE is enabled and a heartbeat signal from the GCS has not been received
-    // in the preceeding 20 seconds then this will also trigger a "long" failsafe.
+    // in the preceding 20 seconds then this will also trigger a "long" failsafe.
     //
     // The SHORT_FAILSAFE_ACTION and LONG_FAILSAFE_ACTION settings determines what APM will do when
     // a failsafe mode is entered while flying in AUTO or LOITER mode.  This is important in order to avoid
@@ -575,7 +575,7 @@ copy was taken.
     // THROTTLE_MAX                             OPTIONAL
     //
     // The maximum throttle setting the autopilot will apply.  The default is 75%.
-    // Reduce this value if your aicraft is overpowered, or has complex flight
+    // Reduce this value if your aircraft is overpowered, or has complex flight
     // characteristics at high throttle settings.
     //
     //#define THROTTLE_MIN                  0 // percent

@@ -25,7 +25,7 @@ Multiple GPS and/or Compasses can be used in the system, see :ref:`common-gps-bl
 
 .. note:: Usually GPS is attached to the logical Serial Port 3 by default in ArduPilot. However, which  physical UART is assigned to ArduPilot's Serial Port 3 on the autopilot is documented in the autopilots :ref:`documentation <common-autopilots>`
 
-.. note:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
+.. note:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during boot-up if not found on the first port configured for GPS protocol.
 
 
 As a wiring example, the topic :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>` shows how to connect to a Pixhawk autopilot and includes additional configuration and mounting information.

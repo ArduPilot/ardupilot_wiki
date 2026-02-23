@@ -129,7 +129,7 @@ To enable this, set the following parameters (example using SERIAL port 2 as the
  - :ref:`MSP_OPTIONS<MSP_OPTIONS>` bit 2 = 1 (EnableBTFLFonts) forces ArduPilot to impersonate Betaflight and use a Betaflight compatible font index for the font table integrated in the remote OSD system. This is required since the goggles do not have an ArduPilot compatible fonts table.
  - :ref:`OSD_OPTIONS<OSD_OPTIONS>` bit 5 = 1 (TranslateArrows) use corrected direction arrows when using the Betaflight fonts.
 
-.. note:: Serial port buad rate default is changed to 115.2Kbaud automatically when setting the above protocol type. However, if the user has previously or subsequently changes the baud, this default will not be used. 115.2Kbaud is required by most video goggle systems.
+.. note:: Serial port baud rate default is changed to 115.2Kbaud automatically when setting the above protocol type. However, if the user has previously or subsequently changes the baud, this default will not be used. 115.2Kbaud is required by most video goggle systems.
 
 .. note:: DJI Custom OSD must be enabled: in SETTINGS->DISPLAY->CUSTOM OSD menu of goggles.
 

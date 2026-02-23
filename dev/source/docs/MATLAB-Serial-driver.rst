@@ -27,7 +27,7 @@ This is a example used to send a NMEA string from simulated water speed sensor:
   % Use the same TCP/UDP libbary that is used for MALTAB SITL
   addpath(genpath('../../SITL/examples/JSON/MATLAB/tcp_udp_ip_2.0.6'))
 
-  % if this dosn't work try the MALTAB SITL example first
+  % if this doesn't work try the MALTAB SITL example first
   pnet('closeall')
 
   % Init the TCP port, 5763 is serial 2

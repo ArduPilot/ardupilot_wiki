@@ -126,7 +126,7 @@ To use as part of a mission, you would insert a SCRIPT_TIME mission item as show
 .. image:: ../../../images/nav_script_time.jpg
 
 
-in the above example, once WP3 is reached the airshow (shown here as "204", loaded from a shedules file named trick204.txt, see scheduels section below) will execute, and when finished, proceed to WP5.
+in the above example, once WP3 is reached the airshow (shown here as "204", loaded from a schedules file named trick204.txt, see scheduels section below) will execute, and when finished, proceed to WP5.
 
 Tricks on a Switch
 ------------------

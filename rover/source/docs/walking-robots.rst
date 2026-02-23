@@ -147,7 +147,7 @@ Simulation with SITL and pyBullet
 The following steps will get you running with the quadruped example.
 
 - Ensure the :ref:`ArduPilot source code is installed on your machine <where-to-get-the-code>`
-- Ensure the PC is runing Ubuntu 18.04 (other versions may work but this has not been confirmed yet)
+- Ensure the PC is running Ubuntu 18.04 (other versions may work but this has not been confirmed yet)
 - Install pybullet
 
 :: 
@@ -175,7 +175,7 @@ The following steps will get you running with the quadruped example.
 
    param set RCx_OPTION 202
 
-- Open another termial to launch pyBullet
+- Open another terminal to launch pyBullet
 
 :: 
 

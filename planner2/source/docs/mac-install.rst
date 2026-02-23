@@ -20,7 +20,7 @@ Download the installer .dmg file for your macOS (OSX) machine from GitHub.
 
 Legacy versions from `firmware.ardupilot.org/Tools/APMPlanner <https://firmware.ardupilot.org/Tools/APMPlanner/>`__
 
-And also check the discussion forum for lastest info
+And also check the discussion forum for latest info
 
 `<https://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__
 

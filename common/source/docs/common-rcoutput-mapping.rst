@@ -165,7 +165,7 @@ The upper PWM range from the input trim value to its maximum input is translated
 .. image:: ../../../images/rcscaled-io.jpg
    :target: ../_images/rcscaled-io.jpg
    
-.. note:: the SERVOx_MIN/MAX values can be larger than what Mission Planner allows in some presentations. Use the CONFIG/Full Parameter Tree view to set parametes beyong their normal "safe" ranges.
+.. note:: the SERVOx_MIN/MAX values can be larger than what Mission Planner allows in some presentations. Use the CONFIG/Full Parameter Tree view to set parameters beyond their normal "safe" ranges.
 
 .. note:: normally scaled passthru outputs will hold their last valid value during an RC failsafe. By setting the :ref:`SERVO_RC_FS_MSK<SERVO_RC_FS_MSK>`, selected passthru outputs can be set as if their input channel went to neutral. This is helpful for outputs controlling servo gimbals, or other manually controlled functions.
 [/site]
@@ -254,7 +254,7 @@ Typical servo output for motor power control for vehicles. Multiple outputs can 
 Throttle Left/ Right
 ++++++++++++++++++++
 
-In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`. In Copter, theses outputs are used for the Bicopter motors.
+In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`. In Copter, these outputs are used for the Bicopter motors.
 [/site]
 
 [site wiki="plane"]
@@ -433,7 +433,7 @@ Throttle Left/ Right
 ++++++++++++++++++++
 [/site]
 
-[site wiki="plane"]In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. [/site][site wiki="rover"]In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`.[/site][site wiki="copter"]In Copter, theses outputs are used for the Bicopter motors.[/site]
+[site wiki="plane"]In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. [/site][site wiki="rover"]In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`.[/site][site wiki="copter"]In Copter, these outputs are used for the Bicopter motors.[/site]
 
 [site wiki="plane, copter"]
 Tilt Motor/ Tilt Motor Left/ Tilt Motor Right/ Tilt Motor Rear/ Tilt Motor Rear Left/ Tilt Motor Rear Right
@@ -511,7 +511,7 @@ Typical servo output for motor power control for vehicles. Multiple outputs can 
 Throttle Left/ Right
 ++++++++++++++++++++
 
-In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`. In Copter, theses outputs are used for the Bicopter motors.
+In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`. In Copter, these outputs are used for the Bicopter motors.
 [/site]
 
 [site wiki="rover"]

@@ -62,7 +62,7 @@ Rover & Boat
 
 - S-Curve navigation (`video from 2019 un-conference <https://www.youtube.com/watch?v=LHq5o9zgNWk>`__) (Leonard/Randy)
 - Precision Docking (using marker onshore) (Randy)
-- High speed sailing inprovements (Peter Hall)
+- High speed sailing improvements (Peter Hall)
 - Roll and pitch control for boats (Peter Hall)
 - AIS (i.e., ADSB for boats) (Peter Hall)
 

@@ -23,7 +23,7 @@ If RC is enabled, then the pitch/roll/yaw/throttle/lateral/forward inputs are se
 
 Pilot Control Freedoms by Mode
 ==============================
-The following assumes the axis is controllable. Some frame configurations do not provide all axes. For example the SimpleROV-3 frame has three thrusters providing only yaw, forwad, and depth control. The pitch and roll attitude is uncontrolled and relies on CG/ballast trimming and has no lateral movement capability.
+The following assumes the axis is controllable. Some frame configurations do not provide all axes. For example the SimpleROV-3 frame has three thrusters providing only yaw, forward, and depth control. The pitch and roll attitude is uncontrolled and relies on CG/ballast trimming and has no lateral movement capability.
 
 ANG = Angle target. Stick deflection indicates desired axis angle.
 

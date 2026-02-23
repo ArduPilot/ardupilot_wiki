@@ -85,7 +85,7 @@ The firmware will be created in the **ArduCopter** directory with the
    
 .. note::
 
-   You can ignore any mesages regarding PX4Firmware and PX4Nuttx hashes. Those are useful labels for developers but optional and sometimes the build system can't find them on your system. As long as it says "Firmware is in.." followed by a .px4 file then you have a successful build which you can safely load onto your aircraft.
+   You can ignore any messages regarding PX4Firmware and PX4Nuttx hashes. Those are useful labels for developers but optional and sometimes the build system can't find them on your system. As long as it says "Firmware is in.." followed by a .px4 file then you have a successful build which you can safely load onto your aircraft.
    
 Hints for speeding up compile time
 ==================================

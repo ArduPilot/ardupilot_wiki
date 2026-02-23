@@ -6,7 +6,7 @@
 Pitot Tube Considerations
 =========================
 
-Airspeed sensor accuracy is very dependent on the placement and construction of the pitot tube and static port. For vehicles that do not operate close to their stall speed, airspeed accuracy is not as critical and pitot/static port configuration and placement are not as critical, but some basic guidlines still need to be followed.
+Airspeed sensor accuracy is very dependent on the placement and construction of the pitot tube and static port. For vehicles that do not operate close to their stall speed, airspeed accuracy is not as critical and pitot/static port configuration and placement are not as critical, but some basic guidelines still need to be followed.
 
 Pitot Dynamic Pressure Input/Static Port
 ========================================

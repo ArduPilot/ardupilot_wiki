@@ -11,7 +11,7 @@ The Hexsoon EDU-650 (formerly known as TD-650) is a carbon fiber frame including
 
 The frame is available from many `CubePilot distributors <https://cubepilot.org/#/reseller/list>`__
 
-Hexsoon's `EDU-650 specfications can be found here <https://docs.cubepilot.org/user-guides/cubepilot-ecosystem/cubepilot-partners/hexsoon/multirotor-frame/td-650>`__
+Hexsoon's `EDU-650 specifications can be found here <https://docs.cubepilot.org/user-guides/cubepilot-ecosystem/cubepilot-partners/hexsoon/multirotor-frame/td-650>`__
 
 Box Contents
 ------------
@@ -78,7 +78,7 @@ Below is a list of issues and recommendations
     - Mount the autopilot between the upper and lower plates allowing a single large batter to be mounted on top of the frame.  Note this will make accessing the autopilot difficult
 
 - The 30cm battery straps included in the kit are too short.  Replace with 2cm x 50cm velcro battery straps
-- The PDB has a 12V pin for "Video Transmitter" but note the 2-pin JST connector's GND and 12V pins are reversed compared to thes equivalent Herelink power cable
+- The PDB has a 12V pin for "Video Transmitter" but note the 2-pin JST connector's GND and 12V pins are reversed compared to the equivalent Herelink power cable
 
   .. image:: ../images/reference-frames-hexsoon-edu650-issue1.png
       :target: ../_images/reference-frames-hexsoon-edu650-issue1.png

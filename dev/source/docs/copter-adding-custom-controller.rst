@@ -342,9 +342,9 @@ Simulink model of the controller needs to be configured before the code generati
 
 **Step #4:** In Code Generation->Optimization tab, change Default parameter behavior to Tunable. This will create a variable inside the generated code with the same name as they are defined in Matlab or Simulink workspace. 
 
-**Step #5:** To force generated code to be strictly single precision, change Inport and Outport block data type to single. Since mathematical operation in ArduPilot runs in single precision. 
+**Step #5:** To force generated code to be strictly single precision, change Import and Outport block data type to single. Since mathematical operation in ArduPilot runs in single precision. 
 
-**Step #6:** In Code Mapping->Data, change Inport and Outport data visibility to public, and member access method to none. This will allow passing input and output as an argument. 
+**Step #6:** In Code Mapping->Data, change Import and Outport data visibility to public, and member access method to none. This will allow passing input and output as an argument. 
 
 **Step #7:** In Code Mappings->Data, change Model parameters data visibility to public. This will allow accessing model parameters inside the custom controller backend. 
 
@@ -372,7 +372,7 @@ The generated source code needs to be copied inside the ArduPilot and called ins
 **Step #1:** Copy content of zip file into a new folder inside ardupilot/libraries. Call AC_Simulink as in the example. 
 **Step #2:** Tell waf to build this folder if the custom controller is enabled.
 **Step #3:** Create an object of simulink code generated class. 
-**Step #4:** Call initialize function of this object inside backend constructer.
+**Step #4:** Call initialize function of this object inside backend constructor.
 **Step #5:** Call step function of this object inside backend update function. Arrange input and output arguments by following the similar pattern as in ert_main.cpp. 
 **Step #6:** Once these steps are completed we can compile ArduPilot. 
 

@@ -21,11 +21,11 @@ that it is correctly zeroed.
 
 During initialization, the firmware checks if you have enabled an airspeed sensor and that it is healthy, otherwise a warning will be given, but arming will still be allowed, so checking the ground station messages is important.
 
-The :ref:`ARSPD_OFFSET<ARSPD_OFFSET>` (and ``ARSPD2_OFFSET`` if a second sensor is enabled)  offset is measured and set at bootup or if manually commanded from the ground station.
+The :ref:`ARSPD_OFFSET<ARSPD_OFFSET>` (and ``ARSPD2_OFFSET`` if a second sensor is enabled)  offset is measured and set at boot-up or if manually commanded from the ground station.
 
 .. warning:: It is very important to cover the pitot tube during power up, or when you wait and then re-calibrate. An inaccurate static calibration can result in the airspeed being reported too high, causing auto-throttle controlled modes to use very low throttle and potentially cause a crash.
 
-If the offset has changed a lot since the last bootup, a warning will be issued. This is often an indication that you forget to cover the pitot during boot or manual calibration. The sensitivity of this warning is set by :ref:`ARSPD_OFF_PCNT<ARSPD_OFF_PCNT>` which applies to both sensors.
+If the offset has changed a lot since the last boot-up, a warning will be issued. This is often an indication that you forget to cover the pitot during boot or manual calibration. The sensitivity of this warning is set by :ref:`ARSPD_OFF_PCNT<ARSPD_OFF_PCNT>` which applies to both sensors.
 
 :ref:`ARSPD_SKIP_CAL<ARSPD_SKIP_CAL>` and :ref:`ARSPD2_SKIP_CAL<ARSPD2_SKIP_CAL>` allows you to skip airspeed offset calibration on startup, instead using the offset from the last calibration or requiring a manual calibration. This may be desirable if the offset variance between flights for your sensor is low and you want to avoid having to cover the pitot tube on each boot.
 

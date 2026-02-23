@@ -46,7 +46,7 @@ Most ground stations provide a battery monitor interface but the parameters can 
 - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` converts the analog voltage received from the power module's voltage pin to the battery's voltage
 - :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = **3**. The autopilot pin connected to the power module's current pin
 - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` converts the analog voltage received from the power module's current pin to the battery's current
-- :ref:`BATT_AMP_OFFSET <BATT_AMP_OFFSET__AP_BattMonitor_Analog>` voltage offset received from the power module's current pin when ther is no current being pulled from the battery
+- :ref:`BATT_AMP_OFFSET <BATT_AMP_OFFSET__AP_BattMonitor_Analog>` voltage offset received from the power module's current pin when there is no current being pulled from the battery
 
 Instructions for setup and calibration using the :ref:`Mission Planner can be found here <common-power-module-configuration-in-mission-planner>`
 A Blog post with instructions for `set-up using QGC can be found here <https://discuss.ardupilot.org/t/power-monitor-setup-on-ardupilot-copter-3-6/35441>`__

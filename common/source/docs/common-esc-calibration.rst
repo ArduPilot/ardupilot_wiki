@@ -32,7 +32,7 @@ Typical ESC Calibration
 The most common type of ESC calibration for small electric aircraft is
 the max-throttle/min-throttle method.
 
-To perform this type of calibration you will need to be able to power to your motor/escs separately from power to the autopilot. Noramlly this is easily accomplished
+To perform this type of calibration you will need to be able to power to your motor/escs separately from power to the autopilot. Normally this is easily accomplished
 by not conneectting the avehicle's main battery and just powering the autopilot via its USB connection.
 The steps for calibration are:
 

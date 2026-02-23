@@ -35,7 +35,7 @@ Use the :ref:`DroneCAN GUI Tool <common-uavcan-gui>` or Mission Planner's DroneC
     :target: ../_images/hitec-dronecan-linear-actuator-mp.png
     :width: 450px
 
-If using Misison Planner
+If using Mission Planner
 
    - Open Setup, Optional Hardware, DroneCAN/UAVCAN
    - Select MAVLinkCAN1 from the drop-down an press "Connect"

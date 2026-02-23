@@ -47,8 +47,8 @@ large grid of checkboxes.
 .. image:: ../images/Loiter_DisplayHDOP.jpg
     :target: ../_images/Loiter_DisplayHDOP.jpg
 
--  The maximum brake-angle can be set with the :ref:`PHLD_BRAKE_ANGLE<PHLD_BRAKE_ANGLE>`
+-  The maximum brake-angle can be set with the ``PHLD_BRAKE_ANGLE``
    parameter (i.e. 3000 = the vehicle will lean back up to 30degrees)
 -  The speed the vehicle rotates back to the maximum angle can be set
-   with the :ref:`PHLD_BRAKE_RATE<PHLD_BRAKE_RATE>` parameter (i.e. 8 = rotates back at 8
+   with the ``PHLD_BRAKE_RATE`` parameter (i.e. 8 = rotates back at 8
    degrees per second))

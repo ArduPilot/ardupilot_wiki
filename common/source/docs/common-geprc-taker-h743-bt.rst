@@ -50,7 +50,7 @@ RC input is configured on the RX2 (UART2_RX) pin. It supports all RC protocols e
 - SBUS/DSM/SRXL connects to the RX2 pin.
 - FPort requires connection to TX2 and :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` be set to “7”.
 - CRSF also requires a TX2 connection, in addition to R2, and automatically provides telemetry. Set :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>`
-- SRXL2 requires a connecton to TX2 and automatically provides telemetry. Set :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` to “4”. =3.
+- SRXL2 requires a connection to TX2 and automatically provides telemetry. Set :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` to “4”. =3.
 
 FrSky Telemetry
 ===============

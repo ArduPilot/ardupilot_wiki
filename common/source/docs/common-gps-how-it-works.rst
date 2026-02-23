@@ -116,7 +116,7 @@ precision (paying services)
 RTK corrections
 ===============
 
-RTK corrections are using carrier phase informations and needs costly
+RTK corrections are using carrier phase information and needs costly
 advanced GPS as well as a RTK base station or a Network of RTK base
 stations broadcasting corrections over a modem or Internet through the
 RTCM protocol.

@@ -10,7 +10,7 @@ Purpose
 =======
 
 Learn how to install the ROS onto a companion computer and run a sample ROS 2 application that communicated with ArduPilot over Micro XRCE DDS.
-For this demonstation, a Raspberry Pi Zero 2W will be used, however other Linux computers are also capable.
+For this demonstration, a Raspberry Pi Zero 2W will be used, however other Linux computers are also capable.
 
 Required Hardware
 =================

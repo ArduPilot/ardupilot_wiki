@@ -152,7 +152,7 @@ for maximums.
 Attach propellers
 =================
 
-Unscrew prop nuts and add propellers to motor collets with writing on
+Unscrew prop nuts and add propellers to motor collects with writing on
 props facing up in relation to the sky. If you have a co-axial motor
 configuration, make sure that the writing on the props faces up even if
 the motor faces down. Add metal spacers on top of prop nuts if prop hub

@@ -134,7 +134,7 @@ The possible solutions are:
 
 --------------
 
-My copter motors spin but the copter wont take off (or motors may not spin at all)
+My copter motors spin but the copter won't take off (or motors may not spin at all)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 While there are a few different reasons for copters to be perceived as
@@ -345,7 +345,7 @@ have not followed the warnings and disconnected the four-wire signal
 cable, they may vibrate rapidly when you reset your board. This is a
 rare problem that can crop up with certain ESC types that don't handle
 out-of-range signals well (it's a problem with the Arduino bootloader
-during bootup, so there's not much we can do about it). But it can
+during boot-up, so there's not much we can do about it). But it can
 always be avoided by following the advice of this warning, which is
 liberally sprinkled throughout the manual!
 

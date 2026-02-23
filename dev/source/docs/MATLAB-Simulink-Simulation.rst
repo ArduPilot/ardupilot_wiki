@@ -14,4 +14,4 @@ to test the connection before proceeding to the Simulink examples, the Simulink 
 
 .. note::
   The Simulink connection library and examples were made using 2020a, older versions of the software can't use these files. Someone 
-  with access to 2020a can export for use with a older version, however it may not run as expected. Join the Discord simulation chanel for help.
+  with access to 2020a can export for use with a older version, however it may not run as expected. Join the Discord simulation channel for help.

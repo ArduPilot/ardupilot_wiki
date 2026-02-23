@@ -14,7 +14,7 @@ The Cheerson CX-OF optical flow sensor is a lightweight and low cost optical flo
 Where to Buy
 ------------
 
-The sensor is available from various retailers incluing `Banggood.com <https://www.banggood.com/Cheerson-CX-OF-CXOF-RC-Quadcopter-Spare-Parts-Optical-Flow-Module-p-1215911.html>`__ and `AliExpress <https://www.aliexpress.com/item/Original-Cheerson-CX-OF-CXOF-RC-Quadcopter-Spare-Parts-Optical-Flow-Module-for-RC-Toys-Models/32838098799.html>`__.  More retailers can be found by searching for "CX-OF spare parts".
+The sensor is available from various retailers including `Banggood.com <https://www.banggood.com/Cheerson-CX-OF-CXOF-RC-Quadcopter-Spare-Parts-Optical-Flow-Module-p-1215911.html>`__ and `AliExpress <https://www.aliexpress.com/item/Original-Cheerson-CX-OF-CXOF-RC-Quadcopter-Spare-Parts-Optical-Flow-Module-for-RC-Toys-Models/32838098799.html>`__.  More retailers can be found by searching for "CX-OF spare parts".
 
 These alternatives have also been shown to work:
 

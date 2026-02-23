@@ -30,7 +30,7 @@ In Mavproxy terminal, type : flashbootloader
 Mission Planner
 ...............
 
-Use the SETUP->Install Fimware page's "Bootloader Update" button
+Use the SETUP->Install Firmware page's "Bootloader Update" button
 
 Flash Firmware via UART (Telem Port)
 ====================================

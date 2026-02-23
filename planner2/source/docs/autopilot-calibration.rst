@@ -10,7 +10,7 @@ your autopilot to work with your vehicle.
 1 Prerequisites
 ===============
 
-Before preforming setup, ensure that:
+Before performing setup, ensure that:
 
 -  The vehicle is completely built to flight condition.
 -  Propellers are removed.

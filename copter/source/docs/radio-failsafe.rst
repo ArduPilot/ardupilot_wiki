@@ -78,7 +78,7 @@ The :ref:`FS_THR_ENABLE<FS_THR_ENABLE>` parameter can be set in the Mission Plan
 -  **Enabled SmartRTL or Land** (Value 5) will switch the copter to SmartRTL mode. If SmartRTL is not available, the copter will switch to Land Mode instead.
 -  **Enabled Auto DO_LAND_START or RTL** (value 6) will jump to the nearest "DO_LAND_START" mission item or RTL if no "DO_LAND_START" mission item has been programmed(see :ref:`common-do-land-start`).
 -  **Enabled always Brake or Land** will BRAKE or LAND if GPS position is not available.
--  Any invaild value (Such as accidentally enter 99 as a parameter value) will will behave the same as **Enabled Always LAND**
+-  Any invalid value (Such as accidentally enter 99 as a parameter value) will will behave the same as **Enabled Always LAND**
 
 The :ref:`FS_THR_VALUE<FS_THR_VALUE>`  parameter can be set in the Mission Planner full parameter list or full parameter tree, or can also be set using the Mission Planner *FS PWM* value in the Initial Setup >> Mandatory Hardware >> Failsafe menu.
 -  At least 10 PWM higher than your Channel 3's PWM value when the throttle stick is fully down and the transmitter is **off**

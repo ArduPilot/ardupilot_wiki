@@ -47,7 +47,7 @@ RC Input
 * PPM is not supported.
 * FPort requires connection to T1 and :ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>` be set to “7”.
 * CRSF also requires a T1 connection, in addition to R1, and automatically provides telemetry. Set :ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>` to “0”.
-* SRXL2 requires a connecton to T1 and automatically provides telemetry. Set :ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>` to “4”.
+* SRXL2 requires a connection to T1 and automatically provides telemetry. Set :ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>` to “4”.
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`Radio Control Systems <common-rc-systems>` for details.
 
@@ -76,7 +76,7 @@ The PWM is in 5 groups:
 
 Battery Monitoring
 ==================
-The board has a builtin voltage sensor and pin on ESC connector for external currrent sensor. Voltage sensor supports up to 6S LiPo.
+The board has a builtin voltage sensor and pin on ESC connector for external current sensor. Voltage sensor supports up to 6S LiPo.
 
 The default battery configuration is:
 

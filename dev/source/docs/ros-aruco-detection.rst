@@ -21,7 +21,7 @@ The ROS node raspicam_node publish camera/image and camera/camera_info topics, t
 
 The messages SET_GPS_GLOBAL_ORIGIN and a SET_HOME_POSITION are sent with a `script <https://github.com/anbello/aruco_gridboard/blob/master/script/set_origin.py>`__ before starting to use the system. 
 
-The Flight Controller and the Raspberry Pi 3 on the quadcopter are connected via serial port whereas the Rapsberry Pi 3 and the desktop PC are connected via WiFi. The desktop PC is used only for configuration and visualization purposes. `rviz <http://wiki.ros.org/rviz>`__ from ROS is used for visualization on PC.
+The Flight Controller and the Raspberry Pi 3 on the quadcopter are connected via serial port whereas the Raspberry Pi 3 and the desktop PC are connected via WiFi. The desktop PC is used only for configuration and visualization purposes. `rviz <http://wiki.ros.org/rviz>`__ from ROS is used for visualization on PC.
 
 Components of the system
 ========================
@@ -71,7 +71,7 @@ On the Raspberry Pi 3 on quadcopter
 
 - Connect the serial port with one telemetry port on the Flight Controller
 - Connect to the PC using WiFi following the `instructions <https://learn.ubiquityrobotics.com/connect_network>`__ on Ubiquity Robotics site
-- Edit mavros configuration file apm_config.yaml to syncronize the flight controller and companion computer (Raspberry Pi) clocks using MAVLink’s SYSTEM_TIME and TIMESYNC messages as in this `wiki <https://ardupilot.org/dev/docs/ros-timesync.html>`__
+- Edit mavros configuration file apm_config.yaml to synchronize the flight controller and companion computer (Raspberry Pi) clocks using MAVLink’s SYSTEM_TIME and TIMESYNC messages as in this `wiki <https://ardupilot.org/dev/docs/ros-timesync.html>`__
 - Calibrate the camera following the instructions in this `wiki <http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration>`__
 - Clone this fork of `aruco_gridboard <https://github.com/anbello/aruco_gridboard>`__ in ~/catkin_ws/src
 - Build all
@@ -180,5 +180,5 @@ Some Useful links
 - Blog post `Indoor autonomous flight with ArduCopter, ROS and Aruco Boards Detection <https://discuss.ardupilot.org/t/indoor-autonomous-flight-with-arducopter-ros-and-aruco-boards-detection/34699>`__:
   A similar system to the one described here but on the quadcopter there is a Raspberry Pi 0 (instead of Raspberry Pi 3), due to the limited computing resources the aruco_gridboard node run on desktop PC and the relevant data (mainly images and pose estimation) are exchanged with the quadcopter using ROS messages.
 
-- Blog post `Vision Positionning Experiments using SKYVIPER <https://discuss.ardupilot.org/t/vision-positionning-experiments-using-skyviper/38348>`__:
+- Blog post `Vision Positioning Experiments using SKYVIPER <https://discuss.ardupilot.org/t/vision-positionning-experiments-using-skyviper/38348>`__:
   Here is described a system similar to the previous one, in place of the DIY quadcopter a Skyviper one is used, because of this it should be easier to replicate.

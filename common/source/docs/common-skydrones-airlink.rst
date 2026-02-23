@@ -69,7 +69,7 @@ Specifications
    - Ethernet 10/100/1000 Native Gigabit
    - WiFi 802.11a/b/g/n/ac, Bluetooth
    - USB 3.0 Type C
-   - 2x Video: 4-Lane MIPI CSI (FPV Camera) and 4-Lane MIPI CSI with HMDI Input (Payload Camera)
+   - 2x Video: 4-Lane MIPI CSI (FPV Camera) and 4-Lane MIPI CSI with HDMI Input (Payload Camera)
 
 - **LTE Connectivity Module**
 
@@ -925,7 +925,7 @@ For PPM receivers please use RC Connector PPM pin located on the left side of th
 Outputs
 =======
 
-AIRLink has 16 PWM ouputs. Main outputs 1-8 and connected to IO MCU. AUX outputs 1-8 are connected to FMU. 
+AIRLink has 16 PWM outputs. Main outputs 1-8 and connected to IO MCU. AUX outputs 1-8 are connected to FMU. 
 
 .. raw:: html
 
@@ -979,7 +979,7 @@ AIRLink has 16 PWM ouputs. Main outputs 1-8 and connected to IO MCU. AUX outputs
    </tbody>
    </table>
 
-DShot capabiltiy can be used on the first four AUX pins.
+DShot capability can be used on the first four AUX pins.
 
 More Information
 ================

@@ -4,7 +4,7 @@
 Turtle Mode
 ===========
 
-Turtle Mode is a special mode that can be invoked either as a :ref:`flight mode <flight-modes>` via the flight mode switch or as an :ref:`Auxilary function <common-auxiliary-functions>` assigned to an RC switch (channel). Turtle mode allows a user to attempt to flip the Copter upright, if inverted, by reversing the direction of adjacent pairs of motors and producing thrust to un-invert the vehicle after a crash.
+Turtle Mode is a special mode that can be invoked either as a :ref:`flight mode <flight-modes>` via the flight mode switch or as an :ref:`Auxiliary function <common-auxiliary-functions>` assigned to an RC switch (channel). Turtle mode allows a user to attempt to flip the Copter upright, if inverted, by reversing the direction of adjacent pairs of motors and producing thrust to un-invert the vehicle after a crash.
 
 .. note::
 

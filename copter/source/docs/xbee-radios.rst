@@ -38,8 +38,8 @@ Wiring it up
 APM 2.0
 ~~~~~~~
 
-.. image:: ../images/telemtry.jpg
-    :target: ../_images/telemtry.jpg
+.. image:: ../images/telemetry.jpg
+    :target: ../_images/telemetry.jpg
 
 .. image:: ../images/xbee_amp2_connection.jpg
     :target: ../_images/xbee_amp2_connection.jpg

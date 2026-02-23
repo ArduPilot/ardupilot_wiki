@@ -11,7 +11,7 @@ Introduction
 With ArduPilot (AP) it is possible to use a fully functional, powerful autonomous flight system on inexpensive, highly
 integrated autopilot boards, including onboard battery monitoring and an onboard OSD. Due to ArduPilot's 
 multitude of options and parameters, a first time setup may seem daunting. 
-This guide attempts to provide the necessary instructions to get airborn on a typical ArduPlane setup with autonomous 
+This guide attempts to provide the necessary instructions to get airborne on a typical ArduPlane setup with autonomous 
 flight fleatures and is intentionally focussing only a small part of what ArduPilot has to offer. 
 For a more in-depth explanation of flight features see the `full setup guide <arduplane-setup.html>`__.
 ArduPilot's additional features and options (terrain following, airspeed use, autoland features, logging,

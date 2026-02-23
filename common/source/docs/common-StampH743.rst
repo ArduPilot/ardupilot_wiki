@@ -103,7 +103,7 @@ I2C (Maroon Fade)
 SPI (Cyan Fade)
 ===============
 
-SPI 4 is available for use with external sensors alongside a Chip Select and Data Ready pin using custom built firwmare.
+SPI 4 is available for use with external sensors alongside a Chip Select and Data Ready pin using custom built firmware.
 
 PWM Output (Blue Fade)
 ======================
@@ -165,7 +165,7 @@ Loading Firmware
 
 The board comes pre-installed with an ArduPilot compatible bootloader, allowing the loading of \*.apj firmware files with any ArduPilot compatible ground station. 
 
-Firmware Taget = CBU-H7-Stamp
+Firmware Target = CBU-H7-Stamp
 
 A built in button can be used to activate DFU Mode by being pressed during power up. The DFU Activate pin is broken out to allow remote mounting of this button if required. 
 

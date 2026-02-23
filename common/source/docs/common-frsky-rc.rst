@@ -34,7 +34,7 @@ FrSky Taranis X9D Plus, QX7, and X-Lite RC Transmitters
 
 .. note::
 
-   Theses transmitters are feature packed for their price. You can buy them from different locations e.g. `Craft and Theory <http://www.craftandtheoryllc.com/packageq>`__, `Aloft Hobbies <https://alofthobbies.com/catalogsearch/result/?cat=0&q=X9D>`__ .
+   These transmitters are feature packed for their price. You can buy them from different locations e.g. `Craft and Theory <http://www.craftandtheoryllc.com/packageq>`__, `Aloft Hobbies <https://alofthobbies.com/catalogsearch/result/?cat=0&q=X9D>`__ .
 
 The `FrSky Taranis RC Transmitter <https://www.frsky-rc.com/product/taranis-q-x7-2/>`__ is a
 high quality `OpenTX <http://www.open-tx.org/downloads.html>`__ (open source firmware) enabled RC Transmitter that is compatible with a wide variety of high quality FrSky PPM-Sum and S.Bus compatible receivers. 
@@ -72,7 +72,7 @@ or :ref:`FlightDeck <common-frsky-flightdeck>` telemetry user interface.
 FrSky D/X/R Receivers
 ---------------------
 
-FrSky has many compatible receivers. Some ouput PPM, some SBus. Almost all offer telemetry in some form. Any receiver with S.Port offers bi-directional telemetry. For more information about FrSky receiver telemetry, refer to the :ref:`FrSky telemetry page <common-frsky-telemetry>`.
+FrSky has many compatible receivers. Some output PPM, some SBus. Almost all offer telemetry in some form. Any receiver with S.Port offers bi-directional telemetry. For more information about FrSky receiver telemetry, refer to the :ref:`FrSky telemetry page <common-frsky-telemetry>`.
 
 .. figure:: ../../../images/FrSky_x8r.jpg
     :scale: 20 %

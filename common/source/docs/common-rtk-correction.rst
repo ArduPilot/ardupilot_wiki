@@ -4,7 +4,7 @@
 RTK GPS Correction (Fixed Baseline)
 ===================================
 
-It is possible to increase the normal position reporting accuracy of the GPS using RTK (Real Time Kinematics). Normal GPS accuracy is 3-5 meters using the Ublox M8N generation of GPS. If your global region has SBAS (Satelite Based Augmentation Service) with geo-synchronous satellites reporting the general propagation conditions and corrections to the GPS, then accuracy can improve to the 1 meter range. But centimeter accuracy ranges can be obtained by using Real Time Kinematics correctional data with the newer F9P generation of GPSes.
+It is possible to increase the normal position reporting accuracy of the GPS using RTK (Real Time Kinematics). Normal GPS accuracy is 3-5 meters using the Ublox M8N generation of GPS. If your global region has SBAS (Satellite Based Augmentation Service) with geo-synchronous satellites reporting the general propagation conditions and corrections to the GPS, then accuracy can improve to the 1 meter range. But centimeter accuracy ranges can be obtained by using Real Time Kinematics correctional data with the newer F9P generation of GPSes.
 
 .. youtube:: wmzCf1th1yE
 
