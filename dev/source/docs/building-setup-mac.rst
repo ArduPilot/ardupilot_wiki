@@ -39,8 +39,7 @@ Setup steps
    ::
 
        brew update
-       brew install genromfs
-       brew install gcc-arm-none-eabi
+       brew install gcc-arm-none-eabi genromfs python3
 
 #. Install the latest version of awk using brew (make sure
    **/usr/local/bin** takes precedence in your path):
@@ -49,12 +48,11 @@ Setup steps
 
        brew install gawk
 
-#. Install *pip* and *pyserial* using the following commands:
+#. Install *empy* and *pyserial* using the following commands:
 
    ::
 
-       sudo easy_install pip
-       sudo pip install pyserial future empy
+       python3 -m pip install empy pyserial
        
    ::
    
