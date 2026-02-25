@@ -31,7 +31,6 @@ Build notes:
 Parameters files are fetched from autotest using requests
 
 """
-from __future__ import print_function, unicode_literals
 
 import argparse
 import distutils
