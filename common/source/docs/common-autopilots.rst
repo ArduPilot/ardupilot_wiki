@@ -47,6 +47,7 @@ Open Hardware
 
     AcctonGodwit GA1 <common-acctongodwit-ga1>
     ARKV6X DS-10 Pixhawk6 <common-ark-v6x-overview>
+    ARK FPV <common-ark-fpv-overview>
     CUAV V5 Plus <common-cuav-v5plus-overview>
     CUAV V5 Nano <common-cuav-v5nano-overview>
     CUAV Nora <common-cuav-nora-overview>
@@ -84,7 +85,6 @@ Closed Hardware
 
     3DR Control Zero H7 OEM <common-3DR_Control_Zero_OEM_G>
     AEDROX H7 <common-aedroxh7>
-    ARK FPV <common-ark-fpv>
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
     AET-H743-Basic <common-AET-H743-Basic>
