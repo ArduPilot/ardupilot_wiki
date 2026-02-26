@@ -1,0 +1,11 @@
+# See https://pre-commit.com for more information, specially https://pre-commit.com/#pre-commit-run for manual trigger
+# Some example useful invocations:
+#  pre-commit install: this will install the pre-commit hooks in this file.
+#  pre-commit run: this is what pre-commit runs by default when committing. This will run all hooks against currently staged files.
+#  pre-commit run --all-files: run all the hooks against all the files. This is a useful invocation if you are using pre-commit in CI.
+
+repos:
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.3.0
+    hooks:
+    - id: flake8
