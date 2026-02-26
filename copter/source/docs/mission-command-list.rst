@@ -45,9 +45,9 @@ before proceeding to the next command
 
 **Hit Rad** - not supported - meant to hold the distance (in meters)
 from the target point that will qualify the waypoint as complete. This
-command is not supported. Instead, the :ref:`WPNAV_RADIUS<WPNAV_RADIUS>` parameter should be
+command is not supported. Instead, the ``WPNAV_RADIUS`` parameter should be
 used (see "WP Radius" field in the above screenshot or adjust through the
-Standard Parameters List).  Even the :ref:`WPNAV_RADIUS<WPNAV_RADIUS>` is only used when the
+Standard Parameters List).  Even the ``WPNAV_RADIUS`` is only used when the
 waypoint has a Delay. With no delay specified the waypoint will be
 considered complete when the virtual point that the vehicle is chasing
 reaches the waypoint. This can be 10m (or more) ahead of the vehicle

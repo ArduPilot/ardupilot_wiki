@@ -18,7 +18,7 @@ The speed of the vehicle (in deg/second) can be modified by changing the
 :ref:`CIRCLE_RATE<CIRCLE_RATE>` parameter.  A positive value means rotate clockwise, a
 negative means counter clockwise.  The vehicle may not achieve the
 desired rate if this requires the acceleration towards the center of the
-circle to surpass the maximum acceleration held in the :ref:`WPNAV_ACCEL<WPNAV_ACCEL>`
+circle to surpass the maximum acceleration held in the ``WPNAV_ACCEL``
 parameter (units are cm/s/s).
 
 The circle rate set above can be dynamically adjusted in flight by two methods. The first is the use of RC Channel 6 if the :ref:`TUNE<TUNE>` option is set to 39, allowing decreasing the rate 50% or increasing it by 100%, at the channel min and max. The other is by enabling the ``CIRCLE_CONTROL`` parameter to allow stick adjustment of radius and speed.
