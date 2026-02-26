@@ -296,10 +296,10 @@ Flight Controller Debug - 6 Pin JST-SH
      - 3V3_FMU
      - 3.3V
    * - 2
-     - USART3_TX_DEBUG
+     - USART4_TX_DEBUG
      - 3.3V
    * - 3
-     - USART3_RX_DEBUG
+     - USART4_RX_DEBUG
      - 3.3V
    * - 4
      - FMU_SWDIO
@@ -394,19 +394,3 @@ Once the initial firmware is loaded you can update the firmware using
 any ArduPilot ground station software. Updates should be done with the
 \*.apj firmware files.
 
-Using the Debug Port as a Serial Port
-=====================================
-The debug connector includes USART3, which is configured as a debug console by default. To use it as a regular serial port (SERIAL8), modify `hwdef.dat <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/ARK_FPV/hwdef.dat>`__ to add USART3 to the end of the SERIAL_ORDER list:
-
-```text
-SERIAL_ORDER OTG1 UART7 UART5 USART1 USART2 UART4 USART6 OTG2 USART3
-```
-
-And remove the debug console lines:
-
-```text
-STDOUT_SERIAL SD3
-STDOUT_BAUDRATE 57600
-```
-
-This requires building custom firmware. See the :ref:`building-the-code` Wiki section for build instructions.
