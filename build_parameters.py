@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 """
     This script aims to provide multiple parameters source files for each vehicle based on the versions available at
     https://firmware.ardupilot.org
