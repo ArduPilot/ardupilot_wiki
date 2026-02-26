@@ -53,9 +53,9 @@ Speeds
 ======
 Several parameters impact speed or speed limits:
 
-- ``WPNAV_SPEED``
-- ``WPNAV_SPEED_UP``
-- ``WPNAV_SPEED_DN``
+- :ref:`WPNAV_SPEED<WPNAV_SPEED>`
+- :ref:`WPNAV_SPEED_UP<WPNAV_SPEED_UP>`
+- :ref:`WPNAV_SPEED_DN<WPNAV_SPEED_DN>`
 
 - :ref:`PILOT_SPEED<PILOT_SPEED>`
 - :ref:`PILOT_SPEED_UP<PILOT_SPEED_UP>`

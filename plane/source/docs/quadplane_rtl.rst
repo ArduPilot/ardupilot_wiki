@@ -112,12 +112,12 @@ QRTL Mode
 =========
 
 By default, switching to :ref:`QRTL<qrtl-mode>` mode will act exactly as :ref:`Q_RTL_MODE<Q_RTL_MODE>` = 3, above. However, if you prefer to do return to launch as a pure VTOL aircraft (like a multirotor would do) then you can use the :ref:`QRTL<qrtl-mode>` flight mode, but with :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 set in order to disable QRTL's default behavior (which is like the hybrid RTL described above with :ref:`Q_RTL_MODE<Q_RTL_MODE>` = 3). The vehicle will transition to VTOL flight, if not already in VTOL, and then fly at the
-``Q_WP_SPEED`` speed towards the return point, at an altitude of
+:ref:`Q_WP_SPEED <Q_WP_SPEED>` speed towards the return point, at an altitude of
 :ref:`Q_RTL_ALT <Q_RTL_ALT>`.
 
 Once the return point is reached the aircraft will start a vertical
 descent towards the ground for landing. The initial descent rate is
-set by ``Q_WP_SPEED_DN``. Once the aircraft reaches an altitude of
+set by :ref:`Q_WP_SPEED_DN <Q_WP_SPEED_DN>`. Once the aircraft reaches an altitude of
 :ref:`Q_LAND_FINAL_ALT <Q_LAND_FINAL_ALT>` the descent rate will
 change to :ref:`Q_LAND_FINAL_SPD <Q_LAND_FINAL_SPD>` for
 the final landing phase.

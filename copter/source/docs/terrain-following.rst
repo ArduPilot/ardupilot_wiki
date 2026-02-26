@@ -69,7 +69,7 @@ Using Terrain Altitude during RTL and Land
 Be sure :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` is set to "1" to enable use of terrain data and allow the GCS to update the data (if internet connected) for current location and planned missions. Set the :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` parameter to 1 to enable using terrain data in the :ref:`RTL <rtl-mode>` flight mode.  If set the vehicle will interpret the ``RTL_ALT`` as an altitude-above-terrain instead of above home altitude, meaning it will generally climb over hills on its return path to home.  Similarly Land will slow to the ``LAND_SPEED`` (normally 50cm/s) when it is 10m above the terrain (instead of 10m above home).
 Currently setting this parameter is not recommended because of the edge case mentioned below involving the somewhat unlikely situation in which the vehicle is unable to retrieve terrain data during the :ref:`RTL <rtl-mode>`.  In these cases the ``RTL_ALT`` will be interpreted as an alt-above home. 
 
-In addition, if ``WPNAV_RFND_USE`` is also set to 1, the rangefinder will be used instead of the terrain database during RTL. Of course the ``RTL_ALT`` must be within the rangefinder's operating range and it must be healthy.
+In addition, if :ref:`WPNAV_RFND_USE<WPNAV_RFND_USE>` is also set to 1, the rangefinder will be used instead of the terrain database during RTL. Of course the ``RTL_ALT`` must be within the rangefinder's operating range and it must be healthy.
 
 Failsafe in case of no Terrain data
 ===================================
