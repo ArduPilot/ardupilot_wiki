@@ -16,7 +16,7 @@ When RTL mode is selected, the copter will return to the home location, or if ra
 
 The copter will first rise a minimum of :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>` or to  ``RTL_ALT``, whichever is higher, before returning home.  The default value for ``RTL_ALT`` is 15m. Under no circumstances will this altitude be below 30cm.
 
-The altitude reference frame is set by either the rally point, if proceeding to one of those, or by :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` to select relative to HOME, or Terrain. If :ref:`WPNAV_RFND_USE<WPNAV_RFND_USE>` = 1 and Terrain is selected, then rangefinder will be used.
+The altitude reference frame is set by either the rally point, if proceeding to one of those, or by :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` to select relative to HOME, or Terrain. If ``WPNAV_RFND_USE`` = 1 and Terrain is selected, then rangefinder will be used.
 
 .. image:: ../images/RTL.jpg
     :target: ../_images/RTL.jpg
@@ -89,7 +89,7 @@ Options (User Adjustable Parameters)
 -  :ref:`RTL_SPEED <RTL_SPEED>`:
    The horizontal speed (in cm/s) at which the vehicle will return to
    home.  By default this value is zero meaning it will use
-   :ref:`WPNAV_SPEED <WPNAV_SPEED>`.
+   ``WPNAV_SPEED``.
 
 -  :ref:`RTL_CONE_SLOPE <RTL_CONE_SLOPE>`:
    Defines the slope of an inverted cone above home which is used
@@ -102,9 +102,9 @@ Notes
 
 -  Other navigation settings also have an influence over RTL mode:
 
-   -  :ref:`WPNAV_ACCEL <WPNAV_ACCEL>`
-   -  :ref:`WPNAV_SPEED_DN <WPNAV_SPEED_DN>`
-   -  :ref:`WPNAV_SPEED_UP <WPNAV_SPEED_UP>`
+   -  ``WPNAV_ACCEL``
+   -  ``WPNAV_SPEED_DN``
+   -  ``WPNAV_SPEED_UP``
 
 -  To use RTL, GPS lock needs to be achieved (Blue GPS LED and Blue APM
    LED on solid not blinking) before arming and takeoff to establish the
@@ -115,6 +115,6 @@ Notes
    set at the location of lock.
 -  If you set the ``RTL_ALT`` to a number at other than 0 it will go to
    and maintain that altitude while returning.
--  RTL uses :ref:`WPNAV_SPEED <WPNAV_SPEED>` to determine how fast it travels.
+-  RTL uses ``WPNAV_SPEED`` to determine how fast it travels.
 -  Once the copter arrives at the home location the copter will pause
    for ``RTL_LOIT_TIME`` milliseconds, timeout (AUTO_LAND), then land.

@@ -27,11 +27,11 @@ Overview
 .. image:: ../images/auto.jpg
     :target: ../_images/auto.jpg
 
-AUTO mode navigates between each waypoint in a straight line and as it approaches each waypoint follows a smooth curving path towards the next waypoint (S-Curve). It controls the path as it approaches a waypoint to be within the :ref:`WPNAV_RADIUS <WPNAV_RADIUS>` of each waypoint. The speed is lowered below :ref:`WPNAV_SPEED<WPNAV_SPEED>`, as necessary, to keep the vehicle within the configured acceleration limits (:ref:`WPNAV_ACCEL <WPNAV_ACCEL>` and :ref:`WPNAV_ACCEL_C <WPNAV_ACCEL_C>`).
+AUTO mode navigates between each waypoint in a straight line and as it approaches each waypoint follows a smooth curving path towards the next waypoint (S-Curve). It controls the path as it approaches a waypoint to be within the ``WPNAV_RADIUS`` of each waypoint. The speed is lowered below ``WPNAV_SPEED``, as necessary, to keep the vehicle within the configured acceleration limits (``WPNAV_ACCEL`` and ``WPNAV_ACCEL_C``).
 
 This smooth curving path as it changes direction to the next waypoint will not occur if the next mission command after the waypoint is anything other than a normal waypoint (e.g LAND, LOITER_TURNS, RTL, etc). In these cases the copter will approach the waypoint, stop, and then proceed to the next navigation waypoint instead of smoothly curving in front of it and proceeding to that next navigation waypoint.
 
-Also, small :ref:`WPNAV_RADIUS<WPNAV_RADIUS>` values will require that the curve be very small, effectively appearing like the non-S-Curve behavior explained above.
+Also, small ``WPNAV_RADIUS`` values will require that the curve be very small, effectively appearing like the non-S-Curve behavior explained above.
 
 Starting a Mission
 ==================
@@ -92,17 +92,17 @@ AUTO mode incorporates the altitude control from :ref:`AltHold mode <altholdmode
 
 Commonly adjusted settings are listed below.  Most of these can be adjusted from the Mission Planner's Config, Extended Tuning screen (see above).
 
-- :ref:`WPNAV_SPEED <WPNAV_SPEED>` is the maximum horizontal speed (in cm/s) during missions.  The default is 1000 which is 10m/s.  A typical copter can reach top speeds of 10m/s ~ 20m/s (e.g. 1000 ~ 2000) before it becomes unable to maintain both altitude and horizontal speed
-- :ref:`WPNAV_ACCEL <WPNAV_ACCEL>` determines how quickly the horizontal speed can change (in cm/s/s).  Lower values result in smoother acceleration and deceleration and may also cause the vehicle to cut the corners more.  Higher values will lead to more aggressive movements and tighter cornering
-- :ref:`WPNAV_SPEED_UP <WPNAV_SPEED_UP>` determines the max speed up in cm/s.  Low values may lead to the vehicle's horizontal speed slowing during diagonal climbing waypoint segments
-- :ref:`WPNAV_SPEED_DN <WPNAV_SPEED_DN>` determines the max speed down in cm/s.  Low values may lead to the vehicle's horizontal speed slowing during diagonal descending waypoint segments.  High values (above 150) may lead to unstable vertical descents as the vehicle passes through its own prop wash
-- :ref:`WPNAV_RADIUS <WPNAV_RADIUS>` allows you to control how close the copter must come to the waypoint before it is considered "complete" and the copter moves onto the next waypoint.  Setting this to a larger value may cause the vehicle to cut the corners more leading to a smoother path
+- ``WPNAV_SPEED`` is the maximum horizontal speed (in cm/s) during missions.  The default is 1000 which is 10m/s.  A typical copter can reach top speeds of 10m/s ~ 20m/s (e.g. 1000 ~ 2000) before it becomes unable to maintain both altitude and horizontal speed
+- ``WPNAV_ACCEL`` determines how quickly the horizontal speed can change (in cm/s/s).  Lower values result in smoother acceleration and deceleration and may also cause the vehicle to cut the corners more.  Higher values will lead to more aggressive movements and tighter cornering
+- ``WPNAV_SPEED_UP`` determines the max speed up in cm/s.  Low values may lead to the vehicle's horizontal speed slowing during diagonal climbing waypoint segments
+- ``WPNAV_SPEED_DN`` determines the max speed down in cm/s.  Low values may lead to the vehicle's horizontal speed slowing during diagonal descending waypoint segments.  High values (above 150) may lead to unstable vertical descents as the vehicle passes through its own prop wash
+- ``WPNAV_RADIUS`` allows you to control how close the copter must come to the waypoint before it is considered "complete" and the copter moves onto the next waypoint.  Setting this to a larger value may cause the vehicle to cut the corners more leading to a smoother path
 
 Less commonly adjusted parameters include:
 
-- :ref:`WPNAV_ACCEL_C <WPNAV_ACCEL_C>` determines the maximum cornering acceleration in cm/s/s.  Higher values will cause the vehicle to make sharper corners meaning it will cut the corners less
-- :ref:`WPNAV_ACCEL_Z <WPNAV_ACCEL_Z>` determines how quickly the vertical speed can change
-- :ref:`WPNAV_JERK <WPNAV_JERK>` determines how quickly the horizontal acceleration can change (in m/s/s/s).  Lower values will lead to a smoother acceleration and deceleration but will also lead to the mission taking slightly longer to complete
+- ``WPNAV_ACCEL_C`` determines the maximum cornering acceleration in cm/s/s.  Higher values will cause the vehicle to make sharper corners meaning it will cut the corners less
+- ``WPNAV_ACCEL_Z`` determines how quickly the vertical speed can change
+- ``WPNAV_JERK`` determines how quickly the horizontal acceleration can change (in m/s/s/s).  Lower values will lead to a smoother acceleration and deceleration but will also lead to the mission taking slightly longer to complete
 
 Common Problems
 ===============
@@ -111,18 +111,18 @@ Below are a list of commonly reported problems and recommendations
 
 1. The vehicle does not cut the corners as much as I would like and/or stops at each waypoint
 
-   - Increase :ref:`WPNAV_RADIUS <WPNAV_RADIUS>` to allow the vehicle to pass further from each waypoint
-   - Increase :ref:`WPNAV_SPEED <WPNAV_SPEED>` to cause the vehicle to start turning earlier in order that it not surpass the max acceleration
-   - Decrease :ref:`WPNAV_ACCEL <WPNAV_ACCEL>` to cause the vehicle to start turning earlier and more gradually
-   - Decrease :ref:`WPNAV_ACCEL_C <WPNAV_ACCEL_C>` or reset to the default of zero
+   - Increase ``WPNAV_RADIUS`` to allow the vehicle to pass further from each waypoint
+   - Increase ``WPNAV_SPEED`` to cause the vehicle to start turning earlier in order that it not surpass the max acceleration
+   - Decrease ``WPNAV_ACCEL`` to cause the vehicle to start turning earlier and more gradually
+   - Decrease ``WPNAV_ACCEL_C`` or reset to the default of zero
    - Ensure the waypoint command's Delay field is 0.  A delay of even 1 second will cause the vehicle to stop at the waypoint
    - If :ref:`Dijkstras object avoidance <common-oa-dijkstras>` is enabled, by default the vehicle will stop at each waypoint.  This can be avoided by setting the :ref:`OA_OPTIONS <OA_OPTIONS>` parameter
 
-2. The vehicle does not reach the configured maximum horizontal speed (e.g. :ref:`WPNAV_SPEED <WPNAV_SPEED>`)
+2. The vehicle does not reach the configured maximum horizontal speed (e.g. ``WPNAV_SPEED``)
 
-   - Increase :ref:`WPNAV_ACCEL <WPNAV_ACCEL>` to allow the vehicle to accelerate to its maximum speed more quickly
-   - Increase :ref:`WPNAV_JERK <WPNAV_JERK>` to allow the vehicle to get to its maximum acceleration more quickly
-   - If the waypoint includes a climb or descent the vehicle's horizontal speed may be limited by :ref:`WPNAV_SPEED_UP <WPNAV_SPEED_UP>` or :ref:`WPNAV_SPEED_DN <WPNAV_SPEED_DN>`
+   - Increase ``WPNAV_ACCEL`` to allow the vehicle to accelerate to its maximum speed more quickly
+   - Increase ``WPNAV_JERK`` to allow the vehicle to get to its maximum acceleration more quickly
+   - If the waypoint includes a climb or descent the vehicle's horizontal speed may be limited by ``WPNAV_SPEED_UP`` or ``WPNAV_SPEED_DN``
    - Ensure the vehicle's maximum lean angle (e.g. ``ANGLE_MAX``) is sufficient to reach the desired speed
    - Ensure the vehicle has enough power to maintain both altitude and the desired speed
    - If the mission command uses :ref:`terrain following <terrain-following>` the vehicle may need to slow horizontally to maintain the desired altitude above terrain
