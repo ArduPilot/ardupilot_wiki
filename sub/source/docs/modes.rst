@@ -55,13 +55,13 @@ Depth Control Related
 
 Auto/Guided Waypoint Navigation Related
 ---------------------------------------
-* ``WPNAV_SPEED``
-* ``WPNAV_RADIUS``
-* ``WPNAV_SPEED_UP``
-* ``WPNAV_SPEED_DN``
-* ``WPNAV_ACCEL``
-* ``WPNAV_ACCEL_Z``
-* ``WPNAV_RFND_USE``
+* :ref:`WP_SPD<WP_SPD>`
+* :ref:`WP_RADIUS_M<WP_RADIUS_M>`
+* :ref:`WP_SPD_UP<WP_SPD_UP>`
+* :ref:`WP_SPD_DN<WP_SPD_DN>`
+* :ref:`WP_ACC<WP_ACC>`
+* :ref:`WP_ACC_Z<WP_ACC_Z>`
+* :ref:`WP_RFND_USE<WP_RFND_USE>`
 * :ref:`WP_YAW_BEHAVIOR<WP_YAW_BEHAVIOR>`
 
 CIRCLE Mode
