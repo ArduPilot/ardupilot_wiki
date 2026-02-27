@@ -272,23 +272,17 @@ def error(msg):
 
 
 def check_temp_folders():
-    """Creates temporaty subfolders IFF not exists  """
+    """Creates temporaty subfolders IFF not exists."""
 
-    os.chdir("../")
-    if not os.path.exists("new_params_mversion"):
-        os.makedirs("new_params_mversion")
-    os.chdir("new_params_mversion")
-    for vehicle in ALLVEHICLES:
-        if not os.path.exists(vehicle_new_to_old_name[vehicle]):
-            os.makedirs(vehicle_new_to_old_name[vehicle])
-
-    os.chdir("../")
-    if not os.path.exists("old_params_mversion"):
-        os.makedirs("old_params_mversion")
-    os.chdir("old_params_mversion")
-    for vehicle in ALLVEHICLES:
-        if not os.path.exists(vehicle_new_to_old_name[vehicle]):
-            os.makedirs(vehicle_new_to_old_name[vehicle])
+    # parent directory of the ArduPilot repo is where the versioned
+    # parameter folders live
+    parent = os.path.abspath(os.path.join(BASEPATH, os.pardir))
+    for sub in ("new_params_mversion", "old_params_mversion"):
+        dir_path = os.path.join(parent, sub)
+        os.makedirs(dir_path, exist_ok=True)
+        for vehicle in ALLVEHICLES:
+            target = os.path.join(dir_path, vehicle_new_to_old_name[vehicle])
+            os.makedirs(target, exist_ok=True)
 
 
 def replace_anchors(source_file, dest_file, version_tag):
@@ -427,23 +421,27 @@ def setup():
 
     global BASEPATH
     try:
-        # Goes to ardupilot folder and clean it and update to make sure that is the most recent one.
-        debug("Recovering from a previous run...")
-        os.chdir(args.gitFolder)
+        # Set BASEPATH to the requested repo folder (absolute path).  We no
+        # longer change the process cwd; all git commands supply ``cwd``.
+        repo_path = os.path.abspath(args.gitFolder)
+        debug("Recovering from a previous run in %s" % repo_path)
 
         # Clean up any git locks first
-        cleanup_git_locks(os.getcwd())
+        cleanup_git_locks(repo_path)
 
         # Use subprocess for better git operations with retry logic
-        # Set BASEPATH first so optimize_git_repo can use it
-        BASEPATH = os.getcwd()
+        # Set BASEPATH before calling helpers that depend on it
+        BASEPATH = repo_path
 
         # Fast git reset to latest master
-        run_git_command_with_retry("git fetch origin master")
-        run_git_command_with_retry("git checkout -f master")
-        run_git_command_with_retry("git reset --hard origin/master")
-        run_git_command_with_retry("git submodule update --init --recursive --depth 1")
-        optimize_git_repo()
+        run_git_command_with_retry("git fetch origin master", cwd=repo_path)
+        run_git_command_with_retry("git checkout -f master", cwd=repo_path)
+        run_git_command_with_retry("git reset --hard origin/master", cwd=repo_path)
+        run_git_command_with_retry(
+            "git submodule update --init --recursive --depth 1",
+            cwd=repo_path,
+        )
+        optimize_git_repo_for_path(repo_path)
         check_temp_folders()
     except Exception as e:
         error("ArduPilot Repo folder not found (cd %s failed)" % args.gitFolder)
@@ -719,13 +717,11 @@ def collect_generated_files(vehicle_repos):
     """
     Collect all generated parameter files from temporary repositories to the main repository
     """
-    main_param_dir = BASEPATH + "/Tools/autotest/param_metadata"
-
-    # Ensure we're in the main param directory
-    os.chdir(main_param_dir)
+    main_param_dir = os.path.join(BASEPATH, "Tools", "autotest", "param_metadata")
 
     # Clean any existing parameter files first
-    existing_files = glob.glob("parameters-*.rst") + glob.glob("parameters-*.json")
+    existing_files = glob.glob(os.path.join(main_param_dir, "parameters-*.rst"))
+    existing_files += glob.glob(os.path.join(main_param_dir, "parameters-*.json"))
     for old_file in existing_files:
         try:
             os.remove(old_file)
@@ -737,7 +733,7 @@ def collect_generated_files(vehicle_repos):
         if repo_path == BASEPATH:
             continue  # Skip if using main repo
 
-        temp_param_dir = repo_path + "/Tools/autotest/param_metadata"
+        temp_param_dir = os.path.join(repo_path, "Tools", "autotest", "param_metadata")
         if not os.path.exists(temp_param_dir):
             continue
 
