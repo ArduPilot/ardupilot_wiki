@@ -434,7 +434,7 @@ def build_one(wiki, fast):
 
     # This will fail if there's no folder to clean, so we check first
     if not fast and os.path.exists(output_dir):
-        shutil.rmtree(output_dir)
+        shutil.rmtree(html_dir)
 
     app = Sphinx(
         buildername='html',
@@ -445,6 +445,115 @@ def build_one(wiki, fast):
         srcdir=source_dir,
     )
     app.build()
+
+
+def _get_sphinx_version() -> str:
+    """Return the currently installed Sphinx version."""
+    try:
+        import sphinx
+        return getattr(sphinx, "__version__", "")
+    except Exception:
+        return ""
+
+
+def _file_sha256(path: str) -> str:
+    """Return SHA256 hex digest of a file; empty string if file missing."""
+    try:
+        import hashlib
+        h = hashlib.sha256()
+        with open(path, "rb") as f:
+            for chunk in iter(lambda: f.read(8192), b""):
+                h.update(chunk)
+        return h.hexdigest()
+    except Exception:
+        return ""
+
+
+def _doctree_meta_path(wiki: str) -> str:
+    return os.path.join(wiki, "build", "doctrees", ".doctree-meta.json")
+
+
+def _read_doctree_meta(wiki: str) -> Optional[Dict[str, str]]:
+    path = _doctree_meta_path(wiki)
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        debug(f"Failed to read doctree meta for {wiki}: {e}")
+        return None
+
+
+def _write_doctree_meta(wiki: str, meta: Dict[str, str]) -> None:
+    path = _doctree_meta_path(wiki)
+    d = os.path.dirname(path)
+    os.makedirs(d, exist_ok=True)
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(meta, f, sort_keys=True, indent=2)
+    except Exception as e:
+        debug(f"Failed to write doctree meta for {wiki}: {e}")
+
+
+def invalidate_stale_doctrees(site: Optional[str] = None) -> None:
+    """
+    Remove per-wiki doctrees when their stored metadata indicates a
+    mismatch with the current Sphinx version or the wiki's conf.py checksum.
+    Keeps doctrees otherwise to preserve incremental build speed.
+    """
+    current_sphinx = _get_sphinx_version()
+    for wiki in ALL_WIKIS:
+        if site is not None and site != wiki:
+            continue
+        if wiki in ['common', 'frontend']:
+            continue
+        conf_path = os.path.join(wiki, "source", "conf.py")
+        if not os.path.exists(conf_path):
+            # nothing to compare against
+            continue
+        current_conf_sha = _file_sha256(conf_path)
+        saved = _read_doctree_meta(wiki)
+        if not saved:
+            # no metadata — assume safe to keep existing doctrees
+            continue
+        # compare
+        saved_sphinx = saved.get("sphinx_version", "")
+        saved_conf = saved.get("conf_sha256", "")
+        if saved_sphinx != current_sphinx or saved_conf != current_conf_sha:
+            doctree_dir = os.path.join(wiki, "build", "doctrees")
+            if os.path.exists(doctree_dir):
+                info(f"Invalidating doctrees for '{wiki}' (sphinx/conf changed)")
+                try:
+                    shutil.rmtree(doctree_dir)
+                except Exception as e:
+                    debug(f"Failed to remove doctree dir {doctree_dir}: {e}")
+
+
+def update_doctree_meta_for_built_sites(site: Optional[str] = None) -> None:
+    """
+    After a build, record current Sphinx version + conf.py checksum into
+    each wiki's doctree metadata file so future runs can detect incompatibility.
+    """
+    current_sphinx = _get_sphinx_version()
+    for wiki in ALL_WIKIS:
+        if site is not None and site != wiki:
+            continue
+        if wiki in ['common', 'frontend']:
+            continue
+        conf_path = os.path.join(wiki, "source", "conf.py")
+        if not os.path.exists(conf_path):
+            continue
+        doctree_dir = os.path.join(wiki, "build", "doctrees")
+        if not os.path.exists(doctree_dir):
+            # nothing to record (build may have failed)
+            continue
+        meta = {
+            "sphinx_version": current_sphinx,
+            "conf_sha256": _file_sha256(conf_path),
+            "updated": datetime.utcnow().isoformat() + "Z",
+        }
+        _write_doctree_meta(wiki, meta)
 
 
 def sphinx_make(site, parallel, fast):
@@ -1529,9 +1638,15 @@ class WikiUpdater:
         info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
         copy_common_source_files(clean_common=self.args.clean_common, site=self.args.site)
 
+        # Invalidate doctrees when Sphinx or conf.py changed to avoid subtle stale-doctree bugs.
+        invalidate_stale_doctrees(self.args.site)
+
         info("=== Step 5: Building documentation with Sphinx ===")
         info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
         sphinx_make(self.args.site, self.args.parallel, self.args.fast)
+
+        # Record metadata for doctree compatibility for future runs
+        update_doctree_meta_for_built_sites(self.args.site)
 
         if self.args.paramversioning:
             put_cached_parameters_files_in_sites(self.args.site)
