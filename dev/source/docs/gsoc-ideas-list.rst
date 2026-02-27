@@ -6,7 +6,6 @@ List of Suggested Projects for GSoC 2026
 
 This is a list of projects suggested by ArduPilot developers for `GSoC 2026 <https://summerofcode.withgoogle.com/>`__. These are only suggestions so if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__
 
-- Fleet Management Webtool
 - SITL Model Generation from Flight Data
 - Multi-Drone Mesh Networking (MAVLink-aware)
 - ArduHumanoid (ArduPilot controlling a simple humanoid)
@@ -29,24 +28,6 @@ When making the difficult decision about which students to accept, we look for:
 - Relevant prior experience
 - Experience contributing to ArduPilot or other open source projects
 - Understanding of Git and/or GitHub
-
-Fleet Management WebTool
-------------------------
-
-- Skills required: Javascript, Python
-- Mentors: Ryan Friedman, Randy Mackay
-- Expected Size: 175h
-- Level of Difficulty: Medium
-- Expected Outcome: Webtool to ease the management of a fleet of ArduPilot vehicles
-
-The goal of this project is create a fleet management web tool that helps companies and individuals manage the data collected by multiple ArduPilot vehicles
-
-- Should extend the capabilities of the existing `LogFinder Webtool <https://firmware.ardupilot.org/Tools/WebTools/LogFinder/>`__
-- Accept onboard logs, tlogs, photos and videos uploaded by the GCS or from the vehicle's companion computer (possibly running BlueOS or APSync)
-- Allow users to search and download data based on vehicle ID, recording date, location
-- Support both table views and map views of the uploaded data
-
-Funding will be provided for hardware and cloud server as required.
 
 SITL Model Generation from Flight Data
 --------------------------------------
