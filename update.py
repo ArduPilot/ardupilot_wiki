@@ -426,13 +426,6 @@ def delete_old_wiki_backups(folder, n_to_keep):
         error('Error on deleting some previous wiki backup folders: %s' % e)
 
 
-def create_dir_if_not_exists(dir_path: str) -> None:
-    try:
-        os.mkdir(dir_path)
-    except FileExistsError:  # Catching specific exception
-        pass
-
-
 def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
     """
     copies files common to all Wikis to the source directories for each Wiki
@@ -445,10 +438,8 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
 
     # Create destination folders that might be needed (if don't exist)
     for wiki in ALL_WIKIS:
-        create_dir_if_not_exists(wiki)
-        create_dir_if_not_exists(f'{wiki}/source')
-        create_dir_if_not_exists(f'{wiki}/source/docs')
-        create_dir_if_not_exists(f'{wiki}/source/_static')
+        os.makedirs(f'{wiki}/source/docs', exist_ok=True)
+        os.makedirs(f'{wiki}/source/_static', exist_ok=True)
 
     # Build a set of expected common files per wiki (to detect stale files)
     # Format: {wiki: set of filenames that should exist}
