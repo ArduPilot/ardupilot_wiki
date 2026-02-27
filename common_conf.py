@@ -12,7 +12,6 @@ sys.path.insert(0, _wiki_root)
 sys.path.insert(0, os.path.join(_wiki_root, 'scripts', 'extensions'))
 
 # Parallel reading of source files (use all available CPUs)
-import multiprocessing
 parallel_read_safe = True
 parallel_write_safe = True
 
@@ -30,10 +29,6 @@ extensions = [
     'sphinx_tabs.tabs',       # For clickable tabs
     'sphinx_skip_versioned_params',  # Skip labels for versioned parameter files (saves RAM/time)
 ]
-
-# Set False to re-enable warnings for non-local images.
-disable_non_local_image_warnings = True
-
 
 # wiki_base_url='https://dl.dropboxusercontent.com/u/3067678/share2/wiki'
 # intersphinx_base_url=wiki_base_url+'/%s/build/html/'
@@ -61,23 +56,6 @@ WIKI_KEYS = [
 # Build mapping programmatically (remote auto-discovery by using None for objects.inv)
 intersphinx_mapping = {k: (intersphinx_base_url % k, None) for k in WIKI_KEYS}
 
-
-# PATCH REMOVE NON-LOCAL IMAGE WARNINGS
-# From:
-#  http://stackoverflow.com/questions/12772927/specifying-an-online-image-in-sphinx-restructuredtext-format
-#  And https://github.com/sphinx-doc/sphinx/issues/2429
-
-
-if disable_non_local_image_warnings:
-    import sphinx.environment
-    from docutils.utils import get_source_line
-
-    def _warn_node(self, msg, node, **kwargs):
-        if not msg.startswith('nonlocal image URI found:'):
-            self._warnfunc(msg, '%s:%s' % get_source_line(node), **kwargs)
-
-    sphinx.environment.BuildEnvironment.warn_node = _warn_node
-# ENDPATH
 
 # Suppress warnings that slow down builds (already have nitpicky = False)
 suppress_warnings = [
