@@ -8,7 +8,7 @@ Archived: Intel Edison as a Companion Computer
 
     The Intel Edison has been discontinued
 
-This page explains how to setup and use the `Intel Edison <http://www.intel.com/content/www/us/en/do-it-yourself/edison.html>`__ as a companion computer primarily for use with the `The Cube <http://www.proficnc.com/content/13-pixhawk2>`__.
+This page explains how to setup and use the `Intel Edison <http://www.intel.com/content/www/us/en/do-it-yourself/edison.html>`__ as a companion computer primarily for use with the `The Cube <https://www.cubepilot.com>`__.
 
    .. image:: ../images/intel-edison-in-pixhawk2.jpg
        :width: 100%
@@ -24,7 +24,7 @@ Where to buy
 
 The Edison can be `purchased from Sparkfun here <https://www.sparkfun.com/products/13024>`__.
 
-The Cube with carrier board can be purchased from one of these `retailers <http://www.proficnc.com/stores>`__.  Be sure to purchase a Cube with the Intel Edison compatible carrier board.
+The Cube with carrier board can be purchased from one of these `retailers <https://www.cubepilot.org/#/reseller/list>`__.  Be sure to purchase a Cube with the Intel Edison compatible carrier board.
 
 Installing the Edison in The Cube
 =====================================

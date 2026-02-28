@@ -39,12 +39,12 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
         </td>
     </tr>
     <tr class="row-odd">
-        <td><center><a class="first last reference external image-reference" href="http://www.proficnc.com/"><img alt="../_images/proficnc.png" src="../_images/proficnc.png" style="width: 90px;" /></a><br/><br/>Australia</center></td>
+        <td><center><a class="first last reference external image-reference" href="https://www.cubepilot.com/"><img alt="../_images/proficnc.png" src="../_images/proficnc.png" style="width: 90px;" /></a><br/><br/>Australia</center></td>
         <td><div class="first last line-block">
-            <div class="line">Philip Rowse, <a href="mailto:Philip@proficnc.com?Subject=ArduPilot%20commercial%20support" target="_top">Philip@proficnc.com</a></div>
+            <div class="line">Philip Rowse, <a href="mailto:philip@cubepilot.com?Subject=ArduPilot%20commercial%20support" target="_top">philip@cubepilot.com</a></div>
             <div class="line"><br/></div>
             <div class="line">Philip has years of experience designing autopilot hardware</div>
-            <div class="line">including the Pixhawk2 which is used in the 3DR Solo.</div>
+            <div class="line">including the Pixhawk 2.1 (CubePilot CubeBlack) which is used in the 3DR Solo.</div>
             <div class="line">Autopilot Hardware design, Accessory customization, Mechanical</div>
             <div class="line">consulting, Systems engineering, Intricate knowledge of Pixhawk</div>
             </div>

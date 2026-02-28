@@ -91,6 +91,6 @@ As of June 2024 the Herelink comes pre-installed with QGC-4.0.8.  If you wish to
 
 More Info on Herelink can be found on 
 
--   `Cubepilot Herelink Product Page <https://www.cubepilot.org/#/herelink/features>`_
--   `Cubepilot Herelink Documentation <https://docs.cubepilot.org/user-guides/herelink/herelink-overview>`_
--   `Cubepilot Support Forum <https://discuss.cubepilot.org>`_
+-   `CubePilot Herelink Product Page <https://www.cubepilot.org/#/herelink/features>`_
+-   `CubePilot Herelink Documentation <https://docs.cubepilot.org/user-guides/herelink/herelink-overview>`_
+-   `CubePilot Support Forum <https://discuss.cubepilot.org>`_

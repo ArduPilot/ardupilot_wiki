@@ -18,4 +18,4 @@ Any servo output wired to the clock of the LED's should be set to ``SERVOx_FUNCT
 
 .. image:: ../../../images/ProfiLED-wiring.jpg
 
-ProfiLEDs are available from CubePilot resellers, official retailers are listed `here  <http://www.proficnc.com/stores>`__.
+ProfiLEDs are available from CubePilot resellers, official retailers are listed `here  <https://www.cubepilot.org/#/reseller/list>`__.

@@ -37,7 +37,6 @@ The radio and antennas as separate units are available:
 
 -  `RFDesign Store, 900Mhz <https://store.rfdesign.com.au/search.php?search_query=rfd900x+modem&x=0&y=0>`__
 -  `RFDesign Store, 868Mhz <https://store.rfdesign.com.au/search.php?search_query=rfd868x+modem&x=0&y=0>`__
--  `ProfiCNC Store <http://www.proficnc.com/52-online-sales>`_
 
 Ready made Sets
 ---------------
@@ -60,11 +59,6 @@ They offer two different variants that meet the needs of the ground and airside 
     :width: 450px
 
 The AeroLink RFD Adapter Board makes it easy to power your RFD modem from a separate 5V BEC as recommended above.
-
-ProfiCNC
-++++++++
-
-- `ProfiCNC Store <http://www.proficnc.com/52-online-sales>`_
 
 RFD900 Key Features
 ===================

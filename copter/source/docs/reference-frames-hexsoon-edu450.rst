@@ -8,7 +8,7 @@ Hexsoon EDU-450
 
 The Hexsoon EDU-450 is a relatively low cost frame including motors, ESCs and propellers
 
-This frame is available from many `CubePilot retailers <https://www.cubepilot.com/#/reseller/list>`__
+This frame is available from many `CubePilot resellers <https://www.cubepilot.com/#/reseller/list>`__
 
 Hexsoon's `EDU-450 specifications can be found here <https://docs.cubepilot.org/user-guides/cubepilot-ecosystem/cubepilot-partners/hexsoon/multirotor-frame/edu-450>`__
 

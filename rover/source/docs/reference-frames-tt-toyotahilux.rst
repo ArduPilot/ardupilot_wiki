@@ -15,7 +15,7 @@ Parts List
 ----------
 
 - `Thunder Tiger Toyota Hilux frame <https://www.thundertiger.com/products-detail.php?id=74>`__ available from many retailers including `Amazon <https://www.amazon.com/Thunder-Tiger-TOYOTA-HILUX-PICK-UP/dp/B071WJCMKN>`__
-- :ref:`Hex Cube autopilot <common-thecube-overview>` or similar
+- :ref:`CubePilot Cube autopilot <common-thecube-overview>` or similar
 - :ref:`Adafruit ESP8266 <common-esp8266-telemetry>` wifi telemetry board
 - any 8 channel (or more) transmitter like the `Futaba T10J <https://www.futabarc.com/systems/futk9200-10j/index.html>`__ (the 2 channel transmitter/receiver provided with the frame is not currently supported by ArduPilot)
 
