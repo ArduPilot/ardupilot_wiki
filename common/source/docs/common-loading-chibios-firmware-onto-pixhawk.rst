@@ -18,13 +18,13 @@ Downloading the beta firmware
 
 Download the appropriate beta firmware from `firmware.ardupilot.org <https://firmware.ardupilot.org/>`__ using the links below and save the resulting .apj file somewhere on your PC:
 
- - `Copter-3.6-beta for Pixhawks including Cube/Pixhawk2 <https://firmware.ardupilot.org/Copter/beta/fmuv3/arducopter.apj>`__
+ - `Copter-3.6-beta for Pixhawks including Cube/Pixhawk 2.1 (CubePilot CubeBlack) <https://firmware.ardupilot.org/Copter/beta/fmuv3/arducopter.apj>`__
  - `Copter-3.6-beta for Pixracers boards <https://firmware.ardupilot.org/Copter/beta/fmuv4/arducopter.apj>`__
 
- - `TradHeli-3.6-beta for Pixhawks including Cube/Pixhawk2 <https://firmware.ardupilot.org/Copter/beta/fmuv3-heli/arducopter.apj>`__
+ - `TradHeli-3.6-beta for Pixhawks including Cube/Pixhawk 2.1 (CubePilot CubeBlack) <https://firmware.ardupilot.org/Copter/beta/fmuv3-heli/arducopter.apj>`__
  - `TradHeli-3.6-beta for Pixracers boards <https://firmware.ardupilot.org/Copter/beta/fmuv4-heli/arducopter.apj>`__
  
- - `Rover-3.3-beta for Pixhawks including Cube/Pixhawk2 <https://firmware.ardupilot.org/Rover/beta/fmuv3/ardurover.apj>`__
+ - `Rover-3.3-beta for Pixhawks including Cube/Pixhawk 2.1 (CubePilot CubeBlack) <https://firmware.ardupilot.org/Rover/beta/fmuv3/ardurover.apj>`__
  - `Rover-3.6-beta for Pixracers boards <https://firmware.ardupilot.org/Rover/beta/fmuv4/ardurover.apj>`__
 
 Uploading as Custom Firmware

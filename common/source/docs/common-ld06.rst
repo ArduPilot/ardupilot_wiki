@@ -36,7 +36,7 @@ The lidar should be mounted horizontally on the top or bottom of the vehicle wit
 Ensure the sensor's view is not obstructed by any portion of the vehicle including GPS mast, vehicle legs etc.
 
 The lidar can be connected to the autopilot's serial input as shown above.
-If using a Pixhawk/Pixhawk2 Telem1 (aka Serial1) should be used because it is more capable of providing the required power.
+If using a Pixhawk/Pixhawk 2.1 (CubePilot CubeBlack) Telem1 (aka Serial1) should be used because it is more capable of providing the required power.
 
 .. note:: only the Lidar's TX pin is used. Its pwm motor control input pin is not connected and the lidar will spin at a default rate (reported in its telemetry back to the autopilot).
 

@@ -10,8 +10,8 @@ Ready-to-fly copter.  The comprehensive `3DR solo dev guide can be found here <h
 .. image:: ../images/SoloControllerVehiclePC2.jpg
     :target: ../_images/SoloControllerVehiclePC2.jpg
 
-Uploading custom firmware to the Pixhawk2
-=========================================
+Uploading custom firmware to the Pixhawk 2.1 (CubePilot CubeBlack)
+==================================================================
 
 -  Solo `can be flown with ardupilot/master <https://www.youtube.com/watch?v=WeOl7BficG0>`__ but
    when shipped by 3DR it runs a modified version of APM:Copter3.3.
@@ -45,7 +45,7 @@ Uploading custom firmware to the Pixhawk2
    
 
 -  Reboot the vehicle and the vehicle's IMX6 should load the firmware
-   onto the Pixhawk2 (you should see the regular rainbow colours on the
+   onto the Pixhawk 2.1 (CubePilot CubeBlack) (you should see the regular rainbow colours on the
    arm LEDs as the upload proceeds).
 -  After uploading the firmware is moved to the **/firmware/loaded**
    directory.

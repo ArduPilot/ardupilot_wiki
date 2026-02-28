@@ -35,6 +35,6 @@ Build Variants
 --------------
 
 For some types of flight boards multiple builds in separate directories are provided. 
-For example, you can find a firmware suitable for a Pixhawk2.1 Cube in both the px4-v3 directory and the CubeBlack directory. 
+For example, you can find a firmware suitable for a Pixhawk 2.1 (CubePilot CubeBlack) in both the px4-v3 directory and the CubeBlack directory. 
 These variants use different underlying RTOS code (NuttX and ChibiOS). 
 As we move the project away from NuttX to ChibiOS the NuttX builds will be removed over time.
