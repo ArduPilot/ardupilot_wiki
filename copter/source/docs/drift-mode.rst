@@ -56,7 +56,7 @@ How Drift Mode works
    manual recovery if necessary.
 
 What's it Useful For
-===================
+====================
 
 -  FPV flyers who are looking for a dynamic, plane like flight as well
    as loiter-like position hold.

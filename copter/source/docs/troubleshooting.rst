@@ -135,7 +135,7 @@ The possible solutions are:
 --------------
 
 My copter motors spin but the copter won't take off (or motors may not spin at all)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 While there are a few different reasons for copters to be perceived as
 underpowered, this condition applies to motors that simply aren't

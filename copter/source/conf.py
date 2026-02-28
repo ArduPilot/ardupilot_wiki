@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 # ArduPilot documentation build configuration file, created by
 # sphinx-quickstart on Sun Feb 28 02:44:23 2016.
 #

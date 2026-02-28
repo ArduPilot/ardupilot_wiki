@@ -7,7 +7,7 @@ Land Mode
 LAND Mode attempts to bring the copter straight down and has these
 features:
 
--  descends at ``LAND_SPEED_HIGH``, if non-zero, (or :ref:`WPNAV_SPEED_DN<WPNAV_SPEED_DN>` if zero) using the regular Altitude Hold controller.
+-  descends at ``LAND_SPEED_HIGH``, if non-zero, (or ``WPNAV_SPEED_DN`` if zero) using the regular Altitude Hold controller.
 -  the pilot can reposition the vehicle using the pitch and roll sticks. The throttle stick has no effect.
 -  if a rangefinder is being used, or :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` =1 and terrain data is available, the descent speed will then switch to ``LAND_SPEED`` at ``LAND_ALT_LOW`` altitude (default is 10m) above ground until landing occurs. If neither terrain data or rangefinder data is available, then altitude above HOME will be used for the speed switch point (if reached).
 

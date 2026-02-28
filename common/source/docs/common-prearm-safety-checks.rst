@@ -393,7 +393,7 @@ Quick tab as shown below.
     :target: ../_images/MP_QuicHDOP.jpg
 
 INS checks (i.e. Accelerometer and Gyro checks):
------------------------------------------------
+------------------------------------------------
 
 **INS not calibrated**: some or all of the accelerometer's offsets are
 zero.  The :ref:`accelerometers need to be calibrated <common-accelerometer-calibration>`.

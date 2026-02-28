@@ -90,7 +90,7 @@ Performance
       better.
    -  The zeal is firmer than moongel so I might expect that.
 
--  PID's returned after 3.0.1, to increase YAW control, and to decrease
+-  PID's retuned after 3.0.1, to increase YAW control, and to decrease
    pitch/roll (only by 7%) to improve video footage.
 
    -  It still handles well, but it's now more "Transit" than "Cosworth"

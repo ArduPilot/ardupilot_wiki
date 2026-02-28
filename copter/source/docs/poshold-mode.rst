@@ -38,7 +38,7 @@ with the control sticks.
 -  You may arm in PosHold mode but only once the GPS has 3D lock and the
    HDOP has dropped to 2.0 or lower.
 
-On a Pixhawk the LED will become green (:ref:`more details on LED patterns here <common-apm-board-leds>`).
+On a Pixhawk the LED will become green (:ref:`more details on LED patterns here <common-leds-pixhawk>`).
 
 The HDOP value can be made clearly visible through the mission planner's
 Quick screen by double clicking and then selecting "gpshdop" from the

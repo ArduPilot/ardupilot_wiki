@@ -27,7 +27,8 @@ Time of the meeting is: 2300 UTC each Monday.
 A second development call is held at a time more convenient for the European community.
 This meeting is held each Wednesday at 0700 UTC.
 
-A calendar with the meetings can be found at https://calendar.google.com/calendar/embed?src=rgdbom27tb1vlo62kjjnmt8va4%40group.calendar.google.com . Depending on the browser, times may be displayed in local time, or GMT and is so noted if in GMT
+A calendar with the meetings can be found `here <https://calendar.google.com/calendar/embed?src=rgdbom27tb1vlo62kjjnmt8va4%40group.calendar.google.com>`__. This is also
+available in ICS format `here <https://calendar.google.com/calendar/ical/rgdbom27tb1vlo62kjjnmt8va4%40group.calendar.google.com/public/basic.ics>`__, for integration with other calendar clients. Depending on the browser, times may be displayed in local time, or GMT and is so noted if in GMT
 
 Prefer Typing?
 --------------

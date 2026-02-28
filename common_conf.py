@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 # This contains common configuration information for the ardupilot wikis.
 # This information is imported by the conf.py files in each of the sub wikis
 
