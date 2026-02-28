@@ -13,7 +13,7 @@ Benewake provides a range of lidar sensors that use proprietary serial and/or CA
    :widths: 15 15 10 12 10 15
 
    * - Model
-     - Range (Indoor/Outdoor)
+     - Range (Min/Max)
      - Weight
      - Voltage
      - FOV
@@ -100,11 +100,11 @@ If SERIAL2 is being used, then use the following parameters to set the first ran
 
 -  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115 (115200 baud)
--  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 19 (BenewakeTF02) for TF02, 27 (BenewakeTF03) for TF02-Pro, TF03, TFS20-L, TF-Luna, TF-Nova, TF350
--  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.1
--  :ref:`RNGFND1_MAX <RNGFND1_MAX>`: for TF02 use **0.22** for indoor, **10** for outdoor.  For TF03 use **1** for indoor, **50** for outdoor.  Please look up the table at the top of this page for other sensors. *This is the distance in [metres] that the rangefinder can reliably read.*
--  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (Down) Indicates the position the range finder is set to read. 
--  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *An accurate distance in [metres] from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 19 (BenewakeTF02) for TF02, 27 (BenewakeTF03) for TF02-Pro, TF03, TFS20-L, TF-Luna, TF-Nova, TF350.
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = *Use a distance the rangefinder could reliably read in [metres].*  For TF02: **0.22**, for TF03: **1**, or look up the top table of this page for other sensors.
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = *Use a distance the rangefinder could reliably read in [metres].*  For TF02: **10**, for TF03: **50**, or look up the top table of this page for other sensors.
+-  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (Down) *Indicates the position the rangefinder is set to read.*
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *An accurate distance in [metres] from the rangefinder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 Connecting via CAN
 ------------------
@@ -120,10 +120,10 @@ If CAN1 is used then set the following parameters:
 -  :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (First driver)
 -  :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 11 (Benewake)
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 34 (Benewake_CAN)
--  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.1
--  :ref:`RNGFND1_MAX <RNGFND1_MAX>`: for TF02-i use **0.4** for indoor, **13.5** for outdoor.  For TF03 use **1** for indoor, **50** for outdoor.  Please see table at top of this page for other sensors. *This is the distance in [metres] that the rangefinder can reliably read.*
--  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (Down) Indicates the position the range finder is set to read. 
--  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *An accurate distance in [metres] from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = *Use a distance the rangefinder could reliably read in [metres].*  For TF02-i: **0.4**, for TF03: **1**, or look up the top table of this page for other sensors.
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = *Use a distance the rangefinder could reliably read in [metres].*  For TF02-i: **13.5**, for TF03: **50**, or look up the top table of this page for other sensors.
+-  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (Down) *Indicates the position the rangefinder is set to read.*
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *An accurate distance in [metres] from the rangefinder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 .. note:: Check the information at :ref:`common-sensor-offset-compensation` in order to configure the position where the range finder is installed.
 
