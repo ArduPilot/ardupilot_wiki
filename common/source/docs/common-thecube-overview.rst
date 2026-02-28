@@ -453,7 +453,7 @@ This section details the pin assignments of the standard carrier board of The Cu
 Analog/PWM RSSI Input is pin 103
 
 
-Cubepilot Ecosystem
+CubePilot Ecosystem
 ===================
 
 .. image:: ../../../images/Cubepilot_ecosystem.jpg
@@ -463,11 +463,11 @@ Cubepilot Ecosystem
 More Information
 ================
 
-For more information and instructions on setting up and using the Cubepilot system see  `Cubepilot Docs  <https://docs.cubepilot.org/user-guides/>`__
+For more information and instructions on setting up and using the CubePilot system see  `CubePilot Docs  <https://docs.cubepilot.org/user-guides/>`__
 
-For technical help and support on the cubepilot system see  `Cubepilot Forum  <https://discuss.cubepilot.org/>`__
+For technical help and support on the CubePilot system see  `CubePilot Forum  <https://discuss.cubepilot.org/>`__
 
-Company information on Cubpilot can be found at  `CubePilot <https://www.cubepilot.org>`__
+Company information on CubePilot can be found at  `www.cubepilot.com  <https://www.cubepilot.com>`__
 
 
 Carrier Board Design

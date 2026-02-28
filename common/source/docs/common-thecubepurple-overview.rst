@@ -55,7 +55,7 @@ The Cube connector pin assignments
 
 All other specification and external connections remain identical to the original board as listed on the Cube Black page.
 
-Cubepilot Ecosystem
+CubePilot Ecosystem
 ===================
 
 .. image:: ../../../images/Cubepilot_ecosystem.jpg
@@ -65,11 +65,11 @@ Cubepilot Ecosystem
 More Information
 ================
 
-For more information and instructions on setting up and using the Cubepilot system see  `Cubepilot Docs  <https://docs.cubepilot.org/user-guides/>`__
+For more information and instructions on setting up and using the CubePilot system see  `CubePilot Docs  <https://docs.cubepilot.org/user-guides/>`__
 
-For technical help and support on the cubepilot system see  `Cubepilot Forum  <https://discuss.cubepilot.org/>`__
+For technical help and support on the CubePilot system see  `CubePilot Forum  <https://discuss.cubepilot.org/>`__
 
-Company information on Cubpilot can be found at  `www.proficnc.com  <http://www.proficnc.com>`__
+Company information on CubePilot can be found at  `www.cubepilot.com  <https://www.cubepilot.com>`__
 
 
 Carrier Board Design
@@ -80,6 +80,6 @@ The reference design files of the standard carrier board are available in `githu
 Where to Buy
 ============
 
-Official retailers are listed `here  <http://www.proficnc.com/stores>`__.
+Official retailers are listed `here  <https://www.cubepilot.org/#/reseller/list>`__.
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
