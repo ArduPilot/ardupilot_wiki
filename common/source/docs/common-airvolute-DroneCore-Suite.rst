@@ -111,7 +111,7 @@ Block Diagram
     :target: ../_images/airvolute_DroneCore.Pilot_block_diagram.svg
 
 
-**DroneCore.Pilot** is based on Cube Orange - the widely used autopilot by Hex.aero running on ArduPilot (or optionally PX4 flight stack) and Nvidia Jetson Xavier NX. Their rich interfaces allow connecting most sensors and other peripherals for drones available on the market.
+**DroneCore.Pilot** is based on Cube Orange - the widely used autopilot by CubePilot running on ArduPilot (or optionally PX4 flight stack) and Nvidia Jetson Xavier NX. Their rich interfaces allow connecting most sensors and other peripherals for drones available on the market.
 
 **DroneCore.Power** contains 4 FOC DroneCAN ESCs with motor identification feature able to be configured for all common BLDC/PMSM drone motors on the market and a telemetry interface providing real time data to the autopilot. Furthermore it provides battery voltage and current measurements as well as individual cell voltages.
 

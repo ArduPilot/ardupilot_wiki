@@ -11,7 +11,7 @@ The AmovLab P200 is an almost-ready-to-fly quadcopter designed for education and
 Parts List
 ----------
 
-- The frame will be available for purchase from late 2019 onwards from many `Hex retailers <http://www.proficnc.com/stores>`__
+- The frame will be available for purchase from late 2019 onwards from many `CubePilot resellers <https://www.cubepilot.com/#/reseller/list>`__
 - 3300mAh to 5300mAh 3S battery
 - RC transmitter with at least 6 channels like the Futaba T10J
 

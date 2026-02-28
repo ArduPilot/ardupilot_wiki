@@ -19,7 +19,7 @@ How to Install APJ Tools
 How to update the Defaults
 --------------------------
 
-- Find and download the ArduPilot firmware you wish to customize from `firmware.ardupilot.org <https://firmware.ardupilot.org/>`__.  For example, the stable version of ArduPilot Copter for the Hex Cube Black is the "arducopter.apj" file found at `firmware.ardupilot.org/Copter/stable/CubeBlack/ <https://firmware.ardupilot.org/Copter/stable/CubeBlack>`__.
+- Find and download the ArduPilot firmware you wish to customize from `firmware.ardupilot.org <https://firmware.ardupilot.org/>`__.  For example, the stable version of ArduPilot Copter for the CubePilot Cube Black is the "arducopter.apj" file found at `firmware.ardupilot.org/Copter/stable/CubeBlack/ <https://firmware.ardupilot.org/Copter/stable/CubeBlack>`__.
 - Place the above .apj file in the same directory as the apj_tool.py file
 - Use a text editor to create a parameters file (maybe called "param-defaults.parm") of this format
 

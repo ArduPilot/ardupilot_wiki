@@ -65,7 +65,7 @@ a bootloader that uses that VID.
 VID=0x2DAE PID=various
 ======================
 
-The 0x2DAE vendor ID is owned by Hex, and is used for Hex flight
+The 0x2DAE vendor ID is owned by CubePilot, and is used for CubePilot flight
 controllers from 2018 onwards.
 
 Specific PIDs are:
