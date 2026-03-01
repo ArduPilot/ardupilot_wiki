@@ -200,6 +200,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     SERVOx_MIN is greater than SERVOx_TRIM                  PWM output misconfigured                            Set SERVOx_TRIM to be higher than SERVOx_MIN
     System not Initialized                                  System still booting up                             Wait, if not resolved shortly there may be a sensor problem not caught by other diagnostics
     temperature cal running                                 Temperature calibration is running                  Wait until :ref:`temp calibration <common-imutempcal>` completes or reboot autopilot
+    terrain data expired, possible errors                   Old terrain data that might have errors             Update terrain data on SD card
     terrain disabled                                        Auto mission uses terrain but terrain disabled      Enable the terrain database (set :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` = 1) or remove auto mission items that use terrain altitudes.  For Copters also check RTL_ALT_TYPE.
     Terrain out of memory                                   Autopilot has run out of memory                     Disable features or replace with a higher powered autopilot
     terrain required but disabled                           Auto mission uses terrain but not in firmware       Use custom build server and include the terrain database or remove auto mission items that use terrain altitudes.  For Copters also check RTL_ALT_TYPE.
