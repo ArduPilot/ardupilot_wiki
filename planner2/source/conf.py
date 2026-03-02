@@ -217,21 +217,24 @@ htmlhelp_basename = 'ArduPilotdoc'
 # Where to point the base of the build for the main site menu
 html_context = common_conf.html_context
 
+# fmt: off
 html_js_files = [
     ('https://plausible.ardupilot.org/js/script.outbound-links.js', {"data-domain": "ardupilot.org", "defer": "defer"}),
 ]
+# fmt: on
+
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     # 'papersize': 'letterpaper',
-
+    #
     # The font size ('10pt', '11pt' or '12pt').
     # 'pointsize': '10pt',
-
+    #
     # Additional stuff for the LaTeX preamble.
     # 'preamble': '',
-
+    #
     # Latex figure (float) alignment
     # 'figure_align': 'htbp',
 }
@@ -239,10 +242,12 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
+# fmt: off
 latex_documents = [
     (master_doc, 'ArduPilot.tex', 'ArduPilot Documentation',
      'ArduPilot Dev Team', 'manual'),
 ]
+# fmt: on
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
@@ -269,10 +274,12 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
+# fmt: off
 man_pages = [
     (master_doc, 'ardupilot', 'ArduPilot Documentation',
      [author], 1)
 ]
+# fmt: on
 
 # If true, show URL addresses after external links.
 # man_show_urls = False
@@ -283,11 +290,13 @@ man_pages = [
 # Grouping the document tree into Texinfo files. List of tuples
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
+# fmt: off
 texinfo_documents = [
     (master_doc, 'ArduPilot', 'ArduPilot Documentation',
      author, 'ArduPilot', 'One line description of project.',
      'Miscellaneous'),
 ]
+# fmt: on
 
 # Documents to append as an appendix to all manuals.
 # texinfo_appendices = []

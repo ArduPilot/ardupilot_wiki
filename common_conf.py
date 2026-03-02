@@ -9,11 +9,11 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
-    'sphinx.ext.mathjax',     # For :math: element rendering
+    'sphinx.ext.mathjax',  # For :math: element rendering
     'sphinx.ext.ifconfig',
     'sphinxcontrib.youtube',  # For youtube embedding
     'sphinxcontrib.jquery',
-    'sphinx_tabs.tabs'        # For clickable tabs
+    'sphinx_tabs.tabs',  # For clickable tabs
 ]
 
 # Set False to re-enable warnings for non-local images.
@@ -32,29 +32,19 @@ html_context = {'target': '/'}
 # This needs to change to the actual URL root once the theme updated.
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'copter': (intersphinx_base_url % 'copter',
-                                  None),
-                       'plane': (intersphinx_base_url % 'plane',
-                                  None),  # noqa: E127
-                       'rover': (intersphinx_base_url % 'rover',
-                                  None),  # noqa: E127
-                       'sub': (intersphinx_base_url % 'sub',
-                                  None),  # noqa: E127
-                       'planner': (intersphinx_base_url % 'planner',
-                                  None),  # noqa: E128
-                       'planner2': (intersphinx_base_url % 'planner2',
-                                  None),  # noqa: E128
-                       'dev': (intersphinx_base_url % 'dev',
-                                  None),  # noqa: E127
-                       'antennatracker': (intersphinx_base_url % 'antennatracker',
-                                  None),  # noqa: E128
-                       'ardupilot': (intersphinx_base_url % 'ardupilot',
-                                  None),  # noqa: E128
-                       'mavproxy': (intersphinx_base_url % 'mavproxy',
-                                  None),  # noqa: E128
-                       'blimp': (intersphinx_base_url % 'blimp',
-                                  None),  # noqa: E127
-                      }  # noqa: E124
+intersphinx_mapping = {
+    'copter': (intersphinx_base_url % 'copter', None),
+    'plane': (intersphinx_base_url % 'plane', None),  # noqa: E127
+    'rover': (intersphinx_base_url % 'rover', None),  # noqa: E127
+    'sub': (intersphinx_base_url % 'sub', None),  # noqa: E127
+    'planner': (intersphinx_base_url % 'planner', None),  # noqa: E128
+    'planner2': (intersphinx_base_url % 'planner2', None),  # noqa: E128
+    'dev': (intersphinx_base_url % 'dev', None),  # noqa: E127
+    'antennatracker': (intersphinx_base_url % 'antennatracker', None),  # noqa: E128
+    'ardupilot': (intersphinx_base_url % 'ardupilot', None),  # noqa: E128
+    'mavproxy': (intersphinx_base_url % 'mavproxy', None),  # noqa: E128
+    'blimp': (intersphinx_base_url % 'blimp', None),  # noqa: E127
+}  # noqa: E124
 
 # PATCH REMOVE NON-LOCAL IMAGE WARNINGS
 # From:

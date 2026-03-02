@@ -140,7 +140,9 @@ def get_motors_json():
     if not motors_json or not display_json:
         return {}
 
-    existing_layouts = {(layout["Class"], layout["Type"]) for layout in motors_json["layouts"]}
+    existing_layouts = {
+        (layout["Class"], layout["Type"]) for layout in motors_json["layouts"]
+    }
 
     # append additional layouts from display json
     for layout in display_json["layouts"]:
@@ -222,7 +224,7 @@ def get_translated_coordinates(x, y, radius):
     scale motor vector (Roll/Pitch) output to svg coordinates
     """
     θ = math.atan2(-y, -x)
-    r = math.sqrt(y ** 2 + x ** 2) * radius
+    r = math.sqrt(y**2 + x**2) * radius
     x_translated = r * math.cos(θ)
     y_translated = r * math.sin(θ)
     return x_translated, y_translated, r, θ
@@ -912,8 +914,8 @@ if __name__ == "__main__":
         generate_all_diagrams()
         exit(0)
 
-    # TODO: future use for inserting wiki text automatically
-    # if args.build or args.preview:
+        # TODO: future use for inserting wiki text automatically
+        # if args.build or args.preview:
         build_all(preview=args.preview)
         exit(0)
     if args.preview:

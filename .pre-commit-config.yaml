@@ -8,4 +8,8 @@ repos:
   - repo: https://github.com/pycqa/flake8
     rev: 7.3.0
     hooks:
-    - id: flake8
+      - id: flake8
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.5
+    hooks:
+      - id: ruff-format

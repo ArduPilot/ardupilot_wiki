@@ -6,8 +6,11 @@ script to find and optionally replace param refs in rst files
 import re
 
 from argparse import ArgumentParser
+
 parser = ArgumentParser('find and optionally replace parameters')
-parser.add_argument("--change", action='store_true', help="change matches to use param markup")
+parser.add_argument(
+    "--change", action='store_true', help="change matches to use param markup"
+)
 parser.add_argument("files", nargs='+')
 
 args = parser.parse_args()
