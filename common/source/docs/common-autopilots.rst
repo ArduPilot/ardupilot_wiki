@@ -99,6 +99,7 @@ Closed Hardware
     Brother Hobby F405v3 <common-brotherhobbyf405v3>
     Brother Hobby H743 <common-brotherhobbyh743>
     CBUnmanned H743 Stamp <common-StampH743>
+    CrazyF405 <common-crazyf405>
     CSKY405 <common-CSKYF405>
     DAKEFPVH743Pro <common-dakefpvh743pro>
     CUAV-X25-EVO <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-X25-EVO>
