@@ -4,28 +4,18 @@
 Flip Mode
 =========
 
+Vehicle will flip on its roll or pitch axis depending upon the pilot's roll and pitch stick position in flight mode's which allow this (ACRO/ALTHOLD/STABLIZE...and,of course, FLIP mode). Vehicle will increase throttle rapidly as it starts to flip. Once the flip is completed, canceled, or times out, the original flight mode the vehicle was in will be restored. The flip will end at the entry attitude.
 
+The vehicle will not flip again until the switch is brought low and back to high, if on an :ref:`Auxiliary Switch <common-auxiliary-functions>`, or if the mode channel switch is changed to another mode and back to FLIP.
 
-Vehicle will flip on its roll or pitch axis depending upon the pilot's roll and pitch stick position. Vehicle will rise for 1 second and then rapidly flip. The vehicle will not flip again until the switch is brought low and back to high. Give yourself at least 10m of altitude before trying flip for the first time!
+.. warning:: Give yourself at least 10m of altitude before trying flip for the first time!
 
+Flip Mode Controls
+==================
+The mode may be entered either by an :ref:`Auxiliary Switch <common-auxiliary-functions>`, or by changing flight mode to FLIP.
 
+- The direction of the flip defaults to ROLL LEFT, but if the RC Pitch stick is moved slightly back or forward, it will flip on the pitch axis, back or forward, respectively. If the RC Pitch stick is neutral but the RC ROLL is pushed slightly right, it will flip rolling to the right.
+- During the flip the throttle is managed to attempt to neither gain or lose altitude. It is only an attempt!
+- You may abort the flip by moving the pitch or roll stick as if to command near full stick in that axis. The Flip will immediately halt **at whatever attitude it is currently at** and return to the previous flight mode at the pilot's throttle stick input.
+- As the flip is completing, it will briefly increase throttle to try to recover any lost altitude. Again, this is an approximation. Once completed (entry attitude re-attained), the previous flight mode is returned to (if not entered by an AUX switch). It will not flip again until the Aux Switch is lowered and raised again, if used, or FLIP flight mode re-entered. If entered via a flight mode switch, you will need to change mode out of FLIP, to another mode, and then back again if another flip is desired,
 
-Flip Mode State Machine
------------------------
-
-
- Controls:
- 
- *          An ``RCx_OPTION`` parameter must be set to "Flip" which is "2"
- *          Pilot switches to Stabilize, Acro or AltHold flight mode and puts ch7/ch8 switch to ON position
- *          Vehicle will Roll right by default but if roll or pitch stick is held slightly left, forward or back it will flip in that direction
- *          Vehicle should complete the roll within 2.5sec and will then return to the original flight mode it was in before flip was triggered
- *          Pilot may manually exit flip by switching off ch7/ch8 or by moving roll stick to >40deg left or right
- 
- 
- State machine approach:
- 
- *          Flip_Start (while copter is leaning <45deg) : roll right at 400deg/sec, increase throttle
- *          Flip_Roll (while copter is between +45deg ~ -90) : roll right at 400deg/sec, reduce throttle
- *          Flip_Recover (while copter is between -90deg and original target angle) : use earth frame angle controller to return vehicle to original attitude
- 

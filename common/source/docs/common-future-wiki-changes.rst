@@ -120,6 +120,7 @@ New Features
 - Added FPV modes to CADDX and Roll/Pitch Axes lock controls, see https://github.com/ArduPilot/ardupilot_wiki/pull/7352
 - Many PSC and Q_P params change names, see https://github.com/ArduPilot/ardupilot_wiki/pull/7328
 - Added new POI Lock and tracking AUX Function, see https://github.com/ArduPilot/ardupilot_wiki/pull/7352
+- Pre-Arm check TERRAIN data on SD card for old data (had serious errors, see https://github.com/ArduPilot/ardupilot_wiki/pull/7453
 
 [site wiki="plane"]
 - QwikTune QuadPlane VTOL tuning, see https://github.com/ArduPilot/ardupilot_wiki/pull/6439
