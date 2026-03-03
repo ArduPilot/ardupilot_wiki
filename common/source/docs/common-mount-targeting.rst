@@ -51,6 +51,10 @@ For example, at 30 deg negative pitch target would be 30 deg down from the mount
 
 Most mounts have internal controls for each axis to determine how to interpret the targets. ArduPilot sets the mount's pitch and roll axis frame (if configurable) to Earth frame interpretations for all Mount types via its driver. The yaw axis is forced to Earth frame for the GPS Point, Home, and SysID modes, and can be forced from Body or Earth frame in RC Targeting mode using an ``RCx_OPTION`` switch setting of "163" (Mount Lock).
 
+Mount RC failsafe position
+--------------------------
+In the event of an RC failsafe, the mount can be moved to the Neutral mode position if the ``MNTx_OPTIONS`` bit 1 is set.
+
 Control with an RC transmitter (aka RC Targeting)
 =================================================
 While the mount is in "RC Targeting" mode (see above for how to change modes), the pilot can control the mount's target roll, pitch and yaw angles using an RC transmitter channel for each axis. For example (RC channels shown are for example only, and can be any channel not otherwise used):
