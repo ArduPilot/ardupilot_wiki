@@ -93,7 +93,7 @@ To use the onboard lidar:
 Additional Notes
 -----------------
 
-- :ref:`FlowHold <flowhold-mode>` does not require the use of a rangefinder
+- :ref:`FlowHold <flowhold-mode>` does not require the use of a rangefinder but normally does not perform as well as :ref:`Loiter <loiter-mode>` which does require a rangefinder
 - Performance can be improved by setting the :ref:`sensors position parameters <common-sensor-offset-compensation>`.  For example if the sensor is mounted 2cm forward and 5cm below the frame's center of rotation set :ref:`FLOW_POS_X <FLOW_POS_X>` to 0.02 and :ref:`FLOW_POS_Z <FLOW_POS_Z>` to 0.05.
 
 More Information
