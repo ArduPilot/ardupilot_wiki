@@ -28,6 +28,8 @@ If the vehicle fails to arm, please see the "Pre-Arm Checks" section below.
 
 .. note:: Rover cannot be armed in RTL or SMARTRTL modes. In addition AUTO, GUIDED, LOITER, RTL, SMARTRTL, FOLLOW, and DOCK modes cannot be armed via an :ref:`common-auxiliary-functions` RC switch.
 
+.. warning:: Rover will allow arming in some modes without a good GPS location being obtained before arming. If you want any of the modes such as RTL, LOITER, etc. to work properly, you should enable the "Need location" pre-arm check by setting the :ref:`ARMING_NEED_LOC<ARMING_NEED_LOC>` parameter to "1" to be sure you have position infomation available.
+
 How to Disarm
 =============
 
