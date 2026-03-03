@@ -136,6 +136,7 @@ Closed Hardware
     JHEMCU F405WING <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/JHEMCUF405WING>
     JHEMCU H743HD <common-jhemcu-h743hd>
     LongBowF405WING <common-longbowf405wing>
+    Lumineer LUXF765-NDAA <common-luxf765-ndaa>
     Mamba F405 MK2 <common-mamba405-mk2>
     Mamba MK4 F405Mini <common-mambaf405-mini>
     Mamba Basic F405 mk3 <common-mamba-basic-mk3>
