@@ -38,6 +38,8 @@ The maximum amount of reverse thrust used in autopilot throttle controlled modes
 
 The :ref:`USE_REV_THRUST <USE_REV_THRUST>` parameter is a bit mask that allows the setting of when reverse thrust can be activated, as when autolanding, or in other throttle controlled modes.
 
+.. note:: Reverse thrust is enabled in MANUAL mode independent of :ref:`USE_REV_THRUST<USE_REV_THRUST>` parameter if :ref:`THR_MIN<THR_MIN>` is < 0.
+
 If an RC channel's ``RCx_OPTION`` auxiliary function has been set to "64", then activating the switch will also provide access to the reverse thrust capability in non-throttle controlled modes, as shown in the :ref:`Reverse Thrust Setup<reverse-thrust-setup>` section.
 
 .. note:: Airbrakes can also be automatically deployed during reverse thrust operation. See :ref:`Airbrakes<airbrakes-on-plane>`.
