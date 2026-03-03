@@ -84,6 +84,107 @@ Real-Time Companion-Computer Health Monitoring & Failsafe
 
 The goal of this project is to define and implement a consistent "companion health" report (CPU/GPU load, heartbeat, critical services, watchdog) and connect it to configurable failsafes so ArduPilot can respond predictably when the companion degrades or dies.
 
+Automated Root-Cause Diagnosis for ArduPilot Logs
+=================================================
+
+Description
+-----------
+
+ArduPilot flight logs are critical for debugging crashes, diagnosing instability,
+and understanding vehicle behavior. Recent GSoC work introduced AI-assisted log
+analysis and interpretation tools, improving accessibility of log data and
+natural-language interaction.
+
+This project focuses on the **next step beyond interpretation**: automated
+root-cause diagnosis. The goal is to design a system capable of identifying
+probable failure causes directly from logs, including parameter misconfiguration,
+sensor anomalies, estimator divergence, vibration-induced instability, and
+control saturation.
+
+The solution may combine statistical analysis, rule-based reasoning, and machine
+learning techniques to classify failure modes and produce clear diagnostic
+summaries with confidence scores and recommended corrective actions.
+
+Expected outcomes
+-----------------
+
+- Curated dataset of categorized ArduPilot flight logs for training and testing
+- Feature-extraction and signal-analysis pipeline for log data
+- Failure-mode classification and anomaly-detection system
+- Human-readable diagnostic report with probable root cause and confidence level
+- Integration with existing ArduPilot log-analysis workflows or a standalone
+  web/CLI diagnostic tool
+- Documentation and example usage for developers and users
+
+Skills required
+---------------
+
+- Python or C++ programming
+- Signal processing or time-series analysis
+- Basic machine learning or statistical modeling
+- Familiarity with ArduPilot logs and MAVLink (helpful but not required)
+
+Difficulty
+----------
+
+Medium to Hard
+
+Size
+----
+
+175–350 hours
+
+Real-Time Companion-Computer Health Monitoring & Failsafe Framework
+===================================================================
+
+Description
+-----------
+
+Modern ArduPilot vehicles increasingly rely on companion computers for perception,
+navigation, AI inference, and mission-level autonomy. Failures of the companion
+computer—such as process crashes, overload, thermal shutdown, or communication
+loss—can introduce significant safety risks. Health monitoring and standardized
+failsafe handling are currently limited and inconsistent across integrations.
+
+This project will design and implement a **unified companion-computer health
+monitoring and failsafe framework** for ArduPilot. The system should define a
+MAVLink-based health reporting mechanism, monitor critical system metrics
+(CPU/GPU load, memory usage, heartbeat, temperature, and process status), and
+trigger configurable failsafe behaviors when health conditions degrade or
+communication is lost.
+
+The result should improve system-level safety and reliability for autonomy-enabled
+vehicles across Copter, Plane, Rover, and Sub platforms.
+
+Expected outcomes
+-----------------
+
+- MAVLink message or protocol for companion-computer health reporting
+- Reference health-monitoring daemon for Linux-based companion computers
+- ArduPilot firmware support for interpreting health status and triggering failsafes
+- Configurable failsafe parameters and behaviors
+- SITL and real-hardware validation scenarios
+- Developer and user documentation
+
+Skills required
+---------------
+
+- C++ (ArduPilot firmware development)
+- Python or C++ (companion-computer tools)
+- MAVLink protocol knowledge
+- Linux system monitoring concepts
+- Embedded or robotics systems experience (helpful)
+
+Difficulty
+----------
+
+Medium to Hard
+
+Size
+----
+
+175–350 hours
+
 Projects Completed in past years
 --------------------------------
 
