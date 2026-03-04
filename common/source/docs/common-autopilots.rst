@@ -135,6 +135,7 @@ Closed Hardware
     JAE JFB-110 <common-jae-jfb110>
     JHEMCU F405WING <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/JHEMCUF405WING>
     JHEMCU H743HD <common-jhemcu-h743hd>
+    KT-FMU-F1 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/KT-FMU-F1/README.md>
     LongBowF405WING <common-longbowf405wing>
     Mamba F405 MK2 <common-mamba405-mk2>
     Mamba MK4 F405Mini <common-mambaf405-mini>
