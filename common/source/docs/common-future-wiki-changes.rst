@@ -65,6 +65,7 @@ New Board Support
 - DAKEFPVH743-SLIM, see https://github.com/ArduPilot/ardupilot_wiki/pull/7391
 - ATOMRCNAVI-Deluxe, see https://github.com/ArduPilot/ardupilot_wiki/pull/6868
 - ResoluteH7, see https://github.com/ArduPilot/ardupilot_wiki/pull/7459
+- KT-FMU-F1, see https://github.com/ArduPilot/ardupilot_wiki/pull/7461
 
 New Peripheral Support
 ======================
