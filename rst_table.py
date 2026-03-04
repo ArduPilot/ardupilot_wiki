@@ -17,7 +17,12 @@ def tablify_row(rowheading, row, widths, height):
         out_line = ""
         if rowheading is not None:
             rowheading_line = rowheading_lines[i]
-            out_line += joiner + " " + rowheading_line + " " * (widths[0] - len(rowheading_line) - 1)
+            out_line += (
+                joiner
+                + " "
+                + rowheading_line
+                + " " * (widths[0] - len(rowheading_line) - 1)
+            )
             joiner = "#"
         j = 0
         for item in row_lines:

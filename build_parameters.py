@@ -1,27 +1,27 @@
 #!/usr/bin/env python
 """
-    This script aims to provide multiple parameters source files for each vehicle based on the versions available at
-    https://firmware.ardupilot.org
+This script aims to provide multiple parameters source files for each vehicle based on the versions available at
+https://firmware.ardupilot.org
 
-    It is intended to be run on the main wiki server. TO-DO: run locally within the project's Vagrant environment.
+It is intended to be run on the main wiki server. TO-DO: run locally within the project's Vagrant environment.
 
-    Build notes:
+Build notes:
 
-    * Before start:
-        * Folder and file management tested only in linux;
-        * It is supposed to have the wiki repo in a same level of an ArduPilot repo and two other folders
-        named new_params_mvesion/ and old_params_mversion/
+* Before start:
+    * Folder and file management tested only in linux;
+    * It is supposed to have the wiki repo in a same level of an ArduPilot repo and two other folders
+    named new_params_mvesion/ and old_params_mversion/
 
-    * First step is go to each vehicle on firmware.ardupilot.org and get all available versions namely as stable/beta/latest.
-        * For each version it gets a board and get git_version.txt file;
-        * It parsers that to get the version and commit hash;
-        * It creates a dictionary with vehicles, versions and commit hashes.
+* First step is go to each vehicle on firmware.ardupilot.org and get all available versions namely as stable/beta/latest.
+    * For each version it gets a board and get git_version.txt file;
+    * It parsers that to get the version and commit hash;
+    * It creates a dictionary with vehicles, versions and commit hashes.
 
-    * Second step is use the dict to navigates on a ArduPilot Repo, changing checkouts to desidered hashes.
-        * Relies on ArduPilotRepoFolder/Tools/autotest/param_metadata/param_parse.py to generate the parameters files;
-        * It renames the anchors for all files, except for latest versions.
+* Second step is use the dict to navigates on a ArduPilot Repo, changing checkouts to desidered hashes.
+    * Relies on ArduPilotRepoFolder/Tools/autotest/param_metadata/param_parse.py to generate the parameters files;
+    * It renames the anchors for all files, except for latest versions.
 
-    * Third step: create the json files and move all generated files.
+* Third step: create the json files and move all generated files.
 
 """
 
@@ -37,10 +37,33 @@ import glob
 import argparse
 
 parser = argparse.ArgumentParser(description="python3 build_parameters.py [options]")
-parser.add_argument("--verbose", dest='verbose', action='store_false', default=True, help="show debugging output")
-parser.add_argument("--ardupilotRepoFolder", dest='gitFolder', default="../ardupilot", help="Ardupilot git folder. ")
-parser.add_argument("--destination", dest='destFolder', default="../../../../new_params_mversion", help="Parameters*.rst destination folder.")  # noqa: E501
-parser.add_argument('--vehicle', dest='single_vehicle', help="If you just want to copy to one vehicle, you can do this. Otherwise it will work for all vehicles (Copter, Plane, Rover, AntennaTracker, Sub, Blimp)")  # noqa: E501
+parser.add_argument(
+    "--verbose",
+    dest='verbose',
+    action='store_false',
+    default=True,
+    help="show debugging output",
+)
+parser.add_argument(
+    "--ardupilotRepoFolder",
+    dest='gitFolder',
+    default="../ardupilot",
+    help="Ardupilot git folder. ",
+)
+parser.add_argument(
+    "--destination",
+    dest='destFolder',
+    default="../../../../new_params_mversion",
+    help="Parameters*.rst destination folder.",
+)
+parser.add_argument(
+    '--vehicle',
+    dest='single_vehicle',
+    help=(
+        "If you just want to copy to one vehicle, you can do this. Otherwise it will "
+        "work for all vehicles (Copter, Plane, Rover, AntennaTracker, Sub, Blimp)"
+    ),
+)
 args = parser.parse_args()
 
 error_count = 0
@@ -49,39 +72,48 @@ error_count = 0
 # Configure logging
 class ColoredFormatter(logging.Formatter):
     """Simple ANSI-coloured formatter for terminal output."""
+
     COLORS = {
-        logging.DEBUG: '\033[36m',      # cyan
-        logging.INFO: '\033[32m',       # green
-        logging.WARNING: '\033[33m',    # yellow
-        logging.ERROR: '\033[31m',      # red
-        logging.CRITICAL: '\033[1;31m', # bold red
+        logging.DEBUG: '\033[36m',  # cyan
+        logging.INFO: '\033[32m',  # green
+        logging.WARNING: '\033[33m',  # yellow
+        logging.ERROR: '\033[31m',  # red
+        logging.CRITICAL: '\033[1;31m',  # bold red
     }
     RESET = '\033[0m'
 
     def format(self, record):
         # Apply colour only when output is a tty
-        if hasattr(sys.stdout, 'isatty') and sys.stdout.isatty() \
-                and not os.environ.get('CI') and not os.environ.get('GITHUB_ACTIONS'):
+        if (
+            hasattr(sys.stdout, 'isatty')
+            and sys.stdout.isatty()
+            and not os.environ.get('CI')
+            and not os.environ.get('GITHUB_ACTIONS')
+        ):
             color = self.COLORS.get(record.levelno, '')
             record.levelname = f"{color}{record.levelname}{self.RESET}"
         return super().format(record)
 
 
 handler = logging.StreamHandler(sys.stdout)
-handler.setFormatter(ColoredFormatter('[build_parameters.py]: [%(levelname)s]: %(message)s'))
-logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, handlers=[handler])
+handler.setFormatter(
+    ColoredFormatter('[build_parameters.py]: [%(levelname)s]: %(message)s')
+)
+logging.basicConfig(
+    level=logging.DEBUG if args.verbose else logging.INFO, handlers=[handler]
+)
 logger = logging.getLogger(__name__)
 
 # Parameters
 COMMITFILE = "git-version.txt"
 BASEURL = "https://firmware.ardupilot.org/"
-ALLVEHICLES = ["AntennaTracker", "Copter" , "Plane", "Rover", "Sub", "Blimp"]
+ALLVEHICLES = ["AntennaTracker", "Copter", "Plane", "Rover", "Sub", "Blimp"]
 VEHICLES = ALLVEHICLES
 
 BASEPATH = ""
 
 # Dicts for name replacing
-vehicle_new_to_old_name = { # Used because "param_parse.py" args expect old names
+vehicle_new_to_old_name = {  # Used because "param_parse.py" args expect old names
     "Rover": "APMrover2",
     "Sub": "ArduSub",
     "Copter": "ArduCopter",
@@ -90,7 +122,7 @@ vehicle_new_to_old_name = { # Used because "param_parse.py" args expect old name
     "Blimp": "Blimp",
 }
 
-vehicle_old_to_new_name = { # Used because git-version.txt use APMVersion with old names
+vehicle_old_to_new_name = {  # Used because git-version.txt use APMVersion with old names
     "APMrover2": "Rover",
     "ArduRover": "Rover",
     "ArduSub": "Sub",
@@ -119,7 +151,7 @@ def error(msg):
 
 
 def check_temp_folders():
-    """Creates temporaty subfolders IFF not exists  """
+    """Creates temporaty subfolders IFF not exists"""
 
     os.chdir("../")
     if not os.path.exists("new_params_mversion"):
@@ -149,7 +181,10 @@ def setup():
         VEHICLES = [args.single_vehicle]
         progress("Running only for " + str(args.single_vehicle))
     else:
-        progress("Vehicle %s not recognized, running for all vehicles." % str(args.single_vehicle))
+        progress(
+            "Vehicle %s not recognized, running for all vehicles."
+            % str(args.single_vehicle)
+        )
 
     try:
         # Goes to ardupilot folder and clean it and update to make sure that is the most recent one.
@@ -193,6 +228,7 @@ def fetch_releases(firmware_url, vehicles):
                     return
                 attr = dict(attrs)
                 links.append(attr)
+
         # Create instance of HTML parser
         lParser = parseText()
         # Feed HTML file into parsers
@@ -206,6 +242,7 @@ def fetch_releases(firmware_url, vehicles):
             lParser.links = []
             lParser.close()
             return links
+
     ######################################################################################
 
     debug("Cleaning fetched links for wanted folders")
@@ -214,14 +251,16 @@ def fetch_releases(firmware_url, vehicles):
         page_links = fetch_vehicle_subfolders(firmware_url + f)
         for folder in page_links:  # Non clever way to filter the strings insert by makehtml.py, unwanted folders, and so.
             version_folder = str(folder)
-            if version_folder.find("stable") > 0 and not version_folder.endswith("stable"): # If finish with
+            if version_folder.find("stable") > 0 and not version_folder.endswith(
+                "stable"
+            ):  # If finish with
                 stableFirmwares.append(firmware_url[:-1] + version_folder[10:-2])
-            elif version_folder.find("latest") > 0 :
+            elif version_folder.find("latest") > 0:
                 stableFirmwares.append(firmware_url[:-1] + version_folder[10:-2])
             elif version_folder.find("beta") > 0:
                 stableFirmwares.append(firmware_url[:-1] + version_folder[10:-2])
 
-    return stableFirmwares # links for the firmwares folders
+    return stableFirmwares  # links for the firmwares folders
 
 
 def get_commit_dict(releases_parsed):
@@ -229,6 +268,7 @@ def get_commit_dict(releases_parsed):
     For informed releases, return a dict git hashes of its build.
 
     """
+
     def get_last_board_folder(url):
         """
         For given URL returns the last folder which should be a board name.
@@ -243,6 +283,7 @@ def get_commit_dict(releases_parsed):
                     return
                 attr = dict(attrs)
                 links.append(attr)
+
         # Create instance of HTML parser
         lParser = parseText()
         # Feed HTML file into parsers
@@ -256,8 +297,13 @@ def get_commit_dict(releases_parsed):
             lParser.close()
             last_item = links.pop()
             last_folder = last_item['href']
-            debug("Returning link of the last board folder (" + last_folder[last_folder.rindex('/')+1:] + ")")
-            return last_folder[last_folder.rindex('/')+1:]  # clean the partial link
+            debug(
+                "Returning link of the last board folder ("
+                + last_folder[last_folder.rindex('/') + 1 :]
+                + ")"
+            )
+            return last_folder[last_folder.rindex('/') + 1 :]  # clean the partial link
+
     ####################################################################################################
 
     def fetch_commit_hash(version_link, board, file):
@@ -284,8 +330,10 @@ def get_commit_dict(releases_parsed):
 
             regex = re.compile(r'[@_!#$%^&*()<>?/\|}{~:]')
 
-            if (regex.search(vehicle) is None):  # there are some non standard names
-                vehicle = vehicle_old_to_new_name[vehicle.strip()]   # Names may not be standard as expected
+            if regex.search(vehicle) is None:  # there are some non standard names
+                vehicle = vehicle_old_to_new_name[
+                    vehicle.strip()
+                ]  # Names may not be standard as expected
             else:
                 # tries to fix automatically
                 if re.search('copter', vehicle, re.IGNORECASE):
@@ -311,7 +359,12 @@ def get_commit_dict(releases_parsed):
                     vehicle = "Blimp"
                     debug("Bad vehicle name auto fixed to BLIMP on:\t" + fetch_link)
                 else:
-                    error("Nomenclature exception found in a vehicle name:\t" + vehicle + "\tLink with the exception:\t" + fetch_link)  # noqa: E501
+                    error(
+                        "Nomenclature exception found in a vehicle name:\t"
+                        + vehicle
+                        + "\tLink with the exception:\t"
+                        + fetch_link
+                    )
 
             if "beta" in fetch_link:
                 version_number = "beta-" + version_number
@@ -321,17 +374,22 @@ def get_commit_dict(releases_parsed):
 
             return vehicle, version_number, commit_hash
         except Exception as e:
-            error("An exception occurred: " + file + " DECODE ERROR. Link: " + fetch_link)
+            error(
+                "An exception occurred: " + file + " DECODE ERROR. Link: " + fetch_link
+            )
             error(e)
             # sys.exit(1) #comment to make easier debug
             return "error", "error", "error"
+
     ####################################################################################################
 
     commits_and_codes = {}
     commite_and_codes_cleanned = {}
 
     for j in range(0, len(releases_parsed)):
-        commits_and_codes[j] = fetch_commit_hash(releases_parsed[j], get_last_board_folder(releases_parsed[j]), COMMITFILE)
+        commits_and_codes[j] = fetch_commit_hash(
+            releases_parsed[j], get_last_board_folder(releases_parsed[j]), COMMITFILE
+        )
 
     for i in commits_and_codes:
         if commits_and_codes[i][0] != 'error':
@@ -359,19 +417,27 @@ def generate_rst_files(commits_to_checkout_and_parse):
 
         for line in file_in:
             if (re.match("(^.. _)(.*):$", line)) and ("latest" not in version_tag):
-                file_out.write(line[0:-2] + version_tag + ":\n")  # renames the anchors, but leave latest anchors "as-is" to maintaim compatibility with all links across the wiki  # noqa: E501
+                file_out.write(
+                    line[0:-2] + version_tag + ":\n"
+                )  # renames the anchors, but leave latest anchors "as-is" to maintaim compatibility with all links across the wiki  # noqa: E501
 
             elif "Complete Parameter List" in line:
                 # Adjusting the page title
                 out_line = "Complete Parameter List\n=======================\n\n"
                 out_line += "\n.. raw:: html\n\n"
-                out_line += "   <h2>Full Parameter List of " + version_tag[1:].replace("-", " ") + "</h2>\n\n"  # rename the page identifier to insert the version  # noqa: E501
+                out_line += (
+                    "   <h2>Full Parameter List of "
+                    + version_tag[1:].replace("-", " ")
+                    + "</h2>\n\n"
+                )  # rename the page identifier to insert the version
 
                 # Pigbacking and inserting the javascript selector
                 out_line += "\n.. raw:: html\n   :file: ../_static/parameters_versioning_script.inc\n\n"
                 file_out.write(out_line)
 
-            elif ("=======================" in line) and (not found_original_title): # Ignores the original mark
+            elif ("=======================" in line) and (
+                not found_original_title
+            ):  # Ignores the original mark
                 found_original_title = True
 
             else:
@@ -385,19 +451,26 @@ def generate_rst_files(commits_to_checkout_and_parse):
         # Not elegant workaround:
         # These versions present errors when parsing using param_parser.py. Needs more investigation?
         if (
-            "3.2.1" in version or # last stable APM Copte
-            "3.4.0" in version or # last stable APM Plane
-            "3.4.6" in version or # Copter
-            "2.42" in version or  # last stable APM Rover?
-            "2.51" in version or  # last beta APM Rover?
-            "0.7.2" in version    # Antennatracker
+            "3.2.1" in version  # last stable APM Copte
+            or "3.4.0" in version  # last stable APM Plane
+            or "3.4.6" in version  # Copter
+            or "2.42" in version  # last stable APM Rover?
+            or "2.51" in version  # last beta APM Rover?
+            or "0.7.2" in version  # Antennatracker
         ):
             debug("Ignoring APM version:\t" + vehicle + "\t" + version)
             continue
 
         # Checkout an Commit ID in order to get its parameters
         try:
-            debug("Git checkout on " + vehicle + " version " + version + " id " + commit_id)
+            debug(
+                "Git checkout on "
+                + vehicle
+                + " version "
+                + version
+                + " id "
+                + commit_id
+            )
             os.system("git checkout --force " + commit_id)
 
         except Exception as e:
@@ -408,16 +481,25 @@ def generate_rst_files(commits_to_checkout_and_parse):
         # Run param_parse.py tool from Autotest set in the desidered commit id
         try:
             os.chdir(BASEPATH + "/Tools/autotest/param_metadata")
-            if ('rover' in vehicle.lower()) and ('v3.' not in version.lower()) and ('v4.0' not in version.lower()): # Workaround the vehicle renaming (Rover, APMRover2 ArduRover...)  # noqa: E501
+            if (
+                ('rover' in vehicle.lower())
+                and ('v3.' not in version.lower())
+                and ('v4.0' not in version.lower())
+            ):  # Workaround the vehicle renaming (Rover, APMRover2 ArduRover...)
                 os.system("python3 ./param_parse.py --vehicle " + 'Rover')
-            else: # regular case
-                os.system("python3 ./param_parse.py --vehicle " + vehicle_new_to_old_name[vehicle])  # option "param_parse.py --format rst" is not available in all commits where param_parse.py is found  # noqa: E501
+            else:  # regular case
+                os.system(
+                    "python3 ./param_parse.py --vehicle "
+                    + vehicle_new_to_old_name[vehicle]
+                )  # option "param_parse.py --format rst" is not available in all commits where param_parse.py is found
 
             # create a filename for new parameters file
             filename = "parameters-" + vehicle
-            if ("beta" in version or "rc" in version): # Plane uses BETA, Copter and Rover uses RCn
-                filename += "-" + version  + ".rst"
-            elif ("latest" in version):
+            if (
+                "beta" in version or "rc" in version
+            ):  # Plane uses BETA, Copter and Rover uses RCn
+                filename += "-" + version + ".rst"
+            elif "latest" in version:
                 filename += "-" + version + ".rst"
             else:
                 filename += "-stable-" + version + ".rst"
@@ -435,7 +517,14 @@ def generate_rst_files(commits_to_checkout_and_parse):
 
             os.chdir(BASEPATH)
         except Exception as e:
-            error("Error while parsing \"Parameters.rst\" | details:\t" + vehicle + "\t" + version  + "\t" + commit_id)
+            error(
+                "Error while parsing \"Parameters.rst\" | details:\t"
+                + vehicle
+                + "\t"
+                + version
+                + "\t"
+                + commit_id
+            )
             error(e)
             # sys.exit(1)
         debug("")
@@ -445,13 +534,12 @@ def generate_rst_files(commits_to_checkout_and_parse):
 
 def generate_json(vehicles):
     """
-        Generates a JSON with all parameters page to be live consumed by a javascript
+    Generates a JSON with all parameters page to be live consumed by a javascript
     """
 
     os.chdir(BASEPATH + "/Tools/autotest/param_metadata")
 
     for vehicle in vehicles:
-
         debug("Creating JSON files for " + vehicle)
 
         # Creates the JSON lines from available rst files
@@ -463,14 +551,39 @@ def generate_json(vehicles):
         json_lines.append("\"Click here to change\" : \"\"")
 
         for filename in parameters_files:
-            if ("beta" in filename or "rc" in filename): # Plane uses BETA, Copter and Rover uses RCn
-                json_lines.append(",\"" + vehicle + " beta " + filename[(len("parameters-" + vehicle + "-beta")+1):-4] + "\" : \"" + filename[:-3] + "html\"")  # noqa: E501
-            elif ("latest" in filename):
+            if (
+                "beta" in filename or "rc" in filename
+            ):  # Plane uses BETA, Copter and Rover uses RCn
+                json_lines.append(
+                    ",\""
+                    + vehicle
+                    + " beta "
+                    + filename[(len("parameters-" + vehicle + "-beta") + 1) : -4]
+                    + "\" : \""
+                    + filename[:-3]
+                    + "html\""
+                )
+            elif "latest" in filename:
                 # json_lines.append(",\"" +  vehicle + " latest " + filename[(len("parameters-" + vehicle + "-latest")+1):-4] + "\" : \"" + filename[:-3] + "html\"")  # noqa: E501
-                json_lines.append(",\"" + vehicle + " latest " + filename[(len("parameters-" + vehicle + "-latest")+1):-4] + "\" : \"" + ("parameters.html\""))  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.  # noqa: E501
+                json_lines.append(
+                    ",\""
+                    + vehicle
+                    + " latest "
+                    + filename[(len("parameters-" + vehicle + "-latest") + 1) : -4]
+                    + "\" : \""
+                    + ("parameters.html\"")
+                )  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.
 
             else:
-                json_lines.append(",\"" + vehicle + " stable " + filename[(len("parameters-" + vehicle + "-stable")+1):-4] + "\" : \"" + filename[:-3] + "html\"")  # noqa: E501
+                json_lines.append(
+                    ",\""
+                    + vehicle
+                    + " stable "
+                    + filename[(len("parameters-" + vehicle + "-stable") + 1) : -4]
+                    + "\" : \""
+                    + filename[:-3]
+                    + "html\""
+                )
 
         json_lines.append("}")
 
@@ -481,7 +594,12 @@ def generate_json(vehicles):
                 for lines in json_lines:
                     f.write("%s\n" % lines)
         except Exception as e:
-            error("Error while creating the JSON file " + vehicle + " in folder " + str(os.getcwd()))  # noqa: E501
+            error(
+                "Error while creating the JSON file "
+                + vehicle
+                + " in folder "
+                + str(os.getcwd())
+            )
             error(e)
             # sys.exit(1)
         debug("")
@@ -489,7 +607,7 @@ def generate_json(vehicles):
 
 def move_results(vehicles):
     """
-        Once all parameters files are created, moves for "new_params_mversion" as the last execution result
+    Once all parameters files are created, moves for "new_params_mversion" as the last execution result
     """
 
     os.chdir(BASEPATH + "/Tools/autotest/param_metadata")
@@ -513,30 +631,45 @@ def move_results(vehicles):
             # Moving files.
             files_to_move = [f for f in glob.glob("parameters-" + vehicle + "*")]
             for file in files_to_move:
-                if ("latest" not in file):  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.  # noqa: E501
+                if (
+                    "latest" not in file
+                ):  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.
                     os.rename(file, folder + file)
                 else:
                     os.rename(file, str((folder + "parameters.rst")))
 
         except Exception as e:
-            error("Error while moving result files of vehicle " + vehicle + " pwd: " + str(os.getcwd()))
+            error(
+                "Error while moving result files of vehicle "
+                + vehicle
+                + " pwd: "
+                + str(os.getcwd())
+            )
             error(e)
             # sys.exit(1)
 
 
 def print_versions(commits_to_checkout_and_parse):
-    """ Partial results: present all vechicles, versions and commits selected to generate parameters """
+    """Partial results: present all vechicles, versions and commits selected to generate parameters"""
     debug("\n\tList of parameters files to generate:\n")
     for i in commits_to_checkout_and_parse:
-        debug(commits_to_checkout_and_parse[i][0] + ' - ' + commits_to_checkout_and_parse[i][1] + ' - ' + commits_to_checkout_and_parse[i][2])  # noqa: E501
+        debug(
+            commits_to_checkout_and_parse[i][0]
+            + ' - '
+            + commits_to_checkout_and_parse[i][1]
+            + ' - '
+            + commits_to_checkout_and_parse[i][2]
+        )
     debug("")
 
 
 # Step 1 - Select the versions for generate parameters
-setup()                                                             # Reset the ArduPilot folder/repo
-feteched_releases = fetch_releases(BASEURL, VEHICLES)               # All folders/releases.
-commits_to_checkout_and_parse = get_commit_dict(feteched_releases)  # Parse names, and git hashes.
-print_versions(commits_to_checkout_and_parse)                       # Present work dict.
+setup()  # Reset the ArduPilot folder/repo
+feteched_releases = fetch_releases(BASEURL, VEHICLES)  # All folders/releases.
+commits_to_checkout_and_parse = get_commit_dict(
+    feteched_releases
+)  # Parse names, and git hashes.
+print_versions(commits_to_checkout_and_parse)  # Present work dict.
 
 # Step 2 - Generates them in ArdupilotRepoFolder/Tools/autotest/param_metadata
 generate_rst_files(commits_to_checkout_and_parse)

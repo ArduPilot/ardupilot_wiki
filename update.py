@@ -57,6 +57,7 @@ from typing import Optional, Dict, List
 from sphinx.application import Sphinx
 import rst_table
 from datetime import datetime
+
 # while flake8 says this is unused, distutils.dir_util.mkpath fails
 # without the following import on old versions of Python:
 from distutils import dir_util  # noqa: F401
@@ -188,7 +189,9 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
 
 
 def get_request_file_size(url: str) -> int:
-    headers = {'Accept-Encoding': 'identity'}  # needed as request use compression by default
+    headers = {
+        'Accept-Encoding': 'identity'
+    }  # needed as request use compression by default
     hresponse = requests.head(url, headers=headers)
 
     if 'Content-Length' in hresponse.headers:
@@ -201,7 +204,7 @@ def fetchparameters(site: Optional[str] = None, cache: Optional[str] = None) -> 
     dataname = "Parameters"
     fetch_ardupilot_generated_data(
         PARAMETER_SITE,
-        f"https://autotest.ardupilot.org/{dataname}", # noqa: E231
+        f"https://autotest.ardupilot.org/{dataname}",
         f"{dataname}.rst",
         f"{dataname.lower()}.rst",
         site,
@@ -213,7 +216,7 @@ def fetchlogmessages(site: Optional[str] = None, cache: Optional[str] = None) ->
     dataname = "LogMessages"
     fetch_ardupilot_generated_data(
         LOGMESSAGE_SITE,
-        f"https://autotest.ardupilot.org/{dataname}",  # noqa: E231
+        f"https://autotest.ardupilot.org/{dataname}",
         f"{dataname}.rst",
         f"{dataname.lower()}.rst",
         site,
@@ -221,8 +224,14 @@ def fetchlogmessages(site: Optional[str] = None, cache: Optional[str] = None) ->
     )
 
 
-def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: str, document_name: str,
-                                   site: Optional[str] = None, cache: Optional[str] = None) -> None:
+def fetch_ardupilot_generated_data(
+    site_mapping: Dict,
+    base_url: str,
+    sub_url: str,
+    document_name: str,
+    site: Optional[str] = None,
+    cache: Optional[str] = None,
+) -> None:
     """Fetches the data for all the sites from the test server and
     copies them to the correct location.
 
@@ -241,7 +250,9 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
             targetfile = f'./dev/source/docs/AP_Periph-{sub_url}'
         if cache:
             if not os.path.exists(targetfile):
-                raise Exception(f"Asked to use cached files, but {targetfile} does not exist")
+                raise Exception(
+                    f"Asked to use cached files, but {targetfile} does not exist"
+                )
             continue
         if site == key or site is None or (site == 'dev' and key == 'AP_Periph'):
             urls.append(fetchurl)
@@ -249,7 +260,7 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
             names.append(f"{value}_{document_name}")
 
     with ThreadPoolExecutor() as executor:
-        executor.map(fetch_and_rename, urls, targetfiles, names, timeout=5*60)
+        executor.map(fetch_and_rename, urls, targetfiles, names, timeout=5 * 60)
 
 
 def build_one(wiki, fast):
@@ -418,8 +429,10 @@ def delete_old_wiki_backups(folder, n_to_keep):
                     debug('Deleting folder %s' % str(backup_folders[i]))
                     shutil.rmtree(str(backup_folders[i]))
                 else:
-                    debug('Ignoring folder %s because it does not look like a auto generated wiki backup folder' %
-                          str(backup_folders[i]))
+                    debug(
+                        'Ignoring folder %s because it does not look like a auto generated wiki backup folder'
+                        % str(backup_folders[i])
+                    )
         else:
             debug('No old backups to delete in %s' % folder)
     except Exception as e:
@@ -500,7 +513,9 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                                 files_skipped += 1
                                 continue
                         except Exception as e:
-                            debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
+                            debug(
+                                f"filecmp failed for {source_file_path} vs {targetfile}: {e}"
+                            )
                             # treat as different and fall through to write
 
                     # debug(targetfile)
@@ -512,7 +527,11 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                     src = os.path.join(root, file)
                     dst = '%s/source/_static/%s' % (wiki, file)
                     # Only copy if different
-                    if not clean_common and os.path.exists(dst) and filecmp.cmp(src, dst, shallow=False):
+                    if (
+                        not clean_common
+                        and os.path.exists(dst)
+                        and filecmp.cmp(src, dst, shallow=False)
+                    ):
                         continue
                     shutil.copy2(src, dst)
             elif file.endswith(".js"):
@@ -531,14 +550,18 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                             if filecmp.cmp(source_file_path, targetfile, shallow=False):
                                 continue
                         except Exception as e:
-                            debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
+                            debug(
+                                f"filecmp failed for {source_file_path} vs {targetfile}: {e}"
+                            )
                             # treat as different and fall through to write
 
                     # debug(targetfile)
                     with open(targetfile, 'w', encoding='utf-8') as destination_file:
                         destination_file.write(content)
 
-    progress(f"Common files: {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
+    progress(
+        f"Common files: {files_copied} copied, {files_skipped} unchanged, {files_removed} removed"
+    )
 
 
 def get_copy_targets(content):
@@ -570,10 +593,7 @@ def strip_content(content, site):
         return ''
 
     # Remove the copywiki from content
-    newText = re.sub(r'\[copywiki.*?\]',
-                     fix_copywiki_shortcode,
-                     content,
-                     flags=re.M)
+    newText = re.sub(r'\[copywiki.*?\]', fix_copywiki_shortcode, content, flags=re.M)
 
     def fix_site_shortcode(matchobj):
         # logmatch_code(matchobj, 'SITESC_')
@@ -585,11 +605,14 @@ def strip_content(content, site):
         else:
             # progress("YES")
             return matchobj.group(2)
+
     # Remove the site shortcode from content
-    newText = re.sub(r'\[site\s.*?wiki\=\"(.*?)\".*?\](.*?)\[\/site\]',
-                     fix_site_shortcode,
-                     newText,
-                     flags=re.S)
+    newText = re.sub(
+        r'\[site\s.*?wiki\=\"(.*?)\".*?\](.*?)\[\/site\]',
+        fix_site_shortcode,
+        newText,
+        flags=re.S,
+    )
 
     return newText
 
@@ -604,7 +627,8 @@ def logmatch_code(matchobj, prefix):
 
 
 def is_the_same_file(file1, file2):
-    """ Compare two files using their SHA256 hashes"""
+    """Compare two files using their SHA256 hashes"""
+
     def file_hash(path, algo="sha256", chunk_size=8192):
         h = hashlib.new(algo)
         with open(path, "rb") as f:
@@ -613,6 +637,7 @@ def is_the_same_file(file1, file2):
                 h.update(chunk)
                 chunk = f.read(chunk_size)
         return h.hexdigest()
+
     return file_hash(file1) == file_hash(file2)
 
 
@@ -625,14 +650,16 @@ def fetch_versioned_parameters(site=None):
     """
 
     for key, value in PARAMETER_SITE.items():
-
-        if key == 'AP_Periph': # workaround until create a versioning for AP_Periph in firmware server
-            fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
+        if (
+            key == 'AP_Periph'
+        ):  # workaround until create a versioning for AP_Periph in firmware server
+            fetchurl = (
+                'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
+            )
             targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
             fetch_and_rename(fetchurl, targetfile, 'Parameters.rst')
 
-        else: # regular versioning
-
+        else:  # regular versioning
             if site == key or site is None:
                 # Remove old param single file
                 single_param_file = './%s/source/docs/parameters.rst' % key
@@ -640,17 +667,23 @@ def fetch_versioned_parameters(site=None):
                 remove_if_exists(single_param_file)
 
                 # Remove old versioned param files
-                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                    old_parameters_mask = (os.getcwd() +
-                                           '/%s/source/docs/parameters-%s-' %
-                                           ("AntennaTracker", "AntennaTracker"))
+                if (
+                    'antennatracker' in key.lower()
+                ):  # To main the original script approach instead of the build_parameters.py approach.
+                    old_parameters_mask = (
+                        os.getcwd()
+                        + '/%s/source/docs/parameters-%s-'
+                        % ("AntennaTracker", "AntennaTracker")
+                    )
                 else:
-                    old_parameters_mask = (os.getcwd() +
-                                           '/%s/source/docs/parameters-%s-' %
-                                           (key, key.title()))
+                    old_parameters_mask = (
+                        os.getcwd()
+                        + '/%s/source/docs/parameters-%s-' % (key, key.title())
+                    )
                 try:
                     old_parameters_files = [
-                        f for f in glob.glob(old_parameters_mask + "*.rst")]
+                        f for f in glob.glob(old_parameters_mask + "*.rst")
+                    ]
                     for filename in old_parameters_files:
                         debug("Erasing rst " + filename)
                         os.remove(filename)
@@ -659,24 +692,41 @@ def fetch_versioned_parameters(site=None):
                     pass
 
                 # Remove old json file
-                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                    target_json_file = ('./%s/source/_static/parameters-%s.json' %
-                                        ("AntennaTracker", "AntennaTracker"))
+                if (
+                    'antennatracker' in key.lower()
+                ):  # To main the original script approach instead of the build_parameters.py approach.
+                    target_json_file = './%s/source/_static/parameters-%s.json' % (
+                        "AntennaTracker",
+                        "AntennaTracker",
+                    )
                 else:
-                    target_json_file = ('./%s/source/_static/parameters-%s.json' %
-                                        (value, key.title()))
+                    target_json_file = './%s/source/_static/parameters-%s.json' % (
+                        value,
+                        key.title(),
+                    )
                 debug("Erasing json " + target_json_file)
                 remove_if_exists(target_json_file)
 
                 # Moves the updated JSON file
-                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % ("AntennaTracker", "AntennaTracker")  # noqa: E501
+                if (
+                    'antennatracker' in key.lower()
+                ):  # To main the original script approach instead of the build_parameters.py approach.
+                    vehicle_json_file = (
+                        os.getcwd()
+                        + '/../new_params_mversion/%s/parameters-%s.json'
+                        % ("AntennaTracker", "AntennaTracker")
+                    )
                 else:
-                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value, key.title())
+                    vehicle_json_file = (
+                        os.getcwd()
+                        + '/../new_params_mversion/%s/parameters-%s.json'
+                        % (value, key.title())
+                    )
                 new_file = (
-                    key +
-                    "/source/_static/" +
-                    vehicle_json_file[str(vehicle_json_file).rfind("/")+1:])
+                    key
+                    + "/source/_static/"
+                    + vehicle_json_file[str(vehicle_json_file).rfind("/") + 1 :]
+                )
                 try:
                     debug("Moving " + vehicle_json_file)
                     # os.rename(vehicle_json_file, new_file)
@@ -687,8 +737,9 @@ def fetch_versioned_parameters(site=None):
 
                 # Copy all parameter files to vehicle folder IFF it is new
                 try:
-                    new_parameters_folder = (os.getcwd() +
-                                             '/../new_params_mversion/%s/' % value)
+                    new_parameters_folder = (
+                        os.getcwd() + '/../new_params_mversion/%s/' % value
+                    )
                     new_parameters_files = [
                         f for f in glob.glob(new_parameters_folder + "*.rst")
                     ]
@@ -698,25 +749,66 @@ def fetch_versioned_parameters(site=None):
                 for filename in new_parameters_files:
                     # Check possible cached version
                     try:
-                        new_file = (key +
-                                    "/source/docs/" +
-                                    filename[str(filename).rfind("/")+1:])
+                        new_file = (
+                            key
+                            + "/source/docs/"
+                            + filename[str(filename).rfind("/") + 1 :]
+                        )
                         if not os.path.isfile(new_file):
-                            debug("Copying %s to %s (target file does not exist)" % (filename, new_file))
+                            debug(
+                                "Copying %s to %s (target file does not exist)"
+                                % (filename, new_file)
+                            )
                             shutil.copy2(filename, new_file)
-                        elif os.path.isfile(filename.replace("new_params_mversion", "old_params_mversion")): # The cached file exists?  # noqa: E501
-
+                        elif os.path.isfile(
+                            filename.replace(
+                                "new_params_mversion", "old_params_mversion"
+                            )
+                        ):  # The cached file exists?
                             # Temporary debug messages to help with cache tasks.
-                            debug("Check cache: %s against %s" % (filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
-                            debug("Check cache with filecmp.cmp: %s" % filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
-                            debug("Check cache with sha256: %s" % is_the_same_file(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
+                            debug(
+                                "Check cache: %s against %s"
+                                % (
+                                    filename,
+                                    filename.replace(
+                                        "new_params_mversion", "old_params_mversion"
+                                    ),
+                                )
+                            )
+                            debug(
+                                "Check cache with filecmp.cmp: %s"
+                                % filecmp.cmp(
+                                    filename,
+                                    filename.replace(
+                                        "new_params_mversion", "old_params_mversion"
+                                    ),
+                                )
+                            )
+                            debug(
+                                "Check cache with sha256: %s"
+                                % is_the_same_file(
+                                    filename,
+                                    filename.replace(
+                                        "new_params_mversion", "old_params_mversion"
+                                    ),
+                                )
+                            )
 
-                            if ("parameters.rst" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built every time in order to enable Sphinx create the correct references across the wiki.  # noqa: E501
+                            if ("parameters.rst" in filename) or (
+                                not filecmp.cmp(
+                                    filename,
+                                    filename.replace(
+                                        "new_params_mversion", "old_params_mversion"
+                                    ),
+                                )
+                            ):
+                                # It is different?  OR is this one the latest. | Latest file must be built every time in order
+                                # to enable Sphinx create the correct references across the wiki.
                                 debug("Overwriting %s to %s" % (filename, new_file))
                                 shutil.copy2(filename, new_file)
                             else:
                                 debug("It will reuse the last build of " + new_file)
-                        else:   # If not cached, copy it anyway.
+                        else:  # If not cached, copy it anyway.
                             debug("Copying %s to %s" % (filename, new_file))
                             shutil.copy2(filename, new_file)
 
@@ -731,17 +823,26 @@ def create_latest_parameter_redirect(default_param_file, vehicle):
     redirects to the latest parameters file.(Create to maintaim retro
     compatibility.)
     """
-    out_line = "======================\nParameters List (Full)(\n======================\n"
+    out_line = (
+        "======================\nParameters List (Full)(\n======================\n"
+    )
     out_line += "\n.. raw:: html\n\n"
-    out_line += "   <script>location.replace(\"" + default_param_file[:-3] + "html" + "\")</script>"
+    out_line += (
+        "   <script>location.replace(\""
+        + default_param_file[:-3]
+        + "html"
+        + "\")</script>"
+    )
     out_line += "\n\n"
 
     filename = vehicle + "/source/docs/parameters.rst"
     with open(filename, "w") as text_file:
         text_file.write(out_line)
 
-    debug("Created html automatic redirection from parameters.html to %shtml" %
-          default_param_file[:-3])
+    debug(
+        "Created html automatic redirection from parameters.html to %shtml"
+        % default_param_file[:-3]
+    )
 
 
 def cache_parameters_files(site=None):
@@ -750,10 +851,13 @@ def cache_parameters_files(site=None):
     old_params_mversion/ folders and .html built files as well.
     """
     for key, value in PARAMETER_SITE.items():
-        if (site == key or site is None) and (key != 'AP_Periph'):  # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server # noqa: E501
+        if (
+            (site == key or site is None) and (key != 'AP_Periph')
+        ):  # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server
             try:
-                old_parameters_folder = (os.getcwd() +
-                                         '/../old_params_mversion/%s/' % value)
+                old_parameters_folder = (
+                    os.getcwd() + '/../old_params_mversion/%s/' % value
+                )
                 old_parameters_files = [
                     f for f in glob.glob(old_parameters_folder + "*.*")
                 ]
@@ -761,15 +865,14 @@ def cache_parameters_files(site=None):
                     debug("Removing %s" % file)
                     os.remove(file)
 
-                new_parameters_folder = (os.getcwd() +
-                                         '/../new_params_mversion/%s/' % value)
+                new_parameters_folder = (
+                    os.getcwd() + '/../new_params_mversion/%s/' % value
+                )
                 new_parameters_files = [
-                    f for f in glob.glob(new_parameters_folder +
-                                         "parameters-*.rst")
+                    f for f in glob.glob(new_parameters_folder + "parameters-*.rst")
                 ]
                 for filename in new_parameters_files:
-                    debug("Copying %s to %s" %
-                          (filename, old_parameters_folder))
+                    debug("Copying %s to %s" % (filename, old_parameters_folder))
                     shutil.copy2(filename, old_parameters_folder)
 
                 built_folder = os.getcwd() + "/" + key + "/build/html/docs/"
@@ -777,8 +880,7 @@ def cache_parameters_files(site=None):
                     f for f in glob.glob(built_folder + "parameters-*.html")
                 ]
                 for built in built_parameters_files:
-                    debug("Copying %s to %s" %
-                          (built, old_parameters_folder))
+                    debug("Copying %s to %s" % (built, old_parameters_folder))
                     shutil.copy2(built, old_parameters_folder)
 
             except Exception as e:
@@ -792,20 +894,24 @@ def put_cached_parameters_files_in_sites(site=None):
 
     """
     for key, value in PARAMETER_SITE.items():
-        if (site == key or site is None) and (key != 'AP_Periph'): # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server # noqa: E501
+        if (
+            (site == key or site is None) and (key != 'AP_Periph')
+        ):  # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server
             try:
-                built_folder = (os.getcwd() +
-                                '/../old_params_mversion/%s/' % value)
+                built_folder = os.getcwd() + '/../old_params_mversion/%s/' % value
                 built_parameters_files = [
                     f for f in glob.glob(built_folder + "parameters-*.html")
                 ]
                 vehicle_folder = os.getcwd() + "/" + key + "/build/html/docs/"
-                debug("Site %s getting previously built files from %s" %
-                      (site, built_folder))
+                debug(
+                    "Site %s getting previously built files from %s"
+                    % (site, built_folder)
+                )
                 for built in built_parameters_files:
-                    if ("latest" not in built):  # latest parameters files must be built every time
-                        debug("Reusing built %s in %s " %
-                              (built, vehicle_folder))
+                    if (
+                        "latest" not in built
+                    ):  # latest parameters files must be built every time
+                        debug("Reusing built %s in %s " % (built, vehicle_folder))
                         shutil.copy(built, vehicle_folder)
             except Exception as e:
                 error(e)
@@ -845,15 +951,24 @@ def copy_static_html_sites(site, destdir):
 def check_imports():
     '''check key imports work'''
     import importlib.metadata
+
     # package names to check the versions of. Note that these can be different than the string used to import the package
-    required_packages = ["sphinx_rtd_theme>=1.3.0", "sphinxcontrib.youtube>=1.2.0", "sphinx>=7.1.2", "docutils<0.19"]
+    required_packages = [
+        "sphinx_rtd_theme>=1.3.0",
+        "sphinxcontrib.youtube>=1.2.0",
+        "sphinx>=7.1.2",
+        "docutils<0.19",
+    ]
     for package in required_packages:
         debug("Checking for %s" % package)
         try:
             importlib.metadata.version(package.split("<")[0].split(">=")[0])
         except importlib.metadata.PackageNotFoundError as ex:
             progress(ex)
-            fatal("Require %s\nPlease run the wiki build setup script \"Sphinxsetup\"" % package)
+            fatal(
+                "Require %s\nPlease run the wiki build setup script \"Sphinxsetup\""
+                % package
+            )
     debug("Imports OK")
 
 
@@ -873,9 +988,13 @@ def check_ref_directives():
             try:
                 for i, line in enumerate(file.readlines()):
                     if character_before_ref_tag.search(line):
-                        error(f"Remove character before ref directive in \"{f}\" on line number {i+1}")
+                        error(
+                            f"Remove character before ref directive in \"{f}\" on line number {i + 1}"
+                        )
                     if character_after_ref_tag.search(line):
-                        error(f"Remove character after ref directive in \"{f}\" on line number {i+1}")
+                        error(
+                            f"Remove character after ref directive in \"{f}\" on line number {i + 1}"
+                        )
             except UnicodeDecodeError as ex:
                 print("UnicodeError in %s: " % f, ex)
                 sys.exit(1)
@@ -890,8 +1009,11 @@ def create_features_pages(site):
     # grab build_options which allows us to map from define to name
     # and description.  Create a convenience hash for it
     remove_if_exists("build_options.py")
-    fetch_url("https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/scripts/build_options.py")
+    fetch_url(
+        "https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/scripts/build_options.py"
+    )
     import build_options
+
     build_options_by_define = {}
     for f in build_options.BUILD_OPTIONS:
         build_options_by_define[f.define] = f
@@ -940,7 +1062,7 @@ def create_features_page(features, build_options_by_define, vehicletype):
     rows = []
     column_headings = ["Category", "Feature", "Included", "Description"]
     all_tables = ""
-    for platform_key in sorted(features_by_platform.keys(), key=lambda x : x.lower()):
+    for platform_key in sorted(features_by_platform.keys(), key=lambda x: x.lower()):
         rows = []
         platform_features = features_by_platform[platform_key]
         sorted_platform_features_in = []
@@ -955,8 +1077,10 @@ def create_features_page(features, build_options_by_define, vehicletype):
                 build_options = build_options_by_define[feature]
             except KeyError:
                 # mismatch between build_options.py and features.json
-                progress("feature %s (%s,%s) not in build_options.py" %
-                         (feature, platform_key, vehicletype))
+                progress(
+                    "feature %s (%s,%s) not in build_options.py"
+                    % (feature, platform_key, vehicletype)
+                )
                 continue
             if feature_in:
                 some_list = sorted_platform_features_in
@@ -964,11 +1088,11 @@ def create_features_page(features, build_options_by_define, vehicletype):
                 some_list = sorted_platform_features_not_in
             some_list.append((build_options.category, feature))
 
-        sorted_platform_features = (
-            sorted(sorted_platform_features_not_in, key=lambda x : x[0] + x[1]) +
-            sorted(sorted_platform_features_in, key=lambda x : x[0] + x[1]))
+        sorted_platform_features = sorted(
+            sorted_platform_features_not_in, key=lambda x: x[0] + x[1]
+        ) + sorted(sorted_platform_features_in, key=lambda x: x[0] + x[1])
 
-        for (category, feature) in sorted_platform_features:
+        for category, feature in sorted_platform_features:
             build_options = build_options_by_define[feature]
             row = [category, build_options.label]
             if features_in[feature]:
@@ -985,23 +1109,27 @@ def create_features_page(features, build_options_by_define, vehicletype):
         else:
             t = rst_table.tablify(rows, headings=column_headings)
         underline = "-" * len(platform_key)
-        all_tables += ('''
+        all_tables += '''
 .. _%s:
 
 %s
 %s
 
 %s
-''' % (reference_for_board(platform_key), platform_key, underline, t))
+''' % (reference_for_board(platform_key), platform_key, underline, t)
 
     index = ""
-    for board in sorted(features_by_platform.keys(), key=lambda x : x.lower()):
+    for board in sorted(features_by_platform.keys(), key=lambda x: x.lower()):
         index += '- :ref:`%s<%s>`\n\n' % (board, reference_for_board(board))
 
     all_features_rows = []
-    for feature in sorted(build_options_by_define.values(), key=lambda x : (x.category + x.label).lower()):
+    for feature in sorted(
+        build_options_by_define.values(), key=lambda x: (x.category + x.label).lower()
+    ):
         all_features_rows.append([feature.category, feature.label, feature.description])
-    all_features = rst_table.tablify(all_features_rows, headings=["Category", "Feature", "Description"])
+    all_features = rst_table.tablify(
+        all_features_rows, headings=["Category", "Feature", "Description"]
+    )
 
     return '''
 .. _binary-features:
@@ -1033,11 +1161,11 @@ Boards
 %s
 ''' % (vehicletype, index, all_features, all_tables)
 
+
 #######################################################################
 
 
 if __name__ == "__main__":
-
     if platform.system() == "Windows":
         multiprocessing.freeze_support()
 
@@ -1099,8 +1227,10 @@ if __name__ == "__main__":
         dest='fast',
         action='store_true',
         default=False,
-        help=("Incremental build using already downloaded parameters, log messages, and video thumbnails rather than cleaning "
-              "before build."),
+        help=(
+            "Incremental build using already downloaded parameters, log messages, and video thumbnails rather than cleaning "
+            "before build."
+        ),
     )
 
     args = parser.parse_args()
@@ -1152,7 +1282,7 @@ if __name__ == "__main__":
     if error_count > 0:
         progress("Reprinting error messages:", file=sys.stderr)
         for msg in error_log:
-            print(f"\033[1;31m[update.py][error]: {msg}\033[0m", file=sys.stderr) # noqa: E702,E231
+            print(f"\033[1;31m[update.py][error]: {msg}\033[0m", file=sys.stderr)
         fatal(f"{error_count} errors during Wiki build")
     else:
         print("Build completed without errors")
