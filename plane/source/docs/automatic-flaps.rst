@@ -4,8 +4,13 @@
 Automatic Flaps
 ===============
 
-Plane can control flaps in autonomous modes based on an airspeed
+Plane can automatically control flaps in both manual throttle and autonomous modes based on an airspeed
 schedule and/or during autotakeoffs and landings. Simply put you can specify two speeds and two flap settings.
+
+Two modes of operation are available depending on whether bit 15 of the :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit is set:
+
+:ref:`FLIGHT_OPTIONS<HT_OPTIONS>` bit "15" clear
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If your target speed (not your actual speed) is above the specified
 speeds then your flaps are set to the default (trim) position. If your
 target speed is lowered below the first flap speed, then flaps are
@@ -17,7 +22,14 @@ The target speed can be commanded by changing the value of cruise_speed
 in the parameter interface, by using the Do_Set_Speed command in a
 mission, or by the throttle stick position in FBW-B.
 
-Flaps can be configured on any channel (in older versions flaps could only be configured on channel 5, 6, 7 or 8 with 8 not available for manual control).
+:ref:`FLIGHT_OPTIONS<HT_OPTIONS>` bit 15 set
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- In manual throttle modes actual airspeed (or estimate) is used for flaps activation
+- In auto-throttle modes the minimum of target airspeed and actual airspeed is used
+
+This allows for auto flaps in manual throttle modes, and when speed drops in an un-commanded fashion in auto-throttle modes. This needs to be used with caution and carefully tested on an aircraft as it could result in an oscillation, as adding flaps can change the airspeed.
+
+Flaps can be configured on any channel.
 
 Software configuration
 ~~~~~~~~~~~~~~~~~~~~~~
