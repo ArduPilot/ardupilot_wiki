@@ -14,7 +14,7 @@ It has two controllers (attitude and rate) that work together to ensure the actu
 is following the demanded pitch and roll rates and attitudes.
  
 The pilot’s commands are limited by the amount of acceleration that can be
-commanded through the :ref:`ATC_ACCEL_P_MAX<ATC_ACCEL_P_MAX>` for pitch and :ref:`ATC_ACCEL_R_MAX<ATC_ACCEL_R_MAX>` for roll.
+commanded through the ``ATC_ACCEL_P_MAX`` for pitch and ``ATC_ACCEL_R_MAX`` for roll.
 
 The initial responsiveness (crispness/sluggishness) of the aircraft to the pilot
 input can be adjusted through the :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter. The pilot input and these parameters are used to determine the rate required to achieve the demanded response

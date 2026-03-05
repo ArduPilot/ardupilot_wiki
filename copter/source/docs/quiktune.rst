@@ -24,7 +24,7 @@ The script attempts to tune all these parameters (in the given order)
 - :ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Multi>` and :ref:`ATC_RAT_YAW_I<ATC_RAT_YAW_I__AC_AttitudeControl_Multi>`
 
 The advantage over :ref:`AutoTune <autotune>` is that QuikTune is safer because the vehicle does not need to move or twitch.
-The disadvantage is that QuikTune cannot find the vehicle's maximum rotational accelerations (e.g. :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>`, :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`, :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>`)
+The disadvantage is that QuikTune cannot find the vehicle's maximum rotational accelerations (e.g. ``ATC_ACCEL_R_MAX``, ``ATC_ACCEL_P_MAX``, ``ATC_ACCEL_Y_MAX``)
 
 Installing the Script
 =====================
