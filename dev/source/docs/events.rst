@@ -9,7 +9,7 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
-- Oct (Early ~ Mid), 2026: Developer conference in Ottawa, Canada (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-2026-in-ottawa-canada-october/140736>`__)
+- Oct 23rd ~ 25th 2026: Developer conference in Ottawa, Canada (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-2026-in-ottawa-canada-october/140736>`__)
 
 Past Events
 -----------
