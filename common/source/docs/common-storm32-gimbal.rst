@@ -21,6 +21,8 @@ Please refer to the `STorM32-BGC wiki pages <http://www.olliw.eu/storm32bgc-wiki
     Some v1.3x boards has been found to cause significant RF interference on the 433mhz and 915mhz band.
     Use with caution, if you are using either 433/915mhz control or telemetry.
 
+.. note:: Most available Storm32 gimbals do NOT have boards which support the latest MAVLink Gimbal Manage V2 protocols. `Here is one that does <https://gordiansystems.nl/products/3-axis-gimbal-storm32-v4-1-bgc?variant=53204117291341>`__.
+
 Connecting the gimbal to the autopilot
 ======================================
 
