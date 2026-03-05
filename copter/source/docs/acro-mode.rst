@@ -121,8 +121,8 @@ maneuvers on a vehicle that you are confident is very well tuned. Note
 that these parameters are global parameters that apply to all flight
 modes, not just ACRO.
 
--  :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` and
-   :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`: Maximum
+-  ``ATC_ACCEL_R_MAX`` and
+   ``ATC_ACCEL_P_MAX``: Maximum
    acceleration in roll/pitch axis measured in Centi-degres/sec/sec.
    Let's say you have a highly nimble quadcopter and you have your
    :ref:`ACRO_RP_RATE<ACRO_RP_RATE>` parameter set to 9, which translates to a roll request of
@@ -136,7 +136,7 @@ modes, not just ACRO.
    that this is completely different from tuning the Rate D terms for
    Pitch and Roll, and should come only after those terms are properly
    tuned.
--  :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>`: Maximum acceleration in Yaw axis measured in 
+-  ``ATC_ACCEL_Y_MAX``: Maximum acceleration in Yaw axis measured in 
    Centi-degress/sec/sec. Same principle as ``ATC_ACCEL_R_MAX`` and :ref:`ATC_ACCEL_P_MAX` 
    but on the YAW axis based on the :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` parameter value 
    (likely a much lower, more attainable value.)
