@@ -9,7 +9,7 @@ Follow Mode
 
 When switched into Follow, the vehicle will attempt to follow another vehicle (or anything publishing its position) at a specified offset.  The vehicle lead vehicle's position must be published to the vehicle in Follow mode using a telemetry system.
 
-The altitude is maintained with the altitude hold controller so the vehicle will attempt to hold its current altitude when the sticks are placed with 10% of mid-throttle. It will climb or descend at up to 2.5m/s (this speed is adjustable with the ``PILOT_SPEED_UP`` and ``PILOT_SPEED_DN`` parameters). The acceleration used to establish these speeds is set by ``PILOT_ACCEL_Z``.
+The altitude is maintained with the altitude hold controller so the vehicle will attempt to hold its current altitude when the sticks are placed with 10% of mid-throttle. It will climb or descend at up to 2.5m/s (this speed is adjustable with the :ref:`PILOT_SPD_UP<PILOT_SPD_UP>` and :ref:`PILOT_SPD_DN<PILOT_SPD_DN>` parameters). The acceleration used to establish these speeds is set by :ref:`PILOT_ACC_Z<PILOT_ACC_Z>`.
 
 The following parameters can be used to tune Follow Mode's performance:
 

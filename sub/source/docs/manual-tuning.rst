@@ -58,8 +58,8 @@ Several parameters impact speed or speed limits:
 - ``WPNAV_SPEED_DN``
 
 - :ref:`PILOT_SPEED<PILOT_SPEED>`
-- ``PILOT_SPEED_UP``
-- ``PILOT_SPEED_DN``
+- :ref:`PILOT_SPD_UP<PILOT_SPD_UP>`
+- :ref:`PILOT_SPD_DN<PILOT_SPD_DN>`
 
 Depth Control
 =============

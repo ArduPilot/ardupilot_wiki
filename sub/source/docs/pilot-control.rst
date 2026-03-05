@@ -77,9 +77,9 @@ Depending on vehicle design and pilot experience, it can be desirable to limit h
 - Automatic depth control (in modes like ALT_HOLD, SURFTRAK, POSHOLD, and CIRCLE) can be configured with the parameters
 
   - :ref:`THR_DZ<THR_DZ>` for the throttle deadzone, to avoid small joystick movements adjusting the current depth target
-  - ``PILOT_SPEED_UP`` and ``PILOT_ACCEL_Z``, for limiting maximum vertical speeds, and setting the vertical acceleration to reach those speeds
+  - :ref:`PILOT_SPD_UP<PILOT_SPD_UP>` and :ref:`PILOT_ACC_Z<PILOT_ACC_Z>`, for limiting maximum vertical speeds, and setting the vertical acceleration to reach those speeds
 
-    - ``PILOT_SPEED_DN`` can be optionally used to set the maximum descent rate independently, instead of defaulting to ``PILOT_SPEED_UP``
+    - :ref:`PILOT_SPD_DN<PILOT_SPD_DN>` can be optionally used to set the maximum descent rate independently, instead of defaulting to :ref:`PILOT_SPD_UP<PILOT_SPD_UP>`
   - :ref:`SURFACE_MAX_THR<SURFACE_MAX_THR>` scales down upwards thrust when near the surface, to avoid pushing through the water surface and sucking air
 - Automatic horizontal velocity control in POSHOLD mode can be limited by :ref:`PILOT_SPEED<PILOT_SPEED>`
 - It is also possible to configure the outputs directly, using
