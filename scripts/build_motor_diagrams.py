@@ -65,13 +65,9 @@ THIS_SCRIPT = pathlib.Path(__file__).resolve()
 
 DEFAULT_OUTPUT_DIR = THIS_SCRIPT.parent / "../copter/source/images"
 AP_MOTORS_TEST_JSON_FILE = THIS_SCRIPT.parent / "motor_diagram_data/AP_Motors_test.json"
-AP_MOTORS_DISPLAY_JSON_FILE = (
-    THIS_SCRIPT.parent / "motor_diagram_data/AP_Motors_display.json"
-)
+AP_MOTORS_DISPLAY_JSON_FILE = THIS_SCRIPT.parent / "motor_diagram_data/AP_Motors_display.json"
 SVG_TEMPLATE_FILE = THIS_SCRIPT.parent / "motor_diagram_data/motor_diagram_template.svg"
-WIKI_OUTPUT_FILE = (
-    THIS_SCRIPT.parent / "../copter/source/docs/connect-escs-and-motors.rst"
-)
+WIKI_OUTPUT_FILE = THIS_SCRIPT.parent / "../copter/source/docs/connect-escs-and-motors.rst"
 # TODO: future use for inserting wiki text automatically
 # WIKI_BEGIN_COMMENT = "BEGIN MOTOR DIAGRAMS"
 # WIKI_END_COMMENT = ".. END MOTOR DIAGRAMS"
@@ -222,7 +218,7 @@ def get_translated_coordinates(x, y, radius):
     scale motor vector (Roll/Pitch) output to svg coordinates
     """
     θ = math.atan2(-y, -x)
-    r = math.sqrt(y ** 2 + x ** 2) * radius
+    r = math.sqrt(y**2 + x**2) * radius
     x_translated = r * math.cos(θ)
     y_translated = r * math.sin(θ)
     return x_translated, y_translated, r, θ
@@ -294,9 +290,7 @@ def calculate_unique_motor_positions(layout):
     unique_motor_positions determines diagram scaling
     is_coaxial determines whether to apply a 3d skew to the diagram
     """
-    unique_motor_position_defs = {
-        (float(motor["Roll"]), float(motor["Pitch"])) for motor in layout["motors"]
-    }
+    unique_motor_position_defs = {(float(motor["Roll"]), float(motor["Pitch"])) for motor in layout["motors"]}
     unique_motor_positions = len(unique_motor_position_defs)
     is_coaxial = len(layout["motors"]) > unique_motor_positions
 
@@ -339,9 +333,7 @@ def append_motor_letter(
     # do not add lettering for bi-copters
     letter_element = None
     if unique_motor_positions > 2:
-        letter_element = append_svg_element(
-            layer_motor_letters, "text", x, y, chr(test_order + CHAR_CODE_BASE)
-        )
+        letter_element = append_svg_element(layer_motor_letters, "text", x, y, chr(test_order + CHAR_CODE_BASE))
         # if letter is added, it's potentially the most distant point from the origin
         extents.update(
             min(extents.minX, x - base_font_size / 2),
@@ -368,14 +360,10 @@ def handle_av_tails(layout, motor_element, number_element, letter_element, x, y)
     motor_element.set("style", f"transform: rotate3d({x_scale}, {y_scale}, 0, 45deg)")
     number_element.set("style", f"transform: rotate3d({x_scale}, {y_scale}, 0, 45deg)")
     if letter_element is not None:
-        letter_element.set(
-            "style", f"transform: rotate3d({x_scale}, {y_scale}, 0, 45deg)"
-        )
+        letter_element.set("style", f"transform: rotate3d({x_scale}, {y_scale}, 0, 45deg)")
 
 
-def append_frame(
-    svg_root, layout, layer_frame, is_coaxial, motor_center_points, frame_display_radius
-):
+def append_frame(svg_root, layout, layer_frame, is_coaxial, motor_center_points, frame_display_radius):
     """
     append frame depiction, including lines to represent frame arms
     """
@@ -386,12 +374,8 @@ def append_frame(
     if "FrameLines" in layout:
         # FrameLines from AP_Motors_display.json overrides
         for line in layout["FrameLines"]:
-            x1, y1, r1, θ1 = get_translated_coordinates(
-                line[0], line[1], frame_display_radius
-            )
-            x2, y2, r2, θ2 = get_translated_coordinates(
-                line[2], line[3], frame_display_radius
-            )
+            x1, y1, r1, θ1 = get_translated_coordinates(line[0], line[1], frame_display_radius)
+            x2, y2, r2, θ2 = get_translated_coordinates(line[2], line[3], frame_display_radius)
             append_svg_line(layer_frame, x1, y1, x2, y2)
     else:
         # simply connect all motors to the frame's center (at the diagram origin)
@@ -414,9 +398,7 @@ def append_footer_text(
     append frame class/type name and notes at the bottom of the diagram
     """
     frame_name = f'{layout["ClassName"]} {layout["TypeName"]}'
-    textElem = append_svg_element(
-        layer_frame_name, "text", 0, extents.maxY + base_font_size, frame_name
-    )
+    textElem = append_svg_element(layer_frame_name, "text", 0, extents.maxY + base_font_size, frame_name)
     # reduce font size for frame names that may exceed svg extents
     if len(frame_name) > LONG_FRAME_NAME_THRESHOLD:
         layer_frame_name.set("font-size", str(LONG_FRAME_NAME_FONT_SIZE))
@@ -455,9 +437,7 @@ def finalize_diagram(svg_root, layer_background, extents):
     return svg_width, svg_height
 
 
-def write_svg_file(
-    element, frame_class, frame_type, display_name, output_dir=DEFAULT_OUTPUT_DIR
-):
+def write_svg_file(element, frame_class, frame_type, display_name, output_dir=DEFAULT_OUTPUT_DIR):
     """
     write the svg file to disk
     """
@@ -477,9 +457,7 @@ def write_svg_file(
     return output_file
 
 
-def generate_diagram(
-    layout, svg_template, output_dir=DEFAULT_OUTPUT_DIR, diagram_list=[]
-):
+def generate_diagram(layout, svg_template, output_dir=DEFAULT_OUTPUT_DIR, diagram_list=[]):
     """
     generate a motor diagram (svg) for a given frame class and type
     """
@@ -538,19 +516,13 @@ def generate_diagram(
                 rotation_suffix = "-flipped"
             motor_rotation = f"{motor_rotation}{rotation_suffix}"
             layer_motors = svg_root.find(f'.//*[@id="layer-motors{layer_suffix}"]')
-            layer_motor_numbers = svg_root.find(
-                f'.//*[@id="layer-numbers{layer_suffix}"]'
-            )
-            layer_motor_letters = svg_root.find(
-                f'.//*[@id="layer-letters{layer_suffix}"]'
-            )
+            layer_motor_numbers = svg_root.find(f'.//*[@id="layer-numbers{layer_suffix}"]')
+            layer_motor_letters = svg_root.find(f'.//*[@id="layer-letters{layer_suffix}"]')
         elif y > 0:
             motor_rotation = f"{motor_rotation}-flipped"
 
         motor_element = append_svg_element(layer_motors, "use", x, y, motor_rotation)
-        number_element = append_svg_element(
-            layer_motor_numbers, "text", x, y, str(motor["Number"])
-        )
+        number_element = append_svg_element(layer_motor_numbers, "text", x, y, str(motor["Number"]))
         motor_center_points[motor["Number"]] = (x, y)
         extents.update(
             min(extents.minX, x - SINGLE_MOTOR_RADIUS),
@@ -612,9 +584,7 @@ def generate_diagram(
     svg_width, svg_height = finalize_diagram(svg_root, layer_background, extents)
 
     # write to file
-    output_file = write_svg_file(
-        svg, layout["Class"], layout["Type"], frame_name, output_dir
-    )
+    output_file = write_svg_file(svg, layout["Class"], layout["Type"], frame_name, output_dir)
 
     # update diagram list
     list_entry = {
@@ -651,9 +621,7 @@ def generate_single_diagram():
     """
     motors_json, svg_template = init_data()
 
-    frame_classes = {
-        layout["Class"]: layout["ClassName"] for layout in motors_json["layouts"]
-    }
+    frame_classes = {layout["Class"]: layout["ClassName"] for layout in motors_json["layouts"]}
     print("\nAvailable frame classes:")
     for class_id, class_name in sorted(frame_classes.items()):
         print(f"{class_id}: {class_name}")
@@ -664,9 +632,7 @@ def generate_single_diagram():
             raise ValueError(f"FRAME_CLASS={frame_class} does not exist.")
 
         frame_types = [
-            layout
-            for layout in motors_json["layouts"]
-            if layout["Class"] == frame_class and not layout.get("Skip", False)
+            layout for layout in motors_json["layouts"] if layout["Class"] == frame_class and not layout.get("Skip", False)
         ]
         if not frame_types:
             raise ValueError(f"No available frame types for FRAME_CLASS={frame_class}.")
@@ -676,18 +642,12 @@ def generate_single_diagram():
             print(f'{selected_layout["Type"]}: {selected_layout["TypeName"]}')
 
         frame_type = int(input("Enter frame type: "))
-        selected_layout = next(
-            (layout for layout in frame_types if layout["Type"] == frame_type), None
-        )
+        selected_layout = next((layout for layout in frame_types if layout["Type"] == frame_type), None)
         if selected_layout is None:
-            raise ValueError(
-                f"FRAME_TYPE={frame_type} does not exist for FRAME_CLASS={frame_class}."
-            )
+            raise ValueError(f"FRAME_TYPE={frame_type} does not exist for FRAME_CLASS={frame_class}.")
 
         diagram_list = []
-        output_file = generate_diagram(
-            selected_layout, svg_template, DEFAULT_OUTPUT_DIR, diagram_list
-        )
+        output_file = generate_diagram(selected_layout, svg_template, DEFAULT_OUTPUT_DIR, diagram_list)
         print(f"\nGenerated '{output_file.relative_to(THIS_SCRIPT.parent)}'")
 
         wiki_diagram_str = generate_wiki_image_tag(diagram_list[0])
@@ -726,15 +686,11 @@ def generate_all_diagrams():
     """
     diagram_list = []
     motors_json, svg_template = init_data()
-    layouts = [
-        layout for layout in motors_json["layouts"] if not layout.get("Skip", False)
-    ]
+    layouts = [layout for layout in motors_json["layouts"] if not layout.get("Skip", False)]
     layout_count = len(layouts)
     last_line_len = 0
     for i in range(layout_count):
-        output_file = generate_diagram(
-            layouts[i], svg_template, diagram_list=diagram_list
-        )
+        output_file = generate_diagram(layouts[i], svg_template, diagram_list=diagram_list)
         percentage = (i + 1) / layout_count * 100
         msg = f"Generating motor diagrams: [{percentage:3.0f}%] '{output_file.relative_to(THIS_SCRIPT.parent)}'"
         pad_count = max(0, last_line_len - len(msg))
@@ -858,8 +814,7 @@ def clean(directory="."):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description=(
-            "Generate ArduPilot Copter motor diagram(s) and optionally insert them into the "
-            "associated Copter wiki page."
+            "Generate ArduPilot Copter motor diagram(s) and optionally insert them into the associated Copter wiki page."
         )
     )
     parser.add_argument(
@@ -912,8 +867,8 @@ if __name__ == "__main__":
         generate_all_diagrams()
         exit(0)
 
-    # TODO: future use for inserting wiki text automatically
-    # if args.build or args.preview:
+        # TODO: future use for inserting wiki text automatically
+        # if args.build or args.preview:
         build_all(preview=args.preview)
         exit(0)
     if args.preview:
