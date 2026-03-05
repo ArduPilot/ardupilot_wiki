@@ -534,7 +534,7 @@ SubSystem and Error codes listed below
 
 Vehicle was unable to enter the desired flight mode normally because of a bad position estimate
 
-See `flight mode numbers here <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L34>`__
+See `flight mode numbers here <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h#L77>`__
 
 .. raw:: html
 
