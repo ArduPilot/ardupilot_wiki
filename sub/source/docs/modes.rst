@@ -49,8 +49,8 @@ ALT_HOLD Mode
 Depth Control Related
 ---------------------
 * :ref:`SURFACE_DEPTH<SURFACE_DEPTH>`
-* :ref:`PILOT_SPEED_UP<PILOT_SPEED_UP>`
-* :ref:`PILOT_SPEED_DN<PILOT_SPEED_DN>`
+* ``PILOT_SPEED_UP``
+* ``PILOT_SPEED_DN``
 * :ref:`PILOT_SPEED<PILOT_SPEED>`
 
 Auto/Guided Waypoint Navigation Related
