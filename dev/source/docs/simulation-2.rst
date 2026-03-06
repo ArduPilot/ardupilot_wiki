@@ -69,7 +69,6 @@ List of simulators (so they can appear in the menu):
     Silent Wings Soaring<soaring-sitl-with-silentwings>
     Last Letter <using-last_letter-as-an-external-sitl-simulator>
     CRRCSim <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>
-    HITL Simulators <hitl-simulators>
     Autotest Framework <the-ardupilot-autotest-framework>
     Unit Tests <unit-tests>
     SCRIMMAGE <sitl-with-scrimmage>
