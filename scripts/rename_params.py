@@ -15,9 +15,15 @@ from argparse import ArgumentParser
 
 parser = ArgumentParser(description="parameter conversion tool")
 
-parser.add_argument("--recurse", default=False, action='store_true', help="recurse into subdirectories")
-parser.add_argument("--nonref", default=False, action='store_true', help="include non-ref instances")
-parser.add_argument("--verbose", default=False, action='store_true', help="verbose messages")
+parser.add_argument(
+    "--recurse", default=False, action='store_true', help="recurse into subdirectories"
+)
+parser.add_argument(
+    "--nonref", default=False, action='store_true', help="include non-ref instances"
+)
+parser.add_argument(
+    "--verbose", default=False, action='store_true', help="verbose messages"
+)
 parser.add_argument("param_map", default=None, help="parameter map file")
 parser.add_argument("files", nargs="+", default=None, help="directories or files")
 
@@ -49,8 +55,7 @@ def process_file(fname, param_map):
     needs_write = False
     txt = open(fname, "r").read()
 
-    replacements = [":ref:`PARAMNAME <PARAMNAME>`",
-                    ":ref:`PARAMNAME<PARAMNAME>`"]
+    replacements = [":ref:`PARAMNAME <PARAMNAME>`", ":ref:`PARAMNAME<PARAMNAME>`"]
     if args.nonref:
         replacements.extend(["PARAMNAME"])
 

@@ -1,0 +1,3 @@
+[tool.ruff]
+format.quote-style="preserve"
+
