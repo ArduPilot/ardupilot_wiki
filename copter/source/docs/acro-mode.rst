@@ -121,8 +121,8 @@ maneuvers on a vehicle that you are confident is very well tuned. Note
 that these parameters are global parameters that apply to all flight
 modes, not just ACRO.
 
--  ``ATC_ACCEL_R_MAX`` and
-   ``ATC_ACCEL_P_MAX``: Maximum
+-  :ref:`ATC_ACC_R_MAX<ATC_ACC_R_MAX>` and
+   :ref:`ATC_ACC_P_MAX<ATC_ACC_P_MAX>`: Maximum
    acceleration in roll/pitch axis measured in Centi-degres/sec/sec.
    Let's say you have a highly nimble quadcopter and you have your
    :ref:`ACRO_RP_RATE<ACRO_RP_RATE>` parameter set to 9, which translates to a roll request of
@@ -136,9 +136,10 @@ modes, not just ACRO.
    that this is completely different from tuning the Rate D terms for
    Pitch and Roll, and should come only after those terms are properly
    tuned.
--  ``ATC_ACCEL_Y_MAX``: Maximum acceleration in Yaw axis measured in 
-   Centi-degress/sec/sec. Same principle as ``ATC_ACCEL_R_MAX`` and ``ATC_ACCEL_P_MAX`` 
-   but on the YAW axis based on the :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` parameter value 
+
+-  :ref:`ATC_ACC_Y_MAX<ATC_ACC_Y_MAX>`: Maximum acceleration in Yaw axis measured in 
+   Centi-degress/sec/sec. Same principle as :ref:`ATC_ACC_R_MAX<ATC_ACC_R_MAX>` and :ref:`ATC_ACC_P_MAX <ATC_ACC_P_MAX>`
+   but on the YAW axis based on the :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` parameter value
    (likely a much lower, more attainable value.)
 -  :ref:`ATC_THR_MIX_MAN <ATC_THR_MIX_MAN>`: Balance between attitude and throttle control. This 
    value can be increased to improve attitude control when the throttle is cut for better Airmode handling,
