@@ -2,6 +2,7 @@
 """
 Script to get last blog entries on Discourse (https://discuss.ardupilot.org/)
 """
+
 import argparse
 import json
 import re
@@ -45,21 +46,20 @@ class BlogPostsFetcher:
 
         self.files_names = {
             self.blog_url: (base_dir / "./frontend/blog_posts.json").resolve(),
-            self.news_url: (base_dir / "./frontend/news_posts.json").resolve()
+            self.news_url: (base_dir / "./frontend/news_posts.json").resolve(),
         }
         # Configure session with proper cookie handling
         self.session = requests.Session()
-        self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotPostGrabber/1.0)',
-            'Accept': 'application/json',
-            "Connection": "keep-alive",
-        })
+        self.session.headers.update(
+            {
+                'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotPostGrabber/1.0)',
+                'Accept': 'application/json',
+                "Connection": "keep-alive",
+            }
+        )
         # Add retry logic for 429 and other errors
         retries = Retry(
-            total=5,
-            backoff_factor=2,
-            status_forcelist=[429, 500, 502, 503, 504],
-            allowed_methods=["HEAD", "GET", "OPTIONS"]
+            total=5, backoff_factor=2, status_forcelist=[429, 500, 502, 503, 504], allowed_methods=["HEAD", "GET", "OPTIONS"]
         )
         adapter = HTTPAdapter(max_retries=retries)
         self.session.mount("https://", adapter)
@@ -119,8 +119,8 @@ class BlogPostsFetcher:
 
     @staticmethod
     def get_first_youtube_or_img_link(request: str) -> Tuple[str, bool]:
-        """ Returns the first YouTube link or image link in the request, if any.
-            True if the link is a Youtube link."""
+        """Returns the first YouTube link or image link in the request, if any.
+        True if the link is a Youtube link."""
         request_lines = request.splitlines()
         # Join the first 5 lines back together
         first_five_lines = '\n'.join(request_lines[:5])
@@ -134,12 +134,10 @@ class BlogPostsFetcher:
         youtube_links = url_pattern.findall(first_five_lines)
         img_links = img_pattern.findall(first_five_lines)[0] if img_pattern.findall(first_five_lines) else None
         if img_links is None:
-            img_links = img_pattern2.findall(first_five_lines)[0] if img_pattern2.findall(
-                first_five_lines) else None
+            img_links = img_pattern2.findall(first_five_lines)[0] if img_pattern2.findall(first_five_lines) else None
 
         # If there are image links before YouTube links, return empty string
-        if img_links and (not youtube_links or
-                          first_five_lines.index(img_links) < first_five_lines.index(youtube_links[0])):
+        if img_links and (not youtube_links or first_five_lines.index(img_links) < first_five_lines.index(youtube_links[0])):
             if 'github.com' in img_links:
                 img_links = img_links + "?raw=true"
             return img_links, False
@@ -178,8 +176,14 @@ class BlogPostsFetcher:
                 youtube_link = 'nops'
                 item['image_url'] = thing_link
 
-        return Post(item['title'], item['image_url'], has_image, youtube_link, single_post_link.rsplit('.', 1)[0],
-                    single_post_text.strip())
+        return Post(
+            item['title'],
+            item['image_url'],
+            has_image,
+            youtube_link,
+            single_post_link.rsplit('.', 1)[0],
+            single_post_text.strip(),
+        )
 
     def save_posts_to_json(self, url: str, n_posts: int, verbose: bool) -> None:
         content = self.execute_http_request_json(url)
