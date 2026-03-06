@@ -9,43 +9,43 @@ are no longer considered relevant to most users, but which may have some
 value to users with old hardware.
 
 [site wiki="copter,plane,rover,sub,planner"]
-.. toctree::
-    :maxdepth: 1
-
-    Loading ChibiOS firmware onto Pixhawk <common-loading-chibios-firmware-onto-pixhawk>
-    NAVIO+ Overview <common-navio-overview>
-    APM 2.x <common-apm25-and-26-overview>
-    PX4FMU <common-px4fmu-overview>
-    PX4IO <common-px4io-overview>
-    Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
-    Open Camera Control Board <common-camera-control-board>
-    VR Gimbal Controller (3-Axis Open Source) <common-vrgimbal>
-    External GPS AP2.x <common-disabling-the-built-in-gps-on-apm2-to-use-an-external-gps-instead>
-    GPS Module (External) <common-mounting-the-gps-module>
-    External Compass (Magnetometer) <common-external-magnetometer-for-improved-performance>
-    Recording and Playing Back Missions <common-recording-and-playing-back-missions>
-    AttoPilot Current/Voltage Sensor <common-using-a-current-sensor>
-    Erle-Brain2 Wiring Quick Start <common-erle-brain2-wiring-quick-start>
-    PXFmini Wiring Quick Start <common-pxfmini-wiring-quick-start>
-    Web Apps <common-web-apps>
-    Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>
-    Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>
+- `Loading ChibiOS firmware onto Pixhawk <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-loading-chibios-firmware-onto-pixhawk.rst>`_
+- `NAVIO+ Overview <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-navio-overview.rst>`_
+- `APM 2.x <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-apm25-and-26-overview.rst>`_
+- `PX4FMU <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-px4fmu-overview.rst>`_
+- `PX4IO <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-px4io-overview.rst>`_
+- `Qualcomm Snapdragon Flight Kit <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-qualcomm-snapdragon-flight-kit.rst>`_
+- `Open Camera Control Board <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-camera-control-board.rst>`_
+- `VR Gimbal Controller (3-Axis Open Source) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-vrgimbal.rst>`_
+- `External GPS AP2.x <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-disabling-the-built-in-gps-on-apm2-to-use-an-external-gps-instead.rst>`_
+- `GPS Module (External) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-mounting-the-gps-module.rst>`_
+- `External Compass (Magnetometer) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-external-magnetometer-for-improved-performance.rst>`_
+- `Recording and Playing Back Missions <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-recording-and-playing-back-missions.rst>`_
+- `AttoPilot Current/Voltage Sensor <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-using-a-current-sensor.rst>`_
+- `Erle-Brain2 Wiring Quick Start <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-erle-brain2-wiring-quick-start.rst>`_
+- `PXFmini Wiring Quick Start <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-pxfmini-wiring-quick-start.rst>`_
+- `Web Apps <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-web-apps.rst>`_
+- `Camera Triggering using CHDK <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-apm-to-chdk-camera-link-tutorial.rst>`_
+- `Camera Triggering using CHDK Tutorial <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-chdk-camera-control-tutorial.rst>`_
 
 [/site]
 [site wiki="copter,plane,rover,sub"]
-    Edge Quick Start <common-edge-quick-start>
-    Skysight Mono Camera Trigger <common-camera-trigger-skysight-mono>
-    PPM Encoders <common-ppm-encoder-8-channel-standalone-encoder>
-    PPM Encoder <common-ppm-encoder>
-    common-toshiba-can-escs
-    common-tarot-gimbal
-    DROTAG x Geotagger <common-geotagging-drotagx>
-    Robsense SwarmLink <common-telemetry-robsense-swarmlink>
-    MSP OSD (version 4.1) <common-msp-overview>
-    ArduSimple GPS <common-gps-ardusimple>
+- `Edge Quick Start <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-edge-quick-start.rst>`_
+- `Skysight Mono Camera Trigger <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-camera-trigger-skysight-mono.rst>`_
+- `PPM Encoders <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-ppm-encoder-8-channel-standalone-encoder.rst>`_
+- `PPM Encoder <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-ppm-encoder.rst>`_
+- `common-toshiba-can-escs <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-toshiba-can-escs.rst>`_
+- `common-tarot-gimbal <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-tarot-gimbal.rst>`_
+- `DROTAG x Geotagger <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-geotagging-drotagx.rst>`_
+- `Robsense SwarmLink <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-telemetry-robsense-swarmlink.rst>`_
+- `MSP OSD (version 4.1) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-msp-overview.rst>`_
+- `ArduSimple GPS <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-gps-ardusimple.rst>`_
 
 [/site]
 [site wiki="copter"]
+.. toctree::
+    :maxdepth: 1
+
     Boat Mode <boat-mode>
     Using Xbee radios for telemetry with APM <xbee-radios>
     Quick Start for RTFs <quick-start-guide>
@@ -63,7 +63,7 @@ value to users with old hardware.
     Copter Project News <project-news>
     Troubleshooting <troubleshooting>
     Landing Gear <landing-gear>
-    ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
+    `ADNS3080 Mouse Sensor (no longer supported) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-mouse-based-optical-flow-sensor-adns3080.rst>`_
     Analog Sonar (AC3.1) <sonar>
     Tricopter Setup <archived-tricopter>
     Position mode <ac2_positionmode>
@@ -73,19 +73,25 @@ value to users with old hardware.
     TradHeli Loading Firmware <loading-the-code>
 [/site]
 [site wiki="rover"]
+.. toctree::
+    :maxdepth: 1
+
     Pre-4.0 Rover Avoidance <rover-object-avoidance>
     Sonar Sensors <sonar-sensors>
     Tuning Steering and Navigation (ver 3.1 and older) <tuning-steering-and-navigation-for-a-rover>
     Tuning Waypoint Turn Speed (ver 3.1 and older) <speed-turn-parameter-tuning>
-    ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
+    `ADNS3080 Mouse Sensor (no longer supported) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-mouse-based-optical-flow-sensor-adns3080.rst>`_
 [/site]
 
 [site wiki="plane"]
+.. toctree::
+    :maxdepth: 1
+
     Migration from release 3.7 to 3.8 <plane-3-7-to-3-8-migration>
     Mandatory Hardware Configuration <first-time-apm-setup>
     Normal/Elevon/VTail Mode & Reversing Servos <reversing-servos-and-setting-normalelevon-mode>
     Channel Output Functions <channel-output-functions>
-    ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
+    `ADNS3080 Mouse Sensor (no longer supported) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-mouse-based-optical-flow-sensor-adns3080.rst>`_
     LAND mode <land-mode>
     Geofencing prior to 4.1 <geofencing>
     Manual Roll, Pitch and Yaw Controller Tuning(firmware before 4.1) <roll-pitch-controller-tuning>
@@ -126,10 +132,8 @@ value to users with old hardware.
     Trouble Shooting Pixhawk4 Boot <troubleshooting-pixhawkpx4-boot>
 [/site]
 [site wiki="copter,rover"]
-.. toctree::
-    :maxdepth: 1
+- `Visual Odometry with OpenKai and ZED <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-zed.rst>`_
 
-    Visual Odometry with OpenKai and ZED <common-zed>
 [/site]
 
 
