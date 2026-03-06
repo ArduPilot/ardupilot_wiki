@@ -400,9 +400,9 @@ Other functions are:
     Retract Mount2                        Move the :ref:`camera mount <common-cameras-and-gimbals>` to its retracted position.
     Relay 1 On/Off                       | Switch pulled low turns off the first :ref:`relay <common-relay>`,
                                          | pulled high turns on the first relay.
-    Landing Gear                          Deploys or Retracts :ref:`Landing Gear <common-landing-gear>`
-    Lost Vehicle Alarm                    Plays the `lost copter alarm <https://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__ through the buzzer
-    Emergency Stop Motors                 Stops motors immediately (`video <https://www.youtube.com/watch?v=-Db4u8LJE5w>`__)
+    Landing Gear                          Deploys or Retracts :ref:`Landing Gear <common-landing-gear>`.
+    Lost Vehicle Alarm                    Plays the `lost copter alarm <https://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__ through the buzzer.
+    Emergency Stop Motors                 Stops motors immediately (`video <https://www.youtube.com/watch?v=-Db4u8LJE5w>`__).
     Motor Interlock                      | Motor Interlock controls the way the heliRSC (motor throttle control)
                                          | output is generated in Traditional Helicopters and HeliQuads. If
                                          | >1200us, it enables the Motor Interlock function, below it is disabled.
@@ -423,10 +423,10 @@ Other functions are:
                                          | goes high. Bringing the switch back to low will return the vehicle
                                          | to the mode indicated by the ch5 flight mode switch.
     ADSB-Avoidance                       | When the switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>`
-                                         | (avoidance of manned aircraft) is enabled, otherwise it's disabled
+                                         | (avoidance of manned aircraft) is enabled, otherwise it's disabled.
     Precision Loiter                     | Turns on/off :ref:`Precision Loiter <precision-landing-and-loiter>`.
                                          | (i.e. holding position above a target in Loiter mode
-                                         | using IR-Lock sensor)
+                                         | using IR-Lock sensor).
     Object Avoidance                     | When the switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>`
                                          | or :ref:`TeraRanger Tower<common-teraranger-tower-objectavoidance>`. When low, object avoidance is disabled.
     Arm/Disarm(4.1 and earlier)          | Arms the vehicle if the switch goes high (subject to arming checks).
@@ -444,7 +444,7 @@ Other functions are:
     Winch Enable                         | Enables Winch operation. The switch in the low position on this
                                          | channel relaxes the winch.
     Winch Control                        | Controls the speed and direction of the winch. Low: takeup,
-                                         | Middle: stop, High: unreel
+                                         | Middle: stop, High: unreel.
     RC Override Enable                   | This is a 3-position switch that enables (high) or disables (low)
                                          | the use of RC overrides from the Ground Control Station.
     Learn Cruise                         | This starts the cruise speed and the throttle learning sequence
@@ -472,18 +472,17 @@ Other functions are:
                                          | rangefinder is toward the ground (low) or ceiling (high),
                                          | or disabled, otherwise.
     Standby                              | This puts the autopilot control loops into a soft standby mode
-                                         | so that a parallel,redundant autopilot or
+                                         | so that a parallel, redundant autopilot or
                                          | companion computer can assume control of the vehicle.
                                          | The PID loops, position, and altitude controllers are modified
-                                         | such that the autopilot can smoothly resum autopilot can
-                                         | smoothly resume control of the vehicle when standby is
-                                         | subsequently disabled. Switching of outputs or other peripherals
-                                         | must be done by external circuitry.
+                                         | such that the autopilot can smoothly resume control of the vehicle
+                                         | when standby is subsequently disabled. Switching of outputs or 
+                                         | other peripherals must be done by external circuitry.
     RunCam Control                       | Allows starting and stopping video recording of compatible
                                          | RunCam cameras. See :ref:`common-camera-runcam`.
     RunCam OSD Control                   | Enables control of RunCam cameras OSDs.
                                          | See :ref:`common-camera-runcam`.
-    VISO Align                            Aligns external Visual Odometry with current autopilot AHRS
+    VISO Align                            Aligns external Visual Odometry with current autopilot AHRS.
     Disarm                               | Disarm the vehicle unconditionally and immediately. Unlike
                                          | Emergency Stop Motors, which waits for :ref:`DISARM_DELAY<DISARM_DELAY>`
                                          | in Copter.
@@ -492,16 +491,16 @@ Other functions are:
                                          | Wing Flight section of :ref:`quadplane-flying`.
     ZigZag Mode Auto Enable              | Enable automatic zigzag and sprayer in ZIGZAG mode.
                                          | See :ref:`zigzag-mode`.
-    AIRMODE(not a flight mode)            Enables and disables AIRMODE feature. See :ref:`airmode`
-    Generator                             Mode control for Richenpower Hybrid Power Generator
-    Non Auto Terrain Follow Disable       Disables Terrain Following in CRUISE and FBWB modes
-    CROW Mode Switch                      Selects between different CROW aileron operating modes
-    Soaring Enable                        Enables Soaring function operating modes
+    AIRMODE(not a flight mode)            Enables and disables AIRMODE feature. See :ref:`airmode`.
+    Generator                             Mode control for Richenpower Hybrid Power Generator.
+    Non Auto Terrain Follow Disable       Disables Terrain Following in CRUISE and FBWB modes.
+    CROW Mode Switch                      Selects between different CROW aileron operating modes.
+    Soaring Enable                        Enables Soaring function operating modes.
     Force Flare                          | Moves tilt motors to the upright position and optionally sets
                                          | pitch for flare when landing Tilt Rotor QuadPlanes.
                                          | Middle: The pilot retains pitch control during a flare.
-                                         | High: Pitch set to :ref:`LAND_PITCH_DEG<LAND_PITCH_DEG>`. Allows switching
-    EKF Source Set                       | between up to three source sets manually for EKF3 (only).
+                                         | High: Pitch set to :ref:`LAND_PITCH_DEG<LAND_PITCH_DEG>`. 
+    EKF Source Set                       | Allows switching between up to three source sets manually for EKF3 (only).
                                          | See :ref:`common-non-gps-to-gps`.
     Airspeed Ratio Calibrate             | Activates calibration of airspeed ratio in flight. Best results
                                          | occur while executing course changes over 360 degrees over
@@ -509,7 +508,7 @@ Other functions are:
     VTX Power                            | Allows reading up to a 6-position switch for controlling Video
                                          | Transmitter Power. See :ref:`common-vtx`.
     FBWA_TAILDRAGGER                     | Enables FBWA taildragger takeoff mode using elevator to
-                                         | hold tail on the ground until airspeed is reached
+                                         | hold tail on the ground until airspeed is reached.
     MODE_SWITCH_RESET                     Forces mode switch to be re-read.
     WindVane home direction offset       | This is a continuous input channel providing a -45 to +45
                                          | degree offset of the initial wind direction when using
@@ -518,18 +517,18 @@ Other functions are:
                                          | on a momentary switch since only low to high transitions
                                          | toggle the camera mode. Used only with Solo gimbals
                                          | presently.
-    Trigger EKF lane switch               Attempts to force an EKF lane switch
-    Trigger EKF Yaw reset                 Force EKF Yaw reset
-    GPS Disable Yaw                       Disables yaw for testing (advanced users only!)
+    Trigger EKF lane switch               Attempts to force an EKF lane switch.
+    Trigger EKF Yaw reset                 Force EKF Yaw reset.
+    GPS Disable Yaw                       Disables yaw for testing (advanced users only!).
     Disable Airspeed Use                  Forces Airspeed Use to be disabled for testing in the air.
     Enable Autotuning                    | Allows tuning without entering AUTOTUNE mode. (i.e. if you
                                          | place the vehicle in LOITER/AUTO with stick mixing enabled,
                                          | it can autotune while the vehicle is loitering by using sticks,
                                          | but enabling autotuning can occur in any mode other
-                                         | than MANUAL.)
-    Loweheiser Starter                   | Enable starter on Loweheiser generator
+                                         | than MANUAL).
+    Loweheiser Starter                    Enable starter on Loweheiser generator.
     SwitchExternalAHRS                   | If EKF3 and an external AHRS module are enabled, high on this
-                                         | switch switches from EKF3 to the external AHRS
+                                         | switch switches from EKF3 to the external AHRS.
     SIMPLE mode heading reset            | Resets original heading reference to current heading
                                          | for SIMPLE Mode.
     ARM/DISARM (4.2 and higher)          | Arms the vehicle if the switch goes high (subject to arming
@@ -592,39 +591,39 @@ Other functions are:
                                          | landing phase of any AUTO mission, and the :ref:`PAYLOAD_PLACE <mav_cmd_nav_payload_place>`
                                          | mission command. It does not  affect the fixed wing
                                          | approach phase of a VTOL landing, QLAND or QRTL modes.
-    Camera Image Tracking                 Activate Camera Image Tracking (only supported by ViewPro camera gimbals)
-    Camera Lens                           Select the active camera lens (only supported by ViewPro camera gimbals)
-    VTOL Fwd Throttle disable             Overrides use of forward throttle in VTOL modes
-    Mount LRF Enable                      Enable(switch high) ranging updates
-    FlightMode Pause                      In Guided/Auto modes, pauses mission
-    ICEngine start / stop                 Controls ICE engine starter output :ref:`ICE engines<common-ice>`
-    Autotune_test_gains                   After autotune,allows selecting tune(high) or pretune gains
-    VTOL QuickTune                        Autotunes QuadPlane VTOL PIDs, see :ref:`quicktune`
-    ROLL Input                            ROLL input channel. (replaces RCMAP)
-    PITCH Input                           PITCH input channel. (replaces RCMAP)
-    THROTTLE Input                        THROTTLE input channel. (replaces RCMAP)
-    YAW Input                             YAW input channel. (replaces RCMAP)
+    Camera Image Tracking                 Activate Camera Image Tracking (only supported by ViewPro camera gimbals).
+    Camera Lens                           Select the active camera lens (only supported by ViewPro camera gimbals).
+    VTOL Fwd Throttle disable             Overrides use of forward throttle in VTOL modes.
+    Mount LRF Enable                      Enable(switch high) ranging updates.
+    FlightMode Pause                      In Guided/Auto modes, pauses mission.
+    ICEngine start / stop                 Controls ICE engine starter output :ref:`ICE engines<common-ice>`.
+    Autotune_test_gains                   After autotune,allows selecting tune(high) or pretune gains.
+    VTOL QuickTune                        Autotunes QuadPlane VTOL PIDs, see :ref:`quicktune`.
+    ROLL Input                            ROLL input channel (replaces RCMAP).
+    PITCH Input                           PITCH input channel (replaces RCMAP).
+    THROTTLE Input                        THROTTLE input channel (replaces RCMAP).
+    YAW Input                             YAW input channel (replaces RCMAP).
     Mainsail                             | This RC channel will drive the output of the MainSail 
-                                         | output ( ``SERVOx_FUNCTION`` = 89)instead of being set from 
+                                         | output ( ``SERVOx_FUNCTION`` = 89) instead of being set from 
                                          | the Throttle Input channel (useful if it has an auxiliary motor
                                          | using that input). See Sailboat :ref:`sailboat-configure` for 
                                          | more information about the main sail setup.
     Flaps                                | This RC channel provides manual control the amount of FLAP 
                                          | deflection and can also be used in conjunction with
-                                         |  :ref:`automatic-flaps` and/or :ref:`flaperons<flaperons-on-plane>`.
-                                         | (Replaces the old FLAP_IN_CHANNEL parameter)
+                                         | :ref:`automatic-flaps` and/or :ref:`flaperons<flaperons-on-plane>`
+                                         | (Replaces the old FLAP_IN_CHANNEL parameter).
     Forward Throttle                     | Manual forward motor throttle in QSTABILIZE, QACRO, and
-                                         | QHOVER modes
-    Airbrakes                             Controls deployment of :ref:`Airbrakes<airbrakes-on-plane>`
+                                         | QHOVER modes.
+    Airbrakes                             Controls deployment of :ref:`Airbrakes<airbrakes-on-plane>`.
     Walking Robot Height                  Input channel for Walking Robot Height. See :ref:`walking-robots`.
-    Mount1 Roll                           1st camera gimbal's roll control
-    Mount1 Pitch                          1st camera gimbal's pitch control
-    Mount1 Yaw                            1st camera gimbal's yaw control
-    Mount2 Roll                           2nd camera gimbal's roll control
-    Mount2 Pitch                          2nd camera gimbal's pitch control
-    Mount2 Yaw                            2nd camera gimbal's yaw control
-    Transmitter Tuning Channel           Copter tuning knob channel, see :ref:`common-transmitter-tuning`
-    Scripting RC channels                 Allows reading a dedicated RC channel for script inputs
+    Mount1 Roll                           1st camera gimbal's roll control.
+    Mount1 Pitch                          1st camera gimbal's pitch control.
+    Mount1 Yaw                            1st camera gimbal's yaw control.
+    Mount2 Roll                           2nd camera gimbal's roll control.
+    Mount2 Pitch                          2nd camera gimbal's pitch control.
+    Mount2 Yaw                            2nd camera gimbal's yaw control.
+    Transmitter Tuning Channel           Copter tuning knob channel, see :ref:`common-transmitter-tuning`.
+    Scripting RC channels                 Allows reading a dedicated RC channel for script inputs.
    ===================================== =======================================================================
 
 Check the channel range
