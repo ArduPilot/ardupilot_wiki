@@ -25,6 +25,7 @@ Copters from Partners
 * `Hitec - SUI Endurance <https://hitecnology.com/drones/sui-endurance-multipurpose-professional-multirotor>`__
 * `Holybro - S500 V2 Kit <https://shop.holybro.com/s500-v2-kitmotor2216-880kv-propeller1045_p1153.html>`__
 * `Holybro - X500 Kit <https://shop.holybro.com/x500-kit_p1180.html>`__
+* `Holybro - X650 Kit <https://holybro.com/collections/x650-kits/products/x650-development-kit>`__
 * `Raefly - Xunwing 2 </https://raefly.com/>`__
 * `TT Robotix - H2-X6 Phoenix H6 Multirotor <http://www.ttrobotix.com/products/detail/926.html>`__
 * `TT Robotix - X-450 Scout Quadcopter <http://www.ttrobotix.com/products/detail/928.html>`__
