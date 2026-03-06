@@ -137,7 +137,7 @@ modes, not just ACRO.
    Pitch and Roll, and should come only after those terms are properly
    tuned.
 -  ``ATC_ACCEL_Y_MAX``: Maximum acceleration in Yaw axis measured in 
-   Centi-degress/sec/sec. Same principle as ``ATC_ACCEL_R_MAX`` and :ref:`ATC_ACCEL_P_MAX` 
+   Centi-degress/sec/sec. Same principle as ``ATC_ACCEL_R_MAX`` and ``ATC_ACCEL_P_MAX`` 
    but on the YAW axis based on the :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` parameter value 
    (likely a much lower, more attainable value.)
 -  :ref:`ATC_THR_MIX_MAN <ATC_THR_MIX_MAN>`: Balance between attitude and throttle control. This 
