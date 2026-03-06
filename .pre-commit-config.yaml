@@ -5,7 +5,7 @@
 #  pre-commit run --all-files: run all the hooks against all the files. This is a useful invocation if you are using pre-commit in CI.
 
 repos:
-  - repo: https://github.com/pycqa/flake8
-    rev: 7.3.0
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.5
     hooks:
-    - id: flake8
+      - id: ruff-check
