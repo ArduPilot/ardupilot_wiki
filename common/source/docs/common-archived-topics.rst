@@ -83,17 +83,14 @@ value to users with old hardware.
 [/site]
 
 [site wiki="plane"]
-.. toctree::
-    :maxdepth: 1
-
-    Migration from release 3.7 to 3.8 <plane-3-7-to-3-8-migration>
-    Mandatory Hardware Configuration <first-time-apm-setup>
-    Normal/Elevon/VTail Mode & Reversing Servos <reversing-servos-and-setting-normalelevon-mode>
-    Channel Output Functions <channel-output-functions>
-    `ADNS3080 Mouse Sensor (no longer supported) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-mouse-based-optical-flow-sensor-adns3080.rst>`_
-    LAND mode <land-mode>
-    Geofencing prior to 4.1 <geofencing>
-    Manual Roll, Pitch and Yaw Controller Tuning(firmware before 4.1) <roll-pitch-controller-tuning>
+- `Migration from release 3.7 to 3.8 <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/plane-3-7-to-3-8-migration.rst>`_
+- `Mandatory Hardware Configuration <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/first-time-apm-setup.rst>`_
+- `Normal/Elevon/VTail Mode & Reversing Servos <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/reversing-servos-and-setting-normalelevon-mode.rst>`_
+- `Channel Output Functions <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/channel-output-functions.rst>`_
+- `ADNS3080 Mouse Sensor (no longer supported) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-mouse-based-optical-flow-sensor-adns3080.rst>`_
+- `LAND mode <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/land-mode.rst>`_
+- `Geofencing prior to 4.1 <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/geofencing.rst>`_
+- `Manual Roll, Pitch and Yaw Controller Tuning(firmware before 4.1) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/roll-pitch-controller-tuning.rst>`_
 [/site]
 [site wiki="dev"]
 - `Building ArduPilot for APM2.x with Eclipse on Windows <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-apm2-with-eclipse-on-windows.rst>`_
