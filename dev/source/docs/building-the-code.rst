@@ -62,8 +62,6 @@ Links to other pages of interest or advanced topics
     Setup Eclipse on Windows for building with waf <building-setup-windows-eclipse>
     Setup the Build Environment on MacOSX <building-setup-mac>
     Building for NAVIO2 on RPi3 <building-for-navio2-on-rpi3>
-    Building for Erle-Brain 2 <building-for-erle-brain-2>
-    Building for Erle-Brain <building-for-erle-brain>
     Building for Bebop 2 <building-for-bebop-2>
     Building for Bebop on Linux <building-for-bebop-on-linux>
     Building for BeagleBone Black <building-for-beaglebone-black-on-linux>
