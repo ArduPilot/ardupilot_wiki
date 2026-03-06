@@ -36,9 +36,9 @@ of your helicopter. The helicopter will be easily controllable with just the FF 
 from the defaults.  
 
 +----------------------------------------------------------------------+---------+
-| ``ATC_ACCEL_P_MAX``                                                  | 110000  |
+| :ref:`ATC_ACC_P_MAX<ATC_ACC_P_MAX>`                                  | 1100    |
 +----------------------------------------------------------------------+---------+
-| ``ATC_ACCEL_R_MAX``                                                  | 110000  |
+| :ref:`ATC_ACC_R_MAX<ATC_ACC_R_MAX>`                                  | 1100    |
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_ANG_PIT_P<ATC_ANG_PIT_P>`                                  | 4.5     |
 +----------------------------------------------------------------------+---------+
@@ -92,7 +92,7 @@ with tuning pitch and roll. Below are the suggested settings for yaw.
 .. Note::  UAV helicopters, as opposed to sport helicopters, will usually be running low headspeed and higher disc loading. With a mechanically driven tail this also means lower than normal tail speed and reduced tail authority. If your helicopter meets this description, it is recommended to set :ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF__AC_AttitudeControl_Heli>` to 0.05 before the first test hover.
 
 +----------------------------------------------------------------------+----------+
-| ``ATC_ACCEL_Y_MAX``                                                  | 80000    |
+| :ref:`ATC_ACC_Y_MAX<ATC_ACC_Y_MAX>`                                  | 800      |
 +----------------------------------------------------------------------+----------+
 | :ref:`ATC_ANG_YAW_P<ATC_ANG_YAW_P>`                                  | 4.5      |
 +----------------------------------------------------------------------+----------+
