@@ -86,12 +86,19 @@ This test will allow to test the altitude controller and ensure the stability of
 
 2. Take off in STABILIZE and increase altitude to 5m. Switch to AltHold and be ready to switch back to STABILIZE. If the aircraft is hovering at a very low hover throttle value you may hear a reasonably fast oscillation in the motors. Ensure the aircraft has spent at least 30 seconds in hover to let the hover throttle parameter converge to the correct value. Land and disarm the aircraft.
 
-3. Set these parameters on ground and preferably disarm  (A confident pilot could set them in flight with GCS or CH6 tuning knob):
+3. Set these parameters on ground and preferably disarm (A confident pilot could set them in flight with GCS or CH6 tuning knob):
+
+  - :ref:`PSC_D_ACC_I<PSC_D_ACC_I>` to 0.2 x :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
+  - :ref:`PSC_D_ACC_P<PSC_D_ACC_P>` to 0.1 x :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
+
+.. note:: In Copter 4.6 and earlier these parameters were named ``PSC_ACCZ_I`` and ``PSC_ACCZ_P`` and were scaled 10x larger:
 
   - :ref:`PSC_D_ACC_I<PSC_D_ACC_I>` to 2 x :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
   - :ref:`PSC_D_ACC_P<PSC_D_ACC_P>` to :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
 
-if AltHold starts to oscillate up and down the position and velocity controllers may need to be reduced by 50%. These values are: ``PSC_POSZ_P`` and :ref:`PSC_D_VEL_P<PSC_D_VEL_P>`.
+if AltHold starts to oscillate up and down the position and velocity controllers may need to be reduced by 50%. These values are: :ref:`PSC_D_POS_P<PSC_D_POS_P>` and :ref:`PSC_D_VEL_P<PSC_D_VEL_P>`.
+
+.. note:: In Copter 4.6 and earlier :ref:`PSC_D_VEL_P<PSC_D_VEL_P>` was named ``PSC_VELZ_P`` and :ref:`PSC_D_POS_P<PSC_D_POS_P>` was named ``PSC_POSZ_P``.
 
 Harmonic Notch Filtering
 ========================
