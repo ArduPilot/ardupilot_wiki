@@ -1,0 +1,4 @@
+[tool.codespell]
+check-filenames = true
+ignore-words-list = "bu,collets,diamon,dout,empy,extint,fram,inh,minite,ned,parm,produkt,retuned,ser,sitl,te,theses,thi,tje,ue,xwindows"
+skip = "LICENSE,*.ai,*.pdf,*.svg"
