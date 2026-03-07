@@ -65,7 +65,7 @@ The full list of input shaping parameters are:
 - :ref:`ATC_RATE_P_MAX <ATC_RATE_P_MAX>`
 - :ref:`ATC_RATE_R_MAX <ATC_RATE_R_MAX>`
 - :ref:`ATC_RATE_Y_MAX <ATC_RATE_Y_MAX>`
-- :ref:`ATC_SLEW_YAW <ATC_SLEW_YAW>`
+- :ref:`ATC_RATE_WPY_MAX <ATC_RATE_WPY_MAX>`
 - :ref:`PILOT_ACC_Z<PILOT_ACC_Z>`
 - :ref:`PILOT_SPD_DN<PILOT_SPD_DN>`
 - :ref:`PILOT_SPD_UP<PILOT_SPD_UP>`

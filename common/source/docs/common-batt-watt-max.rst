@@ -43,6 +43,6 @@ By examining a post run dataflash log, and noting anywhere excessive battery vol
 [/site]
 [site wiki="rover"]
 
-You can use :ref:`MOT_BAT_WATT_TC <MOT_BAT_WATT_TC>` to smooth the application of the :ref:`BATT_WATT_MAX<BATT_WATT_MAX>`limit.
+You can use :ref:`MOT_BAT_WATT_TC <MOT_BAT_WATT_TC>` to smooth the application of the :ref:`BATT_WATT_MAX<BATT_WATT_MAX>` limit.
 [/site]
-
+[copywiki destination="plane,rover"]
