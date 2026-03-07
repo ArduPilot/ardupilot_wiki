@@ -477,7 +477,7 @@ Should always be 0b00000111 / 0x07 / 7 (decimal)
    <td>float</td>
    <td>
 
-If GUID_OPTIONS = 0: climb rate where 0.5=no climb, 0=descend at WPNAV_SPEED_DN, 1=climb at WPNAV_SPEED_UP
+If GUID_OPTIONS = 0: climb rate where 0.5=no climb, 0=descend at WP_SPD_DN, 1=climb at WP_SPD_UP
 If GUID_OPTIONS = 8: thrust from 0 to 1
 
 .. raw:: html
