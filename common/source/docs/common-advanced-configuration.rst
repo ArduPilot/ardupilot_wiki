@@ -16,7 +16,6 @@ tuning options for the vehicle.
     AutoTune <autotune>
     Auxiliary Function Switches <common-auxiliary-functions>
     Baro Temperature Compensation <common-baro-temp-comp>
-    Boat mode <boat-mode>
     Bootloader Update <common-bootloader-update>
 [/site]
 [site wiki="rover"]
