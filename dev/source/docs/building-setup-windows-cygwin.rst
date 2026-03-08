@@ -21,7 +21,7 @@ Install Cygwin
 
 ::
 
-    setup-x86_64.exe -P autoconf,automake,ccache,cygwin32-gcc-g++,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,python37,python37-future,python37-lxml,python37-pip,libxslt-devel,python37-devel,procps-ng,zip,gdb,ddd
+    setup-x86_64.exe -P autoconf,automake,ccache,cygwin32-gcc-g++,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,python39,python39-devel,python39-lxml,python39-pip,libxslt-devel,procps-ng,zip,gdb,ddd
     
 Or, for a stepped install:
 
@@ -66,15 +66,13 @@ Or, for a stepped install:
    +------------------+----------------------------------------------------------------------------------+
    | libxslt-devel    | Libs \| libxslt-devel: XML template library (development files)                  |
    +------------------+----------------------------------------------------------------------------------+
-   | python37         | Python \| python37: Python3 language interpreter                                 |
+   | python39         | Python \| python39: Python3 language interpreter                                 |
    +------------------+----------------------------------------------------------------------------------+
-   | python37-devel   | Python \| python37-devel: Python3 language interpreter                           |
+   | python39-devel   | Python \| python39-devel: Python3 language interpreter                           |
    +------------------+----------------------------------------------------------------------------------+
-   | python37-future  | Python \| python37-future: Clean single-source support for Python 3 and 2        |
+   | python39-lxml    | Python \| python39-lxml: Gnome XML Library (Python bindings)                     |
    +------------------+----------------------------------------------------------------------------------+
-   | python37-lxml    | Python \| python37-lxml: Gnome XML Library (Python bindings)                     |
-   +------------------+----------------------------------------------------------------------------------+
-   | python37-pip     | Python \| python37-pip: Python package installation tool                         |
+   | python39-pip     | Python \| python39-pip: Python package installation tool                         |
    +------------------+----------------------------------------------------------------------------------+
    | procps-ng        | System \| procps-ng: System and process monitoring utilities (required for pkill)|
    +------------------+----------------------------------------------------------------------------------+
@@ -123,12 +121,12 @@ Set up directories/paths and extra packages in Cygwin
 
 #. open and then close the "Cygwin Terminal" application from the desktop or start menu icon.  This creates initialization files for the user in the Cygwin home directory.
 
-#. open the "Cygwin Terminal" application from the desktop or start menu icon.  Enter the following command to set Python 3.7 to be the default Python and then install additional Python packages:
+#. open the "Cygwin Terminal" application from the desktop or start menu icon.  Enter the following command to set Python 3.9 to be the default Python and then install additional Python packages:
 
 ::
 
-    ln -s /usr/bin/python3.7 /usr/bin/python
-    ln -s /usr/bin/pip3.7 /usr/bin/pip
+    ln -s /usr/bin/python3.9 /usr/bin/python
+    ln -s /usr/bin/pip3.9 /usr/bin/pip
     pip install pyserial pymavlink empy<4.0
 
 Download ArduPilot Source
