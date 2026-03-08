@@ -40,8 +40,7 @@ ENV PARAMVERSIONING=$PARAMVERSIONING
 WORKDIR /
 RUN if [ "$PARAMVERSIONING" -ne 1 ]; then echo "Not building paramversionning"; \
      else echo 'Building paramversionning' \
-    && sudo git clone https://github.com/ArduPilot/ardupilot.git --depth 1 \
-    && sudo mkdir -p old_params_mversion \
+    && sudo git clone https://github.com/ArduPilot/ardupilot.git \
     && sudo chown -R ${USER_NAME}:${USER_NAME} /ardupilot \
     && mkdir -p /${USER_NAME}/new_params_mversion /${USER_NAME}/old_params_mversion \
     && sudo chown -R ${USER_NAME}:${USER_NAME} /${USER_NAME}/new_params_mversion /${USER_NAME}/old_params_mversion \
