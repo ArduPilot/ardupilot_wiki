@@ -8,4 +8,23 @@ repos:
   - repo: https://github.com/pycqa/flake8
     rev: 7.3.0
     hooks:
-    - id: flake8
+      - id: flake8
+  - repo: https://github.com/sphinx-contrib/sphinx-lint
+    rev: v1.0.2
+    hooks:
+      - id: sphinx-lint
+        args:
+          - --disable=backtick-before-role
+          - --disable=dangling-hyphen
+          - --disable=horizontal-tab
+          - --disable=hyperlink-reference-missing-backtick
+          - --disable=missing-final-newline
+          - --disable=missing-space-after-literal
+          - --disable=missing-space-after-role
+          - --disable=missing-space-before-default-role
+          - --disable=missing-space-before-role
+          - --disable=missing-space-in-hyperlink
+          - --disable=missing-underscore-after-hyperlink
+          - --disable=role-without-backticks
+          - --disable=trailing-whitespace
+          - --disable=unbalanced-inline-literals-delimiters
