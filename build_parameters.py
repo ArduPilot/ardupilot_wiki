@@ -29,6 +29,7 @@ import os
 import shutil  # noqa: F401
 import sys
 import time  # noqa: F401
+import logging
 from html.parser import HTMLParser
 import urllib.request
 import re
@@ -43,6 +44,33 @@ parser.add_argument('--vehicle', dest='single_vehicle', help="If you just want t
 args = parser.parse_args()
 
 error_count = 0
+
+
+# Configure logging
+class ColoredFormatter(logging.Formatter):
+    """Simple ANSI-coloured formatter for terminal output."""
+    COLORS = {
+        logging.DEBUG: '\033[36m',      # cyan
+        logging.INFO: '\033[32m',       # green
+        logging.WARNING: '\033[33m',    # yellow
+        logging.ERROR: '\033[31m',      # red
+        logging.CRITICAL: '\033[1;31m', # bold red
+    }
+    RESET = '\033[0m'
+
+    def format(self, record):
+        # Apply colour only when output is a tty
+        if hasattr(sys.stdout, 'isatty') and sys.stdout.isatty() \
+                and not os.environ.get('CI') and not os.environ.get('GITHUB_ACTIONS'):
+            color = self.COLORS.get(record.levelno, '')
+            record.levelname = f"{color}{record.levelname}{self.RESET}"
+        return super().format(record)
+
+
+handler = logging.StreamHandler(sys.stdout)
+handler.setFormatter(ColoredFormatter('[build_parameters.py]: [%(levelname)s]: %(message)s'))
+logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, handlers=[handler])
+logger = logging.getLogger(__name__)
 
 # Parameters
 COMMITFILE = "git-version.txt"
@@ -73,21 +101,21 @@ vehicle_old_to_new_name = { # Used because git-version.txt use APMVersion with o
 }
 
 
-def progress(str_to_print):
-    print(f"[build_parameters.py] {str_to_print}")
+def progress(msg):
+    """Log info level message."""
+    logger.info(msg)
 
 
-def debug(str_to_print):
-    """Debug output if verbose is set."""
-    if args.verbose:
-        progress(str_to_print)
+def debug(msg):
+    """Log debug level message."""
+    logger.debug(msg)
 
 
-def error(str_to_print):
-    """Show and count the errors."""
+def error(msg):
+    """Log error and count errors."""
     global error_count
     error_count += 1
-    progress("[error]: " + str(str_to_print))
+    logger.error(msg)
 
 
 def check_temp_folders():
