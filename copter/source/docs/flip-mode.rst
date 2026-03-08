@@ -4,7 +4,7 @@
 Flip Mode
 =========
 
-Vehicle will flip on its roll or pitch axis depending upon the pilot's roll and pitch stick position in flight mode's which allow this (ACRO/ALTHOLD/STABLIZE...and,of course, FLIP mode). Vehicle will increase throttle rapidly as it starts to flip. Once the flip is completed, canceled, or times out, the original flight mode the vehicle was in will be restored. The flip will end at the entry attitude.
+Vehicle will flip on its roll or pitch axis depending upon the pilot's roll and pitch stick position in flight mode's which allow this (ACRO/ALTHOLD/STABILIZE...and,of course, FLIP mode). Vehicle will increase throttle rapidly as it starts to flip. Once the flip is completed, canceled, or times out, the original flight mode the vehicle was in will be restored. The flip will end at the entry attitude.
 
 The vehicle will not flip again until the switch is brought low and back to high, if on an :ref:`Auxiliary Switch <common-auxiliary-functions>`, or if the mode channel switch is changed to another mode and back to FLIP.
 

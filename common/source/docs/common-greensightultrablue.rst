@@ -562,7 +562,7 @@ JP8 - RGB LED & Power Button (Autopilot and Companion Computer UI connector)
       </tr>
       <tr>
       <td>5</td>
-      <td>Power Button pass-thru to power board</td>
+      <td>Power Button pass-through to power board</td>
       <td>+3.3V</td>
       </tr>
       <tr>

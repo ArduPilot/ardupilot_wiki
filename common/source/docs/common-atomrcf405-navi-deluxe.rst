@@ -89,7 +89,7 @@ Serial protocols shown are defaults, but can be adjusted to personal preferences
 Dshot capability
 ================
 
-All motor/servo outputs are Dshot and PWM capable. Outputs 1/2, adn 5/6 are Bi-Directional DSHOT capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs.
+All motor/servo outputs are Dshot and PWM capable. Outputs 1/2, and 5/6 are Bi-Directional DSHOT capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs.
 
 The output groups are:
 
