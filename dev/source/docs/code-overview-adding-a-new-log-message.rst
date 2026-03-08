@@ -18,14 +18,14 @@ The Easy Way
 
 Use `AP::logger().Write(...) <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/AP_Logger.h#L278>`__:
 
-   .. code-block:: python
+   .. code-block:: cpp
 
        void Write(const char *name, const char *labels, const char *fmt, ...);
        void Write(const char *name, const char *labels, const char *units, const char *mults, const char *fmt, ...);
 
 An example of the top function being used can be found in `Compass_learn.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Compass/Compass_learn.cpp#L99>`__:
 
-   .. code-block:: python
+   .. code-block:: cpp
 
        AP::logger().Write("COFS", "TimeUS,OfsX,OfsY,OfsZ,Var,Yaw,WVar,N", "QffffffI",
                                                AP_HAL::micros64(),
@@ -52,7 +52,7 @@ These help the graphing tools scale the output correctly when displaying to the 
 
 For example, below is a "TEST" log message which outputs the current system time and altitude.
 
-   .. code-block:: python
+   .. code-block:: cpp
 
        AP::logger().Write("TEST", "TimeUS,Alt",
                           "sm", // units: seconds, meters
@@ -76,7 +76,7 @@ For commonly used messages, especially those which are output at a relatively hi
 - define a structure to hold the values to be logged in either the vehicle's `Log.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Log.cpp>`__ file
   or in `AP_Logger/LogStructure.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h>`__.  All log file messages should have time_us as their first field.
 
-   .. code-block:: python
+   .. code-block:: cpp
 
        struct PACKED log_Test {
            LOG_PACKET_HEADER;
@@ -88,7 +88,7 @@ For commonly used messages, especially those which are output at a relatively hi
   `multiplier <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L86>`__ and `format <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L6>`__ strings into the `vehicle's LogStructure array <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Log.cpp#L454>`__ or `AP_Logger/LogStructure.h's LOG_EXTRA_STRUCTURES array <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L1360>`__
 - add a new method to the vehicle code or AP_Logger library called Write_<something-or-other> which fills in the structure and then calls `AP_Logger/WriteBlock() <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/AP_Logger.h#L197>`__
 
-   .. code-block:: python
+   .. code-block:: cpp
 
        void Copter::Log_Write_Test()
        {
