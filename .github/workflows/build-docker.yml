@@ -7,8 +7,6 @@ jobs:
   build-docker:
 
     runs-on: ubuntu-22.04
-    strategy:
-      fail-fast: false  # don't cancel if a job from the matrix fails
 
     steps:
       - uses: actions/checkout@v6
