@@ -115,8 +115,7 @@ so you will need to rebuild pymavlink to include your custom message.
         def mavlink_packet(self, m):
             'handle a MAVLink packet'''
             if m.get_type() == 'MY_CUSTOM_PACKET':
-                print "My Int: %(x).2f" % \
-                    {"x" : m.intField}
+                print("My Int: %(x).2f" % {"x" : m.intField})
 
     def init(mpstate):
         '''initialise module'''
