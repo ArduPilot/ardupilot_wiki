@@ -292,7 +292,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_DIGICAM_CONFIGURE <mav_cmd_do_digicam_configure>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
-- :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>`(Gimbal/mount enabled only)
+- :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI_LOCATION <mav_cmd_do_set_roi_location>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI_NONE <mav_cmd_do_set_roi_none>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <mav_cmd_do_gimbal_manager_pitchyaw>` (Gimbal/mount enabled only)
@@ -339,7 +339,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
 - :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
-- :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>`(Gimbal/mount enabled only)
+- :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI_LOCATION <mav_cmd_do_set_roi_location>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI_NONE <mav_cmd_do_set_roi_none>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <mav_cmd_do_gimbal_manager_pitchyaw>` (Gimbal/mount enabled only)

@@ -178,3 +178,5 @@ This board does **not** ship with ArduPilot pre-installed.
 Follow `this guide <https://ardupilot.org/copter/docs/common-loading-firmware-onto-chibios-only-boards.html>`_ to load it for the first time.
 
 Firmware can be found in `ArduPilot firmware repo <https://firmware.ardupilot.org>`_ under the ``ORBITH743`` sub-folder.
+
+[copywiki destination="plane,copter,rover,blimp,sub"]

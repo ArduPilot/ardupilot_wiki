@@ -1,6 +1,6 @@
 .. _common-luxf765-ndaa:
 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,sub"]
 
 ======================
 Lumenier LUX F765-NDAA
