@@ -50,7 +50,7 @@ Software setup
 
 - Install `Apriltag library <https://github.com/AprilRobotics/apriltag>`__,  `Apriltag ROS wrapper <https://github.com/AprilRobotics/apriltag_ros>`__ and `vision_to_mavros <https://github.com/hoangthien94/vision_to_mavros.git>`__ packages.
 
-.. code-block:: python
+.. code-block:: bash
 
     # Install Apriltag library
     cd 
