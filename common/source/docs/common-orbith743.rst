@@ -134,7 +134,7 @@ GPIO Pin Mapping
 
 Camera Switch Control
 =====================
-GPIO 82 controls camera switching betweeen the CAM andd CAM2 inputs. Set high or low to toggle between analog camera inputs. RELAY3 is configured by default to control this GPO.
+GPIO 82 controls camera switching between the CAM and CAM2 inputs. Set high or low to toggle between analog camera inputs. RELAY3 is configured by default to control this GPO.
 
 The "CC" pin is not functional.
 

@@ -234,7 +234,7 @@ def get_commit_dict(releases_parsed):
 
     def fetch_commit_hash(version_link, board, file):
         """
-        For a binnary folder, gets a git hash of its build.
+        For a binary folder, gets a git hash of its build.
 
         """
         fetch_link = version_link + '/' + board + '/' + file

@@ -57,7 +57,7 @@ ArduPilot supports up to two cameras. For the rest of this article, it is assume
 
 * In order to control entering the OSD menu set a free rc channel to ``RCx_OPTION`` = 79. If the switch is in the low position then the OSD menu is exited, if in the high position then the OSD menu is entered. The OSD menu can also be entered by default through rolling hard right while disarmed.
 
-* The available features of the attached RunCam device are queried by the driver but can be disabled by setting up the :ref:`CAM1_RC_FEATURES<CAM1_RC_FEATURES>` bitmask with the desired features to enable (asssuming the camera model actually supports them)
+* The available features of the attached RunCam device are queried by the driver but can be disabled by setting up the :ref:`CAM1_RC_FEATURES<CAM1_RC_FEATURES>` bitmask with the desired features to enable (assuming the camera model actually supports them)
 
 OSD Menu Control
 ================
