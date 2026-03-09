@@ -13,11 +13,11 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
-    'sphinx.ext.mathjax',     # For :math: element rendering
+    'sphinx.ext.mathjax',  # For :math: element rendering
     'sphinx.ext.ifconfig',
     'sphinxcontrib.youtube',  # For youtube embedding
     'sphinxcontrib.jquery',
-    'sphinx_tabs.tabs'        # For clickable tabs
+    'sphinx_tabs.tabs',  # For clickable tabs
 ]
 
 # wiki_base_url='https://dl.dropboxusercontent.com/u/3067678/share2/wiki'
