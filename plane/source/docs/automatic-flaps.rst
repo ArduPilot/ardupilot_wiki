@@ -9,8 +9,8 @@ schedule and/or during autotakeoffs and landings. Simply put you can specify two
 
 Two modes of operation are available depending on whether bit 15 of the :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit is set:
 
-:ref:`FLIGHT_OPTIONS<HT_OPTIONS>` bit "15" clear
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit "15" clear
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If your target speed (not your actual speed) is above the specified
 speeds then your flaps are set to the default (trim) position. If your
 target speed is lowered below the first flap speed, then flaps are
@@ -22,8 +22,8 @@ The target speed can be commanded by changing the value of cruise_speed
 in the parameter interface, by using the Do_Set_Speed command in a
 mission, or by the throttle stick position in FBW-B.
 
-:ref:`FLIGHT_OPTIONS<HT_OPTIONS>` bit 15 set
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 15 set
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - In manual throttle modes actual airspeed (or estimate) is used for flaps activation
 - In auto-throttle modes the minimum of target airspeed and actual airspeed is used
 
