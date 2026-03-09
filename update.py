@@ -937,8 +937,8 @@ def create_features_page(features, build_options_by_define, vehicletype):
             some_list.append((build_options.category, feature))
 
         sorted_platform_features = (
-            sorted(sorted_platform_features_not_in, key=lambda x : x[0] + x[1]) +
-            sorted(sorted_platform_features_in, key=lambda x : x[0] + x[1]))
+            sorted(sorted_platform_features_not_in, key=lambda x : x[0] + x[1])
+            + sorted(sorted_platform_features_in, key=lambda x : x[0] + x[1]))
 
         for (category, feature) in sorted_platform_features:
             build_options = build_options_by_define[feature]

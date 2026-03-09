@@ -8,8 +8,8 @@ ignore =
     E226,
     # E261 at least two spaces before inline comment
     E261,
-    # W504 line break after binary operator
-    W504,
+    # W503 line break before binary operator
+    W503,
     # E203 whitespace before ':'
     E203,
     # E221 multiple spaces before operator

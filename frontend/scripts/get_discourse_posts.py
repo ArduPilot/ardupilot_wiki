@@ -138,8 +138,8 @@ class BlogPostsFetcher:
                 first_five_lines) else None
 
         # If there are image links before YouTube links, return empty string
-        if img_links and (not youtube_links or
-                          first_five_lines.index(img_links) < first_five_lines.index(youtube_links[0])):
+        if img_links and (not youtube_links
+                          or first_five_lines.index(img_links) < first_five_lines.index(youtube_links[0])):
             if 'github.com' in img_links:
                 img_links = img_links + "?raw=true"
             return img_links, False
