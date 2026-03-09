@@ -33,7 +33,7 @@ def load_param_map(fname):
             continue
         a = line.split()
         if len(a) != 2:
-            print("Bad line %s" % line)
+            print(f"Bad line {line}")
             continue
         ret[a[1]] = a[0]
     return ret
@@ -44,7 +44,7 @@ def process_file(fname, param_map):
     bname = os.path.basename(fname)
     if bname.startswith("common-") and dname.find("common") == -1:
         if args.verbose:
-            print("Skipping common file %s" % fname)
+            print(f"Skipping common file {fname}")
         return
     needs_write = False
     txt = open(fname, "r").read()
@@ -64,12 +64,12 @@ def process_file(fname, param_map):
                 needs_write = True
     if not needs_write:
         return
-    print("Updating %s" % fname)
+    print(f"Updating {fname}")
     open(fname, "w").write(txt)
 
 
 param_map = load_param_map(args.param_map)
-print("Loaded param map for %u parameters" % len(param_map.keys()))
+print(f"Loaded param map for {len(param_map.keys())} parameters")
 
 for fname in args.files:
     if os.path.isfile(fname):

@@ -661,7 +661,8 @@ def generate_single_diagram():
     try:
         frame_class = int(input("Enter frame class: "))
         if frame_class not in frame_classes:
-            raise ValueError(f"FRAME_CLASS={frame_class} does not exist.")
+            msg = f"FRAME_CLASS={frame_class} does not exist."
+            raise ValueError(msg)
 
         frame_types = [
             layout
@@ -669,7 +670,8 @@ def generate_single_diagram():
             if layout["Class"] == frame_class and not layout.get("Skip", False)
         ]
         if not frame_types:
-            raise ValueError(f"No available frame types for FRAME_CLASS={frame_class}.")
+            msg = f"No available frame types for FRAME_CLASS={frame_class}."
+            raise ValueError(msg)
 
         print(f"\nAvailable frame types for FRAME_CLASS={frame_class}:")
         for selected_layout in frame_types:
@@ -680,8 +682,9 @@ def generate_single_diagram():
             (layout for layout in frame_types if layout["Type"] == frame_type), None
         )
         if selected_layout is None:
+            msg = f"FRAME_TYPE={frame_type} does not exist for FRAME_CLASS={frame_class}."
             raise ValueError(
-                f"FRAME_TYPE={frame_type} does not exist for FRAME_CLASS={frame_class}."
+                msg
             )
 
         diagram_list = []
