@@ -32,7 +32,7 @@ First, the wiki should be forked and cloned much like :ref:`developers do for th
        git clone https://github.com/YOURID/ardupilot_wiki.git
 
 Be sure to keep your fork of the repository updated, both locally, and on GitHub both as you install and as you develop new contributions. Be sure to create a working branch locally when you start to make changes, pushing that branch up to your GitHub repo, and then making a PR (pull-request from there to the Wiki repo), in a manner similar to making :ref:`code PRs <submitting-patches-back-to-master>`.
-   
+
 .. code-block:: bash
 
     git remote add upstream https://github.com/ArduPilot/ardupilot_wiki.git
@@ -40,7 +40,9 @@ Be sure to keep your fork of the repository updated, both locally, and on GitHub
     git fetch upstream
     git rebase upstream/master
     git push -f origin master
-       
+
+.. _setup-wiki-environment:
+
 Setup the Environment
 =====================
 
@@ -70,7 +72,7 @@ Run the following command from the ardupilot_wiki directory you cloned:
         # Now run the setup script again
         ./Sphinxsetup.sh
 
-Then jump down to "Build the wiki".
+Then jump down to :ref:`building-the-wiki`.
 
 Setup in Windows
 ----------------
@@ -156,15 +158,17 @@ This will build a docker image with all package setup to build the wiki and name
    .. code-block:: bash
 
        # presents a brief menu of build options
-       ./docker_update_py.sh  
+       ./docker_update_py.sh 
 
        # or, to build the copter site with the --fast flag, for example:
        ./docker_update_py.sh --fast --site copter
 
 That will build the wiki with the ``update.py`` similarly as in `Build the Wiki`_. The `-v` is used to share the content of the current directory, that holds all the documentation, to the container. The `-u` is used to make docker use the same permission as your current user. With those two commands, the resulting build is accessible as in `Check the Results`_
 
+.. _building-the-wiki:
+
 Build the Wiki
-=================
+==============
 
 As shown in the last step of the vagrant instructions above, use update.py to build some or all of the wiki.
 
@@ -237,7 +241,7 @@ RST rendering on Windows
 ------------------------
 
 A combination of two Windows tools can help you preview your modifications:
-  	
+
 * `Notepad++ plugin for RST files <https://github.com/steenhulthin/reStructuredText_NPP>`__
 * `restview (on-the-fly renderer for RST files) <https://mg.pov.lt/restview/>`__
 * `PyCharm <https://www.jetbrains.com/pycharm/>`__
@@ -251,9 +255,9 @@ The installation of the Notepad++ plugin is clearly explained on the plugin's we
 Restview can be installed with:
 
 .. code-block:: bat
-	
+
 	python3 -m pip install restview
-		
+
 The restview executable will be installed in the **Scripts** folder of the Python main folder.
 Restview will start the on-the-fly HTML rendering and open a tab page in your preferred web browser.
 
@@ -262,9 +266,9 @@ Example:
 If you are in the root folder of your local Wiki repository:
 
 .. code-block:: bat
-	
+
 	start \python-folder\Scripts\restview common\source\docs\common-wiki_editing_guide.rst	
-	
+
 RST rendering on Linux
 ----------------------
 
@@ -275,6 +279,10 @@ RST rendering on Linux
 
 * `PyCharm <https://www.jetbrains.com/pycharm/>`__
 
+Pre-commit to catch minor issues
+--------------------------------
+
+Use `Pre-commit <https://pre-commit.com>`__ to auto-detect minor issues before creating a PR.
 
 
 [copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
