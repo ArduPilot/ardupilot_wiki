@@ -5,7 +5,16 @@
 EKF3 Affinity and Lane Switching
 ================================
 
-The :ref:`EKF <dev:extended-kalman-filter>` instantiates multiple instances of the filter called 'lanes'. The primary lane is the one that provides state estimates, rest are updated in the background and available for switching to. The number of possible lanes is exactly equal to the number of IMUs enabled for use. Conventionally, each lane uses the primary instance of the Airspeed, Barometer, GPS and Magnetometer sensors. The primary sensor can be set as a user-modifiable parameter, but can be later changed by the system, even in-flight, in case of a driver-level fault. However, modern-day vehicles are known to have multiple sensors installed of good quality. Affinity is a way for the EKF lanes to use non-primary sensors within any running lane. This provides a statistically consistent way to make use of multiple high quality sensors and use lane-switching to select the lane which has best performing combination of sensors. The lane error score takes into account innovations from all sensors used by a lane. This way, the vehicle can be saved from mishaps using noisy non-IMU sensors as well.
+The :ref:`EKF <dev:extended-kalman-filter>` instantiates multiple instances of the filter called 'lanes'.
+The primary lane is the one that provides state estimates, rest are updated in the background and available for switching to.
+The number of possible lanes is exactly equal to the number of IMUs enabled for use.
+Conventionally, each lane uses the primary instance of the Airspeed, Barometer, GPS and Magnetometer sensors.
+The primary sensor can be set as a user-modifiable parameter, but can be later changed by the system, even in-flight, in case of a driver-level fault.
+However, modern-day vehicles are known to have multiple sensors installed of good quality.
+Affinity is a way for the EKF lanes to use non-primary sensors within any running lane.
+This provides a statistically consistent way to make use of multiple high quality sensors and use lane-switching to select the lane which has best performing combination of sensors.
+The lane error score takes into account innovations from all sensors used by a lane.
+This way, the vehicle can be saved from mishaps using noisy non-IMU sensors as well.
 
 
 **A simple example of an affinity configuration for a vehicle which has 2 Barometers, 2 GPS, 2 Airspeeds, 3 Magnetometers and 3 IMUs -**
@@ -29,7 +38,8 @@ Configuration Parameters
 
     Affinity is only available with EKF3, so make sure you are using it by ensuring :ref:`EK3_ENABLE <EK3_ENABLE>` is set to "1" and :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` is set to "3"
 
-The :ref:`EK3_AFFINITY <EK3_AFFINITY>` parameter is a bitmask which gives you the option to choose the sensors you want to enable affinity for. Non-enabled will follow the default primary sensor allotment.
+The :ref:`EK3_AFFINITY <EK3_AFFINITY>` parameter is a bitmask which gives you the option to choose the sensors you want to enable affinity for.
+Non-enabled will follow the default primary sensor allotment.
 
 The :ref:`EK3_ERR_THRESH <EK3_ERR_THRESH>` parameter controls the sensitivity of lane switching. Lane errors are accumulated over time relative to the active primary lane. This threshold controls how much of an error difference between a non-primary and primary lane is required to consider the former performing better. Lowering this parameter makes lane switching more responsive to smaller 'relative' errors, and in practical you will see a more aggressive lane switching, and, vice-versa. 
 
