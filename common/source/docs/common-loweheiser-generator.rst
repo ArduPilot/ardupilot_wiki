@@ -36,24 +36,20 @@ There is no need to configure output channels, as the generator is operated enti
 
 To monitor the generator performance, configure a battery monitor with ``BATTx_TYPE=17`` (Generator-Elec). To monitor the engine performance, configure a battery monitor with ``BATTy_TYPE=18`` (Generator-Fuel). Set the volume of the fuel in the tank in ``BATTy_CAPACITY`` (in mL).
 
-:ref:`GEN_IDLE_TH <GEN_IDLE_TH>` can be used to adjust the throttle percent that will be sent to the generator throttle body during idling.
+:ref:`GEN_L_IDLE_TH <GEN_L_IDLE_TH>` can be used to adjust the throttle percent that will be sent to the generator throttle body during idling.
 
-:ref:`GEN_IDLE_TH_H <GEN_IDLE_TH_H>` can be used to adjust the throttle percent that will be sent to the generator throttle body, during warming up or cooldown.
+:ref:`GEN_L_IDLE_TH_H <GEN_L_IDLE_TH_H>` can be used to adjust the throttle percent that will be sent to the generator throttle body, during warming up or cooldown.
 
 The following parameters can be used to adjust the temperature limits of the generator:
 
-    - :ref:`GEN_RUN_TEMP <GEN_RUN_TEMP>`: The cylinder head temperature required for the generator to start producing power, in deg Celsius.
-    - :ref:`GEN_IDLE_TEMP <GEN_IDLE_TEMP>`: The cylinder head temperature required for the generator to return to idle after having run.
-    - :ref:`GEN_OVER_TEMP <GEN_OVER_TEMP>`: The cylinder head overheat temperature. Above this threshold a warning message gets sent over MAVLink.
-
-Leave :ref:`GEN_AUTO_START <GEN_AUTO_START>` = 0 and manually start the engine as needed.
-
-.. warning:: Do not set :ref:`GEN_AUTO_START <GEN_AUTO_START>` = 1! The auto-starting feature of the Loweheiser generator does not operate correctly.
+    - :ref:`GEN_L_RUN_TEMP <GEN_L_RUN_TEMP>`: The cylinder head temperature required for the generator to start producing power, in deg Celsius.
+    - :ref:`GEN_L_IDLE_TEMP <GEN_L_IDLE_TEMP>`: The cylinder head temperature required for the generator to return to idle after having run.
+    - :ref:`GEN_L_OVER_TEMP <GEN_L_OVER_TEMP>`: The cylinder head overheat temperature. Above this threshold a warning message gets sent over MAVLink
 
 .. note:: The following parameters are not yet supported by the generator manufacturer:
 
-    - :ref:`GEN_MNT_TIME <GEN_MNT_TIME>`: Seconds until maintenance is required.
-    - :ref:`GEN_RUNTIME <GEN_RUNTIME>`: Total time this generator has run, in seconds.
+    - :ref:`GEN_L_MNT_TIME <GEN_L_MNT_TIME>`: Seconds until maintenance is required.
+    - :ref:`GEN_L_RUNTIME <GEN_L_RUNTIME>`: Total time this generator has run, in seconds.
 
 Controls
 --------
