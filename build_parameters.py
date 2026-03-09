@@ -149,7 +149,7 @@ def setup():
         VEHICLES = [args.single_vehicle]
         progress("Running only for " + str(args.single_vehicle))
     else:
-        progress("Vehicle %s not recognized, running for all vehicles." % str(args.single_vehicle))
+        progress(f"Vehicle {str(args.single_vehicle)} not recognized, running for all vehicles.")
 
     try:
         # Goes to ardupilot folder and clean it and update to make sure that is the most recent one.
@@ -166,11 +166,11 @@ def setup():
         BASEPATH = os.getcwd()
         check_temp_folders()
     except Exception as e:
-        error("ArduPilot Repo folder not found (cd %s failed)" % args.gitFolder)
+        error(f"ArduPilot Repo folder not found (cd {args.gitFolder} failed)")
         error(e)
         sys.exit(1)
     finally:
-        debug("\nThe current working directory is %s" % BASEPATH)
+        debug(f"\nThe current working directory is {BASEPATH}")
 
 
 def fetch_releases(firmware_url, vehicles):
@@ -431,7 +431,7 @@ def generate_rst_files(commits_to_checkout_and_parse):
                 # this was an error, but turns out we are missing a
                 # bunch of these, eg.
                 # [build_parameters.py][error]: Parameters.rst not found to rename to  parameters-Copter-stable-V4.0.0.rst
-                progress("Parameters.rst not found to rename to  %s" % filename)
+                progress(f"Parameters.rst not found to rename to  {filename}")
 
             os.chdir(BASEPATH)
         except Exception as e:
@@ -479,7 +479,7 @@ def generate_json(vehicles):
         try:
             with open(json_filename, 'w') as f:
                 for lines in json_lines:
-                    f.write("%s\n" % lines)
+                    f.write(f"{lines}\n")
         except Exception as e:
             error("Error while creating the JSON file " + vehicle + " in folder " + str(os.getcwd()))  # noqa: E501
             error(e)
