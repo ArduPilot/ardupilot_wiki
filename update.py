@@ -641,13 +641,13 @@ def fetch_versioned_parameters(site=None):
 
                 # Remove old versioned param files
                 if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                    old_parameters_mask = (os.getcwd() +
-                                           '/%s/source/docs/parameters-%s-' %
-                                           ("AntennaTracker", "AntennaTracker"))
+                    old_parameters_mask = (os.getcwd()
+                                           + '/%s/source/docs/parameters-%s-'
+                                           % ("AntennaTracker", "AntennaTracker"))
                 else:
-                    old_parameters_mask = (os.getcwd() +
-                                           '/%s/source/docs/parameters-%s-' %
-                                           (key, key.title()))
+                    old_parameters_mask = (os.getcwd()
+                                           + '/%s/source/docs/parameters-%s-'
+                                           % (key, key.title()))
                 try:
                     old_parameters_files = [
                         f for f in glob.glob(old_parameters_mask + "*.rst")]
@@ -674,9 +674,9 @@ def fetch_versioned_parameters(site=None):
                 else:
                     vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value, key.title())
                 new_file = (
-                    key +
-                    "/source/_static/" +
-                    vehicle_json_file[str(vehicle_json_file).rfind("/")+1:])
+                    key
+                    + "/source/_static/"
+                    + vehicle_json_file[str(vehicle_json_file).rfind("/")+1:])
                 try:
                     debug("Moving " + vehicle_json_file)
                     # os.rename(vehicle_json_file, new_file)
@@ -687,8 +687,8 @@ def fetch_versioned_parameters(site=None):
 
                 # Copy all parameter files to vehicle folder IFF it is new
                 try:
-                    new_parameters_folder = (os.getcwd() +
-                                             '/../new_params_mversion/%s/' % value)
+                    new_parameters_folder = (os.getcwd()
+                                             + '/../new_params_mversion/%s/' % value)
                     new_parameters_files = [
                         f for f in glob.glob(new_parameters_folder + "*.rst")
                     ]
@@ -698,9 +698,9 @@ def fetch_versioned_parameters(site=None):
                 for filename in new_parameters_files:
                     # Check possible cached version
                     try:
-                        new_file = (key +
-                                    "/source/docs/" +
-                                    filename[str(filename).rfind("/")+1:])
+                        new_file = (key
+                                    + "/source/docs/"
+                                    + filename[str(filename).rfind("/")+1:])
                         if not os.path.isfile(new_file):
                             debug("Copying %s to %s (target file does not exist)" % (filename, new_file))
                             shutil.copy2(filename, new_file)
@@ -752,8 +752,8 @@ def cache_parameters_files(site=None):
     for key, value in PARAMETER_SITE.items():
         if (site == key or site is None) and (key != 'AP_Periph'):  # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server # noqa: E501
             try:
-                old_parameters_folder = (os.getcwd() +
-                                         '/../old_params_mversion/%s/' % value)
+                old_parameters_folder = (os.getcwd()
+                                         + '/../old_params_mversion/%s/' % value)
                 old_parameters_files = [
                     f for f in glob.glob(old_parameters_folder + "*.*")
                 ]
@@ -761,11 +761,11 @@ def cache_parameters_files(site=None):
                     debug("Removing %s" % file)
                     os.remove(file)
 
-                new_parameters_folder = (os.getcwd() +
-                                         '/../new_params_mversion/%s/' % value)
+                new_parameters_folder = (os.getcwd()
+                                         + '/../new_params_mversion/%s/' % value)
                 new_parameters_files = [
-                    f for f in glob.glob(new_parameters_folder +
-                                         "parameters-*.rst")
+                    f for f in glob.glob(new_parameters_folder
+                                         + "parameters-*.rst")
                 ]
                 for filename in new_parameters_files:
                     debug("Copying %s to %s" %
@@ -794,8 +794,8 @@ def put_cached_parameters_files_in_sites(site=None):
     for key, value in PARAMETER_SITE.items():
         if (site == key or site is None) and (key != 'AP_Periph'): # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server # noqa: E501
             try:
-                built_folder = (os.getcwd() +
-                                '/../old_params_mversion/%s/' % value)
+                built_folder = (os.getcwd()
+                                + '/../old_params_mversion/%s/' % value)
                 built_parameters_files = [
                     f for f in glob.glob(built_folder + "parameters-*.html")
                 ]
@@ -965,8 +965,8 @@ def create_features_page(features, build_options_by_define, vehicletype):
             some_list.append((build_options.category, feature))
 
         sorted_platform_features = (
-            sorted(sorted_platform_features_not_in, key=lambda x : x[0] + x[1]) +
-            sorted(sorted_platform_features_in, key=lambda x : x[0] + x[1]))
+            sorted(sorted_platform_features_not_in, key=lambda x : x[0] + x[1])
+            + sorted(sorted_platform_features_in, key=lambda x : x[0] + x[1]))
 
         for (category, feature) in sorted_platform_features:
             build_options = build_options_by_define[feature]

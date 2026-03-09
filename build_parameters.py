@@ -385,12 +385,12 @@ def generate_rst_files(commits_to_checkout_and_parse):
         # Not elegant workaround:
         # These versions present errors when parsing using param_parser.py. Needs more investigation?
         if (
-            "3.2.1" in version or # last stable APM Copte
-            "3.4.0" in version or # last stable APM Plane
-            "3.4.6" in version or # Copter
-            "2.42" in version or  # last stable APM Rover?
-            "2.51" in version or  # last beta APM Rover?
-            "0.7.2" in version    # Antennatracker
+            "3.2.1" in version # last stable APM Copte
+            or "3.4.0" in version # last stable APM Plane
+            or "3.4.6" in version # Copter
+            or "2.42" in version  # last stable APM Rover?
+            or "2.51" in version  # last beta APM Rover?
+            or "0.7.2" in version    # Antennatracker
         ):
             debug("Ignoring APM version:\t" + vehicle + "\t" + version)
             continue
