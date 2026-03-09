@@ -4,9 +4,7 @@
 Flight Options
 ==============
 
-
 :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` is a bitmask that allows configuring several alterations to Plane's behavior.
-
 
 =====================================   ======================
 :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>`   Function
@@ -27,6 +25,7 @@ Flight Options
 14                                      In AUTO, climb to next waypoint altitude immediately instead of linear climb.
 15                                      Allows auto flap operation in manual modes as well as auto-throttle modes.
 16                                      Enable full aerodynamic load factor-based roll limits. This should be enabled when an accurate and well calibrated airspeed sensor is used to impose the correct FBW roll limits when the aircraft is turning. Requires an enabled airspeed sensor and AIRSPEED_STALL set. WARNING: If your airspeed sensor is very inaccurate or fails, having this enabled may result in almost no roll maneuverability in FBW modes.
+=====================================   ======================
 
 Default is no options enabled ("0"). Setting the bit will enable that function. For example, if forcing target airspeed in FBWB and CRUISE modes is desired, a value of "8" (bit 3 = 1) would be set.
 
