@@ -737,7 +737,7 @@ it indicates that the filter stopped using the barometer data for that
 period in flight. This should never happen with good sensor data. The
 following figure shows **SH** taken from a quadrotor flight at airspeeds
 up to 16 m/s, using the default parameters. If this line is too high and
-goes above 1, then the``EKF_HGT_GATE`` parameter should be increased.
+goes above 1, then the ``EKF_HGT_GATE`` parameter should be increased.
 Factors that can cause this to be high include airflow past the
 autopilot affecting the barometer reading and accelerometer errors due
 to sensor drift or aliasing.

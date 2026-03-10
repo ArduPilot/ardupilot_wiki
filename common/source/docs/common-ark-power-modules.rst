@@ -101,7 +101,7 @@ Ardupilot Setup
 ===============
 
    -  Set the ``BATTx_MONITOR`` parameter to "INA2XX"
-   -  Set the `BATTX_SHUNT`` parameter to "0.0001"
+   -  Set the ``BATTX_SHUNT`` parameter to "0.0001"
    -  Reboot the flight controller
 
 More Information

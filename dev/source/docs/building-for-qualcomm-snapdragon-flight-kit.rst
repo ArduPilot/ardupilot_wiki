@@ -120,7 +120,7 @@ dhcp-range=192.168.**2**.10,192.168.**2**.20,infinite
 
 Line 39 of /etc/network/interfaces.d/.qca6234.cfg.softap as shown below.
 
-`` address 192.168.2.1``
+``address 192.168.2.1``
 
 You should be able to use a terminal program such as Putty to ssh to the
 board at the IP address shown above (i.e. 192.168.2.1) using

@@ -134,7 +134,7 @@ geo-fencing behaviour:
    Note that when :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` is set to 1 this parameter is
    ignored and the loiter altitude of the closest :ref:`Rally Point <common-rally-points>` is
    used instead.  If this parameter is zero and :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` is
-   also zero, the midpoint of the `FENCE_MAXALT`` and ``FENCE_MINALT``
+   also zero, the midpoint of the :ref:`FENCE_ALT_MAX <FENCE_ALT_MAX>` and :ref:`FENCE_ALT_MIN <FENCE_ALT_MIN>`
    parameters is used as the return altitude.
 #. :ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>` - if set to 1, the aircraft will boot with the
    fence disabled.  After an autonomous takeoff completes the fences
