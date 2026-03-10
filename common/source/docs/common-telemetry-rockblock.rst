@@ -92,7 +92,7 @@ Usage
 -----
 
 #.  Enable :ref:`High Latency<common-MAVLink-high-latency>` mode on the flight controller to start RockBLOCK mailbox checks.
-#.  The RockBLOCK will do a mailbox check every ``RK9_PERIOD`` seconds. It will send one `HIGH_LATENCY2 <https://mavlink.io/en/messages/common.html#HIGH_LATENCY2>`__ message and recieve one message from the GCS at this time.
+#.  The RockBLOCK will do a mailbox check every ``RK9_PERIOD`` seconds. It will send one `HIGH_LATENCY2 <https://mavlink.io/en/messages/common.html#HIGH_LATENCY2>`__ message and receive one message from the GCS at this time.
 #.  Disable :ref:`High Latency<common-MAVLink-high-latency>` mode on the flight controller to stop RockBLOCK mailbox checks.
 
 Data Costs
@@ -105,7 +105,7 @@ Current data costs are available from the `RockBlock website <https://www.ground
 Data is prepaid on a per-byte basis. Each ``HIGH_LATENCY2`` message sent or received is 52 bytes. So, for example, if the RockBLOCK
 was configured to send 1 ``HIGH_LATENCY2`` message every 30 seconds that would give a data usage of 6.24 KB per hour.
 If any commands are sent from the GCS to the vehicle via the RockBLOCK, they should be added too.
-For example, if 5 commands are sent in the same hour, that is an additional 220 bytes. Combining both sent and recieved messages,
+For example, if 5 commands are sent in the same hour, that is an additional 220 bytes. Combining both sent and received messages,
 a total of 6.46 KB per hour are used.
 
 Parameters
