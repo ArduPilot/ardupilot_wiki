@@ -36,8 +36,6 @@ repos:
           - --disable=missing-space-after-role
           - --disable=missing-space-before-default-role
           - --disable=missing-space-before-role
-          - --disable=missing-space-in-hyperlink
           - --disable=missing-underscore-after-hyperlink
-          - --disable=role-without-backticks
           - --disable=trailing-whitespace
           - --disable=unbalanced-inline-literals-delimiters

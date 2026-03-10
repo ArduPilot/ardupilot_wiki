@@ -54,7 +54,7 @@ ELRS MAVLink Configuration
 Instead of CRSF protocol, MAVLink protocol can be used if the receiver is configured for it. In this case, using SERIAL 4 for example:
 
 - Set :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 2
-- Set :ref:SERIAL4_BBAUD <SERIAL4_BAUDL>` = 115
+- Set :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115
 - Set :ref:`RSSI_TYPE <RSSI_TYPE>` = 5
 
 If the ELRS transmitter module has WIFI capability, then the telemetry data can be forwarded wirelessly to a PC or phone based GCS close to the transmitter.
