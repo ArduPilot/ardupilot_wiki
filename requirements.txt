@@ -20,3 +20,6 @@ git+https://github.com/ArduPilot/sphinxcontrib-youtube.git
 
 # and a parser to use getting posts from Discourse (forum) and insert in FrontEnd
 beautifulsoup4
+
+# The pre-commit tool is used to run rapid tools like linters, spellcheckers, and formatters.
+pre-commit
