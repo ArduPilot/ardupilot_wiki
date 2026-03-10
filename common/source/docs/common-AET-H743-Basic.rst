@@ -96,7 +96,7 @@ The default RC input is configured on the UART6 and supports all RC protocols ex
 
 RC can be attached to any UART port as long as the serial port protocol is set to ``SERIALn_PROTOCOL=23`` and SERIAL6_Protocol is changed to something other than '23'.
 
-* FPort requires connection to TX6. See ref:`common-fport-receivers`.
+* FPort requires connection to TX6. See :ref:`common-fport-receivers`.
 * SRXL2 requires a connection to TX6 and automatically provides telemetry. Set SERIAL6_OPTIONS to “4”.
 
 OSD Support
