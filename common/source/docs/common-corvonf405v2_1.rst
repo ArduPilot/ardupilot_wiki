@@ -46,7 +46,7 @@ RC Input
 The default RC input is configured on the UART6_RX input which is inverted from the SBUS pin. Other RC  protocols  should be applied at UART1 which has DMA, and set the :ref:`SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>` ='23' and change :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` to something other than '23'.
 
 * CRSF/ELRS also requires a TX1 connection, in addition to RX1, and automatically provides telemetry.
-* FPort requires connection to TX1 and :ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>` set to "7". See :ref:common-FPort-receivers.
+* FPort requires connection to TX1 and :ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>` set to "7". See :ref:`common-FPort-receivers`.
 * SRXL2 requires a connection to TX2 and automatically provides telemetry. Set :ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>` to “4”.
 
 OSD Support
