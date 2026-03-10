@@ -39,8 +39,8 @@ Preparing commits
   describe what it does. Be prepared to explain/defend the importance of
   any new comments to reviewers, and defer to their judgement to resolve
   any disagreement over a comment's value. Comments should not explain
-  "what" code does, they explain "why" (or perhaps "how" in a clever-but-
-  difficult implementation).
+  "what" code does, they explain "why" (or perhaps "how" in a
+  clever-but-difficult implementation).
 
 - Resist moving code within files/libraries. Preserving the in-file
   location of code is preferred over rearranging the file(s) to improve

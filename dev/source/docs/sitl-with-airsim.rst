@@ -22,7 +22,7 @@ A demo of AirSim running with ArduPilot SITL
 .. youtube:: ElFAqtpEfKo
     :width: 100%
 
-A list of topics for easier navigation in the page-
+A list of topics for easier navigation in the page:
 
 #. :ref:`Install AirSim <sitl-with-airsim-install>`
 
@@ -144,7 +144,7 @@ The file is in usual JSON format. On the first startup, AirSim would create ``se
 Launch Copter SITL
 ++++++++++++++++++
 
-For using ArduCopter, the settings are as follows-
+For using ArduCopter, the settings are as follows:
 
 ::
 
@@ -193,7 +193,7 @@ You can restart by just pressing the Play button and then start the ArduPilot si
 Launch Rover SITL
 +++++++++++++++++
 
-``settings.json`` for using ArduRover-
+``settings.json`` for using ArduRover:
 
 ::
 
@@ -511,7 +511,7 @@ A ROS wrapper has also been added. See `airsim_ros_pkgs <https://github.com/micr
 Run on different machines
 +++++++++++++++++++++++++
 
-#. Change the following in the ``settings.json`` file-
+#. Change the following in the ``settings.json`` file:
 
     #. ``UdpIp`` to the IP address of the machine running ArduPilot (Can be found using ``ipconfig`` on Windows, ``ifconfig`` on Linux.)
     #. ``LocalHostIp`` to the IP address of the current machine which is running AirSim, specific to the network adapter being used such as Ethernet or WiFi. Can be set to ``0.0.0.0`` to receive messages on all networks
@@ -519,7 +519,7 @@ Run on different machines
 
 #. Use ``-A`` argument in ``sim_vehicle.py`` (passes the arguments following it to the SITL instance), followed by ``--sim-address`` to specify Airsim's IP address
 
-An example-
+An example:
 
 ::
 
@@ -541,7 +541,7 @@ Using different ports
 - ``--sim-port-in`` should be equal to sensor port i.e. port specified in ``UdpPort``
 - ``--sim-port-out`` should be equal to motor control port i.e. port specified in ``ControlPort``
 
-Similar to changing the IP address as mentioned above, use ``-A`` to pass the arguments to the SITL instance. Example-
+Similar to changing the IP address as mentioned above, use ``-A`` to pass the arguments to the SITL instance. Example:
 
 ::
 

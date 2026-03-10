@@ -30,8 +30,8 @@ Hover Trim
 
 Trimming the helicopter in pitch and roll axes is an important step to keep the
 aircraft from drifting in modes like Stabilize and Althold.  The trim attitude 
-in the roll axis is affected by the tail rotor thrust.  All conventional single-
-rotor helicopters with a torque-compensating tail rotor hover either right skid 
+in the roll axis is affected by the tail rotor thrust.  All conventional single-rotor
+helicopters with a torque-compensating tail rotor hover either right skid 
 low or left skid low, depending on which way the main rotor turns. The 
 ArduCopter software has a parameter, :ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>`, to compensate for this phenomenon. 
 Dual rotor helicopters have counter rotating rotor systems which mostly cancel the torque.  For these aircraft,

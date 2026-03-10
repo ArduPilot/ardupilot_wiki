@@ -22,7 +22,6 @@ repos:
       - id: sphinx-lint
         args:
           - --disable=backtick-before-role
-          - --disable=dangling-hyphen
           - --disable=horizontal-tab
           - --disable=hyperlink-reference-missing-backtick
           - --disable=missing-final-newline
