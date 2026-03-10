@@ -28,7 +28,6 @@ repos:
     hooks:
       - id: sphinx-lint
         args:
-          - --disable=backtick-before-role
           - --disable=horizontal-tab
           - --disable=hyperlink-reference-missing-backtick
           - --disable=missing-final-newline
@@ -38,4 +37,3 @@ repos:
           - --disable=missing-space-before-role
           - --disable=missing-underscore-after-hyperlink
           - --disable=trailing-whitespace
-          - --disable=unbalanced-inline-literals-delimiters

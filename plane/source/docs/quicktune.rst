@@ -23,7 +23,7 @@ Setup
 
 Activation RC Switch
 --------------------
-Set up a two or three position RC switch with `RCx_OPTION`` = "181". If it is a two position switch set :ref:`QWIK_OPTIONS<QWIK_OPTIONS>` bit 0 to "1", and you probably want to set the :ref:`QWIK_AUTO_SAVE<QWIK_AUTO_SAVE>` parameter to autosave the tune once completed.
+Set up a two or three position RC switch with ``RCx_OPTION`` = "181". If it is a two position switch set :ref:`QWIK_OPTIONS<QWIK_OPTIONS>` bit 0 to "1", and you probably want to set the :ref:`QWIK_AUTO_SAVE<QWIK_AUTO_SAVE>` parameter to autosave the tune once completed.
 
 With a three position switch, moving the switch to "high" (>1800us) is the "save" position which will save the current tune parameters, even if the tune is not completed yet. Moving the switch to the middle position activates the tuning process ("tune"). Moving the switch to the "low" position (<1200us), stops the tuning and reverts the parameters to their values before tuning began.
 

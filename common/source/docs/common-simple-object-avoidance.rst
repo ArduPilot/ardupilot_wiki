@@ -137,4 +137,4 @@ Configuring Simple Avoidance for Copter in Altitude Hold Mode
 - in :ref:`AltHold <altholdmode>`
 
   - :ref:`AVOID_DIST_MAX <AVOID_DIST_MAX>` controls how far from a barrier the vehicle starts leaning away from the barrier
-  - `AVOID_ANGLE_MAX`` controls how far the vehicle will try to lean away from the barrier
+  - :ref:`ATC_ANGLE_MAX <ATC_ANGLE_MAX>` controls how far the vehicle will try to lean away from the barrier

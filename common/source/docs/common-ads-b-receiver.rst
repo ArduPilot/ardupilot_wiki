@@ -148,7 +148,7 @@ an older version, use:
     sudo pip install --upgrade pymavlink MAVProxy
 
 Set the number of aircraft to simulate using the ``SIM_ADSB_COUNT`` parameter. Ping2020 simulation support
-can be enabled by setting parameter `'SIM_ADSB_TX``. Other simulation options for ADS-B are present, all
+can be enabled by setting parameter :ref:`SIM_ADSB_TX <SIM_ADSB_TX>`. Other simulation options for ADS-B are present, all
 starting with ``SIM_ADSB_``.
 
 Plugging in a hardware ADS-B receiver to your computer using a USB-to-Serial converter, or using the PingUSB, will allow you to overlay real ADS-B

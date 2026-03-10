@@ -28,7 +28,7 @@ Running SITL
       :target: ../_images/sitl-on-windows-wsl-vscode.png
       :width: 450px
 
-.. note:: if you have configured WSL2 for mirrored networking (ie using the``set networkingMode=mirrored`` line in the .wslconfig file in your Windows home directory ,i.e. not in your WSL home directory, then use
+.. note:: if you have configured WSL2 for mirrored networking (ie using the ``set networkingMode = mirrored`` line in the .wslconfig file in your Windows home directory ,i.e. not in your WSL home directory, then use
 
    ::
 
