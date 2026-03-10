@@ -275,11 +275,11 @@ You can list the fence parameters with ``param show``:
 
 The fence has an altitude boundary of 100 metres (:ref:`FENCE_ALT_MAX <FENCE_ALT_MAX>`) and
 is bound by a circle of radius :ref:`FENCE_RADIUS<FENCE_RADIUS>` around the home
-location. The `:ref:`FENCE_TYPE <FENCE_TYPE>`= "3" means that both the radius and altitude
+location. The :ref:`FENCE_TYPE <FENCE_TYPE>` = "3" means that both the radius and altitude
 are used (you can change the type to other numbers have an altitude-only
 or circle only fence - or none at all).
 FENCE_ENABLE
-The fence is initially disabled (:ref:`FENCE_ENABLE <>` = 0). To turn it on we
+The fence is initially disabled (:ref:`FENCE_ENABLE <FENCE_ENABLE>` = 0). To turn it on we
 set the value to one:
 
 ::

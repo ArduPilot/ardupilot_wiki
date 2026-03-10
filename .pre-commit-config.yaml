@@ -31,9 +31,5 @@ repos:
           - --disable=horizontal-tab
           - --disable=hyperlink-reference-missing-backtick
           - --disable=missing-final-newline
-          - --disable=missing-space-after-literal
-          - --disable=missing-space-after-role
-          - --disable=missing-space-before-default-role
-          - --disable=missing-space-before-role
           - --disable=missing-underscore-after-hyperlink
           - --disable=trailing-whitespace
