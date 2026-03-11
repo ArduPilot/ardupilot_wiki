@@ -47,7 +47,7 @@ XBee socket
 ===========
 The onboard XBee socket can be used to expand functionality with `Plugin accessories <https://www.ardusimple.com/radio-links/>`_ (MR/LR radios, Bluetooth, WiFi, Ethernet, Dataloggers, RS232, Canbus, L-Band). 
 
-Not compatible with high power XBee accessories (XLR radio and 4G NTRIP Master). To have this full compatibility consider `simpleRTK2B Pro. <https://www.ardusimple.com/product/simplertk2b-pro/>`
+Not compatible with high power XBee accessories (XLR radio and 4G NTRIP Master). To have this full compatibility consider `simpleRTK2B Pro. <https://www.ardusimple.com/product/simplertk2b-pro/>`__
 
 .. note:: The cables/connectors may be modified to connect to other autopilot boards, using the Pin Map information provided above.
 

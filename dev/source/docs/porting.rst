@@ -60,7 +60,7 @@ Step 2 - create a hwdef.dat and hwdef-bl.dat files for the board
 
 Step 3 - Build the firmware
 ---------------------------
-- First, create the bootloader. To create a bootloader that is just right for your board you need to build the a hwdef-bl.dat for your board. That goes in the same directory as your hwdef.dat, and has the same format, but should not include things like I2C, SPI or CAN peripherals. There are lots of examples of hwdef-bl.dat files already in the `hwdef <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef>` directory you can use as examples.
+- First, create the bootloader. To create a bootloader that is just right for your board you need to build the a hwdef-bl.dat for your board. That goes in the same directory as your hwdef.dat, and has the same format, but should not include things like I2C, SPI or CAN peripherals. There are lots of examples of hwdef-bl.dat files already in the `hwdef <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef>`__ directory you can use as examples.
 
 The key things you must have in your hwdef-bl.dat are:
 
