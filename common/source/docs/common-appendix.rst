@@ -40,7 +40,13 @@ the wiki.
 [site wiki="plane, copter,rover,sub"]
     Training Centers <common-training-centers>
 [/site]
-    Wiki Editing Guide <common-wiki_editing_guide
+    Wiki Editing Guide <common-wiki_editing_guide>
+
+[site wiki="planner"]
+    Archived - Recording and Playing Back Missions<common-recording-and-playing-back-missions>
+    Archived - Loading ChiBios Firmware Onto Pixhawk<common-loading-chibios-firmware-onto-pixhawk>
+[/site]
+
 [site wiki="plane"]
     Common Airframe Builds <common-common-airframe-builds>
     Release Notes <project-news>
