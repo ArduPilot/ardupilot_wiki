@@ -119,7 +119,7 @@ Introduction Videos
 TorqLink Controlled Motors
 ==========================
 
-A LUA driver is provided 'here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/torqeedo-torqlink.lua>`__ for control of one or two motors via the ``SERVOx_FUNCTION`` of "Throttle" or "ThrottleLeft, ThrottleRight". The motor(s) control is attached to the autopilot's CAN port. Follow the `readme <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/torqeedo-torqlink.md>`__ for the driver.
+A LUA driver is provided `here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/torqeedo-torqlink.lua>`__ for control of one or two motors via the ``SERVOx_FUNCTION`` of "Throttle" or "ThrottleLeft, ThrottleRight". The motor(s) control is attached to the autopilot's CAN port. Follow the `readme <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/torqeedo-torqlink.md>`__ for the driver.
 
 [copywiki destination="rover"]
 

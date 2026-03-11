@@ -112,7 +112,7 @@ MHz (Europe).
 Actuators
 =========
 
-For control and propulsion, the Flapping Fin Blimp uses micro servos, such as`these <https://usa.banggood.com/search/1.7g-servo.html>`__ . Larger versions could scale their size, accordingly.
+For control and propulsion, the Flapping Fin Blimp uses micro servos, such as `these <https://usa.banggood.com/search/1.7g-servo.html>`__ . Larger versions could scale their size, accordingly.
 
 .. toctree::
     :hidden:
