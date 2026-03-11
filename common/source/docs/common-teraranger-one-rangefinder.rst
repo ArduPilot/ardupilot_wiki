@@ -12,7 +12,7 @@ The TeraBee EVO family of rangefinders are lightweight distance measurement sens
 
 .. note::
 
-    Specifications are derived from tests in controlled conditions. Bright sunlight, target surface reflectivity and other variables will affect sensor performance. The combination of very bright sunshine and low reflectivity targets (such as grass) can reduce maximum range to 10m or less. For additional information, please find the following <https://terabee.b-cdn.net/wp-content/uploads/2019/04/TeraRanger-Evo-60m-Test-Results-Report-Outdoor.pdf>`__
+    Specifications are derived from tests in controlled conditions. Bright sunlight, target surface reflectivity and other variables will affect sensor performance. The combination of very bright sunshine and low reflectivity targets (such as grass) can reduce maximum range to 10m or less. For additional information, please find the `following <https://terabee.b-cdn.net/wp-content/uploads/2019/04/TeraRanger-Evo-60m-Test-Results-Report-Outdoor.pdf>`__
 
 More technical information about these senors can be found below:
 
@@ -66,7 +66,7 @@ the open-ended cable included with the sensor.
 
 .. note:: Do not power from autopilot port, unless port is known to have sufficient current capability. If this is the case just connect the SCL/SDA lines from the rangefinder to the autopilot's I2C signals of the same name. 
 .. note:: some of these rangefinders consume over 100ma of current and should NOT be powered from the autopliots's I2C port, but from an external 5V regulated supply source.
-.. note:: For more information please visit this link <https://www.terabee.com/connection-to-pixhawk-autopilots-teraranger-evo/>`__ 
+.. note:: For more information please visit this `link <https://www.terabee.com/connection-to-pixhawk-autopilots-teraranger-evo/>`__ 
 
 Setup in Mission Planner
 ========================

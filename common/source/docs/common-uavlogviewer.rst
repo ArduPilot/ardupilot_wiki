@@ -58,7 +58,7 @@ Plot Features
 
 #. You can remove a data plot by clicking the trash can icon.
 
-#. You can even create and plot expressions that use the fields by "Add Expression" button. See ` Graph Expressions for MavExplorer <https://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html#graph-expressions>`__ for examples of using expressions in a plot analysis.
+#. You can even create and plot expressions that use the fields by "Add Expression" button. See `Graph Expressions for MavExplorer <https://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html#graph-expressions>`__ for examples of using expressions in a plot analysis.
 
 #. You can also save the present plot and its setup using the "Save Preset" button. These are persistent from session to session. A preset can be removed by tbd.
 
