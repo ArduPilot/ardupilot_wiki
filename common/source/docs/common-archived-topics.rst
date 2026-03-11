@@ -71,11 +71,15 @@ value to users with old hardware.
 
 [/site]
 [site wiki="rover"]
-- `Pre-4.0 Rover Avoidance <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/rover-object-avoidance.rst>`_
-- `Sonar Sensors <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/sonar-sensors.rst>`_
-- `Tuning Steering and Navigation (ver 3.1 and older) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/tuning-steering-and-navigation-for-a-rover.rst>`_
-- `Tuning Waypoint Turn Speed (ver 3.1 and older) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/speed-turn-parameter-tuning.rst>`_
-- `ADNS3080 Mouse Sensor (no longer supported) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-mouse-based-optical-flow-sensor-adns3080.rst>`_
+.. toctree::
+    :maxdepth: 1
+
+    Pre-4.0 Rover Avoidance <rover-object-avoidance>
+    Sonar Sensors <sonar-sensors>
+    Tuning Steering and Navigation (ver 3.1 and older) <tuning-steering-and-navigation-for-a-rover>
+    Tuning Waypoint Turn Speed (ver 3.1 and older) <speed-turn-parameter-tuning>
+    `ADNS3080 Mouse Sensor (no longer supported) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-mouse-based-optical-flow-sensor-adns3080.rst>`_
+
 [/site]
 
 [site wiki="plane"]
