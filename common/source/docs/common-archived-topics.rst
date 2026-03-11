@@ -97,36 +97,39 @@ value to users with old hardware.
     Manual Roll, Pitch and Yaw Controller Tuning(firmware before 4.1) <roll-pitch-controller-tuning>
 [/site]
 [site wiki="dev"]
-- `Building ArduPilot for APM2.x with Eclipse on Windows <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-apm2-with-eclipse-on-windows.rst>`_
-- `Loading the code onto APM2.x <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/load-the-code-onto-apm2x.rst>`_
-- `Advanced Configuration Settings <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/advanced-configuration-settings.rst>`_
-- `Updating the APM2.x BootLoader <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/updating-the-apm2-x-bootloade.rst>`_
-- `Mission Planner Terminal <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/mission-planner-terminal.rst>`_
-- `Debugging using JTAG <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/jtag.rst>`_
-- `Building for Pixhawk on Windows with Make <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-px4-with-make.rst>`_
-- `Building ArduPilot with Arduino for Windows <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-ardupilot-with-arduino-windows.rst>`_
-- `Editing & Building with Atmel Studio or Visual Studio <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-ardupilot-apm-with-visual-studio-visual-micro.rst>`_
-- `Editing with Eclipse <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/editing-the-code-with-eclipse.rst>`_
-- `Building for APM2.x with Make (Win, Mac, Linux) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building_with_make.rst>`_
-- `APM2.x on MacOS with Arduino <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-the-code-on-mac.rst>`_
-- `APM2.x on Linux with Make <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-the-code-onlinux.rst>`_
-- `Building for Flymaple on Linux <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-apm-for-flymaple.rst>`_
-- `Building for Pixhawk on Windows or Linux with QtCreator <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-px4-with-qtcreator.rst>`_
-- `Building for Qualcomm Snapdragon <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-for-qualcomm-snapdragon-flight-kit.rst>`_
-- `Building for Erle-Brain 2 <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-for-erle-brain-2.rst>`_
-- `Building for Erle-Brain <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-for-erle-brain.rst>`_
-- `Building for Navio on RPI 2 <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-for-navio-on-rpi2.rst>`_
-- `Setup the waf Build Environment on Windows10 using WSL <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/building-setup-windows10.rst>`_
-- `Intel Edison <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/intel-edison.rst>`_
-- `Interfacing with Pixhawk Using the NSH <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/interfacing-with-pixhawk-using-the-nsh.rst>`_
-- `BeaglePilot Project <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/beaglepilot.rst>`_
-- `Making a MAVLink WiFi bridge using the Raspberry Pi <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/making-a-mavlink-wifi-bridge-using-the-raspberry-pi.rst>`_
-- `HITL Simulators <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/hitl-simulators.rst>`_
-- `Weekly meetings on Mumble Server <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/ardupilot-mumble-server.rst>`_
-- `How to sign a Pixhawk with your Certificate of Authenticity <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/how-to-use-the-auth-command-to-sign-a-pixhawk-board-with-your-certificate-of-authenticity.rst>`_
-- `SITL Serial Mapping <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/sitl-serial-mapping.rst>`_
-- `2020/2021 Roadmap <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/roadmap.rst>`_
-- `Trouble Shooting Pixhawk4 Boot <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/troubleshooting-pixhawkpx4-boot.rst>`_
+.. toctree::
+    :maxdepth: 1
+
+    Building ArduPilot for APM2.x with Eclipse on Windows <building-apm2-with-eclipse-on-windows>
+    Loading the code onto APM2.x <load-the-code-onto-apm2x>
+    Advanced Configuration Settings <advanced-configuration-settings>
+    Updating the APM2.x BootLoader <updating-the-apm2-x-bootloade>
+    Mission Planner Terminal <mission-planner-terminal>
+    Debugging using JTAG <jtag>
+    Building for Pixhawk on Windows with Make <building-px4-with-make>
+    Building ArduPilot with Arduino for Windows <building-ardupilot-with-arduino-windows>
+    Editing & Building with Atmel Studio or Visual Studio <building-ardupilot-apm-with-visual-studio-visual-micro>
+    Editing with Eclipse <editing-the-code-with-eclipse>
+    Building for APM2.x with Make (Win, Mac, Linux) <building_with_make>
+    APM2.x on MacOS with Arduino <building-the-code-on-mac>
+    APM2.x on Linux with Make <building-the-code-onlinux>
+    Building for Flymaple on Linux <building-apm-for-flymaple>
+    Building for Pixhawk on Windows or Linux with QtCreator <building-px4-with-qtcreator>
+    Building for Qualcomm Snapdragon <building-for-qualcomm-snapdragon-flight-kit>
+    Building for Erle-Brain 2 <building-for-erle-brain-2>
+    Building for Erle-Brain <building-for-erle-brain>
+    Building for Navio on RPI 2<building-for-navio-on-rpi2>
+    Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>
+    Intel Edison <intel-edison>
+    Interfacing with Pixhawk Using the NSH <interfacing-with-pixhawk-using-the-nsh>
+    BeaglePilot Project <beaglepilot>
+    Making a MAVLink WiFi bridge using the Raspberry Pi <making-a-mavlink-wifi-bridge-using-the-raspberry-pi>
+    HITL Simulators <hitl-simulators>
+    Weekly meetings on Mumble Server <ardupilot-mumble-server>
+    How to sign a Pixhawk with your Certificate of Authenticity <how-to-use-the-auth-command-to-sign-a-pixhawk-board-with-your-certificate-of-authenticity>
+    SITL Serial Mapping <sitl-serial-mapping>
+    2020/2021 Roadmap <roadmap>
+    Trouble Shooting Pixhawk4 Boot <troubleshooting-pixhawkpx4-boot>
 [/site]
 [site wiki="copter,rover"]
 - `Visual Odometry with OpenKai and ZED <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-zed.rst>`_
