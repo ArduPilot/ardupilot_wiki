@@ -40,7 +40,7 @@ the wiki.
 [site wiki="plane, copter,rover,sub"]
     Training Centers <common-training-centers>
 [/site]
-    Wiki Editing Guide <common-wiki_editing_guide>
+    Wiki Editing Guide <common-wiki_editing_guide
 [site wiki="plane"]
     Common Airframe Builds <common-common-airframe-builds>
     Release Notes <project-news>
