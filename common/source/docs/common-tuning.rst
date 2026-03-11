@@ -38,6 +38,7 @@ parameters. The following topics show you how.
     Tuning QuickStart <tuning-quickstart>
     Automatic Tuning with AUTOTUNE <automatic-tuning-with-autotune>
     Manual Roll, Pitch and Yaw Controller Tuning(firmware 4.1 and after) <new-roll-and-pitch-tuning>
+    Manual Roll, Pitch and Yaw Controller Tuning(firmware before 4.1) <roll-pitch-controller-tuning>
     Navigation Tuning <navigation-tuning>
     Cruise Speed Tuning <tuning-cruise>
     TECS (Total Energy Control System) for Speed & Height – Tuning Guide <tecs-total-energy-control-system-for-speed-height-tuning-guide>
