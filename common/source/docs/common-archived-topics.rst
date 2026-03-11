@@ -43,32 +43,34 @@ value to users with old hardware.
 
 [/site]
 [site wiki="copter"]
-- `Boat Mode <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/boat-mode.rst>`_
-- `Using Xbee radios for telemetry with APM <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/xbee-radios.rst>`_
-- `Quick Start for RTFs <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/quick-start-guide.rst>`_
-- `HIL Quad Simulator <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/hil-quad.rst>`_
-- `Traditional Helicopter Simulator – TradHeliHIL <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/tradhelihil.rst>`_
-- `Installing the PX4FMU on a QuadCopter <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/px4fmu-only-wiring.rst>`_
-- `GPS Failsafe <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/archived-gps-failsafe.rst>`_
-- `traditional-helicopter-archived-tuning <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/traditional-helicopter-archived-tuning.rst>`_
-- `Hoverthings Flip Sport Quadcopter (detailed build) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/hoverthings-flip-sport-quadcopter.rst>`_
-- `DJI F330 FlameWheel QuadCopter <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/dji-f330-flamewheel.rst>`_
-- `Build Your Own Multicopter <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/build-your-own-multicopter.rst>`_
-- `Advanced MultiCopter Design <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/advanced-multicopter-design.rst>`_
-- `Improving the Capabilities of Your Multicopter <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/improving-the-capabilities-of-your-multicopter.rst>`_
-- `PDF Guides <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/pdf-guides.rst>`_
-- `Copter Project News <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/project-news.rst>`_
-- `Troubleshooting <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/troubleshooting.rst>`_
-- `Landing Gear <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/landing-gear.rst>`_
-- `ADNS3080 Mouse Sensor (no longer supported) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-mouse-based-optical-flow-sensor-adns3080.rst>`_
-- `Analog Sonar (AC3.1) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/sonar.rst>`_
-- `Tricopter Setup <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/archived-tricopter.rst>`_
-- `Position mode <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/ac2_positionmode.rst>`_
-- `Advanced Tuning <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/tuning.rst>`_
-- `Basic Tuning <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/basic-tuning.rst>`_
-- `Auxiliary Function Switches (3.6 and earlier) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/channel-7-and-8-options.rst>`_
-- `TradHeli Loading Firmware <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/loading-the-code.rst>`_
+.. toctree::
+    :maxdepth: 1
 
+    Boat Mode <boat-mode>
+    Using Xbee radios for telemetry with APM <xbee-radios>
+    Quick Start for RTFs <quick-start-guide>
+    HIL Quad Simulator <hil-quad>
+    Traditional Helicopter Simulator – TradHeliHIL <tradhelihil>
+    Installing the PX4FMU on a QuadCopter <px4fmu-only-wiring>
+    GPS Failsafe <archived-gps-failsafe>
+    traditional-helicopter-archived-tuning
+    Hoverthings Flip Sport Quadcopter (detailed build) <hoverthings-flip-sport-quadcopter>
+    DJI F330 FlameWheel QuadCopter <dji-f330-flamewheel>
+    Build Your Own Multicopter <build-your-own-multicopter>
+    Advanced MultiCopter Design <advanced-multicopter-design>
+    Improving the Capabilities of Your Multicopter <improving-the-capabilities-of-your-multicopter>
+    PDF Guides <pdf-guides>
+    Copter Project News <project-news>
+    Troubleshooting <troubleshooting>
+    Landing Gear <landing-gear>
+    `ADNS3080 Mouse Sensor (no longer supported) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-mouse-based-optical-flow-sensor-adns3080.rst>`_
+    Analog Sonar (AC3.1) <sonar>
+    Tricopter Setup <archived-tricopter>
+    Position mode <ac2_positionmode>
+    Advanced Tuning <tuning>
+    Basic Tuning <basic-tuning>
+    Auxiliary Function Switches (3.6 and earlier) <channel-7-and-8-options>
+    TradHeli Loading Firmware <loading-the-code>
 [/site]
 [site wiki="rover"]
 .. toctree::
@@ -79,7 +81,6 @@ value to users with old hardware.
     Tuning Steering and Navigation (ver 3.1 and older) <tuning-steering-and-navigation-for-a-rover>
     Tuning Waypoint Turn Speed (ver 3.1 and older) <speed-turn-parameter-tuning>
     `ADNS3080 Mouse Sensor (no longer supported) <https://github.com/ArduPilot/ardupilot_wiki/blob/master/ARCHIVED/common-mouse-based-optical-flow-sensor-adns3080.rst>`_
-
 [/site]
 
 [site wiki="plane"]
