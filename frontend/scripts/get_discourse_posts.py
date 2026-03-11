@@ -98,7 +98,8 @@ class BlogPostsFetcher:
             if cache_path.exists():
                 with open(cache_path, "r", encoding="utf-8") as f:
                     return json.load(f)
-            raise RequestExecutionError(f"Request failed with {err}. URL: {url}")
+            msg = f"Request failed with {err}. URL: {url}"
+            raise RequestExecutionError(msg)
 
     @staticmethod
     def clean_html(raw_html: str) -> str:
@@ -189,12 +190,14 @@ class BlogPostsFetcher:
     def write_to_json(self, url: str, data: List[Post]) -> None:
         try:
             if url not in self.files_names:
-                raise ValueError(f"No filename associated with url: {url}")
+                msg = f"No filename associated with url: {url}"
+                raise ValueError(msg)
             post_data = [post.__dict__ for post in data]
             with open(self.files_names[url], 'w', encoding='utf-8') as f:
                 json.dump(post_data, f, ensure_ascii=False, indent=4)
         except Exception as e:
-            raise WriteToFileError(f"Exception occurred while writing to file with message {e}")
+            msg = f"Exception occurred while writing to file with message {e}"
+            raise WriteToFileError(msg)
 
     def fetch(self, args: Any) -> None:
         try:
