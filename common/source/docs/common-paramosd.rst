@@ -157,6 +157,3 @@ To show what OSD6 parameter2 is set to, type :code:`osd param-show 6 2`
 .. note::
    
    Be aware that some :code:`TYPE` mnemonic options are vehicle-specific. Make sure to apply mnemonics to the correct vehicle type in order to avoid unexpected results
-
-
-

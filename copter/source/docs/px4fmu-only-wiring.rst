@@ -203,4 +203,3 @@ Turnigy transmitter compatible with FRSky transmitter module
 
 .. image:: ../../../images/FutabaT8FG.jpg
     :target: ../_images/FutabaT8FG.jpg
-

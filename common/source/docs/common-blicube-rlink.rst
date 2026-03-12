@@ -52,5 +52,3 @@ Where to Buy
 
 `User Manual <https://github.com/ThomasVon2021/RLINK_P900/blob/master/Docs/RLINK%20User%20Manual%20V2.0%20.pdf>`__
 ==================================================================================================================
-
-

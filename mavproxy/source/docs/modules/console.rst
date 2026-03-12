@@ -23,6 +23,3 @@ geofence commands.
 .. image:: ../../images/console.png
 
 .. image:: ../../images/console_win.png
-
-
-

@@ -45,5 +45,3 @@ As a Plane altitude rangefinder used in auto landings:
 
 
 For Copter and Object Avoidance applications, additional/different parameters will be need to set. See :ref:`common-rangefinder-setup`.
-
-

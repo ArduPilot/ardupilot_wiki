@@ -304,4 +304,3 @@ Please use the date format shown above to avoid ambiguity.  Please also keep the
 
         // PARAMETER_CONVERSION - Added: Jun-2019
         { Parameters::k_param_quadplane, 400,  AP_PARAM_FLOAT, "Q_P_ACCZ_FLTD"},   //  Q_AZ_FILT
-

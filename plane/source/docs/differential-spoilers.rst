@@ -112,4 +112,3 @@ If Differential Spoilers are used, setting an ``RCx_OPTION`` channel to "87" wil
 - LOW position: effectively sets :ref:`DSPOILER_CROW_W1<DSPOILER_CROW_W1>` to zero. Only inner spoilers move with FLAP channel, ie normal flaps.
 
 This allows live changes to CROW operation on approaches so that speed braking and descent rates can be changed during the approach.
-

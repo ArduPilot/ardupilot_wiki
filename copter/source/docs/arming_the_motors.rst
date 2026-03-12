@@ -67,4 +67,3 @@ GCS Status Messages
 ===================
 
 Unless the :ref:`ARMING_OPTIONS<ARMING_OPTIONS>` bit 2 is set, text messages will be sent to the GCS to indicate when arming or disarming has occurred.
-

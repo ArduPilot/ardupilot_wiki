@@ -16,4 +16,3 @@ type of aircraft.
 -  :ref:`VTail Planes <guide-vtail-plane>`
 -  :ref:`Differential Spoilers <differential-spoilers>`
 -  :ref:`Flaperons <flaperons-on-plane>`
-

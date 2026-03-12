@@ -55,4 +55,3 @@ Data screen's Status tab. Look closely for "rangefinder1".
 
 .. image:: ../../../images/mp_rangefinder_lidarlite_testing.jpg
     :target: ../_images/mp_rangefinder_lidarlite_testing.jpg
-

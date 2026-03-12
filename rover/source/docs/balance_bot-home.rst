@@ -24,9 +24,3 @@ Get Started
     Testing the Balance Bot <balance_bot-testing>
     Tuning the Balance Bot <balance_bot-tuning>
     Common Issues and Fixes<balance_bot-issues>
-
-
-
-
-
-

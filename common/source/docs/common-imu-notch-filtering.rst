@@ -130,4 +130,3 @@ The software notch filters used are very "spikey" being relatively narrow but go
     ESC Telemetry<common-esc-telem-based-notch>
     In-Flight FFT <common-imu-fft>
     Traditional Heli Notch Filter Setup<common-imu-notch-filtering-helicopter-setup>
-

@@ -117,5 +117,3 @@ The RALLY fields present in a rally point file are as follows:
 - Lon: Longitude of Rally Point
 - Alt: AGL altitude of Rally Point.
 - Altitude Reference Frame: for ALT value: Relative to Home, above Terrain, or Absolute ASL.
-
-

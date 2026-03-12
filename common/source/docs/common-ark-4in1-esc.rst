@@ -62,5 +62,3 @@ More Information
 * `ARK 4IN1 ESC <https://arkelectron.com/product/ark-4in1-esc/?srsltid=AfmBOopYg5uj2bYP4DeMT8S1xTlqZBgr0890RDqnH-axuQyzHHQHIOnw>`_
 
 * `ARK 4IN1 ESC Documentation <https://arkelectron.gitbook.io/ark-documentation/electronic-speed-controllers/ark-4in1-esc>`_
-
-

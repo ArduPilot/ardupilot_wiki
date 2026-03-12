@@ -312,4 +312,3 @@ from Sandro Benigno and Guto Santaella updated by Jesus Alvarez.
 
 
 [copywiki destination="copter,plane,planner"]
-

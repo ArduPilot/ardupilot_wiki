@@ -10,4 +10,3 @@ antenna.
 .. code:: bash
 
     module load antenna [lat] [long]
-

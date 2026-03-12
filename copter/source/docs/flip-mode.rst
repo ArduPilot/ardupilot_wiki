@@ -18,4 +18,3 @@ The mode may be entered either by an :ref:`Auxiliary Switch <common-auxiliary-fu
 - During the flip the throttle is managed to attempt to neither gain or lose altitude. It is only an attempt!
 - You may abort the flip by moving the pitch or roll stick as if to command near full stick in that axis. The Flip will immediately halt **at whatever attitude it is currently at** and return to the previous flight mode at the pilot's throttle stick input.
 - As the flip is completing, it will briefly increase throttle to try to recover any lost altitude. Again, this is an approximation. Once completed (entry attitude re-attained), the previous flight mode is returned to (if not entered by an AUX switch). It will not flip again until the Aux Switch is lowered and raised again, if used, or FLIP flight mode re-entered. If entered via a flight mode switch, you will need to change mode out of FLIP, to another mode, and then back again if another flip is desired,
-

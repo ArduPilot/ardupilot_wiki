@@ -60,9 +60,3 @@ BUZZER
 Buzzers can provide aural indications of status and warnings. Examples for a external piezo buzzer used with a Pixhawk are given :ref:`here <common-sounds-pixhawkpx4>`.
 
 Several parameters are associated with buzzers for configuration and are detailed in the :ref:`common-buzzer` section.
-
-
-
-
-
-

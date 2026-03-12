@@ -32,4 +32,3 @@ components, including those required for the operation of the autopilot.
     Failsafe Function <apms-failsafe-function>
     Airspeed Parameters Setup <airspeed-parameters-setup>
     Basic FPV Plane <fpv-plane>
-

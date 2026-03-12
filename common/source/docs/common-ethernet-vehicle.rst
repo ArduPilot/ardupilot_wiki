@@ -187,4 +187,3 @@ The Finished Vehicle
 
 .. image:: ../../../images/edu650-ethernet-bottom.jpg
     :target: ../_images/edu650-ethernet-bottom.jpg
-

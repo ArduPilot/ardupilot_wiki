@@ -93,5 +93,3 @@ List of all parameters for possible drivers which can be included:
    :maxdepth: 1
 
     Full Parameter List <AP_Periph-Parameters>
-
-

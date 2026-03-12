@@ -68,5 +68,3 @@ More Information
 * `ARK 4IN1 ESC CONS <https://arkelectron.com/product/ark-4in1-esc-cons/>`_
 
 * `ARK 4IN1 ESC CONS Documentation <https://arkelectron.gitbook.io/ark-documentation/electronic-speed-controllers/ark-4in1-esc>`_
-
-

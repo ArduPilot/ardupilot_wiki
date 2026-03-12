@@ -96,4 +96,3 @@ The push step (step 7) above may fail if your :ref:`fork <git-fork>`'s branch ha
        git push -u origin topic-branch
 
 to create the branch there and have your local topic-branch track it.
-

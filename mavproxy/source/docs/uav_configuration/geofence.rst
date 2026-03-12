@@ -75,4 +75,3 @@ Remove a specific geofence coordinate.
 .. code:: bash
 
     fence remove 6
-

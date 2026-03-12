@@ -139,4 +139,3 @@ Configuring QGroundControl for Edge
 -----------------------------------
 
 Detailed instructions are available `here <https://docs.emlid.com/edge/quickstart/#configuring-qgroundcontrol-for-edge>`__.
-

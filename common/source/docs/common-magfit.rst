@@ -44,6 +44,3 @@ Hints and Tips
 - Be sure you have already calibrated the compasses prior to the flight. You can use the tool on very poorly calibrated compasses, but that could be a flight hazard (unless its a plane or vehicle not dependent on compass).
 - If you have large COMPASS_MOT values indicating strong motor/battery system interference, be sure that none of those components can shift in flight, resulting in invalidating the compass motor interference corrections you entered.
 - The EKF's sole purpose is to filter out sensor inaccuracies and system disturbances. If the ATT yaw change is very large( > 20 degrees), this means that something else is possibly very wrong in the other sensors, or vehicle setup, and needs to be investigated before using the new compass calibration parameter values.
-
-
-

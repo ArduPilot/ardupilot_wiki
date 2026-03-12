@@ -39,4 +39,3 @@ Where to Buy
 `Aliexpress <https://www.aliexpress.com/item/1005002723370301.html>`__
 
 [copywiki destination="plane"]
-

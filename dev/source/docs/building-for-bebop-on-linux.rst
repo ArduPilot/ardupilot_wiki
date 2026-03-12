@@ -442,8 +442,3 @@ Known limitations
 -  Some work will be done to improve support for this GPS
 -  The optical flow is currently under development
 -  There is currently no support for video streaming and capture
-
-
-
-
-

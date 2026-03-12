@@ -91,4 +91,3 @@ THROTTLE              MANUAL: Ascend/Descend,
                       VELOCITY: Full throw attempts to increase/decrease altitude :ref:`MAX_VEL_Z<MAX_VEL_Z>` m/s,
                       LOITER: Full throw attempts to increase/decrease heading :ref:`MAX_POS_Z<MAX_POS_Z>` m/s 
 ==================    =================
-

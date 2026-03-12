@@ -70,22 +70,3 @@ The vehicle must be armed for the wheels to start moving. Check the :ref:`rover 
 #. After the vehicle arms, pitch it forward and back manually(Use hands, not the RC transmitter). The motors must turn in the direction of pitch. 
 
 #. Proceed to the :ref:`Control Modes<balance_bot-modes>` and :ref:`tuning<balance_bot-tuning>` section if the above steps were successful.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

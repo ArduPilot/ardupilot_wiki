@@ -30,4 +30,3 @@ which is in the ``./windows`` directory. The installer will be created in the
 ``./windows/output`` directory. The `Inno Setup <http://www.jrsoftware.org/isdl.php#stable>`_ 
 program will be required for this process and is assumed to be installed in the 
 ``C:\Program Files (x86)\Inno Setup 6\`` folder
-

@@ -54,4 +54,3 @@ Distance Sensors
 ================
 
 If you're looking to equip your Rover with obstacle avoidance capabilities, :ref:`Sonar/IR sensors <sonar-sensors>` are a great choice. These sensors help the Rover detect and avoid objects in its path, enhancing its autonomous navigation abilities.
-

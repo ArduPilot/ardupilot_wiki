@@ -118,4 +118,3 @@ EKF3 Source Transitions with OpticalFlow
 ========================================
 
 If switching between this and OpticalFlow is desired, see :ref:`extnav-optiflow-transitions`
-

@@ -247,5 +247,3 @@ circling, keeping its nose pointed at the center of the circle. You
 can try pushing up CIRCLE_RATE to higher values (in degrees/second) as
 you get more confident. The video at the top of this page has
 CIRCLE_RATE=150 for a 150 degree/second circle.
-
-

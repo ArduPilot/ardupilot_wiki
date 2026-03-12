@@ -19,4 +19,3 @@ Protocols supported:
 - Futaba SFHSS
 
 plus others
-

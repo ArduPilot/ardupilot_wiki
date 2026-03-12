@@ -29,4 +29,3 @@ If non-ArduPilot firmware is loaded on the autopilot, see :ref:`these instructio
    firmware and any flight controller software that was previously
    installed on the board (i.e. Copter or Plane) it is likely the EEPROM
    will have been erased by the firmware upload.
-

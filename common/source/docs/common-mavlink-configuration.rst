@@ -42,4 +42,3 @@ In addition, there are several global MAVLink related parameters
 * :ref:`MAV_OPTIONS<MAV_OPTIONS>`: Alters various behaviour of the MAVLink interface. See table below. If bit 0 is set, the the channel will accetp only MAVLink messages for the SYSID_GCS.
 * :ref:`MAV_SYSID<MAV_SYSID>`: Allows setting an individual MAVLink system id for this vehicle to distinguish it from others on the same network
 * :ref:`MAV_TELEM_DELAY<MAV_TELEM_DELAY>`: The amount of time (in seconds) to delay radio telemetry to prevent an Xbee bricking on power up
-

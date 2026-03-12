@@ -65,5 +65,3 @@ Many single board autopilots support RC input on serial port 6 only exposing the
 - Set :ref:`BRD_ALT_CONFIG <BRD_ALT_CONFIG>` = 1
 
 With the receiver connected and configured correctly proceed with RC calibration as normal.
-
-

@@ -221,10 +221,3 @@ to ``Model Setup``, then select ``Telemetry``, and then select
 
     MavLink to FrSky Telemetry Converters <common-frsky-mavlink>
     FrSky Protocol Information <common-frsky-protocol-info>
-
-
-
-
-
-
-

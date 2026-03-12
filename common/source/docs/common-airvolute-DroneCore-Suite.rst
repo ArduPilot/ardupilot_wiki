@@ -121,4 +121,3 @@ Useful links
 `Product website <https://www.airvolute.com/product/dronecore/>`__
 
 `Documentation <https://docs.airvolute.com/airvolute-dronecore.suite>`__
-

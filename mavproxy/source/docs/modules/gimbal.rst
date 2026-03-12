@@ -73,4 +73,3 @@ Output the current status of the gimbal.
 .. code:: bash
 
     gimbal status
-

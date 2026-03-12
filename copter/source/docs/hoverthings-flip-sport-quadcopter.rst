@@ -263,4 +263,3 @@ Setup and additions
    trying (unsuccessfully) to cut down a 80' bull pine tree with them.
 #. This little copter is very high performance, fully acrobatic,
    surprisingly efficient and nearly indestructible and it is a blast to fly.
-

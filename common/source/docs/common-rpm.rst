@@ -141,4 +141,3 @@ Heli Magnetic Sensors Known to Work with ArduPilot
 - `Align Magenetic Sensor <https://modelhelicopters.co.uk/products/align-beastx-governor-sensor-hegbp002t?variant=42819003220168>`__
 - `HoTT RPM Magnetic Sensor <https://www.controlhobbies.com/Telemetry-magnetic-sensor-to-measure-RPM-33616.html>`__
 - `SMModelBau Magnetic Sensor <https://www.sm-modellbau.de/magnetischer-Drehzahlsensor-fuer-UniTest-2-UniLog-1-2>`__
-

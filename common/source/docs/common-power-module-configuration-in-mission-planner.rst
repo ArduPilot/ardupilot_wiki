@@ -182,4 +182,3 @@ the Hardware Options page for the :ref:`Pixhawk <common-pixhawk-overview_pixhawk
     :hidden:
 
     common-analog-current-calibration
-

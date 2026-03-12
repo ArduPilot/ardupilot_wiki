@@ -244,4 +244,3 @@ allow you to use any older style RC receiver that has only PWM outputs for each 
    common-FPort-receivers
 
 [copywiki destination="plane,copter,rover,sub,blimp"]
-

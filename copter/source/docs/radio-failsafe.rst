@@ -174,4 +174,3 @@ RTL on the Mission Planner's Initial Setup >> Mandatory Hardware >>
 Flight Modes screen.
 
 Although this appears to work it is strongly not recommended because it can result in situations that can lead to a crash. Since the autopilot has no way of knowing that an RC failsafe has occurred, undesired behavior can occur such as overriding other failsafes like low battery or GCS failsafes with mode changes.
-

@@ -13,4 +13,3 @@ autopilot.
 Use ``log download [lognumber] [filename]`` to start to download a
 specific log to the specified file name. ``log status`` to see the
 transfer status and ``log cancel`` to cancel the download.
-

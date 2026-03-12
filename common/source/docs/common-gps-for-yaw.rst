@@ -181,6 +181,3 @@ Using Moving Baseline Yaw to Reject Magnetic Disturbances
 ---------------------------------------------------------
 
 .. youtube:: MmnfHUYLTeQ
-
-
-

@@ -44,5 +44,3 @@ Use Without Reverse Thrust ESC
 Same as above, however:
 
 - Set :ref:`SERVO3_TRIM<SERVO3_TRIM>` = :ref:`SERVO3_MIN<SERVO3_MIN>` assuming SERVO 3 output is the throttle. This will assure that low stick and minimum demanded throttle is always SERVOx_MIN.
-
-

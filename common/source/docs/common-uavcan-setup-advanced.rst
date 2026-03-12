@@ -180,4 +180,3 @@ ArduPilot and DroneCAN provide a means to directly communicate with DroneCAN dev
     SLCAN Access on F4 Based Autopilots <common-slcan-f4>
     SLCAN Access on F7/H7 Based Autopilots <common-slcan-f7h7>
     DroneCAN GUI <common-uavcan-gui>
-

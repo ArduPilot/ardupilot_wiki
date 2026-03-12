@@ -29,4 +29,3 @@ ublox mga
 
 Upload the mga database from to the GPS module. It is assumed that ``offline.ubx`` and ``dbd.ubx`` are
 in the ``~/.mavproxy/ublox`` folder.
-

@@ -392,4 +392,3 @@ Yaw Controller
 
 .. image:: ../images/latAP.jpg
     :target: ../_images/latAP.jpg
-

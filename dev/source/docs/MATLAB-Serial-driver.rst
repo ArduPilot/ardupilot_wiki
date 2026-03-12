@@ -69,4 +69,3 @@ This is a example used to send a NMEA string from simulated water speed sensor:
       end
       NMEA_string_out = sprintf('%s*%s',NMEA_string_in,dec2hex(checksum));
   end
-

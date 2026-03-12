@@ -59,4 +59,3 @@ The Pass-Through feature allows BLHeli32, AM32, and BLHeli_S ESCs to be upgraded
 
 ..  youtube:: np7xXY_e5sA
     :width: 100%
-

@@ -63,5 +63,3 @@ More Information
 * `ARK RTK Base <https://arkelectron.com/product/ark-rtk-base/>`_
 
 * `ARK RTK Base Documentation <https://arkelectron.gitbook.io/ark-documentation/sensors/ark-rtk-base>`_
-
-

@@ -174,4 +174,3 @@ party hardware!
 
 Many thanks to Oliver Volkmann and `*www.microaerialprojects.com* <http://www.microaerialprojects.com/>`__
 for contributing this page.
-

@@ -84,7 +84,3 @@ The MATLAB code to receive the data would be as follows, the TCP/UDP/IP Toolbox 
     % do something interesting here
 
   end
-
-
-
-

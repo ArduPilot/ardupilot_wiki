@@ -43,7 +43,3 @@ Reconnect Mission Planner and set :ref:`CAN_SLCAN_SERNUM<CAN_SLCAN_SERNUM>` = 0.
 Do not reboot, and click SLCAN Mode CAN1 in the Initial Setup->Optional Hardware->UAVCAN(DroneCAN). Now open the :ref:`DroneCAN GUI tool<common-uavcan-gui>`.
 
 .. note:: In this mode, you can also use Mission Planner's DroneCAN page to make changes, but it will not connect normally as a MAVLink Ground Station. To re-connect Mission Planner, you will need to reboot the autopilot.
-
-
-
-

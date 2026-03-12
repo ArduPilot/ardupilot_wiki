@@ -923,4 +923,3 @@ Video tutorials
 
 ..  youtube:: IcVlJCR8N2g
     :width: 100%
-

@@ -22,6 +22,3 @@ This means that that AHRS must have a ground speed estimate (from GPS usually).
 For example if the elevator servo has the following values for min/max, 1100/1900, then the auto trim can change the trim value in the range of 1420 to 1580us. 
 
 .. note:: This does not substitute for having an incorrect CG. It will compensate for minor trim issues with small CG variations, but a badly located CG will still make the Plane uncontrollable and crashes inevitable.
-
-
-

@@ -37,5 +37,3 @@ type                              Flight mode to use                        guid
 vehicle_throttle                  Amount of throttle to use (0-1)           0.5
 disable_msg                       Disable follow-me                         False
 ===============================   =======================================   ===============================
-
-

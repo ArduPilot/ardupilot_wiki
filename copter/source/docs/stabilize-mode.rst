@@ -73,5 +73,3 @@ Other important parameters
    rotation when the yaw stick is held fully left or right.  Higher
    values will make it rotate more quickly.
 -  :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` can be used to control the responsiveness to changes in pitch and roll angles requested by pilot's inputs.
-
-

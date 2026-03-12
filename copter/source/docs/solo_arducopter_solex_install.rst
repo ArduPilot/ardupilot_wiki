@@ -74,4 +74,3 @@ These are detailed instructions for the installation of ArduCopter on the 3DR So
 **16) FLY!** Once all of the above is complete, you are ready to fly!
 
 :ref:`Return to the main upgrade page <solo_arduCopter_first_flight>` for first flight details.
-

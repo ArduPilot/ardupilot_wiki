@@ -98,6 +98,3 @@ The build progress will appear in the Console window.
    Eclipse: Building APM2
 
 The firmware will be created in a subfolder of the user’s temp directory. For example you will find **ArduCopter.hex** in **C:\\Users\\\ **YourUserNameHere**\\AppData\\Local\\Temp\\ArduCopter.build**.
-
-
-

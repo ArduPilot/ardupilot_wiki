@@ -80,4 +80,3 @@ for examples of what you want to do.
 
 In particular, the ``example`` module (mavproxy_example.py) provides annotated code of many 
 common tasks that can be performed with modules.
-

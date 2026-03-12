@@ -150,4 +150,3 @@ Table of Contents
     Autopilot Setup <docs/autopilot-setup>
     Credits and Contributors <docs/credits-and-contributors>
     Appendix <docs/common-appendix>
-

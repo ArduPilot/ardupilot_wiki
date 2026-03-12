@@ -26,4 +26,3 @@ The GUI itself allows:
 - Kill-switch to immediately disarm
 
 .. image:: ../../images/swarm.png
-

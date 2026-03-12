@@ -285,4 +285,3 @@ Related information
     :maxdepth: 1
 
     PPM Encoder Programming Guide <common-ppm-encoder-8-channel-standalone-encoder>
-

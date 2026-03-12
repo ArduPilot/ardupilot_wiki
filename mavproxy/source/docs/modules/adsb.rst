@@ -41,6 +41,3 @@ show_threat_radius_clear          Show the clear threat radius on map        Fal
 ===============================   ========================================   ===============================
 
 .. image:: ../../images/ads-b.png
-
-
-

@@ -89,4 +89,3 @@ DataFlash logging
 =================
 
 The distance to the beacons can be found in the dataflash log's BCN message's D0, D1, D2, D3 fields.
-

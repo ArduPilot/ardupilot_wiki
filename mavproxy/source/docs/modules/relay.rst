@@ -33,5 +33,3 @@ and value depending on the type selection.
 Timeout is the number of seconds the test should run for.
 
 Count is an optional parameter specifying how many times the test should run for.
-
-

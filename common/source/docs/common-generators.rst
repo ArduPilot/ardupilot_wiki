@@ -24,4 +24,3 @@ The following are all currently supported within ArduPilot:
     Loweheiser generator <common-loweheiser-generator>
 
 .. note:: Shang Fei generator uses a LUA script driver `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/drivers>`__
-

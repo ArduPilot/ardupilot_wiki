@@ -161,4 +161,3 @@ the CLI, and "help" to see all the different tests:
    seconds; you should hear it faintly click)
 -  **shell**: Provides access to the NSH shell (Pixhawk only)
 -  **rangefinder**: Tests the rangefinder sensor
-

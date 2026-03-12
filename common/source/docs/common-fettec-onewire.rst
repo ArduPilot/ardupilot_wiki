@@ -202,4 +202,3 @@ Troubleshooting
 - ESCs are not found in FETtec configurator.
    A halfduplex 2MBaud/s serial connection is required for the use with the FETtec configurator, which is currently not supported by ArduPilot. You need to use a external serial  device like a FETtec FC or a USB serial adapter. Please disconnect the ArduPilot FC from the ESCs to find it in the FETtec configurator.
    
-

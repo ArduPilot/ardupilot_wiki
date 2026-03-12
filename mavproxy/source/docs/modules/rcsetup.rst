@@ -14,4 +14,3 @@ The rcsetup module provides a method to calibrate the RC min/max/centre value.
 
 Start/stop the rc calibration process for the first ``N`` channels. Omit ``N`` to 
 calibrate all available channels.
-

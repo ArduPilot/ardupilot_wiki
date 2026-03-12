@@ -42,4 +42,3 @@ Once an abort land has completed, by either reaching the target altitude or swit
 - If the NAV_LAND mission item is followed by mission item :ref:`CONTINUE_AND_CHANGE_ALT <mav_cmd_nav_continue_and_change_alt>` with param1 = 0 or 1 then the mission index will increment once to that command and execute it like normal. This can be followed by further post-abort mission planning for any custom planned mission behavior.
 - Else If there is a :ref:`DO_LAND_START <mav_cmd_do_land_start>` in the mission then it jumps to that index.
 - Else the mission index decrements once to be the index before the NAV_LAND. This will ensure the same landing approach is repeated.
-

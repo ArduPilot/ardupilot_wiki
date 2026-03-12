@@ -51,4 +51,3 @@ Occasionally, Windows will only present one COM port in Mission Planner. In that
 If you reboot the autopilot, the composite Windows USB driver may be unloaded and the process repeated upon re-attachment.
 
 If the SLCAN port has been configured, and if only one USB COM port appears, it may not be the normal MAVLink protocol port (usually SERIAL0) and you will not be able to connect Mission Planner. You can either re-enable the Composite Driver each time you attach, as above, or simply revert the SLCAN port to MAVLink protocol once attached with the Composite driver and subsequently use the single COM port Windows presents when connecting to Mission Planner.
-

@@ -453,4 +453,3 @@ Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) 
 +------------------------------------------+--------------------------------------------------+
 | ``attitude 0.9238795 0 0 0.3826834 0.5`` | face North-East, move forward at 1/2 of WP_SPEED |
 +------------------------------------------+--------------------------------------------------+
-

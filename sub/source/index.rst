@@ -34,4 +34,3 @@ Getting more info
    Peripheral Hardware <docs/common-optional-hardware>
    Advanced Configuration <docs/common-advanced-configuration>
    Additional Information <docs/additional-information>
-

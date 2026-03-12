@@ -80,5 +80,3 @@ More Information
 * `ARK RTK GPS L1 L5 <https://arkelectron.com/product/ark-rtk-gps-l1-l5/>`_
 
 * `ARK RTK GPS Documentation <https://arkelectron.gitbook.io/ark-documentation/sensors/ark-rtk-gps>`_
-
-

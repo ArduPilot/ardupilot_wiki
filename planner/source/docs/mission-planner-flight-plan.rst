@@ -151,4 +151,3 @@ In Plane only, saving and loading, is done from  the right-click menu:
     - Clear Rally Points: Clear the rally points. This **does clear** the points in the autopilot as well as the map workspace.
     - Save Rally to File: Save the rally points to a file
     - Load Rally from File: Load the rally points from a file
-

@@ -41,5 +41,3 @@ it will still be expecting signed packets.
     signing key KEY
     
 Enable signing of packets with key ``KEY`` from MAVProxy. Does not affect the vehicle.
-
-

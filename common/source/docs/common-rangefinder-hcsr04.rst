@@ -29,4 +29,3 @@ To setup as the first rangefinder. Reboot after setting parameters:
 -  :ref:`RNGFND1_PIN<RNGFND1_PIN>` = Enter GPIO number for pin attached to HC-SRO4 "Echo" pin.
 -  :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “30" (HC-SR04 sonar)
 -  :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = "25" (Downward facing) if used for altitude control.
-

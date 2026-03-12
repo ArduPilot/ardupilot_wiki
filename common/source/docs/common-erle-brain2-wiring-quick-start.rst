@@ -167,4 +167,3 @@ additional information about how to use Erle-Brain2.
     :maxdepth: 1
 
     Compatible RC Transmitter and Receiver Systems (Erle-Brain 2) <common-compatible-rc-transmitter-and-receiver-systems-erle-brain-2>
-

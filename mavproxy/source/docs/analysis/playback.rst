@@ -30,4 +30,3 @@ argument:
 .. code:: bash
 
     mavplayback.py logfile.tlog --out=127.0.0.1:14550
-

@@ -122,6 +122,3 @@ Vision Based Sensors
     
     Intel Realsense Depth Camera <common-realsense-depth-camera>
 [/site]
-
-
-

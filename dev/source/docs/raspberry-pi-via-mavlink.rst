@@ -246,4 +246,3 @@ Example projects
 `FPV with raspberry Pi <https://diydrones.com/profiles/blogs/fpv-setup-with-raspberry-pi>`__
 
 Can't get it to work? Try posting your question in the `Companion Computer discussion board <https://discuss.ardupilot.org/c/apsync-companion-computers>`__.
-

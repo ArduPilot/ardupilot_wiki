@@ -51,7 +51,3 @@ verbose                           Verbose printouts                         Fals
 df_target_system                  Target System                             0
 df_target_component               Target Component                          (MAVProxy default)
 ===============================   =======================================   ===============================
-
-
-
-

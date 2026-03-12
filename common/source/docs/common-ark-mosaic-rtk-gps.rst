@@ -94,5 +94,3 @@ More Information
 * `ARK MOSAIC-X5 RTK GPS <https://arkelectron.com/product/ark-mosaic-x5-gps/>`_
 
 * `ARK MOSAIC-X5 RTK GPS Documentation <https://arkelectron.gitbook.io/ark-documentation/sensors/ark-mosaic-x5-rtk-gps>`_
-
-

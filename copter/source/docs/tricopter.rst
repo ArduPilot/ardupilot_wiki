@@ -26,4 +26,3 @@ Better separation of RC input and output parameters has also lead to some change
 The RC output channel used for the tail servo can be changed from its default (channel 7) by setting the appropriate SERVOX_FUNCTION to 39.
 For example the :ref:`Pixracer <common-pixracer-overview>` only has 6 output channels so the tail servo can be moved to output channel 5 by setting :ref:`SERVO5_FUNCTION <SERVO5_FUNCTION>` to 39.
 Note that if the output channel is changed, the SERVOx_MIN, SERVOx_MAX, SERVOx_TRIM and SERVOx_REVERSED must be set appropriately for the new output channel.
-

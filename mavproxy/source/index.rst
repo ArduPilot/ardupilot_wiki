@@ -76,8 +76,3 @@ Table of Contents
    docs/analysis/index
    docs/development/index
    docs/common-appendix
-
-
-
-
-

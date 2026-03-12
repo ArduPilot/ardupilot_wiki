@@ -33,4 +33,3 @@ How does it work?
 
 - When the rangefinder can "see" the ground, the pilot's throttle stick adjusts the target altitude above the ground (i.e. the attitude corrected distance from the range finder)
 - When the vehicle climbs out of the rangefinder's range the pilot's stick returns to directly controlling the vehicle's target climb rate (i.e. EKF estimated climb rate based on barometer and accelerometer).  When the vehicle comes back within the range of the ground, the target altitude above the terrain is reset to the current altitude above terrain. For more information, see :ref:`Understanding Altitude in ArduPilot <common-understanding-altitude>`.
-

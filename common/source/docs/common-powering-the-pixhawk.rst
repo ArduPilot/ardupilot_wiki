@@ -196,4 +196,3 @@ Pixhawk from the power module]
 Servo rail input (0V to 20V)
 
 USB power input (0V to 6V)
-

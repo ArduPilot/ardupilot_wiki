@@ -88,4 +88,3 @@ you might hold a Copter.
 .. vimeo:: 56224615
    :width: 400
    :height: 400
-

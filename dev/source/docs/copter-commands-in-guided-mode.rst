@@ -510,4 +510,3 @@ Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) 
 | ``attitude 0.9961947 0.0871557 0 0 0.5`` | roll at 10deg with zero climb rate (if GUID_OPTIONS=0) OR    |
 |                                          | roll at 10deg and 50% throttle (if GUID_OPTIONS=8)           |
 +------------------------------------------+--------------------------------------------------------------+
-

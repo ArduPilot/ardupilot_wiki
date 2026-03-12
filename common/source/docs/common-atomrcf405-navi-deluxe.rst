@@ -161,4 +161,3 @@ Once the initial firmware is loaded you can update the firmware using any ArduPi
 
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

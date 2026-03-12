@@ -50,5 +50,3 @@ To read from the SPI bus
     
 Where name= device name, bus=spi bus #, address=device address, regstart=register to 
 start at, count=number of bytes to write.
-
-

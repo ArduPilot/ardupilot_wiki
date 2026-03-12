@@ -41,5 +41,3 @@ Ground Testing
 - Click on 'freeze map' on the dashboard
 - Check that the vehicle's position is relatively stable (i.e. moving around less than one meter)
 - Walk the vehicle around between the beacons and ensure that its position on the map updates correctly
-
-

@@ -30,4 +30,3 @@ There are several parameters for the tracker, to specify the serial port
 that the antenna tracker APM is on. Use
 ``tracker param [set|show|fetch|help]`` to manage the parameters. There
 are three parameters - port, baud and debug.
-

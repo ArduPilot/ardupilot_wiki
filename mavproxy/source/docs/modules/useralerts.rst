@@ -35,4 +35,3 @@ Setting                           Description                                Def
 useTest                           Use the example User Alerts database       False
 filterBoard                       Filter the User Alerts by board hardware   True
 ===============================   ========================================   ===============================
-

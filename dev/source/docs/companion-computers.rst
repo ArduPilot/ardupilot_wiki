@@ -62,4 +62,3 @@ A number of vendors also offer turnkey systems. See the below link for details.
     :maxdepth: 1
 
     Turnkey Companion Computer Solutions <turnkey-companion-computer-solutions>
-

@@ -154,4 +154,3 @@ When hovering at the destination in GUIDED mode if a new GUIDED
 destination is given then the aircraft will transition back to fixed
 wing flight, fly to the new location and then hover again in VTOL
 mode.
-

@@ -57,5 +57,3 @@ An example of sending GPS input data via python script is shown below:
         out_data = json.dumps(data)
         print('out:',out_data)
         s.sendto(out_data.encode(), out_addr)
-
-

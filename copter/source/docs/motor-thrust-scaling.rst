@@ -44,6 +44,3 @@ Parameter Calculation
 =====================
 
 The WebTool: `ArduPilot Thrust Expo <https://firmware.ardupilot.org/Tools/WebTools/ThrustExpo/>`__ can be used to calculate the appropriate values from the thrust stand data above.
-
-
-

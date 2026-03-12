@@ -106,4 +106,3 @@ firmware to continuously stabilize the vehicle
 
 ..  youtube:: sDd4VOpOnnA
     :width: 100%
-

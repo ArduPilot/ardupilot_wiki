@@ -61,4 +61,3 @@ Exits MAVProxy.
     
         set requireexit True
     
-

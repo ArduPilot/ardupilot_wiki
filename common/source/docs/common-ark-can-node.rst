@@ -73,5 +73,3 @@ More Information
 * `ARK CANnode <https://arkelectron.com/product/ark-cannode/?srsltid=AfmBOora3E4iCuKMs9zdaGyvBOoYhj6mlYLjDJVz09O7Iv1y16DUDdol>`_
 
 * `ARK CANnode Documentation <https://arkelectron.com/product/ark-cannode/?srsltid=AfmBOora3E4iCuKMs9zdaGyvBOoYhj6mlYLjDJVz09O7Iv1y16DUDdol>`_
-
-

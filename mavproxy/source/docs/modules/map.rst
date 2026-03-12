@@ -43,4 +43,3 @@ rallycircle          Show loiter circles around rally points          False
 loitercircle         Show loiter circles around loiter waypoints      False
 showdirection        Enable arrow to show mission direction           False
 ==================   ===============================================  ===============================
-

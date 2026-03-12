@@ -85,4 +85,3 @@ with two quadcopters about 20 m apart to test, and work up from there.
    quad should actually move as well.
 -  Increase the position stream rate in the mp. config>planner>position.
    to say 5, from the default of 3. to reduce the latency
-

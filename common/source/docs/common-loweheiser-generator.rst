@@ -85,4 +85,3 @@ This driver will add the following messages to the onboard log:
 
     - ``LOEC``: Debug information for the driver state machine.
     - ``LOEG``: Generator telemetry.
-

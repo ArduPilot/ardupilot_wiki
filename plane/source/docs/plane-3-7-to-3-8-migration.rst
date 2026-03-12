@@ -175,4 +175,3 @@ Change to THR_MAX
 =================
 
 The THR_MAX parameter, which controls maximum throttle, defaulted to 75 percent for versions 3.7.1 and earlier. In plane 3.8.0 it defaults to 100 percent. If you had not previously changed this parameter and your plane is overpowered at 100 percent throttle you may wish to change it back to 75.
-

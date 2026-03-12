@@ -28,4 +28,3 @@ More info at `www.airpixel.cz <https://airpixel.cz/photogrammetry/>`_
 Documentation at `www.airpixel.cz/docs <https://airpixel.cz/docs>`_
 
 [copywiki destination="copter,plane,rover,sub"]
-

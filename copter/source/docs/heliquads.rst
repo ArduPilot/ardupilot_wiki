@@ -50,5 +50,3 @@ Inverted flight test
 Picture of CanberraUAV vehicle
 
 .. image:: ../images/heliquad-canberrauav.jpg
-
-

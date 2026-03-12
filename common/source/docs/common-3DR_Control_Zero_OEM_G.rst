@@ -141,4 +141,3 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 "3DRControlZeroG".
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

@@ -80,5 +80,3 @@ More Information
 * `ARK X20 RTK GPS <https://arkelectron.com/product/ark-x20-rtk-gps/>`_
 
 * `ARK X20 RTK GPS Documentation <https://docs.arkelectron.com/gps/ark-x20-rtk-gps>`_
-
-

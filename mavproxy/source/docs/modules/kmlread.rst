@@ -45,4 +45,3 @@ A polygon layer can be set as the geofence by:
     
     
 .. image:: ../../images/kmlreader.png
-

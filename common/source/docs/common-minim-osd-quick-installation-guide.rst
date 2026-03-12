@@ -180,8 +180,3 @@ The AEROMAX is slightly smaller than traditional minimOSD, has the additional KV
 .. image:: ../../../images/MinimOSD_Micro.jpg
     :target: ../_images/MinimOSD_Micro.jpg
     
-
-
-
-
-

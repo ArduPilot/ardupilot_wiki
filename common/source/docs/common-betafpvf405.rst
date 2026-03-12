@@ -214,4 +214,3 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 "BETAFPV-F405". For the AIO version, a firmware labeled "BETAFPV-F405-I2C" is provided to allow I2C devices to be attached if the hardware modification mentioned above is made to disconnect the ELRS module from those signals.
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

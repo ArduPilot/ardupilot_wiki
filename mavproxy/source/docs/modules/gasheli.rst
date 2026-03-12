@@ -54,4 +54,3 @@ starter_time                      How long to leave starter on              3
 starter_pwm_on                    Starter PWM level when on                 2000
 starter_pwm_off                   Starter PWM level when off                1000
 ===============================   =======================================   ===============================
-

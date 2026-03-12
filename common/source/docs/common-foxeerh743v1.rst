@@ -152,4 +152,3 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 "FoxeerH743v1".
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

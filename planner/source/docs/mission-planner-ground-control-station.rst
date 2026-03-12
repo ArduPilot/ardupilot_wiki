@@ -69,6 +69,3 @@ On the Mission Planner Flight Data map, you can right-click on the map and just 
 .. note:: Guided is a separate flight mode. If you enter it you will remain in it until you do something to change modes. So if you tell it to "go here now", once it arrives there it will loiter at the Guided waypoint till you tell it to do something else. Something else could either be going to another Guided waypoint (staying in Guided mode) or changing to some other flight mode. If you change to Auto your mission will resume where it left off.
 
 .. note:: :ref:`Go to this page <copter:ac2_guidedmode>` for a full description of how to use Guided Mode on Copter.
-
-
-

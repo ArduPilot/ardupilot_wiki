@@ -144,4 +144,3 @@ a Pixhawk) you would use these settings in the advanced parameter list:
 -  :ref:`SERVO10_FUNCTION<SERVO10_FUNCTION>` = 34
 -  :ref:`SERVO11_FUNCTION<SERVO11_FUNCTION>` = 35
 -  :ref:`SERVO12_FUNCTION<SERVO12_FUNCTION>` = 36
-

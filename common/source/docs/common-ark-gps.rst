@@ -78,5 +78,3 @@ More Information
 * `ARK GPS <https://arkelectron.com/product/ark-gps/?srsltid=AfmBOoqJ1p8Hya7MVyBwjMM0xWFDEGmrK7HLP9gp10q8Dyn1DGA9GKHQ>`_
 
 * `ARK GPS Documentation <https://arkelectron.gitbook.io/ark-documentation/sensors/ark-gps>`_
-
-

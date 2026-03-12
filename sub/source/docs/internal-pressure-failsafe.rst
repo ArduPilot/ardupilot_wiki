@@ -9,4 +9,3 @@ The amount of the pressure in pascals is set by :ref:`FS_PRESS_MAX<FS_PRESS_MAX>
 
 -  **Disabled** (Value 0) will disable the failsafe entirely.
 -  **Warn Only** (Value 1) will send a GCS warning message.
-

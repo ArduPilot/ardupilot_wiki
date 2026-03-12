@@ -82,4 +82,3 @@ DataFlash logging
 - The ZED's visual odometry information will appear in the VISO dataflash log messages.
 - Distance to objects ahead of the vehicle will appear in the PRX messages.
 - EKF's visual odometry information will appear in XKFD messages
-

@@ -58,4 +58,3 @@ logfile.
 .. code:: bash
 
     mavflightmodes.py flight.tlog
-

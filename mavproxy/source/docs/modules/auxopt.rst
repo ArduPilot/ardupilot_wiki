@@ -14,4 +14,3 @@ actions for the RC channels and their current setting respectively.
 
 Use ``auxopt set [ch] [action]`` and ``auxopt reset`` to set and reset
 the action mapped to the RC channels respectively.
-

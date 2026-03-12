@@ -483,4 +483,3 @@ The full list of input shaping parameters are:
 - :ref:`Q_LOIT_BRK_DELAY <Q_LOIT_BRK_DELAY>`
 - :ref:`Q_LOIT_BRK_JRK_M<Q_LOIT_BRK_JRK_M>`
 - :ref:`Q_LOIT_SPEED_MS<Q_LOIT_SPEED_MS>`
-

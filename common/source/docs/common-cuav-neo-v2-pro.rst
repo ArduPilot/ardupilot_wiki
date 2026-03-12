@@ -224,4 +224,3 @@ More information
 ================
 
 `CUAV docs <https://doc.cuav.net/gps/neo-series-gnss/en/neo-v2-pro.html>`__.
-

@@ -24,4 +24,3 @@ The following parameters can be used to tune FlowHold's performance:
 -  :ref:`FHLD_FLOW_MAX <FHLD_FLOW_MAX>` is the optical flow sensor's maximum rate (in m/s) used when stopping
 -  :ref:`FHLD_QUAL_MIN <FHLD_QUAL_MIN>` is the minimum flow quality used.  If the flow sensor quality falls below this value, FlowHold will act just like AltHold
 -  :ref:`FHLD_XY_P <FHLD_XY_P>`, :ref:`FHLD_XY_I <FHLD_XY_I>`, :ref:`FHLD_XY_IMAX <FHLD_XY_IMAX>` and :ref:`FHLD_XY_FILT_HZ <FHLD_XY_FILT_HZ>` gains to tune the stopping response
-

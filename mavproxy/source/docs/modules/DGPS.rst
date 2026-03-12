@@ -14,4 +14,3 @@ station running MAVProxy.
 It is assumed that the DGPS data comes from the network address 127.0.0.1:13320.
 
 The DGPS data can be in the SBP/RTCP/UBC protocols
-

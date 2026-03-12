@@ -84,5 +84,3 @@ Where to Buy
 ============
 
 `Matek M8Q-CAN <http://www.mateksys.com/?portfolio=m8q-can>`_
-
-

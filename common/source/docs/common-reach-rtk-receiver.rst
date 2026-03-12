@@ -45,5 +45,3 @@ Read about Reach and its other applications:
 
 - `Reach overview <https://emlid.com/reach/>`__  
 - `Introduction to using Reach <https://docs.emlid.com/reach/>`__
-
-

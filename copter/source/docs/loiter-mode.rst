@@ -73,4 +73,3 @@ Viewing the loiter's horizontal performance is best done by :ref:`downloading a 
     :target: ../_images/Loiter_TuningCheck.png
 
 Checking altitude hold performance is the same as for :ref:`AltHold <altholdmode_verifying_althold_performance_with_dataflash_logs>` mode.
-

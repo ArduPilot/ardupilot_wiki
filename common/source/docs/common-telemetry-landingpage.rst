@@ -75,4 +75,3 @@ Applications and Info
     Telemetry Radio Regional Regulations <common-telemetry-radio-regional-regulations>
 
 -  :ref:`Yaapu Telemetry Scripts for OpenTX <common-frsky-yaapu>`
-

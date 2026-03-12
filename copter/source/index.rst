@@ -205,5 +205,3 @@ Getting more info
    complex missions which can be programmed through a number of compatible 
    software ground stations. The entire package is designed to be safe, feature rich, 
    open-ended for custom applications, and is increasingly easy to use even for the novice.
-
-

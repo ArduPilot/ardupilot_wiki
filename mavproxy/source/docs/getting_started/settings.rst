@@ -64,4 +64,3 @@ param_docs                       show help for parameters                       
 sys_status_error_warn_interval   interval to warn of autopilot software failure  True or False
 inhibit_screensaver_when_armed   inhibit screensaver while vehicle armed         True or False
 ==============================   ==============================================  ===============================
-

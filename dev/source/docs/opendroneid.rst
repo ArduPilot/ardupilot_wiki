@@ -123,6 +123,3 @@ Using Mission Planner as the GCS
 ================================
 
 Mission Planner has a special Drone ID tab in its DATA view for use with OpenDroneID modules attached to the autopilot which allows monitoring status, attaching the required GPS for operator location of the GCS, and UAS and Operator ID string setup. See :ref:`planner:opendroneid`.
-
-
-

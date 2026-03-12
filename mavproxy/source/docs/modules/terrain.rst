@@ -39,6 +39,3 @@ In addition, you can prevent the downloading of tiles from the Internet for test
 .. code:: bash
 
     terrain set offline 1
-
-
-

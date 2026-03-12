@@ -42,5 +42,3 @@ Wing Construction
 
 For the wings, they can be built using 3D-printed wing spars (or profiles that fit around a carbon spar. The airfoil profile can be any cambered profile depending on the ornithopter design, and the `exact airfoil <http://www.dcgeorge.com/Falcon12aFeasibilityStudy.html>`__ is usually calculated.
 The angle of attack is often about `15 degrees <https://www.ornithopter.org/how.wing.shtml>`__.
-
-

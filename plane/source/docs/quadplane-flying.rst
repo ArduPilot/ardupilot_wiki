@@ -135,4 +135,3 @@ A typical test flight would be:
 -  switch to :ref:`FBWA <fbwa-mode>` mode and advance throttle over 50% and start
    flying fixed wing
 -  switch to :ref:`QHOVER<qhover-mode>` mode to go back to quad mode and reduce throttle back to 50% for hover.
-

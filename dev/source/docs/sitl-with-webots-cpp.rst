@@ -75,5 +75,3 @@ You can copy & paste the vehicle robot multiple times, each time you need to:
 #. Field *"CustomData"* should be equal to robot index number i.e. 1,2,3,...etc.
 #. Field *"controller"* should is selected based on the vehicle used.
 #. Field *"controllerArgs"* specifies many important factors, mainly the TCP port which should be equal to SITL's TCP port that will connect to this robot in the simulator.
-
-

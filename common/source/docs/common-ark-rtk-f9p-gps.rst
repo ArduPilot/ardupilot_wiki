@@ -88,5 +88,3 @@ More Information
 * `ARK RTK GPS <https://arkelectron.com/product/ark-rtk-gps/>`_
 
 * `ARK RTK GPS Documentation <https://arkelectron.gitbook.io/ark-documentation/sensors/ark-rtk-gps>`_
-
-

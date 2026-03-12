@@ -72,5 +72,3 @@ More Information
 * `ARK TESEO GPS <https://arkelectron.com/product/ark-teseo-gps/>`_
 
 * `ARK TESEO GPS Documentation <https://arkelectron.gitbook.io/ark-documentation/sensors/ark-teseo-gps>`_
-
-

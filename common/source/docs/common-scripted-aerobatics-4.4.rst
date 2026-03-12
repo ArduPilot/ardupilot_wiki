@@ -229,5 +229,3 @@ Other scripts can be developed which allow control of the vehicle, either via NA
 - Obtaining the arguments of a NAV_SCRIPT_TIME command using "vehicle:nav_script_time()" if running while in AUTO mode.
 
 - Controlling the above rates and throttle with the "vehicle:set_target_throttle_rate_rpy(....)" function, which must be called regularly (at least every second) to set the roll/pitch/yaw rates and throttle percentage. Failure to do so, will disable the control override and return control to the original flight mode. Changing flight modes also disables script control.
-
-

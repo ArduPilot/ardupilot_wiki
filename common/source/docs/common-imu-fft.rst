@@ -70,4 +70,3 @@ For those interested in the details of how this feature works and tradeoffs in s
     Initial Analysis Flight <common-imu-fft-test-flight>
     In-Flight FFT Advanced Setup <common-imu-fft-advanced-setup>
     In-Flight FFT: How it Works <common-imu-fft-how-it-works>
-

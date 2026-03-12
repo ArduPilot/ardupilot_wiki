@@ -194,9 +194,3 @@ multiple sonars and not have them interfere with each other.
     Connecting the Radio Receiver (APM2) <common-connecting-the-radio-receiver-apm2>
     LEDs <common-apm-board-leds>
     PPM Encoder <common-ppm-encoder-apm2x-atmega32u2>
-
-
-
-
-
-

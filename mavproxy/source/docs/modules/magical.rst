@@ -22,4 +22,3 @@ After the module has been loaded, the UI can be started by:
     
 
 .. image:: ../../images/magical.png
-

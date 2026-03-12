@@ -166,5 +166,3 @@ Setup Support
 =============
 
 For any setup advice please post in this `forum thread <https://discuss.ardupilot.org/t/autonomous-autorotation-gsoc-project-blog/42139>`__.
-
-

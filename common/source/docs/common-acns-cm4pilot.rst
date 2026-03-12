@@ -138,4 +138,3 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 "ACNS-CM4Pilot".
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

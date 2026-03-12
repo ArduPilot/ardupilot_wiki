@@ -193,4 +193,3 @@ Creating a RealFlight Model for Simulation
 ==========================================
 
 See `this blog post <https://discuss.ardupilot.org/t/creating-a-realflight-model-with-blender>`__ for details on creating a RF model for flightaxis simulation.
-

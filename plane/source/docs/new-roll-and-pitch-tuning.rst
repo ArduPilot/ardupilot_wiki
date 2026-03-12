@@ -319,4 +319,3 @@ Yaw Controller Diagram
 
 .. image:: ../images/latAP.jpg
     :target: ../_images/latAP.jpg
-

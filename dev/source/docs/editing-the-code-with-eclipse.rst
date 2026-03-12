@@ -125,4 +125,3 @@ The build progress will appear in the Console window.
 
 The firmware will be created in the vehicle directory (e.g. ArduCopter)
 and have the file extension **.px4**.
-

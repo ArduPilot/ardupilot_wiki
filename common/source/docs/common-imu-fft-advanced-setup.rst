@@ -122,5 +122,3 @@ Finally, it is possible - as is clearly the case here - that the noisiest peaks 
     :width: 450px
 
 You can see that the dynamic notch frequency is tracking the two highest noise peaks precisely, resulting in a significant reduction in noise.
-
-

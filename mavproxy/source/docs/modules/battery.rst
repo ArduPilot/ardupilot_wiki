@@ -38,6 +38,3 @@ servowarn                         Servo voltage warning level (V)           4.3
 vccwarn                           Vcc voltage warning level (V)             4.3
 numcells                          Number of series cells (S-rating)         0
 ===============================   =======================================   ===============================
-
-
-

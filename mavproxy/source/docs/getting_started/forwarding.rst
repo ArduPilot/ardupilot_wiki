@@ -66,4 +66,3 @@ telemetry stream onwards to other ground stations.
    You can add as many separate - -out parameters as you want depending
    on how many extra ground stations you are running.
 #. Set each ground station to listen for UDP packets on port 14550 and, again, make sure its firewall is not blocking incoming traffic on UDP port 14550.
-

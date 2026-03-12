@@ -174,4 +174,3 @@ https://3drobotics.zendesk.com/hc/en-us/articles/208396933-Factory-Reset
 
 You may also find you have to re-pair your Solo and Controller after the Factory Reset:
 https://3dr.com/support/articles/pairing_the_controller/
-

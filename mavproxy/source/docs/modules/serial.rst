@@ -16,4 +16,3 @@ where setting can be port, baudrate or timeout. To send data, enter
 ``serial send [data]``.
 
 Any received serial data will be output to the console.
-

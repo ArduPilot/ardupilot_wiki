@@ -122,5 +122,3 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
     Peripheral Hardware <docs/common-optional-hardware>
     Additional Information <docs/additional-information>
     User Alerts <docs/common-user-alerts>
-
-

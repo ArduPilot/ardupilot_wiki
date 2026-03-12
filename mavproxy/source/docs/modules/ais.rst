@@ -26,6 +26,3 @@ Setting                           Description                                  D
 timeout                           Timeout (sec) if an ship is no longer seen   60
 threat_radius                     Radius (m) to consider an ship a threat      200
 ===============================   ==========================================   ===============================
-
-
-

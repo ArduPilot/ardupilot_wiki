@@ -86,5 +86,3 @@ Button      Function
 13          Lights1 Dimmer / Trim Roll Decrease
 14          Lights1 Brighter / Trim Roll Increase
 ======      ========
-
-

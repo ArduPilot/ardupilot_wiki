@@ -42,4 +42,3 @@ For devices which are strictly register-based, the ``I2CRegisters_8Bit`` (or ``I
 For devices which are polled to start some sort of measurement and subsequently make available a 16-bit quantity for reading ``I2CCommandResponseDevice`` may be used to write a simple driver.
 
 For devices which simply return fixed-length readings when an i2c "read" is made - and for any other protocol which doesn't yet have an abstraction - your simulation will need to implement the virtual method ``rdwr(I2C::i2c_rdwr_ioctl_data *&data)`` inherited from SITL::I2CDevice.
-

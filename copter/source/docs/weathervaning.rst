@@ -69,4 +69,3 @@ There are a number of additional parameters that can control when WeatherVaning 
 .. note:: to allow weathervaning only on takeoffs and landing during an AUTO mission or in GUIDED mode, set :ref:`WVANE_ENABLE<WVANE_ENABLE>` =0 but use the :ref:`WVANE_LAND<WVANE_LAND>` and/or :ref:`WVANE_TAKEOFF<WVANE_TAKEOFF>` parameters to enable the weathervaning control.
 
 .. note:: Weathervaning can be disabled or enabled by an :ref:`RC Aux Function Switch<common-auxiliary-functions>`, option "160"
-

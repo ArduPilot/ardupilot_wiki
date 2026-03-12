@@ -242,4 +242,3 @@ With planes that belly land it can also work well to setup the landing
 with a shallow pitch (in :ref:`LAND_PITCH_DEG<LAND_PITCH_DEG>`) and set a slightly higher
 altitude to flare at. That will only work if your stall speed is low
 enough that gliding for a while will work reliably.
-

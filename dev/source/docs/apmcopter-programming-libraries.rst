@@ -60,4 +60,3 @@ libraries and their function.
    camera mount control library, camera shutter control libraries
 -  `AP_Mission <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Mission>`__
    - stores/retrieves mission commands from eeprom
-

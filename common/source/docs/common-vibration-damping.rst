@@ -320,8 +320,3 @@ Links to related discussions
 - `RC Groups page on Vibration Effects relating to a camera mounts <https://www.rcgroups.com/forums/showpost.php?p=16315017&postcount=16338>`__
 - `DIYDrones discussion related to Vibration Control <https://diydrones.com/forum/topics/vibration-isolation-and-dampening-of-apm-px4-for-version-2-9>`__
 - `Gary McCray's DIYDrones BLOG re Vibration Control <https://diydrones.com/profiles/blogs/vibration-control-wiki-section-started-for-better-or-worse>`__
-
-
-
-
-

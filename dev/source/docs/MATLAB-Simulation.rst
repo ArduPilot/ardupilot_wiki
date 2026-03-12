@@ -24,4 +24,3 @@ will work as normal.
     1. If you've enabled mirrored mode networking in WSL2 you have to disable it first. You can read more about this in this article: https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking. (Note: To apply changes you've made to the .wslconfig file, you'll have to restart the WSL.)
     2. You can find the ip address that you should replace 127.0.0.1 with by running ``ipconfig`` command in windows PowerShell. (You have to use the ip address under the Ethernet Adapter vEthernet (WSL (Hyper-V 
        firewall). eg: 172.xx.xx.x)
-

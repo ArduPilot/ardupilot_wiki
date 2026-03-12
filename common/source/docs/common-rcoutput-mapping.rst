@@ -752,4 +752,3 @@ Either upon loading the firmware or selecting the frame type, certain default va
 [site wiki="rover"]
  .. note:: Rover Skid Steered vehicles will need to manually change SERVO1 and SERVO3 to Throttle Left and Throttle Right to enable skid steering. 
 [/site]
-

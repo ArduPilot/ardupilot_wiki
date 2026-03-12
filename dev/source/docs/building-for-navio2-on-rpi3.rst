@@ -65,5 +65,3 @@ The following frame types are specified in the "Frame Type" item of the Mission 
     Quad Hexa Octa Octa-Quad Y6  Heli Tri
 
 In the end of compilation binary file with the name arducopter will be placed in ``ardupilot/build/navio2/bin/ directory``.
-
-

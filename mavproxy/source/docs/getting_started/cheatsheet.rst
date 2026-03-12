@@ -38,6 +38,3 @@ servo set N PWM          Override servo N to PWM value
 terrain check LAT LON    Get terrain height at specified location
 formatsdcard             Formats SD card
 =======================  ===================================================================
-
-
-

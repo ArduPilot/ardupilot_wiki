@@ -24,4 +24,3 @@ very CPU intensive functionality such as vision processing.
    Linux autopilot.
 
 See :ref:`Companion Computers <dev:companion-computers>` for specific documentation.
-

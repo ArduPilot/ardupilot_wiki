@@ -82,4 +82,3 @@ Videos
 
 ..  youtube:: s4YxbC2ZW50
     :width: 100%
-

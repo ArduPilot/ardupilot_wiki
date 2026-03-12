@@ -52,5 +52,3 @@ To send commands to all links:
    alllinks <cmd>
 
 for example: allinks mode rtl
-
-

@@ -50,6 +50,3 @@ If you plan on building your own multicopter, the following pages will get you s
 Please start by reading this section in order to understand what a multicopter can do, and how to select a frame, autopilot board,
 and other essential components.
 Then proceed to :ref:`First Time Setup <initial-setup>` to learn how to assemble your Copter and then :ref:`First Flight <flying-arducopter>` to learn how to configure and tune it.
-
-
-

@@ -75,5 +75,3 @@ A polygon fence can be used in combination with the :ref:`cylindrical fences <co
     :target: ../_images/copter_polygon_circular_fence..png
 
 Please see the :ref:`Cylindrical Fence <common-ac2_simple_geofence>` page for additional warnings and instructions including how to enable/disable the fence with the RC channel auxiliary switches.
-
-

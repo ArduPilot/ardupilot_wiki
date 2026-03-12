@@ -46,6 +46,3 @@ ESP8266 WIFI Module
 -------------------
 
 Setting up the WIFI module is detailed :ref:`here<common-esp8266-telemetry>`.
-
-
-

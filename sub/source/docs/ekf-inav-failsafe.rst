@@ -40,4 +40,3 @@ The :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` parameter can be adjusted to control th
 - Set :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` = 0 to disable the EKF failsafe
 - Increase :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` to values between 0.8 and 1.0 to reduce the chance of an EKF failsafe.  The downside of increasing this parameter value is that during a flyaway caused by a bad compass or positioning glitch, the vehicle will swim further away before the failsafe is activated.
 - Decrease :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` to values as low as 0.6 to increase the chance of an EKF failsafe triggering quickly.  The downside of lowering this value is the EKF failsafe could trigger during aggressive maneuvers
-

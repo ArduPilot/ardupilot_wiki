@@ -80,4 +80,3 @@ file as program", then drag and drop the file to your start bar.
 
 .. image:: ../images/apm_planner_2_install_linux_desktop_icon.jpg
     :target: ../_images/apm_planner_2_install_linux_desktop_icon.jpg
-

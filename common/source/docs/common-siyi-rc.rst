@@ -32,5 +32,3 @@ Features
 
 
 More Info on SIYI systems can be found on `here <https://shop.siyi.biz/>`__
-
-

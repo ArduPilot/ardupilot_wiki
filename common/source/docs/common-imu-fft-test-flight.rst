@@ -22,5 +22,3 @@ In this flight the dynamic harmonic notch was enabled and set to track the FFT d
 .. image:: ../../../images/imu-in-flight-fft-post-filter.png
     :target:  ../_images/imu-in-flight-fft-post-filter.png
     :width: 450px
-
-

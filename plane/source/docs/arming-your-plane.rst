@@ -246,4 +246,3 @@ autopilot can refuse to arm are (See the :ref:`common-prearm-safety-checks` topi
    it is "GPS 1" then it is the 2nd GPS. If you get a failure for the
    2nd GPS and don't have two GPS modules installed then set GPS_TYPE2
    to zero to disable the 2nd GPS
-

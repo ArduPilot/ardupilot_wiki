@@ -285,4 +285,3 @@ You just need to do the following:
    at the `diydrones/ardupilot <https://github.com/ArduPilot/ardupilot>`__ repository,
    select the desired ardupilot branch, then click download zip.
 -  Set Tools>>Visual Micro>>Boards to APM Arduino Mega 2560.
-

@@ -35,4 +35,3 @@ In Mission Planner's  full parameter list or full parameter tree, set the :ref:`
 -  **Disarm** (Value 2)
 -  **Enter ALTHOLD mode** (Value 3), if armed. If mode change fails, disarm.
 -  **Enter SURFACE mode** (Value 4), if armed. If mode change fails, disarm.
-

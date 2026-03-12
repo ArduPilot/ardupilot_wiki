@@ -83,4 +83,3 @@ Viewing the QLOITER's horizontal performance is best done by :ref:`downloading a
     :target: ../_images/Loiter_TuningCheck.png
 
 Checking altitude hold performance is the same as for :ref:`QHOVER <qhover-mode>` mode.
-

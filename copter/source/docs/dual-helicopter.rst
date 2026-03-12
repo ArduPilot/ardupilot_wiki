@@ -204,5 +204,3 @@ These parameters are not used for the coaxial configuration
 
 - :ref:`H_DCP_YAW<H_DCP_YAW>`
 - :ref:`H_DCP_TRIM<H_DCP_TRIM>`
-
-

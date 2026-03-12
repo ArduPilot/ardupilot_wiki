@@ -108,4 +108,3 @@ UART signals, particularly at higher baud rates, can generate electromagnetic in
 - Separate UART cables from high-power wires and sensitive sensors, such as GPS receivers and magnetometers.
 
 Unlike twisted-pair cables used for differential protocols (CAN, I2C), cable twisting is generally not applicable for UART signals due to their single-ended nature.
-

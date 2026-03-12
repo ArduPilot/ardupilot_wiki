@@ -77,4 +77,3 @@ for full details.
 .. code:: bash
 
     rally land
-
