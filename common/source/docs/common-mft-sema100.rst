@@ -40,7 +40,7 @@ UART Mapping
 
 Connectors
 ==========
-All pins are 2.54 mm Pin Headers 
+All pins are 2.54 mm Pin Headers
 XT30-PW 5V Input for powering the board
 
 RC Input
@@ -70,7 +70,7 @@ PWM outputs are grouped and every group must use the same output protocol:
 * 9, 10 are Group 4;
 * 11, 12 are Group 5;
 
-Channels within the same group need to use the same output rate. 
+Channels within the same group need to use the same output rate.
 
 GPIOs
 =====

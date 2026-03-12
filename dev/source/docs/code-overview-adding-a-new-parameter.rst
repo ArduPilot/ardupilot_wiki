@@ -273,7 +273,7 @@ From time to time parameters need to be altered or renamed. ArduPilot has capabi
 Parameter Conversion Expiration
 ===============================
 
-Parameter conversions are necessary to ensure continuity for users as they upgrade to newer versions of ArduPilot.  However, the conversion process does utilise some resources on boot and does add to the flash cost of the code. 
+Parameter conversions are necessary to ensure continuity for users as they upgrade to newer versions of ArduPilot.  However, the conversion process does utilise some resources on boot and does add to the flash cost of the code.
 Therefore we don't keep the conversion code forever more. To make it easier to find and remove the conversions, please add the following as a comment above any parameter conversion that you add:
 
 ::
@@ -304,4 +304,3 @@ Please use the date format shown above to avoid ambiguity.  Please also keep the
 
         // PARAMETER_CONVERSION - Added: Jun-2019
         { Parameters::k_param_quadplane, 400,  AP_PARAM_FLOAT, "Q_P_ACCZ_FLTD"},   //  Q_AZ_FILT
-

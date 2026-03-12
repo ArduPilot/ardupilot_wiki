@@ -1,10 +1,10 @@
 .. _common-sonar-L04xMTW-GL04xMT:
 
 =======================
-Sonar L04xMTW / GL04xMT  
+Sonar L04xMTW / GL04xMT
 =======================
 
-The L04xMTW / GL04xMT is an echosounders (aka underwater sonar) with a 2 / 6 m range. More details can be found in the `datasheet <https://github.com/AlksSAV/Sonar-to-i2c-NMEA-/blob/main/L04xMTW%20%20GL04xMT%20datasheet.pdf>`__ 
+The L04xMTW / GL04xMT is an echosounders (aka underwater sonar) with a 2 / 6 m range. More details can be found in the `datasheet <https://github.com/AlksSAV/Sonar-to-i2c-NMEA-/blob/main/L04xMTW%20%20GL04xMT%20datasheet.pdf>`__
 
 
 Supported sonar models:
@@ -18,7 +18,7 @@ Recommended Hardware
 - L04xMTW / GL04xMT
 - Arduino nano
 
-The firmware file (sonar_to_nmea__SDDBT.ino) is located in this `repository <https://github.com/AlksSAV/Sonar-to-i2c-NMEA-/blob/main/sonar_to_nmea__SDDBT.ino>`__ 
+The firmware file (sonar_to_nmea__SDDBT.ino) is located in this `repository <https://github.com/AlksSAV/Sonar-to-i2c-NMEA-/blob/main/sonar_to_nmea__SDDBT.ino>`__
 
 Connecting and Configuring
 --------------------------

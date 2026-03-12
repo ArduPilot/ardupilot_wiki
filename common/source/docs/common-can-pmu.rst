@@ -53,7 +53,7 @@ Pinouts
 
 .. image:: ../../../images/can-pmu/can-pmu-pinouts-en2.png
     :target: ../_images/can-pmu/can-pmu-pinouts-en2.png
-    
+
 Connecting to the System
 ========================
 

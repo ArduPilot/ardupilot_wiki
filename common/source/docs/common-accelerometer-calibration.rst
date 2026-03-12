@@ -15,7 +15,7 @@ This article shows how to perform basic accelerometer calibration (using
 
 .. important::
 
-   Accelerometer calibration cannot be performed while the vehicle is armed. 
+   Accelerometer calibration cannot be performed while the vehicle is armed.
 
 Calibration steps
 =================
@@ -43,8 +43,8 @@ Calibration steps
       Accelerometer Calibration Positions (Copter)
 
    The vehicle must be kept still immediately after pressing the key for each step. This is more important than getting the angle exactly right, ie. left being 90deg to horizontal, etc. Except for the first "LEVEL", the positions can be within 20 degrees of being exact. **Being still in each position as you press the key is much more important.**
-   
-   -  You should calibrate the board mounted in the vehicle if possible. 
+
+   -  You should calibrate the board mounted in the vehicle if possible.
    -  However, you may need to calibrate the board before it is mounted if the size/shape of the vehicle makes this difficult.
    -  The level position is the most important to get right as this will be the attitude that your controller considers level while flying.
    -  You can recalibrate this Level position using Mission Planner after you have installed the autopilot and are ready to fly. Place the vehicle in its level flying attitude and use the **Calibrate Level** button.
@@ -88,4 +88,3 @@ you might hold a Copter.
 .. vimeo:: 56224615
    :width: 400
    :height: 400
-

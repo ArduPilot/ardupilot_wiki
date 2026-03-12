@@ -12,8 +12,8 @@ Archived:Open Camera Control Board
    CraigElder@uniserve.
 
 The Open Camera Control Board (OpenCCB) is a camera remote control
-interface for aerial photography. 
-It has :ref:`many features <common-camera-control-board_port_mapping>`, 
+interface for aerial photography.
+It has :ref:`many features <common-camera-control-board_port_mapping>`,
 including: FTDI USB/UART adapter, USB HOST,
 Digital IO, Analog IO, Optocoupled IO, etc.
 
@@ -42,7 +42,7 @@ The CHDK PTP interface is described below:
 .. image:: ../../../images/Diagram_MAVPTP.jpg
     :target: ../_images/Diagram_MAVPTP.jpg
 
-    
+
 .. _common-camera-control-board_port_mapping:
 
 Port Mapping
@@ -340,7 +340,7 @@ implementation:
         cam_ctrl_state.extra_param = mavlink_msg_digicam_control_get_extra_param(&msg);
         cam_ctrl_state.extra_value = mavlink_msg_digicam_control_get_extra_value(&msg);
     }
-    break; 
+    break;
 
 The main control points are these ones:
 

@@ -36,7 +36,7 @@ stall speed is dependent on the weight of your aircraft you will need to
 adjust the landing speed if you change the aircraft's weight
 significantly (such as by adding batteries or a camera).
 
-The :ref:`LAND_WIND_COMP<LAND_WIND_COMP>` parameter controls how much headwind compensation is used when landing. Headwind speed component multiplied by this parameter is added to :ref:`TECS_LAND_ARSPD<TECS_LAND_ARSPD>` value. Set to 0 to disable this. 
+The :ref:`LAND_WIND_COMP<LAND_WIND_COMP>` parameter controls how much headwind compensation is used when landing. Headwind speed component multiplied by this parameter is added to :ref:`TECS_LAND_ARSPD<TECS_LAND_ARSPD>` value. Set to 0 to disable this.
 
 .. note:: The target landing airspeed value is still limited to being lower than :ref:`AIRSPEED_MAX<AIRSPEED_MAX>`.
 
@@ -90,14 +90,14 @@ emphasis is on a more accurate landing.
 Determining your max glide slope angle
 --------------------------------------
 
-For a steep landing approach, the limitation is how well you can maintain your desired airspeed. 
-This is determined by your aircraft's ability to create reverse thrust (motor+prop thrust or airbrake drag ability),if used,  and its resistance to slowing down (aircraft mass). 
-In many cases extreme steepness is unnecessary, but possible. 
+For a steep landing approach, the limitation is how well you can maintain your desired airspeed.
+This is determined by your aircraft's ability to create reverse thrust (motor+prop thrust or airbrake drag ability),if used,  and its resistance to slowing down (aircraft mass).
+In many cases extreme steepness is unnecessary, but possible.
 With an over-sized motor and lightweight aircraft you can come in as steep as 60 degrees.
 
-To determine your steepest approach angle, set :ref:`TECS_APPR_SMAX <TECS_APPR_SMAX>` very high as to not limit you (e.g. 99). 
+To determine your steepest approach angle, set :ref:`TECS_APPR_SMAX <TECS_APPR_SMAX>` very high as to not limit you (e.g. 99).
 Next, plan a mission with a steeper than normal approach (try 15 degrees and go up from there).
-Watch your airspeed on the approach - the aircraft should be able to maintain :ref:`TECS_LAND_ARSPD <TECS_LAND_ARSPD>` without exceeding 75% of the available reverse throttle range. 
+Watch your airspeed on the approach - the aircraft should be able to maintain :ref:`TECS_LAND_ARSPD <TECS_LAND_ARSPD>` without exceeding 75% of the available reverse throttle range.
 If not, you're coming in too steep for the negative-thrust-to-mass ratio of your aircraft.
 
 .. tip::
@@ -112,7 +112,7 @@ If not, you're coming in too steep for the negative-thrust-to-mass ratio of your
 Setting up a Pre-Flare
 ======================
 
-With a rangefinder or accurate GPS, and airspeed sensors installed, a pre-flare point can be set since we will have an accurate airspeed and altitude reading. 
+With a rangefinder or accurate GPS, and airspeed sensors installed, a pre-flare point can be set since we will have an accurate airspeed and altitude reading.
 
 This gives us a good idea of our momentum and stable "initial conditions" to the final flare. Set :ref:`LAND_PF_ALT<LAND_PF_ALT>` (and/or :ref:`LAND_PF_SEC<LAND_PF_SEC>`) to a fairly high point (for example 10m) and adjust from there. Next set :ref:`LAND_PF_ARSPD<LAND_PF_ARSPD>` to a value just above your stall speed.
 
@@ -130,17 +130,17 @@ Example, :ref:`TECS_LAND_ARSPD <TECS_LAND_ARSPD>` = 15, :ref:`LAND_PF_ARSPD<LAND
 Flare
 -----
 
-Now that you are starting the flare with a stable and predictable airspeed, it's much easier to :ref:`control the flare <automatic-landing_controlling_the_flare>`. 
-If you've already tuned your flare for an auto-land without reverse thrust you'll want to retune it. 
-You'll notice you're coming in much slower ad tuning will be easier. 
+Now that you are starting the flare with a stable and predictable airspeed, it's much easier to :ref:`control the flare <automatic-landing_controlling_the_flare>`.
+If you've already tuned your flare for an auto-land without reverse thrust you'll want to retune it.
+You'll notice you're coming in much slower ad tuning will be easier.
 The tweaks and compromises you had to do before are much easier to deal with.
 
 
 Determining actual stall speed of your aircraft
 +++++++++++++++++++++++++++++++++++++++++++++++
 
-Unless you really know what you're doing, stall speed can be hard to estimate. 
+Unless you really know what you're doing, stall speed can be hard to estimate.
 Traditionally, to determine this true value you would need to slowly decrease your airspeed until you stall but that comes with the pesky problem that now you have a stalled aircraft falling out of the sky.
 
-With :ref:`LAND_PF_ALT<LAND_PF_ALT>` and :ref:`LAND_PF_ARSPD<LAND_PF_ARSPD>` you can check your stall speed much lower to the ground. 
+With :ref:`LAND_PF_ALT<LAND_PF_ALT>` and :ref:`LAND_PF_ARSPD<LAND_PF_ARSPD>` you can check your stall speed much lower to the ground.
 To know the airspeed at the exact moment it stalls, check your dataflash logs (``*.bin`` on SD card) for the airspeed (ARSP.Airspeed) when your wing loses lift and drops by comparing actual roll (CTUN.Roll) and desired roll (CTUN.NavPitch) diverge.

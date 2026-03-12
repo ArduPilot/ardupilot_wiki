@@ -4,7 +4,7 @@
 Reverse Thrust Setup
 ====================
 
-Some ESC's allow for reversing motor direction. When using reverse on the propeller it will generate a negative thrust which can be used to reduce your airspeed. During a steep landing approach this method can be used to maintain a stable and low airspeed allowing you to land much more softly and precisely. Reverse thrust can also be automatically used during automatic landings (see below) or during other throttle controlled modes to steepen descents. 
+Some ESC's allow for reversing motor direction. When using reverse on the propeller it will generate a negative thrust which can be used to reduce your airspeed. During a steep landing approach this method can be used to maintain a stable and low airspeed allowing you to land much more softly and precisely. Reverse thrust can also be automatically used during automatic landings (see below) or during other throttle controlled modes to steepen descents.
 See  :ref:`Reverse Thrust Setup<reverse-thrust-setup>` for details on setting up reverse thrust.
 
 .. warning:: enabling reverse thrust automatically sets the SERVOx_TRIM value to LOW throttle stick for the throttle output servo. SERVOx_TRIM is normally ignored, and low stick is SERVOx_MIN! Arming in this condition with an ESC not properly setup will spin-up the motor, possibly dramatically!
@@ -48,7 +48,7 @@ If an RC channel's ``RCx_OPTION`` auxiliary function has been set to "64", then 
 ESC (Electronic Speed Controller)
 ---------------------------------
 
-Most important is to set the :ref:`SERVO3_TRIM <SERVO3_TRIM>` (assuming the esc/motor is attached to output 3) to the point that the ESC is idle, usually around mid-range (1500us) to create an output curve that has :ref:`SERVO3_MAX<SERVO3_MAX>` for full forward thrust, and :ref:`SERVO3_MIN<SERVO3_MIN>` for full reverse thrust. This should be done AFTER the RC Calibrations setup step. 
+Most important is to set the :ref:`SERVO3_TRIM <SERVO3_TRIM>` (assuming the esc/motor is attached to output 3) to the point that the ESC is idle, usually around mid-range (1500us) to create an output curve that has :ref:`SERVO3_MAX<SERVO3_MAX>` for full forward thrust, and :ref:`SERVO3_MIN<SERVO3_MIN>` for full reverse thrust. This should be done AFTER the RC Calibrations setup step.
 
 Hardware selection and programming
 ++++++++++++++++++++++++++++++++++

@@ -16,7 +16,7 @@ The path used to return home is captured in a buffer as the vehicle drives aroun
 
 SmartRTL saves points at a maximum of 3 per second, but only if the vehicle has moved at least :ref:`SRTL_ACCURACY <SRTL_ACCURACY>` meters from the previous point. So for example, if the vehicle was moving at 10m/s it would save the points at 3.3m intervals. After 50 points are saved it goes back and simplifies them into lines again using that :ref:`SRTL_ACCURACY <SRTL_ACCURACY>`. It will replace a string of points with just two end points if all the intermediate points are no more than :ref:`SRTL_ACCURACY <SRTL_ACCURACY>` from the line between the end points. This is how it manages to create a smart path home without flying unnecessary maneuvers.
 
-There are multiple ways that the vehicle can mode switch into SmartRTL. Either through user selected, or through failsafe selections. 
+There are multiple ways that the vehicle can mode switch into SmartRTL. Either through user selected, or through failsafe selections.
 
 The :ref:`FS_GCS_ENABLE <FS_GCS_ENABLE>` and :ref:`FS_THR_ENABLE <FS_THR_ENABLE>` parameters set to 4 or 5 the vehicle will switch to SmartRTL->RTL or SmartRTL->Land based on whether the correct conditions allows the mode. The setting indicates that it will try SmartRTL first, then downgrade to RTL (4) or Land (5)
 

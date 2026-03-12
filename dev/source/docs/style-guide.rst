@@ -71,7 +71,7 @@ Indent using 4 spaces everywhere. Do not use tabs.
 Case statements
 ---------------
 
-The case label indentation is acceptable either 
+The case label indentation is acceptable either
 when lined up with the switch or indented once.
 
 **Right:**
@@ -277,7 +277,7 @@ use braces around the statements.
 
     if (condition)
         foo();
-    else 
+    else
         bar();
 
 Other braces
@@ -306,7 +306,7 @@ close brace on its own line.
 
 ::
 
-    class My_Class 
+    class My_Class
     {
         ...
     };
@@ -423,7 +423,7 @@ Functions or variables that represent a value relative to a frame should be suff
 Preferred Abbreviations for Units
 ---------------------------------
 
-Variables that reference units of measure should normally be suffixed so that it's easier to 
+Variables that reference units of measure should normally be suffixed so that it's easier to
 understand the values when reading the code. No suffix is required when a variable is in seconds, meters, or (angular) degrees or degrees-Celsius.
 
 .. list-table:: Standard name suffixes for Units
@@ -438,27 +438,27 @@ understand the values when reading the code. No suffix is required when a variab
    * - Acceleration
      - meters/second/second
      - _mss
-     - 
+     -
      - Acceleration
    * - Acceleration
      - centimeters/second/second
      - _cmss
-     - 
-     - 
+     -
+     -
    * - Angle
-     - degrees 
+     - degrees
      - _deg
      - _d
      - Angular Measurement
    * - Angle
-     - centi-degrees 
+     - centi-degrees
      - _cd
      - _cdeg
      - Angular Measurement - often used internally
-   * - Angle 
+   * - Angle
      - radians
      - _rad
-     - 
+     -
      - Angular Measurement, preferred for internal variables
    * - Angular acceleration
      - degrees/second/second
@@ -468,73 +468,73 @@ understand the values when reading the code. No suffix is required when a variab
    * - Angular acceleration
      - radians/second/second
      - _radss
-     - 
+     -
      - Angular acceleration
    * - Angular Velocity
      - degrees/second
      - _degs
-     - 
+     -
      - Angular change/second
    * - Angular Velocity
      - radians/second
      - _rads
-     - 
+     -
      - Angular Change/Second
    * - Force
      - Newtons
      - _n
-     - 
-     - 
+     -
+     -
    * - Current
      - Ampere
      - _amp
-     - 
-     - 
+     -
+     -
    * - Distance
      - meter
      - _m or none
-     - 
-     - 
-   * - Distance 
+     -
+     -
+   * - Distance
      - centimeter
      - _cm
-     - 
-     - 
+     -
+     -
    * - Frequency
      - Hertz
      - _hz
-     - 
-     - 
+     -
+     -
    * - Jerk
      - degrees/second/second/second
      - _degsss
-     - 
-     - 
+     -
+     -
    * - Pressure
      - Pascal
      - _p
-     - 
-     - 
+     -
+     -
    * - Temperature
      - degrees Celsius
      - _degc
-     - 
-     - 
+     -
+     -
    * - Time
      - seconds
      - _s
-     - 
-     - 
+     -
+     -
    * - Time
      - milliseconds
      - _ms
-     - 
+     -
      - Overloaded with meters/second
    * - Time
      - microseconds
      - _us
-     - 
-     - 
+     -
+     -
    * - Velocity
      - meters/second
      - _ms
@@ -543,13 +543,13 @@ understand the values when reading the code. No suffix is required when a variab
    * - Velocity
      - centimeters/second
      - _cms
-     - 
+     -
      - Valid for internal values
    * - Volts
      - Volt
      - _v
-     - 
-     - 
+     -
+     -
 
 Commenting
 ==========

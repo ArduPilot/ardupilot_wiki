@@ -5,7 +5,7 @@ GPS Input
 .. code:: bash
 
     module load GPSInput
-    
+
 The GPSInput module allows for GPS_INPUT message support. It will listen on a local udp port for json messages and pass them on to the connected flight controller.
 
 It requires the ``GPS1_TYPE`` parameter to be set to 14 (MAVLink).
@@ -27,10 +27,10 @@ An example of sending GPS input data via python script is shown below:
 
     import socket
     import json
-    
+
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # IPV4, UDP
     out_addr = ("127.0.0.1", 25100)
-    
+
     while True:
         time.sleep(0.05)
         data = {
@@ -53,9 +53,7 @@ An example of sending GPS input data via python script is shown below:
                 'vert_accuracy' : 0,                    # (float) GPS vertical accuracy in m
                 'satellites_visible' : 7                # (uint8_t) Number of satellites visible.
         }
-    
+
         out_data = json.dumps(data)
         print('out:',out_data)
         s.sendto(out_data.encode(), out_addr)
-
-

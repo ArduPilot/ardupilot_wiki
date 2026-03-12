@@ -9,7 +9,7 @@ Mission Planner was designed for native Windows installation. However, it is pos
 Windows Installation
 ====================
 
-The following instructions show how to install *Mission Planner* on Windows. These instructions will be suitable for most users.  For advanced users and non-standard installations, instructions are found :ref:`here: <mission-planner-advanced-installation>`.  A useful video guide for advanced installation of *Mission Planner* is located `here <https://youtu.be/cw7adeD1yeg>`__.    
+The following instructions show how to install *Mission Planner* on Windows. These instructions will be suitable for most users.  For advanced users and non-standard installations, instructions are found :ref:`here: <mission-planner-advanced-installation>`.  A useful video guide for advanced installation of *Mission Planner* is located `here <https://youtu.be/cw7adeD1yeg>`__.
 
 - Download the `latest Mission Planner installer from here <https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__
 - Double click on the downloaded **.msi** file to run the installer
@@ -17,9 +17,9 @@ The following instructions show how to install *Mission Planner* on Windows. The
   .. image:: ../images/mp_installation.png
       :target: _images/mp_installation.png
 
-- Follow the instructions to complete the setup process. 
-  The installation utility will automatically install any necessary software drivers. 
-  If you receive a DirectX installation error, 
+- Follow the instructions to complete the setup process.
+  The installation utility will automatically install any necessary software drivers.
+  If you receive a DirectX installation error,
   please update your DirectX plug-in from the `Windows Download Center <https://www.microsoft.com/en-us/download/windows.aspx>`__.
 
 - If you receive the warning pictured below, select **Install this driver software anyway** to continue.
@@ -73,12 +73,12 @@ It is possible to run most Windows based programs on many Linux Distributions us
 - Change to that directory and execute:
 
     ::
-    
+
        mono MissionPlanner.exe
 
 .. note::
 
-   **Zorin OS users:** If you see errors with .exe 
+   **Zorin OS users:** If you see errors with .exe
    files during build, run::
 
       sudo apt install mono-complete

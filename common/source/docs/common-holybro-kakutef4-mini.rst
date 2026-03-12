@@ -14,7 +14,7 @@ Specifications
 
 -  **Processor**
 
-   -  STM32F405RGT6 32-bit processor 
+   -  STM32F405RGT6 32-bit processor
    -  MAX7456 OSD chip
 
 -  **Sensors**
@@ -68,14 +68,14 @@ ESC telemetry input.
 
 RC Input
 ========
- 
+
 RC input is configured on the R3 (UART3_RX) pin. It supports all RC protocols except PPM. See :ref:`common-rc-systems` for details for a specific RC system. :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` is set to "23", by default, to enable this.
 
 - SBUS/DSM/SRXL connects to the R6 pin.
 
 - SBUS FPort requires connection to T3 and an external bi-directional inverter, see :ref:`common-FPort-receivers`.
 
-- CRSF also requires a T3 connection, in addition to R6, and automatically provides telemetry. 
+- CRSF also requires a T3 connection, in addition to R6, and automatically provides telemetry.
 
 - SRXL2 requires a connection to R3 and T3 and automatically provides telemetry.  Set :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` to "4".
 
@@ -85,7 +85,7 @@ ESC Telemetry
 =============
 
 The SERIAL5 port (UART5) is for ESC telemetry. It is connected through the motor connector and works out of the box with the `Tekko32 F3 Mini <https://shop.holybro.com/tekko32-f3-4in1-45a-mini-esc_p1132.html>`__ which is commonly paired with this autopilot.
- 
+
 FrSky Telemetry
 ===============
 

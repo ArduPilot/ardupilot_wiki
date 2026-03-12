@@ -4,10 +4,10 @@
 LOCOSYS HAWK R1 & R2 RTK GNSS
 =============================
 
-HAWK R1 and R2 (with compass) is a L1+L5 dual-frequency RTK centimeter-level GNSS receiver designed 
-for UAV applications. 
-The receiver is capable of concurrently tracking global civil navigation systems, including GPS, 
-GLONASS, GALILEO, BEIDOU and QZSS. It acquires both L1 and L5 signals at a time while providing the 
+HAWK R1 and R2 (with compass) is a L1+L5 dual-frequency RTK centimeter-level GNSS receiver designed
+for UAV applications.
+The receiver is capable of concurrently tracking global civil navigation systems, including GPS,
+GLONASS, GALILEO, BEIDOU and QZSS. It acquires both L1 and L5 signals at a time while providing the
 centimeter-level RTK positioning accuracy.
 
 .. image:: ../../../images/locosys/hawk-a1-LU23031-V2-7.png
@@ -40,15 +40,15 @@ Frequency
 
 Interfaces
 ==========
-   -  1 UART 230400 bps, 8 data bits, no parity, 1 stop bit 
+   -  1 UART 230400 bps, 8 data bits, no parity, 1 stop bit
    -  1 I2C
    -  1 Antenna interface (SMA)
-   
+
 Protocols
 =========
-   -  UBX binary UBX-NAV-PVT, UBX-NAV-DOP, UBX-NAV-TIMEGPS 
+   -  UBX binary UBX-NAV-PVT, UBX-NAV-DOP, UBX-NAV-TIMEGPS
    -  RTCM version 3.x
-   
+
 Supply voltage
 ==============
    -  3.3V - 5V
@@ -75,7 +75,7 @@ LED
 +---------+---------------+---------------------------------------------------+
 
 
-Pinout GNSS connector 
+Pinout GNSS connector
 =====================
 
 +---------+---------------+---------------------------------------------------+
@@ -100,7 +100,7 @@ Pinout GNSS connector
 | 9       | GND           | Ground                                            |
 +---------+---------------+---------------------------------------------------+
 
-Pinout JST-GH cable connector (standard pinout) 
+Pinout JST-GH cable connector (standard pinout)
 ===============================================
 
 +---------+---------------+---------------------------------------------------+
@@ -124,7 +124,7 @@ Where to buy
 ============
 
 You can buy it from `LOCOSYS <https://www.locosystech.com/en/index.html>`__.
-	
+
 
 More information
 ================

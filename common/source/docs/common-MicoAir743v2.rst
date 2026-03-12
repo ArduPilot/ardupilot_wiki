@@ -54,7 +54,7 @@ UART Mapping
 
 RC Input
 ========
-The UART6  is compatible with all ArduPilot supported receiver protocols. 
+The UART6  is compatible with all ArduPilot supported receiver protocols.
 
 * PPM is not supported.
 * SBUS/DSM/SRXL connects to the RX6 pin.

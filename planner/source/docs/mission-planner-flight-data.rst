@@ -94,7 +94,7 @@ Information/options at the bottom of the map
 ============================================
 - hdop, sats: shows information about the GPS reception quality and the number of satellites in view.
 - Legend:  Each color corresponds to the color of the corresponding line showing directions and headings. Black is the GPS track as your vehicle travels.
-- Tuning:  Opens/closes the tuning window. Any value in the Status list (double click) can be graphed in real-time. 
+- Tuning:  Opens/closes the tuning window. Any value in the Status list (double click) can be graphed in real-time.
 - Auto Pan: Checking this box will make the map follow the vehicle and thus keep the vehicle in the center of the screen.
 - Zoom: Shows or selects the current zoom level of the map. You can also use the:
 - Scroll bar: Use the scroll bar to change the zoom level of the map.

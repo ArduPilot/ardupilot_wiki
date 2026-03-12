@@ -13,7 +13,7 @@ ArduPilot has the capability of executing aerobatics from a LUA script. Either v
 
 .. note:: this requires a vehicle capable of aerobatic flight, properly tuned pitch,roll, and yaw rate controllers, and the pilot should be capable of safely taking over control (by switch or mode change) the vehicle while in an unusual attitude, if the need arises. The ``ACRO_x_RATE`` parameters limit the maximum commanded rate for each axis, as in ACRO mode.
 
-Mission NAV_SCRIPT_TIME 
+Mission NAV_SCRIPT_TIME
 =======================
 
 The SCRIPT_TIME waypoint type allows for a :ref:`LUA<common-lua-scripts>` script to take control of the roll/pitch/yaw rates of the vehicle for a time. For protection against lack of an appropriate script being active (ie was not loaded in the APM/Scripts directory of the SD card) to assume control, or LUA script crash due to error, there is a mandatory parameter which provides a maximum time the script can takeover, before the next mission item is executed. An additional layer of protection is provided within the firmware execution of the NAV_SCRIPT_TIME command that requires the script to access it within every 200ms, so the command's timeout parameter (P2) can be set to 0 (unlimited time out) for longer running aerobatics sequences (> 255 seconds), IF they are known to be otherwise well-behaved and present on the SD card.
@@ -88,7 +88,7 @@ These tricks and sequences can be either run as part of a mission using the NAV_
 The script provides numerous individual tricks, and a table of their IDs is provided in the `README.md <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets/Aerobatics/FixedWing/README.md>`__ file. Below is a list, but future expansion is anticipated so check the README:
 
 ==== ========================  ======  ===========  ==========   ==========  ==========
- ID  Name                      Arg1    Arg2         Arg3         Arg4        Turnaround 
+ ID  Name                      Arg1    Arg2         Arg3         Arg4        Turnaround
 ==== ========================  ======  ===========  ==========   ==========  ==========
  1   Figure Eight              radius  bank angle                            No
  2   Loop                      radius  bank angle   #   loops                No
@@ -190,7 +190,7 @@ Normal ArduPilot Autotune provides a safe, stable PID tune for most vehicles. As
 
 .. toctree::
    :maxdepth: 1
-    
+
    Aerobatic Tuning <common-aerobatics-tuning>
 
 Analyzing Performance
@@ -229,5 +229,3 @@ Other scripts can be developed which allow control of the vehicle, either via NA
 - Obtaining the arguments of a NAV_SCRIPT_TIME command using "vehicle:nav_script_time()" if running while in AUTO mode.
 
 - Controlling the above rates and throttle with the "vehicle:set_target_throttle_rate_rpy(....)" function, which must be called regularly (at least every second) to set the roll/pitch/yaw rates and throttle percentage. Failure to do so, will disable the control override and return control to the original flight mode. Changing flight modes also disables script control.
-
-

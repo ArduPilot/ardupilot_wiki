@@ -41,10 +41,10 @@ module. Information about powering the Pixhawk can be found in the topic
 Connect remote control inputs
 =============================
 
-Pixhawk is compatible with 
+Pixhawk is compatible with
 
     #. PPM-Sum receivers
-    #. SBus receivers 
+    #. SBus receivers
     #. IBUS receivers
     #. :ref:`common-FPort-receivers`
     #. :ref:`Spektrum DSM, DSM2, and DSM-X Satellite receivers<common-spektrum-rc>`
@@ -52,7 +52,7 @@ Pixhawk is compatible with
     #. :ref:`Graupner SUM-D<common-graupner-rc>`
 
 For traditional single-wire-per-channel (PWM) receivers a PPM encoder
-can be used to convert the receiver outputs to PPM-SUM. 
+can be used to convert the receiver outputs to PPM-SUM.
 
 .. tip::
 

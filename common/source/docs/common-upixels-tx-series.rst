@@ -62,4 +62,4 @@ Testing and Setup
 
 - See :ref:`common-optical-flow-sensor-setup` for setup guides.
 - Details of the modules are available: `UPixels_GitHub <https://github.com/Upixels-China/Upixels_Optical_flow>`__.
-- Note that recommended value for :ref:`EK2_FLOW_DELAY <EK2_FLOW_DELAY>` or :ref:`EK3_FLOW_DELAY <EK3_FLOW_DELAY>` for this sensor is 10. 
+- Note that recommended value for :ref:`EK2_FLOW_DELAY <EK2_FLOW_DELAY>` or :ref:`EK3_FLOW_DELAY <EK3_FLOW_DELAY>` for this sensor is 10.

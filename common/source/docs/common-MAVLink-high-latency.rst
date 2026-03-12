@@ -8,7 +8,7 @@ ArduPilot supports the `MAVLink High Latency <https://mavlink.io/en/services/hig
 
 Within this protocol, only the `HIGH_LATENCY2 <https://mavlink.io/en/messages/common.html#HIGH_LATENCY2>`__ MAVLink message is sent once per 5 seconds. Any responses to MAVLink commands or requests (such as command acknowledgements or parameter requests) will be sent too.
 
-MAVLink High Latency is available as an option on any telemetry port. A typical use case is to have a standard MAVLink telemetry port for initial configuration and system checkout - usually a radio modem or 4G link. A low-bandwidth modem will be connected on a 2nd telemetry port, which the user can activate 
+MAVLink High Latency is available as an option on any telemetry port. A typical use case is to have a standard MAVLink telemetry port for initial configuration and system checkout - usually a radio modem or 4G link. A low-bandwidth modem will be connected on a 2nd telemetry port, which the user can activate
 
 Configuration
 =============

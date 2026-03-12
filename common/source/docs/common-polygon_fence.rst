@@ -40,7 +40,7 @@ Other Warnings:
 
 -  The minimum recommended fence radius is 30m
 -  The fence requires the GPS to be functioning well so do not disable
-   the :ref:`GPS arming check <common-prearm-safety-checks>` nor the :ref:`EKF failsafe <ekf-inav-failsafe>` while the fence is enabled. 
+   the :ref:`GPS arming check <common-prearm-safety-checks>` nor the :ref:`EKF failsafe <ekf-inav-failsafe>` while the fence is enabled.
    Conversely, if you disable either of these checks, disable the Fence.
 -  For the best results, ensure RTL is working on your vehicle.
 -  With the Fence enabled in Copter and Rover, the pre-arm checks will require you have GPS
@@ -58,7 +58,7 @@ Other Warnings:
    again.  If you really want to override the fence, you should be ready
    to switch the flight mode twice or alternatively set-up the
    enable/disable fence switch.
-   
+
 .. note:: You can define many inclusion and exclusion fences. However,multiple inclusions fences, including the :ref:`cylindrical fences <common-ac2_simple_geofence>` must overlap, since the vehicle can operate only within the complete overlap area of all of the inclusion fences. Exclusion fences may be placed within or outside of inclusion fences.
 
 .. note:: In order to upload or download these fences from Mission Planner the connected link must be using MAVLink2 protocol. Normally, since the USB connection is used, this protocol is default. However, radio linked connections may use MAVLink1 by default and would need to be changed to MAVLink2 in order to upload and download across them.
@@ -75,5 +75,3 @@ A polygon fence can be used in combination with the :ref:`cylindrical fences <co
     :target: ../_images/copter_polygon_circular_fence..png
 
 Please see the :ref:`Cylindrical Fence <common-ac2_simple_geofence>` page for additional warnings and instructions including how to enable/disable the fence with the RC channel auxiliary switches.
-
-

@@ -31,4 +31,3 @@ components, including those required for the operation of the autopilot.
     Failsafes <failsafe-landing-page>
     ESC Calibration <common-esc-calibration>
     Companion Computers <sub-companions-computers>
-

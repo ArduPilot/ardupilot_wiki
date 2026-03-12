@@ -9,7 +9,7 @@ to building and use an ArduPilot-based blimp.
 ArduPilot Flapping Fin Blimp
 ============================
 
-This is the first release of dedicated firmware for an ArduPilot based Blimp. While there are several commercially available Blimps using brushless motors and/or fins as control surfaces which could be adapted to use the Plane firmware, this release is the first ArduPilot firmware targeted specifically to lighter-than-air (LTA) vehicles. 
+This is the first release of dedicated firmware for an ArduPilot based Blimp. While there are several commercially available Blimps using brushless motors and/or fins as control surfaces which could be adapted to use the Plane firmware, this release is the first ArduPilot firmware targeted specifically to lighter-than-air (LTA) vehicles.
 
 The first release is a simple flapping fin Blimp that can be easily constructed and is suitable for indoor use. It is capable of only lifting a few grams besides its own envelope but serves as a good testing and development platform. Follow these instructions to :ref:`build your own <building-a-blimp>`.
 
@@ -45,7 +45,7 @@ Position and Yaw Sensors
 
 In order to use any of the position-controlled flight modes, ie any mode other than HOLD or MANUAL, Blimp requires position information.
 
-For outdoor use, the simplest option is a :ref:`GPS module <common-installing-3dr-ublox-gps-compass-module>` generally with a compass. 
+For outdoor use, the simplest option is a :ref:`GPS module <common-installing-3dr-ublox-gps-compass-module>` generally with a compass.
 
 A compass is also required, because the velocities and speeds of the vehicle are not large enough to assure that ArduPilot's algorithmic yaw estimator for compass-less operation would ever converge.
 
@@ -68,7 +68,7 @@ can use.
 
 For example, a blimp that is approximately 50 cm in diameter would
 likely be able to fly at a slow pace for about 10-20 minutes on 150 mAh 1S. However it likely has
-enough lift to carry double the capacity or more if there aren't any cameras or other 
+enough lift to carry double the capacity or more if there aren't any cameras or other
 payload added.
 
 While a blimp generally uses only one battery at a time, we recommend having a few batteries in stock; more batteries means more flight time. You'll also need a charger for your batteries.
@@ -96,7 +96,7 @@ station from the air using the MAVLink protocol. This allows you to
 interact with Blimp in real time and receive streaming data from
 your blimps.
 
-We recommend the telemetry radio solutions linked from the 
+We recommend the telemetry radio solutions linked from the
 :ref:`Telemetry Landing Page <common-telemetry-landingpage>`.
 
 A :ref:`Bluetooth<common-mission-planner-bluetooth-connectivity>`, or WIFI adapters, such as :ref:`common-esp32-telemetry` and :ref:`common-esp8266-telemetry`, are lightweight and have enough range for indoor operation.

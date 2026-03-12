@@ -104,4 +104,3 @@ With higher baud rates, MicroStrain7 should be suitable for Copter and QuadPlane
     :hidden:
 
     common-external-ahrs-vectornav
-

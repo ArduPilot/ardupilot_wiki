@@ -11,12 +11,12 @@ You can start it like this, from any vehicle's subdirectory:
 ::
 
     sim_vehicle.py -j4 -f quadplane --console --map
-    
+
  or add the vehicle type:
 
     sim_vehicle.py -j4 -v Plane -f quadplane --console --map
-    
-    
+
+
 If you have simulated other vehicles in the current directory, you may wish
 to add the - w option to the command line to reset the parameters back to
 QuadPlane defaults (normal Separate Lift Thrust (SLT) QuadPlane in quad configuration).

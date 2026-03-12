@@ -4,7 +4,7 @@
 SiK Radio — Advanced Configuration
 ==================================
 
-This article provides advanced configuration information for the 
+This article provides advanced configuration information for the
 :ref:`SiK Telemetry Radio <common-sik-telemetry-radio>`. It is intended for
 "power users", and those who wish to gain a better understanding of how
 the radios operate.
@@ -12,7 +12,7 @@ the radios operate.
 .. tip::
 
    Most users will only need the basic guide and feature overview
-   provided in :ref:`SiK Radio v2 <common-sik-telemetry-radio>`. 
+   provided in :ref:`SiK Radio v2 <common-sik-telemetry-radio>`.
 
 .. image:: ../../../images/Telemetry_Ver1Ver2.jpg
     :target: ../_images/Telemetry_Ver1Ver2.jpg
@@ -386,7 +386,7 @@ settable EEPROM parameters. That will produce a report like this:
      S9: MAX_FREQ=928000
      S10: NUM_CHANNELS=50
      S11: DUTY_CYCLE=100
-     S12: LBT_RSSI=0 
+     S12: LBT_RSSI=0
      S13: MANCHESTER=0
      S14: RTSCTS=0
      S15: MAX_WINDOW=131
@@ -589,7 +589,7 @@ The above process should be performed for both radios.
 Using a FTDI-to-USB cable to configure SiK radios
 =================================================
 
-The recommended approach for configuring 3D Radios is to use Mission Planner, 
+The recommended approach for configuring 3D Radios is to use Mission Planner,
 :ref:`as discussed here <common-configuring-a-telemetry-radio-using-mission-planner>`.
 
 If that approach doesn't work do the following:

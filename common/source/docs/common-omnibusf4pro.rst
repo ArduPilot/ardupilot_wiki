@@ -75,7 +75,7 @@ If you want to power the servos from the ESC BEC via the board's center rail for
 Video power provided on the video input and output center rail, is provide through an on-board noise filter. Either ~4.5V (labeled 5V) or VBAT-0.5V (VBAT) can be selected by solder pads on the back of the board.
 
 PPM solder pad/resistor should be soldered and “S-BUS” resistor/solder pad removed
-Otherwise, UART1 or UART6 or RCIN will not work. 
+Otherwise, UART1 or UART6 or RCIN will not work.
 
 .. figure:: ../../../images/omnibusf4pro_ardupilot_wiring.jpg
     :target: ../_images/omnibusf4pro_ardupilot_wiring.jpg
@@ -114,7 +114,7 @@ Usually these boards are sold pre-flashed with betaflight / INav firwares and re
 
 Firmware files can be found `here <https://firmware.ardupilot.org/>`__.
 Use omnibusf4pro firmware for the OmnibusF4Pro boards and omnibusf4 firmware for the AIO versions. The pro version will be used in the following examples.
-Besides the .apj files for firmware flashing via MissionPlanner, there's also .hex files for use with various utilities like dfu-util or betaflight / iNav GUIs. You will also find a _bl.hex that contains the firmware plus the ArduPilot compatible bootloader in case it is not already present on your board. 
+Besides the .apj files for firmware flashing via MissionPlanner, there's also .hex files for use with various utilities like dfu-util or betaflight / iNav GUIs. You will also find a _bl.hex that contains the firmware plus the ArduPilot compatible bootloader in case it is not already present on your board.
 
 The provided _bl.hex file can be flashed using BF or iNav GUI, likely the most convenient way to get ArduPilot on your board the first time.
 
@@ -123,7 +123,7 @@ Alternatively, the bootloader can be flashed separately. This requires the board
 Enter DFU Mode
 --------------
 To do this, you'll need to locate the DFU jumper on your board. On most board flavours this is a little push button thas needs to be
-pressed while connecting your board to your PC via USB: 
+pressed while connecting your board to your PC via USB:
 
 .. image:: ../../../images/omnibusf4_dfu_button.png
     :target: ../_images/omnibusf4_dfu_button.png
@@ -133,13 +133,13 @@ Install dfu-util
 * Linux (Ubuntu)
 
   ::
-    
+
     sudo apt-get install dfu-util
-    
+
 * OS X
 
   ::
-    
+
     brew install dfu-util
 
 * Windows

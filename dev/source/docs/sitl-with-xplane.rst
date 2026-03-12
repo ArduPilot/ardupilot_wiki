@@ -120,7 +120,7 @@ In the Simulation screen you need to select Model "xplane" and then select
 aircraft in X-Plane with SITL. In the future we may support other
 aircraft types. See below for more information on flying a helicopter.
 
-When you select "Plane" MissionPlanner will present a selection for downloading the current stable release or a nightly build of ArduPilot. 
+When you select "Plane" MissionPlanner will present a selection for downloading the current stable release or a nightly build of ArduPilot.
 
 .. figure:: ../images/xplane-missionplanner3.jpg
    :target: ../_images/xplane-missionplanner3.jpg
@@ -194,7 +194,7 @@ To connect X-Plane and SITL in this environment you need to manually point each 
 Find the address of Windows reachable from WSL by running ``ipconfig.exe`` in PowerShell or Command Prompt, and looking for the following device::
 
   Ethernet adapter vEthernet (WSL):
-  
+
       Connection-specific DNS Suffix  . :
       IPv4 Address. . . . . . . . . . . : 172.25.64.1
       Subnet Mask . . . . . . . . . . . : 255.255.240.0

@@ -19,7 +19,7 @@ Specifications
 
 -  **Processor**:
 
-   -  MCU - STM32F427VIT6 
+   -  MCU - STM32F427VIT6
    -  16KB FRAM - FM25V01
    -  AT7456E OSD
 
@@ -36,7 +36,7 @@ Specifications
    -  Internal 5V, 1.5A BEC directly can be used with up to 6S LIPO batteries to supply board and peripheral power up to 1.5A max with voltage only monitoring via BATT2 monitor (500ma max recommended).
    -  ADC monitoring of board voltage??
    -  ADC monitoring of Servo/Output's power rail
-   
+
 -  **Interfaces/Connectivity**
 
    -  14 PWM Outputs with independent power rail for external power source
@@ -131,7 +131,7 @@ OSD
    </tr>
    </tbody>
    </table>
-   
+
 USB remote port
 ---------------
 

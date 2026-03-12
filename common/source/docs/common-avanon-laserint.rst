@@ -4,9 +4,9 @@
 Avionics Anonymous DroneCAN LIDAR Interface
 ===========================================
 
-The `Avionics Anonymous DroneCAN LIDAR Interface <https://docs.avionicsanonymous.com/devices/laser_interface>`__ is a tiny interface for 
-`several common laser rangefinders <https://docs.avionicsanonymous.com/devices/laser_interface#currently-supported-lasers>`__ 
-that allows connection to Pixhawk and other similar autopilots via DroneCAN - A nice robust interface, which provides high 
+The `Avionics Anonymous DroneCAN LIDAR Interface <https://docs.avionicsanonymous.com/devices/laser_interface>`__ is a tiny interface for
+`several common laser rangefinders <https://docs.avionicsanonymous.com/devices/laser_interface#currently-supported-lasers>`__
+that allows connection to Pixhawk and other similar autopilots via DroneCAN - A nice robust interface, which provides high
 reliability connections to peripherals over greater distances than I2C.
 
 .. figure:: ../../../images/AvAnon-LaserInt.png

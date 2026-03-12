@@ -14,7 +14,7 @@ vehicles based on ArduPilot.
    controller using Mission Planner (or other GCS software). This section
    is for vehicles that use a non-standard approach, including modified
    source, different approaches for uploading firmware, support for
-   companion computers, etc. 
+   companion computers, etc.
 
 
 .. toctree::

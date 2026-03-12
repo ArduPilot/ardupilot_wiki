@@ -12,11 +12,10 @@ Jumper T16 PRO is a stand-alone transmitter compatible with many other RC system
 
 Protocols supported:
 
-- FrSky 
+- FrSky
 - Spektrum DSM/DSM2/DSMX
 - FLYSKY
 - Walkera DEVO
 - Futaba SFHSS
 
 plus others
-

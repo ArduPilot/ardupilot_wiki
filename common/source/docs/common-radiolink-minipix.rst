@@ -13,7 +13,7 @@ RadioLink MiniPix
 .. image:: ../../../images/minipix1.jpg
     :target: ../_images/minipix1.jpg
 
-*above image and some content courtesy of the* `RadioLink website <http://www.radiolink.com.cn/doce/product-detail-133.html>`__ 
+*above image and some content courtesy of the* `RadioLink website <http://www.radiolink.com.cn/doce/product-detail-133.html>`__
 
 
 Specifications
@@ -36,7 +36,7 @@ Specifications
    -  1 x additional ADC for analog RSSI or analog airspeed
    -  SDIO microSD card slot
    -  micro USB connector
-   -  includes buzzer / safety-switch, power module, I2C expansion board and TS100 GPS / mag combo depending on kit features 
+   -  includes buzzer / safety-switch, power module, I2C expansion board and TS100 GPS / mag combo depending on kit features
    -  size 39 x 39 x 12 mm
    -  weight 12 g without wires
 
@@ -50,7 +50,7 @@ Peripheral Connections
 
 .. image:: ../../../images/minipix_periphs.jpg
     :target: ../_images/minipix_periphs.jpg
-    
+
 Default UART order
 ==================
 
@@ -77,9 +77,9 @@ Then follow the instructions on how to :ref:`load firmware onto ChibiOS boards <
 
 
 .. warning::
-    The flightcontroller's plastic case shows the telemetry ports' numbers reversed compared to the board's PCB imprints and the  
+    The flightcontroller's plastic case shows the telemetry ports' numbers reversed compared to the board's PCB imprints and the
     firmware's SERIALn assignments, this requires additional attention!
-    
+
 .. note::
     MiniPix voltage and current sensing pins use Pixhawk standard ( :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 2, :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 3).
     The additional ADC pin can be used for either RSSI or analog airspeed. Set required option to PIN = 11.

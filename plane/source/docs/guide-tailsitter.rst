@@ -46,7 +46,7 @@ The key to make a QuadPlane a tailsitter is to either set
 firmware version 4.2 and later:
 -------------------------------
 
-To make a QuadPlane a tailsitter is to set :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` to "1" or "2" to tell the QuadPlane code to use the tailsitter VTOL backend. 
+To make a QuadPlane a tailsitter is to set :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` to "1" or "2" to tell the QuadPlane code to use the tailsitter VTOL backend.
 
 If :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is zero (the default), meaning no multicopter-like motors, it provides roll, pitch, yaw and thrust (Throttle, Throttle Left, Throttle Right) values to the fixed wing control code. These values then control your ailerons, elevons, elevators, rudder and forward motors.
 
@@ -180,7 +180,7 @@ and you need to assign left throttle to the left motor and right throttle to the
 You also need to set the right ``SERVOn_REVERSED`` values, and the correct
 ``SERVOn_TRIM``, ``SERVOn_MIN`` and ``SERVOn_MAX`` values, as appropriate.
 
-:ref:`Q_A_ANGLE_BOOST<Q_A_ANGLE_BOOST>` should be disabled for vectored thrust tailsitters. Failure to disable this will cause the throttle to decrease as the nose dips, making the nose dip even further and resulting in a crash. 
+:ref:`Q_A_ANGLE_BOOST<Q_A_ANGLE_BOOST>` should be disabled for vectored thrust tailsitters. Failure to disable this will cause the throttle to decrease as the nose dips, making the nose dip even further and resulting in a crash.
 
 .. caution:: When disarmed, switching to QHOVER or QLOITER will force the motors forward into fixed wing orientation. If armed in this position, a prop strike could occur for Belly Sitter configurations. Tilt will be raised to VTOL position when throttle is raised above idle, but the strike will have already occurred. The solution is to momentarily raise the throttle above idle, allowing the tilts to raise, return throttle stick to idle, then arm. This needs to be done also for AUTO mode takeoffs, which should be started from QSTABILIZE with motors raised, armed, and then change to AUTO for the takeoff.
 
@@ -193,7 +193,7 @@ See :ref:`Tilt Rotor Setup Tips<tilt-rotor-tips>` and :ref:`Tilt Rotor Servo Set
 TVBS (Thrust Vectored Belly Sitter)
 ===================================
 
-TVBS are just dual motor vectored thrust tailsitters that don't sit on their tails, but rather their belly. Aside from making sure props clear (ie sufficient throw on tilt servos) when in the horizontal stance, nothing special is required to make it take off from a horizontal stance. 
+TVBS are just dual motor vectored thrust tailsitters that don't sit on their tails, but rather their belly. Aside from making sure props clear (ie sufficient throw on tilt servos) when in the horizontal stance, nothing special is required to make it take off from a horizontal stance.
 
 At least 45 degree throw, either side of neutral (fixed wing flight position) is required, with 60 degrees being most desirable. Otherwise, the vehicle will "skid" along the ground a bit when you raise the throttle to bring it vertical on takeoff. Takeoffs, required a decisive move of throttle to hover or above to reduce the "skid".
 
@@ -268,7 +268,7 @@ Gain is scaled with altitude, this should be considered when operating over a wi
 Transitions
 ===========
 
-Tailsitter transitions are a little different than other QuadPlane transitions. 
+Tailsitter transitions are a little different than other QuadPlane transitions.
 
 :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` specifies how far the nose must pitch down in a VTOL mode before transition to forward flight is complete. So a value of e.g. 60 degrees results in switching from copter to plane controller (forward transition) when the nose reaches 30 degrees above the horizon (60 degrees down from vertical).
 The pitch rate used when pitching down to forward flight is given by :ref:`Q_TAILSIT_RAT_FW<Q_TAILSIT_RAT_FW>`, this rate will be held until :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` is reached.
@@ -292,7 +292,7 @@ Although usually not recommended, it is possible to fly a tailsitter aircraft wi
 - :ref:`Q_OPTIONS<Q_OPTIONS>` bit 7:Force Qassist will force the vehicle to use the copter controller in all flight modes.
 - :ref:`Q_OPTIONS<Q_OPTIONS>` bit 8:Mtrs_Only_Qassist allows use of the copter controller for the motors but leave any controls surfaces under plane control, this allows the control surfaces to act as 'trim tabs' for the motors.
 
-See :ref:`Assisted Fixed-Wing Flight<assisted_fixed_wing_flight>` for more details on how Qassist can be automatically enabled and disabled with airspeed, altitude, attitude, and/or by ``RCx_OPTION`` switch. 
+See :ref:`Assisted Fixed-Wing Flight<assisted_fixed_wing_flight>` for more details on how Qassist can be automatically enabled and disabled with airspeed, altitude, attitude, and/or by ``RCx_OPTION`` switch.
 
 Tailsitter Input
 ================
@@ -344,7 +344,7 @@ set:
 then when channel 7 goes above 1700 the pilot will be given full
 manual control of rudder when hovering. This provides good 3D piloting
 practice on one or more axes at a time.
-  
+
 Center of Gravity
 =================
 

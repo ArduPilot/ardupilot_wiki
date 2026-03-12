@@ -12,8 +12,8 @@ new aircraft, as everything else relies on getting this right.
 
 .. tip::
 
-    We **strongly** recommend that 
-    :ref:`you use AUTOTUNE to perform roll/pitch/yaw tuning <automatic-tuning-with-autotune>`. 
+    We **strongly** recommend that
+    :ref:`you use AUTOTUNE to perform roll/pitch/yaw tuning <automatic-tuning-with-autotune>`.
     The instructions in this article should be used if you are unable to fly.
 
 .. note::
@@ -284,11 +284,11 @@ Tuning tips
    demanded pitch angle until the model stalls. ``PTCH2SRV_IMAX`` should be
    set to a value that is big enough to allow from trim changes, but
    small enough so that it cannot stall the plane. The default for Plane is 2/3 of total throw, which could
-   produce this problem. Be sure that :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` is setup to add 
+   produce this problem. Be sure that :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` is setup to add
    negative pitch at low throttle in stabilized modes.
 -  The rate of pitch (and therefore the reduce the number of g's) used
    to correct pitch angle errors can be limited setting the pitch rate
-   limit :ref:`PTCH2SRV_RMAX_DN<PTCH2SRV_RMAX_DN>` and :ref:`PTCH2SRV_RMAX_UP<PTCH2SRV_RMAX_UP>` 
+   limit :ref:`PTCH2SRV_RMAX_DN<PTCH2SRV_RMAX_DN>` and :ref:`PTCH2SRV_RMAX_UP<PTCH2SRV_RMAX_UP>`
    parameters to non-zero values. Setting these values to 560 divided by the airspeed
    (in metres/second) gives a limit equivalent to approximately +- 1g.
 -  The time constant parameter :ref:`PTCH2SRV_TCONST<PTCH2SRV_TCONST>` can also be used to
@@ -309,7 +309,7 @@ Tuning tips
    greater than 0.6 would indicate that ``PTCH2SRV_P`` is too high and
    should be reduced, whereas a value of less than 0.5 would indicate
    that ``RLL2SRV_P`` should be increased.
-   
+
 
 Yaw Controller Tuning
 =====================
@@ -392,4 +392,3 @@ Yaw Controller
 
 .. image:: ../images/latAP.jpg
     :target: ../_images/latAP.jpg
-

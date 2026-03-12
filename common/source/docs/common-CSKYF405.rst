@@ -40,7 +40,7 @@ Specifications
 
    -  6x UARTS
    -  10x PWM outputs
-   -  1x RC input with inverter for SBUS/PPM 
+   -  1x RC input with inverter for SBUS/PPM
    -  I2C port for external compass and airspeed sensor
    -  Type-C USB port
    -  SD Card Slot
@@ -145,4 +145,3 @@ firmware, using your favorite DFU loading tool.
 Subsequently, you can update firmware with Mission Planner.
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

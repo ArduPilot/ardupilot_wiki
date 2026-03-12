@@ -18,7 +18,7 @@ Specifications
 
 -  **Sensors**
 
-   -  InvenSense MPU6000 IMU (accel, gyro) 
+   -  InvenSense MPU6000 IMU (accel, gyro)
    -  BMP280 barometer (not in V2 version)
    -  Voltage & 300A Current sensor
 
@@ -82,9 +82,9 @@ he UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive pi
 - SERIAL0 = console = USB
 - SERIAL1 = Telemetry1 = USART1 (Alternate RC input/output)
 - SERIAL2 = Telemetry2 = USART2 (DJI)
-- SERIAL3 = RC Input = USART3 
+- SERIAL3 = RC Input = USART3
 - SERIAL4 = GPS = USART4
-- SERIAL7 = USER = UART7 
+- SERIAL7 = USER = UART7
 
 UART1 supports RX and TX DMA. UART2, UART3 and UART4 support RX DMA. UART7 supports TX DMA
 

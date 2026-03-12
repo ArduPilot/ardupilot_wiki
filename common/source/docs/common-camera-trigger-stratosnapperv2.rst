@@ -57,7 +57,7 @@ Note the two servo leads are connected on the input side of
    It is not possible to power the IR module (or any other device)
    from the Pixhawk AUX ports. You must either power provide a separate BEC
    to power the IR device or power the Pixhawk outputs rail with a BEC and
-   power the device off that. 
+   power the device off that.
 
 The control signal from Pixhawk can be assigned to any of the 4 servo
 inputs.

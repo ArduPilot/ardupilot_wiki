@@ -7,10 +7,10 @@ Archived:APM2.x Wiring QuickStart
 .. warning::
 
     **ARCHIVED**
-    
-    The APM2.x is end of life for use with ArduPilot. 
+
+    The APM2.x is end of life for use with ArduPilot.
     This article is made available for existing users.
-    
+
 This article provides high level information about how to power APM2.x
 and connect its most important peripherals.
 
@@ -63,5 +63,3 @@ pins marked M1, motor 6's ESC to the pins marked M6, etc.
 
 .. image:: ../images/pdb-esc-connect.jpg
     :target: ../_images/pdb-esc-connect.jpg
-
-

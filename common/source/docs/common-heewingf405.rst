@@ -79,7 +79,7 @@ Default UART order
 The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the
 receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 
- 
+
 - SERIAL0 -> USB
 - SERIAL1 -> UART3 (marked UART1 on casing, DMA-enabled)
 - SERIAL2 -> UART1 (marked UART2 on casing, DMA-enabled)
@@ -107,7 +107,7 @@ Channels within the same group need to use the same output rate. If any channel 
 RC Input
 ========
 
-The RCIN pin, is passed by an inverter to RX2 (UART2 RX), which by default is mapped to a timer input instead of the UART, and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry. 
+The RCIN pin, is passed by an inverter to RX2 (UART2 RX), which by default is mapped to a timer input instead of the UART, and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the RX2 pin can also be configured to be used as true UART2 RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL2 port's RX input pin.
 
@@ -157,7 +157,7 @@ Firmware
 ========
 First Versions
 --------------
-The first version of the board does not come a correct Ardupilot bootloader (it may at some future point) so it cannot be upgraded with new versions of Ardupilot firmware. ANd cecause it has not boot pin exposed, DFU loading is not possible. 
+The first version of the board does not come a correct Ardupilot bootloader (it may at some future point) so it cannot be upgraded with new versions of Ardupilot firmware. ANd cecause it has not boot pin exposed, DFU loading is not possible.
 
 Instead a `"transitional" firmware <https://firmware.ardupilot.org/Tools/TransitionalFirmware/HeeWingF405/>`__  can be used and loaded like normal ArduPilot firmware (this is rev 4.3.7 Plane firmware) as a custom firmware file in Mission Planner.
 
@@ -176,4 +176,3 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

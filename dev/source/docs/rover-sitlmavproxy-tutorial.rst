@@ -102,7 +102,7 @@ restart the vehicle travelling towards the previous point:
 
     GUIDED> mode hold
     HOLD> guided 0
-    GUIDED> 
+    GUIDED>
 
 When you're finished you can return to the initial position by changing
 to ``RTL`` mode (this also works in ``AUTO`` mode):
@@ -110,7 +110,7 @@ to ``RTL`` mode (this also works in ``AUTO`` mode):
 ::
 
     GUIDED> mode rtl
-    RLT> 
+    RLT>
 
 Running a mission
 =================
@@ -132,7 +132,7 @@ skip to the second waypoint, and *loop* the mission:
 .. note::
 
    Rover will only run :ref:`commands it supports <rover:common-mavlink-mission-command-messages-mav_cmd_commands_supported_by_rover>`
-   (others are ignored). 
+   (others are ignored).
 
 The :ref:`MAVProxy Waypoints documentation <mavproxy:mavproxy-waypoints>`
 lists the full set of available commands (or you can get them using
@@ -154,7 +154,7 @@ the map:
 
       Nothing visible will happen when you make the first click.
       After the second click, lines will join your points to show the path
-         
+
 #. When you're done, you can loop the mission by right-clicking on the
    map and selecting **Mission \| Loop**.
 

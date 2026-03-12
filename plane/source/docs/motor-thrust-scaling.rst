@@ -5,12 +5,12 @@ Motor Thrust Scaling
 ====================
 
 QuadPlane includes *motor thrust scaling* which compensates for the
-non-linear thrust output of most ESCs and motors used in VTOL. 
+non-linear thrust output of most ESCs and motors used in VTOL.
 
 .. tip::
 
-    The default curve should work for nearly all ESC/motor combinations. 
-    Normally the parameters should not be adjusted unless the vehicle’s actual 
+    The default curve should work for nearly all ESC/motor combinations.
+    Normally the parameters should not be adjusted unless the vehicle’s actual
     thrust curve has been measured.
 
 
@@ -43,4 +43,3 @@ Parameter Calculation
 =====================
 
 A copy of `this spreadsheet <https://docs.google.com/spreadsheets/d/1_75aZqiT_K1CdduhUe4-DjRgx3Alun4p8V2pt6vM5P8/edit#gid=0>`__ can be used to calculate the appropriate values from the thrust stand data above.
-

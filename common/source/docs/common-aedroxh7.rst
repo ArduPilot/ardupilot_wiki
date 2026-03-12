@@ -45,7 +45,7 @@ The default RC input is configured on the UART3 (RX3/SBUS). Non SBUS,  single wi
 
 * PPM is not supported.
 * SBUS/DSM/SRXL connects to the RX3 pin.
-* FPort requires connection to TX3. Set :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` = 7 
+* FPort requires connection to TX3. Set :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` = 7
 * CRSF/ELRS also requires both TX3 and RX3 connections and provides telemetry automatically.
 
 OSD Support

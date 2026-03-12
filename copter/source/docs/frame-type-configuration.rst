@@ -31,7 +31,7 @@ See the :ref:`Connect ESCs and Motors <connect-escs-and-motors>` page for the li
 Traditional Helicopters
 =======================
 
-Traditional Helicopters run a different version of firmware. See :ref:`traditional-helicopters` for setup and tuning information. 
+Traditional Helicopters run a different version of firmware. See :ref:`traditional-helicopters` for setup and tuning information.
 
 HeliQuads are a hybrid frame using Traditional Helicopter firmware but four motors.
 

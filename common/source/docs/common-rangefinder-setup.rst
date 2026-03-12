@@ -13,7 +13,7 @@ There are many different kinds of rangefinders: Lidar (using laser or infra-red 
 
 .. warning::
    :ref:`common-object-avoidance-landing-page` features are new and should be used with caution.
-   
+
 
 Up to 10 Rangefinders can be used in the system (1 thru A). :ref:`Object Avoidance <common-object-avoidance-landing-page>` can use a single 360 degree Lidar, or up to 9 unidirectional rangefinders: 8 arranged in a circle covering 45 degree wide segments, plus an upward facing rangefinder. And a downward facing rangefinder used for low altitude height above ground measurements.
 
@@ -21,7 +21,7 @@ Connecting and Configuring the Rangefinder
 ==========================================
 
 - Follow the instructions for each type of rangefinder described in its linked page on :ref:`common-rangefinder-landingpage`.
-- Set the RNGFNDx_ORIENT parameters (i.e. :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>`, :ref:`RNGFND2_ORIENT <RNGFND2_ORIENT>`, etc.) to specify the direction each range finder is pointing in. 
+- Set the RNGFNDx_ORIENT parameters (i.e. :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>`, :ref:`RNGFND2_ORIENT <RNGFND2_ORIENT>`, etc.) to specify the direction each range finder is pointing in.
 
 .. note:: Note that if the type of rangefinder is set or changed, a reboot will be required.
 
@@ -52,4 +52,3 @@ References
 [site wiki="copter,rover"]
 - More details of the algorithms used in :ref:`common-simple-object-avoidance` are on the :ref:`developer wiki's object avoidance page <code-overview-object-avoidance>`
 [/site]
-

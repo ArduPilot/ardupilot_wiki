@@ -37,7 +37,7 @@ Use Nooploop NAssistant tool to configure one node to act as a tag.
 - set Protocol to Node_Frame2
 - set Baudrate to 921600
 - set Update Rate to 25
-- set Filter Factor to 0 
+- set Filter Factor to 0
 
 .. image:: ../../../images/nooploop-config-tag.png
     :target: ../_images/nooploop-config-tag.png
@@ -89,4 +89,3 @@ DataFlash logging
 =================
 
 The distance to the beacons can be found in the dataflash log's BCN message's D0, D1, D2, D3 fields.
-

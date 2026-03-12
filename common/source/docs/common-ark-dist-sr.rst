@@ -19,7 +19,7 @@ Specifications
 
    - `Dronecan Small-Range Distance Sensor Module <https://dronecan.github.io/>`__
    - `Broadcom AFBR-S50LV85D Time-of-Flight Distance Sensor <https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d>`__
-  
+
     - Integrated 850 nm laser light source
     - Field-of-View (FoV) of 12.4° x 6.2° with 32 pixels
     - Typical distance range up to 30m
@@ -27,21 +27,21 @@ Specifications
     - Works well on all surface conditions
     - Transmitter beam of 2° x 2° to illuminate between 1 and 3 pixels
     - Reference Pixel for system health monitoring
-  
+
 -  **Connections**
 
    - Two Pixhawk Standard CAN Connectors
-   
+
     - 4 Pin JST GH
-   
+
    - Pixhawk Standard Debug Connector
-    
+
     - 6 Pin JST SH
 
    - Pixhawk Standard UART Connector
-    
+
     - 6 Pin JST SH
- 
+
 -  **Power Requirements**
 
    -  5V

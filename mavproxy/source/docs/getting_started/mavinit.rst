@@ -35,4 +35,4 @@ will allow the user to graph the current battery level by typing
 .. code:: bash
 
     @alias add g graph
-    @alias add gbatt g SYS_STATUS.current_battery`` 
+    @alias add gbatt g SYS_STATUS.current_battery``

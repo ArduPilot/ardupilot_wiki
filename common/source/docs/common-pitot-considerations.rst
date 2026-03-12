@@ -46,4 +46,4 @@ Cabin Static Port
 
 Some Ready To Fly vehicles use an internal cabin static port for the airspeed sensor instead of placement on the external pitot tube. These can sometimes provide adequate results, but can easily result in reading inaccuracies if the cabin in which they are located are subject to pressure changes in flight (ie. openings in cabin exposed to direct airflow) or configuration (ie. nose or belly camera removal exposing an opening in the fuselage). Therefore, this configuration is usually not recommended, especially if airspeed sensors are being used during an autolanding.
 
-The impact of angle of attack on the cabin pressure (and by inference airspeed reading accuracy)can be checked by examining the BARO.Alt vs GPS.Alt log readings at various speeds, since the BARO is measuring altitude based on cabin pressure. 
+The impact of angle of attack on the cabin pressure (and by inference airspeed reading accuracy)can be checked by examining the BARO.Alt vs GPS.Alt log readings at various speeds, since the BARO is measuring altitude based on cabin pressure.

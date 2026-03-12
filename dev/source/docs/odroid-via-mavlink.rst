@@ -310,7 +310,7 @@ cherrypy by entering the following in an Odroid terminal:
 
     sudo pip install cherrypy
 
-Can't get it to work? 
+Can't get it to work?
 Try posting your question in the `Companion Computer discussion board <https://discuss.ardupilot.org/c/apsync-companion-computers>`__.
 
 .. toctree::

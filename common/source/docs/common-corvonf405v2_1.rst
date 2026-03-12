@@ -55,7 +55,7 @@ The CORVON405V2.1 supports analog OSD via its internal MAX7456. Simultaneous ext
 
 VTX Support
 ===========
-Both Analog and HD VTX connectors are provided. Pin 1 of the connector is 9v so be careful not to connect this to a peripheral unable to support that voltage. 
+Both Analog and HD VTX connectors are provided. Pin 1 of the connector is 9v so be careful not to connect this to a peripheral unable to support that voltage.
 
 PWM Outputs
 ===========

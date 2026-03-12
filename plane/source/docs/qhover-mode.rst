@@ -55,7 +55,7 @@ to a jerky throttle response.
 
 The :ref:`Q_P_D_VEL_P<Q_P_D_VEL_P>` (which normally requires no tuning) converts the
 desired climb or descent rate into a desired acceleration up or down.
- 
+
 The :ref:`Q_P_D_ACC_P<Q_P_D_ACC_P>`, :ref:`Q_P_D_ACC_I<Q_P_D_ACC_I>`, :ref:`Q_P_D_ACC_D<Q_P_D_ACC_D>` gains convert the acceleration error (i.e the
 difference between the desired acceleration and the actual acceleration)
 into a motor output.  The 1:2 ratio of P to I (i.e. I is twice the size
@@ -104,7 +104,7 @@ Common Problems
    the QuadPlane where the autopilot is mounted which leads the
    QHOVER controller to believe it is climbing so it responds by
    descending.  There is no cure for this behaviour at the moment
-   although increasing the ``EKx_ALT_M_NSE`` parameter reduces 
+   although increasing the ``EKx_ALT_M_NSE`` parameter reduces
    the effect but increases the change of Common Problem #1
    listed above. The ``EKx_ALT_M_NSE`` parameter has a range from 0.1 to
    10.0 and allows increments of 0.1.
@@ -113,7 +113,7 @@ Common Problems
    affected by pressure changes created by prop-wash.  The solution is
    to move the autopilot out of the prop wash effect or shield
    it within an appropriately ventilated enclosure.
-#. Sudden altitude changes caused by light striking the barometer. 
+#. Sudden altitude changes caused by light striking the barometer.
    Assuring sunlight cannot hit the baro will cure this.
 #. QuadPlane slowly descends or climbs until the pilot retakes control in
    stabilize.  Normally this is caused by not having the throttle stick
@@ -124,7 +124,7 @@ Common Problems
 Adequate Power
 ==============
 
-It is very important that the vehicle has enough power available. 
+It is very important that the vehicle has enough power available.
 Without this the altitude hold and attitude controllers can require more power
 than is available from one or more motors and will be forced to
 sacrifice some control which could lead to a loss of attitude or

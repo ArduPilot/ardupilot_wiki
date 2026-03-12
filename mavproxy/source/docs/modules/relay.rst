@@ -5,8 +5,8 @@ Relay Management
 .. code:: bash
 
     module load relay
-    
-Control the operation of the output servos. 
+
+Control the operation of the output servos.
 
 Note this should only be
 used for the non-flight-control servos. An example of usage would be
@@ -26,12 +26,10 @@ can be used:
 .. code:: bash
 
     motortest motornum type value timeout count
-    
-Where the motor number ``motornum`` with type 0 (percent), 1 (PWM) or 2 (RC passthrough) 
+
+Where the motor number ``motornum`` with type 0 (percent), 1 (PWM) or 2 (RC passthrough)
 and value depending on the type selection.
 
 Timeout is the number of seconds the test should run for.
 
 Count is an optional parameter specifying how many times the test should run for.
-
-

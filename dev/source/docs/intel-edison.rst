@@ -36,7 +36,7 @@ To install the Edison into The Cube Carrier board:
    .. image:: ../images/intel-edison-pixhawk2-remove-screws.png
        :width: 50%
 
-- Remove the four hex screws on the bottom of the carrier board and lift the bottom cover to reveal the socket for the edison. 
+- Remove the four hex screws on the bottom of the carrier board and lift the bottom cover to reveal the socket for the edison.
 
    .. image:: ../images/intel-edison-pixhawk2-remove-screws2.png
        :width: 45%
@@ -70,8 +70,8 @@ The easiest way to get started is to flash the Edison with the :ref:`APSync <aps
 
    - On OS X:
 
-      - Follow the instructions on the `Homebrew web page <http://brew.sh>`__. 
-      - Install dfu-util  ``brew install dfu-util``		
+      - Follow the instructions on the `Homebrew web page <http://brew.sh>`__.
+      - Install dfu-util  ``brew install dfu-util``
 
 -  Connect your PC to The Cube using the USB cables as shown below.  The USB cable connected to the Cube (the black cable shown below) provides power.  The two USB cables connected to the carrier board (shown as white cables) enable flashing the image to the edison.  If possible connect the "OTG port Flashing" using the flat USB cable that comes with The Cube because it provides the most reliable connection.
 
@@ -295,7 +295,7 @@ serial port connecting the Edison to The Cube):
 
 ::
 
-    edison@ubilinux:~/dronekit-python/example$ mavproxy.py --master=/dev/ttyMFD1,57600 --rtscts 
+    edison@ubilinux:~/dronekit-python/example$ mavproxy.py --master=/dev/ttyMFD1,57600 --rtscts
     Logging to mav.tlog
     libdc1394 error: Failed to initialize libdc1394
     Failed to load module: No module named terrain
@@ -330,7 +330,7 @@ serial port connecting the Edison to The Cube):
     Cancelling override
     mode is AUTO
     APIThread-0 exiting...
-    APM: command received: 
+    APM: command received:
     Got MAVLink msg: COMMAND_ACK {command : 400, result : 4}
     APM: Throttle armed!
     Got MAVLink msg: COMMAND_ACK {command : 400, result : 0}

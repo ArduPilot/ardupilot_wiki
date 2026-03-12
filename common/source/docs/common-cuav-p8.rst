@@ -6,7 +6,7 @@ CUAV P8 Radio
 
 .. image:: ../../../images/cuav-radio/p8.png
 
-P8 Radio is a remote data transmission module for drones; it has a remote data transmission capability of 60KM+; 
+P8 Radio is a remote data transmission module for drones; it has a remote data transmission capability of 60KM+;
 
 Its transmission rate is as high as 375Kbps, and it supports multiple working modes such as point-to-point, point-to-multipoint, and relay communication; for various application scenarios.
 
@@ -21,7 +21,7 @@ Key Features
 - Supports 12v~60V operating voltage.
 - Unit can operate either as ground station modem or aircraft modem.
 - Independent power supply for more stable operation.
-  
+
 
 Purchase
 ========

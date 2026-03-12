@@ -7,7 +7,7 @@ External LEDs
 An external LED or LED Display can be added by connecting it to the autopilot's
 I2C port or, in 4.0 and later versions, if a serially programmed device, via an output using the SERVOx_FUNCTION for that output. DroneCAN LEDs on the CANBUS are also supported (See :ref:`DroneCAN Setup <common-uavcan-setup-advanced>` ).
 
-.. note:: Note that the same grouping restrictions which apply to setting outputs to different PWM rates and/or DShot, apply to LEDs also since the timer associated with each group of outputs cannot be used for different rates. See also  :ref:`Mixing ESC Protocols<mixing-escs>` 
+.. note:: Note that the same grouping restrictions which apply to setting outputs to different PWM rates and/or DShot, apply to LEDs also since the timer associated with each group of outputs cannot be used for different rates. See also  :ref:`Mixing ESC Protocols<mixing-escs>`
 
 RGB LEDs/Displays with I2C Connection
 =====================================
@@ -57,7 +57,7 @@ High-intensity strobes often connect to standard servo outputs and are controlle
 
 .. image:: ../../../images/Teravolt/StrobeIT/StrobeIT_1.png
     :target: ../images/Teravolt/StrobeIT/StrobeIT_1.png
-    
+
 .. youtube:: V1odmniQY-s
 
 .. toctree::
@@ -65,10 +65,10 @@ High-intensity strobes often connect to standard servo outputs and are controlle
 
     StrobeIT <common-StrobeIT>
     StrobeIT Pro <common-StrobeIT-Pro>
-    
+
 NTF LED Meaning
 ===============
 
-The meaning of the colors and flash patterns are shown in :ref:`common-leds-pixhawk` if the ``standard`` default protocol is set for :ref:`NTF_LED_OVERRIDE<NTF_LED_OVERRIDE>`. 
+The meaning of the colors and flash patterns are shown in :ref:`common-leds-pixhawk` if the ``standard`` default protocol is set for :ref:`NTF_LED_OVERRIDE<NTF_LED_OVERRIDE>`.
 
 The brightness and number of LEDs can be controlled by modifying the :ref:`NTF_LED_BRIGHT <NTF_LED_BRIGHT>` and :ref:`NTF_LED_LEN <NTF_LED_LEN>`

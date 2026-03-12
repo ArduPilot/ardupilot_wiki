@@ -37,7 +37,7 @@ Specifications
 - Micro SD Card for FMU
 - Nano SIM card slot for M.2 cellular Modem
 
-Board to board connector with the following IO: 
+Board to board connector with the following IO:
 
 - Spektrum DSM / DSM2 / DSM-X® Satellite compatible input and binding (FMU)
 - Futaba S.BUS® & S.BUS2® compatible input (FMU)
@@ -74,7 +74,7 @@ Other IO:
 Weight and Dimensions
 =============================
 - Weight: 33g (without heatsink)
-- Width: 59mm 
+- Width: 59mm
 - Length: 83mm
 
 More Information
@@ -87,7 +87,7 @@ Pinouts, wiring diagrams, setup information and more documentation is available 
 Where to Buy
 ============
 
-`Horizon31 <https://horizon31.com/>`_  
-Made in the USA  
+`Horizon31 <https://horizon31.com/>`_
+Made in the USA
 
 [copywiki destination="plane,copter,rover,blimp,sub"]

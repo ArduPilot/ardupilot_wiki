@@ -34,10 +34,10 @@ Installation steps
 
 Running SITL
 ============
-      
+
 #. Open a Cygwin64 terminal from the start menu
 
-#. Navigate to one of the vehicle directories (in this case Copter) and call ``sim_vehicle.py`` to start SITL.  If you get a windows security alert for the firewall, allow the connection. 
+#. Navigate to one of the vehicle directories (in this case Copter) and call ``sim_vehicle.py`` to start SITL.  If you get a windows security alert for the firewall, allow the connection.
 
    ::
 
@@ -66,7 +66,7 @@ Running SITL
 
       ::
 
-          mode guided 
+          mode guided
           arm throttle
           takeoff 40
 

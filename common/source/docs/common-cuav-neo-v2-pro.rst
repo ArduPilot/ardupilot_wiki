@@ -17,62 +17,62 @@ Key Features
 ============
 
 -  **Processor**
-  
+
    -  STM32F412
-   
+
 -  **Sensors**
-  
+
    -  Compass:RM3100
    -  Barometer:MS5611
-   
+
 -  **RTK Receiver**
 
    -  Ublox M8N
- 
+
 -  **GNSS Bands**
 
    - GPS/QZSS L1 C/A,GLONASS L10F ,BeiDou B1I,Galileo E1B/C,SBAS L1 C/A: WAAS, EGNOS, MSAS, GAGAN
-   
+
 -  **Nav. update rate**
 
    - RTK Up to 10HZ
-   
+
 -  **Position accuracy**
 
    - 2M
-   
+
 -  **Acquisition**
 
    - Cold starts 26 s
    - Aided starts 1 s
    - Reacquisition 2 s
-   
+
 -  **Sensitivity**
 
    - Tracking & Nav -167 dBm
-   - Cold starts -148 dBm 
+   - Cold starts -148 dBm
    - Reacquisition -160 dBm
-   
+
 -  **Protocol**
 
    - support
 
 -  **Interface Type**
-  
+
    - GHR-04V-S
-   
+
 -  **Input voltage**
 
    - 5V
-   
+
 -  **Operating temperature**
 
    - -10~70℃
-   
+
 -  **Size**
 
    - 60x60x16mm
-   
+
 -  **Weight**
 
    - 33g
@@ -133,8 +133,8 @@ Modify the following parameters in the Full Parameter tab of Mission Planner.
 
 .. note::
 
-   CUAVV5 / NANO / FMUV5 autopilot running ArduPilot4.0 or later firmware will have two USB interfaces, one is autopilot's console port (SERIAL0) running MAVLINK  and one is an SLCAN interface port; if there are not two ports showing in the Mission Planner Comm Port drop-down box, please uninstall the driver and reinstall. If you continue to have problems, see :ref:`troubleshooting-composite-connections` 
-   
+   CUAVV5 / NANO / FMUV5 autopilot running ArduPilot4.0 or later firmware will have two USB interfaces, one is autopilot's console port (SERIAL0) running MAVLINK  and one is an SLCAN interface port; if there are not two ports showing in the Mission Planner Comm Port drop-down box, please uninstall the driver and reinstall. If you continue to have problems, see :ref:`troubleshooting-composite-connections`
+
 **For Pixhawk series / FMUv2 / FMU V3 / FMU V4**
 
 - :ref:`CAN_SLCAN_CPORT<CAN_SLCAN_CPORT>` Set to 1
@@ -153,7 +153,7 @@ ArduPilot supports setting DroneCAN device internal settings through SLCAN, such
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/slcan3.png
 	:target: ../_images/slcan3.png
-	
+
 #. Select the COMM port corresponding to SLCAN.
 #. Select the DroneCAN section under Initial Setup>Optional Hardware tab.
 #. Click "SLCAN NODE CAN1"  and
@@ -186,7 +186,7 @@ Firmware upgrade using Mission planner
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/slcan2.png
 	:target: ../_images/slcan2.png
-	
+
 - Wait for the flash process to complete.
 
 **Method Two：**
@@ -199,18 +199,18 @@ Upgrade with DroneCAN GUI TOOL software
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/uavcan.png
 	:target: ../_images/uavcan.png
-	
+
 - Click "√"; then double-click on the device information (marked in Figure 2 below).
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/uavcan2.png
 	:target: ../_images/uavcan2.png
-	
+
 - Click "update firmware", the message box will pop up "yes".
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/uavcan3.png
 	:target: ../_images/uavcan3.png
-	
-- The mode/heakth/uptime entry becomes "SOftware_update" 
+
+- The mode/heakth/uptime entry becomes "SOftware_update"
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/uavcan4.png
 	:target: ../_images/uavcan4.png
@@ -224,4 +224,3 @@ More information
 ================
 
 `CUAV docs <https://doc.cuav.net/gps/neo-series-gnss/en/neo-v2-pro.html>`__.
-

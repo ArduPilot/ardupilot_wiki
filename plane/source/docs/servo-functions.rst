@@ -5,8 +5,8 @@ Choosing Servo Functions
 ========================
 
 The most fundamental setup for any plane is the servo output
-functions. Each type of plane frame type will require different servo output functions 
-to controls its motor(s) and control surfaces. Flight boards vary in the number of outputs 
+functions. Each type of plane frame type will require different servo output functions
+to controls its motor(s) and control surfaces. Flight boards vary in the number of outputs
 they support,some with as few as 6 outputs and others with up to 16. Each of
 these outputs can be configured as needed for your airframe.
 
@@ -53,7 +53,7 @@ Controlling Servo Throw, Trim and Reversal
 
 In addition to the function, each servo output also has parameters to
 control the servo throw, the trim and servo reversal. Normally, no adjustment is needed, but can be modified to match your
-servo's capabilities and range. While these values can be used to adjust throw and trim center of a flying surface, it is best to 
+servo's capabilities and range. While these values can be used to adjust throw and trim center of a flying surface, it is best to
 do so mechanically. :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` can be used to fine adjust the TRIM value automatically in flight, instead of manually changing
 the mechanical trim. NEVER try to trim a plane with the transmitter trims as this will destroy the RC Calibration values (See :ref:`common-radio-control-calibration`).
 
@@ -91,7 +91,7 @@ example, you can have multiple output channels marked as aileron
 (function 4) and set the throws and trim on each aileron
 separately. This allows you to trim your left and right ailerons
 differently to account for differences in servo trim.
-          
+
 Setup of Specific Aircraft Types
 ================================
 
@@ -103,13 +103,13 @@ setup your :ref:`RC inputs <rc-throw-trim>`.
 
 .. toctree::
     :maxdepth: 1
-    
+
     Four Channel Planes <guide-four-channel-plane>
     Elevon Planes <guide-elevon-plane>
     VTail Planes <guide-vtail-plane>
     Orinthopter <ornithopter>
 
-For QuadPlanes, including Tailsitters and Tilt-Rotors, see these sections: :ref:`quadplane-support`, :ref:`guide-tailsitter`, :ref:`guide-tilt-rotor` 
+For QuadPlanes, including Tailsitters and Tilt-Rotors, see these sections: :ref:`quadplane-support`, :ref:`guide-tailsitter`, :ref:`guide-tilt-rotor`
 
 .. note:: You can combine setups for more complex aircraft. So for example, you could setup a vtail tiltrotor quadplane by combining functions from the guides above.
 
@@ -121,7 +121,7 @@ In addition, auxiliary control surfaces, such as flaps, spoilers and airbrakes c
 
 .. toctree::
     :maxdepth: 1
-    
+
     Differential Spoilers & Full House Wing <differential-spoilers>
     Flaperons <flaperons-on-plane>
     Automatic Flaps <automatic-flaps>

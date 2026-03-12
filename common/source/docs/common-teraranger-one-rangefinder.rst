@@ -28,14 +28,14 @@ More technical information about these senors can be found below:
 
 Discontinued:
 
-- Evo600Hz 
+- Evo600Hz
 - TeraRanger One
- 
+
 .. note::
 
    These rangefinders are only supported in ArduPilot autopilots via I2C
-   protocol. 
-   
+   protocol.
+
 Connecting to the TeraRanger EVO via I2C
 ========================================
 
@@ -45,7 +45,7 @@ the open-ended cable included with the sensor.
 +------------------------+-----------------------+
 + EVO I2C backboard pins | Pixhawk I2C port pins |
 +------------------------+-----------------------+
-+1 Tx                    |                       |  
++1 Tx                    |                       |
 +------------------------+-----------------------+
 +2 Rx                    |                       |
 +------------------------+-----------------------+
@@ -64,9 +64,9 @@ the open-ended cable included with the sensor.
 +9                       |                       |
 +------------------------+-----------------------+
 
-.. note:: Do not power from autopilot port, unless port is known to have sufficient current capability. If this is the case just connect the SCL/SDA lines from the rangefinder to the autopilot's I2C signals of the same name. 
+.. note:: Do not power from autopilot port, unless port is known to have sufficient current capability. If this is the case just connect the SCL/SDA lines from the rangefinder to the autopilot's I2C signals of the same name.
 .. note:: some of these rangefinders consume over 100ma of current and should NOT be powered from the autopliots's I2C port, but from an external 5V regulated supply source.
-.. note:: For more information please visit this link <https://www.terabee.com/connection-to-pixhawk-autopilots-teraranger-evo/>`__ 
+.. note:: For more information please visit this link <https://www.terabee.com/connection-to-pixhawk-autopilots-teraranger-evo/>`__
 
 Setup in Mission Planner
 ========================
@@ -121,6 +121,6 @@ left will show status values. Then choose
 
 .. warning::
 
-    When the autopilot boots, the rangefinder needs to already be powered on, or at 
+    When the autopilot boots, the rangefinder needs to already be powered on, or at
     least be powered on at the same time as the autopilot. If you power the rangefinder
     after the autopilots has booted, it will not be recognized since the autopilot will have already scanned its I2C bus for devices!

@@ -98,4 +98,3 @@ Using a GUI
 
 The map module includes methods for viewing and editing waypoints on a
 map.
-

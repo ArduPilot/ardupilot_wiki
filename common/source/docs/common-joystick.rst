@@ -47,7 +47,7 @@ Setup with the Mission Planner
 
    .. image:: ../../../images/joystick_MPSetup.png
        :target: ../_images/joystick_MPSetup.png
-   
+
 -  Ensure the Logitech joystick appears in the drop-down
 -  The **Enable** button, once pushed, will tell the mission planner to
    start sending commands to the vehicle so for the initial setup do not
@@ -80,7 +80,7 @@ Setup with the Mission Planner
       For Mission Planner the default GCS system ID is 255. The
          default system ID for APM Mission Planner 2 is 252 (but the GCS will
          automatically set its ID to match *SYSID_MYGCS* for RC Override
-         commands). 
+         commands).
 
 .. note::
 
@@ -183,6 +183,6 @@ transmitter but lag can be reduced by:
 
    .. image:: ../../../images/joystick_ReduceLag_MPRates.png
        :target: ../_images/joystick_ReduceLag_MPRates.png
-   
--  If using a SiK Radio or RFD900 Radio these can be put into 
+
+-  If using a SiK Radio or RFD900 Radio these can be put into
    :ref:`Low Latency mode as described here <common-3dr-radio-advanced-configuration-and-technical-information_low_latency_mode>`.

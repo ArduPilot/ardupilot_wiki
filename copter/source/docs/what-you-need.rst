@@ -11,8 +11,8 @@ Multicopter frame including motors, ESCs and propellers
 =======================================================
 
 There are numerous frames, ESCs and motors available. Some components
-you might consider are discussed in 
-:ref:`Choosing a Multicopter Frame <choosing-a-frame>` and the 
+you might consider are discussed in
+:ref:`Choosing a Multicopter Frame <choosing-a-frame>` and the
 :ref:`Detailed Vehicle Builds <common-common-airframe-builds>`.
 
 Many other designs and configurations including Traditional Helicopters
@@ -63,10 +63,10 @@ LiPo batteries and charger
 .. image:: ../images/lipo_battery.jpg
     :target: ../_images/lipo_battery.jpg
 
-Copter requires a rechargeable lithium polymer (LiPo) battery. 
-A good rule of thumb is to use 1,000 mAH (milliamp hours) per motor. 
-For a Quad copter, a `4000 mAH LiPo like this one <https://hobbyking.com/en_us/turnigy-4000mah-3s-20c-lipo-pack.html?___store=en_us>`__ would work well. 
-While your copter can use only one battery at a time, we recommend having at least two batteries in stock; more batteries means more flight time. 
+Copter requires a rechargeable lithium polymer (LiPo) battery.
+A good rule of thumb is to use 1,000 mAH (milliamp hours) per motor.
+For a Quad copter, a `4000 mAH LiPo like this one <https://hobbyking.com/en_us/turnigy-4000mah-3s-20c-lipo-pack.html?___store=en_us>`__ would work well.
+While your copter can use only one battery at a time, we recommend having at least two batteries in stock; more batteries means more flight time.
 You'll also need a `charging station for your batteries such as this one <https://hobbyking.com/en_us/turnigy-2s-3s-balance-charger-direct-110-240v-input.html?___store=en_us>`__.
 
 Ground Control Station
@@ -94,7 +94,7 @@ interact with your missions in real time and receive streaming data from
 your copter's cameras and other components. This adds considerable
 convenience to your missions!
 
-We recommend the telemetry radio solutions linked from the 
+We recommend the telemetry radio solutions linked from the
 :ref:`Telemetry Landing Page <common-telemetry-landingpage>`. Remember that if using
 the :ref:`SIK Radio <common-sik-telemetry-radio>` you will need the version
 at the permitted frequency for your country - 915 MHz (Americas) and 433

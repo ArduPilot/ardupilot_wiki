@@ -69,11 +69,11 @@ of functionality available.
 .. warning::
 
    Any stabilized control mode requires tuning for optimal performance.
-   The default PID and TECS values are very conservative to avoid uncontrollable 
+   The default PID and TECS values are very conservative to avoid uncontrollable
    oscillations. Perform an :ref:`AUTOTUNE <automatic-tuning-with-autotune>` before using stabilized or automatic roll and pitch modes
    extensively. :ref:`Tune TECS <tecs-total-energy-control-system-for-speed-height-tuning-guide>` before using automatic throttle modes
    extensively.
- 
+
 .. note:: AUTO mode also provides for :ref:`automatic-takeoff` and :ref:`automatic-landing`.
 
 Flight Mode List

@@ -83,7 +83,7 @@ If connected by Ethernet
 
     #password is holaerle.
     $ ssh erle@erle-brain-2.local
-    #Use ifconfig and nmap -sn commands to check the net 
+    #Use ifconfig and nmap -sn commands to check the net
     $ ssh erle@192.168.*.*
     #password is holaerle.
 
@@ -264,7 +264,7 @@ Erle-Brain comes with full support for `Snappy Ubuntu Core <http://www.ubuntu.co
        stronger security guarantees for apps and users — that’s why we call
        them “snappy” applications.
 
-   |Captura de pantalla 2015-04-03 a las 11.39.07| 
+   |Captura de pantalla 2015-04-03 a las 11.39.07|
 
 Snappy "hello world" example
 ----------------------------
@@ -278,7 +278,7 @@ World" app using *Snappy*:
 
 ::
 
-    $ echo.hello-world.canonical 
+    $ echo.hello-world.canonical
     Hello World!
 
 Additional information about Snappy Ubuntu Core can be found
@@ -315,8 +315,8 @@ DroneKit "hello world" example
     # Start MAVProxy (install if not present)
     $ mavproxy.py --master=udp:192.168.7.2:6000
 
-    MANUAL> module load droneapi.module.api 
-    DroneAPI loaded 
+    MANUAL> module load droneapi.module.api
+    DroneAPI loaded
     MANUAL>
 
 Now run the example:

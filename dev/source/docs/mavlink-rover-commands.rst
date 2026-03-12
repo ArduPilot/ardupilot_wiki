@@ -68,9 +68,9 @@ When providing position or velocity both X and Y axis must be provided.  At leas
 - Use Yaw Rate : 0b010111111111 / 0x05FF / 1535 (decimal)
 - Use Vel+Yaw : 0b100111100111 / 0x09E7 / 2535 (decimal)
 - Use Vel+Yaw Rate : 0b010111100111 / 0x05E7 / 1511 (decimal)
-   
+
 .. raw:: html
-   
+
    </td>
    </tr>
    <tr>
@@ -453,4 +453,3 @@ Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) 
 +------------------------------------------+--------------------------------------------------+
 | ``attitude 0.9238795 0 0 0.3826834 0.5`` | face North-East, move forward at 1/2 of WP_SPEED |
 +------------------------------------------+--------------------------------------------------+
-

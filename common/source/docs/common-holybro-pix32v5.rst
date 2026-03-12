@@ -34,7 +34,7 @@ Specifications
 
 -  **Sensors**
      - Accel/Gyro: ICM-20689
-     - Accel/Gyro: BMI055 
+     - Accel/Gyro: BMI055
      - Mag: IST8310
      - Barometer: MS5611
 
@@ -140,4 +140,3 @@ Where to Buy
 
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

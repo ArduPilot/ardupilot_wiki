@@ -9,7 +9,7 @@ Archived: NAVIO+ Overview
    **ARCHIVED ARTICLE**
 
    Board is very old, and has been superseded by other Navio (and other) products.
-   
+
 
 .. image:: ../../../images/Navio-plus.png
     :target: ../_images/Navio-plus.png

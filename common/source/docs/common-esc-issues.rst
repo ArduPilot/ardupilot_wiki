@@ -91,8 +91,8 @@ APD ESCs with anti-spark connectors
 Vehicles running anti-spark connectors and APD ESCs with firmware versions
 dated before November 2022 may be susceptible to an incorrect setting of
 the over-voltage limit. If incorrectly set (when the pre-charge time constant is over 200 ms),
-the ESC will prevent motor braking until it receives a zero throttle command. The issue can cause the ESC 
-to get into a state where throttle can only increase, which will almost always result in a crash and can 
+the ESC will prevent motor braking until it receives a zero throttle command. The issue can cause the ESC
+to get into a state where throttle can only increase, which will almost always result in a crash and can
 be dangerous for people in the vicinity of the vehicle.
 
 The issue happens due to the following logic in the ESC firmware:
@@ -101,11 +101,11 @@ The issue happens due to the following logic in the ESC firmware:
 - At any time after that, if the supply voltage is above this level, then an over-voltage error is raised.
 - While an over-voltage error is raised, the throttle will not be reduced unless the autopilot demands a zero throttle.
 
-This feature aimed to prevent motor braking from pushing too much power back into the batteries, which could lead to overcharging 
+This feature aimed to prevent motor braking from pushing too much power back into the batteries, which could lead to overcharging
 of the batteries or excessive spikes on the ESC inputs.
 
-The issue happens if the rise time of the supply voltage is slow enough that the voltage reaches less than 80% of the actual supply 
-voltage within 200 ms. This can happen when using anti-spark connectors to connect the batteries, particularly with long wiring and 
+The issue happens if the rise time of the supply voltage is slow enough that the voltage reaches less than 80% of the actual supply
+voltage within 200 ms. This can happen when using anti-spark connectors to connect the batteries, particularly with long wiring and
 significant levels of added capacitance.
 
 A firmware update, which resolves the above issue, is available and can be found within the links below.

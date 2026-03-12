@@ -6,9 +6,7 @@ This section contains topics explaining MAVProxy's playback, graphing, and other
 
 .. toctree::
     :maxdepth: 1
-    
+
     playback
     mavtools
     mavexp
-
-    

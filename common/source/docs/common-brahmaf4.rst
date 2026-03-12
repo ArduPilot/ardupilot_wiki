@@ -58,13 +58,13 @@ OSD
 
 PWM Outputs
 ===========
-The autopilot supports up to 9 PWM outputs (PWM 9 is defaulted to serial LED support). Outputs 1-4 are available via a standard ESC JST-SH connector and solder pads for M5-M8. All outputs support  all PWM types. PWM 1-4 and 6-9 support DShot. PWM 1-4 support bi-directional dshot. 
+The autopilot supports up to 9 PWM outputs (PWM 9 is defaulted to serial LED support). Outputs 1-4 are available via a standard ESC JST-SH connector and solder pads for M5-M8. All outputs support  all PWM types. PWM 1-4 and 6-9 support DShot. PWM 1-4 support bi-directional dshot.
 
 The PWM is in 5 groups:
 
 
 * PWM 1,2 in group1
-* PWM 3,4 in group2 
+* PWM 3,4 in group2
 * PWM 5   in group3
 * PWM 6,7 in group4
 * PWM 8,9 in group5
@@ -72,7 +72,7 @@ The PWM is in 5 groups:
 * Pads for Outputs 1-8 are available on bottom side of pcb
 * ESC port is a jst-sh V-G-C-R3-1-2-3-4
 
-  Channels within the same group need to use the same output rate. All channels in specific Timer groups are configured either as DSHOT or PWM, mixing of protocols within groups is not possible. Channel 9 is configured as NeoPixel by default but can be configured for and extra PWM output. PWM 8 cannot be used for DShot if PWM 9 is configured for NeoPixel. 
+  Channels within the same group need to use the same output rate. All channels in specific Timer groups are configured either as DSHOT or PWM, mixing of protocols within groups is not possible. Channel 9 is configured as NeoPixel by default but can be configured for and extra PWM output. PWM 8 cannot be used for DShot if PWM 9 is configured for NeoPixel.
 
 Battery Monitoring
 ==================

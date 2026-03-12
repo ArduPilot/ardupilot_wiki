@@ -28,14 +28,14 @@ log into the Navio2 board's RPI3.
     :end-before: Setup for other Distributions
 
 .. note::
-    
+
     Waf should always be called from the ardupilot's root directory.
 
 
 To keep access to Waf convenient, use the following alias from the root ardupilot directory:
 
 ::
-    
+
     alias waf="$PWD/modules/waf/waf-light"
 
 Configure
@@ -65,5 +65,3 @@ The following frame types are specified in the "Frame Type" item of the Mission 
     Quad Hexa Octa Octa-Quad Y6  Heli Tri
 
 In the end of compilation binary file with the name arducopter will be placed in ``ardupilot/build/navio2/bin/ directory``.
-
-

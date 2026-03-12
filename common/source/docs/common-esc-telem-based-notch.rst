@@ -46,4 +46,3 @@ Multi-Source
 By default the ESC based harmonic notch will use an average of the individual motor frequencies in order to drive the center frequency of the notch, this average is then used as the first harmonic and other harmonic notches are added at higher frequency multiples of the first harmonic. It is possible to configure the harmonics to instead be first harmonics per motor. This gives four notches - one for each motor - that exactly tracks the motor speed. In dynamic flight this can give much better noise attenuation.
 
 To configure this option set :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` and/or :ref:`INS_HNTC2_OPTS <INS_HNTC2_OPTS>` to "2". You also need to reduce the bandwidth of the notch filter to around :ref:`INS_HNTCH_FREQ<INS_HNTCH_FREQ>` / number of motors, otherwise you will likely have too high phase lag leading to worse PID performance. See the note above for more details.
-

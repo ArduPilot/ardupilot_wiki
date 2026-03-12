@@ -25,7 +25,7 @@ While many autopilots have an internal compass or compasses, many applications w
 than an internal compass because of the separation from other
 electronics. See :ref:`common-autopilots` for details about the specific autopilot to determine how many built-in compasses the autopilot may have, if any.
 
-Most users will only need to  perform the normal :ref:`Compass Calibration<common-compass-calibration-in-mission-planner>` but details are also given on the less-used  :ref:`CompassMot <common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>` 
+Most users will only need to  perform the normal :ref:`Compass Calibration<common-compass-calibration-in-mission-planner>` but details are also given on the less-used  :ref:`CompassMot <common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>`
 
 
 Compass Settings
@@ -91,7 +91,7 @@ However, if the need to double-check the orientation of a compass should arise:
 Other parameters
 ----------------
 
-Earlier versions of ArduPilot did not incorporate the world magnetic model database, and a locations magnetic declination might need to manually entered, or learned through flight. This is not necessary now. In addition, this allows the declination to be continuously updated on long distance flights. 
+Earlier versions of ArduPilot did not incorporate the world magnetic model database, and a locations magnetic declination might need to manually entered, or learned through flight. This is not necessary now. In addition, this allows the declination to be continuously updated on long distance flights.
 
 Also, learning the compass offsets in flight, instead of ground calibration, is an option for vehicles difficult to move in order to calibrate. But is not recommended, since the Large Vehicle MagCal option is now available. See :ref:`common-compass-calibration-in-mission-planner` page for details.
 
@@ -136,7 +136,7 @@ Please follow these instructions:
    interference is in the "grey zone" where it may be ok (some users are
    fine, some are not).  If it is higher than 60% you should try moving
    your autopilot further up and away from the sources of interference or
-   consider purchasing an external compass (or 
+   consider purchasing an external compass (or
    :ref:`GPS+compass module<common-positioning-landing-page>` (some of these)).
 
 [/site]
@@ -185,7 +185,7 @@ Compass error messages
 Refining Calibration Parameters using a Flight Log
 ==================================================
 
-The compass offsets, scales, diagonals, and even motor compensation can be determined from a flight dataflash log of the vehicle using an analysis utility. 
+The compass offsets, scales, diagonals, and even motor compensation can be determined from a flight dataflash log of the vehicle using an analysis utility.
 
 
 .. toctree::

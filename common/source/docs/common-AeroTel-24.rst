@@ -30,7 +30,7 @@ Specifications
 * **Connector:** JST-GH 6-Pin (Standard Telemetry)
 * **Range:** > 300m (Standard WiFi) / > 1km (ESP-NOW Long Range)
 * **Protocol:** MAVLink / Transparent Serial Bridge
-* **Dimensions:** 32mm x 32mm 
+* **Dimensions:** 32mm x 32mm
 * **Weight:** 10g
 
 

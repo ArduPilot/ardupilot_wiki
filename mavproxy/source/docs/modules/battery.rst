@@ -5,8 +5,8 @@ Battery Management
 .. code:: bash
 
     module load battery
-    
-The battery module provides warnings to the user if any of the power 
+
+The battery module provides warnings to the user if any of the power
 sources reach a critical level.
 
 Status
@@ -26,7 +26,7 @@ The configurable settings for this module can be controlled by:
 .. code:: bash
 
     battery set <setting> <value>
-    
+
 The settings are:
 
 ===============================   =======================================   ===============================
@@ -38,6 +38,3 @@ servowarn                         Servo voltage warning level (V)           4.3
 vccwarn                           Vcc voltage warning level (V)             4.3
 numcells                          Number of series cells (S-rating)         0
 ===============================   =======================================   ===============================
-
-
-

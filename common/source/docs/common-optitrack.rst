@@ -92,7 +92,7 @@ Start MAVProxy and connect to your copter. Inside MAVProxy load optitrack module
 .. code:: bash
 
     module load optitrack
-    
+
 You need to set tracking rigid body id to match your setting in Motive:
 
 .. code:: bash
@@ -109,7 +109,7 @@ If you set Motive data streaming local interface to other than loopback , it is 
 
 .. note::
 
-   The coordinate system of both Motive and ArduPilot are right-handed. While Z axis of ArduPilot is pointing down, Y axis of Motive is pointing up.  
+   The coordinate system of both Motive and ArduPilot are right-handed. While Z axis of ArduPilot is pointing down, Y axis of Motive is pointing up.
 
 After all parameters is set, start sending pose to ardupilot:
 
@@ -123,7 +123,7 @@ Ground testing
 - Connect the drone to MAVProxy
 - Start Motive and make sure `data streaming <https://v20.wiki.optitrack.com/index.php?title=Data_Streaming>`__ is turned on.
 - load and start optitrack module.
-- If you see following message appearing (initial pos may vary), then the drone is receiving pose data from Optitrack system. 
+- If you see following message appearing (initial pos may vary), then the drone is receiving pose data from Optitrack system.
 
 ``EKF3 IMU0 is using external nav data
 EKF3 IMU0 initial pos NED = 0.1,-0.2,0.0 (m)

@@ -39,7 +39,7 @@ Clone ArduPilot repository
 Install some required packages
 ------------------------------
 
-If you are on a debian based system (such as Ubuntu or Mint), we provide `a script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/environment_install/install-prereqs-ubuntu.sh>`__ that will do it for you. 
+If you are on a debian based system (such as Ubuntu or Mint), we provide `a script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/environment_install/install-prereqs-ubuntu.sh>`__ that will do it for you.
 This script does NOT support building on operating systems that have reached end of support such as Ubuntu Bionic (18.04).
 
 From the cloned ardupilot directory :
@@ -122,7 +122,7 @@ Then reload your PATH by using the "dot" command in a terminal
 ::
 
     . ~/.bashrc
-    
+
 .. warning::
 
     Do not use this if you have already use the ``install-prereqs-ubuntu.sh`` script !
@@ -220,5 +220,3 @@ you can build Ardupilot:
 ::
 
     docker run --rm -it -v "$(pwd):/ardupilot" -u "$(id -u):$(id -g)" ardupilot:latest bash
-
-

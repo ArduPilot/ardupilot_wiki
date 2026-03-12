@@ -12,7 +12,7 @@ Hold and Manual Mode in Balance Bots use a Pitch Control System to control and m
 .. image:: /images/balance_bot-manual.png
 
 
-In Manual Mode, continuous acceleration in one direction can saturate the motors, as they reach maximum speed. The vehicle will not be able to balance as further acceleration is not possible. This is the disadvantage of running Balance Bots in Manual Mode. 
+In Manual Mode, continuous acceleration in one direction can saturate the motors, as they reach maximum speed. The vehicle will not be able to balance as further acceleration is not possible. This is the disadvantage of running Balance Bots in Manual Mode.
 
 In Manual and Hold modes, we can only control the pitch angle of the vehicle, not the velocity. It is possible to be at zero pitch angle(upright position) and have a non zero velocity. To stop the vehicle from drifting in Manual mode, it must be made to pitch in the reverse direction. If these modes are entered with a non zero initial speed(from Acro or Auto modes), the vehicle can accelerate and crash.
 

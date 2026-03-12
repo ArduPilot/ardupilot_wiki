@@ -25,7 +25,7 @@ Although "Ready-to-fly" some additional parts are required to complete the upgra
 - 2GB (or larger) USB thumb drive (`like this one <https://www.amazon.com/SanDisk-Cruzer-Glide-Drive-SDCZ60-008G-B35/dp/B007YX9O94/ref=sr_1_4?ie=UTF8&qid=1492397331&sr=8-4>`__) is needed for updating to the last release of the Linux distro.
 - Micro USB OTG to USB cable (`like this one <https://www.amazon.com/Micro-USB-OTG-Go-Adapter/dp/B005GI2VMG>`__)
 - `Spektrum USB programming cable <https://www.spektrumrc.com/Products/Default.aspx?ProdID=SPMA3065>`__ (optional)
-    
+
 Upgrading the vehicle's software
 ================================
 
@@ -41,7 +41,7 @@ in order for the autopilot to be flashed with ArduPilot.
 
 The final step is to copy the **arducopter.px4** firmware to the Aero compute board and then flash it to the flight board:
 
-- Download the latest aero-fc ArduPilot firmware from `firmware.ardupilot.org <https://firmware.ardupilot.org/Copter/latest/>`__ 
+- Download the latest aero-fc ArduPilot firmware from `firmware.ardupilot.org <https://firmware.ardupilot.org/Copter/latest/>`__
 - Copy the above firmware to the Aero compute board in much the same way the BIOS's .rpm file was copied
 - `Flash the autopilot board <https://github.com/intel-aero/meta-intel-aero/wiki/02-Initial-setup#flashing-the-flight-controller-rtf-only>`__ with the **ardupilot.px4** firmware
 

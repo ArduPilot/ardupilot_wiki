@@ -48,7 +48,7 @@ There are three parameters which control how arming works:
    arm with right rudder. If you set this to 2 you can also disarm
    with left rudder. If you set this to 0 then you will only be able
    to arm/disarm via a ground station or RC channel input using its RCx_OPTION.
-   
+
 .. warning:: if :ref:`ARMING_RUDDER<ARMING_RUDDER>` is set to 2, then held left rudder can disarm the vehicle in ANY mode, if the autopilot judges that the vehicle is not flying. This flying check CAN be incorrect under certain extreme circumstances, and disarming of the vehicle while still in flight, while rare, could occur.
 
 Arming Checks
@@ -56,7 +56,7 @@ Arming Checks
 
 Before allowing arming the autopilot checks a set of conditions. All
 conditions must pass for arming to be allowed. If any condition fails
-then a message explaining what failed is set to the GCS. Any or all of the 
+then a message explaining what failed is set to the GCS. Any or all of the
 Pre-Arming Checks can be disabled, but it is not recommended. See the :ref:`common-prearm-safety-checks` topic for more information.
 
 IMPORTANT: RC Transmitter Calibration
@@ -105,7 +105,7 @@ seconds. In ArduPlane this condition could be accidentally triggered by
 pilots while flying so there are additional requirements prior to disarm:
 
 -  You need to allow rudder disarming by changing **ARMING_RUDDER**
-   parameter to 2 (ArmOrDisarm) or use the ARM/DISARM switch function provided by 
+   parameter to 2 (ArmOrDisarm) or use the ARM/DISARM switch function provided by
    setting an RC channel's RCx_OPTION to 153.
 -  The autopilot needs to make sure that you are not actually
    flying. There is an algorithm for this that uses the **airspeed sensor**
@@ -163,7 +163,7 @@ issues follow this guide
 In Landing Sequence Pre-Arm Failure
 -----------------------------------
 
-If the last mission item was a landing sequence or land command, then arming is prevented and a "Prearm: In Landing Sequence" message is presented. This can occur after an autoland, or if the autopilot is booted before RC is established and the failsafe mode uses a landing sequence (ie :ref:`common-do-land-start` and :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` is set, QLAND, etc.). 
+If the last mission item was a landing sequence or land command, then arming is prevented and a "Prearm: In Landing Sequence" message is presented. This can occur after an autoland, or if the autopilot is booted before RC is established and the failsafe mode uses a landing sequence (ie :ref:`common-do-land-start` and :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` is set, QLAND, etc.).
 
 This may be cleared by restarting the mission using the GCS or :ref:`common-auxiliary-functions` switch, or rebooting with RC active.
 
@@ -246,4 +246,3 @@ autopilot can refuse to arm are (See the :ref:`common-prearm-safety-checks` topi
    it is "GPS 1" then it is the 2nd GPS. If you get a failure for the
    2nd GPS and don't have two GPS modules installed then set GPS_TYPE2
    to zero to disable the 2nd GPS
-

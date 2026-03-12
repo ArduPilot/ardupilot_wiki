@@ -9,7 +9,7 @@ Setting up your Rover requires a collection of various hardware components. This
 RC Transmitter
 ==============
 
-The RC (Radio Control) transmitter allows you to manually control your Rover and toggle through its various control modes. You can use any RC transmitter/receiver system, provided it has a minimum of four channels. 
+The RC (Radio Control) transmitter allows you to manually control your Rover and toggle through its various control modes. You can use any RC transmitter/receiver system, provided it has a minimum of four channels.
 
 .. image:: ../../../images/spektrum-dx8.jpg
     :target: ../_images/spektrum-dx8.jpg
@@ -26,7 +26,7 @@ While choosing an RC Transmitter, consider the following:
 GPS Receiver
 ============
 
-A GPS module is an integral part of your Rover setup. The :ref:`UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>` is highly recommended due to its combined GPS and compass functionality. 
+A GPS module is an integral part of your Rover setup. The :ref:`UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>` is highly recommended due to its combined GPS and compass functionality.
 
 For alternative GPS options, refer to :ref:`GPS solutions <common-positioning-landing-page>`.
 
@@ -36,7 +36,7 @@ For alternative GPS options, refer to :ref:`GPS solutions <common-positioning-la
 Batteries and Charger
 =====================
 
-Powering your Rover requires reliable batteries and an efficient charger. 
+Powering your Rover requires reliable batteries and an efficient charger.
 
 * For a smaller 1/16 or 1/18 scale Rover, a 2S (7.2v) LiPo battery under 2600 mAh, like `this one <http://hobbyking.com/hobbyking/store/__16589__Turnigy_1700mAh_2S_20C_Lipo_Pack_Suits_1_16th_Monster_Beatle_SCT_Buggy_USA_Warehouse_.html>`__, should suffice.
 * For larger 1/10th scale Rover, `this is a good size choice <https://hobbyking.com/en_us/zippy-5000mah-2s1p-30c-hardcase-pack.html>`__.
@@ -54,4 +54,3 @@ Distance Sensors
 ================
 
 If you're looking to equip your Rover with obstacle avoidance capabilities, :ref:`Sonar/IR sensors <sonar-sensors>` are a great choice. These sensors help the Rover detect and avoid objects in its path, enhancing its autonomous navigation abilities.
-

@@ -5,7 +5,7 @@ ADS-B Tracking
 .. code:: bash
 
     module load adsb
-    
+
 The adsb module takes in any ADS-B data from the autopilot (via the ``ADSB_VEHICLE`` MAVLink message)
 and shows any nearby aircraft on the map. It also warns if any aircraft get too close.
 
@@ -27,7 +27,7 @@ The configurable settings for this module can be controlled by:
 .. code:: bash
 
     adsb set <setting> <value>
-    
+
 The settings are:
 
 ===============================   ========================================   ===============================
@@ -41,6 +41,3 @@ show_threat_radius_clear          Show the clear threat radius on map        Fal
 ===============================   ========================================   ===============================
 
 .. image:: ../../images/ads-b.png
-
-
-

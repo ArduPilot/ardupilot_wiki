@@ -43,8 +43,8 @@ Installing BlueOS on RPI4 or RPI5
 
   - **Windows** user instructions are `here <https://www.raspberrypi.com/documentation/computers/compute-module.html#set-up-the-host-device>`__ but in short you should:
 
-    - `download and install rpiboot <https://github.com/raspberrypi/usbboot/raw/master/win32/rpiboot_setup.exe>`__ 
-    - `download and install rpi-imager <https://www.raspberrypi.com/software/>`__ 
+    - `download and install rpiboot <https://github.com/raspberrypi/usbboot/raw/master/win32/rpiboot_setup.exe>`__
+    - `download and install rpi-imager <https://www.raspberrypi.com/software/>`__
 
 - On the RPI I/O board
 
@@ -58,7 +58,7 @@ Installing BlueOS on RPI4 or RPI5
   - Open a web browser to the `BlueOS release page <https://github.com/bluerobotics/BlueOS/releases>`__, select a recent release of 1.5.0 or higher, open "Assets" and download "BlueOs-raspberry-linux-arm64-v8-bookworm-pi5" (if this image isn't available, pick a different release)
   - run rpiboot:
 
-    - **Ubuntu** users should open a terminal and enter "rpiboot" 
+    - **Ubuntu** users should open a terminal and enter "rpiboot"
     - **Windows** users should open the start menu and run "rpiboot-CM4-CM5 Mass Storage Gadget"
 
   - run rpi-imager:

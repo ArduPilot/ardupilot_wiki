@@ -20,7 +20,7 @@ found
    described in this article will void your warranty! Parrot's technical
    support will not help you with this hack or to recover your original
    software.
-   
+
 .. warning::
 
     Hacking a commercial product is risky! This software is still evolving,
@@ -293,7 +293,7 @@ rcS file.
    steps, at least for the GPS config, copying arducopter and modifying the
    init scripts. Regarding the need to upgrade to a custom version, it will
    depend on whether some options will or won't be available in the
-   following release. Information to follow... 
+   following release. Information to follow...
 
 .. _building-for-bebop-on-linux_recovery:
 
@@ -307,7 +307,7 @@ Recovery
 
    .. image:: ../images/bebop_uart_port.jpg
        :target: ../_images/bebop_uart_port.jpg
-       
+
 #. You will have to pull back the polystyrene a bit but it shouldn't
    cause much damage
 #. Get a UART cable like `this one <http://www.digikey.com/product-detail/en/TTL-232R-RPI/768-1204-ND/4382044>`__ or
@@ -366,7 +366,7 @@ flash an alternative version in order to be able to control your Bebop
 with it (information about that is coming soon...).
 
 In order to pilot the Bebop manually, Mission Planner GCS users can use
-a :ref:`gamepad as described here <copter:common-joystick>`. 
+a :ref:`gamepad as described here <copter:common-joystick>`.
 Alternatively use the RCOutput UDP interface on port 777 on the Bebop,
 with a Linux PC (or board type Raspberry Pi) and a USB gamepad.
 
@@ -442,8 +442,3 @@ Known limitations
 -  Some work will be done to improve support for this GPS
 -  The optical flow is currently under development
 -  There is currently no support for video streaming and capture
-
-
-
-
-

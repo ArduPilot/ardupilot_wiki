@@ -7,8 +7,8 @@ Archived:PX4FMU Overview
 .. warning::
 
     **ARCHIVED**
-    
-    The PX4FMU (v1) is end of life and is not generally available for purchase. 
+
+    The PX4FMU (v1) is end of life and is not generally available for purchase.
     This article is made available for existing users.
 
 This page provides an overview of the Pixhawk Flight Management Unit.
@@ -16,7 +16,7 @@ This page provides an overview of the Pixhawk Flight Management Unit.
 Pixhawk (FMUv2) and PX4FMU (FMUv1)
 ==================================
 
-The Pixhawk (FMUv2) single board autopilot evolved from the original "PX4 system", 
+The Pixhawk (FMUv2) single board autopilot evolved from the original "PX4 system",
 which consists of the PX4FMU and various piggyback boards including the PX4IO and PX4IOAR.
 
 The Pixhawk incorporates several additional features to provide
@@ -273,9 +273,9 @@ Copter wiring (diagram and instructions)
 
 .. toctree::
     :maxdepth: 1
-    
+
     PX4IO <common-px4io-overview>
-    
+
 [site wiki="rover"]
     Archived:Rover PX4FMU/PX4IO Wiring Quick Start <rover-px4-quickstart>
 [/site]

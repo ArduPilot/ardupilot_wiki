@@ -17,10 +17,10 @@ Heavy commercial QuadPlane operators should also read:
 Motor Alignment
 ===============
 
-Motor alignment is always critical for any Plane's performance, but it is especially so for QuadPlanes. 
+Motor alignment is always critical for any Plane's performance, but it is especially so for QuadPlanes.
 Miss-aligned VTOL motors can greatly affect basic VTOL performance, especially yaw trim and effectiveness, as well as fixed-wing flight performance.
 
-Checking motor alignment on the bench can be done by blocking the vehicle in a level position and measuring prop to table distances for all motors with props in fore-aft and side-to-side positions. Measurement differences easily reveal miss-alignments. The arc-sine of the prop tip end differences divided by the prop diameter will give the tilt angles. A degree or two miss-alignment, while not disastrous for pitch or roll, can be significant in non-vectored yaw configurations with regards to extreme yaw miss-trim. 
+Checking motor alignment on the bench can be done by blocking the vehicle in a level position and measuring prop to table distances for all motors with props in fore-aft and side-to-side positions. Measurement differences easily reveal miss-alignments. The arc-sine of the prop tip end differences divided by the prop diameter will give the tilt angles. A degree or two miss-alignment, while not disastrous for pitch or roll, can be significant in non-vectored yaw configurations with regards to extreme yaw miss-trim.
 
 Miss-alignment can also be seen in the dataflash log RCOUT values in a hover for the VTOL motors. Yaw problems appear as large separations between diagonal motor pairs.
 
@@ -52,7 +52,7 @@ For H mixing, simply tilt all the motors inward toward the plane by 2-3 degrees,
 
 When you setup a QuadPlane, the "level" calibration should be done with the plane in its normal cruising attitude (ie angle of attack of the wings). In a non-tailsitter quadplane, if the vertical position of the VTOL motors is not 90 degrees to this attitude, then the QuadPlane will tend to move forward or backward when hovering, requiring stick input to modify pitch. Or, in a tailsitter, if the "trim" position of the motors, and/or vertical CG is not through the thrust line when vertical, it will also drift.
 
-Fortunately, there is a parameter which allows the independent adjustment of the VTOL AHRS "level" attitude. This is :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` in degrees to be added, negative or positive, to the AHRS "level". 
+Fortunately, there is a parameter which allows the independent adjustment of the VTOL AHRS "level" attitude. This is :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` in degrees to be added, negative or positive, to the AHRS "level".
 
 However, there is a better way for non-tailsitter QuadPlanes. If mechanically possible, trim each motor to be vertical when the QuadPlane is in fixed wing "level" mode, so that using :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` is not required. Usually, this requires 3-5 degrees of forward tilt. This has the advantage of having the wings generate lift while hovering in the wind, reducing the load on the VTOL motors and preventing sudden pitch changes during transitions back to VTOL mode from fixed-wing flight.
 

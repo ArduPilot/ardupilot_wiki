@@ -73,4 +73,3 @@ User Videos
 
 .. youtube:: pGluWMlIXho
     :width: 100%
-

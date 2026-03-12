@@ -24,7 +24,7 @@ Transition to Fixed Wing Mode from VTOL
 -  If you transition to :ref:`MANUAL <manual-mode>` or :ref:`ACRO <acro-mode>`, then the VTOL motors will immediately stop. In the case of a tilt-rotor, the motors will also immediately rotate to forward flight orientation.
 
 .. warning:: If you do not have sufficient airspeed, an immediate stall will occur! Since MANUAL mode is often setup as a reflex driven "bail-out", some users move, or remove this mode, and substitute QSTABLIZE or QLOITER as an alternative "bail-out" for a QuadPlane. Also if the transition is made downwind, the transition time is short, and no airspeed sensor is used in non-tailsitters, a stall could occur also since insufficient airspeed has been obtained when VTOL assistance has terminated.
- 
+
 -  If you transition to any other fixed wing mode then the VTOL motors will continue to supply lift and stability until you have reached the :ref:`AIRSPEED_MIN <AIRSPEED_MIN>` airspeed (or airspeed estimate if no airspeed sensor). This phase is called "Transition airspeed wait".
 -  In non-tilt rotor configurations, the forward motor(s) thrust is controlled by the throttle stick in a manner similar to whatever fixed wing mode was entered.
     -  Transitioning to FBWB/CRUISE, throttle stick controls forward thrust as in that mode, as a speed or throttle value, depending on whether or not an airspeed sensor is in use. A minimum pusher throttle value is applied during the transition. If :ref:`TKOFF_THR_MIN<TKOFF_THR_MIN>` is nonzero, then it will be the minimum throttle. If it is zero, :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` will be used as the minimum throttle.
@@ -42,7 +42,7 @@ Transition to Fixed Wing Mode from VTOL
 
 .. note:: for tiltrotors only: if bit 19 of :ref:`Q_OPTIONS<Q_OPTIONS>` is set and :ref:`Q_TRANS_FAIL<Q_TRANS_FAIL>` is not zero, and if the groundspeed is greater than 1/2 of :ref:`AIRSPEED_MIN<AIRSPEED_MIN>`, then the transition to fixed wing will immediately complete. This is useful if no airspeed sensor is being used, and the transition is into a headwind, which could prevent an accurate airspeed estimate from being obtained until a turn is made. Without using the :ref:`Q_TRANS_FAIL<Q_TRANS_FAIL>` timeout and this Q_OPTION, the transition could be indefinitely long since airspeed might be reported as below :ref:`AIRSPEED_MIN<AIRSPEED_MIN>` due to low groundspeed.
 
-.. note:: The airspeed used during transition can be found in dataflash logs as CTUN.As. This is a canonical value which will include the airspeed sensor if enabled, or use the synthetic airspeed if not. 
+.. note:: The airspeed used during transition can be found in dataflash logs as CTUN.As. This is a canonical value which will include the airspeed sensor if enabled, or use the synthetic airspeed if not.
 
 Transition to a VTOL mode from Fixed Wing
 =========================================

@@ -46,7 +46,7 @@ After this, the remote site should start getting MAVLink packets from your autop
 Forwarding Locally
 ------------------
 
-You can also forward locally so that multiple ground control stations can connect to the locally attached autopilot on the same PC. In this case just use the local PC's localhost ip address of 127.0.0.1. You then can connect another GCS like MAVProxy or QGC on the same PC. 
+You can also forward locally so that multiple ground control stations can connect to the locally attached autopilot on the same PC. In this case just use the local PC's localhost ip address of 127.0.0.1. You then can connect another GCS like MAVProxy or QGC on the same PC.
 
 Warning Manager
 ===============

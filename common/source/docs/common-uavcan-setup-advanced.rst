@@ -143,7 +143,7 @@ When a device is attached and recognized, it's node ID and hardware ID are enter
 CAN FD (Flexible Data rate)
 ===========================
 
-If the DroneCAN port is attached to CAN FD peripherals, setting :ref:`CAN_D1_UC_OPTION<CAN_D1_UC_OPTION>` bit 2 (+ value 4) will enable this mode. 
+If the DroneCAN port is attached to CAN FD peripherals, setting :ref:`CAN_D1_UC_OPTION<CAN_D1_UC_OPTION>` bit 2 (+ value 4) will enable this mode.
 
 .. note:: CAN FD requires a larger memory pool allocation than normal. Default is 24KB instead of the normal 12KB.
 
@@ -180,4 +180,3 @@ ArduPilot and DroneCAN provide a means to directly communicate with DroneCAN dev
     SLCAN Access on F4 Based Autopilots <common-slcan-f4>
     SLCAN Access on F7/H7 Based Autopilots <common-slcan-f7h7>
     DroneCAN GUI <common-uavcan-gui>
-

@@ -5,7 +5,7 @@ Mateksys F765-Wing
 ==================
 
 .. image:: ../../../images/matekf765-wing.jpg
-    
+
 
 the above image and some content courtesy of `mateksys.com <http://www.mateksys.com/?portfolio=f765-wing>`__
 
@@ -70,7 +70,7 @@ For example, use Channel 10 to control the camera switch using Relay 2:
 - :ref:`RC10_OPTION<RC10_OPTION>` = "34" (Relay2 Control)
 
 .. note:: setting Relay on/high assigned for Vsw will turn off that supply. Likewise, setting on/high for the Relay assigned for camera, will switch from Camera 1 to Camera 2.
-   
+
 Default UART order
 ==================
 
@@ -89,7 +89,7 @@ Serial port protocols (Telem, GPS, etc.) can be adjusted to personal preferences
 RC Input
 ========
 
-The Rx6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The Rx6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the Rx6 pin can also be configured to be used as true UART RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL7 port's RX input pin.
 
@@ -142,7 +142,7 @@ Then reboot.
 
 :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 11.0
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 40 
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 40
 
 .. note:: this autopilot uses a high precision current sensor which is sensitive to ESC switching noise. Be sure to use the bypass capacitor provided. In some cases, the ESCs themselves will need additional 200-330uF low ESR capacitors on their power inputs, if they do not incorporate them already. See `Matek FAQs <http://www.mateksys.com/?p=5712#tab-id-12>`__ for more information.
 

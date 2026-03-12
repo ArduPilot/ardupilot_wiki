@@ -7,7 +7,7 @@ CUAV HV PM (High voltage power module)
 The CUAV HV PM module is a new high voltage voltage power module independently developed by CUAV with the following features:
 
 * High voltage input: 10v-60v (3S~14S battery)
-* Highly accurate battery monitor: 
+* Highly accurate battery monitor:
   * voltage detection accuracy: +-0.1v
   * current detection accuracy: +-0.4A
 * Bec (5v) max current: 5A

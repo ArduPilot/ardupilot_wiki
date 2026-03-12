@@ -21,7 +21,7 @@ Mounting the SF40c
        :width: 300px
 
 The SF40c should be mounted on the top or bottom of the vehicle so that the rotating portion scans horizontally and its view is not obstructed by any portion of the vehicle including GPS mast, vehicle legs etc.  The round gold and black lightware logo should be facing forward.
-    
+
 Connecting to the Autopilot
 ---------------------------
 

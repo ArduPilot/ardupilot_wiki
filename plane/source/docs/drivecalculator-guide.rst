@@ -10,13 +10,13 @@ The screenshot below illustrates its interface and use. In this example, it show
 
 .. image:: ../images/drivecalc.jpg
      :target: ../_images/drivecalc.jpg
-     
+
 
 
 Entering the information
 ------------------------
 
-After opening the application, you can select {1} the exact battery to be used,or the voltage to run the analysis, {2} the motor from a large database of motors/test data, and {3} the propeller to be used, again from a large database included. You can also change the ESC used {4}, although it will only make a minor difference in the analysis. It is shown, since that ESC was used to gather the motor test data entered into the database. 
+After opening the application, you can select {1} the exact battery to be used,or the voltage to run the analysis, {2} the motor from a large database of motors/test data, and {3} the propeller to be used, again from a large database included. You can also change the ESC used {4}, although it will only make a minor difference in the analysis. It is shown, since that ESC was used to gather the motor test data entered into the database.
 
 Results
 -------

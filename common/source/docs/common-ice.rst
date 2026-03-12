@@ -47,12 +47,12 @@ Engine Control States
 The engine control logic has the following states:
 
 =========== ======================================= ======== ======= ============================================================================== ===========
-Name        Throttle %                              Ignition Starter Duration/Condition                                                             Next State 
+Name        Throttle %                              Ignition Starter Duration/Condition                                                             Next State
 =========== ======================================= ======== ======= ============================================================================== ===========
-Off         0 [1]_                                  Off      Off     Until commanded to start                                                       Starting   
-Starting    :ref:`ICE_START_PCT<ICE_START_PCT>`     On       On      :ref:`ICE_STARTER_TIME<ICE_STARTER_TIME>` seconds                              Running    
+Off         0 [1]_                                  Off      Off     Until commanded to start                                                       Starting
+Starting    :ref:`ICE_START_PCT<ICE_START_PCT>`     On       On      :ref:`ICE_STARTER_TIME<ICE_STARTER_TIME>` seconds                              Running
 Running     :ref:`ICE_IDLE_PCT<ICE_IDLE_PCT>` (min) On       Off     Until RPM drops below :ref:`ICE_RPM_THRESH<ICE_RPM_THRESH>`                    Start Delay
-Start Delay :ref:`ICE_START_PCT<ICE_START_PCT>`     On       Off     Until :ref:`ICE_START_DELAY<ICE_START_DELAY>` seconds since last start attempt Starting   
+Start Delay :ref:`ICE_START_PCT<ICE_START_PCT>`     On       Off     Until :ref:`ICE_START_DELAY<ICE_START_DELAY>` seconds since last start attempt Starting
 =========== ======================================= ======== ======= ============================================================================== ===========
 
 When the engine is commanded to stop, it will immediately go to the "Off" state.
@@ -120,7 +120,7 @@ To configure the RC switch,
    .. tab:: ArduPilot 4.6 and later
 
       - Set an RC auxiliary switch (:ref:`RCx_OPTION<RC6_OPTION>` = 179) be used to start the engine. This channel can start the engine or stop the engine via the ``Ignition`` and ``Starter`` motor/servo outputs (see :ref:`common-rcoutput-mapping`). Normally, the "kill" PWM value is anything below 1300us, but this can be changed using the :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` parameter. Setting up this channel and its RC control is required for operation in order to provide a "kill" function on the throttle, even if there is no ignition or starter control.
-       
+
    .. tab:: ArduPilot prior to 4.6
 
       - Set ``ICE_START_CHAN`` to the channel number corresponding to a switch on the transmitter which will be used to start the engine. This channel can start the engine or stop the engine via the ``Ignition`` and ``Starter`` outputs. Normally, the "kill" PWM value is anything below 1300us, but this can be changed using the :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` parameter. Setting up this channel and its RC control is required for operation in order to provide a "kill" function on the throttle, even if there is no ignition or starter control.

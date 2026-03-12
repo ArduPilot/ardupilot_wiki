@@ -8,8 +8,8 @@ The advanced users tools `can be downloaded from here <https://download.ardupilo
 
 .. note::
 
-    Not all of these tools are "up to date". For example, vehicle binaries and 
-    GCS software should be downloaded from their respective locations in the 
+    Not all of these tools are "up to date". For example, vehicle binaries and
+    GCS software should be downloaded from their respective locations in the
     `firmware server <https://firmware.ardupilot.org/>`__.
 
 The rest of the article provides an overview of some of the files and the tool licensing.
@@ -33,7 +33,7 @@ Copter Firmware
 .. warning::
 
     Not necessarily the latest!
-    
+
 * `ArduCopter_APM_1.0_Firmware_3.2.1.zip <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/ArduCopter_APM_1.0_Firmware_3.2.1.zip>`__
 * `ArduCopter_APM_2.0_Firmware_3.2.1.zip <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__
 
@@ -44,7 +44,7 @@ Rover Firmware
 .. warning::
 
     Not necessarily the latest!
-    
+
 * `APMrover2-2.45.zip <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/APMrover2-2.45.zip>`__
 * `APMrover2-2.46.zip <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/APMrover2-2.46.zip>`__
 * `APMrover2-2.47.zip <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/APMrover2-2.47.zip>`__
@@ -191,7 +191,7 @@ PPM PASS-THROUGH MODE (signal pin 2&3 shorted):
 
 
 
-ArduPPM v2.3.16 ATMega328p firmware for APM1.x Copter and standalone PPM encoder. 
+ArduPPM v2.3.16 ATMega328p firmware for APM1.x Copter and standalone PPM encoder.
 ---------------------------------------------------------------------------------
 
 `ArduPPM_v2.3.16_ATMega328p_for_ArduCopter.hex_.zip <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega328p_for_ArduCopter.hex_.zip>`__
@@ -199,7 +199,7 @@ ArduPPM v2.3.16 ATMega328p firmware for APM1.x Copter and standalone PPM encoder
 .. warning::
 
     **Do not use with APM 2.x**
-    
+
     DATE POSTED	April 29, 2013
 
 
@@ -242,7 +242,7 @@ DATE POSTED	April 29, 2013
 .. warning::
 
     Do not use with APM 2.x
-    
+
 This version is dedicated to ArduPlane (or ArduRover / Arduboat) (CH8 radio passthrough mode).
 For ArduCopter it is better to use the dedicated version so that CH8 can be fully used without risk to trig radio passthrough mode.
 
@@ -272,12 +272,12 @@ Normal mode:
 
 Radio Passthrough mode (for ArduPlane only):
 
-– If throttle position < 1200 μs, status LED is off 
+– If throttle position < 1200 μs, status LED is off
 - If throttle position > 1200 μs, status LED is on
 
 
 
-ArduPPM v2.3.16 ATMega32U2 firmware for APM 2.x 
+ArduPPM v2.3.16 ATMega32U2 firmware for APM 2.x
 -----------------------------------------------
 
 DATE POSTED	April 29, 2013
@@ -382,7 +382,7 @@ DATE POSTED	December 6, 2014
 PX4Flow sensor firmware using Lucas-Kanade method for use with ArduPilot
 
 
-USB Driver for APM 2 
+USB Driver for APM 2
 --------------------
 
 `APM_Arduino_Drivers.zip <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/APM_Arduino_Drivers.zip>`__
@@ -395,34 +395,34 @@ Arduino USB driver for the Atmega32u2 USB interface chip on APM 2
 License
 =======
 
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License 
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License
 as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
-without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 See the `GNU General Public License <http://www.gnu.org/licenses/gpl.html>`__ for more details.
 
 Safety
 ======
 
-Operating a powered vehicle of any kind can be a lot of fun. 
-However, nothing will ruin your day at the park more quickly than an accident or running afoul of the law. 
+Operating a powered vehicle of any kind can be a lot of fun.
+However, nothing will ruin your day at the park more quickly than an accident or running afoul of the law.
 Since we want you to have a great experience, please make sure that you do all of the following:
 
-* Operate within all local laws and regulations. 
-  For example, in the United States, current regulations require you to operate most UAVs under 400 
-  foot above ground level, within line of site, and away from obstructions and populated areas. 
-  Since these regulations vary from place to place, even within the same country, ensure that 
+* Operate within all local laws and regulations.
+  For example, in the United States, current regulations require you to operate most UAVs under 400
+  foot above ground level, within line of site, and away from obstructions and populated areas.
+  Since these regulations vary from place to place, even within the same country, ensure that
   you understand what you need to do to stay compliant.
-* Never operate the vehicle or software in a way that could be dangerous to you, other people, or property. 
-  Propellers, while rotating, could easily cut you; if a UAV fell on a person or object, 
-  it could cause injury; a UAV caught in power lines could cause an outage. 
+* Never operate the vehicle or software in a way that could be dangerous to you, other people, or property.
+  Propellers, while rotating, could easily cut you; if a UAV fell on a person or object,
+  it could cause injury; a UAV caught in power lines could cause an outage.
   As Ben Franklin said, “An ounce of prevention is worth a pound of cure.”
-* Always keep in mind that software and hardware failures happen. 
-  Although we design our products to minimize such issues, you should always operate with the understanding that 
-  a failure could occur at any point of time and without warning. 
+* Always keep in mind that software and hardware failures happen.
+  Although we design our products to minimize such issues, you should always operate with the understanding that
+  a failure could occur at any point of time and without warning.
   As such, you should take the appropriate precautions to minimize danger in case of failure.
-* Never use the software or hardware for manned vehicles. 
+* Never use the software or hardware for manned vehicles.
   The software and hardware we provide is only for use in unmanned vehicles.
 
 

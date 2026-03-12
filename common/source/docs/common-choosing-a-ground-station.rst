@@ -114,13 +114,13 @@ It's unique among the GCS offerings as it runs on all platforms desktop and mobi
 UgCS - Universal Ground Control Station
 ---------------------------------------
 
-Universal and easy to use ground control station with a 3D interface. 
+Universal and easy to use ground control station with a 3D interface.
 Supports APM, Pixhawk as well as drones from other manufacturers such as DJI, Mikrokopter and more.
 Intended for enthusiasts as well as professional users.
 
-It is capable of communicating with and controlling multiple drones simultaneously. 
+It is capable of communicating with and controlling multiple drones simultaneously.
 
-UgCS supports multiple map layers as well as different map providers. Some of the features of UgCS include - DEM Import, ADS-B transponder and receiver support, Click & Go mode, Joystick mode, image geotagging and video recording. UgCS also comes with a telemetry player, allowing the replay of all flights. 
+UgCS supports multiple map layers as well as different map providers. Some of the features of UgCS include - DEM Import, ADS-B transponder and receiver support, Click & Go mode, Joystick mode, image geotagging and video recording. UgCS also comes with a telemetry player, allowing the replay of all flights.
 
 UgCS comes with in-built no-fly zones around all major airports as well as the ability to create custom no-fly zones.
 
@@ -264,7 +264,7 @@ Android
 
 For Android devices, you will need:
 
--  Android based tablet or smartphone. *QGroundControl* can utilize Bluetooth, WIFI, or USB connectivity to the autopilot from the phone. For USB the device must be ablke to act as a USB host (OTG). 
+-  Android based tablet or smartphone. *QGroundControl* can utilize Bluetooth, WIFI, or USB connectivity to the autopilot from the phone. For USB the device must be ablke to act as a USB host (OTG).
 - A connectivity method to vehicle's autopilot:
    - :ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` or other radio telemetry (:ref:`common-telemetry-landingpage`) with OTG cable can be used for long range, in-the-air, connectivity to a similar vehicle telemetry unit.
    - WIFI (:ref:`common-esp8266-telemetry`)
@@ -322,4 +322,3 @@ For Desktop devices you will need:
    ArduSub_MAVLink_Messages
 
 [/site]
-

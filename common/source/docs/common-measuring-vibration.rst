@@ -132,4 +132,3 @@ For very old versions of ArduPilot that do not include the Vibe message the IMU 
 
 .. |DiagnosingWithLogs_Vibes| image:: ../../../images/DiagnosingWithLogs_Vibes.png
     :target: ../_images/DiagnosingWithLogs_Vibes.png
-

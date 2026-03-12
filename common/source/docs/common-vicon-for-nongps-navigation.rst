@@ -10,7 +10,7 @@ Robotics labs commonly have an indoor flying facility using a Vicon
 indoor positioning system. These systems use infra-red cameras to give
 a high rate (200Hz) position and attitude via a network
 connection. ArduPilot can use this positioning information for precise
-indoor flight. 
+indoor flight.
 
 .. youtube:: XMb4MKi2HSQ
     :width: 100%
@@ -56,7 +56,7 @@ Vicon System Setup
 
 .. figure:: ../../../images/vicon-frame-reference.jpg
     :target: ../_images/vicon-frame-reference.jpg
-    
+
     Figure 1: Example of how UAV should be positioned when creating the Vicon Object. The forward direction is aligned with the X-axis.
 
 .. figure:: ../../../images/vicon-alignment.png
@@ -247,5 +247,3 @@ circling, keeping its nose pointed at the center of the circle. You
 can try pushing up CIRCLE_RATE to higher values (in degrees/second) as
 you get more confident. The video at the top of this page has
 CIRCLE_RATE=150 for a 150 degree/second circle.
-
-

@@ -69,7 +69,7 @@ VSCode
 While Visual Studio Code with the C# plugin can parse the code, please note that it **cannot build** Mission Planner at this time.
 
 
-After your VS installation is complete: 
+After your VS installation is complete:
 =======================================
 
 You should be able to use Git from the IDE. Clone `Mission Planner source code <https://github.com/ArduPilot/MissionPlanner.git>`__ to get the full code.
@@ -111,7 +111,7 @@ Solution.
 
 After first checking that you can connect to your flight controller and
 arm it with the regular mission planner, disconnect the regular Mission
-Planner and then press "Start" to run the application in debug mode. 
+Planner and then press "Start" to run the application in debug mode.
 When the "Form1" pops up, select the COM port, the baud rate (probably
 115200) and press Connect.  If it successfully connects, press Arm/Disarm
 to attempt to arm the vehicle.
@@ -133,13 +133,13 @@ and take the necessary steps to resolve them if that is the case. Here
 is a simple debugging example to get you started.
 
 -  Do not (yet) connect your AutoPilot Hardware ( CubeOrange, etc. ) to the
-   compiled version of MP.  You must  first copy some .xml files to 
+   compiled version of MP.  You must  first copy some .xml files to
    the bin/debug folder. See details below.
 -  First be sure VS is configured for debug (versus release) Set this in
    the top menu tools area or the configuration manager.
 -  Select menu DEBUG, Start Debugging.   (Or, press F5).  Mission
    Planner should run as you normally see it.  However, some important
-   configuration files are missing so connection to the AutoPilot Hardware 
+   configuration files are missing so connection to the AutoPilot Hardware
    ( eg CubeOrange, etc ) is not recommended at this time.
 
    -  If after "Start Debugging" the program loading hangs in the splash
@@ -158,7 +158,7 @@ is a simple debugging example to get you started.
       you see the objects included.
    -  Scroll down to MainV2.cs, right click that object and select View
       Code.
-   -  In the code window for MainV2.cs, scroll down to the line "public MainV2" 
+   -  In the code window for MainV2.cs, scroll down to the line "public MainV2"
       then to one of the first code lines after that ( currently it is a log.Info("..."); line ) .
    -  Click in front of that line (In the dark gray bar on the left) to
       set a break point  (red circle).
@@ -196,10 +196,10 @@ will get you started.
    connected, you will need to copy several files from the folder where
    MP is installed (C:\\Program Files (x86)\\APM Planner  or C:\\Program
    Files\\APM Planner) to the folder where your VS project compiled
-   output is located.  
-   
-   .. todo:: 
-   
+   output is located.
+
+   .. todo::
+
        editors: This needs to be made more accurate which files are needed, why etc.
 
    -  **Copy (don't move) all xml files** (I.E. files with the extension

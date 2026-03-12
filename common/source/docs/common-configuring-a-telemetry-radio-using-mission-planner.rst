@@ -68,8 +68,8 @@ Other parameters you may choose to update:
 -  **Tx Power** (default 20) : the transmission power where
    1=1.3milliWats, 2=1.5mW, 5=3.2mW, 8=6.3mW,11=12.5mW, 14=25mW,
    17=50mW, 20=100mW. This should be set to conform with your local
-   regulations. 
-   Some per-country information 
+   regulations.
+   Some per-country information
    :ref:`is linked here <common-telemetry-radio-regional-regulations>`.
 -  **Duty Cycle** (default 100) : the maximum percentage of time that
    the radio will transmit packets. Some regions of the world allow for

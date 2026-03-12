@@ -92,7 +92,7 @@ The simplest solution is to wire an open telemetry port.
    Do not abuse the power supply for the flight controller.
    For robust applications, it is recommended to power non-flight-critical devices,
    such as a Raspberry Pi, with a separate 5V power supply.
-   Although many flight controller power supplies may support the power draw of 
+   Although many flight controller power supplies may support the power draw of
    a Raspberry Pi Zero 2W, a problem on the PI can bring down the entire vehicle.
 
 .. figure:: ../images/PiZero2WTelem.png
@@ -110,8 +110,8 @@ Cross Compile an application with Docker
     Inspired by https://github.com/Ryanf55/ardupilot_ros/blob/docker-deploy-to-pi/docker/Dockerfile
 
 In order to run applications on a Raspberry Pi, we can cross compile them for the ARM architecture.
-`Docker <https://www.docker.com/>`_ allows an easy way to cross compile. Because of the Pi's limited memory, 
-it is not recommended to attempt compiling on target hardware. If you have a more powerful computer, see the 
+`Docker <https://www.docker.com/>`_ allows an easy way to cross compile. Because of the Pi's limited memory,
+it is not recommended to attempt compiling on target hardware. If you have a more powerful computer, see the
 next section for direct compilation on ARM64.
 
 First, create a dockerfile like so on your laptop called ``Dockerfile``

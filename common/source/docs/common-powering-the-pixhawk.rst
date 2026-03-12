@@ -32,7 +32,7 @@ consume more than 90amps at full throttle).
 
    Pixhawk does **not** *supply* power to the servo rail. Powering
    the servo rails is normally done by an ESC or alternatively a separate
-   source such as a BEC (as shown in the 
+   source such as a BEC (as shown in the
    :ref:`wiring overview below <common-powering-the-pixhawk_pixhawk_poweresc_wiring_overview>`).
 
 .. tip::
@@ -41,7 +41,7 @@ consume more than 90amps at full throttle).
    servo rail, backup power and support for larger batteries. Using this
    sort of module means that you don't need to think about most of the
    wiring issues discussed in the rest of this article.
-   
+
 .. warning::
 
    Pixhawk supplies power for an RC receiver if that receiver is connected via a 3-conductor servo cable to the RC connector on the Pixhawk. If that receiver is also connected to the SBus port on the
@@ -74,7 +74,7 @@ ratings* section below for more information on powering Pixhawk.
 
 .. warning::
 
-   The servo rail can supply servos requiring up to 10.5V (but not also power the Pixhawk). Voltages above 5V cannot be used to power the Pixhawk via the servo rail. In this case the Zener diode **must not be used**. 
+   The servo rail can supply servos requiring up to 10.5V (but not also power the Pixhawk). Voltages above 5V cannot be used to power the Pixhawk via the servo rail. In this case the Zener diode **must not be used**.
 
 
 .. _common-powering-the-pixhawk_pixhawk_poweresc_wiring_overview:
@@ -106,7 +106,7 @@ power source.
 .. note::
 
    Looking for a detailed explanation of power wiring with Pixhawk?
-   `Click here for more information about connecting ESCs and servos to Pixhawk. <http://pixhawk.org/users/actuators/pwm_escs_and_servos>`__\ 
+   `Click here for more information about connecting ESCs and servos to Pixhawk. <http://pixhawk.org/users/actuators/pwm_escs_and_servos>`__\
 
 General wiring recommendations
 ==============================
@@ -196,4 +196,3 @@ Pixhawk from the power module]
 Servo rail input (0V to 20V)
 
 USB power input (0V to 6V)
-

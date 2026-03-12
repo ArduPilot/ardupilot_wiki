@@ -18,7 +18,7 @@ videos and log files on the Odroid.  The procedure makes use of
 To accomplish this you will need:
 
 -  Odroid U3 running Ubuntu 14.04 as described on :ref:`this page <odroid-via-mavlink>`.
--  A Wifi dongle capable of "master" mode (aka "AP" or access point). 
+-  A Wifi dongle capable of "master" mode (aka "AP" or access point).
    These exact instructions were performed with an $8 `Buffalo Airstation 11n 11g/b USB2 wireless LAN terminal purchased in Japan <http://www.yamada-denkiweb.com/1265136015>`__.
 
 All the instructions below can be implemented by connecting a keyboard,
@@ -66,10 +66,10 @@ try with another dongle.
     Supported interface modes:
     * IBSS
     * managed
-    * AP 
+    * AP
 
 Use your favourite editor (nano or vi perhaps) to edit the
-``/etc/network/interfaces`` file and add an entry for your wifi dongle. 
+``/etc/network/interfaces`` file and add an entry for your wifi dongle.
 Note you should replace "wlan2" if your dongle has a different name:
 
 ``auto wlan2``

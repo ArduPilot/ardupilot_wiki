@@ -31,7 +31,7 @@ Specifications
 -  **Power**
 
    -  9V ~ 25V DC input power (3S-6S)
-   -  5V 2A BEC for peripheral 
+   -  5V 2A BEC for peripheral
    -  10V 2A for Video
 
 -  **Size and Dimensions**
@@ -53,7 +53,7 @@ Pinouts
 UART Defaults
 =============
 
-The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive pin for UARTn. The Tn pin is the transmit pin for UARTn. 
+The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 
 -    SERIAL0 -> USB
 -    SERIAL1 -> USART1 (GPS)

@@ -4,7 +4,7 @@
 Airspeed Parameters Setup
 =========================
 
-.. note: ArduPlane does not require an airspeed sensor. However, some airspeed related parameters are used even if no airspeed sensor is present or being used, notably for the scaling of tuning parameters with speed. If you are not using an airspeed sensor set ARSPD_TYPE to 0. 
+.. note: ArduPlane does not require an airspeed sensor. However, some airspeed related parameters are used even if no airspeed sensor is present or being used, notably for the scaling of tuning parameters with speed. If you are not using an airspeed sensor set ARSPD_TYPE to 0.
 
 Speed Scaling
 =============
@@ -13,7 +13,7 @@ Since the effect of flying surface control deflection increases and decreases wi
 
 This is accomplished by ArduPilot estimating airspeed from other sensor inputs like GPS velocity, position changes, and IMU accelerations. This estimate is also used in case an airspeed sensor is used and becomes unhealthy. In systems without an airspeed sensor this estimate is used for speed scaling of the PID loops.
 
-So, even if an airspeed sensor is not present, some airspeed parameters are used. 
+So, even if an airspeed sensor is not present, some airspeed parameters are used.
 
 .. note:: Normally, the default values are acceptable, but very fast or very slow vehicles may need them adjusted for best performance.
 

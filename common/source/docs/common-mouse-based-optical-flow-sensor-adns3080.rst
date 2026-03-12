@@ -12,7 +12,7 @@ Copter-3.2.1 on APM2.x boards included limited support for the mouse sensor base
 
 .. warning::
 
-   This sensor is not supported in recent versions of the firmware.  
+   This sensor is not supported in recent versions of the firmware.
    Instead please use the :ref:`PX4Flow sensor <common-px4flow-overview>`.
 
 .. image:: ../../../images/BR-0016-01-2T.jpg
@@ -81,12 +81,12 @@ In order to check that you have the lens properly focused you can capture an ima
     :target: ../_images/ADNS3080ImageGrabber.jpg
 
 #. Upload the AP_OpticalFlow_test.pde to the APM (see above)
-#. Install Python 2.7 (or later version) from the `official python site <https://www.python.org/downloads/>`__\ 
+#. Install Python 2.7 (or later version) from the `official python site <https://www.python.org/downloads/>`__\
 
    (For windows users, for compatibility with pyserial, you should
    install the `32bit version <https://www.python.org/ftp/python/2.7.2/python-2.7.2.msi>`__\ even
    if you are running 64bit windows)
-#. Install `PySerial 2.5 <http://pyserial.sourceforge.net/>`__. The Windows package 
+#. Install `PySerial 2.5 <http://pyserial.sourceforge.net/>`__. The Windows package
    `can be downloaded from here <http://pypi.python.org/packages/any/p/pyserial/pyserial-2.5.win32.exe>`__.
 #. Start the Python IDLE editor
 #. File, Open,

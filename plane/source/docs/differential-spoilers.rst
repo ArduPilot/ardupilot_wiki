@@ -41,7 +41,7 @@ Preparation
 ===========
 
 To use differential spoiler function, the airframe is required to use
-have 4 control surfaces (2 on each wing). 
+have 4 control surfaces (2 on each wing).
 
 Setup
 =====
@@ -69,8 +69,8 @@ using :ref:`DSPOILER_CROW_W1 <DSPOILER_CROW_W1>` and :ref:`DSPOILER_CROW_W2 <DSP
 
 Differential Spoiler options
 ============================
-:ref:`DSPOILER_OPTS <DSPOILER_OPTS>` parameter gives several options that can be used to tailor the dspoiler 
-functionality to your aircraft. They can be used to setup a 'full house' wing on a glider. :ref:`DSPOILER_OPTS<DSPOILER_OPTS>` is 
+:ref:`DSPOILER_OPTS <DSPOILER_OPTS>` parameter gives several options that can be used to tailor the dspoiler
+functionality to your aircraft. They can be used to setup a 'full house' wing on a glider. :ref:`DSPOILER_OPTS<DSPOILER_OPTS>` is
 a bit-mask each, bit enables different functionality.
 
 +-------+-----------------------------------------------------------------------------------------------+
@@ -91,9 +91,9 @@ a bit-mask each, bit enables different functionality.
 
 Defaults are bit 0 and bit 1 set to 1. **Conventional planes and gliders will probably want to change bit 0 to "0".**
 
-:ref:`DSPOILER_AILMTCH <DSPOILER_AILMTCH>` allows the downwards travel of the inner surfaces to be limited 
-to a percentage of their full downwards travel. This only affects the travel when the control surfaces are used 
-as full span ailerons or for differential yaw. Using this parameter a flap control surface with lots of downwards 
+:ref:`DSPOILER_AILMTCH <DSPOILER_AILMTCH>` allows the downwards travel of the inner surfaces to be limited
+to a percentage of their full downwards travel. This only affects the travel when the control surfaces are used
+as full span ailerons or for differential yaw. Using this parameter a flap control surface with lots of downwards
 travel can still be utilized for full span ailerons. Upwards travel of the control surfaces is unaffected.
 
 .. |4surfLeftYaw| image:: ../images/4surfLeftYaw.jpg
@@ -105,11 +105,10 @@ travel can still be utilized for full span ailerons. Upwards travel of the contr
 Crow Mode Switch
 ================
 
-If Differential Spoilers are used, setting an ``RCx_OPTION`` channel to "87" will allow the control of CROW aileron (outer spoilers) operation. 
+If Differential Spoilers are used, setting an ``RCx_OPTION`` channel to "87" will allow the control of CROW aileron (outer spoilers) operation.
 
 - HIGH position: No change to CROW deflection amount or use of progressive crow.
 - MIDDLE position: force progressive crow, assuming :ref:`DSPOILER_CROW_W1<DSPOILER_CROW_W1>` is non-zero, even if :ref:`DSPOILER_OPTS <DSPOILER_OPTS>` bit 2 is zero.
 - LOW position: effectively sets :ref:`DSPOILER_CROW_W1<DSPOILER_CROW_W1>` to zero. Only inner spoilers move with FLAP channel, ie normal flaps.
 
 This allows live changes to CROW operation on approaches so that speed braking and descent rates can be changed during the approach.
-

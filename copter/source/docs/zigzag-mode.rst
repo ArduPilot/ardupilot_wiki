@@ -47,4 +47,3 @@ To use:
 - Upon activation, the vehicle will move in :ref:`ZIGZ_DIRECTION<ZIGZ_DIRECTION>` with respect to its heading for :ref:`ZIGZ_SIDE_DIST<ZIGZ_SIDE_DIST>`, then proceed to cross the field until the opposite ZigZagWP is reached. It will then wait for :ref:`ZIGZ_WP_DELAY<ZIGZ_WP_DELAY>` to allow sprayer to fully stop and then move :ref:`ZIGZ_SIDE_DIST<ZIGZ_SIDE_DIST>` down the side of the field again to proceed back across the area. It will do this for :ref:`ZIGZ_LINE_NUM<ZIGZ_LINE_NUM>` times (-1 = infinite until switched out of this mode, =0 will only move to the first field crossing position, but not proceed further).
 
 Moving the ZigZag Auto switch to the low position immediately stops this mode and returns to normal ZIGZAG mode.
-

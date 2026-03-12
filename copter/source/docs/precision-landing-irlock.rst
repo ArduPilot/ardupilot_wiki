@@ -50,7 +50,7 @@ Connecting to the Autopilot
 
 The IR-LOCK sensor can be connected directly to the autopilot via an `I2C cable <https://irlock.com/collections/shop/products/pixhawk-cable>`__. If
 you are using multiple I2C sensors, then you will need an \ `I2C splitter <https://store.mrobotics.io/mRo-DF13-I2C-Bus-Splitter-for-Pixhawk-p/mro-df13-i2c-split-5-mr.htm>`__.
-More detailed instructions are included in the `IR-LOCK documentation <https://irlock.readme.io/docs>`__. 
+More detailed instructions are included in the `IR-LOCK documentation <https://irlock.readme.io/docs>`__.
 
 Other ``PLND_`` parameters are provided to adjust for landing detector position on the vehicle, if needed.
 

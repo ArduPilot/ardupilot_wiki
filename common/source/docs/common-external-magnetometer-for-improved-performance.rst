@@ -18,7 +18,7 @@ Overview
 ========
 
 The 3DR external compass should only be used with the APM series of
-autopilots, its 5 volt signal output is not compatible with Pixhawk which require 3.3 volts. 
+autopilots, its 5 volt signal output is not compatible with Pixhawk which require 3.3 volts.
 For the Pixhawk use the :ref:`3DR combination GPS / Magnetometer module <common-installing-3dr-ublox-gps-compass-module>`.
 
 .. image:: ../../../images/Magnetometer1.jpg

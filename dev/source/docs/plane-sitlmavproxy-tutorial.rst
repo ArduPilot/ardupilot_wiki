@@ -80,7 +80,7 @@ matter):
 
 ::
 
-    mode auto 
+    mode auto
     arm throttle
 
 The plane should take off to an altitude of 40 metres and then proceed
@@ -166,7 +166,7 @@ the map:
 
       Nothing visible will happen when you make the first click.
       After the second click, lines will join your points to show the path.
-         
+
 #. When you're done, you can loop the mission by right-clicking on the
    map and selecting **Mission \| Loop**.
 
@@ -277,7 +277,7 @@ Creating the fence is very similar to creating a waypoint mission:
 
       Nothing visible will happen when you make the first click.
       After the second click, lines will join your points to show the path.
-      
+
 #. When you're done, you can loop the fence by right-clicking on the
    map.
 

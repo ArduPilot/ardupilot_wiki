@@ -19,4 +19,4 @@ AIRMODE can also be set to be active without using the ``RCx_OPTION`` switch to 
 
 .. note:: AIRMODE has no effect in Traditional Helicopter
 
-.. note:: It isn't sufficient to just enable arming on an ``RCx_OPTION`` switch, you *also* have to actually use it for arming. So if you have it on a switch but then use rudder-arming then you won't get "airmode". 
+.. note:: It isn't sufficient to just enable arming on an ``RCx_OPTION`` switch, you *also* have to actually use it for arming. So if you have it on a switch but then use rudder-arming then you won't get "airmode".

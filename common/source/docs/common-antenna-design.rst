@@ -235,7 +235,7 @@ Resonance and matching issues
 
       .. image:: ../../../images/Oblique.jpg
           :target: ../_images/Oblique.jpg
-      
+
       .. image:: ../../../images/Slit.jpg
           :target: ../_images/Slit.jpg
 
@@ -267,8 +267,8 @@ Resonance and matching issues
       is approx 0.23 wavelength long.
 
       .. image:: ../../../images/End.jpg
-          :target: ../_images/End.jpg    
-      
+          :target: ../_images/End.jpg
+
       .. image:: ../../../images/Teflon.jpg
           :target: ../_images/Teflon.jpg
 
@@ -356,7 +356,7 @@ is connected to an antenna with a gain of 14dBi using a 7m cable
 (attenuation 25dB per 100m). We can calculate the output power as shown:
 
 **TX_Power**\ = 60mW = \ **0.06W** = **17.78dBm** (using conversions
-above) 
+above)
 
 **Cable_Loss** = 25dB/100m = 0.25dB per meter \* 7 metres
 = \ **1.75dB**

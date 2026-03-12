@@ -67,13 +67,13 @@ Video transmitter settings
 1                                      Resets bit 0 above upon arming
 2                                      Sets bit 0 above upon disarming
 3                                      Unlock: unlocks frequencies and bands on some transmitters
-4                                      Add leading zero byte to requests (needed on some transmitters)     
+4                                      Add leading zero byte to requests (needed on some transmitters)
 5                                      Use 1 stop bit. Needed for some transmitters using non-compliant(iNAV) messaging
 6                                      Ignore CRC checks. Needed for some transmitters using non-compliant messaging
 7                                      Future (not presently working)
 ===================================    ==============
 
-.. note:: "unlocking" can be done differently, depending on transmitter brand. Also, using unlocked frequencies/power levels may violate local laws and restrictions. 
+.. note:: "unlocking" can be done differently, depending on transmitter brand. Also, using unlocked frequencies/power levels may violate local laws and restrictions.
 
 Setting video transmitter settings
 ----------------------------------

@@ -22,7 +22,7 @@ Specifications
    -  InvenSense MPU6000 IMU (accel, gyro)
    -  Honeywell HMC5883L compass
    -  MS5611 barometer
-   
+
 -  **Power**
 
    -  4.8V ~ 10V input power provided through ESC connection for fullsize Revolution
@@ -39,7 +39,7 @@ Specifications
    -  SWD Port for flashing and debugging, including 3.3V output for optional peripherals
    -  MMCX antenna connector for integrated HopeRF RFM22B 100mW 433MHz (fullsize Revolution only)
    -  OPLink port on RevoMini. OPLink hardware is not supported by ArduPilot, but this port exposes external SPI pins (SCK, CS, MOSI, MISO) that can be used for supported SPI peripherals like SD card adapters or SPI OSD breakout boards (requires additions to hardware definition file and compiling a custom firmware).
-   
+
 .. note::
     Per channel PWM-type RC inputs are not supported on this hardware. See reference for :ref:`supported RC systems <common-rc-systems>`
 
@@ -50,23 +50,23 @@ Default UART order
 - SERIAL1 = Telemetry1 = Mainport
 - SERIAL2 = NN in default config
 - SERIAL3 = GPS1 = FlexiPort
-   
+
 .. tip::
     See hardware definition file for more info on pinout:
     https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/revo-mini/hwdef.dat
-   
-   
+
+
 Wiring diagrams
 ===============
 **ArduPilot default pin assignments on fullsize Revolution and RevoMini**
 
 .. image:: ../../../images/revolution_wiring.jpg
     :target: ../_images/revolution_wiring.jpg
-    
+
 .. image:: ../../../images/revomini_wiring.jpg
     :target: ../_images/revomini_wiring.jpg
-    
-   
+
+
 Optional connectivity
 =====================
 **requires compiling custom firmware based on changes to hwdef**
@@ -79,7 +79,7 @@ The RevoMini likely is the smallest footprint autopilot hardware to support Ardu
 
 .. image:: ../../../images/revominiSD.jpg
     :target: ../_images/revominiSD.jpg
-    
+
 
 
 Where to Buy
@@ -109,7 +109,7 @@ On RevoMini they are located here:
 
 You can short the pads in any particular way (either with a wire, solder joint, or something else). Detailed instructions are available on the `Revo Mini LibrePilot Wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/29622291/Recover+board+using+DFU>`__. A small wire is the easiest way to short the device. You can also power the device via USB first, and then short the pads if using a wire. Once you have the device in DFU mode and connected to your machine continue with the following steps to :ref:`load ArduPilot firmware onto ChibiOS boards <common-loading-firmware-onto-chibios-only-boards>`.
 
-    
+
 Compile ArduPilot
 -----------------
 To build your own firmware, see the instructions on setting up a build environment and compiling the source code:

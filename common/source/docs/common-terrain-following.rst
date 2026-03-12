@@ -99,7 +99,7 @@ Sources of Terrain Data
 
 The ground station is normally responsible for providing the raw terrain data which is sent to the aircraft via MAVLink. Right now only Mission Planner and MAVProxy support the required TERRAIN_DATA and TERRAIN_REQUEST MAVLink messages needed for terrain following download support. If you are using a different ground station , in order to download terrain data you will need to connect using one of those two ground stations in order to allow ArduPilot to load terrain data onto your board on the ground or in flight.  Once it is loaded, it is saved permanently on the microSD card.
 
-Both MissionPlanner and MAVProxy support the global SRTM database for terrain data.  The ArduPilot SRTM server used by MAVProxy and Mission Planner has 100m grid spacing. Unless the ground control station uses a different server with closer spacing, setting the :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` parameter lower than 100m provides no better resolution, and only consumes more space on the SD card. 
+Both MissionPlanner and MAVProxy support the global SRTM database for terrain data.  The ArduPilot SRTM server used by MAVProxy and Mission Planner has 100m grid spacing. Unless the ground control station uses a different server with closer spacing, setting the :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` parameter lower than 100m provides no better resolution, and only consumes more space on the SD card.
 
 Terrain Data is downloaded any time you save or connect with a loaded mission with these ground stations, or, if flying, the autopilot will request data if it's flying into an area not already downloaded, assuming the ground station can provide it. Usually an internet connection is required by the ground station.
 
@@ -108,13 +108,13 @@ Terrain Data is downloaded any time you save or connect with a loaded mission wi
 
 If you are not flying with a GCS that can fetch and supply terrain data as the vehicles flies between waypoints, the you may need to load terrain data covering the flight route and/or area for RTL paths manually.
 
-You can download a set of terrain data tiles for any anticipated flight area using this `web utility <https://terrain.ardupilot.org/>`__. 
+You can download a set of terrain data tiles for any anticipated flight area using this `web utility <https://terrain.ardupilot.org/>`__.
 
 .. image:: ../../../images/common-terrain-dl-utility.png
 
 It will create tiles for the specified radius around a geographic location. Then you can download them, unzip and write in the APM/TERRAIN folder of the SD card.
 
-You can also download .zip files for entire continents, or individual tiles from `here <https://terrain.ardupilot.org/continentsdat3/>`__. 
+You can also download .zip files for entire continents, or individual tiles from `here <https://terrain.ardupilot.org/continentsdat3/>`__.
 
 Terrain Spacing
 ===============
@@ -151,7 +151,7 @@ Setting up for terrain following
 To setup your fixed wing aircraft for terrain following follow these
 steps
 
--  make sure you have the latest MissionPlanner installed 
+-  make sure you have the latest MissionPlanner installed
 -  set :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` to 1 and :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` to 1
 -  connect to your vehicle over USB when you have GPS lock
 -  check the FlightData->Status page in MissionPlanner and look for the

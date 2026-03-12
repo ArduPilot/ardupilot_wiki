@@ -20,8 +20,8 @@ Overview
 
 The PX4FLOW (Optical Flow) Sensor is a
 specialized high resolution downward pointing camera module and a 3-axis gyro that uses
-the ground texture and visible features to determine aircraft ground velocity. 
-Although the sensor may be supplied with a built-in Maxbotix LZ-EZ4 sonar to measure 
+the ground texture and visible features to determine aircraft ground velocity.
+Although the sensor may be supplied with a built-in Maxbotix LZ-EZ4 sonar to measure
 height, this has not been reliable enough over a range of surfaces in testing, so its
 readings are not used. It is recommended to purchase a PX4Flow device without the sonar.
 Instead a separate :ref:`Range Finder <common-rangefinder-landingpage>`
@@ -42,8 +42,8 @@ This sensor is available from numerous retailers including:
 - `Holybro PX4Flow <https://shop.holybro.com/px4flow-kit_p1035.html>`__
 
 Install Drivers (Windows only)
-=====================================   
-On a Windows machine a "PX4Flow" device should appear in Connection drop-down of the Mission Planner (and the Windows Device Manager), or be automatically recognized by QGroundControl.  If it does not you may need to download, unzip and manually install the `px4flow windows driver <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow_win_driver.zip>`__ which may in turn require allowing installing unsigned drivers.   
+=====================================
+On a Windows machine a "PX4Flow" device should appear in Connection drop-down of the Mission Planner (and the Windows Device Manager), or be automatically recognized by QGroundControl.  If it does not you may need to download, unzip and manually install the `px4flow windows driver <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow_win_driver.zip>`__ which may in turn require allowing installing unsigned drivers.
 
 Using MissionPlanner
 ====================
@@ -51,12 +51,12 @@ Using MissionPlanner
 #. Download and unzip the `PX4Flow-KLT firmware <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__
    (`source code here <https://github.com/priseborough/px4flow/tree/klt_flow>`__)
 
-#. Connect the PX4Flow sensor to your computer using a micro USB cable.  
+#. Connect the PX4Flow sensor to your computer using a micro USB cable.
 #. Open the Initial Setup, Install Firmware screen, select the COM port and click the "Load custom firmware" link.  Select the px4flow-klt-06dec2014.px4 binary you downloaded in Step 1.  You may need to unplug and plug back in the sensor to start the upload.
 
    .. image:: ../../../images/PX4Flow_FirmUpgrade1_MP.png
        :target: ../_images/PX4Flow_FirmUpgrade1_MP.png
-       
+
 #. Disconnect and reconnect the sensor/USB cable
 #. Select the appropriate COM port and press Connect
 #. Open the Initial Setup > Optional Hardware > PX4Flow screen
@@ -69,9 +69,9 @@ Using MissionPlanner
 Using QGroundControl
 =====================================
 In order to use QgroundControl, PX4Flow and ArduPilot, you will need to complete setup and focussing with the firmware loaded by QGroundControl, and then update the firmware to be compatible with ArduPilot.
- 
+
 #. Select the Vehicle Setup page, and click the Firmware tab.
-#. Connect the PX4Flow sensor to your computer using a micro USB cable. 
+#. Connect the PX4Flow sensor to your computer using a micro USB cable.
 #. Check the "Standard Version (stable)" is selected in the right hand pane. Click "OK". QGroundControl will flash a firmware that can be used to focus the lens.
 #. Unplug and replug the sensor. Two extra tabs should appear: "PX4Flow" and "Parameters".
 #. Click "PX4Flow", remove the lens cap and point the camera at a high contrast object at least 3m away.  Remove the small screw that stops the lens from turning and adjust the focus until the image appears clearly.  This will focus the device to infinity.  Refit the screw.

@@ -18,11 +18,11 @@ consist of two classes:
 - CAN class that is responsible for representation of one physical interface on board.
   This class manages opening, setup and operation of the interface and is a main connection
   point between software and hardware
-  
+
 - CANManager class is wrapping all physical interfaces.
   It does enumeration of interfaces, provides access to them and also holds connection
   point for accessing UAVCAN managing class.
-  
+
 As a guide for implementing CAN bus support for new hardware, following :ref:`roadmap <can-bus-driver-roadmap>` can be used.
 
 UAVCAN/DroneCAN protocol
@@ -71,4 +71,3 @@ for creation of CAN driver and UAVCAN interface class.
     :maxdepth: 1
 
     CAN bus driver implementation roadmap <can-bus-driver-roadmap>
-    

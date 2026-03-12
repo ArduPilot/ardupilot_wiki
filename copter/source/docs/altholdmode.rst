@@ -29,7 +29,7 @@ information here pertains to those modes as well.
    if the air pressure is changing in your flight area due to extreme
    weather, the copter will follow the air pressure change rather than
    actual altitude.  When fitted and enabled, a downward facing rangefinder
-   such as LiDAR or SONAR will automatically provide even more accurate 
+   such as LiDAR or SONAR will automatically provide even more accurate
    altitude maintenance, up to the limit of the sensor.
 
 .. _altholdmode_controls:
@@ -136,7 +136,7 @@ Common Problems
    the copter where the autopilot is mounted which leads the
    altitude hold controller to believe it is climbing so it responds by
    descending.  There is no cure for this behaviour at the moment
-   although increasing the ``EK2_ALT_M_NSE`` parameter reduces 
+   although increasing the ``EK2_ALT_M_NSE`` parameter reduces
    the effect but increases the change of Common Problem #1
    listed above. The ``EK2_ALT_M_NSE`` parameter has a range from 0.1 to
    10.0 and allows increments of 0.1.
@@ -145,13 +145,13 @@ Common Problems
    affected by pressure changes created by prop-wash.  The solution is
    to move the autopilot out of the prop wash effect or shield
    it within an appropriately ventilated enclosure.
-#. Sudden altitude changes caused by light striking the barometer. 
+#. Sudden altitude changes caused by light striking the barometer.
 
 
 Adequate Power
 ==============
 
-It is very important that the vehicle has enough power available. 
+It is very important that the vehicle has enough power available.
 Without this the AltHold and attitude controllers can require more power
 than is available from one or more motors and will be forced to
 sacrifice some control which could lead to a loss of attitude or

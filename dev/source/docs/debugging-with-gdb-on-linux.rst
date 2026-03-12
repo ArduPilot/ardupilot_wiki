@@ -42,13 +42,13 @@ There are 3 possible ways:
 ::
 
     gdb [gdb options] --args path-to-SITL-firmware(generally in build/sitl/bin) [SITL options]
-    
+
 Example: The following launches the default Copter SITL:
 
 ::
 
     gdb --args $HOME/ardupilot/build/sitl/bin/arducopter -S -I0 --home -35.363261,149.165230,584,353 --model + --speedup 1 --defaults $HOME/ardupilot/Tools/autotest/default_params/copter.parm
-    
+
 You can also attach MAVProxy if required
 
 ::

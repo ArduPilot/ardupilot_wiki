@@ -36,7 +36,7 @@ The official instructions are `here <https://docs.microsoft.com/en-us/windows/ws
 
     * To reload the path variables in WSL either close the terminal and reopen it or use: ``logout``
 
-#. If using Windows 10 install an XWindows application to run graphical programs such as SITL by installing `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`_, `Cygwin X <https://x.cygwin.com/>`_ or `Xming <https://sourceforge.net/projects/xming/>`_ on Windows. 
+#. If using Windows 10 install an XWindows application to run graphical programs such as SITL by installing `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`_, `Cygwin X <https://x.cygwin.com/>`_ or `Xming <https://sourceforge.net/projects/xming/>`_ on Windows.
 
 #. If desired, change default WSL parameters as described `at this link <https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig>`_. These parameters allow you to set for example the amount of memory and number of processors used by WSL.
 
@@ -147,7 +147,7 @@ Git Integration with Windows Credential Manager (Optional)
 ----------------------------------------------------------
 
 Git's Credential Manager can be connected to Window's Credential Manager tokens. This connection prevents re-authentication requests when accessing remote repositories such as GitHub after closing WSL or restarting Windows. The first time a Git operation requires credentials a dialog box will appear automatically to enter your credentials.
-See this `guide <https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup>`_ for more information regarding GIT and WSL. 
+See this `guide <https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup>`_ for more information regarding GIT and WSL.
 
 .. code-block:: bash
 

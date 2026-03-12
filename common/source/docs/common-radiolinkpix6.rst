@@ -17,7 +17,7 @@ Specifications
 
 -  **Processor**
 
-  * 32-bit ARM Cortex M7 core with DPFPU - STM32F765VIT6 
+  * 32-bit ARM Cortex M7 core with DPFPU - STM32F765VIT6
   * 216 MHz/512 KB RAM/2 MB Flash
   * 32-bit IOMCU co-processor - STM32F100
   * 32KB FRAM - FM25V02A
@@ -88,9 +88,9 @@ TELEM1, TELEM2 ports
    * - Pin
      - Signal
      - Volt
-   * - 1 
-     - VCC 
-     - +5V 
+   * - 1
+     - VCC
+     - +5V
    * - 2
      - TX(OUT)
      - +3.3V
@@ -114,9 +114,9 @@ OSD
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - GND
      - GND
@@ -143,9 +143,9 @@ I2C port
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - VCC
      - +5V
@@ -166,9 +166,9 @@ CAN1, CAN2 ports
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - VCC
      - +5V
@@ -189,9 +189,9 @@ GPS1 port
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - VCC
      - +5V
@@ -218,9 +218,9 @@ GPS2 Port
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - VCC
      - +5V
@@ -247,9 +247,9 @@ SPI
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - VCC
      - +5V
@@ -282,9 +282,9 @@ POWER1
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - VCC
      - +5V
@@ -311,9 +311,9 @@ POWER2
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - VCC
      - +5V
@@ -340,9 +340,9 @@ ADC 3.3V
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - VCC
      - +5V
@@ -366,9 +366,9 @@ ADC 6.6V
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - VCC
      - +5V
@@ -386,9 +386,9 @@ USB remote port
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - USB VDD
      - +5V
@@ -409,9 +409,9 @@ SWITCH
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - VCC
      - +3.3V
@@ -429,9 +429,9 @@ Buzzer port
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - VCC
      - +5V
@@ -446,9 +446,9 @@ Spektrum/DSM Port
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - VCC
      - +3.3V
@@ -466,9 +466,9 @@ Debug port
 .. list-table::
    :header-rows: 1
 
-   * - Pin 
-     - Signal 
-     - Volt 
+   * - Pin
+     - Signal
+     - Volt
    * - 1
      - VCC
      - +5V

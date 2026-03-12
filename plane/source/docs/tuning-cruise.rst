@@ -12,7 +12,7 @@ Overview of Constant Altitude, Level Flight Operation
 
 In FBWB and CRUISE modes, without an airspeed sensor, the autopilot will set the target throttle at :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` with the throttle at mid-stick, and adjust pitch to hold altitude. The airspeed will be whatever results from the change in thrust. Raising the throttle stick will increase throttle and thereby airspeed.
 
-When using an airspeed sensor, the autopilot will use throttle position to set the target airspeed as a linear interpolation between :ref:`AIRSPEED_MAX<AIRSPEED_MAX>` and :ref:`AIRSPEED_MIN<AIRSPEED_MIN>`. And pitch will be adjusted for constant altitude flight. 
+When using an airspeed sensor, the autopilot will use throttle position to set the target airspeed as a linear interpolation between :ref:`AIRSPEED_MAX<AIRSPEED_MAX>` and :ref:`AIRSPEED_MIN<AIRSPEED_MIN>`. And pitch will be adjusted for constant altitude flight.
 
 In the automatic throttle controlled modes, :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` is used for the target airspeed if an airspeed sensor is being used, while :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` will be set for the average throttle value if no sensor is used. In AUTO and GUIDED modes, the :ref:`THROTTLE_NUDGE<THROTTLE_NUDGE>` option allows the pilot to tweak these values while in flight with the throttle, if desired, in these modes.
 
@@ -37,7 +37,7 @@ The autopilot's goal in automatic throttle modes is to obtain the correct combin
 When an Airspeed Sensor is Enabled
 ----------------------------------
 
-In FBWB or CRUISE, the target airspeed can be directly controlled with the throttle stick position. Mid throttle will set the speed as halfway between :ref:`AIRSPEED_MAX<AIRSPEED_MAX>` (high stick) and :ref:`AIRSPEED_MIN<AIRSPEED_MIN>` (low stick). 
+In FBWB or CRUISE, the target airspeed can be directly controlled with the throttle stick position. Mid throttle will set the speed as halfway between :ref:`AIRSPEED_MAX<AIRSPEED_MAX>` (high stick) and :ref:`AIRSPEED_MIN<AIRSPEED_MIN>` (low stick).
 
 .. note:: The :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` parameter should be adjusted to the average throttle value used at cruise speed. It optimizes the bias point for the speed control loops and is used in case of airspeed failure.
 
@@ -46,21 +46,21 @@ While cruising, the artificial horizon in the OSD or GCS may show an average pos
 .. image:: ../../../images/cruise_tuning.png
     :target: ../_images/cruise_tuing.png
 
-Note that the altitude is constant, but at the cruising airspeed, it requires -3deg pitch to maintain level flight. Therefore, the :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` should be decreased by 3 degrees. Note also, that the throttle is at 38%. The :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` also should be set to this value for best performance.  
+Note that the altitude is constant, but at the cruising airspeed, it requires -3deg pitch to maintain level flight. Therefore, the :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` should be decreased by 3 degrees. Note also, that the throttle is at 38%. The :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` also should be set to this value for best performance.
 
 Using :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` to adjust cruise attitude will also add an offset to the artificial horizon on a GCS or an OSD which makes the artificial horizon reflect the trimmed pitch condition of the vehicle (ie the "level" flight target attitude is 0 degrees).But this can be disabled, if it is desired that they reflect the pitch with respect the autopilots mounting plane, using the :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bitmask bits 8 and/or 9. The displayed attitude in "level" flight will now show the amount of :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` trim pitch that has been added.
 
 Without an Airspeed Sensor
 --------------------------
 
-Without an airspeed sensor, both the pitch trim and the :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` parameter would need to be changed appropriately for the desired mid-stick cruise speed. 
+Without an airspeed sensor, both the pitch trim and the :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` parameter would need to be changed appropriately for the desired mid-stick cruise speed.
 
 .. tip:: Often planes need 2 or 3 degrees of pitch trim to fly at their optimum cruising speed/throttle rather than at the fuselage/autopilot level pitch, especially small light planes or gliders. This can be done at setup by:
 
-- **(Preferred)** Add the desired degrees nose up(usually) or down to :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>`. 
+- **(Preferred)** Add the desired degrees nose up(usually) or down to :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>`.
 - Position vehicle with a few degrees nose up or down during the first, Level step of accelerometer calibration to match the cruising attitude.
 - Position vehicle with a few degrees nose up and use the  ``Calibrate Level`` button on the Mission Planner page. This adjusts the AHRS_TRIM parameters. AHRS_TRIM parameters can only change the difference between the autopilot's plane and "level" by 10 degrees maximum. If more is needed, (e.g. the autopilot is mounted slightly downward), then you can use :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` to alter the AOA manually.
 
 .. tip:: You can examine CTUN.NavPitch in the logs when at cruise speed in FBWB or CRUISE to determine the average pitch trim required in these modes. Appropriately adjusting :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` to lower this to zero when flying level in these modes.
 
-.. note:: when using :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` to adjust trim, it will be reflected in the ATT.Pitch log message, and also in the OSD and GCS horizon displays (ie level horizon pitch = :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` + the calibrated level pitch) so that the display will be level when flying "in trim" even though the plane's pitch is different than the autopilots calibrated pitch with the vehicle level with respect to fuselage chore line. 
+.. note:: when using :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` to adjust trim, it will be reflected in the ATT.Pitch log message, and also in the OSD and GCS horizon displays (ie level horizon pitch = :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` + the calibrated level pitch) so that the display will be level when flying "in trim" even though the plane's pitch is different than the autopilots calibrated pitch with the vehicle level with respect to fuselage chore line.

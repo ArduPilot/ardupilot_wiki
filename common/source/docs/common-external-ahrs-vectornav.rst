@@ -52,12 +52,12 @@ Upon initialization, ArduPilot configures the VectorNav unit as follows:
 - Configures necessary binary outputs
 - Disables ASCII outputs on both serial ports
 
-All other necessary configuration parameters must be separately loaded to the VectorNav unit manually. 
+All other necessary configuration parameters must be separately loaded to the VectorNav unit manually.
 
 - ``Baudrate``: Necessary if increasing the :ref:`EAHRS_RATE<EAHRS_RATE>` above a certain rate. The default baudrate of VectorNav sensors is 115200 bps, but is recommended to increase the baudrate on the sensor to 921600 bps and set :ref:`EAHRS_RATE<EAHRS_RATE>` to 800Hz, if possible.
 - ``Reference Frame Rotation``: Necessary if not mounted as connector-back, base-down configuration.
 - ``GNSS Antenna A Offset``: Necessary if using a GNSS-enabled product and the GNSS antenna is mounted more than 10 centimeters from the VectorNav unit.
-- ``GNSS Antenna Baseline``: Necessary if using a dual-GNSS-enabled product. 
+- ``GNSS Antenna Baseline``: Necessary if using a dual-GNSS-enabled product.
 
 After setting these parameters, the settings must be set to persist over a power cycle using a **Write Settings** command.
 
@@ -79,7 +79,7 @@ Binary Output 1 (IMU, all models)
   - Accel
   - Imu
   - MagPres
- 
+
 
 Binary Output 2 (EKF, if using VN-1X0)
 
@@ -144,7 +144,7 @@ Binary Output 3 (GNSS, if using VN-2X0 or VN-3X0)
   - GnssFix
 
 .. note::
-  The ``RateDivisor`` field sent to the sensor varies for Binary Output 1 according to :ref:`EAHRS_RATE<EAHRS_RATE>`, and is halved for the ``VN-300``. 
+  The ``RateDivisor`` field sent to the sensor varies for Binary Output 1 according to :ref:`EAHRS_RATE<EAHRS_RATE>`, and is halved for the ``VN-300``.
 
 
 ArduPilot Configuration

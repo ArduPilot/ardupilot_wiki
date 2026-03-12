@@ -27,7 +27,7 @@ Features
 * Analog RSSI input
 * 3.3V/5V configurable PWM output voltage
 
-Size 
+Size
 ====
 
 .. image:: ../../../images/7-nano/7-nano-size.png

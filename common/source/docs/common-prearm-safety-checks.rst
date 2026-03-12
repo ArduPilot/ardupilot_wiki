@@ -378,10 +378,10 @@ calibration, GPS updating at below the expected 5hz.
 
 **High GPS HDOP** : the GPS's HDOP value (a measure of the position
 accuracy) is above 2.0 and the vehicle is in a flight mode that requires
-GPS and/or the :ref:`cylindrical fence <common-ac2_simple_geofence>` is enabled. 
+GPS and/or the :ref:`cylindrical fence <common-ac2_simple_geofence>` is enabled.
 This may be resolved by simply waiting a few minutes, moving to a
 location with a better view of the sky or checking sources of GPS
-interference (i.e. FPV equipment) are moved further from the GPS. 
+interference (i.e. FPV equipment) are moved further from the GPS.
 Alternatively the check can be relaxed by increasing the :ref:`GPS_HDOP_GOOD<GPS_HDOP_GOOD>`
 parameter to 2.2 or 2.5.  Worst case the pilot may disable the fence and
 take-off in a mode that does not require the GPS (i.e. Stabilize,
@@ -412,7 +412,7 @@ hardware issue.
 unhealthy which is likely a hardware issue.  This can also occur
 immediately after a firmware update before the board has been restarted.
 
-**Gyro cal failed**: the gyro calibration failed to capture offsets. 
+**Gyro cal failed**: the gyro calibration failed to capture offsets.
 This is most often caused by the vehicle being moved during the gyro
 calibration (when red and blue lights are flashing) in which case
 unplugging the battery and plugging it in again while being careful not

@@ -23,7 +23,7 @@ Specifications
 
 -  **Processor**
 
-   -  STM32F745 32-bit processor 
+   -  STM32F745 32-bit processor
 
 -  **Sensors**
 
@@ -46,7 +46,7 @@ Specifications
    -  microSD Card Slot for logging
    -  AT7456E OSD
    -  2A 5v regulator
-   
+
 Pinout
 ======
 
@@ -61,7 +61,7 @@ Both variants include a 5-volt regulator rated for 2 amps, OSD, vibration-isolat
 **Kakute F7**
 
 .. image:: ../../../images/holybro-kakutef7.jpg
-    
+
 
 UART Mapping
 ============
@@ -96,7 +96,7 @@ The PWM outputs are marked M1-M6 in the above pinouts. The corresponding servo o
 RC Input
 ========
 
-The R6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The R6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the R6 pin can also be configured to be used as true UART RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL6 port's RX input pin.
 
@@ -116,12 +116,12 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 
 FrSky Telemetry
 ===============
- 
+
 FrSky Telemetry is supported using the T6 pin (UART6 transmit). You need to set the following parameters to enable support for FrSky S.PORT
- 
+
   - :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` 10
   - :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` 7
-  
+
 OSD Support
 ===========
 
@@ -186,7 +186,7 @@ Firmware
 Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "KakuteF7".
 
-Firmware for this board which supports :ref:`bi-directional Dshot <bidir-dshot>` is labeled "KakuteF7-bdshot". 
+Firmware for this board which supports :ref:`bi-directional Dshot <bidir-dshot>` is labeled "KakuteF7-bdshot".
 
 .. note:: Output 5 is disabled in bi-directional Dshot firmware and Output 6 only supports normal Dshot and PWM.
 

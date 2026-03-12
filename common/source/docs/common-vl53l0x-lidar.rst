@@ -12,7 +12,7 @@ The `VL53L0X <https://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html
 
 
 .. note::
-   
+
    This sensor type is suitable for indoor use, however its range and precision is significantly reduced in bright sunlight conditions and is not recommended for outdoor use.
 
 Where to Buy

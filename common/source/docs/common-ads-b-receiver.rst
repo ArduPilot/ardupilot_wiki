@@ -39,7 +39,7 @@ vertically.
 Setup
 =====
 
-Set the :ref:`ADSB_TYPE <ADSB_TYPE>` parameter to match the receiver's serial communication protocol. 
+Set the :ref:`ADSB_TYPE <ADSB_TYPE>` parameter to match the receiver's serial communication protocol.
 
 The serial port to which the receiver is connected should be configured to also match the ADSB receiver's protocol:
 
@@ -84,7 +84,7 @@ ADSB-out configuration
 .. warning::
 
    Ensure you have the correct permissions to be using ADSB hardware that is capable of transmitting. You will be showing up on air-traffic controller airport radar!
-   
+
 The following parameters are used to configure ADS-B out:
 
 -  :ref:`ADSB_ICAO_ID <ADSB_ICAO_ID>`: ICAO_ID unique vehicle identification number of this aircraft. This is a integer limited to 24bits. If set to 0 then one will be randomly generated. If set to -1 then static information is not sent, transceiver is assumed pre-programmed.
@@ -164,4 +164,3 @@ Where SERIAL_DEVICE might be /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A4008ZND
 
    :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` 1
    :ref:`SERIAL3_BAUD<SERIAL3_BAUD>` 57600
-

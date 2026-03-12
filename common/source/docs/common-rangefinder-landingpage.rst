@@ -32,11 +32,11 @@ A forward facing rangefinders can also be used for Obstacle Avoidance. See Range
    Copter can also use rangefinders for :ref:`Object Avoidance <common-object-avoidance-landing-page>`.
 [/site]
 
-   
+
 .. warning::
-   
+
    ``RNGFNDx_MAX`` must be set to a tested, appropriate value.  If ``RNGFNDx_MAX`` is set to a value
-   greater than the range of the sensor, the autopilot will not respond correctly to the 
+   greater than the range of the sensor, the autopilot will not respond correctly to the
    data provided.
 
 Follow the links below (or in sidebar) for configuration information
@@ -53,7 +53,7 @@ based upon your set-up.
 [site wiki="copter,rover"]
 
     Proximity Sensors <common-proximity-landingpage>
-    
+
 [/site]
 
 Unidirectional Rangefinders
@@ -64,7 +64,7 @@ Unidirectional Rangefinders
 
     Ainstein US-D1 Radar Altimeter <common-aerotenna-usd1>
     Ainstein LR-D1 Radar Altimerer <common-ainstein-lrd1>
-    ARK DIST MR <common-ark-dist-mr>    
+    ARK DIST MR <common-ark-dist-mr>
     ARK DIST SR <common-ark-dist-sr>
     Attollo Engineering Wasp200 <common-wasp200-lidar>
     Avionics Anonymous DroneCAN LIDAR Interface <common-avanon-laserint>
@@ -119,9 +119,6 @@ Vision Based Sensors
 
 .. toctree::
     :maxdepth: 1
-    
+
     Intel Realsense Depth Camera <common-realsense-depth-camera>
 [/site]
-
-
-

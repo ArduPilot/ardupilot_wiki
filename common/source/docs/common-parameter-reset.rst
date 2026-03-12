@@ -55,7 +55,7 @@ Using Mission Planner
 ---------------------
 
 #. Press CTRL+F to get to advanced commands.
- 
+
 #. Now restore your previously stored parameters (could have also been done as first step), which includes the calibration parameters, to the autopilot and reboot. Calibration should not be required to arm now.
 
 #. Press the "Force Accel Cal" and/or "Force Compass Cal" to set the flag which indicates the cal has been done.
@@ -66,4 +66,3 @@ Using MAVProxy
 --------------
 
 Simply type "forcecal" will force the autopilot into a calibrated state. Be sure you have valid compass and IMU calibration values already loaded.
-

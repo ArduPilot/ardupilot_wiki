@@ -33,7 +33,7 @@ This is where you can set the 6 flight modes controlled by the flight mode chann
 GeoFence (Copter only)
 ======================
 
-This allows configuration of the various Fence/Exclusion Zone/Inclusion Zone parameters. The coordinates of these fences are setup and saved via the PLAN screen. For Plane and Rover, these associated fence parameter must be set manually via the Full Parameter Screen described below. 
+This allows configuration of the various Fence/Exclusion Zone/Inclusion Zone parameters. The coordinates of these fences are setup and saved via the PLAN screen. For Plane and Rover, these associated fence parameter must be set manually via the Full Parameter Screen described below.
 
 For more information on Geo-Fences, see :ref:`geofencing`, or :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence` for Copter and Rover.
 
@@ -98,4 +98,3 @@ Full Parameter Tree
 ===================
 
 A tree style view of the Full Parameter Screen.
-

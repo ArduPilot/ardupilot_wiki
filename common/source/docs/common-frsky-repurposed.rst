@@ -6,7 +6,7 @@ FrSky Telemetry Using Repurposed Messages
 
 .. note:: this is superseded by :ref:`common-frsky-passthrough`
 
-The original solution for transmitting ArduPilot telemetry data over the FrSky telemetry link was to reuse FrSky data messages meant for another purpose and/or reserved by FrSky for their sensors. For example in this protocol the Flight mode is sent using the tmp1 message instead of the temperature. If you are not using an FrSky temperature sensor on your vehicle, this will not cause any problem. But if you intend to use temperature, other FrSky sensors, this telemetry protocol will cause conflicts with them. 
+The original solution for transmitting ArduPilot telemetry data over the FrSky telemetry link was to reuse FrSky data messages meant for another purpose and/or reserved by FrSky for their sensors. For example in this protocol the Flight mode is sent using the tmp1 message instead of the temperature. If you are not using an FrSky temperature sensor on your vehicle, this will not cause any problem. But if you intend to use temperature, other FrSky sensors, this telemetry protocol will cause conflicts with them.
 
 Once your equipment is connected and ArduPilot is configured, follow the instructions below to get standard FrSky telemetry displayed on your RC transmitter.
 

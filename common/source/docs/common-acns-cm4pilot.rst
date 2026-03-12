@@ -92,10 +92,10 @@ All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot, serial
 RC Input
 ========
 
-The SBUS pin can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry. 
+The SBUS pin can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers a UART must be configured and used (USART1 , UART4, or UART6) and their ``SERAILx_PROTOCOL`` set to "23".
- 
+
 With this option:
 
 - PPM is not supported. SBUS requires an inverter.
@@ -126,7 +126,7 @@ Then reboot.
 Buzzer
 ======
 
-An internal buzzer to play ArduPilot musical notification tones is provided on board. 
+An internal buzzer to play ArduPilot musical notification tones is provided on board.
 
 .. warning:: sometimes it is possible that integrated tone alarms will inject noise into the on board IMUs. Users may want to set :ref:`NTF_BUZZ_TYPES<NTF_BUZZ_TYPES>` to disable the built in buzzer to assure this does not occur inflight.
 
@@ -138,4 +138,3 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 "ACNS-CM4Pilot".
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

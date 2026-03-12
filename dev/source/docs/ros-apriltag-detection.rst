@@ -21,7 +21,7 @@ The messages `SET_GPS_GLOBAL_ORIGIN <https://mavlink.io/en/messages/common.html#
 
 - with Mission Planner (Right Click > Set EKF Home > Set Origin)
 
-- with the script `set_origin.py <https://github.com/anbello/aruco_gridboard/blob/master/script/set_origin.py>`__. 
+- with the script `set_origin.py <https://github.com/anbello/aruco_gridboard/blob/master/script/set_origin.py>`__.
 
 The Flight Controller and the Raspberry Pi 3 on the quadcopter are connected via serial port whereas the Raspberry Pi 3 and the desktop PC are connected via WiFi. The desktop PC is used only for configuration and visualization purposes. `RViz <http://wiki.ros.org/rviz>`__ is used for visualization on PC in ROS.
 
@@ -42,7 +42,7 @@ Software setup
 
 - :ref:`Connect RPi to ArduPilot with MAVROS <ros-connecting>`.
 
-- Install ROS driver for your camera: 
+- Install ROS driver for your camera:
 
   - For USB camera: ``sudo apt-get install ros-kinetic-usb-cam``
 
@@ -53,7 +53,7 @@ Software setup
 .. code-block:: bash
 
     # Install Apriltag library
-    cd 
+    cd
     git clone https://github.com/AprilRobotics/apriltag.git
     cd apriltag
     cmake .
@@ -76,7 +76,7 @@ Camera calibration
 Prepare the tags board
 ======================
 
-- You can print out an `example A3 size tag <https://github.com/hoangthien94/apriltags2_ros/blob/master/apriltag_ros/config/A3_bundle.pdf>`__. 
+- You can print out an `example A3 size tag <https://github.com/hoangthien94/apriltags2_ros/blob/master/apriltag_ros/config/A3_bundle.pdf>`__.
 
 - Depends on your printer setting, the actual size and location of the tags might be slightly different. Measure the true dimension of the tags and modify the `layout file <https://github.com/hoangthien94/apriltags2_ros/blob/master/apriltag_ros/config/A3_bundle.yaml>`__ accordingly.
 
@@ -121,23 +121,23 @@ First, let’s test each ROS node separately and fix any problems that arise:
   - On RPi: ``roslaunch usb_cam usb_cam-test.launch``
 
   - If RPi is not connected to a display, view the raw image on PC with Linux Ubuntu: ``export ROS_MATER_URI=http://<rpi-ip>:11311 && rqt_image_view``
-  
+
   - Verify that there are images coming from the camera.
 
 - ``MAVROS`` node:
 
   - On RPi: ``roslaunch mavros apm.launch fcu_url:=<tty-port>:<baud-rate>``
-  
+
   - Verify that MAVROS is running OK. For example, ``rostopic echo /mavros/state`` should show that FCU is “CONNECTED”.
-  
+
 - ``Apriltag node`` and ``vision_to_mavros`` node:
 
   - Make sure the ``camera_info_url`` points to the correct path to your camera’s calibration file.
-  
+
   - On RPi: ``roslaunch vision_to_mavros apriltags_to_mavros.launch``
 
   - Open up RViz and view ``/tf`` and ``/mavros/vision_pose/pose`` topics. With ``/tf``, you should see the camera pose in the tag frame, with z-axis pointing downwards. If your camera’s x-axis is pointing to the right, then ``/mavros/vision_pose/pose`` will be aligned with body frame. If the camera’s x-axis is pointing in a different direction, you need to modify the params of ``vision_to_mavros`` accordingly.
-  
+
 2. Ground test
 --------------
 If each node can run successfully, you can perform ground test:
@@ -150,7 +150,7 @@ If each node can run successfully, you can perform ground test:
 
     .. image:: ../../../images/zed-set-ekf-origin.png
         :target: ../../../images/zed-set-ekf-origin.png
-  
+
   - **Using code**: you can use this Python script `set_origin.py <https://github.com/anbello/aruco_gridboard/blob/master/script/set_origin.py>`__.
 
     - Install ``pymavlink``: Follow the instructions `here <https://github.com/ArduPilot/pymavlink#installation>`__.

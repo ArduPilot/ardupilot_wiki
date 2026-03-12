@@ -15,18 +15,18 @@ More information can be found on the `MakeFlyEasy <http://www.makeflyeasy.com/>`
 Basic Parameters
 ================
 
-- Wingspan: 2100mm 
-- VTOL arm: 744mm             
+- Wingspan: 2100mm
+- VTOL arm: 744mm
 - Fuselage height: 156mm (without foot pads)
-- Fuselage length: 1200mm            
+- Fuselage length: 1200mm
 - Wing area: 59dm2
-- Cruising speed: 18-21m/s 
+- Cruising speed: 18-21m/s
 - Max. payload: 1kg
 - Maximum takeoff weight: Less than 7.5kg
 - Maximum takeoff altitude: 3000m(altitude)
-- Practical lift altitude: 4500m(altitude)  
+- Practical lift altitude: 4500m(altitude)
 - Wind resistance: Class 5 (normal operation)
-- Takeoff mode: vertical takeoff and landing         
+- Takeoff mode: vertical takeoff and landing
 - Disassembly and assembly method: tool-less quick disassembly
 - Load compartment size:180×150×110mm
 - Transport box inch: 1.07×0.35×0.48m

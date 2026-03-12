@@ -41,7 +41,7 @@ Next setup the thrust expo. If you are setting up a professional
 aircraft then you should invest in a thrust stand so you can
 accurately measure the true thrust for your motor/ESC/propeller
 combination as you vary the throttle. Then you will adjust the expo
-value along with the endpoints (given by motors setup below) so that the thrust between the endpoints is as linear as possible. Do not trust manufacturer data for the thrust curve as they 
+value along with the endpoints (given by motors setup below) so that the thrust between the endpoints is as linear as possible. Do not trust manufacturer data for the thrust curve as they
 are frequently inaccurate. See :ref:`motor-thrust-scaling` for
 details on thrust scaling.
 
@@ -234,17 +234,17 @@ lose yaw control during transitions, or could lose roll and pitch
 stability. The most common symptom is a high hover throttle point, or even the inability to rise into a hover at high throttle stick position. For larger QuadPlanes it is common to need to deliberately
 tilt the motors by a couple of degrees to increase yaw authority.
 
-.. note:: for an X frame type (:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` = 1), 
-    the motors should be tilted outwards. 
+.. note:: for an X frame type (:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` = 1),
+    the motors should be tilted outwards.
     For an H frame (:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` = 3) they should be tilted inwards.
 
 You should check the amount of thrust being used to maintain yaw by
 looking at the RATE YOut value in your hover logs. If it is over 10%
 (a value of 0.1) when hovering in no wind with no pilot input,then you have a problem with
-yaw asymmetry that should be fixed. Just hovering in place may look fine 
+yaw asymmetry that should be fixed. Just hovering in place may look fine
 and you may not see the problem until you examine the log.
 
-The log below shows RATE.YOut (orange) increasing dramatically while motor 1 (RCOUT.C5) 
+The log below shows RATE.YOut (orange) increasing dramatically while motor 1 (RCOUT.C5)
 is idling and motor 2 (RCOUT.C6) is barely working,
 but at the same time motor 3 (RCOUT.C7) and motor 4 (RCOUT.C8) are are running > 50% output. This limits how much higher the firmware could raise the overall thrust due to these motors maxing out.
 
@@ -461,7 +461,7 @@ For aircraft designed to carry large directly mounted payloads, the maximum valu
 
 :ref:`Q_A_ANG_LIM_TC <Q_A_ANG_LIM_TC>` may be increased to provide a very smooth feeling on the sticks at the expense of a slower reaction time.
 
-Aerobatic aircraft should keep the :ref:`Q_A_ACC_P_MAX<Q_A_ACC_P_MAX>`, :ref:`Q_A_ACC_R_MAX<Q_A_ACC_R_MAX>` and :ref:`Q_A_ACC_Y_MAX<Q_A_ACC_Y_MAX>` provided by QAUTOTUNE and reduce :ref:`Q_A_ANG_LIM_TC <Q_A_ANG_LIM_TC>` to achieve the stick feel desired by the pilot. 
+Aerobatic aircraft should keep the :ref:`Q_A_ACC_P_MAX<Q_A_ACC_P_MAX>`, :ref:`Q_A_ACC_R_MAX<Q_A_ACC_R_MAX>` and :ref:`Q_A_ACC_Y_MAX<Q_A_ACC_Y_MAX>` provided by QAUTOTUNE and reduce :ref:`Q_A_ANG_LIM_TC <Q_A_ANG_LIM_TC>` to achieve the stick feel desired by the pilot.
 
 The full list of input shaping parameters are:
 
@@ -483,4 +483,3 @@ The full list of input shaping parameters are:
 - :ref:`Q_LOIT_BRK_DELAY <Q_LOIT_BRK_DELAY>`
 - :ref:`Q_LOIT_BRK_JRK_M<Q_LOIT_BRK_JRK_M>`
 - :ref:`Q_LOIT_SPEED_MS<Q_LOIT_SPEED_MS>`
-

@@ -261,14 +261,14 @@ could lead to loss of control even in Acro mode. We will attempt to
 remedy this situation in the future so that all maneuvers can be
 performed.
 
-ACRO_BAL_PITCH = 50 
+ACRO_BAL_PITCH = 50
 
-ACRO_BAL_ROLL = 50 
+ACRO_BAL_ROLL = 50
 
-ACRO_P = 4.5 
+ACRO_P = 4.5
 
 ACRO_TRAINER =
-0 
+0
 
 AXIS_ENABLE = 1
 

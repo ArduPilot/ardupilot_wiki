@@ -4,7 +4,7 @@
 Balance Bots
 =================
 
-ArduPilot Rover includes support for Self Balancing Robots or Balance Bots. This section provides instructions for configuring Rover to run on Balance Bots. 
+ArduPilot Rover includes support for Self Balancing Robots or Balance Bots. This section provides instructions for configuring Rover to run on Balance Bots.
 
 ..  youtube:: EmhTBPNDpWw
     :width: 100%
@@ -24,9 +24,3 @@ Get Started
     Testing the Balance Bot <balance_bot-testing>
     Tuning the Balance Bot <balance_bot-tuning>
     Common Issues and Fixes<balance_bot-issues>
-
-
-
-
-
-

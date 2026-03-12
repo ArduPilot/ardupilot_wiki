@@ -44,10 +44,10 @@ many different sources, including ArduPilot Partners:
 
 .. tip::
 
-   If you're looking for an alternative, the 
+   If you're looking for an alternative, the
    :ref:`RFD900 Radio Modem <common-rfd900>` is highly recommended by many community members
    (The SiK platform was based on the RFD900 and both platforms have
-   continued to evolve). It provides a significantly better range. 
+   continued to evolve). It provides a significantly better range.
 
 Features
 ========
@@ -148,7 +148,7 @@ directions in your :ref:`preferred Ground Station app <common-choosing-a-ground-
 .. image:: ../../../images/Telemetry_3DR_Radio_Tablet.jpg
     :target: ../_images/Telemetry_3DR_Radio_Tablet.jpg
 
-    
+
 .. _common-sik-telemetry-radio_configuring_using_the_mission_planner:
 
 Configuring using the Mission Planner

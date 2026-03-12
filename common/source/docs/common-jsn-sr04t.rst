@@ -2,7 +2,7 @@
 Waterproof JSN-SR04T Ultrasonic Distance Sensor
 ===============================================
 
-The JSN-SR04T is an ultrasonic distance sensor. There are two versions v2.0 and v3.0. They differ in the range of action. 
+The JSN-SR04T is an ultrasonic distance sensor. There are two versions v2.0 and v3.0. They differ in the range of action.
 v2.0 with a range of 25 to 450 cm.
 v3.0 with a range of 20 to 600 cm. Also more stable.
 The very short range makes it of limited use.

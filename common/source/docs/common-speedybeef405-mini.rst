@@ -111,7 +111,7 @@ Channels within the same group need to use the same output rate. If any channel 
 RC Input
 ========
 
-The SBUS pin, is passed by an inverter to RX2 (UART2 RX), which can be used for all ArduPilot supported receiver protocols, except PPM/CRSF/ELRS and SRXL2. CRSF/ELRS and SRXL2 require the RX2 and TX2 pin be connected instead of the SBUS pin. 
+The SBUS pin, is passed by an inverter to RX2 (UART2 RX), which can be used for all ArduPilot supported receiver protocols, except PPM/CRSF/ELRS and SRXL2. CRSF/ELRS and SRXL2 require the RX2 and TX2 pin be connected instead of the SBUS pin.
 
 - SRXL2 requires :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` be set to "4".
 - Fport should be connected to TX2 via a bi-directional inverter and :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` be set to "4".
@@ -160,4 +160,3 @@ This board does not come with ArduPilot firmware pre-installed. Use instructions
 Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "SpeedyBeeF405Mini". Only Copter firmware is pre-built since this autopilot is very targeted for that application.
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

@@ -13,7 +13,7 @@ The first and simplest is to restrict :ref:`THR_MAX<THR_MAX>` to a lower value. 
 
 A better way is to use one or more of the power limiting parameters:
 
--  :ref:`BATT_WATT_MAX<BATT_WATT_MAX>` 
+-  :ref:`BATT_WATT_MAX<BATT_WATT_MAX>`
 
 The :ref:`BATT_WATT_MAX<BATT_WATT_MAX>` parameter (``BATTx_WATT_MAX``, for any additional batteries) to limit the total instantaneous power that can be drawn from the battery(s) by the forward motors. This will help issues during QuadPlane transitions.
 
@@ -27,7 +27,7 @@ Since this limit is applied to the throttle slowly (~10%/second), it may not rea
 
 This can be used to limit the maximum current when the VTOL motors are active. Power will be reduced to the VTOL motors to prevent exceeding this value.
 
--  :ref:`Q_M_BAT_VOLT_MIN<Q_M_BAT_VOLT_MIN>` 
+-  :ref:`Q_M_BAT_VOLT_MIN<Q_M_BAT_VOLT_MIN>`
 
 This has two effects if non-zero. First, it sets the lower limit for thrust scaling versus voltage. If :ref:`Q_M_BAT_VOLT_MAX<Q_M_BAT_VOLT_MAX>` is non-zero, then voltage compensation is applied to throttle to offset battery voltage variations on thrust. Second, it sets a lower limit on battery voltage sag by predicting the throttle value that would cause this, using an estimate of battery internal resistance calculated during flight. It will limit current applied to the VTOL motors to prevent this from occurring. If :ref:`Q_M_BAT_CURR_MAX<Q_M_BAT_CURR_MAX>` is also  non-zero, then it will use the lower of the two limits, the one set by :ref:`Q_M_BAT_CURR_MAX<Q_M_BAT_CURR_MAX>` or predicted internally using :ref:`Q_M_BAT_VOLT_MIN<Q_M_BAT_VOLT_MIN>`  as the minimum voltage sag target.
 

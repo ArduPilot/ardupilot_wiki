@@ -15,7 +15,7 @@ The default options for the autopilot can be left enabled, and just the enable t
 
 The GPS should be configured, and all the normal setup calibrations should be done as if it were a normal plane autopilot. However, it will not have any outputs functions, or servos/motors attached. It merely "rides along" to record information.
 
-In order to function properly, it will need to auto arm itself in the air. 
+In order to function properly, it will need to auto arm itself in the air.
 
 The ``BBOX_SPD`` parameter should be set to a speed in meters/second when the arming will occur after the vehicle is launched and flying, . Default is 5m/s.
 

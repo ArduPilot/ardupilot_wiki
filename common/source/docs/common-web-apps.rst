@@ -6,7 +6,7 @@ Web Apps
 
 ARCHIVED TOPIC: out of date and no longer needed
 
-There are several web applications which can be used with Copter/Plane/Rover to allowing sharing flight data, videos or even allowing web based control.  
+There are several web applications which can be used with Copter/Plane/Rover to allowing sharing flight data, videos or even allowing web based control.
 Below is the list of known applications (in alphabetical order).
 
 .. image:: ../../../images/webapps_titleimage2.jpg

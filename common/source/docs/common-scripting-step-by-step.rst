@@ -26,7 +26,7 @@ Mavproxy ground control station will automatically be started. You can also star
 
         cp libraries/AP_Scripting/examples/hello_world.lua scripts/
 
-#. Again, restart the simulation. 
+#. Again, restart the simulation.
 #. You should now observe the following in console.
 
     .. image:: ../../../images/LuaHelloWorld.png

@@ -16,7 +16,7 @@ Features such as multiple screen switching, multiple units and statistics are su
 
 - HDZero
 - Walksnail
-- DJI goggles using the `wtf-os <https://github.com/fpv-wtf/wtfos>`__ firmware and `msdp-osd module <https://github.com/fpv-wtf/msp-osd>`__, and 
+- DJI goggles using the `wtf-os <https://github.com/fpv-wtf/wtfos>`__ firmware and `msdp-osd module <https://github.com/fpv-wtf/msp-osd>`__, and
 - MWOSD's DisplayPort mode/firmware
 
 Stick commands for accessing HDZero's VTX Menu and Camera Menu, or 0mW mode also work.
@@ -109,7 +109,7 @@ The options are:
 - 1 = directly selects a screen based on the set pwm limits for each respective screen. RC channel value must change for new pwm value to be recognized.
 - 2 = toggles screens on a low to high transition of set RC channel. keeps toggling to next screen every second while channel value is kept high
 
-A limitation of telemetry based OSDs is that there's no way for ArduPilot to add new panel items at will, it's the vendor's responsibility to add new features by rolling out new firmware releases. 
+A limitation of telemetry based OSDs is that there's no way for ArduPilot to add new panel items at will, it's the vendor's responsibility to add new features by rolling out new firmware releases.
 
 Displaying statistics on a dedicated screen
 ===========================================
@@ -129,7 +129,7 @@ When the OSD switches to this screen it will check the value of the :ref:`OSD2_S
 
 Using Mission Planner to Configure the Layout
 =============================================
-Mission Planner(MP) has a tab in its CONFIG menu to configure the on-board OSD many autopilots integrate, as well as setup layouts for Displayport OSDs. This same configuration tab can be used to configure the OSD panels. 
+Mission Planner(MP) has a tab in its CONFIG menu to configure the on-board OSD many autopilots integrate, as well as setup layouts for Displayport OSDs. This same configuration tab can be used to configure the OSD panels.
 
 .. note:: Mission Planners' OSD setup screen now supports HD OSD configuration. To enable it check "HD Layout" in Editor Options at the top right of the OSD screen you want to change.
 

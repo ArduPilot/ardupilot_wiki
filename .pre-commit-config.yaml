@@ -5,6 +5,14 @@
 #  pre-commit run --all-files: run all the hooks against all the files. This is a useful invocation if you are using pre-commit in CI.
 
 repos:
+  -   repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v6.0.0
+      hooks:
+        - id: trailing-whitespace
+          types_or: [rst]
+        - id: end-of-file-fixer
+          types_or: [rst]
+
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.2
     hooks:
@@ -31,11 +39,9 @@ repos:
           - --disable=backtick-before-role
           - --disable=horizontal-tab
           - --disable=hyperlink-reference-missing-backtick
-          - --disable=missing-final-newline
           - --disable=missing-space-after-literal
           - --disable=missing-space-after-role
           - --disable=missing-space-before-default-role
           - --disable=missing-space-before-role
           - --disable=missing-underscore-after-hyperlink
-          - --disable=trailing-whitespace
           - --disable=unbalanced-inline-literals-delimiters

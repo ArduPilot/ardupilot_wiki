@@ -7,8 +7,8 @@ Archived:PPM Encoder APM 2.x Atmega 32U2 (8 Channel PPM Encoder)
 .. warning::
 
     **ARCHIVED**
-    
-    The APM2.x is end of life for use with ArduPilot. 
+
+    The APM2.x is end of life for use with ArduPilot.
     This article is made available for existing users.
 
 This article describes the PPM Encoder that is embedded in APM2.5/6

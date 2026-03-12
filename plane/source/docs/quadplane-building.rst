@@ -83,7 +83,7 @@ achieved with a properly setup quadplane.
 
 ..  youtube:: 4oVlSQaplZc
     :width: 100%
-            
+
 A second factor that can help with QuadPlane range is the flexibility
 available in choosing the propeller and power train for the forward
 motor. As conventional takeoff is not needed the forward motor does

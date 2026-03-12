@@ -4,7 +4,7 @@
 Using SITL with legacy versions of Gazebo
 =========================================
 
-This article explains how to use legacy versions of Gazebo 
+This article explains how to use legacy versions of Gazebo
 https://classic.gazebosim.org/ as an external simulator for
 ArduPilot Rover, Copter and Plane.
 
@@ -62,7 +62,7 @@ The following plugin is a pure Gazebo plugin, so ROS is not needed to use it. Yo
 We have  two version of the plugin : khancyr and SwiftGust one's.
 The one from `khancyr <https://github.com/khancyr/ardupilot_gazebo>`__ is the original one. It is stable and only has necessary file to work.
 The one from `SwiftGust <https://github.com/SwiftGust/ardupilot_gazebo>`__  has more examples and a little bit more documentation.
-Both use the same plugin, they only differ in the documentation and examples they provide. 
+Both use the same plugin, they only differ in the documentation and examples they provide.
 
 We will be using khancyr plugin for the following explanation. First clone it somewhere in your home directory. (If you need help with git, please see :ref:`installed git <git-install>`, :ref:`forked <git-fork>` and :ref:`cloned <git-clone>`.)
 

@@ -6,7 +6,7 @@ Autopilot System Assembly Instructions
 
 This section contains the instructions for assembling the "essential
 components" of Copter on Pixhawk and other autopilots. The
-instructions for adding other hardware are covered in 
+instructions for adding other hardware are covered in
 :ref:`Optional Hardware <common-optional-hardware>`.
 
 .. toctree::

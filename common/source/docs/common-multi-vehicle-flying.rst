@@ -11,7 +11,7 @@ single ground station. Although this capability has been demonstrated
 
 .. note::
 
-   This example has been greatly surpassed by `Michael Clement's 50 plane demonstration <https://diydrones.com/profiles/blogs/from-zero-to-fifty-planes-in-twenty-seven-minutes>`__\ 
+   This example has been greatly surpassed by `Michael Clement's 50 plane demonstration <https://diydrones.com/profiles/blogs/from-zero-to-fifty-planes-in-twenty-seven-minutes>`__\
 
 ..  youtube:: M4LxtYa94nk
     :width: 100%

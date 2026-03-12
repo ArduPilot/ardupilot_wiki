@@ -52,7 +52,7 @@ Clone the source:
 
 ::
 
-    cd 
+    cd
     git clone --recurse-submodules https://github.com/erlerobot/ardupilot.git
     cd ardupilot
 

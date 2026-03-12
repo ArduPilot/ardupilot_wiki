@@ -57,7 +57,7 @@ Specifications
    -  2 Power ports (Power A is an ADC interface, Power C is a DroneCAN battery interface)
    -  2 ADC input ports
    -  2 USB ports (Type C and JST-GH1.25)
- 
+
 
 -  **Other**
 
@@ -74,7 +74,7 @@ Default UART Order
 - SERIAL2 = Telemetry2 = USART6 (TELEM2)
 - SERIAL3 = GPS1 = USART1 (GPS)
 - SERIAL4 = GPS2 = UART4 (UART4)
-- SERIAL5 = USER = UART8 
+- SERIAL5 = USER = UART8
 - SERIAL6 = USER = UART7 (DEBUG TX/RX)
 - SERIAL7 = USER = UART3
 
@@ -102,10 +102,10 @@ Pinouts
 
 .. image:: ../../../images/cuav_autopilot/nora/nora-pinouts.jpg
     :target: ../_images/nora-pinouts.jpg
-    
+
 Flight video
 ============
-  
+
 .. youtube:: Kh_6TynYqEI
     :width: 100%
 

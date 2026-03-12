@@ -41,6 +41,6 @@ Perform each of the calibration wizards shown below
     Flight Modes <flight-modes>
 
 You may also wish to perform:
-    
+
 -  Failsafe calibration
 -  3DR radio setup

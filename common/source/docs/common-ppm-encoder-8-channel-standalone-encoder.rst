@@ -7,8 +7,8 @@ PPM Encoder AT328P 8 Channel Standalone Encoder
 .. warning:: **ARCHIVED**
 
 This article describes the standalone PPM Encoder that can be purchased
-from `jDrones <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__. 
-It is provided for use in the (very unlikely) event that the encoder needs 
+from `jDrones <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__.
+It is provided for use in the (very unlikely) event that the encoder needs
 to be reprogrammed.
 
 Overview
@@ -45,16 +45,16 @@ instructions, `view the manual here <https://download.ardupilot.org/downloads/wi
 
 .. image:: ../../../images/jDrones_PPM_Encoder_V21_Above_with_numbers_500px.jpg
     :target: ../_images/jDrones_PPM_Encoder_V21_Above_with_numbers_500px.jpg
-	
+
 - Numbers 1-8, connects to your RC-Receiver
-- Cable marked with P, connects to Pixhawk PPM/RC Input 	
+- Cable marked with P, connects to Pixhawk PPM/RC Input
 
 
 Re-Programming the Atmega328p PPM encoder
 =========================================
 
 **Note**: !The PPM Encoder comes with the PPM encoder firmware
-pre-programmed, and most users will never need or want to modify it.  
+pre-programmed, and most users will never need or want to modify it.
 However, some users may want to get into the code to change the way the
 PPM Encoder interprets RC signals or may want to update to the latest
 version. Some rare users did report receiver compatility problems with
@@ -120,7 +120,7 @@ your version number)
 .. image:: ../../../images/windows_cmd_avrdude_11.png
     :target: ../_images/windows_cmd_avrdude_11.png
 
-If it all went well, the following output should appear:   
+If it all went well, the following output should appear:
 
 .. image:: ../../../images/windows_cmd_avrdude_21.png
     :target: ../_images/windows_cmd_avrdude_21.png

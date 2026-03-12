@@ -29,7 +29,7 @@ By changing the OSD panel items' parameters, a live update of their placement ca
 
 Onboard OSD
 ===========
-OSD functionality can be tested without autopilot- or video-hardware using a :ref:`Software In The Loop (SITL) simulator <dev:sitl-simulator-software-in-the-loop>` setup. Follow the SITL-Instructions to setup a simulation environment. Run the simulator on current source code. 
+OSD functionality can be tested without autopilot- or video-hardware using a :ref:`Software In The Loop (SITL) simulator <dev:sitl-simulator-software-in-the-loop>` setup. Follow the SITL-Instructions to setup a simulation environment. Run the simulator on current source code.
 
 A graphical OSD simulation in a separate window can be opened by adding the following option to sim_vehicle.py::
 

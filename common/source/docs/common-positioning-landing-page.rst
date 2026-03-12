@@ -15,7 +15,7 @@ GPS/Compass
 ===========
 .. toctree::
     :maxdepth: 1
-    
+
     ARK GPS <common-ark-gps>
     ARK DAN GPS <common-ark-dan-gps>
     ARK SAM GPS <common-ark-sam-gps>
@@ -29,10 +29,10 @@ GPS/Compass
     CUAV Neo 3（M9N) GPS <common-cuav-neo-3>
     CUAV Neo 3X(Water proof) GPS <common-cuav-neo-3x>
     CubePilot Here 2 DroneCAN GPS/Gyro/IMU/Baro <https://docs.cubepilot.org/user-guides/here-2/updating-here-2-firmware>
-    Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>    
-    Holybro Micro M9N GPS Module <https://holybro.com/collections/gps/products/micro-m9n-gps> 
-    Holybro Micro M10 GPS Module <https://holybro.com/products/micro-m10-gps/> 
-    Holybro Nano Ublox M8 5883 GPS Module <https://shop.holybro.com/nano-ublox-m8-5883-gps-module_p1236.html> 
+    Holybro DroneCAN M8/M9 GPS <https://shop.holybro.com/dronecan-m8n-m9n-gps_p1335.html>
+    Holybro Micro M9N GPS Module <https://holybro.com/collections/gps/products/micro-m9n-gps>
+    Holybro Micro M10 GPS Module <https://holybro.com/products/micro-m10-gps/>
+    Holybro Nano Ublox M8 5883 GPS Module <https://shop.holybro.com/nano-ublox-m8-5883-gps-module_p1236.html>
     Holybro M8N (Pixhawk 4) GPS Module <https://holybro.com/collections/gps-rtk-systems/products/m8n-gps>
     Holybro M9N GPS Module (UART) <https://holybro.com/collections/gps-rtk-systems/products/m9n-gps>
     Holybro M9N GPS Module (DroneCAN) <https://holybro.com/collections/gps/products/dronecan-m9n-gps>
@@ -159,8 +159,8 @@ When using two GPS units there are a number of switching options that can be sel
     Blend is best suited for use with two identical GPS units, see :ref:`GPS blending<common-gps-blending>`
 
 - 4: Use primary if 3D fix or better
-    Use primary GPS as set with :ref:`GPS_PRIMARY <GPS_PRIMARY>` if it has a 3D fix or better. This should be used when two dissimilar GPS units are used, one high quality primary unit, and a secondary less accurate unit. In this case the 
-    high quality GPS will often have a better quality fix even if it has fewer satellites. Using 'Use best' in this case would result in using the poorer quality GPS and result in more switching between GPS units. Unlike 'Use Primary' this option 
+    Use primary GPS as set with :ref:`GPS_PRIMARY <GPS_PRIMARY>` if it has a 3D fix or better. This should be used when two dissimilar GPS units are used, one high quality primary unit, and a secondary less accurate unit. In this case the
+    high quality GPS will often have a better quality fix even if it has fewer satellites. Using 'Use best' in this case would result in using the poorer quality GPS and result in more switching between GPS units. Unlike 'Use Primary' this option
     still allows falling back to the secondary GPS if 3D fix is lost on the primary.
 
 An additional variation with GPS switching is :ref:`EKF3 affinity and lane switching <common-ek3-affinity-lane-switching>`. An EKF lane can be setup to use either GPS and the whole EKF lane is then switched based on its health. If the :ref:`GPS_PRIMARY <GPS_PRIMARY>` is used for a lane, and :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` is enabled, then the lane will use GPS info as determined by the :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` setting.

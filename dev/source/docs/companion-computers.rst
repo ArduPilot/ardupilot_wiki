@@ -15,7 +15,7 @@ sensors or actuate lights, auxiliary servos or any other interfaces.
 There are two major parts to Companion Computers - hardware and software.
 
 The Companion Computer hardware refers to the specific computer hardware being used.
-This is typically a small ARM-based Single Board Computer. Specific tutorials for 
+This is typically a small ARM-based Single Board Computer. Specific tutorials for
 popular Companion Computer hardware are listed below.
 
 .. toctree::
@@ -38,8 +38,8 @@ popular Companion Computer hardware are listed below.
     VoidRay <https://idrobots.com/product/void-ray>
 
 The Companion Computer software refers to the programs and tools that run on the Companion
-Computer. They will take in MAVLink telemetry from the Flight Controller and can route and 
-process the telemetry data. Specific tutorials for popular Companion Computer software 
+Computer. They will take in MAVLink telemetry from the Flight Controller and can route and
+process the telemetry data. Specific tutorials for popular Companion Computer software
 tools/suites are listed below.
 
 .. toctree::
@@ -62,4 +62,3 @@ A number of vendors also offer turnkey systems. See the below link for details.
     :maxdepth: 1
 
     Turnkey Companion Computer Solutions <turnkey-companion-computer-solutions>
-

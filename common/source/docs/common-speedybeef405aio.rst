@@ -20,7 +20,7 @@ Features
 * 8MBytes for logging
 * 5V Power Out: 2.0A max
 * Dimensions: 33x33mm
-* Mounting Holes: Standard 25.5/25.5mm square to center of holes 
+* Mounting Holes: Standard 25.5/25.5mm square to center of holes
 * Weight: 13.6g
 * Built-in 40A BlueJay 4in1 ESC (Bluejay JH-40 48kHz)
 * Input Voltage: 3S-6S Lipo
@@ -112,7 +112,7 @@ Firmware
 ========
 Firmware for this board can be found: `here <https://firmware.ardupilot.org>`__ in sub-folders labeled “SpeedyBeeF405AIO”.
 
-Loading Firmware 
+Loading Firmware
 ================
 Initial firmware load can be done with DFU by plugging in USB with the
 bootloader button pressed. Then you should load the "with_bl.hex"

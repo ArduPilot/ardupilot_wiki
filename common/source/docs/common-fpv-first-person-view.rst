@@ -85,7 +85,7 @@ FPV Flight with HD video footage from GoPro camera
    :width: 400
    :height: 400
 
-Euan Ramsey's APM2 powered `TBS Discovery <https://diydrones.com/profiles/blogs/tbs-disco-apm-mounting-suggestion>`__. 
+Euan Ramsey's APM2 powered `TBS Discovery <https://diydrones.com/profiles/blogs/tbs-disco-apm-mounting-suggestion>`__.
 Note the TBS frame spreads the 2 front arms apart so the blades don't
 interfere with the FPV and allow the camera to easily be mounted in
 front

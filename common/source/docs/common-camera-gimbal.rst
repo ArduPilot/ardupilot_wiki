@@ -107,5 +107,5 @@ Other Parameters
 Since servos in the gimbal may react slower to position/angle changes in the vehicle's roll and pitch as the vehicle moves about a target, the camera shot may have some visible lag in it. This can be reduced by using these parameters to have the gimbal outputs move a bit ahead of the movements of the vehicle.
 
 
-- :ref:`MNT1_LEAD_RLL<MNT1_LEAD_RLL>` 
+- :ref:`MNT1_LEAD_RLL<MNT1_LEAD_RLL>`
 - :ref:`MNT1_LEAD_PTCH<MNT1_LEAD_PTCH>`

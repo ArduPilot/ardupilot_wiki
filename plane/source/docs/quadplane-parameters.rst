@@ -128,4 +128,3 @@ Behavior can be modified as well as by the :ref:`Q_RTL_MODE<Q_RTL_MODE>` and :re
    inherited from the plane code, which disables inertial estimation of
    attitude and position if GPS lock is not available. Do not try to fly a
    QuadPlane indoors. It will not fly well!!!!
-

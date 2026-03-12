@@ -13,7 +13,7 @@ Setup
 =====
 the following examples are for the first Battery Monitor. The parameter names will be ``BATTx`` prefaced for other monitors usage.
 
-- :ref:`BATT_MONITOR <BATT_MONITOR>` = 25 
+- :ref:`BATT_MONITOR <BATT_MONITOR>` = 25
 
 For Voltage, the normal Analog Sensor parameters apply:
 

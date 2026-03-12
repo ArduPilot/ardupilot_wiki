@@ -35,5 +35,3 @@ Swim Features
 * Configurable Failsafes for system component failures, see :ref:`failsafe-landing-page`
 * Subsurface Terrain Following and Surface Tracking, see :ref:`modes`
 * Extensive GCS Button Action Support, see :ref:`buttons`
-
-

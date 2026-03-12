@@ -36,7 +36,7 @@ Specifications
 
 -  **Sensors**
 
-   -  InvenSense MPU6000 IMU or ICM42668P (accel, gyro) 
+   -  InvenSense MPU6000 IMU or ICM42668P (accel, gyro)
    -  BMP280 barometer
    -  Voltage & 100A Current sensor (AIO version only)
 
@@ -64,7 +64,7 @@ Specifications
    - 8.5g for V1.2, 9.4g for V3
 
    **Size and Dimensions Nano**
-   
+
    - 22mm x 23.5mm (16mm x16mm mount pattern)
    - 2.3g
 
@@ -84,14 +84,14 @@ Nano
 
 .. image:: ../../../images/GOKUGN745AIO-nano_Pinout.jpg
     :target: ../_images/GOKUGN745AIO-nano_Pinout.jpg
-    
+
 Default UART order
 ==================
 
 - SERIAL0 = console = USB
 - SERIAL1 = Telemetry1 = USART1 (RX pin only in AIO V3)
 - SERIAL2 = Telemetry2 = USART2
-- SERIAL3 = RC Input = USART3 
+- SERIAL3 = RC Input = USART3
 - SERIAL4 = USER = USART4
 - SERIAL5 = USER = UART5
 - SERIAL6 = GPS = USART6
@@ -128,7 +128,7 @@ The Nano version has 4 esc signals, current and voltage sense inputs on an exter
 .. note:: for users migrating from BetaflightX quads using the Nano, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX)
 
 
 The PWM are in 5 groups: 1/2/7/8, 3/4, 5, 6

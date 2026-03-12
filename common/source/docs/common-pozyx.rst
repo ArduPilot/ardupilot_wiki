@@ -49,7 +49,7 @@ At this point you may wish to test the tag's ability to communicate with the tag
 
 Mount the Pozyx tag on the top of the Arduino Uno and then mount on the vehicle.
 
-Configuration through the Ground Station 
+Configuration through the Ground Station
 ========================================
 
 Connect with a Ground Station and set the following parameters:

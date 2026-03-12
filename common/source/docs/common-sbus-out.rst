@@ -48,7 +48,7 @@ Connecting Servos to a Serial Port
 ----------------------------------
 
 SBus servos can also be controlled from any of the autopilot's serial ports. The protocol uses inverted logic levels (unidirectional: output only) meaning an inverting cable is required when using a standard serial port, if the autopilot is not capable of internally inverting the signals.
-Autopilots using an F7 or H7 processor can internally invert the serial port's TX pin. 
+Autopilots using an F7 or H7 processor can internally invert the serial port's TX pin.
 Below is a diagram showing a simple NPN transistor inverter which will suffice:
 
 .. image:: ../../../images/sbus/sbus_inverter.png
@@ -60,7 +60,7 @@ Alternatively, a commercial `SPort inverter <https://www.amazon.com/Telemetry-Co
 .. warning:: do not power the servo from the serial port's 5V, use the systems servo power bus!
 
 - Set the :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 15 ("SBUS servo out") if using Serial2 (normally TELEM2).  For other serial ports use the appropriate ``SERIALx_PROTOCOL`` parameter.
-- The port's baud rate parameter (in this case :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` ) will automatically be set to 100,000 
+- The port's baud rate parameter (in this case :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` ) will automatically be set to 100,000
 - For F7/H7 processors an inverter is unnecessary, set :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` bit 1  to "1" (TX invert) if connecting to Serial port 2.
 
 SBUS to PWM Decoders

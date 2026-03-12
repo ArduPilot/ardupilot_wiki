@@ -19,7 +19,7 @@ The system uses `ROS <http://www.ros.org/>`__ for all the tasks it has to do. Th
 
 The ROS node raspicam_node publish camera/image and camera/camera_info topics, the node aruco_gridboard subscribes to these topics and publish a camera_pose message to the mavros/vision_pose/pose topic, mavros translates ROS messages in MAVLink messages and send it to the Flight Controller.
 
-The messages SET_GPS_GLOBAL_ORIGIN and a SET_HOME_POSITION are sent with a `script <https://github.com/anbello/aruco_gridboard/blob/master/script/set_origin.py>`__ before starting to use the system. 
+The messages SET_GPS_GLOBAL_ORIGIN and a SET_HOME_POSITION are sent with a `script <https://github.com/anbello/aruco_gridboard/blob/master/script/set_origin.py>`__ before starting to use the system.
 
 The Flight Controller and the Raspberry Pi 3 on the quadcopter are connected via serial port whereas the Raspberry Pi 3 and the desktop PC are connected via WiFi. The desktop PC is used only for configuration and visualization purposes. `rviz <http://wiki.ros.org/rviz>`__ from ROS is used for visualization on PC.
 
@@ -47,7 +47,7 @@ Components of the system
     SERIAL1_PROTOCOL 2
     SYSID_MYGCS 1   (to accept control from mavros)
     VISO_TYPE 0
-	
+
 - On the quadcopter there is a Raspberry Pi 3 (connected to Flight Controller with serial port) and a Raspberry Pi Camera
 - On the Raspberry Pi there is ROS Kinetic with raspicam_node, aruco_gridboard and mavros packages.
 
@@ -170,7 +170,7 @@ The last step (for now) is to test an all autonomous flight using one of the scr
 
     ssh ubuntu@ubiquityrobot
     (login)
-    ubuntu@ubiquityrobot:~/catkin_ws$ rosrun aruco_gridboard mavros_control1.py 
+    ubuntu@ubiquityrobot:~/catkin_ws$ rosrun aruco_gridboard mavros_control1.py
 
 You should see the quadcopter arm, takeoff, flight along the square and land as showed in the video at the beginning of this page.
 

@@ -39,11 +39,11 @@ Further settings that should be considered (more documentation can be found `her
 
 Connecting the ESCs
 -------------------
-Each ESC should be connected in a daisy chain configuration, where one end of the chain is the flight controller, and the other is an ESC. 
+Each ESC should be connected in a daisy chain configuration, where one end of the chain is the flight controller, and the other is an ESC.
 
 .. note::
 
-    Ensure the flight controller is appropriately terminated. For example, models such as the Pixhawk Cube have CAN termination resistors installed by default.  
+    Ensure the flight controller is appropriately terminated. For example, models such as the Pixhawk Cube have CAN termination resistors installed by default.
 
 The CAN H, CAN L and GND should be connected to the flight controller ports in the same order.
 
@@ -66,7 +66,7 @@ ESC Primary Status
 - Voltage:  The bus voltage currently measured.
 - Current:  The bus current currently measured.
 - Temperature:  The bridge temperature currently measured.
-- RPM:  The RPM of the motor, scaled with the ``Motor Pole Pair`` parameter on the ESC. 
+- RPM:  The RPM of the motor, scaled with the ``Motor Pole Pair`` parameter on the ESC.
 - Requested Power:  The percentage power currently requested by the autopilot.
 
 
@@ -76,10 +76,10 @@ ESC Extended Status
 - Output Percent:  The percentage duty cycle currently output to the motor. If not equal to input percent, this indicates limiting is occurring within the ESC.
 - Motor Temperature:  The temperature of the connected motor (requires NTC or PTC sensor connected to the ESC).
 - Motor Angle:  The currently measured angle of the motor, if sensor input is enabled. (requires external motor position sensing).
-- Status Flags:  The current general status of the ESC, non-error specific. 
+- Status Flags:  The current general status of the ESC, non-error specific.
 
 
-Both status messages are individually transmitted, and the rate can be adjusted separately as required. The rate of transmission should be minimised such that the CAN bus is not overloaded. 
+Both status messages are individually transmitted, and the rate can be adjusted separately as required. The rate of transmission should be minimised such that the CAN bus is not overloaded.
 
 Parameters
 ----------

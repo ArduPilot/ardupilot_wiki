@@ -55,4 +55,3 @@ Data Flow using JSBSim + Flightgear
 
 .. image:: ../images/JBSim.png
   :target: ../images/JBSim.png
-

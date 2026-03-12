@@ -15,7 +15,7 @@ Setup
 =====
 
 - Be sure the COG is properly setup. Nose heavy vehicles will perform poorly. Tail heavy vehicles will involve significant repairs.
-- Set :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>` = 200 
+- Set :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>` = 200
 - Set :ref:`ONESHOT_MASK<ONESHOT_MASK>` to match the servos controlling the flying surfaces, assuming that they are digital servos capable of 200Hz signaling
 - Set :ref:`INS_GYRO_FILTER<INS_GYRO_FILTER>` = 40Hz to increase phase margin. Be sure the motor/propeller is well balanced and control surface hinges slop-free to minimize vibration since the filtering is being raised.
 - Depending on the amount of fuselage side area, adequate knife-edge performance may require setting the ``AEROM_KE_ANGLE`` plane_aerobatics.lua parameter to 5-15 degrees to get adequate altitude hold on knife-edges, rolling circles, etc.
@@ -23,7 +23,7 @@ Setup
 Verifying the Rate Capabilities
 ===============================
 
-The :ref:`ACRO_PITCH_RATE<ACRO_PITCH_RATE>`, :ref:`ACRO_ROLL_RATE<ACRO_ROLL_RATE>`, and :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` must be set to less than what the airframe is capable of doing. Values of 180, 360, and 90 degrees per second, respectively, are adequate for aerobatics, but they should be verified to be less than the vehicles's maximum capabilities. 
+The :ref:`ACRO_PITCH_RATE<ACRO_PITCH_RATE>`, :ref:`ACRO_ROLL_RATE<ACRO_ROLL_RATE>`, and :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` must be set to less than what the airframe is capable of doing. Values of 180, 360, and 90 degrees per second, respectively, are adequate for aerobatics, but they should be verified to be less than the vehicles's maximum capabilities.
 
 Do a flight in Manual mode, with full stick movements in all axes in order to determine the maximum rotation rates that can be obtained. Analysis of the flight logs using the IMU[0].GyrX for roll in radians/second, IMU[0].GyrY for pitch, and IMU[0].GyrZ for yaw log messages will show the obtained rates.
 
@@ -46,7 +46,7 @@ Set :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` = 8, and do an :ref:`Autotuning <autom
 Check PIDS
 ==========
 
-From the the Autotuning flight, check the logs for proper FF PID, and to tighten up the P and D terms. For the following we will look at an actual log and check if how the Pitch portion of the Aututune turned out by comparing the "Target" (PIDP.Tar log message) rates demanded by the stick movements during the Autotune for pitch versus what the actual pitch rotation rates (PIDP.Act) where measured by the IMU. 
+From the the Autotuning flight, check the logs for proper FF PID, and to tighten up the P and D terms. For the following we will look at an actual log and check if how the Pitch portion of the Aututune turned out by comparing the "Target" (PIDP.Tar log message) rates demanded by the stick movements during the Autotune for pitch versus what the actual pitch rotation rates (PIDP.Act) where measured by the IMU.
 
 .. image:: ../../../images/aerobatic-pid-tuning1.png
     :target: ../_images/aerobatic-pid-tuning1.png

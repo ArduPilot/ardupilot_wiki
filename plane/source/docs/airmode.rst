@@ -11,7 +11,7 @@ What it is
 
 Normally, in QuadPlane, if throttle is lowered to idle in QACRO or QSTABILIZE modes, the stabilization is removed. While this prevents movement due to vibration while on the ground at idle throttle, or when using rudder arming, it prevents stabilization in flight for aerobatic movements or rapid descents.
 
-Instead, stabilization even at zero throttle can be enabled/disabled for these modes using an RC channel switch via ``RCx_OPTION`` = 84 (Airmode). 
+Instead, stabilization even at zero throttle can be enabled/disabled for these modes using an RC channel switch via ``RCx_OPTION`` = 84 (Airmode).
 
 .. note:: if :ref:`ARMING_RUDDER<ARMING_RUDDER>` is set to 2 (arm and disarm using rudder stick), while in Airmode, you cannot disarm using rudder. This allows full rudder stick throws without the chance of a disarm occurring.
 

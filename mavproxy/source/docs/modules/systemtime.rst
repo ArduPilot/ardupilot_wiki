@@ -5,7 +5,7 @@ Time Sync
 .. code:: bash
 
     module load system_time
-    
+
 This module syncs the connected autopilot with the system (GCS) time. This is useful if the autopilot
 does not have a GPS module.
 

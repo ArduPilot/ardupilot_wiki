@@ -15,7 +15,7 @@ Pixhawk6X:
 Where To Buy
 ============
 
-The Pixhawk 6X autopilots are sold by Holybro 
+The Pixhawk 6X autopilots are sold by Holybro
  - `Pixhawk 6X <https://holybro.com/collections/autopilot-flight-controllers/products/pixhawk-6x>`__
  - `Pixhawk 6X Pro <https://holybro.com/collections/autopilots-peripheral/products/pixhawk-6x-pro>`__
 
@@ -42,7 +42,7 @@ Typical Wiring Diagram
 UART Mapping
 ============
 
- - SERIAL0 -> USB 
+ - SERIAL0 -> USB
  - SERIAL1 -> UART7 (Telem1) RTS/CTS pins
  - SERIAL2 -> UART5 (Telem2) RTS/CTS pins
  - SERIAL3 -> USART1 (GPS1)
@@ -54,7 +54,7 @@ UART Mapping
 
 RC Input
 ========
-The RCIN pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The RCIN pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL6 (UART4) would need to be used for receiver connections. Below are setups using Serial6.
 
@@ -144,7 +144,7 @@ Connectors
 
 Unless noted otherwise all connectors are JST GH
 
-See `Pixhawk6X baseboard pinout <https://docs.holybro.com/autopilot/pixhawk-6x/pixhawk-baseboard-pinout>`__ 
+See `Pixhawk6X baseboard pinout <https://docs.holybro.com/autopilot/pixhawk-6x/pixhawk-baseboard-pinout>`__
 
 
 Loading Firmware
@@ -161,5 +161,5 @@ Bi-Directional DShot firmware variations are available also.
 Layout and Dimensions
 =====================
 
-See `Pixhawk6X dimensions <https://docs.holybro.com/autopilot/pixhawk-6x/dimensions>`__ 
+See `Pixhawk6X dimensions <https://docs.holybro.com/autopilot/pixhawk-6x/dimensions>`__
 [copywiki destination="plane,copter,rover,blimp,sub"]

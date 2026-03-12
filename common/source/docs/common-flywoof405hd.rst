@@ -1,7 +1,7 @@
 .. _common-flywoof405hd :
 
 =================================
-GOKU F405 HD 1-2S 12A ELRS AIO V2  
+GOKU F405 HD 1-2S 12A ELRS AIO V2
 =================================
 
 The Flywoo Goku F405HD is a small autopilot for 1-2S tiny whoop quadcopter applications with integrated 12A(25A peak) ESC and ELRS receiver.
@@ -74,7 +74,7 @@ receive pin for UARTn. The TXn pin is the transmit pin for UARTn.
  - SERIAL3 -> UART3  (USER) (DMA capable)
  - SERIAL4 -> UART4  (GPS)
  - SERAIL5 -> UART5  (not pinned out)
- - SERIAL6 -> UART6  (DisplayPort) 
+ - SERIAL6 -> UART6  (DisplayPort)
 
 Serial protocols shown are defaults, but can be adjusted to personal preferences.
 
@@ -86,7 +86,7 @@ Internally connected to integrated 4in1 ESC with BLHELI_S firmware. Bi-Direction
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX)
 
 RC Input
 ========
@@ -139,4 +139,3 @@ This board does not come with ArduPilot firmware pre-installed. Use instructions
 Firmware (Copter/Heli only)for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "FlywooF405HD-AIOv2".
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

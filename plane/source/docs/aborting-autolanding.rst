@@ -4,7 +4,7 @@
 How to Abort an Autolanding
 ===========================
 A landing-abort mechanism is provided to allow you to abort a autolanding sequence in a safe, controlled, and expected way. Custom abort behaviour can be pre-programmed as part of the mission or you can use the default abort mechanism. To enable autolanding abort feature, set param :ref:`LAND_ABORT_THR<LAND_ABORT_THR>` = 1.
- 
+
 There are three aspects of this feature:
 
 1. :ref:`Triggering an abort <trigger_an_abort>`
@@ -30,7 +30,7 @@ The abort behaviour has a default configuration and does not require a pre-plann
 
 - Pitch minimum. If there was a NAV_TAKEOFF ever executed on this mission then the same minimum pitch (param1) will be reused here.
 - Target altitude. If NAV_LAND param1 is >0 then it is used as a target altitude in meters. Else If a NAV_TAKEOFF was ever executed on this mission then the same altitude (param7) will be reused here.
-  
+
 This step is skipped if the abort trigger is via mode change because it is assumed the pilot manually took over and flew the aircraft to a safe altitude at the pitch and throttle of their choosing.
 
 .. _mission_state_after_an_aborted_landing_completes:
@@ -42,4 +42,3 @@ Once an abort land has completed, by either reaching the target altitude or swit
 - If the NAV_LAND mission item is followed by mission item :ref:`CONTINUE_AND_CHANGE_ALT <mav_cmd_nav_continue_and_change_alt>` with param1 = 0 or 1 then the mission index will increment once to that command and execute it like normal. This can be followed by further post-abort mission planning for any custom planned mission behavior.
 - Else If there is a :ref:`DO_LAND_START <mav_cmd_do_land_start>` in the mission then it jumps to that index.
 - Else the mission index decrements once to be the index before the NAV_LAND. This will ensure the same landing approach is repeated.
-

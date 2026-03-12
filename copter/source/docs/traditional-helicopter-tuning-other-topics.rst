@@ -8,8 +8,8 @@ Tuning ACCEL MAX and Feel
 =========================
 
 The final setting for ``ATC_ACCEL_x_MAX`` parameters will depend on the size of the
-helicopter.  Large 800-900 class machines will typically be in the 36000-52000 
-range; smaller 450-500 class machines will typically be in the 90000-110000 
+helicopter.  Large 800-900 class machines will typically be in the 36000-52000
+range; smaller 450-500 class machines will typically be in the 90000-110000
 range. You may want to experiment with the :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter as well to get
 the initial aircraft response the way you like it.  It is recommended to keep the
 :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter between 0.15 and 0.25.  Once this process is complete, the aircraft
@@ -17,7 +17,7 @@ should have the desired feel in snappiness and rate.
 
 Below is a graph showing an example of Rate Roll Desired vs actual Rate Roll.
 The peak corresponds to a rapid stick input and the amplitude (height) of the
-peaks should be approximately the same with no more than 100 milliseconds 
+peaks should be approximately the same with no more than 100 milliseconds
 offset.
 
 .. image:: ../images/TradHeli_tuning_example1_1.png
@@ -54,7 +54,7 @@ helicopter is not in dynamic flight.
 Adjusting I-gains For High-Speed Autonomous Flight
 ==================================================
 
-Prepare a mission with your ground station software that will fly the 
+Prepare a mission with your ground station software that will fly the
 helicopter, preferably in a figure-8 pattern to make both right and left turns,
 at a speed of 6 m/s. Fly the helicopter on this mission, pull the logs from the
 microSD card and look at the AHRS desired vs actual pitch, roll and yaw
@@ -74,7 +74,7 @@ Preventing I term Build Up
 
 A downside of the I term is that it can build if the vehicle is constrained in its movement, so as not to be able to respond and reduce any long term errors, as when still on the ground. The I term can build to its maximum value and could possibly tip over the vehicle. Two methods are provided to avoid this.
 
-The first is by restricting by providing a "leak" mechanism (constantly reduced at a specified rate) when on the ground or hover(actually when moving with a GPS speed of less than 5m/s). To prevent the I term from completely disappearing at low speeds or hover, the parameters :ref:`ATC_RAT_RLL_ILMI<ATC_RAT_RLL_ILMI>` and :ref:`ATC_RAT_PIT_ILMI <ATC_RAT_PIT_ILMI>`, only lets it leak off so much. So the integrator leak along with the leak minimum parameter keep 
+The first is by restricting by providing a "leak" mechanism (constantly reduced at a specified rate) when on the ground or hover(actually when moving with a GPS speed of less than 5m/s). To prevent the I term from completely disappearing at low speeds or hover, the parameters :ref:`ATC_RAT_RLL_ILMI<ATC_RAT_RLL_ILMI>` and :ref:`ATC_RAT_PIT_ILMI <ATC_RAT_PIT_ILMI>`, only lets it leak off so much. So the integrator leak along with the leak minimum parameter keep
 enough of the integrator to make it effective in keeping the attitudes matching
 but not so powerful to cause the aircraft to roll over.
 

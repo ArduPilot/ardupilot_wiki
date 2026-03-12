@@ -62,7 +62,7 @@ Frame and Motor Assembly
 ========================
 
 -  Get the "manual": `F330_User_Manual_v1.6_en.pdf <http://dl.djicdn.com/downloads/flamewheel/en/F330_User_Manual_v1.6_en.pdf>`__.
-   (If there is a more recent version, you may find it in the 
+   (If there is a more recent version, you may find it in the
    `DJI website Flamewheel support section <https://www.dji.com/flame-wheel-arf/download>`__).
 
    -  It is more of an assembly diagram than a manual, but the pictures
@@ -106,7 +106,7 @@ Frame and Motor Assembly
       .. image:: ../images/QuadHookUp800B.jpg
           :target: ../_images/QuadHookUp800B.jpg
 
--  Be careful to wire motors to the PixHawk using the ArduPilot numbering convention for QuadX below. 
+-  Be careful to wire motors to the PixHawk using the ArduPilot numbering convention for QuadX below.
    The numbering convention in the DJI FlameWheel F450 instructions are different, and incorrect writing leads to attitude instability.
 
    .. image:: ../images/MOTORS_QuadX_QuadPlus.jpg

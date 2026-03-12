@@ -60,8 +60,8 @@ Instructions for Mission Planner
    -  Make sure to set sufficient altitude to prevent any injuries.
    -  If proper altitude is set, you can make it follow you and attempt
       to out run it!
-      
+
 .. warning::
    The barometer is used in the altitude calculation meaning that it can
-   drift over time and impact rising terrain. Watch for obstacles and 
+   drift over time and impact rising terrain. Watch for obstacles and
    elevation changes. The altitude maintaining behavior is similar to loiter mode.

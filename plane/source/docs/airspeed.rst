@@ -53,7 +53,7 @@ tab under the CONFIG menu. Using the drop-down box for Type, select your sensor'
 DroneCAN
 --------
 
-Attach the sensor to the AutoPilot's DroneCAN port and select DroneCAN in the above mentioned Type dropdown box and check the "Use Airspeed" box as appropriate. 
+Attach the sensor to the AutoPilot's DroneCAN port and select DroneCAN in the above mentioned Type dropdown box and check the "Use Airspeed" box as appropriate.
 
 Analog Airspeed sensor
 ----------------------
@@ -134,7 +134,7 @@ Failure
 A failing airspeed sensor can lead to the aircraft stalling or over-speeding, this is something that is hard for ArduPilot to detect. Likewise, accidentally miscalibrating the offset during ground initialization can occur if the pitot tube is not covered to prevent wind upsetting the calibration, and can result in wildly inaccurate readings. The parameters below can be used to help detect these conditions and warn of, and/or disable, a failed sensor.
 
 :ref:`ARSPD_WIND_MAX<ARSPD_WIND_MAX>` can be used to set the maximum expected wind speed the vehicle should ever see. This is then be used
-in combination with the GPS ground speed to detect a airspeed sensor error. :ref:`ARSPD_WIND_WARN<ARSPD_WIND_WARN>` can be set to a lower speed to give 
+in combination with the GPS ground speed to detect a airspeed sensor error. :ref:`ARSPD_WIND_WARN<ARSPD_WIND_WARN>` can be set to a lower speed to give
 some warning to the operator before the airspeed sensor is disabled. :ref:`ARSPD_OPTIONS<ARSPD_OPTIONS>` can be set to allow sensors to be disabled
 based on this wind speed metric, a second option bit allows then to be re-enabled if the speed error is resolved.
 
@@ -157,7 +157,7 @@ Airspeed sensors available from ArduPilot Partners:
 I2C
 ---
 
-- 4525DO 
+- 4525DO
     - `CUAV <https://store.cuav.net/shop/airspeed-sensor/>`_
     - `Holybro <https://shop.holybro.com/digital-air-speed-sensor_p1029.html>`_
     - `Matek 4525DO <http://www.mateksys.com/?portfolio=aspd-4525>`_

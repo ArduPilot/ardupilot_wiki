@@ -28,7 +28,7 @@ Setup
 
 In order to use FrSky telemetry, the following steps are required:
 
-- Connect an autopilot telemetry port to an FrSky receiver which has an SPort or Fport interface. This may require a bi-directional inverter depending on which autopilot it being used. See :ref:`common-connecting-sport-fport`. 
+- Connect an autopilot telemetry port to an FrSky receiver which has an SPort or Fport interface. This may require a bi-directional inverter depending on which autopilot it being used. See :ref:`common-connecting-sport-fport`.
 - Configure the autopilot.
 - Install a LUA script to display the full telemetry. (Although is it possible to display a subset of telemetry values using OpenTX's built in telemetry screens, it is very limited.)
 
@@ -67,7 +67,7 @@ In general, F4 based autopilots using an external bi-directional inverter can us
 F4 based autopilots using an "inverted SPort" output from the receiver can connect it to any  UART's TX pin with the configuration:
 
 -   ``SERIALx_PROTOCOL`` =10
--   ``SERIALx_OPTIONS`` = 4 (Half Duplex) 
+-   ``SERIALx_OPTIONS`` = 4 (Half Duplex)
 
 .. note:: F4 based autopilots cannot use the RX pin with an "inverted SPort" output since the SWAP capability is only available in F7/H7 based autopilots.
 
@@ -213,7 +213,7 @@ to ``Model Setup``, then select ``Telemetry``, and then select
 .. figure:: ../../../images/9xrpro-settings-telem-custom.png
     :target: ../_images/9xrpro-settings-telem-custom.png
     :align: center
-    
+
 **Other Pages Related to FrSky Telemetry**
 
 .. toctree::
@@ -221,10 +221,3 @@ to ``Model Setup``, then select ``Telemetry``, and then select
 
     MavLink to FrSky Telemetry Converters <common-frsky-mavlink>
     FrSky Protocol Information <common-frsky-protocol-info>
-
-
-
-
-
-
-

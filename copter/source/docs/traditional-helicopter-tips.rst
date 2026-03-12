@@ -24,7 +24,7 @@ Setup for ground test:
 #. Secure vehicle to the ground.
 #. Temporarily reduce Roll, Pitch, and Yaw  P,I,and D, PIDs to zero. Be sure to restore them after this test!
 #. Set :ref:`ACRO_OPTIONS<ACRO_OPTIONS>` = 2, temporarily, if not being used already.
-#. Change to ACRO mode. 
+#. Change to ACRO mode.
 #. Arm and engage motor interlock, allowing the vehicle to spool up at 0 degree pitch, watching for any change from level in the GSC of the artificial horizon. Any significant tilt indicates noise is disrupting the attitude estimate and should be investigated and eliminated.
 #. Change the target main rotor speed a bit above and below the nominal target using the :ref:`H_RSC_SETPOINT<H_RSC_SETPOINT>` (or TX throttle curve if using Passthru mode) and repeat.
 #. Re-check the blade tracking also while doing this test.

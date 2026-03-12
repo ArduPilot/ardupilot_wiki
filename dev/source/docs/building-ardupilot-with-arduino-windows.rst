@@ -44,34 +44,34 @@ Install Git-SCM
 
    .. image:: ../images/git_setup_wizard_license.jpg
        :target: ../_images/git_setup_wizard_license.jpg
-    
+
 #. On the *Welcome screen* and then again on the *License screen* click
    the **Next** button
 
    .. image:: ../images/git_setup_wizard_components.jpg
        :target: ../_images/git_setup_wizard_components.jpg
-   
+
    .. image:: ../images/git_setup_wizard_view_release_notes.jpg
        :target: ../_images/git_setup_wizard_view_release_notes.jpg
-   
+
 #. On the *Select Components screen* click on the **Next** button, then
    click the **Finish** button
 
    .. image:: ../images/git_setup_wizard_replace_in_use_files.jpg
        :target: ../_images/git_setup_wizard_replace_in_use_files.jpg
-   
+
    .. image:: ../images/git_setup_wizard_installing_files.jpg
        :target: ../_images/git_setup_wizard_installing_files.jpg
-   
+
 #. Click the **Next** button in the *Replacing in Use Files Screen*,
    then wait for Git to finish loading
 
    .. image:: ../images/git_setup_wizard_set_line_endings.jpg
        :target: ../_images/git_setup_wizard_set_line_endings.jpg
-   
+
    .. image:: ../images/git_setup_wizard_run_git_command_prompt.jpg
        :target: ../_images/git_setup_wizard_run_git_command_prompt.jpg
-   
+
 #. Select the *Checkout Windows* item and the **Next** button then
    Select the *Run Git from Windows* item and the **Next** button.
 
@@ -83,7 +83,7 @@ Download source
 
    .. image:: ../images/git_setup_create_git_directory.jpg
        :target: ../_images/git_setup_create_git_directory.jpg
-   
+
 #. Right click anywhere in the folder and click git bash
 
    .. image:: ../images/git_bash_command_prompt.jpg
@@ -123,26 +123,26 @@ Install MHV_AVR_Tools to its default location
 
    .. image:: ../images/mhv_avr_tools_installer_welcome.jpg
        :target: ../_images/mhv_avr_tools_installer_welcome.jpg
-   
+
    .. image:: ../images/mhv_avr_tools_installer_choose_start_menu_folder.jpg
        :target: ../_images/mhv_avr_tools_installer_choose_start_menu_folder.jpg
-   
+
 #. Select the **Next** button in the setup wizard screen then select the
    **Install** button for *MHV AVR Tools*
 
    .. image:: ../images/mhv_avr_tools_installer_choose_components.jpg
        :target: ../_images/mhv_avr_tools_installer_choose_components.jpg
-   
+
    .. image:: ../images/mhv_avr_tools_installer_choose_destination_folder.jpg
        :target: ../_images/mhv_avr_tools_installer_choose_destination_folder.jpg
-   
+
 #. Check both items in the Choose *Components Screen* and select
    **Next** then select **Next** again to install to the default
    location
 
    .. image:: ../images/mhv_avr_tools_installer_license_agreement.jpg
        :target: ../_images/mhv_avr_tools_installer_license_agreement.jpg
-   
+
 #. Select the **I Agree** button on the *License Agreement screen*.
 
 Install ArduPilot-Arduino
@@ -163,17 +163,17 @@ Configure Arduino
 =================
 
 #. Go to your Arduino folder
-   
+
 #. Double click the Arduino icon
 
    .. image:: ../images/arduino_icon.jpg
        :target: ../_images/arduino_icon.jpg
-   
+
 #. When Arduino opens, go to the file menu
 
    .. image:: ../images/arduino_menu_preferences.jpg
        :target: ../_images/arduino_menu_preferences.jpg
-   
+
 #. Select preferences
 
    .. image:: ../images/arduino_preferences_dialog.png
@@ -196,25 +196,25 @@ Connect your APM to your USB
 
    .. image:: ../images/arduino_tools_sketchbook_copter.jpg
        :target: ../_images/arduino_tools_sketchbook_copter.jpg
-   
+
 #. Once this is loaded, click on the ArduPilot tab, and select ArduPilot
    mega 2.x out of the HAL options.
 
    .. image:: ../images/arduino_tools_target_apm2.jpg
        :target: ../_images/arduino_tools_target_apm2.jpg
-   
+
 #. Then click the “Tools” tab and select “Arduino Mega 2560 or Mega ADK”
    from the “Board” tab.
 
    .. image:: ../images/arduino_tools_select_target_board.jpg
        :target: ../_images/arduino_tools_select_target_board.jpg
-   
+
 #. Next select the *Tools* tab again, and set the “Serial Port” to the
    one your APM is connected to.
 
    .. image:: ../images/arduino_tools_serial_port.jpg
        :target: ../_images/arduino_tools_serial_port.jpg
-   
+
 #. In my case it was COM4, but check under device manager / Ports to
    find out on your system.
 
@@ -269,7 +269,7 @@ Upload to your ArduPilot
 
    .. image:: ../images/arduino_tools_upload_complete_message.jpg
        :target: ../_images/arduino_tools_upload_complete_message.jpg
-   
+
 #. Configure Your ArduPilot using planner, as normal.
 
    .. warning::
@@ -284,4 +284,3 @@ Updating your code
 
 Please ensure that the version of code on your PC is the latest version,
 use git to update your code to the latest code.
-

@@ -41,7 +41,7 @@ receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 
 * SERIAL0 -> USB
 * SERIAL1 -> UART1 (Tramp)
-* SERIAL2 -> UART2 (RCIN, DMA-enabled) 
+* SERIAL2 -> UART2 (RCIN, DMA-enabled)
 * SERIAL3 -> UART3 (User)
 * SERIAL4 -> UART4 (GPS)
 * SERIAL5 -> UART5 (ESC Telem, RX5(only)on ESC connector)

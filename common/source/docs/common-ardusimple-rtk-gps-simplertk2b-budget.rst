@@ -13,7 +13,7 @@ simpleRTK2B Budget (u-blox ZED-F9P) is a GNSS/RTK receiver which provides centim
 It provides:
 
    -  Down to centimeter GPS accuracy
-   -  Up to 10 RTK position updates per second 
+   -  Up to 10 RTK position updates per second
    -  Multiband: L1, L2, E5b support
 
 Where to Buy
@@ -45,7 +45,7 @@ All ArduSimple GNSS models come with a JST GH 6-pin connector/cable that is comp
 
 XBee socket
 ===========
-The onboard XBee socket can be used to expand functionality with `Plugin accessories <https://www.ardusimple.com/radio-links/>`_ (MR/LR radios, Bluetooth, WiFi, Ethernet, Dataloggers, RS232, Canbus, L-Band). 
+The onboard XBee socket can be used to expand functionality with `Plugin accessories <https://www.ardusimple.com/radio-links/>`_ (MR/LR radios, Bluetooth, WiFi, Ethernet, Dataloggers, RS232, Canbus, L-Band).
 
 Not compatible with high power XBee accessories (XLR radio and 4G NTRIP Master). To have this full compatibility consider `simpleRTK2B Pro. <https://www.ardusimple.com/product/simplertk2b-pro/>`__
 
@@ -60,10 +60,10 @@ To set up simpleRTK2B Budget receiver to use with ArduPilot, we have prepared se
 
 2. To achieve centimeter-level precision in positioning, RTK correction data must be sent to your drone in real time. There are two main methods for delivering this correction data:
 
-   -  Using NTRIP correction service:  If you are going to operate in areas with reliable internet connection and NTRIP service coverage, follow `Tutorial on sending NTRIP corrections to ArduPilot. <https://www.ardusimple.com/send-ntrip-corrections-to-ardupilot-with-missionplanner-qgroundcontrol-and-mavproxy/>`_  If you are not aware of NTRIP service provider in your area, we have prepared the `List of RTK correction service providers in your country. <https://www.ardusimple.com/rtk-correction-services-in-your-country/>`_ 
-   -  Using RTK corrections from a Base Station: if there is no internet access or NTRIP correction service available in your area, refer to ArduSimple’s `tutorial on sending RTK corrections from Base station to ArduPilot. <https://www.ardusimple.com/send-rtk-base-station-corrections-to-ardupilot-with-missionplanner-qgroundcontrol-and-mavproxy/>`_ 
+   -  Using NTRIP correction service:  If you are going to operate in areas with reliable internet connection and NTRIP service coverage, follow `Tutorial on sending NTRIP corrections to ArduPilot. <https://www.ardusimple.com/send-ntrip-corrections-to-ardupilot-with-missionplanner-qgroundcontrol-and-mavproxy/>`_  If you are not aware of NTRIP service provider in your area, we have prepared the `List of RTK correction service providers in your country. <https://www.ardusimple.com/rtk-correction-services-in-your-country/>`_
+   -  Using RTK corrections from a Base Station: if there is no internet access or NTRIP correction service available in your area, refer to ArduSimple’s `tutorial on sending RTK corrections from Base station to ArduPilot. <https://www.ardusimple.com/send-rtk-base-station-corrections-to-ardupilot-with-missionplanner-qgroundcontrol-and-mavproxy/>`_
 
 More information
 ================
-   -  `User Guide: simpleRTK2B Budget <https://www.ardusimple.com/user-guide-simplertk2b-budget/>`_  
-   -  `How to configure u-blox ZED-F9P <https://www.ardusimple.com/how-to-configure-ublox-zed-f9p/>`_ 
+   -  `User Guide: simpleRTK2B Budget <https://www.ardusimple.com/user-guide-simplertk2b-budget/>`_
+   -  `How to configure u-blox ZED-F9P <https://www.ardusimple.com/how-to-configure-ublox-zed-f9p/>`_

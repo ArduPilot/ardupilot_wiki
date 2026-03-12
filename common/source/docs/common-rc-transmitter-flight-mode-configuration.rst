@@ -83,7 +83,7 @@ monitors for mode changes.
 
 [site wiki="copter"]
 On Copter this is configurable using the :ref:`FLTMODE_CH <FLTMODE_CH>`
-parameter. Default is channel 5. 
+parameter. Default is channel 5.
 [/site]
 [site wiki="plane"]
 On Plane this is configurable using the :ref:`FLTMODE_CH <FLTMODE_CH>`
@@ -108,7 +108,7 @@ to map a mode to a switch position.
 
    The correct PWM ranges for selectable modes are shown alongside
    each mode selection dropdown in the *Mission Planner Flight Mode* screen
-   (see :ref:`screenshot above <common-rc-transmitter-flight-mode-configuration_flight_modes_configuration>`). 
+   (see :ref:`screenshot above <common-rc-transmitter-flight-mode-configuration_flight_modes_configuration>`).
 
 If you want to just support three modes (using a three position switch)
 then you would configure the transmitter to produce PWM pulse widths of
@@ -180,7 +180,7 @@ Setup your flight mode channel using "6P', the six position switch, as its sourc
 -  `Turnigy 9XR <https://diydrones.com/profiles/blogs/change-between-6-modes-with-turnigy-9xr-using-mixing>`__
 -  `Turnigy TGY-I6 <https://diydrones.com/profiles/blogs/flysky-fs-i6-flight-modes>`__
 -  `Hitech Aurora 9 <https://www.diydrones.com/forum/topics/quad-goes-to-full-throttle?commentId>`__
--  `Spektrum DX8 <https://diydrones.com/profiles/blogs/spectrum-dx8-2-switches-1-tx-channel-6-flight-modes?>`__ 
+-  `Spektrum DX8 <https://diydrones.com/profiles/blogs/spectrum-dx8-2-switches-1-tx-channel-6-flight-modes?>`__
    (alternate method below)
 -  `Spektrum DX7s <https://diydrones.com/profiles/blogs/getting-6-modes-out-of-channel-5-on-a-spektrum-dx7s>`__
 -  `Spektrum DX7 Version 6 <https://diydrones.com/profiles/blogs/dx7-new-version-6-flight-mode-setup-with-pixhawk>`__
@@ -201,10 +201,10 @@ Modes setup to monitor the Current PWM for these adjustments.
 
    -  Hold roller bar down, turn on DX8, scroll down to Switch Select,
       Click roller bar.  Set switches as follows:
-      
+
       -  Gear = Gear (Channel 5)
       -  FMode = Inh  Not assigned to a channel – Used to mix with Gear Sw (Channel 5) for 6 modes
-      
+
    -  Others anyway you want. One method is as follows:
 
       -  Knob to aux1 = channel 6 for camera tilt / tuning
@@ -267,5 +267,5 @@ Modes setup to monitor the Current PWM for these adjustments.
       (change = 400 us \* +73% \* – 89% = -262 us.  Result = 1815 us -
       262 us = 1553 us = mode 4)
 
-      
+
 [copywiki destination="copter,plane,rover,planner,blimp,sub"]

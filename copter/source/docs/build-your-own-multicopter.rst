@@ -254,7 +254,7 @@ Frame Kit
 
       .. image:: ../../../images/3281_dimg2.jpg
           :target: ../_images/3281_dimg2.jpg
-      
+
    #. The 4 in 1 ESC produces much less RF and DC interference and is
       neater than 4 ESCs and a power distribution board.
    #. I am using `GemFan DJI hub compatible 10" carbon filled propellers <http://www.rcdude.com/servlet/the-2498/GemFan-DJI-Hub-10x4.5/Detail>`__ because

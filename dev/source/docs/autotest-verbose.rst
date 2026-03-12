@@ -14,39 +14,39 @@ AutoTest Output
     >>>> RUNNING STEP: build.ArduCopter at Mon Mar 18 15:08:34 2019
     Running: ("/bin/rm -f logs/*.BIN logs/LASTLOG.TXT") in (.)
     Running: ("./modules/waf/waf-light" "configure" "--board" "sitl") in (/home/pbarker/rc/ardupilot)
-    Setting top to                           : /home/pbarker/rc/ardupilot 
-    Setting out to                           : /home/pbarker/rc/ardupilot/build 
-    Autoconfiguration                        : enabled 
-    GCOV code coverage analysis              : no 
-    Setting board to                         : sitl 
-    Using toolchain                          : native 
-    Checking for 'g++' (C++ compiler)        : /usr/lib/ccache/g++ 
-    Checking for 'gcc' (C compiler)          : /usr/lib/ccache/gcc 
-    Checking for c flags '-MMD'              : yes 
-    Checking for cxx flags '-MMD'            : yes 
-    Checking for need to link with librt     : not necessary 
-    Checking for HAVE_CMATH_ISFINITE         : yes 
-    Checking for HAVE_CMATH_ISINF            : yes 
-    Checking for HAVE_CMATH_ISNAN            : yes 
-    Checking for NEED_CMATH_ISFINITE_STD_NAMESPACE : yes 
-    Checking for NEED_CMATH_ISINF_STD_NAMESPACE    : yes 
-    Checking for NEED_CMATH_ISNAN_STD_NAMESPACE    : yes 
-    Checking for header endian.h                   : yes 
-    Checking for header byteswap.h                 : yes 
-    Checking for HAVE_MEMRCHR                      : yes 
-    Checking for program 'python'                  : /home/pbarker/bin/python 
-    Checking for python version >= 2.7.0           : 2.7.15 
-    Checking for program 'python'                  : /home/pbarker/bin/python 
-    Checking for python version >= 2.7.0           : 2.7.15 
-    Source is git repository                       : yes 
-    Update submodules                              : yes 
-    Checking for program 'git'                     : /usr/bin/git 
-    Checking for program 'size'                    : /usr/bin/size 
-    Benchmarks                                     : disabled 
-    Unit tests                                     : enabled 
-    Scripting                                      : disabled 
-    Scripting runtime checks                       : enabled 
-    Checking for program 'rsync'                   : /usr/bin/rsync 
+    Setting top to                           : /home/pbarker/rc/ardupilot
+    Setting out to                           : /home/pbarker/rc/ardupilot/build
+    Autoconfiguration                        : enabled
+    GCOV code coverage analysis              : no
+    Setting board to                         : sitl
+    Using toolchain                          : native
+    Checking for 'g++' (C++ compiler)        : /usr/lib/ccache/g++
+    Checking for 'gcc' (C compiler)          : /usr/lib/ccache/gcc
+    Checking for c flags '-MMD'              : yes
+    Checking for cxx flags '-MMD'            : yes
+    Checking for need to link with librt     : not necessary
+    Checking for HAVE_CMATH_ISFINITE         : yes
+    Checking for HAVE_CMATH_ISINF            : yes
+    Checking for HAVE_CMATH_ISNAN            : yes
+    Checking for NEED_CMATH_ISFINITE_STD_NAMESPACE : yes
+    Checking for NEED_CMATH_ISINF_STD_NAMESPACE    : yes
+    Checking for NEED_CMATH_ISNAN_STD_NAMESPACE    : yes
+    Checking for header endian.h                   : yes
+    Checking for header byteswap.h                 : yes
+    Checking for HAVE_MEMRCHR                      : yes
+    Checking for program 'python'                  : /home/pbarker/bin/python
+    Checking for python version >= 2.7.0           : 2.7.15
+    Checking for program 'python'                  : /home/pbarker/bin/python
+    Checking for python version >= 2.7.0           : 2.7.15
+    Source is git repository                       : yes
+    Update submodules                              : yes
+    Checking for program 'git'                     : /usr/bin/git
+    Checking for program 'size'                    : /usr/bin/size
+    Benchmarks                                     : disabled
+    Unit tests                                     : enabled
+    Scripting                                      : disabled
+    Scripting runtime checks                       : enabled
+    Checking for program 'rsync'                   : /usr/bin/rsync
     'configure' finished successfully (1.152s)
     Running: ("./modules/waf/waf-light" "clean") in (/home/pbarker/rc/ardupilot)
     'clean' finished successfully (1.016s)
@@ -649,7 +649,7 @@ AutoTest Output
 
     BUILD SUMMARY
     Build directory: /home/pbarker/rc/ardupilot/build/sitl
-    Target          Text     Data   BSS    Total  
+    Target          Text     Data   BSS    Total
     ----------------------------------------------
     bin/arducopter  1883261  82926  66208  2032395
 
@@ -3878,93 +3878,93 @@ AutoTest Output
     rc 3 1600
     rc 3 1600
     AUTO> AUTOTEST: set_rc (wc=0.0465161800385 st=0.0 r=None): ch=3 want=1600 got=1600
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
     APM: EKF2 IMU0 in-flight yaw alignment complete
     APM: EKF2 IMU1 in-flight yaw alignment complete
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
     height 10
-    AUTOTEST: MISSION_CURRENT.seq=1 
+    AUTOTEST: MISSION_CURRENT.seq=1
     Mode AUTO
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
-    AUTOTEST: MISSION_CURRENT.seq=1 
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
+    AUTOTEST: MISSION_CURRENT.seq=1
     waypoint 2
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
-    AUTOTEST: MISSION_CURRENT.seq=2 
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
+    AUTOTEST: MISSION_CURRENT.seq=2
     APM: Reached command #2
     APM: Delaying 57 sec
     waypoint 3
@@ -4257,221 +4257,221 @@ AutoTest Output
     AUTOTEST: MISSION_CURRENT.seq=3 (delay item)
     AUTOTEST: MISSION_CURRENT.seq=3 (delay item)
     waypoint 4
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
     Flight battery 80 percent
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
     height 0
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
     Hit ground at 0.475343 m/s
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
-    AUTOTEST: MISSION_CURRENT.seq=4 
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
+    AUTOTEST: MISSION_CURRENT.seq=4
     APM: Disarming motors
     waypoint 0
-    AUTOTEST: MISSION_CURRENT.seq=0 
-    AUTOTEST: MISSION_CURRENT.seq=0 
-    AUTOTEST: MISSION_CURRENT.seq=0 
+    AUTOTEST: MISSION_CURRENT.seq=0
+    AUTOTEST: MISSION_CURRENT.seq=0
+    AUTOTEST: MISSION_CURRENT.seq=0
     DISARMED
-    AUTOTEST: MISSION_CURRENT.seq=0 
+    AUTOTEST: MISSION_CURRENT.seq=0
     AUTOTEST: Stopped for 77 seconds (want >=77 seconds)
     AUTOTEST: PASSED: "NavDelayAbsTime (Fly Nav Delay (AbsTime))"
     AUTOTEST: #
@@ -4563,24 +4563,24 @@ AutoTest Output
     rc 3 1600
     rc 3 1600
     AUTO> AUTOTEST: set_rc (wc=0.0301790237427 st=0.0 r=None): ch=3 want=1600 got=1600
-    AUTOTEST: MISSION_CURRENT.seq=1 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=1 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=1 dist=0 
+    AUTOTEST: MISSION_CURRENT.seq=1 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=1 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=1 dist=0
     APM: EKF2 IMU0 in-flight yaw alignment complete
     APM: EKF2 IMU1 in-flight yaw alignment complete
-    AUTOTEST: MISSION_CURRENT.seq=1 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=1 dist=0 
+    AUTOTEST: MISSION_CURRENT.seq=1 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=1 dist=0
     height 10
-    AUTOTEST: MISSION_CURRENT.seq=1 dist=0 
+    AUTOTEST: MISSION_CURRENT.seq=1 dist=0
     Mode AUTO
-    AUTOTEST: MISSION_CURRENT.seq=1 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=1 dist=0 
+    AUTOTEST: MISSION_CURRENT.seq=1 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=1 dist=0
     waypoint 2
-    AUTOTEST: MISSION_CURRENT.seq=2 dist=13 
-    AUTOTEST: MISSION_CURRENT.seq=2 dist=13 
-    AUTOTEST: MISSION_CURRENT.seq=2 dist=12 
-    AUTOTEST: MISSION_CURRENT.seq=2 dist=8 
-    AUTOTEST: MISSION_CURRENT.seq=2 dist=5 
+    AUTOTEST: MISSION_CURRENT.seq=2 dist=13
+    AUTOTEST: MISSION_CURRENT.seq=2 dist=13
+    AUTOTEST: MISSION_CURRENT.seq=2 dist=12
+    AUTOTEST: MISSION_CURRENT.seq=2 dist=8
+    AUTOTEST: MISSION_CURRENT.seq=2 dist=5
     APM: Reached command #2
     APM: Delaying 60 sec
     waypoint 3
@@ -4631,42 +4631,42 @@ AutoTest Output
     AUTOTEST: MISSION_CURRENT.seq=3 dist=0 (At delay item)
     AUTOTEST: MISSION_CURRENT.seq=3 dist=0 (At delay item)
     waypoint 4
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=13 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=12 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=9 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=5 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=1 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=13
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=12
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=9
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=5
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=1
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
     height 0
     Hit ground at 0.476594 m/s
-    AUTOTEST: MISSION_CURRENT.seq=4 dist=0 
+    AUTOTEST: MISSION_CURRENT.seq=4 dist=0
     APM: Disarming motors
     waypoint 0
-    AUTOTEST: MISSION_CURRENT.seq=0 dist=0 
+    AUTOTEST: MISSION_CURRENT.seq=0 dist=0
     DISARMED
     AUTOTEST: Stopped for 60 seconds (want >=59 seconds)
     AUTOTEST: Setting DISARM_DELAY to 10.000000
@@ -4878,64 +4878,64 @@ AutoTest Output
     rc 3 1500
     RTL> AUTOTEST: set_rc (wc=0.0427100658417 st=0.0 r=None): ch=3 want=1500 got=1500
     height 10
-    AUTOTEST: Alt: 10.44  HomeDist: 10.61 
-    AUTOTEST: Alt: 11.16  HomeDist: 10.18 
-    AUTOTEST: Alt: 12.19  HomeDist: 10.07 
-    AUTOTEST: Alt: 13.34  HomeDist: 10.13 
-    AUTOTEST: Alt: 14.20  HomeDist: 10.20 
-    AUTOTEST: Alt: 14.63  HomeDist: 9.96 
-    AUTOTEST: Alt: 14.81  HomeDist: 9.37 
-    AUTOTEST: Alt: 14.90  HomeDist: 8.40 
-    AUTOTEST: Alt: 14.95  HomeDist: 7.03 
-    AUTOTEST: Alt: 14.97  HomeDist: 5.39 
-    AUTOTEST: Alt: 14.99  HomeDist: 3.69 
-    AUTOTEST: Alt: 14.99  HomeDist: 2.12 
-    AUTOTEST: Alt: 15.00  HomeDist: 0.90 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.20 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.06 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.06 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.07 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.20 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.28 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.35 
-    AUTOTEST: Alt: 14.96  HomeDist: 0.38 
-    AUTOTEST: Alt: 14.76  HomeDist: 0.39 
-    AUTOTEST: Alt: 14.19  HomeDist: 0.39 
-    AUTOTEST: Alt: 13.30  HomeDist: 0.37 
-    AUTOTEST: Alt: 12.33  HomeDist: 0.35 
-    AUTOTEST: Alt: 11.41  HomeDist: 0.35 
-    AUTOTEST: Alt: 10.55  HomeDist: 0.35 
-    AUTOTEST: Alt: 9.95  HomeDist: 0.35 
-    AUTOTEST: Alt: 9.63  HomeDist: 0.36 
-    AUTOTEST: Alt: 9.40  HomeDist: 0.37 
-    AUTOTEST: Alt: 9.12  HomeDist: 0.39 
-    AUTOTEST: Alt: 8.82  HomeDist: 0.37 
-    AUTOTEST: Alt: 8.52  HomeDist: 0.37 
-    AUTOTEST: Alt: 8.22  HomeDist: 0.36 
-    AUTOTEST: Alt: 7.92  HomeDist: 0.36 
-    AUTOTEST: Alt: 7.62  HomeDist: 0.37 
-    AUTOTEST: Alt: 7.32  HomeDist: 0.37 
-    AUTOTEST: Alt: 7.02  HomeDist: 0.37 
-    AUTOTEST: Alt: 6.72  HomeDist: 0.37 
-    AUTOTEST: Alt: 6.42  HomeDist: 0.39 
-    AUTOTEST: Alt: 6.12  HomeDist: 0.39 
-    AUTOTEST: Alt: 5.81  HomeDist: 0.39 
-    AUTOTEST: Alt: 5.51  HomeDist: 0.39 
-    AUTOTEST: Alt: 5.21  HomeDist: 0.39 
-    AUTOTEST: Alt: 4.91  HomeDist: 0.39 
-    AUTOTEST: Alt: 4.61  HomeDist: 0.39 
-    AUTOTEST: Alt: 4.31  HomeDist: 0.39 
-    AUTOTEST: Alt: 4.01  HomeDist: 0.40 
-    AUTOTEST: Alt: 3.71  HomeDist: 0.40 
-    AUTOTEST: Alt: 3.41  HomeDist: 0.40 
-    AUTOTEST: Alt: 3.11  HomeDist: 0.40 
-    AUTOTEST: Alt: 2.81  HomeDist: 0.41 
-    AUTOTEST: Alt: 2.51  HomeDist: 0.41 
-    AUTOTEST: Alt: 2.21  HomeDist: 0.41 
-    AUTOTEST: Alt: 1.91  HomeDist: 0.42 
-    AUTOTEST: Alt: 1.61  HomeDist: 0.42 
-    AUTOTEST: Alt: 1.31  HomeDist: 0.45 
-    AUTOTEST: Alt: 1.01  HomeDist: 0.45 
+    AUTOTEST: Alt: 10.44  HomeDist: 10.61
+    AUTOTEST: Alt: 11.16  HomeDist: 10.18
+    AUTOTEST: Alt: 12.19  HomeDist: 10.07
+    AUTOTEST: Alt: 13.34  HomeDist: 10.13
+    AUTOTEST: Alt: 14.20  HomeDist: 10.20
+    AUTOTEST: Alt: 14.63  HomeDist: 9.96
+    AUTOTEST: Alt: 14.81  HomeDist: 9.37
+    AUTOTEST: Alt: 14.90  HomeDist: 8.40
+    AUTOTEST: Alt: 14.95  HomeDist: 7.03
+    AUTOTEST: Alt: 14.97  HomeDist: 5.39
+    AUTOTEST: Alt: 14.99  HomeDist: 3.69
+    AUTOTEST: Alt: 14.99  HomeDist: 2.12
+    AUTOTEST: Alt: 15.00  HomeDist: 0.90
+    AUTOTEST: Alt: 14.99  HomeDist: 0.20
+    AUTOTEST: Alt: 14.99  HomeDist: 0.06
+    AUTOTEST: Alt: 14.99  HomeDist: 0.06
+    AUTOTEST: Alt: 14.98  HomeDist: 0.07
+    AUTOTEST: Alt: 14.98  HomeDist: 0.20
+    AUTOTEST: Alt: 14.98  HomeDist: 0.28
+    AUTOTEST: Alt: 14.98  HomeDist: 0.35
+    AUTOTEST: Alt: 14.96  HomeDist: 0.38
+    AUTOTEST: Alt: 14.76  HomeDist: 0.39
+    AUTOTEST: Alt: 14.19  HomeDist: 0.39
+    AUTOTEST: Alt: 13.30  HomeDist: 0.37
+    AUTOTEST: Alt: 12.33  HomeDist: 0.35
+    AUTOTEST: Alt: 11.41  HomeDist: 0.35
+    AUTOTEST: Alt: 10.55  HomeDist: 0.35
+    AUTOTEST: Alt: 9.95  HomeDist: 0.35
+    AUTOTEST: Alt: 9.63  HomeDist: 0.36
+    AUTOTEST: Alt: 9.40  HomeDist: 0.37
+    AUTOTEST: Alt: 9.12  HomeDist: 0.39
+    AUTOTEST: Alt: 8.82  HomeDist: 0.37
+    AUTOTEST: Alt: 8.52  HomeDist: 0.37
+    AUTOTEST: Alt: 8.22  HomeDist: 0.36
+    AUTOTEST: Alt: 7.92  HomeDist: 0.36
+    AUTOTEST: Alt: 7.62  HomeDist: 0.37
+    AUTOTEST: Alt: 7.32  HomeDist: 0.37
+    AUTOTEST: Alt: 7.02  HomeDist: 0.37
+    AUTOTEST: Alt: 6.72  HomeDist: 0.37
+    AUTOTEST: Alt: 6.42  HomeDist: 0.39
+    AUTOTEST: Alt: 6.12  HomeDist: 0.39
+    AUTOTEST: Alt: 5.81  HomeDist: 0.39
+    AUTOTEST: Alt: 5.51  HomeDist: 0.39
+    AUTOTEST: Alt: 5.21  HomeDist: 0.39
+    AUTOTEST: Alt: 4.91  HomeDist: 0.39
+    AUTOTEST: Alt: 4.61  HomeDist: 0.39
+    AUTOTEST: Alt: 4.31  HomeDist: 0.39
+    AUTOTEST: Alt: 4.01  HomeDist: 0.40
+    AUTOTEST: Alt: 3.71  HomeDist: 0.40
+    AUTOTEST: Alt: 3.41  HomeDist: 0.40
+    AUTOTEST: Alt: 3.11  HomeDist: 0.40
+    AUTOTEST: Alt: 2.81  HomeDist: 0.41
+    AUTOTEST: Alt: 2.51  HomeDist: 0.41
+    AUTOTEST: Alt: 2.21  HomeDist: 0.41
+    AUTOTEST: Alt: 1.91  HomeDist: 0.42
+    AUTOTEST: Alt: 1.61  HomeDist: 0.42
+    AUTOTEST: Alt: 1.31  HomeDist: 0.45
+    AUTOTEST: Alt: 1.01  HomeDist: 0.45
     AUTOTEST: Alt: 0.71  HomeDist: 0.45 HOME
     height 0
     AUTOTEST: Alt: 0.41  HomeDist: 0.45 HOME
@@ -11794,98 +11794,98 @@ AutoTest Output
     rc 3 1500
     rc 3 1500
     RTL> AUTOTEST: set_rc (wc=0.0444641113281 st=0.0 r=None): ch=3 want=1500 got=1500
-    AUTOTEST: Alt: 9.96  HomeDist: 96.18 
-    AUTOTEST: Alt: 10.66  HomeDist: 96.24 
-    AUTOTEST: Alt: 11.66  HomeDist: 96.29 
+    AUTOTEST: Alt: 9.96  HomeDist: 96.18
+    AUTOTEST: Alt: 10.66  HomeDist: 96.24
+    AUTOTEST: Alt: 11.66  HomeDist: 96.29
     height 10
-    AUTOTEST: Alt: 12.84  HomeDist: 96.31 
-    AUTOTEST: Alt: 13.88  HomeDist: 96.31 
-    AUTOTEST: Alt: 14.48  HomeDist: 96.24 
-    AUTOTEST: Alt: 14.75  HomeDist: 95.93 
-    AUTOTEST: Alt: 14.87  HomeDist: 95.32 
-    AUTOTEST: Alt: 14.93  HomeDist: 94.39 
-    AUTOTEST: Alt: 14.96  HomeDist: 93.16 
-    AUTOTEST: Alt: 14.98  HomeDist: 91.58 
-    AUTOTEST: Alt: 14.99  HomeDist: 89.71 
-    AUTOTEST: Alt: 14.99  HomeDist: 87.63 
-    AUTOTEST: Alt: 15.00  HomeDist: 85.38 
-    AUTOTEST: Alt: 15.00  HomeDist: 82.98 
-    AUTOTEST: Alt: 15.00  HomeDist: 80.49 
-    AUTOTEST: Alt: 15.00  HomeDist: 77.92 
-    AUTOTEST: Alt: 15.00  HomeDist: 75.28 
-    AUTOTEST: Alt: 15.00  HomeDist: 72.57 
-    AUTOTEST: Alt: 15.00  HomeDist: 69.84 
-    AUTOTEST: Alt: 15.00  HomeDist: 67.07 
-    AUTOTEST: Alt: 15.00  HomeDist: 64.26 
-    AUTOTEST: Alt: 15.00  HomeDist: 61.42 
-    AUTOTEST: Alt: 14.99  HomeDist: 58.56 
-    AUTOTEST: Alt: 14.99  HomeDist: 55.69 
-    AUTOTEST: Alt: 14.99  HomeDist: 52.80 
-    AUTOTEST: Alt: 14.99  HomeDist: 49.89 
-    AUTOTEST: Alt: 14.99  HomeDist: 46.97 
-    AUTOTEST: Alt: 15.00  HomeDist: 44.04 
-    AUTOTEST: Alt: 15.00  HomeDist: 41.11 
-    AUTOTEST: Alt: 15.00  HomeDist: 38.17 
-    AUTOTEST: Alt: 15.00  HomeDist: 35.22 
-    AUTOTEST: Alt: 15.00  HomeDist: 32.27 
-    AUTOTEST: Alt: 15.00  HomeDist: 29.32 
-    AUTOTEST: Alt: 15.00  HomeDist: 26.40 
-    AUTOTEST: Alt: 15.00  HomeDist: 23.45 
-    AUTOTEST: Alt: 15.00  HomeDist: 20.49 
-    AUTOTEST: Alt: 15.00  HomeDist: 17.55 
-    AUTOTEST: Alt: 15.00  HomeDist: 14.62 
-    AUTOTEST: Alt: 15.00  HomeDist: 11.74 
-    AUTOTEST: Alt: 15.01  HomeDist: 9.02 
-    AUTOTEST: Alt: 15.01  HomeDist: 6.51 
-    AUTOTEST: Alt: 15.01  HomeDist: 4.35 
-    AUTOTEST: Alt: 15.00  HomeDist: 2.54 
-    AUTOTEST: Alt: 15.00  HomeDist: 1.22 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.46 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.34 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.34 
-    AUTOTEST: Alt: 14.97  HomeDist: 0.30 
-    AUTOTEST: Alt: 14.97  HomeDist: 0.30 
-    AUTOTEST: Alt: 14.97  HomeDist: 0.35 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.38 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.39 
-    AUTOTEST: Alt: 14.93  HomeDist: 0.39 
-    AUTOTEST: Alt: 14.63  HomeDist: 0.37 
-    AUTOTEST: Alt: 13.94  HomeDist: 0.37 
-    AUTOTEST: Alt: 13.00  HomeDist: 0.36 
-    AUTOTEST: Alt: 12.05  HomeDist: 0.34 
-    AUTOTEST: Alt: 11.14  HomeDist: 0.34 
-    AUTOTEST: Alt: 10.33  HomeDist: 0.35 
-    AUTOTEST: Alt: 9.83  HomeDist: 0.37 
-    AUTOTEST: Alt: 9.56  HomeDist: 0.38 
-    AUTOTEST: Alt: 9.31  HomeDist: 0.38 
-    AUTOTEST: Alt: 9.02  HomeDist: 0.38 
-    AUTOTEST: Alt: 8.72  HomeDist: 0.39 
-    AUTOTEST: Alt: 8.42  HomeDist: 0.38 
-    AUTOTEST: Alt: 8.12  HomeDist: 0.38 
-    AUTOTEST: Alt: 7.82  HomeDist: 0.38 
-    AUTOTEST: Alt: 7.52  HomeDist: 0.38 
-    AUTOTEST: Alt: 7.22  HomeDist: 0.38 
-    AUTOTEST: Alt: 6.92  HomeDist: 0.39 
-    AUTOTEST: Alt: 6.62  HomeDist: 0.39 
-    AUTOTEST: Alt: 6.31  HomeDist: 0.40 
-    AUTOTEST: Alt: 6.01  HomeDist: 0.40 
-    AUTOTEST: Alt: 5.71  HomeDist: 0.40 
-    AUTOTEST: Alt: 5.41  HomeDist: 0.40 
-    AUTOTEST: Alt: 5.11  HomeDist: 0.40 
-    AUTOTEST: Alt: 4.81  HomeDist: 0.41 
-    AUTOTEST: Alt: 4.51  HomeDist: 0.41 
-    AUTOTEST: Alt: 4.21  HomeDist: 0.41 
-    AUTOTEST: Alt: 3.91  HomeDist: 0.41 
+    AUTOTEST: Alt: 12.84  HomeDist: 96.31
+    AUTOTEST: Alt: 13.88  HomeDist: 96.31
+    AUTOTEST: Alt: 14.48  HomeDist: 96.24
+    AUTOTEST: Alt: 14.75  HomeDist: 95.93
+    AUTOTEST: Alt: 14.87  HomeDist: 95.32
+    AUTOTEST: Alt: 14.93  HomeDist: 94.39
+    AUTOTEST: Alt: 14.96  HomeDist: 93.16
+    AUTOTEST: Alt: 14.98  HomeDist: 91.58
+    AUTOTEST: Alt: 14.99  HomeDist: 89.71
+    AUTOTEST: Alt: 14.99  HomeDist: 87.63
+    AUTOTEST: Alt: 15.00  HomeDist: 85.38
+    AUTOTEST: Alt: 15.00  HomeDist: 82.98
+    AUTOTEST: Alt: 15.00  HomeDist: 80.49
+    AUTOTEST: Alt: 15.00  HomeDist: 77.92
+    AUTOTEST: Alt: 15.00  HomeDist: 75.28
+    AUTOTEST: Alt: 15.00  HomeDist: 72.57
+    AUTOTEST: Alt: 15.00  HomeDist: 69.84
+    AUTOTEST: Alt: 15.00  HomeDist: 67.07
+    AUTOTEST: Alt: 15.00  HomeDist: 64.26
+    AUTOTEST: Alt: 15.00  HomeDist: 61.42
+    AUTOTEST: Alt: 14.99  HomeDist: 58.56
+    AUTOTEST: Alt: 14.99  HomeDist: 55.69
+    AUTOTEST: Alt: 14.99  HomeDist: 52.80
+    AUTOTEST: Alt: 14.99  HomeDist: 49.89
+    AUTOTEST: Alt: 14.99  HomeDist: 46.97
+    AUTOTEST: Alt: 15.00  HomeDist: 44.04
+    AUTOTEST: Alt: 15.00  HomeDist: 41.11
+    AUTOTEST: Alt: 15.00  HomeDist: 38.17
+    AUTOTEST: Alt: 15.00  HomeDist: 35.22
+    AUTOTEST: Alt: 15.00  HomeDist: 32.27
+    AUTOTEST: Alt: 15.00  HomeDist: 29.32
+    AUTOTEST: Alt: 15.00  HomeDist: 26.40
+    AUTOTEST: Alt: 15.00  HomeDist: 23.45
+    AUTOTEST: Alt: 15.00  HomeDist: 20.49
+    AUTOTEST: Alt: 15.00  HomeDist: 17.55
+    AUTOTEST: Alt: 15.00  HomeDist: 14.62
+    AUTOTEST: Alt: 15.00  HomeDist: 11.74
+    AUTOTEST: Alt: 15.01  HomeDist: 9.02
+    AUTOTEST: Alt: 15.01  HomeDist: 6.51
+    AUTOTEST: Alt: 15.01  HomeDist: 4.35
+    AUTOTEST: Alt: 15.00  HomeDist: 2.54
+    AUTOTEST: Alt: 15.00  HomeDist: 1.22
+    AUTOTEST: Alt: 14.99  HomeDist: 0.46
+    AUTOTEST: Alt: 14.98  HomeDist: 0.34
+    AUTOTEST: Alt: 14.98  HomeDist: 0.34
+    AUTOTEST: Alt: 14.97  HomeDist: 0.30
+    AUTOTEST: Alt: 14.97  HomeDist: 0.30
+    AUTOTEST: Alt: 14.97  HomeDist: 0.35
+    AUTOTEST: Alt: 14.98  HomeDist: 0.38
+    AUTOTEST: Alt: 14.98  HomeDist: 0.39
+    AUTOTEST: Alt: 14.93  HomeDist: 0.39
+    AUTOTEST: Alt: 14.63  HomeDist: 0.37
+    AUTOTEST: Alt: 13.94  HomeDist: 0.37
+    AUTOTEST: Alt: 13.00  HomeDist: 0.36
+    AUTOTEST: Alt: 12.05  HomeDist: 0.34
+    AUTOTEST: Alt: 11.14  HomeDist: 0.34
+    AUTOTEST: Alt: 10.33  HomeDist: 0.35
+    AUTOTEST: Alt: 9.83  HomeDist: 0.37
+    AUTOTEST: Alt: 9.56  HomeDist: 0.38
+    AUTOTEST: Alt: 9.31  HomeDist: 0.38
+    AUTOTEST: Alt: 9.02  HomeDist: 0.38
+    AUTOTEST: Alt: 8.72  HomeDist: 0.39
+    AUTOTEST: Alt: 8.42  HomeDist: 0.38
+    AUTOTEST: Alt: 8.12  HomeDist: 0.38
+    AUTOTEST: Alt: 7.82  HomeDist: 0.38
+    AUTOTEST: Alt: 7.52  HomeDist: 0.38
+    AUTOTEST: Alt: 7.22  HomeDist: 0.38
+    AUTOTEST: Alt: 6.92  HomeDist: 0.39
+    AUTOTEST: Alt: 6.62  HomeDist: 0.39
+    AUTOTEST: Alt: 6.31  HomeDist: 0.40
+    AUTOTEST: Alt: 6.01  HomeDist: 0.40
+    AUTOTEST: Alt: 5.71  HomeDist: 0.40
+    AUTOTEST: Alt: 5.41  HomeDist: 0.40
+    AUTOTEST: Alt: 5.11  HomeDist: 0.40
+    AUTOTEST: Alt: 4.81  HomeDist: 0.41
+    AUTOTEST: Alt: 4.51  HomeDist: 0.41
+    AUTOTEST: Alt: 4.21  HomeDist: 0.41
+    AUTOTEST: Alt: 3.91  HomeDist: 0.41
     height 0
-    AUTOTEST: Alt: 3.61  HomeDist: 0.41 
-    AUTOTEST: Alt: 3.31  HomeDist: 0.41 
-    AUTOTEST: Alt: 3.01  HomeDist: 0.41 
-    AUTOTEST: Alt: 2.71  HomeDist: 0.41 
-    AUTOTEST: Alt: 2.41  HomeDist: 0.41 
-    AUTOTEST: Alt: 2.12  HomeDist: 0.41 
-    AUTOTEST: Alt: 1.81  HomeDist: 0.41 
-    AUTOTEST: Alt: 1.51  HomeDist: 0.41 
-    AUTOTEST: Alt: 1.21  HomeDist: 0.41 
+    AUTOTEST: Alt: 3.61  HomeDist: 0.41
+    AUTOTEST: Alt: 3.31  HomeDist: 0.41
+    AUTOTEST: Alt: 3.01  HomeDist: 0.41
+    AUTOTEST: Alt: 2.71  HomeDist: 0.41
+    AUTOTEST: Alt: 2.41  HomeDist: 0.41
+    AUTOTEST: Alt: 2.12  HomeDist: 0.41
+    AUTOTEST: Alt: 1.81  HomeDist: 0.41
+    AUTOTEST: Alt: 1.51  HomeDist: 0.41
+    AUTOTEST: Alt: 1.21  HomeDist: 0.41
     AUTOTEST: Alt: 0.91  HomeDist: 0.41 HOME
     AUTOTEST: Alt: 0.61  HomeDist: 0.41 HOME
     Hit ground at 0.475523 m/s
@@ -31831,90 +31831,90 @@ AutoTest Output
     rc 3 1500
     rc 3 1500
     RTL> AUTOTEST: set_rc (wc=0.0377941131592 st=0.0 r=None): ch=3 want=1500 got=1500
-    AUTOTEST: Alt: 8.97  HomeDist: 71.26 
-    AUTOTEST: Alt: 9.39  HomeDist: 71.17 
+    AUTOTEST: Alt: 8.97  HomeDist: 71.26
+    AUTOTEST: Alt: 9.39  HomeDist: 71.17
     height 10
-    AUTOTEST: Alt: 10.24  HomeDist: 72.99 
-    AUTOTEST: Alt: 11.33  HomeDist: 75.23 
-    AUTOTEST: Alt: 12.53  HomeDist: 77.21 
-    AUTOTEST: Alt: 13.65  HomeDist: 78.55 
-    AUTOTEST: Alt: 14.37  HomeDist: 79.15 
-    AUTOTEST: Alt: 14.70  HomeDist: 79.16 
-    AUTOTEST: Alt: 14.84  HomeDist: 78.72 
-    AUTOTEST: Alt: 14.91  HomeDist: 77.90 
-    AUTOTEST: Alt: 14.95  HomeDist: 76.78 
-    AUTOTEST: Alt: 14.97  HomeDist: 75.32 
-    AUTOTEST: Alt: 14.98  HomeDist: 73.52 
-    AUTOTEST: Alt: 14.99  HomeDist: 71.41 
-    AUTOTEST: Alt: 14.99  HomeDist: 69.06 
-    AUTOTEST: Alt: 14.99  HomeDist: 66.53 
-    AUTOTEST: Alt: 14.99  HomeDist: 63.85 
-    AUTOTEST: Alt: 14.99  HomeDist: 61.06 
-    AUTOTEST: Alt: 14.99  HomeDist: 58.19 
-    AUTOTEST: Alt: 14.99  HomeDist: 55.23 
-    AUTOTEST: Alt: 14.99  HomeDist: 52.22 
-    AUTOTEST: Alt: 14.99  HomeDist: 49.16 
-    AUTOTEST: Alt: 14.99  HomeDist: 46.05 
-    AUTOTEST: Alt: 14.99  HomeDist: 42.91 
-    AUTOTEST: Alt: 14.99  HomeDist: 39.74 
-    AUTOTEST: Alt: 14.99  HomeDist: 36.53 
-    AUTOTEST: Alt: 14.99  HomeDist: 33.31 
-    AUTOTEST: Alt: 14.99  HomeDist: 30.06 
-    AUTOTEST: Alt: 14.99  HomeDist: 26.80 
-    AUTOTEST: Alt: 14.99  HomeDist: 23.53 
-    AUTOTEST: Alt: 14.99  HomeDist: 20.24 
-    AUTOTEST: Alt: 14.99  HomeDist: 16.96 
-    AUTOTEST: Alt: 14.99  HomeDist: 13.73 
-    AUTOTEST: Alt: 14.99  HomeDist: 10.63 
-    AUTOTEST: Alt: 15.00  HomeDist: 7.78 
-    AUTOTEST: Alt: 15.00  HomeDist: 5.25 
-    AUTOTEST: Alt: 15.00  HomeDist: 3.16 
-    AUTOTEST: Alt: 14.99  HomeDist: 1.55 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.46 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.06 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.14 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.07 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.09 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.20 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.27 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.29 
-    AUTOTEST: Alt: 14.96  HomeDist: 0.29 
-    AUTOTEST: Alt: 14.71  HomeDist: 0.26 
-    AUTOTEST: Alt: 14.10  HomeDist: 0.24 
-    AUTOTEST: Alt: 13.19  HomeDist: 0.21 
-    AUTOTEST: Alt: 12.22  HomeDist: 0.20 
-    AUTOTEST: Alt: 11.30  HomeDist: 0.19 
-    AUTOTEST: Alt: 10.46  HomeDist: 0.19 
-    AUTOTEST: Alt: 9.90  HomeDist: 0.20 
-    AUTOTEST: Alt: 9.61  HomeDist: 0.21 
-    AUTOTEST: Alt: 9.36  HomeDist: 0.21 
-    AUTOTEST: Alt: 9.08  HomeDist: 0.22 
-    AUTOTEST: Alt: 8.79  HomeDist: 0.22 
-    AUTOTEST: Alt: 8.48  HomeDist: 0.22 
-    AUTOTEST: Alt: 8.18  HomeDist: 0.22 
-    AUTOTEST: Alt: 7.88  HomeDist: 0.22 
-    AUTOTEST: Alt: 7.58  HomeDist: 0.22 
-    AUTOTEST: Alt: 7.28  HomeDist: 0.23 
-    AUTOTEST: Alt: 6.98  HomeDist: 0.23 
-    AUTOTEST: Alt: 6.68  HomeDist: 0.22 
-    AUTOTEST: Alt: 6.38  HomeDist: 0.23 
-    AUTOTEST: Alt: 6.08  HomeDist: 0.23 
-    AUTOTEST: Alt: 5.78  HomeDist: 0.23 
-    AUTOTEST: Alt: 5.48  HomeDist: 0.23 
-    AUTOTEST: Alt: 5.18  HomeDist: 0.23 
-    AUTOTEST: Alt: 4.88  HomeDist: 0.23 
-    AUTOTEST: Alt: 4.58  HomeDist: 0.23 
-    AUTOTEST: Alt: 4.28  HomeDist: 0.24 
-    AUTOTEST: Alt: 3.98  HomeDist: 0.24 
-    AUTOTEST: Alt: 3.68  HomeDist: 0.24 
-    AUTOTEST: Alt: 3.38  HomeDist: 0.24 
-    AUTOTEST: Alt: 3.08  HomeDist: 0.25 
-    AUTOTEST: Alt: 2.78  HomeDist: 0.25 
-    AUTOTEST: Alt: 2.48  HomeDist: 0.25 
-    AUTOTEST: Alt: 2.18  HomeDist: 0.25 
-    AUTOTEST: Alt: 1.88  HomeDist: 0.25 
-    AUTOTEST: Alt: 1.58  HomeDist: 0.24 
-    AUTOTEST: Alt: 1.28  HomeDist: 0.24 
+    AUTOTEST: Alt: 10.24  HomeDist: 72.99
+    AUTOTEST: Alt: 11.33  HomeDist: 75.23
+    AUTOTEST: Alt: 12.53  HomeDist: 77.21
+    AUTOTEST: Alt: 13.65  HomeDist: 78.55
+    AUTOTEST: Alt: 14.37  HomeDist: 79.15
+    AUTOTEST: Alt: 14.70  HomeDist: 79.16
+    AUTOTEST: Alt: 14.84  HomeDist: 78.72
+    AUTOTEST: Alt: 14.91  HomeDist: 77.90
+    AUTOTEST: Alt: 14.95  HomeDist: 76.78
+    AUTOTEST: Alt: 14.97  HomeDist: 75.32
+    AUTOTEST: Alt: 14.98  HomeDist: 73.52
+    AUTOTEST: Alt: 14.99  HomeDist: 71.41
+    AUTOTEST: Alt: 14.99  HomeDist: 69.06
+    AUTOTEST: Alt: 14.99  HomeDist: 66.53
+    AUTOTEST: Alt: 14.99  HomeDist: 63.85
+    AUTOTEST: Alt: 14.99  HomeDist: 61.06
+    AUTOTEST: Alt: 14.99  HomeDist: 58.19
+    AUTOTEST: Alt: 14.99  HomeDist: 55.23
+    AUTOTEST: Alt: 14.99  HomeDist: 52.22
+    AUTOTEST: Alt: 14.99  HomeDist: 49.16
+    AUTOTEST: Alt: 14.99  HomeDist: 46.05
+    AUTOTEST: Alt: 14.99  HomeDist: 42.91
+    AUTOTEST: Alt: 14.99  HomeDist: 39.74
+    AUTOTEST: Alt: 14.99  HomeDist: 36.53
+    AUTOTEST: Alt: 14.99  HomeDist: 33.31
+    AUTOTEST: Alt: 14.99  HomeDist: 30.06
+    AUTOTEST: Alt: 14.99  HomeDist: 26.80
+    AUTOTEST: Alt: 14.99  HomeDist: 23.53
+    AUTOTEST: Alt: 14.99  HomeDist: 20.24
+    AUTOTEST: Alt: 14.99  HomeDist: 16.96
+    AUTOTEST: Alt: 14.99  HomeDist: 13.73
+    AUTOTEST: Alt: 14.99  HomeDist: 10.63
+    AUTOTEST: Alt: 15.00  HomeDist: 7.78
+    AUTOTEST: Alt: 15.00  HomeDist: 5.25
+    AUTOTEST: Alt: 15.00  HomeDist: 3.16
+    AUTOTEST: Alt: 14.99  HomeDist: 1.55
+    AUTOTEST: Alt: 14.99  HomeDist: 0.46
+    AUTOTEST: Alt: 14.99  HomeDist: 0.06
+    AUTOTEST: Alt: 14.98  HomeDist: 0.14
+    AUTOTEST: Alt: 14.98  HomeDist: 0.07
+    AUTOTEST: Alt: 14.98  HomeDist: 0.09
+    AUTOTEST: Alt: 14.98  HomeDist: 0.20
+    AUTOTEST: Alt: 14.98  HomeDist: 0.27
+    AUTOTEST: Alt: 14.98  HomeDist: 0.29
+    AUTOTEST: Alt: 14.96  HomeDist: 0.29
+    AUTOTEST: Alt: 14.71  HomeDist: 0.26
+    AUTOTEST: Alt: 14.10  HomeDist: 0.24
+    AUTOTEST: Alt: 13.19  HomeDist: 0.21
+    AUTOTEST: Alt: 12.22  HomeDist: 0.20
+    AUTOTEST: Alt: 11.30  HomeDist: 0.19
+    AUTOTEST: Alt: 10.46  HomeDist: 0.19
+    AUTOTEST: Alt: 9.90  HomeDist: 0.20
+    AUTOTEST: Alt: 9.61  HomeDist: 0.21
+    AUTOTEST: Alt: 9.36  HomeDist: 0.21
+    AUTOTEST: Alt: 9.08  HomeDist: 0.22
+    AUTOTEST: Alt: 8.79  HomeDist: 0.22
+    AUTOTEST: Alt: 8.48  HomeDist: 0.22
+    AUTOTEST: Alt: 8.18  HomeDist: 0.22
+    AUTOTEST: Alt: 7.88  HomeDist: 0.22
+    AUTOTEST: Alt: 7.58  HomeDist: 0.22
+    AUTOTEST: Alt: 7.28  HomeDist: 0.23
+    AUTOTEST: Alt: 6.98  HomeDist: 0.23
+    AUTOTEST: Alt: 6.68  HomeDist: 0.22
+    AUTOTEST: Alt: 6.38  HomeDist: 0.23
+    AUTOTEST: Alt: 6.08  HomeDist: 0.23
+    AUTOTEST: Alt: 5.78  HomeDist: 0.23
+    AUTOTEST: Alt: 5.48  HomeDist: 0.23
+    AUTOTEST: Alt: 5.18  HomeDist: 0.23
+    AUTOTEST: Alt: 4.88  HomeDist: 0.23
+    AUTOTEST: Alt: 4.58  HomeDist: 0.23
+    AUTOTEST: Alt: 4.28  HomeDist: 0.24
+    AUTOTEST: Alt: 3.98  HomeDist: 0.24
+    AUTOTEST: Alt: 3.68  HomeDist: 0.24
+    AUTOTEST: Alt: 3.38  HomeDist: 0.24
+    AUTOTEST: Alt: 3.08  HomeDist: 0.25
+    AUTOTEST: Alt: 2.78  HomeDist: 0.25
+    AUTOTEST: Alt: 2.48  HomeDist: 0.25
+    AUTOTEST: Alt: 2.18  HomeDist: 0.25
+    AUTOTEST: Alt: 1.88  HomeDist: 0.25
+    AUTOTEST: Alt: 1.58  HomeDist: 0.24
+    AUTOTEST: Alt: 1.28  HomeDist: 0.24
     AUTOTEST: Alt: 0.98  HomeDist: 0.24 HOME
     AUTOTEST: Alt: 0.68  HomeDist: 0.23 HOME
     height 0
@@ -32112,90 +32112,90 @@ AutoTest Output
     rc 3 1500
     rc 3 1500
     RTL> AUTOTEST: set_rc (wc=0.017541885376 st=0.0 r=None): ch=3 want=1500 got=1500
-    AUTOTEST: Alt: 18.01  HomeDist: 64.53 
-    AUTOTEST: Alt: 17.77  HomeDist: 64.53 
-    AUTOTEST: Alt: 17.96  HomeDist: 64.53 
-    AUTOTEST: Alt: 18.52  HomeDist: 64.53 
-    AUTOTEST: Alt: 19.02  HomeDist: 64.46 
-    AUTOTEST: Alt: 19.24  HomeDist: 64.17 
-    AUTOTEST: Alt: 19.33  HomeDist: 63.54 
-    AUTOTEST: Alt: 19.37  HomeDist: 62.61 
-    AUTOTEST: Alt: 19.40  HomeDist: 61.36 
-    AUTOTEST: Alt: 19.41  HomeDist: 59.77 
-    AUTOTEST: Alt: 19.42  HomeDist: 57.89 
-    AUTOTEST: Alt: 19.43  HomeDist: 55.80 
-    AUTOTEST: Alt: 19.43  HomeDist: 53.54 
-    AUTOTEST: Alt: 19.43  HomeDist: 51.15 
-    AUTOTEST: Alt: 19.43  HomeDist: 48.65 
-    AUTOTEST: Alt: 19.43  HomeDist: 46.08 
-    AUTOTEST: Alt: 19.43  HomeDist: 43.42 
-    AUTOTEST: Alt: 19.43  HomeDist: 40.73 
-    AUTOTEST: Alt: 19.42  HomeDist: 37.99 
-    AUTOTEST: Alt: 19.42  HomeDist: 35.21 
-    AUTOTEST: Alt: 19.42  HomeDist: 32.40 
-    AUTOTEST: Alt: 19.42  HomeDist: 29.56 
-    AUTOTEST: Alt: 19.42  HomeDist: 26.70 
-    AUTOTEST: Alt: 19.42  HomeDist: 23.83 
-    AUTOTEST: Alt: 19.42  HomeDist: 20.93 
-    AUTOTEST: Alt: 19.41  HomeDist: 18.01 
-    AUTOTEST: Alt: 19.41  HomeDist: 15.10 
-    AUTOTEST: Alt: 19.41  HomeDist: 12.24 
-    AUTOTEST: Alt: 19.41  HomeDist: 9.51 
-    AUTOTEST: Alt: 19.41  HomeDist: 7.00 
-    AUTOTEST: Alt: 19.41  HomeDist: 4.80 
-    AUTOTEST: Alt: 19.41  HomeDist: 2.99 
-    AUTOTEST: Alt: 19.40  HomeDist: 1.61 
-    AUTOTEST: Alt: 19.40  HomeDist: 0.80 
-    AUTOTEST: Alt: 19.39  HomeDist: 0.55 
-    AUTOTEST: Alt: 19.39  HomeDist: 0.51 
-    AUTOTEST: Alt: 19.39  HomeDist: 0.49 
-    AUTOTEST: Alt: 19.39  HomeDist: 0.50 
-    AUTOTEST: Alt: 19.39  HomeDist: 0.53 
-    AUTOTEST: Alt: 19.39  HomeDist: 0.53 
-    AUTOTEST: Alt: 19.39  HomeDist: 0.52 
-    AUTOTEST: Alt: 19.29  HomeDist: 0.50 
-    AUTOTEST: Alt: 18.84  HomeDist: 0.48 
-    AUTOTEST: Alt: 18.02  HomeDist: 0.45 
-    AUTOTEST: Alt: 17.06  HomeDist: 0.43 
-    AUTOTEST: Alt: 16.12  HomeDist: 0.43 
-    AUTOTEST: Alt: 15.21  HomeDist: 0.43 
-    AUTOTEST: Alt: 14.31  HomeDist: 0.45 
-    AUTOTEST: Alt: 13.41  HomeDist: 0.47 
-    AUTOTEST: Alt: 12.52  HomeDist: 0.48 
-    AUTOTEST: Alt: 11.62  HomeDist: 0.48 
+    AUTOTEST: Alt: 18.01  HomeDist: 64.53
+    AUTOTEST: Alt: 17.77  HomeDist: 64.53
+    AUTOTEST: Alt: 17.96  HomeDist: 64.53
+    AUTOTEST: Alt: 18.52  HomeDist: 64.53
+    AUTOTEST: Alt: 19.02  HomeDist: 64.46
+    AUTOTEST: Alt: 19.24  HomeDist: 64.17
+    AUTOTEST: Alt: 19.33  HomeDist: 63.54
+    AUTOTEST: Alt: 19.37  HomeDist: 62.61
+    AUTOTEST: Alt: 19.40  HomeDist: 61.36
+    AUTOTEST: Alt: 19.41  HomeDist: 59.77
+    AUTOTEST: Alt: 19.42  HomeDist: 57.89
+    AUTOTEST: Alt: 19.43  HomeDist: 55.80
+    AUTOTEST: Alt: 19.43  HomeDist: 53.54
+    AUTOTEST: Alt: 19.43  HomeDist: 51.15
+    AUTOTEST: Alt: 19.43  HomeDist: 48.65
+    AUTOTEST: Alt: 19.43  HomeDist: 46.08
+    AUTOTEST: Alt: 19.43  HomeDist: 43.42
+    AUTOTEST: Alt: 19.43  HomeDist: 40.73
+    AUTOTEST: Alt: 19.42  HomeDist: 37.99
+    AUTOTEST: Alt: 19.42  HomeDist: 35.21
+    AUTOTEST: Alt: 19.42  HomeDist: 32.40
+    AUTOTEST: Alt: 19.42  HomeDist: 29.56
+    AUTOTEST: Alt: 19.42  HomeDist: 26.70
+    AUTOTEST: Alt: 19.42  HomeDist: 23.83
+    AUTOTEST: Alt: 19.42  HomeDist: 20.93
+    AUTOTEST: Alt: 19.41  HomeDist: 18.01
+    AUTOTEST: Alt: 19.41  HomeDist: 15.10
+    AUTOTEST: Alt: 19.41  HomeDist: 12.24
+    AUTOTEST: Alt: 19.41  HomeDist: 9.51
+    AUTOTEST: Alt: 19.41  HomeDist: 7.00
+    AUTOTEST: Alt: 19.41  HomeDist: 4.80
+    AUTOTEST: Alt: 19.41  HomeDist: 2.99
+    AUTOTEST: Alt: 19.40  HomeDist: 1.61
+    AUTOTEST: Alt: 19.40  HomeDist: 0.80
+    AUTOTEST: Alt: 19.39  HomeDist: 0.55
+    AUTOTEST: Alt: 19.39  HomeDist: 0.51
+    AUTOTEST: Alt: 19.39  HomeDist: 0.49
+    AUTOTEST: Alt: 19.39  HomeDist: 0.50
+    AUTOTEST: Alt: 19.39  HomeDist: 0.53
+    AUTOTEST: Alt: 19.39  HomeDist: 0.53
+    AUTOTEST: Alt: 19.39  HomeDist: 0.52
+    AUTOTEST: Alt: 19.29  HomeDist: 0.50
+    AUTOTEST: Alt: 18.84  HomeDist: 0.48
+    AUTOTEST: Alt: 18.02  HomeDist: 0.45
+    AUTOTEST: Alt: 17.06  HomeDist: 0.43
+    AUTOTEST: Alt: 16.12  HomeDist: 0.43
+    AUTOTEST: Alt: 15.21  HomeDist: 0.43
+    AUTOTEST: Alt: 14.31  HomeDist: 0.45
+    AUTOTEST: Alt: 13.41  HomeDist: 0.47
+    AUTOTEST: Alt: 12.52  HomeDist: 0.48
+    AUTOTEST: Alt: 11.62  HomeDist: 0.48
     height 10
-    AUTOTEST: Alt: 10.75  HomeDist: 0.50 
-    AUTOTEST: Alt: 10.06  HomeDist: 0.50 
-    AUTOTEST: Alt: 9.70  HomeDist: 0.50 
-    AUTOTEST: Alt: 9.46  HomeDist: 0.51 
-    AUTOTEST: Alt: 9.19  HomeDist: 0.51 
-    AUTOTEST: Alt: 8.90  HomeDist: 0.50 
-    AUTOTEST: Alt: 8.60  HomeDist: 0.50 
-    AUTOTEST: Alt: 8.29  HomeDist: 0.49 
-    AUTOTEST: Alt: 7.99  HomeDist: 0.50 
-    AUTOTEST: Alt: 7.69  HomeDist: 0.50 
-    AUTOTEST: Alt: 7.39  HomeDist: 0.50 
-    AUTOTEST: Alt: 7.09  HomeDist: 0.50 
-    AUTOTEST: Alt: 6.79  HomeDist: 0.51 
-    AUTOTEST: Alt: 6.49  HomeDist: 0.52 
-    AUTOTEST: Alt: 6.18  HomeDist: 0.52 
-    AUTOTEST: Alt: 5.88  HomeDist: 0.53 
-    AUTOTEST: Alt: 5.58  HomeDist: 0.53 
-    AUTOTEST: Alt: 5.28  HomeDist: 0.53 
-    AUTOTEST: Alt: 4.98  HomeDist: 0.53 
-    AUTOTEST: Alt: 4.68  HomeDist: 0.53 
-    AUTOTEST: Alt: 4.38  HomeDist: 0.52 
-    AUTOTEST: Alt: 4.08  HomeDist: 0.52 
-    AUTOTEST: Alt: 3.78  HomeDist: 0.52 
-    AUTOTEST: Alt: 3.48  HomeDist: 0.52 
-    AUTOTEST: Alt: 3.17  HomeDist: 0.52 
-    AUTOTEST: Alt: 2.87  HomeDist: 0.53 
-    AUTOTEST: Alt: 2.57  HomeDist: 0.54 
-    AUTOTEST: Alt: 2.27  HomeDist: 0.54 
-    AUTOTEST: Alt: 1.97  HomeDist: 0.54 
-    AUTOTEST: Alt: 1.68  HomeDist: 0.54 
-    AUTOTEST: Alt: 1.38  HomeDist: 0.55 
-    AUTOTEST: Alt: 1.07  HomeDist: 0.55 
+    AUTOTEST: Alt: 10.75  HomeDist: 0.50
+    AUTOTEST: Alt: 10.06  HomeDist: 0.50
+    AUTOTEST: Alt: 9.70  HomeDist: 0.50
+    AUTOTEST: Alt: 9.46  HomeDist: 0.51
+    AUTOTEST: Alt: 9.19  HomeDist: 0.51
+    AUTOTEST: Alt: 8.90  HomeDist: 0.50
+    AUTOTEST: Alt: 8.60  HomeDist: 0.50
+    AUTOTEST: Alt: 8.29  HomeDist: 0.49
+    AUTOTEST: Alt: 7.99  HomeDist: 0.50
+    AUTOTEST: Alt: 7.69  HomeDist: 0.50
+    AUTOTEST: Alt: 7.39  HomeDist: 0.50
+    AUTOTEST: Alt: 7.09  HomeDist: 0.50
+    AUTOTEST: Alt: 6.79  HomeDist: 0.51
+    AUTOTEST: Alt: 6.49  HomeDist: 0.52
+    AUTOTEST: Alt: 6.18  HomeDist: 0.52
+    AUTOTEST: Alt: 5.88  HomeDist: 0.53
+    AUTOTEST: Alt: 5.58  HomeDist: 0.53
+    AUTOTEST: Alt: 5.28  HomeDist: 0.53
+    AUTOTEST: Alt: 4.98  HomeDist: 0.53
+    AUTOTEST: Alt: 4.68  HomeDist: 0.53
+    AUTOTEST: Alt: 4.38  HomeDist: 0.52
+    AUTOTEST: Alt: 4.08  HomeDist: 0.52
+    AUTOTEST: Alt: 3.78  HomeDist: 0.52
+    AUTOTEST: Alt: 3.48  HomeDist: 0.52
+    AUTOTEST: Alt: 3.17  HomeDist: 0.52
+    AUTOTEST: Alt: 2.87  HomeDist: 0.53
+    AUTOTEST: Alt: 2.57  HomeDist: 0.54
+    AUTOTEST: Alt: 2.27  HomeDist: 0.54
+    AUTOTEST: Alt: 1.97  HomeDist: 0.54
+    AUTOTEST: Alt: 1.68  HomeDist: 0.54
+    AUTOTEST: Alt: 1.38  HomeDist: 0.55
+    AUTOTEST: Alt: 1.07  HomeDist: 0.55
     height 0
     AUTOTEST: Alt: 0.78  HomeDist: 0.54 HOME
     AUTOTEST: Alt: 0.48  HomeDist: 0.53 HOME
@@ -32377,77 +32377,77 @@ AutoTest Output
     rc 3 1500
     rc 3 1500
     RTL> AUTOTEST: set_rc (wc=0.0255370140076 st=0.0 r=None): ch=3 want=1500 got=1500
-    AUTOTEST: Alt: 5.03  HomeDist: 31.03 
-    AUTOTEST: Alt: 5.65  HomeDist: 30.73 
-    AUTOTEST: Alt: 6.59  HomeDist: 30.50 
-    AUTOTEST: Alt: 7.74  HomeDist: 30.33 
-    AUTOTEST: Alt: 8.99  HomeDist: 30.20 
+    AUTOTEST: Alt: 5.03  HomeDist: 31.03
+    AUTOTEST: Alt: 5.65  HomeDist: 30.73
+    AUTOTEST: Alt: 6.59  HomeDist: 30.50
+    AUTOTEST: Alt: 7.74  HomeDist: 30.33
+    AUTOTEST: Alt: 8.99  HomeDist: 30.20
     height 10
-    AUTOTEST: Alt: 10.30  HomeDist: 30.12 
-    AUTOTEST: Alt: 11.66  HomeDist: 30.08 
-    AUTOTEST: Alt: 12.99  HomeDist: 30.05 
-    AUTOTEST: Alt: 13.97  HomeDist: 30.02 
-    AUTOTEST: Alt: 14.51  HomeDist: 29.87 
-    AUTOTEST: Alt: 14.75  HomeDist: 29.39 
-    AUTOTEST: Alt: 14.87  HomeDist: 28.54 
-    AUTOTEST: Alt: 14.92  HomeDist: 27.31 
-    AUTOTEST: Alt: 14.95  HomeDist: 25.69 
-    AUTOTEST: Alt: 14.97  HomeDist: 23.66 
-    AUTOTEST: Alt: 14.98  HomeDist: 21.30 
-    AUTOTEST: Alt: 14.98  HomeDist: 18.68 
-    AUTOTEST: Alt: 14.98  HomeDist: 15.87 
-    AUTOTEST: Alt: 14.98  HomeDist: 12.94 
-    AUTOTEST: Alt: 14.99  HomeDist: 10.02 
-    AUTOTEST: Alt: 14.99  HomeDist: 7.24 
-    AUTOTEST: Alt: 14.99  HomeDist: 4.74 
-    AUTOTEST: Alt: 14.99  HomeDist: 2.67 
-    AUTOTEST: Alt: 14.99  HomeDist: 1.10 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.17 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.19 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.20 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.08 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.08 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.19 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.25 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.26 
-    AUTOTEST: Alt: 14.90  HomeDist: 0.26 
-    AUTOTEST: Alt: 14.52  HomeDist: 0.24 
-    AUTOTEST: Alt: 13.76  HomeDist: 0.23 
-    AUTOTEST: Alt: 12.81  HomeDist: 0.20 
-    AUTOTEST: Alt: 11.86  HomeDist: 0.18 
-    AUTOTEST: Alt: 10.95  HomeDist: 0.18 
-    AUTOTEST: Alt: 10.20  HomeDist: 0.17 
-    AUTOTEST: Alt: 9.77  HomeDist: 0.17 
-    AUTOTEST: Alt: 9.52  HomeDist: 0.16 
-    AUTOTEST: Alt: 9.26  HomeDist: 0.16 
-    AUTOTEST: Alt: 8.97  HomeDist: 0.15 
-    AUTOTEST: Alt: 8.67  HomeDist: 0.15 
-    AUTOTEST: Alt: 8.37  HomeDist: 0.15 
-    AUTOTEST: Alt: 8.07  HomeDist: 0.14 
-    AUTOTEST: Alt: 7.77  HomeDist: 0.13 
-    AUTOTEST: Alt: 7.47  HomeDist: 0.13 
-    AUTOTEST: Alt: 7.17  HomeDist: 0.12 
-    AUTOTEST: Alt: 6.87  HomeDist: 0.12 
-    AUTOTEST: Alt: 6.56  HomeDist: 0.12 
-    AUTOTEST: Alt: 6.26  HomeDist: 0.12 
-    AUTOTEST: Alt: 5.96  HomeDist: 0.11 
-    AUTOTEST: Alt: 5.66  HomeDist: 0.11 
-    AUTOTEST: Alt: 5.36  HomeDist: 0.11 
-    AUTOTEST: Alt: 5.06  HomeDist: 0.11 
+    AUTOTEST: Alt: 10.30  HomeDist: 30.12
+    AUTOTEST: Alt: 11.66  HomeDist: 30.08
+    AUTOTEST: Alt: 12.99  HomeDist: 30.05
+    AUTOTEST: Alt: 13.97  HomeDist: 30.02
+    AUTOTEST: Alt: 14.51  HomeDist: 29.87
+    AUTOTEST: Alt: 14.75  HomeDist: 29.39
+    AUTOTEST: Alt: 14.87  HomeDist: 28.54
+    AUTOTEST: Alt: 14.92  HomeDist: 27.31
+    AUTOTEST: Alt: 14.95  HomeDist: 25.69
+    AUTOTEST: Alt: 14.97  HomeDist: 23.66
+    AUTOTEST: Alt: 14.98  HomeDist: 21.30
+    AUTOTEST: Alt: 14.98  HomeDist: 18.68
+    AUTOTEST: Alt: 14.98  HomeDist: 15.87
+    AUTOTEST: Alt: 14.98  HomeDist: 12.94
+    AUTOTEST: Alt: 14.99  HomeDist: 10.02
+    AUTOTEST: Alt: 14.99  HomeDist: 7.24
+    AUTOTEST: Alt: 14.99  HomeDist: 4.74
+    AUTOTEST: Alt: 14.99  HomeDist: 2.67
+    AUTOTEST: Alt: 14.99  HomeDist: 1.10
+    AUTOTEST: Alt: 14.98  HomeDist: 0.17
+    AUTOTEST: Alt: 14.98  HomeDist: 0.19
+    AUTOTEST: Alt: 14.98  HomeDist: 0.20
+    AUTOTEST: Alt: 14.98  HomeDist: 0.08
+    AUTOTEST: Alt: 14.98  HomeDist: 0.08
+    AUTOTEST: Alt: 14.98  HomeDist: 0.19
+    AUTOTEST: Alt: 14.98  HomeDist: 0.25
+    AUTOTEST: Alt: 14.98  HomeDist: 0.26
+    AUTOTEST: Alt: 14.90  HomeDist: 0.26
+    AUTOTEST: Alt: 14.52  HomeDist: 0.24
+    AUTOTEST: Alt: 13.76  HomeDist: 0.23
+    AUTOTEST: Alt: 12.81  HomeDist: 0.20
+    AUTOTEST: Alt: 11.86  HomeDist: 0.18
+    AUTOTEST: Alt: 10.95  HomeDist: 0.18
+    AUTOTEST: Alt: 10.20  HomeDist: 0.17
+    AUTOTEST: Alt: 9.77  HomeDist: 0.17
+    AUTOTEST: Alt: 9.52  HomeDist: 0.16
+    AUTOTEST: Alt: 9.26  HomeDist: 0.16
+    AUTOTEST: Alt: 8.97  HomeDist: 0.15
+    AUTOTEST: Alt: 8.67  HomeDist: 0.15
+    AUTOTEST: Alt: 8.37  HomeDist: 0.15
+    AUTOTEST: Alt: 8.07  HomeDist: 0.14
+    AUTOTEST: Alt: 7.77  HomeDist: 0.13
+    AUTOTEST: Alt: 7.47  HomeDist: 0.13
+    AUTOTEST: Alt: 7.17  HomeDist: 0.12
+    AUTOTEST: Alt: 6.87  HomeDist: 0.12
+    AUTOTEST: Alt: 6.56  HomeDist: 0.12
+    AUTOTEST: Alt: 6.26  HomeDist: 0.12
+    AUTOTEST: Alt: 5.96  HomeDist: 0.11
+    AUTOTEST: Alt: 5.66  HomeDist: 0.11
+    AUTOTEST: Alt: 5.36  HomeDist: 0.11
+    AUTOTEST: Alt: 5.06  HomeDist: 0.11
     Flight battery 50 percent
-    AUTOTEST: Alt: 4.76  HomeDist: 0.11 
-    AUTOTEST: Alt: 4.46  HomeDist: 0.11 
-    AUTOTEST: Alt: 4.16  HomeDist: 0.11 
-    AUTOTEST: Alt: 3.86  HomeDist: 0.11 
-    AUTOTEST: Alt: 3.56  HomeDist: 0.10 
-    AUTOTEST: Alt: 3.26  HomeDist: 0.10 
-    AUTOTEST: Alt: 2.96  HomeDist: 0.09 
-    AUTOTEST: Alt: 2.66  HomeDist: 0.09 
-    AUTOTEST: Alt: 2.36  HomeDist: 0.08 
-    AUTOTEST: Alt: 2.06  HomeDist: 0.08 
-    AUTOTEST: Alt: 1.76  HomeDist: 0.08 
-    AUTOTEST: Alt: 1.46  HomeDist: 0.08 
-    AUTOTEST: Alt: 1.16  HomeDist: 0.08 
+    AUTOTEST: Alt: 4.76  HomeDist: 0.11
+    AUTOTEST: Alt: 4.46  HomeDist: 0.11
+    AUTOTEST: Alt: 4.16  HomeDist: 0.11
+    AUTOTEST: Alt: 3.86  HomeDist: 0.11
+    AUTOTEST: Alt: 3.56  HomeDist: 0.10
+    AUTOTEST: Alt: 3.26  HomeDist: 0.10
+    AUTOTEST: Alt: 2.96  HomeDist: 0.09
+    AUTOTEST: Alt: 2.66  HomeDist: 0.09
+    AUTOTEST: Alt: 2.36  HomeDist: 0.08
+    AUTOTEST: Alt: 2.06  HomeDist: 0.08
+    AUTOTEST: Alt: 1.76  HomeDist: 0.08
+    AUTOTEST: Alt: 1.46  HomeDist: 0.08
+    AUTOTEST: Alt: 1.16  HomeDist: 0.08
     height 0
     AUTOTEST: Alt: 0.86  HomeDist: 0.07 HOME
     AUTOTEST: Alt: 0.56  HomeDist: 0.07 HOME
@@ -32635,140 +32635,140 @@ AutoTest Output
     rc 3 1500
     rc 3 1500
     RTL> AUTOTEST: set_rc (wc=0.0425071716309 st=0.0 r=None): ch=3 want=1500 got=1500
-    AUTOTEST: Alt: 2.03  HomeDist: 249.72 
-    AUTOTEST: Alt: 2.39  HomeDist: 250.34 
-    AUTOTEST: Alt: 3.12  HomeDist: 250.63 
-    AUTOTEST: Alt: 4.15  HomeDist: 250.74 
-    AUTOTEST: Alt: 5.33  HomeDist: 250.77 
-    AUTOTEST: Alt: 6.60  HomeDist: 250.78 
-    AUTOTEST: Alt: 7.94  HomeDist: 250.79 
-    AUTOTEST: Alt: 9.31  HomeDist: 250.83 
+    AUTOTEST: Alt: 2.03  HomeDist: 249.72
+    AUTOTEST: Alt: 2.39  HomeDist: 250.34
+    AUTOTEST: Alt: 3.12  HomeDist: 250.63
+    AUTOTEST: Alt: 4.15  HomeDist: 250.74
+    AUTOTEST: Alt: 5.33  HomeDist: 250.77
+    AUTOTEST: Alt: 6.60  HomeDist: 250.78
+    AUTOTEST: Alt: 7.94  HomeDist: 250.79
+    AUTOTEST: Alt: 9.31  HomeDist: 250.83
     height 10
-    AUTOTEST: Alt: 10.72  HomeDist: 250.85 
-    AUTOTEST: Alt: 12.15  HomeDist: 250.87 
-    AUTOTEST: Alt: 13.39  HomeDist: 250.89 
-    AUTOTEST: Alt: 14.21  HomeDist: 250.87 
-    AUTOTEST: Alt: 14.62  HomeDist: 250.60 
-    AUTOTEST: Alt: 14.80  HomeDist: 249.99 
-    AUTOTEST: Alt: 14.89  HomeDist: 249.01 
-    AUTOTEST: Alt: 14.93  HomeDist: 247.66 
-    AUTOTEST: Alt: 14.95  HomeDist: 245.92 
-    AUTOTEST: Alt: 14.97  HomeDist: 243.78 
-    AUTOTEST: Alt: 14.97  HomeDist: 241.32 
-    AUTOTEST: Alt: 14.98  HomeDist: 238.63 
-    AUTOTEST: Alt: 14.98  HomeDist: 235.75 
-    AUTOTEST: Alt: 14.98  HomeDist: 232.73 
-    AUTOTEST: Alt: 14.98  HomeDist: 229.60 
-    AUTOTEST: Alt: 14.98  HomeDist: 226.38 
-    AUTOTEST: Alt: 14.98  HomeDist: 223.10 
-    AUTOTEST: Alt: 14.98  HomeDist: 219.75 
-    AUTOTEST: Alt: 14.99  HomeDist: 216.36 
-    AUTOTEST: Alt: 14.99  HomeDist: 212.93 
-    AUTOTEST: Alt: 14.99  HomeDist: 209.46 
-    AUTOTEST: Alt: 14.99  HomeDist: 205.98 
-    AUTOTEST: Alt: 14.99  HomeDist: 202.46 
-    AUTOTEST: Alt: 14.99  HomeDist: 198.92 
-    AUTOTEST: Alt: 14.99  HomeDist: 195.36 
-    AUTOTEST: Alt: 14.99  HomeDist: 191.78 
-    AUTOTEST: Alt: 14.99  HomeDist: 188.20 
-    AUTOTEST: Alt: 14.99  HomeDist: 184.59 
-    AUTOTEST: Alt: 15.00  HomeDist: 180.99 
-    AUTOTEST: Alt: 15.00  HomeDist: 177.37 
-    AUTOTEST: Alt: 15.00  HomeDist: 173.74 
-    AUTOTEST: Alt: 15.00  HomeDist: 170.10 
-    AUTOTEST: Alt: 15.00  HomeDist: 166.46 
-    AUTOTEST: Alt: 15.00  HomeDist: 162.81 
-    AUTOTEST: Alt: 15.00  HomeDist: 159.16 
-    AUTOTEST: Alt: 15.00  HomeDist: 155.49 
-    AUTOTEST: Alt: 15.00  HomeDist: 151.83 
-    AUTOTEST: Alt: 15.00  HomeDist: 148.17 
-    AUTOTEST: Alt: 15.00  HomeDist: 144.51 
-    AUTOTEST: Alt: 15.00  HomeDist: 140.84 
-    AUTOTEST: Alt: 15.00  HomeDist: 137.18 
-    AUTOTEST: Alt: 15.00  HomeDist: 133.51 
-    AUTOTEST: Alt: 15.00  HomeDist: 129.85 
-    AUTOTEST: Alt: 15.00  HomeDist: 126.17 
-    AUTOTEST: Alt: 15.00  HomeDist: 122.51 
-    AUTOTEST: Alt: 15.00  HomeDist: 118.85 
-    AUTOTEST: Alt: 15.00  HomeDist: 115.17 
-    AUTOTEST: Alt: 15.00  HomeDist: 111.51 
-    AUTOTEST: Alt: 15.00  HomeDist: 107.85 
-    AUTOTEST: Alt: 15.00  HomeDist: 104.18 
-    AUTOTEST: Alt: 15.00  HomeDist: 100.51 
-    AUTOTEST: Alt: 15.00  HomeDist: 96.85 
-    AUTOTEST: Alt: 15.00  HomeDist: 93.19 
-    AUTOTEST: Alt: 15.00  HomeDist: 89.51 
-    AUTOTEST: Alt: 15.01  HomeDist: 85.85 
-    AUTOTEST: Alt: 15.00  HomeDist: 82.19 
-    AUTOTEST: Alt: 15.00  HomeDist: 78.53 
-    AUTOTEST: Alt: 15.00  HomeDist: 74.87 
-    AUTOTEST: Alt: 15.00  HomeDist: 71.19 
-    AUTOTEST: Alt: 15.00  HomeDist: 67.53 
-    AUTOTEST: Alt: 15.00  HomeDist: 63.87 
-    AUTOTEST: Alt: 15.00  HomeDist: 60.21 
-    AUTOTEST: Alt: 15.00  HomeDist: 56.54 
-    AUTOTEST: Alt: 15.00  HomeDist: 52.88 
-    AUTOTEST: Alt: 15.00  HomeDist: 49.22 
-    AUTOTEST: Alt: 14.99  HomeDist: 45.56 
-    AUTOTEST: Alt: 15.00  HomeDist: 41.89 
-    AUTOTEST: Alt: 15.00  HomeDist: 38.23 
-    AUTOTEST: Alt: 15.00  HomeDist: 34.57 
-    AUTOTEST: Alt: 15.00  HomeDist: 30.90 
-    AUTOTEST: Alt: 15.00  HomeDist: 27.24 
-    AUTOTEST: Alt: 15.00  HomeDist: 23.57 
-    AUTOTEST: Alt: 15.00  HomeDist: 19.91 
-    AUTOTEST: Alt: 15.00  HomeDist: 16.29 
-    AUTOTEST: Alt: 15.00  HomeDist: 12.79 
-    AUTOTEST: Alt: 15.01  HomeDist: 9.50 
-    AUTOTEST: Alt: 15.01  HomeDist: 6.55 
-    AUTOTEST: Alt: 15.01  HomeDist: 4.06 
-    AUTOTEST: Alt: 15.01  HomeDist: 2.09 
-    AUTOTEST: Alt: 15.00  HomeDist: 0.78 
-    AUTOTEST: Alt: 15.00  HomeDist: 0.48 
-    AUTOTEST: Alt: 15.00  HomeDist: 0.56 
-    AUTOTEST: Alt: 15.00  HomeDist: 0.51 
-    AUTOTEST: Alt: 15.00  HomeDist: 0.43 
-    AUTOTEST: Alt: 15.00  HomeDist: 0.38 
-    AUTOTEST: Alt: 15.00  HomeDist: 0.35 
-    AUTOTEST: Alt: 15.00  HomeDist: 0.32 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.30 
-    AUTOTEST: Alt: 14.84  HomeDist: 0.26 
-    AUTOTEST: Alt: 14.34  HomeDist: 0.24 
-    AUTOTEST: Alt: 13.49  HomeDist: 0.22 
-    AUTOTEST: Alt: 12.52  HomeDist: 0.22 
-    AUTOTEST: Alt: 11.59  HomeDist: 0.22 
-    AUTOTEST: Alt: 10.71  HomeDist: 0.23 
-    AUTOTEST: Alt: 10.03  HomeDist: 0.25 
-    AUTOTEST: Alt: 9.68  HomeDist: 0.27 
-    AUTOTEST: Alt: 9.44  HomeDist: 0.28 
-    AUTOTEST: Alt: 9.17  HomeDist: 0.29 
-    AUTOTEST: Alt: 8.87  HomeDist: 0.29 
-    AUTOTEST: Alt: 8.57  HomeDist: 0.29 
-    AUTOTEST: Alt: 8.27  HomeDist: 0.29 
-    AUTOTEST: Alt: 7.97  HomeDist: 0.29 
-    AUTOTEST: Alt: 7.67  HomeDist: 0.29 
-    AUTOTEST: Alt: 7.37  HomeDist: 0.29 
-    AUTOTEST: Alt: 7.07  HomeDist: 0.29 
-    AUTOTEST: Alt: 6.77  HomeDist: 0.29 
-    AUTOTEST: Alt: 6.46  HomeDist: 0.30 
-    AUTOTEST: Alt: 6.16  HomeDist: 0.30 
-    AUTOTEST: Alt: 5.86  HomeDist: 0.30 
-    AUTOTEST: Alt: 5.56  HomeDist: 0.30 
-    AUTOTEST: Alt: 5.26  HomeDist: 0.30 
-    AUTOTEST: Alt: 4.96  HomeDist: 0.30 
-    AUTOTEST: Alt: 4.66  HomeDist: 0.30 
-    AUTOTEST: Alt: 4.36  HomeDist: 0.31 
-    AUTOTEST: Alt: 4.06  HomeDist: 0.31 
-    AUTOTEST: Alt: 3.76  HomeDist: 0.31 
-    AUTOTEST: Alt: 3.46  HomeDist: 0.31 
-    AUTOTEST: Alt: 3.16  HomeDist: 0.31 
-    AUTOTEST: Alt: 2.86  HomeDist: 0.32 
-    AUTOTEST: Alt: 2.56  HomeDist: 0.32 
-    AUTOTEST: Alt: 2.26  HomeDist: 0.31 
-    AUTOTEST: Alt: 1.96  HomeDist: 0.31 
-    AUTOTEST: Alt: 1.66  HomeDist: 0.31 
-    AUTOTEST: Alt: 1.36  HomeDist: 0.31 
-    AUTOTEST: Alt: 1.06  HomeDist: 0.31 
+    AUTOTEST: Alt: 10.72  HomeDist: 250.85
+    AUTOTEST: Alt: 12.15  HomeDist: 250.87
+    AUTOTEST: Alt: 13.39  HomeDist: 250.89
+    AUTOTEST: Alt: 14.21  HomeDist: 250.87
+    AUTOTEST: Alt: 14.62  HomeDist: 250.60
+    AUTOTEST: Alt: 14.80  HomeDist: 249.99
+    AUTOTEST: Alt: 14.89  HomeDist: 249.01
+    AUTOTEST: Alt: 14.93  HomeDist: 247.66
+    AUTOTEST: Alt: 14.95  HomeDist: 245.92
+    AUTOTEST: Alt: 14.97  HomeDist: 243.78
+    AUTOTEST: Alt: 14.97  HomeDist: 241.32
+    AUTOTEST: Alt: 14.98  HomeDist: 238.63
+    AUTOTEST: Alt: 14.98  HomeDist: 235.75
+    AUTOTEST: Alt: 14.98  HomeDist: 232.73
+    AUTOTEST: Alt: 14.98  HomeDist: 229.60
+    AUTOTEST: Alt: 14.98  HomeDist: 226.38
+    AUTOTEST: Alt: 14.98  HomeDist: 223.10
+    AUTOTEST: Alt: 14.98  HomeDist: 219.75
+    AUTOTEST: Alt: 14.99  HomeDist: 216.36
+    AUTOTEST: Alt: 14.99  HomeDist: 212.93
+    AUTOTEST: Alt: 14.99  HomeDist: 209.46
+    AUTOTEST: Alt: 14.99  HomeDist: 205.98
+    AUTOTEST: Alt: 14.99  HomeDist: 202.46
+    AUTOTEST: Alt: 14.99  HomeDist: 198.92
+    AUTOTEST: Alt: 14.99  HomeDist: 195.36
+    AUTOTEST: Alt: 14.99  HomeDist: 191.78
+    AUTOTEST: Alt: 14.99  HomeDist: 188.20
+    AUTOTEST: Alt: 14.99  HomeDist: 184.59
+    AUTOTEST: Alt: 15.00  HomeDist: 180.99
+    AUTOTEST: Alt: 15.00  HomeDist: 177.37
+    AUTOTEST: Alt: 15.00  HomeDist: 173.74
+    AUTOTEST: Alt: 15.00  HomeDist: 170.10
+    AUTOTEST: Alt: 15.00  HomeDist: 166.46
+    AUTOTEST: Alt: 15.00  HomeDist: 162.81
+    AUTOTEST: Alt: 15.00  HomeDist: 159.16
+    AUTOTEST: Alt: 15.00  HomeDist: 155.49
+    AUTOTEST: Alt: 15.00  HomeDist: 151.83
+    AUTOTEST: Alt: 15.00  HomeDist: 148.17
+    AUTOTEST: Alt: 15.00  HomeDist: 144.51
+    AUTOTEST: Alt: 15.00  HomeDist: 140.84
+    AUTOTEST: Alt: 15.00  HomeDist: 137.18
+    AUTOTEST: Alt: 15.00  HomeDist: 133.51
+    AUTOTEST: Alt: 15.00  HomeDist: 129.85
+    AUTOTEST: Alt: 15.00  HomeDist: 126.17
+    AUTOTEST: Alt: 15.00  HomeDist: 122.51
+    AUTOTEST: Alt: 15.00  HomeDist: 118.85
+    AUTOTEST: Alt: 15.00  HomeDist: 115.17
+    AUTOTEST: Alt: 15.00  HomeDist: 111.51
+    AUTOTEST: Alt: 15.00  HomeDist: 107.85
+    AUTOTEST: Alt: 15.00  HomeDist: 104.18
+    AUTOTEST: Alt: 15.00  HomeDist: 100.51
+    AUTOTEST: Alt: 15.00  HomeDist: 96.85
+    AUTOTEST: Alt: 15.00  HomeDist: 93.19
+    AUTOTEST: Alt: 15.00  HomeDist: 89.51
+    AUTOTEST: Alt: 15.01  HomeDist: 85.85
+    AUTOTEST: Alt: 15.00  HomeDist: 82.19
+    AUTOTEST: Alt: 15.00  HomeDist: 78.53
+    AUTOTEST: Alt: 15.00  HomeDist: 74.87
+    AUTOTEST: Alt: 15.00  HomeDist: 71.19
+    AUTOTEST: Alt: 15.00  HomeDist: 67.53
+    AUTOTEST: Alt: 15.00  HomeDist: 63.87
+    AUTOTEST: Alt: 15.00  HomeDist: 60.21
+    AUTOTEST: Alt: 15.00  HomeDist: 56.54
+    AUTOTEST: Alt: 15.00  HomeDist: 52.88
+    AUTOTEST: Alt: 15.00  HomeDist: 49.22
+    AUTOTEST: Alt: 14.99  HomeDist: 45.56
+    AUTOTEST: Alt: 15.00  HomeDist: 41.89
+    AUTOTEST: Alt: 15.00  HomeDist: 38.23
+    AUTOTEST: Alt: 15.00  HomeDist: 34.57
+    AUTOTEST: Alt: 15.00  HomeDist: 30.90
+    AUTOTEST: Alt: 15.00  HomeDist: 27.24
+    AUTOTEST: Alt: 15.00  HomeDist: 23.57
+    AUTOTEST: Alt: 15.00  HomeDist: 19.91
+    AUTOTEST: Alt: 15.00  HomeDist: 16.29
+    AUTOTEST: Alt: 15.00  HomeDist: 12.79
+    AUTOTEST: Alt: 15.01  HomeDist: 9.50
+    AUTOTEST: Alt: 15.01  HomeDist: 6.55
+    AUTOTEST: Alt: 15.01  HomeDist: 4.06
+    AUTOTEST: Alt: 15.01  HomeDist: 2.09
+    AUTOTEST: Alt: 15.00  HomeDist: 0.78
+    AUTOTEST: Alt: 15.00  HomeDist: 0.48
+    AUTOTEST: Alt: 15.00  HomeDist: 0.56
+    AUTOTEST: Alt: 15.00  HomeDist: 0.51
+    AUTOTEST: Alt: 15.00  HomeDist: 0.43
+    AUTOTEST: Alt: 15.00  HomeDist: 0.38
+    AUTOTEST: Alt: 15.00  HomeDist: 0.35
+    AUTOTEST: Alt: 15.00  HomeDist: 0.32
+    AUTOTEST: Alt: 14.99  HomeDist: 0.30
+    AUTOTEST: Alt: 14.84  HomeDist: 0.26
+    AUTOTEST: Alt: 14.34  HomeDist: 0.24
+    AUTOTEST: Alt: 13.49  HomeDist: 0.22
+    AUTOTEST: Alt: 12.52  HomeDist: 0.22
+    AUTOTEST: Alt: 11.59  HomeDist: 0.22
+    AUTOTEST: Alt: 10.71  HomeDist: 0.23
+    AUTOTEST: Alt: 10.03  HomeDist: 0.25
+    AUTOTEST: Alt: 9.68  HomeDist: 0.27
+    AUTOTEST: Alt: 9.44  HomeDist: 0.28
+    AUTOTEST: Alt: 9.17  HomeDist: 0.29
+    AUTOTEST: Alt: 8.87  HomeDist: 0.29
+    AUTOTEST: Alt: 8.57  HomeDist: 0.29
+    AUTOTEST: Alt: 8.27  HomeDist: 0.29
+    AUTOTEST: Alt: 7.97  HomeDist: 0.29
+    AUTOTEST: Alt: 7.67  HomeDist: 0.29
+    AUTOTEST: Alt: 7.37  HomeDist: 0.29
+    AUTOTEST: Alt: 7.07  HomeDist: 0.29
+    AUTOTEST: Alt: 6.77  HomeDist: 0.29
+    AUTOTEST: Alt: 6.46  HomeDist: 0.30
+    AUTOTEST: Alt: 6.16  HomeDist: 0.30
+    AUTOTEST: Alt: 5.86  HomeDist: 0.30
+    AUTOTEST: Alt: 5.56  HomeDist: 0.30
+    AUTOTEST: Alt: 5.26  HomeDist: 0.30
+    AUTOTEST: Alt: 4.96  HomeDist: 0.30
+    AUTOTEST: Alt: 4.66  HomeDist: 0.30
+    AUTOTEST: Alt: 4.36  HomeDist: 0.31
+    AUTOTEST: Alt: 4.06  HomeDist: 0.31
+    AUTOTEST: Alt: 3.76  HomeDist: 0.31
+    AUTOTEST: Alt: 3.46  HomeDist: 0.31
+    AUTOTEST: Alt: 3.16  HomeDist: 0.31
+    AUTOTEST: Alt: 2.86  HomeDist: 0.32
+    AUTOTEST: Alt: 2.56  HomeDist: 0.32
+    AUTOTEST: Alt: 2.26  HomeDist: 0.31
+    AUTOTEST: Alt: 1.96  HomeDist: 0.31
+    AUTOTEST: Alt: 1.66  HomeDist: 0.31
+    AUTOTEST: Alt: 1.36  HomeDist: 0.31
+    AUTOTEST: Alt: 1.06  HomeDist: 0.31
     height 0
     AUTOTEST: Alt: 0.76  HomeDist: 0.30 HOME
     AUTOTEST: Alt: 0.46  HomeDist: 0.30 HOME
@@ -33126,111 +33126,111 @@ AutoTest Output
     rc 3 1500
     rc 3 1500
     RTL> AUTOTEST: set_rc (wc=0.0417380332947 st=0.0 r=None): ch=3 want=1500 got=1500
-    AUTOTEST: Alt: 9.53  HomeDist: 130.04 
-    AUTOTEST: Alt: 10.01  HomeDist: 131.00 
+    AUTOTEST: Alt: 9.53  HomeDist: 130.04
+    AUTOTEST: Alt: 10.01  HomeDist: 131.00
     height 10
-    AUTOTEST: Alt: 10.84  HomeDist: 131.82 
-    AUTOTEST: Alt: 11.93  HomeDist: 132.45 
-    AUTOTEST: Alt: 13.12  HomeDist: 132.81 
-    AUTOTEST: Alt: 14.06  HomeDist: 132.95 
-    AUTOTEST: Alt: 14.56  HomeDist: 132.82 
-    AUTOTEST: Alt: 14.78  HomeDist: 132.34 
-    AUTOTEST: Alt: 14.88  HomeDist: 131.55 
-    AUTOTEST: Alt: 14.93  HomeDist: 130.44 
-    AUTOTEST: Alt: 14.96  HomeDist: 128.98 
-    AUTOTEST: Alt: 14.98  HomeDist: 127.22 
-    AUTOTEST: Alt: 14.99  HomeDist: 125.20 
-    AUTOTEST: Alt: 14.99  HomeDist: 123.00 
-    AUTOTEST: Alt: 14.99  HomeDist: 120.64 
-    AUTOTEST: Alt: 14.99  HomeDist: 118.17 
-    AUTOTEST: Alt: 14.99  HomeDist: 115.61 
-    AUTOTEST: Alt: 14.99  HomeDist: 112.96 
-    AUTOTEST: Alt: 14.99  HomeDist: 110.27 
-    AUTOTEST: Alt: 14.99  HomeDist: 107.54 
-    AUTOTEST: Alt: 14.99  HomeDist: 104.76 
-    AUTOTEST: Alt: 14.99  HomeDist: 101.96 
-    AUTOTEST: Alt: 14.99  HomeDist: 99.13 
-    AUTOTEST: Alt: 14.99  HomeDist: 96.27 
-    AUTOTEST: Alt: 14.99  HomeDist: 93.38 
-    AUTOTEST: Alt: 14.99  HomeDist: 90.47 
-    AUTOTEST: Alt: 14.99  HomeDist: 87.56 
-    AUTOTEST: Alt: 14.99  HomeDist: 84.63 
-    AUTOTEST: Alt: 14.99  HomeDist: 81.68 
-    AUTOTEST: Alt: 14.99  HomeDist: 78.74 
-    AUTOTEST: Alt: 14.99  HomeDist: 75.78 
-    AUTOTEST: Alt: 14.99  HomeDist: 72.80 
-    AUTOTEST: Alt: 14.99  HomeDist: 69.83 
-    AUTOTEST: Alt: 14.99  HomeDist: 66.85 
-    AUTOTEST: Alt: 14.99  HomeDist: 63.87 
-    AUTOTEST: Alt: 14.99  HomeDist: 60.88 
-    AUTOTEST: Alt: 14.99  HomeDist: 57.90 
-    AUTOTEST: Alt: 14.99  HomeDist: 54.91 
-    AUTOTEST: Alt: 14.99  HomeDist: 51.92 
-    AUTOTEST: Alt: 14.99  HomeDist: 48.95 
-    AUTOTEST: Alt: 14.99  HomeDist: 45.96 
-    AUTOTEST: Alt: 14.99  HomeDist: 42.97 
-    AUTOTEST: Alt: 14.99  HomeDist: 39.98 
-    AUTOTEST: Alt: 14.99  HomeDist: 36.99 
-    AUTOTEST: Alt: 14.99  HomeDist: 34.01 
-    AUTOTEST: Alt: 14.99  HomeDist: 31.02 
-    AUTOTEST: Alt: 14.99  HomeDist: 28.03 
-    AUTOTEST: Alt: 14.99  HomeDist: 25.05 
-    AUTOTEST: Alt: 14.99  HomeDist: 22.04 
-    AUTOTEST: Alt: 14.99  HomeDist: 19.07 
-    AUTOTEST: Alt: 14.99  HomeDist: 16.08 
-    AUTOTEST: Alt: 15.00  HomeDist: 13.12 
-    AUTOTEST: Alt: 15.00  HomeDist: 10.27 
-    AUTOTEST: Alt: 15.00  HomeDist: 7.61 
-    AUTOTEST: Alt: 15.00  HomeDist: 5.22 
-    AUTOTEST: Alt: 15.00  HomeDist: 3.21 
-    AUTOTEST: Alt: 15.00  HomeDist: 1.60 
-    AUTOTEST: Alt: 15.00  HomeDist: 0.49 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.08 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.24 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.18 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.06 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.09 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.18 
-    AUTOTEST: Alt: 14.99  HomeDist: 0.23 
-    AUTOTEST: Alt: 14.98  HomeDist: 0.27 
-    AUTOTEST: Alt: 14.81  HomeDist: 0.27 
-    AUTOTEST: Alt: 14.27  HomeDist: 0.28 
-    AUTOTEST: Alt: 13.41  HomeDist: 0.27 
-    AUTOTEST: Alt: 12.44  HomeDist: 0.26 
-    AUTOTEST: Alt: 11.51  HomeDist: 0.26 
-    AUTOTEST: Alt: 10.64  HomeDist: 0.24 
-    AUTOTEST: Alt: 9.99  HomeDist: 0.24 
-    AUTOTEST: Alt: 9.65  HomeDist: 0.23 
-    AUTOTEST: Alt: 9.41  HomeDist: 0.20 
-    AUTOTEST: Alt: 9.14  HomeDist: 0.19 
-    AUTOTEST: Alt: 8.84  HomeDist: 0.18 
-    AUTOTEST: Alt: 8.54  HomeDist: 0.17 
-    AUTOTEST: Alt: 8.24  HomeDist: 0.17 
-    AUTOTEST: Alt: 7.94  HomeDist: 0.17 
-    AUTOTEST: Alt: 7.64  HomeDist: 0.17 
-    AUTOTEST: Alt: 7.34  HomeDist: 0.17 
-    AUTOTEST: Alt: 7.03  HomeDist: 0.17 
-    AUTOTEST: Alt: 6.73  HomeDist: 0.17 
-    AUTOTEST: Alt: 6.43  HomeDist: 0.16 
-    AUTOTEST: Alt: 6.13  HomeDist: 0.15 
-    AUTOTEST: Alt: 5.83  HomeDist: 0.15 
-    AUTOTEST: Alt: 5.53  HomeDist: 0.14 
-    AUTOTEST: Alt: 5.23  HomeDist: 0.14 
-    AUTOTEST: Alt: 4.93  HomeDist: 0.13 
-    AUTOTEST: Alt: 4.63  HomeDist: 0.12 
-    AUTOTEST: Alt: 4.33  HomeDist: 0.12 
-    AUTOTEST: Alt: 4.03  HomeDist: 0.11 
-    AUTOTEST: Alt: 3.73  HomeDist: 0.11 
-    AUTOTEST: Alt: 3.43  HomeDist: 0.11 
-    AUTOTEST: Alt: 3.13  HomeDist: 0.11 
-    AUTOTEST: Alt: 2.83  HomeDist: 0.11 
-    AUTOTEST: Alt: 2.53  HomeDist: 0.12 
-    AUTOTEST: Alt: 2.23  HomeDist: 0.12 
-    AUTOTEST: Alt: 1.93  HomeDist: 0.12 
-    AUTOTEST: Alt: 1.63  HomeDist: 0.11 
-    AUTOTEST: Alt: 1.33  HomeDist: 0.11 
+    AUTOTEST: Alt: 10.84  HomeDist: 131.82
+    AUTOTEST: Alt: 11.93  HomeDist: 132.45
+    AUTOTEST: Alt: 13.12  HomeDist: 132.81
+    AUTOTEST: Alt: 14.06  HomeDist: 132.95
+    AUTOTEST: Alt: 14.56  HomeDist: 132.82
+    AUTOTEST: Alt: 14.78  HomeDist: 132.34
+    AUTOTEST: Alt: 14.88  HomeDist: 131.55
+    AUTOTEST: Alt: 14.93  HomeDist: 130.44
+    AUTOTEST: Alt: 14.96  HomeDist: 128.98
+    AUTOTEST: Alt: 14.98  HomeDist: 127.22
+    AUTOTEST: Alt: 14.99  HomeDist: 125.20
+    AUTOTEST: Alt: 14.99  HomeDist: 123.00
+    AUTOTEST: Alt: 14.99  HomeDist: 120.64
+    AUTOTEST: Alt: 14.99  HomeDist: 118.17
+    AUTOTEST: Alt: 14.99  HomeDist: 115.61
+    AUTOTEST: Alt: 14.99  HomeDist: 112.96
+    AUTOTEST: Alt: 14.99  HomeDist: 110.27
+    AUTOTEST: Alt: 14.99  HomeDist: 107.54
+    AUTOTEST: Alt: 14.99  HomeDist: 104.76
+    AUTOTEST: Alt: 14.99  HomeDist: 101.96
+    AUTOTEST: Alt: 14.99  HomeDist: 99.13
+    AUTOTEST: Alt: 14.99  HomeDist: 96.27
+    AUTOTEST: Alt: 14.99  HomeDist: 93.38
+    AUTOTEST: Alt: 14.99  HomeDist: 90.47
+    AUTOTEST: Alt: 14.99  HomeDist: 87.56
+    AUTOTEST: Alt: 14.99  HomeDist: 84.63
+    AUTOTEST: Alt: 14.99  HomeDist: 81.68
+    AUTOTEST: Alt: 14.99  HomeDist: 78.74
+    AUTOTEST: Alt: 14.99  HomeDist: 75.78
+    AUTOTEST: Alt: 14.99  HomeDist: 72.80
+    AUTOTEST: Alt: 14.99  HomeDist: 69.83
+    AUTOTEST: Alt: 14.99  HomeDist: 66.85
+    AUTOTEST: Alt: 14.99  HomeDist: 63.87
+    AUTOTEST: Alt: 14.99  HomeDist: 60.88
+    AUTOTEST: Alt: 14.99  HomeDist: 57.90
+    AUTOTEST: Alt: 14.99  HomeDist: 54.91
+    AUTOTEST: Alt: 14.99  HomeDist: 51.92
+    AUTOTEST: Alt: 14.99  HomeDist: 48.95
+    AUTOTEST: Alt: 14.99  HomeDist: 45.96
+    AUTOTEST: Alt: 14.99  HomeDist: 42.97
+    AUTOTEST: Alt: 14.99  HomeDist: 39.98
+    AUTOTEST: Alt: 14.99  HomeDist: 36.99
+    AUTOTEST: Alt: 14.99  HomeDist: 34.01
+    AUTOTEST: Alt: 14.99  HomeDist: 31.02
+    AUTOTEST: Alt: 14.99  HomeDist: 28.03
+    AUTOTEST: Alt: 14.99  HomeDist: 25.05
+    AUTOTEST: Alt: 14.99  HomeDist: 22.04
+    AUTOTEST: Alt: 14.99  HomeDist: 19.07
+    AUTOTEST: Alt: 14.99  HomeDist: 16.08
+    AUTOTEST: Alt: 15.00  HomeDist: 13.12
+    AUTOTEST: Alt: 15.00  HomeDist: 10.27
+    AUTOTEST: Alt: 15.00  HomeDist: 7.61
+    AUTOTEST: Alt: 15.00  HomeDist: 5.22
+    AUTOTEST: Alt: 15.00  HomeDist: 3.21
+    AUTOTEST: Alt: 15.00  HomeDist: 1.60
+    AUTOTEST: Alt: 15.00  HomeDist: 0.49
+    AUTOTEST: Alt: 14.99  HomeDist: 0.08
+    AUTOTEST: Alt: 14.99  HomeDist: 0.24
+    AUTOTEST: Alt: 14.99  HomeDist: 0.18
+    AUTOTEST: Alt: 14.99  HomeDist: 0.06
+    AUTOTEST: Alt: 14.99  HomeDist: 0.09
+    AUTOTEST: Alt: 14.99  HomeDist: 0.18
+    AUTOTEST: Alt: 14.99  HomeDist: 0.23
+    AUTOTEST: Alt: 14.98  HomeDist: 0.27
+    AUTOTEST: Alt: 14.81  HomeDist: 0.27
+    AUTOTEST: Alt: 14.27  HomeDist: 0.28
+    AUTOTEST: Alt: 13.41  HomeDist: 0.27
+    AUTOTEST: Alt: 12.44  HomeDist: 0.26
+    AUTOTEST: Alt: 11.51  HomeDist: 0.26
+    AUTOTEST: Alt: 10.64  HomeDist: 0.24
+    AUTOTEST: Alt: 9.99  HomeDist: 0.24
+    AUTOTEST: Alt: 9.65  HomeDist: 0.23
+    AUTOTEST: Alt: 9.41  HomeDist: 0.20
+    AUTOTEST: Alt: 9.14  HomeDist: 0.19
+    AUTOTEST: Alt: 8.84  HomeDist: 0.18
+    AUTOTEST: Alt: 8.54  HomeDist: 0.17
+    AUTOTEST: Alt: 8.24  HomeDist: 0.17
+    AUTOTEST: Alt: 7.94  HomeDist: 0.17
+    AUTOTEST: Alt: 7.64  HomeDist: 0.17
+    AUTOTEST: Alt: 7.34  HomeDist: 0.17
+    AUTOTEST: Alt: 7.03  HomeDist: 0.17
+    AUTOTEST: Alt: 6.73  HomeDist: 0.17
+    AUTOTEST: Alt: 6.43  HomeDist: 0.16
+    AUTOTEST: Alt: 6.13  HomeDist: 0.15
+    AUTOTEST: Alt: 5.83  HomeDist: 0.15
+    AUTOTEST: Alt: 5.53  HomeDist: 0.14
+    AUTOTEST: Alt: 5.23  HomeDist: 0.14
+    AUTOTEST: Alt: 4.93  HomeDist: 0.13
+    AUTOTEST: Alt: 4.63  HomeDist: 0.12
+    AUTOTEST: Alt: 4.33  HomeDist: 0.12
+    AUTOTEST: Alt: 4.03  HomeDist: 0.11
+    AUTOTEST: Alt: 3.73  HomeDist: 0.11
+    AUTOTEST: Alt: 3.43  HomeDist: 0.11
+    AUTOTEST: Alt: 3.13  HomeDist: 0.11
+    AUTOTEST: Alt: 2.83  HomeDist: 0.11
+    AUTOTEST: Alt: 2.53  HomeDist: 0.12
+    AUTOTEST: Alt: 2.23  HomeDist: 0.12
+    AUTOTEST: Alt: 1.93  HomeDist: 0.12
+    AUTOTEST: Alt: 1.63  HomeDist: 0.11
+    AUTOTEST: Alt: 1.33  HomeDist: 0.11
     height 0
-    AUTOTEST: Alt: 1.03  HomeDist: 0.11 
+    AUTOTEST: Alt: 1.03  HomeDist: 0.11
     AUTOTEST: Alt: 0.73  HomeDist: 0.11 HOME
     AUTOTEST: Alt: 0.43  HomeDist: 0.11 HOME
     Hit ground at 0.475993 m/s
@@ -38299,4 +38299,4 @@ AutoTest Output
     Renaming logs/00000005.BIN to /home/pbarker/rc/buildlogs/ArduCopter-00000005.BIN
     Renaming logs/00000016.BIN to /home/pbarker/rc/buildlogs/ArduCopter-00000016.BIN
     Renaming logs/00000020.BIN to /home/pbarker/rc/buildlogs/ArduCopter-00000020.BIN
-    pbarker@bluebottle:~/rc/ardupilot(master)$  
+    pbarker@bluebottle:~/rc/ardupilot(master)$

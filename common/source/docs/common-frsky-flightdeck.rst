@@ -40,4 +40,3 @@ If the Taranis is configured properly, the LCD display should show this introduc
 
   .. image:: ../../../images/frsky_flightdeck1.png
 	 :target: ../../../images/frsky_flightdeck1.png
-

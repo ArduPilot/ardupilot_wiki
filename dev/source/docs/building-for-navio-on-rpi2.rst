@@ -68,4 +68,3 @@ To build for other frame types replace quad with one of the following options:
     coax heli hexa octa octa-quad single tri y6
 
 In the end of compilation binary file with the name arducopter-quad will be placed in ``ardupilot/build/navio/bin/ directory``.
-

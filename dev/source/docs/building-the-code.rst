@@ -70,4 +70,3 @@ Links to other pages of interest or advanced topics
     Building Mission Planner with Visual Studio <building-mission-planner>
     ArduPilot Pre-Built Binaries <pre-built-binaries>
     Custom Build Server <custom-build-server>
-

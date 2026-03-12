@@ -43,7 +43,7 @@ Attach a physical device to a SERIALx port in the sim: You can attach actual dev
 
 ::
 
-     --serialx=uart:COMy 
+     --serialx=uart:COMy
 
 
 .. note:: Although not shown in the above video, current version of Mission Plannner will ask if you want to simulate using the Development(master aka "latest") or Stable version of the vehicle firmware when you click the vehicle to download the model and parameters and begin the simulation.

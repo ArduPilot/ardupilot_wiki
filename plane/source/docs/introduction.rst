@@ -49,7 +49,7 @@ Vehicle Configuration Types
 - V-Tail rudder/elevator control
 - Differential Aileron/Spoiler Flap
 - QuadPlane VTOL
-   - SLT - fixed wing motor plus separate VTOL motors 
+   - SLT - fixed wing motor plus separate VTOL motors
    - Tilt-Rotors - which tilt motors from vertical for VTOL to horizontal for fixed wing operation
    - Tailsitters - which takeoff and land with the nose vertical instead of horizontal
 

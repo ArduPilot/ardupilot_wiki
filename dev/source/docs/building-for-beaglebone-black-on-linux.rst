@@ -58,7 +58,7 @@ and see what the drive that was added is called.
 
 In my case it was /dev/sdd1
 
-in which case in the command below, the it is writtern dd of=/dev/sdd 
+in which case in the command below, the it is writtern dd of=/dev/sdd
 replace this with the correct address for your SD card.
 
 .. warning::

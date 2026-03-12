@@ -105,7 +105,7 @@ See :ref:`OpenDroneID <dev:opendroneid>` for information on how to build firmwar
 Android Application
 -------------------
 
-There are Android phone applications `OSM <https://play.google.com/store/apps/details?id=org.opendroneid.android_osm>`__  and `DroneScanner <https://play.google.com/store/apps/details?id=cz.dronetag.dronescanner>`__ in the Google Play Store that allows one to display RemoteID  Bluetooth and/or WIFI transmissions and vehicle data. 
+There are Android phone applications `OSM <https://play.google.com/store/apps/details?id=org.opendroneid.android_osm>`__  and `DroneScanner <https://play.google.com/store/apps/details?id=cz.dronetag.dronescanner>`__ in the Google Play Store that allows one to display RemoteID  Bluetooth and/or WIFI transmissions and vehicle data.
 
 Other references:
 

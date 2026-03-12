@@ -101,4 +101,3 @@ Substituting  a Battery Monitor's Data into an ESC's telemetry stream
 - See :ref:`BATT_ESC_INDEX<BATT_ESC_INDEX>` (for first Battery Monitor. ``BATTx_ESC_INDEX`` for others.)
 
 .. note:: this feature is usually only available as a build option using the `Custom Firmware Build Server <https://custom.ardupilot.org>`__
-

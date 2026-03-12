@@ -330,7 +330,7 @@ PWM Output
 The Lumenier LUX F765 NDAA supports 12 PWM outputs and a serial LED PWM output. All outputs are DShot capable. Outputs 1-4 are bi-directional DShot capable. Outputs are grouped and every group must use the same output protocol.
 
 The 8 main PWM outputs are labeled M1 through M8.
-The 4 auxiliary outputs are labeled S1 through S4. 
+The 4 auxiliary outputs are labeled S1 through S4.
 
 The 8 main PWM outputs are in 2 groups:
 

@@ -19,7 +19,7 @@ Key Features
 - 1 Watt (+30dBm) transmit power.
 - Supports 12v~60V operating voltage.
 - Support high-speed frequency hopping technology, anti-interference.
-  
+
 
 Purchase
 ========

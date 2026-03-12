@@ -64,7 +64,7 @@ JHEMCUF405PRO supports OSD using its internal analog OSD (MAX7456). Simultaneous
 
 PWM Output
 ==========
-JHEMCUF405PRO supports up to 5 motor/servo outputs. 4 motors and 1 LED strip (can be configured for another PWM output). Outputs are grouped and each group must use the same protocol. All outputs support PWM , DShot, and  outputs 1-2 support Bi-Direectional DShot. 
+JHEMCUF405PRO supports up to 5 motor/servo outputs. 4 motors and 1 LED strip (can be configured for another PWM output). Outputs are grouped and each group must use the same protocol. All outputs support PWM , DShot, and  outputs 1-2 support Bi-Direectional DShot.
 
 
 * Output 1-2 Group 1
@@ -77,7 +77,7 @@ The default battery configuration is:
 
 * :ref:`BATT_MONITOR<BATT_MONITOR>` = 4
 * :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 13
-* :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 12 
+* :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 12
 * :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` = 11
 * :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` = 95.84
 

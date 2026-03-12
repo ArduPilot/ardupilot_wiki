@@ -25,7 +25,7 @@ Configuring the Safety Switch
 - - :ref:`BRD_SAFETYOPTION<BRD_SAFETYOPTION>`. This bitmask controls the behavior of the safety button. It allows you to control if the safety button can be used to enable the safety safety state and/or disable it, and whether the button is only active when disarmed, and to force entry back to the safety on state when you disarm. The default behaviour is for the button to enter or exit the safety state, only when disarmed.
 - :ref:`BRD_SAFETY_MASK <BRD_SAFETY_MASK>` can be used to set which individual channels remain enabled with the safety switch. This allows limited control surface movements to check correct operation on the ground. Motor outputs will remain disabled in all stabilized flight modes.
 
-.. note:: Being in the "Safety" state 
+.. note:: Being in the "Safety" state
 
 .. image:: ../../../images/safetyswitch-bitmask.png
     :target: ../_images/safetyswitch-bitmask.png

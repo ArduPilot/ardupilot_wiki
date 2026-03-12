@@ -18,7 +18,7 @@ Erle-Brain2 Wiring Chart
     :target: ../_images/EB2_chart.jpg
 
 [site wiki="copter"]
-Copter users should also see the 
+Copter users should also see the
 `official setup documentation <http://docs.erlerobotics.com/erle_robots/erle_copter>`__.
 [/site]
 
@@ -64,7 +64,7 @@ GPS+Compass
 The `uBlox GPS + Compass Module <https://erlerobotics.com/blog/product/gpscompass-ublox-neo-m8n-gps-with-compass-kit/>`__
 is the recommended GPS for Erle-Brain2. The GPS port is connected with
 the six-position DF13 cable, and the Compass port is connected to the
-I2C port with the four-position DF13 cable, as shown in the 
+I2C port with the four-position DF13 cable, as shown in the
 :ref:`wiring chart above <common-erle-brain2-wiring-quick-start_erle-brain2_wiring_chart>`.
 
 Connect Motors
@@ -146,7 +146,7 @@ Use a Bluetooth dongle to connect additional devices, such as joysticks.
    work
 
 .. figure:: ../../../images/Erle-Brain_DongleWifi.jpg
- 
+
 Connect other peripherals
 =========================
 
@@ -167,4 +167,3 @@ additional information about how to use Erle-Brain2.
     :maxdepth: 1
 
     Compatible RC Transmitter and Receiver Systems (Erle-Brain 2) <common-compatible-rc-transmitter-and-receiver-systems-erle-brain-2>
-

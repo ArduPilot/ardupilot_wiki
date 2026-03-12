@@ -4,7 +4,7 @@
 C-RTK2 HP  Heading and RTK Module
 =================================
 
-C-RTK2 HP is a heading and RTK receiver designed and manufactured by CUAV. 
+C-RTK2 HP is a heading and RTK receiver designed and manufactured by CUAV.
 The difference from F9P is that it only needs one module to realize GPS for yaw. C-RTK2 HP also supports UART and Dronecan connection methods.
 
 .. image:: ../../../images/c-rtk2-hp/c-rtk2-hp.jpg
@@ -29,14 +29,14 @@ Sensors                       Compass:RM3100
 Receiver                      UM982 High precision GNSS SOC
 GNSS                          BDS/GPS/GLONASS/Galileo/QZSS
 Frequency Bands(Master)       BDS:B1I/B2I/B3I, GPS:L1(C/A)/L2(P/C)/L5, GLONASS:L1/L2, Galileo: E1/E5a/E5b, QZSS:L1/L2/L5
-Frequency Bands(Slave)        BDS:B1I/B2I/B3I, GPS:L1(C/A)/L2(P/C)/L5, GLONASS:L1/L2, Galileo: E1/E5a/E5b, QZSS:L1/L2                                 
+Frequency Bands(Slave)        BDS:B1I/B2I/B3I, GPS:L1(C/A)/L2(P/C)/L5, GLONASS:L1/L2, Galileo: E1/E5a/E5b, QZSS:L1/L2
 Position accuracy(RMS)        3DGPS： **1.5m** (Horizontal, 2.5m（Vertical),
                               DGPS： **0.4m** +1PPM（Horizontal), 0.8m+1PPM（Vertical),
-                              RTK: **0.8cm** +1PPM（Horizontal), 1.5cm+1PPM（Vertical）                                          
-Heading accuracy (RMS)        0.1° using 1m baseline（Distance from Antenna 1 to Antenna 2）                                          
+                              RTK: **0.8cm** +1PPM（Horizontal), 1.5cm+1PPM（Vertical）
+Heading accuracy (RMS)        0.1° using 1m baseline（Distance from Antenna 1 to Antenna 2）
 Acquisition                   Cold starts<30S, Initialization time<5s
 Data update rate              UP to 20hz(default:5hz)
-Differential data             RTCM3.X 
+Differential data             RTCM3.X
 Data protocol                 Dronecan/NMEA
 Connectors                    Master Antenna, Slave Antenna、CAN、UART、DSU、USB
 Operating Voltage             4.7~5.2V

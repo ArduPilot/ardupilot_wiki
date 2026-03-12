@@ -7,8 +7,8 @@ Archived:LEDs (APM 2.x)
 .. warning::
 
     **ARCHIVED**
-    
-    The APM2.x is end of life for use with ArduPilot. 
+
+    The APM2.x is end of life for use with ArduPilot.
     This article is made available for existing users.
 
 APM 2.5 board

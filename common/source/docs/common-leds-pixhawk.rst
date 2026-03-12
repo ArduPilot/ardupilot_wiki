@@ -189,7 +189,7 @@ activated
 **Flashing red and yellow - with rising tone:** EKF or Inertial Nav
 failure
 
-**Flashing Red, Blue and Green**: Copter ESC Calibration mode entered. See :ref:`esc-calibration` 
+**Flashing Red, Blue and Green**: Copter ESC Calibration mode entered. See :ref:`esc-calibration`
 
 `SOS tone sequence <https://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/NoSDCard_short.wav>`__ : SD Card missing (or other SD error like bad format etc.)
 

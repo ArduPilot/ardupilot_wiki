@@ -83,7 +83,7 @@ The pre-arm checks can be partially or completely disabled by setting the
 enabled.  If set to 0 all checks are disabled.  Ground Stations including the
 mission planner also allow disabling individual checks.
 
-In general the cause of a failure should be addressed and the ``ARMING_CHECK`` parameter should be reset back to 1. 
+In general the cause of a failure should be addressed and the ``ARMING_CHECK`` parameter should be reset back to 1.
 
 .. note::
 

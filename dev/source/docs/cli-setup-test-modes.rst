@@ -16,11 +16,11 @@ Open up the Terminal in the Mission Planner by selecting the Terminal
 tab (ensure that the serial baud rate is set for 115200). This will
 bring up the Terminal window, and it should automatically take you to
 the APM CLI menu (if not, click in the window and hit "Enter" three
-times): 
+times):
 
 .. image:: ../images/mpterminalAPM1.jpg
     :target: ../_images/mpterminalAPM1.jpg
-    
+
 You can now enter commands by typing them at the
 command prompt. You can always type "exit" to leave any mode. In the
 following examples, I'll be using another serial terminal (in this case
@@ -65,7 +65,7 @@ has a clear view of the sky.** Allowed setup commands are:
          0 = Batt monitoring disabled
          1 = Monitoring 3 cell battery
          2 = Monitoring 4 cell battery
-         3 = Monitoring batt volts 
+         3 = Monitoring batt volts
          4 = Monitoring both volts and current
 
 -  **"show"**: Shows all current settings in EEPROM
@@ -161,4 +161,3 @@ the CLI, and "help" to see all the different tests:
    seconds; you should hear it faintly click)
 -  **shell**: Provides access to the NSH shell (Pixhawk only)
 -  **rangefinder**: Tests the rangefinder sensor
-

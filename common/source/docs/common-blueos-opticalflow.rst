@@ -33,7 +33,7 @@ Once BlueOS has been :ref:`installed <dev:companion-computer-blueos>` on the com
 
 - Ensure the companion computer is connected to the internet
 - From the left menu, select "Extensions"
-- Search for "opticalflow" and push the "GET" and "INSTALL" buttons 
+- Search for "opticalflow" and push the "GET" and "INSTALL" buttons
 
 .. image:: ../../../images/blueos-opticalflow-install.png
    :target: ../_images/blueos-opticalflow-install.png

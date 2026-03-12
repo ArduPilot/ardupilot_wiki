@@ -51,8 +51,8 @@ position.
 
    Copter: Mission Planning Example
 
-You can enter waypoints and other commands (see the 
-:ref:`Mission commands <common-planning-a-mission-with-waypoints-and-events_mission_commands>` 
+You can enter waypoints and other commands (see the
+:ref:`Mission commands <common-planning-a-mission-with-waypoints-and-events_mission_commands>`
 section below for more information). In
 the dropdown menus on each row, select the command you want. The column
 heading will change to show you what data that command requires. Lat and
@@ -103,7 +103,7 @@ Tips
    end and select **Measure Distance** again. A dialog box will open
    with the distance between the two points.
 -  The altitude change between waypoints is normally a linear ramp of target altitude as the
-   vehicle progresses unless the altitude starts below 25m above home to prevent slow climbs potentially 
+   vehicle progresses unless the altitude starts below 25m above home to prevent slow climbs potentially
    close to home. This value can be controlled with the :ref:`CLIMB_SLOPE_HGT<CLIMB_SLOPE_HGT>` parameter.
 
 Auto grid
@@ -124,7 +124,7 @@ then generate a mission that looks something like this:
 
    Mission Planner auto-generated grid
 
-   
+
 .. _common-planning-a-mission-with-waypoints-and-events_mission_commands:
 
 Mission commands

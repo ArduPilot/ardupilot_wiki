@@ -53,7 +53,7 @@ Use any of the auxiliary function controls listed above from the Data, Aux Funct
 .. image:: ../../../images/camera-controls-mp-aux-functions.png
     :target: ../_images/camera-controls-mp-aux-functions.png
     :width: 450px
-    
+
 Note that these buttons are "edge triggered" which means that to trigger a function multiple times you may need to push the "Low" or "Mid" button between pushes of "High".
 
 Control during Auto mode missions
@@ -62,7 +62,7 @@ Control during Auto mode missions
 See these pages for details on controlling the camera during Auto mode missions including specifying when the camera shutter should trigger or a distance that the vehicle should travel between shots.
 
 - :ref:`Camera Control in Auto Missions <common-camera-control-and-auto-missions-in-mission-planner>`
-- :ref:`Copter Mission Command List <mission-command-list>` 
+- :ref:`Copter Mission Command List <mission-command-list>`
 - :ref:`Mission Commands <common-mavlink-mission-command-messages-mav_cmd>` pages
 
 Control from a Companion Computer or MAVLink

@@ -40,7 +40,7 @@ Install firmware
 ----------------
 
 In Mission Planner's **SETUP \| Install Firmware** screen
-select the appropriate icon that matches your vehicle or frame type(i.e. Quad, Hexa). 
+select the appropriate icon that matches your vehicle or frame type(i.e. Quad, Hexa).
 Answer **Yes** when it asks you "Are you sure?".
 
 .. figure:: ../../../images/Pixhawk_InstallFirmware.jpg

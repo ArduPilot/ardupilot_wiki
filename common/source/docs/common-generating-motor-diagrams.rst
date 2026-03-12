@@ -117,7 +117,7 @@ After editing ``AP_Motors_display.json``, re-generate diagrams using ``build_mot
   * ``Rotation`` is the motor rotation direction (CCW or CW). A ``?`` indicates no yaw torque.
 
   * ``Roll`` is the "roll factor" of the motor and functions as an X coordinate for the diagram. Positive is below the origin, and negative is above. Generally, use values between -0.5 and 0.5.
- 
+
   * ``Pitch`` is the "pitch factor" of the motor and functions as a Y coordinate for the diagram. Positive is to the right, and negative is to the left. Generally, use values between -0.5 and 0.5.
 
   * ``FrameLines`` can be used to override the default frame arm depiction, where each motor is connected to the center of the frame. The coordinate system functions the same as for ``Roll`` and ``Pitch``.

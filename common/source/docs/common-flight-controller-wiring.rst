@@ -40,7 +40,7 @@ Radio Control Receivers are normally used for pilot control. While exclusive pil
 
 .. image:: ../../../images/rx-connection.jpg
   :width: 450px
-  
+
 ArduPilot autodetects the following serial RC receiver protocols:
 
    #. PPM remote control (R/C) receivers
@@ -53,7 +53,7 @@ ArduPilot autodetects the following serial RC receiver protocols:
    #. MULTIPLEX SRXL version 1 and version 2 receivers.
 
 For traditional single-wire-per-channel (PWM) receivers a PPM encoder
-can be used to convert the receiver outputs to PPM. 
+can be used to convert the receiver outputs to PPM.
 
 .. tip:: As of ArduPilot 4.0 versions of firmware, any autopilot UART may be used as an input for an RC receiver, instead of the designated RCin or SBUS input pin, by setting that port's ``SERIALx_PROTOCOL`` to 23. However, some serial protocols require inversion (SBUS,FPort) and the UART must be capable of using the ``SERIALx_OPTIONS`` parameter to invert the RX input, otherwise, an external inverter will be required. This also allows a second RC receiver to be attached to the autopilot for redundancy. If the first receiver (first detected valid after boot) fails, then the second will be used. Note that whatever RC input ranges and trims were calibrated will be used for the second when it becomes active. Both receivers MUST be set to send no pulses in failsafe for this to work properly. :ref:`RC_OPTIONS<RC_OPTIONS>` bit 10 must be set also.
 
@@ -64,7 +64,7 @@ can be used to convert the receiver outputs to PPM.
 .. figure:: ../../../images/FRSkyTaranis.jpg
    :target: ../_images/FRSkyTaranis.jpg
    :width: 450px
-  
+
    FRSky Taranis Transmitter
 
 Motor/Servo Connections
@@ -124,7 +124,7 @@ signal pins. The default settings are:
 -  Output 3 = Throttle
 -  Output 1 = Steering
 
-The skid-steer output function parameters are used to configure vehicles that have fixed wheels and steer like tank tracks (ie. do not use servos to steer the wheels but rather use differential speed between the left and right wheels). The SERVOx_FUNCTION for the outputs used for each side's motor are set using the ``Throttle Left`` and ``Throttle Right`` output functions. See :ref:`Rover Motor Functions <rover-motor-and-servo-configuration>` 
+The skid-steer output function parameters are used to configure vehicles that have fixed wheels and steer like tank tracks (ie. do not use servos to steer the wheels but rather use differential speed between the left and right wheels). The SERVOx_FUNCTION for the outputs used for each side's motor are set using the ``Throttle Left`` and ``Throttle Right`` output functions. See :ref:`Rover Motor Functions <rover-motor-and-servo-configuration>`
 [/site]
 [site wiki="sub"]
 **Sub connection guide under development**

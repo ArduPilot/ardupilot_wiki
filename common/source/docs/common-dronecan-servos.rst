@@ -24,4 +24,3 @@ For the examples below, the values are shown for DroneCAN driver #1 using CAN Po
 -  (Optionally) :ref:`CAN_D1_UC_SRV_RT<CAN_D1_UC_SRV_RT>`: rate that servo outputs are sent from the autopilot to the actuator
 
 .. note:: Himark servos use a different command set. In order to use them, also set :ref:`CAN_D1_UC_OPTION<CAN_D1_UC_OPTION>` bit 5 (+32).
-

@@ -12,7 +12,7 @@ There are several methods to setup a local build environment:
 
 #. Use the `Vagrantfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Vagrantfile>`__ in the root of the repo to create a Linux virtual machine with all the necessary packages installed.  This is the preferred and supported method.
 #. Use the `Dockerfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Dockerfile>`__ in the root of the repo to create a Linux container with all the necessary packages installed.
-#. Or simply install the required libraries on your local Linux or Windows machine, using the instructions below. 
+#. Or simply install the required libraries on your local Linux or Windows machine, using the instructions below.
 
 Fork, Clone, and Update Your Copy of the Wiki
 =============================================
@@ -158,7 +158,7 @@ This will build a docker image with all package setup to build the wiki and name
    .. code-block:: bash
 
        # presents a brief menu of build options
-       ./docker_update_py.sh 
+       ./docker_update_py.sh
 
        # or, to build the copter site with the --fast flag, for example:
        ./docker_update_py.sh --fast --site copter
@@ -235,7 +235,7 @@ RST editing/previewing
 
 The tools described in this section can make it easier to edit RST files and reduce the time required to preview changes.
 
-.. note:: The RST rendering tools can be useful for rapidly previewing small changes in the documentation. Rendering will not be perfect because the tools are designed for generic reStructuredText (they and are not "Sphinx-aware). We therefore recommend that you build with Sphinx to do a final review before you make a documentation pull request. 
+.. note:: The RST rendering tools can be useful for rapidly previewing small changes in the documentation. Rendering will not be perfect because the tools are designed for generic reStructuredText (they and are not "Sphinx-aware). We therefore recommend that you build with Sphinx to do a final review before you make a documentation pull request.
 
 RST rendering on Windows
 ------------------------
@@ -248,7 +248,7 @@ A combination of two Windows tools can help you preview your modifications:
 
 The Notepad++ plugin helps you with code completion and syntax highlighting during modification.
 Restview renders RST files on-the-fly, i.e. each modification on the RST file can be immediately
-visualized in your web browser. 
+visualized in your web browser.
 
 The installation of the Notepad++ plugin is clearly explained on the plugin's website (see above).
 
@@ -267,7 +267,7 @@ If you are in the root folder of your local Wiki repository:
 
 .. code-block:: bat
 
-	start \python-folder\Scripts\restview common\source\docs\common-wiki_editing_guide.rst	
+	start \python-folder\Scripts\restview common\source\docs\common-wiki_editing_guide.rst
 
 RST rendering on Linux
 ----------------------

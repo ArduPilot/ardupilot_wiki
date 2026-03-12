@@ -34,13 +34,13 @@ Tuning
 .. image:: ../images/Loiter_Tuning.png
     :target: ../_images/Loiter_Tuning.png
 
-Loiter mode incorporates the altitude controller from AltHold mode. 
+Loiter mode incorporates the altitude controller from AltHold mode.
 Details for tuning :ref:`AltHold are on this wiki page <altholdmode_tuning>`.
 
 Loiter Parameters
 -----------------
 
-- :ref:`LOIT_SPEED_MS<LOIT_SPEED_MS>`: max horizontal speed in m/s 
+- :ref:`LOIT_SPEED_MS<LOIT_SPEED_MS>`: max horizontal speed in m/s
 - :ref:`LOIT_ACC_MAX_M<LOIT_ACC_MAX_M>`: max acceleration in m/s/s.  Higher values cause the copter to accelerate and stop more quickly
 - :ref:`LOIT_ANG_MAX <LOIT_ANG_MAX>`: max lean angle in degrees (i.e. 30deg).  By default this value is zero which causes the :ref:`PSC_ANGLE_MAX<PSC_ANGLE_MAX>`  or :ref:`ATC_ANGLE_MAX<ATC_ANGLE_MAX>` parameter's value to be used
 - :ref:`LOIT_BRK_ACC_M<LOIT_BRK_ACC_M>`: max acceleration in m/s/s while braking (i.e. pilot has moved sticks to center).  Higher values will stop the vehicle more quickly
@@ -73,4 +73,3 @@ Viewing the loiter's horizontal performance is best done by :ref:`downloading a 
     :target: ../_images/Loiter_TuningCheck.png
 
 Checking altitude hold performance is the same as for :ref:`AltHold <altholdmode_verifying_althold_performance_with_dataflash_logs>` mode.
-

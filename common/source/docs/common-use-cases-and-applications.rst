@@ -41,7 +41,7 @@ Use Cases
     :maxdepth: 1
 
     3d Mapping <common-3d-mapping>
-    
+
 .. image:: ../../../images/case-skymapper.jpg
 
 .. toctree::
@@ -49,11 +49,11 @@ Use Cases
 
     First Person View (FPV) <common-fpv-first-person-view>
     Multi-Vehicle Flying <common-multi-vehicle-flying>
-    
+
 - `Crop Spraying <https://ardupilot.org/copter/docs/sprayer.html>`__
 
 - `Non-GPS Positioning Systems <https://ardupilot.org/copter/docs/common-non-gps-navigation-landing-page.html>`__
-    
+
 - `Indoor Flying <https://ardupilot.org/copter/docs/indoor-flying.html>`__
 
 Vehicle Types
@@ -72,5 +72,5 @@ Records
     :maxdepth: 1
 
     Plane Records <records>
-    
+
  [/site]

@@ -22,11 +22,11 @@ Features:
       - Internal Vibration Isolation for IMUs
       - IMU constant temperature heating(1 W heating power).
       - Triple Synced IMUs, BalancedGyro technology, low noise and more shock-resistant:
-      - **X6**:  
+      - **X6**:
          - IMU1-ICM45686(With vibration isolation)
          - IMU2-BMI088(With vibration isolation)
          - IMU3-ICM45686(No vibration isolation)
-      - **X6 Pro**：  
+      - **X6 Pro**：
          - IMU1-IIM42653(With vibration isolation)
          - IMU2-BMI088(With vibration isolation)
          - IMU3-IIM42653(No vibration isolation)
@@ -142,7 +142,7 @@ The X6 flight controller has 3 analog inputs.
 5V PWM Voltage
 ==============
 
-The X6 flight controller supports switching between 5V and 3.3V motro/servo output levels. Switch the output pulse level by configuring parameter :ref:`BRD_PWM_VOLT_SEL<BRD_PWM_VOLT_SEL>`. Set 0 for 3.3V and 1 for 5V output. 
+The X6 flight controller supports switching between 5V and 3.3V motro/servo output levels. Switch the output pulse level by configuring parameter :ref:`BRD_PWM_VOLT_SEL<BRD_PWM_VOLT_SEL>`. Set 0 for 3.3V and 1 for 5V output.
 
 Where to Buy
 ============

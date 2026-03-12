@@ -126,7 +126,7 @@ is started you can arm if you like.
 .. warning::
 
    In theory you could fly while doing nsh commands, but we don't
-   recommend it. 
+   recommend it.
 
 This also works over a 3DR Radio link, although it is of course slower
 in output than when on a USB connection.

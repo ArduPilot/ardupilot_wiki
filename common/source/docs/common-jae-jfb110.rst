@@ -307,7 +307,7 @@ UART / Serial
 RC Input
 ========
 
-The RC In pin, is mapped to a timer input  and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS, FPort, and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry. 
+The RC In pin, is mapped to a timer input  and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS, FPort, and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry.
 
 An alternate RC input is setup on SERIAL5 RX input and provides the same capabilities as above except it does not support PPM.
 

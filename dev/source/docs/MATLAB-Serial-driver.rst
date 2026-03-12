@@ -4,10 +4,10 @@
 MATLAB Serial driver testing
 ==============================
 
-The TCP/UDP/IP Toolbox can also be used to interact directly with SITL serial ports. This allows MATLAB to be used to replicate 
-a sensor protocol fore testing and debugging ArduPilot drivers. Unlike previous examples TCP is used and two way communication is 
-possible. By default SITL uses ports 5760 to 5763 for serial ports 0 to 3. The appropriate SERIALx_PROTOCOL parameter should 
-be set to the driver being tested, baud rate is not used. Such a MATLAB tool greatly speeds up development of drivers 
+The TCP/UDP/IP Toolbox can also be used to interact directly with SITL serial ports. This allows MATLAB to be used to replicate
+a sensor protocol fore testing and debugging ArduPilot drivers. Unlike previous examples TCP is used and two way communication is
+possible. By default SITL uses ports 5760 to 5763 for serial ports 0 to 3. The appropriate SERIALx_PROTOCOL parameter should
+be set to the driver being tested, baud rate is not used. Such a MATLAB tool greatly speeds up development of drivers
 removing the need to flash and test on real hardware.
 
 This is a example used to send a NMEA string from simulated water speed sensor:
@@ -40,7 +40,7 @@ This is a example used to send a NMEA string from simulated water speed sensor:
           % send MTW temp message
           water_temp = 10 + randn();
           NMEA_string = sprintf('$YXMTW,%0.1f,C',water_temp);
-      else 
+      else
           % send VHW speed message
           water_speed_knots = 5 + randn()*2;
           water_speed_kph = water_speed_knots * 1.852;
@@ -62,11 +62,10 @@ This is a example used to send a NMEA string from simulated water speed sensor:
       pause(1);
   end
 
-  function NMEA_string_out = add_checksum(NMEA_string_in)  
+  function NMEA_string_out = add_checksum(NMEA_string_in)
       checksum = uint8(0);
       for i = 2:numel(NMEA_string_in)
           checksum = bitxor(checksum,uint8(NMEA_string_in(i)),'uint8');
       end
       NMEA_string_out = sprintf('%s*%s',NMEA_string_in,dec2hex(checksum));
   end
-

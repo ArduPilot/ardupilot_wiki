@@ -13,4 +13,3 @@ Ground Control Station (GCS) software provides a means to configure your autopil
 
     Choosing a Ground Station <common-choosing-a-ground-station>
     Mission Planning <common-mission-planning>
-

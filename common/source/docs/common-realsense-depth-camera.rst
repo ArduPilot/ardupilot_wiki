@@ -62,8 +62,8 @@ Install APSync to the UP Squared:
   - Enter "Y" when prompted for overwriting all data to selected disk
   - After the cloning process is finished, there will be a prompt declaring success, press enter to continue.
   - Press enter on "power off"
-  - Remove all USB sticks from the board. You can also remove your monitor input. 
-  - Reboot 
+  - Remove all USB sticks from the board. You can also remove your monitor input.
+  - Reboot
 
 Upgrade the Camera's Firmware
 -----------------------------
@@ -97,7 +97,7 @@ Example of specifics for ``Loiter`` and ``AltHold`` mode:
 - :ref:`AVOID_MARGIN <AVOID_MARGIN>` = 1.5: How many meters from the barrier the vehicle will attempt to stop or try to slide along it
 - :ref:`AVOID_BEHAVE <AVOID_BEHAVE>` = 1: Whether the vehicle should simply Stop (1) in front of the barrier or Slide (0) around it
 - :ref:`AVOID_DIST_MAX <AVOID_DIST_MAX>` = 1.5: How far from a barrier the vehicle starts leaning away from the barrier in AltHold
-- :ref:`AVOID_ANG_MAX <AVOID_ANG_MAX>` = 30: How far the vehicle will try to lean away from the barrier in 
+- :ref:`AVOID_ANG_MAX <AVOID_ANG_MAX>` = 30: How far the vehicle will try to lean away from the barrier in
 
 **Optional**: You can assign an RC switch to enable Avoidance instead of always on by default. Example of setting RC7 to switch Avoidance on in Mission Planner:
 
@@ -286,5 +286,5 @@ As the performance of the depth camera varies in different setting/environment, 
 
 
 .. tip::
-    
+
     The depth camera can be used together with the :ref:`Realsense T265 Tracking camera for non-GPS navigation <common-vio-tracking-camera>`. There are supporting `scripts <https://github.com/thien94/vision_to_mavros/tree/master/scripts>`__ available to simplify the usage of multiple cameras simultaneously.

@@ -7,9 +7,9 @@ Sky-Drones SmartAP Power Distribution Board
 Overview
 ========
 
-`SmartAP PDB <https://sky-drones.com/power/smartap-pdb.html>`__ (Power Distribution Board) is a board which allows transferring the power from 
-the battery to ESCs / Motors and generate power supply for the autopilot and 
-other peripherals with different voltage levels. Also, PDB provides the functionality for battery 
+`SmartAP PDB <https://sky-drones.com/power/smartap-pdb.html>`__ (Power Distribution Board) is a board which allows transferring the power from
+the battery to ESCs / Motors and generate power supply for the autopilot and
+other peripherals with different voltage levels. Also, PDB provides the functionality for battery
 voltage / current measurements. SmartAP PDB makes high-power lines connections easier and much more reliable.
 
 
@@ -68,7 +68,7 @@ SmartAP PDB has integrated voltage and current sensors. Current sensor is locate
 Configuration
 =============
 
-Set battery parameters as following: 
+Set battery parameters as following:
 
 - :ref:`BATT_MONITOR<BATT_MONITOR>` to 4 to Set to analog voltage and current.
 - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` to 18.4615

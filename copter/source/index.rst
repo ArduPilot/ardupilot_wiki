@@ -3,9 +3,9 @@
 ================
 ArduPilot Copter
 ================
-   
+
 ..  raw:: html
-    
+
     <p style="text-align:center;color:red;"><strong>
     Success with Copter requires that the 'First Time Setup' and 'First Flight and Tuning' sections of this documentation be read and followed!</strong>
     <br></br>
@@ -29,16 +29,16 @@ ArduPilot Copter
     <td width="4%">
     </td>
     <td width="48%">
-    
 
-|TOP_COL_RIGHT|    
+
+|TOP_COL_RIGHT|
 
 ..  raw:: html
 
     </td>
     </tr>
     </table>
-    
+
 ..  raw:: html
 
     <table>
@@ -48,7 +48,7 @@ ArduPilot Copter
 .. image:: ../../images/mission_planner_spline_waypoint.jpg
     :target: _images/mission_planner_spline_waypoint.jpg
     :width: 350px
-           
+
 ..  raw:: html
 
     </td>
@@ -57,7 +57,7 @@ ArduPilot Copter
     <td width="48%">
 
 .. image:: ../../images/mission_planner_flight_data.jpg
-   :target: _images/mission_planner_flight_data.jpg    
+   :target: _images/mission_planner_flight_data.jpg
    :width: 350px
 
 ..  raw:: html
@@ -77,14 +77,14 @@ System components
 ~~~~~~~~~~~~~~~~~
 
 
--  A Pixhawk or :ref:`other autopilot <common-autopilots>` 
+-  A Pixhawk or :ref:`other autopilot <common-autopilots>`
    loaded with the latest version of
    the `Copter firmware <https://firmware.ardupilot.org/>`__.
 -  :ref:`Mission Planner software <planner:home>` -- gives
    you an easy point-and-click setup/configuration, and a full-featured
    ground control interface.
 -  This Copter Wiki provides all the information you need to set up and
-   operate a multicopter or traditional helicopter. 
+   operate a multicopter or traditional helicopter.
 -  A suitable
    :ref:`MultiCopter <build-your-own-multicopter>` or
    :ref:`Helicopter <traditional-helicopters>` for your mission.
@@ -103,7 +103,7 @@ Rotor Craft types
     <td width="48%">
 
 .. image:: /images/helicopter_trex450.jpg
-   :target: _images/helicopter_trex450.jpg 
+   :target: _images/helicopter_trex450.jpg
    :width: 211px
 
 ..  raw:: html
@@ -177,7 +177,7 @@ Getting more info
 
 .. toctree::
    :hidden:
-   
+
 
    Introduction to Copter <docs/copter-introduction>
    Choosing an Autopilot <docs/common-autopilots>
@@ -193,17 +193,15 @@ Getting more info
    User Alerts <docs/common-user-alerts>
 
 
-.. |TOP_COL_LEFT| replace:: This is the full-featured, :ref:`open-source <dev:license-gplv3>` 
-   multicopter UAV controller that won the   
-   `Sparkfun 2013 and 2014 Autonomous Vehicle Competition <https://avc.sparkfun.com/>`__ 
-   (dominating with the top five spots). A team of developers 
-   from around the globe are constantly improving and refining 
+.. |TOP_COL_LEFT| replace:: This is the full-featured, :ref:`open-source <dev:license-gplv3>`
+   multicopter UAV controller that won the
+   `Sparkfun 2013 and 2014 Autonomous Vehicle Competition <https://avc.sparkfun.com/>`__
+   (dominating with the top five spots). A team of developers
+   from around the globe are constantly improving and refining
    the performance and capabilities of ArduCopter.
-   
-.. |TOP_COL_RIGHT| replace:: Copter is capable of the full range of flight requirements 
-   from fast paced FPV racing to smooth aerial photography, and fully autonomous 
-   complex missions which can be programmed through a number of compatible 
-   software ground stations. The entire package is designed to be safe, feature rich, 
+
+.. |TOP_COL_RIGHT| replace:: Copter is capable of the full range of flight requirements
+   from fast paced FPV racing to smooth aerial photography, and fully autonomous
+   complex missions which can be programmed through a number of compatible
+   software ground stations. The entire package is designed to be safe, feature rich,
    open-ended for custom applications, and is increasingly easy to use even for the novice.
-
-

@@ -13,7 +13,7 @@ Tuning the yaw axis is a bit different if tilt vectored yaw is utilized. Tilt Ve
 
 .. code:: bash
 
-   PIQY.FF+PIQY.P+PIQY.D   
+   PIQY.FF+PIQY.P+PIQY.D
    X * (PIQY.Act) , where X is 0.2 to start
 
 - Next adjust the X value above until the magnitudes of both plots are about equal. This will now be value for the :ref:`Q_A_RAT_YAW_FF<Q_A_RAT_YAW_FF>` term. Set the :ref:`Q_A_RAT_YAW_I<Q_A_RAT_YAW_I>` term to equal this.

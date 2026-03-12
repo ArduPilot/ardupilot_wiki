@@ -7,8 +7,8 @@ Archived:Powering the APM2
 .. warning::
 
     **ARCHIVED**
-    
-    The APM2.x is end of life for use with ArduPilot. 
+
+    The APM2.x is end of life for use with ArduPilot.
     This article is made available for existing users.
 
 This article demonstrates the options for powering the APM2.x board

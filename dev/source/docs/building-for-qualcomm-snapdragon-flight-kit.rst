@@ -10,7 +10,7 @@ Archived: Building for Qualcomm Snapdragon Flight Kit
 
    ArduPilot no longer supports Qualcomm Snapdragon Flight Kit.
 
-This article shows how to build ArduPilot for 
+This article shows how to build ArduPilot for
 :ref:`Qualcomm® Snapdragon Flight™ Kit (Developer’s Edition) <copter:common-qualcomm-snapdragon-flight-kit>`
 with *Make* on Linux.
 
@@ -43,7 +43,7 @@ the same (both are covered here).
 .. tip::
 
    We recommend that developers use QFLIGHT port for development and
-   debugging, but recompile and target QURT for production use. 
+   debugging, but recompile and target QURT for production use.
 
 The instructions in this article demonstrate building for Copter (from
 the ArduCopter directory). Plane and Rover are build in the same way,
@@ -68,7 +68,7 @@ a Windows PC.
    the power brick and then connect with a USB cable to your PC (note
    the board has a USB3.0 port but a normal micro USB cable will work)
 #. Start QFIL and the COM port the board is connected to should
-   automatically appear to the left of the **Select Port** button. 
+   automatically appear to the left of the **Select Port** button.
    Normally it appears with the name "QDLoader 9008".
 #. Under "Select Programmer" click the **Browse** button and find
    prog_emmc_firehose_8974.mbn (To-Do: which of the packages was this

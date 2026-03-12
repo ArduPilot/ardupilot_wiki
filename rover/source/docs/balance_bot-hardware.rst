@@ -1,4 +1,4 @@
-.. _balance_bot-hardware: 
+.. _balance_bot-hardware:
 
 ================
 Hardware Options
@@ -41,4 +41,3 @@ Telemetry Radio(optional)
 =========================
 
 Telemetry radios are very useful for tuning and debugging. For more information on supported hardware options refer :ref:`telemetry<common-telemetry-landingpage>` page.
-

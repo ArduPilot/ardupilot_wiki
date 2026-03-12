@@ -50,7 +50,7 @@ Failsafe output values:
    In Copter and Plane a fail-safe action can be triggered by the
    throttle low signal.
 
-   This should be carefully configured as explained in the wiki for 
+   This should be carefully configured as explained in the wiki for
    :ref:`APM Copter <copter:radio-failsafe>` and
    :ref:`APM Plane <plane:apms-failsafe-function>`
 
@@ -145,7 +145,7 @@ Choose "Browse my Computer for driver software"
 Browse to the folder where WinAVR is installed (e.g. C:WinAVR-20100110)
 
 Browse to the folder where WinAVR is installed (e.g.
-C:\\WinAVR-20100110\\)   
+C:\\WinAVR-20100110\\)
 
 .. image:: ../../../images/windows_install_avrispmkii_driver_31.png
     :target: ../_images/windows_install_avrispmkii_driver_31.png
@@ -275,8 +275,8 @@ and you should have your custom hex-file to program using:
 ::
 
     avrdude -p atmega328p -P usb -c avrispmkii -U flash:w:Encoder-PPM.hex
-    
-    
+
+
 
 Related information
 ===================
@@ -285,4 +285,3 @@ Related information
     :maxdepth: 1
 
     PPM Encoder Programming Guide <common-ppm-encoder-8-channel-standalone-encoder>
-

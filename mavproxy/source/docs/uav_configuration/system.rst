@@ -56,9 +56,7 @@ Exits MAVProxy.
 .. note::
 
     This requires the "requireexit" option to be true in order to work. This can be done via the following command:
-    
-    .. code:: bash
-    
-        set requireexit True
-    
 
+    .. code:: bash
+
+        set requireexit True

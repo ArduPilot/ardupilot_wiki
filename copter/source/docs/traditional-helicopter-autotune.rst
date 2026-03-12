@@ -102,7 +102,7 @@ The :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>` parameter specifies the maximum fr
 :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>`
 ----------------------------------------
 
-The :ref:`AUTOTUNE_VELXY_P<AUTOTUNE_VELXY_P>` parameter specifies P gain for velocity feedback.  This aids the AutoTune in maintaining aircraft position during the frequency sweeps and dwells.  It does not apply to ``ATC_RAT_xxx_FF`` tuning.  Keep this at 0.1 unless the aircraft is drifting more than 10 meters during the dwell and frequency sweeps.  It only affects position holding while the aircraft is oscillating during these tests.  If it does drift more than 10 meters during the dwell and frequency sweep tests then increase this parameter but don't increase much beyond 0.2. In between the oscillations, it may drift if the aircraft wasn't properly trimmed for hover.  This gain will not help with that.  
+The :ref:`AUTOTUNE_VELXY_P<AUTOTUNE_VELXY_P>` parameter specifies P gain for velocity feedback.  This aids the AutoTune in maintaining aircraft position during the frequency sweeps and dwells.  It does not apply to ``ATC_RAT_xxx_FF`` tuning.  Keep this at 0.1 unless the aircraft is drifting more than 10 meters during the dwell and frequency sweeps.  It only affects position holding while the aircraft is oscillating during these tests.  If it does drift more than 10 meters during the dwell and frequency sweep tests then increase this parameter but don't increase much beyond 0.2. In between the oscillations, it may drift if the aircraft wasn't properly trimmed for hover.  This gain will not help with that.
 
 :ref:`Maximum Allowable Angular Acceleration<AUTOTUNE_ACC_MAX>`
 ---------------------------------------------------------------
@@ -175,7 +175,7 @@ Tuning Flight Procedures
 
 When conducting an AutoTune flight, be sure to have at least at 50 meter by 50 meter area to fly. The aircraft will move during the autotuning process.  Do not let the aircraft get too far away.
 
-.. caution::  During the feedforward test, the aircraft may travel 5-10 meters, and perhaps even further with larger helicopters. You may have to bring it back after each iteration of the tuning test.  
+.. caution::  During the feedforward test, the aircraft may travel 5-10 meters, and perhaps even further with larger helicopters. You may have to bring it back after each iteration of the tuning test.
 
 #. Power up the controller.
 #. Set the flight mode to either stabilize or AltHold (Althold recommended).
@@ -187,9 +187,9 @@ When conducting an AutoTune flight, be sure to have at least at 50 meter by 50 m
 .. note::  If you don’t see anything happening, verify your sticks are centered.
 
 7. After the tuning is complete, a message will appear in the GCS saying "AutoTune complete".
-8. To test the settings, switch out of AutoTune and then back to AutoTune and you will be 
+8. To test the settings, switch out of AutoTune and then back to AutoTune and you will be
    able to test the settings that were tuned.
-9. Once you are finished testing, descend and land in AutoTune.  Once the aircraft has landed, the 
+9. Once you are finished testing, descend and land in AutoTune.  Once the aircraft has landed, the
    engine will shutdown on its own.  At that point flip your motor interlock switch to disabled
    and disarm the aircraft.
 
@@ -204,7 +204,7 @@ Tuning Maneuver Descriptions
         In versions 4.6 and subsequent, the ``ATC_RAT_xxx_FF`` tuning is accomplished by performing low frequency oscillations targeting an amplitude of 5 deg.  The test will conduct 5 to 6 oscillations which will take 15 to 20 seconds.  This will be repeated to refine the feedforward gain.  Although the requested amplitude is 5 deg, the actual amplitude may be larger.  If the amplitude exceeds 10 to 15 deg or the oscillations are growing, the autotune testing should be stopped. The following video demonstrates the ``ATC_RAT_xxx_FF`` tuning.  It shows the tuning in progress where approximately 6 oscillations are done to test the gain with a short pause and then another 6 oscillations.  During the pause, the gains are being updated and the test is conducted again until the tuning is complete.
 
 ..  youtube:: mquYOOVxWTo
-        
+
         In versions prior to 4.6, the ``ATC_RAT_xxx_FF`` tuning is accomplished by achieving a constant angular rate of 50 deg/s and determining the steady state command required to maintain the 50 deg/s.  The maneuver to achieve the constant angular rate consists of changing attitude by 15 deg in one direction then reversing direction to achieve a constant rate of 50 deg/s before reaching 15 deg in the opposite direction.  Finally it returns to the starting attitude.   During ``ATC_RAT_xxx_FF`` tuning there is no position holding logic and the aircraft may drift, reposition the aircraft between maneuvers as needed to keep it from drifting.  Making any inputs during this test will stop the tuning and won’t begin again unless the sticks are centered.  The following video demonstrates the ``ATC_RAT_xxx_FF`` tuning.
 
 ..  youtube:: 2XLBIycPiq0
@@ -219,7 +219,7 @@ Tuning Maneuver Descriptions
 ``ATC_ANG_xxx_P`` Tuning
 ++++++++++++++++++++++++
 
-        ``ATC_ANG_xxx_P`` tuning starts with conducting a frequency sweep from from the :ref:`AUTOTUNE_FRQ_MIN<AUTOTUNE_FRQ_MIN>` to :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>`.  This determines the approximate frequency for the maximum response gain.  Then dwells (oscillations at one frequency) are conducted to tune the ``ATC_ANG_xxx_P`` gain. The gain is raised or lowered to determine the ``ATC_ANG_xxx_P`` gain that corresponds to a response gain (output angle/input angle request) that matches :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`. During this tuning, you can’t make any inputs to hold position during the tuning however the logic includes position holding during the test maneuver but not between maneuvers.   If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again. If it is drifting more than 10 meters during the maneuver then the :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>` can be increased to minimize drifting. In between the oscillation maneuvers, it may drift if the aircraft wasn't properly trimmed for hover. The  :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>` gain will not help with that. The tuning sweeps are 23 seconds in duration.  
+        ``ATC_ANG_xxx_P`` tuning starts with conducting a frequency sweep from from the :ref:`AUTOTUNE_FRQ_MIN<AUTOTUNE_FRQ_MIN>` to :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>`.  This determines the approximate frequency for the maximum response gain.  Then dwells (oscillations at one frequency) are conducted to tune the ``ATC_ANG_xxx_P`` gain. The gain is raised or lowered to determine the ``ATC_ANG_xxx_P`` gain that corresponds to a response gain (output angle/input angle request) that matches :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`. During this tuning, you can’t make any inputs to hold position during the tuning however the logic includes position holding during the test maneuver but not between maneuvers.   If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again. If it is drifting more than 10 meters during the maneuver then the :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>` can be increased to minimize drifting. In between the oscillation maneuvers, it may drift if the aircraft wasn't properly trimmed for hover. The  :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>` gain will not help with that. The tuning sweeps are 23 seconds in duration.
 
 ..  youtube:: aI-uJuQAh-0
 

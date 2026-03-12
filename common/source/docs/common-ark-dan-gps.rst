@@ -16,7 +16,7 @@ Specifications
 **Sensors**
 
 - `u-blox DAN-F10N <https://www.u-blox.com/en/product/dan-f10n-module>`__
-  
+
   - L1/L5/E5a/B2a bands
   - Consistently strong performance regardless of installation
   - Integrated SAW-LNA-SAW for exceptional out-of-band jamming immunity

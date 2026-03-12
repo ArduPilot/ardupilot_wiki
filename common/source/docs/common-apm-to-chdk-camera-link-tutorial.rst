@@ -12,8 +12,8 @@ Cameras that support the `Canon Hacker Development Kit <http://chdk.wikia.com/wi
 Overview
 ========
 
-ArduPilot allows you to 
-:ref:`configure a servo or relay output as the control signal for the camera shutter <common-camera-shutter-with-servo>` 
+ArduPilot allows you to
+:ref:`configure a servo or relay output as the control signal for the camera shutter <common-camera-shutter-with-servo>`
 so that it can be used in
 :ref:`Camera Missions <common-camera-control-and-auto-missions-in-mission-planner>`.
 Additional hardware is required to convert the shutter activation signal
@@ -25,8 +25,8 @@ method connects the ArduPilot output to the camera using a \*custom
 cable\*, and causes a script running on the camera to take pictures when
 the *relay* output voltage goes high.
 
-At the end of the article is a 
-:ref:`list of cables that you can purchase <common-apm-to-chdk-camera-link-tutorial_chdk_cables_for_purchase>` 
+At the end of the article is a
+:ref:`list of cables that you can purchase <common-apm-to-chdk-camera-link-tutorial_chdk_cables_for_purchase>`
 instead of using the custom cable (please extend this list if you find another appropriate cable).
 
 The article covers both Pixhawk and APM2.x.
@@ -40,7 +40,7 @@ The article covers both Pixhawk and APM2.x.
 
 .. note::
 
-   It is also possible to use a 
+   It is also possible to use a
    :ref:`servo output instead of a relay <common-apm-to-chdk-camera-link-tutorial_using_a_servo_instead_of_a_relay>`.
 
 CHKD and ArduPilot integration
@@ -259,7 +259,7 @@ Using a servo instead of a relay
 
 It is also possible to trigger the camera shutter using a servo output,
 but that requires additional (and often more expensive) hardware to
-decode the servo's PWM signal. 
+decode the servo's PWM signal.
 The :ref:`CHDK Camera Control Tutorial <common-chdk-camera-control-tutorial>` describes a suitable
 PWM-to-voltage pulse cable, and information from which the servo
 settings can be inferred.
@@ -273,7 +273,7 @@ settings can be inferred.
 
 
 .. _common-apm-to-chdk-camera-link-tutorial_chdk_cables_for_purchase:
-   
+
 CHDK Cables for purchase
 ========================
 

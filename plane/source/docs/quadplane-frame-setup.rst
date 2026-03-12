@@ -21,7 +21,7 @@ Frame Types and Classes
 -----------------------
 
 To use a different frame type you can set :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` and
-:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>`. 
+:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>`.
 
 Frame Class
 ~~~~~~~~~~~
@@ -70,7 +70,7 @@ For example, with the default Quad-X frame the motors are on outputs
 
 You can remember the clockwise/counter-clockwise rule by "motors turn
 in towards the fuselage", except for the H configuration, there all directions are inverted!
-   
+
 Another common setup is an OctoQuad X8, which uses the following ordering
 
 -  **Output 5:** Motor 1 - Front right top motor, counter-clockwise
@@ -144,4 +144,3 @@ a Pixhawk) you would use these settings in the advanced parameter list:
 -  :ref:`SERVO10_FUNCTION<SERVO10_FUNCTION>` = 34
 -  :ref:`SERVO11_FUNCTION<SERVO11_FUNCTION>` = 35
 -  :ref:`SERVO12_FUNCTION<SERVO12_FUNCTION>` = 36
-

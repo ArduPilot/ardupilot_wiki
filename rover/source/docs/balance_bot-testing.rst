@@ -4,7 +4,7 @@
 Testing the Balance Bot
 =======================
 
-If you have completed all the previous steps successfully, then you're all set to start testing! 
+If you have completed all the previous steps successfully, then you're all set to start testing!
 
  .. youtube:: -EESMnSEpeM
     :width: 100%

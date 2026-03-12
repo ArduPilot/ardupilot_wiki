@@ -84,7 +84,7 @@ are:
  - you will be added to the partners mailing list and partners discord channel
  - you will receive an invitation to the monthly partners development call
 
-If you have not received a reply from the Partners Program Coordinator in 2 business days, please check the SPAM folder of your inbox. Otherwise, fill out `this form <https://forms.gle/pZN81bcjiVez7QpN9>`__ and the Coordinator will reach out to you shortly. 
+If you have not received a reply from the Partners Program Coordinator in 2 business days, please check the SPAM folder of your inbox. Otherwise, fill out `this form <https://forms.gle/pZN81bcjiVez7QpN9>`__ and the Coordinator will reach out to you shortly.
 
 Payment Methods
 ===============
@@ -106,11 +106,10 @@ A Funding Committee of 3 members is voted on annually from within the Developmen
 
 I'm not a company, but I love your work, how can I help?
 =========================================================
-Please see our more general, :ref:`how-to-donate <common-donation>` page but in short, we accept donations of any amount from individuals as well.  Also please consider helping out with documentation, beta testing or code development.  Tell your friends and post videos of your successes with ArduPilot! 
+Please see our more general, :ref:`how-to-donate <common-donation>` page but in short, we accept donations of any amount from individuals as well.  Also please consider helping out with documentation, beta testing or code development.  Tell your friends and post videos of your successes with ArduPilot!
 
 I want a new feature, do I have to be a partner to get it?
 ==========================================================
 No.  ArduPilot is, and always will be, open source.  Contributions to the code base, wherever they come from, are accepted based on their technical merits.  If you're not in a position to make the changes yourself, please add it to the `Issues list <https://github.com/ArduPilot/ardupilot/issues>`__ or consider contracting one of the companies listed on the :ref:`Commercial Support page <common-commercial-support>` to make the change.
 
 [copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
-

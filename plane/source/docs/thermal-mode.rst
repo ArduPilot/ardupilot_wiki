@@ -13,7 +13,7 @@ THERMAL mode is exited under the following conditions:
    - :ref:`SOAR_ALT_MAX<SOAR_ALT_MAX>` is reached.
    - :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` is reached.
    - Flight mode is changed by the pilot.
-   - The estimate of achievable climb rate falls below :ref:`SOAR_VSPEED<SOAR_VSPEED>`, and 
+   - The estimate of achievable climb rate falls below :ref:`SOAR_VSPEED<SOAR_VSPEED>`, and
      thermalling has lasted at least :ref:`SOAR_MIN_THML_S<SOAR_MIN_THML_S>` seconds.
    - The aircraft drifts more than :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` - see :ref:`Limit maximum distance from home<soaring_maximum-distance-from-home>`
 

@@ -163,7 +163,7 @@ copy was taken.
     //
     //#define HIL_MODE                              HIL_MODE_DISABLED
     //#define HIL_PORT                              0
-    //#define HIL_PROTOCOL                  HIL_PROTOCOL_MAVLINK  
+    //#define HIL_PROTOCOL                  HIL_PROTOCOL_MAVLINK
     //
 
     //////////////////////////////////////////////////////////////////////////////
@@ -182,8 +182,8 @@ copy was taken.
     // or 3 for the telemetry port on the oilpan.  Note that some protocols
     // will ignore this value and always use the console port.
     //
-    // The MAV_SYSTEM_ID is a unique identifier for this UAV.  The default value is 1. 
-    // If you will be flying multiple UAV's each should be assigned a different ID so 
+    // The MAV_SYSTEM_ID is a unique identifier for this UAV.  The default value is 1.
+    // If you will be flying multiple UAV's each should be assigned a different ID so
     // that ground stations can tell them apart.
     //
     //#define GCS_PROTOCOL          GCS_PROTOCOL_MAVLINK
@@ -214,7 +214,7 @@ copy was taken.
     //
     // BATTERY_EVENT                            OPTIONAL
     //
-    // Set BATTERY_EVENT to ENABLED to enable low voltage or high discharge warnings.  
+    // Set BATTERY_EVENT to ENABLED to enable low voltage or high discharge warnings.
     // The default is DISABLED.
     //
     // LOW_VOLTAGE                              OPTIONAL if BATTERY_EVENT is set.
@@ -236,14 +236,14 @@ copy was taken.
     //
     // HIGH_DISCHARGE                                                       OPTIONAL if BATTERY_EVENT is set.
     //
-    // Value in milliamp-hours at which a warning should be triggered.  Recommended value = 80% of 
+    // Value in milliamp-hours at which a warning should be triggered.  Recommended value = 80% of
     // battery capacity.
     //
     //#define BATTERY_EVENT                 DISABLED
     //#define LOW_VOLTAGE                   9.6
     //#define VOLT_DIV_RATIO                3.56
-    //#define CURR_AMPS_PER_VOLT    27.32   
-    //#define CURR_AMPS_OFFSET              0.0     
+    //#define CURR_AMPS_PER_VOLT    27.32
+    //#define CURR_AMPS_OFFSET              0.0
     //#define HIGH_DISCHARGE                1760
 
     //////////////////////////////////////////////////////////////////////////////
@@ -349,7 +349,7 @@ copy was taken.
     //
     // The throttle failsafe allows you to configure a software failsafe activated
     // by a setting on the throttle input channel (channel 3).  Enabling this failsafe
-    // also enables "short failsafe" conditions (see below) based on loss of 
+    // also enables "short failsafe" conditions (see below) based on loss of
     // rc override control from the GCS
     //
     // This can be used to achieve a failsafe override on loss of radio control
@@ -381,8 +381,8 @@ copy was taken.
     // LONG_FAILSAFE_ACTION                                 OPTIONAL
 
     // There are two basic conditions which can trigger a failsafe.  One is a loss of control signal.
-    // Normally this means a loss of the radio control RC signal.  However if rc override from the 
-    // GCS is in use then this can mean a loss of communication with the GCS.  Such a failsafe will be 
+    // Normally this means a loss of the radio control RC signal.  However if rc override from the
+    // GCS is in use then this can mean a loss of communication with the GCS.  Such a failsafe will be
     // classified as either short (greater than 1.5 seconds but less than 20) or long (greater than 20).
     // Also, if GCS_HEARTBEAT_FAILSAFE is enabled and a heartbeat signal from the GCS has not been received
     // in the preceding 20 seconds then this will also trigger a "long" failsafe.
@@ -660,7 +660,7 @@ copy was taken.
     //
     // Maximum control offset due to the integral.  This prevents the control
     // output from being overdriven due to a persistent offset (e.g. native flight
-    // AoA).  
+    // AoA).
     // Default is 5 degrees.
     //
     // PITCH_COMP                               OPTIONAL

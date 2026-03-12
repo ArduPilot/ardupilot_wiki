@@ -30,7 +30,7 @@ hosted in a VMware virtual machine. You can use any Virtual Machine provider suc
 .. note::
 
    The instructions were tested on Windows 8 with VMware ver 7.1.0
-   build-2496824 and Ubuntu 14.10. 
+   build-2496824 and Ubuntu 14.10.
 
 .. image:: ../images/Ubuntu_SITL_running_Copter.jpg
     :target: ../_images/Ubuntu_SITL_running_Copter.jpg
@@ -79,7 +79,7 @@ Step #2 - Start the VM for the first time
 
    .. |Ubuntu_TestNetworkWithFirefox| image:: ../images/ubuntu_test_network_with_firefox.jpg
        :target: ../_images/ubuntu_test_network_with_firefox.jpg
-   
+
 #. Set the clock by double clicking on the top right corner, select your
    location on the map and "Set the time:" to "Automatically from the
    internet"
@@ -104,7 +104,7 @@ not greyed
 2.On VMware Player select Player > Manage > Virtual Machine Settings...
 > Options Tab > Shared Folders
 
--  Check "Always enabled", 
+-  Check "Always enabled",
 -  Click "Add..."
 -  Set "Host Path" to folder one level above where you have installed
    ardupilot software

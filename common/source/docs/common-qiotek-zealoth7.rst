@@ -19,7 +19,7 @@ Specifications
 
 -  **Processor**:
 
-   -  MCU - STM32H743VIT6 
+   -  MCU - STM32H743VIT6
    -  16KB FRAM - FM25V01
    -  AT7456E OSD
 
@@ -39,7 +39,7 @@ Specifications
    -  Internal 5V, 1.5A BEC directly can be used with up to 6S LIPO batteries to supply board and peripheral power up to 1.5A max with voltage only monitoring via BATT2 monitor (500ma max recommended).
    -  ADC monitoring of board voltage
    -  ADC monitoring of Servo/Output's power rail
-   
+
 -  **Interfaces/Connectivity**
 
    -  14 PWM Outputs with independent power rail for external power source
@@ -51,7 +51,7 @@ Specifications
    -  External Buzzer interface
    -  2, 6.6V tolerant ADC inputs for RSSI, Analog Airspeed, etc.
    -  5 UARTs
-   -  2, DroneCAN/CAN interfaces 
+   -  2, DroneCAN/CAN interfaces
    -  Safety Switch connector
 
 -  **Dimensions**
@@ -141,7 +141,7 @@ OSD
    </tr>
    </tbody>
    </table>
-   
+
 USB remote port
 ---------------
 
@@ -537,7 +537,7 @@ Then reboot.
 
 DroneCAN capability
 ===================
-There are 2 CAN ports which allow connecting two independent CAN bus outputs. Each of these can have multiple CAN peripheral devices connected. A CAN splitter board is included with the autopilot. Please refer to :ref:`CAN Bus Setup <common-canbus-setup-advanced>` for information on how to configure CAN on the board. 
+There are 2 CAN ports which allow connecting two independent CAN bus outputs. Each of these can have multiple CAN peripheral devices connected. A CAN splitter board is included with the autopilot. Please refer to :ref:`CAN Bus Setup <common-canbus-setup-advanced>` for information on how to configure CAN on the board.
 
 Where to Buy
 ============

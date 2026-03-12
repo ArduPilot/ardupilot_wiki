@@ -17,10 +17,10 @@ Prerequisites (get these first, and install them to your PC):
    Vagrant
    VirtualBox
    git
-   
-.. note::  
 
-   If you are running windows, then you also need to nsure that git is set to leave line endings untouched. This command should fix that: 
+.. note::
+
+   If you are running windows, then you also need to nsure that git is set to leave line endings untouched. This command should fix that:
 
 ::
 
@@ -43,13 +43,13 @@ ssh into the vagrant virtual machine and run the build:
 ::
 
    vagrant ssh -- -X
-   time /vagrant/builder.sh # about 2-15 hours ( depending on computer speed, and internet download speed ) 
+   time /vagrant/builder.sh # about 2-15 hours ( depending on computer speed, and internet download speed )
 
 note/s:
 
   The /vagrant folder inside of the solo-builder ‘vagrant up’ VM is actually the folder that you started the VM in ... 'solo-builder/'
-  To get file/s out of the 'VM" you can ‘vagrant ssh’ into the VM and copy it to /vagrant and exit the vm… alternatively… 
-  If you are on your solo's wifi, you can 'scp' the file/s directly to your solo/artoo. ( see 'update solo' below ) 
+  To get file/s out of the 'VM" you can ‘vagrant ssh’ into the VM and copy it to /vagrant and exit the vm… alternatively…
+  If you are on your solo's wifi, you can 'scp' the file/s directly to your solo/artoo. ( see 'update solo' below )
 
 View Artoo (controller) build products:
 
@@ -85,10 +85,10 @@ Update Solo :
 
 note/s:
 
-   If you have not SSH'd into your Solo before and changed things, you may be propted for a ssh password when doing 'ssh' or 'scp' commands. 
+   If you have not SSH'd into your Solo before and changed things, you may be propted for a ssh password when doing 'ssh' or 'scp' commands.
    The 'root' password to use is 'TjSDBkAu'.  more details here: https://dev.3dr.com/starting-network.html
    Two reboots of Solo may be required
-   Your LED colours will be different that you are used to. Red cycling during first reboot, rainbow cycling during second reboot. maybe.  
+   Your LED colours will be different that you are used to. Red cycling during first reboot, rainbow cycling during second reboot. maybe.
    ssh can take some time to be available after a reflash, be patient, wait another minute.
 
 After update, ensure the flash was successful:
@@ -166,12 +166,11 @@ Troubleshooting:
 - the update will fail if there are multiple images present on /log/updates
 
 
-Undo All This Madness? 
+Undo All This Madness?
 ======================
 
-A Standard 3DR "Factory Reset" will return you to your normal Solo, as 3DR made it: 
+A Standard 3DR "Factory Reset" will return you to your normal Solo, as 3DR made it:
 https://3drobotics.zendesk.com/hc/en-us/articles/208396933-Factory-Reset
 
 You may also find you have to re-pair your Solo and Controller after the Factory Reset:
 https://3dr.com/support/articles/pairing_the_controller/
-

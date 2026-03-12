@@ -24,7 +24,7 @@ Specifications
 
    - `Dronecan Optical Flow and Mid-Range Distance Sensor Module <https://dronecan.github.io/>`__
    - `PixArt PAA3905 Optical Flow Sensor <https://www.pixart.com/products-detail/108/PAA3905E1-Q_>`__
-    
+
     - Wide working distance from 80mm to infinity
     - No focal length calibration required
     - Auto detection of challenging conditions, such as checker boards, stripes, glossy surface and yawing
@@ -32,23 +32,23 @@ Specifications
     - 40mW IR LED built onto board for improved low light operation
 
    - `Broadcom AFBR-S50LX85D Time-of-Flight Distance Sensor <https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lx85d>`__
-  
+
     - Typical distance range up to 50m
     - Operation of up to 200k Lux ambient light
     - Laser Opening Angle of 2° x 2°
-  
+
    - `Invensense IIM-42653 6-Axis IMU <https://invensense.tdk.com/products/smartindustrial/iim-42653/>`__
 
 -  **Connections**
 
    - Two Pixhawk Standard CAN Connectors
-   
+
     - 4 Pin JST GH
-   
+
    - Pixhawk Standard Debug Connector
-    
+
     - 6 Pin JST SH
- 
+
 -  **Power Requirements**
 
    -  5V

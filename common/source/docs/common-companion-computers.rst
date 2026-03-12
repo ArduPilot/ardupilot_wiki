@@ -17,11 +17,10 @@ very CPU intensive functionality such as vision processing.
 .. note::
 
    The term "Companion Computer" is typically taken to mean an
-   on-board Linux-based computer that communicates with the 
+   on-board Linux-based computer that communicates with the
    autopilot over a fast link using MAVLink messages.
 
    Using a Companion Computer is an alternative to using a fully integrated
    Linux autopilot.
 
 See :ref:`Companion Computers <dev:companion-computers>` for specific documentation.
-

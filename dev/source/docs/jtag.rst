@@ -125,9 +125,9 @@ enable OCD and JTAG:
 
 ::
 
-    avrdude -P 
+    avrdude -P
 
-    -c 
+    -c
 
     -p m1280 -U hfuse:w:0x1a:m -v
 
@@ -154,9 +154,9 @@ To revert to the default fuse settings, use:
 
 ::
 
-    avrdude -P 
+    avrdude -P
 
-    -c 
+    -c
 
     -p m1280 -U hfuse:w:0xda:m
 
@@ -238,7 +238,7 @@ something like this example taken from a Mac OS system:
 
 ::
 
-    /Volumes/Data/Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/bin/avr-objcopy -O ihex -R .eeprom 
+    /Volumes/Data/Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/bin/avr-objcopy -O ihex -R .eeprom
     /var/folders/Bu/Burcn-0aFa4N+++0Me1I2U++1dw/-Tmp-/build159308262941509457.tmp/GPS_AUTO_test.cpp.elf
     /var/folders/Bu/Burcn-0aFa4N+++0Me1I2U++1dw/-Tmp-/build159308262941509457.tmp/GPS_AUTO_test.cpp.hex
 
@@ -266,7 +266,7 @@ You should see GDB start up:
 
     GNU gdb 6.8
     Copyright (C) 2008 Free Software Foundation, Inc.
-    License GPLv3+: GNU GPL version 3 or later 
+    License GPLv3+: GNU GPL version 3 or later
 
     This is free software: you are free to change and redistribute it.
     There is NO WARRANTY, to the extent permitted by law.  Type "show copying"

@@ -54,7 +54,7 @@ change the gimbal's internal configuration:
 
 #. Use the provided USB dongle to connect the Gimbal board to your
    computer (Windows only).  If this is the first time you have plugged
-   in the dongle you will likely see a USB device installation window. 
+   in the dongle you will likely see a USB device installation window.
    After successful installation of the driver a new COM port named
    "Prolific USB-to-Serial Comm Port" should appear in the Device
    Manager as shown below.  If drivers cannot be found you may be able

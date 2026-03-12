@@ -16,7 +16,7 @@ Specifications
 **Sensors**
 
 - `u-blox SAM-M10Q <https://www.u-blox.com/en/product/sam-m10q-module>`__
-  
+
   - Less than 38 mW power consumption without compromising GNSS performance
   - Maximum position availability with 4 concurrent GNSS reception
   - Advanced spoofing and jamming detection

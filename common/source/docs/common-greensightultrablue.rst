@@ -963,9 +963,9 @@ RC Input
 The RCIN pin, which is physically mapped to UART8 and configured by default as SERIAL5, can be used for most ArduPilot supported unidirectional receiver protocols. For this reason :ref:`SERIAL5_PROTOCOL<SERIAL5_PROTOCOL>` defaults to “23” (RCIN).
 
 
-* PPM: Connect to the JP1 connector. PPM input is only supported on JP1 as it requires a special interrupt.  
-* SBUS: Connect to the JP1 connector.  
-* Spektrum/DSM radios: Connect to the JP4 connector.  
+* PPM: Connect to the JP1 connector. PPM input is only supported on JP1 as it requires a special interrupt.
+* SBUS: Connect to the JP1 connector.
+* Spektrum/DSM radios: Connect to the JP4 connector.
 
 Bi-directional protocols such as CRSF/ELRS and SRXL2 require a full UART connection. FPort, when connected to RCIN, will only provide RC without telemetry.
 
@@ -973,7 +973,7 @@ To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receive
 
 
 * :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` should be set to “23”.
-* FPort would require :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` be set to “15” 
+* FPort would require :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` be set to “15”
 * CRSF would require :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` be set to “0”
 * SRXL2 would require :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` be set to “4” and connects only the TX pin.
 

@@ -24,7 +24,7 @@ the roll and pitch axis.
 Overview
 ========
 
--  Pilot's roll and pitch input control the lean angle of the copter. 
+-  Pilot's roll and pitch input control the lean angle of the copter.
    When the pilot releases the roll and pitch sticks the vehicle
    automatically levels itself.
 -  Pilot will need to regularly input roll and pitch commands to keep
@@ -37,7 +37,7 @@ Overview
    altitude.  If the pilot puts the throttle completely down the motors
    will go to their minimum rate (:ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>`) and if the vehicle
    is flying it will lose attitude control and tumble. However, this behavior can be changed
-   by enabling :ref:`airmode` 
+   by enabling :ref:`airmode`
 -  The throttle sent to the motors is automatically adjusted based on
    the tilt angle of the vehicle (i.e. increased as the vehicle tilts
    over more) to reduce the compensation the pilot must do as the
@@ -52,7 +52,7 @@ Overview
 AirMode
 =======
 
-Stabilize mode can be setup to provide full stabilization at idle throttle. See :ref:`airmode` 
+Stabilize mode can be setup to provide full stabilization at idle throttle. See :ref:`airmode`
 
 .. _stabilize-mode_tuning:
 
@@ -73,5 +73,3 @@ Other important parameters
    rotation when the yaw stick is held fully left or right.  Higher
    values will make it rotate more quickly.
 -  :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` can be used to control the responsiveness to changes in pitch and roll angles requested by pilot's inputs.
-
-

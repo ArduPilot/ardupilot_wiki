@@ -42,7 +42,7 @@ This is explained below in the section :ref:`How Parameters Work in ArduPilot <h
 Creating a Parameter Group
 --------------------------
 
-Groups of up to 63 parameters can created within a script using the "add_table" command. :: 
+Groups of up to 63 parameters can created within a script using the "add_table" command. ::
 
    local PARAM_TABLE_KEY = 72
    assert(param:add_table(PARAM_TABLE_KEY, "AERO_", 30), 'could not add param table')

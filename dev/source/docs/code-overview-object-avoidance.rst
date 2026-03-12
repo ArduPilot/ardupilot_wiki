@@ -61,7 +61,7 @@ This is quite different from Loiter mode in which the pilot cannot force the veh
 Reporting to the Ground Station
 ===============================
 
-MissionPlanner, from v1.3.48 onwards (and hopefully other ground stations in the future), shows the distance to nearby objects in a RADAR type window. 
+MissionPlanner, from v1.3.48 onwards (and hopefully other ground stations in the future), shows the distance to nearby objects in a RADAR type window.
 
 .. image:: ../images/code-overview-object-avoidance4.png
     :target: ../_images/code-overview-object-avoidance4.png

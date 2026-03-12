@@ -22,33 +22,33 @@ Specifications
 
    - `Dronecan Optical Flow and Mid-Range Distance Sensor Module <https://dronecan.github.io/>`__
    - `PixArt PAA3905 Optical Flow Sensor <https://www.pixart.com/products-detail/108/PAA3905E1-Q_>`__
-    
+
     - Wide working distance from 80mm to infinity
     - Tracks under super low light condition of >9 lux
     - Up to 7.4 rad/s
     - 40mW IR LED built onto board for improved low light operation
 
    - `Broadcom AFBR-S50LV85D Time-of-Flight Distance Sensor <https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d>`__
-  
+
     - Integrated 850 nm laser light source
     - Field-of-View (FoV) of 12.4° x 6.2° with 32 pixels
     - Typical distance range up to 30m
     - Operation of up to 200k Lux ambient light
     - Works well on all surface conditions
     - Transmitter beam of 2° x 2° to illuminate between 1 and 3 pixels
-  
+
    - `Invensense ICM-42688-P 6-Axis IMU <https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/>`__
 
 -  **Connections**
 
    - Two Pixhawk Standard CAN Connectors
-   
+
     - 4 Pin JST GH
-   
+
    - Pixhawk Standard Debug Connector
-    
+
     - 6 Pin JST SH
- 
+
 -  **Power Requirements**
 
    -  5V

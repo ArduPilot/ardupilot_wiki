@@ -5,7 +5,7 @@ Gimbal Management
 .. code:: bash
 
     module load gimbal
-    
+
 The gimbal module manages any gimbals attached to the autopilot via the RC
 output ports.
 
@@ -53,17 +53,17 @@ location is picked by clicking on the map.
 .. code:: bash
 
     gimbal roi
-    
+
 gimbal roivel
 =============
 
-Similar to ``gimbal roi``, but the user is able to specify the maximum 
+Similar to ``gimbal roi``, but the user is able to specify the maximum
 velocity and acceleration of the gimbal.
 
 .. code:: bash
 
     gimbal roivel [VEL_NORTH VEL_EAST VEL_DOWN] [ACC_NORTH ACC_EASY ACC_DOWN]
-    
+
 
 gimbal status
 =============
@@ -73,4 +73,3 @@ Output the current status of the gimbal.
 .. code:: bash
 
     gimbal status
-

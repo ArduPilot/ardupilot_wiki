@@ -51,7 +51,7 @@ Specifications
    -  4x SPI buses enabled
    -  2x CAN Bus ports
    -  2x additional analog inputs
-   -  Safety Switch/LED 
+   -  Safety Switch/LED
 
 -  **Other**
 
@@ -65,7 +65,7 @@ Pinout
 
 .. image:: ../../../images/holybro_durandal/Durandal-top.png
 
-.. image:: ../../../images/holybro_durandal/Durandal-front.png 
+.. image:: ../../../images/holybro_durandal/Durandal-front.png
 
 .. image:: ../../../images/holybro_durandal/Durandal-back.png
 

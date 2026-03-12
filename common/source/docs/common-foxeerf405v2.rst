@@ -21,7 +21,7 @@ Specifications
 
 -  **Processor**
 
-   -  STM32F405 32-bit processor 
+   -  STM32F405 32-bit processor
    -  AT7456E OSD
    -  128 MBit flash for logging
 
@@ -189,7 +189,7 @@ The FoxeerF405v2  supports OSD using :ref:`OSD_TYPE<OSD_TYPE>` 1 (MAX7456 driver
 PWM Output
 ==========
 
-The FoxeerF405v2 supports up to 10 PWM outputs (PWM 9  is defaulted to serial LED support). Outputs are available via two JST-SH connectors. All outputs support DShot,as well as all PWM types. 
+The FoxeerF405v2 supports up to 10 PWM outputs (PWM 9  is defaulted to serial LED support). Outputs are available via two JST-SH connectors. All outputs support DShot,as well as all PWM types.
 
 The PWM is in 3 groups:
 

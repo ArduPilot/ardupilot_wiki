@@ -8,7 +8,7 @@ Acro mode uses the RC sticks to control the angular velocity
 of the copter in each axis. Release the sticks and the vehicle will maintain its
 current attitude and will not return to level (attitude hold). Acro mode is useful for
 aerobatics such as flips or rolls, or FPV when smooth and fast control
-is desired. Raising the :ref:`INS_GYRO_FILTER<INS_GYRO_FILTER>` cutoff frequency and retuning may allow better responsiveness, but appropriate harmonic notch filtering to prevent noise impacts must be setup prior to retuning. 
+is desired. Raising the :ref:`INS_GYRO_FILTER<INS_GYRO_FILTER>` cutoff frequency and retuning may allow better responsiveness, but appropriate harmonic notch filtering to prevent noise impacts must be setup prior to retuning.
 See :ref:`common-imu-notch-filtering`  for more information.
 
 Pure rate mode stabilization, utilizing only the gyros with no attitude feedback from the accelerometers, can be forced by setting bit 1 of :ref:`ACRO_OPTIONS<ACRO_OPTIONS>` to one. Attitude will still have an open loop correction applied in this mode, similar to "heading hold" tail gyros, but attitude can drift over time.
@@ -20,7 +20,7 @@ Overview
 -  The throttle is completely manual with no compensation for tilt angle
    of the vehicle. If the pilot puts the throttle completely down the
    motors will go to their minimum rate and stabilization will cease.However, this behavior
-   can be changed by enabling :ref:`airmode` 
+   can be changed by enabling :ref:`airmode`
 -  Copter includes an Acro Trainer functionality that can be
    turned on/off to make learning to fly Acro easier.
 -  Stick inputs are interpreted in the "body frame" (as opposed to Sport
@@ -50,7 +50,7 @@ using :ref:`FPV goggles <common-fpv-first-person-view>`.
 AirMode
 =======
 
-Acro mode can be setup to provide full stabilization at idle throttle. See :ref:`airmode` 
+Acro mode can be setup to provide full stabilization at idle throttle. See :ref:`airmode`
 
 .. _acro-mode_acro_trainer:
 
@@ -85,7 +85,7 @@ and option #2 (leveling & limited) are possible.
 Traditional Helicopters
 =======================
 
-For Traditional Helicopters, this modes operates the same. However, experienced pilots might find that this mode has a slightly robotic feel, and attitude jumps as it lifts from the skids that they are not familiar with. In Copter-4.0 and later, a "Virtual Flybar" feature has been introduced, that simulates the classic feel of a flybar helicopter. By setting the :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>` and :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>` parameters to non-zero values, this feature takes effect. 
+For Traditional Helicopters, this modes operates the same. However, experienced pilots might find that this mode has a slightly robotic feel, and attitude jumps as it lifts from the skids that they are not familiar with. In Copter-4.0 and later, a "Virtual Flybar" feature has been introduced, that simulates the classic feel of a flybar helicopter. By setting the :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>` and :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>` parameters to non-zero values, this feature takes effect.
 
 The Virtual Flybar will add decay term to the attitude controller to bleed off accumulated differences between the current attitude and accumulated commanded attitude, if the copter has not quickly obtained it, such as when sitting on the ground but stick inputs are being given. Otherwise, when the helicopter clears it will jump to the accumulated commanded attitude when skids clear, perhaps surprisingly. This is familiar to Multicopter pilots.
 
@@ -137,11 +137,11 @@ modes, not just ACRO.
    Pitch and Roll, and should come only after those terms are properly
    tuned.
 
--  :ref:`ATC_ACC_Y_MAX<ATC_ACC_Y_MAX>`: Maximum acceleration in Yaw axis measured in 
+-  :ref:`ATC_ACC_Y_MAX<ATC_ACC_Y_MAX>`: Maximum acceleration in Yaw axis measured in
    Centi-degress/sec/sec. Same principle as :ref:`ATC_ACC_R_MAX<ATC_ACC_R_MAX>` and :ref:`ATC_ACC_P_MAX <ATC_ACC_P_MAX>`
    but on the YAW axis based on the :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` parameter value
    (likely a much lower, more attainable value.)
--  :ref:`ATC_THR_MIX_MAN <ATC_THR_MIX_MAN>`: Balance between attitude and throttle control. This 
+-  :ref:`ATC_THR_MIX_MAN <ATC_THR_MIX_MAN>`: Balance between attitude and throttle control. This
    value can be increased to improve attitude control when the throttle is cut for better Airmode handling,
    however a stable tune is essential before it can be increased.
 
@@ -153,4 +153,3 @@ User Videos
     :width: 100%
 .. youtube:: 42iS9d-Lrqw
     :width: 100%
-    

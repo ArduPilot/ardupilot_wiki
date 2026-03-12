@@ -5,7 +5,7 @@ Graphical Console
 .. code:: bash
 
     module load console
-    
+
 A GUI console that displays important information to the UAV's current
 state. The area below the menu bar shows on the upper row (left to
 right): Flight mode and arming state, GPS status, system voltage,
@@ -23,6 +23,3 @@ geofence commands.
 .. image:: ../../images/console.png
 
 .. image:: ../../images/console_win.png
-
-
-

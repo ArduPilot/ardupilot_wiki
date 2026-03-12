@@ -64,10 +64,9 @@ Additional Information
 
 For those interested in the details of how this feature works and tradeoffs in some of the advanced parameters, not normally adjusted by users, the :ref:`In-Flight FFT: How it Works <common-imu-fft-how-it-works>` document describes the operation and these advanced parameters.
 
-.. toctree:: 
+.. toctree::
     :maxdepth: 1
 
     Initial Analysis Flight <common-imu-fft-test-flight>
     In-Flight FFT Advanced Setup <common-imu-fft-advanced-setup>
     In-Flight FFT: How it Works <common-imu-fft-how-it-works>
-

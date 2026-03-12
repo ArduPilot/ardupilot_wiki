@@ -16,7 +16,7 @@ ArduPilot on Navio2 is working on:
 - Raspberry Pi 3 Model B
 - Raspberry Pi 2 Model B
 
-To mount NAVIO2: 
+To mount NAVIO2:
 
 - Install spacers to the top side of Raspberry Pi and fix them with screws from the bottom.
 - Connect extension header to the 40-pin gpio port.
@@ -43,7 +43,7 @@ For testing and development purposes:
 Connect 5V 1A power adapter to the Raspberry Pi's microUSB port. Raspberry Pi will provide power to the NAVIO2.
 
 In a drone:
-NAVIO2 should be powered by a power module connected to the "POWER" port on NAVIO2. NAVIO2 will provide power to the Raspberry Pi. 
+NAVIO2 should be powered by a power module connected to the "POWER" port on NAVIO2. NAVIO2 will provide power to the Raspberry Pi.
 
 .. image:: ../../../images/navio2-power.jpg
     :target: ../_images/navio2-power.jpg
@@ -103,7 +103,7 @@ ESCs are connected to RC outputs labeled from 1 to 14 on a 2.54mm header.
 .. figure:: ../../../images/navio2-escs.jpg
    :target: ../_images/navio2-escs.jpg
 
-For typical ESCs setup schemes visit `NAVIO2 documentation <https://docs.emlid.com/navio2/Navio-APM/typical-setup-schemes/>`__ which includes copter, plane, rover setups. 
+For typical ESCs setup schemes visit `NAVIO2 documentation <https://docs.emlid.com/navio2/Navio-APM/typical-setup-schemes/>`__ which includes copter, plane, rover setups.
 
 
 .. note::
@@ -113,7 +113,7 @@ For typical ESCs setup schemes visit `NAVIO2 documentation <https://docs.emlid.c
 Connect other peripherals
 =========================
 
-Depending on your hardware there may be any number of other peripherals attached, including sensors, cameras, grippers etc. 
+Depending on your hardware there may be any number of other peripherals attached, including sensors, cameras, grippers etc.
 
 
 Telemetry
@@ -122,14 +122,14 @@ Radio modems can be connected either over UART or over USB.
 
 - UART radio
 
-For UART port use /dev/ttyAMA0 serial. 
+For UART port use /dev/ttyAMA0 serial.
 
 .. figure:: ../../../images/navio2-uart-radio.jpg
    :target: ../_images/navio2-uart-radio.jpg
 
 - USB radio
 
-Use /dev/ttyUSB0 virtual serial port for USB. 
+Use /dev/ttyUSB0 virtual serial port for USB.
 
 .. figure:: ../../../images/navio2-usb-radio.jpg
    :target: ../_images/navio2-usb-radio.jpg
@@ -161,4 +161,4 @@ Detailed information for NAVIO2 configuration and setup can be found in `documen
 .. toctree::
     :maxdepth: 1
 
-    Anti-vibration mount for NAVIO2 can be found in this article <common-vibration-damping> 
+    Anti-vibration mount for NAVIO2 can be found in this article <common-vibration-damping>

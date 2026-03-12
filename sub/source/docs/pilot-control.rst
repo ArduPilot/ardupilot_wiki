@@ -45,7 +45,7 @@ CIRCLE       ANG   ANG   RAT   RAT   \-      \-      Yes     Yes
 MOTORDETECT  \-    \-    \-    \-    \-      \-      \-      \-
 =========== ===== ===== ==== ===== ======= ======= ======= =========
 
-\*SURFTRAK maintains depth as a relative position above the sea floor using a rangefinder when there in no depth input change requested by the pilot. 
+\*SURFTRAK maintains depth as a relative position above the sea floor using a rangefinder when there in no depth input change requested by the pilot.
 
 - MODE AUTO: Autopilot commands necessary controls to navigate the mission.
 - MODE GUIDED: Pilot can control Roll and Pitch if in velocity control mode with stick input signifying angle targets if in HEADING HOLD, or rate targets, otherwise. Yaw input is rate demand. LATERAL and FORWARD inputs ignored.

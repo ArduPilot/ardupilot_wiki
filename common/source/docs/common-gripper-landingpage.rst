@@ -12,7 +12,7 @@ Follow the links below (or in sidebar) for configuration information based upon 
 
 .. toctree::
     :maxdepth: 1
-    
+
     Electro Permanent Magnet v3 (EPMv3) <common-electro-permanent-magnet-V3>
     Electro Permanent Magnet v1 (EPM688) <common-electro-permanent-magnet-gripper>
     Servo Gripper  <common-gripper-servo>

@@ -5,12 +5,12 @@ Motor Thrust Scaling
 ====================
 
 Copter includes *motor thrust scaling* which compensates for the
-non-linear thrust output of most ESCs and motors. 
+non-linear thrust output of most ESCs and motors.
 
 .. tip::
 
-    The default curve should work for nearly all ESC/motor combinations. 
-    Normally the parameters should not be adjusted unless the vehicle’s actual 
+    The default curve should work for nearly all ESC/motor combinations.
+    Normally the parameters should not be adjusted unless the vehicle’s actual
     thrust curve has been measured.
 
 Thrust Curves
@@ -44,6 +44,3 @@ Parameter Calculation
 =====================
 
 The WebTool: `ArduPilot Thrust Expo <https://firmware.ardupilot.org/Tools/WebTools/ThrustExpo/>`__ can be used to calculate the appropriate values from the thrust stand data above.
-
-
-

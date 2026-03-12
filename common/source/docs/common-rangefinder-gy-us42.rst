@@ -12,7 +12,7 @@ This sensor is similar to the :ref:`common-rangefinder-maxbotixi2c`, but has the
 
 For I2C mode, set the :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “2" and no bridging of the three solder pads is required.
 
-For Triggered Pulse mode, tie the center pad to "L" and set the :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “30". 
+For Triggered Pulse mode, tie the center pad to "L" and set the :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “30".
 
 For Serial Mode, tie the center pad to "H" and set  :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “31". And set the Serial Port used to communicate with it to ``SERIALx_PROTOCOL`` = "9" (Rangefinder) and ``SERIALx_BAUD`` = 9 (9600).
 
@@ -22,4 +22,3 @@ Pinout:
 
 - "CR" pin is either the SCL (I2C mode), Serial RX, or Trigger input
 - "DT" pin is either the  SDA (I2C mode), Serail TX, or Echo output
-  

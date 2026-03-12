@@ -25,15 +25,15 @@ Setup steps
 #. MacOS will alert you when you enter a command in the terminal that requires Xcode Command Line Tools. You can also install Xcode Command Line Tools manually
 
    ::
-   
+
        xcode-select --install
 
 #. Install `Homebrew <http://brew.sh>`__ for MacOS (Homebrew is a respected package manager for MacOS)
 
    ::
-   
+
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
- 
+
 #. Install the following packages using brew
 
    ::
@@ -53,11 +53,11 @@ Setup steps
    ::
 
        python3 -m pip install empy pyserial
-       
+
    ::
-   
+
        ** Starting with MacOS Mojave (10.14.x) you might want to install the SDK headers
-       
+
        open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
 
 

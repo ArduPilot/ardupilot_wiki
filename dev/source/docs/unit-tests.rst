@@ -40,14 +40,14 @@ The unit tests are compiled using the `waf` build tool:
 ::
 
     pbarker@bluebottle:~/rc/ardupilot(master)$ ./waf configure --board=linux --debug
-    Setting top to                           : /home/pbarker/rc/ardupilot 
-    Setting out to                           : /home/pbarker/rc/ardupilot/build 
-    Autoconfiguration                        : enabled 
+    Setting top to                           : /home/pbarker/rc/ardupilot
+    Setting out to                           : /home/pbarker/rc/ardupilot/build
+    Autoconfiguration                        : enabled
     .
     .
     .
-    Scripting runtime checks                       : enabled 
-    Checking for program 'rsync'                   : /usr/bin/rsync 
+    Scripting runtime checks                       : enabled
+    Checking for program 'rsync'                   : /usr/bin/rsync
     'configure' finished successfully (1.085s)
 
 ::
@@ -107,7 +107,7 @@ The tests can be run under GDB to trace problems:
     (gdb) break test_vector2.cpp:20
     Breakpoint 1 at 0x81b9: file ../../libraries/AP_Math/tests/test_vector2.cpp, line 20.
     (gdb) r
-    Starting program: /home/pbarker/rc/ardupilot/build/linux/tests/test_vector2 
+    Starting program: /home/pbarker/rc/ardupilot/build/linux/tests/test_vector2
     [Thread debugging using libthread_db enabled]
     Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
     [==========] Running 7 tests from 1 test suite.
@@ -120,7 +120,7 @@ The tests can be run under GDB to trace problems:
     Breakpoint 1, Vector2Test_angle_Test::TestBody (this=0x5555557c2b90)
         at ../../libraries/AP_Math/tests/test_vector2.cpp:20
     20	    EXPECT_FLOAT_EQ(M_PI/2, Vector2f(0, 1).angle());
-    (gdb) 
+    (gdb)
 
 
 ::
@@ -139,7 +139,7 @@ The tests can be run under Valgrind's memcheck too to trace memory problems:
     ==7973== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
     ==7973== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
     ==7973== Command: ./build/linux/tests/test_vector2
-    ==7973== 
+    ==7973==
     [==========] Running 7 tests from 1 test suite.
     [----------] Global test environment set-up.
     [----------] 7 tests from Vector2Test
@@ -162,16 +162,16 @@ The tests can be run under Valgrind's memcheck too to trace memory problems:
     [----------] Global test environment tear-down
     [==========] 7 tests from 1 test suite ran. (137 ms total)
     [  PASSED  ] 7 tests.
-    ==7973== 
+    ==7973==
     ==7973== HEAP SUMMARY:
     ==7973==     in use at exit: 0 bytes in 0 blocks
     ==7973==   total heap usage: 234 allocs, 234 frees, 116,474 bytes allocated
-    ==7973== 
+    ==7973==
     ==7973== All heap blocks were freed -- no leaks are possible
-    ==7973== 
+    ==7973==
     ==7973== For counts of detected and suppressed errors, rerun with: -v
     ==7973== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-    pbarker@bluebottle:~/rc/ardupilot(master)$ 
+    pbarker@bluebottle:~/rc/ardupilot(master)$
 
 
 

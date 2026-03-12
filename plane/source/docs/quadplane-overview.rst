@@ -20,7 +20,7 @@ and stability in normal Plane modes.
 Types and Configurations
 ========================
 
-The image below illustrates the wide variety of configurations that are possible. Motors can be under tilt control or not, the number of motors can vary from one to 8 or more, and the VTOL stance of the QuadPlane can either be horizontal, like a plane in normal fixed wing flight, or vertical (called Tailsitters). 
+The image below illustrates the wide variety of configurations that are possible. Motors can be under tilt control or not, the number of motors can vary from one to 8 or more, and the VTOL stance of the QuadPlane can either be horizontal, like a plane in normal fixed wing flight, or vertical (called Tailsitters).
 
 .. image:: ../../../images/quadplane.png
   :target: ../_images/quadplane.png

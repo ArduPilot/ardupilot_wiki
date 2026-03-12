@@ -15,12 +15,12 @@ fuses correctly.
 The 2560 Boot loader HEX file is located in the APM source downloads for
 Arudcopter, Plane, Rover in the folder. ::
 
-    ..\\hardware\\arduino\\bootloaders\\stk500v2\\ 
-    
+    ..\\hardware\\arduino\\bootloaders\\stk500v2\\
+
 Flashing details are here:  [TBD]
 
-.. todo:: 
+.. todo::
 
     Editors: I can't find details for flashing boot loader - need to add a
     link or details. Also is there a stand alone download location for the
-    boot loader? 
+    boot loader?

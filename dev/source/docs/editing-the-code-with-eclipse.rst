@@ -3,7 +3,7 @@
 .. warning::
 
    **ARCHIVED ARTICLE**
-   
+
 .. warning::
 
    ArduPilot no longer supports make.  The following article should be referencing our new build system, `waf` and needs updating.
@@ -62,7 +62,7 @@ be set to the default in Eclipse by changing two settings:
 
    .. image:: ../images/EditingTheCode_Eclipse_spaces1.png
        :target: ../_images/EditingTheCode_Eclipse_spaces1.png
-    
+
 -  Select **Windows \| Preferences \| C/C++ \| Code Style \| Formatter**
    and creating a new Profile (i.e. "K&R Tab") which has the
    "Indentation" set to "Spaces only"
@@ -93,8 +93,8 @@ full list of possible targets can be found in
 +--------------------------------------+--------------------------------------+
 | ``make px4-v2``                      | Build the Pixhawk firmware for a     |
 |                                      | copter. in the new version you can   |
-|                                      | specify the frame type (quad, hexa,  | 
-|                                      | octo) after flashing the pixhawk     | 
+|                                      | specify the frame type (quad, hexa,  |
+|                                      | octo) after flashing the pixhawk     |
 +--------------------------------------+--------------------------------------+
 | ``make clean``                       | "clean" the ardupilot directory      |
 +--------------------------------------+--------------------------------------+
@@ -117,7 +117,7 @@ make target.
 Building from Eclipse
 =====================
 
-The make target can be built by pushing the green circle + hammer icon. 
+The make target can be built by pushing the green circle + hammer icon.
 The build progress will appear in the Console window.
 
 .. image:: ../images/EditingTheCode_Eclipse4.png
@@ -125,4 +125,3 @@ The build progress will appear in the Console window.
 
 The firmware will be created in the vehicle directory (e.g. ArduCopter)
 and have the file extension **.px4**.
-

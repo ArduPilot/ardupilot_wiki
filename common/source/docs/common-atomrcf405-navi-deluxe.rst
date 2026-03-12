@@ -140,7 +140,7 @@ Then reboot.
 * :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 12
 * :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 11
 * :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 11
-* :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 78.4 
+* :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 78.4
 
 Connecting a GPS/Compass module
 ===============================
@@ -161,4 +161,3 @@ Once the initial firmware is loaded you can update the firmware using any ArduPi
 
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

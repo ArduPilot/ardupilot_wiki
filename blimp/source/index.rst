@@ -21,12 +21,12 @@ Getting more info
     Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
 
 --------------
-    
+
 .. youtube:: t-qaqH-AO2c
 
 .. toctree::
    :hidden:
-   
+
    Getting Started <docs/getting-started>
    Building a Blimp <docs/building-a-blimp>
    First Time Setup <docs/initial-setup>

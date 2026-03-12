@@ -64,7 +64,7 @@ UART Mapping
  - SERIAL3 -> UART4   (GPS1)
  - SERIAL4 -> UART8   (GPS2,DMA-enabled)
  - SERIAL5 -> UART7   (USER)
-  
+
 
 Connector pin assignments
 =========================
@@ -282,7 +282,7 @@ Serial5 port
    </tr>
    </tbody>
    </table>
-   
+
 Power1, Power2 ports
 --------------------
 
@@ -392,7 +392,7 @@ RC Input
 ========
 
 All compatible RC protocols can be decoded by attaching the Receiver's output to the SBUS input pin next to the Servo/Output VCC input connector.
-Note that some protocols such as CRSF or FPort including telemetry, require connection to, and setup of, one of the UARTs instead of this pin. 
+Note that some protocols such as CRSF or FPort including telemetry, require connection to, and setup of, one of the UARTs instead of this pin.
 
 Compass
 =======

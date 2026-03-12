@@ -47,7 +47,7 @@ Microprocessor
 Power
 -----
 * 3S–8S DC Input power
-* 5V 2A BEC peripherals power 
+* 5V 2A BEC peripherals power
 * 12V 2A BEC video power
 
 Other
@@ -255,15 +255,15 @@ VTX - 7 Pin JST-GH
 Note: connector pinout not in same order as standard HD VTX cabling
 
 =====   =====================   ==========
-  Pin   Signal Name             Voltage  
+  Pin   Signal Name             Voltage
 =====   =====================   ==========
-  1     VIDEO                   na        
-  2     12.0V                   12.0V    
-  3     GND                     GND      
-  4     USART1_RX               3.3V     
-  5     USART1_TX               3.3V     
-  6     GND                     3.3V     
-  7     USART3_RX               GND 
+  1     VIDEO                   na
+  2     12.0V                   12.0V
+  3     GND                     GND
+  4     USART1_RX               3.3V
+  5     USART1_TX               3.3V
+  6     GND                     3.3V
+  7     USART3_RX               GND
 =====   =====================   ==========
 
 SPI (external OSD or IMU) - 6 Pin JST-SH
@@ -345,9 +345,9 @@ RC Input
 ========
 RC input is via SERIAL7(UART8) on the RC connector. Unidirectional protocols can be connected to R8. Bi-Directional Protocols will use the T8 pin also.
 
-* PPM is not supported.  
-* SBUS/DSM/SRXL connects to the RX8 pin.  
-* FPort requires connection to TX8. Set :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>` = 7  
+* PPM is not supported.
+* SBUS/DSM/SRXL connects to the RX8 pin.
+* FPort requires connection to TX8. Set :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>` = 7
 * CRSF/ELRS also requires both TX8 and RX8 connections and provides telemetry automatically.
   In order to use the SBUS pin on the HD VTX connector, you must change SERIAL7_PROTOCOL to something other than "23" and set :ref:`SERIAL3_PROTOCOL\ :raw-html-m2r:`<SERIAL3_PROTOCOL>` to "23".
 

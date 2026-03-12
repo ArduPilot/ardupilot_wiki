@@ -266,7 +266,7 @@ AFS_OPTIONS
 ------------------
 The behavior of AFS due to GSC loss can be modified by the setting of the :ref:`AFS_OPTIONS<AFS_OPTIONS>` bitmask parameter (no bits are set by default):
 
-- bit 0 (+1), if set, the aircraft will continue with the current mission item even after GCS connection is recovered. If not set, the aircraft will jump back to the mission item right before GCS failsafe occurs 
+- bit 0 (+1), if set, the aircraft will continue with the current mission item even after GCS connection is recovered. If not set, the aircraft will jump back to the mission item right before GCS failsafe occurs
 - bit 1 (+2), if set, will also force entering AUTO when GCS failsafe occurs while in any throtlled controlled modes other than AUTO (ie CRUISE, GUIDED, etc.).
 - bit 2 (+4), if set and the vehicle is already in return path (the current mission item is already ahead of DO_RETURN_PATH_START mission item), then the aircraft will not take action when GCS failsafe occurs. For example, if GCS failsafe occurs during a landing attempt, the aircraft should just land instead of starting the landing sequence again.
 Example AFS failsafe mission

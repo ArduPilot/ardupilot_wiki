@@ -47,7 +47,7 @@ The default RC input is configured on the UART1 (R1). Unidirectional serial inpu
 
 * PPM is not supported.
 * SBUS/DSM/SRXL connects to the R1 pin.
-* FPort requires connection to T1. Set :ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>` = 7 
+* FPort requires connection to T1. Set :ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>` = 7
 * CRSF/ELRS also requires both T1 and R1 connections and provides telemetry automatically.
 
 OSD Support

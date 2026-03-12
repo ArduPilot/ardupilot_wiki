@@ -21,8 +21,7 @@ Frequently Asked Questions and Issues
 #. How do I output a TCP connection to another GCS program?
 
     To output a TCP link from MAVProxy to a GCS program (ie. Mission Planner), use the ``--out=tcpin:0.0.0.0:<port>`` commandline option. This will tell MAVProxy to wait for a TCP connection on the specified port. In the other GCS program, configure it to point to the IP address of the device MAVProxy is running on and the port ``<port>``.
-    
+
 #. How do I disable other GCS sub-clients (from ``--out``) from sending commands to the flight controller?
 
     The ability to forward commands sent by other sub-clients is enabled by default. It can be disabled by typing ``set mavfwd false``
-    

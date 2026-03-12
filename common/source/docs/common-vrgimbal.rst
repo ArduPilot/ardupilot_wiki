@@ -101,17 +101,17 @@ fail (see "BAD" device driver screen shot below).
 
    .. image:: ../../../images/VRGimbal_DeviceManager.png
        :target: ../_images/VRGimbal_DeviceManager.png
-   
+
 #. Download and run the latest VRGimbal UI installation .msi file by
    going to the `VRGimbal wordpress site and select the top item from the Downloads menu <https://vrgimbal.wordpress.com/download/>`__.  At
-   the time this wiki page was written it was `version 1.13 <https://vrgimbal.wordpress.com/download/vrgimbal-1-13-2/>`__. 
+   the time this wiki page was written it was `version 1.13 <https://vrgimbal.wordpress.com/download/vrgimbal-1-13-2/>`__.
    After installation the "VRGimbal GUI" should appear in your start
    menu.
 #. Start the VRGimbal GUI from the start menu.
 
    .. image:: ../../../images/VRGimbalGUI_PitchAbsolute.png
        :target: ../_images/VRGimbalGUI_PitchAbsolute.png
-   
+
 #. Connect the gimbal to your computer with the mini USB cable
 #. On the VRGimbalGUI select the COM port and press the **Open** button
 #. Click on the *Pitch* tab, click the **Absolute** checkbox, press

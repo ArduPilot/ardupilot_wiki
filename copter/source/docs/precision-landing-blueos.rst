@@ -33,7 +33,7 @@ Once BlueOS has been :ref:`installed <dev:companion-computer-blueos>` on the com
 
 - Ensure the companion computer is connected to the internet
 - From the left menu, select "Extensions"
-- Search for "precision landing" and push the "GET" and "INSTALL" buttons 
+- Search for "precision landing" and push the "GET" and "INSTALL" buttons
 
 .. image:: ../images/precision-landing-blueos-install.png
    :target: ../_images/precision-landing-blueos-install.png

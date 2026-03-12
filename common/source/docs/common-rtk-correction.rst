@@ -58,7 +58,7 @@ There are internet-based services that can provide correction data from bases li
 
 If the service has a Base station providing real-time correction data within 100 Km or so of the vehicle's location, then it will usually be satisfactory. For every 10 Km away from the vehicle that the source is located, the inaccuracy limits will increase ~ 1-1.5cm. Some services provide interpolated data for any location within their network of stations and this can sometimes be successfully used if a station is further than 100km away from the vehicle location.
 
-Some of these services are free and some are fee-based. 
+Some of these services are free and some are fee-based.
 
 Setup
 -----
@@ -78,7 +78,7 @@ First, be sure that the vehicle is connected to the GCS and has a *GPS 3D lock*.
 where the "host" is the NTRIP server URL, the port as designated by the service (usually 2101 for RTCM3.1 data streams), and the mount point will be the service's designation of the station that you want to use (the closest one to your location), usually something like "P807_RTCM" or "Evermount234", whatever the service names them.
 
 If the connection occurs, data will start appearing in the Link Status box at the top and be sent to the connected vehicle's RTK GPS.
- 
+
 Method 3
 ========
 

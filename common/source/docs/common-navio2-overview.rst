@@ -36,7 +36,7 @@ Specifications
    -  UART, I2C, ADC for extensions
    -  PPM/S.Bus input
    -  14 PWM servo outputs
-    
+
 -  **Dimensions**
 
    -  Weight 23g (shield) + 54g (RPi2)
@@ -52,10 +52,10 @@ What's new compared to Navio+
 
 **PCA9685 PWM generator replaced with a microcontroller.** On previous Navio version PWM generation was handled by PCA9685 chip. Main limitation of this chip is the inability to control frequencies for separate channels. This leads to problems with motors and servos that work on different frequencies. To eliminate that problem a microcontroller is used. It allows to set frequencies for output channels by groups.
 
-**PPM/SBUS decoding done by microcontroller instead of DMA.**  Navio+ used DMA to sample PPM signal which was quite heavy on system resources. On Navio2 a microcontroller handles PPM/SBUS sampling leaving processor cores of Raspberry Pi 2 for your tasks. 
+**PPM/SBUS decoding done by microcontroller instead of DMA.**  Navio+ used DMA to sample PPM signal which was quite heavy on system resources. On Navio2 a microcontroller handles PPM/SBUS sampling leaving processor cores of Raspberry Pi 2 for your tasks.
 
 **AUX SPI.** Navio2 is the first HAT to utilize AUX SPI controller on Raspberry Pi. Using two SPI controllers allows to distribute sensors more efficiently.
- 
+
 **ADC port.** Using additional ADC channels on Navio+ was not user friendly due to ADC channels being only available on pads at the bottom of the board. On Navio2 these channels are easily accessible on a DF13 port.
 
 **Better Linux integration.** PWM, ADC, SBUS and PPM are integrated in Linux sysfs allowing for easy access from any programming language. Even deeper integration is coming in the future.
@@ -63,7 +63,7 @@ What's new compared to Navio+
 For more details and purchase
 =============================
 
-- `Emlid website <https://emlid.com/>`__ 
+- `Emlid website <https://emlid.com/>`__
 - `Navio2 documentation <http://docs.emlid.com/navio2/>`__
 - `Purchase page <https://store.emlid.com/product/navio2/>`__
 

@@ -70,7 +70,7 @@ While the vehicle is executing a mission in Auto, the active command can be chan
 
 .. image:: ../images/rover-auto-restart-mission.png
     :target: ../_images/rover-auto-restart-mission.png
-    
+
 Tuning
 ------
 

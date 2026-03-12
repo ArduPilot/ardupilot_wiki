@@ -13,7 +13,7 @@ Perform the :ref:`Determination of Noise Frequencies <common-imu-notch-filtering
 
 In most cases, only the rotor speed frequency, the second harmonic and 4th harmonic. Use the dynamic harmonic notch setup below if you have an ESC or RPM sensor for rotor speed. Otherwise use the static harmonic notch setup below.
 
-.. note:: There will most likely be another spike at the tail rotor frequency at the main rotor frequency X the tail rotor speed up gear ratio. This is will usually be attenuated by the harmonic notch setup since its often a close to a harmonic of the main rotor frequency. 
+.. note:: There will most likely be another spike at the tail rotor frequency at the main rotor frequency X the tail rotor speed up gear ratio. This is will usually be attenuated by the harmonic notch setup since its often a close to a harmonic of the main rotor frequency.
 
 Static Harmonic Notch
 =====================

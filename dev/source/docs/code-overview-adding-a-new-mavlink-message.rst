@@ -51,7 +51,7 @@ file. If it is only for your personal use or only applicable to ArduPilot, then 
 **Step #4:** Add functions to the main vehicle code to handle sending or receiving the command to/from the ground station. A compile will be needed (ie. ./waf copter) to generate the MAVLink packet code so make sure to do that after editing the XML file. The MAVLink generation happens first, so it doesn't matter if the project compilation is successful or not due to other source code changes.
 
 The top-level of this code will most likely be in the vehicle's GCS_MAVLink_<vehicle>.cpp file
-(`GCS_MAVLink_Copter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_MAVLink_Copter.cpp>`__ for ArduCopter) 
+(`GCS_MAVLink_Copter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_MAVLink_Copter.cpp>`__ for ArduCopter)
 or in the
 `../libraries/GCS_MAVLink/GCS <https://github.com/ArduPilot/ardupilot/blob/master/libraries/GCS_MAVLink/GCS.h>`__
 class.
@@ -65,7 +65,7 @@ command (i.e., a trick) the following would be required:
    ``mavlink_to_mission_cmd()`` functions to convert the MAVProxy
    command into an AP_Mission::Mission_Command structure.
 -  Add a new case to the vehicle's
-   commands_logic.cpp 's (`mode_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_auto.cpp>`__ for ArduCopter) 
+   commands_logic.cpp 's (`mode_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_auto.cpp>`__ for ArduCopter)
    ``start_command()`` and ``verify_command()`` functions to check for
    the arrival of the new ``MAV_CMD_NAV_TRICK``. These should call two
    new functions that you create called ``do_trick()`` and
@@ -73,18 +73,18 @@ command (i.e., a trick) the following would be required:
 -  Create these two new functions,  do_trick() and verify_trick(),
    that somehow command the vehicle *to perform the trick* (perhaps by
    calling another function in
-   control_auto.cpp (`mode_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_auto.cpp>`__ for ArduCopter) 
+   control_auto.cpp (`mode_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_auto.cpp>`__ for ArduCopter)
    that sets the auto_mode variable and then calls a new
    ``auto_trick_start()`` function).  The ``do_trick()`` function will
    be called when the command is first invoked.  The ``verify_trick()``
    will be called at 10hz (or higher) repeatedly until the trick is
    complete.  The ``verify_trick()`` function should return true when
    the trick has been completed.
-   
+
 **Step #5:** Decide how you are going to handle the message at the GCS. One of the
 simplest ways is to use Mavproxy. MavProxy uses pymavlink to define the MAVLink messages,
-so you will need to rebuild pymavlink to include your custom message. 
- 
+so you will need to rebuild pymavlink to include your custom message.
+
  - Remove the currently installed version of pymavlink. ``pip uninstall pymavlink``
  - Install the updated version. CD to ``ardupilot/modules/mavlink/pymavlink``
    and run ``python3 setup.py install --user``
@@ -95,9 +95,9 @@ so you will need to rebuild pymavlink to include your custom message.
    Here is an example of a module that prints the contents of a MY_CUSTOM_PACKET message. Look
    at the other modules for examples on how to trigger sending of messages using the command
    line interface.
- 
+
 .. code-block:: python
- 
+
      #!/usr/bin/env python
     '''Custom'''
 
@@ -119,12 +119,12 @@ so you will need to rebuild pymavlink to include your custom message.
 
     def init(mpstate):
         '''initialise module'''
-        return CustomModule(mpstate) 
-    
+        return CustomModule(mpstate)
+
 
 .. warning::
 
-   If the message you added has an ID greater that 255 you will need to enable MAVLink 2 support. 
+   If the message you added has an ID greater that 255 you will need to enable MAVLink 2 support.
    This can be done by setting the relevant ``SERIALn_PROTOCOL`` parameters (e.g. ``SERIAL1_PROTOCOL``) to 2 and starting Mavproxy with the ``--mav20`` argument.
 
 **Step #6:** Consider contributing your code back to the main code base.

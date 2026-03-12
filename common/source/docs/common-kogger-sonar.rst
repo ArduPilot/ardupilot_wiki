@@ -10,7 +10,7 @@ The `KOGGER Sonar <https://kogger.tech/product/sonar-2d-enhanced>`__ is a compac
 .. image:: ../../../images/kogger-sonar.jpg
     :target: ../_images/kogger-sonar.jpg
 
-   
+
 Recommended Hardware
 --------------------
 - CP210x USB->UART converter and Windows PC with `Kogger Application <https://github.com/koggertech/KoggerApp/releases/latest>`__ installed.
@@ -50,7 +50,7 @@ If the SERIAL2 (TELEM2) is used then the following parameters should be set:
 
 .. image:: ../../../images/kogger-sonar-pixhawk.png
     :target: ../_imagesimages/kogger-sonar-pixhawk.png
-    
+
 The sensor can be connected to any available serial/uart port on the autopilot. In the diagram below the first sensor is connected to SERIAL2 (TELEM2).
 
 

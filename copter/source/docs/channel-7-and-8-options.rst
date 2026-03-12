@@ -39,7 +39,7 @@ Here are the options:
    <tr>
    <td><strong>Simple Mode</strong></td>
    <td>
-   
+
 The copter moves left, right, forward and back as if it were facing in
 the same direction as when it took off regardless of the copter's
 heading. :ref:`See here for more details <simpleandsuper-simple-modes>`.
@@ -132,7 +132,7 @@ Turn on automatic leveling in the :ref:`ACRO <acro-mode>` flight mode.
    <tr>
    <td><strong>Sprayer</strong></td>
    <td>
-   
+
 Turn on the :ref:`crop sprayer <sprayer>` when switch is pulled high.
 
 .. raw:: html
@@ -290,7 +290,7 @@ Switch pulled low turns off the fourth :ref:`relay <common-relay>`, pulled high 
 .. raw:: html
 
    </td>
-   <td>Retracts/Deploys landing gear. 
+   <td>Retracts/Deploys landing gear.
    </td>
    </tr>
    <tr>
@@ -364,7 +364,7 @@ When switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>` (avoidance of
    <td><strong>Precision Loiter</strong></td>
    <td>
 
-Turns on/off :ref:`Precision Loiter <precision-landing-and-loiter>`.  I.e. holding position above a target in Loiter mode. 
+Turns on/off :ref:`Precision Loiter <precision-landing-and-loiter>`.  I.e. holding position above a target in Loiter mode.
 
 .. raw:: html
 

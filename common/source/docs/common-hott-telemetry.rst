@@ -22,4 +22,3 @@ To enable HOTT telemetry, for example on the first TELEM port SERIAL1:
 - :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` set to 27 (HOTT)
 - :ref:`SERIAL1_OPTIONS <SERIAL1_OPTIONS>` set to 4 (Half Duplex)
 - :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` set to 0 to disable flow control (optional)
-

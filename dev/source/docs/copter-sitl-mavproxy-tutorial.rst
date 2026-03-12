@@ -74,7 +74,7 @@ Enter the following commands in the *MAVProxy Command Prompt*.
 
 ::
 
-    mode guided 
+    mode guided
     arm throttle
     takeoff 40
 
@@ -240,7 +240,7 @@ the map:
       Nothing visible will happen when you make the first click.
       After the second click, lines will join your points to show the
       path.
-      
+
 #. When you're done, you can loop the mission by right-clicking on the
    map and selecting **Mission \| Loop**.
 
@@ -303,7 +303,7 @@ you can test using SITL.
 
 Customizing Launch Location and Parameters in SITL
 ==================================================
-You can start SITL at a specific GPS location using the ``-l`` option during launch.  
+You can start SITL at a specific GPS location using the ``-l`` option during launch.
 See "Setting vehicle start location" in :ref:`using-sitl-for-ardupilot-testing`.
 
 If you wish to use a specific set of default parameters, rather than manually changing them in the simulation with ``param set`` commands, you can load them at simulation startup from a file. See :ref:`SITL_simulation_parameters` section "Loading a parameter set".

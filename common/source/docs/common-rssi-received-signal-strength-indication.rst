@@ -14,7 +14,7 @@ This article shows how to get the Received Signal Strength Indication
 Setting up RSSI on your autopilot
 =================================
 
-RSSI can be specifically set up by a collapsible set of parameters. By default, it is required to first set 
+RSSI can be specifically set up by a collapsible set of parameters. By default, it is required to first set
  :ref:`RSSI_TYPE<RSSI_TYPE>`  according to how the RC receiver's signal strength indication will be fed to the autopilot:
 
 +---+--------------------+---------------------------------------------------------------------------------------------+
@@ -35,35 +35,35 @@ RSSI can be specifically set up by a collapsible set of parameters. By default, 
 +---+--------------------+---------------------------------------------------------------------------------------------+
 
 
-After setting :ref:`RSSI_TYPE<RSSI_TYPE>` to a value other than 0 you will have to save and refresh your parameters to uncollapse a set of subordinate parameters that allow to further specify RSSI handling. 
+After setting :ref:`RSSI_TYPE<RSSI_TYPE>` to a value other than 0 you will have to save and refresh your parameters to uncollapse a set of subordinate parameters that allow to further specify RSSI handling.
 
 There are four basic options for feeding RSSI to your autopilot:
 
  :ref:`RSSI_TYPE<RSSI_TYPE>` = 1  Analog voltage type RSSI fed to a dedicated pin
   :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>`  specifies the pin used to read RSSI voltage. This parameter defaults to the correct pin number on most boards when using current chibios firmware.
- 
-  :ref:`RSSI_PIN_HIGH<RSSI_PIN_HIGH>`  voltage received on the :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` when the signal is the strongest. 
- 
+
+  :ref:`RSSI_PIN_HIGH<RSSI_PIN_HIGH>`  voltage received on the :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` when the signal is the strongest.
+
   :ref:`RSSI_PIN_LOW<RSSI_PIN_LOW>`  voltage received on the :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` when the signal is the weakest.
 
 
  :ref:`RSSI_TYPE<RSSI_TYPE>` = 2  PWM Channel type RSSI embedded in a collective PPM / sum signal (sBus)
   :ref:`RSSI_CHANNEL<RSSI_CHANNEL>`  Channel number the radio receiver will use to embed RSSI if collective / sum signal is used (channel 5 and up).
- 
+
   :ref:`RSSI_CHAN_HIGH<RSSI_CHAN_HIGH>`  PWM value the radio receiver will output when the signal is the strongest.
- 
+
   :ref:`RSSI_CHAN_LOW<RSSI_CHAN_LOW>`  PWM value the radio receiver will output when the signal is the weakest.
 
 
  :ref:`RSSI_TYPE<RSSI_TYPE>` = 3  digital receiver protocols' signal quality or dropped packets information (SUMD / ST24 /FPort)
  Scaled internally, no further adjustments required.
- 
+
 
  :ref:`RSSI_TYPE<RSSI_TYPE>` = 4  PWM type RSSI fed to a dedicated GPIO pin
   :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>`  Specifies the GPIO pin to read PWM type RSSI from. On boards with IOMCU these are the AUX pins that can be used as PWM output by default or alternatively set to be used as GPIO . See :ref:`common-gpios`.
- 
+
   :ref:`RSSI_CHAN_HIGH<RSSI_CHAN_HIGH>`  PWM value the radio receiver will output when the signal is the strongest.
- 
+
   :ref:`RSSI_CHAN_LOW<RSSI_CHAN_LOW>`  PWM value the radio receiver will output when the signal is the weakest.
 
 
@@ -162,15 +162,15 @@ Now set your RSSI parameters accordingly:
  :ref:`RSSI_TYPE<RSSI_TYPE>`  = 1 (requires parameter reload if set to default 0 previously)
 
  :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>`  = 103 (PixHawk SBUS output / RSSI input pin)
- 
+
  :ref:`RSSI_PIN_HIGH<RSSI_PIN_HIGH>`  voltage received on the :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` when the signal is the strongest, usually 3,3V.
- 
+
  :ref:`RSSI_PIN_LOW<RSSI_PIN_LOW>`  voltage received on the :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` when the signal is the weakest, usually 0V
 
 .. note::
     RSSI type options depend on your individual RC system's specifications. Some systems require additional workarounds or additional hardware conversion of non-standard proprietary protocols.
 
-    
+
 
 PWM type RSSI fed to a dedicated pin
 ------------------------------------
@@ -206,7 +206,7 @@ Now set your RSSI parameters accordingly:
  :ref:`RSSI_TYPE<RSSI_TYPE>`  = 4 (requires parameter reload if set to default 0 previously)
 
  :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>`  = GPIO pin number used (55 in the above example)
- 
+
  :ref:`RSSI_CHAN_HIGH<RSSI_CHAN_HIGH>`  = PWM value at strongest reception
 
  :ref:`RSSI_CHAN_LOW<RSSI_CHAN_LOW>`  = PWM value at weakest reception
@@ -232,7 +232,7 @@ from the receiver's RSSI output.**
 How to utilize Futaba S.BUS2 "Frame Error Rate" information to be used as RSSI in your autopilot
 ------------------------------------------------------------------------------------------------
 
-The **Frame Error Rate (FER)** indicates, if the receiver has trouble decoding a received data package sent by the transmitter. The value is similar to RSSI. 
+The **Frame Error Rate (FER)** indicates, if the receiver has trouble decoding a received data package sent by the transmitter. The value is similar to RSSI.
 
 The FER information is implemented within the **Futaba S.BUS2** datastream. It is not transmitted as a continuous value, but is sent in 25% resolution.
 
@@ -242,8 +242,8 @@ How to setup the Hardware
 To extract the FER from the **Futaba S.BUS2** datastream, a `S.BUS2 to Analog DC voltage converter <http://shop.tje.dk/catalog/product_info.php?products_id=43>`__ can be used.
 
 A basic setup using a **Futaba R7008SB** receiver and an additional S.BUS2 GPS Multi Sensor is shown in the image below. A similar setup should work using a **Futaba R7003SB** receiver.
-   
-   
+
+
 .. note::
 
    To enable **S.Bus and S.Bus2 protocol** on your Futaba receiver, you have to set your **R7008SB** receiver to **"Mode B"** or **"Mode C"** and your **R7003SB** receiver to **"Mode A"**. Check out your `R7008SB <http://manuals.hobbico.com/fut/r7008sb-manual.pdf>`__ or `R7003SB <http://manuals.hobbico.com/fut/r7003sb-manual.pdf>`__  user manual for further details.
@@ -274,7 +274,7 @@ The following screenshots show the setup procedure for a Futaba T14SG. Other FAS
   - Enter the "LINKAGE MENU" by double clicking the "LNK" button [1].
   - Goto "SYSTEM" and press "RTN" [2].
   - Within "SYSTEM" menu, goto the protocol selection tab and choose "FASSTest-14CH" protocol [3] .
-  - In case you changed the protocol, eventually you have to re "LINK" your receiver to your transmitter [4]. 
+  - In case you changed the protocol, eventually you have to re "LINK" your receiver to your transmitter [4].
   - Ensure, that TELEMETRY is set to "ACT" [5].
 
 .. image:: ../../../images/FASSTest_EnableProtocol.png
@@ -288,13 +288,13 @@ In order to decode the FER / RSSI feedback of the converter, a standard "TEMP125
   - Enter the "LINKAGE MENU" by double clicking the "LNK" button.
   - Show page 2 of the menu by pressing "S1" [1], goto "SENSOR" and press "RTN" [2].
   - Goto Slot 1 tab and press "RTN" [3].
-  - Choose "TEMP125" Sensor and confirm the selection by pressing "RTN" two times [4]. 
+  - Choose "TEMP125" Sensor and confirm the selection by pressing "RTN" two times [4].
   - Slot 1 should be assigned with a "TEMP125" Sensor now [5]. If so, leave the menu by pressing "HOME/EXIT" button two times.
 
 .. image:: ../../../images/FASSTest_AdressTelemetrySensorToSlot.png
     :target: ../_images/FASSTest_AdressTelemetrySensorToSlot.png
 
-To display the FER / RSSI value and to trigger an alarm, your TELEMETRY MONITOR has to be configured: 
+To display the FER / RSSI value and to trigger an alarm, your TELEMETRY MONITOR has to be configured:
   - Enter the "TELEM.MONI" menu by pressing the "HOME/EXIT" button [1].
   - Goto "RECEIVER" and press the "RTN" button [2].
   - Goto DISPLAY tab [3] and choose "3" [4].
@@ -303,9 +303,9 @@ To display the FER / RSSI value and to trigger an alarm, your TELEMETRY MONITOR 
   - To set alarms, goto "TEMP" [7] and press "RTN". For alarm setup please refer to your Tx user manual.
   - As soon as you connect your receiver with power, the FER / RSSI value will show up as well as the standard received signal quality indicator [8].
   - The converter can be mixed with other telemetry devices as long as they are assigned to Slot 2 to Slot 31 [9].
-  
+
 .. image:: ../../../images/FASSTest_SetupTelemetryDisplay.png
     :target: ../_images/FASSTest_SetupTelemetryDisplay.png
- 
+
 
 **Developed and illustrated by Lukasz - Thank You - Hope this helps.**

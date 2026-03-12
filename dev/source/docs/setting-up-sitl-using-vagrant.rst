@@ -54,7 +54,7 @@ Preconditions
 
 .. warning::
 
-   -  You must use the newer version for the git submodule(git 1.8.x or later) for initial step. 
+   -  You must use the newer version for the git submodule(git 1.8.x or later) for initial step.
       After that step you can use an older version.
 
    -  Ensure that *git* is set to leave line endings untouched. Click on

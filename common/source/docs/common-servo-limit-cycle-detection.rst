@@ -37,7 +37,7 @@ For QuadPlane actuators (motors,surfaces,tilt servos depending on frame type):
 - :ref:`Q_A_RAT_YAW_SMAX<Q_A_RAT_YAW_SMAX>` for VTOL yaw
 - :ref:`Q_P_D_ACC_SMAX<Q_P_D_ACC_SMAX>` for VTOL position control
 
-These are in different units (full activations per second), and have 50 as the default, which effectively de-activates them because they are too high. Currently, setting these such that they are active interferes with the QAUTOTUNE and this will be corrected in the future, but it allows logging of the actual slew rates in the PIQx.SRate log messages. 
+These are in different units (full activations per second), and have 50 as the default, which effectively de-activates them because they are too high. Currently, setting these such that they are active interferes with the QAUTOTUNE and this will be corrected in the future, but it allows logging of the actual slew rates in the PIQx.SRate log messages.
 [/site]
 When these values are exceeded, the appropriate PID Dmod log data ( PIDR.Dmod, PIQP.DMod, etc.)will show values spiking below 1 in the plots, indicating lowered gains. An ideal tune, will have this occur very occasionally during operation, but not frequently. By examining the logged PIDx.SRate messages one can see the actual slew rates being used and set these _ SMAX values appropriately to be at or slightly above the general peak slew rates.
 

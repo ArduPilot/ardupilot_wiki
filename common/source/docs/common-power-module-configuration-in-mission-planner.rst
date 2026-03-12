@@ -37,7 +37,7 @@ type of autopilot, and the battery capacity:
 The **Sensor** selection list offers a number of analog Power Modules
 (including popular models from 3DR and AttoPilot) which you can select
 to automatically configure your module. If your PM is not on the list
-then you can select **Other**, enter its recommended values, or 
+then you can select **Other**, enter its recommended values, or
 :ref:`perform a manual calibration <common-power-module-configuration-in-mission-planner_calibration>` as described below.
 
 Other Types of Power Modules/Smart Batteries
@@ -182,4 +182,3 @@ the Hardware Options page for the :ref:`Pixhawk <common-pixhawk-overview_pixhawk
     :hidden:
 
     common-analog-current-calibration
-

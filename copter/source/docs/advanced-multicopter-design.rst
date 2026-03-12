@@ -142,7 +142,7 @@ There are several popular frame layouts for MultiCopters
 -  There are also variable pitch Multicopters for incredible acrobatic
    performance.
 
-   -  Variable pitch multicopters have some interesting potential uses as well like the 
+   -  Variable pitch multicopters have some interesting potential uses as well like the
       `Curtis Youngblood Stingray 500 <http://curtisyoungblood.com/V2/products/quadcopters/stingray-500>`__ shown below.
    -  Servo control of the props (rotors) produces roll, pitch and yaw
       so they are often powered by a single motor with shaft or belt
@@ -328,7 +328,7 @@ Professional Grade Power System for Medium Quadcopters (16" Propellers)
 -  Clearly, applying similar quality to a more reasonably sized (and
    cost) copter is normally going to be a lot more practical.
 
-   -  A `380KV T-Motor 4008 <http://www.rctigermotor.com/html/2013/Professional_0912/52.html>`__ 
+   -  A `380KV T-Motor 4008 <http://www.rctigermotor.com/html/2013/Professional_0912/52.html>`__
       is $85.00, 16x5 CF Prop $90.00 a pair and 30 Amp Pro ESC $50.00 @
       four each = $720.00.
    -  This setup will work well for a copter up to 10 pounds or so and
@@ -392,7 +392,7 @@ Professional Grade Power System for Small Quadcopters (10" - 14" Propellers)
 -  The largest market segment is for Quadcopters in frame sizes that use
    10 to 14 inch propellers and weigh 3 to 7 pounds.
 
-   -  The `650 KV T-Motor MT3506 <http://www.rctigermotor.com/html/2013/Professional_0912/49.html>`__ 
+   -  The `650 KV T-Motor MT3506 <http://www.rctigermotor.com/html/2013/Professional_0912/49.html>`__
       at $65.00 is a high quality small but powerful pancake that can turn props from 11" to 14" diameter.
    -  With a 3 cell LiPo battery and T-Motor 14" prop at $73.00 a pair it can lift up to 7 pounds and achieve very good endurance.
    -  Add 4 T-Motor 18 Amp ESCs at $27.00 @ four each = $514.00 for top quality motors, props and ESCs.
@@ -455,10 +455,10 @@ Consumer Grade Power System for Small Quadcopters (8" - 12" Propellers)
    -  The `DJI 2212 Motors <http://www.ebay.com/itm/like/231128616387?lpid=82>`__
       provided with their low cost ARF Flamewheel Quadcopters are unusually durable and cost $24.00 each.
    -  And DJI's specially hubbed 10" plastic props at $8.00 a pair are well balanced, efficient and rugged.
-      
+
       .. image:: ../images/dji-motor01.jpg
           :target: ../_images/dji-motor01.jpg
-      
+
       .. image:: ../images/DJI-PROP-1038-2.jpg
           :target: ../_images/DJI-PROP-1038-2.jpg|DJI-PROP-1038-2|
 

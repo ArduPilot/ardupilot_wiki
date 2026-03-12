@@ -354,7 +354,7 @@ Serial 5 port
    </tr>
    </tbody>
    </table>
-   
+
 Power_ADC 1, Power_ADC 2 ports
 ------------------------------
 

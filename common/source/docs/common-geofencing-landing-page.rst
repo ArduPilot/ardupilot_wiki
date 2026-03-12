@@ -225,7 +225,7 @@ in disaster.
 
 Geo-fencing can be combined with any flight mode. So for a raw
 beginner, you would combine it with one of the stabilised flight modes
-. Once the pilot has gained some confidence you could combine it with ACRO mode in Copter or MANUAL mode in Plane, which gives direct control of the vehicle and allows for the most interesting aerobatic manoeuvres. 
+. Once the pilot has gained some confidence you could combine it with ACRO mode in Copter or MANUAL mode in Plane, which gives direct control of the vehicle and allows for the most interesting aerobatic manoeuvres.
 
 [site wiki="plane"]
 
@@ -262,7 +262,7 @@ key status packet is called FENCE_STATUS, and is defined in
 
 The breach_status field is 0 if inside the fence, and 1 if outside. The
 breach_count is how many fence breaches you have had on this flight.
-The breach_type is the type of the last breach (see the FENCE_BREACH 
+The breach_type is the type of the last breach (see the FENCE_BREACH
 enum in ardupilotmega.xml). The breach_time is the time in milliseconds
 of the breach since APM was booted.
 

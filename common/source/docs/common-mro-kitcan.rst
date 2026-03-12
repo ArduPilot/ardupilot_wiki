@@ -19,7 +19,7 @@ Features
    - DPS310 Barometer
    - RGB LED
    - Safety Switch
-- JST-GH Connectors 
+- JST-GH Connectors
 - Mounting Holes: 14mm x 31.5mm, 3.3mm diameter
 
 Pinouts
@@ -65,7 +65,7 @@ Pin        Signal Name     Voltage/Tolerance
 Typical System
 ==============
 
-In this case, the Kitcan is connected to an :ref:`mRo Pixracer <common-pixracer-overview>` 
+In this case, the Kitcan is connected to an :ref:`mRo Pixracer <common-pixracer-overview>`
 autopilot via CAN and is providing the interfaces for a MS5525 airspeed sensor and a typical GPS/Compass combo, the `mRo SAM GPS + IST8308 Mag <https://store.mrobotics.io/product-p/mro10037.htm>`_
 
 .. image:: ../../../images/mro-kitcan-system.jpg
@@ -81,13 +81,13 @@ Verify the following parameters are set on your autopilot via your ground statio
 - :ref:`GPS2_TYPE<GPS2_TYPE>` = 9 (DroneCAN)
 - Reboot
 
-Make sure the DroneCAN compass driver is not disabled. (:ref:`COMPASS_DISBLMSK<COMPASS_DISBLMSK>` bit 9 should not be set). 
+Make sure the DroneCAN compass driver is not disabled. (:ref:`COMPASS_DISBLMSK<COMPASS_DISBLMSK>` bit 9 should not be set).
 
 If your controller has multiple compasses attached already, you may want to set the attached compass as a higher priority than others, if it has better precision or performance.
 
 To enable the integrated I2C RGB LED set:
 
-- :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` bit 5 (DroneCAN) should be set in the autopilot. 
+- :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` bit 5 (DroneCAN) should be set in the autopilot.
 
 The integrated safety switch is automatically used, if the autopilot has enabled the use of safety switches via :ref:`BRD_SAFETY_DEFLT<BRD_SAFETY_DEFLT>` is "1" (default).  (``BRD_SAFETYENABLE`` in older firmware versions)
 
@@ -112,4 +112,3 @@ Where to Buy
 ============
 
 - `mRobotics <https://store.mrobotics.io/product-p/mro10025b.htm>`_
-

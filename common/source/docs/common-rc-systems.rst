@@ -15,7 +15,7 @@ Compatible RC Protocols
 ArduPilot autopilots are compatible with the following receiver output protocols:
 
     #. PPM-Sum receivers
-    #. SBus receivers 
+    #. SBus receivers
     #. Fast SBus (from DJI HDL video/RC systems)
     #. i-BUS receivers
     #. :ref:`common-FPort-receivers`
@@ -244,4 +244,3 @@ allow you to use any older style RC receiver that has only PWM outputs for each 
    common-FPort-receivers
 
 [copywiki destination="plane,copter,rover,sub,blimp"]
-

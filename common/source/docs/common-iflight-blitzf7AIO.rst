@@ -91,13 +91,13 @@ The PWM are in in two groups:
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX)
 
 
 RC Input
 ========
 
-RC input is configured by default on RX2 on the DJI connector and supports all single wire RC protocols (SBUS,DSM,etc.) except PPM. FPort, when connected in this manner, can provide RC but without telemetry. 
+RC input is configured by default on RX2 on the DJI connector and supports all single wire RC protocols (SBUS,DSM,etc.) except PPM. FPort, when connected in this manner, can provide RC but without telemetry.
 
 CRSF/ELRS and SRXL2  require a full UART connection. You should use one with DMA for CRSF/ELRS. For example you could retask UART4 for GPS by setting :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` = "5" (GPS), then use UART3 for RC input and set :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` = "23". Under this scenario:
 
@@ -155,4 +155,3 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

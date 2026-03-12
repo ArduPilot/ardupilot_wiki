@@ -15,11 +15,11 @@ General Purpose Input/Outputs (GPIOs) are used in ArduPilot for control of :ref:
 
 Configuring GPIOS
 =================
-In order to set a PWM/SERVO/MOTOR output to be a GPIO function, the individual ``SERVOx_FUNCTION`` parameter is set to "-1". 
+In order to set a PWM/SERVO/MOTOR output to be a GPIO function, the individual ``SERVOx_FUNCTION`` parameter is set to "-1".
 
 .. note:: for autopilots using IOMCUs, if a "MAIN" output is configured as a GPIO, it can only function as an output (ie RELAY,etc.) not an input. "AUX" outputs can function either as inputs or outputs when configures as a GPIO.
 
-Every time the autopilot initializes, it sends a log message to the ground control station, showing which outputs are PWM/Oneshot/or DShot. 
+Every time the autopilot initializes, it sends a log message to the ground control station, showing which outputs are PWM/Oneshot/or DShot.
 
 .. image:: ../../../images/RCOutbanner.jpg
 
@@ -37,4 +37,3 @@ You can verify an output's GPIO pin number assignment easily. First, find its hw
 IOMCU "MAIN" output 1 thru 8 are mapped to GPIO pin numbers 101 to 108, respectively.
 
 .. note:: Usually, changing any feature or function's GPIO pin assignment will require a reboot for it to take effect.
-

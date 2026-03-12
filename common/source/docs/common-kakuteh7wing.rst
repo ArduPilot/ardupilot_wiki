@@ -91,7 +91,7 @@ The PWM is in 5 groups:
 RC Input
 ========
 
-The RX6 (UART6 RX), is by default is mapped to a timer input instead of the UART, and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry. 
+The RX6 (UART6 RX), is by default is mapped to a timer input instead of the UART, and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the RX6 pin can also be configured to be used as true UART6 RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL6 port's RX input pin.
 
@@ -176,4 +176,3 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 "KakuteH7-Wing".
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

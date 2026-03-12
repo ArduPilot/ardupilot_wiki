@@ -122,7 +122,7 @@ Getting smoother avoidance experience
 Minimum altitude (Copter only)
 ------------------------------
 
-- If the sensor has a wide field of view, on takeoff and landings it might see the ground below as obstacle and the vehicle might react to it. 
+- If the sensor has a wide field of view, on takeoff and landings it might see the ground below as obstacle and the vehicle might react to it.
 - Set the parameter :ref:`AVOID_ALT_MIN <AVOID_ALT_MIN>` to have a minimum altitude before avoidance is switched on.
 
 .. note:: This feature requires a valid Downward Facing Rangefinder reading to works

@@ -17,7 +17,7 @@ and `wins the first Sparkfun AVC competition <https://avc.sparkfun.com/2009>`__.
 .. figure:: ../../../images/history_of_ardupilot_jordi_first_tradheli_2008.jpg
     :target: ../_images/history_of_ardupilot_jordi_first_tradheli_2008.jpg
     :width: 100px
-    
+
     Jordi's traditional helicopter
 
 2009 - Chris Anderson & Jordi Munoz found 3D Robotics
@@ -177,7 +177,7 @@ copter with built in companion computer
 
 June 2015 - `Parrot Bebop port's first successful flights <https://diydrones.com/profiles/blogs/parrot-bebop-running-apm>`__
 
-Aug 2015 - Michael Clement & Michael Day fly 
+Aug 2015 - Michael Clement & Michael Day fly
 `50 arduplanes in a multi-vehicle environment <https://diydrones.com/profiles/blogs/from-zero-to-fifty-planes-in-twenty-seven-minutes>`__
 
 Sep 2015 - `First major news event involving a misbehaving pilot of an ArduPilot vehicle (a Solo) <http://edition.cnn.com/2015/09/04/us/us-open-tennis-drone-arrest/>`__

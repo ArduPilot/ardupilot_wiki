@@ -146,7 +146,7 @@ Be careful not to change the flight mode inadvertently.  By default either chann
 The example commands below can be copy-pasted into MAVProxy (aka SITL) to test the message.  Before running these commands enter:
 
 - module load message
-- graph RC_CHANNELS.chan1_raw RC_CHANNELS.chan2_raw RC_CHANNELS.chan3_raw RC_CHANNELS.chan4_raw RC_CHANNELS.chan7_raw 
+- graph RC_CHANNELS.chan1_raw RC_CHANNELS.chan2_raw RC_CHANNELS.chan3_raw RC_CHANNELS.chan4_raw RC_CHANNELS.chan7_raw
 
 During simulator testing it may be useful to enable/disable the RC failsafe by setting :ref:`FS_THR_ENABLE <copter:FS_THR_ENABLE>` = 0 and/or simulate an RC failure by setting :ref:`SIM_RC_FAIL <copter:SIM_RC_FAIL>` = 1
 
@@ -173,7 +173,7 @@ During simulator testing it may be useful to enable/disable the RC failsafe by s
 MANUAL_CONTROL
 --------------
 
-The `MANUAL_CONTROL <https://mavlink.io/en/messages/common.html#MANUAL_CONTROL>`__ message allows sending roll, pitch, throttle and yaw values as normalised values between -1000 and +1000 and avoids any potential issues with channel mapping or PWM input ranges 
+The `MANUAL_CONTROL <https://mavlink.io/en/messages/common.html#MANUAL_CONTROL>`__ message allows sending roll, pitch, throttle and yaw values as normalised values between -1000 and +1000 and avoids any potential issues with channel mapping or PWM input ranges
 
 .. raw:: html
 

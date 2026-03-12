@@ -37,9 +37,9 @@ Other Projects
 .. image:: https://raw.githubusercontent.com/Clooney82/MavLink_FrSkySPort/s-c-l-v-rc-opentx2.1/images/Basic%20Wiring%20-%20Teensy3.jpg
     :target:  https://raw.githubusercontent.com/Clooney82/MavLink_FrSkySPort/s-c-l-v-rc-opentx2.1/images/Basic%20Wiring%20-%20Teensy3.jpg
 
-`Scottflys <http://openbrainiacs.com/tiki-index.php?page=Teensy+Telemetry+Project>`__ 
+`Scottflys <http://openbrainiacs.com/tiki-index.php?page=Teensy+Telemetry+Project>`__
 
-`Athertop <https://github.com/athertop/MavLink_FrSkySPort>`__ 
+`Athertop <https://github.com/athertop/MavLink_FrSkySPort>`__
 
 `APM MavLink to FrSky X8R S.Port converter <https://diydrones.com/forum/topics/amp-to-frsky-x8r-sport-converter>`_
 

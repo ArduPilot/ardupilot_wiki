@@ -114,10 +114,10 @@ C1 - CAN FD 1 - 4 Pin JST-GH
      - 5V
    * - 2
      - CAN_H
-     - 
+     -
    * - 3
      - CAN_L
-     - 
+     -
    * - 4
      - GND
      - GND
@@ -135,10 +135,10 @@ C2 - CAN FD 2 - 4 Pin JST-GH
      - 5V
    * - 2
      - CAN_H
-     - 
+     -
    * - 3
      - CAN_L
-     - 
+     -
    * - 4
      - GND
      - GND
@@ -168,7 +168,7 @@ Debug - 6 Pin Tag-Connect
      - GND
    * - 6
      - not connected
-     - 
+     -
 
 S2 - SERIAL1 & GNSS - 6 Pin JST-GH
 ----------------------------------

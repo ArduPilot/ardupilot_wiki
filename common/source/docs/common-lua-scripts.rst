@@ -23,7 +23,7 @@ Getting Started
 - Set :ref:`SCR_ENABLE <SCR_ENABLE>` to 1 to enable scripting (refresh or reboot to see all ``SCR_`` parameters).
 - Upload scripts (files with extension .lua) to the autopilot's SD card's ``APM/scripts`` folder.
 
-  - If this folder does not exist, you can create it by setting :ref:`SCR_ENABLE<SCR_ENABLE>` to 1 and rebooting. This folder can also be created manually on the SD card. 
+  - If this folder does not exist, you can create it by setting :ref:`SCR_ENABLE<SCR_ENABLE>` to 1 and rebooting. This folder can also be created manually on the SD card.
   - If using Mission Planner, this can be done using MAVFTP.
   - If using a simulator, the ``scripts`` folder is in the directory the simulator was started from. MAVFTP will work in this case as well.
 
@@ -92,7 +92,7 @@ The following script is used to change a servo output based on the aircraft's di
        end
        servo.set_output_pwm(96, 1000 + distance) -- set the servo assigned function 96 (scripting3) to a proportional value
      end
-   
+
      return update, 1000 -- request "update" to be rerun again 1000 milliseconds (1 second) from now
    end
 
@@ -122,7 +122,7 @@ Scripting and Parameters
 
 .. toctree::
    :maxdepth: 1
-   
+
    Accessing/Adding Parameters via Scripts <common-scripting-parameters>
 
 In addition to creating accessing ArduPilot parameter values, and creating new parameters dedicated to a script's operation, up to 16 :ref:`Auxiliary switches <common-auxiliary-functions>` state can be read from a script. And auxiliary switch function "316" can be used to stop or restart scripting from the RC transmitter or GCS.
@@ -573,7 +573,7 @@ Lua scripts may be directly embedded in firmware binaries, rather than being pla
 Further Information
 ===================
 .. toctree::
-    :hidden: 
+    :hidden:
 
     Bindings <common-lua-binding-syntax>
     common-scripting-applets

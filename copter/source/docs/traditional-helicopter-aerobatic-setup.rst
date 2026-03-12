@@ -5,7 +5,7 @@ Traditional Helicopter Aerobatic Setup
 ======================================
 
 Aerobatic operation is possible in ACRO mode. However, the normal collective pitch setup of -2° to +12° will not allow inverted maneuvers. If desired, the :ref:`H_COL_MAX <H_COL_MAX>` and :ref:`H_COL_MIN <H_COL_MIN>` values cam be setup for -10°or 12° to +10° or +12°. Hover upright will now be between center and high stick and inverted hover between center and low stick.
- 
+
 However, if the extremes of -12° to +12° were setup for full aerobatic operation in :ref:`Acro Mode<acro-mode>`, the defaults for ``IM_STB_COL_x`` would yield:
 
 ==============      =====

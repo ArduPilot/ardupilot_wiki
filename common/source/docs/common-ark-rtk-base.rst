@@ -23,7 +23,7 @@ Specifications
     - Multi-band RTK with fast convergence times and reliable performance
     - High update rate for highly dynamic applications
     - Centimeter accuracy in a compact and energy-efficient module
-   
+
 
 -  **Connections**
 
@@ -35,7 +35,7 @@ Specifications
    - F9P “UART 2” Connector
 
       - 3 Pin JST GH (TX, RX, GND)
- 
+
 -  **Power Requirements**
 
    - 5V via USB-C or UART Connector
@@ -51,7 +51,7 @@ Specifications
    - USA Built
    - FCC Compliant
    - LED Indicators
-   
+
     - Power
     - GPS Fix
     - RTK Status
@@ -63,5 +63,3 @@ More Information
 * `ARK RTK Base <https://arkelectron.com/product/ark-rtk-base/>`_
 
 * `ARK RTK Base Documentation <https://arkelectron.gitbook.io/ark-documentation/sensors/ark-rtk-base>`_
-
-

@@ -273,7 +273,7 @@ following lines to the file:
     auth_algs=1
     ignore_broadcast_ssid=0
     wpa=2
-    wpa_passphrase=MavLink_1 
+    wpa_passphrase=MavLink_1
     wpa_key_mgmt=WPA-PSK
     wpa_pairwise=TKIP
     rsn_pairwise=CCMP
@@ -295,13 +295,13 @@ may want to try:
 ::
 
     driver=nl80211
-    
+
 If you are using the built in WiFi on a Raspberry Pi 3 as wlan0, comment out the driver line:
-    
+
 ::
-    
+
     #driver=rt1871xdrv
- 
+
 Make sure the file has no extra spaces or tabs at the beginning and ends
 of the lines, this file is very sensitive to this.
 
@@ -423,7 +423,7 @@ Update hostapd
 
 If you are not using the built in WiFi on a Raspberry Pi 3 then the hostapd
 version installed by apt-get does not fully support the WiFi dongle we are using
-so we need to update it to a later version. Lets get the new version of hostapd 
+so we need to update it to a later version. Lets get the new version of hostapd
 by typing the following command: (only if NOT using the built in Wifi)
 
 ::
@@ -449,7 +449,7 @@ a **daemon**. Type the following commands:
 
 ::
 
-    sudo service hostapd start 
+    sudo service hostapd start
     sudo service isc-dhcp-server start
 
 You should now see the following output if everything runs well:
@@ -466,7 +466,7 @@ type the following:
 
 ::
 
-    sudo update-rc.d hostapd enable 
+    sudo update-rc.d hostapd enable
     sudo update-rc.d isc-dhcp-server enable
 
 One last step is to remove WPASupplicant so it does not interfere with
@@ -594,7 +594,7 @@ You can find more information on the pin out for the Raspberry Pi
 
 .. figure:: ../images/connecting_rapi_to_sik_radio_reduced.jpg
     :target: ../_images/connecting_rapi_to_sik_radio_reduced.jpg
-    
+
     Connecting Telemetry Radio to RaPi
 
 Testing the MavProxy Connection

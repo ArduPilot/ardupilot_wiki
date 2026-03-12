@@ -8,7 +8,7 @@ Copter supports several configurable failsafe options in cases where contact bet
 
 .. warning::
 
-   For Single Helicopter, Dual Helicopter and Quad Helicopter frames, Copter 3.6 and earlier in any :ref:`H_RSC Mode<H_RSC_MODE>` or Copter 4.0 in the RC Passthrough :ref:`H_RSC_Mode<H_RSC_MODE>` requires the RC receiver channel 8 to hold last value when transmitter signal is lost.  If the receiver sends no signal or does not hold the RC channel 8 value, the motor will be shutdown and the helicopter will crash.  
+   For Single Helicopter, Dual Helicopter and Quad Helicopter frames, Copter 3.6 and earlier in any :ref:`H_RSC Mode<H_RSC_MODE>` or Copter 4.0 in the RC Passthrough :ref:`H_RSC_Mode<H_RSC_MODE>` requires the RC receiver channel 8 to hold last value when transmitter signal is lost.  If the receiver sends no signal or does not hold the RC channel 8 value, the motor will be shutdown and the helicopter will crash.
 
 .. image:: ../images/RadioFailsafe_Intro.jpg
     :target: ../_images/RadioFailsafe_Intro.jpg
@@ -37,7 +37,7 @@ When a radio failsafe is triggered, the copter can be configured via parameters 
 
 - If the copter is disarmed, no failsafe will take place.
 - If the copter is armed but has landed, the copter will immediately disarm.
-- If the copter is armed in Stabilize or Acro modes, and the throttle input is at minimum, and the vehicle is not in :ref:`AirMode<airmode>` then the copter will immediately disarm. 
+- If the copter is armed in Stabilize or Acro modes, and the throttle input is at minimum, and the vehicle is not in :ref:`AirMode<airmode>` then the copter will immediately disarm.
 - Otherwise, the copter will take the actions as configured in the parameters described below.
 
 If the failsafe clears (i.e. transmitter and receiver regain contact) the copter will remain in its failsafe mode. It will **not** automatically return to the flight mode that was active before the failsafe was triggered. This means that if, for example, the vehicle was in Loiter when the failsafe occurred and the flight mode was automatically changed to RTL, even after the transmitter and receiver regained contact, the vehicle would remain in RTL.  If the pilot wished to re-take control in Loiter he/she would need to change your flight mode switch to another position and then back to Loiter.
@@ -174,4 +174,3 @@ RTL on the Mission Planner's Initial Setup >> Mandatory Hardware >>
 Flight Modes screen.
 
 Although this appears to work it is strongly not recommended because it can result in situations that can lead to a crash. Since the autopilot has no way of knowing that an RC failsafe has occurred, undesired behavior can occur such as overriding other failsafes like low battery or GCS failsafes with mode changes.
-

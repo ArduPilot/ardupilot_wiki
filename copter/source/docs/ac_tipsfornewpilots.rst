@@ -14,11 +14,11 @@ Place the copter on level ground and connect the battery — do not move
 the copter until gyroscope calibration is completed (LED's flashing red
 and blue). Ensure that your RC mode toggle switch is in Stabilize mode.
 Slowly raise the throttle until the copter just lifts off the ground.
-    
+
 If it seems like it's going to flip or otherwise isn't lifting straight up
 it is possible that you've set the wrong +/x orientation, hooked up your motors
 in the wrong order or have the prop direction or pusher/puller order wrong.
-You can test this by following the instructions in 
+You can test this by following the instructions in
 :ref:`connect-escs-and-motors_testing_motor_spin_directions`.
 
 If any of the controls are reversed (pitch or roll are backwards,
@@ -51,7 +51,7 @@ Tips for your first flights
 
 -  Make sure you are in a wind free environment
    (wind will play against you on in air auto trim).
--  Make sure you have no trim on your Radio 
+-  Make sure you have no trim on your Radio
    (the autopilot is what we want to trim, the radio should never get trimmed).
 -  Hold the copter still and level after connecting the battery to allow
    the gyroscopes to initialize.

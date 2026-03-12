@@ -5,8 +5,8 @@ Follow Me Test
 .. code:: bash
 
     module load followtest
-    
-This module commands the vehicle to follow another vehicle. The other vehicle must 
+
+This module commands the vehicle to follow another vehicle. The other vehicle must
 be sending ``HOME_POSITION`` packets to MAVProxy.
 
 Upon reaching the minimum distance ``radius`` to the other vehicle, it will loiter in
@@ -24,7 +24,7 @@ The configurable settings for this module can be controlled by:
 .. code:: bash
 
     followtest set <setting> <value>
-    
+
 The settings are:
 
 ===============================   =======================================   ===============================
@@ -37,5 +37,3 @@ type                              Flight mode to use                        guid
 vehicle_throttle                  Amount of throttle to use (0-1)           0.5
 disable_msg                       Disable follow-me                         False
 ===============================   =======================================   ===============================
-
-

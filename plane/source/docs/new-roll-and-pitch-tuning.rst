@@ -110,7 +110,7 @@ I term
 - :ref:`PTCH_RATE_I<PTCH_RATE_I>`
 - :ref:`RLL_RATE_I<RLL_RATE_I>`
 
-For Plane we recommend setting the I gain to be equal to the FF gain. This gives about a 1 sec control loop response timeframe for CG or surface trim during takeoffs. 
+For Plane we recommend setting the I gain to be equal to the FF gain. This gives about a 1 sec control loop response timeframe for CG or surface trim during takeoffs.
 
 P and D term
 ------------
@@ -125,7 +125,7 @@ Now, the vehicle can be flown again to start trimming P and D. Starting with D a
 #. With the model in FBWA mode, increase P in 0.01 increments. Check each change by putting in a rapid angle demand, hold
    it and release. Do the same in the other direction. You want the
    model to move quickly and smoothly to the new angle and back
-   again without overshoot or any porpoising. 
+   again without overshoot or any porpoising.
 #. When you get pitch angle oscillation or overshoot, then you need to
    reduce P by 25-50%.
 #. Increase the D gain in increments of 0.001 until it it starts
@@ -188,11 +188,11 @@ Tuning tips
    set to a value that is big enough to allow from trim changes, but
    small enough so that it cannot stall the plane. The default for Plane is 2/3 of total throw, which could
    produce this problem.
--  Be sure that :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` is setup to add 
+-  Be sure that :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` is setup to add
    negative pitch at low throttle in stabilized modes.
 -  The rate of pitch (and therefore the reduce the number of g's) used
    to correct pitch angle errors can be limited setting the pitch rate
-   limit :ref:`PTCH2SRV_RMAX_DN<PTCH2SRV_RMAX_DN>` and :ref:`PTCH2SRV_RMAX_UP<PTCH2SRV_RMAX_UP>` 
+   limit :ref:`PTCH2SRV_RMAX_DN<PTCH2SRV_RMAX_DN>` and :ref:`PTCH2SRV_RMAX_UP<PTCH2SRV_RMAX_UP>`
    parameters to non-zero values. Setting these values to 560 divided by the airspeed
    (in metres/second) gives a limit equivalent to approximately +- 1g.
 -  The time constant parameter :ref:`PTCH2SRV_TCONST<PTCH2SRV_TCONST>` can also be used to
@@ -226,23 +226,23 @@ The new PID-FF controller in Plane also has a number of lowpass filters whose fr
 Speed Scaling (SS)
 ==================
 
-ArduPilot automatically adjusts the stabilization gains in the PID-FF loops based on the airspeed. This helps avoid oscillations when 
-flying fast and ensures effective stabilization during slower flight, even if the aircraft doesn't have an airspeed sensor. 
-This parameter is :ref:`SCALING_SPEED<SCALING_SPEED>`. This should be set close to the normal cruising speed of the aircraft. 
-The loop gains are scaled above and below this value with a multiplier determined base on the above min  and max flying speeds. 
-These parameters are :ref:`AIRSPEED_MIN<AIRSPEED_MIN>` and :ref:`AIRSPEED_MAX<AIRSPEED_MAX>`, respectively. 
+ArduPilot automatically adjusts the stabilization gains in the PID-FF loops based on the airspeed. This helps avoid oscillations when
+flying fast and ensures effective stabilization during slower flight, even if the aircraft doesn't have an airspeed sensor.
+This parameter is :ref:`SCALING_SPEED<SCALING_SPEED>`. This should be set close to the normal cruising speed of the aircraft.
+The loop gains are scaled above and below this value with a multiplier determined base on the above min  and max flying speeds.
+These parameters are :ref:`AIRSPEED_MIN<AIRSPEED_MIN>` and :ref:`AIRSPEED_MAX<AIRSPEED_MAX>`, respectively.
 See :ref:`airspeed-parameters-setup` for more details.
 
 .. warning::
 
-   Changing this parameter after tuning will affect your controller settings, and can cause poor performance of your aircraft. 
+   Changing this parameter after tuning will affect your controller settings, and can cause poor performance of your aircraft.
    If you change the SCALING_SPEED after completing a tune, you must re-run AUTOTUNE or manually retune the controller gains.
 
 Slew Rate Limiter
 =================
 
-ArduPilot includes an algorithm that monitors the actuator slew rates. If the rates exceed the thresholds defined by the _SMAX parameters, 
-it automatically reduces the control loop gains to help stop the oscillations. One can set the slew rate limits for the pitch and 
+ArduPilot includes an algorithm that monitors the actuator slew rates. If the rates exceed the thresholds defined by the _SMAX parameters,
+it automatically reduces the control loop gains to help stop the oscillations. One can set the slew rate limits for the pitch and
 roll control surfaces using the following parameters: :ref:`PTCH_RATE_SMAX<PTCH_RATE_SMAX>` for pitch and :ref:`RLL_RATE_SMAX<RLL_RATE_SMAX>`
 for roll. See :ref:`common-servo-limit-cycle-detection` for more details.
 
@@ -319,4 +319,3 @@ Yaw Controller Diagram
 
 .. image:: ../images/latAP.jpg
     :target: ../_images/latAP.jpg
-

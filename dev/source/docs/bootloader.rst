@@ -35,30 +35,30 @@ Use the SETUP->Install Firmware page's "Bootloader Update" button
 Flash Firmware via UART (Telem Port)
 ====================================
 
-Certain boards are capable of updating the firmware through a serial/UART connection in addition to the USB port on the autopilot. The boards capable of this will reference a UART in their respective ``ardupilot/libraries/AP_HAL_ChibiOS/hwdef/*your autopilot*/hwdef-bl.dat`` file. After verifying the board you want to flash is capable of this, navigate to the ``ardupilot/Tools/scripts`` directory. 
+Certain boards are capable of updating the firmware through a serial/UART connection in addition to the USB port on the autopilot. The boards capable of this will reference a UART in their respective ``ardupilot/libraries/AP_HAL_ChibiOS/hwdef/*your autopilot*/hwdef-bl.dat`` file. After verifying the board you want to flash is capable of this, navigate to the ``ardupilot/Tools/scripts`` directory.
 
-Within this directory is a script called ``uploader.py`` which you will use to flash the firmware. Typing ``./uploader.py --help`` will display the different arguments available to you. These will be modified depending on your specific hardware and baudrate configuration in your setup and autopilot. In this example a CubeBlack via a USB-TTL cable is used, with the baudrate set to 921600 on the Telem1 port. 
+Within this directory is a script called ``uploader.py`` which you will use to flash the firmware. Typing ``./uploader.py --help`` will display the different arguments available to you. These will be modified depending on your specific hardware and baudrate configuration in your setup and autopilot. In this example a CubeBlack via a USB-TTL cable is used, with the baudrate set to 921600 on the Telem1 port.
 
-Verify your device with a simple ``dmesg``. The output should look something like this: 
+Verify your device with a simple ``dmesg``. The output should look something like this:
 
 .. code:: bash
-         
+
          ftdi_sio 1-11.4:1.0: FTDI USB Serial Device converter detected
-         usb 1-11.4: Detected FT232RL 
-         usb 1-11.4: FTDI USB Serial Device converter now attached to ttyUSB0 
+         usb 1-11.4: Detected FT232RL
+         usb 1-11.4: FTDI USB Serial Device converter now attached to ttyUSB0
 
-Now that we know which device to utilize for flashing, execute the script with the appropriate flags. The ``--baud-bootloader-flash "921600"`` is important to speed up the upload process. If left at the default ``"57600"`` you could be waiting some time for the firmware to upload. The ``--buad-flightstack "921600"`` needs to match your ``SERIALX_BAUDRATE`` in order to send the mavlink commands for the update. Successful execution should output to the terminal like this: 
+Now that we know which device to utilize for flashing, execute the script with the appropriate flags. The ``--baud-bootloader-flash "921600"`` is important to speed up the upload process. If left at the default ``"57600"`` you could be waiting some time for the firmware to upload. The ``--buad-flightstack "921600"`` needs to match your ``SERIALX_BAUDRATE`` in order to send the mavlink commands for the update. Successful execution should output to the terminal like this:
 
-.. code:: bash 
+.. code:: bash
 
-   ./uploader.py --port /dev/ttyUSB0 --baud-bootloader-flash "921600" --baud-flightstack "921600" ~/ardupilot/build/CubeBlack/bin/arducopter.apj 
+   ./uploader.py --port /dev/ttyUSB0 --baud-bootloader-flash "921600" --baud-flightstack "921600" ~/ardupilot/build/CubeBlack/bin/arducopter.apj
    Loaded firmware for 9,0, size: 1710572 bytes, waiting for the bootloader...
    If the board does not respond within 1-2 seconds, unplug and re-plug the USB connector.
    Could not get external flash size, assuming 0
    Found board 9,0 bootloader rev 5 on /dev/ttyUSB0
    Bootloader Protocol: 5
    OTP:
-      type: Hex 
+      type: Hex
       idtype: T
       vid: 6e686365
       pid: 676f6c6f
@@ -83,4 +83,4 @@ Now that we know which device to utilize for flashing, execute the script with t
    Rebooting.
 
 
-Verify the firmware update by executing ``mavproxy.py --master /dev/ttyUSB0,921600``. 
+Verify the firmware update by executing ``mavproxy.py --master /dev/ttyUSB0,921600``.

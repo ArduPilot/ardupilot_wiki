@@ -8,7 +8,7 @@ Turtle Mode is a special mode that can be invoked either as a :ref:`flight mode 
 
 .. note::
 
-    This flight mode is available for multirotors only. 
+    This flight mode is available for multirotors only.
 
 DShot capable ESCs are required for this mode to function, allowing the DShot reverse command to be sent to the ESCs. :ref:`SERVO_DSHOT_ESC<SERVO_DSHOT_ESC>` must be set to a non-zero value and :ref:`MOT_PWM_TYPE<MOT_PWM_TYPE>` to a DSHOT value also, to allow DShot commands to be sent to the ESC.
 

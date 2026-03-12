@@ -43,7 +43,7 @@ The default RC input is configured on the UART2_RX inverted from the SBUS pin.  
 
 * FPort requires connection to TX2 . See :ref:`FPort Receivers<common-Fport-receivers>`.
 * CRSF/ELRS also requires a TX2 connection, in addition to RX2, and automatically provides telemetry.
-* SRXL2 requires a connection to TX2 and automatically provides telemetry. Set :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` to “4”. 
+* SRXL2 requires a connection to TX2 and automatically provides telemetry. Set :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` to “4”.
 
 FrSky Telemetry
 ===============
@@ -70,7 +70,7 @@ PWM outputs are grouped and every group must use the same output protocol:
 * PWM 3-4   in group2
 * PWM 5-6   in group3
 * PWM 7-10  in group4
-* PWM 11-12 in group5 
+* PWM 11-12 in group5
 * PWM 13    in group6 - LED strip
 
 Battery Monitoring

@@ -7,8 +7,8 @@ Archived:Connecting the Radio Receiver (APM2)
 .. warning::
 
     **ARCHIVED**
-    
-    The APM2.x is end of life for use with ArduPilot. 
+
+    The APM2.x is end of life for use with ArduPilot.
     This article is made available for existing users.
 
 This topic shows how to connect the RC inputs to the APM2.x controller
@@ -18,7 +18,7 @@ Connecting a Receiver
 =====================
 
 Connect your RC receiver "S" (signal) pins to the "S" pins on Inputs of
-APM using a (minimum 5 pin) 
+APM using a (minimum 5 pin)
 `jumper cable (6-pin-to-6-pin-individual-female-15cm) <http://dronefever.com/Jumper-cable-6-pin-to-6-pin-individual-female-15cm.html>`__.
 You must connect at least channels 1 ~ 5.  Channels 6 ~ 8 are optional.
 

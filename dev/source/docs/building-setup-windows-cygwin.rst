@@ -22,14 +22,14 @@ Install Cygwin
 ::
 
     setup-x86_64.exe -P autoconf,automake,ccache,cygwin32-gcc-g++,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,python37,python37-future,python37-lxml,python37-pip,libxslt-devel,python37-devel,procps-ng,zip,gdb,ddd
-    
+
 Or, for a stepped install:
 
 #. Open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and run setup-x86_64.exe"
 
 #. Accept the prompts (including default file locations) until
    you reach the *Select Packages* dialog.
-   
+
 #. Select the required packages from the thousands of available packages.
    Refer to the list below and enter each package "Name" into the Search field as shown below.
    When you have found the package, click on the **Skip** button to change it to a version number and then move onto the next package:
@@ -83,8 +83,8 @@ Or, for a stepped install:
    | ddd              | Devel \| ddd: DDD, the data display debugger                                     |
    +------------------+----------------------------------------------------------------------------------+
    | zip              | Archive \| zip: Info-ZIP compression utility                                     |
-   +------------------+----------------------------------------------------------------------------------+   
-   
+   +------------------+----------------------------------------------------------------------------------+
+
 
 #. When all the packages are selected, click through the rest of the
    prompts and accept all other default options (including
@@ -143,7 +143,7 @@ Download ArduPilot Source
 
     ::
 
-         git config --global url."https://" 
+         git config --global url."https://"
 
     to use https protocols instead of the default git:// prefix.
 
@@ -156,18 +156,18 @@ You should now be able to start the "Cygwin Terminal" application from your Wind
    .. warning::
 
       The build may fail if the file path to some files is too long.  If the build fails, please try :ref:`cloning <git-clone>` ArduPilot into a directory very high in the directory structure (i.e. ~/ardupilot).
-      
+
       If during the build process you get an error of missing packet xyz, re-check that you have installed all Cygwin packages listed above
-      
+
 Running SITL
 ============
 
-You can run SITL just as you can with any other build environment. To see the terminal, you should install VcXsrv or another X server application for Windows. You must then tell Cygwin where to look for the display by setting the DISPLAY variable. 
+You can run SITL just as you can with any other build environment. To see the terminal, you should install VcXsrv or another X server application for Windows. You must then tell Cygwin where to look for the display by setting the DISPLAY variable.
 
 ::
 
       export DISPLAY=:0.0
-      
+
 Build SITL binaries for Windows
 ===============================
 

@@ -40,7 +40,7 @@ First, its important to understand how non-reverse throttle's input to throttle 
 
     Normal Throttle Setup
 
-The throttle stick positions of low and high correspond to the calibrated values for :ref:`RC3_MIN<RC3_MIN>` and :ref:`RC3_MAX<RC3_MAX>`, respectively. When armed, these positions produce the minimum and maximum output values setup for SERVO3 and correspond to zero output and full thrust output when the ESC has been calibrated. Note that the :ref:`RC3_TRIM<RC3_TRIM>` value is not used in this case. 
+The throttle stick positions of low and high correspond to the calibrated values for :ref:`RC3_MIN<RC3_MIN>` and :ref:`RC3_MAX<RC3_MAX>`, respectively. When armed, these positions produce the minimum and maximum output values setup for SERVO3 and correspond to zero output and full thrust output when the ESC has been calibrated. Note that the :ref:`RC3_TRIM<RC3_TRIM>` value is not used in this case.
 
 The :ref:`THR_MAX<THR_MAX>` and :ref:`THR_MIN<THR_MIN>` values constrain the output values in non-Manual modes. A non-zero, positive value for :ref:`THR_MIN<THR_MIN>` might be used to keep an internal combustion engine running at low stick, but allow its cutoff in MANUAL mode. Note that these parameters are percentages of the output range.
 
@@ -73,4 +73,3 @@ Use with pilot controlled forward thrust only
 +++++++++++++++++++++++++++++++++++++++++++++
 
 The autopilot controlled reverse thrust discussed above can be used without needing to have the throttle stick evoke any reverse thrust at all. Simply set :ref:`THR_MIN<THR_MIN>` for the maximum reverse thrust and :ref:`USE_REV_THRUST<USE_REV_THRUST>` as desired, and then set :ref:`RC3_TRIM<RC3_TRIM>` =  :ref:`RC3_MIN<RC3_MIN>`. Low throttle stick will be zero thrust and above that, will only be forward thrust, however the autopilot can still command reverse thrust as needed.
-

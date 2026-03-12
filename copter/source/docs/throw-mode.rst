@@ -9,7 +9,7 @@ Once in the air, this mode does not accept any input from the pilot.  This mode 
 
 .. note::
 
-    This flight mode is available for multirotors only. 
+    This flight mode is available for multirotors only.
 
 .. warning::
 

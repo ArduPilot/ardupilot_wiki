@@ -38,8 +38,8 @@ waf can list the examples it can build:
 
 Once you have uploaded the example you can look at the output by
 attaching to the console. What the console is depends on the type of
-board. 
-On Pixhawk boards it is the USB connector. 
+board.
+On Pixhawk boards it is the USB connector.
 So just connect to the USB device with your favourite serial program (the
 baudrate doesn't matter).
 
@@ -63,13 +63,13 @@ Certain sketches can also be run in SITL. For example to run the protocol decode
     cd $ARDUPILOT_HOME # the top-level of an ArduPilot repository
     ./waf configure --board sitl
     ./waf build --target examples/RCProtocolDecoder
-    
+
 To start the sketch, run it directly:
 
 ::
 
      ./build/sitl/examples/RCProtocolDecoder -M quad -C
-     
+
 
 Understanding the example sketch code
 =====================================

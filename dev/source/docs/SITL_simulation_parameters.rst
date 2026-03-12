@@ -29,7 +29,7 @@ SITL-specific parameters start with ``SIM_``, and can be obtained using:
    A table of user settable SITL-specific parameters can be found in `SITL.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/SITL/SITL.cpp>`__
    When you change a parameter the value remains in the virtual EEPROM
    after you restart SITL. Remember to change it back if you don't want it
-   any more (or :ref:`reload/reset the parameters <using-sitl-for-ardupilot-testing_loading_a_parameter_set>`). 
+   any more (or :ref:`reload/reset the parameters <using-sitl-for-ardupilot-testing_loading_a_parameter_set>`).
 
 
 Changing the speed of the simulation
@@ -59,7 +59,7 @@ You can re-load the parameters later if you choose, or revert to the
 default parameters by starting SITL (**sim_vehicle.py**) with the
 ``-w`` flag.
 
-.. note:: You may have to load them again, after typing ``param fetch``, in order to load parameters that require enabling before presenting their parameter set.  And, in some cases, you may even need to restart SITL in order for some new parameters, such as output function changes, to take effect. This can be avoided if you add the parameter file during the start of SITL with the "--add-param-file=*pathtofile* "....ie: sim_vehicle.py -f flightaxis:192.168.x.x - -map - -console --add-param-file=*pathtofile* -w. This adds the param file as a default and then wipes any previous param changes that may exist back to the defaults. 
+.. note:: You may have to load them again, after typing ``param fetch``, in order to load parameters that require enabling before presenting their parameter set.  And, in some cases, you may even need to restart SITL in order for some new parameters, such as output function changes, to take effect. This can be avoided if you add the parameter file during the start of SITL with the "--add-param-file=*pathtofile* "....ie: sim_vehicle.py -f flightaxis:192.168.x.x - -map - -console --add-param-file=*pathtofile* -w. This adds the param file as a default and then wipes any previous param changes that may exist back to the defaults.
 
 Parameters can also be saved. For example, to save the parameters in a file in the present working directory:
 
@@ -186,7 +186,7 @@ A quick way to test compass calibration in SITL is with the
 
 then do:
 
-:: 
+::
 
    servo set 5 1250
 

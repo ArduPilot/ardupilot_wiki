@@ -27,7 +27,7 @@ perform an automated landing there.
 .. figure:: ../../../images/mp_flight_plan_with_three_rally_points.jpg
    :target: ../_images/mp_flight_plan_with_three_rally_points.jpg
 
-   A flight plan with Rally Points. Rally Points are denoted with Purpleplace markers. 
+   A flight plan with Rally Points. Rally Points are denoted with Purpleplace markers.
    Mousing over a Rally Point will give its loiter altitude(as in the middle point above).
 
 Setting Up Rally Points
@@ -39,20 +39,20 @@ The following steps are for specifying Rally Points in Mission Planner:
    right click on the Flight Plan map, and select Rally Points > Set
    Rally Point on the resulting pop-up menu (note that this ONLY work in
    the Flight Plan screen, not the Flight Data screen):
-   
+
    .. image:: ../../../images/mp_rally_point_dialog.jpg
        :target: ../_images/mp_rally_point_dialog.jpg
-    
+
 #. The Rally loiter altitudes need to be specified (note that the
    default altitude for Rally Points is the default waypoint altitude
    value and is relative to the home location):
 
    .. image:: ../../../images/mp_rally_altitude_dialog.jpg
        :target: ../_images/mp_rally_altitude_dialog.jpg
-       
+
    .. image:: ../../../images/defaultAltCircled1.png
        :target: ../_images/defaultAltCircled1.png
-    
+
 #. Repeat for all desired Rally points!
 #. Upload to the vehicle by selecting Rally Points > Upload from the
    right-click popup menu
@@ -70,9 +70,9 @@ The following should be considered when using Rally Points:
 #. On Plane, loiter radius for a Rally Point is the same as all other
    loiter points; determined by the :ref:`WP_LOITER_RAD <WP_LOITER_RAD>`
    parameter.
-#. The :ref:`RTL_ALTITUDE <RTL_ALTITUDE>` or 
-   :ref:`RTL_ALT_M<RTL_ALT_M>` parameters are NOT used with Rally Points! 
-   The aircraft will transit to the Rally Point at the altitude 
+#. The :ref:`RTL_ALTITUDE <RTL_ALTITUDE>` or
+   :ref:`RTL_ALT_M<RTL_ALT_M>` parameters are NOT used with Rally Points!
+   The aircraft will transit to the Rally Point at the altitude
    specified when adding that point.
 
 The following MAVLink parameters control Rally Point behavior:
@@ -101,7 +101,7 @@ Example Flight
 
    Flight in which RTL was commanded nearwaypoint. Plane began loitering about the southernmost RallyPoint.
 
-   
+
 .. figure:: ../../../images/mp_rally_point_dialog.jpg
    :target: ../_images/mp_rally_point_dialog.jpg
 
@@ -117,5 +117,3 @@ The RALLY fields present in a rally point file are as follows:
 - Lon: Longitude of Rally Point
 - Alt: AGL altitude of Rally Point.
 - Altitude Reference Frame: for ALT value: Relative to Home, above Terrain, or Absolute ASL.
-
-

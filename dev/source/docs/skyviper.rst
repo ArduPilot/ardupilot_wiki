@@ -255,7 +255,7 @@ To test a transmitter you need to boot it into test mode for the right test stat
    test station 7 = right stick fully down
    test station 8 = right stick fully right
 
-When you startup in factory test mode the transmitter will play a different buzzer tune, and will bind immediately with the receiver. 
+When you startup in factory test mode the transmitter will play a different buzzer tune, and will bind immediately with the receiver.
 You can then do rapid testing on the Transmitter tab of the status page on the web interface at ``http://192.168.99.1/status.html``.
 Each test station uses a different set of channels, so are unlikely to interfere with each other.
 
@@ -263,7 +263,7 @@ Each test station uses a different set of channels, so are unlikely to interfere
 Log Files
 =========
 
-DataFlash logs are stored on the microSD card of the Sonix in the DATAFLASH directory. You can access them via the filesystem interface of the web interface. In order to enable logging while Disarmed, go to the web interface Flight Parameters page, select Logging, in the drop-down, and set LOG_DISARMED to 1:ENABLED. 
+DataFlash logs are stored on the microSD card of the Sonix in the DATAFLASH directory. You can access them via the filesystem interface of the web interface. In order to enable logging while Disarmed, go to the web interface Flight Parameters page, select Logging, in the drop-down, and set LOG_DISARMED to 1:ENABLED.
 
 Logs are binary files and can be viewed in several log viewers, including MissionPlanner.
 

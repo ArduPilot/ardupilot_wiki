@@ -62,7 +62,7 @@ Example launch.json File
     //     sim_vehicle.py : use '-D', `./Tools/autotest/sim_vehicle.py -v Copter -D --speedup 1 --console --map`
     //     waf            : use `--debug`, `./waf configure --board=sitl --debug`
     //
-    // The examples below are given for plane and copter vehicle types. To create profiles for other vehicles 
+    // The examples below are given for plane and copter vehicle types. To create profiles for other vehicles
     // change the "name" field & "program" field to the desired vehicle
 
     {
@@ -180,7 +180,7 @@ Example launch.json File
             },
 
         // Autotest Debugging Profile
-        // 
+        //
         // Note: This profile does not auto-attach to the correct vehicle binary as the autotest automatically opens & closes new instances of SITL.
         //       In order to debug the C++ code at the same time as the Python autotest code create a debug point in the Python code before the relevant C++ will be called.
         //       Then attach to the vehicle binary using the "Attach" profile. Now that the C++ executable has been attached to GDB you may continue in the Python debugger.
@@ -244,4 +244,4 @@ The ``Launch`` profiles allow debugging of the binaries directly for initializat
 
 Autotest Debugging Profile
 --------------------------
-This profile does not auto-attach to the correct vehicle binary as the autotest automatically opens & closes new instances of SITL. In order to debug the C++ code at the same time as the Python autotest code create a debug point in the Python code before the relevant C++ will be called. Then attach to the vehicle binary using the "Attach" profile. Now that the C++ executable has been attached to GDB you may continue in the Python debugger. 
+This profile does not auto-attach to the correct vehicle binary as the autotest automatically opens & closes new instances of SITL. In order to debug the C++ code at the same time as the Python autotest code create a debug point in the Python code before the relevant C++ will be called. Then attach to the vehicle binary using the "Attach" profile. Now that the C++ executable has been attached to GDB you may continue in the Python debugger.

@@ -26,7 +26,7 @@ Parameters
 Videos
 ------
 
-..  youtube::  G6BuZuNi5Og   
+..  youtube::  G6BuZuNi5Og
     :width: 100%
 
 *box boat performing pivot turns*

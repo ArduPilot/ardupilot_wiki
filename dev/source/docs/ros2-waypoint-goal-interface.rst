@@ -4,7 +4,7 @@
 Goal Interface - Waypoints ROS2
 ====================================
 
-This page shows how to set up ROS 2 DDS with ArduPilot SITL for global position control. 
+This page shows how to set up ROS 2 DDS with ArduPilot SITL for global position control.
 
 .. note::
 
@@ -135,7 +135,7 @@ Here's a quick video showcasing the results expected from this tutorial:
 ..  youtube:: SHHw190RaHc
     :width: 100%
 
-..  youtube:: FnChCmwBbHA 
+..  youtube:: FnChCmwBbHA
     :width: 100%
 
 For more information, refer to this `PR <https://github.com/ArduPilot/ardupilot/pull/25722>`__.

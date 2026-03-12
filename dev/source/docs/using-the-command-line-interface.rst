@@ -12,9 +12,9 @@ Using the Command Line Interface
    regular MAVLink commands in the GCSs. This article has been moved to the
    dev wiki and may be considered deprecated.
 
-MOVE ALL THE CLI INFO TO THIS PAGE 
+MOVE ALL THE CLI INFO TO THIS PAGE
 
-ALSO Mission Planer Terminal 
+ALSO Mission Planer Terminal
 
 Overview
 ========

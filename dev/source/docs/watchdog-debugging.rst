@@ -46,4 +46,3 @@ Certain faults will fill the Function Level Reset (FLR) register with the addres
   - Try addr2line
   - disassemble the binary:
     arm-none-eabi-objdump --demangle --disassemble-all --full-contents --all-headers
-

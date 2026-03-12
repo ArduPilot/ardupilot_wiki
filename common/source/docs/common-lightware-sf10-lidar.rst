@@ -9,7 +9,7 @@ Although slightly more expensive than other rangefinders, members of the dev tea
 The series includes a number of models:
 `SF10/A <http://pixhawkstore.com.au/sf10-a-lightware-25m-laser-altimeter/>`__ (25m),
 `SF10/B <http://pixhawkstore.com.au/sf10-b-lightware-50m-laser-altimeter/>`__ (50m),
-SF10/C (100m) and 
+SF10/C (100m) and
 `SF11/C <https://lightware.co.za/collections/lidar-rangefinders/products/sf11-c-120-m>`__ (120m)
 
 \ |SF10-B|
@@ -55,7 +55,7 @@ following parameters in the case of the first rangefinder(this is done in the *M
 **Config/Tuning \| Full Parameter List** page):
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
--  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud) 
+-  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud)
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 8 (LightWareSerial)
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1
 -  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.05

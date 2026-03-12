@@ -1,4 +1,4 @@
-.. _sailboat-modes: 
+.. _sailboat-modes:
 
 =====
 Modes
@@ -8,15 +8,15 @@ This outlines the differences in sailboat behavior from the standard Rover :ref:
 
 Manual
 ------
-Sail position is directly controlled by throttle position. Minimum throttle is sail fully in, maximum throttle 
-is sail fully released. You may find the controller disarms when tacking to the left travelling upwind with the 
+Sail position is directly controlled by throttle position. Minimum throttle is sail fully in, maximum throttle
+is sail fully released. You may find the controller disarms when tacking to the left travelling upwind with the
 sails tight. If this is an issue disable :ref:`stick disarming <ARMING_RUDDER>`.
 
 ACRO
 ----
 The Sail is automatically trimmed to the wind direction using the wind vane. A tack can be triggered from an aux
 switch; the vehicle will match its current angle to the true wind on the new tack. Note that the vehicle will only
-try to sail if the operator is requesting some forward speed with the throttle input. With 0 throttle input the vehicle 
+try to sail if the operator is requesting some forward speed with the throttle input. With 0 throttle input the vehicle
 will let out its sail in a attempt to stop.
 
 Loiter

@@ -42,7 +42,7 @@ Specifications
    -  MIPI (CSI-2) 4-lanes + 1 lane connector
    -  microSD memory card slot
    -  M.2 connector 1 lane PCIe for SSD
-    
+
 -  **Dimensions**
 
    -  Weight: 30g (without heatsink, 60g (with heatsink)

@@ -34,7 +34,7 @@ An experimental firmware version can be built for any autopilot by:
 
 Here is a video illustrating the entire process:
 
-.. youtube:: VhCXEKIkrjo 
+.. youtube:: VhCXEKIkrjo
 
 Testing
 =======
@@ -76,18 +76,18 @@ This sets up the required parameters a user would normally have to enter into th
 - Run the 'script remoteid.scr' command to load the script...you should see it announce that it has loaded the OpenDroneID module and other commands in the console
 - Set the following params:
 
-  - :ref:`DID_ENABLE<DID_ENABLE>` 1 
-  - :ref:`DID_OPTIONS<DID_OPTIONS>` 1 
+  - :ref:`DID_ENABLE<DID_ENABLE>` 1
+  - :ref:`DID_OPTIONS<DID_OPTIONS>` 1
   - :ref:`DID_MAVPORT<DID_MAVPORT>` X  where x is the serial port attached to OpenDroneID module
   - :ref:`DID_CANDRIVER<DID_CANDRIVER>` 0
-  - :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` 3 
+  - :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` 3
   - :ref:`GPS1_TYPE<GPS1_TYPE>` 1
   - :ref:`GPS2_TYPE<GPS2_TYPE>` 0
 
 - If its a CAN module these parameters should be substituted:
 
 
-  - :ref:`DID_MAVPORT<DID_MAVPORT>` -1 
+  - :ref:`DID_MAVPORT<DID_MAVPORT>` -1
   - :ref:`DID_CANDRIVER<DID_CANDRIVER>` 1
 
 
@@ -123,6 +123,3 @@ Using Mission Planner as the GCS
 ================================
 
 Mission Planner has a special Drone ID tab in its DATA view for use with OpenDroneID modules attached to the autopilot which allows monitoring status, attaching the required GPS for operator location of the GCS, and UAS and Operator ID string setup. See :ref:`planner:opendroneid`.
-
-
-

@@ -24,7 +24,7 @@ Specifications
 
 -  **Processor**
 
-   -  STM32H743 32-bit processor 
+   -  STM32H743 32-bit processor
 
 -  **Sensors**
 
@@ -77,7 +77,7 @@ both of the ESC connectors.
 RC Input
 ========
 
-The R6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The R6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the R6 pin can also be configured to be used as true UART RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL6 port's RX input pin.
 
@@ -99,7 +99,7 @@ FrSky Telemetry
 ===============
 
 FrSky Telemetry is supported using the Tx pin of any UART including SERIAL6/UART6 . You need to set the following parameters to enable support for FrSky S.PORT (example shows SERIAL6). Note this assumes the RC input is using default (:ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 0). Obviously, if using :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1 for full duplex RC prtocols, you must a different UART for FrSky Telemetry.
- 
+
   - :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` 10
   - :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` 7
 
@@ -127,7 +127,7 @@ to use DShot.
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX)
 
 LED Output
 ==========

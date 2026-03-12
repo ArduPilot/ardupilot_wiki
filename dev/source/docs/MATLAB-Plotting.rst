@@ -7,18 +7,18 @@ MATLAB Real Time Plotting
 .. youtube:: m_cmR_wLe5c
     :width: 100%
 
-The same high speed MATLAB UDP connection implemented for SITL can also be used to stream data from ArduPilot to MATLAB. 
-This allows real-time plotting and calculations to be done in MATLAB. This is only a one-way link, data cannot be passed 
-back to ArduPilot. ArduPilot can be using any of its `Simulation backends <https://youtu.be/YbOZWb8pddk>`__, including 
-MATLAB or Simulink provided they are running in a second MATLAB instance. This method can be used to short-cut any analysis 
+The same high speed MATLAB UDP connection implemented for SITL can also be used to stream data from ArduPilot to MATLAB.
+This allows real-time plotting and calculations to be done in MATLAB. This is only a one-way link, data cannot be passed
+back to ArduPilot. ArduPilot can be using any of its `Simulation backends <https://youtu.be/YbOZWb8pddk>`__, including
+MATLAB or Simulink provided they are running in a second MATLAB instance. This method can be used to short-cut any analysis
 that would previously require a SITL test flight and log analysis.
 
-To avoid lag the data must be processed by MATLAB fast enough that the input buffer remains empty. A common use case for 
-such a tool is to prototype a function. Once the function is working as expected in MATLAB it can be manually translated 
-in to C++ and run natively within ArduPilot. The c++ result can then be included in the data streamed to MATLAB to be 
-compared with the prototype implementation. 
+To avoid lag the data must be processed by MATLAB fast enough that the input buffer remains empty. A common use case for
+such a tool is to prototype a function. Once the function is working as expected in MATLAB it can be manually translated
+in to C++ and run natively within ArduPilot. The c++ result can then be included in the data streamed to MATLAB to be
+compared with the prototype implementation.
 
-Minimal changes are required to ArduPilot. Firstly the socket library must be included in the header file associated with 
+Minimal changes are required to ArduPilot. Firstly the socket library must be included in the header file associated with
 the cpp of interest. A socket private variable is then defined. For example:
 
 ::
@@ -31,8 +31,8 @@ the cpp of interest. A socket private variable is then defined. For example:
   };
 
 
-In the function of interest the data of is then assembled into a structure and sent out over UDP. Note that the structure 
-must be aligned, the simplest way to achieve this is to used the same variable types. The IP and port number should be set 
+In the function of interest the data of is then assembled into a structure and sent out over UDP. Note that the structure
+must be aligned, the simplest way to achieve this is to used the same variable types. The IP and port number should be set
 to match those used in MATLAB.
 
 ::
@@ -84,7 +84,3 @@ The MATLAB code to receive the data would be as follows, the TCP/UDP/IP Toolbox 
     % do something interesting here
 
   end
-
-
-
-

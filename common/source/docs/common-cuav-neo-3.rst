@@ -17,18 +17,18 @@ Key Features
 ============
 
 -  **Processor**
-  
+
    -  STM32F412
-   
+
 -  **Sensors**
-  
+
    -  Compass:IST8310
    -  Barometer:MS5611
-   
+
 -  **RTK Receiver**
 
    -  Ublox M9N
- 
+
 -  **GNSS Bands**
 
    - GPS/QZSS L1 C/A,GLONASS L10F ,BeiDou B1I,Galileo E1B/C,SBAS L1 C/A: WAAS, EGNOS, MSAS, GAGAN
@@ -40,47 +40,47 @@ Key Features
 -  **Number of satellites(MAX)**
 
    - Up to 32
-   
+
 -  **Nav. update rate**
 
    - RTK Up to 25HZ
-   
+
 -  **Position accuracy**
 
    - Up to 1.5M
-   
+
 -  **Acquisition**
 
    - Cold starts 24 s
    - Aided starts 2 s
    - Reacquisition 2 s
-   
+
 -  **Sensitivity**
 
    - Tracking & Nav -167 dBm
-   - Cold starts -148 dBm 
+   - Cold starts -148 dBm
    - Reacquisition -160 dBm
-   
+
 -  **Protocol**
 
    - UART+I2C+IO
 
 -  **Interface Type**
-  
+
    - GHR-10V-S
-   
+
 -  **Input voltage**
 
    - 5V
-   
+
 -  **Operating temperature**
 
    - -10~70℃
-   
+
 -  **Size**
 
    - 60x60x16mm
-   
+
 -  **Weight**
 
    - 33g

@@ -23,13 +23,13 @@ Download the appropriate beta firmware from `firmware.ardupilot.org <https://fir
 
  - `TradHeli-3.6-beta for Pixhawks including Cube/Pixhawk 2.1 (CubePilot CubeBlack) <https://firmware.ardupilot.org/Copter/beta/fmuv3-heli/arducopter.apj>`__
  - `TradHeli-3.6-beta for Pixracers boards <https://firmware.ardupilot.org/Copter/beta/fmuv4-heli/arducopter.apj>`__
- 
+
  - `Rover-3.3-beta for Pixhawks including Cube/Pixhawk 2.1 (CubePilot CubeBlack) <https://firmware.ardupilot.org/Rover/beta/fmuv3/ardurover.apj>`__
  - `Rover-3.6-beta for Pixracers boards <https://firmware.ardupilot.org/Rover/beta/fmuv4/ardurover.apj>`__
 
 Uploading as Custom Firmware
 ============================
- 
+
 - connect the ground station PC to the autopilot using a USB cable
 - select the COM port and baud rate (normally 115200) for the board.  If using the Mission Planner these are selected on the top right of the screen.  Do **not** press the Connect button
 - go to the GCS's firmware install screen.  If using the Mission Planner select "Initial Setup >> Install Firmware"

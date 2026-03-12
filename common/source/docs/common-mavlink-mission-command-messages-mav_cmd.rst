@@ -165,7 +165,7 @@ Commands supported by Copter
 ============================
 
 This list of commands was inferred from the command handler in
-`/ArduCopter/mode_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_auto.cpp#L388>`__. 
+`/ArduCopter/mode_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_auto.cpp#L388>`__.
 
 - :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
 - :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
@@ -215,7 +215,7 @@ Commands supported by Sub
 =========================
 
 This list of commands was inferred from the command handler in
-`/ArduSub/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduSub/commands_logic.cpp#L7>`__. 
+`/ArduSub/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduSub/commands_logic.cpp#L7>`__.
 
 - :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
 - :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
@@ -262,7 +262,7 @@ Commands supported by Plane
 ===========================
 
 This list of commands was inferred from the command handler in
-`/ArduPlane/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/commands_logic.cpp#L33>`__. 
+`/ArduPlane/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/commands_logic.cpp#L33>`__.
 
 - :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
 - :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
@@ -318,7 +318,7 @@ Commands supported by Rover
 ===========================
 
 This list of commands was inferred from the command handler in
-`/Rover/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/commands_logic.cpp#L25>`__. 
+`/Rover/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/commands_logic.cpp#L25>`__.
 
 - :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
 - :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
@@ -706,7 +706,7 @@ Supported by:  Plane  (not Copter or Rover). Specifically QuadPlanes.
 Takeoff while in VTOL mode.
 
 The vehicle will climb straight up from it’s current location to the
-specified altitude as a delta above its current altitude. 
+specified altitude as a delta above its current altitude.
 
 However, if :ref:`Q_OPTIONS<Q_OPTIONS>` bit 3 is set (use altitude reference frames for VTOL takeoff), then the altitude value (in the specified reference frame) will be used for the target altitude, instead of a delta above the current altitude. If the command is begun while the vehicle is already flying, the vehicle will climb straight up to the specified altitude, if
 the vehicle is already above the altitude the command will be ignored
@@ -1140,7 +1140,7 @@ complete. If zero is specified for a latitude/longitude/altitude
 parameter then the current location value for the parameter will be
 used. You can also specify the radius and direction for the loiter. Once
 time has elapsed, continue to loiter until heading
-points to next nav waypoint. If XTrack Tangent param = gb1, proceed directly to next waypoint, otherwise, track to 
+points to next nav waypoint. If XTrack Tangent param = gb1, proceed directly to next waypoint, otherwise, track to
 the path in a line between the waypoint centers.
 
 
@@ -1703,7 +1703,7 @@ wait (hover) for a specified time before proceeding to the next command.
 
 The Spline commands take all the same arguments are regular waypoints
 (lat, lon, alt, delay) but when executed the vehicle will fly smooth
-paths (both vertically and horizontally) instead of straight lines. 
+paths (both vertically and horizontally) instead of straight lines.
 Spline waypoints can be mixed with regular straight-line waypoints as
 shown in the screenshot below.
 
@@ -1917,7 +1917,7 @@ Loiter while climbing/descending to an altitude.
 Begin loitering at the specified Latitude and Longitude. If Lat=Lon=0, then
 loiter at the current position. Don't consider the navigation command
 complete (don't leave loiter) until the altitude has been reached. Continue to loiter until heading
-points to next nav waypoint. If XTrack Tangent param =1, proceed directly to next waypoint, otherwise, track to 
+points to next nav waypoint. If XTrack Tangent param =1, proceed directly to next waypoint, otherwise, track to
 the path in a line between the waypoint centers.
 
 
@@ -3392,8 +3392,8 @@ sequence of mission items that represents a landing starts. It may also
 be sent via a ``COMMAND_LONG`` to trigger a landing, in which case the
 nearest (geographically) landing sequence in the mission will be used.
 
-If ``RTL_AUTOLAND`` is set to 2, the plane will jump to the nearest 
-``DO_LAND_START`` in the mission table when RTL is initialized. 
+If ``RTL_AUTOLAND`` is set to 2, the plane will jump to the nearest
+``DO_LAND_START`` in the mission table when RTL is initialized.
 
 .. note::
 
@@ -4026,7 +4026,7 @@ MAV_CMD_DO_SET_CAM_TRIGG_DIST
 Supported by: All vehicles.
 
 Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>` at
-regular distance intervals. This command is useful in :ref:`camera survey missions <common-camera-control-and-auto-missions-in-mission-planner>`. 
+regular distance intervals. This command is useful in :ref:`camera survey missions <common-camera-control-and-auto-missions-in-mission-planner>`.
 To trigger the camera once, immediately after passing the DO command, set param3 to 1.
 
 .. note::

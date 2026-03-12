@@ -65,7 +65,7 @@ DroneNet Setup
 
 The DroneNet's parameters can be set using Mission Planner's DroneCAN screen or the :ref:`DroneCAN GUI tool <common-uavcan-gui>`.  The following instructions assume Mission Planner is used:
 
-- Connect to the AutoPilot with Mission Planner 
+- Connect to the AutoPilot with Mission Planner
 - Open the Setup, Optional Hardware, DroneCAN/UAVCAN screen
 - From the top-left drop-down select MAVLinkCAN1 (or MAVLinkCAN2 if the autopilot's CAN2 is used)
 - Press "Connect" and the table should be populated with the available DroneCAN devices including "org.ardupilot.BotBloxDroneNet"

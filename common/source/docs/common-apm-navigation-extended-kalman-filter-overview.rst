@@ -23,7 +23,7 @@ If the autopilot has two (or more) IMUs available, two EKF "cores" (i.e. two ins
 At any one time, only the output from a single EKF core is ever used, that core being the one that reports the best health which is determined by the consistency of its sensor data.
 
 Most users should not need to modify any EKF parameters, but the information below provides some information on those parameters that are most commonly changed.
-More detailed information can be found on the :ref:`developer EKF wiki page <dev:extended-kalman-filter>`. 
+More detailed information can be found on the :ref:`developer EKF wiki page <dev:extended-kalman-filter>`.
 
 Should the EKF2 or EKF3 be used?
 ================================
@@ -84,7 +84,7 @@ Controls how GPS is used.
 -  3 : no GPS (will use :ref:`optical flow <copter:common-optical-flow-sensors-landingpage>` only if available)
 
 :ref:`EK3_YAW_M_NSE <EK3_YAW_M_NSE>`: Controls the weighting between GPS and Compass when calculating the heading.  Default is "0.5", lower values will cause the compass to be trusted more (i.e. higher weighting to the compass)
-   
+
 As mentioned above, a more detailed overview of EKF theory and tuning parameters is available on the developer wiki's :ref:`Extended Kalman Filter Navigation Overview and Tuning <dev:extended-kalman-filter>`.
 
 [site wiki="plane"]

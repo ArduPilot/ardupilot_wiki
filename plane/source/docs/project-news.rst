@@ -37,7 +37,7 @@ Older Releases
    support for Pixhawk.
 -  November 5, 2013: Plane 2.76 released. Bug fixes and a few new features.
 -  October 28, 2013: Plane 2.75 released. New features, performance improvements and bug fixes.
--  July 15, 2013: Plane 2.74 released. Significant performance improvements. 
+-  July 15, 2013: Plane 2.74 released. Significant performance improvements.
    Details `here <https://diydrones.com/forum/topics/apm-plane-2-74-released>`__.
 -  June 2013: Plane codebase renamed Plane to reflect support of
    multiple hardware platforms, including PX4

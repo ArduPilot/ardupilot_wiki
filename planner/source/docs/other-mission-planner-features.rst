@@ -47,8 +47,8 @@ the menu:
 -  Mission Planner can be scripted - see :ref:`Using Python Scripts in Mission Planner <using-python-scripts-in-mission-planner>`
    (planner wiki)
 
-   
-   
+
+
 .. toctree::
     :maxdepth: 1
 

@@ -18,7 +18,7 @@ Specifications
 
 -  **Processor**
 
-   -  STM32H743 32-bit processor 
+   -  STM32H743 32-bit processor
    -  AT7456E OSD
    -  16 MByte flash for logging
 
@@ -89,7 +89,7 @@ BAT               Battery positive voltage (3S-6S)
 M1                Motor signal output 1
 M2                Motor signal output 2
 M3                Motor signal output 3
-M4                Motor signal output 4 
+M4                Motor signal output 4
 R3                UART3 RX
 CURT              Current sesonr input
 =============     =================================================
@@ -169,7 +169,7 @@ to use DShot.
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX)
 
 
 LED Output

@@ -1,6 +1,6 @@
 .. _roadmap:
 
-**ARCHIVED**   
+**ARCHIVED**
 
 =====================
 RoadMap for 2020/2021
@@ -35,17 +35,17 @@ Copter
   - Include velocity error limits based on accel saturation (Leonard)
   - Handle EKF reset for the position correctly (Leonard)
   - Baseline Velocity input (Leonard)
-  
+
 - S-Curve
   - Concept demonstrator done. Implementation needed. (Leonard)
-		
+
 - Guided Mode
   - Input shaped using FF (Leonard)
-		
+
 - AutoTune
   - Add tuning type to PID object (Bill Geyer)
-  
-  
+
+
 Plane
 --------------------------
 
@@ -55,7 +55,7 @@ Plane
 - Plane architectural improvements (aka “the onion” v2)
 - Possibly switch to copter PID controllers
 - QuadPlane flat/spoiler control (MichaelDB)
-  
+
 
 Rover & Boat
 ------------
@@ -158,7 +158,7 @@ Documentation
 - Tuning/Fltr Copter to QuadPlane (Henry) -- **COMPLETE**
 
 
-Miscellaneous 
+Miscellaneous
 -------------
 
 - FrSky Sensors to act as a battery monitor, airspeed sensor, etc (ChrisB)

@@ -73,7 +73,7 @@ For the H743 Pro the outputs are in 7 groups:
 * M 5,6     in group2
 * M 7,8    in group3
 * S 1,2    in group4
-* S 3,4    in group5 
+* S 3,4    in group5
 * OSD    in group 6
 * LED    in group 7
 
@@ -81,7 +81,7 @@ For the H743 the outputs are in 6 groups:
 * M 1-4     in group1
 * M 5-8     in group2
 * S 1,2    in group3
-* S 3,4    in group4 
+* S 3,4    in group4
 * OSD    in group 5
 * LED    in group 6
 
@@ -96,7 +96,7 @@ sensor can read up to 130 Amps. The voltage sensor can handle up to 12S LiPo bat
 
 The correct battery setting parameters are:
 * :ref:`BATT_MONITOR<BATT_MONITOR>` 4
-* :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 11 
+* :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 11
 * :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 10
 * :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 16.0
 * :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 83.3

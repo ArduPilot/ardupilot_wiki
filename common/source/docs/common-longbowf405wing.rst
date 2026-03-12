@@ -62,11 +62,11 @@ receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 
 * SERIAL0 -> USB
 * SERIAL1 -> USART1 (User) (DMA capable)
-* SERIAL2 -> USART2 (RX tied to inverted SBUS RC input, but can be used as normal UART if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1) 
+* SERIAL2 -> USART2 (RX tied to inverted SBUS RC input, but can be used as normal UART if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1)
 * SERIAL3 -> UART3 (GPS) (TX DMA capable)
 * SERIAL4 -> UART4 (User) (TX DMA capable)
 * SERIAL5 -> UART5 (DisplayPort, available on DJI air unit connector) (TX DMA capable)
-* SERIAL6 -> UART6 (tied to internal wireless module, MAVLink2 telem) 
+* SERIAL6 -> UART6 (tied to internal wireless module, MAVLink2 telem)
 
 RC Input
 ========
@@ -84,7 +84,7 @@ The LongBowF405WING supports using its internal OSD using OSD_TYPE 1 (MAX7456 dr
 PWM Output
 ==========
 
-The LongBowF405WING supports up to 12 PWM outputs . 
+The LongBowF405WING supports up to 12 PWM outputs .
 All outputs support DShot.
 
 The PWM is in 5 groups:
@@ -94,7 +94,7 @@ The PWM is in 5 groups:
 * PWM 3,4 in group2
 * PWM 5-6 in group3
 * PWM 7-9 in group4
-* PWM 10-12 in group5 
+* PWM 10-12 in group5
 
 Channels within the same group need to use the same output rate. If
 any channel in a group uses DShot then all channels in that group would need

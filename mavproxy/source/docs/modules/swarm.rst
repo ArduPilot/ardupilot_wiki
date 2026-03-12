@@ -7,7 +7,7 @@ Swarm
 .. code:: bash
 
     module load swarm
-    
+
 This module is a GUI for managing swarms of vehicles (typically 2-10 vehicles).
 
 It allows individual or group-based simultaneous control of swarm members.
@@ -26,4 +26,3 @@ The GUI itself allows:
 - Kill-switch to immediately disarm
 
 .. image:: ../../images/swarm.png
-

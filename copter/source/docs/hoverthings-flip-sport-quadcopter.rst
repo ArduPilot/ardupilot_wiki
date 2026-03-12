@@ -55,7 +55,7 @@ What to get
 
    .. image:: ../../../images/3281_dimg2.jpg
        :target: ../_images/3281_dimg2.jpg
-   
+
 #. `Two tabbed center sections <http://www.hoverthings.com/flip4tabblack>`__ and *eight 7/8" standoffs* (e.g. `similar to these <http://hoverthings.com/standoff-nylon-f-f/>`__).
 #. Four DJI motors for Flamewheel from `Amain Hobby <https://www.amainhobbies.com/dji-multirotor-replacement-brushless-motor-dji-motor01/p235238>`__
    for $24.00 each.
@@ -185,7 +185,7 @@ Installing the PX4FMU/PX4IO autopilot
 #. Connect the buzzer and "Safety" button leads to the PX4FMU/PX4IO boards.
 #. Install the ESC's signal leads into the PX4IO board servo connectors
    (signal wire on top).
-#. 
+#.
 
    #. Red wire = right pins, Orange = 2nd from right, White = 3rd from
       right (with red and black below) and Brown = 4 from right.
@@ -263,4 +263,3 @@ Setup and additions
    trying (unsuccessfully) to cut down a 80' bull pine tree with them.
 #. This little copter is very high performance, fully acrobatic,
    surprisingly efficient and nearly indestructible and it is a blast to fly.
-

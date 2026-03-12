@@ -18,7 +18,7 @@ Specifications
    -  5V
    -  4A Minimum
    -  Depends on Usage and Peripherals
- 
+
 -  **Other**
 
    -  `Pixhawk Autopilot Bus (PAB) Form Factor <https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf>`__

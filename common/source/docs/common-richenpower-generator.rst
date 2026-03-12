@@ -69,7 +69,7 @@ Start-up procedure:
    - If using Mission Planner, the generator display should show "Run Status WarmingUp"
    - GCS HUD should display, "PreArm: Generator: warming up (100%)"
    - If using Mission Planner, the generator display should show "Run Status Generating"
-   - Generator should increase to full throttle 
+   - Generator should increase to full throttle
 
 - Arm and takeoff
 

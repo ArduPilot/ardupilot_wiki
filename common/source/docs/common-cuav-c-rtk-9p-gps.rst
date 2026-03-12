@@ -16,58 +16,58 @@ This description uses the Mission Planner for setup, but you can also use Qgroun
 Key Features
 ============
 
-- RTK Receiver: Ublox F9P 
+- RTK Receiver: Ublox F9P
 
 - Compass : IST8310
 
 -  **GNSS**
 
    -  GPS / QZSS,Beidou,Galileo, GLONASS
-   
+
 -  **GNSS Bands**
 
    -  GPS L1C/A L2C, GLONASS L1OF L2OF, GALILEO E1B/C E5b, BDS B1I B2I, QZSS L1C/A L2C
-   
+
 -  **Nav. update rate**
 
    -  RTK Up to 20HZ
-   
--  **Position accuracy** 
- 
+
+-  **Position accuracy**
+
    -  RTK 0.01 m + 1 ppm CEP
-   
+
 -  **Convergence time**
 
    -  RTK < 10 sec
-   
+
 -  **Acquisition**
 
    -  Cold starts 24 s
    -  Aided starts 2 s
    -  Reacquisition 2 s
-   
+
 -  **Sensitivity**
 
    -  Tracking & Nav -167 dBm
-   -  Cold starts -148 dBm 
+   -  Cold starts -148 dBm
    -  Hot starts -157 dBm
    -  Reacquisition -160 dBm
-   
+
 -  **Anti-jamming**
 
    -  Active CW detection and removal Onboard band pass ﬂter
-   
+
 -  **Anti-spoofng**
 
    -  Advanced anti-spoofng algorithms
-   
+
 -  **Interfaces**
 
-   -  2 UART 
+   -  2 UART
    -  1 USB
    -  1 I2C
    -  1 Antenna interface(MMCX)
-   
+
 -  **Protocols**
 
    -  NMEA
@@ -75,9 +75,9 @@ Key Features
    -  RTCM version 3.x
    -  Supply voltage
    -  –40 °C to +85 °C
--  **Size**  
+-  **Size**
    -  31.5\*48\*12MM
-   -  weight:21g 
+   -  weight:21g
 
 Where to buy
 ============
@@ -89,13 +89,13 @@ Connect to Pixhawk
 
 .. image:: ../../../images/c-rtk-9p/connect-to-pixhawk.jpg
 	:target: ../images/c-rtk-9p/connect-to-pixhawk.jpg
-	
+
 Connect to CUAV V5+ Or V5 nano
 ==============================
 
 .. image:: ../../../images/c-rtk-9p/c-rtk-9p-connection.jpg
 	:target: ../images/c-rtk-9p/c-rtk-9p-connection.jpg
-	
+
 .. note::
 
          Please use V5+ or V5 nano special cable,10 pin connector plugged into GPS&SAFETY PORT, 6 pin connector plugged into UART 4.
@@ -105,9 +105,9 @@ Connect to Others
 
 .. image:: ../../../images/c-rtk-9p/c-rtk-9p-connection-to-others.png
 	:target: ../images/c-rtk-9p/c-rtk-9p-connection-to-others.png
-	
+
 .. note::
-       
+
          If you use a different autopilot, please select the V5+ version kit, which contains a 6 pin to 6pin cable that you can connect to the flight control GPS/GPS2/UART4 interface (it can be connected to Pixhawk 2.1 (CubePilot CubeBlack), Pixhawk 3 pro, etc).
 
 Port and LED
@@ -127,7 +127,7 @@ PWR status:solid(power input),off( not power  input or vcc is not healthy).
 
 .. image:: ../../../images/c-rtk-9p/c-rtk-9p-port-and-led2.png
 	:target: ../images/c-rtk-9p/c-rtk-9p-port-and-led2.png
-	
+
 C-RTK 9P estimated Yaw
 ======================
 

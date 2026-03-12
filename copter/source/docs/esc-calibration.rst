@@ -56,7 +56,7 @@ All at once calibration
    .. image:: ../images/transmitter-throttle-max.jpg
        :target: ../_images/transmitter-throttle-max.jpg
        :width: 400px
-    
+
 #. Connect the Lipo battery.  The autopilot's red, blue and yellow LEDs
    will light up in a cyclical pattern. This means the it's ready to go
    into ESC calibration mode the next time you plug it in.
@@ -64,7 +64,7 @@ All at once calibration
    .. image:: ../images/Connect-Battery.jpg
        :target: ../_images/Connect-Battery.jpg
        :width: 400px
-   
+
 #. With the transmitter throttle stick still high, disconnect and
    reconnect the battery.
 
@@ -75,7 +75,7 @@ All at once calibration
    .. image:: ../images/Connect-Battery.jpg
     :target: ../_images/Connect-Battery.jpg
     :width: 400px
-    
+
 #. For Autopilots with a safety switch, push it until the LED displays solid red
 #. The autopilot is now in ESC calibration mode.
 #. Wait for your ESCs to emit the musical tone, the regular number of
@@ -87,7 +87,7 @@ All at once calibration
    .. image:: ../images/transmitter-throttle-min.jpg
        :target: ../_images/transmitter-throttle-min.jpg
        :width: 400px
-    
+
 #. The ESCs should then emit a long tone indicating that the minimum
    throttle has been captured and the calibration is complete.
 #. If the long tone indicating successful calibration was heard, the
@@ -179,9 +179,9 @@ Recommended ESC settings as follows:
 
 #. Brake on stop: OFF
 #. Active braking/"Damped light": ON (Also known as "Non Damped mode" set to OFF)
-#. Low voltage protection: OFF (alternatively, you can set battery type 
+#. Low voltage protection: OFF (alternatively, you can set battery type
    to Ni-xx(NiMH or NiCd) (even if you're using Li-po batteries because
-   this setting reduces the likelihood that the ESC's low voltage detection 
+   this setting reduces the likelihood that the ESC's low voltage detection
    will turn off the motors)
 #. CutOff Mode: Soft-Cut (Default)
 #. CutOff Threshold: Low

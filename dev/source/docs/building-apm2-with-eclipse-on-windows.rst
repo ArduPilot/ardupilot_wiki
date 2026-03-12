@@ -6,15 +6,15 @@ Archived: Building ArduPilot for APM2.x with Eclipse on Windows
 
 .. warning::
 
-    This topic is archived because APM2.x is no longer a supported autopilot (since AC3.2.1). 
+    This topic is archived because APM2.x is no longer a supported autopilot (since AC3.2.1).
     The information may still be relevant if attempting to use Eclipse for Pixhawk or other autopilots.
-    
+
 
 This article shows how to build ArduPilot for APM2.x on Windows using the Eclipse IDE.
 
 .. note::
 
-   These instructions show to use *Eclipse Luna* from the *PX4 Toolchain* to build for APM2.x targets. 
+   These instructions show to use *Eclipse Luna* from the *PX4 Toolchain* to build for APM2.x targets.
    They have been tested by building the *ArduCopter-3.2.1* branch on Windows 10.
 
 .. warning::
@@ -62,7 +62,7 @@ By default Copter, Plane and Rover use spaces in place of tabs. This can be set 
 
    .. image:: ../images/EditingTheCode_Eclipse_spaces1.png
        :target: ../_images/EditingTheCode_Eclipse_spaces1.png
-   
+
 -  Select **Windows \| Preferences \| C/C++ \| Code Style \| Formatter** and creating a new Profile (i.e. "K&R Tab") which has the "Indentation" set to "Spaces only"
 
    .. image:: ../images/EditingTheCode_Eclipse_spaces2.png
@@ -89,7 +89,7 @@ In the Make window on the right create, specify an ``apm2`` make target as shown
 Building from Eclipse
 =====================
 
-The make target can be built by pushing the green circle + hammer icon. 
+The make target can be built by pushing the green circle + hammer icon.
 The build progress will appear in the Console window.
 
 .. figure:: ../images/Eclipse_BuildPM2.png
@@ -98,6 +98,3 @@ The build progress will appear in the Console window.
    Eclipse: Building APM2
 
 The firmware will be created in a subfolder of the user’s temp directory. For example you will find **ArduCopter.hex** in **C:\\Users\\\ **YourUserNameHere**\\AppData\\Local\\Temp\\ArduCopter.build**.
-
-
-

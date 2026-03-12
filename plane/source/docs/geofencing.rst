@@ -49,7 +49,7 @@ Use for containment
 ===================
 
 During fully autonomous operation the fence can be used as a failsafe
-measure to ensure the aircraft stays within the intended flight area. 
+measure to ensure the aircraft stays within the intended flight area.
 During fully autonomous operation use the :ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>` parameter
 and the plane will automatically engage the fence after takeoff is
 complete and automatically disable the fence when it arrives at a
@@ -130,7 +130,7 @@ geo-fencing behaviour:
    plus the enclosed boundary). This should be set for you by the
    planner when you create the fence.
 #. ``FENCE_RETALT`` - the altitude the aircraft will fly at when flying to
-   the return point and when loitering at the return point (in meters). 
+   the return point and when loitering at the return point (in meters).
    Note that when :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` is set to 1 this parameter is
    ignored and the loiter altitude of the closest :ref:`Rally Point <common-rally-points>` is
    used instead.  If this parameter is zero and :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` is
@@ -219,7 +219,7 @@ where you want to begin the geo-fence boundary.
    Add Polygon Point
 
 Continue to click on the map where you want the geo-fence boundary and
-the polygon will appear.  You can drag any points you want to adjust. 
+the polygon will appear.  You can drag any points you want to adjust.
 Then right click on the map where you want the plane to return to when a
 geo-fence breach occurs.
 
@@ -353,7 +353,7 @@ key status packet is called FENCE_STATUS, and is defined in
 
 The breach_status field is 0 if inside the fence, and 1 if outside. The
 breach_count is how many fence breaches you have had on this flight.
-The breach_type is the type of the last breach (see the FENCE_BREACH 
+The breach_type is the type of the last breach (see the FENCE_BREACH
 enum in ardupilotmega.xml). The breach_time is the time in milliseconds
 of the breach since APM was booted.
 

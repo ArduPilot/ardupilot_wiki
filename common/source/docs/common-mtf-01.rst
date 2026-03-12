@@ -36,9 +36,9 @@ Connection to Autopilot
    :target: ../_images/MTF-01-wiring.jpg
    :width: 450px
 
-- The flow sensor should be mounted on the underside of the copter with the camera lens pointing downwards. 
-- Connect the sensor to the autopilots' serial port 
- 
+- The flow sensor should be mounted on the underside of the copter with the camera lens pointing downwards.
+- Connect the sensor to the autopilots' serial port
+
 Parameters
 ==========
 For the following we will assume it will be connected to Serial1 port of the autopilot. Any serial port can be used, however.
@@ -50,7 +50,7 @@ For the following we will assume it will be connected to Serial1 port of the aut
 - Reboot autopilot to see rangefinder parameters
 - Set :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 8 to set range finder's maximum range to 8m
 - Set :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.01
-- Set :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = 25 (Downward) 
+- Set :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = 25 (Downward)
 
 Once the sensor is active you should be able to observe the optical flow and range sensor data on the Mission Planner’s “Status” page. The “opt_qua” and “rangefinder1” should have some value.
 

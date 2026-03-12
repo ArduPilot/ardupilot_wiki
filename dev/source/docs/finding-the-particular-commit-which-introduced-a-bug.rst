@@ -12,7 +12,7 @@ introduced a reproducible bug.
 
    Knowing the build in which a defect was first introduced can help
    identify possible causes of the problem, and inform analysis of logs and
-   other debug techniques. 
+   other debug techniques.
 
 Firmware builds are available from
 `firmware.ardupilot.org <https://firmware.ardupilot.org/>`__ for each

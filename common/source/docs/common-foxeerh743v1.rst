@@ -64,11 +64,11 @@ receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 
  - SERIAL0 -> USB
  - SERIAL1 -> USART1 (Serial RC input) (DMA capable)
- - SERIAL2 -> USART2 (Tramp protocol by default) 
+ - SERIAL2 -> USART2 (Tramp protocol by default)
  - SERIAL3 -> UART3 (User, no protocol set by default) (DMA capable)
  - SERIAL4 -> UART4 ((RX on DJI connector for RC,no protocol by default)(DMA capable)
  - SERIAL6 -> UART6 (GPS) (DMA capable)
- - SERIAL7 -> UART7 (on DJI Goggle connector, set by default to DJI protocol) 
+ - SERIAL7 -> UART7 (on DJI Goggle connector, set by default to DJI protocol)
  - SERIAL8 -> UART8 (RX only on 4in1 ESC connector, ESC telemetry is the default protocol)
 
 Serial protocols shown are defaults, but can be adjusted to personal preferences.
@@ -86,14 +86,14 @@ All motor/servo outputs are  Dshot and PWM capable. However, mixing Dshot, seria
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX)
 
 RC Input
 ========
 
 RC input is configured by default on the R1 (UART1_RX) pin. It supports all serial RC protocols. For protocols requiring separate half-duplex serial to transmit telemetry (such as FPort) you should setup SERIAL1 as an RC input serial port, with half-duplex, pin-swap and inversion enabled (:ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>` = 15).
 
-The DJI connector also has UART4 RX input for DJI RC input. To use this you would need to set :ref:`SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>` to something other than "23" (RCinput) and set this protocol for :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` instead. 
+The DJI connector also has UART4 RX input for DJI RC input. To use this you would need to set :ref:`SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>` to something other than "23" (RCinput) and set this protocol for :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` instead.
 
 For PPM support on UART4_RX set :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to 1 and use the UART4 RX pin as PPM (and any other serial RC protocol) input.
 
@@ -152,4 +152,3 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 "FoxeerH743v1".
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

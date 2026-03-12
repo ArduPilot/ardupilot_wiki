@@ -31,10 +31,10 @@ Configuration Parameters
 
 The :ref:`EK3_AFFINITY <EK3_AFFINITY>` parameter is a bitmask which gives you the option to choose the sensors you want to enable affinity for. Non-enabled will follow the default primary sensor allotment.
 
-The :ref:`EK3_ERR_THRESH <EK3_ERR_THRESH>` parameter controls the sensitivity of lane switching. Lane errors are accumulated over time relative to the active primary lane. This threshold controls how much of an error difference between a non-primary and primary lane is required to consider the former performing better. Lowering this parameter makes lane switching more responsive to smaller 'relative' errors, and in practical you will see a more aggressive lane switching, and, vice-versa. 
+The :ref:`EK3_ERR_THRESH <EK3_ERR_THRESH>` parameter controls the sensitivity of lane switching. Lane errors are accumulated over time relative to the active primary lane. This threshold controls how much of an error difference between a non-primary and primary lane is required to consider the former performing better. Lowering this parameter makes lane switching more responsive to smaller 'relative' errors, and in practical you will see a more aggressive lane switching, and, vice-versa.
 
 .. warning::
-    
+
     Misconfiguring the :ref:`EK3_ERR_THRESH <EK3_ERR_THRESH>` parameter could adversely affect the lane switching mechanism and have serious consequences which could lead to the loss of your vehicle. Please tune carefully.
 
 

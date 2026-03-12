@@ -14,7 +14,7 @@ Archived: Building ArduPilot for Flymaple on Linux
 
   Support for FlyMaple in ArduPilot was removed in May 2016. This
   documentation is for older versions
-  
+
 About Flymaple
 ==============
 

@@ -146,7 +146,7 @@ use "Putty" (a popular serial port tool)  because it will not accept
 "line" commands. The Bluetooth Modules read the input at a rate of once
 per second therefore you must use an emulator that will allow you to
 input an entire line before hitting "send". You can use the Arduino IDE
-to send commands to the com port if you are familiar with that. I use 
+to send commands to the com port if you are familiar with that. I use
 "Advanced Serial Port Terminal" but any terminal emulator that allows
 you to type in a line of text before hitting send will work just a good.
 

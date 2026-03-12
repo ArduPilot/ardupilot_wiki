@@ -40,7 +40,7 @@ Built on top of the SwarmLink hardware, `EasySwarm <https://guide.robsense.com/c
 Features include customised swarming policies, dynamic waypoint planning and real-time tracking of all vehicles.
 
   .. image:: ../../../images/telemetry-robsense-easyswarm-gcs.png
-	 :target: ../_images/telemetry-robsense-easyswarm-gcs.png 
+	 :target: ../_images/telemetry-robsense-easyswarm-gcs.png
 
 ..  youtube:: 2qy5eZDyAp4
     :width: 100%

@@ -136,7 +136,7 @@ an efficient fixed wing aircraft.
 
 Guided Mode
 ===========
-             
+
 In addition to AUTO mode, you can also use a QuadPlane in :ref:`GUIDED
 mode <guided-mode>`. To use VTOL support in GUIDED mode you need to
 set the :ref:`Q_GUIDED_MODE <Q_GUIDED_MODE>` parameter to 1. When set,
@@ -154,4 +154,3 @@ When hovering at the destination in GUIDED mode if a new GUIDED
 destination is given then the aircraft will transition back to fixed
 wing flight, fly to the new location and then hover again in VTOL
 mode.
-

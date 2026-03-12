@@ -14,13 +14,12 @@ Skyviper Teardown Pictures
 
 .. image:: ../images/Skyviper_Full_System.jpg
     :width: 70%
- 
+
 .. image:: ../images/Skyviper_Sonix.jpg
     :width: 70%
-    
+
 .. image:: ../images/Skyviper_STM32.jpg
     :width: 70%
-    
+
 .. image:: ../images/Skyviper_Ublox.jpg
     :width: 70%
-    

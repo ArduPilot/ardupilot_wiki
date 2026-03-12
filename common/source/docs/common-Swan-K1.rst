@@ -18,7 +18,7 @@ You will need to remove the access cover in order to attach a USB cable to the a
 
 .. image:: ../../../images/Hwing-access-cover.jpg
 
-Connect to Mission Planner or QGC, and upload the Plane firmware for the SWAN-K1 located `here <https://firmware.ardupilot.org>`__. 
+Connect to Mission Planner or QGC, and upload the Plane firmware for the SWAN-K1 located `here <https://firmware.ardupilot.org>`__.
 
 The firmware has defaults already set for optimum tuning and operation.
 
@@ -49,7 +49,7 @@ One of the benefits of using ArduPilot is that you can set transmitter functions
 Some possibilities using :ref:`RC Auxiliary Functions<common-auxiliary-functions>`:
 
  - Set one of the switches as ARM/DISARM for quick disarming instead of the rudder/throttle combination.
- - Set other flight modes, such as CRUISE or QLAND, on one of the other switches or buttons 
+ - Set other flight modes, such as CRUISE or QLAND, on one of the other switches or buttons
  - Set AUTO mode, on a button
  - Set up :ref:`fences<common-geofencing-landing-page>` and enable/disable via switch or button.
 

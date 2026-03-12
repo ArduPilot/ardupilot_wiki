@@ -47,7 +47,7 @@ Dual Serial F9P GPS
 
 - :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` = 5 ("GPS") assuming the 1st GPS is connected to SERIAL3.
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 5 ("GPS") assuming the 2nd GPS is connected to serial port 4
-- :ref:`GPS1_TYPE <GPS1_TYPE>` = 17 ("UBlox moving baseline base") 
+- :ref:`GPS1_TYPE <GPS1_TYPE>` = 17 ("UBlox moving baseline base")
 - :ref:`GPS2_TYPE <GPS2_TYPE>` = 18 ("UBlox moving baseline rover")
 - :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` = 1 (AutoConfig Serial)
 - :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` = 1
@@ -181,6 +181,3 @@ Using Moving Baseline Yaw to Reject Magnetic Disturbances
 ---------------------------------------------------------
 
 .. youtube:: MmnfHUYLTeQ
-
-
-

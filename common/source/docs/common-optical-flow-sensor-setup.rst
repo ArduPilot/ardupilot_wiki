@@ -112,7 +112,7 @@ To calibrate the sensor using Log file data please follow these steps:
 
    .. image:: ../../../images/OF-roll-calibration.png
        :target: ../_images/OF-roll-calibration.png
-    
+
 #. If ``OF.flowX`` is larger or smaller than ``OF.bodyX``, then it can
    be adjusted by changing the ``FLOW_FXSCALER`` parameter
 #. IF ``OF.bodyX`` is uncorrelated or opposite sign to ``IMU.GyrX``,
@@ -123,7 +123,7 @@ To calibrate the sensor using Log file data please follow these steps:
 
    .. image:: ../../../images/OF-pitch-calibration.png
        :target: ../_images/OF-pitch-calibration.png
-   
+
 #. If ``OF.flowY`` is larger or smaller than ``OF.bodyY``, then it can
    be adjusted by changing the ``FLOW_FYSCALER`` parameter
 #. IF ``OF.bodyY`` is uncorrelated or opposite sign to ``IMU.GyrY``,
@@ -157,8 +157,8 @@ and leave all other options checked.
 First Flight
 ============
 
-#. Set :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 0 (we don't want the optical flow being used by the EKF at this stage) 
-#. Perform a short test flight hovering in STABILIZE or AltHold for copter, or QSTABILIZE or QHOVER for QuadPlane, at small lean angles at heights ranging from 50cm to 3m with 
+#. Set :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 0 (we don't want the optical flow being used by the EKF at this stage)
+#. Perform a short test flight hovering in STABILIZE or AltHold for copter, or QSTABILIZE or QHOVER for QuadPlane, at small lean angles at heights ranging from 50cm to 3m with
 #. Download the flash log and plot the following in mission planner
 #. EKF5.meaRng should correlate with the change in vehicle height
 #. ``OF.flowX`` and ``OF.flowY`` should be varying

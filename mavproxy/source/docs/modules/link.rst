@@ -31,7 +31,7 @@ details. Note the link label must not have any spaces in it.
     link add tcp:127.0.0.1:14550:{"label":"3GMobile"}
     set baudrate 115200
     link add COM17
-    
+
 See the startup :ref:`section <mavproxy-quickstart>`  for full details on link types
 
 link remove
@@ -61,4 +61,3 @@ Start or stop datarate statistic logging. If active, the statistics are saved
 in "dataratelog.csv" in the same folder as the tlog.
 
 The statistics are useful for profiling and testing low-bandwidth datalinks.
-

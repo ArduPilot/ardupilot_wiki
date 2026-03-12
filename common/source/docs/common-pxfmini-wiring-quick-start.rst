@@ -7,7 +7,7 @@ Archived Topic: PXFmini Wiring Quick Start
 .. note::
 
     PXFmini uses JST-GH connectors instead of DF13. This is the latest adoption made by the DroneCode Foundation
-    
+
 
 .. image:: ../../../images/jst.jpg
     :target: ../_images/jst.jpg
@@ -25,7 +25,7 @@ PXFmini Wiring Chart
     :target: ../_images/PXFmini_intro.jpg
 
 [site wiki="copter"]
-Copter users should also see the 
+Copter users should also see the
 `official setup documentation <http://docs.erlerobotics.com/erle_robots/erle_copter>`__.
 [/site]
 
@@ -147,7 +147,7 @@ WiFi dongle
 
 Use a (regular or high gain) WiFi dongle to create a hotspot that can,
 for example, be used for sending telemetry data and commands to a Ground
-Station.  If you use the `images <http://docs.erlerobotics.com/brains/os_images>`__ provided 
+Station.  If you use the `images <http://docs.erlerobotics.com/brains/os_images>`__ provided
 by Erle Robotics, they automatically generate a WiFi hotspot.
 
 
@@ -191,4 +191,3 @@ additional information about how to use PXFmini.
     :maxdepth: 1
 
     Compatible RC Transmitter and Receiver Systems (Erle-Brain 2) <common-compatible-rc-transmitter-and-receiver-systems-erle-brain-2>
-

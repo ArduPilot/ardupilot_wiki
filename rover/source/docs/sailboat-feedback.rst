@@ -1,4 +1,4 @@
-.. _sailboat-feedback: 
+.. _sailboat-feedback:
 
 ========
 Feedback

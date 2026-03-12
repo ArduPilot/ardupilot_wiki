@@ -10,7 +10,7 @@ This page covers the set-up and testing of the GPS failsafe.
 
    **ARCHIVED ARTICLE**
 
-   The GPS Failsafe was merged into/replaced by the :ref:`EKF / DCM Check & Failsafe <ekf-inav-failsafe>` in Copter 3.3. 
+   The GPS Failsafe was merged into/replaced by the :ref:`EKF / DCM Check & Failsafe <ekf-inav-failsafe>` in Copter 3.3.
 
 Overview
 ========

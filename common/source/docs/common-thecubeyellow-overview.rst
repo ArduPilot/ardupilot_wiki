@@ -11,9 +11,9 @@ The Cube Yellow Overview
 System Features
 ===============
 
-The Cube Yellow autopilot is a new model in the CubePilot ecosystem, designed for hobby users, commercial system integrators and UAS manufacturers the Cube Yellow is based on the Arm STM32F7 series SOC. Sitting directly between the Cube Black and Orange this model offers better performance and newer sensors over the Cube Black while retaining F series SOC compatibility. 
+The Cube Yellow autopilot is a new model in the CubePilot ecosystem, designed for hobby users, commercial system integrators and UAS manufacturers the Cube Yellow is based on the Arm STM32F7 series SOC. Sitting directly between the Cube Black and Orange this model offers better performance and newer sensors over the Cube Black while retaining F series SOC compatibility.
 
-Just like the other models the Yellow is part of a wide ecosystem of autopilot modules and carrier boards. All the Cube models are compatible with all of the carriers which allows users to choose an off the shelf carrier board design that best suits their needs. System designers are able to integrate the Cube directly into their designs via published carrier board specifications. 
+Just like the other models the Yellow is part of a wide ecosystem of autopilot modules and carrier boards. All the Cube models are compatible with all of the carriers which allows users to choose an off the shelf carrier board design that best suits their needs. System designers are able to integrate the Cube directly into their designs via published carrier board specifications.
 
 
 Cube Yellow Features
@@ -23,8 +23,8 @@ Cube Yellow Features
 -  Upgraded triple redundant IMU sensors for extra redundancy
 -  2 sets of IMU are vibration-isolated mechanically, reducing the effect of frame vibration to state estimation
 -  IMUs are temperature-controlled by onboard heating resistors, allowing optimum working temperature of IMUs
--  The entire flight management unit(FMU) and inertial management unit(IMU) are housed in a reatively small form factor (a cube). 
--  Fully CubePilot carrierboard compatible, all inputs and outputs go through a 80-pin DF17 connector, allowing a plug-in solution for manufacturers of commercial systems. Manufacturers can design their own carrier boards to suit their specific needs now and in the future. 
+-  The entire flight management unit(FMU) and inertial management unit(IMU) are housed in a reatively small form factor (a cube).
+-  Fully CubePilot carrierboard compatible, all inputs and outputs go through a 80-pin DF17 connector, allowing a plug-in solution for manufacturers of commercial systems. Manufacturers can design their own carrier boards to suit their specific needs now and in the future.
 
 Specifications
 ==============

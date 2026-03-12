@@ -106,5 +106,3 @@ LiPo battery but if you do connect a battery you should first be sure if the thr
 
 .. warning:: Unplug the autopilot so that it is powered down before reattaching
    the receiver's power to assure the receiver is detected during autopilot initialization.
-
-

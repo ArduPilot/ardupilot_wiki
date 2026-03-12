@@ -18,7 +18,7 @@ companion computer.
 The table below shows for each flight mode whether it provides altitude or position control, and whether it requires valid position information from a sensor (typically a GPS) in order to arm or switch into this mode.
 
 .. raw:: html
- 
+
     <table border="1" class="docutils">
     <tr><th>Mode</th><th>Alt Ctrl</th><th>Pos Ctrl</th><th>Pos Sensor Required</th><th>Summary</th></tr>
     <tr><td>Land</td><td>-</td><td>-</td><td>No</td><td>Stops all actuators.</td></tr>
@@ -29,7 +29,7 @@ The table below shows for each flight mode whether it provides altitude or posit
     </table>
 
 .. raw:: html
- 
+
     <table border="1" class="docutils">
     <tr><th>Symbol</th><th>Definition</th></tr>
     <tr><td>m</td><td>Manual control</td><tr>
@@ -41,8 +41,8 @@ Recommended Flight Modes
 
 It is best to start with manual mode to ensure the the actuators and rc controller have been set up correctly (i.e. pushing the pitch stick forward does make the blimp move forward).
 
-Once this is confirmed, you can switch into VELOCITY mode. This uses only the velocity PID controller, thus allowing tuning this controller using the VEL* parameters. 
-Test whether centering the sticks results in a standstill and no oscillation. Also test that the blimp reaches a set velocity reasonably quickly. 
+Once this is confirmed, you can switch into VELOCITY mode. This uses only the velocity PID controller, thus allowing tuning this controller using the VEL* parameters.
+Test whether centering the sticks results in a standstill and no oscillation. Also test that the blimp reaches a set velocity reasonably quickly.
 
 After this stage, you can switch into LOITER mode and check its performance. Generally the position controller should need less tuning (using the POS* parameters), but some tuning may still be needed.
 
@@ -89,6 +89,5 @@ YAW                   MANUAL: Yaw,
                       LOITER: Full throw attempts to increase/decrease heading :ref:`MAX_POS_YAW<MAX_POS_XY>` radians/s  fore/aft
 THROTTLE              MANUAL: Ascend/Descend,
                       VELOCITY: Full throw attempts to increase/decrease altitude :ref:`MAX_VEL_Z<MAX_VEL_Z>` m/s,
-                      LOITER: Full throw attempts to increase/decrease heading :ref:`MAX_POS_Z<MAX_POS_Z>` m/s 
+                      LOITER: Full throw attempts to increase/decrease heading :ref:`MAX_POS_Z<MAX_POS_Z>` m/s
 ==================    =================
-

@@ -25,7 +25,7 @@ functions can be found
 The RPi can be powered by connecting +5V source to the +5V pin  **or** from USB in.
 
 Addon boards such as the `Pi-Connect <https://www.rpanion.com/product/pi-connect-lite-v2/>`__
-can simplify the connection of the RPi by providing a power supply and telemetry port. 
+can simplify the connection of the RPi by providing a power supply and telemetry port.
 
 .. tip::
 
@@ -77,7 +77,7 @@ The Raspberry Pi's serial port will now be usable on ``/dev/serial0``.
 Configure the Wifi
 ==================
 
-If desired, the Raspberry Pi's Wifi can be configured to create a 
+If desired, the Raspberry Pi's Wifi can be configured to create a
 Wifi access point. This will allow other clients to connect to
 the RPi and stream telemetry. See the `official RPi documentation
 <https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md>`__
@@ -113,10 +113,10 @@ The APSync image will have the serial port (UART) already enabled.
 MAVProxy
 --------
 
-MAVProxy can be used to send commands to the flight controller from the Pi. 
+MAVProxy can be used to send commands to the flight controller from the Pi.
 It can also be used to route telemetry to other network endpoints.
 
-This assumes you have a SSH connection to the Pi. If not, see 
+This assumes you have a SSH connection to the Pi. If not, see
 the `RPi Documentation <https://www.raspberrypi.org/documentation/remote-access/ssh/>`__.
 
 See the :ref:`MAVProxy Documentation<mavproxy:mavproxy-downloadinstalllinux>` for install instructions
@@ -128,7 +128,7 @@ RPi type:
 ::
 
     python3 mavproxy.py --master=/dev/serial0 --baudrate 921600 --aircraft MyCopter
-    
+
 
 Once MAVProxy has started you should be able to type in the following
 command to display the ``ARMING_CHECK`` parameters value
@@ -246,4 +246,3 @@ Example projects
 `FPV with raspberry Pi <https://diydrones.com/profiles/blogs/fpv-setup-with-raspberry-pi>`__
 
 Can't get it to work? Try posting your question in the `Companion Computer discussion board <https://discuss.ardupilot.org/c/apsync-companion-computers>`__.
-

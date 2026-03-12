@@ -61,14 +61,14 @@ The "Check for Updates" button will check for available updates to
 Mission Planner manually. Mission Planner automatically checks for
 updates upon start up and notifies you if an update is available. Please
 always run the most current version of Mission Planner, although it is
-not necessary to check for updates more often than upon start up. 
+not necessary to check for updates more often than upon start up.
 
 The "Check for BETA Updates" button will install the current development version of Mission Planner. This contains all the latest features and updates, but also might have bugs, since it does not have extensive community testing.
 
 At the bottom of the HELP screen is the check box "Show Console Window (restart)" , which enables the console window during Mission Planner operation.  That window shows Mission Planner
 activity and is primarily for diagnostic purposes.  It sometimes shows
 some interesting information. A restart of Mission Planner is required
-for the option to take effect.  
+for the option to take effect.
 
 **Getting Help:**
 
@@ -78,7 +78,7 @@ time. If you have questions, first look through the table of contents
 (upper left of every page) for a topic that may address your question.
 Next, try a search of the website.  If you still need help, then the
 community forums are the place to go. There you will find may friendly
-users, developers and often, even Michael will chime in. 
+users, developers and often, even Michael will chime in.
 
 The ArduPilot forum `here <https://discuss.ardupilot.org/>`__ has existed
 for years and has a very large community and numerous general and vehicle specific topics.
@@ -86,7 +86,7 @@ for years and has a very large community and numerous general and vehicle specif
 
 **Reporting Issues:**
 
-You can often resolve a question on a forum. Sometimes you will discover 
+You can often resolve a question on a forum. Sometimes you will discover
 a bug and use the forums to request it be logged as an official
 issue. One of the developers will normally be glad to do so.
 

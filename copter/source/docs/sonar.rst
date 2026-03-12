@@ -8,7 +8,7 @@ ARCHIVED: Analog Sonar (AC3.1)
 
 Copter supports the MaxSonar line of sonar sensors for "Terrain
 Following" while in Loiter or Alt Hold modes.  In these modes, the
-copter will attempt to maintain a constant distance from the ground. 
+copter will attempt to maintain a constant distance from the ground.
 The sonar is also used during
 :ref:`LAND <land-mode>` mode.  The copter
 will slow its descent to 50cm/s (configurable with LAND_SPEED
@@ -16,12 +16,12 @@ parameter) when the sonar detects something below the vehicle.
 
 .. image:: ../images/XLMaxsonarEZ4.jpg
     :target: ../_images/XLMaxsonarEZ4.jpg
-    
-   
+
+
 .. warning::
-   
+
    RNGFND_MAX_CM must be set to a tested, appropriate value.  If RNGFND_MAX_CM is set to a value
-   greater than the range of the sensor, the autopilot will not respond correctly to the 
+   greater than the range of the sensor, the autopilot will not respond correctly to the
    data provided.
 
 Supported Sonars
@@ -47,7 +47,7 @@ We do not yet support I2C based MaxBotix sonars.
 Building a cable to reduce sonar noise
 ======================================
 
-As described in `this Maxbotix article <https://www.maxbotix.com/articles/maxsonar-troubleshooting.htm>`__, 
+As described in `this Maxbotix article <https://www.maxbotix.com/articles/maxsonar-troubleshooting.htm>`__,
 you will need to make a special cable which requires:
 
 -  `100uF capacitor <https://www.sparkfun.com/products/96>`__
@@ -76,7 +76,7 @@ List using the SONAR_PIN parameter.  The following PX4 "Pins" are available for 
 
 SONAR_PIN = 11 - (recommended)
 
-The "airspeed" pin. Located on a 3 pin DF13 connector on the PX4IO board, but directly visible to the ADC on the PX4FMU. 
+The "airspeed" pin. Located on a 3 pin DF13 connector on the PX4IO board, but directly visible to the ADC on the PX4FMU.
 This pin can take voltages up to 6.6V (it has an internal voltage divider).
 
 SONAR_PIN = 12
@@ -95,7 +95,7 @@ and will be included in this section when it is available.
 Mounting the Sonar Sensor
 =========================
 
-It's important that the sonar sensor be mounted at least three inches (10cm) away from sources of electrical noise including the ESCs and other interference. 
+It's important that the sonar sensor be mounted at least three inches (10cm) away from sources of electrical noise including the ESCs and other interference.
 
 
 Enabling the Sonar through Mission Planner
@@ -223,4 +223,4 @@ Sonar is susceptible to "noise" from a variety of sources and several
 
 .. note::
 
-   Please read this tutorial for a comprehensive review: `Interfacing an Ultrasonic Sensor with a Pixhawk or ArduPilot Mega <https://www.maxbotix.com/articles/ultrasonic-sensors-pixhawk-ardupilot.htm>`__. 
+   Please read this tutorial for a comprehensive review: `Interfacing an Ultrasonic Sensor with a Pixhawk or ArduPilot Mega <https://www.maxbotix.com/articles/ultrasonic-sensors-pixhawk-ardupilot.htm>`__.

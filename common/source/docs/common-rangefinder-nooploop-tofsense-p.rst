@@ -43,7 +43,7 @@ Set the following parameters:
 Connecting via CAN
 ==================
 
-Setup the sensor through the NAssistant Software provided by the manufacturer. More details can be found `here <https://www.nooploop.com/download/>`__. For CAN mode, in the setup screen set "Interface" to CAN, Mode to "active", and bitrate to "1000000". You can also set the "ID" to a unique number if planning to use multiple TOFSenseP on a single CAN bus. Setting ID to 0 will accept all ID's. 
+Setup the sensor through the NAssistant Software provided by the manufacturer. More details can be found `here <https://www.nooploop.com/download/>`__. For CAN mode, in the setup screen set "Interface" to CAN, Mode to "active", and bitrate to "1000000". You can also set the "ID" to a unique number if planning to use multiple TOFSenseP on a single CAN bus. Setting ID to 0 will accept all ID's.
 
 .. image:: ../../../images/tofsense_can_active.png
     :target: ../_images/tofsense_can_active.png

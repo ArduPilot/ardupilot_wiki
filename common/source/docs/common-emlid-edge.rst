@@ -49,7 +49,7 @@ Specifications
 For more details and purchase
 =============================
 
-- `Buy Emlid Edge <https://store.emlid.com/product/edge/>`__ 
-- `Emlid Edge docs <https://docs.emlid.com/edge/>`__ 
+- `Buy Emlid Edge <https://store.emlid.com/product/edge/>`__
+- `Emlid Edge docs <https://docs.emlid.com/edge/>`__
 
 [copywiki destination="plane,copter,rover,blimp,sub"]

@@ -141,7 +141,7 @@ Next start the simulator using one of the lines shown below.  This will start th
     ../Tools/autotest/sim_vehicle.py -A --serial5=sim:ld06 -l 51.8752066,14.6487840,54.15,0
     ../Tools/autotest/sim_vehicle.py -A --serial5=sim:rplidara2 -l 51.8752066,14.6487840,54.15,0
     ../Tools/autotest/sim_vehicle.py -A --serial5=sim:sf45b -l 51.8752066,14.6487840,54.15,0
-    
+
 To display the barriers on the map run type the following into the terminal
 
 ::
@@ -193,7 +193,7 @@ The RPM can be displayed using:
 
 ::
 
-  graph RPM.rpm1 or RPM.rpm2 
+  graph RPM.rpm1 or RPM.rpm2
 
 or
 
@@ -270,7 +270,7 @@ A rangefinder is currently required for precision landing.  Enable a simulated r
    param set RNGFND1_SCALING 12.12
 
 Restart the simulation.
-   
+
 Takeoff and fly a bit, then switch into land:
 
 ::

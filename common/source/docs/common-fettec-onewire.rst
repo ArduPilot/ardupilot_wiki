@@ -38,7 +38,7 @@ Connecting
 
 The protocol supports up-to 24 ESCs, but ArduPilot's device driver implementation currently limits this to 12.
 Connect the ``TLM`` telemetry output from the ESC to the serial ``RX`` of your flight-controller.
-The signal-pins ``S1``, ``S2``, ``S3``, ``S4`` from the ESC are used to receive the commands from the flight-controller, so the serial ``TX`` from the flight-controller must be connected to 
+The signal-pins ``S1``, ``S2``, ``S3``, ``S4`` from the ESC are used to receive the commands from the flight-controller, so the serial ``TX`` from the flight-controller must be connected to
 every signal-input in parallel. On CubeOrange the GPS2 port has been successfully tested and it is recommended that you use that serial port.
 
 
@@ -53,11 +53,11 @@ The `FETtec ESC configurator <https://github.com/FETtec/ESC-Configurator/release
 Use it to make sure, that your ESC Firmware Version is 2.17 (September 2021) or later.
 Typically a FETtec autopilot can be used as a USB<->OneWire bridge so that the *FETtec ESC configurator* can communicate with the ESCs.
 ESC's parameter changes and ESC firmware updates are also made via OneWire so a serial passthrough is possible.
-Often used parameters are for example: 
+Often used parameters are for example:
 
 - **Motor direction** - If your motor spins in the wrong direction you can change it easily without rewiring
 - **Motor beeps** - Enables or disables motor beeps
-- **Soft brake** - If you have props that "unscrew" if they are stopped too fast you can use the softbreak option. 
+- **Soft brake** - If you have props that "unscrew" if they are stopped too fast you can use the softbreak option.
 - **ESC IDs** - The IDs of each ESC. These must start at 1, be unique and be contiguous.
 
 IDs inside the ESCs
@@ -113,7 +113,7 @@ After that you must set the servo output channels you want to use in the :ref:`S
 
 :ref:`SERVO_FTW_MASK<SERVO_FTW_MASK>` = 15
 
-Each bit of the mask describes whether a motor is attached and should be used with oneWire. The value is configured decimal and is the sum of the decimal equivalent of each set bit. Bit 1 corresponds to 2^1 = 1, Bit 2 corresponds to 2^2 = 2,... . E.g. if you have connected Motor 1,2,3,4 the mask is 1+2+4+8 = 15.  
+Each bit of the mask describes whether a motor is attached and should be used with oneWire. The value is configured decimal and is the sum of the decimal equivalent of each set bit. Bit 1 corresponds to 2^1 = 1, Bit 2 corresponds to 2^2 = 2,... . E.g. if you have connected Motor 1,2,3,4 the mask is 1+2+4+8 = 15.
 
 Simply sum the decimal values for the motors connected or read it from the list below.
 
@@ -158,7 +158,7 @@ To leave to motors with their default rotation direction do:
 
 Each bit of the mask describes whether a motor is rotation direction should be reversed.
 The value is configured decimal and is the sum of the decimal equivalent of each set bit.
-Bit 0 (first ESC) corresponds to 2^0 = 1, Bit 1 (second ESC) corresponds to 2^1 = 2, ... .  
+Bit 0 (first ESC) corresponds to 2^0 = 1, Bit 1 (second ESC) corresponds to 2^1 = 2, ... .
 
 Number of motor electrical poles
 ================================
@@ -198,8 +198,6 @@ Troubleshooting
    If the flight-control is not receiving telemetry signals from every ESC, and it is unarmed it reinitializes the ESCs until every ESC is configured correctly.
    The FTW mask is used to determine the motor count that must be found. Double check if the :ref:`SERVO_FTW_MASK<SERVO_FTW_MASK>` is calculated correctly to fit the actual motor count.
 - The ESCs are not initializing.
-   Check if the parameters are correct. Also make sure the telemetry pin is connected, as it will not work without it. 
+   Check if the parameters are correct. Also make sure the telemetry pin is connected, as it will not work without it.
 - ESCs are not found in FETtec configurator.
    A halfduplex 2MBaud/s serial connection is required for the use with the FETtec configurator, which is currently not supported by ArduPilot. You need to use a external serial  device like a FETtec FC or a USB serial adapter. Please disconnect the ArduPilot FC from the ESCs to find it in the FETtec configurator.
-   
-

@@ -17,7 +17,7 @@ Overview
 Guided mode is not a traditional flight mode that would be assigned to a
 mode switch like other flight modes. The guided mode capability is
 enabled using a ground station application (such as Mission Planner) and a
-:ref:`telemetry radio <common-telemetry-landingpage>`. 
+:ref:`telemetry radio <common-telemetry-landingpage>`.
 This capability allows the pilot to
 interactively command the copter to travel to a target location by
 clicking on a point on the Mission Planner Flight Data map. Once the
@@ -31,7 +31,7 @@ follow the pilot around the field.
 What you'll need
 ================
 
-To use guided mode, you'll need a :ref:`telemetry radio <common-telemetry-landingpage>` 
+To use guided mode, you'll need a :ref:`telemetry radio <common-telemetry-landingpage>`
 allowing your computer and
 autopilot to communicate during flight, a ground station computer or
 tablet, and a ground station application such as :ref:`Mission Planner <planner:home>`.

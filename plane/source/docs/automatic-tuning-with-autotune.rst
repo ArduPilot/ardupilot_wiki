@@ -90,7 +90,7 @@ When you engage AUTOTUNE mode a few things will happen:
 
 -  the autotune system will immediately setup some values for
    your roll and pitch maximum
-   rates and angle error to demanded rate gain. These values depend on the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` 
+   rates and angle error to demanded rate gain. These values depend on the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`
 -  the autotune system will monitor your demanded roll and pitch rates
    (as determined by your transmitter stick movements). When the
    demanded roll or pitch rate (or yaw rate if :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` = 1) exceeds 40% of the maximum tuning target axis rate set by the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`,(not stick deflection) the autotune system will use the response of the aircraft to learn the tuning values. So sharp stick movements are required with a slight pause at moderate to maximum stick deflections in each direction.
@@ -232,7 +232,7 @@ tune, perhaps starting with the values from Autotune. The Autotune
 system is designed as a conservative system to get reasonable values for
 most aircraft, it is not a "perfect tuner", and manual tuning can result
 in better performance if you put the time and effort in. But it requires using
-and analyzing log file results. 
+and analyzing log file results.
 
 It is still recommended that everyone start out with AUTOTUNE however.
 Correctly tuning an aircraft is not easy, and AUTOTUNE does better than

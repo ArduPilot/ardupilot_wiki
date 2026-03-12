@@ -5,7 +5,7 @@ Terrain Reporting
 .. code:: bash
 
     module load terrain
-    
+
 The terrain module passes downloads and manages DTEM (Digital Terrain
 Elevation Model) datasets and adds terrain height functionality to the
 map module. It also allows the autopilot to download terrain data of the
@@ -28,7 +28,7 @@ download, cache and send small SRTM tiles to the autopilot's internal memory
 
 The status of the module can be shown by entering ``terrain status``.
 
-To get the terrain height at a particular location, use 
+To get the terrain height at a particular location, use
 ``terrain check <lat> <lon>``` or right click on the map (module must be loaded to display)
 
 To use higher resolution SRTM data, a Level 1 dataset is `available <https://terrain.ardupilot.org/SRTM1/>`_.
@@ -39,6 +39,3 @@ In addition, you can prevent the downloading of tiles from the Internet for test
 .. code:: bash
 
     terrain set offline 1
-
-
-

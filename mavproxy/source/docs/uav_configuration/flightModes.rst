@@ -43,7 +43,6 @@ the UAV will immediately begin flying towards that point.
 guided
 ======
 
-Fly to the last clicked point on the map, or specified longitude and 
+Fly to the last clicked point on the map, or specified longitude and
 latitude. Requires an altitude:
 ``guided ALTITUDE`` or ``guided LAT LON ALTITUDE``
-

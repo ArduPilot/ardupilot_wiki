@@ -16,7 +16,7 @@ mRo CAN Node uses open-source code, which utilizes the existing and proven ArduP
 
 The adapter's CAN Node ID can be set manually or automatically (Not yet supported in stable ArduPilot). The hardware design is open source, so that anyone can contribute to the CAN peripheral world with a proven CAN / MCU interface.
 
-As delivered, it is setup to be plug-and-play as a DroneCAN GPS/Magnetometer/LED/Airspeed by simply plugging in the 6pin GH connector from any mRo or other GPS, and connecting I2C Compasses, RGB LEDs, and/or Airspeed sensors supported by ArduPilot, as desired. 
+As delivered, it is setup to be plug-and-play as a DroneCAN GPS/Magnetometer/LED/Airspeed by simply plugging in the 6pin GH connector from any mRo or other GPS, and connecting I2C Compasses, RGB LEDs, and/or Airspeed sensors supported by ArduPilot, as desired.
 
 This adapter uses the "f303-GPS" or "f303-Universal" (default) firmware in https://firmware.ardupilot.org/AP_Periph. See the :ref:`SLCAN section of DroneCAN advanced setup<common-uavcan-setup-advanced>` for downloading instructions, if changes are desired or updates become available.
 
@@ -31,13 +31,13 @@ Verify the following parameters are set on your autopilot via your ground statio
 - :ref:`GPS2_TYPE<GPS2_TYPE>` = 9 (DroneCAN)
 - Reboot
 
-Make sure the DroneCAN compass driver is not disabled. (:ref:`COMPASS_DISBLMSK<COMPASS_DISBLMSK>` bit 9 should not be set). 
+Make sure the DroneCAN compass driver is not disabled. (:ref:`COMPASS_DISBLMSK<COMPASS_DISBLMSK>` bit 9 should not be set).
 
 If your controller has multiple compasses attached already, you may want to set the attached compass as a higher priority than others, if it has better precision or performance.
 
 To enable an attached I2C RGB LED set:
 
-- :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` bit 5 should be set 
+- :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` bit 5 should be set
 
 If you want to enable an attached I2C airspeed sensor, set:
 

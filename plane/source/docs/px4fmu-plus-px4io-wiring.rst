@@ -7,8 +7,8 @@ Archived:PX4 Wiring QuickStart
 .. warning::
 
     **ARCHIVED**
-    
-    The PX4 is end of life and is not generally available for purchase. 
+
+    The PX4 is end of life and is not generally available for purchase.
     This article is made available for existing users.
 
 This article provides an overview of the :ref:`PX4FMU <common-px4fmu-overview>` and
@@ -207,7 +207,7 @@ Using a Standard RC Radio Receiver with an 8 channel PPM Encoder
 -  **You can use a standard radio receiver with an 8 channel PPM Encoder
    in place of the PPM-SUM receiver.**
 
-   -  An 8 Channel PPM Encoder is 
+   -  An 8 Channel PPM Encoder is
       `available from jDrones here <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__.
    -  Solder a 3x8 Right angle connector from the top into one end of
       the 8 Channel PPM Encoder board.

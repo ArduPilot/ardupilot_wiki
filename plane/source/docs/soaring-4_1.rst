@@ -11,8 +11,8 @@ Soaring
 .. image:: ../../../images/soar-cover.jpg
 
 
-The autonomous soaring functionality in ArduPilot allows the plane to respond to 
-rising air current (thermals) in order to extend endurance and gain altitude with 
+The autonomous soaring functionality in ArduPilot allows the plane to respond to
+rising air current (thermals) in order to extend endurance and gain altitude with
 minimal use of the motor (soaring). Its full technical description is available in
 
 *S. Tabor, I. Guilliard, A. Kolobov.* `ArduSoar: an Open-Source Thermalling Controller for Resource-Constrained Autopilots <https://arxiv.org/abs/1802.08215/>`_. *International Conference on Intelligent Robots and Systems (IROS), 2018.*
@@ -34,7 +34,7 @@ functionality:
    - :ref:`SOAR_ALT_MAX<SOAR_ALT_MAX>` is reached.
    - :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` is reached.
    - Flight mode is changed by the pilot.
-   - The estimate of achievable climb rate falls below :ref:`SOAR_VSPEED<SOAR_VSPEED>`, and 
+   - The estimate of achievable climb rate falls below :ref:`SOAR_VSPEED<SOAR_VSPEED>`, and
      thermalling has lasted at least :ref:`SOAR_MIN_THML_S<SOAR_MIN_THML_S>` seconds.
    - The aircraft drifts more than :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` - see :ref:`Limit maximum distance from home<soaring_maximum-distance-from-home>`
 
@@ -51,7 +51,7 @@ While in THERMAL mode, the target airspeed will be :ref:`AIRSPEED_CRUISE<AIRSPEE
 Hardware
 ========
 
-To use your plane for soaring, it should ideally be a glider type aircraft with 
+To use your plane for soaring, it should ideally be a glider type aircraft with
 a good lift to drag ratio and be equipped with an airspeed sensor.
 
 Generally all boards support soaring, *except* those with firmware limitations referred to on :ref:`this page <common-limited_firmware>`. As of June 2020 non-supported boards include:
@@ -65,12 +65,12 @@ Generally all boards support soaring, *except* those with firmware limitations r
 Setup
 =====
 
-Mission 
+Mission
 -------
 
 The main requirement for a mission is that it take the aircraft above :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>`
 so that gliding flight is initiated. To achieve this, set the waypoints' altitude(s)
-above :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>`. 
+above :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>`.
 
 Soaring Parameters
 ------------------
@@ -85,7 +85,7 @@ Drag Polar
 ~~~~~~~~~~~
 
 To work out how fast the air is rising or sinking the autopilot needs to know the
-aircraft's sink rate for a given airspeed in still air. This is related to the 
+aircraft's sink rate for a given airspeed in still air. This is related to the
 drag polar of the plane and is specified using the SOAR_POLAR parameters.
 :ref:`SOAR_POLAR_K<SOAR_POLAR_K>` is the most important one to set initially and is calculated
 using the following formula:
@@ -106,9 +106,9 @@ RC switch (Optional)
 You can use a 3-position RC switch to control when the autopilot can use soaring. Set the parameter RCX_OPTION parameter for the desired channel to SOAR (index 88) - see :ref:`Auxiliary Functions <common-auxiliary-functions>`. The 3 positions have the following effect.
 
  - Low. Soaring is disabled (equivalent to setting SOAR_ENABLE = 0). Throttle will be used as normal. Switching to this from either of the positions below, will disable Soaring and maintain the current flight mode.
- 
+
  - Mid. Soaring will have control over throttle. The mode will not automatically change to THERMAL based on detected rising air. However, when manually set to THERMAL mode using RC controller or GCS, the autopilot will try to follow rising air currents. It will still restore the previous mode if the aircraft is not climbing, or if it drifts too far (see below).
- 
+
  - High. Fully automatic mode changes to THERMAL from AUTO, FBWB or CRUISE modes in response to detected rising air, and following of rising air currents.
 
 +----------+----------------+---------------+-------------------+-------------------+-------------------+
@@ -146,7 +146,7 @@ The parameter :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` can be used to limit how far
 
 If the original flight mode was FBWB or CRUISE mode, the drift distance is measured from the location THERMAL was entered.
 
-If the original flight mode was AUTO mode, the drift distance is measured from the closest point on the mission segment 
+If the original flight mode was AUTO mode, the drift distance is measured from the closest point on the mission segment
 to where THERMAL was entered. Drift sideways or backwards, but not along the original mission track, is counted. This allows
 thermalling to continue if the wind is moving the aircraft in the direction of the next waypoint.
 
@@ -176,7 +176,7 @@ Thermalling bank angle
 
 The parameter :ref:`SOAR_THML_BANK<SOAR_THML_BANK>` sets the bank angle when thermalling. 30 - 45 degrees works well depending on the size of the thermals in your area.
 
-If the aircraft is not achieving this average bank angle when thermalling, you should check - 
+If the aircraft is not achieving this average bank angle when thermalling, you should check -
 
  - that the limiting bank angle :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` is set a bit larger than SOAR_THML_BANK (note the units are different) to give some room for manoeuvring;
 
@@ -205,19 +205,19 @@ TECS Tuning
 
    In firmware revisions before 4.1, it was necessary to set :ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` to 2.0 when using soaring.
    This is now handled automatically.
- 
-For best results the TECS needs to be set up to fly the aircraft at a consistent airspeed when 
+
+For best results the TECS needs to be set up to fly the aircraft at a consistent airspeed when
 gliding.
 
-If your aircraft has trouble maintaining airspeed accurately you can tune it by confirming that 
+If your aircraft has trouble maintaining airspeed accurately you can tune it by confirming that
 :ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` is set to 2.0, :ref:`SOAR_ENABLE<SOAR_ENABLE>` to 1 and set
 :ref:`SOAR_VSPEED<SOAR_VSPEED>` to a large number, say 50.0, or use the :ref:`RC switch<soaring_rc-switch-upcoming>`
 to inhibit mode changes. This means that the aircraft will
 glide but will never begin thermalling. Set :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` to an altitude high enough to
-allow a good length of time to be spent gliding. 
+allow a good length of time to be spent gliding.
 
-Launch the aircraft and put it in AUTO mode. It should climb to :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` 
-and then begin a gliding descent. Watch the telemetry graphs or look at the Dataflash logs after the flight. Is the aircraft maintaining the demanded airspeed? The actual and demanded airspeed can be seen in the onboard log as 
+Launch the aircraft and put it in AUTO mode. It should climb to :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>`
+and then begin a gliding descent. Watch the telemetry graphs or look at the Dataflash logs after the flight. Is the aircraft maintaining the demanded airspeed? The actual and demanded airspeed can be seen in the onboard log as
 ``TECS.sp`` and ``TECS.spdem``, and via telemetry you can use ``NAV_CONTROLLER_OUTPUT.aspd_error``. Problems can usually be fixed
 by increasing ``PTCH2SRV_IMAX`` and :ref:`TECS_INTEG_GAIN<TECS_INTEG_GAIN>` to achieve good airspeed
 tracking in gliding flight.

@@ -34,7 +34,7 @@ Frontal view
 
 Images can be used for reference.
 
-Leg orientation 
+Leg orientation
 
 .. image:: ../images/Walking_robot-leg.JPG
   :width: 50%
@@ -43,7 +43,7 @@ Top view
 
 .. image:: ../images/Walking_robot-top_view.JPG
   :width: 50%
-  
+
 .. image:: ../images/Walking_robot-Anatomy.jpg
 
 Connect the AutoPilot's pwm outputs to each servo as listed below:
@@ -51,29 +51,29 @@ Connect the AutoPilot's pwm outputs to each servo as listed below:
 +----------------------+--------------------------------+
 | **Output**           |        **Servo**               |
 +----------------------+--------------------------------+
-|        1             | front right coxa (hip) servo   |  
+|        1             | front right coxa (hip) servo   |
 +----------------------+--------------------------------+
 |        2             | front right femur(thigh) servo |
 +----------------------+--------------------------------+
-|        3             | front right tibia(shin) servo  | 
+|        3             | front right tibia(shin) servo  |
 +----------------------+--------------------------------+
-|        4             | front left coxa(hip) servo     |    
+|        4             | front left coxa(hip) servo     |
 +----------------------+--------------------------------+
-|        5             | front left femur(thigh) servo  |  
+|        5             | front left femur(thigh) servo  |
 +----------------------+--------------------------------+
-|        6             | front left tibia(shin) servo   |  
+|        6             | front left tibia(shin) servo   |
 +----------------------+--------------------------------+
 |        7             | back left coxa(hip) servo      |
 +----------------------+--------------------------------+
-|        8             | back left femur(thigh) servo   |   
+|        8             | back left femur(thigh) servo   |
 +----------------------+--------------------------------+
 |        9             | back left tibia(shin) servo    |
 +----------------------+--------------------------------+
-|        10            | back right coxa(hip) servo     |       
+|        10            | back right coxa(hip) servo     |
 +----------------------+--------------------------------+
-|        11            | back right femur(thigh) servo  |  
+|        11            | back right femur(thigh) servo  |
 +----------------------+--------------------------------+
-|        12            | back right tibia(shin) servo   |       
+|        12            | back right tibia(shin) servo   |
 +----------------------+--------------------------------+
 
 Configuration and Setup
@@ -89,29 +89,29 @@ Configuration and Setup
     - RC Receiver
     - GPS(optional)
     - Telemetry(optional)
-    
+
 Use a ground station to load Rover-4.1 (or higher) to the autopilot
 #. :ref:`Install GCS<common-install-gcs>` (Mission Planner recommended) and :ref:`upload rover firmware<common-loading-firmware-onto-pixhawk>`, if ArduPilot firmware already is installed, or :ref:`Loading Firmware onto boards without existing ArduPilot firmware (first time only) <common-loading-firmware-onto-chibios-only-boards>`
 #. Perform all the :ref:`hardware calibration<rover-code-configuration>` steps for:
 
     - :ref:`Accelerometer<common-accelerometer-calibration>`
     - :ref:`Compass<common-compass-calibration-in-mission-planner>`
-    - :ref:`Radio<common-radio-control-calibration>` 
+    - :ref:`Radio<common-radio-control-calibration>`
     - :ref:`RC Mode Setup<common-rc-transmitter-flight-mode-configuration>` (Add Manual and Acro Modes)
- 
+
 2) Loading lua script to ardupilot
 ==================================
 
     - Connect with a ground station and set :ref:`SCR_ENABLE <SCR_ENABLE>` = 1 to enable Lua scripting and reboot the autopilot
     - Download `quadruped.lua <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples>`__ from the ArduPilot Github repo to your PC
     - Load the quadruped.lua script to the autopilot using MAVFTP or by directly copying to the SD Card's APM/scripts directory (`see video     <https://youtu.be/3n80dYoJQ60&t=71s>`__)
- 
+
 3) Additional Parameter Configuration
 =====================================
 
- - set  RCx_OPTION parameters 
- - set any unused channels to access these features 
- 
+ - set  RCx_OPTION parameters
+ - set any unused channels to access these features
+
 Supported Features
 ==================
 +----------------------+----------------------------+
@@ -121,9 +121,9 @@ Supported Features
 +----------------------+----------------------------+
 |      202             |         Pitch              |
 +----------------------+----------------------------+
-|      211             |      Walking Height        | 
+|      211             |      Walking Height        |
 +----------------------+----------------------------+
-    
+
 4) Arming
 =========
 
@@ -143,46 +143,44 @@ Simulation with SITL and pyBullet
 
 ..  youtube:: HLSQ7xdKeI0
     :width: 100%
-    
+
 The following steps will get you running with the quadruped example.
 
 - Ensure the :ref:`ArduPilot source code is installed on your machine <where-to-get-the-code>`
 - Ensure the PC is running Ubuntu 18.04 (other versions may work but this has not been confirmed yet)
 - Install pybullet
 
-:: 
+::
 
    python3 -m pip install pybullet
-   
-- cd to the ardupilot/Rover directory  
+
+- cd to the ardupilot/Rover directory
 - create a "scripts" directory and copy `quadruped.lua <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples>`_ into it
 - Open a terminal to /ardupilot/Rover directory and start ArduPilot SITL
 
 ::
 
    simvehicle.py --map --console -D -f JSON
-   
+
 - Enable scripting and then restart SITL
 
-:: 
+::
 
    param set SCR_ENABLE 1
-   
+
 - Set channels for roll, pitch and height
    Example:
 
-:: 
+::
 
    param set RCx_OPTION 202
 
 - Open another terminal to launch pyBullet
 
-:: 
+::
 
    cd ardupilot/libraries/SITL/examples/JSON/pybullet
-   
-:: 
+
+::
 
    python3 walking_robot.py
-   
-   

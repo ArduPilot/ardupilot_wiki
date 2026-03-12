@@ -70,7 +70,7 @@ The OneShot125 (sometimes confusingly shortened to just OneShot) protocol is sim
 - Set :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` to 2 (OneShot125) and reboot the autopilot
 [/site]
 [site wiki="plane"]
-- Forward motors will use normal PWM unless OneShot or DShot has been enabled (see below) 
+- Forward motors will use normal PWM unless OneShot or DShot has been enabled (see below)
 - VTOL motors will use OneShot125 if :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE>` is 2 (OneShot125)
 [/site]
 

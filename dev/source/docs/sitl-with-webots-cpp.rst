@@ -21,7 +21,7 @@ Running the Examples
 #. Download and open a vehicle from the `vehicle examples folder <https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Webots/worlds>`__   such as  ``webots_quadPlus.wbt``.
 #. Compile the Robot Controller and WorldInfo physics plugin using Webots GUI by opening their respective source files (`ardupilot_SITL_QUAD.c <https://github.com/ArduPilot/ardupilot/blob/master/libraries/SITL/examples/Webots/controllers/ardupilot_SITL_QUAD/ardupilot_SITL_QUAD.c>`__ and `sitl_physics_env.c <https://github.com/ArduPilot/ardupilot/blob/master/libraries/SITL/examples/Webots/plugins/physics/sitl_physics_env/sitl_physics_env.c>`__) and running ``Build > Build``. More info about building with Webots can be found `here <https://cyberbotics.com/doc/guide/webots-built-in-editor>`__.
 #. Press Run on Webots GUI. Now the simulator is running.
-#. Run ArduPilot's SITL using available scripts in the `examples folder <https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Webots>`__. 
+#. Run ArduPilot's SITL using available scripts in the `examples folder <https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Webots>`__.
 
 ::
 
@@ -33,7 +33,7 @@ Running the Examples
 .. warning::
 
    It is important to run Webots before ArduPilot's SITL , otherwise the socket connection may not establish.
-   
+
    As of writing, these instructions work with Webots 2021b. Newer versions may or may not work correctly.
 
 Simulation Parameters
@@ -51,7 +51,7 @@ Advantage of Webots
 #. Controllers can be written in c, c++, python, and MatLab.
 #. A lot of sensors exist.
 #. Ability to add custom physics to simulate things such as wind.
-#. Ability to add OpenStreetMap and run the simulator in environments very similar to reality. 
+#. Ability to add OpenStreetMap and run the simulator in environments very similar to reality.
 
 
 How to Connect Your Own World with ArduPilot
@@ -75,5 +75,3 @@ You can copy & paste the vehicle robot multiple times, each time you need to:
 #. Field *"CustomData"* should be equal to robot index number i.e. 1,2,3,...etc.
 #. Field *"controller"* should is selected based on the vehicle used.
 #. Field *"controllerArgs"* specifies many important factors, mainly the TCP port which should be equal to SITL's TCP port that will connect to this robot in the simulator.
-
-

@@ -85,4 +85,3 @@ Software Integration Tools
 
 -   MAVSDK <https://github.com/ArduPilot/ardupilot-mavsdk>
 -   Pymavlink python script <https://github.com/ArduPilot/pymavlink>
-

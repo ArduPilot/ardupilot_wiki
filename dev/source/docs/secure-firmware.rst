@@ -35,4 +35,3 @@ Reverting to UnSigned Bootloader
 ================================
 
 Instructions are provided in above referenced README.md file for reverting to a normal bootloader using a private key whose corresponding public key is included in the bootloader.
-

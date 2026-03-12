@@ -280,27 +280,27 @@ The GPIO pin numbers for these PWM channels in ArduPilot are shown below:
      - 59
    * - PWM4
      - 53
-     - 
-     - 
+     -
+     -
    * - PWM5
      - 54
-     - 
-     - 
+     -
+     -
    * - PWM6
      - 55
-     - 
-     - 
+     -
+     -
    * - PWM7
      - 56
-     - 
-     - 
+     -
+     -
 
 Analog inputs
 =============
 The PixFlamingo-F767 flight controller has 4 analog inputs
 
-* ADC Pin10   -> Battery Current 
-* ADC Pin11   -> Battery Voltage 
+* ADC Pin10   -> Battery Current
+* ADC Pin11   -> Battery Voltage
 * ADC Pin14   -> ADC 3V3 Sense
 * ADC Pin15   -> ADC 6V6 Sense
 

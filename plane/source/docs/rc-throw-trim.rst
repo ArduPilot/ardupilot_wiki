@@ -26,7 +26,7 @@ channels using the ``RCMAP_`` parameters. The defaults are:
    <tr><td>RCMAP_THROTTLE</td><td>3</td></tr>
    <tr><td>RCMAP_YAW</td><td>4</td></tr>
    </table>
-   
+
 that means your first input channel will be roll input, the 2nd input
 channel will be pitch input, the 3rd input channel will be throttle
 input and the 4th input channel will be yaw input (which maps to
@@ -47,9 +47,9 @@ For example, if you have:
    <tr><td>RC1_TRIM</td><td>1500</td></tr>
    <tr><td>RC1_REVERSED</td><td>0</td></tr>
    </table>
-   
+
 then channel 1 input will be roll (mapping to aileron), with a minimum
-PWM of 1100, a maximum of 1900 and a trim of 1500. The :ref:`RC1_REVERSED<RC1_REVERSED>` 
+PWM of 1100, a maximum of 1900 and a trim of 1500. The :ref:`RC1_REVERSED<RC1_REVERSED>`
 value of zero means it is not reversed.
 
 .. note:: The process of doing :ref:`Radio Control Calibration <common-radio-control-calibration>` actually will set the TRIM,MIN,and MAX values of each RC input channel to match your Transmitter's output, so these values rarely need to be manually adjusted.

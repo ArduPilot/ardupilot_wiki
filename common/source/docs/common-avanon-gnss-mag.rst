@@ -5,9 +5,9 @@ Avionics Anonymous GNSS/Mag
 ===========================
 
 The `Avionics Anonymous GNSS/Mag <https://docs.avionicsanonymous.com/devices/gnssmag>`__ is a high-performance
-combination GPS and magnetometer for small unmanned vehicles. It includes a uBlox SAM-M8Q integrated 
-multi-constellation GNSS unit and a high-quality Memsic MMC5983MA magnetometer enabling better than 1-degree 
-heading accuracy. The device interfaces to your autopilot via a robust `DroneCAN <https://dronecan.org>`__ 
+combination GPS and magnetometer for small unmanned vehicles. It includes a uBlox SAM-M8Q integrated
+multi-constellation GNSS unit and a high-quality Memsic MMC5983MA magnetometer enabling better than 1-degree
+heading accuracy. The device interfaces to your autopilot via a robust `DroneCAN <https://dronecan.org>`__
 interface, which provides high reliability connections to peripherals over greater distances than I2C.
 
 .. figure:: ../../../images/AvAnon-GNSSMag.png

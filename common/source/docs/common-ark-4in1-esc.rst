@@ -15,13 +15,13 @@ Specifications
 ==============
 
 - **Features**
-   
+
    - Battery Voltage: 3-8s
    - Current Rating: 50A Continuous, 75A Burst
    - Microcontroller: STM32F0
    - Firmware: AM32 Firmware
    - Features: Onboard Current Sensor, Serial Telemetry
-   
+
 -  **Connections**
 
    -  Two Pixhawk Standard CAN Connectors
@@ -37,7 +37,7 @@ Specifications
     - Ground
 
    - 10 Pin JST-SH Debug Connector
-   
+
     - 3.3V
     - SWDIO Motor 1, SWCLK Motor 1
     - SWDIO Motor 2, SWCLK Motor 2
@@ -62,5 +62,3 @@ More Information
 * `ARK 4IN1 ESC <https://arkelectron.com/product/ark-4in1-esc/?srsltid=AfmBOopYg5uj2bYP4DeMT8S1xTlqZBgr0890RDqnH-axuQyzHHQHIOnw>`_
 
 * `ARK 4IN1 ESC Documentation <https://arkelectron.gitbook.io/ark-documentation/electronic-speed-controllers/ark-4in1-esc>`_
-
-

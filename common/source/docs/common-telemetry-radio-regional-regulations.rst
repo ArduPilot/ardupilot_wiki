@@ -44,13 +44,13 @@ applicable to you.
    <td>USA</td>
    <td>FCC 15.247</td>
    <td><strong>SikRadio 900MHz</strong>
-   
+
    MIN_FREQ: 902000
 
    MAX_FREQ: 928000
 
-   NUM_CHANNELS=50 
-   
+   NUM_CHANNELS=50
+
    <strong>Standard:</strong> FCC 15.247
    </td>
    <td><strong>RFD900 868MHz</strong></td>
@@ -95,7 +95,7 @@ applicable to you.
    <td><strong>SikRadio 433MHz</strong>
 
    MIN_FREQ: 433051
- 
+
    MAX_FREQ: 434790
 
    TXPOWER <=25mW EIRP

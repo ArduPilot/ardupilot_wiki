@@ -47,7 +47,7 @@ Once Eclipse has been started import ArduPilot by doing the following:
     :target: ../_images/eclipse-install3.png
     :width: 450px
 
-- Click the "Behavior" tab, select "Use custom build arguments" enter ``waf``. Additional arguments such as ``-j 16`` may be added here. The argument ``-j 16`` configures Cygwin to use 16 logical processors of the 8 core machine in this example. 
+- Click the "Behavior" tab, select "Use custom build arguments" enter ``waf``. Additional arguments such as ``-j 16`` may be added here. The argument ``-j 16`` configures Cygwin to use 16 logical processors of the 8 core machine in this example.
 - Setting "Workbench Build Behavior" will allow the use of built-in buttons for clean and build all targets. Note if you prefer to only build for a single vehicle type using these buttons change "build" to "copter".
 
 .. image:: ../images/eclipse-install3b.png
@@ -84,7 +84,7 @@ By default Copter, Plane and Rover use spaces in place of tabs. This can be set 
 
    .. image:: ../images/EditingTheCode_Eclipse_spaces1.png
        :target: ../_images/EditingTheCode_Eclipse_spaces1.png
-    
+
 -  Select **Windows \| Preferences \| C/C++ \| Code Style \| Formatter**
    and creating a new Profile (i.e. "K&R Tab") which has the
    "Indentation" set to "Spaces only"

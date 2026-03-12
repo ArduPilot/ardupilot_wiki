@@ -22,7 +22,7 @@ Below are the 6 supported targeting modes.
 0. **Retract Mode:** the mount will move to the roll, pitch and yaw angles held in the :ref:`MNT1_RETRACT_X<MNT1_RETRACT_X>`, :ref:`MNT1_RETRACT_Y<MNT1_RETRACT_Y>`, :ref:`MNT1_RETRACT_Z<MNT1_RETRACT_Z>` parameters respectively.  Some special mount specific behaviours:
 
     - :ref:`Gremsy mounts <common-gremsy-pixyu-gimbal>` will immediately stop stabilising
-    - :ref:`Servo mount <common-camera-gimbal>` will move to the specified angles and stop stabilising. 
+    - :ref:`Servo mount <common-camera-gimbal>` will move to the specified angles and stop stabilising.
     - :ref:`Siyi mounts <common-siyi-zr10-gimbal>` do not provide roll control so the roll angle (:ref:`MNT1_RETRACT_X<MNT1_RETRACT_X>`) is ignored.
 
     - If a servo has been setup to mechanically deploy/retract the mount (``SERVOx_FUNCTION`` = 9 for MNT1, "15" for MNT2) it will be commanded to retract the mount. Changing to another mode will command the servo to deploy the mount.
@@ -103,7 +103,7 @@ AUX FUNC     Description
 ========     ============================
 High         The ground location that the gimbal is pointing at is recorded (POI location) if it is currently clear and gimbal is switched to GPS Point targeting mode. The gimbal's entry mode is recorded also. If the POI location has already been recorded, then the mode is just switched back to GPS Point to track the POI target.
 Middle       If the POI location is set, then gimbal mode is reverted to the above saved mode to allow navigation, etc. but POI location is retained. Otherwise, no action.
-Low          POI location is cleared and gimbal targeting mode set to its default mode (eg. :ref:`MNT1_DEFLT_MODE<MNT1_DEFLT_MODE>`) 
+Low          POI location is cleared and gimbal targeting mode set to its default mode (eg. :ref:`MNT1_DEFLT_MODE<MNT1_DEFLT_MODE>`)
 ========     ============================
 
 .. warning:: in order for this to be accurate, the mount's :ref:`MNT1_PITCH_MAX<MNT1_PITCH_MAX>`, :ref:`MNT1_PITCH_MIN<MNT1_PITCH_MIN>`, :ref:`MNT1_YAW_MAX<MNT1_YAW_MAX>`, and :ref:`MNT1_YAW_MIN<MNT1_YAW_MIN>` must accurately reflect the gimbal's EARTH FRAME angle extremes while in the vehicle's normal attitude when function is activated (usually Plane in cruise, Copter in hover, etc.)

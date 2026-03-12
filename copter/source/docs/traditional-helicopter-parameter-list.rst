@@ -148,4 +148,3 @@ Parameters are provided for external tail gyro, if used.
 
 - :ref:`H_GYR_GAIN<H_GYR_GAIN>`
 - :ref:`H_GYR_GAIN_ACRO<H_GYR_GAIN_ACRO>`
-

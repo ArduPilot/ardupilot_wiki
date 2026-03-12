@@ -20,7 +20,7 @@ Key Features
 - Hot start 	2S
 - Tracking sensitivity 	-167dBm
 - Magnetic Compass Accuracy 	±0.1 degrees
-- Magnetic compass resolution 	22nT/LSB 
+- Magnetic compass resolution 	22nT/LSB
 - Input voltage                 4.7~5.2V
 - Operating temperature         -10~70℃
 - Size                          60*60*17mm

@@ -52,7 +52,7 @@ In addition, the last navigation waypoint before NAV_LAND must be far enough awa
 
 The above shows a planned approach with the pre-approach waypoint 440m away from touchdown at 50m altitude, the final approach waypoint at 220m away and 25m altitude, giving a supposedly gentle glide slope of 6 degrees (which is a 1.7m/s descent at 15m/s airspeed). However, the actual result is 9 deg glide path since the switch to AUTO mode and the landing sequence was begun at the point shown at beginning of the yellow path, and the resulting overshoots at the two waypoints result in a steeper glide slope (9 degrees) between the final approach waypoint and the touchdown point. Spacing the waypoints a little further away would have allowed the approach to have settled by the final approach waypoint, and with the desired final glide slope. The faster the vehicle is flying, the wider the turn radii are, and the wider the waypoints should be spaced.
 
-.. note:: You can use QGroundControl to automatically setup your approach and landing waypoints, but it will use a slightly different approach. Using the "LAND" button on the Plan screen, QGroundControl will add a "LOITER_TO_ALT" waypoint (NAV_LOITER_TO_ALT) at a distance determined by its wizard's glide slope parameter to bring the vehicle down (or up) to approach altitude, add a DO_LAND_START (See :ref:`aborting-autolanding`) marker, and a NAV_LAND. 
+.. note:: You can use QGroundControl to automatically setup your approach and landing waypoints, but it will use a slightly different approach. Using the "LAND" button on the Plan screen, QGroundControl will add a "LOITER_TO_ALT" waypoint (NAV_LOITER_TO_ALT) at a distance determined by its wizard's glide slope parameter to bring the vehicle down (or up) to approach altitude, add a DO_LAND_START (See :ref:`aborting-autolanding`) marker, and a NAV_LAND.
 
 .. note:: Very low drag vehicles will normally require a much shallower approach angle (glide slope) since they cannot lose altitude quickly while maintaining :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` (for vehicles with airspeed sensors) during the glide slope. Often a much steeper approach is required to clear obstacles. In those cases, there is an option (:ref:`TECS_OPTIONS<TECS_OPTIONS>` bit 1) that when set allows the speed in descents to exceed :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` up to :ref:`AIRSPEED_MAX<AIRSPEED_MAX>` in order to get up the the :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` descent rate,if required. This would apply not only to autolandings but any TECS speed controlled flight stage.
 
@@ -81,14 +81,14 @@ Setting the Flare Point
 The "flare" is the final stage of the landing when the autopilot cuts the throttle and raises the pitch, increasing drag and slowing the aircraft to sink onto the ground. The appropriate time to flare depends on the type of aircraft, and is controlled by the :ref:`LAND_FLARE_ALT <LAND_FLARE_ALT>` and :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` parameters.
 
 The first control of the flare is the :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` parameter.
-This is the time in seconds before the aircraft would hit the ground if it continued with its current descent rate. 
+This is the time in seconds before the aircraft would hit the ground if it continued with its current descent rate.
 
-So if the plane is descending at 2 meters/second and you set the :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` to 3 then the aircraft would flare at an altitude of 6 meters above the ground. 
+So if the plane is descending at 2 meters/second and you set the :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` to 3 then the aircraft would flare at an altitude of 6 meters above the ground.
 By using a time to impact to control the flare the aircraft is able to flare at a higher altitude if it is descending quickly, and at a lower altitude if it is descending slowly. That helps ensure the flare is able to produce a smooth touchdown.
 
 The second control is :ref:`LAND_FLARE_ALT <LAND_FLARE_ALT>`. That is an altitude above the ground in meters at which the aircraft will flare, regardless of its descent rate. It is important that this value be close to the altitude that will usually result from the :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>`, since it is used in later calculations. Changing the descent rate required from the last waypoint before the landing will impact the height at which :ref:`LAND_FLARE_SEC <LAND_FLARE_SEC>` would become active and should be adjusted accordingly.
 
-Whichever is reached first will force the beginning of the flare.The appropriate values for these two parameters depends on how the autopilot is estimating its altitude above the ground. 
+Whichever is reached first will force the beginning of the flare.The appropriate values for these two parameters depends on how the autopilot is estimating its altitude above the ground.
 
 If you are relying solely on a barometer for landing altitude then you will probably need higher values, to account for barometric errors (see :ref:`improving-autolanding` below). The defaults are usually appropriate as a starting point for 1-1.5 meter wingspan vehicles.
 
@@ -132,7 +132,7 @@ touchdown vertical speed for most models. To achieve that speed the TECS control
 
 The primary parameters which affect the ability of the aircraft to
 achieve the desired descent rate are
-:ref:`LAND_PITCH_DEG <LAND_PITCH_DEG>`, 
+:ref:`LAND_PITCH_DEG <LAND_PITCH_DEG>`,
 :ref:`TECS_LAND_DAMP <TECS_LAND_DAMP>`
 and the main pitch tuning parameters.
 
@@ -242,4 +242,3 @@ With planes that belly land it can also work well to setup the landing
 with a shallow pitch (in :ref:`LAND_PITCH_DEG<LAND_PITCH_DEG>`) and set a slightly higher
 altitude to flare at. That will only work if your stall speed is low
 enough that gliding for a while will work reliably.
-

@@ -5,7 +5,7 @@ Holybro Kakute H7 Mini
 ===========================
 
 .. image:: ../../../images/holybro-kakuteh7mini.jpg
-    
+
 
 *above image and some content courtesy of* `Holybro <http://www.holybro.com>`__
 
@@ -119,7 +119,7 @@ The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive p
 
 RC Input
 ========
- 
+
 RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols except PPM. See :ref:`common-rc-systems` for details for a specific RC system. :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` is set to "23", by default, to enable this.
 
 - SBUS/DSM/SRXL connects to the R6 pin but SBUS requires that the :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "3".
@@ -152,7 +152,7 @@ The PWM is in 5 groups:
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX)
 
 
 Channels within the same group need to use the same output rate. If any channel in a group uses DShot then all channels in the group need to use DShot.
@@ -171,9 +171,9 @@ The correct battery setting parameters are:
  - :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 11 , if external sensor used.
  - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 11.1
  - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` should be set to match external current sensor, if used. For example, if the Holybro Tekko32 4in1 ESC is used, this value would be 59.5
- 
+
  .. note:: these values are already set by default, but can be changed to trim the voltage and/or current as needed, or to suit other ESCs.
- 
+
 Compass
 =======
 

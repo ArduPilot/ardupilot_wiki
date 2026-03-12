@@ -78,7 +78,7 @@ If you are using the Adafruit HUZZAH ESP8266 board and are flashing from a Windo
 
 - Mac users should use the `esptool <https://github.com/espressif/esptool>`__
 
-  - First, find the COM of your connected device by using the following command line in the terminal. The USB COM port that the ESP8266 is attached will appear something  "/dev/ttyusbserial-A600eto2" 
+  - First, find the COM of your connected device by using the following command line in the terminal. The USB COM port that the ESP8266 is attached will appear something  "/dev/ttyusbserial-A600eto2"
 
     ..  code-block:: shell
 

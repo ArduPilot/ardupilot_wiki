@@ -22,8 +22,8 @@ stored inside the ESC.
 
 .. note:: You should not try to calibrate your ESC until you have
           completed both your :ref:`RC inputs <rc-throw-trim>`
-          calibration and your :ref:`servo setup <servo-functions>`. 
-          Mission Planner's motor calibration does not work on 
+          calibration and your :ref:`servo setup <servo-functions>`.
+          Mission Planner's motor calibration does not work on
           traditional planes.
 
 Typical ESC Calibration
@@ -57,7 +57,7 @@ Alternative ESC Calibration
 ===========================
 
 If the typical ESC calibration method above doesn't work,
-instead adjust the SERVOx_MIN and SERVOx_MAX values on 
+instead adjust the SERVOx_MIN and SERVOx_MAX values on
 the appropriate servo channel (SERVOx) you had set as the Throttle channel in ref:`servo setup <servo-functions>` to match the existing range of your ESC.
 
 To use this method slowly raise the SERVOx_MIN value until it is set
@@ -90,6 +90,6 @@ Most brushed motor ESCs have a fixed calibration which will require manually set
 Other ESC Protocols
 ===================
 
-New ESC's using protocols other than PWM often do not require calibration. 
-Some examples include CAN and DShot. The digital signals replace 
+New ESC's using protocols other than PWM often do not require calibration.
+Some examples include CAN and DShot. The digital signals replace
 the need for PWM calibration and are usually pre-set to a range of 1000us to 2000us.

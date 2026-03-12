@@ -4,7 +4,7 @@
 Sailing Vehicles Home
 ======================
 
-ArduRover now supports sailing vehicles, both on water and land. It is recommended that the user familiarizes themselves with the basic principles and terminology of sailing and sailboats. 
+ArduRover now supports sailing vehicles, both on water and land. It is recommended that the user familiarizes themselves with the basic principles and terminology of sailing and sailboats.
 
 ..  youtube:: zoNLZ-xE-_0
     :width: 100%

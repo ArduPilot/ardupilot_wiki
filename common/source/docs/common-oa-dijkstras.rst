@@ -17,7 +17,7 @@ Copter and Rover support `Dijkstra's <https://en.wikipedia.org/wiki/Dijkstra%27s
 
 .. warning::
 
-   Dijkstra's does not support Spline Waypoints. 
+   Dijkstra's does not support Spline Waypoints.
 
 Configuration
 -------------

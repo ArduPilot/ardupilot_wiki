@@ -76,7 +76,7 @@ CubeNodeETH Setup
 
 The CubeNodeETH's parameters can be set using Mission Planner's DroneCAN screen or the :ref:`DroneCAN GUI tool <common-uavcan-gui>`.  The following instructions assume Mission Planner is used:
 
-- Connect to the AutoPilot with Mission Planner 
+- Connect to the AutoPilot with Mission Planner
 - Open the Setup, Optional Hardware, DroneCAN/UAVCAN screen
 - From the top-left drop-down select MAVLinkCAN1 (or MAVLinkCAN2 if the autopilot's CAN2 is used)
 - Press "Connect" and the table should be populated with the available DroneCAN devices including "org.ardupilot.CubePilot-PPPGW"
@@ -131,6 +131,6 @@ The CubeNodeETH firmware can be updated by following the instructions below
         :target: ../_images/cubepilot-cubenodeeth-firmwareupdate3.png
         :width: 450px
 
-  - After the update has completed you should see the firmware version change (see the green underline above) 
+  - After the update has completed you should see the firmware version change (see the green underline above)
 
 Reboot the autopilot and CubeNodeETH.  There should be no need to backup and restore any parameters as part of the upgrade process

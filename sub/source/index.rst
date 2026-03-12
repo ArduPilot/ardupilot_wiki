@@ -20,7 +20,7 @@ Getting more info
     Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
 
 --------------
-    
+
 .. toctree::
    :hidden:
 
@@ -34,4 +34,3 @@ Getting more info
    Peripheral Hardware <docs/common-optional-hardware>
    Advanced Configuration <docs/common-advanced-configuration>
    Additional Information <docs/additional-information>
-

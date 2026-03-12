@@ -54,7 +54,7 @@ Pinouts
 
 Videos
 ======
-* Please use the subtitle translator to get English. 
+* Please use the subtitle translator to get English.
 * Overview of the module:
 
 .. youtube:: XszxSj__-Xg

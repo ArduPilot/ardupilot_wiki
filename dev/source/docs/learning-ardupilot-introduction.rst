@@ -75,4 +75,3 @@ features or board support. Currently the external trees are:
 .. note::
 
    Most of these are imported as :ref:`Git Submodules <git-submodules>` when you :ref:`build ArduPilot <building-the-code>`.
-

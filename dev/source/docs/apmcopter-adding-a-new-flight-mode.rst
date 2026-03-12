@@ -76,7 +76,7 @@ As a reference the diagram below provides a high level view of Copter's architec
    `mode_stabilize.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_stabilize.cpp>`__
    or `mode_loiter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_loiter.cpp>`__.
    This new file should probably implement the ``init()`` method which will be called when the vehicle first enters the mode.  This function should return true if it is OK for the vehicle to enter the mode, false if it cannot.
-   Below is an excerpt from `mode_rtl.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_rtl.cpp>`__'s init method that shows how the vehicle cannot enter RTL mode unless the home position has been set. 
+   Below is an excerpt from `mode_rtl.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_rtl.cpp>`__'s init method that shows how the vehicle cannot enter RTL mode unless the home position has been set.
 
     ::
 

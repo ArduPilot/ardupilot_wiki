@@ -58,9 +58,9 @@ For the Pixhawk
    - Configuration - Advanced Params - Adv Parameter List.
 
    -  For Pixhawk v1, set the :ref:`ARSPD_PIN <ARSPD_PIN>` parameter to 15 in the Advanced Parameter
-      List and select "Write Parameters". 
+      List and select "Write Parameters".
    -  For Pixhawk v4, set the :ref:`ARSPD_PIN <ARSPD_PIN>` parameter to 4 in the Advanced Parameter
-      List and select "Write Parameters". 
+      List and select "Write Parameters".
 
 For other  autopilots:
 

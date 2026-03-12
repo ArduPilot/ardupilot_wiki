@@ -14,7 +14,7 @@ Additional Information and Topics of Interest
     Antenna Tracking <common-antenna-tracking>
     Simulation <common-simulation>
     Solo Software Upgrade <solo_arducopter_upgrade>
-    SkyRocket <skyrocket> 
+    SkyRocket <skyrocket>
     OEM Customization <common-oem-customizations>
     Use Cases and Applications<common-use-cases-and-applications>
     Web Tools <https://firmware.ardupilot.org/Tools/WebTools/>

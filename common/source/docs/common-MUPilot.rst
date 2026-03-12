@@ -36,7 +36,7 @@ Features
 Mechanical
 ----------
 * 91mm x 46mm x 31mm
-* 106g 
+* 106g
 
 Connectors
 ==========

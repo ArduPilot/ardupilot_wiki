@@ -113,4 +113,3 @@ menu which allows you to select the board type.
 
 .. image:: ../images/ArduinoAPMConfig.png
     :target: ../_images/ArduinoAPMConfig.png
-

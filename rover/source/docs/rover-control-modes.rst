@@ -30,5 +30,3 @@ The full list of modes in alphabetical order is:
     Simple <simple-mode>
     Steering <steering-mode>
     Smart RTL <smartrtl-mode>
-    
-    

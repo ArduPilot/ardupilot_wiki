@@ -4,7 +4,7 @@
 Cartographer SLAM with ROS 2 in SITL
 ====================================
 
-This page shows how to setup ROS 2 with ArduPilot SITL and run Google Cartographer as a SLAM source. 
+This page shows how to setup ROS 2 with ArduPilot SITL and run Google Cartographer as a SLAM source.
 
 Installation
 ============
@@ -19,7 +19,7 @@ Once that's done, simply run:
     git clone git@github.com:ArduPilot/ardupilot_ros.git
 
 .. code-block:: bash
-    
+
     cd ~/ardu_ws
     rosdep install --from-paths src --ignore-src -r --skip-keys gazebo-ros-pkgs
 
@@ -38,7 +38,7 @@ This package is used in combination with `ardupilot_gz`, first we will launch a 
 To launch rviz and gazebo, run:
 
 .. code-block:: bash
-    
+
     source ~/ardu_ws/install/setup.sh
     ros2 launch ardupilot_gz_bringup iris_maze.launch.py lidar_dim:=2
 
@@ -46,7 +46,7 @@ Now, we can launch Google Cartographer to generate SLAM, check if a map is being
 In another terminal, run:
 
 .. code-block:: bash
-    
+
     source ~/ardu_ws/install/setup.sh
     ros2 launch ardupilot_cartographer cartographer.launch.py
 
@@ -73,7 +73,7 @@ After changing the values above, reboot the flight controller.
     The parameters above are recommended for SITL. If you plan on using this on a real copter, it is a good idea to setup a second source of EKF. This way the robot doesn't crash if the external odometry you are providing stops publishing or gets lost.
 
     Please refer to this link for more information on `Common EKF Sources <https://ardupilot.org/copter/docs/common-ekf-sources.html>`__ as well as this guide on `GPS / Non-GPS Transitions <https://ardupilot.org/copter/docs/common-non-gps-to-gps.html>`__.
- 
+
 
 
 Demo

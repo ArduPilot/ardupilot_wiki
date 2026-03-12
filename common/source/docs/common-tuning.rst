@@ -48,8 +48,3 @@ parameters. The following topics show you how.
 
 
 [copywiki destination="copter,plane"]
-
-
-
-
-

@@ -34,7 +34,7 @@ Specifications
 -  **Power**
 
    -  9V ~ 25V DC input power (3S-6S)
-   -  5V 2A BEC for peripheral 
+   -  5V 2A BEC for peripheral
    -  9V 2A for Video
 
 -  **Size and Dimensions**
@@ -76,7 +76,7 @@ The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive p
 RC Input
 ========
 
-RC input is configured on the R2 (UART2_RX) pin for most RC unidirectional protocols except SBUS which should be applied at the SBUS pin. PPM is not supported. For Fport, a bi-directional inverter will be required. See `this article for connection information for F4 autopilots <https://ardupilot.org/plane/docs/common-connecting-sport-fport.html>`__. 
+RC input is configured on the R2 (UART2_RX) pin for most RC unidirectional protocols except SBUS which should be applied at the SBUS pin. PPM is not supported. For Fport, a bi-directional inverter will be required. See `this article for connection information for F4 autopilots <https://ardupilot.org/plane/docs/common-connecting-sport-fport.html>`__.
 
 For CRSF/ELRS/SRXL2 connection of the receiver to T2 will also be required.
 
@@ -108,7 +108,7 @@ Channels within the same group need to use the same output protocol. If any chan
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX)
 
 OSD Support
 ===========

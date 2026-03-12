@@ -23,13 +23,13 @@ ArduPilot exposes "sensor" type data over DDS, that usually corresponds to a phy
    </tr>
    <tr>
    <td>ap/navsat/navsat0</td>
-   <td>sensor_msgs/msg/NavSatFix</td> 
+   <td>sensor_msgs/msg/NavSatFix</td>
    <td>This is the reported GPS sensor position from the GPS subsystem.
    TODO It will include a frame ID as instance number</td>
    </tr>
    <tr>
    <td>ap/battery</td>
-   <td>sensor_msgs/msg/BatteryState</td> 
+   <td>sensor_msgs/msg/BatteryState</td>
    <td>This sends the battery state for each enabled battery.
    The battery instance is available in the frame ID.
    Each enabled battery will be have data published.
@@ -61,27 +61,27 @@ Pose, Rates, and Coordinates
    </tr>
    <tr>
    <td>ap/gps_global_origin/filtered</td>
-   <td>geographic_msgs/msg/GeoPointStamped</td> 
+   <td>geographic_msgs/msg/GeoPointStamped</td>
    <td>This is the filtered AHRS's inertial navigation origin. This is NOT the same ask the HOME location.
    </tr>
    <tr>
    <td>ap/twist/filtered</td>
-   <td>geometry_msgs/msg/TwistStamped</td> 
+   <td>geometry_msgs/msg/TwistStamped</td>
    <td>This is the filtered AHRS's velocity in the local ENU frame relative to home.</td>
    </tr>
    <tr>
    <td>ap/pose/filtered</td>
-   <td>geometry_msgs/msg/PoseStamped</td> 
+   <td>geometry_msgs/msg/PoseStamped</td>
    <td>This is the filtered AHRS's pose in the local ENU frame relative to home.</td>
    </tr>
    <tr>
    <td>ap/geopose/filtered</td>
-   <td>geographic_msgs/msg/GeoPoseStamped</td> 
+   <td>geographic_msgs/msg/GeoPoseStamped</td>
    <td>This is the filtered AHRS's pose (position+orientation) in global coordinates</td>
    </tr>
    <tr>
    <td>ap/tf_static</td>
-   <td>tf2_msgs/msg/TFMessage</td> 
+   <td>tf2_msgs/msg/TFMessage</td>
    <td>AP broadcasts its known static transforms on this topic.
    The transforms include the GPS sensor offsets relative to the vehicle origin.</td>
    </tr>
@@ -102,12 +102,12 @@ Time
    </tr>
    <tr>
    <td>ap/time</td>
-   <td>builtin_interface/msg/Time</td> 
+   <td>builtin_interface/msg/Time</td>
    <td>This sends time from AP's real time clock.</td>
    </tr>
    <tr>
    <td>ap/clock</td>
-   <td>rosgraph_msgs/msg/Clock</td> 
+   <td>rosgraph_msgs/msg/Clock</td>
    <td>This sends time from AP's real time clock in a format suitable for aligning ROS time of a companion computer.</td>
    </tr>
    </tbody>
@@ -131,19 +131,19 @@ Control includes the high level navigation objectives.
    </tr>
    <tr>
    <td>ap/joy</td>
-   <td>sensor_msgs/msg/Joy</td> 
+   <td>sensor_msgs/msg/Joy</td>
    <td>Receive joystick commands that override the RC input.</td>
    </tr>
    <tr>
    <td>ap/cmd_vel</td>
-   <td>geometry_msgs/msg/TwistStamped</td> 
+   <td>geometry_msgs/msg/TwistStamped</td>
    <td>Receive REP-147 velocity commands.
-    Some vehicles support body frame while others support earth frame. 
+    Some vehicles support body frame while others support earth frame.
    </td>
    </tr>
    <tr>
    <td>ap/cmd_gps_pose</td>
-   <td>ardupilot_msgs/msg/GlobalPosition</td> 
+   <td>ardupilot_msgs/msg/GlobalPosition</td>
    <td>Receive REP-147 "High level goal".
     This message is called "GlobalPosition" in REP-147.
     Consult the source code to determine which fields are supported on which vehicles.
@@ -153,7 +153,7 @@ Control includes the high level navigation objectives.
    </table>
 
 For more information on the high level goal interface,
-see the :ref:`Waypoint Goal Interface<ros2-waypoint-goal-interface>` 
+see the :ref:`Waypoint Goal Interface<ros2-waypoint-goal-interface>`
 
 Commands
 ========
@@ -171,12 +171,12 @@ ArduPilot exposes service servers for the following purposes:
    </tr>
    <tr>
    <td>/ap/arm_motors</td>
-   <td>ardupilot_msgs/srv/ArmMotors</td> 
+   <td>ardupilot_msgs/srv/ArmMotors</td>
    <td>Arm or disarm the vehicle</td>
    </tr>
    <tr>
    <td>/ap/experimental/takeoff</td>
-   <td>ardupilot_msgs/srv/Takeoff</td> 
+   <td>ardupilot_msgs/srv/Takeoff</td>
    <td>Command a copter to take off</td>
    </tr>
    <tr>
@@ -205,7 +205,7 @@ ArduPilot exposes service servers for the following purposes:
 After building ``ardupilot_msgs`` and sourcing your workspace, you can inspect the message definitions likes so:
 
 .. code-block:: bash
-  
+
     ros2 interface show ardupilot_msgs/srv/ArmMotors
 
 To check the vehicle can be armed using the ROS 2 CLI:
@@ -217,7 +217,7 @@ To check the vehicle can be armed using the ROS 2 CLI:
 To arm the vehicle using the ROS 2 CLI:
 
 .. code-block:: bash
-  
+
     ros2 service call /ap/arm_motors ardupilot_msgs/srv/ArmMotors "{arm: true}"
 
 
@@ -227,8 +227,8 @@ Odometry
 Ardupilot may not have a good estimate of where it is relative to where it started moving.
 A companion computer can interface with sensors that provide odometry, which is the computation of the dynamic transform
 from the ``odom`` frame to the ``base_link`` frame. This data is fed into ArduPilot's ``AP_VisualOdom`` library.
-This data may come from visual sensors, however other technologies such as radar and lidar can 
-also provide odometry data. Regardless of the method of odometry, 
+This data may come from visual sensors, however other technologies such as radar and lidar can
+also provide odometry data. Regardless of the method of odometry,
 ArduPilot has a single ROS interface to receive it.
 
 This data typically comes from a `TF2 Transform Tree <https://docs.ros.org/en/humble/Tutorials/Intermediate/Tf2/Tf2-Main.html>`_.
@@ -245,15 +245,15 @@ For more information on the coordinate systems used, review `ROS REP-105 <https:
    </tr>
    <tr>
    <td>ap/tf</td>
-   <td>tf2_msgs/msg/TFMessage</td> 
+   <td>tf2_msgs/msg/TFMessage</td>
    <td>Receive the odometry dynamic transform on the normal tf2 dynamic transform topic.</td>
    </tr>
    <tr>
    </tbody>
    </table>
 
-.. warning:: 
-   Only the dynamic transformations on ``/ap/tf`` that have parent_frame ``odom`` and child_frame ``base_link`` are fed into ``AP_VisualOdom``. 
+.. warning::
+   Only the dynamic transformations on ``/ap/tf`` that have parent_frame ``odom`` and child_frame ``base_link`` are fed into ``AP_VisualOdom``.
    Other frame configurations will be gracefully ignored, so feel free to populate this topic with other transforms if that's convenient.
 
 For more information on how to setup ArduPilot with an external odometry source, see the :ref:`cartographer SLAM example<ros2-cartographer-slam>`.
@@ -265,7 +265,7 @@ ArduPilot strives to only consume the resources it needs.
 The DDS interface is no exception.
 
 Every topic and service can be individually enabled or disabled
-at compile time. See 
+at compile time. See
 :ref:`common-oem-customizations`.
 
 Refer to the `AP_DDS_Config.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_DDS/AP_DDS_config.h>`_

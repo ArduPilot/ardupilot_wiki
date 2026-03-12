@@ -29,10 +29,10 @@ meters, and when it gets false readings it tends to read ranges of less
 than 1 meter. And setting :ref:`RNGFND1_MIN <RNGFND1_MIN>` to 1.5 , if its the first system rangefinder, will discard any rangefinder readings below 1.5 meters, and will
 greatly improve the robustness of the Lidar for landing.
 
-If the autopilot has a good rangefinder (:ref:`such as LIDAR <common-rangefinder-lidarlite>`) then you can safely choose quite small numbers for :ref:`LAND_FLARE_SEC<LAND_FLARE_SEC>` and :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>`, and flare closer to the ground than with the default values. 
-That will generally produce a better landing. 
+If the autopilot has a good rangefinder (:ref:`such as LIDAR <common-rangefinder-lidarlite>`) then you can safely choose quite small numbers for :ref:`LAND_FLARE_SEC<LAND_FLARE_SEC>` and :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>`, and flare closer to the ground than with the default values.
+That will generally produce a better landing.
 
-A value for :ref:`LAND_FLARE_SEC<LAND_FLARE_SEC>` of 1.5 and :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` of 2 is a good place to start with a LiDAR. 
+A value for :ref:`LAND_FLARE_SEC<LAND_FLARE_SEC>` of 1.5 and :ref:`LAND_FLARE_ALT<LAND_FLARE_ALT>` of 2 is a good place to start with a LiDAR.
 
 Impact of Glide Slope Terrain variation
 =======================================

@@ -293,8 +293,8 @@ Analog inputs
 
 The A6SE flight controller has 5 analog inputs
 
-- ADC Pin4   -> Battery Current 
-- ADC Pin2   -> Battery Voltage 
+- ADC Pin4   -> Battery Current
+- ADC Pin2   -> Battery Voltage
 - ADC Pin8   -> ADC 3V3 Sense
 - ADC Pin10  -> ADC 6V6 Sense
 - ADC Pin11  -> RSSI voltage monitoring

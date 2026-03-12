@@ -18,7 +18,7 @@ To trigger an automatic landing as part of an RTL(return to launch) you need to 
 -  set the :ref:`RTL_AUTOLAND <RTL_AUTOLAND>` parameter to 1 or 2
 
 The exact behaviour depends on the :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` value:
--  If :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` = 1, then the plane will first RTL as normal, then when it starts circling the return point (home or a rally point) it will then switch to the AUTO mission after the ``DO_LAND_START`` 
+-  If :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` = 1, then the plane will first RTL as normal, then when it starts circling the return point (home or a rally point) it will then switch to the AUTO mission after the ``DO_LAND_START``
 -  If :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` = 2, then the plane will bypass the RTL completely and go straight to the landing sequence after the ``DO_LAND_START``.
 
 .. note:: the "landing sequence" whose start is the ``DO_LAND_START`` marker, does not actually have to include a landing! it can be any sequence of valid mission commands. For example, flying to a location, and changing to an indefinite VTOL loiter (applies only to a QuadPlane, obviously).

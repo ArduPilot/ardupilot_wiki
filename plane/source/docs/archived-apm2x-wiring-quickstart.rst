@@ -7,8 +7,8 @@ Archived:APM2.x Wiring QuickStart
 .. warning::
 
     **ARCHIVED**
-    
-    The APM2.x is end of life for use with ArduPilot. 
+
+    The APM2.x is end of life for use with ArduPilot.
     This article is made available for existing users.
 
 This article explains how to write up Plane's essential components when

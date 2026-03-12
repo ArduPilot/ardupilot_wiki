@@ -1,7 +1,7 @@
 .. _common-foxeerf745aio:
 
 =======================
-Foxeer Reaper F745 AIO 
+Foxeer Reaper F745 AIO
 =======================
 
 The Foxeer Reaper F745 AIO V2/V3/V4 features an F7 autopilot and an integrated 45A 2-6S BLHeli_S 4-in-1 Bluejay ESC.
@@ -71,7 +71,7 @@ default protocols shown
 - SERIAL0 = console = USB
 - SERIAL1 = Telemetry 1 = USART1 (RX1 used to for SBUS in DJI connector, protocol parameter must be changed)
 - SERIAL2 = RC Input = USART2 (Defaults to RC input protocol) DMA-eanbled
-- SERIAL3 = Telemetry 1/USER = UART3 
+- SERIAL3 = Telemetry 1/USER = UART3
 - SERIAL4 = Telemetry 2/USER = UART4
 - SERIAL5 and SERIAL 6 are not available
 - SERIAL7 = GPS = USART7 (DMA-enabled)
@@ -105,7 +105,7 @@ to use DShot. Outputs 1-4 support bidirectional DShot.
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX)
 
 
 Integrated ESC Setup

@@ -10,13 +10,13 @@ Ornithopters
 Ornithopters differ from conventional airplanes by not
 having a propeller, but rather flapping wings.
 
-Ornithopters, especially those that resemble birds, benefit 
-greatly from having the ardupilot system on-board, as this way 
+Ornithopters, especially those that resemble birds, benefit
+greatly from having the ardupilot system on-board, as this way
 they can be set to "patrol an area", and thus scare off "flying pests"
 such as pigeons, ... (these damage freshly sown fields by eating the seeds
 planted, also eat fruit such as currants, blueberries, ... )
 
-Ready-to-fly (RTF) ornithopters are not obtainable. 
+Ready-to-fly (RTF) ornithopters are not obtainable.
 Ornithopters can be build, however, using the ornithopter kits from `BirdKit <http://www.birdkit.com/>`__. There are some designs (i.e. Kestrel), you can also print the airframe and wing flapping mechanism using a 3D-printer.
 `Kazuhiko <https://3dprint.com/82355/3d-printed-ornithopters>`__ provides such 3D-printable files from the `Kazuhiko Kakuta Shapeway shop <http://kakutaclinic.life.coocan.jp/3DPShop.html>`__.
 The 3D-printable parts need to be combined with the fuselage of other kits (more is explained on `this image <http://kakutaclinic.life.coocan.jp/K31iV3D.jpg>`__, `this excel file <http://kakutaclinic.life.coocan.jp/K313DPL.xls>`__, and these `youtube video's <https://www.youtube.com/playlist?list=PLErvdRrwWuPqYYhMu_lF_OLwPxQd2iphJ>`__.
@@ -42,5 +42,3 @@ Wing Construction
 
 For the wings, they can be built using 3D-printed wing spars (or profiles that fit around a carbon spar. The airfoil profile can be any cambered profile depending on the ornithopter design, and the `exact airfoil <http://www.dcgeorge.com/Falcon12aFeasibilityStudy.html>`__ is usually calculated.
 The angle of attack is often about `15 degrees <https://www.ornithopter.org/how.wing.shtml>`__.
-
-

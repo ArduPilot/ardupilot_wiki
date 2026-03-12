@@ -25,7 +25,7 @@ A multicopter such as the `EnRoute AC 940-D <https://www.nttedt.co.jp/product?pg
 
 The pump controls the rate of flow of the fertilizer.
 
-The optional spinner (rotary atomizer) should be attached to the end of the spraying nozzles and enables control over spray droplet size. Higher PWM, faster rotation, smaller droplets. 
+The optional spinner (rotary atomizer) should be attached to the end of the spraying nozzles and enables control over spray droplet size. Higher PWM, faster rotation, smaller droplets.
 
 Enabling the Sprayer
 ====================
@@ -43,4 +43,3 @@ Configuring the pump
 -  :ref:`SPRAY_PUMP_RATE <SPRAY_PUMP_RATE>` controls the pump rate (expressed as a percentage) when the vehicle is travelling at 1m/s.  By default this is 10%.  The pump rate increases linearly with the vehicle speed meaning by default the pump will reach 100% at 10m/s.
 -  :ref:`SPRAY_SPINNER <SPRAY_SPINNER>` sets the pwm value sent to the spinner when the pump is on.
 -  :ref:`SPRAY_SPEED_MIN <SPRAY_SPEED_MIN>` sets the minimum vehicle speed (in cm/s) at which the pump will operate.  Default is 100 meaning the pump will begin when the vehicle is travelling at or above 1m/s.
-

@@ -84,7 +84,7 @@ Steps
 #. Flash the autopilot with software compiled with ``--enable-DDS``
 #. Connect the autopilot via ethernet to the computer
 #. Open a MavProxy session
-#. Configure the parameters described above, starting with the ``ENABLE`` parameters first. 
+#. Configure the parameters described above, starting with the ``ENABLE`` parameters first.
 #. Reboot the flight controller
 #. Start the MicroROS Agent with the same port as the parameter for ``DDS_UDP_PORT``
 

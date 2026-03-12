@@ -117,7 +117,7 @@ Right fin servo
     </table>
 
 Now the servo horns can be glued onto the fins to allow for attaching to the servos.
-Take care when gluing them so that there is enough clearance between the fin and the servo's body to allow for its full range of motion. 
+Take care when gluing them so that there is enough clearance between the fin and the servo's body to allow for its full range of motion.
 With the fins and servos in the photos, it was best to glue the servo horns such that when attached to the servo, the wood of the fin is on the side of the servo where the output gear is closer to the edge.
 
 .. image:: /images/fin_attachment.jpg

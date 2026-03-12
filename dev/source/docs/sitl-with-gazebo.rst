@@ -7,9 +7,9 @@ Using SITL with Gazebo
 `Gazebo <http://gazebosim.org/>`__ is a well known and respected robotics
 simulator which has been used in a number of robotics simulation challenges
 for ground, marine and space based robots, including the DARPA Robotics
-Challenge, DARPA Subterranean Challenge and Virtual RobotX Competition. 
+Challenge, DARPA Subterranean Challenge and Virtual RobotX Competition.
 
-There are two main generations of Gazebo. To use SITL with Gazebo11 and earlier 
+There are two main generations of Gazebo. To use SITL with Gazebo11 and earlier
 versions see the
 :ref:`instructions for legacy versions <sitl-with-gazebo-legacy>`.
 
@@ -43,7 +43,7 @@ We currently support
 `Gazebo Garden <https://gazebosim.org/docs/garden/install>`__
 and
 `Gazebo Harmonic <https://gazebosim.org/docs/harmonic/install>`__
-which are available for Ubuntu 20.04 (Focal) and 22.04 (Jammy) and 
+which are available for Ubuntu 20.04 (Focal) and 22.04 (Jammy) and
 macOS Big Sur (11), Monterey (12), and Ventura (13).
 
 #. Install Gazebo following the instructions for your platform.
@@ -221,7 +221,7 @@ Images from camera sensors may be streamed with GStreamer using the GstCameraPlu
 
 The *<image_topic>* and *<enable_topic>* parameters are deduced from the topic name for the camera sensor, but may be overridden if required.
 
-The **iris_runway.sdf** world includes a 3 degrees of freedom gimbal with a zoomable camera. 
+The **iris_runway.sdf** world includes a 3 degrees of freedom gimbal with a zoomable camera.
 
 In order to get the desired gazebo topic of any world you can run:
 

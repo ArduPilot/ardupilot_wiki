@@ -63,4 +63,3 @@ You can view the live distance readings in Mission Planner → Flight Data → S
    :target: ../_images/mp_rangefinder_lidarlite_testing.jpg
 
 If values remain at zero, verify serial wiring, baud rate, and power supply.
-

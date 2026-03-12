@@ -59,7 +59,7 @@ Connection and Configuration
     If using "Brushed with Relay" to control an L298N motor driver, two relay outputs are required for each motor, one of which must be inverted.
 
     Set the following servo parameters:
- 
+
     - :ref:`MOT_PWM_TYPE<MOT_PWM_TYPE>` = 3
     - :ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>` = 73 ("ThrottleLeft" or 70 for "Throttle")
     - :ref:`SERVO3_FUNCTION<SERVO3_FUNCTION>` = 74 ("ThrottleRight" or unused)

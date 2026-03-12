@@ -24,7 +24,7 @@ Specifications
 -  **Microprocessor**
 
    -  `STM32H743IIK6 MCU <https://www.st.com/en/microcontrollers-microprocessors/stm32h743ii.html>`__
-    
+
     -  480Mhz / 1MB RAM / 2MB Flash
 
 -  **Power Requirements**
@@ -34,7 +34,7 @@ Specifications
 
     -  300ma for main system
     -  200ma for heater
- 
+
 -  **Other**
 
    -  FRAM

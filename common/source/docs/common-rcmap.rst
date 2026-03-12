@@ -35,7 +35,7 @@ After changing any of these parameters the autopilot should be
 rebooted.
 
 [site wiki="copter"]
-For multicopters, the :ref:`RC calibration <common-radio-control-calibration>` and 
+For multicopters, the :ref:`RC calibration <common-radio-control-calibration>` and
 :ref:`ESC calibration <copter:esc-calibration>` should be re-done.
 [/site]
 

@@ -14,9 +14,9 @@ Key features:
 
    -  Down to 10 millimeters GPS accuracy
    -  Heading accuracy of 0.1° per meter of Baseline distance
-   -  Up to 50 RTK position updates per second 
+   -  Up to 50 RTK position updates per second
    -  Tripleband: L1, L2, L5 support
-   -  Basic jamming immunity 
+   -  Basic jamming immunity
 
 Where to Buy
 ============
@@ -47,7 +47,7 @@ All ArduSimple GNSS models come with a JST GH 6-pin connector/cable that is comp
 
 XBee socket
 ===========
-The onboard XBee socket can be used to expand functionality with `Plugin accessories <https://www.ardusimple.com/radio-links/>`_ (MR/LR/XLR radios, Bluetooth, WiFi, Ethernet, Dataloggers, RS232, Canbus, L-Band, 4G/3G/2G). 
+The onboard XBee socket can be used to expand functionality with `Plugin accessories <https://www.ardusimple.com/radio-links/>`_ (MR/LR/XLR radios, Bluetooth, WiFi, Ethernet, Dataloggers, RS232, Canbus, L-Band, 4G/3G/2G).
 
 .. note:: The cables/connectors may be modified to connect to other autopilot boards, using the Pin Map information provided above.
 
@@ -60,11 +60,11 @@ To set up simpleRTK3B Compass receiver to use with ArduPilot, we have prepared s
 
 2. To achieve centimeter-level precision in positioning, RTK correction data must be sent to your drone in real time. There are two main methods for delivering this correction data:
 
-   -  Using NTRIP correction service:  If you are going to operate in areas with reliable internet connection and NTRIP service coverage, follow `Tutorial on sending NTRIP corrections to ArduPilot. <https://www.ardusimple.com/send-ntrip-corrections-to-ardupilot-with-missionplanner-qgroundcontrol-and-mavproxy/>`_  If you are not aware of NTRIP service provider in your area, we have prepared the `List of RTK correction service providers in your country. <https://www.ardusimple.com/rtk-correction-services-in-your-country/>`_ 
-   -  Using RTK corrections from a Base Station: if there is no internet access or NTRIP correction service available in your area, refer to ArduSimple’s `tutorial on sending RTK corrections from Base station to ArduPilot. <https://www.ardusimple.com/send-rtk-base-station-corrections-to-ardupilot-with-missionplanner-qgroundcontrol-and-mavproxy/>`_ 
+   -  Using NTRIP correction service:  If you are going to operate in areas with reliable internet connection and NTRIP service coverage, follow `Tutorial on sending NTRIP corrections to ArduPilot. <https://www.ardusimple.com/send-ntrip-corrections-to-ardupilot-with-missionplanner-qgroundcontrol-and-mavproxy/>`_  If you are not aware of NTRIP service provider in your area, we have prepared the `List of RTK correction service providers in your country. <https://www.ardusimple.com/rtk-correction-services-in-your-country/>`_
+   -  Using RTK corrections from a Base Station: if there is no internet access or NTRIP correction service available in your area, refer to ArduSimple’s `tutorial on sending RTK corrections from Base station to ArduPilot. <https://www.ardusimple.com/send-rtk-base-station-corrections-to-ardupilot-with-missionplanner-qgroundcontrol-and-mavproxy/>`_
 
 More information
 ================
-   -  `User Guide: simpleRTK3B Compass <https://www.ardusimple.com/user-guide-simplertk3b-compass/>`_  
-   -  `How to configure Unicore UM98x Mosaic-X5 <https://www.ardusimple.com/how-to-configure-unicore-um980-um981-um982/>`_ 
-   -  `How GPS can help you measure the real heading of your vehicle <https://www.ardusimple.com/how-gps-can-help-you-measure-the-real-heading-of-your-vehicle/>`_ 
+   -  `User Guide: simpleRTK3B Compass <https://www.ardusimple.com/user-guide-simplertk3b-compass/>`_
+   -  `How to configure Unicore UM98x Mosaic-X5 <https://www.ardusimple.com/how-to-configure-unicore-um980-um981-um982/>`_
+   -  `How GPS can help you measure the real heading of your vehicle <https://www.ardusimple.com/how-gps-can-help-you-measure-the-real-heading-of-your-vehicle/>`_

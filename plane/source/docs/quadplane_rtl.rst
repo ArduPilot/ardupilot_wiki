@@ -85,7 +85,7 @@ Setting :ref:`Q_RTL_MODE<Q_RTL_MODE>` to 3 results in behavior similar to a norm
 
 In effect, this enables the QRTL mode for any RTL actuation: failsafe actions, mode change to QRTL, or completion of a mission (unless the last mission item prevents RTL).
 
-.. note:: This mode is also used by default in all mission VTOL_LANDINGs unless the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 is set to disable it. 
+.. note:: This mode is also used by default in all mission VTOL_LANDINGs unless the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 is set to disable it.
 
 This fixed wing "approach" allows VTOL landings to be used without needing to setting up approach waypoints to reduce altitude and get close enough to proceed in VTOL mode toward the landing point. If disabled by bit 16, the vehicle will instantly transition to VTOL mode upon that mission items execution, or upon mode changes to :ref:`QRTL <qrtl-mode>`, and navigate to its landing point in VTOL before doing a QLAND. This means that you should be very close to the landing site if the FW approach mode is disabled in a mission since it will proceed in VTOL flight to the land point.
 

@@ -29,7 +29,7 @@ Motors
 [/site]
 
 
-ESC for Brushless Motors 
+ESC for Brushless Motors
 ========================
 
 ESCs (Electronic Speed Controls) have many different protocols for communicating with the autopilot for motor speed control, and and can also provide telemetry information on motor rpm, battery voltage. The

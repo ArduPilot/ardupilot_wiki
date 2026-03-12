@@ -37,7 +37,7 @@ The user can connect to this access point and then easily connect to ArduPilot r
 
 Once connected to the WiFi network is possible to connect to these two URLs:
    .. code::
-   
+
        http://10.0.1.128        (Configuration pages)
        http://10.0.1.128:8000   (Which shows a video streaming on/off button)
 

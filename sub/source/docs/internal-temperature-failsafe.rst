@@ -7,4 +7,3 @@ Sub can use the barometer normally included with an autopilot to determine if th
 
 -  **Disabled** (Value 0) will disable the failsafe entirely.
 -  **Warn Only** (Value 1) will send a GCS warning message.
-

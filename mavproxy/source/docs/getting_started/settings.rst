@@ -10,8 +10,8 @@ The settings take the following form in the MAVProxy environment:
 .. code:: bash
 
     set <settingname> <value>
-    
-If a ``<value>`` is not specified, MAVProxy will output the current value 
+
+If a ``<value>`` is not specified, MAVProxy will output the current value
 of the setting.
 
 The current settings in MAVProxy are:
@@ -64,4 +64,3 @@ param_docs                       show help for parameters                       
 sys_status_error_warn_interval   interval to warn of autopilot software failure  True or False
 inhibit_screensaver_when_armed   inhibit screensaver while vehicle armed         True or False
 ==============================   ==============================================  ===============================
-

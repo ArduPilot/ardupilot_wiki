@@ -19,7 +19,7 @@ ArduPilot autobuild system. You can see the builds here:
 
   https://firmware.ardupilot.org/Plane/
 
-the file you need to download is 'arduplane'. 
+the file you need to download is 'arduplane'.
 
 Building Firmware
 =================
@@ -65,7 +65,7 @@ start ArduPilot if it is installed is available here:
   https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/Parrot_Disco/rcS_mode_default
 
 you may find the 'Raw' button useful for downloading that file.
-  
+
 That script will start ArduPilot is there is a start_ardupilot.sh
 script in the APM directory.
 
@@ -97,7 +97,7 @@ package (GCS). There are several choices for use with Disco:
 
 They are all capable of controlling all aspects of the Disco setup and
 flight, including autonomous missions.
-  
+
 Transmitter Setup
 =================
 
@@ -117,7 +117,7 @@ WiFi based transmitter in ArduPilot in the future.
    receiver documentation for details. It is recommended that you
    disable receiver telemetry if you find your WiFi telemetry link
    from the Disco is affected by your receiver.
-  
+
 Loading Parameters
 ==================
 
@@ -130,7 +130,7 @@ you can download that file directly for loading into a GCS with this
 link:
 
   https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/Frame_params/Parrot_Disco/Parrot_Disco.param
- 
+
 Compass Calibration
 ===================
 
@@ -231,7 +231,7 @@ hold airspeed, height above ground and ground course.
 
 You should also setup your transmitter for easy access to RTL mode to
 bring the plane home if you need to.
-            
+
 Manual Landing
 ==============
 
@@ -263,7 +263,7 @@ the Disco to flare early in the landing as it thinks it is close to
 the ground. Because the Disco has such good glide characteristics this
 doesn't result in a crash, but it does cause it to land well short of
 the target position.
-            
+
 Log Files
 =========
 

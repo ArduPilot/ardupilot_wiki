@@ -85,7 +85,7 @@ Invoke AutoTune with Position Hold
 .. warning::
 
    A better tune can often be achieved by invoking AutoTune from AltHold as described above instead of from Loiter or PosHold as described below. Using AUTOTUNE flight mode also has this possible disadvantage.
-   
+
 AutoTune performs a weak position hold if invoked from Loiter or PosHold flight modes (as opposed to AltHold) while doing an autotune. If using the AUTOTUNE flight mode, this weak position hold is also used.
 
    .. image:: ../images/autotune_from_loiter.png
@@ -100,7 +100,7 @@ AutoTune performs a weak position hold if invoked from Loiter or PosHold flight 
    to 2.5m/s (this speed is adjustable with the :ref:`PILOT_SPD_UP<PILOT_SPD_UP>` and :ref:`PILOT_SPD_DN<PILOT_SPD_DN>`
    parameters). The acceleration used to establish these speeds is set by :ref:`PILOT_ACC_Z<PILOT_ACC_Z>`.
 - To twitch perpendicular to the wind direction, the vehicle may suddenly rotate in either direction up to 90 degrees as it drifts 5m (or more) from the target location.
-- If there is little or no wind, the vehicle's gentle position control may mean it moves back and forth, ping-ponging around the target point changing yaw each time it strays more than 5m from the target.  In these cases, it may be more comfortable to revert to the simpler AltHold-based AutoTune. 
+- If there is little or no wind, the vehicle's gentle position control may mean it moves back and forth, ping-ponging around the target point changing yaw each time it strays more than 5m from the target.  In these cases, it may be more comfortable to revert to the simpler AltHold-based AutoTune.
 
 Testing Tune in Other Modes
 ===========================
@@ -137,11 +137,11 @@ Additional Notes
 
 -   The full list of parameters that may be updated by AutoTune
 
-        - Roll angular P gain :ref:`ATC_ANG_RLL_P <ATC_ANG_RLL_P>` 
-        - Roll rate P, I and D gains :ref:`ATC_RAT_RLL_P <ATC_RAT_RLL_P__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_RLL_I <ATC_RAT_RLL_I__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_RLL_D <ATC_RAT_RLL_D__AC_AttitudeControl_Multi>`  
+        - Roll angular P gain :ref:`ATC_ANG_RLL_P <ATC_ANG_RLL_P>`
+        - Roll rate P, I and D gains :ref:`ATC_RAT_RLL_P <ATC_RAT_RLL_P__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_RLL_I <ATC_RAT_RLL_I__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_RLL_D <ATC_RAT_RLL_D__AC_AttitudeControl_Multi>`
         - Roll max acceleration :ref:`ATC_ACC_R_MAX<ATC_ACC_R_MAX>`
-        - Pitch angular P gain :ref:`ATC_ANG_PIT_P <ATC_ANG_PIT_P>` 
-        - Pitch rate P, I and D gains :ref:`ATC_RAT_PIT_P <ATC_RAT_PIT_P__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_PIT_I <ATC_RAT_PIT_I__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_PIT_D <ATC_RAT_PIT_D__AC_AttitudeControl_Multi>`  
+        - Pitch angular P gain :ref:`ATC_ANG_PIT_P <ATC_ANG_PIT_P>`
+        - Pitch rate P, I and D gains :ref:`ATC_RAT_PIT_P <ATC_RAT_PIT_P__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_PIT_I <ATC_RAT_PIT_I__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_PIT_D <ATC_RAT_PIT_D__AC_AttitudeControl_Multi>`
         - Pitch max acceleration :ref:`ATC_ACC_P_MAX<ATC_ACC_P_MAX>`
         - Yaw angular P gain :ref:`ATC_ANG_YAW_P <ATC_ANG_YAW_P>`
         - Yaw rate P, I gain :ref:`ATC_RAT_YAW_P <ATC_RAT_YAW_P__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_YAW_I <ATC_RAT_YAW_I__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_YAW_D <ATC_RAT_YAW_D__AC_AttitudeControl_Multi>`
@@ -194,7 +194,7 @@ This is during Pitch Rate P adjustment, indicating a twitch is about to happen a
 .. note:: During the YAW rate phase of tuning, the messages will show a value for "d" that is not ATC_RAT_YAW_D, which is usually 0, but rather it's the value of ATC_RAT_YAW_FLTE, that is being changed.
 
 Anytime the process is interrupted by pilot stick movements, the
-:: 
+::
 
  09:09:38	AUTOTUNE: pilot overrides active
 

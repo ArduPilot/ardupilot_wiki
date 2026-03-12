@@ -82,14 +82,14 @@ The following instructions present how to wire the components:
 - Connect the autopilot as shown above but connect the RX wire (orange) to the RC-R and the TX wire (green) to the RC-Y pin on the gimbal
 - Connect the ground wire (black) to any GND pin.
 
-In this setup you have to take care of the following options in the GUI: 
+In this setup you have to take care of the following options in the GUI:
 
 - Activate RC_SERIAL by setting "RC_ROLL pin mode" = "Serial port (Serial API, etc.)" on the RC tab On the tab "External IMU" in the field "External IMU configuration"
 - Select the Model: "MavLink FC channel 1"
 - Connection: disabled On the same tab in the field "MavLink connection" for Channel 1 (leave Channel 2 disabled)
 - Serial port: "RC_serial" - System Id/Component Id: 1, 154
-- Port setting: 115200, none parity 
-- Check the options: Send heartbeat and Query RC data 
+- Port setting: 115200, none parity
+- Check the options: Send heartbeat and Query RC data
 - MavLink control mode: "Controls ROLL and PITCH axes only" If everything is set correctly you should see something like the following in the fields: AHRS: OK (40ms), GPS: OK (106ms), RC: OK, Control: OK CH1: Packets received: 257502, lost: 0, parse errors: 3 CH2: Packets received: 0, lost: 0, parse errors: 0.
 
 In your Ground Control Station set the following parameters, if using the first mount connected to Serial2:
@@ -122,10 +122,10 @@ The Mission Planner Radio calibration page can be used to check the Ch6's curren
 
 **Testing ROI**
 
-**You must have a GPS lock to test ROI.** 
-The ROI feature points the vehicle and/or camera to point at a target. 
-The instructions above describe setting up the APM/Pixhawk so that it only controls the pitch of the Tarot gimbal so when a :ref:`Do-Set-ROI <copter:mission-command-list_do-set-roi>` command is received Copter will attempt to turn the vehicle's nose to point in the direction of the target and pitch camera depending upon the vehicle's distance and altitude. 
-You can test the gimbal pitch moves correctly by connecting with the mission planner, then on the Flight Data screen's map, right-mouse-button-click on a point about 50m ahead of the vehicle (the orange and red lines show the vehicle's current heading), select **Point Camera Here** and input an altitude of -50 (meters). 
+**You must have a GPS lock to test ROI.**
+The ROI feature points the vehicle and/or camera to point at a target.
+The instructions above describe setting up the APM/Pixhawk so that it only controls the pitch of the Tarot gimbal so when a :ref:`Do-Set-ROI <copter:mission-command-list_do-set-roi>` command is received Copter will attempt to turn the vehicle's nose to point in the direction of the target and pitch camera depending upon the vehicle's distance and altitude.
+You can test the gimbal pitch moves correctly by connecting with the mission planner, then on the Flight Data screen's map, right-mouse-button-click on a point about 50m ahead of the vehicle (the orange and red lines show the vehicle's current heading), select **Point Camera Here** and input an altitude of -50 (meters).
 This should cause the gimbal to point down at about 45 degrees.
 
 .. image:: ../../../images/Tarot_BenchTestROI.jpg

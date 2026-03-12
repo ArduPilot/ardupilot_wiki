@@ -7,7 +7,7 @@ DroneCAN Adapter Node
 .. toctree::
    :maxdepth: 1
    :hidden:
-   
+
    common-ap-periph-usage-examples
 
 These nodes allow existing ArduPilot supported peripherals to be adapted to the CAN bus as DroneCAN or MSP devices. This also allows for extending the capabilities of the autopilot hardware. Such as allowing I2C devices (e.g. a compass or airspeed) to be located more than 1 meter from the autopilot and enabling up to 32 servo output channels.

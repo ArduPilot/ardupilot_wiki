@@ -26,4 +26,3 @@ In addition to mandatory calibration, you may also choose to :ref:`Configure Opt
     ESC Calibraton <common-esc-calibration>
     Failsafes <rover-failsafes>
     Control Modes <rover-control-modes>
-

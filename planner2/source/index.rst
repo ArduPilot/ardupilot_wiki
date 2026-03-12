@@ -7,7 +7,7 @@ APM Planner 2 Home
 .. tip::
 
     Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
-   
+
 ..  raw:: html
 
     <table>
@@ -69,7 +69,7 @@ Connect a 3DR Radio to view live data and initiate commands in flight.
     </table>
 
 
-    
+
 ..  raw:: html
 
     <table>
@@ -88,8 +88,8 @@ Connect a 3DR Radio to view live data and initiate commands in flight.
     <td width="26%">
 
 .. image:: /images/ap2_flight_plan_example.jpg
-    :target: _images/planner2_flight_plan_example.jpg 
-    
+    :target: _images/planner2_flight_plan_example.jpg
+
 ..  raw:: html
 
     </td>
@@ -142,7 +142,7 @@ Table of Contents
 
 .. toctree::
    :titlesonly:
-   
+
     Home/QuickStart <self>
     Installation <docs/installing-apm-planner-2>
     Flight Data Screen <docs/flght-map>
@@ -150,4 +150,3 @@ Table of Contents
     Autopilot Setup <docs/autopilot-setup>
     Credits and Contributors <docs/credits-and-contributors>
     Appendix <docs/common-appendix>
-

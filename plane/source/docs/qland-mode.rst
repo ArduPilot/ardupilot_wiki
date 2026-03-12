@@ -41,4 +41,3 @@ QLAND Mode attempts to bring the QuadPlane straight down at the position the veh
 -  If this is a problem, move the autopilot out of prop wash
    effect or shield it with an appropriately ventilated enclosure.
 -  Success can be verified by flight test and by log results.
-

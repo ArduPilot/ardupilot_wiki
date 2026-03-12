@@ -19,15 +19,15 @@ The two parameters are listed below:
 * ``SPEED_TURN_GAIN``
 
   * Range 0-100 Units: percent Increment 1 (50)
-  * The percentage to reduce the throttle while turning. 
-    If this is 100% then the target speed is not reduced while turning. 
-    If this is 50% then the target speed is reduced in proportion to the turn rate, 
-    with a reduction of 50% when the steering is maximally deflected.  
+  * The percentage to reduce the throttle while turning.
+    If this is 100% then the target speed is not reduced while turning.
+    If this is 50% then the target speed is reduced in proportion to the turn rate,
+    with a reduction of 50% when the steering is maximally deflected.
 
 * ``SPEED_TURN_DIST``
 
   * Range 0-100 Units: meters Increment .1 (50)
-  * The distance to the next turn at which the rover reduces its target 
+  * The distance to the next turn at which the rover reduces its target
     speed by the SPEED_TURN_GAIN.                                                                                                                                                                          |
 
 

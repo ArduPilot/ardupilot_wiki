@@ -23,11 +23,11 @@ Frequency Bands               GPS: L1C/A
                               GLONASS:L10F
                               Beidou:B1I
                               Galileo:E1B/C
-Number of concurrent GNSS     4                                
-Position accuracy(RMS)        1.5CEP                                          
+Number of concurrent GNSS     4
+Position accuracy(RMS)        1.5CEP
 Acquisition                   Cold start：24S
                               Hot start：2S
-                              Aided start:2s             
+                              Aided start:2s
 Nav. update rate              5Hz(default)
 Sensitivity                   Tracking and nav:-167dBm
                               Cold start Hot star:-148dBm

@@ -30,7 +30,7 @@ The information below can be transmitted through the DroneCAN interface and will
 - Full charge capacity Wh
 - Hours to full charge
 - Average Power 10sec
- 
+
 When managing a fleet with a high number of drones, the battery status data. Data about the status of the individual cells as well as logging data of each individual flight can be uploaded using a wifi-capable interfacing hardware that can be integrated in the chargers.
 
 When a software update is rolled out, you can easily update the batteries using the DroneCAN GUI Tool.

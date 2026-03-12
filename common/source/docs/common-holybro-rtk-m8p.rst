@@ -9,10 +9,10 @@ Holybro H-RTK M8P GNSS
     :width: 450px
 
 The `Holybro H-RTK M8P GNSS <http://www.holybro.com/product/h-rtk-m8p-rover-lite/>`_  is an RTK GNSS module for mass market by Holybro. This family is similar to the :ref:`common-holybro-rtk-f9p` family but uses the smaller, lighter, and less expensive M8P Ublox RTK GNSS module which still provides far superior position resolution than previous generations.
- 
+
 Using RTK allows ArduPilot to get its position with centimeter-level accuracy, which is much more accurate than can be provided by a normal GPS.
 
-There are three models of Holybro H-RTK M8P to choose from, each with different antenna design to meet different needs: 
+There are three models of Holybro H-RTK M8P to choose from, each with different antenna design to meet different needs:
 
 .. image:: ../../../images/rtk_holybro_h-rtk-m8p_spec.png
     :target: ../_images/rtk_holybro_h-rtk-m8p_spec.png
@@ -35,7 +35,7 @@ All H-RTK GNSS models come with a GH 10-pin connector/cable that is compatible w
 Configuration
 =============
 
-For normal operation, ArduPilot's GPS parameter defaults will work for any serial port configured for ``SERIALx_PROTOCOL`` = 5. 
+For normal operation, ArduPilot's GPS parameter defaults will work for any serial port configured for ``SERIALx_PROTOCOL`` = 5.
 
 If you are unable to perform a normal compass calibration ("compass dance") for any reason, set parameter COMPASS_ORIENT=6 (Yaw270) for proper compass orientation.
 

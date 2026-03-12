@@ -60,4 +60,4 @@ alternatively you may wish to abort the interactive rebase which will return you
 
    ::
 
-       git rebase --abort       
+       git rebase --abort

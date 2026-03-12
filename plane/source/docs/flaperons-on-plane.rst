@@ -30,7 +30,7 @@ each flaperon OUTPUT channel (channels 5 and 6 in the example below).
 Flaperon setup
 ==============
 
--  Do not do any aileron mixing on your transmitter. 
+-  Do not do any aileron mixing on your transmitter.
 -  INPUTS:
 
    -  Leave the standard aileron input on channel 1.

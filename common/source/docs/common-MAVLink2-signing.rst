@@ -22,7 +22,7 @@ Configuration
 .. image:: ../../../images/signing.jpg
     :target: ../_images/signing.jpg
 
-The dialog will show a list of all the passkeys already setup for Mission Planner. 
+The dialog will show a list of all the passkeys already setup for Mission Planner.
 
 - This dialog can be used to create new keys using the ``ADD`` button.A key may be removed from the list by selecting and pressing delete on the PC and then the ``SAVE`` button5350. You can also do this while unconnected.
 
@@ -44,4 +44,3 @@ When you connect Mission Planner over a link that is signing, it will see if it 
    In simulation, port 5760 effectively functions as your "USB" port.  This is also the port that ``sim_vehicle.py``'s MAVProxy connects to.  If you forward traffic from this MAVProxy (eg. via "output add") then it will also bypass ArduPilot's MAVLink2-signature checking code.   If you want to test MAVLink signature-checking is functional connect to TCP port 5762 instead.
 
 [copywiki destination="plane,copter,rover,planner"]
-

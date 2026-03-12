@@ -59,7 +59,7 @@ happens:
       to 10degrees, pitch forward to 15degrees and rotate right at
       5deg/second.
    -  `angle_ef_roll_pitch_yaw() <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AC_AttitudeControl/AC_AttitudeControl.h#L102>`__
-      : this accepts "earth frame" angles for roll, pitch and yaw. 
+      : this accepts "earth frame" angles for roll, pitch and yaw.
       similar to above except providing yaw of 500 means rotate the
       vehicle to 5 degrees east of north.
    -  `rate_bf_roll_pitch_yaw() <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AC_AttitudeControl/AC_AttitudeControl.h#L108>`__

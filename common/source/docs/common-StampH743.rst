@@ -54,13 +54,13 @@ Specifications
   * x1 MicroSD card slot
   * x8 UARTs inc RC, x3 with flow control
   * x10 PWM outputs
-  * x2 I2C 
+  * x2 I2C
   * x2 CAN
   * x1 External SPI
   * x1 Ethernet
   * External Buzzer
-  * External Safety Switch 
-  * External USB connectors 
+  * External Safety Switch
+  * External USB connectors
 
 Pinout
 ======
@@ -79,7 +79,7 @@ UART Mapping (Yellow Fade)
 * SERIAL4 -> UART4     (GPS2, DMA-enabled)
 * SERIAL5 -> UART5     (With RTS/CTS, DMA-enabled)
 * SERIAL6 -> USART6    (RCIN / IO coprocessor if fitted, DMA-enabled)
-* SERIAL7 -> UART7     (With RTS/CTS, DMA-enabled) 
+* SERIAL7 -> UART7     (With RTS/CTS, DMA-enabled)
 * SERIAL8 -> UART8
 
 RC Input
@@ -120,7 +120,7 @@ Channels within the same group need to use the same output rate. If any channel 
 Analog Inputs (Purple Fade)
 ===========================
 
-The board has two ADC input channels for Voltage (0-3.3v) and Current (0-3.3v) measurement. Settings are dependent on the external hardware used. 
+The board has two ADC input channels for Voltage (0-3.3v) and Current (0-3.3v) measurement. Settings are dependent on the external hardware used.
 
 Ethernet (Green Fade)
 =====================
@@ -159,14 +159,14 @@ The board has a built-in voltage sensor via the ``Voltage Sense`` pin, but no in
  - :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 19
  - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 11.1
  - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 64
- 
+
 Loading Firmware
 ================
 
-The board comes pre-installed with an ArduPilot compatible bootloader, allowing the loading of \*.apj firmware files with any ArduPilot compatible ground station. 
+The board comes pre-installed with an ArduPilot compatible bootloader, allowing the loading of \*.apj firmware files with any ArduPilot compatible ground station.
 
 Firmware Target = CBU-H7-Stamp
 
-A built in button can be used to activate DFU Mode by being pressed during power up. The DFU Activate pin is broken out to allow remote mounting of this button if required. 
+A built in button can be used to activate DFU Mode by being pressed during power up. The DFU Activate pin is broken out to allow remote mounting of this button if required.
 
 [copywiki destination="plane,copter,rover,blimp,sub"]

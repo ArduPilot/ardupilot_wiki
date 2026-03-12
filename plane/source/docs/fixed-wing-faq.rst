@@ -4,7 +4,7 @@
 Fixed Wing FAQ
 ==============
 
-This is a set of frequently asked questions with answers. 
+This is a set of frequently asked questions with answers.
 It is updated when we see questions on `discuss.ardupilot.org <https://discuss.ardupilot.org/c/arduplane>`__ that are not sufficiently answered in the rest of the docs.
 
 When reading this FAQ please refer to the :doc:`full parameter list <parameters>` for an explanation of each parameter which is mentioned in the answers.
@@ -29,7 +29,7 @@ flight by slowing the throttle advance from going wide open to quickly.
 How do you inhibit gyro calibration?
 ------------------------------------
 
-Set the parameter :ref:`INS_GYR_CAL<INS_GYR_CAL>` =0. That will skip the gyro calibration 
+Set the parameter :ref:`INS_GYR_CAL<INS_GYR_CAL>` =0. That will skip the gyro calibration
 done on each startup. The last
 gyro calibration from when you calibrated the accelerometers will be
 used instead. This also means you don't need to hold the plane still
@@ -58,7 +58,7 @@ not less.
 After you setup reverse throttle make sure you test correct failsafe by
 turning off your transmitter while on the ground.
 
-The servo library allows you to reverse the 
+The servo library allows you to reverse the
 throttle output channel without affecting your RC inputs or failsafe configuration.
 to do this, set :ref:`SERVO3_REVERSED<SERVO3_REVERSED>` to 1.
 
@@ -125,9 +125,9 @@ the software that determines the attitude of the aircraft. Possible causes:
 
 - Accelerometer calibration
 - GPS has not acquired a good enough lock (#sats, HDOP, etc.)
-- EKF has not settled (tilt/yaw initialization, origin not set yet, variances, etc.). 
+- EKF has not settled (tilt/yaw initialization, origin not set yet, variances, etc.).
   **"EKF IMUx using GPS"** message will be displayed on ground control station when EKF is ready.
-  
+
 .. note:: if no compass is enabled, the **"EKF IMUx using GPS"** message will be not be displayed until after flight begins, since EKF yaw alignment will not occur until sufficient ground speed is acquired for the GPS to provide a heading. This is normal in this situation.
 
 How do I reduce throttle oscillation in auto flight?
@@ -241,7 +241,7 @@ when changed to MANUAL mode the plane is no longer in level trim.
 
 One cause of this is that you have a transmitter that has per
 flight mode trims. The Taranis is a good example of this if you use its
-built in flight mode controls. You need to be sure  your transmitter trim settings 
+built in flight mode controls. You need to be sure  your transmitter trim settings
 are the same, so that the stick inputs are the same in all flight modes and  match those
 you used for the RC calibration setup.
 

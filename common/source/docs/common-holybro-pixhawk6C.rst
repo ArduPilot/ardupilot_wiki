@@ -29,7 +29,7 @@ Features of Pixhawk6 Series
 UART Mapping
 ============
 
- - SERIAL0 -> USB 
+ - SERIAL0 -> USB
  - SERIAL1 -> UART7 (Telem1) RTS/CTS pins
  - SERIAL2 -> UART5 (Telem2) RTS/CTS pins
  - SERIAL3 -> USART1 (GPS1)
@@ -40,7 +40,7 @@ UART Mapping
 
 RC Input
 ========
-The RCIN pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The RCIN pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL5 (UART3) would need to be used for receiver connections. Below are setups using Serial6. For the 6C Mini, SERIAL1 - SERIAL4 would need to be used.
 

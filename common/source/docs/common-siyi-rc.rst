@@ -15,9 +15,9 @@ SIYI MK32 is an integrated remote controller, ground station and wireless digita
 Features
 ========
 * Android based smart device with 7 inch 1080P screen.
-* Integrated digital transmission system simultaneously transmitting video, telemetry and control. 
+* Integrated digital transmission system simultaneously transmitting video, telemetry and control.
 * SIYI Custom GCS Application or Mission Planner or QGC ground station software with MAVLink support for ArduPilot and PX4.
-* 1080P HD video 
+* 1080P HD video
 * SBUS RC output plus 5 PWM channels on air unit
 * Ethernet camera input (HDMI converter provided)
 * Video recording
@@ -32,5 +32,3 @@ Features
 
 
 More Info on SIYI systems can be found on `here <https://shop.siyi.biz/>`__
-
-

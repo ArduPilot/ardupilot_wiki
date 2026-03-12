@@ -99,11 +99,11 @@ receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 
  - SERIAL0 -> USB
  - SERIAL1 -> USART1 (Serial RC input) (DMA capable)
- - SERIAL2 -> USART2 (RX tied to inverted SBUS RC input, but can be used as normal UART if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` =1) 
+ - SERIAL2 -> USART2 (RX tied to inverted SBUS RC input, but can be used as normal UART if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` =1)
  - SERIAL3 -> UART3 (GPS) (TX DMA capable)
  - SERIAL4 -> UART4 (User) (TX DMA capable)
  - SERIAL5 -> UART5 (User, available on DJI air unit connector) (TX DMA capable)
- - SERIAL6 -> UART6 (tied to internal wireless module, MAVLink2 telem) 
+ - SERIAL6 -> UART6 (tied to internal wireless module, MAVLink2 telem)
 
 Serial protocols shown are defaults, but can be adjusted to personal preferences.
 
@@ -121,7 +121,7 @@ All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot, serial
 RC Input
 ========
 
-The SBUS pin, is passed by an inverter to RX2 (UART2 RX), which by default is mapped to a timer input instead of the UART, and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry. 
+The SBUS pin, is passed by an inverter to RX2 (UART2 RX), which by default is mapped to a timer input instead of the UART, and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the UART1 should be used. With this option, :ref:`SERIAL11_PROTOCOL<SERIAL1_PROTOCOL>` must be set to "23" (already set by default), and:
 
@@ -201,4 +201,3 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 "SpeedyBeeF405WING".
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

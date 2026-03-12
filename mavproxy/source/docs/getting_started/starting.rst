@@ -76,9 +76,9 @@ global default baudrate specified by ``--baudrate``.
 If forwarding to a network address via tcp or udp, this must be prefixed
 before the IP address.
 
-A UDP broadcast can be made via the udpbcast:<ip>:<port> that starts as 
-UDP broadcast then locks onto the first client that connects. <ip> specifies 
-the valid client range. For example, udpbcast:192.168.2.255:14550 will connect to 
+A UDP broadcast can be made via the udpbcast:<ip>:<port> that starts as
+UDP broadcast then locks onto the first client that connects. <ip> specifies
+the valid client range. For example, udpbcast:192.168.2.255:14550 will connect to
 the first client in the 192.168.2.0 to 192.168.2.254 range on port 14550.
 
 .. code:: bash
@@ -86,7 +86,7 @@ the first client in the 192.168.2.0 to 192.168.2.254 range on port 14550.
     mavproxy.py --master=/dev/ttyUSB0 --out=udp:192.168.1.1:14550
     mavproxy.py --master=/dev/ttyACM0,115200 --out=/dev/ttyUSB0,57600
     mavproxy.py --master=/dev/ttyACM0,115200 --out=COM17,57600
-    mavproxy.py --master=/dev/ttyACM0,57600 --out=udpbcast:192.168.2.255:14550 
+    mavproxy.py --master=/dev/ttyACM0,57600 --out=udpbcast:192.168.2.255:14550
 
 
 -\-sitl
@@ -246,7 +246,7 @@ MAVProxy and its modules.
 -\-default-modules
 ===================
 
-A comma separated list of the modules to load on startup by default. The default 
+A comma separated list of the modules to load on startup by default. The default
 value of this parameter is ``log,signing,wp,rally,fence,param,relay,tuneopt,arm,mode,calibration,rc,auxopt,misc,cmdlong,`` ``battery,terrain,output,adsb,layout``
 
 -\-non-interactive
@@ -258,4 +258,3 @@ Do not start interactive shell
 ===================
 
 Timeout for udp clients in seconds
-

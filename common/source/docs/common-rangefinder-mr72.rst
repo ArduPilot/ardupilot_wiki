@@ -40,7 +40,7 @@ Set the following parameters
 -  :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
 -  :ref:`PRX1_YAW_CORR <PRX1_YAW_CORR>` allows adjusting the forward direction of the unit.  One way to determine this angle is to use the Mission Planner's Setup >> Advanced, Proximity viewer and then walk around the vehicle and ensure that the sector distances shorten appropriately.
 -  :ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>` and :ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>` should be left at default.
- 
+
 More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
 
 

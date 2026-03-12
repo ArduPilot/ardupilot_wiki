@@ -160,7 +160,7 @@ Internally connected to integrated 4in1 ESC with BlueJay firmware. Bi-Directiona
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX)
 
 
 RC Input
@@ -214,4 +214,3 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 "BETAFPV-F405". For the AIO version, a firmware labeled "BETAFPV-F405-I2C" is provided to allow I2C devices to be attached if the hardware modification mentioned above is made to disconnect the ELRS module from those signals.
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

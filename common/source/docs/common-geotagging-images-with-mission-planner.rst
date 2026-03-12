@@ -172,7 +172,7 @@ acceptable and write location information to the picture's EXIF data:
 
   .. image:: ../../../images/geotag_google_earth_review.jpg
       :target: ../_images/geotag_google_earth_review.jpg
-    
+
 - Check that they are OK. If you used *CAM Message* mode, there
   shouldn't be any problem (if there is, just order pictures
   alphabetically and check that the first picture in the list is also
@@ -312,4 +312,3 @@ from Sandro Benigno and Guto Santaella updated by Jesus Alvarez.
 
 
 [copywiki destination="copter,plane,planner"]
-

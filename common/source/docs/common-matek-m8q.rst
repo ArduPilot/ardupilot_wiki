@@ -4,7 +4,7 @@
 Matek M8Q DroneCAN/MSP GPS/MAG/BARO
 ===================================
 
-Based on ArduPilots' AP_Pheriph firmware, the Matek M8Q is a GPS+COMPASS+BAROMETER peripheral with CAN/DroneCAN and MSP interfaces to the autopilot, plus an I2C expansion bus for additional peripherals, such as airspeed sensors. 
+Based on ArduPilots' AP_Pheriph firmware, the Matek M8Q is a GPS+COMPASS+BAROMETER peripheral with CAN/DroneCAN and MSP interfaces to the autopilot, plus an I2C expansion bus for additional peripherals, such as airspeed sensors.
 
 .. image:: ../../../images/M8Q-CAN_2.jpg
 
@@ -84,5 +84,3 @@ Where to Buy
 ============
 
 `Matek M8Q-CAN <http://www.mateksys.com/?portfolio=m8q-can>`_
-
-

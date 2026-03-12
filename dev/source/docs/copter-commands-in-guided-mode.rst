@@ -94,9 +94,9 @@ When providing Pos, Vel and/or Accel all 3 axis must be provided.  At least one 
 - Use Pos+Vel+Accel : 0b110000000000 / 0x0C00 / 3072 (decimal)
 - Use Yaw : 0b100111111111 / 0x09FF / 2559 (decimal)
 - Use Yaw Rate : 0b010111111111 / 0x05FF / 1535 (decimal)
-   
+
 .. raw:: html
-   
+
    </td>
    </tr>
    <tr>
@@ -510,4 +510,3 @@ Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) 
 | ``attitude 0.9961947 0.0871557 0 0 0.5`` | roll at 10deg with zero climb rate (if GUID_OPTIONS=0) OR    |
 |                                          | roll at 10deg and 50% throttle (if GUID_OPTIONS=8)           |
 +------------------------------------------+--------------------------------------------------------------+
-

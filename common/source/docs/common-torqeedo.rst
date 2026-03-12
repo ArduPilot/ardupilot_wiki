@@ -45,7 +45,7 @@ An interface board should be assembled using the parts mentioned above and conne
 
    If the motor connector method is used with non-torqeedo batteries, be sure to use batteries with built-in short circuit protection.  During early development and testing of this interface, after applying large and rapid changes to the throttle and managed to cause a short circuit within the motor.  A short circuit, especially with large batteries, could lead to a fire and serious injury.
 
-Below are pictures of the modified throttle extension cable and `Japan Drones RS485-to-Serial converter board <http://japandrones.com/shopdetail/000000000176/ct21/page1/order/>`__ 
+Below are pictures of the modified throttle extension cable and `Japan Drones RS485-to-Serial converter board <http://japandrones.com/shopdetail/000000000176/ct21/page1/order/>`__
 
   .. image:: ../../../images/torqeedo-throttle-cable-pins.jpg
       :target: ../_images/torqeedo-throttle-cable-pins.jpg
@@ -122,4 +122,3 @@ TorqLink Controlled Motors
 A LUA driver is provided 'here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/torqeedo-torqlink.lua>`__ for control of one or two motors via the ``SERVOx_FUNCTION`` of "Throttle" or "ThrottleLeft, ThrottleRight". The motor(s) control is attached to the autopilot's CAN port. Follow the `readme <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/torqeedo-torqlink.md>`__ for the driver.
 
 [copywiki destination="rover"]
-

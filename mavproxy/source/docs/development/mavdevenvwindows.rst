@@ -12,22 +12,21 @@ To install the required libraries:
 
     pip install wheel setuptools
     pip install pywin32 lxml pymavlink numpy matplotlib pyserial opencv-python PyYAML Pygame Pillow wxpython prompt-toolkit scipy
-    pip install pyinstaller packaging 
-    
+    pip install pyinstaller packaging
+
 Download the MAVProxy `source <https://github.com/ArduPilot/MAVProxy>`_.
 
-After making the desired changes, MAVProxy is required to be compiled 
+After making the desired changes, MAVProxy is required to be compiled
 into the Python directory (the modules won't work otherwise).
 This needs to happen after any changes to the source code. This can be
-done by running the :file:`./MAVProxy/MAVProxyWinUSB.bat` or 
+done by running the :file:`./MAVProxy/MAVProxyWinUSB.bat` or
 :file:`./MAVProxy/MAVProxyWinLAN.bat` file. This will
-perform the necessary build actions and then run MAVProxy. Some of the 
-details in the batch files (port numbers, etc) may need to be altered to 
+perform the necessary build actions and then run MAVProxy. Some of the
+details in the batch files (port numbers, etc) may need to be altered to
 match the user's system configuration.
 
-To create a one-click windows installer for MAVProxy, run ``MAVProxyWinBuild.bat```, 
-which is in the ``./windows`` directory. The installer will be created in the 
-``./windows/output`` directory. The `Inno Setup <http://www.jrsoftware.org/isdl.php#stable>`_ 
-program will be required for this process and is assumed to be installed in the 
+To create a one-click windows installer for MAVProxy, run ``MAVProxyWinBuild.bat```,
+which is in the ``./windows`` directory. The installer will be created in the
+``./windows/output`` directory. The `Inno Setup <http://www.jrsoftware.org/isdl.php#stable>`_
+program will be required for this process and is assumed to be installed in the
 ``C:\Program Files (x86)\Inno Setup 6\`` folder
-

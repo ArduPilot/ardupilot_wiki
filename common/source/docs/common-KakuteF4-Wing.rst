@@ -29,7 +29,7 @@ Features
 
 - **Interfaces**
 
-   - 7x PWM outputs DShot capable, 4 outputs BiDirDShot capable  
+   - 7x PWM outputs DShot capable, 4 outputs BiDirDShot capable
    - 1x RC input
    - 5x UARTs/serial for GPS and other peripherals
    - 1x I2C ports for external compass, airspeed, etc.

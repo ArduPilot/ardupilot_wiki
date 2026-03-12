@@ -103,7 +103,7 @@ this parameter to a value which is small enough to ensure the aircraft
 can climb reliably at full throttle will make takeoff much more
 reliable. A value of 20 is good for most aircraft.
 
-.. note::  Hand launching a plane usually requires that the vehicle leaves your hand at zero degrees to 5 degs pitch. Higher pitches could lead to a stall. ArduPilot will not start the motors if the pitch is greater than 40 degrees or roll greater than 30 degrees from level. These limits should never be approached when throwing the plane, but are provided as a safety gate. 
+.. note::  Hand launching a plane usually requires that the vehicle leaves your hand at zero degrees to 5 degs pitch. Higher pitches could lead to a stall. ArduPilot will not start the motors if the pitch is greater than 40 degrees or roll greater than 30 degrees from level. These limits should never be approached when throwing the plane, but are provided as a safety gate.
 
 Catapult Launching
 ==================

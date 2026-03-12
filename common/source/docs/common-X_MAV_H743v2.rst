@@ -44,7 +44,7 @@ UART Mapping
 ============
 The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive pin for UARTn. The Tn pin is the transmit pin for UARTn. Default protocols are shown below but may be changed by the user. All UARTs are DMA capable.
 
-* SERIAL0 -> USB 
+* SERIAL0 -> USB
 * SERIAL1 -> UART2 (MAVLink2)
 * SERIAL2 -> UART4 (User)
 * SERIAL3 -> UART1 (GPS)

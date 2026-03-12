@@ -61,13 +61,13 @@ Wiring Diagram
 
 .. image:: ../../../images/aocoda-h743dual/aocoda_h743dual_wiring_diagram.jpg
      :target: ../_images/aocoda-h743dual/aocoda_h743dual_wiring_diagram.jpg
-  
+
 Default UART order
 ==================
 
 - SERIAL0 = USB (MAVLink2)
 - SERIAL1 = UART1 (RCinput)
-- SERIAL2 = UART2 (GPS) 
+- SERIAL2 = UART2 (GPS)
 - SERIAL3 = UART3 (VTX or DJI HD Air Unit)
 - SERIAL4 = UART4 (USER)
 - SERIAL5 = not available

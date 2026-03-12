@@ -15,7 +15,7 @@ This family consists of:
 
 .. image:: ../../../images/Matek-F405-WMN.jpg
      :target: ../_images/Matek-F405-WMN.jpg
-     
+
 - Matek F405-HDTE
 
 .. image:: ../../../images/Matek-F405-HDTE.jpg
@@ -37,7 +37,7 @@ Specifications
 -  **Processor**
 
    -  STM32F405RGT6  ARM
-   -  OSD: AT7456E 
+   -  OSD: AT7456E
    -  16MB Flash for data logging, WTE has microSD card reader instead of flash chip
    -  ESP8285 (WTE only) for ELRS or ESP WIFI Telemetry
 
@@ -54,7 +54,7 @@ Specifications
    -  6V ~ 30V DC input power (9v - 60V for -HDTE)
 
 -  **BECs**
- 
+
 +-------+--------------+----------------+--------------------+
 |Board  | Typical Use  |   Voltage      |  Current(cont/peak)|
 +=======+==============+================+====================+
@@ -119,7 +119,7 @@ For example, use Channel 10 to control the camera switch using Relay 2:
 - :ref:`RC10_OPTION<RC10_OPTION>` = "34" (Relay2 Control)
 
 .. note:: setting Relay on/high assigned for Vsw will turn off that supply. Likewise, setting on/high for the Relay assigned for camera, will switch from Camera 1 to Camera 2.
-   
+
 Default UART order
 ==================
 
@@ -136,7 +136,7 @@ Serial port protocols (Telem, GPS, etc.) can be adjusted to personal preferences
 RC Input
 ========
 
-The RX2 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The RX2 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the RX2 pin can also be configured to be used as true UART RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL6 port's RX input pin.
 

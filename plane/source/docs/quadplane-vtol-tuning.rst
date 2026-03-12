@@ -13,7 +13,7 @@ This section provides an overview of how to tune various QuadPlane VTOL paramete
 Overview
 ========
 
-The default parameters controlling the VTOL motors PID loops should allow most frames to initially hover controllably, if the motors' mechanics are setup and aligned correctly and escs calibrated. 
+The default parameters controlling the VTOL motors PID loops should allow most frames to initially hover controllably, if the motors' mechanics are setup and aligned correctly and escs calibrated.
 
 The most important parameters controlling stability are the Roll/Pitch/Yaw PIDS. For altitude control, the vertical position controller's parameters and Motor Thrust Scaling parameters, and for navigation/loiter the Loiter controllers's parameters
 
@@ -27,7 +27,7 @@ performance in Auto mode.
 Filter tuning
 =============
 
-QuadPlanes are often affected by vibration and tuning the various software filters available is critical to achieving an optimum overall tune. A guide on tuning the various notch filters available can be found on the :ref:`Notch Filtering wiki page <common-imu-notch-filtering>`. A optimum tune will be obtained on the D terms, below, if the filtering has been optimized first. However, in many circumstances reasonable performance can be obtained with just PID tuning the P terms. 
+QuadPlanes are often affected by vibration and tuning the various software filters available is critical to achieving an optimum overall tune. A guide on tuning the various notch filters available can be found on the :ref:`Notch Filtering wiki page <common-imu-notch-filtering>`. A optimum tune will be obtained on the D terms, below, if the filtering has been optimized first. However, in many circumstances reasonable performance can be obtained with just PID tuning the P terms.
 
 
 Roll/Pitch tuning
@@ -58,7 +58,7 @@ Similar to roll and pitch, if either :ref:`Q_A_RAT_YAW_P<Q_A_RAT_YAW_P>` or :ref
 
 The :ref:`Q_A_ANG_YAW_P<Q_A_ANG_YAW_P>` is the gain on the error between the autopilots desired heading and actual heading which is fed into the Rate controller to demand a rotation rate. The :ref:`Q_A_RAT_YAW_P<Q_A_RAT_YAW_P>` is the gain applied to the difference between demanded rotation rate and actual.
 
-The :ref:`Q_YAW_RATE_MAX<Q_YAW_RATE_MAX>` parameter controls how quickly QuadPlane rotates based on a pilot’s yaw input in stabilized modes. 
+The :ref:`Q_YAW_RATE_MAX<Q_YAW_RATE_MAX>` parameter controls how quickly QuadPlane rotates based on a pilot’s yaw input in stabilized modes.
 
 Altitude Tuning
 ===============
@@ -106,4 +106,3 @@ firmware to continuously stabilize the vehicle
 
 ..  youtube:: sDd4VOpOnnA
     :width: 100%
-

@@ -37,7 +37,7 @@ As mentioned above, Morse relies on the Blender Game Engine for rendering the si
 
 .. note::
 
-  Blender **v2.74** - **v2.79** are also valid versions, as these versions also provide access to a stable Blender Game Engine. The below image shows ArduPilot's quadcopter Morse simulation running with Blender 2.76. 
+  Blender **v2.74** - **v2.79** are also valid versions, as these versions also provide access to a stable Blender Game Engine. The below image shows ArduPilot's quadcopter Morse simulation running with Blender 2.76.
 .. image:: ../images/morse-with-blender.jpg
     :target: ../_images/morse-with-blender.jpg
 
@@ -121,7 +121,7 @@ To run the Quadcopter example:
 
   .. image:: ../images/morse_quad.png
     :target: ../_images/morse_quad.png
-             
+
 Note that in the image above a wire-frame view is shown instead of a
 rendered 3D view. That is configured by setting fastmode=True in the
 Environment() declaration in quadcopter.py. Using fast mode will lower

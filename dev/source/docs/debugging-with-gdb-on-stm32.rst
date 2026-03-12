@@ -87,7 +87,7 @@ You will need to install OpenOCD if you are using the ST-Link debugger:
 
 Before OpenOCD and GDB are run, their configuration files need to be copied to the build folder. Note that the build folder name is the same at the board name.
 
-Go to the ``./Tools/debug`` folder and copy ``openocd.cfg`` to ``./build/<boardname>/bin``, 
+Go to the ``./Tools/debug`` folder and copy ``openocd.cfg`` to ``./build/<boardname>/bin``,
 if not done so previously
 
 Type ``openocd`` in your terminal in the ``bin`` directory above.
@@ -106,7 +106,7 @@ Copy ``.gdbinit`` to ``./build/<boardname>/bin`` and
 edit ``~/.gdbinit`` to have the following text: ``set auto-load safe-path /``,
 if not done so previously.
 
-In another window, type ``arm-none-eabi-gdb arducopter`` in the 
+In another window, type ``arm-none-eabi-gdb arducopter`` in the
 ``./build/<boardname>/bin`` folder. Now you have
 connected to the gdb debugging session and can use the commands from
 the next section.

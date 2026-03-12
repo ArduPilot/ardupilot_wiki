@@ -40,7 +40,7 @@ piston and turbine engines in the event the governor fails in flight, and for
 faster governor response on high collective pitch loading.
 
 For electric helicopters ArduPilot will set the throttle for the ESC governor to
-hold the headspeed constant at all times. 
+hold the headspeed constant at all times.
 
 Digital servos
 ==============

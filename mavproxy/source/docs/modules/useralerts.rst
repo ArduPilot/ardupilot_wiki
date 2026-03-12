@@ -26,7 +26,7 @@ The configurable settings for this module can be controlled by:
 .. code:: bash
 
     useralerts set <setting> <value>
-    
+
 The settings are:
 
 ===============================   ========================================   ===============================
@@ -35,4 +35,3 @@ Setting                           Description                                Def
 useTest                           Use the example User Alerts database       False
 filterBoard                       Filter the User Alerts by board hardware   True
 ===============================   ========================================   ===============================
-

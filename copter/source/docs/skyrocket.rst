@@ -7,7 +7,7 @@ SkyRocket
    .. image:: ../images/skyrocket-skyvipergpsdrone.png
        :target: ../_images/skyrocket-skyvipergpsdrone.png
 
-A number of SkyRocket drones use ArduPilot as flight control software. 
+A number of SkyRocket drones use ArduPilot as flight control software.
 This page provides details for advanced users and potential developers on these RTF drones.
 
 Where to Buy
@@ -23,14 +23,14 @@ Where to Buy
 
 The *Sky Viper v2450GPS Drone with Autopilot and GPS* is on sale through `Walmart <https://www.walmart.com/ip/Sky-Viper-Streaming-Drone-with-GPS/797973157>`__, `Amazon <https://www.amazon.com/Sky-Viper-v2450GPS-Streaming-Autopilot/dp/B072HH13VQ/ref=lp_13203361011_1_6>`__ and Costco in the US, Australia, Canada, Chile, France, German, Holland, Lithuania, Mexico, New Zealand, Serbia, UK since October 2017.
 
-SkyRocket sells a variety of different drones. 
+SkyRocket sells a variety of different drones.
 Of the 2017 models, only the V2450GPS Streaming drone (which will have a white shell) is capable of running ArduPilot.
 
 **2018 models**
 
-In August 2018, SkyRocket released three new ArduPilot powered drones, the Fury, Scout, and Journey. 
-The Fury and Scout utilize "SurfaceScan", built on ArduPilot's OpticalFlow feature, to allow for indoor flight stability and position holding, unprecedented in this price range. 
-The Journey, with GPS rather than OpticalFlow, takes lessons learned from the V2450GPS and builds on those for a solid re-release for the full GPS-enabled ArduPilot experience. The flight parameters and firmware for both the Scout and Journey can be easily modified as the user sees fit through the embedded wifi access point, powered by APWeb or using your favorite ground control software. 
+In August 2018, SkyRocket released three new ArduPilot powered drones, the Fury, Scout, and Journey.
+The Fury and Scout utilize "SurfaceScan", built on ArduPilot's OpticalFlow feature, to allow for indoor flight stability and position holding, unprecedented in this price range.
+The Journey, with GPS rather than OpticalFlow, takes lessons learned from the V2450GPS and builds on those for a solid re-release for the full GPS-enabled ArduPilot experience. The flight parameters and firmware for both the Scout and Journey can be easily modified as the user sees fit through the embedded wifi access point, powered by APWeb or using your favorite ground control software.
 Much of the information on this page, which was written for the V2450GPS, will at least partially apply to these new models, with updates annotated as they are discovered.
 
 **2021 models**
@@ -70,7 +70,7 @@ Hardware
 - ICM20789 IMU including 3-axis accelerometer, gyro and barometer
 - Ublox M8 GPS
 - 1S battery (4.2V max, replacement batteries are readily available on Amazon and other places)
-- brushed motors; 8.5x20mm with a kV between 16,000 and 17,000 as measured. 
+- brushed motors; 8.5x20mm with a kV between 16,000 and 17,000 as measured.
 - The small pinion is 13T and the larger one is 73T, which provides a gear ratio of approximately 5.6
 - the camera can be manually adjusted to point forward, down or anywhere in between
 - 2.4Ghz wifi for telemetry and video

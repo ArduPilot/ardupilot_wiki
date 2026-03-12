@@ -50,7 +50,7 @@ The output voltage vs temperature curve of the sensor can be adjusted to match i
 
 ``deg = a0 + a1*voltage + a2*voltage^2 + a3*voltage^3 + a4*voltage^4``
 
-- :ref:`TEMP1_A0<TEMP1_A0>` = a0 
+- :ref:`TEMP1_A0<TEMP1_A0>` = a0
 - :ref:`TEMP1_A1<TEMP1_A1>` = a1
 - :ref:`TEMP1_A2<TEMP1_A2>` = a2
 - :ref:`TEMP1_A3<TEMP1_A3>` = a3

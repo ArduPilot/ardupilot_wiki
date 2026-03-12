@@ -73,7 +73,7 @@ Wiring the PX4FMU Board to Your QuadCopter
 
 -  **Connect your BEC (5 volt power supply) power in leads to the
    battery input leads.**
--  
+-
 
    -  Connect the BEC Ground output to the PX4's Ground (Multi
       connector pin 15).
@@ -203,4 +203,3 @@ Turnigy transmitter compatible with FRSky transmitter module
 
 .. image:: ../../../images/FutabaT8FG.jpg
     :target: ../_images/FutabaT8FG.jpg
-

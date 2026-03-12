@@ -24,4 +24,4 @@ What will happen when the crash check fires?
 
 How and when should the crash check be disabled?
 ================================================
-In general the crash check should be left enabled but if the vehicle is likely to suffer from lean angle errors of over 30 degrees for a second or more it should be disabled.  
+In general the crash check should be left enabled but if the vehicle is likely to suffer from lean angle errors of over 30 degrees for a second or more it should be disabled.

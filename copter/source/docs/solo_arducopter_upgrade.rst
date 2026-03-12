@@ -54,7 +54,7 @@ There are several great resources online for modification ideas,vendors, beta te
 -  `Solex Users Facebook group <https://www.facebook.com/groups/176789056089526/>`_
 -  `ArduPilot Discuss Forums <https://discuss.ardupilot.org/c/arducopter/copter-3-5>`_
 -  `ArduPilot copter Wiki <https://ardupilot.org/copter/docs/common-advanced-configuration.html>`_
--  `3DR Pilots Forum <https://3drpilots.com/>`_ 
+-  `3DR Pilots Forum <https://3drpilots.com/>`_
 -  :ref:`Solo Battery Calibration Process <solo_battery_calibration>`
 
 
@@ -94,7 +94,7 @@ There are two ways to do the upgrade that have detailed instructions published h
 
 FIRST FLIGHT
 ------------
-Once the upgrade process is complete, you're ready to make your first flight using ArduCopter 3.5 on the Solo.  It is recommended that your first flight be conducted at a location and time that allows you to test some basic functions and safety systems. Choose a wide open are free of obstructions, crowds of people, lakes, etc.  
+Once the upgrade process is complete, you're ready to make your first flight using ArduCopter 3.5 on the Solo.  It is recommended that your first flight be conducted at a location and time that allows you to test some basic functions and safety systems. Choose a wide open are free of obstructions, crowds of people, lakes, etc.
 
 Solo/Solex App Settings
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -112,7 +112,7 @@ Go Airborne
 ^^^^^^^^^^^
 With all of the above complete, it is time to take your first flight on ArduCopter master!
 
-- Take off and verify the Solo flies stable and predictably. 
+- Take off and verify the Solo flies stable and predictably.
 - Test all axes... pitch, roll, yaw, climbs, descends, and even all at once.
 - Test the flight modes you have on the A & B buttons
 - Make sure you are getting a good GPS lock
@@ -130,7 +130,7 @@ With all of the above complete, it is time to take your first flight on ArduCopt
 
 ArduCopter Parameters
 ---------------------
-There are over 700 parameters in ArduCopter. For everyday use of the Solo, you still do not need to worry about any of them. They're all pre-set for you in the above processes and by way of defaults.  All the configuration parameters for the Solo that require a value different from the ArduCopter defaults can be found in the `ArduPilot GitHub repository /tools/frame_params/ directory <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/Solo_AC35.param>`_. These are the parameters that are loaded during the upgrade process. If you are not familiar with editing parameters and have no special use case to warrant changing them, altering them is not recommended. 
+There are over 700 parameters in ArduCopter. For everyday use of the Solo, you still do not need to worry about any of them. They're all pre-set for you in the above processes and by way of defaults.  All the configuration parameters for the Solo that require a value different from the ArduCopter defaults can be found in the `ArduPilot GitHub repository /tools/frame_params/ directory <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/Solo_AC35.param>`_. These are the parameters that are loaded during the upgrade process. If you are not familiar with editing parameters and have no special use case to warrant changing them, altering them is not recommended.
 
 However, there are some advanced and special use cases that may require changing some parameters. Some key parameters for advanced users are detailed below. This list will likely grow as new use cases and modifications develop.
 
@@ -201,8 +201,8 @@ Value   Meaning
 ---------------
 Value   Meaning
 =====   =======
-0       Disabled   
-1       Aircraft theme with red/green front and white strobes rear.    
+0       Disabled
+1       Aircraft theme with red/green front and white strobes rear.
 2       Rover theme with white front & red rear (like a stock Solo used to be).
 =====   =======
 

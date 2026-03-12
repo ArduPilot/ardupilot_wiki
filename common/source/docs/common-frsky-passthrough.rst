@@ -30,7 +30,7 @@ Common FrSky Telemetry Setup with OpenTX transmitter running :ref:`FlightDeck <c
 
 * An OpenTX compatible TX.
 
-* An FrSky SmartPort receiver 
+* An FrSky SmartPort receiver
 
 
 Firmware Configuration

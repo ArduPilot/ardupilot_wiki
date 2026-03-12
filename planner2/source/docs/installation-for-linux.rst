@@ -37,7 +37,7 @@ Open a terminal window and go to the location where you downloaded the
 
     sudo dpkg -i apm_planner*.deb
 
-The installation will likely fail because of missing dependencies. 
+The installation will likely fail because of missing dependencies.
 These dependencies can be installed with this command:
 
 ::
@@ -50,7 +50,7 @@ Then retry the apmplanner installation again:
 
     sudo dpkg -i apm_planner*.deb
 
-Start APM Mission Planner 
+Start APM Mission Planner
 =========================
 Open Terminal windows and run
 
@@ -80,4 +80,3 @@ file as program", then drag and drop the file to your start bar.
 
 .. image:: ../images/apm_planner_2_install_linux_desktop_icon.jpg
     :target: ../_images/apm_planner_2_install_linux_desktop_icon.jpg
-

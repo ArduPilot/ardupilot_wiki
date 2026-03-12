@@ -21,7 +21,7 @@ the installation.
     from the Python package install directory, not the MAVProxy source code
     directory.
 
-The module can then be loaded then using the ``module load myModule`` in 
+The module can then be loaded then using the ``module load myModule`` in
 MAVProxy.
 
 Module File Structure
@@ -38,7 +38,7 @@ class, with hooks for initialisation and reading Mavlink packets:
     from pymavlink import mavutil
     from MAVProxy.modules.lib import mp_module
     from MAVProxy.modules.lib.mp_settings import MPSetting
-    
+
     class TestModule(mp_module.MPModule):
       def __init__(self, mpstate):
         super(TestModule, self).__init__(mpstate, "test", "test module")
@@ -46,7 +46,7 @@ class, with hooks for initialisation and reading Mavlink packets:
 
       def mavlink_packet(self, m):
         '''handle a mavlink packet'''
-        
+
     def init(mpstate):
       '''initialise module'''
       return TestModule(mpstate)           ``
@@ -70,7 +70,7 @@ filtering the incoming packets for the relevant data:
     if m.get_type() == 'VFR_HUD':
       curspeed =  m.airspeed
 
-The above example will set the variable ``curspeed`` to the current 
+The above example will set the variable ``curspeed`` to the current
 airspeed of the vehicle, whenever a ``VFR_HUD`` packet is received.
 
 There are a great number of MAVProxy modules, so the best reference
@@ -78,6 +78,5 @@ would be to look through the these
 `modules <https://github.com/ArduPilot/MAVProxy/tree/master/MAVProxy/modules>`_
 for examples of what you want to do.
 
-In particular, the ``example`` module (mavproxy_example.py) provides annotated code of many 
+In particular, the ``example`` module (mavproxy_example.py) provides annotated code of many
 common tasks that can be performed with modules.
-

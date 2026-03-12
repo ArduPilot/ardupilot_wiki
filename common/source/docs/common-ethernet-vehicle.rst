@@ -136,7 +136,7 @@ To see the video stream on the Herelink ground controller when using the QGC app
 
 The Tower of Babel: Physical wiring
 ===================================
-The physical interconnects between the devices is a challenge.  Most device suppliers provide some way to cable out the Ethernet from their device. Unfortunately, this usually involves providing a cable with either a large RJ-45 male or female plug/jack, requiring bulky CAT5 cabling for interconnects. And the device end that uses smaller gauge wires to that RJ-45 termination have non-standarized connectors, sometimes 5 pin, sometimes 4 pin JST-GH. 
+The physical interconnects between the devices is a challenge.  Most device suppliers provide some way to cable out the Ethernet from their device. Unfortunately, this usually involves providing a cable with either a large RJ-45 male or female plug/jack, requiring bulky CAT5 cabling for interconnects. And the device end that uses smaller gauge wires to that RJ-45 termination have non-standarized connectors, sometimes 5 pin, sometimes 4 pin JST-GH.
 
 With the aid of something like this BotBlox adapter which has many of the connector that are used wired in parallel, you can usually rig up a bulky set up on the bench for testing:
 
@@ -145,7 +145,7 @@ With the aid of something like this BotBlox adapter which has many of the connec
     :target: ../_images/BotBlox-adapter.jpg
     :width: 200px
 
-But this is not viable for actual vehicle use. In this case, I created small 6" cables with JST-GH connectors. This can be done by obtaining either the appropriate pre-made cables for each pin count and cutting and soldering them together or making them directly with jst-gh connector kits like this: 
+But this is not viable for actual vehicle use. In this case, I created small 6" cables with JST-GH connectors. This can be done by obtaining either the appropriate pre-made cables for each pin count and cutting and soldering them together or making them directly with jst-gh connector kits like this:
 
 `JST-GH Connector Kit <https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjPoYSiv5KGAxV2OtQBHT4YBoMYABAJGgJvYQ&gclid=Cj0KCQjw3ZayBhDRARIsAPWzx8rMSj_O3MBoFRAwBQPcSkhUk40Ecxhq1TsyhpLlm3aw2LPAiYhM5DwaAqAGEALw_wcB&ohost=www.google.com&cid=CAESVuD2zyxxWXp3hmt37m65lY3k6qnCH239PE4QZeVhoKJWIadtox7IVEIC3RJSCOk0yXfyOjujljkmD7qTvIDzK0ZcCqsRF7nQOGf7mrwj4Gz1lA2gdeh-&sig=AOD64_07KlOigavZZp94-roQz78iW0ZSkg&ctype=5&q=&ved=2ahUKEwjct_yhv5KGAxUK5MkDHdzvBnAQ9aACKAB6BAgFEBY&adurl=>`__
 
@@ -187,4 +187,3 @@ The Finished Vehicle
 
 .. image:: ../../../images/edu650-ethernet-bottom.jpg
     :target: ../_images/edu650-ethernet-bottom.jpg
-

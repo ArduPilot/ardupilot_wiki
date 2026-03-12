@@ -10,7 +10,7 @@ consist of two classes:
 - CANHal class that is responsible for representation of one physical interface on board.
   This class manages opening, setup and operation of the interface and is a main connection
   point between software and hardware
-  
+
 - CANManager class is wrapping all physical interfaces.
   It does enumeration of interfaces, provides access to them and also holds connection
   point for accessing UAVCAN managing class.
@@ -34,27 +34,27 @@ Necessary methods are following:
   Operating mode is either Normal that allows sending frames or Silent - only for
   receiving of frames.
   This method is used internally only by begin() method.
-  
+
 - bool begin(uint32_t bitrate)
 
   This method should try to initialize CAN interface with specified bitrate.
-  
+
 - void end()
 
   Finishes the instance of CAN interfaces
-  
+
 - void reset()
 
   Reinitialize the interface with previous settings
-  
+
 - bool is_initialized()
 
   Returns true if the CAN interface was initialized successfully
-  
+
 - int32_t available()
 
   This method should return the length of RX queue.
-  
+
 - int32_t tx_pending()
 
   The number of pending messages to be transmitted is returned by this method.
@@ -62,7 +62,7 @@ Necessary methods are following:
 - bool canAcceptNewTxFrame(const uavcan::CanFrame& frame)
 
   This method returns true if new message for transmitting can be placed in TX queue.
-  
+
 - bool isRxBufferEmpty()
 
   Method checks if the RX queue is empty.
@@ -71,7 +71,7 @@ Necessary methods are following:
 
   Total number of hardware failures and other kinds of errors (e.g. queue overruns).
   May increase continuously if the interface is not connected to the bus.
-  
+
 - uint32_t getVoluntaryTxAbortCount()
 
   Number of times the driver exercised library's requirement to abort transmission on first error.
@@ -121,11 +121,11 @@ Necessary methods are following:
 - PX4CAN* getIface(uint8_t iface_index)
 
   Returns reference to the specified interface
-  
+
 - uint8_t getNumIfaces()
 
   Returns number of interfaces
-  
+
 - bool hadActivity();
 
   Whether at least one iface had at least one successful IO since previous call of this method.

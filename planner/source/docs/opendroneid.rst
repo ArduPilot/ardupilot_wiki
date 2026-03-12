@@ -11,7 +11,7 @@ Mission Planner has a special Drone ID tab in its DATA view for use with OpenDro
 .. image:: ../../../images/mp_remoteid.png
     :target: ../_images/mp_remoteid.png
 
-This control manages the exchange of GCS/Operator information with the RID module, 
+This control manages the exchange of GCS/Operator information with the RID module,
 via the AutoPilot connection. If the Drone ID tab does not appear, right click the Data view, select customize, and enable ``tabDroneID``.
 
 GPS

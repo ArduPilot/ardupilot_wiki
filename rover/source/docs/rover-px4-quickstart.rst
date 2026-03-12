@@ -7,8 +7,8 @@ Archived:Rover PX4FMU/PX4IO Wiring and Quick Start
 .. warning::
 
     **ARCHIVED**
-    
-    The PX4 is end of life and is not generally available for purchase. 
+
+    The PX4 is end of life and is not generally available for purchase.
     This article is made available for existing users.
 
 This article provides high level information about how to wire up the
@@ -131,4 +131,3 @@ sure to set the Waypoint Radius to around 2 meters for good performance.
 
 A more complete guide to using the Mission Planner with Rover is
 described in \ :ref:`Learning a Mission <common-learning-a-mission>`.
-

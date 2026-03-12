@@ -55,15 +55,15 @@ Wiring Diagram
 UART Mapping
 ============
 
-* ``SERIAL0`` = USB (MAVLink2)  
-* ``SERIAL1`` = UART1 (ESC Telemetry)  
-* ``SERIAL2`` = UART2 (USER)  
-* ``SERIAL3`` = UART3 (DJI HD Air Unit)  
-* ``SERIAL4`` = UART4 (VTX)  
-* ``SERIAL5`` = UART5 (RC Input)  
-* ``SERIAL6`` = UART6 (GPS)  
-* ``SERIAL7`` = UART7 (USER)  
-* ``SERIAL8`` = UART8 (USER)  
+* ``SERIAL0`` = USB (MAVLink2)
+* ``SERIAL1`` = UART1 (ESC Telemetry)
+* ``SERIAL2`` = UART2 (USER)
+* ``SERIAL3`` = UART3 (DJI HD Air Unit)
+* ``SERIAL4`` = UART4 (VTX)
+* ``SERIAL5`` = UART5 (RC Input)
+* ``SERIAL6`` = UART6 (GPS)
+* ``SERIAL7`` = UART7 (USER)
+* ``SERIAL8`` = UART8 (USER)
 
 All UARTs have DMA capability except UART 1
 
@@ -77,8 +77,8 @@ RC Input
 RC input is configured by default on ``SERIAL5`` (UART5). The 4V5 pin is powered by both USB and the onboard 5V BEC from the battery.
 
 * PPM is not supported. (PPM pin is not functional)
-* SBUS/DSM/SRXL connects to the RX5 pin.  
-* FPort requires connection to TX5. Set :ref:`SERIAL5_OPTIONS<SERIAL5_OPTIONS>` = 7  
+* SBUS/DSM/SRXL connects to the RX5 pin.
+* FPort requires connection to TX5. Set :ref:`SERIAL5_OPTIONS<SERIAL5_OPTIONS>` = 7
 * CRSF also requires both TX5 and RX5 connections and provides telemetry automatically.
 
 Any UART can be used for RC system connections in ArduPilot. See the `common RC systems <https://ardupilot.org>`_ documentation for details.
@@ -111,25 +111,25 @@ All motor outputs (M1–M8) support:
 
 GPIOs
 =====
-ORBITH743 outputs can be used as GPIOs (relays, buttons, RPM, etc.). Set the ``SERVOx_FUNCTION`` = -1 to enable GPIO functionality. 
+ORBITH743 outputs can be used as GPIOs (relays, buttons, RPM, etc.). Set the ``SERVOx_FUNCTION`` = -1 to enable GPIO functionality.
 
 GPIO Pin Mapping
 ----------------
-* PWM1 → 50  
-* PWM2 → 51  
-* PWM3 → 52  
-* PWM4 → 53  
-* PWM5 → 54  
-* PWM6 → 55  
-* PWM7 → 56  
-* PWM8 → 57  
-* PWM9 → 58  
-* PWM10 → 59  
-* PWM11 → 60  
-* PWM12 → 61  
-* LED → 62  
-* BUZZER → 80  
-* VTX PWR → 81 (internal)  
+* PWM1 → 50
+* PWM2 → 51
+* PWM3 → 52
+* PWM4 → 53
+* PWM5 → 54
+* PWM6 → 55
+* PWM7 → 56
+* PWM8 → 57
+* PWM9 → 58
+* PWM10 → 59
+* PWM11 → 60
+* PWM12 → 61
+* LED → 62
+* BUZZER → 80
+* VTX PWR → 81 (internal)
 * CAM SW→ 82 (internal)
 
 Camera Switch Control

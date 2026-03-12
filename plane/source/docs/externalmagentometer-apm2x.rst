@@ -30,14 +30,14 @@ Step-by-step instructions
 
    .. image:: ../images/Mag_HMC5843_jumper1.jpg
        :target: ../_images/Mag_HMC5843_jumper1.jpg
-    
+
 #. Looking at the below picture, cut the jumper trace in the middle of
    the APM 2.5 board. This disables the SDA line to the board’s internal
    compass, rendering it inert.
 
    .. image:: ../images/APMCompassModification1.jpg
        :target: ../_images/APMCompassModification1.jpg
-   
+
 #. The APM 2.5 I2C connector needs a 4 pin DF13 connector (like `this one <http://store.jdrones.com/cable_df13_4pin_15cm_p/cbldf13p4c15.htm>`__).
    Cut off one and and strip and tin the four wires.
 #. Connect the DF13’s 4 wires to the compass breakout board. Note that
@@ -66,7 +66,7 @@ Step-by-step instructions
 
    .. image:: ../images/Quad_Top_View1.jpg
        :target: ../_images/Quad_Top_View1.jpg
-   
+
 #. Modify, compile and load the software for your compass board
    orientation. You must be able to load software from the Arduino IDE
    to complete this step. In “APM_Config.h”, you will find a commented
@@ -82,7 +82,7 @@ Step-by-step instructions
 
    .. code-block:: cpp
 
-        #define MAG_ORIENTATION     AP_COMPASS_COMPONENTS_UP_PINS_FORWARD 
+        #define MAG_ORIENTATION     AP_COMPASS_COMPONENTS_UP_PINS_FORWARD
 
 
    You can find a list of all possible orientations for the

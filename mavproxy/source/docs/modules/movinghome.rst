@@ -21,5 +21,3 @@ movinghome <status|on|off|radius|device|baud>
 - status: status report
 - baud: baudrate of serial port which is connected to NMEA GPS
 - device: name of serial port which is connected NMEA GPS
-
-

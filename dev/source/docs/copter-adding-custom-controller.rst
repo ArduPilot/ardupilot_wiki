@@ -12,7 +12,7 @@ Features
 
 - In-flight switching between main and custom controller with RC switch, option 109.
 - Bitmask to choose which axis to use the custom controller output
-- Filter, integrator reset mechanism when switching between controller   
+- Filter, integrator reset mechanism when switching between controller
   - Bumpless transfer when switching from custom to the main controller
 - Ground and in-flight spool state separation to avoid build-up during arming and take-off with the custom controller
 - Frontend-backend separation that allows adding a new controller with very little overhead
@@ -26,9 +26,9 @@ Parameters
 ---------------------------------------------------
 The frontend library has the following parameters
 
-- :ref:`CC_TYPE<CC_TYPE>`: choose which custom controller backend to use, reboot required.   
+- :ref:`CC_TYPE<CC_TYPE>`: choose which custom controller backend to use, reboot required.
   - Setting it to 0 will turn this feature off, GCS will not display parameters related to the custom controller
-- :ref:`CC_AXIS_MASK<CC_AXIS_MASK>`: choose which axis to use custom controller output   
+- :ref:`CC_AXIS_MASK<CC_AXIS_MASK>`: choose which axis to use custom controller output
   - This is a bitmask type parameter. Set 7 to use all output
 
 .. warning:: The custom controller requires the user to set up the build environment (:ref:`building-the-code`) and cloned the ArduPilot GitHub repo locally (:ref:`where-to-get-the-code`). The example controller is for experimental purposes only and it has been tested only lightly. The user is advised to use caution while testing it on a real vehicle.
@@ -139,7 +139,7 @@ Switching in and out of the custom controller is logged under the "CC" in the lo
 How To Add New Custom Controller
 ====================================================
 
-You can add your custom controller backend with the following steps which are demonstrated in this video. Let's assume we are adding the 3rd custom controller. 
+You can add your custom controller backend with the following steps which are demonstrated in this video. Let's assume we are adding the 3rd custom controller.
 
 .. youtube:: _ntoyhsZA8Y
     :width: 100%
@@ -221,7 +221,7 @@ to
 
     enum class CustomControlType : uint8_t {
         CONT_NONE            = 0,
-        CONT_EMPTY           = 1,             
+        CONT_EMPTY           = 1,
         CONT_PID             = 2,
         CONT_XYZ             = 3,
     };            // controller that should be used
@@ -284,7 +284,7 @@ to
 **Step #9:** This is the bare minimum to compile and run your custom controller. You can add controller-related code to the ``AC_CustomControl_XYZ`` file without changing anything else.
 
 **Step #10:** You can add new parameters by following the instructions in the
-`Adding a parameter to a library <https://ardupilot.org/dev/docs/code-overview-adding-a-new-parameter.html#adding-a-parameter-to-a-library>`__ 
+`Adding a parameter to a library <https://ardupilot.org/dev/docs/code-overview-adding-a-new-parameter.html#adding-a-parameter-to-a-library>`__
 wiki page.
 
 **Step #11:** Initialize the class object in the backend's constructor. For example in PID backend
@@ -329,28 +329,28 @@ above P or PID classes are initialized in the backend's constructors,
 Preparing Your Simulink Model For Code Generation
 ==========================================================
 
-Simulink model of the controller needs to be configured before the code generation. These steps are demonstrated in the following video. 
+Simulink model of the controller needs to be configured before the code generation. These steps are demonstrated in the following video.
 
 .. youtube:: oiGb1-c8TFk
     :width: 100%
 
 **Step #1:** In Solver tab in Configuration, change solver type to Fixed-Type. This is mandatory for code generation to work. Change Solver to discrete(no continuous state) this will reduce generated code's flash cost and run-time load. Change Fixed-step size to one over the :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`. The code generation needs to be repeated each time this parameter is changed.
 
-**Step #2:** In the Hardware Implementation tab, change Device vendor to ARM Compatible and Device type to ARM Cortex-M. This determines which data types are available and what is their size. 
+**Step #2:** In the Hardware Implementation tab, change Device vendor to ARM Compatible and Device type to ARM Cortex-M. This determines which data types are available and what is their size.
 
 **Step #3:** In the Code Generation tab, change the System target file to ert.tlc Embedded Coder and language to C++. Since we don't want Simulink to compile the generated code click Generate code only. Click Package code and artifacts to get only relevant generated code files in a single folder.
 
-**Step #4:** In Code Generation->Optimization tab, change Default parameter behavior to Tunable. This will create a variable inside the generated code with the same name as they are defined in Matlab or Simulink workspace. 
+**Step #4:** In Code Generation->Optimization tab, change Default parameter behavior to Tunable. This will create a variable inside the generated code with the same name as they are defined in Matlab or Simulink workspace.
 
-**Step #5:** To force generated code to be strictly single precision, change Import and Outport block data type to single. Since mathematical operation in ArduPilot runs in single precision. 
+**Step #5:** To force generated code to be strictly single precision, change Import and Outport block data type to single. Since mathematical operation in ArduPilot runs in single precision.
 
-**Step #6:** In Code Mapping->Data, change Import and Outport data visibility to public, and member access method to none. This will allow passing input and output as an argument. 
+**Step #6:** In Code Mapping->Data, change Import and Outport data visibility to public, and member access method to none. This will allow passing input and output as an argument.
 
-**Step #7:** In Code Mappings->Data, change Model parameters data visibility to public. This will allow accessing model parameters inside the custom controller backend. 
+**Step #7:** In Code Mappings->Data, change Model parameters data visibility to public. This will allow accessing model parameters inside the custom controller backend.
 
-**Step #8:** In Code Mappings->Functions, change step function input and output argument type. If these are changed to pointer as shown in the video, step 6 is mandatory. The choice of how to pass input and output depends on the user's preference. Inputs are passed by pointer and outputs passed by reference for simplicity. 
+**Step #8:** In Code Mappings->Functions, change step function input and output argument type. If these are changed to pointer as shown in the video, step 6 is mandatory. The choice of how to pass input and output depends on the user's preference. Inputs are passed by pointer and outputs passed by reference for simplicity.
 
-**Step #9:** The last step is to click on generate code button to start code generation. If a problem arises during this process, Simulink will throw an error message to explain the problem and how to fix it. 
+**Step #9:** The last step is to click on generate code button to start code generation. If a problem arises during this process, Simulink will throw an error message to explain the problem and how to fix it.
 
 There are a lot of options in Simulink code generation in terms of class, function, variable naming, code generation optimization level, parameters access and storage method, etc. It is up to the user to change these depending on their project needs.
 
@@ -364,18 +364,18 @@ Please watch the following video to understand what each generated header and cp
 Integration Generated Code Into ArduPilot
 ==========================================================
 
-The generated source code needs to be copied inside the ArduPilot and called inside the newly created custom controller backend. The steps to achieve this is demonstrated in the following video. 
+The generated source code needs to be copied inside the ArduPilot and called inside the newly created custom controller backend. The steps to achieve this is demonstrated in the following video.
 
 .. youtube:: QD8xMey07vQ
     :width: 100%
 
-**Step #1:** Copy content of zip file into a new folder inside ardupilot/libraries. Call AC_Simulink as in the example. 
+**Step #1:** Copy content of zip file into a new folder inside ardupilot/libraries. Call AC_Simulink as in the example.
 **Step #2:** Tell waf to build this folder if the custom controller is enabled.
-**Step #3:** Create an object of simulink code generated class. 
+**Step #3:** Create an object of simulink code generated class.
 **Step #4:** Call initialize function of this object inside backend constructor.
-**Step #5:** Call step function of this object inside backend update function. Arrange input and output arguments by following the similar pattern as in ert_main.cpp. 
-**Step #6:** Once these steps are completed we can compile ArduPilot. 
+**Step #5:** Call step function of this object inside backend update function. Arrange input and output arguments by following the similar pattern as in ert_main.cpp.
+**Step #6:** Once these steps are completed we can compile ArduPilot.
 
 As long as the input and output type and how they are passed to the step function remain the same, the steps given in here and in the previous section do not need to be repeated each time we do code generation. Even if we change the controller type for example from P+PID to PID+PID, we just need to click on the generate code button and copy and paste the zip file content to the AC_Simulink folder.
 
-An example of this implementation is given in this PR https://github.com/ArduPilot/ardupilot/pull/21700. 
+An example of this implementation is given in this PR https://github.com/ArduPilot/ardupilot/pull/21700.

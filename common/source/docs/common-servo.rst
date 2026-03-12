@@ -37,7 +37,7 @@ Controlling the servo as a camera shutter
 =========================================
 
 Details on how to set-up and control the servo as if it were triggering
-the shutter of a camera can be found  :ref:`here on the Camera Gimbal wiki page <copter:common-camera-gimbal>`.  The 
+the shutter of a camera can be found  :ref:`here on the Camera Gimbal wiki page <copter:common-camera-gimbal>`.  The
 advantage of this set-up is:
 
 -  the servo can be triggered from the ch7 or ch8 auxiliary switch on

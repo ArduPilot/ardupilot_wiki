@@ -11,7 +11,7 @@ Pixhawk 5X® is the latest update to the successful family of Pixhawk® autopilo
     :target: ../_images/pixhawk5x_exploded_diagram.jpg
     :width: 450px
 
-.. note:: 
+.. note::
 
     This board also includes integrated Ethernet but ArduPilot's networking support is not enabled on F7 boards (`see issue here <https://github.com/ArduPilot/ardupilot/issues/26397>`__)
 
@@ -82,7 +82,7 @@ Typical Wiring Diagram
 UART Mapping
 ============
 
- - SERIAL0 -> USB 
+ - SERIAL0 -> USB
  - SERIAL1 -> UART7 (Telem1) RTS/CTS pins (DMA enabled)
  - SERIAL2 -> UART5 (Telem2) RTS/CTS pins (DMA enabled)
  - SERIAL3 -> USART1 (GPS1)
@@ -94,7 +94,7 @@ UART Mapping
 
 RC Input
 ========
-The RCIN pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The RCIN pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL5 (UART2) would need to be used for receiver connections. Below are setups using UART2. :ref:`SERIAL5_PROTOCOL<SERIAL5_PROTOCOL>` should be set to "23".
 

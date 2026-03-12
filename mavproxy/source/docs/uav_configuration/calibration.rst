@@ -50,11 +50,10 @@ arming command.
 magcal
 ======
 
-Magnetometer (compass) calibration to account for any soft-iron 
+Magnetometer (compass) calibration to account for any soft-iron
 sources on the UAV.
 
 ahrstrim
 ========
 
 Do a AHRS trim.
-

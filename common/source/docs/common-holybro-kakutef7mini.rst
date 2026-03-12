@@ -5,7 +5,7 @@ Holybro Kakute F7 Mini
 ======================
 
 .. image:: ../../../images/holybro-kakutef7mini.jpg
-    
+
 
 *above image and some content courtesy of* `Holybro <http://www.holybro.com>`__
 
@@ -23,7 +23,7 @@ Specifications
 
 -  **Processor**
 
-   -  STM32F745VGH6 32-bit processor 
+   -  STM32F745VGH6 32-bit processor
 
 -  **Sensors**
 
@@ -37,7 +37,7 @@ Specifications
 -  **Interfaces**
 
    -  6x PWM outputs
-   -  1x RC input 
+   -  1x RC input
    -  7x UARTs/serial for GPS and other peripherals
    -  1x I2C port for external compass
    -  micro USB port
@@ -69,7 +69,7 @@ The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive p
 
 RC Input
 ========
- 
+
 RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols except PPM. See :ref:`common-rc-systems` for details for a specific RC system. :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` is set to "23", by default, to enable this.
 
 - SBUS/DSM/SRXL connects to the R6 pin but SBUS requires that the :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "3".
@@ -81,13 +81,13 @@ RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols ex
 - SRXL2 requires a connection to T6 and automatically provides telemetry.  Set :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` to "4".
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
- 
+
 
 FrSky Telemetry
 ===============
 
 FrSky Telemetry is supported using the T6 pin (UART6 transmit). You need
-to set the following parameters to enable support for FrSky S.PORT. 
+to set the following parameters to enable support for FrSky S.PORT.
 
   - :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` 4 or 10
   - :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` 7
@@ -128,7 +128,7 @@ The correct battery setting parameters are:
  - :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 12 , if external sensor used.
  - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 10.9
  - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` should be set to match external current sensor, if used.
- 
+
 Compass
 =======
 

@@ -120,7 +120,7 @@ Python Packages Installation
 
   - If the connection between RPi-ArduPilot is established via the UART serial port, also `change the setting in /boot/config.txt <https://discuss.ardupilot.org/t/communicating-with-raspberry-pi-3b/39269/8>`__.
 
-- `Install Python3 <https://realpython.com/installing-python/#ubuntu>`__. 
+- `Install Python3 <https://realpython.com/installing-python/#ubuntu>`__.
 
   - You should be able to run the examples provided by Intel can be found in the folder ``~/librealsense/wrappers/python/example`` with Python3 command.
 
@@ -193,7 +193,7 @@ How to run
 
     # Transformation to convert different camera orientations to NED convention. Replace camera_orientation_default for your configuration.
     #   0: Forward, USB port to the right
-    #   1: Downfacing, USB port to the right 
+    #   1: Downfacing, USB port to the right
     camera_orientation_default = 0
 
 - The parameters can also be passed as input arguments from the command line. Now let's run the main script:
@@ -264,7 +264,7 @@ If everything works as expected, next time you can arm and takeoff in Loiter mod
 
 .. tip::
 
-   Always confirm that position feedback is running ok before switching to Loiter mode. Also look out for the safety boundary in your environment, i.e. where tracking might get lost due to lack of features, fast or rotation movement. 
+   Always confirm that position feedback is running ok before switching to Loiter mode. Also look out for the safety boundary in your environment, i.e. where tracking might get lost due to lack of features, fast or rotation movement.
 
 Indoor and Outdoor Experiments
 ==============================

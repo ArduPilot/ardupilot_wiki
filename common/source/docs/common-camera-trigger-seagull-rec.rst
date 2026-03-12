@@ -9,9 +9,9 @@ Camera Triggering using Seagull REC
 
 `Seagull REC <https://www.seagulluav.com/product/seagull-rec/>`__ provides everything needed to connect a Pixhawk to a supported Sony MultiPort™ equipped camera in order to automate camera shutter triggering. The current list of compatible cameras `can be found here <https://www.seagulluav.com/product/seagull-rec/>`__
 
-The board supports three shutter trigger modes: 
+The board supports three shutter trigger modes:
 
--  **AF-T** ("AutoFocus-Trigger", with 1 second pre-focus followed by trigger) 
+-  **AF-T** ("AutoFocus-Trigger", with 1 second pre-focus followed by trigger)
 -  **IS-T** ("Instant-Trigger", instant trigger as soon as camera locks focus)
 -  **Manual** ("Three stage trigger control", neutral-focus-trigger)
 

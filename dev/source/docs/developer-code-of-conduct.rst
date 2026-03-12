@@ -1,5 +1,5 @@
 .. _developer-code-of-conduct:
-    
+
 ===================================
 ArduPilot Developer Code of Conduct
 ===================================
@@ -24,7 +24,7 @@ In the interest of fostering an open and welcoming environment, we as developers
 - Endeavour to understand the intent of development activities they undertake, where there may be reason to think that the vehicle may be used as a weapon or in an application where it is effectively in control of human life.
 - Not knowingly support or facilitate the weaponization of systems using ArduPilot
 - ArduPilot is NOT certified for use in applications where ArduPilot is effectively in control of human lives. Members of the development team must not knowingly assist in projects where ArduPilot will be in control of human lives.  “In control of human lives” includes but isn’t limited to manned aircraft.
- 
+
 Our Standards
 -------------
 
@@ -35,7 +35,7 @@ Examples of behavior that contributes to achieving the aims of ArduPilot include
 - Gracefully accepting constructive criticism
 - Focusing on what is best for the community
 - Showing empathy towards other community members
- 
+
 Examples of unacceptable behavior by contributors include:
 
 - The use of sexualized language or imagery and unwelcome sexual attention or advances
@@ -68,4 +68,3 @@ Project maintainers who do not follow or enforce the Code of Conduct in good fai
 Attribution
 -----------
 This Code of Conduct is adapted from the Contributor Covenant, version 1.4, available at https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
-

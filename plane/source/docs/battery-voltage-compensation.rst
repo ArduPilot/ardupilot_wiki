@@ -39,5 +39,3 @@ This is provided using in a similar manner:
 If :ref:`Q_M_BAT_VOLT_MAX<Q_M_BAT_VOLT_MAX>` is non-zero, then voltage compensation is applied to throttle to offset battery voltage variations on thrust as above for the forward motor(s)
 
 :ref:`Q_M_BAT_VOLT_MIN<Q_M_BAT_VOLT_MIN>` sets a lower limit on battery voltage sag by predicting the throttle value that would cause this, using an estimate of battery internal resistance calculated during flight. It will limit current applied to the VTOL motors to prevent this from occurring. If :ref:`Q_M_BAT_CURR_MAX<Q_M_BAT_CURR_MAX>` is also non-zero, then it will use the lower of the two limits, the one set by :ref:`Q_M_BAT_CURR_MAX<Q_M_BAT_CURR_MAX>` or predicted internally using :ref:`Q_M_BAT_VOLT_MIN<Q_M_BAT_VOLT_MIN>` as the minimum voltage sag target.
-
-

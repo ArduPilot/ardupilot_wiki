@@ -12,7 +12,7 @@ window.
 
 -  :ref:`CONNECT <common-connect-mission-planner-autopilot>` (Upper right
    corner) - How to connect the Mission Planner to your ArduPilot.
-   Selecting communication devices and rates. 
+   Selecting communication devices and rates.
 -  :ref:`DATA <mission-planner-ground-control-station>` -
    Information about what you see, and things you can do in the Flight
    Data screens.
@@ -35,10 +35,10 @@ window.
    Additional information about many of the screens can be found in the
    configuration instructions for the :ref:`optional hardware <common-optional-hardware>`. The user interface of Mission Planner itself is largely self explanatory and has been
    :ref:`translated <mission-planner-language-translations>` into a number of
-   languages. 
+   languages.
 
-   
-   
+
+
 .. toctree::
    :maxdepth: 1
    :hidden:

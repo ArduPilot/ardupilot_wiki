@@ -12,8 +12,8 @@ Clockwise and Counter-Clockwise propellers are included and should be used for s
 
 If using :ref:`BLHeli ESCs <common-blheli32-passthru>` use the configuration app to set:
 
-- "Motor Direction" to "Bidirectional 3D" 
-- "Low RPM Power Protect" to "Off" 
+- "Motor Direction" to "Bidirectional 3D"
+- "Low RPM Power Protect" to "Off"
 
 .. image:: ../images/thruster-blheli.png
     :target: ../_images/thruster-blheli.png

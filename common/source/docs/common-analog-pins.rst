@@ -21,7 +21,7 @@ If not, then examining the autopilot's ``hwdef.dat`` file `here <https://github.
 For example, the `CUAV-X7 autopilot hwdef.dat <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-X7/hwdef.dat>`__ has a section designating its internal A-to-D converters:
 
 ::
-    
+
     # analog in
     PA0 BATT_VOLTAGE_SENS ADC1 SCALE(1)
     PA1 BATT_CURRENT_SENS ADC1 SCALE(1)

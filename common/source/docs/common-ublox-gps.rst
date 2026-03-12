@@ -4,7 +4,7 @@
 UBlox GPS Configuration
 =======================
 
-This article explains how to connect to u-center to change the configuration of a :ref:`3DR uBlox <common-installing-3dr-ublox-gps-compass-module>` module. 
+This article explains how to connect to u-center to change the configuration of a :ref:`3DR uBlox <common-installing-3dr-ublox-gps-compass-module>` module.
 This is not expected to be necessary for normal users.
 
 .. image:: ../../../images/3DR-ublox.jpg

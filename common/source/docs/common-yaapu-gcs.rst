@@ -40,5 +40,3 @@ Setup
 =====
 
 Complete instructions are given on the `Yaapu LUAGCS Wiki <https://github.com/yaapu/FrskyLuaGCS/wiki>`_ . Support questions can be posted `here <https://discuss.ardupilot.org/t/frsky-bidirectional-telemetry-implementation>`_ .
-
-

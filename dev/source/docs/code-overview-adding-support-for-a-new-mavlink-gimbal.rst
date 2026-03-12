@@ -4,7 +4,7 @@
 Adding Support for a new MAVLink Gimbal
 =======================================
 
-This page covers how ArduPilot interacts with a MAVLink enabled gimbal. 
+This page covers how ArduPilot interacts with a MAVLink enabled gimbal.
 It is meant more as a guide on how gimbal manufacturers can make their
 gimbals work with ArduPilot with minimum code changes to ArduPilot .
 

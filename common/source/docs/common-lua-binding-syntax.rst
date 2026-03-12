@@ -96,15 +96,15 @@ binding to:
     returning multiple values, any of which can be NULL.
     In this case the C++ function is boolean, but since the returns have 'NULL specified,
     the C++ return of a boolean is ignored and the returned values can have NULL value.
-    Note that this call returns many values (arguments are variable pointers) and has no input 
+    Note that this call returns many values (arguments are variable pointers) and has no input
     variables.
 
 In order to see how this would be used:
-:: 
+::
 
       velVar, posVar,hgtVar,magVar, tasVar = ahrs:get_variances()
       if velVar then
-        newVar=2*velVar 
+        newVar=2*velVar
       end
 
 note that velVar could have a value of 0 and still the ``if`` statement test would be true in the LUA script.

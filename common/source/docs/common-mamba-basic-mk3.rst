@@ -51,21 +51,21 @@ The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the
 receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 
 =========  ================ ===========
-  Name     Pin              Function  
+  Name     Pin              Function
 =========  ================ ===========
-  SERIAL0  COMPUTER          USB  
-  SERIAL1  PPM/RX1/SBUS/TX1  UART1 (RC Input)  
-  SERIAL2  TX2/RX2           UART2 (Empty)  
-  SERIAL3  TX3/RX3           UART3 (Telem1)  
-  SERIAL4  TX4/RX4           UART4 (Empty)  
-  SERIAL6  TX6/RX6           UART6 (GPS) 
-=========  ================ =========== 
+  SERIAL0  COMPUTER          USB
+  SERIAL1  PPM/RX1/SBUS/TX1  UART1 (RC Input)
+  SERIAL2  TX2/RX2           UART2 (Empty)
+  SERIAL3  TX3/RX3           UART3 (Telem1)
+  SERIAL4  TX4/RX4           UART4 (Empty)
+  SERIAL6  TX6/RX6           UART6 (GPS)
+=========  ================ ===========
 
 
 RC Input
 ========
- 
-The PPM pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+
+The PPM pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the SBUS pin can also be configured to be used as true UART1 RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL1 port's RX input pin.
 
@@ -83,7 +83,7 @@ With this option, :ref:`SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>` must be set to "23",
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM (SBUS requires external inversion). See :ref:`common-rc-systems` for details.
 
-  
+
 OSD Support
 ===========
 

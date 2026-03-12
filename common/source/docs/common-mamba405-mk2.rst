@@ -69,7 +69,7 @@ SERIAL6 TX6 / RX6  UART6 (ESC Telemetry)
 BRD_ALT_CONFIG  PPM pin function
 =============== ================
 ALT 0 (default) tied internally to an inverter, cannot be driven from the outside
-ALT 1           RX1(PPM)/TX1  
+ALT 1           RX1(PPM)/TX1
 =============== ================
 
 RC Input

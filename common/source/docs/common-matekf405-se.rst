@@ -67,7 +67,7 @@ Specifications
 These boards use the MatekF405-Wing firmware `here <https://firmware.ardupilot.org>`__.
 
 See mateksys.com for SE `detailed specifications <http://www.mateksys.com/?portfolio=f405-se#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f405-se#tab-id-4>`__ and WSE `detailed specifications <http://www.mateksys.com/?portfolio=f405-wse#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f405-wse#tab-id-4>`__
-   
+
 Default UART order
 ==================
 
@@ -96,7 +96,7 @@ The first 8 servo/motor outputs are marked on the board: M1,M2,S3-S8 . S9 is a s
 RC Input
 ========
 
-The SBUS pin, is passed by an inverter to R2 (UART2 RX), which by default is mapped to a timer input instead of the UART, and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The SBUS pin, is passed by an inverter to R2 (UART2 RX), which by default is mapped to a timer input instead of the UART, and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the R2 pin can also be configured to be used as true UART2 RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL7 port's RX input pin.
 

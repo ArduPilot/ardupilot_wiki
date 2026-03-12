@@ -6,11 +6,11 @@ Mateksys H743-Wing/SLIM/MINI/WLITE
 
 .. image:: ../../../images/matekh743-wing.png
      :target: ../_images/matekh743-wing.png
-    
+
 
 the above image and some content courtesy of `mateksys.com <http://www.mateksys.com/>`__
 
-.. note:: Only the WING version is shown above. All versions use the same firmware, but have varying configurations for pinouts and resources available. See Matek's site for exact details for every variant. 
+.. note:: Only the WING version is shown above. All versions use the same firmware, but have varying configurations for pinouts and resources available. See Matek's site for exact details for every variant.
 
 Specifications
 ==============
@@ -72,7 +72,7 @@ For example, use Channel 10 to control the camera switch using Relay 2:
 - :ref:`RC10_OPTION<RC10_OPTION>` = "34" (Relay2 Control)
 
 .. note:: setting Relay on/high assigned for Vsw will turn off that supply. Likewise, setting on/high for the Relay assigned for camera, will switch from Camera 1 to Camera 2.
-   
+
 Default UART order
 ==================
 
@@ -90,7 +90,7 @@ Serial port protocols (Telem, GPS, etc.) can be adjusted to personal preferences
 RC Input
 ========
 
-The Rx6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The Rx6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the Rx6 pin can also be configured to be used as true UART RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL7 port's RX input pin.
 

@@ -266,7 +266,7 @@ the pitch control to simultaneously control height and speed.
    estimate is available.
 
 :ref:`TECS_PTCH_FF_K <TECS_PTCH_FF_K>`:
-This parameter can be used together with :ref:`TECS_PTCH_FF_V0<TECS_PTCH_FF_V0>` to provide a 
+This parameter can be used together with :ref:`TECS_PTCH_FF_V0<TECS_PTCH_FF_V0>` to provide a
 feedforward gain between demanded airspeed and pitch attitude. This is best
 used with :ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` set to 2.0. As noted above, this is appropriate for
 gliders, and setting :ref:`TECS_PTCH_FF_K <TECS_PTCH_FF_K>` can improve the responsiveness to changes
@@ -284,14 +284,14 @@ or set up a mission involving DO_CHANGE_SPEED items. Set TECS_PTCH_FF_V0 to the
 normal flight speed of your aircraft. This should also be the speed it glides at
 with no pitch input in FBWA mode (i.e. when flying at a pitch attitude specified
 by the :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` parameter). When reviewing the log from such a flight, look
-at the TECS pitch integrator item (TECS.iph) in the onboard logs. Usually this 
+at the TECS pitch integrator item (TECS.iph) in the onboard logs. Usually this
 reduces (becomes more negative) to trim the aircraft nose-down for a higher airspeed,
-and vice versa. The goal is to use the feed-forward gain to reduce the required 
+and vice versa. The goal is to use the feed-forward gain to reduce the required
 changes in this integrator value to trim the aircraft to a new airspeed. If the
 TECS.iph value becomes more negative when the demanded airspeed increases, make the
-:ref:`TECS_PTCH_FF_K <TECS_PTCH_FF_K>` more negative. If the TECS.iph value becomes 
+:ref:`TECS_PTCH_FF_K <TECS_PTCH_FF_K>` more negative. If the TECS.iph value becomes
 more positive when the demanded aispeed increases, make the :ref:`TECS_PTCH_FF_K <TECS_PTCH_FF_K>`
-value more positive. When this process in complete and the feed-forward gain is providing 
+value more positive. When this process in complete and the feed-forward gain is providing
 most of the pitch attitude change needed, the TECS.iph value doesn't need to change much.
 This gives better tracking of changes in demanded airspeed.
 
@@ -309,7 +309,7 @@ pitch changes if required to recover from under-speed conditions.
 
 .. _tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_hgt_omega:
 
-:ref:`TECS_HGT_OMEGA <TECS_HGT_OMEGA>`: 
+:ref:`TECS_HGT_OMEGA <TECS_HGT_OMEGA>`:
 This is the cross-over frequency (in radians/second) of the
 complementary filter used to fuse vertical acceleration and barometric
 height to obtain an estimate of height rate and height. Increasing this
@@ -319,7 +319,7 @@ reducing it weights the solution more towards use of the accelerometer data.
 
 .. _tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_spd_omega:
 
-:ref:`TECS_SPD_OMEGA <TECS_SPD_OMEGA>`: 
+:ref:`TECS_SPD_OMEGA <TECS_SPD_OMEGA>`:
 This is the cross-over frequency (in radians/second)of the
 complementary filter used to fuse longitudinal acceleration and airspeed
 to obtain an improved airspeed estimate. Increasing this frequency
@@ -376,7 +376,7 @@ stalling.
 
 .. _tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_clmb_max:
 
-:ref:`TECS_CLMB_MAX <TECS_CLMB_MAX>`: 
+:ref:`TECS_CLMB_MAX <TECS_CLMB_MAX>`:
 This is the best climb rate (in metres/second) that the aircraft can achieve
 with the throttle set to :ref:`THR_MAX<THR_MAX>` and the airspeed set to the default
 value. For electric aircraft make sure this number can be achieved
@@ -387,21 +387,21 @@ required to climb is close to :ref:`THR_MAX<THR_MAX>` and the aircraft is
 maintaining airspeed, then this parameter is set correctly. If
 the airspeed starts to reduce, then the parameter is set to high, and if
 the throttle demand required to climb and maintain speed is noticeably
-less than :ref:`THR_MAX<THR_MAX>`, then either :ref:`TECS_CLMB_MAX<TECS_CLMB_MAX>` should be increased or :ref:`THR_MAX<THR_MAX>` reduced. 
+less than :ref:`THR_MAX<THR_MAX>`, then either :ref:`TECS_CLMB_MAX<TECS_CLMB_MAX>` should be increased or :ref:`THR_MAX<THR_MAX>` reduced.
 
 
 
 .. _tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_sink_min:
 
-:ref:`TECS_SINK_MIN <TECS_SINK_MIN>`: 
+:ref:`TECS_SINK_MIN <TECS_SINK_MIN>`:
 This is the sink rate of the aircraft (in metres/second) with the throttle
 set to :ref:`THR_MIN<THR_MIN>` and flown at the same airspeed as used to measure
-:ref:`TECS_CLMB_MAX`. 
+:ref:`TECS_CLMB_MAX`.
 
 
 .. _tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_time_const:
 
-:ref:`TECS_TIME_CONST <TECS_TIME_CONST>`: 
+:ref:`TECS_TIME_CONST <TECS_TIME_CONST>`:
 This is the time constant of the TECS control algorithm (in seconds). Smaller
 values make it faster to respond, larger values make it slower to respond.
 
@@ -421,7 +421,7 @@ values make it faster to respond, larger values make it slower to respond.
 :ref:`PTCH_LIM_MAX_DEG <PTCH_LIM_MAX_DEG>`:
 This is the maximum pitch angle (in degrees) that the controller
 will demand. It should be set to a value that the aircraft can achieve
-whilst maintaining airspeed with the throttle set to :ref:`THR_MAX`. 
+whilst maintaining airspeed with the throttle set to :ref:`THR_MAX`.
 
 
 .. _tecs-total-energy-control-system-for-speed-height-tuning-guide_lim_pitch_min:

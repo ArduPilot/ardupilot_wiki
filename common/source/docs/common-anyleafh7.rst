@@ -22,7 +22,7 @@ Specifications
 
 -  **Processor**
 
-   -  STM32H743 32-bit processor 
+   -  STM32H743 32-bit processor
    -  8 MByte flash for logging
    -  Integrated ELRS receiver
 
@@ -91,7 +91,7 @@ RC Input
 This flight controller includes a 2.4Ghz ExpressLRS transceiver, capable of receiving control input, and transmitting or receiving MavLink telemetry. To enable all ELRS features, either RC5 channel should be setup as an ARM switch (there are several RC5_OPTIONS that can do this) or by mapping the transmitter's Channel 5 to reflect ARM status from telemetry. See: https://youtu.be/YO2yA1fmZBs for an example.
 
 SBUS on the DJI connector may be used if SERIAL5_PROTOCOL is changed to 0 and SERIAL1_PROTOCOL is changed to 23 for RC input.
-   
+
 PWM Output
 ==========
 

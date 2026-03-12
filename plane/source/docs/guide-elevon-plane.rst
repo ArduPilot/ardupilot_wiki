@@ -51,10 +51,10 @@ switch to FBWA mode and press the safety switch (if fitted) to enable
 servo outputs.
 
 At this point both the autopilot and RC transmitter should have control
-of the elevons. You now should adjust the reversal and function of the two 
+of the elevons. You now should adjust the reversal and function of the two
 servos so that you get correct movement.
 
-Correct FBWA (automatic stabilization)movement for an elevon plane WITHOUT 
+Correct FBWA (automatic stabilization)movement for an elevon plane WITHOUT
 PROVIDING RC INPUT is:
 
 .. raw:: html
@@ -83,13 +83,13 @@ Repeat the servo reversal or function change for the right elevon.
 
 .. note:: In rare instances, both servo 1 and 2 will individually respond
           correctly with the same FUNCTION. This is OK.
-          
+
 .. note:: while rolling the aircraft the autopilot will automatically
           try to put in some up pitch, as it knows that upward pitch is needed
           in turns. So you will probably see an asymmetry in elevon
           movement. The elevon that is going down will not go down very far, or
           (depending on your settings) may not go down at all.
-          
+
 
 Verify RC Inputs
 ================
@@ -98,7 +98,7 @@ Now that the elevons are configured correctly, verify your RC inputs.
 In FBWA with the airplane level, command pitch-up from your transmitter
 and confirm that the elevons both rise. Command a roll to the right
 from your transmitter and confirm that the right elevon rises and
-the left elevon lowers. If this is incorrect, read the :ref:`RC inputs <rc-throw-trim>` 
+the left elevon lowers. If this is incorrect, read the :ref:`RC inputs <rc-throw-trim>`
 page to fix your rc
 
 Switch the plane to MANUAL mode and confirm the same behavior.
@@ -144,7 +144,7 @@ are used:
 - LEFT ELEVON = (roll+pitch)*0.5
 - RIGHT ELEVON = (roll-pitch)*0.5
 
-So, simultaneous full roll and  full pitch input will result in maximum travel of the elevons if mixing gain is 0.5. But if just full roll or pitch is input, maximum elevon deflection would be only 50%.  
+So, simultaneous full roll and  full pitch input will result in maximum travel of the elevons if mixing gain is 0.5. But if just full roll or pitch is input, maximum elevon deflection would be only 50%.
 
 If more deflection is desired when using only one control input, the mixing gain can be increased. However, with gains above 0.5, surface deflection will be saturated at some point when both inputs are simultaneously applied. For example, if you use a gain of 1.0, and apply full roll, you will obtain the maximum elevon deflection possible to produce roll. But then adding in pitch while holding full roll input, will reduce the effective roll deflection because one elevon deflection is already saturated.
 

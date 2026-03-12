@@ -408,7 +408,7 @@ Additional information
 ======================
 
 -  `ELC 2015 - Heterogeneous Multi-Core Architecture Support for Dronecode (Mark Charlebois,
-   Qualcomm) <https://youtu.be/ggNTjAhjnJk>`__ (Video) 
+   Qualcomm) <https://youtu.be/ggNTjAhjnJk>`__ (Video)
 - :ref:`Building for Qualcomm Snapdragon Flight Kit <dev:building-for-qualcomm-snapdragon-flight-kit>`
 -  `QURT Port <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_QURT/README.md>`__ (Github)
 -  `QFlight Port <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_Linux/qflight>`__ (Github)

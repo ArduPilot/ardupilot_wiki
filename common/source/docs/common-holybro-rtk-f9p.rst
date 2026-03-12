@@ -12,7 +12,7 @@ The `Holybro H-RTK F9P GNSS <http://www.holybro.com/product/h-rtk-f9p/>`_ is an 
 
 Using RTK allows ArduPilot to get its position with centimeter-level accuracy, which is much more accurate than can be provided by a normal GPS.
 
-There are three models of Holybro H-RTK F9P to choose from, each with different antenna design to meet different needs: 
+There are three models of Holybro H-RTK F9P to choose from, each with different antenna design to meet different needs:
 
 .. image:: ../../../images/rtk_holybro_h-rtk-f9p_spec.png
     :target: ../_images/rtk_holybro_h-rtk-f9p_spec.png
@@ -37,7 +37,7 @@ For Pixhawk Cube 2.1 variant that does not come with a 10-way GPS port and hence
 Configuration
 =============
 
-For normal operation, ArduPilot's GPS parameter defaults will work for any serial port configured for ``SERIALx_PROTOCOL`` = 5. 
+For normal operation, ArduPilot's GPS parameter defaults will work for any serial port configured for ``SERIALx_PROTOCOL`` = 5.
 
 .. note:: ArduPilot does not currently configure UBlox F9P GPS constellations. User must assure that the GPS is properly configured for his region and application. See :ref:`common-gps-ublox-firmware-update`
 

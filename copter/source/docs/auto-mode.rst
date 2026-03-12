@@ -8,10 +8,10 @@ In Auto mode the copter will follow a pre-programmed mission script
 stored in the autopilot which is made up of navigation commands (i.e.
 waypoints) and "do" commands (i.e. commands that do not affect the
 location of the copter including triggering a camera shutter). This page
-provides an overview of  Auto mode. 
+provides an overview of  Auto mode.
 
 Information on creating a mission script, can be found on
-the :ref:`Planning a mission with waypoints and events <common-planning-a-mission-with-waypoints-and-events>` page. 
+the :ref:`Planning a mission with waypoints and events <common-planning-a-mission-with-waypoints-and-events>` page.
 A full list of supported commands can be found on the :ref:`Mission Command List <mission-command-list>` page.
 
 AUTO mode incorporates the altitude control from :ref:`AltHold mode <altholdmode>` and position

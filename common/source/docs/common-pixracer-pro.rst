@@ -18,7 +18,7 @@ autopilot of mRo's Pixracer family.
 Overview
 ========
 
-The `Pixracer Pro <https://store.mrobotics.io>`__ is the next generation of mRobotics' family of Pixracer autopilots. It has been designed primarily for the demanding requirements of small multicopters, but of course can be used on planes and other vehicles which require no more than 8 pwm outputs for controlling escs and motors. 
+The `Pixracer Pro <https://store.mrobotics.io>`__ is the next generation of mRobotics' family of Pixracer autopilots. It has been designed primarily for the demanding requirements of small multicopters, but of course can be used on planes and other vehicles which require no more than 8 pwm outputs for controlling escs and motors.
 
 
 .. tip::
@@ -61,7 +61,7 @@ Specifications
    -  8 Servo/Motor Outputs, 3.3V (default) or 5V level selectable (GPIO 74)
    -  Connectors: GPS+I2C (USART4), RC-IN/PPM-IN/RSSI/SBus-IN/Spektrum-IN,
       USART3 (TxD, RxD, CTS, RTS), USART2 (TxD, RxD, CTS, RTS),
-      USART8(FRSky-IN/FRSky-OUT), CAN1, CAN2, 
+      USART8(FRSky-IN/FRSky-OUT), CAN1, CAN2,
       SERVO1-SERVO8, USART1/USART7 (TxD, RxD), SPI6, POWER-BRICK
       (VDD, Voltage, Current, GND).
 

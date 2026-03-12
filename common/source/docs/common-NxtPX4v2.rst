@@ -35,7 +35,7 @@ Specifications
 
 -  **Interfaces**
 
-   -  8x PWM outputs 
+   -  8x PWM outputs
    -  1x SBUS RC input
    -  7x UARTs/serial for GPS and other peripherals
    -  1x I2C port for external compass

@@ -181,7 +181,7 @@ Bit     BitMask Name                 What is logged if bit is set
 21      Video Stabilization         GyroFlow Data logs
 ====   =====================      ==============================================================
 
-ATTITUDE logging will occur at highest rate of the selections. 
+ATTITUDE logging will occur at highest rate of the selections.
 
 .. note:: the logging of EKF3 data is controlled by the :ref:`EK3_LOG_LEVEL<EK3_LOG_LEVEL>` parameter.
 
@@ -215,7 +215,7 @@ Bit     BitMask Name                 What is logged if bit is set
 21      Fast harmonic notch         Fast harmonic notch
 ====   =====================      ==============================================================
 
-ATTITUDE logging will occur at highest rate of the selections. 
+ATTITUDE logging will occur at highest rate of the selections.
 
 .. note:: the logging of EKF3 data is controlled by the :ref:`EK3_LOG_LEVEL<EK3_LOG_LEVEL>` parameter.
 
@@ -245,7 +245,7 @@ Bit     BitMask Name                 What is logged if bit is set
 20      Video Stabilization         GyroFlow Data logs
 ====   =====================      ==============================================================
 
-ATTITUDE logging will occur at highest rate of the selections. 
+ATTITUDE logging will occur at highest rate of the selections.
 
 .. note:: the logging of EKF3 data is controlled by the :ref:`EK3_LOG_LEVEL<EK3_LOG_LEVEL>` parameter.
 [/site]
@@ -923,4 +923,3 @@ Video tutorials
 
 ..  youtube:: IcVlJCR8N2g
     :width: 100%
-

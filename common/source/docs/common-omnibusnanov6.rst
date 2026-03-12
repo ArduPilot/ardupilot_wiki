@@ -43,7 +43,7 @@ Specifications
 -  **Interfaces**
 
    -  2 full UARTS (RX and TX)
-   -  1 RX only UART for ESC telemetry 
+   -  1 RX only UART for ESC telemetry
    -  4 PWM outputs
    -  RC input PPM, SBUS, CRSF etc.
    -  I2C port for external compass
@@ -51,7 +51,7 @@ Specifications
    -  Built-in OSD
    -  Onboard voltage sensor
    -  additional ADC for current sensor on V6.x revision only. Current sensing on original V6 available using ESC telemetry.
-   -  Onboard winbond 25Q128 for dataflash-type logging 
+   -  Onboard winbond 25Q128 for dataflash-type logging
 
 Where to Buy
 ============
@@ -95,7 +95,7 @@ Original V6 version
 .. image:: ../../../images/nanov6.jpg
     :target: ../_images/nanov6.jpg
     :width: 450px
-    
+
 Typical ArduPlane system
 
 GPS is attached to UART6
@@ -123,7 +123,7 @@ V6.x revision
 Battery monitoring
 ==================
 
-Original V6 revision 
+Original V6 revision
 --------------------
 
 Original V6 revision supports analog voltage monitoring on VBAT pin.
@@ -152,13 +152,13 @@ V6.x revision has an additional ADC available for external current sensor hardwa
 Set :ref:`BATT_MONITOR <BATT_MONITOR>` to 4 (= analog voltage and current) and reboot for full battery monitoring support.
 
 .. note::
-   
+
    Current pin defaults to pin 11 in ardupilot runtime. Alternatively, it can be used for analog RSSI input or connecting an analog airspeed sensor. Adjust :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` default of 18.2 as required by the individual current sensor hardware used.
 
 
 Flashing Firmware
 =================
-Usually these boards are sold pre-flashed with Betaflight / iNav firmwares. In order to use ArduPilot, first time flashing requires both the bootloader and the firmware to be updated. Subsequent ArduPilot firmware updates do not require updating the bootloader again. 
+Usually these boards are sold pre-flashed with Betaflight / iNav firmwares. In order to use ArduPilot, first time flashing requires both the bootloader and the firmware to be updated. Subsequent ArduPilot firmware updates do not require updating the bootloader again.
 
 First time flashing
 -------------------

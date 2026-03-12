@@ -23,7 +23,7 @@ libraries and their function.
    gps and baro data
 -  `AC_AttitudeControl <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AC_AttitudeControl>`__ -
    ArduCopter's control library includes various functions of attitude, position control based on PID control.
-   
+
 -  `AC_WPNav <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AC_WPNav>`__
    - waypoint navigation library
 -  `AP_Motors <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Motors>`__
@@ -60,4 +60,3 @@ libraries and their function.
    camera mount control library, camera shutter control libraries
 -  `AP_Mission <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Mission>`__
    - stores/retrieves mission commands from eeprom
-

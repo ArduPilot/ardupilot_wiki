@@ -41,7 +41,7 @@ This can be due to a number of mistakes:
    plugging in a USB cable first, to boot the board, and then plug in
    your LiPo after it's already up, or just ensure that the four-wire
    cable from your APM board to your power distribution board is
-   disconnected during regular startup. 
+   disconnected during regular startup.
    See details `here <https://diydrones.com/profiles/blogs/apm2-esc-startup-problem-and-workaround>`__.
 #. It's possible you've changed your throttle trim settings since you
    did your initial radio calibration. Trim the throttle down a few
@@ -431,7 +431,7 @@ Copter ESCs keep beeping
    plugging in a USB cable first, to boot the board, and then plug in
    your LiPo after it's already up, or just ensure that the four-wire
    cable from your APM board to your power distribution board is
-   disconnected during regular startup. 
+   disconnected during regular startup.
    See details `here <https://diydrones.com/profiles/blogs/apm2-esc-startup-problem-and-workaround>`__.
 
 I'm using a MediaTek GPS, and although the module's blue lock LED goes solid, APM is not showing a lock or I'm getting "No GPS" on the Mission Planner display
@@ -473,7 +473,7 @@ firmware updated.
 
 If you have a uBlox module and APM is not showing lock, you may not have
 ordered the module preprogrammed for ArduPilot from the DIY Drones store
-(you had to select that option). 
+(you had to select that option).
 In that case, program it yourself with
 the instructions `here <https://diydrones.com/profiles/blogs/tutorial-programming-your>`__.
 

@@ -63,7 +63,7 @@ UART Mapping
  - SERIAL3 -> UART4   (GPS1)
  - SERIAL4 -> UART8   (GPS2,DMA-enabled)
  - SERIAL5 -> UART7   (USER)
-  
+
 Pinouts
 =======
 
@@ -303,7 +303,7 @@ Serial5 port
    </tr>
    </tbody>
    </table>
-   
+
 Power1, Power2 ports
 --------------------
 
@@ -352,7 +352,7 @@ Power1, Power2 ports
 RC Input
 ========
 
-The SBus input pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The SBus input pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL4 (UART8) would need to be used for receiver connections. Below are setups using UART4. :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` should be set to "23".
 
@@ -421,7 +421,7 @@ Then reboot.
 
 DroneCAN capability
 ===================
-There are 2 CAN ports which allow connecting two independent CAN bus outputs. Each of these can have multiple CAN peripheral devices connected. 
+There are 2 CAN ports which allow connecting two independent CAN bus outputs. Each of these can have multiple CAN peripheral devices connected.
 
 Loading Firmware
 ================

@@ -88,4 +88,3 @@ Drotag writes the location information directly into the .jpg images files using
         }
 
 [copywiki destination="copter,plane,rover,sub"]
-

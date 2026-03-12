@@ -5,7 +5,7 @@ Moving Map
 .. code:: bash
 
     module load map
-    
+
 A moving map display that shows the UAV's current position, waypoints
 and geofence.
 
@@ -43,4 +43,3 @@ rallycircle          Show loiter circles around rally points          False
 loitercircle         Show loiter circles around loiter waypoints      False
 showdirection        Enable arrow to show mission direction           False
 ==================   ===============================================  ===============================
-

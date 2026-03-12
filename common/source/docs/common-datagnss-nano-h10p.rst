@@ -3,9 +3,9 @@
 =======================
 NANO H10P RTK receiver
 =======================
-NANO H10P RTK receiver is a high-precision RTK receiver designed and manufactured by DATAGNSS. 
+NANO H10P RTK receiver is a high-precision RTK receiver designed and manufactured by DATAGNSS.
 
-It supports RTK functionality with a maximum data update rate of 10Hz. 
+It supports RTK functionality with a maximum data update rate of 10Hz.
 It includes compass IST8310.
 
 NANO H10P RTK Receiver support base and rover mode.
@@ -83,7 +83,7 @@ For example, NANO Helix RTK Receiver is connected to the autopilot's SERIAL4 por
 
 Configuration
 =============
-RTK technology requires a base and a rover, with the base placed on the ground, which is referred to as the rover on the drone. 
+RTK technology requires a base and a rover, with the base placed on the ground, which is referred to as the rover on the drone.
 
 The data from the base needs to be transmitted to the drone via telemetry radio and inputted into the RTK receiver on the rover.
 

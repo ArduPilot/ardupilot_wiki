@@ -60,7 +60,7 @@ The UARTs are marked RXn and TXn in the above pinouts. The RXn pin is the receiv
 -   SERIAL2 -> USART2 (GPS)
 -   SERIAL3 -> USART3 (GPS)
 -   SERIAL4 -> UART4 (WIFI, DMA-enabled)
--   SERIAL5 -> UART5 
+-   SERIAL5 -> UART5
 -   SERIAL6 -> USART6 (ESC Telemetry)
 -   SERIAL7 -> UART7 (DMA-enabled)
 -   SEIRAL8 -> UART8
@@ -114,7 +114,7 @@ Channels within the same group need to use the same output rate. If any channel 
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX)
 
 
 Battery Monitoring

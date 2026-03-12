@@ -3,7 +3,7 @@
 AeroNav-1 Dual-Band GNSS (NavIC Supported)
 ==========================================
 
-The **AeroNav-1** is an industrial-grade, dual-band GNSS module **designed and manufactured in India** by TeraVolt Labs. It is specifically engineered to support the **NavIC (IRNSS) constellation**, making it fully compliant with DGCA requirements for indigenous drone manufacturing. 
+The **AeroNav-1** is an industrial-grade, dual-band GNSS module **designed and manufactured in India** by TeraVolt Labs. It is specifically engineered to support the **NavIC (IRNSS) constellation**, making it fully compliant with DGCA requirements for indigenous drone manufacturing.
 It features a high-sensitivity L1 + L5 receiver (**Ublox-F10N**) and an integrated **Bosch BMM350** 3-axis magnetometer for precise heading.
 
 .. image:: ../../../images/Teravolt/AeroNav-1/AeroNav-1.png
@@ -26,7 +26,7 @@ Specifications
     - **NavIC (L5)**
     - GPS (L1/L5)
     - Galileo (E1/E5)
-    - BeiDou (B1/B2a) 
+    - BeiDou (B1/B2a)
     - QZSS (L1/L5)
 * **Compass:** Bosch BMM350 (I2C)
 * **Update Rate:** Up to 10Hz

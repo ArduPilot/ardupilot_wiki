@@ -77,9 +77,9 @@ Connect BBBlue to the internet using a shared internet connection over USB (see 
 On the BBBlue configure gateway and nameserver.
 
 ::
-    
+
     sudo nano /etc/network/interfaces
-    
+
 Then paste the following lines under ``iface lo inet loopback``
 
 ::
@@ -115,7 +115,7 @@ Host computer's command prompt:
 ::
 
     ifconfig
-    
+
 use this output to figure out which is your internet connected network adapter and replace in the following 'wlan0' by the name of it:
 
 ::
@@ -141,7 +141,7 @@ Eliminate the necessity for the user to enter the sudoer password:
 Install locales (a lot of programs complain otherwise) and set them:
 
 ::
-    
+
     sudo apt -y update
     sudo apt install -y locales
     sudo dpkg-reconfigure locales
@@ -159,7 +159,7 @@ Set CPU profile to "Performance":
 ::
 
     sudo sed -i 's/GOVERNOR="ondemand"/GOVERNOR="performance"/g' /etc/init.d/cpufrequtils
-    
+
 
 Setting up ArduPilot
 --------------------
@@ -199,13 +199,13 @@ Download the latest ArduPilot binary for the ``blue`` target/FC from https://fir
 ::
 
     sudo wget -O /usr/bin/ardupilot/arduplane https://firmware.ardupilot.org/Plane/stable-4.1.6/blue/arduplane
-    
+
 Alternatively there are other possible sources like the https://custom.ardupilot.org/ build server or you can compile it yourself (see `Cross compiling ArduPilot from source`_).
 
 .. note::
 
    In case this image does not exist anymore or is outdated, go to https://firmware.ardupilot.org/ and look for the vehicle type you want. Then look for the firmware you want - usually the most recent ``stable`` - and within that folder look for ``blue``. In this folder you will find some text files and the firmware binary/executable.
-   
+
 
 ::
 
@@ -217,7 +217,7 @@ Your BBBlue is now ready to connect to a Ground Control Station (e.g. `MissionPl
 
 When establishing a connection select UDP on port 14550.
 
-More information can be found in section `Connect BBBlue to a Ground Station Software`_ 
+More information can be found in section `Connect BBBlue to a Ground Station Software`_
 
 Appendix
 ========
@@ -245,7 +245,7 @@ One line at a time, we're writing a file line by line:
     Name = YOUR_SSID
     Passphrase = YOUR_WIFI_PASSWORD
 
-CTRL + C, should save File contents. Make sure to add a new line (press Enter) after Passphrase = ***** 
+CTRL + C, should save File contents. Make sure to add a new line (press Enter) after Passphrase = *****
 
 ::
 
@@ -298,7 +298,7 @@ binary is located in ``build/blue/bin/``.
 Kernel configuration
 --------------------
 
-In this section we update the kernel. There are two types of kernels: Real-time and regular (default). In this guide we will configure the real-time kernel v5.10 RT. Refer to `elinux.org/Beagleboard <https://elinux.org/Beagleboard:BeagleBoneBlack_Debian#Kernel_Options>`__  if you wish to use different version or type. 
+In this section we update the kernel. There are two types of kernels: Real-time and regular (default). In this guide we will configure the real-time kernel v5.10 RT. Refer to `elinux.org/Beagleboard <https://elinux.org/Beagleboard:BeagleBoneBlack_Debian#Kernel_Options>`__  if you wish to use different version or type.
 
 Update local scripts:
 
@@ -426,7 +426,7 @@ Paste the following script
     import os, pty, serial, time
     from bluetooth import *
     import threading
-    
+
     def receive(client, master):
         try:
             while True:
@@ -434,7 +434,7 @@ Paste the following script
                 client.send(received_data)
         except:
             print("cannot receive, connection closed")
-            
+
     def send(client, master):
         try:
             while True:
@@ -473,14 +473,14 @@ Paste the following script
 
     client.close()
     server.close()
-    
-    
+
+
 Next we create a systemd service for this script.
 
 ::
 
     sudo nano /lib/systemd/system/bluetooth-serial.service
-    
+
 And paste the following text.
 
 ::
@@ -502,14 +502,14 @@ We now have to adjust the previously created ardupilot service. Open the service
 ::
 
     sudo nano /lib/systemd/system/arduplane.service
-    
+
 
 It's mandatory that the bluetooth-serial.service starts before ardupilot. We can replace the After=[...] to
 
 ::
 
     After=bluetooth-serial.service
-    
+
 to achieve this behaviour.
 
 Next let's adjust the communication channel to our newly created virtual serial port:
@@ -529,7 +529,7 @@ Save the file and reboot.
 ::
 
     sudo reboot
-    
+
 Now it's time to connect our bluetooth capable device to the BBBlue. On Windows add a regular Bluetooth device and select "beaglebone".
 
 After pairing a new virtual COM-Port should appear.
@@ -636,4 +636,3 @@ More Links
 
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

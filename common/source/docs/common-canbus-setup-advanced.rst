@@ -59,7 +59,7 @@ driver). And that driver ( :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>`) be set to 1 
 
 .. image:: ../../../images/can-driver-parameters.png
     :target: ../_images/can-driver-parameters.png
-    
+
 After change of any ``CAN_Px_DRIVER`` or ``CAN_Dx_PROTOCOL`` the autopilot has to be rebooted for the changes to take place.
 
 Configuration of CAN interfaces
@@ -78,7 +78,7 @@ Debug level can also be set on user's preference and needs.
 
 .. image:: ../../../images/can-driver-parameters-bitrate.png
     :target: ../_images/can-driver-parameters-bitrate.png
-    
+
 When any of the interfaces are associated with any driver, that driver will be
 loaded with specified protocol.
 

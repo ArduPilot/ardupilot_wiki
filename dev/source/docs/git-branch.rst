@@ -105,7 +105,7 @@ branch and commit it.
       Please see :ref:`Submitting Patches Back to Master <submitting-patches-back-to-master>` for further
          information regarding conventions for committing work that you expect
          to be integrated into the official releases (this will include a much
-         more detailed commit message). 
+         more detailed commit message).
 
 #. Commit your work to the branch by pressing the **Commit to ardupilot_git_tutorial** link.
 

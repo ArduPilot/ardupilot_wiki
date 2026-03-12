@@ -154,7 +154,7 @@ The SPRacing series of boards come pre-installed with a proprietary bootloader o
 
    dd if=/dev/zero ibs=1k count=2048 of=AP_2MB.bin
    dd conv=notrunc if=arducopter.bin of=AP_2MB.bin
-   
+
 - Put the board into SSBL dfu mode - power off, hold BIND (not BOOT), power on - LED flashes fast, release BIND, LED flashed slow - DFU mode enabled
 - Flash the binary using
 

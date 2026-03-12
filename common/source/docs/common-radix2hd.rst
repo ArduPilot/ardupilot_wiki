@@ -30,7 +30,7 @@ Specifications
 
 -  **Power**
 
-   -  2S - 8S Lipo input voltage 
+   -  2S - 8S Lipo input voltage
    -  9V, 2A BEC for powering Video Transmitter
    -  5V, 1.5A BEC for internal and peripherals
 
@@ -94,7 +94,7 @@ RC Input
 
 The RC receiver 5 V pad next to RX3 ("+") is also powered from USB for easy and safe configuration without having to connect the main battery.
 
-The RX3 pin, can be used for all ArduPilot supported single wire receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The RX3 pin, can be used for all ArduPilot supported single wire receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, use the TX3 pin also.
 

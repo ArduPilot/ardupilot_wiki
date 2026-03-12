@@ -16,7 +16,7 @@ Herelink HD Video Transmission System
 Overview
 --------
 
-Herelink is an integrated remote controller, ground station and wireless digital transmission system designed to be used with the Cube and other autopilots, using ArduPilot or PX4 firmware.  
+Herelink is an integrated remote controller, ground station and wireless digital transmission system designed to be used with the Cube and other autopilots, using ArduPilot or PX4 firmware.
 
 
 More Info on Herelink can be found on the :ref:`Herelink page <common-herelink>`
@@ -38,7 +38,7 @@ The H16 Smart Remote Control is a UAV communication link that integrates remote 
 Features
 --------
 
-* Runs Android OS 
+* Runs Android OS
 * 7-inch color LCD screen.
 * Integrated digital transmission system that can transmit high-definition video, drone data, and radio control signals at the same time.
 * It can run the QGC (QGround Control)ground station, and any version of QGC can be installed, without waiting for release of a customized ground control station.
@@ -62,7 +62,7 @@ DJI Digital FPV System
 
 .. figure:: ../../../images/DJI_FPV.jpg
    :target: ../_images/DJI_FPV.jpg
-   
+
 See :ref:`common-msp-osd-overview-4.2` for setup instructions for OSD display on DJI goggles.
 
 Overview
@@ -82,7 +82,7 @@ More Info on at `DJI <www.DJI.com>`_
 
 ---------------------------------------------------------------
 
-DJI Ocusync Air System 
+DJI Ocusync Air System
 ======================
 
 
@@ -90,14 +90,14 @@ DJI Ocusync Air System
    :target: ../_images/DJI_Ocustnc.jpg
 
 
-The DJI OcuSync Air System is an integrated high-resolution video transmission solution consisting of a camera, Air Unit module, three antennas, and other connectors. Working with DJI Goggles RE, the OcuSync Air System supports wireless transmission of video, images, and autopilot information. 
+The DJI OcuSync Air System is an integrated high-resolution video transmission solution consisting of a camera, Air Unit module, three antennas, and other connectors. Working with DJI Goggles RE, the OcuSync Air System supports wireless transmission of video, images, and autopilot information.
 
 The Air Unit can be attached to racing drones, model airplanes, RC cars, or unmanned enterprise vehicles used for rescue operations and inspections and supports both MSP and MAVLink telemetry input from firmware V01.05.00 and later.
 
 
 Features
 --------
-- MAVLink & MSP Telemetry Input 
+- MAVLink & MSP Telemetry Input
 - 2.4 GHz/5.8 GHz dual-frequency transmission
 - FHSS and up to 19 fixed channels
 - High-resolution video transmission up to 1280×960 at 50 fps
@@ -110,29 +110,29 @@ More Info at `DJI <www.DJI.com>`_
 
 ------------------------------------------------------
 
-Sky-Drones Smartlink 
+Sky-Drones Smartlink
 =====================
 
 
 .. figure:: ../../../images/Sky_Link.png
    :target: ../_images/Sky_Link.png
 
-Smartlink is a broadband digital datalink with integrated onboard computer that supports up to Two HD video channels, MAVLink telemetry and control with ultra low latency and range up to 20 km. 
+Smartlink is a broadband digital datalink with integrated onboard computer that supports up to Two HD video channels, MAVLink telemetry and control with ultra low latency and range up to 20 km.
 
 Features
 --------
-- MAVLink compatible 
+- MAVLink compatible
 - 2.4 GHz / up to 1000 mW configurable
-- 2 HDMI, full HD up to 1080p / 60fps 
+- 2 HDMI, full HD up to 1080p / 60fps
 - Transmission range: 20 km FCC / 10 km
 - LTE connectivity as an option
 - Satellite connectivity as an option
 
 More info on Sky-Drones `website <https://sky-drones.com/smartlink>`_
 
-Unboxing video `here <https://www.youtube.com/watch?v=2qtE4nuTXKU>`_ 
+Unboxing video `here <https://www.youtube.com/watch?v=2qtE4nuTXKU>`_
 
-Purchase `online <https://sky-drones.com/telemetry/smartlink-set.html>`_ 
+Purchase `online <https://sky-drones.com/telemetry/smartlink-set.html>`_
 
 --------------------------------------------------------
 
@@ -165,7 +165,7 @@ XBLink Plus
 =================================
 .. figure:: https://cdn-images.xbstation.com/only_xblink_plus.png
    :target:  https://xbstation.com/store/xblink-plus
-   
+
 Overview
 --------
 The XBLink 4G Plus is a plug-and-play hardware solution for BVLOS drone operations, offering seamless control, secure data transmission, and high-quality video streaming. Compatible with multiple platforms and payloads, it’s designed to enhance the capabilities of UAV systems for professional applications, perfect fit with CubePilot.

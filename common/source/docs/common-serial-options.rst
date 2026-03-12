@@ -9,10 +9,10 @@ This page describes the configuration options for the serial ports. Currently, s
 Logical Serial Port to Physical UART Assignment
 ===============================================
 
-ArduPilot Serialx Port numbering is logical, rather than physical. Which UART or USART port is assigned to a Serial Port is determined by the autopilot's hardware definition file. 
+ArduPilot Serialx Port numbering is logical, rather than physical. Which UART or USART port is assigned to a Serial Port is determined by the autopilot's hardware definition file.
 Serial Port 0 is always assigned to the USB port, but others can vary. Check its  :ref:`description page <common-autopilots>`
 
-.. note:: more serial ports may be shown in the parameters than exist on a given controller. Check its  :ref:`description page<common-autopilots>` 
+.. note:: more serial ports may be shown in the parameters than exist on a given controller. Check its  :ref:`description page<common-autopilots>`
 
 By default (for most autopilots) the protocols/expected peripheral for each port is shown below:
 
@@ -80,7 +80,7 @@ MAVLink2, see :ref:`Telemetry Setup<common-telemetry-port-setup>`
    <td>3</td>
    <td>
 
-FrSky D, see :ref:`FrSky Telemetry <common-frsky-telemetry>` 
+FrSky D, see :ref:`FrSky Telemetry <common-frsky-telemetry>`
 
 .. raw:: html
 
@@ -90,7 +90,7 @@ FrSky D, see :ref:`FrSky Telemetry <common-frsky-telemetry>`
    <td>4</td>
    <td>
 
-FrSky SPort, see :ref:`FrSky Telemetry <common-frsky-telemetry>` 
+FrSky SPort, see :ref:`FrSky Telemetry <common-frsky-telemetry>`
 
 .. raw:: html
 
@@ -109,7 +109,7 @@ GPS, see :ref:`GPS <common-gps-how-it-works>` and :ref:`Devices<common-positioni
    <td>7</td>
    <td>
 
-Alexmos Gimbal Serial, see :ref:`Alexmos Gimbal <common-simplebgc-gimbal>` 
+Alexmos Gimbal Serial, see :ref:`Alexmos Gimbal <common-simplebgc-gimbal>`
 
 .. raw:: html
 
@@ -119,7 +119,7 @@ Alexmos Gimbal Serial, see :ref:`Alexmos Gimbal <common-simplebgc-gimbal>`
    <td>8</td>
    <td>
 
-SToRM32 Gimbal Serial, see :ref:`SToRM32 Gimbal <common-storm32-gimbal>` 
+SToRM32 Gimbal Serial, see :ref:`SToRM32 Gimbal <common-storm32-gimbal>`
 
 .. raw:: html
 
@@ -129,7 +129,7 @@ SToRM32 Gimbal Serial, see :ref:`SToRM32 Gimbal <common-storm32-gimbal>`
    <td>9</td>
    <td>
 
-Rangefinder, see :ref:`Rangefinders <common-rangefinder-landingpage>` 
+Rangefinder, see :ref:`Rangefinders <common-rangefinder-landingpage>`
 
 .. raw:: html
 
@@ -139,7 +139,7 @@ Rangefinder, see :ref:`Rangefinders <common-rangefinder-landingpage>`
    <td>10</td>
    <td>
 
-FrSky SPort Passthrough (OpenTX), see :ref:`FrSky Passthrough Telemetry <common-frsky-passthrough>` 
+FrSky SPort Passthrough (OpenTX), see :ref:`FrSky Passthrough Telemetry <common-frsky-passthrough>`
 
 .. raw:: html
 
@@ -149,7 +149,7 @@ FrSky SPort Passthrough (OpenTX), see :ref:`FrSky Passthrough Telemetry <common-
    <td>11</td>
    <td>
 
-Lidar360, see :ref:`360 Lidars here <common-rangefinder-landingpage>` 
+Lidar360, see :ref:`360 Lidars here <common-rangefinder-landingpage>`
 
 .. raw:: html
 
@@ -159,7 +159,7 @@ Lidar360, see :ref:`360 Lidars here <common-rangefinder-landingpage>`
    <td>13</td>
    <td>
 
-Beacon, see :ref:`Non-GPS Navigation <common-non-gps-navigation-landing-page>` 
+Beacon, see :ref:`Non-GPS Navigation <common-non-gps-navigation-landing-page>`
 
 .. raw:: html
 
@@ -169,7 +169,7 @@ Beacon, see :ref:`Non-GPS Navigation <common-non-gps-navigation-landing-page>`
    <td>14</td>
    <td>
 
-Volz Servo, see :ref:`common-servo-volz` 
+Volz Servo, see :ref:`common-servo-volz`
 
 .. raw:: html
 
@@ -179,7 +179,7 @@ Volz Servo, see :ref:`common-servo-volz`
    <td>15</td>
    <td>
 
-SBus Servo, see :ref:`common-sbus-output` 
+SBus Servo, see :ref:`common-sbus-output`
 
 .. raw:: html
 
@@ -189,7 +189,7 @@ SBus Servo, see :ref:`common-sbus-output`
    <td>16</td>
    <td>
 
-ESC Telemetry, see :ref:`blheli32-esc-telemetry` 
+ESC Telemetry, see :ref:`blheli32-esc-telemetry`
 
 .. raw:: html
 
@@ -209,7 +209,7 @@ Devo Telemetry
    <td>18</td>
    <td>
 
-OpticalFlow, see :ref:`Optical Flow Sensors <common-optical-flow-sensors-landingpage>` 
+OpticalFlow, see :ref:`Optical Flow Sensors <common-optical-flow-sensors-landingpage>`
 
 .. raw:: html
 
@@ -219,7 +219,7 @@ OpticalFlow, see :ref:`Optical Flow Sensors <common-optical-flow-sensors-landing
    <td>19</td>
    <td>
 
-RobotisServo, see :ref:`common-servo-robotis` 
+RobotisServo, see :ref:`common-servo-robotis`
 
 .. raw:: html
 
@@ -238,7 +238,7 @@ RobotisServo, see :ref:`common-servo-robotis`
    <td>21</td>
    <td>
 
-WindVane, see :ref:`wind-vane` 
+WindVane, see :ref:`wind-vane`
 
 .. raw:: html
 
@@ -258,7 +258,7 @@ SLCAN
    <td>23</td>
    <td>
 
-RC Input, see :ref:`common-flight-controller-wiring` 
+RC Input, see :ref:`common-flight-controller-wiring`
 
 .. raw:: html
 
@@ -278,7 +278,7 @@ MegaSquirt EFI, see `MegaSquirt EFI <http://megasquirt.info/>`__
    <td>25</td>
    <td>
 
-LTM Telemetry, see :ref:`LTM Telemetry <common-ltm-telemetry>` 
+LTM Telemetry, see :ref:`LTM Telemetry <common-ltm-telemetry>`
 
 .. raw:: html
 
@@ -288,7 +288,7 @@ LTM Telemetry, see :ref:`LTM Telemetry <common-ltm-telemetry>`
    <td>26</td>
    <td>
 
-Runcam see :ref:`common-camera-runcam` 
+Runcam see :ref:`common-camera-runcam`
 
 .. raw:: html
 
@@ -308,7 +308,7 @@ HOTT Telem see :ref:`common-hott-telemetry`
    <td>28</td>
    <td>
 
-Scripting see :ref:`common-lua-scripts` 
+Scripting see :ref:`common-lua-scripts`
 
 .. raw:: html
 

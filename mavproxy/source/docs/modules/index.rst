@@ -65,7 +65,7 @@ List of Modules
 
 .. toctree::
     :maxdepth: 1
-    
+
     adsb
     ais
     antenna
@@ -124,4 +124,3 @@ List of Modules
     ublox
     useralerts
     vicon
-

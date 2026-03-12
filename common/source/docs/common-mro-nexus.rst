@@ -55,7 +55,7 @@ Specifications
    -  RGB LED
    -  GPS (serial + I2C)
    -  UART for serial RC input
-   -  Connectors: GPS+I2C (USART4),CAN1, CAN2, 
+   -  Connectors: GPS+I2C (USART4),CAN1, CAN2,
       USART7 (TxD, RxD), POWER-BRICK(VDD, Voltage, Current, GND).
 
 -  **Dimensions**

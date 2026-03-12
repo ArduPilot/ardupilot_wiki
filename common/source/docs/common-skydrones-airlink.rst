@@ -14,9 +14,9 @@ System Features
 
 .. image:: ../../../images/airlink/airlink-3in1.png
 
-SmartAP AIRLink has two computers and integrated LTE Module: 
+SmartAP AIRLink has two computers and integrated LTE Module:
 
-   - The flight control computer (autopilot) has a triple-redundant vibration-dampened and temperature-stabilized IMU. 
+   - The flight control computer (autopilot) has a triple-redundant vibration-dampened and temperature-stabilized IMU.
    - The powerful AI mission computer enables advanced drone software features like computer vision and obstacle avoidance, digital HD video streaming, and payload data streaming.
    - LTE and WiFi connectivity modules provide permanent broadband internet connection which is enabler for remote workflows.
 
@@ -48,7 +48,7 @@ Specifications
    - 8x UARTs: Telemetry 1, Telemetry 2 (AI Mission Computer), Telemetry 3, GPS 1, GPS 2, Extra UART, Serial Debug Console, IO
    - 2x CAN: CAN1, CAN2
    - USB with MAVLink
-   - Serial console for debugging   
+   - Serial console for debugging
    - RC Input, SBUS input, RSSI input, PPM input
    - 16x PWM servo outputs (8 from IO, 8 from FMU)
    - 3x I2C ports
@@ -74,7 +74,7 @@ Specifications
 - **LTE Connectivity Module**
 
    - 4G LTE UMTS/HSPA(+), GSM/GPRS/EDGE
-   - 1x External slot, 1x Integrated eSIM 
+   - 1x External slot, 1x Integrated eSIM
    - LTE Antenna, 2x2 MIMO
    - Bands: Europe, North America, Australia, Japan, Other
 
@@ -85,20 +85,20 @@ Set content
     :width: 100%
 
 SmartAP AIRLink set includes everything needed to setup the system and get prepared for the flight. Standard set contains:
-   
+
    - 1x AIRLink Enterprise unit
    - 1x FPV camera with CSI cable
    - 1x WiFi antenna with MMCX connector
    - 2x LTE antenna with MMCX connector
    - 1x HDMI to mini HDMI cable1x set of cables (7 cables for all connectors)
-   
+
 `AIRLink Telemetry  <https://sky-drones.com/sets/airlink-telemetry-set.html>`__ based on the Microhard LAN/IP-based RF micromodule is available as an add-on and is fully compatible with AIRLink.
 
 
 Editions
 ========
 
-AIRLink editions offer different integration levels required by drone manufacturers: Enterprise and Core. AIRLink Enterprise is ideal for a quick start, evaluation and prototyping while Core is optimised for deep integration and mid-high volume manufacturing. 
+AIRLink editions offer different integration levels required by drone manufacturers: Enterprise and Core. AIRLink Enterprise is ideal for a quick start, evaluation and prototyping while Core is optimised for deep integration and mid-high volume manufacturing.
 
 **AIRLink Enterprise**
 
@@ -919,13 +919,13 @@ RC Input
 
 .. image:: ../../../images/airlink/airlink-rc-input.jpg
 
-RC input is configured on the SBUS pin and is connected to IO MCU via an inverter internally. 
-For PPM receivers please use RC Connector PPM pin located on the left side of the unit. 
+RC input is configured on the SBUS pin and is connected to IO MCU via an inverter internally.
+For PPM receivers please use RC Connector PPM pin located on the left side of the unit.
 
 Outputs
 =======
 
-AIRLink has 16 PWM outputs. Main outputs 1-8 and connected to IO MCU. AUX outputs 1-8 are connected to FMU. 
+AIRLink has 16 PWM outputs. Main outputs 1-8 and connected to IO MCU. AUX outputs 1-8 are connected to FMU.
 
 .. raw:: html
 
@@ -997,7 +997,7 @@ Reference design
 
 .. image:: ../../../images/airlink/airlink-reference-design.png
 
-AIRLink CAD model is available `here  <https://docs.sky-drones.com/airlink/cad-model>`__. 
+AIRLink CAD model is available `here  <https://docs.sky-drones.com/airlink/cad-model>`__.
 
 AIRLink Reference design can be provided by request. Get in touch at `Sky-Drones contact page  <https://sky-drones.com/contact-us>`__
 

@@ -54,7 +54,7 @@ Step 4 - upload and run the examples and firmware
 
 If building natively, executables are already loaded on the target system, and can be executed directly.
 
-If using waf to upload (Linux, MacOSX only), see configuration commands in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ 
+If using waf to upload (Linux, MacOSX only), see configuration commands in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__
 to set up waf's --upload flag. Other options for cross-compiled builds include SCP or NFS.
 
 See :ref:`Startup options <ardupilot-on-linux-starting>` for command-line options, configuring at least one port for MavLink, and launching ArduPilot.

@@ -25,7 +25,7 @@ Features:
 * IO MCU
    STM32F103
 * **Air's Sensors**
-  * IMU: ICM45686 
+  * IMU: ICM45686
   * Baro: ICP20100
   * Magnetometer: IST8310
 * **Air+ Sensors**
@@ -108,7 +108,7 @@ All PWM outputs can be used as GPIOs (relays, camera, RPM etc). To use them you 
        M5       105       A13       54
        M6       106       A14       55
        M7       107       A15       56
-       M8       108 
+       M8       108
        ====     =====     ====      =====
 
 Battery Monitoring

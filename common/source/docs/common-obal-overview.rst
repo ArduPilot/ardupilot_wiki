@@ -16,7 +16,7 @@ Specifications
 
    -  MPU9250 as main accel, gyro and compass
    -  BMP-180 barometer
-   
+
 -  **Interfaces**
 
    -  UART, SPI, I2C

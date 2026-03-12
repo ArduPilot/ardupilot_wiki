@@ -31,7 +31,7 @@ Establishing the primary link is explained :ref:`elsewhere<common-connect-missio
 MAVProxy
 ========
 
-See `MAVProxy Link Management <https://ardupilot.org/mavproxy/docs/modules/link.html>`__ for information on adding telemetry links. 
+See `MAVProxy Link Management <https://ardupilot.org/mavproxy/docs/modules/link.html>`__ for information on adding telemetry links.
 
 To list all the links:
 
@@ -52,5 +52,3 @@ To send commands to all links:
    alllinks <cmd>
 
 for example: allinks mode rtl
-
-

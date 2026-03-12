@@ -35,7 +35,7 @@ The ArduPilot HAL currently defines 8 UARTs. The HAL itself does not define any 
 
 The following are options for connecting a SITL serial port:
 
--  Passthrough to a real serial device: ``--serialX=uart:<device>:<baudrate>`` 
+-  Passthrough to a real serial device: ``--serialX=uart:<device>:<baudrate>``
 -  TCP server: ``--serialX=tcp:<port>:wait``
 -  TCP client: ``--serialX=tcpclient:<remote IP>:<port>``
 -  UDP client: ``--serialX=udpclient:<remote IP>:<port>``
@@ -88,7 +88,7 @@ in
 then try adding some :code:`::printf()` and other stdio functions to the
 UART_test sketch.
 
-If :code:`::printf` doesn't work for you, it may be that your particular file (e.g. a library) does not have :code:`#include <stdio.h>` at the top of it, just add it. :-) 
+If :code:`::printf` doesn't work for you, it may be that your particular file (e.g. a library) does not have :code:`#include <stdio.h>` at the top of it, just add it. :-)
 
 You can also use hal.console->printf() to specify USB port.
 

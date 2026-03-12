@@ -128,7 +128,7 @@ e) Proceed to the CONFIG/TUNING -> EXTENDED TUNING screen in Mission Planner and
 
 .. image:: ../../../images/CTimage14.png
     :width: 450px
-    
+
 .. note:: As of 4.0 firmware versions, any GPIO can be assigned as the Camera Trigger pin via its ``SERVOx_FUNCTION`` parameter, and any RC channel can be assigned to control that trigger via its ``RCx_OPTION`` parameter.
 
 
@@ -174,4 +174,3 @@ party hardware!
 
 Many thanks to Oliver Volkmann and `*www.microaerialprojects.com* <http://www.microaerialprojects.com/>`__
 for contributing this page.
-

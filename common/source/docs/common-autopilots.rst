@@ -36,7 +36,7 @@ The sections below provide information about ArduPilot autopilot hardware option
 
 [/site]
 
-.. note:: Not all of these autopilots have been directly tested by ArduPilot development team members and while firmware  is provided by ArduPilot, it does not constitute an endorsement by ArduPilot.  However, most boards developed by ArduPilot Partners have been provided to the ArduPilot development team to aid in any possible support issues that might arise. 
+.. note:: Not all of these autopilots have been directly tested by ArduPilot development team members and while firmware  is provided by ArduPilot, it does not constitute an endorsement by ArduPilot.  However, most boards developed by ArduPilot Partners have been provided to the ArduPilot development team to aid in any possible support issues that might arise.
 
 
 Open Hardware
@@ -282,7 +282,7 @@ Some boards have features removed in order to fit the firmware into their memory
     :maxdepth: 1
 
     Firmware Limitations <common-limited-firmware>
-    
+
 .. note:: If a board has a missing feature that is required by the user, building a custom firmware using the `ArduPilot Custom Firmware Build Server <https://custom.ardupilot.org>`__ can be used to create firmware which drops features not needed and adding desired features back into the firmware in that freed space.
 
 Discontinued Boards
@@ -308,8 +308,8 @@ The following boards are no longer produced, however, documentation is still ava
 The following boards are no longer supported. The documentation is :ref:`archived<common-archived-topics>`, but
 available if you're still working on those platforms:
 
-- APM 2.x (APM 2.6 and later) are no longer supported for Copter, Plane or Rover. The last firmware builds that fit on this board are Copter 3.2.1, and Plane 3.4.0, and Rover 2.5.1. 
-- NAVIO+ 
+- APM 2.x (APM 2.6 and later) are no longer supported for Copter, Plane or Rover. The last firmware builds that fit on this board are Copter 3.2.1, and Plane 3.4.0, and Rover 2.5.1.
+- NAVIO+
 - PX4FMU
 - Qualcomm Snapdragon Flight Kit
 

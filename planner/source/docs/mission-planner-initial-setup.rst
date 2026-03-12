@@ -14,7 +14,7 @@ Install Firmware
 You will see this menu item if the autopilot is both connected or not; however, this menu will only be functional when disconnected. If you have a new autopilot or if you want to update the control software that resides in your autopilot, you must install (upload) the :ref:`firmware <common-glossary>` into it.
 
 The firmware is located at `firmware.ardupilot.org <https://firmware.ardupilot.org>`__.
-If the autopilot has ArduPilot firmware already installed, you can use this page to upload firmware for different vehicles or versions. See this :ref:`Loading firmware <common-loading-firmware-onto-pixhawk>` page. Otherwise, you must use other methods than Mission Planner for getting ArduPilot installed for the first time, see this :ref:`section<common-loading-firmware-onto-chibios-only-boards>`. 
+If the autopilot has ArduPilot firmware already installed, you can use this page to upload firmware for different vehicles or versions. See this :ref:`Loading firmware <common-loading-firmware-onto-pixhawk>` page. Otherwise, you must use other methods than Mission Planner for getting ArduPilot installed for the first time, see this :ref:`section<common-loading-firmware-onto-chibios-only-boards>`.
 
 From this screen you can also select "All Options" allowing you to select and load any variation of the firmware, or "Load custom firmware", most often used when a developer has trial code to load.
 
@@ -61,7 +61,7 @@ If using the direct SLCAN connection method, autopilot parameters have to be con
 
 If using the MAVLink method, nothing is required for setup and Mission Planner should be in the connected state via the normal MAVLink connection to the autopilot.
 
-In Mission Planner, navigate to Initial Setup->Optional Hardware->DroneCAN/UAVCAN click on the highlighted red button if connecting using the direct SLCAN method, or the appropriate green button for MAVLink communication over either CAN bus port 1 or port 2, depending on which port the node is attached. 
+In Mission Planner, navigate to Initial Setup->Optional Hardware->DroneCAN/UAVCAN click on the highlighted red button if connecting using the direct SLCAN method, or the appropriate green button for MAVLink communication over either CAN bus port 1 or port 2, depending on which port the node is attached.
 
 .. image:: ../../../images/can-drivers-parameters-slcan-mp.png
 
@@ -98,7 +98,7 @@ To return to normal Mission Planner operation, change to another tab, and re-con
 DroneCAN Firmware Flashing Video
 ================================
 
-.. youtube:: HqQWA60rNcY 
+.. youtube:: HqQWA60rNcY
 
 Advanced
 ========

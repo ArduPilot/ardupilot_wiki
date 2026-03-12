@@ -34,7 +34,7 @@ parameter to a non-zero value and selecting to use it in either GUIDED and/or AU
 +         4                                   |  Tail Into Wind          +
 +---------------------------------------------+--------------------------+
 
-Then you must also enable it for GUIDED and/or AUTO mode by setting bit 7 of the :ref:`GUID_OPTIONS<GUID_OPTIONS>` and/or :ref:`AUTO_OPTIONS<AUTO_OPTIONS>` parameter, respectively. It will not be active in any other 
+Then you must also enable it for GUIDED and/or AUTO mode by setting bit 7 of the :ref:`GUID_OPTIONS<GUID_OPTIONS>` and/or :ref:`AUTO_OPTIONS<AUTO_OPTIONS>` parameter, respectively. It will not be active in any other
 mode.
 
 .. note:: enabling weathervaning will override any yaw specific control in missions, such as pointing the nose to ROI targets, or responding to MAVLink YAW positioning commands. If pilot yaw control is enabled, the pilot can change the yaw, but as soon as pilot input ceases, the vehicle will yaw back to its Weathervaing Direction set above.
@@ -69,4 +69,3 @@ There are a number of additional parameters that can control when WeatherVaning 
 .. note:: to allow weathervaning only on takeoffs and landing during an AUTO mission or in GUIDED mode, set :ref:`WVANE_ENABLE<WVANE_ENABLE>` =0 but use the :ref:`WVANE_LAND<WVANE_LAND>` and/or :ref:`WVANE_TAKEOFF<WVANE_TAKEOFF>` parameters to enable the weathervaning control.
 
 .. note:: Weathervaning can be disabled or enabled by an :ref:`RC Aux Function Switch<common-auxiliary-functions>`, option "160"
-

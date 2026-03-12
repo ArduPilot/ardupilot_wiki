@@ -20,7 +20,7 @@ Specifications
 -  **Processor**
 
    -  STM32F750  ARM 32-bit processor running at 400 MHz
-   -  OSD: AT7456E 
+   -  OSD: AT7456E
    -  128MB Serial NOR flash via QuadSPI for program storage
 
 -  **Sensors**
@@ -79,7 +79,7 @@ Default UART order
 - SERIAL4 = GPS2 = UART4 (has DMA)
 - SERIAL5 = USER = UART5 (has DMA)
 - SERIAL6 = USER = USART6 (available instead of PWM outputs 7(TX6) and 8(RX6) if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1)
-- SERIAL8 = USER = UART8 
+- SERIAL8 = USER = UART8
 
 Serial port protocols (Telem, GPS, etc.) can be adjusted to personal preferences.
 
@@ -106,7 +106,7 @@ SmartPort Telemetry
 ===================
 
 SmartPort (Sport) telemetry setup by default to be connected directly to UART2 TX pin with no external inverters required.
- 
+
 Dshot capability
 ================
 

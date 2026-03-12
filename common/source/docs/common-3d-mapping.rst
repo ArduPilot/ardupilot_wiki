@@ -146,4 +146,4 @@ Additional resources and Examples
 -  `MyDrone's "Buisante Chapel" T3 entry <http://prebut.free.fr/>`__
 -  `Creating Maps from Drone Imagery - 3DRobotics and Aero drone <https://www.mapbox.com/blog/processing-drone-imagery/>`__
 -  `Ecosynth wiki - a suite of tools used to map vegetation in 3d using
-   off-the-shelf digital cameras and open-source computer vision software <http://wiki.ecosynth.org/index.php?title=Main_Page>`__ 
+   off-the-shelf digital cameras and open-source computer vision software <http://wiki.ecosynth.org/index.php?title=Main_Page>`__

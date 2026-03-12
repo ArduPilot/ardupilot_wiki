@@ -18,7 +18,7 @@ Video
 Hardware Requirements
 =====================
 - Sensor: `Intel RealSense Tracking Camera T265 <https://www.intelrealsense.com/tracking-camera-t265/>`__
-- Companion computer: `Raspberry Pi 3 Model B <https://www.raspberrypi.org/products/raspberry-pi-3-model-b/>`__ 
+- Companion computer: `Raspberry Pi 3 Model B <https://www.raspberrypi.org/products/raspberry-pi-3-model-b/>`__
 
 .. note::
     Depends on what you need from the T265, the companion computer should have USB2 (**pose** data only) or USB3 (**pose** + **image** data). For localization and navigation, we only need to capture pose data, so RPi 3B is sufficient for the task.
@@ -47,9 +47,9 @@ The following steps are intended for Ubuntu Linux. Since no Debian package is av
     # Toggle swap off
     sudo dphys-swapfile swapoff
 
-    # Edit the config file 
+    # Edit the config file
     sudo nano /etc/dphys-swapfile
-    
+
     # Find and edit the variable CONF_SWAPSIZE=2048
 
     # Toggle swap back on
@@ -109,7 +109,7 @@ The following steps are intended for Ubuntu Linux. Since no Debian package is av
   - If you have a monitor plugged in, you can open `Intel Realsense Viewer <https://github.com/IntelRealSense/librealsense/tree/master/tools/realsense-viewer>`__ by typing in into the terminal: ``realsense-viewer``. If the T265 is connected, the device will be available on the left panel. Click on the slider to start the device and switch to 3D view. Move the T265 around and you should see its trajectory.
   - If no monitor is connected, other demos can also be launched from the terminal, for example ``rs-pose``, ``rs-pose-predict``, ``rs-capture`` etc.
 
-- **Test pyrealsense2 python wrapper**: If you enabled building Python wrapper (``BUILD_PYTHON_BINDINGS`` flag), the compiled library is located in the build folder: ``~/librealsense/build/wrappers/python``. 
+- **Test pyrealsense2 python wrapper**: If you enabled building Python wrapper (``BUILD_PYTHON_BINDINGS`` flag), the compiled library is located in the build folder: ``~/librealsense/build/wrappers/python``.
 
   - Update the ``PYTHONPATH`` environment variable to add the path to the ``pyrealsense`` library: ``export PYTHONPATH=$PYTHONPATH:/usr/local/lib``. Alternatively, copy the build output (``librealsense2.so`` and ``pyrealsense2.so`` files, located in ``~/librealsense/build/``) next to your script.
   - The basic examples provided by Intel can be found in the folder ``~/librealsense/wrappers/python/example``. Run it with Python3.
@@ -130,7 +130,7 @@ Install ``realsense-ros``
 =========================
 
 - The installation steps for ROS are straightforward and you can follow the instruction on the official repo `here <https://github.com/IntelRealSense/realsense-ros#installation-instructions>`__.
-- Launch the node: ``roslaunch realsense2_camera rs_t265.launch``. All sensor data will be published as ROS topics: 
+- Launch the node: ``roslaunch realsense2_camera rs_t265.launch``. All sensor data will be published as ROS topics:
 
 .. code-block:: bash
 
@@ -190,8 +190,8 @@ Connect to the flight controller with a ground station (i.e. Mission Planner) an
 - `EK3_ENABLE <https://ardupilot.org/copter/docs/parameters.html#ek3-enable>`__ = 0 (the default)
 - `GPS_TYPE <https://ardupilot.org/copter/docs/parameters.html#gps-type>`__ = 0 to disable the GPS
 - `EK2_GPS_TYPE <https://ardupilot.org/copter/docs/parameters.html#ek2-gps-type>`__ = 3 to disable the EKF’s use of the GPS
-- `EK2_POSNE_M_NSE <https://ardupilot.org/copter/docs/parameters.html#ek2-posne-m-nse-gps-horizontal-position-measurement-noise-m>`__ = 0.1            
-- `EK2_VELD_M_NSE <https://ardupilot.org/copter/docs/parameters.html#ek2-veld-m-nse-gps-vertical-velocity-measurement-noise-m-s>`__ = 0.1             
+- `EK2_POSNE_M_NSE <https://ardupilot.org/copter/docs/parameters.html#ek2-posne-m-nse-gps-horizontal-position-measurement-noise-m>`__ = 0.1
+- `EK2_VELD_M_NSE <https://ardupilot.org/copter/docs/parameters.html#ek2-veld-m-nse-gps-vertical-velocity-measurement-noise-m-s>`__ = 0.1
 - `EK2_VELNE_M_NSE <https://ardupilot.org/copter/docs/parameters.html#ek2-velne-m-nse-gps-horizontal-velocity-measurement-noise-m-s>`__ = 0.1
 - :ref:`COMPASS_ENABLE<copter:COMPASS_ENABLE>` = 0,  `COMPASS_USE <https://ardupilot.org/copter/docs/parameters.html#compass-use-use-compass-for-yaw>`__ = 0, `COMPASS_USE2 <https://ardupilot.org/copter/docs/parameters.html#compass-use2>`__ = 0, `COMPASS_USE3 <https://ardupilot.org/copter/docs/parameters.html#compass-use3>`__ = 0 to disable the EKF’s use of the compass and instead rely on the heading from external navigation data.
 
@@ -202,7 +202,7 @@ Verify that all ROS nodes are working
 
 There are 3 ROS nodes running in this setup: ``realsense-ros``, ``mavros`` and ``vision_to_mavros``. Launch in 3 separated terminals on:
 
-- ``realsense-ros`` node: ``roslaunch realsense2_camera rs_t265.launch``. 
+- ``realsense-ros`` node: ``roslaunch realsense2_camera rs_t265.launch``.
 
   - The topic ``/camera/odom/sample/`` and ``/tf`` should be published at 200Hz.
 
@@ -242,14 +242,14 @@ Ground Test
 
     .. image:: ../../../images/zed-set-ekf-origin.png
         :target: ../../../images/zed-set-ekf-origin.png
-  
+
   - **Use code**: to send the required messages to the FCU through MAVLink. In Python, you can use this script `set_origin.py <https://github.com/anbello/aruco_gridboard/blob/master/script/set_origin.py>`__.
 
     - Install ``pymavlink``: Follow the instructions `here <https://github.com/ArduPilot/pymavlink#installation>`__.
 
     - Run the script: ``rosrun vision_to_mavros set_origin.py``.
 
-- You should see a quadcopter icon appear on the map. 
+- You should see a quadcopter icon appear on the map.
 
 - Pick-up the vehicle and walk it around, check that the vehicle’s position movements are shown on the map. The trajectory of the vehicle on the map should reflect the real movements without too much distortion or overshoot. Below is an example of walking in a 2m x 2m square.
 
@@ -277,10 +277,10 @@ If everything works as expected, next time you can arm and take-off in Loiter mo
    Always confirm that position feedback is running ok before switching to Loiter mode. Look out for the working boundary in your environment, i.e. where tracking might be lost due to lack of features, fast or rotation movement.
 
 ..  youtube:: Gqja_gBFBuA
-    :width: 100%  
+    :width: 100%
 
 ..  youtube:: 2rVqm-05apw
-    :width: 100%  
+    :width: 100%
 
 Data Logging
 ============

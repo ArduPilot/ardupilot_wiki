@@ -83,7 +83,7 @@ Another important metric for small copters is the frequency energy. This is most
     :target:  ../_images/fft-small-copter-energy.png
     :width: 450px
 
-As can be seen there is a strong signal at about 50dB on roll and 40dB on pitch. The FFT engine uses the setting :ref:`FFT_SNR_REF <FFT_SNR_REF>` to determine whether a detected frequency peak is actually a signal or just noise. The default setting is 25dB and so in this example the peak is correctly detected as a signal. 
+As can be seen there is a strong signal at about 50dB on roll and 40dB on pitch. The FFT engine uses the setting :ref:`FFT_SNR_REF <FFT_SNR_REF>` to determine whether a detected frequency peak is actually a signal or just noise. The default setting is 25dB and so in this example the peak is correctly detected as a signal.
 
 Let's look at a smaller copter. This is a 3" quad in a stable hover:
 
@@ -122,5 +122,3 @@ Finally, it is possible - as is clearly the case here - that the noisiest peaks 
     :width: 450px
 
 You can see that the dynamic notch frequency is tracking the two highest noise peaks precisely, resulting in a significant reduction in noise.
-
-

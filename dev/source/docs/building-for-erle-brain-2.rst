@@ -27,7 +27,7 @@ Connect to Erle-Brain 2:
 .. tip::
 
    Other connection methods are discussed in the manufacturers
-   `documentation <http://erlerobotics.com/docs/>`__\ 
+   `documentation <http://erlerobotics.com/docs/>`__\
 
 Clone the source:
 

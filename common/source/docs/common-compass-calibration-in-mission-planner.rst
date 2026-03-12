@@ -31,7 +31,7 @@ Calibration first steps
 
       Mission Planner: Compass Calibration
 
-   You may wish to disable any internal compasses if you are consistently seeing the "inconsistent compasses" pre-arm message often and you are sure that the external compass is calibrated. 
+   You may wish to disable any internal compasses if you are consistently seeing the "inconsistent compasses" pre-arm message often and you are sure that the external compass is calibrated.
 
 .. _onboard_calibration:
 
@@ -75,7 +75,7 @@ Setup an RC channel to start the calibration by setting its ``RCx_OPTION`` to be
 Large Vehicle MagCal
 ====================
 
-Large or heavy vehicles are impractical to rotate on all axis. This feature allows a fairly accurate calibration if GPS lock is active on the autopilot and the vehicles actual heading is known, either using a landmark reference on the Mission Planner map, or using another compass (eg cell phone) and entering the vehicles heading. 
+Large or heavy vehicles are impractical to rotate on all axis. This feature allows a fairly accurate calibration if GPS lock is active on the autopilot and the vehicles actual heading is known, either using a landmark reference on the Mission Planner map, or using another compass (eg cell phone) and entering the vehicles heading.
 
 .. warning:: The proper orientation of the compass must also be set in order for this method to give a good result.  If orientation is incorrect this procedure will appear to succeed while leaving the compass calibration in a very bad state.
 

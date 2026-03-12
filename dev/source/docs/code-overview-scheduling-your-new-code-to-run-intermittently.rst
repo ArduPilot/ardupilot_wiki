@@ -14,7 +14,7 @@ The most flexible way to run your code at a given interval is to use the
 scheduler.  This can be done by adding your new function to the
 `scheduler_tasks <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp#L91>`__
 array in
-`Copter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp>`__. 
+`Copter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp>`__.
 Note that there are actually two task lists, `the upper list <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp#L788>`__
 is for high speed CPUs (i.e. Pixhawk) and the `lower list <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp#L856>`__
 is for slow CPUs (i.e. APM2).

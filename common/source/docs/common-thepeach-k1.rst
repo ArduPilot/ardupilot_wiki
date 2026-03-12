@@ -43,7 +43,7 @@ The output power rails **FMU PWM OUT** and **I/O PWM OUT** do not power the auto
 
 UART Mapping
 ============
- 
+
  - SERIAL0 -> USB
  - SERIAL1 -> USART2     (TELEM1, RTS/CTS pins) DMA-enabled
  - SERIAL2 -> USART3     (TELEM2, RTS/CTS pins) DMA-enabled

@@ -154,10 +154,10 @@ Only use PPK
 .. image:: ../../../images/c-rtk2/ppk1.jpg
 	:target: ../images/c-rtk2/ppk1.jpg
 
-- 1 PPK base station/Ntrip account 
+- 1 PPK base station/Ntrip account
 - 1 C-RTK 2 1
-- 1 Mapping camera 
-- 1 Drone 
+- 1 Mapping camera
+- 1 Drone
 
 PPK+RTK
 -------
@@ -165,12 +165,12 @@ PPK+RTK
 .. image:: ../../../images/c-rtk2/rtk1.jpg
 	:target: ../images/c-rtk2/rtk1.jpg
 
-- 1 PPK base station/Ntrip account 
-- 1 C-RTK 2 
-- 1 Mapping camera 
-- 1 Drone 
-- 1 Data link 
-- 1 Computer 
+- 1 PPK base station/Ntrip account
+- 1 C-RTK 2
+- 1 Mapping camera
+- 1 Drone
+- 1 Data link
+- 1 Computer
 
 .. note::
        C-RTK 2 can be used as an RTK base station and rover RTK gps, as well as a PPK rover gps,It is not recommended to be used as a PPK base station.

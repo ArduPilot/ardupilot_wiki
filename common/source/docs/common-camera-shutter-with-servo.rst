@@ -40,7 +40,7 @@ Configure the autopilot by setting these parameters:
 - If using 4.5 (or earlier) only the 1st relay can be used so set ``RELAY_PIN`` to the GPIO pin used
 - If using 4.6 (or higher) any relay can be used.  Below are settings if the first relay is used.
 
-  - Set :ref:`RELAY1_FUNCTION<RELAY1_FUNCTION>` = 4 (Camera) 
+  - Set :ref:`RELAY1_FUNCTION<RELAY1_FUNCTION>` = 4 (Camera)
   - Set :ref:`RELAY1_PIN<RELAY1_PIN>` to the GPIO pin used
 
 - Set ``SERVOx_FUNCTION`` = -1 (GPIO) where "x" is the servo output channel used.  This is not required in the rare case where an autopilot's dedicated GPIO pins are used.
@@ -57,7 +57,7 @@ ArduPilot logs TRIG messages when it *triggers* the camera.  If the camera provi
 Connect the camera's GPIO output  to one of the autopilot's :ref:`GPIO pins <common-gpios>` (e.g. AUX OUT).  As mentioned above there are restrictions on which pins may be used.
 
 Set the following parameters:
- 
+
 - Set `SERVOx_FUNCTION` = -1 (GPIO) where "x" is the servo output channel used.  This is not required in the rare case where the autopilot's dedicated GPIO pins are useds
 - Set :ref:`CAM1_FEEDBAK_PIN<CAM1_FEEDBAK_PIN>` to the pin number connected to the hotshoe
 - Set :ref:`CAM1_FEEDBAK_POL<CAM1_FEEDBAK_POL>` = 0 if the hotshoe voltage goes low when a picture is taken or 1 if the voltage goes high

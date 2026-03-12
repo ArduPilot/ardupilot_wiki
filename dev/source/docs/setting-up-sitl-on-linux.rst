@@ -121,7 +121,7 @@ The main steps (tested on Ubuntu Linux 14.04 LTS) are:
    (Copter).
 
    This will start *FlightGear*.
-   
+
 #. Start SITL in the terminal in the normal way. In this case we're
    specifying the start location as San Francisco airport (KSFO) as this
    is an interesting airport with lots to see:

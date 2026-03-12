@@ -20,6 +20,6 @@ The **update.py** build script copies the common topics into specified (in sourc
 The **Vagrantfile** can be used by Vagrant to set up a local build environment independent of your host system.
 (`Vagrant <https://www.vagrantup.com>`__ is a software tool that allows for the quick and automated  setup of a virtual machine on your host operating system). This allows you to edit the source in your host computer but manage the build inside Vagrant. You can also manually set up a build environment (just inspect the Vagrantfile for dependencies).
 
-The wikis use a `common theme <https://github.com/ArduPilot/sphinx_rtd_theme>`__ that provides the top menu bar. 
+The wikis use a `common theme <https://github.com/ArduPilot/sphinx_rtd_theme>`__ that provides the top menu bar.
 
 [copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

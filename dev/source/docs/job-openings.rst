@@ -1,5 +1,5 @@
 .. _job-openings:
-    
+
 ========================
 Job Openings in Dev Team
 ========================

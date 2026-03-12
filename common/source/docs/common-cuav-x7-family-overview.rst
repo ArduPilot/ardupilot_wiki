@@ -24,7 +24,7 @@ Features of CUAV X7 Series
 ===========================
 
 +---------------------+------------+-----------------+------------------+------------------+
-|                     |CUAV X7     |CUAV X7 Plus     | CUAV X7 Pro      | CUAV X7 Plus Pro | 
+|                     |CUAV X7     |CUAV X7 Plus     | CUAV X7 Pro      | CUAV X7 Plus Pro |
 +=====================+============+=================+==================+==================+
 |Processor            |                          STM32H743                                 |
 +---------------------+------------+-----------------+------------------+------------------+
@@ -38,11 +38,11 @@ Features of CUAV X7 Series
 |                     +------------+-----------------+------------------+------------------+
 |                     |                              RM3100  Compass                       |
 +---------------------+------------+-----------------+------------------+------------------+
-|PWM  outputs         |14          |14               |14                |14                | 
+|PWM  outputs         |14          |14               |14                |14                |
 +---------------------+------------+-----------------+------------------+------------------+
 |Bidi DShot outputs   |6(M9~M14)   |12(M1~M12 )      |6(M9~M14)         |12(M1~M12 )       |
 +---------------------+------------+-----------------+------------------+------------------+
-|Servo voltage monitor|NO          | YES(9.9V max)   |NO                | YES(9.9V max)    | 
+|Servo voltage monitor|NO          | YES(9.9V max)   |NO                | YES(9.9V max)    |
 +---------------------+------------+-----------------+------------------+------------------+
 |Operating Voltage    |                      4.3~5.4V （USB:4.75~5.25V)                    |
 +---------------------+------------+-----------------+------------------+------------------+
@@ -71,12 +71,12 @@ Size and Pinouts
 
 .. image:: ../../../images/cuav_autopilot/x7plus/x7_plus_size.png
     :target: ../_images/cuav_autopilot/x7plus/x7_plus_size.png
-    
+
 .. image:: ../../../images/cuav_autopilot/x7plus/pinouts_01.png
-    :target: ../_images/cuav_autopilot/x7plus/pinouts_01.png 
+    :target: ../_images/cuav_autopilot/x7plus/pinouts_01.png
 
 .. image:: ../../../images/cuav_autopilot/x7plus/pinouts_02.png
-    :target: ../_images/cuav_autopilot/x7plus/pinouts_02.png    
+    :target: ../_images/cuav_autopilot/x7plus/pinouts_02.png
 
 Default UART Order
 ==================
@@ -94,7 +94,7 @@ Serial protocols can be adjusted to personal preferences.
 
 PWM Output
 ==========
-The CUAV X7+/X7+ Pro supports up to 14 PWM outputs. All 14 outputs support all normal PWM output formats.All outputs, except 13 and 14, also support DShot. 
+The CUAV X7+/X7+ Pro supports up to 14 PWM outputs. All 14 outputs support all normal PWM output formats.All outputs, except 13 and 14, also support DShot.
 
 The 14 PWM outputs are in 4 groups:
 
@@ -149,7 +149,7 @@ If you are using an analog battery monitor instead, connect to the Power A conne
 
 RC Input
 ========
-The RCIN pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The RCIN pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, a full UART, such as SERIAL6 (UART7) would need to be used for receiver connections. Below are setups using Serial6.
 
@@ -183,7 +183,7 @@ Flight video
 
 .. youtube:: jiAjyL_ruec
     :width: 100%
-    
+
 More Information
 ================
 

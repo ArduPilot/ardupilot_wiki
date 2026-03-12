@@ -11,7 +11,7 @@ indoor use but which has been successfully used outdoors on Copter. The very sho
 .. image:: ../../../images/hcsr04.jpg
 
 .. warning::
-   
+
    ``RNGFNDx_MAX`` must be set to a tested, appropriate value.  If ``RNGFNDx_MAX`` is set to a value  greater than 2m, the autopilot will not respond correctly to the data provided.
 
 Connection to the autopilot
@@ -29,4 +29,3 @@ To setup as the first rangefinder. Reboot after setting parameters:
 -  :ref:`RNGFND1_PIN<RNGFND1_PIN>` = Enter GPIO number for pin attached to HC-SRO4 "Echo" pin.
 -  :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “30" (HC-SR04 sonar)
 -  :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = "25" (Downward facing) if used for altitude control.
-

@@ -29,7 +29,7 @@ Any of the following products can run ArduPilot
 Learning About the VOXL 2
 -------------------------
 
-The setup and configuration of the VOXL 2 is very different from the other autopilots supported by ArduPilot.  Please consider reading the `VOXL Developer Bootcamp instructions <https://docs.modalai.com/voxl-developer-bootcamp>`__ before proceeding further 
+The setup and configuration of the VOXL 2 is very different from the other autopilots supported by ArduPilot.  Please consider reading the `VOXL Developer Bootcamp instructions <https://docs.modalai.com/voxl-developer-bootcamp>`__ before proceeding further
 
 Connecting to the VOXL 2 via USB
 --------------------------------

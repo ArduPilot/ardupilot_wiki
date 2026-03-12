@@ -93,7 +93,7 @@ MAVProxy
 To test and fly around, you can launch a `mavproxy <https://ardupilot.org/dev/docs/copter-sitl-mavproxy-tutorial.html>`__ instance in yet another terminal:
 
 .. code-block:: bash
-    
+
     mavproxy.py --console --map --aircraft test --master=:14550
 
 

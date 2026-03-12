@@ -7,7 +7,7 @@ Mateksys F405-STD and variants
 .. image:: ../../../images/matekf405-std.png
     :target: ../_images/matekf405-std.png
     :width: 450px
-    
+
 .. image:: ../../../images/matekf405-ctr.png
     :target: ../_images/matekf405-ctr.png
     :width: 450px
@@ -54,7 +54,7 @@ Specifications
    - CTR: 10g
 
 See mateksys.com for more `detailed specifications <http://www.mateksys.com/?portfolio=f405-std#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f405-std#tab-id-3>`__.
-   
+
 Variants
 ========
 
@@ -62,7 +62,7 @@ In addition to STD and CTR versions, there are older variants called -AIO and -O
 
 .. note::
 
-  For the -STD version please use the MatekF405-STD type firmware. For the -CTR version with MPU6000 please use the MatekF405 type firmware. For the :ref:`MatekF405-Wing <common-matekf405-wing>` which has an essentially different board layout please use the dedicated firmware. Please note that ArduPilot does not support -AIO and -OSD versions per default as additional hardware and / or software adjustments are required. 
+  For the -STD version please use the MatekF405-STD type firmware. For the -CTR version with MPU6000 please use the MatekF405 type firmware. For the :ref:`MatekF405-Wing <common-matekf405-wing>` which has an essentially different board layout please use the dedicated firmware. Please note that ArduPilot does not support -AIO and -OSD versions per default as additional hardware and / or software adjustments are required.
 
 The MatekF405-CTR has a firmware version supporting :ref:`bi-directional Dshot <bidir-dshot>` labeled "MatekF405-bdshot". Note this is only supported for outputs 1-4 in this version.
 
@@ -82,7 +82,7 @@ Serial protocols can be adjusted to personal preferences.
 RC Input
 ========
 
-The SBUS pin, is passed by an inverter to R2 (UART2 RX), which by default is mapped to a timer input instead of the UART, and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry. 
+The SBUS pin, is passed by an inverter to R2 (UART2 RX), which by default is mapped to a timer input instead of the UART, and can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, will only provide RC without telemetry.
 
 To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the R2 pin can also be configured to be used as true UART2 RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL5 port's RX input pin.
 
@@ -126,5 +126,5 @@ Wiring Diagram
 
 .. image:: ../../../images/MatekF405-STD.jpg
     :target: ../_images/MatekF405-STD.jpg
-    
+
 [copywiki destination="plane,copter,rover,blimp,sub"]

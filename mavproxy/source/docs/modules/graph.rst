@@ -7,7 +7,7 @@ Graphing Live Data
 .. code:: bash
 
     module load graph
-    
+
 A module to plot (graph) data in realtime from the UAV. It is useful for
 looking for time-varying patterns in the data
 
@@ -50,7 +50,7 @@ To set the tickresolution along the horizontal axis (1/<number of ticks>):
 .. code:: bash
 
     graph timespan 0.2
-       
+
 To graph a ``NAMED_VALUE_FLOAT`` value that has a name``NAME``, which can be used for freeform data:
 
 .. code:: bash

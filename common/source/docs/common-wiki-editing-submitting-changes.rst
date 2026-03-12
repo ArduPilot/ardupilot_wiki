@@ -6,7 +6,7 @@ Wiki Editing - Submitting Changes
 
 Once you have completed changes to the wiki on your local machine and tested they are rendered correctly, follow the instructions below to submit a PullRequest to have them included in the wiki.  This is the same :ref:`PR process used for the flight code <dev:submitting-patches-back-to-master>`
 
-.. note:: 
+.. note::
 
     If you are not familiar with Git and GitHub please refer to the :ref:`Using Git <dev:where-to-get-the-code>` pages to learn the basics.
 
@@ -26,7 +26,7 @@ There are a number of way of using Git/Github - including a number of different 
 
        git checkout master
 
-    .. note:: 
+    .. note::
 
         If the above command fails because of changes made to some files, temporarily "stash" the changes by typing ``git stash save my-changes`` and then later re-applied the changes by typing ``git stash apply stash@{0}``
 

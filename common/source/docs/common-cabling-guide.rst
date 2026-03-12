@@ -94,7 +94,7 @@ SPI signals can be sensitive to electromagnetic interference (EMI) and crosstalk
 
 UART
 ----
-UART (Universal Asynchronous Receiver/Transmitter) ports are commonly provided by autopilots to connect peripherals such as telemetry radios, GPS receivers, rangefinders, radio modems, and even SBUS servos. Serial RC receiver inputs can be connected to any UART. See :ref:`Serial Port Configuration <common-serial-options>`. Usually, several UART ports are provided. 
+UART (Universal Asynchronous Receiver/Transmitter) ports are commonly provided by autopilots to connect peripherals such as telemetry radios, GPS receivers, rangefinders, radio modems, and even SBUS servos. Serial RC receiver inputs can be connected to any UART. See :ref:`Serial Port Configuration <common-serial-options>`. Usually, several UART ports are provided.
 
 By default, UART connections are point-to-point and do not support bus-style networking. Each UART line directly connects two devices. The connecting cable is typically straight (1:1), meaning no crossing is performed within the cable itself. Therefore, the peripheral devices must internally cross RX/TX signals as required.
 
@@ -108,4 +108,3 @@ UART signals, particularly at higher baud rates, can generate electromagnetic in
 - Separate UART cables from high-power wires and sensitive sensors, such as GPS receivers and magnetometers.
 
 Unlike twisted-pair cables used for differential protocols (CAN, I2C), cable twisting is generally not applicable for UART signals due to their single-ended nature.
-

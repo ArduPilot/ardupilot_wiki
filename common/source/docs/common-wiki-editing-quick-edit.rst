@@ -19,7 +19,7 @@ Below is a video tutorial for quickly editing the ArduPilot wiki
 - At the bottom of the page under "Commit changes"
 
    - Fill in the subject line with a short description of the change
-   - Optionally fill in an extended description 
+   - Optionally fill in an extended description
    - Click "Create a new branch for this commit"
    - Press the "Commit changes" button
 

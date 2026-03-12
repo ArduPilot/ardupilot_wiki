@@ -1,11 +1,11 @@
 .. _gsoc:
-    
+
 ============================
 GSoC - Google Summer of Code
 ============================
 Each year, ArduPilot participates in the `Google Summer of Code program <https://summerofcode.withgoogle.com/>`__, encouraging students and others to contribute to the ArduPilot codebase.
 
-The development team includes experienced mentors who will help students make great contributions to ArduPilot. 
+The development team includes experienced mentors who will help students make great contributions to ArduPilot.
 
 To help you get started:
 

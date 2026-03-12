@@ -47,7 +47,7 @@ Controlling from a transmitter using servo pass-through
 =======================================================
 
 Unfortunately with the latest versions of Copter, Plane and Rover the
-EPM can be controlled either from the transmitter OR during missions. 
+EPM can be controlled either from the transmitter OR during missions.
 Either is possible but parameter changes are required meaning both
 methods are not available during a single flight.  Below are
 instructions for setting up manual control through a transmitter.
@@ -156,7 +156,7 @@ seconds.  The majority of the energy is consumed to move the target into
 place and the rest realigns the magnets.  The on-board LED will blink
 rapidly 4 times when a switching cycle is being executed
 
-On-board tactile push button: Allows toggle testing the EPM on/off 
+On-board tactile push button: Allows toggle testing the EPM on/off
 having only the power connected
 
 Full bridge Thyrisotor drive circuit increases efficiency and reduces

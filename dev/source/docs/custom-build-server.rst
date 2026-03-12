@@ -12,22 +12,22 @@ The available versions are listed in a file called `remotes.json`. You can find 
 
 ::
 
-                                                   +------+                                                             
-                                                   | Cron |                                                             
-                                                   +--+---+                                                             
-                                                      |                                                                 
-                                                      |run every hour                                                   
-                                                      v                                                                 
-                                     +-----------------------------------+                                              
-                                     |                                   |                                              
-                                     | update_remotes_json_cronjob_*.sh  |                                              
-                                     |                                   |                                              
-                                     |+---------------------------------+|                                              
-                                     ||         fetch_releases.py       ||           update     +------------+          
-                                     ||  (add AP's official releases)   ++------+-------------->|remotes.json|          
-                                     |+---------------------------------+|      |               +-----+------+          
-                                     |+---------------------------------+|      |                     |read             
-                                     ||     fetch_whitelisted_tags.py   ++------+                     v                 
+                                                   +------+
+                                                   | Cron |
+                                                   +--+---+
+                                                      |
+                                                      |run every hour
+                                                      v
+                                     +-----------------------------------+
+                                     |                                   |
+                                     | update_remotes_json_cronjob_*.sh  |
+                                     |                                   |
+                                     |+---------------------------------+|
+                                     ||         fetch_releases.py       ||           update     +------------+
+                                     ||  (add AP's official releases)   ++------+-------------->|remotes.json|
+                                     |+---------------------------------+|      |               +-----+------+
+                                     |+---------------------------------+|      |                     |read
+                                     ||     fetch_whitelisted_tags.py   ++------+                     v
                                      ||(add tags from whitelisted repos)||            +--------------------------------+
                                      |+---------------------------------+|            |          Flask App             |
                                      |+---------------------------------+|            |                                |
@@ -35,11 +35,11 @@ The available versions are listed in a file called `remotes.json`. You can find 
     |secrets/reload_token+----------->|     {"token": reload_token}     ++----------->| remotes.schema.json and lists  |
     +--------------------+    read   |+---------------------------------+|  trigger   | versions on 'add a build' page)|
                                      +-----------------------------------+            +--------------------------------+
-                                                                                                      ^                 
-                                                                                                      |read             
-                                                                                             +--------+----------+      
-                                                                                             |remotes.schema.json|      
-                                                                                             +-------------------+      
+                                                                                                      ^
+                                                                                                      |read
+                                                                                             +--------+----------+
+                                                                                             |remotes.schema.json|
+                                                                                             +-------------------+
 
 
 To obtain the list of boards and available features for a particular version, the application checks out the specific commit of the listed version and then uses the `build_options.py <https://github.com/ArduPilot/ardupilot/blob/master/Tools/scripts/build_options.py>`__ and `board_list.py <https://github.com/ArduPilot/ardupilot/blob/master/Tools/scripts/board_list.py>`__ files to retrieve the necessary information.

@@ -66,7 +66,7 @@ If you applied modification to a submodule for a branch *develop*, it is necessa
    git add modules/mavlink
    git commit -m 'mavlink: submodule update + modify gitmodule'
    git push
-   
+
 The submodule MAVLink of the *develop* branch is now linked to a different repository than the *master*. The first command is necessary to reflect that change to the superproject:
 
 ::

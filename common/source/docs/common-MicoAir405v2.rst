@@ -71,7 +71,7 @@ receive pin for UARTn. The Txn pin is the transmit pin for UARTn.
 
    -  SERIAL0 -> USB
    -  SERIAL1 -> UART1 (MAVLink2, DMA-enabled)
-   -  SERIAL2 -> UART2 (DisplayPort, TX2 only DMA-enabled) 
+   -  SERIAL2 -> UART2 (DisplayPort, TX2 only DMA-enabled)
    -  SERIAL3 -> UART3 (GPS)
    -  SERIAL4 -> UART4 (MAVLink2, TX only DMA-enabled)
    -  SERIAL5 -> UART5 (RX pin only,ESC Telemetry)
@@ -111,7 +111,7 @@ The MicoAir405v2 supports up to 10 PWM outputs(Mini supports 9). Outputs 1-8 als
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX)
 
 Battery Monitoring
 ==================

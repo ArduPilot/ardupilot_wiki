@@ -34,7 +34,7 @@ Features
   * BEC Outputs:
 
     * 5V @ 2.0A
-    * 9V @ 2.0A, GPIO controlled 
+    * 9V @ 2.0A, GPIO controlled
 
 * Storage
 
@@ -77,12 +77,12 @@ UART Mapping
 The UARTs default protocol and serial port assignments are:
 
 * SERIAL0 -> USB
-* SERIAL1 -> USART1 (DMA capable,RX tied to SBUS RC input and pin used as an interrupt input, but can be used as normal UART if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` =1 ) 
+* SERIAL1 -> USART1 (DMA capable,RX tied to SBUS RC input and pin used as an interrupt input, but can be used as normal UART if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` =1 )
 * SERIAL2 -> USART2 (ESC Telemetry)
 * SERIAL3 -> USART3 (DisplayPort, TX DMA Capable)
 * SERIAL4 -> UART4  (USER, TX DMA Capable)
 * SERIAL5 -> UART5  (USER, TX DMA Capable)
-* SERIAL6 -> USART6 (GPS) 
+* SERIAL6 -> USART6 (GPS)
 
 RC Input
 ========
@@ -119,7 +119,7 @@ sensor can read up to 120 Amps. The voltage sensor can handle up to 6S LiPo batt
 The default battery monitor parameters are:
 
 * :ref:`BATT_MONITOR<BATT_MONITOR>` 4
-* :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 11 
+* :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` 11
 * :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` 13
 * :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` 11.0
 * :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` 37 (may need adjustment depending on external current sensor used)

@@ -8,7 +8,7 @@ This article lists turnkey companion computer solutions that are advertised as w
 
 .. note::
 
-   Please let us know if you discover a new companion computer, so we can add it to this list. 
+   Please let us know if you discover a new companion computer, so we can add it to this list.
 
 Horizon31 - PixC4-Jetson
 =========================================================
@@ -36,10 +36,10 @@ Horizon31 - PixC4-Pi
 
 .. figure:: https://horizon31.com/wp-content/uploads/2021/08/IMG_7517-600x534.jpg
    :target:  https://horizon31.com/product/pixc4-pi/
-   
+
 The `PixC4-Pi <https://horizon31.com/product/pixc4-pi/>`__ is a professional-quality NDAA Compliant Flight Management Unit (FMUv5) which supports ArduPilot and is tightly integrated with a Raspberry Pi 4 compute module and peripheral support system (USB, MIPI, Ethernet, M.2 slot, etc.). The PixC4-Pi is about the size of a business card (84x42mm) and weighs 67g (with heatsink). The PixC4-Pi includes the same software stack as the PixC4-Jetson, with the primary difference being the PixC4-Pi does not support h.265 encoding, only h.264.
 
-   
+
 UAVcast-Pro - Companion Software for Long-Range Drones
 ======================================================
 
@@ -82,7 +82,7 @@ Long-range drone flights made simple.
 
 .. warning::
 
-   The ArduPilot dev team advise that this product may not be as "turnkey" as indicated below. Community reports indicate that the Kit does not include the LTE module and may also not supply a powering mechanism.  
+   The ArduPilot dev team advise that this product may not be as "turnkey" as indicated below. Community reports indicate that the Kit does not include the LTE module and may also not supply a powering mechanism.
 
 `4Gmetry <http://4gmetry.voltarobots.com/>`__ (Volta Robots) is a plug&play companion computer kit, based on Odroid XU4 single board computer.
 
@@ -118,7 +118,7 @@ Alfonce Remote Gateway - Companion Computer
 * USB : PTP and UVC
 * Wifi : Sony, Mapir, MJPEG and RTSP
 
-Full list can be `found here <https://www.dronotique.fr/docs/alfonce-remote-gateway/gestion-des-appareils-photos-et-cameras/modeles-dappareils-photos-et-de-cameras-supportes/>`__ 
+Full list can be `found here <https://www.dronotique.fr/docs/alfonce-remote-gateway/gestion-des-appareils-photos-et-cameras/modeles-dappareils-photos-et-de-cameras-supportes/>`__
 
 You can also read the full `documentation <https://www.dronotique.fr/docs/alfonce-remote-gateway/>`__ to discover full functionalities
 

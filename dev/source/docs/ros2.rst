@@ -104,9 +104,9 @@ Test `microxrceddsgen` installation:
     #     * IDL files.
 
 ::
-    ⚠️ If you have installed FastDDS or FastDDSGen globally on your system: eProsima's libraries and the packaging system in 
-    Ardupilot are not deterministic in this scenario. You may experience the wrong version of a library brought in, or runtime 
-    segfaults. For now, avoid having simultaneous local and global installs. If you followed the `global install <https://fast-dds.docs.eprosima.com/en/latest/installation/sources/sources_linux.html#global-installation/>`_ section, 
+    ⚠️ If you have installed FastDDS or FastDDSGen globally on your system: eProsima's libraries and the packaging system in
+    Ardupilot are not deterministic in this scenario. You may experience the wrong version of a library brought in, or runtime
+    segfaults. For now, avoid having simultaneous local and global installs. If you followed the `global install <https://fast-dds.docs.eprosima.com/en/latest/installation/sources/sources_linux.html#global-installation/>`_ section,
     you should remove it and switch to local install.
 
 And finally, build your workspace:

@@ -37,7 +37,7 @@ FrSky Taranis X9D Plus, QX7, and X-Lite RC Transmitters
    These transmitters are feature packed for their price. You can buy them from different locations e.g. `Craft and Theory <http://www.craftandtheoryllc.com/packageq>`__, `Aloft Hobbies <https://alofthobbies.com/catalogsearch/result/?cat=0&q=X9D>`__ .
 
 The `FrSky Taranis RC Transmitter <https://www.frsky-rc.com/product/taranis-q-x7-2/>`__ is a
-high quality `OpenTX <http://www.open-tx.org/downloads.html>`__ (open source firmware) enabled RC Transmitter that is compatible with a wide variety of high quality FrSky PPM-Sum and S.Bus compatible receivers. 
+high quality `OpenTX <http://www.open-tx.org/downloads.html>`__ (open source firmware) enabled RC Transmitter that is compatible with a wide variety of high quality FrSky PPM-Sum and S.Bus compatible receivers.
 
 One of the major advantages of the Taranis is that it can receive and display telemetry data **directly from ArduPilot** and on-board FrSky telemetry sensors, such as flight mode, GPS status, current drawn and cell voltages, and even ArduPilot messages, that can be added to your vehicle. For more information, see :ref:`FrSky telemetry <common-frsky-telemetry>`.
 
@@ -56,7 +56,7 @@ Advantages of the FrSky systems:
 * Reliable and low latency telemetry with matched FrSky receiver
 * Removable MicroSD card to store sounds, voices, models and custom scripts
 
-The Taranis transmitters can run the :ref:`Yappu Telemetry <common-frsky-yaapu>` 
+The Taranis transmitters can run the :ref:`Yappu Telemetry <common-frsky-yaapu>`
 
 .. image:: ../../../images/x9d-taranis.png
     :target: ../_images/x9d-taranis.png

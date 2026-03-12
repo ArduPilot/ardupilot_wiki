@@ -39,4 +39,3 @@ With Balance Bots however the pilot's throttle controls the desired pitch angle 
 Steering
 ========
 Balance Bots have only two wheels and hence use a skid steering or differential drive system. Steering is done by varying the speed of one wheel relative to the other.
-

@@ -5,7 +5,7 @@ ArduPilot Plane
 ===============
 
 ..  raw:: html
-    
+
     <p style="text-align:center;color:red;"><strong>
     Success with Plane requires that the 'First Time Setup' and 'First Flight and Tuning' sections of this documentation be read and followed!</strong>
     <br></br>
@@ -16,8 +16,8 @@ ArduPilot Plane
 
 
 The open source Plane firmware running on a compatible controller board gives
-any fixed-wing aircraft full autonomous capability. VTOL fixed-wing aircraft that 
-hover and cruise in different configurations 
+any fixed-wing aircraft full autonomous capability. VTOL fixed-wing aircraft that
+hover and cruise in different configurations
 are also included under the Plane firmware.
 
 Plane provides advanced functions such as support for hundreds of
@@ -32,8 +32,8 @@ research use.
 
 .. note::
 
-    This is the platform that won the prestigious 
-    `Outback Challenge UAV competition <http://uavchallenge.org>`__ 
+    This is the platform that won the prestigious
+    `Outback Challenge UAV competition <http://uavchallenge.org>`__
     in `2012 <https://diydrones.com/profiles/blogs/canberrauav-outback-challenge-2012-debrief>`__,
     `2014 <https://diydrones.com/profiles/blogs/canberrauav-outback-challenge-2014-debrief>`__
     and `2016 <https://discuss.ardupilot.org/t/canberrauav-outback-challenge-2016-debrief/12162>`__ as well as the \
@@ -60,7 +60,7 @@ System components
 -  Many other useful options, such as :ref:`two-way telemetry radios <common-telemetry-landingpage>` which allow in-flight
    communication and control between the aircraft and your computer.
 
-   
+
 --------------
 
 Fixed-wing aircraft
@@ -76,7 +76,7 @@ less power.
 There is a huge variety of fixed wing aircraft from electric battery
 powered small foam planes to large scale wooden replicas with multi
 liquid fuel engines and everything in between.  You are bound to find a
-plane that suits your flying style and needs. With the advance of VTOL 
+plane that suits your flying style and needs. With the advance of VTOL
 fixed-wing aircraft, taking off and landing in tight spaces is now possible too.
 
 When precision missions are required, fixed-wing aircraft are at a
@@ -86,8 +86,8 @@ can't hover in one spot the way a copter can and as a result cannot
 provide the same level of precise camera positioning.
 
 For longer missions and more payload, a fixed-wing is your best
-choice. But for keeping a camera in one place or moving slowly, consider 
-switching to a copter instead. The same autopilot can control that 
+choice. But for keeping a camera in one place or moving slowly, consider
+switching to a copter instead. The same autopilot can control that
 equally well by simply loading the :ref:`Copter <copter:home>` code.
 
 
@@ -117,10 +117,8 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
     First Flight and Tuning <docs/first-flight-landing-page>
     QuadPlane Setup and Operation <docs/quadplane-support>
     Mission Planning <docs/common-mission-planning>
-    If A Problem Arises <docs/common-when-problems-arise> 
+    If A Problem Arises <docs/common-when-problems-arise>
     Advanced Configuration <docs/common-advanced-configuration>
     Peripheral Hardware <docs/common-optional-hardware>
     Additional Information <docs/additional-information>
     User Alerts <docs/common-user-alerts>
-
-

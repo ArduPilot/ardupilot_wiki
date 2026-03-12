@@ -11,8 +11,8 @@ connect to the **SPKT/DSM** port (some boards, such as the CUBE mini carrier boa
 
 .. image:: ../../../images/pixhawk_spektrum_connection.jpg
     :target: ../_images/pixhawk_spektrum_connection.jpg
-    
-Spektrum Satellite Receivers 
+
+Spektrum Satellite Receivers
 ============================
 
 `Spektrum Satellite Receivers <http://www.spektrumrc.com/Products/Default.aspx?ProdID=SPM9645>`__
@@ -25,7 +25,7 @@ ArduPilot automatically discovers the serial protocol being used.
    disconnect the satellite from the conventional receiver, and
    connect it to the Spektrum port on autopilot
 -  Bind the satellite receiver using Mission Planner to initiate
-   the bind. This functionality is located in Radio Calibration 
+   the bind. This functionality is located in Radio Calibration
    screen on Initial Setup.
 
 .. image:: ../../../images/dsm_bind.png
@@ -42,10 +42,10 @@ ArduPilot automatically discovers the serial protocol being used.
 
 .. _common-spektrum-srxl2-rc:
 
-Spektrum SRXL2 Receivers 
+Spektrum SRXL2 Receivers
 ========================
 
-All Spektrum receivers released since August 2019 only support the `SRXL2 <https://github.com/SpektrumRC/SRXL2>`__ protocol. SRXL2 is a single-wire, half-duplex protocol that supports integrated telemetry and a number of other features. 
+All Spektrum receivers released since August 2019 only support the `SRXL2 <https://github.com/SpektrumRC/SRXL2>`__ protocol. SRXL2 is a single-wire, half-duplex protocol that supports integrated telemetry and a number of other features.
 
 An `SRXL2 cable <https://www.spektrumrc.com/Products/Default.aspx?ProdID=SPM4650>`__ has four wires, one of which is not connected. This new format is to distinguish them from older receivers supporting DSMX since DSMX and SRXL2 are incompatible.
 
@@ -65,5 +65,3 @@ Many single board autopilots support RC input on serial port 6 only exposing the
 - Set :ref:`BRD_ALT_CONFIG <BRD_ALT_CONFIG>` = 1
 
 With the receiver connected and configured correctly proceed with RC calibration as normal.
-
-

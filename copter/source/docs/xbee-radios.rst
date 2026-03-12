@@ -18,18 +18,18 @@ Hooking up your Xbee wireless modules
 -------------------------------------
 
 Adding wireless telemetry is not difficult and can extend the
-capabilities of your UAV immensely. We recommend 
+capabilities of your UAV immensely. We recommend
 `900Mhz Xbees <https://www.sparkfun.com/categories/222.html>`__. If you are in
-Europe, where 900Mhz is not allowed, you can use a 2.4Ghz Xbee kit instead. 
+Europe, where 900Mhz is not allowed, you can use a 2.4Ghz Xbee kit instead.
 
 .. warning::
 
    On APM 2, you cannot use the Xbee while your APM board is
    connected to the USB port.
 
-   That's because the Xbee and USB share the same serial port, with some clever multiplexing to detect if the USB cable is plugged in and switching output to the USB if so. 
-   Although that has the huge win of freeing up a serial port for some other use (e.g. 
-   connect an Android phone), 
+   That's because the Xbee and USB share the same serial port, with some clever multiplexing to detect if the USB cable is plugged in and switching output to the USB if so.
+   Although that has the huge win of freeing up a serial port for some other use (e.g.
+   connect an Android phone),
    it does mean that you need to disconnect the board from the USB cable and power it some other way when testing wireless telemetry on your bench.
 
 Wiring it up
@@ -201,10 +201,10 @@ For Non-PC users
 ----------------
 
 MacOS, Linux or Windows users - there is a free cross-platform
-alternative to X-CTU, called moltosenso Network Manager. 
-Download the software 
+alternative to X-CTU, called moltosenso Network Manager.
+Download the software
 `here <https://www.moltosenso.com/client/fe/browser.php?pc=/client/fe/download.php>`__.
-The moltosenso Team collaborated with us writing a 
+The moltosenso Team collaborated with us writing a
 `special tutorial <https://forum.moltosenso.com/viewtopic.php?f=16&t=8#p9>`__
 on the setup of Xbee radios for ArduPilot and Copter Telemetry using
 their software. Enjoy!
@@ -262,7 +262,7 @@ the Telecom pins is Serial3.
 Unbricking an Xbee
 ------------------
 
-.. note:: 
+.. note::
 
     Sometimes Xbee modules get corrupted due to spurious
     signals. If you're finding that yours stops working (green LED on

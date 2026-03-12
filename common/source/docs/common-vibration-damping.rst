@@ -34,7 +34,7 @@ autopilot is so small.
 One of the following three types of foam should be cut into small 1cm ~ 2cm squares and attached to each of the four corners of the autopilot as described on the :ref:`Mounting the Autopilot wiki page <common-mounting-the-flight-controller>`:
 
 - 3M Foam is sticky on both sides and comes pre-cut so that individual squares can be easily attached to the autopilot
-   - `sold by mRobotics <https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm>`__ 
+   - `sold by mRobotics <https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm>`__
    - `sold by Holybro <https://holybro.com/products/foam-pads-20pcs>`__
 - `Du-Bro 1/4" R/C foam <https://www.dubro.com/products/r-c-protective-foam-rubber>`__
 - `HobbyKing orange foam <https://hobbyking.com/en_us/anti-vibration-foam-orange-latex-190mm-x-140mm-x-6mm.html?___store=en_us>`__ (discontinued)
@@ -89,8 +89,8 @@ The mount can be installed using double sided tape, or M3 screws.
 3D Printed Anti-Vibration Platform for NAVIO2
 ---------------------------------------------
 
-Anti-vibration for NAVIO2 can be easily 3D printed. 
-It significantly simplifies mounting and eliminates vibrations. 
+Anti-vibration for NAVIO2 can be easily 3D printed.
+It significantly simplifies mounting and eliminates vibrations.
 You can find STL files `here <https://docs.emlid.com/navio2/ardupilot/hardware-setup/#anti-vibration-mount>`__.
 
 Anti-vibration with Navio2 mounted on frame:
@@ -108,7 +108,7 @@ O-ring Suspension Mount
    further apart than the width of the platform upon which the control
    board has been mounted.
 #. Insert 1/16" nylon O-rings through each corner of the autopilot and the standoffs so that the autopilot has no hard
-   connections to the frame. 
+   connections to the frame.
    Link `(Here!) <http://www.oringwarehouse.com/>`__
 
    -  The overall O-ring diameter should be chosen to firmly retain the
@@ -320,8 +320,3 @@ Links to related discussions
 - `RC Groups page on Vibration Effects relating to a camera mounts <https://www.rcgroups.com/forums/showpost.php?p=16315017&postcount=16338>`__
 - `DIYDrones discussion related to Vibration Control <https://diydrones.com/forum/topics/vibration-isolation-and-dampening-of-apm-px4-for-version-2-9>`__
 - `Gary McCray's DIYDrones BLOG re Vibration Control <https://diydrones.com/profiles/blogs/vibration-control-wiki-section-started-for-better-or-worse>`__
-
-
-
-
-

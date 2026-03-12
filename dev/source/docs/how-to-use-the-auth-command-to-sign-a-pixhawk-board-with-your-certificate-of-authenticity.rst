@@ -20,7 +20,7 @@ The "auth" command will
 -  read a properly prepared public/private key data from the SD card
 -  use the key off the SD card to create the Certificate-Of-Authenticity
    (COA) in the One-Time_programmable (OTP) ROM.
--  log the results to a log file on the SD card, for your records. 
+-  log the results to a log file on the SD card, for your records.
    (optional)
 
 Bootloader

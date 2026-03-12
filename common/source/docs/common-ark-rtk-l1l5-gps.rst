@@ -29,7 +29,7 @@ Specifications
    - Bosch BMM150 Magnetometer
    - `Bosch BMP388 Barometer <https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp388/>`__
    - `Invensense ICM-42688-P 6-Axis IMU <https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/>`__
-   
+
 -  **Microcontroller**
 
    - STM32F412CEU6 MCU
@@ -45,9 +45,9 @@ Specifications
     - 3 Pin JST GH (TX, RX, GND)
 
    - Pixhawk Standard Debug Connector
-    
+
     - 6 Pin JST SH
- 
+
 -  **Power Requirements**
 
    -  5V
@@ -72,7 +72,7 @@ Mounting & Wiring
 =================
 
 The recommended mounting orientation is with the connectors on the board pointing towards the back of vehicle.
-The ARK GPS is connected to the CAN bus using a Pixhawk standard 4 pin JST GH cable. 
+The ARK GPS is connected to the CAN bus using a Pixhawk standard 4 pin JST GH cable.
 
 More Information
 ================
@@ -80,5 +80,3 @@ More Information
 * `ARK RTK GPS L1 L5 <https://arkelectron.com/product/ark-rtk-gps-l1-l5/>`_
 
 * `ARK RTK GPS Documentation <https://arkelectron.gitbook.io/ark-documentation/sensors/ark-rtk-gps>`_
-
-

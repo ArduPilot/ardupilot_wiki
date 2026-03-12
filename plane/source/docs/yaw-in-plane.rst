@@ -14,7 +14,7 @@ However, in all other modes, ArduPilot can provide reasonable turn coordination 
 
 In addition, ArduPilot produced yaw control can also occur:
 
-#.  If :ref:`Ground Steering<tuning-ground-steering-for-a-plane>` is enabled, and no GroundSteering output(``SERVOx_FUNCTION`` =26) is being used to control a nose or tail wheel, then the steering controller will command the rudder deflection while taxiing instead of there being direct control from the rudder stick. 
+#.  If :ref:`Ground Steering<tuning-ground-steering-for-a-plane>` is enabled, and no GroundSteering output(``SERVOx_FUNCTION`` =26) is being used to control a nose or tail wheel, then the steering controller will command the rudder deflection while taxiing instead of there being direct control from the rudder stick.
 #.  If differential spoilers are used and the  :ref:`DSPOILR_RUD_RATE<DSPOILR_RUD_RATE>` parameter is non-zero. See :ref:`differential-spoilers`.
 #.  If the YAW Damper or Side-Slip Controllers are enabled and active. (See :ref:`Yaw Damper<yaw-controller-tuning>`). These controllers do not directly take pilot input, but rather help stabilize yaw and control side-slip in turns. The Yaw Damper can be used to provide yaw stability in fin-less flying wings using split spoilers/elevons.
 #.  In ACRO mode, if enabled, a yaw rate controller can be used to stabilize body frame yaw. See :ref:`acro-mode` page for details and tuning.

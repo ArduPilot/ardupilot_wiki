@@ -21,7 +21,7 @@ Here's what the failsafe **will not do**:
 - Detect if you're flying too far away or are about to hit the ground
 - Detect autopilot hardware failures, such as low-power brownouts or in-air reboots
 - Detect if the Plane software is not operating correctly
-- Detect other problems with the aircraft, such as motor failures 
+- Detect other problems with the aircraft, such as motor failures
 - Otherwise stop you from making setup or flight mistakes
 
 
@@ -332,7 +332,7 @@ Long failsafe action (:ref:`FS_LONG_ACTN<FS_LONG_ACTN>` )
 ---------------------------------------------------------
 
 =======
-The action to take on a long (:ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds) RC failsafe event. 
+The action to take on a long (:ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds) RC failsafe event.
 
 No Action is ever taken for Long FailSafe in these modes:
 
@@ -524,7 +524,7 @@ GCSs will often display text indicating the type of failsafe encountered, such a
    </tr>
    </tbody>
    </table>
-   
+
 .. raw:: html
 
    <table border="1" class="docutils">

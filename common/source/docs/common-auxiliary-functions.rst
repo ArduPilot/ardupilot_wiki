@@ -380,7 +380,7 @@ Other functions are:
                                          | In Copter, it adjusts the vehicle level position using the current roll
                                          | and pitch stick inputs. See details :ref:`here <auto-trim>`.
     Save Waypoint                        | Save the current location (including altitude) as a waypoint in the
-                                         | mission.If in AUTO mode no waypoint will be saved, instead the 
+                                         | mission.If in AUTO mode no waypoint will be saved, instead the
                                          | vehicle will RTL.
     Camera Trigger                       | The camera shutter will be activated.
                                          | See more details :ref:`here <common-camera-shutter-with-servo>`.
@@ -420,7 +420,7 @@ Other functions are:
                                          | For Mulit-copters, it is used as a motor stop function when <1200us.
                                          | (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__).
     Brake                                | Invokes the :ref:`Brake flight mode <brake-mode>` when the switch goes high.
-                                         | Bringing the switch back to low will return the vehicle to the mode 
+                                         | Bringing the switch back to low will return the vehicle to the mode
                                          | indicated by the flight mode switch.
     Relay2 On/Off                        | Switch pulled low turns off the second :ref:`relay <common-relay>`,
                                          | pulled high turns on the second relay.
@@ -476,7 +476,7 @@ Other functions are:
     Relay 6 On/Off                       | Switch pulled low turns off the third :ref:`relay <common-relay>`, pulled
                                          | high turns on the sixth relay.
     Sailboat Motor 3Pos Switch           | This 3-position switch controls the Sailboat motor. The motor is
-                                         | always used when high, never used 
+                                         | always used when high, never used
                                          | when low, and as needed, otherwise.
     Surface Tracking Up/Down             | This 3-position switch determines if surface tracking via
                                          | rangefinder is toward the ground (low) or ceiling (high),
@@ -569,8 +569,8 @@ Other functions are:
                                          | :ref:`FFT_ENABLE<FFT_ENABLE>` =1, takeoff with switch low,
                                          | hover 30 seconds with switch high,switch low, and land and
                                          | notch parameters will have been configured.
-    Mount Yaw Lock                       | In RC Targeting and MAVLink mount modes, if switched High, the 
-                                         | gimbal's heading is captured, and gimbal yaw locked to maintain that 
+    Mount Yaw Lock                       | In RC Targeting and MAVLink mount modes, if switched High, the
+                                         | gimbal's heading is captured, and gimbal yaw locked to maintain that
                                          | heading. If switched low, or switch does not exist, yaw operates in
                                          | body frame as the mount mode commands it.
     Pause Streaming Logging              | If high, will not log streaming type log messages (sensors,
@@ -590,7 +590,7 @@ Other functions are:
     Camera Zoom                           Controls camera zoom on some cameras/mounts.
     Camera Manual Focus                   Changes manual focus on some cameras/mounts.
     Camera AutoFocus                      Controls autofocus on some cameras/mounts.
-    Compass Calibration                  | Switching to high will behave the same as if the Start button 
+    Compass Calibration                  | Switching to high will behave the same as if the Start button
                                          | for :ref:`onboard calibration <onboard_calibration>` had
                                          | been pressed. Returning the switch to low will cancel the
                                          | calibration if still in progress.
@@ -619,7 +619,7 @@ Other functions are:
                                          | base.
     Mount POI Lock                       | High sets a POI location based on gimbal's boresight and switches
                                          | to GPS_Point target tracking mode. Switching to Middle, if the POI location
-                                         | has been captured, switches gimbal target mode back to mode before 
+                                         | has been captured, switches gimbal target mode back to mode before
                                          | it was switched high, or does nothing otherwise. Low clears the POI
                                          | and switches to the default gimbal mode.
     AHRS AutoTrim                         Auto Trim for Copter, see :ref:`autotrim`
@@ -627,12 +627,12 @@ Other functions are:
     PITCH Input                           PITCH input channel. (replaces RCMAP)
     THROTTLE Input                        THROTTLE input channel. (replaces RCMAP)
     YAW Input                             YAW input channel. (replaces RCMAP)
-    Mainsail                             | This RC channel will drive the output of the MainSail 
-                                         | output ( ``SERVOx_FUNCTION`` = 89)instead of being set from 
+    Mainsail                             | This RC channel will drive the output of the MainSail
+                                         | output ( ``SERVOx_FUNCTION`` = 89)instead of being set from
                                          | the Throttle Input channel (useful if it has an auxiliary motor
-                                         | using that input). See Sailboat :ref:`sailboat-configure` for 
+                                         | using that input). See Sailboat :ref:`sailboat-configure` for
                                          | more information about the main sail setup.
-    Flaps                                | This RC channel provides manual control the amount of FLAP 
+    Flaps                                | This RC channel provides manual control the amount of FLAP
                                          | deflection and can also be used in conjunction with
                                          |  :ref:`automatic-flaps` and/or :ref:`flaperons<flaperons-on-plane>`.
                                          | (Replaces the old FLAP_IN_CHANNEL parameter)

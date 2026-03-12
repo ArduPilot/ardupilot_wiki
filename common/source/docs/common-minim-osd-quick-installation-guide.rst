@@ -36,7 +36,7 @@ like servo's brand, model, cables length, etc. So, try yourself and see
 if it's important for your setup.
 
 Here is the basic diagram which uses two stages approach of MinimOSD
-board: 
+board:
 
 .. image:: ../../../images/DiagramaMinimOSD.jpg
     :target: ../_images/DiagramaMinimOSD.jpg
@@ -81,7 +81,7 @@ MWOSD is a very popular OSD which has been around for many years initially suppo
 
 MWOSD has an easy to use GUI configurator which has the added advantage of being able to flash firmware versions directly from within the GUI. Arduino or third party software is no longer required.
 
-MWOSD continues to be actively developed and supported. 
+MWOSD continues to be actively developed and supported.
 
 
 * Modern GUI configurator with ability to flash hardware directly from within GUI
@@ -100,7 +100,7 @@ MWOSD continues to be actively developed and supported.
 * Multiple pre-set layouts to choose from. All can be customised
 * Choose to display pilot icon or callsigns
 
-The following links contain a quick start overview and an ardupilot specific installation guide 
+The following links contain a quick start overview and an ardupilot specific installation guide
 
 - https://github.com/ShikOfTheRa/scarab-osd/wiki/Quick-start-guide
 - https://github.com/ShikOfTheRa/scarab-osd/wiki/MAVLINK-installation
@@ -112,8 +112,8 @@ MinimOSD-extra NG
 * The support thread is located `here <https://www.rcgroups.com/forums/showthread.php?2591835-New-MinimOSD-fork>`__.
 
 
-After some time with a stalled development of the firmware for the MinimOSD boards due to 
-reaching the limit of the code size, a new developer (https://github.com/night-ghost) picked 
+After some time with a stalled development of the firmware for the MinimOSD boards due to
+reaching the limit of the code size, a new developer (https://github.com/night-ghost) picked
 up the project and through some clever development effort managed to bring it back to life.
 
 
@@ -142,20 +142,20 @@ If you are willing to compile your version from the GitHub repo, the following m
 To compile on Windows:
 
 #. Download the latest Arduino Version (currently 1.6.8)
-#. Download the version of MinimOSD-Extra-DV you like, via git or zip (Github lets you click on a 
+#. Download the version of MinimOSD-Extra-DV you like, via git or zip (Github lets you click on a
    commit and view its files, so downloading that zip gives you the version you want)
-#. If using git clone, also do a git submodule init and git submodule update. 
-   If downloading the zip from Github, you also need SingleSerial because 
+#. If using git clone, also do a git submodule init and git submodule update.
+   If downloading the zip from Github, you also need SingleSerial because
    Github does not include submodules into the download zip, so you will need to: https://github.com/night-ghost/SingleSerial
-#. Copy all the libraries from MinimOSD to the Arduino libraries folder 
+#. Copy all the libraries from MinimOSD to the Arduino libraries folder
    (+ SingleSerial if you downloaded the zip for it)
 #. If not using UAVTalk or MultiWii disable them in **Config.h**:
-   
+
    .. code-block:: cpp
-   
+
        //#define USE_UAVTALK 1
        //#define USE_MWII 1
-       
+
 #. Sketch -> Export Compiled Binary (it will save the hex file in the MinimOSD folder of the source, one file with the bootloader and one without)
 
 The developer also provides a convenient ready to use package that includes all the required files in their latest version here:
@@ -171,7 +171,7 @@ Recently, new style of boards have appeared for sale on ebay and vendor sites:
 * Micro MinimOSD w/ KV Team mod
 * AEROMAX
 
-The minimOSD w/ KV team mod is adds extra analogue/digital IO pins for direct voltage, current and RSSI measurement. 
+The minimOSD w/ KV team mod is adds extra analogue/digital IO pins for direct voltage, current and RSSI measurement.
 
 The Micro MinimOSD board is only 15mm x 15mm and is ideal for micro UAV projects.
 
@@ -179,9 +179,3 @@ The AEROMAX is slightly smaller than traditional minimOSD, has the additional KV
 
 .. image:: ../../../images/MinimOSD_Micro.jpg
     :target: ../_images/MinimOSD_Micro.jpg
-    
-
-
-
-
-

@@ -5,7 +5,7 @@ Wind Vane
 ==============
 
 A wind vane is used to sense both the speed and direction of the apparent wind; this can
-then be used to calculate the true wind speed and direction. Wind vanes are only supported for Rover sailing vehicles. 
+then be used to calculate the true wind speed and direction. Wind vanes are only supported for Rover sailing vehicles.
 All wind vane parameters can be found by searching for the prefix :ref:`WNDVN <WNDVN_TYPE>`.
 
 .. image:: ../../../images/wind-vane-NMEA.jpg
@@ -16,12 +16,12 @@ All wind vane parameters can be found by searching for the prefix :ref:`WNDVN <W
 
 Some wind sensors can be used to sense both the wind speed and direction. In this case both :ref:`WNDVN_TYPE <WNDVN_TYPE>` and
 :ref:`WNDVN_SPEED_TYPE <WNDVN_SPEED_TYPE>` should be set to the same value. If a sensor reports both speed and direction it is still
-possible to use only the speed or direction by setting the :ref:`WNDVN_TYPE <WNDVN_TYPE>` or :ref:`WNDVN_SPEED_TYPE <WNDVN_SPEED_TYPE>` 
+possible to use only the speed or direction by setting the :ref:`WNDVN_TYPE <WNDVN_TYPE>` or :ref:`WNDVN_SPEED_TYPE <WNDVN_SPEED_TYPE>`
 to a alternative sensor. Note that any change to the _TYPE parameters will require a re-boot to take effect
 
 .. toctree::
     :maxdepth: 1
-    
+
     NMEA 0183 <wind-vane-NMEA>
 
 
@@ -29,7 +29,7 @@ Wind Direction
 ----------------------
 Wind direction can be directly sensed through the use of an analogue voltage input. However it is also possible to use a fixed wind direction,
 this is not recommended for long term use, but will allow testing of sailboats without the need for specialist sensors. The wind vane type can be
-selected with :ref:`WNDVN_TYPE <WNDVN_TYPE>`. The wind direction is filtered using a low pass filter, the frequency of this filter can be set 
+selected with :ref:`WNDVN_TYPE <WNDVN_TYPE>`. The wind direction is filtered using a low pass filter, the frequency of this filter can be set
 using :ref:`WNDVN_DIR_FILT <WNDVN_DIR_FILT>`. If the wind direction is oscillating this frequency can be reduced. This will reduce the effect
 of fast oscillating wind shifts but will also reduce the response time to a change in wind direction.
 
@@ -39,7 +39,7 @@ the vehicle will have no new information about wind direction.
 
 .. toctree::
     :maxdepth: 1
-    
+
     Analogue Wind Vane <wind-vane-analogue>
     Home Heading <wind-vane-home-heading>
 
@@ -59,4 +59,3 @@ speed is filtered using a low pass filter, the frequency of this filter can be s
     RPM <wind-vane-rpm>
     Modern Devices rev-p <wind-vane-MD-rev-p>
     Connecting Bluetooth Windvane to ArduPilot <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_WindVane/Tools/Bluetooth%20NMEA%20receiver/Bluetooth%20NMEA%20receiver.md>
-

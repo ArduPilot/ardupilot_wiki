@@ -948,7 +948,7 @@ CAMERA_INFORMATION, CAMERA_SETTINGS, CAMERA_FOV_STATUS include information usefu
 
 These three messages include information that can be useful for the ground station.
 
-- `CAMERA_INFORMATION <https://mavlink.io/en/messages/common.html#CAMERA_INFORMATION>`__ includes vendor and model name, firmware version, sensor size, sensor resolution and camera capabilities.  
+- `CAMERA_INFORMATION <https://mavlink.io/en/messages/common.html#CAMERA_INFORMATION>`__ includes vendor and model name, firmware version, sensor size, sensor resolution and camera capabilities.
 - `CAMERA_SETTINGS <https://mavlink.io/en/messages/common.html#CAMERA_SETTINGS>`__ is much simpler and only includes the mode, zoom level and focus level.
 - `CAMERA_FOV_STATUS <https://mavlink.io/en/messages/common.html#CAMERA_FOV_STATUS>`__ includes the location (lat, lon, alt) of the camera (or more accurately the vehicle), the location of what the camera gimbal is pointing at and the camera attitude (expressed as a quaternion).
 

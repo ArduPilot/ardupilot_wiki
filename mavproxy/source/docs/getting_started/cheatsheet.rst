@@ -8,7 +8,7 @@ The following table is intended as a printable quick reference to
 commonly used MAVProxy commands.
 
 =======================  ===================================================================
-Command                  Description                                           
+Command                  Description
 =======================  ===================================================================
 rc N PWM                 set RC channel N override to PWM (PMW =0 disables override)
 link list                List all links
@@ -38,6 +38,3 @@ servo set N PWM          Override servo N to PWM value
 terrain check LAT LON    Get terrain height at specified location
 formatsdcard             Formats SD card
 =======================  ===================================================================
-
-
-

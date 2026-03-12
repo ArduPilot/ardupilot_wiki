@@ -13,7 +13,7 @@ SRXL is a serial protocol which transfers control data of a R/C receiver to an a
 .. note::
 
    The following SRXL variants are supported by ArduPilot
-   
+
      #. `MULTIPLEX SRXL version 1 "12-channel" <https://www.multiplex-rc.de/Downloads/Multiplex/Schnittstellenbeschreibungen/srxl-multiplex-v2.pdf>`__
      #. `MULTIPLEX SRXL version 2 "16-channel" <https://www.multiplex-rc.de/Downloads/Multiplex/Schnittstellenbeschreibungen/srxl-multiplex-v2.pdf>`__
      #. JR propo X.BUS Mode B
@@ -54,11 +54,11 @@ The number of active channels on the SRXL signal are depending on the type of re
 
 How to configure a MULTIPLEX receiver for SRXL signal output
 ------------------------------------------------------------
-To configure the receiver to send out SRXL signal you need a USB to UART Adapter. 
+To configure the receiver to send out SRXL signal you need a USB to UART Adapter.
 
 .. image:: ../../../images/Multiplex_USB_UART_Adapter.jpg
     :target: ../_images/Multiplex_USB_UART_Adapter.jpg
-    
+
 For this purpose MULTIPLEX offers the plug-and-play `PC-cable # 85149 <https://www.multiplex-rc.de/produkte/85149-usb-pc-kabel-rx-s-telemetrie-uni>`__ which contains a SILABS CP2102 Single-chip USB to UART Bridge.
 
 To do the configuration follow the following steps:
@@ -83,7 +83,7 @@ To do the configuration follow the following steps:
 
 - Upload data to the receiver by clicking “Send data” in the “RX Options”-Window.
 
-.. note:: 
+.. note::
       There will be no active feedback of the receiver to show you that data are stored successfully. But no worries – they will be stored reliably.
 
 - To complete the SRXL activation on B/D port click “Close” in the “RX Options”-Window and “Close” in the “RX/RF DataManager”-Window.
@@ -91,6 +91,6 @@ To do the configuration follow the following steps:
 - Receiver is now configured for SRXL output.
 - Connect receivers to the autopilot as described :ref:`here <common-rc-systems>`.
 - Test and adjust servo channel assignments in Mission planner if required. MULTIPLEX radios without free servo assignment (e.g. Cockpit SX) have the following standard servo assignment:
-   
+
 .. image:: ../../../images/Multiplex_SRXL_Receivers_Standard_Servo_Assignment.png
     :target: ../_images/Multiplex_SRXL_Receivers_Standard_Servo_Assignment.png

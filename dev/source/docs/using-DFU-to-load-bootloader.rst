@@ -20,7 +20,7 @@ utilities.
 Accessing DFU Mode
 ==================
 
-On many autopilots there is a separate "boot" button provided which will place the 
+On many autopilots there is a separate "boot" button provided which will place the
 autopilot into DFU mode if powered while it is pressed.
 
 On many higher end autopilots no readily accessible button is provided and the
@@ -60,13 +60,13 @@ Listing DFU Devices
 Run the following:
 
 .. code-block:: bash
-                
+
   dfu-util --list
 
 You should get a result like this:
 
 .. code-block:: bash
-                
+
   dfu-util --list
   dfu-util 0.8
 
@@ -79,7 +79,7 @@ You should get a result like this:
   Found DFU: [0483:df11] ver=2200, devnum=49, cfg=1, intf=0, alt=2, name="@OTP Memory /0x1FFF7800/01*512 e,01*016 e/0x1FFE7800/01*512 e,01*016 e", serial="315A35663432"
   Found DFU: [0483:df11] ver=2200, devnum=49, cfg=1, intf=0, alt=1, name="@Option Bytes  /0x1FFFC000/01*016 e/0x1FFEC000/01*016 e", serial="315A35663432"
   Found DFU: [0483:df11] ver=2200, devnum=49, cfg=1, intf=0, alt=0, name="@Internal Flash /0x08000000/04*016Kg,01*064Kg,07*128Kg,04*016Kg,01*064Kg,07*128Kg", serial="315A35663432"
-  
+
 If you don't get that then do some googling on how to debug USB connection issues with DFU.
 
 Loading a bootloader
@@ -92,9 +92,9 @@ The current bootloaders suitable for ArduPilot on STM32 are here:
 download the px4fmuv2_bl.bin and run this:
 
 .. code-block:: bash
-                
+
   dfu-util -a 0 --dfuse-address 0x08000000 -D px4fmuv2_bl.bin
-  
+
 it should say "Downloading" and show a progress bar. On completion the board is ready to test the bootloader.
 
 After you have the bootloader loaded power cycle with the boot0 pin

@@ -75,7 +75,7 @@ Help is available:
         --gdbserver         run ArduPilot binaries under gdbserver
         -B BREAKPOINT, --breakpoint=BREAKPOINT
                             add a breakpoint at given location in debugger
-    pbarker@bluebottle:~/rc/ardupilot(master)$ 
+    pbarker@bluebottle:~/rc/ardupilot(master)$
 
 ``autotest.py`` is invoked with a sequence of "steps" which will be executed in order:
 
@@ -92,7 +92,7 @@ This command is valid in the root directory of an ArduPilot checkout.  It instru
 
 .. note::
    Older versions of ``autotest.py`` used these steps:
-   
+
     ::
 
       build.ArduPlane build.ArduCopter build.APMrover2 build.ArduSub build.AntennaTracker fly.ArduCopter fly.ArduPlane fly.QuadPlane dive.ArduSub drive.APMrover2 drive.BalanceBot drive.balancebot fly.CopterAVC
@@ -120,7 +120,7 @@ At the time of writing, these invoke all the vehicle tests.  Expect these to tak
 Running a specific sub-test
 ...........................
 
-To run a specific sub-test just add the test name with a '.' between the test and sub-test names. 
+To run a specific sub-test just add the test name with a '.' between the test and sub-test names.
 
 ::
 
@@ -234,7 +234,7 @@ Tools/autotest/ardusub.py
 Tools/autotest/arduplane.py
     contains tests for ArduPlane
 Tools/autotest/balancebot.py
-    contains tests for Balance Bots/Self Balancing Robots 
+    contains tests for Balance Bots/Self Balancing Robots
 Tools/autotest/quadplane.py
     contains tests for ArduPlane's QuadPlane code
 Tools/autotest/pysim/util.py

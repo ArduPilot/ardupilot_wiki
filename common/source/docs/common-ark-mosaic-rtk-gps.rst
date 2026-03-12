@@ -27,7 +27,7 @@ Specifications
    - `Bosch BMP390 Barometer <https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/pressure-sensors-bmp390.html>`__
 
    - `Invensense ICM-42688-P 6-Axis IMU <https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/>`__
-   
+
 -  Microcontroller
 
    -  STM32F412VGH6 MCU
@@ -35,7 +35,7 @@ Specifications
 - Connections
 
    - Two Pixhawk Standard CAN Connectors
-   
+
     - 4 Pin JST-GH
     - 5V Input
 
@@ -62,11 +62,11 @@ Specifications
    - Mosaic “UART 2” Connector
 
     - 5 Pin JST-GH (TX, RX, TIMEPULSE, GP1, GND)
- 
+
 -  **Power Requirements**
 
    -  5V
-   
+
     - 260mA Average
     - 340mA Peak
 
@@ -94,5 +94,3 @@ More Information
 * `ARK MOSAIC-X5 RTK GPS <https://arkelectron.com/product/ark-mosaic-x5-gps/>`_
 
 * `ARK MOSAIC-X5 RTK GPS Documentation <https://arkelectron.gitbook.io/ark-documentation/sensors/ark-mosaic-x5-rtk-gps>`_
-
-

@@ -15,9 +15,9 @@ Key to axis: R = Roll, P = Pitch, Y = Yaw, Z= Depth, F = Forward, L = Lateral
 1                                  6     Vectored          R/Y/Z/F/L
 2                                  8     Vectored_6DOF     R/P/Y/Z/F/L
 3                                  8     Vectored_6DOF-90  R/P/Y/Z/F/L
-4                                  3     SimpleROV-3       Y/Z/F 
-5                                  4     SimpleROV-4       R/Y/Z/F 
-6                                  5     SimpleROV-5       R/Y/Z/F/L 
+4                                  3     SimpleROV-3       Y/Z/F
+5                                  4     SimpleROV-4       R/Y/Z/F
+6                                  5     SimpleROV-5       R/Y/Z/F/L
 =============================   =======  ================  ==================
 
 .. note:: configurations lacking one or more controllable axes rely on proper CG and ballast to maintain earth-frame stability in that axis.

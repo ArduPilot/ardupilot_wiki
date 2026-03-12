@@ -40,7 +40,7 @@ If it is maximum it will try to fly at :ref:`AIRSPEED_MAX<AIRSPEED_MAX>`.
 
 If you don't have an airspeed sensor then the throttle input will set the
 target throttle of the plane, which is :ref:`TRIM_THROTTLE<TRIM_THROTTLE>`, at throttle midstick and lower positions, and Plane will adjust the throttle around
-that value to achieve the desired altitude hold while trying to maintain the pitch generally at its calibrated LEVEL setting, although the autopilot will primarily use pitch for climbing and descending, and manage throttle to maintain airspeed. 
+that value to achieve the desired altitude hold while trying to maintain the pitch generally at its calibrated LEVEL setting, although the autopilot will primarily use pitch for climbing and descending, and manage throttle to maintain airspeed.
 
 Increasing the throttle stick above mid-stick
 can be used to push the target throttle up beyond what it calculates is

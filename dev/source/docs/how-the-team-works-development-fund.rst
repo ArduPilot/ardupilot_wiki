@@ -42,7 +42,7 @@ The ArduPilot funding committee is made up of three elected members from the tea
 This committee reviews the `Proposal category <https://discuss.ardupilot.org/c/proposals>`__ regularly and evaluates proposals based on both the benefit to ArduPilot and likelihood of success.
 The approve/reject decision is made by a simple majority vote (i.e. 2 of 3 must approve).
 
-The committee has authority to decide on its own for funding requests up to $2000.  Above this, if the funding committee approves of the request, a member of the funding committee should raise a vote for the wider dev team to decide on the proposal. 
+The committee has authority to decide on its own for funding requests up to $2000.  Above this, if the funding committee approves of the request, a member of the funding committee should raise a vote for the wider dev team to decide on the proposal.
 
 Additional guidance:
 

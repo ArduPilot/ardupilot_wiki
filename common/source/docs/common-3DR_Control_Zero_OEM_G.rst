@@ -40,9 +40,9 @@ Specifications
 
 -  **Size and Dimensions**
 
-    - 34mm x 20mm 
+    - 34mm x 20mm
     - 3.66g
-  
+
 Where to Buy
 ============
 
@@ -141,4 +141,3 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 "3DRControlZeroG".
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-

@@ -46,10 +46,10 @@ GitHub Desktop
 --------------
 
 - Go to the `desktop.github.com <https://desktop.github.com/>`__ and push the "Download for Windows" or "Download for macOS" buttons in the middle of the page
-      
+
       .. image:: ../images/CloningTheRepository_Windows_DownloadGithub.png
           :target: ../_images/CloningTheRepository_Windows_DownloadGithub.png
-      
+
 - Save the **GitHubSetup.exe** somewhere on your machine and then run it and follow the instructions to install GitHub client
 - On GitHub client click the right arrow button to view a list of recent commits or right-mouse-button click on the ardupilot/ardupilot repository and "open in explorer".
 

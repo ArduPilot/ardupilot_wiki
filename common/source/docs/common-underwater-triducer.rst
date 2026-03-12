@@ -14,7 +14,7 @@ Mounting the triducer
 The following example provides schematics to install a triducer on a Pixhawk and uses these parts:
 
 - A triducer. In this example, it is an `Airmar DST800 triducer <http://www.airmar.com/uploads/brochures/dst800.pdf>`__ ;
-- An RS-485 TTL converter. In this example, it is `MAX485 chipset based. <https://www.amazon.ca/MAX485CSA-Converter-Integrated-Circuits-Products/dp/B06W9H64TN/ref=sr_1_fkmrnull_1?keywords=rs485+to+ttl+lc&qid=1552083892&s=gateway&sr=8-1-fkmrnull>`__ 
+- An RS-485 TTL converter. In this example, it is `MAX485 chipset based. <https://www.amazon.ca/MAX485CSA-Converter-Integrated-Circuits-Products/dp/B06W9H64TN/ref=sr_1_fkmrnull_1?keywords=rs485+to+ttl+lc&qid=1552083892&s=gateway&sr=8-1-fkmrnull>`__
 
 Parameters for this particular hawdware:
 

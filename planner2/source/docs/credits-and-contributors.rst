@@ -50,4 +50,3 @@ with contributions from:
 
 .. image:: ../images/apm_planner_logo.png
     :target: ../_images/apm_planner_logo.png
-

@@ -12,4 +12,3 @@ The Trimble BD930 RTK GPS is a relatively expensive but also highly accurate RTK
 
 .. image:: ../../../images/gps-trimble.jpg
 	:target: ../_images/gps-trimble.jpg
-

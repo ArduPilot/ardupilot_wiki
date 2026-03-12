@@ -10,15 +10,15 @@ inexpensive, short range (up to 7m) range finder primarily designed for
 indoor use but which has been successfully used outdoors on Copter.
 
 The EZ4 (recommended) has the narrowest beam providing the best noise
-resistance while the EZ0 has the widest beam and highest sensitivity. 
-`The datasheet can be found here <https://www.maxbotix.com/documents/I2CXL-MaxSonar-EZ_Datasheet.pdf>`__. 
+resistance while the EZ0 has the widest beam and highest sensitivity.
+`The datasheet can be found here <https://www.maxbotix.com/documents/I2CXL-MaxSonar-EZ_Datasheet.pdf>`__.
 Additional information on the similar :ref:`analog version of this sonar can be found here <copter:sonar>`.
 
 
 .. warning::
 
    ``RNGFNDx_MAX`` must be set to a tested, appropriate value.  If ``RNGFNDx_MAX`` is set to a value
-   greater than the range of the sensor, the autopilot will not respond correctly to the 
+   greater than the range of the sensor, the autopilot will not respond correctly to the
    data provided.
 
 Connecting to the Pixhawk

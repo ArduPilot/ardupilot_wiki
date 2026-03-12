@@ -18,7 +18,7 @@ Current Limiting
 ================
 
 This protection automatically drops the throttle to as low as 60% of
-full throttle in order to limit the current requested from the battery. 
+full throttle in order to limit the current requested from the battery.
 This can be useful to protect the battery from damage.
 
 To enable the feature, set the :ref:`MOT_BAT_CURR_MAX<MOT_BAT_CURR_MAX>` parameter to the desired

@@ -5,7 +5,7 @@ Set Message Rate
 .. code:: bash
 
     module messagerate
-    
+
 The messagerate module allows the user to specify the rate of individual
 MAVlink messages sent from the flight controller. This will override any
 requested stream rates

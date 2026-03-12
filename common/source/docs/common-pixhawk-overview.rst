@@ -51,8 +51,8 @@ Specifications
    -  Width 50 mm (2.0”)
    -  Height 15.5 mm (.6”)
    -  Length 81.5 mm (3.2”)
-   
-   
+
+
 Purchase
 ========
 
@@ -66,7 +66,7 @@ Pixhawk connector assignments
 =============================
 
 .. warning::
-   
+
    Many Pixhawk clones use Molex picoblade connectors instead of DF13 connectors.
    They have rectangular pins, rather than square ones, and cannot be assumed compatible.
 
@@ -623,7 +623,7 @@ Connecting and disconnecting DF13 connectors
 
 ..  youtube:: Kfu8M8t2fWY
     :width: 100%
-	    
+
 .. _common-pixhawk-overview_pixhawk_analog_input_pins:
 
 Pixhawk analog input pins
@@ -760,7 +760,7 @@ explains both simple and advanced power-supply options for the Pixhawk.
 See also
 ========
 
-`Schematics <https://github.com/ArduPilot/Schematics/tree/master/3DR>`__ 
+`Schematics <https://github.com/ArduPilot/Schematics/tree/master/3DR>`__
 
 .. toctree::
     :maxdepth: 1

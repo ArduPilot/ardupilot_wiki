@@ -30,7 +30,7 @@ Depending on the ESC, BLHeli/BLHeli_S/BLHeli32/AM32 provides the following featu
 Pass-Through Support
 --------------------
 
-.. note:: 
+.. note::
    This feature is only available on NON IOMCU outputs. Autopilots which have an IOMCU co-processsor (usually marked as having "MAIN" outputs from the IOMCU and "AUX" outputs from the main cpu) will not pass-through on those outputs.
    Use this feature on "AUX" or "FMU" outputs with DShot capability. For Plane, Rover and Sub, be mindful that using AUX outputs for vehicle-critical controls removes the benefits of an IOMCU. For Copter, IOMCU redundancy is not effective since it has no "MANUAL" control mode.
    For maximum robustness (on Plane which has a manual mode which can be used if the FMU fails), switch your motors to "AUX" or "FMU" only when configuring with passthrough, and move them back to "MAIN" once configuration is complete.
@@ -59,4 +59,3 @@ The Pass-Through feature allows BLHeli32, AM32, and BLHeli_S ESCs to be upgraded
 
 ..  youtube:: np7xXY_e5sA
     :width: 100%
-

@@ -74,7 +74,7 @@ To build the bootloader you do the following:
 
 .. code::
 
-    Tools/scripts/build_bootloaders.py YourBoard 
+    Tools/scripts/build_bootloaders.py YourBoard
 
 - the bootloader will be created in the local ``Tools/bootloaders`` directory in your local working branch.
 
@@ -178,6 +178,6 @@ Here is `how it was done for the skyviper <https://github.com/ArduPilot/ardupilo
 
 .. toctree::
     :hidden:
-    
+
     readme_file
     common-install-sdcard

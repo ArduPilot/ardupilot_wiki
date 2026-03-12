@@ -154,7 +154,7 @@ RC Input
 ========
 RC can be connected to the PPM input. All unidirectional RC protocols are supported.
 
-For DSM/SBUS receivers, connect them to the DSM/SBUS interface which provides dedicated 3.3V and 5V power pins respectively, and check above "Pinout" for detailed pin definition. 
+For DSM/SBUS receivers, connect them to the DSM/SBUS interface which provides dedicated 3.3V and 5V power pins respectively, and check above "Pinout" for detailed pin definition.
 
 For bi-directional protocols a UART whose ``SERIALx_PROTOCOL`` is set to "23" is required to be used and connection to the UART's TX pin, refer to the :ref:`ArduPilot Radio Control System documentation <common-rc-systems>` for details.
 

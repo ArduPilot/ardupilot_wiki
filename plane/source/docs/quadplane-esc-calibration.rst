@@ -69,5 +69,3 @@ can use a laser tachometer to test your motor speeds at different
 throttle levels if you have one.
 
 .. warning:: Be sure to set :ref:`Q_ESC_CAL<Q_ESC_CAL>` back to zero after calibrating for normal operation
-
-

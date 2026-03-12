@@ -19,7 +19,7 @@ This article shows how to build ArduPilot for APM2.x on Windows with *Make*.
    build APM2.x off the master branch (you will need to build off a
    supported release branch, or for the keen developer, from the AVR-master branch master-AVR and the tags from there.  see: https://github.com/ArduPilot/ardupilot/tree/master-AVR ).
 
-   The last Copter firmware that can be built on APM 2.x 
+   The last Copter firmware that can be built on APM 2.x
    `can be downloaded from here <https://github.com/ArduPilot/ardupilot/archive/master-AVR.zip>`__.
 
 Overview

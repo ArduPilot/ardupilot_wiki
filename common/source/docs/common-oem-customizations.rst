@@ -64,7 +64,7 @@ Alternatively, you can specify the LUA applet or driver at compile by using the 
 
     ::
 
-       ./waf plane --embed-LTE_modem 
+       ./waf plane --embed-LTE_modem
 
     .. warning:: The user may also run Lua scripts off the SD card, so care should be taken in naming the embedded script file names to not conflict with potential user file names. It is recommended that the file names of embedded Lua scripts be provided in the product documentation for the user.
 

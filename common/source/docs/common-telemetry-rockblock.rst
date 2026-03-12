@@ -203,4 +203,3 @@ Name                      Description
  RCK_ENABLE               Enables the modem transmission
  RCK_TIMEOUT              When RCK_FORCEHL=2, the number of seconds of no telemetry until High Latency mode is enabled
 ========================  ============================================================================================
-

@@ -12,15 +12,15 @@ Herelink is an integrated remote controller, ground station and wireless digital
 Features
 --------
 * Android based smart device with 5.46 inch 1080P capacitive touch screen.
-* Integrated digital transmission system simultaneously transmitting video, telemetry and control. 
+* Integrated digital transmission system simultaneously transmitting video, telemetry and control.
 * Custom Solex TX and QGC ground station software with MAVLink support for ArduPilot and PX4.
-* Dual hall effect self centering gimbals with removable sticks. 
-* 1080P HD video with dual digital video inputs. 
+* Dual hall effect self centering gimbals with removable sticks.
+* 1080P HD video with dual digital video inputs.
 * Dual S.bus signal output for simultaneous control of autopilot and pan/tilt cameras.
-* 6 customizable MAVLink buttons and Mavlink/Sbus hardware wheel. 
-* RC gimbal control on dedicated service independent from Solex TX / QGC. 
-* Tether and share video and telemetry via wifi ground station such as Mission Planner. 
-* Onboard Arm Cortex A53 & Cortex A53 SOC in both air and ground units for custom applications. 
+* 6 customizable MAVLink buttons and Mavlink/Sbus hardware wheel.
+* RC gimbal control on dedicated service independent from Solex TX / QGC.
+* Tether and share video and telemetry via wifi ground station such as Mission Planner.
+* Onboard Arm Cortex A53 & Cortex A53 SOC in both air and ground units for custom applications.
 
 
 `Herelink System Overview <https://docs.cubepilot.org/user-guides/herelink/herelink-overview>`__
@@ -89,7 +89,7 @@ As of June 2024 the Herelink comes pre-installed with QGC-4.0.8.  If you wish to
 `CubePilot instructions for installing a custom app <https://docs.cubepilot.org/user-guides/herelink/herelink-user-guides/installing-a-custom-app>`__ may also be useful
 
 
-More Info on Herelink can be found on 
+More Info on Herelink can be found on
 
 -   `CubePilot Herelink Product Page <https://www.cubepilot.org/#/herelink/features>`_
 -   `CubePilot Herelink Documentation <https://docs.cubepilot.org/user-guides/herelink/herelink-overview>`_

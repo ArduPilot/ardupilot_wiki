@@ -164,7 +164,7 @@ Git Integration with Windows Credential Manager (Optional)
 ----------------------------------------------------------
 
 Git's Credential Manager can be connected to Window's Credential Manager tokens. This connection prevents re-authentication requests when accessing remote repositories such as GitHub after closing WSL or restarting Windows. The first time a Git operation requires credentials a dialog box will appear automatically to enter your credentials.
-See this `guide <https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup>`_ for more information regarding GIT and WSL. 
+See this `guide <https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup>`_ for more information regarding GIT and WSL.
 
 .. code-block:: bash
 

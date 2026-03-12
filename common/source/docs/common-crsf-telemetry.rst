@@ -38,7 +38,7 @@ Selecting the Crossfire Configuration LUA script in the transmitter will show:
 
 .. image:: ../../../images/crsf-config-screen.png
 
-And selecting the ArduPilot vehicle shown in that list will activate the :ref:`common-paramosd` with a list of all parameters which have been setup for both OSD screens. 
+And selecting the ArduPilot vehicle shown in that list will activate the :ref:`common-paramosd` with a list of all parameters which have been setup for both OSD screens.
 
 .. image:: ../../../images/crsf-param-editor.png
 

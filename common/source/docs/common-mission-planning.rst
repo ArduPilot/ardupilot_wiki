@@ -49,5 +49,3 @@ This section contains articles about creating missions that will run when the ve
 
 
 [copywiki destination="copter,plane,rover,sub,planner"]
-
-

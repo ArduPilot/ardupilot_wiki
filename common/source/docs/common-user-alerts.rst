@@ -22,7 +22,7 @@ Database <https://firmware.ardupilot.org/useralerts/alerts.html>`_.
 
    All User Alerts reported from 16/09/2020 (or later) are in the User Alert database. There is no guarantee
    that the database holds all User Alerts reported before this date.
-   
+
 The following alerts are applicable:
 
 .. list-table::
@@ -45,4 +45,3 @@ The following alerts are applicable:
      - loading...
      - loading...
      - loading...
-

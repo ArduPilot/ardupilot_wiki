@@ -131,7 +131,7 @@ For example, to start Copter in *Ballarat* (a named location in
 
 ::
 
-    cd ArduCopter 
+    cd ArduCopter
     sim_vehicle.py -L Ballarat --console --map
 
 .. note::
@@ -191,7 +191,7 @@ Any of the 8 UARTs can be configured in this way, using serial0 to serial7.
 
 Typically serial devices can be connected to a computer's USB port through
 an FTDI adapter, but note that these generally do not support half-duplex.
-In order to communicate with devices in this way you should make sure your 
+In order to communicate with devices in this way you should make sure your
 user has appropriate access on linux-type systems to the dialout group. On
 WSL it is also usually necessary to setup the port once the device has been connected
 before trying to interact with it through SITL. For instance for COM22:
@@ -234,7 +234,7 @@ To avoid that, they must be spawned in unique locations.
 There are two primary approaches, using either a swarm offset line or a swarm configuration file.
 Both require a location to be set with ``--location``.
 
-When using a swarm offset line, the option ``--auto-offset-line 90,10`` will space the 
+When using a swarm offset line, the option ``--auto-offset-line 90,10`` will space the
 vehicles out at a line with heading of 90 degrees orientation. The vehicles will be spaced 10
 meters apart. Thus, they will be spread out east-west.
 
@@ -389,7 +389,7 @@ The GCS would then connect to SITL by listening on that UDP port.
 
    In this case we can connect a GCS running on the same machine to UDP
    port 14550 or 14551. We can choose to connect another GCS to the
-   remaining port, and add more ports if needed. 
+   remaining port, and add more ports if needed.
 
 Using Mission Planner Forwarding
 --------------------------------

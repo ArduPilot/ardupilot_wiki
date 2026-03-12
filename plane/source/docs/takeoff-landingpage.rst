@@ -22,7 +22,7 @@ Many planes do not have landing gear, or a smooth runway is not available. Hand 
 
 The keys to a successful hand launch are :
 
-- :ref:`Proper CG <guide-center-of-gravity>` 
+- :ref:`Proper CG <guide-center-of-gravity>`
 - Having flying surfaces centered and neutral at neutral RC stick positions
 - Having the "level" calibration setup such that the level horizon (0 deg pitch) in FBWA mode results in the wing chord line being a few degrees positive, which will result in a positive angle of attack in "level" flight, the normally cruising attitude for a plane.
 - Using FBWA mode or :ref:`automatic-takeoff`. While launching in MANUAL can be done, using a stabilized mode will eliminate a lot of pilot effort to overcome trim issues (see Tip at end of this page). If using FBWA mode, a few degrees of up elevator (~10%) during the launch will result in an automatic climb. Add this via a switch or stick pressure. Do not change TX trim positions used during RC calibration since it affects all other modes of flight.
@@ -50,8 +50,8 @@ A tutorial on building and using a bungee launcher is `here <https://www.rcgroup
 VTOL
 ====
 
-Perhaps the easiest of all takeoffs, it does require that the plane be a VTOL capable :ref:`QuadPlane <quadplane-support>` 
+Perhaps the easiest of all takeoffs, it does require that the plane be a VTOL capable :ref:`QuadPlane <quadplane-support>`
 
 .. tip:: While not necessary for a successful launch, enabling :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` will automatically trim the plane during stabilized operations, such that switching to MANUAL or ACRO mode later will have an in-trim plane automatically.
 
-.. tip:: The default PIDs usually will be acceptable for most planes for their first launch. However, powerful, small flying wings will sometimes wobble in pitch at high throttle climb-outs and can benefit from initially setting ``PTCH2SRV_P`` to half its default value. These can be optimized later manually or using AUTOTUNE mode. See :ref:`tuning-quickstart` 
+.. tip:: The default PIDs usually will be acceptable for most planes for their first launch. However, powerful, small flying wings will sometimes wobble in pitch at high throttle climb-outs and can benefit from initially setting ``PTCH2SRV_P`` to half its default value. These can be optimized later manually or using AUTOTUNE mode. See :ref:`tuning-quickstart`

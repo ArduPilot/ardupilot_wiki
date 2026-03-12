@@ -114,10 +114,10 @@ the key steps required:
       "Arduino/hardware".  Regardless of where you Arduino IDE is
       located your Arduino folder (in this case C:\\ArduPilot-Arduino-1.0.3-windows) should look like
       this:
-      
+
       .. image:: ../images/VisualMicroHardware.jpg
           :target: ../_images/VisualMicroHardware.jpg
-    
+
    -  Run Atmel Studio or Visual Studio and set up for APM as follows:
        (APM2 is used in this example.)
 
@@ -139,7 +139,7 @@ the key steps required:
 
             Here is how the setup should look for this
             tutorial:
-            
+
             .. image:: ../images/VisualMicroSetup.jpg
                 :target: ../_images/VisualMicroSetup.jpg
 
@@ -170,7 +170,7 @@ APM.
    Tools>>Options>>Visual Micro -Micro Debug - Advanced: Set Automatic
    debugging to False. Then F5 will upload without debugging - saving
    the need to press CTRL with F5.
-   
+
 -  Connect your APM via the USB cable.
 -  Tools>>Visual Micro>>Serial Port. Set to the USB port detected for
    your APM. If the USB port is not detected, follow the Arduino
@@ -245,7 +245,7 @@ that file may get changed.  So, it is very important to check all the
 settings in the IDE you are using each time you change the IDE - to
 avoid having the preferences set to that of the last IDE you used.
 
-**Referencing a standard Arduino in Visual Micro:** 
+**Referencing a standard Arduino in Visual Micro:**
 Normally, Visual Micro is setup to reference a standard installation of Arduino instead
 of the special ArduPilot Ardunio for the HAL versions of APM.  You can
 configure Visual Studio or Atmel Studio to reference a standard
@@ -254,7 +254,7 @@ will not work.  The build size is different and it does not connect to
 Mission Planner. It is strongly suggested you only reference the special
 ArduPilot Arduino installation when working with APM code.
 
-**Using Arduino statements and libraries:**  
+**Using Arduino statements and libraries:**
 This is better stated as
 not using standard Arduino statements.  The newer HAL versions of
 ArduPilot for the APM boards removed most, if not all, of the standard
@@ -265,7 +265,7 @@ APM code - it will mostly not work. There are equivalent calls and
 statements for the APM but you will have to search for examples in the
 code.
 
-**Building Older Versions of ArduPilot:**  
+**Building Older Versions of ArduPilot:**
 If you are still working with
 version 2.9.1b or possibly older versions prior to HAL, you can take
 advantage of the Atmel Studio or Visual Studio and Visual Micro IDE.
@@ -285,4 +285,3 @@ You just need to do the following:
    at the `diydrones/ardupilot <https://github.com/ArduPilot/ardupilot>`__ repository,
    select the desired ardupilot branch, then click download zip.
 -  Set Tools>>Visual Micro>>Boards to APM Arduino Mega 2560.
-

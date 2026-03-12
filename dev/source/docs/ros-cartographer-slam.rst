@@ -214,7 +214,7 @@ Copy-paste the contents below into the file
     POSE_GRAPH.optimize_every_n_nodes = 30
 
     return options
-    
+
 .. note::
 
     Instead of manually modifying the above packages, clone `this <https://github.com/ArduPilot/ardupilot_ros>`__ repository and install the dependencies.
@@ -264,7 +264,7 @@ Start mavros as described on the :ref:`Connecting with ROS page <ros-connecting>
 .. code-block:: bash
 
     roslaunch mavros apm.launch fcu_url:=udp://:14855@
-    
+
 
 Configure ArduPilot
 -------------------

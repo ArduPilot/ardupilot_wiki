@@ -28,4 +28,3 @@ For ease of use on a desktop computer, please also install RQT
 .. code-block:: bash
 
     sudo apt-get install ros-noetic-rqt ros-noetic-rqt-common-plugins ros-noetic-rqt-robot-plugins
-

@@ -247,7 +247,7 @@ TRICOPTER FRAMES
 .. image:: ../images/m_07_00_tricopter.svg
     :target: ../_images/m_07_00_tricopter.svg
     :scale: 36%
-    :alt: TRICOPTER 
+    :alt: TRICOPTER
 
 .. image:: ../images/m_07_06_tricopter_pitch_rev.svg
     :target: ../_images/m_07_06_tricopter_pitch_rev.svg
@@ -263,7 +263,7 @@ BICOPTER FRAMES
 .. image:: ../images/m_10_00_bicopter.svg
     :target: ../_images/m_10_00_bicopter.svg
     :scale: 40%
-    :alt: BICOPTER 
+    :alt: BICOPTER
 
 .. note::
     If desired, Bicopter motors may rotate opposite the directions shown (e.g., CW left, CCW right).
@@ -300,7 +300,7 @@ Custom Frames
 -------------
 
 It is possible to configure custom frame types using up-to 12 motors using :ref:`lua scripting<common-lua-scripts>`. The roll, pitch and yaw factors for each motor must be calculated and loaded from a script.
-This is enabled by setting :ref:`FRAME_CLASS <FRAME_CLASS>` to 15 - Scripting Matrix. See: `plus quad example <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/MotorMatrix_setup.lua>`__ 
+This is enabled by setting :ref:`FRAME_CLASS <FRAME_CLASS>` to 15 - Scripting Matrix. See: `plus quad example <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/MotorMatrix_setup.lua>`__
 and `fault tolerant hex example <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/MotorMatrix_fault_tolerant_hex.lua>`__.
 
 .. note::
@@ -428,8 +428,8 @@ Some ESCs have been reported as not working with Pixhawk.
 The Pixhawk should work with every ESC that works with a normal RC
 receiver (because it sends the same type of signal) but there is `one known exception, the EMAX ESC <https://github.com/ArduPilot/ardupilot/issues/2094>`__.
 
-In most cases problems are due to incorrect wiring. Always connect signal and ground. 
-Check your ESC type to decide how to connect the +5V line. 
+In most cases problems are due to incorrect wiring. Always connect signal and ground.
+Check your ESC type to decide how to connect the +5V line.
 For Pixhawk you must connect both the signal and the signal ground in order to make the ESC work.
 
 For more information see `this video <https://youtu.be/6C1YG1e2aTo>`__.

@@ -4,7 +4,7 @@
 Copter Mission Command List
 ===========================
 
-This page provides details of all the mission commands 
+This page provides details of all the mission commands
 (i.e. `MAVLink commands <https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_WAYPOINT>`__) supported by Copter that can be run as part of a mission (see :ref:`AUTO flight mode <auto-mode>`).
 
 Each of the commands below is either a "Navigation" command or a "Do" command.  Navigation commands (e.g. "TakeOff" and "Waypoint") affect the
@@ -191,7 +191,7 @@ Parameters controlling this operation (besides :ref:`Gripper parameters <common-
 
 - :ref:`PLDP_SPEED_DN<PLDP_SPEED_DN>`: Descent speed, once the waypoint is reached, is either :ref:`LAND_SPD_MS<LAND_SPD_MS>` or this value, if non-zero.
 - :ref:`PLDP_THRESH<PLDP_THRESH>`: The percentage of thrust decrease that indicates payload touch-down. The reference thrust is measured over the first two seconds of descent.
-- :ref:`PLDP_RNG_MAX<PLDP_RNG_MAX>`: If non-zero, the maximum release height over ground obtained from a downward facing rangerfinder. Automatic gripper release can occur only if below this altitude above ground in addition to thrust reduction being obtained. If this value is non zero and no rangefinder is present, the place will be aborted and the vehicle will ascend and proceed to the next waypoint. 
+- :ref:`PLDP_RNG_MAX<PLDP_RNG_MAX>`: If non-zero, the maximum release height over ground obtained from a downward facing rangerfinder. Automatic gripper release can occur only if below this altitude above ground in addition to thrust reduction being obtained. If this value is non zero and no rangefinder is present, the place will be aborted and the vehicle will ascend and proceed to the next waypoint.
 - :ref:`PLDP_DELAY<PLDP_DELAY>`: Delay in seconds after release the vehicle will remain in position after release before ascending. This allows payload replacement if the gripper is set to re-engage after a delay (see :ref:`GRIP_AUTOCLOSE<GRIP_AUTOCLOSE>`)
 
 ..  youtube:: m4GK4ALqluc
@@ -243,7 +243,7 @@ The nose will continue to point at the red marker until the end of the mission O
 
 ..  youtube:: W8NCFHrEjfU
     :width: 100%
-    
+
 Condition-Delay
 ~~~~~~~~~~~~~~~
 

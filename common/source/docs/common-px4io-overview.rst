@@ -7,7 +7,7 @@ Archived:PX4IO Overview
 .. warning::
 
     **ARCHIVED**
-    
+
     The PX4FMU ("PX4") is end of life and is not generally available for purchase
     - ditto this companion board! This article is made available for existing users.
 

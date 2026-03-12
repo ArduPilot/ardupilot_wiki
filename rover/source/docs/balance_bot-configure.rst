@@ -22,7 +22,7 @@ Configuration and Setup
 
     - :ref:`Accelerometer<common-accelerometer-calibration>`
     - :ref:`Compass<common-compass-calibration-in-mission-planner>`
-    - :ref:`Radio<common-radio-control-calibration>` 
+    - :ref:`Radio<common-radio-control-calibration>`
     - :ref:`RC Mode Setup<common-rc-transmitter-flight-mode-configuration>` (Add Manual and Acro Modes)
 
 2) Motor, ESC, Wheel Encoder Configuration
@@ -31,7 +31,7 @@ Configuration and Setup
 #. Follow the :ref:`instructions<rover-motor-and-servo-configuration-skid>` to setup skid steering drive
 #. Configure motor drive/ESC type for :ref:`brushed motors<common-brushed-motors>` or :ref:`brushless motors<rover-motor-and-servo-configuration>`
 #. Verify connections and settings using the :ref:`motor test<rover-motor-and-servo-configuration-testing>` tool
-#. Configure :ref:`wheel encoders<wheel-encoder>` 
+#. Configure :ref:`wheel encoders<wheel-encoder>`
 
 3) Additional Parameter Configuration
 =====================================
@@ -53,11 +53,11 @@ To fix the dead zone, open the motor test window in Mission Planner, as mentione
 
 5) Arming
 =========
-The vehicle must be armed for the wheels to start moving. Check the :ref:`rover arming page<arming-your-rover>` for more details. 
+The vehicle must be armed for the wheels to start moving. Check the :ref:`rover arming page<arming-your-rover>` for more details.
 
 .. warning:: This is simply an arming test. The vehicle will have to be tuned before it is ready to run.
 
-.. tip:: Remove wheels before proceeding. 
+.. tip:: Remove wheels before proceeding.
 
 #. Set a :ref:`transmitter switch<common-auxiliary-functions>` for arming. Ensure the channel used for the switch has been :ref:`calibrated<common-radio-control-calibration>`. To configure a channel for arming, for example channel 7, then set the parameter:
 
@@ -67,25 +67,6 @@ The vehicle must be armed for the wheels to start moving. Check the :ref:`rover 
 
 #. Keep the vehicle upright and then arm it. If arming is not successful check the error message on the GCS and identify the problem from the :ref:`rover arming page<arming-your-rover>`.
 
-#. After the vehicle arms, pitch it forward and back manually(Use hands, not the RC transmitter). The motors must turn in the direction of pitch. 
+#. After the vehicle arms, pitch it forward and back manually(Use hands, not the RC transmitter). The motors must turn in the direction of pitch.
 
 #. Proceed to the :ref:`Control Modes<balance_bot-modes>` and :ref:`tuning<balance_bot-tuning>` section if the above steps were successful.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

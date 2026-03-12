@@ -11,9 +11,9 @@ The Cube Orange/+ With ADSB-In Overview
 System Features
 ===============
 
-The Cube Orange autopilot is the latest and most powerful model in the CubePilot ecosystem. Designed for hobby users, commercial system integrators and UAS manufacturers the Cube Orange autopilot is part of a wide ecosystem of autopilot modules and carrier boards. All Cube models are compatible with all carriers which allows users to choose an off the shelf carrier board that best suits their needs. System designers are able to integrate the Cube directly into their designs via published carrier board specifications. 
+The Cube Orange autopilot is the latest and most powerful model in the CubePilot ecosystem. Designed for hobby users, commercial system integrators and UAS manufacturers the Cube Orange autopilot is part of a wide ecosystem of autopilot modules and carrier boards. All Cube models are compatible with all carriers which allows users to choose an off the shelf carrier board that best suits their needs. System designers are able to integrate the Cube directly into their designs via published carrier board specifications.
 
-The Cube Orange is available as a standalone module or as a package with a new updated version of the original carrier board that now includes an integrated ADS-B In module from uAvionics. 
+The Cube Orange is available as a standalone module or as a package with a new updated version of the original carrier board that now includes an integrated ADS-B In module from uAvionics.
 
 ADS-B Carrier Board
 ===================
@@ -21,7 +21,7 @@ ADS-B Carrier Board
 The new ADS-B carrier boards overall footprint is identical to the standard versions and the main changes compared to the original carrier are as follows:
 
 -  Integration of uAvonix ADS-B IN Receiver on Serial 5
--  Built-In ADS-B Antenna 
+-  Built-In ADS-B Antenna
 -  Removal of Intel Edison Bay and Debug USB Ports
 
 All other specification and external connections remain identical to the original board as listed on the Cube Black page.
@@ -33,8 +33,8 @@ Cube Orange/+ Features
 -  Upgraded triple redundant IMU sensors for extra redundancy
 -  2 sets of IMU are vibration-isolated mechanically, reducing the effect of frame vibration to state estimation
 -  IMUs are temperature-controlled by onboard heating resistors, allowing optimum working temperature of IMUs
--  The entire flight management unit(FMU) and inertial management unit(IMU) are housed in a reatively small form factor (a cube). 
--  Fully CubePilot carrierboard compatible, all inputs and outputs go through a 80-pin DF17 connector, allowing a plug-in solution for manufacturers of commercial systems. Manufacturers can design their own carrier boards to suit their specific needs now and in the future. 
+-  The entire flight management unit(FMU) and inertial management unit(IMU) are housed in a reatively small form factor (a cube).
+-  Fully CubePilot carrierboard compatible, all inputs and outputs go through a 80-pin DF17 connector, allowing a plug-in solution for manufacturers of commercial systems. Manufacturers can design their own carrier boards to suit their specific needs now and in the future.
 
 Specifications
 ==============

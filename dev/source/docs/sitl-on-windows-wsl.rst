@@ -57,7 +57,7 @@ Running SITL
 
       ::
 
-          mode guided 
+          mode guided
           arm throttle
           takeoff 40
 

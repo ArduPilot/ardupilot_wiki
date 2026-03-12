@@ -25,7 +25,7 @@ A second assistance type is available if :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>` i
 based on attitude error. If :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>` is
 non-zero then this parameter gives an attitude error in degrees above
 which assistance will be enabled even if the airspeed is above
-:ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`. 
+:ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`.
 
 A third trigger to provide assistance. if :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>` is positive, is :ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>`. This is the altitude below which QuadPlane assistance will be triggered. This acts the same way as :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>` and :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`, but triggers if the aircraft drops below the given altitude while the VTOL motors are not running. A value of zero disables this feature. The altitude is calculated as being above ground level. The height above ground is given from a Lidar used if available and :ref:`RNGFND_LANDING<RNGFND_LANDING>` bit 0 or 1 is set, or from terrain data if :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` =1, or comes from the height above home otherwise.
 

@@ -8,8 +8,8 @@ Copter supports "terrain following" in nearly all autonomous modes :ref:`AUTO <a
 
 ..  youtube:: mT67QOAxuG8
     :width: 100%
-    
-See :ref:`common-understanding-altitude` for altitude definitions.    
+
+See :ref:`common-understanding-altitude` for altitude definitions.
 
 .. note::
 
@@ -37,7 +37,7 @@ Sources of Terrain Data
 
 The ground station is normally responsible for providing the raw terrain data which is sent to the aircraft via MAVLink. Right now only Mission Planner and MAVProxy support the required TERRAIN_DATA and TERRAIN_REQUEST MAVLink messages needed for terrain following download support. If you are using a different ground station , in order to download terrain data you will need to connect using one of those two ground stations in order to allow ArduPilot to load terrain data onto your board on the ground or in flight.  Once it is loaded, it is saved permanently on the microSD card.
 
-Both MissionPlanner and MAVProxy support the global SRTM database for terrain data. The ArduPilot SRTM server used by MAVProxy and Mission Planner has 100m grid spacing. Unless the ground control station uses a server with closer spacing, setting the :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` parameter lower than 100m provides no better resolution, and only consumes more space on the SD card. 
+Both MissionPlanner and MAVProxy support the global SRTM database for terrain data. The ArduPilot SRTM server used by MAVProxy and Mission Planner has 100m grid spacing. Unless the ground control station uses a server with closer spacing, setting the :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` parameter lower than 100m provides no better resolution, and only consumes more space on the SD card.
 
 Terrain Data is downloaded any time you save or connect with a loaded mission with these ground stations, or, if flying, the autopilot will request data if its flying into an area not already downloaded. Assuming the ground station can provide it. Usually an internet connection is required by the ground station.
 
@@ -49,7 +49,7 @@ It will create tiles for the specified radius around a geographic location. Then
 
 You can also download .zip files for entire continents, or individual tiles from `here <https://terrain.ardupilot.org/data/>`__. Use the "continentsapm41"/"tilesapm41" folders.
 
-Beginning with the beta version released on 20th September 2024 you can create terrain dat files from Mission Planner and upload them to the SD card. 
+Beginning with the beta version released on 20th September 2024 you can create terrain dat files from Mission Planner and upload them to the SD card.
 
 - Go to FlightPlanner.
 - Select area with ALT+MouseCLICK and drag
@@ -67,7 +67,7 @@ Terrain data files are always created as one file per one-by-one degree area, th
 Using Terrain Altitude during RTL and Land
 ==========================================
 Be sure :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` is set to "1" to enable use of terrain data and allow the GCS to update the data (if internet connected) for current location and planned missions. Set the :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` parameter to 1 to enable using terrain data in the :ref:`RTL <rtl-mode>` flight mode.  If set the vehicle will interpret the :ref:`RTL_ALT_M<RTL_ALT_M>` as an altitude-above-terrain instead of above home altitude, meaning it will generally climb over hills on its return path to home.  Similarly Land will slow to the :ref:`LAND_SPD_MS<LAND_SPD_MS>` (normally 50cm/s) when it is 10m above the terrain (instead of 10m above home).
-Currently setting this parameter is not recommended because of the edge case mentioned below involving the somewhat unlikely situation in which the vehicle is unable to retrieve terrain data during the :ref:`RTL <rtl-mode>`.  In these cases the :ref:`RTL_ALT_M<RTL_ALT_M>` will be interpreted as an alt-above home. 
+Currently setting this parameter is not recommended because of the edge case mentioned below involving the somewhat unlikely situation in which the vehicle is unable to retrieve terrain data during the :ref:`RTL <rtl-mode>`.  In these cases the :ref:`RTL_ALT_M<RTL_ALT_M>` will be interpreted as an alt-above home.
 
 In addition, if :ref:`WP_RFND_USE<WP_RFND_USE>` is also set to 1, the rangefinder will be used instead of the terrain database during RTL. Of course the :ref:`RTL_ALT_M<RTL_ALT_M>` must be within the rangefinder's operating range and it must be healthy.
 

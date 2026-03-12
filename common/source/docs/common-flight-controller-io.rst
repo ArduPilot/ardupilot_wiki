@@ -54,12 +54,12 @@ I/O Port Types
 USB
 ---
 
-USB is provided as the primary port for the autopilot configuration. It always appears as the first serial port (SERIAL0) on the autopilot. See :ref:`Serial Port Configuration <common-serial-options>` 
+USB is provided as the primary port for the autopilot configuration. It always appears as the first serial port (SERIAL0) on the autopilot. See :ref:`Serial Port Configuration <common-serial-options>`
 
 UART
 ----
 
-Usually, several UART ports are provided. These provide connections to Telemetry radios, GPS, Rangefinders, and even SBUS servos. In addition, as of firmware version 4.0, serial RC receiver inputs can be connected to any UART. See :ref:`Serial Port Configuration <common-serial-options>` 
+Usually, several UART ports are provided. These provide connections to Telemetry radios, GPS, Rangefinders, and even SBUS servos. In addition, as of firmware version 4.0, serial RC receiver inputs can be connected to any UART. See :ref:`Serial Port Configuration <common-serial-options>`
 
 Signals
 +++++++
@@ -195,7 +195,7 @@ Signals
 BUZZER
 ------
 
-A -BUZZ output is sometimes provided for a passive or active buzzer for system notification sounds, and provides a switched ground connection to the buzzer. See :ref:`Buzzer<common-buzzer>` 
+A -BUZZ output is sometimes provided for a passive or active buzzer for system notification sounds, and provides a switched ground connection to the buzzer. See :ref:`Buzzer<common-buzzer>`
 
 ANALOG INPUTS
 -------------
