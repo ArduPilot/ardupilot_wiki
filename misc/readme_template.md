@@ -1,18 +1,16 @@
 
-===
-XYZ
-===
+# XYZ
+
 The XYZ autopilot is manufactured by `XYZ Corp <https://xyz.com>`__
 
 ![XYZ](XYZ_board_image.png)
 
-Where to Buy
-============
+## Where to Buy
 
 `XYZ Co <https://XYZ.shop.com>`__
 
-Specifications
-==============
+## Specifications
+
 - Processor
 
   - STM32H743 32-bit processor, 480Mhz
@@ -20,6 +18,7 @@ Specifications
   - 2MB Flash
   - 1MB RAM
   - MAX7456 OSD
+
 - Sensors
 
   - Invensense IIM-42653 Industrial IMU with heater resistor
@@ -49,15 +48,15 @@ Specifications
   - Size: 3.6 × 3.6 × 0.8 cm
   - Weight: 7.5g with MicroSD card
 
-Pinout
-======
+## Pinout
+
 
 ![XYZ](XYZ_image_showing_all_pads-connectors.png)
 
 <!--In addition pin tables and/or connector images can be inserted here..see UART table below for format all user accessible connection points should be clear --> 
 
-UART Mapping
-============
+## UART Mapping
+
 The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive pin for UARTn. The Tn pin is the transmit pin for UARTn
 
 
@@ -74,8 +73,8 @@ The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive p
 
 USART7 and USART 2 have flow control pins.
 
-RC input
-========
+## RC input
+
 <!--This is the most difficult section and varies widely.-->
 
 The SBUS pin, can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, if connected to the SBUS pin, will only provide RC without telemetry since FPort includes SBUS signaling multiplexed with telemetry which will not be decoded (see below). 
@@ -88,8 +87,8 @@ To allow CRSF/ELRS and embedded telemetry available in Fport, CRSF, and SRXL2 re
 - SRXL2 would require :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "4" and connects only the TX pin.
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
 
-PWM Outputs
-===========
+## PWM Outputs
+
 The XYZ controller supports up to 14 PWM outputs.
 
 First 8 outputs (labelled 1 to 8) are controlled by a dedicated STM32F103 IO controller. The remaining 6 outputs (labelled 9 to 14) are the "auxiliary" outputs. These are directly attached to the STM32H753 FMU controller .
@@ -108,37 +107,35 @@ The 6 FMU PWM outputs are in 4 groups:
 
 Channels within the same group need to use the same output rate. If any channel in a group uses DShot then all channels in the group need to use DShot.
 
-OSD Support
-===========
+## OSD Support
+
 Onboard OSD using MAX7456 driver) is supported by default. Simultaneously, DisplayPort OSD is also available on the HD VTX connector.
 
-HD VTX Support
-==============
+## HD VTX Support
+
 The SH1.0-6P connector supports a DJI Air Unit / HD VTX connection. Protocol defaults to DisplayPort. Pin 1 of the connector is 12v so be careful not to connect this to a peripheral requiring 5v. DisplayPort OSD is enabled by default on SERIAL5.
 
-VTX power control
-=================
+## VTX power control
+
 GPIO 81 controls the VTX BEC output to pins marked "12V" and is included on the HD VTX connector. Setting this GPIO low removes voltage supply to this pin/pad. By default RELAY2 is configured to control this pin and sets the GPIO high at boot.
 
-Camera Switch
-=============
+## Camera Switch
+
 GPIO 82 controls which camera input, CAM1 or CAM2 is used. By default RELAY3 is configured to control this.
 
-Compass
-=======
+## Compass
+
 An on-board IIS2MDC compass is provided. However, often will disabled this compass and use an external one remotely loocated to avoid power circuitry interference using the SDA and SCL I2C lines provided.
 
-RSSI
-====
+## RSSI
+
 If the RSSI pin is used for analog RSSI input. Set :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` to 91. Set :ref:`RSSI_TYPE<RSSI_TYPE>` to "3" if the RC protocol provides rssi data.
 
-Analog Airspeed
-===============
+## Analog Airspeed
+
 If the ARSPD pin is used for analog airspeed  input. Set :ref:`ARSPD_PIN<ARSPD_PIN>` to 92. Set :ref:`ARSPD_TYPE<ARSPD_TYPE>` to "2".
 
-GPIOs
-=====
-
+## GPIOs
 
 |Pin           |GPIO Number |
 |--------------|------------|
@@ -163,23 +160,23 @@ GPIOs
 |MAIN(7)       | 107        |
 |MAIN(8)       | 108        |
 
-Battery Monitor
-===============
+
+## Battery Monitor
+
 The board has a internal voltage sensor and connections on the ESC connector for an external current sensor input.
 The voltage sensor can handle up to 6S LiPo batteries.
 
 The default battery parameters are:
 
- - :ref:`BATT_MONITOR<BATT_MONITOR>` = 4
- - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 10
- - :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 11 (CURR pin)
- - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` = 11.0
- - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT__AP_BattMonitor_Analog>` = 40
+- BATT_MONITOR = 4
+- BATT_VOLT_PIN = 10
+- BATT_CURR_PIN = 11 (CURR pin)
+- BATT_AMP_PERVLT = 40
 
-Firmware
-========
+## Firmware
+
 Firmware for the XYZ is available from [ArduPilot Firmware Server](https://firmware.ardupilot.org) under the `XYZ` target.
 
-Loading Firmware
-================
+## Loading Firmware
+
 To flash firmware initially, connect USB while holding the bootloader button and use DFU to load the `with_bl.hex` file. Subsequent updates can be applied using `\.apj` files through a ground station.
