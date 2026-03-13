@@ -29,7 +29,5 @@ repos:
       - id: sphinx-lint
         args:
           - --disable=horizontal-tab
-          - --disable=hyperlink-reference-missing-backtick
           - --disable=missing-final-newline
-          - --disable=missing-underscore-after-hyperlink
           - --disable=trailing-whitespace
