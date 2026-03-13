@@ -266,6 +266,7 @@ These autopilots use an underlying Linux OS. Linux boards usually have more CPU 
     Blue Robotics Navigator** (Linux) <https://bluerobotics.com/store/comm-control-power/control/navigator/>
     Obal Board (Linux) <common-obal-overview>
     Pi PilotPi <https://docs.px4.io/main/uk/flight_controller/raspberry_pi_pilotpi.html>
+    PocketBeagle 2 DIY Cape** (Linux) <common-pocketbeagle-2.rst>
     PocketPilot** (Linux) <https://github.com/PocketPilot/PocketPilot>
     T3 Gemstone O1 (Linux) <common-t3-gem-o1-overview>
 
