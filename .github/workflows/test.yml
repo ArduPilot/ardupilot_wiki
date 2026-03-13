@@ -50,5 +50,6 @@ jobs:
           done
       - name: Test build
         run: |
+          pip install setuptools
           export AP_SPHINXOPTS=-W
           ./update.py --parallel 4 --verbose --destdir=/tmp/web
