@@ -1,6 +1,18 @@
 name: Build dockerfile
 
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - 'Sphinxsetup.sh'
+      - 'requirements.txt'
+      - 'Dockerfile'
+      - '.github/workflows/build-docker.yml'
+  pull_request:
+    paths:
+      - 'Sphinxsetup.sh'
+      - 'requirements.txt'
+      - 'Dockerfile'
+      - '.github/workflows/build-docker.yml'
 
 jobs:
 
