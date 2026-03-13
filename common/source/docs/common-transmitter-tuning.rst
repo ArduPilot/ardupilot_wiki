@@ -335,7 +335,7 @@ The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the para
 +--------+-------------------------+----------------------------------------------------------------------+
 |55      |Motor Yaw Headroom       |  :ref:`MOT_YAW_HEADROOM<MOT_YAW_HEADROOM>`                           |
 +--------+-------------------------+----------------------------------------------------------------------+
-|14      |AltHold kP               |  ``PSC_POSZ_P``                                                      |
+|14      |Vertical Position kP     |  :ref:`PSC_D_POS_P<PSC_D_POS_P>`                                     |
 +--------+-------------------------+----------------------------------------------------------------------+
 |7       |Throttle Rate kP         |  :ref:`PSC_D_VEL_P<PSC_D_VEL_P>`                                     |
 +--------+-------------------------+----------------------------------------------------------------------+
@@ -345,52 +345,52 @@ The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the para
 +--------+-------------------------+----------------------------------------------------------------------+
 |36      |Throttle Accel kD        |  :ref:`PSC_D_ACC_D<PSC_D_ACC_D>`                                     |
 +--------+-------------------------+----------------------------------------------------------------------+
-|12      |Loiter Pos kP            |  ``PSC_POSXY_P``                                                     |
+|12      |Horizontal Position kP   |  :ref:`PSC_NE_POS_P<PSC_NE_POS_P>`                                   |
 +--------+-------------------------+----------------------------------------------------------------------+
-|22      |Velocity XY kP           |  :ref:`PSC_NE_VEL_P<PSC_NE_VEL_P>`                                   |
+|22      |Horizontal Velocity kP   |  :ref:`PSC_NE_VEL_P<PSC_NE_VEL_P>`                                   |
 +--------+-------------------------+----------------------------------------------------------------------+
-|28      |Velocity XY kI           |  :ref:`PSC_NE_VEL_I<PSC_NE_VEL_I>`                                   |
+|28      |Horizontal Velocity kI   |  :ref:`PSC_NE_VEL_I<PSC_NE_VEL_I>`                                   |
 +--------+-------------------------+----------------------------------------------------------------------+
 |10      |WP Speed                 |  :ref:`WP_SPD<WP_SPD>`                                               |
 +--------+-------------------------+----------------------------------------------------------------------+
-|25      |Acro RollPitch kP        | :ref:`ACRO_RP_RATE<ACRO_RP_RATE>`                                    |
+|25      |Acro RollPitch kP        |  :ref:`ACRO_RP_RATE<ACRO_RP_RATE>`                                   |
 +--------+-------------------------+----------------------------------------------------------------------+
-|40      |Acro Yaw kP              | :ref:`ACRO_Y_RATE<ACRO_Y_RATE>`                                      |
+|40      |Acro Yaw kP              |  :ref:`ACRO_Y_RATE<ACRO_Y_RATE>`                                     |
 +--------+-------------------------+----------------------------------------------------------------------+
-|45      |RC Feel                  | :ref:`ATC_INPUT_TC<ATC_INPUT_TC>`                                    |
+|45      |RC Feel                  |  :ref:`ATC_INPUT_TC<ATC_INPUT_TC>`                                   |
 +--------+-------------------------+----------------------------------------------------------------------+
-|13      |Heli Ext Gyro            | :ref:`H_GYR_GAIN<H_GYR_GAIN>`                                        |
+|13      |Heli Ext Gyro            |  :ref:`H_GYR_GAIN<H_GYR_GAIN>`                                       |
 +--------+-------------------------+----------------------------------------------------------------------+
-|38      |Declination              | :ref:`COMPASS_DEC<COMPASS_DEC>`                                      |
+|38      |Declination              |  :ref:`COMPASS_DEC<COMPASS_DEC>`                                     |
 +--------+-------------------------+----------------------------------------------------------------------+
-|39      |Circle Rate              | :ref:`CIRCLE_RATE<CIRCLE_RATE>`                                      |
+|39      |Circle Rate              |  :ref:`CIRCLE_RATE<CIRCLE_RATE>`                                     |
 +--------+-------------------------+----------------------------------------------------------------------+
-|46      |Rate Pitch kP            | :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Multi>`        |
+|46      |Rate Pitch kP            |  :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Multi>`       |
 +--------+-------------------------+----------------------------------------------------------------------+
-|47      |Rate Pitch kI            | :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Multi>`        |
+|47      |Rate Pitch kI            |  :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Multi>`       |
 +--------+-------------------------+----------------------------------------------------------------------+
-|48      |Rate Pitch kD            | :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Multi>`        |
+|48      |Rate Pitch kD            |  :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Multi>`       |
 +--------+-------------------------+----------------------------------------------------------------------+
-|49      |Rate Roll kP             | :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Multi>`        |
+|49      |Rate Roll kP             |  :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Multi>`       |
 +--------+-------------------------+----------------------------------------------------------------------+
-|50      |Rate Roll kI             | :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Multi>`        |
+|50      |Rate Roll kI             |  :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Multi>`       |
 +--------+-------------------------+----------------------------------------------------------------------+
-|51      |Rate Roll kD             | :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Multi>`        |
+|51      |Rate Roll kD             |  :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Multi>`       |
 +--------+-------------------------+----------------------------------------------------------------------+
-|52      |Rate Pitch FF            | :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF__AC_AttitudeControl_Heli>` **    |
+|52      |Rate Pitch FF            |  :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF__AC_AttitudeControl_Heli>` **   |
 +--------+-------------------------+----------------------------------------------------------------------+
-|53      |Rate Roll FF             | :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>` **    |
+|53      |Rate Roll FF             |  :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>` **   |
 +--------+-------------------------+----------------------------------------------------------------------+
-|54      |Rate Yaw FF              | :ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF__AC_AttitudeControl_Heli>` **    |
+|54      |Rate Yaw FF              |  :ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF__AC_AttitudeControl_Heli>` **   |
 +--------+-------------------------+----------------------------------------------------------------------+
-|57      |Winch                    | :ref:`WINCH_RATE_MAX<WINCH_RATE_MAX>`                                |
+|57      |Winch                    |  :ref:`WINCH_RATE_MAX<WINCH_RATE_MAX>`                               |
 +--------+-------------------------+----------------------------------------------------------------------+
-|58      |SysID Magnitude          | :ref:`SID_MAGNITUDE<SID_MAGNITUDE>`                                  |
+|58      |SysID Magnitude          |  :ref:`SID_MAGNITUDE<SID_MAGNITUDE>`                                 |
 +--------+-------------------------+----------------------------------------------------------------------+
 |59      |Position Control Max     |  :ref:`PSC_ANGLE_MAX<PSC_ANGLE_MAX>`                                 |
 |        | Lean Angle              |                                                                      |
 +--------+-------------------------+----------------------------------------------------------------------+
-|60      |Loiter Max X/Y Speed     | :ref:`loiter-mode`                                                   |
+|60      |Loiter Max X/Y Speed     |  :ref:`loiter-mode`                                                  |
 +--------+-------------------------+----------------------------------------------------------------------+
 
 
