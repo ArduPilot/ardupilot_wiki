@@ -70,94 +70,118 @@ Serial protocols can be adjusted to personal preferences.
 
 Connectors and Pinouts
 ======================
-.. image:: ../../../images/NarinFC_X3/NarinFC_X3_TOP_BOTTOM.png
-  :target: NarinFC_X3_TOP_BOTTOM
 
--  **1. I2C, UART2 Port**
+.. image:: ../../../images/NarinFC_X3/NarinFC_X3_TOP_BOTTOM.png
+    :target: ../_images/NarinFC_X3_TOP_BOTTOM.png
+
+
+- **1. I2C, UART2 Port**
+
     .. image:: ../../../images/NarinFC_X3/1.2C1_UART2_PORT.png
-      :target: 2C1_UART2_PORT
+        :target: ../_images/1.2C1_UART2_PORT.png
 
     - I2C1
     - UART 2: Ardupilot port Serial2 GPS1
 
--  **2. UART 4, UART 7 Port**
+
+- **2. UART 4, UART 7 Port**
+
     .. image:: ../../../images/NarinFC_X3/2.UART7_UART4_PORT.png
-      :target: UART7_UART4_PORT
+        :target: ../_images/2.UART7_UART4_PORT.png
 
-    - UART 4: Ardupilot port Serial 4 Telem_1
-    - UART 7: Ardupilot port Serial 7 Telem_2
+    - UART 4: Ardupilot port Serial4 Telem_1
+    - UART 7: Ardupilot port Serial7 Telem_2
 
--  **3. UART 6, RSSI Port**
+
+- **3. UART 6, RSSI Port**
+
     .. image:: ../../../images/NarinFC_X3/3.UART6_RSSI_PORT.png
-      :target: UART6_RSSI_PORT
+        :target: ../_images/3.UART6_RSSI_PORT.png
 
-    - UART 6: Ardupilot Port Serial 6 Receiver
+    - UART 6: Ardupilot port Serial6 Receiver
 
--  **4. CAN Port**
+
+- **4. CAN Port**
+
     .. image:: ../../../images/NarinFC_X3/4.CAN_PORT.png
-      :target: CAN_PORT
+        :target: ../_images/4.CAN_PORT.png
 
     - JST GH 6P connector
 
--  **5. PWM Port-1**
+
+- **5. PWM Port-1**
+
     .. image:: ../../../images/NarinFC_X3/5.PWM_PORT1.png
-      :target: PWM_PORT1
+        :target: ../_images/5.PWM_PORT1.png
 
     - PWM 1 ~ PWM 4
-	- UART8_RX
-	- ADC 1
-	- BATT Input
+    - UART8_RX
+    - ADC 1
+    - BATT Input
 
--  **6. PWM Port-2**
+
+- **6. PWM Port-2**
+
     .. image:: ../../../images/NarinFC_X3/6.PWM_PORT2.png
-      :target: PWM_PORT2
+        :target: ../_images/6.PWM_PORT2.png
 
     - PWM 5 ~ PWM 8
-	- UART8_RX
-	- ADC 2
-	- BATT Input
+    - UART8_RX
+    - ADC 2
+    - BATT Input
 
--  **7. UART 3 Port**
+
+- **7. UART 3 Port**
+
     UART 3: Ardupilot port Serial3 MSP Display Port
 
     .. image:: ../../../images/NarinFC_X3/7.UART3_PORT.png
-      :target: UART3_PORT
+        :target: ../_images/7.UART3_PORT.png
 
     - 2.54mm pitch DuPont connector
     - RC_IN : Remote control receiver
 
--  **8. MicroSD Card Slot**
 
--  **9. PWM Port-3**
+- **8. MicroSD Card Slot**
+
+
+- **9. PWM Port-3**
+
+    .. image:: ../../../images/NarinFC_X3/9.PWM_PORT3.png
+        :target: ../_images/9.PWM_PORT3.png
 
     - PWM 9 ~ PWM 12
 
-	.. image:: ../../../images/NarinFC_X3/9.PWM_PORT3.png
-      :target: PWM_PORT3
 
--  **10. DEBUG & UART7 Port**
+- **10. DEBUG & UART7 Port**
+
     .. image:: ../../../images/NarinFC_X3/10.LED_PORT.png
-      :target: ../_images/10.LED_PORT.png
+        :target: ../_images/10.LED_PORT.png
 
     - JST GH 6P connector
-	- DEBUG NODMA
+    - DEBUG NODMA
 
 RC Input
 ========
 
 RC input is configured by default via the USART6 RX input. It supports all serial RC protocols except PPM.
-Note: If the receiver is FPort the receiver must be tied to the USART6 TX pin , RSSI_TYPE set to 3, and SERIAL6_OPTIONS must be set to 7 (invert TX/RX, half duplex). 
-For full duplex like CRSF/ELRS use both RX6 and TX6 and set RSSI_TYPE also to 3.
-If SBUS is used on HD VTX connector (DJI TX), then SERIAL1_PROTOCOl should be set to "23" and SERIAL6_PROTOCOL changed to something else.
+
+.. note:: If the receiver is FPort the receiver must be tied to the USART6 TX pin , RSSI_TYPE set to 3, and SERIAL6_OPTIONS must be set to 7 (invert TX/RX, half duplex).
+
+- For full duplex like CRSF/ELRS use both RX6 and TX6 and set :ref:`RSSI_TYPE<RSSI_TYPE>` also to 3.
+- If SBUS is used on HD VTX connector (DJI TX), then :ref:`SERIAL1_PROTOCOl<SERIAL1_PROTOCOl>` should be set to "23" and :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` changed to something else.
 
 FrSky Telemetry
 ===============
 
 FrSky Telemetry is supported using an unused UART, such as the T1 pin (UART1 transmit).
-You need to set the following parameters to enable support for FrSky S.PORT: SERIAL1_PROTOCOL = 10 SERIAL1_OPTIONS = 7
+
+You need to set the following parameters to enable support for FrSky S.PORT:
+- :ref:`SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>` = 10
+- :ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>` = 7
 
 OSD Support
-===============
+===========
 
 The NarinFC-X3 supports analog OSD using its internal MAX7456 and simultaneously DisplayPort using TX3/RX3 on the HD VTX connector.
 
@@ -177,34 +201,35 @@ plus M9-13 on a separate pads for LED strip and other PWM outputs.
    - PWM 13 in group6
 
 Channels within the same group need to use the same output rate.
-If any channel in a group uses DShot then all channels in the group need to use DShot. 
+If any channel in a group uses DShot then all channels in the group need to use DShot.
 ALL outputs within the same group need to use the same output rate and protocol.
 
 Battery Monitor
 ===============
 
-The board has a built-in voltage sensor and external current sensor input. 
+The board has a built-in voltage sensor and external current sensor input.
 The current sensor can read up to 130 Amps. The voltage sensor can handle up to 6S LiPo batteries.
 
 The correct battery setting parameters are:
 
-   - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 10
-   - :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` = 11
-   - :ref:`BATT_MONITOR<BATT_MONITOR>` = 4
-   - :ref:`BATT_VOLT_SCALE<BATT_VOLT_SCALE__AP_BattMonitor_Analog>` = 11.0
-   - :ref:`BATT_CURR_SCALE<BATT_CURR_SCALE__AP_BattMonitor_Analog>` = 40.0
+- :ref:`BATT_VOLT_PIN <BATT_VOLT_PIN__AP_BattMonitor_Analog>` = 10
+- :ref:`BATT_CURR_PIN <BATT_CURR_PIN__AP_BattMonitor_Analog>` = 11
+- :ref:`BATT_MONITOR <BATT_MONITOR>` = 4
+- :ref:`BATT_VOLT_MULT <BATT_VOLT_MULT__AP_BattMonitor_Analog>`  = 11.0
+- :ref:`BATT_AMP_PERVLT <BATT_AMP_PERVLT__AP_BattMonitor_Analog>`  = 40.0
 
 Pads for a second analog battery monitor are provided. To use:
 
-   - :ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN__AP_BattMonitor_Analog>` = 18
-   - :ref:`BATT2_CURR_PIN<BATT2_CURR_PIN__AP_BattMonitor_Analog>` = 7
-   - :ref:`BATT2_VOLT_SCALE<BATT2_VOLT_SCALE__AP_BattMonitor_Analog>` = 11.0
+- :ref:`BATT2_VOLT_PIN <BATT2_VOLT_PIN__AP_BattMonitor_Analog>` = 18
+- :ref:`BATT2_CURR_PIN <BATT2_CURR_PIN__AP_BattMonitor_Analog>` = 7
+- :ref:`BATT2_VOLT_MULT <BATT2_VOLT_MULT__AP_BattMonitor_Analog>` = 11.0
+
 
 Analog RSSI and AIRSPEED inputs
 ===============================
 
-Analog RSSI uses :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` = 8
-Analog Airspeed sensor would use :ref:`ARSPD_PIN<ARSPD_PIN>` = 4
+- Analog RSSI uses :ref:`RSSI_ANA_PIN <RSSI_ANA_PIN>` = 8
+- Analog Airspeed sensor would use :ref:`ARSPD_PIN <ARSPD_PIN>` = 4
 
 Compass
 =======
@@ -220,6 +245,7 @@ Loading Firmware
 ================
 
 This board comes with ArduPilot firmware pre-installed and other vehicle/revision ArduPilot firmware can be loaded using most Ground Control Stations.
+
 Firmware for these boards can be found `https://firmware.ardupilot.org <https://firmware.ardupilot.org>`_ in sub-folders labeled "NarinFC-X3".
-The board comes pre-installed with an ArduPilot bootloader, 
-allowing the loading of *.apj firmware files with any ArduPilot compatible ground station, such as Mission Planner.
+
+The board comes pre-installed with an ArduPilot bootloader, allowing the loading of \*.apj firmware files with any ArduPilot compatible ground station, such as Mission Planner.
