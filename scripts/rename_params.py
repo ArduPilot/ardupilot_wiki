@@ -49,8 +49,10 @@ def process_file(fname, param_map):
     needs_write = False
     txt = open(fname, "r").read()
 
-    replacements = [":ref:`PARAMNAME <PARAMNAME>`",
-                    ":ref:`PARAMNAME<PARAMNAME>`"]
+    replacements = [
+        ":ref:`PARAMNAME <PARAMNAME>`",
+        ":ref:`PARAMNAME<PARAMNAME>`",
+    ]
     if args.nonref:
         replacements.extend(["PARAMNAME"])
 
