@@ -114,7 +114,7 @@ Sends an action to the parachute. ``ACTION`` can be enable, disable or release.
     engine M1, M2, M3
     
 Sends an engine control command (MAV_CMD_DO_ENGINE_CONTROL). It can start or stop the engine. 
-Otherwise the full set of options can be specified, with M1=1 or 0 for engine start/stop, M2=	0: Warm start, 1:Cold start. Controls use of choke where applicable, M3=Height delay (meters). This is for commanding engine start only after the vehicle has gained the specified height.
+Otherwise the full set of options can be specified, with M1=1 or 0 for engine start/stop, M2=   0: Warm start, 1:Cold start. Controls use of choke where applicable, M3=Height delay (meters). This is for commanding engine start only after the vehicle has gained the specified height.
 
 .. code:: bash
 

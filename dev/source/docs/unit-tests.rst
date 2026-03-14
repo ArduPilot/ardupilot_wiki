@@ -119,7 +119,7 @@ The tests can be run under GDB to trace problems:
 
     Breakpoint 1, Vector2Test_angle_Test::TestBody (this=0x5555557c2b90)
         at ../../libraries/AP_Math/tests/test_vector2.cpp:20
-    20	    EXPECT_FLOAT_EQ(M_PI/2, Vector2f(0, 1).angle());
+    20      EXPECT_FLOAT_EQ(M_PI/2, Vector2f(0, 1).angle());
     (gdb) 
 
 

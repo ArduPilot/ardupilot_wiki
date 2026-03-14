@@ -7,7 +7,7 @@ Emlid Reach RTK GPS Receiver
 This article provides a brief overview of Reach RTK GPS receiver. 
 
 .. image:: ../../../images/Reach.jpg
-	:target: ../_images/Reach.jpg
+    :target: ../_images/Reach.jpg
 
 
 What is Reach and what is it for?
@@ -37,7 +37,7 @@ Connecting Reach to Pixhawk
 A Reach unit mounted on the vehicle can receive base corrections over telemetry radio, thus not requiring a separate correction link to the drone. Coordinate output is implemented via a serial port.
 
 .. image:: ../../../images/Reach_pixhawk_radio.jpg
-	:target: ../_images/Reach_pixhawk_radio.jpg
+    :target: ../_images/Reach_pixhawk_radio.jpg
 
 For more information on Reach and Pixhawk integration, visit `Reach ArduPilot integration docs <https://docs.emlid.com/reach/ardupilot-integration/>`__.
 

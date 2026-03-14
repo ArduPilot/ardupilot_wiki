@@ -47,7 +47,7 @@ Components of the system
     SERIAL1_PROTOCOL 2
     SYSID_MYGCS 1   (to accept control from mavros)
     VISO_TYPE 0
-	
+    
 - On the quadcopter there is a Raspberry Pi 3 (connected to Flight Controller with serial port) and a Raspberry Pi Camera
 - On the Raspberry Pi there is ROS Kinetic with raspicam_node, aruco_gridboard and mavros packages.
 

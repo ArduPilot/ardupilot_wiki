@@ -256,7 +256,7 @@ Restview can be installed with:
 
 .. code-block:: bat
 
-	python3 -m pip install restview
+    python3 -m pip install restview
 
 The restview executable will be installed in the **Scripts** folder of the Python main folder.
 Restview will start the on-the-fly HTML rendering and open a tab page in your preferred web browser.
@@ -267,7 +267,7 @@ If you are in the root folder of your local Wiki repository:
 
 .. code-block:: bat
 
-	start \python-folder\Scripts\restview common\source\docs\common-wiki_editing_guide.rst	
+    start \python-folder\Scripts\restview common\source\docs\common-wiki_editing_guide.rst  
 
 RST rendering on Linux
 ----------------------

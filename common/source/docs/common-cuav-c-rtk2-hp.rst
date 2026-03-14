@@ -8,7 +8,7 @@ C-RTK2 HP is a heading and RTK receiver designed and manufactured by CUAV.
 The difference from F9P is that it only needs one module to realize GPS for yaw. C-RTK2 HP also supports UART and Dronecan connection methods.
 
 .. image:: ../../../images/c-rtk2-hp/c-rtk2-hp.jpg
-	:target: ../images/c-rtk2-hp/c-rtk2-hp.jpg
+    :target: ../images/c-rtk2-hp/c-rtk2-hp.jpg
 
 Features
 ========
@@ -54,7 +54,7 @@ Pinouts
 =======
 
 .. image:: ../../../images/c-rtk2-hp/pinouts.jpg
-	:target: ../images/c-rtk2-hp/pinouts.jpg
+    :target: ../images/c-rtk2-hp/pinouts.jpg
 
 
 Hardware connection and ArduPilot Setup
@@ -69,14 +69,14 @@ The diagram below shows the C-RTK2-HP being connected via its CAN port to an aut
 - :ref:`GPS1_TYPE<GPS1_TYPE>` = 9 (DroneCAN GPS)
 
 .. image:: ../../../images/c-rtk2-hp/c-rtk2-hp-connection-en.jpg
-	:target: ../images/c-rtk2-hp/c-rtk2-hp-connection-en.jpg
+    :target: ../images/c-rtk2-hp/c-rtk2-hp-connection-en.jpg
 
 Serial
 ------
 The diagram below shows the C-RTK2 HP being connected via its UART2 port to an autopilot's serial port setup for GPS Protocol.
 
 .. image:: ../../../images/c-rtk2-hp/c-rtk2-hp-connection-en2.jpg
-	:target: ../images/c-rtk2-hp/c-rtk2-hp-connection-en2.jpg
+    :target: ../images/c-rtk2-hp/c-rtk2-hp-connection-en2.jpg
 
 - set the autopilot's ``SERIALx_PROTOCOL`` = '5' (be sure any lower numbered port does not use this protocol unless a GPS is attached)
 - :ref:`GPS1_TYPE<GPS1_TYPE>` = 25 (UnicoreMovingBaseline)

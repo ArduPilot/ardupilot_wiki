@@ -1,7 +1,7 @@
 .. _common-nooploop:
 
 =======================================
-	Nooploop for Non-GPS Navigation
+    Nooploop for Non-GPS Navigation
 =======================================
 
 [copywiki destination="copter,rover,blimp"]

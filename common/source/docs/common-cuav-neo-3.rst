@@ -7,7 +7,7 @@ NEO 3  GPS
 Neo 3 is a UAV positioning module developed by  CUAV. It integrates industrial-grade compass, barometer, autopilot status light, buzzer, and safety switch all in one package. It has the characteristics of high safety and strong interference resistance.It integrates ublox m9n module and can receive signals from GPS, Galileo, GLONASS and Beidou at the same time.
 
 .. image:: ../../../images/cuav-gnss/neo-3.jpg
-	:target: ../_images/neo-3.jpg
+    :target: ../_images/neo-3.jpg
 
 .. note::
 
@@ -94,7 +94,7 @@ Connect to CUAV v5+
 ===================
 
 .. image:: ../../../images/cuav-gnss/neo-3-connection.png
-	:target: ../_images/neo-3-connection.png
+    :target: ../_images/neo-3-connection.png
 
 .. note::
 
@@ -104,7 +104,7 @@ Pinouts
 =======
 
 .. image:: ../../../images/cuav-gnss/neo3-pinouts.png
-	:target: ../_images/neo3-pinouts.png
+    :target: ../_images/neo3-pinouts.png
 
 
 More information

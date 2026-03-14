@@ -45,8 +45,8 @@ that are needed to build an ArduPilot project.
 
    .. code-block:: bash
    
-	  cd /path-to-your-qt-creator-dir/bin
-	  qtcreator.exe
+      cd /path-to-your-qt-creator-dir/bin
+      qtcreator.exe
  
 #. Go to the *toolchain\\msys\\1.0* subdirectory of the PX4 toolchain directory and
    make a copy of the file **px4_console.bat** , called **px4_qt_creator.bat**.
@@ -54,11 +54,11 @@ that are needed to build an ArduPilot project.
 
    .. code-block:: bash
 
-	  :startsh                             
-	  if NOT EXIST %WD%sh.exe goto notfound
-	  start %WD%sh --login -i -c qtcreator.sh
-	  exit   
-		
+      :startsh                             
+      if NOT EXIST %WD%sh.exe goto notfound
+      start %WD%sh --login -i -c qtcreator.sh
+      exit   
+        
 #. Optional: create a Windows shortcut to the **px4_qt_creator.bat** for easy access.
 
 #. Start up Qt Creator by starting up **px4_qt_creator.bat**
@@ -82,8 +82,8 @@ Create a project
 #. Enter a project name and choose the location of the ArduPilot Git repository. Then press **Next**.
 
    .. image:: ../images/QtCreator_SelectProjectFolder.png
-	  :target: ../_images/QtCreator_SelectProjectFolder.png
-	
+      :target: ../_images/QtCreator_SelectProjectFolder.png
+    
 #. Qt Creator shows you the files that will be imported into the project. Just press **Next** (we will worry about this a bit later).
 
    .. image:: ../images/QtCreator_SelectProjectFiles.png
@@ -129,13 +129,13 @@ Create a file called **generate_ardupilot_project.bat**:
    cd ..
    dir *include* /A:D /s /b > ArduPilot.includes
    dir *libraries /A:D /s /b >> ArduPilot.includes
-		
+        
 Linux script
 ------------
 Create a file called **generate_ardupilot_project.sh**:
 
 .. code-block:: bash
-	
+    
    cd ArduCopter
    find . \( -name "*.cpp" -o -name "*.hpp" -o -name "*.ipp" -o -name "*.c" -o -name "*.h" \) > ../ArduPilot.files
    cd ..
@@ -150,7 +150,7 @@ Create a file called **generate_ardupilot_project.sh**:
    cd ..
    find . -type d -name 'include' > ArduPilot.includes
    find . -type d -name 'libraries' >> ArduPilot.includes
-		
+        
 Git hooks
 ---------
 Open a command line interface and browse to the **.git/hooks** subfolder in the project folder.
@@ -162,21 +162,21 @@ Change the **post-merge** and **post-checkout** files so that they become:
    #!/bin/sh
    ./generate_qt_creator_files.bat
    exit 0
-	
+    
 Another option is to make symbolic links in between the Git hook files and the generation script. 
 In Linux for example, that is achieved by:
 
 .. code-block:: bash
 
    ln -s ./generate_ardupilot_project.sh ./.git/hooks/post-merge
-   ln -s ./generate_ardupilot_project.sh ./.git/hooks/post-checkout 	
+   ln -s ./generate_ardupilot_project.sh ./.git/hooks/post-checkout     
 
 Build the project
 =================
 This section discusses how to build the code in Qt Creator.
 
 #. Click on **Projects** on the left pane and make sure that you are in the 
-   **Build & Run** tab page. 	
+   **Build & Run** tab page.    
 
 #. Click **Manage Kits** in the topleft corner.
 
@@ -186,7 +186,7 @@ This section discusses how to build the code in Qt Creator.
    (Linux). Also choose "GCC" as the Error parser.
    
    .. image:: ../images/QtCreator_ManageCompilers.png
-	  :target: ../_images/QtCreator_ManageCompilers.png     
+      :target: ../_images/QtCreator_ManageCompilers.png     
 
 #. Then click on the **Kits** tab page. Click **Add** on the right hand side.
 
@@ -194,7 +194,7 @@ This section discusses how to build the code in Qt Creator.
    proper compiler (the one you just added) and the debugger inside the PX4 toolchain.
 
    .. image:: ../images/QtCreator_ManageKits.png
-	  :target: ../_images/QtCreator_ManageKits.png   
+      :target: ../_images/QtCreator_ManageKits.png   
 
 #. Click **Apply**.
 
@@ -212,12 +212,12 @@ This section discusses how to build the code in Qt Creator.
    Deselect the **Targets**.
 
    .. image:: ../images/QtCreator_Target_Project_Settings.png
-      :target: ../_images/QtCreator_Target_Project_Settings.png   	
-	
+      :target: ../_images/QtCreator_Target_Project_Settings.png     
+    
 #. You can make other build configurations for e.g. ArduPlane in the same way. You can quickly switch
    between "Build Configurations" by clicking the logo just above the **Run** icon (the green arrow) on 
-   the left pane. 	
-	
+   the left pane.   
+    
 #. You can now remove the MSVC or standard GCC build kit (click on the down arrow on the kit itself and 
    choose **Remove Kit**).
    
@@ -228,7 +228,7 @@ Apply coding style guidelines
 =============================
 It is useful that the Qt Creator editor is configured so that it automatically applies the layout guidelines
 described in :ref:`ArduPilot Style Guide <style-guide>`.
-		
+        
 #. Indentation: Click on the **Tools** menu
    and choose **Options**. Subsequently, pick the **Text Editor** view and then the **Behaviour** tab page.
    You can set the tab policy (spaces only) and the size of a tab and indentations (4).

@@ -228,7 +228,7 @@ RobotisServo, see :ref:`common-servo-robotis`
       <tr>
    <td>20</td>
    <td>
-	NMEA Output, NEMA Output stream from GPS
+    NMEA Output, NEMA Output stream from GPS
 
 .. raw:: html
 

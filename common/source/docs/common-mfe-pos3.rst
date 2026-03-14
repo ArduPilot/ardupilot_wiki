@@ -14,13 +14,13 @@ MFE POS3 GPS is a DroneCAN GPS/Compass available from `MakeFlyEasy <http://www.m
 Key Features
 ============
 
-- Positioning accuracy 	1.5m (with SBAS)
-- Update frequency 	25hz(Max)
-- Cold start 	24S
-- Hot start 	2S
-- Tracking sensitivity 	-167dBm
-- Magnetic Compass Accuracy 	±0.1 degrees
-- Magnetic compass resolution 	22nT/LSB 
+- Positioning accuracy  1.5m (with SBAS)
+- Update frequency  25hz(Max)
+- Cold start    24S
+- Hot start     2S
+- Tracking sensitivity  -167dBm
+- Magnetic Compass Accuracy     ±0.1 degrees
+- Magnetic compass resolution   22nT/LSB 
 - Input voltage                 4.7~5.2V
 - Operating temperature         -10~70℃
 - Size                          60*60*17mm

@@ -15,34 +15,34 @@ Specifications
 ==============
 
 =======================    ==============
-Item 	                     Specification
+Item                         Specification
 =======================    ==============
-Frequency 	               902-928MHz
+Frequency                  902-928MHz
 Spreading Method           Frequency Hopping
-Encryption 	               Optional(see –AES option)
-Range 	                   Up to 60 KM(in theory)
+Encryption                 Optional(see –AES option)
+Range                      Up to 60 KM(in theory)
 Forward Error Detection    Hamming/
                            BCH/
                            Golay/
                            Reed-Solomon
-Error Detection 	       32 bits of CRC, ARQ
-Output Power 	           100mW-1W（20-30dBm）
-Serial Interface 	       3.3V TTL
-Baud Rate 	               57600（default & changeable）
-Link Rate 	               57.6 – 276 kbps
-Sensitivity (@10^-4) 	   114 dBm @ 57.6 kbps
+Error Detection            32 bits of CRC, ARQ
+Output Power               100mW-1W（20-30dBm）
+Serial Interface           3.3V TTL
+Baud Rate                  57600（default & changeable）
+Link Rate                  57.6 – 276 kbps
+Sensitivity (@10^-4)       114 dBm @ 57.6 kbps
 -                          112 dBm @ 115.2 kbps
 -                          109 dBm @ 172.8 kbps
 -                          107 dBm @ 230.4 kbps
-Blocking 	               +/- 1 MHz > 55 dBc
+Blocking                   +/- 1 MHz > 55 dBc
 -                           +/- 2.5 MHz > 60 dBc
 -                           +/- 5 MHz > 65 dBc
 -                           > 930 MHz > 70 dBc
 -                           < 890 MHz > 70 dBc
-Supply Voltage 	           5～55v
-Antenna Interface 	       SMA
-Size 	                   50mm * 38mm * 14mm
-Weight 	                   39g
+Supply Voltage             5～55v
+Antenna Interface          SMA
+Size                       50mm * 38mm * 14mm
+Weight                     39g
 =======================    ==============
 
 Where to Buy

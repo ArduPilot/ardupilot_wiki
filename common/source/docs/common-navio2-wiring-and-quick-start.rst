@@ -28,7 +28,7 @@ To mount NAVIO2:
 
 .. note::
 
-	Raspberry Pi2 requires an external USB Wi-Fi dongle. An extensive list of supported dongles is available `here <http://elinux.org/RPi_USB_Wi-Fi_Adapters>`__.
+    Raspberry Pi2 requires an external USB Wi-Fi dongle. An extensive list of supported dongles is available `here <http://elinux.org/RPi_USB_Wi-Fi_Adapters>`__.
 
 
 .. _common-navio2-wiring-and-quick-start_powering_navio2:
@@ -53,7 +53,7 @@ In case of power module failure NAVIO2 will switch to power from the servo rail.
 
 .. warning::
 
-	All power sources should provide voltage in 4.8-5.3V range, otherwise you can damage your NAVIO2 and Raspberry Pi.
+    All power sources should provide voltage in 4.8-5.3V range, otherwise you can damage your NAVIO2 and Raspberry Pi.
 
 .. _common-navio2-wiring-quick-start_rc_inputs_navio2:
 
@@ -64,7 +64,7 @@ NAVIO2 supports PPM and SBUS signals as an RC input. To connect receivers that d
 
 .. warning::
 
-	Do not connect servos to the RC receiver! Servos can consume a lot of power which RC receiver port may not be able to provide and that may lead to Raspberry Pi and NAVIO2 shutting down and even getting damaged.
+    Do not connect servos to the RC receiver! Servos can consume a lot of power which RC receiver port may not be able to provide and that may lead to Raspberry Pi and NAVIO2 shutting down and even getting damaged.
 
 Some of the receivers with PPM output:
 
@@ -108,7 +108,7 @@ For typical ESCs setup schemes visit `NAVIO2 documentation <https://docs.emlid.c
 
 .. note::
 
-	Only one ESC power wire (central) should be connected to Navio2 servo rail, otherwise BECs built in ESCs will heat each other.
+    Only one ESC power wire (central) should be connected to Navio2 servo rail, otherwise BECs built in ESCs will heat each other.
 
 Connect other peripherals
 =========================
@@ -147,7 +147,7 @@ Servos are connected to RC outputs labeled from 1 to 14 on a 2.54mm header.
 
 .. note::
 
-	Power module does not provide power to servos. To provide power to servos connect BEC to the servo rail. BEC would also serve as back-up power supply to Navio2.
+    Power module does not provide power to servos. To provide power to servos connect BEC to the servo rail. BEC would also serve as back-up power supply to Navio2.
 
 
 

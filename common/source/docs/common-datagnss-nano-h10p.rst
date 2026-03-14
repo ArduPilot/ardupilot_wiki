@@ -11,7 +11,7 @@ It includes compass IST8310.
 NANO H10P RTK Receiver support base and rover mode.
 
 .. image:: ../../../images/datagnss-h10p/H10P-RTK-main-white-bg-x400.png
-	:target: ../_images/datagnss-h/H10P-RTK-main-white-bg-x400.png
+    :target: ../_images/datagnss-h/H10P-RTK-main-white-bg-x400.png
 
 
 Where to Buy
@@ -59,7 +59,7 @@ Pin definition
 The board is connected to the autopilot via UART interface.
 
 .. image:: ../../../images/datagnss-h10p/H10P-pinout-00.png
-	:target: ../_images/datagnss-h10p/H10P-pinout-00.png
+    :target: ../_images/datagnss-h10p/H10P-pinout-00.png
 
 The 1.25mm pitch 8P connector (from Left PIN1 to PIN8) :
 
@@ -88,12 +88,12 @@ RTK technology requires a base and a rover, with the base placed on the ground, 
 The data from the base needs to be transmitted to the drone via telemetry radio and inputted into the RTK receiver on the rover.
 
 .. image:: ../../../images/gem1305/setup-rtk-00.png
-	:target: ../_images/gem1305/setup-rtk-00.png
+    :target: ../_images/gem1305/setup-rtk-00.png
 
 NANO RTK Receiver family for UAV:
 
 .. image:: ../../../images/datagnss-nano/NANO-total-for-UAV-800x.png
-	:target: ../_images/datagnss-nano/NANO-total-for-UAV-800x.png
+    :target: ../_images/datagnss-nano/NANO-total-for-UAV-800x.png
 
 Base station setup
 ==================

@@ -45,9 +45,9 @@ instructions, `view the manual here <https://download.ardupilot.org/downloads/wi
 
 .. image:: ../../../images/jDrones_PPM_Encoder_V21_Above_with_numbers_500px.jpg
     :target: ../_images/jDrones_PPM_Encoder_V21_Above_with_numbers_500px.jpg
-	
+    
 - Numbers 1-8, connects to your RC-Receiver
-- Cable marked with P, connects to Pixhawk PPM/RC Input 	
+- Cable marked with P, connects to Pixhawk PPM/RC Input     
 
 
 Re-Programming the Atmega328p PPM encoder

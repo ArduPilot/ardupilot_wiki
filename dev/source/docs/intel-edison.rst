@@ -71,7 +71,7 @@ The easiest way to get started is to flash the Edison with the :ref:`APSync <aps
    - On OS X:
 
       - Follow the instructions on the `Homebrew web page <http://brew.sh>`__. 
-      - Install dfu-util  ``brew install dfu-util``		
+      - Install dfu-util  ``brew install dfu-util``     
 
 -  Connect your PC to The Cube using the USB cables as shown below.  The USB cable connected to the Cube (the black cable shown below) provides power.  The two USB cables connected to the carrier board (shown as white cables) enable flashing the image to the edison.  If possible connect the "OTG port Flashing" using the flat USB cable that comes with The Cube because it provides the most reliable connection.
 

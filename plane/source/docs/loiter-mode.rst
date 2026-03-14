@@ -26,7 +26,7 @@ If :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 12 is set (+4096 to value) and :ref
       the autopilot is disarmed.
 
       - This means if you execute an RTL in Plane, it will return to the
-	location where it was when it was armed - assuming it had
-	acquired GPS lock.
+    location where it was when it was armed - assuming it had
+    acquired GPS lock.
       - Consider the use of :ref:`Rally Points <common-rally-points>` to
-	avoid returning directly to your arming point on RTL
+    avoid returning directly to your arming point on RTL

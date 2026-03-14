@@ -38,10 +38,10 @@ Copter
   
 - S-Curve
   - Concept demonstrator done. Implementation needed. (Leonard)
-		
+        
 - Guided Mode
   - Input shaped using FF (Leonard)
-		
+        
 - AutoTune
   - Add tuning type to PID object (Bill Geyer)
   
@@ -101,13 +101,13 @@ Hardware & OS support
 - CAN SITL Support (Sid)
 - CAN ecosystem ramp-up (Sid, Tridge)
 - Easier AirSim with the complex environment (Ryan, Rajat)
-- Extend maximum mission size	(Tridge)
+- Extend maximum mission size   (Tridge)
 - Fast mission upload (Tridge)
 - Filter params for fixed-wing PIDs (Tridge)
 - Fix performance regressions (Tridge)
 - High-performance IMUs (ADIS) (Sid)
 - High-speed USB support - Nora (Tridge)
-- Improve USB performance	(Sid, Michael O.)
+- Improve USB performance   (Sid, Michael O.)
 - Increase max number of sensors (Tridge)
 - Log synthetic airspeed (Tridge)
 - Mission VFS download (Tridge)

@@ -67,32 +67,32 @@ On 1st terminal
 
 .. code-block:: bash
 
-	cd oak_d_vins_cpp
-	./feature_tracker
-	
+    cd oak_d_vins_cpp
+    ./feature_tracker
+    
 On 2nd terminal
 
 .. code-block:: bash
 
-	cd VINS-Fusion/vins_estimator
-	./vins_fusion oak_d.yaml
-	
+    cd VINS-Fusion/vins_estimator
+    ./vins_fusion oak_d.yaml
+    
 On 3rd terminal
 
 .. code-block:: bash
 
-	cd mavlink-udp-proxy
-	./mavlink_udp
-	
+    cd mavlink-udp-proxy
+    ./mavlink_udp
+    
 [Optional]Verify pose estimation
 --------------------------------
 On a PC with `ROS Noetic <http://wiki.ros.org/noetic>`__ installed (WSL will do)
 
 .. code-block:: bash
 
-	git clone https://github.com/chobitsfan/my_udp_ros.git
-	#follow instructions in README.md to build & run
-	
+    git clone https://github.com/chobitsfan/my_udp_ros.git
+    #follow instructions in README.md to build & run
+    
 .. youtube:: 6QpYq17_L9I
 
 red = front, green = left and blue = up 

@@ -7,7 +7,7 @@ Robsense SwarmLink
 **ARCHIVED TOPIC: No longer manufactured**
 
   .. image:: ../../../images/telemetry-robsense-swarmlink.png
-	 :target: ../_images/telemetry-robsense-swarmlink.png
+     :target: ../_images/telemetry-robsense-swarmlink.png
 
 `Robsense SwarmLink <https://home.robsense.com/?page_id=862&lang=en>`__ telemetry radios allows connecting multiple drones to a single ground station without the need for multiple radios on the ground station side (i.e. it creates a mesh network).  Network monitoring and configuration software is also included.
 
@@ -40,7 +40,7 @@ Built on top of the SwarmLink hardware, `EasySwarm <https://guide.robsense.com/c
 Features include customised swarming policies, dynamic waypoint planning and real-time tracking of all vehicles.
 
   .. image:: ../../../images/telemetry-robsense-easyswarm-gcs.png
-	 :target: ../_images/telemetry-robsense-easyswarm-gcs.png 
+     :target: ../_images/telemetry-robsense-easyswarm-gcs.png 
 
 ..  youtube:: 2qy5eZDyAp4
     :width: 100%

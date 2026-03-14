@@ -4,7 +4,7 @@
 Navisys GR-901U RTK base
 =============================
 .. image:: ../../../images/navisys/GR-901U-1.png
-	:target: ../images/navisys/GR-901U-1.png
+    :target: ../images/navisys/GR-901U-1.png
 
 
 Navisys GR-901U is an advanced RTK base station. Equipped with u-blox ZED-F9P engine,
@@ -16,7 +16,7 @@ UAV/drone applications. Simply plug Navisys GR-901U into a computer, it’s serv
 in Ardupilot Mission Planner！
 
 .. image:: ../../../images/navisys/GR-901U-2.png
-	:target: ../images/navisys/GR-901U-2.png
+    :target: ../images/navisys/GR-901U-2.png
 
 Key Features
 ============
@@ -67,14 +67,14 @@ Size
 
 
 .. image:: ../../../images/navisys/GR-901U-3.png
-	:target: ../images/navisys/GR-901U-3.png
+    :target: ../images/navisys/GR-901U-3.png
 
 
 Where to buy
 ============
 
 You can buy it from `Navisys <https://www.navisys.com.tw/>`__.
-	
+    
 
 More information
 ================

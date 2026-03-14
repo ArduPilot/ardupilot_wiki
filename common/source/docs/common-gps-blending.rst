@@ -24,7 +24,7 @@ Setup through the Ground Station
 After rebooting the board, the status, hdop and satellite count of both GPSs should be visible.
 
 .. image:: ../../../images/gps-blending-mp-quicktab.png
-	:target: ../_images/gps-blending-mp-quicktab.png
+    :target: ../_images/gps-blending-mp-quicktab.png
 
 Dataflash logging
 =================
@@ -36,7 +36,7 @@ The blended GPS data appears with an instance number of 2 in the GPS and GPA mes
 If using the Mission Planner, opening a dataflash log and clicking on "Show Map" will show both GPSs, the blended position and the EKF's final estimate (shown as "POS")
 
 .. image:: ../../../images/gps-blending-mp-show-map.png
-	:target: ../_images/gps-blending-mp-show-map.png
+    :target: ../_images/gps-blending-mp-show-map.png
 
 Video
 =====

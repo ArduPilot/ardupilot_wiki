@@ -22,7 +22,7 @@ It includes compass IST8310.
 GEM1305 also has a version with a casing.
 
 .. image:: ../../../images/gem1305/GEM1305-with-case.png
-	:target: ../_images/gem1305/GEM1305-with-case.png
+    :target: ../_images/gem1305/GEM1305-with-case.png
 
 Where to Buy
 ============

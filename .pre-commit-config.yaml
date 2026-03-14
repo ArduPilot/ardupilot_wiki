@@ -28,6 +28,5 @@ repos:
     hooks:
       - id: sphinx-lint
         args:
-          - --disable=horizontal-tab
           - --disable=missing-final-newline
           - --disable=trailing-whitespace

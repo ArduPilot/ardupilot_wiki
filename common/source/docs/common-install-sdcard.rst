@@ -69,7 +69,7 @@ After the transfer is complete, the directory listing should look something like
         RTL> ftp list
         RTL> Listing /
          D APM
-           ardupilot.abin	1847687
+           ardupilot.abin   1847687
         Total size 1804.38 kByte
 
 Triggering the Flash Update

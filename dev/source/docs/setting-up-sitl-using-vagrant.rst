@@ -109,7 +109,7 @@ Set up the Vagrant and the virtual machine
 
        ::
 
-	  export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+      export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
 #. Initialise git submodules
 
@@ -119,10 +119,10 @@ Set up the Vagrant and the virtual machine
 
       ::
 
-	 vagrant ssh
-	 cd /vagrant
-	 git submodule update --init --recursive
-	 exit
+     vagrant ssh
+     cd /vagrant
+     git submodule update --init --recursive
+     exit
 
 Start running SITL
 ==================
