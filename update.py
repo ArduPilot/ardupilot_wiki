@@ -33,7 +33,6 @@ Parameters files are fetched from autotest using requests
 """
 
 import argparse
-import distutils
 import errno
 import filecmp
 import json
@@ -57,9 +56,6 @@ from typing import Optional, Dict, List
 from sphinx.application import Sphinx
 import rst_table
 from datetime import datetime
-# while flake8 says this is unused, distutils.dir_util.mkpath fails
-# without the following import on old versions of Python:
-from distutils import dir_util  # noqa: F401
 
 from frontend.scripts import get_discourse_posts
 
@@ -391,14 +387,14 @@ def make_backup(site, destdir, backupdestdir):
         debug('Backing up: %s' % wiki)
 
         targetdir = os.path.join(destdir, wiki)
-        distutils.dir_util.mkpath(targetdir)
+        os.makedirs(targetdir, exist_ok=True)
 
         if not os.path.exists(targetdir):
             fatal("FAIL backup when looking for folder %s" % targetdir)
 
         bkdir = os.path.join(backupdestdir, str(building_time + '-wiki-bkp'), str(wiki))
         debug('Checking %s' % bkdir)
-        distutils.dir_util.mkpath(bkdir)
+        os.makedirs(bkdir, exist_ok=True)
         debug('Copying %s into %s' % (targetdir, bkdir))
         try:
             subprocess.check_call(["rsync", "-a", "--delete", targetdir + "/", bkdir])
