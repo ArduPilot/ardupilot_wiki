@@ -30,26 +30,26 @@ Prerequisites
 
 - **Configure Silent Wings to send sensor data and receive control inputs remotely.** To do so, open ``%USERPROFILE%\AppData\Local\VirtualStore\Program Files (x86)\Silent Wings\Silent Wings\data\options.dat`` and replace the "UDP Output protocol" and "Remote control protocol" sections in it with ::
 
-		#---------------------
-		# UDP Output protocol 
-		#---------------------
-		use_output_udp      = true
-		output_udp_protocol = binary
-		output_udp_address  = localhost
-		output_udp_port     = 6060
-		output_udp_rate     = 90
+        #---------------------
+        # UDP Output protocol 
+        #---------------------
+        use_output_udp      = true
+        output_udp_protocol = binary
+        output_udp_address  = localhost
+        output_udp_port     = 6060
+        output_udp_rate     = 90
 
-		#-------------------------
-		# Remote control protocol 
-		#-------------------------
-		use_remote_control  = true
-		remote_control_port = 6070
-		remote_control_mode = UDP
-		
+        #-------------------------
+        # Remote control protocol 
+        #-------------------------
+        use_remote_control  = true
+        remote_control_port = 6070
+        remote_control_mode = UDP
+        
   Also, set ::
   
-		screen_refresh     = 60
-		
+        screen_refresh     = 60
+        
   Note that there is another options.dat file, in ``C:\Program Files (x86)\Silent Wings\Silent Wings\data``. It is not the one we need.
   
   The output_udp_rate = 90 value works well for screen_refresh = 60. When adjusting the latter, you will probably want to adjust the former as well for smoother control.
@@ -95,11 +95,11 @@ Running Silent Wings SITL
 
 #. **Launch ArduPlane SITL.** To do so, open a Cygwin64 terminal, switch to your ArduPilot repository's root directory, and run ::
 
-		build/sitl/bin/arduplane --model silentwings --home <lat>,<lon>,<alt>,<yaw>
+        build/sitl/bin/arduplane --model silentwings --home <lat>,<lon>,<alt>,<yaw>
    
    e.g., ::
    
-		build/sitl/bin/arduplane --model silentwings --home 60.8805696600,11.6695970300,216,145
+        build/sitl/bin/arduplane --model silentwings --home 60.8805696600,11.6695970300,216,145
    
    Here, `<lat>` and `<lon>` are the start location's latitude and longitude that you noted down when launching Silent Wings, with a "-" sign if latitude is S or longitude is W. **However, `<alt>` should be the elevation of the start location's terrain above sea level, even if you chose to start in the air.** To determine it, subtract the starting altitude you noted down earlier (it is AGL) from the altitde you see in the top left corner of the Silent Wings window (it is MSL) when the mission starts. The result is the `<alt>` that you need to pass to the SITL. Thus, note that for the mission in the above screenshot, `<alt>` =216, not 800. `<yaw>` is the initial heading you picked for the Silent Wings mission.
    
@@ -110,7 +110,7 @@ Running Silent Wings SITL
    
    .. figure:: ../images/sitl_waiting.png
       :target: ../_images/sitl_waiting.png
-	  
+      
    |br|
 
 #. **Launch Mission Planner, connect a joystick, and** `set up the joystick in Mission Planner <https://ardupilot.org/copter/docs/common-joystick.html>`_ to configure its roll, pitch, and yaw axes (other axes will be ignored by Silent Wings).

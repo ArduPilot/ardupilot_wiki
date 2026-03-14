@@ -7,7 +7,7 @@ C-RTK 2 PPK Module
 C-RTK 2 is a high-performance PPK/RTK positioning module created by CUAV for professional applications such as drone aerial survey/mapping). Its small shape/light weight, industrial-grade IMU combination, and combination of high-precision positioning modules can easily satisfy the most demanding Copter/VTOL Plane/Traditional Helicopter applications.
 
 .. image:: ../../../images/c-rtk2/c-rtk2.png
-	:target: ../images/c-rtk-9p/c-rtk2.png
+    :target: ../images/c-rtk-9p/c-rtk2.png
 
 Other characteristics
 =====================
@@ -100,7 +100,7 @@ LED Indicators
 ==============
 
 .. image:: ../../../images/c-rtk2/led.png
-	:target: ../images/c-rtk2/led.jpg
+    :target: ../images/c-rtk2/led.jpg
 
 - SYS Led
    - 100ms flashing: In bootloader
@@ -138,13 +138,13 @@ Pinouts
 =======
 
 .. image:: ../../../images/c-rtk2/c-rtk2_pinouts1.jpg
-	:target: ../images/c-rtk2/c-rtk2_pinouts1.jpg
+    :target: ../images/c-rtk2/c-rtk2_pinouts1.jpg
 
 .. image:: ../../../images/c-rtk2/c-rtk2_pinouts0.jpg
-	:target: ../images/c-rtk2/c-rtk2_pinouts0.jpg
+    :target: ../images/c-rtk2/c-rtk2_pinouts0.jpg
 
 .. image:: ../../../images/c-rtk2/c-rtk2_pinouts2.jpg
-	:target: ../images/c-rtk2/c-rtk2_pinouts2.jpg
+    :target: ../images/c-rtk2/c-rtk2_pinouts2.jpg
 
 Preparation before use
 ======================
@@ -152,7 +152,7 @@ Only use PPK
 ------------
 
 .. image:: ../../../images/c-rtk2/ppk1.jpg
-	:target: ../images/c-rtk2/ppk1.jpg
+    :target: ../images/c-rtk2/ppk1.jpg
 
 - 1 PPK base station/Ntrip account 
 - 1 C-RTK 2 1
@@ -163,7 +163,7 @@ PPK+RTK
 -------
 
 .. image:: ../../../images/c-rtk2/rtk1.jpg
-	:target: ../images/c-rtk2/rtk1.jpg
+    :target: ../images/c-rtk2/rtk1.jpg
 
 - 1 PPK base station/Ntrip account 
 - 1 C-RTK 2 

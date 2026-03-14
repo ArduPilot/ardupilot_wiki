@@ -15,7 +15,7 @@ Holybro Kakute F7 Mini
 
 .. note::
 
-	Due to flash memory limitations, this board does not include all ArduPilot features.
+    Due to flash memory limitations, this board does not include all ArduPilot features.
         See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
 Specifications

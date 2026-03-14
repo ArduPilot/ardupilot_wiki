@@ -12,7 +12,7 @@ The Flywoo Goku F405HD is a small autopilot for 1-2S tiny whoop quadcopter appli
 
 .. note::
 
-	Due to flash memory limitations, this board does not include all ArduPilot features.
+    Due to flash memory limitations, this board does not include all ArduPilot features.
         See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
 

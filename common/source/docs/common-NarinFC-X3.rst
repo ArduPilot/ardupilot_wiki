@@ -36,8 +36,8 @@ Features/Specifications
     - Input Power 6VDC ~ 36VDC (2S ~ 8S)
     - Output Power
         - 3.3V DC 0.5A
-		- 5V DC 2.5A
-		- 9V DC 2.5A
+        - 5V DC 2.5A
+        - 9V DC 2.5A
 
 -  **Size and Dimensions**
     - 38mm x 38mm ( mount hole 30.5mm * 30.5mm)

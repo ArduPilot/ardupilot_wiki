@@ -6,7 +6,7 @@ Pixhawk Overview
 
 .. note::
 
-	Older versions of Pixhawk use an early version of the STM32F427 chip (RevA, RevY and Rev1).
+    Older versions of Pixhawk use an early version of the STM32F427 chip (RevA, RevY and Rev1).
         A hardware bug is present in these chips that limit the flash memory to 1 MB. Any boards
         containing this chip cannot include all ArduPilot features due to this limitation. See
         :ref:`Firmware Limitations <common-limited_firmware>` for details.
@@ -623,7 +623,7 @@ Connecting and disconnecting DF13 connectors
 
 ..  youtube:: Kfu8M8t2fWY
     :width: 100%
-	    
+        
 .. _common-pixhawk-overview_pixhawk_analog_input_pins:
 
 Pixhawk analog input pins

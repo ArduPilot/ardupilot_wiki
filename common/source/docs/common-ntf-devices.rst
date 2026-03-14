@@ -19,25 +19,25 @@ In order to use any of these, they must be selected using the :ref:`NTF_LED_TYPE
 +-------+---------------------------------------+
 |  Bit  |     Bit Meaning                       |
 +-------+---------------------------------------+
-|  0	| Built in LED(s)  (always on-board)    |
+|  0    | Built in LED(s)  (always on-board)    |
 +-------+---------------------------------------+
-|  1	| Internal ToshibaLED                   |
+|  1    | Internal ToshibaLED                   |
 +-------+---------------------------------------+
-|  2	| External ToshibaLED  I2C              |
+|  2    | External ToshibaLED  I2C              |
 +-------+---------------------------------------+
-|  3	| External PCA9685  on I2C              |
+|  3    | External PCA9685  on I2C              |
 +-------+---------------------------------------+
-|  4	| Oreo LED (Solo specific)              |
+|  4    | Oreo LED (Solo specific)              |
 +-------+---------------------------------------+
-|  5	| DroneCAN                              |
+|  5    | DroneCAN                              |
 +-------+---------------------------------------+
-|  6	| NCP5623 External  I2C                 |
+|  6    | NCP5623 External  I2C                 |
 +-------+---------------------------------------+
-|  7	| NCP5623 Internal                      |
+|  7    | NCP5623 Internal                      |
 +-------+---------------------------------------+
-|  8	| NeoPixel string **                    |
+|  8    | NeoPixel string **                    |
 +-------+---------------------------------------+
-|  9 	| ProfiLED                              |
+|  9    | ProfiLED                              |
 +-------+---------------------------------------+
 
  ** Neopixel strings are attached via an output selected to have one of the Neopixel SERVOx_FUNCTIONs. Up to four outputs can be designated for Neopixel strings.

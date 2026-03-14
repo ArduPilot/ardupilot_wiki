@@ -39,5 +39,5 @@ With the turnkey package, FlightDeck can be run in 3 easy steps:
 If the Taranis is configured properly, the LCD display should show this introductory screen:
 
   .. image:: ../../../images/frsky_flightdeck1.png
-	 :target: ../../../images/frsky_flightdeck1.png
+     :target: ../../../images/frsky_flightdeck1.png
 

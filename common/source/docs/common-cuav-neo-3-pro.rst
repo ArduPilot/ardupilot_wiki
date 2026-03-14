@@ -7,7 +7,7 @@ NEO 3 Pro GPS
 NEO 3 pro is DroneCAN standard GPS developed by CUAV. It integrates industrial-grade compass, barometer, autopilot status light, buzzer, and safety switch all in one package. It has the characteristics of high safety and strong interference resistance.It integrates ublox m9n module and can receive signals from GPS, Galileo, GLONASS and Beidou at the same time.
 
 .. image:: ../../../images/cuav-gnss/neo-3-pro.jpg
-	:target: ../_images/neo-3-pro.jpg
+    :target: ../_images/neo-3-pro.jpg
 
 .. note::
 
@@ -95,7 +95,7 @@ Connect to CUAV v5+
 ===================
 
 .. image:: ../../../images/cuav-gnss/neo-3-pro-connection.png
-	:target: ../_images/neo-3-pro-connection.png
+    :target: ../_images/neo-3-pro-connection.png
 
 .. note::
 
@@ -116,7 +116,7 @@ Set the following parameters in all parameter tables of Mission planner and rest
 - :ref:`GPS1_TYPE<GPS1_TYPE>`               set to 9.
 
 .. image:: ../../../images/cuav-neo-v2-pro/fc-set.png
-	:target: ../_images/fc-set.png
+    :target: ../_images/fc-set.png
 
 NEO 3 pro is now ready for operation
 
@@ -161,8 +161,8 @@ NEO-V2 Internal Configuration
 ArduPilot supports setting DroneCAN device internal settings through SLCAN, such as modifying node ID; enabling / disabling barometer, etc.
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/slcan3.png
-	:target: ../_images/slcan3.png
-	
+    :target: ../_images/slcan3.png
+    
 #. Select the COMM port corresponding to SLCAN.
 #. Select the DroneCAN section under Initial Setup>Optional Hardware tab.
 #. Click "SLCAN NODE CAN1"  and
@@ -185,7 +185,7 @@ Upgrade Firmware
 Firmware upgrade using Mission planner
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/slcan.png
-	:target: ../_images/slcan.png
+    :target: ../_images/slcan.png
 
 #. Select the COMM port corresponding to SLCAN.
 #. Click "SLCAN NODE CAN1" on the DroneCAN section under Initial Setup>Optional Hardware tab.
@@ -194,8 +194,8 @@ Firmware upgrade using Mission planner
 #. Select firmware file.
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/slcan2.png
-	:target: ../_images/slcan2.png
-	
+    :target: ../_images/slcan2.png
+    
 - Wait for the flash process to complete.
 
 **Method Two：**
@@ -207,27 +207,27 @@ Upgrade with DroneCAN GUI TOOL software
 - Select the device port corresponding to SLCAN and click "ok"
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/uavcan.png
-	:target: ../_images/uavcan.png
-	
+    :target: ../_images/uavcan.png
+    
 - Click "√"; then double-click on the device information (marked in Figure 2 below).
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/uavcan2.png
-	:target: ../_images/uavcan2.png
-	
+    :target: ../_images/uavcan2.png
+    
 - Click "update firmware", the message box will pop up "yes".
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/uavcan3.png
-	:target: ../_images/uavcan3.png
-	
+    :target: ../_images/uavcan3.png
+    
 - The mode/heakth/uptime entry becomes "SOftware_update" 
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/uavcan4.png
-	:target: ../_images/uavcan4.png
+    :target: ../_images/uavcan4.png
 
 - Waiting for firmware write to complete.
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/uavcan5.png
-	:target: ../_images/uavcan5.png
+    :target: ../_images/uavcan5.png
 
 More information
 ================

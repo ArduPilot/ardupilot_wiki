@@ -387,19 +387,19 @@ listed here will be active participants in the community.
     :scale: 0%
 
 .. image:: ../../../images/logos/fossuav_logo.png
-    :scale: 0%	
+    :scale: 0%  
 
 .. image:: ../../../images/logos/youtube_logo.png
-    :scale: 0%	
+    :scale: 0%  
 
 .. image:: ../../../images/logos/arduxjapan.jpg
-    :scale: 0%	
+    :scale: 0%  
 
 .. image:: ../../../images/logos/controlled_ascent.png
-    :scale: 0%	
+    :scale: 0%  
 
 .. image:: ../../../images/logos/Centx.png
-    :scale: 0%	
+    :scale: 0%  
 
 
 Fleet Management Systems

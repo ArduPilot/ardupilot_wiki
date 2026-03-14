@@ -53,8 +53,8 @@ DroneCAN
 
 if Airspeed sensor is connected to I2C port,
 
-- :ref:`ARSPD_TYPE<ARSPD_TYPE>`   = 	8 (DroneCAN)
-- :ref:`ARSPD_USE<ARSPD_USE>`     = 	1
+- :ref:`ARSPD_TYPE<ARSPD_TYPE>`   =     8 (DroneCAN)
+- :ref:`ARSPD_USE<ARSPD_USE>`     =     1
 
 The default airspeed sensor is expected to be a "DLVR-L10D" type , if not then you must use the SL-CAN interface to set and type in the internal firmware. In Mission Planner go to Setup > Optional Hardware > UAVCAN(DroneCAN) >  SLCan Mode CAN1  > Parameters
 

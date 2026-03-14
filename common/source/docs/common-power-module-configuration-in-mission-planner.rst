@@ -50,29 +50,29 @@ These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor.
 =================================     ========================================================
 :Ref:`BATT_MONITOR<BATT_MONITOR>`       TYPE
 =================================     ========================================================
-0 	                                    Disabled
-3 	                                    Analog Voltage Only
-4 	                                    Analog Voltage and Current
-5 	                                    Solo
-6 	                                    Bebop
-7 	                                    :ref:`SMBus-Generic<common-smart-battery-landingpage>`
-8 	                                    DroneCAN-BatteryInfo
-9 	                                    :ref:`ESC<blheli32-esc-telemetry>`
-10 	                                 Sum Of Selected Monitors, see BATTx_SUM_MASK parameter
-11 	                                 :ref:`FuelFlow <common-fuel-sensors>`
-12 	                                 :ref:`FuelLevelPWM <common-fuel-sensors>`
-13 	                                 :ref:`SMBUS-SUI3<common-smart-battery-landingpage>`
-14 	                                 :ref:`SMBUS-SUI6<common-smart-battery-landingpage>`
-15              	                     NeoDesign
-16              	                     SMBus-Maxell
-17 	                                 :ref:`Generator-Elec<common-ie650-fuelcell>`
-18 	                                 :ref:`Generator-Fuel<common-ie650-fuelcell>`
-19 	                                 :ref:`Rotoye<common-smart-battery-rotoye>`
-20 	                                 MPPT
-21 	                                 INA2XX
-22 	                                 LTC2946
-23 	                                 Torqeedo Motor Controller
-24 	                                 :ref:`FuelLevelAnalog <common-fuel-sensors>`
+0                                       Disabled
+3                                       Analog Voltage Only
+4                                       Analog Voltage and Current
+5                                       Solo
+6                                       Bebop
+7                                       :ref:`SMBus-Generic<common-smart-battery-landingpage>`
+8                                       DroneCAN-BatteryInfo
+9                                       :ref:`ESC<blheli32-esc-telemetry>`
+10                                      Sum Of Selected Monitors, see BATTx_SUM_MASK parameter
+11                                      :ref:`FuelFlow <common-fuel-sensors>`
+12                                      :ref:`FuelLevelPWM <common-fuel-sensors>`
+13                                      :ref:`SMBUS-SUI3<common-smart-battery-landingpage>`
+14                                      :ref:`SMBUS-SUI6<common-smart-battery-landingpage>`
+15                                      NeoDesign
+16                                      SMBus-Maxell
+17                                      :ref:`Generator-Elec<common-ie650-fuelcell>`
+18                                      :ref:`Generator-Fuel<common-ie650-fuelcell>`
+19                                      :ref:`Rotoye<common-smart-battery-rotoye>`
+20                                      MPPT
+21                                      INA2XX
+22                                      LTC2946
+23                                      Torqeedo Motor Controller
+24                                      :ref:`FuelLevelAnalog <common-fuel-sensors>`
 =================================     ========================================================
 
 

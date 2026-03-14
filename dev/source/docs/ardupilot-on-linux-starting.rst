@@ -16,19 +16,19 @@ For each ArduPilot serial port, specify either a device file or a short string t
 The user account running ardupilot should be added to the dialout group to access serial ports.
 
 Serial Ports: /dev/deviceFile
-	- -\-serial0 /dev/ttyAMA0
-	- -\-serial1 /dev/ttyS0
+    - -\-serial0 /dev/ttyAMA0
+    - -\-serial1 /dev/ttyS0
 TCP networking: tcp:<IP address>:<PortNumber>
-	- -\-serial2 tcp:11.0.0.2:5678
-	- -\-serial3 tcp:192.168.2.15:1243:wait
-	- -\-serial4 udp:11.0.0.2:14550
+    - -\-serial2 tcp:11.0.0.2:5678
+    - -\-serial3 tcp:192.168.2.15:1243:wait
+    - -\-serial4 udp:11.0.0.2:14550
 UDP networking: udp:<IP address>:<PortNumber>
-	- -\-serial5 udp:11.0.0.255:14550:bcast
-	- -\-serial6 udpin:0.0.0.0:14550
+    - -\-serial5 udp:11.0.0.255:14550:bcast
+    - -\-serial6 udpin:0.0.0.0:14550
 
 Additional UDP/TCP options:
-	- wait: wait for connection(TCP)
-	- bcast: use broadcast address(UDP)
+    - wait: wait for connection(TCP)
+    - bcast: use broadcast address(UDP)
 
 -\-log-directory
 ================

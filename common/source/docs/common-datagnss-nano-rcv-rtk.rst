@@ -9,7 +9,7 @@ It's based on the new generation Allystar dual-core GNSS SoC. It supports RTK fu
 It includes compass IST8310.
 
 .. image:: ../../../images/datagnss-nano/NANO-RCV-02-main.png
-	:target: ../_images/datagnss-nano/NANO-RCV-02-main.png
+    :target: ../_images/datagnss-nano/NANO-RCV-02-main.png
 
 .. note:: NANO Helix RTK Receiver doesn't support Moving Base mode.
 
@@ -61,7 +61,7 @@ Pin definition
 The board is connected to the autopilot via UART interface.
 
 .. image:: ../../../images/datagnss-nano/nano-rcv-02-connector.png
-	:target: ../_images/datagnss-nano/nano-rcv-02-connector.png
+    :target: ../_images/datagnss-nano/nano-rcv-02-connector.png
 
 The 1.25mm pitch 6P connector (from Left PIN1 to PIN6) :
 
@@ -91,12 +91,12 @@ RTK technology requires a base and a rover, with the base placed on the ground, 
 The data from the base needs to be transmitted to the drone via telemetry radio and inputted into the RTK receiver on the rover.
 
 .. image:: ../../../images/gem1305/setup-rtk-00.png
-	:target: ../_images/gem1305/setup-rtk-00.png
+    :target: ../_images/gem1305/setup-rtk-00.png
 
 NANO RTK Receiver family for UAV:
 
 .. image:: ../../../images/datagnss-nano/NANO-total-for-UAV-800x.png
-	:target: ../_images/datagnss-nano/NANO-total-for-UAV-800x.png
+    :target: ../_images/datagnss-nano/NANO-total-for-UAV-800x.png
 
 Base station setup
 ==================

@@ -37,4 +37,4 @@ It is possible to connect the triducer (or other transducers) to a computer thro
 
 .. note::
 
-	This page needs some improvement. Please, help this task by opening an issue on GitHub with more useful information to add here.
+    This page needs some improvement. Please, help this task by opening an issue on GitHub with more useful information to add here.

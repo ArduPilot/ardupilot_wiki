@@ -183,11 +183,11 @@ The typical sequence during tuning might be:
 
 ::
 
- 09:09:33	AutoTune: Twitch
- 09:09:34	AutoTune: (P) Rate P Up\
- 09:09:34	AutoTune: WFL (Rate(P)) (15.13040 > 10.00000)
- 09:09:34	AutoTune: p=0.052298 d=0.005232
- 09:09:34	AutoTune: success 1/4
+ 09:09:33   AutoTune: Twitch
+ 09:09:34   AutoTune: (P) Rate P Up\
+ 09:09:34   AutoTune: WFL (Rate(P)) (15.13040 > 10.00000)
+ 09:09:34   AutoTune: p=0.052298 d=0.005232
+ 09:09:34   AutoTune: success 1/4
 
 This is during Pitch Rate P adjustment, indicating a twitch is about to happen as the P is being tried at an increased value of 0.052298, but first, it is waiting until it gets back to level from the last twitch (WFL= Waiting for level), and then it reports that the result of this twitch is within targets and successful. But this has to occur 4 times in a row, before moving on to the next phase.
 
@@ -196,14 +196,14 @@ This is during Pitch Rate P adjustment, indicating a twitch is about to happen a
 Anytime the process is interrupted by pilot stick movements, the
 :: 
 
- 09:09:38	AUTOTUNE: pilot overrides active
+ 09:09:38   AUTOTUNE: pilot overrides active
 
 message appears.
 
 If you stopped the tune and dis-armed while still in AUTOTUNE, and an axis tune has been completed, you will get a message showing that the new gains have been saved for that axis. If there is not a message to this effect, but think you finished at least one axis, then you probably dis-armed while not in AUTOTUNE mode, and did not actually save them.
 ::
 
- 09:19:48	AutoTune: Saved gains for Pitch
+ 09:19:48   AutoTune: Saved gains for Pitch
 
 .. tip:: If you do happen to accidentally discard a session's AUTOTUNE values by disarming when not in AUTOTUNE, you can examine the dataflash log for the GCS messages it sent during the tune and manually set them on the bench.
 

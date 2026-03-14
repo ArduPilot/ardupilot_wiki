@@ -87,11 +87,11 @@ Guided Mode Options
 The :ref:`GUID_OPTIONS<GUID_OPTIONS>` parameter allows several guided mode behavior changes:
 
 ===    ==========
-Bit 	Meaning
+Bit     Meaning
 ===    ==========
-0 	   Allow Arming from Transmitter
-2 	   Ignore pilot yaw input
-3 	   SetAttitudeTarget interprets Thrust As Thrust
+0      Allow Arming from Transmitter
+2      Ignore pilot yaw input
+3      SetAttitudeTarget interprets Thrust As Thrust
 4      Do not stabilize PositionXY
 5      Do not stabilize VelocityXY
 6      Waypoint navigation used for position targets

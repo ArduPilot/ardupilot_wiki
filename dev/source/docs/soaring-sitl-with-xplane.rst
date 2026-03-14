@@ -41,9 +41,9 @@ Setting up X-Plane
 
    To use an FrSky Taranis as an X-Plane joystick:
 
-   a)	Switch on the Taranis, connect it to your PC with a mini USB cable, and move its On-Off switch to Off. The Taranis will stay on without using its battery -- it is now getting power from the PC. 
+   a)   Switch on the Taranis, connect it to your PC with a mini USB cable, and move its On-Off switch to Off. The Taranis will stay on without using its battery -- it is now getting power from the PC. 
 
-   b)	Calibrate it (this needs to be done only the first time you use it as your joystick). You can do so in Windows (on Windows 10: *Start menu -> Settings -> Devices -> Printers and Scanners -> Devices and Printers*) or in X-Plane (start X-Plane, hover near the top of the X-Plane window, and in the toolbar at that appears at the top of the window go to *Settings -> Joystick & Equipment*). For more info on joystick calibration in X-Plane, please refer to the `Setup of X-Plane 10 <https://ardupilot.org/dev/docs/sitl-with-xplane.html#setup-of-x-plane-10>`_. 
+   b)   Calibrate it (this needs to be done only the first time you use it as your joystick). You can do so in Windows (on Windows 10: *Start menu -> Settings -> Devices -> Printers and Scanners -> Devices and Printers*) or in X-Plane (start X-Plane, hover near the top of the X-Plane window, and in the toolbar at that appears at the top of the window go to *Settings -> Joystick & Equipment*). For more info on joystick calibration in X-Plane, please refer to the `Setup of X-Plane 10 <https://ardupilot.org/dev/docs/sitl-with-xplane.html#setup-of-x-plane-10>`_. 
    
    .. note::   
       This setup allows you to control throttle, yaw, pitch, and roll. Other commands, such as switching modes, will have to be issued via Mission Planner or some other means.
@@ -54,11 +54,11 @@ Setting up X-Plane
 
    By default, X-Plane has no models of RC sailplanes' size (~5-meter wingspan), weight (a few kilos), or flying characteristics. However, generous folks have created and published some:
 
-      -	`Vee-gull 005 <http://www.scipie.com/rc/vee-gull/vee-gull_005.zip>`_
-      -	`Houston Hawk <http://wkleinsasser.net/download/Houston_Hawk_Xplane.zip>`_ 
-      -	`Viking 74 <http://wkleinsasser.net/download/Viking_74.zip>`_
-      -	`Vivace 100 <http://wkleinsasser.net/download/Vivace_100_Xplane.zip>`_
-      -	`Vivace 126 <http://wkleinsasser.net/download/Vivace_126_Xplane.zip>`_
+      - `Vee-gull 005 <http://www.scipie.com/rc/vee-gull/vee-gull_005.zip>`_
+      - `Houston Hawk <http://wkleinsasser.net/download/Houston_Hawk_Xplane.zip>`_ 
+      - `Viking 74 <http://wkleinsasser.net/download/Viking_74.zip>`_
+      - `Vivace 100 <http://wkleinsasser.net/download/Vivace_100_Xplane.zip>`_
+      - `Vivace 126 <http://wkleinsasser.net/download/Vivace_126_Xplane.zip>`_
 
    To install them, create a folder *RC Sailplanes* under *%XPlane-install-dir%\\Aircraft* and extract the .acf files from these archives there. `Extra info on sailplane model installation is here <http://wkleinsasser.net/download/x-plane_glider_model_directions.pdf>`_.
 
@@ -107,7 +107,7 @@ Setting up ArduPlane SITL
 
    |br|
 
-#.	**Optional: Get ArduPilot and build ArduPlane for SITL.**
+#.  **Optional: Get ArduPilot and build ArduPlane for SITL.**
 
     a) Open a Cygwin terminal (or reopen it if you have one already open). 
 

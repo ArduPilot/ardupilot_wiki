@@ -22,8 +22,8 @@ Odroid Ubuntu 14.04 hostapd
 
 * `hostapd_OdroidU3_Ubuntu1404.zip <https://download.ardupilot.org/downloads/wiki/developer_tools/hostapd_OdroidU3_Ubuntu1404.zip>`__
 
-VERSION	dev
-DATE POSTED	January 20, 2015
+VERSION dev
+DATE POSTED January 20, 2015
 
 This replaces the hostapd distributed with the Odroid U3 board’s Ubuntu 14.04. This newer version resolves issues creating a wifi access point.
 
@@ -35,7 +35,7 @@ Arduino code to test an airspeed sensor
 * `Airspeed_test.zip <https://download.ardupilot.org/downloads/wiki/developer_tools/Airspeed_test.zip>`__
 * `Airspeed_test1.zip <https://download.ardupilot.org/downloads/wiki/developer_tools/Airspeed_test1.zip>`__
 
-DATE POSTED	April 25, 2013
+DATE POSTED April 25, 2013
 
 Arduino code to test an airspeed sensor
 
@@ -45,7 +45,7 @@ Arduino 1.0.3 with modifications required for ArduPilot (Mac OS X)
 
 * `‘ArduPilot-Arduino-1.0.3-Mac.zip <https://download.ardupilot.org/downloads/wiki/developer_tools/ArduPilot-Arduino-1.0.3-Mac.zip>`__
 
-DATE POSTED	May 1, 2013
+DATE POSTED May 1, 2013
 
 
 ArduPilot-Arduino-1.0.3-windows.zip
@@ -53,8 +53,8 @@ ArduPilot-Arduino-1.0.3-windows.zip
 
 * `ArduPilot-Arduino-1.0.3-windows.zip <https://download.ardupilot.org/downloads/wiki/developer_tools/ArduPilot-Arduino-1.0.3-windows.zip>`__
 
-VERSION	1.0.3
-DATE POSTED	May 1, 2013
+VERSION 1.0.3
+DATE POSTED May 1, 2013
 
 Arduino 1.0.3 with modifications required for ArduPilot
 
@@ -65,7 +65,7 @@ CrossTrack demo (flash version)
 
 * `CrossTrack.swf <https://download.ardupilot.org/downloads/wiki/developer_tools/CrossTrack.swf>`__
 
-DATE POSTED	April 29, 2013
+DATE POSTED April 29, 2013
 
 
 
@@ -74,7 +74,7 @@ Data dump of three attitude solutions
 
 * `AttitudesThree.zip <https://download.ardupilot.org/downloads/wiki/developer_tools/AttitudesThree.zip>`__
 
-DATE POSTED	April 29, 2013
+DATE POSTED April 29, 2013
 
 Data dump of 3 attitude solutions running in parallel. Includes README file.
 
@@ -89,7 +89,7 @@ Declination Lookup - Test EMM
 
 * `DeclinationLookup_CompressedEMM-1.zip <https://download.ardupilot.org/downloads/wiki/developer_tools/DeclinationLookup_CompressedEMM-1.zip>`__
 
-DATE POSTED	April 29, 2013
+DATE POSTED April 29, 2013
 
 This is a small zip file that contains 1 executable that is meant to be executed via the command line. When you run it you will see a menu with 4 options. 
 The only option that will work is the declination lookup option. It is using the exact same lookup method as the AP_Declination library 
@@ -101,7 +101,7 @@ mavproxybeta1.msi
 
 * `mavproxybeta1.msi <https://download.ardupilot.org/downloads/wiki/developer_tools/mavproxybeta1.msi>`__
 
-DATE POSTED	May 1, 2013
+DATE POSTED May 1, 2013
 
 
 
@@ -110,7 +110,7 @@ mavproxyBetaNoNeworkTest.msi
 
 * `mavproxyBetaNoNeworkTest.msi <https://download.ardupilot.org/downloads/wiki/developer_tools/mavproxyBetaNoNeworkTest.msi>`__
 
-DATE POSTED	May 1, 2013
+DATE POSTED May 1, 2013
 
 
 Serial port test program
@@ -118,7 +118,7 @@ Serial port test program
 
 * `MultiSerialMega.zip <https://download.ardupilot.org/downloads/wiki/developer_tools/MultiSerialMega.zip>`__
 
-DATE POSTED	April 29, 2013
+DATE POSTED April 29, 2013
 
 A little program that shows that Port 0 (USB) and Port 3 (Xbee) are working
 
