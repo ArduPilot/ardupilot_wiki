@@ -426,24 +426,59 @@ def delete_old_wiki_backups(folder, n_to_keep):
         error('Error on deleting some previous wiki backup folders: %s' % e)
 
 
-def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
+def write_if_different(path: str, content: str, encoding: str = 'utf-8') -> bool:
+    """Write ``content`` to ``path`` only when it's different from existing file.
+    - Returns True if the file was written/changed, False if unchanged.
+    - Raises exceptions from the underlying IO on failure.
     """
-    copies files common to all Wikis to the source directories for each Wiki
+    # Ensure directory exists
+    dirpath = os.path.dirname(path)
+    if dirpath:
+        os.makedirs(dirpath, exist_ok=True)
+
+    # Text content
+    if os.path.exists(path):
+        try:
+            with open(path, 'r', encoding=encoding) as f:
+                existing = f.read()
+            if existing == content:
+                return False
+        except Exception:
+            # fall through to write
+            pass
+
+    with open(path, 'w', encoding=encoding) as f:
+        f.write(content)
+    return True
+
+
+def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False, site: Optional[str] = None):
+    """
+    copies files common to all Wikis (or a single wiki when `site` is provided) to the
+    source directories for each Wiki.
 
     Args:
         start_dir: Directory containing common source files
         clean_common: If True, delete and recopy all common files (old behavior).
                      If False, only copy files that have changed (faster incremental builds).
+        site: If provided, restrict copy/remove operations to this single wiki only.
     """
 
+    # Determine which wikis we will operate on
+    if site:
+        allowed_wikis = {site}
+        debug(f"copy_common_source_files: restricted to site '{site}'")
+    else:
+        allowed_wikis = set(ALL_WIKIS)
+
     # Create destination folders that might be needed (if don't exist)
-    for wiki in ALL_WIKIS:
+    for wiki in allowed_wikis:
         os.makedirs(f'{wiki}/source/docs', exist_ok=True)
         os.makedirs(f'{wiki}/source/_static', exist_ok=True)
 
     # Build a set of expected common files per wiki (to detect stale files)
     # Format: {wiki: set of filenames that should exist}
-    expected_common_files = {wiki: set() for wiki in ALL_WIKIS}
+    expected_common_files = {wiki: set() for wiki in allowed_wikis}
 
     # First pass: determine which files should exist in each wiki
     for root, dirs, files in os.walk(start_dir):
@@ -453,92 +488,118 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                 with open(source_file_path, 'r', encoding='utf-8') as f:
                     source_content = f.read()
                 targets = get_copy_targets(source_content)
+                # Only record expected files for wikis we're operating on
                 for wiki in targets:
-                    expected_common_files[wiki].add(file)
+                    if wiki in allowed_wikis:
+                        expected_common_files[wiki].add(file)
 
-    # Remove stale common files (files that exist but shouldn't)
+    # Remove stale common files (files that exist but shouldn't) only for allowed_wikis
     files_removed = 0
-    for wiki in ALL_WIKIS:
+    for wiki in allowed_wikis:
         existing_common_files = glob.glob(f'{wiki}/source/docs/common-*.rst')
         for filepath in existing_common_files:
             filename = os.path.basename(filepath)
-            if filename not in expected_common_files[wiki]:
+            if filename not in expected_common_files.get(wiki, set()):
                 debug(f'Removing stale common file: {filepath}')
-                os.remove(filepath)
-                files_removed += 1
+                try:
+                    os.remove(filepath)
+                    files_removed += 1
+                except Exception as e:
+                    debug(f"Failed to remove stale common file {filepath}: {e}")
 
     if clean_common:
-        # Clean all existing common topics for full rebuild
-        for wiki in ALL_WIKIS:
+        # Clean existing common topics only for allowed_wikis
+        for wiki in allowed_wikis:
             files = glob.glob('%s/source/docs/common-*.rst' % wiki)
             for f in files:
                 debug('Remove existing common: %s' % f)
                 os.remove(f)
 
-    debug("Copying common source files to each Wiki")
+    debug("Copying common source files to target wiki(s): %s" % (', '.join(sorted(allowed_wikis))))
     files_copied = 0
     files_skipped = 0
 
     for root, dirs, files in os.walk(start_dir):
         for file in files:
             if file.endswith(".rst"):
-                # debug("  FILE: %s" % file)
                 source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', encoding='utf-8')
-                source_content = source_file.read()
-                source_file.close()
+                with open(source_file_path, 'r', encoding='utf-8') as source_file:
+                    source_content = source_file.read()
                 targets = get_copy_targets(source_content)
+
+                # Only copy into the intersection of declared targets and the allowed wikis
                 for wiki in targets:
+                    if wiki not in allowed_wikis:
+                        continue
+
                     content = strip_content(source_content, wiki)
                     targetfile = f'{wiki}/source/docs/{file}'
 
                     # Only write if content has changed (preserves timestamps for unchanged files)
-                    # Use byte-accurate file comparison against the source file.
                     if not clean_common and os.path.exists(targetfile):
+                        # Fast path: raw source == target (very common when there are no shortcodes)
                         try:
-                            if filecmp.cmp(source_file_path, targetfile, shallow=False):
+                            if filecmp.cmp(source_file_path, targetfile, shallow=True):
                                 files_skipped += 1
                                 continue
                         except Exception as e:
-                            debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
-                            # treat as different and fall through to write
+                            debug(f"filecmp shallow check failed for {source_file_path} vs {targetfile}: {e}")
 
-                    # debug(targetfile)
-                    with open(targetfile, 'w', encoding='utf-8') as destination_file:
-                        destination_file.write(content)
-                    files_copied += 1
+                    try:
+                        written = write_if_different(targetfile, content, encoding='utf-8')
+                        if written:
+                            files_copied += 1
+                        else:
+                            files_skipped += 1
+                    except Exception as e:
+                        error(f"Failed to write {targetfile}: {e}")
+
             elif file.endswith(".css"):
-                for wiki in ALL_WIKIS:
-                    src = os.path.join(root, file)
+                # Only copy CSS into allowed wikis
+                src = os.path.join(root, file)
+                for wiki in allowed_wikis:
                     dst = '%s/source/_static/%s' % (wiki, file)
-                    # Only copy if different
-                    if not clean_common and os.path.exists(dst) and filecmp.cmp(src, dst, shallow=False):
-                        continue
+                    if not clean_common and os.path.exists(dst):
+                        try:
+                            if filecmp.cmp(src, dst, shallow=True):
+                                continue
+                        except Exception as e:
+                            debug(f"filecmp shallow failed for {src} vs {dst}: {e}")
+                        try:
+                            if filecmp.cmp(src, dst, shallow=False):
+                                continue
+                        except Exception as e:
+                            debug(f"filecmp full compare failed for {src} vs {dst}: {e}")
                     shutil.copy2(src, dst)
+
             elif file.endswith(".js"):
                 source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', encoding='utf-8')
-                source_content = source_file.read()
-                source_file.close()
+                with open(source_file_path, 'r', encoding='utf-8') as source_file:
+                    source_content = source_file.read()
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
+                    if wiki not in allowed_wikis:
+                        continue
                     content = strip_content(source_content, wiki)
                     targetfile = f'{wiki}/source/_static/{file}'
 
-                    # Only write if content has changed
                     if not clean_common and os.path.exists(targetfile):
+                        # Fast path: raw source file is identical to target
                         try:
-                            if filecmp.cmp(source_file_path, targetfile, shallow=False):
+                            if filecmp.cmp(source_file_path, targetfile, shallow=True):
                                 continue
                         except Exception as e:
-                            debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
-                            # treat as different and fall through to write
+                            debug(f"filecmp shallow check failed for {source_file_path} vs {targetfile}: {e}")
 
-                    # debug(targetfile)
-                    with open(targetfile, 'w', encoding='utf-8') as destination_file:
-                        destination_file.write(content)
+                    try:
+                        write_if_different(targetfile, content, encoding='utf-8')
+                    except Exception as e:
+                        error(f"Failed to write {targetfile}: {e}")
 
-    progress(f"Common files: {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
+    site_label = site
+    if site_label is None:
+        site_label = "all"
+    progress(f"Common files ({site_label}): {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
 
 
 def get_copy_targets(content):
@@ -737,8 +798,14 @@ def create_latest_parameter_redirect(default_param_file, vehicle):
     out_line += "\n\n"
 
     filename = vehicle + "/source/docs/parameters.rst"
-    with open(filename, "w") as text_file:
-        text_file.write(out_line)
+
+    # Write only-if-different to avoid touching mtime unnecessarily
+    try:
+        changed = write_if_different(filename, out_line)
+        if not changed:
+            debug(f"No change for redirect {filename}")
+    except Exception as e:
+        error(f"Failed to write redirect {filename}: {e}")
 
     debug("Created html automatic redirection from parameters.html to %shtml" %
           default_param_file[:-3])
@@ -920,8 +987,15 @@ def create_features_pages(site):
             destination_filepath = "%s/source/docs/binary-features.rst" % wiki
         # make .../docs/ directory if it doesn't already exist
         os.makedirs(os.path.dirname(destination_filepath), exist_ok=True)
-        with open(destination_filepath, "w") as f:
-            f.write(content)
+
+        # Write only if content changed to avoid touching mtime and forcing
+        # unnecessary Sphinx rebuilds.
+        try:
+            changed = write_if_different(destination_filepath, content)
+            if not changed:
+                debug(f"No change for {destination_filepath}")
+        except Exception as e:
+            error(f"Failed to write {destination_filepath}: {e}")
 
 
 def reference_for_board(board):
@@ -1127,7 +1201,7 @@ if __name__ == "__main__":
 
     copy_static_html_sites(args.site, args.destdir)
     # Use clean_common=True for clean builds, False for fast/incremental builds
-    copy_common_source_files(clean_common=args.clean_common)
+    copy_common_source_files(clean_common=args.clean_common, site=args.site)
     sphinx_make(args.site, args.parallel, args.fast)
 
     if args.paramversioning:
