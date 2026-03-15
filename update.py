@@ -714,7 +714,7 @@ def fetch_versioned_parameters(site=None):
                     for filename in old_parameters_files:
                         debug("Erasing rst " + filename)
                         os.remove(filename)
-                except Exception as e:
+                except OSError as e:
                     error(e)
                     pass
 
@@ -741,7 +741,7 @@ def fetch_versioned_parameters(site=None):
                     debug("Moving " + vehicle_json_file)
                     # os.rename(vehicle_json_file, new_file)
                     shutil.copy2(vehicle_json_file, new_file)
-                except Exception as e:
+                except OSError as e:
                     error(e)
                     pass
 
@@ -752,7 +752,7 @@ def fetch_versioned_parameters(site=None):
                     new_parameters_files = [
                         f for f in glob.glob(new_parameters_folder + "*.rst")
                     ]
-                except Exception as e:
+                except OSError as e:
                     error(e)
                     pass
                 for filename in new_parameters_files:
@@ -780,7 +780,7 @@ def fetch_versioned_parameters(site=None):
                             debug("Copying %s to %s" % (filename, new_file))
                             shutil.copy2(filename, new_file)
 
-                    except Exception as e:
+                    except OSError as e:
                         error(e)
                         pass
 
@@ -847,7 +847,7 @@ def cache_parameters_files(site=None):
                           (built, old_parameters_folder))
                     shutil.copy2(built, old_parameters_folder)
 
-            except Exception as e:
+            except OSError as e:
                 error(e)
                 pass
 
@@ -873,7 +873,7 @@ def put_cached_parameters_files_in_sites(site=None):
                         debug("Reusing built %s in %s " %
                               (built, vehicle_folder))
                         shutil.copy(built, vehicle_folder)
-            except Exception as e:
+            except OSError as e:
                 error(e)
                 pass
 
@@ -903,7 +903,7 @@ def copy_static_html_sites(site, destdir):
             targetdir = os.path.join(destdir, folder)
             shutil.rmtree(targetdir, ignore_errors=True)
             shutil.copytree(site_folder, targetdir)
-        except Exception as e:
+        except OSError as e:
             error(e)
             pass
 
