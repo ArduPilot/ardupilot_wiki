@@ -13,6 +13,17 @@ See :ref:`common-imu-notch-filtering`  for more information.
 
 Pure rate mode stabilization, utilizing only the gyros with no attitude feedback from the accelerometers, can be forced by setting bit 1 of :ref:`ACRO_OPTIONS<ACRO_OPTIONS>` to one. Attitude will still have an open loop correction applied in this mode, similar to "heading hold" tail gyros, but attitude can drift over time.
 
+Rate Loop Only with I-term Scaling
+===================================
+
+When the "Rate Loop Only" option is enabled (bit 1 of :ref:`ACRO_OPTIONS<ACRO_OPTIONS>`), the rate controller's I-term (integral term) is automatically scaled by the angle P gain for each axis. This makes the I-term contribution proportional to the attitude correction strength, mimicking the tuning approach used by Betaflight. Pilots transitioning from Betaflight should find that after ArduPilot tuning (:ref:`common-tuning`), the tune will feel more like Betaflight tuning with this option enabled.
+
+With I-term scaling enabled:
+
+-  The attitude controller bypasses angle-level stabilization and sends rate commands directly to the rate PID controller.
+-  The I-term on each axis (roll, pitch, yaw) is multiplied by that axis's angle P gain value (e.g. :ref:`ATC_ANG_RLL_P<ATC_ANG_RLL_P>`), providing a coupling between attitude correction and integral wind-up that gives a familiar feel for Betaflight pilots.
+-  Each axis is scaled independently, allowing asymmetric tuning if desired.
+
 
 Overview
 ========
