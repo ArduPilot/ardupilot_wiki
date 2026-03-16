@@ -62,6 +62,6 @@ Safe Indoor Flying Don'ts
    warehouse with a high roof = OK, bedroom = not OK.
 -  Don't use Auto\* modes
 
-\* Autonomous and semi-autonomous modes requires GPS (e.g. :ref:`Loiter <loiter-mode>`, :ref:`Guided <ac2_guidedmode>`, :ref:`Auto <auto-mode>`, :ref:`RTL <rtl-mode>`)
+\* Autonomous and semi-autonomous modes require a position estimate. This can come from GPS or from :ref:`Non-GPS Navigation <common-non-gps-navigation-landing-page>` sources such as optical flow, external navigation, or motion capture systems. In ArduPilot 4.7 and later, the EKF origin can be automatically saved and restored across power cycles — see :ref:`Persistent Origin Storage <common-non-gps-navigation-landing-page>` for details.
 
 \*\* Non-autonomous modes include :ref:`Stabilize <stabilize-mode>` and :ref:`AltHold <altholdmode>`
