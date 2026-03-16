@@ -43,3 +43,21 @@ And selecting the ArduPilot vehicle shown in that list will activate the :ref:`c
 .. image:: ../../../images/crsf-param-editor.png
 
 .. note:: Some autopilots will not display the parameter values that have text names, as text, but rather as a number, in order to save flash space. See  :ref:`common-limited_firmware` for those without CRSF TEXT capability.
+
+Scripted CRSF Menus
+====================
+
+ArduPilot supports custom CRSF menus created via Lua scripts. These menus appear alongside the built-in ArduPilot parameter editor in the transmitter's Crossfire Configuration screen, and can be used to provide task-specific configuration interfaces.
+
+The `crsf_helper.lua module <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/crsf-menu.lua>`__  provides a high-level API which can be placed in LUA scripts for creating CRSF menus. Multiple independent menu scripts can run simultaneously — for example, a PID tuning menu and an OSD configuration menu can coexist without conflicts.
+
+**Multi-menu support (4.7 and later):**
+
+In ArduPilot 4.7, the CRSF menu Lua API was improved to support multiple concurrent menus reliably:
+
+-  New ``crsf:peek_menu_event()`` method allows scripts to inspect pending events without consuming them, so each script can check whether an event belongs to its menu before processing it.
+-  New ``crsf:pop_menu_event()`` method explicitly consumes an event after a script has determined it owns the event.
+-  New ``crsf:send_response()`` method for sending generic CRSF parameter responses.
+-  Thread-safe access to the menu event queues via internal semaphore protection.
+
+Scripts using ``crsf_helper.lua`` automatically benefit from these improvements. Scripts using the low-level CRSF API directly should be updated to use the peek/pop pattern instead of the older ``crsf:get_menu_event()`` to avoid consuming events intended for other scripts.
