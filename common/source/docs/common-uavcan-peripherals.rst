@@ -71,6 +71,7 @@ Airspeed
     Qiotek DroneCAN Airspeed Sensor <https://www.qio-tek.com/index.php/product/qiotek-asp5033-dronecan-airspeed-and-compass-module>
     TBS DLVR-10 <https://www.team-blacksheep.com/products/prod:lucid_dcassp>
     TBS MS4525 <https://www.team-blacksheep.com/products/prod:lucid_dcass>
+    UAV-DEV GmbH DroneCAN Airspeed and Barometer Sensor - AUAV <https://wiki.uav-dev.com/en/product/airspeed/auav>
 
 
 External Barometer
@@ -79,6 +80,7 @@ External Barometer
     :maxdepth: 1
 
     Beyond Robotix Air Data Module (Amphenol AUAV) <https://www.beyondrobotix.com/products/air-data-module>
+    UAV-DEV GmbH DroneCAN Airspeed and Barometer Sensor - AUAV <https://wiki.uav-dev.com/en/product/airspeed/auav>
 
 Smart Battery/Power Module
 ==========================
