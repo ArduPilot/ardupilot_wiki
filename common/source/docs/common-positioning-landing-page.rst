@@ -132,6 +132,25 @@ Moving Baseline (GPS for Yaw) Capable
     Holybro RTK mosaic-H GPS (Dual Antenna Heading) <https://holybro.com/collections/h-rtk-gps/products/h-rtk-mosaic>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
     Synerx MDU-2000 RTK + LTE GPS <common-synerex-mdu-2000>
+    
+GPS Auto Configuration
+======================
+
+The :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` parameter provides several automatic configuration options.
+
+- 0: Disable automatic configuration
+    Not recommended when using supported hardware.
+    
+- 1: Enable automatic configuration for Serial GPSes only
+    Default value; supports many common modules.
+    
+- 2: Enable automatic configuration for DroneCAN as well
+    Intended for use when configuring DroneCAN GPS modules for :ref:`common-gps-for-yaw` operation. 
+    
+.. note:: After selecting option 2 for :ref:`common-gps-for-yaw` configuration, reverting to default (non-moving-baseline) operation requires connecting to the DroneCAN peripheral(s) and manually restoring the internal GPSx_TYPE parameters to their default values.
+
+- 3: Clear all configurations not set by ArduPilot (u-Blox only)
+    On next boot, resets u-Blox GPS modules to default before applying ArduPilot configuration values (u-Blox Generation 9 and newer).
 
 GPS Driver Options
 ==================
@@ -143,6 +162,10 @@ Several GPS operating options are provided by the :ref:`GPS_DRV_OPTIONS<GPS_DRV_
 - bit 2: if set, use 115.2Kbaud for max serial data rate for those GPSes not capable of higher rates.
 - bit 3: if set, routes RTK data between two CAN GPSes via CAN instead of via the autopilot.
 - bit 4: if set, GPS reports altitude in ellipsoid height instead of height AMSL.
+- bit 5: if set, GPS satellite health is reported solely from L1 band (overriding L5 band health).
+- bit 6: if set, always enable RTCM decoding (even for single channel RTCM).
+- bit 7: if set, always disable RTCM decoding (even when RTCM is seen on more than one channel).
+- bit 8: if set, force u-Blox Config Get/Set (serial connected u-Blox Generation 9 and newer).
 
 GPS Auto Switch
 ===============
