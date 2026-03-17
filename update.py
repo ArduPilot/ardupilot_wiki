@@ -106,7 +106,7 @@ LOGMESSAGE_SITE = {
     'antennatracker': 'Tracker',
     'blimp': 'Blimp',
 }
-error_log = list()
+error_log = []
 N_BACKUPS_RETAIN = 10
 
 VERBOSE = False
@@ -593,7 +593,7 @@ def logmatch_code(matchobj, prefix):
     for i in range(9):
         try:
             progress(f"{prefix} m{i}: {matchobj.group(i)}")
-        except IndexError:  # The object has less groups than expected
+        except IndexError:  # noqa: PERF203 The object has less groups than expected
             progress(f"{prefix}: except m{i}")
 
 
@@ -639,8 +639,7 @@ def fetch_versioned_parameters(site=None):
                 else:
                     old_parameters_mask = f"{os.getcwd()}/{key}/source/docs/parameters-{key.title()}-"
                 try:
-                    old_parameters_files = [
-                        f for f in glob.glob(f"{old_parameters_mask}*.rst")]
+                    old_parameters_files = list(glob.glob(f"{old_parameters_mask}*.rst"))
                     for filename in old_parameters_files:
                         debug(f"Erasing rst {filename}")
                         os.remove(filename)
@@ -673,9 +672,7 @@ def fetch_versioned_parameters(site=None):
                 # Copy all parameter files to vehicle folder IFF it is new
                 try:
                     new_parameters_folder = f"{os.getcwd()}/../new_params_mversion/{value}/"
-                    new_parameters_files = [
-                        f for f in glob.glob(f"{new_parameters_folder}*.rst")
-                    ]
+                    new_parameters_files = list(glob.glob(f"{new_parameters_folder}*.rst"))
                 except Exception as e:
                     error(e)
                     pass
@@ -702,7 +699,7 @@ def fetch_versioned_parameters(site=None):
                             debug(f"Copying {filename} to {new_file}")
                             shutil.copy2(filename, new_file)
 
-                    except Exception as e:
+                    except Exception as e:  # noqa: PERF203
                         error(e)
                         pass
 
@@ -734,25 +731,19 @@ def cache_parameters_files(site=None):
         if (site == key or site is None) and (key != 'AP_Periph'):  # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server # noqa: E501
             try:
                 old_parameters_folder = f"{os.getcwd()}/../old_params_mversion/{value}/"
-                old_parameters_files = [
-                    f for f in glob.glob(f"{old_parameters_folder}*.*")
-                ]
+                old_parameters_files = list(glob.glob(f"{old_parameters_folder}*.*"))
                 for file in old_parameters_files:
                     debug(f"Removing {file}")
                     os.remove(file)
 
                 new_parameters_folder = f"{os.getcwd()}/../new_params_mversion/{value}/"
-                new_parameters_files = [
-                    f for f in glob.glob(f"{new_parameters_folder}parameters-*.rst")
-                ]
+                new_parameters_files = list(glob.glob(f"{new_parameters_folder}parameters-*.rst"))
                 for filename in new_parameters_files:
                     debug(f"Copying {filename} to {old_parameters_folder}")
                     shutil.copy2(filename, old_parameters_folder)
 
                 built_folder = f"{os.getcwd()}/{key}/build/html/docs/"
-                built_parameters_files = [
-                    f for f in glob.glob(f"{built_folder}parameters-*.html")
-                ]
+                built_parameters_files = list(glob.glob(f"{built_folder}parameters-*.html"))
                 for built in built_parameters_files:
                     debug(f"Copying {built} to {old_parameters_folder}")
                     shutil.copy2(built, old_parameters_folder)
@@ -771,9 +762,7 @@ def put_cached_parameters_files_in_sites(site=None):
         if (site == key or site is None) and (key != 'AP_Periph'): # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server # noqa: E501
             try:
                 built_folder = f"{os.getcwd()}/../old_params_mversion/{value}/"
-                built_parameters_files = [
-                    f for f in glob.glob(f"{built_folder}parameters-*.html")
-                ]
+                built_parameters_files = list(glob.glob(f"{built_folder}parameters-*.html"))
                 vehicle_folder = f"{os.getcwd()}/{key}/build/html/docs/"
                 debug(f"Site {site} getting previously built files from {built_folder}")
                 for built in built_parameters_files:
@@ -972,7 +961,7 @@ def create_features_page(features, build_options_by_define, vehicletype):
 
     all_features_rows = []
     for feature in sorted(build_options_by_define.values(), key=lambda x : (x.category + x.label).lower()):
-        all_features_rows.append([feature.category, feature.label, feature.description])
+        all_features_rows.append([feature.category, feature.label, feature.description])  # noqa: PERF401
     all_features = rst_table.tablify(all_features_rows, headings=["Category", "Feature", "Description"])
 
     return f'''

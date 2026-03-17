@@ -352,7 +352,7 @@ def generate_rst_files(commits_to_checkout_and_parse):
         For each parameter file generate by param_parse.py, it inserts a version tag in anchors
         to do not make confusing in sphinx toctrees.
         """
-        file_in = open(source_file, "r")
+        file_in = open(source_file)
         file_out = open(dest_file, "w")
         found_original_title = False
         if "latest" not in version_tag:
@@ -456,7 +456,7 @@ def generate_json(vehicles):
         debug(f"Creating JSON files for {vehicle}")
 
         # Creates the JSON lines from available rst files
-        parameters_files = [f for f in glob.glob(f"parameters-{vehicle}*.rst")]
+        parameters_files = list(glob.glob(f"parameters-{vehicle}*.rst"))
         parameters_files.sort(reverse=True)
 
         vehicle_json = {}
@@ -504,12 +504,12 @@ def move_results(vehicles):
                 os.makedirs(folder)
 
             # Cleaning last run, iff exists
-            files_to_delete = [f for f in glob.glob(f"{folder}*")]
+            files_to_delete = list(glob.glob(f"{folder}*"))
             for old_file in files_to_delete:
                 os.remove(old_file)
 
             # Moving files (use shutil.move for cross-device compatibility)
-            files_to_move = [f for f in glob.glob(f"parameters-{vehicle}*")]
+            files_to_move = list(glob.glob(f"parameters-{vehicle}*"))
             for file in files_to_move:
                 if "latest" not in file:  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.  # noqa: E501
                     shutil.move(file, f"{folder}{file}")
