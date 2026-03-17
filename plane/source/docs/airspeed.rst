@@ -184,6 +184,7 @@ DroneCAN
 - Amphenol AUAV (static and dynamic pressure)
     - `Beyond Robotix Air Data Module <https://www.beyondrobotix.com/products/air-data-module>`_
     - `Matek DroneCAN AUAV Airspeed/Baro <https://www.mateksys.com/?portfolio=aspd-auav>`__
+    - `UAV-DEV GmbH DroneCAN Airspeed and Barometer Sensor - AUAV <https://wiki.uav-dev.com/en/product/airspeed/auav>`__
 
 - ASP5033
     - `Qiotek DroneCAN 5033 <https://www.qio-tek.com/index.php/product/qiotek-asp5033-dronecan-airspeed-and-compass-module>`_
