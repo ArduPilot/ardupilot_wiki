@@ -29,11 +29,8 @@ The speed during the mission is nominally at :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUI
       plane acquires its GPS lock. It is then continuously updated as long as
       the autopilot is disarmed.
 
-      - This means if you execute an RTL in Plane, it will return to the
-    location where it was when it was armed - assuming it had
-    acquired GPS lock.
-      - Consider the use of :ref:`Rally Points <common-rally-points>` to
-    avoid returning directly to your arming point on RTL
+      - This means if you execute an RTL in Plane, it will return to the location where it was when it was armed - assuming it had acquired GPS lock.
+      - Consider the use of :ref:`Rally Points <common-rally-points>` to avoid returning directly to your arming point on RTL.
 
 MISSION INTERRUPTION
 ====================

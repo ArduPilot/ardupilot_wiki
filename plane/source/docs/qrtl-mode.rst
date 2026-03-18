@@ -42,11 +42,8 @@ Alternatively, you may :ref:`configure the plane to return to a Rally Point <com
       plane acquires its GPS lock. It is then continuously updated as long as
       the autopilot is disarmed.
 
-      - This means if you execute an QRTL in QuadPlane, it will return to the
-    location where it was when it was armed - assuming it had
-    acquired GPS lock.
-      - Consider the use of :ref:`Rally Points <common-rally-points>` to
-    avoid returning directly to your arming point on QRTL
+      - This means if you execute an QRTL in QuadPlane, it will return to the location where it was when it was armed - assuming it had acquired GPS lock.
+      - Consider the use of :ref:`Rally Points <common-rally-points>` to avoid returning directly to your arming point on QRTL.
 
 
 .. warning::
