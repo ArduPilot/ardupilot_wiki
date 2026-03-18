@@ -54,6 +54,7 @@ Long Range
     Herelink <common-herelink>
     Holybro 900Mhz XBP9X Telemetry Radio <https://shop.holybro.com/xbp9x-radio_p1268.html>
     Holybro Microhard Radio Telemetry Radio (P900/P840/P400-C1S) <https://holybro.com/products/microhard-radio>
+    LTE Modems using Lua driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/LTE_modem.md>
     LTM telemetry <common-ltm-telemetry>
     mLRS <common-mlrs-rc.rst>
     RFD900 <common-rfd900>
