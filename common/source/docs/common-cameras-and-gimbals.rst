@@ -34,6 +34,7 @@ gimbals in which ArduPilot controls the stabilisation. Some gimbals also integra
 -  :ref:`Topotek Gimbal <common-topotek-gimbal>`
 -  :ref:`ViewPro gimbals <common-viewpro-gimbal>`
 -  :ref:`Xacti gimbals <common-xacti-gimbal>`
+-  :ref:`XFRobot gimbals <common-xfrobot-gimbal>`
 
 Gimbals may be attached to retractable mounts to prevent ground contact or to reduce air resistant in flight. Mount control is covered on the :ref:`common-mount-targeting` page.
 
@@ -115,6 +116,7 @@ more scenic photos. ArduPilot will stabilize the gimbal to whatever position you
     SToRM32 Gimbal Controller <common-storm32-gimbal>
     ViewPro gimbals <common-viewpro-gimbal>
     Xacti gimbals <common-xacti-gimbal>
+    XFRobot gimbals <common-xfrobot-gimbal>
     FLIR Vue Pro Thermal Camera <common-flir-vue-pro>
     Airpixel ENTIRE Geotagger <common-geotagging-airpixel-entire>
     Airpixel TAG-E Geotagger <common-geotagging-airpixel-tag-e>
