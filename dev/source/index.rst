@@ -161,7 +161,7 @@ Table of Contents
     RemoteID <docs/opendroneid>
     ROS1/ROS2 <docs/ros>
     RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
-    Secure Firmware <docs/secure-firmware>
+    Security <docs/security-landing-page>
     Support Proxy <docs/support_proxy>
     Training Centers <docs/common-training-centers>
     USB IDs <docs/USB-IDs>
