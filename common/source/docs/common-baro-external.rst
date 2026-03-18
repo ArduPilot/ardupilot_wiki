@@ -21,6 +21,7 @@ Where to Buy
 - `Beyond Robotix Air Data Module (Amphenol AUAV) <https://www.beyondrobotix.com/products/air-data-module>`_
 - `MS5611 from Drotek <https://drotek.com/shop/en/imu/44-ms5611-pressure-barometric-board.html>`__
 - `BMP280 I2C from Adafruit <https://www.adafruit.com/product/2651>`__
+- `UAV-DEV GmbH DroneCAN Airspeed and Barometer Sensor - AUAV <https://wiki.uav-dev.com/en/product/airspeed/auav>`__
 
 Connecting and Configuring
 --------------------------

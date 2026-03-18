@@ -15,7 +15,6 @@ New Peripherals
 .. toctree::
     :maxdepth: 1
 
-    XFRobot camera gimbals <common-xfrobot-gimbal>
 [/site]
 [site wiki="plane"]
 New Features
