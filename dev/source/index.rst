@@ -135,37 +135,36 @@ Table of Contents
    :titlesonly:
 
     License (GPLv3) <docs/license-gplv3>
-    AP_Peripheral Devices <docs/ap-peripheral-landing-page>
     Downloading the code / Using Git <docs/where-to-get-the-code>
     Building the code <docs/building-the-code>
     Editors & IDEs <docs/code-editing-tools-and-ides>
     Learning the code <docs/learning-the-ardupilot-codebase>
     Simulation & Testing <docs/simulation-2>
     Debugging <docs/debugging>
-    ArduPilot On Linux <docs/ardupilot-on-linux>
-    Support Proxy <docs/support_proxy>
     Contributing Code <docs/contributing>
-    MAVLink Interface <docs/mavlink-commands>
+    Porting to a new Flight Controller <docs/porting>
+    Linux Support <docs/ardupilot-on-linux>
+    Academic Works Involving ArduPilot <docs/acadamic-works>
+    Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
+    AP_Peripheral Devices <docs/ap-peripheral-landing-page>
     CAN and DroneCAN/UAVCAN <docs/can-bus>
     Companion Computers <docs/companion-computers>
-    ROS1/ROS2 <docs/ros>
-    Lua Scripts <docs/common-lua-scripts>
-    Porting to a new Flight Controller <docs/porting>
-    OEM Customization <docs/common-oem-customizations>
-    Secure Firmware <docs/secure-firmware>
-    RemoteID <docs/opendroneid>
-    Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
-    MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
-    Resources for GCS Developers <docs/gcs-resources>
-    RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
-    How The Team Works <docs/how-the-team-works>
+    Developers Conference <docs/dev-conference>
     Events <docs/events>
-    Training Centers <docs/common-training-centers>
+    GCS Developer Resources <docs/gcs-resources>
     GSoC <docs/gsoc>
-    Developers Conference<docs/dev-conference>
-    2022 Roadmap <https://github.com/orgs/ArduPilot/projects/2>
-    Wiki Editing Guide <docs/common-wiki_editing_guide>
+    How The Team Works <docs/how-the-team-works>
+    Lua Scripts <docs/common-lua-scripts>
+    MAVLink Interface <docs/mavlink-commands>
+    MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
+    OEM Customization <docs/common-oem-customizations>
+    RemoteID <docs/opendroneid>
+    ROS1/ROS2 <docs/ros>
+    RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
+    Secure Firmware <docs/secure-firmware>
+    Support Proxy <docs/support_proxy>
+    Training Centers <docs/common-training-centers>
     USB IDs <docs/USB-IDs>
     User Alerts <docs/user-alerts-developer>
-    Academic Works Involving ArduPilot <docs/acadamic-works>
+    Wiki Editing Guide <docs/common-wiki_editing_guide>
     Appendix <docs/common-appendix>
