@@ -2,6 +2,8 @@
 """
 Script to get last blog entries on Discourse (https://discuss.ardupilot.org/)
 """
+from __future__ import annotations
+
 import argparse
 import hashlib
 import json
@@ -10,7 +12,7 @@ import platform
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, List, Tuple
+from typing import Any
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -96,7 +98,7 @@ class BlogPostsFetcher:
         except requests.exceptions.RequestException as err:
             cache_path = BlogPostsFetcher._get_cache_path(url)
             if cache_path.exists():
-                with open(cache_path, "r", encoding="utf-8") as f:
+                with open(cache_path, encoding="utf-8") as f:
                     return json.load(f)
             raise RequestExecutionError(f"Request failed with {err}. URL: {url}")
 
@@ -118,7 +120,7 @@ class BlogPostsFetcher:
         return str(litem[:140] + ' (...)')
 
     @staticmethod
-    def get_first_youtube_or_img_link(request: str) -> Tuple[str, bool]:
+    def get_first_youtube_or_img_link(request: str) -> tuple[str, bool]:
         """ Returns the first YouTube link or image link in the request, if any.
             True if the link is a Youtube link."""
         request_lines = request.splitlines()
@@ -186,7 +188,7 @@ class BlogPostsFetcher:
         data = [self.get_post_data(content, i, verbose) for i in range(1, n_posts + 1)]
         self.write_to_json(url, data)
 
-    def write_to_json(self, url: str, data: List[Post]) -> None:
+    def write_to_json(self, url: str, data: list[Post]) -> None:
         try:
             if url not in self.files_names:
                 raise ValueError(f"No filename associated with url: {url}")

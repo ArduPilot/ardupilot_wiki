@@ -108,7 +108,7 @@ def load_json(file_path):
     load a json file and return the contents as a dict
     """
     try:
-        with open(file_path, "r") as file:
+        with open(file_path) as file:
             return json.load(file)
     except (FileNotFoundError, json.JSONDecodeError) as e:
         print(f"Motor Diagrams: load_json() error\n{e}", file=stderr)

@@ -31,6 +31,7 @@ Build notes:
 Parameters files are fetched from autotest using requests
 
 """
+from __future__ import annotations
 
 import argparse
 import errno
@@ -49,7 +50,6 @@ import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
-from typing import Dict, List, Optional
 from urllib.parse import urlparse
 
 import requests
@@ -58,8 +58,8 @@ from sphinx.application import Sphinx
 import rst_table
 from frontend.scripts import get_discourse_posts
 
-if sys.version_info < (3, 8):
-    print("Minimum python version is 3.8")
+if sys.version_info < (3, 9):  # noqa: UP036
+    print("Minimum Python version is 3.9")
     sys.exit(1)
 
 DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover', 'sub']
@@ -149,7 +149,7 @@ def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
     os.replace(new_name, target_file)
 
 
-def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) -> None:
+def fetch_url(fetchurl: str, fpath: str | None = None, verbose: bool = True) -> None:
     """Fetches content at url and puts it in a file corresponding to the filename in the URL"""
     progress(f"Fetching {fetchurl}")
 
@@ -192,7 +192,7 @@ def get_request_file_size(url: str) -> int:
     return 0
 
 
-def fetchparameters(site: Optional[str] = None, cache: Optional[str] = None) -> None:
+def fetchparameters(site: str | None = None, cache: str | None = None) -> None:
     dataname = "Parameters"
     fetch_ardupilot_generated_data(
         PARAMETER_SITE,
@@ -204,7 +204,7 @@ def fetchparameters(site: Optional[str] = None, cache: Optional[str] = None) -> 
     )
 
 
-def fetchlogmessages(site: Optional[str] = None, cache: Optional[str] = None) -> None:
+def fetchlogmessages(site: str | None = None, cache: str | None = None) -> None:
     dataname = "LogMessages"
     fetch_ardupilot_generated_data(
         LOGMESSAGE_SITE,
@@ -216,8 +216,8 @@ def fetchlogmessages(site: Optional[str] = None, cache: Optional[str] = None) ->
     )
 
 
-def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: str, document_name: str,
-                                   site: Optional[str] = None, cache: Optional[str] = None) -> None:
+def fetch_ardupilot_generated_data(site_mapping: dict, base_url: str, sub_url: str, document_name: str,
+                                   site: str | None = None, cache: str | None = None) -> None:
     """Fetches the data for all the sites from the test server and
     copies them to the correct location.
 
@@ -225,9 +225,9 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
     parameters or logmessage have changed.)
 
     """
-    urls: List[str] = []
-    targetfiles: List[str] = []
-    names: List[str] = []
+    urls: list[str] = []
+    targetfiles: list[str] = []
+    names: list[str] = []
 
     for key, value in site_mapping.items():
         fetchurl = f'{base_url}/{value}/{sub_url}'
@@ -444,7 +444,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
         for file in files:
             if file.endswith(".rst"):
                 source_file_path = os.path.join(root, file)
-                with open(source_file_path, 'r', encoding='utf-8') as f:
+                with open(source_file_path, encoding='utf-8') as f:
                     source_content = f.read()
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
@@ -478,7 +478,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
             if file.endswith(".rst"):
                 # debug("  FILE: %s" % file)
                 source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', encoding='utf-8')
+                source_file = open(source_file_path, encoding='utf-8')
                 source_content = source_file.read()
                 source_file.close()
                 targets = get_copy_targets(source_content)
@@ -511,7 +511,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                     shutil.copy2(src, dst)
             elif file.endswith(".js"):
                 source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', encoding='utf-8')
+                source_file = open(source_file_path, encoding='utf-8')
                 source_content = source_file.read()
                 source_file.close()
                 targets = get_copy_targets(source_content)
@@ -842,7 +842,7 @@ def check_ref_directives():
     wiki_glob = set(glob.glob("**/*.rst", recursive=True))
     files_to_check = wiki_glob.difference(skipped_files)
     for f in files_to_check:
-        with open(f, "r", encoding='utf-8') as file:
+        with open(f, encoding='utf-8') as file:
             try:
                 for i, line in enumerate(file.readlines()):
                     if character_before_ref_tag.search(line):

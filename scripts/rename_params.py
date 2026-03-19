@@ -23,8 +23,8 @@ parser.add_argument("files", nargs="+", default=None, help="directories or files
 args = parser.parse_args()
 
 
-def load_param_map(fname):
-    lines = open(fname, 'r').readlines()
+def load_param_map(fname) -> dict:
+    lines = open(fname).readlines()
     ret = {}
     for line in lines:
         if line.startswith("#"):
@@ -46,7 +46,7 @@ def process_file(fname, param_map):
             print(f"Skipping common file {fname}")
         return
     needs_write = False
-    txt = open(fname, "r").read()
+    txt = open(fname).read()
 
     replacements = [":ref:`PARAMNAME <PARAMNAME>`",
                     ":ref:`PARAMNAME<PARAMNAME>`"]
@@ -68,7 +68,7 @@ def process_file(fname, param_map):
 
 
 param_map = load_param_map(args.param_map)
-print(f"Loaded param map for {len(param_map.keys())} parameters")
+print(f"Loaded param map for {len(param_map)} parameters")
 
 for fname in args.files:
     if os.path.isfile(fname):
