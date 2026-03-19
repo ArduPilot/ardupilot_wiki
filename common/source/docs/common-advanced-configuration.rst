@@ -122,6 +122,7 @@ tuning options for the vehicle.
     On Screen Displays (OSD) <common-osd-overview>
     OSD Parameter Editor <common-paramosd>
     Parameter List (Full) <parameters>
+    Parameter Lockdown <common-parameter-lockdown>
     Parameter Reset <common-parameter-reset>
 [site wiki="copter"]
     Precision Landing and Loiter <precision-landing-and-loiter>
