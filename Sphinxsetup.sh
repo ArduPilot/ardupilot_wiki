@@ -17,7 +17,7 @@ else
 fi
 
 if [ ${DISTRIBUTION_ID} = 'Ubuntu' ]; then
-  if [ ${DISTRIBUTION_CODENAME} = 'focal' ] || [ ${DISTRIBUTION_CODENAME} = 'bionic' ] || [ ${DISTRIBUTION_CODENAME} = 'noble' ]; then
+  if [ ${DISTRIBUTION_CODENAME} = 'jammy' ] || [ ${DISTRIBUTION_CODENAME} = 'noble' ] || [ ${DISTRIBUTION_CODENAME} = 'resolute' ]; then
     sudo add-apt-repository universe
   fi
 fi
@@ -43,12 +43,12 @@ if [[ "$(uname)" == "Darwin" ]]; then
     exit 0
 fi
 
-sudo apt-get -y update
-sudo apt-get install -y unzip git imagemagick curl wget make python3
-
-# Install packages release specific
-if [ ${DISTRIBUTION_CODENAME} = 'bionic' ]; then
-  sudo apt-get install -y python3-distutils
+sudo apt-get --yes update
+# Migrate to Python virtual environments on Ubuntu 24.04 and later.
+if [ ${DISTRIBUTION_CODENAME} = 'noble' ] || [ ${DISTRIBUTION_CODENAME} = 'resolute' ]; then
+  sudo apt-get install --yes curl git imagemagick make unzip wget python3-venv
+else
+  sudo apt-get install --yes curl git imagemagick make unzip wget python3-pip
 fi
 
 # For WSL (esp. version 2) make DISPLAY empty to allow pip to run
@@ -58,14 +58,17 @@ if grep -qi -E '(Microsoft|WSL)' /proc/version; then
   export DISPLAY=
 fi
 
-sudo apt-get install -y python3-pip
-
-# Install required python packages
+# Python package requirements are in the same directory as this script.
 SCRIPT_DIR=$(dirname $(realpath ${BASH_SOURCE[0]}))
-if [ "${DISTRIBUTION_CODENAME}" = "noble" ]; then
-    python3 -m pip install --upgrade -r "$SCRIPT_DIR"/requirements.txt
+
+# Activate the Python venv with the latest pip and setuptools on Ubuntu 24.04 and later.
+if [ ${DISTRIBUTION_CODENAME} = 'noble' ] || [ ${DISTRIBUTION_CODENAME} = 'resolute' ]; then
+  python3 -m venv --upgrade-deps .venv
+  # shellcheck source=/dev/null
+  source .venv/bin/activate
+  python3 -m pip install --upgrade -r "$SCRIPT_DIR"/requirements.txt
 else
-    python3 -m pip install --user --upgrade -r "$SCRIPT_DIR"/requirements.txt
+  python3 -m pip install --upgrade --user -r "$SCRIPT_DIR"/requirements.txt
 fi
 
 # Reset the value of DISPLAY

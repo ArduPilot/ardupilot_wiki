@@ -14,29 +14,26 @@ jobs:
     - uses: actions/checkout@v6
     - uses: actions/setup-python@v6
       with:
-        python-version: "3.10"
+        python-version: 3.x
     - uses: pre-commit/action@v3.0.1
 
   shellcheck:
     runs-on: ubuntu-slim
     steps:
     - uses: actions/checkout@v6
-    - run: find . -type f -name "*.sh" -exec shellcheck {} +
+    - name: find . -type f -name "*.sh" -exec shellcheck {} +
+      run: |
+        shellcheck --version
+        find . -type f -name "*.sh" -exec shellcheck {} +
 
   build-linux:
-
-    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false  # don't cancel if a job from the matrix fails
       matrix:
-        python-version: ["3.10"]
-
+        os: [ubuntu-latest]  # [ubuntu-22.04, ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v6
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v6
-        with:
-          python-version: ${{ matrix.python-version }}
       - name: Setting environment
         run: |
           mkdir /tmp/web
@@ -57,4 +54,4 @@ jobs:
       - name: Test build
         run: |
           export AP_SPHINXOPTS=-W
-          ./update.py --parallel 4 --verbose --destdir=/tmp/web
+          .venv/bin/python update.py --parallel 4 --verbose --destdir=/tmp/web

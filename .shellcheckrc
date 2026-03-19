@@ -8,3 +8,7 @@ disable=SC2046  # 3 instances
 disable=SC2086  # Many instances
 disable=SC2162  # 3 instances
 disable=SC2185  # 1 instance
+
+# Enable shell files to run commands in the Python .venv/bin directory:
+external-sources=true
+source-path=.venv/bin/activate
