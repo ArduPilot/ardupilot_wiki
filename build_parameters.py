@@ -30,6 +30,7 @@ import shutil  # noqa: F401
 import sys
 import time  # noqa: F401
 import logging
+import json
 from html.parser import HTMLParser
 import urllib.request
 import re
@@ -457,30 +458,27 @@ def generate_json(vehicles):
         parameters_files = [f for f in glob.glob("parameters-" + vehicle + "*.rst")]
         parameters_files.sort(reverse=True)
 
-        json_lines = []
-        json_lines.append("{")
-        json_lines.append('"Click here to change" : ""')
+        vehicle_json = {}
 
         for filename in parameters_files:
-            if ("beta" in filename or "rc" in filename): # Plane uses BETA, Copter and Rover uses RCn
-                json_lines.append(',"' + vehicle + " beta " + filename[(len("parameters-" + vehicle + "-beta")+1):-4] + '" : "' + filename[:-3] + 'html"')  # noqa: E501
-            elif ("latest" in filename):
-                # json_lines.append(",\"" +  vehicle + " latest " + filename[(len("parameters-" + vehicle + "-latest")+1):-4] + "\" : \"" + filename[:-3] + "html\"")  # noqa: E501
-                json_lines.append(',"' + vehicle + " latest " + filename[(len("parameters-" + vehicle + "-latest")+1):-4] + '" : "' + ('parameters.html"'))  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.  # noqa: E501
-
+            if "beta" in filename or "rc" in filename:  # Plane uses BETA, Copter and Rover uses RCn
+                key = f"{vehicle} beta {filename[len('parameters-'+vehicle+'-beta')+1:-4]}"
+                target = filename[:-3] + "html"
+            elif "latest" in filename:
+                key = f"{vehicle} latest {filename[len('parameters-'+vehicle+'-latest')+1:-4]}"
+                target = "parameters.html"
             else:
-                json_lines.append(',"' + vehicle + " stable " + filename[(len("parameters-" + vehicle + "-stable")+1):-4] + '" : "' + filename[:-3] + 'html"')  # noqa: E501
+                key = f"{vehicle} stable {filename[len('parameters-'+vehicle+'-stable')+1:-4]}"
+                target = filename[:-3] + "html"
 
-        json_lines.append("}")
+            vehicle_json[key] = target
 
-        # Saves the JSON
-        json_filename = "parameters-" + vehicle + ".json"
+        json_filename = f"parameters-{vehicle}.json"
         try:
-            with open(json_filename, 'w') as f:
-                for lines in json_lines:  # noqa: FURB122
-                    f.write(f"{lines}\n")
+            with open(json_filename, "w", encoding="utf-8") as f:
+                json.dump(vehicle_json, f, indent=2, ensure_ascii=False)
         except Exception as e:
-            error("Error while creating the JSON file " + vehicle + " in folder " + str(os.getcwd()))  # noqa: E501
+            error(f"Error while creating the JSON file {vehicle} in folder {os.getcwd()}")
             error(e)
             # sys.exit(1)
         debug("")
