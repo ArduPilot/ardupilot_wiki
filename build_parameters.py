@@ -32,16 +32,24 @@ import time  # noqa: F401
 import logging
 import json
 from html.parser import HTMLParser
-import urllib.request
 import re
 import glob
 import argparse
+import requests
+from concurrent.futures import ThreadPoolExecutor
 
 parser = argparse.ArgumentParser(description="python3 build_parameters.py [options]")
 parser.add_argument("--verbose", dest='verbose', action='store_false', default=True, help="show debugging output")
 parser.add_argument("--ardupilotRepoFolder", dest='gitFolder', default="../ardupilot", help="Ardupilot git folder. ")
 parser.add_argument("--destination", dest='destFolder', default="../../../../new_params_mversion", help="Parameters*.rst destination folder.")  # noqa: E501
 parser.add_argument('--vehicle', dest='single_vehicle', help="If you just want to copy to one vehicle, you can do this. Otherwise it will work for all vehicles (Copter, Plane, Rover, AntennaTracker, Sub, Blimp)")  # noqa: E501
+DEFAULT_CACHE_TIME = 6 * 3600  # 6 hours in seconds
+
+# Get the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+default_cache_dir = os.path.join(script_dir, '.cache')
+
+parser.add_argument("--cache-dir", dest='cache_dir', default=default_cache_dir, help="Directory to cache HTTP responses")
 args = parser.parse_args()
 
 error_count = 0
@@ -73,10 +81,64 @@ handler.setFormatter(ColoredFormatter('[build_parameters.py]: [%(levelname)s]: %
 logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, handlers=[handler])
 logger = logging.getLogger(__name__)
 
+# Global session for HTTP requests with connection pooling
+session = requests.Session()
+session.headers.update({
+    'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotWikiBuilder/1.0)',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Connection': 'keep-alive'
+})
+
+
+def get_cached_url(url, cache_dir=None):
+    """Get URL content with caching to avoid repeated downloads"""
+    if cache_dir is None:
+        cache_dir = args.cache_dir
+
+    os.makedirs(cache_dir, exist_ok=True)
+
+    # Create cache filename from URL
+    cache_filename = re.sub(r'[^\w\-_.]', '_', url) + '.cache'
+    cache_path = os.path.join(cache_dir, cache_filename)
+
+    # Check if cached version exists and is recent (less than 6 hours old)
+    if os.path.exists(cache_path):
+        cache_age = time.time() - os.path.getmtime(cache_path)
+        if cache_age < DEFAULT_CACHE_TIME:
+            debug(f"Using cached content for {url}")
+            with open(cache_path, 'r', encoding='utf-8') as f:
+                return f.read()
+
+    # Fetch fresh content
+    try:
+        debug(f"Fetching fresh content from {url}")
+        response = session.get(url, timeout=30)
+        response.raise_for_status()
+        content = response.text
+
+    except requests.RequestException as e:
+        error(f"Failed to fetch {url}: {e}")
+        # Try to use old cached version if available
+        if os.path.exists(cache_path):
+            debug(f"Using stale cached content for {url}")
+            with open(cache_path, 'r', encoding='utf-8') as f:
+                return f.read()
+        raise
+    try:
+        # Cache the content
+        with open(cache_path, 'w', encoding='utf-8') as f:
+            f.write(content)
+    except OSError as e:
+        error(f"Failed to write cache for {url}: {e}")
+        # optionally continue; content is still valid
+
+    return content
+
+
 # Parameters
 COMMITFILE = "git-version.txt"
 BASEURL = "https://firmware.ardupilot.org/"
-ALLVEHICLES = ["AntennaTracker", "Copter" , "Plane", "Rover", "Sub", "Blimp"]
+ALLVEHICLES = ["AntennaTracker", "Copter", "Plane", "Rover", "Sub", "Blimp"]
 VEHICLES = ALLVEHICLES
 
 BASEPATH = ""
@@ -120,7 +182,7 @@ def error(msg):
 
 
 def check_temp_folders():
-    """Creates temporaty subfolders IFF not exists  """
+    """Creates temporaty subfolders IFF not exists."""
 
     os.chdir("../")
     if not os.path.exists("new_params_mversion"):
@@ -148,9 +210,9 @@ def setup():
     if args.single_vehicle in ALLVEHICLES:
         global VEHICLES
         VEHICLES = [args.single_vehicle]
-        progress("Running only for " + str(args.single_vehicle))
+        progress(f"Running only for {args.single_vehicle}")
     else:
-        progress(f"Vehicle {str(args.single_vehicle)} not recognized, running for all vehicles.")
+        progress(f"Vehicle {args.single_vehicle} not recognized, running for all vehicles.")
 
     try:
         # Goes to ardupilot folder and clean it and update to make sure that is the most recent one.
@@ -175,53 +237,61 @@ def setup():
 
 def fetch_releases(firmware_url, vehicles):
     """
-    Select folders with desidered releases for the vehicles
-
+    Select folders with desired releases for the vehicles
     """
-
-    def fetch_vehicle_subfolders(firmware_url):
+    def fetch_vehicle_subfolders(vehicle_url):
         """
         Fetch firmware.ardupilot.org/baseURL all first level folders for a given base URL.
-
         """
-        links = []
-        # Define HTML Parser
+        class ParseText(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.links = []
 
-        class parseText(HTMLParser):
             def handle_starttag(self, tag, attrs):
-                if tag != 'a':
-                    return
-                attr = dict(attrs)
-                links.append(attr)
-        # Create instance of HTML parser
-        lParser = parseText()
-        # Feed HTML file into parsers
+                if tag == 'a':
+                    attr = dict(attrs)
+                    if 'href' in attr:
+                        self.links.append(attr['href'])
+
+        html_parser = ParseText()
         try:
-            debug("Fetching " + firmware_url)
-            lParser.feed(urllib.request.urlopen(firmware_url).read().decode('utf8'))
+            debug(f"Fetching {vehicle_url}")
+            content = get_cached_url(vehicle_url)
+            html_parser.feed(content)
         except Exception as e:
-            error("Folders list download error: " + e)
+            error(f"Folders list download error: {e}")
             sys.exit(1)
-        finally:
-            lParser.links = []
-            lParser.close()
-            return links
-    ######################################################################################
 
-    debug("Cleaning fetched links for wanted folders")
-    stableFirmwares = []
-    for f in vehicles:
-        page_links = fetch_vehicle_subfolders(firmware_url + f)
-        for folder in page_links:  # Non clever way to filter the strings insert by makehtml.py, unwanted folders, and so.
+        return html_parser.links
+
+    def get_vehicle_firmware_links(vehicle_url, version_folder):
+        firmware_base_url = firmware_url[:-1]
+
+        if "stable" in version_folder and not version_folder.endswith("stable"):
+            return firmware_base_url + version_folder
+        elif "latest" in version_folder:
+            return firmware_base_url + version_folder
+        elif "beta" in version_folder:
+            return firmware_base_url + version_folder
+        else:
+            return None
+
+    debug("Cleaning fetched links for the wanted folders")
+    filtered_firmware_links = []
+
+    def fetch_vehicle_links(vehicle):
+        vehicle_url = firmware_url + vehicle
+        page_links = fetch_vehicle_subfolders(vehicle_url)
+        for folder in page_links:
             version_folder = str(folder)
-            if version_folder.find("stable") > 0 and not version_folder.endswith("stable"): # If finish with
-                stableFirmwares.append(firmware_url[:-1] + version_folder[10:-2])
-            elif version_folder.find("latest") > 0 :
-                stableFirmwares.append(firmware_url[:-1] + version_folder[10:-2])
-            elif version_folder.find("beta") > 0:
-                stableFirmwares.append(firmware_url[:-1] + version_folder[10:-2])
+            link = get_vehicle_firmware_links(vehicle_url, version_folder)
+            if link is not None:
+                filtered_firmware_links.append(link)
 
-    return stableFirmwares # links for the firmwares folders
+    with ThreadPoolExecutor() as executor:
+        executor.map(fetch_vehicle_links, vehicles)
+    return filtered_firmware_links
 
 
 def get_commit_dict(releases_parsed):
@@ -237,27 +307,33 @@ def get_commit_dict(releases_parsed):
         links = []
         # Define HTML Parser
 
-        class parseText(HTMLParser):
+        class ParseText(HTMLParser):
             def handle_starttag(self, tag, attrs):
                 if tag != 'a':
                     return
                 attr = dict(attrs)
                 links.append(attr)
         # Create instance of HTML parser
-        lParser = parseText()
+        lParser = ParseText()
         # Feed HTML file into parsers
         try:
-            debug("Fetching " + url)
-            lParser.feed(urllib.request.urlopen(url).read().decode('utf8'))
+            debug(f"Fetching {url}")
+            content = get_cached_url(url)
+            lParser.feed(content)
         except Exception as e:
-            error("Folders list download error:" + e)
+            error(f"Folders list download error: {e}")
+            return None
         finally:
-            lParser.links = []
             lParser.close()
+
+        if links:  # Only proceed if we have links
             last_item = links.pop()
             last_folder = last_item['href']
-            debug("Returning link of the last board folder (" + last_folder[last_folder.rindex('/')+1:] + ")")
+            debug(f"Returning link of the last board folder ({last_folder[last_folder.rindex('/')+1:]})")
             return last_folder[last_folder.rindex('/')+1:]  # clean the partial link
+        else:
+            error(f"No board folders found for {url}")
+            return None
     ####################################################################################################
 
     def fetch_commit_hash(version_link, board, file):
@@ -267,14 +343,11 @@ def get_commit_dict(releases_parsed):
         """
         fetch_link = version_link + '/' + board + '/' + file
 
-        progress("Processing link...\t" + fetch_link)
+        progress(f"Processing link...\t{fetch_link}")
 
         try:
-            fecth_response = ""
-            with urllib.request.urlopen(fetch_link) as response:
-                fecth_response = response.read().decode("utf-8")
-
-            commit_details = fecth_response.split("\n")
+            fetch_response = get_cached_url(fetch_link)
+            commit_details = fetch_response.split("\n")
             commit_hash = commit_details[0][7:]
             # version =  commit_details[6] the sizes cary
             version = commit_details.pop(-2)
@@ -284,34 +357,34 @@ def get_commit_dict(releases_parsed):
 
             regex = re.compile(r'[@_!#$%^&*()<>?/\|}{~:]')
 
-            if (regex.search(vehicle) is None):  # there are some non standard names
+            if regex.search(vehicle) is None:  # there are some non standard names
                 vehicle = vehicle_old_to_new_name[vehicle.strip()]   # Names may not be standard as expected
             else:
                 # tries to fix automatically
                 if re.search('copter', vehicle, re.IGNORECASE):
                     vehicle = "Copter"
-                    debug("Bad vehicle name auto fixed to COPTER on:\t" + fetch_link)
+                    debug(f"Bad vehicle name auto fixed to COPTER on:\t{fetch_link}")
 
                 elif re.search('plane', vehicle, re.IGNORECASE):
                     vehicle = "Plane"
-                    debug("Bad vehicle name auto fixed to PLANE on:\t" + fetch_link)
+                    debug(f"Bad vehicle name auto fixed to PLANE on:\t{fetch_link}")
 
                 elif re.search('rover', vehicle, re.IGNORECASE):
                     vehicle = "Rover"
-                    debug("Bad vehicle name auto fixed to ROVER on:\t" + fetch_link)
+                    debug(f"Bad vehicle name auto fixed to ROVER on:\t{fetch_link}")
 
                 elif re.search('sub', vehicle, re.IGNORECASE):
                     vehicle = "Sub"
-                    debug("Bad vehicle name auto fixed to SUB on:\t" + fetch_link)
+                    debug(f"Bad vehicle name auto fixed to SUB on:\t{fetch_link}")
 
                 elif re.search('racker', vehicle, re.IGNORECASE):
                     vehicle = "Tracker"
-                    debug("Bad vehicle name auto fixed to TRACKER on:\t" + fetch_link)
+                    debug(f"Bad vehicle name auto fixed to TRACKER on:\t{fetch_link}")
                 elif re.search('blimp', vehicle, re.IGNORECASE):
                     vehicle = "Blimp"
-                    debug("Bad vehicle name auto fixed to BLIMP on:\t" + fetch_link)
+                    debug(f"Bad vehicle name auto fixed to BLIMP on:\t{fetch_link}")
                 else:
-                    error("Nomenclature exception found in a vehicle name:\t" + vehicle + "\tLink with the exception:\t" + fetch_link)  # noqa: E501
+                    error(f"Nomenclature exception found in a vehicle name:\t{vehicle}\tLink with the exception:\t{fetch_link}")  # noqa: E501
 
             if "beta" in fetch_link:
                 version_number = "beta-" + version_number
@@ -328,17 +401,22 @@ def get_commit_dict(releases_parsed):
     ####################################################################################################
 
     commits_and_codes = {}
-    commite_and_codes_cleanned = {}
 
-    for j in range(0, len(releases_parsed)):
-        commits_and_codes[j] = fetch_commit_hash(releases_parsed[j], get_last_board_folder(releases_parsed[j]), COMMITFILE)
+    def fetch_data(release):
+        board_folder = get_last_board_folder(release)
+        return fetch_commit_hash(release, board_folder, COMMITFILE)
 
-    for i in commits_and_codes:
-        if commits_and_codes[i][0] != 'error':
-            commite_and_codes_cleanned[i] = commits_and_codes[i]
-    if len(commite_and_codes_cleanned) == 0:
+    with ThreadPoolExecutor() as executor:
+        commits_and_codes = list(executor.map(fetch_data, releases_parsed))
+
+    commits_and_codes_cleanned = {}
+    for i, cc in enumerate(commits_and_codes):
+        if cc[0] != 'error':
+            commits_and_codes_cleanned[i] = cc
+
+    if len(commits_and_codes_cleanned) == 0:
         error("Expected at least one commit")
-    return commite_and_codes_cleanned
+    return commits_and_codes_cleanned
 
 
 def generate_rst_files(commits_to_checkout_and_parse):
@@ -376,6 +454,8 @@ def generate_rst_files(commits_to_checkout_and_parse):
 
             else:
                 file_out.write(line)
+        file_in.close()
+        file_out.close()
 
     for i in commits_to_checkout_and_parse:
         vehicle = str(commits_to_checkout_and_parse[i][0])
@@ -392,18 +472,17 @@ def generate_rst_files(commits_to_checkout_and_parse):
             "2.51" in version or  # last beta APM Rover?
             "0.7.2" in version    # Antennatracker
         ):
-            debug("Ignoring APM version:\t" + vehicle + "\t" + version)
+            debug(f"Ignoring APM version:\t{vehicle}\t{version}")
             continue
 
         # Checkout an Commit ID in order to get its parameters
         try:
-            debug("Git checkout on " + vehicle + " version " + version + " id " + commit_id)
+            debug(f"Git checkout on {vehicle} version {version} id {commit_id}")
             os.system("git checkout --force " + commit_id)
 
         except Exception as e:
-            error("GIT checkout error: " + e)
+            error(f"GIT checkout error: {e}")
             sys.exit(1)
-        debug("")
 
         # Run param_parse.py tool from Autotest set in the desidered commit id
         try:
@@ -426,7 +505,7 @@ def generate_rst_files(commits_to_checkout_and_parse):
             if os.path.exists("Parameters.rst"):
                 replace_anchors("Parameters.rst", filename, filename[10:-4])
                 os.remove("Parameters.rst")
-                debug("File " + filename + " generated. ")
+                debug(f"File {filename} generated. ")
             else:
                 # this was an error, but turns out we are missing a
                 # bunch of these, eg.
@@ -435,10 +514,9 @@ def generate_rst_files(commits_to_checkout_and_parse):
 
             os.chdir(BASEPATH)
         except Exception as e:
-            error('Error while parsing "Parameters.rst" | details:\t' + vehicle + "\t" + version  + "\t" + commit_id)
+            error(f'Error while parsing "Parameters.rst" | details:\t{vehicle}\t{version}\t{commit_id}')
             error(e)
             # sys.exit(1)
-        debug("")
 
     return 0
 
@@ -452,7 +530,7 @@ def generate_json(vehicles):
 
     for vehicle in vehicles:
 
-        debug("Creating JSON files for " + vehicle)
+        debug(f"Creating JSON files for {vehicle}")
 
         # Creates the JSON lines from available rst files
         parameters_files = [f for f in glob.glob("parameters-" + vehicle + "*.rst")]
@@ -481,7 +559,6 @@ def generate_json(vehicles):
             error(f"Error while creating the JSON file {vehicle} in folder {os.getcwd()}")
             error(e)
             # sys.exit(1)
-        debug("")
 
 
 def move_results(vehicles):
@@ -492,7 +569,7 @@ def move_results(vehicles):
     os.chdir(BASEPATH + "/Tools/autotest/param_metadata")
 
     for vehicle in vehicles:
-        debug("Moving created files for " + vehicle)
+        debug(f"Moving created files for {vehicle}")
         try:
             folder = args.destFolder + "/" + vehicle_new_to_old_name[vehicle] + "/"
 
@@ -507,39 +584,50 @@ def move_results(vehicles):
             for old_file in files_to_delete:
                 os.remove(old_file)
 
-            # Moving files.
+            # Moving files (use shutil.move for cross-device compatibility)
             files_to_move = [f for f in glob.glob("parameters-" + vehicle + "*")]
             for file in files_to_move:
-                if ("latest" not in file):  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.  # noqa: E501
-                    os.rename(file, folder + file)
+                if "latest" not in file:  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.  # noqa: E501
+                    shutil.move(file, folder + file)
                 else:
-                    os.rename(file, str((folder + "parameters.rst")))
+                    shutil.move(file, str((folder + "parameters.rst")))
 
         except Exception as e:
-            error("Error while moving result files of vehicle " + vehicle + " pwd: " + str(os.getcwd()))
+            error(f"Error while moving result files of vehicle {vehicle} pwd: {os.getcwd()}")
             error(e)
             # sys.exit(1)
 
 
 def print_versions(commits_to_checkout_and_parse):
     """ Partial results: present all vechicles, versions and commits selected to generate parameters """
-    debug("\n\tList of parameters files to generate:\n")
+    debug("List of parameters files to generate:\n")
     for i in commits_to_checkout_and_parse:
-        debug(commits_to_checkout_and_parse[i][0] + ' - ' + commits_to_checkout_and_parse[i][1] + ' - ' + commits_to_checkout_and_parse[i][2])  # noqa: E501
-    debug("")
+        debug(f"{commits_to_checkout_and_parse[i][0]} - {commits_to_checkout_and_parse[i][1]} - {commits_to_checkout_and_parse[i][2]}")  # noqa: E501
 
 
 # Step 1 - Select the versions for generate parameters
+start_time = time.time()
+progress("=== Step 1: Setup and fetch release information ===")
 setup()                                                             # Reset the ArduPilot folder/repo
 feteched_releases = fetch_releases(BASEURL, VEHICLES)               # All folders/releases.
 commits_to_checkout_and_parse = get_commit_dict(feteched_releases)  # Parse names, and git hashes.
 print_versions(commits_to_checkout_and_parse)                       # Present work dict.
 
 # Step 2 - Generates them in ArdupilotRepoFolder/Tools/autotest/param_metadata
+progress("=== Step 2: Generate parameter files ===")
+progress(f"Time elapsed so far: {time.time() - start_time:.2f} seconds")
+total_commits = len(commits_to_checkout_and_parse)
+progress(f"Processing {total_commits} commit(s)...")
 generate_rst_files(commits_to_checkout_and_parse)
 
-# Step 3 - Generates a JOSN file for each vehicle and mode files to folder new_params_mversion
+# Step 3 - Generates a JSON file for each vehicle and move files to folder new_params_mversion
+progress("=== Step 3: Generate JSON files and move results ===")
+progress(f"Time elapsed so far: {time.time() - start_time:.2f} seconds")
 generate_json(VEHICLES)
 move_results(VEHICLES)
 
+progress("=== Build completed ===")
+total_time = time.time() - start_time
+progress(f"Total execution time: {total_time:.2f} seconds ({total_time/60:.1f} minutes)")
+progress(f"Total errors encountered: {error_count}")
 sys.exit(error_count)
