@@ -161,7 +161,6 @@ def setup():
         os.system("git fetch origin master")
         os.system("git reset --hard origin/master")
         os.system("git pull")
-        os.system("git submodule update --init --recursive")
         global BASEPATH
         BASEPATH = os.getcwd()
         check_temp_folders()
