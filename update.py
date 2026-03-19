@@ -550,9 +550,10 @@ def delete_old_wiki_backups(folder, n_to_keep):
         error(f'Error on deleting some previous wiki backup folders: {e}')
 
 
-def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
+def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False, site: Optional[str] = None):
     """
-    copies files common to all Wikis to the source directories for each Wiki
+    copies files common to all Wikis (or a single wiki when `site` is provided) to the
+    source directories for each Wiki.
 
     Args:
         start_dir: Directory containing common source files
@@ -560,14 +561,21 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                      If False, only copy files that have changed (faster incremental builds).
     """
 
+    # Determine which wikis we will operate on
+    if site:
+        allowed_wikis = {site}
+        debug(f"copy_common_source_files: restricted to site '{site}'")
+    else:
+        allowed_wikis = set(ALL_WIKIS)
+
     # Create destination folders that might be needed (if don't exist)
-    for wiki in ALL_WIKIS:
+    for wiki in allowed_wikis:
         os.makedirs(f'{wiki}/source/docs', exist_ok=True)
         os.makedirs(f'{wiki}/source/_static', exist_ok=True)
 
     # Build a set of expected common files per wiki (to detect stale files)
     # Format: {wiki: set of filenames that should exist}
-    expected_common_files = {wiki: set() for wiki in ALL_WIKIS}
+    expected_common_files = {wiki: set() for wiki in allowed_wikis}
 
     # First pass: determine which files should exist in each wiki
     for root, dirs, files in os.walk(start_dir):
@@ -577,12 +585,14 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                 with open(source_file_path, 'r', encoding='utf-8') as f:
                     source_content = f.read()
                 targets = get_copy_targets(source_content)
+                # Only record expected files for wikis we're operating on
                 for wiki in targets:
-                    expected_common_files[wiki].add(file)
+                    if wiki in allowed_wikis:
+                        expected_common_files[wiki].add(file)
 
     # Remove stale common files (files that exist but shouldn't)
     files_removed = 0
-    for wiki in ALL_WIKIS:
+    for wiki in allowed_wikis:
         existing_common_files = glob.glob(f'{wiki}/source/docs/common-*.rst')
         for filepath in existing_common_files:
             filename = os.path.basename(filepath)
@@ -592,14 +602,14 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                 files_removed += 1
 
     if clean_common:
-        # Clean all existing common topics for full rebuild
-        for wiki in ALL_WIKIS:
+        # Clean existing common topics only for allowed_wikis
+        for wiki in allowed_wikis:
             files = glob.glob(f'{wiki}/source/docs/common-*.rst')
             for f in files:
                 debug(f'Remove existing common: {f}')
                 os.remove(f)
 
-    debug("Copying common source files to each Wiki")
+    debug(f"Copying common source files to target wiki(s): {', '.join(sorted(allowed_wikis))}")
     files_copied = 0
     files_skipped = 0
 
@@ -610,7 +620,10 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                 # debug("  FILE: %s" % file)
                 source_content = source_file_path.read_text(encoding='utf-8')
                 targets = get_copy_targets(source_content)
+                # Only copy into the intersection of declared targets and the allowed wikis
                 for wiki in targets:
+                    if wiki not in allowed_wikis:
+                        continue
                     content = strip_content(source_content, wiki)
                     targetfile = Path(wiki) / "source" / "docs" / file
 
@@ -624,7 +637,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                     targetfile.write_text(content, encoding='utf-8')
                     files_copied += 1
             elif file.endswith(".css"):
-                for wiki in ALL_WIKIS:
+                for wiki in allowed_wikis:
                     targetfile = Path(wiki) / "source" / "_static" / file
                     # Only copy if different
                     if not clean_common and targetfile.exists() and filecmp.cmp(source_file_path, targetfile, shallow=False):
@@ -634,6 +647,8 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                 source_content = source_file_path.read_text(encoding='utf-8')
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
+                    if wiki not in allowed_wikis:
+                        continue
                     content = strip_content(source_content, wiki)
                     targetfile = Path(wiki) / "source" / "_static" / file
 
@@ -644,7 +659,10 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
 
                     targetfile.write_text(content, encoding='utf-8')
 
-    info(f"Common files: {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
+    site_label = site
+    if site_label is None:
+        site_label = "all"
+    info(f"Common files ({site_label}): {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
 
 
 def get_copy_targets(content):
@@ -1225,12 +1243,11 @@ class WikiUpdater:
         # Use clean_common=True for clean builds, False for fast/incremental builds
         info("=== Step 4: Copying common source files ===")
         info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-        copy_common_source_files(clean_common=self.args.clean_common)
+        copy_common_source_files(clean_common=self.args.clean_common, site=self.args.site)
 
         info("=== Step 5: Building documentation with Sphinx ===")
         info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
         sphinx_make(self.args.site, self.args.parallel, self.args.fast)
-
         if self.args.paramversioning:
             put_cached_parameters_files_in_sites(self.args.site)
             cache_parameters_files(self.args.site)
