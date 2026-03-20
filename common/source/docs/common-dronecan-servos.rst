@@ -28,7 +28,7 @@ For the examples below, the values are shown for DroneCAN driver #1 using CAN Po
 AP_Periph Setup
 ===============
 
-To setup servo control on an AP_Periph node, set the following parameters on the node:
+To set up servo control on an AP_Periph node, set the following parameters on the node:
 
 -  :ref:`OUTx_FUNCTION<dev:OUT1_FUNCTION>` = 51 for actuator id 1, 52 for actuator id 2, etc. This assigns the output channel to respond to ``uavcan.equipment.actuator.Command``.
 -  :ref:`OUTx_MIN<dev:OUT1_MIN>` = 1100, the minimum PWM output in microseconds. Set according to servo specifications.
@@ -40,10 +40,10 @@ To setup servo control on an AP_Periph node, set the following parameters on the
 Actuator Telemetry Setup
 ------------------------
 
-Some AP_Periph nodes, such as the `Vimdrones L431 CAN Servo Hub <https://dev.vimdrones.com/products/vimdrones_can_servo_hub/>`__, support actuator telemetry via the ``uavcan.equipment.actuator.Status`` message, which allows monitoring of servo power usage. Set the following parameters on the node:
+Some AP_Periph nodes, such as the `Vimdrones L431 CAN Servo Hub <https://dev.vimdrones.com/products/vimdrones_can_servo_hub/>`__, support actuator telemetry via the ``uavcan.equipment.actuator.Status`` message, which allows monitoring of servo current draw and load as a percentage of rated current. Set the following parameters on the node:
 
 -  :ref:`ACT_NUM_CHANS<dev:ACT_NUM_CHANS>` = 4, number of servo channels to monitor for telemetry.
--  :ref:`ACT_CURR_PIN1<dev:ACT_CURR_PIN1>` = 9, starting ADC pin for current monitoring. Subsequent channels use the next pins (10, 11, ...).
+-  :ref:`ACT_CURR_PIN1<dev:ACT_CURR_PIN1>` = 9, starting ADC pin for current monitoring on the Vimdrones L431 CAN Servo Hub used in this example. Subsequent channels use the next pins (10, 11, ...) on that node; other AP_Periph hardware may use different ADC pin numbering, so consult the specific AP_Periph board documentation to determine the correct ADC pin IDs.
 -  :ref:`ACT_AMP_OFFSET<dev:ACT_AMP_OFFSET>` = 0, current sensor offset in mA. Used to zero-calibrate the sensor under no load.
 -  :ref:`ACT_AMP_PERVLT<dev:ACT_AMP_PERVLT>` = 100, current sensor scale in mA per volt.
 -  :ref:`ACT_CURR_MAX<dev:ACT_CURR_MAX>` = 2.5, maximum current in Amps, used to calculate ``power_rating_pct`` in the telemetry message.
