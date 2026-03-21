@@ -35,10 +35,10 @@ Parameters files are fetched from autotest using requests
 import argparse
 import errno
 import filecmp
-import json
 import glob
 import gzip
 import hashlib
+import json
 import multiprocessing
 import os
 import platform
@@ -47,16 +47,15 @@ import shutil
 import subprocess
 import sys
 import time
-import requests
-from urllib.parse import urlparse
 from concurrent.futures import ThreadPoolExecutor
-from typing import Optional, Dict, List
-
-
-from sphinx.application import Sphinx
-import rst_table
 from datetime import datetime
+from typing import Dict, List, Optional
+from urllib.parse import urlparse
 
+import requests
+from sphinx.application import Sphinx
+
+import rst_table
 from frontend.scripts import get_discourse_posts
 
 if sys.version_info < (3, 8):

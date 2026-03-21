@@ -1,8 +1,8 @@
 # This contains common configuration information for the ardupilot wikis.
 # This information is imported by the conf.py files in each of the sub wikis
 
-import sys
 import os
+import sys
 
 # Add the wiki root and extensions directory to the path so our custom extensions can be found
 _wiki_root = os.path.dirname(os.path.abspath(__file__))

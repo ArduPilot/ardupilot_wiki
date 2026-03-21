@@ -7,8 +7,9 @@ of labels for versioned parameter files (e.g., parameters-Copter-stable-V4.6.0.r
 Only the latest parameters.rst files maintain full cross-linking capability.
 """
 
-import re
 import logging
+import re
+
 from sphinx.application import Sphinx
 from sphinx.environment import BuildEnvironment
 

@@ -11,12 +11,12 @@
 # serve to show the default.
 
 import sys
+
 import sphinx_rtd_theme
 
 # Import common configuration information as "common_conf"
 sys.path.insert(0, '../..')
 import common_conf  # noqa: E402
-
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the

@@ -25,17 +25,17 @@
 
 """
 
+import argparse
+import glob
+import json
+import logging
 import os
+import re
 import shutil  # noqa: F401
 import sys
 import time  # noqa: F401
-import logging
-import json
-from html.parser import HTMLParser
 import urllib.request
-import re
-import glob
-import argparse
+from html.parser import HTMLParser
 
 parser = argparse.ArgumentParser(description="python3 build_parameters.py [options]")
 parser.add_argument("--verbose", dest='verbose', action='store_false', default=True, help="show debugging output")

@@ -7,8 +7,12 @@ skip = "ARCHIVED/*,LICENSE,*.ai,*.pdf,*.svg"
 target-version = "py310"
 line-length = 127
 lint.extend-select = [
+  # "C4",   # flake8-comprehensions
   "FURB",   # refurb
+  "I",      # isort
+  # "PERF", # Perflint
   "Q003",   # avoidable-escaped-quote
   "UP031",  # printf-string-formatting
   "UP032",  # f-string
+  # "UP",   # pyupgradde
 ]

@@ -8,9 +8,8 @@ examples:
     do one directory: scripts/rename_params.py data/plane4.5-parmchange.txt plane/source/docs
 '''
 
-import os
 import glob
-
+import os
 from argparse import ArgumentParser
 
 parser = ArgumentParser(description="parameter conversion tool")

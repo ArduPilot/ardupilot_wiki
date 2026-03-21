@@ -11,6 +11,7 @@
 # serve to show the default.
 
 import sys
+
 import sphinx_rtd_theme
 
 # Import common configuration information as "common_conf"

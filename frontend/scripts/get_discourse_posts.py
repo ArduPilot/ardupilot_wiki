@@ -3,18 +3,18 @@
 Script to get last blog entries on Discourse (https://discuss.ardupilot.org/)
 """
 import argparse
-import json
-import re
 import hashlib
+import json
 import os
 import platform
+import re
+from dataclasses import dataclass
 from pathlib import Path
+from typing import Any, List, Tuple
 
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from dataclasses import dataclass
-from typing import List, Any, Tuple
 
 
 class RequestExecutionError(Exception):
