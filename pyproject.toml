@@ -7,6 +7,7 @@ skip = "ARCHIVED/*,LICENSE,*.ai,*.pdf,*.svg"
 target-version = "py310"
 line-length = 127
 lint.extend-select = [
+  "FURB",   # refurb
   "UP031",  # printf-string-formatting
   "UP032",  # f-string
 ]

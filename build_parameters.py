@@ -477,7 +477,7 @@ def generate_json(vehicles):
         json_filename = "parameters-" + vehicle + ".json"
         try:
             with open(json_filename, 'w') as f:
-                for lines in json_lines:
+                for lines in json_lines:  # noqa: FURB122
                     f.write(f"{lines}\n")
         except Exception as e:
             error("Error while creating the JSON file " + vehicle + " in folder " + str(os.getcwd()))  # noqa: E501

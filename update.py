@@ -537,7 +537,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
 
 
 def get_copy_targets(content):
-    p = re.compile(r'\[copywiki.*?destination\=\"(.*?)\".*?\]', flags=re.S)
+    p = re.compile(r'\[copywiki.*?destination\=\"(.*?)\".*?\]', flags=re.DOTALL)
     m = p.search(content)
     targetset = set()
     if m:
@@ -568,7 +568,7 @@ def strip_content(content, site):
     newText = re.sub(r'\[copywiki.*?\]',
                      fix_copywiki_shortcode,
                      content,
-                     flags=re.M)
+                     flags=re.MULTILINE)
 
     def fix_site_shortcode(matchobj):
         # logmatch_code(matchobj, 'SITESC_')
@@ -584,7 +584,7 @@ def strip_content(content, site):
     newText = re.sub(r'\[site\s.*?wiki\=\"(.*?)\".*?\](.*?)\[\/site\]',
                      fix_site_shortcode,
                      newText,
-                     flags=re.S)
+                     flags=re.DOTALL)
 
     return newText
 
