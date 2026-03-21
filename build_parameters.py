@@ -480,7 +480,7 @@ def generate_json(vehicles):
                 for lines in json_lines:
                     f.write(f"{lines}\n")
         except Exception as e:
-            error("Error while creating the JSON file " + vehicle + " in folder " + str(os.getcwd()))  # noqa: E501
+            error(f"Error while creating the JSON file {vehicle} in folder {os.getcwd()}")
             error(e)
             # sys.exit(1)
         debug("")
@@ -518,7 +518,7 @@ def move_results(vehicles):
                     os.rename(file, str((folder + "parameters.rst")))
 
         except Exception as e:
-            error("Error while moving result files of vehicle " + vehicle + " pwd: " + str(os.getcwd()))
+            error(f"Error while moving result files of vehicle {vehicle} pwd: {os.getcwd()}")
             error(e)
             # sys.exit(1)
 
