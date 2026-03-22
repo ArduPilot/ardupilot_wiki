@@ -9,17 +9,18 @@ Will be in future 4.8 release and is currently in master ("latest")
 
 New Board Support
 =================
+- JPilot-C, see https://github.com/ArduPilot/ardupilot_wiki/pull/7567
 
 New Peripheral Support
 ======================
-
+- Trimble PX-1 GSOF AHRS, see https://github.com/ArduPilot/ardupilot_wiki/pull/7566
 
 New Features
 ============
 
 
 [site wiki="plane"]
-
+- Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
 [/site]
 [site wiki="copter"]
 
