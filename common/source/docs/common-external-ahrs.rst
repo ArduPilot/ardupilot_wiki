@@ -11,9 +11,10 @@ Supported Systems
 
 Currently, ArduPilot supports these systems:
 
-- `MicroStrain 3DM® Series <https://www.microstrain.com/inertial-sensors/all-sensors>`_
-- `VectorNav <https://www.vectornav.com/products>`__
 - `Inertialabs INS-P <https://inertiallabs.com/wp-content/uploads/2023/09/INS-B-P-D-DL_Datasheet_rev-6.27_August_2023.pdf>`__
+- `MicroStrain 3DM® Series <https://www.microstrain.com/inertial-sensors/all-sensors>`_
+- `Trimble PX-1 GSOF <https://applanix.trimble.com/en/hardware/trimble-px-1-rtx>`__
+- `VectorNav <https://www.vectornav.com/products>`__
 
 Setup and Configuration
 =======================
