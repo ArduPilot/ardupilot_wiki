@@ -154,6 +154,7 @@ Closed Hardware
     JHEMCU F405Pro <common-jhemcuf405pro>
     JHEMCU F405WING <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/JHEMCUF405WING>
     JHEMCU H743HD <common-jhemcu-h743hd>
+    JPilot-C <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/JPilot-C/README.md>
     KT-FMU-F1 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/KT-FMU-F1/README.md>
     LongBowF405WING <common-longbowf405wing>
     Lumineer LUXF765-NDAA <common-luxf765-ndaa>
