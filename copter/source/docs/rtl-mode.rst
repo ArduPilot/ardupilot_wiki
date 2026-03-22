@@ -57,7 +57,7 @@ Options (User Adjustable Parameters)
    altitude the copter will move to at the final stage of "Returning to
    Launch" or after completing a Mission.
 
-   -  Set to zero to automatically land the copter.
+   -  Set to zero to automatically land the copter. See :ref:`land-mode`.
    -  The final return altitude may be adjusted from 0 to 1000
       centimeters.
 
