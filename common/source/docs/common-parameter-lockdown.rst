@@ -36,4 +36,4 @@ The list of parameters that may be changed is called the "white list" and can be
 
 This list can be customised by adding or removing lines from the list and then re-uploading the script to the autopilot
 
-[copywiki destination="copter,plane,rover,sub"]
+[copywiki destination="copter,plane,rover,sub,dev"]
