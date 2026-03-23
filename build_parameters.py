@@ -434,7 +434,7 @@ def generate_rst_files(commits_to_checkout_and_parse):
 
             os.chdir(BASEPATH)
         except Exception as e:
-            error("Error while parsing \"Parameters.rst\" | details:\t" + vehicle + "\t" + version  + "\t" + commit_id)
+            error('Error while parsing "Parameters.rst" | details:\t' + vehicle + "\t" + version  + "\t" + commit_id)
             error(e)
             # sys.exit(1)
         debug("")
@@ -459,17 +459,17 @@ def generate_json(vehicles):
 
         json_lines = []
         json_lines.append("{")
-        json_lines.append("\"Click here to change\" : \"\"")
+        json_lines.append('"Click here to change" : ""')
 
         for filename in parameters_files:
             if ("beta" in filename or "rc" in filename): # Plane uses BETA, Copter and Rover uses RCn
-                json_lines.append(",\"" + vehicle + " beta " + filename[(len("parameters-" + vehicle + "-beta")+1):-4] + "\" : \"" + filename[:-3] + "html\"")  # noqa: E501
+                json_lines.append(',"' + vehicle + " beta " + filename[(len("parameters-" + vehicle + "-beta")+1):-4] + '" : "' + filename[:-3] + 'html"')  # noqa: E501
             elif ("latest" in filename):
                 # json_lines.append(",\"" +  vehicle + " latest " + filename[(len("parameters-" + vehicle + "-latest")+1):-4] + "\" : \"" + filename[:-3] + "html\"")  # noqa: E501
-                json_lines.append(",\"" + vehicle + " latest " + filename[(len("parameters-" + vehicle + "-latest")+1):-4] + "\" : \"" + ("parameters.html\""))  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.  # noqa: E501
+                json_lines.append(',"' + vehicle + " latest " + filename[(len("parameters-" + vehicle + "-latest")+1):-4] + '" : "' + ('parameters.html"'))  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.  # noqa: E501
 
             else:
-                json_lines.append(",\"" + vehicle + " stable " + filename[(len("parameters-" + vehicle + "-stable")+1):-4] + "\" : \"" + filename[:-3] + "html\"")  # noqa: E501
+                json_lines.append(',"' + vehicle + " stable " + filename[(len("parameters-" + vehicle + "-stable")+1):-4] + '" : "' + filename[:-3] + 'html"')  # noqa: E501
 
         json_lines.append("}")
 

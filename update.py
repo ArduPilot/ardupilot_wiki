@@ -724,7 +724,7 @@ def create_latest_parameter_redirect(default_param_file, vehicle):
     """
     out_line = "======================\nParameters List (Full)(\n======================\n"
     out_line += "\n.. raw:: html\n\n"
-    out_line += "   <script>location.replace(\"" + default_param_file[:-3] + "html" + "\")</script>"
+    out_line += '   <script>location.replace("' + default_param_file[:-3] + "html" + '")</script>'
     out_line += "\n\n"
 
     filename = vehicle + "/source/docs/parameters.rst"
@@ -839,7 +839,7 @@ def check_imports():
             importlib.metadata.version(package.split("<")[0].split(">=")[0])
         except importlib.metadata.PackageNotFoundError as ex:
             progress(ex)
-            fatal(f"Require {package}\nPlease run the wiki build setup script \"Sphinxsetup\"")
+            fatal(f'Require {package}\nPlease run the wiki build setup script "Sphinxsetup"')
     debug("Imports OK")
 
 
@@ -859,9 +859,9 @@ def check_ref_directives():
             try:
                 for i, line in enumerate(file.readlines()):
                     if character_before_ref_tag.search(line):
-                        error(f"Remove character before ref directive in \"{f}\" on line number {i+1}")
+                        error(f'Remove character before ref directive in "{f}" on line number {i+1}')
                     if character_after_ref_tag.search(line):
-                        error(f"Remove character after ref directive in \"{f}\" on line number {i+1}")
+                        error(f'Remove character after ref directive in "{f}" on line number {i+1}')
             except UnicodeDecodeError as ex:
                 print(f"UnicodeError in {f}: ", ex)
                 sys.exit(1)
