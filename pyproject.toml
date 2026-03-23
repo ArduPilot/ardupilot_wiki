@@ -8,6 +8,7 @@ target-version = "py310"
 line-length = 127
 lint.extend-select = [
   "FURB",   # refurb
+  "Q003",   # avoidable-escaped-quote
   "UP031",  # printf-string-formatting
   "UP032",  # f-string
 ]
