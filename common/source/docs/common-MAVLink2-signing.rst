@@ -1,5 +1,5 @@
 .. _common-MAVLink2-signing:
-[copywiki destination="plane,copter,rover,sub,blimp,planner"]
+
 ================
 MAVLink2 Signing
 ================
@@ -43,5 +43,4 @@ When you connect Mission Planner over a link that is signing, it will see if it 
 
    In simulation, port 5760 effectively functions as your "USB" port.  This is also the port that ``sim_vehicle.py``'s MAVProxy connects to.  If you forward traffic from this MAVProxy (eg. via "output add") then it will also bypass ArduPilot's MAVLink2-signature checking code.   If you want to test MAVLink signature-checking is functional connect to TCP port 5762 instead.
 
-[copywiki destination="plane,copter,rover,planner"]
-
+[copywiki destination="plane,copter,rover,sub,blimp,planner,dev"]
