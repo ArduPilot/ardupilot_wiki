@@ -9,9 +9,10 @@ This page describes how to protect an ArduPilot from external threats.
 .. toctree::
     :maxdepth: 1
 
+    MAVLink2 Signing <common-MAVLink2-signing>
+    Parameter Lockdown <common-parameter-lockdown>
     Secure Firmware (tamper-proof) <secure-firmware>
 
-- :ref:`MAVLink2 Signing <common-MAVLink2-signing>`
 
 Security Attack Surface
 -----------------------
