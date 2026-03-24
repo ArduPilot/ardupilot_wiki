@@ -16,7 +16,7 @@ XFRobot Gimbals
 Where and What to Buy
 ---------------------
 
-- XFRobot gimbals can be purchased directly from `allxianfei.com <https://www.allxianfei.com/en/uav-payloads/>`__
+- XFRobot gimbals can be purchased from `allxianfei.com <https://www.allxianfei.com/en/uav-payloads/>`__ or `AliExpress <https://www.aliexpress.com/store/1104563332>`__
 
 Install ArduPilot with XFRobot Support
 --------------------------------------
