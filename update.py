@@ -478,9 +478,8 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
             if file.endswith(".rst"):
                 # debug("  FILE: %s" % file)
                 source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', encoding='utf-8')
-                source_content = source_file.read()
-                source_file.close()
+                with open(source_file_path, 'r', encoding='utf-8') as source_file:
+                    source_content = source_file.read()
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
                     content = strip_content(source_content, wiki)
@@ -511,9 +510,8 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                     shutil.copy2(src, dst)
             elif file.endswith(".js"):
                 source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', encoding='utf-8')
-                source_content = source_file.read()
-                source_file.close()
+                with open(source_file_path, 'r', encoding='utf-8') as source_file:
+                    source_content = source_file.read()
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
                     content = strip_content(source_content, wiki)
@@ -872,7 +870,8 @@ def create_features_pages(site):
     # fetch and load most-recently-built features.json
     remove_if_exists("features.json.gz")
     fetch_url("https://firmware.ardupilot.org/features.json.gz")
-    features_json = json.load(gzip.open("features.json.gz"))
+    with gzip.open("features.json.gz") as in_file:
+        features_json = json.load(in_file)
     if features_json["format-version"] != "1.0.0":
         progress("bad format version")
         return

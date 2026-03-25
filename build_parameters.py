@@ -352,8 +352,8 @@ def generate_rst_files(commits_to_checkout_and_parse):
         For each parameter file generate by param_parse.py, it inserts a version tag in anchors
         to do not make confusing in sphinx toctrees.
         """
-        file_in = open(source_file, "r")
-        file_out = open(dest_file, "w")
+        file_in = open(source_file, "r")  # noqa: SIM115
+        file_out = open(dest_file, "w")  # noqa: SIM115
         found_original_title = False
         if "latest" not in version_tag:
             file_out.write(':orphan:\n\n')

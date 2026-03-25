@@ -24,7 +24,8 @@ args = parser.parse_args()
 
 
 def load_param_map(fname):
-    lines = open(fname, 'r').readlines()
+    with open(fname, 'r') as in_file:
+        lines = in_file.readlines()
     ret = {}
     for line in lines:
         if line.startswith("#"):
@@ -46,7 +47,8 @@ def process_file(fname, param_map):
             print(f"Skipping common file {fname}")
         return
     needs_write = False
-    txt = open(fname, "r").read()
+    with open(fname, "r") as in_file:
+        txt = in_file.read()
 
     replacements = [":ref:`PARAMNAME <PARAMNAME>`",
                     ":ref:`PARAMNAME<PARAMNAME>`"]
@@ -64,7 +66,8 @@ def process_file(fname, param_map):
     if not needs_write:
         return
     print(f"Updating {fname}")
-    open(fname, "w").write(txt)
+    with open(fname, "w") as out_file:
+        out_file.write(txt)
 
 
 param_map = load_param_map(args.param_map)
