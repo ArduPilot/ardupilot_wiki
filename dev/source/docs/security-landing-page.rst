@@ -89,6 +89,8 @@ Custom pre-arm checks can be added using Lua scripts including :ref:`building th
 - `examples/arming-check-batt-temp.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/arming-check-batt-temp.lua>`__
 - `examples/arming-check-wp1-takeoff.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/arming-check-wp1-takeoff.lua>`__
 
+Please refer to the `Scripts Crash and Errors <https://ardupilot.org/copter/docs/common-lua-scripts.html#script-crashes-and-errors>`__ wiki section for information on how to ensure scripts are run reliably and not modified.
+
 Build the Code Yourself
 -----------------------
 
