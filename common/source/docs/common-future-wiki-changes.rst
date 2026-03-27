@@ -14,6 +14,7 @@ New Board Support
 New Peripheral Support
 ======================
 - Trimble PX-1 GSOF AHRS, see https://github.com/ArduPilot/ardupilot_wiki/pull/7566
+- Kebni SensAItion IMU and INS sensors, see https://github.com/ArduPilot/ardupilot_wiki/pull/7337
 
 New Features
 ============
