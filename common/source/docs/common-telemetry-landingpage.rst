@@ -52,8 +52,10 @@ Long Range
     CUAV P9 Radio <common-cuav-p9>
     DragonLink <common-dragonlink-rc>
     Herelink <common-herelink>
+    Holybro SiK Telemetry Radio - Long Range <https://holybro.com/collections/telemetry-radios/products/sik-telemetry-radio-1w>
     Holybro 900Mhz XBP9X Telemetry Radio <https://shop.holybro.com/xbp9x-radio_p1268.html>
     Holybro Microhard Radio Telemetry Radio (P900/P840/P400-C1S) <https://holybro.com/products/microhard-radio>
+    Holybro Microhard Radio Telemetry Radio V2 (P400/P900) <https://holybro.com/collections/telemetry-radios/products/microhard-telemetry-radio-v2>
     LTE Modems using Lua driver <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/LTE_modem.md>
     LTM telemetry <common-ltm-telemetry>
     mLRS <common-mlrs-rc.rst>
