@@ -500,63 +500,58 @@ def generate_rst_files(commits_to_checkout_and_parse):
         debug("")
 
         # Run param_parse.py tool from Autotest set in the desired commit id
+        param_metadata_dir = os.path.join(BASEPATH, "Tools", "autotest", "param_metadata")
+        # Workaround the vehicle renaming (Rover, APMRover2 ArduRover...)
+        if ('rover' in vehicle.lower()) and ('v3.' not in version.lower()) and ('v4.0' not in version.lower()):
+            vehicle_name = 'Rover'
+        else:
+            vehicle_name = vehicle_new_to_old_name[vehicle]
+
+        cmd = ["python3", "./param_parse.py", "--vehicle", vehicle_name]
+
         try:
-            param_metadata_dir = os.path.join(BASEPATH, "Tools", "autotest", "param_metadata")
-            # Workaround the vehicle renaming (Rover, APMRover2 ArduRover...)
-            if ('rover' in vehicle.lower()) and ('v3.' not in version.lower()) and ('v4.0' not in version.lower()):
-                vehicle_name = 'Rover'
-            else:
-                vehicle_name = vehicle_new_to_old_name[vehicle]
-
-            cmd = ["python3", "./param_parse.py", "--vehicle", vehicle_name]
-
-            # Run with subprocess - use cwd parameter instead of os.chdir()
             result = subprocess.run(cmd, cwd=param_metadata_dir,
                                     capture_output=True, text=True, timeout=300)
+        except (subprocess.TimeoutExpired, OSError) as e:
+            error(f"param_parse.py execution failed for {vehicle} {version}: {e}")
+            return None
 
-            if result.returncode != 0:
-                error(f"param_parse.py failed for {vehicle} {version}: {result.stderr}")
-                return None
+        if result.returncode != 0:
+            error(f"param_parse.py failed for {vehicle} {version}: {result.stderr}")
+            return None
 
-            # Log param_parse.py output for debugging
-            if result.stdout:
-                debug(f"param_parse.py stdout for {vehicle} {version}: {result.stdout[:500]}")
-            if result.stderr:
-                debug(f"param_parse.py stderr for {vehicle} {version}: {result.stderr[:500]}")
+        if result.stdout:
+            debug(f"param_parse.py stdout for {vehicle} {version}: {result.stdout[:500]}")
+        if result.stderr:
+            debug(f"param_parse.py stderr for {vehicle} {version}: {result.stderr[:500]}")
 
-            # create a filename for new parameters file
-            filename = f"parameters-{vehicle}"
-            if ("beta" in version or "rc" in version): # Plane uses BETA, Copter and Rover uses RCn
-                filename += f"-{version}.rst"
-            elif ("latest" in version):
-                filename += f"-{version}.rst"
-            else:
-                filename += f"-stable-{version}.rst"
+        # create a filename for new parameters file
+        filename = f"parameters-{vehicle}"
+        if ("beta" in version or "rc" in version): # Plane uses BETA, Copter and Rover uses RCn
+            filename += f"-{version}.rst"
+        elif ("latest" in version):
+            filename += f"-{version}.rst"
+        else:
+            filename += f"-stable-{version}.rst"
 
-            # Use absolute paths for file operations
-            parameters_rst_path = os.path.join(param_metadata_dir, "Parameters.rst")
-            output_file_path = os.path.join(param_metadata_dir, filename)
-            # Generate new anchors names in files to avoid toctree problems and links in sphinx.
+        parameters_rst_path = os.path.join(param_metadata_dir, "Parameters.rst")
+        output_file_path = os.path.join(param_metadata_dir, filename)
+
+        # Generate new anchors names in files to avoid toctree problems and links in sphinx.
+        try:
             if os.path.exists(parameters_rst_path):
                 replace_anchors(parameters_rst_path, output_file_path, filename[10:-4])
                 os.remove(parameters_rst_path)
                 debug(f"File {filename} generated.")
                 # Remove duplicate RNGFNDx_ Parameters sections before checking labels.
-                dedupe_rngfnd_parameters_sections(filename)
+                dedupe_rngfnd_parameters_sections(output_file_path)
                 # Check for duplicate RST labels in the generated file
-                if rst_has_duplicate_labels(filename):
-                    debug(f"RST duplicate labels detected in {filename}")
+                if rst_has_duplicate_labels(output_file_path):
+                    debug(f"RST duplicate labels detected in {output_file_path}")
             else:
-                # this was an error, but turns out we are missing a
-                # bunch of these, eg.
-                # [build_parameters.py][error]: Parameters.rst not found to rename to  parameters-Copter-stable-V4.0.0.rst
                 error(f"Parameters.rst not found for {vehicle} {version}")
-
-        except Exception as e:
-            error(f'Error while parsing "Parameters.rst" | details:\t{vehicle}\t{version}\t{commit_id}')
-            error(e)
-            # sys.exit(1)
-        debug("")
+        except (OSError, IOError) as e:
+            error(f"Error while handling Parameters.rst for {vehicle} {version}: {e}")
 
     return 0
 
