@@ -60,6 +60,10 @@ In Plane terrain following is available in the following flight modes:
 -  GUIDED - "fly to" waypoints
 -  AUTO - fully autonomous missions
 
+.. warning:: QuadPlane mission legs flown in VTOL mode do not currently
+   support waypoints with altitude set to Terrain. Use Relative or Absolute
+   altitudes for VTOL waypoints.
+
 Use of terrain following in RTL, LOITER, CRUISE, FBWB and GUIDED modes
 is controlled by the :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` parameter. That parameter defaults
 to off, so no terrain following will be used in those modes. Setting the bitmask in :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` determines which altitude controlled modes terrain following is active. For example, setting it to "10" enables following in FBWB and AUTO.
