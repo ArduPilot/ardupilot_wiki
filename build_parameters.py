@@ -14,10 +14,10 @@
 
     * First step is go to each vehicle on firmware.ardupilot.org and get all available versions namely as stable/beta/latest.
         * For each version it gets a board and get git_version.txt file;
-        * It parsers that to get the version and commit hash;
+        * It parses that to get the version and commit hash;
         * It creates a dictionary with vehicles, versions and commit hashes.
 
-    * Second step is use the dict to navigates on a ArduPilot Repo, changing checkouts to desidered hashes.
+    * Second step is use the dict to navigates on a ArduPilot Repo, changing checkouts to desired hashes.
         * Relies on ArduPilotRepoFolder/Tools/autotest/param_metadata/param_parse.py to generate the parameters files;
         * It renames the anchors for all files, except for latest versions.
 
@@ -76,7 +76,7 @@ logger = logging.getLogger(__name__)
 # Parameters
 COMMITFILE = "git-version.txt"
 BASEURL = "https://firmware.ardupilot.org/"
-ALLVEHICLES = ["AntennaTracker", "Copter" , "Plane", "Rover", "Sub", "Blimp"]
+ALLVEHICLES = ["AntennaTracker", "Copter", "Plane", "Rover", "Sub", "Blimp"]
 VEHICLES = ALLVEHICLES
 
 BASEPATH = ""
@@ -97,7 +97,7 @@ vehicle_old_to_new_name = { # Used because git-version.txt use APMVersion with o
     "ArduSub": "Sub",
     "ArduCopter": "Copter",
     "ArduPlane": "Plane",
-    "AntennaTracker": "AntennaTracker",  # firmware server calls Tracker/atennatracker as AntennaTracker
+    "AntennaTracker": "AntennaTracker",  # firmware server calls Tracker/antennatracker as AntennaTracker
     "Blimp": "Blimp",
 }
 
@@ -120,7 +120,7 @@ def error(msg):
 
 
 def check_temp_folders():
-    """Creates temporaty subfolders IFF not exists  """
+    """Creates temporary subfolders IFF not exists  """
 
     os.chdir("../")
     if not os.path.exists("new_params_mversion"):
@@ -148,7 +148,7 @@ def setup():
     if args.single_vehicle in ALLVEHICLES:
         global VEHICLES
         VEHICLES = [args.single_vehicle]
-        progress("Running only for " + str(args.single_vehicle))
+        progress(f"Running only for {args.single_vehicle}")
     else:
         progress(f"Vehicle {str(args.single_vehicle)} not recognized, running for all vehicles.")
 
@@ -175,7 +175,7 @@ def setup():
 
 def fetch_releases(firmware_url, vehicles):
     """
-    Select folders with desidered releases for the vehicles
+    Select folders with the desired releases for the vehicles
 
     """
 
@@ -197,10 +197,10 @@ def fetch_releases(firmware_url, vehicles):
         lParser = parseText()
         # Feed HTML file into parsers
         try:
-            debug("Fetching " + firmware_url)
+            debug(f"Fetching {firmware_url}")
             lParser.feed(urllib.request.urlopen(firmware_url).read().decode('utf8'))
         except Exception as e:
-            error("Folders list download error: " + e)
+            error(f"Folders list download error: {e}")
             sys.exit(1)
         finally:
             lParser.links = []
@@ -211,15 +211,16 @@ def fetch_releases(firmware_url, vehicles):
     debug("Cleaning fetched links for wanted folders")
     stableFirmwares = []
     for f in vehicles:
-        page_links = fetch_vehicle_subfolders(firmware_url + f)
+        page_links = fetch_vehicle_subfolders(f"{firmware_url}{f}")
         for folder in page_links:  # Non clever way to filter the strings insert by makehtml.py, unwanted folders, and so.
             version_folder = str(folder)
-            if version_folder.find("stable") > 0 and not version_folder.endswith("stable"): # If finish with
-                stableFirmwares.append(firmware_url[:-1] + version_folder[10:-2])
-            elif version_folder.find("latest") > 0 :
-                stableFirmwares.append(firmware_url[:-1] + version_folder[10:-2])
-            elif version_folder.find("beta") > 0:
-                stableFirmwares.append(firmware_url[:-1] + version_folder[10:-2])
+            firmware_link = f"{firmware_url[:-1]}{version_folder[10:-2]}"
+            if "stable" in version_folder and not version_folder.endswith("stable"): # If finish with
+                stableFirmwares.append(firmware_link)
+            elif "latest" in version_folder:
+                stableFirmwares.append(firmware_link)
+            elif "beta" in version_folder:
+                stableFirmwares.append(firmware_link)
 
     return stableFirmwares # links for the firmwares folders
 
@@ -247,16 +248,16 @@ def get_commit_dict(releases_parsed):
         lParser = parseText()
         # Feed HTML file into parsers
         try:
-            debug("Fetching " + url)
+            debug(f"Fetching {url}")
             lParser.feed(urllib.request.urlopen(url).read().decode('utf8'))
         except Exception as e:
-            error("Folders list download error:" + e)
+            error(f"Folders list download error:{e}")
         finally:
             lParser.links = []
             lParser.close()
             last_item = links.pop()
             last_folder = last_item['href']
-            debug("Returning link of the last board folder (" + last_folder[last_folder.rindex('/')+1:] + ")")
+            debug(f"Returning link of the last board folder ({last_folder[last_folder.rindex('/')+1:]})")
             return last_folder[last_folder.rindex('/')+1:]  # clean the partial link
     ####################################################################################################
 
@@ -265,9 +266,9 @@ def get_commit_dict(releases_parsed):
         For a binary folder, gets a git hash of its build.
 
         """
-        fetch_link = version_link + '/' + board + '/' + file
+        fetch_link = f"{version_link}/{board}/{file}"
 
-        progress("Processing link...\t" + fetch_link)
+        progress(f"Processing link...\t{fetch_link}")
 
         try:
             fecth_response = ""
@@ -290,38 +291,38 @@ def get_commit_dict(releases_parsed):
                 # tries to fix automatically
                 if re.search('copter', vehicle, re.IGNORECASE):
                     vehicle = "Copter"
-                    debug("Bad vehicle name auto fixed to COPTER on:\t" + fetch_link)
+                    debug(f"Bad vehicle name auto fixed to COPTER on:\t{fetch_link}")
 
                 elif re.search('plane', vehicle, re.IGNORECASE):
                     vehicle = "Plane"
-                    debug("Bad vehicle name auto fixed to PLANE on:\t" + fetch_link)
+                    debug(f"Bad vehicle name auto fixed to PLANE on:\t{fetch_link}")
 
                 elif re.search('rover', vehicle, re.IGNORECASE):
                     vehicle = "Rover"
-                    debug("Bad vehicle name auto fixed to ROVER on:\t" + fetch_link)
+                    debug(f"Bad vehicle name auto fixed to ROVER on:\t{fetch_link}")
 
                 elif re.search('sub', vehicle, re.IGNORECASE):
                     vehicle = "Sub"
-                    debug("Bad vehicle name auto fixed to SUB on:\t" + fetch_link)
+                    debug(f"Bad vehicle name auto fixed to SUB on:\t{fetch_link}")
 
                 elif re.search('racker', vehicle, re.IGNORECASE):
                     vehicle = "Tracker"
-                    debug("Bad vehicle name auto fixed to TRACKER on:\t" + fetch_link)
+                    debug(f"Bad vehicle name auto fixed to TRACKER on:\t{fetch_link}")
                 elif re.search('blimp', vehicle, re.IGNORECASE):
                     vehicle = "Blimp"
-                    debug("Bad vehicle name auto fixed to BLIMP on:\t" + fetch_link)
+                    debug(f"Bad vehicle name auto fixed to BLIMP on:\t{fetch_link}")
                 else:
-                    error("Nomenclature exception found in a vehicle name:\t" + vehicle + "\tLink with the exception:\t" + fetch_link)  # noqa: E501
+                    error(f"Nomenclature exception found in a vehicle name:\t{vehicle}\tLink with the exception:\t{fetch_link}")  # noqa: E501
 
             if "beta" in fetch_link:
-                version_number = "beta-" + version_number
+                version_number = f"beta-{version_number}"
 
             if "latest" in fetch_link:
-                version_number = "latest-" + version_number
+                version_number = f"latest-{version_number}"
 
             return vehicle, version_number, commit_hash
         except Exception as e:
-            error("An exception occurred: " + file + " DECODE ERROR. Link: " + fetch_link)
+            error(f"An exception occurred: {file} DECODE ERROR. Link: {fetch_link}")
             error(e)
             # sys.exit(1) #comment to make easier debug
             return "error", "error", "error"
@@ -359,13 +360,13 @@ def generate_rst_files(commits_to_checkout_and_parse):
 
         for line in file_in:
             if (re.match("(^.. _)(.*):$", line)) and ("latest" not in version_tag):
-                file_out.write(line[0:-2] + version_tag + ":\n")  # renames the anchors, but leave latest anchors "as-is" to maintaim compatibility with all links across the wiki  # noqa: E501
+                file_out.write(f"{line[0:-2]}{version_tag}:\n")  # renames the anchors, but leave latest anchors "as-is" to maintain compatibility with all links across the wiki  # noqa: E501
 
             elif "Complete Parameter List" in line:
                 # Adjusting the page title
                 out_line = "Complete Parameter List\n=======================\n\n"
                 out_line += "\n.. raw:: html\n\n"
-                out_line += "   <h2>Full Parameter List of " + version_tag[1:].replace("-", " ") + "</h2>\n\n"  # rename the page identifier to insert the version  # noqa: E501
+                out_line += f"   <h2>Full Parameter List of {version_tag[1:].replace('-', ' ')}</h2>\n\n"  # rename the page identifier to insert the version  # noqa: E501
 
                 # Pigbacking and inserting the javascript selector
                 out_line += "\n.. raw:: html\n   :file: ../_static/parameters_versioning_script.inc\n\n"
@@ -392,41 +393,41 @@ def generate_rst_files(commits_to_checkout_and_parse):
             "2.51" in version or  # last beta APM Rover?
             "0.7.2" in version    # Antennatracker
         ):
-            debug("Ignoring APM version:\t" + vehicle + "\t" + version)
+            debug(f"Ignoring APM version:\t{vehicle}\t{version}")
             continue
 
         # Checkout an Commit ID in order to get its parameters
         try:
-            debug("Git checkout on " + vehicle + " version " + version + " id " + commit_id)
-            os.system("git checkout --force " + commit_id)
+            debug(f"Git checkout on {vehicle} version {version} id {commit_id}")
+            os.system(f"git checkout --force {commit_id}")
 
         except Exception as e:
-            error("GIT checkout error: " + e)
+            error(f"GIT checkout error: {e}")
             sys.exit(1)
         debug("")
 
-        # Run param_parse.py tool from Autotest set in the desidered commit id
+        # Run param_parse.py tool from Autotest set in the desired commit id
         try:
-            os.chdir(BASEPATH + "/Tools/autotest/param_metadata")
+            os.chdir(f"{BASEPATH}/Tools/autotest/param_metadata")
             if ('rover' in vehicle.lower()) and ('v3.' not in version.lower()) and ('v4.0' not in version.lower()): # Workaround the vehicle renaming (Rover, APMRover2 ArduRover...)  # noqa: E501
-                os.system("python3 ./param_parse.py --vehicle " + 'Rover')
+                os.system("python3 ./param_parse.py --vehicle Rover")
             else: # regular case
-                os.system("python3 ./param_parse.py --vehicle " + vehicle_new_to_old_name[vehicle])  # option "param_parse.py --format rst" is not available in all commits where param_parse.py is found  # noqa: E501
+                os.system(f"python3 ./param_parse.py --vehicle {vehicle_new_to_old_name[vehicle]}")  # option "param_parse.py --format rst" is not available in all commits where param_parse.py is found  # noqa: E501
 
             # create a filename for new parameters file
-            filename = "parameters-" + vehicle
+            filename = f"parameters-{vehicle}"
             if ("beta" in version or "rc" in version): # Plane uses BETA, Copter and Rover uses RCn
-                filename += "-" + version  + ".rst"
+                filename += f"-{version}.rst"
             elif ("latest" in version):
-                filename += "-" + version + ".rst"
+                filename += f"-{version}.rst"
             else:
-                filename += "-stable-" + version + ".rst"
+                filename += f"-stable-{version}.rst"
 
             # Generate new anchors names in files to avoid toctree problems and links in sphinx.
             if os.path.exists("Parameters.rst"):
                 replace_anchors("Parameters.rst", filename, filename[10:-4])
                 os.remove("Parameters.rst")
-                debug("File " + filename + " generated. ")
+                debug(f"File {filename} generated. ")
             else:
                 # this was an error, but turns out we are missing a
                 # bunch of these, eg.
@@ -435,7 +436,7 @@ def generate_rst_files(commits_to_checkout_and_parse):
 
             os.chdir(BASEPATH)
         except Exception as e:
-            error('Error while parsing "Parameters.rst" | details:\t' + vehicle + "\t" + version  + "\t" + commit_id)
+            error(f'Error while parsing "Parameters.rst" | details:\t{vehicle}\t{version}\t{commit_id}')
             error(e)
             # sys.exit(1)
         debug("")
@@ -448,14 +449,14 @@ def generate_json(vehicles):
         Generates a JSON with all parameters page to be live consumed by a javascript
     """
 
-    os.chdir(BASEPATH + "/Tools/autotest/param_metadata")
+    os.chdir(f"{BASEPATH}/Tools/autotest/param_metadata")
 
     for vehicle in vehicles:
 
-        debug("Creating JSON files for " + vehicle)
+        debug(f"Creating JSON files for {vehicle}")
 
         # Creates the JSON lines from available rst files
-        parameters_files = [f for f in glob.glob("parameters-" + vehicle + "*.rst")]
+        parameters_files = [f for f in glob.glob(f"parameters-{vehicle}*.rst")]
         parameters_files.sort(reverse=True)
 
         vehicle_json = {}
@@ -463,13 +464,13 @@ def generate_json(vehicles):
         for filename in parameters_files:
             if "beta" in filename or "rc" in filename:  # Plane uses BETA, Copter and Rover uses RCn
                 key = f"{vehicle} beta {filename[len('parameters-'+vehicle+'-beta')+1:-4]}"
-                target = filename[:-3] + "html"
+                target = f"{filename[:-3]}html"
             elif "latest" in filename:
                 key = f"{vehicle} latest {filename[len('parameters-'+vehicle+'-latest')+1:-4]}"
                 target = "parameters.html"
             else:
                 key = f"{vehicle} stable {filename[len('parameters-'+vehicle+'-stable')+1:-4]}"
-                target = filename[:-3] + "html"
+                target = f"{filename[:-3]}html"
 
             vehicle_json[key] = target
 
@@ -489,12 +490,12 @@ def move_results(vehicles):
         Once all parameters files are created, moves for "new_params_mversion" as the last execution result
     """
 
-    os.chdir(BASEPATH + "/Tools/autotest/param_metadata")
+    os.chdir(f"{BASEPATH}/Tools/autotest/param_metadata")
 
     for vehicle in vehicles:
-        debug("Moving created files for " + vehicle)
+        debug(f"Moving created files for {vehicle}")
         try:
-            folder = args.destFolder + "/" + vehicle_new_to_old_name[vehicle] + "/"
+            folder = f"{args.destFolder}/{vehicle_new_to_old_name[vehicle]}/"
 
             # touch the folders
             if not os.path.exists(args.destFolder):
@@ -503,29 +504,29 @@ def move_results(vehicles):
                 os.makedirs(folder)
 
             # Cleaning last run, iff exists
-            files_to_delete = [f for f in glob.glob(folder + "*")]
+            files_to_delete = [f for f in glob.glob(f"{folder}*")]
             for old_file in files_to_delete:
                 os.remove(old_file)
 
             # Moving files (use shutil.move for cross-device compatibility)
-            files_to_move = [f for f in glob.glob("parameters-" + vehicle + "*")]
+            files_to_move = [f for f in glob.glob(f"parameters-{vehicle}*")]
             for file in files_to_move:
                 if "latest" not in file:  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.  # noqa: E501
-                    shutil.move(file, folder + file)
+                    shutil.move(file, f"{folder}{file}")
                 else:
-                    shutil.move(file, str((folder + "parameters.rst")))
+                    shutil.move(file, f"{folder}parameters.rst")
 
         except Exception as e:
-            error("Error while moving result files of vehicle " + vehicle + " pwd: " + str(os.getcwd()))
+            error(f"Error while moving result files of vehicle {vehicle} pwd: {os.getcwd()}")
             error(e)
             # sys.exit(1)
 
 
 def print_versions(commits_to_checkout_and_parse):
-    """ Partial results: present all vechicles, versions and commits selected to generate parameters """
+    """ Partial results: present all vehicles, versions, and commits selected to generate parameters """
     debug("\n\tList of parameters files to generate:\n")
     for i in commits_to_checkout_and_parse:
-        debug(commits_to_checkout_and_parse[i][0] + ' - ' + commits_to_checkout_and_parse[i][1] + ' - ' + commits_to_checkout_and_parse[i][2])  # noqa: E501
+        debug(f"{commits_to_checkout_and_parse[i][0]} - {commits_to_checkout_and_parse[i][1]} - {commits_to_checkout_and_parse[i][2]}")  # noqa: E501
     debug("")
 
 
