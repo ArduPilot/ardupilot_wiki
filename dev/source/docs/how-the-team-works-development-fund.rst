@@ -30,12 +30,14 @@ Proposals should be no more than 2 pages and include:
 
 All proposal submissions are considered public information, and may be disclosed to whatever audience is relevant at the time, such as developer or partner meetings and group calls, and may be published on the website or forums.
 
+After posting the proposal, ping the Funding Committee in the dev-team-funding channel on Discord with a link to the proposal.
+
 Evaluating Proposals
 --------------------
 
 The ArduPilot funding committee is made up of three elected members from the team with elections held each December.  The currently elected members are:
 
-- Tom Pittenger
+- Andrew Tridgell
 - James Pattison
 - Andy Piper
 
@@ -55,7 +57,9 @@ Additional guidance:
 Getting Paid
 ------------
 
-Payments from ArduPilot are made in one of two ways:
+Payments from ArduPilot are made via PayPal:
 
-- ArduPilot's SPI liaison (the team member who has been elected to be the main point of contact with SPI) can make payments via PayPal
-- Through direct bank transfer.  Follow the `instructions here to create a Reimbursement Request <http://spi-inc.org/treasurer/reimbursement-form/>`__ and send to ArduPilot's SPI liaison along with receipts
+- Email the receipts to funding@ardupilot.org, with a clear subject title linking it back to the original funding proposal. In the case of multiple receipts, collate them into a single email.
+- Send a request for funds to ardupilot.devel@gmail.com. The request description must have a clear reference back to the original funding proposal
+- Again ping the Funding Committee in the dev-team-funding channel on Discord to ask if they can check the PayPal account and push the "send funds" button
+
