@@ -392,12 +392,12 @@ def make_backup(site, destdir, backupdestdir):
         if not os.path.exists(targetdir):
             fatal(f"FAIL backup when looking for folder {targetdir}")
 
-        bkdir = os.path.join(backupdestdir, str(building_time + '-wiki-bkp'), str(wiki))
+        bkdir = os.path.join(backupdestdir, f"{building_time}-wiki-bkp", str(wiki))
         debug(f'Checking {bkdir}')
         os.makedirs(bkdir, exist_ok=True)
         debug(f'Copying {targetdir} into {bkdir}')
         try:
-            subprocess.check_call(["rsync", "-a", "--delete", targetdir + "/", bkdir])
+            subprocess.check_call(["rsync", "-a", "--delete", f"{targetdir}/", bkdir])
         except subprocess.CalledProcessError as ex:
             progress(ex)
             fatal(f"Failed to backup {wiki}")
@@ -406,7 +406,7 @@ def make_backup(site, destdir, backupdestdir):
 def delete_old_wiki_backups(folder, n_to_keep):
     try:
         debug(f'Checking number of backups in folder {folder}')
-        backup_folders = glob.glob(folder + "/*-wiki-bkp/")
+        backup_folders = glob.glob(f"{folder}/*-wiki-bkp/")
         backup_folders.sort()
         if len(backup_folders) > n_to_keep:
             for i in range(0, len(backup_folders) - n_to_keep):
@@ -631,21 +631,19 @@ def fetch_versioned_parameters(site=None):
             if site == key or site is None:
                 # Remove old param single file
                 single_param_file = f'./{key}/source/docs/parameters.rst'
-                debug("Erasing " + single_param_file)
+                debug(f"Erasing {single_param_file}")
                 remove_if_exists(single_param_file)
 
                 # Remove old versioned param files
                 if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                    old_parameters_mask = (os.getcwd() +
-                                           '/{}/source/docs/parameters-{}-'.format("AntennaTracker", "AntennaTracker"))
+                    old_parameters_mask = f"{os.getcwd()}/AntennaTracker/source/docs/parameters-AntennaTracker-"
                 else:
-                    old_parameters_mask = (os.getcwd() +
-                                           f'/{key}/source/docs/parameters-{key.title()}-')
+                    old_parameters_mask = f"{os.getcwd()}/{key}/source/docs/parameters-{key.title()}-"
                 try:
                     old_parameters_files = [
-                        f for f in glob.glob(old_parameters_mask + "*.rst")]
+                        f for f in glob.glob(f"{old_parameters_mask}*.rst")]
                     for filename in old_parameters_files:
-                        debug("Erasing rst " + filename)
+                        debug(f"Erasing rst {filename}")
                         os.remove(filename)
                 except Exception as e:
                     error(e)
@@ -656,20 +654,17 @@ def fetch_versioned_parameters(site=None):
                     target_json_file = ('./{}/source/_static/parameters-{}.json'.format("AntennaTracker", "AntennaTracker"))
                 else:
                     target_json_file = (f'./{value}/source/_static/parameters-{key.title()}.json')
-                debug("Erasing json " + target_json_file)
+                debug(f"Erasing json {target_json_file}")
                 remove_if_exists(target_json_file)
 
                 # Moves the updated JSON file
                 if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/{}/parameters-{}.json'.format("AntennaTracker", "AntennaTracker")  # noqa: E501
+                    vehicle_json_file = f"{os.getcwd()}/../new_params_mversion/AntennaTracker/parameters-AntennaTracker.json"  # noqa: E501
                 else:
-                    vehicle_json_file = os.getcwd() + f'/../new_params_mversion/{value}/parameters-{key.title()}.json'
-                new_file = (
-                    key +
-                    "/source/_static/" +
-                    vehicle_json_file[str(vehicle_json_file).rfind("/")+1:])
+                    vehicle_json_file = f"{os.getcwd()}/../new_params_mversion/{value}/parameters-{key.title()}.json"
+                new_file = f"{key}/source/_static/{vehicle_json_file[vehicle_json_file.rfind('/') + 1:]}"
                 try:
-                    debug("Moving " + vehicle_json_file)
+                    debug(f"Moving {vehicle_json_file}")
                     # os.rename(vehicle_json_file, new_file)
                     shutil.copy2(vehicle_json_file, new_file)
                 except Exception as e:
@@ -678,10 +673,9 @@ def fetch_versioned_parameters(site=None):
 
                 # Copy all parameter files to vehicle folder IFF it is new
                 try:
-                    new_parameters_folder = (os.getcwd() +
-                                             f'/../new_params_mversion/{value}/')
+                    new_parameters_folder = f"{os.getcwd()}/../new_params_mversion/{value}/"
                     new_parameters_files = [
-                        f for f in glob.glob(new_parameters_folder + "*.rst")
+                        f for f in glob.glob(f"{new_parameters_folder}*.rst")
                     ]
                 except Exception as e:
                     error(e)
@@ -689,9 +683,7 @@ def fetch_versioned_parameters(site=None):
                 for filename in new_parameters_files:
                     # Check possible cached version
                     try:
-                        new_file = (key +
-                                    "/source/docs/" +
-                                    filename[str(filename).rfind("/")+1:])
+                        new_file = f"{key}/source/docs/{filename[filename.rfind('/') + 1:]}"
                         if not os.path.isfile(new_file):
                             debug(f"Copying {filename} to {new_file} (target file does not exist)")
                             shutil.copy2(filename, new_file)
@@ -706,7 +698,7 @@ def fetch_versioned_parameters(site=None):
                                 debug(f"Overwriting {filename} to {new_file}")
                                 shutil.copy2(filename, new_file)
                             else:
-                                debug("It will reuse the last build of " + new_file)
+                                debug(f"It will reuse the last build of {new_file}")
                         else:   # If not cached, copy it anyway.
                             debug(f"Copying {filename} to {new_file}")
                             shutil.copy2(filename, new_file)
@@ -724,10 +716,10 @@ def create_latest_parameter_redirect(default_param_file, vehicle):
     """
     out_line = "======================\nParameters List (Full)(\n======================\n"
     out_line += "\n.. raw:: html\n\n"
-    out_line += '   <script>location.replace("' + default_param_file[:-3] + "html" + '")</script>'
+    out_line += f'   <script>location.replace("{default_param_file[:-3]}html")</script>'
     out_line += "\n\n"
 
-    filename = vehicle + "/source/docs/parameters.rst"
+    filename = f"{vehicle}/source/docs/parameters.rst"
     with open(filename, "w") as text_file:
         text_file.write(out_line)
 
@@ -742,28 +734,25 @@ def cache_parameters_files(site=None):
     for key, value in PARAMETER_SITE.items():
         if (site == key or site is None) and (key != 'AP_Periph'):  # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server # noqa: E501
             try:
-                old_parameters_folder = (os.getcwd() +
-                                         f'/../old_params_mversion/{value}/')
+                old_parameters_folder = f"{os.getcwd()}/../old_params_mversion/{value}/"
                 old_parameters_files = [
-                    f for f in glob.glob(old_parameters_folder + "*.*")
+                    f for f in glob.glob(f"{old_parameters_folder}*.*")
                 ]
                 for file in old_parameters_files:
                     debug(f"Removing {file}")
                     os.remove(file)
 
-                new_parameters_folder = (os.getcwd() +
-                                         f'/../new_params_mversion/{value}/')
+                new_parameters_folder = f"{os.getcwd()}/../new_params_mversion/{value}/"
                 new_parameters_files = [
-                    f for f in glob.glob(new_parameters_folder +
-                                         "parameters-*.rst")
+                    f for f in glob.glob(f"{new_parameters_folder}parameters-*.rst")
                 ]
                 for filename in new_parameters_files:
                     debug(f"Copying {filename} to {old_parameters_folder}")
                     shutil.copy2(filename, old_parameters_folder)
 
-                built_folder = os.getcwd() + "/" + key + "/build/html/docs/"
+                built_folder = f"{os.getcwd()}/{key}/build/html/docs/"
                 built_parameters_files = [
-                    f for f in glob.glob(built_folder + "parameters-*.html")
+                    f for f in glob.glob(f"{built_folder}parameters-*.html")
                 ]
                 for built in built_parameters_files:
                     debug(f"Copying {built} to {old_parameters_folder}")
@@ -782,12 +771,11 @@ def put_cached_parameters_files_in_sites(site=None):
     for key, value in PARAMETER_SITE.items():
         if (site == key or site is None) and (key != 'AP_Periph'): # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server # noqa: E501
             try:
-                built_folder = (os.getcwd() +
-                                f'/../old_params_mversion/{value}/')
+                built_folder = f"{os.getcwd()}/../old_params_mversion/{value}/"
                 built_parameters_files = [
-                    f for f in glob.glob(built_folder + "parameters-*.html")
+                    f for f in glob.glob(f"{built_folder}parameters-*.html")
                 ]
-                vehicle_folder = os.getcwd() + "/" + key + "/build/html/docs/"
+                vehicle_folder = f"{os.getcwd()}/{key}/build/html/docs/"
                 debug(f"Site {site} getting previously built files from {built_folder}")
                 for built in built_parameters_files:
                     if ("latest" not in built):  # latest parameters files must be built every time
@@ -819,7 +807,7 @@ def copy_static_html_sites(site, destdir):
         update_frontend_json()
         folder = 'frontend'
         try:
-            site_folder = os.getcwd() + "/" + folder
+            site_folder = f"{os.getcwd()}/{folder}"
             targetdir = os.path.join(destdir, folder)
             shutil.rmtree(targetdir, ignore_errors=True)
             shutil.copytree(site_folder, targetdir)
