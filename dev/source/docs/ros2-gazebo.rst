@@ -123,6 +123,18 @@ Examples available
 
     ros2 launch ardupilot_gz_bringup wildthumper_playpen.launch.py
 
+- Alti-Transition (Quadplane)
+
+.. code-block:: bash
+
+    ros2 launch ardupilot_gz_bringup alti_transition_runway.launch.py
+
+- Multiagent (Copter, Rover and Quadplane)
+
+.. code-block:: bash
+
+    ros2 launch ardupilot_gz_bringup multiagent.launch.py
+
 Here is a demo video of ArduPilot working with ROS 2 and Gazebo:
 
 ..  youtube:: HZKXrSAE-ac
