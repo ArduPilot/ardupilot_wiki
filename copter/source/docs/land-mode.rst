@@ -25,11 +25,22 @@ features:
 
 .. note::
 
-    Copter will recognise that it has landed if the motors are being commanded to be at low
-    level by the vertical position controller, its vertical speed is close to zero (within ±1 m/s by default), 
-    is not accelerating for one second, and other internal landing-detection checks, such as attitude-related checks, 
-    are also satisfied.  It does not use the altitude to decide whether to shut off the
-    motors, except that when a healthy rangefinder is being used, the copter must be within 2m of the ground.
+   Copter will recognise that it has landed when ALL of the following are true for
+   approximately one second:
+
+   - Motors are commanded to their lower limit by the vertical position controller
+   - Throttle mix is at minimum (``is_throttle_mix_min``)
+   - No large angle is being requested (roll/pitch target < 15°)
+   - No large angle error exists (attitude error < 30°)
+   - The airframe is not accelerating (earth-frame accel ≈ 0)
+   - Vertical speed is within 1 m/s of zero
+   - If a healthy rangefinder is available: altitude is below 2m
+   - Weight-on-Wheels (WoW) sensor (if present) confirms contact or is unknown
+
+   Altitude above home is **not** used as a motor shutoff condition (except when a rangefinder is used,see above).
+   The ``LAND_ALT_LOW_M`` parameter (default 10m) only controls the
+   **descent speed transition** from :ref:`LAND_SPD_HIGH_MS<LAND_SPD_HIGH_MS>`
+   to :ref:`LAND_SPD_MS<LAND_SPD_MS>` — it has no role in landing detection or disarming.
 
 .. note:: For Traditional Heli, the low motor check in the above landing detection algorithm is replaced with a check that Collective output is below
    mid-position (controlled by the vertical position controller, ie in descent). The rotor still may be at governor speed up until Motor Interlock is removed and  disarming occurs.
