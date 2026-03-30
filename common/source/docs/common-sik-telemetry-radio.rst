@@ -41,7 +41,7 @@ many different sources, including ArduPilot Partners:
 -  `TFSIK01 Telemetry Radio <https://docs.thunderfly.cz/avionics/TFSIK01/>`__ (ThunderFly)
 -  `mRo SiK Telemetry Radio <https://store.mrobotics.io/product-p/mro-sikv2airgnd-mr.htm>`__ (mRobotics)
 -  `Holybro SiK Telemetry Radio <https://holybro.com/products/sik-telemetry-radio-v3>`__ (Holybro)
- -  `Holybro Sik Long Range <https://holybro.com/collections/telemetry-radios/products/sik-telemetry-radio-1w>`__
+-  `Holybro Sik Long Range <https://holybro.com/collections/telemetry-radios/products/sik-telemetry-radio-1w>`__
 
 .. tip::
 
