@@ -790,7 +790,7 @@ def put_cached_parameters_files_in_sites(site=None):
                 vehicle_folder = os.getcwd() + "/" + key + "/build/html/docs/"
                 debug(f"Site {site} getting previously built files from {built_folder}")
                 for built in built_parameters_files:
-                    if ("latest" not in built):  # latest parameters files must be built every time
+                    if "latest" not in built:  # latest parameters files must be built every time
                         debug(f"Reusing built {built} in {vehicle_folder} ")
                         shutil.copy(built, vehicle_folder)
             except Exception as e:
@@ -879,8 +879,8 @@ def create_features_pages(site):
     fetch_url("https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/scripts/build_options.py")
     import build_options
     build_options_by_define = {}
-    for f in build_options.BUILD_OPTIONS:
-        build_options_by_define[f.define] = f
+    for feature in build_options.BUILD_OPTIONS:
+        build_options_by_define[feature.define] = feature
 
     # fetch and load most-recently-built features.json
     remove_if_exists("features.json.gz")
@@ -923,7 +923,7 @@ def create_features_page(features, build_options_by_define, vehicletype):
         if build["vehicletype"] != vehicletype:
             continue
         features_by_platform[build["platform"]] = build["features"]
-    rows = []
+
     column_headings = ["Category", "Feature", "Included", "Description"]
     all_tables = ""
     for platform_key in sorted(features_by_platform.keys(), key=lambda x : x.lower()):
