@@ -507,13 +507,13 @@ def move_results(vehicles):
             for old_file in files_to_delete:
                 os.remove(old_file)
 
-            # Moving files.
+            # Moving files (use shutil.move for cross-device compatibility)
             files_to_move = [f for f in glob.glob("parameters-" + vehicle + "*")]
             for file in files_to_move:
-                if ("latest" not in file):  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.  # noqa: E501
-                    os.rename(file, folder + file)
+                if "latest" not in file:  # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.  # noqa: E501
+                    shutil.move(file, folder + file)
                 else:
-                    os.rename(file, str((folder + "parameters.rst")))
+                    shutil.move(file, str((folder + "parameters.rst")))
 
         except Exception as e:
             error("Error while moving result files of vehicle " + vehicle + " pwd: " + str(os.getcwd()))
