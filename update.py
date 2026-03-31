@@ -1092,13 +1092,19 @@ if __name__ == "__main__":
 
     VERBOSE = args.verbose
 
+    tstart = time.time()
     now = datetime.now()
     building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
 
     check_imports()
     check_ref_directives()
+
+    progress("=== Step 1: Creating features pages ===")
+    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
     create_features_pages(args.site)
 
+    progress("=== Step 2: Fetching parameters and log messages in parallel ===")
+    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
     if not args.fast:
         if args.paramversioning:
             # Parameters for all versions available on firmware.ardupilot.org:
@@ -1110,9 +1116,17 @@ if __name__ == "__main__":
         # Fetch most recent LogMessage metadata from autotest:
         fetchlogmessages(args.site, args.cached_parameter_files)
 
+    progress("=== Step 3: Processing static sites ===")
+    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
     copy_static_html_sites(args.site, args.destdir)
+
     # Use clean_common=True for clean builds, False for fast/incremental builds
+    progress("=== Step 4: Copying common source files ===")
+    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
     copy_common_source_files(clean_common=args.clean_common)
+
+    progress("=== Step 5: Building documentation with Sphinx ===")
+    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
     sphinx_make(args.site, args.parallel, args.fast)
 
     if args.paramversioning:
@@ -1134,6 +1148,9 @@ if __name__ == "__main__":
     # locally and working once is on the server.
 
     error_count = len(error_log)
+    total_time = time.time() - tstart
+    progress(f"Total execution time: {total_time:.2f} seconds ({total_time/60:.1f} minutes)")
+
     if error_count > 0:
         progress("Reprinting error messages:", file=sys.stderr)
         for msg in error_log:
