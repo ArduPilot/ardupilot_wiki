@@ -530,16 +530,28 @@ def print_versions(commits_to_checkout_and_parse):
 
 
 # Step 1 - Select the versions for generate parameters
+start_time = time.time()
+progress("=== Step 1: Setup and fetch release information ===")
 setup()                                                             # Reset the ArduPilot folder/repo
 feteched_releases = fetch_releases(BASEURL, VEHICLES)               # All folders/releases.
 commits_to_checkout_and_parse = get_commit_dict(feteched_releases)  # Parse names, and git hashes.
 print_versions(commits_to_checkout_and_parse)                       # Present work dict.
 
 # Step 2 - Generates them in ArdupilotRepoFolder/Tools/autotest/param_metadata
+progress("=== Step 2: Generate parameter files ===")
+progress(f"Time elapsed so far: {time.time() - start_time:.2f} seconds")
+total_commits = len(commits_to_checkout_and_parse)
+progress(f"Processing {total_commits} commit(s)...")
 generate_rst_files(commits_to_checkout_and_parse)
 
-# Step 3 - Generates a JOSN file for each vehicle and mode files to folder new_params_mversion
+# Step 3 - Generates a JSON file for each vehicle and move files to folder new_params_mversion
+progress("=== Step 3: Generate JSON files and move results ===")
+progress(f"Time elapsed so far: {time.time() - start_time:.2f} seconds")
 generate_json(VEHICLES)
 move_results(VEHICLES)
 
+progress("=== Build completed ===")
+total_time = time.time() - start_time
+progress(f"Total execution time: {total_time:.2f} seconds ({total_time/60:.1f} minutes)")
+progress(f"Total errors encountered: {error_count}")
 sys.exit(error_count)
