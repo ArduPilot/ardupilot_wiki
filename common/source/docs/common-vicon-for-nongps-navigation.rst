@@ -44,7 +44,7 @@ Hardware Setup
 You will need a low-latency network link from your GCS computer to the
 copter, and from the GCS to your Vicon server. The recommended method
 is to use ethernet to the Vicon server and use a ESP8266 WiFi link
-running `mavest8266 <common-esp8266-telemetry>`_ on the copter.
+running :ref:`mavest8266 <common-esp8266-telemetry>` on the copter.
 
 Vicon System Setup
 ==================
@@ -135,8 +135,8 @@ Setup your copter with the WiFi link running at baudrate 921600 and
 with MAVLink2 enabled. If your WiFi adapter is on Telem1, then you
 will need to set:
 
- - SERIAL1_PROTOCOL=2
- - SERIAL1_BAUD=921600
+ - :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = 2
+ - :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = 921600
 
 Next start MAVProxy like this:
 
@@ -151,17 +151,19 @@ Key Parameters
 
 You should set the following key parameters:
 
- - EK3_ENABLE=1
- - EK2_ENABLE=0
- - AHRS_EKF_TYPE=3
- - EK3_GPS_TYPE=0
- - EK3_MAG_CAL=5
- - EK3_ALT_SOURCE=2
- - GPS_TYPE=14
- - GPS_DELAY_MS=50
- - COMPASS_USE=0
- - COMPASS_USE2=0
- - COMPASS_USE3=0
+ - :ref:`EK3_ENABLE <EK3_ENABLE>` = 1
+ - :ref:`EK2_ENABLE <EK2_ENABLE>` = 0
+ - :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` = 3
+ - :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` = 3
+ - :ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>` = 3
+ - :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 3
+ - :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` = 3
+ - :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 2
+ - :ref:`GPS1_TYPE <GPS1_TYPE>` = 14
+ - :ref:`GPS1_DELAY_MS <GPS1_DELAY_MS>` = 50
+ - :ref:`COMPASS_USE <COMPASS_USE>` = 0
+ - :ref:`COMPASS_USE2 <COMPASS_USE2>` = 0
+ - :ref:`COMPASS_USE3 <COMPASS_USE3>` = 0
 
 After setting these parameters you should reboot your copter.
 
@@ -201,12 +203,12 @@ You should see ArduPilot first report that EKF3 gets yaw alignment,
 and then that it is using the GPS. After that you should be able to
 arm and fly.
 
-For a first test flight STABILIZE or ALT_HOLD mode is
+For a first test flight :ref:`Stabilize mode <stabilize-mode>` or :ref:`Alt Hold mode <altholdmode>` mode is
 recommended. Then get the flight log from the microSD card and check
 that the EKF3 innovations are low. The position, velocity and yaw
 normalised innovations should all be low (below 0.1).
 
-Once you have confirmed low innovations you can try a flight in LOITER
+Once you have confirmed low innovations you can try a flight in :ref:`Loiter mode <loiter-mode>`
 mode.
 
 Tuning
@@ -214,38 +216,38 @@ Tuning
 
 If you have significant vibration then you will likely want to
 de-weight the accelerometers and instead tell the EKF to use the vicon
-data more. Try setting EK3_ACC_P_NSE to 2.0 to de-weight the
+data more. Try setting :ref:`EK3_ACC_P_NSE <EK3_ACC_P_NSE>` to 2.0 to de-weight the
 accelerometer data. You may find this helps with position and height
 hold.
 
-For indoor flightw with a Vicon setup and a small quad you can push up
+For indoor flight with a Vicon setup and a small quad you can push up
 the accelerations and yaw rate to much higher value than are used in a
 normal quad. Some suggestions for a small racing quad are:
 
- - INS_GYRO_FILTER=60
- - INS_ACCEL_FILTER=30
- - ATC_ACCEL_Y_MAX=100000
- - ATC_SLEW_YAW=15000
+ - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` = 60
+ - :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` = 30
+ - :ref:`ATC_ACC_Y_MAX <ATC_ACC_Y_MAX>` = 100000
+ - :ref:`ATC_RATE_WPY_MAX <ATC_RATE_WPY_MAX>` = 15000
 
 Circle Mode
 ===========
 
-A very useful mode for testing accuracy of flight is `Circle Mode
+A very useful mode for testing accuracy of flight is :ref:`Circle mode
 <circle-mode>`. To use it indoors try:
 
- - CIRCLE_RADIUS=100
- - CIRCLE_RATE=40
+ - :ref:`CIRCLE_RADIUS_M <CIRCLE_RADIUS_M>` = 100
+ - :ref:`CIRCLE_RATE <CIRCLE_RATE>` = 40
 
-You should also set your RTL_ALT nice and low in case you hit a
+You should also set your :ref:`RTL_ALT_M <RTL_ALT_M>` nice and low in case you hit a
 failsafe, or configure a instant disarm switch on your transmitter for
 when things go wrong.
 
-To fly in circle mode take off in LOITER and then move so you are 1m
+To fly in :ref:`Circle mode <circle-mode>` take off in :ref:`Loiter mode <loiter-mode>` and then move so you are 1m
 from the center of the room, pointing towards the middle of the
 room. Then switch to Circle mode and the vehicle should start
 circling, keeping its nose pointed at the center of the circle. You
-can try pushing up CIRCLE_RATE to higher values (in degrees/second) as
+can try pushing up :ref:`CIRCLE_RATE <CIRCLE_RATE>` to higher values (in degrees/second) as
 you get more confident. The video at the top of this page has
-CIRCLE_RATE=150 for a 150 degree/second circle.
+:ref:`CIRCLE_RATE <CIRCLE_RATE>` = 150 for a 150 degree/second circle.
 
 
