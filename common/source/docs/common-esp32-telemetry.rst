@@ -1,139 +1,156 @@
 .. _common-esp32-telemetry:
 [copywiki destination="plane,copter,rover,blimp,sub"]
-==================================
-DroneBridge / ESP32 WiFi telemetry
-==================================
+=====================
+DroneBridge for ESP32
+=====================
 
-ESP32 are readily available Wi-Fi modules with full TCP/IP stack and
-microcontroller capability. They offer dedicated UART, SPI and I2C
-interfaces.
+**DroneBridge for ESP32** allows an ESP32 to be used as a bi-directional telemetry radio using Wifi or Bluetooth LE at ranges up to 1km.
 
-**DroneBridge for ESP32** for the popular ESP32 modules from Espressif Systems offers a transparent and bi-directional serial  to WiFi bridge. In addition it features a custom ESP-NOW implementation which allows for ranges of up to 1km. It is one of the cheapest ways to communicate with ardupilot wirelessly.
-
-It also allows for a fully transparent serial to WiFi pass-through link with variable packet size.| DroneBridge for ESP32 is a telemetry/low data rate-only solution. There is no support for cameras connected to the ESP32 since it does not support video encoding.
-
-.. image:: https://raw.githubusercontent.com/DroneBridge/ESP32/master/wiki/db_ESP32_setup.png
-   :alt: DroneBridge for ESP32 and WiFi connections
+.. image:: ../../../images/dronebridge-title-image1.png
+    :target: ../_images/dronebridge-title-image1.png
+    :alt: DroneBridge for ESP32 and WiFi connections
 
 DroneBridge for ESP32 supports standard WiFi connections to an access point but can also operate as a standalone access point.
 
-.. image:: https://raw.githubusercontent.com/DroneBridge/ESP32/refs/heads/master/wiki/DB_ESP32_NOW_Illistration.png
-   :alt: DroneBridge for ESP32 using ESP-NOW for drone swarms
+.. image:: ../../../images/dronebridge-title-image2.png
+    :target: ../_images/dronebridge-title-image2.png
+    :alt: DroneBridge for ESP32 using ESP-NOW for drone swarms
 
-The ESP-NOW mode offers a connectionless and encrypted alternative to traditional WiFi. While the data rate is reduced to ~250 kbit/s the range is increased up to 1 km.
-This mode has no limit on how many clients are connected on the autopilot side. Only channel capacity and processing capacity limit the number of clients.
-This mode requires ESP32 devices on the GCS side as well as on the autopilot side.
+Three operating modes are available:
+
+- Standard Wifi has a range of 150m+
+- ESP-NOW mode offers a connectionless and encrypted alternative to traditional WiFi. While the data rate is reduced to ~250 kbit/s the range is increased up to 1 km. This mode has no limit on how many clients are connected on the autopilot side. Only channel capacity and processing capacity limit the number of clients. This mode requires ESP32 devices on the GCS side as well as on the autopilot side.
+- `Drone Light Show Edition <https://dronebridge.gitbook.io/docs/dronebridge-for-esp32-drone-light-show-edition/overview-drone-light-show-edition>`__ is a specialised build optimised for Skybrush drone shows
+
+More information available on the official `DroneBridge <https://drone-bridge.com>`__ website.
 
 Features
 ========
 
 -  Bidirectional: serial-to-WiFi, serial-to-WiFi Long-Range (LR), serial-to-ESP-NOW link
--  Support for MAVLink, MSP, LTM or any other payload using transparent option
--  Affordable, Reliable & low latency
--  Weight: <8 g
--  Up to 150m range using standard WiFi
--  Up to 1km of range using ESP-NOW or Wi-Fi LR Mode - sender & receiver must be ESP32 with LR-Mode enabled
--  Fully encrypted in all modes including ESP-NOW broadcasts secured using AES-GCM 256 bit!
--  Supported by: QGroundControl, Mission Planner, mwptools, impload etc.
+-  150m+ range using standard WiFi depending on the access point
+-  Up to 1km of range using ESP-NOW or Wi-Fi LR Mode
+-  Fully encrypted in WiFi & ESP-NOW (AES-GCM 256 bit)
+-  High data rates (250kbit ESP-NOW & 11Mbit WiFi mode)
+-  Bluetooth LE connections for short range configuration of your UAV
+-  Support for MAVLink, MSP & LTM telemetry
+-  Support for any payload using transparent option
+-  Supported by QGroundControl, Mission Planner, mwptools, impload etc.
 -  Easy to set up: Power connection + UART connection to flight controller
 -  Fully configurable through an easy-to-use web interface
--  Parsing of LTM & MSPv2 for more reliable connection and less packet loss
--  Parsing of MAVLink with the injection of Radio Status packets for the display of RSSI in the GCS
--  Fully transparent telemetry down-link option
--  Support for drone swarms of almost any size using ESP-NOW with its custom & encrypted broadcast mode
+-  Parsing modes for reduced packet loss
+-  Ideal for central drone swarm control
+-  Reliable, Low latency, Affordable
+-  Weight: <8g
 
-Recommended Hardware
-====================
+Where to Buy
+============
 
-Every ESP32 board is capable of running DroneBridge for ESP32.
-Boards and modules with an external antenna connector are recommended,
-since those will likely offer more range.
+- Official DroneBridge ESP32 hardware is available directly from `DroneBridge <https://drone-bridge.com/shop/>`__
+- (Optionally) `2.4GHz Rod Antenna <https://www.seeedstudio.com/2-4GHz-2-81dBi-Antenna-for-XIAO-ESP32C3-p-5475.html>`__ (ESP32-C3 or ESP32-C6)
+- (Optionally) `2.4GHz FPC Antenna A-01 <https://www.seeedstudio.com/FPC-Antenna-A-01-for-XIAO-ESP32C3-C5-p-6439.html>`__ (ESP32-C3 only)
 
-.. warning:: Most modules support 3.3V input (only), while some autopilots serial ports provide 5V . You will need to check compatibility and step down the voltage if needed. It is not generally recommended to use the autopilot's 3.3V supply unless you are certain it can provide enough current for the ESP32 board you are using.
+While not recommended, `unofficial hardware can also be used <https://dronebridge.gitbook.io/docs/dronebridge-for-esp32/hardware-and-wiring#other-boards>`__.
 
-Officially Supported and Tested Boards
-======================================
+Flash the DroneBridge Firmware
+==============================
 
-Do the project and yourself a favour and use one of the officially supported and tested boards below.
-These boards are very low in price, have everything you need and are also very small. Perfect for use on any drone.
+.. image:: ../../../images/dronebridge-flash-firmware.png
+    :target: ../_images/dronebridge-flash-firmware.png
+    :width: 450px
 
-`You can find all the latest information on the official boards on the website.`_
+To flash the latest firmware to the ESP32:
 
+- Connect your PC to the ESP32's USB port
+- Open a web browser and connect to the `online flashing tool at drone-bridge.com/flasher <https://drone-bridge.com/flasher/>`__
+- Press the "Connect to ESP32" button
+- From the "Select DroneBridge for ESP32 Version" drop-down:
 
-Downloading and Flashing the Firmware
-=====================================
+  - For Wifi, Bluetooth LE or ESP-NOW, select the latest "Stable" version
+  - For Drone Light Show Edition, select the latest "Drone Light Show Edition" version
 
-An easy-to-use online flashing tool is available on the official website.
-Just connect your ESP32 and click flash!
-`For more detailed information please visit the official Wiki!`_
+- From the "Select Firmware flavor" drop-down:
+
+  - If using official hardware:
+
+    - For the vehicle telemetry unit, select, "ESP32-xx Official HW"
+    - For the ground station telemetry unit, select, "ESP32-xx Official HW (USBSerial)"
+
+  - If using unofficial hardware:
+
+    - For the vehicle telemetry unit, select, "ESP32-xx"
+    - For the ground station telemetry unit, select, "ESP32-xx (USBSerial)"
+
+- Push the "Flash Firmware to ESP32!" button
+
+For more details see the `DroneBridge Docs Installation Guide <https://dronebridge.gitbook.io/docs/dronebridge-for-esp32/installation>`__.
 
 Configuring DroneBridge for ESP32
 =================================
 
-You can change the default configuration via the Web Interface.
-Connect to the ESP32 via WiFi and enter ``dronebridge.local``, ``http://dronebridge.local`` or ``192.168.2.1`` in the address
-bar of your browser.
+After powering on the ESP32, connect your PC's wifi to the WifiAP, "DroneBridge for ESP32" with password "dronebridge"
 
-.. image:: https://raw.githubusercontent.com/DroneBridge/ESP32/master/wiki/dbesp32_webinterface.png
-   :alt: DroneBridge for ESP32 Webinterface
+Open a web browser and connect to one of the following URLs:
 
-Wiring
-======
+- `http://dronebridge.local <http://dronebridge.local>`__
+- `192.168.2.1 <http://192.168.2.1>`__
 
-Wiring is very simple and mostly the same for all devices connected to
-any serial port (ie. TELEM1 or TELEM2) of the autopilot. This guide does not go into
-detail here but provides an outline for wiring below.
+.. image:: ../../../images/dronebridge-configuration.png
+    :target: ../_images/dronebridge-configuration.png
+    :width: 450px
 
--  Connect UART of ESP32 to a UART of your autopilot (ie. TELEM
-   1 or TELEM 2 port). Make sure the voltage levels match! Most ESP32
-   DevKits can only take 3.3V!
+For outdoor use ESP-NOW is recommended:
 
-   -  TX to RX
-   -  RX to TX
-   -  GND to GND
-   -  Stable 3.3V or 5V power supply to the ESP32 (depending on the
-      available inputs of your ESP32 and capabilities of the autopilot)
+- Set "ESP32 Mode" to "ESP-NOW LR Mode GND" for the ground station unit
+- Set "ESP32 Mode" to "ESP-NOW LR Mode AIR" for the vehicle unit
 
--  Set the autopilot port to MAVLINK 1 or 2 protocol.
+If an external antenna is used move the "Use external Antenna" slider to the right
 
-.. note:: Some manufacturers of ESP32 DevKits have the wrong labels for the pins on their products. Make sure that the PINs on your board are labeled correctly if you encounter issues.
+"UART serial protocol" should be left at "MAVLink" and "UART baud" should be left at "115200"
 
-Make sure to always follow the instructions of the ESP32 board manufacturer when it comes to wiring. Especially the power supply.
+Press "Save Settings & Reboot"
 
-.. image:: https://raw.githubusercontent.com/DroneBridge/ESP32/master/wiki/Pixhawk_wiring.png
-   :alt: Example wiring of autopilot to ESP32
+Once configured to use ESP-NOW, the WifiAP will not appear after startup unless the "boot" button is short pressed.  Alternatively long-press the "boot" button to reset all settings back to the defaults.
 
+For more details see `DroneBridge Docs Configuration Guide <https://dronebridge.gitbook.io/docs/dronebridge-for-esp32/configuration>`__.
 
-ArduPilot configuration
-=======================
+Connecting to the Autopilot
+===========================
 
-Configure the UART of the autopilot that is wired to the ESP32 to have matching baud rates and MAVLink set as protocol for optimal performance.
+If using the official hardware, use a JST-GH 6-pin cable to connect the ESP32 to one of the autopilot's serial ports (e.g.. TELEM1 or TELEM2)
 
-for example, if connected to SERAIL2 port on the autopilot these parameters should be set:
+.. image:: ../../../images/dronebridge-autopilot.jpg
+    :target: ../_images/dronebridge-autopilot.jpg
+    :width: 450px
 
-- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 2 (MAVLink2) or 1 (MAVLink1)
+For unofficial hardware see the `DroneBridge Docs Hardware & Wiring Guide <https://dronebridge.gitbook.io/docs/dronebridge-for-esp32/hardware-and-wiring#seeed-studio-xiao-esp32c3-and-esp32c6>`__
+
+Set the autopilot's serial protocol and baud rate to match the DroneBridge settings.  If connected to Serial2 (aka Telem2) these parameters should be:
+
+- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 2 (MAVLink2)
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115 (115200 baud)
-
-If you have problems connecting, it may help to set :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` = 0 to disable flow control although this is not normally necessary
-
+- (Optionally) :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` = 0 to disable flow control
 
 Connection to the GCS
 =====================
 
-The following connection options are available:
+To connect using a USB cable:
 
--  UDP unicast on port ``14550`` to all connected devices.
--  TCP on port ``5760``
-
-DroneBridge for ESP32 will automatically forward all data to all
-connected WiFi devices via UDP to port 14550. QGroundControl or Mission Planner should
-auto-detect the connection and no further actions should be necessary.
+- Connect the ESP32 to the PC using a USB cable
+- Start the GCS (e.g. Mission Planner, QGC) and connect to the COM port
 
 For use with Mission Planner it may be neessary to check the Config, Planner, "Disable RTS reset on ESP32 SerialUSB" checkbox as shown below
 
 .. image:: ../../../images/esp32-dronebridge-mp-option.png
     :target: ../_images/esp32-dronebridge-mp-option.png
     :width: 450px
+
+Alternatively if the vehicle unit is configured to use Wifi, connect the PC to the WifiAP and enter the password (e.g. "dronebridge")
+
+QGroundControl or Mission Planner should auto-detect the connection and no further action should be required but if necessary connect manually using UDP or TCP:
+
+-  UDP unicast on port ``14550`` to all connected devices.
+-  TCP on port ``5760``
 
 APIs,Troubleshooting & Support
 ==============================
