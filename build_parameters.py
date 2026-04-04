@@ -32,6 +32,7 @@ import logging
 import os
 import re
 import shutil  # noqa: F401
+import subprocess
 import sys
 import time  # noqa: F401
 from html.parser import HTMLParser
@@ -250,6 +251,7 @@ def setup():
         global BASEPATH
         BASEPATH = os.getcwd()
         check_temp_folders()
+        os.chdir(BASEPATH) # Need to call git command correctly
     except Exception as e:
         error(f"ArduPilot Repo folder not found (cd {args.gitFolder} failed)")
         error(e)
@@ -499,11 +501,28 @@ def generate_rst_files(commits_to_checkout_and_parse):
 
         # Run param_parse.py tool from Autotest set in the desired commit id
         try:
-            os.chdir(f"{BASEPATH}/Tools/autotest/param_metadata")
-            if ('rover' in vehicle.lower()) and ('v3.' not in version.lower()) and ('v4.0' not in version.lower()): # Workaround the vehicle renaming (Rover, APMRover2 ArduRover...)  # noqa: E501
-                os.system("python3 ./param_parse.py --vehicle Rover")
-            else: # regular case
-                os.system(f"python3 ./param_parse.py --vehicle {vehicle_new_to_old_name[vehicle]}")  # option "param_parse.py --format rst" is not available in all commits where param_parse.py is found  # noqa: E501
+            param_metadata_dir = os.path.join(BASEPATH, "Tools", "autotest", "param_metadata")
+            # Workaround the vehicle renaming (Rover, APMRover2 ArduRover...)
+            if ('rover' in vehicle.lower()) and ('v3.' not in version.lower()) and ('v4.0' not in version.lower()):
+                vehicle_name = 'Rover'
+            else:
+                vehicle_name = vehicle_new_to_old_name[vehicle]
+
+            cmd = ["python3", "./param_parse.py", "--vehicle", vehicle_name]
+
+            # Run with subprocess - use cwd parameter instead of os.chdir()
+            result = subprocess.run(cmd, cwd=param_metadata_dir,
+                                    capture_output=True, text=True, timeout=300)
+
+            if result.returncode != 0:
+                error(f"param_parse.py failed for {vehicle} {version}: {result.stderr}")
+                return None
+
+            # Log param_parse.py output for debugging
+            if result.stdout:
+                debug(f"param_parse.py stdout for {vehicle} {version}: {result.stdout[:500]}")
+            if result.stderr:
+                debug(f"param_parse.py stderr for {vehicle} {version}: {result.stderr[:500]}")
 
             # create a filename for new parameters file
             filename = f"parameters-{vehicle}"
@@ -514,24 +533,25 @@ def generate_rst_files(commits_to_checkout_and_parse):
             else:
                 filename += f"-stable-{version}.rst"
 
+            # Use absolute paths for file operations
+            parameters_rst_path = os.path.join(param_metadata_dir, "Parameters.rst")
+            output_file_path = os.path.join(param_metadata_dir, filename)
             # Generate new anchors names in files to avoid toctree problems and links in sphinx.
-            if os.path.exists("Parameters.rst"):
-                replace_anchors("Parameters.rst", filename, filename[10:-4])
-                os.remove("Parameters.rst")
-                debug(f"File {filename} generated. ")
+            if os.path.exists(parameters_rst_path):
+                replace_anchors(parameters_rst_path, output_file_path, filename[10:-4])
+                os.remove(parameters_rst_path)
+                debug(f"File {filename} generated.")
                 # Remove duplicate RNGFNDx_ Parameters sections before checking labels.
                 dedupe_rngfnd_parameters_sections(filename)
                 # Check for duplicate RST labels in the generated file
                 if rst_has_duplicate_labels(filename):
                     debug(f"RST duplicate labels detected in {filename}")
-
             else:
                 # this was an error, but turns out we are missing a
                 # bunch of these, eg.
                 # [build_parameters.py][error]: Parameters.rst not found to rename to  parameters-Copter-stable-V4.0.0.rst
-                progress(f"Parameters.rst not found to rename to  {filename}")
+                error(f"Parameters.rst not found for {vehicle} {version}")
 
-            os.chdir(BASEPATH)
         except Exception as e:
             error(f'Error while parsing "Parameters.rst" | details:\t{vehicle}\t{version}\t{commit_id}')
             error(e)
