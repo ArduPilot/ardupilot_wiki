@@ -23,7 +23,7 @@ Benewake provides a range of lidar sensors that use proprietary serial and/or CA
      - 52g
      - 5V
      - 3 deg
-     - UART
+     - UART, I2C
    * - `TF02-Pro <https://en.benewake.com/TF02Pro/index.html>`__
      - 0.40m / 13.5m
      - 50g
