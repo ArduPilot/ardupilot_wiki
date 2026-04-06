@@ -12,6 +12,7 @@ This page describes how to protect an ArduPilot vehicle from external threats.
     MAVLink2 Signing <common-MAVLink2-signing>
     Parameter Lockdown <common-parameter-lockdown>
     Secure Firmware (tamper-proof) <secure-firmware>
+    Remote ID <common-remoteid>
 
 The first step in protecting the vehicle is to ensure that it is physically secure.  If a malicious individual has physical access to the vehicle there are numerous ways they could endanger the system including cutting wires, breaking propellers, adding devices that interfere with the sensors (vibration, magnetic interference, EMI).  While the ArduPilot software has `pre-arm checks <https://ardupilot.org/copter/docs/common-prearm-safety-checks.html>`__ that may catch some methods of vandalism, it cannot protect against them all.
 
