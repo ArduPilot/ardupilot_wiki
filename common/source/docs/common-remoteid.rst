@@ -1,6 +1,6 @@
 .. _common-remoteid:
 
-[copywiki destination="copter,plane,rover,sub"]
+[copywiki destination="copter,plane,rover,sub,dev"]
 
 ========================
 Remote ID (aka Drone ID)
