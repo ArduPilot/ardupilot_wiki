@@ -36,8 +36,17 @@ The sections below provide information about ArduPilot autopilot hardware option
 
 [/site]
 
+[site wiki="sub"]
+
+.. note::
+
+    The `mRo Pixhawk <common-pixhawk-overview>` and `Blue Robotics Navigator <https://bluerobotics.com/store/comm-control-power/control/navigator/>`__ ** (Linux) are known to have been used in popular commercial underwater vehicles, so have had substantial testing, and *may* require less configuration or have more detailed documentation available.
+
+[/site]
+
 .. note:: Not all of these autopilots have been directly tested by ArduPilot development team members and while firmware  is provided by ArduPilot, it does not constitute an endorsement by ArduPilot.  However, most boards developed by ArduPilot Partners have been provided to the ArduPilot development team to aid in any possible support issues that might arise. 
 
+.. note:: Due to flash memory limitations, most F4 based, and some other boards, do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
 Open Hardware
 =============
@@ -76,8 +85,6 @@ Open Hardware
     TauLabs Sparky2 <common-taulabs-sparky2>
     ZeroOneX6/X6 Pro <common-zeroonex6>
     ZeroOneX6-Air/Air+ <common-zeroonex6-air>
-
-\* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
 Closed Hardware
 ===============
@@ -250,8 +257,6 @@ Closed Hardware
     YJUAV A6SE <common-yjuav-a6se>
     YJUAV A6SE H743<common-yjuav-a6se-h743>
     YJUAV-A6Ultra <common-yjuav-a6ultra>
-
-.. note:: due to flash memory limitations, most F4 based, and some other boards, do not include all ArduPilot features. See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
 Linux Based Autopilots
 ======================
