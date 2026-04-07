@@ -23,6 +23,11 @@ repos:
     hooks:
       - id: ruff-check
 
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.11.0
+    hooks:
+      - id: shellcheck
+
   - repo: https://github.com/sphinx-contrib/sphinx-lint
     rev: v1.0.2
     hooks:
