@@ -21,7 +21,7 @@ Where and What to Buy
 Install ArduPilot with XFRobot Support
 --------------------------------------
 
-Support for the XFRobot gimbals is available in ArduPilot 4.7 (and higher) and also requires the 'HAL_MOUNT_XFROBOT_ENABLED' build option to be enabled which can be done using the `Custom Build Server <https://custom.ardupilot.org/add_build>`__
+Support for the XFRobot gimbals is available in ArduPilot 4.7 (and higher) but some boards may require the 'HAL_MOUNT_XFROBOT_ENABLED' build option to be enabled which can be done using the `Custom Build Server <https://custom.ardupilot.org/add_build>`__
 
 .. image:: ../../../images/xfrobot-custom-build-server.png
     :target: ../_images/xfrobot-custom-build-server.png
