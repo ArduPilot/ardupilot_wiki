@@ -20,7 +20,8 @@ New Features
     :maxdepth: 1
 
     Other wiki changes <common-future-wiki-changes>
+[site wiki="plane,copter,rover,sub"]
     Changes to Currawong Velocity ESCs <common-velocity-can-escs>
-
+[/site]
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
