@@ -46,7 +46,7 @@ Protocols
     PWM, OneShot and OneShot125 ESCs <common-brushless-escs>
     DShot ESCs <common-dshot-escs>
     DroneCAN ESCs <common-uavcan-escs>
-    Currawong Velocity PiccoloCAN ESCs <common-velocity-can-escs>
+    Currawong Velocity ESCs <common-velocity-can-escs>
     KDE CAN ESCs <common-kde-can-escs>
     FETtec OneWire ESCs <common-fettec-onewire>
 
