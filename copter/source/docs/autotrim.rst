@@ -15,7 +15,7 @@ AHRS AutoTrim
 
 With AHRS AutoTrim the roll and pitch corrections are captured as you fly in a stable hover. Setup a :ref:`common-auxiliary-functions` switch to "In Flight AHRS trim adjust" ("182"). We will use CH7 in the following:
 
-1. Check that your CH7 switch goes above 1800 on the MissionPlanner's Hardware > Mandatory Hardware > Radio Calibration screen
+1. Check that your CH7 switch goes above 1800 on the MissionPlanner's Setup > Mandatory Hardware > Radio Calibration screen
 
 .. image:: ../images/MP_SaveTrim_Ch7PWMCheck.png
     :target: ../_images/MP_SaveTrim_Ch7PWMCheck.png
