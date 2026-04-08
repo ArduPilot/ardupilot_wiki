@@ -1,0 +1,31 @@
+name: ci
+on:
+  pull_request_target:  # pull_request_target, NOT pull_request
+    types: [opened, synchronize, reopened]
+jobs:
+  labels-by-language:
+    runs-on: ubuntu-slim
+    permissions:
+      pull-requests: write  # So we can add labels to the pull request
+    steps:  # Do NOT "uses: actions/checkout" here!
+    - uses: actions/github-script@v9
+      with:
+        script: |
+          // Get the list of filenames changed in this PR
+          const filenames = (await github.paginate(github.rest.pulls.listFiles, {
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: context.issue.number,
+            per_page: 100,
+          })).map(file => file.filename);
+          console.log(filenames);
+
+          // If one or more filenames have a .py extension, add the "Python" label to this PR
+          if (filenames.some(filename => filename.endsWith('.py'))) {
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['Python'],
+            })
+          }
