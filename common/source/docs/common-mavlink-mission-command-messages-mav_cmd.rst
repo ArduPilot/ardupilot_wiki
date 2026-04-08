@@ -203,6 +203,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <mav_cmd_do_gimbal_manager_pitchyaw>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_PARACHUTE <mav_cmd_do_parachute>` (Parachute enabled only)
 - :ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>`
+- :ref:`MAV_CMD_DO_ORBIT <copter:mav_cmd_do_orbit>`
 - :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>` (NAV_GUIDED only)
 - :ref:`MAV_CMD_DO_SET_RESUME_REPEAT_DIST <mav_cmd_do_set_resume_repeat_dist>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
@@ -4405,6 +4406,53 @@ Mission command to operate EPM gripper.
    </tr>
    </tbody>
    </table>
+
+.. _mav_cmd_do_orbit:
+
+MAV_CMD_DO_ORBIT
+~~~~~~~~~~~~~~~~
+
+Supported by: Copter.
+
+Commands the vehicle to orbit around a specified GPS coordinate. The vehicle will fly to the edge of the circle and then orbit continuously until the requested number of turns is completed, or until a new command is received.
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr><th>Command Field</th><th>Description</th></tr>
+   <tr><td>param1 (Radius)</td><td>Radius of the orbit in meters. Positive value = clockwise rotation. Negative value = counter-clockwise rotation.</td></tr>
+   <tr><td>param2 (Velocity)</td><td>Tangential velocity in m/s. 0 or NaN = use default speed.</td></tr>
+   <tr><td>param3 (Yaw Behavior)</td><td>Yaw behaviour during orbit. See ORBIT_YAW_BEHAVIOUR enum. 0 = face center (default).</td></tr>
+   <tr><td>param4 (Orbits)</td><td>Number of full rotations to complete. 0 = orbit forever. NaN = do not change current turn count.</td></tr>
+   <tr><td>param5 (Latitude)</td><td>Latitude of orbit center point (degrees * 1e7).</td></tr>
+   <tr><td>param6 (Longitude)</td><td>Longitude of orbit center point (degrees * 1e7).</td></tr>
+   <tr><td>param7 (Altitude)</td><td>Altitude of orbit in meters (relative to home).</td></tr>
+   </tbody>
+   </table>
+
+**ORBIT_YAW_BEHAVIOUR values:**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr><th>Value</th><th>Description</th></tr>
+   <tr><td>0</td><td>Face circle center (default)</td></tr>
+   <tr><td>1</td><td>Hold initial heading when command received</td></tr>
+   <tr><td>2</td><td>Yaw uncontrolled</td></tr>
+   <tr><td>3</td><td>Face direction of travel (tangential to circle)</td></tr>
+   <tr><td>4</td><td>Yaw controlled by RC input</td></tr>
+   <tr><td>5</td><td>Unchanged (keep current yaw behaviour)</td></tr>
+   </tbody>
+   </table>
+
+**Notes:**
+
+- If the vehicle is more than 3 metres from the orbit edge, it will fly to the edge before beginning the orbit.
+- After completing the requested number of turns, the vehicle will hold its position in place.
+- A new MAV_CMD_DO_ORBIT command can be sent mid-orbit to update speed, radius or direction without interrupting the orbit.
+- Requires Guided mode.
 
 .. _mav_cmd_do_guided_limits:
 
