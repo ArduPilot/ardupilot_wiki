@@ -40,7 +40,7 @@ Install some required packages
 ------------------------------
 
 If you are on a debian based system (such as Ubuntu or Mint), we provide `a script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/environment_install/install-prereqs-ubuntu.sh>`__ that will do it for you. 
-This script does NOT support building on operating systems that have reached end of support such as Ubuntu Bionic (18.04).
+This script does NOT support building on operating systems that have reached end of Standard Support such as Ubuntu 20.04 LTS (Focal Fossa).
 
 From the cloned ardupilot directory :
 ::
