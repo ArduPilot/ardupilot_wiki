@@ -1,6 +1,17 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# vagrant up jammy
+# vagrant ssh jammy
+
+# # on machine:
+# cd build_wiki/ardupilot_wiki/
+# ./update.sh
+# rsync -aPH --delete /var/sites/wiki/web/ /vagrant/web
+
+# on desktop:
+# firefox web/copter/index.html
+# rm -rf web
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
