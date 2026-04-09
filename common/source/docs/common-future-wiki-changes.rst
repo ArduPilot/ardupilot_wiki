@@ -10,6 +10,7 @@ Will be in future 4.8 release and is currently in master ("latest")
 New Board Support
 =================
 - JPilot-C, see https://github.com/ArduPilot/ardupilot_wiki/pull/7567
+- VUAV-TinyV7, see https://github.com/ArduPilot/ardupilot_wiki/pull/7630
 
 New Peripheral Support
 ======================
