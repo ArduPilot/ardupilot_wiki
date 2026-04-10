@@ -18,22 +18,22 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  # default to focal for building the Wiki:
-  config.vm.box = "ubuntu/focal"
+  # default to jammy for building the Wiki:
+  config.vm.box = "ubuntu/jammy"
 
   # https://releases.ubuntu.com
   # https://ubuntu.com/about/release-cycle
   # https://en.wikipedia.org/wiki/Ubuntu_version_history#Table_of_versions
 
-  # 20.04 LTS Standard Support EOL May 2025
-  config.vm.define "focal", autostart: true do |focal|
-    focal.vm.box = "ubuntu/focal64"
-    focal.vm.provider "virtualbox" do |vb|
-        vb.name = "ArduPilot_wiki (focal)"
+  # 22.04 LTS Standard Support EOL May 2027
+  config.vm.define "jammy", autostart: true do |jammy|
+    jammy.vm.box = "ubuntu/jammy64"
+    jammy.vm.provider "virtualbox" do |vb|
+        vb.name = "ArduPilot_wiki (jammy)"
     end
-    focal.vm.provision "shell", path: "./scripts/initvagrant.sh"
-    focal.vm.provider "virtualbox" do |vb|
-        vb.customize ["modifyvm", :id, "--memory", "16384"]
+    jammy.vm.provision "shell", path: "./scripts/initvagrant.sh"
+    jammy.vm.provider "virtualbox" do |vb|
+        vb.customize ["modifyvm", :id, "--memory", "20480"]
     end
   end
 end
