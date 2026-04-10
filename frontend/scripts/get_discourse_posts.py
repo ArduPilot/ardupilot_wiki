@@ -2,6 +2,14 @@
 """
 Script to get last blog entries on Discourse (https://discuss.ardupilot.org/)
 """
+# PEP 723 Inline script metadata enables testing via:
+# pipx run frontend/scripts/get_discourse_posts.py  # or
+# uv run frontend/scripts/get_discourse_posts.py
+# /// script
+# dependencies = [
+#   "requests",
+# ]
+# ///
 import argparse
 import hashlib
 import json
