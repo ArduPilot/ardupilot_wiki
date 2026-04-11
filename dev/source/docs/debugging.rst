@@ -100,3 +100,4 @@ You can also use this pin definition to output general debug messages using faul
     Watchdog Debugging <watchdog-debugging>
     LTTng Tracing <using-linux-trace-toolkit-ng-lttng-to-trace-ardupilot-in-realtime>
     Static Analysis <static-analysis>
+    Code Coverage <coverage-analysis>
