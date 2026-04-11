@@ -17,6 +17,12 @@ jobs:
         python-version: "3.10"
     - uses: pre-commit/action@v3.0.1
 
+  shellcheck:
+    runs-on: ubuntu-slim
+    steps:
+    - uses: actions/checkout@v6
+    - run: find . -type f -name "*.sh" -exec shellcheck {} +
+
   build-linux:
 
     runs-on: ubuntu-22.04
