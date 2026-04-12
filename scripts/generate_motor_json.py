@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """****************************************************************************
 * generate_motor_json.py
 *   -- Yuri Rage - 2024

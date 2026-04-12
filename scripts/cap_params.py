@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 '''
 script to find and optionally replace param refs in rst files
 '''
