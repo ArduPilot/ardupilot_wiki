@@ -227,6 +227,7 @@ Closed Hardware
     SkySakuraH743 <common-SkySakuraH743>
     SkystarsH7HD <common-skystarsH7>
     SkystarsH7HDV2 <common-skystarsh7hdv2>
+    SparkNavi Blue <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/sparknavi-blue/README.md>
     SPRacing H7 Extreme <common-spracingh7-extreme>
     SPRacing H7 RF <common-spracingh7-rf>
     Swan-K1 <common-Swan-K1>
