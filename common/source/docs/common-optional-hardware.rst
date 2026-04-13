@@ -38,8 +38,8 @@ For guidance on cable design, colour coding, and EMI-compliant wiring, especiall
 [site wiki="copter,plane,rover,sub"]
     Companion Computers <common-companion-computers>
 [/site]
-[site wiki="copter"]
-    Crop Sprayer <sprayer>
+[site wiki="copter,plane"]
+    Crop Sprayer <common-sprayer>
 [/site]
     Display (Onboard) <common-display-onboard>
 [site wiki="plane"]

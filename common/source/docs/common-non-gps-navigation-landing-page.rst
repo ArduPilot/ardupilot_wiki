@@ -1,6 +1,6 @@
 .. _common-non-gps-navigation-landing-page:
 
-[copywiki destination="copter,rover,blimp"]
+[copywiki destination="copter,plane,rover,blimp,sub"]
 
 ==================
 Non-GPS Navigation
@@ -16,28 +16,32 @@ These are the available options that allow a vehicle to estimate its position wi
 .. toctree::
     :maxdepth: 1
 
+    GPS/Non-GPS Transitions <common-non-gps-to-gps>
+[site wiki="copter,plane,rover,blimp"]
     Intel RealSense T265 <common-vio-tracking-camera>
     Luxonis OAK-D <common-vio-oak-d>
     MarvelMind Beacons <common-marvelmind>
     ModalAI VOXL <common-modalai-voxl>
     ModalAI VOXL2 <common-modalai-voxl2>
     Nooploop Beacons <common-nooploop>
+[/site]
 [site wiki="copter"]
     Nokov Indoor Optical Tracking <https://discuss.ardupilot.org/t/nokov-indoor-optical-tracking-system>
 [/site]
-[site wiki="copter,plane"]
+[site wiki="copter,plane,rover"]
     Optical Flow <common-optical-flow-sensors-landingpage>
 [/site]
 [site wiki="copter"]
     OptiTrack motion capture system <common-optitrack>
 [/site]
+[site wiki="copter,plane,rover,blimp"]
     Pozyx Beacons <common-pozyx>
     ROS with Google Cartographer (Developers only) <https://ardupilot.org/dev/docs/ros-cartographer-slam.html>
     Vicon Positioning System <common-vicon-for-nongps-navigation>
+[/site]
 [site wiki="rover"]
     Wheel Encoders <wheel-encoder>
 [/site]
-    GPS/Non-GPS Transitions <common-non-gps-to-gps>
 
 .. note:: Most of the above systems (except Beacons) require that the ORIGIN be set manually, except if a GPS is present. In order to do this the user must either use the GCS to set Origin, as shown below using Mission Planner, or use a lua script like this `one <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/ahrs-set-origin.lua>`__
 

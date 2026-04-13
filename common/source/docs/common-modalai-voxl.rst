@@ -4,7 +4,7 @@
 ModalAI VOXL
 ============
 
-[copywiki destination="copter,rover,blimp"]
+[copywiki destination="copter,plane,rover,blimp"]
 
 .. image:: ../../../images/modalai-voxl.png
     :width: 450px

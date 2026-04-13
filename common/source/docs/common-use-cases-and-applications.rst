@@ -7,11 +7,13 @@ Use-Cases and Applications
 Use Cases
 =========
 
+[site wiki="plane"]
 - VTOL Search and Rescue
 
 .. image:: ../../../images/case-vtol-quadplane.jpg
 
-
+[/site]
+[site wiki="sub"]
 - Submersible ROV
 
 .. image:: ../../../images/case-sub.jpg
@@ -53,6 +55,8 @@ Use Cases
 
 - ROV and AUV competitions
 
+[/site]
+[site wiki="rover"]
 - Bathymetry Boat
 
 .. image:: ../../../images/case-boat.jpg
@@ -64,7 +68,7 @@ Use Cases
 
 .. image:: ../../../images/case-tractor.jpg
 
-
+[/site]
 - `Autonomous Vehicle Collision Avoidance <https://discuss.ardupilot.org/t/cmu-nrec-falco-drone-safe-flights-by-agile-collision-avoidance/83300>`__
 
 .. image:: ../../../images/case-cmu-nrec-drone.png
@@ -77,20 +81,23 @@ Use Cases
     :maxdepth: 1
 
     3d Mapping <common-3d-mapping>
-    
+[site wiki="plane"]
+
 .. image:: ../../../images/case-skymapper.jpg
 
 .. toctree::
     :maxdepth: 1
 
+[/site]
     First Person View (FPV) <common-fpv-first-person-view>
     Multi-Vehicle Flying <common-multi-vehicle-flying>
-    
-- `Crop Spraying <https://ardupilot.org/copter/docs/sprayer.html>`__
-
-- `Non-GPS Positioning Systems <https://ardupilot.org/copter/docs/common-non-gps-navigation-landing-page.html>`__
-    
-- `Indoor Flying <https://ardupilot.org/copter/docs/indoor-flying.html>`__
+    Non-GPS Positioning Systems <common-non-gps-navigation-landing-page>
+[site wiki="copter,plane"]
+    Crop Spraying <common-sprayer>
+[/site]
+[site wiki="copter"]
+    Indoor Flying <indoor-flying>
+[/site]
 
 Vehicle Types
 =============
