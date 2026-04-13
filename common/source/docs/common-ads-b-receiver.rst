@@ -25,6 +25,7 @@ The sensors can be purchased directly from `uAvionix <https://uavionix.com/produ
    -  USA: `Unmanned Systems Source <https://www.unmannedsystemssource.com/product-category/atc-devices/>`__
    -       `R Cubed Engineering <http://www.rcubedengineering.com/>`__
    -  U.K.: `Unmanned Tech <http://www.unmannedtech.co.uk/>`__
+   -       `SoftRF Nano Edition <https://github.com/lyusupov/SoftRF/wiki/Nano-Edition>`__ uses `RadioMaster® XR1 <https://radiomasterrc.com/products/xr1-nano-multi-frequency-expresslrs-receiver>`__ ELRS receiver hardware (10+ USD) to display FLARM AIR V7, OGNTP, P3I, FANET+ or SRD 860 / ADS-L instead of ADS-B data
 
 
 Connecting to the autopilot
