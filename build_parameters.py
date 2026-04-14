@@ -194,17 +194,17 @@ def fetch_releases(firmware_url, vehicles):
                 attr = dict(attrs)
                 links.append(attr)
         # Create instance of HTML parser
-        lParser = ParseText()
+        html_parser = ParseText()
         # Feed HTML file into parsers
         try:
             debug(f"Fetching {firmware_url}{vehicle}")
-            lParser.feed(urllib.request.urlopen(firmware_url + vehicle).read().decode('utf8'))
+            html_parser.feed(urllib.request.urlopen(firmware_url + vehicle).read().decode('utf8'))
         except Exception as e:
             error(f"Folders list download error: {e}")
             sys.exit(1)
         finally:
-            lParser.links = []
-            lParser.close()
+            html_parser.links = []
+            html_parser.close()
             return links
     ######################################################################################
 
@@ -246,16 +246,16 @@ def get_commit_dict(releases_parsed):
                 attr = dict(attrs)
                 links.append(attr)
         # Create instance of HTML parser
-        lParser = ParseText()
+        html_parser = ParseText()
         # Feed HTML file into parsers
         try:
             debug(f"Fetching {url}")
-            lParser.feed(urllib.request.urlopen(url).read().decode('utf8'))
+            html_parser.feed(urllib.request.urlopen(url).read().decode('utf8'))
         except Exception as e:
             error(f"Folders list download error:{e}")
         finally:
-            lParser.links = []
-            lParser.close()
+            html_parser.links = []
+            html_parser.close()
             last_item = links.pop()
             last_folder = last_item['href']
             debug(f"Returning link of the last board folder ({last_folder[last_folder.rindex('/')+1:]})")
