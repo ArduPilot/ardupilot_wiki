@@ -210,8 +210,8 @@ def fetch_releases(firmware_url, vehicles):
 
     debug("Cleaning fetched links for wanted folders")
     stableFirmwares = []
-    for f in vehicles:
-        page_links = fetch_vehicle_subfolders(f"{firmware_url}{f}")
+    for vehicle in vehicles:
+        page_links = fetch_vehicle_subfolders(f"{firmware_url}{vehicle}")
         for folder in page_links:  # Non clever way to filter the strings insert by makehtml.py, unwanted folders, and so.
             version_folder = str(folder)
             firmware_link = f"{firmware_url[:-1]}{version_folder[10:-2]}"
