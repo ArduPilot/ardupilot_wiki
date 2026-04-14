@@ -70,30 +70,33 @@ Setup with the Mission Planner
    mode by selecting **Change Mode** and then push the **Settings**
    button and select the flight mode from the drop-down (see pic above)
 -  When done, push the **Save** button. This records the min and max calibrations and records the neutral positions of the joystick for the trim value. Mission Planner will then scale the joystick signal to the RC channel's ``RCx_MIN/MAX/TRIM`` parameters in the autopilot when sending RC override commands by the Joystick.
--  In the **CONFIG/TUNING \| Full Parameter List**, check that the
-   :ref:`MAV_GCS_SYSID <MAV_GCS_SYSID>`
-   parameter matches the system ID of your GCS. This parameter limits
-   which GCS can send override signals to the vehicle.
 
-   .. tip::
+Autopilot Setup
+===============
 
-      For Mission Planner the default GCS system ID is 255. The
-         default system ID for APM Mission Planner 2 is 252 (but the GCS will
-         automatically set its ID to match *SYSID_MYGCS* for RC Override
-         commands). 
+These parameters configure how the RC inputs are consumed by the autopilot:
+
+- :ref:`MAV_GCS_SYSID <MAV_GCS_SYSID>` should match the GCS's mavlink system ID.  By default Mission Planner and QGC use 255, APM Planner 2 is 252.  This parameter limits which GCS can send override signals to the vehicle.
+
+   .. image:: ../../../images/joystick-mp-gcs-sysid.png
+       :target: ../_images/joystick-mp-gcs-sysid.png
+       :width: 400px
+
+- :ref:`RC_OVERRIDE_TIME <RC_OVERRIDE_TIME>`: Timeout in seconds after which RC overrides will no longer be used, and regular RC input will resume. Default is 3 seconds. 0 will disable RC overrides, -1 will never timeout, and continue using overrides until they are disabled.  If no regular RC is present on the vehicle this essentially defines the :ref:`RC failsafe timeout <copter:radio-failsafe>`.
+- :ref:`RC_OPTIONS <RC_OPTIONS>` bit 1 (value 2) allow ignoring RC overrides completely
+- :ref:`RC Auxiliary Function <common-auxiliary-functions>` 46 (RC Override Enable) allows an RC input to enable/disable RC overrides.  This may be useful to allow the pilot to easily switch between using a regular RC transmitter and joystick
 
 .. note::
 
    If you get an error **PreArm: RC not calibrated** (following
-   calibration) you will additionally need to manually change ``RC1_MIN``
-   to 1101 and ``RC1_MAX`` to 1901 (and then repeat for RC2\_, RC3\_ and
+   calibration) you will additionally need to manually change  :ref:`RC1_MIN <RC1_MIN>`
+   to 1101 and :ref:`RC1_MAX <RC1_MAX>` to 1901 (and then repeat for RC2\_, RC3\_ and
    RC4\_ max/min parameters).
 
    This error is caused because *Mission Planner* maps the Joystick exactly
    to the RC min and max range, but the pre-arm checks assume that if the
    values are not at least 1 PWM us off the default value, that calibration
    has not been done. If you have RC calibrated your transmitter/receiver system already, this will not be necessary. **DO NOT RC CALIBRATE THE JOYSTICK**, it is not the same control mechanism as is used for RC systems. It uses MAVLink override messages.
-
 
 Testing the controls before flying
 ==================================
