@@ -10,21 +10,28 @@ The "primary" lane is the one currently providing state estimates, other lanes a
 
 .. note::
 
-    This page describes an advanced configuration topic. The source code is the truth. This page hopefully provides conceptual clarity, but it *is not perfect* on the details.
+    This page attempts to clarify an advanced configuration topic. The source code is the truth.
 
 The number of possible lanes is the number of IMUs enabled for use (see :ref:`EK3_IMU_MASK <EK3_IMU_MASK>`).
 Furthermore, the lanes are 1-1 bound to the (used) IMUs: lane 1 for IMU 1, lane 2 for IMU 2, etc.
 
-For each of the other sensor-types {Airspeed, Barometer, GPS, and Magnetometer (aka Compass)}:
-If affinity for that sensor-type is disabled, each lane uses the system's "primary" instance of the sensor.
-(Affinity being disabled for every sensor-type is the conventional/default choice.)
+Now, consider the other sensor types {Airspeed, Barometer, GPS, and Magnetometer (aka Compass)}.
+First, it is important to define the system's notion of the "primary" sensor instance of each type.
+The primary sensor instance is the instance being actively relied upon.
 The initial primary sensor instance is selected by a user-modifiable parameter.
 The system may change which sensor instance is its primary, even in-flight, for example in case of a sensor fault.
+Thus "changing the primary instance" is one mechanism the system can use to switch which sensor instance is being relied upon.
 
-Because modern-day vehicles may have redundant good quality sensors installed, "affinity" provides a way to have some EKF lanes prefer sensor instances which are not the system-wide primary.
-For sensors with affinity enabled, lane-switching should be thought of as sensor-switching.
-The lane error score (used to make a switching decision) takes into account innovations from all sensors used by a lane.
-Thus in the case of noisy-but-not-broken non-IMU sensors, affinity might avoid a mishap by simply EKF lane-switching to a less-noisy IMU+sensor combination.
+A second mechanism for selecting which sensor instance to rely on is provided by "affinity" & lane-switching.
+Because modern-day vehicles may have redundant good quality sensors installed, affinity provides a way to force some EKF lanes to prefer sensor instances which are not the system-wide primary.
+If affinity for a sensor-type is disabled, each lane uses the system's primary instance of the sensor.
+(Affinity being disabled is the conventional/default choice.)
+If affinity for a sensor-type is enabled, the sensor instances are distributed to lanes in a similar way as IMUs.
+Now with affinity enabled, lane-switching becomes a mechanism for sensor-switching.
+Each lane's error score---used by the system to make a switching decision---takes into account innovations from all sensors used by that lane.
+Consider a noisy but not faulted sensor for which affinity is enabled: it makes the error-score for its lane bad.
+The system responds to the bad error score by lane-switching away from relying on it.
+Thus a mishap may be avoided by simply EKF lane-switching to a less-noisy IMU+sensor combination.
 
 **Example: Vehicle uses 4 IMUs, 2 Airspeeds, 3 Barometers, 2 GPS, and 3 Magnetometers.
 Affinity is disabled for airspeed & barometers, enabled for GPS & magnetometers.**
