@@ -333,7 +333,8 @@ def get_commit_dict(releases_parsed):
     commite_and_codes_cleanned = {}
 
     for j in range(0, len(releases_parsed)):
-        commits_and_codes[j] = fetch_commit_hash(releases_parsed[j], get_last_board_folder(releases_parsed[j]), COMMITFILE)
+        board_folder = get_last_board_folder(releases_parsed[j])
+        commits_and_codes[j] = fetch_commit_hash(releases_parsed[j], board_folder, COMMITFILE)
 
     for i in commits_and_codes:
         if commits_and_codes[i][0] != 'error':
