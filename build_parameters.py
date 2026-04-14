@@ -187,14 +187,14 @@ def fetch_releases(firmware_url, vehicles):
         links = []
         # Define HTML Parser
 
-        class parseText(HTMLParser):
+        class ParseText(HTMLParser):
             def handle_starttag(self, tag, attrs):
                 if tag != 'a':
                     return
                 attr = dict(attrs)
                 links.append(attr)
         # Create instance of HTML parser
-        lParser = parseText()
+        lParser = ParseText()
         # Feed HTML file into parsers
         try:
             debug(f"Fetching {firmware_url}")
@@ -238,14 +238,14 @@ def get_commit_dict(releases_parsed):
         links = []
         # Define HTML Parser
 
-        class parseText(HTMLParser):
+        class ParseText(HTMLParser):
             def handle_starttag(self, tag, attrs):
                 if tag != 'a':
                     return
                 attr = dict(attrs)
                 links.append(attr)
         # Create instance of HTML parser
-        lParser = parseText()
+        lParser = ParseText()
         # Feed HTML file into parsers
         try:
             debug(f"Fetching {url}")
