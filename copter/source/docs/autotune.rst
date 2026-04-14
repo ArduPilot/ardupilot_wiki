@@ -28,10 +28,11 @@ There are number of problems that can prevent AutoTune from providing a good tun
 
 Setup before flying in AutoTune mode
 ====================================
-1. Set up one flight mode switch position to be AltHold.
-2. Set an RC channel :ref:`Auxiliary Function <common-auxiliary-functions>` switch  to AutoTune to allow you to turn the auto tuning on/off with a switch.
 
-.. note:: you can also set the AUTOTUNE flight mode as a mode on your flight mode switch to activate AutoTune
+1. Set up one flight mode switch position to be AltHold.
+2. Set an RC channel :ref:`Auxiliary Function <common-auxiliary-functions>` switch to AutoTune to allow you to turn the auto tuning on/off with a switch.
+
+   .. note:: you can also set the AUTOTUNE flight mode as a mode on your flight mode switch to activate AutoTune
 
 3. Remove the camera gimbal or any other parts of the frame that could wobble in flight
 4. Select which combination of axes (roll, pitch, yaw) you wish to tune using the :ref:`AUTOTUNE_AXES <AUTOTUNE_AXES__AC_AutoTune_Multi>` parameter
@@ -41,6 +42,7 @@ Setup before flying in AutoTune mode
 
 How to invoke AutoTune
 ======================
+
 #. Wait for a calm day and go to a large open area.
 #. Ensure the Aux AUTOTUNE switch, if used, is in the LOW position.
 #. Take off and put the copter into AltHold mode at a comfortable
@@ -131,9 +133,9 @@ Additional Notes
 ================
 
 - AutoTune can be setup as a flight mode.  Switching into or out of the AutoTune flight mode responds in the same way as raising or lowering the aux switch high assigned to the AutoTune function.
--  In Copter-4.4 (and higher) AutoTune can tune the yaw D axis.
--  :ref:`AUTOTUNE_AXES <AUTOTUNE_AXES__AC_AutoTune_Multi>` allows control of which axes are to be tuned.  This is useful if the vehicle's battery life is not long enough to complete all 4-axis.  "1" = tune roll, "2" = tune pitch, "4" = tune yaw, "8" = tune yaw D.  Add these numbers together to tune multiple axes in a single session (i.e. "15" = tune all axes)
--   :ref:`AUTOTUNE_AGGR <AUTOTUNE_AGGR>`: Should be in the range of 0.05 to 0.10.  Higher values will produce a more aggressive tune but sometimes results in gains that are too high.  More specifically this parameter controls the threshold for D-term bounce back and P-term overshoot. This affects the tuning noise immunity (a higher value is more tolerant to flex in the frame or other disturbances that could trick the tuning algorithm).  High values also leads to a tune that rejects external disturbances better.  Lower values result in a tune that is more responsive to pilot input.
+- In Copter-4.4 (and higher) AutoTune can tune the yaw D axis.
+- :ref:`AUTOTUNE_AXES <AUTOTUNE_AXES__AC_AutoTune_Multi>` allows control of which axes are to be tuned.  This is useful if the vehicle's battery life is not long enough to complete all 4-axis.  "1" = tune roll, "2" = tune pitch, "4" = tune yaw, "8" = tune yaw D.  Add these numbers together to tune multiple axes in a single session (i.e. "15" = tune all axes)
+- :ref:`AUTOTUNE_AGGR <AUTOTUNE_AGGR>`: Should be in the range of 0.05 to 0.10.  Higher values will produce a more aggressive tune but sometimes results in gains that are too high.  More specifically this parameter controls the threshold for D-term bounce back and P-term overshoot. This affects the tuning noise immunity (a higher value is more tolerant to flex in the frame or other disturbances that could trick the tuning algorithm).  High values also leads to a tune that rejects external disturbances better.  Lower values result in a tune that is more responsive to pilot input.
 
 -   The full list of parameters that may be updated by AutoTune
 
@@ -150,11 +152,11 @@ Additional Notes
         - Yaw max acceleration :ref:`ATC_ACC_Y_MAX<ATC_ACC_Y_MAX>`
         - Roll and pitch axis rate feed-forward is enabled (:ref:`ATC_RATE_FF_ENAB <ATC_RATE_FF_ENAB>`)
 - The AUTOTUNE algorithm tries to tune until instability is noted and then backs off the final PID values to provide a margin of stability. This back-off percentage can be manipulated with the :ref:`AUTOTUNE_GMBK <AUTOTUNE_GMBK>` parameter and changed from its default value of 25% reduction in gains, in order to get a tune with more, or less, stability margin.
--   After you have a good tune, you may wish to increase :ref:`ATC_THR_MIX_MAX <ATC_THR_MIX_MAX>`  to 0.9 (default is 0.5) to increase prioritization of attitude control over throttle.  This can reduce the pitch overshoot sometimes seen (especially on copters with large propellers) in AltHold if the vehicle suddenly slows after performing a fast forward flight.  In this situation, wind catches under the propellers providing lift but also disturbs the vehicle's attitude leading to a conflict between throttle and attitude control.  The danger in increasing this parameter's value is that if the rate gains are later raised so high that the vehicle oscillates badly it may be difficult for the vehicle to descend (because it will prioritize trying to correct the attitude oscillations and never reduce throttle sufficiently).
--   AutoTune can **request very large and fast changes in output**\ s to the motors which can cause ESC sync issues especially when using SimonK firmware and/or low KV motors (under 500KV). See this `video showing a test <https://www.youtube.com/watch?v=hBUBbeyLe0Q>`__ which recreates a sync problem.
--   For best results, the copter shouldn't be allowed to build up too much horizontal speed. This can be prevented by applying a quick correction between tests (twitches) to stop the vehicle from flying too fast.
--   Be advised that AutoTune will engage from Stabilize, so don't accidentally flip your AutoTune switch until you are in AltHold and ready to begin the procedure.
--   As a general rule, for Pitch and Roll, P and I should be equal, and D should be 1/10th P. For Yaw, I should be 1/10th P and D = 0, in most cases.
+- After you have a good tune, you may wish to increase :ref:`ATC_THR_MIX_MAX <ATC_THR_MIX_MAX>`  to 0.9 (default is 0.5) to increase prioritization of attitude control over throttle.  This can reduce the pitch overshoot sometimes seen (especially on copters with large propellers) in AltHold if the vehicle suddenly slows after performing a fast forward flight.  In this situation, wind catches under the propellers providing lift but also disturbs the vehicle's attitude leading to a conflict between throttle and attitude control.  The danger in increasing this parameter's value is that if the rate gains are later raised so high that the vehicle oscillates badly it may be difficult for the vehicle to descend (because it will prioritize trying to correct the attitude oscillations and never reduce throttle sufficiently).
+- AutoTune can **request very large and fast changes in output**\ s to the motors which can cause ESC sync issues especially when using SimonK firmware and/or low KV motors (under 500KV). See this `video showing a test <https://www.youtube.com/watch?v=hBUBbeyLe0Q>`__ which recreates a sync problem.
+- For best results, the copter shouldn't be allowed to build up too much horizontal speed. This can be prevented by applying a quick correction between tests (twitches) to stop the vehicle from flying too fast.
+- Be advised that AutoTune will engage from Stabilize, so don't accidentally flip your AutoTune switch until you are in AltHold and ready to begin the procedure.
+- As a general rule, for Pitch and Roll, P and I should be equal, and D should be 1/10th P. For Yaw, I should be 1/10th P and D = 0, in most cases.
 
 Common Problems
 ===============
@@ -194,6 +196,7 @@ This is during Pitch Rate P adjustment, indicating a twitch is about to happen a
 .. note:: During the YAW rate phase of tuning, the messages will show a value for "d" that is not ATC_RAT_YAW_D, which is usually 0, but rather it's the value of ATC_RAT_YAW_FLTE, that is being changed.
 
 Anytime the process is interrupted by pilot stick movements, the
+
 :: 
 
  09:09:38   AUTOTUNE: pilot overrides active
@@ -201,6 +204,7 @@ Anytime the process is interrupted by pilot stick movements, the
 message appears.
 
 If you stopped the tune and dis-armed while still in AUTOTUNE, and an axis tune has been completed, you will get a message showing that the new gains have been saved for that axis. If there is not a message to this effect, but think you finished at least one axis, then you probably dis-armed while not in AUTOTUNE mode, and did not actually save them.
+
 ::
 
  09:19:48   AutoTune: Saved gains for Pitch
