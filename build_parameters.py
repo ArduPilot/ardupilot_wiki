@@ -260,28 +260,24 @@ def fetch_releases(firmware_url, vehicles):
         Fetch firmware.ardupilot.org/baseURL all first level folders for a given base URL.
 
         """
-        links = []
-        # Define HTML Parser
-
         class ParseText(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.links = []
+
             def handle_starttag(self, tag, attrs):
-                if tag != 'a':
-                    return
-                attr = dict(attrs)
-                links.append(attr)
-        # Create instance of HTML parser
+                if tag == 'a':
+                    attr = dict(attrs)
+                    self.links.append(attr)
+
         html_parser = ParseText()
-        # Feed HTML file into parsers
         try:
             debug(f"Fetching {firmware_url}{vehicle}")
             html_parser.feed(urllib.request.urlopen(firmware_url + vehicle).read().decode('utf8'))
         except Exception as e:
             error(f"Folders list download error: {e}")
             sys.exit(1)
-        finally:
-            html_parser.links = []
-            html_parser.close()
-            return links
+        return html_parser.links
     ######################################################################################
 
     debug("Cleaning fetched links for wanted folders")
@@ -312,27 +308,25 @@ def get_commit_dict(releases_parsed):
         For given URL returns the last folder which should be a board name.
 
         """
-        links = []
-        # Define HTML Parser
 
         class ParseText(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.links = []
+
             def handle_starttag(self, tag, attrs):
-                if tag != 'a':
-                    return
-                attr = dict(attrs)
-                links.append(attr)
-        # Create instance of HTML parser
+                if tag == 'a':
+                    attr = dict(attrs)
+                    self.links.append(attr)
+
         html_parser = ParseText()
-        # Feed HTML file into parsers
         try:
             debug(f"Fetching {url}")
             html_parser.feed(urllib.request.urlopen(url).read().decode('utf8'))
         except Exception as e:
             error(f"Folders list download error:{e}")
         finally:
-            html_parser.links = []
-            html_parser.close()
-            last_item = links.pop()
+            last_item = html_parser.links.pop()
             last_folder = last_item['href']
             debug(f"Returning link of the last board folder ({last_folder[last_folder.rindex('/')+1:]})")
             return last_folder[last_folder.rindex('/')+1:]  # clean the partial link
