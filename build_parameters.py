@@ -179,7 +179,7 @@ def fetch_releases(firmware_url, vehicles):
 
     """
 
-    def fetch_vehicle_subfolders(firmware_url):
+    def fetch_vehicle_subfolders(firmware_url, vehicle):
         """
         Fetch firmware.ardupilot.org/baseURL all first level folders for a given base URL.
 
@@ -197,8 +197,8 @@ def fetch_releases(firmware_url, vehicles):
         lParser = ParseText()
         # Feed HTML file into parsers
         try:
-            debug(f"Fetching {firmware_url}")
-            lParser.feed(urllib.request.urlopen(firmware_url).read().decode('utf8'))
+            debug(f"Fetching {firmware_url}{vehicle}")
+            lParser.feed(urllib.request.urlopen(firmware_url + vehicle).read().decode('utf8'))
         except Exception as e:
             error(f"Folders list download error: {e}")
             sys.exit(1)
@@ -211,7 +211,8 @@ def fetch_releases(firmware_url, vehicles):
     debug("Cleaning fetched links for wanted folders")
     stableFirmwares = []
     for vehicle in vehicles:
-        page_links = fetch_vehicle_subfolders(f"{firmware_url}{vehicle}")
+        page_links = fetch_vehicle_subfolders(firmware_url, vehicle)
+
         for folder in page_links:  # Non clever way to filter the strings insert by makehtml.py, unwanted folders, and so.
             version_folder = str(folder)
             firmware_link = f"{firmware_url[:-1]}{version_folder[10:-2]}"
