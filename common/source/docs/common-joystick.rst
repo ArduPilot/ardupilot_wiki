@@ -171,7 +171,7 @@ was "Disabled" or disconnected from the PC.  You can test this by
 repeating the test above but instead of pushing the **Disable** button
 on the Joystick screen, disconnect the radio.  In order to see the
 status of the vehicle you will need to connect two Mission Planner's
-separately (only possible on Pixhawk).  The Mission Planner with the
+separately.  The Mission Planner with the
 Joystick should be connected through telemetry and the 2nd Mission
 Planner should be connected through a USB connection.
 
