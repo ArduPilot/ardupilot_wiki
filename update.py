@@ -372,7 +372,7 @@ def copy_build(site, destdir):
         shutil.rmtree(olddir)
 
 
-def make_backup(site, destdir, backupdestdir):
+def make_backup(building_time, site, destdir, backupdestdir):
     """
     backup current site
     """
@@ -1008,142 +1008,155 @@ Boards
 #######################################################################
 
 
-if __name__ == "__main__":
+class WikiUpdater:
+    def __init__(self) -> None:
+        if platform.system() == "Windows":
+            multiprocessing.freeze_support()
 
-    if platform.system() == "Windows":
-        multiprocessing.freeze_support()
+        # Set up option parsing to get connection string
+        parser = argparse.ArgumentParser(
+            description="Copy Common Files as needed, stripping out non-relevant wiki content",
+        )
+        parser.add_argument(
+            "--site",
+            help="If you just want to copy to one site, you can do this. Otherwise will be copied.",
+        )
+        parser.add_argument(
+            "--clean-common",
+            action="store_true",
+            help="Force clean and copy common files into wikis directories.",
+        )
+        parser.add_argument(
+            "--cached-parameter-files",
+            action="store_true",
+            help="Do not re-download parameter files",
+        )
+        parser.add_argument(
+            "--parallel",
+            type=int,
+            help="limit parallel builds, -1 for unlimited",
+            default=1,
+        )
+        parser.add_argument(
+            "--destdir",
+            default=None,
+            help="Destination directory for compiled docs",
+        )
+        parser.add_argument(
+            "--enablebackups",
+            action="store_true",
+            default=False,
+            help="Enable several backups up to const N_BACKUPS_RETAIN in --backupdestdir folder",
+        )
+        parser.add_argument(
+            "--backupdestdir",
+            default="/var/sites/wiki-backup/web",
+            help="Destination directory for compiled docs",
+        )
+        parser.add_argument(
+            "--paramversioning",
+            action="store_true",
+            default=False,
+            help="Build multiple parameters pages for each vehicle based on its firmware repo.",
+        )
+        parser.add_argument(
+            "--verbose",
+            dest="verbose",
+            action="store_true",
+            default=False,
+            help="show debugging output",
+        )
+        parser.add_argument(
+            "--fast",
+            dest="fast",
+            action="store_true",
+            default=False,
+            help=("Incremental build using already downloaded parameters, "
+                  "log messages, and video thumbnails rather than cleaning "
+                  "before build."),
+        )
 
-    # Set up option parsing to get connection string
-    parser = argparse.ArgumentParser(
-        description='Copy Common Files as needed, stripping out non-relevant wiki content',
-    )
-    parser.add_argument(
-        '--site',
-        help="If you just want to copy to one site, you can do this. Otherwise will be copied.",
-    )
-    parser.add_argument(
-        '--clean-common',
-        action='store_true',
-        help="Force clean and copy common files into wikis directories.",
-    )
-    parser.add_argument(
-        '--cached-parameter-files',
-        action='store_true',
-        help="Do not re-download parameter files",
-    )
-    parser.add_argument(
-        '--parallel',
-        type=int,
-        help="limit parallel builds, -1 for unlimited",
-        default=1,
-    )
-    parser.add_argument(
-        '--destdir',
-        default=None,
-        help="Destination directory for compiled docs",
-    )
-    parser.add_argument(
-        '--enablebackups',
-        action='store_true',
-        default=False,
-        help="Enable several backups up to const N_BACKUPS_RETAIN in --backupdestdir folder",
-    )
-    parser.add_argument(
-        '--backupdestdir',
-        default="/var/sites/wiki-backup/web",
-        help="Destination directory for compiled docs",
-    )
-    parser.add_argument(
-        '--paramversioning',
-        action='store_true',
-        default=False,
-        help="Build multiple parameters pages for each vehicle based on its firmware repo.",
-    )
-    parser.add_argument(
-        '--verbose',
-        dest='verbose',
-        action='store_true',
-        default=False,
-        help="show debugging output",
-    )
-    parser.add_argument(
-        '--fast',
-        dest='fast',
-        action='store_true',
-        default=False,
-        help=("Incremental build using already downloaded parameters, log messages, and video thumbnails rather than cleaning "
-              "before build."),
-    )
+        self.args = parser.parse_args()
+        self.verbose: bool = self.args.verbose
 
-    args = parser.parse_args()
+    def run(self) -> None:
+        global VERBOSE
+        VERBOSE = self.verbose
 
-    VERBOSE = args.verbose
+        tstart = time.time()
+        now = datetime.now()
+        building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
 
-    tstart = time.time()
-    now = datetime.now()
-    building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
+        check_imports()
+        check_ref_directives()
 
-    check_imports()
-    check_ref_directives()
+        progress("=== Step 1: Creating features pages ===")
+        progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        create_features_pages(self.args.site)
 
-    progress("=== Step 1: Creating features pages ===")
-    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-    create_features_pages(args.site)
+        progress("=== Step 2: Fetching parameters and log messages in parallel ===")
+        progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        if not self.args.fast:
+            if self.args.paramversioning:
+                # Parameters for all versions available on firmware.ardupilot.org:
+                fetch_versioned_parameters(self.args.site)
+            else:
+                # Single parameters file. Just present the latest parameters:
+                fetchparameters(self.args.site, self.args.cached_parameter_files)
 
-    progress("=== Step 2: Fetching parameters and log messages in parallel ===")
-    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-    if not args.fast:
-        if args.paramversioning:
-            # Parameters for all versions available on firmware.ardupilot.org:
-            fetch_versioned_parameters(args.site)
+            # Fetch most recent LogMessage metadata from autotest:
+            fetchlogmessages(self.args.site, self.args.cached_parameter_files)
+
+        progress("=== Step 3: Processing static sites ===")
+        progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        copy_static_html_sites(self.args.site, self.args.destdir)
+
+        # Use clean_common=True for clean builds, False for fast/incremental builds
+        progress("=== Step 4: Copying common source files ===")
+        progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        copy_common_source_files(clean_common=self.args.clean_common)
+
+        progress("=== Step 5: Building documentation with Sphinx ===")
+        progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        sphinx_make(self.args.site, self.args.parallel, self.args.fast)
+
+        if self.args.paramversioning:
+            put_cached_parameters_files_in_sites(self.args.site)
+            cache_parameters_files(self.args.site)
+
+        check_build(self.args.site)
+
+        if self.args.enablebackups:
+            make_backup(building_time, self.args.site, self.args.destdir, self.args.backupdestdir)
+            delete_old_wiki_backups(self.args.backupdestdir, N_BACKUPS_RETAIN)
+
+        if self.args.destdir:
+            copy_build(self.args.site, self.args.destdir)
+
+        # To navigate locally and view versioning script for parameters
+        # working is necessary run Chrome as "chrome
+        # --allow-file-access-from-files". Otherwise it will appear empty
+        # locally and working once is on the server.
+
+        error_count = len(error_log)
+        total_time = time.time() - tstart
+        progress(f"Total execution time: {total_time:.2f} seconds ({total_time / 60:.1f} minutes)")
+
+        if error_count > 0:
+            progress("Reprinting error messages:", file=sys.stderr)
+            for msg in error_log:
+                print(f"\033[1;31m[update.py][error]: {msg}\033[0m", file=sys.stderr)  # noqa: E702,E231
+            fatal(f"{error_count} errors during Wiki build")
         else:
-            # Single parameters file. Just present the latest parameters:
-            fetchparameters(args.site, args.cached_parameter_files)
+            print("Build completed without errors")
 
-        # Fetch most recent LogMessage metadata from autotest:
-        fetchlogmessages(args.site, args.cached_parameter_files)
+        sys.exit(0)
 
-    progress("=== Step 3: Processing static sites ===")
-    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-    copy_static_html_sites(args.site, args.destdir)
 
-    # Use clean_common=True for clean builds, False for fast/incremental builds
-    progress("=== Step 4: Copying common source files ===")
-    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-    copy_common_source_files(clean_common=args.clean_common)
+def main():
+    updater = WikiUpdater()
+    updater.run()
 
-    progress("=== Step 5: Building documentation with Sphinx ===")
-    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-    sphinx_make(args.site, args.parallel, args.fast)
 
-    if args.paramversioning:
-        put_cached_parameters_files_in_sites(args.site)
-        cache_parameters_files(args.site)
-
-    check_build(args.site)
-
-    if args.enablebackups:
-        make_backup(args.site, args.destdir, args.backupdestdir)
-        delete_old_wiki_backups(args.backupdestdir, N_BACKUPS_RETAIN)
-
-    if args.destdir:
-        copy_build(args.site, args.destdir)
-
-    # To navigate locally and view versioning script for parameters
-    # working is necessary run Chrome as "chrome
-    # --allow-file-access-from-files". Otherwise it will appear empty
-    # locally and working once is on the server.
-
-    error_count = len(error_log)
-    total_time = time.time() - tstart
-    progress(f"Total execution time: {total_time:.2f} seconds ({total_time/60:.1f} minutes)")
-
-    if error_count > 0:
-        progress("Reprinting error messages:", file=sys.stderr)
-        for msg in error_log:
-            print(f"\033[1;31m[update.py][error]: {msg}\033[0m", file=sys.stderr) # noqa: E702,E231
-        fatal(f"{error_count} errors during Wiki build")
-    else:
-        print("Build completed without errors")
-
-    sys.exit(0)
+if __name__ == "__main__":
+    main()
