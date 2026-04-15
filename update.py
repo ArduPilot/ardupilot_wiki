@@ -144,7 +144,20 @@ def remove_if_exists(filepath):
 
 
 def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
+    # Fetch into a temporary filename (new_name) and only replace the
+    # real target if content actually changed. This avoids touching
+    # mtimes when the fetched content is identical and prevents
+    # unnecessary Sphinx rebuilds.
     fetch_url(fetchurl, fpath=new_name, verbose=False)
+
+    try:
+        # If target exists and is identical, remove fetched temp and skip replace
+        if os.path.exists(target_file) and filecmp.cmp(new_name, target_file, shallow=False):
+            debug(f"No change for {target_file} (fetched content identical)")
+            os.remove(new_name)
+            return
+    except OSError as e:
+        debug(f"Failed to compare fetched file and target: {e}")
     progress(f"Renaming {new_name} to {target_file}")
     os.replace(new_name, target_file)
 
