@@ -287,13 +287,13 @@ def fetch_releases(firmware_url, vehicles):
 
         for folder in page_links:  # Non clever way to filter the strings insert by makehtml.py, unwanted folders, and so.
             version_folder = str(folder)
-            firmware_link = f"{firmware_url[:-1]}{version_folder[10:-2]}"
+            firmware_version_url = f"{firmware_url[:-1]}{version_folder[10:-2]}"
             if "stable" in version_folder and not version_folder.endswith("stable"): # If finish with
-                stableFirmwares.append(firmware_link)
+                stableFirmwares.append(firmware_version_url)
             elif "latest" in version_folder:
-                stableFirmwares.append(firmware_link)
+                stableFirmwares.append(firmware_version_url)
             elif "beta" in version_folder:
-                stableFirmwares.append(firmware_link)
+                stableFirmwares.append(firmware_version_url)
 
     return stableFirmwares # links for the firmwares folders
 
