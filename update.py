@@ -39,6 +39,7 @@ import glob
 import gzip
 import hashlib
 import json
+import logging
 import multiprocessing
 import os
 import platform
@@ -61,6 +62,54 @@ from frontend.scripts import get_discourse_posts
 if sys.version_info < (3, 8):
     print("Minimum python version is 3.8")
     sys.exit(1)
+
+
+# Configure logging
+class ColoredFormatter(logging.Formatter):
+    """Simple ANSI-coloured formatter for terminal output."""
+    COLORS = {
+        logging.DEBUG: '\033[36m',      # cyan
+        logging.INFO: '\033[32m',       # green
+        logging.WARNING: '\033[33m',    # yellow
+        logging.ERROR: '\033[31m',      # red
+        logging.CRITICAL: '\033[1;31m', # bold red
+    }
+    RESET = '\033[0m'
+
+    def format(self, record):
+        # Apply colour only when output is a tty
+        if hasattr(sys.stdout, 'isatty') and sys.stdout.isatty() \
+                and not os.environ.get('CI') and not os.environ.get('GITHUB_ACTIONS'):
+            color = self.COLORS.get(record.levelno, '')
+            record.levelname = f"{color}{record.levelname}{self.RESET}"
+        return super().format(record)
+
+
+class ErrorStoreHandler(logging.Handler):
+    """Allow to store errors for later usage."""
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.error_messages = []
+
+    def emit(self, record):
+        self.error_messages.append(record.getMessage())
+
+
+# The StreamHandler logs to the console
+stream_handler = logging.StreamHandler(sys.stdout)
+stream_handler.setFormatter(ColoredFormatter('[update.py]: [%(levelname)s]: %(message)s'))
+stream_handler.setLevel(logging.INFO)
+logging.basicConfig(level=logging.INFO, handlers=[stream_handler])
+logger = logging.getLogger(__name__)
+
+# The ErrorStoreHandler stores the messages
+error_store_handler = ErrorStoreHandler()
+error_store_handler.setLevel(logging.ERROR)
+logger.addHandler(error_store_handler)
+
+# Keep noisy third-party network logs quiet by default
+logging.getLogger('urllib3').setLevel(logging.WARNING)
+
 
 DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover', 'sub']
 ALL_WIKIS = [
@@ -106,7 +155,7 @@ LOGMESSAGE_SITE = {
     'antennatracker': 'Tracker',
     'blimp': 'Blimp',
 }
-error_log = list()
+
 N_BACKUPS_RETAIN = 10
 
 VERBOSE = False
@@ -114,26 +163,24 @@ VERBOSE = False
 _http_session = None
 
 
-def debug(str_to_print):
+def info(str_to_print: str) -> None:
+    """Info output."""
+    logger.info(str_to_print)
+
+
+def debug(str_to_print: str) -> None:
     """Debug output if verbose is set."""
-    if VERBOSE:
-        print(f"[update.py]: {str_to_print}")
+    logger.debug(str_to_print)
 
 
-def progress(message, file=sys.stdout, end="\n"):
-    print(f"[update.py]: {message}", file=file, end=end)
-
-
-def error(str_to_print):
+def error(str_to_print) -> None:
     """Show and count the errors."""
-    global error_log  # noqa: F824
-    error_log.append(str_to_print)
-    print(f"[update.py][error]: {str_to_print}", file=sys.stderr)
+    logger.error(f"{str_to_print}")
 
 
-def fatal(str_to_print):
-    """Show and count the errors."""
-    error(str_to_print)
+def fatal(str_to_print) -> None:
+    """Show and exit on errors."""
+    logger.critical(f"{str_to_print}")
     sys.exit(1)
 
 
@@ -187,13 +234,13 @@ def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
             return
     except OSError as e:
         debug(f"Failed to compare fetched file and target: {e}")
-    progress(f"Renaming {new_name} to {target_file}")
+    info(f"Renaming {new_name} to {target_file}")
     os.replace(new_name, target_file)
 
 
 def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) -> None:
     """Fetches content at url and puts it in a file corresponding to the filename in the URL"""
-    progress(f"Fetching {fetchurl}")
+    info(f"Fetching {fetchurl}")
     # For larger files or when cache fails, use streaming download with progress
     session = get_http_session()
 
@@ -212,7 +259,7 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
 
     with open(filename, 'wb') as out_file:
         if verbose and total_size > 0:
-            progress("Completed : 0%", end='')
+            print("[update.py]: Completed : 0%", end='', file=sys.stdout)  # intentionally use of print for formatting
         completed_last = 0
         for chunk in response.iter_content(chunk_size=chunk_size):
             out_file.write(chunk)
@@ -299,7 +346,7 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
 
 def build_one(wiki, fast):
     """build one wiki"""
-    progress(f'build_one: {wiki}')
+    info(f'build_one: {wiki}')
 
     source_dir = os.path.join(wiki, 'source')
     output_dir = os.path.join(wiki, 'build')
@@ -448,7 +495,7 @@ def make_backup(building_time, site, destdir, backupdestdir):
         try:
             subprocess.check_call(["rsync", "-a", "--delete", f"{targetdir}/", bkdir])
         except subprocess.CalledProcessError as ex:
-            progress(ex)
+            error(ex)
             fatal(f"Failed to backup {wiki}")
 
 
@@ -582,7 +629,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                     with open(targetfile, 'w', encoding='utf-8') as destination_file:
                         destination_file.write(content)
 
-    progress(f"Common files: {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
+    info(f"Common files: {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
 
 
 def get_copy_targets(content):
@@ -642,9 +689,9 @@ def logmatch_code(matchobj, prefix):
 
     for i in range(9):
         try:
-            progress(f"{prefix} m{i}: {matchobj.group(i)}")
+            info(f"{prefix} m{i}: {matchobj.group(i)}")
         except IndexError:  # The object has less groups than expected
-            progress(f"{prefix}: except m{i}")
+            error(f"{prefix}: except m{i}")
 
 
 def is_the_same_file(file1, file2):
@@ -875,7 +922,7 @@ def check_imports():
         try:
             importlib.metadata.version(package.split("<")[0].split(">=")[0])
         except importlib.metadata.PackageNotFoundError as ex:
-            progress(ex)
+            error(ex)
             fatal(f'Require {package}\nPlease run the wiki build setup script "Sphinxsetup"')
     debug("Imports OK")
 
@@ -924,7 +971,7 @@ def create_features_pages(site):
     fetch_url("https://firmware.ardupilot.org/features.json.gz")
     features_json = json.load(gzip.open("features.json.gz"))
     if features_json["format-version"] != "1.0.0":
-        progress("bad format version")
+        error("bad format version")
         return
     features = features_json["features"]
 
@@ -978,7 +1025,7 @@ def create_features_page(features, build_options_by_define, vehicletype):
                 build_options = build_options_by_define[feature]
             except KeyError:
                 # mismatch between build_options.py and features.json
-                progress(f"feature {feature} ({platform_key},{vehicletype}) not in build_options.py")
+                error(f"feature {feature} ({platform_key},{vehicletype}) not in build_options.py")
                 continue
             if feature_in:
                 some_list = sorted_platform_features_in
@@ -1129,9 +1176,11 @@ class WikiUpdater:
         self.args = parser.parse_args()
         self.verbose: bool = self.args.verbose
 
+        logging_level = logging.DEBUG if self.verbose else logging.INFO
+        logger.setLevel(logging_level)
+        stream_handler.setLevel(logging_level)
+
     def run(self) -> None:
-        global VERBOSE
-        VERBOSE = self.verbose
 
         tstart = time.time()
         now = datetime.now()
@@ -1140,12 +1189,12 @@ class WikiUpdater:
         check_imports()
         check_ref_directives()
 
-        progress("=== Step 1: Creating features pages ===")
-        progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        info("=== Step 1: Creating features pages ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
         create_features_pages(self.args.site)
 
-        progress("=== Step 2: Fetching parameters and log messages in parallel ===")
-        progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        info("=== Step 2: Fetching parameters and log messages in parallel ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
         if not self.args.fast:
             if self.args.paramversioning:
                 # Parameters for all versions available on firmware.ardupilot.org:
@@ -1157,17 +1206,17 @@ class WikiUpdater:
             # Fetch most recent LogMessage metadata from autotest:
             fetchlogmessages(self.args.site, self.args.cached_parameter_files)
 
-        progress("=== Step 3: Processing static sites ===")
-        progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        info("=== Step 3: Processing static sites ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
         copy_static_html_sites(self.args.site, self.args.destdir)
 
         # Use clean_common=True for clean builds, False for fast/incremental builds
-        progress("=== Step 4: Copying common source files ===")
-        progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        info("=== Step 4: Copying common source files ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
         copy_common_source_files(clean_common=self.args.clean_common)
 
-        progress("=== Step 5: Building documentation with Sphinx ===")
-        progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        info("=== Step 5: Building documentation with Sphinx ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
         sphinx_make(self.args.site, self.args.parallel, self.args.fast)
 
         if self.args.paramversioning:
@@ -1188,17 +1237,17 @@ class WikiUpdater:
         # --allow-file-access-from-files". Otherwise it will appear empty
         # locally and working once is on the server.
 
-        error_count = len(error_log)
+        error_count = len(error_store_handler.error_messages)
         total_time = time.time() - tstart
-        progress(f"Total execution time: {total_time:.2f} seconds ({total_time / 60:.1f} minutes)")
+        info(f"Total execution time: {total_time:.2f} seconds ({total_time / 60:.1f} minutes)")
 
         if error_count > 0:
-            progress("Reprinting error messages:", file=sys.stderr)
-            for msg in error_log:
-                print(f"\033[1;31m[update.py][error]: {msg}\033[0m", file=sys.stderr)  # noqa: E702,E231
-            fatal(f"{error_count} errors during Wiki build")
+            # cannot use logger here to not infinitely recurse on error.
+            print("[update.py][\033[1;31merror\033[0m]: Reprinting error messages:", file=sys.stderr)
+            for error_msg in error_store_handler.error_messages:
+                print(f"[update.py][\033[1;31merror\033[0m]: {error_msg}", file=sys.stderr)
         else:
-            print("Build completed without errors")
+            logger.info("Build completed without errors")
 
         sys.exit(0)
 
