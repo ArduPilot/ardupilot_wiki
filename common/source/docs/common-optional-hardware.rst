@@ -87,6 +87,9 @@ For guidance on cable design, colour coding, and EMI-compliant wiring, especiall
 [site wiki="rover"]
     Start/Stop Switch <startstop-switch>
 [/site]
+[site wiki="copter, plane"]
+    Tracking Systems <common-tracking-systems>
+[/site]
     Telemetry Radio <common-telemetry-landingpage>
     Temperature Sensors <common-temperature-sensor>
     Video (High Definition) <common-video-landingpage>
