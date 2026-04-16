@@ -275,7 +275,7 @@ def fetch_releases(firmware_url, vehicles):
             debug(f"Fetching {firmware_url}{vehicle}")
             html_parser.feed(urllib.request.urlopen(firmware_url + vehicle).read().decode('utf8'))
         except Exception as e:
-            error(f"Folders list download error: {e}")
+            error(f"Vehicles folders list download error: {e}")
             sys.exit(1)
         return html_parser.links
     ######################################################################################
@@ -324,7 +324,7 @@ def get_commit_dict(releases_parsed):
             debug(f"Fetching {url}")
             html_parser.feed(urllib.request.urlopen(url).read().decode('utf8'))
         except Exception as e:
-            error(f"Folders list download error:{e}")
+            error(f"Board folders list download error: {e}")
         finally:
             last_item = html_parser.links.pop()
             last_folder = last_item['href']
