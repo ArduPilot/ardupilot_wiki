@@ -27,7 +27,7 @@ The **VTA** (Vessel-based Tracking Antenna) is the main system of a Mobile or Ve
 
 * UAV Operator laptop (or fixed PC)
 * Payload operator laptop (or fixed PC)
-* Joystick Ethernet (documentation in progress)
+* Joystick Ethernet 
 * AC/DC power supply
 * Optional backup battery (output voltage must be below 24V: 18-23V)
 
@@ -132,7 +132,7 @@ By default the device has internally the following IP configurations to connect 
    gateway      192.168.0.1
    ===========  =============
 
-Ground PC IP must be configured to be the same as gcsIp to connect, then the user can configure these IPs connecting by UDP to the following parameters with any UDP terminal such as **ScriptComunicator or Putty**:
+Ground PC IP must be configured to be the same as gcsIp to connect, then the user can configure these IPs connecting by UDP to the following parameters with any UDP terminal such as **ScriptCommunicator or Putty**:
 
 .. table::
    :align: center
