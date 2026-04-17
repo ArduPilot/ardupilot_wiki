@@ -34,8 +34,9 @@ import re
 import shutil  # noqa: F401
 import sys
 import time  # noqa: F401
-import urllib.request
 from html.parser import HTMLParser
+
+import requests
 
 parser = argparse.ArgumentParser(description="python3 build_parameters.py [options]")
 parser.add_argument("--verbose", dest='verbose', action='store_false', default=True, help="show debugging output")
@@ -72,6 +73,14 @@ handler = logging.StreamHandler(sys.stdout)
 handler.setFormatter(ColoredFormatter('[build_parameters.py]: [%(levelname)s]: %(message)s'))
 logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, handlers=[handler])
 logger = logging.getLogger(__name__)
+
+# Global session for HTTP requests with connection pooling
+session = requests.Session()
+session.headers.update({
+    'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotWikiBuilder/1.0)',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Connection': 'keep-alive'
+})
 
 # Parameters
 COMMITFILE = "git-version.txt"
@@ -274,7 +283,11 @@ def fetch_releases(firmware_url, vehicles):
         html_parser = ParseText()
         try:
             debug(f"Fetching {firmware_url}{vehicle}")
-            html_parser.feed(urllib.request.urlopen(firmware_url + vehicle).read().decode('utf8'))
+
+            response = session.get(firmware_url + vehicle, timeout=30)
+            response.raise_for_status()
+            content = response.text
+            html_parser.feed(content)
         except Exception as e:
             error(f"Vehicles folders list download error: {e}")
             sys.exit(1)
@@ -324,7 +337,11 @@ def get_commit_dict(releases_parsed):
         html_parser = ParseText()
         try:
             debug(f"Fetching {url}")
-            html_parser.feed(urllib.request.urlopen(url).read().decode('utf8'))
+
+            response = session.get(url, timeout=30)
+            response.raise_for_status()
+            content = response.text
+            html_parser.feed(content)
         except Exception as e:
             error(f"Board folders list download error: {e}")
         finally:
@@ -344,9 +361,9 @@ def get_commit_dict(releases_parsed):
         progress(f"Processing link...\t{fetch_link}")
 
         try:
-            fecth_response = ""
-            with urllib.request.urlopen(fetch_link) as response:
-                fecth_response = response.read().decode("utf-8")
+            response = session.get(fetch_link, timeout=30)
+            response.raise_for_status()
+            fecth_response = response.text
 
             commit_details = fecth_response.split("\n")
             commit_hash = commit_details[0][7:]
