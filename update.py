@@ -110,6 +110,8 @@ error_log = list()
 N_BACKUPS_RETAIN = 10
 
 VERBOSE = False
+# Global HTTP session for connection reuse and caching
+_http_session = None
 
 
 def debug(str_to_print):
@@ -133,6 +135,33 @@ def fatal(str_to_print):
     """Show and count the errors."""
     error(str_to_print)
     sys.exit(1)
+
+
+def get_http_session():
+    """Get or create a persistent HTTP session with connection pooling"""
+    global _http_session
+    if _http_session is None:
+        _http_session = requests.Session()
+        _http_session.headers.update({
+            'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotWikiUpdater/1.0)',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Connection': 'keep-alive'
+        })
+        # Add retry logic for better reliability
+        from requests.adapters import HTTPAdapter
+        from urllib3.util.retry import Retry
+
+        retries = Retry(
+            total=3,
+            backoff_factor=1,
+            status_forcelist=[429, 500, 502, 503, 504],
+            allowed_methods=["HEAD", "GET", "OPTIONS"]
+        )
+        adapter = HTTPAdapter(max_retries=retries)
+        _http_session.mount("https://", adapter)
+        _http_session.mount("http://", adapter)
+
+    return _http_session
 
 
 def remove_if_exists(filepath):
@@ -165,11 +194,13 @@ def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
 def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) -> None:
     """Fetches content at url and puts it in a file corresponding to the filename in the URL"""
     progress(f"Fetching {fetchurl}")
+    # For larger files or when cache fails, use streaming download with progress
+    session = get_http_session()
 
     if verbose:
         total_size = get_request_file_size(fetchurl)
 
-    response = requests.get(fetchurl, stream=True)
+    response = session.get(fetchurl, stream=True, timeout=30)
     response.raise_for_status()
 
     filename = fpath or os.path.basename(urlparse(fetchurl).path)
@@ -196,12 +227,16 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
 
 
 def get_request_file_size(url: str) -> int:
+    """Get file size from URL using HEAD request with session reuse"""
+
+    session = get_http_session()
     headers = {'Accept-Encoding': 'identity'}  # needed as request use compression by default
-    hresponse = requests.head(url, headers=headers)
+    hresponse = session.head(url, headers=headers, timeout=30)
 
     if 'Content-Length' in hresponse.headers:
         size = int(hresponse.headers['Content-Length'])
         return size
+
     return 0
 
 
