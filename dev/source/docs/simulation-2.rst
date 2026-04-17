@@ -57,6 +57,7 @@ List of simulators (so they can appear in the menu):
     :maxdepth: 1
 
     SITL Simulator <sitl-simulator-software-in-the-loop>
+    Automated SITL Launch Script <setting-up-sitl-using-a-unified-automation-script>
     Mission Planner Simulation <mission-planner-sim>
     Gazebo <sitl-with-gazebo>
     XPlane-10 <sitl-with-xplane>
