@@ -47,7 +47,7 @@ import shutil
 import subprocess
 import sys
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, TimeoutError
 from datetime import datetime
 from typing import Dict, List, Optional
 from urllib.parse import urlparse
@@ -295,8 +295,18 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
             targetfiles.append(targetfile)
             names.append(f"{value}_{document_name}")
 
-    with ThreadPoolExecutor() as executor:
-        executor.map(fetch_and_rename, urls, targetfiles, names, timeout=5*60)
+    with ThreadPoolExecutor(max_workers=4) as executor:  # Limit concurrent downloads
+        tasks = []
+        for url, target, name in zip(urls, targetfiles, names):
+            task = executor.submit(fetch_and_rename, url, target, name)
+            tasks.append(task)
+
+        # Wait for all downloads to complete
+        for task in tasks:
+            try:
+                task.result(timeout=5*60)
+            except (TimeoutError, OSError, requests.RequestException) as e:
+                error(f"Download failed: {e}")
 
 
 def build_one(wiki, fast):
