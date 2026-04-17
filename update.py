@@ -199,6 +199,8 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
 
     total_size = 0
 
+    total_size = 0
+
     if verbose:
         total_size = get_request_file_size(fetchurl)
 
