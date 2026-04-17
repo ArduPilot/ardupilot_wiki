@@ -115,6 +115,14 @@ Update Beta tags for AntennaTracker
 - ``git tag AntennaTracker-beta HEAD``
 - ``git push origin AntennaTracker-beta``
 
+Update Beta tags for Periph
+
+- ``git show AP_Periph-beta``
+- ``git tag -d AP_Periph-beta``
+- ``git push origin :refs/tags/AP_Periph-beta``
+- ``git tag AP_Periph-beta HEAD``
+- ``git push origin AP_Periph-beta``
+
 Check the `GitHub Tags <https://github.com/ArduPilot/ardupilot/tags>`__ to ensure all tags have been updated
 
 Pull the release notes commits into the ardupilot/master branch
@@ -210,6 +218,14 @@ Update Stable tags for AntennaTracker
 - ``git tag AntennaTracker-stable HEAD``
 - ``git push origin AntennaTracker-stable``
 
+Update Stable tags for Periph
+
+- ``git show AP_Periph-stable``
+- ``git tag -d AP_Periph-stable``
+- ``git push origin :refs/tags/AP_Periph-stable``
+- ``git tag AP_Periph-stable HEAD``
+- ``git push origin AP_Periph-stable``
+
 An additional tag is created for each vehicle that includes the patch release number
 
 - ``git tag Plane-4.7.0``
@@ -222,6 +238,8 @@ An additional tag is created for each vehicle that includes the patch release nu
 - ``git push origin Sub-4.7.0``
 - ``git tag AntennaTracker-4.7.0``
 - ``git push origin AntennaTracker-4.7.0``
+- ``git tag AP_Periph-4.7.0``
+- ``git push origin AP_Periph-4.7.0``
 
 Announcements are done in much the same way as beta releases by posting on these sites:
 
