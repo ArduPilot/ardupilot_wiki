@@ -83,6 +83,6 @@ Vehicle Parameter References
 Software Integration Tools
 ==========================
 
--   MAVSDK <https://github.com/ArduPilot/ardupilot-mavsdk>
--   Pymavlink python script <https://github.com/ArduPilot/pymavlink>
+-   `MAVSDK <https://github.com/ArduPilot/ardupilot-mavsdk>`__
+-   `Pymavlink python script <https://github.com/ArduPilot/pymavlink>`__
 
