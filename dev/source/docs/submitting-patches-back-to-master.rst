@@ -133,6 +133,15 @@ repository, follow these directions:
        :width: 70%
        :target: ../_images/PullRequest_InitiatePullRequest2.png
 
+
+Requesting CI & Review
+----------------------
+
+Your PR must be tested by github's Continuous Integration (CI) tests.
+If you have never merged a PR into the ardupilot repo before, you will need to request a developer to run CI on your behalf.
+(This is to prevent AI-generated spam contributions from clogging the CI resources.)
+Use Discord to request this in the typical `#code_review` channel.
+
 Next Steps
 ----------
 
