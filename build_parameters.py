@@ -35,8 +35,10 @@ import shutil  # noqa: F401
 import subprocess
 import sys
 import time  # noqa: F401
+import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
+from pathlib import Path
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -48,6 +50,15 @@ parser.add_argument("--verbose", dest='verbose', action='store_false', default=T
 parser.add_argument("--ardupilotRepoFolder", dest='gitFolder', default="../ardupilot", help="Ardupilot git folder. ")
 parser.add_argument("--destination", dest='destFolder', default="../../../../new_params_mversion", help="Parameters*.rst destination folder.")  # noqa: E501
 parser.add_argument('--vehicle', dest='single_vehicle', help="If you just want to copy to one vehicle, you can do this. Otherwise it will work for all vehicles (Copter, Plane, Rover, AntennaTracker, Sub, Blimp)")  # noqa: E501
+
+DEFAULT_CACHE_TIME = 6 * 3600
+
+# Get the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+default_http_request_cache_dir = os.path.join(script_dir, '.cache')
+
+parser.add_argument("--cache-dir", dest='cache_dir', default=default_http_request_cache_dir,
+                    help="Directory to cache HTTP responses")
 args = parser.parse_args()
 
 
@@ -101,6 +112,96 @@ session.headers.update({
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Connection': 'keep-alive'
 })
+
+
+def fetch_url_with_cache(url, cache_dir=None):
+    """Fetch URL content with caching to avoid repeated downloads."""
+    if cache_dir is None:
+        cache_dir = args.cache_dir
+
+    os.makedirs(cache_dir, exist_ok=True)
+
+    # Create cache filename from URL
+    cache_filename = urllib.parse.quote(url, safe='') + '.cache'
+    cache_path = os.path.join(cache_dir, cache_filename)
+    cache_meta_path = cache_path + '.meta'
+
+    def load_cached_content():
+        return Path(cache_path).read_text(encoding='utf-8')
+
+    def load_cache_metadata():
+        if not os.path.exists(cache_meta_path):
+            return {}
+        return json.loads(Path(cache_meta_path).read_text(encoding='utf-8'))
+
+    def save_cache(content, response):
+        Path(cache_path).write_text(content, encoding='utf-8')
+
+        metadata = {}
+        etag = response.headers.get('ETag')
+        last_modified = response.headers.get('Last-Modified')
+        if etag:
+            metadata['etag'] = etag
+        if last_modified:
+            metadata['last_modified'] = last_modified
+        if metadata:
+            with open(cache_meta_path, 'w', encoding='utf-8') as f:
+                json.dump(metadata, f)
+
+    def refresh_cache_mtime():
+        try:
+            os.utime(cache_path, None)
+        except OSError:
+            pass
+
+    if os.path.exists(cache_path):
+        cache_age = time.time() - os.path.getmtime(cache_path)
+        if cache_age < DEFAULT_CACHE_TIME:
+            debug(f"Using cached content for {url}")
+            return load_cached_content()
+
+    cache_metadata = {}
+    headers = {}
+    if os.path.exists(cache_path):
+        cache_metadata = load_cache_metadata()
+        if cache_metadata.get('etag'):
+            headers['If-None-Match'] = cache_metadata['etag']
+        if cache_metadata.get('last_modified'):
+            headers['If-Modified-Since'] = cache_metadata['last_modified']
+
+    if headers:
+        try:
+            debug(f"HEAD checking server for {url}")
+            head_response = session.head(url, timeout=30, headers=headers, allow_redirects=True)
+            if head_response.status_code == 304:
+                debug(f"Cache still valid for {url}")
+                refresh_cache_mtime()
+                return load_cached_content()
+
+            head_response.raise_for_status()
+            if (head_response.headers.get('ETag') == cache_metadata.get('etag') and
+                    head_response.headers.get('Last-Modified') == cache_metadata.get('last_modified')):
+                debug(f"Server metadata unchanged for {url}, using local cache")
+                refresh_cache_mtime()
+                return load_cached_content()
+        except requests.RequestException as e:
+            debug(f"HEAD request failed for {url}: {e}")
+            # Fallback to GET if the HEAD request is unsupported or fails.
+
+    try:
+        debug(f"Fetching full content from {url}")
+        response = session.get(url, timeout=30, allow_redirects=True)
+        response.raise_for_status()
+        content = response.text
+    except requests.RequestException as e:
+        error(f"Failed to fetch {url}: {e}")
+        if os.path.exists(cache_path):
+            debug(f"Using stale cached content for {url}")
+            return load_cached_content()
+        raise
+
+    save_cache(content, response)
+    return content
 
 
 def run_git(cmd, cwd=None, check=True, max_retries=3):
@@ -372,9 +473,7 @@ def fetch_releases(firmware_url, vehicles):
         try:
             debug(f"Fetching {firmware_url}{vehicle}")
 
-            response = session.get(firmware_url + vehicle, timeout=30)
-            response.raise_for_status()
-            content = response.text
+            content = fetch_url_with_cache(firmware_url + vehicle)
             html_parser.feed(content)
         except Exception as e:
             error(f"Vehicles folders list download error: {e}")
@@ -429,9 +528,7 @@ def get_commit_dict(releases_parsed):
         try:
             debug(f"Fetching {url}")
 
-            response = session.get(url, timeout=30)
-            response.raise_for_status()
-            content = response.text
+            content = fetch_url_with_cache(url)
             html_parser.feed(content)
         except Exception as e:
             error(f"Board folders list download error: {e}")
@@ -452,11 +549,9 @@ def get_commit_dict(releases_parsed):
         progress(f"Processing link...\t{fetch_link}")
 
         try:
-            response = session.get(fetch_link, timeout=30)
-            response.raise_for_status()
-            fecth_response = response.text
+            fetch_response = fetch_url_with_cache(fetch_link)
 
-            commit_details = fecth_response.split("\n")
+            commit_details = fetch_response.split("\n")
             commit_hash = commit_details[0][7:]
             # version =  commit_details[6] the sizes cary
             version = commit_details.pop(-2)
