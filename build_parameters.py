@@ -39,6 +39,7 @@ from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
 
 import requests
+from requests.adapters import HTTPAdapter
 
 parser = argparse.ArgumentParser(description="python3 build_parameters.py [options]")
 parser.add_argument("--verbose", dest='verbose', action='store_false', default=True, help="show debugging output")
@@ -88,6 +89,9 @@ logger = logging.getLogger(__name__)
 
 # Global session for HTTP requests with connection pooling
 session = requests.Session()
+adapter = HTTPAdapter(pool_maxsize=20)
+session.mount('http://', adapter)
+session.mount('https://', adapter)
 session.headers.update({
     'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotWikiBuilder/1.0)',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
