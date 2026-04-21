@@ -46,6 +46,16 @@ parser.add_argument("--destination", dest='destFolder', default="../../../../new
 parser.add_argument('--vehicle', dest='single_vehicle', help="If you just want to copy to one vehicle, you can do this. Otherwise it will work for all vehicles (Copter, Plane, Rover, AntennaTracker, Sub, Blimp)")  # noqa: E501
 args = parser.parse_args()
 
+
+# Parameters
+COMMITFILE = "git-version.txt"
+BASEURL = "https://firmware.ardupilot.org/"
+ALLVEHICLES = ["AntennaTracker", "Copter", "Plane", "Rover", "Sub", "Blimp"]
+VEHICLES = ALLVEHICLES
+# Filter out versions below this semantic version threshold.
+PARAM_PARSE_MINIMUM_VERSION = (3, 9, 0)
+
+BASEPATH = ""
 error_count = 0
 
 
@@ -83,16 +93,50 @@ session.headers.update({
     'Connection': 'keep-alive'
 })
 
-# Parameters
-COMMITFILE = "git-version.txt"
-BASEURL = "https://firmware.ardupilot.org/"
-ALLVEHICLES = ["AntennaTracker", "Copter", "Plane", "Rover", "Sub", "Blimp"]
-VEHICLES = ALLVEHICLES
 
-# Filter out versions below this semantic version threshold.
-PARAM_PARSE_MINIMUM_VERSION = (3, 9, 0)
+def run_git(cmd, cwd=None, check=True, max_retries=3):
+    """Run git command with retry logic for lock conflicts"""
+    if cwd is None:
+        cwd = os.getcwd()
 
-BASEPATH = ""
+    for attempt in range(max_retries):
+        try:
+            debug(f"Running git command (attempt {attempt + 1}): {cmd}")
+            result = subprocess.run(
+                cmd.split(),
+                cwd=cwd,
+                capture_output=True,
+                text=True,
+                check=check,
+                timeout=300  # 5 minute timeout
+            )
+            if result.stderr:
+                debug(f"Git stderr: {result.stderr}")
+            return result.stdout
+
+        except subprocess.CalledProcessError as e:
+            # Check if it's a lock file issue
+            if 'index.lock' in str(e.stderr) or 'Unable to create' in str(e.stderr):
+                debug(f"Git lock detected on attempt {attempt + 1}, waiting git process to complete...")
+                if attempt < max_retries - 1:
+                    import time
+                    time.sleep(3)  # Wait a second before retry
+                    continue
+
+            error(f"Git command failed: {cmd}")
+            error(f"Error: {e.stderr}")
+            if check:
+                raise
+
+        except subprocess.TimeoutExpired:
+            error(f"Git command timed out: {cmd}")
+            if check:
+                raise
+
+    # If we get here, all retries failed
+    error(f"Git command failed after {max_retries} attempts: {cmd}")
+    if check:
+        raise subprocess.CalledProcessError(1, cmd)
 
 
 def rst_has_duplicate_labels(filepath: str) -> bool:
@@ -315,19 +359,20 @@ def setup():
 
     try:
         # Goes to ardupilot folder and clean it and update to make sure that is the most recent one.
-        debug("Recovering from a previous run...")
-        os.chdir(args.gitFolder)
-        os.system("git reset --hard HEAD")
-        os.system("git clean -f -d")
-        os.system("git checkout -f master")
-        os.system("git fetch origin master")
-        os.system("git reset --hard origin/master")
-        os.system("git pull")
+        repo_path = os.path.abspath(args.gitFolder)
         global BASEPATH
-        BASEPATH = os.getcwd()
+        BASEPATH = repo_path
+        debug(f"Recovering from a previous run in {repo_path}")
+
+        run_git("git reset --hard HEAD", cwd=repo_path)
+        run_git("git clean -f -d", cwd=repo_path)
+        run_git("git checkout -f master", cwd=repo_path)
+        run_git("git fetch origin master", cwd=repo_path)
+        run_git("git reset --hard origin/master", cwd=repo_path)
+        run_git("git pull", cwd=repo_path)
+
         check_temp_folders()
-        os.chdir(BASEPATH) # Need to call git command correctly
-    except Exception as e:
+    except (subprocess.CalledProcessError, OSError) as e:
         error(f"ArduPilot Repo folder not found (cd {args.gitFolder} failed)")
         error(e)
         sys.exit(1)
@@ -573,9 +618,8 @@ def generate_rst_files(commits_to_checkout_and_parse):
         # Checkout an Commit ID in order to get its parameters
         try:
             debug(f"Git checkout on {vehicle} version {version} id {commit_id}")
-            os.system(f"git checkout --force {commit_id}")
-
-        except Exception as e:
+            run_git(f"git checkout --force {commit_id}", cwd=BASEPATH, check=True)
+        except subprocess.CalledProcessError as e:
             error(f"GIT checkout error: {e}")
             sys.exit(1)
         debug("")
