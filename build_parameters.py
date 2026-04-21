@@ -167,6 +167,78 @@ def dedupe_rngfnd_parameters_sections(filepath: str) -> None:
             debug(f"Failed to dedupe RNGFND parameters in {filepath}: {e}")
 
 
+def patch_cgi_escape_for_old_versions(version, param_metadata_dir):
+    """
+    Live patch all Python files in param_metadata for older firmware versions that use cgi.escape()
+    which was removed in Python 3.8. This affects htmlemit.py, rstemit.py, and potentially other files.
+    """
+
+    # Parse version to check if it's < 4.1.0
+    if not version_is_below_version(version, (4, 1, 0)):
+        # debug(f"Version {version} doesn't need cgi.escape() patching")
+        return
+
+    debug(f"Patching Python files for cgi.escape() in old version {version}")
+
+    python_files = glob.glob(os.path.join(param_metadata_dir, "*.py"))
+    files_patched = 0
+
+    for file_path in python_files:
+        filename = os.path.basename(file_path)
+
+        try:
+            with open(file_path, 'rb') as f:
+                content_bytes = f.read()
+            content = content_bytes.decode('utf-8')
+        except (UnicodeDecodeError, IOError):
+            debug(f"Could not read {filename}, skipping")
+            continue
+
+        if 'cgi.escape' not in content:
+            continue
+
+        debug(f"Patching {filename} for cgi.escape()")
+
+        # Replace cgi.escape with html.escape
+        content = content.replace('cgi.escape', 'html.escape')
+
+        # Add 'import html' after 'import cgi' if html not already imported
+        if 'import html' not in content and 'from html import' not in content:
+            # Simple approach: add after 'import cgi' line
+            content = content.replace('import cgi\n', 'import cgi\nimport html\n')
+            content = content.replace('import cgi\r\n', 'import cgi\r\nimport html\r\n')
+
+        try:
+            with open(file_path, 'wb') as f:
+                f.write(content.encode('utf-8'))
+            files_patched += 1
+            debug(f"Successfully patched {filename}")
+        except IOError as e:
+            error(f"Failed to write patched {filename}: {e}")
+            continue
+
+    if files_patched > 0:
+        debug(f"Patched {files_patched} file(s) for cgi.escape() compatibility")
+
+
+def parse_version(version_string: str) -> tuple[int, int, int] | None:
+    """Parse the first semantic version-like string from a version token."""
+    match = re.search(r"(\d+)\.(\d+)(?:\.(\d+))?", version_string)
+    if not match:
+        return None
+    major = int(match.group(1))
+    minor = int(match.group(2))
+    patch = int(match.group(3) or 0)
+    return major, minor, patch
+
+
+def version_is_below_version(version_string: str, cutoff: tuple[int, int, int]) -> bool:
+    parsed = parse_version(version_string)
+    if parsed is None:
+        return False
+    return parsed < cutoff
+
+
 # Dicts for name replacing
 vehicle_new_to_old_name = { # Used because "param_parse.py" args expect old names
     "Rover": "APMrover2",
@@ -501,6 +573,10 @@ def generate_rst_files(commits_to_checkout_and_parse):
 
         # Run param_parse.py tool from Autotest set in the desired commit id
         param_metadata_dir = os.path.join(BASEPATH, "Tools", "autotest", "param_metadata")
+
+        # Patch emit files for older versions that use deprecated cgi.escape()
+        patch_cgi_escape_for_old_versions(version, param_metadata_dir)
+
         # Workaround the vehicle renaming (Rover, APMRover2 ArduRover...)
         if ('rover' in vehicle.lower()) and ('v3.' not in version.lower()) and ('v4.0' not in version.lower()):
             vehicle_name = 'Rover'
