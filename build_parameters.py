@@ -35,6 +35,7 @@ import shutil  # noqa: F401
 import subprocess
 import sys
 import time  # noqa: F401
+from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
 
 import requests
@@ -417,21 +418,24 @@ def fetch_releases(firmware_url, vehicles):
     ######################################################################################
 
     debug("Cleaning fetched links for wanted folders")
-    stableFirmwares = []
-    for vehicle in vehicles:
+    firmware_links = []
+
+    def fetch_vehicle_firmware_links(vehicle):
         page_links = fetch_vehicle_subfolders(firmware_url, vehicle)
 
         for folder in page_links:  # Non clever way to filter the strings insert by makehtml.py, unwanted folders, and so.
             version_folder = str(folder)
             firmware_version_url = f"{firmware_url[:-1]}{version_folder}"
             if "stable" in version_folder and not version_folder.endswith("stable"): # If finish with
-                stableFirmwares.append(firmware_version_url)
+                firmware_links.append(firmware_version_url)
             elif "latest" in version_folder:
-                stableFirmwares.append(firmware_version_url)
+                firmware_links.append(firmware_version_url)
             elif "beta" in version_folder:
-                stableFirmwares.append(firmware_version_url)
+                firmware_links.append(firmware_version_url)
 
-    return stableFirmwares # links for the firmwares folders
+    with ThreadPoolExecutor() as executor:
+        executor.map(fetch_vehicle_firmware_links, vehicles)
+    return firmware_links # links for the firmwares folders
 
 
 def get_commit_dict(releases_parsed):
@@ -541,18 +545,21 @@ def get_commit_dict(releases_parsed):
     ####################################################################################################
 
     commits_and_codes = {}
-    commite_and_codes_cleanned = {}
+    commits_and_codes_cleaned = {}
 
-    for j in range(0, len(releases_parsed)):
-        board_folder = get_last_board_folder(releases_parsed[j])
-        commits_and_codes[j] = fetch_commit_hash(releases_parsed[j], board_folder, COMMITFILE)
+    def fetch_commits_and_codes(release_link):
+        board_folder = get_last_board_folder(release_link)
+        return fetch_commit_hash(release_link, board_folder, COMMITFILE)
 
-    for i in commits_and_codes:
-        if commits_and_codes[i][0] != 'error':
-            commite_and_codes_cleanned[i] = commits_and_codes[i]
-    if len(commite_and_codes_cleanned) == 0:
+    with ThreadPoolExecutor() as executor:
+        commits_and_codes = list(executor.map(fetch_commits_and_codes, releases_parsed))
+
+    for i, cc in enumerate(commits_and_codes):
+        if cc[0] != 'error':
+            commits_and_codes_cleaned[i] = cc
+    if len(commits_and_codes_cleaned) == 0:
         error("Expected at least one commit")
-    return commite_and_codes_cleanned
+    return commits_and_codes_cleaned
 
 
 def generate_rst_files(commits_to_checkout_and_parse):
