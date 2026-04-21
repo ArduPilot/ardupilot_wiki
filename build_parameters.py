@@ -89,6 +89,9 @@ BASEURL = "https://firmware.ardupilot.org/"
 ALLVEHICLES = ["AntennaTracker", "Copter", "Plane", "Rover", "Sub", "Blimp"]
 VEHICLES = ALLVEHICLES
 
+# Filter out versions below this semantic version threshold.
+PARAM_PARSE_MINIMUM_VERSION = (3, 9, 0)
+
 BASEPATH = ""
 
 
@@ -551,6 +554,7 @@ def generate_rst_files(commits_to_checkout_and_parse):
         # Not elegant workaround:
         # These versions present errors when parsing using param_parser.py. Needs more investigation?
         if (
+            "beta-V4.3.8" in version or # leftover beta files
             "3.2.1" in version or # last stable APM Copte
             "3.4.0" in version or # last stable APM Plane
             "3.4.6" in version or # Copter
@@ -559,6 +563,11 @@ def generate_rst_files(commits_to_checkout_and_parse):
             "0.7.2" in version    # Antennatracker
         ):
             debug(f"Ignoring APM version:\t{vehicle}\t{version}")
+            continue
+
+        # Need to keep v1.X.0 AntennaTracker versions
+        if "antenna" not in vehicle.lower() and version_is_below_version(version, PARAM_PARSE_MINIMUM_VERSION):
+            debug(f"Ignoring APM version:\t{vehicle}\t{version} (below {'.'.join(map(str, PARAM_PARSE_MINIMUM_VERSION))})")
             continue
 
         # Checkout an Commit ID in order to get its parameters
