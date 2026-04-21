@@ -150,6 +150,7 @@ Closed Hardware
     Holybro Pixhawk 4 Mini <common-holybro-ph4mini>
     Holybro Pixhawk5X <common-holybro-ph5x>
     Horizon31 PixC4-Jetson <common-horizon31-pixc4-jetson>
+    HWH7 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/HWH7/README.md>
     iFlight Beast F7 45A AIO <common-iflight-beastf7AIO>
     iFlight BeastH7 AIO <common-iflight-beasth7AIO>
     iFlight Blitz F745/F745 Mini <common-blitz-f745>
