@@ -12,6 +12,7 @@ New Board Support
 - JPilot-C, see https://github.com/ArduPilot/ardupilot_wiki/pull/7567
 - VUAV-TinyV7, see https://github.com/ArduPilot/ardupilot_wiki/pull/7630
 - SparkNavi Blue , see https://github.com/ArduPilot/ardupilot_wiki/pull/7643
+- PilotGaeaSH7V1-bdshot, see https://github.com/ArduPilot/ardupilot_wiki/pull/7687
 
 New Peripheral Support
 ======================
