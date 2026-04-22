@@ -605,9 +605,10 @@ def generate_rst_files(commits_to_checkout_and_parse):
             "3.4.6" in version or # Copter
             "2.42" in version or  # last stable APM Rover?
             "2.51" in version or  # last beta APM Rover?
-            "0.7.2" in version    # Antennatracker
+            "0.7.2" in version or # Antennatracker
+            "1.0.0" in version    # AntennaTracker
         ):
-            debug(f"Ignoring APM version:\t{vehicle}\t{version}")
+            debug(f"Ignoring old version:\t{vehicle}\t{version}")
             continue
 
         # Need to keep v1.X.0 AntennaTracker versions
