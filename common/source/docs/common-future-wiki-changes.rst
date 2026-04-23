@@ -33,3 +33,6 @@ New Features
 [site wiki="rover"]
 
 [/site]
+[site wiki="sub"]
+- Remote (MAVLink) leak detection, see https://github.com/ArduPilot/ardupilot_wiki/pull/7593
+[/site]
