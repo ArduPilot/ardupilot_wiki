@@ -41,7 +41,7 @@ ArduPilot supports up to two cameras. For the rest of this article, it is assume
 
  When the camera is connected correctly and the serial port configured correctly you will see a message similar to the following at boot: ``APM: RunCam initialized, features 0x0077, 2-key OSD`` otherwise you will see ``APM: RunCam device not found``.
 
-- The camera must be powered and fully booted in order to accept commands. This can take some time and the delay between the autopilot booting and the camera being probed can be controlled through :ref:`CAM1_RC_BT_DELAY<CAM1_RC_BT_DELAY>`. The camera will be probed repeatedly until :ref:`CAM1_RC_BT_DELAY<CAM1_RC_BT_DELAY>` elapses, but once that has expired the camera will not be probed again.
+- The camera must be powered and fully booted in order to accept commands. This can take some time and the delay between the autopilot booting and the camera being probed can be controlled through :ref:`CAM1_RC_BTN_DELY<CAM1_RC_BTN_DELY>`. The camera will be probed repeatedly until :ref:`CAM1_RC_BTN_DELY<CAM1_RC_BTN_DELY>` elapses, but once that has expired the camera will not be probed again.
 
 - Some split-style cameras support three modes - video standby, video start and picture mode. It is not possible to tell from the RunCam device protocol whether this is the type of camera in use and so this must be configured.
    - Set :ref:`CAM1_RC_TYPE<CAM1_RC_TYPE>` = "2".
@@ -50,6 +50,9 @@ ArduPilot supports up to two cameras. For the rest of this article, it is assume
 - In addition to this problem RunCam Hybrid cameras have a QR code mode which can also cause problems for recording control. For RunCam Hybrids set :ref:`CAM1_RC_TYPE<CAM1_RC_TYPE>` = "4".
 
 - For RunCam2 4K camera, set :ref:`CAM1_RC_TYPE<CAM1_RC_TYPE>` = "5".
+
+- :ref:`CAM1_RC_MDE_DELY <CAM1_RC_MDE_DELY>` is the time it takes for the a RunCam mode button press to be activated in ms. If a mode change first requires a video recording change then double this value is used. If this is too short then commands can get out of sync.
+
 
 .. note:: RunCam is bringing out new cameras all the time and seem to change the video controls with almost every camera, so if you are having issues - particularly with video control - try one of the other camera types for :ref:`CAM1_RC_TYPE<CAM1_RC_TYPE>`.
 
