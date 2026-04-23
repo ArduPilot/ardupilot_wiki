@@ -32,11 +32,17 @@ More instructions on using the :ref:`Custom Build Server can be found here <comm
 Connecting to the Autopilot
 ---------------------------
 
+If using the XFRobot Z-1 mini, connect the gimbal's UART2 port to one of the autopilot's serial ports as shown below
+
 .. image:: ../../../images/xfrobot-autopilot-serial.png
     :target: ../_images/xfrobot-autopilot-serial.png
     :width: 450px
 
-Connect the gimbal's UART2 port to one of the autopilot's serial ports as shown above
+If using the XFRobot C-20T, connect the gimbal's serial port to one of the autopilot's serial ports as shown below
+
+.. image:: ../../../images/xfrobot-autopilot-serial-c20t.png
+    :target: ../_images/xfrobot-autopilot-serial-c20t.png
+    :width: 450px
 
 Connect with a ground station and set the following parameters.  The params below assume the autopilot's telem2 port is used
 
