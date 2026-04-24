@@ -731,9 +731,9 @@ def cleanup_versioned_parameters(site=None):
 
             # Remove old versioned param files
             if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                old_parameters_mask = f"{os.getcwd()}/AntennaTracker/source/docs/parameters-AntennaTracker-"
+                old_parameters_mask = "./AntennaTracker/source/docs/parameters-AntennaTracker-"
             else:
-                old_parameters_mask = f"{os.getcwd()}/{key}/source/docs/parameters-{key.title()}-"
+                old_parameters_mask = f"./{key}/source/docs/parameters-{key.title()}-"
             try:
                 old_parameters_files = [
                     f for f in glob.glob(f"{old_parameters_mask}*.rst")]
@@ -746,9 +746,9 @@ def cleanup_versioned_parameters(site=None):
 
             # Remove old json file
             if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                target_json_file = ('./{}/source/_static/parameters-{}.json'.format("AntennaTracker", "AntennaTracker"))
+                target_json_file = './AntennaTracker/source/_static/parameters-AntennaTracker.json'
             else:
-                target_json_file = (f'./{value}/source/_static/parameters-{key.title()}.json')
+                target_json_file = f'./{value}/source/_static/parameters-{key.title()}.json'
             debug(f"Erasing json {target_json_file}")
             remove_if_exists(target_json_file)
 
