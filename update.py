@@ -816,24 +816,6 @@ def fetch_versioned_parameters(site=None):
                         pass
 
 
-def create_latest_parameter_redirect(default_param_file, vehicle):
-    """
-    For a given vehicle create a file called parameters.rst that
-    redirects to the latest parameters file.(Create to maintaim retro
-    compatibility.)
-    """
-    out_line = "======================\nParameters List (Full)(\n======================\n"
-    out_line += "\n.. raw:: html\n\n"
-    out_line += f'   <script>location.replace("{default_param_file[:-3]}html")</script>'
-    out_line += "\n\n"
-
-    filename = f"{vehicle}/source/docs/parameters.rst"
-    with open(filename, "w") as text_file:
-        text_file.write(out_line)
-
-    debug(f"Created html automatic redirection from parameters.html to {default_param_file[:-3]}html")
-
-
 def cache_parameters_files(site=None):
     """
     For each vechile: put new_params_mversion/ content in
