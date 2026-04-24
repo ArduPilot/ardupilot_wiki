@@ -4,10 +4,9 @@
 Joystick/Gamepad
 ================
 
-This article explains how you can control your vehicle with a Joystick or Gamepad using the Mission Planner which sends "RC Override" messages to the vehicle.
+This article explains how you can control your vehicle with a Joystick or Gamepad using the Mission Planner which sends "RC Channel Override" messages to the vehicle.
 
-Other GCSs may also support "RC overrides" but they are not covered in
-this article.
+Other GCSs including QGC also support "RC Channel Overrides" but they are not covered in this article.
 
 .. figure:: ../../../images/joystick_LogitechF310.jpg
    :target: ../_images/joystick_LogitechF310.jpg
@@ -17,8 +16,7 @@ this article.
 .. tip::
 
    Even if flying with a joystick, you should keep a regular
-   transmitter/receiver connected and ready for use as a backup.  In future
-   versions of ArduPilot, after more failsafe testing has been completed this recommendation may change.
+   transmitter/receiver connected and ready for use as a backup
 
 What you will need
 ==================
@@ -41,14 +39,14 @@ First you must calibrate the joystick using the Windows joystick/game controller
 Setup with the Mission Planner
 ==============================
 
--  Connect your USB joystick/gamepad to the laptop computer
+-  Connect your USB joystick/gamepad to the PC
 -  Open the *Mission Planner Flight Data* screen. On the **Actions** tab
    push the **Joystick** button
 
    .. image:: ../../../images/joystick_MPSetup.png
        :target: ../_images/joystick_MPSetup.png
    
--  Ensure the Logitech joystick appears in the drop-down
+-  Ensure the joystick appears in the drop-down
 -  The **Enable** button, once pushed, will tell the mission planner to
    start sending commands to the vehicle so for the initial setup do not
    push it.
@@ -118,7 +116,7 @@ To check the above controls move in the correct direction:
    Joystick setup screen.
 
 Next test you are able to arm, disarm and switch into the various flight
-modes (not need to connect the battery)
+modes (no need to connect the battery)
 
 Testing the failsafes
 =====================
