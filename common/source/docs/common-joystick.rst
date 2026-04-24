@@ -63,10 +63,9 @@ Setup with the Mission Planner
 
 -  Repeat for *Pitch*, *Throttle* and *Rudder* and push the **Save** button
 -  You will likely want to set-up other buttons for *Arm* and *Disarm*
--  Instead of setting up a stick or button for ch5 (the flight mode
-   channel), it is better to set individual buttons to initiate a flight
-   mode by selecting **Change Mode** and then push the **Settings**
-   button and select the flight mode from the drop-down (see pic above)
+-  The flight mode channel (e.g. RC5 or RC8) and :ref:`auxiliary function channels <common-auxiliary-functions>`
+   should not be controlled from the joystick especially if a regular RC receiver is also connected.  Instead it is better to configure buttons to set the flight
+   mode by selecting **Change Mode** and then push the **Settings** button and select the flight mode from the drop-down (see pic above).  Details on why this is important are documented in `issue #32862 <https://github.com/ArduPilot/ardupilot/issues/32862>`__.
 -  When done, push the **Save** button. This records the min and max calibrations and records the neutral positions of the joystick for the trim value. Mission Planner will then scale the joystick signal to the RC channel's ``RCx_MIN/MAX/TRIM`` parameters in the autopilot when sending RC override commands by the Joystick.
 
 Autopilot Setup
