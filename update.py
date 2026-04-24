@@ -587,7 +587,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
         for file in files:
             if file.endswith(".rst"):
                 # debug("  FILE: %s" % file)
-                source_file_path = Path(root) / file
+                source_file_path = Path(f"{root}/{file}")
                 source_content = source_file_path.read_text(encoding='utf-8')
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
@@ -605,20 +605,20 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                     files_copied += 1
             elif file.endswith(".css"):
                 for wiki in ALL_WIKIS:
-                    src = os.path.join(root, file)
-                    dst = f'{wiki}/source/_static/{file}'
+                    source_file_path = Path(f"{root}/{file}")
+                    targetfile = Path(f"{wiki}/source/_static/{file}")
                     # Only copy if different
-                    if not clean_common and os.path.exists(dst) and filecmp.cmp(src, dst, shallow=False):
+                    if not clean_common and targetfile.exists() and filecmp.cmp(source_file_path, targetfile, shallow=False):
                         continue
-                    shutil.copy2(src, dst)
+                    shutil.copy2(source_file_path, targetfile)
             elif file.endswith(".js"):
                 for wiki in DEFAULT_COPY_WIKIS:
-                    file_path = os.path.join(root, file)
-                    targetfile = f'{wiki}/source/_static/{file}'
+                    source_file_path = Path(f"{root}/{file}")
+                    targetfile = Path(f"{wiki}/source/_static/{file}")
                     # Only copy if different
-                    if not clean_common and os.path.exists(targetfile) and filecmp.cmp(file_path, targetfile, shallow=False):
+                    if not clean_common and targetfile.exists() and filecmp.cmp(source_file_path, targetfile, shallow=False):
                         continue
-                    shutil.copy2(file_path, targetfile)
+                    shutil.copy2(source_file_path, targetfile)
 
     info(f"Common files: {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
 
