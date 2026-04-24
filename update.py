@@ -612,27 +612,13 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                         continue
                     shutil.copy2(src, dst)
             elif file.endswith(".js"):
-                source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', encoding='utf-8')
-                source_content = source_file.read()
-                source_file.close()
-                targets = get_copy_targets(source_content)
-                for wiki in targets:
-                    content = strip_content(source_content, wiki)
+                for wiki in DEFAULT_COPY_WIKIS:
+                    file_path = os.path.join(root, file)
                     targetfile = f'{wiki}/source/_static/{file}'
-
-                    # Only write if content has changed
-                    if not clean_common and os.path.exists(targetfile):
-                        try:
-                            if filecmp.cmp(source_file_path, targetfile, shallow=False):
-                                continue
-                        except Exception as e:
-                            debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
-                            # treat as different and fall through to write
-
-                    # debug(targetfile)
-                    with open(targetfile, 'w', encoding='utf-8') as destination_file:
-                        destination_file.write(content)
+                    # Only copy if different
+                    if not clean_common and os.path.exists(targetfile) and filecmp.cmp(file_path, targetfile, shallow=False):
+                        continue
+                    shutil.copy2(file_path, targetfile)
 
     info(f"Common files: {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
 
