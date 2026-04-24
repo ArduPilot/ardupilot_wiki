@@ -16,6 +16,8 @@
 *.html
 *.pyc
 .cache/
+new_params_mversion/
+old_params_mversion/
 
 # static html pages
 !/frontend/*.html
