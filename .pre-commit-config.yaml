@@ -30,3 +30,11 @@ repos:
         args:
           - --disable=missing-final-newline
           - --disable=trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: rst-literal-block-spacing
+        name: Check ReST literal block spacing
+        entry: python scripts/check_rst_literal_blocks.py
+        language: system
+        files: '\.rst$'
