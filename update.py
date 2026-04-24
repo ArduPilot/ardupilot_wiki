@@ -719,11 +719,45 @@ def is_the_same_file(file1, file2):
     return file_hash(file1) == file_hash(file2)
 
 
+def cleanup_versioned_parameters(site=None):
+    """
+    It removes all versioned parameters files and JSON files in order to
+    prepare the wiki for a new build with the new versioned parameters.
+    """
+
+    for key, value in PARAMETER_SITE.items():
+
+        if site == key or site is None:
+
+            # Remove old versioned param files
+            if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
+                old_parameters_mask = f"{os.getcwd()}/AntennaTracker/source/docs/parameters-AntennaTracker-"
+            else:
+                old_parameters_mask = f"{os.getcwd()}/{key}/source/docs/parameters-{key.title()}-"
+            try:
+                old_parameters_files = [
+                    f for f in glob.glob(f"{old_parameters_mask}*.rst")]
+                for filename in old_parameters_files:
+                    debug(f"Erasing rst {filename}")
+                    os.remove(filename)
+            except Exception as e:
+                error(e)
+                pass
+
+            # Remove old json file
+            if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
+                target_json_file = ('./{}/source/_static/parameters-{}.json'.format("AntennaTracker", "AntennaTracker"))
+            else:
+                target_json_file = (f'./{value}/source/_static/parameters-{key.title()}.json')
+            debug(f"Erasing json {target_json_file}")
+            remove_if_exists(target_json_file)
+
+
 def fetch_versioned_parameters(site=None):
     """
     It relies on "build_parameters.py" be executed before the "update.py"
 
-    Once the generated files are on ../new_params_mversion it tut all
+    Once the generated files are on ../new_params_mversion it, put all
     parameters and JSON files in their destinations.
     """
 
@@ -742,28 +776,7 @@ def fetch_versioned_parameters(site=None):
                 debug(f"Erasing {single_param_file}")
                 remove_if_exists(single_param_file)
 
-                # Remove old versioned param files
-                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                    old_parameters_mask = f"{os.getcwd()}/AntennaTracker/source/docs/parameters-AntennaTracker-"
-                else:
-                    old_parameters_mask = f"{os.getcwd()}/{key}/source/docs/parameters-{key.title()}-"
-                try:
-                    old_parameters_files = [
-                        f for f in glob.glob(f"{old_parameters_mask}*.rst")]
-                    for filename in old_parameters_files:
-                        debug(f"Erasing rst {filename}")
-                        os.remove(filename)
-                except Exception as e:
-                    error(e)
-                    pass
-
-                # Remove old json file
-                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                    target_json_file = ('./{}/source/_static/parameters-{}.json'.format("AntennaTracker", "AntennaTracker"))
-                else:
-                    target_json_file = (f'./{value}/source/_static/parameters-{key.title()}.json')
-                debug(f"Erasing json {target_json_file}")
-                remove_if_exists(target_json_file)
+                cleanup_versioned_parameters(key)
 
                 # Moves the updated JSON file
                 if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
@@ -1213,6 +1226,7 @@ class WikiUpdater:
                 fetch_versioned_parameters(self.args.site)
             else:
                 # Single parameters file. Just present the latest parameters:
+                cleanup_versioned_parameters(self.args.site)
                 fetchparameters(self.args.site, self.args.cached_parameter_files)
 
             # Fetch most recent LogMessage metadata from autotest:
