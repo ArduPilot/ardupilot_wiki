@@ -596,15 +596,12 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                     targetfile = f'{wiki}/source/docs/{file}'
 
                     # Only write if content has changed (preserves timestamps for unchanged files)
-                    # Use byte-accurate file comparison against the source file.
+                    # Use byte-accurate file comparison against the source file stripped of copywiki shortcodes.
                     if not clean_common and os.path.exists(targetfile):
-                        try:
-                            if filecmp.cmp(source_file_path, targetfile, shallow=False):
+                        with open(targetfile, 'r', encoding='utf-8') as f:
+                            if f.read() == content:
                                 files_skipped += 1
                                 continue
-                        except Exception as e:
-                            debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
-                            # treat as different and fall through to write
 
                     # debug(targetfile)
                     with open(targetfile, 'w', encoding='utf-8') as destination_file:
