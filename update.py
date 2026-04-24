@@ -734,15 +734,12 @@ def cleanup_versioned_parameters(site=None):
                 old_parameters_mask = "./AntennaTracker/source/docs/parameters-AntennaTracker-"
             else:
                 old_parameters_mask = f"./{key}/source/docs/parameters-{key.title()}-"
-            try:
-                old_parameters_files = [
-                    f for f in glob.glob(f"{old_parameters_mask}*.rst")]
-                for filename in old_parameters_files:
-                    debug(f"Erasing rst {filename}")
-                    os.remove(filename)
-            except Exception as e:
-                error(e)
-                pass
+
+            old_parameters_files = [
+                f for f in glob.glob(f"{old_parameters_mask}*.rst")]
+            for filename in old_parameters_files:
+                debug(f"Erasing rst {filename}")
+                remove_if_exists(filename)
 
             # Remove old json file
             if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
