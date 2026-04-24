@@ -4,6 +4,10 @@
 Using SITL with AirSim
 ======================
 
+.. warning::
+
+  This page is archived and is not being maintained anymore. AirSim integration with ArduPilot is still available and supported, but the instructions on this page might be outdated.
+
 .. youtube:: -WfTr1-OBGQ
    :width: 100%
 
