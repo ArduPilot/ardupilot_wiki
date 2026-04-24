@@ -17,7 +17,6 @@ Overview
    intuitively with a single control stick if using a Mode 2 transmitter
 -  The user has completely manual control over the throttle as in
    :ref:`Stabilize mode <stabilize-mode>`.
--  **Drift Mode is available as of release 3.1 of the Copter firmware.**
 
 ..  youtube:: 0mdk2-sNXmg
     :width: 100%
