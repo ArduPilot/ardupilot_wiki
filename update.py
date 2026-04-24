@@ -112,7 +112,7 @@ logger.addHandler(error_store_handler)
 logging.getLogger('urllib3').setLevel(logging.WARNING)
 
 
-DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover', 'sub']
+DEFAULT_COPY_WIKIS = ['antennatracker', 'blimp', 'copter', 'plane', 'rover', 'sub']
 ALL_WIKIS = [
     'copter',
     'plane',
