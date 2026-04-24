@@ -197,7 +197,7 @@ This is during Pitch Rate P adjustment, indicating a twitch is about to happen a
 
 Anytime the process is interrupted by pilot stick movements, the
 
-:: 
+::
 
  09:09:38   AUTOTUNE: pilot overrides active
 

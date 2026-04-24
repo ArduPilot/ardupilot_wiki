@@ -47,6 +47,7 @@ the default parameters for your vehicle.
    sim_vehicle.py --console --map -w
 
 Alternatively, if not starting in the ArduCopter directory, but at the base **ardupilot** directory:
+
 ::
 
    sim_vehicle.py -v copter --console --map -w

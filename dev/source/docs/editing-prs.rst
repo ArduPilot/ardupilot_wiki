@@ -19,7 +19,8 @@ First, determine if you have been given permission to modify the PR. If so, then
 "Add more commits by pushing to the ``xyz`` branch on ``username/ardupilot``"
 
 First set up a remote to username's repository, in this case we will call it ``tempremote`` :
-::
+
+.. code-block:: bash
 
    git remote add tempremote https://github.com/username/ardupilot.git
 
@@ -27,7 +28,7 @@ this sets up ``tempremote`` to point to the originators repository on GitHub.
 
 To pull the PR branch ``xyz`` down to your local computer's repository in order to modify it:
 
-::
+.. code-block:: bash
 
    git fetch tempremote  xyz
 
@@ -35,7 +36,7 @@ which will copy the PR's branch into a local buffer.
 
 Then create a local branch ``username-xyz`` and which is a copy of the PR
 
-::
+.. code-block:: bash
 
    git checkout -b username-xyz tempremote/xyz
 
@@ -46,7 +47,7 @@ You should also "squash" (see :ref:`git-interactive-rebase` ) your commit into t
 
 Finally, you can force push over the originators PR to include your modifications:
 
-::
+.. code-block:: bash
 
   git push -f tempremote HEAD:xyz
 

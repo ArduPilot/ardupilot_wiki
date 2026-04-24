@@ -43,6 +43,7 @@ If you are on a debian based system (such as Ubuntu or Mint), we provide `a scri
 This script does NOT support building on operating systems that have reached end of Standard Support such as Ubuntu 20.04 LTS (Focal Fossa).
 
 From the cloned ardupilot directory :
+
 ::
 
     Tools/environment_install/install-prereqs-ubuntu.sh -y
@@ -208,6 +209,7 @@ How to Build the Docker Image
 -----------------------------
 
 Build the docker image and tag it with the name ardupilot:
+
 ::
 
     docker build . -t ardupilot --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)
@@ -217,6 +219,7 @@ Run ArduPilot Container
 The following command runs the docker container, linking your current directory with
 the Ardupilot source, and launches an interactive shell inside the container. From here
 you can build Ardupilot:
+
 ::
 
     docker run --rm -it -v "$(pwd):/ardupilot" -u "$(id -u):$(id -g)" ardupilot:latest bash

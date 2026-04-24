@@ -20,6 +20,7 @@ Starting an ArduPlane Simulation
 ================================
 
 To start an ArduPlane simulation use the ``-f`` argument in sim_vehicle.py:
+
 ::
 
     cd ArduPlane
@@ -29,6 +30,7 @@ Starting an ArduCopter Simulation
 =================================
 
 To start an ArduCopter simulation use the ``-f`` argument in sim_vehicle.py:
+
 ::
 
     cd ArduCopter
@@ -39,6 +41,7 @@ Additional SCRIMMAGE Parameters
 
 Additional parameters can be passed into SCRIMMAGE using the ``-A`` and ``--config`` arguments. These parameters can be used to
 overwrite the defaults in the SCRIMMAGE mission file such as the motion model, visual model, or terrain.
+
 ::
 
     cd ArduPlane
