@@ -1,5 +1,7 @@
 .. _sprayer:
 
+[copywiki destination="copter,plane"]
+
 ============
 Crop Sprayer
 ============
@@ -18,7 +20,7 @@ See also :ref:`Zig-Zag Mode <zigzag-mode>`
 Required Hardware
 =================
 
-   .. image:: ../images/sprayer_EnRoute_AC940D.jpg
+   .. image:: ../../../images/sprayer_EnRoute_AC940D.jpg
        :target: https://www.nttedt.co.jp/product?pgid=knya72d0-00609f8a-0b97-4818-be16-4d03a6ebf88a
 
 A multicopter such as the `EnRoute AC 940-D <https://www.nttedt.co.jp/product?pgid=knya72d0-00609f8a-0b97-4818-be16-4d03a6ebf88a>`_ with a PWM controlled pump and optionally a PWM controlled spinning mechanism (EnRoute vehicle does not require this secondary spinner control).

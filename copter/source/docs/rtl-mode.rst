@@ -23,7 +23,7 @@ The altitude reference frame is set by either the rally point, if proceeding to 
 
 If RTL is entered close to its return point, the altitude Copter climbs to may be limited to avoid unneeded climbs and descents. The :ref:`RTL_CONE_SLOPE<RTL_CONE_SLOPE>` parameter determines the slope of an inverted cone centered on the return point. This reduces the above return altitude according to: distance from return point * :ref:`RTL_CONE_SLOPE<RTL_CONE_SLOPE>`. So if the mode is entered 10m from the return point, using the default slope of "3", then the altitude rise would be limited to 30m before returning. It may be less depending on the other parameters, but not higher. If the slope were set to "0.5", then the initial climb would be no higher than 5m altitude before proceeding to the return point. A value of "0" disables this limit. "0.5" is the minimum slope. Again, 2m is the minimum return altitude.
 
-RTL mode requires a reliable position estimate to work properly, most commonly provided by GPS and compass. Default prearm checks will ensure a 3D GPS lock with sufficient HDOP is acquired and your mag is working as expected prior to arming. When using non-default arming checks, make sure you do have a sufficient GPS lock and / or a reliable position estimate for RTL to perform as expected.
+RTL mode requires a reliable position estimate to work properly, most commonly provided by GPS and compass. Default prearm checks will ensure a 3D GPS lock with sufficient HDOP is acquired and your mag is working as expected prior to arming, if required by the selected mode and configuration during arming (ie STABILIZE could be armed without a reliable position and a switch into RTL would be refused without it). When using non-default arming checks, make sure you do have a sufficient GPS lock and / or a reliable position estimate for RTL to perform as expected.
 
 
 RTL will command the copter to return to the home position, meaning that
@@ -50,16 +50,16 @@ Options (User Adjustable Parameters)
    minimum altitude the copter will move to before returning to launch.
 
    -  Set to zero to return at the current altitude.
-   -  The return altitude can be set from 1 to 8000 centimeters.
-   -  The default return altitude Default is 15 meters (1500)
+   -  The return altitude can be set from 0.3 to 3000 meters.
+   -  The default return altitude Default is 15 meters.
 
 -  :ref:`RTL_ALT_FINAL_M<RTL_ALT_FINAL_M>`: The
    altitude the copter will move to at the final stage of "Returning to
    Launch" or after completing a Mission.
 
    -  Set to zero to automatically land the copter. See :ref:`land-mode`.
-   -  The final return altitude may be adjusted from 0 to 1000
-      centimeters.
+   -  The final return altitude may be adjusted from 0 to 10
+      meters.
 
 -  :ref:`RTL_LOIT_TIME <RTL_LOIT_TIME>`:
    Time in milliseconds to hover/pause above the "Home" position before
@@ -79,7 +79,7 @@ Options (User Adjustable Parameters)
    The descent speed for the final stage of landing in centimeters per
    second.
 
-   -  The landing speed is adjustable from 20 to 200 centimeters per
+   -  The landing speed is adjustable from 0.3 to 2 meters per
       second.
 
 -  :ref:`RTL_CLIMB_MIN <RTL_CLIMB_MIN>`:

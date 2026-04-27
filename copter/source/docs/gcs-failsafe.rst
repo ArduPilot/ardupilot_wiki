@@ -55,9 +55,10 @@ The :ref:`FS_OPTIONS<FS_OPTIONS>` parameter (Copter 4.0 and later) is a bitmask 
 - bit 2 set: Continue if in guided mode :ref:`Radio Failsafe <radio-failsafe>`
 - bit 3 set: Continue if landing on any failsafe
 - bit 4 set: Continue in pilot control on :ref:`Ground Control Station Failsafe<gcs-failsafe>`
+- bit 5 set: Release gripper during failsafe handling
 - If none of the above are set, then execute the :ref:`FS_GCS_ENABLE <FS_GCS_ENABLE>` option as configured.
 
-.. note:: Only bitmask bits 1, 3, & 4 affect actions taken during GCS failsafe. This parameter also works in conjunction with the battery and radio failsafe, so ensure you are taking all options into account when setting this parameter.
+.. note:: Only bitmask bits 1, 3, 4 & 5 affect actions taken during GCS failsafe. This parameter also works in conjunction with the battery and radio failsafe, so ensure you are taking all options into account when setting this parameter.
 
 .. image:: ../images/FailsafeAdvPar801.jpg
     :target: ../_images/FailsafeAdvPar801.jpg

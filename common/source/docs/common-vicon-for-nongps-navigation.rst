@@ -1,6 +1,6 @@
 .. _common-vicon-for-nongps-navigation:
 
-[copywiki destination="copter,rover,blimp"]
+[copywiki destination="copter,plane,rover,blimp"]
 
 =======================================
 Using a Vicon indoor positioning system

@@ -79,6 +79,8 @@ tuning options for the vehicle.
 [site wiki="plane,copter,rover"]
     GPS for Yaw (aka Moving Baseline) <common-gps-for-yaw>
     GPS for Altitude <common-gps-for-alt>
+[/site]
+[site wiki="copter,plane,rover,blimp,sub"]
     GPS/Non-GPS Transitions <common-non-gps-to-gps>
 [/site]
     Ground Control Station Only Operation <common-gcs-only-operation>
@@ -111,7 +113,7 @@ tuning options for the vehicle.
 [/site]
     Moving Vehicle Initialization <common-moving-vehicle-initialization>
     Multiple Radio Control Receivers <common-multiple-rx>
-[site wiki="copter,rover"]
+[site wiki="copter,plane,rover,blimp,sub"]
     Non-GPS Navigation <common-non-gps-navigation-landing-page>
 [/site]
     Notification Devices (LEDs,Buzzer,etc.) <common-ntf-devices>

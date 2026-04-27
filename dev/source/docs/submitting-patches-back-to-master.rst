@@ -29,7 +29,8 @@ Preparing commits
   means that intermediate commits break the build. This also implies that
   moving code from one library to another happens in two commits: one that
   "deletes" it from the old spot, and a separate one that "creates" it at
-  the new spot.
+  the new spot. It's better for unrelated changes in a single library
+  to be separate commits in the pull request.
 
 - Do not create 'only fix formatting' commits. The disruption they cause
   to git history is more significant than their improvement to the code.
@@ -66,6 +67,8 @@ Preparing commits
         APM_Control: reduce the number of parameter saves in autotune
 
         do not save a parameter unless it has changed by 0.1%
+
+- The brief description (summary) line should be less than 72 characters so it renders correctly in Github.
 
 - **clean up your local commit history** :ref:`using interactive rebase <git-interactive-rebase>`
   (i.e. ``git rebase -i "HEAD~10"``) to re-arrange patches and fold things together. The idea is to present

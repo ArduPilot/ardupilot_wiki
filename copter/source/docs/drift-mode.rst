@@ -48,10 +48,10 @@ How Drift Mode works
    altitude.  If the pilot puts the throttle completely down the motors
    will go to their minimum rate (:ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>`) and if the vehicle
    is flying it will lose attitude control and tumble.
--  Drift Mode relies on your GPS for control.
+-  Drift Mode relies on a valid position estimate, such as GPS, for control.
 -  If you lose your GPS signal in flight while in Drift Mode, your
    copter will either land or enter altitude hold based on your
-   failsafe_gps_enabled setting.
+   :ref:`FS_EKF_ACTION <FS_EKF_ACTION>` setting.
 -  You should also be prepared to switch back to Stabilize Mode for
    manual recovery if necessary.
 

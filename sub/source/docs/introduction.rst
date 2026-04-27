@@ -4,6 +4,12 @@
 Introduction to Sub
 ===================
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   common-use-cases-and-applications
+
 Sub is an advanced open-source autopilot system for submersible ROVs (Remote Operated Vehicle) that supports multiple vehicle configurations. It offers a variety of operating modes from fully manual to fully autonomous, and is designed to be safe, feature-rich, open-ended, and easy to use even for novice users. 
 
 .. image:: ../images/sub-system.jpg
@@ -50,3 +56,4 @@ Sub provides access to many functionalities through its fine-grained :ref:`param
 * Optional Buoyancy Control instead of vertical thrusters/neutral buoyancy
 
 **No programming is required** for standard operation, but highly detailed interfaces are available for programmatic control (including :ref:`MAVLink commands<dev:mavlink-commands>`), and the autopilot firmware can be freely modified and extended (including through dynamically loaded :ref:`common-lua-scripts`).
+
