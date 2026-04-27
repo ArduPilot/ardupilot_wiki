@@ -50,6 +50,7 @@ import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, TimeoutError
 from datetime import datetime
+from pathlib import Path
 from typing import Dict, List, Optional
 from urllib.parse import urlparse
 
@@ -586,26 +587,21 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
         for file in files:
             if file.endswith(".rst"):
                 # debug("  FILE: %s" % file)
-                source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', encoding='utf-8')
-                source_content = source_file.read()
-                source_file.close()
+                source_file_path = Path(root) / file
+                source_content = source_file_path.read_text(encoding='utf-8')
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
                     content = strip_content(source_content, wiki)
-                    targetfile = f'{wiki}/source/docs/{file}'
+                    targetfile = Path(f"{wiki}/source/docs/{file}")
 
                     # Only write if content has changed (preserves timestamps for unchanged files)
-                    # Use byte-accurate file comparison against the source file stripped of copywiki shortcodes.
-                    if not clean_common and os.path.exists(targetfile):
-                        with open(targetfile, 'r', encoding='utf-8') as f:
-                            if f.read() == content:
-                                files_skipped += 1
-                                continue
+                    # Compare against the file content after stripping copywiki shortcodes.
+                    if not clean_common and targetfile.exists():
+                        if targetfile.read_text(encoding='utf-8') == content:
+                            files_skipped += 1
+                            continue
 
-                    # debug(targetfile)
-                    with open(targetfile, 'w', encoding='utf-8') as destination_file:
-                        destination_file.write(content)
+                    targetfile.write_text(content, encoding='utf-8')
                     files_copied += 1
             elif file.endswith(".css"):
                 for wiki in ALL_WIKIS:
