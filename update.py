@@ -585,9 +585,9 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
 
     for root, dirs, files in os.walk(start_dir):
         for file in files:
+            source_file_path = Path(root) / file
             if file.endswith(".rst"):
                 # debug("  FILE: %s" % file)
-                source_file_path = Path(root) / file
                 source_content = source_file_path.read_text(encoding='utf-8')
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
@@ -605,14 +605,12 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                     files_copied += 1
             elif file.endswith(".css"):
                 for wiki in ALL_WIKIS:
-                    source_file_path = Path(root) / file
                     targetfile = Path(wiki) / "source" / "_static" / file
                     # Only copy if different
                     if not clean_common and targetfile.exists() and filecmp.cmp(source_file_path, targetfile, shallow=False):
                         continue
                     shutil.copy2(source_file_path, targetfile)
             elif file.endswith(".js"):
-                source_file_path = Path(root) / file
                 source_content = source_file_path.read_text(encoding='utf-8')
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
