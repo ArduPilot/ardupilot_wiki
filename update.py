@@ -592,7 +592,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
                     content = strip_content(source_content, wiki)
-                    targetfile = Path(f"{wiki}/source/docs/{file}")
+                    targetfile = Path(wiki) / "source" / "docs" / file
 
                     # Only write if content has changed (preserves timestamps for unchanged files)
                     # Compare against the file content after stripping copywiki shortcodes.
@@ -605,24 +605,22 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                     files_copied += 1
             elif file.endswith(".css"):
                 for wiki in ALL_WIKIS:
-                    src = os.path.join(root, file)
-                    dst = f'{wiki}/source/_static/{file}'
+                    source_file_path = Path(root) / file
+                    targetfile = Path(wiki) / "source" / "_static" / file
                     # Only copy if different
-                    if not clean_common and os.path.exists(dst) and filecmp.cmp(src, dst, shallow=False):
+                    if not clean_common and targetfile.exists() and filecmp.cmp(source_file_path, targetfile, shallow=False):
                         continue
-                    shutil.copy2(src, dst)
+                    shutil.copy2(source_file_path, targetfile)
             elif file.endswith(".js"):
-                source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', encoding='utf-8')
-                source_content = source_file.read()
-                source_file.close()
+                source_file_path = Path(root) / file
+                source_content = source_file_path.read_text(encoding='utf-8')
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
                     content = strip_content(source_content, wiki)
-                    targetfile = f'{wiki}/source/_static/{file}'
+                    targetfile = Path(wiki) / "source" / "_static" / file
 
                     # Only write if content has changed
-                    if not clean_common and os.path.exists(targetfile):
+                    if not clean_common and targetfile.exists():
                         try:
                             if filecmp.cmp(source_file_path, targetfile, shallow=False):
                                 continue
@@ -630,9 +628,7 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                             debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
                             # treat as different and fall through to write
 
-                    # debug(targetfile)
-                    with open(targetfile, 'w', encoding='utf-8') as destination_file:
-                        destination_file.write(content)
+                    targetfile.write_text(content, encoding='utf-8')
 
     info(f"Common files: {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
 
