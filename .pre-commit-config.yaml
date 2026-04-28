@@ -5,6 +5,19 @@
 #  pre-commit run --all-files: run all the hooks against all the files. This is a useful invocation if you are using pre-commit in CI.
 
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
+      - id: check-ast
+
+      - id: check-xml
+      - id: check-yaml
+      - id: check-json
+
+      - id: check-merge-conflict
+
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.2
     hooks:
