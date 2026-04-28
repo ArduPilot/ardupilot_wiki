@@ -619,12 +619,8 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
 
                     # Only write if content has changed
                     if not clean_common and targetfile.exists():
-                        try:
-                            if filecmp.cmp(source_file_path, targetfile, shallow=False):
-                                continue
-                        except Exception as e:
-                            debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
-                            # treat as different and fall through to write
+                        if targetfile.read_text(encoding='utf-8') == content:
+                            continue
 
                     targetfile.write_text(content, encoding='utf-8')
 
