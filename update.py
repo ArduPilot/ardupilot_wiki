@@ -370,15 +370,35 @@ def build_one(wiki, fast):
     if not fast and os.path.exists(output_dir):
         shutil.rmtree(output_dir)
 
-    app = Sphinx(
-        buildername='html',
-        confdir=source_dir,
-        doctreedir=doctree_dir,
-        outdir=html_dir,
-        parallel=2,
-        srcdir=source_dir,
-    )
-    app.build()
+    try:
+        app = Sphinx(
+            buildername='html',
+            confdir=source_dir,
+            doctreedir=doctree_dir,
+            outdir=html_dir,
+            parallel=2,
+            srcdir=source_dir,
+        )
+        app.build()
+    except Exception as exc:
+        print(f"[update.py]: [ERROR]: Sphinx build exception for {wiki}: {exc}", file=sys.stderr)
+        sys.exit(1)
+
+    if app._warncount > 0:
+        sys.exit(2)
+
+
+def _reap_finished_procs(procs):
+    """Join any finished child processes and report their exit status."""
+    for p in procs[:]:
+        if p.exitcode is not None:
+            wiki_name = "_".join(p.name.split("_")[2:])
+            p.join()
+            procs.remove(p)
+            if p.exitcode == 1:
+                error(f"Sphinx build error for {wiki_name}")
+            elif p.exitcode == 2:
+                error(f"Sphinx warnings were emitted for {wiki_name}")
 
 
 def sphinx_make(site, parallel, fast):
@@ -398,24 +418,14 @@ def sphinx_make(site, parallel, fast):
             continue
         if site is not None and not site == wiki:
             continue
-        p = multiprocessing.Process(target=build_one, args=(wiki, fast))
+        p = multiprocessing.Process(name=f"build_one_{wiki}", target=build_one, args=(wiki, fast))
         p.start()
         procs.append(p)
         while parallel != -1 and len(procs) >= parallel:
-            for p in procs:
-                if p.exitcode is not None:
-                    p.join()
-                    procs.remove(p)
-                    if p.exitcode != 0:
-                        error('Error making sphinx(1)')
+            _reap_finished_procs(procs)
             time.sleep(0.1)
     while len(procs) > 0:
-        for p in procs[:]:
-            if p.exitcode is not None:
-                p.join()
-                procs.remove(p)
-                if p.exitcode != 0:
-                    error('Error making sphinx(2)')
+        _reap_finished_procs(procs)
         time.sleep(0.1)
 
 
