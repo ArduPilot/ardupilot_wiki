@@ -59,6 +59,7 @@ from sphinx.application import Sphinx
 
 import rst_table
 from frontend.scripts import get_discourse_posts
+from scripts.dedupe_params import dedupe_periph_net_parameters
 
 if sys.version_info < (3, 8):
     print("Minimum python version is 3.8")
@@ -1165,6 +1166,7 @@ class WikiUpdater:
 
         logging_level = logging.DEBUG if self.verbose else logging.INFO
         logger.setLevel(logging_level)
+        logging.getLogger('scripts.dedupe_params').setLevel(logging_level)
         stream_handler.setLevel(logging_level)
 
     def run(self) -> None:
@@ -1191,6 +1193,7 @@ class WikiUpdater:
                 cleanup_versioned_parameters(self.args.site)
                 fetchparameters(self.args.site, self.args.cached_parameter_files)
 
+            dedupe_periph_net_parameters('./dev/source/docs/AP_Periph-Parameters.rst')
             # Fetch most recent LogMessage metadata from autotest:
             fetchlogmessages(self.args.site, self.args.cached_parameter_files)
 

@@ -41,6 +41,8 @@ from html.parser import HTMLParser
 import requests
 from requests.adapters import HTTPAdapter
 
+from scripts.dedupe_params import dedupe_old_rangefinder_parameters
+
 parser = argparse.ArgumentParser(description="python3 build_parameters.py [options]")
 parser.add_argument("--verbose", dest='verbose', action='store_false', default=True, help="show debugging output")
 parser.add_argument("--ardupilotRepoFolder", dest='gitFolder', default="../ardupilot", help="Ardupilot git folder. ")
@@ -84,8 +86,10 @@ class ColoredFormatter(logging.Formatter):
 
 handler = logging.StreamHandler(sys.stdout)
 handler.setFormatter(ColoredFormatter('[build_parameters.py]: [%(levelname)s]: %(message)s'))
-logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, handlers=[handler])
+logging_level = logging.DEBUG if args.verbose else logging.INFO
+logging.basicConfig(level=logging_level, handlers=[handler])
 logger = logging.getLogger(__name__)
+logging.getLogger('scripts.dedupe_params').setLevel(logging_level)
 
 # Global session for HTTP requests with connection pooling
 session = requests.Session()
@@ -174,49 +178,6 @@ def rst_has_duplicate_labels(filepath: str) -> bool:
         logger.warning(f"Found {len(duplicates)} duplicate RST labels in {filepath}: {duplicates[:5]}")
         return True
     return False
-
-
-def dedupe_rngfnd_parameters_sections(filepath: str) -> None:
-    """Keep only the first RNGFNDx_* Parameters section and drop subsequent duplicate sections."""
-    label_re = re.compile(r'^\.\. _parameters_RNGFND([0-9A-Za-z]+)_.*:$', re.IGNORECASE)
-    section_label_re = re.compile(r'^\.\. _RNGFND([0-9A-Za-z]+).*:$', re.IGNORECASE)
-
-    try:
-        with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
-            lines = f.readlines()
-    except (UnicodeDecodeError, OSError) as e:
-        debug(f"Failed to dedupe RNGFND parameters in {filepath}: {e}")
-        return
-
-    seen_labels = set()
-    saved_lines = []  # Lines to write back to the file after deduplication
-    i = 0
-    while i < len(lines):
-        current_line = lines[i]
-        current_line_stripped = current_line.strip()
-
-        rangefinder_label = label_re.match(current_line_stripped)
-        if rangefinder_label:
-            rngfnd_id = rangefinder_label.group(1)
-            if rngfnd_id in seen_labels:
-                # Don't save the duplicated line on new file, skip to next section
-                i += 1
-                while i < len(lines) and not section_label_re.match(lines[i].strip()):
-                    i += 1
-                continue
-
-            seen_labels.add(rngfnd_id)
-
-        saved_lines.append(current_line)
-        i += 1
-
-    if len(saved_lines) != len(lines):
-        try:
-            with open(filepath, 'w', encoding='utf-8') as f:
-                f.writelines(saved_lines)
-            debug(f"Dedupe applied to RNGFND sections in {filepath}")
-        except (UnicodeDecodeError, OSError) as e:
-            debug(f"Failed to dedupe RNGFND parameters in {filepath}: {e}")
 
 
 def patch_cgi_escape_for_old_versions(version, param_metadata_dir):
@@ -685,7 +646,7 @@ def generate_rst_files(commits_to_checkout_and_parse):
                 os.remove(parameters_rst_path)
                 debug(f"File {filename} generated.")
                 # Remove duplicate RNGFNDx_ Parameters sections before checking labels.
-                dedupe_rngfnd_parameters_sections(output_file_path)
+                dedupe_old_rangefinder_parameters(output_file_path)
                 # Check for duplicate RST labels in the generated file
                 if rst_has_duplicate_labels(output_file_path):
                     debug(f"RST duplicate labels detected in {output_file_path}")
