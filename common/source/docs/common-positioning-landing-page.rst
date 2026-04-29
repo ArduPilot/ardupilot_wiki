@@ -83,6 +83,10 @@ These GPS can incorporate real time kinematic data, either internally generated 
     CubePilot HEREPRO DroneCAN F9P RTK GPS/Compass <https://docs.cubepilot.org/user-guides/herepro/herepro-manual>
     Freefly RTK GPS Ground Station <https://store.freeflysystems.com/products/rtk-gps-ground-station>
     Foxteck AEROFOX F9P-RTK <https://www.foxtechfpv.com/aerofox-f9p-rtk-unit.html>
+    GNSS.Store UM980 ultraLight RTK GNSS Smart Antenna <https://gnss.store/products/elt0237>
+    GNSS.Store ZED-X20P ultraLight RTK GNSS Smart Antenna <https://gnss.store/products/elt0437>
+    GNSS.Store mosaic-X5 ultraLight RTK GNSS Smart Antenna <https://gnss.store/products/elt0737>
+    GNSS.Store mosaic-g5 ultraLight RTK GNSS Smart Antenna <https://gnss.store/products/elt0757>
     Hitec PositionPro GNSS <https://www.hiteccs.com/drones/peripheral-details/positionpro-gnss-receiver/>
     Holybro DroneCAN H-RTK F9P Rover <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-rover>
     Holybro DroneCAN H-RTK F9P Helical <https://holybro.com/collections/gps-rtk-systems/products/dronecan-h-rtk-f9p-helical>
