@@ -14,7 +14,7 @@ Installing MAVExplorer on Linux
 You will need the latest version of pymavlink and mavproxy installed. On
 Linux do this:
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo apt-get install python3-matplotlib python3-serial python3-wxgtk3.0 python3-lxml
     sudo apt-get install python3-scipy python3-opencv  python3-pip python3-pexpect python3-tk

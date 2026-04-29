@@ -96,13 +96,13 @@ AirSim's page on Linux & MacOS Setup is `here <https://github.com/microsoft/AirS
 
   #. Clone the repository
 
-        ..code-block:: bash
+        .. code-block:: bash
 
             git clone https://github.com/Microsoft/AirSim.git
 
   #. Build it
 
-        ..code-block:: bash
+        .. code-block:: bash
 
             cd AirSim
             ./setup.sh
@@ -150,28 +150,28 @@ Launch Copter SITL
 
 For using ArduCopter, the settings are as follows:
 
-..code-block:: json
+.. code-block:: json
 
-    {
-      "SettingsVersion": 1.2,
-      "LogMessagesVisible": true,
-      "SimMode": "Multirotor",
-      "OriginGeopoint": {
-        "Latitude": -35.363261,
-        "Longitude": 149.165230,
-        "Altitude": 583
-      },
-      "Vehicles": {
-        "Copter": {
-          "VehicleType": "ArduCopter",
-          "UseSerial": false,
-          "LocalHostIp": "127.0.0.1",
-          "UdpIp": "127.0.0.1",
-          "UdpPort": 9003,
-          "ControlPort": 9002
-        }
+  {
+    "SettingsVersion": 1.2,
+    "LogMessagesVisible": true,
+    "SimMode": "Multirotor",
+    "OriginGeopoint": {
+      "Latitude": -35.363261,
+      "Longitude": 149.165230,
+      "Altitude": 583
+    },
+    "Vehicles": {
+      "Copter": {
+        "VehicleType": "ArduCopter",
+        "UseSerial": false,
+        "LocalHostIp": "127.0.0.1",
+        "UdpIp": "127.0.0.1",
+        "UdpPort": 9003,
+        "ControlPort": 9002
       }
     }
+  }
 
 .. note::
 
@@ -179,7 +179,7 @@ For using ArduCopter, the settings are as follows:
 
 First launch AirSim, after that launch the ArduPilot SITL using
 
-..code-block:: bash
+.. code-block:: bash
 
     sim_vehicle.py -v ArduCopter -f airsim-copter --console --map
 
@@ -199,7 +199,7 @@ Launch Rover SITL
 
 ``settings.json`` for using ArduRover:
 
-..code-block:: json
+.. code-block:: json
 
     {
       "SettingsVersion": 1.2,
@@ -234,7 +234,7 @@ Launch Rover SITL
 
 First launch AirSim, after that launch the ArduPilot SITL using
 
-..code-block:: bash
+.. code-block:: bash
 
     sim_vehicle.py -v Rover -f airsim-rover --console --map
 
@@ -251,7 +251,7 @@ See `Lidar Settings <https://github.com/Microsoft/AirSim/blob/master/docs/lidar.
 
 Current `settings.json` file for launching ArduCopter with Lidar
 
-..code-block:: json
+.. code-block:: json
 
     {
       "SettingsVersion": 1.2,
@@ -301,7 +301,7 @@ Current `settings.json` file for launching ArduCopter with Lidar
 
 Launch Copter with Lidar using
 
-..code-block:: bash
+.. code-block:: bash
 
     sim_vehicle.py -v ArduCopter -f airsim-copter --add-param-file=libraries/SITL/examples/Airsim/lidar.parm --console --map
 
@@ -319,7 +319,7 @@ Rangefinders in ArduPilot are called Distance Sensors in AirSim. See `AirSim's S
 
 Some example settings and parameters are shown below, to create a forward and downward-facing rangefinder. Note that only sensor settings are present, which can be easily inserted inplace of the ``Sensors`` element in the Lidar example above.
 
-..code-block:: json
+.. code-block:: json
 
     "Sensors": {
         "Imu": {
@@ -387,7 +387,7 @@ For simulating 2 copters, an example script has been added which will create 2 c
 
 ``settings.json`` for 2 copters
 
-..code-block:: json
+.. code-block:: json
 
     {
       "SettingsVersion": 1.2,
@@ -427,7 +427,7 @@ You can optionally specify the IP address of the computer with the GCS as the fi
 
 To attach MAVProxy -
 
-..code-block:: bash
+.. code-block:: bash
 
     mavproxy.py --master=127.0.0.1:14550 --source-system 1 --console --map
 
@@ -454,7 +454,7 @@ Using ROS for multi-vehicle tasks is a common usecase and Mavros is used for wor
 
 First is the `multi_vehicle.sh script <https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Airsim/multi_vehicle.sh>`__ which launches multiple ArduCopter binaries with different SYSIDs and ports for each vehicle. Usage is similar to the above script -
 
-..code-block:: bash
+.. code-block:: bash
 
     libraries/SITL/examples/Airsim/multi_vehicle.sh <IP>
 
@@ -462,7 +462,7 @@ First is the `multi_vehicle.sh script <https://github.com/ArduPilot/ardupilot/tr
 The `multi_uav_ros_sitl.launch file <https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Airsim/multi_uav_ros_sitl.launch>`__ demonstrates how to write a launch file controlling multiple vehicles with Mavros. It creates a different namespace for each drone and each drone has a separate SYSID and ports according to how the script sets the variables.
 Launching the file -
 
-..code-block:: bash
+.. code-block:: bash
 
     roslaunch libraries/SITL/examples/Airsim/multi_uav_ros_sitl.launch
 
@@ -526,7 +526,7 @@ Run on different machines
 
 An example:
 
-..code-block:: bash
+.. code-block:: bash
 
     sim_vehicle.py -v ArduCopter -f airsim-copter --console --map -A --sim-address=127.0.0.1
 
@@ -548,7 +548,7 @@ Using different ports
 
 Similar to changing the IP address as mentioned above, use ``-A`` to pass the arguments to the SITL instance. Example:
 
-..code-block:: bash
+.. code-block:: bash
 
     sim_vehicle.py -v ArduCopter -f airsim-copter --console --map -A "--sim-port-in=9003 --sim-port-out=9002"
 

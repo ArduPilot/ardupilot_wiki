@@ -76,13 +76,13 @@ Connect BBBlue to the internet using a shared internet connection over USB (see 
 
 On the BBBlue configure gateway and nameserver.
 
-..code-block:: bash
+.. code-block:: bash
     
     sudo nano /etc/network/interfaces
     
 Then paste the following lines under ``iface lo inet loopback``
 
-..code-block::
+.. code-block::
 
     iface usb0 inet static
     address 192.168.7.2
@@ -112,13 +112,13 @@ Next, configure the Host (Linux or Windows):
 
 Host computer's command prompt:
 
-..code-block:: bash
+.. code-block:: bash
 
     ifconfig
     
 use this output to figure out which is your internet connected network adapter and replace in the following 'wlan0' by the name of it:
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo sysctl net.ipv4.ip_forward=1
     sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
@@ -128,19 +128,19 @@ use this output to figure out which is your internet connected network adapter a
 
 Reboot the BBBlue and then reconnect again using SSH
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo reboot
 
 Eliminate the necessity for the user to enter the sudoer password:
 
-..code-block:: bash
+.. code-block:: bash
 
     echo "debian ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers.d/debian >/dev/null
 
 Install locales (a lot of programs complain otherwise) and set them:
 
-..code-block:: bash
+.. code-block:: bash
     
     sudo apt -y update
     sudo apt install -y locales
@@ -148,7 +148,7 @@ Install locales (a lot of programs complain otherwise) and set them:
 
 Choose a locale (e.g. en_US.UTF-8 = English, United States, UTF8). This may take a while.
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo apt -y dist-upgrade
     sudo apt install -y git
@@ -156,7 +156,7 @@ Choose a locale (e.g. en_US.UTF-8 = English, United States, UTF8). This may take
 
 Set CPU profile to "Performance":
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo sed -i 's/GOVERNOR="ondemand"/GOVERNOR="performance"/g' /etc/init.d/cpufrequtils
     
@@ -168,13 +168,13 @@ The following instructions show how to setup ArduPlane. It is the same for other
 
 Create an empty service file so that ardupilot automatically starts on boot and runs in the background:
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo nano /lib/systemd/system/arduplane.service
 
 Paste following text. And replace ``<target IP address>`` with the IP address of the telemetry receiving computer:
 
-..code-block:: systemd
+.. code-block:: systemd
 
     [Unit]
     Description=ArduPlane Service
@@ -190,13 +190,13 @@ Paste following text. And replace ``<target IP address>`` with the IP address of
     [Install]
     WantedBy=multi-user.target
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo mkdir -p /usr/bin/ardupilot
 
 Download the latest ArduPilot binary for the ``blue`` target/FC from https://firmware.ardupilot.org/ (`Plane/stable-4.1.6/blue/arduplane <https://firmware.ardupilot.org/Plane/stable-4.1.6/blue/arduplane>`__ used in this example). Copy this file to `/usr/bin/ardupilot/`.
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo wget -O /usr/bin/ardupilot/arduplane https://firmware.ardupilot.org/Plane/stable-4.1.6/blue/arduplane
     
@@ -207,7 +207,7 @@ Alternatively there are other possible sources like the https://custom.ardupilot
    In case this image does not exist anymore or is outdated, go to https://firmware.ardupilot.org/ and look for the vehicle type you want. Then look for the firmware you want - usually the most recent ``stable`` - and within that folder look for ``blue``. In this folder you will find some text files and the firmware binary/executable.
    
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo chmod 0755 /usr/bin/ardupilot/a*
     sudo systemctl enable arduplane.service
@@ -230,14 +230,14 @@ Via Wifi
 
 Connect the BBBlue to an available access point - this does NOT setup the BBBlue to act as access point itself.
 
-..code-block:: bash
+.. code-block:: bash
 
     connmanctl services | grep 'YOUR_SSID' | grep -Po 'wifi_[^ ]+'
     cat >/var/lib/connman/wifi.config
 
 One line at a time, we're writing a file line by line:
 
-..code-block:: systemd
+.. code-block:: systemd
 
     [service_<OUTPUT-FROM-CONNMANCTL-COMMAND>]
     Type = wifi
@@ -247,7 +247,7 @@ One line at a time, we're writing a file line by line:
 
 CTRL + C, should save File contents. Make sure to add a new line (press Enter) after Passphrase = ***** 
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo reboot
 
@@ -255,7 +255,7 @@ Again, ssh into the BBBlue at the former IP.
 
 Obtain the IP of the BBBlue wifi interface:
 
-..code-block:: bash
+.. code-block:: bash
 
     ip addr
 
@@ -274,7 +274,7 @@ Generally you can compile ArduPilot on the BBBlue itself. But this takes a lot o
 
 Install Ubuntu 20.04 64-Bit as build machine (e.g. can be VM or github action).
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo apt update
     sudo apt install git
@@ -283,12 +283,12 @@ Install Ubuntu 20.04 64-Bit as build machine (e.g. can be VM or github action).
 
 use either the stable tag ``ArduPlane-stable`` or the current Plane branch ``Plane-4.1`` (in the moment both refer to Plane-4.1.6) - make sure to use a ``stable`` version
 
-..code-block:: bash
+.. code-block:: bash
 
     ./Tools/environment_install/install-prereqs-ubuntu.sh
     git checkout Plane-4.1
 
-..code-block:: bash
+.. code-block:: bash
 
     ./waf configure --board=blue
     ./waf plane
@@ -302,20 +302,20 @@ In this section we update the kernel. There are two types of kernels: Real-time 
 
 Update local scripts:
 
-..code-block:: bash
+.. code-block:: bash
 
     cd /opt/scripts && git pull
 
 Update kernel:
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo /opt/scripts/tools/update_kernel.sh --bone-rt-kernel --lts-5_10
 
 
 Specify device tree binary to be used at startup:
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo sed -i 's/#dtb=/dtb=am335x-boneblue.dtb/g' /boot/uEnv.txt
 
@@ -328,7 +328,7 @@ There are two types of drivers available for the PRU's (Programmable Realtime Un
 
 Open uEnv.txt for editing:
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo nano /boot/uEnv.txt
 
@@ -337,19 +337,19 @@ Set ``uboot_overlay_pru=AM335X-PRU-UIO-00A0.dtbo``.
 
 Finally reboot the board to finalize configuration.
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo reboot
 
 Test to see if the device tree blob (DTB) is loaded
 
-..code-block:: bash
+.. code-block:: bash
 
     lsmod |grep uio
 
 It should show something like this:
 
-..code-block::
+.. code-block::
 
     uio_pruss       4928 0
     uio_pdrv_genirq 3539 0
@@ -361,7 +361,7 @@ Flash SD card to eMMC
 
 You can use the following steps to copy everything over to the eMMC. This way the SD card can be removed or used for other purposes.
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo nano /boot/uEnv.txt
 
@@ -369,7 +369,7 @@ Uncomment the line ``#cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.
 
 It should now be:
 
-..code-block:: bash
+.. code-block:: bash
 
     cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh
 
@@ -384,20 +384,20 @@ Power it up again and it should boot as usual.
 Check if booted from eMMC or SD card
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo apt-get install tiomapconf
 
 Boot from eMMC:
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo omapconf read 0x44E10040
     0040033C
 
 Boot from microSD (boot button pressed):
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo omapconf read 0x44E10040
     00400338
@@ -411,7 +411,7 @@ Via built-in Bluetooth
 
 In order to use the built-in Bluetooth connection as MAVLink some steps are required. First, we need a Python script that provides a rfcomm bluetooth service. The script also creates a virtual serial port (/dev/pts/0) which we will specify as ardupilot telemetry channel later. Everything that is sent or received to or from the virtual serial port will be redirected over bluetooth to our client application or ardupilot.
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo python3 -m pip install pybluez
     sudo python3 -m pip install pyserial
@@ -421,7 +421,7 @@ In order to use the built-in Bluetooth connection as MAVLink some steps are requ
 
 Paste the following script
 
-..code-block:: python
+.. code-block:: python
 
     import os, pty, serial, time
     from bluetooth import *
@@ -477,13 +477,13 @@ Paste the following script
     
 Next we create a systemd service for this script.
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo nano /lib/systemd/system/bluetooth-serial.service
     
 And paste the following text.
 
-..code-block:: systemd
+.. code-block:: systemd
 
     [Unit]
     Description=Bluetooth Serial Service
@@ -499,14 +499,14 @@ And paste the following text.
 
 We now have to adjust the previously created ardupilot service. Open the service file:
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo nano /lib/systemd/system/arduplane.service
     
 
 It's mandatory that the bluetooth-serial.service starts before ardupilot. We can replace the After=[...] to
 
-..code-block:: systemd
+.. code-block:: systemd
 
     After=bluetooth-serial.service
     
@@ -514,20 +514,20 @@ to achieve this behaviour.
 
 Next let's adjust the communication channel to our newly created virtual serial port:
 
-..code-block:: systemd
+.. code-block:: systemd
 
     ExecStart=/usr/bin/ardupilot/arduplane -A /dev/pts/0
 
 Enable service:
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo systemctl enable bluetooth-serial.service
 
 
 Save the file and reboot.
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo reboot
     
@@ -556,13 +556,13 @@ Careful: The uboot_overlay_pru version in this Github comment is outdated. Use t
 Check system config
 -------------------
 
-..code-block:: bash
+.. code-block:: bash
 
     sudo /opt/scripts/tools/version.sh
 
 The ``current`` config should look like this (Use diffchecker or similar tool):
 
-..code-block:: bash
+.. code-block:: bash
 
     git:/opt/scripts/:[1583f354594aabfaff08dee2a4aabdfe61433024]
     eeprom:[A335BNLTBLA21736EL001182]
