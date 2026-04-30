@@ -54,10 +54,12 @@ jobs:
                   exit 1
               fi
           done
+      - name: Register Sphinx problem matcher
+        run: echo "::add-matcher::.github/problem-matchers/sphinx.json"
       - name: Test build
         run: |
           export AP_SPHINXOPTS=-W
-          ./update.py --parallel 4 --verbose --destdir=/tmp/web 2>build_errors.txt
+          ./update.py --parallel 4 --verbose --destdir=/tmp/web 2>&1 | tee build_errors.txt; exit ${PIPESTATUS[0]}
       - name: Report build errors
         if: failure()
         run: |

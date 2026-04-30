@@ -1,0 +1,40 @@
+{
+  "problemMatcher": [
+    {
+      "owner": "sphinx-warning",
+      "severity": "warning",
+      "pattern": [
+        {
+          "regexp": "^(.+?):(\\d+): WARNING: (.+)$",
+          "file": 1,
+          "line": 2,
+          "message": 3
+        }
+      ]
+    },
+    {
+      "owner": "sphinx-error",
+      "severity": "error",
+      "pattern": [
+        {
+          "regexp": "^(.+?):(\\d+): ERROR: (.+)$",
+          "file": 1,
+          "line": 2,
+          "message": 3
+        }
+      ]
+    },
+    {
+      "owner": "sphinx-critical",
+      "severity": "error",
+      "pattern": [
+        {
+          "regexp": "^(.+?):(\\d+): CRITICAL: (.+)$",
+          "file": 1,
+          "line": 2,
+          "message": 3
+        }
+      ]
+    }
+  ]
+}
