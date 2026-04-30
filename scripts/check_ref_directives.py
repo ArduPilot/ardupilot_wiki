@@ -4,8 +4,9 @@
 Two rules are enforced:
   1. No alphanumeric/underscore/colon character directly before ``:ref:``
      (missing space before the role).
-  2. No space between a closing :ref: backtick and a punctuation character
-     ``.``, ``,`` or ``:``  (trailing space before punctuation).
+  2. No whitespace between ``:ref:`` and its opening backtick.
+  3. No space between a closing ``:ref:`` backtick and a punctuation character
+     ``.``, ``,`` or ``:``.  (trailing space before punctuation).
 
 """
 
@@ -15,7 +16,8 @@ import re
 import sys
 
 CHARACTER_BEFORE_RE = re.compile(r"[a-zA-Z0-9_:]:ref:")
-CHARACTER_AFTER_RE = re.compile(r"(:ref:`.*?`[_]{0,2}) ([\.,:])")
+CHARACTER_AFTER_RE = re.compile(r":ref:[^`]")
+SPACE_BEFORE_PUNCT_RE = re.compile(r"(:ref:`.*?`[_]{0,2}) ([\.,:])")
 
 
 def check_file(path: pathlib.Path) -> list[str]:
@@ -31,7 +33,11 @@ def check_file(path: pathlib.Path) -> list[str]:
             )
         if CHARACTER_AFTER_RE.search(line):
             errors.append(
-                f'{path}:{i}: remove space between :ref: and following punctuation'
+                f'{path}:{i}: remove whitespace between :ref: and its opening backtick'
+            )
+        if SPACE_BEFORE_PUNCT_RE.search(line):
+            errors.append(
+                f'{path}:{i}: remove space between :ref: closing backtick and punctuation'
             )
     return errors
 
