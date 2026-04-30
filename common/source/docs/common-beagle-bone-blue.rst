@@ -449,7 +449,7 @@ Paste the following script
         server.bind(("", PORT_ANY))
         server.listen(1)
         port = server.getsockname()[1]
-        advertise_service(server, "BBBlue-MAVLink", service_id = service_uuid, service_classes = [servi$
+        advertise_service(server, "BBBlue-MAVLink", service_id = service_uuid, service_classes = [SERIAL_PORT_CLASS], profiles = [SERIAL_PORT_PROFILE])
         client, client_info = server.accept()
         receive_thread = threading.Thread(target=receive, args=(client, master))
         send_thread = threading.Thread(target=send, args=(client, master))
