@@ -59,3 +59,11 @@ repos:
         entry: python scripts/check_youtube_timestamps.py
         language: python
         types: [rst]
+
+  - repo: local
+    hooks:
+      - id: check-ref-directives
+        name: Check ref directive formatting
+        entry: python scripts/check_ref_directives.py
+        language: python
+        types: [rst]
