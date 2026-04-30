@@ -138,8 +138,6 @@ WIKI_NAME_TO_VEHICLE_NAME = {
     'blimp': 'Blimp',
 }
 
-# GIT_REPO = ''
-
 PARAMETER_SITE = {
     'rover': 'APMrover2',
     'copter': 'ArduCopter',
@@ -160,7 +158,6 @@ LOGMESSAGE_SITE = {
 
 N_BACKUPS_RETAIN = 10
 
-VERBOSE = False
 # Global HTTP session for connection reuse and caching
 _http_session = None
 
@@ -245,8 +242,6 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
     info(f"Fetching {fetchurl}")
     # For larger files or when cache fails, use streaming download with progress
     session = get_http_session()
-
-    total_size = 0
 
     total_size = 0
 
