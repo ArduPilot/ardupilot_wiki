@@ -57,4 +57,13 @@ jobs:
       - name: Test build
         run: |
           export AP_SPHINXOPTS=-W
-          ./update.py --parallel 4 --verbose --destdir=/tmp/web
+          ./update.py --parallel 4 --verbose --destdir=/tmp/web 2>build_errors.txt
+      - name: Report build errors
+        if: failure()
+        run: |
+          if [ -s build_errors.txt ]; then
+            echo "## Build errors" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            cat build_errors.txt >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi

@@ -109,6 +109,15 @@ error_store_handler = ErrorStoreHandler()
 error_store_handler.setLevel(logging.ERROR)
 logger.addHandler(error_store_handler)
 
+# Dedicated logger for reprinting stored errors at end of run.
+# Uses stderr and ColoredFormatter but has NO ErrorStoreHandler attached,
+# preventing infinite recursion.
+_reprint_handler = logging.StreamHandler(sys.stderr)
+_reprint_handler.setFormatter(ColoredFormatter('[update.py]: [%(levelname)s]: %(message)s'))
+_reprint_logger = logging.getLogger(f'{__name__}.reprint')
+_reprint_logger.addHandler(_reprint_handler)
+_reprint_logger.propagate = False
+
 # Keep noisy third-party network logs quiet by default
 logging.getLogger('urllib3').setLevel(logging.WARNING)
 
@@ -1245,10 +1254,11 @@ class WikiUpdater:
         info(f"Total execution time: {total_time:.2f} seconds ({total_time / 60:.1f} minutes)")
 
         if error_count > 0:
-            # cannot use logger here to not infinitely recurse on error.
-            print("[update.py][\033[1;31merror\033[0m]: Reprinting error messages:", file=sys.stderr)
+            _reprint_logger.error("Reprinting error messages:")
             for error_msg in error_store_handler.error_messages:
-                print(f"[update.py][\033[1;31merror\033[0m]: {error_msg}", file=sys.stderr)
+                _reprint_logger.error(error_msg)
+            if os.environ.get('CI') or os.environ.get('GITHUB_ACTIONS'):
+                sys.exit(1)
         else:
             logger.info("Build completed without errors")
 
