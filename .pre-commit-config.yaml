@@ -54,6 +54,14 @@ repos:
 
   - repo: local
     hooks:
+      - id: check-ref-directives
+        name: Check ref directive formatting
+        entry: python scripts/check_ref_directives.py
+        language: python
+        types: [rst]
+
+  - repo: local
+    hooks:
       - id: check-youtube-timestamps
         name: Check YouTube timestamps are not in video ID
         entry: python scripts/check_youtube_timestamps.py
