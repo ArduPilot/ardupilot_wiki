@@ -172,6 +172,11 @@ def debug(str_to_print: str) -> None:
     logger.debug(str_to_print)
 
 
+def warning(str_to_print: str) -> None:
+    """Warning output."""
+    logger.warning(str_to_print)
+
+
 def error(str_to_print) -> None:
     """Show and count the errors."""
     logger.error(f"{str_to_print}")
@@ -1018,7 +1023,9 @@ def create_features_page(features, build_options_by_define, vehicletype):
                 build_options = build_options_by_define[feature]
             except KeyError:
                 # mismatch between build_options.py and features.json
-                error(f"feature {feature} ({platform_key},{vehicletype}) not in build_options.py")
+                # Doesn't report as error as we could have delay between updating
+                # build_options.py (from ardupilot repo master branch) and features.json (from firmwares server build result)
+                warning(f"feature {feature} ({platform_key},{vehicletype}) not in build_options.py")
                 continue
             if feature_in:
                 some_list = sorted_platform_features_in
