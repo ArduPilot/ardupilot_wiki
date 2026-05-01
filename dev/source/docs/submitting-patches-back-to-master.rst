@@ -88,6 +88,8 @@ Preparing commits
 - Try to follow the :ref:`style guide <style-guide>` so your code fits in with the existing code.
   In particular, ensure your editor uses 4 spaces instead of tabs.
 
+- For Python changes follow the :ref:`style guide <python-style-guide>` so your code fits in with the existing code.
+
 - Unix line endings (LF) are used. Git should take care of this
   automatically, but if you notice that you have a lot of files that show
   up as changed in ``git status`` but you didn't touch those files, you
@@ -143,6 +145,7 @@ PRs are more likely to be merged quickly if:
 - The PR clearly states what changes in behaviour are expected
 - Good testing evidence is provided.  This could be graphs of logs recorded before and after the change, possibly from a :ref:`simulation <simulation-2>`. Check for existing :ref:`autotests <the-ardupilot-autotest-framework>`, and update them if they get broken by the change. Add new ones to cover new functionality you're introducing, or bug fixes presently not tested, if you are capable.
 - Code follows the :ref:`style guide <style-guide>`
+- Python code follows the :ref:`python style guide <python-style-guide>`
 - Each commit in the PR affects only one subsystem and the commit title is prefixed with the subsystem name (e.g. "AP_GPS: correct uBlox logging parameter descriptions").  The `Tools/gittools/git-subsystems-split <https://github.com/ArduPilot/ardupilot/blob/master/Tools/gittools/git-subsystems-split>`__ script may be useful for this
 - PR passes all automated CI tests.  CI tests sometimes fail for reason unrelated to your PR (e.g. dependency failures, "flapping tests").  Please force push the PR to re-run the tests
 - The PR is discussed on one of the :ref:`weekly dev calls <ardupilot-discord-server>`.  To get the PR discussed add the "DevCallTopic" or "DevCallEU" label.  If you are unable to add the label ping one of the core developers on `ArduPilot Discord <https://ardupilot.org/discord>`__ (see the "code-review" channel).  "Core developers" can be identified by the "dev-team" badge in Discord and some also appear as `top contributors in Github <https://github.com/ArduPilot/ardupilot/graphs/contributors>`__
