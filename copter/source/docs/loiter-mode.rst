@@ -25,6 +25,11 @@ The pilot can control the copter's position with the control sticks.
 -  The heading can be set with the Yaw control stick
 
 The vehicle can be armed in Loiter mode but only once the GPS has 3D lock and the HDOP has dropped below 1.4.  :ref:`More details on LED patterns here <common-leds-pixhawk>`.
+If using another position source like optical flow or another :ref:`Non-GPS Navigation source <common-non-gps-navigation-landing-page>`, setting an EKF origin via GCS is enough, provided the positioning source functions satisfactorily. This enables use of Loiter indoors.
+
+.. note::
+
+   When Coordinated Turns are enabled (via the ``LOIT_OPTIONS`` parameter, Bit 0), the aircraft modifies its commanded accelerations in Loiter mode to take into account the requested yaw rate and current horizontal velocity. This produces turns that feel more natural and “aircraft-like,” as the drone banks into the turn to match the trajectory. Without this option, Loiter turns are controlled purely by position and velocity demands, which can result in a flat, sliding turn.
 
 .. _loiter-mode_tuning:
 
@@ -40,13 +45,14 @@ Details for tuning :ref:`AltHold are on this wiki page <altholdmode_tuning>`.
 Loiter Parameters
 -----------------
 
+- :ref:`LOIT_OPTIONS <LOIT_OPTIONS>`: Enabling Coordinated Turns enables Loiter mode to automatically include coordinated turn logic. This adjusts the requested roll and pitch accelerations so that the vehicle’s motion matches both the horizontal velocity vector and the commanded yaw rate.
 - :ref:`LOIT_SPEED_MS<LOIT_SPEED_MS>`: max horizontal speed in m/s 
 - :ref:`LOIT_ACC_MAX_M<LOIT_ACC_MAX_M>`: max acceleration in m/s/s.  Higher values cause the copter to accelerate and stop more quickly
 - :ref:`LOIT_ANG_MAX <LOIT_ANG_MAX>`: max lean angle in degrees (i.e. 30deg).  By default this value is zero which causes the :ref:`PSC_ANGLE_MAX<PSC_ANGLE_MAX>`  or :ref:`ATC_ANGLE_MAX<ATC_ANGLE_MAX>` parameter's value to be used
 - :ref:`LOIT_BRK_ACC_M<LOIT_BRK_ACC_M>`: max acceleration in m/s/s while braking (i.e. pilot has moved sticks to center).  Higher values will stop the vehicle more quickly
 - :ref:`LOIT_BRK_DELAY <LOIT_BRK_DELAY>`: the delay in seconds before braking starts once the pilot has centered the sticks
 - :ref:`LOIT_BRK_JRK_M<LOIT_BRK_JRK_M>`: max change in acceleration in m/s/s/s while braking.  Higher numbers will make the vehicle reach the maximum braking angle more quickly, lower numbers will cause smoother braking
-- ``PSC_POSXY_P``: (shown as "Position XY (Dist to Speed)" at the top right of the screen shot above) converts the horizontal position error (i.e difference between the desired position and the actual position) to a desired speed towards the target position.  **It is generally not required to adjust this**
+- :ref:`PSC_NE_POS_P <PSC_NE_POS_P>`: (shown as "Position XY (Dist to Speed)" at the top right of the screen shot above) converts the horizontal position error (i.e difference between the desired position and the actual position) to a desired speed towards the target position.  **It is generally not required to adjust this**
 - :ref:`PSC_NE_VEL_P<PSC_NE_VEL_P>` (shown as "Velocity XY (Vel to Accel)") converts the desired speed towards the target to a desired acceleration.  The resulting desired acceleration becomes a lean angle which is then passed to the same angular controller used by :ref:`Stabilize mode <stabilize-mode>`.  **It is generally not required to adjust this**
 
 
