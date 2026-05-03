@@ -22,7 +22,7 @@ The DroneCAN network is a decentralized peer network, where each peer
 (node) has a unique numeric identifier - node ID and that is only one
 parameter needs to be set for basic setup.
 
-Detailed description of protocol can be found at https://uavcan.org/
+Detailed description of protocol can be found at https://dronecan.github.io/
 
 
 DroneCAN Peripheral Types Supported
