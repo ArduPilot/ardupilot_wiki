@@ -92,9 +92,9 @@ ArduPilot dev team.
    controller and some peripherals including the OSD. A "Dummy's Guide" to
    working with MAVLink is
    `here <https://diydrones.com/group/arducopterusergroup/forum/mavlink-tutorial-for-absolute-dummies-part-i>`__.
--  `UAVCAN* <http://uavcan.org>`__ -
+-  `DroneCAN* <https://dronecan.github.io/>`__ -
    Lightweight protocol designed for reliable communication in aerospace and robotic 
-   applications via CAN bus. ArduPilot is using the `Libuavcan <http://uavcan.org/Implementations/Libuavcan/>`__,
+   applications via CAN bus. ArduPilot is using the `libcanard <https://github.com/DroneCAN/libcanard>`__,
    which is a portable, cross-platform library written in C++ with minimal dependency on the C++ standard library and calls its version DroneCAN, allowing UAVCAN to evolve separately.
 
 How the team works
