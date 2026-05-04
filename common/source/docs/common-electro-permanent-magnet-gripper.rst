@@ -204,5 +204,6 @@ will also provide power the CPU and may hide any voltage disturbance.
 User Video
 ==========
 
-..  youtube:: _iyTo9H7HAk&t=190s
+..  youtube:: _iyTo9H7HAk
     :width: 100%
+    :url_parameters: ?start=190S

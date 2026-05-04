@@ -28,8 +28,9 @@ ground station.
 -  `Code can be found here <https://code.google.com/archive/p/vrgimbal/source>`__
 -  Hardware schematics coming soon
 
-..  youtube:: KIqWXnAuKPo&t=25s
+..  youtube:: KIqWXnAuKPo
     :width: 100%
+    :url_parameters: ?start=25s
 
 .. note::
 

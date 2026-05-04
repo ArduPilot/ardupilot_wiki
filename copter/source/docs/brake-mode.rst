@@ -22,8 +22,9 @@ as possible.  Good GPS position, :ref:`low magnetic interference on the compass 
 are all important in achieving good performance.
 
 
-..  youtube:: -Db4u8LJE5w&t=103s
+..  youtube:: -Db4u8LJE5w
     :width: 100%
+    :url_parameters: ?start=103s
 
 Controls
 ========

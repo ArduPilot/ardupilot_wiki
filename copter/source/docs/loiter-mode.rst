@@ -8,10 +8,9 @@ Loiter Mode automatically attempts to maintain the current location, heading and
 
 A good GPS lock, :ref:`low magnetic interference on the compass <common-diagnosing-problems-using-logs_compass_interference>` and :ref:`low vibrations <common-diagnosing-problems-using-logs_vibrations>` are all important in achieving good loiter performance.
 
-For a visual demonstration, please `see 4:21 in the below video <https://youtu.be/yVAnBQkNJdY?t=261>`__
-
 ..  youtube:: yVAnBQkNJdY
     :width: 100%
+    :url_parameters: ?start=261s
 
 Controls
 ========

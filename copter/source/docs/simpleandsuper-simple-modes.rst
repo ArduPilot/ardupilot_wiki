@@ -29,8 +29,9 @@ away that it's heading is not apparent.
 -  Either mode can be assigned to a particular flight mode switch
    position or can be enabled/disabled from the :ref:`Ch7/Ch8 switches <channel-7-and-8-options>`.
 
-..  youtube:: iGA6D2GBFIc&t=82s
+..  youtube:: iGA6D2GBFIc
     :width: 100%
+    :url_parameters: ?start=82s
 
 Normal Mode
 ===========
