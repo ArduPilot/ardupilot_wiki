@@ -20,7 +20,7 @@ are all important in achieving good loiter performance.
 
 ..  youtube:: O5lEUo7w0bY
     :width: 100%
-    :url_parameters: ?start=117s
+    :url_parameters: ?start=117
 
 Controls
 ========

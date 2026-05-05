@@ -31,4 +31,4 @@ Video of in-flight tuning
 
 ..  youtube:: NOQPrTdrQJM
     :width: 100%
-    :url_parameters: ?start=145s
+    :url_parameters: ?start=145
