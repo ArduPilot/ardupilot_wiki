@@ -207,19 +207,21 @@ def get_http_session():
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'Connection': 'keep-alive'
         })
-        # Add retry logic for better reliability
-        from requests.adapters import HTTPAdapter
-        from urllib3.util.retry import Retry
+        if sys.version_info >= (3, 10):
+            # Urllib3 2.0+ needed for built-in retry support
+            # Add retry logic for better reliability
+            from requests.adapters import HTTPAdapter
+            from urllib3.util.retry import Retry
 
-        retries = Retry(
-            total=3,
-            backoff_factor=1,
-            status_forcelist=[429, 500, 502, 503, 504],
-            allowed_methods=["HEAD", "GET", "OPTIONS"]
-        )
-        adapter = HTTPAdapter(max_retries=retries)
-        _http_session.mount("https://", adapter)
-        _http_session.mount("http://", adapter)
+            retries = Retry(
+                total=3,
+                backoff_factor=1,
+                status_forcelist=[429, 500, 502, 503, 504],
+                allowed_methods=["HEAD", "GET", "OPTIONS"]
+            )
+            adapter = HTTPAdapter(max_retries=retries)
+            _http_session.mount("https://", adapter)
+            _http_session.mount("http://", adapter)
 
     return _http_session
 
