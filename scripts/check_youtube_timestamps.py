@@ -36,7 +36,7 @@ YOUTUBE_TIMESTAMP_RE = re.compile(
 # Matches a url_parameters option whose value uses a unit suffix after the
 # seconds number, e.g. ``?start=42s`` instead of the correct ``?start=42``.
 URL_PARAMETERS_SUFFIX_RE = re.compile(
-    r"^\s*:url_parameters:\s+.*[?&]start=\d+\w",
+    r"^\s*:url_parameters:\s+.*[?&]start=(\d+[a-zA-Z]\w*)",
 )
 
 
@@ -52,10 +52,11 @@ def check_file(path: pathlib.Path) -> list[str]:
                 f"{path}:{i}: youtube timestamp must use the url_parameters option,"
                 " not the video ID (e.g. :url_parameters: ?start=42)"
             )
-        if URL_PARAMETERS_SUFFIX_RE.match(line):
+        m = URL_PARAMETERS_SUFFIX_RE.match(line)
+        if m:
             errors.append(
-                f"{path}:{i}: url_parameters start value must be a plain integer"
-                " without a unit suffix (use ?start=42, not ?start=42s)"
+                f"{path}:{i}: url_parameters start value '{m.group(1)}' must be a"
+                " plain integer without a unit suffix (use ?start=42, not ?start=42s)"
             )
     return errors
 
