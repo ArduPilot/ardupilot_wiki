@@ -35,6 +35,26 @@ class TestCheckYoutubeTimestamps(unittest.TestCase):
         path = _rst(self.tmp, "valid_option.rst", content)
         self.assertEqual(check_youtube_timestamps.check_file(path), [])
 
+    def test_timestamp_t_with_s_suffix(self):
+        path = _rst(self.tmp, "bad_ts.rst", ".. youtube:: dQw4w9WgXcQ?t=42s\n")
+        errors = check_youtube_timestamps.check_file(path)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("url_parameters", errors[0])
+
+    def test_url_parameters_with_s_suffix(self):
+        content = ".. youtube:: dQw4w9WgXcQ\n    :url_parameters: ?start=42s\n"
+        path = _rst(self.tmp, "bad_suffix.rst", content)
+        errors = check_youtube_timestamps.check_file(path)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("42s", errors[0])
+        self.assertIn("plain integer", errors[0])
+
+    def test_url_parameters_plain_integer_no_false_positive(self):
+        # Ensure multi-digit plain integers like ?start=190 are not flagged
+        content = ".. youtube:: _iyTo9H7HAk\n    :url_parameters: ?start=190\n"
+        path = _rst(self.tmp, "valid_multidigit.rst", content)
+        self.assertEqual(check_youtube_timestamps.check_file(path), [])
+
     def test_timestamp_with_question_mark_t(self):
         path = _rst(self.tmp, "bad_qt.rst", ".. youtube:: dQw4w9WgXcQ?t=42\n")
         errors = check_youtube_timestamps.check_file(path)
