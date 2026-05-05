@@ -30,7 +30,7 @@ ground station.
 
 ..  youtube:: KIqWXnAuKPo
     :width: 100%
-    :url_parameters: ?start=25s
+    :url_parameters: ?start=25
 
 .. note::
 

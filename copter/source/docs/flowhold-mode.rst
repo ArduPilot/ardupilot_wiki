@@ -8,7 +8,7 @@ FlowHold mode uses an :ref:`optical flow sensor <common-optical-flow-sensors-lan
 
 ..  youtube:: SSISkG58cDk
     :width: 100%
-    :url_parameters: ?start=70s
+    :url_parameters: ?start=70
 
 .. warning::
 

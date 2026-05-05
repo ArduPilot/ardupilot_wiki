@@ -10,7 +10,7 @@ A good GPS lock, :ref:`low magnetic interference on the compass <common-diagnosi
 
 ..  youtube:: yVAnBQkNJdY
     :width: 100%
-    :url_parameters: ?start=261s
+    :url_parameters: ?start=261
 
 Controls
 ========

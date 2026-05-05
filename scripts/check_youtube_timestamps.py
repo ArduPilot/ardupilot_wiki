@@ -6,13 +6,20 @@ the ``url_parameters`` option instead::
 
     .. Bad (timestamp in video ID):
        .. youtube:: dQw4w9WgXcQ?t=42
+       .. youtube:: dQw4w9WgXcQ?t=42s
        .. youtube:: dQw4w9WgXcQ&t=42
 
-    .. Good (timestamp as option):
+    .. Bad (url_parameters with unit suffix):
+       :url_parameters: ?start=42s
+
+    .. Good (timestamp as option, plain integer):
        .. youtube:: dQw4w9WgXcQ
            :url_parameters: ?start=42
 
-Detected patterns: ``[?&](t|start)=<digits>`` anywhere in the video ID.
+Detected patterns:
+- ``[?&](t|start)=<digits>[optional suffix]`` in the video ID argument.
+- ``url_parameters`` option value containing ``?start=<digits>`` followed by a
+  non-digit character (e.g. ``s``).
 """
 
 import argparse
@@ -23,7 +30,13 @@ import sys
 # Matches a youtube directive whose argument contains a URL timestamp param.
 # The directive may start with one or more spaces before ``..``.
 YOUTUBE_TIMESTAMP_RE = re.compile(
-    r"^\s*\.\.\s+youtube::\s+\S+[?&](t|start)=\d+",
+    r"^\s*\.\.\s+youtube::\s+\S+[?&](t|start)=\d+\w*",
+)
+
+# Matches a url_parameters option whose value uses a unit suffix after the
+# seconds number, e.g. ``?start=42s`` instead of the correct ``?start=42``.
+URL_PARAMETERS_SUFFIX_RE = re.compile(
+    r"^\s*:url_parameters:\s+.*[?&]start=\d+\w",
 )
 
 
@@ -37,7 +50,12 @@ def check_file(path: pathlib.Path) -> list[str]:
         if YOUTUBE_TIMESTAMP_RE.match(line):
             errors.append(
                 f"{path}:{i}: youtube timestamp must use the url_parameters option,"
-                " not the video ID (e.g. :url_parameters: ?start=<seconds>)"
+                " not the video ID (e.g. :url_parameters: ?start=42)"
+            )
+        if URL_PARAMETERS_SUFFIX_RE.match(line):
+            errors.append(
+                f"{path}:{i}: url_parameters start value must be a plain integer"
+                " without a unit suffix (use ?start=42, not ?start=42s)"
             )
     return errors
 
