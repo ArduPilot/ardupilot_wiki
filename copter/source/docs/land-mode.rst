@@ -29,12 +29,12 @@ features:
    approximately one second:
 
    - Motors are commanded to their lower limit by the vertical position controller
-   - Throttle mix is at minimum (``is_throttle_mix_min``)
+   - Throttle is at minimum 
    - No large angle is being requested (roll/pitch target < 15°)
    - No large angle error exists (attitude error < 30°)
-   - The airframe is not accelerating (earth-frame accel ≈ 0)
-   - Vertical speed is within 1 m/s of zero
-   - If a healthy rangefinder is available: altitude is below 2m
+   - The airframe is not accelerating downward > 1m/s/s ( >2 m/s/s if Weight on Wheels feature is enabled)
+   - Vertical speed is within 1 m/s of zero ( within 2 m/s if Weight on Wheels feature is enabled)
+   - If a healthy rangefinder is available, and rangefinder altitude is below 2m
    - Weight-on-Wheels (WoW) sensor (if present) confirms contact or is unknown
 
    Altitude above home is **not** used as a motor shutoff condition (except when a rangefinder is used,see above).
@@ -42,8 +42,7 @@ features:
    **descent speed transition** from :ref:`LAND_SPD_HIGH_MS<LAND_SPD_HIGH_MS>`
    to :ref:`LAND_SPD_MS<LAND_SPD_MS>` — it has no role in landing detection or disarming.
 
-.. note:: For Traditional Heli, the low motor check in the above landing detection algorithm is replaced with a check that Collective output is below
-   mid-position (controlled by the vertical position controller, ie in descent). The rotor still may be at governor speed up until Motor Interlock is removed and  disarming occurs.
+.. note:: For Traditional Heli, the low motor check in the above landing detection algorithm is replaced with a check that Collective output is below mid-position (controlled by the vertical position controller, ie in descent). The rotor still may be at governor speed up until Motor Interlock is removed and  disarming occurs.
 
 .. note:: Using a Weight on Wheels (WoW) switch will increase the descent rate and
     accelerometer ranges that are acceptable for landing detection. This
