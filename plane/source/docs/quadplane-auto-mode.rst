@@ -107,6 +107,10 @@ command takes a single parameter. If the parameter is set to 3 then
 the aircraft will change to VTOL mode. If the parameter is set to 4
 then it will change to fixed wing mode.
 
+.. warning:: QuadPlane mission legs flown in VTOL mode do not currently
+   support waypoints with altitude set to Terrain. Use Relative or Absolute
+   altitudes for VTOL waypoints.
+
 .. image:: ../images/quadplane-vtol-transition.jpg
     :target: ../_images/quadplane-vtol-transition.jpg
 
@@ -154,4 +158,3 @@ When hovering at the destination in GUIDED mode if a new GUIDED
 destination is given then the aircraft will transition back to fixed
 wing flight, fly to the new location and then hover again in VTOL
 mode.
-
