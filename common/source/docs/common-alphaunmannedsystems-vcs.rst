@@ -1,28 +1,29 @@
-.. _common-tracking-systems:
+.. _common-alphaunmannedsystems-vcs:
 
 ===================================================
 Alpha Unmanned Systems Vessel Control Station (VCS)
 ===================================================
 
-[copywiki destination="copter,plane"]
-
 Alpha Unmanned Systems supports the **Vessel-Based Control Station (VCS)** for tracking any device compatible with the MAVLink V1 or V2 protocol.
-    .. image:: ../../../images/aus_vcs/aus-vcs.png
-        :target: ../_images/aus_vcs/aus-vcs.png
-        :width: 400px
-        :align: center
+
+.. image:: ../../../images/aus_vcs/aus-vcs.png
+    :target: ../_images/aus_vcs/aus-vcs.png
+    :width: 400px
+    :align: center
       
 The gyrostabilized mobile tracking antenna includes **four Ethernet ports**: one port for connecting to the radio link, and three ports for connecting the GNSS, joystick, and PC. The system tracks automatically the target when a GPS position from the UAV is received through the radio links and the local position received by the installed GNSS. Radio links are redundant and selected automatically by the system or by the user.
 
 System Pack
 -----------
-- `Vessel-based Tracking Station <https://alphaunmannedsystems.com/product/vessel-based-control-station/>`__.
-- **AC power cable** with **24V external supply connector**.
-- 3x **IP67 Ethernet cables**.
-- **Mission Planner Plugin**.
+
+* `Vessel-based Tracking Station <https://alphaunmannedsystems.com/product/vessel-based-control-station/>`__.
+* **AC power cable** with **24V external supply connector**.
+* 3x **IP67 Ethernet cables**.
+* **Mission Planner Plugin**.
 
 System Setup
 -------------
+
 The **VTA** (Vessel-based Tracking Antenna) is the main system of a Mobile or Vessel-based Control Station, but to be fully operational, it must be coupled with the following systems:
 
 * UAV Operator laptop (or fixed PC)
@@ -31,41 +32,43 @@ The **VTA** (Vessel-based Tracking Antenna) is the main system of a Mobile or Ve
 * AC/DC power supply
 * Optional backup battery (output voltage must be below 24V: 18-23V)
 
-  .. image:: ../../../images/aus_vcs/aus_connection_vcs.png
-      :target: ../_images/aus_vcs/aus_connection_vcs.png
-      :width: 500px
-      :align: center
+.. image:: ../../../images/aus_vcs/aus_connection_vcs.png
+    :target: ../_images/aus_vcs/aus_connection_vcs.png
+    :width: 500px
+    :align: center
 
 Connection Diagram
 -------------------
+
 The system is composed of 4 ETH connectors available for the connection of external systems. They are: 
 
 * **ETH 0 – VIDEO:** This is the only ETH port for payload connection. It is not connected to the ETH Switch, but directly to the data link. Normally, this port would be connected to the payload control laptop or PC. This port does not have POE (Power Over Ethernet).
 * **ETH 2 & 4 – CS/JY:** Port for the connection of the control station laptop or UAV control Joystick. This port does have POE.
 * **ETH 5 – IMU & GNSSCOMPASS:** This port is reserved for the connection of the IMU & GNSSCOMPASS module. This port does have POE.
 
-  .. image:: ../../../images/aus_vcs/aus_vcs_connectors.png
-      :target: ../_images/aus_vcs/aus_vcs_connectors.png
-      :width: 600px
-      :align: center
+.. image:: ../../../images/aus_vcs/aus_vcs_connectors.png
+    :target: ../_images/aus_vcs/aus_vcs_connectors.png
+    :width: 600px
+    :align: center
 
 Data Link Interface
 ---------------------
+
 The system has available two redundant datalinks which once configured can connect automatically to the airborne datalinks, using one at a time.
 
 One datalink of 900MHz is placed internally into the VTA and transfers only telemetry information to the tracking system, while the other datalink of a wide range of available frequencies (2.4-5.8 GHz) is externally placed into the Pan Tilt Unit (PTU) and transfers telemetry information and video through the external port.
 
 The following diagram shows the pinout of the PTU used to connect and power data links. This is to be used only for custom data link integrations.
 
-  .. image:: ../../../images/aus_vcs/aus_vcs_payload1.png
-      :target: ../_images/aus_vcs/aus_vcs_payload1.png
-      :width: 400px
-      :align: center
+.. image:: ../../../images/aus_vcs/aus_vcs_payload1.png
+    :target: ../_images/aus_vcs/aus_vcs_payload1.png
+    :width: 400px
+    :align: center
 
-  .. image:: ../../../images/aus_vcs/aus_vcs_payload2.png
-      :target: ../_images/aus_vcs/aus_vcs_payload2.png
-      :width: 400px
-      :align: center
+.. image:: ../../../images/aus_vcs/aus_vcs_payload2.png
+    :target: ../_images/aus_vcs/aus_vcs_payload2.png
+    :width: 400px
+    :align: center
 
 .. note::
    Telemetry is transferred through serial interface to the internal tracking controller, which selects automatically the active link and transfers the information to the PC through the HUB port.
@@ -88,10 +91,10 @@ Vessels are equipped with a variety of RF equipment, typically including radars 
 * The GNSS compass and IMU must have a clear view of the sky to correctly receive the signal from GNSS satellites. 
 * If some area between the VTA and the UAV’s flight zone would be shadowed by the vessel’s mast or any other vessel structure, this can be solved by installing the 900MHz antenna or secondary radio systems and antennas at a different location. A schematic overview of potential locations can be found below.
 
-  .. image:: ../../../images/aus_vcs/vessel_installation_schematic.png
-      :target: ../_images/aus_vcs/vessel_installation_schematic.png
-      :width: 600px
-      :align: center
+.. image:: ../../../images/aus_vcs/vessel_installation_schematic.png
+    :target: ../_images/aus_vcs/vessel_installation_schematic.png
+    :width: 600px
+    :align: center
 
 * BLUE circles represent potential spots for the installation of the main VTA. 
 * RED circles represent the potential installation points of the 900 MHz antennas, secondary radio or secondary VTA.
@@ -186,10 +189,12 @@ Once connected to the VCS, the following commands allow to change any of the men
      - This command configures the GATEWAY of the network.
 
 In case some of those parameters are incorrect and the PC cannot connect to the system after reboot, the user can connect through a USB cable to a side USB port to send the ``default`` command mentioned previously.
-  .. image:: ../../../images/aus_vcs/aus_vcs_usb_connector.png
-      :target: ../_images/aus_vcs/aus_vcs_usb_connector.png
-      :width: 500px
-      :align: center
+
+.. image:: ../../../images/aus_vcs/aus_vcs_usb_connector.png
+    :target: ../_images/aus_vcs/aus_vcs_usb_connector.png
+    :width: 500px
+    :align: center
+
 .. note::
    For advanced GNSS configuration, please contact `Alpha Unmanned Systems <https://alphaunmannedsystems.com/contact/>`__ for detailed instructions.
 
@@ -200,10 +205,11 @@ Each link will be connected via a serial RS232 interface to either ``TELEM1`` or
 Both air and ground links must be configured based on the manufacturer's instructions. When both air and ground links are configured, the VCS uses the main link as the active link by default and, in case this link is lost, automatically changes to the backup link (900MHz radio).
 
 The corresponding connections are shown in the diagram below:
-  .. image:: ../../../images/aus_vcs/aus-vcs-air-link.png
-      :target: ../_images/aus_vcs/aus-vcs-air-link.png
-      :width: 200px
-      :align: center
+  
+.. image:: ../../../images/aus_vcs/aus-vcs-air-link.png
+    :target: ../_images/aus_vcs/aus-vcs-air-link.png
+    :width: 200px
+    :align: center
 
 In **Mission Planner**, connect the autopilot and configure the **baud rates** for **TELEM1** and **TELEM2** by adjusting the following parameters:
 
@@ -215,19 +221,22 @@ In **Mission Planner**, connect the autopilot and configure the **baud rates** f
 The **VCS** will receive information from both links and transmit it over **Ethernet** via port **1976**.  
 Connect the **PC**, acting as the ground station, to the VCS and open Mission Planner. Then, connect to **UDP port 1976**.
 
-  .. image:: ../../../images/aus_vcs/aus-vcs-mp-conn.png
-      :target: ../_images/aus_vcs/aus-vcs-mp-conn.png
-      :width: 600px
-      :align: center
+.. image:: ../../../images/aus_vcs/aus-vcs-mp-conn.png
+    :target: ../_images/aus_vcs/aus-vcs-mp-conn.png
+    :width: 600px
+    :align: center
 
 If all the radios are linked and configured, Mission Planner should receive **autopilot configuration data**.  
 Additionally, the system provides a **Mission Planner plugin** to monitor the real-time status of the VCS, links, GNSS, and user commands such as **link switching**, **storage mode**, **reset**, and **static position tracking**. 
-  .. image:: ../../../images/aus_vcs/vcs_plugin.png
-      :target: ../_images/aus_vcs/vcs_plugin.png
-      :width: 600px
-      :align: center
+  
+.. image:: ../../../images/aus_vcs/vcs_plugin.png
+    :target: ../_images/aus_vcs/vcs_plugin.png
+    :width: 600px
+    :align: center
 
 .. note::
-    Both VCS configuration terminal and plugin must not be active at the same time due to connection interferences to internal ports.
+   Both VCS configuration terminal and plugin must not be active at the same time due to connection interferences to internal ports.
 
 For more information, please contact `Alpha Unmanned Systems <https://alphaunmannedsystems.com/contact/>`__.
+
+[copywiki destination="plane,copter,rover"]
