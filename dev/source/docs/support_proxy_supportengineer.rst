@@ -53,14 +53,52 @@ and your support engineer port number as the port:
 .. image:: ../images/MissionPlanner_connect_port.jpg
     :target: ../_images/MissionPlanner_connect_port.jpg
 
-To change the pass phrase you use for your connection you can use
-create and save a new key in the MAVLink Signing tool then select it
-and press the "Use" button:
+Managing Your Connection with the Dashboard
+-------------------------------------------
+
+The proxy has a web dashboard at `support.ardupilot.org/dashboard
+<https://support.ardupilot.org/dashboard>`__. Log in there with your
+**support engineer port number** and your current pass phrase.
+
+.. image:: ../images/support_proxy_webUI.jpg
+    :target: ../_images/support_proxy_webUI.jpg
+
+From the dashboard you can:
+
+ - change the MAVLink2 signing pass phrase for your connection (use
+   the "Generate" button to get a fresh random one, or type your own,
+   then "Save"). This is the easiest way to rotate the pass phrase —
+   it takes effect on the proxy immediately. The Mission Planner
+   method below still works if you prefer it.
+ - see which user and support-engineer connections are live right now
+   (peer addresses, byte counts, link health), and drop a stuck
+   connection if needed
+ - optionally record the session: tick "record telemetry logs" to
+   capture a MAVProxy-format ``.tlog`` of the session, and/or "record
+   ArduPilot bin logs" to capture the vehicle's dataflash log over
+   MAVLink as a ``.bin`` (the firmware must have the MAVLink logging
+   backend enabled). Recorded logs are listed on the dashboard and
+   can be downloaded there; a per-connection retention period
+   controls how long they are kept.
+
+ArduPilot partners with admin access can additionally manage every
+connection from the dashboard and create new partner connections
+(including a block of consecutive IDs in one step).
+
+To change the pass phrase from Mission Planner instead, create and
+save a new key in the MAVLink Signing tool then select it and press
+the "Use" button:
 
 .. image:: ../images/MissionPlanner_signing_use.jpg
     :target: ../_images/MissionPlanner_signing_use.jpg
 
 pressing "Use" will update the signing key for your support ID.
+
+If your stored signing timestamp gets ahead of your computer's clock
+(for example after a clock change) signing can start failing with a
+replay rejection. On the dashboard's edit page, tick "reset signing
+timestamp" and Save to recover; if you don't have dashboard access,
+ask for the timestamp to be reset.
 
 For technical support please contact Andrew Tridgell on your partner
 support channel on discord.
@@ -74,7 +112,7 @@ Using MAVProxy as a Support Engineer
 ------------------------------------
 
 An example shell script for connecting as a support engineer using
-MAVProxy is `available here <https://github.com/ArduPilot/UDPProxy/blob/main/mav_support.sh>`__.
+MAVProxy is `available here <https://github.com/ArduPilot/SupportProxy/blob/main/mav_support.sh>`__.
 
 DroneCAN GUI Tool
 ------------------------------------
@@ -89,5 +127,6 @@ Enter "mavcan:udpout:support.ardupilot.org:" followed by your support engineer p
 Source Code
 -----------
 
-The source code for the UDPProxy tool along with instructions for
-installing it on your own machine are `available here <https://github.com/ArduPilot/UDPProxy>`__.
+The source code for the SupportProxy tool (formerly UDPProxy) along
+with instructions for installing it on your own machine are
+`available here <https://github.com/ArduPilot/SupportProxy>`__.
