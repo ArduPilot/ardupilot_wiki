@@ -19,7 +19,7 @@ control from :ref:`Loiter mode <loiter-mode>` and should not
 be attempted before these modes are flying well.  All the same
 requirements apply including ensuring that :ref:`vibration levels <common-measuring-vibration>` and compass
 interference levels are acceptable and that the GPS is functioning well
-including returning an HDOP of under 2.0.
+including returning an HDOP of under 1.4.
 
 Overview
 ========
@@ -80,7 +80,7 @@ position which is the location where the copter was armed.
 
 As the copter touches down at the end of the mission the vehicle should automatically disarm but occasionally the vehicle may not sense the landing and the pilot may need to hold the throttle down and takeoff in another mode like Stabilize or Loiter and then manually disarm the vehicle.
 
-.. note:: for a NAV_LAND, the :ref:`LAND_SPD_MS<LAND_SPD_MS>` and the :ref:`LAND_SPD_HIGH_MS<LAND_SPD_HIGH_MS>` parameters affect descent speed just like in the :ref:`land-mode`. Unlike the LAND mode, the switch point altitude is set by the mission altitude parameter, will be 10m above that altitude in whatever reference frame being used for the altitude parameter. The :ref:`PILOT_THR_BHV<PILOT_THR_BHV>` option bit 1, when set, allows high throttle stick position to cancel the landing, and the mission will move to the next mission item, or just hover in place until the mode is changed or mission restarted. During landing the pilot can re-position the vehicle using the pitch and roll sticks to avoid obstacles unless the :ref:`LAND_REPOSITION <LAND_REPOSITION>` parameter is changed to "0".
+.. note:: for a NAV_LAND, the :ref:`LAND_SPD_MS<LAND_SPD_MS>` and the :ref:`LAND_SPD_HIGH_MS<LAND_SPD_HIGH_MS>` parameters affect descent speed just like in the :ref:`land-mode`. Unlike the LAND mode, the switch point altitude is set by the mission altitude parameter, will be 10m above that altitude in whatever reference frame being used for the altitude parameter. The :ref:`PILOT_THR_BHV<PILOT_THR_BHV>` option bit 1, when set, allows high throttle stick position to cancel the landing, switching the vehicle to :ref:`Loiter<loiter-mode>` or :ref:`AltHold<altholdmode>` if Loiter is unavailable. During landing the pilot can re-position the vehicle using the pitch and roll sticks to avoid obstacles unless the :ref:`LAND_REPOSITION <LAND_REPOSITION>` parameter is changed to "0".
 
 Tuning
 ======
