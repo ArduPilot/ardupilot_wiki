@@ -27,17 +27,6 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
     </tr>
     </thead>
     <tbody valign="top">
-    <tr class="row-even">
-        <td><center><a class="first last reference external image-reference" href="http://element.aero"><img alt="../_images/element-aero.png" src="../_images/element-aero.png" style="width: 150px;" /></a><br/><br/>Mexico</center></td>
-        <td><div class="first last line-block">
-            <div class="line">Jaime Machuca, <a href="mailto:jaime@element.aero?Subject=ArduPilot%20commercial%20support" target="_top">jaime@element.aero</a>, tel:+52 33 3805 4627</div>
-            <div class="line"><br/></div>
-            <div class="line">Vehicle Design/Integration, Vehicle Setup</div>
-            <div class="line">Trouble Shooting and support (log review, vehicle support)</div>
-            <div class="line">Customization of ArduPilot code, Companion Computer setup</div>
-            </div>
-        </td>
-    </tr>
     <tr class="row-odd">
         <td><center><a class="first last reference external image-reference" href="https://www.cubepilot.com/"><img alt="../_images/proficnc.png" src="../_images/proficnc.png" style="width: 90px;" /></a><br/><br/>Australia</center></td>
         <td><div class="first last line-block">
@@ -47,18 +36,6 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             <div class="line">including the Pixhawk 2.1 (CubePilot CubeBlack) which is used in the 3DR Solo.</div>
             <div class="line">Autopilot Hardware design, Accessory customization, Mechanical</div>
             <div class="line">consulting, Systems engineering, Intricate knowledge of Pixhawk</div>
-            </div>
-        </td>
-    </tr>
-    <tr class="row-even">
-        <td><center><a class="first last reference internal image-reference"><img alt="../_images/lthall.jpg" src="../_images/lthall.jpg" style="width: 90px;" /></a><br/><br/>Australia</center></td>
-        <td><div class="first last line-block">
-            <div class="line">Leonard Hall, <a href="mailto:leonard@freespacesolutions.com.au?Subject=ArduPilot%20commercial%20support" target="_top">leonard@freespacesolutions.com.au</a></div>
-            <div class="line"><br/></div>
-            <div class="line">Leonard is responsible for ArduPilot’s multicopter attitude,</div>
-            <div class="line">navigation and motor control libraries and developed AutoTune.</div>
-            <div class="line">Multirotor Tuning,Airframe design and performance optimisation</div>
-            <div class="line">Navigation and attitude controller features,Flight mode design</div>
             </div>
         </td>
     </tr>
@@ -83,18 +60,6 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             <div class="line">New vehicle design, integration, setup and support</div>
             <div class="line">Troubleshooting and support (log review, vehicle support)</div>
             <div class="line">Custom design of advanced Companion Computer, ROS integration</div>
-            </div>
-        </td>
-    </tr>
-    <tr class="row-even">
-        <td><center><a class="first last reference external image-reference" href="http://rfdesign.com.au/"><img alt="../_images/rfdesign.png" src="../_images/rfdesign.png" style="width: 150px;" /></a><br/><br/>Australia</center></td>
-        <td><div class="first last line-block">
-            <div class="line">RFDesign Pty Ltd, <a href="mailto:info@rfdesign.com.au?Subject=ArduPilot%20commercial%20support" target="_top">info@rfdesign.com.au</a>, +61 (0)7 3272 8769</div>
-            <div class="line"><br/></div>
-            <div class="line">Designers and Manufacturers of long range telemetry solutions</div>
-            <div class="line">(RFD900), Antenna design and placement for UAV platforms, System</div>
-            <div class="line">integration of sensors, Custom circuit and PCB design, Prototypes</div>
-            <div class="line">manufacturing support for Prototype and Volume production</div>
             </div>
         </td>
     </tr>
@@ -155,39 +120,6 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             <div class="line">and commercial users of ArduPilot. Services include log analysis,</div>
             <div class="line">new features, integrating sensors/payloads, developing hardware</div>
             <div class="line">and tuning assistance</div>
-            </div>
-        </td>
-    </tr>
-    <tr class="row-even">
-        <td><center><a class="first last reference external image-reference" href="http://www.avia-technologies.com/"><img alt="../_images/aerotechllc.png" src="../_images/aerotechllc.png" style="width: 150px;" /></a><br/><br/>Ukraine</center></td>
-        <td><div class="first last line-block">
-            <div class="line">Aerotech LLC, <a href="mailto:info@avia-technologies.com?Subject=ArduPilot%20commercial%20support" target="_top">info@avia-technologies.com</a></div>
-            <div class="line"><br/></div>
-            <div class="line">Consultation Services, Customizations of ArduPilot code, Airframe</div>
-            <div class="line">Custom electronics and mechanical design and manufacturing,</div>
-            <div class="line">Plane Setup, Training and testing, Groundstation systems design</div>
-            <div class="line">Groundstation systems design and manufacturing</div>
-            </div>
-        </td>
-    </tr>
-    <tr class="row-odd">
-        <td><center><a class="first last reference external image-reference" href="https://oxinarf.pt"><img alt="oxinarf.pt" src="../_images/oxinarf.jpg" style="width: 90px;" /></a><br/><br/>Portugal</center></td>
-        <td><div class="first last line-block">
-            <div class="line">Francisco Ferreira, <a href="mailto:ardupilot@oxinarf.pt" target="_top">ardupilot@oxinarf.pt</a></div>
-            <div class="line"><br/></div>
-            <div class="line">Leveraging the experience as ArduPilot's code reviewer, Francisco</div>
-            <div class="line">provides consulting services, especially focused on custom firmware</div>
-            <div class="line">development and support.</div>
-            </div>
-        </td>
-    </tr>
-    <tr class="row-odd">
-        <td><center><a class="first last reference external image-reference" href="https://www.aionrobotics.com"><img alt="AION ROBOTICS" src="../_images/aionrobotics.png" style="width: 90px;" /></a><br/><br/>United States</center></td>
-        <td><div class="first last line-block">
-            <div class="line">AION ROBOTICS, <a href="mailto:info@aionrobotics.com" target="_top">info@aionrobotics.com</a></div>
-            <div class="line"><br/></div>
-            <div class="line">Largest manufacturer of professional ArduPilot ground vehicles.</div>
-            <div class="line">Provides commercial integration services, development and support.</div>
             </div>
         </td>
     </tr>
