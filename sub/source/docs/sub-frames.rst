@@ -22,6 +22,8 @@ Key to axis: R = Roll, P = Pitch, Y = Yaw, Z= Depth, F = Forward, L = Lateral
 
 .. note:: Configurations lacking one or more controllable axes rely on proper CG and ballast to maintain earth-frame stability in that axis.
 
+.. note:: The Vectored frame has a :ref:`MOT_FV_CPLNG_K <MOT_FV_CPLNG_K>` parameter that can be adjusted to limit hydrodynamic coupling between the vertical and (direction-dependent) "rear" horizontal thrusters, at the expense of reduced forward/backward thrust capacity while moving quickly up or down.
+
 Frames
 ======
 
