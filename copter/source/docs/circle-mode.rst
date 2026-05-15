@@ -18,10 +18,10 @@ The speed of the vehicle (in deg/second) can be modified by changing the
 :ref:`CIRCLE_RATE<CIRCLE_RATE>` parameter.  A positive value means rotate clockwise, a
 negative means counter clockwise.  The vehicle may not achieve the
 desired rate if this requires the acceleration towards the center of the
-circle to surpass the maximum acceleration held in the :ref:`WP_ACC<WP_ACC>`
-parameter (units are cm/s/s).
+circle to exceed about half of the maximum acceleration held in the :ref:`WP_ACC<WP_ACC>`
+parameter (units are m/s/s).
 
-The circle rate set above can be dynamically adjusted in flight by two methods. The first is the use of RC Channel 6 if the :ref:`TUNE<TUNE>` option is set to 39, allowing decreasing the rate 50% or increasing it by 100%, at the channel min and max. The other is by enabling the ``CIRCLE_CONTROL`` parameter to allow stick adjustment of radius and speed.
+The circle rate set above can be dynamically adjusted in flight by two methods. The first is the use of RC Channel 6 if the :ref:`TUNE<TUNE>` option is set to 39, with the minimum and maximum circle rates set by :ref:`TUNE_MIN<TUNE_MIN>` and :ref:`TUNE_MAX<TUNE_MAX>`. The other is by enabling bit 0 of the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` bitmask parameter to allow stick adjustment of radius and speed.
 
 Circle Control Option
 =====================
@@ -45,7 +45,7 @@ When bit 3 is set of the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` parameter the mou
 Other Notes
 ===========
 
-- The pilot does not have any control over the roll and pitch but can change the altitude with the throttle stick as in :ref:`altholdmode` or :ref:`loiter-mode`.
+- When :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` bit 0 is not set, the pilot does not have any control over the roll and pitch but can change the altitude with the throttle stick as in :ref:`altholdmode` or :ref:`loiter-mode`.
 
 - The pilot can control the yaw of the copter, but the autopilot will not retake control of the yaw until circle mode is re-engaged.
 
