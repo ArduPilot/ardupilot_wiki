@@ -21,8 +21,10 @@ to the point of takeoff.
 For this reason we now support the creation of multiple Rally Points.
 Should an aircraft enter RTL and Rally Points have been defined then it
 will proceed to the closest Rally Point, rather than proceeding to the
-Home position. Plane will then loiter at that location, and Copter will
-perform an automated landing there.
+Home position (although Home itself can still win when it is closer than
+any Rally Point -- see :ref:`RALLY_INCL_HOME <RALLY_INCL_HOME>` below).
+Plane will then loiter at that location, and Copter will perform an
+automated landing there.
 
 .. figure:: ../../../images/mp_flight_plan_with_three_rally_points.jpg
    :target: ../_images/mp_flight_plan_with_three_rally_points.jpg
@@ -81,10 +83,20 @@ The following MAVLink parameters control Rally Point behavior:
    is the maximum distance a Rally Point may be from the aircraft to be
    considered for an RTL event.  If all Rally Points are greater than
    this distance from the aircraft, then the Home location is used for
-   RTL events (at altitude :ref:`RTL_ALTITUDE <RTL_ALTITUDE>`)
+   RTL events (at altitude :ref:`RTL_ALTITUDE <RTL_ALTITUDE>`).
    This parameter is to prevent fly offs if Rally Points have been specified for multiple
-   flying fields. This parameter can be disabled if set to 0.
-#. :ref:`RALLY_INCL_HOME<RALLY_INCL_HOME>` allows Home to be included in the RALLY points, allowing it to return to home if closer than any RALLY point.
+   flying fields. Setting it to 0 disables this distance check, so the
+   closest Rally Point is always considered regardless of how far away it is
+   (note this only disables the distance gate -- Home may still be chosen
+   over the closest Rally Point if :ref:`RALLY_INCL_HOME <RALLY_INCL_HOME>` is enabled; see below).
+#. :ref:`RALLY_INCL_HOME <RALLY_INCL_HOME>` controls whether Home is treated
+   as a candidate alongside the configured Rally Points. When set to 1, RTL
+   compares the distance to the closest Rally Point with the distance to
+   Home and picks whichever is closer -- so Home can still be selected even
+   if Rally Points are defined and :ref:`RALLY_LIMIT_KM <RALLY_LIMIT_KM>` is
+   0. When set to 0, Home is not considered and the closest Rally Point is
+   used (subject to the :ref:`RALLY_LIMIT_KM <RALLY_LIMIT_KM>` distance gate).
+   The default is 1 on Copter and Rover and 0 on Plane.
 #. :ref:`RALLY_TOTAL <RALLY_TOTAL>` is
    the number of Rally Points currently specified. This parameter will
    be set for you by your ground control station (e.g., Mission Planner)
