@@ -35,7 +35,7 @@ Setting up a Mission to use Terrain data
 Sources of Terrain Data
 =======================
 
-The ground station is normally responsible for providing the raw terrain data which is sent to the aircraft via MAVLink. Right now only Mission Planner and MAVProxy support the required TERRAIN_DATA and TERRAIN_REQUEST MAVLink messages needed for terrain following download support. If you are using a different ground station , in order to download terrain data you will need to connect using one of those two ground stations in order to allow ArduPilot to load terrain data onto your board on the ground or in flight.  Once it is loaded, it is saved permanently on the microSD card.
+The ground station is normally responsible for providing the raw terrain data which is sent to the aircraft via MAVLink. Mission Planner, QGroundControl, SiYi UniGCS and MAVProxy support the required TERRAIN_DATA and TERRAIN_REQUEST MAVLink messages needed for terrain following download support. If you are using a different ground station , in order to download terrain data you will need to connect using one of those two ground stations in order to allow ArduPilot to load terrain data onto your board on the ground or in flight.  Once it is loaded, it is saved permanently on the microSD card.
 
 Both MissionPlanner and MAVProxy support the global SRTM database for terrain data. The ArduPilot SRTM server used by MAVProxy and Mission Planner has 100m grid spacing. Unless the ground control station uses a server with closer spacing, setting the :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` parameter lower than 100m provides no better resolution, and only consumes more space on the SD card. 
 
@@ -84,12 +84,23 @@ Terrain Spacing and Accuracy
 
 The :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` parameter controls the size of the grid used when requesting terrain altitude from the Ground Station (it is not used if using a Lidar). This is 100m by default but reducing to 30 may provide better accuracy at the expense of more telemetry traffic between the GCS and autopilot, and 9x more file storage space on the SD card, but only if the ground station uses a server with that resolution. MavProxy and Mission Planner currently do not. Also, if the vehicle is moving very fast, the autopilot may not be able to retrieve and cache the data quickly enough for the increased resolution to be actually used.  It is therefore recommended that you use a :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` of 100 meters.
 
+For a newer AutoPilot with 1M of RAM, the :ref:`TERRAIN_CACHE_SZ<TERRAIN_CACHE_SZ>` can be
+increased to make better use of available memory for caching terrain tiles. The default
+is 12 but a good value on an STM32-H7 processor would be 60 or higher.
+
 If the ground station does not have terrain data available at the resolution requested by the aircraft then the ground station will interpolate as necessary to provide the requested grid size.
 
 Terrain Accuracy
 ================
 
 The accuracy of the SRTM database varies over the surface of the earth.  Typical accuracy is around 10m but one developer noticed an inaccuracy of 35m at the peak of a ski hill.  This makes terrain following suitable for aircraft that are flying at altitudes of 60 meters or more.  For very accurate terrain following at lower altitudes it is recommended to use a :ref:`downward facing Lidar or Sonar <common-rangefinder-landingpage>`.
+
+Optional Settings for High-Performance Autopilots
+=================================================
+
+-  set :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` to 1
+-  set :ref:`TERRAIN_SPACING<TERRAIN_SPACING>` to 30 meters for more precise AGL calculations
+-  set :ref:`TERRAIN_CACHE_SZ<TERRAIN_CACHE_SZ>` to 60 to load more tiles into memory (RAM)
 
 Warning
 =======
