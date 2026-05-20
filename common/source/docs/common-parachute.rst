@@ -55,7 +55,7 @@ set the following parameters.
 
 -  :ref:`CHUTE_ENABLED <CHUTE_ENABLED>` = "1". Then refresh parameters, or reboot, to see the Chute parameters.
 -  :ref:`CHUTE_CRT_SINK<CHUTE_CRT_SINK>` should be set to the sink rate in m/s that will trigger the chute release.
--   :ref:`CHUTE_ALT_MIN<CHUTE_ALT_MIN>` determines the minimum altitude above HOME that allows parachute release to occur.
+-  :ref:`CHUTE_ALT_MIN<CHUTE_ALT_MIN>` determines the minimum altitude above HOME when loss of control is first detected for automatic parachute release.
 
 Servo Release
 -------------
@@ -139,7 +139,7 @@ release:
 -  the roll and/or pitch angle of the vehicle is 30 degrees off from the
    target lean angle (Copter only)
 -  the barometer shows the vehicle is not climbing (excessive baro noise CAN prevent release in some cases) (Copter & Plane)
--  the vehicle is above the :ref:`CHUTE_ALT_MIN <CHUTE_ALT_MIN>` altitude (Copter & Plane). A value of "0" disables this check.
+-  the vehicle is above the :ref:`CHUTE_ALT_MIN <CHUTE_ALT_MIN>` altitude when loss of control is first detected (Copter only). In a fast descent, the actual release may occur below this altitude. A value of "0" disables this check.
 
 ..  youtube:: xaw3-oSahtE
     :width: 100%
