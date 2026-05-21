@@ -142,7 +142,7 @@ For ultimate positioning precision in the centimeter ranges, the offset of the "
 
 - :ref:`GPS1_POS_X<GPS1_POS_X>`: offset in meters from the Center of Gravity to "Master" antenna in the X axis (in direction of 0 deg yaw, positive offsets are if "Master" is in front of the Center of Gravity.
 - :ref:`GPS1_POS_Y<GPS1_POS_Y>`: offset in meters from the Center of Gravity to "Master" antenna in the Y axis (in direction 90 deg (right) of 0 deg yaw, positive offsets are if "Master" to the right of the Center of Gravity.
-- :ref:`GPS2_POS_Z<GPS1_POS_Z>`: offset in meters from the Center of Gravity to "Master" antenna in the Z axis (in direction up and down, positive offsets are if "Master" below the Center of Gravity.
+- :ref:`GPS1_POS_Z<GPS1_POS_Z>`: offset in meters from the Center of Gravity to "Master" antenna in the Z axis (in direction up and down, positive offsets are if "Master" below the Center of Gravity.
 
 This figure and photo illustrates these parameters and their settings:
 
