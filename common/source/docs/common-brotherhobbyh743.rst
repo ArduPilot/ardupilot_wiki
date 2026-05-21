@@ -10,7 +10,7 @@ The BROTHERHOBBYH743 is a flight controller produced by `BROTHERHOBBY <https://w
 Features
 ========
 * STM32H743 microcontroller
-* ICM42688P IMU
+* Dual ICM42688P IMU
 * SPL06 barometer
 * AT7456E OSD
 * 12V 3A BEC; 5V 3A BEC
