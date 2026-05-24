@@ -40,7 +40,7 @@ parachute vendors:
 Connecting to the Autopilot
 ===========================
 
-The parachute release mechanism can be triggered from either a Relay or a PWM (i.e. Servo). Be sure that if a Relay pin is used, that the parachute release is active on a high level and that the Relay pin default, ``RELAY_DEFAULT`` is OFF or No Change, to avoid triggering the release during initialization, since all GPIOs are forced low during the bootloader period.
+The parachute release mechanism can be triggered from either a Relay or a PWM (i.e. Servo). If a Relay pin is used, use a release mechanism that requires a high output level to trigger, since GPIOs are forced low during the bootloader period. Set the corresponding ``RELAYx_DEFAULT`` to OFF or No Change to avoid triggering the release during autopilot initialization.
 
 
 .. image:: ../../../images/Parachute_Pixhawk.jpg
@@ -72,10 +72,9 @@ Relay Release
     :ref:`This function is a GPIO and has limited current capabilities.<gpio-warning>`
 
 - Determine/Configure a pin to be a GPIO (see :ref:`common-gpios`).
-- Set that pin number as one of the RELAY functions. ie For GPIO pin 51 using the first RELAY function, set :ref:`RELAY1_PIN<RELAY1_PIN>` = 51.
-- Since GPIOs are always set low initially during the bootloader period, to avoid accidental release, always use a release mechanism that needs a high output level to trigger and set:
-- :ref:`RELAY1_DEFAULT<RELAY1_DEFAULT>` = 1 or 2 (low or no change), which determines how RELAY1 pins is set during the post-bootloader, autopilot initialization period.
-- :ref:`CHUTE_TYPE <CHUTE_TYPE>` = 0,1,2,or 3 to release with RELAY, RELAY2, RELAY3, or RELAY4 functions.
+- Set that pin number as one of the RELAY outputs and assign that relay to the parachute function. For example, for GPIO pin 51 using the first relay, set :ref:`RELAY1_PIN<RELAY1_PIN>` = 51 and :ref:`RELAY1_FUNCTION<RELAY1_FUNCTION>` = 3 (Parachute).
+- Since GPIOs are always set low initially during the bootloader period, to avoid accidental release, always use a release mechanism that needs a high output level to trigger and set.
+- :ref:`CHUTE_TYPE<CHUTE_TYPE>` = 0 to release with a relay. Set the corresponding relay function parameter, such as :ref:`RELAY1_FUNCTION<RELAY1_FUNCTION>`, to 3 (Parachute) to choose which relay output is used.
 
 .. image:: ../../../images/Parachute_MPSetup1.png
     :target: ../_images/Parachute_MPSetup1.png
@@ -122,16 +121,12 @@ Setting bit 1 high of :ref:`CHUTE_OPTIONS<CHUTE_OPTIONS>` will not disarm the ve
 RC Disable/Enable of Parachute
 ------------------------------
 
-You can disable or enable the parachute automatic release using an RC channel/switch: set an ``RCx_OPTION`` to 21. A high enables the automatic release function, low disables it. Manual release is unaffected. If set to 23 (Parachute 3Pos), the low position disables, middle position enables auto operation, a high will attempt to force release, as explained above, assuming the enabling conditions described below.
+You can disable or enable parachute release using an RC channel/switch: set an ``RCx_OPTION`` to 21. A high position enables parachute release; other positions disable it. If set to 23 (Parachute 3Pos), the low position disables, middle position enables operation, and a high will attempt to force release, as explained above, assuming the enabling conditions described below.
 
 When will the parachute deploy?
 ===============================
 
-When the "Crash Check" feature determines that the vehicle has lost
-attitude control and has begun falling, the motors will be stopped and
-the parachute will deploy automatically.  The following must all be true
-for a full 1 seconds for the crash checker to trigger the parachute
-release:
+Automatic parachute release can occur when the vehicle has lost attitude control and has begun falling. The following must all be true for a full 1 second for automatic release to trigger:
 
 -  The motors are armed (Copter) or flying (Plane)
 -  The vehicle is not landed (Copter only)
