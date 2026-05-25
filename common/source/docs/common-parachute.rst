@@ -121,7 +121,7 @@ Setting bit 1 high of :ref:`CHUTE_OPTIONS<CHUTE_OPTIONS>` will not disarm the ve
 RC Disable/Enable of Parachute
 ------------------------------
 
-You can disable or enable parachute release using an RC channel/switch: set an ``RCx_OPTION`` to 21. A high position enables parachute release; other positions disable it. If set to 23 (Parachute 3Pos), the low position disables, middle position enables operation, and a high will attempt to force release, as explained above, assuming the enabling conditions described below.
+You can disable or enable parachute release using an RC channel/switch: set an ``RCx_OPTION`` to 21. A high position enables parachute release; other positions disable it. If an ``RCx_OPTION`` is set to 23 (Parachute 3Pos), the low position disables parachute release, middle position enables operation, and a high will attempt to force release, as explained above, assuming the enabling conditions described below.
 
 When will the parachute deploy?
 ===============================
