@@ -40,7 +40,7 @@ parachute vendors:
 Connecting to the Autopilot
 ===========================
 
-The parachute release mechanism can be triggered from either a Relay or a PWM (i.e. Servo). If a Relay pin is used, use a release mechanism that requires a high output level to trigger, since GPIOs are forced low during the bootloader period. Set the corresponding ``RELAYx_DEFAULT`` to OFF or No Change to avoid triggering the release during autopilot initialization.
+The parachute release mechanism can be triggered from either a Relay or a PWM (i.e. Servo). If a Relay pin is used, use a release mechanism that requires a high output level to trigger, since GPIOs are forced low during the bootloader period, and set the corresponding ``RELAYx_DEFAULT`` to OFF or No Change to avoid triggering the release during autopilot initialization.
 
 
 .. image:: ../../../images/Parachute_Pixhawk.jpg
