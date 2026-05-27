@@ -51,10 +51,24 @@ html {
 
 }
 
-.col_min {
-    aspect-ratio: 4/3;
+.blog-card-img-wrap {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: var(--bs-card-inner-border-radius, calc(0.375rem - 1px));
+    border-top-right-radius: var(--bs-card-inner-border-radius, calc(0.375rem - 1px));
+}
+
+.blog-card-img {
     width: 100%;
-    min-height: 0; /* This is important! */
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: center;
+    display: block;    background-color: var(--bs-secondary-bg, #e9ecef);}
+
+.blog-card-title {
+    display: block;
+    font-weight: 500;
 }
 
 .card-header {
