@@ -1,22 +1,28 @@
-This folder contains the homepage of the website www.ardupilot.org.
+# ArduPilot.org Frontpage
+
+This folder contains the homepage of the website [www.ardupilot.org](www.ardupilot.org).
 This is done with simple HTML/JS pages using bootstrap. The home page (index.html) uses some AJAX includes, so some browsers block loading.
 
 ## Testing
-In order to test the HTML in your computer, there are some options, for example: 
 
-- Run Chrome as "chrome --allow-file-access-from-file" (without quotes). 
-- Enter the frontend folder and run "python3 -m http.server 5000" (without quotes). 
+In order to test the HTML in your computer, there are some options, for example:
 
-Then use the browser to access the index.html file. 
+- Run Chrome as "chrome --allow-file-access-from-file" (without quotes).
+- Enter the frontend folder and run "python3 -m http.server 5000" (without quotes).
+
+Then use the browser to access the index.html file.
 
 ## Testing with docker
+
 ### Building the Docker image
+
 To build the Docker image, navigate to the directory containing the Dockerfile and execute the following command:
 `docker build -t ardupilot_wiki_frontend .`
 
 This will create a Docker image named ardupilot_wiki_frontend.
 
 ### Running the Docker container
+
 Run the Docker container using the image created above and specify the desired port number:
 `docker run -it --rm -p 8080:8080 -v "${PWD}:/frontend" ardupilot_wiki_frontend`
 
@@ -25,10 +31,9 @@ For example:
 `docker run -it --rm -e SERVICE_PORT=8080 -p 8080:8080 ardupilot_wiki_frontend`
 With this command, the server will start and listen on port 8080.
 
-
 ## Generating WebP images
 
  Install cwebp utility and then :
 `for file in images/*; do cwebp "$file" -o "${file%.*}.webp"; done`
 
-Usage of Webp images : https://web.dev/serve-images-webp/
+Usage of Webp images : [webp docs](https://web.dev/serve-images-webp/)
