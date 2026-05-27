@@ -32,7 +32,6 @@
     <link rel="preconnect" href="https://img.youtube.com/">
     <link rel="preload" as="image" href="images/ArduPilot-Motto.png" type="image/png">
     <link rel="preload" as="image" href="images/slides_01_Ardupilot42.webp" type="image/webp">
-    <link rel="preload" as="image" href="images/slides_01_Ardupilot42.jpg" type="image/jpg">
 
     <meta name="theme-color" content="#ffffff">
     <meta name="msapplication-TileColor" content="#ffffff">
@@ -158,7 +157,7 @@
                             srcset="images/slides_01_Ardupilot42.webp">
                     <source type="image/jpeg" srcset="images/slides_01_Ardupilot42.jpg">
                     <img class="d-block w-100 img-fluid" src="images/slides_01_Ardupilot42.jpg"
-                         width="920" height="480"
+                         width="920" height="480" fetchpriority="high"
                          alt="Local Motors/Airbus VTOL UAV on its maiden flight">
                 </picture>
             </div>
@@ -679,13 +678,28 @@
     })()
 </script>
 <script defer>
-    fetch('blog_posts.json', {
-        headers: {
-            "Pragma": "no-cache",
-            "Cache-Control": "no-store"
+    const CACHE_TTL_MS = 3 * 60 * 60 * 1000; // 3 hours
+
+    function fetchWithCache(url) {
+        const cacheKey = 'cache:' + url;
+        const tsKey = 'cache_ts:' + url;
+        const cached = localStorage.getItem(cacheKey);
+        const ts = parseInt(localStorage.getItem(tsKey) || '0', 10);
+        if (cached && (Date.now() - ts) < CACHE_TTL_MS) {
+            return Promise.resolve(JSON.parse(cached));
         }
-    })
-        .then(response => response.json())
+        return fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                try {
+                    localStorage.setItem(cacheKey, JSON.stringify(data));
+                    localStorage.setItem(tsKey, String(Date.now()));
+                } catch (_) { /* localStorage quota exceeded — skip caching */ }
+                return data;
+            });
+    }
+
+    fetchWithCache('blog_posts.json')
         .then(data => {
             function isValidUrl(string) {
                 try {
@@ -756,13 +770,7 @@
         })
         .catch(error => console.error('Error:', error));
 
-    fetch('news_posts.json', {
-        headers: {
-            "Pragma": "no-cache",
-            "Cache-Control": "no-store"
-        }
-    })
-        .then(response => response.json())
+    fetchWithCache('news_posts.json')
         .then(data => {
             const newsPosts = document.getElementById('news_posts');
 
@@ -787,7 +795,7 @@
 </script>
 <script src="js/carousel_data.js" defer></script>
 <script defer>
-    window.onload = function () {
+    document.addEventListener('DOMContentLoaded', function () {
         const carousel = document.querySelector("#carousel_content");
 
         // Shuffle the carouselData array
@@ -799,18 +807,16 @@
         }
 
         // Use the shuffled carouselData array
-        for (let i = 0; i < carouselData.length; i++) {
-            carousel.innerHTML += `
+        const html = carouselData.map(item => `
         <div class="carousel-item img-fluid">
           <picture>
-            <source type="image/webp" srcset="${carouselData[i].imgSrcWebp}">
-            <source type="image/jpeg" srcset="${carouselData[i].imgSrcJpeg}">
-            <img class="d-block w-100" src="${carouselData[i].imgSrcJpeg}" loading="lazy" alt="${carouselData[i].imgAlt}">
+            <source type="image/webp" srcset="${item.imgSrcWebp}">
+            <source type="image/jpeg" srcset="${item.imgSrcJpeg}">
+            <img class="d-block w-100" src="${item.imgSrcJpeg}" loading="lazy" alt="${item.imgAlt}">
           </picture>
-        </div>
-      `;
-        }
-    }
+        </div>`).join('');
+        carousel.insertAdjacentHTML('beforeend', html);
+    });
 </script>
 </body>
 
