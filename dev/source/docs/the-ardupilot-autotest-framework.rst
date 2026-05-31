@@ -278,6 +278,7 @@ Adding a Test
 
 `This <https://github.com/ArduPilot/ardupilot/commit/e045f61473afa800afc241819cf890591fbecd5a>`__ git commit is a reasonable example of adding an entirely new test to the ArduPilot suite.
 
+:ref:`AutoTest Tests <autotest-tests>` contains some more detailed information on writing tests.
 
 Conducting an automated git bisect with an autotest
 ===================================================

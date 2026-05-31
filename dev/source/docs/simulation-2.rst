@@ -71,6 +71,7 @@ List of simulators (so they can appear in the menu):
     CRRCSim <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>
     HITL Simulators <hitl-simulators>
     Autotest Framework <the-ardupilot-autotest-framework>
+    Autotest Tests <autotest-tests>
     Unit Tests <unit-tests>
     SCRIMMAGE <sitl-with-scrimmage>
     Webots <sitl-with-webots>
