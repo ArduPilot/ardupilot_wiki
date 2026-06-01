@@ -1,8 +1,10 @@
 .. _reference-frames-arduroller:
 
-======================
-ArduRoller Balance Bot
-======================
+===============================
+ARCHIVED:ArduRoller Balance Bot
+===============================
+
+.. note:: This page is archived and is no longer maintained
 
 ..  youtube:: hbPzTOfn3EA
     :width: 100%

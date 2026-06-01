@@ -11,7 +11,6 @@ This section includes details on tested frames to speed up DIY builds of rovers 
 .. toctree::
     :maxdepth: 1
 
-    ArduRoller Balance Bot <reference-frames-arduroller>
     Boogie Board Boat <reference-frames-boogieboard-boat>
     DeSET mapping boat <reference-frames-deset-mapping-boat>
     HobbyKing Hydrotek <reference-frames-hydrotek>

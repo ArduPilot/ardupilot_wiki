@@ -78,6 +78,7 @@ value to users with old hardware.
     Tuning Steering and Navigation (ver 3.1 and older) <tuning-steering-and-navigation-for-a-rover>
     Tuning Waypoint Turn Speed (ver 3.1 and older) <speed-turn-parameter-tuning>
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
+    ArduRoller Balance Bot <reference-frames-arduroller>
 [/site]
 
 [site wiki="plane"]
