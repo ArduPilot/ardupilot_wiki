@@ -20,6 +20,7 @@ This section includes details on tested frames to speed up DIY builds of rovers 
     Thunder Tiger Toyota Hilux <reference-frames-tt-toyotahilux>
     Traxxas Stampede 4WD Truck <reference-frame-traxxas-stampede>
     Vac-U-Tug Tugboat <reference-frames-vacutug>
+    Yahboom Balance Bot <reference-frames-yahboom-balancebot>
 
 .. note::
 

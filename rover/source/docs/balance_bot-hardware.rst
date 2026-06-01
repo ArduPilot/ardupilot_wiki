@@ -11,7 +11,7 @@ Frame
 
 Any readily available or custom made frame suitable for Balance Bots can be used. Ensure that there is sufficient space to hold all the components.
 
-For a 3d printable frame, check out :ref:`Arduroller<reference-frames-arduroller>`.
+For a suitable starter example, check out :ref:`Yahboom Balance Bot<reference-frames-yahboom-balancebot>`.
 
 Autopilot
 =========
