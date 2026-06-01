@@ -6,15 +6,16 @@ ArduPilot AntennaTracker
 
 .. image:: /images/home_antennatracker.jpg
     :target: _images/home_antennatracker.jpg
-    
+
 `Canberra UAV's tracker used during the 2014 OutBack Challenge <http://www.suasnews.com/outback-challenge-2014/>`__
 
-The *AntennaTracker* Project offers firmware for using a supported flight controller board as an Antenna Tracker. 
-This tracker determines the position of a remote vehicle via its own GPS data and telemetry data from a Copter, Rover, or Plane, and uses this information to align a directional antenna towards the vehicle. 
-Such alignment *significantly* enhances the transmission and reception range from a ground station.
+The *AntennaTracker* Project offers firmware for using a supported flight controller board as an Antenna Tracker.
+This tracker determines the position of a remote vehicle via its own GPS data and telemetry data from a Copter, Rover, or Plane, and uses this information to align a directional antenna towards the vehicle. Such alignment *significantly* enhances the transmission and reception range from a ground station.
 
-Developers interested in AntennaTracker are invited to join the ArduPilot Discord channel accessible in the Community menu. 
-Users seeking AntennaTracker support should refer to the support forums under the same menu. 
+.. note:: This tracker design does NOT require the use of a ground control station. Design using the vehicles location as reported by the GCS is detailed :ref:`here <common-mission-planner-gps-based-antenna-tracking>`.
+
+Developers interested in AntennaTracker are invited to join the ArduPilot Discord channel accessible in the Community menu.
+Users seeking AntennaTracker support should refer to the support forums under the same menu.
 This manual serves as a guide for setup and configuration.
 
 .. tip::
@@ -39,3 +40,5 @@ This manual serves as a guide for setup and configuration.
     How to Operate <docs/how-to-operate>
     docs/common-appendix
     User Alerts <docs/common-user-alerts>
+    docs/common-mission-planner-gps-based-antenna-tracking
+    docs/common-antenna-design
