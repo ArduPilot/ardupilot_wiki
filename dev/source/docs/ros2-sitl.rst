@@ -12,7 +12,7 @@ You need to install the ArduPilot dependencies first.
 
 .. code-block:: bash
 
-    cd ardu_ws/src/ardupilot
+    cd ~/ardu_ws/src/ardupilot
     ./Tools/environment_install/install-prereqs-ubuntu.sh -y
 
 Then, build Ardupilot for SITL with DDS enabled. The example below shows how to build the copter firmware, but you can replace *copter* with *plane*, *rover*, etc.
@@ -21,7 +21,7 @@ You can build the ROS2 packages *ardupilot_msgs*, *micro_ros_agent*, *ardupilot_
 
 .. code-block:: bash
 
-    cd ardu_ws/
+    cd ~/ardu_ws/
     colcon build --packages-up-to ardupilot_sitl  
 
 
@@ -41,7 +41,7 @@ and you are able to launch the SITL in ROS2 with the following command
 
       .. code-block:: bash
 
-        source /opt/ros/humble/setup.bash
+        source /opt/ros/$ROS_DISTRO/setup.bash
         cd ~/ardu_ws/
         colcon build --packages-up-to ardupilot_sitl
         source install/setup.bash
@@ -64,7 +64,7 @@ and you are able to launch the SITL in ROS2 with the following command
 
       .. code-block:: bash
 
-        source /opt/ros/humble/setup.bash
+        source /opt/ros/$ROS_DISTRO/setup.bash
         cd ~/ardu_ws/
         colcon build --packages-up-to ardupilot_sitl
         source install/setup.bash

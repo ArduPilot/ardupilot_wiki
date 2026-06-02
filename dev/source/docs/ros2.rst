@@ -22,7 +22,7 @@ Prerequisites
     We are keen to improve ArduPilot's support of ROS 2 so if you find issues (such as commands that do not seem to be supported), please report them in the `ArduPilot issues list <https://github.com/ArduPilot/ardupilot/issues>`__. A maintainer can add the `ROS` tag.
 
 First, make sure that you have successfully installed `ROS 2 Humble <https://docs.ros.org/en/humble/Installation.html>`__ .
-Currently, ROS 2 Humble is the only version supported.
+Currently, ROS 2 Jazzy and Humble versions are supported.
 
 You are about to create a new `ROS 2 workspace <https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#id4>`__.
 This page assumes that your workspace is named `ardu_ws` in your home directory, but feel free to adjust to your preferred location.
@@ -36,32 +36,73 @@ and check if it is `configured correctly <https://docs.ros.org/en/humble/Tutoria
 Installation (Ubuntu)
 =====================
 
-To make installation easy, we will clone the required repositories using `vcs` and a `ros2.repos` files:
+To make installation easy, we will clone the required repositories using `vcs` and a `ros2.repos` file:
 
-.. code-block:: bash
+.. tabs::
+    .. tab:: Jazzy  
 
-    mkdir -p ~/ardu_ws/src
-    cd ~/ardu_ws
-    vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos src
+        .. code-block:: bash
+
+                mkdir -p ~/ardu_ws/src
+                cd ~/ardu_ws
+                vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos src
+                vcs custom --args checkout jazzy
+                
+    .. tab:: Humble
+        .. code-block:: bash
+
+                mkdir -p ~/ardu_ws/src
+                cd ~/ardu_ws
+                vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos src
 
 This will take a few minutes to clone all the repositories your first time. It downloads the ArduPilot and *micro-ROS-Agent* repositories. Note that the master branch of ArduPilot is cloned by default. If you wish to use a different version, you will need to use Git commands to check out your desired ArduPilot version.
 
 Now update all dependencies for *micro-ROS-Agent*:
 
-.. code-block:: bash
 
-    cd ~/ardu_ws
-    sudo apt update
-    rosdep update
-    source /opt/ros/humble/setup.bash
-    rosdep install --from-paths src --ignore-src -r -y
+.. code-block:: bash 
+
+            cd ~/ardu_ws
+            sudo apt update
+            rosdep update
+            source /opt/ros/$ROS_DISTRO/setup.bash
+            rosdep install --from-paths src --ignore-src -r -y
+
 
 Installing the *Micro-XRCE-DDS-Gen* build dependency:
 
-.. code-block:: bash
 
-    sudo apt install default-jre
-    cd ~/ardu_ws
+.. tabs::
+    .. tab:: Jazzy
+        .. code-block:: bash
+
+                sudo apt update
+                sudo apt install openjdk-17-jre -y
+                cd ~/ardu_ws
+
+        .. note::
+            Ubuntu 24.04 (Jazzy) defaults to Java 21, which is incompatible with upcoming gradle build command. You must explicitly install and enforce Java 17 (JDK) to prevent class version compilation errors.
+
+        To guarantee your entire build environment is synchronized, you must configure both the Java runtime (``java``) and the Java compiler (``javac``) to use version 17. 
+
+        Execute the following commands:
+
+        .. code-block:: bash
+            
+            sudo update-alternatives --config java
+            sudo update-alternatives --config javac
+        
+        For each command, enter the selection number corresponding to the ``java-17-openjdk`` path.
+                
+    .. tab:: Humble
+        .. code-block:: bash
+
+                sudo apt update
+                sudo apt install default-jre
+                cd ~/ardu_ws     
+
+
+
 
 .. tabs::
    .. tab:: ArduPilot 4.7 and later

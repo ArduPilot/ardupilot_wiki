@@ -59,3 +59,6 @@ build_options.py
 
 # Mac file
 .DS_Store
+
+#Esbonio file
+esbonio.db
