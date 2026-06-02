@@ -21,13 +21,12 @@ popular Companion Computer hardware are listed below.
 .. toctree::
     :maxdepth: 1
 
-    Aerium Lumen - NVIDIA Jetson Baseboard <https://www.aerium.co.il/product-page/lumen>
-    Aerium Pascal - Raspberry Pi CM4/CM5 Baseboard <https://www.aerium.co.il/product-page/pascal-cm4-carrier>
+    Aerium Lumen - NVIDIA Jetson Baseboard <https://aerium.co.il/products/lumen>
+    Aerium Pascal - Raspberry Pi CM4/CM5 Baseboard <https://aerium.co.il/products/pascal-cm4-carrier>
     Arduino family <https://discuss.ardupilot.org/t/mavlink-and-arduino-step-by-step/25566/1>
     ARK Jetson PAB Carrier <companion-computer-ark-jetson-pab-carrier>
     LYCHEE (Cube Carrier Board for Raspberry Pi Compute Module) <https://dronee.aero/pages/lychee>
-    ModalAI VOXL <https://www.modalai.com/collections/voxl/products/voxl>
-    ModalAI VOXL2 <https://www.modalai.com/collections/blue-uas-framework-components/products/voxl-2>
+    ModalAI VOXL2 <common-modalai-voxl2>
     NVidia TX1 <companion-computer-nvidia-tx1>
     NVidia TX2 <companion-computer-nvidia-tx2>
     Ochin Tiny Carrier Board V2 for Raspberry Pi CM4 <https://www.seeedstudio.com/Ochin-Tiny-Carrier-Board-V2-for-Raspberry-Pi-CM4-p-5887.html>
@@ -35,7 +34,6 @@ popular Companion Computer hardware are listed below.
     Holybro Pixhawk Raspberry Pi CM4/CM5 Baseboard <https://holybro.com/products/pixhawk-rpi-cm4-baseboard>
     Holybro Pixhawk Jetson Baseboard <https://holybro.com/products/pixhawk-jetson-baseboard>
     Raspberry Pi <raspberry-pi-via-mavlink>
-    VoidRay <https://idrobots.com/product/void-ray>
 
 The Companion Computer software refers to the programs and tools that run on the Companion
 Computer. They will take in MAVLink telemetry from the Flight Controller and can route and 
