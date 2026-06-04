@@ -49,7 +49,6 @@ tools/suites are listed below.
     Maverick <https://goodrobots.github.io/maverick/#/>
     MAVSDK <https://github.com/ArduPilot/ardupilot-mavsdk>
     Pymavlink <https://github.com/ArduPilot/pymavlink>
-    ROS <ros>
     Rpanion-server <companion-computer-rpanion>
     Skyhub <https://idrobots.com/>
     APSync (deprecated) <apsync-intro>

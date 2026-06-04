@@ -1,8 +1,8 @@
-.. _ros:
+.. _ros1:
 
-=============
-ROS 1 / ROS 2
-=============
+=====
+ROS 1
+=====
 
 .. image:: ../images/logos/rosorg_logo.png
     :target: ../_images/logos/rosorg_logo.png
@@ -12,11 +12,6 @@ ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka R
 `ROS <http://www.ros.org/>`__ provides libraries, tools, hardware abstraction, device drivers, visualizers, message-passing, package management, and more to help software developers create robot applications.
 ROS1 is being replaced by `ROS 2 <http://design.ros2.org/articles/why_ros2.html>`__
 
-
-.. image:: ../images/logos/ros2_logo.png
-    :target: ../_images/logos/ros2_logo.png
-
-The tutorials below are split between ROS 1 and ROS 2.
 If you aren't sure which version to use, the ArduPilot development team recommends ROS 2 because ROS 1 is end-of-life in 2025.
 
 Prerequisites
@@ -25,14 +20,13 @@ Prerequisites
 Before using ArduPilot with ROS, you should first be familiar with both ArduPilot and ROS before trying to integrate them together.
 
 - Learn how to use ArduPilot first by following the relevant wiki for `Rover <https://ardupilot.org/rover/index.html>`__, `Copter <https://ardupilot.org/copter/index.html>`__ or `Plane <https://ardupilot.org/plane/index.html>`__. In particular, make sure the vehicle works well in Manual and Autonomous modes like Guided and Auto before trying to use ROS.
-- Learn how to use ROS by reading the `ROS 1 tutorials <http://wiki.ros.org/ROS/Tutorials>`__ or the `ROS 2 tutorials <https://docs.ros.org/en/humble/Tutorials.html#>`__.  In the case of a problem with ROS, it is best to ask on ROS community forums or `Robotics Stack Exchange <https://robotics.stackexchange.com/>`__ first (or google your error). You will find many other tutorials about ROS like `Emlid <https://docs.emlid.com/navio2/ros>`__.
+- Learn how to use ROS by reading the `ROS 1 tutorials <http://wiki.ros.org/ROS/Tutorials>`__.  In the case of a problem with ROS, it is best to ask on ROS community forums or `Robotics Stack Exchange <https://robotics.stackexchange.com/>`__ first (or google your error). You will find many other tutorials about ROS like `Emlid <https://docs.emlid.com/navio2/ros>`__.
 
 MAVROS
 ======
 
 `MAVROS <http://wiki.ros.org/mavros>`__ is a ROS package that can convert between ROS topics and `MAVLink messages <https://github.com/ArduPilot/mavlink>`__ allowing ArduPilot vehicles to communicate with ROS.
 The `MAVROS code can be found here <https://github.com/mavlink/mavros/tree/master/mavros>`__.
-Starting in ArduPilot 4.5, ArduPilot supports a direct DDS interface compatible with ROS 2, which removes the need to use MAVROS for certain applications.
 
 ROS 1
 =====
@@ -54,22 +48,6 @@ ROS 1
         ROS with distance sensors <ros-distance-sensors>
         ROS with Aruco Boards detection <ros-aruco-detection>
         ROS with Apriltag Boards detection <ros-apriltag-detection>
-
-ROS 2
-=====
-
-.. toctree::
-    :maxdepth: 1
-
-        Install ROS 2 <ros2>
-        ROS 2 with SITL <ros2-sitl>
-        ROS 2 Interfaces <ros2-interfaces>
-        ROS 2 with SITL in Gazebo <ros2-gazebo>
-        ROS 2 over Ethernet <ros2-over-ethernet>
-        ROS 2 waypoint goal interface <ros2-waypoint-goal-interface>
-        Cartographer SLAM with ROS 2 in SITL <ros2-cartographer-slam>
-        ROS 2 on Raspberry Pi <ros2-pi>
-
 
 Conclusion
 ==========
