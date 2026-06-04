@@ -159,7 +159,8 @@ Table of Contents
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
     OEM Customization <docs/common-oem-customizations>
     RemoteID <docs/opendroneid>
-    ROS1/ROS2 <docs/ros>
+    ROS1 <docs/ros1>
+    ROS2 <docs/ros2>
     RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
     Security <docs/security-landing-page>
     Support Proxy <docs/support_proxy>
