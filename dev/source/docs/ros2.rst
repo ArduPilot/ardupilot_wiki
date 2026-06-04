@@ -90,7 +90,6 @@ Installing the *Micro-XRCE-DDS-Gen* build dependency:
         .. code-block:: bash
             
             sudo update-alternatives --config java
-            sudo update-alternatives --config javac
         
         For each command, enter the selection number corresponding to the ``java-17-openjdk`` path.
                 
