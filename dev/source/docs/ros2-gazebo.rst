@@ -70,7 +70,7 @@ Update ROS and Gazebo dependencies:
 .. code-block:: bash
 
     cd ~/ardu_ws
-    source /opt/ros/humble/setup.bash
+    source /opt/ros/$ROS_DISTRO/setup.bash
     sudo apt update
     rosdep update
     rosdep install --from-paths src --ignore-src -y
