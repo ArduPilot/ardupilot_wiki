@@ -38,48 +38,96 @@ and you are able to launch the SITL in ROS2 with the following command
 .. tabs::
 
    .. group-tab:: ArduPilot 4.5
+        .. tabs::
+            .. tab:: ROS 2 Jazzy
+                .. code-block:: bash
 
-      .. code-block:: bash
+                    source /opt/ros/jazzy/setup.bash
+                    cd ~/ardu_ws/
+                    colcon build --packages-up-to ardupilot_sitl
+                    source install/setup.bash
+                    ros2 launch ardupilot_sitl sitl_dds_udp.launch.py \
+                    transport:=udp4 \
+                    refs:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/dds_xrce_profile.xml \
+                    synthetic_clock:=True \
+                    wipe:=False \
+                    model:=quad \
+                    speedup:=1 \
+                    slave:=0 \
+                    instance:=0 \
+                    defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm \
+                    sim_address:=127.0.0.1 \
+                    master:=tcp:127.0.0.1:5760 \
+                    sitl:=127.0.0.1:5501
 
-        source /opt/ros/$ROS_DISTRO/setup.bash
-        cd ~/ardu_ws/
-        colcon build --packages-up-to ardupilot_sitl
-        source install/setup.bash
-        ros2 launch ardupilot_sitl sitl_dds_udp.launch.py \
-        transport:=udp4 \
-        refs:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/dds_xrce_profile.xml \
-        synthetic_clock:=True \
-        wipe:=False \
-        model:=quad \
-        speedup:=1 \
-        slave:=0 \
-        instance:=0 \
-        defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm \
-        sim_address:=127.0.0.1 \
-        master:=tcp:127.0.0.1:5760 \
-        sitl:=127.0.0.1:5501
+            .. tab:: ROS 2 Humble
+                .. code-block:: bash
+
+
+                    source /opt/ros/humble/setup.bash
+                    cd ~/ardu_ws/
+                    colcon build --packages-up-to ardupilot_sitl
+                    source install/setup.bash
+                    ros2 launch ardupilot_sitl sitl_dds_udp.launch.py \
+                    transport:=udp4 \
+                    refs:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/dds_xrce_profile.xml \
+                    synthetic_clock:=True \
+                    wipe:=False \
+                    model:=quad \
+                    speedup:=1 \
+                    slave:=0 \
+                    instance:=0 \
+                    defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm \
+                    sim_address:=127.0.0.1 \
+                    master:=tcp:127.0.0.1:5760 \
+                    sitl:=127.0.0.1:5501
 
 
    .. group-tab:: ArduPilot 4.6 and later
+        .. tabs:: 
 
-      .. code-block:: bash
+            .. tab:: ROS 2 Jazzy
 
-        source /opt/ros/$ROS_DISTRO/setup.bash
-        cd ~/ardu_ws/
-        colcon build --packages-up-to ardupilot_sitl
-        source install/setup.bash
-        ros2 launch ardupilot_sitl sitl_dds_udp.launch.py \
-        transport:=udp4 \
-        synthetic_clock:=True \
-        wipe:=False \
-        model:=quad \
-        speedup:=1 \
-        slave:=0 \
-        instance:=0 \
-        defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm \
-        sim_address:=127.0.0.1 \
-        master:=tcp:127.0.0.1:5760 \
-        sitl:=127.0.0.1:5501
+                .. code-block:: bash
+
+                    source /opt/ros/jazzy/setup.bash
+                    cd ~/ardu_ws/
+                    colcon build --packages-up-to ardupilot_sitl
+                    source install/setup.bash
+                    ros2 launch ardupilot_sitl sitl_dds_udp.launch.py \
+                    transport:=udp4 \
+                    synthetic_clock:=True \
+                    wipe:=False \
+                    model:=quad \
+                    speedup:=1 \
+                    slave:=0 \
+                    instance:=0 \
+                    defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm \
+                    sim_address:=127.0.0.1 \
+                    master:=tcp:127.0.0.1:5760 \
+                    sitl:=127.0.0.1:5501
+
+            .. tab:: ROS 2 Humble
+
+                .. code-block:: bash
+
+                    source /opt/ros/humble/setup.bash
+                    cd ~/ardu_ws/
+                    colcon build --packages-up-to ardupilot_sitl
+                    source install/setup.bash
+                    ros2 launch ardupilot_sitl sitl_dds_udp.launch.py \
+                    transport:=udp4 \
+                    synthetic_clock:=True \
+                    wipe:=False \
+                    model:=quad \
+                    speedup:=1 \
+                    slave:=0 \
+                    instance:=0 \
+                    defaults:=$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/copter.parm,$(ros2 pkg prefix ardupilot_sitl)/share/ardupilot_sitl/config/default_params/dds_udp.parm \
+                    sim_address:=127.0.0.1 \
+                    master:=tcp:127.0.0.1:5760 \
+                    sitl:=127.0.0.1:5501
+
 
 More modules of `mavproxy <https://ardupilot.org/dev/docs/copter-sitl-mavproxy-tutorial.html>`__ such as *map* and *console* can be added in the above command. For example, *map:=True console:=True*.
 

@@ -39,7 +39,7 @@ Installation (Ubuntu)
 To make installation easy, we will clone the required repositories using `vcs` and a `ros2.repos` file:
 
 .. tabs::
-    .. tab:: Jazzy  
+    .. tab:: ROS 2 Jazzy  
 
         .. code-block:: bash
 
@@ -48,7 +48,7 @@ To make installation easy, we will clone the required repositories using `vcs` a
                 vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos src
                 vcs custom --args checkout jazzy
                 
-    .. tab:: Humble
+    .. tab:: ROS 2 Humble
         .. code-block:: bash
 
                 mkdir -p ~/ardu_ws/src
@@ -60,20 +60,33 @@ This will take a few minutes to clone all the repositories your first time. It d
 Now update all dependencies for *micro-ROS-Agent*:
 
 
-.. code-block:: bash 
+.. tabs::
+    
+    .. tab:: ROS 2 Jazzy
+
+        .. code-block:: bash
 
             cd ~/ardu_ws
             sudo apt update
             rosdep update
-            source /opt/ros/$ROS_DISTRO/setup.bash
+            source /opt/ros/jazzy/setup.bash
             rosdep install --from-paths src --ignore-src -r -y
 
+    .. tab:: ROS 2 Humble
+
+        .. code-block:: bash
+
+            cd ~/ardu_ws
+            sudo apt update
+            rosdep update
+            source /opt/ros/humble/setup.bash
+            rosdep install --from-paths src --ignore-src -r -y
 
 Installing the *Micro-XRCE-DDS-Gen* build dependency:
 
 
 .. tabs::
-    .. tab:: Jazzy
+    .. tab:: ROS 2 Jazzy
         .. code-block:: bash
 
                 sudo apt update
@@ -83,7 +96,7 @@ Installing the *Micro-XRCE-DDS-Gen* build dependency:
         .. note::
             Ubuntu 24.04 (Jazzy) defaults to Java 21, which is incompatible with upcoming gradle build command. You must explicitly install and enforce Java 17 (JDK) to prevent class version compilation errors.
 
-        To guarantee your entire build environment is synchronized, you must configure both the Java runtime (``java``) and the Java compiler (``javac``) to use version 17. 
+        To guarantee your entire build environment is synchronized, you must configure both the Java runtime (``java``) to use version 17. 
 
         Execute the following commands:
 
@@ -91,9 +104,9 @@ Installing the *Micro-XRCE-DDS-Gen* build dependency:
             
             sudo update-alternatives --config java
         
-        For each command, enter the selection number corresponding to the ``java-17-openjdk`` path.
+        Enter the selection number corresponding to the ``java-17-openjdk`` path.
                 
-    .. tab:: Humble
+    .. tab:: ROS 2 Humble
         .. code-block:: bash
 
                 sudo apt update

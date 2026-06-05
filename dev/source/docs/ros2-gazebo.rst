@@ -29,14 +29,14 @@ Next, set up all the necessary ROS 2 packages in the workspace.
 We will clone the required repositories using `vcstool <https://github.com/dirk-thomas/vcstool>`__ and a `ros2.repos` files:
 
 .. tabs::
-    .. tab:: Jazzy
+    .. tab:: ROS 2 Jazzy
         .. code-block:: bash
 
             cd ~/ardu_ws
             vcs import --input https://raw.githubusercontent.com/ArduPilot/ardupilot_gz/main/ros2_gz.repos --recursive src
             vcs custom --args checkout jazzy
 
-    .. tab:: Humble
+    .. tab:: ROS 2 Humble
         .. code-block:: bash
 
             cd ~/ardu_ws
@@ -67,52 +67,31 @@ Add Gazebo sources to `rosdep` for the non-default pairing of ROS 2 Humble and G
 
 Update ROS and Gazebo dependencies:
 
-.. code-block:: bash
+.. tabs:: 
+    .. tab:: ROS 2 Jazzy 
 
-    cd ~/ardu_ws
-    source /opt/ros/$ROS_DISTRO/setup.bash
-    sudo apt update
-    rosdep update
-    rosdep install --from-paths src --ignore-src -y
+        .. code-block:: bash
+
+            cd ~/ardu_ws
+            source /opt/ros/jazzy/setup.bash
+            sudo apt update
+            rosdep update
+            rosdep install --from-paths src --ignore-src -y
+
+    .. tab:: ROS 2 Humble
+
+        .. code-block:: bash
+
+            cd ~/ardu_ws
+            source /opt/ros/humble/setup.bash
+            sudo apt update
+            rosdep update
+            rosdep install --from-paths src --ignore-src -y
+
+
 
 Build and Run Tests
 ===================
-
-
-
-.. warning::
-    **Minimum Hardware Requirements**
-    Compiling the workspace requires a significant amount of system memory. A minimum of **16 GB of RAM** is highly recommended. 
-
-    If your system has less than 16 GB of RAM, the C++ compiler (Colcon) will likely consume all available memory and may trigger a crash during the build process. To prevent this, you must expand your virtual memory by creating a 4 GB swap file.
-
-To configure a persistent 4 GB swap file on Ubuntu, execute the following commands:
-
-.. code-block:: bash
-
-    # 1. Allocate a continuous 4 Gigabyte file on the root partition
-    sudo fallocate -l 4G /swapfile
-
-    # 2. Restrict permissions so only the root user can access it (Critical for security)
-    sudo chmod 600 /swapfile
-
-    # 3. Format the allocated file as a dedicated swap space
-    sudo mkswap /swapfile
-
-    # 4. Activate the swap space for immediate use by the operating system
-    sudo swapon /swapfile
-
-    # 5. Verify that the swap space is active and registered
-    sudo swapon --show
-
-    # 6. Create a backup of your filesystem table before modifying it
-    sudo cp /etc/fstab /etc/fstab.bak
-
-    # 7. Append the swap file to fstab so it mounts automatically after a system reboot
-    echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
-
-    # 8. Verify the filesystem table syntax to ensure no errors were introduced
-    sudo findmnt --verify --verbose
 
 Build : 
 
@@ -121,15 +100,6 @@ Build :
     cd ~/ardu_ws
     colcon build --packages-up-to ardupilot_gz_bringup
 
-
-Set Gazebo Environment Variables:
-
-.. code-block:: bash
-
-    export GZ_SIM_SYSTEM_PLUGIN_PATH=$HOME/ardu_ws/install/ardupilot_gazebo/lib:${GZ_SIM_SYSTEM_PLUGIN_PATH}
-    export GZ_SIM_RESOURCE_PATH=$HOME/ardu_ws/install/ardupilot_gazebo/share:$HOME/ardu_ws/src/ardupilot_gazebo/models:$HOME/ardu_ws/src/ardupilot_gazebo/worlds:${GZ_SIM_RESOURCE_PATH}
-    export SDF_PATH=$GZ_SIM_RESOURCE_PATH
-    source ~/ardu_ws/install/setup.bash
 
 If you'd like to test your installation, run:
 
