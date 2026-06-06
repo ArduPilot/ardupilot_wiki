@@ -20,6 +20,7 @@ New Peripheral Support
 - Trimble PX-1 GSOF AHRS, see https://github.com/ArduPilot/ardupilot_wiki/pull/7566
 - Kebni SensAItion IMU and INS sensors, see https://github.com/ArduPilot/ardupilot_wiki/pull/7337
 - YARI DroneCAN GNSSs, see https://github.com/ArduPilot/ardupilot_wiki/pull/7785
+- RPLidarS2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7787
 
 New Features
 ============
