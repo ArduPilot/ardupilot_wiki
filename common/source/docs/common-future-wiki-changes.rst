@@ -14,6 +14,7 @@ New Board Support
 - SparkNavi Blue , see https://github.com/ArduPilot/ardupilot_wiki/pull/7643
 - PilotGaeaSH7V1-bdshot, see https://github.com/ArduPilot/ardupilot_wiki/pull/7687
 - PrinciploT H7 Pi , see https://github.com/ArduPilot/ardupilot_wiki/pull/7694
+- SkyDroid-S3, see https://github.com/ArduPilot/ardupilot_wiki/pull/7791
 
 New Peripheral Support
 ======================
