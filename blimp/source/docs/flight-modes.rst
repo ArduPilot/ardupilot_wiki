@@ -79,16 +79,16 @@ Pilot control in each mode (Except LAND in which there is no pilot control and a
 TRANSMITTER STICK     CONTROL EFFECT
 ==================    =================
 ROLL                  MANUAL: Lateral movement,
-                      VELOCITY: Full throw attempts to obtain :ref:`MAX_VEL_XY<MAX_VEL_XY>` m/s laterally,
-                      LOITER: Full throw attempts to obtain :ref:`MAX_POS_XY<MAX_POS_XY>` m/s laterally
+                      VELOCITY: Full throw attempts to obtain ``MAX_VEL_XY`` m/s laterally,
+                      LOITER: Full throw attempts to obtain ``MAX_POS_XY`` m/s laterally
 PITCH                 MANUAL: Fore/Aft movement,
-                      VELOCITY: Full throw attempts to obtain :ref:`MAX_VEL_XY<MAX_VEL_XY>` m/s  fore/aft,
-                      LOITER: Full throw attempts to obtain :ref:`MAX_POS_XY<MAX_POS_XY>` m/s  fore/aft
+                      VELOCITY: Full throw attempts to obtain ``MAX_VEL_XY`` m/s  fore/aft,
+                      LOITER: Full throw attempts to obtain ``MAX_POS_XY`` m/s  fore/aft
 YAW                   MANUAL: Yaw,
-                      VELOCITY: Full throw attempts to increase/decrease heading :ref:`MAX_VEL_YAW<MAX_VEL_YAW>` radians/s  fore/aft,
-                      LOITER: Full throw attempts to increase/decrease heading :ref:`MAX_POS_YAW<MAX_POS_XY>` radians/s  fore/aft
+                      VELOCITY: Full throw attempts to increase/decrease heading ``MAX_VEL_YAW`` radians/s  fore/aft,
+                      LOITER: Full throw attempts to increase/decrease heading ``MAX_POS_YAW`` radians/s  fore/aft
 THROTTLE              MANUAL: Ascend/Descend,
-                      VELOCITY: Full throw attempts to increase/decrease altitude :ref:`MAX_VEL_Z<MAX_VEL_Z>` m/s,
-                      LOITER: Full throw attempts to increase/decrease heading :ref:`MAX_POS_Z<MAX_POS_Z>` m/s 
+                      VELOCITY: Full throw attempts to increase/decrease altitude ``MAX_VEL_Z`` m/s,
+                      LOITER: Full throw attempts to increase/decrease heading ``MAX_POS_Z`` m/s 
 ==================    =================
 
