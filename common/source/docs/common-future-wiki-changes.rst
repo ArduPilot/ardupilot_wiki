@@ -22,6 +22,7 @@ New Peripheral Support
 - Kebni SensAItion IMU and INS sensors, see https://github.com/ArduPilot/ardupilot_wiki/pull/7337
 - YARI DroneCAN GNSSs, see https://github.com/ArduPilot/ardupilot_wiki/pull/7785
 - RPLidarS2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7787
+- LightwareGRF-250 I2C, see https://github.com/ArduPilot/ardupilot_wiki/pull/7795
 
 New Features
 ============
