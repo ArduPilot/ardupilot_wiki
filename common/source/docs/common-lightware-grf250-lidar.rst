@@ -17,6 +17,8 @@ Both models support serial (UART) communication and provide accurate distance an
 
    Support for the LightWare GRF250 and GRF500 sensors was added in ArduPilot 4.7 and later.
 
+.. note:: Power note - The GRF sensors can draw higher current than typical serial peripherals. Check your flight controller’s 5 V peripheral rail limits — an external 5 V supply may be required.
+
 Serial Connection
 -----------------
 
@@ -41,9 +43,15 @@ If the GRF is connected to the autopilots' SERIAL4 port and it is the first rang
 
 If instead you are using the SERIAL2 port, set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9 and :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115.
 
-Power note:
-The GRF sensors can draw higher current than typical serial peripherals.
-Check your flight controller’s 5 V peripheral rail limits — an external 5 V supply may be required.
+I2C Setup
+=========
+Some versions are available with I2C connectivity. Connect them to an available autopilot I2C bus and set the following parameters (assuming its the first rangefinder):
+
+- :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 48 (LightWareGRF-I2C)
+- :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1
+- :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.2
+- :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 250 *(for GRF250)*
+- :ref:`RNGFND1_ADDR <RNGFND1_ADDR>` = (optional) default value of "0" will probe all I2C buses for first instance of GRF rangefinder. Use this param if more than one RF is utilized to set the address to searched for on the probe to a specific instance.
 
 Additional GRF-specific Parameters
 ----------------------------------
