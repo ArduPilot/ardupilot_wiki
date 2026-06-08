@@ -322,6 +322,10 @@ This list of commands was inferred from the command handler in
 
 - :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
 - :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
+- :ref:`MAV_CMD_NAV_LOITER_UNLIM <mav_cmd_nav_loiter_unlim>`
+- :ref:`MAV_CMD_NAV_LOITER_TURNS <mav_cmd_nav_loiter_turns>`
+- :ref:`MAV_CMD_NAV_LOITER_TIME <mav_cmd_nav_loiter_time>`
+- :ref:`MAV_CMD_NAV_GUIDED_ENABLE <mav_cmd_nav_guided_enable>` (NAV_GUIDED only)
 - :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
 - :ref:`MAV_CMD_JUMP_TAG<mav_cmd_jump_tag>`
@@ -776,9 +780,9 @@ Supported by: All vehicles.
 
 Loiter at the specified location for an unlimited amount of time.
 
-[site wiki="copter" heading="off"]
+[site wiki="copter,rover" heading="off"]
 
-Fly to the specified location and then loiter there indefinitely — where
+Fly/Drive to the specified location and then loiter there indefinitely — where
 loiter means "wait in place" (rather than "circle"). If zero is
 specified for a latitude/longitude/altitude parameter then the current
 location value for the parameter will be used.
@@ -916,7 +920,7 @@ will restart).
 
 .. _mav_cmd_nav_loiter_turns:
 
-[site wiki="copter,plane"]
+[site wiki="copter,plane,rover"]
 MAV_CMD_NAV_LOITER_TURNS
 ------------------------
 
@@ -1769,15 +1773,15 @@ The Mission Planner screenshot shows the path the vehicle will take.
    #3 is parallel to an imaginary line drawn between waypoints #2 and #4
 -  Waypoint #5 is a straight line so the vehicle lines itself up to
    point towards waypoint #5 even before reaching waypoint #4.
-
-
+[/site]
 
 .. _mav_cmd_nav_guided_enable:
+[site wiki="copter,rover,sub"]
 
 MAV_CMD_NAV_GUIDED_ENABLE
 -------------------------
 
-Supported by: Copter (not Plane or Rover).
+Supported by: Copter, Rover, Sub (not Plane).
 
 Enable ``GUIDED`` mode to hand over control to an external controller/:ref:`common-companion-computers`. ee :ref:`Guided Mode <copter:ac2_guidedmode>` for more information. The :ref:`common-companion-computers`  would then send MAVLink commands to control the vehicle.
 
