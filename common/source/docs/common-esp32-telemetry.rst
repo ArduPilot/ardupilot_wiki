@@ -88,7 +88,7 @@ For more details see the `DroneBridge Docs Installation Guide <https://dronebrid
 Configuring DroneBridge for ESP32
 =================================
 
-After powering on the ESP32, connect your PC's wifi to the WifiAP, "DroneBridge for ESP32" with password "dronebridge"
+After powering on the ESP32, connect your PC's wifi to the WifiAP, "DroneBridge for ESP32" with password "dronebridge".  If "ESP-NOW" is installed, it may be necessary to short-press the "Settings" button to make the WifiAP appear.
 
 Open a web browser and connect to one of the following URLs:
 
