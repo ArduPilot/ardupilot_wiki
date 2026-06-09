@@ -128,8 +128,10 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
         <td><div class="first last line-block">
             <div class="line">UAV-DEV GmbH, Mirko Denecke, <a href="mailto:info@uav-dev.com" target="_top">info@uav-dev.com</a></div>
             <div class="line"><br/></div>
-            <div class="line">ArduPilot integration, setup, support and troubleshooting.</div>
-            <div class="line">Customizations of ArduPilot code, ArduPilot ROS integration.</div>
+            <div class="line">Hardware, software, and support from a single source.</div>
+            <div class="line">ArduPilot integration, system setup, and troubleshooting.</div>
+            <div class="line">Custom software extensions (C++ and LUA).</div>
+            <div class="line">Hardware development designed for specific needs.</div>
             </div>
         </td>
     </tr>
