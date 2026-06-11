@@ -4,7 +4,13 @@
 Security
 ========
 
-This page describes how to protect an ArduPilot vehicle from external threats.
+This pages provides an overview of security considerations for ArduPilot users and developers, with specific sections for major software components of the ArduPilot ecosystem.
+
+
+Vehicle Considerations
+======================
+
+From a user perspective, the following resources are available to help secure your vehicle:
 
 .. toctree::
     :maxdepth: 1
@@ -17,6 +23,13 @@ This page describes how to protect an ArduPilot vehicle from external threats.
 The first step in protecting the vehicle is to ensure that it is physically secure.  If a malicious individual has physical access to the vehicle there are numerous ways they could endanger the system including cutting wires, breaking propellers, adding devices that interfere with the sensors (vibration, magnetic interference, EMI).  While the ArduPilot software has `pre-arm checks <https://ardupilot.org/copter/docs/common-prearm-safety-checks.html>`__ that may catch some methods of vandalism, it cannot protect against them all.
 
 While security is important, some security measures can affect usability so a balanced approach keeping in mind the user's needs and rights under the :ref:`GPLv3 license <license-gplv3>` is also important.
+
+ArduPilot Firmware
+==================
+
+The ArduPilot security boundary extends up to, but does not include, the physical communication interface (radio link, network cable, USB cable, etc.).  Security of the Command and Control (C2) link and any vehicle-based network is the responsibility of the user.
+
+Users must understand which ports and interfaces are enabled on their autopilot and what data each one processes.  Disable any interface that is not required for the intended use case.  See the "Security Attack Surface" section below for a breakdown of each interface and recommended restrictions.
 
 Security Attack Surface
 -----------------------
@@ -32,7 +45,7 @@ The "security attack surface" is the set of access points that a malicious actor
    * - CAN
      - Used for many `peripherals <https://ardupilot.org/copter/docs/common-uavcan-peripherals.html>`__ including GPSs, Lidar, ESCs
    * - `Ethernet <https://ardupilot.org/copter/docs/common-network.html>`__
-     - Used primarily for :ref:`companion computers <companion-computers>` and `camera gimbals <https://ardupilot.org/copter/docs/common-cameras-and-gimbals.html>`__ and protection should be applied to their attack surfaces
+     - Used primarily for MAVLink and `peripherals <https://ardupilot.org/copter/docs/common-optional-hardware.html>`__ and protection should be applied to their attack surfaces.  Any vehicle-based LAN must be kept secure — treat it as a trusted but isolated network and prevent unauthorised physical or wireless access.
    * - GPS
      - Susceptible to jamming and spoofing.  The `EKF failsafe <https://ardupilot.org/copter/docs/ekf-inav-failsafe.html>`__ may trigger a failsafe action but consider adding `Non-GPS navigation <https://ardupilot.org/copter/docs/common-non-gps-navigation-landing-page.html>`__ as a backup
    * - I2C / SPI
@@ -48,14 +61,22 @@ The "security attack surface" is the set of access points that a malicious actor
 
 Please note that ArduPilot is very often operating in a resource-constrained environment meaning it cannot, on its own, provide all the checks required to ensure a bulletproof system.  Instead the system as a whole must be designed to be secure.  To this end, by default, the inputs to the autopilot (aka "attack surfaces") are trusted.  We trust our SPI-connected inertial sensors to be well-behaved, for example.
 
-Ground Control Stations
-.......................
+A key design goal of ArduPilot is that receiving corrupted or malformed data on any interface must not halt or crash the software.  Robustness against bad data is treated as a correctness requirement, not merely a security nicety.  If you observe ArduPilot crashing or hanging upon receipt of malformed data, please report it as a bug via the process described in the "Reporting Security Issues" section below.
 
-Most notable amongst "trusted" data sources are connections to the Ground Control Station.  We expect GCSs to be well-behaved in terms of the data sent to the autopilot.  Remember that your GCS can disarm your vehicle mid-air or force it into terrain as a matter of course.
+Some ArduPilot configurations support an IP server (ie HTTP) running directly on the autopilot (for example via :ref:`AP_Networking <common-network>`).  Any such interface will advise the user that a server is active and display the address and port on which it is listening.  Users are responsible for ensuring that vehicle-side IP interfaces are accessible only to trusted network participants.
 
-We disable floating point exceptions in the embedded firmware, meaning that a lot of floating point operations which would result in a Floating Point Exception now simply don't.  By default we do NOT disable floating point exceptions in SITL, allowing errors in Ground Control Stations to be picked up in SITL rather than when someone is flying a real vehicle.  To more-closely approximate what happens on our embedded platforms, you can use the ``SIM_FLOAT_EXCEPT`` parameter to disable floating point exceptions in ArduPilot SITL.  This may help find real problems when trying to use fuzzers to find problems with the ArduPilot codebase.
+We disable floating point exceptions in the ArduPilot firmware, meaning that a lot of floating point operations which would result in a Floating Point Exception now simply don't.  By default we do NOT disable floating point exceptions in SITL, allowing errors in Ground Control Stations to be picked up in SITL rather than when someone is flying a real vehicle.  To more-closely approximate what happens on our embedded platforms, you can use the ``SIM_FLOAT_EXCEPT`` parameter to disable floating point exceptions in ArduPilot SITL.  This may help find real problems when trying to use fuzzers to find problems with the ArduPilot codebase.
 
-One exception to the trusted-ground-control-station model is if :ref:`MAVLink2 Signing <common-MAVLink2-signing>` is enabled.  If the serial port is configured for MAVLink2 signing, unsigned packets will be ignored and should not cause the vehicle to misbehave with the possible exception of DOS attacks.  If you believe you have found a situation where an unsigned packet on a MAVLink2 signed connection causes unexpected behaviour please see the "Reporting Security Issues" section below.
+Lua Scripts
+-----------
+
+:ref:`LUA Scripts <common-lua-scripts>` are a powerful way to add custom functionality to ArduPilot.  However, they can also be a security risk if they are modified by an malicious actor or if they contain vulnerabilities that can be exploited.  To mitigate these risks, consider the following recommendations:
+
+- Only use Lua scripts from trusted sources (such as the ArduPilot Github repository) and review the code of any scripts before use
+
+Lua scripts from the ArduPilot Github repository are reviewed by the ArduPilot Dev Team and are generally considered safe to use.  However, if you find a security issue in one of these scripts, please report it via the "Reporting Security Issues" process described below. Each script is documented (where applicable) with any known security considerations - such as unauthenticated interfaces - and any such considerations should be reviewed before use.
+
+Note that :ref:`AP_Periph <dev:ap-peripheral-landing-page>` nodes can also run Lua scripts and the same recommendations apply to them as well.
 
 Parameter Lockdown
 ------------------
@@ -92,15 +113,83 @@ Custom pre-arm checks can be added using Lua scripts including :ref:`building th
 
 Please refer to the `Scripts Crash and Errors <https://ardupilot.org/copter/docs/common-lua-scripts.html#script-crashes-and-errors>`__ wiki section for information on how to ensure scripts are run reliably and not modified.
 
+Ground Control Stations
+=======================
+
+We expect GCSs to be well-behaved in terms of the data sent to the autopilot. Remember that your GCS can disarm your vehicle mid-air or force it into terrain as a matter of course.
+
+All ArduPilot GCS's will clearly inform the user which ports and network addresses they are auto-connecting to or auto-listening on at startup.  Users should verify this information and ensure that only expected connections are active.
+
+One exception to the trusted-ground-control-station model is if :ref:`MAVLink2 Signing <common-MAVLink2-signing>` is enabled.  If the serial port is configured for MAVLink2 signing, unsigned packets will be ignored.  If you believe you have found a situation where an unsigned packet on a MAVLink2 signed connection causes unexpected behaviour please see the "Reporting Security Issues" section below.
+
+`Mission Planner <https://ardupilot.org/planner/>`__ and `MAVProxy <https://ardupilot.org/mavproxy/>`__ are the primary ArduPilot GCS software packages.  Because they can upload firmware, modify parameters, upload missions and send MAVLink commands they have significant control over the vehicle.  Security recommendations:
+
+- When downloading GCS software, only download from the official ArduPilot links or other official sources
+- Keep the GCS Software updated to the latest stable version
+- Be cautious when connecting to vehicles of unknown provenance
+- Enable :ref:`MAVLink2 Signing <common-MAVLink2-signing>` when connecting over untrusted radio or network links
+- On shared computers, be aware that the GCS Software may cache flight logs, connection settings and vehicle parameters
+- Ensure that the computer running the GCS Software is secure and free from malware
+- Be aware of what networks the computer running the GCS Software is connected to. Ensure that it has appropriate protections (ie firewall) from untrusted networks while the GCS Software is running, as this could potentially allow a malicious actor to interfere with the MAVLink connection
+- The GCS Software can forward MAVLink connections to multiple consumers - ensure all connected consumers are trusted. Consider setting MAVLink forwarding as "read-only" if available 
+- The GCS Software can run scripts and plugins which can execute arbitrary code - only use trusted scripts and plugins
+
+ `QGroundControl <https://qgroundcontrol.com/>`__ is a popular GCS that supports ArduPilot but is not developed by the ArduPilot team.  The above recommendations apply to QGroundControl as well.
+
+ArduPilot GCS's are designed to be robust against malformed data, and malicious actors gaining control of the vehicle via software bugs or exploits.  If you observe this, please report it via the "Reporting Security Issues" process described below.
+
+Support Libraries
+=================
+
+`pymavlink <https://github.com/ArduPilot/pymavlink>`__ is the Python library underlying MAVProxy and many other ArduPilot tools.  It provides direct MAVLink message generation, parsing and signing.  Security recommendations:
+
+- Keep pymavlink updated to the latest version
+- When downloading pymavlink, only download from the official ArduPilot Github or PyPI repository
+- Use the MAVLink2 signing functionality provided by pymavlink for authenticated connections
+- Validate all inputs before constructing and sending MAVLink messages
+- Exercise caution when parsing MAVLink logs or messages from untrusted sources
+- Don't run pymavlink on untrusted XML message definitions
+
+Also included here are the MAVLink nodejs packages `node-mavlink <https://www.npmjs.com/package/node-mavlink>`__ and `mavlink-mappings <https://www.npmjs.com/package/mavlink-mappings>`__ which are used by some ArduPilot tools.
+
+ArduPilot support libraries are designed to be robust against malformed data, and malicious actors gaining control of the vehicle via software bugs or exploits.  If you observe this, please report it via the "Reporting Security Issues" process described below.
+
+Web Tools
+=========
+
+The `ArduPilot WebTools <https://firmware.ardupilot.org/Tools/WebTools/>`__ are a collection of browser-based tools for log analysis, parameter review and filter design.  See :ref:`common-webtools` for a full list of available tools.  These tools run entirely within the user's web browser with no data uploaded to a remote server.  Security recommendations:
+
+- Keep the browser updated to benefit from the latest browser security patches
+- Only open log files and parameter files from trusted sources, as they are processed by JavaScript running in the browser
+- Be aware that browser extensions can potentially intercept data processed within web applications
+
+Other Web-based tools such as the `Terrain Generator <https://firmware.ardupilot.org/Tools/TerrainGenerator/>`__, `Custom Build Server <https://custom.ardupilot.org/>`__, `DroneCan Web Interface <https://can.ardupilot.org/>`__ and the `ArduPilot Firmware Server <https://firmware.ardupilot.org/>`__ are hosted on secure servers with HTTPS and are maintained by the core dev team to ensure security patches are applied in a timely manner.
+
+Any security issues with these tools should be reported via the "Reporting Security Issues" process described below.
+
+Support Proxy
+=============
+
+The `ArduPilot Support Proxy <https://support.ardupilot.org>`__ is a tool that proxies MAVLink connections via a secure server, typically for remote support of ArduPilot vehicles.  It provides features such as MAVLink2 signing and connection logging.  Security recommendations:
+
+- Only connect when required and disconnect when finished
+- Use MAVLink signing, preferably bi-directional signing, to ensure the authenticity of the connection
+- Ensure you trust the support provider you are connecting to, as they will have control over the vehicle while connected
+- Ensure you connect to the genuine ArduPilot Support Proxy server and not a malicious impersonator.  The genuine server is hosted at support.ardupilot.org
+
+Any security issues with this tool should be reported via the "Reporting Security Issues" process described below.
+
 Build the Code Yourself
 -----------------------
 
 The `ArduPilot firmware server <https://firmware.ardupilot.org/>`__ provides pre-compiled firmware for a wide range of boards and configurations.  The core dev team diligently maintains the server including applying security patches and updates.  However, if you want to be sure that the code running on your autopilot is exactly the code you have reviewed, consider :ref:`building the code yourself <building-the-code>`.
 
+Other components, such as GCS software or support tools can also be built and run locally.
+
 Reporting Security Issues
 -------------------------
 
-If you believe you have found a security issue in ArduPilot, please raise an issue in the `issues list <https://github.com/ArduPilot/ardupilot/issues>`__ and optionally post a link to the issue in the :ref:`ArduPilot Discord Server's <ardupilot-discord-server>` "code_review" channel.
+If you believe you have found a security issue in ArduPilot, please raise an issue in the `issues list <https://github.com/ArduPilot/ardupilot/issues>`__ for ArduPilot or the relevant repository for other software components and optionally post a link to the issue in the :ref:`ArduPilot Discord Server's <ardupilot-discord-server>` "code_review" channel.
 
 While we are keen to hear of potential security issues, before reporting, please read the "Security Attack Surface" and "Ground Control Station" sections above.  The most common reports we receive are from `fuzz testing <https://en.wikipedia.org/wiki/Fuzzing>`__ involving changing various parameters in SITL and causing the vehicle to crash or sending in invalid MAVLink messages.  These are generally not valid security issues because the ground station is considered trusted. 
 
