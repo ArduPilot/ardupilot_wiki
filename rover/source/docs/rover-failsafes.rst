@@ -94,14 +94,16 @@ You must use the transmitter's mode switch to re-take control of the vehicle in 
 Crash Check
 ===========
 
-If enabled by setting the :ref:`FS_CRASH_CHECK <FS_CRASH_CHECK>` parameter to "1" (for :ref:`Hold <hold-mode>`) or "2" (for :ref:`Hold <hold-mode>` and Disarm) this failsafe will switch the vehicle to Hold and then (optionally) disarm the vehicle if all the following are true for at least 2 seconds:
+If enabled by setting the :ref:`FS_CRASH_CHECK <FS_CRASH_CHECK>` parameter to "1" (for :ref:`Hold <hold-mode>`) or "2" (for :ref:`Hold <hold-mode>` and Disarm) this failsafe will switch the vehicle to Hold and then (optionally) disarm the vehicle if all the following are true for at least :ref:`CRASH_TIMEOUT <CRASH_TIMEOUT>` seconds:
 
 - the vehicle is in :ref:`Auto <auto-mode>`, :ref:`Guided <guided-mode>`, :ref:`RTL <rtl-mode>` or :ref:`SmartRTL <smartrtl-mode>` mode
-- velocity falls below 0.08m/s (i.e. 8cm/s)
-- the vehicle is turning at less than 4.5 deg/s
-- demanded throttle to the motors (from the pilot or autopilot) is at least 5%
+- velocity falls below :ref:`CRASH_VEL_MIN <CRASH_VEL_MIN>`
+- the vehicle is turning at less than :ref:`CRASH_TRAT_MIN <CRASH_TRAT_MIN>`
+- demanded throttle to the motors (from the pilot or autopilot) is at least :ref:`CRASH_THR_MIN <CRASH_THR_MIN>`
 
 In addition, the :ref:`CRASH_ANGLE <CRASH_ANGLE>` parameter immediately enables the same actions above if the vehicle's roll or pitch angle exceeds that value. "0" disables this check.
+
+A `Lua script applet <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/crash-actions.md>`_ is available to extend crash check actions.
 
 Hold Mode Failsafes
 ===================
