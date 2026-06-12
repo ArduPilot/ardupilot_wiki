@@ -37,6 +37,7 @@ camera-change-setting.lua                   Allows changing some camera settings
 copter-deadreckon-home.lua                  Flies towards home on loss of GPS
 copter-slung-payload.lua                    Reduce a slung payload's oscillation
 copter_terrain_brake.lua                    Useful when flying in LOITER mode in steep terrain
+crash-actions.lua                           Extends crash check (failsafe) actions
 crst-calibration.lua                        Vehicle calibration menu via CRSF parameter commands
 follow-target-send.lua                      Sends the FOLLOW_TARGET mavlink message to allow other vehicles to follow this one
 forward_flight_motor_shutdown.lua           Forward flight motor shutdown
