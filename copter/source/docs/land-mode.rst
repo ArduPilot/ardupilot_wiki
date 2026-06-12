@@ -20,8 +20,7 @@ features:
    .. image:: ../images/Land_DescentSpeed2.png
        :target: ../_images/Land_DescentSpeed2.png
 
--  Upon reaching the ground the copter will automatically shut-down the
-   motors and disarm the copter if the pilot's throttle is at minimum.
+-  After landing is detected, the copter will automatically shut down the motors and disarm.
 
 .. note::
 
@@ -29,7 +28,7 @@ features:
    approximately one second:
 
    - Motors are commanded to their lower limit by the vertical position controller
-   - Throttle is at minimum 
+   - The attitude controller's throttle mix is at minimum 
    - No large angle is being requested (roll/pitch target < 15°)
    - No large angle error exists (attitude error < 30°)
    - The airframe is not accelerating downward > 1m/s/s ( >2 m/s/s if Weight on Wheels feature is enabled)
