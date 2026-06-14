@@ -159,6 +159,9 @@ Closed Hardware
     iFlight Blitz Wing H743 <common-blitzh743wing>
     iFlight Thunder H7 <common-iflight-thunder-H7>
     JAE JFB-110 <common-jae-jfb110>
+    JFB-100 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/JFB100/README.md>
+    JFB-110 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/JFB110/README.md>
+    JFB-200 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/JFB200/README.md>
     JHEMCU F405Pro <common-jhemcuf405pro>
     JHEMCU F405WING <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/JHEMCUF405WING>
     JHEMCU H743HD <common-jhemcu-h743hd>
