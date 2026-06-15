@@ -34,3 +34,12 @@ How does it work?
 - When the rangefinder can "see" the ground, the pilot's throttle stick adjusts the target altitude above the ground (i.e. the attitude corrected distance from the range finder)
 - When the vehicle climbs out of the rangefinder's range the pilot's stick returns to directly controlling the vehicle's target climb rate (i.e. EKF estimated climb rate based on barometer and accelerometer).  When the vehicle comes back within the range of the ground, the target altitude above the terrain is reset to the current altitude above terrain. For more information, see :ref:`Understanding Altitude in ArduPilot <common-understanding-altitude>`.
 
+Special case configuration
+--------------------------
+
+By default, the surface tracking algorithm has built-in protenction against cases where the rangefinder measurements "jump" (also referred to as a "glitch"): Flying over a tall bush, over a ditch or a tall fence.
+In these cases, the copter will not change the distance at which it tracks the ground and change its reference Above Ground Altitude (AGL) target.
+However, there are some cases where this is not the desired behaviour.
+
+- **Flying over low buildings**: If you wish to have the vehicle to climb and maintain the same distance with the building roof, then adjust :ref:`SURFTRAK_GLDST<SURFTRAK_GLDST>` to be more than the expected building height.
+- **Tethered vehicles**: A tether is likely to interfere with the rangefinder and cause undesired changes of altitude. Set :ref:`SURFTRAK_GLSAM<SURFTRAK_GLSAM>` to 0 to disable the altitude reference change when a "glitch" is detected. The "glitched" rangefinder readings will be disregarded (so the vehicle will not change AGL), and it will also not change its AGL target.
