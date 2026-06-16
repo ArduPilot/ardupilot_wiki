@@ -32,7 +32,7 @@ New Features
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
 [/site]
 [site wiki="copter"]
-
+- Ability to abort flip using aux switch low, see https://github.com/ArduPilot/ardupilot_wiki/pull/7759
 [/site]
 [site wiki="rover"]
 
