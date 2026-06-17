@@ -63,7 +63,6 @@ Open Hardware
     CUAV Pixhawk v6X V2 <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-V6X-v2>
     CUAV X7/X7Pro/X7+/X7+ Pro <common-cuav-x7-family-overview>
     CUAV-7-Nano <common-CUAV-7-Nano>
-    Drotek Pixhawk3 <https://drotek.gitbook.io/pixhawk-3-pro/>
     F4BY <common-f4by>
     CubePilot Cube Black <common-thecube-overview>
     CubePilot Cube Orange/+ <common-thecubeorange-overview>
@@ -315,6 +314,8 @@ The following boards are no longer produced, however, documentation is still ava
     Mateksys F405-Wing <common-matekf405-wing>
     Mateksys F765-Wing <common-matekf765-wing>
     Mateksys F765-WSE <common-matekf765-wse>
+    Drotek Pixhawk3 <https://drotek.gitbook.io/pixhawk-3-pro/>
+
 
 The following boards are no longer supported. The documentation is :ref:`archived<common-archived-topics>`, but
 available if you're still working on those platforms:
