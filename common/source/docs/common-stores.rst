@@ -7,16 +7,14 @@ Stores
 The following stores are known to stock quality versions of the controllers, telemetry radios, cables etc.
 recommended for use with ArduPilot (in alphabetical order).  You may also want to check the list of :ref:`Ready-to-Use vehicles <common-rtf>`.
 
+* `3DR <https://store.3dr.com/>`__ (ex mRobotics)
 * `3DXR <https://www.3dxr.co.uk/>`__
 * `ADTi <https://www.adti.camera/>`__
-* `AION ROBOTICS <https://www.aionrobotics.com>`__
-* `Air-Supply Aerial <https://www.airsupply.com>`__
 * `AltiGator <http://www.altigator.com/>`__
 * `ArduSimple <https://www.ardusimple.com/>`__
 * `ARK Electronics <https://arkelectron.com/>`__
 * `Bask Aerospace <https://baskaerospace.com.au/>`__
 * `Benewake <https://beixingguangzi.en.alibaba.com/>`__
-* `Blicube <https://www.blicube.com/>`__
 * `BlueRobotics <https://www.bluerobotics.com/store/>`__
 * `BZB UAS <https://bzbuas.com/>`__
 * `Craft & Theory <http://www.craftandtheoryllc.com/store/>`__ (FrSky telemetry, MAUCH power modules)
@@ -24,17 +22,14 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `CubePilot <https://www.cubepilot.org>`__
 * `DATAGNSS <https://www.datagnss.com>`__
 * `DH Research <https://dh-research.com/>`__
-* `Drone Engr <https://www.droneassemble.com/>`__
 * `Emlid <https://store.emlid.com/>`__
 * `EAMS Robotics <https://store.shopping.yahoo.co.jp/elab-store/>`__
 * `Event38 <https://event38.com/shop/>`__
 * `Foxtech <https://www.foxtechfpv.com>`__
 * `GNSS.store <https://gnss.store/>`__
-* `Harris Aerial <https://www.harrisaerial.com/shop/>`__
 * `Holybro <https://shop.holybro.com/>`__
 * `JapanDrones <http://japandrones.com/>`__
 * `Lightware <https://lightware.co.za/>`__
-* `mRobotics <http://mrobotics.io/>`__
 * `NW Blue <https://nwblue.com/>`__
 * `Qiotek <http://www.qio-tek.com/>`__
 * `RF Design <http://store.rfdesign.com.au/>`__
