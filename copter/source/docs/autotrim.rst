@@ -46,7 +46,7 @@ Save Trim
 ~~~~~~~~~
 .. note:: the above AHRS AutoTrim method is preferred since it does not involve moving transmitter trims after RC calibration.
 
-Save trim involves essentially transferring your radio transmitter's trims to correct the autopilot's accelerometer trim. Normally, once :ref:`common-accelerometer-calibration` is done, you never want to change the transmitter's trims, but in this case it is done **temporarily**. The "Save Trim" function ("5") is assigned to any free RC channel, usually a switch based one, using an :ref:`common-auxiliary-functions`. For the example below, Channel 7 will be used.
+Save trim involves essentially transferring your radio transmitter's trims into the autopilot's AHRS trim (the :ref:`AHRS_TRIM_X <AHRS_TRIM_X>` and :ref:`AHRS_TRIM_Y <AHRS_TRIM_Y>` parameters), the same values that the AHRS AutoTrim method above adjusts. Normally, once :ref:`common-accelerometer-calibration` is done, you never want to change the transmitter's trims, but in this case it is done **temporarily**. The "Save Trim" function ("5") is assigned to any free RC channel, usually a switch based one, using an :ref:`common-auxiliary-functions`. For the example below, Channel 7 will be used.
 
 1. Check that your CH7 switch goes above 1800 on the MissionPlanner's Setup > Mandatory Hardware > Radio Calibration screen
 
