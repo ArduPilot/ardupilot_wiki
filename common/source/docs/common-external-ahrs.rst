@@ -11,6 +11,7 @@ Supported Systems
 
 Currently, ArduPilot supports these systems:
 
+- `Aeron Systems PLX3 <https://www.aeronsystems.com/inertial-products/inertial-navigation-systems/pollux-3>`__
 - `Inertialabs INS-P <https://inertiallabs.com/wp-content/uploads/2023/09/INS-B-P-D-DL_Datasheet_rev-6.27_August_2023.pdf>`__
 - `MicroStrain 3DM® Series <https://www.microstrain.com/inertial-sensors/all-sensors>`_
 - `Trimble PX-1 GSOF <https://applanix.trimble.com/en/hardware/trimble-px-1-rtx>`__
@@ -32,6 +33,10 @@ If using 4.7 (or higher) and/or boards with less than 2MB flash, please use the 
 
 More instructions on using the :ref:`Custom Build Server can be found here <common-custom-firmware>`
 
+Aeron
+----------------
+Refer to :ref:`common-external-ahrs-aeron` for details and configuration.
+
 Kebni SensAItion
 ----------------
 Refer to :ref:`common-external-ahrs-sensaition` for details.
@@ -45,7 +50,7 @@ MicroStrain
 
     - :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` = 11 (External AHRS)
 
-    - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 1 (VectorNAV), 2 (MicroStrain5), 5(InertialLabs), or 7(MicroStrain7)
+    - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 1 (VectorNAV), 2 (MicroStrain5), 5(InertialLabs), 7(MicroStrain7), or 10(Aeron)
 
 This will replace ArduPilot’s internally generated INS/AHRS subsystems with the external system.
 The MicroStrain system must be configured via `Sensor Connect <https://www.microstrain.com/software/sensorconnect>`__ before use.
@@ -111,3 +116,4 @@ With higher baud rates, MicroStrain7 should be suitable for Copter and QuadPlane
 
     common-external-ahrs-vectornav
     common-external-ahrs-sensaition
+    common-external-ahrs-aeron
