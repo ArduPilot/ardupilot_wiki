@@ -21,8 +21,15 @@ automatically according to the guidelines below.
 
     astyle --options=Tools/CodeStyle/astylerc <filename>
 
+Some files are enforced to be *astyle* clean. To format them automatically, run:
+
+::
+
+    ./Tools/scripts/run_astyle.py
+
 Remember any formatting changes to a file should be done as a separate
-commit.
+commit. You can add formatting commits to the ``.git-blame-ignore-revs`` file
+to not clutter history.
 
 Case
 ====
