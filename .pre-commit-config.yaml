@@ -49,13 +49,21 @@ repos:
       - id: rst-literal-block-spacing
         name: Check ReST literal block spacing
         entry: python scripts/check_rst_literal_blocks.py
-        language: system
-        files: '\.rst$'
+        language: python
+        types: [rst]
 
   - repo: local
     hooks:
       - id: check-youtube-timestamps
         name: Check YouTube timestamps are not in video ID
         entry: python scripts/check_youtube_timestamps.py
+        language: python
+        types: [rst]
+
+  - repo: local
+    hooks:
+      - id: check-ref-directives
+        name: Check ref directive formatting
+        entry: python scripts/check_ref_directives.py
         language: python
         types: [rst]
