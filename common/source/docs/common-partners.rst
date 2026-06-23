@@ -1017,6 +1017,61 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://irisdynamics.com/
 
+      - .. image:: ../../../images/supporters/supporters_logo_flyer_ai.jpg
+            :width: 250px
+            :align: center
+            :target:  https://flyer-ai.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_axldrone.png
+            :width: 250px
+            :align: center
+            :target:  https://www.axldrone.com
+
+      - .. image:: ../../../images/supporters/supporters_logo_blue_vigil.jpg
+            :width: 250px
+            :align: center
+            :target:  https://www.bluevigil.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_sky_robots.jpg
+            :width: 250px
+            :align: center
+            :target:  https://skyrobots.mu/
+
+      - .. image:: ../../../images/supporters/supporters_logo_newbeedrone.jpg
+            :width: 250px
+            :align: center
+            :target:  https://www.newbeedrone.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_eltehs.png
+            :width: 250px
+            :align: center
+            :target:  https://gnss.store
+
+      - .. image:: ../../../images/supporters/supporters_logo_frsky.png
+            :width: 250px
+            :align: center
+            :target:  https://www.frsky-rc.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_mostas.png
+            :width: 250px
+            :align: center
+            :target:  https://mostastech.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_airmarket.png
+            :width: 250px
+            :align: center
+            :target:  https://airmarket.io
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_skydroid.png
+            :width: 250px
+            :align: center
+            :target:  https://skydroidglobal.com
+
       -
 
 
