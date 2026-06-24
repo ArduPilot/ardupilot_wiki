@@ -1,7 +1,7 @@
 .. _ros2-install:
 
 =============
-Inatall ROS 2
+Install ROS 2
 =============
 
 .. image:: ../images/logos/ros2_logo.png
@@ -133,12 +133,13 @@ If you'd like to test your ArduPilot ROS 2 installation, run:
     colcon test --executor sequential --parallel-workers 0 --base-paths src/ardupilot --event-handlers=console_cohesion+
     colcon test-result --all --verbose
 
-While `colcon` provides a convenient way for building multiple repositories in the correct order,
-it hides all of the `./waf` options that ArduPilot developers are familiar with.
-Most `ROS` packages written in C++ use a `CMake` build system, but ArduPilot uses `waf` and
-has been wrapped by `CMake`.
-If you would like all the `waf` options exposed, consider upvoting this
-`issue. <https://github.com/ArduPilot/ardupilot/issues/27714>`__
+Any ``waf`` configure args can be set as follows:
+
+.. code-block:: bash
+
+    colcon build --packages-select ardupilot_sitl --cmake-args -DARDUPILOT_WAF_CONFIGURE_ARGS="--disable-CRSF"
+
+You can also use ``ARDUPILOT_WAF_BUILD_ARGS``.
 
 The ``base-paths`` is used to limit testing only to ArduPilot.
 We use a sequential executor and no parallel works because otherwise the tests try
