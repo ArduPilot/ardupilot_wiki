@@ -1,4 +1,4 @@
-.. _vicon-pixhawk6c-indoor-positioning:
+.. _Vicon Positioning System as fake GPS for Indoor Flight:
 
 [copywiki destination="copter,plane,rover"]
 
