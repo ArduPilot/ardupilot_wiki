@@ -442,8 +442,6 @@ Bitmask to indicate which fields should be **ignored** by the vehicle
 
 bit1:body roll rate, bit2:body pitch rate, bit3:body yaw rate, bit7:throttle, bit8:attitude
 
-Should always be 0b00000111 / 0x07 / 7 (decimal)
-
 .. raw:: html
 
    </td>
@@ -457,20 +455,20 @@ Should always be 0b00000111 / 0x07 / 7 (decimal)
    Note that zero-rotation causes vehicle to rotate towards North.
    </td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>body_roll_rate</strong></td>
    <td>float</td>
-   <td>Body roll rate not supported</td>
+   <td>Body roll rate in rad/s</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>body_pitch_rate</strong></td>
    <td>float</td>
-   <td>Body pitch rate not supported</td>
+   <td>Body pitch rate in rad/s</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>body_yaw_rate</strong></td>
    <td>float</td>
-   <td>Body yaw rate not supported</td>
+   <td>Body yaw rate in rad/s</td>
    </tr>
    <tr>
    <td><strong>thrust</strong></td>
