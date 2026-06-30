@@ -27,7 +27,7 @@ For aircraft designed to carry large directly mounted payloads, the maximum valu
 - :ref:`ATC_ACC_R_MAX<ATC_ACC_R_MAX>`  x (min_TOW / max_TOW)
 - :ref:`ATC_ACC_Y_MAX<ATC_ACC_Y_MAX>`  x (min_TOW / max_TOW)
 
-:ref:`PILOT_Y_RATE<PILOT_Y_RATE>` should be set to be approximately 0.005 x :ref:`ATC_ACC_Y_MAX<ATC_ACC_Y_MAX>` to ensure that the aircraft can achieve full yaw rate in approximately half a second.
+:ref:`PILOT_Y_RATE<PILOT_Y_RATE>` should be set to be approximately 0.5 x :ref:`ATC_ACC_Y_MAX<ATC_ACC_Y_MAX>` to ensure that the aircraft can achieve full yaw rate in approximately half a second.
 
 :ref:`ATC_ANG_LIM_TC <ATC_ANG_LIM_TC>` may be increased to provide a very smooth feeling on the sticks at the expense of a slower reaction time.
 
