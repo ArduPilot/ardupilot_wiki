@@ -212,6 +212,7 @@ Closed Hardware
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
 [/site]
     Parrot C.H.U.C.K <common-CHUCK-overview>
+    PilotGaeaSHV1-bdshot <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/PilotGaeaSH7V1-bdshot/README.md>
     PixFlamingo- F767 <common-pixflamingo-f767>
     PixSurveyA2-IND <common-pixsurveya2-ind>
     RadioLink MiniPix <common-radiolink-minipix>
