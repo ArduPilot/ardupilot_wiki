@@ -1,10 +1,10 @@
-.. _Vicon Positioning System as fake GPS for Indoor Flight:
+.. _common-vicon-for-nongps-navigation:
 
 [copywiki destination="copter,plane,rover"]
 
-===========================================================
-Vicon Positioning System as fake GPS for Indoor Flight
-===========================================================
+=======================================
+Using a Vicon indoor positioning system
+=======================================
 
 Overview
 ========
@@ -18,9 +18,8 @@ connection.
 
 
 The Vicon system comes with a SDK that provides APIs for accessing the
-Vicon positioning data. To use the Vicon data with ArduPilot you need
-a tool which can use this API and map it onto MAVLink packets to send
-to ArduPilot. This can be done by manipulating the MAVLink packet "GPS_INPUT" to create a fake GPS source for ArduPilot.
+Vicon positioning data. To use the Vicon data with ArduPilot, you need
+a tool which can use this API and reformats the data into MAVlink format. This can be done by manipulating the MAVlink packet "GPS_INPUT", creating a pseudo GPS source for ArduPilot.
 
 Hardware Setup
 ==============
@@ -29,9 +28,9 @@ The following hardware is used in this guide:
 
  - Vicon camera system with a Host PC
  - Vicon Calibration Wand 
- - Linux laptop (GCS) with both WiFi and Ethernet capability
+ - Linux laptop (GCS) with both Wi-Fi and Ethernet capability
  - Pixhawk6C flight controller
- - ESP8266 WiFi module
+ - ESP8266 Wi-Fi module
  - Conventional Radio controller and receiver
  - Minimum of 4 reflective IR markers per drone
  - Ethernet cables
@@ -39,7 +38,7 @@ The following hardware is used in this guide:
 
 System Overview
 ===============
-A Ground Control Station (GCS) in the form of a Linux laptop recieves this positional data by listening in the broadcast from Vicon's Host PC, reparsing the positional data into MAVLink's GPS_INPUT format, and is sent wirelessly over a wifi module to a flight controller.
+A Ground Control Station (GCS) in the form of a Linux laptop receives this positional data by listening to the broadcast from Vicon's Host PC, reformats the positional data into MAVlink's GPS_INPUT format, and sends it wirelessly over a Wi-Fi module to a flight controller.
 
 
 GCS Setup
@@ -59,7 +58,7 @@ Set Up a Conda Virtual Environment (Optional)
 
 Pyvicon installation
 --------------------
-Within the downloaded Vicon SDK, move shared libraries .so files into somewhere accessible for your os (For my case, lib inside my "Vicon" venv). Move .cpp and .h files into pyvicon-master/pyvicon folder as well. Below is an example of how to do this:
+Within the downloaded Vicon SDK, move shared library .so files into an accessible location for your OS (In my case, lib inside my "Vicon" venv). Move .cpp and .h files into pyvicon-master/pyvicon folder as well. Below is an example of how to do this:
 
 .. code:: bash
 
@@ -107,7 +106,7 @@ From inside the ``pyvicon-master`` directory, build and install pyvicon:
 Network Setup
 -------------
 
-Find a means to connect the Vicon Host PC to your GCS laptop (I am using CAT6 ethernet for lowest latency) and rename it's IP address as "vicon" in the hosts file. For example:
+Find a means to connect the Vicon Host PC to your GCS laptop (I am using CAT6 ethernet for lowest latency) and rename its IP address as "vicon" in the hosts file. For example:
 
 .. code:: bash
 
@@ -178,7 +177,7 @@ compass reliance.
 .. note::
     An empirical GPS1 delay of 50ms was found to work best with the Vicon system. If using a different network setup, you may need to adjust this value depending on your network latency.
 
-    For remote connection between GCS and the flight controller, I used an ESP8266 WiFi module connected to a Pixhawk6C via the telemetry port. Update the SERIAL1_BAUD parameter to 921600 and SERIAL1_OPTIONS to 2 for this setup. If using a different telemetry module, you may need to adjust this value.
+    For remote connection between GCS and the flight controller, I used an ESP8266 Wi-Fi module connected to a Pixhawk6C via the telemetry port. Update the SERIAL1_BAUD parameter to 921600 and SERIAL1_OPTIONS to 2 for this setup. If using a different telemetry module, you may need to adjust this value.
 
 
 IR Marker Placement
@@ -211,7 +210,7 @@ Calibrating the Cameras
 Under **CALIBRATE CAMERAS**, click **START**. The computer will
 verbally confirm ``"Calibration started"``.
 
-Prepare the Vicon Calibration Wand and switch on its LEDs. Enter the flight arena and sweep the wand in a
+Prepare the Vicon Calibration Wand and switch on its LEDs. Enter the Vicon environment and sweep the wand in a
 cyclical arc facing the cameras, covering all camera positions in the
 arena. Camera calibration progress is indicated by LED colour change:
 
@@ -228,15 +227,15 @@ Once the progress bar completes, inspect the **World Error** and
 .. note::
     Any orange or red tiles in the table indicate a poor calibration — repeat the physical sweep in that case.
 
-    Emphasize your sweep in areas your drone is expected to fly. (e.g. if you are flying in the corner, do more sweeps in that corner).
+    Emphasize your sweep in areas your drone is expected to fly. (e.g. if you are flying in the corner, do few more sweeps in that corner).
 
 Setting the Origin
 ------------------
 
-From within your testing environment, place the wand flat on the ground at your chosen
+From within your Vicon environment, place the wand flat on the ground at your chosen
 origin location. 
 
-The direction convention for the Calibration Wand is usually known as: Bottom of handle = West, left handle = North. Align the wand as orthogonally as possible with your testing environment.
+The direction convention for the Calibration Wand is usually known as: **The bottom of the handle points towards West, the left handle points towards North.** Align the wand as orthogonally as possible with your Vicon environment.
 
 .. warning::
 
@@ -253,7 +252,7 @@ Defining New Drone Objects
 The Vicon system identifies objects by recognising the geometric
 arrangement of IR markers on a drone. To define a new object:
 
-1. Place the drone inside the testing environment. 
+1. Place the drone inside the Vicon environment. 
 
 2. Align Autopilot's forward direction with the origin's North axis.
 
@@ -284,7 +283,7 @@ If you haven't installed MAVProxy and pymavlink already:
    python3 -m pip install pymavlink==2.4.49
    python3 -m pip install mavproxy==1.8.74
 
-You must clarify to Mavproxy which Vicon object to track. Navigate to the MAVProxy's module folder and find `mavproxy_vicon.py`, for example:
+You must tell MAVproxy which Vicon object to track. Navigate to the MAVProxy's module folder and find `mavproxy_vicon.py`, for example:
 
 .. code:: bash
 
@@ -300,8 +299,8 @@ Save the file.
 
 Ensure:
  - The GCS is connected to the Vicon Host PC.
- - The GCS is connected to the flight controller via WiFi module/your means.
- - The drone is placed inside the flight arena and tracked by the Vicon system.
+ - The GCS is connected to the flight controller via Wi-Fi module/your means.
+ - The drone is placed inside the Vicon environment and tracked by the Vicon system.
 
 Launch MAVProxy:
 
@@ -323,8 +322,11 @@ A successful connection will print:
 
    Connected to subject "<OBJECT_NAME>" segment "<OBJECT_NAME>"
 
-The MAVProxy console should then display live NED (North-East-Down)
-position and Euler angles (Roll, Pitch, Yaw) for the drone.
+The MAVProxy console should now display live position and Euler angles in North-East-Down and Roll-Pitch-Yaw coordinate system.
+
+.. warning::
+
+   Vicon utilizes the NEU (North-East-Up) coordinate system, while ArduPilot uses NED (North-East-Down) coordinate system. Pyvicon automatically converts the coordinates from NEU to NED, but for your own custom integration, you must ensure this conversion is handled correctly (To fly 1m high in MAVlink format, this is -1, not 1).
 
 .. note::
 
@@ -348,14 +350,23 @@ Set the following flight mode assignments (using a 3-way switch on channel
  - Flight Mode 6: Loiter
 
 Once the EKF3 reports yaw alignment and GPS lock, the drone is ready
-to arm. For a first flight, :ref:`Stabilize mode <stabilize-mode>` is your manual control. :ref:`Alt Hold mode <altholdmode>` should be attempted first with great caution, then cascadingly loiter, guided, auto mode. 
+to arm. For the first flight, you should take off using :ref:`Stabilize mode <stabilize-mode>` under your manual control. Once the drone is airborne and steady, attempt :ref:`Alt Hold mode <altholdmode>` while being fully prepared to switch it back if something goes wrong. Once the drone is stable in Alt Hold using the Vicon coordinates, you can attempt :ref:`Loiter mode <loitermode>` and :ref:`Guided mode <guidedmode>`.
 
-As configurations differs between the lab configuration, this serves as more of a working princple of Vicon integration with Ardupilot. For a more extensive Dummy Guide based on experiences with specifc hardware in the Cranfield indoor flight arena, as well greater visualizations, it is available at: `Vicon Indoor Positioning System with Pixhawk6C <https://matthewt0809.github.io/Vicon-Positioning-System-To-Pixhawk6C-Guide/>`_.
+
+.. warning::
+
+   Exercise great caution when attempting to fly in Alt Hold, Loiter mode for the 1st time. Visually imagine the drone's ability to full throttle into the ceiling or suddenly drops out of the sky as the worst case scenario due to a misconfiguration. The moment you switch the modes you must be capable of switching back to Stabilize mode immediately if the drone is not behaving as expected. 
+ 
+
+Cranfield's Indoor Flight Arena's Approach 
+------------------------------------------
+
+It's because configuration differs between the lab environments, this serves as more of a working principle of Vicon integration with Ardupilot. **For a more extensive "Dummy" Guide with specific hardware configurations we use in the Cranfield indoor flight arena, it is publicly available at: `Vicon Indoor Positioning System with Pixhawk6C <https://matthewt0809.github.io/Vicon-Positioning-System-To-Pixhawk6C-Guide/>`_. ** Please use this as a reference for your own setup.
 
 .. warning::    
 
     The ESP8266 is reported to have connection issues in swarm flights.
-    Use a Raspberry Pi wifi hosting feature for remote communication if conducting multi-drone operations. 
+    Use a Raspberry Pi Wi-Fi hosting feature for remote communication if conducting multi-drone operations. 
     
     Not all Pixhawk variants behave identically with this configuration — older
     Radiolink Pixhawk hardware does not work. 
