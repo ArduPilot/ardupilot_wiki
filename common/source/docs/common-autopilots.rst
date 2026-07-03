@@ -115,6 +115,7 @@ Closed Hardware
     Brother Hobby F405v3 <common-brotherhobbyf405v3>
     Brother Hobby H743 <common-brotherhobbyh743>
     CORVON743V1 <common-corvon743v1>
+    CORVON743V2 <common-corvon743v2>
     CBUnmanned H743 Stamp <common-StampH743>
     CORVONF405V2.1 <common-corvonf405v2_1>
     CrazyF405 <common-crazyf405>
