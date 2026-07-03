@@ -15,6 +15,7 @@ New Board Support
 - PilotGaeaSH7V1-bdshot, see https://github.com/ArduPilot/ardupilot_wiki/pull/7687
 - PrinciploT H7 Pi , see https://github.com/ArduPilot/ardupilot_wiki/pull/7694
 - SkyDroid-S3, see https://github.com/ArduPilot/ardupilot_wiki/pull/7791
+- CORVON743V2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7828
 
 New Peripheral Support
 ======================
