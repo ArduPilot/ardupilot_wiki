@@ -52,13 +52,34 @@ The graph below show the EKF's innovations for position (green), velocity (red) 
     :target: ../_images/ekf-failsafe-example-log.png
     :width: 450px
 
+EKF's Glitch Protection
+=======================
+
+The :ref:`EKF's <common-apm-navigation-extended-kalman-filter-overview>` glitch protection works as follows:
+
+#. When new GPS position and velocity measurements are received, they are compared to
+   a position predicted using IMU measurements.
+#. If the position difference exceeds a statistical confidence level set by
+   :ref:`EK3_POS_I_GATE <EK3_POS_I_GATE>` then the measurement won't be used.
+   Similarly the velocity is checked using :ref:`EK3_VEL_I_GATE <EK3_VEL_I_GATE>`.
+#. If the GPS glitch lasts long enough (usually about 7 seconds), the EKF's position
+   and velocity estimates will be reset to the GPS position and velocity.
+#. :ref:`EK3_GLITCH_RAD <EK3_GLITCH_RAD>` controls the maximum radial uncertainty
+   in position between the value predicted by the filter and the value measured
+   by the GPS before the filter position and velocity states are reset to the GPS.
+   Making this value larger allows the filter to ignore larger GPS glitches but
+   also means that non-GPS errors such as IMU and compass can create a larger error
+   in position before the filter is forced back to the GPS position.
+   If :ref:`EK3_GLITCH_RAD <EK3_GLITCH_RAD>` set to 0 the GPS innovations will be
+   clipped instead of rejected if they exceed the gate size set by
+   :ref:`EK3_VEL_I_GATE <EK3_VEL_I_GATE>` and :ref:`EK3_POS_I_GATE <EK3_POS_I_GATE>`
+   which can be useful if poor quality sensor data is causing GPS rejection and
+   loss of navigation but does make the EKF more susceptible to GPS glitches.
+   If setting :ref:`EK3_GLITCH_RAD <EK3_GLITCH_RAD>` to 0 it is recommended to
+   reduce :ref:`EK3_VEL_I_GATE <EK3_VEL_I_GATE>` and :ref:`EK3_POS_I_GATE <EK3_POS_I_GATE>` to 300
+
 Video
 =====
 
 ..  youtube:: zJbephAEFWQ
     :width: 100%
-
-.. toctree::
-    :maxdepth: 1
-
-    GPS Failsafe and Glitch Protection <gps-failsafe-glitch-protection>
