@@ -97,6 +97,7 @@ List of Modules
     log
     magical
     map
+    mcp
     messagerate
     misseditor
     movinghome
