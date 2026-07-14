@@ -117,6 +117,7 @@ Closed Hardware
     CORVON743V1 <common-corvon743v1>
     CORVON743V2 <common-corvon743v2>
     CBUnmanned H743 Stamp <common-StampH743>
+    CoreWing F405 Wing V2/Wing Mini V2 <common-CoreWingF405WingV2>
     CORVONF405V2.1 <common-corvonf405v2_1>
     CrazyF405 <common-crazyf405>
     CSKY405 <common-CSKYF405>
