@@ -133,39 +133,65 @@ Table of Contents
 
 .. toctree::
    :titlesonly:
+   :caption: Getting Started
 
-    License (GPLv3) <docs/license-gplv3>
     Downloading the code / Using Git <docs/where-to-get-the-code>
     Building the code <docs/building-the-code>
     Editors & IDEs <docs/code-editing-tools-and-ides>
     Learning the code <docs/learning-the-ardupilot-codebase>
     Simulation & Testing <docs/simulation-2>
     Debugging <docs/debugging>
+    License (GPLv3) <docs/license-gplv3>
+
+.. toctree::
+   :titlesonly:
+   :caption: Contributing
+
     Contributing Code <docs/contributing>
+    How The Team Works <docs/how-the-team-works>
+    Wiki Editing Guide <docs/common-wiki_editing_guide>
+    GSoC <docs/gsoc>
+
+.. toctree::
+   :titlesonly:
+   :caption: Hardware & Peripherals
+
     Porting to a new Flight Controller <docs/porting>
-    Linux Support <docs/ardupilot-on-linux>
-    Academic Works Involving ArduPilot <docs/acadamic-works>
     Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
     AP_Peripheral Devices <docs/ap-peripheral-landing-page>
-    CAN and DroneCAN/UAVCAN <docs/can-bus>
     Companion Computers <docs/companion-computers>
-    Developers Conference <docs/dev-conference>
-    Events <docs/events>
-    GCS Developer Resources <docs/gcs-resources>
-    GSoC <docs/gsoc>
-    How The Team Works <docs/how-the-team-works>
-    Lua Scripts <docs/common-lua-scripts>
+    Linux Support <docs/ardupilot-on-linux>
+    OEM Customization <docs/common-oem-customizations>
+    RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
+    USB IDs <docs/USB-IDs>
+
+.. toctree::
+   :titlesonly:
+   :caption: Protocols & Interfaces
+
     MAVLink Interface <docs/mavlink-commands>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
-    OEM Customization <docs/common-oem-customizations>
-    RemoteID <docs/opendroneid>
+    GCS Developer Resources <docs/gcs-resources>
+    CAN and DroneCAN/UAVCAN <docs/can-bus>
+    Lua Scripts <docs/common-lua-scripts>
     ROS1 <docs/ros1>
     ROS2 <docs/ros2>
-    RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
+    RemoteID <docs/opendroneid>
+
+.. toctree::
+   :titlesonly:
+   :caption: Security & Reference
+
     Security <docs/security-landing-page>
     Support Proxy <docs/support_proxy>
-    Training Centers <docs/common-training-centers>
-    USB IDs <docs/USB-IDs>
     User Alerts <docs/user-alerts-developer>
-    Wiki Editing Guide <docs/common-wiki_editing_guide>
     Appendix <docs/common-appendix>
+
+.. toctree::
+   :titlesonly:
+   :caption: Community & Events
+
+    Developers Conference <docs/dev-conference>
+    Events <docs/events>
+    Training Centers <docs/common-training-centers>
+    Academic Works Involving ArduPilot <docs/acadamic-works>
