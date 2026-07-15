@@ -30,6 +30,7 @@ Facebook
 
 - `ArduPilot Facebook group <https://www.facebook.com/groups/ArduPilot.org>`__
 - `ArduPilot Japan Facebook group <https://www.facebook.com/groups/1661960827376400>`__
+- `ArduPilot French Facebook group <https://www.facebook.com/groups/ardupilot/>`__
 
 YouTube
 =======
