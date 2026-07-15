@@ -29,7 +29,6 @@ Facebook
 ========
 
 - `ArduPilot Facebook group <https://www.facebook.com/groups/ArduPilot.org>`__
-- `The Cube Facebook group <https://www.facebook.com/groups/pixhawk2>`__
 - `ArduPilot Japan Facebook group <https://www.facebook.com/groups/1661960827376400>`__
 
 YouTube
@@ -38,12 +37,6 @@ YouTube
 - `ArduPilot YouTube channel <https://www.youtube.com/channel/UCtqkaA8BWDpISGNAfivUSHw/videos>`__
 - `Randy's YouTube channel <https://www.youtube.com/user/rmackay9/videos>`__
 - `Tridge's YouTube channel <https://www.youtube.com/user/AndrewTridgell/videos>`__
-
-DroneKit
-========
-
-- `DroneKit for Android Gitter chat <https://gitter.im/dronekit/dronekit-android>`__
-- `DroneKit for Python Gitter chat <https://gitter.im/dronekit/dronekit-python>`__
 
 [copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
 
