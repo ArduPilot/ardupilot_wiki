@@ -134,5 +134,6 @@ value to users with old hardware.
     Visual Odometry with OpenKai and ZED <common-zed>
 [/site]
 
+    Advanced user tools (downloads) <common-downloads_advanced_user_tools>
 
 [copywiki destination="copter,plane,rover,dev,sub"]

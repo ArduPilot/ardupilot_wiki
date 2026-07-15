@@ -13,7 +13,6 @@ the wiki.
 
     Abbreviations <common-abbreviations>
     Acknowledgments <common-acknowledgments>
-    Advanced user tools (downloads) <common-downloads_advanced_user_tools>
     Commercial Support <common-commercial-support>
     Contact Us <common-contact-us>
     Developer tools (downloads) <common-downloads_developer_tools>
