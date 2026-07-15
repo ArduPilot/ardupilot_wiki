@@ -77,21 +77,12 @@ ArduPilot dev team.
    `code <https://github.com/ArduPilot/apm_planner>`__) is a ground
    station specifically for APM written in C++ using the Qt libraries
 -  :ref:`MAVProxy <mavproxy:home>`
-   - command line oriented and scriptable ground station (mostly used by developers)
--  `DroneKit <http://dronekit.io/>`__ - APM SDK for apps running on vehicles, mobile devices and/or in the cloud.
--  MinimOSD (`wiki <http://code.google.com/p/arducam-osd/wiki/minimosd>`__,
-   `code <https://github.com/diydrones/MinimOSD-Extra>`__)
-   - on-screen display of flight data
--  Tower (`wiki <https://github.com/DroidPlanner/Tower/wiki>`__,
-   `code <https://github.com/DroidPlanner/Tower>`__, `google play <https://play.google.com/store/apps/details?id=org.droidplanner.android>`__)
-   - android ground station
+   - command line oriented and scriptable ground station (mostly used by developers) in Python
 -  `QGroundControl* <http://www.qgroundcontrol.org/>`__ is an alternative ground station written in C++ using the Qt libraries
--  `PX4* <https://pixhawk.org/start>`__ - designers of the original PX4FMU hardware (from which the Pixhawk was developed)
+-  `Pixhawk* <https://pixhawk.org>`__ - Pixhawk open standards hardware project
 -  `MAVLink* <https://mavlink.io>`__ -
    the protocol for communication between the ground station, flight
-   controller and some peripherals including the OSD. A "Dummy's Guide" to
-   working with MAVLink is
-   `here <https://diydrones.com/group/arducopterusergroup/forum/mavlink-tutorial-for-absolute-dummies-part-i>`__.
+   controller and some peripherals.
 -  `DroneCAN* <https://dronecan.github.io/>`__ -
    Lightweight protocol designed for reliable communication in aerospace and robotic 
    applications via CAN bus. ArduPilot is using the `libcanard <https://github.com/DroneCAN/libcanard>`__,
