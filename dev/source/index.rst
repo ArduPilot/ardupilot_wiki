@@ -43,11 +43,11 @@ A timeline history of ArduPilot can be found :ref:`here <history-of-ardupilot>`.
 Supported boards
 ================
 
-The :ref:`Autopilot Hardware Options <common-autopilots>` page provides an overview for all the supported controller boards, including
-:ref:`Pixhawk <common-pixhawk-overview>`, :ref:`The Cube <common-thecube-overview>`,
-:ref:`Holybro Pixhawk 6C Mini <common-holybro-pixhawk6C>`, :ref:`Blue Robotics Navigator (Linux) <https://bluerobotics.com/store/comm-control-power/control/navigator/>`, etc.
+The :ref:`Autopilot Hardware Options <copter:common-autopilots>` page provides an overview for all the supported controller boards, including
+:ref:`Pixhawk <copter:common-pixhawk-overview>`, :ref:`The Cube Orange <copter:common-thecubeorange-overview>`,
+:ref:`Holybro Pixhawk 6C Mini <copter:common-holybro-pixhawk6C>`, :ref:`PocketBeagle 2 DIY Cape (Linux) <copter:common-pocketbeagle2>`, etc.
 
-To get going quickly please consider purchasing one of the :ref:`ready-to-fly vehicles <common-rtf>`.
+To get going quickly please consider purchasing one of the :ref:`ready-to-fly vehicles <copter:common-rtf>`.
 
 The ArduPilot source code includes the `AP-HAL <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL>`__
 Hardware Abstraction Layer, making it relatively easy to port the code to a
