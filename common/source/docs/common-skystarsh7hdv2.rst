@@ -1,16 +1,16 @@
 .. _skystarsH7HDV2:
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
-===============
-Skystars H7HDV2
-===============
-The Skystars H7HDV2 is a flight controller produced by `Skystars <http://www.skystars-rc.com/>`_.
+==================
+Skystars H7HDV2/V3
+==================
+The Skystars H7HDV2/3 is a flight controller produced by `Skystars <http://www.skystars-rc.com/>`_.
 
 Features
 ========
 * STM32H743 microcontroller
 * ICM42688 IMU x2
-* BMP280 barometer
+* BMP280 barometer(V2)/SPL-06(V3)
 * AT7456E OSD
 * 8 UARTs
 * 9 PWM outputs
