@@ -63,9 +63,10 @@ jobs:
       - name: Report build errors
         if: failure()
         run: |
-          if [ -s build_errors.txt ]; then
+          grep -iE '\[error\]|warning' build_errors.txt > filtered_errors.txt || true
+          if [ -s filtered_errors.txt ]; then
             echo "## Build errors" >> "$GITHUB_STEP_SUMMARY"
             echo '```' >> "$GITHUB_STEP_SUMMARY"
-            cat build_errors.txt >> "$GITHUB_STEP_SUMMARY"
+            tail -c 900000 filtered_errors.txt | tail -n 500 >> "$GITHUB_STEP_SUMMARY"
             echo '```' >> "$GITHUB_STEP_SUMMARY"
           fi
