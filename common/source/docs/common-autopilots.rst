@@ -108,6 +108,7 @@ Closed Hardware
     Atlas-Control <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Atlas-Control/README.md>
     AtomRC F405-NAVI <common-atomrcf405-navi>
     AtomRC F405-NAVI-Deluxe <common-atomrcf405-navi-deluxe>
+    BCubeF745v2 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/BCubeF745v2/README.md>
     BetaFPV F405 family <common-betafpvf405>
     BrahmaF4 <common-brahmaf4>
     BOTWINGF405 <common-botwingf405>
@@ -248,6 +249,8 @@ Closed Hardware
     StellarH7V2 <common-stellarh7v2>
     SVehicle E2 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SVehicle-E2/README.md>
     TBS Lucid H7 <common-tbs-lucidh7>
+    TBS Lucid H7 V3 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/TBS_LUCID_H7V3/README.md>
+    TBS Lucid H7 OEM <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/TBS_LUCID_H7_OEM/README.md>
     TBS Lucid H7 Wing <common-tbs-lucid-h7-wing>
     TBS Lucid H7 Wing AIO <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/TBS_LUCID_H7_WING_AIO/README.md>
     ThePeach FCC-K1 <common-thepeach-k1>
