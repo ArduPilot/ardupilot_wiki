@@ -12,7 +12,10 @@ Heavy commercial QuadPlane operators should also read:
    :maxdepth: 1
 
    High Reliability QuadPlane Operation <quadplane-reliability>
+   VTOL Motor Thrust Loss Detection <quadplane-thrust-loss>
    ESC Signalling Issues <common-esc-issues>
+
+.. _quadplane-motor-alignment:
 
 Motor Alignment
 ===============
