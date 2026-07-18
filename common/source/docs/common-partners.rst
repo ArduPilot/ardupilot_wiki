@@ -1072,7 +1072,21 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://skydroidglobal.com
 
-      -
+      - .. image:: ../../../images/supporters/supporters_logo_skydrones_tecnologia_avionica_s_a.png
+            :width: 250px
+            :align: center
+            :target:  https://www.skydrones.com.br
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_shenzhen_haikuo_technology_co_ltd.png
+            :width: 250px
+            :align: center
+            :target:  https://www.aiuav.com
+
+      - .. image:: ../../../images/supporters/supporters_logo_corvon.png
+            :width: 250px
+            :align: center
+            :target:  https://corvon.tech
 
 
 [copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
