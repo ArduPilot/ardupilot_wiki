@@ -26,6 +26,7 @@ General Setup
 -  Set :ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` = to the altitude limit you want (in meters). This is unavailable in Rover.
 -  Set :ref:`FENCE_MARGIN<FENCE_MARGIN>` = to the distance from the fence horizontal boundary the vehicle must maintain in order to prevent a breach.
 -  Set the :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>` as a minimum altitude breach boundary.
+-  Set :ref:`FENCE_ALT_MAX_TP<FENCE_ALT_MAX_TP>` and :ref:`FENCE_ALT_MIN_TP<FENCE_ALT_MIN_TP>` to select the altitude reference frame used by the maximum and minimum altitude fences, respectively. See :ref:`altitude-fence-frames` below. These are unavailable in Rover.
 -  Set :ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>` = (Plane Only)to allow automatic enabling of the fence (different than :ref:`FENCE_ENABLE<FENCE_ENABLE>`) under certain vehicle conditions, such as upon arming or takeoff. A value of 0 disables this feature. :ref:`FENCE_ENABLE<FENCE_ENABLE>` is ignored if this feature is enabled. Using :ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>` = 3 (enable on ARM) is the only recommended use. "1" or "2" functions are being deprecated shortly since they can produce undesirable results in terms of containment.
 -  :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` allows returning to the nearest RALLY point (See: :ref:`common-rally-points`), if loaded, instead of HOME.
 -  Set :ref:`FENCE_TYPE<FENCE_TYPE>` = is a bitmap set to enable the various fence types: MIN or MAX altitude, simple CIRCLE tin can around HOME, or POLYGON fences. The POLYGON fences must also have been loaded via a fence list from a ground control station in order to be active. See below for detailed setup of :ref:`common-ac2_simple_geofence` and :ref:`common-polygon_fence`.
@@ -72,6 +73,22 @@ Types of Fences
 +---------------------------------------+--------------------+-----------+----------+---------+
 
 .. note:: if :ref:`FENCE_TYPE<FENCE_TYPE>` =2 inclusion zones overlap, a fence breach will occur when crossing a boundary, even if within another inclusion zone, UNLESS :ref:`FENCE_OPTIONS<FENCE_OPTIONS>` bit 1 is set to make all inclusions zones a union set.
+
+.. _altitude-fence-frames:
+
+Altitude Fence Reference Frames
+===============================
+
+The maximum and minimum altitude fences (:ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` and :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>`) are altitudes above home by default. The altitude reference frame for each can be selected with :ref:`FENCE_ALT_MAX_TP<FENCE_ALT_MAX_TP>` and :ref:`FENCE_ALT_MIN_TP<FENCE_ALT_MIN_TP>`, respectively:
+
+- 0: above mean sea level (AMSL)
+- 1: above home (the default, and the behaviour of previous releases)
+- 2: above the EKF origin
+- 3: above terrain
+
+These parameters are unavailable in Rover. The altitude fences are global limits, independent of any Inclusion/Exclusion fence boundaries, which are horizontal-only.
+
+.. note:: Using the above terrain frame (3) requires a terrain database (see :ref:`common-terrain-following`) and will prevent arming until terrain data is available. If the vehicle cannot determine its altitude in the selected frame while flying, the corresponding fence is treated as breached.
 
 .. _fence_breach_actions:
 
