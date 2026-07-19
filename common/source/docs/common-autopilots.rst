@@ -117,6 +117,7 @@ Closed Hardware
     Brother Hobby H743 <common-brotherhobbyh743>
     CORVON743V1 <common-corvon743v1>
     CORVON743V2 <common-corvon743v2>
+    CORVON V5 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/CORVON_V5/README.md>
     CBUnmanned H743 Stamp <common-StampH743>
     CORVONF405V2.1 <common-corvonf405v2_1>
     CrazyF405 <common-crazyf405>
@@ -166,6 +167,7 @@ Closed Hardware
     JHEMCU F405Pro <common-jhemcuf405pro>
     JHEMCU F405WING <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/JHEMCUF405WING>
     JHEMCU H743HD <common-jhemcu-h743hd>
+    KARSHAKH743VTOL <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/KARSHAKH743VTOL/README.md>
     KT-FMU-F1 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/KT-FMU-F1/README.md>
     LongBowF405WING <common-longbowf405wing>
     Lumineer LUXF765-NDAA <common-luxf765-ndaa>
