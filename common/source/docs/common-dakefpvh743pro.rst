@@ -123,6 +123,10 @@ The DAKEFPVH743/Pro has an onboard OSD using a MAX7456 chip and is enabled by de
 
 The HD VTX connector can have RX4 replaced by the analog VTX signal if that connector is used for analog VTX connection by using the DJI/VTX jumper pads.
 
+LUA Support
+===========
+The DAKEFPVH743/Pro does not have an onboard SD Card resulting in the absence of LUA support.
+
 Loading Firmware
 ================
 Firmware for the H743 PRO version can be found `here <https://firmware.ardupilot.org>`__ in sub-folders labeled "DAKEFPVH743Pro".
