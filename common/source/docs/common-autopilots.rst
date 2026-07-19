@@ -55,6 +55,7 @@ Open Hardware
     :maxdepth: 1
 
     AcctonGodwit GA1 <common-acctongodwit-ga1>
+    ARKV6S <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/ARKV6S/README.md>
     ARKV6X DS-10 Pixhawk6 <common-ark-v6x-overview>
     CUAV V5 Plus <common-cuav-v5plus-overview>
     CUAV V5 Nano <common-cuav-v5nano-overview>
