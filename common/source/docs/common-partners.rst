@@ -707,7 +707,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_Nanoradar.png
             :width: 250px
             :align: center
-            :target:  http://www.nanoradar.cn/
+            :target:  https://www.nanoradar.com/
 
       - .. image:: ../../../images/supporters/supporters_logo_aerofox.png
             :width: 250px

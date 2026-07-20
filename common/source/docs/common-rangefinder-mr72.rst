@@ -7,7 +7,7 @@ Nanoradar MR72
 .. note::
     Support for this sensor is available in firmware versions 4.5 and later. Plane does not support this sensor since its a Proximity sensor.
 
-The `MR72 <http://en.nanoradar.cn/Article/detail/id/488.html>`__ is 77Ghz-band radar commonly used for object avoidance/detection. Currently only connection via CAN is supported. Serial versions of this Radar isn't officially supported.
+The `MR72 <https://www.nanoradar.com/Products_UAV-Radar-MR72.html>`__ is 77Ghz-band radar commonly used for object avoidance/detection. Currently only connection via CAN is supported. Serial versions of this Radar isn't officially supported.
 
 
 .. image:: ../../../images/MR72.png
@@ -24,7 +24,7 @@ Setup the sensor through the NSM Software. In particular set the "ID" to a uniqu
 
 Connecting to the Autopilot
 ==============================
-Setup the sensor through the NSM toolprovided by the manufacturer. More details can be found `here <http://en.nanoradar.cn/File/download/id/466.html>`__. Set the "ID" to a unique number if planning to use multiple MR72 on a single CAN bus. You can also set the bitrate from the software to match the CAN bus bitrate (500000 is recommended).
+Setup the sensor through the NSM toolprovided by the manufacturer. More details can be found `here <https://www.nanoradar.com/Tool_Download/8.html>`__. Set the "ID" to a unique number if planning to use multiple MR72 on a single CAN bus. You can also set the bitrate from the software to match the CAN bus bitrate (500000 is recommended).
 
 For autopilot connection you can use any spare CAN port. Since this is not a DroneCAN based sensor, you will not be able to use the connected port with any other sensor. The diagram below shows how to connect to CAN2.
 

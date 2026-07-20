@@ -7,7 +7,7 @@ Nanoradar NRA 24
 .. note::
     Support for this sensor is available in firmware versions 4.5 and later.
 
-The `NRA24 <http://en.nanoradar.cn/Article/detail/id/372.html>`__ is K-band radar commonly used for detecting height above terrain in all-weather conditions.Currently, only connection via CAN is supported for more than one NRA24 module. Serial (UART) versions of this Radar have only been tested with a single NRA24 module.
+The `NRA24 <https://www.nanoradar.com/Products_UAV-Altimeter-Radar-NRA24.html>`__ is K-band radar commonly used for detecting height above terrain in all-weather conditions.Currently, only connection via CAN is supported for more than one NRA24 module. Serial (UART) versions of this Radar have only been tested with a single NRA24 module.
 
 
 Connecting via CAN
@@ -21,7 +21,7 @@ Setup the sensor through the NSM Software. In particular set the "ID" to a uniqu
 
 Connecting to the Autopilot
 ===========================
-Setup the sensor through the NSM tools provided by the manufacturer. More details can be found `here <http://en.nanoradar.cn/File/download/id/467.html>`__. Set the "ID" to a unique number if planning to use multiple NRA24 on a single CAN bus. You can also set the bitrate from the software to match the CAN bus bitrate (500000 is recommended).
+Setup the sensor through the NSM tools provided by the manufacturer. More details can be found `here <https://www.nanoradar.com/Tool_Download/8.html>`__. Set the "ID" to a unique number if planning to use multiple NRA24 on a single CAN bus. You can also set the bitrate from the software to match the CAN bus bitrate (500000 is recommended).
 
 For a serial connection you can use any spare CAN port. Since this is not a DroneCAN based sensor, you will not be able to use the connected port with any other sensor. The diagram below shows how to connect to CAN2.
 
@@ -42,14 +42,14 @@ Set the following parameters
 Connecting via UART
 ===========================
 
-.. warning:: This is the recommended configuration by Nanoradar given `here <http://en.nanoradar.cn/Article/detail/id/495.html>`__, but ArduPilot has not verified that all operational edge cases are satisfied using the USD-1 driver. Caution is advised.
+.. warning:: This is the recommended configuration by Nanoradar given `here <https://www.nanoradar.com/Products_UAV-Altimeter-Radar-NRA24.html>`__, but ArduPilot has not verified that all operational edge cases are satisfied using the USD-1 driver. Caution is advised.
 
 .. image:: ../../../images/nra24_uart_connections.png
     :target: ../_images/nra24_uart_connections.png
 
 Set the following parameters (Example for setup on TELEM1/SERIAL1)
 
--  :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = 115 (Baud rate as per the official documentation `here <http://en.nanoradar.cn/File/view/id/436.html>`__)
+-  :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = 115 (Baud rate as per the official documentation `here <https://www.nanoradar.com/Products_UAV-Altimeter-Radar-NRA24.html>`__)
 -  :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = 9 (which translates to Rangefinder)
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 11 (which is USD1_Serial). Reboot after setting this.
 -  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 190 (i.e. 200m max range with 10m buffer)
