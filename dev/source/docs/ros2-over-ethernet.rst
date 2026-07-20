@@ -12,6 +12,8 @@ Additionally, make sure you understand the :ref:`basics of networking in ArduPil
 
 .. note:: ROS2 (via DDS) is not part of the standard ArduPilot build. Use the `Custom Build Server <https://custom.ardupilot.org/add_build>`__ and ensure "MicroXRCE DDS support for ROS 2" is checked.
 
+.. note:: For STM32 based flight controllers, the DDS interface should be used on the H7-based boards. The F4-based and F7-based boards do not have enough CPU to run DDS.
+
 Motivation
 ==========
 

@@ -7,6 +7,8 @@ ROS 2 Interfaces
 The purpose of this page is to document all the ROS 2 interfaces available in ArduPilot.
 Content is organized by functional area the data is used.
 
+.. note:: DDS update rates are constrained by :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`, which is typically 400Hz for copter and 50Hz for other vehicles. For example, if you have a topic that is published at 100Hz, but the ``SCHED_LOOP_RATE`` is 50Hz, then the topic will be published at 100Hz, but the data will only be updated at 50Hz. Ensure that your ``SCHED_LOOP_RATE`` is high enough to support the update rates you need for your application.
+
 Sensors
 =======
 
