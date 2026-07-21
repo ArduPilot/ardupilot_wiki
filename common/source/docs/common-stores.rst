@@ -30,6 +30,7 @@ they are marked with **(Partner)** below. You may also want to check the list of
 * `GNSS.store <https://gnss.store/>`__
 * `Holybro <https://shop.holybro.com/>`__ (Partner)
 * `JapanDrones <http://japandrones.com/>`__
+* `Kalmix <https://www.kalmixtech.com/>`__
 * `Lightware <https://lightware.co.za/>`__ (Partner)
 * `NW Blue <https://nwblue.com/>`__ (Partner)
 * `Qiotek <http://www.qio-tek.com/>`__ (Partner)
