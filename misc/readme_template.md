@@ -161,7 +161,7 @@ If the ARSPD pin is used for analog airspeed  input. Set ARSPD_PIN to 92. Set AR
 |MAIN(8)       | 108        |
 
 
-## Battery Monitor
+## Battery Monitoring
 
 The board has a internal voltage sensor and connections on the ESC connector for an external current sensor input.
 The voltage sensor can handle up to 6S LiPo batteries.
