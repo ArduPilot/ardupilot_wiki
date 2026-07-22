@@ -16,7 +16,7 @@ Recommended Hardware
 --------------------
 
 - `Lowrance HST-WSBL 83/200 kHz Transom Mount Transducer <https://www.lowrance.com/lowrance/type/sonar-transducers/hst-wsbl/>`__ available from many retailers including `amazon.com <https://www.amazon.com/Lowrance-HST-WSBL-Transom-Mount-Transducer/dp/B000KKB5YK>`__.  Other sensors may also work.
-- `DST-2 200kHz digitizer <https://www.actisense.com/product/dst-2/>`__ available from `many retailers <https://www.actisense.com/where-to-buy/>`__ including `Navstore.com <https://www.navstore.com/actisense-dst-2-200-active-dst-module-200-khz.html>`__ (`manuals here <http://www.actisense.com/media/?product=dst-2&type=downloads>`__)
+- `DST-2 200kHz digitizer <https://www.actisense.com/product/dst-2/>`__ (discontinued)
 
 Connecting and Configuring
 --------------------------
