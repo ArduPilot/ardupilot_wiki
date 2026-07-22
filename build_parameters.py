@@ -645,6 +645,7 @@ def generate_rst_files(commits_to_checkout_and_parse):
             elif "Complete Parameter List" in line:
                 # Adjusting the page title
                 out_line = "Complete Parameter List\n=======================\n\n"
+                out_line += "See :ref:`common-param-name-changes` for a history of parameter renames across releases.\n\n"  # noqa: E501
                 out_line += "\n.. raw:: html\n\n"
                 out_line += f"   <h2>Full Parameter List of {version_tag[1:].replace('-', ' ')}</h2>\n\n"  # rename the page identifier to insert the version  # noqa: E501
 
