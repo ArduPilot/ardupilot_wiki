@@ -125,7 +125,7 @@ The HD VTX connector can have RX4 replaced by the analog VTX signal if that conn
 
 LUA Support
 ===========
-The DAKEFPVH743/Pro does not have an onboard SD Card resulting in the absence of LUA support.
+The DAKEFPVH743/Pro does not include an onboard microSD card, so Lua scripts cannot be loaded from removable storage in the normal way. Advanced users may still use Lua by building a custom ArduPilot firmware with the required scripts embedded in the firmware image.
 
 Loading Firmware
 ================
