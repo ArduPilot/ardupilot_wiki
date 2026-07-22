@@ -150,17 +150,22 @@ unreadable pinouts and asks for split/clearer images).
 
 ## 3. README format & markdown
 
-- Sections, order, and headings match `misc/readme_template.md`. **A `## Compass`
-  section is always required** (even if just "no built-in compass, attach external via
-  I2C on SDA/SCL"). Standardized heading names and `##`/`###` levels are enforced.
+- All required sections from `misc/readme_template.md` must be present somewhere in the
+  README. **Don't flag section order** — Henry doesn't consider reordering worth a finding
+  as long as everything required is present. Standardized heading names and `##`/`###`
+  levels are still enforced (markdown-lint).
+- Compass content (see §4 **Compass**) must be present, but it does **not** need its own
+  `## Compass` heading — folding it into a combined heading (e.g. `## Compass and GPS`) is
+  fine. Don't flag a merged heading, only flag if the required wording/content is missing.
 - Markdown-lint clean: **no embedded HTML**, markdown tables only (no HTML tables), no
   leftover rst (`:ref:`, `.. note::`, triple-backtick "block highlighting", rst
   underlines), no stray/duplicate blank lines, no bare URLs, correct heading levels,
   a single top-level `#` title.
 - **Remove the "how to build firmware" section** — users who can build don't need it.
-- **Firmware** section states the firmware server URL and the **folder name** to look
-  under. **Loading Firmware**: if it ships with an AP bootloader → update via GCS/`.apj`;
-  if not → DFU instructions (and where the boot button is).
+- **Firmware** and **Loading Firmware** can be **one combined heading** (e.g. a single
+  `## Loading Firmware`) — don't require them split into two. Just make sure it covers both
+  pieces: the firmware-server URL + target folder name, and the DFU-vs-GCS update
+  instructions (and where the boot button is, if DFU).
 - Remove generic "Pixhawk standard" filler and "further information" dumps; a single
   pointer to the vendor doc is enough.
 
@@ -178,17 +183,18 @@ Cross-check each against the hwdef, the pinout image labels, and ArduPilot behav
   from the hwdef or, if kept, mark them "not pinned out."
 
 **UART Mapping**
-- Table must show the **default protocol** (connector/label name is fine *in addition*),
-  and note **DMA** capability per UART. TX/RX pin names should carry the UART number
-  (`TX3`/`RX3`), not the serial-port number. Drop a raw "DMA stream" column — it just
-  confuses users.
+- Preferred table format matches `misc/readme_template.md`'s example:
+  `Port | UART | Protocol | TX DMA | RX DMA` — with **separate TX DMA and RX DMA columns**,
+  not a single collapsed DMA column. TX/RX pin names should carry the UART number
+  (`TX3`/`RX3`), not the serial-port number. Drop a raw "DMA stream" column (e.g. "DMA1
+  Stream 5") — it just confuses users.
 - **README protocols must match the hwdef.** A port marked "TELEM3" with no protocol
   assigned → either set its default protocol (e.g. MAVLink2) in hwdef or relabel it.
-- **README DMA column must match the hwdef.** For every UART, check its TX/RX pin lines in
-  the hwdef for a `NODMA` tag: if either pin is `NODMA`, that UART does **not** have DMA and
-  the table must say so (`No`/✘). Flag any row that claims DMA (`DMA Enabled`/✔) for a UART
-  whose hwdef pins are `NODMA` — and vice-versa (table says no DMA but the pins are not
-  tagged `NODMA`). Report the specific serial/UART number and the hwdef line.
+- **README DMA columns must match the hwdef.** For every UART, check its TX/RX pin lines in
+  the hwdef for `NODMA` tags and verify **each column independently**: a UART with `NODMA`
+  only on RX should show TX DMA ✔, RX DMA ✘ — don't collapse that to a single "No". Flag any
+  column that claims DMA (✔) for a pin tagged `NODMA` in the hwdef — and vice-versa. Report
+  the specific serial/UART number and the hwdef line.
 - **Unpinned UART left in SERIAL_ORDER** → set its default protocol to `NONE` (or mark the
   slot `EMPTY`), otherwise ArduPilot hunts for a GPS on it and never checks the next port.
   (Exception: a UART deliberately defaulted to RCIN — `DEFAULT_SERIALx_PROTOCOL
@@ -236,10 +242,12 @@ Cross-check each against the hwdef, the pinout image labels, and ArduPilot behav
   in `defaults.parm` **and** `define DEFAULT_NTF_LED_TYPES 455` (455 also drives many
   external-GPS NTF LEDs) in hwdef. Don't disable the serial-LED pin.
 
-**Compass** — always a section. If no internal compass, remove the `COMPASS` probe lines
-from hwdef and use the "no built-in compass, use external I2C on SDA/SCL" wording. If it
-has one, use the stock "has a built-in compass … usually disabled … external as part of a
-GPS/Compass combo" wording. Never preset an external compass's orientation.
+**Compass** — content always required, but it can live under a combined heading (e.g.
+`## Compass and GPS`) rather than its own `## Compass` heading — see §3. If no internal
+compass, remove the `COMPASS` probe lines from hwdef and use the "no built-in compass, use
+external I2C on SDA/SCL" wording. If it has one, use the stock "has a built-in compass …
+usually disabled … external as part of a GPS/Compass combo" wording. Never preset an
+external compass's orientation.
 
 **Battery Monitoring** — list the defaults actually set in the hwdef (`BATT_MONITOR`,
 `BATT_VOLT_PIN`, `BATT_CURR_PIN`, `BATT_VOLT_MULT`, `BATT_AMP_PERVLT`) and the voltage
