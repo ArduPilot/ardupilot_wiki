@@ -1,8 +1,8 @@
 .. _common-electro-permanent-magnet-gripper:
 
-=========================================
-Electro Permanent Magnet Gripper (EPM688)
-=========================================
+========================================================
+Electro Permanent Magnet Gripper (EPM688) (discontinued)
+========================================================
 
 This article shows how to use the `Electro Permanent Magnet Gripper (EPM688) <http://nicadrone.com/index.php?id_product=13&controller=product>`__
 with ArduPilot.

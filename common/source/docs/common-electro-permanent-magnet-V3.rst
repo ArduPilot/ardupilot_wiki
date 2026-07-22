@@ -1,8 +1,8 @@
 .. _common-electro-permanent-magnet-V3:
 
-==================================================
-Electro Permanent Magnet Gripper (OpenGrab EPM v3)
-==================================================
+=================================================================
+Electro Permanent Magnet Gripper (OpenGrab EPM v3) (discontinued)
+=================================================================
 
 **OpenGrab EPM v3 is no longer in production. Please use** `Zubax EPM <https://zubax.com/epm>`__ **as a replacement.**
 
