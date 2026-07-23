@@ -1,10 +1,10 @@
 .. _common-electro-permanent-magnet:
 
-================================
-Electro-Permanent Magnet (EPM)
-================================
+====================================
+Electro-Permanent Magnet (Zubax EPM)
+====================================
 
-This page explains how to connect a `Zubax FluxGrip <https://fluxgrip.zubax.com/>`__
+This page explains how to connect a `Zubax FluxGrip <https://zubax.com/epm>`__
 electro-permanent magnet to an autopilot over DroneCAN.  FluxGrip can be
 controlled using ArduPilot's DroneCAN virtual-relay support, so no custom
 firmware or Lua script is required.
