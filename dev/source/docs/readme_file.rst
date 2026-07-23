@@ -22,7 +22,7 @@ Every autopilot board port should include a Readme.md file explaining the board'
 - WIFI module (if applicable)
 - :ref:`GPIOs <readme-intro>`
 - :ref:`RSSI/Airspeed/Analog Pins <readme-rssi>`
-- :ref:`Battery Monitor <readme-batt>`
+- :ref:`Battery Monitoring <readme-batt>`
 - :ref:`Compass <readme-compass>`
 - :ref:`Firmware <readme-firmware>`
 - :ref:`Loading Firmware <readme-loading>`
@@ -143,8 +143,8 @@ If an analog RSSI, general purpose analog inputs, or Airspeed pin is defined, gi
 
 .. _readme-batt:
 
-Battery Monitor
-===============
+Battery Monitoring
+==================
 If a battery monitor is defined in the hwdef, its default parameter and voltage range info should be provided. If DroneCAN or SMBus type, info about its setup.
 
 Example:
