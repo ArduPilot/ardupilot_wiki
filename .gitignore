@@ -1,3 +1,6 @@
+# Claude Code local tooling (commands, settings) - never part of the upstream wiki
+/.claude/
+
 # Common files except under Common
 /*/source/docs/common-*
 !/common/source/docs/common-*

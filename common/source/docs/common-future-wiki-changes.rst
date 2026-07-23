@@ -15,6 +15,10 @@ New Board Support
 - PilotGaeaSH7V1-bdshot, see https://github.com/ArduPilot/ardupilot_wiki/pull/7687
 - PrinciploT H7 Pi , see https://github.com/ArduPilot/ardupilot_wiki/pull/7694
 - SkyDroid-S3, see https://github.com/ArduPilot/ardupilot_wiki/pull/7791
+- SaamPixV1_1, see https://github.com/ArduPilot/ardupilot_wiki/pull/7872
+- CyberX-v10, see https://github.com/ArduPilot/ardupilot_wiki/pull/7872
+- AMOV Flycore, see https://github.com/ArduPilot/ardupilot_wiki/pull/7872
+- ORBITH743v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7872
 
 New Peripheral Support
 ======================
