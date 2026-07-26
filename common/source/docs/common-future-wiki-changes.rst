@@ -19,6 +19,8 @@ New Board Support
 - CyberX-v10, see https://github.com/ArduPilot/ardupilot_wiki/pull/7872
 - AMOV Flycore, see https://github.com/ArduPilot/ardupilot_wiki/pull/7872
 - ORBITH743v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7872
+- GPILOT P1, see https://github.com/ArduPilot/ardupilot_wiki/pull/7877
+- SIYI UniFC 6 PICO, see https://github.com/ArduPilot/ardupilot_wiki/pull/7877
 
 New Peripheral Support
 ======================
