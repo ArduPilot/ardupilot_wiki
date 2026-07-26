@@ -76,6 +76,15 @@ Options (User Adjustable Parameters)
    -  2 = Face Next Waypoint except for RTL (i.e. during RTL vehicle
       will remain pointed at its last heading)
 
+-  :ref:`RTL_OPTIONS <RTL_OPTIONS>`:
+   A bitmask of options that modify RTL mode behaviour.
+
+   -  Bit 2 (value "4"), "Ignore Pilot Yaw", stops the pilot's yaw stick
+      from overriding the autopilot's yaw control while RTL is flying back
+      to the return point. During the final descent/landing stage of RTL,
+      pilot yaw control instead follows the :ref:`LAND_REPOSITION<LAND_REPOSITION>`
+      setting (see :ref:`land-mode`) regardless of this option.
+
 -  :ref:`LAND_SPD_MS<LAND_SPD_MS>`:
    The descent speed for the final stage of landing in centimeters per
    second.

@@ -66,6 +66,13 @@ hard mounted camera on it) as the copter flies the mission.  The
 autopilot will attempt to retake yaw control as the vehicle passes the
 next waypoint.  The :ref:`AUTO_OPTIONS <AUTO_OPTIONS>` param can be set to always ignore pilot yaw input.
 
+While the mission is executing a RTL, LAND, or guided command, pilot yaw
+availability is instead controlled by that flight mode's own setting
+rather than :ref:`AUTO_OPTIONS<AUTO_OPTIONS>`: :ref:`RTL_OPTIONS<RTL_OPTIONS>`
+and :ref:`LAND_REPOSITION<LAND_REPOSITION>` for RTL and LAND commands (see
+:ref:`rtl-mode` and :ref:`land-mode`), and :ref:`GUID_OPTIONS<GUID_OPTIONS>`
+for a guided command (see :ref:`ac2_guidedmode`).
+
 Ending a Mission
 ================
 
