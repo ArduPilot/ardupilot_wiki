@@ -2,14 +2,16 @@
 
 [copywiki destination="plane,copter,rover,sub"]
 
-=============
-CADDX Gimbals
-=============
+=============================
+CADDX / XFRobot C-20T Gimbals
+=============================
 
-`CADDX <https://caddxfpv.com/products/caddxfpv-gm1-gm2-gm3.html>`__ GM1, GM2, GM3 gimbals are small 1, 2 and 3-axis gimbals weighing between 16g and 46g and can be paired with 19mm x 19mm FPV cameras. The gimbal mounted camera is always stabilized against short term movements in all axes.
+`CADDX <https://caddxfpv.com/products/caddxfpv-gm1-gm2-gm3.html>`__ GM1, GM2, GM3 and `XFRobot C-20T <https://www.aliexpress.com/store/1104563332>`__ gimbals are small 1, 2 and 3-axis gimbals weighing between 16g and 46g and can be paired with 19mm x 19mm FPV cameras. The gimbal mounted camera is always stabilized against short term movements in all axes.
 
 .. image:: ../../../images/caddxfpv-gimbal.png
     :target: https://caddxfpv.com/products/caddxfpv-gm1-gm2-gm3.html
+
+These instructions provide various links to the CADDX website but the same resources can also be found on the XFRobot site.  Please refer to the :ref:`XFRobot C-20T <common-xfrobot-gimbal>` wiki page for the XFRobot links.
 
 .. warning::
 
