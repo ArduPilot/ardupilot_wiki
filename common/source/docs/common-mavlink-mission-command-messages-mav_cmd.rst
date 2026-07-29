@@ -1142,13 +1142,13 @@ number of seconds — where loiter means "circle the waypoint". The timer
 starts when the waypoint is reached; when it expires the waypoint is
 complete. If zero is specified for a latitude/longitude/altitude
 parameter then the current location value for the parameter will be
-used. You can also specify the radius and direction for the loiter. Once
-time has elapsed, continue to loiter until heading
-points to next nav waypoint. If XTrack Tangent param = gb1, proceed directly to next waypoint, otherwise, track to 
-the path in a line between the waypoint centers.
-
-
-The radius of the loiter is set in the ``WP_LOITER_RAD`` parameter.
+used.  The loiter radius is set by the ``WP_LOITER_RAD`` parameter.  The sign
+of ``param3`` selects the direction (positive is clockwise and negative is
+counter-clockwise), but Plane ignores its magnitude because the mission item
+does not store a separate radius.  Once the time has elapsed, Plane continues
+to loiter until its heading points towards the next navigation waypoint.  If
+XTrack Tangent is 1 it proceeds directly to the next waypoint; otherwise it
+tracks the line between the waypoint centers.
 
 **Command parameters**
 
@@ -1174,7 +1174,7 @@ The radius of the loiter is set in the ``WP_LOITER_RAD`` parameter.
    <tr>
    <td><strong>param3</strong></td>
    <td>Dir 1=CW</td>
-   <td>Radius around waypoint, in meters. Specify as a positive value to loiter clockwise, as a negative to move counter-clockwise.</td>
+   <td>Loiter direction. Positive is clockwise and negative is counter-clockwise. The magnitude is ignored; radius is set by WP_LOITER_RAD.</td>
    </tr>
    <td><strong>param4</strong></td>
    <td>XTrack Tangent</td>
