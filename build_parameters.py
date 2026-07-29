@@ -636,7 +636,7 @@ def generate_rst_files(commits_to_checkout_and_parse):
         file_out = open(dest_file, "w")
         found_original_title = False
         if "latest" not in version_tag:
-            file_out.write(':orphan:\n\n')
+            file_out.write(':orphan:\n:nosearch:\n\n')
 
         for line in file_in:
             if (re.match("(^.. _)(.*):$", line)) and ("latest" not in version_tag):
