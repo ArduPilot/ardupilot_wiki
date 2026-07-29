@@ -30,6 +30,7 @@ components, including those required for the operation of the autopilot.
     ESC Calibration <common-esc-calibration>
     Automatic Trim <auto-trim>
     Failsafe Function <apms-failsafe-function>
+    EKF Failsafe <common-ekf-inav-failsafe>
     Airspeed Parameters Setup <airspeed-parameters-setup>
     Basic FPV Plane <fpv-plane>
 

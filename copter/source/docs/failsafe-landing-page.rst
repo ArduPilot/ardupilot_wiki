@@ -16,7 +16,7 @@ The main failsafe topics are listed below.
     Radio Failsafe <radio-failsafe>
     Battery Failsafe <failsafe-battery>
     GCS Failsafe <gcs-failsafe>
-    EKF Failsafe <ekf-inav-failsafe>
+    EKF Failsafe <common-ekf-inav-failsafe>
     Dead Reckoning Failsafe <deadreckoning-failsafe>
     Vibration Failsafe <vibration-failsafe>
     Terrain Data Loss Failsafe (see section on loss of terrain data induced RTL) <terrain-following>
