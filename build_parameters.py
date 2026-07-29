@@ -467,7 +467,9 @@ def fetch_releases(firmware_url, vehicles):
                 if tag == 'a':
                     attr = dict(attrs)
                     href = attr.get('href')
-                    self.links.append(href)
+                    if href and vehicle.lower() in href.lower():
+                        # Only select folders with the vehicle name in it
+                        self.links.append(href)
 
         html_parser = ParseText()
         try:
@@ -522,7 +524,8 @@ def get_commit_dict(releases_parsed):
                 if tag == 'a':
                     attr = dict(attrs)
                     href = attr.get('href')
-                    self.links.append(href)
+                    if href:
+                        self.links.append(href)
 
         html_parser = ParseText()
         try:
@@ -533,6 +536,9 @@ def get_commit_dict(releases_parsed):
         except Exception as e:
             error(f"Board folders list download error: {e}")
         finally:
+            if len(html_parser.links) == 0:
+                error(f"No board folders found in {url}, skipping this release.")
+                return ""
             last_folder = html_parser.links.pop()
             board_name = os.path.basename(last_folder)
             debug(f"Returning link of the last board folder ({board_name})")
@@ -547,6 +553,9 @@ def get_commit_dict(releases_parsed):
         fetch_link = f"{version_link}/{board}/{file}"
 
         progress(f"Processing link...\t{fetch_link}")
+        if board == "":
+            error(f"Board folder not found in {version_link}, skipping this release.")
+            return "error", "error", "error"
 
         try:
             fetch_response = fetch_url_with_cache(fetch_link)
