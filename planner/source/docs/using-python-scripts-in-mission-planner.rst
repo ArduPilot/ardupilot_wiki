@@ -198,7 +198,7 @@ these classes.
 | failsafe                | bool                    | Fail Safe Active or     |
 |                         |                         | Not                     |
 +-------------------------+-------------------------+-------------------------+
-| rxrssi                  | float                   |                         |
+| rxrssi                  | float                   | Receiver RSSI (%)       |
 +-------------------------+-------------------------+-------------------------+
 | chx1in, chx2in, ....    | float                   | Input Channels from 1   |
 | chx8in                  |                         | to 8                    |
@@ -246,9 +246,9 @@ these classes.
 +-------------------------+-------------------------+-------------------------+
 | current                 | float                   | battery Current (Amps)  |
 +-------------------------+-------------------------+-------------------------+
-| HomeAlt                 | float                   |                         |
+| HomeAlt                 | float                   | Home Altitude (dist)    |
 +-------------------------+-------------------------+-------------------------+
-| DistToHome              | float                   | Absolute Pressure Value |
+| DistToHome              | float                   | Distance to Home (dist) |
 +-------------------------+-------------------------+-------------------------+
 | press_abs               | float                   | Absolute Pressure Value |
 +-------------------------+-------------------------+-------------------------+
