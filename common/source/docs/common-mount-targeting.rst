@@ -10,7 +10,7 @@ ArduPilot provides mechanisms to control the pointing direction (aka targeting) 
 
 .. note:: ArduPilot supports up to two mounts. Each mount has parameters associated with it, e.g.  :ref:`MNT1_TYPE<MNT1_TYPE>`, :ref:`MNT2_TYPE<MNT2_TYPE>`, :ref:`MNT1_RC_RATE<MNT1_RC_RATE>`, :ref:`MNT2_RC_RATE<MNT2_RC_RATE>`, etc. For the remainder of the article, we will use MNT1 for examples of setups and parameters.
 
-The mount's "targeting mode" defines how it is controlled.  Each ground station (GCS) is different but Mission Planner, for example, has a "Set Mount" button that allows changing the mode.  In many cases the user does not need to directly set the mode, instead this is done automatically as part of responding to a command from the user.
+The mount's "targeting mode" defines how it is controlled.  Each ground station (GCS) is different but Mission Planner, for example, has a "Set Mount" button that allows changing the mode.  In many cases the user does not need to directly set the mode; instead, this is done automatically as part of responding to a command from the user.
 
 .. image:: ../../../images/mount-mp-set-mode.png
     :target: ../_images/mount-mp-set-mode.png
@@ -89,24 +89,24 @@ Middle     Body Frame    Earth Frame      PITCH       Like HORIZON but vehicle b
 Low        Body Frame    Body Frame       FPV         Gimbal angles maintained with respect to its base. This is good for FPV flying since horizon moves normally with respect to vehicle attitude.
 ========   ===========   ===============  =========   ============================
 
-.. note:: Currently only the CADDX, Storm32, SimpleBGC, Brushless, and Servo type mounts have the above capability.
+.. note:: Currently, only the CADDX, Storm32, SimpleBGC, Brushless, and Servo type mounts have the above capability.
 
 .. note:: If the Aux switch above is not used, HORIZON mode is the normal mode of gimbal operation
 
 - ``MOUNTx_OPTION`` bit 3 (+4 in value) provides the ability to obtain FPV lock above (on gimbals that are capable), without the need for the switch,
 
-- Also in RC Targeting, an Auxiliary Switch function "163" (Mount Yaw Lock) can be used on an RC channel to switch from normal yaw operation, to capturing the heading that the gimbal is currently pointing and "locking" it to maintain that direction. RC yaw target controls can shift that heading point. Switching it low, or changing mount modes, returns normal operation.
+- Also in RC Targeting, an Auxiliary Switch function "163" (Mount Yaw Lock) can be used on an RC channel to switch from normal yaw operation to capturing the heading that the gimbal is currently pointing and "locking" it to maintain that direction. RC yaw target controls can shift that heading point. Switching it to low, or changing mount modes, returns normal operation.
 
 POI(aka ROI) Auxiliary Function
 -------------------------------
-If Terrain is enabled and data available, you can lock the gimbal target to a POI that it is pointing at and track it with the gimbal as the vehicle moves using a transmitter Aux Function switch (eg. :ref:`RC10_OPTION<RC10_OPTION>` = "186") or via GCS Aux Function activation. The AUX FUNC values:
+If Terrain is enabled and data is available, you can lock the gimbal target to a POI that it is pointing at and track it with the gimbal as the vehicle moves using a transmitter Aux Function switch (eg. :ref:`RC10_OPTION<RC10_OPTION>` = "186") or via GCS Aux Function activation. The AUX FUNC values:
 
 ========     ============================
 AUX FUNC     Description
 ========     ============================
-High         The ground location that the gimbal is pointing at is recorded (POI location) if it is currently clear and gimbal is switched to GPS Point targeting mode. The gimbal's entry mode is recorded also. If the POI location has already been recorded, then the mode is just switched back to GPS Point to track the POI target.
+High         The ground location that the gimbal is pointing at is recorded (POI location) if it is currently clear and gimbal is switched to GPS Point targeting mode. The gimbal's entry mode is also recorded. If the POI location has already been recorded, then the mode is just switched back to GPS Point to track the POI target.
 Middle       If the POI location is set, then gimbal mode is reverted to the above saved mode to allow navigation, etc. but POI location is retained. Otherwise, no action.
-Low          POI location is cleared and gimbal targeting mode set to its default mode (eg. :ref:`MNT1_DEFLT_MODE<MNT1_DEFLT_MODE>`)
+Low          POI location is cleared, and gimbal targeting mode is set to its default mode (eg. :ref:`MNT1_DEFLT_MODE<MNT1_DEFLT_MODE>`)
 ========     ============================
 
 .. warning:: in order for this to be accurate, the mount's :ref:`MNT1_PITCH_MAX<MNT1_PITCH_MAX>`, :ref:`MNT1_PITCH_MIN<MNT1_PITCH_MIN>`, :ref:`MNT1_YAW_MAX<MNT1_YAW_MAX>`, and :ref:`MNT1_YAW_MIN<MNT1_YAW_MIN>` must accurately reflect the gimbal's EARTH FRAME angle extremes while in the vehicle's normal attitude when function is activated (usually Plane in cruise, Copter in hover, etc.)
@@ -170,7 +170,7 @@ To point the mount at a Location
 .. image:: ../../../images/mount-targeting-qgc-roi.png
     :target: ../_images/mount-targeting-qgc-roi.png
 
-Companion Computer mount Controls
+Companion Computer Mount Controls
 =================================
 MAVLink mount commands can also be sent from other sources, such as companion computers. See :ref:`mavlink-gimbal-mount` for a commands list and more information.
 
