@@ -59,15 +59,19 @@ Plug in the battery of each vehicle and tracker.  After connecting to
 the tracker from the *Mission Planner* (or other GCS) each vehicle
 including the tracker should appear on the Map.
 
-Controlling the vehicle depends upon the GCS used but if using the
-*Mission Planner*, "Ctrl-X" pulls up a drop-down selector which allows
-the user to choose which vehicle to control.
+Controlling the vehicle depends upon the GCS used.  In *Mission Planner*,
+additional telemetry connections are added by right-clicking the
+**CONNECT** (or **DISCONNECT**) button, selecting **Connection Options**, and
+choosing the telemetry device in the dialog.  See
+:ref:`Connecting to multiple vehicles <common-connect-mission-planner-autopilot>`.
+Use the connection drop-down in the main window to select the link and vehicle
+to display and control.
 
 If using Copter, switch each vehicle into GUIDED mode.  On the MP's map,
 right-mouse-button-click and select "Takeoff" and input 2m to get the
 vehicle off the air.  Once in the air, each vehicle can be pushed around
-in GUIDED mode (by using Ctrl-X to select the vehicle and then click on
-the map) or the mode can be changed to AUTO etc.
+in GUIDED mode by selecting its connection and clicking on the map, or the
+mode can be changed to AUTO etc.
 
 If you wish to retake control of a vehicle, use the transmitter for that
 vehicle to change the flight to LOITER, STABILIZE, etc and then fly
