@@ -41,7 +41,18 @@ Ground stations or companion computers may set the source by sending a `MAV_CMD_
 
 This feature is especially helpful when using :ref:`common-non-gps-to-gps`.
 
-Alternatively, setting :ref:`EK3_OPTIONS<EK3_OPTIONS>` bit 3 will force each SRC set to be used by each IMU lane, ie EKF3 primary IMU lane will use the _SRC1 set, _SRC2 for the next, etc.) at initialization. Note that using the ``RCx_OPTIONS`` auxiliary function "90" (EKF Source Set) will NOT override this behavior.
+Alternatively, setting :ref:`EK3_SRC_OPTIONS<EK3_SRC_OPTIONS>` bit 3 assigns a
+source set to each EKF core (lane).  The first enabled core uses ``SRC1``, the
+second uses ``SRC2``, and the third uses ``SRC3``.  Core numbering follows the
+order of the enabled IMUs, so gaps in :ref:`EK3_IMU_MASK<EK3_IMU_MASK>` do not
+create gaps in this mapping.
+
+Only three source sets are available.  If more than three EKF cores are
+enabled, the fourth and later cores use the currently active source set
+(``SRC1`` at startup).  Selecting another source set with the ``RCx_OPTION``
+auxiliary function "90" (EKF Source Set) or
+``MAV_CMD_SET_EKF_SOURCE_SET`` does not change the fixed mapping of the first
+three cores, but it does change the fallback used by any additional cores.
 
 Velocity Source Fusing
 ======================
