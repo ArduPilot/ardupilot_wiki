@@ -24,3 +24,31 @@ The following parameters can be used to tune Follow Mode's performance:
 -  :ref:`FOLL_POS_P <FOLL_POS_P>`: gain which controls how aggressively this vehicle moves towards lead vehicle (limited by :ref:`WP_SPD<WP_SPD>`)
 -  :ref:`FOLL_ALT_TYPE <FOLL_ALT_TYPE>`: allows selecting whether to use lead vehicle's relative-to-home or relative-to-sea-level altitude
 -  :ref:`FOLL_OPTIONS<FOLL_OPTIONS>`: set bit 0 to "1" to enable the :ref:`common-mount-targeting` to follow the target vehicle.
+
+Choosing the Altitude Type
+==========================
+
+:ref:`FOLL_ALT_TYPE <FOLL_ALT_TYPE>` selects which altitude field from the lead vehicle is
+used as the follow target, and getting it wrong is a common cause of the follower sitting at
+an unexpected height.
+
+- "1" (relative, the default on Copter) uses the lead vehicle's altitude above **its own** home.
+  Choose this if both vehicles take off from places whose home altitudes are physically the
+  same, and the EKF altitude source is the default barometer (i.e. ``EK3_SRCx_POSZ`` = Baro).
+  Because both vehicles then measure height from the same physical datum, barometric drift and
+  GPS altitude error largely cancel out and the follower holds the commanded offset accurately.
+- "0" (absolute) uses the lead vehicle's altitude above mean sea level. Choose this in any other
+  situation, in particular when the vehicles take off from different elevations, or when either
+  vehicle uses a non-barometric altitude source. Note that absolute altitude carries the full
+  error of each vehicle's own altitude estimate, so a constant vertical offset between the
+  vehicles is normal.
+- "3" (terrain) converts the lead vehicle's altitude to a height above terrain, so the follower
+  matches the lead vehicle's clearance above ground rather than its altitude. This requires
+  terrain data (see :ref:`common-terrain-following`) to be available for the lead vehicle's
+  position. If it is not, the target update is discarded and the follower will stop tracking,
+  so only use this option where terrain data is known to be loaded.
+
+.. note:: The lead vehicle's home altitude is not transmitted, so ArduPilot cannot detect a
+   mismatch between the two vehicles' home altitudes. If the follower consistently flies too
+   high or too low by roughly the difference in take-off elevations, "relative" is the wrong
+   choice for that setup.
