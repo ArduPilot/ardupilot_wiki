@@ -14,9 +14,10 @@ Overview
 ========
 
 You can easily program your UAV to do anything, from robotic acrobatics
-to just script-driven missions. Python 2.x is currently supported, up to
-2.7 (Mission Planner uses an implementation of
-`IronPython <https://ironpython.net/>`__ internally)
+to script-driven missions. Mission Planner uses
+`IronPython 3 <https://ironpython.net/>`__ internally, so scripts must use
+Python 3 syntax. IronPython runs on .NET and may not provide every module or
+third-party package available to the standard CPython interpreter.
 
 Aside from the regular Python commands, these are the special Mission
 Planner commands you can use:
