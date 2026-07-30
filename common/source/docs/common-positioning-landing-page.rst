@@ -16,6 +16,7 @@ GPS/Compass
 .. toctree::
     :maxdepth: 1
     
+    AeroAtoms Orbit Neo RTK GNSS + Compass <common-gps-aeroatoms-orbit-neo>
     ARK GPS <common-ark-gps>
     ARK DAN GPS <common-ark-dan-gps>
     ARK SAM GPS <common-ark-sam-gps>
