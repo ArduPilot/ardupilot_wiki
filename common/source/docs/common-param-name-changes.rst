@@ -125,9 +125,9 @@ were renamed to use consistent NED-style naming. This affects Copter/Sub
    * - PSC_VELXY_P / _I / _D / _IMAX / _FLTE / _FLTD / _FF
      - PSC_NE_VEL_P / _I / _D / _IMAX / _FLTE / _FLTD / _FF
    * - PSC_JERK_XY
-     - PSC_JERK_NE
+     - PSC_NE_JERK
    * - PSC_JERK_Z
-     - PSC_JERK_D
+     - PSC_D_JERK
 
 .. note:: For QuadPlane, replace the ``PSC_`` prefix above with ``Q_P_``
    (e.g. ``Q_P_NE_POS_P``).
