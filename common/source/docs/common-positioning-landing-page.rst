@@ -50,6 +50,8 @@ GPS/Compass
     Qiotek GNSS M10 QMC5883 <https://www.qio-tek.com/index.php/product/qiotek-m10s-gnss-module/>
     Qiotek DroneCAN RM3100 Compass <https://www.qio-tek.com/index.php/product/qiotek-rm3100-dronecan-module/>
     Teravolt AeroNav-1 GPS <common-AeroNav-1>
+    YARI DroneCAN M9N <https://yarirobotics.com/product/yari-m9n-gnss/>
+    YARI DroneCAN F10N <https://yarirobotics.com/product/yari-f10n-gnss/>
     Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
 
 RTK GPS
