@@ -41,6 +41,8 @@ calculated cone height is lower.
 
 If an :ref:`altitude fence <common-geofencing-landing-page>` has been enabled, the RTL climb/return altitude will be limited to be below the fence's maximum altitude.
 
+By default RTL flies a direct, straight-line path back to the return point, which can breach a polygon/circular :ref:`fence, inclusion or exclusion zone <common-geofencing-landing-page>` if the direct path happens to cross one. To have RTL instead plan a path around these horizontal fence boundaries, enable path planning with :ref:`OA_TYPE<OA_TYPE>` = 2 (Dijkstra's) or 3 (Dijkstra's with BendyRuler, which also avoids proximity sensor obstacles); see :ref:`common-oa-dijkstras` and :ref:`common-oa-dijkstrabendyruler` for setup. This applies to AUTO and GUIDED modes as well as RTL.
+
 RTL mode requires a reliable position estimate to work properly, most commonly provided by GPS and compass. Default prearm checks will ensure a 3D GPS lock with sufficient HDOP is acquired and your mag is working as expected prior to arming, if required by the selected mode and configuration during arming (ie STABILIZE could be armed without a reliable position and a switch into RTL would be refused without it). When using non-default arming checks, make sure you do have a sufficient GPS lock and / or a reliable position estimate for RTL to perform as expected.
 
 RTL will command the copter to return to the home position, meaning that
