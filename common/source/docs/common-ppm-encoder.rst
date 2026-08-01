@@ -88,10 +88,11 @@ them.
 ArduPPM is the official name for the newer generation firmwares. It has
 been designed from scratch with reliability as a top priority. The
 official release of the encoder firmware is in the Downloads section as
-ArduPPM_Vx.x.xx_ATMega328p.hex. The official source code is in the Git
-repository:
-https://github.com/ArduPilot/ardupilot/tree/master/Tools/ArduPPM. The
-standalone PPM Encoder needs the ATMega328p version.
+ArduPPM_Vx.x.xx_ATMega328p.hex. The source code (removed from the
+current ArduPilot repo since this hardware is obsolete) is archived in
+the Git repository at the `Copter-3.6 tag
+<https://github.com/ArduPilot/ardupilot/tree/Copter-3.6/Tools/ArduPPM>`__.
+The standalone PPM Encoder needs the ATMega328p version.
 
 Compiled binaries can be downloaded from our download site:
 
