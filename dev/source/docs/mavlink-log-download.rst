@@ -56,3 +56,22 @@ exchange above automatically:
 - ``log download <lognumber> <filename>`` — download a single log to a file
 - ``log download all`` — download all logs
 - ``log erase`` — erase all logs
+
+Streaming the Current Log to a Companion Computer
+--------------------------------------------------
+
+The methods above download a *completed* log after the fact. A
+companion computer can instead have ArduPilot stream the *current*
+log to it live, as it is being written, by setting bit 1 ("MAVLink")
+of :ref:`LOG_BACKEND_TYPE <copter:LOG_BACKEND_TYPE>`. The size
+of the in-memory ring buffer used for this is set by
+:ref:`LOG_MAV_BUFSIZE <copter:LOG_MAV_BUFSIZE>` (KB).
+
+With that bit set, ArduPilot sends `REMOTE_LOG_DATA_BLOCK <https://mavlink.io/en/messages/ardupilotmega.html#REMOTE_LOG_DATA_BLOCK>`__ messages (200 bytes of log data per message, identified by a ``seqno``) once a receiver signals it is ready by sending a `REMOTE_LOG_BLOCK_STATUS <https://mavlink.io/en/messages/ardupilotmega.html#REMOTE_LOG_BLOCK_STATUS>`__ with ``seqno`` = ``MAV_REMOTE_LOG_DATA_BLOCK_START`` (2147483646). The receiver acks/nacks each block it receives (or notices missing) with another ``REMOTE_LOG_BLOCK_STATUS``, ``seqno`` set to the block number and ``status`` = ``MAV_REMOTE_LOG_DATA_BLOCK_ACK`` (1) or ``_NACK`` (0); ArduPilot re-sends nacked blocks. Sending ``REMOTE_LOG_BLOCK_STATUS`` with ``seqno`` = ``MAV_REMOTE_LOG_DATA_BLOCK_STOP`` (2147483645) stops the stream.
+
+`dflogger <https://github.com/peterbarker/dronekit-la/blob/master/dataflash_logger.cpp>`__ is one existing implementation of this protocol suitable for running on a companion computer.
+
+MAVFTP
+------
+
+:ref:`MAVFTP <mavlink-mavftp>` can also fetch a log file directly from the autopilot's filesystem, but this is not the recommended method -- use the ``LOG_*`` messages above (for a completed log) or MAVLink log streaming (for the current log) instead.
