@@ -108,7 +108,7 @@ DroneCAN LEDs are enabled by setting bit 5 in the :ref:`NTF_LED_TYPES<NTF_LED_TY
 DroneCAN Rangefinder configuration
 ==================================
 
-Set ``RNGFNDx_TYPE`` = 24 to enable DroneCAN rangefinder type. Rangefinder data received over DroneCAN will only be used if the received sensor_id matches the parameter ``RNGFNDx_ADDR``. For AP_Periph firmware based adaptor nodes, this value is 0, so ``RNGFNDx_ADDR`` must be set to 0. Other DroneCAN rangefinders may differ. See also :ref:`DroneCAN Adaptor Node<common-uavcan-adapter-node>` instructions.
+Set ``RNGFNDx_TYPE`` = 24 to enable DroneCAN rangefinder type. Rangefinder data received over DroneCAN will only be used if the received sensor_id matches the parameter ``RNGFNDx_ADDR``. For AP_Periph firmware based adaptor nodes, this is the node's own ``RNGFNDx_ADDR`` parameter, which defaults to 0 -- so the ArduPilot-side ``RNGFNDx_ADDR`` should also be left at 0 unless the adaptor node's address has been changed (e.g. to distinguish multiple rangefinders), in which case both sides must match. See also :ref:`DroneCAN Adaptor Node<common-uavcan-adapter-node>` instructions.
 
 DroneCAN Options
 ================

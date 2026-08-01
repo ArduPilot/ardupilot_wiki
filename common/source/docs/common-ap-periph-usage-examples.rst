@@ -34,7 +34,14 @@ To use rangefinders, follow the instructions at  :ref:`DroneCAN Setup Advanced<c
 
 .. note:: The orientation of the rangefinder (RNGFND1_ORIENT) must be set to 0 on the adaptor node.
 
-.. note:: The RNGFNDx_ADDR ArduPilot parameter must be set above 0 and be equal to the number set on the DroneCAN adapter node.
+.. note:: The ArduPilot-side ``RNGFNDx_ADDR`` parameter must match the ``RNGFNDx_ADDR`` set on the DroneCAN adapter node. Both default to 0, which works fine for a single rangefinder; if multiple DroneCAN rangefinders are used, give each one a distinct address (matched on both sides) so ArduPilot can tell them apart.
+
+.. note::
+
+   ``RNGFNDx_MIN`` and ``RNGFNDx_MAX`` need to be set to matching values on *both* the adaptor node and in ArduPilot's own flight code parameters -- they are used for different things on each side, so setting them in only one place is not enough:
+
+   - the adaptor node's MIN/MAX are used to set the rangefinder's reported status in the DroneCAN message (range too low, too high, or OK), which ArduPilot's flight code then just reads
+   - ArduPilot's own MIN/MAX are used for other purposes, for example the arming check that requires :ref:`RNGFNDx_MAX<copter:RNGFND1_MAX>` to be at least :ref:`RTL_ALT<copter:RTL_ALT_M>` when :ref:`RTL_ALT_TYPE<copter:RTL_ALT_TYPE>` = 1 (Terrain)
 
 PWM or DShot Output Node
 ========================
