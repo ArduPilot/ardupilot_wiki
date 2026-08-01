@@ -76,6 +76,7 @@ Unidirectional Rangefinders
     Hexsoon 24G Radar <common-rangefinder-hexsoon-24g>
     HC-SR04 Sonar <common-rangefinder-hcsr04>
     JAE JRE-30 <common-rangefinder-jae-jre-30>
+    Lanbao PSK-CM8JL65-CC5 <common-lanbao-cm8jl65-lidar>
     LeddarTech Leddar One <common-leddar-one-lidar>
     LeddarTech LeddarVu8 <common-leddartech-leddarvu8-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
