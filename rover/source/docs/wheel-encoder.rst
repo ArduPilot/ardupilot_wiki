@@ -18,7 +18,7 @@ Connection and Setup
 
 - connect motor encoder's A and B outputs to the autopilot (A Pixhawk using AUX OUT 3,4,5 and 6 pins is shown for example above).
 - set those output's ``SERVOx_FUNCTION`` to -1 to allow them to be used as GPIO inputs. See :ref:`common-gpios` for more information. For the example above, set :ref:`SERVO11_FUNCTION<SERVO11_FUNCTION>`, :ref:`SERVO12_FUNCTION<SERVO12_FUNCTION>`, :ref:`SERVO13_FUNCTION<SERVO13_FUNCTION>`, and :ref:`SERVO14_FUNCTION<SERVO14_FUNCTION>` to "-1".
-- set :ref:`WENC_TYPE <WENC_TYPE>` and :ref:`WENC2_TYPE <WENC_TYPE>` to 1 to enable reading from two wheel encoders
+- set :ref:`WENC_TYPE <WENC_TYPE>` and :ref:`WENC2_TYPE <WENC2_TYPE>` to 1 to enable reading from two wheel encoders
 - set :ref:`WENC_CPR <WENC_CPR>` and :ref:`WENC2_CPR <WENC2_CPR>` to the counts-per-revolution of the encoder.  This is the number of "pings" the encoder will produce for each full revolution of the wheel
 - set :ref:`WENC_RADIUS <WENC_RADIUS>` and :ref:`WENC2_RADIUS <WENC2_RADIUS>` to the radius (in meters) of each wheel (i.e. 5cm radius would be 0.05)
 - set :ref:`WENC_POS_X <WENC_POS_X>` and :ref:`WENC_POS_Y <WENC_POS_Y>` to define the first wheel's distance from the autopilot or COG (i.e. :ref:`WENC_POS_X <WENC_POS_X>` = 0.10, :ref:`WENC_POS_Y <WENC_POS_Y>` = -0.05 means the wheel is 10cm ahead and 5cm left of the autopilot) 
@@ -42,6 +42,11 @@ Ground Testing
 The ``WHEEL_DISTANCE`` MAVLink message shows the total distance travelled by each wheel in real time.  Mission Planner's MAVLink Inspector can be used which can be opened by pressing Ctrl-F and then pushing the "MAVLink Inspector" button.
 
 .. image:: ../images/Mavlink-Inspector.jpg
+
+Wheel Rate Control
+==================
+
+For Balance bots, the wheel encoders can also be used to close a rate-control loop around each side's throttle output.  See :ref:`here for more details <balance_bot-tuning-wrc>`.
 
 DataFlash logging
 =================
