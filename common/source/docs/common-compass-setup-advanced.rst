@@ -65,6 +65,13 @@ Any one of the first three compasses can be disabled. This would leave only the 
 
       Compasses should always be enabled for Copter/Rover, but may be disabled (not recommended, if one is available) for Plane.
 
+Disabling a Compass Driver Type
+-------------------------------
+
+The above "Compass Enables" setting turns off an already-detected compass. In contrast, the :ref:`COMPASS_DISBLMSK<COMPASS_DISBLMSK>` parameter prevents ArduPilot from even probing for a particular compass *chip driver* at startup. This is a bitmask, with one bit per driver type (HMC5883, LSM303D, AK8963, BMM150, QMC5883, etc); setting a driver's bit stops that driver from being probed at all.
+
+This is mainly useful when two different compass chips would otherwise be detected at the same I2C address, causing a conflict, or a board's built-in driver for a peripheral (e.g. a DroneCAN or MSP connection) is being confused for a physical compass chip. Several individual hardware setup pages in this wiki recommend a specific :ref:`COMPASS_DISBLMSK<COMPASS_DISBLMSK>` value to resolve exactly this kind of conflict for that hardware.
+
 Orientation
 -----------
 
