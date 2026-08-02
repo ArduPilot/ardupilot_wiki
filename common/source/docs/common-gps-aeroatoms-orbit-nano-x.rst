@@ -112,7 +112,7 @@ Comparison
 
    * - Dimensions
      - 28 × 28 × 9.6 mm
-     - 28 × 28 × 9.6 mm
+     - 28 × 28 × 13.46 mm
 
    * - Weight
      - 20.2 g
