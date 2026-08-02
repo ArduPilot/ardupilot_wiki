@@ -21,6 +21,8 @@ New Board Support
 - ORBITH743v2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7872
 - GPILOT P1, see https://github.com/ArduPilot/ardupilot_wiki/pull/7877
 - SIYI UniFC 6 PICO, see https://github.com/ArduPilot/ardupilot_wiki/pull/7877
+- SimpliFly H7, see https://github.com/ArduPilot/ardupilot_wiki/pull/7915
+- AET-H743-Air, see https://github.com/ArduPilot/ardupilot_wiki/pull/7918
 
 New Peripheral Support
 ======================
@@ -34,6 +36,7 @@ New Features
 ============
 
 - Option to clear GCS RC overrides on RC stick input, see https://github.com/ArduPilot/ardupilot_wiki/pull/7880
+- Accel and gyro consistency pre-arm checks now run concurrently, see https://github.com/ArduPilot/ardupilot_wiki/pull/7921
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
@@ -41,6 +44,7 @@ New Features
 [site wiki="copter"]
 - Ability to abort flip using aux switch low, see https://github.com/ArduPilot/ardupilot_wiki/pull/7759
 - Pilot yaw input now also gates during landing (LAND_REPOSITION), see https://github.com/ArduPilot/ardupilot_wiki/pull/7879
+- MAV_CMD_DO_SET_ROI_WPNEXT_OFFSET mission command (point gimbal at next waypoint with an offset), see https://github.com/ArduPilot/ardupilot_wiki/pull/7920
 [/site]
 [site wiki="rover"]
 
