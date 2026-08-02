@@ -228,6 +228,7 @@ Closed Hardware
     SDMODEL SDH7V1 <https://www.sdmodel.com.tw/content.php?cn=item&tid=1320&start=0>
     SDMODEL H7 V2 <common-SDMODELH7V2>
     SequreH743 <common-sequreh743>
+    SimpliFly H7 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SIMPLIFLYH7/README.md>
     SIYI N7 <https://siyi.biz/siyi_file/N7/N7%20Autopilot%20User%20Manual%20(ArduPilot)%20v1.0.pdf>
     SkyDroid-S3 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SkyDroid-S3/README.md>
     Sky-Drones AIRLink <common-skydrones-airlink>
