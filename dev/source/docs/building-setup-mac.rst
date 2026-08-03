@@ -26,8 +26,9 @@ hand, read the script and run the steps it performs.
 .. note::
 
     Do not run the script with ``sudo``, and avoid ``sudo`` for Python or pip
-    packages in general. Install Python packages into a virtual environment
-    (``python3 -m venv``) rather than system-wide. Homebrew will prompt for your
+    packages in general. The script installs its Python packages into whatever
+    ``python3`` is first on your ``PATH``; answering yes to its pyenv prompt
+    keeps them out of the system Python. Homebrew will prompt for your
     password itself when it needs it.
 
 Once the prerequisites are installed you should be able to build with waf as
