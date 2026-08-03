@@ -318,7 +318,7 @@ Commands supported by Rover
 ===========================
 
 This list of commands was inferred from the command handler in
-`/Rover/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/commands_logic.cpp#L25>`__. 
+`/Rover/mode_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode_auto.cpp>`__.
 
 - :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
 - :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
@@ -334,6 +334,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
 - :ref:`MAV_CMD_DO_AUX_FUNCTION<mav_cmd_do_aux_function>`
 - :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
+- :ref:`MAV_CMD_DO_SET_REVERSE <mav_cmd_do_set_reverse>` (Rover only)
 - :ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
 - :ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
 - :ref:`MAV_CMD_DO_SET_RELAY <mav_cmd_do_set_relay>`
@@ -3007,6 +3008,71 @@ Change the target horizontal speed and/or the vehicle's throttle.
    </table>
 
 [/site]
+
+.. _mav_cmd_do_set_reverse:
+
+MAV_CMD_DO_SET_REVERSE
+-----------------------
+
+Supported by: Rover only.
+
+Sets the vehicle's driving direction to forward or reverse. This
+applies to the NAV commands that follow it in the mission, until
+another MAV_CMD_DO_SET_REVERSE command changes it again.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Reverse (0/1)</td>
+   <td>Direction:
+
+   0: Forward direction.
+
+   1: Reverse direction.
+   </td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param2</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
 
 .. _mav_cmd_do_set_home:
 
