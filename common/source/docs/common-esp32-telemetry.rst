@@ -88,7 +88,7 @@ For more details see the `DroneBridge Docs Installation Guide <https://dronebrid
 Configuring DroneBridge for ESP32
 =================================
 
-After powering on the ESP32, connect your PC's wifi to the WifiAP, "DroneBridge for ESP32" with password "dronebridge".  If "ESP-NOW" is installed, it may be necessary to short-press the "Settings" button to make the WifiAP appear.
+After powering on the ESP32, connect your PC's wifi to the WifiAP, "DroneBridge for ESP32" with password "dronebridge".  If "ESP-NOW" is installed, it may be necessary to short-press the "RSettings" button to make the WifiAP appear.
 
 Open a web browser and connect to one of the following URLs:
 
@@ -110,7 +110,7 @@ If an external antenna is used move the "Use external Antenna" slider to the rig
 
 Press "Save Settings & Reboot"
 
-Once configured to use ESP-NOW, the WifiAP will not appear after startup unless the "boot" button is short pressed.  Alternatively long-press the "boot" button to reset all settings back to the defaults.
+Once configured to use ESP-NOW, the WifiAP will not appear after startup unless the "RSettings" button is short pressed.  Alternatively long-press the "RSettings" button to reset all settings back to the defaults.
 
 For more details see `DroneBridge Docs Configuration Guide <https://dronebridge.gitbook.io/docs/dronebridge-for-esp32/configuration>`__.
 
