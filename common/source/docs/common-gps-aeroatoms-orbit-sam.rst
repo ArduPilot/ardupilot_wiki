@@ -1,8 +1,8 @@
 .. _common-gps-aeroatoms-orbit-sam:
 
-========================================
+===================
 AeroAtoms Orbit SAM
-========================================
+===================
 
 .. image:: ../../../images/aeroatoms/orbit-sam/orbit-sam.png
    :align: center

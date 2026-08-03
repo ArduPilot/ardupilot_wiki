@@ -1,8 +1,8 @@
 .. _common-gps-aeroatoms-orbit-evo:
 
-==================================================
+=====================================
 AeroAtoms Orbit EVO (UART / DroneCAN)
-==================================================
+=====================================
 
 .. image:: ../../../images/aeroatoms/orbit-evo/orbit-evo.png
    :align: center
