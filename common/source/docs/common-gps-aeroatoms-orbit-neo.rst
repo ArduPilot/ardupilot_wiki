@@ -1,8 +1,8 @@
 .. _common-gps-aeroatoms-orbit-neo:
 
-==================================
+=======================================
 AeroAtoms Orbit Neo / Neo Plus
-==================================
+=======================================
 
 .. image:: ../../../images/aeroatoms/orbit-neo/orbit-neo.png
    :align: center

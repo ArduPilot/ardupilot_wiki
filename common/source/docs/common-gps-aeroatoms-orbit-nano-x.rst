@@ -1,8 +1,8 @@
 .. _common-gps-aeroatoms-orbit-nano-x:
 
-=========================================
+======================================
 AeroAtoms Orbit Nano X9 / X10
-=========================================
+======================================
 
 .. image:: ../../../images/aeroatoms/orbit-nano-x9/orbit-nano-x9.png
    :align: center
