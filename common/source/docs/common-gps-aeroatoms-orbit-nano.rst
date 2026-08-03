@@ -1,8 +1,8 @@
 .. _common-gps-aeroatoms-orbit-nano:
 
-======================================================
+==========================================
 AeroAtoms Orbit Nano RTK (UART / DroneCAN)
-======================================================
+==========================================
 
 .. image:: ../../../images/aeroatoms/orbit-nano/orbit-nano.png
    :align: center

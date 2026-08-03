@@ -1,8 +1,8 @@
 .. _common-gps-aeroatoms-orbit-base:
 
-========================================
+====================
 AeroAtoms Orbit Base
-========================================
+====================
 
 .. image:: ../../../images/aeroatoms/orbit-base/orbit-base.png
    :align: center
