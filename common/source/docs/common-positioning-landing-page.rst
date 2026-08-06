@@ -60,6 +60,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
 .. toctree::
     :maxdepth: 1
 
+    AeroAtoms Orbit Neo RTK GNSS + Compass <common-gps-aeroatoms-orbit-neo>
     ArduSimple RTK GPS simpleRTK2B Budget (u-blox ZED-F9P) <common-ardusimple-rtk-gps-simplertk2b-budget>
     ArduSimple RTK GPS simpleRTK3B Pro (Septentrio Mosaic-X5) <common-ardusimple-rtk-gps-simplertk3b-pro>
     ArduSimple RTK GPS simpleRTK3B Compass (Unicore UM982, Dual antenna heading) <common-ardusimple-rtk-gps-simplertk3b-compass>

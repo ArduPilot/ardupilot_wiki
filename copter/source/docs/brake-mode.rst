@@ -10,7 +10,7 @@ the pilot. This mode requires a valid position estimate.
 
 Brake mode is subject to acceleration and angle limits imposed by the
 position and attitude controllers. For more aggressive braking, you can
-also try increasing :ref:`PSC_JERK_NE <PSC_JERK_NE>`. As an example use case, a value of 15
+also try increasing :ref:`PSC_NE_JERK <PSC_NE_JERK>`. As an example use case, a value of 15
 to 30 works well for a small copter.
 
 Overview

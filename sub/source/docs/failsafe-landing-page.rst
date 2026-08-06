@@ -18,7 +18,7 @@ Sub has a number of failsafe mechanisms to ease vehicle recovery/prevent wanderi
     Internal Leak Failsafe <internal-leak-failsafe>
     Internal Pressure Failsafe <internal-pressure-failsafe>
     Internal Temperature Failsafe <internal-temperature-failsafe>
-    EKF Failsafe <ekf-inav-failsafe>
+    EKF Failsafe <common-ekf-inav-failsafe>
     Crash Check <crash_check>
     Independent Watchdog <common-watchdog>
 

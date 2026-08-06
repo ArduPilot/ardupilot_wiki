@@ -4,6 +4,45 @@
 Tuning the Balance Bot
 ======================
 
+.. _balance_bot-tuning-wrc:
+
+Tuning Wheel Rate Control
+=========================
+
+For Balance bots, the wheel encoders can also be used to
+close a rate-control loop around each side's throttle output, instead
+of just feeding position/velocity estimation as described in
+:ref:`wheel-encoder`. A PID controller converts the desired wheel
+rotation rate into the actual throttle output sent to the motor, using
+the corresponding wheel encoder as feedback. This can improve tracking
+of the commanded speed and turn rate, particularly if the left and
+right motors/wheels don't behave identically.
+
+This only applies to the ``SERVOx_FUNCTION`` = 73 (Throttle Left) and
+74 (Throttle Right) skid-steering outputs, and requires the
+corresponding wheel encoder(s) (:ref:`WENC_TYPE <WENC_TYPE>` for the
+left wheel, :ref:`WENC2_TYPE <WENC2_TYPE>` for the right wheel) to
+already be enabled. See :ref:`wheel-encoder` for how to connect and
+configure the encoders.
+
+.. note::
+
+   "Enabled" here only means the encoder's type is set to something
+   other than "None" -- it is not a health check. A disconnected,
+   stalled, or reverse-wired encoder will still be treated as
+   available, and can cause the rate controller to drive the throttle
+   to a wrong or saturated output. Confirm each wheel's reported rate
+   looks correct (e.g. via ``WHEEL_DISTANCE`` or the WENC log message)
+   before enabling and tuning wheel rate control.
+
+- set :ref:`WRC_ENABLE <WRC_ENABLE>` to 1 to enable wheel rate control
+- set :ref:`WRC_RATE_MAX <WRC_RATE_MAX>` to the wheel's maximum rotation rate in radians/sec (this single value is shared by both wheels; a 100% throttle request is treated as this rate). Leaving this at 0 does not disable the feature -- it makes the controller target a rate of zero for every throttle request instead, fighting the vehicle to a stop. Use :ref:`WRC_ENABLE <WRC_ENABLE>` = 0 to actually disable wheel rate control.
+- tune the left wheel's controller using the :ref:`WRC_RATE_P <WRC_RATE_P>`, :ref:`WRC_RATE_I <WRC_RATE_I>`, :ref:`WRC_RATE_D <WRC_RATE_D>`, :ref:`WRC_RATE_FF <WRC_RATE_FF>`, :ref:`WRC_RATE_IMAX <WRC_RATE_IMAX>` and :ref:`WRC_RATE_FILT <WRC_RATE_FILT>` parameters
+- tune the right wheel's controller using the equivalent :ref:`WRC2_RATE_P <WRC2_RATE_P>`, :ref:`WRC2_RATE_I <WRC2_RATE_I>`, :ref:`WRC2_RATE_D <WRC2_RATE_D>`, :ref:`WRC2_RATE_FF <WRC2_RATE_FF>`, :ref:`WRC2_RATE_IMAX <WRC2_RATE_IMAX>` and :ref:`WRC2_RATE_FILT <WRC2_RATE_FILT>` parameters
+
+The left wheel's rate controller performance can be reviewed using the
+dataflash log's ``PIDW`` message (desired vs achieved rate, and the P/I/D/FF contributions), the same way the steering and throttle-speed rate controllers are reviewed via their own ``PIDS``/``PIDA`` messages. The right wheel's controller is not currently logged.
+
 Tuning Pitch Control
 ====================
 

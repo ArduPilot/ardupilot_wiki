@@ -38,13 +38,38 @@ Below are the 6 supported targeting modes.
 
 4. **GPS Point:** same as MAVLink targeting but ArduPilot forces the mount to point at a specific location.  Users never need to actively set the mount to this mode. The user usually selects a point and altitude on the GCS map and selects a right click menu item to "Point the camera here".
 
-5. **SysId Target:** the mount points at another vehicle with the MAVLink system id specified.  Users never need to actively set the mount to this mode and there are no known GCSs that support setting the system id, but the parameter can be set by updating the value of :ref:`MNT1_SYSID_DFLT<MNT1_SYSID_DFLT>` directly.
+5. **SysId Target:** the mount points at another vehicle with the MAVLink system id specified.  See :ref:`common-mount-targeting_sysid-targeting` below for how to activate this mode and what else is required for it to work.
 
 6. **Home Location:** the mount points at Home (normally its location when armed, unless changed by the user in the GCS)
 
 The mount's default mode on startup can be set with the :ref:`MNT1_DEFLT_MODE<MNT1_DEFLT_MODE>` parameter.
 
 .. note:: ArduPilot 4.5 (and higher) automatically switches the mount to RC Targeting Mode if the pilot moves any configured Roll/Pitch/Yaw RC targeting inputs (see below) by the larger of 10uS or ``RCx_DZ``.  The only exception is if the mounts is in RETRACT mode in which case the mount mode will not be automatically changed.
+
+.. _common-mount-targeting_sysid-targeting:
+
+Following Another Vehicle (SysID Targeting)
+===========================================
+
+SysID Targeting mode makes the mount point at the estimated GPS location of another vehicle (e.g. a second aircraft, or the pilot's own ground vehicle), rather than a fixed location. This is the mode used, for example, to make a gimbal follow another aircraft in flight. This only controls the *primary* mount (i.e. ``MNT1``); the command's gimbal-device-id parameter is not used by ArduPilot to select a specific mount.
+
+To activate it, send a `MAV_CMD_DO_SET_ROI_SYSID <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_ROI_SYSID>`__ command, addressed to the tracking vehicle specifically (not broadcast), with param1 set to the target vehicle's MAVLink system id (its ``SYSID_THISMAV``). This both sets the target system id and switches the mount straight into SysID Targeting mode; there is no need to change mode separately. ArduPilot accepts (``MAV_RESULT_ACCEPTED``) this command even if no primary mount is configured, so a successful ack does not by itself confirm tracking is actually working. To stop tracking, switch the mount to a different mode (e.g. by sending another :ref:`mav_cmd_do_gimbal_manager_pitchyaw` command, or via the GCS's normal mode controls) rather than sending a system id of 0 -- 0 leaves the mount in SysID Targeting mode with no valid target, and its resulting behaviour (hold last angle, continue a previous rate command, etc) is not well defined.  Alternatively the target system id can be set permanently with the :ref:`MNT1_SYSID_DFLT<MNT1_SYSID_DFLT>` parameter, in which case the mount starts up already in this mode (if it is also the :ref:`MNT1_DEFLT_MODE<MNT1_DEFLT_MODE>`).
+
+.. warning::
+
+   The tracking vehicle's autopilot determines the target's position purely from `GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#GLOBAL_POSITION_INT>`__ messages carrying the target's system id, received on any of its own MAVLink links. It does **not** matter how that message gets there, but it must arrive somehow -- normally each vehicle only "hears" its own telemetry, so the two vehicles' links need to be bridged together (for example, both connecting to the same GCS or companion computer, with MAVLink routing/forwarding enabled between the two links) before tracking will do anything. Without this, the tracking vehicle's autopilot never receives a position for the target and the mount will not move.
+
+.. warning::
+
+   ArduPilot does not track how recently a target's ``GLOBAL_POSITION_INT`` was received, and does not clear the cached target location when the target system id is changed. This means: if the target vehicle's position stream stops (e.g. link lost), the mount will keep pointing at its last known position indefinitely with no warning; and if you switch to tracking a different system id, the mount may briefly point at the *previous* target's last known location until the first ``GLOBAL_POSITION_INT`` from the new target arrives.
+
+**Example**
+
+Using MAVProxy connected to the tracking vehicle (with both vehicles' links bridged as described above), and assuming the tracking vehicle's own MAVLink system id is 1, the following command tells it to start pointing its mount at a vehicle with system id 2:
+
+- ``message COMMAND_LONG 1 1 198 0 2 0 0 0 0 0 0``
+
+Sending this with a target system of 0 (broadcast) instead of the tracking vehicle's own id should be avoided in this bridged-network setup, since every vehicle sharing the bridge would then process the command, not just the intended tracking vehicle.
 
 Mount Internal Axis Locks
 =========================

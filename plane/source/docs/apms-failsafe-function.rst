@@ -490,6 +490,13 @@ There are three possible enabled settings. Seeing :ref:`FS_GCS_ENABL<FS_GCS_ENAB
    </tbody>
    </table>
 
+EKF Failsafe
+============
+
+QuadPlanes also have an EKF failsafe which acts when the position estimate becomes untrustworthy while flying in a VTOL mode that requires position. The vehicle switches to :ref:`QLAND <qland-mode>` if in a VTOL AUTO mission, or to :ref:`QHOVER <qhover-mode>` otherwise. In fixed wing flight no failsafe action is taken, as ArduPilot falls back to the DCM attitude estimator.
+
+See :ref:`common-ekf-inav-failsafe` for full details, including the :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` parameter used to adjust its sensitivity.
+
 Failsafe Diagnosis in Logs or GCS
 =================================
 

@@ -34,7 +34,7 @@ The "security attack surface" is the set of access points that a malicious actor
    * - `Ethernet <https://ardupilot.org/copter/docs/common-network.html>`__
      - Used primarily for :ref:`companion computers <companion-computers>` and `camera gimbals <https://ardupilot.org/copter/docs/common-cameras-and-gimbals.html>`__ and protection should be applied to their attack surfaces
    * - GPS
-     - Susceptible to jamming and spoofing.  The `EKF failsafe <https://ardupilot.org/copter/docs/ekf-inav-failsafe.html>`__ may trigger a failsafe action but consider adding `Non-GPS navigation <https://ardupilot.org/copter/docs/common-non-gps-navigation-landing-page.html>`__ as a backup
+     - Susceptible to jamming and spoofing.  The `EKF failsafe <https://ardupilot.org/copter/docs/common-ekf-inav-failsafe.html>`__ may trigger a failsafe action but consider adding `Non-GPS navigation <https://ardupilot.org/copter/docs/common-non-gps-navigation-landing-page.html>`__ as a backup
    * - I2C / SPI
      - Used for IMU and some `peripherals <https://ardupilot.org/copter/docs/common-optional-hardware.html>`__ including compass and lidar
    * - RC Receiver Input

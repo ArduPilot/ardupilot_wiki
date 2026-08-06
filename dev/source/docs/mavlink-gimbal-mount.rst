@@ -8,6 +8,7 @@ This page explains how MAVLink can be used to control a gimbal (aka camera mount
 
 - use MAV_CMD_DO_MOUNT_CONTROL to set the gimbal's mode (aka mount mode)
 - use MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW to move to a desired angle or at a desired rate
+- use GIMBAL_MANAGER_SET_ATTITUDE to set an attitude or angular rate using a quaternion
 - use MAV_CMD_DO_SET_ROI_LOCATION to point at a Location
 - use MAV_CMD_DO_SET_ROI_NONE to stop point at a Location or vehicle
 - use MAV_CMD_DO_SET_ROI_SYSID to point at another vehicle
@@ -222,6 +223,80 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 +-----------------------------------------------------------------------------+-----------------------------------------------------------+
 | ``message COMMAND_LONG 0 0 1000 0 float("NaN") float("NaN") 0 5 16 0 0``    | Pitch hold, yaw clockwise at 5deg/sec in eartj-frame      |
 +-----------------------------------------------------------------------------+-----------------------------------------------------------+
+
+GIMBAL_MANAGER_SET_ATTITUDE to set an attitude or angular rate
+----------------------------------------------------------------
+
+The gimbal's attitude or angular rate can also be controlled by sending a
+`GIMBAL_MANAGER_SET_ATTITUDE <https://mavlink.io/en/messages/common.html#GIMBAL_MANAGER_SET_ATTITUDE>`__
+message to the flight controller.  Attitude targets use a quaternion while
+angular-rate targets use radians per second.  Specify either an attitude or
+angular rates, not both.
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Message Field</th>
+   <th>Type</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>target_system</strong></td>
+   <td>uint8_t</td>
+   <td>System ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>target_component</strong></td>
+   <td>uint8_t</td>
+   <td>Component ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>flags</strong></td>
+   <td>uint32_t</td>
+   <td>0 for body-frame/follow yaw or 16 for earth-frame/lock yaw</td>
+   </tr>
+   <tr>
+   <td><strong>gimbal_device_id</strong></td>
+   <td>uint8_t</td>
+   <td>Gimbal device ID (0 is primary gimbal, 1 is 1st gimbal, 2 is 2nd gimbal)</td>
+   </tr>
+   <tr>
+   <td><strong>q</strong></td>
+   <td>float[4]</td>
+   <td>Attitude quaternion in w, x, y, z order, or all NaN for rate control</td>
+   </tr>
+   <tr>
+   <td><strong>angular_velocity_x</strong></td>
+   <td>float</td>
+   <td>Roll rate in rad/s (positive is right), or NaN for attitude control</td>
+   </tr>
+   <tr>
+   <td><strong>angular_velocity_y</strong></td>
+   <td>float</td>
+   <td>Pitch rate in rad/s (positive is up), or NaN for attitude control</td>
+   </tr>
+   <tr>
+   <td><strong>angular_velocity_z</strong></td>
+   <td>float</td>
+   <td>Yaw rate in rad/s (positive is right), or NaN for attitude control</td>
+   </tr>
+   </tbody>
+   </table>
+
+The example commands below can be copy-pasted into MAVProxy (aka SITL) after
+entering ``module load message``:
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
+| Example MAVProxy/SITL Command                                                                                                                                               | Description                                           |
++=============================================================================================================================================================================+=======================================================+
+| ``message GIMBAL_MANAGER_SET_ATTITUDE 0 0 0 0 [0.9848078,0,-0.1736482,0] float("NaN") float("NaN") float("NaN")``                                                           | Pitch down 20deg, body-frame/follow yaw               |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
+| ``message GIMBAL_MANAGER_SET_ATTITUDE 0 0 0 0 [float("NaN"),float("NaN"),float("NaN"),float("NaN")] 0 -0.0872665 0``                                                        | Pitch down at 5deg/sec, body-frame/follow yaw         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
+| ``message GIMBAL_MANAGER_SET_ATTITUDE 0 0 16 0 [float("NaN"),float("NaN"),float("NaN"),float("NaN")] 0 0 0.0872665``                                                        | Yaw right at 5deg/sec, earth-frame/lock yaw           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
 
 MAV_CMD_DO_SET_ROI_LOCATION to point at a Location
 --------------------------------------------------
