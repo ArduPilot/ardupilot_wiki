@@ -425,6 +425,11 @@ failures (i.e. spikes) can also cause this failure.
 rates that differ by more than 20deg/sec.  This is likely a hardware
 failure or caused by a bad gyro calibration.
 
+Both the accel and gyro consistency checks require roughly 10 seconds of
+consistent sensor readings after boot to pass, and (as of ArduPilot 4.8) run
+concurrently rather than one after the other, so pre-arm checks on boards
+with multiple IMUs are typically ready about 10 seconds after power-up.
+
 Board Voltage checks:
 ---------------------
 
