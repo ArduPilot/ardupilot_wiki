@@ -23,6 +23,7 @@ New Board Support
 - SIYI UniFC 6 PICO, see https://github.com/ArduPilot/ardupilot_wiki/pull/7877
 - SimpliFly H7, see https://github.com/ArduPilot/ardupilot_wiki/pull/7915
 - AET-H743-Air, see https://github.com/ArduPilot/ardupilot_wiki/pull/7918
+- CUAV-X25-MEGA, see https://github.com/ArduPilot/ardupilot_wiki/pull/7944
 
 New Peripheral Support
 ======================
