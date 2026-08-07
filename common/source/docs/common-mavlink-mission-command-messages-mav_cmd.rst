@@ -199,6 +199,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>`
 - :ref:`MAV_CMD_DO_SET_ROI_LOCATION <mav_cmd_do_set_roi_location>`
 - :ref:`MAV_CMD_DO_SET_ROI_NONE <mav_cmd_do_set_roi_none>`
+- :ref:`MAV_CMD_DO_SET_ROI_WPNEXT_OFFSET <mav_cmd_do_set_roi_wpnext_offset>`
 - :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <mav_cmd_do_gimbal_manager_pitchyaw>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_PARACHUTE <mav_cmd_do_parachute>` (Parachute enabled only)
@@ -3788,6 +3789,72 @@ command with all zeros for ``param5``-``param7`` (Lat, Lon, and Alt).
    <td><strong>param7</strong></td>
    <td>Alt</td>
    <td>Altitude of the fixed ROI</td>
+   </tr>
+   </tbody>
+   </table>
+
+[/site]
+
+.. _mav_cmd_do_set_roi_wpnext_offset:
+
+MAV_CMD_DO_SET_ROI_WPNEXT_OFFSET
+---------------------------------
+
+[site wiki="copter" heading="off"]
+
+Points the :ref:`camera gimbal <common-cameras-and-gimbals>` at the location of the *next* waypoint in the mission, with an optional roll/pitch/yaw offset added on top of that pointing angle. This differs from ``DO_SET_ROI``'s "next waypoint" mode (param1 = 1), which has no offset capability.
+
+Once set, the gimbal continues tracking the next waypoint -- re-aiming automatically as the vehicle advances through the mission and "next waypoint" changes -- until a later mount-targeting command changes the mode.
+
+.. note:: This command is currently only implemented for Copter. Plane, Rover, and Sub accept it without error, but since those vehicles do not yet provide a "next waypoint" location to the mount, no new pointing angle is set and the gimbal simply continues doing whatever it was doing before.
+
+.. note:: Requires a board with more than 2MB of flash; it is compiled out by default on smaller F4-class boards. On :ref:`custom firmware builds <common-custom-firmware>`, enable both the "MOUNT_WPNEXT_OFFSET" and "MISSION_WPNEXT_OFFSET" options.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param1</strong></td>
+   <td></td>
+   <td>Gimbal device ID. Currently not used by ArduPilot; the primary mount is always targeted regardless of this value.</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param2</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr>
+   <td><strong>param5</strong></td>
+   <td></td>
+   <td>Pitch offset in degrees, positive pitching up</td>
+   </tr>
+   <tr>
+   <td><strong>param6</strong></td>
+   <td></td>
+   <td>Roll offset in degrees, positive rolling to the right</td>
+   </tr>
+   <tr>
+   <td><strong>param7</strong></td>
+   <td></td>
+   <td>Yaw offset in degrees, positive yawing to the right</td>
    </tr>
    </tbody>
    </table>
