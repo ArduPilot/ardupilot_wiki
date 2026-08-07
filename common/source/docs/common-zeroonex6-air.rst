@@ -32,7 +32,8 @@ Features:
   * IMU1: ICM45686 (With vibration isolation)
   * IMU2- ICM45686 (No vibration isolation)
   * IMU constant temperature heating (1W heating power)
-  * Baros: 2 x ICP20100
+  * Baros: 2 x ICP20100 (V1)
+  * V2: SPL06 and BMP581 baros
   * Magnetometer: IST8310 magnetometer
 
 Pinout
