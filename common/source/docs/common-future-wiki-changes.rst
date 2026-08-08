@@ -33,6 +33,7 @@ New Peripheral Support
 - RPLidarS2, see https://github.com/ArduPilot/ardupilot_wiki/pull/7787
 - LightwareGRF-250 I2C, see https://github.com/ArduPilot/ardupilot_wiki/pull/7795
 - Aeron Systems PLX3 INS, see https://github.com/ArduPilot/ardupilot_wiki/pull/7750
+- HC Robotics HCR-523 DroneCAN GPS/Compass, see https://github.com/ArduPilot/ardupilot_wiki/pull/7947
 
 New Features
 ============
