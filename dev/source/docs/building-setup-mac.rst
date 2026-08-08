@@ -4,80 +4,35 @@
 Setting up the Build Environment (MacOSX)
 =========================================
 
-This article shows how to manually setup a minimal build environment on MacOS (ver 10.6 onwards).
+This article shows how to set up the build environment on macOS.
 
 ..  youtube:: wLK2wLwEXm4
     :width: 100%
 
 
-There is a `pre-built script  <https://github.com/ArduPilot/ardupilot/blob/master/Tools/environment_install/install-prereqs-mac.sh>`__ that will install these pre-requisites.
-
-How to use it, cd to your ardupilot directory, and execute:
-
-::
-
-    sh ./Tools/environment_install/install-prereqs-mac.sh
-
-
-Setup steps
------------
-
-#. MacOS will alert you when you enter a command in the terminal that requires Xcode Command Line Tools. You can also install Xcode Command Line Tools manually
-
-   ::
-   
-       xcode-select --install
-
-#. Install `Homebrew <http://brew.sh>`__ for MacOS (Homebrew is a respected package manager for MacOS)
-
-   ::
-   
-      /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
- 
-#. Install the following packages using brew
-
-   ::
-
-       brew update
-       brew install gcc-arm-none-eabi genromfs python3
-
-#. Install the latest version of awk using brew (make sure
-   **/usr/local/bin** takes precedence in your path):
-
-   ::
-
-       brew install gawk
-
-#. Install *empy* and *pyserial* using the following commands:
-
-   ::
-
-       python3 -m pip install empy pyserial
-       
-   ::
-   
-       ** Starting with MacOS Mojave (10.14.x) you might want to install the SDK headers
-       
-       open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
-
-
-#. Follow the :ref:`MAVProxy documentation <mavproxy:mavproxy-downloadinstallmac>` if you plan to use the simulator.
-
-Now you should be able to build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
-
-Additional Steps for macOS mojave
----------------------------------
-Due to some changes binutils installed via brew have stopped working for macOS mojave leading to crashing builds. So if installed, remove via following command:
+The recommended way to install the prerequisites is the environment install
+script. It is kept up to date with the current toolchain and Python
+requirements, so it is less likely to drift than a manual list of steps. From
+your ``ardupilot`` directory, run:
 
 ::
 
-    brew uninstall binutils
+    ./Tools/environment_install/install-prereqs-mac.sh -y
 
-Also you will need to install the c++ include headers to /usr/include to do that. Run the following in commandline and follow the installation routine:
+The script installs the Xcode command line tools, Homebrew, the ARM toolchain,
+and the Python packages ArduPilot needs. If you would rather set things up by
+hand, read the script and run the steps it performs.
 
-::
+.. note::
 
-    open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+    Do not run the script with ``sudo``, and avoid ``sudo`` for Python or pip
+    packages in general. The script installs its Python packages into whatever
+    ``python3`` is first on your ``PATH``; answering yes to its pyenv prompt
+    keeps them out of the system Python. Homebrew will prompt for your
+    password itself when it needs it.
+
+Once the prerequisites are installed you should be able to build with waf as
+described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
 Cleaning
 --------
@@ -88,7 +43,7 @@ If there have been updates to some git submodules you may need to do a full clea
 
     ./waf distclean
 
-Commands `clean` and `distclean` can be used to clean the objects produced by the build.
-`clean` keeps the configure information, cleaning only the objects for the current board. `distclean` cleans everything for every board, including the saved configure information.
+Commands ``clean`` and ``distclean`` can be used to clean the objects produced by the build.
+``clean`` keeps the configure information, cleaning only the objects for the current board. ``distclean`` cleans everything for every board, including the saved configure information.
 
 Follow the instructions for `build <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ .
