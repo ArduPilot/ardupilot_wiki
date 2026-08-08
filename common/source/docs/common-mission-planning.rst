@@ -46,6 +46,9 @@ This section contains articles about creating missions that will run when the ve
 
     Rewind-on-resume <common-mission-rewind>
     Continue Mission After Landing <common-continue-mission>
+[site wiki="plane"]
+    BVLOS Planning <BVLOS-planning>
+[/site]
 
 
 [copywiki destination="copter,plane,rover,sub,planner"]
