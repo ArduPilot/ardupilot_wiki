@@ -42,10 +42,10 @@ hal.scheduler->register_timer_process() like this:
 
 ::
 
-      hal.scheduler->register_timer_process(AP_HAL_MEMBERPROC(&AP_Baro_MS5611::_update));
+      hal.scheduler->register_timer_process(FUNCTOR(&AP_Baro_MS5611::_update));
 
 that particular example is from the MS5611 barometer driver. The
-AP_HAL_MEMBERPROC() macro provides a way to encapsulate a C++ member
+FUNCTOR() macro provides a way to encapsulate a C++ member
 function as a callback argument (bundling up the object context with the
 function pointer).
 
