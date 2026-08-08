@@ -26,6 +26,7 @@ mountpoint           NTRIP mountpoint                                 ''
 logfile              Filename to save NTRIP data to                   ''
 sendalllinks         Send on all links                                False
 sendmul              Send data multiple times                         1
+sendgga              Send NMEA GGA Message to Base                    True 
 ==================   ===============================================  ===============================
 
 An example of configuring the ntrip module is below:
