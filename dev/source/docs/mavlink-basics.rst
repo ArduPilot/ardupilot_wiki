@@ -13,9 +13,40 @@ MAVLink Basics
 Message Format
 --------------
 
-.. image:: ../images/mavlink-frame.png
-    :target: ../_images/mavlink-frame.png
-    :width: 450px
+The MAVLink 1 packet format is shown below, where ``n`` is the payload length.
+Byte indexes start at zero.
+
+.. list-table:: MAVLink 1 packet format
+    :header-rows: 1
+    :widths: 15 25 60
+
+    * - Byte index
+      - Content
+      - Description
+    * - 0
+      - Start marker
+      - ``0xFE`` identifies a MAVLink 1 packet
+    * - 1
+      - Payload length
+      - Number of bytes in the payload (0 to 255)
+    * - 2
+      - Packet sequence
+      - Increments for each packet and allows packet-loss detection
+    * - 3
+      - System ID
+      - Identifies the sending system
+    * - 4
+      - Component ID
+      - Identifies the sending component
+    * - 5
+      - Message ID
+      - Identifies how to decode the payload
+    * - 6 to ``5+n``
+      - Payload
+      - ``n`` bytes of message data; this field is absent when ``n`` is zero
+    * - ``n+6`` to ``n+7``
+      - Checksum
+      - Two-byte checksum, low byte followed by high byte
 
 - Messages are no more than 263 bytes (Mavlink version1.0) or 280 bytes (Mavlink version 2.0).
 - The sender always fills in the ``System ID`` and ``Component ID`` fields so that the receiver knows where the packet came from.  The ``System ID`` is a unique ID for each vehicle or ground station.  Ground stations normally use a high system id like "255" and vehicles default to use "1" (this can be changed by setting the :ref:`MAV_SYSID <MAV_SYSID>` parameter, see also :ref:`MAV_GCS_SYSID<MAV_GCS_SYSID>` and :ref:`MAV_GCS_SYSID_HI<MAV_GCS_SYSID_HI>`).  The ``Component ID`` for the ground station or flight controller is normally "1".  Other MAVLink capable device on the vehicle (i.e. companion computer, gimbal) should use the same ``System ID`` as the flight controller but use a different ``Component ID``

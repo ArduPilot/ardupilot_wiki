@@ -64,6 +64,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     BTN_PINx=y invalid                                      Button misconfigured                                BTNx_PIN is set to an invalid value. Check :ref:`Button setup instructions <common-buttons>`
     BTN_PINx=y, set SERVOz_FUNCTION=-1                      Button misconfigured                                Set SERVOz_FUNCTION to -1
     Can't check rally without position                      EKF does not have a position estimate yet           Wait or move to location with better GPS reception
+    Check EK3_SRCx_POSXY/VELXY/POSZ/VELZ/YAW                An EKF3 source parameter has an unsupported value    Review the named :ref:`EK3_SRC parameter set <common-ekf-sources>` and select a supported source
     Check fence                                             Fence feature has failed to be initialised          Reboot autopilot
     Check mag field (xy diff:x>875)                         Compass horiz field strength is too large or small  Relocate vehicle away from metal in the environment.  Move compass away from metal in the frame.  repeat :ref:`compass calibration <common-compass-calibration-in-mission-planner>`.  Disable internal compass.
     Check mag field (z diff:x>875)                          Compass vert field strength is too large or small   Relocate vehicle away from metal in the environment.  Move compass away from metal in the frame.  repeat :ref:`compass calibration <common-compass-calibration-in-mission-planner>`.  Disable internal compass.
@@ -85,6 +86,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     DroneCAN: Failed to add Node x!                         DroneCAN could not init connection to a device      Check sensor's physical connection and power supply
     DroneCAN: Node x unhealthy!                             A DroneCAN device is not providing data             Check sensor's physical connection and power supply
     Duplicate Aux Switch Options                            Two auxiliary function switches for same feature    Check :ref:`auxiliary function<common-auxiliary-functions>` setup.  Check for :ref:`RCx_OPTION<RC1_OPTION>` parameters with same values
+    EK3 sources require x                                   Selected EKF3 sources is unavailable                Connect or configure the named sensor, or change the relevant :ref:`EK3_SRC parameter set <common-ekf-sources>` to use an available source
     EKF3 Roll/Pitch inconsistent by x degs                  Roll or Pitch lean angle estimates are inconsistent Normally due to EKF3 not getting good enough GPS accuracy, but could be due to other sensors producing errors. Go outdoors, wait or reboot autopilot.
     EKF3x vel error y                                       EKF3 has velocity innovation of "y"                 EKF3 getting high position velocity innovations. Check GPS, wait or reboot.
     EKF3 waiting for GPS config data                        automatic GPS configuration has not completed       Check GPS connection and configuration especially if using DroneCAN GPS
@@ -513,4 +515,3 @@ Disabling the Pre-arm Safety Check
 .. warning:: Disabling pre-arm safety checks is not recommended. The cause of the pre-arm failure should be corrected before operation of the vehicle if at all possible. If you are confident that the pre-arm check failure is not a real problem, it is possible to skip a failing check.
 
 Arming checks can be individually skipped by setting the :ref:`ARMING_SKIPCHK<ARMING_SKIPCHK>` parameter to something other than 0. For example, setting to 4 skips the checks that the GPS has lock. In extremely unusual circumstances, setting the parameter to -1 can be used to skip all current and future pre-arm checks (though mandatory checks still remain).
-

@@ -14,9 +14,10 @@ Overview
 ========
 
 You can easily program your UAV to do anything, from robotic acrobatics
-to just script-driven missions. Python 2.x is currently supported, up to
-2.7 (Mission Planner uses an implementation of
-`IronPython <https://ironpython.net/>`__ internally)
+to script-driven missions. Mission Planner uses
+`IronPython 3 <https://ironpython.net/>`__ internally, so scripts must use
+Python 3 syntax. IronPython runs on .NET and may not provide every module or
+third-party package available to the standard CPython interpreter.
 
 Aside from the regular Python commands, these are the special Mission
 Planner commands you can use:
@@ -198,7 +199,7 @@ these classes.
 | failsafe                | bool                    | Fail Safe Active or     |
 |                         |                         | Not                     |
 +-------------------------+-------------------------+-------------------------+
-| rxrssi                  | float                   |                         |
+| rxrssi                  | float                   | Receiver RSSI (%)       |
 +-------------------------+-------------------------+-------------------------+
 | chx1in, chx2in, ....    | float                   | Input Channels from 1   |
 | chx8in                  |                         | to 8                    |
@@ -246,9 +247,9 @@ these classes.
 +-------------------------+-------------------------+-------------------------+
 | current                 | float                   | battery Current (Amps)  |
 +-------------------------+-------------------------+-------------------------+
-| HomeAlt                 | float                   |                         |
+| HomeAlt                 | float                   | Home Altitude (dist)    |
 +-------------------------+-------------------------+-------------------------+
-| DistToHome              | float                   | Absolute Pressure Value |
+| DistToHome              | float                   | Distance to Home (dist) |
 +-------------------------+-------------------------+-------------------------+
 | press_abs               | float                   | Absolute Pressure Value |
 +-------------------------+-------------------------+-------------------------+

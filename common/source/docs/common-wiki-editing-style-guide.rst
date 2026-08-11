@@ -381,4 +381,26 @@ Note that the path is absolute, and relative to the source directory for the wik
 
     .. image:: /images/image_file_name.jpg
 
+Embedding YouTube videos in your wiki pages
+-------------------------------------------
+
+YouTube videos are embedded with the ``youtube`` directive, which takes the video's
+ID (the part of the URL after ``watch?v=`` or after ``youtu.be/``), not the full URL:
+
+.. code-block:: rst
+
+    ..  youtube:: zJbephAEFWQ
+        :width: 100%
+
+Our general advice for videos is:
+
+- Always set ``:width: 100%`` so the player scales with the page and stays usable on
+  narrow screens. Do not set ``:height:``, the aspect ratio is preserved automatically.
+- Give the video a short introduction in the text above it. The video should support the
+  written instructions, not replace them, since readers may have video blocked.
+- Prefer videos from the ArduPilot channel or from the developer of the feature being
+  described. Third party videos can go stale or be removed without warning.
+- Where a page has several videos, put them under their own **Videos** heading at the
+  bottom of the page rather than scattering them through the instructions.
+
 [copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

@@ -75,5 +75,17 @@ This eliminates the need to manually set the origin via GCS or Lua script on eve
    The low cost IMUs (accelerometers, gyros, compass) used in most autopilots drift too quickly to allow position estimation without an external velocity or position source.  In other words, low-cost IMUs on their own are not sufficient for estimating position.
    
 .. note::
-  A board with more than 1MB of flash is required to run non-GPS navigation, except for Vicon as 1MB boards still support the GPS_INPUT message, although they don't support the GLOBAL_VISION_POSITION_ESTIMATE so they have to be run using the GPS_INPUT message. See :ref:`Firmware Limitations <common-limited_firmware>` for details. 
+
+   Standard firmware for boards with 1MB or less of flash omits many of the
+   AHRS and sensor features used for non-GPS position estimation.  This is a
+   compile-time firmware-size limitation, not a single parameter that can be
+   enabled.  A :ref:`custom firmware build <common-custom-firmware>` may be
+   able to include the required options from the **AHRS** and **Sensors**
+   sections, but these boards also have less CPU and memory available.  An H7
+   autopilot is recommended for new non-GPS navigation installations.
+
+   Vicon can still be used with a 1MB board by sending ``GPS_INPUT``, which is
+   retained in the reduced firmware, instead of
+   ``GLOBAL_VISION_POSITION_ESTIMATE``.  See
+   :ref:`Firmware Limitations <common-limited_firmware>` for more information.
    
