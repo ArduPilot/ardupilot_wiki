@@ -118,6 +118,7 @@ Once configured to use ESP-NOW, the WifiAP will not appear after startup unless 
 
 Once the Air and Ground units are communicating, most settings can be modified using a ground station (e.g. Mission Planner or QGC).
 If using Mission Planner, from the top-right drop-down select one of the two "TELEMETRY RADIO" entries.  The numbers shown are the system IDs of the radios which match the vehicle (normally 1) or GCS (normally 250 ~ 255) they are connected to.
+`Parameter descriptions are here <https://dronebridge.gitbook.io/docs/dronebridge-for-esp32/configuration#configuration-parameters>`__.
 
 .. image:: ../../../images/dronebridge-configuration-from-mp.png
     :target: ../_images/dronebridge-configuration-from-mp.png
