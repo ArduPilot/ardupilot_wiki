@@ -19,13 +19,22 @@ ArduPilot supports two methods for Antenna Tracking. One method uses GPS informa
 TurnKey Systems
 ===============
 
-.. toctree::
-    :maxdepth: 1
-    :hidden:
+===========================================  ========  ================  ================================================================
+Device                                       MAVLink?  Complete System?  URL
+===========================================  ========  ================  ================================================================
+Alpha Unmanned Systems GTRACK                Yes       Yes               :ref:`common-alphaunmannedsystems-vcs`
+ARKBIRD AAT                                  No        Yes               https://www.arkbirdfpv.com/
+Mainlink MF18                                Yes       No                https://www.szmainlink.com/mf18-antenna/
+Motionew AAT v1 + Datalink Box               Yes       ?                 https://www.motionew.com/
+Motionew CommuniNet MND-1410 AAT System      Yes       ?                 https://www.motionew.com/
+Motionew Crossbow AAT                        Yes       No                https://www.motionew.com/shop/data-link-video-link/antenna/antenna-tracker/
+Motionew Mini Crossbow AAT                   Yes       No                https://www.motionew.com/
+MyFlyDream Crossbow AAT                      Yes       No                https://www.myflydream.com/
+MyFlyDream miniCrossbow                      Yes       No                https://www.myflydream.com/
+SoarApex ATS20                               Yes       No                https://soarapex.com/
+===========================================  ========  ================  ================================================================
 
-    Alpha Unmanned Systems <common-alphaunmannedsystems-vcs>
-    MF18 Antenna Tracker <https://www.szmainlink.com/mf18-antenna/>
-    SoarApex <https://soarapex.com/>
+Complete System: includes necessary vehicle equipment
 
 :ref:`Mission Planner-based GPS Tracking <common-mission-planner-gps-based-antenna-tracking>`
 =============================================================================================
@@ -40,6 +49,7 @@ TurnKey Systems
 
     Mission Planner Antenna Tracking <common-mission-planner-gps-based-antenna-tracking>
     Antenna Design Overview <common-antenna-design>
+    common-alphaunmannedsystems-vcs
 
 
 [copywiki destination="plane,copter,rover"]
