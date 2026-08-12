@@ -67,7 +67,7 @@ the following:
 -  When finished press the **Save Modes** button.
 [/site]
 [site wiki="copter"]
-(Copter) Some modes can also be invoked from the :ref:`auxiliary switches <copter:channel-7-and-8-options>`
+(Copter) Some modes can also be invoked from the :ref:`auxiliary switches <copter:common-auxiliary-functions>`
 (a.k.a. ch7, ch8 option switches). For example, to set a dedicated
 switch for RTL.
 [/site]
