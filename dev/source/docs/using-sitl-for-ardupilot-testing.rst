@@ -68,6 +68,27 @@ The frame type can also be changed with the ``-f`` parameter.
 
     sim_vehicle.py -v ArduPlane -f quadplane --console --map
 
+Starting a virtual AntennaTracker alongside the vehicle
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Add the ``-T`` flag to also launch a virtual AntennaTracker instance
+together with the main vehicle:
+
+::
+
+    sim_vehicle.py -v ArduCopter -T --console --map
+
+The AntennaTracker simulator (`SIM_Tracker.cpp
+<https://github.com/ArduPilot/ardupilot/blob/master/libraries/SITL/SIM_Tracker.cpp>`__)
+can simulate either position or on/off servos, but not rate servos.
+
+A real AntennaTracker can also be pointed at a purely virtual (SITL)
+vehicle instead of a simulated tracker: connect the real
+AntennaTracker's radio to the SITL machine as a :ref:`real serial
+device
+<using-sitl-for-ardupilot-testing_using_real_serial_devices>` on one
+of the vehicle's UARTs, and it will track the virtual vehicle's
+simulated position just as it would a real one.
 
 Frame Types:
 ~~~~~~~~~~~~
@@ -169,6 +190,8 @@ Adding Simulated Peripherals into the Simulation
 ------------------------------------------------
 
 See :ref:`adding_simulated_devices`
+
+.. _using-sitl-for-ardupilot-testing_using_real_serial_devices:
 
 Using real serial devices
 -------------------------
