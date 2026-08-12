@@ -83,9 +83,9 @@ bring the switch high and then return the switch to neutral.
 To release the cargo, momentarily bring the switch low and then return
 it to neutral.
 
-Note: the :ref:`Copter Ch7/Ch8 switch <copter:channel-7-and-8-options>`
-includes options for the EPM but these unfortunately do not function
-properly.
+Note: the :ref:`Copter auxiliary switch <copter:common-auxiliary-functions>`
+Gripper option can be assigned to the EPM but these unfortunately do
+not function properly.
 
 Note: it is also possible (if using an older style, non ppm-sum
 receiver) to directly connect one signal wire from the receiver to the

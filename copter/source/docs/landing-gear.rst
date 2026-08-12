@@ -63,7 +63,7 @@ following parameters:
 
    MissionPlanner: Landing Gear Configuration
 
-Set an :ref:`auxiliary switch <channel-7-and-8-options>` to "Landing Gear" in order to enable manual control (i.e. set CH7_OPT or CH8_OPT to "29")
+Set an :ref:`auxiliary switch <common-auxiliary-functions>` to "Landing Gear" in order to enable manual control (i.e. set the desired channel's ``RCx_OPTION`` parameter, for example :ref:`RC7_OPTION <RC7_OPTION>`, to "29")
 
 When the switch is in the "low" position the gear will be deployed, "high" will be retracted, "middle" is a neutral position that will not change the gear's state.
 

@@ -73,7 +73,7 @@ Flight testing
 ==============
 
 - Setup the vehicle with AltHold and Loiter flight modes
-- Setup an :ref:`auxiliary switch <channel-7-and-8-options>` to enable/disable object avoidance and move switch to the off position.  Alternatively set :ref:`PRX1_TYPE <PRX1_TYPE>` to 0.  This helps ensure the vehicle will not backaway from objects in AltHold mode which could surprise the pilot.
+- Setup an :ref:`auxiliary switch <common-auxiliary-functions>` to enable/disable object avoidance and move switch to the off position.  Alternatively set :ref:`PRX1_TYPE <PRX1_TYPE>` to 0.  This helps ensure the vehicle will not backaway from objects in AltHold mode which could surprise the pilot.
 - Attempt to arm and take-off in Loiter mode
 
 DataFlash logging
