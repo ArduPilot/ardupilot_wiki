@@ -111,7 +111,7 @@ both pilot and vehicle pointing in the same direction.
 Selecting the modes from a transmitter
 ======================================
 
-The transmitter’s :ref:`auxiliary channels <channel-7-and-8-options>` can
+The transmitter’s :ref:`auxiliary channels <common-auxiliary-functions>` can
 be set-up to enable selection of Simple mode, Super Simple mode or both.
 Only one auxiliary channel should be set for these modes, and this
 channel will override the simple/super-simple options selected on the
