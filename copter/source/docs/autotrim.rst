@@ -58,7 +58,7 @@ Save trim involves essentially transferring your radio transmitter's trims into 
 .. image:: ../images/MP_SaveTrim_Ch7.png
     :target: ../_images/MP_SaveTrim_Ch7.png
 
-3. With your CH7 switch in the off (Low) position, fly your copter in Stabilize or AltHold mode and use your transmitter's roll and pitch trim to get it flying level and use your transmitters's roll and pitch trim to get it flying level
+3. With your CH7 switch in the off (Low) position, fly your copter in Stabilize or AltHold mode and use your transmitter's roll and pitch trim to get it flying level
 
 4. Land and put your throttle to zero
 
