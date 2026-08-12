@@ -201,6 +201,11 @@ Setup for Normal Operation
 [site wiki="plane,copter"]
 .. note:: When Copters have an optical flow sensor enabled (along with a rangefinder) and it is specified as the only horizontal position source (e.g. ``EK3_SRCx_VELXY`` = OpticalFlow and ``EK3_SRCx_POSXY`` = None) and the vehicle is flying in a pilot controlled mode requiring a position estimate (ie Loiter or PosHold) the vehicle will not climb above the rangefinder's maximum altitude specified in ``RNGFNDx_MAX``. This is a safety mechanism because otherwise the EKF failsafe would trigger as the vehicle flew out of rangefinder range.
 
+.. note:: :ref:`EK3_OPTIONS<EK3_OPTIONS>` has two further bits relevant to optical flow, both requiring a working rangefinder:
+
+   - Bit 2 (Optflow may use terrain alt) lets flow keep working above the rangefinder's range by falling back to SRTM terrain elevation data for the height-above-ground estimate.
+   - Bit 3 (AGL KF for optflow scaling) uses a separate height estimate, fused from IMU and rangefinder data, for scaling flow velocities instead of the main EKF's vertical position state. This keeps flow scaling accurate if the main filter's altitude estimate is disturbed (ground effect, GPS outage, altitude sensor noise), which would otherwise over-scale the flow measurements and could cause the filter to diverge. It automatically reverts to the normal estimate if the rangefinder hasn't updated within the last 5 seconds.
+
 Example Video (Copter-3.4)
 ==========================
 
