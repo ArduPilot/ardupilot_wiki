@@ -62,7 +62,7 @@ For the dual heli frame, the fourth servo (Servo 7) on swashplate 1 defaults to 
 Swashplate Types
 ================
 
-- H3 Generic - Allows servo positions and phase angle to be set by user.  Assumes all swashplate ball links are the same distance from the main shaft.
+- H3 Generic - Allows servo positions to be set by user.  Assumes all swashplate ball links are the same distance from the main shaft.
 
 
 - H1 non-CCPM - Servo1 is aileron, Servo 2 is elevator and Servo 3 is collective
@@ -107,6 +107,11 @@ Other swashplates types that can be supported
 
 - H3-90 - Use H4-90.  Don't use one of the servo outputs.
 
+
+Phase Angle Compensation
+=========================
+
+:ref:`H_SW_PHANG<H_SW_PHANG__AP_MotorsHeli_Single>` can be set for any swashplate type to correct control coupling issues, for example if pitching the swash forward also induces an unwanted roll.
 
 Check Proper Swashplate Movement
 ================================
