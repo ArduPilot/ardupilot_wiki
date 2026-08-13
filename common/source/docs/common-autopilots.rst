@@ -141,6 +141,7 @@ Closed Hardware
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     GEPRC Taker F745 <common-geprc-takerf745>
     GEPRC Taker H743 BT <common-geprc-taker-h743-bt>
+    GPILOT P1 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/GPILOT_P1/README.md>
     GreenSightUltraBlue <common-greensightultrablue>
     HeeWing F405/F405V2 <common-heewingf405>
     Holybro Kakute F4 <common-holybro-kakutef4>
@@ -230,6 +231,7 @@ Closed Hardware
     SDMODEL H7 V2 <common-SDMODELH7V2>
     SequreH743 <common-sequreh743>
     SIYI N7 <https://siyi.biz/siyi_file/N7/N7%20Autopilot%20User%20Manual%20(ArduPilot)%20v1.0.pdf>
+    SIYI UniFC 6 PICO <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SIYI-UniFC-6-PICO/README.md>
     SkyDroid-S3 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SkyDroid-S3/README.md>
     Sky-Drones AIRLink <common-skydrones-airlink>
     SkyRukh Surge H7 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SkyRukh_Surge_H7/README.md>
