@@ -79,6 +79,8 @@ Versions 4.1 and later
 
 By default a NAV_VTOL_LAND will remain in fixed mode at the current altitude, until close to the landing point, execute an "airbraking" maneuver to reduce speed, then transition to VTOL, navigate precisely to the landing point, and descend as in QLAND to a landing. This allows setting the NAV_VTOL_LAND point any distant away from the last waypoint without having to worry about excessive time in VTOL mode.
 
+.. note:: In Plane 4.8 and later, attitude control is no longer prioritised over vertical speed control during the descent phase of a VTOL landing (as it was in 4.7 and earlier). A rapid descent on a quadplane often leads to poor attitude control, and applying more power to attitude does not fix it; slowing the descent does. Good descent rate control depends on an accurate hover throttle estimate, so make sure :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` is correct and see the recommendation in :ref:`quadplane-vtol-tuning-process` to disable hover throttle learning after initial setup.
+
 If :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 is set to disable the fixed wing approach phase, then it will immediately transition to VTOL when the command is executed and navigate to the landing point in VTOL mode. This requires the careful setup of the last waypoint before this command to avoid a long path to the landing point while in VTOL mode.
 
 If :ref:`Q_OPTIONS<Q_OPTIONS>` bit 4 is set, then even if bit 16 is set, the vehicle will execute the fixed wing approach and loiter to altitude, described above in the previous section, before changing to VTOL mode. If bit 16 is also set, then when the vehicle switches to VTOL mode, it will attempt to do the airbrake maneuver and QLAND for that final segment.
