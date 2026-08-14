@@ -50,7 +50,9 @@ DroneCAN device type is selected by:
 
 DroneCAN Setup Parameters
 =========================
-shown for the first DroneCAN driver, second driver has identical parameters
+The examples below use the first DroneCAN driver (``x=1``). If a second driver is
+enabled, use the corresponding ``CAN_D2_*`` parameters; the same parameter groups
+are available for each driver.
 
 .. image:: ../../../images/uavcan-main-settings.png
     :target: ../_images/uavcan-main-settings.png
@@ -145,7 +147,7 @@ CAN FD (Flexible Data rate)
 
 If the DroneCAN port is attached to CAN FD peripherals, setting :ref:`CAN_D1_UC_OPTION<CAN_D1_UC_OPTION>` bit 2 (+ value 4) will enable this mode. 
 
-.. note:: CAN FD requires a larger memory pool allocation than normal. Default is 24KB instead of the normal 12KB.
+.. note:: CAN FD requires a larger memory pool allocation than normal. The default is 16 KB instead of the normal 8 KB.
 
 .. _dronecan_mixed_protocols:
 
