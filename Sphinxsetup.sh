@@ -38,7 +38,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
         python3 -m ensurepip --upgrade || true
     fi
     SCRIPT_DIR=$(dirname $(realpath ${BASH_SOURCE[0]}))
-    python3 -m pip install --user --upgrade -r "$SCRIPT_DIR"/requirements.txt
+    if [ -n "${VIRTUAL_ENV:-}" ]; then
+        python3 -m pip install --upgrade -r "$SCRIPT_DIR"/requirements.txt
+    else
+        python3 -m pip install --user --upgrade -r "$SCRIPT_DIR"/requirements.txt
+    fi
     echo "Setup completed successfully for macOS!"
     exit 0
 fi
@@ -63,6 +67,8 @@ sudo apt-get install -y python3-pip
 # Install required python packages
 SCRIPT_DIR=$(dirname $(realpath ${BASH_SOURCE[0]}))
 if [ "${DISTRIBUTION_CODENAME}" = "noble" ]; then
+    python3 -m pip install --upgrade -r "$SCRIPT_DIR"/requirements.txt
+elif [ -n "${VIRTUAL_ENV:-}" ]; then
     python3 -m pip install --upgrade -r "$SCRIPT_DIR"/requirements.txt
 else
     python3 -m pip install --user --upgrade -r "$SCRIPT_DIR"/requirements.txt
