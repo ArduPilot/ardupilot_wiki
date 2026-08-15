@@ -27,7 +27,7 @@ away that it's heading is not apparent.
    direction from home (i.e. where it was armed) but requires a good GPS
    position.
 -  Either mode can be assigned to a particular flight mode switch
-   position or can be enabled/disabled from the :ref:`Ch7/Ch8 switches <channel-7-and-8-options>`.
+   position or can be enabled/disabled from an :ref:`auxiliary function switch <common-auxiliary-functions>`, on any available RC channel.
 
 ..  youtube:: iGA6D2GBFIc
     :width: 100%
