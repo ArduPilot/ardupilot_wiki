@@ -66,6 +66,10 @@ Save trim involves essentially transferring your radio transmitter's trims into 
 
 6. Reset your transmitters roll and pitch trims back to the center and fly again and it should fly level now. If it does not repeat steps 3, 4 & 5
 
+.. note::
+
+    Save Trim also works while :ref:`Simple or Super Simple mode <simpleandsuper-simple-modes>` is enabled, but take care not to change the vehicle's heading between landing and switching CH7 high, since the trim will be saved relative to the vehicle's heading at that moment.
+
 Desktop method
 ~~~~~~~~~~~~~~
 
