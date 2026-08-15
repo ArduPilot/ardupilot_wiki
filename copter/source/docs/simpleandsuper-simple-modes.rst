@@ -19,8 +19,8 @@ way the vehicle is facing and for cases when the copter is far enough
 away that it's heading is not apparent.
 
 -  "Simple" and "Super Simple" modes can be used in combination with
-   nearly all flight modes except the Acro and Drift (in these flight
-   modes the setting is ignored).
+   nearly all flight modes except Acro (in this flight mode the setting
+   is ignored).
 -  Simple Mode allows you to control the copter relative to the copters
    heading at take off and relies only on a good compass heading.
 -  Super Simple Mode allows you to control the copter relative to it's
