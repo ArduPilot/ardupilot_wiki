@@ -53,6 +53,26 @@ Alternatively, when you initially configured your environment, if you elected to
 
 If you work with multiple clones of ArduPilot in different workspaces, it's recommend to call SITL directly to avoid accidentally running the wrong simulator.
 
+GUI launcher
+------------
+
+Running ``sim_vehicle.py`` with no arguments, from a directory that is
+not one of the vehicle directories (``ArduCopter``, ``ArduPlane``,
+etc.), opens a graphical launcher instead (requires `wxPython
+<https://wxpython.org/>`__):
+
+::
+
+    sim_vehicle.py
+
+.. image:: ../images/sim_vehicle_gui.png
+    :target: ../_images/sim_vehicle_gui.png
+
+Use it to pick the vehicle, starting location, and aircraft scenario,
+toggle MAVProxy/map/console/OSD and parameter reset, then press
+**Launch SITL**. The same GUI can be forced from any directory with
+the ``--gui`` flag.
+
 Selecting a vehicle/frame type
 ------------------------------
 
