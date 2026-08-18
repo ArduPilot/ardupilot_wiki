@@ -220,6 +220,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Yaw (RCx) is not neutral                                RC transmitter's yaw stick is not centered          Move RC yaw stick to center or repeat :ref:`radio calibration <common-radio-control-calibration>`
     Yaw radio max too low                                   RC yaw channel max below 1700                       Repeat the :ref:`radio calibration <common-radio-control-calibration>` procedure or increase :ref:`RC2_MAX<RC2_MAX>` above 1700
     Yaw radio min too high                                  RC yaw channel min above 1300                       Repeat the :ref:`radio calibration <common-radio-control-calibration>` procedure or reduce :ref:`RC1_MIN<RC1_MIN>` below 1300
+    Zero takeoff altitude                                   A takeoff command in the mission has altitude 0     Set a non-zero altitude for the takeoff command
     ======================================================= =================================================== ====================================================
 
 [site wiki="copter"]
