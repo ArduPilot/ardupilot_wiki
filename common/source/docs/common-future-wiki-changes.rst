@@ -51,6 +51,7 @@ New Features
 - Pilot yaw input now also gates during landing (LAND_REPOSITION), see https://github.com/ArduPilot/ardupilot_wiki/pull/7879
 - MAV_CMD_DO_SET_ROI_WPNEXT_OFFSET mission command (point gimbal at next waypoint with an offset), see https://github.com/ArduPilot/ardupilot_wiki/pull/7920
 - Simple/Super Simple mode fix: rotation now correctly applied in more flight modes, including Drift mode and during Precision Landing reposition, see https://github.com/ArduPilot/ardupilot_wiki/pull/7967
+- Tradheli: DDFP tail rotor moved to the RSC controller with independent H_TAIL_RAMP_TIME, see https://github.com/ArduPilot/ardupilot_wiki/pull/7979
 [/site]
 [site wiki="rover"]
 
