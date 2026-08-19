@@ -24,6 +24,9 @@ New Board Support
 - SimpliFly H7, see https://github.com/ArduPilot/ardupilot_wiki/pull/7915
 - AET-H743-Air, see https://github.com/ArduPilot/ardupilot_wiki/pull/7918
 - CUAV-X25-MEGA, see https://github.com/ArduPilot/ardupilot_wiki/pull/7944
+- Agam MegH7, see https://github.com/ArduPilot/ardupilot_wiki/pull/7974
+- FlyFishRC F405, see https://github.com/ArduPilot/ardupilot_wiki/pull/7985
+- Lectron Pi5, see https://github.com/ArduPilot/ardupilot_wiki/pull/7976
 
 New Peripheral Support
 ======================
