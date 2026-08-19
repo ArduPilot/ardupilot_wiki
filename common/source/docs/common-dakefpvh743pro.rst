@@ -9,7 +9,7 @@ The DAKEFPV H743/H743 Pro are flight controllers produced by `DAKEFPV <https://w
 Features
 ========
 * MCU - STM32H743 32-bit processor running at 480 MHz
-* IMU - Dual ICM42688
+* IMU - Dual ICM42688/LSM6DSV/BMI270
 * Barometer - SPL06
 * OSD - AT7456E
 * Onboard Flash: 16MByte
