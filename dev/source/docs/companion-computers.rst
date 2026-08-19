@@ -30,7 +30,6 @@ popular Companion Computer hardware are listed below.
     NVidia TX1 <companion-computer-nvidia-tx1>
     NVidia TX2 <companion-computer-nvidia-tx2>
     Ochin Tiny Carrier Board V2 for Raspberry Pi CM4 <https://www.seeedstudio.com/Ochin-Tiny-Carrier-Board-V2-for-Raspberry-Pi-CM4-p-5887.html>
-    ODroid <odroid-via-mavlink>
     Holybro Pixhawk Raspberry Pi CM4/CM5 Baseboard <https://holybro.com/products/pixhawk-rpi-cm4-baseboard>
     Holybro Pixhawk Jetson Baseboard <https://holybro.com/products/pixhawk-jetson-baseboard>
     Raspberry Pi <raspberry-pi-via-mavlink>

@@ -1,8 +1,8 @@
 .. _odroid-via-mavlink:
 
-=====================================
-Communicating with ODroid via MAVLink
-=====================================
+===============================================
+Archived: Communicating with ODroid via MAVLink
+===============================================
 
 Overview
 ========
