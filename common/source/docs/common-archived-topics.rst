@@ -117,6 +117,7 @@ value to users with old hardware.
     Building for Navio on RPI 2<building-for-navio-on-rpi2>
     Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>
     Intel Edison <intel-edison>
+    ODroid <odroid-via-mavlink>
     Interfacing with Pixhawk Using the NSH <interfacing-with-pixhawk-using-the-nsh>
     BeaglePilot Project <beaglepilot>
     Making a MAVLink WiFi bridge using the Raspberry Pi <making-a-mavlink-wifi-bridge-using-the-raspberry-pi>
