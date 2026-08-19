@@ -12,7 +12,7 @@ Features
 ========
 
 * MCU - STM32F405 32-bit processor. 1024Kbytes Flash
-* IMU - Dual ICM42688
+* IMU - ICM42688/LSM6DSV/BMI270
 * Barometer - SPL06
 * OSD - AT7456E
 * Onboard Flash: 16MByte
