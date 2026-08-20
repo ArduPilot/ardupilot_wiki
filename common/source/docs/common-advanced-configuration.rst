@@ -19,12 +19,14 @@ tuning options for the vehicle.
     Baro Thrust Compensation <common_baro_thrust_compensation>
     Boat mode <boat-mode>
     Bootloader Update <common-bootloader-update>
+    Firmware Update <common-firmware-update>
 [/site]
 [site wiki="rover"]
     Autopilot Output Mapping <common-rcoutput-mapping>
     Auxiliary Functions <common-auxiliary-functions>
     Boats with Vectored Thrust <rover-vectored-thrust>
     Bootloader Update <common-bootloader-update>
+    Firmware Update <common-firmware-update>
 [/site]
 [site wiki="plane"]
     Advanced Failsafe <advanced-failsafe-configuration>
@@ -32,11 +34,13 @@ tuning options for the vehicle.
     Auxiliary Functions <common-auxiliary-functions>
     Battery Voltage Compensation <battery-voltage-compensation>
     Bootloader Update <common-bootloader-update>
+    Firmware Update <common-firmware-update>
 [/site]
 [site wiki="sub"]
     Autopilot Output Mapping <common-rcoutput-mapping>
     Auxiliary Functions <common-auxiliary-functions>
     Bootloader Update <common-bootloader-update>
+    Firmware Update <common-firmware-update>
 [/site]
     BLHeli ESCs <common-blheli32-passthru>
     CAN Bus Setup <common-canbus-setup-advanced>
