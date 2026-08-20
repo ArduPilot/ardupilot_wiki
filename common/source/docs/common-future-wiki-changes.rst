@@ -41,6 +41,7 @@ New Features
 - Option to clear GCS RC overrides on RC stick input, see https://github.com/ArduPilot/ardupilot_wiki/pull/7880
 - Accel and gyro consistency pre-arm checks now run concurrently, see https://github.com/ArduPilot/ardupilot_wiki/pull/7921
 - EK3_OPTIONS bits for optical flow (terrain alt above rangefinder range, AGL Kalman filter for flow scaling), see https://github.com/ArduPilot/ardupilot_wiki/pull/7962
+- MAV_CMD_DO_SET_MISSION_CURRENT can now reset DO_JUMP repeat counters without changing the current mission item, see https://github.com/ArduPilot/ardupilot_wiki/pull/7982
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
