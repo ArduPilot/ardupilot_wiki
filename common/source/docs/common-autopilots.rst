@@ -171,6 +171,7 @@ Closed Hardware
     JHEMCU H743HD <common-jhemcu-h743hd>
     KARSHAKH743VTOL <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/KARSHAKH743VTOL/README.md>
     KT-FMU-F1 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/KT-FMU-F1/README.md>
+    Lectron Pi5 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Lectron-Pi5-H7/README.md>
     LongBowF405WING <common-longbowf405wing>
     Lumineer LUXF765-NDAA <common-luxf765-ndaa>
     Mamba F405 MK2 <common-mamba405-mk2>
