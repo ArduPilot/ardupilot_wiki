@@ -27,7 +27,7 @@ Instantaneous FFT's can suffer from noise and one way to reduce the noise is to 
 Post Configuration Flight and Post-Flight Analysis
 ==================================================
 
-With the dynamic harmonic notch configured perform another stable hover to check that the motor noise peak has been :ref:`eliminated <common-imu-notch-filtering-post-configuration-flight-and-post-flight-analysis>`. It is also important to check that the autopilot is not overloaded for the FFT length being used. Graph PM.Load and PM.NLon. PM.Load ideally should be below 60% and PM.NLon in the low 10's - although experimentation shows that it is possible to fly a Pixracer with an FFT length of 128 and CPU load of 90% without instability.
+With the dynamic harmonic notch configured perform another stable hover to check that the motor noise peak has been :ref:`eliminated <common-raw-imu-logging-post-configuration-flight>` (or, on slower autopilots, using the older :ref:`IMU Batch Sampler <common-imu-notch-filtering-post-configuration-flight-and-post-flight-analysis>` method). It is also important to check that the autopilot is not overloaded for the FFT length being used. Graph PM.Load and PM.NLon. PM.Load ideally should be below 60% and PM.NLon in the low 10's - although experimentation shows that it is possible to fly a Pixracer with an FFT length of 128 and CPU load of 90% without instability.
 
 Other points to check:
 
