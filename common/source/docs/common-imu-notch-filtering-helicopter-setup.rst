@@ -5,7 +5,7 @@
 Traditional Helicopter Notch Filter Setup
 =========================================
 
-Perform the :ref:`Determination of Noise Frequencies <common-imu-notch-filtering-flight-and-post-flight-analysis>` analysis explained in the Throttle based setup section. From the FFT you should see spikes at the frequency of your rotor speed in Hz (RPM/60) and harmonics of that frequency.  In the image below, the rotor speed is 25hz.  Note that the next two biggest spikes occur at 50 Hz and 100 Hz.
+Determine the rotor noise frequencies using :ref:`Raw IMU Logging <common-raw-imu-logging-determination-flight>` (or, on slower autopilots, the older :ref:`IMU Batch Sampler <common-imu-notch-filtering-flight-and-post-flight-analysis>` method). From the FFT you should see spikes at the frequency of your rotor speed in Hz (RPM/60) and harmonics of that frequency.  In the image below, the rotor speed is 25hz.  Note that the next two biggest spikes occur at 50 Hz and 100 Hz.
 
 .. image:: ../../../images/imu-batchsampling-fft-mp3.png
     :target:  ../_images/imu-batchsampling-fft-mp3.png
@@ -44,4 +44,4 @@ First, ensure that the RPM 1 data is valid and scaled to the rotor speed using t
 Checking Harmonic Notch Effectiveness
 =====================================
 
-After setting up the harmonic notch, the effect on the control signal data can be checked using the instructions for :ref:`common-imu-notch-filtering-post-configuration-flight-and-post-flight-analysis`.
+After setting up the harmonic notch, the effect on the control signal data can be checked using the instructions for :ref:`Raw IMU Logging <common-raw-imu-logging-post-configuration-flight>` (or, on slower autopilots, the older :ref:`IMU Batch Sampler <common-imu-notch-filtering-post-configuration-flight-and-post-flight-analysis>` method).
