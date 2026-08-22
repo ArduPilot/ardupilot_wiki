@@ -164,6 +164,29 @@ QGroundControl or Mission Planner should auto-detect the connection and no furth
 -  UDP unicast on port ``14550`` to all connected devices.
 -  TCP on port ``5760``
 
+Multiple Vehicle / Multiple GCS Support
+=======================================
+
+If multiple vehicles are each equipped with an air unit (e.g. ESP-NOW LR Mode AIR) and/or multiple GCSs are each equipped with a ground unit (e.g. ESP-NOW LR Mode GND) all GCSs will receive telemetry from all vehicles allowing the user to monitor and control all vehicles.
+Note that this type of setup requires each vehicle and GCS to have a unique mavlink system id.  See :ref:`Multi-Vehicle Flying <common-multi-vehicle-flying>` for more details.
+
+Air units do not receive telemetry from other air units (nor do ground units receive telemetry from other ground units) meaning that vehicles do not "see" each other. This means that one vehicle following another using :ref:`Follow mode <copter:follow-mode>` will not work by default.
+
+To enable vehicles to receive telemetry from each other a separate DroneBridge ESP network is required:
+
+- If there more than two vehicles, split the vehicles into two groups.  Those within the same group will not see each other but will see all members of the other group.
+- Connect a second DroneBridge ESP32 unit to each vehicle
+- All units should be flashed with the "ESP32-xx Official HW" firmware
+- The 1st group's units should be setup using "ESP-NOW LR Mode GND"
+- The 2nd group's units should be setup using "ESP-NOW LR Mode AIR"
+- "Wi-Fi Password" and "Channel" should be set to the same value on all units but should be different from the DroneBridge ESP32 units used to communicate with the GCS
+- "UART serial protocol" should be set to "Transparent"
+- "Maximum packet size" should be "215"
+- "UART baud" should be left at "115200"
+- On each vehicle's autopilot set ``MAVn_OPTIONS`` = 2 (Don’t forward mavlink to/from) where "n" is the mavlink port index number for the autopilot's serial port being used for this intra-vehicle DroneBridge ESP32.  It can be difficult to determine which ``MAVn_OPTIONS`` parameter to change but normally the autopilot's USB port is :ref:`MAV1_OPTIONS <MAV1_OPTIONS>`, Telem1 is :ref:`MAV2_OPTIONS <MAV2_OPTIONS>`, Telem2 is :ref:`MAV3_OPTIONS <MAV3_OPTIONS>`.  After changing this parameter the autopilot must be rebooted for the change to take effect.
+
+Please use the GCS's MAVLink Inspector to ensure that HEARTBEAT messages from each vehicle are only received at 1hz.  It may also help to momentarily connect the GCS directly to each autopilot's USB port to ensure the other group's vehicles appear on the map.
+
 APIs,Troubleshooting & Support
 ==============================
 
