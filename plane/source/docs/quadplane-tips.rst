@@ -110,7 +110,8 @@ Optional Features Sometimes Overlooked
 
 In case you missed them:
 
-- :ref:`Various QuadPlane Options:<quadplane_options>` :ref:`Q_OPTIONS<Q_OPTIONS>`, bits 0,and 3-5 being especially interesting
-- RTL Behaviour; :ref:`Q_RTL_MODE<Q_RTL_MODE>`
-- :ref:`Assisted Flight<assisted_fixed_wing_flight>`
-- :ref:`Weathervaning<quadplane-weathervaning>`
+- :ref:`Various QuadPlane Options <quadplane_options>` - :ref:`Q_OPTIONS<Q_OPTIONS>`, bits 0, and 3-5 being especially interesting
+- :ref:`RTL Behaviour <Q_RTL_MODE>`
+- :ref:`Assisted Flight <assisted_fixed_wing_flight>`
+- :ref:`Weathervaning <quadplane-weathervaning>`
+
