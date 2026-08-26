@@ -36,6 +36,7 @@ tuning options for the vehicle.
 [site wiki="sub"]
     Autopilot Output Mapping <common-rcoutput-mapping>
     Auxiliary Functions <common-auxiliary-functions>
+    Actuators <actuators>
     Bootloader Update <common-bootloader-update>
 [/site]
     BLHeli ESCs <common-blheli32-passthru>
