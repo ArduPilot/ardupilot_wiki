@@ -1,12 +1,17 @@
 .. _sitl-with-airsim:
 
-======================
-Using SITL with AirSim
-======================
+================================
+Archived: Using SITL with AirSim
+================================
 
 .. warning::
 
-  This page is archived and is not being maintained anymore. AirSim integration with ArduPilot is still available and supported, but the instructions on this page might be outdated.
+    This topic is archived. Microsoft has archived the upstream AirSim project, and
+    these instructions are no longer maintained or tested against current ArduPilot
+    code. For a simulator built on Unreal Engine, use :ref:`PteroSim <sitl-with-pterosim>`
+    instead; :ref:`Webots <sitl-with-webots>` and :ref:`Gazebo <sitl-with-gazebo>` are
+    the other maintained 3D options. See :ref:`Simulation <simulation-2>` for the full
+    list of supported simulators.
 
 .. youtube:: -WfTr1-OBGQ
    :width: 100%

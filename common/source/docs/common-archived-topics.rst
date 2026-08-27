@@ -127,6 +127,9 @@ value to users with old hardware.
     SITL Serial Mapping <sitl-serial-mapping>
     2020/2021 Roadmap <roadmap>
     Trouble Shooting Pixhawk4 Boot <troubleshooting-pixhawkpx4-boot>
+    AirSim Simulator <sitl-with-airsim>
+    Morse Simulator <sitl-with-morse>
+    SCRIMMAGE Simulator <sitl-with-scrimmage>
 [/site]
 [site wiki="copter,rover"]
 .. toctree::

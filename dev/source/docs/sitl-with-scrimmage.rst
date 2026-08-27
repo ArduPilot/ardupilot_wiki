@@ -1,12 +1,17 @@
 .. _sitl-with-scrimmage:
 
-===================================
-Using SCRIMMAGE as a SITL simulator
-===================================
+=============================================
+Archived: Using SCRIMMAGE as a SITL simulator
+=============================================
 
 .. warning::
 
-    As for April 2026, this simulation connection hasn't been maintained for a while and may not work with the latest ArduPilot code.
+    This topic is archived. The SCRIMMAGE simulation connection has not been
+    maintained for a long time and may not work with current ArduPilot code.
+    Developers wanting a multi-vehicle simulation environment should use
+    :ref:`Webots <sitl-with-webots>`, :ref:`Gazebo <sitl-with-gazebo>` or
+    :ref:`PteroSim <sitl-with-pterosim>` instead. See :ref:`Simulation <simulation-2>`
+    for the full list of supported simulators.
 
 `Simulating Collaborative Robots in Massive Mulit-Agent Game Execution (SCRIMMAGE) <http://www.scrimmagesim.org/>`__
 provides a flexible simulation environment for the experimentation and testing of novel mobile robotics algorithms.
