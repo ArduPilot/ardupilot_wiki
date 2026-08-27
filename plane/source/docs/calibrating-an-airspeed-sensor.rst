@@ -40,6 +40,11 @@ Calibration". You need to loosely cover your airspeed sensor to stop
 wind from affecting the result, then press the button. The calibration
 will take a couple of seconds.
 
+.. tip:: A short piece of foam slipped over the end of the pitot tube is the easiest way to
+   cover it. Foam blocks the wind without sealing the tube, and leaves both hands free to
+   press the calibrate button. Cupping both hands around the tube also works, but makes it
+   awkward to reach the button at the same time.
+
 .. image:: ../images/preflight.jpg
     :target: ../_images/preflight.jpg
 
@@ -51,7 +56,16 @@ pressure and your airspeed sensor.
 Next you should check that your airspeed sensor is working correctly
 before takeoff. To do that you should blow into the airspeed sensor and
 make sure that the "AS" airspeed sensor value in your HUD rises as you
-blow into it.
+blow into it. In *Mission Planner*, airspeed can also be displayed on the
+Flight Data screen's **Quick** tab, which is easier to watch than the HUD
+while you have your face at the pitot tube. Blowing into the tube should
+take the reading to 6 m/s or more; if it barely moves, suspect a blocked,
+leaking or disconnected tube.
+
+.. warning:: An airspeed of exactly 0.0 that sits there on the ground and never deviates is a
+   sign of a problem, not of a well-zeroed sensor. A working sensor shows small fluctuations
+   from air movement and sensor noise, so a permanently perfect zero usually means the sensor
+   is not being read at all.
 
 Calibrating the airspeed sensor gain
 ====================================
