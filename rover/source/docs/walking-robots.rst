@@ -91,7 +91,7 @@ Configuration and Setup
     - Telemetry(optional)
     
 Use a ground station to load Rover-4.1 (or higher) to the autopilot
-#. :ref:`Install GCS<common-install-gcs>` (Mission Planner recommended) and :ref:`upload rover firmware<common-loading-firmware-onto-pixhawk>`, if ArduPilot firmware already is installed, or :ref:`Loading Firmware onto boards without existing ArduPilot firmware (first time only) <common-loading-firmware-onto-chibios-only-boards>`
+#. :ref:`Install GCS<common-install-gcs>` (Mission Planner recommended) and :ref:`upload rover firmware<common-loading-firmware>`
 #. Perform all the :ref:`hardware calibration<rover-code-configuration>` steps for:
 
     - :ref:`Accelerometer<common-accelerometer-calibration>`
