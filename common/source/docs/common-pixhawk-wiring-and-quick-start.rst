@@ -35,6 +35,10 @@ voltage and current analog measurements produced by an optional power
 module. Information about powering the Pixhawk can be found in the topic
 :ref:`Powering the Pixhawk <common-powering-the-pixhawk>`.
 
+Note that powering Pixhawk does **not** power its servo rail. That is a
+separate supply, discussed under :ref:`Connect Motors <pixhawk-quickstart-connect-motors>`
+below.
+
 .. image:: ../../../images/pixhawkpower-port.jpg
     :target: ../_images/pixhawkpower-port.jpg
 
@@ -94,11 +98,52 @@ The topic :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-
 shows how to connect to Pixhawk and include additional configuration and
 mounting information.
 
+.. _pixhawk-quickstart-connect-motors:
+
 Connect Motors
 ==============
 
 .. image:: ../../../images/pixhawk_motor_outputs.jpg
     :target: ../_images/pixhawk_motor_outputs.jpg
+
+.. warning::
+
+   Pixhawk does **not** supply power to the servo rail - the MAIN OUT pins
+   carry the signal only. ESCs draw their power from the battery, so
+   multicopter motors will run with just the signal and ground wires
+   connected. Servos will not: a plane's control surfaces, a rover's steering
+   or a gimbal will not move until the rail itself is powered, normally from
+   an ESC's BEC or from a separate BEC.
+
+   Always connect the ground wire alongside an ESC's signal wire. A signal
+   wire must never be left floating without its ground reference.
+
+   Feed the rail from a **single** source. Where several ESCs each have a
+   BEC, leave the power (red) wire connected on only one of them and remove
+   it from the rest. Two supplies wired onto the rail in parallel will fight
+   each other, and some BECs oscillate when driven that way, producing
+   switching noise that can interfere with GPS and RC reception. See
+   :ref:`General wiring recommendations <common-powering-the-pixhawk_general_wiring_recommendations>`
+   for
+   the detail, and for how to combine sources properly if you do want a
+   redundant supply.
+
+.. note::
+
+   How much voltage the servo rail will tolerate, and whether it can also
+   power the autopilot, differs between boards. Always check your board's own
+   page before wiring the rail.
+
+   On the original Pixhawk the servo rail is one of three power inputs, so it
+   can power or back up the board. But it is dangerous to power Pixhawk
+   *only* from the rail: a digital servo can drive the rail above 5.7V, at
+   which point the power selector drops the input, the FMU loses power and
+   the board reboots. Losing the FMU in flight means losing the aircraft. See
+   :ref:`Powering the Pixhawk <common-powering-the-pixhawk>`.
+
+   Most current autopilots do not work this way. Their servo rail is isolated
+   and does not power the autopilot at all, and many accept a far higher rail
+   voltage - up to 36V on some boards - to drive high-voltage servos.
 
 [site wiki="copter"]
 For Copter see :ref:`Connect ESCs and Motors <copter:connect-escs-and-motors>`.
