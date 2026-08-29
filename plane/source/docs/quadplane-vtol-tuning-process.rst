@@ -224,6 +224,8 @@ This test will allow to test the altitude controller and ensure the stability of
 
 .. note:: If the :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` learned should be ~0.3-0.6. Higher values indicate that insufficient thrust is available, either due to motor system design, obstructed prop air flow by the fuselage or wings, or excessive yaw bias (see next section)
 
+.. note:: Once a good hover throttle value has been learned it is recommended to set :ref:`Q_M_HOVER_LEARN<Q_M_HOVER_LEARN>` = 0 to disable further learning. Typical quadplane flight profiles rarely include a steady hover, so learning may not trigger for many flights, and when it does, lift from the wings can produce a very poor hover throttle estimate. An accurate :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` is important for good descent rate control during VTOL landings.
+
 Step 8: Yaw Bias
 ----------------
 
