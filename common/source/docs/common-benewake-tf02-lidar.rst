@@ -4,7 +4,7 @@
 Benewake TF02-Pro / TF03 / TFS20-L / TF-Luna / TF-Nova / TF350
 ==============================================================
 
-Benewake provides a range of lidar sensors that use proprietary serial and/or CAN interfaces
+Benewake provides a range of lidar sensors that use proprietary serial, I2C and/or CAN interfaces
 
 .. image:: ../../../images/benewake-tf02-topimage.jpg
 
@@ -23,19 +23,19 @@ Benewake provides a range of lidar sensors that use proprietary serial and/or CA
      - 52g
      - 5V
      - 3 deg
-     - UART
+     - UART, I2C
    * - `TF02-Pro <https://en.benewake.com/TF02Pro/index.html>`__
      - 0.40m / 13.5m
      - 50g
      - 5V~12V
      - 3 deg
-     - UART
+     - UART, I2C
    * - `TF02-i <https://en.benewake.com/TF02i/index.html>`__
      - 0.40m / 13.5m
      - 60g
      - 7V~30V
      - 3 deg
-     - CAN
+     - CAN, I2C
    * - `TF03 <https://en.benewake.com/TF03/index.html>`__
      - 1m / 50m
      - 89g
@@ -47,19 +47,19 @@ Benewake provides a range of lidar sensors that use proprietary serial and/or CA
      - 2g
      - 3.3V
      - 2 deg
-     - UART
+     - UART, I2C
    * - `TF-Luna <https://en.benewake.com/TFLuna/index.html>`__
-     - 0.80m / 3m
+     - 0.20m / 8m
      - 5g
      - 3.7V~5.2V
      - 2 deg
-     - UART
+     - UART, I2C
    * - `TF-Nova <https://en.benewake.com/tf-nova>`__
      - 0.14m / 7m
      - 5g
      - 5V
      - 14 deg
-     - UART
+     - UART, I2C
    * - `TF350 <https://en.benewake.com/TF350/index.html>`__
      - 3.5m / 150m
      - 224g
@@ -105,6 +105,39 @@ If SERIAL2 is being used, then use the following parameters to set the first ran
 -  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = *Use a distance the rangefinder could reliably read in [metres].*  For TF02: **10**, for TF03: **50**, or look up the top table of this page for other sensors.
 -  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (Down) *Indicates the position the rangefinder is set to read.*
 -  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *An accurate distance in [metres] from the rangefinder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+
+Connecting via I2C
+------------------
+
+All of these lidar except the TF03 and TF350 can also be connected to the
+autopilot's I2C port.  The sensor may need to be switched from its default
+output mode to I2C first - see the relevant Benewake datasheet.
+
+.. image:: ../../../images/tf-luna-i2c.jpg
+    :target: ../_images/tf-luna-i2c.jpg
+
+For the TFS20-L, which has its own driver, set:
+
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 46 (BenewakeTFS20L)
+
+For the other I2C capable models set:
+
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 25 (BenewakeTFmini-I2C).  These sensors share the TFmini Plus I2C command protocol, so this one driver serves them all.
+
+Then in either case set:
+
+-  :ref:`RNGFND1_ADDR <RNGFND1_ADDR>` = 16 (I2C address of the lidar in decimal, equivalent to 0x10 hexadecimal, which is the default for these sensors)
+-  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = *Use a distance the rangefinder could reliably read in [metres].*  Look up the top table of this page for your sensor.
+-  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = *Use a distance the rangefinder could reliably read in [metres].*  Look up the top table of this page for your sensor.
+-  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (Down) *Indicates the position the rangefinder is set to read.*
+-  :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *An accurate distance in [metres] from the rangefinder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+
+.. note::
+
+   The :ref:`RNGFND1_PIN <RNGFND1_PIN>`, :ref:`RNGFND1_RMETRIC <RNGFND1_RMETRIC>`,
+   :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` and :ref:`RNGFND1_STOP_PIN <RNGFND1_STOP_PIN>`
+   parameters only apply to analog rangefinders and have no effect on an I2C
+   connection.
 
 Connecting via CAN
 ------------------
