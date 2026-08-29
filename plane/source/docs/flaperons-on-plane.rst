@@ -54,6 +54,10 @@ Flaperon setup
       correct range set if you haven't used them previously.  If your
       unsure usually 1000, 2000, 1500 will work fine.  Do the same for
       the SERVO6 equivalents.
+   -  Adjust :ref:`FLAPERON_LIMIT <FLAPERON_LIMIT>` to the maximum percentage of the control surface to be used
+      for the flap function. Setting this value to 50 will limit the flap deflection to half the total movement
+      range of the flaperon and the flap exension above 50% would only affect dedicated flaps, but not the flaperons.
+      This allows to have some extra aileron movement even when the flaps are fully extended.
 
 -  Switch to FBWA or CRUISE.  Roll your plane back and forth and make
    sure the ailerons move in the correct direction (aileron goes down on
