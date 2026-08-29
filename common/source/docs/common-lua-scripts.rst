@@ -397,7 +397,7 @@ Set the length of the string with the call matching the type of LED attached. In
 
 - :code:`set_num_neopixel_rgb( chan ,  num_leds )` - As above, for a string driven in RGB mode.
 
-- :code:`set_num_profiled( chan ,  num_leds )` - Sets the number of ProfiLEDs in the string, up to 126.  A second output must have SERVOx_FUNCTION = 132 (ProfiLEDClock) assigned, otherwise this call fails.
+- :code:`set_num_profiled( chan ,  num_leds )` - Sets the number of ProfiLEDs in the string, up to 126.  A second output, in the same PWM group, must have SERVOx_FUNCTION = 132 (ProfiLEDClock) assigned, otherwise this call fails.
 
 Then set and send the colours:
 
