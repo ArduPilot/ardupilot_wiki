@@ -735,7 +735,7 @@ Where a member isn't dependent on a constructor parameter, we prefer to do in-cl
 No Standard Library
 -------------------
 
-For efficiency reasons, ArduPilot doesn't use the C standard library (``std::``).  We also prefer to use functions which are consistent across platforms to ease support (not using 64-bit maths on platforms that support it is useful, for example).
+For efficiency reasons, ArduPilot doesn't use the C++ standard library (``std::``).  We also prefer to use functions which are consistent across platforms to ease support (not using 64-bit maths on platforms that support it is useful, for example).
 
 This means no ``std::vector``, no ``std::string`` and no ``std::unordered_map``, for example.
 
