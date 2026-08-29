@@ -1,35 +1,81 @@
 .. _rover-L1:
 
-=============================
-Rover: L1 navigation overview
-=============================
+===================================
+Rover: waypoint navigation overview
+===================================
 
-This page provides an overview of Rover's navigation feature including the `L1 controller <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_L1_Control>`__ which is also used in Plane.
-The L1 controller is based on `this paper by Sanghyuk Park, John Deyst and Jonathan P How of MIT <http://mercury.kau.ac.kr/park/Archive/PCUAV/gnc_park_deyst_how.pdf>`__.
+This page provides an overview of how Rover drives from one waypoint to the
+next in the autonomous modes (Auto, Guided, RTL and SmartRTL).
 
-Overview
---------
+For the user-facing behaviour of S-Curves and the position controller, and for
+how to tune them, see :ref:`Tuning Navigation <rover:rover-tuning-navigation>`.
 
-.. image:: ../images/rover-navigation-overview.png
-    :target: ../_images/rover-navigation-overview.png
+Libraries involved
+------------------
 
--  on every iteration of the main loop (50hz) a call is made to the active mode's update method (`here is RTL's update function <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode_rtl.cpp#L37>`__).
-   While in Auto, Guide, RTL and SmartRTL mode, the update calls into the Mode class's `calc_steering_to_waypoint <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode.cpp#L303>`__ method.
+- `AR_WPNav <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AR_WPNav>`__
+  plans the path to the destination and outputs a desired speed and turn rate
+- `AR_WPNav_OA <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AR_WPNav/AR_WPNav_OA.cpp>`__ extends AR_WPNav with :ref:`object avoidance <common-object-avoidance-landing-page>`
+  path planning, and is the class Rover actually instantiates
+- `AR_PivotTurn <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AR_WPNav/AR_PivotTurn.cpp>`__ handles pivot (point) turns for vehicles that can turn on the spot
+- `AR_AttitudeControl <https://github.com/ArduPilot/ardupilot/tree/master/libraries/APM_Control>`__
+  holds the lower level speed and turn rate controllers
+- `AP_MotorsUGV <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AR_Motors>`__
+  converts the steering and throttle demands into motor outputs
 
--  Mode's `calc_steering_to_waypoint <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode.cpp#L303>`__ then call's the AP_L1_controller library's `update_waypoint method <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_L1_Control/AP_L1_Control.cpp#L198>`__ providing it the location that the rover should drive towards.
+Code flow
+---------
 
--  The AP_L1_controller's `update_waypoint method <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_L1_Control/AP_L1_Control.cpp#L198>`__ returns a desired lateral acceleration which is passed into Mode's `calc_steering_from_lateral_acceleration <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode.cpp#L331>`__
+- On every iteration of the main loop a call is made to the active mode's
+  ``update()`` method. While in Auto, Guided, RTL and SmartRTL, this calls into
+  the Mode class's ``navigate_to_waypoint()`` method in
+  `Rover/mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode.cpp>`__.
 
--  Mode's `calc_steering_from_lateral_acceleration <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode.cpp#L331>`__ sends the desired acceleration to `APM_Control/AR_AttitudeControl's get_steering_out_lat_accel <https://github.com/ArduPilot/ardupilot/blob/master/libraries/APM_Control/AR_AttitudeControl.cpp#L158>`__ which uses a PID controller to calculate a steering output
+- ``navigate_to_waypoint()`` applies the pilot's speed nudge and then calls
+  ``AR_WPNav::update()``.
 
--  The steering output is sent into the AP_MotorsUGV library using the `set_steering  <https://github.com/ArduPilot/ardupilot/blob/master/Rover/AP_MotorsUGV.cpp#L146>`__ method
+- ``AR_WPNav::update()`` advances the target along the path and then updates the
+  position controller, which produces a desired speed and a desired turn rate.
 
-L1 Controller
--------------
+- The desired speed is passed to ``calc_throttle()``, which uses
+  AR_AttitudeControl's speed controller to produce a throttle output.
 
-The final output of the L1 controller's `update_waypoint method <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_L1_Control/AP_L1_Control.cpp#L198>`__ is a desired lateral acceleration (shown as "latAccDem" in red below) which should bring the vehicle back to the line between the origin and destination.
+- The desired turn rate is passed to ``calc_steering_from_turn_rate()``, which
+  uses AR_AttitudeControl's ``get_steering_out_rate()`` to produce a steering
+  output.
 
-The formulas used are also shown below.  *damping* is from the :ref:`NAVL1_DAMPING <NAVL1_DAMPING>` parameter. *period* is from the :ref:`NAVL1_PERIOD <NAVL1_PERIOD>` parameter.
+- Both outputs are sent to AP_MotorsUGV using ``set_throttle()`` and
+  ``set_steering()``.
 
-.. image:: ../images/rover-L1.png
-    :target: ../_images/rover-L1.png
+Sailboats are a special case: when tacking upwind the desired heading comes from
+the Sailboat library and steering is calculated with ``calc_steering_to_heading()``
+instead of the turn rate above.
+
+The two navigation controller types
+-----------------------------------
+
+AR_WPNav can advance its target in one of two ways, selected by which method the
+vehicle code used to set the destination:
+
+- **S-Curve** (``NAV_SCURVE``) is used when the destination is set with
+  ``set_desired_location()``, as Auto, RTL and SmartRTL do. The path is built as
+  a jerk-limited S-Curve, and successive legs are blended so the vehicle can
+  round a corner without stopping. This is the normal waypoint case.
+
+- **Position controller input shaping** (``NAV_PSC_INPUT_SHAPING``) is used when
+  the destination is set with ``set_desired_location_expect_fast_update()``, for
+  callers such as Guided that update the target rapidly. Here the target is fed
+  straight into the position controller's input shaping rather than being planned
+  as a curve ahead of time.
+
+While a pivot turn is active, neither is advanced — the vehicle turns on the spot
+first and then resumes following the path.
+
+Parameters
+----------
+
+The path AR_WPNav produces is shaped by :ref:`WP_SPEED <rover:WP_SPEED>`,
+:ref:`WP_RADIUS <rover:WP_RADIUS>`, :ref:`WP_ACCEL <rover:WP_ACCEL>` and
+:ref:`WP_JERK <rover:WP_JERK>`, along with the vehicle's acceleration and turn
+limits. :ref:`Tuning Navigation <rover:rover-tuning-navigation>` explains how
+these interact and how to set them.
