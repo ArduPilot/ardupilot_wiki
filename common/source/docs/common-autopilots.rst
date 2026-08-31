@@ -207,6 +207,7 @@ Closed Hardware
     MUPilot <common-MUPilot>
     NarinFC-H7/H5 <common-NarinFC-H7>
     NarinFC-X3 <common-NarinFC-X3>
+    NWBlue Pro H757 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/NWBLUE_PROH757/README.md>
     NxtPX4v2 <common-NxtPX4v2>
     Omnibus F4 AIO/Pro <common-omnibusf4pro>
     OmnibusNanoV6 <common-omnibusnanov6>
