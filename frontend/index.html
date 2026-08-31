@@ -25,6 +25,8 @@
 
     <link rel="canonical" href="https://www.ardupilot.org"/>
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2980b9">
+    <script src="js/pwa.js" defer></script>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-icon.png">
     <!-- Place favicon.ico in the root directory -->
     <link rel="icon" href="icon.png">
@@ -72,6 +74,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <ul class="navbar-nav ms-auto fs-5">
+
+                    <!-- Deliberately a link, not an install button. Throwing the
+                         browser's install dialog at somebody who has not been told
+                         what installing does, and that it downloads nothing, is no
+                         way to ask. The offline page explains it and installs from
+                         there. -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ardupilot/docs/common-offline.html">OFFLINE</a>
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="https://www.ardupilot.org">HOME</a>

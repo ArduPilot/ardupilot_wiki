@@ -1,6 +1,13 @@
 {
+  "id": "/",
+  "name": "ArduPilot Documentation",
   "short_name": "ArduPilot",
-  "name": "ArduPilot",
+  "description": "ArduPilot autopilot documentation for Copter, Plane, Rover, Sub and more. Readable offline.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "background_color": "#ffffff",
+  "theme_color": "#2980b9",
   "icons": [
     {
       "src": "/android-icon-192x192.png",
@@ -8,13 +15,21 @@
       "type": "image/png"
     },
     {
-      "src": "/android-icon-192x192.png",
+      "src": "/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "start_url": "https://ardupilot.org/",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
-  "display": "minimal-ui"
+  "shortcuts": [
+    {"name": "Copter", "url": "/copter/"},
+    {"name": "Plane", "url": "/plane/"},
+    {"name": "Rover", "url": "/rover/"},
+    {"name": "Offline copies", "url": "/copter/docs/common-offline.html"}
+  ]
 }
