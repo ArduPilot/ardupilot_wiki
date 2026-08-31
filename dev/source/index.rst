@@ -184,6 +184,7 @@ Table of Contents
     Security <docs/security-landing-page>
     Support Proxy <docs/support_proxy>
     User Alerts <docs/user-alerts-developer>
+    Wiki Offline Copies <docs/wiki-offline-copies>
     Appendix <docs/common-appendix>
 
 .. toctree::

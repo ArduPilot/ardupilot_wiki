@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540"
+     font-family="Lato, Helvetica, Arial, sans-serif" role="img"
+     aria-labelledby="rf-title rf-desc">
+  <title id="rf-title">How a page request is answered</title>
+  <desc id="rf-desc">A page requests a URL. The service worker checks local
+    storage first and returns a stored copy in 13 to 19 milliseconds, then
+    revalidates it against the network in the background. A request that is not
+    held locally goes to the network, taking about a second.</desc>
+
+  <defs>
+    <marker id="rfArrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a5058"/>
+    </marker>
+    <marker id="rfArrowFast" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1e7a45"/>
+    </marker>
+    <marker id="rfArrowSlow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9a5b1c"/>
+    </marker>
+    <marker id="rfArrowThin" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b94a0"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="540" fill="#ffffff"/>
+
+  <!-- the page -->
+  <rect x="20" y="196" width="152" height="98" rx="5"
+        fill="#f4f7fa" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="96" y="234" text-anchor="middle" font-size="15" font-weight="700" fill="#1d2126">Wiki page</text>
+  <text x="96" y="257" text-anchor="middle" font-size="12" fill="#4a5058">requests</text>
+  <text x="96" y="277" text-anchor="middle" font-size="11.5" font-family="monospace" fill="#4a5058">foo.html</text>
+
+  <line x1="172" y1="245" x2="232" y2="245" stroke="#4a5058" stroke-width="1.6" marker-end="url(#rfArrow)"/>
+
+  <!-- service worker -->
+  <rect x="234" y="185" width="178" height="120" rx="5"
+        fill="#2980b9" stroke="#20618c" stroke-width="1.5"/>
+  <text x="323" y="224" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Service worker</text>
+  <text x="323" y="246" text-anchor="middle" font-size="11.5" font-family="monospace" fill="#d6e8f5">sw.js</text>
+  <text x="323" y="270" text-anchor="middle" font-size="12" fill="#d6e8f5">is this held</text>
+  <text x="323" y="287" text-anchor="middle" font-size="12" fill="#d6e8f5">locally?</text>
+
+  <!-- held -->
+  <path d="M 412 216 L 468 216 L 468 104 L 536 104" fill="none"
+        stroke="#1e7a45" stroke-width="2" marker-end="url(#rfArrowFast)"/>
+  <text x="478" y="92" font-size="12.5" font-weight="700" fill="#1e7a45">held</text>
+
+  <!-- not held -->
+  <path d="M 412 274 L 468 274 L 468 412 L 536 412" fill="none"
+        stroke="#9a5b1c" stroke-width="2" marker-end="url(#rfArrowSlow)"/>
+  <text x="478" y="434" font-size="12.5" font-weight="700" fill="#9a5b1c">not held</text>
+
+  <!-- cache storage -->
+  <rect x="538" y="34" width="286" height="190" rx="5"
+        fill="#f2f8f4" stroke="#1e7a45" stroke-width="1.5"/>
+  <text x="556" y="60" font-size="14.5" font-weight="700" fill="#14532d">Cache Storage</text>
+  <text x="556" y="80" font-size="11.5" fill="#3c4a41">keyed by request URL</text>
+  <text x="556" y="107" font-size="11.5" font-family="monospace" fill="#1d2126">ardupilot-pages-v3</text>
+  <text x="556" y="126" font-size="11.5" font-family="monospace" fill="#1d2126">ardupilot-images-v3</text>
+  <text x="556" y="145" font-size="11.5" font-family="monospace" fill="#1d2126">ardupilot-static-v3</text>
+  <text x="556" y="164" font-size="11.5" font-family="monospace" fill="#1d2126">ardupilot-offline-&lt;wiki&gt;</text>
+  <text x="556" y="183" font-size="11.5" font-family="monospace" fill="#1d2126">ardupilot-thirdparty-v3</text>
+  <text x="556" y="207" font-size="11" fill="#5a6b60">a downloaded wiki survives a version bump</text>
+
+  <!-- timing, directly beneath its box and clear of everything -->
+  <rect x="538" y="234" width="164" height="30" rx="4" fill="#e6f4ea" stroke="#1e7a45"/>
+  <text x="620" y="254" text-anchor="middle" font-size="13" font-weight="700" fill="#14532d">13 to 19 ms</text>
+
+  <!-- network -->
+  <rect x="538" y="370" width="286" height="86" rx="5"
+        fill="#fdf6ee" stroke="#9a5b1c" stroke-width="1.5"/>
+  <text x="556" y="397" font-size="14.5" font-weight="700" fill="#7a4614">Network</text>
+  <text x="556" y="418" font-size="11.5" fill="#5c4a35">the origin server</text>
+  <text x="556" y="438" font-size="11.5" fill="#5c4a35">unreachable when offline</text>
+
+  <rect x="538" y="466" width="164" height="30" rx="4" fill="#fbeee0" stroke="#9a5b1c"/>
+  <text x="620" y="486" text-anchor="middle" font-size="13" font-weight="700" fill="#7a4614">about 1,000 ms</text>
+
+  <!-- background revalidation, in its own lane on the right -->
+  <path d="M 800 224 L 800 368" fill="none" stroke="#8b94a0"
+        stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#rfArrowThin)"/>
+  <text x="716" y="286" font-size="11.5" fill="#5f6873">revalidated in</text>
+  <text x="716" y="303" font-size="11.5" fill="#5f6873">the background</text>
+  <text x="716" y="326" font-size="11.5" fill="#5f6873">the page is told</text>
+  <text x="716" y="343" font-size="11.5" fill="#5f6873">if it changed</text>
+
+  <!-- response back to the page -->
+  <path d="M 96 294 L 96 344 L 323 344 L 323 309" fill="none"
+        stroke="#4a5058" stroke-width="1.6" stroke-dasharray="4 3"
+        marker-start="url(#rfArrow)" marker-end="url(#rfArrow)"/>
+  <text x="120" y="364" font-size="11.5" fill="#4a5058">a response is returned either way</text>
+</svg>

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560"
+     font-family="Lato, Helvetica, Arial, sans-serif" role="img"
+     aria-labelledby="bd-title bd-desc">
+  <title id="bd-title">How the offline artefacts are built and served</title>
+  <desc id="bd-desc">A cron job on the build server checks the repository for
+    changes, builds every wiki with Sphinx, and with the offline flag also
+    packs the archives and manifest. Everything is written into one directory
+    tree, which nginx serves as static files. The browser fetches pages from
+    that tree normally, and fetches an archive only when a reader asks to save
+    a wiki.</desc>
+
+  <defs>
+    <marker id="bdArrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a5058"/>
+    </marker>
+    <marker id="bdArrowBlue" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2980b9"/>
+    </marker>
+    <marker id="bdArrowGreen" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1e7a45"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="560" fill="#ffffff"/>
+
+  <!-- build server -->
+  <rect x="18" y="24" width="330" height="300" rx="6"
+        fill="#fbfbfa" stroke="#8b94a0" stroke-width="1.5"/>
+  <text x="36" y="50" font-size="14.5" font-weight="700" fill="#1d2126">Build server</text>
+  <text x="36" y="70" font-size="11.5" fill="#5f6873">nothing here is public</text>
+
+  <rect x="36" y="84" width="294" height="46" rx="4" fill="#eef2f6" stroke="#8b94a0"/>
+  <text x="48" y="103" font-size="11.5" font-family="monospace" fill="#1d2126">cron: update.sh</text>
+  <text x="48" y="121" font-size="11" fill="#5f6873">exits unless the repo or parameters changed</text>
+
+  <rect x="36" y="142" width="294" height="46" rx="4" fill="#eef2f6" stroke="#8b94a0"/>
+  <text x="48" y="161" font-size="11.5" font-family="monospace" fill="#1d2126">build_parameters.py</text>
+  <text x="48" y="179" font-size="11" fill="#5f6873">one parameter page per firmware version</text>
+
+  <rect x="36" y="200" width="294" height="62" rx="4" fill="#e8f1f8" stroke="#2980b9"/>
+  <text x="48" y="219" font-size="11.5" font-family="monospace" fill="#1d2126">update.py</text>
+  <text x="48" y="237" font-size="11" fill="#41576a">Sphinx builds every wiki, then</text>
+  <text x="48" y="253" font-size="11" fill="#41576a">build_offline_artifacts.py packs the archives</text>
+
+  <text x="36" y="286" font-size="11" fill="#5f6873">A full build is minutes of work, so it runs only</text>
+  <text x="36" y="302" font-size="11" fill="#5f6873">when something has actually changed.</text>
+
+  <!-- writes into -->
+  <path d="M 348 176 L 404 176" fill="none" stroke="#2980b9" stroke-width="2"
+        marker-end="url(#bdArrowBlue)"/>
+  <text x="352" y="166" font-size="11" fill="#2980b9">writes</text>
+
+  <!-- the served tree -->
+  <rect x="406" y="24" width="300" height="300" rx="6"
+        fill="#f4f7fa" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="424" y="50" font-size="14.5" font-weight="700" fill="#1d2126">One directory tree</text>
+  <text x="424" y="70" font-size="11.5" font-family="monospace" fill="#41576a">/var/sites/wiki/web</text>
+
+  <text x="424" y="98" font-size="11.5" font-family="monospace" fill="#1d2126">index.html  sw.js  js/  css/</text>
+  <text x="424" y="115" font-size="11" fill="#5f6873">the frontend, at the ROOT</text>
+
+  <text x="424" y="142" font-size="11.5" font-family="monospace" fill="#1d2126">copter/  plane/  rover/  ...</text>
+  <text x="424" y="159" font-size="11" fill="#5f6873">one directory per wiki, as built</text>
+
+  <text x="424" y="186" font-size="11.5" font-family="monospace" fill="#1d2126">offline/</text>
+  <text x="424" y="203" font-size="11.5" font-family="monospace" fill="#41576a">  offline-manifest.json</text>
+  <text x="424" y="220" font-size="11.5" font-family="monospace" fill="#41576a">  common-offline.tar.gz</text>
+  <text x="424" y="237" font-size="11.5" font-family="monospace" fill="#41576a">  &lt;wiki&gt;-offline.tar.gz</text>
+
+  <text x="424" y="266" font-size="11" fill="#5f6873">Static files only. No application server,</text>
+  <text x="424" y="282" font-size="11" fill="#5f6873">no database, nothing generated per request.</text>
+  <text x="424" y="304" font-size="11" fill="#5f6873">Unchanged archives are byte-identical, so</text>
+  <text x="424" y="320" font-size="11" fill="#5f6873">a deploy can skip them.</text>
+
+  <!-- nginx -->
+  <path d="M 556 324 L 556 366" fill="none" stroke="#4a5058" stroke-width="2"
+        marker-end="url(#bdArrow)"/>
+
+  <rect x="406" y="368" width="300" height="88" rx="5"
+        fill="#eef2f6" stroke="#4a5058" stroke-width="1.5"/>
+  <text x="424" y="394" font-size="14" font-weight="700" fill="#1d2126">nginx</text>
+  <text x="424" y="414" font-size="11" fill="#4a5058">serves .html at its built URL, never rewritten</text>
+  <text x="424" y="431" font-size="11" fill="#4a5058">sw.js no-cache &#183; gzip_static on /offline/</text>
+  <text x="424" y="448" font-size="11" fill="#4a5058">HTTPS, or the service worker will not run</text>
+
+  <!-- browser -->
+  <path d="M 406 412 L 344 412" fill="none" stroke="#1e7a45" stroke-width="2"
+        marker-end="url(#bdArrowGreen)"/>
+
+  <rect x="18" y="356" width="322" height="176" rx="6"
+        fill="#f2f8f4" stroke="#1e7a45" stroke-width="1.5"/>
+  <text x="36" y="382" font-size="14.5" font-weight="700" fill="#14532d">Browser</text>
+
+  <rect x="36" y="394" width="286" height="52" rx="4" fill="#ffffff" stroke="#1e7a45"/>
+  <text x="48" y="413" font-size="11.5" font-weight="700" fill="#14532d">Reading</text>
+  <text x="48" y="432" font-size="11" fill="#3c4a41">pages fetched normally, then kept by the worker</text>
+
+  <rect x="36" y="456" width="286" height="62" rx="4" fill="#ffffff" stroke="#1e7a45"/>
+  <text x="48" y="475" font-size="11.5" font-weight="700" fill="#14532d">Saving a wiki</text>
+  <text x="48" y="494" font-size="11" fill="#3c4a41">one archive, plus the shared images, streamed</text>
+  <text x="48" y="510" font-size="11" fill="#3c4a41">and unpacked under the URLs the site serves</text>
+
+  <!-- deploy note -->
+  <rect x="722" y="368" width="160" height="88" rx="5"
+        fill="#fdf6ee" stroke="#9a5b1c" stroke-width="1.2"/>
+  <text x="736" y="392" font-size="11.5" font-weight="700" fill="#7a4614">If built elsewhere</text>
+  <text x="736" y="412" font-size="10.5" fill="#5c4a35">rsync the same tree;</text>
+  <text x="736" y="428" font-size="10.5" fill="#5c4a35">the layout is what</text>
+  <text x="736" y="444" font-size="10.5" fill="#5c4a35">matters, not the host</text>
+</svg>
