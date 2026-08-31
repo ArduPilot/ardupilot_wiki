@@ -10,6 +10,9 @@ requests>=2.31.0
 # lxml for parameter parsing:
 lxml
 
+# Video stills and the lossless PNG pass; both are no-ops without it.
+Pillow
+
 # Install sphinx theme from ArduPilot repository
 git+https://github.com/ArduPilot/sphinx_rtd_theme.git
 
