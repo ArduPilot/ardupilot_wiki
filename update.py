@@ -1265,6 +1265,14 @@ class WikiUpdater:
         wikis = [self.args.site] if self.args.site else ALL_WIKIS
 
         try:
+            from scripts.lazy_embeds import run as make_embeds_lazy
+        except ImportError as ex:
+            error(f"lazy-embed pass unavailable, skipping: {ex}")
+        else:
+            n = make_embeds_lazy(wikis, passes_root)
+            info(f"deferred YouTube embeds on {n} pages")
+
+        try:
             from scripts.optimise_images import run as optimise_images
             n, saved = optimise_images(wikis, passes_root)
             info(f"recompressed {n} PNGs, saving {saved / 1048576:.1f} MB")
