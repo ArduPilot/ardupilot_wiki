@@ -1,0 +1,98 @@
+{# sphinx_rtd_theme's z_top_menu.html plus the Offline entry; re-sync when the theme's changes. #}
+    {# Static site menu. #}
+    <div id='cssmenu'>
+        <ul>
+           <li><a href='{{target}}ardupilot/index.html'>Home</a>
+              <ul>
+                 <li><a href='{{target}}copter/index.html'>Copter</a></li>
+                 <li><a href='{{target}}plane/index.html'>Plane</a></li>
+                 <li><a href='{{target}}rover/index.html'>Rover</a></li>
+                 <li><a href='{{target}}blimp/index.html'>Blimp</a></li>
+                 <li><a href='{{target}}sub/index.html'>Sub</a></li>
+                 <li><a href='{{target}}antennatracker/index.html'>AntennaTracker</a></li>
+                 <li><a href='{{target}}planner/index.html'>Mission Planner</a></li>
+                 <li><a href='{{target}}planner2/index.html'>APM Planner 2</a></li>
+                 <li><a href='{{target}}mavproxy/index.html'>MAVProxy</a></li>
+                 <li><a href='{{target}}dev/docs/companion-computers.html'>Companion Computers</a></li>
+                 <li><a href='{{target}}dev/index.html'>Developer</a></li>
+              </ul>
+           </li>
+           
+          
+           
+           <li><a href='https://firmware.ardupilot.org/'>Downloads</a>
+              <ul>
+                <li><a href='https://firmware.ardupilot.org/Tools/MissionPlanner/'>Mission Planner</a></li>
+                <li><a href='https://firmware.ardupilot.org/Tools/APMPlanner/'>APM Planner 2</a></li>
+                 {%- if hasdoc('docs/common-downloads_advanced_user_tools') %}
+                   <li><a title="{{ _('Advanced User Tools') }}" href="{{ pathto('docs/common-downloads_advanced_user_tools') }}">{{ _('Advanced User Tools') }}</a></li>
+                 {%- endif %}
+                 {%- if hasdoc('docs/common-downloads_developer_tools') %}
+                   <li><a title="{{ _('Developer Tools') }}" href="{{ pathto('docs/common-downloads_developer_tools') }}">{{ _('Developer Tools') }}</a></li>
+                 {%- endif %}
+                 {%- if hasdoc('docs/common-downloads_firmware') %}
+                   <li><a title="{{ _('Firmware') }}" href="{{ pathto('docs/common-downloads_firmware') }}">{{ _('Firmware') }}</a></li>
+                 {%- endif %}
+                </ul>
+           </li>
+           
+           <li><a href='https://discuss.ardupilot.org' />Community</a>
+              <ul>
+                 <li><a href='https://discuss.ardupilot.org/'>Support Forums</a></li>
+                 <li><a href='https://www.facebook.com/groups/ArduPilot.org'>Facebook</a></li>
+                 <li><a href='https://ardupilot.org/discord'>Developer Chat (Discord)</a></li>
+                 <li><a href='https://ardupilot.org/discord'>Developer Voice (Discord)</a></li>
+                 {%- if hasdoc('docs/common-contact-us') %}
+				 <li><a href='https://ardupilot.org/dev/docs/common-contact-us.html'>Contact us</a></li>
+                 {%- endif %}
+				 {%- if hasdoc('index') %}
+				 <li><a href='https://ardupilot.org/dev/index.html#getting-involved'>Getting involved</a></li>
+				 {%- endif %}
+                 {%- if hasdoc('docs/common-commercial-support') %}
+                   <li><a title="{{ _('Commercial Support') }}" href="{{ pathto('docs/common-commercial-support') }}">{{ _('Commercial Support') }}</a></li>
+                 {%- endif %}
+                 {%- if hasdoc('docs/common-team') %}
+                   <li><a title="{{ _('Dev Team') }}" href="{{ pathto('docs/common-team') }}">{{ _('Development Team') }}</a></li>
+                 {%- endif %}
+                 {%- if hasdoc('docs/common-training-centers') %}
+                   <li><a title="{{ _('Training Centers') }}" href="{{ pathto('docs/common-training-centers') }}">{{ _('UAS Training Centers') }}</a></li>
+                 {%- endif %}
+              </ul>
+           </li>
+
+           {%- if hasdoc('docs/common-stores') %}
+             <li><a title="{{ _('Stores') }}" href="{{ pathto('docs/common-stores') }}">{{ _('Stores') }}</a></li>
+           {%- endif %}
+
+
+           {# Display project news and/or history #}
+           {%- if hasdoc('docs/project-news') or hasdoc('docs/common-history-of-ardupilot') or hasdoc('docs/docs/common-acknowledgments') or hasdoc('docs/docs/common-wiki_editing_guide') %}
+                        <li><a title="{{ _('About') }}" href="{{ pathto('index') }}">{{ _('About') }}</a>
+               <ul>
+                 {%- if hasdoc('docs/project-news') %}
+                   <li><a title="{{ _('Project News') }}" href="{{ pathto('docs/project-news') }}">{{ _('News') }}</a></li>
+                 {%- endif %}
+                 {%- if hasdoc('docs/common-history-of-ardupilot') %}
+                   <li><a title="{{ _('History of ArduPilot') }}" href="{{ pathto('docs/common-history-of-ardupilot') }}">{{ _('History') }}</a></li>
+                 {%- endif %}
+                   <li><a href='https://ardupilot.org/dev/docs/license-gplv3.html'>License</a></li>
+                   <li><a href='https://ardupilot.org/dev/docs/trademark.html'>Trademark</a></li>
+                 {%- if hasdoc('docs/common-acknowledgments') %}
+                   <li><a title="{{ _('Acknowledgments') }}" href="{{ pathto('docs/common-acknowledgments') }}">{{ _('Acknowledgments') }}</a></li>
+                 {%- endif %}
+                 {%- if hasdoc('docs/common-wiki_editing_guide') %}
+                   <li><a title="{{ _('Wiki Editing Guide') }}" href="{{ pathto('docs/common-wiki_editing_guide') }}">{{ _('Wiki Editing Guide') }}</a></li>
+                 {%- endif %}
+                 {%- if hasdoc('docs/common-partners') %}
+                   <li><a title="{{ _('Partners Program') }}" href="{{ pathto('docs/common-partners') }}">{{ _('Partners Program') }}</a></li>
+                 {%- endif %}
+               </ul>
+             </li>
+           {%- endif %}
+           {%- if hasdoc('docs/common-offline') %}
+             <li><a href="{{ pathto('docs/common-offline') }}">{{ _('Offline') }}</a></li>
+           {%- endif %}
+        </ul>
+        
+
+</div>
