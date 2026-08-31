@@ -62,3 +62,6 @@ build_options.py
 
 # Mac file
 .DS_Store
+
+# Generated offline artefacts (archives + manifest), rebuilt by update.py
+/offline/
