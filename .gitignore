@@ -5,11 +5,6 @@
 /*/source/docs/common-*
 !/common/source/docs/common-*
 
-# Template overrides copied into each wiki by update.py; the originals live in
-# common/_templates and are the only copy that should be edited or committed.
-/*/source/_templates/
-!/common/_templates/
-
 # Common CSS except under Common
 /*/source/_static/common_*
 !/common/source/_static/common_*
@@ -30,9 +25,6 @@ old_params_mversion/
 # static html pages
 !/frontend/*.html
 !/frontend/includes/*.html
-
-# Sphinx template overrides, copied into each wiki by update.py
-!/common/_templates/*.html
 
 
 # Generated offline artefacts (archives + manifest), rebuilt by update.py
