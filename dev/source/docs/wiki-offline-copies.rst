@@ -171,7 +171,8 @@ That interception is the whole mechanism. The pages are unmodified static HTML
 as built by Sphinx; nothing is rewritten and no framework is introduced.
 
 Implementation is in ``frontend/sw.js``, registered by ``frontend/js/pwa.js``,
-which ``common/_templates/layout.html`` includes on every page. Inclusion is
+which the theme (``sphinx_rtd_theme``'s ``layout.html``, together with the
+manifest link and the Offline menu entry) includes on every page. Inclusion is
 not registration: ``pwa.js`` registers the worker only after the reader has
 opted in, with the switch at the top of the Offline page or by saving a wiki;
 turning the switch off unregisters it. A reader who never opts in gets no
