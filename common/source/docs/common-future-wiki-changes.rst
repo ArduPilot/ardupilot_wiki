@@ -27,6 +27,8 @@ New Board Support
 - Agam MegH7, see https://github.com/ArduPilot/ardupilot_wiki/pull/7974
 - FlyFishRC F405, see https://github.com/ArduPilot/ardupilot_wiki/pull/7985
 - Lectron Pi5, see https://github.com/ArduPilot/ardupilot_wiki/pull/7976
+- HGLRC H743 EVO, see https://github.com/ArduPilot/ardupilot_wiki/pull/8016
+- NWBlue Pro H757, see https://github.com/ArduPilot/ardupilot_wiki/pull/8017
 
 New Peripheral Support
 ======================
