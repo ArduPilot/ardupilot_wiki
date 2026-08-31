@@ -65,3 +65,7 @@ build_options.py
 
 # Generated offline artefacts (archives + manifest), rebuilt by update.py
 /offline/
+
+# Lossless PNG results, keyed by content hash. Safe to delete; the next
+# build refills it.
+/.image-cache/
