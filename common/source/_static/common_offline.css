@@ -1,0 +1,656 @@
+/*
+ * Styling for the offline manager on docs/common-offline.
+ *
+ * Follows ArduPilot's other tool front-end, custom.ardupilot.org: a dark
+ * #212529 header strip, Bootstrap-style status badges and progress bars, and a
+ * dense table. That site is Bootstrap 5, which cannot be loaded here - it comes
+ * from a CDN and this page has to work with no connection - so the handful of
+ * rules it needs are reproduced below.
+ *
+ * Everything is scoped under .apo so it cannot affect the surrounding wiki
+ * page, which is styled by sphinx_rtd_theme.
+ *
+ * Lives in common/source/_static, so copy_common_source_files() puts it in
+ * every wiki's source/_static and Sphinx copies it to build/html/_static. That
+ * is what gets it into the offline archives: it used to live in frontend/,
+ * outside the Sphinx build entirely, so a reader who downloaded a wiki and
+ * went offline found this page unstyled. Linked from layout.html, guarded to
+ * this one page, the same route common_theme_override.css takes.
+ */
+
+.apo {
+  /* Bootstrap 5's palette, as used by custom.ardupilot.org. */
+  --dark: #212529;
+  --success: #198754;
+  --danger: #dc3545;
+  --warning: #ffc107;
+  --primary: #0d6efd;
+  --muted: #6c757d;
+  --line: #dee2e6;
+  --track: #e9ecef;
+  --hover: #f8f9fa;
+  --sys: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+         Arial, sans-serif;
+
+  font-family: var(--sys);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 20px 0 28px;
+}
+
+/* ---- header strip ------------------------------------------------------ */
+
+.apo .apo-head {
+  background: var(--dark);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+}
+/* Doubled class beats the theme's paragraph sizing; the buttons set the scale. */
+.apo .apo-title.apo-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+  flex: 0 1 auto;
+  min-width: 0;
+  color: #fff;
+}
+.apo .apo-head .apo-spacer { flex: 1 1 auto; }
+/* One unit, so the buttons change rows together instead of shedding one. */
+.apo .apo-head .apo-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+/* ---- buttons ----------------------------------------------------------- */
+
+.apo .apo-btn {
+  font-family: var(--sys);
+  font-size: .875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: filter .12s, background-color .12s;
+  margin: 0;
+}
+.apo .apo-btn:disabled { opacity: .45; cursor: not-allowed; }
+/* A disabled destructive button should read as inert rather than as a faded
+   warning - keeping it red implies it still does something. */
+.apo .apo-btn-danger:disabled {
+  background: transparent;
+  border-color: #6c757d;
+  color: #adb5bd;
+  opacity: 1;
+}
+.apo .apo-btn { position: relative; overflow: hidden; }
+
+/*
+ * Countdown under an armed destructive button.
+ *
+ * It shows how long the confirmation stays live, and gives the press somewhere
+ * to read as "not finished yet" - the button changing colour alone invites a
+ * second click straight away, which is exactly what a confirmation is meant to
+ * prevent.
+ */
+.apo .apo-arm {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: rgba(255, 255, 255, .85);
+  transform-origin: left center;
+}
+.apo .apo-arm.apo-arm-run { transition: width linear; width: 0; }
+.apo .apo-btn-primary { background: var(--success); border-color: var(--success); color: #fff; }
+.apo .apo-btn-primary:hover:not(:disabled) { filter: brightness(1.1); }
+.apo .apo-btn-danger { background: var(--danger); border-color: var(--danger); color: #fff; }
+.apo .apo-btn-danger:hover:not(:disabled) { filter: brightness(1.1); }
+/* Armed: darker, so the two states are still tellable apart now that the
+   button is red whether armed or not. */
+.apo .apo-btn-armed { background: #a71d2a; border-color: #a71d2a; }
+.apo .apo-btn-armed:hover:not(:disabled) { background: #8f1923; filter: none; }
+/* Outlined, for the header strip where the background is dark. */
+.apo .apo-btn-ghost { background: transparent; border-color: #6c757d; color: #fff; }
+.apo .apo-btn-ghost:hover:not(:disabled) { background: rgba(255, 255, 255, .12); }
+/* Outlined, for use on white. */
+.apo .apo-btn-outline { background: #fff; border-color: var(--line); color: var(--dark); }
+.apo .apo-btn-outline:hover:not(:disabled) { background: var(--hover); }
+
+/* ---- table ------------------------------------------------------------- */
+
+.apo table.apo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  background: #fff;
+  font-size: .95rem;
+}
+.apo table.apo-table thead th {
+  background: var(--dark);
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  padding: 10px 9px;
+  border: 0;
+  white-space: nowrap;
+}
+.apo table.apo-table td {
+  padding: 10px 9px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+.apo table.apo-table tbody tr:last-child td { border-bottom: 0; }
+.apo table.apo-table th:last-child,
+.apo table.apo-table td:last-child { padding-right: 16px; }
+.apo table.apo-table tbody tr:hover td { background: var(--hover); }
+/* The one long cell; "2396 images, 28 pages" may wrap rather than burst the row. */
+.apo table.apo-table td.apo-pages { white-space: normal; }
+.apo .apo-num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  width: 1%;
+}
+.apo .apo-name { width: auto; }
+.apo label.apo-pick {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+/* Not a <label>: clicking a column title should not select every wiki, so
+   only the box itself is a target. */
+.apo table.apo-table thead th .apo-pick,
+.rst-content .apo table.apo-table thead th .apo-pick {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.apo table.apo-table thead th .apo-pick input[type="checkbox"] {
+  cursor: pointer;
+}
+.apo input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  flex: none;
+  accent-color: var(--primary);
+}
+.apo input[type="checkbox"]:disabled { opacity: .55; }
+
+/* ---- status badges ----------------------------------------------------- */
+
+.apo .apo-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.apo .apo-badge-stored { background: var(--success); color: #fff; }
+.apo .apo-badge-none { background: var(--track); color: var(--muted); }
+.apo .apo-badge-partial { background: #fdf8ec; color: #6b5518; border: 1px solid #ffc107; white-space: normal; text-align: center; }
+.apo .apo-badge-busy { background: var(--warning); color: #000; }
+
+/* ---- progress ---------------------------------------------------------- */
+
+.apo .apo-progress {
+  height: 16px;
+  min-width: 90px;
+  background: var(--track);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+.apo .apo-progress-bar {
+  height: 100%;
+  width: 0;
+  background: var(--success);
+  transition: width .3s ease;
+}
+.apo .apo-progress span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* ---- footer and notices ------------------------------------------------ */
+
+/*
+ * Two fixed slots rather than a row of competing spans.
+ *
+ * The footer previously held five status elements in one flex row. Each
+ * progress tick changed one of their widths, which re-flowed all of them, and
+ * the whole strip appeared to flicker several times a second.
+ */
+.apo .apo-foot {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 3px 16px;
+  padding: 10px 14px;
+  background: var(--hover);
+  border-top: 1px solid var(--line);
+  font-size: .9rem;
+  min-height: 58px;
+}
+/* Each status is a flex row of its own parts, so a wrap breaks between them
+   rather than mid-phrase, and adjacent spans cannot run into each other. */
+.apo .apo-foot-status {
+  grid-column: 2;
+  justify-self: end;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 0 10px;
+  text-align: right;
+  /* Reserved so text of differing lengths cannot shift the row. */
+  min-height: 1.35em;
+}
+/* The device line is reference detail, not the answer to "what will this do". */
+.apo .apo-foot-status + .apo-foot-status {
+  font-size: .8rem;
+  color: var(--muted);
+}
+.apo .apo-foot label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+.apo .apo-status { color: var(--muted); }
+
+/* Notes sit above the panel as their own block, so they need the panel's
+   framing and a gap beneath rather than a shared bottom edge with it. The
+   colour is carried by a left accent rule and the fill stays muted. */
+#storage-warning:not(:empty) {
+  margin: 20px 0 14px;
+}
+.apo-note {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+               Arial, sans-serif;
+  padding: 11px 14px 11px 12px;
+  font-size: .9rem;
+  border: 1px solid #dee2e6;
+  border-left: 3px solid transparent;
+  border-radius: 6px;
+  margin: 0;
+  line-height: 1.5;
+}
+.rst-content #storage-warning .apo-note { margin: 0; }
+.apo-note a { color: inherit; text-decoration: underline; }
+.apo-note-warn {
+  background: #fdf8ec;
+  border-left-color: #ffc107;
+  color: #6b5518;
+}
+.apo-note-ok {
+  background: #f0f7f3;
+  border-left-color: #198754;
+  color: #1a5440;
+}
+.apo-note-info {
+  background: #eff8fb;
+  border-left-color: #0dcaf0;
+  color: #14606f;
+}
+
+.apo .apo-files { padding: 14px; border-top: 1px solid var(--line); }
+.apo .apo-files h3 {
+  font-family: var(--sys);
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+.apo .apo-file { margin-bottom: 14px; }
+.apo .apo-file:last-child { margin-bottom: 0; }
+.apo .apo-hint { color: var(--muted); font-size: .85rem; margin-top: 3px; }
+
+@media (max-width: 700px) {
+  .apo .apo-pages, .apo .apo-pages-h { display: none; }
+  .apo .apo-head { gap: 8px; }
+}
+/* The badge says saved or not; the bar can go before the badge is clipped. */
+@media (max-width: 560px) {
+  .apo .apo-col-progress { display: none; }
+  /* Stacked, or the status lines wrap one word per line beside the checkbox. */
+  .apo .apo-foot { display: block; }
+  .apo .apo-foot .apo-foot-status { text-align: left; margin-top: 8px; }
+}
+/* A phone can drag the table sideways instead of clipping it. */
+.apo .apo-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+/* The theme spaces paragraphs for prose; the panel's hints are captions. */
+.rst-content .apo p.apo-hint { line-height: 1.5; margin-bottom: 8px; }
+
+/* ---- the install button --------------------------------------------------
+ * Sits under the "Install as an app" section, which is ordinary page text, so
+ * it borrows the tool's button styling and nothing else.
+ */
+.apo-install-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 14px 0 24px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+               Arial, sans-serif;
+}
+.apo-install-row .apo-btn {
+  font-family: inherit;
+  font-size: .875rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  background: #fff;
+  color: #212529;
+  cursor: pointer;
+}
+.apo-install-row .apo-btn:hover { background: #f8f9fa; }
+.apo-install-row .apo-hint { color: #6c757d; font-size: .85rem; }
+.apo code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .85em;
+  background: var(--hover);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--danger);
+}
+
+/* ---- holding our own against the theme --------------------------------- */
+
+/*
+ * sphinx_rtd_theme styles tables, labels and inputs broadly across
+ * .rst-content, and those rules are more specific than a bare class. Rather
+ * than sprinkling !important, the selectors below are qualified with
+ * .rst-content so they win on specificity where it matters - and they are all
+ * still confined to .apo, so nothing outside the panel is touched.
+ */
+.rst-content .apo table.apo-table,
+.rst-content .apo table.apo-table td,
+.rst-content .apo table.apo-table th {
+  border: 0;
+  background-image: none;
+}
+.rst-content .apo table.apo-table { display: table; width: 100%; margin-bottom: 0; }
+.rst-content .apo table.apo-table thead th { background: var(--dark); color: #fff; }
+.rst-content .apo table.apo-table td {
+  border-bottom: 1px solid var(--line);
+  white-space: normal;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+.rst-content .apo table.apo-table tbody tr:last-child td { border-bottom: 0; }
+.apo table.apo-table th:last-child,
+.apo table.apo-table td:last-child { padding-right: 16px; }
+/* Numeric columns must not wrap: "433 MB" breaking over two lines looks broken.
+   Qualified to out-specify the td rule above, which sets white-space: normal -
+   without the extra element selectors this loses to it. */
+.rst-content .apo table.apo-table td.apo-num,
+.rst-content .apo table.apo-table th.apo-num { white-space: nowrap; }
+
+/* The theme gives labels display:block and its own margins, which stacks the
+   checkbox above its text. */
+.rst-content .apo label,
+.rst-content .apo label.apo-pick {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-weight: 400;
+}
+.rst-content .apo input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  vertical-align: middle;
+}
+.rst-content .apo p { margin: 0; }
+.rst-content .apo .apo-hint { margin-top: 4px; }
+.rst-content .apo .apo-title { margin: 0; color: #fff; }
+.rst-content .apo code { color: var(--danger); background: var(--hover); }
+
+/* ---------- update toast ----------
+ *
+ * A small card that appears when the wiki is checking for or applying an
+ * update, with a bar that sweeps while it works and fills while it applies
+ * files. It is deliberately visible: a saved wiki updating itself is news the
+ * reader should see, not a text change buried in the panel footer.
+ */
+.ap-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 3000;
+  max-width: 320px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: #2f3136;
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  font-size: 14px;
+  line-height: 1.4;
+  /* Slides in from below, and out again when dismissed. */
+  transform: translateY(140%);
+  opacity: 0;
+  transition: transform 0.28s ease, opacity 0.28s ease;
+}
+.ap-toast.ap-toast-show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.ap-toast-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.ap-toast-msg {
+  opacity: 0.9;
+}
+.ap-toast-track {
+  position: relative;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+.ap-toast-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 2px;
+  background: #4aa3ff;
+  width: 0;
+  transition: width 0.3s ease;
+}
+/* Indeterminate: a segment sweeps left to right while we do not know how long
+   it will take (checking the manifest, comparing tables). */
+.ap-toast-track.ap-toast-sweep .ap-toast-bar {
+  width: 40%;
+  transition: none;
+  animation: ap-toast-sweep 1.1s ease-in-out infinite;
+}
+@keyframes ap-toast-sweep {
+  0%   { left: -40%; }
+  100% { left: 100%; }
+}
+/* Done: green, and the whole card fades out shortly after. */
+.ap-toast.ap-toast-done .ap-toast-bar { background: #46b46e; width: 100%; }
+
+
+/* ---------- historical parameter versions ---------- */
+
+/*
+ * A disclosure per vehicle rather than an always-open list: five wikis carry
+ * these, fourteen versions each, and shown at once they bury the eleven rows
+ * that matter.
+ */
+.apo-param-toggle {
+  white-space: nowrap;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin-left: .5em;
+  font: inherit;
+  font-size: .82em;
+  color: #2980b9;
+  cursor: pointer;
+  text-decoration: underline dotted;
+}
+.apo-param-toggle:hover { color: #1a5f8f; }
+.apo-param-more .apo-param-all { margin-left: auto; cursor: pointer; }
+.apo table.apo-table thead th .apo-all-params {
+  margin-left: 1.2em;
+  font-weight: 400;
+  font-size: .85em;
+  color: #fff;
+  cursor: pointer;
+}
+.apo-param-toggle::before { content: "\25B8 "; text-decoration: none; }
+.apo-param-toggle[aria-expanded="true"]::before { content: "\25BE "; }
+
+.apo-param-row > td { background: rgba(0, 0, 0, .025); padding: .6em 1em .8em; }
+.apo-param-note { margin: 0 0 .5em; font-size: .85em; opacity: .75; }
+
+.apo-param-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5em, max-content));
+  gap: .3em 1.6em;
+}
+.apo-param {
+  display: flex;
+  align-items: baseline;
+  gap: .4em;
+  font-size: .88em;
+}
+.apo-param input { margin: 0; flex: none; }
+.apo-param small { opacity: .6; font-variant-numeric: tabular-nums; }
+
+#quota-warning[hidden] { display: none; }
+#quota-warning { margin: .6em 0 0; }
+
+/* The dropdown that reaches the parameter versions not worth a tick box of
+   their own. Sits in the same grid as the ticks and is the same height, so it
+   reads as one more option rather than a separate control. */
+/* The dropdown reaching the versions with no tick box of their own.
+   Spans the whole grid rather than sitting in one 11em column: in a column it
+   wrapped "Another version" onto two lines and became the tallest thing in the
+   block, which made a secondary control look like the main event. Full width
+   keeps it one line high and puts the select where the eye already is. */
+.apo-param-more {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  margin-top: .35em;
+  padding: .25em .5em;
+  border: 1px dashed rgba(128, 128, 128, .45);
+  border-radius: 3px;
+  font-size: .9em;
+}
+.apo-param-more span { white-space: nowrap; }
+.apo-param-more .apo-param-pick {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.apo .apo-param-none {
+  background: none;
+  border: 1px solid rgba(128, 128, 128, .45);
+  border-radius: 3px;
+  padding: .15em .6em;
+  font: inherit;
+  font-size: .95em;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.apo .apo-param-none:hover { color: var(--dark); border-color: currentColor; }
+.apo-param-more select {
+  flex: 0 1 22em;
+  min-width: 9em;
+  max-width: 100%;
+  padding: .1em .25em;
+  font: inherit;
+}
+/* The current list is part of the wiki download. Muted so it reads as a
+   statement of fact rather than a choice the reader failed to make. */
+.apo-param-fixed { opacity: 0.75; }
+.apo-param-fixed input { cursor: not-allowed; }
+
+/* The toast's action button. Only appears when a toast offers something to do,
+   which today is a wiki that cannot be updated in place and has to be
+   downloaded again. */
+.ap-toast-action {
+  margin-top: 0.6rem;
+  align-self: flex-start;
+}
+.ap-toast-action[hidden] { display: none; }
+
+/* The offline-mode switch at the top of the panel. */
+.apo .apo-mode {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 16px; border-bottom: 1px solid #dee2e6;
+}
+.apo .apo-switch {
+  position: relative; display: inline-block; flex: 0 0 auto;
+  width: 44px; height: 24px; margin-top: 2px;
+}
+.apo .apo-switch input { opacity: 0; width: 0; height: 0; margin: 0; }
+.apo .apo-switch-track {
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  background: #adb5bd; border-radius: 12px; cursor: pointer;
+  transition: background 0.15s;
+}
+.apo .apo-switch-track::before {
+  content: ""; position: absolute; left: 3px; top: 3px;
+  width: 18px; height: 18px; background: #fff; border-radius: 50%;
+  transition: transform 0.15s;
+}
+.apo .apo-switch input:checked + .apo-switch-track { background: var(--success); }
+.apo .apo-switch input:checked + .apo-switch-track::before { transform: translateX(20px); }
+.apo .apo-switch input:focus-visible + .apo-switch-track { outline: 2px solid var(--dark); outline-offset: 2px; }
+.rst-content .apo .apo-off-warning { margin: 12px 16px; padding-bottom: 18px; }
+/* The ghost button is drawn for the dark strip; on the cream note it needs ink. */
+.apo .apo-off-warning .apo-btn-ghost {
+  color: #6b5518;
+  border-color: #6b5518;
+  background: transparent;
+}
+.apo .apo-off-actions { display: flex; gap: 8px; margin-top: 10px; }
