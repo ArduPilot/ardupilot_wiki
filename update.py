@@ -1259,6 +1259,18 @@ class WikiUpdater:
         info("=== Step 5b: Post-build passes ===")
         info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
 
+        # Both passes read the source tree, not --destdir: copy_build moves
+        # <wiki>/build/html there later in this method.
+        passes_root = Path(".")
+        wikis = [self.args.site] if self.args.site else ALL_WIKIS
+
+        try:
+            from scripts.optimise_images import run as optimise_images
+            n, saved = optimise_images(wikis, passes_root)
+            info(f"recompressed {n} PNGs, saving {saved / 1048576:.1f} MB")
+        except Exception as ex:
+            error(f"image pass failed, skipping: {ex}")
+
         # Skipped for a partial build: --site leaves the other wikis unbuilt,
         # and a manifest describing one wiki would tell every saved copy it is
         # out of date.
