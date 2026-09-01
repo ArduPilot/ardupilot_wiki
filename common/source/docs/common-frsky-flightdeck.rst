@@ -9,9 +9,7 @@ Overview
 
 `FlightDeck <http://www.craftandtheoryllc.com/flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-x9d-x7-q-x7-qx7-telemetry-smartport-smart-port-serial/>`__  by `Craft and Theory <http://www.craftandtheoryllc.com>`__ allows easy viewing of flight modes, altitude, speeds, attitude and critical system alerts including failsafes and battery errors such as unbalanced cells warnings and low battery alerts on your transmitters. As such, it is a good companion to Tower or Mission Planner that adds extra confidence to your piloting.
 
-.. raw:: html
-
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/8Ldy0xH_G7M" frameborder="0" allowfullscreen></iframe>
+.. youtube:: 8Ldy0xH_G7M
 
 Complete documentation for FlightDeck is available `here <http://www.craftandtheoryllc.com/downloads-and-documentation/>`__.
 

@@ -23,6 +23,7 @@ extensions = [
     'sphinx.ext.mathjax',     # For :math: element rendering
     'sphinx.ext.ifconfig',
     'sphinxcontrib.youtube',  # For youtube embedding
+    'lazy_youtube',           # loading="lazy" on every embed the line above renders
     'sphinxcontrib.jquery',
     'sphinx_tabs.tabs',       # For clickable tabs
     'sphinx_skip_versioned_params',  # Skip labels for versioned parameter files (saves RAM/time)
