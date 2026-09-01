@@ -1259,18 +1259,10 @@ class WikiUpdater:
         info("=== Step 5b: Post-build passes ===")
         info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
 
-        # Both passes read the source tree, not --destdir: copy_build moves
+        # Reads the source tree, not --destdir: copy_build moves
         # <wiki>/build/html there later in this method.
         passes_root = Path(".")
         wikis = [self.args.site] if self.args.site else ALL_WIKIS
-
-        try:
-            from scripts.lazy_embeds import run as make_embeds_lazy
-        except ImportError as ex:
-            error(f"lazy-embed pass unavailable, skipping: {ex}")
-        else:
-            n = make_embeds_lazy(wikis, passes_root)
-            info(f"deferred YouTube embeds on {n} pages")
 
         try:
             from scripts.optimise_images import run as optimise_images
