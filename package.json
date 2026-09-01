@@ -3,7 +3,7 @@
   "private": true,
   "description": "Test suites for the offline reading feature (service worker, offline page, exporter). The wiki is built by update.py; npm is needed only to run these tests.",
   "scripts": {
-    "test": "node scripts/tests/test_offline_page.js && node scripts/tests/test_offline_worker.js rover && node scripts/tests/test_offline_export.js rover && python3 scripts/tests/test_offline_archives.py && python3 scripts/tests/test_lazy_youtube.py && python3 scripts/tests/test_image_resize.py && python3 scripts/tests/test_optimise_images.py",
+    "test": "node scripts/tests/test_offline_page.js && node scripts/tests/test_offline_worker.js rover && node scripts/tests/test_offline_export.js rover && python3 scripts/tests/test_offline_archives.py && python3 scripts/tests/test_lazy_youtube.py && python3 scripts/tests/test_check_raw_iframes.py && python3 scripts/tests/test_image_resize.py && python3 scripts/tests/test_optimise_images.py",
     "test:worker": "node scripts/tests/test_offline_worker.js",
     "test:panel": "node scripts/tests/test_offline_page.js",
     "test:export": "node scripts/tests/test_offline_export.js",
