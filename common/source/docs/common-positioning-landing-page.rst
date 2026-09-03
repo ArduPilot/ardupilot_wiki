@@ -105,6 +105,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     Holybro RTK mosaic-H GPS (Dual Antenna Heading) <https://holybro.com/collections/h-rtk-gps/products/h-rtk-mosaic>
     LOCOSYS HAWK R1 RTK GNSS / R2 RTK GNSS + Compass<common-gps-locosys>
     Navisys GR-901U ZED-F9P RTK base for Ground Station <common-gps-navisys-gr901u>
+	Navisys GE-920 Dual-Antenna RTK <common-gps-navisys-ge920>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
     Septentrio AsteRx-m UAS RTK GPS <common-gps-septentrio>
