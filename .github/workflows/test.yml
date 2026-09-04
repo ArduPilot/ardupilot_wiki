@@ -59,11 +59,47 @@ jobs:
       - name: Test build
         run: |
           export AP_SPHINXOPTS=-W
-          ./update.py --parallel 4 --verbose --destdir=/tmp/web 2>&1 | tee build_errors.txt; exit ${PIPESTATUS[0]}
+          # No --paramversioning here: it needs build_parameters.py output a
+          # CI checkout does not have, so the browser gate covers the
+          # no-versions branch and the versioned picker is covered locally.
+          ./update.py --parallel 4 --verbose 2>&1 | tee build_errors.txt; exit ${PIPESTATUS[0]}
+      - name: Offline feature suites
+        run: |
+          npm install
+          npm test 2>&1 | tee suite_output.txt; exit ${PIPESTATUS[0]}
+      - name: Offline browser suite (Chromium)
+        run: |
+          # The pinned theme ships offline_hooks (sphinx_rtd_theme PR 24),
+          # so every built page must carry them; a hookless page means the
+          # pin or the conf gate broke, and the suite must not pass quietly.
+          if [ ! -f copter/build/html/index.html ]; then
+            echo "::error::copter/build/html/index.html is missing; the build step should have produced it"
+            exit 1
+          fi
+          if ! grep -q 'js/pwa.js' copter/build/html/index.html; then
+            echo "::error::built pages carry no offline hooks; the pinned theme must provide offline_hooks"
+            exit 1
+          fi
+          npx playwright install --with-deps chromium
+          node scripts/tests/test_offline_browsers.js --browsers chromium 2>&1 | tee browser_output.txt; exit ${PIPESTATUS[0]}
+      - name: Surface suite failures as annotations
+        if: failure()
+        run: |
+          for f in suite_output.txt browser_output.txt build_errors.txt; do
+            if [ -f "$f" ]; then
+              grep -aE "FAIL |FAILED:|CHECK\(S\) FAILED|Error:" "$f" | tail -15 | while read -r line; do
+                echo "::error::${f}: ${line}"
+              done
+            fi
+          done
       - name: Report build errors
         if: failure()
         run: |
-          grep -iE '\[error\]|warning' build_errors.txt > filtered_errors.txt || true
+          grep -iE '\[error\]|warning|error:|exception|traceback' build_errors.txt > filtered_errors.txt || true
+          if [ ! -s filtered_errors.txt ] && [ -f build_errors.txt ]; then
+            # A failure the filter does not recognise still gets explained.
+            tail -n 100 build_errors.txt > filtered_errors.txt
+          fi
           if [ -s filtered_errors.txt ]; then
             echo "## Build errors" >> "$GITHUB_STEP_SUMMARY"
             echo '```' >> "$GITHUB_STEP_SUMMARY"

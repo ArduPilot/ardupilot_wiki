@@ -182,7 +182,7 @@ genuinely slow; it is not half-a-minute slow.
 
 **Not a caching or hosting problem.** Nothing is being fetched in the
 right-hand column above. The `content-visibility: auto` rule for these pages
-(in `common/_templates/layout.html` on the offline branch) accounts for most of
+(in the theme's `layout.html`) accounts for most of
 the difference in the rendering row, cutting it about threefold. That is a
 worthwhile improvement and it is still a two-second page, so the underlying
 fault stands.
@@ -223,7 +223,7 @@ the rest of the document, would populate it at once. This is upstream code in
 ## 6. The wiki links to itself by absolute URL in a few hundred places
 
 **Where:** 212 links across 98 `.rst` files, plus about ten per page injected by
-`sphinx_rtd_theme/z_sidebar_additions.html` and `common/_templates/z_top_menu.html`,
+`sphinx_rtd_theme/z_sidebar_additions.html` and the theme's `z_top_menu.html`,
 giving 38,977 across a full build.
 
 Harmless on `ardupilot.org`, where they are same-origin. On any mirror, staging

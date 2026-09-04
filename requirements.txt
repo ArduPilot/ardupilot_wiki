@@ -14,9 +14,9 @@ lxml
 Pillow
 
 # Install sphinx theme from ArduPilot repository, pinned for reproducible
-# builds. Bump to the merge commit of sphinx_rtd_theme PR 24 when it lands;
-# until then conf.py only requests the offline hooks if the theme has them.
-git+https://github.com/ArduPilot/sphinx_rtd_theme.git@c84d4ec1794d4d49a71f7f152d80f9611c1becad
+# builds; this is the squash-merged sphinx_rtd_theme PR 24, whose offline
+# hooks conf.py requests whenever the installed theme declares them.
+git+https://github.com/ArduPilot/sphinx_rtd_theme.git@75241a38a490b23695940b0d512ef79af93a8274
 
 # Sphinx youtube and video plugins:
 # This package will require a --force option if you have an older extension installed

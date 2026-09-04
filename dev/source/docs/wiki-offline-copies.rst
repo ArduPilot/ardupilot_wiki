@@ -39,7 +39,7 @@ connection.
 **Save a wiki for offline use.** Saving downloads the wiki you select into your
 browser, together with the shared image set used by all wikis. The shared images
 are needed whichever wiki you choose and make up most of the first download:
-roughly 440 MB of images, plus about 80 MB for Copter. Once saving finishes,
+roughly 440 MB of images, plus about 75 MB for Copter. Once saving finishes,
 every page in that wiki opens without a connection.
 
 Saving is a deliberate choice rather than something that happens automatically.
@@ -171,8 +171,8 @@ That interception is the whole mechanism. The pages are unmodified static HTML
 as built by Sphinx; nothing is rewritten and no framework is introduced.
 
 Implementation is in ``frontend/sw.js``, registered by ``frontend/js/pwa.js``,
-which the theme (``sphinx_rtd_theme``'s ``layout.html``, together with the
-manifest link and the Offline menu entry) includes on every page. Inclusion is
+which the theme includes on every page (``layout.html`` carries the manifest
+link and the script tag; ``z_top_menu.html`` carries the Offline menu entry). Inclusion is
 not registration: ``pwa.js`` registers the worker only after the reader has
 opted in, with the switch at the top of the Offline page or by saving a wiki;
 turning the switch off unregisters it. A reader who never opts in gets no
@@ -339,6 +339,10 @@ writing into ``<destdir>/offline/``:
    complete only once the archive's contents have been checked off against
    this table, so a build published mid-save cannot be frozen in as current.
 
+``offline.cache/``
+   The video-thumbnail cache, kept beside the destination across builds and
+   never published or promoted.
+
 ``files/``
    The rewritten pages and generated video stills, published individually and
    gzipped. The archive holds a rewritten copy of each page (the donate button
@@ -431,7 +435,7 @@ Testing
 
 .. code-block:: bash
 
-    npm install --no-save jsdom
+    npm install
     npm test
 
 ``scripts/tests/test_offline_worker.js``
