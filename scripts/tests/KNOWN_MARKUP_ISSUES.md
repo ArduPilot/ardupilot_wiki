@@ -46,6 +46,6 @@ open and rejects the page. Add the matching `</p>`.
 ## Not to be confused with
 
 The markup this branch injects had the same class of problem and is fixed:
-`common/_templates/layout.html` self-closes its void elements and gives boolean
+the theme's `layout.html` (sphinx_rtd_theme) self-closes its void elements and gives boolean
 attributes values, because it is injected into the `<head>` of every page of
 every wiki, so one unclosed tag there broke every page of a book at once.
