@@ -18,8 +18,7 @@ within the sections) see the topics below:
 
     Install Ground Station Software <common-install-gcs>
     Autopilot System Assembly <traditional-helicopter-autopilot-assembly-instructions>
-    Loading Firmware to boards with existing ArduPilot firmware <common-loading-firmware-onto-pixhawk>
-    Loading Firmware to boards without existing ArduPilot firmware<common-loading-firmware-onto-chibios-only-boards>
+    Loading Firmware <common-loading-firmware>
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
     Suggested Parts List <traditional-heli-parts-list>
     Configuration <traditional-helicopter-configuring-hardware>

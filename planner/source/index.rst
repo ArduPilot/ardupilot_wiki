@@ -32,8 +32,7 @@ Please use the sidebar menus for instructions and more information.
 
    Mission Planner Overview <docs/mission-planner-overview>
    docs/mission-planner-installation
-   Loading Firmware onto boards with existing ArduPilot firmware <docs/common-loading-firmware-onto-pixhawk>
-   Loading Firmware onto boards without existing ArduPilot firmware (first time only) <docs/common-loading-firmware-onto-chibios-only-boards>
+   Loading Firmware <docs/common-loading-firmware>
    docs/common-connect-mission-planner-autopilot
    docs/common-mission-planning
    docs/mission-planner-features

@@ -20,8 +20,7 @@ within the sections) see the topics below:
     :maxdepth: 1
 
     Install Ground Station Software <common-install-gcs>
-    Loading Firmware to boards with existing ArduPilot firmware <common-loading-firmware-onto-pixhawk>
-    Loading Firmware to boards without existing ArduPilot firmware<common-loading-firmware-onto-chibios-only-boards>
+    Loading Firmware <common-loading-firmware>
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
     Radio Control Calibration <common-radio-control-calibration>
     Accelerometer Calibration <common-accelerometer-calibration>
