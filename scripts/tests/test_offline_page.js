@@ -143,12 +143,12 @@ function panelMarkup() {
   const panel = rst.indexOf('<div class="apo">');
   const warn = rst.indexOf('<div id="storage-warning">');
   const start = warn !== -1 && warn < panel ? warn : panel;
-  // Forward from the panel: the CSS above it names the install button too.
-  const end = rst.indexOf('Install as an app', start);
+  // Forward to the prose that follows the tool; the panel now holds it all.
+  const end = rst.indexOf('What to Expect', start);
   let html = rst.slice(start, end);
   html = html.replace(/^\s{0,3}/gm, '');            // rST indentation
   html = html.split('\n').filter(l => !l.trim().startsWith('.. ')).join('\n');
-  return html + '<div id="ap-install-app"></div><span id="install-state"></span>';
+  return html;
 }
 
 /** A site serving file tables (`tables`) and files (`served`); anything else 404s. */
