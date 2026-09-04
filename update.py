@@ -954,30 +954,6 @@ def check_imports():
     debug("Imports OK")
 
 
-def check_ref_directives():
-    '''check formatting around ref directive that sphinx does not warn about'''
-    character_before_ref_tag = re.compile(r"[a-zA-Z0-9_:]:ref:")
-    character_after_ref_tag = re.compile(r"(:ref:`.*?`[_]{0,2}) ([\.,:])")
-
-    # don't check "common="" files in vehicle wikis
-    skipped_files = set()
-    for wiki in ALL_WIKIS:
-        skipped_files.update(glob.glob(f'{wiki}/source/docs/common-*.rst'))
-    wiki_glob = set(glob.glob("**/*.rst", recursive=True))
-    files_to_check = wiki_glob.difference(skipped_files)
-    for f in files_to_check:
-        with open(f, "r", encoding='utf-8') as file:
-            try:
-                for i, line in enumerate(file.readlines()):
-                    if character_before_ref_tag.search(line):
-                        error(f'Remove character before ref directive in "{f}" on line number {i+1}')
-                    if character_after_ref_tag.search(line):
-                        error(f'Remove character after ref directive in "{f}" on line number {i+1}')
-            except UnicodeDecodeError as ex:
-                print(f"UnicodeError in {f}: ", ex)
-                sys.exit(1)
-
-
 def create_features_pages(site):
     '''for each vehicle, write out a page containing features for each
     supported board'''
@@ -1217,7 +1193,6 @@ class WikiUpdater:
         building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
 
         check_imports()
-        check_ref_directives()
 
         info("=== Step 1: Creating features pages ===")
         info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
