@@ -334,6 +334,15 @@
   margin: 0 0 10px;
   font-weight: 700;
 }
+.apo .apo-subhead {
+  background: var(--dark);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 16px;
+}
+.apo .apo-install { padding: 8px 16px 14px; }
+.apo .apo-install .apo-install-row { margin-bottom: 6px; }
+.apo .apo-install .apo-install-row { margin-top: 0; }
 .apo .apo-file { margin-bottom: 14px; }
 .apo .apo-file:last-child { margin-bottom: 0; }
 .apo .apo-hint { color: var(--muted); font-size: .85rem; margin-top: 3px; }
@@ -369,16 +378,7 @@
 }
 .apo-install-row .apo-btn {
   font-family: inherit;
-  font-size: .875rem;
-  font-weight: 500;
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: 1px solid #dee2e6;
-  background: #fff;
-  color: #212529;
-  cursor: pointer;
 }
-.apo-install-row .apo-btn:hover { background: #f8f9fa; }
 .apo-install-row .apo-hint { color: #6c757d; font-size: .85rem; }
 .apo code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;

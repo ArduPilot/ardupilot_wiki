@@ -9,26 +9,51 @@
 Offline Copies
 ==============
 
-Keep the documentation readable with no connection: in a hangar, in a field, or
-anywhere the signal runs out.
+We have implemented a way to easily save offline copies of the ArduPilot wiki
+so that key documentation can still be accessed when there is no internet
+connection available. You can select which parts of the wiki you would like to
+save and never be left scratching your head trying to remember how to
+configure a vehicle or plan a mission.
 
-This page offers three different things:
+Having the ability to access the trove of information from the wiki at the
+field improves the ability to troubleshoot issues and gives you the confidence
+to fly safely.
 
-- **Save a wiki** downloads its documentation into this browser so that you
-  can read it offline.
-- **Save as .html** creates a portable file that you can open from a USB stick
-  or copy to another computer.
-- **Install app** adds a launcher icon and its own window. It does not download
-  documentation.
+There are three ways you can go about making offline copies:
+
+1. You can download all, or parts, of the wiki **into the browser**, which
+   will be cached and available to use with no internet connection. (But if
+   you run out of storage the browser can delete it without warning you.)
+2. You can **install the wiki as an app**, like a normal app such as Google
+   Chrome. This also makes it less likely that the browser will remove the
+   saved wikis without warning.
+3. You can save all, or parts, of the wiki **as a .html file**, which you can
+   save to a USB stick and copy to another device.
 
 No account is needed. The browser downloads the selected documentation from
-this site and stores it on this device; it does not upload your documentation
-or create a file in your Downloads folder. To create a file, use **Save as
-.html** below.
+the site and stores it on this device; it does not upload your documentation
+or create a file in your Downloads folder unless you download the HTML.
 
-For how any of this works, what it needs to run and how to test it, see `How
-Offline Copies Work <../../dev/docs/wiki-offline-copies.html>`__ in the
-developer documentation.
+To learn more about how any of this works, what it needs to run, and how to
+test it, see `How Offline Copies Work
+<../../dev/docs/wiki-offline-copies.html>`__ in the developer documentation.
+
+Implementing Offline Copies
+===========================
+
+Select the parts of the wiki that you wish to access offline in the table
+below and click **Save selected wikis**. You will find that if you turn off
+your internet connection, you will still be able to access the parts of the
+wiki that you have selected.
+
+Click **Check for updates** periodically to ensure that you have the most up
+to date version of the parts of the wiki that you have saved. You can select
+**Remove all** to clear the cache if you no longer need access to the saved
+wiki.
+
+You can turn on **Offline mode**, which runs a service worker in the browser
+so the pages you have read, and the wikis you save, open with no connection.
+Turning it off removes everything saved in the browser.
 
 .. raw:: html
 
@@ -134,15 +159,29 @@ developer documentation.
        </div>
      </div>
 
+     <div class="apo-subhead">Install as an app</div>
+     <div class="apo-install">
+       <div class="apo-install-row">
+         <button id="ap-install-app" class="apo-btn apo-btn-primary">Install app</button>
+         <span id="install-state" class="apo-hint"></span>
+       </div>
+       <div class="apo-hint">If your device is running low on storage, your
+         browser may unexpectedly clear the cached data, such as your offline
+         wiki. Installing as an app makes that less likely, and gives the wiki
+         its own window and a launcher icon. It downloads nothing by
+         itself.</div>
+       <!-- Screenshots of the install flow go here. -->
+     </div>
+
+     <div class="apo-subhead">Save as a static HTML page</div>
      <div class="apo-files">
-       <h3>Save a copy as a file</h3>
        <p class="apo-hint" style="margin-top:0">Built on this device from the
          wikis ticked above. Anything not saved yet is downloaded first, so
          one press is enough. Each file contains exactly the wikis you chose,
          shared images included.</p>
 
        <div class="apo-file">
-         <button id="dl-single" class="apo-btn apo-btn-outline">Save as .html</button>
+         <button id="dl-single" class="apo-btn apo-btn-primary">Save as .html</button>
          <div class="apo-hint">A single self-contained page. Double-click it, nothing
            to install. Search works across the full text of every page. It runs
            from a USB stick, though it is large and takes a moment to open.</div>
@@ -150,6 +189,12 @@ developer documentation.
      </div>
 
    </div>
+
+   <script src="../_static/common_offline_document_builder.js" defer="defer"></script>
+   <script src="../_static/common_offline_export.js" defer="defer"></script>
+   <script src="../_static/common_offline_unpack.js" defer="defer"></script>
+   <script src="../_static/common_offline_update.js" defer="defer"></script>
+   <script src="../_static/common_offline_page.js" defer="defer"></script>
 
 What to Expect
 ==============
@@ -170,10 +215,12 @@ The shared images are needed whichever wiki you choose, because nearly every
 page uses them, so the first save is the large one. Saving a second wiki
 afterwards costs only its own pages.
 
-.. note::
+**It is faster, too.** Roughly:
 
-   Saved pages live in your browser's storage for this site. Clearing site data
-   removes them, and you would need to download again.
+=============================  ========================================
+A page you have read           opens in a blink instead of a second
+The huge parameter lists       about three times faster to appear
+=============================  ========================================
 
 How It Works
 ============
@@ -190,27 +237,17 @@ saved wikis and every cached page from this browser and returns the site to
 how it was; you are asked first, and told how much will go. Files you saved
 with **Save as .html** are not affected.
 
-Install as an App
-=================
+Things to Consider
+==================
 
-.. note::
-
-   Installing downloads nothing, and is not needed to read offline. Saving pages
-   works in an ordinary browser tab. It gives the wiki its own window and a
-   launcher icon. Depending on your browser, installing may also help it retain
-   saved pages when the device runs low on space.
-
-.. raw:: html
-
-   <div class="apo-install-row">
-     <button id="ap-install-app" class="apo-btn apo-btn-outline" hidden="hidden">Install app</button>
-     <span id="install-state" class="apo-hint"></span>
-   </div>
-
-   <script src="../_static/common_offline_document_builder.js" defer="defer"></script>
-   <script src="../_static/common_offline_export.js" defer="defer"></script>
-   <script src="../_static/common_offline_unpack.js" defer="defer"></script>
-   <script src="../_static/common_offline_update.js" defer="defer"></script>
-   <script src="../_static/common_offline_page.js" defer="defer"></script>
+- **The browser can evict saved wikis** if the device runs very low on
+  storage, without warning you first. Installing as an app helps, and the
+  storage line under the table says whether this browser has granted
+  persistent storage.
+- **Clearing this site's data removes everything saved here**, as does
+  clearing browsing data in most browsers. Offline mode turns off with it.
+- **Private and incognito windows keep nothing** once the last one closes.
+- **A saved wiki is a snapshot.** Leave automatic updates on, or press Check
+  for updates now and then, so your copy follows the site.
 
 [copywiki destination="copter,plane,rover,sub,blimp,antennatracker,dev,planner,planner2,ardupilot,mavproxy"]

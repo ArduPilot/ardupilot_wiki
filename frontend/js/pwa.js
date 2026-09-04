@@ -72,7 +72,13 @@
     deferredPrompt = null;
     remember(false);
     hideInstallButton();
+    installState('Installed.');
   });
+
+  function installState(text) {
+    var state = document.getElementById('install-state');
+    if (state) { state.textContent = text; }
+  }
 
   // Anything marked data-ap-install offers to install, not only the button.
   var INSTALL_SELECTOR = '#' + INSTALL_BUTTON_ID + ', [data-ap-install]';
@@ -100,9 +106,10 @@
     ready.then(function () {
       if (isButton) { target.disabled = false; }
       if (!deferredPrompt) {
-        // It never arrived, so this browser will not install it after all.
+        // This browser will not prompt; point at its own menu instead.
         remember(false);
-        hideInstallButton();
+        installState('Your browser did not offer to install here. Look for ' +
+                     '\u201cInstall\u201d or \u201cAdd to Home Screen\u201d in its menu.');
         // Fall back to where the link pointed.
         var href = !isButton && target.getAttribute('href');
         if (href && href.charAt(0) === '#') { window.location.hash = href; }
