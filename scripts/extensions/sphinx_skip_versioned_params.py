@@ -52,16 +52,6 @@ def skip_versioned_labels(app: Sphinx, env: BuildEnvironment, docname: str) -> N
             logger.debug(f"Skipped {len(labels_to_remove)} labels for versioned file: {docname}")
 
 
-def skip_versioned_from_search(app: Sphinx, pagename: str, templatename: str,
-                               context: dict, doctree) -> None:
-    """
-    Exclude versioned parameter pages from search index to reduce index size.
-    """
-    if is_versioned_param_file(pagename):
-        # Mark page to be excluded from search
-        context['nosearch'] = True
-
-
 def env_get_outdated_handler(app: Sphinx, env: BuildEnvironment,
                              added: set, changed: set, removed: set) -> list:
     """
@@ -69,7 +59,7 @@ def env_get_outdated_handler(app: Sphinx, env: BuildEnvironment,
     Logs statistics about versioned parameter files being processed.
 
     Note: This event only allows ADDING documents to rebuild, not removing them.
-    The actual optimization happens via label skipping and search exclusion.
+    The actual optimization happens via label skipping in skip_versioned_labels().
 
     Returns an empty list (no additional documents to rebuild).
     """
@@ -86,21 +76,7 @@ def env_get_outdated_handler(app: Sphinx, env: BuildEnvironment,
 def setup(app: Sphinx) -> dict:
     """Setup the Sphinx extension."""
 
-    # Hook after document is read to remove labels
-    app.connect('doctree-read', lambda app, doctree: None)  # Placeholder
     app.connect('env-get-outdated', env_get_outdated_handler)
-
-    # Hook to skip search indexing for versioned files
-    app.connect('html-page-context', skip_versioned_from_search)
-
-    # Use source-read to track which files are versioned params
-    def mark_versioned_file(app, docname, source):
-        if is_versioned_param_file(docname):
-            if not hasattr(app.env, '_versioned_param_files'):
-                app.env._versioned_param_files = set()
-            app.env._versioned_param_files.add(docname)
-
-    app.connect('source-read', mark_versioned_file)
 
     # After reading, clean up labels
     app.connect('doctree-resolved', lambda app, doctree, docname:
