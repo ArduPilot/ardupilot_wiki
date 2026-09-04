@@ -389,13 +389,21 @@ GCS (gcs:)
 Serial LED (serialLED:)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-This library allows the control of WS8212B RGB LED strings via an output reserved for scripting and  selected by SERVOx_FUNCTION = 94 thru 109 (Script Out 1 thru 16)
+This library allows the control of RGB LED strings via an output reserved for scripting and  selected by SERVOx_FUNCTION = 94 thru 109 (Script Out 1 thru 16)
 
-- :code:`set_num_LEDs( output_number ,  number_of_LEDs )` - Sets the number_of_LEDs in the string on a servo output. output_number is servo output number 1-16 that the string is attached to with a string having <number_of_LEDs>.
+Set the length of the string with the call matching the type of LED attached. In each case :code:`chan` is the servo output number, 1 to 16, that the string is attached to. All three return true on success.
 
-- :code:`set_RGB( output_number ,  LED_number ,  r , g , b )` - Set the data for LED_number (1-32) on the string attached servo output_number (1-16) output to the r,g,b values (0-255)
+- :code:`set_num_neopixel( chan ,  num_leds )` - Sets the number of NeoPixels in the string, up to 128.
 
-- :code:`send()` - Sends the data to the LED strings
+- :code:`set_num_neopixel_rgb( chan ,  num_leds )` - As above, for a string driven in RGB mode.
+
+- :code:`set_num_profiled( chan ,  num_leds )` - Sets the number of ProfiLEDs in the string, up to 126.  A second output, in the same PWM group, must have SERVOx_FUNCTION = 132 (ProfiLEDClock) assigned, otherwise this call fails.
+
+Then set and send the colours:
+
+- :code:`set_RGB( chan ,  led_index ,  red , green , blue )` - Set the colour of one LED on the string attached to output :code:`chan`.  :code:`led_index` counts from 0, and -1 sets every LED in the string.  The colour values are 0 to 255.
+
+- :code:`send( chan )` - Sends the configured values to the LED string on output :code:`chan`.
 
 
 Notify (notify:)
