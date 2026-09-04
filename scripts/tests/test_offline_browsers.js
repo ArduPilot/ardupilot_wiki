@@ -254,6 +254,67 @@ async function waitForClean(page, timeout = 10000) {
   return state;
 }
 
+async function checkFreshnessGuards(name, browser, base) {
+  // Two guards that only a real worker exercises: a saved page must be served
+  // over a stale browsing copy without a false "updated" toast, and a page the
+  // server 404s must leave the browsing cache.
+  const context = await browser.newContext({ serviceWorkers: 'allow' });
+  await context.addInitScript(() => {
+    window.localStorage.setItem('ap-offline-enabled', '1');
+  });
+  const page = await context.newPage();
+  try {
+    await page.goto(base + VISITED, { waitUntil: 'load' });
+    const control = await waitForControl(page);
+    if (!control.controlled) {
+      check(name, 'freshness guards: worker took control', false);
+      return;
+    }
+    // A saved copy plus a stale browsing copy of the same page.
+    await page.evaluate(async (u) => {
+      const s = await caches.open('ardupilot-offline-dev');
+      await s.put('/__ap_complete__',
+        new Response(JSON.stringify({ build: 'x', id: 'dev' })));
+      await s.put(new Request(location.origin + u),
+        new Response('<html>SAVED FRESH</html>', { headers: { 'Content-Type': 'text/html' } }));
+      const b = await caches.open('ardupilot-pages-v11');
+      await b.put(new Request(location.origin + u),
+        new Response('<html>STALE BROWSING</html>', { headers: { 'Content-Type': 'text/html' } }));
+    }, VISITED);
+    const res = await page.evaluate(async (u) => {
+      let toast = false;
+      navigator.serviceWorker.addEventListener('message',
+        (e) => { if (e.data && e.data.type === 'PAGE_UPDATED') { toast = true; } });
+      const r = await fetch(location.origin + u);
+      const body = (await r.text()).slice(0, 40);
+      await new Promise((res) => setTimeout(res, 1200));
+      return { body, toast };
+    }, VISITED);
+    check(name, 'the saved copy is served over a stale browsing copy',
+          /SAVED FRESH/.test(res.body), JSON.stringify(res.body));
+    check(name, 'serving the saved copy raises no false update toast',
+          !res.toast, 'toast=' + res.toast);
+
+    // A page the server does not have must be evicted from the browsing cache.
+    const ghost = '/dev/docs/ghost-not-a-real-page.html';
+    await page.evaluate(async (u) => {
+      const b = await caches.open('ardupilot-pages-v11');
+      await b.put(new Request(location.origin + u),
+        new Response('<html>STALE</html>', { headers: { 'Content-Type': 'text/html' } }));
+    }, ghost);
+    await page.goto(base + ghost, { waitUntil: 'load' }).catch(() => {});
+    await page.waitForTimeout(1200);
+    const stillCached = await page.evaluate(async (u) => {
+      const b = await caches.open('ardupilot-pages-v11');
+      return !!(await b.match(location.origin + u));
+    }, ghost);
+    check(name, 'a page the server 404s is evicted from the browsing cache',
+          !stillCached, 'stillCached=' + stillCached);
+  } finally {
+    await context.close().catch(() => {});
+  }
+}
+
 async function checkOptOut(name, browser, base) {
   let ctx = await optedInPage(browser, base);
   try {
@@ -481,21 +542,36 @@ async function runEngine(name, launcher, base) {
       try {
         await p.goto(base + '/ardupilot/docs/common-offline.html', { waitUntil: 'load' });
         await p.waitForTimeout(3500);
-        return await p.evaluate(() => ({
-          switchOn: !!(document.getElementById('offline-mode') || {}).checked,
-          vehicles: document.querySelectorAll('.apo-param-toggle').length,
-          versions: document.querySelectorAll('.param-check').length,
-          ticked: document.querySelectorAll('.param-check:checked').length,
-        }));
+        return await p.evaluate(async () => {
+          // A build made without --paramversioning offers no versions at
+          // all; the panel is right to draw none, so the check adapts.
+          let offered = 0;
+          try {
+            const m = await (await fetch('/offline/offline-manifest.json')).json();
+            offered = (m.wikis || [])
+              .filter((w) => (w.param_versions || []).length).length;
+          } catch (err) { /* the DOM counts below still tell the story */ }
+          return {
+            switchOn: !!(document.getElementById('offline-mode') || {}).checked,
+            offered,
+            vehicles: document.querySelectorAll('.apo-param-toggle').length,
+            versions: document.querySelectorAll('.param-check').length,
+            ticked: document.querySelectorAll('.param-check:checked').length,
+          };
+        });
       } finally { await p.close().catch(() => {}); }
     })();
     check(name, 'the offline page shows the switch on once opted in',
           picker.switchOn, JSON.stringify({ switchOn: picker.switchOn }));
     check(name, 'each vehicle offers its versions with the newest of each series ticked',
-          picker.vehicles > 0 && picker.versions > 0 &&
-          picker.ticked === picker.versions,
-          picker.vehicles + ' vehicles, ' + picker.versions + ' versions, ' +
-          picker.ticked + ' ticked');
+          picker.offered === 0
+            ? picker.versions === 0
+            : (picker.vehicles > 0 && picker.versions > 0 &&
+               picker.ticked === picker.versions),
+          picker.offered === 0
+            ? 'no versions in this build (no --paramversioning), none drawn'
+            : picker.vehicles + ' vehicles, ' + picker.versions + ' versions, ' +
+              picker.ticked + ' ticked');
 
     /* ---- go offline for real ------------------------------------------- */
 
@@ -634,6 +710,8 @@ async function runEngine(name, launcher, base) {
     // Last, and in a context of its own: see checkUpdateWindow.
     await phase(name, 'deploy check (seeds 8,811 entries)',
                 () => checkUpdateWindow(name, browser, base));
+    await phase(name, 'freshness guards (saved precedence, 404 eviction)',
+                () => checkFreshnessGuards(name, browser, base));
     await phase(name, 'opt-out paths (switch, kill switch)',
                 () => checkOptOut(name, browser, base));
   } catch (err) {
