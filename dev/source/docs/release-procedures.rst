@@ -236,8 +236,8 @@ An additional tag is created for each vehicle that includes the patch release nu
 - ``git push origin Rover-4.7.0``
 - ``git tag Sub-4.7.0``
 - ``git push origin Sub-4.7.0``
-- ``git tag AntennaTracker-4.7.0``
-- ``git push origin AntennaTracker-4.7.0``
+- ``git tag Tracker-4.7.0``
+- ``git push origin Tracker-4.7.0``
 - ``git tag AP_Periph-4.7.0``
 - ``git push origin AP_Periph-4.7.0``
 
