@@ -13,16 +13,67 @@ START=$(date +%s)
 ############################
 # grab a lock file. Not atomic, but close :)
 # tries to cope with NFS
+
+# A build older than LOCK_MAX_AGE, or one that has produced no output for
+# LOCK_MAX_IDLE, is wedged: kill it and take the lock. A full build is ~4.5
+# hours and never goes quiet for an hour. Without this one hung download stops
+# wiki publishing indefinitely, since the lock is never reclaimed.
+LOCK_MAX_AGE=30000
+LOCK_MAX_IDLE=3600
+
+# every descendant of $1, deepest first
+descendants() {
+    local child
+    for child in $(pgrep -P "$1" 2>/dev/null); do
+        descendants "$child"
+        echo "$child"
+    done
+}
+
+# kill a wedged build and its children; 0 if the lock is now ours to take
+break_lock() {
+    local pid="$1" why="$2" victims
+    # the pid may have been recycled onto something that is not ours
+    case "$(ps -o args= -p "$pid" 2>/dev/null)" in
+        *update.sh*) ;;
+        *) echo "$(date +%s) lock pid $pid is not update.sh, left alone" >>build.lck.log
+           return 1 ;;
+    esac
+    victims="$(descendants "$pid") $pid"
+    echo "$(date +%s) breaking stale lock, pid $pid ($why), killing:" $victims >>build.lck.log
+    kill -TERM $victims 2>/dev/null
+    sleep 10
+    kill -KILL $victims 2>/dev/null
+    sleep 2
+    if kill -0 "$pid" 2>/dev/null; then
+        echo "$(date +%s) pid $pid survived SIGKILL, lock not taken" >>build.lck.log
+        return 1
+    fi
+    return 0
+}
+
 lock_file() {
         lck="$1"
         pid=`cat "$lck" 2> /dev/null`
 
         if test -f "$lck" && kill -0 $pid 2> /dev/null; then
-	    LOCKAGE=$(($(date +%s) - $(stat -c '%Y' "build.lck")))
-	    test $LOCKAGE -gt 30000 && {
-                echo "old lock file $lck is valid for $pid with age $LOCKAGE seconds"
-	    }
-            return 1
+            now=$(date +%s)
+            started=$(stat -c '%Y' "$lck")
+            # last sign of life: taking the lock, or the build writing output.
+            # update.cron-output.txt is useless here, every cron tick rewrites it.
+            last=$started
+            if test -f logs/update-latest.log; then
+                out=$(stat -c '%Y' logs/update-latest.log)
+                if test "$out" -gt "$last"; then last=$out; fi
+            fi
+            age=$((now - started))
+            idle=$((now - last))
+
+            why=""
+            if test $age -gt $LOCK_MAX_AGE; then why="age ${age}s"; fi
+            if test $idle -gt $LOCK_MAX_IDLE; then why="${why:+$why, }silent ${idle}s"; fi
+            if test -z "$why"; then return 1; fi
+            if ! break_lock "$pid" "$why"; then return 1; fi
         fi
         /bin/rm -f "$lck"
         echo "$$" > "$lck"
