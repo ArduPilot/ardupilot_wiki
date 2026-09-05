@@ -59,3 +59,11 @@ repos:
         entry: python scripts/check_youtube_timestamps.py
         language: python
         types: [rst]
+
+  - repo: local
+    hooks:
+      - id: check-raw-iframes
+        name: Check video embeds use the youtube or vimeo directive, not a raw iframe
+        entry: python scripts/check_raw_iframes.py
+        language: python
+        types: [rst]
