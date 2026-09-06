@@ -14,12 +14,16 @@ START=$(date +%s)
 # grab a lock file. Not atomic, but close :)
 # tries to cope with NFS
 
-# A build older than LOCK_MAX_AGE, or one that has produced no output for
-# LOCK_MAX_IDLE, is wedged: kill it and take the lock. A full build is ~4.5
-# hours and never goes quiet for an hour. Without this one hung download stops
-# wiki publishing indefinitely, since the lock is never reclaimed.
+# A build is wedged if it is older than LOCK_MAX_AGE, or if its process tree
+# has used no CPU at all for LOCK_MAX_STALL. CPU is the signal here because a
+# build blocked on a dead socket accrues exactly zero while a working one
+# accrues constantly. Log output is not a usable signal: Sphinx goes quiet for
+# half an hour at a time while running flat out. Without this a single hung
+# download stops wiki publishing indefinitely, as the lock is never reclaimed.
 LOCK_MAX_AGE=30000
-LOCK_MAX_IDLE=3600
+LOCK_MAX_STALL=1800
+# "<cpu ticks> <time those ticks were first seen>"
+LOCK_PROGRESS=build.lck.progress
 
 # every descendant of $1, deepest first
 descendants() {
@@ -28,6 +32,34 @@ descendants() {
         descendants "$child"
         echo "$child"
     done
+}
+
+# CPU ticks used by $1 and its descendants, reaped children included
+tree_cpu() {
+    local total=0 p t
+    for p in $(descendants "$1") "$1"; do
+        # strip through "comm)" first: the command name can contain spaces
+        t=$(sed 's/.*) //' /proc/$p/stat 2>/dev/null | awk '{print $12+$13+$14+$15}')
+        test -n "$t" && total=$((total + t))
+    done
+    echo $total
+}
+
+# seconds since the build last used any CPU; updates the progress file
+cpu_stalled_for() {
+    local pid="$1" now="$2" cpu prev_cpu prev_at
+    cpu=$(tree_cpu "$pid")
+    # guarded rather than "< $f 2>/dev/null": the redirect is attempted before
+    # the suppression applies, so a missing file still writes to stderr
+    if test -r "$LOCK_PROGRESS"; then
+        read -r prev_cpu prev_at < "$LOCK_PROGRESS" || true
+    fi
+    if test "$cpu" != "$prev_cpu" || test -z "$prev_at"; then
+        echo "$cpu $now" > "$LOCK_PROGRESS"
+        echo 0
+        return
+    fi
+    echo $((now - prev_at))
 }
 
 # kill a wedged build and its children; 0 if the lock is now ours to take
@@ -58,24 +90,16 @@ lock_file() {
 
         if test -f "$lck" && kill -0 $pid 2> /dev/null; then
             now=$(date +%s)
-            started=$(stat -c '%Y' "$lck")
-            # last sign of life: taking the lock, or the build writing output.
-            # update.cron-output.txt is useless here, every cron tick rewrites it.
-            last=$started
-            if test -f logs/update-latest.log; then
-                out=$(stat -c '%Y' logs/update-latest.log)
-                if test "$out" -gt "$last"; then last=$out; fi
-            fi
-            age=$((now - started))
-            idle=$((now - last))
+            age=$((now - $(stat -c '%Y' "$lck")))
+            stall=$(cpu_stalled_for "$pid" "$now")
 
             why=""
             if test $age -gt $LOCK_MAX_AGE; then why="age ${age}s"; fi
-            if test $idle -gt $LOCK_MAX_IDLE; then why="${why:+$why, }silent ${idle}s"; fi
+            if test $stall -gt $LOCK_MAX_STALL; then why="${why:+$why, }no CPU for ${stall}s"; fi
             if test -z "$why"; then return 1; fi
             if ! break_lock "$pid" "$why"; then return 1; fi
         fi
-        /bin/rm -f "$lck"
+        /bin/rm -f "$lck" "$LOCK_PROGRESS"
         echo "$$" > "$lck"
         return 0
 }
