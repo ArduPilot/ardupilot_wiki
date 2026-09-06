@@ -43,6 +43,7 @@ New Features
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
+- QRTL approach now descends gradually to RTL_ALTITUDE instead of stepping down to it, see https://github.com/ArduPilot/ardupilot_wiki/pull/8031
 [/site]
 [site wiki="copter"]
 - Ability to abort flip using aux switch low, see https://github.com/ArduPilot/ardupilot_wiki/pull/7759
