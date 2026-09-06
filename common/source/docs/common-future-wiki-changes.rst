@@ -22,6 +22,7 @@ New Board Support
 - Lectron Pi5, see https://github.com/ArduPilot/ardupilot_wiki/pull/7976
 - HGLRC H743 EVO, see https://github.com/ArduPilot/ardupilot_wiki/pull/8016
 - NWBlue Pro H757, see https://github.com/ArduPilot/ardupilot_wiki/pull/8017
+- Tustin MACH, see https://github.com/ArduPilot/ardupilot_wiki/pull/8029
 
 New Peripheral Support
 ======================
