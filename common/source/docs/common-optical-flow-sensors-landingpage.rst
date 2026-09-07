@@ -21,6 +21,7 @@ Select the links below for information on the available sensors.
     HereFlow <common-hereflow>
     Holybro H-Flow <https://holybro.com/products/h-flow>
     Mateksys 3901-L0X <common-mateksys-optflow-3901L0X>
+    MechFlow V1 <common-mechflow-v1>
     MicoAir MTF-01 <common-mtf-01>
     OpenMV <common-openmv-optflow>
     PX4FLOW <common-px4flow-overview>
