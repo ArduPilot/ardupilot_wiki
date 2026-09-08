@@ -7,7 +7,7 @@ DisplayPort, is an MSP protocol extension that allows an autopilot to remotely d
 
 HDZero, Walksnail, and DJI with WTF-OSD modifications are capable of DisplayPort operation.
 
-.. note:: on F4 based autopilots, with extremely crowded OSDs (ie many panels), it is possible that if the UART used does not have DMA, that display corruption, artifacts, etc. can occur. In this rare case, move the DisplayPort connection to a UART that does have DMA.
+.. note:: on F4 and F7 based autopilots, with extremely crowded OSDs (ie many panels), it is possible that if the UART used does not have DMA, that display corruption, artifacts, etc. can occur. In this rare case, try moving the DisplayPort connection to a UART that does have DMA. Be aware that this may or may not help: a UART listed as DMA capable will still not use DMA if its DMA channel is shared with another peripheral on that board, and which UARTs this affects varies from board to board. You can check what is actually being used by opening ``@SYS/uarts.txt`` over MAVFtp - a ``*`` immediately after the ``TX`` of a port's line means transmit DMA is in use on that port, and a blank means it is not.
 
 Features
 --------
