@@ -87,6 +87,7 @@ Unidirectional Rangefinders
     Nanoradar NRA24 <common-rangefinder-nra24>
     Nooploop TOF-Sense P <common-rangefinder-nooploop-tofsense-p>
     Nooploop TOF-Sense F <common-rangefinder-nooploop-tofsense-f>
+    Smartmicro Drone Altimeter <common-rangefinder-smartmicro-t132>
     ST VL53L0X / VL53L1X Lidar <common-vl53l0x-lidar>
     TeraRanger One/EVO Rangefinders <common-teraranger-one-rangefinder>
     TeraRanger NEO <common-teraranger-neo>
