@@ -7,7 +7,6 @@ Traditional Helicopter – Tailrotor Setup
 There are several ways for controlling the tailrotor to maintain yaw stabilization and provide yaw control, and each have a unique setup.  The :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` parameter is used to specify method for controlling the tailrotor.  A list of available tail types is given below:
 
 - Servo Only: ArduPilot will supply the tail rotor stabilization like a tail rotor gyro and control the pitch of the tail rotor blades.
-- Servo with External Gyro: ArduPilot will output yaw demands without direct yaw attitude stabilization which is provided via an external gyro.
 - Direct Drive Variable Pitch (DDVP): Instead of the tail rotor being driven from the main rotor via mechanical coupling as in the above cases, an electric motor is used with motor controlled(ramp up/down, operating point) by ArduPilot. Main yaw control is via tail blade pitch servo, as above.
 - Direct Drive Fixed Pitch Clockwise (DDFP CW): Tail rotor is driven by a motor whose ESC is controlled by ArduPilot to maintain yaw stability and yaw direction. Used with clockwise rotating main rotors, when viewed from above.
 - Direct Drive Fixed Pitch Counter-Clockwise (DDFP CCW): Tail rotor driven by a motor whose ESC is controlled by ArudPilot to maintain yaw stability and yaw direction. Used with counter-clockwise rotating main rotors, when viewed from above.
@@ -23,14 +22,7 @@ The Servo Only tail type uses a servo connected to an autopilot output whose ``S
 
 Be sure to check the direction of operation of the Tail Servo. Move the rudder stick and notice the change in tail rotor pitch. Be sure that its increase or decrease of pitch is such that the change in thrust will result in the desired direction of movement. If not, reverse the servo direction with the ``SERVOx_REVERSED`` parameter.
 
-Servo with External Gyro :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` = 1
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Instead of ArduPilot controlling both the desired yaw rate and stability, this option relies on an external gyro for stabilization. A servo is still used to input yaw rate demands to the tail and its setup as above, for the Servo Only case.
-
-The external gyro gain can be set by the ``H_GYR_GAIN`` parameter using the autopilot's "Motor7" output function,``SERVOx_FUNCTION``.
-
-In ACRO mode, this gain can be changed to the value of the ``H_GYR_GAIN_ACRO`` parameter, if non-zero.
+.. note:: Prior to Copter-4.8, :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` = 1 selected "Servo with External Gyro", which bypassed ArduPilot's yaw attitude/rate controller and passed pilot yaw demand straight to an external gyro for stabilization (using the ``H_GYR_GAIN`` and ``H_GYR_GAIN_ACRO`` parameters). This passthrough capability has been removed. Selecting :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` = 1 will now fail arming checks. An external gyro can still be used mechanically, but only in its rate (non heading-hold/non-AVCS) mode, feeding a tail servo controlled normally via :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` = 0 (Servo Only), with ArduPilot's own attitude/rate controller commanding the servo as usual.
 
 Direct Drive Variable Pitch :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` = 2
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -61,7 +53,6 @@ These Tail Type Connections are summarized below:
 Type                            H_TAIL_TYPE    TailPitch Servo    TailMotor ESC
 ==============================  ============   ===============    =============
 Servo only                      0                 Motor4          none
-Servo with Gyro                 1                 Motor4          none
 DirectDriveVariablePitch        2                 Motor4          HeliTailRSC
 DirectDriveFixedPitch(CW)       3                 na              Motor4
 DirectDriveFixesPitch(CCW)      4                 na              Motor4

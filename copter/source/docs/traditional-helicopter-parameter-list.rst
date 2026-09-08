@@ -13,7 +13,6 @@ Vehicle Type/Configuration
 These are basic setup parameters that need to be set in all cases.
 
 - :ref:`FRAME_CLASS<FRAME_CLASS>`  Note: only Single Heli and Dual Heli are valid with TradHeli firmware
-- ``H_FLYBAR_MODE``
 - :ref:`H_OPTIONS<H_OPTIONS>`
 
 General Swashplate/Collective Setup
@@ -139,13 +138,4 @@ The type of tail rotor/control used is determined by these parameters.
 
 - :ref:`H_TAIL_SPEED<H_TAIL_SPEED>`
 - :ref:`H_TAIL_TYPE<H_TAIL_TYPE>`
-
-
-External Tail Gyro
-==================
-
-Parameters are provided for external tail gyro, if used.
-
-- ``H_GYR_GAIN``
-- ``H_GYR_GAIN_ACRO``
 
