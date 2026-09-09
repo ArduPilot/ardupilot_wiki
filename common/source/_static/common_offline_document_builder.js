@@ -24,11 +24,14 @@
     'background:#171717;color:#fff;font-size:14px}' +
     '#ap-top a{color:#fff;text-decoration:none;white-space:nowrap}' +
     '#ap-top-brand{font-weight:700;font-size:15px}' +
-    '#ap-top-nav{display:flex;gap:16px;flex-wrap:wrap;overflow:hidden}' +
+    // Eleven wikis on a phone scroll sideways; wrapping would grow past the bar.
+    '#ap-top-nav{display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto}' +
     '#ap-top-nav a{opacity:.82}' +
     '#ap-top-nav a:hover{opacity:1;text-decoration:underline}' +
-    // Clear the fixed bar; border-box keeps the 100% height from overflowing.
-    '.wy-nav-side{top:45px}' +
+    // Clear the fixed bar; the theme's min-height:100% would push the sidebar
+    // 45px past the viewport, and anchor jumps would land under the bar.
+    '.wy-nav-side{top:45px;min-height:0}' +
+    '.rst-content [id]{scroll-margin-top:55px}' +
     '.wy-nav-content-wrap{box-sizing:border-box;padding-top:45px}' +
     '#ap-search{margin:12px;padding:8px 10px;border:0;border-radius:3px;' +
     'font:inherit;width:calc(100% - 24px)}' +
@@ -82,7 +85,7 @@
     'nav.innerHTML=D.nav;',
     'var topNav=document.getElementById("ap-top-nav");',
     'if(topNav&&D.homes){topNav.innerHTML=D.homes.map(function(h){',
-    'return \'<a href="#\'+h.path+\'">\'+esc(h.name||h.id)+\'</a>\';}).join("");}',
+    'return \'<a href="#\'+esc(h.path)+\'">\'+esc(h.name||h.id)+\'</a>\';}).join("");}',
     'var links=[].slice.call(nav.querySelectorAll("a[href^=\\"#\\"]"));',
     'function current(){var h=(location.hash||"").replace(/^#/,"");return (h&&h!=="/")?h:(D.home||"");}',
     // Accept #/rover, a trailing slash, a leftover .html, a missing slash.

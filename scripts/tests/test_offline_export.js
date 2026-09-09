@@ -470,6 +470,11 @@ async function main() {
       '+esc(h.name||h.id)+',
       '+esc(h.pages)+',
       'href="#\'+esc(h.path)+',
+      // The top bar builds from the same manifest names, under the same rule.
+      'return \'<a href="#\'+esc(h.path)+\'">\'+esc(h.name||h.id)+',
+      '.rst-content [id]{scroll-margin-top:55px}',
+      '#ap-top-nav{display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto}',
+      '.wy-nav-side{top:45px;min-height:0}',
       '<li><a href="#\'+esc(h.pg.p)+\'"><span>',
       '<li class="toctree-l1"><a href="#\'+esc(h.pg.p)+\'">',
       'href="#\'+esc(p)+\'" class="btn btn-neutral float-left"',
@@ -492,6 +497,14 @@ async function main() {
   check('the wiki style overrides embedded', html.includes('table.useralerts-table td'));
   check('theme markup emitted', html.includes('wy-body-for-nav'));
   check('the export carries the black top bar', html.includes('id="ap-top"'));
+  check('the top bar escapes the wiki path it links to',
+        html.includes('return \'<a href="#\'+esc(h.path)+\'">\'+esc(h.name||h.id)+'));
+  check('anchor jumps land below the fixed top bar',
+        html.includes('.rst-content [id]{scroll-margin-top:55px}'));
+  check('the top bar scrolls sideways instead of wrapping under itself',
+        html.includes('#ap-top-nav{display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto}'));
+  check('the sidebar ends at the bottom of the viewport, not 45px below it',
+        html.includes('.wy-nav-side{top:45px;min-height:0}'));
   check('fonts inlined', scan.counts[3] > 0, scan.counts[3] + ' rules');
   check('images stored once (no per-page duplication)',
         inlineDataUris <= imgBlocks + 2,
@@ -750,6 +763,19 @@ async function main() {
           topLinks.length === D.homes.length &&
           D.homes.every((h) => topLinks.indexOf('#' + h.path) !== -1),
           topLinks.join(', ') + ' vs ' + D.homes.map((h) => h.path).join(', '));
+    // A path is an attribute value; a quote in it must not escape the href.
+    const hostile = 'rover/docs/x" onmouseover="alert(1)';
+    const hw = bootShell(Object.assign({}, D, {
+      homes: [{ id: 'rover', name: 'Rover', path: hostile, pages: 1 }] }), paramBodies);
+    if (hw) {
+      const hostileLinks = hw.document.querySelectorAll('#ap-top-nav a');
+      check('a hostile wiki path stays inside the top bar href',
+            hostileLinks.length === 1 &&
+            hostileLinks[0].getAttribute('href') === '#' + hostile &&
+            !hostileLinks[0].hasAttribute('onmouseover'),
+            hostileLinks.length + ' anchors: ' +
+            [].map.call(hostileLinks, (a) => a.outerHTML).join(' '));
+    }
     const inFile = new Set(D.pages.map((p) => p.p));
     // The export's own wiki order, where the reading order has to stop.
     const wiki0 = D.wikis[0];
