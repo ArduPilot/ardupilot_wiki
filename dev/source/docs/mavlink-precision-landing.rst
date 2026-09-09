@@ -95,6 +95,7 @@ If only the body-frame angle to the target is known then "angle_x" and "angle_y"
    <td>uint8_t</td>
    <td>not used</td>
    </tr>
+   <tr>
    <td><strong>position_valid</strong></td>
    <td>uint8_t</td>
    <td>0 if angle_x, angle_y should be used.  1 if x, y, z fields contain position information</td>

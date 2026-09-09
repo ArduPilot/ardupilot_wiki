@@ -480,6 +480,7 @@ These parameters are not supported by Copter.
    <td>Acc radius</td>
    <td>Acceptance radius in meters (waypoint is complete when the plane is this close to the waypoint location</td>
    </tr>
+   <tr>
    <td><strong>param3</strong></td>
    <td>Pass by</td>
    <td>0 to pass through the WP, if > 0 radius in meters to pass by WP.
@@ -728,7 +729,6 @@ and the mission will move on to the next command immediately.
    <th>Mission Planner Field</th>
    <th>Description</th>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td>param1</td>
    <td></td>
@@ -1036,6 +1036,7 @@ the path in a line between the waypoint centers. =1.
    <td>Radius</td>
    <td>Loiter radius around the waypoint. Units are in meters. Values over 255 will be rounded to units of 10 meters. and values greater than 2550 will be clamped to 2550 m. Negative values indicate counter-clockwise turns. A value of zero will use WP_LOITER_RAD </td>
    </tr>
+   <tr>
    <td><strong>param4</strong></td>
    <td>XTrack Tangent</td>
    <td>Determines which line the aircraft will track after exiting the loiter. If 0, track the line from the center of the circle to the next waypoint. If 1, track the line tangent to the circle to the next waypoint.</td>
@@ -1177,9 +1178,10 @@ tracks the line between the waypoint centers.
    <td>Dir 1=CW</td>
    <td>Loiter direction. Positive is clockwise and negative is counter-clockwise. The magnitude is ignored; radius is set by WP_LOITER_RAD.</td>
    </tr>
+   <tr>
    <td><strong>param4</strong></td>
    <td>XTrack Tangent</td>
-   <td>Determines which line the aircraft will track after exiting the loiter. If 0, track the line from the center of the circle to the next waypoint. If 1, track the line tangent to the circle to the next waypoint.
+   <td>Determines which line the aircraft will track after exiting the loiter. If 0, track the line from the center of the circle to the next waypoint. If 1, track the line tangent to the circle to the next waypoint.</td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>
@@ -1516,7 +1518,6 @@ control the landing is provided in :ref:`LAND flight mode <land-mode>`.
    <tr>
    <td><strong>param1</strong></td>
    <td>Abort Alt</td>
-   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param2</td>
@@ -1544,6 +1545,7 @@ control the landing is provided in :ref:`LAND flight mode <land-mode>`.
    <td>Long</td>
    <td>Longitude</td>
    </tr>
+   <tr>
    <td><strong>param7</strong></td>
    <td>Alt</td>
    <td>Altitude to target for the landing. Unless you are landing at a location different than home, this should be zero</td>
@@ -1938,7 +1940,6 @@ the path in a line between the waypoint centers.
    <th>Mission Planner Field</th>
    <th>Description</th>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td><strong>param1</strong></td>
    <td></td>
@@ -1949,12 +1950,12 @@ the path in a line between the waypoint centers.
    <td>Radius</td>
    <td>Radius in meters. If positive loiter clockwise, negative counter-clockwise, 0 means no change to standard loiter.</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
    <td></td>
    <td>Empty</td>
    </tr>
+   <tr>
    <td>param4</td>
    <td>XTrack Tangent</td>
    <td>Determines which line the aircraft will track after exiting the loiter. If 0, track the line from the center of the circle to the next waypoint. If 1, track the line tangent to the circle to the next waypoint.</td>
@@ -2024,7 +2025,6 @@ then occurs. For Copters, they will loiter until then, and Rovers hold position.
    <td>Time in seconds (0-59)</td>
    <td>Delay until this second</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td>param5</td>
    <td></td>
@@ -2086,7 +2086,6 @@ until the time in seconds has elapsed. This is used in a mission to allow a vehi
    <td></td>
    <td>Empty</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td>param6</td>
    <td></td>
@@ -2150,7 +2149,6 @@ This allows the gripper to be commanded to be released, packages replaced, etc.
    <td></td>
    <td>Empty</td>
    </tr>
-   <tr>
    <tr>
    <td><strong>param5</strong></td>
    <td>Lat</td>
@@ -2608,6 +2606,7 @@ regardless of the ``param3`` value).
    If <code>param4=1</code> (relative): The change in heading (in degrees).
    </td>
    </tr>
+   <tr>
    <td><strong>param2</strong></td>
    <td>Speed deg/s</td>
    <td>Speed during yaw change:[deg per second].</td>
@@ -2920,7 +2919,7 @@ vehicle's throttle. If the airspeed option is selected, this changes the :ref:`A
    <tr>
    <td><strong>param2</strong></td>
    <td>Speed (m/s)</td>
-   <td>Target speed (m/s). If airspeed, a value below or above min/max airspeed limits results in no change. a value of -2 uses :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>`</td>
+   <td>Target speed (m/s). If airspeed, a value below or above min/max airspeed limits results in no change. a value of -2 uses AIRSPEED_CRUISE</td>
    </tr>
    <tr>
    <td><strong>param3</strong></td>
@@ -4006,7 +4005,7 @@ in the mission.
    <tr>
    <td><strong>param7</strong></td>
    <td></td>
-   <td>`MAV_MOUNT_MODE <https://mavlink.io/en/messages/common.html#MAV_MOUNT_MODE>`__ enum value.</td>
+   <td><a href="https://mavlink.io/en/messages/common.html#MAV_MOUNT_MODE">MAV_MOUNT_MODE</a> enum value.</td>
    </tr>
    </tbody>
    </table>
@@ -4124,6 +4123,7 @@ To trigger the camera once, immediately after passing the DO command, set param3
    <td></td>
    <td>Empty</td>
    </tr>
+   <tr>
    <td><strong>param3</strong></td>
    <td>?</td>
    <td>Trigger once instantly. One is on, zero is off.</td>
@@ -4638,17 +4638,20 @@ This command can be used to start or stop the ICE before a NAV_VTOL_LAND or afte
    <td>?</td>
    <td>Start/Stop ICE (1: start, 0:stop)</td>
    </tr>
+   <tr>
    <td><strong>param2</strong></td>
    <td></td>
    <td>Cold Start (1: enables choke, currently not implemented)</td>
    </tr>
+   <tr>
    <td><strong>param3</strong></td>
    <td></td>
    <td>Altitude in meters. Altitude at which action is taken.</td>
    </tr>
+   <tr>
    <td><strong>param4</strong></td>
    <td></td>
-   <td>Flags: 1 = allow a single start while disarmed even if :ref:`ICE_OPTIONS<ICE_OPTIONS>` bit 3 is set</td>
+   <td>Flags: 1 = allow a single start while disarmed even if ICE_OPTIONS bit 3 is set</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param5</td>

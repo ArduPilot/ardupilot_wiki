@@ -348,7 +348,6 @@ When providing Pos, Vel and/or Accel all 3 axis must be provided.  At least one 
    <tr>
    <td><strong>afx</strong></td>
    <td>X acceleration in m/s/s (positive is North)</td>
-   </td>
    </tr>
    <tr>
    <td><strong>afy</strong></td>

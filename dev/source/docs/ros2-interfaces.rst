@@ -264,7 +264,6 @@ For more information on the coordinate systems used, review `ROS REP-105 <https:
    <td>tf2_msgs/msg/TFMessage</td> 
    <td>Receive the odometry dynamic transform on the normal tf2 dynamic transform topic.</td>
    </tr>
-   <tr>
    </tbody>
    </table>
 

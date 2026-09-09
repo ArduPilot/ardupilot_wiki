@@ -46,16 +46,16 @@ of functionality available.
    <tr><td>GUIDED</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Circles user defined point from GCS</td></tr>
    <tr><td>Return To Launch (RTL)</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Returns to and circles home or rally point</td></tr>
    <tr><td>TAKEOFF</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Automatic takeoff to specific altitude, and loiter at distance from takeoff until mode is changed</td></tr>
-   <tr><td>THERMAL</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Mode entered to search for thermal lift by SOARING feature or manually if lift is encountered. See :ref:`THERMAL Mode <thermal-mode>`</td></tr>
-   <tr><td>AUTOLAND</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Fixed wing Autoland See :ref:`AUTOLAND Mode <mode_autoland>`</td></tr>
+   <tr><td>THERMAL</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Mode entered to search for thermal lift by SOARING feature or manually if lift is encountered. See <a href="thermal-mode.html">THERMAL Mode</a></td></tr>
+   <tr><td>AUTOLAND</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Fixed wing Autoland See <a href="mode_autoland.html">AUTOLAND Mode</a></td></tr>
    </table>
 
 .. raw:: html
 
    <table border="1" class="docutils">
    <tr><th>Symbol</th><th>Definition</th></tr>
-   <tr><td>-</td><td>Full manual control of flight surfaces</td><tr>
-   <tr><td>+</td><td>Manual control with stabilized limits or assistance</td><tr>
+   <tr><td>-</td><td>Full manual control of flight surfaces</td></tr>
+   <tr><td>+</td><td>Manual control with stabilized limits or assistance</td></tr>
    <tr><td>s</td><td>Stabilized control with limits</td></tr>
    <tr><td>A</td><td>Automatic control</td></tr>
    <tr><td>SPD</td><td>Controls speed</td></tr>

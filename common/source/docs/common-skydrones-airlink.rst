@@ -309,6 +309,7 @@ Left side interfaces:
    <td>OUT</td>
    <td>+3.3V</td>
    <td>SBUS output</td>
+   </tr>
    <tr>
    <td>6</td>
    <td>GND</td>
@@ -716,7 +717,6 @@ Front side interfaces:
    <td>IN</td>
    <td>+3.3V</td>
    <td>Safety button</td>
-   </td>
    </tr>
    <tr>
    <td>7</td>
@@ -724,7 +724,6 @@ Front side interfaces:
    <td>OUT</td>
    <td>+3.3V</td>
    <td>Safety LED</td>
-   </td>
    </tr>
    <tr>
    <td>8</td>
@@ -732,7 +731,6 @@ Front side interfaces:
    <td>OUT</td>
    <td>+3.3V</td>
    <td>3.3V output</td>
-   </td>
    </tr>
    <tr>
    <td>9</td>
@@ -740,7 +738,6 @@ Front side interfaces:
    <td>OUT</td>
    <td>+5V</td>
    <td>Buzzer output</td>
-   </td>
    </tr>
    <tr>
    <td>10</td>

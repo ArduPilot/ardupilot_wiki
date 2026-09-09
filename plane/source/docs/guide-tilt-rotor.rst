@@ -55,7 +55,7 @@ hovering. Currently supported tilt-rotor frame classes are:
 .. raw:: html
 
    <table border="1" class="docutils">
-   <tr><th>Frame Class</th><th>Q_FRAME_CLASS</th></th></tr>
+   <tr><th>Frame Class</th><th>Q_FRAME_CLASS</th></tr>
    <tr><td>Quadcopter</td><td>1</td></tr>
    <tr><td>Hexacopter</td><td>2</td></tr>
    <tr><td>Octacopter</td><td>3</td></tr>

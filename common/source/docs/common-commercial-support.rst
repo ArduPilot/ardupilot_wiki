@@ -239,7 +239,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             <div class="line">ArduPilot Board and Documentation, <a href="mailto:hwurzburg@yahoo.com?Subject=ArduPilot%20commercial%20support" target="_top">hwurzburg@yahoo.com</a></div>
             <div class="line"><br/></div>
             <div class="line">As ArduPilot Wiki Maintainer and AutoPilot board reviewer</div>
-            <div class="line">I can assist in developing new autopilots and their successful submission.</dev>
+            <div class="line">I can assist in developing new autopilots and their successful submission.</div>
             <div class="line">Services include board system architecture consulting,</div>
             <div class="line">board porting and testing, board documentation, and</div>
             <div class="line">ArduPilot Wiki documentation of any kind</div>

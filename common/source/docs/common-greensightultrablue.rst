@@ -787,7 +787,6 @@ JP12 - AP GPIO (Autopilot GPIOs)
       </tr>
       <tr>
       <td>5</td>
-      </td>
       <td>GPIO 61</td>
       <td>+3.3V</td>
       </tr>
