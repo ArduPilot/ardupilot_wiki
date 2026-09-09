@@ -512,10 +512,12 @@ POWER1&2
    <td>VOLTAGE</td>
    <td>up to +3.3V</td>
    </tr>
+   <tr>
    <td>5 (blk)</td>
    <td>GND</td>
    <td>GND</td>
    </tr>
+   <tr>
    <td>6 (blk)</td>
    <td>GND</td>
    <td>GND</td>

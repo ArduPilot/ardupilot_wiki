@@ -7,7 +7,7 @@ ArduPilot Copter
 ..  raw:: html
     
     <p style="text-align:center;color:red;"><strong>
-    Success with Copter requires that the 'First Time Setup' and 'First Flight and Tuning' sections of this documentation be read and followed!</strong>
+    Success with Copter requires that the 'First Time Setup' and 'First Flight and Tuning' sections of this documentation be read and followed!</strong></p>
     <br></br>
 
 .. image:: /images/home_copter.jpg

@@ -68,7 +68,6 @@ Set the home location by sending a `COMMAND_INT <https://mavlink.io/en/messages/
    <td>float</td>
    <td>1=use current location, 0=use specified location</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
    <td>float</td>
@@ -84,14 +83,17 @@ Set the home location by sending a `COMMAND_INT <https://mavlink.io/en/messages/
    <td>float</td>
    <td>not used</td>
    </tr>
+   <tr>
    <td><strong>param5</strong></td>
    <td>int32_t</td>
    <td>Latitude in degrees * 10^7</td>
    </tr>
+   <tr>
    <td><strong>param6</strong></td>
    <td>int32_t</td>
    <td>Longitude in degrees * 10^7</td>
    </tr>
+   <tr>
    <td><strong>param7</strong></td>
    <td>float</td>
    <td>Altitude in meters</td>
@@ -150,7 +152,6 @@ Set the home location by sending a `COMMAND_LONG <https://mavlink.io/en/messages
    <td>float</td>
    <td>1=use current location, 0=use specified location</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
    <td>float</td>
@@ -166,14 +167,17 @@ Set the home location by sending a `COMMAND_LONG <https://mavlink.io/en/messages
    <td>float</td>
    <td>not used</td>
    </tr>
+   <tr>
    <td><strong>param5</strong></td>
    <td>float</td>
    <td>Latitude in degrees</td>
    </tr>
+   <tr>
    <td><strong>param6</strong></td>
    <td>float</td>
    <td>Longitude in degrees</td>
    </tr>
+   <tr>
    <td><strong>param7</strong></td>
    <td>float</td>
    <td>Altitude in meters</td>

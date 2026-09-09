@@ -62,8 +62,8 @@ should move its control surfaces to level itself.
 
    <table border="1" class="docutils">
    <tr><th>Movement</th><th>Action</th></tr>
-   <tr><td>Roll Plane Right</td><td>Left aileron moves up and right aileron moves down</td><tr>
-   <tr><td>Roll Plane Left</td><td>Left aileron moves down and right aileron moves up</td><tr>
+   <tr><td>Roll Plane Right</td><td>Left aileron moves up and right aileron moves down</td></tr>
+   <tr><td>Roll Plane Left</td><td>Left aileron moves down and right aileron moves up</td></tr>
    <tr><td>Pitch plane up</td><td>Both tail surfaces move down</td></tr>
    <tr><td>Pitch plane down</td><td>Both tail surfaces move up</td></tr>
    <tr><td>Roll Plane Right</td><td>Both tail surfaces move left</td></tr>
@@ -81,8 +81,8 @@ at a time to avoid confusion.
 
    <table border="1" class="docutils">
    <tr><th>Control Surface Response</th><th>Corrective Action</th></tr>
-   <tr><td>Correct for 1 movement (pitch or roll), but not the other</td><td>Change the function (from 79 to 80; or 80 to 79)</td><tr>
-   <tr><td>Incorrect for both movements (pitch and roll)</td><td>Change the reversal of that channel</td><tr>
+   <tr><td>Correct for 1 movement (pitch or roll), but not the other</td><td>Change the function (from 79 to 80; or 80 to 79)</td></tr>
+   <tr><td>Incorrect for both movements (pitch and roll)</td><td>Change the reversal of that channel</td></tr>
    </table>
 
 .. note:: :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` must not be set to 0 for rudder setup. If the 
@@ -101,12 +101,12 @@ Keep the plane level in FBWA mode and command the following inputs:
          
    <table border="1" class="docutils">
    <tr><th>Input</th><th>Action</th></tr>
-   <tr><td>Roll Right</td><td>Right aileron moves up and left aileron moves down</td><tr>
-   <tr><td>Roll Left</td><td>Left aileron moves up and right aileron moves down</td><tr>
-   <tr><td>Pitch up</td><td>Both tail surfaces moveup</td><tr>
-   <tr><td>Pitch down</td><td>Both tail surfaces move down</td><tr>
-   <tr><td>Yaw right</td><td>Both tail surfaces move right</td><tr>
-   <tr><td>Yaw left</td><td>Both tail surfaces move left</td><tr>
+   <tr><td>Roll Right</td><td>Right aileron moves up and left aileron moves down</td></tr>
+   <tr><td>Roll Left</td><td>Left aileron moves up and right aileron moves down</td></tr>
+   <tr><td>Pitch up</td><td>Both tail surfaces moveup</td></tr>
+   <tr><td>Pitch down</td><td>Both tail surfaces move down</td></tr>
+   <tr><td>Yaw right</td><td>Both tail surfaces move right</td></tr>
+   <tr><td>Yaw left</td><td>Both tail surfaces move left</td></tr>
    </table>
 
 Double check MANUAL mode for the inputs as well. If everything is setup correctly, 

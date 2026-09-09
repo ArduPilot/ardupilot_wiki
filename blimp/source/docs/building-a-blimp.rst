@@ -90,6 +90,8 @@ Front fin servo
 
 ..  raw:: html
 
+    </td>
+    </tr>
     <tr>
     <td width="48%">
 
