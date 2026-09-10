@@ -464,9 +464,10 @@ async function main() {
   const scan = scanFile(htmlPath, [
     /id="i\d+"/g, /data-ap-img=/g, /data:image\//g, /@font-face/g,
     /<img[^>]{0,200}src="\.\.\//g,
-    /#ap-top-nav\{[^}]*flex-wrap:nowrap[^}]*overflow-x:auto/g,
+    /#ap-top-nav\{[^}]*flex-wrap:nowrap/g,
     /\.rst-content \[id\]\{[^}]*scroll-margin-top:55px/g,
-    /\.wy-nav-side\{[^}]*min-height:0/g
+    /\.wy-nav-side\{[^}]*min-height:0/g,
+    /#ap-top-nav\{[^}]*overflow-x:auto/g
   ], ['.wy-nav-content', 'wy-body-for-nav', 'id="ap-top"', 'toctree-l1', '#/' + wikis[0] + '/',
       '#ap-toast.on{display:flex}',
       'if(mapped===null){e.preventDefault();toast(a.href);return;}',
@@ -503,7 +504,8 @@ async function main() {
         html.includes('return \'<a href="#\'+esc(h.path)+\'">\'+esc(h.name||h.id)+'));
   check('anchor jumps land below the fixed top bar', scan.counts[6] > 0);
   check('the top bar scrolls sideways instead of wrapping under itself',
-        scan.counts[5] > 0);
+        scan.counts[5] > 0 && scan.counts[8] > 0,
+        'nowrap ' + scan.counts[5] + ', overflow-x:auto ' + scan.counts[8]);
   check('the sidebar ends at the bottom of the viewport, not 45px below it',
         scan.counts[7] > 0);
   check('fonts inlined', scan.counts[3] > 0, scan.counts[3] + ' rules');
@@ -751,9 +753,9 @@ async function main() {
   /* ------------------------------------------- the shell, driven in a DOM -- */
 
   const win = D ? bootShell(D, paramBodies) : null;
-  if (D && win === null) {
-    console.log('  SKIP  shell behaviour: jsdom is not installed');
-  }
+  // jsdom is a declared test dependency; a shell that does not boot is a
+  // failure, not a reason to skip everything below.
+  check('the exported shell boots in a DOM', !!win, win ? '' : 'jsdom missing, or the shell threw');
   if (win) {
     const doc = win.document;
     const nav = doc.getElementById('ap-nav');
@@ -870,6 +872,8 @@ async function main() {
     /* --------------------------------------- the parameter version switcher */
 
     const versions = (D.params || {})[paramWiki] || [];
+    check('the fixture offers saved parameter versions to switch between',
+          versions.length > 1, versions.length + ' versions');
     if (versions.length > 1) {
       shellGo(win, versions[1].p);
       const sel = doc.querySelector('#selectPicker');
@@ -1010,11 +1014,16 @@ async function main() {
     // is the home page with current() empty. A relative content link clicked
     // there must still resolve against home and keep its wiki prefix, not
     // route to the missing panel for a page the file actually holds.
+    // One wiki lands on its home page; several land on the picker instead.
+    check('the export names a landing page exactly when it holds one wiki',
+          (D.homes.length === 1) === !!D.home,
+          D.homes.length + ' wikis, home ' + String(D.home));
     if (D.home) {
       const home = D.home;
       const homeWiki = home.split('/')[1];
       const dest = D.pages.find(
         (p) => p.p !== home && p.p.split('/')[1] === homeWiki);
+      check('the landing page has a sibling page in its wiki', !!dest, String(dest && dest.p));
       if (dest) {
         const homeDir = home.replace(/\/[^/]*$/, '');
         const rel = dest.p.slice(homeDir.length + 1) + '.html';
@@ -1072,7 +1081,7 @@ async function main() {
 
   // Guards around checks skip silently when a shell fails to boot; a run
   // that lost checks must not pass on the ones that were left.
-  const MIN_CHECKS = 97;
+  const MIN_CHECKS = 100;
   console.log('\n' + checks + ' checks ran');
   if (checks < MIN_CHECKS) {
     failures++;
@@ -1083,7 +1092,7 @@ async function main() {
   process.exit(failures ? 1 : 0);
 }
 
-module.exports = { OUT };
+module.exports = { OUT, INPUTS: [EXPORTER, DOCUMENT, UNPACK] };
 
 if (require.main === module) {
   main().catch((err) => { console.error(err); process.exit(1); });

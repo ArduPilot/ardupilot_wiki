@@ -734,14 +734,26 @@ async function runEngine(name, launcher, base) {
  *  and what eleven wikis do to the bar on a phone. */
 async function checkExportLayout(name, browser) {
   const exportTest = path.join(__dirname, 'test_offline_export.js');
-  const file = path.join(require('./test_offline_export').OUT, 'test.html');
-  const builder = path.join(__dirname, '..', '..', 'common', 'source', '_static',
-                            'common_offline_document_builder.js');
-  // npm test writes it; regenerate when missing or older than the builder,
-  // or a stale file would pass judgement on source it does not reflect.
-  if (!fs.existsSync(file) || fs.statSync(file).mtimeMs < fs.statSync(builder).mtimeMs) {
-    require('child_process').execFileSync(process.execPath, [exportTest, 'rover'],
-                                          { stdio: 'ignore' });
+  const { OUT, INPUTS } = require('./test_offline_export');
+  const file = path.join(OUT, 'test.html');
+  const stamp = file + '.inputs';
+  // The artefact is stamped with a hash of the three sources it is built
+  // from; anything else, a stale file or a touched one, is regenerated, or
+  // the phase would pass judgement on source it does not reflect.
+  const inputsHash = require('crypto').createHash('sha1');
+  INPUTS.forEach((p) => inputsHash.update(fs.readFileSync(p)));
+  const wanted = inputsHash.digest('hex');
+  const have = fs.existsSync(stamp) ? fs.readFileSync(stamp, 'utf8') : '';
+  if (!fs.existsSync(file) || have !== wanted) {
+    try {
+      require('child_process').execFileSync(process.execPath, [exportTest, 'rover'],
+                                            { stdio: ['ignore', 'ignore', 'inherit'] });
+      fs.writeFileSync(stamp, wanted);
+    } catch (err) {
+      check(name, 'the export regenerated for the layout phase', false,
+            'test_offline_export.js rover failed: ' + String(err.message).split('\n')[0]);
+      return;
+    }
   }
   const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const page = await context.newPage();

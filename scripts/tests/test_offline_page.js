@@ -2165,6 +2165,31 @@ async function main() {
           JSON.stringify(swMessages));
   }
 
+  console.log('\na refresh that dies mid-unpack is not left marked complete');
+  {
+    // The first entry is rewritten, then the unpack throws on the second.
+    // The old marker and table would serve that mix as complete, and the
+    // worker's memo of the marker would keep doing so until told.
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old'] });
+    const body = '<html>new</html>';
+    const { doc, w, swMessages } = load({ manifest: MANIFEST, caches: cachesObj,
+      archives: { 'copter/index.html': body, 'copter/../evil.html': 'x' },
+      tables: { 'copter-files.json': { 'copter/index.html': await fileHash(body) } } });
+    await settle();
+    swMessages.length = 0;
+    $(doc, 'check-btn').dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
+    for (let i = 0; i < 14; i++) { await settle(); }
+    const c = await cachesObj.open('ardupilot-offline-copter');
+    const text = $(doc, 'check-result').textContent || $(doc, 'cache-progress').textContent || '';
+    check('an unpack that fails part-way takes the stale marker with it',
+          !(await c.match('/__ap_complete__')) && !/update complete|downloaded again/i.test(text),
+          JSON.stringify(text));
+    check('and tells the worker the caches changed',
+          swMessages.some((m) => m && m.type === 'CACHES_CHANGED'),
+          JSON.stringify(swMessages));
+  }
+
   console.log('\na mid-save build rotation names itself');
   {
     // Correct hashes throughout: only the missing check can fire, so its
