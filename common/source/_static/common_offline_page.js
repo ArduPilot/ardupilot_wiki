@@ -989,6 +989,7 @@
               var entryBytes = entry.raw_bytes || (entry.mb || 0) * 1048576;
               var entryGot = 0;
               var unpacked;
+              var wrote = false;   // any entry stored over the old copy
               return ApUnpack.fetchArchive(entry, cache, function (n) {
                 received += n;
                 entryGot += n;
@@ -999,7 +1000,7 @@
               }, {
                 base: ARTIFACT_BASE,
                 build: CURRENT_BUILD,
-                hash: ApUpdate.hashBytes,
+                hash: function (body) { wrote = true; return ApUpdate.hashBytes(body); },
                 signal: activeDownload ? activeDownload.signal : undefined
               }).then(function (names) {
                 unpacked = names;
@@ -1090,10 +1091,11 @@
                   return ApUpdate.storeTable(cache, table);
                 });
               }).catch(function (err) {
-                if (!err || !err.apVerify) { throw err; }
-                // The unpack already rewrote entries; with verification
-                // failed, an older marker would serve that mix as complete,
-                // and so would the worker's memo of it until told.
+                if (!err || !(err.apVerify || wrote)) { throw err; }
+                // The unpack already rewrote entries; whether verification
+                // failed or the unpack itself died part-way, an older marker
+                // would serve that mix as complete, and so would the worker's
+                // memo of it until told.
                 return cache.delete(COMPLETE_MARKER).then(function () {
                   return cache.delete(ApUpdate.TABLE_KEY);
                 }).then(function () { notifyWorkerCachesChanged(); throw err; },

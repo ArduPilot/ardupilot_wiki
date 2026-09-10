@@ -23,6 +23,16 @@ function check(name, ok, detail) {
   if (!ok) { failures++; }
 }
 
+// The shell precaches one 192px icon; the theme's pages ask for the other
+// name. That is only sound while both names hold the same bytes.
+{
+  const front = path.join(__dirname, '..', '..', 'frontend');
+  const a = fs.readFileSync(path.join(front, 'android-icon-192x192.png'));
+  const b = fs.readFileSync(path.join(front, 'apple-icon.png'));
+  check('apple-icon.png and android-icon-192x192.png are the same bytes', a.equals(b),
+        a.length + ' vs ' + b.length + ' bytes');
+}
+
 /* ------------------------------------------------------- the worker's code -- */
 
 /** Lift the lookup functions out of sw.js by name. */
