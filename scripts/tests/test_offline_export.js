@@ -873,16 +873,18 @@ async function main() {
     if (versions.length > 1) {
       shellGo(win, versions[1].p);
       const sel = doc.querySelector('#selectPicker');
-      // Latest leads, then every saved version.
+      // Latest leads when the file holds the unversioned page, then every
+      // saved version. A wiki without that page offers the versions alone.
+      const hasLatest = D.pages.some((pp) => pp.p === '/' + paramWiki + '/docs/parameters');
+      const wantLabels = (hasLatest ? ['Latest'] : []).concat(versions.map((v) => v.n));
       check('the version switcher is filled in', !!sel && sel.options.length ===
-            versions.length + 1,
-            sel ? sel.options.length + ' options' : 'no select');
+            wantLabels.length,
+            sel ? sel.options.length + ' options, wanted ' + wantLabels.length : 'no select');
       if (sel) {
         check('the version being read is the one selected',
               sel.value === versions[1].p, sel.value);
         check('the options are labelled as the site labels them',
-              [].map.call(sel.options, (o) => o.textContent).join() ===
-              ['Latest'].concat(versions.map((v) => v.n)).join(),
+              [].map.call(sel.options, (o) => o.textContent).join() === wantLabels.join(),
               [].map.call(sel.options, (o) => o.textContent).join(' '));
 
         // Elements, not text: a swallowed page still contains the words.
