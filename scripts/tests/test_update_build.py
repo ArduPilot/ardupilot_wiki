@@ -1,5 +1,6 @@
 """Regression tests for incomplete Sphinx builds reaching publication."""
 
+import json
 import multiprocessing
 import os
 import pathlib
@@ -70,17 +71,67 @@ class TestBuildPublication(unittest.TestCase):
                 output = pathlib.Path(tmp, 'build', 'html')
                 output.mkdir(parents=True)
                 for name in required:
-                    if name != missing:
-                        (output / name).write_text('test', encoding='utf-8')
+                    (output / name).write_text('<html>test</html>', encoding='utf-8')
+                manifest = {name: update.output_hash(output / name) for name in required}
+                (output.parent / 'output-manifest.json').write_text(json.dumps(manifest), encoding='utf-8')
+                (output / missing).unlink()
                 with patch.object(update, 'ALL_WIKIS', [tmp]), self.assertRaises(SystemExit):
                     update.check_build(tmp)
-                (output / missing).write_text('test', encoding='utf-8')
+                (output / missing).write_text('<html>test</html>', encoding='utf-8')
                 with patch.object(update, 'ALL_WIKIS', [tmp]):
                     update.check_build(tmp)
 
 
+class TestParameterCache(unittest.TestCase):
+    def setUp(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.root = pathlib.Path(tmp.name, 'repo')
+        self.cache = pathlib.Path(tmp.name, 'old_params_mversion', 'ArduPlane')
+        self.cache.mkdir(parents=True)
+        self.output = self.root / 'plane/build/html/docs'
+        self.output.mkdir(parents=True)
+        self.name = 'parameters-Plane-stable-V4.6.0.html'
+        self.cached = self.cache / self.name
+        self.target = self.output / self.name
+        self.valid = b'<html>Complete parameters</html>\n'
+        cwd = patch.object(update.os, 'getcwd', return_value=str(self.root))
+        cwd.start()
+        self.addCleanup(cwd.stop)
+
+    def test_corrupt_cache_does_not_overwrite_fresh_output(self):
+        self.cached.write_bytes(b'')
+        self.target.write_bytes(self.valid)
+        update.put_cached_parameters_files_in_sites('plane')
+        self.assertEqual(self.target.read_bytes(), self.valid)
+
+    def test_corrupt_cache_cannot_fill_gap(self):
+        for content in (b'', b'<html>Truncated parameters'):
+            with self.subTest(content=content):
+                self.cached.write_bytes(content)
+                with self.assertRaises(SystemExit):
+                    update.put_cached_parameters_files_in_sites('plane')
+                self.assertFalse(self.target.exists())
+
+    def test_valid_cache_fills_gap(self):
+        self.cached.write_bytes(self.valid)
+        update.put_cached_parameters_files_in_sites('plane')
+        self.assertEqual(self.target.read_bytes(), self.valid)
+
+    def test_failed_cache_copy_is_fatal_and_leaves_no_partial_page(self):
+        self.cached.write_bytes(self.valid)
+
+        def partial_copy(source, target):
+            target.write_bytes(b'<html>Partial')
+            raise OSError('injected copy error')
+
+        with patch.object(update.shutil, 'copy2', side_effect=partial_copy), self.assertRaises(SystemExit):
+            update.put_cached_parameters_files_in_sites('plane')
+        self.assertEqual(list(self.output.iterdir()), [])
+
+
 class TestSphinxOutput(unittest.TestCase):
-    def build(self, conf_extra='', guide='Guide\n=====\n'):
+    def build(self, conf_extra='', guide='Guide\n=====\n', after_build=''):
         with tempfile.TemporaryDirectory() as tmp:
             source = pathlib.Path(tmp, 'plane', 'source')
             source.mkdir(parents=True)
@@ -90,11 +141,13 @@ class TestSphinxOutput(unittest.TestCase):
             (source / 'index.rst').write_text('Test\n====\n\n.. toctree::\n\n   guide\n', encoding='utf-8')
             (source / 'guide.rst').write_text(guide, encoding='utf-8')
             (source / 'excluded.rst').write_text('Excluded\n========\n', encoding='utf-8')
+            (source / 'figure.svg').write_text(
+                '<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"></svg>', encoding='utf-8')
             # Each build gets a fresh Sphinx extension registry.
             return subprocess.run(
                 [sys.executable, '-c',
                  'import os, sys, update; os.chdir(sys.argv[1]); '
-                 'update.build_one("plane", False); update.check_build("plane")', tmp],
+                 'update.build_one("plane", False); ' + after_build + 'update.check_build("plane")', tmp],
                 cwd=REPO, capture_output=True, text=True, timeout=60)
 
     def test_complete_build_respects_excluded_sources(self):
@@ -114,6 +167,99 @@ class TestSphinxOutput(unittest.TestCase):
             '    app.connect("build-finished", remove_page)\n'))
         self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
         self.assertIn('Missing HTML output for 1 documents: guide', result.stderr)
+
+    def test_html_write_error_is_fatal(self):
+        # Patch both Sphinx 7's open() and Sphinx 8's Path.write_text().
+        conf = '''
+import builtins
+from pathlib import Path
+import sphinx.builders.html as html
+real_open = builtins.open
+real_write_text = Path.write_text
+class FailedWrite:
+    def __init__(self, file): self.file = file
+    def __enter__(self): return self
+    def __exit__(self, *args): self.file.close()
+    def write(self, data):
+        self.file.write(data[:20])
+        raise OSError(5, 'injected HTML write error')
+def failing_open(path, mode='r', *args, **kwargs):
+    file = real_open(path, mode, *args, **kwargs)
+    if str(path).endswith('/guide.html') and mode == 'w':
+        return FailedWrite(file)
+    return file
+def failing_write_text(path, data, *args, **kwargs):
+    if path.name == 'guide.html':
+        real_write_text(path, data[:20], *args, **kwargs)
+        raise OSError(5, 'injected HTML write error')
+    return real_write_text(path, data, *args, **kwargs)
+html.open = failing_open
+Path.write_text = failing_write_text
+'''
+        for data in ('data[:20]', 'data'):
+            # Even a late I/O error after writing the closing tag is fatal.
+            with self.subTest(data=data):
+                result = self.build(conf_extra=conf.replace('data[:20]', data))
+                self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+                self.assertIn('Sphinx build exception for plane: error writing file', result.stderr)
+
+    def test_image_copy_error_is_fatal(self):
+        result = self.build(guide='Guide\n=====\n\n.. image:: figure.svg\n', conf_extra='''
+import sphinx.builders.html as html
+real_copyfile = html.copyfile
+def failing_copyfile(src, dst, *args, **kwargs):
+    if str(src).endswith('figure.svg'):
+        raise OSError(5, 'injected image copy error')
+    return real_copyfile(src, dst, *args, **kwargs)
+html.copyfile = failing_copyfile
+''')
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        self.assertIn('injected image copy error', result.stderr)
+
+    def test_truncated_page_without_warning_is_fatal(self):
+        result = self.build(conf_extra='''
+from pathlib import Path
+def truncate(app, exception):
+    Path(app.builder.get_outfilename('guide')).write_text('<html>Truncated')
+def setup(app):
+    app.connect('build-finished', truncate)
+''')
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        self.assertIn('Incomplete HTML output', result.stderr)
+
+    def test_changed_output_after_build_is_fatal(self):
+        result = self.build(after_build=(
+            'from pathlib import Path; '
+            'Path("plane/build/html/guide.html").write_text("<html>Wrong page</html>"); '))
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        self.assertIn('Build output changed after Sphinx completed', result.stdout + result.stderr)
+
+    def test_failed_incremental_build_invalidates_previous_manifest(self):
+        result = self.build(after_build='''
+from pathlib import Path
+from unittest.mock import patch
+try:
+    with patch.object(update, 'Sphinx', side_effect=RuntimeError('injected')):
+        update.build_one('plane', True)
+except SystemExit:
+    pass
+assert not Path('plane/build/output-manifest.json').exists()
+''')
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        self.assertIn('output-manifest.json', result.stdout + result.stderr)
+
+    def test_incremental_retry_regenerates_missing_images(self):
+        result = self.build(guide='Guide\n=====\n\n.. image:: figure.svg\n', after_build='''
+from pathlib import Path
+Path('plane/build/html/_images/figure.svg').unlink()
+try:
+    update.build_one('plane', True)
+except SystemExit as exc:
+    assert exc.code == 2  # Sphinx warns about registration in a second app.
+assert Path('plane/build/html/_images/figure.svg').is_file()
+''')
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn('previous output is incomplete or unverified', result.stdout)
 
 
 if __name__ == '__main__':

@@ -369,6 +369,36 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
                 error(f"Download failed: {e}")
 
 
+class SphinxIOErrors(logging.Handler):
+    """Keep I/O warnings fatal without rejecting documentation warnings."""
+
+    def __init__(self):
+        super().__init__(logging.WARNING)
+        self.errors = []
+
+    def emit(self, record):
+        args = record.args.values() if isinstance(record.args, dict) else record.args
+        if any(isinstance(arg, OSError) for arg in args):
+            self.errors.append(record.getMessage())
+
+
+def check_html_output(path):
+    """Reject empty/truncated Sphinx HTML, including reused parameter pages."""
+    with open(path, 'rb') as stream:
+        stream.seek(0, os.SEEK_END)
+        stream.seek(max(0, stream.tell() - 1024))
+        if not stream.read().rstrip().lower().endswith(b'</html>'):
+            raise ValueError(f"Incomplete HTML output: {path}")
+
+
+def output_hash(path):
+    digest = hashlib.sha256()
+    with open(path, 'rb') as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
 def build_one(wiki, fast):
     """build one wiki"""
     info(f'build_one: {wiki}')
@@ -377,11 +407,24 @@ def build_one(wiki, fast):
     output_dir = os.path.join(wiki, 'build')
     html_dir = os.path.join(output_dir, 'html')
     doctree_dir = os.path.join(output_dir, 'doctrees')
+    manifest = Path(output_dir, 'output-manifest.json')
+    if fast and os.path.exists(output_dir):
+        try:
+            validate_build_output(wiki)
+        except (OSError, ValueError):
+            # Sphinx may have saved doctrees before failing to write output.
+            # Reusing those doctrees can skip missing pages/images on retry.
+            info(f"Rebuilding {wiki}: previous output is incomplete or unverified")
+            fast = False
+    # A failed incremental build must not inherit proof of an earlier success.
+    manifest.unlink(missing_ok=True)
 
     # This will fail if there's no folder to clean, so we check first
     if not fast and os.path.exists(output_dir):
         shutil.rmtree(output_dir)
 
+    io_errors = SphinxIOErrors()
+    sphinx_logger = logging.getLogger('sphinx')
     try:
         app = Sphinx(
             buildername='html',
@@ -393,7 +436,11 @@ def build_one(wiki, fast):
             parallel=1,
             srcdir=source_dir,
         )
+        # Sphinx installs its logging handlers during construction.
+        sphinx_logger.addHandler(io_errors)
         app.build()
+        if io_errors.errors:
+            raise RuntimeError('; '.join(io_errors.errors))
         if app.statuscode != 0:
             raise RuntimeError(f"Sphinx exited with status {app.statuscode}")
         # Validate Sphinx's actual document set, respecting exclude_patterns.
@@ -402,9 +449,25 @@ def build_one(wiki, fast):
                          if not os.path.isfile(app.builder.get_outfilename(doc)))
         if missing:
             raise RuntimeError(f"Missing HTML output for {len(missing)} documents: {', '.join(missing[:10])}")
+        for doc in app.env.found_docs:
+            check_html_output(app.builder.get_outfilename(doc))
+        for dest in app.builder.images.values():
+            image = Path(html_dir, app.builder.imagedir, dest)
+            if not image.is_file() or image.stat().st_size == 0:
+                raise RuntimeError(f"Missing or empty image output: {image}")
+        for name in ('index.html', 'searchindex.js', 'objects.inv'):
+            if Path(html_dir, name).stat().st_size == 0:
+                raise RuntimeError(f"Empty build output: {name}")
+        # Check the same files again after parameter-cache assembly, before
+        # caching or publishing. Keep this outside the served HTML directory.
+        outputs = {str(path.relative_to(html_dir)): output_hash(path)
+                   for path in Path(html_dir).rglob('*') if path.is_file()}
+        manifest.write_text(json.dumps(outputs), encoding='utf-8')
     except Exception as exc:
         print(f"[update.py]: [ERROR]: Sphinx build exception for {wiki}: {exc}", file=sys.stderr)
         sys.exit(1)
+    finally:
+        sphinx_logger.removeHandler(io_errors)
 
     if app._warncount > 0:
         sys.exit(2)
@@ -461,19 +524,32 @@ def sphinx_make(site, parallel, fast):
         fatal(f"Refusing to publish: Sphinx builds failed for {', '.join(sorted(failed))}")
 
 
+def validate_build_output(wiki):
+    """Verify the assembled output against the successful Sphinx build."""
+    html_dir = Path(wiki, 'build', 'html')
+    outputs = json.loads(Path(wiki, 'build', 'output-manifest.json').read_text(encoding='utf-8'))
+    for name in ('index.html', 'searchindex.js', 'objects.inv'):
+        if name not in outputs or (html_dir / name).stat().st_size == 0:
+            raise ValueError(f"Missing or empty build output: {name}")
+    for name, digest in outputs.items():
+        if output_hash(html_dir / name) != digest:
+            raise ValueError(f"Build output changed after Sphinx completed: {name}")
+    # Also validate parameter pages added from cache after Sphinx.
+    for path in html_dir.rglob('*.html'):
+        check_html_output(path)
+
+
 def check_build(site):
-    """
-    check that build was successful
-    """
+    """Refuse publication if any wiki's assembled output is incomplete."""
     for wiki in ALL_WIKIS:
         if site is not None and site != wiki:
             continue
         if wiki in ['common', 'frontend']:
             continue
-        for name in ('index.html', 'searchindex.js', 'objects.inv'):
-            output = os.path.join(wiki, "build", "html", name)
-            if not os.path.isfile(output):
-                fatal(f"{wiki} site not built - missing {output}")
+        try:
+            validate_build_output(wiki)
+        except (OSError, ValueError) as exc:
+            fatal(f"{wiki} site not complete: {exc}")
 
 
 def copy_build(site, destdir):
@@ -749,15 +825,7 @@ def logmatch_code(matchobj, prefix):
 
 def is_the_same_file(file1, file2):
     """ Compare two files using their SHA256 hashes"""
-    def file_hash(path, algo="sha256", chunk_size=8192):
-        h = hashlib.new(algo)
-        with open(path, "rb") as f:
-            chunk = f.read(chunk_size)
-            while chunk:
-                h.update(chunk)
-                chunk = f.read(chunk_size)
-        return h.hexdigest()
-    return file_hash(file1) == file_hash(file2)
+    return output_hash(file1) == output_hash(file2)
 
 
 def cleanup_versioned_parameters(site=None):
@@ -920,11 +988,22 @@ def put_cached_parameters_files_in_sites(site=None):
                 debug(f"Site {site} getting previously built files from {built_folder}")
                 for built in built_parameters_files:
                     if "latest" not in built:  # latest parameters files must be built every time
+                        target = Path(vehicle_folder, Path(built).name)
+                        if target.exists():
+                            continue  # Never overwrite freshly built, validated HTML.
+                        check_html_output(built)
                         debug(f"Reusing built {built} in {vehicle_folder} ")
-                        shutil.copy(built, vehicle_folder)
+                        temporary = target.with_suffix('.html.tmp')
+                        try:
+                            shutil.copy2(built, temporary)
+                            if output_hash(built) != output_hash(temporary):
+                                raise ValueError(f"Incomplete cached parameter copy: {built}")
+                            check_html_output(temporary)
+                            os.replace(temporary, target)
+                        finally:
+                            temporary.unlink(missing_ok=True)
             except Exception as e:
-                error(e)
-                pass
+                fatal(f"Cannot restore cached parameters for {key}: {e}")
 
 
 def update_frontend_json():
@@ -1270,9 +1349,10 @@ class WikiUpdater:
         sphinx_make(self.args.site, self.args.parallel, self.args.fast)
         if self.args.paramversioning:
             put_cached_parameters_files_in_sites(self.args.site)
-            cache_parameters_files(self.args.site)
 
         check_build(self.args.site)
+        if self.args.paramversioning:
+            cache_parameters_files(self.args.site)
 
         if self.args.enablebackups:
             make_backup(building_time, self.args.site, self.args.destdir, self.args.backupdestdir)
