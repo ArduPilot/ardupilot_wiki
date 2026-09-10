@@ -733,25 +733,30 @@ async function runEngine(name, launcher, base) {
  *  from its CSS: where a heading lands after a jump, where the sidebar ends,
  *  and what eleven wikis do to the bar on a phone. */
 async function checkExportLayout(name, browser) {
-  const file = path.join(require('os').tmpdir(), 'ap-export-test', 'test.html');
-  if (!fs.existsSync(file)) {
-    // npm test writes it; a bare run of this suite makes it here.
-    require('child_process').execFileSync(process.execPath,
-      [path.join(__dirname, 'test_offline_export.js'), 'rover'], { stdio: 'ignore' });
+  const exportTest = path.join(__dirname, 'test_offline_export.js');
+  const file = path.join(require('./test_offline_export').OUT, 'test.html');
+  const builder = path.join(__dirname, '..', '..', 'common', 'source', '_static',
+                            'common_offline_document_builder.js');
+  // npm test writes it; regenerate when missing or older than the builder,
+  // or a stale file would pass judgement on source it does not reflect.
+  if (!fs.existsSync(file) || fs.statSync(file).mtimeMs < fs.statSync(builder).mtimeMs) {
+    require('child_process').execFileSync(process.execPath, [exportTest, 'rover'],
+                                          { stdio: 'ignore' });
   }
   const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const page = await context.newPage();
   try {
     await page.goto('file://' + file, { waitUntil: 'load' });
-    // A page with enough section headings that one sits mid-page, opened
-    // the way a click would be. The last heading of a page cannot always
-    // scroll to the top, so the jump is measured on a middle one.
+    // A page long enough to scroll with a heading mid-page, opened the way
+    // a click would be. A short page could not carry its heading to 55px.
     const target = await page.evaluate(() => {
       const D = JSON.parse(document.getElementById('ap-index').textContent);
+      const sc = document.scrollingElement;
       for (const p of D.pages) {
         location.hash = '#' + p.p;
         window.dispatchEvent(new Event('hashchange'));
-        if (document.querySelectorAll('#ap-doc a.headerlink').length >= 8) { return p.p; }
+        if (document.querySelectorAll('#ap-doc a.headerlink').length >= 8 &&
+            sc.scrollHeight >= window.innerHeight * 3) { return p.p; }
       }
       return null;
     });

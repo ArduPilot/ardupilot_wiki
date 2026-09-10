@@ -39,7 +39,6 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Setting environment
         run: |
-          mkdir /tmp/web
           ./Sphinxsetup.sh
       - name: Check image formats
         run: |

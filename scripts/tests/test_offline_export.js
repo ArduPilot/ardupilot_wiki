@@ -464,7 +464,7 @@ async function main() {
   const scan = scanFile(htmlPath, [
     /id="i\d+"/g, /data-ap-img=/g, /data:image\//g, /@font-face/g,
     /<img[^>]{0,200}src="\.\.\//g,
-    /#ap-top-nav\{[^}]*flex-wrap:nowrap/g,
+    /#ap-top-nav\{[^}]*flex-wrap:nowrap[^}]*overflow-x:auto/g,
     /\.rst-content \[id\]\{[^}]*scroll-margin-top:55px/g,
     /\.wy-nav-side\{[^}]*min-height:0/g
   ], ['.wy-nav-content', 'wy-body-for-nav', 'id="ap-top"', 'toctree-l1', '#/' + wikis[0] + '/',
@@ -1072,7 +1072,7 @@ async function main() {
 
   // Guards around checks skip silently when a shell fails to boot; a run
   // that lost checks must not pass on the ones that were left.
-  const MIN_CHECKS = 95;
+  const MIN_CHECKS = 97;
   console.log('\n' + checks + ' checks ran');
   if (checks < MIN_CHECKS) {
     failures++;
@@ -1083,4 +1083,8 @@ async function main() {
   process.exit(failures ? 1 : 0);
 }
 
-main().catch((err) => { console.error(err); process.exit(1); });
+module.exports = { OUT };
+
+if (require.main === module) {
+  main().catch((err) => { console.error(err); process.exit(1); });
+}
