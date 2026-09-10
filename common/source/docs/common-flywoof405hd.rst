@@ -28,7 +28,7 @@ Specifications
 -  **Sensors**
 
    -  ICM-42688P IMU or MPU6000(accel, gyro)
-   -  DPS-310 or SPL06 barometer
+   -  BMP280, DPS-310 or SPL06 barometer
    -  Voltage & 180A current sensor
 
 
