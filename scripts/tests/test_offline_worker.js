@@ -23,8 +23,11 @@ function check(name, ok, detail) {
   if (!ok) { failures++; }
 }
 
-// The shell precaches one 192px icon; the theme's pages ask for the other
-// name. That is only sound while both names hold the same bytes.
+// The manifest names one 192px icon and the theme's pages the other. Both
+// URLs must exist, so the repository carries both names; keeping them the
+// same bytes means git stores one blob and readers download one image.
+// Only the manifest's name is precached: Safari fetches the touch icon
+// online, when a page is added to the home screen.
 {
   const front = path.join(__dirname, '..', '..', 'frontend');
   const a = fs.readFileSync(path.join(front, 'android-icon-192x192.png'));
