@@ -9,6 +9,7 @@
 
 'use strict';
 
+const fs = require('fs');
 const path = require('path');
 const { start, bumpWorker, serveKill } = require('./serve_wiki_tree');
 
@@ -714,6 +715,8 @@ async function runEngine(name, launcher, base) {
                 () => checkFreshnessGuards(name, browser, base));
     await phase(name, 'opt-out paths (switch, kill switch)',
                 () => checkOptOut(name, browser, base));
+    await phase(name, 'exported file layout (top bar, sidebar, phone nav)',
+                () => checkExportLayout(name, browser));
   } catch (err) {
     check(name, 'engine run completed', false, String(err.message));
   } finally {
@@ -721,6 +724,68 @@ async function runEngine(name, launcher, base) {
       await context.close().catch(() => {});
       await browser.close().catch(() => {});
     }
+  }
+}
+
+/* ------------------------------------------------- the exported file -- */
+
+/** The export's fixed top bar, measured in a real layout rather than read
+ *  from its CSS: where a heading lands after a jump, where the sidebar ends,
+ *  and what eleven wikis do to the bar on a phone. */
+async function checkExportLayout(name, browser) {
+  const file = path.join(require('os').tmpdir(), 'ap-export-test', 'test.html');
+  if (!fs.existsSync(file)) {
+    // npm test writes it; a bare run of this suite makes it here.
+    require('child_process').execFileSync(process.execPath,
+      [path.join(__dirname, 'test_offline_export.js'), 'rover'], { stdio: 'ignore' });
+  }
+  const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  const page = await context.newPage();
+  try {
+    await page.goto('file://' + file, { waitUntil: 'load' });
+    // A page with enough section headings that one sits mid-page, opened
+    // the way a click would be. The last heading of a page cannot always
+    // scroll to the top, so the jump is measured on a middle one.
+    const target = await page.evaluate(() => {
+      const D = JSON.parse(document.getElementById('ap-index').textContent);
+      for (const p of D.pages) {
+        location.hash = '#' + p.p;
+        window.dispatchEvent(new Event('hashchange'));
+        if (document.querySelectorAll('#ap-doc a.headerlink').length >= 8) { return p.p; }
+      }
+      return null;
+    });
+    check(name, 'the export holds a page with section headings', !!target, String(target));
+    if (target) {
+      const top = await page.evaluate(() => {
+        const links = document.querySelectorAll('#ap-doc a.headerlink');
+        const a = links[Math.floor(links.length / 2)];
+        a.click();
+        return a.parentElement.getBoundingClientRect().top;
+      });
+      // scroll-margin-top is 55px; without it the heading lands at 0, under the bar.
+      check(name, 'a headerlink jump lands the heading just below the fixed top bar',
+            top >= 45 && top <= 70, 'heading top ' + Math.round(top) + 'px, bar is 45px');
+    }
+    const sideBottom = await page.evaluate(() =>
+      document.querySelector('.wy-nav-side').getBoundingClientRect().bottom);
+    check(name, 'the sidebar ends at the bottom of the viewport',
+          Math.round(sideBottom) <= 800, 'bottom ' + Math.round(sideBottom) + 'px of 800');
+    // One wiki was exported; the bar must cope with all eleven on a phone.
+    await page.setViewportSize({ width: 375, height: 800 });
+    const nav = await page.evaluate(() => {
+      const bar = document.getElementById('ap-top-nav');
+      bar.innerHTML = ['Copter', 'Plane', 'Rover', 'Sub', 'Blimp', 'AntennaTracker',
+                       'Mission Planner', 'MAVProxy', 'Dev', 'ArduPilot', 'Planner2']
+        .map((w) => '<a href="#/x/' + w + '">' + w + '</a>').join('');
+      const b = bar.getBoundingClientRect();
+      const first = bar.querySelector('a').getBoundingClientRect();
+      return { height: Math.round(b.height), firstTop: Math.round(first.top) };
+    });
+    check(name, 'eleven wikis on a phone keep the top bar to one row, first link on screen',
+          nav.height <= 45 && nav.firstTop >= 0, JSON.stringify(nav));
+  } finally {
+    await context.close().catch(() => {});
   }
 }
 
@@ -820,4 +885,8 @@ async function main() {
   process.exit(failures ? 1 : 0);
 }
 
-main().catch((err) => { console.error(err); process.exit(1); });
+module.exports = { checkExportLayout };
+
+if (require.main === module) {
+  main().catch((err) => { console.error(err); process.exit(1); });
+}

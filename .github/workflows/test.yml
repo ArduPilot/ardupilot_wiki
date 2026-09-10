@@ -64,10 +64,12 @@ jobs:
           # no-versions branch and the versioned picker is covered locally.
           ./update.py --parallel 4 --verbose 2>&1 | tee build_errors.txt; exit ${PIPESTATUS[0]}
       - name: Offline feature suites
+        if: ${{ !cancelled() }}
         run: |
           npm install
           npm test 2>&1 | tee suite_output.txt; exit ${PIPESTATUS[0]}
       - name: Offline browser suite (Chromium)
+        if: ${{ !cancelled() }}
         run: |
           # The pinned theme ships offline_hooks (sphinx_rtd_theme PR 24),
           # so every built page must carry them; a hookless page means the

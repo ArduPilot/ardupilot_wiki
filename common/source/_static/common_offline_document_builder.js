@@ -17,7 +17,6 @@
   // Only what the app needs; the theme's stylesheet is embedded at export time.
   var SHELL_CSS =
     'html,body{height:100%}' +
-    '.wy-nav-side{overflow-y:auto}' +
     // The site's black global-nav bar, rebuilt for the wikis in this file.
     '#ap-top{position:fixed;top:0;left:0;right:0;height:45px;z-index:300;' +
     'display:flex;align-items:center;gap:18px;padding:0 16px;' +
@@ -30,7 +29,7 @@
     '#ap-top-nav a:hover{opacity:1;text-decoration:underline}' +
     // Clear the fixed bar; the theme's min-height:100% would push the sidebar
     // 45px past the viewport, and anchor jumps would land under the bar.
-    '.wy-nav-side{top:45px;min-height:0}' +
+    '.wy-nav-side{top:45px;min-height:0;overflow-y:auto}' +
     '.rst-content [id]{scroll-margin-top:55px}' +
     '.wy-nav-content-wrap{box-sizing:border-box;padding-top:45px}' +
     '#ap-search{margin:12px;padding:8px 10px;border:0;border-radius:3px;' +
@@ -358,7 +357,8 @@
     'if(inner){',
     'var ib=document.getElementById("i"+inner.getAttribute("data-ap-img"));',
     'if(ib){lightbox(ib.textContent);return;}}',
-    'showMissing(target);',
+    // Through the hash, so the missing panel is a history entry too.
+    'go(target);',
     '}',
     // The sidebar carries the absolute links, so it needs this too.
     'doc.addEventListener("click",onLinkClick);',
