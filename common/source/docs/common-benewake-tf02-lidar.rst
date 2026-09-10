@@ -118,7 +118,7 @@ output mode to I2C first - see the relevant Benewake datasheet.
 
 For the TFS20-L, which has its own driver, set:
 
--  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 46 (BenewakeTFS20L)
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 46 (BenewakeTFS20L-I2C)
 
 For the other I2C capable models set:
 
