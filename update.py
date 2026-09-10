@@ -388,10 +388,20 @@ def build_one(wiki, fast):
             confdir=source_dir,
             doctreedir=doctree_dir,
             outdir=html_dir,
-            parallel=2,
+            # Parallel Sphinx workers duplicate the large parameter document
+            # environment. --parallel controls concurrency between wikis.
+            parallel=1,
             srcdir=source_dir,
         )
         app.build()
+        if app.statuscode != 0:
+            raise RuntimeError(f"Sphinx exited with status {app.statuscode}")
+        # Validate Sphinx's actual document set, respecting exclude_patterns.
+        # A surviving index.html alone does not establish a complete build.
+        missing = sorted(doc for doc in app.env.found_docs
+                         if not os.path.isfile(app.builder.get_outfilename(doc)))
+        if missing:
+            raise RuntimeError(f"Missing HTML output for {len(missing)} documents: {', '.join(missing[:10])}")
     except Exception as exc:
         print(f"[update.py]: [ERROR]: Sphinx build exception for {wiki}: {exc}", file=sys.stderr)
         sys.exit(1)
@@ -401,16 +411,21 @@ def build_one(wiki, fast):
 
 
 def _reap_finished_procs(procs):
-    """Join any finished child processes and report their exit status."""
+    """Join finished children and return the names of failed builds."""
+    failed = []
     for p in procs[:]:
         if p.exitcode is not None:
             wiki_name = "_".join(p.name.split("_")[2:])
             p.join()
             procs.remove(p)
-            if p.exitcode == 1:
-                error(f"Sphinx build error for {wiki_name}")
-            elif p.exitcode == 2:
+            if p.exitcode == 2:
                 error(f"Sphinx warnings were emitted for {wiki_name}")
+            elif p.exitcode != 0:
+                # multiprocessing uses negative exit codes for signals,
+                # including -9 when the OOM killer terminates a build.
+                error(f"Sphinx build error for {wiki_name} (exit code {p.exitcode})")
+                failed.append(wiki_name)
+    return failed
 
 
 def sphinx_make(site, parallel, fast):
@@ -420,6 +435,7 @@ def sphinx_make(site, parallel, fast):
     done = set()
     wikis = set(ALL_WIKIS[:])
     procs = []
+    failed = []
 
     while len(done) != len(wikis):
         wiki = list(wikis.difference(done))[0]
@@ -434,28 +450,30 @@ def sphinx_make(site, parallel, fast):
         p.start()
         procs.append(p)
         while parallel != -1 and len(procs) >= parallel:
-            _reap_finished_procs(procs)
+            failed.extend(_reap_finished_procs(procs))
             time.sleep(0.1)
     while len(procs) > 0:
-        _reap_finished_procs(procs)
+        failed.extend(_reap_finished_procs(procs))
         time.sleep(0.1)
+    # Reap all children before exiting, but never cache or publish their
+    # output if any build failed. Warnings alone remain non-fatal here.
+    if failed:
+        fatal(f"Refusing to publish: Sphinx builds failed for {', '.join(sorted(failed))}")
 
 
 def check_build(site):
     """
     check that build was successful
     """
-    if platform.system() == "Windows":
-        debug("Skipping check_build on windows")
-        return
     for wiki in ALL_WIKIS:
         if site is not None and site != wiki:
             continue
         if wiki in ['common', 'frontend']:
             continue
-        index_html = os.path.join(wiki, "build", "html", "index.html")
-        if not os.path.exists(index_html):
-            fatal(f"{wiki} site not built - missing {index_html}")
+        for name in ('index.html', 'searchindex.js', 'objects.inv'):
+            output = os.path.join(wiki, "build", "html", name)
+            if not os.path.isfile(output):
+                fatal(f"{wiki} site not built - missing {output}")
 
 
 def copy_build(site, destdir):
