@@ -26,8 +26,10 @@ const DOCUMENT = path.join(REPO, 'common/source/_static/common_offline_document_
 const UNPACK = path.join(REPO, 'common/source/_static/common_offline_unpack.js');
 
 let failures = 0;
+let checks = 0;
 function check(name, ok, detail) {
   console.log((ok ? '  PASS  ' : '  FAIL  ') + name + (detail ? '   ' + detail : ''));
+  checks++;
   if (!ok) { failures++; }
 }
 
@@ -461,7 +463,10 @@ async function main() {
   // A full export exceeds V8's maximum string length.
   const scan = scanFile(htmlPath, [
     /id="i\d+"/g, /data-ap-img=/g, /data:image\//g, /@font-face/g,
-    /<img[^>]{0,200}src="\.\.\//g
+    /<img[^>]{0,200}src="\.\.\//g,
+    /#ap-top-nav\{[^}]*flex-wrap:nowrap/g,
+    /\.rst-content \[id\]\{[^}]*scroll-margin-top:55px/g,
+    /\.wy-nav-side\{[^}]*min-height:0/g
   ], ['.wy-nav-content', 'wy-body-for-nav', 'id="ap-top"', 'toctree-l1', '#/' + wikis[0] + '/',
       '#ap-toast.on{display:flex}',
       'if(mapped===null){e.preventDefault();toast(a.href);return;}',
@@ -472,9 +477,6 @@ async function main() {
       'href="#\'+esc(h.path)+',
       // The top bar builds from the same manifest names, under the same rule.
       'return \'<a href="#\'+esc(h.path)+\'">\'+esc(h.name||h.id)+',
-      '.rst-content [id]{scroll-margin-top:55px}',
-      '#ap-top-nav{display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto}',
-      '.wy-nav-side{top:45px;min-height:0}',
       '<li><a href="#\'+esc(h.pg.p)+\'"><span>',
       '<li class="toctree-l1"><a href="#\'+esc(h.pg.p)+\'">',
       'href="#\'+esc(p)+\'" class="btn btn-neutral float-left"',
@@ -499,12 +501,11 @@ async function main() {
   check('the export carries the black top bar', html.includes('id="ap-top"'));
   check('the top bar escapes the wiki path it links to',
         html.includes('return \'<a href="#\'+esc(h.path)+\'">\'+esc(h.name||h.id)+'));
-  check('anchor jumps land below the fixed top bar',
-        html.includes('.rst-content [id]{scroll-margin-top:55px}'));
+  check('anchor jumps land below the fixed top bar', scan.counts[6] > 0);
   check('the top bar scrolls sideways instead of wrapping under itself',
-        html.includes('#ap-top-nav{display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto}'));
+        scan.counts[5] > 0);
   check('the sidebar ends at the bottom of the viewport, not 45px below it',
-        html.includes('.wy-nav-side{top:45px;min-height:0}'));
+        scan.counts[7] > 0);
   check('fonts inlined', scan.counts[3] > 0, scan.counts[3] + ' rules');
   check('images stored once (no per-page duplication)',
         inlineDataUris <= imgBlocks + 2,
@@ -767,10 +768,10 @@ async function main() {
     const hostile = 'rover/docs/x" onmouseover="alert(1)';
     const hw = bootShell(Object.assign({}, D, {
       homes: [{ id: 'rover', name: 'Rover', path: hostile, pages: 1 }] }), paramBodies);
-    if (hw) {
-      const hostileLinks = hw.document.querySelectorAll('#ap-top-nav a');
+    {
+      const hostileLinks = hw ? hw.document.querySelectorAll('#ap-top-nav a') : [];
       check('a hostile wiki path stays inside the top bar href',
-            hostileLinks.length === 1 &&
+            hw !== null && hostileLinks.length === 1 &&
             hostileLinks[0].getAttribute('href') === '#' + hostile &&
             !hostileLinks[0].hasAttribute('onmouseover'),
             hostileLinks.length + ' anchors: ' +
@@ -898,104 +899,6 @@ async function main() {
               win.location.hash === '#' + versions[0].p, win.location.hash);
       }
 
-      // The mirror rewrites cross-wiki links root-relative; a click on one
-      // must keep its own path, never gain the current wiki as a prefix.
-      {
-        const dest = D.pages[0];
-        const from = D.pages.find((p) => p.p !== dest.p);
-        const bodies2 = {};
-        bodies2[from.p] = '<a id="xw" href="/copter9/index.html">Copter</a>' +
-                          '<a id="sw" href="' + dest.p + '.html">Same site</a>';
-        const w2 = bootShell(D, bodies2);
-        if (w2) {
-          shellGo(w2, from.p);
-          w2.document.getElementById('xw').dispatchEvent(
-            new w2.MouseEvent('click', { bubbles: true, cancelable: true }));
-          const miss = w2.document.getElementById('ap-doc').textContent || '';
-          check('a root-relative link to an absent wiki keeps its own path',
-                miss.indexOf('/copter9/index is not included') !== -1 &&
-                miss.indexOf('docs/copter9') === -1,
-                JSON.stringify(miss.slice(0, 120)));
-          shellGo(w2, from.p);
-          w2.document.getElementById('sw').dispatchEvent(
-            new w2.MouseEvent('click', { bubbles: true, cancelable: true }));
-          check('a root-relative link to a held page opens it',
-                w2.location.hash === '#' + dest.p,
-                w2.location.hash + ' wanted #' + dest.p);
-        } else {
-          check('root-relative link shell booted', false);
-        }
-      }
-
-      // In-page anchors scroll; they never route to the missing panel.
-      {
-        const from = D.pages[0];
-        const anchorBodies = {};
-        anchorBodies[from.p] =
-          '<h2 id="a-section">Section<a id="pl" class="headerlink" href="#a-section">P</a></h2>' +
-          '<p>body text</p>';
-        const w3 = bootShell(D, anchorBodies);
-        if (w3) {
-          shellGo(w3, from.p);
-          const before = w3.document.getElementById('ap-doc').textContent;
-          w3.document.getElementById('pl').dispatchEvent(
-            new w3.MouseEvent('click', { bubbles: true, cancelable: true }));
-          const after = w3.document.getElementById('ap-doc').textContent;
-          check('clicking a headerlink keeps the page',
-                after === before && after.indexOf('body text') !== -1 &&
-                after.indexOf('Not in this offline copy') === -1,
-                JSON.stringify(after.slice(0, 60)));
-          // A fragment typed straight into the hash scrolls too, never routes.
-          shellGo(w3, 'a-section');
-          const typed = w3.document.getElementById('ap-doc').textContent;
-          check('a bare fragment hash never shows the missing panel',
-                typed.indexOf('Not in this offline copy') === -1,
-                JSON.stringify(typed.slice(0, 60)));
-          // CLICKING a generated nav link (href="#/path") must route, not be
-          // swallowed as an in-page anchor. This is the click path shellGo
-          // bypasses, and the one that broke export navigation.
-          const dest = D.pages.find((q) => q.p !== from.p) || D.pages[0];
-          shellGo(w3, from.p);
-          const doc3 = w3.document.getElementById('ap-doc');
-          doc3.innerHTML = '<a id="navlink" href="#' + dest.p + '">go</a>';
-          w3.document.getElementById('navlink').dispatchEvent(
-            new w3.MouseEvent('click', { bubbles: true, cancelable: true }));
-          check('clicking a #/path nav link routes to that page',
-                w3.location.hash === '#' + dest.p,
-                w3.location.hash + ' wanted #' + dest.p);
-        } else {
-          check('anchor shell booted', false);
-        }
-      }
-      // Opening the file the ordinary way leaves no hash, so the landing page
-      // is the home page with current() empty. A relative content link clicked
-      // there must still resolve against home and keep its wiki prefix, not
-      // route to the missing panel for a page the file actually holds.
-      if (D.home) {
-        const home = D.home;
-        const homeWiki = home.split('/')[1];
-        const dest = D.pages.find(
-          (p) => p.p !== home && p.p.split('/')[1] === homeWiki);
-        if (dest) {
-          const homeDir = home.replace(/\/[^/]*$/, '');
-          const rel = dest.p.slice(homeDir.length + 1) + '.html';
-          const w5 = bootShell(D, {});
-          if (w5) {
-            const doc5 = w5.document.getElementById('ap-doc');
-            doc5.innerHTML = '<a id="rel" href="' + rel + '">go</a>';
-            w5.document.getElementById('rel').dispatchEvent(
-              new w5.MouseEvent('click', { bubbles: true, cancelable: true }));
-            const miss = w5.document.getElementById('ap-doc').textContent || '';
-            check('a relative link on the landing page keeps the wiki prefix',
-                  w5.location.hash === '#' + dest.p &&
-                  miss.indexOf('Not in this offline copy') === -1,
-                  w5.location.hash + ' wanted #' + dest.p);
-          } else {
-            check('landing-page relative link shell booted', false);
-          }
-        }
-      }
-
       // The switcher offers a way back to the latest parameters page.
       {
         const latest = '/' + paramWiki + '/docs/parameters';
@@ -1025,6 +928,111 @@ async function main() {
               box.style.display === 'none', box.style.display || 'shown');
       }
     }
+
+    /* ------------------------------------------------ navigation by click */
+
+    // The mirror rewrites cross-wiki links root-relative; a click on one
+    // must keep its own path, never gain the current wiki as a prefix.
+    {
+      const dest = D.pages[0];
+      const from = D.pages.find((p) => p.p !== dest.p);
+      const bodies2 = {};
+      bodies2[from.p] = '<a id="xw" href="/copter9/index.html">Copter</a>' +
+                        '<a id="sw" href="' + dest.p + '.html">Same site</a>';
+      const w2 = bootShell(D, bodies2);
+      if (w2) {
+        shellGo(w2, from.p);
+        w2.document.getElementById('xw').dispatchEvent(
+          new w2.MouseEvent('click', { bubbles: true, cancelable: true }));
+        // The click sets the hash; a browser fires hashchange on its own.
+        w2.dispatchEvent(new w2.Event('hashchange'));
+        const miss = w2.document.getElementById('ap-doc').textContent || '';
+        check('a root-relative link to an absent wiki keeps its own path',
+              miss.indexOf('/copter9/index is not included') !== -1 &&
+              miss.indexOf('docs/copter9') === -1,
+              JSON.stringify(miss.slice(0, 120)));
+        check('the missing panel is a history entry, so back works',
+              w2.location.hash === '#/copter9/index', w2.location.hash);
+        shellGo(w2, from.p);
+        w2.document.getElementById('sw').dispatchEvent(
+          new w2.MouseEvent('click', { bubbles: true, cancelable: true }));
+        check('a root-relative link to a held page opens it',
+              w2.location.hash === '#' + dest.p,
+              w2.location.hash + ' wanted #' + dest.p);
+      } else {
+        check('root-relative link shell booted', false);
+      }
+    }
+
+    // In-page anchors scroll; they never route to the missing panel.
+    {
+      const from = D.pages[0];
+      const anchorBodies = {};
+      anchorBodies[from.p] =
+        '<h2 id="a-section">Section<a id="pl" class="headerlink" href="#a-section">P</a></h2>' +
+        '<p>body text</p>';
+      const w3 = bootShell(D, anchorBodies);
+      if (w3) {
+        shellGo(w3, from.p);
+        const before = w3.document.getElementById('ap-doc').textContent;
+        w3.document.getElementById('pl').dispatchEvent(
+          new w3.MouseEvent('click', { bubbles: true, cancelable: true }));
+        const after = w3.document.getElementById('ap-doc').textContent;
+        check('clicking a headerlink keeps the page',
+              after === before && after.indexOf('body text') !== -1 &&
+              after.indexOf('Not in this offline copy') === -1,
+              JSON.stringify(after.slice(0, 60)));
+        // A fragment typed straight into the hash scrolls too, never routes.
+        shellGo(w3, 'a-section');
+        const typed = w3.document.getElementById('ap-doc').textContent;
+        check('a bare fragment hash never shows the missing panel',
+              typed.indexOf('Not in this offline copy') === -1,
+              JSON.stringify(typed.slice(0, 60)));
+        // CLICKING a generated nav link (href="#/path") must route, not be
+        // swallowed as an in-page anchor. This is the click path shellGo
+        // bypasses, and the one that broke export navigation.
+        const dest = D.pages.find((q) => q.p !== from.p) || D.pages[0];
+        shellGo(w3, from.p);
+        const doc3 = w3.document.getElementById('ap-doc');
+        doc3.innerHTML = '<a id="navlink" href="#' + dest.p + '">go</a>';
+        w3.document.getElementById('navlink').dispatchEvent(
+          new w3.MouseEvent('click', { bubbles: true, cancelable: true }));
+        check('clicking a #/path nav link routes to that page',
+              w3.location.hash === '#' + dest.p,
+              w3.location.hash + ' wanted #' + dest.p);
+      } else {
+        check('anchor shell booted', false);
+      }
+    }
+    // Opening the file the ordinary way leaves no hash, so the landing page
+    // is the home page with current() empty. A relative content link clicked
+    // there must still resolve against home and keep its wiki prefix, not
+    // route to the missing panel for a page the file actually holds.
+    if (D.home) {
+      const home = D.home;
+      const homeWiki = home.split('/')[1];
+      const dest = D.pages.find(
+        (p) => p.p !== home && p.p.split('/')[1] === homeWiki);
+      if (dest) {
+        const homeDir = home.replace(/\/[^/]*$/, '');
+        const rel = dest.p.slice(homeDir.length + 1) + '.html';
+        const w5 = bootShell(D, {});
+        if (w5) {
+          const doc5 = w5.document.getElementById('ap-doc');
+          doc5.innerHTML = '<a id="rel" href="' + rel + '">go</a>';
+          w5.document.getElementById('rel').dispatchEvent(
+            new w5.MouseEvent('click', { bubbles: true, cancelable: true }));
+          const miss = w5.document.getElementById('ap-doc').textContent || '';
+          check('a relative link on the landing page keeps the wiki prefix',
+                w5.location.hash === '#' + dest.p &&
+                miss.indexOf('Not in this offline copy') === -1,
+                w5.location.hash + ' wanted #' + dest.p);
+        } else {
+          check('landing-page relative link shell booted', false);
+        }
+      }
+    }
+
   }
 
   // Sphinx omits stopwords from its index; a query containing one must still work.
@@ -1060,6 +1068,14 @@ async function main() {
     }
   }
 
+  // Guards around checks skip silently when a shell fails to boot; a run
+  // that lost checks must not pass on the ones that were left.
+  const MIN_CHECKS = 95;
+  console.log('\n' + checks + ' checks ran');
+  if (checks < MIN_CHECKS) {
+    failures++;
+    console.log('  FAIL  fewer than ' + MIN_CHECKS + ' checks ran');
+  }
   console.log('\nwrote ' + OUT + '/test.html');
   console.log(failures ? '\n' + failures + ' CHECK(S) FAILED\n' : '\nall checks passed\n');
   process.exit(failures ? 1 : 0);

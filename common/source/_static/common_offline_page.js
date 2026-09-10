@@ -1092,11 +1092,12 @@
               }).catch(function (err) {
                 if (!err || !err.apVerify) { throw err; }
                 // The unpack already rewrote entries; with verification
-                // failed, an older marker would serve that mix as complete.
+                // failed, an older marker would serve that mix as complete,
+                // and so would the worker's memo of it until told.
                 return cache.delete(COMPLETE_MARKER).then(function () {
                   return cache.delete(ApUpdate.TABLE_KEY);
-                }).then(function () { throw err; },
-                        function () { throw err; });
+                }).then(function () { notifyWorkerCachesChanged(); throw err; },
+                        function () { notifyWorkerCachesChanged(); throw err; });
               }).then(function () {
                 // The marker records the build an update check compares against.
                 return cache.put(COMPLETE_MARKER,

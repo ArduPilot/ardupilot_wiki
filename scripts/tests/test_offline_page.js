@@ -2144,10 +2144,11 @@ async function main() {
     // marker must fall with it, or the mix would serve as complete forever.
     const cachesObj = makeCaches();
     await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old'] });
-    const { doc, w } = load({ manifest: MANIFEST, caches: cachesObj,
+    const { doc, w, swMessages } = load({ manifest: MANIFEST, caches: cachesObj,
       archives: { 'copter/index.html': '<html>new</html>' },
       tables: { 'copter-files.json': { 'copter/index.html': 'deadbeefdeadbeef' } } });
     await settle();
+    swMessages.length = 0;
     $(doc, 'check-btn').dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
     for (let i = 0; i < 14; i++) { await settle(); }
     const c = await cachesObj.open('ardupilot-offline-copter');
@@ -2157,6 +2158,11 @@ async function main() {
     check('and the panel does not claim an update completed',
           !/update complete|downloaded again/i.test($(doc, 'check-result').textContent || ''),
           JSON.stringify($(doc, 'check-result').textContent));
+    // The worker memoises the marker check until told otherwise; the mix
+    // it holds is now unmarked and must not keep serving as complete.
+    check('the worker is told the caches changed after a refused refresh',
+          swMessages.some((m) => m && m.type === 'CACHES_CHANGED'),
+          JSON.stringify(swMessages));
   }
 
   console.log('\na mid-save build rotation names itself');
