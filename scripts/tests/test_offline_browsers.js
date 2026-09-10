@@ -354,8 +354,9 @@ async function checkOptOut(name, browser, base) {
             'never took control');
     } else {
       const { page } = ctx;
-      let loads = 0;
-      page.on('load', () => { loads += 1; });
+      // A reload replaces the document; a marker on this one proves it stayed.
+      // Counting load events instead misfired under load on CI runners.
+      await page.evaluate(() => { window.__apSameDocument = true; });
       // An opted-out reader has an off sentinel; the kill must clear it too.
       await page.evaluate(() => caches.open('ap-offline-off'));
       serveKill(true);
@@ -364,7 +365,7 @@ async function checkOptOut(name, browser, base) {
         await reg.update();
       });
       let state = await waitForClean(page);
-      const spontaneous = loads;
+      const sameDocument = await page.evaluate(() => window.__apSameDocument === true);
       let when = 'in the open tab';
       if (JSON.stringify(state) !== CLEAN) {
         // WebKit activates the replacement only when the tab next navigates.
@@ -378,8 +379,9 @@ async function checkOptOut(name, browser, base) {
       await page.waitForTimeout(1500);
       const after = await optOutState(page);
       check(name, 'the next visit after a kill registers nothing, and nothing reloaded by itself',
-            JSON.stringify(after) === CLEAN && spontaneous === 0,
-            JSON.stringify(after) + ', ' + spontaneous + ' spontaneous load(s)');
+            JSON.stringify(after) === CLEAN && sameDocument,
+            JSON.stringify(after) + (sameDocument ? ', same document throughout'
+                                                  : ', the document was replaced'));
       // The kill switch is the total opt-out: even the off sentinel is gone.
       const killSentinel = await page.evaluate(() => caches.has('ap-offline-off'));
       check(name, 'the kill switch leaves no sentinel behind', !killSentinel,
