@@ -34,7 +34,6 @@ const SHELL = [
   '/manifest.json',
   '/android-icon-192x192.png',
   '/icon-512x512.png',
-  '/apple-icon.png',
   '/js/pwa.js',
 ];
 
