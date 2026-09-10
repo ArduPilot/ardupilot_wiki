@@ -1221,7 +1221,8 @@ if the vehicle configuration allows this).
 Copter
 ~~~~~~
 
-Return to the *home location* (or the nearest :ref:`Rally Point <common-rally-points>` if closer) and then land. The home
+Return to the *home location* (or the nearest :ref:`Rally Point <common-rally-points>` if closer) and then land or
+hover above home, depending on :ref:`RTL_ALT_FINAL_M<RTL_ALT_FINAL_M>`. The home
 location is where the vehicle was last armed (or when it first gets GPS
 lock after arming if the vehicle configuration allows this).
 
@@ -1230,8 +1231,12 @@ first climb to the
 :ref:`RTL_ALT_M<RTL_ALT_M>`
 parameter's specified altitude (default is 15m) before returning home.
 
-This command takes no parameters and generally should be the last
-command in the mission.
+:ref:`RTL_ALT_FINAL_M<RTL_ALT_FINAL_M>` determines what happens once home is reached.  If it is
+zero (the default) the vehicle lands, so this command should be the last command in the
+mission.  If it is non-zero the vehicle stops and hovers at that altitude above home, the
+command completes, and the mission continues with the next command.
+
+This command takes no parameters.
 
 **Command parameters**
 
