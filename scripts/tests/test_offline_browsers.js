@@ -734,27 +734,31 @@ async function runEngine(name, launcher, base) {
  *  and what eleven wikis do to the bar on a phone. */
 async function checkExportLayout(name, browser) {
   const exportTest = path.join(__dirname, 'test_offline_export.js');
-  const { OUT, INPUTS } = require('./test_offline_export');
+  const { OUT, inputsHash } = require('./test_offline_export');
   const file = path.join(OUT, 'test.html');
   const stamp = file + '.inputs';
-  // The artefact is stamped with a hash of the three sources it is built
-  // from; anything else, a stale file or a touched one, is regenerated, or
-  // the phase would pass judgement on source it does not reflect.
-  const inputsHash = require('crypto').createHash('sha1');
-  INPUTS.forEach((p) => inputsHash.update(fs.readFileSync(p)));
-  const wanted = inputsHash.digest('hex');
-  const have = fs.existsSync(stamp) ? fs.readFileSync(stamp, 'utf8') : '';
-  if (!fs.existsSync(file) || have !== wanted) {
+  // The export suite stamps the artefact with a hash of the three sources
+  // it is built from; anything else, a stale file or a touched one, is
+  // regenerated, or the phase would pass judgement on source it does not
+  // reflect. The stamp is only ever written beside the artefact, by the
+  // suite that writes it, so the two cannot drift apart.
+  const wanted = inputsHash();
+  const readStamp = () => (fs.existsSync(stamp) ? fs.readFileSync(stamp, 'utf8') : '');
+  if (!fs.existsSync(file) || readStamp() !== wanted) {
     try {
       require('child_process').execFileSync(process.execPath, [exportTest, 'rover'],
-                                            { stdio: ['ignore', 'ignore', 'inherit'] });
-      fs.writeFileSync(stamp, wanted);
+                                            { stdio: ['ignore', 'pipe', 'pipe'] });
     } catch (err) {
+      // The export suite says which assertion broke, on stdout; repeat it.
+      const out = String(err.stdout || '') + String(err.stderr || '');
+      const why = out.split('\n').filter((l) => /^\s*FAIL |^Error:|Error: /.test(l)).slice(0, 5);
       check(name, 'the export regenerated for the layout phase', false,
-            'test_offline_export.js rover failed: ' + String(err.message).split('\n')[0]);
+            why.length ? why.join(' | ') : String(err.message).split('\n')[0]);
       return;
     }
   }
+  check(name, 'the export carries the stamp of the sources it was built from',
+        readStamp() === wanted, (readStamp() || 'none').slice(0, 8) + ' vs ' + wanted.slice(0, 8));
   const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const page = await context.newPage();
   try {

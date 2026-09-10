@@ -459,6 +459,8 @@ async function main() {
   }
 
   const htmlRes = await api.exportHtml(wikis, 'test.html', null, fileSink(htmlPath));
+  // Written by whoever writes the artefact, so the two cannot drift apart.
+  fs.writeFileSync(htmlPath + '.inputs', inputsHash());
   console.log('  generated in ' + ((Date.now() - t0) / 1000).toFixed(0) + 's');
   // A full export exceeds V8's maximum string length.
   const scan = scanFile(htmlPath, [
@@ -1092,7 +1094,15 @@ async function main() {
   process.exit(failures ? 1 : 0);
 }
 
-module.exports = { OUT, INPUTS: [EXPORTER, DOCUMENT, UNPACK] };
+/** A hash of the three sources an export is built from; the artefact is
+ *  stamped with it so a consumer can tell a stale file from a current one. */
+function inputsHash() {
+  const h = require('crypto').createHash('sha1');
+  [EXPORTER, DOCUMENT, UNPACK].forEach((p) => h.update(fs.readFileSync(p)));
+  return h.digest('hex');
+}
+
+module.exports = { OUT, INPUTS: [EXPORTER, DOCUMENT, UNPACK], inputsHash };
 
 if (require.main === module) {
   main().catch((err) => { console.error(err); process.exit(1); });
