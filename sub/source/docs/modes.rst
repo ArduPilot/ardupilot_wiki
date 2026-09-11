@@ -25,6 +25,20 @@ SURFTRAK        Hold distance above seafloor while stabilizing      R
 
 See :ref:`Pilot Control <pilot-control>` for more details on modes.
 
+GUIDED Mode Targets
+===================
+
+In GUIDED mode the vehicle is commanded by a GCS, companion computer or Lua script. Position, velocity and acceleration targets are sent using `SET_POSITION_TARGET_LOCAL_NED <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__ or `SET_POSITION_TARGET_GLOBAL_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT>`__, with the ``type_mask`` field selecting which of the three are being supplied. The accepted combinations are:
+
+- position only
+- velocity only
+- position and velocity
+- position, velocity and acceleration
+
+Acceleration is used only when it is accompanied by both position and velocity; it is ignored in any other combination. The supplied acceleration is fed forward into the position controller, which lets an external controller or script command a smoothly changing trajectory instead of a series of steps.
+
+Lua scripts can send the same targets with ``vehicle:set_target_posvelaccel_NED()``, and can offset the vehicle's current target using the ``poscontrol`` bindings, ``poscontrol:set_posvelaccel_offset()`` and ``poscontrol:get_posvelaccel_offset()``. The ``guided_above_terrain_posvelaccel_sub.lua`` example script uses these to swim at a constant forward speed while holding a set height above the seafloor.
+
 Mode Specific Parameters
 ========================
 
