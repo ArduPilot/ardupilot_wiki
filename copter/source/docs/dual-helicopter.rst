@@ -52,7 +52,8 @@ These are only needed for the forward swashplate if :ref:`H_SW_TYPE<H_SW_TYPE__A
 - :ref:`H_SW_H3_SV1_POS<H_SW_H3_SV1_POS__AP_MotorsHeli_Dual>`
 - :ref:`H_SW_H3_SV2_POS<H_SW_H3_SV2_POS__AP_MotorsHeli_Dual>`
 - :ref:`H_SW_H3_SV3_POS<H_SW_H3_SV3_POS__AP_MotorsHeli_Dual>`
-- ``H_SW_H3_PHANG``
+
+:ref:`H_SW_PHANG<H_SW_PHANG__AP_MotorsHeli_Dual>` can also be set for the forward swashplate to correct control coupling issues, regardless of swashplate type.
 
 These are only needed for the aft swashplate if :ref:`H_SW2_TYPE<H_SW2_TYPE>` is set to H3 Generic.
 
@@ -60,7 +61,8 @@ These are only needed for the aft swashplate if :ref:`H_SW2_TYPE<H_SW2_TYPE>` is
 - :ref:`H_SW2_H3_SV1_POS<H_SW2_H3_SV1_POS>`
 - :ref:`H_SW2_H3_SV2_POS<H_SW2_H3_SV2_POS>`
 - :ref:`H_SW2_H3_SV3_POS<H_SW2_H3_SV3_POS>`
-- ``H_SW2_H3_PHANG``
+
+:ref:`H_SW2_PHANG<H_SW2_PHANG>` can also be set for the aft swashplate to correct control coupling issues, regardless of swashplate type.
 
 This parameter is not used for the longitudinal configuration
 - :ref:`H_YAW_REV_EXPO<H_YAW_REV_EXPO>`
@@ -98,7 +100,8 @@ These are only needed for the left swashplate if :ref:`H_SW_TYPE<H_SW_TYPE__AP_M
 - :ref:`H_SW_H3_SV1_POS<H_SW_H3_SV1_POS__AP_MotorsHeli_Dual>`
 - :ref:`H_SW_H3_SV2_POS<H_SW_H3_SV2_POS__AP_MotorsHeli_Dual>`
 - :ref:`H_SW_H3_SV3_POS<H_SW_H3_SV3_POS__AP_MotorsHeli_Dual>`
-- ``H_SW_H3_PHANG``
+
+:ref:`H_SW_PHANG<H_SW_PHANG__AP_MotorsHeli_Dual>` can also be set for the left swashplate to correct control coupling issues, regardless of swashplate type.
 
 These are only needed for the right swashplate if :ref:`H_SW2_TYPE<H_SW2_TYPE>` is set to H3 Generic.
 
@@ -106,7 +109,8 @@ These are only needed for the right swashplate if :ref:`H_SW2_TYPE<H_SW2_TYPE>` 
 - :ref:`H_SW2_H3_SV1_POS<H_SW2_H3_SV1_POS>`
 - :ref:`H_SW2_H3_SV2_POS<H_SW2_H3_SV2_POS>`
 - :ref:`H_SW2_H3_SV3_POS<H_SW2_H3_SV3_POS>`
-- ``H_SW2_H3_PHANG``
+
+:ref:`H_SW2_PHANG<H_SW2_PHANG>` can also be set for the right swashplate to correct control coupling issues, regardless of swashplate type.
 
 This parameter is not used for the longitudinal configuration
 
@@ -143,7 +147,8 @@ These are only needed for the left swashplate if :ref:`H_SW_TYPE<H_SW_TYPE__AP_M
 - :ref:`H_SW_H3_SV1_POS<H_SW_H3_SV1_POS__AP_MotorsHeli_Dual>`
 - :ref:`H_SW_H3_SV2_POS<H_SW_H3_SV2_POS__AP_MotorsHeli_Dual>`
 - :ref:`H_SW_H3_SV3_POS<H_SW_H3_SV3_POS__AP_MotorsHeli_Dual>`
-- ``H_SW_H3_PHANG``
+
+:ref:`H_SW_PHANG<H_SW_PHANG__AP_MotorsHeli_Dual>` can also be set for the left swashplate to correct control coupling issues, regardless of swashplate type.
 
 These are only needed for the right swashplate if :ref:`H_SW2_TYPE<H_SW2_TYPE>` is set to H3 Generic.
 
@@ -151,7 +156,8 @@ These are only needed for the right swashplate if :ref:`H_SW2_TYPE<H_SW2_TYPE>` 
 - :ref:`H_SW2_H3_SV1_POS<H_SW2_H3_SV1_POS>`
 - :ref:`H_SW2_H3_SV2_POS<H_SW2_H3_SV2_POS>`
 - :ref:`H_SW2_H3_SV3_POS<H_SW2_H3_SV3_POS>`
-- ``H_SW2_H3_PHANG``
+
+:ref:`H_SW2_PHANG<H_SW2_PHANG>` can also be set for the right swashplate to correct control coupling issues, regardless of swashplate type.
 
 These parameters are not used for the intermeshing configuration
 
@@ -190,7 +196,8 @@ These are only needed for the counter clockwise swashplate if :ref:`H_SW_TYPE<H_
 - :ref:`H_SW_H3_SV1_POS<H_SW_H3_SV1_POS__AP_MotorsHeli_Dual>`
 - :ref:`H_SW_H3_SV2_POS<H_SW_H3_SV2_POS__AP_MotorsHeli_Dual>`
 - :ref:`H_SW_H3_SV3_POS<H_SW_H3_SV3_POS__AP_MotorsHeli_Dual>`
-- ``H_SW_H3_PHANG``
+
+:ref:`H_SW_PHANG<H_SW_PHANG__AP_MotorsHeli_Dual>` can also be set for the counter clockwise swashplate to correct control coupling issues, regardless of swashplate type.
 
 These are only needed for the clockwise swashplate if :ref:`H_SW2_TYPE<H_SW2_TYPE>` is set to H3 Generic.
 
@@ -198,7 +205,8 @@ These are only needed for the clockwise swashplate if :ref:`H_SW2_TYPE<H_SW2_TYP
 - :ref:`H_SW2_H3_SV1_POS<H_SW2_H3_SV1_POS>`
 - :ref:`H_SW2_H3_SV2_POS<H_SW2_H3_SV2_POS>`
 - :ref:`H_SW2_H3_SV3_POS<H_SW2_H3_SV3_POS>`
-- ``H_SW2_H3_PHANG``
+
+:ref:`H_SW2_PHANG<H_SW2_PHANG>` can also be set for the clockwise swashplate to correct control coupling issues, regardless of swashplate type.
 
 These parameters are not used for the coaxial configuration
 

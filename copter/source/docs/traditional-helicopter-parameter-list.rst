@@ -44,6 +44,7 @@ These set up the configuration of the swashplate and collective travel.
 - :ref:`H_COL_MIN<H_COL_MIN>`
 - :ref:`H_SW_COL_DIR<H_SW_COL_DIR__AP_MotorsHeli_Single>`
 - :ref:`H_SW_LIN_SVO<H_SW_LIN_SVO__AP_MotorsHeli_Single>`
+- :ref:`H_SW_PHANG<H_SW_PHANG__AP_MotorsHeli_Single>`
 
 Dual Rotor Helicopter
 =====================
@@ -64,7 +65,7 @@ If Dual Heli frame type is selected, these additional parameters for the second 
 - :ref:`H_SW2_H3_SV1_POS<H_SW2_H3_SV1_POS>`
 - :ref:`H_SW2_H3_SV2_POS<H_SW2_H3_SV2_POS>`
 - :ref:`H_SW2_H3_SV3_POS<H_SW2_H3_SV3_POS>`
-- ``H_SW2_H3_PHANG``
+- :ref:`H_SW2_PHANG<H_SW2_PHANG>`
 - :ref:`H_DCP_TRIM<H_DCP_TRIM>`
 - :ref:`H_YAW_REV_EXPO<H_YAW_REV_EXPO>`
 
@@ -76,14 +77,12 @@ ArduPilot allows custom swashplate servo placement for three servo swashplates. 
 - :ref:`H_SW_H3_SV1_POS<H_SW_H3_SV1_POS__AP_MotorsHeli_Single>`
 - :ref:`H_SW_H3_SV2_POS<H_SW_H3_SV2_POS__AP_MotorsHeli_Single>`
 - :ref:`H_SW_H3_SV3_POS<H_SW_H3_SV3_POS__AP_MotorsHeli_Single>`
-- ``H_SW_H3_PHANG``
 
  and if :ref:`H_SW2_TYPE<H_SW2_TYPE>` = 0 (dual helis only):
 
 - :ref:`H_SW2_H3_SV1_POS<H_SW_H3_SV1_POS__AP_MotorsHeli_Dual>`
 - :ref:`H_SW2_H3_SV2_POS<H_SW_H3_SV2_POS__AP_MotorsHeli_Dual>`
 - :ref:`H_SW2_H3_SV3_POS<H_SW_H3_SV3_POS__AP_MotorsHeli_Dual>`
-- ``H_SW2_H3_PHANG``
 
 Rotor Speed Control Setup
 =========================
