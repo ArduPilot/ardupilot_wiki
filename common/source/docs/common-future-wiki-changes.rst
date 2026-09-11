@@ -58,4 +58,5 @@ New Features
 [/site]
 [site wiki="sub"]
 - Remote (MAVLink) leak detection, see https://github.com/ArduPilot/ardupilot_wiki/pull/7593
+- GUIDED mode accepts an acceleration target alongside position and velocity, see https://github.com/ArduPilot/ardupilot_wiki/pull/8053
 [/site]
