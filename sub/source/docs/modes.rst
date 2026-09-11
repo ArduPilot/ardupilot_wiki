@@ -25,8 +25,8 @@ SURFTRAK        Hold distance above seafloor while stabilizing      R
 
 See :ref:`Pilot Control <pilot-control>` for more details on modes.
 
-Mode Specific Parameters
-========================
+Mode Details
+============
 
 ACRO Mode
 ---------
@@ -63,6 +63,25 @@ Auto/Guided Waypoint Navigation Related
 * :ref:`WP_ACC_Z<WP_ACC_Z>`
 * :ref:`WP_RFND_USE<WP_RFND_USE>`
 * :ref:`WP_YAW_BEHAVIOR<WP_YAW_BEHAVIOR>`
+
+GUIDED Mode
+-----------
+In GUIDED mode the vehicle is commanded by a GCS, companion computer or Lua script. Position, velocity and acceleration targets are sent using `SET_POSITION_TARGET_LOCAL_NED <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__ or `SET_POSITION_TARGET_GLOBAL_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT>`__, with the ``type_mask`` field selecting which of the three are being supplied. The accepted combinations are:
+
+- position only
+- velocity only
+- position and velocity
+- position, velocity and acceleration
+
+Any other combination, such as velocity with acceleration, is ignored.
+
+A target that includes velocity describes one point on a moving trajectory: where the vehicle should be, and how it should be moving, at the moment the message is received. It is not a destination to stop at. Between messages the target keeps moving: its position advances by the target velocity, and its velocity changes by the target acceleration. The vehicle follows this moving target, so targets would normally be sent several times per second along the desired path. For example, a target with a forward acceleration makes the vehicle start speeding up immediately, rather than when it reaches the target position.
+
+The vehicle's speed and acceleration while following the target, including the target's own velocity and acceleration, are limited by :ref:`WP_SPD<WP_SPD>`, :ref:`WP_SPD_UP<WP_SPD_UP>`, :ref:`WP_SPD_DN<WP_SPD_DN>`, :ref:`WP_ACC<WP_ACC>` and :ref:`WP_ACC_Z<WP_ACC_Z>`. A target that moves faster than these limits is followed with a lag.
+
+If no new target is received for 3 seconds, the velocity and acceleration targets are set to zero and the vehicle holds the last target position. To swim to a location and stop there, send a position-only target, which uses waypoint navigation at :ref:`WP_SPD<WP_SPD>`.
+
+Lua scripts can send the same targets with ``vehicle:set_target_posvelaccel_NED()``, and can offset the vehicle's current target using the ``poscontrol`` bindings, ``poscontrol:set_posvelaccel_offset()`` and ``poscontrol:get_posvelaccel_offset()``. The ``guided_above_terrain_posvelaccel_sub.lua`` example script uses these to swim at a constant forward speed while holding a set height above the seafloor.
 
 CIRCLE Mode
 -----------
