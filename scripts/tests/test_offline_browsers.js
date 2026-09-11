@@ -744,7 +744,7 @@ async function checkExportLayout(name, browser) {
   // regenerated, or the phase would pass judgement on source it does not
   // reflect. The stamp is only ever written beside the artefact, by the
   // suite that writes it, so the two cannot drift apart.
-  const wanted = inputsHash();
+  const wanted = inputsHash(['rover']);
   const readStamp = () => (fs.existsSync(stamp) ? fs.readFileSync(stamp, 'utf8') : '');
   if (!fs.existsSync(file) || readStamp() !== wanted) {
     try {
@@ -759,7 +759,7 @@ async function checkExportLayout(name, browser) {
       return;
     }
   }
-  check(name, 'the export carries the stamp of the sources it was built from',
+  check(name, 'the export is the rover one, built from the current sources',
         readStamp() === wanted, (readStamp() || 'none').slice(0, 8) + ' vs ' + wanted.slice(0, 8));
   const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const page = await context.newPage();
