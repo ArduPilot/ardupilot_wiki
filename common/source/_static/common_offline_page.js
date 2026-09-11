@@ -1293,6 +1293,19 @@
                   mode: 'sweep' });
 
           // Re-select what needs a full fetch and reuse the one download path.
+          // The selection is the reader's; it is borrowed here and handed
+          // back once the download has settled, whichever way it went.
+          var chosenBefore = selectable().filter(function (c) { return c.checked; })
+            .map(function (c) { return c.value; });
+          var restoreSelection = function () {
+            selectable().forEach(function (c) {
+              c.checked = chosenBefore.indexOf(c.value) !== -1;
+            });
+            syncSelectAll();
+            updateTotal();
+            updateExportState();
+            updateSaveState();
+          };
           selectable().forEach(function (c) {
             c.checked = full.indexOf(c.value) !== -1;
           });
@@ -1301,7 +1314,11 @@
           updateExportState();
           updateSaveState();
           // The one caller allowed to re-fetch what is already stored.
-          return saveSelectedReal(full).then(function () {
+          return saveSelectedReal(full).then(function (value) {
+            restoreSelection(); return value;
+          }, function (err) {
+            restoreSelection(); throw err;
+          }).then(function () {
             var missing = full.filter(function (id) { return !storedIds[id]; });
             if (missing.length) {
               announce('Could not download again: ' + missing.map(nameOf).join(', ') + '.');

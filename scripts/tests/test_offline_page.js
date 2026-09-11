@@ -2165,6 +2165,33 @@ async function main() {
           JSON.stringify(swMessages));
   }
 
+  console.log('\nan update tick hands the selection back');
+  {
+    // The reader ticked Rover and unticked Copter; the tick has to re-download
+    // Copter and must not leave its own selection behind.
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', MANIFEST.generated, { '_images/seed.png': ['h0', 'x'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old'] });
+    const body = '<html>new</html>';
+    const { doc, w } = load({ manifest: MANIFEST, caches: cachesObj,
+      archives: { 'copter/index.html': body },
+      tables: { 'copter-files.json': { 'copter/index.html': await fileHash(body) } } });
+    await settle();
+    doc.querySelector('.wiki-check[value="rover"]').click();
+    doc.querySelector('.wiki-check[value="copter"]').click();
+    await settle();
+    $(doc, 'check-btn').dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
+    for (let i = 0; i < 14; i++) { await settle(); }
+    const result = $(doc, 'check-result').textContent || '';
+    check('the tick downloaded the stale wiki again', /downloaded again: copter/i.test(result),
+          JSON.stringify(result));
+    check('and the reader keeps the selection they had before the tick',
+          doc.querySelector('.wiki-check[value="rover"]').checked &&
+          !doc.querySelector('.wiki-check[value="copter"]').checked,
+          'rover ' + doc.querySelector('.wiki-check[value="rover"]').checked +
+          ', copter ' + doc.querySelector('.wiki-check[value="copter"]').checked);
+  }
+
   console.log('\na refresh that dies mid-unpack is not left marked complete');
   {
     // The first entry is rewritten, then the unpack throws on the second.
