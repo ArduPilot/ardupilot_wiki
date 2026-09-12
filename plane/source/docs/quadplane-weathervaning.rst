@@ -66,6 +66,20 @@ of AUTO modes (such as VTOL takeoff and VTOL landing). It is not
 active in QSTABILIZE and QHOVER modes as those are not position
 controlled modes. It is active is QLOITER, QLAND and QRTL modes.
 
+It is also active while navigating between VTOL waypoints in AUTO
+mode. Since the aircraft is usually moving during those legs, it
+is common for weathervaning to be permitted only for part of the
+leg, for example when the ground speed drops below
+:ref:`Q_WVANE_SPD_MAX<Q_WVANE_SPD_MAX>`. Whenever weathervaning is
+not permitted, the aircraft reverts to pointing at the next waypoint.
+The yaw rate used is also limited by
+:ref:`Q_A_RATE_WPY_MAX<Q_A_RATE_WPY_MAX>`, as it is for normal
+waypoint navigation. The
+:ref:`Q_WVANE_TAKEOFF<Q_WVANE_TAKEOFF>` and
+:ref:`Q_WVANE_LAND<Q_WVANE_LAND>` direction overrides do not apply to
+these waypoint legs, only to the takeoff and landing portions of the
+mission.
+
 There are a number of additional parameters that can control when WeatherVaning is active (all are disabled by default):
 
 - :ref:`Q_WVANE_HGT_MIN<Q_WVANE_HGT_MIN>`: above this height weathervaning is permitted
