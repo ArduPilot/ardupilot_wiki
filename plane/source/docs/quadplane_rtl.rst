@@ -103,6 +103,7 @@ The phases of the approach are:
 .. note:: if the vehicle is overshooting "VTOL Position1", try decreasing  :ref:`Q_TRANS_DECEL<Q_TRANS_DECEL>` in steps. However, this increases the point before "VTOL Position1" that the vehicle will transition to VTOL.
 
 - once the QuadPlane is within 5m of the land point and moving less than 2 m/s, it will send a GCS message declaring that it is in "VTOL Position 2", and final position itself over the land point and begin its landing descent, which will also be indicated by GCS messages
+- if :ref:`Q_RTL_PAUSE_TIME<Q_RTL_PAUSE_TIME>` is non-zero, the vehicle will hold its position above the landing point for that many seconds, reporting "Land pause started", before the landing descent begins. This pause defaults to zero (no pause) except on tailsitters, where it defaults to 5 seconds to let the vehicle settle before descending. It applies to both :ref:`QRTL<qrtl-mode>` and VTOL landings in AUTO missions.
 - if the approach is entered less than 1.5X MAXRAD, it will immediately move to "VTOL Position 1" state, whether entered from fixed wing or VTOL modes, and move toward the landing site attempting to obtain :ref:`Q_RTL_ALT<Q_RTL_ALT>` as it does so.
 - if in VTOL mode at greater than 1.5X MAXRAD, the  vehicle will climb to :ref:`Q_RTL_ALT<Q_RTL_ALT>`, if below, then transition to fixed wing and start a normal fixed wing RTL, and attempt to navigate to home, executing the approach. The climb and turn toward the landing point will occur at even low altitudes as determined by :ref:`Q_RTL_ALT<Q_RTL_ALT>`, so the :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 4 for "Climb before turn in RTL" and/or :ref:`Q_OPTIONS<Q_OPTIONS>` bit 0 for "Level Transitions" might be worth considering for the fixed wing initial phases.
 
@@ -116,7 +117,9 @@ By default, switching to :ref:`QRTL<qrtl-mode>` mode will act exactly as :ref:`Q
 :ref:`Q_RTL_ALT <Q_RTL_ALT>`.
 
 Once the return point is reached the aircraft will start a vertical
-descent towards the ground for landing. The initial descent rate is
+descent towards the ground for landing, after first pausing in position
+for :ref:`Q_RTL_PAUSE_TIME<Q_RTL_PAUSE_TIME>` seconds if that is
+non-zero. The initial descent rate is
 set by :ref:`Q_WP_SPD_DN<Q_WP_SPD_DN>`. Once the aircraft reaches an altitude of
 :ref:`Q_LAND_FINAL_ALT <Q_LAND_FINAL_ALT>` the descent rate will
 change to :ref:`Q_LAND_FINAL_SPD <Q_LAND_FINAL_SPD>` for
