@@ -22,10 +22,21 @@ The target speed can be commanded by changing the value of cruise_speed
 in the parameter interface, by using the Do_Set_Speed command in a
 mission, or by the throttle stick position in FBW-B.
 
+An airspeed sensor is not required: the target speed is used whether or
+not one is fitted. If the current mode does not set a target speed, then
+:ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` is used instead.
+
 :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 15 set
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- In manual throttle modes actual airspeed (or estimate) is used for flaps activation
-- In auto-throttle modes the minimum of target airspeed and actual airspeed is used
+- In manual throttle modes the measured airspeed is used for flaps activation
+- In auto-throttle modes the minimum of target airspeed and measured airspeed is used
+
+Using the measured airspeed requires that airspeed is actually in use for
+control, ie an airspeed sensor is fitted and enabled with
+:ref:`ARSPD_USE<ARSPD_USE>` = 1, or synthetic airspeed is enabled. If it is
+not, the flap schedule falls back to the target speed, or to
+:ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>` in modes which do not set one, exactly
+as it does with bit 15 clear.
 
 This allows for auto flaps in manual throttle modes, and when speed drops in an un-commanded fashion in auto-throttle modes. This needs to be used with caution and carefully tested on an aircraft as it could result in an oscillation, as adding flaps can change the airspeed.
 
