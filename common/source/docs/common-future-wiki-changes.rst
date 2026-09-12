@@ -59,9 +59,10 @@ New Features
 - Simple/Super Simple mode fix: rotation now correctly applied in more flight modes, including Drift mode and during Precision Landing reposition, see https://github.com/ArduPilot/ardupilot_wiki/pull/7967
 - Tradheli: DDFP tail rotor moved to the RSC controller with independent H_TAIL_RAMP_TIME, see https://github.com/ArduPilot/ardupilot_wiki/pull/7979
 - Flip mode rotation rate is now set by FLIP_RATE, with the flip timeout derived from it, see https://github.com/ArduPilot/ardupilot_wiki/pull/8049
+- Follow: changing FOLL_SYSID now discards the previous lead vehicle's state, and FOLL_SYSID = 0 no longer adopts the first vehicle seen, see https://github.com/ArduPilot/ardupilot_wiki/pull/8061
 [/site]
 [site wiki="rover"]
-
+- Follow: changing FOLL_SYSID now discards the previous lead vehicle's state, and FOLL_SYSID = 0 no longer adopts the first vehicle seen, see https://github.com/ArduPilot/ardupilot_wiki/pull/8061
 [/site]
 [site wiki="sub"]
 - Remote (MAVLink) leak detection, see https://github.com/ArduPilot/ardupilot_wiki/pull/7593
