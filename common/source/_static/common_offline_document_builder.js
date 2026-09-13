@@ -309,6 +309,10 @@
     'return rest.replace(/\\.html?$/,"");}',
     // An unchanged hash fires no hashchange.
     'function go(p){var h="#"+p;if(location.hash===h){route();}else{location.hash=h;}}',
+    // Once the routed page is in, land on its anchor.
+    'function landOn(frag){if(!frag)return;setTimeout(function(){',
+    'var t=null;try{t=doc.querySelector(frag);}catch(err){t=document.getElementById(frag.slice(1));}',
+    'if(t&&t.scrollIntoView)t.scrollIntoView();},50);}',
     'function onLinkClick(e){',
     // The expand arrows sit inside the anchor, so handle them first.
     'var xb=e.target.closest?e.target.closest("button.toctree-expand"):null;',
@@ -335,6 +339,8 @@
     'if(mapped==="/"){go("/");return;}',
     'var hit=lookup(mapped);',
     'go(hit!==undefined?hit:mapped);',
+    // siteHref dropped the fragment; the anchor is still owed.
+    'var ahi=href.indexOf("#");if(ahi>=0)landOn(href.slice(ahi));',
     'return;}',
     'var frag="";var h=href;var hi=h.indexOf("#");',
     'if(hi>=0){frag=h.slice(hi);h=h.slice(0,hi);}',
@@ -344,9 +350,7 @@
     // A relative link must never leave the file.
     'e.preventDefault();',
     'var found=lookup(target);',
-    'if(found!==undefined){go(target);',
-    'if(frag){setTimeout(function(){var t=doc.querySelector(frag);',
-    'if(t&&t.scrollIntoView)t.scrollIntoView();},50);}return;}',
+    'if(found!==undefined){go(target);landOn(frag);return;}',
     // Thumbnails link their full-size file; answer from the index.
     'var iid=D.imgs?D.imgs[target]:undefined;',
     'if(iid!==undefined&&iid!==null){',

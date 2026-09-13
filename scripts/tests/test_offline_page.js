@@ -2192,6 +2192,38 @@ async function main() {
           ', copter ' + doc.querySelector('.wiki-check[value="copter"]').checked);
   }
 
+  console.log('\na differential update hands the selection back too');
+  {
+    // The ordinary case: every stale wiki is patched in place, no archive.
+    // The reader ticked Rover and unticked Copter; the tick must not
+    // re-render that choice away on its way out.
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, {
+      'copter/index.html': ['h1', 'old index'], 'copter/docs/a.html': ['h2', 'old a'] });
+    const { doc, fetchCalls } = load({
+      manifest: MANIFEST, caches: cachesObj,
+      tables: { 'common-files.json': { '_images/shared.png': 'c1' },
+                'copter-files.json': { 'copter/index.html': 'h1',
+                                       'copter/docs/a.html': await fileHash('NEW a') } },
+      served: { '/copter/docs/a.html': 'NEW a' } });
+    await settle();
+    doc.querySelector('.wiki-check[value="rover"]').click();
+    doc.querySelector('.wiki-check[value="copter"]').click();
+    await settle();
+    $(doc, 'check-btn').click();
+    for (let i = 0; i < 20; i++) { await settle(); }
+    check('the tick patched the stale wiki in place',
+          /Updated 1 file/.test($(doc, 'check-result').textContent || '') &&
+          !fetchCalls.some((u) => u.indexOf('.tar') !== -1),
+          JSON.stringify($(doc, 'check-result').textContent));
+    check('and the differential path keeps the selection the reader had',
+          doc.querySelector('.wiki-check[value="rover"]').checked &&
+          !doc.querySelector('.wiki-check[value="copter"]').checked,
+          'rover ' + doc.querySelector('.wiki-check[value="rover"]').checked +
+          ', copter ' + doc.querySelector('.wiki-check[value="copter"]').checked);
+  }
+
   console.log('\na refresh that dies mid-unpack is not left marked complete');
   {
     // The first entry is rewritten, then the unpack throws on the second.

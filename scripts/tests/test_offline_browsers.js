@@ -753,7 +753,10 @@ async function checkExportLayout(name, browser) {
     } catch (err) {
       // The export suite says which assertion broke, on stdout; repeat it.
       const out = String(err.stdout || '') + String(err.stderr || '');
-      const why = out.split('\n').filter((l) => /^\s*FAIL |^Error:|Error: /.test(l)).slice(0, 5);
+      const lines = out.split('\n').filter((l) => l.trim());
+      let why = lines.filter((l) => /^\s*FAIL |^Error:|Error: /.test(l)).slice(0, 5);
+      // No FAIL line, as when there is no wiki build: the last thing it said.
+      if (!why.length && lines.length) { why = [lines[lines.length - 1]]; }
       check(name, 'the export regenerated for the layout phase', false,
             why.length ? why.join(' | ') : String(err.message).split('\n')[0]);
       return;
