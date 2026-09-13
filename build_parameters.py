@@ -133,7 +133,10 @@ def fetch_url_with_cache(url, cache_dir=None):
 
     # Create cache filename from URL
     cache_filename = urllib.parse.quote(url, safe='') + '.cache'
-    cache_path = os.path.join(cache_dir, cache_filename)
+    cache_dir_abs = os.path.abspath(cache_dir)
+    cache_path = os.path.abspath(os.path.join(cache_dir_abs, cache_filename))
+    if os.path.commonpath([cache_dir_abs, cache_path]) != cache_dir_abs:
+        raise ValueError(f"Invalid cache path resolved for URL: {url}")
     cache_meta_path = cache_path + '.meta'
 
     def load_cached_content():
