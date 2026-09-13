@@ -27,6 +27,18 @@ old_params_mversion/
 !/frontend/includes/*.html
 
 
+# Generated offline artefacts (archives + manifest), rebuilt by update.py
+/offline/
+/offline.new/
+/offline.old/
+
+# Thumbnail cache for the offline archives, kept across builds
+/offline.cache/
+
+# Lossless PNG results, keyed by content hash. Safe to delete; the next
+# build refills it.
+/.image-cache/
+
 # Vagrant
 /.vagrant
 
@@ -62,3 +74,10 @@ build_options.py
 
 # Mac file
 .DS_Store
+
+# Test-only dependency, installed on demand rather than vendored:
+#   npm install --no-save jsdom
+/node_modules/
+/package-lock.json
+build.lck
+build.lck.log
