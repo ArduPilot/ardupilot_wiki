@@ -963,9 +963,19 @@
     function report(text) { progress.textContent = text; }
     report('Checking space…');
 
-    // Persistence before storing, so the data is protected from the start.
-    var persistFirst = navigator.storage && navigator.storage.persist
-      ? navigator.storage.persist() : Promise.resolve(false);
+    // Persistence is asked for before storing, so the data is protected
+    // from the start, but never waited on: Firefox turns the request into
+    // a prompt the reader may not notice, and the promise stays pending
+    // until they do. The download goes ahead after a moment regardless.
+    var persistFirst = Promise.resolve(false);
+    try {
+      if (navigator.storage && navigator.storage.persist) {
+        persistFirst = Promise.race([
+          navigator.storage.persist().catch(function () { return false; }),
+          new Promise(function (resolve) { setTimeout(function () { resolve(false); }, 1500); })
+        ]);
+      }
+    } catch (err) { /* no storage manager; nothing to wait for */ }
 
     return persistFirst
       .then(function () { return checkRoom(totalBytes); })

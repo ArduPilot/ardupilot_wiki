@@ -2165,6 +2165,26 @@ async function main() {
           JSON.stringify(swMessages));
   }
 
+  console.log('\na persistence prompt nobody answers does not stall the save');
+  {
+    // Firefox turns navigator.storage.persist() into a doorhanger, and the
+    // promise stays pending until the reader notices it. The save must not
+    // wait on that: persistence is a nicety, the download is the point.
+    const cachesObj = makeCaches();
+    const body = '<html>a</html>';
+    const { doc, sandbox } = load({ manifest: MANIFEST, caches: cachesObj,
+      archives: { 'copter/index.html': body },
+      tables: { 'copter-files.json': { 'copter/index.html': await fileHash(body) } } });
+    await settle();
+    sandbox.navigator.storage.persist = () => new Promise(() => {});
+    doc.querySelector('.wiki-check[value="copter"]').click(); await settle();
+    $(doc, 'download-cache-btn').click();
+    for (let i = 0; i < 40; i++) { await settle(); }
+    const text = $(doc, 'cache-progress').textContent || '';
+    check('the save gets past the space check without an answer',
+          !/Checking space/.test(text), JSON.stringify(text));
+  }
+
   console.log('\nan update tick hands the selection back');
   {
     // The reader ticked Rover and unticked Copter; the tick has to re-download
