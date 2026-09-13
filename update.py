@@ -1364,7 +1364,10 @@ class WikiUpdater:
 
         try:
             from scripts.optimise_images import run as optimise_images
-            n, saved = optimise_images(wikis, passes_root)
+            # The deployment directory survives update.sh's git clean -x.
+            # Keep this beside the thumbnail cache, outside the published archives.
+            image_cache = Path(self.args.destdir or ".") / "offline.cache" / "images"
+            n, saved = optimise_images(wikis, passes_root, cache_dir=image_cache)
             info(f"recompressed {n} PNGs, saving {saved / 1048576:.1f} MB")
         except Exception as ex:
             error(f"image pass failed, skipping: {ex}")

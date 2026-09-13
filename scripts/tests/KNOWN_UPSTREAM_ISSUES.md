@@ -264,8 +264,10 @@ none failed. **923 of the 1,635, or 56%, were already optimal** and gave back
 nothing: the wide spread is the point, and the honest headline is about 10% of
 PNG bytes rather than the 16% a sample of the biggest files suggested.
 
-A cold run takes about 2 minutes. Results cache on the content hash in
-`.image-cache/`, so later builds only touch new or edited images.
+A cold run takes about 2 minutes. `update.py` caches results by content hash in
+`<destdir>/offline.cache/images/`, outside the checkout cleaned by the production
+build script, so later builds only encode new or edited images. Without Pillow,
+the pass skips the images and leaves the cache alone.
 
 **Why lossless and not something with a better ratio.** JPEG or WebP would save
 considerably more, and both were measured: JPEG at q85 gave 69% on these files.

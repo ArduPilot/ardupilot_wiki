@@ -32,7 +32,7 @@ old_params_mversion/
 /offline.new/
 /offline.old/
 
-# Thumbnail cache for the offline archives, kept across builds
+# Thumbnail and PNG caches, kept across builds when --destdir is outside the checkout
 /offline.cache/
 
 # Lossless PNG results, keyed by content hash. Safe to delete; the next

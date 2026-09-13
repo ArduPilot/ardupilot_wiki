@@ -4,9 +4,12 @@
 """
 import io
 import os
+import shutil
+import subprocess
 import sys
 import tempfile
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import scripts.optimise_images as oi  # noqa: E402
@@ -133,6 +136,115 @@ def check_pass_over_a_built_tree():
             os.chmod(cache_dir, mode)
 
 
+def check_cache_survives_clean_builds():
+    original = noisy_png()
+    edited = noisy_png(w=241)
+    with tempfile.TemporaryDirectory() as td:
+        checkout = Path(td) / "checkout"
+        checkout.mkdir()
+        cache = Path(td) / "published" / "offline.cache" / "images"
+        subprocess.run(["git", "init", "--quiet", str(checkout)], check=True)
+
+        def write_image(wiki, data):
+            image = checkout / wiki / "build" / "html" / "_images" / "diagram.png"
+            image.parent.mkdir(parents=True, exist_ok=True)
+            image.write_bytes(data)
+            return image
+
+        rover = write_image("rover", original)
+        plane = write_image("plane", original)
+        with patch.object(oi, "shrink_png", wraps=oi.shrink_png) as encode:
+            oi.run(["rover", "plane"], checkout, cache_dir=cache)
+            check("identical images in different wikis are encoded only once",
+                  encode.call_count == 1, str(encode.call_count))
+        optimised = rover.read_bytes()
+        check("both wikis receive the same smaller image",
+              plane.read_bytes() == optimised and len(optimised) < len(original))
+
+        with patch.object(oi, "shrink_png", wraps=oi.shrink_png) as encode:
+            result = oi.run(["rover", "plane"], checkout, cache_dir=cache)
+            check("an incremental pass does not re-encode its own output",
+                  result == (0, 0) and encode.call_count == 0)
+
+        subprocess.run(["git", "-C", str(checkout), "clean", "-fdx"],
+                       check=True, stdout=subprocess.DEVNULL)
+        check("production-style git clean removes the build but preserves the cache",
+              not rover.exists() and any(cache.iterdir()))
+        rover = write_image("rover", original)
+        plane = write_image("plane", original)
+        with patch.object(oi, "shrink_png", wraps=oi.shrink_png) as encode:
+            oi.run(["rover", "plane"], checkout, cache_dir=cache)
+            check("a clean rebuild reuses cached results without encoding",
+                  encode.call_count == 0 and rover.read_bytes() == optimised and
+                  plane.read_bytes() == optimised)
+
+        # Keep the timestamp: the byte hash, not mtime, must notice the edit.
+        before = plane.stat()
+        plane.write_bytes(edited)
+        os.utime(plane, ns=(before.st_atime_ns, before.st_mtime_ns))
+        with patch.object(oi, "shrink_png", wraps=oi.shrink_png) as encode:
+            oi.run(["rover", "plane"], checkout, cache_dir=cache)
+            check("only edited bytes are encoded, even with an unchanged mtime",
+                  encode.call_count == 1 and encode.call_args.args[0] == edited)
+
+
+def check_no_pillow_does_not_poison_cache():
+    import builtins
+    real_import = builtins.__import__
+
+    def no_pillow(name, *args, **kwargs):
+        if name.startswith("PIL"):
+            raise ImportError("no Pillow")
+        return real_import(name, *args, **kwargs)
+
+    original = noisy_png()
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td) / "checkout"
+        image = root / "rover" / "build" / "html" / "_images" / "diagram.png"
+        image.parent.mkdir(parents=True)
+        image.write_bytes(original)
+        cache = Path(td) / "cache"
+        with patch("builtins.__import__", side_effect=no_pillow), \
+                patch.object(Path, "rglob", side_effect=AssertionError("image scan")):
+            check("without Pillow the pass skips the scan and cache writes",
+                  oi.run(["rover"], root, cache_dir=cache) == (0, 0) and
+                  not cache.exists())
+        with patch.object(oi, "shrink_png", wraps=oi.shrink_png) as encode:
+            oi.run(["rover"], root, cache_dir=cache)
+            check("installing Pillow later still optimises the original",
+                  encode.call_count == 1 and len(image.read_bytes()) < len(original))
+
+        # Legacy runs without Pillow cached original bytes as a PNG result.
+        # Those entries must not suppress optimisation in the new format.
+        shutil.rmtree(cache)
+        cache.mkdir()
+        import hashlib
+        (cache / (hashlib.sha256(original).hexdigest()[:32] + ".png")).write_bytes(original)
+        image.write_bytes(original)
+        with patch.object(oi, "shrink_png", wraps=oi.shrink_png) as encode:
+            oi.run(["rover"], root, cache_dir=cache)
+            check("legacy no-Pillow results cannot suppress optimisation",
+                  encode.call_count == 1 and len(image.read_bytes()) < len(original))
+
+
+def check_negative_results_are_small():
+    optimised = oi.shrink_png(noisy_png())
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        image = root / "rover" / "build" / "html" / "_images" / "diagram.png"
+        image.parent.mkdir(parents=True)
+        image.write_bytes(optimised)
+        cache = root / "cache"
+        oi.run(["rover"], root, cache_dir=cache)
+        entries = list(cache.iterdir())
+        check("an image that cannot shrink gets an empty marker, not another copy",
+              len(entries) == 1 and entries[0].stat().st_size == 0)
+        with patch.object(oi, "shrink_png", wraps=oi.shrink_png) as encode:
+            oi.run(["rover"], root, cache_dir=cache)
+            check("an unchanged negative result is not recompressed",
+                  encode.call_count == 0 and image.read_bytes() == optimised)
+
+
 def main():
     print("\nlossless PNG pass\n")
     try:
@@ -145,6 +257,9 @@ def main():
     check_modes_survive()
     check_bad_input_is_returned_untouched()
     check_pass_over_a_built_tree()
+    check_cache_survives_clean_builds()
+    check_no_pillow_does_not_poison_cache()
+    check_negative_results_are_small()
 
     print()
     if failures:
