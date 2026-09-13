@@ -1248,6 +1248,21 @@
         [COMMON].concat(WIKIS).forEach(function (w) { byId[w.id] = w; });
 
         var moved = 0, full = [];
+        // The selection is the reader's. Both update paths end in a
+        // re-render that ticks every stored wiki, and the archive path
+        // borrows the boxes on top; it is recorded here and handed back
+        // whichever way the update went.
+        var chosenBefore = selectable().filter(function (c) { return c.checked; })
+          .map(function (c) { return c.value; });
+        var restoreSelection = function () {
+          selectable().forEach(function (c) {
+            c.checked = chosenBefore.indexOf(c.value) !== -1;
+          });
+          syncSelectAll();
+          updateTotal();
+          updateExportState();
+          updateSaveState();
+        };
         updateWriting = true;
         return stale.reduce(function (chain, id) {
           return chain.then(function () {
@@ -1282,7 +1297,7 @@
                         mode: 'done' });
               }
             }
-            return renderWikis();
+            return renderWikis().then(restoreSelection);
           }
           // These cannot be updated in place, so they are downloaded again,
           // on a timer too: an out-of-date saved copy is worse than a download.
@@ -1293,19 +1308,6 @@
                   mode: 'sweep' });
 
           // Re-select what needs a full fetch and reuse the one download path.
-          // The selection is the reader's; it is borrowed here and handed
-          // back once the download has settled, whichever way it went.
-          var chosenBefore = selectable().filter(function (c) { return c.checked; })
-            .map(function (c) { return c.value; });
-          var restoreSelection = function () {
-            selectable().forEach(function (c) {
-              c.checked = chosenBefore.indexOf(c.value) !== -1;
-            });
-            syncSelectAll();
-            updateTotal();
-            updateExportState();
-            updateSaveState();
-          };
           selectable().forEach(function (c) {
             c.checked = full.indexOf(c.value) !== -1;
           });

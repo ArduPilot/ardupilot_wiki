@@ -1008,6 +1008,28 @@ async function main() {
         check('clicking a #/path nav link routes to that page',
               w3.location.hash === '#' + dest.p,
               w3.location.hash + ' wanted #' + dest.p);
+        // The sources link into ardupilot.org by absolute URL with an anchor
+        // 49 times; the export must land on the anchor, not the page top.
+        {
+          const absBodies = {};
+          absBodies[from.p] = '<a id="abs" href="https://ardupilot.org' + dest.p +
+                              '.html#far-section">go</a>';
+          absBodies[dest.p] = '<p>top</p><h2 id="far-section">Far</h2>';
+          const w6 = bootShell(D, absBodies);
+          const scrolled = [];
+          if (w6) {
+            w6.Element.prototype.scrollIntoView = function () { scrolled.push(this.id); };
+            shellGo(w6, from.p);
+            w6.document.getElementById('abs').dispatchEvent(
+              new w6.MouseEvent('click', { bubbles: true, cancelable: true }));
+            w6.dispatchEvent(new w6.Event('hashchange'));
+            await new Promise((r) => setTimeout(r, 120));
+          }
+          check('an absolute ardupilot.org link keeps its anchor',
+                !!w6 && w6.location.hash === '#' + dest.p && scrolled.indexOf('far-section') !== -1,
+                (w6 ? w6.location.hash : 'no shell') + ', scrolled to ' +
+                (scrolled.filter(Boolean).join(',') || 'nothing'));
+        }
       } else {
         check('anchor shell booted', false);
       }
