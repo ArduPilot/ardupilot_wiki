@@ -340,8 +340,16 @@ writing into ``<destdir>/offline/``:
    this table, so a build published mid-save cannot be frozen in as current.
 
 ``offline.cache/``
-   The video-thumbnail cache, kept beside the destination across builds and
-   never published or promoted.
+   Build caches under ``<destdir>/offline.cache/``: video thumbnails in
+   ``thumbs/`` and PNG optimisation results in ``images/``. With a deployment
+   directory outside the checkout, both survive ``update.sh`` cleaning the
+   checkout. They are never included in the published archives or promoted
+   with ``offline/``. Without ``--destdir``, the caches are local to the checkout.
+
+   PNGs are keyed by their bytes, so unchanged images are not re-encoded even
+   after a clean build. Images that cannot shrink are recorded with empty
+   marker files instead of storing another copy. When Pillow is unavailable,
+   the PNG pass skips scanning and writing its cache altogether.
 
 ``files/``
    The rewritten pages and generated video stills, published individually and
