@@ -12,4 +12,5 @@ Additional Information and Topics of Interest
     Ready to Swim/Use Vehicles <common-rtf>
     OEM Customization <common-oem-customizations>
     Web Tools <https://firmware.ardupilot.org/Tools/WebTools/>
+    Firmware Update <common-firmware-update>
     Appendix <common-appendix>

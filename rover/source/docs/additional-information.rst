@@ -15,4 +15,5 @@ Additional Information and Topics of Interest
     OEM Customization <common-oem-customizations>
     Use-Cases and Applications <common-use-cases-and-applications>
     Web Tools <https://firmware.ardupilot.org/Tools/WebTools/>
+    Firmware Update <common-firmware-update>
     Appendix <common-appendix>
