@@ -645,10 +645,12 @@
   var YT = /[?&]v=([\w-]{6,})/;
   var VIMEO = /^https?:\/\/vimeo\.com\/(\d+)/;
 
+  // The same host the live pages embed from, so a saved page plays wherever
+  // the live page does; some networks filter youtube-nocookie.com only.
   function embedFor(href) {
     var m = YT.exec(href || '');
     if (m) {
-      return { src: 'https://www.youtube-nocookie.com/embed/' + m[1] + '?rel=0',
+      return { src: 'https://www.youtube.com/embed/' + m[1],
                title: 'YouTube video' };
     }
     m = VIMEO.exec(href || '');
