@@ -347,9 +347,19 @@ writing into ``<destdir>/offline/``:
    with ``offline/``. Without ``--destdir``, the caches are local to the checkout.
 
    PNGs are keyed by their bytes, so unchanged images are not re-encoded even
-   after a clean build. Images that cannot shrink are recorded with empty
-   marker files instead of storing another copy. When Pillow is unavailable,
+   after a clean build. Images that cannot shrink after a successful encode
+   are recorded with small marker files instead of storing another copy.
+   Failed encodes leave no marker and are retried on the next build. Cached
+   PNGs are checked for valid structure and identical pixels before reuse;
+   damaged entries are regenerated. Older empty markers are rechecked once,
+   while valid prebuilt PNGs remain reusable. When Pillow is unavailable,
    the PNG pass skips scanning and writing its cache altogether.
+
+   These are disposable build files, not browser downloads. Deny HTTP access
+   to ``/offline.cache/`` when the deployment directory is a web root (see the
+   nginx example below). Old image versions are retained; to reclaim space,
+   remove ``offline.cache/images/`` while no build is running. The next build
+   recreates it, at the cost of re-encoding the images once.
 
 ``files/``
    The rewritten pages and generated video stills, published individually and
@@ -408,6 +418,8 @@ Under nginx, the rules that matter look like this::
     }
     location = /offline/offline-manifest.json      { add_header Cache-Control "no-cache"; }
     location ~ ^/offline/[^/]+-files\.json$         { add_header Cache-Control "no-cache"; }
+    location = /offline.cache                     { return 404; }
+    location ^~ /offline.cache/                   { return 404; }
     location /offline/ {
         gzip_static on;
         gzip off;
