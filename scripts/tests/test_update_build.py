@@ -23,6 +23,30 @@ def kill_build(wiki, fast):
     os.kill(os.getpid(), signal.SIGKILL)
 
 
+class TestImageCacheWiring(unittest.TestCase):
+    def test_image_cache_uses_deployment_directory(self):
+        from scripts import optimise_images
+
+        for destdir in (None, '/outside-checkout/published'):
+            with self.subTest(destdir=destdir), ExitStack() as stack:
+                updater = update.WikiUpdater.__new__(update.WikiUpdater)
+                updater.args = SimpleNamespace(site='plane', parallel=1, fast=True,
+                                               clean_common=False, paramversioning=False,
+                                               enablebackups=False, destdir=destdir)
+                for name in ('check_imports', 'check_ref_directives', 'create_features_pages',
+                             'copy_static_html_sites', 'copy_common_source_files',
+                             'sphinx_make', 'check_build', 'copy_build'):
+                    stack.enter_context(patch.object(update, name))
+                stack.enter_context(patch.object(update.error_store_handler, 'error_messages', []))
+                optimise = stack.enter_context(patch.object(optimise_images, 'run', return_value=(0, 0)))
+                with self.assertRaises(SystemExit) as exc:
+                    updater.run()
+                self.assertEqual(exc.exception.code, 0)
+                optimise.assert_called_once_with(
+                    ['plane'], pathlib.Path('.'),
+                    cache_dir=pathlib.Path(destdir or '.') / 'offline.cache' / 'images')
+
+
 class TestBuildPublication(unittest.TestCase):
     def test_child_exit_codes(self):
         for code in (0, 1, 2, 3, -9, -11):

@@ -9,11 +9,16 @@ the cleaned checkout.
 import hashlib
 import io
 import os
+import stat
+import tempfile
 from pathlib import Path
 
 CACHE_DIR = ".image-cache"
 # Older caches can contain unoptimised originals from a run without Pillow.
 CACHE_VERSION = b"png-cache-v2\0"
+# Empty markers from v2 may represent a failed encode. Keep its PNG results,
+# but only trust negative results explicitly recorded after a successful encode.
+UNCHANGED = b"png-encode-ok-v1\n"
 
 
 def _cache_path(cache, data):
@@ -21,11 +26,11 @@ def _cache_path(cache, data):
 
 
 def shrink_png(data):
-    """Return a smaller, pixel-identical PNG, or the original if there isn't one."""
+    """Return a smaller PNG, the original if no smaller result, or None on failure."""
     try:
         from PIL import Image
     except ImportError:
-        return data
+        return None
 
     try:
         with Image.open(io.BytesIO(data)) as im:
@@ -42,12 +47,33 @@ def shrink_png(data):
         with Image.open(io.BytesIO(shrunk)) as check:
             check.load()
             if (check.mode, check.size) != (mode, size) or check.tobytes() != pixels:
-                return data
+                return None
 
         return shrunk
     except Exception:
         # Nothing about one image should stop a build.
-        return data
+        return None
+
+
+def _valid_cached_png(data, original):
+    """Check complete PNG structure and decoded pixels before publishing a hit."""
+    from PIL import Image
+
+    try:
+        if not data.endswith(b"\x00\x00\x00\x00IEND\xaeB\x60\x82"):
+            return False
+        with Image.open(io.BytesIO(data)) as image:
+            if image.format != "PNG":
+                return False
+            image.verify()  # Check chunk CRCs as well as decoding below.
+        with Image.open(io.BytesIO(data)) as image, Image.open(io.BytesIO(original)) as source:
+            image.load()
+            source.load()
+            return ((image.mode, image.size, image.tobytes()) ==
+                    (source.mode, source.size, source.tobytes()) and
+                    image.convert("RGBA").tobytes() == source.convert("RGBA").tobytes())
+    except Exception:
+        return False
 
 
 def run(wikis, root=Path("."), cache_dir=None):
@@ -82,13 +108,22 @@ def run(wikis, root=Path("."), cache_dir=None):
             cached = _cache_path(cache, data) if cache else None
             if cached and cached.is_file():
                 try:
-                    best = cached.read_bytes()
+                    candidate = cached.read_bytes()
+                    if len(candidate) < len(data) and _valid_cached_png(candidate, data):
+                        best = candidate
                 except OSError:
                     pass
             elif cached and cached.with_suffix(".unchanged").is_file():
-                best = data
+                try:
+                    if cached.with_suffix(".unchanged").read_bytes() == UNCHANGED:
+                        best = data
+                except OSError:
+                    pass
             if best is None:
                 best = shrink_png(data)
+                if best is None:
+                    # Leave the source and cache alone so a later build retries.
+                    continue
                 if cached:
                     try:
                         if len(best) < len(data):
@@ -97,10 +132,13 @@ def run(wikis, root=Path("."), cache_dir=None):
                             # next time; do not encode them a second time.
                             unchanged = _cache_path(cache, best).with_suffix(".unchanged")
                         else:
-                            # Remember a negative result without duplicating
-                            # an image that cannot be made smaller.
+                            # Remember a successful negative result without
+                            # duplicating an image that cannot be made smaller.
+                            # A bad PNG entry must not hide this marker on the
+                            # next build and force the same encode again.
+                            cached.unlink(missing_ok=True)
                             unchanged = cached.with_suffix(".unchanged")
-                        _write_atomic(unchanged, b"")
+                        _write_atomic(unchanged, UNCHANGED)
                     except OSError:
                         pass
 
@@ -113,7 +151,26 @@ def run(wikis, root=Path("."), cache_dir=None):
 
 
 def _write_atomic(path, data):
-    """Write via a temp file and rename, so an interrupted build cannot truncate an image."""
-    tmp = path.with_name(path.name + ".pngtmp")
-    tmp.write_bytes(data)
-    os.replace(tmp, path)
+    """Publish a durable complete file without sharing a temporary name."""
+    try:
+        mode = stat.S_IMODE(path.stat().st_mode)
+    except FileNotFoundError:
+        mode = 0o644
+    fd, name = tempfile.mkstemp(dir=path.parent, prefix="." + path.name + ".", suffix=".pngtmp")
+    tmp = Path(name)
+    try:
+        with os.fdopen(fd, "wb") as output:
+            # mkstemp defaults to 0600; built images must remain web-readable.
+            os.chmod(tmp, mode)
+            output.write(data)
+            output.flush()
+            os.fsync(output.fileno())
+        os.replace(tmp, path)
+        if os.name == "posix":
+            directory = os.open(path.parent, os.O_RDONLY | os.O_DIRECTORY)
+            try:
+                os.fsync(directory)
+            finally:
+                os.close(directory)
+    finally:
+        tmp.unlink(missing_ok=True)

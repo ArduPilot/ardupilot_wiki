@@ -8,6 +8,8 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from unittest.mock import patch
 
@@ -71,11 +73,11 @@ def check_modes_survive():
     check("a palette image keeps its mode", pixels(oi.shrink_png(out.getvalue()))[0] == "P")
 
 
-def check_bad_input_is_returned_untouched():
+def check_failed_encode_is_signalled():
     original = noisy_png()
     for name, data in [("garbage bytes", b"not an image at all"),
                        ("a truncated PNG", original[:40])]:
-        check(f"{name} comes back untouched", oi.shrink_png(data) == data)
+        check(f"{name} signals an encode failure", oi.shrink_png(data) is None)
 
     import builtins
     real_import = builtins.__import__
@@ -87,7 +89,7 @@ def check_bad_input_is_returned_untouched():
 
     builtins.__import__ = no_pillow
     try:
-        check("without Pillow the original is returned", oi.shrink_png(original) == original)
+        check("without Pillow encoding signals failure", oi.shrink_png(original) is None)
     finally:
         builtins.__import__ = real_import
 
@@ -237,12 +239,130 @@ def check_negative_results_are_small():
         cache = root / "cache"
         oi.run(["rover"], root, cache_dir=cache)
         entries = list(cache.iterdir())
-        check("an image that cannot shrink gets an empty marker, not another copy",
-              len(entries) == 1 and entries[0].stat().st_size == 0)
+        check("an image that cannot shrink gets a small success marker, not another copy",
+              len(entries) == 1 and entries[0].read_bytes() == oi.UNCHANGED)
         with patch.object(oi, "shrink_png", wraps=oi.shrink_png) as encode:
             oi.run(["rover"], root, cache_dir=cache)
             check("an unchanged negative result is not recompressed",
                   encode.call_count == 0 and image.read_bytes() == optimised)
+
+
+def check_failed_encode_is_retried():
+    from PIL import Image
+    original = noisy_png()
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        image = root / "rover/build/html/_images/diagram.png"
+        image.parent.mkdir(parents=True)
+        image.write_bytes(original)
+        cache = root / "cache"
+        with patch.object(Image.Image, "save", side_effect=MemoryError("temporary failure")):
+            result = oi.run(["rover"], root, cache_dir=cache)
+        check("an encode failure preserves the image without recording a negative result",
+              result == (0, 0) and image.read_bytes() == original and not list(cache.iterdir()))
+        with patch.object(oi, "shrink_png", wraps=oi.shrink_png) as encode:
+            oi.run(["rover"], root, cache_dir=cache)
+        check("the next build retries a transient failure successfully",
+              encode.call_count == 1 and len(image.read_bytes()) < len(original))
+
+        image.write_bytes(original)
+        shutil.rmtree(cache)
+        cache.mkdir()
+        oi._cache_path(cache, original).with_suffix(".unchanged").write_bytes(b"")
+        with patch.object(oi, "shrink_png", wraps=oi.shrink_png) as encode:
+            oi.run(["rover"], root, cache_dir=cache)
+        check("old empty markers cannot preserve an earlier encode failure",
+              encode.call_count == 1 and len(image.read_bytes()) < len(original))
+
+
+def check_corrupt_cache_is_repaired():
+    from PIL import Image
+    original = noisy_png()
+    optimised = oi.shrink_png(original)
+    wrong = io.BytesIO()
+    Image.new("RGB", (240, 180), "red").save(wrong, "PNG", optimize=True)
+    bad_crc = bytearray(optimised)
+    bad_crc[29] ^= 1  # IHDR CRC; signature and IEND still intact.
+    cases = [("empty", b""), ("truncated", optimised[:len(optimised) // 2]),
+             ("missing IEND CRC", optimised[:-1]), ("bad CRC", bytes(bad_crc)),
+             ("different pixels", wrong.getvalue())]
+    for name, damaged in cases:
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            image = root / "rover/build/html/_images/diagram.png"
+            image.parent.mkdir(parents=True)
+            image.write_bytes(original)
+            cache = root / "cache"
+            cache.mkdir()
+            cached = oi._cache_path(cache, original)
+            cached.write_bytes(damaged)
+            # Even a positive marker must not hide the corrupt PNG entry.
+            cached.with_suffix(".unchanged").write_bytes(oi.UNCHANGED)
+            with patch.object(oi, "shrink_png", wraps=oi.shrink_png) as encode:
+                oi.run(["rover"], root, cache_dir=cache)
+            check(f"a {name} cache entry is regenerated before publication",
+                  encode.call_count == 1 and image.read_bytes() == optimised and
+                  cached.read_bytes() == optimised)
+            image.write_bytes(original)
+            with patch.object(oi, "shrink_png", side_effect=AssertionError("unnecessary encode")):
+                oi.run(["rover"], root, cache_dir=cache)
+            check(f"the repaired {name} entry is reused without encoding",
+                  image.read_bytes() == optimised)
+
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        image = root / "rover/build/html/_images/diagram.png"
+        image.parent.mkdir(parents=True)
+        image.write_bytes(optimised)
+        cache = root / "cache"
+        cache.mkdir()
+        cached = oi._cache_path(cache, optimised)
+        cached.write_bytes(b"")
+        oi.run(["rover"], root, cache_dir=cache)
+        check("a corrupt entry for an optimal image is replaced by a success marker",
+              not cached.exists() and cached.with_suffix(".unchanged").read_bytes() == oi.UNCHANGED)
+        with patch.object(oi, "shrink_png", side_effect=AssertionError("repeated encode")):
+            oi.run(["rover"], root, cache_dir=cache)
+        check("an optimal image with a repaired cache is not encoded again",
+              image.read_bytes() == optimised)
+
+
+def check_atomic_writes():
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        target = root / "image.png"
+        target.write_bytes(b"previous image")
+        target.chmod(0o644)
+        for operation in ("fsync", "replace"):
+            with patch.object(oi.os, operation, side_effect=OSError("write failure")):
+                try:
+                    oi._write_atomic(target, b"new image")
+                except OSError:
+                    pass
+                else:
+                    check(f"{operation} failure is reported", False)
+            check(f"{operation} failure preserves the old image and removes temporary files",
+                  target.read_bytes() == b"previous image" and list(root.iterdir()) == [target])
+
+        barrier = threading.Barrier(2)
+        replace = os.replace
+
+        def simultaneous_replace(source, destination):
+            barrier.wait(timeout=10)
+            replace(source, destination)
+
+        payloads = [b"a" * 8192, b"b" * 16384]
+        with patch.object(oi.os, "replace", side_effect=simultaneous_replace), \
+                ThreadPoolExecutor(max_workers=2) as pool:
+            list(pool.map(lambda body: oi._write_atomic(target, body), payloads))
+        check("concurrent writers publish one complete file without temporary-name collisions",
+              target.read_bytes() in payloads and list(root.iterdir()) == [target])
+        check("atomic replacement preserves web-readable image permissions",
+              target.stat().st_mode & 0o777 == 0o644)
+        fresh = root / "fresh.png"
+        oi._write_atomic(fresh, b"new cached image")
+        check("new cache files are readable when copied into the web tree",
+              fresh.stat().st_mode & 0o777 == 0o644)
 
 
 def main():
@@ -255,11 +375,14 @@ def main():
 
     check_shrinks_without_changing_pixels()
     check_modes_survive()
-    check_bad_input_is_returned_untouched()
+    check_failed_encode_is_signalled()
     check_pass_over_a_built_tree()
     check_cache_survives_clean_builds()
     check_no_pillow_does_not_poison_cache()
     check_negative_results_are_small()
+    check_failed_encode_is_retried()
+    check_corrupt_cache_is_repaired()
+    check_atomic_writes()
 
     print()
     if failures:
