@@ -757,6 +757,13 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // These downloads belong to the page. Forwarding their response streams
+  // through the worker lets Firefox abort a long download when the worker
+  // goes idle. Leave them to the browser's network stack instead.
+  if (url.pathname.startsWith('/offline/')) {
+    return;
+  }
+
   if (url.pathname.startsWith('/__export__/')) {
     const id = url.pathname.slice('/__export__/'.length);
     const entry = EXPORTS.get(id);

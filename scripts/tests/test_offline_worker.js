@@ -563,6 +563,22 @@ async function checkPoisonGuard() {
         w.seen.puts.length === 1, JSON.stringify(w.seen.puts));
 }
 
+// A long archive stream must not depend on the worker staying alive.
+async function checkDownloadBypass() {
+  console.log('\nservice worker: downloads bypass the worker\n');
+  for (const path of ['/offline/common-offline.tar?v=build',
+                      '/offline/copter-offline.tar.gz',
+                      '/offline/offline-manifest.json',
+                      '/offline/common-files.json?ap-update=build']) {
+    const w = bootWorker({ networkFails: true });
+    const answer = w.ask(path);
+    check(path + ' is left to the browser, even when the network fails',
+          !answer && w.seen.fetches.length === 0 &&
+          w.seen.cacheReads.length === 0 && w.seen.puts.length === 0);
+    if (answer) { await answer.catch(() => undefined); }
+  }
+}
+
 // A version bump must discard only the versioned caches, never a saved wiki.
 // searchindex.js and objects.inv must still be answered from a saved wiki.
 async function checkArchiveFallback() {
@@ -1389,6 +1405,7 @@ async function main() {
   await checkPoisonGuard();
   await checkVersionBump();
   await checkArchiveFallback();
+  await checkDownloadBypass();
   await checkRevalidationIsAwaited();
   await checkRefreshSurvivesAConsumedBody();
   await checkMarkerRespected();
