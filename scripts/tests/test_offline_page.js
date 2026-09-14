@@ -2171,18 +2171,106 @@ async function main() {
     // promise stays pending until the reader notices it. The save must not
     // wait on that: persistence is a nicety, the download is the point.
     const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', MANIFEST.generated, { '_images/seed.png': ['h0', 'x'] });
     const body = '<html>a</html>';
     const { doc, sandbox } = load({ manifest: MANIFEST, caches: cachesObj,
       archives: { 'copter/index.html': body },
       tables: { 'copter-files.json': { 'copter/index.html': await fileHash(body) } } });
     await settle();
-    sandbox.navigator.storage.persist = () => new Promise(() => {});
+    // The prompt is answered only after the save is long done.
+    let allow;
+    sandbox.navigator.storage.persist = () => new Promise((r) => { allow = r; });
     doc.querySelector('.wiki-check[value="copter"]').click(); await settle();
     $(doc, 'download-cache-btn').click();
     for (let i = 0; i < 40; i++) { await settle(); }
     const text = $(doc, 'cache-progress').textContent || '';
-    check('the save gets past the space check without an answer',
-          !/Checking space/.test(text), JSON.stringify(text));
+    check('the save completes without an answer', text === 'Saved', JSON.stringify(text));
+    check('and the wiki is marked saved',
+          !!(await (await cachesObj.open('ardupilot-offline-copter')).match('/__ap_complete__')));
+    check('storage still reads as temporary meanwhile',
+          /temporary/.test($(doc, 'storage-status').textContent || ''),
+          JSON.stringify($(doc, 'storage-status').textContent));
+    // The reader clicks Allow: the label must follow without a reload.
+    sandbox.navigator.storage.persisted = () => Promise.resolve(true);
+    allow(true);
+    for (let i = 0; i < 6; i++) { await settle(); }
+    check('a late allow is shown as soon as it arrives',
+          /permanent/.test($(doc, 'storage-status').textContent || ''),
+          JSON.stringify($(doc, 'storage-status').textContent));
+  }
+
+  console.log('\na save says it is checking once the bytes are in');
+  {
+    // The bar measures bytes; hashing and the table check come after. On a
+    // slow device that tail is long, and the row must say so rather than
+    // sit at 100% "Saving" or claim Saved before the marker is written.
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', MANIFEST.generated, { '_images/seed.png': ['h0', 'x'] });
+    const body = '<html>a</html>';
+    const { doc, w } = load({ manifest: MANIFEST, caches: cachesObj,
+      archives: { 'copter/index.html': body },
+      tables: { 'copter-files.json': { 'copter/index.html': await fileHash(body) } } });
+    await settle();
+    const said = [];
+    const badgeAt = () => (doc.querySelector('tr[data-wiki="copter"] .apo-badge') || {}).textContent;
+    new w.MutationObserver(() => {
+      said.push([$(doc, 'cache-progress').textContent, badgeAt()]);
+    }).observe($(doc, 'cache-progress'), { childList: true, characterData: true, subtree: true });
+    doc.querySelector('.wiki-check[value="copter"]').click(); await settle();
+    $(doc, 'download-cache-btn').click();
+    for (let i = 0; i < 40; i++) { await settle(); }
+    const checking = said.filter(([s]) => /^Checking Copter/.test(s));
+    check('the status says Checking Copter after the bytes arrive',
+          checking.length > 0, JSON.stringify(said.map(([s]) => s).slice(-6)));
+    check('the row is not marked Saved while it is still checking',
+          checking.length > 0 && checking.every(([, b]) => b !== 'Saved'),
+          JSON.stringify(checking));
+    check('and it ends Saved', $(doc, 'cache-progress').textContent === 'Saved' && badgeAt() === 'Saved');
+  }
+
+  console.log('\na refresh cancelled after it started writing is unmarked');
+  {
+    // The first entry lands, the stream stalls, the reader cancels. The old
+    // marker would vouch for a copy that is half new and half old.
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', MANIFEST.generated, { '_images/seed.png': ['h0', 'x'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old'], 'copter/docs/a.html': ['h2', 'old a'] });
+    const body = '<html>new</html>';
+    const { doc, w, sandbox, swMessages } = load({ manifest: MANIFEST, caches: cachesObj,
+      archives: { 'copter/index.html': body, 'copter/docs/a.html': '<html>new a</html>' },
+      tables: { 'copter-files.json': { 'copter/index.html': 'deadbeefdeadbeef', 'copter/docs/a.html': 'deadbeefdeadbeef' } } });
+    await settle();
+    // The archive delivers its first entry and then hangs until aborted.
+    const whole = tarBytes({ 'copter/index.html': body, 'copter/docs/a.html': '<html>new a</html>' });
+    const realFetch = sandbox.fetch;
+    sandbox.fetch = (u, o) => {
+      if (!/copter-offline\.tar/.test(String(u))) { return realFetch(u, o); }
+      return Promise.resolve({ ok: true, body: new ReadableStream({ start(c) {
+        c.enqueue(new Uint8Array(whole.subarray(0, 1024)));
+        if (o && o.signal) {
+          o.signal.addEventListener('abort', () => {
+            const e = new Error('aborted'); e.name = 'AbortError'; c.error(e);
+          });
+        }
+      } }) });
+    };
+    sandbox.window.fetch = sandbox.fetch;
+    swMessages.length = 0;
+    $(doc, 'check-btn').dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
+    // Wait until the first entry has been rewritten, then cancel.
+    const c = await cachesObj.open('ardupilot-offline-copter');
+    for (let i = 0; i < 30; i++) {
+      await settle();
+      if ((await bodyAt(c, '/copter/index.html')) === body) { break; }
+    }
+    check('the first entry was rewritten before the cancel', (await bodyAt(c, '/copter/index.html')) === body);
+    $(doc, 'download-cache-btn').dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
+    for (let i = 0; i < 12; i++) { await settle(); }
+    check('a cancelled refresh takes the stale marker with it',
+          !(await c.match('/__ap_complete__')),
+          JSON.stringify($(doc, 'cache-progress').textContent));
+    check('and tells the worker', swMessages.some((m) => m && m.type === 'CACHES_CHANGED'),
+          JSON.stringify(swMessages));
   }
 
   console.log('\nan update tick hands the selection back');

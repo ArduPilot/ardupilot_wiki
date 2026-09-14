@@ -970,10 +970,14 @@
     var persistFirst = Promise.resolve(false);
     try {
       if (navigator.storage && navigator.storage.persist) {
+        var asked = navigator.storage.persist().catch(function () { return false; });
         persistFirst = Promise.race([
-          navigator.storage.persist().catch(function () { return false; }),
+          asked,
           new Promise(function (resolve) { setTimeout(function () { resolve(false); }, 1500); })
         ]);
+        // An answer that arrives after the save has finished still counts;
+        // the storage line must not say temporary until the next tick.
+        asked.then(function (granted) { if (granted) { renderStorage(); } });
       }
     } catch (err) { /* no storage manager; nothing to wait for */ }
 
@@ -1016,7 +1020,10 @@
                 unpacked = names;
                 return storeParams(entry, cache, report);
               }).then(function () {
-                rowProgress(entry.id, 100, 'done');
+                // The bytes are in; the table check comes next, and on a slow
+                // device it is long enough to need saying.
+                report('Checking ' + entry.name + '\u2026');
+                rowProgress(entry.id, 99, 'checking');
                 // The file table both verifies this save and drives updates;
                 // without it nothing vouches for what just arrived.
                 return fetch(ApUpdate.tableUrl(entry, ARTIFACT_BASE, CURRENT_BUILD), { cache: 'no-cache' })
@@ -1117,6 +1124,7 @@
                     build: CURRENT_BUILD, saved: Date.now(), id: entry.id
                   }), { headers: { 'Content-Type': 'application/json' } }));
               }).then(function () {
+                rowProgress(entry.id, 100, 'done');
                 // One source of truth, updated the moment it is true.
                 storedIds[entry.id] = true;
                 rememberSaved(entry.id);
