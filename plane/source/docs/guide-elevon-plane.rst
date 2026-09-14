@@ -61,8 +61,8 @@ PROVIDING RC INPUT is:
 
    <table border="1" class="docutils">
    <tr><th>Input</th><th>Action</th></tr>
-   <tr><td>Roll right</td><td>Left elevon goes up and right elevon goes down</td><tr>
-   <tr><td>Roll left</td><td>Right elevon goes up and left elevon goes down</td><tr>
+   <tr><td>Roll right</td><td>Left elevon goes up and right elevon goes down</td></tr>
+   <tr><td>Roll left</td><td>Right elevon goes up and left elevon goes down</td></tr>
    <tr><td>Pitch down</td><td>Both elevons go up</td></tr>
    <tr><td>Pitch up</td><td>Both elevons go down</td></tr>
    </table>

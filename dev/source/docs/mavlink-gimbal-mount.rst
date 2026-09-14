@@ -361,7 +361,6 @@ Valid options are:
    <td>float</td>
    <td>Gimbal device id (unused)</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
    <td>float</td>
@@ -372,7 +371,6 @@ Valid options are:
    <td>float</td>
    <td>not used</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td><strong>param4</strong></td>
    <td>float</td>
@@ -459,7 +457,6 @@ The gimbal ROI can be stopped (e.g. the gimbal will switch to its default mode h
    <td>float</td>
    <td>Gimbal device id (unused)</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
    <td>float</td>

@@ -146,6 +146,8 @@ Stable
 
 ``Stable`` is the current release, and is the right choice for almost everyone. It is what a ground station installs by default from its firmware install screen. Each vehicle's ``stable`` directory always holds the newest release; specific past releases are kept in the numbered ``stable-x.y.z`` directories beside it.
 
+.. note:: The ArduPilot project is very careful about what is merged into our "point releases". Anything that goes into one has either been evaluated as being strictly limited in what impact it can have on existing systems, or as being an important bugfix. We encourage users to upgrade to any point release which is released, as they sometimes contain very important bugfixes.
+
 Beta
 ^^^^
 

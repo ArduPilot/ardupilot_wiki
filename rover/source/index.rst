@@ -7,7 +7,7 @@ ArduPilot Rover
 ..  raw:: html
  
     <p style="text-align:center;color:red;"><strong>
-    Success with Rover requires that the 'First Time Setup' and 'First Drive and Tuning' sections of this documentation be read and followed!</strong>
+    Success with Rover requires that the 'First Time Setup' and 'First Drive and Tuning' sections of this documentation be read and followed!</strong></p>
     <br></br>
 
 .. image:: /images/home_rover.jpg

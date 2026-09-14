@@ -95,6 +95,7 @@ FrSky SPort, see :ref:`FrSky Telemetry <common-frsky-telemetry>`
 .. raw:: html
 
    </td>
+   </tr>
    <tr>
    <td>5</td>
    <td>
@@ -483,6 +484,7 @@ DDS XRCE
 .. raw:: html
 
    </td>
+   </tr>
    <tr>
    <td> 46</td>
    <td>
@@ -492,6 +494,7 @@ IMU Data
 .. raw:: html
 
    </td>
+   </tr>
    <tr>
    <td> 48</td>
    <td>
@@ -501,6 +504,7 @@ PPP
 .. raw:: html
 
    </td>
+   </tr>
    <tr>
    <td> 49</td>
    <td>

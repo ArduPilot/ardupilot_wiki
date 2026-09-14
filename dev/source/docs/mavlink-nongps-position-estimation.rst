@@ -116,12 +116,10 @@ The preferred method is to send an `ODOMETRY <https://mavlink.io/en/messages/com
    <td>Yaw angular speed in rad/s (clockwise is positive)</td>
    </tr>
    <tr>
-   <tr>
    <td><strong>pos_covariance</strong></td>
    <td>float[21]</td>
    <td>elements 0, 6 and 11 are x, y and z-axis position error. 15, 18, 20 are roll, pitch and yaw angle error. Ignored if NaN</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td><strong>velocity_covariance</strong></td>
    <td>float[21]</td>
@@ -132,7 +130,6 @@ The preferred method is to send an `ODOMETRY <https://mavlink.io/en/messages/com
    <td>uint8_t</td>
    <td>External estimator reset counter.  This should be incremented when the estimate resets position, velocity, attitude or angular speed</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td><strong>estimator_type</strong></td>
    <td>uint8_t</td>

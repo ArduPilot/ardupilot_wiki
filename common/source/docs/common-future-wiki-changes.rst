@@ -41,10 +41,16 @@ New Features
 - Accel and gyro consistency pre-arm checks now run concurrently, see https://github.com/ArduPilot/ardupilot_wiki/pull/7921
 - EK3_OPTIONS bits for optical flow (terrain alt above rangefinder range, AGL Kalman filter for flow scaling), see https://github.com/ArduPilot/ardupilot_wiki/pull/7962
 - MAV_CMD_DO_SET_MISSION_CURRENT can now reset DO_JUMP repeat counters without changing the current mission item, see https://github.com/ArduPilot/ardupilot_wiki/pull/7982
+- Read-only MAVn_DEVID parameter identifying which port each MAVLink channel's parameter group belongs to, see https://github.com/ArduPilot/ardupilot_wiki/pull/8051
+- I2C TFmini Plus lidar can now be powered down above the RNGFNDx_PWRRNG height above terrain, see https://github.com/ArduPilot/ardupilot_wiki/pull/8055
+- ARSPD_TYPE = 20 allows a LUA script to provide the airspeed or differential pressure, see https://github.com/ArduPilot/ardupilot_wiki/pull/8057
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
 - QRTL approach now descends gradually to RTL_ALTITUDE instead of stepping down to it, see https://github.com/ArduPilot/ardupilot_wiki/pull/8031
+- Weathervaning is now active while navigating between VTOL waypoints in AUTO, see https://github.com/ArduPilot/ardupilot_wiki/pull/8058
+- Q_RTL_PAUSE_TIME pauses above the landing point before the final VTOL descent, defaulting to 5s on tailsitters, see https://github.com/ArduPilot/ardupilot_wiki/pull/8059
+- Automatic flap speed schedule reworked: target airspeed is used without needing an airspeed sensor, with AIRSPEED_CRUISE as the fallback, see https://github.com/ArduPilot/ardupilot_wiki/pull/8060
 [/site]
 [site wiki="copter"]
 - Ability to abort flip using aux switch low, see https://github.com/ArduPilot/ardupilot_wiki/pull/7759
@@ -52,10 +58,13 @@ New Features
 - MAV_CMD_DO_SET_ROI_WPNEXT_OFFSET mission command (point gimbal at next waypoint with an offset), see https://github.com/ArduPilot/ardupilot_wiki/pull/7920
 - Simple/Super Simple mode fix: rotation now correctly applied in more flight modes, including Drift mode and during Precision Landing reposition, see https://github.com/ArduPilot/ardupilot_wiki/pull/7967
 - Tradheli: DDFP tail rotor moved to the RSC controller with independent H_TAIL_RAMP_TIME, see https://github.com/ArduPilot/ardupilot_wiki/pull/7979
+- Flip mode rotation rate is now set by FLIP_RATE, with the flip timeout derived from it, see https://github.com/ArduPilot/ardupilot_wiki/pull/8049
+- Follow: changing FOLL_SYSID now discards the previous lead vehicle's state, and FOLL_SYSID = 0 no longer adopts the first vehicle seen, see https://github.com/ArduPilot/ardupilot_wiki/pull/8061
 [/site]
 [site wiki="rover"]
-
+- Follow: changing FOLL_SYSID now discards the previous lead vehicle's state, and FOLL_SYSID = 0 no longer adopts the first vehicle seen, see https://github.com/ArduPilot/ardupilot_wiki/pull/8061
 [/site]
 [site wiki="sub"]
 - Remote (MAVLink) leak detection, see https://github.com/ArduPilot/ardupilot_wiki/pull/7593
+- GUIDED mode accepts an acceleration target alongside position and velocity, see https://github.com/ArduPilot/ardupilot_wiki/pull/8053
 [/site]
