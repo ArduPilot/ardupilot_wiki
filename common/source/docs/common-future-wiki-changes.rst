@@ -44,6 +44,7 @@ New Features
 - Read-only MAVn_DEVID parameter identifying which port each MAVLink channel's parameter group belongs to, see https://github.com/ArduPilot/ardupilot_wiki/pull/8051
 - I2C TFmini Plus lidar can now be powered down above the RNGFNDx_PWRRNG height above terrain, see https://github.com/ArduPilot/ardupilot_wiki/pull/8055
 - ARSPD_TYPE = 20 allows a LUA script to provide the airspeed or differential pressure, see https://github.com/ArduPilot/ardupilot_wiki/pull/8057
+- Multiple MAVLink rangefinders facing the same direction can be told apart by setting RNGFNDx_ADDR to the DISTANCE_SENSOR id each should accept, see https://github.com/ArduPilot/ardupilot_wiki/pull/8072
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
