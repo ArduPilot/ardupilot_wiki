@@ -955,6 +955,27 @@ async function checkFullStorageFailsOpen() {
   }
 }
 
+// A publish window or a flaky server answers an asset with an error while the
+// reader holds a good copy; the copy must win over the error.
+async function checkErrorFallsBackToSaved() {
+  console.log('\nservice worker: a server error falls back to the saved copy\n');
+  let w = bootWorker({ serve: () => ({ status: 503, ct: 'text/html', body: 'gateway' }),
+                       offlineCopy: { path: '/dev/_static/css/theme.css',
+                                      body: 'body{}', ct: 'text/css' } });
+  let a = w.ask('/dev/_static/css/theme.css?v=abc123');
+  let answered = a ? await a.catch(() => 'REJECTED') : undefined;
+  check('a fingerprinted asset the server answers 503 is served from the saved wiki',
+        !!answered && answered === w.seen.servedCopy,
+        answered && answered.status ? 'status ' + answered.status : String(answered));
+  check('the error answer is not stored', w.seen.puts.length === 0, JSON.stringify(w.seen.puts));
+
+  w = bootWorker({ serve: () => ({ status: 404, ct: 'text/html', body: 'gone' }) });
+  a = w.ask('/dev/_static/css/other.css?v=abc123');
+  answered = a ? await a.catch(() => 'REJECTED') : undefined;
+  check('with nothing saved, the server answer passes through untouched',
+        !!answered && answered.status === 404, String(answered && answered.status));
+}
+
 async function checkVersionBump() {
   console.log('\nservice worker: what a version bump throws away\n');
 
@@ -1404,6 +1425,7 @@ async function main() {
   await checkUpdateRouting();
   await checkPoisonGuard();
   await checkVersionBump();
+  await checkErrorFallsBackToSaved();
   await checkArchiveFallback();
   await checkDownloadBypass();
   await checkRevalidationIsAwaited();
