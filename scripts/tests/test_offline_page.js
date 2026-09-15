@@ -163,7 +163,8 @@ function panelMarkup() {
 function load({ manifest = null, caches = makeCaches(), persisted = false,
                 usage = 0, quota = 10e9, archives = null,
                 tables = null, served = null, rateLimit = false,
-                loose = null, offline = false, estimateDelay = 0 } = {}) {
+                loose = null, offline = false, estimateDelay = 0,
+                decoder = true } = {}) {
   const vc = new VirtualConsole();
   vc.on('jsdomError', (e) => { console.log('    [page error] ' + e.message);
                                if (e.stack) console.log('    ' + e.stack.split('\n')[1]); });
@@ -215,10 +216,17 @@ function load({ manifest = null, caches = makeCaches(), persisted = false,
     // exercise the same normalisation the live cache applies.
     Request: class { constructor(u) { this.url = new URL(String(u), 'https://x').href; } },
     AbortController: w.AbortController,
-    TransformStream, ReadableStream, Uint8Array, WebAssembly,
+    TransformStream, ReadableStream, Uint8Array, WebAssembly, TextEncoder, TextDecoder,
+    atob: (b) => Buffer.from(b, 'base64').toString('binary'),
     fetch: (u, o) => {
       fetchCalls.push(String(u));
       fetchOpts.push({ url: String(u), opts: o || {}, at: Date.now() });
+      // The decoder's wasm, from the site root as the page fetches it.
+      if (String(u).indexOf('zstd.wasm') !== -1) {
+        const wasm = fs.readFileSync(path.join(FRONTEND_JS, 'zstd.wasm'));
+        return Promise.resolve({ ok: true, arrayBuffer: () => Promise.resolve(
+          wasm.buffer.slice(wasm.byteOffset, wasm.byteOffset + wasm.byteLength)) });
+      }
       if (String(u).indexOf('offline-manifest.json') !== -1) {
         return Promise.resolve(manifest
           ? { ok: true, json: () => Promise.resolve(manifest) }
@@ -312,6 +320,12 @@ function load({ manifest = null, caches = makeCaches(), persisted = false,
   });
   // The delta decoder, from the site root as the page loads it.
   vm.runInContext(fs.readFileSync(path.join(FRONTEND_JS, 'zstd-delta.js'), 'utf8'), sandbox);
+  if (!decoder) {
+    // A browser where the decoder cannot run: init rejects, as it does
+    // without WebAssembly or when the wasm cannot be fetched.
+    sandbox.ApZstd = { init: () => Promise.reject(new Error('no WebAssembly here')),
+                       patch: () => { throw new Error('no decoder'); } };
+  }
   vm.runInContext(fs.readFileSync(PAGE, 'utf8'), sandbox);
   return { dom, w, doc: w.document, sandbox, fetchCalls, fetchOpts, swMessages, apOffline };
 }
@@ -1920,6 +1934,172 @@ async function main() {
           !!delta && delta.headers.get('x-ap-encoding') === 'zstd-delta',
           delta ? String(delta.headers.get('x-ap-encoding')) : 'not stored');
     check('and the copy stays complete', !!(await cache.match('/__ap_complete__')));
+  }
+
+  console.log('\nthe decoder is checked once a saved wiki carries versions');
+  {
+    const mk = (ver, def) => ({
+      file: `docs/parameters-Copter-stable-V${ver}.html`, channel: 'stable',
+      version: ver, label: ver, bytes: 30000, default: !!def });
+    const withVersions = () => {
+      const man = JSON.parse(JSON.stringify(MANIFEST));
+      man.wikis.find((w) => w.id === 'copter').param_versions = [mk('4.7.0', true), mk('4.6.3')];
+      man.wikis.find((w) => w.id === 'rover').param_versions = [
+        { file: 'docs/parameters-Rover-stable-V4.7.0.html', channel: 'stable',
+          version: '4.7.0', label: '4.7.0', bytes: 30000, default: true }];
+      return man;
+    };
+    // The versions as a save leaves them: deltas, marked as such.
+    const seedDeltas = async (cachesObj) => {
+      const c = await cachesObj.open('ardupilot-offline-copter');
+      for (const ver of ['4.7.0', '4.6.3']) {
+        await c.put('/copter/docs/parameters-Copter-stable-V' + ver + '.html',
+          new FakeResponse(Buffer.from('APDELTA1 parameters-Copter-stable-V4.7.0.html\nxx'),
+                           { headers: { 'Content-Type': 'text/html',
+                                        'x-ap-encoding': 'zstd-delta' } }));
+      }
+    };
+    // Nothing saved: no check, no wasm fetched.
+    let r = load({ manifest: withVersions() });
+    await settle(); await settle();
+    check('with nothing saved the decoder is not checked',
+          !r.fetchCalls.some((u) => u.indexOf('zstd.wasm') !== -1) &&
+          $(r.doc, 'delta-warning').hidden);
+
+    // Copter saved and carrying versions: the check runs and passes here.
+    let cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    check('a saved wiki with versions triggers one decoder self-test',
+          r.fetchCalls.filter((u) => u.indexOf('zstd.wasm') !== -1).length === 1,
+          r.fetchCalls.filter((u) => u.indexOf('zstd') !== -1).length + ' wasm fetches');
+    check('a working decoder shows no warning', $(r.doc, 'delta-warning').hidden);
+
+    // The same, in a browser whose decoder cannot run.
+    cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    const served = {
+      '/copter/docs/parameters-Copter-stable-V4.7.0.html': '<html><body>plain 4.7.0</body></html>',
+      '/copter/docs/parameters-Copter-stable-V4.6.3.html': '<html><body>plain 4.6.3</body></html>',
+      '/rover/docs/parameters-Rover-stable-V4.7.0.html': '<html><body>rover, not saved</body></html>',
+    };
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj, decoder: false, served });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    const warn = $(r.doc, 'delta-warning');
+    check('a failing decoder shows the warning, naming what will not open',
+          !warn.hidden && /cannot rebuild the compressed parameter versions/.test(warn.textContent) &&
+          /will not open offline/.test(warn.textContent), warn.textContent.slice(0, 80));
+    const btn = r.doc.getElementById('plain-params-btn');
+    check('it offers one button with the size of the plain pages',
+          !!btn && /about 1 MB/.test(btn.textContent), btn ? btn.textContent : 'no button');
+    check('the current parameter list is said to be unaffected',
+          /current parameter list is unaffected/.test(warn.textContent));
+
+    // Pressing it fetches the plain page for the SAVED wiki's versions only.
+    btn.click(); btn.click();
+    for (let i = 0; i < 8; i++) { await settle(); }
+    const pageFetches = r.fetchCalls.filter((u) => u.indexOf('/docs/parameters-') !== -1);
+    check('every carried version of the saved wiki is fetched as a plain page, once',
+          pageFetches.length === 2 &&
+          pageFetches.every((u) => u.indexOf('/copter/') !== -1),
+          pageFetches.join(' '));
+    check('an unsaved wiki\'s versions are left alone',
+          !pageFetches.some((u) => u.indexOf('/rover/') !== -1));
+    check('each fetch is tagged as an update, so the worker goes to the network and never answers with its offline page',
+          pageFetches.every((u) => /\?ap-update=/.test(u)), pageFetches[0]);
+    const copter = await cachesObj.open('ardupilot-offline-copter');
+    const stored = await copter.match('/copter/docs/parameters-Copter-stable-V4.6.3.html');
+    check('the plain page is stored as a page, with no delta marker',
+          !!stored && !stored.headers.get('x-ap-encoding'));
+    const back = await r.sandbox.ApUnpack.readFrom(copter, '/copter/docs/parameters-Copter-stable-V4.6.3.html');
+    check('and reads back without any decoder',
+          !!back && (await back.text()) === served['/copter/docs/parameters-Copter-stable-V4.6.3.html']);
+    check('the warning goes once the plain pages are in', $(r.doc, 'delta-warning').hidden);
+    check('the reader is told all of them are saved',
+          /All 2 parameter versions are saved as plain pages/.test($(r.doc, 'cache-progress').textContent),
+          $(r.doc, 'cache-progress').textContent);
+    check('the worker is told the caches changed',
+          r.swMessages.some((m) => m && m.type === 'CACHES_CHANGED'));
+    check('the copy stays complete', !!(await copter.match('/__ap_complete__')));
+
+    // One page the site no longer serves: the rest still land, and it says so.
+    cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    const partial = Object.assign({}, served);
+    delete partial['/copter/docs/parameters-Copter-stable-V4.6.3.html'];
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj, decoder: false, served: partial });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    r.doc.getElementById('plain-params-btn').click();
+    for (let i = 0; i < 8; i++) { await settle(); }
+    const c2 = await cachesObj.open('ardupilot-offline-copter');
+    const kept = await c2.match('/copter/docs/parameters-Copter-stable-V4.7.0.html');
+    const still = await c2.match('/copter/docs/parameters-Copter-stable-V4.6.3.html');
+    check('a version the site cannot serve is reported, the others still stored',
+          !!kept && !kept.headers.get('x-ap-encoding') &&
+          !!still && still.headers.get('x-ap-encoding') === 'zstd-delta' &&
+          /1 of 2 parameter pages saved/.test($(r.doc, 'cache-progress').textContent) &&
+          /parameters-Copter-stable-V4\.6\.3/.test($(r.doc, 'cache-progress').textContent),
+          $(r.doc, 'cache-progress').textContent);
+    check('the warning stays while any version is still a delta',
+          !$(r.doc, 'delta-warning').hidden);
+
+    // A captive portal answers 200 with a page of its own: refused, not stored.
+    cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj, decoder: false, served });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    const realFetch = r.sandbox.fetch;
+    r.sandbox.fetch = (u, o) => {
+      if (String(u).indexOf('V4.6.3') !== -1) {
+        const portal = Buffer.from('<html><body>Sign in to the wifi</body></html>');
+        return Promise.resolve({ ok: true, headers: { get: (k) =>
+          (String(k).toLowerCase() === 'content-type' ? 'text/plain' : null) },
+          arrayBuffer: () => Promise.resolve(portal.buffer.slice(portal.byteOffset,
+            portal.byteOffset + portal.byteLength)) });
+      }
+      return realFetch(u, o);
+    };
+    r.doc.getElementById('plain-params-btn').click();
+    for (let i = 0; i < 8; i++) { await settle(); }
+    const c3 = await cachesObj.open('ardupilot-offline-copter');
+    const portalHit = await c3.match('/copter/docs/parameters-Copter-stable-V4.6.3.html');
+    check('a page not served as HTML is refused and the delta kept',
+          !!portalHit && portalHit.headers.get('x-ap-encoding') === 'zstd-delta' &&
+          /1 of 2 parameter pages saved/.test($(r.doc, 'cache-progress').textContent),
+          $(r.doc, 'cache-progress').textContent);
+
+    // A Save pressed while the plain pages are still arriving is refused.
+    cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj, decoder: false, served });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    let release;
+    const slowFetch = r.sandbox.fetch;
+    r.sandbox.fetch = (u, o) => (String(u).indexOf('/docs/parameters-') !== -1
+      ? new Promise((res) => { release = () => res(slowFetch(u, o)); })
+      : slowFetch(u, o));
+    r.doc.getElementById('plain-params-btn').click();
+    await settle();
+    r.doc.querySelector('.wiki-check[value="rover"]').click();
+    $(r.doc, 'download-cache-btn').click();
+    await settle();
+    check('a Save pressed mid-fallback is refused, not run over the same caches',
+          /parameter pages are still downloading/.test($(r.doc, 'cache-progress').textContent) &&
+          !r.fetchCalls.some((u) => u.indexOf('rover-offline.tar') !== -1),
+          $(r.doc, 'cache-progress').textContent);
+    if (release) { release(); }
+    for (let i = 0; i < 8; i++) { await settle(); }
   }
 
   console.log('\nthe first save is checked against the file table before the marker');

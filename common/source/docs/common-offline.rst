@@ -88,6 +88,7 @@ Turning it off removes everything saved in the browser.
 
    <div id="storage-warning"></div>
    <p id="quota-warning" class="apo-note apo-note-warn" hidden></p>
+   <p id="delta-warning" class="apo-note apo-note-warn" hidden></p>
 
    <div class="apo">
 
