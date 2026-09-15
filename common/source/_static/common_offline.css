@@ -512,107 +512,18 @@
 .ap-toast.ap-toast-done .ap-toast-bar { background: #46b46e; width: 100%; }
 
 
-/* ---------- historical parameter versions ---------- */
-
-/*
- * A disclosure per vehicle rather than an always-open list: five wikis carry
- * these, fourteen versions each, and shown at once they bury the eleven rows
- * that matter.
- */
-.apo-param-toggle {
-  white-space: nowrap;
-  background: none;
-  border: 0;
-  padding: 0;
-  margin-left: .5em;
-  font: inherit;
+/* Historical parameter versions ride inside the archive; the row says so,
+   on its own line under the name (16px box + 10px gap). */
+.apo-param-count {
+  display: block;
+  margin: .15em 0 0 26px;
   font-size: .82em;
-  color: #2980b9;
-  cursor: pointer;
-  text-decoration: underline dotted;
+  opacity: .7;
+  white-space: nowrap;
 }
-.apo-param-toggle:hover { color: #1a5f8f; }
-.apo-param-more .apo-param-all { margin-left: auto; cursor: pointer; }
-.apo table.apo-table thead th .apo-all-params {
-  margin-left: 1.2em;
-  font-weight: 400;
-  font-size: .85em;
-  color: #fff;
-  cursor: pointer;
-}
-.apo-param-toggle::before { content: "\25B8 "; text-decoration: none; }
-.apo-param-toggle[aria-expanded="true"]::before { content: "\25BE "; }
-
-.apo-param-row > td { background: rgba(0, 0, 0, .025); padding: .6em 1em .8em; }
-.apo-param-note { margin: 0 0 .5em; font-size: .85em; opacity: .75; }
-
-.apo-param-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(9.5em, max-content));
-  gap: .3em 1.6em;
-}
-.apo-param {
-  display: flex;
-  align-items: baseline;
-  gap: .4em;
-  font-size: .88em;
-}
-.apo-param input { margin: 0; flex: none; }
-.apo-param small { opacity: .6; font-variant-numeric: tabular-nums; }
 
 #quota-warning[hidden] { display: none; }
 #quota-warning { margin: .6em 0 0; }
-
-/* The dropdown that reaches the parameter versions not worth a tick box of
-   their own. Sits in the same grid as the ticks and is the same height, so it
-   reads as one more option rather than a separate control. */
-/* The dropdown reaching the versions with no tick box of their own.
-   Spans the whole grid rather than sitting in one 11em column: in a column it
-   wrapped "Another version" onto two lines and became the tallest thing in the
-   block, which made a secondary control look like the main event. Full width
-   keeps it one line high and puts the select where the eye already is. */
-.apo-param-more {
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
-  gap: .5em;
-  margin-top: .35em;
-  padding: .25em .5em;
-  border: 1px dashed rgba(128, 128, 128, .45);
-  border-radius: 3px;
-  font-size: .9em;
-}
-.apo-param-more span { white-space: nowrap; }
-.apo-param-more .apo-param-pick {
-  display: flex;
-  align-items: center;
-  gap: .5em;
-  flex: 1 1 auto;
-  min-width: 0;
-}
-.apo .apo-param-none {
-  background: none;
-  border: 1px solid rgba(128, 128, 128, .45);
-  border-radius: 3px;
-  padding: .15em .6em;
-  font: inherit;
-  font-size: .95em;
-  color: var(--muted);
-  cursor: pointer;
-  white-space: nowrap;
-}
-.apo .apo-param-none:hover { color: var(--dark); border-color: currentColor; }
-.apo-param-more select {
-  flex: 0 1 22em;
-  min-width: 9em;
-  max-width: 100%;
-  padding: .1em .25em;
-  font: inherit;
-}
-/* The current list is part of the wiki download. Muted so it reads as a
-   statement of fact rather than a choice the reader failed to make. */
-.apo-param-fixed { opacity: 0.75; }
-.apo-param-fixed input { cursor: not-allowed; }
 
 /* The toast's action button. Only appears when a toast offers something to do,
    which today is a wiki that cannot be updated in place and has to be

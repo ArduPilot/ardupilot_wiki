@@ -368,6 +368,41 @@ writing into ``<destdir>/offline/``:
    the changed file from here, where its bytes match the table, rather than from
    the live site, which serves the original and would fail the hash check.
 
+Historical parameter pages are the one place the archive is not a plain copy
+of the site. Each vehicle builds a full parameter list for every 4.x release,
+4 to 6 MB apiece and nearly identical from one release to the next. The archive
+carries the newest stable of them as an ordinary page and every other carried
+version (the 4.x stables and the newest beta) as a zstd delta against it: a
+short header naming the base and the content hash of the page, then a zstd
+frame written with the base as its dictionary, 20 to 40 KB in place of 300 KB
+gzipped. The unpacker stores a delta as it arrives, marked
+``x-ap-encoding: zstd-delta``; the service worker, the export and anything else
+that reads through ``ApUnpack.readFrom`` rebuild the page on first use with
+``frontend/js/zstd-delta.js``, which holds two decoders behind one surface:
+zstd compiled to WebAssembly (imported by the worker at start-up and precached
+with its ``zstd.wasm``), and fzstd, a pure JavaScript decoder that takes over
+when WebAssembly is unavailable, about 150 ms for a 4 MB page against 3 ms.
+The worker imports the decoder while it evaluates, because ``importScripts``
+is illegal once a worker is installed and ``sw.js`` is replaced only when it
+changes: an import that fails is left to fail the installation, so the next
+visit registers again instead of keeping a worker that can rebuild nothing.
+Either way the rebuilt page is checked against the hash in the header before
+it is served, and a delta without that hash is refused rather than served; the
+JavaScript decoder verifies no checksum of its own, so the hash is what stands
+between a corrupt delta and a wrong page. That check needs ``crypto.subtle``,
+which a browser offers only in a secure context: a saved wiki is read through
+the service worker, which requires one anyway, but the single-file export is a
+file anyone can pass around, and a delta-held version in it opens from
+``file://``, from ``https://`` and from localhost, while on a plain ``http://``
+share the reader is told the page cannot be checked there rather than shown it
+unchecked. The single-file export carries a
+delta-held version as the delta itself, with the base page whole, the hash in
+its index and the JavaScript decoder embedded once, rebuilds it the first time
+the reader opens it and checks it against the hash before showing it, so the
+file offers every saved version for a few tens of kilobytes each. Because the base is a stable release rather than the
+nightly master list, the deltas only change when a new stable lands, so a
+differential update rarely has to fetch them again.
+
 Archives are reproducible: tar metadata is normalised, so unchanged content
 produces byte-identical output and a deploy can skip it.
 
@@ -381,7 +416,9 @@ Requirements
 ------------
 
 The archives are static files, and no application server or database is
-involved. The host must meet these requirements:
+involved. The build host needs the ``zstandard`` Python module from
+``requirements.txt`` to write the parameter deltas; without it the archives
+build with no historical versions. The host must meet these requirements:
 
 - Pages must be served at their built URLs. ``/copter/docs/foo.html`` must
   return that page rather than redirecting to ``/copter/docs/foo``.

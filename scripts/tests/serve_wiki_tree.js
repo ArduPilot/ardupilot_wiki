@@ -90,9 +90,23 @@ function serveKill(on) {
   killWorker = on;
 }
 
+// One path made to fail its next request, so a test can put a blip in front
+// of an asset the way a deploy or a proxy does, and see what survives it.
+const failing = new Map();
+function failNext(urlPath, status) {
+  failing.set(urlPath, status || 503);
+}
+
 function createServer() {
   return http.createServer((req, res) => {
     const urlPath = (req.url || '/').split('?')[0];
+    if (failing.has(urlPath)) {
+      const status = failing.get(urlPath);
+      failing.delete(urlPath);
+      res.writeHead(status, { 'Content-Type': 'text/plain; charset=utf-8' });
+      res.end('failed once, on purpose\n');
+      return;
+    }
     const file = urlPath === '/sw.js' && killWorker
       ? path.join(ROOT, 'frontend', 'sw-kill.js') : resolveFile(req.url || '/');
 
@@ -175,7 +189,7 @@ function start(port) {
   });
 }
 
-module.exports = { start, createServer, resolveFile, bumpWorker, serveKill, WIKIS };
+module.exports = { start, createServer, resolveFile, bumpWorker, serveKill, failNext, WIKIS };
 
 if (require.main === module) {
   const port = Number(process.argv[2] || 8000);

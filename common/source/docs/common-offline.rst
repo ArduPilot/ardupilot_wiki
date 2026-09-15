@@ -129,12 +129,7 @@ Turning it off removes everything saved in the browser.
          <tr>
            <th class="apo-name"><span class="apo-pick"><input type="checkbox"
                  id="select-all" title="Select every wiki"
-                 aria-label="Select every wiki" /><span>Wiki</span></span>
-               <label class="apo-pick apo-all-params"><input type="checkbox"
-                 id="all-params"
-                 aria-label="Save every parameter version of every wiki"
-                 title="Save every parameter version of every wiki" /><span>all
-                 params</span></label></th>
+                 aria-label="Select every wiki" /><span>Wiki</span></span></th>
            <th class="apo-num">Size</th>
            <th class="apo-num apo-pages-h">Pages</th>
            <th class="apo-num apo-col-progress">Progress</th>
@@ -191,6 +186,7 @@ Turning it off removes everything saved in the browser.
 
    </div>
 
+   <script src="/js/zstd-delta.js" defer="defer"></script>
    <script src="../_static/common_offline_document_builder.js" defer="defer"></script>
    <script src="../_static/common_offline_export.js" defer="defer"></script>
    <script src="../_static/common_offline_unpack.js" defer="defer"></script>
