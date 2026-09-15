@@ -6,6 +6,17 @@
  * caches. It also streams single-file exports to disk via /__export__/<id>.
  */
 
+// The delta decoder for saved parameter versions, imported now: a worker
+// may not import a new script once it is installed. Without it those
+// versions are simply not held; everything else is unaffected.
+if (typeof importScripts === 'function') {
+  try {
+    importScripts('/js/zstd-delta.js');
+  } catch (err) {
+    console.warn('[sw] zstd-delta.js did not load', err && err.message);
+  }
+}
+
 // Bump when cached content can no longer be trusted; saved wikis are unaffected.
 const CACHE_VERSION = 'v11';
 const PAGE_CACHE = `ardupilot-pages-${CACHE_VERSION}`;
@@ -35,6 +46,7 @@ const SHELL = [
   '/android-icon-192x192.png',
   '/icon-512x512.png',
   '/js/pwa.js',
+  '/js/zstd.wasm',
 ];
 
 // Network wait for a page that is not cached yet.
@@ -319,17 +331,134 @@ function inflate(response) {
   );
 }
 
+// A saved parameter version is a zstd delta against the base page stored
+// beside it: this marker, the base's filename, the content hash of the
+// page it rebuilds, a newline, then the frame. Mirrors deltaHeader in
+// common_offline_unpack.js.
+const AP_DELTA = 'zstd-delta';
+const DELTA_MAGIC = 'APDELTA1 ';
+const ZSTD_WASM = '/js/zstd.wasm';
+
+function deltaHeader(bytes) {
+  for (let i = 0; i < DELTA_MAGIC.length; i++) {
+    if (bytes[i] !== DELTA_MAGIC.charCodeAt(i)) { return null; }
+  }
+  const end = bytes.indexOf(10, DELTA_MAGIC.length);
+  if (end === -1 || end > DELTA_MAGIC.length + 220) { return null; }
+  let line = '';
+  for (let i = DELTA_MAGIC.length; i < end; i++) { line += String.fromCharCode(bytes[i]); }
+  const fields = line.split(' ');
+  const [base, hash] = fields;
+  if (!base || /[/\\]/.test(base) || base === '.' || base === '..') { return null; }
+  if (fields.length > 2) { return null; }
+  // The hash is what proves a rebuilt page; a delta without one is still a
+  // delta (never served as a page) but can only be refused.
+  const ok = /^[0-9a-f]{16}$/.test(hash || '');
+  return { base, hash: ok ? hash : null, frame: bytes.subarray(end + 1) };
+}
+
+// Exactly as the build computes it: sha256, first eight bytes, hex.
+async function contentHash(bytes) {
+  const v = new Uint8Array(await crypto.subtle.digest('SHA-256', bytes));
+  let out = '';
+  for (let i = 0; i < 8; i++) { out += (v[i] < 16 ? '0' : '') + v[i].toString(16); }
+  return out;
+}
+
+// Initialised once: the precached wasm when it can be had, the JavaScript
+// decoder when it cannot. A failure is forgotten so the next read tries again.
+let zstdReady = null;
+
+function deltaDecoder() {
+  if (!zstdReady) {
+    zstdReady = (async () => {
+      if (typeof ApZstd === 'undefined') {
+        throw new Error('zstd-delta.js is not loaded');
+      }
+      let bytes = null;
+      try {
+        let hit = await (await caches.open(STATIC_CACHE)).match(ZSTD_WASM);
+        if (!hit) {
+          hit = await fetch(ZSTD_WASM);
+          if (hit && hit.ok) { await keep(STATIC_CACHE, ZSTD_WASM, hit.clone()); } else { hit = null; }
+        }
+        if (hit) { bytes = await hit.arrayBuffer(); }
+      } catch (err) {
+        bytes = null;
+      }
+      const mode = await ApZstd.init(bytes);
+      if (mode !== 'wasm') {
+        console.warn('[sw] rebuilding parameter versions in JavaScript; the WebAssembly decoder is unavailable');
+      }
+      return ApZstd;
+    })();
+    zstdReady.catch(() => { zstdReady = null; });
+  }
+  return zstdReady;
+}
+
+// A versioned parameter page is sniffed for the delta magic even without
+// the marker: a delta is self-describing, and an entry stored plain by
+// older code must rebuild rather than be served as a page of bytes.
+const PARAM_VERSION_PATH = /\/docs\/parameters-[^/]+\.html$/;
+
+// A stored response as its page: inflated, or rebuilt from its delta and
+// the base beside it. A delta that cannot be rebuilt counts as not held.
+async function restore(hit, cache, path) {
+  if (!hit || !hit.headers) { return hit; }
+  const marked = hit.headers.get(AP_ENCODED) === AP_DELTA;
+  if (!marked && !PARAM_VERSION_PATH.test(path)) {
+    return inflate(hit);
+  }
+  try {
+    const plain = marked ? hit : inflate(hit);
+    if (!plain) { return undefined; }
+    const bytes = new Uint8Array(await plain.arrayBuffer());
+    const head = deltaHeader(bytes);
+    if (!head) {
+      if (marked) { throw new Error('malformed delta'); }
+      return new Response(bytes, {
+        status: 200, statusText: 'OK',
+        headers: { 'Content-Type': 'text/html; charset=utf-8' }
+      });
+    }
+    if (!head.hash) { throw new Error('delta carries no hash'); }
+    const basePath = path.slice(0, path.lastIndexOf('/') + 1) + head.base;
+    const base = inflate(await cache.match(basePath));
+    if (!base) { throw new Error('base page ' + basePath + ' missing'); }
+    const [decoder, baseBytes] = await Promise.all([deltaDecoder(), base.arrayBuffer()]);
+    const page = decoder.patch(head.frame, new Uint8Array(baseBytes));
+    if ((await contentHash(page)) !== head.hash) {
+      throw new Error('the rebuilt page does not match its hash');
+    }
+    return new Response(page, {
+      status: 200, statusText: 'OK',
+      headers: { 'Content-Type': 'text/html; charset=utf-8' }
+    });
+  } catch (err) {
+    console.warn('[sw] could not rebuild', path, err && err.message);
+    return undefined;
+  }
+}
+
 // Exact matches only: ignoreSearch walks the whole cache (0.2 ms vs 300 ms).
 // savedOnly limits the search to complete saved wikis: their copies are
 // rewritten in place by updates, which is what makes them authoritative.
 async function heldOffline(request, cache, savedOnly) {
+  const found = await heldRaw(request, cache, savedOnly);
+  return found ? restore(found.hit, found.cache, found.path) : undefined;
+}
+
+// The stored entry as it lies, with the cache and key it was found under,
+// for callers that only need to know it is there.
+async function heldRaw(request, cache, savedOnly) {
   const shapes = storedShapes(new URL(request.url));
 
   if (cache) {
     for (const path of shapes) {
       const hit = await cache.match(path);
       if (hit) {
-        return inflate(hit);
+        return { hit, cache, path };
       }
     }
     return undefined;
@@ -340,7 +469,7 @@ async function heldOffline(request, cache, savedOnly) {
     if (only) {
       const hit = await only.match(path);
       if (hit) {
-        return inflate(hit);
+        return { hit, cache: only, path };
       }
     }
   }
@@ -358,7 +487,7 @@ async function heldOffline(request, cache, savedOnly) {
     for (const path of shapes) {
       const hit = await candidate.match(path);
       if (hit) {
-        return inflate(hit);
+        return { hit, cache: candidate, path };
       }
     }
   }
@@ -402,7 +531,8 @@ async function paramIndex(request, url) {
   for (const label of Object.keys(index)) {
     // Values are bare filenames relative to docs/.
     const target = new URL('/' + wiki + '/docs/' + index[label], url.origin);
-    if (await heldOffline(new Request(target.href))) {
+    // Presence is enough; a delta-held version is not rebuilt to be listed.
+    if (await heldRaw(new Request(target.href))) {
       out[label] = index[label];
     }
   }

@@ -228,15 +228,45 @@
     'var sc=document.querySelector(".wy-nav-content-wrap");if(sc)sc.scrollTop=0;}',
 
     // Undo the </script> escaping the page blocks needed.
-    'function unblock(s){return s.replace(/<\\\\\\/(script)/gi,"<\\/$1");}',
+    'function unblock(s){return s.replace(/<(\\\\*)\\\\\\/(script)/gi,"<$1/$2");}',
 
+    // A version carried as a delta: rebuilt against its base page's whole
+    // HTML the first time it is opened, then kept.
+    'var built={};',
+    'function b64(s){var b=atob(s),o=new Uint8Array(b.length);',
+    'for(var k=0;k<b.length;k++)o[k]=b.charCodeAt(k);return o;}',
+    'function bodyOf(html){var m=html.match(/<div[^>]*itemprop="articleBody"[^>]*>([\\s\\S]*?)<\\/div>\\s*<footer/i);',
+    'return m?m[1]:html;}',
+    'function showDelta(i,path){var pg=D.pages[i];',
+    'if(built[i]!==undefined)return paint(i,path,built[i]);',
+    'var el=document.getElementById("p"+i),rb=document.getElementById("r"+byPath[pg.b]);',
+    'if(!el||!rb||typeof ApZstd==="undefined"){',
+    'return paint(i,path,"<p>This parameter list could not be rebuilt in this file.</p>");}',
+    'paint(i,path,"<p>Rebuilding this parameter list\u2026</p>");',
+    // The decoder in the file carries no checksum; the hash the build put
+    // in the delta's header is what proves the rebuilt page is the page.
+    'function hex16(buf){var v=new Uint8Array(buf),o="";for(var k=0;k<8;k++)o+=(v[k]<16?"0":"")+v[k].toString(16);return o;}',
+    'ApZstd.init(null).then(function(){',
+    'var out=ApZstd.patch(b64(el.textContent),new TextEncoder().encode(unblock(rb.textContent)));',
+    'if(!pg.h)throw new Error("no hash to check the rebuilt page against");',
+    // Not a secure context: file:// and localhost have SubtleCrypto, a
+    // plain-http share does not, and the reader can be told which it is.
+    'if(!(window.crypto&&crypto.subtle))throw new Error("this browser cannot check the page here; open the file itself, or over https");',
+    'return crypto.subtle.digest("SHA-256",out).then(function(d){',
+    'if(hex16(d)!==pg.h)throw new Error("the rebuilt page does not match its hash");',
+    'built[i]=bodyOf(new TextDecoder().decode(out));',
+    'if(current()===path)paint(i,path,built[i]);});',
+    '}).catch(function(e){paint(i,path,"<p>This parameter list could not be rebuilt: "+esc(String(e&&e.message||e))+"</p>");});}',
     'function show(raw){',
     'var path=lookup(raw);',
     'if(path===undefined){return showMissing(raw);}',
     'var i=byPath[path];',
     'miss.style.display="none";',
+    'if(D.pages[i].d)return showDelta(i,path);',
     'var el=document.getElementById("p"+i);if(!el)return;',
-    'doc.innerHTML=unblock(el.textContent);',
+    'paint(i,path,unblock(el.textContent));}',
+    'function paint(i,path,html){',
+    'doc.innerHTML=html;',
     // Attach images only for the page being shown, so nothing else decodes.
     '[].forEach.call(doc.querySelectorAll("[data-ap-img]"),function(im){',
     'var b=document.getElementById("i"+im.getAttribute("data-ap-img"));',
@@ -763,15 +793,13 @@
 
   /* -------------------------------------- versioned parameter pages */
 
-  // Parameter-list history to carry: SERIES major.minor lines, PER_SERIES each.
-
-
   // The plain /rover/docs/parameters is the latest, unversioned, always kept.
   var PARAM_PAGE = /^\/([^/]+)\/docs\/parameters-([^/]+)$/;
 
-  /** The versioned parameter pages the file carries, labelled from filenames. */
-  // Every saved version is carried: the reader chose each one at save time,
-  // and silently thinning them here would lose pages they asked for.
+  /** The versioned parameter pages the file carries, labelled from filenames.
+   * Every saved version is carried: the ones held as deltas cost the file
+   * a few tens of kilobytes each, and thinning would lose pages the reader
+   * saved. */
   function parameterVersions(paths) {
     var found = {}, byWiki = {};
 
@@ -784,18 +812,20 @@
       found[m[1]].push({
         p: p,
         n: m[2].split('-').join(' '),
+        beta: /-beta-/i.test(m[2]),
         v: [+v[1], +v[2], +v[3]]
       });
     });
 
     Object.keys(found).forEach(function (w) {
-      byWiki[w] = found[w].sort(function (a, b) {
+      var sorted = found[w].sort(function (a, b) {
         return b.v[0] - a.v[0] || b.v[1] - a.v[1] || b.v[2] - a.v[2] ||
-               (a.n < b.n ? -1 : 1);
-      }).map(function (e) { return { n: e.n, p: e.p }; });
+               (a.beta === b.beta ? (a.n < b.n ? -1 : 1) : (a.beta ? 1 : -1));
+      });
+      byWiki[w] = sorted.map(function (e) { return { n: e.n, p: e.p }; });
     });
 
-    return { byWiki: byWiki, drop: {} };
+    return { byWiki: byWiki };
   }
 
   /* -------------------------------------------------------- the front page */
@@ -865,8 +895,9 @@
 
   /** One page, plus any image it is the first to use. */
   function pageBlock(i, html, fresh) {
-    // Any spelling ends the block: </SCRIPT>, </script >, </script/>.
-    var body = html.replace(/<\/(script)/gi, '<\\/$1');
+    // Any spelling ends the block: </SCRIPT>, </script >, </script/>. A
+    // backslash already there is kept, so unblock gives back these bytes.
+    var body = html.replace(/<(\\*)\/(script)/gi, '<$1\\/$2');
     var blocks = fresh.map(function (f) {
       return '<script type="text/plain" id="i' + f.id + '">' +
              f.uri + '<\/script>';
@@ -888,16 +919,33 @@
         : '');
   }
 
-  /** The routing payload and the shell that reads it. */
-  function tail(payload) {
+  /** A version carried as its delta: base64 of the zstd frame, inert. */
+  function deltaBlock(i, b64) {
+    return '<script type="text/plain" id="p' + i + '" data-delta="1">' + b64 + '<\/script>';
+  }
+
+  /** A base page whole, for the deltas that rebuild against it. */
+  function rawBlock(j, html) {
+    return '<script type="text/plain" id="r' + j + '">' +
+           html.replace(/<(\\*)\/(script)/gi, '<$1\\/$2') + '<\/script>';
+  }
+
+  /** The routing payload, the decoder when any delta is carried, and the shell. */
+  function tail(payload, decoderSrc) {
     return '<script type="application/json" id="ap-index">' +
       JSON.stringify(payload).split('</').join('<\\/') +
-      '<\/script><script>' + SHELL_JS + '<\/script></body></html>';
+      '<\/script>' +
+      (decoderSrc
+        ? '<script>' + decoderSrc.replace(/<\/script/gi, '<\\/script') + '<\/script>'
+        : '') +
+      '<script>' + SHELL_JS + '<\/script></body></html>';
   }
 
   global.ArduPilotOfflineDocument = {
     head: head,
     pageBlock: pageBlock,
+    deltaBlock: deltaBlock,
+    rawBlock: rawBlock,
     searchBlock: searchBlock,
     tail: tail,
     newNav: newNav,

@@ -5,7 +5,8 @@ and writes <wiki>-files.json (path -> content hash) for differential updates.
 Images used by two or more wikis go once into common-offline.tar.gz. Pages are
 rewritten on the way in so they work offline (video embeds become stills, the
 donate image becomes a link); rewritten files are also published loose under
-offline/files/. offline-manifest.json lists every archive with its size, page
+offline/files/. Historical parameter pages travel as zstd deltas against the
+newest stable, the one copy stored plain. offline-manifest.json lists every archive with its size, page
 count and build id, and is written last.
 """
 
@@ -16,6 +17,7 @@ import json
 import os
 import re
 import shutil
+import sys
 import tarfile
 import time
 import urllib.error
@@ -84,6 +86,11 @@ def reproducible_tar(path: Path):
 
 def log(msg):
     print(f"[build_offline_artifacts]: {msg}", flush=True)
+
+
+def error(msg):
+    """Something the build carries on past, said on stderr so CI shows it."""
+    print(f"[build_offline_artifacts]: ERROR: {msg}", file=sys.stderr, flush=True)
 
 
 def classify_images(wikis):
@@ -391,11 +398,19 @@ def write_common_archive(wikis, common_names, out_dir: Path, thumbs,
     return archive.stat().st_size
 
 
-# Historical parameter pages are 4 to 6 MB each; they are offered individually.
+# Historical parameter pages are 4 to 6 MB each and nearly identical from one
+# release to the next. The newest stable goes in plain; every other carried
+# version is a zstd delta against it, rebuilt by the reader on first use.
 PARAM_VERSION_RE = re.compile(
     r"^parameters-(?P<vehicle>[A-Za-z]+)-(?P<channel>stable|beta|latest)-"
     r"V?(?P<version>[0-9][0-9A-Za-z.\-]*)\.html$"
 )
+
+# A delta entry: this line with the base page's filename and the content
+# hash of the page it rebuilds, then a zstd frame whose dictionary is that
+# base, which lives beside the delta. The hash is checked after rebuilding.
+DELTA_MAGIC = b"APDELTA1 "
+DELTA_LEVEL = 19
 
 
 def param_version_of(rel: Path):
@@ -414,6 +429,12 @@ def param_version_of(rel: Path):
     }
 
 
+def _version_key(e):
+    # Newest first once reversed; a stable outranks a beta of the same number.
+    nums = [int(n) for n in re.findall(r"\d+", e["version"])] or [0]
+    return (nums, e["channel"] == "stable")
+
+
 def param_versions_for(html_root: Path) -> list:
     """Every historical parameter page this wiki built, newest first."""
     out = []
@@ -426,24 +447,100 @@ def param_versions_for(html_root: Path) -> list:
             continue
         info["bytes"] = path.stat().st_size
         out.append(info)
+    out.sort(key=_version_key, reverse=True)
+    return out
 
-    def key(e):
-        nums = [int(n) for n in re.findall(r"\d+", e["version"])] or [0]
-        return (nums, e["channel"] != "stable")
 
-    out.sort(key=key, reverse=True)
-
-    # Default to the newest stable: not a beta, and not master (parameters.html).
-    for e in out:
-        if e["channel"] == "stable":
-            e["default"] = True
+def carried_param_versions(versions: list) -> list:
+    """The 4.x stables and the newest beta, newest first; the base is marked."""
+    out = []
+    beta = None
+    for v in versions:
+        major = _version_key(v)[0][0]
+        if major < 4:
+            continue
+        if v["channel"] == "stable":
+            out.append(v)
+        elif v["channel"] == "beta" and beta is None:
+            beta = v
+    if beta is not None:
+        out.append(beta)
+    out.sort(key=_version_key, reverse=True)
+    for v in out:
+        v.pop("default", None)
+    for v in out:
+        if v["channel"] == "stable":
+            v["default"] = True
             break
     return out
 
 
+def delta_against(base: bytes, target: bytes) -> bytes:
+    """A zstd frame that rebuilds target given base as its dictionary."""
+    import zstandard
+    # The window must span the base and the page it rebuilds.
+    window_log = max(24, (len(base) + len(target)).bit_length())
+    params = zstandard.ZstdCompressionParameters.from_level(
+        DELTA_LEVEL, window_log=window_log, enable_ldm=True,
+        write_checksum=1, write_content_size=1, write_dict_id=0)
+    dictionary = zstandard.ZstdCompressionDict(
+        base, dict_type=zstandard.DICT_TYPE_RAWCONTENT)
+    return zstandard.ZstdCompressor(
+        compression_params=params, dict_data=dictionary).compress(target)
+
+
+def rewrite_page(html: str, wiki: str, thumbs, wikis) -> str:
+    """Every rewrite a page gets on its way into an archive."""
+    return rewrite_site_links(
+        rewrite_donate(rewrite_offline_only(
+            rewrite_embeds(html, wiki, thumbs))), wikis)
+
+
+def add_param_versions(tar, wiki: str, html_root: Path, out_dir: Path,
+                       thumbs, wikis, files) -> list:
+    """The carried versions: the base plain, the rest as deltas against it."""
+    versions = carried_param_versions(param_versions_for(html_root))
+    if not versions:
+        return []
+    try:
+        import zstandard  # noqa: F401
+    except ImportError:
+        error(f"{wiki}: the zstandard module is missing, so none of the "
+              f"{len(versions)} parameter versions found are carried; "
+              "the archive is published without them")
+        return []
+    base = next((v for v in versions if v.get("default")), None)
+    if base is None:
+        log(f"  {wiki}: no stable parameter version for the others to be "
+            f"built against; {len(versions)} version(s) left out")
+        return []
+
+    def page_bytes(v):
+        html = (html_root / v["file"]).read_text(encoding="utf-8", errors="replace")
+        return rewrite_page(html, wiki, thumbs, wikis).encode("utf-8")
+
+    base_bytes = page_bytes(base)
+    add_bytes(tar, f"{wiki}/{base['file']}", base_bytes, files,
+              loose_dir=out_dir / "files")
+    base["bytes"] = len(base_bytes)
+    base_name = Path(base["file"]).name.encode("ascii")
+    for v in versions:
+        if v is base:
+            continue
+        page = page_bytes(v)
+        header = (DELTA_MAGIC + base_name + b" " +
+                  content_hash(page).encode("ascii") + b"\n")
+        data = header + delta_against(base_bytes, page)
+        add_bytes(tar, f"{wiki}/{v['file']}", data, files,
+                  loose_dir=out_dir / "files")
+        v["bytes"] = len(data)
+    return versions
+
+
 def add_wiki_tree(tar, wiki: str, exclusive: set, out_dir: Path, thumbs,
-                  wikis, files=None) -> None:
-    """One wiki's pages, assets and unique images, into an open tar."""
+                  wikis, files=None) -> list:
+    """One wiki's pages, assets and unique images, into an open tar.
+    Returns the parameter versions carried."""
     html_root = Path(wiki) / "build" / "html"
     for path in sorted(html_root.rglob("*")):
         if not path.is_file():
@@ -456,15 +553,13 @@ def add_wiki_tree(tar, wiki: str, exclusive: set, out_dir: Path, thumbs,
         # Never fold the offline artefacts back into themselves.
         if parts and parts[0] == "offline":
             continue
-        # Offered separately, see param_versions_for.
+        # Added last, as deltas; see add_param_versions.
         if param_version_of(rel):
             continue
         arcname = f"{wiki}/{rel.as_posix()}"
         if path.suffix == ".html":
             html = path.read_text(encoding="utf-8", errors="replace")
-            rewritten = rewrite_site_links(
-                rewrite_donate(rewrite_offline_only(
-                    rewrite_embeds(html, wiki, thumbs))), wikis)
+            rewritten = rewrite_page(html, wiki, thumbs, wikis)
             if rewritten != html:
                 add_bytes(tar, arcname, rewritten.encode("utf-8"), files,
                           loose_dir=out_dir / "files")
@@ -476,15 +571,17 @@ def add_wiki_tree(tar, wiki: str, exclusive: set, out_dir: Path, thumbs,
         tar.add(path, arcname=arcname, filter=_normalise)
         if files is not None:
             files[arcname] = content_hash(path.read_bytes())
+    return add_param_versions(tar, wiki, html_root, out_dir, thumbs, wikis, files)
 
 
 def write_wiki_archive(wiki: str, exclusive: set, out_dir: Path, thumbs,
-                       wikis, files=None) -> int:
-    """Pages, static assets and the images this wiki carries itself."""
+                       wikis, files=None) -> tuple:
+    """Pages, static assets and the images this wiki carries itself.
+    Returns (archive bytes, parameter versions carried)."""
     archive = out_dir / f"{wiki}-offline.tar.gz"
     with reproducible_tar(archive) as tar:
-        add_wiki_tree(tar, wiki, exclusive, out_dir, thumbs, wikis, files)
-    return archive.stat().st_size
+        versions = add_wiki_tree(tar, wiki, exclusive, out_dir, thumbs, wikis, files)
+    return archive.stat().st_size, versions
 
 
 def write_file_table(out_dir: Path, name: str, files: dict) -> Path:
@@ -582,8 +679,8 @@ def build(wikis, destdir: Path) -> Path:
             continue
         html_root = Path(wiki) / "build" / "html"
         wiki_files = {}
-        size = write_wiki_archive(wiki, per_wiki.get(wiki, set()), out_dir,
-                                  thumbs, set(built), wiki_files)
+        size, versions = write_wiki_archive(wiki, per_wiki.get(wiki, set()),
+                                            out_dir, thumbs, set(built), wiki_files)
         write_file_table(out_dir, wiki, wiki_files)
         pages = sum(1 for _ in html_root.rglob("*.html"))
         raw = raw_size(out_dir / f"{wiki}-offline.tar.gz")
@@ -599,11 +696,11 @@ def build(wikis, destdir: Path) -> Path:
             "archive": f"{wiki}-offline.tar",
             "files": f"{wiki}-files.json",
         })
-        versions = param_versions_for(html_root)
         if versions:
+            # Carried in the archive; bytes is each entry's size there.
             entries[-1]["param_versions"] = versions
         log(f"  {wiki}: {size / 1048576:.0f} MB, {pages} pages" +
-            (f", {len(versions)} parameter versions offered separately"
+            (f", {len(versions)} parameter versions as deltas"
              if versions else ""))
 
     entries.sort(key=lambda e: -e["mb"])
@@ -640,7 +737,6 @@ def build(wikis, destdir: Path) -> Path:
 
 
 if __name__ == "__main__":
-    import sys
     wiki_list = sys.argv[1:] or [
         "copter", "plane", "rover", "sub", "blimp", "dev",
         "antennatracker", "planner", "planner2", "ardupilot", "mavproxy",

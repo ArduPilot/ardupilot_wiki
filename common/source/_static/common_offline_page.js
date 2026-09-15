@@ -250,15 +250,8 @@
 
     selected().forEach(function (c) {
       var b = parseInt(c.dataset.mb, 10) * 1048576;
-      // Chosen parameter versions travel separately but count toward the selection.
-      var w = wikiById(c.value);
-      if (w) { b += paramBytes(w); }
       selectedTotal += b;
       if (!storedIds[c.value]) { toDownload += b; }
-      else if (w) {
-        // A saved wiki can still owe newly picked parameter versions.
-        toDownload += paramBytesMissing(w);
-      }
     });
 
     var commonBytes = (COMMON.mb || 0) * 1048576;
@@ -310,322 +303,20 @@
   var reclaimTimer = null;
 
 
-  // Chosen historical parameter versions, by wiki id: file -> true.
-  var paramPicks = {};
-
+  // Historical parameter versions travel inside the archive, as deltas
+  // against the newest stable; the manifest lists them so the row can say so.
   function paramsOf(w) {
     return (w && w.param_versions) || [];
   }
 
-  // The newest stable of each release series: the majors a reader expects.
-  function seriesHeads(w) {
-    var newest = {};
-    paramsOf(w).forEach(function (v) {
-      if (v.channel !== 'stable') { return; }
-      var key = seriesOf(v);
-      if (!newest[key] || compareVersions(v, newest[key]) < 0) { newest[key] = v; }
-    });
-    return Object.keys(newest).map(function (k) { return newest[k]; });
-  }
-
-  // Seeded with the series heads, and not before the manifest is here.
-  function picksFor(w) {
-    var versions = paramsOf(w);
-    if (!versions.length) { return paramPicks[w.id] || {}; }
-    if (!paramPicks[w.id]) {
-      var seed = {};
-      var heads = seriesHeads(w);
-      if (heads.length) {
-        heads.forEach(function (v) { seed[v.file] = true; });
-      } else {
-        versions.forEach(function (v) { if (v['default']) { seed[v.file] = true; } });
-      }
-      paramPicks[w.id] = seed;
-    }
-    return paramPicks[w.id];
-  }
-
-  function setAllParams(w, on) {
-    var next = {};
-    (on ? paramsOf(w) : seriesHeads(w)).forEach(function (v) { next[v.file] = true; });
-    paramPicks[w.id] = next;
-  }
-
-  function syncAllParamsHeader() {
-    var box = el('all-params');
-    if (!box) { return; }
-    var withParams = WIKIS.filter(function (w) { return paramsOf(w).length; });
-    box.checked = withParams.length > 0 && withParams.every(allParamsPicked);
-  }
-
-  // Tick what is saved, not what is newest.
-  function syncPicksWithCache(stored) {
-    var wikis = WIKIS.filter(function (w) {
-      return paramsOf(w).length && stored[w.id];
-    });
-    if (!wikis.length) { return Promise.resolve(false); }
-    return Promise.all(wikis.map(function (w) {
-      return caches.open(OFFLINE_CACHE_PREFIX + w.id).then(function (cache) {
-        return Promise.all(paramsOf(w).map(function (v) {
-          var key;
-          try { key = paramCacheKey(w, v); } catch (err) { return null; }
-          return cache.match(key).then(function (hit) {
-            return hit ? v.file : null;
-          });
-        }));
-      }).then(function (files) {
-        var found = files.filter(Boolean);
-        // All absent means the reader took none; honour that.
-        var next = {};
-        found.forEach(function (f) { next[f] = true; });
-        cachedParams[w.id] = {};
-        found.forEach(function (f) { cachedParams[w.id][f] = true; });
-        // A promoted pick is a promise not yet kept: it survives the sync
-        // until the cache carries it, then the cache speaks for it.
-        var pending = paramPromoted[w.id] || {};
-        Object.keys(pending).forEach(function (f) {
-          if (next[f]) { delete pending[f]; }
-          else { next[f] = true; }
-        });
-        var before = JSON.stringify(paramPicks[w.id] || {});
-        paramPicks[w.id] = next;
-        return before !== JSON.stringify(next);
-      });
-    })).then(function (changed) {
-      return changed.some(Boolean);
-    }).catch(function () { return false; });
-  }
-
-  function pickedFiles(w) {
-    var picks = picksFor(w);
-    return paramsOf(w).filter(function (v) { return picks[v.file]; });
-  }
-
-  function allParamsPicked(w) {
-    return paramsOf(w).length > 0 && pickedFiles(w).length === paramsOf(w).length;
-  }
-
-  function syncParamAll(id) {
-    var w = wikiById(id);
-    var box = document.querySelector('.param-all[data-wiki="' + id + '"]');
-    if (w && box) { box.checked = allParamsPicked(w); }
-  }
-
-  // Redraw a wiki's version row from picks, keeping its open or closed state.
-  function refreshParamRow(id) {
-    var w = wikiById(id);
-    var row = document.querySelector('[data-params-for="' + id + '"]');
-    if (!w || !row) { return; }
-    var fresh = document.createElement('tbody');
-    fresh.innerHTML = paramRowFor(w);
-    var next = fresh.firstChild;
-    if (!next) { return; }
-    if (!row.hasAttribute('hidden')) { next.removeAttribute('hidden'); }
-    row.parentNode.replaceChild(next, row);
-  }
-
-  /** Bytes the chosen versions add to this wiki, before compression. */
-  function paramBytes(w) {
-    return pickedFiles(w).reduce(function (n, v) { return n + (v.bytes || 0); }, 0);
-  }
-
-  // What the last cache sync saw stored, per wiki; picks beyond it are owed.
-  var cachedParams = {};
-
-  function missingParams(w) {
-    var have = cachedParams[w.id] || {};
-    return pickedFiles(w).filter(function (v) { return !have[v.file]; });
-  }
-
-  function paramBytesMissing(w) {
-    return missingParams(w).reduce(function (n, v) { return n + (v.bytes || 0); }, 0);
-  }
-
-  function paramsMissing(w) {
-    return !!storedIds[w.id] && missingParams(w).length > 0;
-  }
-
-  // Promoted from the dropdown; once saved, syncPicksWithCache keeps it.
-  var paramPromoted = {};
-
-  /** "4.7.0" -> "4.7". The release series a version belongs to. */
-  function seriesOf(v) {
-    var m = /^(\d+\.\d+)/.exec(v.version || '');
-    return m ? m[1] : (v.version || v.file);
-  }
-
-  /** Newest first, so "the newest of this series" is a comparison not a guess. */
-  function compareVersions(a, b) {
-    var pa = String(a.version || '').split('.');
-    var pb = String(b.version || '').split('.');
-    for (var i = 0; i < Math.max(pa.length, pb.length); i++) {
-      var na = parseInt(pa[i], 10) || 0, nb = parseInt(pb[i], 10) || 0;
-      if (na !== nb) { return nb - na; }
-    }
-    // A stable release outranks a beta carrying the same number.
-    if (a.channel !== b.channel) { return a.channel === 'stable' ? -1 : 1; }
-    return 0;
-  }
-
-  // Ticks: newest stable of each series, anything saved, anything promoted.
-  function shortlistFor(w) {
-    var versions = paramsOf(w);
-    var picks = picksFor(w);
-    var promoted = paramPromoted[w.id] || {};
-    var newestOfSeries = {};
-    versions.forEach(function (v) {
-      if (v.channel !== 'stable') { return; }
-      var key = seriesOf(v);
-      if (!newestOfSeries[key] || compareVersions(v, newestOfSeries[key]) < 0) {
-        newestOfSeries[key] = v;
-      }
-    });
-    var keep = {};
-    Object.keys(newestOfSeries).forEach(function (k) {
-      keep[newestOfSeries[k].file] = true;
-    });
-    versions.forEach(function (v) {
-      if (picks[v.file] || promoted[v.file]) { keep[v.file] = true; }
-    });
-    return versions.filter(function (v) { return keep[v.file]; })
-                   .sort(compareVersions);
-  }
-
-  /** The rest: reachable through the dropdown, one press away from a tick. */
-  function paramRestFor(w) {
-    var shown = {};
-    shortlistFor(w).forEach(function (v) { shown[v.file] = true; });
-    return paramsOf(w).filter(function (v) { return !shown[v.file]; })
-                      .sort(compareVersions);
-  }
-
-  // Through the guard like every other cache write, so one rule names keys.
-  function paramCacheKey(w, v) {
-    return ApUnpack.cachePathFor(w.id, w.id + '/' + v.file);
-  }
-
-  // The disclosure row under a wiki.
-  function paramRowFor(w) {
-    var versions = paramsOf(w);
-    if (!versions.length) { return ''; }
-    var picks = picksFor(w);
-    var mb = function (v) { return Math.round((v.bytes || 0) / 1048576); };
-
-    // The current list is in the archive; shown as a ticked, disabled box.
-    var fixed = '<label class="apo-param apo-param-fixed" ' +
-                  'title="Part of the wiki download; cannot be deselected">' +
-                  '<input type="checkbox" checked disabled>' +
-                  '<span>Latest (master)</span>' +
-                  '<small>always included</small>' +
-                '</label>';
-
-    var boxes = shortlistFor(w).map(function (v) {
-      return '<label class="apo-param">' +
-               '<input type="checkbox" class="param-check" data-wiki="' + w.id +
-                 '" value="' + v.file + '"' + (picks[v.file] ? ' checked' : '') + '>' +
-               '<span>' + v.label + '</span>' +
-               '<small>' + mb(v) + ' MB</small>' +
-             '</label>';
-    }).join('');
-
-    var rest = paramRestFor(w);
-    var more = '<div class="apo-param-more">' +
-        (rest.length
-          ? '<label class="apo-param-pick">' +
-              '<span>Another version</span>' +
-              '<select class="param-more" data-wiki="' + w.id + '" ' +
-                'aria-label="Add another parameter version for ' + w.name + '">' +
-                '<option value="">' + rest.length + ' more\u2026</option>' +
-                rest.map(function (v) {
-                  return '<option value="' + v.file + '">' + v.label +
-                         ' \u00b7 ' + mb(v) + ' MB</option>';
-                }).join('') +
-              '</select>' +
-            '</label>'
-          : '') +
-        '<label class="apo-param apo-param-all" ' +
-          'title="Save every parameter version of this wiki">' +
-          '<input type="checkbox" class="param-all" data-wiki="' + w.id + '"' +
-          (allParamsPicked(w) ? ' checked' : '') + '>' +
-          '<span>All versions</span></label>' +
-        '<button type="button" class="apo-param-none" data-wiki="' + w.id + '">' +
-          'Deselect all</button>' +
-      '</div>';
-
-    return '<tr class="apo-param-row" data-params-for="' + w.id + '" hidden>' +
-             '<td colspan="5">' +
-               '<p class="apo-param-note">Parameter lists for older firmware. ' +
-                 'The newest of each release series is offered here; pick any ' +
-                 'other from the dropdown and it joins the list.</p>' +
-               '<div class="apo-param-grid">' + fixed + boxes + more + '</div>' +
-             '</td>' +
-           '</tr>';
-  }
-
-  /** Fetch and store the versions chosen for one wiki; onlyMissing limits
-   * an incremental save to what the cache does not yet hold, so a failure
-   * cannot hide behind an already-stored sibling. */
-  function storeParams(w, cache, report, onlyMissing) {
-    var wanted = onlyMissing ? missingParams(w) : pickedFiles(w);
-    if (!wanted.length) { return Promise.resolve(0); }
-    var stored = 0;
-    var attempted = 0, unreachable = 0;
-    return wanted.reduce(function (chain, v) {
-      return chain.then(function () {
-        var url;
-        try { url = paramCacheKey(w, v); } catch (err) {
-          // One malformed version must not fail the whole wiki.
-          console.warn('[offline] parameter version skipped', err && err.message);
-          return undefined;
-        }
-        attempted++;
-        var fetched = false;
-        return fetch(url, {
-          cache: 'no-cache',
-          signal: activeDownload ? activeDownload.signal : undefined
-        }).then(function (r) {
-          if (!r.ok) { throw new Error(url + ' (' + r.status + ')'); }
-          fetched = true;
-          return r.arrayBuffer();
-        }).then(function (buf) {
-          var body = new Uint8Array(buf);
-          stored += body.length;
-          if (report) { report(w.name + ' · parameters ' + v.label); }
-          return ApUnpack.storeEntry(cache, url, v.file, body);
-        }).catch(function (err) {
-          // A cancel is a cancel, and a page that ARRIVED but could not be
-          // stored is a failed save. Only a version retired upstream is
-          // quietly skipped, and only while other versions still arrive.
-          if (err && err.name === 'AbortError') { throw err; }
-          if (fetched) { throw err; }
-          unreachable++;
-          console.warn('[offline] parameter version skipped', err && err.message);
-        });
-      });
-    }, Promise.resolve()).then(function () {
-      if (attempted && unreachable === attempted) {
-        throw new Error('could not fetch the parameter pages for ' + w.name +
-                        '; check your connection and try again.');
-      }
-      return stored;
-    });
-  }
-
-  // Common is images, plus the pages of any wiki folded into it.
+  // Common is images plus a folded wiki; a count there says nothing useful.
   function countCell(w) {
-    if (!w.images) { return w.pages || ''; }
-    return w.images + ' images' + (w.pages ? ', ' + w.pages + ' pages' : '');
+    return w.images ? '' : (w.pages || '');
   }
 
-  function renderWikis(afterSync) {
+  function renderWikis() {
     return storedWikis().then(function (stored) {
       storedIds = stored;
-      // Sync picks with the cache before painting; `afterSync` stops the recursion.
-      if (!afterSync) {
-        return syncPicksWithCache(stored).then(function () {
-          return renderWikis(true);
-        });
-      }
       var rows = [COMMON].concat(WIKIS).map(function (w) {
         var isStored = !!stored[w.id];
         var box = w.required
@@ -641,9 +332,8 @@
                  '<td class="apo-name"><label class="apo-pick">' + box +
                    '<span>' + w.name + '</span></label>' +
                    (paramsOf(w).length
-                     ? ' <button type="button" class="apo-param-toggle" ' +
-                         'data-toggle-params="' + w.id + '" aria-expanded="false">' +
-                         paramsOf(w).length + ' parameter versions</button>'
+                     ? ' <span class="apo-param-count">' +
+                         paramsOf(w).length + ' parameter versions</span>'
                      : '') +
                  '</td>' +
                  '<td class="apo-num">' + w.mb + ' MB</td>' +
@@ -655,10 +345,9 @@
                      (isStored ? '100%' : '0') + '"></div>' +
                    '<span>' + (isStored ? '100%' : '') + '</span></div></td>' +
                  '<td class="apo-num">' + badge + '</td>' +
-               '</tr>' + paramRowFor(w);
+               '</tr>';
       });
       el('wiki-rows').innerHTML = rows.join('');
-      syncAllParamsHeader();
 
       var clear = el('clear-btn');
       if (clear) {
@@ -925,8 +614,7 @@
     var queue = WIKIS.filter(function (w) {
       return chosen.indexOf(w.id) !== -1;
     }).concat([COMMON]).filter(function (w) {
-      return !storedIds[w.id] || refresh.indexOf(w.id) !== -1 ||
-             paramsMissing(w);
+      return !storedIds[w.id] || refresh.indexOf(w.id) !== -1;
     });
 
     if (!queue.length) {
@@ -937,9 +625,6 @@
     }
 
     var totalBytes = queue.reduce(function (a, w) {
-      if (storedIds[w.id] && refresh.indexOf(w.id) === -1) {
-        return a + paramBytesMissing(w);
-      }
       return a + (w.mb || 0) * 1048576;
     }, 0);
 
@@ -988,14 +673,6 @@
         return queue.reduce(function (chain, entry) {
           return chain.then(function () {
             var cacheName = OFFLINE_CACHE_PREFIX + entry.id;
-            if (storedIds[entry.id] && refresh.indexOf(entry.id) === -1) {
-              // The wiki is complete; only newly picked parameter versions
-              // are owed. They live outside the archive and its table.
-              return caches.open(cacheName).then(function (cache) {
-                report('Saving ' + entry.name + ' parameter versions…');
-                return storeParams(entry, cache, report, true);
-              }).then(function () { rowProgress(entry.id, 100, 'done'); });
-            }
             // Unpacked over the existing copy, which stays readable throughout;
             // entries the new archive no longer carries are pruned at the end.
             return caches.open(cacheName).then(function (cache) {
@@ -1018,8 +695,6 @@
                 signal: activeDownload ? activeDownload.signal : undefined
               }).then(function (names) {
                 unpacked = names;
-                return storeParams(entry, cache, report);
-              }).then(function () {
                 // The bytes are in; the table check comes next, and on a slow
                 // device it is long enough to need saying.
                 report('Checking ' + entry.name + '\u2026');
@@ -1089,8 +764,7 @@
                     throw ed;
                   }
                 }
-                // Prune what the new archive no longer carries. Parameter
-                // versions live outside the archive and are kept.
+                // Prune what the new archive no longer carries.
                 var keep = {};
                 (unpacked || []).forEach(function (e) {
                   keep[ApUnpack.cachePathFor(entry.id, e.name)] = true;
@@ -1100,8 +774,7 @@
                     var key = String(request.url || request)
                       .replace(/^https?:\/\/[^/]+/, '').split('?')[0].split('#')[0];
                     if (keep[key] || key === COMPLETE_MARKER ||
-                        key === ApUpdate.TABLE_KEY ||
-                        /\/parameters-[^/]*\.html$/.test(key)) { return null; }
+                        key === ApUpdate.TABLE_KEY) { return null; }
                     return cache.delete(request);
                   }));
                 }).then(function () {
@@ -1484,25 +1157,15 @@
     }
     var first = toSave.length ? saveSelectedReal() : Promise.resolve();
 
-    // The repair re-renders the rows with every saved wiki ticked and syncs
-    // the parameter picks to the cache; the reader's own choices are what
-    // the export honours and puts back.
+    // The repair re-renders the rows with every saved wiki ticked; the
+    // reader's own choices are what the export honours and puts back.
     var chosenBefore = sel.chosen.slice();
-    // The picks map is the source of truth; the boxes are only its view.
-    var paramsBefore = JSON.parse(JSON.stringify(paramPicks));
     return first.then(function () {
-      paramPicks = paramsBefore;
       var boxes = document.querySelectorAll('.wiki-check');
       for (var bi = 0; bi < boxes.length; bi++) {
         boxes[bi].checked = chosenBefore.indexOf(boxes[bi].value) !== -1;
       }
-      document.querySelectorAll('.param-check').forEach(function (b) {
-        var picks = paramPicks[b.getAttribute('data-wiki')] || {};
-        b.checked = !!picks[b.value];
-      });
-      WIKIS.forEach(function (w) { syncParamAll(w.id); });
       syncSelectAll();
-      syncAllParamsHeader();
       updateTotal();
       var ready = { ids: chosenBefore.filter(function (id) { return storedIds[id]; }) };
       if (!ready.ids.length) {
@@ -1537,7 +1200,11 @@
                              ' pages… (click to cancel)';
         }, undefined, activeExport.signal).then(function (r) {
           release();
-          done('Saved ' + name + ' (' + r.pages + ' pages)');
+          // A version that could not be rebuilt is not in the file; saying
+          // only the page count would report a whole copy either way.
+          done('Saved ' + name + ' (' + r.pages + ' pages)' +
+               (r.leftOut ? ', ' + r.leftOut + ' parameter version' +
+                            (r.leftOut === 1 ? '' : 's') + ' left out' : ''));
         });
     }).catch(function (err) {
       if (release) { release(); }
@@ -1594,115 +1261,7 @@
 
   /* ---------- wiring ---------- */
 
-  // Delegated: renderWikis() replaces the tbody, taking row handlers with it.
-  document.addEventListener('click', function (e) {
-    var btn = e.target.closest && e.target.closest('.apo-param-toggle');
-    if (!btn) { return; }
-    var id = btn.getAttribute('data-toggle-params');
-    var row = document.querySelector('[data-params-for="' + id + '"]');
-    if (!row) { return; }
-    var open = row.hasAttribute('hidden');
-    if (open) { row.removeAttribute('hidden'); } else { row.setAttribute('hidden', ''); }
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-
-  // Back to nothing optional ticked; the always-included list stays.
-  document.addEventListener('click', function (e) {
-    var none = e.target.closest && e.target.closest('.apo-param-none');
-    if (!none) { return; }
-    var noneId = none.getAttribute('data-wiki');
-    if (!wikiById(noneId)) { return; }
-    paramPicks[noneId] = {};
-    refreshParamRow(noneId);
-    syncParamAll(noneId);
-    syncAllParamsHeader();
-    updateTotal();
-    updateSaveState();
-  });
-
-  // A dropdown choice becomes a ticked box; only this row is re-rendered.
   document.addEventListener('change', function (e) {
-    if (!e.target.classList.contains('param-more')) { return; }
-    var id = e.target.getAttribute('data-wiki');
-    var file = e.target.value;
-    var w = wikiById(id);
-    if (!w || !file) { return; }
-
-    if (!paramPromoted[id]) { paramPromoted[id] = {}; }
-    paramPromoted[id][file] = true;
-    picksFor(w)[file] = true;
-
-    var row = document.querySelector('[data-params-for="' + id + '"]');
-    refreshParamRow(id);
-    // Choosing from inside the row means it is open; make sure it stays so.
-    var chosenRow = document.querySelector('[data-params-for="' + id + '"]');
-    if (chosenRow) { chosenRow.removeAttribute('hidden'); }
-    syncParamAll(id);
-    // Choosing a version implies wanting the wiki, same as ticking one.
-    var box = document.querySelector('.wiki-check[value="' + id + '"]');
-    if (box && !box.checked) {
-      box.checked = true;
-      syncSelectAll();
-      updateExportState();
-    }
-    updateTotal();
-    updateSaveState();
-  });
-
-  document.addEventListener('change', function (e) {
-    // Every version of every wiki in one tick, from the table header.
-    if (e.target.id === 'all-params') {
-      var globalOn = e.target.checked;
-      WIKIS.forEach(function (pw) {
-        if (!paramsOf(pw).length) { return; }
-        setAllParams(pw, globalOn);
-        refreshParamRow(pw.id);
-      });
-      syncAllParamsHeader();
-      updateTotal();
-      updateSaveState();
-    }
-    // Every version of one wiki; unticking returns to the series heads.
-    if (e.target.classList.contains('param-all')) {
-      var allId = e.target.getAttribute('data-wiki');
-      var allW = wikiById(allId);
-      if (allW) {
-        setAllParams(allW, e.target.checked);
-        refreshParamRow(allId);
-        var allBox = document.querySelector('.wiki-check[value="' + allId + '"]');
-        if (allBox && e.target.checked && !allBox.checked) {
-          allBox.checked = true;
-          syncSelectAll();
-          updateExportState();
-        }
-        syncAllParamsHeader();
-        updateTotal();
-        updateSaveState();
-      }
-    }
-    if (e.target.classList.contains('param-check')) {
-      var id = e.target.getAttribute('data-wiki');
-      var w = wikiById(id);
-      if (w) {
-        picksFor(w)[e.target.value] = e.target.checked;
-        if (!paramPromoted[id]) { paramPromoted[id] = {}; }
-        if (e.target.checked) { paramPromoted[id][e.target.value] = true; }
-        else { delete paramPromoted[id][e.target.value]; }
-        if (!e.target.checked) { delete picksFor(w)[e.target.value]; }
-        syncParamAll(id);
-        syncAllParamsHeader();
-      }
-      // Picking a version implies wanting its wiki.
-      var box = document.querySelector('.wiki-check[value="' + id + '"]');
-      if (box && e.target.checked && !box.checked) {
-        box.checked = true;
-        syncSelectAll();
-        updateExportState();
-        updateSaveState();
-      }
-      updateTotal();
-      updateSaveState();
-    }
     if (e.target.classList.contains('wiki-check')) {
       syncSelectAll();
       updateTotal();

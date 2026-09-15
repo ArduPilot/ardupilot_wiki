@@ -60,15 +60,21 @@ function liftLookup(src) {
                     /const PAGE_CACHE\s*=\s*[^;]*;/,
                     /const IMAGE_CACHE\s*=\s*[^;]*;/,
                     /const PARAM_INDEX\s*=\s*[^;]*;/,
+                    /const AP_DELTA\s*=\s*[^;]*;/,
+                    /const DELTA_MAGIC\s*=\s*[^;]*;/,
+                    /const ZSTD_WASM\s*=\s*[^;]*;/,
+                    /let zstdReady\s*=\s*[^;]*;/,
                     /let knownCacheNames\s*=\s*[^;]*;/,
                     /const markerChecked\s*=\s*[^;]*;/,
-                    /const openedCaches\s*=\s*[^;]*;/]) {
+                    /const openedCaches\s*=\s*[^;]*;/,
+                    /const PARAM_VERSION_PATH\s*=\s*[^;]*;/]) {
     const m = src.match(re);
     if (m) { out += m[0] + '\n'; }
   }
   // Every function heldOffline reaches; a missing one throws mid-run.
   for (const name of ['storedShapes', 'likelyCacheName', 'isComplete',
-                      'offlineCacheFor', 'inflate', 'heldOffline', 'cacheFirst',
+                      'offlineCacheFor', 'inflate', 'heldOffline', 'heldRaw',
+                      'restore', 'deltaHeader', 'deltaDecoder', 'contentHash', 'cacheFirst',
                       'keep', 'sanitizeForCache', 'evictPromotedSavedCopies',
                       'paramIndex', 'plausibleBody']) {
     const at = src.indexOf('function ' + name + '(');
@@ -152,6 +158,7 @@ function run(workerSrc, label) {
   const ctx = {
     URL,
     console,
+    crypto: require('crypto').webcrypto,
     caches: {
       match: async (r) => (store.has(keyOf(r)) ? asResponse(keyOf(r)) : undefined),
       has: async () => false,
@@ -209,6 +216,168 @@ function canonical(p) {
   return p.replace(/\.html$/, '');
 }
 
+/** A version stored as a delta is served rebuilt; the index lists it without decoding. */
+async function checkDeltaVersionRebuilt() {
+  console.log('\nservice worker: a parameter version saved as a delta\n');
+
+  const FIX = path.join(__dirname, 'fixtures');
+  const base = fs.readFileSync(path.join(FIX, 'delta-base.html'));
+  const page = fs.readFileSync(path.join(FIX, 'delta-page.html'));
+  const frame = fs.readFileSync(path.join(FIX, 'delta-page.zst'));
+  const wasm = fs.readFileSync(path.join(REPO, 'frontend', 'js', 'zstd.wasm'));
+  const BASE = '/rover/docs/parameters-Rover-stable-V4.7.0.html';
+  const DELTA = '/rover/docs/parameters-Rover-stable-V4.6.0.html';
+  const hash16 = (b) => require('crypto').createHash('sha256').update(b).digest('hex').slice(0, 16);
+  const container = Buffer.concat([
+    Buffer.from('APDELTA1 parameters-Rover-stable-V4.7.0.html ' + hash16(page) + '\n'), frame]);
+  const wrongHash = Buffer.concat([
+    Buffer.from('APDELTA1 parameters-Rover-stable-V4.7.0.html 0123456789abcdef\n'), frame]);
+  const saved = {
+    [BASE]: { body: base, ct: 'text/html; charset=utf-8' },
+    [DELTA]: { body: container, ct: 'text/html; charset=utf-8', apEncoded: 'zstd-delta' },
+  };
+  const bodyOf = (res) => (res && res.body && !res.error
+    ? Buffer.from(res.body.buffer ? res.body : Buffer.from(String(res.body))) : null);
+  const header = (res, name) => (res && res.headers
+    ? (res.headers.get ? res.headers.get(name) : res.headers[name]) : null);
+
+  const src = fs.readFileSync(WORKER, 'utf8');
+  check('the worker imports the delta decoder at start-up, guarded for hosts without importScripts',
+        /typeof importScripts === 'function'/.test(src) &&
+        /importScripts\('\/js\/zstd-delta\.js'\)/.test(src));
+  const shell = src.slice(src.indexOf('const SHELL'), src.indexOf('];', src.indexOf('const SHELL')));
+  check('the decoder\'s wasm is part of the shell precache', /'\/js\/zstd\.wasm'/.test(shell));
+
+  // Offline, wasm held in the static cache: the page comes back rebuilt.
+  let w = bootWorker({ networkFails: true, decoder: true, entries: Object.assign({
+    '/js/zstd.wasm': { body: wasm, ct: 'application/wasm', cache: 'static' } }, saved) });
+  check('the decoder was imported', (w.seen.imported || []).length === 1);
+  let a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  let res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  let body = bodyOf(res);
+  check('offline, the delta is served rebuilt into its page',
+        !!body && Buffer.compare(body, page) === 0,
+        res && res.error ? res.error : (body ? body.length + ' bytes' : 'no answer'));
+  check('served as a page, without the unpacker\'s private marker',
+        /^text\/html/.test(String(header(res, 'Content-Type'))) &&
+        !header(res, 'x-ap-encoding'));
+  check('the wasm came from the cache, not the network',
+        !w.seen.fetches.some((u) => u.indexOf('zstd.wasm') !== -1),
+        JSON.stringify(w.seen.fetches));
+
+  // Served twice: the decoder is initialised once and reused.
+  a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  body = bodyOf(res);
+  check('a second read is rebuilt too', !!body && Buffer.compare(body, page) === 0);
+
+  a = w.ask(BASE, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  check('the base page is served plain', !!res && !res.error && !header(res, 'x-ap-encoding'));
+
+  // The version index lists a delta-held version without decoding anything:
+  // no wasm anywhere, and still the version is offered.
+  const INDEX = '/rover/_static/parameters-Rover.json';
+  w = bootWorker({ networkFails: true, decoder: true, entries: Object.assign({
+    [INDEX]: { body: JSON.stringify({
+      'Rover stable V4.7.0': 'parameters-Rover-stable-V4.7.0.html',
+      'Rover stable V4.6.0': 'parameters-Rover-stable-V4.6.0.html',
+      'Rover stable V4.5.0': 'parameters-Rover-stable-V4.5.0.html' }),
+      ct: 'application/json', cache: 'static' } }, saved) });
+  a = w.ask(INDEX);
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  let listed = null;
+  try { listed = JSON.parse(String(res.body)); } catch (e) { listed = null; }
+  check('offline, the version index lists the delta-held version and drops the absent one',
+        !!listed && !!listed['Rover stable V4.6.0'] && !!listed['Rover stable V4.7.0'] &&
+        !listed['Rover stable V4.5.0'],
+        listed ? Object.keys(listed).join(', ') : String(res && (res.error || res.status)));
+  check('listing it decoded nothing',
+        !w.seen.fetches.some((u) => u.indexOf('zstd.wasm') !== -1) &&
+        !w.seen.cacheReads.some((k) => k.indexOf('zstd.wasm') !== -1),
+        'wasm reads: ' + w.seen.cacheReads.filter((k) => k.indexOf('zstd') !== -1).length);
+
+  // A delta whose base is gone, or a worker whose decoder did not load,
+  // answers as if nothing were held rather than serving bytes as a page.
+  w = bootWorker({ networkFails: true, decoder: true,
+                   entries: { [DELTA]: saved[DELTA],
+                              '/js/zstd.wasm': { body: wasm, cache: 'static' } } });
+  a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  body = bodyOf(res);
+  check('a delta without its base is not served as a page',
+        !body || (body.indexOf('APDELTA1') !== 0 && Buffer.compare(body, page) !== 0),
+        res && res.status ? 'status ' + res.status : String(res && res.error));
+  w = bootWorker({ networkFails: true, decoder: false, entries: saved });
+  a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  body = bodyOf(res);
+  check('without the decoder the raw delta is never served as the page',
+        !body || body.indexOf('APDELTA1') !== 0,
+        body ? body.length + ' bytes' : String(res && (res.error || res.status)));
+
+  // Stored plain by older update code, no marker: the magic still says what it is.
+  w = bootWorker({ networkFails: true, decoder: true, entries: {
+    [BASE]: saved[BASE],
+    [DELTA]: { body: container, ct: 'text/html; charset=utf-8' },
+    '/js/zstd.wasm': { body: wasm, cache: 'static' } } });
+  a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  body = await bodyOf(res);
+  check('a delta stored without its marker is still rebuilt, never served as bytes',
+        !!body && Buffer.compare(body, page) === 0,
+        body ? body.slice(0, 20).toString() : String(res && (res.error || res.status)));
+
+  // No wasm anywhere and no network: the JavaScript decoder rebuilds it.
+  w = bootWorker({ networkFails: true, decoder: true, entries: saved });
+  a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  body = await bodyOf(res);
+  check('with no wasm to be had the JavaScript decoder rebuilds the page',
+        !!body && Buffer.compare(body, page) === 0,
+        body ? body.length + ' bytes' : String(res && (res.error || res.status)));
+
+  // Every way a delta can have been stored, through both decoders.
+  for (const dec of ['wasm', 'js']) {
+    for (const marked of [true, false]) {
+      for (const hdr of ['hashed', 'hashless']) {
+        const bytes = Buffer.concat([Buffer.from(hdr === 'hashed'
+          ? 'APDELTA1 parameters-Rover-stable-V4.7.0.html ' + hash16(page) + '\n'
+          : 'APDELTA1 parameters-Rover-stable-V4.7.0.html\n'), frame]);
+        const entry = { body: bytes, ct: 'text/html; charset=utf-8' };
+        if (marked) { entry.apEncoded = 'zstd-delta'; }
+        const ents = { [BASE]: saved[BASE], [DELTA]: entry };
+        if (dec === 'wasm') { ents['/js/zstd.wasm'] = { body: wasm, cache: 'static' }; }
+        w = bootWorker({ networkFails: true, decoder: true, entries: ents });
+        a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+        res = a ? await a.catch((e) => ({ error: e.message })) : null;
+        body = await bodyOf(res);
+        if (hdr === 'hashed') {
+          check(dec + ' decoder, ' + (marked ? 'marked' : 'unmarked') + ' entry, hashed header: rebuilt',
+                !!body && Buffer.compare(body, page) === 0,
+                body ? body.slice(0, 20).toString() : String(res && (res.error || res.status)));
+        } else {
+          check(dec + ' decoder, ' + (marked ? 'marked' : 'unmarked') + ' entry, hashless header: not served as a page',
+                !body || (body.indexOf('APDELTA1') !== 0 && Buffer.compare(body, page) !== 0),
+                body ? body.slice(0, 20).toString() : String(res && (res.error || res.status)));
+        }
+      }
+    }
+  }
+
+  // A rebuilt page that does not match the hash in its header is not served.
+  w = bootWorker({ networkFails: true, decoder: true, entries: {
+    [BASE]: saved[BASE],
+    [DELTA]: { body: wrongHash, ct: 'text/html; charset=utf-8', apEncoded: 'zstd-delta' },
+    '/js/zstd.wasm': { body: wasm, cache: 'static' } } });
+  a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  body = await bodyOf(res);
+  check('a rebuilt page that does not match its hash is not served as the page',
+        !body || Buffer.compare(body, page) !== 0,
+        res && res.status ? 'status ' + res.status : String(res && res.error));
+}
+
 /** The worker must evaluate, not merely parse. */
 function checkWorkerEvaluates() {
   const ctx = {
@@ -252,10 +421,35 @@ const OFFLINE_PREFIX_FOR_TESTS = 'ardupilot-offline-';
 function bootWorker({ networkFails = false, serve = null,
                      existingCaches = [], offlineCopy = null,
                      holdNetwork = false, putFails = false,
-                     runtimeImages = null, file = WORKER } = {}) {
+                     runtimeImages = null, entries = null, decoder = false,
+                     file = WORKER } = {}) {
   const seen = { fetches: [], cacheReads: [], puts: [], deleted: [], posted: [] };
   let hasImpl = async (name) => cacheNames.indexOf(name) !== -1;
   let cacheNames = existingCaches.slice();
+  // Stored bytes with their headers, as the unpacker leaves them: an entry
+  // lives in its wiki's saved cache unless it names the static cache.
+  const entryResponse = (e) => {
+    const bytes = Buffer.isBuffer(e.body) ? e.body : Buffer.from(String(e.body));
+    return {
+      ok: true, status: 200, type: 'basic', url: '',
+      headers: { get: (h) => {
+        const n = String(h).toLowerCase();
+        if (n === 'content-type') { return e.ct || null; }
+        if (n === 'x-ap-encoding') { return e.apEncoded || null; }
+        return null;
+      } },
+      clone() { return entryResponse(e); },
+      arrayBuffer: async () => bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength),
+      text: async () => bytes.toString('utf8'),
+      json: async () => JSON.parse(bytes.toString('utf8')),
+    };
+  };
+  const entryHolder = (k, e) => ((e.cache || 'offline') === 'offline'
+    ? 'ardupilot-offline-' + k.split('/')[1] : null);
+  Object.keys(entries || {}).forEach((k) => {
+    const holder = entryHolder(k, entries[k]) || 'ardupilot-' + entries[k].cache + '-test';
+    if (cacheNames.indexOf(holder) === -1) { cacheNames.push(holder); }
+  });
   // A completed download: named cache plus completion marker.
   const offlineName = offlineCopy
     ? 'ardupilot-offline-' + offlineCopy.path.split('/')[1]
@@ -274,6 +468,19 @@ function bootWorker({ networkFails = false, serve = null,
     match: async (r) => {
       const k = String(r && r.url ? r.url : r);
       seen.cacheReads.push(k);
+      if (entries) {
+        const p = k.replace(/^https?:\/\/[^/]+/, '');
+        const e = entries[p];
+        const offline = String(name).indexOf(OFFLINE_PREFIX_FOR_TESTS) === 0;
+        if (offline && p === '/__ap_complete__') { return { ok: true, status: 200 }; }
+        if (e) {
+          const holder = entryHolder(p, e);
+          if (holder ? name === holder
+                     : String(name).indexOf('ardupilot-' + e.cache + '-') === 0) {
+            return entryResponse(e);
+          }
+        }
+      }
       if (runtimeImages && String(name).indexOf('ardupilot-') === 0 &&
           String(name).indexOf(OFFLINE_PREFIX_FOR_TESTS) !== 0 &&
           runtimeImages[k]) {
@@ -348,6 +555,7 @@ function bootWorker({ networkFails = false, serve = null,
       },
     },
     console: { warn() {}, log() {}, error() {} },
+    crypto: require('crypto').webcrypto,
     fetch: async (req) => {
       const url = String(req && req.url ? req.url : req);
       seen.fetches.push(url);
@@ -376,11 +584,15 @@ function bootWorker({ networkFails = false, serve = null,
         },
         clone() { return this; },
         text: async () => spec.body || '',
+        arrayBuffer: async () => (spec.bytes
+          ? spec.bytes.buffer.slice(spec.bytes.byteOffset, spec.bytes.byteOffset + spec.bytes.byteLength)
+          : new ArrayBuffer(0)),
       };
     },
     Response: class {
       constructor(body, init) { this.body = body; Object.assign(this, init || {}); }
     },
+    WebAssembly, TextDecoder, TextEncoder,
     Headers: class {
       constructor(init) {
         this._m = new Map();
@@ -395,6 +607,13 @@ function bootWorker({ networkFails = false, serve = null,
     Request: class { constructor(u) { this.url = String(u); } },
     URL, setTimeout, clearTimeout, Map, Set, Promise, JSON, Math, Date, RegExp,
   };
+  // The decoder the worker imports at start-up, when the boot asks for it.
+  if (decoder) {
+    ctx.importScripts = (u) => {
+      seen.imported = (seen.imported || []).concat([u]);
+      vm.runInContext(fs.readFileSync(path.join(REPO, 'frontend', 'js', 'zstd-delta.js'), 'utf8'), ctx);
+    };
+  }
   vm.createContext(ctx);
   vm.runInContext(fs.readFileSync(file, 'utf8'), ctx);
 
@@ -1426,6 +1645,7 @@ async function main() {
   await checkPoisonGuard();
   await checkVersionBump();
   await checkErrorFallsBackToSaved();
+  await checkDeltaVersionRebuilt();
   await checkArchiveFallback();
   await checkDownloadBypass();
   await checkRevalidationIsAwaited();
