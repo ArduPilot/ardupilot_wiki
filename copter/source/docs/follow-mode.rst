@@ -16,7 +16,7 @@ The altitude is maintained with the altitude hold controller so the vehicle will
 The following parameters can be used to tune Follow Mode's performance:
 
 -  :ref:`FOLL_ENABLE <FOLL_ENABLE>`: set to 1 to enable follow mode and refresh parameters
--  :ref:`FOLL_SYSID <FOLL_SYSID>`: MAVLink system id of lead vehicle ("0" means follow the first vehicle "seen")
+-  :ref:`FOLL_SYSID <FOLL_SYSID>`: MAVLink system id of the lead vehicle. This must be set explicitly; "0" means no lead vehicle has been selected and Follow is inactive
 -  :ref:`FOLL_DIST_MAX <FOLL_DIST_MAX>`: if lead vehicle is more than this many meters away, give up on following and hold position
 -  :ref:`FOLL_OFS_X <FOLL_OFS_X>`, :ref:`FOLL_OFS_Y <FOLL_OFS_Y>`, :ref:`FOLL_OFS_Z <FOLL_OFS_Z>`: 3D offset (in meters) from the lead vehicle
 -  :ref:`FOLL_OFS_TYPE <FOLL_OFS_TYPE>`: set to 0 if offsets are North-East-Down, 1 if offsets are relative to lead vehicle's heading
@@ -52,3 +52,12 @@ an unexpected height.
    mismatch between the two vehicles' home altitudes. If the follower consistently flies too
    high or too low by roughly the difference in take-off elevations, "relative" is the wrong
    choice for that setup.
+
+Changing the Lead Vehicle
+=========================
+
+:ref:`FOLL_SYSID<FOLL_SYSID>` may be changed while flying, for example by a Lua script switching between two beacons. The position, velocity and heading held for the previous lead vehicle are discarded as soon as the parameter changes, so the follower has no target and holds its current position until the newly selected vehicle is heard from. Tracking then restarts from that vehicle's position, rather than being smoothed across from the old one.
+
+The type of position message in use is also reset by the change, so if the previous lead vehicle was sending ``FOLLOW_TARGET``, ``GLOBAL_POSITION_INT`` from the new lead vehicle is accepted immediately.
+
+Setting :ref:`FOLL_SYSID<FOLL_SYSID>` to "0" deselects the lead vehicle altogether, and nothing is followed until a non-zero system id is set. Earlier firmware treated "0" as "follow the first vehicle seen" and wrote that vehicle's system id into the parameter; it no longer does either, so the lead vehicle must always be selected explicitly.
