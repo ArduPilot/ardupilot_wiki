@@ -347,6 +347,26 @@
     });
   }
 
+  // A delta the build wrote, small enough to carry here: proves the decoder
+  // this browser has can rebuild a page before a reader relies on it.
+  var SELFTEST = {
+    base: '<!DOCTYPE html><html><body><p>ArduPilot parameter page self-test base: the decoder rebuilds this line.</p></body></html>',
+    page: '<!DOCTYPE html><html><body><p>ArduPilot parameter page self-test page: the decoder rebuilt this line.</p></body></html>',
+    delta: 'KLUv/SR3jQAAMDxwYWd0IAMAemAwfNNdClc8qU7l'
+  };
+
+  /** Resolves true when the decoder loads and rebuilds the self-test page. */
+  function decoderWorks(opts) {
+    return decoder(opts && opts.loadWasm).then(function (zstd) {
+      var delta = Uint8Array.from(atob(SELFTEST.delta), function (c) { return c.charCodeAt(0); });
+      var out = zstd.patch(delta, new TextEncoder().encode(SELFTEST.base));
+      return new TextDecoder().decode(out) === SELFTEST.page;
+    }).catch(function (err) {
+      console.warn('[offline] the delta decoder cannot run here', err && err.message);
+      return false;
+    });
+  }
+
   /** cache.match, but readable. */
   function readFrom(cache, path, opts) {
     return cache.match(path).then(function (hit) {
@@ -400,6 +420,7 @@
     inflate: inflate,
     restore: restore,
     deltaHeader: deltaHeader,
+    decoderWorks: decoderWorks,
     contentHash: contentHash,
     readFrom: readFrom,
     storeEntry: storeEntry

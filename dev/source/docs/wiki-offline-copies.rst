@@ -393,6 +393,14 @@ file offers every saved version for a few tens of kilobytes each. Because the ba
 nightly master list, the deltas only change when a new stable lands, so a
 differential update rarely has to fetch them again.
 
+The plain pages stay on the site at their usual URLs, so the fallback needs no
+server support. Once a saved wiki carries versions, the Offline page runs the
+decoder against a tiny built-in delta; if even the JavaScript decoder cannot
+run it says so and offers one button that fetches every
+carried version as a plain page and stores it over the delta, about 0.3 MB
+each over the wire. A worker that cannot rebuild a delta treats that version
+as not held rather than serving the raw bytes.
+
 Archives are reproducible: tar metadata is normalised, so unchanged content
 produces byte-identical output and a deploy can skip it.
 

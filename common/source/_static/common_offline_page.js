@@ -309,6 +309,124 @@
     return (w && w.param_versions) || [];
   }
 
+  // The deltas need the decoder to read. Checked once a saved wiki carries
+  // any, and if this browser cannot run it the reader is offered the plain
+  // pages instead: the site serves every version as ordinary HTML.
+  var PLAIN_VERSION_MB = 0.3;   // gzipped over the wire, about what each costs
+  var decoderCheck = null;     // the self-test, run once per page load
+  var decoderVerdict = null;   // null: not asked; true or false once known
+  var plainFetch = null;       // the fallback download in flight
+
+  function wikisWithVersions() {
+    return WIKIS.filter(function (w) { return storedIds[w.id] && paramsOf(w).length; });
+  }
+
+  // The carried versions still stored as deltas, per saved wiki; a plain
+  // page fetched over one no longer counts.
+  function deltasHeld() {
+    return Promise.all(wikisWithVersions().map(function (w) {
+      return caches.open(OFFLINE_CACHE_PREFIX + w.id).then(function (cache) {
+        return Promise.all(paramsOf(w).map(function (v) {
+          var key;
+          try { key = ApUnpack.cachePathFor(w.id, w.id + '/' + v.file); } catch (err) { return null; }
+          return cache.match(key).then(function (hit) {
+            return hit && hit.headers && hit.headers.get('x-ap-encoding') === 'zstd-delta'
+              ? { w: w, v: v, key: key } : null;
+          });
+        }));
+      });
+    })).then(function (lists) {
+      return [].concat.apply([], lists).filter(Boolean);
+    });
+  }
+
+  function renderDeltaWarning(held) {
+    var line = el('delta-warning');
+    if (!line) { return; }
+    if (decoderVerdict !== false || !held.length) {
+      line.hidden = true;
+      line.innerHTML = '';
+      return;
+    }
+    line.hidden = false;
+    line.innerHTML = '&#9888; This browser cannot rebuild the compressed parameter ' +
+      'versions your saved wikis carry, so those pages will not open offline. ' +
+      'The current parameter list is unaffected. ' +
+      '<button type="button" id="plain-params-btn" class="apo-btn apo-btn-ghost">' +
+      'Download them as plain pages (about ' +
+      Math.round(held.length * PLAIN_VERSION_MB) + ' MB)</button>';
+  }
+
+  function checkDecoder() {
+    if (!wikisWithVersions().length) {
+      renderDeltaWarning([]);
+      return Promise.resolve(decoderVerdict);
+    }
+    if (!decoderCheck) {
+      decoderCheck = ApUnpack.decoderWorks().then(function (ok) {
+        decoderVerdict = ok;
+        return ok;
+      });
+    }
+    return decoderCheck.then(function (ok) {
+      if (ok) { renderDeltaWarning([]); return ok; }
+      return deltasHeld().then(function (held) { renderDeltaWarning(held); return ok; });
+    });
+  }
+
+  /** Fetch the plain page for every carried version of every saved wiki and
+   * store it over the delta; a page with no delta header stores as any page. */
+  function fetchPlainVersions() {
+    if (plainFetch) { return plainFetch; }
+    if (activeDownload || activeExport) {
+      return Promise.reject(new Error('A download is already running; try again when it finishes.'));
+    }
+    var progress = el('cache-progress');
+    var button = el('plain-params-btn');
+    if (button) { button.disabled = true; }
+    progress.hidden = false;
+    var done = 0, failed = [], wanted = [];
+    plainFetch = deltasHeld().then(function (held) {
+      wanted = held;
+      return held;
+    }).then(function (held) { return held.reduce(function (chain, item) {
+      return chain.then(function () {
+        var w = item.w, v = item.v, url = item.key;
+        progress.textContent = 'Fetching ' + w.name + ' parameters ' + v.label +
+                               ' (' + (done + 1) + ' of ' + wanted.length + ')\u2026';
+        // Tagged as an update so the worker goes to the network and never
+        // answers with the delta it cannot read, or its offline page.
+        var tagged = url + '?ap-update=' + encodeURIComponent(CURRENT_BUILD || '1');
+        return fetch(tagged, { cache: 'no-cache' }).then(function (r) {
+          if (!r.ok) { throw new Error('HTTP ' + r.status); }
+          // A captive portal answers 200 with its own page; a header that
+          // does not say HTML is refused rather than stored as the version.
+          var ct = r.headers && r.headers.get && r.headers.get('Content-Type');
+          if (ct && !/html/i.test(ct)) { throw new Error('served as ' + ct); }
+          return r.arrayBuffer();
+        }).then(function (buf) {
+          return caches.open(OFFLINE_CACHE_PREFIX + w.id).then(function (cache) {
+            return ApUnpack.storeEntry(cache, url, v.file, new Uint8Array(buf));
+          });
+        }).then(function () { done++; }, function (err) {
+          console.warn('[offline] plain parameter page skipped', url, err && err.message);
+          failed.push(v.file);
+        });
+      });
+    }, Promise.resolve()); }).then(function () {
+      plainFetch = null;
+      notifyWorkerCachesChanged();
+      if (failed.length) {
+        progress.textContent = done + ' of ' + wanted.length + ' parameter pages saved as plain ' +
+          'pages; ' + failed.length + ' could not be fetched (' + failed[0] + '). Try again later.';
+      } else {
+        progress.textContent = 'All ' + done + ' parameter versions are saved as plain pages.';
+      }
+      return renderWikis().then(renderStorage);
+    });
+    return plainFetch;
+  }
+
   // Common is images plus a folded wiki; a count there says nothing useful.
   function countCell(w) {
     return w.images ? '' : (w.pages || '');
@@ -348,6 +466,7 @@
                '</tr>';
       });
       el('wiki-rows').innerHTML = rows.join('');
+      checkDecoder().catch(function () { /* the warning speaks for itself */ });
 
       var clear = el('clear-btn');
       if (clear) {
@@ -594,6 +713,11 @@
       if (fromButton) { return cancelDownload(); }
       return Promise.reject(new Error('A download is already running; ' +
                                       'try again when it finishes.'));
+    }
+    // The plain-page fallback writes the same caches.
+    if (plainFetch) {
+      return Promise.reject(new Error('The parameter pages are still downloading; ' +
+                                      'try again when they finish.'));
     }
     // Packing reads these caches; nothing may rewrite them underneath it.
     if (activeExport && !fromButton) {
@@ -1289,8 +1413,14 @@
     // closest(): the armed Remove all contains its own countdown bar.
     var hit = e.target && e.target.closest &&
               e.target.closest('#clear-btn, #download-cache-btn, #check-btn, #dl-single, ' +
-                               '#offline-off-confirm, #offline-off-keep');
+                               '#offline-off-confirm, #offline-off-keep, #plain-params-btn');
     if (!hit) { return; }
+    if (hit.id === 'plain-params-btn') {
+      fetchPlainVersions().catch(function (err) {
+        el('cache-progress').hidden = false;
+        el('cache-progress').textContent = (err && err.message) || String(err);
+      });
+    }
     if (hit.id === 'clear-btn') { confirmClear(); }
     if (hit.id === 'offline-off-confirm') { turnOff(); }
     if (hit.id === 'offline-off-keep') { hideTurnOff(); renderOfflineMode(); }
