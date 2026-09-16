@@ -100,6 +100,9 @@ def check_embed_rewrite():
           "yt-dQw4w9WgXcQ.jpg" in out)
     check("a vimeo embed becomes a Vimeo card",
           'href="https://vimeo.com/123456"' in out and "Watch on Vimeo" in out)
+    check("a card says the video is not loaded and never looks like a player",
+          "Video not loaded" in out and 'class="ap-video-label"' in out and
+          "&#9654;" not in out and "needs a connection" not in out)
     check("an unknown iframe becomes a link card to what it embedded",
           'href="https://docs.google.com/forms/d/e/abc/viewform"' in out and
           "Open in a browser" in out)
