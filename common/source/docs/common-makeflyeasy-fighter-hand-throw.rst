@@ -23,7 +23,7 @@ Basic Parameters
 - Stalling speed: 10m/s
 - Maximum payload: 1500g       
 - Payload bay size: 280*160*110mm
-- Longest flight range: 250km (600g load)     
+- Longest flight range: >50km (600g load)     
 - Max take-off weight：11.5kg
 - Practical ceiling height: 4000m             
 - Wind resistance: 5
