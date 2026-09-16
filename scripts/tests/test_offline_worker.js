@@ -67,6 +67,7 @@ function liftLookup(src) {
                     /let knownCacheNames\s*=\s*[^;]*;/,
                     /const markerChecked\s*=\s*[^;]*;/,
                     /const openedCaches\s*=\s*[^;]*;/,
+                    /const CRC_TABLE\s*=[\s\S]*?\}\)\(\);/,
                     /const PARAM_VERSION_PATH\s*=\s*[^;]*;/]) {
     const m = src.match(re);
     if (m) { out += m[0] + '\n'; }
@@ -75,6 +76,7 @@ function liftLookup(src) {
   for (const name of ['storedShapes', 'likelyCacheName', 'isComplete',
                       'offlineCacheFor', 'inflate', 'heldOffline', 'heldRaw',
                       'restore', 'deltaHeader', 'deltaDecoder', 'contentHash', 'cacheFirst',
+                      'crc32', 'heldMatchingFingerprint',
                       'keep', 'sanitizeForCache', 'evictPromotedSavedCopies',
                       'paramIndex', 'plausibleBody']) {
     const at = src.indexOf('function ' + name + '(');
@@ -214,6 +216,74 @@ function run(workerSrc, label) {
 function canonical(p) {
   if (p.endsWith('/index.html')) { return p.slice(0, -'index.html'.length); }
   return p.replace(/\.html$/, '');
+}
+
+/** A fingerprinted asset whose saved copy matches its checksum is served at once. */
+async function checkFingerprintVerifiedFromSaved() {
+  console.log('\nservice worker: a fingerprinted asset the saved wiki holds\n');
+
+  const zlib = require('zlib');
+  const body = 'var theme = "' + 'x'.repeat(200) + '";';
+  const v = (zlib.crc32(Buffer.from(body)) >>> 0).toString(16).padStart(8, '0');
+  const PATH = '/copter/_static/js/theme.js';
+
+  // The network stalls; the saved copy's checksum is the one asked for.
+  let w = bootWorker({ holdNetwork: true,
+                       offlineCopy: { path: PATH, body, ct: 'text/javascript' } });
+  let a = w.ask(PATH + '?v=' + v);
+  const raced = await Promise.race([
+    a ? a.then(() => 'answered').catch((e) => 'rejected ' + e.message) : Promise.resolve('no handler'),
+    new Promise((r) => setTimeout(() => r('still waiting on the network'), 1500)),
+  ]);
+  check('a saved copy matching its fingerprint is served without waiting on the network',
+        raced === 'answered', raced);
+  check('nothing was asked of the network for it', w.seen.fetches.length === 0,
+        JSON.stringify(w.seen.fetches));
+  const promotedAt = w.seen.puts.indexOf(w.seen.puts.find((k) => k.indexOf('?v=' + v) !== -1));
+  const promoted = promotedAt !== -1 && w.seen.putValues && w.seen.putValues[promotedAt];
+  check('the verified copy is promoted into the static cache under its exact key',
+        !!promoted && promoted.headers && promoted.headers.get('x-ap-promoted') === '1',
+        JSON.stringify(w.seen.puts));
+  if (w.seen.releaseNetwork) { w.seen.releaseNetwork(); }
+
+  // A saved copy from another build: the network still answers first.
+  w = bootWorker({ serve: () => ({ ct: 'text/javascript', body: 'var theme = "fresh";' }),
+                   offlineCopy: { path: PATH, body, ct: 'text/javascript' } });
+  a = w.ask(PATH + '?v=00000000');
+  let res = a ? await a : null;
+  check('a saved copy whose checksum differs does not answer a fingerprinted request',
+        !!res && res !== w.seen.servedCopy && w.seen.fetches.length === 1,
+        w.seen.fetches.length + ' fetches');
+  const wrongAt = w.seen.puts.indexOf(w.seen.puts.find((k) => k.indexOf('?v=00000000') !== -1));
+  const wrong = wrongAt !== -1 && w.seen.putValues && w.seen.putValues[wrongAt];
+  check('and the network answer, not the saved copy, is what gets stored',
+        !!wrong && !(wrong.headers && wrong.headers.get && wrong.headers.get('x-ap-promoted')),
+        JSON.stringify(w.seen.puts));
+
+  // Offline with a mismatching copy: the old fallback, better than nothing.
+  w = bootWorker({ networkFails: true,
+                   offlineCopy: { path: PATH, body, ct: 'text/javascript' } });
+  a = w.ask(PATH + '?v=00000000');
+  res = a ? await a.catch(() => null) : null;
+  check('offline, a mismatching saved copy is still the fallback',
+        !!res && res === w.seen.servedCopy);
+
+  // Sphinx takes the carriage returns out before it hashes, so a CRLF file
+  // has to be read the same way to arrive at the fingerprint on the page.
+  const crlf = 'body {\r\n  color: red;\r\n}\r\n';
+  const crlfV = (zlib.crc32(Buffer.from(crlf.replace(/\r/g, ''))) >>> 0).toString(16).padStart(8, '0');
+  const CSS = '/copter/_static/css/theme.css';
+  w = bootWorker({ holdNetwork: true,
+                   offlineCopy: { path: CSS, body: crlf, ct: 'text/css' } });
+  a = w.ask(CSS + '?v=' + crlfV);
+  const crlfRaced = await Promise.race([
+    a ? a.then(() => 'answered').catch((e) => 'rejected ' + e.message) : Promise.resolve('no handler'),
+    new Promise((r) => setTimeout(() => r('still waiting on the network'), 1500)),
+  ]);
+  check('a saved copy with CRLF line endings matches the fingerprint Sphinx wrote',
+        crlfRaced === 'answered' && w.seen.fetches.length === 0,
+        crlfRaced + ', ' + w.seen.fetches.length + ' fetches');
+  if (w.seen.releaseNetwork) { w.seen.releaseNetwork(); }
 }
 
 /** A version stored as a delta is served rebuilt; the index lists it without decoding. */
@@ -429,6 +499,11 @@ function bodyAwareResponse(text) {
       return bodyAwareResponse(text);
     },
     async text() { this._used = true; return text; },
+    async arrayBuffer() {
+      this._used = true;
+      const b = Buffer.from(text);
+      return b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength);
+    },
   };
 }
 
@@ -1662,6 +1737,7 @@ async function main() {
   await checkVersionBump();
   await checkErrorFallsBackToSaved();
   await checkDeltaVersionRebuilt();
+  await checkFingerprintVerifiedFromSaved();
   await checkArchiveFallback();
   await checkDownloadBypass();
   await checkRevalidationIsAwaited();

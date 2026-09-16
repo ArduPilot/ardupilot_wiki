@@ -705,6 +705,39 @@ function maybeRevalidate(request, cacheName, event) {
   }).catch(() => { /* offline; the stored copy stands */ }), request.url);
 }
 
+// Sphinx fingerprints a static file as ?v=<crc32 of its bytes>, so a saved
+// copy can be checked against the request rather than trusted or refused.
+const CRC_TABLE = (() => {
+  const t = new Int32Array(256);
+  for (let n = 0; n < 256; n++) {
+    let c = n;
+    for (let k = 0; k < 8; k++) { c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1; }
+    t[n] = c;
+  }
+  return t;
+})();
+
+function crc32(bytes) {
+  let c = -1;
+  for (let i = 0; i < bytes.length; i++) {
+    // Sphinx strips carriage returns before it hashes, so a CRLF file has
+    // to be read here the same way to arrive at the same fingerprint.
+    if (bytes[i] === 0x0d) { continue; }
+    c = CRC_TABLE[(c ^ bytes[i]) & 0xff] ^ (c >>> 8);
+  }
+  return ((c ^ -1) >>> 0).toString(16).padStart(8, '0');
+}
+
+// The saved copy, when its bytes are exactly what the fingerprint asks for.
+async function heldMatchingFingerprint(request, url) {
+  const v = url.searchParams.get('v');
+  if (!v || !/^[0-9a-f]{8}$/.test(v)) { return undefined; }
+  const held = await heldOffline(request);
+  if (!held) { return undefined; }
+  const bytes = new Uint8Array(await held.clone().arrayBuffer());
+  return crc32(bytes) === v ? held : undefined;
+}
+
 async function cacheFirst(request, cacheName, event) {
   // heldOffline matches by path and cannot find a cross-origin URL.
   const exact = await (await caches.open(cacheName)).match(request);
@@ -714,8 +747,20 @@ async function cacheFirst(request, cacheName, event) {
   }
 
   // A query means a fingerprint: the saved wiki may hold another build's
-  // bytes, so the network answers first and the fallback is never promoted.
-  const fingerprinted = new URL(request.url).search !== '';
+  // bytes. A saved copy whose checksum matches is the file asked for and
+  // is served at once; otherwise the network answers first, and a fallback
+  // that could not be checked is never promoted.
+  const url = new URL(request.url);
+  const fingerprinted = url.search !== '';
+  if (fingerprinted && url.origin === self.location.origin) {
+    const verified = await heldMatchingFingerprint(request, url);
+    if (verified) {
+      if (plausibleBody(request, verified)) {
+        await keep(cacheName, request, verified, true);
+      }
+      return verified;
+    }
+  }
   if (!fingerprinted) {
     const held = await heldOffline(request);
     if (held) {
