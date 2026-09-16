@@ -217,8 +217,11 @@ def embed_card(src: str, wiki: str, thumbs) -> str:
     """A still linking to what the iframe embedded, styled inline for the export's sake."""
     key, link, verb = classify_embed(src)
     link = link.replace("&", "&amp;").replace('"', "&quot;")
-    label = (f"&#9654; {verb} "
-             '<span style="opacity:.8">(needs a connection)</span>')
+    # Honest by default: this is a still and a link, not a player. pwa.js
+    # rewrites the label while it probes the host and swaps in the player
+    # only once the host answers.
+    label = ('<span style="opacity:.8">Video not loaded &middot; </span>'
+             f'{verb} &#8599;')
 
     still = ''
     if key in thumbs:
@@ -236,7 +239,7 @@ def embed_card(src: str, wiki: str, thumbs) -> str:
         'font-size:.95em;text-align:center;padding:0 16px">'
         'No preview available</span>'
         f'{still}'
-        '<span style="position:absolute;left:0;right:0;bottom:0;'
+        '<span class="ap-video-label" style="position:absolute;left:0;right:0;bottom:0;'
         'padding:8px 10px;background:rgba(0,0,0,.72);color:#fff;'
         f'font-size:.9em;border-radius:0 0 4px 4px">{label}</span></a>')
 

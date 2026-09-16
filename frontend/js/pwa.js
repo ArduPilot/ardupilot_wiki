@@ -683,15 +683,32 @@
     });
   }
 
+  // The card's caption says what is happening: probing, or why it is
+  // still a link. The link wording after the separator is the build's.
+  function caption(a, prefix) {
+    var label = a.querySelector('.ap-video-label');
+    if (!label) { return; }
+    if (!a.dataset.apLink) {
+      var parts = label.innerHTML.split('</span>');
+      a.dataset.apLink = parts.length > 1 ? parts.slice(1).join('</span>') : label.innerHTML;
+    }
+    label.innerHTML = '<span style="opacity:.8">' + prefix + ' &middot; </span>' + a.dataset.apLink;
+  }
+
+  // navigator.onLine is only a hint: Windows reports offline behind some
+  // VPN and virtual adapters while everything loads fine. The probe decides.
   function upgrade(a) {
     if (a.dataset.apLive) { return; }
     var embed = embedFor(a.getAttribute('href'));
     if (!embed) { return; }
     a.dataset.apLive = '1';
-    if (navigator.onLine === false) { a.dataset.apLive = ''; return; }
+    caption(a, 'Connecting to ' + embed.title.replace(/ video$/, '') + '\u2026');
     hostReachable(embed.src).then(function (ok) {
-      // The connection can drop while the probe is in flight.
-      if (!ok || navigator.onLine === false) { a.dataset.apLive = ''; return; }
+      if (!ok) {
+        a.dataset.apLive = '';
+        caption(a, 'Video could not be loaded');
+        return;
+      }
       mountEmbed(a, embed);
     });
   }
@@ -751,9 +768,6 @@
   }
 
   function start() {
-    // Offline, the still and its link are the right thing to show.
-    if (navigator.onLine === false) { return; }
-
     var cards = [].slice.call(document.querySelectorAll('a.ap-video'));
     if (!cards.length) { return; }
 
@@ -768,9 +782,13 @@
     }
     whenIdle(function () {
       // About a viewport of lead, so the fade has happened before the reader arrives.
+      // Watched until the player is in, so a card whose probe failed gets
+      // another try when it scrolls into view again.
       var seen = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
-          if (e.isIntersecting) { seen.unobserve(e.target); upgrade(e.target); }
+          if (!e.isIntersecting) { return; }
+          if (!e.target.parentNode) { seen.unobserve(e.target); return; }
+          upgrade(e.target);
         });
       }, { rootMargin: '600px' });
       cards.forEach(function (c) { seen.observe(c); });
@@ -781,12 +799,9 @@
   window.addEventListener('online', start);
 
   // An external link followed offline dies on a browser error page and
-  // takes the reader with it; the click waits with a note instead.
-  document.addEventListener('click', function (event) {
-    var a = event.target && event.target.closest
-      ? event.target.closest('a[data-ap-external]') : null;
-    if (!a || navigator.onLine !== false) { return; }
-    event.preventDefault();
+  // takes the reader with it. When the browser says offline the host is
+  // probed first: reachable, the link opens; not, a note explains.
+  function showOfflineNote() {
     var note = document.getElementById('ap-offline-note');
     if (!note) {
       note = document.createElement('div');
@@ -802,6 +817,26 @@
     note.hidden = false;
     clearTimeout(note._apTimer);
     note._apTimer = setTimeout(function () { note.hidden = true; }, 4000);
+  }
+
+  document.addEventListener('click', function (event) {
+    var a = event.target && event.target.closest
+      ? event.target.closest('a[data-ap-external]') : null;
+    if (!a || navigator.onLine !== false) { return; }
+    event.preventDefault();
+    var href = a.href;
+    // The tab is opened in the click itself; opened from the probe's answer
+    // a moment later, a browser takes it for a popup and blocks it.
+    var tab = window.open('', '_blank');
+    if (tab) { try { tab.opener = null; } catch (err) { /* left as it was */ } }
+    hostReachable(href).then(function (ok) {
+      if (!ok) {
+        if (tab) { tab.close(); }
+        showOfflineNote();
+        return;
+      }
+      if (tab) { tab.location = href; } else { window.open(href, '_blank', 'noopener'); }
+    });
   }, true);
 
   if (document.readyState === 'loading') {
