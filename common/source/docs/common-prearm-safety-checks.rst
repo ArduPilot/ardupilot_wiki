@@ -130,7 +130,6 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Gyros inconsistent                                      Two gyros are inconsistent by at least 5 deg/sec    Reboot autopilot and hold vehicle still until gyro calibration completes.  Allow autopilot to warm-up and reboot.  If failure continues replace autopilot. If ICE engine runs before arming, see :ref:`ARMING_OPTIONS<ARMING_OPTIONS>` bit 2 as a possible solution.
     Gyros not calibrated                                    Gyro calibration normally run at startup failed     Reboot autopilot and hold vehicle still until gyro calibration completes
     Gyros not healthy                                       At least one gyro is not providing data             Reboot autopilot.  If failure continues replace autopilot
-    Hardware safety switch                                  Hardware safety switch has not been pushed          Push safety switch (normally on top of GPS) or disable by setting :ref:`BRD_SAFETY_DEFLT<BRD_SAFETY_DEFLT>` to zero and reboot autopilot
     heater temp low (x < 45)                                Board heater temp is below BRD_HEAT_TARG            Wait for board to heat up. Target temperature can be adjust using :ref:`BRD_HEAT_TARG<BRD_HEAT_TARG>`
     In OSD menu                                             OSD is being configured                             Complete OSD configuration.  Check :ref:`OSD configuration <common-osd-overview>`
     Internal errors 0x%x l:%u %s                            An internal error has occurred                      Reboot the autopilot. Report error to the development team
@@ -192,6 +191,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     RPMx_PIN not set                                        RPM sensor misconfigured                            Check RPMx_PIN value. Check :ref:`RPM setup instructions <common-rpm>`
     RPMx_PIN=y invalid                                      RPM sensor misconfigured                            RPMx_PIN is set to an invalid value. Check :ref:`RPM setup instructions <common-rpm>`
     RPMx_PIN=y, set SERVOx_FUNCTION=-1                      RPM sensor misconfigured                            Set SERVOz_FUNCTION to -1
+    Safety Switch                                           Hardware safety switch has not been pushed          Push safety switch (normally on top of GPS) or disable by setting :ref:`BRD_SAFETY_DEFLT<BRD_SAFETY_DEFLT>` to zero and reboot autopilot
     Same Node Id x set for multiple GPS                     DroneCan GPS configuration error                    Check :ref:`GPS1_CAN_NODEID<GPS1_CAN_NODEID>` and :ref:`GPS2_CAN_NODEID<GPS2_CAN_NODEID>` are different.  Set one to zero and reboot autopilot
     Same rfnd on different CAN ports                        Two rangefinders appearing on different CAN ports   Check USD1, TOFSensP, NanoRadar or Benewake setup instructions
     Scripting: loaded CRC incorrect want: x                 Script has incorrect CRC                            Replace Lua script with expected version
@@ -271,7 +271,6 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     RTL_ALT_TYPE is above-terrain but no rangefinder        RTL uses rangefinder but rangefinder unavailable    Check :ref:`rangefinder configuration<common-rangefinder-landingpage>` including RNGFNDx_ORIENT=251
     RTL_ALT_TYPE is above-terrain but no terrain data       RTL uses terrain but Terrain database unavailable   Set :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` = 1.  See :ref:`Terrain Following<terrain-following>`
     RTL_ALT_TYPE is above-terrain but RTL_ALT>RNGFND_MAX    RTL return altitude above rangefinder range         Reduce :ref:`RTL_ALT_M<RTL_ALT_M>` to less than RNGFNDx_MAX. See :ref:`Terrain Following<terrain-following>`
-    Safety Switch                                           Hardware safety switch has not been pushed          Push safety switch (normally on top of GPS) or disable by setting :ref:`BRD_SAFETY_DEFLT<BRD_SAFETY_DEFLT>` to zero and reboot autopilot
     Throttle below failsafe                                 RC throttle input is below FS_THR_VALUE             Turn on RC transmitter or check :ref:`FS_THR_VALUE<FS_THR_VALUE>`.  Check :ref:`RC failsafe setup<radio-failsafe>`
     Vehicle too far from EKF origin                         Vehicle is more than 50km from EKF origin           Reboot autopilot to reset EKF origin to current Location
     winch unhealthy                                         Winch is not communicating with autopilot           Check winch's physical connection and :ref:`configuration <common-daiwa-winch>`
