@@ -68,6 +68,7 @@ function liftLookup(src) {
                     /const markerChecked\s*=\s*[^;]*;/,
                     /const openedCaches\s*=\s*[^;]*;/,
                     /const CRC_TABLE\s*=[\s\S]*?\}\)\(\);/,
+                    /const NETWORK_TIMEOUT_MS\s*=\s*[^;]*;/,
                     /const PARAM_VERSION_PATH\s*=\s*[^;]*;/]) {
     const m = src.match(re);
     if (m) { out += m[0] + '\n'; }
@@ -76,7 +77,7 @@ function liftLookup(src) {
   for (const name of ['storedShapes', 'likelyCacheName', 'isComplete',
                       'offlineCacheFor', 'inflate', 'heldOffline', 'heldRaw',
                       'restore', 'deltaHeader', 'deltaDecoder', 'contentHash', 'cacheFirst',
-                      'crc32', 'heldMatchingFingerprint',
+                      'crc32', 'heldMatchingFingerprint', 'browserSaysOffline', 'raceNetwork',
                       'keep', 'sanitizeForCache', 'evictPromotedSavedCopies',
                       'paramIndex', 'plausibleBody']) {
     const at = src.indexOf('function ' + name + '(');
@@ -160,6 +161,8 @@ function run(workerSrc, label) {
   const ctx = {
     URL,
     console,
+    setTimeout, clearTimeout,
+    navigator: { onLine: true },
     crypto: require('crypto').webcrypto,
     caches: {
       match: async (r) => (store.has(keyOf(r)) ? asResponse(keyOf(r)) : undefined),
@@ -216,6 +219,72 @@ function run(workerSrc, label) {
 function canonical(p) {
   if (p.endsWith('/index.html')) { return p.slice(0, -'index.html'.length); }
   return p.replace(/\.html$/, '');
+}
+
+/** A stalled network never holds up a request a stored copy can answer. */
+async function checkStalledNetworkIsBounded() {
+  console.log('\nservice worker: a stalled link with a stored copy at hand\n');
+
+  // The real worker with a short bound, so the suite does not wait 5 s.
+  const os = require('os');
+  const quick = path.join(os.tmpdir(), 'sw-quick-timeout.js');
+  fs.writeFileSync(quick, fs.readFileSync(WORKER, 'utf8')
+    .replace(/const NETWORK_TIMEOUT_MS = \d+;/, 'const NETWORK_TIMEOUT_MS = 200;'));
+  const within = (p, ms) => Promise.race([
+    p.then(() => 'answered').catch((e) => 'rejected ' + e.message),
+    new Promise((r) => setTimeout(() => r('still waiting'), ms))]);
+
+  // A fingerprinted script from another build, network held open.
+  let w = bootWorker({ file: quick, holdNetwork: true,
+                       offlineCopy: { path: '/copter/_static/js/theme.js', body: 'var t;', ct: 'text/javascript' } });
+  let a = w.ask('/copter/_static/js/theme.js?v=00000000');
+  check('a mismatching saved script answers once the bound passes, not when the link gives up',
+        await within(a, 1500) === 'answered' && (await a) === w.seen.servedCopy);
+  if (w.seen.releaseNetwork) { w.seen.releaseNetwork(); }
+
+  // The search index, network held open.
+  w = bootWorker({ file: quick, holdNetwork: true,
+                   offlineCopy: { path: '/dev/searchindex.js', body: 'Search.setIndex({})' } });
+  a = w.ask('/dev/searchindex.js');
+  check('a saved search index answers once the bound passes',
+        await within(a, 1500) === 'answered' && (await a) === w.seen.servedCopy);
+  if (w.seen.releaseNetwork) { w.seen.releaseNetwork(); }
+
+  // Nothing stored: the request still waits for the network rather than failing early.
+  w = bootWorker({ file: quick, holdNetwork: true,
+                   serve: () => ({ ct: 'text/javascript', body: 'late' }) });
+  a = w.ask('/dev/searchindex.js');
+  check('with nothing stored the network is still waited for',
+        await within(a, 600) === 'still waiting');
+  w.seen.releaseNetwork();
+  const late = await a;
+  check('and its late answer is served', !!late && late.ok);
+
+  // The browser says offline and a copy exists: no network attempt at all.
+  w = bootWorker({ file: quick, holdNetwork: true, onLine: false,
+                   offlineCopy: { path: '/copter/_static/js/theme.js', body: 'var t;', ct: 'text/javascript' } });
+  a = w.ask('/copter/_static/js/theme.js?v=00000000');
+  check('when the browser says offline a stored copy answers with no network attempt',
+        await within(a, 150) === 'answered' && w.seen.fetches.length === 0,
+        JSON.stringify(w.seen.fetches));
+
+  // The browser says offline but nothing is stored: the network is still tried.
+  w = bootWorker({ file: quick, onLine: false,
+                   serve: () => ({ ct: 'text/javascript', body: 'here' }) });
+  a = w.ask('/dev/searchindex.js');
+  const got = a ? await a : null;
+  check('the flag never blocks a request nothing stored could answer',
+        !!got && got.ok && w.seen.fetches.length === 1);
+
+  // The version index, network held open, index stored.
+  w = bootWorker({ file: quick, holdNetwork: true, entries: {
+    '/copter/_static/parameters-Copter.json': { body: JSON.stringify({ 'Copter stable V4.7.0': 'parameters.html' }),
+                                                ct: 'application/json', cache: 'static' },
+    '/copter/docs/parameters.html': { body: '<html>', ct: 'text/html' } } });
+  a = w.ask('/copter/_static/parameters-Copter.json');
+  check('the version index falls through to the stored one once the bound passes',
+        await within(a, 1500) === 'answered');
+  if (w.seen.releaseNetwork) { w.seen.releaseNetwork(); }
 }
 
 /** A fingerprinted asset whose saved copy matches its checksum is served at once. */
@@ -513,7 +582,7 @@ function bootWorker({ networkFails = false, serve = null,
                      existingCaches = [], offlineCopy = null,
                      holdNetwork = false, putFails = false,
                      runtimeImages = null, entries = null, decoder = false,
-                     file = WORKER } = {}) {
+                     onLine = true, file = WORKER } = {}) {
   const seen = { fetches: [], cacheReads: [], puts: [], deleted: [], posted: [] };
   let hasImpl = async (name) => cacheNames.indexOf(name) !== -1;
   let cacheNames = existingCaches.slice();
@@ -646,6 +715,7 @@ function bootWorker({ networkFails = false, serve = null,
       },
     },
     console: { warn() {}, log() {}, error() {} },
+    navigator: { onLine },
     crypto: require('crypto').webcrypto,
     fetch: async (req) => {
       const url = String(req && req.url ? req.url : req);
@@ -1738,6 +1808,7 @@ async function main() {
   await checkErrorFallsBackToSaved();
   await checkDeltaVersionRebuilt();
   await checkFingerprintVerifiedFromSaved();
+  await checkStalledNetworkIsBounded();
   await checkArchiveFallback();
   await checkDownloadBypass();
   await checkRevalidationIsAwaited();

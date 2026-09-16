@@ -49,8 +49,23 @@ const SHELL = [
   '/js/zstd.wasm',
 ];
 
-// Network wait for a page that is not cached yet.
+// Network wait before a stored copy answers instead; a stalled link (a
+// VPN or virtual adapter with no route behind it) is not waited out.
 const NETWORK_TIMEOUT_MS = 5000;
+
+// navigator.onLine is a hint used only to save time: when the browser says
+// offline and a stored copy exists, the network is not tried first. It never
+// decides what is served when there is nothing stored.
+function browserSaysOffline() {
+  return typeof navigator !== 'undefined' && !!navigator && navigator.onLine === false;
+}
+
+// The network's answer, or undefined once the bound has passed. The fetch
+// itself keeps running so a caller with nothing stored can still await it.
+function raceNetwork(network) {
+  const timeout = new Promise((resolve) => setTimeout(() => resolve(undefined), NETWORK_TIMEOUT_MS));
+  return Promise.race([network.catch(() => undefined), timeout]);
+}
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
@@ -503,14 +518,17 @@ const PARAM_INDEX = /^\/([^/]+)\/_static\/parameters-[A-Za-z0-9_]+\.json$/;
 
 // Offline, the version index lists only the versions held. Nothing filtered is stored.
 async function paramIndex(request, url) {
-  try {
-    const fresh = await fetch(request);
-    if (fresh && fresh.ok) {
-      await keep(STATIC_CACHE, request, fresh.clone());
-      return fresh;
+  if (!browserSaysOffline()) {
+    try {
+      // Bounded: a stalled link falls through to the stored index.
+      const fresh = await raceNetwork(fetch(request));
+      if (fresh && fresh.ok) {
+        await keep(STATIC_CACHE, request, fresh.clone());
+        return fresh;
+      }
+    } catch (err) {
+      // Offline; fall through to the stored index.
     }
-  } catch (err) {
-    // Offline; fall through to the stored index.
   }
 
   const held = await heldOffline(request);
@@ -771,8 +789,19 @@ async function cacheFirst(request, cacheName, event) {
       return held;
     }
   }
+  if (browserSaysOffline()) {
+    const held = await heldOffline(request);
+    if (held) { return held; }
+  }
   try {
-    const response = await fetch(request);
+    const network = fetch(request);
+    let response = await raceNetwork(network);
+    if (response === undefined) {
+      // Stalled: a stored copy answers now; with none, the wait goes on.
+      const held = await heldOffline(request);
+      if (held) { return held; }
+      response = await network;
+    }
     // Opaque cross-origin responses report status 0 and are still usable.
     if (response && (response.ok || response.type === 'opaque') &&
         plausibleBody(request, response)) {
@@ -1031,8 +1060,18 @@ self.addEventListener('fetch', (event) => {
 
   // Everything else, notably searchindex.js and objects.inv.
   event.respondWith((async () => {
+    if (browserSaysOffline()) {
+      const held = await heldOffline(request);
+      if (held) { return held; }
+    }
     try {
-      const response = await fetch(request);
+      const network = fetch(request);
+      let response = await raceNetwork(network);
+      if (response === undefined) {
+        const held = await heldOffline(request);
+        if (held) { return held; }
+        response = await network;
+      }
       if (response && response.ok && storable(url, response) &&
           plausibleBody(request, response)) {
         await keep(STATIC_CACHE, request, response);
