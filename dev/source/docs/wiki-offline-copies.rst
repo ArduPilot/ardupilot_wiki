@@ -494,20 +494,42 @@ Testing
 .. code-block:: bash
 
     npm install
-    npm test
+    npm test                 # every unit suite, in parallel
+    npm run test:browsers    # Chromium, Firefox and WebKit, one process each
+    npm run test:all         # both
+
+``scripts/tests/run_all.js`` runs each suite in its own process, as many at a
+time as there are cores, reports one line per suite as it finishes and the
+full output of any that failed. The page suite is split into shards with
+``--shard i/n``; its sections are independent, so four shards bring a unit run
+from about a hundred seconds to thirty.
 
 ``scripts/tests/test_offline_worker.js``
    Builds a cache from real archives, requests the URLs the site serves, and
-   resolves them with the worker's own code.
+   resolves them with the worker's own code, including a saved parameter
+   version rebuilt from its delta with either decoder, the checksum-verified
+   fingerprinted asset, and the bound on a stalled network.
 
 ``scripts/tests/test_offline_page.js``
-   Drives the download panel under jsdom, including the update check.
+   Drives the download panel under jsdom, including the update check, the
+   delta unpacking, the plain-page fallback, and the upgrade-compatibility
+   matrix: every way a delta can have been stored, read by the current code.
 
 ``scripts/tests/test_offline_export.js``
-   Runs the exporter against build output and inspects the result.
+   Runs the exporter against build output and inspects the result, including
+   a version carried as a delta and rebuilt by the file's own shell.
+
+``scripts/tests/test_zstd_delta.js``
+   The vendored decoders, WebAssembly and JavaScript, against a delta the
+   build wrote.
+
+``scripts/tests/test_build_offline_artifacts.py``
+   The build side of the deltas: which versions are carried, the header, the
+   archive entries, and that a delta rebuilds its page.
 
 ``scripts/tests/test_offline_archives.py``
-   Inspects the finished archives. Requires a full ``update.py`` first.
+   Inspects the finished archives, every delta rebuilt against its base and
+   checked against the hash in its header. Requires a full ``update.py`` first.
 
 ``scripts/tests/test_lazy_youtube.py``
    Covers the Sphinx extension that makes every video embed load lazily.
