@@ -45,6 +45,24 @@ Connecting and Configuring the Rangefinder
 .. note:: Only downward facing rangefinders are supported in Plane currently.
 [/site]
 
+MAVLink Rangefinders
+====================
+
+Rangefinders of type MAVLink (``RNGFNDx_TYPE`` = 10) are not read directly by the autopilot: their distances arrive in `DISTANCE_SENSOR <https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR>`__ messages, normally sent by a companion computer or by a smart sensor over a MAVLink serial port.
+
+The ``RNGFNDx_ADDR`` parameters (i.e. :ref:`RNGFND1_ADDR <RNGFND1_ADDR>`, :ref:`RNGFND2_ADDR <RNGFND2_ADDR>`, etc.) select which sensor each rangefinder accepts messages from:
+
+- ``RNGFNDx_ADDR`` = 0 (the default): any ``DISTANCE_SENSOR`` message whose orientation matches ``RNGFNDx_ORIENT`` is accepted, whatever its ``id``.
+- ``RNGFNDx_ADDR`` non-zero: only messages whose ``id`` field also matches that value are accepted.
+
+To use more than one MAVLink rangefinder pointing in the same direction, give each a distinct non-zero ``RNGFNDx_ADDR`` and have the sender put the matching value in the ``id`` field of that sensor's messages. Otherwise every MAVLink rangefinder with that orientation accepts every message and they cannot be told apart. ``RNGFNDx_ADDR`` accepts 1 to 127, so the sender must use an ``id`` in that range.
+
+Each rangefinder then keeps and logs its own reading, but sensors facing the same direction are not combined: features which ask for the distance in a given direction use the first rangefinder with that orientation which is reading normally, so a second one facing the same way acts as a backup rather than adding to the first.
+
+.. warning:: ``RNGFNDx_ADDR`` was previously ignored by MAVLink rangefinders. If a rangefinder is switched to ``RNGFNDx_TYPE`` = 10 from a type which uses ``RNGFNDx_ADDR``, such as I2C or DroneCAN, reset ``RNGFNDx_ADDR`` to 0 unless the sender really does use that value as its ``id``, otherwise no distances will be accepted.
+
+.. note:: This controls only which incoming messages the MAVLink rangefinder accepts. It does not affect the ``DISTANCE_SENSOR`` messages the autopilot sends out, in which the ``id`` field is the rangefinder's instance number (0 for ``RNGFND1_``, 1 for ``RNGFND2_``, and so on), nor the separate ``DISTANCE_SENSOR`` messages generated from proximity sensors, which use ids of 10 and above. It also has no effect on MAVLink proximity sensors (``PRXx_TYPE`` = 2), which sort incoming messages by orientation alone.
+
 References
 ==========
 
