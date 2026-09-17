@@ -467,6 +467,7 @@
       });
       el('wiki-rows').innerHTML = rows.join('');
       checkDecoder().catch(function () { /* the warning speaks for itself */ });
+      renderLastChecked();
 
       var clear = el('clear-btn');
       if (clear) {
@@ -985,6 +986,8 @@
       return Promise.resolve();
     }
     checkBusy = true;
+    var checked = false;   // reached the site and compared; recorded at the end
+    var outcome = 'current';
     var checkBtn = el('check-btn');
     if (checkBtn) { checkBtn.disabled = true; }
     var clearBtn = el('clear-btn');
@@ -1100,6 +1103,7 @@
           updateWriting = false;
           if (!full.length) {
             if (moved) {
+              outcome = 'updated';
               announce('Updated ' + moved + ' file' + (moved === 1 ? '' : 's') + '.');
               toast({ title: 'Update complete',
                       msg: 'Updated ' + moved + ' file' + (moved === 1 ? '' : 's') + '.',
@@ -1145,6 +1149,7 @@
                       mode: 'done' });
               return;
             }
+            outcome = 'updated';
             announce('Downloaded again: ' + full.map(nameOf).join(', ') + '.');
             toast({ title: 'Update complete',
                     msg: 'Downloaded again: ' + full.map(nameOf).join(', ') + '.',
@@ -1153,6 +1158,7 @@
           });
         });
       })
+      .then(function () { checked = true; })
       .catch(function (err) {
         // A failed automatic check means offline, which is ordinary.
         report((err && err.message) || 'Check failed');
@@ -1161,6 +1167,7 @@
         checkBusy = false;
         updateWriting = false;
         if (checkBtn && !activeDownload && !activeExport) { checkBtn.disabled = false; }
+        if (checked) { noteChecked(outcome); }
         return renderStorage();
       });
   }
@@ -1501,16 +1508,86 @@
   }
 
   // The switch reflects pwa.js's flag; pwa.js owns the registration itself.
-  function renderOfflineMode() {
+  // Green only once the worker is active: "on" alone says the reader asked
+  // for it, not that anything is answering yet. The registration's state
+  // is what counts, not whether it controls this page: a hard reload loads
+  // the page without control while the worker is up for every other.
+  var workerActive = false;
+
+  function paintOfflineMode(on) {
     var box = el('offline-mode'), state = el('offline-mode-state');
-    if (!box || !global.ApOffline) { return; }
-    var on = global.ApOffline.enabled();
+    if (!box) { return; }
+    var live = on && workerActive;
     box.checked = on;
-    if (state) { state.textContent = on ? 'on' : 'off'; }
+    if (state) {
+      state.textContent = on ? (live ? 'on' : 'on, starting\u2026') : 'off';
+      state.className = live ? 'apo-state-live' : '';
+    }
+  }
+
+  function renderOfflineMode() {
+    if (!global.ApOffline) { return; }
+    var on = global.ApOffline.enabled();
+    var sw = navigator.serviceWorker;
+    workerActive = !!(sw && sw.controller);
+    paintOfflineMode(on);
+    if (!on || !sw || !sw.getRegistration) { return; }
+    // Asked, not assumed: the answer paints again when it differs.
+    Promise.resolve(sw.getRegistration()).then(function (reg) {
+      var active = !!(reg && reg.active);
+      if (active !== workerActive) { workerActive = active; paintOfflineMode(global.ApOffline.enabled()); }
+    }).catch(function () { /* no registration to ask */ });
+  }
+
+  // When the saved wikis were last compared with the site, and what that
+  // found, so a reader can see the copy is kept current rather than take
+  // it on trust. Stamped only by a check that fetched the manifest and
+  // compared every saved wiki's build against it; opening a page, a page
+  // refreshed behind the scenes, or a check that never reached the site
+  // records nothing.
+  var LAST_CHECKED_KEY = 'ap-last-checked';
+
+  function noteChecked(result) {
+    try {
+      window.localStorage.setItem(LAST_CHECKED_KEY,
+        JSON.stringify({ t: new Date().toISOString(), r: result }));
+    } catch (err) { /* private browsing */ }
+    renderLastChecked();
+  }
+
+  function agoText(when) {
+    var s = Math.max(0, (Date.now() - when) / 1000);
+    if (s < 60) { return 'just now'; }
+    if (s < 3600) { return Math.round(s / 60) + ' min ago'; }
+    if (s < 86400) { return Math.round(s / 3600) + ' h ago'; }
+    var d = new Date(when);
+    return 'on ' + d.toISOString().slice(0, 10);
+  }
+
+  function renderLastChecked() {
+    var line = el('last-checked');
+    if (!line) { return; }
+    var stamp = null;
+    try { stamp = JSON.parse(window.localStorage.getItem(LAST_CHECKED_KEY) || 'null'); } catch (err) { stamp = null; }
+    var when = stamp && Date.parse(stamp.t || '');
+    var saved = Object.keys(storedIds).some(function (id) { return id !== 'common'; });
+    if (!saved || !when) { line.textContent = ''; return; }
+    line.textContent = stamp.r === 'updated'
+      ? 'Updated ' + agoText(when)
+      : 'Checked ' + agoText(when) + ', up to date';
   }
 
   function init() {
     renderOfflineMode();
+    if (navigator.serviceWorker && navigator.serviceWorker.addEventListener) {
+      navigator.serviceWorker.addEventListener('controllerchange', renderOfflineMode);
+      // Activation after an opt-in on this very page.
+      if (navigator.serviceWorker.ready && navigator.serviceWorker.ready.then) {
+        navigator.serviceWorker.ready.then(renderOfflineMode, function () {});
+      }
+    }
+    renderLastChecked();
+    setInterval(renderLastChecked, 60000);
     try {
       var pref = window.localStorage.getItem(AUTOUPDATE_KEY);
       if (pref === '0') { el('autoupdate').checked = false; }

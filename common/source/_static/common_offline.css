@@ -517,8 +517,8 @@
 .apo-param-count {
   display: block;
   margin: .15em 0 0 26px;
-  font-size: .82em;
-  opacity: .7;
+  font-size: .92em;
+  opacity: .75;
   white-space: nowrap;
 }
 
@@ -533,6 +533,20 @@
   align-self: flex-start;
 }
 .ap-toast-action[hidden] { display: none; }
+
+/* When the saved wikis were last compared with the site, beside the Wiki
+   header so it is read before the rows, not after them. */
+.apo table.apo-table thead th .apo-last-checked {
+  margin-left: 1.2em;
+  font-weight: 400;
+  font-size: .95em;
+  color: #fff;
+  opacity: .9;
+  white-space: nowrap;
+}
+
+/* "Offline mode: on" turns green only once the worker controls the page. */
+.apo #offline-mode-state.apo-state-live { color: #1e8e3e; font-weight: 600; }
 
 /* The offline-mode switch at the top of the panel. */
 .apo .apo-mode {
