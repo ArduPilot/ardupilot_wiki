@@ -236,6 +236,21 @@ To arm the vehicle using the ROS 2 CLI:
   
     ros2 service call /ap/arm_motors ardupilot_msgs/srv/ArmMotors "{arm: true}"
 
+Status Text Feedback
+====================
+
+Commands and control inputs received over DDS report their outcome as GCS
+status texts (for example ``Request for Arming/Disarming : SUCCESS`` or
+``Velocity control rejected``), so operators can see why an external command
+was accepted or ignored without attaching a debugger.
+
+Because the rate of these callbacks is set by the remote ROS 2 node rather
+than by ArduPilot, each of these messages is rate-limited per call site: the
+first occurrence is sent immediately and repeats are suppressed for a minimum
+interval (5 seconds by default). A companion computer flooding a request will
+therefore not saturate the telemetry link with status texts. The interval is
+configurable at compile time via ``AP_DDS_STATUSTEXT_MIN_INTERVAL_MS`` in
+`AP_DDS_config.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_DDS/AP_DDS_config.h>`_.
 
 Odometry
 ========
