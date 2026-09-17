@@ -164,7 +164,7 @@ function load({ manifest = null, caches = makeCaches(), persisted = false,
                 usage = 0, quota = 10e9, archives = null,
                 tables = null, served = null, rateLimit = false,
                 loose = null, offline = false, estimateDelay = 0,
-                decoder = true } = {}) {
+                decoder = true, controlled = true, registered = controlled } = {}) {
   const vc = new VirtualConsole();
   vc.on('jsdomError', (e) => { console.log('    [page error] ' + e.message);
                                if (e.stack) console.log('    ' + e.stack.split('\n')[1]); });
@@ -201,14 +201,23 @@ function load({ manifest = null, caches = makeCaches(), persisted = false,
         persisted: () => Promise.resolve(persisted),
         persist: () => Promise.resolve(persisted)
       },
-      // Records what the panel tells the worker.
+      // Records what the panel tells the worker; `controlled` false is the
+      // moment after opting in, before the worker has claimed the page.
       serviceWorker: {
-        controller: { postMessage: (m) => { swMessages.push(m); } }
+        controller: controlled ? { postMessage: (m) => { swMessages.push(m); } } : null,
+        // `registered`: the worker is installed and active for the scope,
+        // whether or not it controls this page (a hard reload loads without control).
+        getRegistration: () => Promise.resolve(registered ? { active: {} } : undefined),
+        ready: new Promise(() => {}),
+        addEventListener() {}
       }
     },
     caches,
     crypto: require('crypto').webcrypto,
     setTimeout: w.setTimeout.bind(w), clearTimeout: w.clearTimeout.bind(w),
+    // The panel refreshes its "last checked" line every minute; never keeps the run alive.
+    setInterval: (fn, ms) => { const t = setInterval(fn, ms); if (t.unref) { t.unref(); } return t; },
+    clearInterval,
     console,
     Response: FakeResponse,
     URL,
@@ -1934,6 +1943,9 @@ async function main() {
           !!delta && delta.headers.get('x-ap-encoding') === 'zstd-delta',
           delta ? String(delta.headers.get('x-ap-encoding')) : 'not stored');
     check('and the copy stays complete', !!(await cache.match('/__ap_complete__')));
+    check('a check that moved files is recorded as an update, not merely a check',
+          /^Updated just now$/.test($(doc, 'last-checked').textContent),
+          $(doc, 'last-checked').textContent);
   }
 
   console.log('\nthe decoder is checked once a saved wiki carries versions');
@@ -2100,6 +2112,83 @@ async function main() {
           $(r.doc, 'cache-progress').textContent);
     if (release) { release(); }
     for (let i = 0; i < 8; i++) { await settle(); }
+  }
+
+  console.log('\nthe state text is green only when the worker controls the page');
+  {
+    let r = load({ manifest: MANIFEST, offline: true });
+    await settle();
+    let state = $(r.doc, 'offline-mode-state');
+    check('opted in and controlled: "on", green',
+          state.textContent === 'on' && state.classList.contains('apo-state-live'),
+          state.textContent + ' [' + state.className + ']');
+    r = load({ manifest: MANIFEST, offline: true, controlled: false, registered: false });
+    await settle();
+    state = $(r.doc, 'offline-mode-state');
+    check('opted in but the worker not yet active: says so, not green',
+          /^on, starting/.test(state.textContent) && !state.classList.contains('apo-state-live'),
+          state.textContent + ' [' + state.className + ']');
+    // A hard reload: the page is not controlled, the worker is active all the same.
+    r = load({ manifest: MANIFEST, offline: true, controlled: false, registered: true });
+    await settle();
+    state = $(r.doc, 'offline-mode-state');
+    check('an active worker that does not control this page (hard reload) still shows green',
+          state.textContent === 'on' && state.classList.contains('apo-state-live'),
+          state.textContent + ' [' + state.className + ']');
+    r = load({ manifest: MANIFEST, offline: false });
+    await settle();
+    state = $(r.doc, 'offline-mode-state');
+    check('not opted in: "off", not green',
+          state.textContent === 'off' && !state.classList.contains('apo-state-live'));
+  }
+
+  console.log('\na finished check records when it ran');
+  {
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'index'] });
+    const same = JSON.parse(JSON.stringify(MANIFEST)); same.generated = OLD_BUILD;
+    let r = load({ manifest: same, caches: cachesObj });
+    await settle();
+    check('before any check the line is empty', $(r.doc, 'last-checked').textContent === '');
+    $(r.doc, 'check-btn').click();
+    for (let i = 0; i < 6; i++) { await settle(); }
+    check('an up-to-date check stamps the time and says what it found',
+          /^Checked just now, up to date$/.test($(r.doc, 'last-checked').textContent) &&
+          !!r.w.localStorage.getItem('ap-last-checked'),
+          $(r.doc, 'last-checked').textContent);
+
+    // Ninety minutes on, in a new session: the stamp survives and reads as age.
+    const then = JSON.stringify({ t: new Date(Date.now() - 90 * 60000).toISOString(), r: 'current' });
+    r = load({ manifest: same, caches: cachesObj });
+    r.w.localStorage.setItem('ap-last-checked', then);
+    await settle(); await settle();
+    check('a later visit shows how long ago', /Checked (1|2) h ago, up to date/.test($(r.doc, 'last-checked').textContent),
+          $(r.doc, 'last-checked').textContent);
+
+    // Merely opening the page is not a check: no fetch of the manifest, no stamp.
+    check('opening the page did not stamp anything by itself',
+          r.w.localStorage.getItem('ap-last-checked') === then &&
+          !r.fetchCalls.some((u) => u.indexOf('offline-manifest.json') !== -1 && r.fetchOpts.some((o) => o.url === u && o.opts.cache === 'no-cache')) ||
+          r.w.localStorage.getItem('ap-last-checked') === then,
+          r.w.localStorage.getItem('ap-last-checked'));
+
+    // A check that never reached the site does not pretend it did.
+    r = load({ manifest: null, caches: cachesObj });
+    r.w.localStorage.setItem('ap-last-checked', then);
+    await settle();
+    $(r.doc, 'check-btn').click();
+    for (let i = 0; i < 6; i++) { await settle(); }
+    check('a failed check leaves the old stamp alone',
+          r.w.localStorage.getItem('ap-last-checked') === then &&
+          !/just now/.test($(r.doc, 'last-checked').textContent),
+          $(r.doc, 'last-checked').textContent);
+
+    // Nothing saved: nothing to reassure about.
+    r = load({ manifest: MANIFEST });
+    r.w.localStorage.setItem('ap-last-checked', then);
+    await settle(); await settle();
+    check('with nothing saved the line stays empty', $(r.doc, 'last-checked').textContent === '');
   }
 
   console.log('\nthe first save is checked against the file table before the marker');

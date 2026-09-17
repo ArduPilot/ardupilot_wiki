@@ -845,3 +845,99 @@
     start();
   }
 })();
+
+// The site's top-menu "Offline" link turns green on every page while the
+// worker is active, with the last check as its tooltip: the sign, wherever
+// the reader is, that offline mode is really working.
+(function () {
+  'use strict';
+  var LAST_CHECKED_KEY = 'ap-last-checked';   // written by the offline page
+
+  // The theme writes the href relative to the page, and as "#" on the
+  // Offline page itself; the title marks the menu item until the first
+  // paint replaces it with the status, so the item is marked on first find.
+  function link() {
+    var marked = document.querySelector('a[data-ap-offline-link]');
+    if (marked) { return marked; }
+    var all = document.querySelectorAll('a[title="Offline"]');
+    for (var i = 0; i < all.length; i++) {
+      var href = all[i].getAttribute('href') || '';
+      if (href === '#' || /common-offline\.html$/.test(href)) {
+        all[i].setAttribute('data-ap-offline-link', '1');
+        return all[i];
+      }
+    }
+    return null;
+  }
+
+  function agoText(when) {
+    var s = Math.max(0, (Date.now() - when) / 1000);
+    if (s < 60) { return 'just now'; }
+    if (s < 3600) { return Math.round(s / 60) + ' min ago'; }
+    if (s < 86400) { return Math.round(s / 3600) + ' h ago'; }
+    return 'on ' + new Date(when).toISOString().slice(0, 10);
+  }
+
+  function lastChecked() {
+    try {
+      var stamp = JSON.parse(window.localStorage.getItem(LAST_CHECKED_KEY) || 'null');
+      var when = stamp && Date.parse(stamp.t || '');
+      if (!when) { return ''; }
+      return (stamp.r === 'updated' ? 'updated ' : 'checked ') + agoText(when);
+    } catch (err) { return ''; }
+  }
+
+  var styled = false;
+  function paint(active) {
+    var a = link();
+    if (!a) { return; }
+    if (!styled) {
+      var css = document.createElement('style');
+      css.textContent = 'a.ap-offline-live{color:#46b46e !important;font-weight:600}';
+      document.head.appendChild(css);
+      styled = true;
+    }
+    a.classList.toggle('ap-offline-live', active);
+    var stamp = active ? lastChecked() : '';
+    a.title = active ? 'Offline mode is on' + (stamp ? ', ' + stamp : '') : 'Offline';
+  }
+
+  function refresh() {
+    var api = window.ApOffline;
+    if (!api || !api.enabled()) { paint(false); return; }
+    // The registration's state, not this page's control: a hard reload
+    // loads a page without control while the worker is up for the rest.
+    Promise.resolve(navigator.serviceWorker.getRegistration()).then(function (reg) {
+      paint(!!(reg && reg.active));
+    }, function () { paint(false); });
+  }
+
+  // Follow the switch on the offline page, and activation as it happens.
+  var api = window.ApOffline;
+  if (api) {
+    var enable = api.enable, disable = api.disable;
+    api.enable = function () {
+      var r = enable.apply(this, arguments);
+      Promise.resolve(r).then(refresh, refresh);
+      return r;
+    };
+    api.disable = function () {
+      var r = disable.apply(this, arguments);
+      Promise.resolve(r).then(refresh, refresh);
+      return r;
+    };
+  }
+  navigator.serviceWorker.addEventListener('controllerchange', refresh);
+  if (navigator.serviceWorker.ready && navigator.serviceWorker.ready.then) {
+    navigator.serviceWorker.ready.then(refresh, function () {});
+  }
+  window.addEventListener('storage', function (e) {
+    if (!e.key || e.key === 'ap-offline-enabled' || e.key === LAST_CHECKED_KEY) { refresh(); }
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', refresh);
+  } else {
+    refresh();
+  }
+})();
