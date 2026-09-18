@@ -194,7 +194,10 @@ stores. It is separate from the browser's HTTP cache, is not cleared with
 browsing history, and is scoped to the origin.
 
 ``ardupilot-pages-<version>``, ``-images-<version>``, ``-static-<version>``
-   Populated while browsing. Discarded when ``CACHE_VERSION`` (declared once,
+   Populated while browsing, and only by what a saved wiki does not hold: a
+   saved wiki answers for its own pages and files in place, and nothing it
+   holds is ever copied into these, so there is one copy, the one the update
+   check keeps current. Discarded when ``CACHE_VERSION`` (declared once,
    at the top of ``sw.js``) changes.
 
 ``ardupilot-offline-<wiki>``
