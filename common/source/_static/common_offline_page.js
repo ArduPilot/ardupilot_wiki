@@ -988,6 +988,7 @@
     checkBusy = true;
     var checked = false;   // reached the site and compared; recorded at the end
     var outcome = 'current';
+    var incomplete = {};   // caches without their marker that this check must finish
     var checkBtn = el('check-btn');
     if (checkBtn) { checkBtn.disabled = true; }
     var clearBtn = el('clear-btn');
@@ -1027,7 +1028,18 @@
             }
             return caches.open(name).then(function (c) {
               return c.match(COMPLETE_MARKER).then(function (m) {
-                if (!m) { return null; }
+                if (!m) {
+                  // No marker: an interrupted save. One that was complete
+                  // before (it holds a file table), or the shared images
+                  // any saved wiki needs, is work for this check; a first
+                  // save the reader cancelled is left for them to decide.
+                  return c.match(ApUpdate.TABLE_KEY).then(function (table) {
+                    var wanted = !!table || (id === 'common' &&
+                      Object.keys(storedIds).some(function (k) { return k !== 'common'; }));
+                    if (wanted) { incomplete[id] = true; return id; }
+                    return null;
+                  });
+                }
                 return m.json().then(function (info) {
                   return (info.build && info.build !== CURRENT_BUILD)
                     ? (info.id || id) : null;
@@ -1086,6 +1098,8 @@
           return chain.then(function () {
             var entry = byId[id];
             if (!entry) { full.push(id); return; }
+            // Nothing vouches for a cache without its marker: the archive again.
+            if (incomplete[id]) { full.push(id); return; }
             return ApUpdate.updateStored(entry, updateCfg(), function (done, total) {
               announce('Updating ' + entry.name + ' · ' +
                        done + ' of ' + total + ' files…');

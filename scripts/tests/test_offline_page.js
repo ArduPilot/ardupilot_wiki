@@ -1210,15 +1210,18 @@ async function main() {
     // A real download must leave a table behind, or updates never engage.
     const cachesObj = makeCaches();
     const idxHash = await fileHash('from the archive');
+    // Common must complete too: a saved wiki needs it, and a check finishes
+    // an incomplete one by downloading its archive again.
+    const pngHash = await fileHash('png');
     const first = load({
       manifest: MANIFEST, caches: cachesObj,
       archives: { 'copter/index.html': 'from the archive',
-                  'copter/docs/a.html': 'a from the archive' },
-      // Common needs a table too, or the next check re-fetches its archive.
+                  'copter/docs/a.html': 'a from the archive',
+                  '_images/shared.png': 'png' },
       tables: { 'copter-files.json': { 'copter/index.html': idxHash,
                                        'copter/docs/a.html':
                                          await fileHash('a from the archive') },
-                'common-files.json': { '_images/shared.png': 'c1' } }
+                'common-files.json': { '_images/shared.png': pngHash } }
     });
     await settle();
     first.doc.querySelector('.wiki-check[value="copter"]').click();
@@ -1238,7 +1241,7 @@ async function main() {
       tables: { 'copter-files.json': { 'copter/index.html': idxHash,
                                        'copter/docs/a.html':
                                          await fileHash('a after the edit') },
-                'common-files.json': { '_images/shared.png': 'c1' } },
+                'common-files.json': { '_images/shared.png': pngHash } },
       served: { '/copter/docs/a.html': 'a after the edit' }
     });
     await settle();
@@ -2189,6 +2192,53 @@ async function main() {
     r.w.localStorage.setItem('ap-last-checked', then);
     await settle(); await settle();
     check('with nothing saved the line stays empty', $(r.doc, 'last-checked').textContent === '');
+  }
+
+  console.log('\na check finishes an interrupted refresh instead of calling it up to date');
+  {
+    // Copter complete; the shared images were complete once (they hold a
+    // table) but lost their marker to an interrupted refresh.
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'index'] });
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    const common = await cachesObj.open('ardupilot-offline-common');
+    await common.delete('/__ap_complete__');
+    const same = JSON.parse(JSON.stringify(MANIFEST)); same.generated = OLD_BUILD;
+    const r = load({ manifest: same, caches: cachesObj,
+      archives: { '_images/shared.png': 'shared bytes' },
+      tables: { 'common-files.json': { '_images/shared.png': await fileHash('shared bytes') },
+                'copter-files.json': { 'copter/index.html': 'h1' } } });
+    await settle();
+    check('the row says the shared images are incomplete',
+          /Incomplete/.test(r.doc.querySelector('tr[data-wiki="common"]').textContent));
+    $(r.doc, 'check-btn').click();
+    for (let i = 0; i < 14; i++) { await settle(); }
+    check('the check downloads the shared images again rather than skipping them',
+          r.fetchCalls.some((u) => u.indexOf('common-offline.tar') !== -1),
+          r.fetchCalls.filter((u) => u.indexOf('offline') !== -1).join(' '));
+    check('and they are complete afterwards', !!(await common.match('/__ap_complete__')));
+    check('the check is never called "up to date" while something was incomplete',
+          !/up to date/i.test($(r.doc, 'check-result').textContent) &&
+          /^Updated just now/.test($(r.doc, 'last-checked').textContent),
+          $(r.doc, 'check-result').textContent + ' | ' + $(r.doc, 'last-checked').textContent);
+  }
+
+  console.log('\na first save the reader cancelled is not re-downloaded behind their back');
+  {
+    // Rover was never complete and holds no table: the reader stopped it.
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'index'] });
+    const rover = await cachesObj.open('ardupilot-offline-rover');
+    await rover.put('/rover/index.html', new FakeResponse('half'));
+    const same = JSON.parse(JSON.stringify(MANIFEST)); same.generated = OLD_BUILD;
+    const r = load({ manifest: same, caches: cachesObj });
+    await settle();
+    $(r.doc, 'check-btn').click();
+    for (let i = 0; i < 8; i++) { await settle(); }
+    check('nothing is fetched for it', !r.fetchCalls.some((u) => u.indexOf('rover-offline.tar') !== -1));
+    check('the row still says incomplete, for the reader to decide',
+          /Incomplete/.test(r.doc.querySelector('tr[data-wiki="rover"]').textContent));
   }
 
   console.log('\nthe first save is checked against the file table before the marker');
