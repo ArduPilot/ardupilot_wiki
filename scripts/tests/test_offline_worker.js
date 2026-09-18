@@ -78,7 +78,7 @@ function liftLookup(src) {
                       'offlineCacheFor', 'inflate', 'heldOffline', 'heldRaw',
                       'restore', 'deltaHeader', 'deltaDecoder', 'contentHash', 'cacheFirst',
                       'crc32', 'heldMatchingFingerprint', 'browserSaysOffline', 'raceNetwork',
-                      'keep', 'sanitizeForCache', 'evictPromotedSavedCopies',
+                      'keep', 'sanitizeForCache',
                       'paramIndex', 'plausibleBody']) {
     const at = src.indexOf('function ' + name + '(');
     if (at === -1) { return null; }
@@ -308,11 +308,14 @@ async function checkFingerprintVerifiedFromSaved() {
         raced === 'answered', raced);
   check('nothing was asked of the network for it', w.seen.fetches.length === 0,
         JSON.stringify(w.seen.fetches));
-  const promotedAt = w.seen.puts.indexOf(w.seen.puts.find((k) => k.indexOf('?v=' + v) !== -1));
-  const promoted = promotedAt !== -1 && w.seen.putValues && w.seen.putValues[promotedAt];
-  check('the verified copy is promoted into the static cache under its exact key',
-        !!promoted && promoted.headers && promoted.headers.get('x-ap-promoted') === '1',
-        JSON.stringify(w.seen.puts));
+  check('the verified copy is served in place, never copied into the static cache',
+        w.seen.puts.length === 0, JSON.stringify(w.seen.puts));
+  // Read again: the checksum was remembered, the bytes are not re-read.
+  const readsBefore = w.seen.cacheReads.length;
+  a = w.ask(PATH + '?v=' + v);
+  if (a) { await a; }
+  check('a second read of a verified copy does not re-check its bytes',
+        w.seen.cacheReads.length - readsBefore <= 2, (w.seen.cacheReads.length - readsBefore) + ' cache reads');
   if (w.seen.releaseNetwork) { w.seen.releaseNetwork(); }
 
   // A saved copy from another build: the network still answers first.
@@ -323,11 +326,8 @@ async function checkFingerprintVerifiedFromSaved() {
   check('a saved copy whose checksum differs does not answer a fingerprinted request',
         !!res && res !== w.seen.servedCopy && w.seen.fetches.length === 1,
         w.seen.fetches.length + ' fetches');
-  const wrongAt = w.seen.puts.indexOf(w.seen.puts.find((k) => k.indexOf('?v=00000000') !== -1));
-  const wrong = wrongAt !== -1 && w.seen.putValues && w.seen.putValues[wrongAt];
-  check('and the network answer, not the saved copy, is what gets stored',
-        !!wrong && !(wrong.headers && wrong.headers.get && wrong.headers.get('x-ap-promoted')),
-        JSON.stringify(w.seen.puts));
+  check('and the network answer is what gets stored',
+        w.seen.puts.some((k) => k.indexOf('?v=00000000') !== -1), JSON.stringify(w.seen.puts));
 
   // Offline with a mismatching copy: the old fallback, better than nothing.
   w = bootWorker({ networkFails: true,
@@ -923,16 +923,16 @@ async function checkPoisonGuard() {
       body: '<html>captive portal login</html>', ct: 'text/html' } });
     const a = w.ask('/plane/_static/css/theme.css');
     if (a) { await a; }
-    check('a poisoned offline entry is served but NOT promoted',
+    check('a poisoned offline entry is served but never copied anywhere',
           w.seen.puts.length === 0, JSON.stringify(w.seen.puts));
   }
   {
     const w = bootWorker({ offlineCopy: {
       path: '/plane/_static/css/theme.css', body: 'a{}', ct: 'text/css' } });
     const a = w.ask('/plane/_static/css/theme.css');
-    if (a) { await a; }
-    check('a legitimate offline stylesheet is still promoted',
-          w.seen.puts.length === 1, JSON.stringify(w.seen.puts));
+    const res = a ? await a : null;
+    check('a saved stylesheet is served from the saved wiki, one copy, no second one',
+          res === w.seen.servedCopy && w.seen.puts.length === 0, JSON.stringify(w.seen.puts));
   }
 
   // Cross-origin assets expose no headers and are stored on purpose.
@@ -1023,13 +1023,29 @@ async function checkRevalidationIsAwaited() {
 async function checkRefreshSurvivesAConsumedBody() {
   console.log('\nservice worker: refreshing a page that has been read\n');
 
-  const w = bootWorker({
+  // A page of a saved wiki: served as it is, no refresh behind it at all;
+  // the update check is what keeps a saved copy current, so no second copy
+  // of it ever lands in the browsing cache.
+  let w = bootWorker({
     serve: () => ({ ct: 'text/html', body: '<html>fresh' }),
     offlineCopy: { path: '/dev/docs/thing.html', body: '<html>stale' },
     holdNetwork: true,
   });
-  const answered = w.ask('/dev/docs/thing.html');
-  const response = answered ? await answered : null;
+  let answered = w.ask('/dev/docs/thing.html');
+  let response = answered ? await answered : null;
+  check('a saved page is served with no refresh and no second copy',
+        response === w.seen.servedCopy && w.seen.fetches.length === 0 &&
+        w.seen.puts.length === 0, JSON.stringify(w.seen.fetches));
+
+  // A page merely browsed before: the browsing copy is served while the
+  // refresh is still in flight.
+  w = bootWorker({
+    serve: () => ({ ct: 'text/html', body: '<html>fresh' }),
+    runtimeImages: { '/dev/docs/thing.html': '<html>stale' },
+    holdNetwork: true,
+  });
+  answered = w.ask('/dev/docs/thing.html');
+  response = answered ? await answered : null;
   check('the stored copy is served while the refresh is still in flight',
         !!response && !!w.seen.releaseNetwork);
 
@@ -1412,13 +1428,8 @@ async function checkFingerprintNotPinned() {
                                   body: 'png bytes', ct: 'image/png' } });
   a = w.ask('/dev/_images/board.png');
   if (a) { await a; }
-  check('a query-less asset is still promoted from the saved wiki',
-        w.seen.puts.length === 1, JSON.stringify(w.seen.puts));
-  const promoted = (w.seen.putValues || [])[0];
-  check('the promoted copy carries the eviction mark',
-        !!promoted && promoted.headers && promoted.headers.get &&
-        promoted.headers.get('x-ap-promoted') === '1',
-        promoted && promoted.headers ? String(promoted.headers.get('x-ap-promoted')) : 'no headers');
+  check('a query-less asset is served from the saved wiki with no second copy',
+        w.seen.puts.length === 0, JSON.stringify(w.seen.puts));
 }
 
 // A republished file at the same URL must reach the reader without a bump,
@@ -1571,112 +1582,6 @@ async function checkParamIndexFiltered() {
         labels.indexOf('Copter stable V4.6.3') === -1, JSON.stringify(labels));
 }
 
-async function checkEvictPromotedSavedCopies() {
-  console.log('\nservice worker: an update evicts stale promoted copies\n');
-  const src = fs.readFileSync(WORKER, 'utf8');
-  const lifted = liftLookup(src);
-  if (lifted === null) { check('evict: lift', false); return; }
-
-  // Each browsing entry is [body, promoted]; promoted copies carry the mark.
-  // A complete saved dev wiki is present too, holding the same paths as the
-  // unmarked browsing entries, so the old predicate (which asked whether a
-  // saved wiki held the path) would wrongly evict them while the mark-based
-  // one keeps them. That is what makes the "kept" assertions discriminate.
-  const stores = {
-    'ardupilot-pages-v11': new Map([
-      ['/dev/docs/x.html', ['promoted', true]],
-      ['/dev/docs/browsed-only.html', ['browsed', false]],
-    ]),
-    'ardupilot-images-v11': new Map([
-      ['/dev/_images/board.png', ['promoted', true]],
-      ['/dev/_images/shared.png', ['promoted shared', true]],
-      ['/dev/_images/photo.png', ['browsed image', false]],
-    ]),
-    'ardupilot-static-v11': new Map([
-      // A fingerprinted network asset: never promoted, so never marked, yet
-      // the saved wiki holds an unversioned theme.css, so the old predicate
-      // would evict this one by path.
-      ['/dev/_static/theme.css?v=abc', ['network build A', false]],
-    ]),
-    // The saved wiki: its presence is what the old predicate keyed on.
-    'ardupilot-offline-dev': new Map([
-      ['/__ap_complete__', ['x', false]],
-      ['/dev/docs/x.html', ['saved', false]],
-      ['/dev/docs/browsed-only.html', ['saved', false]],
-      ['/dev/_images/board.png', ['saved', false]],
-      ['/dev/_images/photo.png', ['saved', false]],
-      ['/dev/_static/theme.css', ['saved', false]],
-    ]),
-    'ardupilot-offline-common': new Map([
-      ['/__ap_complete__', ['x', false]],
-      ['/_common/_images/shared.png', ['saved', false]],
-    ]),
-  };
-  const bodyResp = ([b, promoted]) => ({
-    headers: { get: (h) => (String(h).toLowerCase() === 'x-ap-promoted'
-                            ? (promoted ? '1' : null) : null) },
-    clone() { return this; }, body: b, status: 200, ok: true });
-  const cacheObj = (name) => ({
-    keys: async () => [...(stores[name] || new Map()).keys()]
-      .map((k) => ({ url: 'https://x' + k })),
-    delete: async (r) => (stores[name] || new Map())
-      .delete(String(r.url).replace(/^https?:\/\/[^/]+/, '')),
-    match: async (r) => {
-      const k = String(r && r.url ? r.url : r).replace(/^https?:\/\/[^/]+/, '');
-      const m = stores[name];
-      return m && m.has(k) ? bodyResp(m.get(k)) : undefined;
-    },
-    put: async () => undefined,
-  });
-  const ctx = {
-    URL, console: { warn() {}, log() {}, error() {} },
-    Headers, Response,
-    caches: {
-      keys: async () => Object.keys(stores),
-      open: async (n) => cacheObj(n),
-    },
-  };
-  vm.createContext(ctx);
-  vm.runInContext(lifted + 'this.evict=evictPromotedSavedCopies;', ctx);
-
-  // Absent runtime caches must never be created by the sweep.
-  const absentCreated = [];
-  const absentCtx = {
-    URL, console: { warn() {}, log() {}, error() {} }, Headers, Response,
-    caches: {
-      keys: async () => ['ardupilot-offline-plane'],
-      open: async (n) => { absentCreated.push(n);
-        return { keys: async () => [], match: async () => undefined,
-                 delete: async () => true, put: async () => undefined }; },
-    },
-  };
-  vm.createContext(absentCtx);
-  vm.runInContext(lifted + 'this.evict=evictPromotedSavedCopies;', absentCtx);
-  await absentCtx.evict();
-  check('the sweep opens no cache that does not already exist',
-        absentCreated.length === 0, JSON.stringify(absentCreated));
-
-  return ctx.evict().then(() => {
-    check('a marked promoted page is evicted',
-          !stores['ardupilot-pages-v11'].has('/dev/docs/x.html'));
-    check('a marked promoted image is evicted',
-          !stores['ardupilot-images-v11'].has('/dev/_images/board.png'));
-    check('a marked promoted shared image is evicted',
-          !stores['ardupilot-images-v11'].has('/dev/_images/shared.png'));
-    // These three the old predicate would have wrongly evicted, since the
-    // saved dev wiki holds each path; the mark keeps them.
-    check('an unmarked browsed page a saved wiki also holds is kept',
-          stores['ardupilot-pages-v11'].has('/dev/docs/browsed-only.html'));
-    check('an unmarked browsed image a saved wiki also holds is kept',
-          stores['ardupilot-images-v11'].has('/dev/_images/photo.png'));
-    check('an unmarked fingerprinted asset whose base a saved wiki holds is kept',
-          stores['ardupilot-static-v11'].has('/dev/_static/theme.css?v=abc'));
-    check('the saved wiki copies themselves are untouched',
-          stores['ardupilot-offline-dev'].has('/dev/docs/x.html') &&
-          stores['ardupilot-offline-common'].has('/_common/_images/shared.png'));
-  });
-}
-
 async function main() {
   console.log('\nservice worker: offline lookup\n');
   checkWorkerEvaluates();
@@ -1816,7 +1721,6 @@ async function main() {
   await checkMarkerRespected();
   await checkDirectoryRedirect();
   await checkNoFalseUpdateToast();
-  await checkEvictPromotedSavedCopies();
   await checkStoredCopiesAreClean();
   await checkOfflineOffQuietsTheWorker();
   await checkChangeAnnouncements();

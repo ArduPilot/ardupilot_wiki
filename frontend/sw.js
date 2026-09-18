@@ -108,27 +108,8 @@ async function warmThirdParty() {
   }));
 }
 
-async function warmTheme() {
-  const wikis = (await caches.keys())
-    .filter((n) => n.startsWith(OFFLINE_CACHE_PREFIX))
-    .map((n) => n.slice(OFFLINE_CACHE_PREFIX.length))
-    .filter((n) => n !== 'common');
-  if (!wikis.length) {
-    return;
-  }
-  const cache = await caches.open(STATIC_CACHE);
-  await Promise.all(wikis.flatMap((wiki) => WARM_PER_WIKI.map(async (rel) => {
-    const url = `/${wiki}/${rel}`;
-    if (await cache.match(url)) {
-      return;
-    }
-    const held = await heldOffline(new Request(url));
-    // A saved wiki is a source of bytes, not a trusted one.
-    if (held && plausibleBody(new Request(url), held)) {
-      await keep(STATIC_CACHE, url, held, true);
-    }
-  })));
-}
+// Saved wikis answer their own theme files; nothing to warm from them.
+async function warmTheme() {}
 
 self.addEventListener('activate', (event) => {
   event.waitUntil((async () => {
@@ -142,10 +123,6 @@ self.addEventListener('activate', (event) => {
         .map((name) => caches.delete(name))
     );
     await self.clients.claim();
-    // An update run by an uncontrolled Offline page leaves stale promoted
-    // copies no CACHES_CHANGED reached; a fresh worker clears them.
-    await evictPromotedSavedCopies();
-    await warmTheme().catch(() => undefined);
     await warmThirdParty().catch(() => undefined);
   })());
 });
@@ -169,9 +146,7 @@ self.addEventListener('message', (event) => {
     cacheNamesGeneration++;
     openedCaches.clear();
     markerChecked.clear();
-    // A saved wiki that just updated leaves stale promoted copies in the
-    // browsing caches; drop them so the next read re-promotes fresh bytes.
-    event.waitUntil(evictPromotedSavedCopies());
+    verifiedFingerprints.clear();
     return;
   }
   if (data.type === 'OFFLINE_OFF') {
@@ -247,33 +222,6 @@ function likelyCacheName(path) {
     return null;
   }
   return OFFLINE_CACHE_PREFIX + (FOLDED_INTO_COMMON.has(first) ? 'common' : first);
-}
-
-// A promoted copy is a saved-wiki page or image that cacheFirst copied into
-// a browsing cache for speed; once the saved wiki updates, those copies are
-// stale and must be dropped so the fresh saved bytes are promoted next time.
-async function evictPromotedSavedCopies() {
-  try {
-    // Only caches that already exist: caches.open() would create an empty
-    // one, resurrecting a browsing cache a just-completed opt-out deleted.
-    const present = new Set(await caches.keys());
-    for (const runtime of [PAGE_CACHE, IMAGE_CACHE, STATIC_CACHE]) {
-      if (!present.has(runtime)) { continue; }
-      const cache = await caches.open(runtime);
-      const requests = await cache.keys();
-      await Promise.all(requests.map(async (request) => {
-        // Exactly the copies this worker promoted from a saved wiki carry
-        // the mark; a page the reader merely browsed does not, and a stale
-        // shared image does because it was promoted through the same path.
-        const hit = await cache.match(request);
-        if (hit && hit.headers && hit.headers.get(PROMOTED_HEADER)) {
-          await cache.delete(request);
-        }
-      }));
-    }
-  } catch (err) {
-    // Best-effort: a failure here only means a slower next read.
-  }
 }
 
 // caches.open() creates a missing cache, so real names are checked first.
@@ -587,12 +535,13 @@ async function staleWhileRevalidate(request, cacheName, announceChanges, event) 
   // an ordinary browsing hit would masquerade as a saved one and silence
   // the changed-page announcement for readers who never saved anything.
   const fromSaved = await heldOffline(request, undefined, true);
-  const cached = fromSaved || fromPageCache;
+  // A saved page is kept current by the update check, not by a fetch per
+  // view, and is never copied into the browsing cache.
+  if (fromSaved) { return unredirect(fromSaved); }
+  const cached = fromPageCache;
 
-  // Clone before the browser consumes the body. Announced only when the
-  // browsing copy was the one served: the saved copy is rewritten and
-  // would read as changed forever.
-  const cachedForCompare = (announceChanges && !fromSaved && fromPageCache)
+  // Clone before the browser consumes the body.
+  const cachedForCompare = (announceChanges && fromPageCache)
     ? fromPageCache.clone() : null;
 
   // Revalidate with the server, not the HTTP cache; see networkOnly.
@@ -747,13 +696,19 @@ function crc32(bytes) {
 }
 
 // The saved copy, when its bytes are exactly what the fingerprint asks for.
+// Remembered per worker life, so the bytes are checked once, not per read.
+const verifiedFingerprints = new Map();
+
 async function heldMatchingFingerprint(request, url) {
   const v = url.searchParams.get('v');
   if (!v || !/^[0-9a-f]{8}$/.test(v)) { return undefined; }
   const held = await heldOffline(request);
   if (!held) { return undefined; }
+  if (verifiedFingerprints.get(url.pathname) === v) { return held; }
   const bytes = new Uint8Array(await held.clone().arrayBuffer());
-  return crc32(bytes) === v ? held : undefined;
+  if (crc32(bytes) !== v) { return undefined; }
+  verifiedFingerprints.set(url.pathname, v);
+  return held;
 }
 
 async function cacheFirst(request, cacheName, event) {
@@ -764,30 +719,20 @@ async function cacheFirst(request, cacheName, event) {
     return exact;
   }
 
-  // A query means a fingerprint: the saved wiki may hold another build's
-  // bytes. A saved copy whose checksum matches is the file asked for and
-  // is served at once; otherwise the network answers first, and a fallback
-  // that could not be checked is never promoted.
+  // A saved wiki answers for what it holds, and nothing it holds is ever
+  // copied into a browsing cache: one copy, in the cache the update keeps
+  // current. A query means a fingerprint: the saved wiki may hold another
+  // build's bytes, so only a copy whose checksum matches answers; otherwise
+  // the network answers first.
   const url = new URL(request.url);
   const fingerprinted = url.search !== '';
   if (fingerprinted && url.origin === self.location.origin) {
     const verified = await heldMatchingFingerprint(request, url);
-    if (verified) {
-      if (plausibleBody(request, verified)) {
-        await keep(cacheName, request, verified, true);
-      }
-      return verified;
-    }
+    if (verified) { return verified; }
   }
   if (!fingerprinted) {
     const held = await heldOffline(request);
-    if (held) {
-      // Promote into the named cache; a saved wiki is not a trusted source.
-      if (plausibleBody(request, held)) {
-        await keep(cacheName, request, held, true);
-      }
-      return held;
-    }
+    if (held) { return held; }
   }
   if (browserSaysOffline()) {
     const held = await heldOffline(request);
@@ -883,23 +828,12 @@ function sanitizeForCache(response) {
   });
 }
 
-// Stamped on a copy promoted from a saved wiki, so eviction is an exact
-// test of what this worker put there rather than a guess from the path.
-const PROMOTED_HEADER = 'x-ap-promoted';
-
-async function keep(cacheName, key, response, promoted) {
+async function keep(cacheName, key, response) {
   try {
     await offRestored;
     if (offlineOff) { return; }
     const cache = await caches.open(cacheName);
-    let toStore = sanitizeForCache(response.clone());
-    if (promoted) {
-      const headers = new Headers(toStore.headers);
-      headers.set(PROMOTED_HEADER, '1');
-      toStore = new Response(toStore.body, {
-        status: toStore.status, statusText: toStore.statusText, headers });
-    }
-    await cache.put(key, toStore);
+    await cache.put(key, sanitizeForCache(response.clone()));
   } catch (err) {
     console.warn('[sw] could not store', String(key && key.url ? key.url : key),
                  err && err.name);
