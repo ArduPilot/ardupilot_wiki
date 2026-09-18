@@ -45,6 +45,7 @@ New Features
 - I2C TFmini Plus lidar can now be powered down above the RNGFNDx_PWRRNG height above terrain, see https://github.com/ArduPilot/ardupilot_wiki/pull/8055
 - ARSPD_TYPE = 20 allows a LUA script to provide the airspeed or differential pressure, see https://github.com/ArduPilot/ardupilot_wiki/pull/8057
 - Multiple MAVLink rangefinders facing the same direction can be told apart by setting RNGFNDx_ADDR to the DISTANCE_SENSOR id each should accept, see https://github.com/ArduPilot/ardupilot_wiki/pull/8072
+- PPP gateway ethernet adapters (BotBlox DroneNet, CubeNode ETH) have a new tabbed web interface whose parameter editor allows the adapter to be configured from a browser, without a CAN connection to it, see https://github.com/ArduPilot/ardupilot_wiki/pull/8081
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
