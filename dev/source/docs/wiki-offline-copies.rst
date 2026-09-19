@@ -194,7 +194,10 @@ stores. It is separate from the browser's HTTP cache, is not cleared with
 browsing history, and is scoped to the origin.
 
 ``ardupilot-pages-<version>``, ``-images-<version>``, ``-static-<version>``
-   Populated while browsing. Discarded when ``CACHE_VERSION`` (declared once,
+   Populated while browsing, and only by what a saved wiki does not hold: a
+   saved wiki answers for its own pages and files in place, and nothing it
+   holds is ever copied into these, so there is one copy, the one the update
+   check keeps current. Discarded when ``CACHE_VERSION`` (declared once,
    at the top of ``sw.js``) changes.
 
 ``ardupilot-offline-<wiki>``
@@ -368,6 +371,39 @@ writing into ``<destdir>/offline/``:
    the changed file from here, where its bytes match the table, rather than from
    the live site, which serves the original and would fail the hash check.
 
+Historical parameter pages are the one place the archive is not a plain copy
+of the site. Each vehicle builds a full parameter list for every 4.x release,
+4 to 6 MB apiece and nearly identical from one release to the next. The archive
+carries the newest stable of them as an ordinary page and every other carried
+version (the 4.x stables and the newest beta) as a zstd delta against it: a
+short header naming the base and the content hash of the page, then a zstd
+frame written with the base as its dictionary, 20 to 40 KB in place of 300 KB
+gzipped. The unpacker stores a delta as it arrives, marked
+``x-ap-encoding: zstd-delta``; the service worker, the export and anything else
+that reads through ``ApUnpack.readFrom`` rebuild the page on first use with
+``frontend/js/zstd-delta.js``, which holds two decoders behind one surface:
+zstd compiled to WebAssembly (imported by the worker at start-up and precached
+with its ``zstd.wasm``), and fzstd, a pure JavaScript decoder that takes over
+when WebAssembly is unavailable, about 150 ms for a 4 MB page against 3 ms.
+Either way the rebuilt page is checked against the hash in the header before
+it is served, and a delta without that hash is refused rather than served; the
+JavaScript decoder verifies no checksum of its own, so the hash is what stands
+between a corrupt delta and a wrong page. The single-file export carries a
+delta-held version as the delta itself, with the base page whole, the hash in
+its index and the JavaScript decoder embedded once, rebuilds it the first time
+the reader opens it and checks it against the hash before showing it, so the
+file offers every saved version for a few tens of kilobytes each. Because the base is a stable release rather than the
+nightly master list, the deltas only change when a new stable lands, so a
+differential update rarely has to fetch them again.
+
+The plain pages stay on the site at their usual URLs, so the fallback needs no
+server support. Once a saved wiki carries versions, the Offline page runs the
+decoder against a tiny built-in delta; if even the JavaScript decoder cannot
+run it says so and offers one button that fetches every
+carried version as a plain page and stores it over the delta, about 0.3 MB
+each over the wire. A worker that cannot rebuild a delta treats that version
+as not held rather than serving the raw bytes.
+
 Archives are reproducible: tar metadata is normalised, so unchanged content
 produces byte-identical output and a deploy can skip it.
 
@@ -381,7 +417,9 @@ Requirements
 ------------
 
 The archives are static files, and no application server or database is
-involved. The host must meet these requirements:
+involved. The build host needs the ``zstandard`` Python module from
+``requirements.txt`` to write the parameter deltas; without it the archives
+build with no historical versions. The host must meet these requirements:
 
 - Pages must be served at their built URLs. ``/copter/docs/foo.html`` must
   return that page rather than redirecting to ``/copter/docs/foo``.
@@ -456,20 +494,42 @@ Testing
 .. code-block:: bash
 
     npm install
-    npm test
+    npm test                 # every unit suite, in parallel
+    npm run test:browsers    # Chromium, Firefox and WebKit, one process each
+    npm run test:all         # both
+
+``scripts/tests/run_all.js`` runs each suite in its own process, as many at a
+time as there are cores, reports one line per suite as it finishes and the
+full output of any that failed. The page suite is split into shards with
+``--shard i/n``; its sections are independent, so four shards bring a unit run
+from about a hundred seconds to thirty.
 
 ``scripts/tests/test_offline_worker.js``
    Builds a cache from real archives, requests the URLs the site serves, and
-   resolves them with the worker's own code.
+   resolves them with the worker's own code, including a saved parameter
+   version rebuilt from its delta with either decoder, the checksum-verified
+   fingerprinted asset, and the bound on a stalled network.
 
 ``scripts/tests/test_offline_page.js``
-   Drives the download panel under jsdom, including the update check.
+   Drives the download panel under jsdom, including the update check, the
+   delta unpacking, the plain-page fallback, and the upgrade-compatibility
+   matrix: every way a delta can have been stored, read by the current code.
 
 ``scripts/tests/test_offline_export.js``
-   Runs the exporter against build output and inspects the result.
+   Runs the exporter against build output and inspects the result, including
+   a version carried as a delta and rebuilt by the file's own shell.
+
+``scripts/tests/test_zstd_delta.js``
+   The vendored decoders, WebAssembly and JavaScript, against a delta the
+   build wrote.
+
+``scripts/tests/test_build_offline_artifacts.py``
+   The build side of the deltas: which versions are carried, the header, the
+   archive entries, and that a delta rebuilds its page.
 
 ``scripts/tests/test_offline_archives.py``
-   Inspects the finished archives. Requires a full ``update.py`` first.
+   Inspects the finished archives, every delta rebuilt against its base and
+   checked against the hash in its header. Requires a full ``update.py`` first.
 
 ``scripts/tests/test_lazy_youtube.py``
    Covers the Sphinx extension that makes every video embed load lazily.

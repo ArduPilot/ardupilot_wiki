@@ -60,16 +60,25 @@ function liftLookup(src) {
                     /const PAGE_CACHE\s*=\s*[^;]*;/,
                     /const IMAGE_CACHE\s*=\s*[^;]*;/,
                     /const PARAM_INDEX\s*=\s*[^;]*;/,
+                    /const AP_DELTA\s*=\s*[^;]*;/,
+                    /const DELTA_MAGIC\s*=\s*[^;]*;/,
+                    /const ZSTD_WASM\s*=\s*[^;]*;/,
+                    /let zstdReady\s*=\s*[^;]*;/,
                     /let knownCacheNames\s*=\s*[^;]*;/,
                     /const markerChecked\s*=\s*[^;]*;/,
-                    /const openedCaches\s*=\s*[^;]*;/]) {
+                    /const openedCaches\s*=\s*[^;]*;/,
+                    /const CRC_TABLE\s*=[\s\S]*?\}\)\(\);/,
+                    /const NETWORK_TIMEOUT_MS\s*=\s*[^;]*;/,
+                    /const PARAM_VERSION_PATH\s*=\s*[^;]*;/]) {
     const m = src.match(re);
     if (m) { out += m[0] + '\n'; }
   }
   // Every function heldOffline reaches; a missing one throws mid-run.
   for (const name of ['storedShapes', 'likelyCacheName', 'isComplete',
-                      'offlineCacheFor', 'inflate', 'heldOffline', 'cacheFirst',
-                      'keep', 'sanitizeForCache', 'evictPromotedSavedCopies',
+                      'offlineCacheFor', 'inflate', 'heldOffline', 'heldRaw',
+                      'restore', 'deltaHeader', 'deltaDecoder', 'contentHash', 'cacheFirst',
+                      'crc32', 'heldMatchingFingerprint', 'browserSaysOffline', 'raceNetwork',
+                      'keep', 'sanitizeForCache',
                       'paramIndex', 'plausibleBody']) {
     const at = src.indexOf('function ' + name + '(');
     if (at === -1) { return null; }
@@ -152,6 +161,9 @@ function run(workerSrc, label) {
   const ctx = {
     URL,
     console,
+    setTimeout, clearTimeout,
+    navigator: { onLine: true },
+    crypto: require('crypto').webcrypto,
     caches: {
       match: async (r) => (store.has(keyOf(r)) ? asResponse(keyOf(r)) : undefined),
       has: async () => false,
@@ -209,6 +221,318 @@ function canonical(p) {
   return p.replace(/\.html$/, '');
 }
 
+/** A stalled network never holds up a request a stored copy can answer. */
+async function checkStalledNetworkIsBounded() {
+  console.log('\nservice worker: a stalled link with a stored copy at hand\n');
+
+  // The real worker with a short bound, so the suite does not wait 5 s.
+  const os = require('os');
+  const quick = path.join(os.tmpdir(), 'sw-quick-timeout.js');
+  fs.writeFileSync(quick, fs.readFileSync(WORKER, 'utf8')
+    .replace(/const NETWORK_TIMEOUT_MS = \d+;/, 'const NETWORK_TIMEOUT_MS = 200;'));
+  const within = (p, ms) => Promise.race([
+    p.then(() => 'answered').catch((e) => 'rejected ' + e.message),
+    new Promise((r) => setTimeout(() => r('still waiting'), ms))]);
+
+  // A fingerprinted script from another build, network held open.
+  let w = bootWorker({ file: quick, holdNetwork: true,
+                       offlineCopy: { path: '/copter/_static/js/theme.js', body: 'var t;', ct: 'text/javascript' } });
+  let a = w.ask('/copter/_static/js/theme.js?v=00000000');
+  check('a mismatching saved script answers once the bound passes, not when the link gives up',
+        await within(a, 1500) === 'answered' && (await a) === w.seen.servedCopy);
+  if (w.seen.releaseNetwork) { w.seen.releaseNetwork(); }
+
+  // The search index, network held open.
+  w = bootWorker({ file: quick, holdNetwork: true,
+                   offlineCopy: { path: '/dev/searchindex.js', body: 'Search.setIndex({})' } });
+  a = w.ask('/dev/searchindex.js');
+  check('a saved search index answers once the bound passes',
+        await within(a, 1500) === 'answered' && (await a) === w.seen.servedCopy);
+  if (w.seen.releaseNetwork) { w.seen.releaseNetwork(); }
+
+  // Nothing stored: the request still waits for the network rather than failing early.
+  w = bootWorker({ file: quick, holdNetwork: true,
+                   serve: () => ({ ct: 'text/javascript', body: 'late' }) });
+  a = w.ask('/dev/searchindex.js');
+  check('with nothing stored the network is still waited for',
+        await within(a, 600) === 'still waiting');
+  w.seen.releaseNetwork();
+  const late = await a;
+  check('and its late answer is served', !!late && late.ok);
+
+  // The browser says offline and a copy exists: no network attempt at all.
+  w = bootWorker({ file: quick, holdNetwork: true, onLine: false,
+                   offlineCopy: { path: '/copter/_static/js/theme.js', body: 'var t;', ct: 'text/javascript' } });
+  a = w.ask('/copter/_static/js/theme.js?v=00000000');
+  check('when the browser says offline a stored copy answers with no network attempt',
+        await within(a, 150) === 'answered' && w.seen.fetches.length === 0,
+        JSON.stringify(w.seen.fetches));
+
+  // The browser says offline but nothing is stored: the network is still tried.
+  w = bootWorker({ file: quick, onLine: false,
+                   serve: () => ({ ct: 'text/javascript', body: 'here' }) });
+  a = w.ask('/dev/searchindex.js');
+  const got = a ? await a : null;
+  check('the flag never blocks a request nothing stored could answer',
+        !!got && got.ok && w.seen.fetches.length === 1);
+
+  // The version index, network held open, index stored.
+  w = bootWorker({ file: quick, holdNetwork: true, entries: {
+    '/copter/_static/parameters-Copter.json': { body: JSON.stringify({ 'Copter stable V4.7.0': 'parameters.html' }),
+                                                ct: 'application/json', cache: 'static' },
+    '/copter/docs/parameters.html': { body: '<html>', ct: 'text/html' } } });
+  a = w.ask('/copter/_static/parameters-Copter.json');
+  check('the version index falls through to the stored one once the bound passes',
+        await within(a, 1500) === 'answered');
+  if (w.seen.releaseNetwork) { w.seen.releaseNetwork(); }
+}
+
+/** A fingerprinted asset whose saved copy matches its checksum is served at once. */
+async function checkFingerprintVerifiedFromSaved() {
+  console.log('\nservice worker: a fingerprinted asset the saved wiki holds\n');
+
+  const zlib = require('zlib');
+  const body = 'var theme = "' + 'x'.repeat(200) + '";';
+  const v = (zlib.crc32(Buffer.from(body)) >>> 0).toString(16).padStart(8, '0');
+  const PATH = '/copter/_static/js/theme.js';
+
+  // The network stalls; the saved copy's checksum is the one asked for.
+  let w = bootWorker({ holdNetwork: true,
+                       offlineCopy: { path: PATH, body, ct: 'text/javascript' } });
+  let a = w.ask(PATH + '?v=' + v);
+  const raced = await Promise.race([
+    a ? a.then(() => 'answered').catch((e) => 'rejected ' + e.message) : Promise.resolve('no handler'),
+    new Promise((r) => setTimeout(() => r('still waiting on the network'), 1500)),
+  ]);
+  check('a saved copy matching its fingerprint is served without waiting on the network',
+        raced === 'answered', raced);
+  check('nothing was asked of the network for it', w.seen.fetches.length === 0,
+        JSON.stringify(w.seen.fetches));
+  check('the verified copy is served in place, never copied into the static cache',
+        w.seen.puts.length === 0, JSON.stringify(w.seen.puts));
+  // Read again: the checksum was remembered, the bytes are not re-read.
+  const readsBefore = w.seen.cacheReads.length;
+  a = w.ask(PATH + '?v=' + v);
+  if (a) { await a; }
+  check('a second read of a verified copy does not re-check its bytes',
+        w.seen.cacheReads.length - readsBefore <= 2, (w.seen.cacheReads.length - readsBefore) + ' cache reads');
+  if (w.seen.releaseNetwork) { w.seen.releaseNetwork(); }
+
+  // A saved copy from another build: the network still answers first.
+  w = bootWorker({ serve: () => ({ ct: 'text/javascript', body: 'var theme = "fresh";' }),
+                   offlineCopy: { path: PATH, body, ct: 'text/javascript' } });
+  a = w.ask(PATH + '?v=00000000');
+  let res = a ? await a : null;
+  check('a saved copy whose checksum differs does not answer a fingerprinted request',
+        !!res && res !== w.seen.servedCopy && w.seen.fetches.length === 1,
+        w.seen.fetches.length + ' fetches');
+  check('and the network answer is what gets stored',
+        w.seen.puts.some((k) => k.indexOf('?v=00000000') !== -1), JSON.stringify(w.seen.puts));
+
+  // Offline with a mismatching copy: the old fallback, better than nothing.
+  w = bootWorker({ networkFails: true,
+                   offlineCopy: { path: PATH, body, ct: 'text/javascript' } });
+  a = w.ask(PATH + '?v=00000000');
+  res = a ? await a.catch(() => null) : null;
+  check('offline, a mismatching saved copy is still the fallback',
+        !!res && res === w.seen.servedCopy);
+
+  // Sphinx takes the carriage returns out before it hashes, so a CRLF file
+  // has to be read the same way to arrive at the fingerprint on the page.
+  const crlf = 'body {\r\n  color: red;\r\n}\r\n';
+  const crlfV = (zlib.crc32(Buffer.from(crlf.replace(/\r/g, ''))) >>> 0).toString(16).padStart(8, '0');
+  const CSS = '/copter/_static/css/theme.css';
+  w = bootWorker({ holdNetwork: true,
+                   offlineCopy: { path: CSS, body: crlf, ct: 'text/css' } });
+  a = w.ask(CSS + '?v=' + crlfV);
+  const crlfRaced = await Promise.race([
+    a ? a.then(() => 'answered').catch((e) => 'rejected ' + e.message) : Promise.resolve('no handler'),
+    new Promise((r) => setTimeout(() => r('still waiting on the network'), 1500)),
+  ]);
+  check('a saved copy with CRLF line endings matches the fingerprint Sphinx wrote',
+        crlfRaced === 'answered' && w.seen.fetches.length === 0,
+        crlfRaced + ', ' + w.seen.fetches.length + ' fetches');
+  if (w.seen.releaseNetwork) { w.seen.releaseNetwork(); }
+}
+
+/** A version stored as a delta is served rebuilt; the index lists it without decoding. */
+async function checkDeltaVersionRebuilt() {
+  console.log('\nservice worker: a parameter version saved as a delta\n');
+
+  const FIX = path.join(__dirname, 'fixtures');
+  const base = fs.readFileSync(path.join(FIX, 'delta-base.html'));
+  const page = fs.readFileSync(path.join(FIX, 'delta-page.html'));
+  const frame = fs.readFileSync(path.join(FIX, 'delta-page.zst'));
+  const wasm = fs.readFileSync(path.join(REPO, 'frontend', 'js', 'zstd.wasm'));
+  const BASE = '/rover/docs/parameters-Rover-stable-V4.7.0.html';
+  const DELTA = '/rover/docs/parameters-Rover-stable-V4.6.0.html';
+  const hash16 = (b) => require('crypto').createHash('sha256').update(b).digest('hex').slice(0, 16);
+  const container = Buffer.concat([
+    Buffer.from('APDELTA1 parameters-Rover-stable-V4.7.0.html ' + hash16(page) + '\n'), frame]);
+  const wrongHash = Buffer.concat([
+    Buffer.from('APDELTA1 parameters-Rover-stable-V4.7.0.html 0123456789abcdef\n'), frame]);
+  const saved = {
+    [BASE]: { body: base, ct: 'text/html; charset=utf-8' },
+    [DELTA]: { body: container, ct: 'text/html; charset=utf-8', apEncoded: 'zstd-delta' },
+  };
+  // A worker-built Response carries .body; a stored entry served as-is
+  // carries text(), read the same way a browser would.
+  const bodyOf = async (res) => {
+    if (!res || res.error) { return null; }
+    if (res.body) { return Buffer.from(res.body.buffer ? res.body : Buffer.from(String(res.body))); }
+    if (typeof res.text === 'function') { return Buffer.from(await res.text()); }
+    return null;
+  };
+  const header = (res, name) => (res && res.headers
+    ? (res.headers.get ? res.headers.get(name) : res.headers[name]) : null);
+
+  const src = fs.readFileSync(WORKER, 'utf8');
+  check('the worker imports the delta decoder at start-up, guarded for hosts without importScripts',
+        /typeof importScripts === 'function'/.test(src) &&
+        /importScripts\('\/js\/zstd-delta\.js'\)/.test(src));
+  const shell = src.slice(src.indexOf('const SHELL'), src.indexOf('];', src.indexOf('const SHELL')));
+  check('the decoder\'s wasm is part of the shell precache', /'\/js\/zstd\.wasm'/.test(shell));
+
+  // Offline, wasm held in the static cache: the page comes back rebuilt.
+  let w = bootWorker({ networkFails: true, decoder: true, entries: Object.assign({
+    '/js/zstd.wasm': { body: wasm, ct: 'application/wasm', cache: 'static' } }, saved) });
+  check('the decoder was imported', (w.seen.imported || []).length === 1);
+  let a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  let res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  let body = await bodyOf(res);
+  check('offline, the delta is served rebuilt into its page',
+        !!body && Buffer.compare(body, page) === 0,
+        res && res.error ? res.error : (body ? body.length + ' bytes' : 'no answer'));
+  check('served as a page, without the unpacker\'s private marker',
+        /^text\/html/.test(String(header(res, 'Content-Type'))) &&
+        !header(res, 'x-ap-encoding'));
+  check('the wasm came from the cache, not the network',
+        !w.seen.fetches.some((u) => u.indexOf('zstd.wasm') !== -1),
+        JSON.stringify(w.seen.fetches));
+
+  // Served twice: the decoder is initialised once and reused.
+  a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  body = await bodyOf(res);
+  check('a second read is rebuilt too', !!body && Buffer.compare(body, page) === 0);
+
+  a = w.ask(BASE, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  check('the base page is served plain', !!res && !res.error && !header(res, 'x-ap-encoding'));
+
+  // The version index lists a delta-held version without decoding anything:
+  // no wasm anywhere, and still the version is offered.
+  const INDEX = '/rover/_static/parameters-Rover.json';
+  w = bootWorker({ networkFails: true, decoder: true, entries: Object.assign({
+    [INDEX]: { body: JSON.stringify({
+      'Rover stable V4.7.0': 'parameters-Rover-stable-V4.7.0.html',
+      'Rover stable V4.6.0': 'parameters-Rover-stable-V4.6.0.html',
+      'Rover stable V4.5.0': 'parameters-Rover-stable-V4.5.0.html' }),
+      ct: 'application/json', cache: 'static' } }, saved) });
+  a = w.ask(INDEX);
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  let listed = null;
+  try { listed = JSON.parse(String(res.body)); } catch (e) { listed = null; }
+  check('offline, the version index lists the delta-held version and drops the absent one',
+        !!listed && !!listed['Rover stable V4.6.0'] && !!listed['Rover stable V4.7.0'] &&
+        !listed['Rover stable V4.5.0'],
+        listed ? Object.keys(listed).join(', ') : String(res && (res.error || res.status)));
+  check('listing it decoded nothing',
+        !w.seen.fetches.some((u) => u.indexOf('zstd.wasm') !== -1) &&
+        !w.seen.cacheReads.some((k) => k.indexOf('zstd.wasm') !== -1),
+        'wasm reads: ' + w.seen.cacheReads.filter((k) => k.indexOf('zstd') !== -1).length);
+
+  // A delta whose base is gone, or a worker whose decoder did not load,
+  // answers as if nothing were held rather than serving bytes as a page.
+  w = bootWorker({ networkFails: true, decoder: true,
+                   entries: { [DELTA]: saved[DELTA],
+                              '/js/zstd.wasm': { body: wasm, cache: 'static' } } });
+  a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  body = await bodyOf(res);
+  check('a delta without its base is not served as a page',
+        !body || (body.indexOf('APDELTA1') !== 0 && Buffer.compare(body, page) !== 0),
+        res && res.status ? 'status ' + res.status : String(res && res.error));
+  w = bootWorker({ networkFails: true, decoder: false, entries: saved });
+  a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  body = await bodyOf(res);
+  check('without the decoder the raw delta is never served as the page',
+        !body || body.indexOf('APDELTA1') !== 0,
+        body ? body.length + ' bytes' : String(res && (res.error || res.status)));
+
+  // Stored plain by older update code, no marker: the magic still says what it is.
+  w = bootWorker({ networkFails: true, decoder: true, entries: {
+    [BASE]: saved[BASE],
+    [DELTA]: { body: container, ct: 'text/html; charset=utf-8' },
+    '/js/zstd.wasm': { body: wasm, cache: 'static' } } });
+  a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  body = await bodyOf(res);
+  check('a delta stored without its marker is still rebuilt, never served as bytes',
+        !!body && Buffer.compare(body, page) === 0,
+        body ? body.slice(0, 20).toString() : String(res && (res.error || res.status)));
+
+  // No wasm anywhere and no network: the JavaScript decoder rebuilds it.
+  w = bootWorker({ networkFails: true, decoder: true, entries: saved });
+  a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  body = await bodyOf(res);
+  check('with no wasm to be had the JavaScript decoder rebuilds the page',
+        !!body && Buffer.compare(body, page) === 0,
+        body ? body.length + ' bytes' : String(res && (res.error || res.status)));
+
+  // Every way a delta can have been stored, through both decoders.
+  for (const dec of ['wasm', 'js']) {
+    for (const marked of [true, false]) {
+      for (const hdr of ['hashed', 'hashless']) {
+        const bytes = Buffer.concat([Buffer.from(hdr === 'hashed'
+          ? 'APDELTA1 parameters-Rover-stable-V4.7.0.html ' + hash16(page) + '\n'
+          : 'APDELTA1 parameters-Rover-stable-V4.7.0.html\n'), frame]);
+        const entry = { body: bytes, ct: 'text/html; charset=utf-8' };
+        if (marked) { entry.apEncoded = 'zstd-delta'; }
+        const ents = { [BASE]: saved[BASE], [DELTA]: entry };
+        if (dec === 'wasm') { ents['/js/zstd.wasm'] = { body: wasm, cache: 'static' }; }
+        w = bootWorker({ networkFails: true, decoder: true, entries: ents });
+        a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+        res = a ? await a.catch((e) => ({ error: e.message })) : null;
+        body = await bodyOf(res);
+        if (hdr === 'hashed') {
+          check(dec + ' decoder, ' + (marked ? 'marked' : 'unmarked') + ' entry, hashed header: rebuilt',
+                !!body && Buffer.compare(body, page) === 0,
+                body ? body.slice(0, 20).toString() : String(res && (res.error || res.status)));
+        } else {
+          check(dec + ' decoder, ' + (marked ? 'marked' : 'unmarked') + ' entry, hashless header: not served as a page',
+                !body || (body.indexOf('APDELTA1') !== 0 && Buffer.compare(body, page) !== 0),
+                body ? body.slice(0, 20).toString() : String(res && (res.error || res.status)));
+        }
+      }
+    }
+  }
+
+  // A rebuilt page that does not match the hash in its header is not served.
+  w = bootWorker({ networkFails: true, decoder: true, entries: {
+    [BASE]: saved[BASE],
+    [DELTA]: { body: wrongHash, ct: 'text/html; charset=utf-8', apEncoded: 'zstd-delta' },
+    '/js/zstd.wasm': { body: wasm, cache: 'static' } } });
+  a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  body = await bodyOf(res);
+  check('a rebuilt page that does not match its hash is not served as the page',
+        !body || Buffer.compare(body, page) !== 0,
+        res && res.status ? 'status ' + res.status : String(res && res.error));
+
+  // The fallback stores the plain page over the delta: served with no decoder.
+  w = bootWorker({ networkFails: true, decoder: false, entries: {
+    [DELTA]: { body: page, ct: 'text/html; charset=utf-8' } } });
+  a = w.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = a ? await a.catch((e) => ({ error: e.message })) : null;
+  body = await bodyOf(res);
+  check('a plain page stored over the delta is served without the decoder',
+        !!body && Buffer.compare(body, page) === 0,
+        body ? body.length + ' bytes' : String(res && (res.error || res.status)));
+}
+
 /** The worker must evaluate, not merely parse. */
 function checkWorkerEvaluates() {
   const ctx = {
@@ -244,6 +568,11 @@ function bodyAwareResponse(text) {
       return bodyAwareResponse(text);
     },
     async text() { this._used = true; return text; },
+    async arrayBuffer() {
+      this._used = true;
+      const b = Buffer.from(text);
+      return b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength);
+    },
   };
 }
 
@@ -252,10 +581,35 @@ const OFFLINE_PREFIX_FOR_TESTS = 'ardupilot-offline-';
 function bootWorker({ networkFails = false, serve = null,
                      existingCaches = [], offlineCopy = null,
                      holdNetwork = false, putFails = false,
-                     runtimeImages = null, file = WORKER } = {}) {
+                     runtimeImages = null, entries = null, decoder = false,
+                     onLine = true, file = WORKER } = {}) {
   const seen = { fetches: [], cacheReads: [], puts: [], deleted: [], posted: [] };
   let hasImpl = async (name) => cacheNames.indexOf(name) !== -1;
   let cacheNames = existingCaches.slice();
+  // Stored bytes with their headers, as the unpacker leaves them: an entry
+  // lives in its wiki's saved cache unless it names the static cache.
+  const entryResponse = (e) => {
+    const bytes = Buffer.isBuffer(e.body) ? e.body : Buffer.from(String(e.body));
+    return {
+      ok: true, status: 200, type: 'basic', url: '',
+      headers: { get: (h) => {
+        const n = String(h).toLowerCase();
+        if (n === 'content-type') { return e.ct || null; }
+        if (n === 'x-ap-encoding') { return e.apEncoded || null; }
+        return null;
+      } },
+      clone() { return entryResponse(e); },
+      arrayBuffer: async () => bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength),
+      text: async () => bytes.toString('utf8'),
+      json: async () => JSON.parse(bytes.toString('utf8')),
+    };
+  };
+  const entryHolder = (k, e) => ((e.cache || 'offline') === 'offline'
+    ? 'ardupilot-offline-' + k.split('/')[1] : null);
+  Object.keys(entries || {}).forEach((k) => {
+    const holder = entryHolder(k, entries[k]) || 'ardupilot-' + entries[k].cache + '-test';
+    if (cacheNames.indexOf(holder) === -1) { cacheNames.push(holder); }
+  });
   // A completed download: named cache plus completion marker.
   const offlineName = offlineCopy
     ? 'ardupilot-offline-' + offlineCopy.path.split('/')[1]
@@ -274,6 +628,19 @@ function bootWorker({ networkFails = false, serve = null,
     match: async (r) => {
       const k = String(r && r.url ? r.url : r);
       seen.cacheReads.push(k);
+      if (entries) {
+        const p = k.replace(/^https?:\/\/[^/]+/, '');
+        const e = entries[p];
+        const offline = String(name).indexOf(OFFLINE_PREFIX_FOR_TESTS) === 0;
+        if (offline && p === '/__ap_complete__') { return { ok: true, status: 200 }; }
+        if (e) {
+          const holder = entryHolder(p, e);
+          if (holder ? name === holder
+                     : String(name).indexOf('ardupilot-' + e.cache + '-') === 0) {
+            return entryResponse(e);
+          }
+        }
+      }
       if (runtimeImages && String(name).indexOf('ardupilot-') === 0 &&
           String(name).indexOf(OFFLINE_PREFIX_FOR_TESTS) !== 0 &&
           runtimeImages[k]) {
@@ -348,6 +715,8 @@ function bootWorker({ networkFails = false, serve = null,
       },
     },
     console: { warn() {}, log() {}, error() {} },
+    navigator: { onLine },
+    crypto: require('crypto').webcrypto,
     fetch: async (req) => {
       const url = String(req && req.url ? req.url : req);
       seen.fetches.push(url);
@@ -376,11 +745,15 @@ function bootWorker({ networkFails = false, serve = null,
         },
         clone() { return this; },
         text: async () => spec.body || '',
+        arrayBuffer: async () => (spec.bytes
+          ? spec.bytes.buffer.slice(spec.bytes.byteOffset, spec.bytes.byteOffset + spec.bytes.byteLength)
+          : new ArrayBuffer(0)),
       };
     },
     Response: class {
       constructor(body, init) { this.body = body; Object.assign(this, init || {}); }
     },
+    WebAssembly, TextDecoder, TextEncoder,
     Headers: class {
       constructor(init) {
         this._m = new Map();
@@ -395,6 +768,13 @@ function bootWorker({ networkFails = false, serve = null,
     Request: class { constructor(u) { this.url = String(u); } },
     URL, setTimeout, clearTimeout, Map, Set, Promise, JSON, Math, Date, RegExp,
   };
+  // The decoder the worker imports at start-up, when the boot asks for it.
+  if (decoder) {
+    ctx.importScripts = (u) => {
+      seen.imported = (seen.imported || []).concat([u]);
+      vm.runInContext(fs.readFileSync(path.join(REPO, 'frontend', 'js', 'zstd-delta.js'), 'utf8'), ctx);
+    };
+  }
   vm.createContext(ctx);
   vm.runInContext(fs.readFileSync(file, 'utf8'), ctx);
 
@@ -543,16 +923,16 @@ async function checkPoisonGuard() {
       body: '<html>captive portal login</html>', ct: 'text/html' } });
     const a = w.ask('/plane/_static/css/theme.css');
     if (a) { await a; }
-    check('a poisoned offline entry is served but NOT promoted',
+    check('a poisoned offline entry is served but never copied anywhere',
           w.seen.puts.length === 0, JSON.stringify(w.seen.puts));
   }
   {
     const w = bootWorker({ offlineCopy: {
       path: '/plane/_static/css/theme.css', body: 'a{}', ct: 'text/css' } });
     const a = w.ask('/plane/_static/css/theme.css');
-    if (a) { await a; }
-    check('a legitimate offline stylesheet is still promoted',
-          w.seen.puts.length === 1, JSON.stringify(w.seen.puts));
+    const res = a ? await a : null;
+    check('a saved stylesheet is served from the saved wiki, one copy, no second one',
+          res === w.seen.servedCopy && w.seen.puts.length === 0, JSON.stringify(w.seen.puts));
   }
 
   // Cross-origin assets expose no headers and are stored on purpose.
@@ -643,13 +1023,29 @@ async function checkRevalidationIsAwaited() {
 async function checkRefreshSurvivesAConsumedBody() {
   console.log('\nservice worker: refreshing a page that has been read\n');
 
-  const w = bootWorker({
+  // A page of a saved wiki: served as it is, no refresh behind it at all;
+  // the update check is what keeps a saved copy current, so no second copy
+  // of it ever lands in the browsing cache.
+  let w = bootWorker({
     serve: () => ({ ct: 'text/html', body: '<html>fresh' }),
     offlineCopy: { path: '/dev/docs/thing.html', body: '<html>stale' },
     holdNetwork: true,
   });
-  const answered = w.ask('/dev/docs/thing.html');
-  const response = answered ? await answered : null;
+  let answered = w.ask('/dev/docs/thing.html');
+  let response = answered ? await answered : null;
+  check('a saved page is served with no refresh and no second copy',
+        response === w.seen.servedCopy && w.seen.fetches.length === 0 &&
+        w.seen.puts.length === 0, JSON.stringify(w.seen.fetches));
+
+  // A page merely browsed before: the browsing copy is served while the
+  // refresh is still in flight.
+  w = bootWorker({
+    serve: () => ({ ct: 'text/html', body: '<html>fresh' }),
+    runtimeImages: { '/dev/docs/thing.html': '<html>stale' },
+    holdNetwork: true,
+  });
+  answered = w.ask('/dev/docs/thing.html');
+  response = answered ? await answered : null;
   check('the stored copy is served while the refresh is still in flight',
         !!response && !!w.seen.releaseNetwork);
 
@@ -955,6 +1351,27 @@ async function checkFullStorageFailsOpen() {
   }
 }
 
+// A publish window or a flaky server answers an asset with an error while the
+// reader holds a good copy; the copy must win over the error.
+async function checkErrorFallsBackToSaved() {
+  console.log('\nservice worker: a server error falls back to the saved copy\n');
+  let w = bootWorker({ serve: () => ({ status: 503, ct: 'text/html', body: 'gateway' }),
+                       offlineCopy: { path: '/dev/_static/css/theme.css',
+                                      body: 'body{}', ct: 'text/css' } });
+  let a = w.ask('/dev/_static/css/theme.css?v=abc123');
+  let answered = a ? await a.catch(() => 'REJECTED') : undefined;
+  check('a fingerprinted asset the server answers 503 is served from the saved wiki',
+        !!answered && answered === w.seen.servedCopy,
+        answered && answered.status ? 'status ' + answered.status : String(answered));
+  check('the error answer is not stored', w.seen.puts.length === 0, JSON.stringify(w.seen.puts));
+
+  w = bootWorker({ serve: () => ({ status: 404, ct: 'text/html', body: 'gone' }) });
+  a = w.ask('/dev/_static/css/other.css?v=abc123');
+  answered = a ? await a.catch(() => 'REJECTED') : undefined;
+  check('with nothing saved, the server answer passes through untouched',
+        !!answered && answered.status === 404, String(answered && answered.status));
+}
+
 async function checkVersionBump() {
   console.log('\nservice worker: what a version bump throws away\n');
 
@@ -1011,13 +1428,8 @@ async function checkFingerprintNotPinned() {
                                   body: 'png bytes', ct: 'image/png' } });
   a = w.ask('/dev/_images/board.png');
   if (a) { await a; }
-  check('a query-less asset is still promoted from the saved wiki',
-        w.seen.puts.length === 1, JSON.stringify(w.seen.puts));
-  const promoted = (w.seen.putValues || [])[0];
-  check('the promoted copy carries the eviction mark',
-        !!promoted && promoted.headers && promoted.headers.get &&
-        promoted.headers.get('x-ap-promoted') === '1',
-        promoted && promoted.headers ? String(promoted.headers.get('x-ap-promoted')) : 'no headers');
+  check('a query-less asset is served from the saved wiki with no second copy',
+        w.seen.puts.length === 0, JSON.stringify(w.seen.puts));
 }
 
 // A republished file at the same URL must reach the reader without a bump,
@@ -1170,112 +1582,6 @@ async function checkParamIndexFiltered() {
         labels.indexOf('Copter stable V4.6.3') === -1, JSON.stringify(labels));
 }
 
-async function checkEvictPromotedSavedCopies() {
-  console.log('\nservice worker: an update evicts stale promoted copies\n');
-  const src = fs.readFileSync(WORKER, 'utf8');
-  const lifted = liftLookup(src);
-  if (lifted === null) { check('evict: lift', false); return; }
-
-  // Each browsing entry is [body, promoted]; promoted copies carry the mark.
-  // A complete saved dev wiki is present too, holding the same paths as the
-  // unmarked browsing entries, so the old predicate (which asked whether a
-  // saved wiki held the path) would wrongly evict them while the mark-based
-  // one keeps them. That is what makes the "kept" assertions discriminate.
-  const stores = {
-    'ardupilot-pages-v11': new Map([
-      ['/dev/docs/x.html', ['promoted', true]],
-      ['/dev/docs/browsed-only.html', ['browsed', false]],
-    ]),
-    'ardupilot-images-v11': new Map([
-      ['/dev/_images/board.png', ['promoted', true]],
-      ['/dev/_images/shared.png', ['promoted shared', true]],
-      ['/dev/_images/photo.png', ['browsed image', false]],
-    ]),
-    'ardupilot-static-v11': new Map([
-      // A fingerprinted network asset: never promoted, so never marked, yet
-      // the saved wiki holds an unversioned theme.css, so the old predicate
-      // would evict this one by path.
-      ['/dev/_static/theme.css?v=abc', ['network build A', false]],
-    ]),
-    // The saved wiki: its presence is what the old predicate keyed on.
-    'ardupilot-offline-dev': new Map([
-      ['/__ap_complete__', ['x', false]],
-      ['/dev/docs/x.html', ['saved', false]],
-      ['/dev/docs/browsed-only.html', ['saved', false]],
-      ['/dev/_images/board.png', ['saved', false]],
-      ['/dev/_images/photo.png', ['saved', false]],
-      ['/dev/_static/theme.css', ['saved', false]],
-    ]),
-    'ardupilot-offline-common': new Map([
-      ['/__ap_complete__', ['x', false]],
-      ['/_common/_images/shared.png', ['saved', false]],
-    ]),
-  };
-  const bodyResp = ([b, promoted]) => ({
-    headers: { get: (h) => (String(h).toLowerCase() === 'x-ap-promoted'
-                            ? (promoted ? '1' : null) : null) },
-    clone() { return this; }, body: b, status: 200, ok: true });
-  const cacheObj = (name) => ({
-    keys: async () => [...(stores[name] || new Map()).keys()]
-      .map((k) => ({ url: 'https://x' + k })),
-    delete: async (r) => (stores[name] || new Map())
-      .delete(String(r.url).replace(/^https?:\/\/[^/]+/, '')),
-    match: async (r) => {
-      const k = String(r && r.url ? r.url : r).replace(/^https?:\/\/[^/]+/, '');
-      const m = stores[name];
-      return m && m.has(k) ? bodyResp(m.get(k)) : undefined;
-    },
-    put: async () => undefined,
-  });
-  const ctx = {
-    URL, console: { warn() {}, log() {}, error() {} },
-    Headers, Response,
-    caches: {
-      keys: async () => Object.keys(stores),
-      open: async (n) => cacheObj(n),
-    },
-  };
-  vm.createContext(ctx);
-  vm.runInContext(lifted + 'this.evict=evictPromotedSavedCopies;', ctx);
-
-  // Absent runtime caches must never be created by the sweep.
-  const absentCreated = [];
-  const absentCtx = {
-    URL, console: { warn() {}, log() {}, error() {} }, Headers, Response,
-    caches: {
-      keys: async () => ['ardupilot-offline-plane'],
-      open: async (n) => { absentCreated.push(n);
-        return { keys: async () => [], match: async () => undefined,
-                 delete: async () => true, put: async () => undefined }; },
-    },
-  };
-  vm.createContext(absentCtx);
-  vm.runInContext(lifted + 'this.evict=evictPromotedSavedCopies;', absentCtx);
-  await absentCtx.evict();
-  check('the sweep opens no cache that does not already exist',
-        absentCreated.length === 0, JSON.stringify(absentCreated));
-
-  return ctx.evict().then(() => {
-    check('a marked promoted page is evicted',
-          !stores['ardupilot-pages-v11'].has('/dev/docs/x.html'));
-    check('a marked promoted image is evicted',
-          !stores['ardupilot-images-v11'].has('/dev/_images/board.png'));
-    check('a marked promoted shared image is evicted',
-          !stores['ardupilot-images-v11'].has('/dev/_images/shared.png'));
-    // These three the old predicate would have wrongly evicted, since the
-    // saved dev wiki holds each path; the mark keeps them.
-    check('an unmarked browsed page a saved wiki also holds is kept',
-          stores['ardupilot-pages-v11'].has('/dev/docs/browsed-only.html'));
-    check('an unmarked browsed image a saved wiki also holds is kept',
-          stores['ardupilot-images-v11'].has('/dev/_images/photo.png'));
-    check('an unmarked fingerprinted asset whose base a saved wiki holds is kept',
-          stores['ardupilot-static-v11'].has('/dev/_static/theme.css?v=abc'));
-    check('the saved wiki copies themselves are untouched',
-          stores['ardupilot-offline-dev'].has('/dev/docs/x.html') &&
-          stores['ardupilot-offline-common'].has('/_common/_images/shared.png'));
-  });
-}
-
 async function main() {
   console.log('\nservice worker: offline lookup\n');
   checkWorkerEvaluates();
@@ -1404,6 +1710,10 @@ async function main() {
   await checkUpdateRouting();
   await checkPoisonGuard();
   await checkVersionBump();
+  await checkErrorFallsBackToSaved();
+  await checkDeltaVersionRebuilt();
+  await checkFingerprintVerifiedFromSaved();
+  await checkStalledNetworkIsBounded();
   await checkArchiveFallback();
   await checkDownloadBypass();
   await checkRevalidationIsAwaited();
@@ -1411,7 +1721,6 @@ async function main() {
   await checkMarkerRespected();
   await checkDirectoryRedirect();
   await checkNoFalseUpdateToast();
-  await checkEvictPromotedSavedCopies();
   await checkStoredCopiesAreClean();
   await checkOfflineOffQuietsTheWorker();
   await checkChangeAnnouncements();

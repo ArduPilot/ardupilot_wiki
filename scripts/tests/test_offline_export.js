@@ -36,7 +36,14 @@ function check(name, ok, detail) {
 /* ---------------------------------------------------------- cache shim ---- */
 
 class FakeResponse {
-  constructor(buf) { this._buf = buf; }
+  constructor(buf, init) {
+    this._buf = buf;
+    // Headers as the unpacker sets them, case-insensitive as in a browser.
+    const h = new Map(Object.entries((init && init.headers) || {})
+      .map(([k, v]) => [k.toLowerCase(), String(v)]));
+    this.headers = { get: (k) => (h.has(String(k).toLowerCase())
+      ? h.get(String(k).toLowerCase()) : null) };
+  }
   arrayBuffer() { return Promise.resolve(this._buf.buffer.slice(
     this._buf.byteOffset, this._buf.byteOffset + this._buf.byteLength)); }
   text() { return Promise.resolve(this._buf.toString('utf8')); }
@@ -151,16 +158,67 @@ function loadParameterVersions(wiki, vehicle, versions) {
   return made;
 }
 
+/** A parameter version stored as the unpacker stores a delta: the base page
+ * plain beside it, the delta marked, rebuilt only when read. */
+function loadDeltaVersion(wiki, vehicle) {
+  const FIX = path.join(__dirname, 'fixtures');
+  const base = fs.readFileSync(path.join(FIX, 'param-delta-base.html'));
+  const page = fs.readFileSync(path.join(FIX, 'param-delta-page.html'));
+  const frame = fs.readFileSync(path.join(FIX, 'param-delta-page.zst'));
+  const baseName = 'parameters-' + vehicle + '-stable-V4.2.0.html';
+  const hash16 = (b) => require('crypto').createHash('sha256').update(b).digest('hex').slice(0, 16);
+  const container = Buffer.concat([Buffer.from('APDELTA1 ' + baseName + ' ' + hash16(page) + '\n'), frame]);
+  const cache = caches._all.get('ardupilot-offline-' + wiki);
+  const dir = '/' + wiki + '/docs/';
+  cache.put(dir + baseName, new FakeResponse(base, { headers: { 'Content-Type': 'text/html' } }));
+  cache.put(dir + 'parameters-' + vehicle + '-stable-V4.1.0.html',
+            new FakeResponse(container, { headers: {
+              'Content-Type': 'text/html', 'x-ap-encoding': 'zstd-delta' } }));
+  // A delta with no hash in its header: nothing can prove its rebuild, so
+  // the export must leave it out, and every page after it must still find
+  // its own block.
+  cache.put(dir + 'parameters-' + vehicle + '-stable-V4.0.0.html',
+            new FakeResponse(Buffer.concat([Buffer.from('APDELTA1 ' + baseName + '\n'), frame]),
+                             { headers: { 'Content-Type': 'text/html' } }));
+  return {
+    basePath: (dir + baseName).replace(/\.html$/, ''),
+    deltaPath: (dir + 'parameters-' + vehicle + '-stable-V4.1.0').replace(/\.html$/, ''),
+    oldPath: (dir + 'parameters-' + vehicle + '-stable-V4.0.0').replace(/\.html$/, ''),
+    baseBody: base.toString('utf8'), pageBody: page.toString('utf8'),
+    frameB64: frame.toString('base64'),
+    hash: hash16(page),
+    pageMark: 'This is a complete list of the parameters of ' + vehicle + ' stable V4.1.0.',
+  };
+}
+
 /* --------------------------------------------------------- module load ---- */
 
+const ZSTD = path.join(REPO, 'frontend', 'js', 'zstd-delta.js');
+
 function loadExporter() {
-  // The modules the page loads, in its order.
-  const src = [DOCUMENT, UNPACK, EXPORTER]
+  // The modules the page loads, in its order, the delta decoder first as
+  // the page's own script tags have it.
+  const src = [ZSTD, DOCUMENT, UNPACK, EXPORTER]
     .map((f) => fs.readFileSync(f, 'utf8')).join('\n');
+  const wasm = fs.readFileSync(path.join(REPO, 'frontend', 'js', 'zstd.wasm'));
   const sandbox = {
     caches,
-    TextEncoder, TextDecoder, URL, btoa, console,
-    setTimeout, clearTimeout,
+    TextEncoder, TextDecoder, URL, btoa, console, WebAssembly, Uint8Array,
+    setTimeout, clearTimeout, crypto: require('crypto').webcrypto,
+    // The decoder's wasm and its script are the two things the exporter fetches.
+    fetch: (u) => (String(u).indexOf('zstd.wasm') !== -1
+      ? Promise.resolve({ ok: true, arrayBuffer: () => Promise.resolve(
+          wasm.buffer.slice(wasm.byteOffset, wasm.byteOffset + wasm.byteLength)) })
+      : String(u).indexOf('zstd-delta.js') !== -1
+        ? Promise.resolve({ ok: true, text: () => Promise.resolve(fs.readFileSync(ZSTD, 'utf8')) })
+        : Promise.reject(new Error('unexpected fetch ' + u))),
+    Response: class {
+      constructor(body, init) { this._buf = Buffer.from(body); this.headers = {
+        get: (k) => ((init && init.headers) || {})[k] || null }; }
+      text() { return Promise.resolve(this._buf.toString('utf8')); }
+      arrayBuffer() { return Promise.resolve(this._buf.buffer.slice(
+        this._buf.byteOffset, this._buf.byteOffset + this._buf.byteLength)); }
+    },
     navigator: {},                 // no service worker: forces the sink we pass
     document: { createElement: () => ({ style: {}, click() {}, remove() {} }),
                 body: { appendChild() {} } },
@@ -283,17 +341,22 @@ function shellSource() {
   } catch (err) { return null; }
 }
 
-/** The exported shell running in a DOM over the payload the export wrote. */
-function bootShell(D, bodies) {
+/** The exported shell running in a DOM over the payload the export wrote.
+ * With `insecure`, the window has no SubtleCrypto, as on a plain-http share. */
+function bootShell(D, bodies, rawBodies, insecure) {
   let JSDOM;
   try { ({ JSDOM } = require('jsdom')); } catch (e) { return null; }
   const src = shellSource();
   if (!src) { return null; }
 
   const blocks = D.pages.map((p, i) =>
-    '<script type="text/plain" id="p' + i + '">' +
-    ((bodies && bodies[p.p]) || p.p).replace(/<\/(script)/gi, '<\\/$1') +
-    '</script>').join('');
+    '<script type="text/plain" id="p' + i + '"' + (p.d ? ' data-delta="1"' : '') + '>' +
+    ((bodies && bodies[p.p]) || p.p).replace(/<(\\*)\/(script)/gi, '<$1\\/$2') +
+    '</script>').join('') +
+    // The base pages the deltas rebuild against, whole, as rawBlock writes them.
+    D.pages.map((p, i) => (rawBodies && rawBodies[p.p]
+      ? '<script type="text/plain" id="r' + i + '">' +
+        rawBodies[p.p].replace(/<(\\*)\/(script)/gi, '<$1\\/$2') + '</script>' : '')).join('');
   const dom = new JSDOM(
     '<!DOCTYPE html><html><body class="wy-body-for-nav">' +
     '<div id="ap-top"><a id="ap-top-brand" href="#/">ArduPilot</a>' +
@@ -309,6 +372,11 @@ function bootShell(D, bodies) {
 
   const win = dom.window;
   win.document.getElementById('ap-index').textContent = JSON.stringify(D);
+  // What a browser has and jsdom lacks; the file's own decoder script first.
+  win.TextEncoder = TextEncoder; win.TextDecoder = TextDecoder;
+  Object.defineProperty(win, 'crypto', { configurable: true,
+    value: insecure ? {} : require('crypto').webcrypto });
+  try { win.eval(fs.readFileSync(path.join(REPO, 'frontend', 'js', 'zstd-delta.js'), 'utf8')); } catch (e) { return null; }
   try { win.eval(src); } catch (e) { return null; }
   return win;
 }
@@ -353,15 +421,21 @@ async function main() {
     const r = loadWiki(w, cap);
     totals.pages += r.pages; totals.images += r.images; totals.css += r.css;
   }
-  // Six releases across four lines: the reader saved every one of them,
-  // and every one of them must survive into the file.
+  // Six releases across five lines, as a saved wiki holds them plain, plus
+  // a base and two deltas against it: every one is carried into the file.
   const PARAM_ALL = ['V4.7.1', 'V4.7.0', 'V4.6.0', 'V4.5.2', 'V4.4.0', 'V4.3.0'];
   const paramWiki = wikis.includes('rover') ? 'rover' : wikis[0];
   const paramVehicle = paramWiki.charAt(0).toUpperCase() + paramWiki.slice(1);
   const paramPages = loadParameterVersions(paramWiki, paramVehicle, PARAM_ALL);
-  totals.pages += PARAM_ALL.length;
+  const delta = loadDeltaVersion(paramWiki, paramVehicle);
+  totals.pages += PARAM_ALL.length + 2;   // the hashless one is left out
   const paramBodies = {};
   paramPages.forEach((p) => { paramBodies[p.path] = p.body; });
+  paramBodies[delta.basePath] = delta.baseBody;
+  // In the file a delta page's block is the frame, not a page.
+  paramBodies[delta.deltaPath] = delta.frameB64;
+  paramBodies[delta.oldPath] = delta.frameB64;
+  const rawBodies = {}; rawBodies[delta.basePath] = delta.baseBody;
 
   const loaded = totals;
   console.log('\ncache: ' + loaded.pages + ' pages, ' + loaded.images +
@@ -469,8 +543,10 @@ async function main() {
     /#ap-top-nav\{[^}]*flex-wrap:nowrap/g,
     /\.rst-content \[id\]\{[^}]*scroll-margin-top:55px/g,
     /\.wy-nav-side\{[^}]*min-height:0/g,
-    /#ap-top-nav\{[^}]*overflow-x:auto/g
+    /#ap-top-nav\{[^}]*overflow-x:auto/g,
+    /data-delta="1"/g
   ], ['.wy-nav-content', 'wy-body-for-nav', 'id="ap-top"', 'toctree-l1', '#/' + wikis[0] + '/',
+      'var ApFzstd', 'var ApZstd',
       '#ap-toast.on{display:flex}',
       'if(mapped===null){e.preventDefault();toast(a.href);return;}',
       'go.target="_blank"',
@@ -486,6 +562,8 @@ async function main() {
       'href="#\'+esc(p)+\'" class="btn btn-neutral float-right"',
       // A single backslash in a SHELL_JS literal vanishes from the built file.
       '.replace(/\\s+/g," ")',
+      // A delta-held version is rebuilt into the file, never written raw.
+      delta.pageMark, 'APDELTA1',
       'id="selectPicker"',
       'td.linenos .normal',
       'table.useralerts-table td']);
@@ -568,11 +646,11 @@ async function main() {
     check('image index built', Object.keys(D.imgs || {}).length > 0,
           Object.keys(D.imgs || {}).length + ' image paths');
 
-    // Every saved version is offered, newest first: what the reader chose
-    // to save is not thinned behind their back.
+    // Every saved version is offered, newest first: nothing is thinned.
     const offered = (D.params || {})[paramWiki] || [];
     const want = PARAM_ALL.map((v) =>
-      '/' + paramWiki + '/docs/parameters-' + paramVehicle + '-stable-' + v);
+      '/' + paramWiki + '/docs/parameters-' + paramVehicle + '-stable-' + v)
+      .concat([delta.basePath, delta.deltaPath]);
     check('the switcher offers every saved version, newest first',
           offered.map((v) => v.p).join() === want.join(),
           offered.map((v) => v.p).join(' ') || 'none');
@@ -583,6 +661,37 @@ async function main() {
     const carried = new Set(D.pages.map((p) => p.p));
     check('every saved version is carried into the file',
           want.every((p) => carried.has(p)), want.length + ' versions');
+    const dp = D.pages.find((p) => p.p === delta.deltaPath);
+    check('a version held as a delta is carried as a delta naming its base and hash, not written out',
+          !!dp && dp.d === 1 && dp.b === delta.basePath && dp.h === delta.hash &&
+          scan.found[delta.pageMark] === false && scan.found['APDELTA1'] === false &&
+          scan.counts[9] >= 1,
+          JSON.stringify(dp) + ' delta blocks ' + scan.counts[9]);
+    check('a delta with no hash is left out of the file', !carried.has(delta.oldPath));
+    // The block ids are the index positions: a page left out must not shift
+    // every block after it onto the wrong page.
+    const text = fs.readFileSync(htmlPath, 'latin1');
+    const blockIds = (text.match(/<script type="text\/plain" id="p(\d+)"/g) || [])
+      .map((m) => Number(m.match(/id="p(\d+)"/)[1])).sort((a, b) => a - b);
+    check('every index entry has exactly its own block, numbered by index position',
+          blockIds.length === D.pages.length && blockIds.every((id, k) => id === k),
+          blockIds.length + ' blocks for ' + D.pages.length + ' pages');
+    // The base a delta rebuilds against is numbered the same way, and the
+    // shell looks it up as "r" + byPath[pg.b]: the file has to agree.
+    const rawIds = (text.match(/<script type="text\/plain" id="r(\d+)"/g) || [])
+      .map((m) => Number(m.match(/id="r(\d+)"/)[1])).sort((a, b) => a - b);
+    const baseSlots = D.pages.map((p, k) => (dp && p.p === dp.b ? k : -1))
+      .filter((k) => k !== -1);
+    check('a delta base is written under its own index position, the one the shell reads',
+          rawIds.length > 0 && rawIds.join() === baseSlots.join(),
+          'blocks ' + rawIds.join(' ') + ' for index ' + baseSlots.join(' '));
+    const dropped = D.pages.findIndex((p) => p.p === delta.deltaPath);
+    const after = D.pages[dropped + 1];
+    check('the page that follows the omitted one still resolves to its own body',
+          !!after && !after.d && text.indexOf('<script type="text/plain" id="p' + (dropped + 1) + '">') !== -1,
+          after ? after.p : 'no page after');
+    check('the file carries the decoder once any delta is in it',
+          scan.found['var ApFzstd'] === true && scan.found['var ApZstd'] === true);
   }
 
   // The nav builders weave reader-reachable text into HTML: prove inert.
@@ -626,11 +735,42 @@ async function main() {
     check('the fallback sidebar escapes hostile paths',
           list.indexOf('onmouseover="alert') === -1 &&
           list.indexOf('&quot;') !== -1, list.slice(0, 90));
+    // The fallback is fed the file's own index, whose paths carry no
+    // extension: a page left out of the file must not be listed at all.
+    const fromIndex = escFns.listNav([{ path: '/rover/docs/acro-mode' },
+                                      { path: '/copter/docs/other' }], 'rover');
+    check('the fallback sidebar lists index paths, and only its own wiki',
+          fromIndex.indexOf('href="#/rover/docs/acro-mode"') !== -1 &&
+          fromIndex.indexOf('copter') === -1, fromIndex.slice(0, 100));
     const rn = escFns.renderNodes([{ external: false, href: evil,
       label: '<img src=x onerror=alert(1)>', children: [] }], 1);
     check('the toctree sidebar escapes hostile labels and hrefs',
           rn.indexOf('<img') === -1 && rn.indexOf('onmouseover="alert') === -1,
           rn.slice(0, 120));
+  }
+
+  // What the file writes, the file has to read back: a page that already
+  // carries an escaped closer must come out of its block unchanged.
+  const blockFns = liftFunctions(['pageBlock', 'rawBlock'], DOCUMENT);
+  const shellJs = shellSource() || '';
+  const unblockSrc = (shellJs.match(/function unblock\(s\)\{[\s\S]*?\}/) || [])[0];
+  check('the block writer and the shell reader lifted', !!blockFns && !!unblockSrc);
+  if (blockFns && unblockSrc) {
+    const unblock = vm.runInNewContext(unblockSrc + ';unblock');
+    const bodies = ['<p>a</script>b</p>', '<p>a</SCRIPT >b</p>',
+                    '<p>a<\/script>b</p>', '<p>a<\\\/script>b</p>'];
+    const roundTrip = (write) => bodies.filter((body) => {
+      const written = write(body);
+      const enc = written.slice(written.indexOf('>') + 1,
+                                written.length - '</script>'.length);
+      return unblock(enc) !== body || /<\/script/i.test(enc);
+    });
+    const pageLost = roundTrip((b) => blockFns.pageBlock(0, b, []));
+    check('a page block closes nothing early and reads back byte for byte',
+          pageLost.length === 0, pageLost.join(' | ') || bodies.length + ' bodies');
+    const rawLost = roundTrip((b) => blockFns.rawBlock(0, b));
+    check('and so does a base page block, which a hash is checked against',
+          rawLost.length === 0, rawLost.join(' | ') || bodies.length + ' bodies');
   }
 
   // Root-relative cross-wiki links exist only in archives.
@@ -754,7 +894,7 @@ async function main() {
 
   /* ------------------------------------------- the shell, driven in a DOM -- */
 
-  const win = D ? bootShell(D, paramBodies) : null;
+  const win = D ? bootShell(D, paramBodies, rawBodies) : null;
   // jsdom is a declared test dependency; a shell that does not boot is a
   // failure, not a reason to skip everything below.
   check('the exported shell boots in a DOM', !!win, win ? '' : 'jsdom missing, or the shell threw');
@@ -912,7 +1052,7 @@ async function main() {
         const latest = '/' + paramWiki + '/docs/parameters';
         const anyVersion = ((D.params || {})[paramWiki] || [])[1];
         if (anyVersion && D.pages.some((pp) => pp.p === latest)) {
-          const w4 = bootShell(D, paramBodies);
+          const w4 = bootShell(D, paramBodies, rawBodies);
           if (w4) {
             shellGo(w4, anyVersion.p);
             const opts = [].slice.call(
@@ -928,7 +1068,49 @@ async function main() {
         }
       }
 
-      const bare = bootShell(Object.assign({}, D, { params: {} }), paramBodies);
+      // A delta-held version, opened: rebuilt in the file, then kept.
+      {
+        const w5 = bootShell(D, paramBodies, rawBodies);
+        if (w5) {
+          shellGo(w5, delta.deltaPath);
+          const first = w5.document.getElementById('ap-doc').textContent;
+          await new Promise((r) => setTimeout(r, 800));
+          const shown = w5.document.getElementById('ap-doc').textContent;
+          check('opening a delta-held version rebuilds it in the file',
+                shown.indexOf(delta.pageMark) !== -1, shown.slice(0, 80));
+          check('while it rebuilds the reader is told, not shown a blank',
+                /Rebuilding this parameter list/.test(first) || shown.indexOf(delta.pageMark) !== -1, first.slice(0, 60));
+          const sel = w5.document.querySelector('#selectPicker');
+          check('the switcher on a rebuilt version selects it and lists every version',
+                !!sel && sel.value === delta.deltaPath && sel.options.length === versions.length + (hasLatest ? 1 : 0),
+                sel ? sel.options.length + ' options' : 'no select');
+          // The same delta with a wrong hash in the index: refused, not painted.
+          const wrong = JSON.parse(JSON.stringify(D));
+          wrong.pages.forEach((p) => { if (p.p === delta.deltaPath) { p.h = '0123456789abcdef'; } });
+          const w6 = bootShell(wrong, paramBodies, rawBodies);
+          if (w6) {
+            shellGo(w6, delta.deltaPath);
+            await new Promise((r) => setTimeout(r, 800));
+            const shown6 = w6.document.getElementById('ap-doc').textContent;
+            check('a rebuilt page that does not match its hash is refused in the file',
+                  /does not match its hash/.test(shown6) && shown6.indexOf(delta.pageMark) === -1,
+                  shown6.slice(0, 80));
+          }
+          // Opened from a plain-http share: what is missing is SubtleCrypto,
+          // not the hash, and the message has to say which.
+          const w7 = bootShell(D, paramBodies, rawBodies, true);
+          if (w7) {
+            shellGo(w7, delta.deltaPath);
+            await new Promise((r) => setTimeout(r, 800));
+            const shown7 = w7.document.getElementById('ap-doc').textContent;
+            check('with no SubtleCrypto the reader is told that, not that the hash is missing',
+                  /cannot check the page here/.test(shown7) && shown7.indexOf(delta.pageMark) === -1,
+                  shown7.slice(0, 100));
+          }
+        }
+      }
+
+      const bare = bootShell(Object.assign({}, D, { params: {} }), paramBodies, rawBodies);
       if (bare) {
         shellGo(bare, versions[1].p);
         const box = bare.document.querySelector('#selectPicker').parentNode;

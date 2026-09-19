@@ -36,6 +36,11 @@ const NEVER_VISITED = '/dev/docs/apmcopter-programming-libraries.html';
 const SEARCH_PAGE = '/dev/search.html';
 // Never served by the server; only ever answered from a compressed cache entry.
 const COMPRESSED_PROBE = '/dev/docs/ap-compressed-probe.html';
+// A historical parameter version as a saved wiki holds it: a delta against
+// the base page beside it, rebuilt by the worker when read.
+const DELTA_BASE = '/rover/docs/parameters-Rover-stable-V4.2.0.html';
+const DELTA_PROBE = '/rover/docs/parameters-Rover-stable-V4.1.0.html';
+const DELTA_FIXTURES = path.join(__dirname, 'fixtures');
 
 /* ---------------------------------------------------------------- harness -- */
 
@@ -539,15 +544,35 @@ async function runEngine(name, launcher, base) {
       return { raw: html.length, packed: packed.byteLength };
     }, COMPRESSED_PROBE);
 
+    // Stored as the unpacker stores a parameter version: the base plain,
+    // the version a marked delta whose header names the base.
+    const deltaSeed = await page.evaluate(async (fx) => {
+      const bytes = (b64) => Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+      const cache = await caches.open('ardupilot-offline-rover');
+      await cache.put('/__ap_complete__', new Response('1'));
+      await cache.put(fx.basePath, new Response(bytes(fx.base), {
+        headers: { 'Content-Type': 'text/html; charset=utf-8' } }));
+      const container = new Blob(['APDELTA1 ' + fx.basePath.split('/').pop() + ' ' + fx.hash + '\n',
+                                  bytes(fx.frame)]);
+      await cache.put(fx.probePath, new Response(container, {
+        headers: { 'Content-Type': 'text/html; charset=utf-8',
+                   'x-ap-encoding': 'zstd-delta' } }));
+      return { delta: container.size, base: fx.base.length };
+    }, { basePath: DELTA_BASE, probePath: DELTA_PROBE,
+         hash: require('crypto').createHash('sha256')
+           .update(fs.readFileSync(path.join(DELTA_FIXTURES, 'param-delta-page.html'))).digest('hex').slice(0, 16),
+         base: fs.readFileSync(path.join(DELTA_FIXTURES, 'param-delta-base.html')).toString('base64'),
+         frame: fs.readFileSync(path.join(DELTA_FIXTURES, 'param-delta-page.zst')).toString('base64') });
+
     // The panel first draws before the manifest arrives.
-    const picker = await (async () => {
+    const panel = await (async () => {
       const p = await context.newPage();
       try {
         await p.goto(base + '/ardupilot/docs/common-offline.html', { waitUntil: 'load' });
         await p.waitForTimeout(3500);
         return await p.evaluate(async () => {
-          // A build made without --paramversioning offers no versions at
-          // all; the panel is right to draw none, so the check adapts.
+          // A build made without --paramversioning carries no versions at
+          // all; the panel is right to say nothing, so the check adapts.
           let offered = 0;
           try {
             const m = await (await fetch('/offline/offline-manifest.json')).json();
@@ -557,24 +582,23 @@ async function runEngine(name, launcher, base) {
           return {
             switchOn: !!(document.getElementById('offline-mode') || {}).checked,
             offered,
-            vehicles: document.querySelectorAll('.apo-param-toggle').length,
-            versions: document.querySelectorAll('.param-check').length,
-            ticked: document.querySelectorAll('.param-check:checked').length,
+            counted: document.querySelectorAll('.apo-param-count').length,
+            picker: document.querySelectorAll(
+              '.param-check, .apo-param-toggle, .param-all, #all-params').length,
+            decoder: typeof window.ApZstd === 'object' && !!window.ApZstd,
           };
         });
       } finally { await p.close().catch(() => {}); }
     })();
     check(name, 'the offline page shows the switch on once opted in',
-          picker.switchOn, JSON.stringify({ switchOn: picker.switchOn }));
-    check(name, 'each vehicle offers its versions with the newest of each series ticked',
-          picker.offered === 0
-            ? picker.versions === 0
-            : (picker.vehicles > 0 && picker.versions > 0 &&
-               picker.ticked === picker.versions),
-          picker.offered === 0
-            ? 'no versions in this build (no --paramversioning), none drawn'
-            : picker.vehicles + ' vehicles, ' + picker.versions + ' versions, ' +
-              picker.ticked + ' ticked');
+          panel.switchOn, JSON.stringify({ switchOn: panel.switchOn }));
+    check(name, 'no version picker is drawn; each vehicle row counts the versions its archive carries',
+          panel.picker === 0 && panel.counted === panel.offered,
+          panel.offered === 0
+            ? 'no versions in this build (no --paramversioning), none counted'
+            : panel.counted + ' rows counted for ' + panel.offered + ' vehicles');
+    check(name, 'the offline page loads the delta decoder the export needs',
+          panel.decoder);
 
     /* ---- go offline for real ------------------------------------------- */
 
@@ -671,6 +695,23 @@ async function runEngine(name, launcher, base) {
           probeText === 'INFLATED-FROM-CACHE',
           probeErr || JSON.stringify(String(probeText).slice(0, 30)) +
           '  (' + compressedSeed.raw + ' -> ' + compressedSeed.packed + ' bytes)');
+
+    /* ---- a parameter version held as a delta, rebuilt offline ---------- */
+
+    let deltaErr = null;
+    try {
+      await page.goto(base + DELTA_PROBE, { waitUntil: 'load', timeout: 20000 });
+    } catch (err) {
+      deltaErr = String(err.message).split('\n')[0];
+    }
+    const deltaText = deltaErr ? null : await page.evaluate(() => {
+      const h = document.querySelector('h2');
+      return h ? h.textContent : (document.body.innerText || '').slice(0, 60);
+    });
+    check(name, 'a delta-held parameter version is rebuilt by the worker offline',
+          deltaText === 'Full Parameter List of Rover stable V4.1.0',
+          deltaErr || JSON.stringify(String(deltaText).slice(0, 60)) +
+          '  (' + deltaSeed.delta + ' B delta on a ' + deltaSeed.base + ' B base)');
 
     /* ---- the offline panel itself -------------------------------------- */
 

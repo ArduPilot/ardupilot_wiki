@@ -27,6 +27,9 @@ const STATIC = path.join(REPO, 'common/source/_static');
 const PAGE = path.join(STATIC, 'common_offline_page.js');
 const RST = path.join(REPO, 'common/source/docs/common-offline.rst');
 
+const FRONTEND_JS = path.join(__dirname, '..', '..', 'frontend', 'js');
+const FIXTURES = path.join(__dirname, 'fixtures');
+
 // Loaded in the page's own order, so the panel finds its libraries.
 const PANEL_LIBS = ['common_offline_unpack.js', 'common_offline_update.js'];
 
@@ -51,13 +54,18 @@ function check(name, ok, detail) {
 
 /** Bodies are kept as bytes. */
 class FakeResponse {
-  constructor(body) {
+  constructor(body, init) {
     this._b = typeof body === 'string' ? body
             : Buffer.isBuffer(body) ? body
             : body instanceof ArrayBuffer ? Buffer.from(body)
             : ArrayBuffer.isView(body)
                 ? Buffer.from(body.buffer, body.byteOffset, body.byteLength)
                 : JSON.stringify(body);
+    // Headers as the unpacker sets them, case-insensitive as in a browser.
+    const h = new Map(Object.entries((init && init.headers) || {})
+      .map(([k, v]) => [k.toLowerCase(), String(v)]));
+    this.headers = { get: (k) => (h.has(String(k).toLowerCase())
+      ? h.get(String(k).toLowerCase()) : null) };
   }
   text() {
     return Promise.resolve(Buffer.isBuffer(this._b) ? this._b.toString('utf8') : this._b);
@@ -155,7 +163,8 @@ function panelMarkup() {
 function load({ manifest = null, caches = makeCaches(), persisted = false,
                 usage = 0, quota = 10e9, archives = null,
                 tables = null, served = null, rateLimit = false,
-                loose = null, offline = false, estimateDelay = 0 } = {}) {
+                loose = null, offline = false, estimateDelay = 0,
+                decoder = true, controlled = true, registered = controlled } = {}) {
   const vc = new VirtualConsole();
   vc.on('jsdomError', (e) => { console.log('    [page error] ' + e.message);
                                if (e.stack) console.log('    ' + e.stack.split('\n')[1]); });
@@ -192,14 +201,23 @@ function load({ manifest = null, caches = makeCaches(), persisted = false,
         persisted: () => Promise.resolve(persisted),
         persist: () => Promise.resolve(persisted)
       },
-      // Records what the panel tells the worker.
+      // Records what the panel tells the worker; `controlled` false is the
+      // moment after opting in, before the worker has claimed the page.
       serviceWorker: {
-        controller: { postMessage: (m) => { swMessages.push(m); } }
+        controller: controlled ? { postMessage: (m) => { swMessages.push(m); } } : null,
+        // `registered`: the worker is installed and active for the scope,
+        // whether or not it controls this page (a hard reload loads without control).
+        getRegistration: () => Promise.resolve(registered ? { active: {} } : undefined),
+        ready: new Promise(() => {}),
+        addEventListener() {}
       }
     },
     caches,
     crypto: require('crypto').webcrypto,
     setTimeout: w.setTimeout.bind(w), clearTimeout: w.clearTimeout.bind(w),
+    // The panel refreshes its "last checked" line every minute; never keeps the run alive.
+    setInterval: (fn, ms) => { const t = setInterval(fn, ms); if (t.unref) { t.unref(); } return t; },
+    clearInterval,
     console,
     Response: FakeResponse,
     URL,
@@ -207,10 +225,17 @@ function load({ manifest = null, caches = makeCaches(), persisted = false,
     // exercise the same normalisation the live cache applies.
     Request: class { constructor(u) { this.url = new URL(String(u), 'https://x').href; } },
     AbortController: w.AbortController,
-    TransformStream, ReadableStream, Uint8Array,
+    TransformStream, ReadableStream, Uint8Array, WebAssembly, TextEncoder, TextDecoder,
+    atob: (b) => Buffer.from(b, 'base64').toString('binary'),
     fetch: (u, o) => {
       fetchCalls.push(String(u));
       fetchOpts.push({ url: String(u), opts: o || {}, at: Date.now() });
+      // The decoder's wasm, from the site root as the page fetches it.
+      if (String(u).indexOf('zstd.wasm') !== -1) {
+        const wasm = fs.readFileSync(path.join(FRONTEND_JS, 'zstd.wasm'));
+        return Promise.resolve({ ok: true, arrayBuffer: () => Promise.resolve(
+          wasm.buffer.slice(wasm.byteOffset, wasm.byteOffset + wasm.byteLength)) });
+      }
       if (String(u).indexOf('offline-manifest.json') !== -1) {
         return Promise.resolve(manifest
           ? { ok: true, json: () => Promise.resolve(manifest) }
@@ -302,6 +327,14 @@ function load({ manifest = null, caches = makeCaches(), persisted = false,
   PANEL_LIBS.forEach((lib) => {
     vm.runInContext(fs.readFileSync(path.join(STATIC, lib), 'utf8'), sandbox);
   });
+  // The delta decoder, from the site root as the page loads it.
+  vm.runInContext(fs.readFileSync(path.join(FRONTEND_JS, 'zstd-delta.js'), 'utf8'), sandbox);
+  if (!decoder) {
+    // A browser where the decoder cannot run: init rejects, as it does
+    // without WebAssembly or when the wasm cannot be fetched.
+    sandbox.ApZstd = { init: () => Promise.reject(new Error('no WebAssembly here')),
+                       patch: () => { throw new Error('no decoder'); } };
+  }
   vm.runInContext(fs.readFileSync(PAGE, 'utf8'), sandbox);
   return { dom, w, doc: w.document, sandbox, fetchCalls, fetchOpts, swMessages, apOffline };
 }
@@ -313,6 +346,30 @@ async function fileHash(text) {
 }
 
 const settle = () => new Promise(r => setTimeout(r, 60));
+// Sections are independent; `--shard i/n` runs every n-th one, so the
+// runner can spread the suite over several processes.
+const SHARD = (() => {
+  const a = process.argv.indexOf('--shard');
+  if (a === -1) { return null; }
+  const m = /^(\d+)\/(\d+)$/.exec(process.argv[a + 1] || '');
+  return m ? { i: Number(m[1]) - 1, n: Number(m[2]) } : null;
+})();
+let sectionIndex = 0;
+async function section(title, fn) {
+  const mine = !SHARD || (sectionIndex++ % SHARD.n) === SHARD.i;
+  if (!mine) { return; }
+  console.log('\n' + title);
+  await fn();
+}
+
+/** The file table a seeded cache holds. */
+async function ApUpdate_readTable(cache) {
+  const r = await cache.match('/__ap_files__');
+  return r ? JSON.parse(await r.text()) : {};
+}
+// The build's delta header carries the page's content hash: sha256, first eight bytes.
+const hash16 = (b) => require('crypto').createHash('sha256').update(b).digest('hex').slice(0, 16);
+
 const $ = (doc, id) => doc.getElementById(id);
 const rows = (doc) => [...doc.querySelectorAll('.wiki-check')];
 
@@ -336,8 +393,7 @@ const MANIFEST = {
 /* ------------------------------------------------------------- the run ---- */
 
 async function main() {
-  console.log('\nnothing saved yet');
-  {
+  await section('nothing saved yet', async () => {
     const { doc } = load({ manifest: MANIFEST });
     await settle();
     check('renders a row per wiki plus common',
@@ -351,10 +407,9 @@ async function main() {
                                   !$(doc, 'select-all').indeterminate);
     check('build date shown', ($(doc, 'build-date').textContent || '').includes('2026-08-09'));
     check('remove all disabled when nothing is stored', $(doc, 'clear-btn').disabled);
-  }
+  });
 
-  console.log('\nselecting');
-  {
+  await section('selecting', async () => {
     const { doc, w } = load({ manifest: MANIFEST });
     await settle();
     $(doc, 'select-all').click();
@@ -373,10 +428,9 @@ async function main() {
     await settle();
     check('unticking all disables save again', $(doc, 'download-cache-btn').disabled);
     check('unticking all disables export again', $(doc, 'dl-single').disabled);
-  }
+  });
 
-  console.log('\nalready saved');
-  {
+  await section('already saved', async () => {
     const caches = makeCaches();
     for (const id of ['common', 'copter']) {
       const c = await caches.open('ardupilot-offline-' + id);
@@ -398,10 +452,9 @@ async function main() {
     check('total counts only what is missing',
           $(doc, 'selection-total').textContent.includes('32'),
           JSON.stringify($(doc, 'selection-total').textContent));
-  }
+  });
 
-  console.log('\ninterrupted download');
-  {
+  await section('interrupted download', async () => {
     const caches = makeCaches();
     // Entries but no completion marker: an aborted download.
     const c = await caches.open('ardupilot-offline-copter');
@@ -413,20 +466,18 @@ async function main() {
              .textContent.toLowerCase().includes('incomplete'));
     check('a partial download is not auto-ticked',
           !doc.querySelector('.wiki-check[value="copter"]').checked);
-  }
+  });
 
-  console.log('\nno manifest published');
-  {
+  await section('no manifest published', async () => {
     const { doc } = load({ manifest: null });
     await settle();
     check('falls back to built-in wiki list rather than an empty table',
           doc.querySelectorAll('tr[data-wiki]').length > 1,
           doc.querySelectorAll('tr[data-wiki]').length + ' rows');
     check('page still usable with no manifest', !!$(doc, 'select-all'));
-  }
+  });
 
-  console.log('\nstorage warning');
-  {
+  await section('storage warning', async () => {
     const a = load({ manifest: MANIFEST, persisted: false });
     await settle();
     check('warns when storage is temporary',
@@ -435,19 +486,17 @@ async function main() {
     await settle();
     check('no warning when storage is permanent',
           (b.doc.getElementById('storage-warning').textContent || '').trim() === '');
-  }
+  });
 
-  console.log('\ncache busting');
-  {
+  await section('cache busting', async () => {
     const { sandbox } = load({ manifest: MANIFEST });
     await settle();
     check('exposes a version marker for debugging',
           typeof sandbox.window.ArduPilotOfflineVersion === 'string',
           sandbox.window.ArduPilotOfflineVersion);
-  }
+  });
 
-  console.log('\nupdate check');
-  {
+  await section('update check', async () => {
     const caches = makeCaches();
     // copter saved from an older build, rover current.
     (await caches.open('ardupilot-offline-common')).put('/__ap_complete__', completeMarker(MANIFEST.generated, 'common'));
@@ -466,10 +515,9 @@ async function main() {
           archive.every(u => u.indexOf('?v=') !== -1), JSON.stringify(archive.slice(0,1)));
     check('archive URL uses the manifest host',
           archive.every(u => u.indexOf('https://cdn.example.test/') === 0), JSON.stringify(archive.slice(0,1)));
-  }
+  });
 
-  console.log('\nnothing stale');
-  {
+  await section('nothing stale', async () => {
     const caches = makeCaches();
     for (const id of ['common', 'copter']) {
       (await caches.open('ardupilot-offline-' + id)).put('/__ap_complete__', completeMarker(MANIFEST.generated, id));
@@ -483,10 +531,9 @@ async function main() {
           JSON.stringify($(doc, 'check-result').textContent));
     check('up to date downloads nothing',
           !fetchCalls.some(u => u.indexOf('.tar') !== -1));
-  }
+  });
 
-  console.log('\nremove all');
-  {
+  await section('remove all', async () => {
     const caches = makeCaches();
     (await caches.open('ardupilot-offline-copter')).put('/__ap_complete__', completeMarker(MANIFEST.generated, 'copter'));
     (await caches.open('ardupilot-pages-v1')).put('/copter/docs/x.html', new FakeResponse('<html>'));
@@ -508,10 +555,9 @@ async function main() {
     await settle(); await settle();
     check('a deliberate second press clears everything',
           (await caches.keys()).length === 0, (await caches.keys()).join(','));
-  }
+  });
 
-  console.log('\nodd manifests');
-  {
+  await section('odd manifests', async () => {
     const odd = JSON.parse(JSON.stringify(MANIFEST));
     delete odd.wikis[0].archive;                       // no filename given
     const caches = makeCaches();
@@ -525,7 +571,7 @@ async function main() {
     check('falls back to <id>-offline.tar.gz when the manifest omits a filename',
           fetchCalls.some(u => u.indexOf('copter-offline.tar') !== -1),
           JSON.stringify(fetchCalls.filter(u => u.indexOf('tar.gz') !== -1)));
-  }
+  });
   {
     // A wiki cached from an older build that the manifest no longer lists.
     const caches = makeCaches();
@@ -540,8 +586,7 @@ async function main() {
           !$(doc, 'clear-btn').disabled);
   }
 
-  console.log('\nmarker without an id');
-  {
+  await section('marker without an id', async () => {
     const caches = makeCaches();
     (await caches.open('ardupilot-offline-common')).put('/__ap_complete__', completeMarker(MANIFEST.generated, 'common'));
     // A marker naming no wiki: the cache name still says which it is.
@@ -557,10 +602,9 @@ async function main() {
     check('and it is not reported as up to date',
           !($(doc, 'check-result').textContent || '').toLowerCase().includes('up to date'),
           JSON.stringify($(doc, 'check-result').textContent));
-  }
+  });
 
-  console.log('\nfreshness: the manifest');
-  {
+  await section('freshness: the manifest', async () => {
     const { fetchOpts } = load({ manifest: MANIFEST });
     await settle();
     const m = fetchOpts.filter(f => f.url.indexOf('offline-manifest.json') !== -1);
@@ -569,10 +613,9 @@ async function main() {
     check('the manifest is never served from cache',
           m.every(f => f.opts && f.opts.cache === 'no-cache'),
           JSON.stringify(m.map(f => f.opts && f.opts.cache)));
-  }
+  });
 
-  console.log('\nfreshness: the archive tag');
-  {
+  await section('freshness: the archive tag', async () => {
     const caches = makeCaches();
     const { doc, fetchCalls } = load({ manifest: MANIFEST, caches,
                                        archives: { 'x/index.html': '<html>' } });
@@ -591,10 +634,9 @@ async function main() {
     check('common and the wikis are all fetched',
           arch.some(u => u.indexOf('common-') !== -1) &&
           arch.some(u => u.indexOf('copter-') !== -1), JSON.stringify(arch));
-  }
+  });
 
-  console.log('\nfreshness: a new build changes the tag');
-  {
+  await section('freshness: a new build changes the tag', async () => {
     const older = JSON.parse(JSON.stringify(MANIFEST));
     older.generated = '2020-01-01T00:00:00Z';
     const a = load({ manifest: older, archives: { 'x/index.html': '<html>' } });
@@ -616,10 +658,9 @@ async function main() {
           JSON.stringify([oldTags[0], newTags[0]]));
     check('the old build tag is not reused',
           !newTags.some(u => u.indexOf('2020-01-01') !== -1));
-  }
+  });
 
-  console.log('\nfreshness: no build id means no bogus tag');
-  {
+  await section('freshness: no build id means no bogus tag', async () => {
     const noBuild = JSON.parse(JSON.stringify(MANIFEST));
     delete noBuild.generated;
     const { doc, fetchCalls } = load({ manifest: noBuild,
@@ -634,10 +675,9 @@ async function main() {
           arch.length && arch.every(u => u.indexOf('undefined') === -1 &&
                                           u.indexOf('?v=') === -1),
           JSON.stringify(arch[0]));
-  }
+  });
 
-  console.log('\nfreshness: the whole round trip');
-  {
+  await section('freshness: the whole round trip', async () => {
     const caches = makeCaches();
     // A PAX-style long name, as the real archives have one per wiki.
     const longName = 'copter/docs/how-to-use-the-auth-command-to-sign-a-' +
@@ -696,7 +736,7 @@ async function main() {
     const info2 = after ? JSON.parse(await after.text()) : {};
     check('and the marker is updated to the new build',
           info2.build === '2027-01-01T00:00:00Z', JSON.stringify(info2.build));
-  }
+  });
 
   /* --------------------------------------------- differential updates ----- */
   // Asserted against bytes in the cache, not against what the panel says it did.
@@ -726,8 +766,7 @@ async function main() {
     u => u.indexOf('/') === 0 && u.indexOf('offline-manifest.json') === -1 &&
          u.indexOf('-files.json') === -1);
 
-  console.log('\ndifferential update: only what moved');
-  {
+  await section('differential update: only what moved', async () => {
     const cachesObj = makeCaches();
     // Both stale; common's table is unchanged, the ordinary case.
     await seedSaved(cachesObj, 'common', OLD_BUILD, {
@@ -818,10 +857,9 @@ async function main() {
     check('the reported count equals the changes actually applied',
           ($(doc, 'check-result').textContent || '').indexOf('3 files') !== -1,
           JSON.stringify($(doc, 'check-result').textContent));
-  }
+  });
 
-  console.log('\na quiet update that needs a full download does it, and says when it is done');
-  {
+  await section('a quiet update that needs a full download does it, and says when it is done', async () => {
     const cachesObj = makeCaches();
     // Saved before tables existed: updateStored() resolves null.
     const c = await cachesObj.open('ardupilot-offline-dev');
@@ -855,10 +893,9 @@ async function main() {
     check('with a toast the reader can see',
           /Update complete/.test((doc.querySelector('.ap-toast-title') || {}).textContent || ''),
           JSON.stringify((doc.querySelector('.ap-toast-title') || {}).textContent));
-  }
+  });
 
-  console.log('\nthe update paces itself and backs off when told to');
-  {
+  await section('the update paces itself and backs off when told to', async () => {
     // The client is the rate limiter: unpaced fetches ran at 75 a second.
     const cachesObj = makeCaches();
     const files = {};
@@ -891,7 +928,7 @@ async function main() {
     check('consecutive update requests are spaced apart',
           gaps.length > 2 && median >= floor,
           gaps.length + ' gaps, median ' + median + ' ms, need >= ' + Math.round(floor));
-  }
+  });
   {
     // A shared file, which has several sources.
     const cachesObj = makeCaches();
@@ -914,8 +951,7 @@ async function main() {
           tagged.length + ' tagged requests made after being refused');
   }
 
-  console.log('\nautomatic updates are spread out, not synchronised');
-  {
+  await section('automatic updates are spread out, not synchronised', async () => {
     // A fixed interval would have every reader fetch a new build together.
     const src = fs.readFileSync(PAGE, 'utf8');
     check('ticks are scheduled one at a time, not on a fixed interval',
@@ -943,10 +979,9 @@ async function main() {
     check('the delays are not all identical',
           delays.length === 0 || unique > 1 || delays.length === 1,
           delays.length + ' delays, ' + unique + ' distinct');
-  }
+  });
 
-  console.log('\ndifferential update: a large diff falls back to the archive');
-  {
+  await section('differential update: a large diff falls back to the archive', async () => {
     // A stylesheet change rewrites every page; past a threshold use the archive.
     const cachesObj = makeCaches();
     const many = {};
@@ -978,7 +1013,7 @@ async function main() {
     check('it downloads the archive instead, which is one request',
           fetchCalls.filter(u => u.indexOf('.tar') !== -1).length >= 1,
           JSON.stringify(fetchCalls.filter(u => u.indexOf('.tar') !== -1)));
-  }
+  });
   {
     // A template edit: most of the wiki moved, so one archive request wins.
     const cachesObj = makeCaches();
@@ -1034,8 +1069,7 @@ async function main() {
           JSON.stringify(await bodyAt(dev, '/dev/docs/p7.html')));
   }
 
-  console.log('\ndifferential update: a wrong body is refused, not stored');
-  {
+  await section('differential update: a wrong body is refused, not stored', async () => {
     // A 200 with the wrong body (captive portal, mid-deploy skew) is refused.
     const cachesObj = makeCaches();
     const copter = await seedSaved(cachesObj, 'copter', OLD_BUILD, {
@@ -1067,10 +1101,9 @@ async function main() {
     check('the changed file was tried on the network, then the update gave up',
           siteCalls(fetchCalls).some(u => u.indexOf('/copter/docs/a.html') !== -1),
           JSON.stringify(siteCalls(fetchCalls)));
-  }
+  });
 
-  console.log('\ndifferential update: rewritten files come from /files/');
-  {
+  await section('differential update: rewritten files come from /files/', async () => {
     // The loose copy under <base>/files/ is what the table hashes.
     const cachesObj = makeCaches();
     const copter = await seedSaved(cachesObj, 'copter', OLD_BUILD, {
@@ -1099,10 +1132,9 @@ async function main() {
     check('the /files/ source was tried',
           fetchCalls.some(u => u.indexOf('/files/copter/docs/a.html') !== -1),
           'loose URL requested');
-  }
+  });
 
-  console.log('\ndifferential update: a shared file is found under some wiki');
-  {
+  await section('differential update: a shared file is found under some wiki', async () => {
     // A shared image is tried under each wiki in turn; here only Rover has it.
     const cachesObj = makeCaches();
     const common = await seedSaved(cachesObj, 'common', OLD_BUILD, {
@@ -1129,10 +1161,9 @@ async function main() {
           tried[0] === '/x/_images/shared.png', JSON.stringify(tried[0]));
     check('no archive is fetched for a single shared image',
           !fetchCalls.some(u => u.indexOf('.tar') !== -1));
-  }
+  });
 
-  console.log('\ndifferential update: a failure leaves the record intact');
-  {
+  await section('differential update: a failure leaves the record intact', async () => {
     // A wiki must not claim a build it does not have.
     const cachesObj = makeCaches();
     const copter = await seedSaved(cachesObj, 'copter', OLD_BUILD, {
@@ -1162,22 +1193,24 @@ async function main() {
     check('and it falls back to re-fetching the whole archive',
           fetchCalls.some(u => u.indexOf('.tar') !== -1),
           JSON.stringify(fetchCalls.filter(u => u.indexOf('.tar') !== -1)));
-  }
+  });
 
-  console.log('\ndifferential update: download, then update');
-  {
+  await section('differential update: download, then update', async () => {
     // A real download must leave a table behind, or updates never engage.
     const cachesObj = makeCaches();
     const idxHash = await fileHash('from the archive');
+    // Common must complete too: a saved wiki needs it, and a check finishes
+    // an incomplete one by downloading its archive again.
+    const pngHash = await fileHash('png');
     const first = load({
       manifest: MANIFEST, caches: cachesObj,
       archives: { 'copter/index.html': 'from the archive',
-                  'copter/docs/a.html': 'a from the archive' },
-      // Common needs a table too, or the next check re-fetches its archive.
+                  'copter/docs/a.html': 'a from the archive',
+                  '_images/shared.png': 'png' },
       tables: { 'copter-files.json': { 'copter/index.html': idxHash,
                                        'copter/docs/a.html':
                                          await fileHash('a from the archive') },
-                'common-files.json': { '_images/shared.png': 'c1' } }
+                'common-files.json': { '_images/shared.png': pngHash } }
     });
     await settle();
     first.doc.querySelector('.wiki-check[value="copter"]').click();
@@ -1197,7 +1230,7 @@ async function main() {
       tables: { 'copter-files.json': { 'copter/index.html': idxHash,
                                        'copter/docs/a.html':
                                          await fileHash('a after the edit') },
-                'common-files.json': { '_images/shared.png': 'c1' } },
+                'common-files.json': { '_images/shared.png': pngHash } },
       served: { '/copter/docs/a.html': 'a after the edit' }
     });
     await settle();
@@ -1217,10 +1250,9 @@ async function main() {
     check('and the copy now reports the newer build',
           JSON.parse(await bodyAt(copter, '/__ap_complete__')).build ===
             '2027-01-01T00:00:00Z');
-  }
+  });
 
-  console.log('\ndownload order: the chosen wiki before common');
-  {
+  await section('download order: the chosen wiki before common', async () => {
     // Common backfills after the wiki is readable.
     const cachesObj = makeCaches();
     const { doc, fetchCalls } = load({
@@ -1239,10 +1271,9 @@ async function main() {
     check('the chosen wiki is fetched before common',
           copterAt !== -1 && commonAt !== -1 && copterAt < commonAt,
           JSON.stringify(arch.map(u => u.split('/').pop().split('?')[0])));
-  }
+  });
 
-  console.log('\neviction: a reclaimed wiki is noticed, not silent');
-  {
+  await section('eviction: a reclaimed wiki is noticed, not silent', async () => {
     // Recorded as saved but gone from Cache Storage: evicted, and said so.
     const caches = makeCaches();
     // common is present; copter was saved (recorded) but its cache is gone.
@@ -1269,10 +1300,9 @@ async function main() {
     await settle();
     check('a wiki still present is not called evicted',
           !/no longer here/.test(b.doc.getElementById('storage-warning').textContent || ''));
-  }
+  });
 
-  console.log('\nthe update toast appears and shows progress');
-  {
+  await section('the update toast appears and shows progress', async () => {
     // The toast appears on a manual check and shows progress, then done.
     const cachesObj = makeCaches();
     const copter = await seedSaved(cachesObj, 'copter', OLD_BUILD, {
@@ -1298,10 +1328,9 @@ async function main() {
     check('and it reports what happened',
           !!card && /Updated 1 file/.test(card.textContent),
           card ? JSON.stringify(card.querySelector('.ap-toast-msg').textContent) : '');
-  }
+  });
 
-  console.log('\nregression: the worker is told when caches change (B3)');
-  {
+  await section('regression: the worker is told when caches change (B3)', async () => {
     // The worker memoises cache names and only refreshes on CACHES_CHANGED.
     const cachesObj = makeCaches();
     (await cachesObj.open('ardupilot-offline-copter')).put('/__ap_complete__',
@@ -1316,10 +1345,9 @@ async function main() {
     check('Remove all tells the worker its caches changed',
           swMessages.some(m => m && m.type === 'CACHES_CHANGED'),
           JSON.stringify(swMessages));
-  }
+  });
 
-  console.log('\nregression: a click on a button child still acts (closest)');
-  {
+  await section('regression: a click on a button child still acts (closest)', async () => {
     // A click on the armed button's countdown bar must still count.
     const cachesObj = makeCaches();
     (await cachesObj.open('ardupilot-offline-copter')).put('/__ap_complete__',
@@ -1335,10 +1363,9 @@ async function main() {
     check('a click on a child of Remove all arms it, not swallowed',
           (btn.textContent || '').toLowerCase().includes('again'),
           JSON.stringify(btn.textContent));
-  }
+  });
 
-  console.log('\nregression: the footer waits for the wiki list (B10)');
-  {
+  await section('regression: the footer waits for the wiki list (B10)', async () => {
     // renderStorage reads storedIds, which renderWikis populates.
     const cachesObj = makeCaches();
     for (const id of ['common', 'copter', 'rover']) {
@@ -1351,10 +1378,9 @@ async function main() {
     check('the footer reflects saved wikis on first paint, not "no wikis saved"',
           /\d+ wikis? saved/.test(status) && !/no wikis saved/.test(status),
           JSON.stringify(status));
-  }
+  });
 
-  console.log('\nregression: a folded wiki updates in place, from its own URL');
-  {
+  await section('regression: a folded wiki updates in place, from its own URL', async () => {
     // A folded wiki's page updates from its own URL, over the copy being read.
     const cachesObj = makeCaches();
     await seedSaved(cachesObj, 'common', OLD_BUILD, {
@@ -1388,42 +1414,9 @@ async function main() {
           JSON.stringify(await bodyAt(common, '/ardupilot/docs/about.html')));
     check('and nothing is written under /_common/ardupilot/',
           (await bodyAt(common, '/_common/ardupilot/docs/about.html')) === null);
-  }
+  });
 
-  console.log('\nB14 + B2: a saved point release is never hidden in the dropdown');
-  {
-    // A saved point release must still be a tick.
-    const mk = (ver) => ({
-      file: `docs/parameters-Copter-stable-V${ver}.html`, channel: 'stable',
-      version: ver, label: ver, bytes: 4e6,
-      ...(ver === '4.7.0' ? { 'default': true } : {})
-    });
-    const man = JSON.parse(JSON.stringify(MANIFEST));
-    man.wikis.find((x) => x.id === 'copter').param_versions =
-      ['4.7.0', '4.6.3', '4.6.2', '4.5.7', '4.5.2', '4.5.1'].map(mk);
-
-    const cachesObj = makeCaches();
-    const c = await cachesObj.open('ardupilot-offline-copter');
-    await c.put('/__ap_complete__', completeMarker(man.generated, 'copter'));
-    await c.put('/copter/docs/parameters-Copter-stable-V4.5.2.html',
-                new FakeResponse('saved params'));
-
-    const { doc } = load({ manifest: man, caches: cachesObj });
-    for (let i = 0; i < 14; i++) { await settle(); }
-
-    const boxes = [...doc.querySelectorAll('[data-params-for=\"copter\"] .param-check')];
-    const saved = boxes.find((b) => b.value.indexOf('V4.5.2') !== -1);
-    check('a saved point release appears as a tick, not buried in the dropdown',
-          !!saved, boxes.map((b) => b.value.match(/V([\d.]+)/)[1]).join(', '));
-    check('and it is ticked, because it is what the reader actually has',
-          !!saved && saved.checked);
-    const dd = doc.querySelector('[data-params-for=\"copter\"] .param-more');
-    check('it is not also offered in the dropdown',
-          !dd || ![...dd.options].some((o) => o.value.indexOf('V4.5.2') !== -1));
-  }
-
-  console.log('\nRemove all quotes what it removes, not what the origin is charged');
-  {
+  await section('Remove all quotes what it removes, not what the origin is charged', async () => {
     // The button quotes the table's sizes, not storage.estimate().usage.
     const cachesObj = makeCaches();
     for (const id of ['common', 'copter', 'rover']) {
@@ -1449,10 +1442,9 @@ async function main() {
           label.indexOf(String(expected)) !== -1 ||
           new RegExp(String(Math.round(expected / 1024 * 10) / 10)).test(label),
           JSON.stringify(label) + ' for ' + expected + ' MB saved');
-  }
+  });
 
-  console.log('\nB8: the toast names what is being downloaded again');
-  {
+  await section('B8: the toast names what is being downloaded again', async () => {
     const cachesObj = makeCaches();
     const c = await cachesObj.open('ardupilot-offline-dev');
     await c.put('/dev/index.html', new FakeResponse('<html>'));
@@ -1481,127 +1473,9 @@ async function main() {
           JSON.stringify(fetchCalls.filter((u) => u.indexOf('.tar') !== -1).slice(0, 2)));
     check('no button is offered, because nothing is waiting on the reader',
           !doc.querySelector('.ap-toast-action') || doc.querySelector('.ap-toast-action').hidden);
-  }
+  });
 
-  console.log('\nB14: a shortlist of ticks, and a dropdown for the rest');
-  {
-    // Ticks are the newest stable of each series; the rest is in the dropdown.
-    const man = JSON.parse(JSON.stringify(MANIFEST));
-    const mk = (ver, ch, dflt) => ({
-      file: `docs/parameters-Copter-${ch}-V${ver}.html`,
-      channel: ch, version: ver, label: ver + (ch === 'stable' ? '' : ' ' + ch),
-      bytes: 4e6, ...(dflt ? { 'default': true } : {})
-    });
-    man.wikis.find((w) => w.id === 'copter').param_versions = [
-      mk('4.7.0', 'beta'), mk('4.7.0', 'stable', true),
-      mk('4.6.3', 'stable'), mk('4.6.2', 'stable'), mk('4.6.1', 'stable'),
-      mk('4.6.0', 'stable'), mk('4.5.7', 'stable'), mk('4.5.6', 'stable'),
-      mk('4.5.5', 'stable'), mk('4.5.4', 'stable'), mk('4.5.3', 'stable'),
-      mk('4.5.2', 'stable'), mk('4.5.1', 'stable'), mk('4.5.0', 'stable')
-    ];
-
-    const { doc, w } = load({ manifest: man, caches: makeCaches() });
-    for (let i = 0; i < 12; i++) { await settle(); }
-
-    const ticksOf = () => [...doc.querySelectorAll('[data-params-for=\"copter\"] .param-check')]
-      .map((b) => b.value);
-    const sel = () => doc.querySelector('[data-params-for=\"copter\"] .param-more');
-
-    const ticks = ticksOf();
-    check('only the newest stable of each series gets a tick',
-          ticks.length === 3, ticks.length + ' ticks: ' + JSON.stringify(ticks));
-    check('and they are the newest of 4.7, 4.6 and 4.5',
-          ticks.includes('docs/parameters-Copter-stable-V4.7.0.html') &&
-          ticks.includes('docs/parameters-Copter-stable-V4.6.3.html') &&
-          ticks.includes('docs/parameters-Copter-stable-V4.5.7.html'),
-          JSON.stringify(ticks));
-    check('the current list is shown as always included, and not deselectable',
-          !!doc.querySelector('[data-params-for=\"copter\"] .apo-param-fixed input[disabled]'));
-
-    const dropdown = sel();
-    check('a dropdown carries the remaining versions', !!dropdown &&
-          dropdown.options.length === 12,   // 11 remaining + the placeholder
-          dropdown ? dropdown.options.length + ' options' : 'NO DROPDOWN');
-    check('a point release is in the dropdown, not the ticks',
-          !ticks.includes('docs/parameters-Copter-stable-V4.6.0.html') &&
-          [...dropdown.options].some((o) => o.value === 'docs/parameters-Copter-stable-V4.6.0.html'));
-
-    // Promote one, the thing the user actually asked for.
-    dropdown.value = 'docs/parameters-Copter-stable-V4.6.0.html';
-    dropdown.dispatchEvent(new w.Event('change', { bubbles: true }));
-    for (let i = 0; i < 6; i++) { await settle(); }
-
-    const after = ticksOf();
-    check('choosing from the dropdown promotes it to a tick box',
-          after.includes('docs/parameters-Copter-stable-V4.6.0.html'),
-          JSON.stringify(after));
-    check('the promoted version arrives already ticked',
-          [...doc.querySelectorAll('[data-params-for=\"copter\"] .param-check')]
-            .some((b) => b.value === 'docs/parameters-Copter-stable-V4.6.0.html' && b.checked));
-    check('it leaves the dropdown, so it cannot be added twice',
-          ![...sel().options].some((o) => o.value === 'docs/parameters-Copter-stable-V4.6.0.html'),
-          sel().options.length + ' options left');
-    check('the disclosure stays open while choosing',
-          !doc.querySelector('[data-params-for=\"copter\"]').hasAttribute('hidden'));
-    check('choosing a version selects the wiki it belongs to',
-          doc.querySelector('.wiki-check[value=\"copter\"]').checked);
-  }
-
-  console.log('\nregression: parameter ticks follow the cache, not the manifest (B2)');
-  {
-    // A reader holding 4.6.0 must see it ticked and the newer default clear.
-    const versions = [
-      { file: 'docs/parameters-Copter-stable-V4.7.0.html', label: '4.7.0',
-        bytes: 5e6, 'default': true },
-      { file: 'docs/parameters-Copter-stable-V4.6.0.html', label: '4.6.0',
-        bytes: 5e6 }
-    ];
-    const man = JSON.parse(JSON.stringify(MANIFEST));
-    const copter = man.wikis.find((w) => w.id === 'copter');
-    copter.param_versions = versions;
-
-    const cachesObj = makeCaches();
-    const c = await cachesObj.open('ardupilot-offline-copter');
-    await c.put('/__ap_complete__', completeMarker(man.generated, 'copter'));
-    // The reader saved the OLDER one, and not the default.
-    await c.put('/copter/docs/parameters-Copter-stable-V4.6.0.html',
-                new FakeResponse('old params'));
-
-    const { doc } = load({ manifest: man, caches: cachesObj });
-    for (let i = 0; i < 12; i++) { await settle(); }
-
-    const ticked = [...doc.querySelectorAll('.param-check')]
-      .filter((b) => b.checked).map((b) => b.value);
-    check('the saved version is ticked',
-          ticked.includes('docs/parameters-Copter-stable-V4.6.0.html'),
-          JSON.stringify(ticked));
-    check('the newer default is NOT ticked, because it is not saved',
-          !ticked.includes('docs/parameters-Copter-stable-V4.7.0.html'),
-          JSON.stringify(ticked));
-  }
-
-  console.log('\nregression: an unsaved wiki still defaults to the newest stable');
-  {
-    // With nothing stored the manifest's default must survive.
-    const man = JSON.parse(JSON.stringify(MANIFEST));
-    man.wikis.find((w) => w.id === 'copter').param_versions = [
-      { file: 'docs/parameters-Copter-stable-V4.7.0.html', label: '4.7.0',
-        bytes: 5e6, 'default': true },
-      { file: 'docs/parameters-Copter-stable-V4.6.0.html', label: '4.6.0',
-        bytes: 5e6 }
-    ];
-    const { doc } = load({ manifest: man, caches: makeCaches() });
-    for (let i = 0; i < 12; i++) { await settle(); }
-    const ticked = [...doc.querySelectorAll('.param-check')]
-      .filter((b) => b.checked).map((b) => b.value);
-    check('with nothing saved, the newest stable is ticked',
-          ticked.length === 1 &&
-          ticked[0] === 'docs/parameters-Copter-stable-V4.7.0.html',
-          JSON.stringify(ticked));
-  }
-
-  console.log('\nregression: a wiki folded into common keeps its own URLs');
-  {
+  await section('regression: a wiki folded into common keeps its own URLs', async () => {
     // Only asking for a page by its real URL catches a wrong prefix.
     const { sandbox } = load({ manifest: MANIFEST });
     await settle();
@@ -1630,10 +1504,196 @@ async function main() {
           keys.includes('/_common/_images/shared.png'));
     check('nothing lands under /_common/ardupilot/',
           !keys.some((k) => k.indexOf('/_common/ardupilot/') === 0));
-  }
+  });
 
-  console.log('\nunpack: a cut-short or hostile archive is refused, so it is never marked complete');
-  {
+  await section('unpack: a parameter delta is stored as a delta and rebuilt on read', async () => {
+    const { sandbox } = load({ manifest: MANIFEST });
+    await settle();
+    const base = fs.readFileSync(path.join(FIXTURES, 'delta-base.html'));
+    const page = fs.readFileSync(path.join(FIXTURES, 'delta-page.html'));
+    const frame = fs.readFileSync(path.join(FIXTURES, 'delta-page.zst'));
+    const wasm = fs.readFileSync(path.join(FRONTEND_JS, 'zstd.wasm'));
+    const BASE = 'parameters-Rover-stable-V4.7.0.html';
+    const container = Buffer.concat([Buffer.from('APDELTA1 ' + BASE + ' ' + hash16(page) + '\n'), frame]);
+    const climb = Buffer.concat([Buffer.from('APDELTA1 ../../sw.js ' + hash16(page) + '\n'), frame]);
+    const wrongHash = Buffer.concat([Buffer.from('APDELTA1 ' + BASE + ' 0123456789abcdef\n'), frame]);
+    const noHash = Buffer.concat([Buffer.from('APDELTA1 ' + BASE + '\n'), frame]);
+    const cache = await sandbox.caches.open('delta-test');
+    const tar = tarBytes({
+      ['rover/docs/' + BASE]: base,
+      'rover/docs/parameters-Rover-stable-V4.6.0.html': container,
+      'rover/docs/parameters-Rover-stable-V4.5.0.html': climb,
+      'rover/docs/parameters-Rover-stable-V4.4.0.html': wrongHash,
+      'rover/docs/parameters-Rover-stable-V4.3.0.html': noHash,
+    });
+    let wasmFetches = 0;
+    sandbox.fetch = (u) => {
+      if (String(u).indexOf('zstd.wasm') !== -1) {
+        wasmFetches++;
+        return Promise.resolve({ ok: true, arrayBuffer: () => Promise.resolve(
+          wasm.buffer.slice(wasm.byteOffset, wasm.byteOffset + wasm.byteLength)) });
+      }
+      return Promise.resolve({ ok: true, body: streamOf(tar) });
+    };
+    await sandbox.ApUnpack.fetchArchive(
+      { id: 'rover', name: 'Rover', archive: 'rover-offline.tar' },
+      cache, () => {}, { base: '/offline' });
+    const DELTA = '/rover/docs/parameters-Rover-stable-V4.6.0.html';
+    const stored = await cache.match(DELTA);
+    check('the delta is stored as it arrived, marked as a delta',
+          !!stored && stored.headers.get('x-ap-encoding') === 'zstd-delta' &&
+          (await stored.arrayBuffer()).byteLength === container.length,
+          stored ? String(stored.headers.get('x-ap-encoding')) : 'not stored');
+    check('the base page is stored plain',
+          !!(await cache.match('/rover/docs/' + BASE)) &&
+          !(await cache.match('/rover/docs/' + BASE)).headers.get('x-ap-encoding'));
+    check('nothing was decoded while unpacking', wasmFetches === 0, wasmFetches + ' wasm fetches');
+
+    const out = await sandbox.ApUnpack.readFrom(cache, DELTA);
+    const text = out ? await out.text() : '';
+    check('readFrom rebuilds the page from the delta and its base',
+          text === page.toString('utf8'), text.length + ' bytes');
+    check('the rebuilt page is served as html',
+          !!out && /^text\/html/.test(String(out.headers.get('Content-Type'))));
+    await sandbox.ApUnpack.readFrom(cache, DELTA);
+    check('the decoder is fetched once and kept', wasmFetches === 1, wasmFetches + ' fetches');
+
+    const bad = await cache.match('/rover/docs/parameters-Rover-stable-V4.5.0.html');
+    check('a delta naming a base outside its own directory is not treated as a delta',
+          !!bad && !bad.headers.get('x-ap-encoding'));
+    const unhashed = await cache.match('/rover/docs/parameters-Rover-stable-V4.3.0.html');
+    check('a delta header without the hash is still stored as a delta, never as a page',
+          !!unhashed && unhashed.headers.get('x-ap-encoding') === 'zstd-delta');
+    let noHashErr = null;
+    try { await sandbox.ApUnpack.readFrom(cache, '/rover/docs/parameters-Rover-stable-V4.3.0.html'); }
+    catch (e) { noHashErr = e.message; }
+    check('and is refused on read, since nothing can prove the rebuilt page',
+          !!noHashErr && /no hash/.test(noHashErr), noHashErr || 'no error');
+    let hashErr = null;
+    try { await sandbox.ApUnpack.readFrom(cache, '/rover/docs/parameters-Rover-stable-V4.4.0.html'); }
+    catch (e) { hashErr = e.message; }
+    check('a rebuilt page that does not match its hash is refused',
+          !!hashErr && /does not match its hash/.test(hashErr), hashErr || 'no error');
+
+    // Stored plain by older code, no marker: the magic still says what it is.
+    const plainStore = await sandbox.caches.open('delta-unmarked');
+    await plainStore.put('/rover/docs/' + BASE, new FakeResponse(base, { headers: { 'Content-Type': 'text/html' } }));
+    await plainStore.put(DELTA, new FakeResponse(container, { headers: { 'Content-Type': 'text/html' } }));
+    await plainStore.put('/rover/docs/parameters-Rover-stable-V4.2.0.html',
+      new FakeResponse('<html><body>a real version page</body></html>', { headers: { 'Content-Type': 'text/html' } }));
+    const unmarked = await sandbox.ApUnpack.readFrom(plainStore, DELTA);
+    check('a delta stored without its marker is still rebuilt',
+          !!unmarked && (await unmarked.text()) === page.toString('utf8'));
+    const realPage = await sandbox.ApUnpack.readFrom(plainStore, '/rover/docs/parameters-Rover-stable-V4.2.0.html');
+    check('a real version page stored plain is served as it is',
+          !!realPage && /a real version page/.test(await realPage.text()));
+
+    // No wasm to be had: the JavaScript decoder rebuilds the same page.
+    const jsOnly = load({ manifest: MANIFEST });
+    await settle();
+    const c2 = await jsOnly.sandbox.caches.open('delta-js');
+    jsOnly.sandbox.fetch = (u) => (String(u).indexOf('zstd.wasm') !== -1
+      ? Promise.resolve({ ok: false, status: 404 })
+      : Promise.resolve({ ok: true, body: streamOf(tar) }));
+    await jsOnly.sandbox.ApUnpack.fetchArchive(
+      { id: 'rover', name: 'Rover', archive: 'rover-offline.tar' }, c2, () => {}, { base: '/offline' });
+    const jsOut = await jsOnly.sandbox.ApUnpack.readFrom(c2, DELTA);
+    check('without a wasm the JavaScript decoder rebuilds the page',
+          !!jsOut && (await jsOut.text()) === page.toString('utf8') &&
+          jsOnly.sandbox.ApZstd.mode() === 'js', String(jsOnly.sandbox.ApZstd.mode()));
+
+    await cache.delete('/rover/docs/' + BASE);
+    let err = null;
+    try { await sandbox.ApUnpack.readFrom(cache, DELTA); } catch (e) { err = e.message; }
+    check('a delta whose base is gone fails naming the base',
+          !!err && err.indexOf(BASE) !== -1, err || 'no error');
+  });
+
+  await section('upgrade compatibility: every way a delta can have been stored still reads', async () => {
+    // Data written by one version of the code, read by another: the entry
+    // may carry the marker or not, and the decoder may be the wasm or
+    // JavaScript; every hashed combination must rebuild the same page, a
+    // hashless one must be refused rather than trusted, and a real page at
+    // such a path must be served as it is.
+    const base = fs.readFileSync(path.join(FIXTURES, 'delta-base.html'));
+    const page = fs.readFileSync(path.join(FIXTURES, 'delta-page.html'));
+    const frame = fs.readFileSync(path.join(FIXTURES, 'delta-page.zst'));
+    const BASE = 'parameters-Rover-stable-V4.7.0.html';
+    const headers = {
+      hashed: 'APDELTA1 ' + BASE + ' ' + hash16(page) + '\n',
+      hashless: 'APDELTA1 ' + BASE + '\n',
+    };
+    for (const decoder of ['wasm', 'js']) {
+      const r = load({ manifest: MANIFEST });
+      await settle();
+      if (decoder === 'js') {
+        r.sandbox.fetch = (u) => (String(u).indexOf('zstd.wasm') !== -1
+          ? Promise.resolve({ ok: false, status: 404 }) : Promise.reject(new Error('no')));
+      }
+      const c = await r.sandbox.caches.open('compat-' + decoder);
+      await c.put('/rover/docs/' + BASE, new FakeResponse(base, { headers: { 'Content-Type': 'text/html' } }));
+      const cases = [];
+      for (const marked of [true, false]) {
+        for (const h of Object.keys(headers)) {
+          const key = '/rover/docs/parameters-Rover-stable-V4.' + (marked ? 6 : 5) + '.' + (h === 'hashed' ? 1 : 0) + '.html';
+          const hdr = { 'Content-Type': 'text/html' };
+          if (marked) { hdr['x-ap-encoding'] = 'zstd-delta'; }
+          await c.put(key, new FakeResponse(Buffer.concat([Buffer.from(headers[h]), frame]), { headers: hdr }));
+          cases.push({ key, marked, h });
+        }
+      }
+      await c.put('/rover/docs/parameters-Rover-stable-V4.4.4.html',
+        new FakeResponse('<html><body>a real page saved plain</body></html>', { headers: { 'Content-Type': 'text/html' } }));
+      for (const cs of cases) {
+        let text = null, err = null;
+        try { text = await (await r.sandbox.ApUnpack.readFrom(c, cs.key)).text(); } catch (e) { err = e.message; }
+        if (cs.h === 'hashed') {
+          check(decoder + ' decoder, ' + (cs.marked ? 'marked' : 'unmarked') + ' entry, hashed header: rebuilt',
+                text === page.toString('utf8'), err || (text ? text.slice(0, 30) : 'nothing'));
+        } else {
+          // Nothing can prove a hashless rebuild, least of all in JavaScript.
+          check(decoder + ' decoder, ' + (cs.marked ? 'marked' : 'unmarked') + ' entry, hashless header: refused, never a page',
+                text === null && !!err && /no hash/.test(err), err || (text ? text.slice(0, 30) : 'nothing'));
+        }
+      }
+      const real = await (await r.sandbox.ApUnpack.readFrom(c, '/rover/docs/parameters-Rover-stable-V4.4.4.html')).text();
+      check(decoder + ' decoder: a real page at a versioned path is served as it is',
+            /a real page saved plain/.test(real));
+      check(decoder + ' decoder was the one in use', r.sandbox.ApZstd.mode() === decoder, String(r.sandbox.ApZstd.mode()));
+    }
+
+    // A differential update replaces an old-format entry with the new one.
+    const cachesObj = makeCaches();
+    const DELTA = 'parameters-Rover-stable-V4.6.3.html';
+    const oldContainer = Buffer.concat([Buffer.from(headers.hashless), frame]);
+    const newContainer = Buffer.concat([Buffer.from(headers.hashed), frame]);
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'rover', OLD_BUILD, {
+      'rover/index.html': ['h1', 'old index'],
+      ['rover/docs/' + BASE]: [await fileHash(base), base],
+    });
+    // The old entry, stored plain by older update code, no marker.
+    const rc = await cachesObj.open('ardupilot-offline-rover');
+    await rc.put('/rover/docs/' + DELTA, new FakeResponse(oldContainer, { headers: { 'Content-Type': 'text/html' } }));
+    const stored = await ApUpdate_readTable(rc);
+    stored['rover/docs/' + DELTA] = await fileHash(oldContainer);
+    await rc.put('/__ap_files__', new FakeResponse(JSON.stringify(stored)));
+    const published = Object.assign({}, stored, { ['rover/docs/' + DELTA]: await fileHash(newContainer) });
+    const r = load({ manifest: MANIFEST, caches: cachesObj,
+      tables: { 'rover-files.json': published, 'common-files.json': { '_images/shared.png': 'c1' } },
+      loose: { ['rover/docs/' + DELTA]: newContainer } });
+    await settle();
+    $(r.doc, 'check-btn').click();
+    for (let i = 0; i < 14; i++) { await settle(); }
+    const after = await rc.match('/rover/docs/' + DELTA);
+    check('an update replaces an old-format entry with a marked, hashed one',
+          !!after && after.headers.get('x-ap-encoding') === 'zstd-delta' &&
+          (await after.text()).indexOf(hash16(page)) !== -1);
+    check('and the page it rebuilds is unchanged',
+          (await (await r.sandbox.ApUnpack.readFrom(rc, '/rover/docs/' + DELTA)).text()) === page.toString('utf8'));
+  });
+
+  await section('unpack: a cut-short or hostile archive is refused, so it is never marked complete', async () => {
     const { sandbox } = load({ manifest: MANIFEST });
     await settle();
     const whole = tarBytes({ 'rover/index.html': '<html></html>',
@@ -1750,55 +1810,406 @@ async function main() {
           verdict('common', 'ardupilot/docs/about.html') === 'accepted' &&
           verdict('common', 'sw.js') === 'refused' &&
           verdict('common', '_common/sw.js') === 'refused');
-  }
+  });
 
-  console.log('\nevery parameter version in one tick, or none');
-  {
-    const mk = (ver, dflt) => ({
+  await section('parameter versions ride in the archive: no picker, a count on the row', async () => {
+    const mk = (ver, def) => ({
       file: `docs/parameters-Copter-stable-V${ver}.html`, channel: 'stable',
-      version: ver, label: ver, bytes: 4e6, ...(dflt ? { 'default': true } : {}) });
+      version: ver, label: ver, bytes: 400 * 1048576, default: !!def });
     const man = JSON.parse(JSON.stringify(MANIFEST));
-    man.wikis[0].param_versions = [mk('4.7.0', true), mk('4.6.3'), mk('4.6.0'), mk('4.5.7')];
-    const { doc, w } = load({ manifest: man, caches: makeCaches() });
-    for (let i = 0; i < 8; i++) { await settle(); }
-
-    const allBox = () => doc.querySelector('.param-all[data-wiki="copter"]');
-    const headBox = () => doc.getElementById('all-params');
-    const ticked = () => [...doc.querySelectorAll('[data-params-for="copter"] .param-check')]
-      .filter((b) => b.checked).map((b) => b.value);
-    const flip = (el, on) => { el.checked = on;
-      el.dispatchEvent(new w.Event('change', { bubbles: true })); };
-
-    check('the boxes start clear, with the newest of each series ticked',
-          allBox() && !allBox().checked && !headBox().checked && ticked().length === 3,
-          JSON.stringify(ticked()));
-    flip(allBox(), true); await settle();
-    check('ticking all in the version row picks every version',
-          ticked().length === 4 && allBox().checked && headBox().checked,
-          ticked().length + ' ticked');
-    check('and selects the wiki they belong to',
-          doc.querySelector('.wiki-check[value="copter"]').checked);
-    flip(allBox(), false); await settle();
-    check('unticking returns to the series heads',
-          ticked().length === 3 && !headBox().checked, JSON.stringify(ticked()));
-
-    flip(headBox(), true); await settle();
-    check('the header box picks every version of every wiki',
-          ticked().length === 4 && allBox().checked, ticked().length + ' ticked');
-    const one = doc.querySelector('[data-params-for="copter"] .param-check');
-    flip(one, false); await settle();
-    check('unticking one version clears both all boxes',
-          !allBox().checked && !headBox().checked);
-
-    doc.querySelector('.apo-param-none[data-wiki="copter"]')
-      .dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
+    man.wikis.find((w) => w.id === 'copter').param_versions =
+      [mk('4.7.0', true), mk('4.6.3'), mk('4.5.7')];
+    const withVersions = load({ manifest: man });
+    const without = load({ manifest: MANIFEST });
     await settle();
-    check('Deselect all leaves nothing optional ticked',
-          ticked().length === 0 && !allBox().checked, JSON.stringify(ticked()));
-  }
+    const doc = withVersions.doc;
+    check('no version picker is drawn',
+          !doc.querySelector('.param-check') && !doc.querySelector('.apo-param-toggle') &&
+          !doc.querySelector('.param-all') && !doc.getElementById('all-params'));
+    const row = doc.querySelector('tr[data-wiki="copter"]');
+    check('the row says how many versions the archive carries',
+          !!row && /3 parameter versions/.test(row.textContent), row ? row.textContent.trim() : 'no row');
+    for (const d of [doc, without.doc]) {
+      const box = d.querySelector('.wiki-check[value="copter"]');
+      box.checked = true;
+      box.dispatchEvent(new d.defaultView.Event('change', { bubbles: true }));
+    }
+    await settle();
+    const total = (d) => ($(d, 'selection-total').textContent || '').trim();
+    check('the versions add nothing to the selection total: they are in the archive',
+          total(doc) === total(without.doc) && total(doc) !== '',
+          total(doc) + ' vs ' + total(without.doc));
+  });
 
-  console.log('\nthe first save is checked against the file table before the marker');
-  {
+  await section('a refresh stores a delta as a delta and prunes a version the archive dropped', async () => {
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, {
+      '_images/shared.png': ['c1', 'shared bytes']
+    });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, {
+      'copter/index.html': ['h1', 'old index'],
+      'copter/docs/parameters-Copter-stable-V3.6.0.html': ['h3', 'a version no longer carried'],
+    });
+    const BASE = 'parameters-Copter-stable-V4.7.0.html';
+    const DELTA = 'parameters-Copter-stable-V4.6.0.html';
+    const base = fs.readFileSync(path.join(FIXTURES, 'delta-base.html'));
+    const frame = fs.readFileSync(path.join(FIXTURES, 'delta-page.zst'));
+    const container = Buffer.concat([Buffer.from('APDELTA1 ' + BASE + ' ' +
+      hash16(fs.readFileSync(path.join(FIXTURES, 'delta-page.html'))) + '\n'), frame]);
+    const archives = {
+      'copter/index.html': '<html>new index</html>',
+      ['copter/docs/' + BASE]: base,
+      ['copter/docs/' + DELTA]: container,
+    };
+    const table = {};
+    for (const [n, b] of Object.entries(archives)) { table[n] = await fileHash(b); }
+    const { doc } = load({ manifest: MANIFEST, caches: cachesObj, archives,
+      tables: { 'copter-files.json': table,
+                'common-files.json': { '_images/shared.png': 'c1' } } });
+    await settle();
+    $(doc, 'check-btn').click();
+    for (let i = 0; i < 14; i++) { await settle(); }
+    const cache = await cachesObj.open('ardupilot-offline-copter');
+    const delta = await cache.match('/copter/docs/' + DELTA);
+    check('the delta is stored as a delta',
+          !!delta && delta.headers.get('x-ap-encoding') === 'zstd-delta',
+          delta ? String(delta.headers.get('x-ap-encoding')) : 'not stored');
+    check('the base beside it is stored plain',
+          !!(await cache.match('/copter/docs/' + BASE)) &&
+          !(await cache.match('/copter/docs/' + BASE)).headers.get('x-ap-encoding'));
+    check('a version the archive no longer carries is pruned like any other page',
+          !(await cache.match('/copter/docs/parameters-Copter-stable-V3.6.0.html')));
+    check('the copy is marked complete', !!(await cache.match('/__ap_complete__')));
+  });
+
+  await section('a differential update stores a fetched delta as a delta', async () => {
+    const cachesObj = makeCaches();
+    const BASE = 'parameters-Copter-stable-V4.7.0.html';
+    const DELTA = 'parameters-Copter-stable-V4.6.0.html';
+    const base = fs.readFileSync(path.join(FIXTURES, 'delta-base.html'));
+    const frame = fs.readFileSync(path.join(FIXTURES, 'delta-page.zst'));
+    const container = Buffer.concat([Buffer.from('APDELTA1 ' + BASE + ' ' +
+      hash16(fs.readFileSync(path.join(FIXTURES, 'delta-page.html'))) + '\n'), frame]);
+    await seedSaved(cachesObj, 'common', OLD_BUILD, {
+      '_images/shared.png': ['c1', 'shared bytes']
+    });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, {
+      'copter/index.html': ['h1', 'old index'],
+      ['copter/docs/' + BASE]: [await fileHash(base), base],
+    });
+    const published = {
+      'copter/index.html': 'h1',
+      ['copter/docs/' + BASE]: await fileHash(base),
+      ['copter/docs/' + DELTA]: await fileHash(container),
+    };
+    const { doc, fetchCalls } = load({ manifest: MANIFEST, caches: cachesObj,
+      tables: { 'copter-files.json': published,
+                'common-files.json': { '_images/shared.png': 'c1' } },
+      loose: { ['copter/docs/' + DELTA]: container } });
+    await settle();
+    $(doc, 'check-btn').click();
+    for (let i = 0; i < 14; i++) { await settle(); }
+    const cache = await cachesObj.open('ardupilot-offline-copter');
+    const delta = await cache.match('/copter/docs/' + DELTA);
+    check('the update fetched the one new file loose, not the archive',
+          fetchCalls.some((u) => u.indexOf('/files/copter/docs/' + DELTA) !== -1) &&
+          !fetchCalls.some((u) => u.indexOf('copter-offline.tar') !== -1),
+          fetchCalls.filter((u) => u.indexOf('copter') !== -1).join(' '));
+    check('the fetched delta carries the delta marker',
+          !!delta && delta.headers.get('x-ap-encoding') === 'zstd-delta',
+          delta ? String(delta.headers.get('x-ap-encoding')) : 'not stored');
+    check('and the copy stays complete', !!(await cache.match('/__ap_complete__')));
+    check('a check that moved files is recorded as an update, not merely a check',
+          /^Updated just now$/.test($(doc, 'last-checked').textContent),
+          $(doc, 'last-checked').textContent);
+  });
+
+  await section('the decoder is checked once a saved wiki carries versions', async () => {
+    const mk = (ver, def) => ({
+      file: `docs/parameters-Copter-stable-V${ver}.html`, channel: 'stable',
+      version: ver, label: ver, bytes: 30000, default: !!def });
+    const withVersions = () => {
+      const man = JSON.parse(JSON.stringify(MANIFEST));
+      man.wikis.find((w) => w.id === 'copter').param_versions = [mk('4.7.0', true), mk('4.6.3')];
+      man.wikis.find((w) => w.id === 'rover').param_versions = [
+        { file: 'docs/parameters-Rover-stable-V4.7.0.html', channel: 'stable',
+          version: '4.7.0', label: '4.7.0', bytes: 30000, default: true }];
+      return man;
+    };
+    // The versions as a save leaves them: deltas, marked as such.
+    const seedDeltas = async (cachesObj) => {
+      const c = await cachesObj.open('ardupilot-offline-copter');
+      for (const ver of ['4.7.0', '4.6.3']) {
+        await c.put('/copter/docs/parameters-Copter-stable-V' + ver + '.html',
+          new FakeResponse(Buffer.from('APDELTA1 parameters-Copter-stable-V4.7.0.html 0123456789abcdef\nxx'),
+                           { headers: { 'Content-Type': 'text/html',
+                                        'x-ap-encoding': 'zstd-delta' } }));
+      }
+    };
+    // Nothing saved: no check, no wasm fetched.
+    let r = load({ manifest: withVersions() });
+    await settle(); await settle();
+    check('with nothing saved the decoder is not checked',
+          !r.fetchCalls.some((u) => u.indexOf('zstd.wasm') !== -1) &&
+          $(r.doc, 'delta-warning').hidden);
+
+    // Copter saved and carrying versions: the check runs and passes here.
+    let cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    check('a saved wiki with versions triggers one decoder self-test',
+          r.fetchCalls.filter((u) => u.indexOf('zstd.wasm') !== -1).length === 1,
+          r.fetchCalls.filter((u) => u.indexOf('zstd') !== -1).length + ' wasm fetches');
+    check('a working decoder shows no warning', $(r.doc, 'delta-warning').hidden);
+
+    // The same, in a browser whose decoder cannot run.
+    cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    const served = {
+      '/copter/docs/parameters-Copter-stable-V4.7.0.html': '<html><body>plain 4.7.0</body></html>',
+      '/copter/docs/parameters-Copter-stable-V4.6.3.html': '<html><body>plain 4.6.3</body></html>',
+      '/rover/docs/parameters-Rover-stable-V4.7.0.html': '<html><body>rover, not saved</body></html>',
+    };
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj, decoder: false, served });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    const warn = $(r.doc, 'delta-warning');
+    check('a failing decoder shows the warning, naming what will not open',
+          !warn.hidden && /cannot rebuild the compressed parameter versions/.test(warn.textContent) &&
+          /will not open offline/.test(warn.textContent), warn.textContent.slice(0, 80));
+    const btn = r.doc.getElementById('plain-params-btn');
+    check('it offers one button with the size of the plain pages',
+          !!btn && /about 1 MB/.test(btn.textContent), btn ? btn.textContent : 'no button');
+    check('the current parameter list is said to be unaffected',
+          /current parameter list is unaffected/.test(warn.textContent));
+
+    // Pressing it fetches the plain page for the SAVED wiki's versions only.
+    btn.click(); btn.click();
+    for (let i = 0; i < 8; i++) { await settle(); }
+    const pageFetches = r.fetchCalls.filter((u) => u.indexOf('/docs/parameters-') !== -1);
+    check('every carried version of the saved wiki is fetched as a plain page, once',
+          pageFetches.length === 2 &&
+          pageFetches.every((u) => u.indexOf('/copter/') !== -1),
+          pageFetches.join(' '));
+    check('an unsaved wiki\'s versions are left alone',
+          !pageFetches.some((u) => u.indexOf('/rover/') !== -1));
+    check('each fetch is tagged as an update, so the worker goes to the network and never answers with its offline page',
+          pageFetches.every((u) => /\?ap-update=/.test(u)), pageFetches[0]);
+    const copter = await cachesObj.open('ardupilot-offline-copter');
+    const stored = await copter.match('/copter/docs/parameters-Copter-stable-V4.6.3.html');
+    check('the plain page is stored as a page, with no delta marker',
+          !!stored && !stored.headers.get('x-ap-encoding'));
+    const back = await r.sandbox.ApUnpack.readFrom(copter, '/copter/docs/parameters-Copter-stable-V4.6.3.html');
+    check('and reads back without any decoder',
+          !!back && (await back.text()) === served['/copter/docs/parameters-Copter-stable-V4.6.3.html']);
+    check('the warning goes once the plain pages are in', $(r.doc, 'delta-warning').hidden);
+    check('the reader is told all of them are saved',
+          /All 2 parameter versions are saved as plain pages/.test($(r.doc, 'cache-progress').textContent),
+          $(r.doc, 'cache-progress').textContent);
+    check('the worker is told the caches changed',
+          r.swMessages.some((m) => m && m.type === 'CACHES_CHANGED'));
+    check('the copy stays complete', !!(await copter.match('/__ap_complete__')));
+
+    // One page the site no longer serves: the rest still land, and it says so.
+    cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    const partial = Object.assign({}, served);
+    delete partial['/copter/docs/parameters-Copter-stable-V4.6.3.html'];
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj, decoder: false, served: partial });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    r.doc.getElementById('plain-params-btn').click();
+    for (let i = 0; i < 8; i++) { await settle(); }
+    const c2 = await cachesObj.open('ardupilot-offline-copter');
+    const kept = await c2.match('/copter/docs/parameters-Copter-stable-V4.7.0.html');
+    const still = await c2.match('/copter/docs/parameters-Copter-stable-V4.6.3.html');
+    check('a version the site cannot serve is reported, the others still stored',
+          !!kept && !kept.headers.get('x-ap-encoding') &&
+          !!still && still.headers.get('x-ap-encoding') === 'zstd-delta' &&
+          /1 of 2 parameter pages saved/.test($(r.doc, 'cache-progress').textContent) &&
+          /parameters-Copter-stable-V4\.6\.3/.test($(r.doc, 'cache-progress').textContent),
+          $(r.doc, 'cache-progress').textContent);
+    check('the warning stays while any version is still a delta',
+          !$(r.doc, 'delta-warning').hidden);
+
+    // A captive portal answers 200 with a page of its own: refused, not stored.
+    cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj, decoder: false, served });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    const realFetch = r.sandbox.fetch;
+    r.sandbox.fetch = (u, o) => {
+      if (String(u).indexOf('V4.6.3') !== -1) {
+        const portal = Buffer.from('<html><body>Sign in to the wifi</body></html>');
+        return Promise.resolve({ ok: true, headers: { get: (k) =>
+          (String(k).toLowerCase() === 'content-type' ? 'text/plain' : null) },
+          arrayBuffer: () => Promise.resolve(portal.buffer.slice(portal.byteOffset,
+            portal.byteOffset + portal.byteLength)) });
+      }
+      return realFetch(u, o);
+    };
+    r.doc.getElementById('plain-params-btn').click();
+    for (let i = 0; i < 8; i++) { await settle(); }
+    const c3 = await cachesObj.open('ardupilot-offline-copter');
+    const portalHit = await c3.match('/copter/docs/parameters-Copter-stable-V4.6.3.html');
+    check('a page not served as HTML is refused and the delta kept',
+          !!portalHit && portalHit.headers.get('x-ap-encoding') === 'zstd-delta' &&
+          /1 of 2 parameter pages saved/.test($(r.doc, 'cache-progress').textContent),
+          $(r.doc, 'cache-progress').textContent);
+
+    // A Save pressed while the plain pages are still arriving is refused.
+    cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj, decoder: false, served });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    let release;
+    const slowFetch = r.sandbox.fetch;
+    r.sandbox.fetch = (u, o) => (String(u).indexOf('/docs/parameters-') !== -1
+      ? new Promise((res) => { release = () => res(slowFetch(u, o)); })
+      : slowFetch(u, o));
+    r.doc.getElementById('plain-params-btn').click();
+    await settle();
+    r.doc.querySelector('.wiki-check[value="rover"]').click();
+    $(r.doc, 'download-cache-btn').click();
+    await settle();
+    check('a Save pressed mid-fallback is refused, not run over the same caches',
+          /parameter pages are still downloading/.test($(r.doc, 'cache-progress').textContent) &&
+          !r.fetchCalls.some((u) => u.indexOf('rover-offline.tar') !== -1),
+          $(r.doc, 'cache-progress').textContent);
+    if (release) { release(); }
+    for (let i = 0; i < 8; i++) { await settle(); }
+  });
+
+  await section('the state text is green only when the worker controls the page', async () => {
+    let r = load({ manifest: MANIFEST, offline: true });
+    await settle();
+    let state = $(r.doc, 'offline-mode-state');
+    check('opted in and controlled: "on", green',
+          state.textContent === 'on' && state.classList.contains('apo-state-live'),
+          state.textContent + ' [' + state.className + ']');
+    r = load({ manifest: MANIFEST, offline: true, controlled: false, registered: false });
+    await settle();
+    state = $(r.doc, 'offline-mode-state');
+    check('opted in but the worker not yet active: says so, not green',
+          /^on, starting/.test(state.textContent) && !state.classList.contains('apo-state-live'),
+          state.textContent + ' [' + state.className + ']');
+    // A hard reload: the page is not controlled, the worker is active all the same.
+    r = load({ manifest: MANIFEST, offline: true, controlled: false, registered: true });
+    await settle();
+    state = $(r.doc, 'offline-mode-state');
+    check('an active worker that does not control this page (hard reload) still shows green',
+          state.textContent === 'on' && state.classList.contains('apo-state-live'),
+          state.textContent + ' [' + state.className + ']');
+    r = load({ manifest: MANIFEST, offline: false });
+    await settle();
+    state = $(r.doc, 'offline-mode-state');
+    check('not opted in: "off", not green',
+          state.textContent === 'off' && !state.classList.contains('apo-state-live'));
+  });
+
+  await section('a finished check records when it ran', async () => {
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'index'] });
+    const same = JSON.parse(JSON.stringify(MANIFEST)); same.generated = OLD_BUILD;
+    let r = load({ manifest: same, caches: cachesObj });
+    await settle();
+    check('before any check the line is empty', $(r.doc, 'last-checked').textContent === '');
+    $(r.doc, 'check-btn').click();
+    for (let i = 0; i < 6; i++) { await settle(); }
+    check('an up-to-date check stamps the time and says what it found',
+          /^Checked just now, up to date$/.test($(r.doc, 'last-checked').textContent) &&
+          !!r.w.localStorage.getItem('ap-last-checked'),
+          $(r.doc, 'last-checked').textContent);
+
+    // Ninety minutes on, in a new session: the stamp survives and reads as age.
+    const then = JSON.stringify({ t: new Date(Date.now() - 90 * 60000).toISOString(), r: 'current' });
+    r = load({ manifest: same, caches: cachesObj });
+    r.w.localStorage.setItem('ap-last-checked', then);
+    await settle(); await settle();
+    check('a later visit shows how long ago', /Checked (1|2) h ago, up to date/.test($(r.doc, 'last-checked').textContent),
+          $(r.doc, 'last-checked').textContent);
+
+    // Merely opening the page is not a check: no fetch of the manifest, no stamp.
+    check('opening the page did not stamp anything by itself',
+          r.w.localStorage.getItem('ap-last-checked') === then &&
+          !r.fetchCalls.some((u) => u.indexOf('offline-manifest.json') !== -1 && r.fetchOpts.some((o) => o.url === u && o.opts.cache === 'no-cache')) ||
+          r.w.localStorage.getItem('ap-last-checked') === then,
+          r.w.localStorage.getItem('ap-last-checked'));
+
+    // A check that never reached the site does not pretend it did.
+    r = load({ manifest: null, caches: cachesObj });
+    r.w.localStorage.setItem('ap-last-checked', then);
+    await settle();
+    $(r.doc, 'check-btn').click();
+    for (let i = 0; i < 6; i++) { await settle(); }
+    check('a failed check leaves the old stamp alone',
+          r.w.localStorage.getItem('ap-last-checked') === then &&
+          !/just now/.test($(r.doc, 'last-checked').textContent),
+          $(r.doc, 'last-checked').textContent);
+
+    // Nothing saved: nothing to reassure about.
+    r = load({ manifest: MANIFEST });
+    r.w.localStorage.setItem('ap-last-checked', then);
+    await settle(); await settle();
+    check('with nothing saved the line stays empty', $(r.doc, 'last-checked').textContent === '');
+  });
+
+  await section('a check finishes an interrupted refresh instead of calling it up to date', async () => {
+    // Copter complete; the shared images were complete once (they hold a
+    // table) but lost their marker to an interrupted refresh.
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'index'] });
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    const common = await cachesObj.open('ardupilot-offline-common');
+    await common.delete('/__ap_complete__');
+    const same = JSON.parse(JSON.stringify(MANIFEST)); same.generated = OLD_BUILD;
+    const r = load({ manifest: same, caches: cachesObj,
+      archives: { '_images/shared.png': 'shared bytes' },
+      tables: { 'common-files.json': { '_images/shared.png': await fileHash('shared bytes') },
+                'copter-files.json': { 'copter/index.html': 'h1' } } });
+    await settle();
+    check('the row says the shared images are incomplete',
+          /Incomplete/.test(r.doc.querySelector('tr[data-wiki="common"]').textContent));
+    $(r.doc, 'check-btn').click();
+    for (let i = 0; i < 14; i++) { await settle(); }
+    check('the check downloads the shared images again rather than skipping them',
+          r.fetchCalls.some((u) => u.indexOf('common-offline.tar') !== -1),
+          r.fetchCalls.filter((u) => u.indexOf('offline') !== -1).join(' '));
+    check('and they are complete afterwards', !!(await common.match('/__ap_complete__')));
+    check('the check is never called "up to date" while something was incomplete',
+          !/up to date/i.test($(r.doc, 'check-result').textContent) &&
+          /^Updated just now/.test($(r.doc, 'last-checked').textContent),
+          $(r.doc, 'check-result').textContent + ' | ' + $(r.doc, 'last-checked').textContent);
+  });
+
+  await section('a first save the reader cancelled is not re-downloaded behind their back', async () => {
+    // Rover was never complete and holds no table: the reader stopped it.
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'index'] });
+    const rover = await cachesObj.open('ardupilot-offline-rover');
+    await rover.put('/rover/index.html', new FakeResponse('half'));
+    const same = JSON.parse(JSON.stringify(MANIFEST)); same.generated = OLD_BUILD;
+    const r = load({ manifest: same, caches: cachesObj });
+    await settle();
+    $(r.doc, 'check-btn').click();
+    for (let i = 0; i < 8; i++) { await settle(); }
+    check('nothing is fetched for it', !r.fetchCalls.some((u) => u.indexOf('rover-offline.tar') !== -1));
+    check('the row still says incomplete, for the reader to decide',
+          /Incomplete/.test(r.doc.querySelector('tr[data-wiki="rover"]').textContent));
+  });
+
+  await section('the first save is checked against the file table before the marker', async () => {
     // The table names a page the archive lacked: a build landed mid-save.
     const cachesObj = makeCaches();
     const { doc } = load({ manifest: MANIFEST, caches: cachesObj,
@@ -1866,10 +2277,9 @@ async function main() {
     const okCache = await okCaches.open('ardupilot-offline-copter');
     check('a table the archive satisfies is stored and marked complete',
           !!(await okCache.match('/__ap_complete__')) && !!(await okCache.match(TABLE_KEY)));
-  }
+  });
 
-  console.log('\na full redownload replaces the copy, deleted pages included');
-  {
+  await section('a full redownload replaces the copy, deleted pages included', async () => {
     const cachesObj = makeCaches();
     await seedSaved(cachesObj, 'common', OLD_BUILD, {
       '_images/shared.png': ['c1', 'shared bytes']
@@ -1893,10 +2303,9 @@ async function main() {
     check('the redownloaded copy is current and marked complete',
           (await bodyAt(cache, '/copter/index.html')) === '<html>new index</html>' &&
           !!(await cache.match('/__ap_complete__')));
-  }
+  });
 
-  console.log('\na failed redownload leaves the old copy readable');
-  {
+  await section('a failed redownload leaves the old copy readable', async () => {
     const cachesObj = makeCaches();
     await seedSaved(cachesObj, 'common', OLD_BUILD, {
       '_images/shared.png': ['c1', 'shared bytes']
@@ -1918,10 +2327,9 @@ async function main() {
     check('the old copy is still there, marked complete',
           (await bodyAt(cache, '/copter/index.html')) === 'the old but working copy' &&
           !!(await cache.match('/__ap_complete__')));
-  }
+  });
 
-  console.log('\nan unfinished download is called incomplete, not hidden');
-  {
+  await section('an unfinished download is called incomplete, not hidden', async () => {
     const cachesObj = makeCaches();
     (await cachesObj.open('ardupilot-offline-common')).put('/__ap_complete__',
       completeMarker(MANIFEST.generated, 'common'));
@@ -1939,10 +2347,9 @@ async function main() {
           JSON.stringify($(doc, 'storage-status').textContent));
     check('a finished wiki is not called incomplete',
           !/Incomplete/.test((doc.querySelector('tr[data-wiki="common"]') || {}).textContent || ''));
-  }
+  });
 
-  console.log('\na running download owns the panel');
-  {
+  await section('a running download owns the panel', async () => {
     const cachesObj = makeCaches();
     const { doc, w, sandbox } = load({ manifest: MANIFEST, caches: cachesObj });
     await settle();
@@ -1972,10 +2379,9 @@ async function main() {
     doc.querySelector('.wiki-check[value="rover"]').click(); await settle();
     check('reselecting mid-download does not re-enable export',
           $(doc, 'dl-single').disabled && $(doc, 'check-btn').disabled);
-  }
+  });
 
-  console.log('\nexport repairs a broken shared-images cache first');
-  {
+  await section('export repairs a broken shared-images cache first', async () => {
     const cachesObj = makeCaches();
     (await cachesObj.open('ardupilot-offline-copter')).put('/__ap_complete__',
       completeMarker(MANIFEST.generated, 'copter'));
@@ -2001,145 +2407,9 @@ async function main() {
     check('the pre-save opted into offline mode like Save does',
           apOffline.calls.indexOf('enable') !== -1,
           JSON.stringify(apOffline.calls));
-  }
+  });
 
-  console.log('\na malformed parameter version is skipped, not fatal');
-  {
-    // A build-side slip in one param_versions entry must cost that version
-    // alone, never the wiki.
-    const man = JSON.parse(JSON.stringify(MANIFEST));
-    man.wikis[2].param_versions = [
-      { file: 'docs/parameters-Dev-stable-V4.7.0.html', channel: 'stable',
-        version: '4.7.0', label: '4.7.0', bytes: 1000, 'default': true },
-      { file: '../evil.html', channel: 'stable',
-        version: '9.9.9', label: 'evil', bytes: 1000 },
-    ];
-    const cachesObj = makeCaches();
-    const { doc, w } = load({ manifest: man, caches: cachesObj,
-      archives: { 'dev/index.html': '<html>dev</html>' },
-      served: { '/dev/docs/parameters-Dev-stable-V4.7.0.html': '<html>params</html>' } });
-    await settle();
-    doc.querySelector('.wiki-check[value="dev"]').click(); await settle();
-    $(doc, 'download-cache-btn').click();
-    for (let i = 0; i < 15; i++) { await settle(); }
-    const dev = await cachesObj.open('ardupilot-offline-dev');
-    check('the wiki still saves when one version name is malformed',
-          !!(await dev.match('/__ap_complete__')),
-          JSON.stringify($(doc, 'cache-progress').textContent));
-    check('the good parameter version is stored',
-          !!(await dev.match('/dev/docs/parameters-Dev-stable-V4.7.0.html')));
-    check('the malformed one is not stored anywhere',
-          !(await dev.match('/evil.html')) && !(await dev.match('/dev/../evil.html')));
-  }
-
-  console.log('\na saved wiki can still take on more parameter versions');
-  {
-    const man = JSON.parse(JSON.stringify(MANIFEST));
-    man.wikis[0].param_versions = [
-      { file: 'docs/parameters-Copter-stable-V4.7.0.html', channel: 'stable',
-        version: '4.7.0', label: '4.7.0', bytes: 4e6, 'default': true },
-      { file: 'docs/parameters-Copter-stable-V4.6.3.html', channel: 'stable',
-        version: '4.6.3', label: '4.6.3', bytes: 4e6 },
-    ];
-    const cachesObj = makeCaches();
-    for (const id of ['common', 'copter']) {
-      (await cachesObj.open('ardupilot-offline-' + id)).put('/__ap_complete__',
-        completeMarker(MANIFEST.generated, id));
-    }
-    const { doc, w } = load({ manifest: man, caches: cachesObj,
-      served: { '/copter/docs/parameters-Copter-stable-V4.6.3.html': '<html>v463</html>' } });
-    for (let i = 0; i < 8; i++) { await settle(); }
-    // Everything saved: Save rests disabled until a new version is picked.
-    check('with nothing owed, Save rests disabled',
-          $(doc, 'download-cache-btn').disabled);
-    const box = doc.querySelector('.param-check[value*="4.6.3"]');
-    box.checked = true;
-    box.dispatchEvent(new w.Event('change', { bubbles: true })); await settle();
-    check('picking a version on a saved wiki arms Save',
-          !$(doc, 'download-cache-btn').disabled,
-          $(doc, 'download-cache-btn').title);
-    $(doc, 'download-cache-btn').dispatchEvent(
-      new w.MouseEvent('click', { bubbles: true }));
-    for (let i = 0; i < 12; i++) { await settle(); }
-    const c = await cachesObj.open('ardupilot-offline-copter');
-    check('the picked version is fetched and stored',
-          !!(await c.match('/copter/docs/parameters-Copter-stable-V4.6.3.html')));
-    check('the completed wiki keeps its marker throughout',
-          !!(await c.match('/__ap_complete__')));
-  }
-
-  console.log('\nan incremental save cannot hide a failure behind a stored sibling');
-  {
-    const man = JSON.parse(JSON.stringify(MANIFEST));
-    man.wikis[0].param_versions = [
-      { file: 'docs/parameters-Copter-stable-V4.7.0.html', channel: 'stable',
-        version: '4.7.0', label: '4.7.0', bytes: 4e6, 'default': true },
-      { file: 'docs/parameters-Copter-stable-V4.6.3.html', channel: 'stable',
-        version: '4.6.3', label: '4.6.3', bytes: 4e6 },
-    ];
-    const cachesObj = makeCaches();
-    for (const id of ['common', 'copter']) {
-      (await cachesObj.open('ardupilot-offline-' + id)).put('/__ap_complete__',
-        completeMarker(MANIFEST.generated, id));
-    }
-    // One version already stored and reachable; the newly picked one is not.
-    (await cachesObj.open('ardupilot-offline-copter')).put(
-      '/copter/docs/parameters-Copter-stable-V4.7.0.html', new FakeResponse('<html>v470</html>'));
-    const { doc, w } = load({ manifest: man, caches: cachesObj,
-      served: { '/copter/docs/parameters-Copter-stable-V4.7.0.html': '<html>v470</html>' } });
-    for (let i = 0; i < 8; i++) { await settle(); }
-    const box = doc.querySelector('.param-check[value*="4.6.3"]');
-    box.checked = true;
-    box.dispatchEvent(new w.Event('change', { bubbles: true })); await settle();
-    $(doc, 'download-cache-btn').dispatchEvent(
-      new w.MouseEvent('click', { bubbles: true }));
-    for (let i = 0; i < 12; i++) { await settle(); }
-    check('the unreachable pick fails the save instead of hiding',
-          /could not fetch the parameter pages/i.test($(doc, 'cache-progress').textContent || ''),
-          JSON.stringify($(doc, 'cache-progress').textContent));
-  }
-
-  console.log('\na parameter page the storage refuses fails the save out loud');
-  {
-    const cachesObj = makeCaches();
-    (await cachesObj.open('ardupilot-offline-common')).put('/__ap_complete__',
-      completeMarker(MANIFEST.generated, 'common'));
-    const man = JSON.parse(JSON.stringify(MANIFEST));
-    man.wikis[2].param_versions = [
-      { file: 'docs/parameters-Dev-stable-V4.7.0.html', channel: 'stable',
-        version: '4.7.0', label: '4.7.0', bytes: 1000, 'default': true },
-    ];
-    const { doc, w, sandbox } = load({ manifest: man, caches: cachesObj,
-      archives: { 'dev/index.html': '<html>dev</html>' },
-      served: { '/dev/docs/parameters-Dev-stable-V4.7.0.html': '<html>p</html>' } });
-    await settle();
-    // The parameter page arrives but the cache refuses to hold it.
-    const real = sandbox.caches.open.bind(sandbox.caches);
-    sandbox.caches.open = async (name) => {
-      const c = await real(name);
-      if (name === 'ardupilot-offline-dev') {
-        const put = c.put.bind(c);
-        c.put = async (k, v) => {
-          if (String(k && k.url ? k.url : k).indexOf('parameters-') !== -1) {
-            const e = new Error('quota'); e.name = 'QuotaExceededError'; throw e;
-          }
-          return put(k, v);
-        };
-      }
-      return c;
-    };
-    doc.querySelector('.wiki-check[value="dev"]').click(); await settle();
-    $(doc, 'download-cache-btn').dispatchEvent(
-      new w.MouseEvent('click', { bubbles: true }));
-    for (let i = 0; i < 12; i++) { await settle(); }
-    check('a stored-refused parameter page fails the save out loud',
-          /space|quota|failed/i.test($(doc, 'cache-progress').textContent || '') &&
-          !(await (await cachesObj.open('ardupilot-offline-dev')).match('/__ap_complete__')),
-          JSON.stringify($(doc, 'cache-progress').textContent));
-  }
-
-  console.log('\na refused refresh is honestly incomplete');
-  {
+  await section('a refused refresh is honestly incomplete', async () => {
     // The wiki was saved and complete; the refresh arrives damaged. The old
     // marker must fall with it, or the mix would serve as complete forever.
     const cachesObj = makeCaches();
@@ -2163,30 +2433,114 @@ async function main() {
     check('the worker is told the caches changed after a refused refresh',
           swMessages.some((m) => m && m.type === 'CACHES_CHANGED'),
           JSON.stringify(swMessages));
-  }
+  });
 
-  console.log('\na persistence prompt nobody answers does not stall the save');
-  {
+  await section('a persistence prompt nobody answers does not stall the save', async () => {
     // Firefox turns navigator.storage.persist() into a doorhanger, and the
     // promise stays pending until the reader notices it. The save must not
     // wait on that: persistence is a nicety, the download is the point.
     const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', MANIFEST.generated, { '_images/seed.png': ['h0', 'x'] });
     const body = '<html>a</html>';
     const { doc, sandbox } = load({ manifest: MANIFEST, caches: cachesObj,
       archives: { 'copter/index.html': body },
       tables: { 'copter-files.json': { 'copter/index.html': await fileHash(body) } } });
     await settle();
-    sandbox.navigator.storage.persist = () => new Promise(() => {});
+    // The prompt is answered only after the save is long done.
+    let allow;
+    sandbox.navigator.storage.persist = () => new Promise((r) => { allow = r; });
     doc.querySelector('.wiki-check[value="copter"]').click(); await settle();
     $(doc, 'download-cache-btn').click();
     for (let i = 0; i < 40; i++) { await settle(); }
     const text = $(doc, 'cache-progress').textContent || '';
-    check('the save gets past the space check without an answer',
-          !/Checking space/.test(text), JSON.stringify(text));
-  }
+    check('the save completes without an answer', text === 'Saved', JSON.stringify(text));
+    check('and the wiki is marked saved',
+          !!(await (await cachesObj.open('ardupilot-offline-copter')).match('/__ap_complete__')));
+    check('storage still reads as temporary meanwhile',
+          /temporary/.test($(doc, 'storage-status').textContent || ''),
+          JSON.stringify($(doc, 'storage-status').textContent));
+    // The reader clicks Allow: the label must follow without a reload.
+    sandbox.navigator.storage.persisted = () => Promise.resolve(true);
+    allow(true);
+    for (let i = 0; i < 6; i++) { await settle(); }
+    check('a late allow is shown as soon as it arrives',
+          /permanent/.test($(doc, 'storage-status').textContent || ''),
+          JSON.stringify($(doc, 'storage-status').textContent));
+  });
 
-  console.log('\nan update tick hands the selection back');
-  {
+  await section('a save says it is checking once the bytes are in', async () => {
+    // The bar measures bytes; hashing and the table check come after. On a
+    // slow device that tail is long, and the row must say so rather than
+    // sit at 100% "Saving" or claim Saved before the marker is written.
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', MANIFEST.generated, { '_images/seed.png': ['h0', 'x'] });
+    const body = '<html>a</html>';
+    const { doc, w } = load({ manifest: MANIFEST, caches: cachesObj,
+      archives: { 'copter/index.html': body },
+      tables: { 'copter-files.json': { 'copter/index.html': await fileHash(body) } } });
+    await settle();
+    const said = [];
+    const badgeAt = () => (doc.querySelector('tr[data-wiki="copter"] .apo-badge') || {}).textContent;
+    new w.MutationObserver(() => {
+      said.push([$(doc, 'cache-progress').textContent, badgeAt()]);
+    }).observe($(doc, 'cache-progress'), { childList: true, characterData: true, subtree: true });
+    doc.querySelector('.wiki-check[value="copter"]').click(); await settle();
+    $(doc, 'download-cache-btn').click();
+    for (let i = 0; i < 40; i++) { await settle(); }
+    const checking = said.filter(([s]) => /^Checking Copter/.test(s));
+    check('the status says Checking Copter after the bytes arrive',
+          checking.length > 0, JSON.stringify(said.map(([s]) => s).slice(-6)));
+    check('the row is not marked Saved while it is still checking',
+          checking.length > 0 && checking.every(([, b]) => b !== 'Saved'),
+          JSON.stringify(checking));
+    check('and it ends Saved', $(doc, 'cache-progress').textContent === 'Saved' && badgeAt() === 'Saved');
+  });
+
+  await section('a refresh cancelled after it started writing is unmarked', async () => {
+    // The first entry lands, the stream stalls, the reader cancels. The old
+    // marker would vouch for a copy that is half new and half old.
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', MANIFEST.generated, { '_images/seed.png': ['h0', 'x'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old'], 'copter/docs/a.html': ['h2', 'old a'] });
+    const body = '<html>new</html>';
+    const { doc, w, sandbox, swMessages } = load({ manifest: MANIFEST, caches: cachesObj,
+      archives: { 'copter/index.html': body, 'copter/docs/a.html': '<html>new a</html>' },
+      tables: { 'copter-files.json': { 'copter/index.html': 'deadbeefdeadbeef', 'copter/docs/a.html': 'deadbeefdeadbeef' } } });
+    await settle();
+    // The archive delivers its first entry and then hangs until aborted.
+    const whole = tarBytes({ 'copter/index.html': body, 'copter/docs/a.html': '<html>new a</html>' });
+    const realFetch = sandbox.fetch;
+    sandbox.fetch = (u, o) => {
+      if (!/copter-offline\.tar/.test(String(u))) { return realFetch(u, o); }
+      return Promise.resolve({ ok: true, body: new ReadableStream({ start(c) {
+        c.enqueue(new Uint8Array(whole.subarray(0, 1024)));
+        if (o && o.signal) {
+          o.signal.addEventListener('abort', () => {
+            const e = new Error('aborted'); e.name = 'AbortError'; c.error(e);
+          });
+        }
+      } }) });
+    };
+    sandbox.window.fetch = sandbox.fetch;
+    swMessages.length = 0;
+    $(doc, 'check-btn').dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
+    // Wait until the first entry has been rewritten, then cancel.
+    const c = await cachesObj.open('ardupilot-offline-copter');
+    for (let i = 0; i < 30; i++) {
+      await settle();
+      if ((await bodyAt(c, '/copter/index.html')) === body) { break; }
+    }
+    check('the first entry was rewritten before the cancel', (await bodyAt(c, '/copter/index.html')) === body);
+    $(doc, 'download-cache-btn').dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
+    for (let i = 0; i < 12; i++) { await settle(); }
+    check('a cancelled refresh takes the stale marker with it',
+          !(await c.match('/__ap_complete__')),
+          JSON.stringify($(doc, 'cache-progress').textContent));
+    check('and tells the worker', swMessages.some((m) => m && m.type === 'CACHES_CHANGED'),
+          JSON.stringify(swMessages));
+  });
+
+  await section('an update tick hands the selection back', async () => {
     // The reader ticked Rover and unticked Copter; the tick has to re-download
     // Copter and must not leave its own selection behind.
     const cachesObj = makeCaches();
@@ -2210,10 +2564,9 @@ async function main() {
           !doc.querySelector('.wiki-check[value="copter"]').checked,
           'rover ' + doc.querySelector('.wiki-check[value="rover"]').checked +
           ', copter ' + doc.querySelector('.wiki-check[value="copter"]').checked);
-  }
+  });
 
-  console.log('\na differential update hands the selection back too');
-  {
+  await section('a differential update hands the selection back too', async () => {
     // The ordinary case: every stale wiki is patched in place, no archive.
     // The reader ticked Rover and unticked Copter; the tick must not
     // re-render that choice away on its way out.
@@ -2242,10 +2595,9 @@ async function main() {
           !doc.querySelector('.wiki-check[value="copter"]').checked,
           'rover ' + doc.querySelector('.wiki-check[value="rover"]').checked +
           ', copter ' + doc.querySelector('.wiki-check[value="copter"]').checked);
-  }
+  });
 
-  console.log('\na refresh that dies mid-unpack is not left marked complete');
-  {
+  await section('a refresh that dies mid-unpack is not left marked complete', async () => {
     // The first entry is rewritten, then the unpack throws on the second.
     // The old marker and table would serve that mix as complete, and the
     // worker's memo of the marker would keep doing so until told.
@@ -2267,10 +2619,9 @@ async function main() {
     check('and tells the worker the caches changed',
           swMessages.some((m) => m && m.type === 'CACHES_CHANGED'),
           JSON.stringify(swMessages));
-  }
+  });
 
-  console.log('\na mid-save build rotation names itself');
-  {
+  await section('a mid-save build rotation names itself', async () => {
     // Correct hashes throughout: only the missing check can fire, so its
     // mutation cannot hide behind the damaged message.
     const cachesObj = makeCaches();
@@ -2287,10 +2638,9 @@ async function main() {
           /published a new build/i.test($(doc, 'cache-progress').textContent || '') &&
           !(await (await cachesObj.open('ardupilot-offline-copter')).match('/__ap_complete__')),
           JSON.stringify($(doc, 'cache-progress').textContent));
-  }
+  });
 
-  console.log('\na table of null is not a table');
-  {
+  await section('a table of null is not a table', async () => {
     const cachesObj = makeCaches();
     const { doc } = load({ manifest: MANIFEST, caches: cachesObj,
       archives: { 'copter/index.html': '<html>a</html>' },
@@ -2303,10 +2653,9 @@ async function main() {
           !(await (await cachesObj.open('ardupilot-offline-copter')).match('/__ap_complete__')) &&
           /could not verify/i.test($(doc, 'cache-progress').textContent || ''),
           JSON.stringify($(doc, 'cache-progress').textContent));
-  }
+  });
 
-  console.log('\nno file table, no completed save');
-  {
+  await section('no file table, no completed save', async () => {
     const cachesObj = makeCaches();
     const { doc } = load({ manifest: MANIFEST, caches: cachesObj,
       archives: { 'copter/index.html': '<html>a</html>' },
@@ -2319,10 +2668,9 @@ async function main() {
           !(await (await cachesObj.open('ardupilot-offline-copter')).match('/__ap_complete__')) &&
           /could not verify/i.test($(doc, 'cache-progress').textContent || ''),
           JSON.stringify($(doc, 'cache-progress').textContent));
-  }
+  });
 
-  console.log('\nthe Cancel click still cancels');
-  {
+  await section('the Cancel click still cancels', async () => {
     const cachesObj = makeCaches();
     const { doc, w, sandbox } = load({ manifest: MANIFEST, caches: cachesObj });
     await settle();
@@ -2346,10 +2694,9 @@ async function main() {
           !/Cancel/.test($(doc, 'download-cache-btn').textContent) &&
           /cancelled/i.test($(doc, 'cache-progress').textContent || ''),
           JSON.stringify($(doc, 'cache-progress').textContent));
-  }
+  });
 
-  console.log('\nthree ways the panel used to lie');
-  {
+  await section('three ways the panel used to lie', async () => {
     // A legacy folded cache: healed by the check, never "updated" forever.
     const cachesObj = makeCaches();
     (await cachesObj.open('ardupilot-offline-common')).put('/__ap_complete__',
@@ -2364,7 +2711,7 @@ async function main() {
           !cachesObj._all.has('ardupilot-offline-ardupilot') &&
           !/Downloading again: .*ardupilot/i.test($(doc, 'check-result').textContent || ''),
           [...cachesObj._all.keys()].join(','));
-  }
+  });
   {
     // A table hash the build tool left empty vouches for nothing.
     const cachesObj = makeCaches();
@@ -2425,8 +2772,7 @@ async function main() {
     for (let i = 0; i < 6; i++) { await settle(); }
   }
 
-  console.log('\na Save clicked mid-check is refused politely');
-  {
+  await section('a Save clicked mid-check is refused politely', async () => {
     const cachesObj = makeCaches();
     await seedSaved(cachesObj, 'dev', MANIFEST.generated, { 'dev/index.html': ['h1', 'x'] });
     const { doc, w, sandbox, fetchCalls } = load({ manifest: MANIFEST, caches: cachesObj,
@@ -2457,10 +2803,9 @@ async function main() {
     for (let i = 0; i < 10; i++) { await settle(); }
     check('the same click works once the check has finished', tars() > 0,
           tars() + ' tar fetches');
-  }
+  });
 
-  console.log('\na finishing check leaves the buttons with the download that owns them');
-  {
+  await section('a finishing check leaves the buttons with the download that owns them', async () => {
     const cachesObj = makeCaches();
     await seedSaved(cachesObj, 'dev', OLD_BUILD, { 'dev/index.html': ['h1', 'x'] });
     const { doc, w, sandbox } = load({ manifest: MANIFEST, caches: cachesObj });
@@ -2486,10 +2831,9 @@ async function main() {
     for (let i = 0; i < 6; i++) { await settle(); }
     check('the finishing check leaves it with the download that owns it',
           $(doc, 'check-btn').disabled);
-  }
+  });
 
-  console.log('\nthe repair keeps the selection the reader made');
-  {
+  await section('the repair keeps the selection the reader made', async () => {
     const cachesObj = makeCaches();
     for (const id of ['copter', 'rover', 'dev']) {
       (await cachesObj.open('ardupilot-offline-' + id)).put('/__ap_complete__',
@@ -2515,45 +2859,32 @@ async function main() {
           !doc.querySelector('.wiki-check[value="rover"]').checked);
     check('and the select-all header follows the restored boxes',
           !$(doc, 'select-all').checked);
-  }
+  });
 
-  console.log('\nthe repair keeps the parameter versions the reader picked');
-  {
-    const man = JSON.parse(JSON.stringify(MANIFEST));
-    const mkv = (ver, dflt) => ({
-      file: `docs/parameters-Copter-stable-V${ver}.html`, channel: 'stable',
-      version: ver, label: ver, bytes: 4e6, ...(dflt ? { 'default': true } : {}) });
-    man.wikis[0].param_versions = [mkv('4.7.0', true), mkv('4.6.3')];
+  await section('a version the file could not carry is named, not swallowed', async () => {
     const cachesObj = makeCaches();
-    (await cachesObj.open('ardupilot-offline-copter')).put('/__ap_complete__',
-      completeMarker(MANIFEST.generated, 'copter'));
-    (await cachesObj.open('ardupilot-offline-common')).put('/_common/_images/x.png',
-      new FakeResponse('png'));
-    const { doc, w } = load({ manifest: man, caches: cachesObj,
-      archives: { '_images/shared.png': 'png' } });
-    for (let i = 0; i < 8; i++) { await settle(); }
-    w.ArduPilotExport = { exportHtml: () => Promise.resolve({ pages: 1 }) };
-    // The reader picks both versions by hand; the stored wiki's cache sync
-    // has already cleared the un-downloaded default.
-    for (const ver of ['4.7.0', '4.6.3']) {
-      const box = doc.querySelector('.param-check[value*="' + ver + '"]');
-      box.checked = true;
-      box.dispatchEvent(new w.Event('change', { bubbles: true }));
+    for (const id of ['common', 'copter']) {
+      (await cachesObj.open('ardupilot-offline-' + id)).put('/__ap_complete__',
+        completeMarker(MANIFEST.generated, id));
     }
+    const { doc, w } = load({ manifest: MANIFEST, caches: cachesObj });
     await settle();
-    $(doc, 'dl-single').dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
+    const click = () => $(doc, 'dl-single')
+      .dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
+    w.ArduPilotExport = { exportHtml: () => Promise.resolve({ pages: 3, leftOut: 2 }) };
+    click();
     for (let i = 0; i < 15; i++) { await settle(); }
-    check('a picked parameter version survives the repair',
-          doc.querySelector('.param-check[value*="4.6.3"]').checked);
-    check('the wiki\'s own All versions box follows the restored picks',
-          !!doc.querySelector('.param-all[data-wiki="copter"]') &&
-          doc.querySelector('.param-all[data-wiki="copter"]').checked,
-          'present ' + !!doc.querySelector('.param-all[data-wiki="copter"]') +
-          ' checked ' + (doc.querySelector('.param-all[data-wiki="copter"]') || {}).checked);
-  }
+    const said = $(doc, 'dl-single').textContent || '';
+    check('the reader is told how many parameter versions were left out',
+          /3 pages/.test(said) && /2 parameter versions left out/.test(said), said);
+    w.ArduPilotExport = { exportHtml: () => Promise.resolve({ pages: 3, leftOut: 0 }) };
+    click();
+    for (let i = 0; i < 15; i++) { await settle(); }
+    const whole = $(doc, 'dl-single').textContent || '';
+    check('and a whole file says nothing of the sort', !/left out/.test(whole), whole);
+  });
 
-  console.log('\nthe export button cannot start a second export mid-flight');
-  {
+  await section('the export button cannot start a second export mid-flight', async () => {
     const cachesObj = makeCaches();
     // Everything already saved: no repair stands between click and pack, so
     // only the re-entry guard separates one export from two.
@@ -2574,10 +2905,9 @@ async function main() {
     click(); await settle();
     check('re-entrant clicks run exactly one export', calls === 1, calls + ' exports');
     if (finish) { finish(); } await settle(); await settle();
-  }
+  });
 
-  console.log('\na stale wiki found mid-pack defers instead of downloading');
-  {
+  await section('a stale wiki found mid-pack defers instead of downloading', async () => {
     const cachesObj = makeCaches();
     await seedSaved(cachesObj, 'dev', OLD_BUILD, { 'dev/index.html': ['h1', 'x'] });
     (await cachesObj.open('ardupilot-offline-common')).put('/__ap_complete__',
@@ -2629,10 +2959,9 @@ async function main() {
     check('the deferred update resumes once the export finishes',
           updates() > beforeResume,
           updates() + ' update fetches, ' + beforeResume + ' before');
-  }
+  });
 
-  console.log('\nthe check tail carries the resume release() had to skip');
-  {
+  await section('the check tail carries the resume release() had to skip', async () => {
     const cachesObj = makeCaches();
     await seedSaved(cachesObj, 'dev', OLD_BUILD, { 'dev/index.html': ['h1', 'x'] });
     (await cachesObj.open('ardupilot-offline-common')).put('/__ap_complete__',
@@ -2679,10 +3008,9 @@ async function main() {
     const devTables = fetchCalls.filter((u) => u.indexOf('dev-files.json') !== -1).length;
     check('and the resumed update runs exactly once', devTables === 1,
           devTables + ' table fetches');
-  }
+  });
 
-  console.log('\na deferred update survives a failing pre-save');
-  {
+  await section('a deferred update survives a failing pre-save', async () => {
     const cachesObj = makeCaches();
     await seedSaved(cachesObj, 'dev', OLD_BUILD, { 'dev/index.html': ['h1', 'x'] });
     (await cachesObj.open('ardupilot-offline-common')).put('/_common/_images/x.png',
@@ -2720,10 +3048,9 @@ async function main() {
     for (let i = 0; i < 12; i++) { await settle(); }
     check('the deferred update survives the failed pre-save',
           updates() > 0, updates() + ' update fetches after the failure');
-  }
+  });
 
-  console.log('\nthe span between pre-save and pack is owned too');
-  {
+  await section('the span between pre-save and pack is owned too', async () => {
     const cachesObj = makeCaches();
     (await cachesObj.open('ardupilot-offline-copter')).put('/__ap_complete__',
       completeMarker(MANIFEST.generated, 'copter'));
@@ -2758,10 +3085,9 @@ async function main() {
     if (finishExport) { finishExport(); }
     for (let i = 0; i < 10; i++) { await settle(); }
     check('and it comes back at rest', !$(doc, 'clear-btn').disabled);
-  }
+  });
 
-  console.log('\na check landing during the pre-save defers like any other');
-  {
+  await section('a check landing during the pre-save defers like any other', async () => {
     const cachesObj = makeCaches();
     await seedSaved(cachesObj, 'dev', OLD_BUILD, { 'dev/index.html': ['h1', 'x'] });
     // Broken common: the export must repair it first, and that window is
@@ -2809,10 +3135,9 @@ async function main() {
     for (let i = 0; i < 12; i++) { await settle(); }
     check('and the deferred update resumes after that export too',
           updates() > 0, updates() + ' update fetches after completion');
-  }
+  });
 
-  console.log('\nan export cannot start while an update is writing the caches');
-  {
+  await section('an export cannot start while an update is writing the caches', async () => {
     const cachesObj = makeCaches();
     await seedSaved(cachesObj, 'dev', OLD_BUILD, { 'dev/index.html': ['h1', 'x'] });
     (await cachesObj.open('ardupilot-offline-common')).put('/__ap_complete__',
@@ -2848,10 +3173,9 @@ async function main() {
     for (let i = 0; i < 10; i++) { await settle(); }
     check('the export runs once the update has finished', calls === 1,
           calls + ' exports, ' + JSON.stringify($(doc, 'dl-single').textContent));
-  }
+  });
 
-  console.log('\nan export finishing under a busy check withholds only its button');
-  {
+  await section('an export finishing under a busy check withholds only its button', async () => {
     const cachesObj = makeCaches();
     await seedSaved(cachesObj, 'dev', MANIFEST.generated, { 'dev/index.html': ['h1', 'x'] });
     (await cachesObj.open('ardupilot-offline-common')).put('/__ap_complete__',
@@ -2883,10 +3207,9 @@ async function main() {
     for (let i = 0; i < 8; i++) { await settle(); }
     check('the finished check then frees its own button',
           !$(doc, 'check-btn').disabled);
-  }
+  });
 
-  console.log('\na finishing check cannot take the panel from a packing export');
-  {
+  await section('a finishing check cannot take the panel from a packing export', async () => {
     const cachesObj = makeCaches();
     // Current build: the check must stay a check, not become a re-download.
     await seedSaved(cachesObj, 'dev', MANIFEST.generated, { 'dev/index.html': ['h1', 'x'] });
@@ -2937,10 +3260,9 @@ async function main() {
     finishExport(); await settle(); await settle();
     check('completion hands the panel back',
           !$(doc, 'check-btn').disabled && !$(doc, 'dl-single').disabled);
-  }
+  });
 
-  console.log('\na running export can be cancelled from its own button');
-  {
+  await section('a running export can be cancelled from its own button', async () => {
     const cachesObj = makeCaches();
     for (const id of ['common', 'copter']) {
       (await cachesObj.open('ardupilot-offline-' + id)).put('/__ap_complete__',
@@ -2980,10 +3302,9 @@ async function main() {
           !$(doc, 'dl-single').disabled);
     check('cancelling hands the panel back',
           !$(doc, 'check-btn').disabled && !$(doc, 'clear-btn').disabled);
-  }
+  });
 
-  console.log('\noffline mode switch: off removes everything, after a warning');
-  {
+  await section('offline mode switch: off removes everything, after a warning', async () => {
     const cachesObj = makeCaches();
     for (const id of ['common', 'copter']) {
       (await cachesObj.open('ardupilot-offline-' + id)).put('/__ap_complete__',
@@ -3032,7 +3353,7 @@ async function main() {
           b.apOffline.calls.join() === 'disable' &&
           b.doc.getElementById('offline-off-warning').hidden,
           JSON.stringify(b.apOffline.calls));
-  }
+  });
 
   console.log('\n' + pass + ' passed, ' + fail + ' failed');
   if (fail) { console.log('failed: ' + failures.join('; ')); }
