@@ -13,7 +13,7 @@ controller. It runs natively and also entirely in the browser via WebAssembly,
 so an autonomy stack can be exercised against SITL without a local install.
 
 Supported Vehicles
-===================
+==================
 
 The steps on this page use a quadcopter in X configuration. SkySim maps the
 first four servo channels to its rotors and returns IMU, position, velocity and
