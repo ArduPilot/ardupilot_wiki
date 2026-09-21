@@ -1,4 +1,4 @@
-. _sitl-with-skysim:
+.. _sitl-with-skysim:
 
 ======================
 Using SITL with SkySim
