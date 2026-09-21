@@ -18,6 +18,7 @@ they are marked with **(Partner)** below. You may also want to check the list of
 * `Benewake <https://beixingguangzi.en.alibaba.com/>`__ (Partner)
 * `BlueRobotics <https://www.bluerobotics.com/store/>`__ (Partner)
 * `BZB UAS <https://bzbuas.com/>`__ (Partner)
+* `CORVON <https://www.corvon.tech>`__ (Partner)
 * `Craft & Theory <http://www.craftandtheoryllc.com/store/>`__ (FrSky telemetry, MAUCH power modules)
 * `CUAV <https://store.cuav.net/>`__ (Partner)
 * `CubePilot <https://www.cubepilot.org>`__ (Partner)
