@@ -53,10 +53,15 @@ For the following we will assume the sensor is connected to Serial2 of the autop
 
 Once the sensor is active you should be able to observe the optical flow and range sensor data on Mission Planner's "Status" page. The "opt_qua" and "rangefinder1" fields should show non-zero values.
 
+Indoor vs. Outdoor Use
+=======================
+
+The ToF rangefinder delivers its full rated range and accuracy indoors and in shade. Direct sunlight is a known physical limitation of laser time-of-flight sensors in general, not specific to this unit: ambient infrared from the sun overwhelms the sensor's return signal, cutting usable range to well under 1m and making readings unreliable. The optical flow sensor is comparatively more light-tolerant and continues to function outdoors given adequate surface texture. Outdoors it works at very short range, primarily used as a landing/take-off sensor since it is very accurate at short range outdoors. For outdoor altitude hold in direct sunlight, keep the sensor's downward view shaded (fly at dusk/dawn, under cover, or in overcast conditions), or use a barometer-based estimate as the flight controller's primary outdoor altitude source.
+
 Additional Notes
 =================
 
-- As with all optical flow sensors, a range finder is required to use the sensor for autonomous modes including :ref:`Loiter <loiter-mode>` and :ref:`RTL <rtl-mode>`.  MechFlow V1's onboard VL53L1X rangefinder, configured via ``RNGFND1_TYPE`` above, satisfies this requirement on its own — no separate rangefinder needs to be purchased or connected
+- As with all optical flow sensors, a range finder is required to use the sensor for autonomous modes including :ref:`Loiter <loiter-mode>` and :ref:`RTL <rtl-mode>`.  MechFlow V1's onboard VL53L1X rangefinder, configured via ``RNGFND1_TYPE`` above, satisfies this requirement on its own indoors, in shade, or at short range outdoors — see `Indoor vs. Outdoor Use`_.  For outdoor altitude hold in direct sunlight, a separate rangefinder rated for outdoor/sunlight use is recommended as the primary rangefinder; MechFlow V1 remains useful in that setup at short range, e.g. as a landing/take-off sensor
 - :ref:`FlowHold <flowhold-mode>` does not require the use of a rangefinder but performance is generally worse than Loiter mode and is not recommended
 - Performance can be improved by setting the :ref:`sensor's position parameters <common-sensor-offset-compensation>`. For example if the sensor is mounted 2cm forward and 5cm below the frame's center of rotation set :ref:`FLOW_POS_X <FLOW_POS_X>` to 0.02 and :ref:`FLOW_POS_Z <FLOW_POS_Z>` to 0.05
 - The onboard VL53L1X completes a new rangefinder measurement roughly every 55ms, while MSP telemetry is output at a fixed 100Hz; the rangefinder value is therefore repeated across several telemetry frames between updates rather than refreshed on every frame

@@ -114,6 +114,7 @@ tuning options for the vehicle.
 [/site]
     Moving Vehicle Initialization <common-moving-vehicle-initialization>
     Multiple Radio Control Receivers <common-multiple-rx>
+    Multi-Vehicle Flying <common-multi-vehicle-flying>
 [site wiki="copter,plane,rover,blimp,sub"]
     Non-GPS Navigation <common-non-gps-navigation-landing-page>
 [/site]

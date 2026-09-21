@@ -68,8 +68,8 @@ and coordinate its turns.
 
    <table border="1" class="docutils">
    <tr><th>Movement</th><th>Action</th></tr>
-   <tr><td>Roll Plane Right</td><td>Left aileron moves up and right aileron moves down</td><tr>
-   <tr><td>Roll Plane Left</td><td>Left aileron moves down and right aileron moves up</td><tr>
+   <tr><td>Roll Plane Right</td><td>Left aileron moves up and right aileron moves down</td></tr>
+   <tr><td>Roll Plane Left</td><td>Left aileron moves down and right aileron moves up</td></tr>
    <tr><td>Pitch plane up</td><td>Elevator moves down</td></tr>
    <tr><td>Pitch plane down</td><td>Elevator moves up</td></tr>
    <tr><td>Roll Plane Right</td><td>Rudder moves left</td></tr>
@@ -93,12 +93,12 @@ Keep the plane level in FBWA mode and command the following inputs by moving the
          
    <table border="1" class="docutils">
    <tr><th>Input</th><th>Action</th></tr>
-   <tr><td>Roll Right</td><td>Right aileron moves up and left aileron moves down</td><tr>
-   <tr><td>Roll Left</td><td>Left aileron moves up and right aileron moves down</td><tr>
-   <tr><td>Pitch up</td><td>Elevator moves up</td><tr>
-   <tr><td>Pitch down</td><td>Elevator moves down</td><tr>
-   <tr><td>Yaw right</td><td>Rudder moves right</td><tr>
-   <tr><td>Yaw left</td><td>Rudder moves left</td><tr>
+   <tr><td>Roll Right</td><td>Right aileron moves up and left aileron moves down</td></tr>
+   <tr><td>Roll Left</td><td>Left aileron moves up and right aileron moves down</td></tr>
+   <tr><td>Pitch up</td><td>Elevator moves up</td></tr>
+   <tr><td>Pitch down</td><td>Elevator moves down</td></tr>
+   <tr><td>Yaw right</td><td>Rudder moves right</td></tr>
+   <tr><td>Yaw left</td><td>Rudder moves left</td></tr>
    </table>
 
 If the control surfaces do not respond correctly, change the RCn_reversed

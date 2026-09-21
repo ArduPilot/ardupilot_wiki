@@ -485,8 +485,8 @@ The full list of input shaping parameters are:
 - :ref:`Q_A_RATE_R_MAX <Q_A_RATE_R_MAX>`
 - :ref:`Q_A_RATE_Y_MAX <Q_A_RATE_Y_MAX>`
 - :ref:`Q_A_RATE_WPY_MAX<Q_A_RATE_WPY_MAX>`
-- ``Q_P_JERK_XY``
-- ``Q_P_JERK_Z``
+- :ref:`Q_P_NE_JERK<Q_P_NE_JERK>`
+- :ref:`Q_P_D_JERK<Q_P_D_JERK>`
 - :ref:`Q_LOIT_ACC_MAX_M<Q_LOIT_ACC_MAX_M>`
 - :ref:`Q_LOIT_ANG_MAX <Q_LOIT_ANG_MAX>`
 - :ref:`Q_LOIT_BRK_ACC_M<Q_LOIT_BRK_ACC_M>`

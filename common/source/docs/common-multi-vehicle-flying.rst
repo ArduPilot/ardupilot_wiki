@@ -4,10 +4,7 @@
 Multi-Vehicle Flying
 ====================
 
-This page shows how to monitor and control multiple vehicles using a
-single ground station. Although this capability has been demonstrated
-(see video below) it is somewhat
-`experimental <https://diydrones.com/profiles/blogs/multi-vehicle-testing-with-apm-copter-tracker-and-mission-planner>`__.
+This page shows how to monitor and control multiple vehicles using a single ground station.  More information can be found on the :ref:`Follow mode <copter:follow-mode>` and :ref:`Mission Planner Swarming <planner:swarming>` pages.
 
 .. note::
 
@@ -19,64 +16,41 @@ single ground station. Although this capability has been demonstrated
 Equipment you will need
 =======================
 
--  Multiple `Planes <https://ardupilot.org/plane/index.html>`_ or
-   :ref:`Copters <copter:home>` or
-   :ref:`Rovers <rover:home>`
--  An :ref:`Antenna Tracker <antennatracker:home>`\ (a.k.a. Tracker)
-   to combine the telemetry data from vehicles and send to the GCS.
--  Pairs of\ :ref:`telemetry radios <common-telemetry-landingpage>` for
-   each vehicle (i.e. 2x number of vehicles) OR multi-point radios (like
-   the :ref:`RFD900 <common-rfd900>`) in which case just 1 radio for
-   each vehicle + 1 for the ground station.
--  GCS capable of displaying/controlling multiple vehicles (i.e. the
-   :ref:`Mission Planner <planner:home>`).
--  RC transmitter for each vehicle (optional).
+- Multiple `Planes <https://ardupilot.org/plane/index.html>`_, :ref:`Copters <copter:home>` or :ref:`Rovers <rover:home>`
+- Pairs of :ref:`telemetry radios <common-telemetry-landingpage>` (e.g. 2x number of vehicles) to allow each vehicle to be connected to the ground station PC and (optionally) a USB HUB increase the number of available USB ports on the PC
+
+   OR
+
+- Telemetry radios capable of mesh networking (e.g :ref:`DroneBridge ESP32 <common-esp32-telemetry>`, :ref:`RFD900 <common-rfd900>`) in which case just 1 radio for each vehicle + 1 for the ground station PC is required
+- GCS capable of displaying and controlling multiple vehicles (e.g :ref:`Mission Planner <planner:home>`, QGroundControl)
+- RC transmitter for each vehicle
 
 Pre-Flight Setup
 ================
 
--  If using SiK radios, :ref:`set the NetID <common-sik-telemetry-radio_configuring_using_the_mission_planner>`
-   of each pair of radios to a unique number.  I.e. if controlling 3
-   vehicles, set the ``NetID`` of one pair to "23", the 2nd pair to
-   "24", the 3rd pair to "25".
--  Connect one of each radio pairs to the vehicle autopilots
-   (i.e. Pixhawk) using Telem1 or Telem2.
--  Connect the other pairs to the Tracker's controller (i.e. Pixhawk)
-   using Telem1, Telem2 and Serial 4/5 ports.
--  If using Serial 4/5 set the Tracker's ``SERIAL4_PROTOCOL`` to "1" to
-   enable MAVLink communication on that port.
--  Connect to each vehicle's autopilot and the tracker and set
-   the ``SYSID_THISMAV`` to a unique number (i.e. "1" for first vehicle,
-   "2" for second vehicle, "3" for third, "9" for the tracker).
--  On the GCS, :ref:`reduce data rate <planner:mission-planner-telemetry-logs-setting-the-datarate>`
-   to the minimum acceptable value to reduce network traffic.
--  Plug in the tracker to the ground station PC using a USB cable.
+- Connect to each vehicle's autopilot and set its :ref:`MAV_SYSID <MAV_SYSID>` to a unique number (e.g. "1" for first vehicle, "2" for second vehicle, etc)
+- If using SiK radios, :ref:`set the NetID <common-sik-telemetry-radio_configuring_using_the_mission_planner>` of each pair of radios to a unique number (e.g. set the first pair's ``NetID`` to "23", the second's to "24", etc)
+- For each pair of radios, connect one to a vehicle's autopilot and the other to the ground station PC
+- On the GCS, connect to each radio.  If using Mission Planner, right-mouse-button-click to the left of the Connect button, select "Connection Options" and select the COM port of each telemetry radio and press "Connect" (:ref:`more details can be found here <common-connect-mission-planner-autopilot>`)
+
+.. image:: ../../../images/multi-vehicle-mp-connection.png
+    :target: ../_images/multi-vehicle-mp-connection.png
+
+- Confirm all vehicles appear on the GCS map
+- Optionally :ref:`reduce the telemetry data rate <common-telemetry-port-setup>` for each vehicle to reduce network traffic
 
 Controlling the vehicles
 ========================
 
-Plug in the battery of each vehicle and tracker.  After connecting to
-the tracker from the *Mission Planner* (or other GCS) each vehicle
-including the tracker should appear on the Map.
+How each vehicle is controlled depends upon the GCS used but if using Mission Planner, use the connection drop-down to select the vehicle to display and control.
 
-Controlling the vehicle depends upon the GCS used.  In *Mission Planner*,
-additional telemetry connections are added by right-clicking the
-**CONNECT** (or **DISCONNECT**) button, selecting **Connection Options**, and
-choosing the telemetry device in the dialog.  See
-:ref:`Connecting to multiple vehicles <common-connect-mission-planner-autopilot>`.
-Use the connection drop-down in the main window to select the link and vehicle
-to display and control.
+.. image:: ../../../images/multi-vehicle-mp-vehicle-select.png
+    :target: ../_images/multi-vehicle-mp-vehicle-select.png
 
-If using Copter, switch each vehicle into GUIDED mode.  On the MP's map,
-right-mouse-button-click and select "Takeoff" and input 2m to get the
-vehicle off the air.  Once in the air, each vehicle can be pushed around
-in GUIDED mode by selecting its connection and clicking on the map, or the
-mode can be changed to AUTO etc.
+If using Copter
 
-If you wish to retake control of a vehicle, use the transmitter for that
-vehicle to change the flight to LOITER, STABILIZE, etc and then fly
-manually.  If only one transmitter is being used (not recommended) then
-use the GCS to switch the single vehicle's mode to LOITER and then
-control with the TX sticks (the other vehicles will ignore the TX's
-roll, pitch and throttle input if they are in AUTO or GUIDED - they will
-accept yaw input however).
+- Switch each vehicle into GUIDED mode
+- Command each vehicle to take-off by right-mouse-button-clicking on the map, select "Takeoff" and input 2m
+- Each vehicle can be moved by first selecting its connection, then right-mouse-button click on the map and select "Fly to Here"
+- Change each vehicle's mode to Land or RTL to end the test
+- To retake control of a vehicle manually, use the vehicle's transmitter to change to a manual mode such as AltHold or Loiter

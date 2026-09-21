@@ -133,7 +133,6 @@ The flight mode may be changed on some vehicle types to Loiter, RTL or Land by s
    <td><strong>command</strong></td>
    <td>uint16_t</td>
    <td>MAV_CMD_NAV_LOITER_UNLIM=17, MAV_CMD_NAV_RETURN_TO_LAUNCH=20, MAV_CMD_NAV_LAND=21 or MAV_CMD_NAV_VTOL_LAND=85</td>
-   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>confirmation</strong></td>
