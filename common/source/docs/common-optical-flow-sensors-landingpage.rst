@@ -18,6 +18,7 @@ Select the links below for information on the available sensors.
     ARK Flow MR <common-arkflow_mr>
     BlueOS OpticalFlow <common-blueos-opticalflow>
     Cheerson CX-OF <common-cheerson-cxof>
+    CORVON CV0850 <common-corvon-cv0850>
     HereFlow <common-hereflow>
     Holybro H-Flow <https://holybro.com/products/h-flow>
     Mateksys 3901-L0X <common-mateksys-optflow-3901L0X>
