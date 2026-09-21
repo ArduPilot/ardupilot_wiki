@@ -1,8 +1,18 @@
 .. _sitl-with-scrimmage:
 
-===================================
-Using SCRIMMAGE as a SITL simulator
-===================================
+=============================================
+Archived: Using SCRIMMAGE as a SITL simulator
+=============================================
+
+.. warning::
+
+    This topic is archived. The SCRIMMAGE simulation connection has not been
+    maintained for a long time and may not work with current ArduPilot code.
+    Developers wanting a multi-vehicle simulation environment should use
+    :ref:`Webots <sitl-with-webots>`, :ref:`Gazebo <sitl-with-gazebo>` or
+    :ref:`PteroSim <sitl-with-pterosim>` instead. See :ref:`Simulation <simulation-2>`
+    for the full list of supported simulators.
+
 `Simulating Collaborative Robots in Massive Mulit-Agent Game Execution (SCRIMMAGE) <http://www.scrimmagesim.org/>`__
 provides a flexible simulation environment for the experimentation and testing of novel mobile robotics algorithms.
 SCRIMMAGE provides a three-dimensional robotics environment that can simulate varying levels of sensor and motion model
@@ -20,6 +30,7 @@ Starting an ArduPlane Simulation
 ================================
 
 To start an ArduPlane simulation use the ``-f`` argument in sim_vehicle.py:
+
 ::
 
     cd ArduPlane
@@ -29,6 +40,7 @@ Starting an ArduCopter Simulation
 =================================
 
 To start an ArduCopter simulation use the ``-f`` argument in sim_vehicle.py:
+
 ::
 
     cd ArduCopter
@@ -39,6 +51,7 @@ Additional SCRIMMAGE Parameters
 
 Additional parameters can be passed into SCRIMMAGE using the ``-A`` and ``--config`` arguments. These parameters can be used to
 overwrite the defaults in the SCRIMMAGE mission file such as the motion model, visual model, or terrain.
+
 ::
 
     cd ArduPlane

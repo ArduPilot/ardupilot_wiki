@@ -12,6 +12,7 @@ This page describes how to protect an ArduPilot vehicle from external threats.
     MAVLink2 Signing <common-MAVLink2-signing>
     Parameter Lockdown <common-parameter-lockdown>
     Secure Firmware (tamper-proof) <secure-firmware>
+    Remote ID <common-remoteid>
 
 The first step in protecting the vehicle is to ensure that it is physically secure.  If a malicious individual has physical access to the vehicle there are numerous ways they could endanger the system including cutting wires, breaking propellers, adding devices that interfere with the sensors (vibration, magnetic interference, EMI).  While the ArduPilot software has `pre-arm checks <https://ardupilot.org/copter/docs/common-prearm-safety-checks.html>`__ that may catch some methods of vandalism, it cannot protect against them all.
 
@@ -33,7 +34,7 @@ The "security attack surface" is the set of access points that a malicious actor
    * - `Ethernet <https://ardupilot.org/copter/docs/common-network.html>`__
      - Used primarily for :ref:`companion computers <companion-computers>` and `camera gimbals <https://ardupilot.org/copter/docs/common-cameras-and-gimbals.html>`__ and protection should be applied to their attack surfaces
    * - GPS
-     - Susceptible to jamming and spoofing.  The `EKF failsafe <https://ardupilot.org/copter/docs/ekf-inav-failsafe.html>`__ may trigger a failsafe action but consider adding `Non-GPS navigation <https://ardupilot.org/copter/docs/common-non-gps-navigation-landing-page.html>`__ as a backup
+     - Susceptible to jamming and spoofing.  The `EKF failsafe <https://ardupilot.org/copter/docs/common-ekf-inav-failsafe.html>`__ may trigger a failsafe action but consider adding `Non-GPS navigation <https://ardupilot.org/copter/docs/common-non-gps-navigation-landing-page.html>`__ as a backup
    * - I2C / SPI
      - Used for IMU and some `peripherals <https://ardupilot.org/copter/docs/common-optional-hardware.html>`__ including compass and lidar
    * - RC Receiver Input

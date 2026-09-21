@@ -71,6 +71,7 @@ value to users with old hardware.
     Basic Tuning <basic-tuning>
     Auxiliary Function Switches (3.6 and earlier) <channel-7-and-8-options>
     TradHeli Loading Firmware <loading-the-code>
+    GPS Failsafe and Glitch Protection <gps-failsafe-glitch-protection>
 [/site]
 [site wiki="rover"]
     Pre-4.0 Rover Avoidance <rover-object-avoidance>
@@ -78,6 +79,7 @@ value to users with old hardware.
     Tuning Steering and Navigation (ver 3.1 and older) <tuning-steering-and-navigation-for-a-rover>
     Tuning Waypoint Turn Speed (ver 3.1 and older) <speed-turn-parameter-tuning>
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
+    ArduRoller Balance Bot <reference-frames-arduroller>
 [/site]
 
 [site wiki="plane"]
@@ -115,6 +117,7 @@ value to users with old hardware.
     Building for Navio on RPI 2<building-for-navio-on-rpi2>
     Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>
     Intel Edison <intel-edison>
+    ODroid <odroid-via-mavlink>
     Interfacing with Pixhawk Using the NSH <interfacing-with-pixhawk-using-the-nsh>
     BeaglePilot Project <beaglepilot>
     Making a MAVLink WiFi bridge using the Raspberry Pi <making-a-mavlink-wifi-bridge-using-the-raspberry-pi>
@@ -124,6 +127,9 @@ value to users with old hardware.
     SITL Serial Mapping <sitl-serial-mapping>
     2020/2021 Roadmap <roadmap>
     Trouble Shooting Pixhawk4 Boot <troubleshooting-pixhawkpx4-boot>
+    AirSim Simulator <sitl-with-airsim>
+    Morse Simulator <sitl-with-morse>
+    SCRIMMAGE Simulator <sitl-with-scrimmage>
 [/site]
 [site wiki="copter,rover"]
 .. toctree::
@@ -132,5 +138,6 @@ value to users with old hardware.
     Visual Odometry with OpenKai and ZED <common-zed>
 [/site]
 
+    Advanced user tools (downloads) <common-downloads_advanced_user_tools>
 
 [copywiki destination="copter,plane,rover,dev,sub"]

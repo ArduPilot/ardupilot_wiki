@@ -135,6 +135,16 @@ The device will appear under "PAIRED DEVICES"
 
 Then start you Android based ground control station and connect the Bluetooth data stream. Some systems will automatically ask you select the GCS application to use the BT connection. Sometimes you will have to explicitly setup the BT connection within the GCS application.
 
+Connecting with Linux to any Ground Station
+===================================================
+
+To bind the Bluetooth module to a ground station like MAVProxy or Mission Planner you need to pair it to your machine. With Linux the easiest way is to use rfcomm, this is a Linux utility that allows you to bind a Bluetooth device to a serial port so you can connect to it like you have a USB cable plugged in.
+
+1. Connect the Bluetooth device to your laptop. The easiest way to do this is through your GUI, I am using the settings that are built in to GNOME. You need to put it in pairing mode then pair it, you will be prompted to enter a code; the code is often 1234 or 0000, but see below for more info.
+2. You need to find the MAC address of your module, you can do this by using CLI tools but you can also find it in your GUI.
+3. To bind the Bluetooth device to a serial port you can use a tool like rfcomm, this is a Linux tool (see the `man page <https://manpages.debian.org/rfcomm>`__). It is quite simple to use, you first need to run ``sudo rfcomm bind /dev/your_serial_port_of_choice XX:XX:XX:XX:XX:XX`` where the last argument is your MAC address. For my module the command looked like ``sudo rfcomm bind /dev/rfcomm24 04:25:04:12:0A:16``. This is not persistent between reboots, so after a reboot you should use ``sudo rfcomm release all`` which will release all bindings, then you can re-pair with the previous command.
+4. Connecting to the device is as easy as connecting to a normal serial device. For MAVProxy you can run ``mavproxy.py --master=/dev/rfcomm24`` and you are connected.
+
 How to Change Baud Rate, Device Name and Device PIN
 ===================================================
 

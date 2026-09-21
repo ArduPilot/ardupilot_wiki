@@ -81,6 +81,21 @@ above shows some characteristics of the spline
 -  Waypoint #5 is a straight line so the vehicle lines itself up to
    point towards waypoint #5 even before reaching waypoint #4.
 
+Arc Waypoint
+~~~~~~~~~~~~
+
+.. image:: ../images/arc-waypoint.jpg
+    :target: ../_images/arc-waypoint.jpg
+
+The vehicle will fly an arc using the specified angle to the location specified as a lat, lon and altitude (in meters).
+
+**Arc Angle** - The angle in degrees from the starting position to the exit position of the arc in the NE frame.
+Positive values are CW arcs and negative values are CCW arcs.  If using Mission Planner the preceding waypoints's "AZ" +/- the following waypoint's "AZ" will result in a circular arc (e.g. constant radius through the arc).
+
+**Lat, Lon** - the latitude and longitude targets.  If left as zero, current location will be substituted for waypoint location, making it appear as if the waypoint is simply skipped.
+
+**Alt** - the target altitude above home in meters.  If left as zero it will hold the current altitude.
+
 Loiter_Time
 ~~~~~~~~~~~
 

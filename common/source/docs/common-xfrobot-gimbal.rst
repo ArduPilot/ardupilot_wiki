@@ -9,6 +9,10 @@ XFRobot Gimbals
 .. image:: ../../../images/xfrobot-gimbal.png
     :target: https://www.allxianfei.com/en/uav-payloads/
 
+.. note::
+
+    The XFRobot C-20T is the same as the :ref:`CADDX GM3 <common-caddx-gimbal>` and may be setup using those instructions
+
 .. warning::
 
     Support for these gimbals is available in ArduPilot 4.7 (and higher)
@@ -21,7 +25,7 @@ Where and What to Buy
 Install ArduPilot with XFRobot Support
 --------------------------------------
 
-Support for the XFRobot gimbals is available in ArduPilot 4.7 (and higher) and also requires the 'HAL_MOUNT_XFROBOT_ENABLED' build option to be enabled which can be done using the `Custom Build Server <https://custom.ardupilot.org/add_build>`__
+Support for the XFRobot gimbals is available in ArduPilot 4.7 (and higher) but some boards may require the 'HAL_MOUNT_XFROBOT_ENABLED' build option to be enabled which can be done using the `Custom Build Server <https://custom.ardupilot.org/add_build>`__
 
 .. image:: ../../../images/xfrobot-custom-build-server.png
     :target: ../_images/xfrobot-custom-build-server.png
@@ -32,18 +36,24 @@ More instructions on using the :ref:`Custom Build Server can be found here <comm
 Connecting to the Autopilot
 ---------------------------
 
+If using the XFRobot Z-1 mini, connect the gimbal's UART2 port to one of the autopilot's serial ports as shown below
+
 .. image:: ../../../images/xfrobot-autopilot-serial.png
     :target: ../_images/xfrobot-autopilot-serial.png
     :width: 450px
 
-Connect the gimbal's UART2 port to one of the autopilot's serial ports as shown above
+If using the XFRobot C-20T, connect the gimbal's serial port to one of the autopilot's serial ports as shown below
 
-Connect with a ground station and set the following parameters.  The params below assume the autopilot's telem2 port is used
+.. image:: ../../../images/xfrobot-autopilot-serial-c20t.png
+    :target: ../_images/xfrobot-autopilot-serial-c20t.png
+    :width: 450px
+
+Connect with a ground station, set the following parameters and reboot the autopilot.  The params below assume the autopilot's telem2 port is used
 
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 8 ("Gimbal")
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115", "250", "500" or "1000" (the gimbal auto detects the baudrate)
 - :ref:`CAM1_TYPE <CAM1_TYPE>` to "4" ("Mount")
-- :ref:`MNT1_TYPE <MNT1_TYPE>` to "14" ("XFRobot") and reboot the autopilot
+- :ref:`MNT1_TYPE <MNT1_TYPE>` to "14" ("XFRobot") for most gimbals, "13" ("CADDX") for the C-20T
 - :ref:`MNT1_ROLL_MIN <MNT1_ROLL_MIN>` to -50
 - :ref:`MNT1_ROLL_MAX <MNT1_ROLL_MAX>` to 50
 - :ref:`MNT1_PITCH_MIN <MNT1_PITCH_MIN>` to -90 (down)

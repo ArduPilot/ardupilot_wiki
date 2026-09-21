@@ -13,7 +13,7 @@ During startup, the status of the landing gear/ camera mount is determined by th
 
 Retraction and deployment happen automatically in AUTO mode (and Plane MODE TAKEOFF takeoffs), AUTO mode landings, and final land or glide phase of RTL landings, for both Plane (including AUTOLAND mode) and Copter. And happen when changing to LAND mode for Copter. The :ref:`LGR_OPTIONS<LGR_OPTIONS>` bitmask can selectively enable or disable these operations. If bit 0 is set, the automatic retractions are enabled, and if bit 1 is set, then automatic deployment occurs. Either or both bits can be set. Default is both bits set, enabling automatic deployment and retraction. The manual switch, if programmed, can change the deploy/retract state of the gear at any time.
 
-In addition, the landing gear/ camera mount can automatically deploy or retract based on altitude, using the :ref:`LGR_DEPLOY_ALT<LGR_DEPLOY_ALT>` for automatic deployment below this altitude, and automatic retraction if above the :ref:`LGR_RETRACT_ALT<LGR_RETRACT_ALT>`. If these are set to 0, then these functions are not active.
+In addition, the landing gear/ camera mount can automatically deploy or retract based on altitude, using the :ref:`LGR_DEPLOY_ALT<LGR_DEPLOY_ALT>` for automatic deployment when descending through this altitude, and automatic retraction when climbing through the :ref:`LGR_RETRACT_ALT<LGR_RETRACT_ALT>`. If these are set to 0, then these functions are not active. 
 
 
 .. image:: ../../../images/LandingGear_HobbyKing.jpg

@@ -12,7 +12,7 @@ to use and customize RTL mode.
 Overview
 ========
 
-When RTL mode is selected, the copter will return to the home location, or if rally points have been setup, the closet rally point.
+When RTL mode is selected, the copter will return to the home location, or if :ref:`rally points <common-rally-points>` have been setup, the closest rally point.
 
 The copter will first rise a minimum of :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>` or to  :ref:`RTL_ALT_M<RTL_ALT_M>`, whichever is higher, before returning home.  The default value for :ref:`RTL_ALT_M<RTL_ALT_M>` is 15m. Under no circumstances will this altitude be below 30cm.
 
@@ -21,10 +21,29 @@ The altitude reference frame is set by either the rally point, if proceeding to 
 .. image:: ../images/RTL.jpg
     :target: ../_images/RTL.jpg
 
-If RTL is entered close to its return point, the altitude Copter climbs to may be limited to avoid unneeded climbs and descents. The :ref:`RTL_CONE_SLOPE<RTL_CONE_SLOPE>` parameter determines the slope of an inverted cone centered on the return point. This reduces the above return altitude according to: distance from return point * :ref:`RTL_CONE_SLOPE<RTL_CONE_SLOPE>`. So if the mode is entered 10m from the return point, using the default slope of "3", then the altitude rise would be limited to 30m before returning. It may be less depending on the other parameters, but not higher. If the slope were set to "0.5", then the initial climb would be no higher than 5m altitude before proceeding to the return point. A value of "0" disables this limit. "0.5" is the minimum slope. Again, 2m is the minimum return altitude.
+If RTL is entered close to its return point, the altitude Copter climbs to may
+be limited to avoid an unnecessary climb and descent.  The
+:ref:`RTL_CONE_SLOPE<RTL_CONE_SLOPE>` parameter determines the slope of an
+inverted cone centered on the return point.  The cone height is calculated as
+the distance from the return point multiplied by ``RTL_CONE_SLOPE``.  For
+example, if RTL is entered 10m from the return point with the default slope of
+3, the cone limits the return altitude to 30m unless one of the minimums
+described below is higher.  With a slope of 0.5, the cone height at the same
+distance is 5m.  A value of 0 disables the cone and 0.5 is the minimum enabled
+slope.
 
-RTL mode requires a reliable position estimate to work properly, most commonly provided by GPS and compass. Default prearm checks will ensure a 3D GPS lock with sufficient HDOP is acquired and your mag is working as expected prior to arming. When using non-default arming checks, make sure you do have a sufficient GPS lock and / or a reliable position estimate for RTL to perform as expected.
+The cone only limits additional climbing; it never commands the vehicle to
+descend when RTL begins.  The return altitude will not be below the vehicle's
+current altitude plus :ref:`RTL_CLIMB_MIN_M<RTL_CLIMB_MIN_M>`, or below the
+absolute RTL minimum of 0.3m.  For example, a vehicle entering RTL at 1.5m
+with ``RTL_CLIMB_MIN_M`` set to zero will remain at least 1.5m high even if the
+calculated cone height is lower.
 
+If an :ref:`altitude fence <common-geofencing-landing-page>` has been enabled, the RTL climb/return altitude will be limited to be below the fence's maximum altitude.
+
+By default RTL flies a direct, straight-line path back to the return point, which can breach a polygon/circular :ref:`fence, inclusion or exclusion zone <common-geofencing-landing-page>` if the direct path happens to cross one. To have RTL instead plan a path around these horizontal fence boundaries, enable path planning with :ref:`OA_TYPE<OA_TYPE>` = 2 (Dijkstra's) or 3 (Dijkstra's with BendyRuler, which also avoids proximity sensor obstacles); see :ref:`common-oa-dijkstras` and :ref:`common-oa-dijkstrabendyruler` for setup. This applies to AUTO and GUIDED modes as well as RTL.
+
+RTL mode requires a reliable position estimate to work properly, most commonly provided by GPS and compass. Default prearm checks will ensure a 3D GPS lock with sufficient HDOP is acquired and your mag is working as expected prior to arming, if required by the selected mode and configuration during arming (ie STABILIZE could be armed without a reliable position and a switch into RTL would be refused without it). When using non-default arming checks, make sure you do have a sufficient GPS lock and / or a reliable position estimate for RTL to perform as expected.
 
 RTL will command the copter to return to the home position, meaning that
 it will return to the location where it was armed. Therefore, the home
@@ -50,16 +69,16 @@ Options (User Adjustable Parameters)
    minimum altitude the copter will move to before returning to launch.
 
    -  Set to zero to return at the current altitude.
-   -  The return altitude can be set from 1 to 8000 centimeters.
-   -  The default return altitude Default is 15 meters (1500)
+   -  The return altitude can be set from 0.3 to 3000 meters.
+   -  The default return altitude Default is 15 meters.
 
 -  :ref:`RTL_ALT_FINAL_M<RTL_ALT_FINAL_M>`: The
    altitude the copter will move to at the final stage of "Returning to
    Launch" or after completing a Mission.
 
    -  Set to zero to automatically land the copter. See :ref:`land-mode`.
-   -  The final return altitude may be adjusted from 0 to 1000
-      centimeters.
+   -  The final return altitude may be adjusted from 0 to 10
+      meters.
 
 -  :ref:`RTL_LOIT_TIME <RTL_LOIT_TIME>`:
    Time in milliseconds to hover/pause above the "Home" position before
@@ -75,11 +94,20 @@ Options (User Adjustable Parameters)
    -  2 = Face Next Waypoint except for RTL (i.e. during RTL vehicle
       will remain pointed at its last heading)
 
+-  :ref:`RTL_OPTIONS <RTL_OPTIONS>`:
+   A bitmask of options that modify RTL mode behaviour.
+
+   -  Bit 2 (value "4"), "Ignore Pilot Yaw", stops the pilot's yaw stick
+      from overriding the autopilot's yaw control while RTL is flying back
+      to the return point. During the final descent/landing stage of RTL,
+      pilot yaw control instead follows the :ref:`LAND_REPOSITION<LAND_REPOSITION>`
+      setting (see :ref:`land-mode`) regardless of this option.
+
 -  :ref:`LAND_SPD_MS<LAND_SPD_MS>`:
    The descent speed for the final stage of landing in centimeters per
    second.
 
-   -  The landing speed is adjustable from 20 to 200 centimeters per
+   -  The landing speed is adjustable from 0.3 to 2 meters per
       second.
 
 -  :ref:`RTL_CLIMB_MIN <RTL_CLIMB_MIN>`:

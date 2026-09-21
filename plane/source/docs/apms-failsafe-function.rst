@@ -170,7 +170,7 @@ Plane includes a two-layer battery failsafe.  This allows setting up a follow-up
 
 - :ref:`BATT_CRT_VOLT <BATT_CRT_VOLT>` - holds the secondary (lower) voltage threshold.  Set to zero to disable. Default is zero.
 - :ref:`BATT_CRT_MAH <BATT_CRT_MAH>` - holds the secondary (lower) capacity threshold.  Set to zero to disable. Default is zero.
-- :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>` - holds the secondary action to take.  A reasonable setup would be to have :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` = 2 (RTL) and :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>` = 1 (Land)
+- :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>` - holds the secondary action to take.  A reasonable setup would be to have :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` = 1 (RTL) and :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>` = 2 (Land)
 
 Advanced Battery Failsafe Settings
 ----------------------------------
@@ -489,6 +489,13 @@ There are three possible enabled settings. Seeing :ref:`FS_GCS_ENABL<FS_GCS_ENAB
    </tr>
    </tbody>
    </table>
+
+EKF Failsafe
+============
+
+QuadPlanes also have an EKF failsafe which acts when the position estimate becomes untrustworthy while flying in a VTOL mode that requires position. The vehicle switches to :ref:`QLAND <qland-mode>` if in a VTOL AUTO mission, or to :ref:`QHOVER <qhover-mode>` otherwise. In fixed wing flight no failsafe action is taken, as ArduPilot falls back to the DCM attitude estimator.
+
+See :ref:`common-ekf-inav-failsafe` for full details, including the :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` parameter used to adjust its sensitivity.
 
 Failsafe Diagnosis in Logs or GCS
 =================================

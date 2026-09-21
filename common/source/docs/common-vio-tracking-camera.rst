@@ -4,7 +4,7 @@
 Intel RealSense T265
 ====================
 
-[copywiki destination="copter,rover,blimp"]
+[copywiki destination="copter,plane,rover,blimp"]
 
 ..  youtube:: HCyTt0xK8CQ
     :width: 100%

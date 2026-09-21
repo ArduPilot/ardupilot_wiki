@@ -5,7 +5,7 @@ Setting up SITL on Linux
 ========================
 
 This page describes how to setup the :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` on Linux. The specific
-commands were tested on Ubuntu from 12.10 to 18.04.
+commands were tested on Ubuntu Linux.
 
 Overview
 ========
@@ -47,6 +47,7 @@ the default parameters for your vehicle.
    sim_vehicle.py --console --map -w
 
 Alternatively, if not starting in the ArduCopter directory, but at the base **ardupilot** directory:
+
 ::
 
    sim_vehicle.py -v copter --console --map -w

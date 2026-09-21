@@ -14,7 +14,7 @@ Specifications
 
    -  STM32F405 ARM microcontroller
    -  ICM42688 IMU (Gyro and Accelerometers)
-   -  BMP280 Barometer
+   -  DPS310 Barometer
    -  AT7456E OSD
    -  16Mbytes logging flash
 

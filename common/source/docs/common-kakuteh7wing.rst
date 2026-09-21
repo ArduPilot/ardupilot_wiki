@@ -16,7 +16,7 @@ Specifications
     - AT7456E OSD
 
 -  **Sensors**
-    - ICM42688 Acc/Gyro
+    - ICM42688 or LSM6DSV Acc/Gyro
     - BMP280 barometer\
 
 -  **Power**

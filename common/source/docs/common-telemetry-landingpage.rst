@@ -24,8 +24,8 @@ Short Range (<10KM)
 
     Bluetooth <common-mission-planner-bluetooth-connectivity>
     CUAV PW-Link <common-cuav-pwlink>
+    DroneBridge for ESP32 <common-esp32-telemetry>
     ESP8266 wifi telemetry <common-esp8266-telemetry>
-    DroneBridge / ESP32 wifi telemetry <common-esp32-telemetry>
     FrSky telemetry <common-frsky-telemetry>
     i-BUS telemetry <common-ibus-telemetry>
     Yaapu Bi-Directional Telemetry GCS <common-yaapu-gcs>
@@ -61,6 +61,7 @@ Long Range
     mLRS <common-mlrs-rc.rst>
     RFD900 <common-rfd900>
     Rockblock Satellite Modem <common-telemetry-rockblock>
+    SKYRELAY Conduit <common-skyrelay-conduit>
     SPL Satellite Telemetry <https://discuss.ardupilot.org/t/stretching-comm-links-from-indoors-to-the-globe/45896>
     UAVCast 3G/4G Cellular <common-uavcast-telemetry>
     XBStation 4G LTE Link <common-xbstation-telemetry>

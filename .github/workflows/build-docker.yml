@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Build image
         run: |
           docker build . -t ardupilot_wiki --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)

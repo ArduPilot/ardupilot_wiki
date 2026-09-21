@@ -36,6 +36,7 @@ tuning options for the vehicle.
 [site wiki="sub"]
     Autopilot Output Mapping <common-rcoutput-mapping>
     Auxiliary Functions <common-auxiliary-functions>
+    Actuators <actuators>
     Bootloader Update <common-bootloader-update>
 [/site]
     BLHeli ESCs <common-blheli32-passthru>
@@ -79,6 +80,8 @@ tuning options for the vehicle.
 [site wiki="plane,copter,rover"]
     GPS for Yaw (aka Moving Baseline) <common-gps-for-yaw>
     GPS for Altitude <common-gps-for-alt>
+[/site]
+[site wiki="copter,plane,rover,blimp,sub"]
     GPS/Non-GPS Transitions <common-non-gps-to-gps>
 [/site]
     Ground Control Station Only Operation <common-gcs-only-operation>
@@ -111,7 +114,8 @@ tuning options for the vehicle.
 [/site]
     Moving Vehicle Initialization <common-moving-vehicle-initialization>
     Multiple Radio Control Receivers <common-multiple-rx>
-[site wiki="copter,rover"]
+    Multi-Vehicle Flying <common-multi-vehicle-flying>
+[site wiki="copter,plane,rover,blimp,sub"]
     Non-GPS Navigation <common-non-gps-navigation-landing-page>
 [/site]
     Notification Devices (LEDs,Buzzer,etc.) <common-ntf-devices>
@@ -126,6 +130,7 @@ tuning options for the vehicle.
     OSD Parameter Editor <common-paramosd>
     Parameter List (Full) <parameters>
     Parameter Lockdown <common-parameter-lockdown>
+    Parameter Name Changes <common-param-name-changes>
     Parameter Reset <common-parameter-reset>
 [site wiki="copter"]
     Precision Landing and Loiter <precision-landing-and-loiter>

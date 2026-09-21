@@ -305,7 +305,6 @@ When providing position or velocity both X and Y axis must be provided.  At leas
    <tr style="color: #c0c0c0">
    <td><strong>afx</strong></td>
    <td>X acceleration in m/s/s (positive is North)</td>
-   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>afy</strong></td>

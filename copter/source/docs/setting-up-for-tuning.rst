@@ -39,8 +39,13 @@ If you are setting up a hobby grade vehicle then you can use the graph below to 
 
 - :ref:`MOT_THST_EXPO <MOT_THST_EXPO>`: 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props  (or larger). This parameter should be derived by thrust stand measurements for best results (don’t trust manufacturer data).
 
-.. image:: ../images/tuning-process-instructions-1.hires.png
+.. image:: ../../../images/tuning-process-instructions-1.hires.png
     :target: ../_images/tuning-process-instructions-1.hires.png
+
+.. warning:: Do not set an expo above 0.75 unless you have thrust stand data for your own
+   motor, ESC and propeller combination showing that a higher value is needed. The graph is
+   an approximation for hobby grade hardware, and guessing at a high expo can make the
+   vehicle harder to tune rather than easier.
 
 Motors setup
 ^^^^^^^^^^^^

@@ -619,7 +619,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_Nanoradar.png
             :width: 250px
             :align: center
-            :target:  http://www.nanoradar.cn/
+            :target:  https://www.nanoradar.com/
 
       - .. image:: ../../../images/supporters/supporters_logo_aerofox.png
             :width: 250px
@@ -1016,6 +1016,94 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :width: 250px
             :align: center
             :target:  https://irisdynamics.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_flyer_ai.jpg
+            :width: 250px
+            :align: center
+            :target:  https://flyer-ai.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_axldrone.png
+            :width: 250px
+            :align: center
+            :target:  https://www.axldrone.com
+
+      - .. image:: ../../../images/supporters/supporters_logo_blue_vigil.jpg
+            :width: 250px
+            :align: center
+            :target:  https://www.bluevigil.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_sky_robots.jpg
+            :width: 250px
+            :align: center
+            :target:  https://skyrobots.mu/
+
+      - .. image:: ../../../images/supporters/supporters_logo_newbeedrone.jpg
+            :width: 250px
+            :align: center
+            :target:  https://www.newbeedrone.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_eltehs.png
+            :width: 250px
+            :align: center
+            :target:  https://gnss.store
+
+      - .. image:: ../../../images/supporters/supporters_logo_frsky.png
+            :width: 250px
+            :align: center
+            :target:  https://www.frsky-rc.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_mostas.png
+            :width: 250px
+            :align: center
+            :target:  https://mostastech.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_airmarket.png
+            :width: 250px
+            :align: center
+            :target:  https://airmarket.io
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_skydroid.png
+            :width: 250px
+            :align: center
+            :target:  https://skydroidglobal.com
+
+      - .. image:: ../../../images/supporters/supporters_logo_skydrones_tecnologia_avionica_s_a.png
+            :width: 250px
+            :align: center
+            :target:  https://www.skydrones.com.br
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_shenzhen_haikuo_technology_co_ltd.png
+            :width: 250px
+            :align: center
+            :target:  https://www.aiuav.com
+
+      - .. image:: ../../../images/supporters/supporters_logo_corvon.png
+            :width: 250px
+            :align: center
+            :target:  https://corvon.tech
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_ari_drones_teknoloji_san_ve_tic_ltd_sti.png
+            :width: 250px
+            :align: center
+            :target:  https://aridrones.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_autodrone.png
+            :width: 250px
+            :align: center
+            :target:  https://www.autodroneco.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_linkrobotics.jpg
+            :width: 250px
+            :align: center
+            :target:  https://lkuas.com
 
       -
 

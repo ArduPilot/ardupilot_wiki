@@ -83,4 +83,4 @@ More information
 
 `CUAV docs <http://doc.cuav.net/power-module/can-pmu>`__
 
-`DroneCAN <https://new.uavcan.org/>`__
+`DroneCAN <https://dronecan.github.io/>`__

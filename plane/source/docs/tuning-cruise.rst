@@ -44,7 +44,7 @@ In FBWB or CRUISE, the target airspeed can be directly controlled with the throt
 While cruising, the artificial horizon in the OSD or GCS may show an average positive or negative pitch above the level indicator (ie fuselage/autopilot level). This means that the "trim level" pitch or AOA is different than what was set during the accelerometer calibration step. This can be trimmed out so that non altitude controlled modes fly at the same speed and throttle. Do this by adjusting the pitch trim, adding the desired degrees nose up or down using :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>`. This also optimizes the speed control loop bias point and will allow non altitude controlled modes to fly level at the same throttle and speed. The image below is a log of a vehicle flying level in CRUISE mode:
 
 .. image:: ../../../images/cruise_tuning.png
-    :target: ../_images/cruise_tuing.png
+    :target: ../_images/cruise_tuning.png
 
 Note that the altitude is constant, but at the cruising airspeed, it requires -3deg pitch to maintain level flight. Therefore, the :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` should be decreased by 3 degrees. Note also, that the throttle is at 38%. The :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` also should be set to this value for best performance.  
 
@@ -63,4 +63,4 @@ Without an airspeed sensor, both the pitch trim and the :ref:`TRIM_THROTTLE<TRIM
 
 .. tip:: You can examine CTUN.NavPitch in the logs when at cruise speed in FBWB or CRUISE to determine the average pitch trim required in these modes. Appropriately adjusting :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` to lower this to zero when flying level in these modes.
 
-.. note:: when using :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` to adjust trim, it will be reflected in the ATT.Pitch log message, and also in the OSD and GCS horizon displays (ie level horizon pitch = :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` + the calibrated level pitch) so that the display will be level when flying "in trim" even though the plane's pitch is different than the autopilots calibrated pitch with the vehicle level with respect to fuselage chore line. 
+.. note:: when using :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` to adjust trim, it will be reflected in the ATT.Pitch log message, and also in the OSD and GCS horizon displays (ie level horizon pitch = :ref:`PTCH_TRIM_DEG<PTCH_TRIM_DEG>` + the calibrated level pitch) so that the display will be level when flying "in trim" even though the plane's pitch is different than the autopilots calibrated pitch with the vehicle level with respect to fuselage chord line. 

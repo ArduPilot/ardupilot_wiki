@@ -46,9 +46,10 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Accels not healthy                                      At least one accelerometer is not providing data    Reboot autopilot.  If failure continues replace autopilot
     AHRS: not using configured AHRS type                    EKF3 is not ready yet and vehicle is using DCM      If indoors, go outside.  Ensure good GPS lock.  Check for misconfiguration of EKF (see :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>`)
     AHRS: waiting for home                                  GPS has not gotten a fix                            If indoors, go outside.  Ensure compass and accelerometer calibrations have been completed.  Eliminate radio-frequency sources that could interfere with the GPS
-    Airspeed 1 not healthy                                  Autopilot is unable to retrieve data from sensor    Check the physical connection and :ref:`configuration <airspeed>`
+    Airspeed: 1 not healthy                                 Autopilot is unable to retrieve data from sensor    Check the physical connection and :ref:`configuration <airspeed>`
     AP_Relay not available                                  Parachute misconfigured                             Parachute is controlled via Relay but the relay feature is missing. `Custom build server <https://custom.ardupilot.org/>`__ was probably used, rebuild with relay enabled
     Auxiliary authorisation refused                         External system has disallowed authorisation        Check external authorisation system
+    Baro: not healthy                                       Barometer sensor is not providing data              Reboot autopilot.  If failure continues replace autopilot
     Batch sampling requires reboot                          Batch sampling feature requires Autopilot reboot    Reboot autopilot or check :ref:`Batch sampling<common-imu-batchsampling>` configuration
     Battery below minimum arming capacity                   Battery capacity is below BATT_ARM_MAH              Replace battery or adjust :ref:`BATT_ARM_MAH<BATT_ARM_MAH>`
     Battery below minimum arming voltage                    Battery voltage is below BATT_ARM_VOLT              Replace battery or adjust :ref:`BATT_ARM_VOLT<BATT_ARM_VOLT>`
@@ -64,6 +65,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     BTN_PINx=y invalid                                      Button misconfigured                                BTNx_PIN is set to an invalid value. Check :ref:`Button setup instructions <common-buttons>`
     BTN_PINx=y, set SERVOz_FUNCTION=-1                      Button misconfigured                                Set SERVOz_FUNCTION to -1
     Can't check rally without position                      EKF does not have a position estimate yet           Wait or move to location with better GPS reception
+    Check EK3_SRCx_POSXY/VELXY/POSZ/VELZ/YAW                An EKF3 source parameter has an unsupported value    Review the named :ref:`EK3_SRC parameter set <common-ekf-sources>` and select a supported source
     Check fence                                             Fence feature has failed to be initialised          Reboot autopilot
     Check mag field (xy diff:x>875)                         Compass horiz field strength is too large or small  Relocate vehicle away from metal in the environment.  Move compass away from metal in the frame.  repeat :ref:`compass calibration <common-compass-calibration-in-mission-planner>`.  Disable internal compass.
     Check mag field (z diff:x>875)                          Compass vert field strength is too large or small   Relocate vehicle away from metal in the environment.  Move compass away from metal in the frame.  repeat :ref:`compass calibration <common-compass-calibration-in-mission-planner>`.  Disable internal compass.
@@ -73,6 +75,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Chute is released                                       Parachute has been released                         Reboot autopilot
     Compass calibrated requires reboot                      Autopilot must be rebooted after compass cal        Reboot autopilot
     Compass calibration running                             Compass calibration is running                      Complete or cancel the :ref:`compass calibration <common-compass-calibration-in-mission-planner>`
+    Compass not calibrated                                  Compass offsets are zero or sensor count changed    Complete the :ref:`compass calibration <common-compass-calibration-in-mission-planner>`
     Compass X not healthy                                   Compass X is not providing data                     Check the connection between compass X and the autopilot, and review the :ref:`configuration <common-positioning-landing-page>`
     Compass offsets too high                                Compass offset params are too large                 Relocate compass away from metal in the frame and repeat :ref:`compass calibration <common-compass-calibration-in-mission-planner>`.  Disable internal compass.  Increase :ref:`COMPASS_OFFS_MAX <COMPASS_OFFS_MAX>`.
     Compasses inconsistent                                  Two compasses angles or field strength disagree     Check compass orientations (e.g. :ref:`COMPASS_ORIENT <COMPASS_ORIENT>`). Move compass away from metal in the frame.  repeat :ref:`compass calibration <common-compass-calibration-in-mission-planner>`.  Disable internal compass.
@@ -85,6 +88,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     DroneCAN: Failed to add Node x!                         DroneCAN could not init connection to a device      Check sensor's physical connection and power supply
     DroneCAN: Node x unhealthy!                             A DroneCAN device is not providing data             Check sensor's physical connection and power supply
     Duplicate Aux Switch Options                            Two auxiliary function switches for same feature    Check :ref:`auxiliary function<common-auxiliary-functions>` setup.  Check for :ref:`RCx_OPTION<RC1_OPTION>` parameters with same values
+    EK3 sources require x                                   Selected EKF3 sources is unavailable                Connect or configure the named sensor, or change the relevant :ref:`EK3_SRC parameter set <common-ekf-sources>` to use an available source
     EKF3 Roll/Pitch inconsistent by x degs                  Roll or Pitch lean angle estimates are inconsistent Normally due to EKF3 not getting good enough GPS accuracy, but could be due to other sensors producing errors. Go outdoors, wait or reboot autopilot.
     EKF3x vel error y                                       EKF3 has velocity innovation of "y"                 EKF3 getting high position velocity innovations. Check GPS, wait or reboot.
     EKF3 waiting for GPS config data                        automatic GPS configuration has not completed       Check GPS connection and configuration especially if using DroneCAN GPS
@@ -311,201 +315,6 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Waiting for RC                                          RC failsafe enabled but no RC signal                Turn on RC transmitter or check RC transmitters connection to autopilot. If operating with only a GCS, see :ref:`common-gcs-only-operation`
     ======================================================= =================================================== ====================================================
 [/site]
-Other Failure messages
-======================
-
-Failsafes:
-----------
-
-Any failsafe (RC, Battery, GCS,etc.) will display a message and prevent arming.
-
-
-Barometer failures:
--------------------
-
-**Baro not healthy** : the barometer sensor is reporting that it is
-unhealthy which is normally a sign of a hardware failure.
-
-**Alt disparity** : the barometer altitude disagrees with the inertial
-navigation (i.e. Baro + Accelerometer) altitude estimate by more than 1
-meters.  This message is normally short-lived and can occur when the
-autopilot is first plugged in or if it receives a hard jolt
-(i.e. dropped suddenly).  If it does not clear the :ref:`accelerometers may need to be calibrated <common-accelerometer-calibration>` or there may
-be a barometer hardware issue.
-
-Compass failures:
------------------
-
-**Compass X not healthy** : the compass X sensor is reporting that it is
-unhealthy, which is a sign of a possible hardware failure.
-
-**Compass not calibrated** : the :ref:`compass(es) has not been calibrated <common-compass-calibration-in-mission-planner>`.  the
-``COMPASS_OFS_X, _Y, _Z`` parameters are zero or the number or type of
-compasses connected has been changed since the last compass calibration
-was performed.
-
-**Compass offsets too high** : the primary compass's offsets length
-(i.e. sqrt(x^2+y^2+z^2)) are larger than 500.  This can be caused by
-metal objects being placed too close to the compass.  If only an
-internal compass is being used (not recommended), it may simply be the
-metal in the board that is causing the large offsets and this may not
-actually be a problem in which case you may wish to disable the compass
-check.
-
-**Check mag field** : This can result from failing two different checks. First, the sensed magnetic field in the area is 35%
-higher or  lower than the expected value.  The expected length is 530 so
-it's > 874 or < 185. Also, besides this rough check, when the vehicle's position has been obtained (GPS lock), another check against the field strength predicted using the internal World Magnetic Field database is done with much tighter limits. If you are failing this, either the :ref:`compass calibration <common-compass-calibration-in-mission-planner>` has not calculated good offsets and calibration should be repeated, or your vehicle is near a large metallic or magnetic disturbance and will need to be relocated.
-
-**Compasses inconsistent** : the internal and external compasses are
-pointing in different directions (off by >45 degrees).  This is normally
-caused by the external compasses orientation (i.e. :ref:`COMPASS_ORIENT<COMPASS_ORIENT>`
-parameter) being set incorrectly.
-
-GPS related failures:
----------------------
-
-**GPS Glitch** : the :ref:`GPS is glitching <gps-failsafe-glitch-protection>` and the vehicle
-is in a flight mode that requires GPS (i.e. Loiter, PosHold, etc) and/or
-the :ref:`cylindrical fence <common-ac2_simple_geofence>` is enabled.
-
-**Need 3D Fix** : the GPS does not have a 3D fix and the vehicle is in a
-flight mode that requires the GPS and/or the :ref:`cylindrical fence <common-ac2_simple_geofence>` is enabled.
-
-**Bad Velocity** : the vehicle's velocity (according to inertial
-navigation system) is above 50cm/s.  Issues that could lead to this
-include the vehicle actually moving or being dropped, bad accelerometer
-calibration, GPS updating at below the expected 5hz.
-
-**High GPS HDOP** : the GPS's HDOP value (a measure of the position
-accuracy) is above 2.0 and the vehicle is in a flight mode that requires
-GPS and/or the :ref:`cylindrical fence <common-ac2_simple_geofence>` is enabled. 
-This may be resolved by simply waiting a few minutes, moving to a
-location with a better view of the sky or checking sources of GPS
-interference (i.e. FPV equipment) are moved further from the GPS. 
-Alternatively the check can be relaxed by increasing the :ref:`GPS_HDOP_GOOD<GPS_HDOP_GOOD>`
-parameter to 2.2 or 2.5.  Worst case the pilot may disable the fence and
-take-off in a mode that does not require the GPS (i.e. Stabilize,
-AltHold) and switch into Loiter after arming but this is not
-recommended.
-
-Note: the GPS HDOP can be readily viewed through the Mission Planner's
-Quick tab as shown below.
-
-.. image:: ../../../images/MP_QuicHDOP.jpg
-    :target: ../_images/MP_QuicHDOP.jpg
-
-INS checks (i.e. Accelerometer and Gyro checks):
-------------------------------------------------
-
-**INS not calibrated**: some or all of the accelerometer's offsets are
-zero.  The :ref:`accelerometers need to be calibrated <common-accelerometer-calibration>`.
-
-**Accels not healthy**: one of the accelerometers is reporting it is not
-healthy which could be a hardware issue.  This can also occur
-immediately after a firmware update before the board has been restarted.
-
-**Accels inconsistent**: the accelerometers are reporting accelerations
-which are different by at least 1m/s/s.  The :ref:`accelerometers need to be re-calibrated <common-accelerometer-calibration>` or there is a
-hardware issue.
-
-**Gyros not healthy**: one of the gyroscopes is reporting it is
-unhealthy which is likely a hardware issue.  This can also occur
-immediately after a firmware update before the board has been restarted.
-
-**Gyro cal failed**: the gyro calibration failed to capture offsets. 
-This is most often caused by the vehicle being moved during the gyro
-calibration (when red and blue lights are flashing) in which case
-unplugging the battery and plugging it in again while being careful not
-to jostle the vehicle will likely resolve the issue.  Sensors hardware
-failures (i.e. spikes) can also cause this failure.
-
-**Gyros inconsistent**: two gyroscopes are reporting vehicle rotation
-rates that differ by more than 20deg/sec.  This is likely a hardware
-failure or caused by a bad gyro calibration.
-
-Board Voltage checks:
----------------------
-
-**Check Board Voltage**: the board's internal voltage is below 4.3 Volts
-or above 5.8 Volts.
-
-If powered through a USB cable (i.e. while on the bench) this can be
-caused by the desktop computer being unable to provide sufficient
-current to the autopilot - try replacing the USB cable.
-
-If powered from a battery this is a serious problem and the power system
-(i.e. Power Module, battery, etc) should be carefully checked before
-flying.
-
-Parameter checks:
------------------
-
-**Ch7&Ch8 Opt cannot be same**: :ref:`Auxiliary Function Switches <channel-7-and-8-options>` are set to the same option which is not permitted because it could lead to confusion.
-
-**Check FS_THR_VALUE**: the :ref:`radio failsafe pwm value <radio-failsafe>` has been set too close to the throttle channels (i.e. ch3) minimum.
-
-**Check ANGLE_MAX**: the :ref:`ATC_ANGLE_MAX<ATC_ANGLE_MAX>` parameter which controls the
-vehicle's maximum lean angle has been set below 10 degrees (i.e. 10)
-or above 80 degrees (i.e. 80).
-
-**ACRO_BAL_ROLL/PITCH**: the :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>` parameter is higher than
-the Stabilize Roll P and/or :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>` parameter is higher than
-the Stabilize Pitch P value.  This could lead to the pilot being unable
-to control the lean angle in ACRO mode because the :ref:`Acro Trainer stabilization <acro-mode_acro_trainer>` would overpower the pilot's
-input.
-
-Battery/Power Monitor:
-----------------------
-
-If a power monitor voltage is below its failsafe low or critical voltages or failsafe remaining capacity low or critical set points, this check will fail and indicate which set point it is below. It will also fail if these set points are inverted, ie critical point is higher than low point. See :ref:`failsafe-battery` for Copter, :ref:`apms-failsafe-function` for Plane, or :ref:`rover-failsafes` for Rover for more information on these.
-
-In addition, minimum arming voltage and remaining capacity parameters for each battery/power monitor can be set, for example :ref:`BATT_ARM_VOLT<BATT_ARM_VOLT>` and :ref:`BATT_ARM_MAH<BATT_ARM_MAH>` for the first battery, to provide a check that the battery is not only above failsafe levels, but also has enough capacity for operation.
-
-Airspeed:
----------
-
-If an airspeed sensor is configured, and it is not providing a reading or failed to calibrate, this check will fail.
-
-**Airspeed not healthy**
-
-Logging:
---------
-
-**Logging failed**: Logging pre-armed was enabled but failed to write to the log.
-
-**No SD Card**: Logging is enabled, but no SD card is detected.
-
-Safety Switch:
---------------
-
-**Hardware safety switch**: Hardware safety switch has not been pushed.
-
-System:
--------
-
-**Param storage failed**: A check of reading the parameter storage area failed.
-
-**Internal errors (0xx)**: An internal error has occurred. Report to ArduPilot development team `here <https://github.com/ArduPilot/ardupilot/issues/15916>`_
-
-**KDECAN Failed**: KDECAN system failure.
-
-**DroneCAN Failed**: DroneCAN system failure.
-
-Mission:
---------
-
-See :ref:`ARMING_MIS_ITEMS<ARMING_MIS_ITEMS>`
-
-**No mission library present**: Mission checking is enabled, but no mission is loaded.
-
-**No rally library present**: Rally point checking is enabled, but no rally points loaded.
-
-**Missing mission item: xxxx**: A required mission items is missing.
-
-Rangefinder:
-------------
-
-IF a rangefinder has been configured, a reporting error has occurred.
 
 Disabling the Pre-arm Safety Check
 ==================================
@@ -513,4 +322,3 @@ Disabling the Pre-arm Safety Check
 .. warning:: Disabling pre-arm safety checks is not recommended. The cause of the pre-arm failure should be corrected before operation of the vehicle if at all possible. If you are confident that the pre-arm check failure is not a real problem, it is possible to skip a failing check.
 
 Arming checks can be individually skipped by setting the :ref:`ARMING_SKIPCHK<ARMING_SKIPCHK>` parameter to something other than 0. For example, setting to 4 skips the checks that the GPS has lock. In extremely unusual circumstances, setting the parameter to -1 can be used to skip all current and future pre-arm checks (though mandatory checks still remain).
-

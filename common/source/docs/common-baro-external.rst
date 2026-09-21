@@ -19,7 +19,6 @@ Where to Buy
 ------------
 
 - `Beyond Robotix Air Data Module (Amphenol AUAV) <https://www.beyondrobotix.com/products/air-data-module>`_
-- `MS5611 from Drotek <https://drotek.com/shop/en/imu/44-ms5611-pressure-barometric-board.html>`__
 - `BMP280 I2C from Adafruit <https://www.adafruit.com/product/2651>`__
 - `UAV-DEV GmbH DroneCAN Airspeed and Barometer Sensor - AUAV <https://wiki.uav-dev.com/en/product/airspeed/auav>`__
 
@@ -28,17 +27,11 @@ Connecting and Configuring
 
 Connect the barometer to the autopilot's I2C port as shown below
 
-.. image:: ../../../images/baro-ms5611-pixhawk.jpg
-    :target: ../_images/baro-ms5611-pixhawk.jpg
-    :width: 450px
-
-On the top of the Drotek MS5611 board, the "I2C" jumper should be soldered.  Look for "I2C/SPI" written on the board.
-
 .. image:: ../../../images/baro-bmp280-pixhawk.jpg
     :target: ../_images/baro-bmp280-pixhawk.jpg
     :width: 450px
 
-- :ref:`BARO_PROBE_EXT <BARO_PROBE_EXT>` to 4 for the Drotek MS5611 or 2 for the Adafruit BMP280.  Reboot the autopilot after changing this parameter.
+- :ref:`BARO_PROBE_EXT <BARO_PROBE_EXT>` to 4 for the MS5611 or 2 for the Adafruit BMP280.  Reboot the autopilot after changing this parameter.
 - :ref:`BARO_PRIMARY <BARO_PRIMARY>` to 1 to use the external barometer as the primary
 
 Testing

@@ -75,6 +75,22 @@ example sketch. It prints a hello message to the 1st 5 UARTs. Try it on your
 board and see if you can get all the outputs displaying using a USB
 serial adapter. Try changing the baudrate in the sketch.
 
+SITL Hardware Flow Control (RTS/CTS)
+-------------------------------------
+
+Hardware flow control on SITL UART connections is configured via the
+:ref:`BRD_SERn_RTSCTS<BRD_SER1_RTSCTS>` parameter, the same as
+on ChibiOS targets. The old ``--rtscts`` command-line flag has been removed.
+
+Values: **0** = disabled (SITL default), **1** = enabled, **2** = auto-detect.
+Auto-detect monitors CTS activity over a 500 ms window and enables or disables
+flow control accordingly. Flow control only applies to physical UART
+connections (i.e., FTDI/CP210x); TCP/UDP connections ignore it. For example:
+
+::
+
+    --serial1=uart:/dev/tty.SLAB_USBtoUART:115200
+
 Debug console
 -------------
 

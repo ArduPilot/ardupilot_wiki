@@ -8,7 +8,7 @@ Design
 ------
 The ArduPilot Custom Firmware Builder is a monolithic Flask application running on ArduPilot's autotest server, with Apache WSGI serving as the web server. The application includes a builder thread that continuously consumes build requests from a queue and processes them accordingly.
 
-The available versions are listed in a file called `remotes.json`. You can find the schema for the `remotes.json` file `here <https://github.com/ArduPilot/CustomBuild/blob/main/remotes.schema.json>`__. We also have an automated setup that updates this file with the latest releases from ArduPilot, as well as some tags from certain whitelisted repositories belonging to members of the ArduPilot development team. Below is a diagram illustrating how the `remotes.json` file is updated automatically.
+The available versions are listed in a file called `remotes.json`. You can find the schema for the `remotes.json` file `here <https://github.com/ArduPilot/CustomBuild/blob/main/metadata_manager/remotes.schema.json>`__. We also have an automated setup that updates this file with the latest releases from ArduPilot, as well as some tags from certain whitelisted repositories belonging to members of the ArduPilot development team. Below is a diagram illustrating how the `remotes.json` file is updated automatically.
 
 ::
 

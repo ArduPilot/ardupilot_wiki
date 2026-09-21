@@ -37,6 +37,8 @@ capabilities will vary with each individual ESC model. Some ESCs have specialize
 explain the required ArduPilot setup to utilize the protocols, telemetry, and setup programs that various ESCs utilize.
 See :ref:`common-esc-guide` for a guide to terminology.
 
+`APD (Advanced Power Drives) <https://powerdrives.net/>`__ is an ArduPilot partner whose ESCs run their own proprietary firmware and use the standard PWM and :ref:`DShot <common-dshot-escs>` protocols covered below.
+
 Protocols
 ---------
 
@@ -46,7 +48,7 @@ Protocols
     PWM, OneShot and OneShot125 ESCs <common-brushless-escs>
     DShot ESCs <common-dshot-escs>
     DroneCAN ESCs <common-uavcan-escs>
-    Currawong Velocity PiccoloCAN ESCs <common-velocity-can-escs>
+    Currawong Velocity ESCs <common-velocity-can-escs>
     KDE CAN ESCs <common-kde-can-escs>
     FETtec OneWire ESCs <common-fettec-onewire>
 
@@ -75,7 +77,7 @@ Telemetry
     :maxdepth: 1
 
     ESC Telemetry <common-esc-telemetry>
-    Hobbywing Telemetry Hub (DatalinkV2)(uses LUA driver) <https://www.hobbywingdirect.com/products/data-link-v2>
+    Hobbywing DataLink V2 (Lua Driver) <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/drivers/Hobbywing_DataLink.md>
 
 .. note:: Currently ArduPilot only supports telemetry on BLHeli or DroneCAN/CAN ESCs, not throttle signal wire reported telemetry that some single unit ESCs report.
 

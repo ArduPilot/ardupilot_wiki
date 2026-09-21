@@ -39,6 +39,7 @@ import glob
 import gzip
 import hashlib
 import json
+import logging
 import multiprocessing
 import os
 import platform
@@ -47,8 +48,9 @@ import shutil
 import subprocess
 import sys
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, TimeoutError
 from datetime import datetime
+from pathlib import Path
 from typing import Dict, List, Optional
 from urllib.parse import urlparse
 
@@ -57,10 +59,68 @@ from sphinx.application import Sphinx
 
 import rst_table
 from frontend.scripts import get_discourse_posts
+from scripts.dedupe_params import dedupe_periph_net_parameters
 
 if sys.version_info < (3, 8):
     print("Minimum python version is 3.8")
     sys.exit(1)
+
+
+# Configure logging
+class ColoredFormatter(logging.Formatter):
+    """Simple ANSI-coloured formatter for terminal output."""
+    COLORS = {
+        logging.DEBUG: '\033[36m',      # cyan
+        logging.INFO: '\033[32m',       # green
+        logging.WARNING: '\033[33m',    # yellow
+        logging.ERROR: '\033[31m',      # red
+        logging.CRITICAL: '\033[1;31m', # bold red
+    }
+    RESET = '\033[0m'
+
+    def format(self, record):
+        # Apply colour only when output is a tty
+        if hasattr(sys.stdout, 'isatty') and sys.stdout.isatty() \
+                and not os.environ.get('CI') and not os.environ.get('GITHUB_ACTIONS'):
+            color = self.COLORS.get(record.levelno, '')
+            record.levelname = f"{color}{record.levelname}{self.RESET}"
+        return super().format(record)
+
+
+class ErrorStoreHandler(logging.Handler):
+    """Allow to store errors for later usage."""
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.error_messages = []
+
+    def emit(self, record):
+        self.error_messages.append(record.getMessage())
+
+
+# The StreamHandler logs to the console
+stream_handler = logging.StreamHandler(sys.stdout)
+stream_handler.setFormatter(ColoredFormatter('[update.py]: [%(levelname)s]: %(message)s'))
+stream_handler.setLevel(logging.INFO)
+logging.basicConfig(level=logging.INFO, handlers=[stream_handler])
+logger = logging.getLogger(__name__)
+
+# The ErrorStoreHandler stores the messages
+error_store_handler = ErrorStoreHandler()
+error_store_handler.setLevel(logging.ERROR)
+logger.addHandler(error_store_handler)
+
+# Dedicated logger for reprinting stored errors at end of run.
+# Uses stderr and ColoredFormatter but has NO ErrorStoreHandler attached,
+# preventing infinite recursion.
+_reprint_handler = logging.StreamHandler(sys.stderr)
+_reprint_handler.setFormatter(ColoredFormatter('[update.py]: [%(levelname)s]: %(message)s'))
+_reprint_logger = logging.getLogger(f'{__name__}.reprint')
+_reprint_logger.addHandler(_reprint_handler)
+_reprint_logger.propagate = False
+
+# Keep noisy third-party network logs quiet by default
+logging.getLogger('urllib3').setLevel(logging.WARNING)
+
 
 DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover', 'sub']
 ALL_WIKIS = [
@@ -87,8 +147,6 @@ WIKI_NAME_TO_VEHICLE_NAME = {
     'blimp': 'Blimp',
 }
 
-# GIT_REPO = ''
-
 PARAMETER_SITE = {
     'rover': 'APMrover2',
     'copter': 'ArduCopter',
@@ -106,33 +164,66 @@ LOGMESSAGE_SITE = {
     'antennatracker': 'Tracker',
     'blimp': 'Blimp',
 }
-error_log = list()
+
 N_BACKUPS_RETAIN = 10
 
-VERBOSE = False
+# Global HTTP session for connection reuse and caching
+_http_session = None
 
 
-def debug(str_to_print):
+def info(str_to_print: str) -> None:
+    """Info output."""
+    logger.info(str_to_print)
+
+
+def debug(str_to_print: str) -> None:
     """Debug output if verbose is set."""
-    if VERBOSE:
-        print(f"[update.py]: {str_to_print}")
+    logger.debug(str_to_print)
 
 
-def progress(message, file=sys.stdout, end="\n"):
-    print(f"[update.py]: {message}", file=file, end=end)
+def warning(str_to_print: str) -> None:
+    """Warning output."""
+    logger.warning(str_to_print)
 
 
-def error(str_to_print):
+def error(str_to_print) -> None:
     """Show and count the errors."""
-    global error_log  # noqa: F824
-    error_log.append(str_to_print)
-    print(f"[update.py][error]: {str_to_print}", file=sys.stderr)
+    logger.error(f"{str_to_print}")
 
 
-def fatal(str_to_print):
-    """Show and count the errors."""
-    error(str_to_print)
+def fatal(str_to_print) -> None:
+    """Show and exit on errors."""
+    logger.critical(f"{str_to_print}")
     sys.exit(1)
+
+
+def get_http_session():
+    """Get or create a persistent HTTP session with connection pooling"""
+    global _http_session
+    if _http_session is None:
+        _http_session = requests.Session()
+        _http_session.headers.update({
+            'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotWikiUpdater/1.0)',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Connection': 'keep-alive'
+        })
+        if sys.version_info >= (3, 10):
+            # Urllib3 2.0+ needed for built-in retry support
+            # Add retry logic for better reliability
+            from requests.adapters import HTTPAdapter
+            from urllib3.util.retry import Retry
+
+            retries = Retry(
+                total=3,
+                backoff_factor=1,
+                status_forcelist=[429, 500, 502, 503, 504],
+                allowed_methods=["HEAD", "GET", "OPTIONS"]
+            )
+            adapter = HTTPAdapter(max_retries=retries)
+            _http_session.mount("https://", adapter)
+            _http_session.mount("http://", adapter)
+
+    return _http_session
 
 
 def remove_if_exists(filepath):
@@ -144,36 +235,53 @@ def remove_if_exists(filepath):
 
 
 def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
+    # Fetch into a temporary filename (new_name) and only replace the
+    # real target if content actually changed. This avoids touching
+    # mtimes when the fetched content is identical and prevents
+    # unnecessary Sphinx rebuilds.
     fetch_url(fetchurl, fpath=new_name, verbose=False)
-    progress(f"Renaming {new_name} to {target_file}")
+
+    try:
+        # If target exists and is identical, remove fetched temp and skip replace
+        if os.path.exists(target_file) and filecmp.cmp(new_name, target_file, shallow=False):
+            debug(f"No change for {target_file} (fetched content identical)")
+            os.remove(new_name)
+            return
+    except OSError as e:
+        debug(f"Failed to compare fetched file and target: {e}")
+    info(f"Renaming {new_name} to {target_file}")
     os.replace(new_name, target_file)
 
 
 def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) -> None:
     """Fetches content at url and puts it in a file corresponding to the filename in the URL"""
-    progress(f"Fetching {fetchurl}")
+    info(f"Fetching {fetchurl}")
+    # For larger files or when cache fails, use streaming download with progress
+    session = get_http_session()
+
+    total_size = 0
 
     if verbose:
         total_size = get_request_file_size(fetchurl)
 
-    response = requests.get(fetchurl, stream=True)
+    response = session.get(fetchurl, stream=True, timeout=30)
     response.raise_for_status()
 
     filename = fpath or os.path.basename(urlparse(fetchurl).path)
 
     downloaded_size = 0
-    chunk_size = 10 * 1024
+    chunk_size = 64 * 1024  # Increased chunk size for better performance
 
     with open(filename, 'wb') as out_file:
-        if verbose:
-            progress("Completed : 0%", end='')
+        if verbose and total_size > 0:
+            print("[update.py]: Completed : 0%", end='', file=sys.stdout)  # intentionally use of print for formatting
         completed_last = 0
         for chunk in response.iter_content(chunk_size=chunk_size):
             out_file.write(chunk)
             downloaded_size += len(chunk)
 
             # progress bar
-            if verbose:
+            if verbose and total_size > 0:
                 completed = downloaded_size * 100 // total_size
                 if completed - completed_last > 10 or completed == 100:
                     print(f"..{completed}%", end='')
@@ -183,12 +291,16 @@ def fetch_url(fetchurl: str, fpath: Optional[str] = None, verbose: bool = True) 
 
 
 def get_request_file_size(url: str) -> int:
+    """Get file size from URL using HEAD request with session reuse"""
+
+    session = get_http_session()
     headers = {'Accept-Encoding': 'identity'}  # needed as request use compression by default
-    hresponse = requests.head(url, headers=headers)
+    hresponse = session.head(url, headers=headers, timeout=30)
 
     if 'Content-Length' in hresponse.headers:
         size = int(hresponse.headers['Content-Length'])
         return size
+
     return 0
 
 
@@ -243,32 +355,140 @@ def fetch_ardupilot_generated_data(site_mapping: Dict, base_url: str, sub_url: s
             targetfiles.append(targetfile)
             names.append(f"{value}_{document_name}")
 
-    with ThreadPoolExecutor() as executor:
-        executor.map(fetch_and_rename, urls, targetfiles, names, timeout=5*60)
+    with ThreadPoolExecutor(max_workers=4) as executor:  # Limit concurrent downloads
+        tasks = []
+        for url, target, name in zip(urls, targetfiles, names):
+            task = executor.submit(fetch_and_rename, url, target, name)
+            tasks.append(task)
+
+        # Wait for all downloads to complete
+        for task in tasks:
+            try:
+                task.result(timeout=5*60)
+            except (TimeoutError, OSError, requests.RequestException) as e:
+                error(f"Download failed: {e}")
+
+
+class SphinxIOErrors(logging.Handler):
+    """Keep I/O warnings fatal without rejecting documentation warnings."""
+
+    def __init__(self):
+        super().__init__(logging.WARNING)
+        self.errors = []
+
+    def emit(self, record):
+        args = record.args.values() if isinstance(record.args, dict) else record.args
+        if any(isinstance(arg, OSError) for arg in args):
+            self.errors.append(record.getMessage())
+
+
+def check_html_output(path):
+    """Reject empty/truncated Sphinx HTML, including reused parameter pages."""
+    with open(path, 'rb') as stream:
+        stream.seek(0, os.SEEK_END)
+        stream.seek(max(0, stream.tell() - 1024))
+        if not stream.read().rstrip().lower().endswith(b'</html>'):
+            raise ValueError(f"Incomplete HTML output: {path}")
+
+
+def output_hash(path):
+    digest = hashlib.sha256()
+    with open(path, 'rb') as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def build_one(wiki, fast):
     """build one wiki"""
-    progress(f'build_one: {wiki}')
+    info(f'build_one: {wiki}')
 
     source_dir = os.path.join(wiki, 'source')
     output_dir = os.path.join(wiki, 'build')
     html_dir = os.path.join(output_dir, 'html')
     doctree_dir = os.path.join(output_dir, 'doctrees')
+    manifest = Path(output_dir, 'output-manifest.json')
+    if fast and os.path.exists(output_dir):
+        try:
+            validate_build_output(wiki)
+        except (OSError, ValueError):
+            # Sphinx may have saved doctrees before failing to write output.
+            # Reusing those doctrees can skip missing pages/images on retry.
+            info(f"Rebuilding {wiki}: previous output is incomplete or unverified")
+            fast = False
+    # A failed incremental build must not inherit proof of an earlier success.
+    manifest.unlink(missing_ok=True)
 
     # This will fail if there's no folder to clean, so we check first
     if not fast and os.path.exists(output_dir):
         shutil.rmtree(output_dir)
 
-    app = Sphinx(
-        buildername='html',
-        confdir=source_dir,
-        doctreedir=doctree_dir,
-        outdir=html_dir,
-        parallel=2,
-        srcdir=source_dir,
-    )
-    app.build()
+    io_errors = SphinxIOErrors()
+    sphinx_logger = logging.getLogger('sphinx')
+    try:
+        app = Sphinx(
+            buildername='html',
+            confdir=source_dir,
+            doctreedir=doctree_dir,
+            outdir=html_dir,
+            # Parallel Sphinx workers duplicate the large parameter document
+            # environment. --parallel controls concurrency between wikis.
+            parallel=1,
+            srcdir=source_dir,
+        )
+        # Sphinx installs its logging handlers during construction.
+        sphinx_logger.addHandler(io_errors)
+        app.build()
+        if io_errors.errors:
+            raise RuntimeError('; '.join(io_errors.errors))
+        if app.statuscode != 0:
+            raise RuntimeError(f"Sphinx exited with status {app.statuscode}")
+        # Validate Sphinx's actual document set, respecting exclude_patterns.
+        # A surviving index.html alone does not establish a complete build.
+        missing = sorted(doc for doc in app.env.found_docs
+                         if not os.path.isfile(app.builder.get_outfilename(doc)))
+        if missing:
+            raise RuntimeError(f"Missing HTML output for {len(missing)} documents: {', '.join(missing[:10])}")
+        for doc in app.env.found_docs:
+            check_html_output(app.builder.get_outfilename(doc))
+        for dest in app.builder.images.values():
+            image = Path(html_dir, app.builder.imagedir, dest)
+            if not image.is_file() or image.stat().st_size == 0:
+                raise RuntimeError(f"Missing or empty image output: {image}")
+        for name in ('index.html', 'searchindex.js', 'objects.inv'):
+            if Path(html_dir, name).stat().st_size == 0:
+                raise RuntimeError(f"Empty build output: {name}")
+        # Check the same files again after parameter-cache assembly, before
+        # caching or publishing. Keep this outside the served HTML directory.
+        outputs = {str(path.relative_to(html_dir)): output_hash(path)
+                   for path in Path(html_dir).rglob('*') if path.is_file()}
+        manifest.write_text(json.dumps(outputs), encoding='utf-8')
+    except Exception as exc:
+        print(f"[update.py]: [ERROR]: Sphinx build exception for {wiki}: {exc}", file=sys.stderr)
+        sys.exit(1)
+    finally:
+        sphinx_logger.removeHandler(io_errors)
+
+    if app._warncount > 0:
+        sys.exit(2)
+
+
+def _reap_finished_procs(procs):
+    """Join finished children and return the names of failed builds."""
+    failed = []
+    for p in procs[:]:
+        if p.exitcode is not None:
+            wiki_name = "_".join(p.name.split("_")[2:])
+            p.join()
+            procs.remove(p)
+            if p.exitcode == 2:
+                error(f"Sphinx warnings were emitted for {wiki_name}")
+            elif p.exitcode != 0:
+                # multiprocessing uses negative exit codes for signals,
+                # including -9 when the OOM killer terminates a build.
+                error(f"Sphinx build error for {wiki_name} (exit code {p.exitcode})")
+                failed.append(wiki_name)
+    return failed
 
 
 def sphinx_make(site, parallel, fast):
@@ -278,6 +498,7 @@ def sphinx_make(site, parallel, fast):
     done = set()
     wikis = set(ALL_WIKIS[:])
     procs = []
+    failed = []
 
     while len(done) != len(wikis):
         wiki = list(wikis.difference(done))[0]
@@ -288,42 +509,47 @@ def sphinx_make(site, parallel, fast):
             continue
         if site is not None and not site == wiki:
             continue
-        p = multiprocessing.Process(target=build_one, args=(wiki, fast))
+        p = multiprocessing.Process(name=f"build_one_{wiki}", target=build_one, args=(wiki, fast))
         p.start()
         procs.append(p)
         while parallel != -1 and len(procs) >= parallel:
-            for p in procs:
-                if p.exitcode is not None:
-                    p.join()
-                    procs.remove(p)
-                    if p.exitcode != 0:
-                        error('Error making sphinx(1)')
+            failed.extend(_reap_finished_procs(procs))
             time.sleep(0.1)
     while len(procs) > 0:
-        for p in procs[:]:
-            if p.exitcode is not None:
-                p.join()
-                procs.remove(p)
-                if p.exitcode != 0:
-                    error('Error making sphinx(2)')
+        failed.extend(_reap_finished_procs(procs))
         time.sleep(0.1)
+    # Reap all children before exiting, but never cache or publish their
+    # output if any build failed. Warnings alone remain non-fatal here.
+    if failed:
+        fatal(f"Refusing to publish: Sphinx builds failed for {', '.join(sorted(failed))}")
+
+
+def validate_build_output(wiki):
+    """Verify the assembled output against the successful Sphinx build."""
+    html_dir = Path(wiki, 'build', 'html')
+    outputs = json.loads(Path(wiki, 'build', 'output-manifest.json').read_text(encoding='utf-8'))
+    for name in ('index.html', 'searchindex.js', 'objects.inv'):
+        if name not in outputs or (html_dir / name).stat().st_size == 0:
+            raise ValueError(f"Missing or empty build output: {name}")
+    for name, digest in outputs.items():
+        if output_hash(html_dir / name) != digest:
+            raise ValueError(f"Build output changed after Sphinx completed: {name}")
+    # Also validate parameter pages added from cache after Sphinx.
+    for path in html_dir.rglob('*.html'):
+        check_html_output(path)
 
 
 def check_build(site):
-    """
-    check that build was successful
-    """
-    if platform.system() == "Windows":
-        debug("Skipping check_build on windows")
-        return
+    """Refuse publication if any wiki's assembled output is incomplete."""
     for wiki in ALL_WIKIS:
         if site is not None and site != wiki:
             continue
         if wiki in ['common', 'frontend']:
             continue
-        index_html = os.path.join(wiki, "build", "html", "index.html")
-        if not os.path.exists(index_html):
-            fatal(f"{wiki} site not built - missing {index_html}")
+        try:
+            validate_build_output(wiki)
+        except (OSError, ValueError) as exc:
+            fatal(f"{wiki} site not complete: {exc}")
 
 
 def copy_build(site, destdir):
@@ -372,7 +598,7 @@ def copy_build(site, destdir):
         shutil.rmtree(olddir)
 
 
-def make_backup(site, destdir, backupdestdir):
+def make_backup(building_time, site, destdir, backupdestdir):
     """
     backup current site
     """
@@ -398,7 +624,7 @@ def make_backup(site, destdir, backupdestdir):
         try:
             subprocess.check_call(["rsync", "-a", "--delete", f"{targetdir}/", bkdir])
         except subprocess.CalledProcessError as ex:
-            progress(ex)
+            error(ex)
             fatal(f"Failed to backup {wiki}")
 
 
@@ -420,9 +646,10 @@ def delete_old_wiki_backups(folder, n_to_keep):
         error(f'Error on deleting some previous wiki backup folders: {e}')
 
 
-def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
+def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False, site: Optional[str] = None):
     """
-    copies files common to all Wikis to the source directories for each Wiki
+    copies files common to all Wikis (or a single wiki when `site` is provided) to the
+    source directories for each Wiki.
 
     Args:
         start_dir: Directory containing common source files
@@ -430,14 +657,21 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                      If False, only copy files that have changed (faster incremental builds).
     """
 
+    # Determine which wikis we will operate on
+    if site:
+        allowed_wikis = {site}
+        debug(f"copy_common_source_files: restricted to site '{site}'")
+    else:
+        allowed_wikis = set(ALL_WIKIS)
+
     # Create destination folders that might be needed (if don't exist)
-    for wiki in ALL_WIKIS:
+    for wiki in allowed_wikis:
         os.makedirs(f'{wiki}/source/docs', exist_ok=True)
         os.makedirs(f'{wiki}/source/_static', exist_ok=True)
 
     # Build a set of expected common files per wiki (to detect stale files)
     # Format: {wiki: set of filenames that should exist}
-    expected_common_files = {wiki: set() for wiki in ALL_WIKIS}
+    expected_common_files = {wiki: set() for wiki in allowed_wikis}
 
     # First pass: determine which files should exist in each wiki
     for root, dirs, files in os.walk(start_dir):
@@ -447,12 +681,14 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                 with open(source_file_path, 'r', encoding='utf-8') as f:
                     source_content = f.read()
                 targets = get_copy_targets(source_content)
+                # Only record expected files for wikis we're operating on
                 for wiki in targets:
-                    expected_common_files[wiki].add(file)
+                    if wiki in allowed_wikis:
+                        expected_common_files[wiki].add(file)
 
     # Remove stale common files (files that exist but shouldn't)
     files_removed = 0
-    for wiki in ALL_WIKIS:
+    for wiki in allowed_wikis:
         existing_common_files = glob.glob(f'{wiki}/source/docs/common-*.rst')
         for filepath in existing_common_files:
             filename = os.path.basename(filepath)
@@ -462,77 +698,67 @@ def copy_common_source_files(start_dir=COMMON_DIR, clean_common=False):
                 files_removed += 1
 
     if clean_common:
-        # Clean all existing common topics for full rebuild
-        for wiki in ALL_WIKIS:
+        # Clean existing common topics only for allowed_wikis
+        for wiki in allowed_wikis:
             files = glob.glob(f'{wiki}/source/docs/common-*.rst')
             for f in files:
                 debug(f'Remove existing common: {f}')
                 os.remove(f)
 
-    debug("Copying common source files to each Wiki")
+    debug(f"Copying common source files to target wiki(s): {', '.join(sorted(allowed_wikis))}")
     files_copied = 0
     files_skipped = 0
 
     for root, dirs, files in os.walk(start_dir):
         for file in files:
+            source_file_path = Path(root) / file
             if file.endswith(".rst"):
                 # debug("  FILE: %s" % file)
-                source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', encoding='utf-8')
-                source_content = source_file.read()
-                source_file.close()
+                source_content = source_file_path.read_text(encoding='utf-8')
                 targets = get_copy_targets(source_content)
+                # Only copy into the intersection of declared targets and the allowed wikis
                 for wiki in targets:
+                    if wiki not in allowed_wikis:
+                        continue
                     content = strip_content(source_content, wiki)
-                    targetfile = f'{wiki}/source/docs/{file}'
+                    targetfile = Path(wiki) / "source" / "docs" / file
 
                     # Only write if content has changed (preserves timestamps for unchanged files)
-                    # Use byte-accurate file comparison against the source file.
-                    if not clean_common and os.path.exists(targetfile):
-                        try:
-                            if filecmp.cmp(source_file_path, targetfile, shallow=False):
-                                files_skipped += 1
-                                continue
-                        except Exception as e:
-                            debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
-                            # treat as different and fall through to write
+                    # Compare against the file content after stripping copywiki shortcodes.
+                    if not clean_common and targetfile.exists():
+                        if targetfile.read_text(encoding='utf-8') == content:
+                            files_skipped += 1
+                            continue
 
-                    # debug(targetfile)
-                    with open(targetfile, 'w', encoding='utf-8') as destination_file:
-                        destination_file.write(content)
+                    targetfile.write_text(content, encoding='utf-8')
                     files_copied += 1
             elif file.endswith(".css"):
-                for wiki in ALL_WIKIS:
-                    src = os.path.join(root, file)
-                    dst = f'{wiki}/source/_static/{file}'
+                for wiki in allowed_wikis:
+                    targetfile = Path(wiki) / "source" / "_static" / file
                     # Only copy if different
-                    if not clean_common and os.path.exists(dst) and filecmp.cmp(src, dst, shallow=False):
+                    if not clean_common and targetfile.exists() and filecmp.cmp(source_file_path, targetfile, shallow=False):
                         continue
-                    shutil.copy2(src, dst)
+                    shutil.copy2(source_file_path, targetfile)
             elif file.endswith(".js"):
-                source_file_path = os.path.join(root, file)
-                source_file = open(source_file_path, 'r', encoding='utf-8')
-                source_content = source_file.read()
-                source_file.close()
+                source_content = source_file_path.read_text(encoding='utf-8')
                 targets = get_copy_targets(source_content)
                 for wiki in targets:
+                    if wiki not in allowed_wikis:
+                        continue
                     content = strip_content(source_content, wiki)
-                    targetfile = f'{wiki}/source/_static/{file}'
+                    targetfile = Path(wiki) / "source" / "_static" / file
 
                     # Only write if content has changed
-                    if not clean_common and os.path.exists(targetfile):
-                        try:
-                            if filecmp.cmp(source_file_path, targetfile, shallow=False):
-                                continue
-                        except Exception as e:
-                            debug(f"filecmp failed for {source_file_path} vs {targetfile}: {e}")
-                            # treat as different and fall through to write
+                    if not clean_common and targetfile.exists():
+                        if targetfile.read_text(encoding='utf-8') == content:
+                            continue
 
-                    # debug(targetfile)
-                    with open(targetfile, 'w', encoding='utf-8') as destination_file:
-                        destination_file.write(content)
+                    targetfile.write_text(content, encoding='utf-8')
 
-    progress(f"Common files: {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
+    site_label = site
+    if site_label is None:
+        site_label = "all"
+    info(f"Common files ({site_label}): {files_copied} copied, {files_skipped} unchanged, {files_removed} removed")
 
 
 def get_copy_targets(content):
@@ -592,29 +818,52 @@ def logmatch_code(matchobj, prefix):
 
     for i in range(9):
         try:
-            progress(f"{prefix} m{i}: {matchobj.group(i)}")
+            info(f"{prefix} m{i}: {matchobj.group(i)}")
         except IndexError:  # The object has less groups than expected
-            progress(f"{prefix}: except m{i}")
+            error(f"{prefix}: except m{i}")
 
 
 def is_the_same_file(file1, file2):
     """ Compare two files using their SHA256 hashes"""
-    def file_hash(path, algo="sha256", chunk_size=8192):
-        h = hashlib.new(algo)
-        with open(path, "rb") as f:
-            chunk = f.read(chunk_size)
-            while chunk:
-                h.update(chunk)
-                chunk = f.read(chunk_size)
-        return h.hexdigest()
-    return file_hash(file1) == file_hash(file2)
+    return output_hash(file1) == output_hash(file2)
+
+
+def cleanup_versioned_parameters(site=None):
+    """
+    It removes all versioned parameters files and JSON files in order to
+    prepare the wiki for a new build with the new versioned parameters.
+    """
+
+    for key, value in PARAMETER_SITE.items():
+
+        if site == key or site is None:
+
+            # Remove old versioned param files
+            if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
+                old_parameters_mask = "./AntennaTracker/source/docs/parameters-AntennaTracker-"
+            else:
+                old_parameters_mask = f"./{key}/source/docs/parameters-{key.title()}-"
+
+            old_parameters_files = [
+                f for f in glob.glob(f"{old_parameters_mask}*.rst")]
+            for filename in old_parameters_files:
+                debug(f"Erasing rst {filename}")
+                remove_if_exists(filename)
+
+            # Remove old json file
+            if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
+                target_json_file = './AntennaTracker/source/_static/parameters-AntennaTracker.json'
+            else:
+                target_json_file = f'./{value}/source/_static/parameters-{key.title()}.json'
+            debug(f"Erasing json {target_json_file}")
+            remove_if_exists(target_json_file)
 
 
 def fetch_versioned_parameters(site=None):
     """
     It relies on "build_parameters.py" be executed before the "update.py"
 
-    Once the generated files are on ../new_params_mversion it tut all
+    Once the generated files are on ../new_params_mversion it, put all
     parameters and JSON files in their destinations.
     """
 
@@ -633,28 +882,7 @@ def fetch_versioned_parameters(site=None):
                 debug(f"Erasing {single_param_file}")
                 remove_if_exists(single_param_file)
 
-                # Remove old versioned param files
-                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                    old_parameters_mask = f"{os.getcwd()}/AntennaTracker/source/docs/parameters-AntennaTracker-"
-                else:
-                    old_parameters_mask = f"{os.getcwd()}/{key}/source/docs/parameters-{key.title()}-"
-                try:
-                    old_parameters_files = [
-                        f for f in glob.glob(f"{old_parameters_mask}*.rst")]
-                    for filename in old_parameters_files:
-                        debug(f"Erasing rst {filename}")
-                        os.remove(filename)
-                except Exception as e:
-                    error(e)
-                    pass
-
-                # Remove old json file
-                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                    target_json_file = ('./{}/source/_static/parameters-{}.json'.format("AntennaTracker", "AntennaTracker"))
-                else:
-                    target_json_file = (f'./{value}/source/_static/parameters-{key.title()}.json')
-                debug(f"Erasing json {target_json_file}")
-                remove_if_exists(target_json_file)
+                cleanup_versioned_parameters(key)
 
                 # Moves the updated JSON file
                 if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
@@ -705,24 +933,6 @@ def fetch_versioned_parameters(site=None):
                     except Exception as e:
                         error(e)
                         pass
-
-
-def create_latest_parameter_redirect(default_param_file, vehicle):
-    """
-    For a given vehicle create a file called parameters.rst that
-    redirects to the latest parameters file.(Create to maintaim retro
-    compatibility.)
-    """
-    out_line = "======================\nParameters List (Full)(\n======================\n"
-    out_line += "\n.. raw:: html\n\n"
-    out_line += f'   <script>location.replace("{default_param_file[:-3]}html")</script>'
-    out_line += "\n\n"
-
-    filename = f"{vehicle}/source/docs/parameters.rst"
-    with open(filename, "w") as text_file:
-        text_file.write(out_line)
-
-    debug(f"Created html automatic redirection from parameters.html to {default_param_file[:-3]}html")
 
 
 def cache_parameters_files(site=None):
@@ -778,11 +988,22 @@ def put_cached_parameters_files_in_sites(site=None):
                 debug(f"Site {site} getting previously built files from {built_folder}")
                 for built in built_parameters_files:
                     if "latest" not in built:  # latest parameters files must be built every time
+                        target = Path(vehicle_folder, Path(built).name)
+                        if target.exists():
+                            continue  # Never overwrite freshly built, validated HTML.
+                        check_html_output(built)
                         debug(f"Reusing built {built} in {vehicle_folder} ")
-                        shutil.copy(built, vehicle_folder)
+                        temporary = target.with_suffix('.html.tmp')
+                        try:
+                            shutil.copy2(built, temporary)
+                            if output_hash(built) != output_hash(temporary):
+                                raise ValueError(f"Incomplete cached parameter copy: {built}")
+                            check_html_output(temporary)
+                            os.replace(temporary, target)
+                        finally:
+                            temporary.unlink(missing_ok=True)
             except Exception as e:
-                error(e)
-                pass
+                fatal(f"Cannot restore cached parameters for {key}: {e}")
 
 
 def update_frontend_json():
@@ -825,7 +1046,7 @@ def check_imports():
         try:
             importlib.metadata.version(package.split("<")[0].split(">=")[0])
         except importlib.metadata.PackageNotFoundError as ex:
-            progress(ex)
+            error(ex)
             fatal(f'Require {package}\nPlease run the wiki build setup script "Sphinxsetup"')
     debug("Imports OK")
 
@@ -874,7 +1095,7 @@ def create_features_pages(site):
     fetch_url("https://firmware.ardupilot.org/features.json.gz")
     features_json = json.load(gzip.open("features.json.gz"))
     if features_json["format-version"] != "1.0.0":
-        progress("bad format version")
+        error("bad format version")
         return
     features = features_json["features"]
 
@@ -928,7 +1149,9 @@ def create_features_page(features, build_options_by_define, vehicletype):
                 build_options = build_options_by_define[feature]
             except KeyError:
                 # mismatch between build_options.py and features.json
-                progress(f"feature {feature} ({platform_key},{vehicletype}) not in build_options.py")
+                # Doesn't report as error as we could have delay between updating
+                # build_options.py (from ardupilot repo master branch) and features.json (from firmwares server build result)
+                warning(f"feature {feature} ({platform_key},{vehicletype}) not in build_options.py")
                 continue
             if feature_in:
                 some_list = sorted_platform_features_in
@@ -1008,142 +1231,193 @@ Boards
 #######################################################################
 
 
-if __name__ == "__main__":
+class WikiUpdater:
+    def __init__(self) -> None:
+        if platform.system() == "Windows":
+            multiprocessing.freeze_support()
 
-    if platform.system() == "Windows":
-        multiprocessing.freeze_support()
+        # Set up option parsing to get connection string
+        parser = argparse.ArgumentParser(
+            description="Copy Common Files as needed, stripping out non-relevant wiki content",
+        )
+        parser.add_argument(
+            "--site",
+            help="If you just want to copy to one site, you can do this. Otherwise will be copied.",
+        )
+        parser.add_argument(
+            "--clean-common",
+            action="store_true",
+            help="Force clean and copy common files into wikis directories.",
+        )
+        parser.add_argument(
+            "--cached-parameter-files",
+            action="store_true",
+            help="Do not re-download parameter files",
+        )
+        parser.add_argument(
+            "--parallel",
+            type=int,
+            help="limit parallel builds, -1 for unlimited",
+            default=1,
+        )
+        parser.add_argument(
+            "--destdir",
+            default=None,
+            help="Destination directory for compiled docs",
+        )
+        parser.add_argument(
+            "--enablebackups",
+            action="store_true",
+            default=False,
+            help="Enable several backups up to const N_BACKUPS_RETAIN in --backupdestdir folder",
+        )
+        parser.add_argument(
+            "--backupdestdir",
+            default="/var/sites/wiki-backup/web",
+            help="Destination directory for compiled docs",
+        )
+        parser.add_argument(
+            "--paramversioning",
+            action="store_true",
+            default=False,
+            help="Build multiple parameters pages for each vehicle based on its firmware repo.",
+        )
+        parser.add_argument(
+            "--verbose",
+            dest="verbose",
+            action="store_true",
+            default=False,
+            help="show debugging output",
+        )
+        parser.add_argument(
+            "--fast",
+            dest="fast",
+            action="store_true",
+            default=False,
+            help=("Incremental build using already downloaded parameters, "
+                  "log messages, and video thumbnails rather than cleaning "
+                  "before build."),
+        )
 
-    # Set up option parsing to get connection string
-    parser = argparse.ArgumentParser(
-        description='Copy Common Files as needed, stripping out non-relevant wiki content',
-    )
-    parser.add_argument(
-        '--site',
-        help="If you just want to copy to one site, you can do this. Otherwise will be copied.",
-    )
-    parser.add_argument(
-        '--clean-common',
-        action='store_true',
-        help="Force clean and copy common files into wikis directories.",
-    )
-    parser.add_argument(
-        '--cached-parameter-files',
-        action='store_true',
-        help="Do not re-download parameter files",
-    )
-    parser.add_argument(
-        '--parallel',
-        type=int,
-        help="limit parallel builds, -1 for unlimited",
-        default=1,
-    )
-    parser.add_argument(
-        '--destdir',
-        default=None,
-        help="Destination directory for compiled docs",
-    )
-    parser.add_argument(
-        '--enablebackups',
-        action='store_true',
-        default=False,
-        help="Enable several backups up to const N_BACKUPS_RETAIN in --backupdestdir folder",
-    )
-    parser.add_argument(
-        '--backupdestdir',
-        default="/var/sites/wiki-backup/web",
-        help="Destination directory for compiled docs",
-    )
-    parser.add_argument(
-        '--paramversioning',
-        action='store_true',
-        default=False,
-        help="Build multiple parameters pages for each vehicle based on its firmware repo.",
-    )
-    parser.add_argument(
-        '--verbose',
-        dest='verbose',
-        action='store_true',
-        default=False,
-        help="show debugging output",
-    )
-    parser.add_argument(
-        '--fast',
-        dest='fast',
-        action='store_true',
-        default=False,
-        help=("Incremental build using already downloaded parameters, log messages, and video thumbnails rather than cleaning "
-              "before build."),
-    )
+        self.args = parser.parse_args()
+        self.verbose: bool = self.args.verbose
 
-    args = parser.parse_args()
+        logging_level = logging.DEBUG if self.verbose else logging.INFO
+        logger.setLevel(logging_level)
+        logging.getLogger('scripts.dedupe_params').setLevel(logging_level)
+        stream_handler.setLevel(logging_level)
 
-    VERBOSE = args.verbose
+    def run(self) -> None:
 
-    tstart = time.time()
-    now = datetime.now()
-    building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
+        tstart = time.time()
+        now = datetime.now()
+        building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
 
-    check_imports()
-    check_ref_directives()
+        check_imports()
+        check_ref_directives()
 
-    progress("=== Step 1: Creating features pages ===")
-    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-    create_features_pages(args.site)
+        info("=== Step 1: Creating features pages ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        create_features_pages(self.args.site)
 
-    progress("=== Step 2: Fetching parameters and log messages in parallel ===")
-    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-    if not args.fast:
-        if args.paramversioning:
-            # Parameters for all versions available on firmware.ardupilot.org:
-            fetch_versioned_parameters(args.site)
+        info("=== Step 2: Fetching parameters and log messages in parallel ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        if not self.args.fast:
+            if self.args.paramversioning:
+                # Parameters for all versions available on firmware.ardupilot.org:
+                fetch_versioned_parameters(self.args.site)
+            else:
+                # Single parameters file. Just present the latest parameters:
+                cleanup_versioned_parameters(self.args.site)
+                fetchparameters(self.args.site, self.args.cached_parameter_files)
+
+            dedupe_periph_net_parameters('./dev/source/docs/AP_Periph-Parameters.rst')
+            # Fetch most recent LogMessage metadata from autotest:
+            fetchlogmessages(self.args.site, self.args.cached_parameter_files)
+
+        info("=== Step 3: Processing static sites ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        copy_static_html_sites(self.args.site, self.args.destdir)
+
+        # Use clean_common=True for clean builds, False for fast/incremental builds
+        info("=== Step 4: Copying common source files ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        copy_common_source_files(clean_common=self.args.clean_common, site=self.args.site)
+
+        info("=== Step 5: Building documentation with Sphinx ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+        sphinx_make(self.args.site, self.args.parallel, self.args.fast)
+        if self.args.paramversioning:
+            put_cached_parameters_files_in_sites(self.args.site)
+
+        check_build(self.args.site)
+        if self.args.paramversioning:
+            cache_parameters_files(self.args.site)
+
+        info("=== Step 5b: Post-build passes ===")
+        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+
+        # Reads the source tree, not --destdir: copy_build moves
+        # <wiki>/build/html there later in this method.
+        passes_root = Path(".")
+        wikis = [self.args.site] if self.args.site else ALL_WIKIS
+
+        try:
+            from scripts.optimise_images import run as optimise_images
+            # The deployment directory survives update.sh's git clean -x.
+            # Keep this beside the thumbnail cache, outside the published archives.
+            image_cache = Path(self.args.destdir or ".") / "offline.cache" / "images"
+            n, saved = optimise_images(wikis, passes_root, cache_dir=image_cache)
+            info(f"recompressed {n} PNGs, saving {saved / 1048576:.1f} MB")
+        except Exception as ex:
+            error(f"image pass failed, skipping: {ex}")
+
+        # Skipped for a partial build: --site leaves the other wikis unbuilt,
+        # and a manifest describing one wiki would tell every saved copy it is
+        # out of date.
+        if self.args.site:
+            info(f"offline artefacts skipped: --site {self.args.site} builds "
+                 "one wiki, and the archives describe all of them")
         else:
-            # Single parameters file. Just present the latest parameters:
-            fetchparameters(args.site, args.cached_parameter_files)
+            # Optional output: a failure here must not stop the wiki publishing.
+            try:
+                from scripts.build_offline_artifacts import build as build_offline
+                build_offline(ALL_WIKIS, Path(self.args.destdir or "."))
+            except Exception as ex:
+                error(f"offline artefacts failed, publishing without them: {ex}")
 
-        # Fetch most recent LogMessage metadata from autotest:
-        fetchlogmessages(args.site, args.cached_parameter_files)
+        if self.args.enablebackups:
+            make_backup(building_time, self.args.site, self.args.destdir, self.args.backupdestdir)
+            delete_old_wiki_backups(self.args.backupdestdir, N_BACKUPS_RETAIN)
 
-    progress("=== Step 3: Processing static sites ===")
-    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-    copy_static_html_sites(args.site, args.destdir)
+        if self.args.destdir:
+            copy_build(self.args.site, self.args.destdir)
 
-    # Use clean_common=True for clean builds, False for fast/incremental builds
-    progress("=== Step 4: Copying common source files ===")
-    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-    copy_common_source_files(clean_common=args.clean_common)
+        # To navigate locally and view versioning script for parameters
+        # working is necessary run Chrome as "chrome
+        # --allow-file-access-from-files". Otherwise it will appear empty
+        # locally and working once is on the server.
 
-    progress("=== Step 5: Building documentation with Sphinx ===")
-    progress(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-    sphinx_make(args.site, args.parallel, args.fast)
+        error_count = len(error_store_handler.error_messages)
+        total_time = time.time() - tstart
+        info(f"Total execution time: {total_time:.2f} seconds ({total_time / 60:.1f} minutes)")
 
-    if args.paramversioning:
-        put_cached_parameters_files_in_sites(args.site)
-        cache_parameters_files(args.site)
+        if error_count > 0:
+            _reprint_logger.error("Reprinting error messages:")
+            for error_msg in error_store_handler.error_messages:
+                _reprint_logger.error(error_msg)
+            if os.environ.get('CI') or os.environ.get('GITHUB_ACTIONS'):
+                sys.exit(1)
+        else:
+            logger.info("Build completed without errors")
 
-    check_build(args.site)
+        sys.exit(0)
 
-    if args.enablebackups:
-        make_backup(args.site, args.destdir, args.backupdestdir)
-        delete_old_wiki_backups(args.backupdestdir, N_BACKUPS_RETAIN)
 
-    if args.destdir:
-        copy_build(args.site, args.destdir)
+def main():
+    updater = WikiUpdater()
+    updater.run()
 
-    # To navigate locally and view versioning script for parameters
-    # working is necessary run Chrome as "chrome
-    # --allow-file-access-from-files". Otherwise it will appear empty
-    # locally and working once is on the server.
 
-    error_count = len(error_log)
-    total_time = time.time() - tstart
-    progress(f"Total execution time: {total_time:.2f} seconds ({total_time/60:.1f} minutes)")
-
-    if error_count > 0:
-        progress("Reprinting error messages:", file=sys.stderr)
-        for msg in error_log:
-            print(f"\033[1;31m[update.py][error]: {msg}\033[0m", file=sys.stderr) # noqa: E702,E231
-        fatal(f"{error_count} errors during Wiki build")
-    else:
-        print("Build completed without errors")
-
-    sys.exit(0)
+if __name__ == "__main__":
+    main()

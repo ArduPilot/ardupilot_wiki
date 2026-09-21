@@ -19,7 +19,7 @@ that in mind.
 the vehicle will tack. This keeps the vehicle within a corridor of width 2* :ref:`SAIL_XTRACK_MAX<SAIL_XTRACK_MAX>`. If set to zero
 the vehicle will ignore the cross track error and only tack once it can reach its destination.
 
-:ref:`PIVOT_TURN_RATE <PIVOT_TURN_RATE>` defines the maximum rate used for tacking, a lower value will result
+:ref:`WP_PIVOT_RATE <WP_PIVOT_RATE>` defines the maximum rate used for tacking, a lower value will result
 in slower tack. This should be reduced if the vehicle is tacking too sharply and losing momentum while tacking.
 
 :ref:`LOIT_RADIUS <LOIT_RADIUS>` defines the radius from the loiter point the vehicle will try and stay within,

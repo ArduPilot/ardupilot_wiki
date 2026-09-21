@@ -70,12 +70,13 @@ Unidirectional Rangefinders
     Avionics Anonymous DroneCAN LIDAR Interface <common-avanon-laserint>
     Benewake TF02-Pro / TF03 / TFS20-L / TF-Luna / TF-Nova / TF350 <common-benewake-tf02-lidar>
     Benewake TFmini / TFmini Plus <common-benewake-tfmini-lidar>
-    Benewake TFS20L <https://en.benewake.com/TFS20L/>
+    CORVON CV08 / CV50 <common-corvon-cv08-cv50>
     Garmin Lidar-Lite <common-rangefinder-lidarlite>
     GY-US42 Sonar <common-rangefinder-gy-us42>
     Hexsoon 24G Radar <common-rangefinder-hexsoon-24g>
     HC-SR04 Sonar <common-rangefinder-hcsr04>
     JAE JRE-30 <common-rangefinder-jae-jre-30>
+    Lanbao PSK-CM8JL65-CC5 <common-lanbao-cm8jl65-lidar>
     LeddarTech Leddar One <common-leddar-one-lidar>
     LeddarTech LeddarVu8 <common-leddartech-leddarvu8-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
@@ -87,6 +88,7 @@ Unidirectional Rangefinders
     Nanoradar NRA24 <common-rangefinder-nra24>
     Nooploop TOF-Sense P <common-rangefinder-nooploop-tofsense-p>
     Nooploop TOF-Sense F <common-rangefinder-nooploop-tofsense-f>
+    Smartmicro Drone Altimeter <common-rangefinder-smartmicro-t132>
     ST VL53L0X / VL53L1X Lidar <common-vl53l0x-lidar>
     TeraRanger One/EVO Rangefinders <common-teraranger-one-rangefinder>
     TeraRanger NEO <common-teraranger-neo>

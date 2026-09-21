@@ -42,7 +42,7 @@ Calibration steps
 
       Accelerometer Calibration Positions (Copter)
 
-   The vehicle must be kept still immediately after pressing the key for each step. This is more important than getting the angle exactly right, ie. left being 90deg to horizontal, etc. Except for the first "LEVEL", the positions can be within 20 degrees of being exact. **Being still in each position as you press the key is much more important.**
+   The vehicle must be kept still immediately after pressing the key for each step. This is more important than getting the angle exactly right, ie. left being 90deg to horizontal, etc. Except for the first "LEVEL", the positions can be within 20 degrees of being exact. **Being still in each position as you press the key is much more important.**.  Do not hold the vehicle when doing this step, find some way to pose the vehicle (e.g. lie on the ground or put it in a jig).
    
    -  You should calibrate the board mounted in the vehicle if possible. 
    -  However, you may need to calibrate the board before it is mounted if the size/shape of the vehicle makes this difficult.

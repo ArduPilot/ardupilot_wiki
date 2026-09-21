@@ -1,8 +1,16 @@
 .. _sitl-with-morse:
 
-=====================
-Using SITL with Morse
-=====================
+===============================
+Archived: Using SITL with Morse
+===============================
+
+.. warning::
+
+    This topic is archived. Morse is no longer maintained, and its
+    ArduPilot simulation backend is no longer tested. Developers wanting a
+    3D robotics simulation environment should use :ref:`Webots <sitl-with-webots>`,
+    :ref:`Gazebo <sitl-with-gazebo>` or :ref:`PteroSim <sitl-with-pterosim>` instead.
+    See :ref:`Simulation <simulation-2>` for the full list of supported simulators.
 
 ..  youtube:: Zk8MYmt03-Q
     :width: 100%
@@ -13,10 +21,6 @@ environment to create a complete robotics platform.
 
 ArduPilot has a Morse SITL simulation backend that allows ArduPilot to
 control vehicles created within Morse.
-
-.. warning::
-
-    Morse is no longer maintained so we recommend developers use :ref:`AirSim <sitl-with-airsim>` or :ref:`Webots <sitl-with-webots>`.
 
 .. note::
 

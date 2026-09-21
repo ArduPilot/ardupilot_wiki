@@ -1,8 +1,8 @@
 .. _gps-failsafe-glitch-protection:
 
-==================================
-GPS Failsafe and Glitch Protection
-==================================
+============================================
+Archived: GPS Failsafe and Glitch Protection
+============================================
 
 This article describes the glitch protection mechanisms used to trigger
 GPS Failsafe.
@@ -52,6 +52,7 @@ The new position is accepted as "good" if:
 
 During a glitch, "Bad Position" will be written on the ground station's
 HUD
+
 
 Glitch Protection - EKF
 =======================

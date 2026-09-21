@@ -1,0 +1,10 @@
+# https://www.shellcheck.net -- 'shellcheck --help'
+# https://github.com/koalaman/shellcheck
+# 'find . -type f -name "*.sh" -exec shellcheck {} +'
+
+# To improve our code quality, comment out one for the following and create a pull request:
+disable=SC2006  # 1 instance
+disable=SC2046  # 3 instances
+disable=SC2086  # Many instances
+disable=SC2162  # 3 instances
+disable=SC2185  # 1 instance

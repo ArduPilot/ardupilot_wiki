@@ -25,7 +25,7 @@ Overview
 
 `MAUCH <https://www.mauch-electronic.com/#webs-bin-563c137b7add4cb229080f55>`__
 has a number of PMs, which are compatible with Pixhawk, APM, Pixhawk
-lite, AUAV-X2, DroTek und CUAV Pixhack. The sensors boards are capable
+lite, AUAV-X2, and CUAV Pixhack. The sensors boards are capable
 of delivering 100A continuous current for HS-100-V2 and 200A for the
 HS-200-V2 (without any time limit). The maximum burst current is
 1200A@25'C and 800A@85'C for 1 second.

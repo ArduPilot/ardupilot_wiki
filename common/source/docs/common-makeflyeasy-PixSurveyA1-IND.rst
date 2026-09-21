@@ -185,6 +185,7 @@ Safety and LED port
    <th>PIN</th>
    <th>SIGNAL</th>
    <th>VOLT</th>
+   </tr>
    <tr>
    <td>1</td>
    <td>VCC</td>

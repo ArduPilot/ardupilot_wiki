@@ -394,8 +394,8 @@ All PWM outputs can be used as GPIOs (relays, camera, RPM etc). To use them you 
      <tr><td> M4 </td><td> 104 </td> <td> Out4 </td><td>  </td><td> M12 </td><td> 53 </td><td> AuxOut4 </td></tr>
      <tr><td> M5 </td><td> 105 </td> <td> Out5 </td><td>  </td><td> M13 </td><td> 54 </td><td> AuxOut5 </td></tr>
      <tr><td> M6 </td><td> 106 </td> <td> Out6 </td><td>  </td><td> M14 </td><td> 55 </td><td> AuxOut6 </td></tr>
-     <tr><td> M7 </td><td> 107 </td> <td> Out7 </td><td>  </td><td> </td><td>  </td><td>  </td></td></tr>
-     <tr><td> M8 </td><td> 108 </td> <td> Out8 </td><td>  </td><td> </td><td>  </td><td>  </td></td></tr>
+     <tr><td> M7 </td><td> 107 </td> <td> Out7 </td><td>  </td><td> </td><td>  </td><td>  </td></tr>
+     <tr><td> M8 </td><td> 108 </td> <td> Out8 </td><td>  </td><td> </td><td>  </td><td>  </td></tr>
    </table>
 
 Battery Monitor Settings

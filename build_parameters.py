@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
     This script aims to provide multiple parameters source files for each vehicle based on the versions available at
     https://firmware.ardupilot.org
@@ -32,18 +32,55 @@ import logging
 import os
 import re
 import shutil  # noqa: F401
+import subprocess
 import sys
 import time  # noqa: F401
-import urllib.request
+import urllib.parse
+from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
+from pathlib import Path
+
+import requests
+from requests.adapters import HTTPAdapter
+
+from scripts.dedupe_params import dedupe_old_rangefinder_parameters
 
 parser = argparse.ArgumentParser(description="python3 build_parameters.py [options]")
 parser.add_argument("--verbose", dest='verbose', action='store_false', default=True, help="show debugging output")
 parser.add_argument("--ardupilotRepoFolder", dest='gitFolder', default="../ardupilot", help="Ardupilot git folder. ")
 parser.add_argument("--destination", dest='destFolder', default="../../../../new_params_mversion", help="Parameters*.rst destination folder.")  # noqa: E501
 parser.add_argument('--vehicle', dest='single_vehicle', help="If you just want to copy to one vehicle, you can do this. Otherwise it will work for all vehicles (Copter, Plane, Rover, AntennaTracker, Sub, Blimp)")  # noqa: E501
+
+DEFAULT_CACHE_TIME = 6 * 3600
+
+# Get the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+default_http_request_cache_dir = os.path.join(script_dir, '.cache')
+
+parser.add_argument("--cache-dir", dest='cache_dir', default=default_http_request_cache_dir,
+                    help="Directory to cache HTTP responses")
 args = parser.parse_args()
 
+
+# Parameters
+COMMITFILE = "git-version.txt"
+BASEURL = "https://firmware.ardupilot.org/"
+ALLVEHICLES = ["AntennaTracker", "Copter", "Plane", "Rover", "Sub", "Blimp"]
+VEHICLES = ALLVEHICLES
+# Filter out versions below this semantic version threshold (each kept version
+# is another 5.8 MB parameter page per vehicle).
+
+
+def _min_version(value: str) -> tuple:
+    parts = value.split(".")
+    if len(parts) != 3 or not all(part.isdigit() for part in parts):
+        raise SystemExit(f"ARDUPILOT_PARAM_MIN_VERSION must be MAJOR.MINOR.PATCH, not {value!r}")
+    return tuple(int(part) for part in parts)
+
+
+PARAM_PARSE_MINIMUM_VERSION = _min_version(os.environ.get("ARDUPILOT_PARAM_MIN_VERSION", "3.9.0"))
+
+BASEPATH = ""
 error_count = 0
 
 
@@ -70,16 +107,261 @@ class ColoredFormatter(logging.Formatter):
 
 handler = logging.StreamHandler(sys.stdout)
 handler.setFormatter(ColoredFormatter('[build_parameters.py]: [%(levelname)s]: %(message)s'))
-logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, handlers=[handler])
+logging_level = logging.DEBUG if args.verbose else logging.INFO
+logging.basicConfig(level=logging_level, handlers=[handler])
 logger = logging.getLogger(__name__)
+logging.getLogger('scripts.dedupe_params').setLevel(logging_level)
 
-# Parameters
-COMMITFILE = "git-version.txt"
-BASEURL = "https://firmware.ardupilot.org/"
-ALLVEHICLES = ["AntennaTracker", "Copter", "Plane", "Rover", "Sub", "Blimp"]
-VEHICLES = ALLVEHICLES
+# Global session for HTTP requests with connection pooling
+session = requests.Session()
+adapter = HTTPAdapter(pool_maxsize=20)
+session.mount('http://', adapter)
+session.mount('https://', adapter)
+session.headers.update({
+    'User-Agent': 'Mozilla/5.0 (compatible; ArduPilotWikiBuilder/1.0)',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Connection': 'keep-alive'
+})
 
-BASEPATH = ""
+
+def fetch_url_with_cache(url, cache_dir=None):
+    """Fetch URL content with caching to avoid repeated downloads."""
+    if cache_dir is None:
+        cache_dir = args.cache_dir
+
+    os.makedirs(cache_dir, exist_ok=True)
+
+    # Create cache filename from URL
+    cache_filename = urllib.parse.quote(url, safe='') + '.cache'
+    cache_path = os.path.join(cache_dir, cache_filename)
+    cache_meta_path = cache_path + '.meta'
+
+    def load_cached_content():
+        return Path(cache_path).read_text(encoding='utf-8')
+
+    def load_cache_metadata():
+        if not os.path.exists(cache_meta_path):
+            return {}
+        return json.loads(Path(cache_meta_path).read_text(encoding='utf-8'))
+
+    def save_cache(content, response):
+        Path(cache_path).write_text(content, encoding='utf-8')
+
+        metadata = {}
+        etag = response.headers.get('ETag')
+        last_modified = response.headers.get('Last-Modified')
+        if etag:
+            metadata['etag'] = etag
+        if last_modified:
+            metadata['last_modified'] = last_modified
+        if metadata:
+            with open(cache_meta_path, 'w', encoding='utf-8') as f:
+                json.dump(metadata, f)
+
+    def refresh_cache_mtime():
+        try:
+            os.utime(cache_path, None)
+        except OSError:
+            pass
+
+    if os.path.exists(cache_path):
+        cache_age = time.time() - os.path.getmtime(cache_path)
+        if cache_age < DEFAULT_CACHE_TIME:
+            debug(f"Using cached content for {url}")
+            return load_cached_content()
+
+    cache_metadata = {}
+    headers = {}
+    if os.path.exists(cache_path):
+        cache_metadata = load_cache_metadata()
+        if cache_metadata.get('etag'):
+            headers['If-None-Match'] = cache_metadata['etag']
+        if cache_metadata.get('last_modified'):
+            headers['If-Modified-Since'] = cache_metadata['last_modified']
+
+    if headers:
+        try:
+            debug(f"HEAD checking server for {url}")
+            head_response = session.head(url, timeout=30, headers=headers, allow_redirects=True)
+            if head_response.status_code == 304:
+                debug(f"Cache still valid for {url}")
+                refresh_cache_mtime()
+                return load_cached_content()
+
+            head_response.raise_for_status()
+            if (head_response.headers.get('ETag') == cache_metadata.get('etag') and
+                    head_response.headers.get('Last-Modified') == cache_metadata.get('last_modified')):
+                debug(f"Server metadata unchanged for {url}, using local cache")
+                refresh_cache_mtime()
+                return load_cached_content()
+        except requests.RequestException as e:
+            debug(f"HEAD request failed for {url}: {e}")
+            # Fallback to GET if the HEAD request is unsupported or fails.
+
+    try:
+        debug(f"Fetching full content from {url}")
+        response = session.get(url, timeout=30, allow_redirects=True)
+        response.raise_for_status()
+        content = response.text
+    except requests.RequestException as e:
+        error(f"Failed to fetch {url}: {e}")
+        if os.path.exists(cache_path):
+            debug(f"Using stale cached content for {url}")
+            return load_cached_content()
+        raise
+
+    save_cache(content, response)
+    return content
+
+
+def run_git(cmd, cwd=None, check=True, max_retries=3):
+    """Run git command with retry logic for lock conflicts"""
+    if cwd is None:
+        cwd = os.getcwd()
+
+    for attempt in range(max_retries):
+        try:
+            debug(f"Running git command (attempt {attempt + 1}): {cmd}")
+            result = subprocess.run(
+                cmd.split(),
+                cwd=cwd,
+                capture_output=True,
+                text=True,
+                check=check,
+                timeout=300  # 5 minute timeout
+            )
+            if result.stderr:
+                debug(f"Git stderr: {result.stderr}")
+            return result.stdout
+
+        except subprocess.CalledProcessError as e:
+            # Check if it's a lock file issue
+            if 'index.lock' in str(e.stderr) or 'Unable to create' in str(e.stderr):
+                debug(f"Git lock detected on attempt {attempt + 1}, waiting git process to complete...")
+                if attempt < max_retries - 1:
+                    import time
+                    time.sleep(3)  # Wait a second before retry
+                    continue
+
+            error(f"Git command failed: {cmd}")
+            error(f"Error: {e.stderr}")
+            if check:
+                raise
+
+        except subprocess.TimeoutExpired:
+            error(f"Git command timed out: {cmd}")
+            if check:
+                raise
+
+    # If we get here, all retries failed
+    error(f"Git command failed after {max_retries} attempts: {cmd}")
+    if check:
+        raise subprocess.CalledProcessError(1, cmd)
+
+
+def rst_has_duplicate_labels(filepath: str) -> bool:
+    """
+    Check an RST file for duplicate label definitions.
+    Returns True if duplicates are found, False otherwise.
+
+    RST labels look like: .. _label_name:
+    """
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+    except (UnicodeDecodeError, OSError) as e:
+        error(f"Error checking RST file {filepath}: {e}")
+        return False
+
+    # Find all RST label definitions
+    labels = re.findall(r'^\.\. _([^:]+):', content, re.MULTILINE)
+
+    # Check for duplicates
+    seen = set()
+    duplicates = []
+    for label in labels:
+        label_lower = label.lower()  # RST labels are case-insensitive
+        if label_lower in seen:
+            duplicates.append(label)
+        seen.add(label_lower)
+
+    if duplicates:
+        logger.warning(f"Found {len(duplicates)} duplicate RST labels in {filepath}: {duplicates[:5]}")
+        return True
+    return False
+
+
+def patch_cgi_escape_for_old_versions(version, param_metadata_dir):
+    """
+    Live patch all Python files in param_metadata for older firmware versions that use cgi.escape()
+    which was removed in Python 3.8. This affects htmlemit.py, rstemit.py, and potentially other files.
+    """
+
+    # Parse version to check if it's < 4.1.0
+    if not version_is_below_version(version, (4, 1, 0)):
+        # debug(f"Version {version} doesn't need cgi.escape() patching")
+        return
+
+    debug(f"Patching Python files for cgi.escape() in old version {version}")
+
+    python_files = glob.glob(os.path.join(param_metadata_dir, "*.py"))
+    files_patched = 0
+
+    for file_path in python_files:
+        filename = os.path.basename(file_path)
+
+        try:
+            with open(file_path, 'rb') as f:
+                content_bytes = f.read()
+            content = content_bytes.decode('utf-8')
+        except (UnicodeDecodeError, IOError):
+            debug(f"Could not read {filename}, skipping")
+            continue
+
+        if 'cgi.escape' not in content:
+            continue
+
+        debug(f"Patching {filename} for cgi.escape()")
+
+        # Replace cgi.escape with html.escape
+        content = content.replace('cgi.escape', 'html.escape')
+
+        # Add 'import html' after 'import cgi' if html not already imported
+        if 'import html' not in content and 'from html import' not in content:
+            # Simple approach: add after 'import cgi' line
+            content = content.replace('import cgi\n', 'import cgi\nimport html\n')
+            content = content.replace('import cgi\r\n', 'import cgi\r\nimport html\r\n')
+
+        try:
+            with open(file_path, 'wb') as f:
+                f.write(content.encode('utf-8'))
+            files_patched += 1
+            debug(f"Successfully patched {filename}")
+        except IOError as e:
+            error(f"Failed to write patched {filename}: {e}")
+            continue
+
+    if files_patched > 0:
+        debug(f"Patched {files_patched} file(s) for cgi.escape() compatibility")
+
+
+def parse_version(version_string: str) -> tuple[int, int, int] | None:
+    """Parse the first semantic version-like string from a version token."""
+    match = re.search(r"(\d+)\.(\d+)(?:\.(\d+))?", version_string)
+    if not match:
+        return None
+    major = int(match.group(1))
+    minor = int(match.group(2))
+    patch = int(match.group(3) or 0)
+    return major, minor, patch
+
+
+def version_is_below_version(version_string: str, cutoff: tuple[int, int, int]) -> bool:
+    parsed = parse_version(version_string)
+    if parsed is None:
+        return False
+    return parsed < cutoff
+
 
 # Dicts for name replacing
 vehicle_new_to_old_name = { # Used because "param_parse.py" args expect old names
@@ -154,18 +436,26 @@ def setup():
 
     try:
         # Goes to ardupilot folder and clean it and update to make sure that is the most recent one.
-        debug("Recovering from a previous run...")
-        os.chdir(args.gitFolder)
-        os.system("git reset --hard HEAD")
-        os.system("git clean -f -d")
-        os.system("git checkout -f master")
-        os.system("git fetch origin master")
-        os.system("git reset --hard origin/master")
-        os.system("git pull")
+        repo_path = os.path.abspath(args.gitFolder)
         global BASEPATH
-        BASEPATH = os.getcwd()
+        BASEPATH = repo_path
+        debug(f"Recovering from a previous run in {repo_path}")
+
+        run_git("git reset --hard HEAD", cwd=repo_path)
+        run_git("git clean -f -d", cwd=repo_path)
+        run_git("git checkout -f master", cwd=repo_path)
+        # Release commits live on branches and tags, not master.
+        run_git("git fetch origin master", cwd=repo_path)
+        release_branches = " ".join(
+            f"+refs/heads/{vehicle}-*:refs/remotes/origin/{vehicle}-*"
+            for vehicle in sorted(set(ALLVEHICLES + ["Tracker"])))
+        run_git("git fetch origin --tags --force " + release_branches,
+                cwd=repo_path, check=False)
+        run_git("git reset --hard origin/master", cwd=repo_path)
+        run_git("git pull", cwd=repo_path)
+
         check_temp_folders()
-    except Exception as e:
+    except (subprocess.CalledProcessError, OSError) as e:
         error(f"ArduPilot Repo folder not found (cd {args.gitFolder} failed)")
         error(e)
         sys.exit(1)
@@ -179,50 +469,53 @@ def fetch_releases(firmware_url, vehicles):
 
     """
 
-    def fetch_vehicle_subfolders(firmware_url):
+    def fetch_vehicle_subfolders(firmware_url, vehicle):
         """
         Fetch firmware.ardupilot.org/baseURL all first level folders for a given base URL.
 
         """
-        links = []
-        # Define HTML Parser
+        class ParseText(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.links = []
 
-        class parseText(HTMLParser):
             def handle_starttag(self, tag, attrs):
-                if tag != 'a':
-                    return
-                attr = dict(attrs)
-                links.append(attr)
-        # Create instance of HTML parser
-        lParser = parseText()
-        # Feed HTML file into parsers
+                if tag == 'a':
+                    attr = dict(attrs)
+                    href = attr.get('href')
+                    self.links.append(href)
+
+        html_parser = ParseText()
         try:
-            debug(f"Fetching {firmware_url}")
-            lParser.feed(urllib.request.urlopen(firmware_url).read().decode('utf8'))
+            debug(f"Fetching {firmware_url}{vehicle}")
+
+            content = fetch_url_with_cache(firmware_url + vehicle)
+            html_parser.feed(content)
         except Exception as e:
-            error(f"Folders list download error: {e}")
+            error(f"Vehicles folders list download error: {e}")
             sys.exit(1)
-        finally:
-            lParser.links = []
-            lParser.close()
-            return links
+        return html_parser.links
     ######################################################################################
 
     debug("Cleaning fetched links for wanted folders")
-    stableFirmwares = []
-    for f in vehicles:
-        page_links = fetch_vehicle_subfolders(f"{firmware_url}{f}")
+    firmware_links = []
+
+    def fetch_vehicle_firmware_links(vehicle):
+        page_links = fetch_vehicle_subfolders(firmware_url, vehicle)
+
         for folder in page_links:  # Non clever way to filter the strings insert by makehtml.py, unwanted folders, and so.
             version_folder = str(folder)
-            firmware_link = f"{firmware_url[:-1]}{version_folder[10:-2]}"
+            firmware_version_url = f"{firmware_url[:-1]}{version_folder}"
             if "stable" in version_folder and not version_folder.endswith("stable"): # If finish with
-                stableFirmwares.append(firmware_link)
+                firmware_links.append(firmware_version_url)
             elif "latest" in version_folder:
-                stableFirmwares.append(firmware_link)
+                firmware_links.append(firmware_version_url)
             elif "beta" in version_folder:
-                stableFirmwares.append(firmware_link)
+                firmware_links.append(firmware_version_url)
 
-    return stableFirmwares # links for the firmwares folders
+    with ThreadPoolExecutor() as executor:
+        executor.map(fetch_vehicle_firmware_links, vehicles)
+    return firmware_links # links for the firmwares folders
 
 
 def get_commit_dict(releases_parsed):
@@ -235,30 +528,31 @@ def get_commit_dict(releases_parsed):
         For given URL returns the last folder which should be a board name.
 
         """
-        links = []
-        # Define HTML Parser
 
-        class parseText(HTMLParser):
+        class ParseText(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.links = []
+
             def handle_starttag(self, tag, attrs):
-                if tag != 'a':
-                    return
-                attr = dict(attrs)
-                links.append(attr)
-        # Create instance of HTML parser
-        lParser = parseText()
-        # Feed HTML file into parsers
+                if tag == 'a':
+                    attr = dict(attrs)
+                    href = attr.get('href')
+                    self.links.append(href)
+
+        html_parser = ParseText()
         try:
             debug(f"Fetching {url}")
-            lParser.feed(urllib.request.urlopen(url).read().decode('utf8'))
+
+            content = fetch_url_with_cache(url)
+            html_parser.feed(content)
         except Exception as e:
-            error(f"Folders list download error:{e}")
+            error(f"Board folders list download error: {e}")
         finally:
-            lParser.links = []
-            lParser.close()
-            last_item = links.pop()
-            last_folder = last_item['href']
-            debug(f"Returning link of the last board folder ({last_folder[last_folder.rindex('/')+1:]})")
-            return last_folder[last_folder.rindex('/')+1:]  # clean the partial link
+            last_folder = html_parser.links.pop()
+            board_name = os.path.basename(last_folder)
+            debug(f"Returning link of the last board folder ({board_name})")
+            return board_name
     ####################################################################################################
 
     def fetch_commit_hash(version_link, board, file):
@@ -271,11 +565,9 @@ def get_commit_dict(releases_parsed):
         progress(f"Processing link...\t{fetch_link}")
 
         try:
-            fecth_response = ""
-            with urllib.request.urlopen(fetch_link) as response:
-                fecth_response = response.read().decode("utf-8")
+            fetch_response = fetch_url_with_cache(fetch_link)
 
-            commit_details = fecth_response.split("\n")
+            commit_details = fetch_response.split("\n")
             commit_hash = commit_details[0][7:]
             # version =  commit_details[6] the sizes cary
             version = commit_details.pop(-2)
@@ -329,17 +621,21 @@ def get_commit_dict(releases_parsed):
     ####################################################################################################
 
     commits_and_codes = {}
-    commite_and_codes_cleanned = {}
+    commits_and_codes_cleaned = {}
 
-    for j in range(0, len(releases_parsed)):
-        commits_and_codes[j] = fetch_commit_hash(releases_parsed[j], get_last_board_folder(releases_parsed[j]), COMMITFILE)
+    def fetch_commits_and_codes(release_link):
+        board_folder = get_last_board_folder(release_link)
+        return fetch_commit_hash(release_link, board_folder, COMMITFILE)
 
-    for i in commits_and_codes:
-        if commits_and_codes[i][0] != 'error':
-            commite_and_codes_cleanned[i] = commits_and_codes[i]
-    if len(commite_and_codes_cleanned) == 0:
+    with ThreadPoolExecutor() as executor:
+        commits_and_codes = list(executor.map(fetch_commits_and_codes, releases_parsed))
+
+    for i, cc in enumerate(commits_and_codes):
+        if cc[0] != 'error':
+            commits_and_codes_cleaned[i] = cc
+    if len(commits_and_codes_cleaned) == 0:
         error("Expected at least one commit")
-    return commite_and_codes_cleanned
+    return commits_and_codes_cleaned
 
 
 def generate_rst_files(commits_to_checkout_and_parse):
@@ -365,6 +661,7 @@ def generate_rst_files(commits_to_checkout_and_parse):
             elif "Complete Parameter List" in line:
                 # Adjusting the page title
                 out_line = "Complete Parameter List\n=======================\n\n"
+                out_line += "See :ref:`common-param-name-changes` for a history of parameter renames across releases.\n\n"  # noqa: E501
                 out_line += "\n.. raw:: html\n\n"
                 out_line += f"   <h2>Full Parameter List of {version_tag[1:].replace('-', ' ')}</h2>\n\n"  # rename the page identifier to insert the version  # noqa: E501
 
@@ -386,60 +683,89 @@ def generate_rst_files(commits_to_checkout_and_parse):
         # Not elegant workaround:
         # These versions present errors when parsing using param_parser.py. Needs more investigation?
         if (
+            "beta-V4.3.8" in version or # leftover beta files
             "3.2.1" in version or # last stable APM Copte
             "3.4.0" in version or # last stable APM Plane
             "3.4.6" in version or # Copter
             "2.42" in version or  # last stable APM Rover?
             "2.51" in version or  # last beta APM Rover?
-            "0.7.2" in version    # Antennatracker
+            "0.7.2" in version or # Antennatracker
+            "1.0.0" in version    # AntennaTracker
         ):
-            debug(f"Ignoring APM version:\t{vehicle}\t{version}")
+            debug(f"Ignoring old version:\t{vehicle}\t{version}")
+            continue
+
+        # Need to keep v1.X.0 AntennaTracker versions
+        if "antenna" not in vehicle.lower() and version_is_below_version(version, PARAM_PARSE_MINIMUM_VERSION):
+            debug(f"Ignoring APM version:\t{vehicle}\t{version} (below {'.'.join(map(str, PARAM_PARSE_MINIMUM_VERSION))})")
             continue
 
         # Checkout an Commit ID in order to get its parameters
         try:
             debug(f"Git checkout on {vehicle} version {version} id {commit_id}")
-            os.system(f"git checkout --force {commit_id}")
-
-        except Exception as e:
+            run_git(f"git checkout --force {commit_id}", cwd=BASEPATH, check=True)
+        except subprocess.CalledProcessError as e:
             error(f"GIT checkout error: {e}")
             sys.exit(1)
         debug("")
 
         # Run param_parse.py tool from Autotest set in the desired commit id
+        param_metadata_dir = os.path.join(BASEPATH, "Tools", "autotest", "param_metadata")
+
+        # Patch emit files for older versions that use deprecated cgi.escape()
+        patch_cgi_escape_for_old_versions(version, param_metadata_dir)
+
+        # Workaround the vehicle renaming (Rover, APMRover2 ArduRover...)
+        if ('rover' in vehicle.lower()) and ('v3.' not in version.lower()) and ('v4.0' not in version.lower()):
+            vehicle_name = 'Rover'
+        else:
+            vehicle_name = vehicle_new_to_old_name[vehicle]
+
+        cmd = ["python3", "./param_parse.py", "--vehicle", vehicle_name]
+
         try:
-            os.chdir(f"{BASEPATH}/Tools/autotest/param_metadata")
-            if ('rover' in vehicle.lower()) and ('v3.' not in version.lower()) and ('v4.0' not in version.lower()): # Workaround the vehicle renaming (Rover, APMRover2 ArduRover...)  # noqa: E501
-                os.system("python3 ./param_parse.py --vehicle Rover")
-            else: # regular case
-                os.system(f"python3 ./param_parse.py --vehicle {vehicle_new_to_old_name[vehicle]}")  # option "param_parse.py --format rst" is not available in all commits where param_parse.py is found  # noqa: E501
+            result = subprocess.run(cmd, cwd=param_metadata_dir,
+                                    capture_output=True, text=True, timeout=300)
+        except (subprocess.TimeoutExpired, OSError) as e:
+            error(f"param_parse.py execution failed for {vehicle} {version}: {e}")
+            return None
 
-            # create a filename for new parameters file
-            filename = f"parameters-{vehicle}"
-            if ("beta" in version or "rc" in version): # Plane uses BETA, Copter and Rover uses RCn
-                filename += f"-{version}.rst"
-            elif ("latest" in version):
-                filename += f"-{version}.rst"
+        if result.returncode != 0:
+            error(f"param_parse.py failed for {vehicle} {version}: {result.stderr}")
+            return None
+
+        if result.stdout:
+            debug(f"param_parse.py stdout for {vehicle} {version}: {result.stdout[:500]}")
+        if result.stderr:
+            debug(f"param_parse.py stderr for {vehicle} {version}: {result.stderr[:500]}")
+
+        # create a filename for new parameters file
+        filename = f"parameters-{vehicle}"
+        if ("beta" in version or "rc" in version): # Plane uses BETA, Copter and Rover uses RCn
+            filename += f"-{version}.rst"
+        elif ("latest" in version):
+            filename += f"-{version}.rst"
+        else:
+            filename += f"-stable-{version}.rst"
+
+        parameters_rst_path = os.path.join(param_metadata_dir, "Parameters.rst")
+        output_file_path = os.path.join(param_metadata_dir, filename)
+
+        # Generate new anchors names in files to avoid toctree problems and links in sphinx.
+        try:
+            if os.path.exists(parameters_rst_path):
+                replace_anchors(parameters_rst_path, output_file_path, filename[10:-4])
+                os.remove(parameters_rst_path)
+                debug(f"File {filename} generated.")
+                # Remove duplicate RNGFNDx_ Parameters sections before checking labels.
+                dedupe_old_rangefinder_parameters(output_file_path)
+                # Check for duplicate RST labels in the generated file
+                if rst_has_duplicate_labels(output_file_path):
+                    debug(f"RST duplicate labels detected in {output_file_path}")
             else:
-                filename += f"-stable-{version}.rst"
-
-            # Generate new anchors names in files to avoid toctree problems and links in sphinx.
-            if os.path.exists("Parameters.rst"):
-                replace_anchors("Parameters.rst", filename, filename[10:-4])
-                os.remove("Parameters.rst")
-                debug(f"File {filename} generated. ")
-            else:
-                # this was an error, but turns out we are missing a
-                # bunch of these, eg.
-                # [build_parameters.py][error]: Parameters.rst not found to rename to  parameters-Copter-stable-V4.0.0.rst
-                progress(f"Parameters.rst not found to rename to  {filename}")
-
-            os.chdir(BASEPATH)
-        except Exception as e:
-            error(f'Error while parsing "Parameters.rst" | details:\t{vehicle}\t{version}\t{commit_id}')
-            error(e)
-            # sys.exit(1)
-        debug("")
+                error(f"Parameters.rst not found for {vehicle} {version}")
+        except (OSError, IOError) as e:
+            error(f"Error while handling Parameters.rst for {vehicle} {version}: {e}")
 
     return 0
 

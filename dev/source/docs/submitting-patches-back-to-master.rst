@@ -29,7 +29,8 @@ Preparing commits
   means that intermediate commits break the build. This also implies that
   moving code from one library to another happens in two commits: one that
   "deletes" it from the old spot, and a separate one that "creates" it at
-  the new spot.
+  the new spot. It's better for unrelated changes in a single library
+  to be separate commits in the pull request.
 
 - Do not create 'only fix formatting' commits. The disruption they cause
   to git history is more significant than their improvement to the code.
@@ -67,6 +68,8 @@ Preparing commits
 
         do not save a parameter unless it has changed by 0.1%
 
+- The brief description (summary) line should be less than 72 characters so it renders correctly in Github.
+
 - **clean up your local commit history** :ref:`using interactive rebase <git-interactive-rebase>`
   (i.e. ``git rebase -i "HEAD~10"``) to re-arrange patches and fold things together. The idea is to present
   a logical set of patches for review. It can take a bit of effort to get
@@ -84,6 +87,8 @@ Preparing commits
 
 - Try to follow the :ref:`style guide <style-guide>` so your code fits in with the existing code.
   In particular, ensure your editor uses 4 spaces instead of tabs.
+
+- For Python changes follow the :ref:`style guide <python-style-guide>` so your code fits in with the existing code.
 
 - Unix line endings (LF) are used. Git should take care of this
   automatically, but if you notice that you have a lot of files that show
@@ -140,6 +145,7 @@ PRs are more likely to be merged quickly if:
 - The PR clearly states what changes in behaviour are expected
 - Good testing evidence is provided.  This could be graphs of logs recorded before and after the change, possibly from a :ref:`simulation <simulation-2>`. Check for existing :ref:`autotests <the-ardupilot-autotest-framework>`, and update them if they get broken by the change. Add new ones to cover new functionality you're introducing, or bug fixes presently not tested, if you are capable.
 - Code follows the :ref:`style guide <style-guide>`
+- Python code follows the :ref:`python style guide <python-style-guide>`
 - Each commit in the PR affects only one subsystem and the commit title is prefixed with the subsystem name (e.g. "AP_GPS: correct uBlox logging parameter descriptions").  The `Tools/gittools/git-subsystems-split <https://github.com/ArduPilot/ardupilot/blob/master/Tools/gittools/git-subsystems-split>`__ script may be useful for this
 - PR passes all automated CI tests.  CI tests sometimes fail for reason unrelated to your PR (e.g. dependency failures, "flapping tests").  Please force push the PR to re-run the tests
 - The PR is discussed on one of the :ref:`weekly dev calls <ardupilot-discord-server>`.  To get the PR discussed add the "DevCallTopic" or "DevCallEU" label.  If you are unable to add the label ping one of the core developers on `ArduPilot Discord <https://ardupilot.org/discord>`__ (see the "code-review" channel).  "Core developers" can be identified by the "dev-team" badge in Discord and some also appear as `top contributors in Github <https://github.com/ArduPilot/ardupilot/graphs/contributors>`__

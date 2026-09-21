@@ -18,12 +18,14 @@ When all the following are true for 2 full seconds:
 #. the vehicle is not accelerating by more than 3m/s/s
 #. the actual lean angle has diverged from the desired lean angle (perhaps input by the pilot) by more than 30 degrees
 
+.. note:: Additional internal gating, such as speed and lean-angle checks, may also apply before the motors are disarmed.
+
 What will happen when the crash check fires?
 ============================================
 
 #. the motors will disarm
 #. "Crash: Disarming" will be displayed on the Ground Station
-#. a crash event will be written to the dataflash logs (look for EV, 12 in the logs)
+#. a crash event will be written to the dataflash logs (look for the corresponding ERR record)
 
 How and when should the crash check be disabled?
 ================================================

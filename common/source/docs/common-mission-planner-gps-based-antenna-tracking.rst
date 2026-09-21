@@ -4,8 +4,7 @@
 Mission Planner GPS-based Antenna Tracking
 ==========================================
 
-This article explains how to build a GPS-based :ref:`Antenna Tracker <common-antenna-tracking>` that uses the :ref:`Mission Planner <planner:install-mission-planner>` GCS to provide
-directional/tracking information for a servo-driven directional antenna.
+This article explains how to build a GPS-based :ref:`Antenna Tracker <common-antenna-tracking>` that uses the :ref:`Mission Planner <planner:install-mission-planner>` GCS to provide directional/tracking information for a servo-driven directional antenna.
 
 .. note::
 
@@ -411,4 +410,4 @@ can rely on.
 Other bells and whistles might include weather vanes, barometers,
 anemometers, beer can holders, cameras etc. go wild!
 
-[copywiki destination="plane,copter,rover"]
+[copywiki destination="plane,copter,rover,antennatracker"]

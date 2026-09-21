@@ -1,0 +1,15 @@
+# People/teams (with write access) who should be auto-requested for review when particular files are changed.
+# Latest and more specific patterns take priority.
+
+## Global owner
+@Hwurzburg
+
+## Infrastructure (root level files, scripts, CI workflows)
+/*           @peterbarker
+/*.py        @khancyr @peterbarker
+/.github/    @peterbarker @khancyr
+/scripts/    @peterbarker
+/frontend/   @khancyr
+
+## ArduSub docs are maintained partly independently
+/sub/   @ES-Alexander @Williangalvani

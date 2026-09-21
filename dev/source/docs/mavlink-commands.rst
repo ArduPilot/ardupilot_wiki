@@ -4,30 +4,32 @@
 MAVLink Interface
 =================
 
-ArduPilot supports the MAVLink protocol for communication with Ground Stations and :ref:`Companion Computers <companion-computers>`.  These pages explain the details of this interface and commonly used commands:
+ArduPilot supports the `MAVLink protocol <https://mavlink.io/en/>`__ for communication with Ground Stations and :ref:`Companion Computers <companion-computers>`.  These pages explain the details of this interface and commonly used commands:
 
 .. toctree::
     :maxdepth: 1
 
     MAVLink Basics <mavlink-basics>
-    Request Data From The AutoPilot <mavlink-requesting-data>
-    Get and Set Parameters <mavlink-get-set-params>
-    Copter Commands (Guided Mode) <copter-commands-in-guided-mode>
-    Plane Commands (Guided Mode) <plane-commands-in-guided-mode>
-    Rover Commands (Guided Mode) <mavlink-rover-commands>
-    Get and Set Home and/or EKF origin <mavlink-get-set-home-and-origin>
     Arm and Disarm <mavlink-arming-and-disarming>
-    Get and Set FlightMode <mavlink-get-set-flightmode>
     Camera Commands <mavlink-camera>
+    Copter Commands (Guided Mode) <copter-commands-in-guided-mode>
+    Get and Set FlightMode <mavlink-get-set-flightmode>
+    Get and Set Home and/or EKF origin <mavlink-get-set-home-and-origin>
+    Get and Set Parameters <mavlink-get-set-params>
     Gimbal / Camera Mount <mavlink-gimbal-mount>
+    Log Download <mavlink-log-download>
     MAVFTP <mavlink-mavftp>
+    MAVLink Routing <mavlink-routing-in-ardupilot>
     Mission Upload/Download <mavlink-mission-upload-download>
     Move a Servo <mavlink-move-servo>
     Non-GPS Position Estimation <mavlink-nongps-position-estimation>
+    Plane Commands (Guided Mode) <plane-commands-in-guided-mode>
     Precision Landing <mavlink-precision-landing>
     RC Input (aka Pilot Input) <mavlink-rcinput>
+    Request Data From The AutoPilot <mavlink-requesting-data>
+    Rover Commands (Guided Mode) <mavlink-rover-commands>
+    Sensor Calibration <mavlink-calibration>
     Winch Commands <mavlink-winch>
-    MAVLink Routing <mavlink-routing-in-ardupilot>
     Other Commands <mavlink-other-commands>
 
 Complete lists of Messages
@@ -83,6 +85,6 @@ Vehicle Parameter References
 Software Integration Tools
 ==========================
 
--   MAVSDK <https://github.com/ArduPilot/ardupilot-mavsdk>
--   Pymavlink python script <https://github.com/ArduPilot/pymavlink>
+-   `MAVSDK <https://github.com/ArduPilot/ardupilot-mavsdk>`__
+-   `Pymavlink python script <https://github.com/ArduPilot/pymavlink>`__
 

@@ -11,7 +11,7 @@ ZigZag mode is a semi-autonomous mode designed to make it easier for a pilot to 
 
 The way it works is:
 
-- A two or three position :ref:`auxiliary switch <channel-7-and-8-options>` is set to 61 / "ZigZag SaveWP" (i.e. :ref:`RC7_OPTION <RC7_OPTION>` = 61)
+- A two or three position :ref:`auxiliary switch <common-auxiliary-functions>` is set to 61 / "ZigZag SaveWP" (i.e. :ref:`RC7_OPTION <RC7_OPTION>` = 61)
 - The pilot arms the vehicle and takes off.  The vehicle will fly just like :ref:`Loiter <loiter-mode>`
 - The vehicle is flown manually to one side of the field and then the auxiliary switch is moved to the highest or lowest position (it doesn't matter which) to record that side
 - The vehicle is flown to the other side of the field and the switch is moved to the opposite position

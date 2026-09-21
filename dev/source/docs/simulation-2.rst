@@ -35,10 +35,9 @@ The most commonly used simulators are:
 -  :ref:`XPlane-10 <sitl-with-xplane>` a commercial flight simulator with a rich 3D interface   
 -  :ref:`XPlane-10 Soaring<soaring-sitl-with-xplane>` soaring on XPlane-10
 -  :ref:`RealFlight <sitl-with-realflight>` a commercial flight simulator with a rich 3D interface and ability to design custom vehicles
--  :ref:`Morse <sitl-with-morse>` a robotics simulation environment commonly used in research
 -  :ref:`Replay <testing-with-replay>` has no graphical interface but allows re-running master from a dataflash log
 -  :ref:`JSBSim <sitl-with-jsbsim>` is a sophisticated open-source plane and multicopter simulator with no graphical interface. It can be used with a wide variety of airframes.
--  :ref:`AirSim <sitl-with-airsim>` is an open-source, cross-platform simulator for drones & cars, built on Unreal Engine for physically and visually realistic simulations
+-  :ref:`PteroSim <sitl-with-pterosim>` is a UAV simulator built on Unreal Engine, providing 6-DOF flight dynamics and simulated sensors
 -  :ref:`Silent Wings Soaring<soaring-sitl-with-silentwings>` 
 -  :ref:`MATLAB and Simulink<sitl-with-MATLAB>` are numerical computing environments used for developing algorithms and plotting data developed by `MathWorks <https://www.mathworks.com/>`__.
 -  :ref:`JSON interface<sitl-with-JSON>` The JSON interface is a generic interface protocol designed to be easy to implement for those developing physics backend. There are Python and MATLAB examples.
@@ -49,7 +48,6 @@ Less often used simulators include:
 
 -  :ref:`Last Letter <using-last_letter-as-an-external-sitl-simulator>` is a simpler simulator (fixed wing only) with lower CPU requirements than most other simulators.
 -  :ref:`CRRCSim <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>` is a less commonly used simulator for fixed wing and helicopters.
--  :ref:`SCRIMMAGE <sitl-with-scrimmage>` is an open-source vehicle simulator focused on collaborative robotics
 
 List of simulators (so they can appear in the menu):
 
@@ -62,17 +60,16 @@ List of simulators (so they can appear in the menu):
     XPlane-10 <sitl-with-xplane>
     XPlane-10 Soaring<soaring-sitl-with-xplane>
     RealFlight <sitl-with-realflight>
-    Morse <sitl-with-morse>
     Replay <testing-with-replay>
     JSBSim <sitl-with-jsbsim>
-    AirSim <sitl-with-airsim>
+    PteroSim <sitl-with-pterosim>
     Silent Wings Soaring<soaring-sitl-with-silentwings>
     Last Letter <using-last_letter-as-an-external-sitl-simulator>
     CRRCSim <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>
     HITL Simulators <hitl-simulators>
     Autotest Framework <the-ardupilot-autotest-framework>
+    Autotest Tests <autotest-tests>
     Unit Tests <unit-tests>
-    SCRIMMAGE <sitl-with-scrimmage>
     Webots <sitl-with-webots>
     MATLAB and Simulink <sitl-with-MATLAB>
     JSON interface <sitl-with-JSON>

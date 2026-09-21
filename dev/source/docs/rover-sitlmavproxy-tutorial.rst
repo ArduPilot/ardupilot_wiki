@@ -40,7 +40,7 @@ The tutorial assumes you have already set up :ref:`SITL on Windows <sitl-native-
 :ref:`Linux <setting-up-sitl-on-linux>` and that you have started SITL
 using the ``--map`` and ``--console`` options:
 
-::
+.. code-block:: bash
 
     cd ~/ardupilot/Rover
     sim_vehicle.py --map --console
@@ -55,6 +55,7 @@ Starting
 ========
 
 Change the rover into Guided mode and then arm it by entering the following on the mavproxy console
+
 ::
 
     GUIDED

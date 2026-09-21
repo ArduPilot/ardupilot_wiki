@@ -5,7 +5,7 @@ Throw Mode
 ==========
 
 This slightly dangerous flight mode allows the pilot to throw the vehicle into the air (or drop the vehicle) in order to start the motors.
-Once in the air, this mode does not accept any input from the pilot.  This mode requires GPS.
+Once in the air, this mode does not accept any input from the pilot.  This mode requires valid position information (GPS, Optical Flow, Beacon,etc.).
 
 .. note::
 

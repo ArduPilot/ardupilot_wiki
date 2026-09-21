@@ -89,6 +89,7 @@ Setup
 
 5. When switching to QRTL  default behavior is to transition to fixed wing if in VTOL (assuming you are not close to home already in VTOL Flight), flying back to home, then switching back to VTOL as you approach home, switching to QLAND over home, and landing at home (see :ref:`qrtl-mode` for more information). You can disable the fixed wing approach, and return home and land only using VTOL mode if :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 set.
 
+.. _quadplane_options:
 
 Q_OPTIONS
 =========

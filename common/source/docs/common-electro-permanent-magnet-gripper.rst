@@ -1,8 +1,8 @@
 .. _common-electro-permanent-magnet-gripper:
 
-=========================================
-Electro Permanent Magnet Gripper (EPM688)
-=========================================
+========================================================
+Electro Permanent Magnet Gripper (EPM688) (discontinued)
+========================================================
 
 This article shows how to use the `Electro Permanent Magnet Gripper (EPM688) <http://nicadrone.com/index.php?id_product=13&controller=product>`__
 with ArduPilot.
@@ -83,9 +83,9 @@ bring the switch high and then return the switch to neutral.
 To release the cargo, momentarily bring the switch low and then return
 it to neutral.
 
-Note: the :ref:`Copter Ch7/Ch8 switch <copter:channel-7-and-8-options>`
-includes options for the EPM but these unfortunately do not function
-properly.
+Note: the :ref:`Copter auxiliary switch <copter:common-auxiliary-functions>`
+Gripper option can be assigned to the EPM but these unfortunately do
+not function properly.
 
 Note: it is also possible (if using an older style, non ppm-sum
 receiver) to directly connect one signal wire from the receiver to the
@@ -204,5 +204,6 @@ will also provide power the CPU and may hide any voltage disturbance.
 User Video
 ==========
 
-..  youtube:: _iyTo9H7HAk&t=190s
+..  youtube:: _iyTo9H7HAk
     :width: 100%
+    :url_parameters: ?start=190

@@ -7,11 +7,13 @@ Follow Mode
 ..  youtube:: _g9SkK0IhRk
     :width: 100%
 
-When switched into Follow, the vehicle will attempt to follow another vehicle (or anything publishing its position) at a specified offset.  The vehicle lead vehicle's position must be published to the vehicle in Follow mode using a telemetry system.
+When in Follow mode, the vehicle will attempt to follow another vehicle (or anything publishing its position) at a specified offset.
 
-The altitude is maintained with the altitude hold controller so the vehicle will attempt to hold its current altitude when the sticks are placed with 10% of mid-throttle. It will climb or descend at up to 2.5m/s (this speed is adjustable with the :ref:`PILOT_SPD_UP<PILOT_SPD_UP>` and :ref:`PILOT_SPD_DN<PILOT_SPD_DN>` parameters). The acceleration used to establish these speeds is set by :ref:`PILOT_ACC_Z<PILOT_ACC_Z>`.
+The lead vehicle's position must be published to the vehicle in Follow mode using a :ref:`telemetry system <common-rangefinder-landingpage>`.  Telemetry radios which support mesh networking (e.g. :ref:`DroneBridge ESP32 <common-esp32-telemetry>`) are recommended.  See :ref:`Mult-Vehicle Flying <common-multi-vehicle-flying>` for more details.
 
-The following parameters can be used to tune Follow Mode's performance:
+Although Follow mode can use standard `GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#GLOBAL_POSITION_INT>`__ MAVLink messages from the lead vehicle, it generally works better if the lead vehicle publishes a `FOLLOW_TARGET <https://mavlink.io/en/messages/common.html#FOLLOW_TARGET>`__ MAVLink message. This can be done by running the `follow-target-send.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/follow-target-send.lua>`__ Lua script on the lead vehicle.
+
+The following parameters can be used to tune Follow mode's performance:
 
 -  :ref:`FOLL_ENABLE <FOLL_ENABLE>`: set to 1 to enable follow mode and refresh parameters
 -  :ref:`FOLL_SYSID <FOLL_SYSID>`: MAVLink system id of lead vehicle ("0" means follow the first vehicle "seen")
@@ -22,3 +24,36 @@ The following parameters can be used to tune Follow Mode's performance:
 -  :ref:`FOLL_POS_P <FOLL_POS_P>`: gain which controls how aggressively this vehicle moves towards lead vehicle (limited by :ref:`WP_SPD<WP_SPD>`)
 -  :ref:`FOLL_ALT_TYPE <FOLL_ALT_TYPE>`: allows selecting whether to use lead vehicle's relative-to-home or relative-to-sea-level altitude
 -  :ref:`FOLL_OPTIONS<FOLL_OPTIONS>`: set bit 0 to "1" to enable the :ref:`common-mount-targeting` to follow the target vehicle.
+-  :ref:`FOLL_ACCEL_NE <FOLL_ACCEL_NE>`, :ref:`FOLL_JERK_NE <FOLL_JERK_NE>`: Acceleration and jerk limits applied to the lead vehicle's estimated horizontal position, velocity and acceleration
+-  :ref:`FOLL_ACCEL_D <FOLL_ACCEL_D>`, :ref:`FOLL_JERK_D <FOLL_JERK_D>`: Acceleration and jerk limits applied to the lead vehicle's estimated vertical position, velocity and acceleration
+-  :ref:`FOLL_ACCEL_H <FOLL_ACCEL_H>`, :ref:`FOLL_JERK_H <FOLL_JERK_H>`: Acceleration and jerk limits applied to the lead vehicle's estimated heading and yaw rotation rate
+-  :ref:`FOLL_TIMEOUT <FOLL_TIMEOUT>`: Timeout in seconds.  If no messages are received from the lead vehicle within this many seconds, the follower will give up and hold position
+-  :ref:`WP_SPD <WP_SPD>`, :ref:`WP_SPD_UP <WP_SPD_UP>`, :ref:`WP_SPD_DN <WP_SPD_DN>`, :ref:`WP_ACC <WP_ACC>`, :ref:`WP_ACC_Z <WP_ACC_Z>`: horizontal and vertical speed and acceleration limits for the following vehicle
+
+Choosing the Altitude Type
+==========================
+
+:ref:`FOLL_ALT_TYPE <FOLL_ALT_TYPE>` selects which altitude field from the lead vehicle is
+used as the follow target, and getting it wrong is a common cause of the follower sitting at
+an unexpected height.
+
+- "1" (relative, the default on Copter) uses the lead vehicle's altitude above **its own** home.
+  Choose this if both vehicles take off from places whose home altitudes are physically the
+  same, and the EKF altitude source is the default barometer (i.e. ``EK3_SRCx_POSZ`` = Baro).
+  Because both vehicles then measure height from the same physical datum, barometric drift and
+  GPS altitude error largely cancel out and the follower holds the commanded offset accurately.
+- "0" (absolute) uses the lead vehicle's altitude above mean sea level. Choose this in any other
+  situation, in particular when the vehicles take off from different elevations, or when either
+  vehicle uses a non-barometric altitude source. Note that absolute altitude carries the full
+  error of each vehicle's own altitude estimate, so a constant vertical offset between the
+  vehicles is normal.
+- "3" (terrain) converts the lead vehicle's altitude to a height above terrain, so the follower
+  matches the lead vehicle's clearance above ground rather than its altitude. This requires
+  terrain data (see :ref:`common-terrain-following`) to be available for the lead vehicle's
+  position. If it is not, the target update is discarded and the follower will stop tracking,
+  so only use this option where terrain data is known to be loaded.
+
+.. note:: The lead vehicle's home altitude is not transmitted, so ArduPilot cannot detect a
+   mismatch between the two vehicles' home altitudes. If the follower consistently flies too
+   high or too low by roughly the difference in take-off elevations, "relative" is the wrong
+   choice for that setup.

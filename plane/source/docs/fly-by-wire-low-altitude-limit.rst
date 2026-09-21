@@ -12,7 +12,7 @@ When :ref:`CRUISE_ALT_FLOOR<CRUISE_ALT_FLOOR>` is enabled, if your airplane goes
 defined altitude relative to HOME, it will level up and/or climb back to this altitude. After
 it is reached you will regain altitude control.
 
-.. note:: the minimum MSL altitude target will be the higher of: this altitude, or the current altitude target above terrain in FBWB or CRUISE modes if :ref:`common-terrain-following` is enabled, or the :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>` above HOME if that fence (See :ref:`common-geofencing-landing-page`) is enabled.
+.. note:: the minimum MSL altitude target will be the higher of: this altitude, or the current altitude target above terrain in FBWB or CRUISE modes if :ref:`common-terrain-following` is enabled, or the :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>` (in the reference frame selected by :ref:`FENCE_ALT_MIN_TP<FENCE_ALT_MIN_TP>`, above HOME by default) if that fence (See :ref:`common-geofencing-landing-page`) is enabled.
 
 Use for R/C training
 ====================

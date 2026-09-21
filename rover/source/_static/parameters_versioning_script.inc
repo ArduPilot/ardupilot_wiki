@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
       var opt = document.createElement('option');
       opt.value = json[key];
       opt.innerHTML = key;
+      if (json[key] === window.location.pathname.split('/').pop()) {
+        opt.selected = true;
+      }
       selectPicker.appendChild(opt);
     }
   }

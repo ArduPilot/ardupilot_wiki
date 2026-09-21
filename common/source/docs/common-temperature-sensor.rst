@@ -9,6 +9,8 @@ ArduPilot supports up to 15 individual temperature sensors:
 
 - `MAX31865 <https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf>`__
 - `MCP9600 <https://ww1.microchip.com/downloads/en/DeviceDoc/MCP960X-Data-Sheet-20005426.pdf>`__
+- `SHT3x <https://sensirion.com/media/documents/213E6A3B/63A5A569/Datasheet_SHT3x_DIS.pdf>`__
+- `TMP119 <https://www.ti.com/lit/ds/symlink/tmp119.pdf>`__
 - `TSYS01 <https://www.te.com/usa-en/product-G-NICO-018.datasheet.pdf>`__
 - `TSYS03 <https://www.te.com/usa-en/product-CAT-DTS0001.datasheet.pdf>`__
 - `MLX90614 <https://media.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf>`__
@@ -26,7 +28,7 @@ I2C Sensor Setup
 
 Attach the sensor to one of the autopilot's I2C ports using SDA and SCL pins. Then set (examples shown for the first sensor):
 
-- :ref:`TEMP1_TYPE<TEMP1_TYPE>` = 0:Disabled, 1:TSYS01, 2:MCP9600, 3:MAX31865, 4: TSYS03, 7: MLX90614
+- :ref:`TEMP1_TYPE<TEMP1_TYPE>` = 0:Disabled, 1:TSYS01, 2:MCP9600, 3:MAX31865 2 or 4 wire, 4:TSYS03, 7:MLX90614, 8:SHT3x, 9:MAX31865 3 wire, 10:TMP119
 - :ref:`TEMP1_BUS<TEMP1_BUS>` = the I2C port on which the sensor is attached (0-3).
 - :ref:`TEMP1_ADDR<TEMP1_ADDR>` = the sensor's I2C address (0-127).
 - :ref:`TEMP1_SRC<TEMP1_SRC>` = the temperature reporting device type that should have its temperature report replaced with this sensor's. (Optional)

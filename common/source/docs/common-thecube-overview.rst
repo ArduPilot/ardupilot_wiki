@@ -349,10 +349,12 @@ This section details the pin assignments of the standard carrier board of The Cu
    <td>VOLTAGE</td>
    <td>up to +3.3V,pin 2</td>
    </tr>
+   <tr>
    <td>5 (blk)</td>
    <td>GND</td>
    <td>GND</td>
    </tr>
+   <tr>
    <td>6 (blk)</td>
    <td>GND</td>
    <td>GND</td>
@@ -391,10 +393,12 @@ This section details the pin assignments of the standard carrier board of The Cu
    <td>VOLTAGE</td>
    <td>up to +3.3V,pin 13</td>
    </tr>
+   <tr>
    <td>5 (blk)</td>
    <td>GND</td>
    <td>GND</td>
    </tr>
+   <tr>
    <td>6 (blk)</td>
    <td>GND</td>
    <td>GND</td>

@@ -1,8 +1,12 @@
 .. _interfacing-with-pixhawk-using-the-nsh:
 
-===============================================
-Archived:Interfacing with Pixhawk using the NSH
-===============================================
+================================================
+Archived: Interfacing with Pixhawk using the NSH
+================================================
+
+.. warning::
+
+   This isn't supported anymore. We are now using Chibios RTOS instead of NuttX
 
 This article explains how to communicate with a Pixhawk using the `NuttX Shell (NSH) <http://nuttx.org/Documentation/NuttShell.html>`__ using
 either a serial or remote connection.

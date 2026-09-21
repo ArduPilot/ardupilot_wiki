@@ -48,10 +48,15 @@ details on thrust scaling.
 If you are setting up a hobby grade vehicle then you can use the
 graph below to estimate the correct :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>` value for your aircraft.
 
-- :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>`: 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props.
+- :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>`: 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props (or larger). This parameter should be derived by thrust stand measurements for best results (don't trust manufacturer data).
 
-.. image:: ../images/tuning-process-instructions-1.hires.png
+.. image:: ../../../images/tuning-process-instructions-1.hires.png
     :target: ../_images/tuning-process-instructions-1.hires.png
+
+.. warning:: Do not set an expo above 0.75 unless you have thrust stand data for your own
+   motor, ESC and propeller combination showing that a higher value is needed. The graph is
+   an approximation for hobby grade hardware, and guessing at a high expo can make the
+   vehicle harder to tune rather than easier.
 
 Step 2: Motors setup
 --------------------
@@ -212,10 +217,15 @@ This test will allow to test the altitude controller and ensure the stability of
 
 3. Set these parameters on ground and preferably disarm  (A confident pilot could set them in flight with GCS):
 
-  - :ref:`Q_P_D_ACC_I<Q_P_D_ACC_I>` to 2 x :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
-  - :ref:`Q_P_D_ACC_P<Q_P_D_ACC_P>` to :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
+  - :ref:`Q_P_D_ACC_I<Q_P_D_ACC_I>` to 0.2 x :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
+  - :ref:`Q_P_D_ACC_P<Q_P_D_ACC_P>` to 0.1 x :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
 
- If the QuadPlane in QHOVER starts to move up and down, the vertical position and velocity controllers may need to be reduced by 50%. These values are: ``Q_P_POSZ_P`` and :ref:`Q_P_D_VEL_P<Q_P_D_VEL_P>`.
+.. note:: In Plane 4.6 and earlier these parameters were named ``Q_P_ACCZ_I`` and ``Q_P_ACCZ_P`` and were scaled 10x larger:
+
+  - ``Q_P_ACCZ_I`` to 2 x :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
+  - ``Q_P_ACCZ_P`` to :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
+
+ If the QuadPlane in QHOVER starts to move up and down, the vertical position and velocity controllers may need to be reduced by 50%. These values are: :ref:`Q_P_D_POS_P<Q_P_D_POS_P>` and :ref:`Q_P_D_VEL_P<Q_P_D_VEL_P>`.
 
 .. note:: If the :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` learned should be ~0.3-0.6. Higher values indicate that insufficient thrust is available, either due to motor system design, obstructed prop air flow by the fuselage or wings, or excessive yaw bias (see next section)
 
@@ -475,8 +485,8 @@ The full list of input shaping parameters are:
 - :ref:`Q_A_RATE_R_MAX <Q_A_RATE_R_MAX>`
 - :ref:`Q_A_RATE_Y_MAX <Q_A_RATE_Y_MAX>`
 - :ref:`Q_A_RATE_WPY_MAX<Q_A_RATE_WPY_MAX>`
-- ``Q_P_JERK_XY``
-- ``Q_P_JERK_Z``
+- :ref:`Q_P_NE_JERK<Q_P_NE_JERK>`
+- :ref:`Q_P_D_JERK<Q_P_D_JERK>`
 - :ref:`Q_LOIT_ACC_MAX_M<Q_LOIT_ACC_MAX_M>`
 - :ref:`Q_LOIT_ANG_MAX <Q_LOIT_ANG_MAX>`
 - :ref:`Q_LOIT_BRK_ACC_M<Q_LOIT_BRK_ACC_M>`

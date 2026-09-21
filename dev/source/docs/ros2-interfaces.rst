@@ -7,6 +7,8 @@ ROS 2 Interfaces
 The purpose of this page is to document all the ROS 2 interfaces available in ArduPilot.
 Content is organized by functional area the data is used.
 
+.. note:: DDS update rates are constrained by :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`, which is typically 400Hz for copter and 50Hz for other vehicles. For example, if you have a topic that is published at 100Hz, but the ``SCHED_LOOP_RATE`` is 50Hz, then the topic will be published at 100Hz, but the data will only be updated at 50Hz. Ensure that your ``SCHED_LOOP_RATE`` is high enough to support the update rates you need for your application.
+
 Sensors
 =======
 
@@ -20,29 +22,34 @@ ArduPilot exposes "sensor" type data over DDS, that usually corresponds to a phy
    <th>Topic Name</th>
    <th>Topic Type</th>
    <th>Description</th>
+   <th>Default Frequency</th>
    </tr>
    <tr>
    <td>ap/navsat/navsat0</td>
    <td>sensor_msgs/msg/NavSatFix</td> 
    <td>This is the reported GPS sensor position from the GPS subsystem.
    TODO It will include a frame ID as instance number</td>
+   <td>GPS-driven</td>
    </tr>
    <tr>
    <td>ap/battery</td>
    <td>sensor_msgs/msg/BatteryState</td> 
    <td>This sends the battery state for each enabled battery.
    The battery instance is available in the frame ID.
-   Each enabled battery will be have data published.
+   Each enabled battery will be have data published.</td>
+   <td>1 Hz</td>
    </tr>
    <tr>
    <td>ap/imu/experimental/data</td>
    <td>sensor_msgs/msg/IMU</td>
    <td>This is the high rate IMU data from the IMU that is currently used in the EKF.</td>
+   <td>200 Hz</td>
    </tr>
    <tr>
    <td>ap/airspeed</td>
    <td>geometry_msgs/msg/Vector3Stamped</td>
    <td>This is the 3D airspeed estimate of the vehicle in body frame.</td>
+   <td>30 Hz</td>
    </tr>
    </tbody>
    </table>
@@ -58,32 +65,38 @@ Pose, Rates, and Coordinates
    <th>Topic Name</th>
    <th>Topic Type</th>
    <th>Description</th>
+   <th>Frequency</th>
    </tr>
    <tr>
    <td>ap/gps_global_origin/filtered</td>
    <td>geographic_msgs/msg/GeoPointStamped</td> 
-   <td>This is the filtered AHRS's inertial navigation origin. This is NOT the same ask the HOME location.
+   <td>This is the filtered AHRS's inertial navigation origin. This is NOT the same ask the HOME location.</td>
+   <td>1 Hz</td>
    </tr>
    <tr>
    <td>ap/twist/filtered</td>
    <td>geometry_msgs/msg/TwistStamped</td> 
    <td>This is the filtered AHRS's velocity in the local ENU frame relative to home.</td>
+   <td>30 Hz</td>
    </tr>
    <tr>
    <td>ap/pose/filtered</td>
    <td>geometry_msgs/msg/PoseStamped</td> 
    <td>This is the filtered AHRS's pose in the local ENU frame relative to home.</td>
+   <td>30 Hz</td>
    </tr>
    <tr>
    <td>ap/geopose/filtered</td>
    <td>geographic_msgs/msg/GeoPoseStamped</td> 
    <td>This is the filtered AHRS's pose (position+orientation) in global coordinates</td>
+   <td>30 Hz</td>
    </tr>
    <tr>
    <td>ap/tf_static</td>
    <td>tf2_msgs/msg/TFMessage</td> 
    <td>AP broadcasts its known static transforms on this topic.
    The transforms include the GPS sensor offsets relative to the vehicle origin.</td>
+   <td>N/A</td>
    </tr>
    </tbody>
    </table>
@@ -99,16 +112,19 @@ Time
    <th>Topic Name</th>
    <th>Topic Type</th>
    <th>Description</th>
+   <th>Frequency</th>
    </tr>
    <tr>
    <td>ap/time</td>
    <td>builtin_interface/msg/Time</td> 
    <td>This sends time from AP's real time clock.</td>
+   <td>100 Hz</td>
    </tr>
    <tr>
    <td>ap/clock</td>
    <td>rosgraph_msgs/msg/Clock</td> 
    <td>This sends time from AP's real time clock in a format suitable for aligning ROS time of a companion computer.</td>
+   <td>100 Hz</td>
    </tr>
    </tbody>
    </table>
@@ -248,7 +264,6 @@ For more information on the coordinate systems used, review `ROS REP-105 <https:
    <td>tf2_msgs/msg/TFMessage</td> 
    <td>Receive the odometry dynamic transform on the normal tf2 dynamic transform topic.</td>
    </tr>
-   <tr>
    </tbody>
    </table>
 

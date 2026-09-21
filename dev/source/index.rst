@@ -15,6 +15,12 @@ We pride ourselves on being **versatile** (rich in features with support for a l
 
 The source code is developed by a group of volunteer and professional (i.e. paid) developers who, along with our users and `Partners <https://ardupilot.org/about/Partners>`__, make up the `ArduPilot Community <https://ardupilot.org>`__.
 
+.. tip::
+
+   **New developer?** The fastest path in: :ref:`download the code <where-to-get-the-code>`,
+   :ref:`build it <building-the-code>`, then work through
+   :ref:`learning the codebase <learning-the-ardupilot-codebase>`.
+
 Getting Involved
 ================
 
@@ -22,7 +28,7 @@ New developers are always welcome! The best way to start is to:
 
 - read this wiki to learn the basics of the software and :ref:`how the team works <how-the-team-works>`
 - get involved with the other developers by posting on the `Developer Team Forum <https://discuss.ardupilot.org/c/development-team>`__, chat to us on `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or join the :ref:`weekly development call <ardupilot-discord-server>`.  You can also find a large number of users and some developers in the `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.  :ref:`All channels <common-contact-us>` are open to all.  Lurk for a while to get a feel for it, then participate!
-- find a specific bug you'd like to fix or a feature you'd like to add (check out the `good first issues <https://github.com/ArduPilot/ardupilot/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22>`__, recent `issues from Randy <https://github.com/ArduPilot/ardupilot/issues/created_by/rmackay9>`__ or our :ref:`roadmap <roadmap>` for ideas).  Please do not ask to be assigned an issue; just work on it.
+- find a specific bug you'd like to fix or a feature you'd like to add (check out the `good first issues <https://github.com/ArduPilot/ardupilot/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22>`__, recent `issues from Randy <https://github.com/ArduPilot/ardupilot/issues/created_by/rmackay9>`__ or the :ref:`GSoC ideas list <gsoc-ideas-list>` for ideas).  Please do not ask to be assigned an issue; just work on it.
 - if there is already a related pull request you can review it and join the discussion there, otherwise fix the bug in your own clone and :ref:`test <simulation-2>` that it's working
 - submit the change to the main code base :ref:`via a pull request <submitting-patches-back-to-master>`.
 
@@ -30,18 +36,18 @@ Why the name?
 =============
 
 The 'Ardu' part of the ArduPilot name comes from `Arduino <http://www.arduino.cc/>`__. The original :ref:`APM1 and APM2 <common-apm25-and-26-overview>` boards were based around the
-Arduino development environment and AVR CPUs. We long ago outgrew these boards so we recommend users use one of the many more capable boards found on our :ref:`Autopilot Hardware Options page <common-autopilots>` including the Pixhawk.
+Arduino development environment and AVR CPUs. We long ago outgrew these boards so we recommend users use one of the many more capable boards found on our :ref:`Autopilot Hardware Options page <common-autopilots>` including the Pixhawk series.
 
 A timeline history of ArduPilot can be found :ref:`here <history-of-ardupilot>`.
 
 Supported boards
 ================
 
-The :ref:`Autopilot Hardware Options <common-autopilots>` page provides an overview for all the supported controller boards, including
-:ref:`Pixhawk <common-pixhawk-overview>`, :ref:`The Cube <common-thecube-overview>`,
-:ref:`Pixracer <common-pixracer-overview>`, :ref:`NAVIO2 <common-navio2-overview>`, :ref:`Bebop2 <copter:parrot-bebop-autopilot>`, etc.
+The :ref:`Autopilot Hardware Options <copter:common-autopilots>` page provides an overview for all the supported controller boards, including
+:ref:`Pixhawk <copter:common-pixhawk-overview>`, :ref:`The Cube Orange <copter:common-thecubeorange-overview>`,
+:ref:`Holybro Pixhawk 6C Mini <copter:common-holybro-pixhawk6C>`, :ref:`PocketBeagle 2 DIY Cape (Linux) <copter:common-pocketbeagle2>`, etc.
 
-To get going quickly please consider purchasing one of the :ref:`ready-to-fly vehicles <common-rtf>` including the very low-cost `SkyRocket/SkyViper drone <https://ardupilot.org/copter/docs/skyrocket.html>`__.
+To get going quickly please consider purchasing one of the :ref:`ready-to-fly vehicles <copter:common-rtf>`.
 
 The ArduPilot source code includes the `AP-HAL <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL>`__
 Hardware Abstraction Layer, making it relatively easy to port the code to a
@@ -77,30 +83,23 @@ ArduPilot dev team.
    `code <https://github.com/ArduPilot/apm_planner>`__) is a ground
    station specifically for APM written in C++ using the Qt libraries
 -  :ref:`MAVProxy <mavproxy:home>`
-   - command line oriented and scriptable ground station (mostly used by developers)
--  `DroneKit <http://dronekit.io/>`__ - APM SDK for apps running on vehicles, mobile devices and/or in the cloud.
--  MinimOSD (`wiki <http://code.google.com/p/arducam-osd/wiki/minimosd>`__,
-   `code <https://github.com/diydrones/MinimOSD-Extra>`__)
-   - on-screen display of flight data
--  Tower (`wiki <https://github.com/DroidPlanner/Tower/wiki>`__,
-   `code <https://github.com/DroidPlanner/Tower>`__, `google play <https://play.google.com/store/apps/details?id=org.droidplanner.android>`__)
-   - android ground station
+   - command line oriented and scriptable ground station (mostly used by developers) in Python
 -  `QGroundControl* <http://www.qgroundcontrol.org/>`__ is an alternative ground station written in C++ using the Qt libraries
--  `PX4* <https://pixhawk.org/start>`__ - designers of the original PX4FMU hardware (from which the Pixhawk was developed)
+-  `Pixhawk* <https://pixhawk.org>`__ - Pixhawk open standards hardware project
 -  `MAVLink* <https://mavlink.io>`__ -
    the protocol for communication between the ground station, flight
-   controller and some peripherals including the OSD. A "Dummy's Guide" to
-   working with MAVLink is
-   `here <https://diydrones.com/group/arducopterusergroup/forum/mavlink-tutorial-for-absolute-dummies-part-i>`__.
--  `UAVCAN* <http://uavcan.org>`__ -
+   controller and some peripherals.
+-  `DroneCAN* <https://dronecan.github.io/>`__ -
    Lightweight protocol designed for reliable communication in aerospace and robotic 
-   applications via CAN bus. ArduPilot is using the `Libuavcan <http://uavcan.org/Implementations/Libuavcan/>`__,
+   applications via CAN bus. ArduPilot is using the `libcanard <https://github.com/DroneCAN/libcanard>`__,
    which is a portable, cross-platform library written in C++ with minimal dependency on the C++ standard library and calls its version DroneCAN, allowing UAVCAN to evolve separately.
 
 How the team works
 ==================
 
--  Our annual developers conference is held in Feb/March in Canberra Australia (`2018 announcement <https://discuss.ardupilot.org/t/developer-meetup-in-canberra-february-2018>`__).
+See :ref:`How The Team Works <how-the-team-works>` for governance, communication channels, release procedures, funding and voting. A few quick links:
+
+-  Our annual developers conference details (dates and location vary each year) are on the :ref:`Developers Conference page <dev-conference>`.
 -  The source code for ArduPilot is managed using git on https://github.com/ArduPilot/ardupilot
 -  Pre-compiled firmware for supported autopilot boards is available from https://firmware.ardupilot.org
 -  User support is available on the `forums <https://discuss.ardupilot.org/>`__.
@@ -133,38 +132,66 @@ Table of Contents
 
 .. toctree::
    :titlesonly:
+   :caption: Getting Started
 
-    License (GPLv3) <docs/license-gplv3>
     Downloading the code / Using Git <docs/where-to-get-the-code>
     Building the code <docs/building-the-code>
     Editors & IDEs <docs/code-editing-tools-and-ides>
     Learning the code <docs/learning-the-ardupilot-codebase>
     Simulation & Testing <docs/simulation-2>
     Debugging <docs/debugging>
+    License (GPLv3) <docs/license-gplv3>
+
+.. toctree::
+   :titlesonly:
+   :caption: Contributing
+
     Contributing Code <docs/contributing>
+    How The Team Works <docs/how-the-team-works>
+    Wiki Editing Guide <docs/common-wiki_editing_guide>
+    GSoC <docs/gsoc>
+
+.. toctree::
+   :titlesonly:
+   :caption: Hardware & Peripherals
+
     Porting to a new Flight Controller <docs/porting>
-    Linux Support <docs/ardupilot-on-linux>
-    Academic Works Involving ArduPilot <docs/acadamic-works>
     Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
     AP_Peripheral Devices <docs/ap-peripheral-landing-page>
-    CAN and DroneCAN/UAVCAN <docs/can-bus>
     Companion Computers <docs/companion-computers>
-    Developers Conference <docs/dev-conference>
-    Events <docs/events>
-    GCS Developer Resources <docs/gcs-resources>
-    GSoC <docs/gsoc>
-    How The Team Works <docs/how-the-team-works>
-    Lua Scripts <docs/common-lua-scripts>
+    Linux Support <docs/ardupilot-on-linux>
+    OEM Customization <docs/common-oem-customizations>
+    RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
+    USB IDs <docs/USB-IDs>
+
+.. toctree::
+   :titlesonly:
+   :caption: Protocols & Interfaces
+
     MAVLink Interface <docs/mavlink-commands>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
-    OEM Customization <docs/common-oem-customizations>
+    GCS Developer Resources <docs/gcs-resources>
+    CAN and DroneCAN/UAVCAN <docs/can-bus>
+    Lua Scripts <docs/common-lua-scripts>
+    ROS1 <docs/ros1>
+    ROS2 <docs/ros2>
     RemoteID <docs/opendroneid>
-    ROS1/ROS2 <docs/ros>
-    RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
+
+.. toctree::
+   :titlesonly:
+   :caption: Security & Reference
+
     Security <docs/security-landing-page>
     Support Proxy <docs/support_proxy>
-    Training Centers <docs/common-training-centers>
-    USB IDs <docs/USB-IDs>
     User Alerts <docs/user-alerts-developer>
-    Wiki Editing Guide <docs/common-wiki_editing_guide>
+    Wiki Offline Copies <docs/wiki-offline-copies>
     Appendix <docs/common-appendix>
+
+.. toctree::
+   :titlesonly:
+   :caption: Community & Events
+
+    Developers Conference <docs/dev-conference>
+    Events <docs/events>
+    Training Centers <docs/common-training-centers>
+    Academic Works Involving ArduPilot <docs/acadamic-works>

@@ -15,7 +15,8 @@ Most methods have an alias defined to specify its binding group. For example, th
 ``singleton AP_AHRS alias ahrs``
 
 so that using its call to retrieve current roll is accessed:
-::
+
+.. code-block:: lua
 
     roll = ahrs:get_roll()
 
@@ -40,10 +41,12 @@ In the AP_Arming group:
 ``singleton AP_Arming method is_armed boolean``
 
 binds the public variable in AP_Arming.h:
-::
+
+.. code-block:: cpp
 
  bool is_armed();
- returning a boolean for armed
+
+returning a boolean for armed
 
 In the AP_Baro group:
 ~~~~~~~~~~~~~~~~~~~~~
@@ -51,10 +54,12 @@ In the AP_Baro group:
 ``singleton AP_Baro method get_temperature float``
 
 binds to the function in AP_Baro.h:
-::
+
+.. code-block:: cpp
 
   float get_temperature(void) const { return get_temperature(_primary); }
-  returning a float of the baro temperature for primary barometer
+
+returning a float of the baro temperature for primary barometer
 
 In the AP_Relay group:
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -62,19 +67,23 @@ In the AP_Relay group:
 ``singleton AP_Relay method on void uint8_t 0 AP_RELAY_NUM_RELAYS``
 
 binds to the function in AP_Relay.h:
-::
+
+.. code-block:: cpp
 
  void on(uint8_t instance) { set(instance, true); }
- returning nothing, but setting Relay instance ON, where instance
- is an unsigned 8 bit integer between 0 and AP_RELAY_NUM_RELAYS (currently 6)
+
+returning nothing, but setting Relay instance ON, where instance
+is an unsigned 8 bit integer between 0 and AP_RELAY_NUM_RELAYS (currently 6)
 
 ``singleton AP_Relay method enabled boolean uint8_t 0 AP_RELAY_NUM_RELAYS``
 
 binds to:
-::
+
+.. code-block:: cpp
 
   bool enabled(uint8_t instance) { return instance < AP_RELAY_NUM_RELAYS && _pin[instance] != -1; }
-  returning a boolean if the relay instance provided has been setup
+
+returning a boolean if the relay instance provided has been setup
 
 In the AP_AHRS group:
 ~~~~~~~~~~~~~~~~~~~~~
@@ -85,7 +94,8 @@ An example that takes advantage that a LUA variable can have a value or be NULL 
 ``Vector3f'Null float'Null``
 
 binding to:
-::
+
+.. code-block:: cpp
 
     // get_variances - provides the innovations normalized using the innovation variance where a value of 0
     // indicates perfect consistency between the measurement and the EKF solution and a value of 1 is the maximum
@@ -93,14 +103,17 @@ binding to:
     // boolean false is returned if variances are not available
     virtual bool get_variances(float &velVar, float &posVar, float &hgtVar, Vector3f &magVar, float &tasVar) const {
         return false;
-    returning multiple values, any of which can be NULL.
-    In this case the C++ function is boolean, but since the returns have 'NULL specified,
-    the C++ return of a boolean is ignored and the returned values can have NULL value.
-    Note that this call returns many values (arguments are variable pointers) and has no input 
-    variables.
+        }
+
+returning multiple values, any of which can be NULL.
+In this case the C++ function is boolean, but since the returns have 'NULL specified,
+the C++ return of a boolean is ignored and the returned values can have NULL value.
+Note that this call returns many values (arguments are variable pointers) and has no input 
+variables.
 
 In order to see how this would be used:
-:: 
+
+.. code-block:: lua
 
       velVar, posVar,hgtVar,magVar, tasVar = ahrs:get_variances()
       if velVar then

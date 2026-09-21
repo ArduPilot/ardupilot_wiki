@@ -104,6 +104,7 @@ Rangefinder
     Hexsoon Radar <common-rangefinder-hexsoon-radar>
     Nanoradar NRA24 <common-rangefinder-nra24>
     Nooploop TOF-Sense P <common-rangefinder-nooploop-tofsense-p>
+    Smartmicro Drone Altimeter <common-rangefinder-smartmicro-t132>
 
 Optical Flow Sensors
 ====================
@@ -149,6 +150,7 @@ RC Receivers/Adapters
     :maxdepth: 1
 
     AnyLeaf ELRS RC + telemetry <https://www.anyleaf.org/elrs-rx-can>
+    Matek mLRS RC + MAVLink CAN receiver, mR900-30C <https://www.mateksys.com/?portfolio=mr900-30c>
     Matek CAN-L4-RC adapter <http://www.mateksys.com/?portfolio=can-l4-rc>
 
 Gimbals

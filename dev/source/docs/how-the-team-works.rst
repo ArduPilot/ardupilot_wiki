@@ -11,7 +11,7 @@ These pages are less about the software directly and more about the procedures a
     :maxdepth: 1
 
     Communication Channels (aka Contact Us) <common-contact-us>
-    Copter Release Procedures <release-procedures>
+    Release Procedures <release-procedures>
     Developer Code of Conduct <developer-code-of-conduct>
     Funding Committee <how-the-team-works-development-fund>
     Job Openings <job-openings>

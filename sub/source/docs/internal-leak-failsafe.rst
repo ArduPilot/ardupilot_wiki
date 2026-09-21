@@ -18,6 +18,8 @@ Whether the active level of an analog sensor or the logic level from a digital s
 
 .. note:: Digital leak detectors should be connected to digital input pins. Some flight controllers support that on :ref:`servo channel ports <main-aux-out>`, in which case the relevant channel(s) must be configured as :ref:`common-gpios`.
 
+.. note:: Leak detections can also be triggered from a MAVLink subsystem (matching the autopilot's MAVLink system ID), via the extended form of `SYS_STATUS <https://mavlink.io/en/messages/common.html#SYS_STATUS>`__ messages. This can be useful for "remote" leak detection (e.g. in a separate enclosure to the autopilot), where it may be impractical to run a leak sensor probe to, or if the autopilot does not have enough GPIO pins available for the desired number of probes.
+
 What will happen
 ================
 When the failsafe occurs, the action taken is determined by the value of :ref:`FS_LEAK_ENABLE<FS_LEAK_ENABLE>`:

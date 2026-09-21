@@ -1,3 +1,6 @@
+# Claude Code local tooling (commands, settings) - never part of the upstream wiki
+/.claude/
+
 # Common files except under Common
 /*/source/docs/common-*
 !/common/source/docs/common-*
@@ -16,11 +19,25 @@
 *.html
 *.pyc
 .cache/
+new_params_mversion/
+old_params_mversion/
 
 # static html pages
 !/frontend/*.html
 !/frontend/includes/*.html
 
+
+# Generated offline artefacts (archives + manifest), rebuilt by update.py
+/offline/
+/offline.new/
+/offline.old/
+
+# Thumbnail and PNG caches, kept across builds when --destdir is outside the checkout
+/offline.cache/
+
+# Lossless PNG results, keyed by content hash. Safe to delete; the next
+# build refills it.
+/.image-cache/
 
 # Vagrant
 /.vagrant
@@ -37,6 +54,7 @@
 # Parameters files
 /*/source/docs/parameters*.rst
 /dev/source/docs/AP_Periph-Parameters.rst
+/*/source/_static/parameters-*.json
 
 # Log messages files
 /*/source/docs/logmessages.rst
@@ -56,3 +74,10 @@ build_options.py
 
 # Mac file
 .DS_Store
+
+# Test-only dependency, installed on demand rather than vendored:
+#   npm install --no-save jsdom
+/node_modules/
+/package-lock.json
+build.lck
+build.lck.log

@@ -39,7 +39,7 @@ Getting Started
 
 .. note:: To download from the github locations, first click the script name, then select "raw" in upper right corner, then right mouse click to "Save Page as" a text file with the ".lua" file extension
 
-- Up to 8 RC channels can be assigned as scripting inputs/controls using the ``RCX_OPTION`` = "300-307" options to be used by scripts. In addition, six dedicated script parameters are available: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER6<SCR_USER6>` and are accessed with the same method as any other parameter, but these are reserved for script use. Scripts can also generate their own parameters (see :ref:`common-scripting-parameters`)to be used within the scripts.
+- Up to 16 RC channels can be assigned as scripting inputs/controls using the ``RCx_OPTION`` = 300-315 (Scripting1 through Scripting16) options to be used by scripts. In addition, six dedicated script parameters are available: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER6<SCR_USER6>` and are accessed with the same method as any other parameter, but these are reserved for script use. Scripts can also generate their own parameters (see :ref:`common-scripting-parameters`)to be used within the scripts.
 - When the autopilot is powered on it will load and start all scripts. By default it will look in the ROMFS file system for scripts included in the firmware image by a manufacturer, and the APM/scripts directory on the SD Card (or if a SITL simulation, the base directory where the simulation was started.) This can be modified by used the :ref:`SCR_DIR_DISABLE<SCR_DIR_DISABLE>` parameter.
 - Messages and errors are sent to the ground station and, if using Mission Planner, can be viewed in the Data screen's "Messages" tab.
 - :ref:`SCR_HEAP_SIZE <SCR_HEAP_SIZE>` can be adjusted to increase or decrease the amount of memory available for scripts. The default , which varies from 43K to 204.8K depending on cpu being used, is sufficient at its smallest (43K) for small scripts, but many will require more (some applets now need 300K). The autopilot's free memory depends highly upon which features and peripherals are enabled. If this parameter is set too low, scripts may fail to run and give an out of memory pre-arm error. If set too high other autopilot features such as Terrain Following or even the EKF may fail to initialize. On autopilots with a STM32F4 microcontroller, Smart RTL (Rover, Copter) and Terrain Following (Plane, Copter) need to be nearly always disabled. These features are usually enabled by default, set :ref:`SRTL_POINTS <SRTL_POINTS>` = 0, :ref:`TERRAIN_ENABLE <TERRAIN_ENABLE>` = 0). See also :ref:`RAM Limitations<ram_limitations>` section.
@@ -389,13 +389,21 @@ GCS (gcs:)
 Serial LED (serialLED:)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-This library allows the control of WS8212B RGB LED strings via an output reserved for scripting and  selected by SERVOx_FUNCTION = 94 thru 109 (Script Out 1 thru 16)
+This library allows the control of RGB LED strings via an output reserved for scripting and  selected by SERVOx_FUNCTION = 94 thru 109 (Script Out 1 thru 16)
 
-- :code:`set_num_LEDs( output_number ,  number_of_LEDs )` - Sets the number_of_LEDs in the string on a servo output. output_number is servo output number 1-16 that the string is attached to with a string having <number_of_LEDs>.
+Set the length of the string with the call matching the type of LED attached. In each case :code:`chan` is the servo output number, 1 to 16, that the string is attached to. All three return true on success.
 
-- :code:`set_RGB( output_number ,  LED_number ,  r , g , b )` - Set the data for LED_number (1-32) on the string attached servo output_number (1-16) output to the r,g,b values (0-255)
+- :code:`set_num_neopixel( chan ,  num_leds )` - Sets the number of NeoPixels in the string, up to 128.
 
-- :code:`send()` - Sends the data to the LED strings
+- :code:`set_num_neopixel_rgb( chan ,  num_leds )` - As above, for a string driven in RGB mode.
+
+- :code:`set_num_profiled( chan ,  num_leds )` - Sets the number of ProfiLEDs in the string, up to 126.  A second output, in the same PWM group, must have SERVOx_FUNCTION = 132 (ProfiLEDClock) assigned, otherwise this call fails.
+
+Then set and send the colours:
+
+- :code:`set_RGB( chan ,  led_index ,  red , green , blue )` - Set the colour of one LED on the string attached to output :code:`chan`.  :code:`led_index` counts from 0, and -1 sets every LED in the string.  The colour values are 0 to 255.
+
+- :code:`send( chan )` - Sends the configured values to the LED string on output :code:`chan`.
 
 
 Notify (notify:)

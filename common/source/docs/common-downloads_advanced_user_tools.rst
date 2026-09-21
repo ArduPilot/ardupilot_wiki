@@ -1,8 +1,8 @@
 .. _common-downloads_advanced_user_tools:
 
-==============================
-DOWNLOADS: Advanced User Tools
-==============================
+========================================
+Archived: DOWNLOADS: Advanced User Tools
+========================================
 
 The advanced users tools `can be downloaded from here <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/>`__.
 
@@ -426,4 +426,4 @@ Since we want you to have a great experience, please make sure that you do all o
   The software and hardware we provide is only for use in unmanned vehicles.
 
 
-[copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,mavproxy,ardupilot"]
+[copywiki destination="copter,plane,rover,dev,sub"]
