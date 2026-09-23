@@ -37,7 +37,7 @@ import pathlib
 import time
 from dataclasses import dataclass
 from sys import argv, stderr
-from xml.etree.ElementTree import SubElement, parse, tostring
+from defusedxml.ElementTree import SubElement, parse, tostring
 
 
 @dataclass
