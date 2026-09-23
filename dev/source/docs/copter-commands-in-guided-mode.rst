@@ -37,7 +37,8 @@ These MAV_CMDs can be processed if packaged within a `COMMAND_LONG <https://mavl
 
 These MAV_CMDs can be processed if packaged within a `COMMAND_INT <https://mavlink.io/en/messages/common.html#COMMAND_INT>`__ message
 
-- `MAV_CMD_DO_REPOSITION <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_REPOSITION>`__
+- :ref:`MAV_CMD_DO_REPOSITION <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_REPOSITION>`
+- `MAV_CMD_DO_ORBIT <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_ORBIT>`__
 
 Movement Command Details
 ========================
