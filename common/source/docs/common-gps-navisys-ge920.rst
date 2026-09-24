@@ -50,10 +50,12 @@ To use the GE-920 for GPS positioning and Dual-Antenna Yaw/Heading in ArduPilot,
 GPS Driver Settings
 ~~~~~~~~~~~~~~~~~~~
 
-* :ref:`GPS_TYPE<GPS_TYPE>` = 2 (u-blox)
-* :ref:`GPS_TYPE2<GPS_TYPE2>` = 2 (u-blox)
-* :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` = 1
-* :ref:`GPS_AUTO_SWITCH<GPS_AUTO_SWITCH>` = 1
+* :ref:`SERIAL3_PROTOCOL` = 5 (GPS)
+* :ref:`SERIAL4_PROTOCOL` = 5 (GPS)
+* :ref:`GPS1_TYPE` = 17 (Moving Baseline Base)
+* :ref:`GPS2_TYPE` = 18 (Moving Baseline Rover)
+* :ref:`GPS_AUTO_CONFIG` = 1
+* :ref:`GPS_AUTO_SWITCH` = 1
 
 Dual Antenna Yaw Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
