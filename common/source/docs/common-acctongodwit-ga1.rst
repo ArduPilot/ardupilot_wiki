@@ -26,8 +26,8 @@ Specifications
 **Sensors**
 ^^^^^^^^^^^
 * Bosch BMI088 (vibration isolated)
-* TDK InvenSense ICM-42688-P x 2 (one vibration isolated)
-* TDK Barometric Pressure and Temperature Sensor CP-20100 x 2 (one vibration isolated)
+* Two of either ICM-42688-P / ICM-45686 / ICM-56686 / LSM6DSK320X in any combination (one vibration isolated)
+* Two barometers of either TDK CP-20100 / Infineon DPS368 in any combination (one vibration isolated)
 * PNI RM3100 Geomagnetic Sensor (vibration isolated)
 
 **Power**
