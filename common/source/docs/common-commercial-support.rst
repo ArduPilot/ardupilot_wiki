@@ -335,6 +335,9 @@ listed here will be active participants in the community.
 .. image:: ../../../images/logos/Centx.png
     :scale: 0%  
 
+.. image:: ../../../images/logos/rpanion.png
+    :scale: 0%
+
 
 Fleet Management Systems
 ========================

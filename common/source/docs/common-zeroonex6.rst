@@ -31,7 +31,8 @@ Features:
          - IMU2-BMI088(With vibration isolation)
          - IMU3-IIM42653(No vibration isolation)
    - Baros:
-      - Two barometers:2 x ICP20100
+      - Two barometers: 2 x ICP20100 (V1)
+      - V2: SPL06 and BMP581 baros
       - Magnetometer: Built-in RM3100 magnetometer
 
 - **Interfaces**

@@ -72,7 +72,6 @@ New firmwares will be built and made available to the ground stations once these
 
 Update Beta tags for Plane
 
-- ``git show ArduPlane-beta``
 - ``git tag -d ArduPlane-beta``
 - ``git push origin :refs/tags/ArduPlane-beta``
 - ``git tag ArduPlane-beta HEAD``
@@ -80,8 +79,6 @@ Update Beta tags for Plane
 
 Update Beta tags for Copter and TradHeli
 
-- ``git show ArduCopter-beta`` and record the old git tag in case a backout is required
-- ``git show ArduCopter-beta-heli``
 - ``git tag -d ArduCopter-beta`` to delete the beta tag from the local repo
 - ``git tag -d ArduCopter-beta-heli``
 - ``git push origin :refs/tags/ArduCopter-beta`` to delete the beta tag from the shared repo
@@ -93,7 +90,6 @@ Update Beta tags for Copter and TradHeli
 
 Update Beta tags for Rover
 
-- ``git show APMrover2-beta``
 - ``git tag -d APMrover2-beta``
 - ``git push origin :refs/tags/APMrover2-beta``
 - ``git tag APMrover2-beta HEAD``
@@ -101,7 +97,6 @@ Update Beta tags for Rover
 
 Update Beta tags for Sub
 
-- ``git show ArduSub-beta``
 - ``git tag -d ArduSub-beta``
 - ``git push origin :refs/tags/ArduSub-beta``
 - ``git tag ArduSub-beta HEAD``
@@ -109,7 +104,6 @@ Update Beta tags for Sub
 
 Update Beta tags for AntennaTracker
 
-- ``git show AntennaTracker-beta``
 - ``git tag -d AntennaTracker-beta``
 - ``git push origin :refs/tags/AntennaTracker-beta``
 - ``git tag AntennaTracker-beta HEAD``
@@ -117,7 +111,6 @@ Update Beta tags for AntennaTracker
 
 Update Beta tags for Periph
 
-- ``git show AP_Periph-beta``
 - ``git tag -d AP_Periph-beta``
 - ``git push origin :refs/tags/AP_Periph-beta``
 - ``git tag AP_Periph-beta HEAD``
@@ -175,7 +168,6 @@ Releasing a stable version is the same as a beta version except these tags are u
 
 Update Stable tags for Plane
 
-- ``git show ArduPlane-stable``
 - ``git tag -d ArduPlane-stable``
 - ``git push origin :refs/tags/ArduPlane-stable``
 - ``git tag ArduPlane-stable HEAD``
@@ -183,8 +175,6 @@ Update Stable tags for Plane
 
 Update Stable tags for Copter and TradHeli:
 
-- ``git show ArduCopter-stable``
-- ``git show ArduCopter-stable-heli``
 - ``git tag -d ArduCopter-stable``
 - ``git tag -d ArduCopter-stable-heli``
 - ``git push origin :refs/tags/ArduCopter-stable``
@@ -196,7 +186,6 @@ Update Stable tags for Copter and TradHeli:
 
 Update Stable tags for Rover
 
-- ``git show APMrover2-stable``
 - ``git tag -d APMrover2-stable``
 - ``git push origin :refs/tags/APMrover2-stable``
 - ``git tag APMrover2-stable HEAD``
@@ -204,7 +193,6 @@ Update Stable tags for Rover
 
 Update Stable tags for Sub
 
-- ``git show ArduSub-stable``
 - ``git tag -d ArduSub-stable``
 - ``git push origin :refs/tags/ArduSub-stable``
 - ``git tag ArduSub-stable HEAD``
@@ -212,7 +200,6 @@ Update Stable tags for Sub
 
 Update Stable tags for AntennaTracker
 
-- ``git show AntennaTracker-stable``
 - ``git tag -d AntennaTracker-stable``
 - ``git push origin :refs/tags/AntennaTracker-stable``
 - ``git tag AntennaTracker-stable HEAD``
@@ -220,7 +207,6 @@ Update Stable tags for AntennaTracker
 
 Update Stable tags for Periph
 
-- ``git show AP_Periph-stable``
 - ``git tag -d AP_Periph-stable``
 - ``git push origin :refs/tags/AP_Periph-stable``
 - ``git tag AP_Periph-stable HEAD``
@@ -236,8 +222,8 @@ An additional tag is created for each vehicle that includes the patch release nu
 - ``git push origin Rover-4.7.0``
 - ``git tag Sub-4.7.0``
 - ``git push origin Sub-4.7.0``
-- ``git tag AntennaTracker-4.7.0``
-- ``git push origin AntennaTracker-4.7.0``
+- ``git tag Tracker-4.7.0``
+- ``git push origin Tracker-4.7.0``
 - ``git tag AP_Periph-4.7.0``
 - ``git push origin AP_Periph-4.7.0``
 
