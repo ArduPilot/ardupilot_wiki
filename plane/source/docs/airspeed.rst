@@ -26,7 +26,7 @@ If an airspeed sensor is used, the throttle stick will set the target airspeed i
 Airspeed Sensor Type
 ====================
 
-Airspeed sensors can be either analog or digital. The analog sensors connect to an A/D converter input pin on the autopilot, while digital sensors connect to the autopilot's external I2C bus using the SDA and SCL external digital I/O pins or via DroneCAN. The type is set by the :ref:`ARSPD_TYPE<ARSPD_TYPE>` parameter. Analog sensors are type 2, DroneCAN sensors as type 8, and supported I2C bus digital sensors by other numbers.
+Airspeed sensors can be either analog or digital. The analog sensors connect to an A/D converter input pin on the autopilot, while digital sensors connect to the autopilot's external I2C bus using the SDA and SCL external digital I/O pins or via DroneCAN. The type is set by the :ref:`ARSPD_TYPE<ARSPD_TYPE>` parameter. Analog sensors are type 2, DroneCAN sensors as type 8, and supported I2C bus digital sensors by other numbers. Type 20 allows the airspeed, or differential pressure, to be provided by a :ref:`LUA script<common-lua-scripts>` instead of a sensor attached to the autopilot.
 
 If there is no sensor, be sure to set the :ref:`ARSPD_TYPE<ARSPD_TYPE>` to 0. ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. :ref:`ARSPD_TYPE<ARSPD_TYPE>` must be set to zero in order to display this value if no sensor is present.
 
