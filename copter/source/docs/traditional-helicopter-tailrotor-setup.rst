@@ -37,12 +37,17 @@ Direct Drive Variable Pitch :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` = 2
 
 The Direct Drive Variable Pitch (DDVP) tail type uses a separate tail motor with a variable pitch propeller.  A separate servo is used to control the tailrotor pitch.  The setup of the servo is similar to the servo only tail type. ``SERVOx_FUNCTION`` "Motor4" is assigned to the output number that corresponds to the servo channel the tailrotor servo is physically connected (defaults to output 4).  For the tail motor, the "HeliTailRSC" ("32") is assigned to the motor/servo channel to which the tail motor ESC is physically connected (defaults to output 7).
 
-The range of the motor ESC is controlled by its output's ``SERVOx_MIN/MAX`` parameters and ArduPilot will ramp it output up or down, as appropriate, to its normal operating value set by the :ref:`H_TAIL_SPEED<H_TAIL_SPEED>` parameter.
+The range of the motor ESC is controlled by its output's ``SERVOx_MIN/MAX`` parameters and ArduPilot will ramp it output up or down, as appropriate, to its normal operating value set by the :ref:`H_TAIL_SPEED<H_TAIL_SPEED>` parameter. **Firmware 4.8 and later:** the ramp rate is set by the :ref:`H_TAIL_RAMP_TIME<H_TAIL_RAMP_TIME>` parameter, shared with the DDFP tail type (see below). **Firmware before 4.8:** the ramp rate was set by the main rotor's :ref:`H_RSC_RAMP_TIME<H_RSC_RAMP_TIME>` parameter.
 
 Direct Drive Fixed Pitch :ref:`H_TAIL_TYPE <H_TAIL_TYPE>` = 3 or 4
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The Direct Drive Fixed Pitch (DDFP) tail type uses a fixed pitch tail rotor and separate motor. The stabilization and yaw is controlled by the speed of this motor. It has two options: one where the main rotor rotates clockwise when viewed from above and the other where the main rotor rotates counter-clockwise when viewed from above.  Be sure to select the DDFP tail type for the main rotor rotation.  In this case, the control of tailrotor thrust is accomplished through tailrotor speed since it is a fixed pitch propeller. The ``SERVOx_FUNCTION`` of "36" (Motor4) should be assigned to the servo channel to which the tailrotor ESC is physically connected.  On new DDFP setups it is suggested to set ``H_DDFP_THST_EXPO`` to .65 as a starting point.  This will be a good enough thrust expo for most aircraft.
+The Direct Drive Fixed Pitch (DDFP) tail type uses a fixed pitch tail rotor and separate motor. The stabilization and yaw is controlled by the speed of this motor. It has two options: one where the main rotor rotates clockwise when viewed from above and the other where the main rotor rotates counter-clockwise when viewed from above.  Be sure to select the DDFP tail type for the main rotor rotation.  In this case, the control of tailrotor thrust is accomplished through tailrotor speed since it is a fixed pitch propeller.
+
+- **Firmware 4.8 and later:** the ``SERVOx_FUNCTION`` of "32" (HeliTailRSC) should be assigned to the servo channel to which the tailrotor ESC is physically connected, the same function used for DDVP tails.
+- **Firmware before 4.8:** the ``SERVOx_FUNCTION`` of "36" (Motor4) should be assigned instead.
+
+On new DDFP setups it is suggested to set ``H_DDFP_THST_EXPO`` to .65 as a starting point.  This will be a good enough thrust expo for most aircraft.
 
 There are several parameters that provide the ability to linearize the thrust produced by the tail rotor motor and therefore provide better control:
 
@@ -55,6 +60,10 @@ There are several parameters that provide the ability to linearize the thrust pr
 
 These parameters should be set similarly to how Copter's motor scaling parameterss are setup. See :ref:`Copters Motor Thrust Scaling <motor-thrust-scaling>` document for more information.
 
+**Firmware 4.8 and later:** the DDFP (and DDVP) tail motor's ramp-up time after motor interlock is enabled is controlled independently of the main rotor via the :ref:`H_TAIL_RAMP_TIME<H_TAIL_RAMP_TIME>` parameter, default 1 second. It must be set less than the main rotor's :ref:`H_RSC_RUNUP_TIME<H_RSC_RUNUP_TIME>`, or arming will be blocked with a "H_RUNUP_TIME is less than H_TAIL_RAMP_TIME" pre-arm message. When upgrading from earlier firmware, :ref:`H_TAIL_RAMP_TIME<H_TAIL_RAMP_TIME>` is automatically initialized from the previous :ref:`H_RSC_RAMP_TIME<H_RSC_RAMP_TIME>` value.
+
+**Firmware before 4.8:** DDVP tails ramped using the main rotor's :ref:`H_RSC_RAMP_TIME<H_RSC_RAMP_TIME>` parameter. DDFP tails had no independent ramp at all - the tail motor jumped directly from zero to commanded thrust as soon as the aircraft entered the spooling-up state.
+
 These Tail Type Connections are summarized below:
 
 ==============================  ============   ===============    =============
@@ -63,9 +72,11 @@ Type                            H_TAIL_TYPE    TailPitch Servo    TailMotor ESC
 Servo only                      0                 Motor4          none
 Servo with Gyro                 1                 Motor4          none
 DirectDriveVariablePitch        2                 Motor4          HeliTailRSC
-DirectDriveFixedPitch(CW)       3                 na              Motor4
-DirectDriveFixesPitch(CCW)      4                 na              Motor4
+DirectDriveFixedPitch(CW)       3                 na              HeliTailRSC
+DirectDriveFixesPitch(CCW)      4                 na              HeliTailRSC
 ==============================  ============   ===============    =============
+
+.. note:: In firmware before 4.8, DDFP tails used Motor4 instead of HeliTailRSC.
 
 Setting Tail Trim
 =================
