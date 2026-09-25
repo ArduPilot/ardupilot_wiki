@@ -23,6 +23,7 @@ New Board Support
 - HGLRC H743 EVO, see https://github.com/ArduPilot/ardupilot_wiki/pull/8016
 - NWBlue Pro H757, see https://github.com/ArduPilot/ardupilot_wiki/pull/8017
 - Tustin MACH, see https://github.com/ArduPilot/ardupilot_wiki/pull/8029
+- SVehicle E2-mini, see https://github.com/ArduPilot/ardupilot_wiki/pull/8091
 
 New Peripheral Support
 ======================
