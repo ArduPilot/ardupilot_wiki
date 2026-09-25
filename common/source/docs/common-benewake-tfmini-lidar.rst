@@ -50,8 +50,29 @@ The diagram below shows how to connect to the autopilot's I2C port.
 - :ref:`RNGFND1_MAX <RNGFND1_MAX>` = **10** for indoor use OR **6** for outdoors.  *This is the distance in meters that the rangefinder can reliably read.*
 - :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` = 0.1 *or more accurately the distance in metres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
+Optional Power Saving
+---------------------
+
+When using the I2C TFmini Plus driver (:ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 25) the lidar can optionally be told to stop measuring when the vehicle is more than a specified height above the terrain, saving power.
+
+Set :ref:`RNGFND1_PWRRNG <RNGFND1_PWRRNG>` to the height in meters above which the lidar should be powered down. A value of 0 (the default) disables the feature.
+
+While powered down the rangefinder reports a "powered down" status rather than an error: its distance is not displayed on the OSD and altitude sources using it will fall back to other sensors. It is powered back up as soon as the estimated terrain height drops back below :ref:`RNGFND1_PWRRNG <RNGFND1_PWRRNG>`.
+
+[site wiki="copter"]
+The height above terrain is taken from the :ref:`terrain database <terrain-following>`, so terrain data must be available, either from the GCS or from the autopilot's SD card, for the lidar to ever be powered down.
+[/site]
+[site wiki="sub"]
+The height above terrain is taken from the terrain database, so terrain data must be available for the lidar to ever be powered down.
+[/site]
+[site wiki="plane"]
+The height above terrain comes from the :ref:`terrain database <common-terrain-following>` when terrain data is available, otherwise from the barometric height above home, or the height above the landing target while landing.
+[/site]
+
+.. note:: Since the TFmini Plus has a maximum range of 12m, this is normally only useful on vehicles which spend most of their flight well above that height.
+
 Testing the sensor
-==================
+------------------
 
 Distances read by the sensor can be seen in the Mission Planner's Flight
 Data screen's Status tab. Look closely for "rangefinder1".
