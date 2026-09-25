@@ -150,6 +150,8 @@ POWER AUX - 3 Pin JST-GH
      - VBAT IN/OUT
      - 5.5V-54V
 
+The 12V pin is gated by a BEC enable pin mapped to RELAY1, which is **on by default** (:ref:`RELAY1_DEFAULT<RELAY1_DEFAULT>` = 1). To change the default to off, set :ref:`RELAY1_DEFAULT<RELAY1_DEFAULT>` = 0. To make it controllable from the transmitter, set :ref:`RELAY1_FUNCTION<RELAY1_FUNCTION>` = 1 (Relay) and assign :ref:`RCx_OPTION<RC7_OPTION>` = 28 (Relay1 On/Off) to the desired switch channel. The VBAT pin is a direct battery pass-through and is not controlled by firmware.
+
 
 CAN - 4 Pin JST-GH
 ------------------
@@ -247,6 +249,8 @@ VTX - 6 Pin JST-GH
   5     USART2_RX_(SBUS)       3.3V
   6     GND                    GND
  ===== ====================== =========
+
+The 12V pin is gated by a BEC enable pin mapped to RELAY1, which is **on by default** (:ref:`RELAY1_DEFAULT<RELAY1_DEFAULT>` = 1). To change the default to off, set :ref:`RELAY1_DEFAULT<RELAY1_DEFAULT>` = 0. To make it controllable from the transmitter, set :ref:`RELAY1_FUNCTION<RELAY1_FUNCTION>` = 1 (Relay) and assign :ref:`RCx_OPTION<RC7_OPTION>` = 28 (Relay1 On/Off) to the desired switch channel.
 
 SPI (OSD or IMU) - 8 Pin JST-SH
 -------------------------------
