@@ -257,6 +257,7 @@ Closed Hardware
     StellarF4V2 <common-stellarf4v2>
     StellarH7V2 <common-stellarh7v2>
     SVehicle E2 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SVehicle-E2/README.md>
+    SVehicle E2-mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SVehicle-E2-mini/README.md>
     TBS Lucid H7 <common-tbs-lucidh7>
     TBS Lucid H7 V3 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/TBS_LUCID_H7V3/README.md>
     TBS Lucid H7 OEM <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/TBS_LUCID_H7_OEM/README.md>
