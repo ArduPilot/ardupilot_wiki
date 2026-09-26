@@ -121,6 +121,7 @@ Closed Hardware
     CORVON743V2 <common-corvon743v2>
     CORVON V5 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/CORVON_V5/README.md>
     CBUnmanned H743 Stamp <common-StampH743>
+    CoreWing F405 Wing V2/Wing Mini V2 <common-CoreWingF405WingV2>
     CORVONF405V2.1 <common-corvonf405v2_1>
     CrazyF405 <common-crazyf405>
     CSKY405 <common-CSKYF405>
