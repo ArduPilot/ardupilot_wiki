@@ -36,9 +36,20 @@ For "Skid steering" vehicles (like R2D2) these parameters values will need to be
 Omni Vehicles
 -------------
 
-For Omni vehicles (that can move left-to-right without changing heading) these parameter values will need to be set:
+For Omni vehicles (that can move left-to-right without changing heading) the autopilot motor outputs that should be connected to each motor are shown below.
 
-- :ref:`FRAME_TYPE <FRAME_TYPE>` = 1 (Omni3), 2 (OmniX) or 3 (OmniPlus)
+.. image:: ../images/omni-motor-order.png
+    :target: ../_images/omni-motor-order.png
+
+For vehicles using Mecanum wheels in the Omni3Mecanum layout:
+
+.. image:: ../../../images/omni3mecanum.png
+    :target: ../_images/omni3mecanum.png
+    :width: 450px
+
+These parameter values will need to be set:
+
+- :ref:`FRAME_TYPE <FRAME_TYPE>` = 1 (Omni3), 2 (OmniX), 3 (OmniPlus) or 4 (Omni3Mecanum)
 - :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` = 33 (motor1)
 - :ref:`SERVO2_FUNCTION <SERVO2_FUNCTION>` = 34 (motor2)
 - :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` = 35 (motor3)
