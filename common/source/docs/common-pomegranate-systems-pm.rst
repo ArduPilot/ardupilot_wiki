@@ -21,6 +21,13 @@ Intelligent power monitor, accurate fuel gauge, and efficient 5V/2A power supply
 -    Board-mounted battery connectors and M2.5 mounting holes provide a robust battery entry point.
 -    Open Source Firmware
 
+.. note::
+
+   Pomegranate Systems also sell a `Power Monitor <https://store.p-systems.io/products/power-monitor>`__,
+   which uses the same DroneCAN interface and is offered in low (40A), standard (80A) and
+   high (120A) current variants, but has no onboard 5V regulator and so requires an
+   independent 5V supply. Check the availability of both parts before ordering.
+
 Configuration and Setup
 =======================
 
@@ -30,4 +37,5 @@ Configuration and Setup
 Where to Buy
 ============
 
-`Pomegranate Systems <https://store.p-systems.io/products/power-module>`__
+- `Power Module <https://store.p-systems.io/products/power-module>`__ - the module described above, with the 5V/2A regulator
+- `Power Monitor <https://store.p-systems.io/products/power-monitor>`__ - same DroneCAN monitoring, no 5V regulator

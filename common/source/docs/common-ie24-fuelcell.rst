@@ -102,32 +102,32 @@ Failsafe Low Action Error Code Group
 
    <tr>
    <td>31</td>
-   <td>Start Denied</th>
+   <td>Start Denied</td>
    </tr>
 
    <tr>
    <td>30</td>
-   <td>Pressure Alert</th>
+   <td>Pressure Alert</td>
    </tr>
 
    <tr>
    <td>21</td>
-   <td>Battery Low</th>
+   <td>Battery Low</td>
    </tr>
 
    <tr>
    <td>20</td>
-   <td>Pressure Low</th>
+   <td>Pressure Low</td>
    </tr>
 
    <tr>
    <td>11</td>
-   <td>SPM Lost</th>
+   <td>SPM Lost</td>
    </tr>
 
    <tr>
    <td>10</td>
-   <td>Reduced Power</th>
+   <td>Reduced Power</td>
    </tr>
 
    </tbody>

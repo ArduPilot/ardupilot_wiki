@@ -101,6 +101,7 @@ Closed Hardware
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
     AIRBRAINH743 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/AIRBRAINH743/README.md>
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
+    AMOV Flycore <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/flycore/README.md>
     AET-H743-Basic <common-AET-H743-Basic>
     AnyleafH7 <common-anyleafh7>
     AocodaRC H743Dual <common-aocoda-h743dual>
@@ -123,9 +124,11 @@ Closed Hardware
     CORVONF405V2.1 <common-corvonf405v2_1>
     CrazyF405 <common-crazyf405>
     CSKY405 <common-CSKYF405>
+    CUAV-X25-EVO <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-X25-EVO>
+    CyberX-v10 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/CyberX-v10/README.md>
+    DAKEFPVH743 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/DAKEFPVH743/README.md>
     DAKEFPVH743Pro <common-dakefpvh743pro>
     DAKEFPVH743-SLIM <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/DAKEFPVH743_SLIM/README.md>
-    CUAV-X25-EVO <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-X25-EVO>
     DAKEFPVF405 <common-dakefpvf405>
     DroneerF405 <common-DroneerF405>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
@@ -212,12 +215,14 @@ Closed Hardware
     OmnibusNanoV6 <common-omnibusnanov6>
     Omnibus F7V2 <common-omnibusf7>
     OrbitH743 <common-orbith743>
+    ORBITH743v2 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/ORBITH743v2/README.md>
     OrqaF405 <common-OrqaF405>
     Orqa H7 QuadCore <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/OrqaH7QuadCore>
 [site wiki="copter"]
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
 [/site]
     Parrot C.H.U.C.K <common-CHUCK-overview>
+    PilotGaeaSH7V1-bdshot <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/PilotGaeaSH7V1-bdshot/README.md>
     PixFlamingo- F767 <common-pixflamingo-f767>
     PixSurveyA2-IND <common-pixsurveya2-ind>
     RadioLink MiniPix <common-radiolink-minipix>
@@ -226,6 +231,7 @@ Closed Hardware
     ResoluteH7 <common-resoluteh7>
     QioTek Zealot F427 <common-qiotek-zealot>
     QioTek Zealot H743 <common-qiotek-zealoth7>
+    SaamPixV1_1 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/SaamPixV1_1/README.md>
     SDMODEL SDH7V1 <https://www.sdmodel.com.tw/content.php?cn=item&tid=1320&start=0>
     SDMODEL H7 V2 <common-SDMODELH7V2>
     SequreH743 <common-sequreh743>
@@ -261,6 +267,7 @@ Closed Hardware
     ThePeach FCC-R1 <common-thepeach-r1>
     TmotorH7Mini <common-tmotor-h7-mini>
     UAV-DEV H7 UM982 <common-uav-dev-fc-um982>
+    VECROS JETCORE-FC <common-vecros-JetcoreFC>
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
     X-MAV-AP-H743v2 <common-X_MAV_H743v2>

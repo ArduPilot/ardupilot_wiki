@@ -8,6 +8,7 @@ Copter supports **Precision Landing** and **Precision Loiter**, which use an ext
 
 Precision Landing is supported via MAVLink `LANDING_TARGET <https://mavlink.io/en/messages/common.html#LANDING_TARGET>`__ messages
 sent from a companion computer such as :ref:`BlueOS <precision-landing-blueos>`, the `Landmark system <https://landmarklanding.com/products/landmark-precision-landing-system>`__,
+the :ref:`UAVLAS ULS-XCopter-G2 <precision-landing-uavlas>` infra-red beacon kit,
 or using the `IR-LOCK sensor <https://irlock.com/products/ir-lock-sensor-precision-landing-kit>`__, `beacon <https://irlock.com/products/markone-beacon-v3-0-beta>`__,
 and a :ref:`rangefinder <common-rangefinder-landingpage>`.
 
@@ -31,6 +32,7 @@ Available Systems
     BlueOS Precision Landing Extension <precision-landing-blueos>
     IR-LOCK Sensor & Beacon <precision-landing-irlock>
     Landmark Precision Landing System <precision-landing-landmark>
+    UAVLAS ULS-XCopter-G2 <precision-landing-uavlas>
 
 
 Quick Start
@@ -72,6 +74,8 @@ If the landing target is lost below the height specified by :ref:`PLND_ALT_MIN <
 ArduPilot's EKF assumes the landing target is stationary. Set :ref:`PLND_OPTIONS <PLND_OPTIONS>` bit 0 if landing on a moving target.
 
 Repositioning manually by the pilot during the landing will abort the landing unless :ref:`PLND_OPTIONS <PLND_OPTIONS>` bit 1 (Allow Precision Landing after manual reposition)is set.
+
+If :ref:`Simple or Super Simple mode <simpleandsuper-simple-modes>` is enabled, the pilot's manual reposition roll/pitch input during landing is rotated the same way it is in other modes.
 
 Final landing speed may be reduced below :ref:`LAND_SPD_MS<LAND_SPD_MS>` as necessary to assure a precise touchdown.
 This can be disabled for a faster final land speed by setting :ref:`PLND_OPTIONS <PLND_OPTIONS>` bit 2.

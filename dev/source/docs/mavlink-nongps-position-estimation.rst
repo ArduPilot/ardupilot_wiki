@@ -116,12 +116,10 @@ The preferred method is to send an `ODOMETRY <https://mavlink.io/en/messages/com
    <td>Yaw angular speed in rad/s (clockwise is positive)</td>
    </tr>
    <tr>
-   <tr>
    <td><strong>pos_covariance</strong></td>
    <td>float[21]</td>
    <td>elements 0, 6 and 11 are x, y and z-axis position error. 15, 18, 20 are roll, pitch and yaw angle error. Ignored if NaN</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td><strong>velocity_covariance</strong></td>
    <td>float[21]</td>
@@ -132,7 +130,6 @@ The preferred method is to send an `ODOMETRY <https://mavlink.io/en/messages/com
    <td>uint8_t</td>
    <td>External estimator reset counter.  This should be incremented when the estimate resets position, velocity, attitude or angular speed</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td><strong>estimator_type</strong></td>
    <td>uint8_t</td>
@@ -241,3 +238,22 @@ GPS/Non-GPS Transitions
 The user wiki page for :ref:`GPS/Non-GPS transitions is here <copter:common-non-gps-to-gps>`
 
 The EKF's active source set can be changed in real-time by sending a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ or `COMMAND_INT <https://mavlink.io/en/messages/common.html#COMMAND_INT>`__ message with the "command" field set to `MAV_CMD_SET_EKF_SOURCE_SET (42007) <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml#L144>`__ and "param1" set to a number between 1 and 3
+
+MAV_CMD_EXTERNAL_POSITION_ESTIMATE
+-----------------------------------
+
+Unlike the continuous position/velocity streams described above, `MAV_CMD_EXTERNAL_POSITION_ESTIMATE (43003) <https://mavlink.io/en/messages/common.html#MAV_CMD_EXTERNAL_POSITION_ESTIMATE>`__ provides a single, occasional position correction while the EKF is dead reckoning without GPS.  It is intended for cases such as a remote pilot spotting a known landmark over an FPV video feed and nudging the vehicle's estimated position back onto it.
+
+This is only supported by EKF3 (not EKF2) and, like the rest of non-GPS navigation, requires a :ref:`board with more than 1MB of flash <common-non-gps-navigation-landing-page>`.
+
+The command must be sent as a `COMMAND_INT <https://mavlink.io/en/messages/common.html#COMMAND_INT>`__ with ``frame`` set to ``MAV_FRAME_GLOBAL``:
+
+- **param1** (transmission_time, seconds): time the message was sent, in the sender's own time domain.  ArduPilot uses this together with the transport delay to align the correction in time.
+- **param2** (processing_time, seconds): time spent processing the sensor data used to generate the position estimate.  Set to 0 if unknown.
+- **param3** (accuracy, metres): estimated one standard deviation accuracy of the position estimate.
+- **x**, **y**: latitude/longitude, scaled by 1e7 as with other ``COMMAND_INT`` position commands.
+- **z**: must be sent as NaN; altitude is not used.
+
+If the EKF is still being fed a position source such as GPS, the command is rejected (``MAV_RESULT_FAILED``) since it is only intended to correct drift while dead reckoning, not to override a live position source.
+
+MAVProxy's map module can send this command: right-click the map and choose **Set Position**, or click a location on the map and run ``map setposition``.

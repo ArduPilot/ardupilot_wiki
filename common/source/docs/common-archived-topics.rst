@@ -117,6 +117,7 @@ value to users with old hardware.
     Building for Navio on RPI 2<building-for-navio-on-rpi2>
     Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>
     Intel Edison <intel-edison>
+    ODroid <odroid-via-mavlink>
     Interfacing with Pixhawk Using the NSH <interfacing-with-pixhawk-using-the-nsh>
     BeaglePilot Project <beaglepilot>
     Making a MAVLink WiFi bridge using the Raspberry Pi <making-a-mavlink-wifi-bridge-using-the-raspberry-pi>
@@ -126,6 +127,9 @@ value to users with old hardware.
     SITL Serial Mapping <sitl-serial-mapping>
     2020/2021 Roadmap <roadmap>
     Trouble Shooting Pixhawk4 Boot <troubleshooting-pixhawkpx4-boot>
+    AirSim Simulator <sitl-with-airsim>
+    Morse Simulator <sitl-with-morse>
+    SCRIMMAGE Simulator <sitl-with-scrimmage>
 [/site]
 [site wiki="copter,rover"]
 .. toctree::

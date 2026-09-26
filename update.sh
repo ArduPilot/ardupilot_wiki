@@ -13,18 +13,93 @@ START=$(date +%s)
 ############################
 # grab a lock file. Not atomic, but close :)
 # tries to cope with NFS
+
+# A build is wedged if it is older than LOCK_MAX_AGE, or if its process tree
+# has used no CPU at all for LOCK_MAX_STALL. CPU is the signal here because a
+# build blocked on a dead socket accrues exactly zero while a working one
+# accrues constantly. Log output is not a usable signal: Sphinx goes quiet for
+# half an hour at a time while running flat out. Without this a single hung
+# download stops wiki publishing indefinitely, as the lock is never reclaimed.
+LOCK_MAX_AGE=30000
+LOCK_MAX_STALL=1800
+# "<cpu ticks> <time those ticks were first seen>"
+LOCK_PROGRESS=build.lck.progress
+
+# every descendant of $1, deepest first
+descendants() {
+    local child
+    for child in $(pgrep -P "$1" 2>/dev/null); do
+        descendants "$child"
+        echo "$child"
+    done
+}
+
+# CPU ticks used by $1 and its descendants, reaped children included
+tree_cpu() {
+    local total=0 p t
+    for p in $(descendants "$1") "$1"; do
+        # strip through "comm)" first: the command name can contain spaces
+        t=$(sed 's/.*) //' /proc/$p/stat 2>/dev/null | awk '{print $12+$13+$14+$15}')
+        test -n "$t" && total=$((total + t))
+    done
+    echo $total
+}
+
+# seconds since the build last used any CPU; updates the progress file
+cpu_stalled_for() {
+    local pid="$1" now="$2" cpu prev_cpu prev_at
+    cpu=$(tree_cpu "$pid")
+    # guarded rather than "< $f 2>/dev/null": the redirect is attempted before
+    # the suppression applies, so a missing file still writes to stderr
+    if test -r "$LOCK_PROGRESS"; then
+        read -r prev_cpu prev_at < "$LOCK_PROGRESS" || true
+    fi
+    if test "$cpu" != "$prev_cpu" || test -z "$prev_at"; then
+        echo "$cpu $now" > "$LOCK_PROGRESS"
+        echo 0
+        return
+    fi
+    echo $((now - prev_at))
+}
+
+# kill a wedged build and its children; 0 if the lock is now ours to take
+break_lock() {
+    local pid="$1" why="$2" victims
+    # the pid may have been recycled onto something that is not ours
+    case "$(ps -o args= -p "$pid" 2>/dev/null)" in
+        *update.sh*) ;;
+        *) echo "$(date +%s) lock pid $pid is not update.sh, left alone" >>build.lck.log
+           return 1 ;;
+    esac
+    victims="$(descendants "$pid") $pid"
+    echo "$(date +%s) breaking stale lock, pid $pid ($why), killing:" $victims >>build.lck.log
+    kill -TERM $victims 2>/dev/null
+    sleep 10
+    kill -KILL $victims 2>/dev/null
+    sleep 2
+    if kill -0 "$pid" 2>/dev/null; then
+        echo "$(date +%s) pid $pid survived SIGKILL, lock not taken" >>build.lck.log
+        return 1
+    fi
+    return 0
+}
+
 lock_file() {
         lck="$1"
         pid=`cat "$lck" 2> /dev/null`
 
         if test -f "$lck" && kill -0 $pid 2> /dev/null; then
-	    LOCKAGE=$(($(date +%s) - $(stat -c '%Y' "build.lck")))
-	    test $LOCKAGE -gt 30000 && {
-                echo "old lock file $lck is valid for $pid with age $LOCKAGE seconds"
-	    }
-            return 1
+            now=$(date +%s)
+            age=$((now - $(stat -c '%Y' "$lck")))
+            stall=$(cpu_stalled_for "$pid" "$now")
+
+            why=""
+            if test $age -gt $LOCK_MAX_AGE; then why="age ${age}s"; fi
+            if test $stall -gt $LOCK_MAX_STALL; then why="${why:+$why, }no CPU for ${stall}s"; fi
+            if test -z "$why"; then return 1; fi
+            if ! break_lock "$pid" "$why"; then return 1; fi
         fi
-        /bin/rm -f "$lck"
+        /bin/rm -f "$lck" "$LOCK_PROGRESS"
         echo "$$" > "$lck"
         return 0
 }

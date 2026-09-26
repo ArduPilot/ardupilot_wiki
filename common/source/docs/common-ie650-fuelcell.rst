@@ -91,57 +91,57 @@ Failsafe Low Action Error Code Group
 
    <tr>
    <td>0x4000000</td>
-   <td>Fan over current (> 0.25 A)</th>
+   <td>Fan over current (> 0.25 A)</td>
    </tr>
 
    <tr>
    <td>0x100000</td>
-   <td>Fuel cell's internal State is set 'stop' for > 15 s</th>
+   <td>Fuel cell's internal State is set 'stop' for > 15 s</td>
    </tr>
 
    <tr>
    <td>0x20000</td>
-   <td>Tank pressure < 15 barg</th>
+   <td>Tank pressure < 15 barg</td>
    </tr>
 
    <tr>
    <td>0x2000</td>
-   <td>Stack 1 under temperature (< 5 degC)</th>
+   <td>Stack 1 under temperature (< 5 degC)</td>
    </tr>
 
    <tr>
    <td>0x1000</td>
-   <td>Stack 2 under temperature (< 5 degC)</th>
+   <td>Stack 2 under temperature (< 5 degC)</td>
    </tr>
 
    <tr>
    <td>0x800</td>
-   <td>Battery under voltage warning (21.6 V)</th>
+   <td>Battery under voltage warning (21.6 V)</td>
    </tr>
 
    <tr>
    <td>0x200</td>
-   <td>Fan pulse aborted</th>
+   <td>Fan pulse aborted</td>
    </tr>
 
    <tr>
    <td>0x100</td>
-   <td>Stack under voltage (650 W < 17.4V, 800 W < 21.13 V)</th>
+   <td>Stack under voltage (650 W < 17.4V, 800 W < 21.13 V)</td>
    </tr>
 
    <tr>
    <td>0x80</td>
-   <td>Stack under voltage and battery power below threshold (< -200 W)</th>
+   <td>Stack under voltage and battery power below threshold (< -200 W)</td>
    </tr>
 
    <tr>
    <td>0x10</td>
-   <td>Battery charger fault</th>
+   <td>Battery charger fault</td>
    </tr>
 
    <tr>
    <td>0x8</td>
-   <td>Battery undertemperature (< -15 degC)</th>
+   <td>Battery undertemperature (< -15 degC)</td>
    </tr>
 
    </tbody>

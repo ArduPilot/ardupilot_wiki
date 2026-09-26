@@ -42,7 +42,18 @@ features:
    **descent speed transition** from :ref:`LAND_SPD_HIGH_MS<LAND_SPD_HIGH_MS>`
    to :ref:`LAND_SPD_MS<LAND_SPD_MS>` — it has no role in landing detection or disarming.
 
-.. note:: For Traditional Heli, the low motor check in the above landing detection algorithm is replaced with a check that Collective output is below mid-position (controlled by the vertical position controller, ie in descent). The rotor still may be at governor speed up until Motor Interlock is removed and  disarming occurs.
+.. note::
+
+   Traditional Heli uses heli-specific collective logic in place of
+   "motors at lower limit" and "Throttle is at minimum" conditions above. In
+   manual collective modes, the condition is met when collective is at or below
+   :ref:`H_COL_LAND_MIN<H_COL_LAND_MIN>` or the collective stick is low.  In
+   AUTOROTATE, it is met when collective is below the land-minimum value.  In
+   altitude-controlled landing or descent, it is met when the
+   collective controller is at its lower limit and is commanding a descent.
+   The rotor will remain at or near the operating rotor speed as dictated by the
+   rotor speed controller mode until Motor Interlock is disabled and disarming 
+   occurs.
 
 .. note:: Using a Weight on Wheels (WoW) switch will increase the descent rate and
     accelerometer ranges that are acceptable for landing detection. This
@@ -82,4 +93,3 @@ features:
 -  If this is a problem, move the autopilot out of prop wash
    effect or shield it with an appropriately ventilated enclosure.
 -  Success can be verified by flight test and by log results.
-

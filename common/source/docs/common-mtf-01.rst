@@ -38,7 +38,20 @@ Connection to Autopilot
 
 - The flow sensor should be mounted on the underside of the copter with the camera lens pointing downwards. 
 - Connect the sensor to the autopilots' serial port 
- 
+
+Mounting Orientation
+====================
+
+MicoAir specifies a different default sensor orientation for ArduPilot/PX4 than for INAV/FMT: the orientation ArduPilot assumes with :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` = 0 is rotated 180 degrees from the INAV/FMT one.
+
+.. image:: ../../../images/MTF-01-orientation.png
+   :target: ../_images/MTF-01-orientation.png
+   :width: 450px
+
+If the sensor is mounted in the INAV/FMT orientation instead, which is how many third party mounting diagrams show it, set :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` = 18000 to rotate the sensor's axes by 180 degrees to match.
+
+.. warning:: An incorrect :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` inverts the flow feedback, which produces a positive feedback loop and can lead to a flyaway. Always confirm the orientation using the flow versus attitude check described in :ref:`Optical Flow setup <common-optical-flow-sensor-setup>` before attempting a flight relying on optical flow.
+
 Parameters
 ==========
 For the following we will assume it will be connected to Serial1 port of the autopilot. Any serial port can be used, however.

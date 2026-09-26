@@ -21,9 +21,27 @@ The altitude reference frame is set by either the rally point, if proceeding to 
 .. image:: ../images/RTL.jpg
     :target: ../_images/RTL.jpg
 
-If RTL is entered close to its return point, the altitude Copter climbs to may be limited to avoid unneeded climbs and descents. The :ref:`RTL_CONE_SLOPE<RTL_CONE_SLOPE>` parameter determines the slope of an inverted cone centered on the return point. This reduces the above return altitude according to: distance from return point * :ref:`RTL_CONE_SLOPE<RTL_CONE_SLOPE>`. So if the mode is entered 10m from the return point, using the default slope of "3", then the altitude rise would be limited to 30m before returning. It may be less depending on the other parameters, but not higher. If the slope were set to "0.5", then the initial climb would be no higher than 5m altitude before proceeding to the return point. A value of "0" disables this limit. "0.5" is the minimum slope. Again, 2m is the minimum return altitude.
+If RTL is entered close to its return point, the altitude Copter climbs to may
+be limited to avoid an unnecessary climb and descent.  The
+:ref:`RTL_CONE_SLOPE<RTL_CONE_SLOPE>` parameter determines the slope of an
+inverted cone centered on the return point.  The cone height is calculated as
+the distance from the return point multiplied by ``RTL_CONE_SLOPE``.  For
+example, if RTL is entered 10m from the return point with the default slope of
+3, the cone limits the return altitude to 30m unless one of the minimums
+described below is higher.  With a slope of 0.5, the cone height at the same
+distance is 5m.  A value of 0 disables the cone and 0.5 is the minimum enabled
+slope.
+
+The cone only limits additional climbing; it never commands the vehicle to
+descend when RTL begins.  The return altitude will not be below the vehicle's
+current altitude plus :ref:`RTL_CLIMB_MIN_M<RTL_CLIMB_MIN_M>`, or below the
+absolute RTL minimum of 0.3m.  For example, a vehicle entering RTL at 1.5m
+with ``RTL_CLIMB_MIN_M`` set to zero will remain at least 1.5m high even if the
+calculated cone height is lower.
 
 If an :ref:`altitude fence <common-geofencing-landing-page>` has been enabled, the RTL climb/return altitude will be limited to be below the fence's maximum altitude.
+
+By default RTL flies a direct, straight-line path back to the return point, which can breach a polygon/circular :ref:`fence, inclusion or exclusion zone <common-geofencing-landing-page>` if the direct path happens to cross one. To have RTL instead plan a path around these horizontal fence boundaries, enable path planning with :ref:`OA_TYPE<OA_TYPE>` = 2 (Dijkstra's) or 3 (Dijkstra's with BendyRuler, which also avoids proximity sensor obstacles); see :ref:`common-oa-dijkstras` and :ref:`common-oa-dijkstrabendyruler` for setup. This applies to AUTO and GUIDED modes as well as RTL.
 
 RTL mode requires a reliable position estimate to work properly, most commonly provided by GPS and compass. Default prearm checks will ensure a 3D GPS lock with sufficient HDOP is acquired and your mag is working as expected prior to arming, if required by the selected mode and configuration during arming (ie STABILIZE could be armed without a reliable position and a switch into RTL would be refused without it). When using non-default arming checks, make sure you do have a sufficient GPS lock and / or a reliable position estimate for RTL to perform as expected.
 

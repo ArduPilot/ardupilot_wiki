@@ -12,7 +12,7 @@ Features
 ========
 
 * MCU - STM32F405 32-bit processor. 1024Kbytes Flash
-* IMU - Dual ICM42688
+* IMU - ICM42688/LSM6DSV/BMI270
 * Barometer - SPL06
 * OSD - AT7456E
 * Onboard Flash: 16MByte
@@ -78,7 +78,7 @@ The PWM is in 4 groups:
 
 Channels within the same group need to use the same output rate. If
 any channel in a group uses DShot then all channels in the group need
-to use DShot.
+to use DShot. Bi-Directional DShot is supported for M1-M6.
 
 Battery Monitoring
 ==================

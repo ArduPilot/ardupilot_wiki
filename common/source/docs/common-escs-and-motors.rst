@@ -37,6 +37,8 @@ capabilities will vary with each individual ESC model. Some ESCs have specialize
 explain the required ArduPilot setup to utilize the protocols, telemetry, and setup programs that various ESCs utilize.
 See :ref:`common-esc-guide` for a guide to terminology.
 
+`APD (Advanced Power Drives) <https://powerdrives.net/>`__ is an ArduPilot partner whose ESCs run their own proprietary firmware and use the standard PWM and :ref:`DShot <common-dshot-escs>` protocols covered below.
+
 Protocols
 ---------
 

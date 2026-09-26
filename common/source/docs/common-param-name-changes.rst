@@ -59,8 +59,8 @@ GCS/MAVLink streamrate and system ID parameters
      - MAV_TELEM_DELAY
    * - SYSID_ENFORCE
      - Replaced by MAV_OPTIONS bit 0 ("Accept MAVLink only from SYSID_GCS")
-
-SYSID_THISMAV was not renamed.
+   * - SYSID_THISMAV
+     - MAV_SYSID
 
 Serial port option bits moved to MAVn_OPTIONS
 ------------------------------------------------
@@ -125,9 +125,9 @@ were renamed to use consistent NED-style naming. This affects Copter/Sub
    * - PSC_VELXY_P / _I / _D / _IMAX / _FLTE / _FLTD / _FF
      - PSC_NE_VEL_P / _I / _D / _IMAX / _FLTE / _FLTD / _FF
    * - PSC_JERK_XY
-     - PSC_JERK_NE
+     - PSC_NE_JERK
    * - PSC_JERK_Z
-     - PSC_JERK_D
+     - PSC_D_JERK
 
 .. note:: For QuadPlane, replace the ``PSC_`` prefix above with ``Q_P_``
    (e.g. ``Q_P_NE_POS_P``).
@@ -154,6 +154,28 @@ Circle mode
    * - CIRCLE_RADIUS (cm)
      - CIRCLE_RADIUS_M (m)
 
+Loiter mode
+--------------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Old Name
+     - New Name
+   * - LOIT_SPEED (cm/s)
+     - LOIT_SPEED_MS (m/s)
+   * - LOIT_ACC_MAX (cm/s/s)
+     - LOIT_ACC_MAX_M (m/s/s)
+   * - LOIT_BRK_ACCEL (cm/s/s)
+     - LOIT_BRK_ACC_M (m/s/s)
+   * - LOIT_BRK_JERK (cm/s/s/s)
+     - LOIT_BRK_JRK_M (m/s/s/s)
+
+LOIT_ANG_MAX, LOIT_BRK_DELAY and LOIT_OPTIONS were not renamed.
+
+.. note:: For QuadPlane, the same four renames apply with the ``Q_LOIT_``
+   prefix (e.g. ``Q_LOIT_SPEED`` → ``Q_LOIT_SPEED_MS``).
+
 Waypoint navigation (``WPNAV_`` → ``WP_``)
 --------------------------------------------
 
@@ -176,6 +198,15 @@ Waypoint navigation (``WPNAV_`` → ``WP_``)
      - WP_ACC_Z
    * - WPNAV_ACCEL_C
      - WP_ACC_CNR
+   * - WPNAV_JERK
+     - WP_JERK
+   * - WPNAV_RFND_USE
+     - WP_RFND_USE
+   * - WPNAV_TER_MARGIN
+     - WP_TER_MARGIN
+
+.. note:: For QuadPlane, the same renames apply to the ``Q_WP_`` parameters
+   (e.g. ``Q_WP_SPEED`` → ``Q_WP_SPD``, ``Q_WP_RADIUS`` → ``Q_WP_RADIUS_M``).
 
 Copter Land mode
 -------------------
@@ -249,6 +280,80 @@ EKF3
      - New Name
    * - EK3_MAX_FLOW
      - EK3_FLOW_MAX
+
+Rangefinders
+---------------
+
+Rangefinder distances moved from centimetres to metres.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Old Name
+     - New Name
+   * - RNGFNDx_MIN_CM (cm)
+     - RNGFNDx_MIN (m)
+   * - RNGFNDx_MAX_CM (cm)
+     - RNGFNDx_MAX (m)
+   * - RNGFNDx_GNDCLEAR (cm)
+     - RNGFNDx_GNDCLR (m)
+
+Sub EKF origin backup
+------------------------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Old Name
+     - New Name
+   * - ORIGIN_LAT
+     - AHRS_ORIGIN_LAT
+   * - ORIGIN_LON
+     - AHRS_ORIGIN_LON
+   * - ORIGIN_ALT
+     - AHRS_ORIGIN_ALT
+
+Plane altitude (glide) slope
+-------------------------------
+
+"Glide slope" was renamed to "altitude slope", since it also covers climbs.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Old Name
+     - New Name
+   * - GLIDE_SLOPE_MIN
+     - ALT_SLOPE_MIN
+   * - GLIDE_SLOPE_THR
+     - ALT_SLOPE_MAXHGT
+
+RunCam
+---------
+
+RunCam is now a camera backend, so its parameters moved under camera
+instance 2 and the enable is CAM2_TYPE = 4 (RunCam).
+
+.. list-table::
+   :header-rows: 1
+
+   * - Old Name
+     - New Name
+   * - CAM_RC_TYPE
+     - CAM2_RC_TYPE
+   * - CAM_RC_FEATURES
+     - CAM2_RC_FEATURES
+   * - CAM_RC_BT_DELAY
+     - CAM2_RC_BT_DELAY
+   * - CAM_RC_BTN_DELAY
+     - CAM2_RC_BTN_DELY
+   * - CAM_RC_MDE_DELAY
+     - CAM2_RC_MDE_DELY
+   * - CAM_RC_CONTROL
+     - CAM2_RC_CONTROL
+
+.. note:: CAM2_RC_TYPE no longer has a "Disabled" meaning; whether RunCam
+   runs is now decided by CAM2_TYPE.
 
 Arming
 ---------

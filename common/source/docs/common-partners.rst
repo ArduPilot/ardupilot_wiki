@@ -1088,6 +1088,25 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://corvon.tech
 
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_ari_drones_teknoloji_san_ve_tic_ltd_sti.png
+            :width: 250px
+            :align: center
+            :target:  https://aridrones.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_autodrone.png
+            :width: 250px
+            :align: center
+            :target:  https://www.autodroneco.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_linkrobotics.jpg
+            :width: 250px
+            :align: center
+            :target:  https://lkuas.com
+
+      -
+
 
 [copywiki destination="copter,plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
 

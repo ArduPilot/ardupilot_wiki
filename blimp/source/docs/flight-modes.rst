@@ -32,7 +32,7 @@ The table below shows for each flight mode whether it provides altitude or posit
  
     <table border="1" class="docutils">
     <tr><th>Symbol</th><th>Definition</th></tr>
-    <tr><td>m</td><td>Manual control</td><tr>
+    <tr><td>m</td><td>Manual control</td></tr>
     <tr><td>s</td><td>Pilot controls desired position/velocity to controller</td></tr>
     </table>
 

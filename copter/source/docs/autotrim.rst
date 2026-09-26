@@ -20,7 +20,7 @@ With AHRS AutoTrim the roll and pitch corrections are captured as you fly in a s
 .. image:: ../images/MP_SaveTrim_Ch7PWMCheck.png
     :target: ../_images/MP_SaveTrim_Ch7PWMCheck.png
 
-2. Set the CH7 Option to "AHRS AutoTrim" on the Software > Copter Pids screen and press the "Write Params" button.
+2. Set your chosen channel's ``RCx_OPTION`` to "AHRS AutoTrim" (182) using Mission Planner's Aux Function screen and press the "Write Params" button. See :ref:`common-auxiliary-functions` for details on assigning options to any RC channel.
 
 3. Find a wind free environment with sufficient space to fly your copter without crashing into something.
 
@@ -53,18 +53,22 @@ Save trim involves essentially transferring your radio transmitter's trims into 
 .. image:: ../images/MP_SaveTrim_Ch7PWMCheck.png
     :target: ../_images/MP_SaveTrim_Ch7PWMCheck.png
 
-2. Set the RC7 Option to Save Trim in the Config > Extended Tuning screen and press the "Write Params" button
+2. Set your chosen channel's ``RCx_OPTION`` to "Save Trim" (5) using Mission Planner's Aux Function screen and press the "Write Params" button. See :ref:`common-auxiliary-functions` for details on assigning options to any RC channel.
 
 .. image:: ../images/MP_SaveTrim_Ch7.png
     :target: ../_images/MP_SaveTrim_Ch7.png
 
-3. With your CH7 switch in the off (Low) position, fly your copter in Stabilize mode and use your transmitters's roll and pitch trim to get it flying level
+3. With your CH7 switch in the off (Low) position, fly your copter in Stabilize or AltHold mode and use your transmitter's roll and pitch trim to get it flying level
 
 4. Land and put your throttle to zero
 
 5. Release the roll and pitch sticks and switch the CH7 switch high for at least 1 second.  The words "Trim saved" should appear in the MP's Flight Data screen's Messages tab
 
 6. Reset your transmitters roll and pitch trims back to the center and fly again and it should fly level now. If it does not repeat steps 3, 4 & 5
+
+.. note::
+
+    Save Trim also works while :ref:`Simple or Super Simple mode <simpleandsuper-simple-modes>` is enabled, but take care not to change the vehicle's heading between landing and switching CH7 high, since the trim will be saved relative to the vehicle's heading at that moment.
 
 Desktop method
 ~~~~~~~~~~~~~~

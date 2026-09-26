@@ -57,6 +57,8 @@ Stable
 ------
 These are fully released versions of the code. There are usually several minor releases for each major release number which correct any anomalies found during the beta testing phases. These releases, have the lowest risk. It is recommended that the highest numbered major/minor release be used in a given release sequence, unless an older version is needed.
 
+.. note:: The ArduPilot project is very careful about what is merged into our "point releases". Anything that goes into one has either been evaluated as being strictly limited in what impact it can have on existing systems, or as being an important bugfix. We encourage users to upgrade to any point release which is released, as they sometimes contain very important bugfixes.
+
 Guide to Size Impacts
 =====================
 

@@ -61,6 +61,7 @@ Long Range
     mLRS <common-mlrs-rc.rst>
     RFD900 <common-rfd900>
     Rockblock Satellite Modem <common-telemetry-rockblock>
+    SKYRELAY Conduit <common-skyrelay-conduit>
     SPL Satellite Telemetry <https://discuss.ardupilot.org/t/stretching-comm-links-from-indoors-to-the-globe/45896>
     UAVCast 3G/4G Cellular <common-uavcast-telemetry>
     XBStation 4G LTE Link <common-xbstation-telemetry>

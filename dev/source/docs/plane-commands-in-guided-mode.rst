@@ -58,6 +58,8 @@ These MAV_CMDs can be processed if packaged within a `COMMAND_INT <https://mavli
 - `MAV_CMD_GUIDED_CHANGE_ALTITUDE <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_CHANGE_ALTITUDE>`__
 - `MAV_CMD_GUIDED_CHANGE_HEADING <https://mavlink.io/en/messages/common.html#MAV_CMD_GUIDED_CHANGE_HEADING>`__
 
+.. note:: the MAV_CMD_GUIDED_CHANGE_HEADING command will use a separate set of **GUIDED_x** PID parameters to control the turn, instead of the normal L1 parameters (:ref:`NAVL1_\* <plane:NAVL1_PERIOD>`/:ref:`TECS_\* <plane:TECS_TIME_CONST>`).
+
 Position Targets
 ================
 

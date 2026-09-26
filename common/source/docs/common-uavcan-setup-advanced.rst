@@ -50,7 +50,9 @@ DroneCAN device type is selected by:
 
 DroneCAN Setup Parameters
 =========================
-shown for the first DroneCAN driver, second driver has identical parameters
+The examples below use the first DroneCAN driver (``x=1``). If a second driver is
+enabled, use the corresponding ``CAN_D2_*`` parameters; the same parameter groups
+are available for each driver.
 
 .. image:: ../../../images/uavcan-main-settings.png
     :target: ../_images/uavcan-main-settings.png
@@ -108,7 +110,7 @@ DroneCAN LEDs are enabled by setting bit 5 in the :ref:`NTF_LED_TYPES<NTF_LED_TY
 DroneCAN Rangefinder configuration
 ==================================
 
-Set ``RNGFNDx_TYPE`` = 24 to enable DroneCAN rangefinder type. Rangefinder data received over DroneCAN will only be used if the received sensor_id matches the parameter ``RNGFNDx_ADDR``. For AP_Periph firmware based adaptor nodes, this value is 0, so ``RNGFNDx_ADDR`` must be set to 0. Other DroneCAN rangefinders may differ. See also :ref:`DroneCAN Adaptor Node<common-uavcan-adapter-node>` instructions.
+Set ``RNGFNDx_TYPE`` = 24 to enable DroneCAN rangefinder type. Rangefinder data received over DroneCAN will only be used if the received sensor_id matches the parameter ``RNGFNDx_ADDR``. For AP_Periph firmware based adaptor nodes, this is the node's own ``RNGFNDx_ADDR`` parameter, which defaults to 0 -- so the ArduPilot-side ``RNGFNDx_ADDR`` should also be left at 0 unless the adaptor node's address has been changed (e.g. to distinguish multiple rangefinders), in which case both sides must match. See also :ref:`DroneCAN Adaptor Node<common-uavcan-adapter-node>` instructions.
 
 DroneCAN Options
 ================
@@ -145,7 +147,7 @@ CAN FD (Flexible Data rate)
 
 If the DroneCAN port is attached to CAN FD peripherals, setting :ref:`CAN_D1_UC_OPTION<CAN_D1_UC_OPTION>` bit 2 (+ value 4) will enable this mode. 
 
-.. note:: CAN FD requires a larger memory pool allocation than normal. Default is 24KB instead of the normal 12KB.
+.. note:: CAN FD requires a larger memory pool allocation than normal. The default is 16 KB instead of the normal 8 KB.
 
 .. _dronecan_mixed_protocols:
 

@@ -108,6 +108,8 @@ power source.
    Looking for a detailed explanation of power wiring with Pixhawk?
    `Click here for more information about connecting ESCs and servos to Pixhawk. <http://pixhawk.org/users/actuators/pwm_escs_and_servos>`__\ 
 
+.. _common-powering-the-pixhawk_general_wiring_recommendations:
+
 General wiring recommendations
 ==============================
 
@@ -133,6 +135,16 @@ General wiring recommendations
    when it is powered off the servo rail. Servos by themselves are not
    quiet enough.
 
+-  Feed the servo rail from a single source. Never wire two supplies onto
+   it in parallel - two ESC BECs, or a separate BEC alongside an ESC's BEC,
+   will never hold exactly the same voltage, so the highest one carries the
+   whole load while the others fight it. Some BECs oscillate when driven
+   that way, and the switching noise that results can interfere with GPS
+   and RC reception. Where several ESCs each have a BEC, leave the power
+   (red) wire connected on only one of them and remove it from the rest. If
+   you need a redundant supply, combine the sources through a diode-OR tie
+   bus rather than paralleling them, as described under
+   :ref:`Advanced power supply configuration <common-powering-the-pixhawk_advanced_power_supply_configuration>`.
 -  Do not connect a BEC power source to the RC IN port (black ground,
    red power and white signal wires from the receiver's PPM output are
    connected to these RC pins)
@@ -146,6 +158,8 @@ General wiring recommendations
    to the diode. The capacitor will smooth out eventual voltage ripples.
    As advised for the diode, the capacitor should be connected with as
    short wires as possible. Do not oversize the capacitor.
+
+.. _common-powering-the-pixhawk_advanced_power_supply_configuration:
 
 Advanced power supply configuration
 ===================================

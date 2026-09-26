@@ -4,9 +4,9 @@
 Object Avoidance
 ================
 
-ArduPilot supports several kinds of object avoidance. Avoidance of Airborne Vehicles (ADSB) and Object Avoidance (Object/Ground/Ceiling).
+ArduPilot supports several kinds of object avoidance. Avoidance of Airborne Vehicles (ADSB), of manned boats (AIS) and Object Avoidance (Object/Ground/Ceiling).
 
-Supported types vary with vehicle (Plane only supports ADSB). Some kinds of avoidance require external hardware, such as ADSB receivers or  Rangefinders.
+Supported types vary with vehicle (Plane only supports ADSB). Some kinds of avoidance require external hardware, such as ADSB receivers, AIS receivers or  Rangefinders.
 
 Avoidance Strategies
 ====================
@@ -19,6 +19,20 @@ ADSB Avoidance
 ===============
 
 - :ref:`Airborne Vehicles (ADSB)<common-ads-b-receiver>`
+
+[/site]
+
+[site wiki="rover"]
+
+AIS Avoidance
+=============
+
+A boat fitted with an AIS receiver feeds the positions of nearby manned vessels into the
+object avoidance database, so the path planners listed below route around them in the same
+way as any other obstacle. Note that AIS messages arrive infrequently, so a much longer
+:ref:`OA_DB_EXPIRE<OA_DB_EXPIRE>` is required than for other obstacle sources.
+
+- :ref:`Manned Boats (AIS)<common-ais>`
 
 [/site]
 

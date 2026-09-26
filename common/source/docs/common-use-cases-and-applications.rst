@@ -90,7 +90,6 @@ Use Cases
 
 [/site]
     First Person View (FPV) <common-fpv-first-person-view>
-    Multi-Vehicle Flying <common-multi-vehicle-flying>
     Non-GPS Positioning Systems <common-non-gps-navigation-landing-page>
 [site wiki="copter,plane"]
     Crop Spraying <common-sprayer>

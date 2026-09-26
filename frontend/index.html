@@ -25,7 +25,9 @@
 
     <link rel="canonical" href="https://www.ardupilot.org"/>
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon.png">
+    <meta name="theme-color" content="#2980b9">
+    <script src="js/pwa.js" defer></script>
+    <link rel="apple-touch-icon" sizes="192x192" href="apple-icon.png">
     <!-- Place favicon.ico in the root directory -->
     <link rel="icon" href="icon.png">
     <link rel="mask-icon" href="icon.png" color="#ffffff">
@@ -73,6 +75,15 @@
 
                 <ul class="navbar-nav ms-auto fs-5">
 
+                    <!-- Deliberately a link, not an install button. Throwing the
+                         browser's install dialog at somebody who has not been told
+                         what installing does, and that it downloads nothing, is no
+                         way to ask. The offline page explains it and installs from
+                         there. -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ardupilot/docs/common-offline.html">OFFLINE</a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="https://www.ardupilot.org">HOME</a>
                     </li>
@@ -81,6 +92,7 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdown01" data-bs-toggle="dropdown"
                            aria-expanded="false">ABOUT</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                            <li><a class="dropdown-item" href="https://ardupilot.org/ardupilot/docs/common-donation.html">Donate</a></li>
                             <li><a class="dropdown-item" href="https://ardupilot.org/dev/docs/events.html">Events</a></li>
                             <li><a  class="dropdown-item"
                                href="https://ardupilot.org/dev/docs/common-history-of-ardupilot.html">History</a></li>
@@ -183,6 +195,95 @@
         always
         welcome! The best way to start is by joining the Developer Team Forum, which is open to all and chock-full
         of daily development goodness.</p>
+
+    <h1 class="mt-5"> Who Uses ArduPilot?</h1>
+    <p class="text-justify lead">The same firmware serves commercial operators, hobbyists and researchers. What
+        differs is which parts of it they use, and how much of it they customize.</p>
+
+    <h2 class="mt-4">Commercial and Industrial Operators</h2>
+    <p class="text-justify lead">ArduPilot is the autopilot behind a great many commercial vehicles and services.
+        Typical <a href="https://ardupilot.org/copter/docs/common-use-cases-and-applications.html">applications</a>
+        include:</p>
+    <ul class="text-justify lead">
+        <li>Aerial mapping, photogrammetry and LiDAR survey, including stockpile volume measurement for mining and
+            construction
+        </li>
+        <li>Inspection of power lines, wind turbines, solar farms, bridges, pipelines and other infrastructure</li>
+        <li>Agriculture: crop scouting and multispectral imaging, spraying, spreading and livestock monitoring</li>
+        <li>Public safety: search and rescue, firefighting support, disaster assessment and police observation</li>
+        <li>Security and perimeter patrol, including docking stations and repeated scheduled missions</li>
+        <li>Cargo delivery and long range, beyond visual line of sight transport</li>
+        <li>Professional cinematography and broadcast, using stabilized gimbals and precise camera control</li>
+        <li>Hydrographic and bathymetric survey, water sampling and harbour work with autonomous surface vessels</li>
+        <li>Subsea inspection of hulls, dams, pipelines and aquaculture pens with ROVs</li>
+        <li>Autonomous ground vehicles for mowing, agriculture, site logistics and materials handling</li>
+        <li>Environmental and wildlife monitoring, anti-poaching patrols and atmospheric sampling</li>
+        <li>Antenna tracking, to keep long range video and telemetry links pointed at the vehicle</li>
+    </ul>
+    <p class="text-justify lead">The reasons given for choosing ArduPilot over a closed autopilot are usually:</p>
+    <ul class="text-justify lead">
+        <li>No licence fees and no vendor lock-in. The source is available under the GPLv3 licence, so a fleet can
+            be supported for its whole working life regardless of what any one supplier does.
+        </li>
+        <li>Maturity. More than fifteen years of development and flight testing, with extensive failsafes, EKF state
+            estimation, and support for redundant sensors, multiple GPS units and CAN peripherals.
+        </li>
+        <li>Hardware choice. Dozens of
+            <a href="https://ardupilot.org/copter/docs/common-autopilots.html">autopilot boards</a> and peripherals
+            from many vendors run the same firmware, so a supply problem with one component does not ground a fleet.
+        </li>
+        <li>Customization without forking. Lua scripting,
+            <a href="https://custom.ardupilot.org">custom firmware builds</a>, and MAVLink or ROS 2 interfaces to a
+            companion computer cover most needs without maintaining a private branch.
+        </li>
+        <li>Support is available.
+            <a href="https://ardupilot.org/ardupilot/docs/common-partners.html">ArduPilot Partners</a> fund the project's development,
+            and a number of companies offer
+            <a href="https://ardupilot.org/ardupilot/docs/common-commercial-support.html">commercial support</a>.
+        </li>
+    </ul>
+
+    <h2 class="mt-4">Hobby and Sport RC</h2>
+    <p class="text-justify lead">The largest group of users by number: RC pilots and makers who want more from a
+        model than manual control.</p>
+    <ul class="text-justify lead">
+        <li>Making a model easier and safer to operate, with stabilization, altitude and position hold, automatic
+            takeoff and landing, and failsafes such as return-to-launch if the transmitter signal is lost or the
+            battery runs low.
+        </li>
+        <li>Flying autonomous missions, aerial photography and FPV, planned and monitored from a ground station over
+            a telemetry link.
+        </li>
+        <li>Building unusual vehicles. Multicopters, fixed wing, quadplanes and tailsitters, traditional
+            helicopters, boats, rovers, submarines, blimps and antenna trackers are all supported by the same
+            codebase, including airframes that no commercial autopilot offers.
+        </li>
+        <li>Tinkering. Every parameter is exposed, every flight is logged in detail for later analysis, and
+            <a href="https://ardupilot.org/copter/docs/common-lua-scripts.html">Lua scripting</a> allows new
+            behaviour to be added without modifying the firmware.
+        </li>
+    </ul>
+
+    <h2 class="mt-4">Education and Research</h2>
+    <p class="text-justify lead">Universities, schools and research institutes use ArduPilot as a ready made, well
+        tested vehicle platform so that their effort goes into their own work rather than into writing an
+        autopilot.</p>
+    <ul class="text-justify lead">
+        <li>A stable base for research into guidance, navigation and control, autonomy, swarming, computer vision,
+            SLAM and machine learning, with a companion computer driving the vehicle over MAVLink or
+            <a href="https://ardupilot.org/dev/docs/ros2.html">ROS 2</a>.
+        </li>
+        <li><a href="https://ardupilot.org/dev/docs/sitl-simulator-software-in-the-loop.html">SITL simulation</a>
+            runs the real flight code on a desktop machine, so a whole class can fly, crash and try again without
+            hardware, and experiments can be repeated exactly.
+        </li>
+        <li>Full source code and complete onboard logs mean results can be inspected, reproduced and published, with
+            nothing hidden inside a proprietary binary.
+        </li>
+        <li>A common platform for student competitions and teaching, with a large community to ask when something
+            does not behave as expected.
+        </li>
+    </ul>
 
     <h1 class="mt-5"> Community</h1>
     <p class="text-justify lead">Community is what really sets ArduPilot apart from many other offerings in the

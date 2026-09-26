@@ -6,17 +6,14 @@ Smart Batteries
 
 ArduPilot supports several types of "smart battery" that communicate using `SMBus <https://en.wikipedia.org/wiki/System_Management_Bus>`__:
 
-- the `Solo battery <https://www.amazon.com/Solo-Smart-Battery-Rechargeable-Lithium/dp/B01LWAAMV3>`__
-- Maxell
-- :ref:`Royote<common-smart-battery-rotoye>`
-- Generic support for SUI3 and SUI6 SMBus batteries
+- the `Solo battery <https://www.amazon.com/Solo-Smart-Battery-Rechargeable-Lithium/dp/B01LWAAMV3>`__ (:ref:`BATT_MONITOR <BATT_MONITOR>` = 5)
+- Maxell (:ref:`BATT_MONITOR <BATT_MONITOR>` = 16)
+- :ref:`Rotoye<common-smart-battery-rotoye>` (:ref:`BATT_MONITOR <BATT_MONITOR>` = 19)
+- Generic SUI3 and SUI6 SMBus batteries (:ref:`BATT_MONITOR <BATT_MONITOR>` = 13 and 14 respectively)
+- NeoDesign SMBus batteries (:ref:`BATT_MONITOR <BATT_MONITOR>` = 15)
+- Generic SMBus battery (:ref:`BATT_MONITOR <BATT_MONITOR>` = 7)
 
 While not yet very common, smart batteries are easier to attach and detach from the vehicle and are capable of providing more information on the state of the battery including capacity, individual cell voltages, temperature, etc.
-
-.. toctree::
-    :maxdepth: 1
-
-    Solo <common-smart-battery-solo>
 
 Setup through Mission Planner
 =============================

@@ -159,6 +159,8 @@ UART5 TX is located in the Video Output connector to provide IRC Tramp or Smart 
 VTX Power Control
 =================
 
+.. note:: Mini does not have this feature
+
 GPIO 81 controls the VTX BEC output to pins marked "9V". Setting this GPIO high removes voltage supply to pins.
 
 Set a ``RELAYx_PIN`` to “81” to control the  switching. Then select an RC channel for control (Chx) and set its ``RCx_OPTION`` to the appropriate Relay (1-6) that you had set its pin parameter above.

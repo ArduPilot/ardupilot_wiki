@@ -38,6 +38,14 @@ With the CTS and RTS pins disconnected the BRD_SER1_RTSCTS (if using Telem1) or
 BRD_SER2_RTSCTS (if using Telem2) should be set to zero (after making the change
 the autopilot will need to be restarted).
 
+.. tip::
+
+   Some XBee modules can brick on power-up if telemetry data arrives
+   too soon. If you experience this, try increasing
+   :ref:`MAV_TELEM_DELAY<MAV_TELEM_DELAY>`, which delays the start of
+   radio telemetry by the given number of seconds; values in the
+   20-30 second range have worked for some users.
+
 .. image:: ../../../images/Telemetry_XBee_MPSetup.jpg
     :target: ../_images/Telemetry_XBee_MPSetup.jpg
 

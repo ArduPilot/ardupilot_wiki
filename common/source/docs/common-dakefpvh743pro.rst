@@ -9,7 +9,7 @@ The DAKEFPV H743/H743 Pro are flight controllers produced by `DAKEFPV <https://w
 Features
 ========
 * MCU - STM32H743 32-bit processor running at 480 MHz
-* IMU - Dual ICM42688
+* IMU - Dual ICM42688/LSM6DSV/BMI270
 * Barometer - SPL06
 * OSD - AT7456E
 * Onboard Flash: 16MByte
@@ -122,6 +122,10 @@ OSD Support
 The DAKEFPVH743/Pro has an onboard OSD using a MAX7456 chip and is enabled by default. The CAM1/2 and VTX pins provide connections for using the internal OSD. Simultaneous DisplayPort OSD is also possible and is configured by default.
 
 The HD VTX connector can have RX4 replaced by the analog VTX signal if that connector is used for analog VTX connection by using the DJI/VTX jumper pads.
+
+LUA Support
+===========
+The DAKEFPVH743/Pro does not include an onboard microSD card, so Lua scripts cannot be loaded from removable storage in the normal way. Advanced users may still use Lua by building a custom ArduPilot firmware with the required scripts embedded in the firmware image.
 
 Loading Firmware
 ================

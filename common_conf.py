@@ -23,6 +23,7 @@ extensions = [
     'sphinx.ext.mathjax',     # For :math: element rendering
     'sphinx.ext.ifconfig',
     'sphinxcontrib.youtube',  # For youtube embedding
+    'lazy_youtube',           # loading="lazy" on every embed the line above renders
     'sphinxcontrib.jquery',
     'sphinx_tabs.tabs',       # For clickable tabs
     'sphinx_skip_versioned_params',  # Skip labels for versioned parameter files (saves RAM/time)
@@ -76,3 +77,20 @@ if disable_non_local_image_warnings:
 
 def setup(app):
     app.add_css_file("common_theme_override.css")
+
+
+# Consumed by each wiki's conf.py; the theme's offline hooks (manifest,
+# pwa.js, the Offline menu entry) stay off for any other consumer. Requested
+# only when the installed theme declares the option, so the wiki also builds
+# against a theme that predates sphinx_rtd_theme PR 24.
+def _theme_offers(option):
+    import configparser
+    import os
+
+    import sphinx_rtd_theme
+    conf = configparser.ConfigParser()
+    conf.read(os.path.join(os.path.dirname(sphinx_rtd_theme.__file__), "theme.conf"))
+    return conf.has_option("options", option)
+
+
+html_theme_options = {"offline_hooks": True} if _theme_offers("offline_hooks") else {}

@@ -318,7 +318,7 @@ Commands supported by Rover
 ===========================
 
 This list of commands was inferred from the command handler in
-`/Rover/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/commands_logic.cpp#L25>`__. 
+`/Rover/mode_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode_auto.cpp>`__.
 
 - :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
 - :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
@@ -334,6 +334,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
 - :ref:`MAV_CMD_DO_AUX_FUNCTION<mav_cmd_do_aux_function>`
 - :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
+- :ref:`MAV_CMD_DO_SET_REVERSE <mav_cmd_do_set_reverse>` (Rover only)
 - :ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
 - :ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
 - :ref:`MAV_CMD_DO_SET_RELAY <mav_cmd_do_set_relay>`
@@ -479,6 +480,7 @@ These parameters are not supported by Copter.
    <td>Acc radius</td>
    <td>Acceptance radius in meters (waypoint is complete when the plane is this close to the waypoint location</td>
    </tr>
+   <tr>
    <td><strong>param3</strong></td>
    <td>Pass by</td>
    <td>0 to pass through the WP, if > 0 radius in meters to pass by WP.
@@ -727,7 +729,6 @@ and the mission will move on to the next command immediately.
    <th>Mission Planner Field</th>
    <th>Description</th>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td>param1</td>
    <td></td>
@@ -1035,6 +1036,7 @@ the path in a line between the waypoint centers. =1.
    <td>Radius</td>
    <td>Loiter radius around the waypoint. Units are in meters. Values over 255 will be rounded to units of 10 meters. and values greater than 2550 will be clamped to 2550 m. Negative values indicate counter-clockwise turns. A value of zero will use WP_LOITER_RAD </td>
    </tr>
+   <tr>
    <td><strong>param4</strong></td>
    <td>XTrack Tangent</td>
    <td>Determines which line the aircraft will track after exiting the loiter. If 0, track the line from the center of the circle to the next waypoint. If 1, track the line tangent to the circle to the next waypoint.</td>
@@ -1142,13 +1144,13 @@ number of seconds — where loiter means "circle the waypoint". The timer
 starts when the waypoint is reached; when it expires the waypoint is
 complete. If zero is specified for a latitude/longitude/altitude
 parameter then the current location value for the parameter will be
-used. You can also specify the radius and direction for the loiter. Once
-time has elapsed, continue to loiter until heading
-points to next nav waypoint. If XTrack Tangent param = gb1, proceed directly to next waypoint, otherwise, track to 
-the path in a line between the waypoint centers.
-
-
-The radius of the loiter is set in the ``WP_LOITER_RAD`` parameter.
+used.  The loiter radius is set by the ``WP_LOITER_RAD`` parameter.  The sign
+of ``param3`` selects the direction (positive is clockwise and negative is
+counter-clockwise), but Plane ignores its magnitude because the mission item
+does not store a separate radius.  Once the time has elapsed, Plane continues
+to loiter until its heading points towards the next navigation waypoint.  If
+XTrack Tangent is 1 it proceeds directly to the next waypoint; otherwise it
+tracks the line between the waypoint centers.
 
 **Command parameters**
 
@@ -1174,11 +1176,12 @@ The radius of the loiter is set in the ``WP_LOITER_RAD`` parameter.
    <tr>
    <td><strong>param3</strong></td>
    <td>Dir 1=CW</td>
-   <td>Radius around waypoint, in meters. Specify as a positive value to loiter clockwise, as a negative to move counter-clockwise.</td>
+   <td>Loiter direction. Positive is clockwise and negative is counter-clockwise. The magnitude is ignored; radius is set by WP_LOITER_RAD.</td>
    </tr>
+   <tr>
    <td><strong>param4</strong></td>
    <td>XTrack Tangent</td>
-   <td>Determines which line the aircraft will track after exiting the loiter. If 0, track the line from the center of the circle to the next waypoint. If 1, track the line tangent to the circle to the next waypoint.
+   <td>Determines which line the aircraft will track after exiting the loiter. If 0, track the line from the center of the circle to the next waypoint. If 1, track the line tangent to the circle to the next waypoint.</td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>
@@ -1218,7 +1221,8 @@ if the vehicle configuration allows this).
 Copter
 ~~~~~~
 
-Return to the *home location* (or the nearest :ref:`Rally Point <common-rally-points>` if closer) and then land. The home
+Return to the *home location* (or the nearest :ref:`Rally Point <common-rally-points>` if closer) and then land or
+hover above home, depending on :ref:`RTL_ALT_FINAL_M<RTL_ALT_FINAL_M>`. The home
 location is where the vehicle was last armed (or when it first gets GPS
 lock after arming if the vehicle configuration allows this).
 
@@ -1227,8 +1231,12 @@ first climb to the
 :ref:`RTL_ALT_M<RTL_ALT_M>`
 parameter's specified altitude (default is 15m) before returning home.
 
-This command takes no parameters and generally should be the last
-command in the mission.
+:ref:`RTL_ALT_FINAL_M<RTL_ALT_FINAL_M>` determines what happens once home is reached.  If it is
+zero (the default) the vehicle lands, so this command should be the last command in the
+mission.  If it is non-zero the vehicle stops and hovers at that altitude above home, the
+command completes, and the mission continues with the next command.
+
+This command takes no parameters.
 
 **Command parameters**
 
@@ -1515,7 +1523,6 @@ control the landing is provided in :ref:`LAND flight mode <land-mode>`.
    <tr>
    <td><strong>param1</strong></td>
    <td>Abort Alt</td>
-   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param2</td>
@@ -1543,6 +1550,7 @@ control the landing is provided in :ref:`LAND flight mode <land-mode>`.
    <td>Long</td>
    <td>Longitude</td>
    </tr>
+   <tr>
    <td><strong>param7</strong></td>
    <td>Alt</td>
    <td>Altitude to target for the landing. Unless you are landing at a location different than home, this should be zero</td>
@@ -1937,7 +1945,6 @@ the path in a line between the waypoint centers.
    <th>Mission Planner Field</th>
    <th>Description</th>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td><strong>param1</strong></td>
    <td></td>
@@ -1948,12 +1955,12 @@ the path in a line between the waypoint centers.
    <td>Radius</td>
    <td>Radius in meters. If positive loiter clockwise, negative counter-clockwise, 0 means no change to standard loiter.</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
    <td></td>
    <td>Empty</td>
    </tr>
+   <tr>
    <td>param4</td>
    <td>XTrack Tangent</td>
    <td>Determines which line the aircraft will track after exiting the loiter. If 0, track the line from the center of the circle to the next waypoint. If 1, track the line tangent to the circle to the next waypoint.</td>
@@ -2010,7 +2017,7 @@ then occurs. For Copters, they will loiter until then, and Rovers hold position.
    </tr>
    <tr>
    <td><strong>param2</strong></td>
-   <td>Time in hours(1-24)</td>
+   <td>Time in hours(0-23)</td>
    <td>Delay until this hour</td>
    </tr>
    <tr>
@@ -2023,7 +2030,6 @@ then occurs. For Copters, they will loiter until then, and Rovers hold position.
    <td>Time in seconds (0-59)</td>
    <td>Delay until this second</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td>param5</td>
    <td></td>
@@ -2085,7 +2091,6 @@ until the time in seconds has elapsed. This is used in a mission to allow a vehi
    <td></td>
    <td>Empty</td>
    </tr>
-   <tr>
    <tr style="color: #c0c0c0">
    <td>param6</td>
    <td></td>
@@ -2149,7 +2154,6 @@ This allows the gripper to be commanded to be released, packages replaced, etc.
    <td></td>
    <td>Empty</td>
    </tr>
-   <tr>
    <tr>
    <td><strong>param5</strong></td>
    <td>Lat</td>
@@ -2607,6 +2611,7 @@ regardless of the ``param3`` value).
    If <code>param4=1</code> (relative): The change in heading (in degrees).
    </td>
    </tr>
+   <tr>
    <td><strong>param2</strong></td>
    <td>Speed deg/s</td>
    <td>Speed during yaw change:[deg per second].</td>
@@ -2919,7 +2924,7 @@ vehicle's throttle. If the airspeed option is selected, this changes the :ref:`A
    <tr>
    <td><strong>param2</strong></td>
    <td>Speed (m/s)</td>
-   <td>Target speed (m/s). If airspeed, a value below or above min/max airspeed limits results in no change. a value of -2 uses :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>`</td>
+   <td>Target speed (m/s). If airspeed, a value below or above min/max airspeed limits results in no change. a value of -2 uses AIRSPEED_CRUISE</td>
    </tr>
    <tr>
    <td><strong>param3</strong></td>
@@ -3007,6 +3012,71 @@ Change the target horizontal speed and/or the vehicle's throttle.
    </table>
 
 [/site]
+
+.. _mav_cmd_do_set_reverse:
+
+MAV_CMD_DO_SET_REVERSE
+-----------------------
+
+Supported by: Rover only.
+
+Sets the vehicle's driving direction to forward or reverse. This
+applies to the NAV commands that follow it in the mission, until
+another MAV_CMD_DO_SET_REVERSE command changes it again.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Reverse (0/1)</td>
+   <td>Direction:
+
+   0: Forward direction.
+
+   1: Reverse direction.
+   </td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param2</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
 
 .. _mav_cmd_do_set_home:
 
@@ -3940,7 +4010,7 @@ in the mission.
    <tr>
    <td><strong>param7</strong></td>
    <td></td>
-   <td>`MAV_MOUNT_MODE <https://mavlink.io/en/messages/common.html#MAV_MOUNT_MODE>`__ enum value.</td>
+   <td><a href="https://mavlink.io/en/messages/common.html#MAV_MOUNT_MODE">MAV_MOUNT_MODE</a> enum value.</td>
    </tr>
    </tbody>
    </table>
@@ -4058,6 +4128,7 @@ To trigger the camera once, immediately after passing the DO command, set param3
    <td></td>
    <td>Empty</td>
    </tr>
+   <tr>
    <td><strong>param3</strong></td>
    <td>?</td>
    <td>Trigger once instantly. One is on, zero is off.</td>
@@ -4572,17 +4643,20 @@ This command can be used to start or stop the ICE before a NAV_VTOL_LAND or afte
    <td>?</td>
    <td>Start/Stop ICE (1: start, 0:stop)</td>
    </tr>
+   <tr>
    <td><strong>param2</strong></td>
    <td></td>
    <td>Cold Start (1: enables choke, currently not implemented)</td>
    </tr>
+   <tr>
    <td><strong>param3</strong></td>
    <td></td>
    <td>Altitude in meters. Altitude at which action is taken.</td>
    </tr>
+   <tr>
    <td><strong>param4</strong></td>
    <td></td>
-   <td>Flags: 1 = allow a single start while disarmed even if :ref:`ICE_OPTIONS<ICE_OPTIONS>` bit 3 is set</td>
+   <td>Flags: 1 = allow a single start while disarmed even if ICE_OPTIONS bit 3 is set</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param5</td>

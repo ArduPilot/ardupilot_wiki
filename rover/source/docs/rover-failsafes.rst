@@ -4,7 +4,7 @@
 Failsafes
 =========
 
-Rover supports three failsafe mechanisms as described below.
+Rover supports the failsafe mechanisms described below.
 
 Radio Failsafe (aka Throttle Failsafe)
 ======================================
@@ -90,6 +90,13 @@ The action done on GCS Failsafe is controlled by the :ref:`FS_ACTION <FS_ACTION>
 
 You must use the transmitter's mode switch to re-take control of the vehicle in :ref:`Manual <manual-mode>` (or any other mode), or change modes with the GCS itself, if communication is re-established.
 
+
+EKF Failsafe
+============
+
+The EKF failsafe monitors the health of the position and attitude estimate and, if enabled, switches the vehicle to :ref:`Hold <hold-mode>` when the estimate becomes untrustworthy while in a mode that requires position. It is controlled by :ref:`FS_EKF_ACTION <FS_EKF_ACTION>` and :ref:`FS_EKF_THRESH <FS_EKF_THRESH>`.
+
+See :ref:`common-ekf-inav-failsafe` for full details.
 
 Crash Check
 ===========

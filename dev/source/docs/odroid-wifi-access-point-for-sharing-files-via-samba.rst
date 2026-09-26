@@ -1,8 +1,8 @@
 .. _odroid-wifi-access-point-for-sharing-files-via-samba:
 
-====================================================
-ODroid Wifi Access Point for sharing files via Samba
-====================================================
+==============================================================
+Archived: ODroid WiFi Access Point for Sharing Files via Samba
+==============================================================
 
 Overview
 ========

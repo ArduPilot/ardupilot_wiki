@@ -19,15 +19,15 @@ way the vehicle is facing and for cases when the copter is far enough
 away that it's heading is not apparent.
 
 -  "Simple" and "Super Simple" modes can be used in combination with
-   nearly all flight modes except the Acro and Drift (in these flight
-   modes the setting is ignored).
+   nearly all flight modes except Acro (in this flight mode the setting
+   is ignored).
 -  Simple Mode allows you to control the copter relative to the copters
    heading at take off and relies only on a good compass heading.
 -  Super Simple Mode allows you to control the copter relative to it's
    direction from home (i.e. where it was armed) but requires a good GPS
    position.
 -  Either mode can be assigned to a particular flight mode switch
-   position or can be enabled/disabled from the :ref:`Ch7/Ch8 switches <channel-7-and-8-options>`.
+   position or can be enabled/disabled from an :ref:`auxiliary function switch <common-auxiliary-functions>`, on any available RC channel.
 
 ..  youtube:: iGA6D2GBFIc
     :width: 100%
@@ -111,7 +111,7 @@ both pilot and vehicle pointing in the same direction.
 Selecting the modes from a transmitter
 ======================================
 
-The transmitter’s :ref:`auxiliary channels <channel-7-and-8-options>` can
+The transmitter’s :ref:`auxiliary channels <common-auxiliary-functions>` can
 be set-up to enable selection of Simple mode, Super Simple mode or both.
 Only one auxiliary channel should be set for these modes, and this
 channel will override the simple/super-simple options selected on the

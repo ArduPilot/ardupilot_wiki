@@ -16,6 +16,9 @@ GPS/Compass
 .. toctree::
     :maxdepth: 1
     
+    AeroAtoms Orbit EVO (UART / DroneCAN) <common-gps-aeroatoms-orbit-evo>
+    AeroAtoms Orbit Nano X9 / X10 <common-gps-aeroatoms-orbit-nano-x>
+    AeroAtoms Orbit SAM <common-gps-aeroatoms-orbit-sam>
     ARK GPS <common-ark-gps>
     ARK DAN GPS <common-ark-dan-gps>
     ARK SAM GPS <common-ark-sam-gps>
@@ -60,6 +63,8 @@ These GPS can incorporate real time kinematic data, either internally generated 
 .. toctree::
     :maxdepth: 1
 
+    AeroAtoms Orbit Base <common-gps-aeroatoms-orbit-base>
+    AeroAtoms Orbit Nano RTK (UART / DroneCAN) <common-gps-aeroatoms-orbit-nano>
     ArduSimple RTK GPS simpleRTK2B Budget (u-blox ZED-F9P) <common-ardusimple-rtk-gps-simplertk2b-budget>
     ArduSimple RTK GPS simpleRTK3B Pro (Septentrio Mosaic-X5) <common-ardusimple-rtk-gps-simplertk3b-pro>
     ArduSimple RTK GPS simpleRTK3B Compass (Unicore UM982, Dual antenna heading) <common-ardusimple-rtk-gps-simplertk3b-compass>
@@ -118,6 +123,7 @@ Moving Baseline (GPS for Yaw) Capable
 .. toctree::
     :maxdepth: 1
 
+    AeroAtoms Orbit Neo / Neo Plus RTK <common-gps-aeroatoms-orbit-neo>
     Ark RTK GPS <https://arkelectron.com/product/ark-rtk-gps/>    Blicube RTK GPS (Single Unit Moving Baseline) <https://wiki.blicube.com/grtk/>
     CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
     CUAV C-RTK 9Ps RTK Receiver <https://store.cuav.net/shop/c-rtk-9ps/>
@@ -138,6 +144,13 @@ Moving Baseline (GPS for Yaw) Capable
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
     Synerx MDU-2000 RTK + LTE GPS <common-synerex-mdu-2000>
     
+GPS Type Detection
+==================
+
+The :ref:`GPS1_TYPE<GPS1_TYPE>` (and :ref:`GPS2_TYPE<GPS2_TYPE>` for a second GPS) parameter selects which protocol/driver ArduPilot uses to talk to the GPS connected to that instance's serial port. The default, "AUTO" (1), automatically probes most common protocols (u-Blox, SBP/SBP2, SiRF, ERB) and uses whichever one responds.
+
+.. warning:: "AUTO" does **not** probe for the NMEA protocol (or the closely related HemisphereNMEA, UnicoreNMEA and AllyStar protocols). If a GPS only outputs standard NMEA sentences, :ref:`GPS1_TYPE<GPS1_TYPE>` (and/or :ref:`GPS2_TYPE<GPS2_TYPE>`) must be set specifically to "5" (NMEA); with it left at "AUTO" the GPS will never be detected.
+
 GPS Auto Configuration
 ======================
 
