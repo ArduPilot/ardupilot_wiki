@@ -24,6 +24,7 @@ For the examples below, the values are shown for DroneCAN driver #1 using CAN Po
 -  (Optionally) :ref:`CAN_D1_UC_SRV_RT<CAN_D1_UC_SRV_RT>`: rate that servo outputs are sent from the autopilot to the actuator
 
 .. note:: Himark servos use a different command set. In order to use them, also set :ref:`CAN_D1_UC_OPTION<CAN_D1_UC_OPTION>` bit 5 (+32).
+.. note:: ArduPilot also supports the ``uavcan.equipment.power.CircuitStatus`` message for actuator telemetry (voltage, current, and error flags). This is matched to a servo channel by assuming the message's ``circuit_id`` is the same as the servo's actuator/output ID. If a node reports ``CircuitStatus`` with a ``circuit_id`` that does not correspond to an active DroneCAN servo channel, that data is logged separately (in the ``CSCU`` log message) rather than attributed to a servo.
 
 AP_Periph Setup
 ===============
