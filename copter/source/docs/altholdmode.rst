@@ -22,6 +22,25 @@ Automatic altitude hold is a feature of many other flight modes
 :ref:`Sport <sport-mode>`, etc) so the
 information here pertains to those modes as well.
 
+Disabling AltHold in Source Builds
+==================================
+
+AltHold is included in Copter firmware by default. When building Copter
+from source, the AltHold flight mode can be excluded using the
+``MODE_ALTHOLD`` build option:
+
+.. code-block:: bash
+
+    ./waf configure --board <board> --disable-MODE_ALTHOLD --disable-MODE_BRAKE
+    ./waf copter
+
+This removes only the AltHold flight mode. Altitude control used by other
+flight modes remains available.
+
+Brake mode depends on AltHold, so ``MODE_BRAKE`` must also be disabled
+when AltHold is excluded. A build with Brake enabled and AltHold disabled
+will stop with a configuration error.
+
 .. note::
 
    The autopilot uses a barometer which measures air pressure
