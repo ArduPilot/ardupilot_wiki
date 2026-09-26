@@ -93,14 +93,12 @@ The IP addresses chosen above are somewhat arbitrary but work well for many syst
 DroneNet WebServer
 ==================
 
-The DroneNet device has a built-in web server that can be used to update the firmware on the device
-
-.. image:: ../../../images/PPP_web_server.jpg
-    :target: ../_images/PPP_web_server.jpg
+The DroneNet device has a built-in web server that can be used to check the device's status, download files from it, edit its parameters and update its firmware
 
 - Connect a PC to the DroneNet's ethernet
 - Set the PC's IP address to be in the same subnet as the DroneNet (e.g. 192.168.144.99)
 - Open a web browser and enter the DroneNet's IP address as the URL (e.g. "192.168.144.14")
+- See the :ref:`PPP Gateway Web Interface <pppgw-web-interface>` section for a description of the pages provided
 - See the video linked below for more details on how to use the webserver to update the DroneNet's firmware
 
 Video
