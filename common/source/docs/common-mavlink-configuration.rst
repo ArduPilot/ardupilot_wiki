@@ -9,6 +9,12 @@ MAVLink Advanced Configuration
 
 If a serial port protocol is set to MAVLink (``SERIALx_PROTOCOL`` == 1 or 2), then advance configuration options can be set. The first serial port to have the protocol uses the ``MAV1_`` parameters (often the USB port on ``SERIAL0``), the second port will be ``MAV2_``. etc.
 
+DEVICE ID
+=========
+Because the ``MAVx_`` groups are assigned in the order the MAVLink ports are found, which group belongs to which port is not always obvious, and can change if another port's protocol is changed. Each channel therefore reports the device it is attached to in a read-only parameter: :ref:`MAV1_DEVID<MAV1_DEVID>` for the first channel, ``MAV2_DEVID`` for the second, and so on.
+
+The value is an encoded device id, whose meanings are listed with the parameter: the serial ports (``SERIAL0`` through ``SERIAL9``), the :ref:`network ports <common-network>` (``NET_P1`` through ``NET_P4``), the DroneCAN serial tunnel ports (``CAN_D1_UC_S1``, etc.), and the :ref:`scripting <common-lua-scripts>` simulated serial devices (``SCR_SDEV1``, etc.). Zero means no device has been assigned to the channel.
+
 STREAM RATES
 ============
 The following stream rate parameters can be set for each instance of a MAVLink using serial port to determine how fast data is sent over the port(SERIAL1 will be used in the following as an example)
