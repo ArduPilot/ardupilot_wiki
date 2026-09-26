@@ -54,6 +54,7 @@ New Features
 - Weathervaning is now active while navigating between VTOL waypoints in AUTO, see https://github.com/ArduPilot/ardupilot_wiki/pull/8058
 - Q_RTL_PAUSE_TIME pauses above the landing point before the final VTOL descent, defaulting to 5s on tailsitters, see https://github.com/ArduPilot/ardupilot_wiki/pull/8059
 - Automatic flap speed schedule reworked: target airspeed is used without needing an airspeed sensor, with AIRSPEED_CRUISE as the fallback, see https://github.com/ArduPilot/ardupilot_wiki/pull/8060
+- ALT_OFFSET now always resets to zero at boot, and new FLIGHT_OPTIONS bit 17 also resets it on flight mode and AUTO navigation command changes, see https://github.com/ArduPilot/ardupilot_wiki/pull/8094
 [/site]
 [site wiki="copter"]
 - Ability to abort flip using aux switch low, see https://github.com/ArduPilot/ardupilot_wiki/pull/7759
