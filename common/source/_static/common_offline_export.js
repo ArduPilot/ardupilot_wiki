@@ -40,6 +40,43 @@
     });
   }
 
+  /** The delta a versioned parameter page is stored as, or null for a plain page. */
+  function deltaEntry(cache, path) {
+    if (!/\/docs\/parameters-[^/]+\.html?$/.test(path)) { return Promise.resolve(null); }
+    return cache.match(path).then(function (hit) {
+      if (!hit) { return null; }
+      var marked = hit.headers && hit.headers.get('x-ap-encoding') === 'zstd-delta';
+      var plain = marked ? hit : ApUnpack.inflate(hit);
+      if (!plain) { return null; }
+      return plain.arrayBuffer().then(function (buf) {
+        return ApUnpack.deltaHeader(new Uint8Array(buf));
+      });
+    }).catch(function () { return null; });
+  }
+
+  // The decoder the file needs to rebuild a delta when a version is opened;
+  // the page has it loaded from here already.
+  var DECODER_URL = '/js/zstd-delta.js';
+
+  function decoderSource() {
+    return fetch(DECODER_URL).then(function (r) {
+      if (!r.ok) { throw new Error('HTTP ' + r.status); }
+      return r.text();
+    }).catch(function (err) {
+      console.warn('[export] no decoder for the file; versions are written in full', err && err.message);
+      return null;
+    });
+  }
+
+  function base64(bytes) {
+    // Chunked: fromCharCode.apply blows the argument limit on large inputs.
+    var out = '', CHUNK = 0x8000;
+    for (var i = 0; i < bytes.length; i += CHUNK) {
+      out += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK));
+    }
+    return btoa(out);
+  }
+
   /* ------------------------------------------------------ download plumbing */
 
   /** A download sink: service worker stream, else File System Access, else a Blob. */
@@ -123,15 +160,6 @@
     return global.ArduPilotOfflineDocument.resolvePath(basePath, href);
   }
 
-  function base64(bytes) {
-    // Chunked: fromCharCode.apply blows the argument limit on large images.
-    var out = '', CHUNK = 0x8000;
-    for (var i = 0; i < bytes.length; i += CHUNK) {
-      out += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK));
-    }
-    return btoa(out);
-  }
-
   /** Sphinx's search index, trimmed to what searching needs (11 MB -> 5 MB). */
   function readSearchIndex(entry) {
     return ApUnpack.readFrom(entry.cache, entry.path)
@@ -183,13 +211,8 @@
       }
       pages.sort(function (a, b) { return a.path < b.path ? -1 : 1; });
 
-      // Decide which parameter-list versions to carry before anything is written.
-      var params = DOC.parameterVersions(pages.map(function (p) {
-        return p.path.replace(/\.html?$/, '');
-      }));
-      pages = pages.filter(function (p) {
-        return !params.drop[p.path.replace(/\.html?$/, '')];
-      });
+      // The parameter versions the switcher offers are decided at the end,
+      // from what was really written: a delta left out must not be offered.
 
       // From the pages themselves, so a wiki appears even without its index page.
       var wikis = [];
@@ -199,7 +222,8 @@
       });
       wikis.sort();
 
-      return buildThemeCss(styles, assets).then(function (themeCss) {
+      return Promise.all([buildThemeCss(styles, assets), decoderSource()]).then(function (got) {
+        var themeCss = got[0], decoderSrc = got[1];
         return (sink ? Promise.resolve(sink) : openDownload(filename))
         .then(function (sink) {
           // Checked between pages: a cancel stops the work, not mid-write.
@@ -208,19 +232,50 @@
             e.name = 'AbortError';
             return e;
           };
-          var done = 0, index = [];
+          var done = 0, leftOut = 0, index = [];
           // Each image is emitted once and referenced by id.
           var imgIds = { __next: 0 };
           var imgPaths = {};
           // The navigation is the union of every page's expanded sidebar.
           var navState = DOC.newNav();
           var write = function (text) { return sink.write(enc.encode(text)); };
+          // Base pages a carried delta needs in full, by path.
+          var needRaw = {};
 
           return write(DOC.head(wikis, themeCss)).then(function () {
             var chain = Promise.resolve();
-            pages.forEach(function (p, i) {
+            pages.forEach(function (p) {
               chain = chain.then(function () {
                 if (signal && signal.aborted) { throw bail(); }
+                // A version held as a delta is carried as one, small, and
+                // rebuilt in the file when opened; the rebuild here only
+                // proves it can be, and a delta that cannot is left out.
+                return (decoderSrc ? deltaEntry(p.cache, p.path) : Promise.resolve(null))
+                .then(function (delta) {
+                  if (!delta) { return renderPage(p); }
+                  return ApUnpack.readFrom(p.cache, p.path).then(function () {
+                    var basePath = p.path.slice(0, p.path.lastIndexOf('/') + 1) + delta.base;
+                    needRaw[basePath] = true;
+                    var label = (p.path.match(/parameters-([^/]+)\.html?$/) || [])[1] || '';
+                    // Blocks are numbered by position in the index the file
+                    // carries, never by position in the pages list: a page
+                    // left out must not shift every block after it.
+                    var slot = index.length;
+                    index.push({ t: 'Complete Parameter List (' + label.split('-').join(' ') + ')',
+                                 p: p.path.replace(/\.html?$/, ''), d: 1,
+                                 b: basePath.replace(/\.html?$/, ''), h: delta.hash });
+                    done++;
+                    return write(DOC.deltaBlock(slot, base64(delta.frame)));
+                  }, function (err) {
+                    console.warn('[export] version left out, it could not be rebuilt', p.path, err && err.message);
+                    done++;
+                    leftOut++;
+                  });
+                });
+              });
+            });
+            function renderPage(p) {
+                var slot;
                 return ApUnpack.readFrom(p.cache, p.path)
                   .then(function (res) { return res.text(); })
                   .then(function (html) {
@@ -228,6 +283,7 @@
                                 p.path.replace(/^\//, '');
                     // Strip the theme's " <dash> Project documentation" suffix.
                     title = title.split('&mdash;')[0].split(' — ')[0].trim();
+                    slot = index.length;
                     index.push({ t: title, p: p.path.replace(/\.html?$/, '') });
 
                     DOC.addNav(navState, html, p.path);
@@ -239,20 +295,39 @@
                   .then(function (r) {
                     done++;
                     if (onProgress && done % 10 === 0) { onProgress(done, pages.length); }
-                    return write(DOC.pageBlock(i, r.html, r.fresh));
+                    return write(DOC.pageBlock(slot, r.html, r.fresh));
                   });
+            }
+            return chain;
+          }).then(function () {
+            if (signal && signal.aborted) { throw bail(); }
+            // The base pages the deltas rebuild against, whole, once each.
+            var raws = Promise.resolve();
+            Object.keys(needRaw).forEach(function (basePath) {
+              raws = raws.then(function () {
+                // Numbered by the base page's slot in the index, as the shell reads it.
+                var slot = -1, entry = null;
+                var bare = basePath.replace(/\.html?$/, '');
+                index.forEach(function (e, k) { if (e.p === bare) { slot = k; } });
+                pages.forEach(function (pg) { if (pg.path === basePath) { entry = pg; } });
+                if (slot === -1 || !entry) { return undefined; }
+                return ApUnpack.readFrom(entry.cache, basePath)
+                  .then(function (res) { return res.text(); })
+                  .then(function (html) { return write(DOC.rawBlock(slot, html)); });
               });
             });
-            return chain;
+            return raws;
           }).then(function () {
             if (signal && signal.aborted) { throw bail(); }
             // One wiki opens directly; several show the list.
             var homes = DOC.wikiHomes(index, wikis);
-            // Sidebar and reading order from one call, so they agree.
-            var nav = DOC.buildNav(navState, wikis, pages);
+            // Sidebar and reading order from one call, so they agree, and
+            // over the index: a page left out must not become a dead link.
+            var nav = DOC.buildNav(navState, wikis,
+                                   index.map(function (e) { return { path: e.p }; }));
             var payload = { pages: index, nav: nav.html, order: nav.order,
                             wikis: wikis, imgs: imgPaths, homes: homes,
-                            params: params.byWiki,
+                            params: DOC.parameterVersions(index.map(function (e) { return e.p; })).byWiki,
                             home: homes.length === 1 ? homes[0].path : '' };
 
             var wantIndex = wikis.filter(function (w) { return indexes[w]; });
@@ -273,13 +348,13 @@
               });
             }).then(function () {
               if (signal && signal.aborted) { throw bail(); }
-              return write(DOC.tail(payload));
+              return write(DOC.tail(payload, Object.keys(needRaw).length ? decoderSrc : null));
             });
           }).then(function () {
             if (signal && signal.aborted) { throw bail(); }
             return sink.close();
           })
-            .then(function () { return { pages: done }; })
+            .then(function () { return { pages: done - leftOut, leftOut: leftOut }; })
             .catch(function (err) {
               // Cancelled or failed, the reader must not be handed the file.
               if (sink.abort) {

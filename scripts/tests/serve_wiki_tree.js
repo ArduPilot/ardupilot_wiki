@@ -96,11 +96,14 @@ function createServer() {
     const file = urlPath === '/sw.js' && killWorker
       ? path.join(ROOT, 'frontend', 'sw-kill.js') : resolveFile(req.url || '/');
 
-    // As nginx gzip_static does.
-    if (urlPath.endsWith('.tar') && fs.existsSync(file + '.gz')) {
+    // As nginx gzip_static does: the archives, and the loose files the
+    // differential update fetches, exist only as .gz beside their names.
+    if ((urlPath.endsWith('.tar') || !fs.existsSync(file)) && fs.existsSync(file + '.gz')) {
       const gz = file + '.gz';
+      const ext = path.extname(file).toLowerCase();
       res.writeHead(200, Object.assign({
-        'Content-Type': 'application/octet-stream',
+        'Content-Type': urlPath.endsWith('.tar') ? 'application/octet-stream'
+                                                 : (TYPES[ext] || 'application/octet-stream'),
         'Content-Length': fs.statSync(gz).size,
         'Content-Encoding': 'gzip',
       }, extraHeaders(urlPath)));
