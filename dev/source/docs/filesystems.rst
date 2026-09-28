@@ -36,4 +36,9 @@ Several flash based file systems are setup. Most are for internal, ground statio
     - dma.text:
     - memory.txt:
     - uarts.txt:
+
+Log directory alias
+===================
+
+- @MAV_LOG: on autopilots that log to a filesystem, this is an alias for the log directory (normally ``APM/LOGS``), so ground stations can find logs at the location defined by the MAVFTP specification without knowing ArduPilot's directory layout. It is not available on boards whose local filesystem is LittleFS. See :ref:`mavlink-mavftp`.
     
