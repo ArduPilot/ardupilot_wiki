@@ -42,6 +42,8 @@ The following are options for connecting a SITL serial port:
 -  UDP multicast: ``--serialX=mcast:<multicast IP>:<port>``
 -  Log to file: ``--serialX=file:<path and filename>``
 -  Simulated sensor: ``--serialX=sim:<device name>``
+-  WebAssembly JavaScript bridge (``wasm`` board only): ``--serialX=wasm``. See :ref:`sitl-wasm`
+-  Disabled: ``--serialX=none``
 
 A few examples of usage are:
 
