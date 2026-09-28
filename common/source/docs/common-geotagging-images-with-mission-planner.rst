@@ -42,6 +42,13 @@ mission log:
    Even if your camera has a built-in GPS you *may* find this
    approach provide more accurate information than the built-in GPS.
 
+.. note::
+
+   Hardware geotaggers can write the position into the images during the flight instead, so no
+   log processing is needed afterwards. See :ref:`DROTAG x <common-geotagging-drotagx>`,
+   :ref:`AirPixel ENTIRE <common-geotagging-airpixel-entire>` and
+   :ref:`AirPixel TAG-E <common-geotagging-airpixel-tag-e>` (Sony ILX-LR1).
+
 Geotagging images
 =================
 
