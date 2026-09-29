@@ -84,15 +84,6 @@ The PID controller default values for axis P/D/I values are usually safe for fir
 - :ref:`ATC_RAT_YAW_FLTE <ATC_RAT_YAW_FLTE__AC_AttitudeControl_Multi>`: 2
 - :ref:`ATC_RAT_YAW_FLTT <ATC_RAT_YAW_FLTT__AC_AttitudeControl_Multi>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
 
-.. image:: ../images/tuning-process-instructions-2.hires.png
-    :target: ../_images/tuning-process-instructions-2.hires.png
-
-.. image:: ../images/tuning-process-instructions-3.hires.png
-    :target: ../_images/tuning-process-instructions-3.hires.png
-
-.. image:: ../images/tuning-process-instructions-4.hires.png
-    :target: ../_images/tuning-process-instructions-4.hires.png
-
 Mission Planner Helper
 ======================
 
