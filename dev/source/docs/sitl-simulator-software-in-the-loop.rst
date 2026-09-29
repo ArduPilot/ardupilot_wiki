@@ -55,13 +55,14 @@ Mission Planner (Windows) also provides a simple means of running SITL for the m
 SITL Architecture
 =================
 
-Note in the image below the port numbers are indicative only and can
-vary.  For instance the ports between ArduPilot and the simulator
-on the image are 5501/5502 but they can vary to be 5504/5505 or other
-port numbers depending on your environment.
+The SITL executable contains a built-in physics model for each vehicle type, so in most cases no separate simulator process is needed. ``sim_vehicle.py`` starts MAVProxy, which connects to SERIAL0 on TCP port 5760, sends RC input to UDP port 5501 and forwards MAVLink to ground stations on UDP port 14550. SERIAL1 and SERIAL2 listen on TCP ports 5762 and 5763 and can be used for another GCS, a companion computer or a simulated peripheral (see :ref:`SITL Serial Ports <learning-ardupilot-uarts-and-the-console>`).
 
-.. image:: ../images/ArdupilotSoftwareintheLoopSITL.jpg
-    :target: ../_images/ArdupilotSoftwareintheLoopSITL.jpg
+An external simulator such as JSBSim or a JSON simulator (Gazebo, Webots or a custom script) can replace the built-in physics, and FlightGear can be used to display the vehicle.
+
+The port numbers shown are for the first instance. Each additional instance started with ``-I n`` adds 10 × n to every port, and most ports can be changed on the command line.
+
+.. image:: ../images/sitl-architecture.svg
+    :target: ../_images/sitl-architecture.svg
 
 .. toctree::
     :maxdepth: 1
