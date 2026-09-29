@@ -27,7 +27,7 @@ May 2009 - `First ArduPilot board <https://diydrones.com/profiles/blogs/ardupilo
 `thermopiles <https://diydrones.com/profiles/blogs/attopilot-ir-sensors-now>`__)
 released by Jordi/3DRobotics
 
-Nov 2009 - `ArduPilot code repository <https://code.google.com/p/ardupilot/>`__ created by Jordi
+Nov 2009 - `ArduPilot code repository <https://code.google.com/archive/p/ardupilot>`__ created by Jordi
 
 Nov 2009 - First version of ArduIMU written by Jordi, Doug Weibel, Jose
 Julio using DCM from William Premerlani
@@ -70,7 +70,7 @@ which were adopted as the original standard
 
 Oct 2010 - CopterNG (AeroQuad/ArduCopter merged code) project abandoned
 by ArduPilot team and handed over, with encouragement, to the
-`ArduPirates <https://code.google.com/p/ardupirates/>`__ team for
+`ArduPirates <https://code.google.com/archive/p/ardupirates>`__ team for
 further development. Jason restarts Copter with alternative control
 logic based on Plane making Copter autonomous. Adds Loiter, Circle, RTL,
 Mission scripting, failsafe, takeoff, landing, etc.
@@ -118,7 +118,7 @@ Jonathan Challinger leads to Copter's inertial based altitude hold by
 Randy and Leonard
 (`AC2.9 <https://diydrones.com/forum/topics/arducopter-2-9-released>`__).
 
-Jan 2013 - ArduPilot code moved from `google code <http://code.google.com/p/ardupilot/>`__ to
+Jan 2013 - ArduPilot code moved from `google code <https://code.google.com/archive/p/ardupilot>`__ to
 `github <https://github.com/ArduPilot/ardupilot>`__
 
 Jan/Feb 2013 - Android GCSs appear (`DroidPlanner from
