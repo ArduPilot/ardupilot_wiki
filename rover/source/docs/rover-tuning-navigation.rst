@@ -69,6 +69,12 @@ It may also help to monitor the velocity controller PIDs in real-time
   .. image:: ../images/rover-tuning-navigation-realtime.png
       :target: ../_images/rover-tuning-navigation-realtime.png
 
+The velocity PID controller inputs and outputs are also recorded in the :ref:`onboard log's <common-downloading-and-analyzing-data-logs-in-mission-planner>` PIDN (North) and PIDE (East) messages.
+Overall performance can be seen by comparing the Tar ("Target") and Act ("Actual") fields.  The contributions of the PID controller's FF (feed-forward), P, I and D to the output can be seen in the FF, P, I and D fields.
+
+  .. image:: ../images/rover-tuning-navigation-logs.png
+      :target: ../_images/rover-tuning-navigation-logs.png
+
 Other Parameters
 ----------------
 
