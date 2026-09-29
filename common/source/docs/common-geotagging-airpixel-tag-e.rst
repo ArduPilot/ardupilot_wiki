@@ -40,7 +40,7 @@ ArduPilot 4.6.0 or later is required. TAG-E needs a 5V supply able to deliver at
 
    - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 2 (MAVLink2)
    - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 921 (921600 bps)
-   - All SR2_ stream rate parameters = 0. TAG-E requests the messages it needs itself.
+   - All ``SR2_*`` stream rate parameters = 0. TAG-E requests the messages it needs itself.
    - :ref:`CAM1_TYPE <CAM1_TYPE>` = 5 (MAVLink) or 6 (MAVLinkCamV2). Both work.
 
 #. Reboot the autopilot. When the camera is online, TAG-E's LED turns green and the camera appears in the ground station.
