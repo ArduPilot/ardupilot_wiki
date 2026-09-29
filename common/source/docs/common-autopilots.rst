@@ -103,6 +103,7 @@ Closed Hardware
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
     AMOV Flycore <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/flycore/README.md>
     AET-H743-Basic <common-AET-H743-Basic>
+    AET-H743-Air <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/AET_H743_Air/README.md>
     AnyleafH7 <common-anyleafh7>
     AocodaRC H743Dual <common-aocoda-h743dual>
     ARK FPV <common-ark-fpv>
