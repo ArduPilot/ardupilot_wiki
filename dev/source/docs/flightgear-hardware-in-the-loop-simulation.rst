@@ -33,7 +33,7 @@ Things you need
 #. `Mavlink.xml <https://github.com/dronekit/ardupilot-releases/blob/master/Tools/FlightGear/MAVLink.xml>`__ data
    format file for flightgear
 #. Recommended for Windows OS: the
-   file: \ `system.fgfsrc <https://code.google.com/p/ardupilot-mega/downloads/detail?name=system.fgfsrc>`__ placed
+   file: \ `system.fgfsrc <https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/ardupilot-mega/system.fgfsrc>`__ placed
    into the "C:\\Program Files (x86)\\FlightGear\\data" folder. This
    will load the Rascal RC plane and a few other parameters. More
    information on what is
