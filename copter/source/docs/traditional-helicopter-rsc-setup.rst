@@ -64,6 +64,11 @@ When the motor interlock is enabled the rotor speed control will ramp the thrott
 
 When the motor interlock is disabled with the rotor at flight rotor speed, the rotor speed control will count down the same amount of time as specified by the :ref:`H_RSC_RUNUP_TIME <H_RSC_RUNUP_TIME>`. The RSC will declare rotor speed below critical based on the Critical Rotor Speed parameter (:ref:`H_RSC_CRITICAL <H_RSC_CRITICAL>`) and will reset the runup complete flag. It is best to set the Critical Rotor Speed parameter (:ref:`H_RSC_CRITICAL <H_RSC_CRITICAL>`) for a percentage of the runup timer that equates to about three seconds. For example if you had a 10 second runup timer, setting the Critical Rotor Speed parameter (:ref:`H_RSC_CRITICAL <H_RSC_CRITICAL>`) to 70% will cause the RSC to declare rotor speed below critical three seconds from when Motor interlock is disabled.  For versions 4.0 and earlier, the autopilot is able to disarm the aircraft during auto landings after the RSC declares the rotor speed below critical.  For versions 4.1 and later, the autopilot waits the length of time of the :ref:`H_RSC_RUNUP_TIME <H_RSC_RUNUP_TIME>` to disarm the aircraft during auto landings.
 
+Battery Voltage Compensation (V4.7+)
+==================================
+
+Battery compensation can be configured using :ref:`H_RSC_BAT_IDX <H_RSC_BAT_IDX>`, :ref:`H_RSC_BAT_V_MAX <H_RSC_BAT_V_MAX>`, :ref:`H_RSC_BAT_V_MIN <H_RSC_BAT_V_MIN>`. It compensates for battery voltage changes during flight. It should not be used with external governor ESCs.
+
 ArduPilot Internal Governor Setup
 =================================
 
