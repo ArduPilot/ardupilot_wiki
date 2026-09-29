@@ -275,6 +275,7 @@ Closed Hardware
     YJUAV A6SE <common-yjuav-a6se>
     YJUAV A6SE H743<common-yjuav-a6se-h743>
     YJUAV-A6Ultra <common-yjuav-a6ultra>
+    ZenFC743 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/ZenFC743/README.md>
     VUAV-TINYV7 <common-vuav-tinyv7>
 
 Linux Based Autopilots
