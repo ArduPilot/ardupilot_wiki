@@ -1468,6 +1468,8 @@
     if (activeDownload) { return 'a download'; }
     if (exportBusy || activeExport) { return 'an export'; }
     if (checkBusy || updateWriting) { return 'an update check'; }
+    // Its late writes would recreate a cache the wipe had just removed.
+    if (plainFetch) { return 'the parameter pages download'; }
     return null;
   }
 

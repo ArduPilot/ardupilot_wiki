@@ -2097,6 +2097,34 @@ async function main() {
           $(r.doc, 'cache-progress').textContent);
     if (release) { release(); }
     for (let i = 0; i < 8; i++) { await settle(); }
+
+    // Offline mode turned off while they are still arriving is refused too:
+    // the late write would recreate the cache the wipe had just removed.
+    cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj, decoder: false, served, offline: true });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    let letGo;
+    const heldFetch = r.sandbox.fetch;
+    r.sandbox.fetch = (u, o) => (String(u).indexOf('/docs/parameters-') !== -1
+      ? new Promise((res) => { letGo = () => res(heldFetch(u, o)); })
+      : heldFetch(u, o));
+    r.doc.getElementById('plain-params-btn').click();
+    await settle();
+    const box = r.doc.getElementById('offline-mode');
+    box.checked = false;
+    box.dispatchEvent(new r.w.Event('change', { bubbles: true }));
+    await settle();
+    check('offline mode turned off mid-fallback is refused, and says what is running',
+          r.apOffline.calls.length === 0 && r.doc.getElementById('offline-off-warning').hidden &&
+          /Still running: the parameter pages download/.test($(r.doc, 'check-result').textContent),
+          JSON.stringify({ calls: r.apOffline.calls, said: $(r.doc, 'check-result').textContent }));
+    if (letGo) { letGo(); }
+    for (let i = 0; i < 8; i++) { await settle(); }
+    check('and the copy it was writing is still there',
+          (await cachesObj.keys()).indexOf('ardupilot-offline-copter') !== -1);
   });
 
   await section('the state text is green only when the worker controls the page', async () => {
