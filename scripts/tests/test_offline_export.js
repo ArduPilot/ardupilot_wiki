@@ -742,6 +742,9 @@ async function main() {
     check('and it is not offered as a version the file can show',
           !((payload.params || {}).probe || []).length,
           JSON.stringify((payload.params || {}).probe || []));
+    check('and the home page counts only the pages the file can show',
+          ((payload.homes || [])[0] || {}).pages === 1,
+          JSON.stringify(payload.homes));
     check('while its block keeps its place, so no other page shifts',
           deltaAt !== -1 &&
           written.indexOf('id="p' + deltaAt + '"') !== -1,

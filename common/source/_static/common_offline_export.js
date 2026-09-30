@@ -329,13 +329,13 @@
             return raws;
           }).then(function () {
             if (signal && signal.aborted) { throw bail(); }
-            // One wiki opens directly; several show the list.
-            var homes = DOC.wikiHomes(index, wikis);
-            // Sidebar and reading order from one call, so they agree, and
-            // over the index: a page left out must not become a dead link.
             // A carried delta whose base is not in the file is in the index
             // for its block's sake alone, not as a page to send anyone to.
             var readable = index.filter(function (e) { return !dead[e.p]; });
+            // One wiki opens directly; several show the list.
+            var homes = DOC.wikiHomes(readable, wikis);
+            // Sidebar and reading order from one call, so they agree, and
+            // over the index: a page left out must not become a dead link.
             var nav = DOC.buildNav(navState, wikis,
                                    readable.map(function (e) { return { path: e.p }; }));
             var payload = { pages: index, nav: nav.html, order: nav.order,
