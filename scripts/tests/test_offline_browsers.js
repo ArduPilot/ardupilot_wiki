@@ -309,7 +309,7 @@ async function checkFreshnessGuards(name, browser, base) {
         new Response(JSON.stringify({ build: 'x', id: 'dev' })));
       await s.put(new Request(location.origin + u),
         new Response('<html>SAVED FRESH</html>', { headers: { 'Content-Type': 'text/html' } }));
-      const b = await caches.open('ardupilot-pages-v11');
+      const b = await caches.open('ardupilot-pages-v12');
       await b.put(new Request(location.origin + u),
         new Response('<html>STALE BROWSING</html>', { headers: { 'Content-Type': 'text/html' } }));
     }, VISITED);
@@ -330,14 +330,14 @@ async function checkFreshnessGuards(name, browser, base) {
     // A page the server does not have must be evicted from the browsing cache.
     const ghost = '/dev/docs/ghost-not-a-real-page.html';
     await page.evaluate(async (u) => {
-      const b = await caches.open('ardupilot-pages-v11');
+      const b = await caches.open('ardupilot-pages-v12');
       await b.put(new Request(location.origin + u),
         new Response('<html>STALE</html>', { headers: { 'Content-Type': 'text/html' } }));
     }, ghost);
     await page.goto(base + ghost, { waitUntil: 'load' }).catch(() => {});
     await page.waitForTimeout(1200);
     const stillCached = await page.evaluate(async (u) => {
-      const b = await caches.open('ardupilot-pages-v11');
+      const b = await caches.open('ardupilot-pages-v12');
       return !!(await b.match(location.origin + u));
     }, ghost);
     check(name, 'a page the server 404s is evicted from the browsing cache',

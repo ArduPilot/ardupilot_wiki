@@ -1222,7 +1222,7 @@ async function checkSavedCopyOutranksBrowsingCopy() {
   const w = bootWorker({
     offlineCopy: { path: '/dev/docs/page.html',
                    body: '<html>saved fresh</html>', ct: 'text/html' },
-    existingCaches: ['ardupilot-pages-v11'],
+    existingCaches: ['ardupilot-pages-v12'],
     runtimeImages: { '/dev/docs/page.html': '<html>stale browsing</html>' },
     networkFails: true,
   });
@@ -1237,7 +1237,7 @@ async function checkChangeAnnouncements() {
   console.log('\nservice worker: change announcements know which cache spoke\n');
   // An ordinary browsing reader with no saved wiki still hears of changes.
   const w = bootWorker({
-    existingCaches: ['ardupilot-pages-v11'],
+    existingCaches: ['ardupilot-pages-v12'],
     runtimeImages: { '/dev/docs/page.html': '<html>stale browsing</html>' },
     serve: () => ({ ct: 'text/html', body: '<html>fresher</html>' }),
   });
@@ -1506,7 +1506,7 @@ async function checkKillSwitch() {
   console.log('\nservice worker: the kill switch\n');
 
   const w = bootWorker({ file: KILL, existingCaches: [
-    'ardupilot-pages-v11', 'ardupilot-static-v11', 'ardupilot-images-v11',
+    'ardupilot-pages-v12', 'ardupilot-static-v12', 'ardupilot-images-v12',
     'ardupilot-offline-dev', 'ardupilot-offline-common',
     'something-else-entirely',
   ] });

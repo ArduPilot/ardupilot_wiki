@@ -17,7 +17,7 @@ if (typeof importScripts === 'function') {
 }
 
 // Bump when cached content can no longer be trusted; saved wikis are unaffected.
-const CACHE_VERSION = 'v11';
+const CACHE_VERSION = 'v12';
 const PAGE_CACHE = `ardupilot-pages-${CACHE_VERSION}`;
 const IMAGE_CACHE = `ardupilot-images-${CACHE_VERSION}`;
 const STATIC_CACHE = `ardupilot-static-${CACHE_VERSION}`;
