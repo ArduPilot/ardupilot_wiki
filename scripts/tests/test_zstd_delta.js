@@ -34,10 +34,12 @@ const SEED = { WebAssembly, console, TextDecoder, TextEncoder, Uint8Array, Promi
 
 /** The decoder as a plain script, in a global of its own, the way a page or
  * worker gets it. */
-function loadInto() {
+function loadInto({ noWasm = false } = {}) {
   const sandbox = Object.assign({}, SEED);
   sandbox.self = sandbox;
   vm.createContext(sandbox);
+  // A context has a WebAssembly of its own whatever it is seeded with.
+  if (noWasm) { vm.runInContext('delete globalThis.WebAssembly', sandbox); }
   vm.runInContext(fs.readFileSync(DECODER, 'utf8'), sandbox);
   return sandbox;
 }
@@ -98,6 +100,19 @@ function loadDecoder() { return loadInto().ApZstd; }
   const bigBase = new Uint8Array(fs.readFileSync(path.join(FIX, 'param-delta-base.html')));
   check('and agrees with the wasm decoder on a second fixture',
         Buffer.compare(Buffer.from(js.patch(big, bigBase)), Buffer.from(ApZstd.patch(big, bigBase))) === 0);
+
+  // No WebAssembly global at all, not merely init(null): the script has to
+  // load, or the worker that imports it never starts.
+  let bare = null, bareErr = null;
+  try { bare = loadInto({ noWasm: true }).ApZstd; } catch (e) { bareErr = e.message; }
+  check('the script loads where there is no WebAssembly global', !!bare, bareErr || '');
+  if (bare) {
+    const bareMode = await bare.init(new Uint8Array(wasm).buffer);
+    check('and init falls back to JavaScript when handed the wasm it cannot run',
+          bareMode === 'js' && bare.mode() === 'js', String(bareMode));
+    check('and rebuilds the same page byte for byte',
+          Buffer.compare(Buffer.from(bare.patch(delta, base)), page) === 0);
+  }
 
   // The size comes from the delta's own header, and an archive can be handed
   // to a reader by anyone: a frame asking for gigabytes must not be allocated.

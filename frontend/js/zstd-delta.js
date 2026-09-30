@@ -6,7 +6,8 @@
  * WebAssembly by @bokuweb/zstd-wasm 0.0.27 (MIT; see ZSTD-LICENSE) is the
  * fast path; its Emscripten glue below is theirs, kept whole apart from its
  * module export, so it loads as a plain script in a page and through
- * importScripts in the worker. fzstd 0.1.1 (MIT; see FZSTD-LICENSE), a
+ * importScripts in the worker, and from its start-up abort where there is no
+ * WebAssembly, which threw before the fallback below existed. fzstd 0.1.1 (MIT; see FZSTD-LICENSE), a
  * pure JavaScript decoder, follows it and takes over when WebAssembly is
  * unavailable. Our own surface is ApZstd at the end: init() once, then
  * patch(); init(null) asks for JavaScript outright.
@@ -46,9 +47,6 @@ var tempRet0 = 0;
 var setTempRet0 = function (value) {
     tempRet0 = value;
 };
-if (typeof WebAssembly !== 'object') {
-    abort('no native wasm support detected');
-}
 var wasmMemory;
 var ABORT = false;
 var EXITSTATUS;

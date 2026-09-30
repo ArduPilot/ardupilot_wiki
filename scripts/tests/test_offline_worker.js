@@ -437,6 +437,25 @@ async function checkDeltaVersionRebuilt() {
   res = a ? await a.catch((e) => ({ error: e.message })) : null;
   check('the base page is served plain', !!res && !res.error && !header(res, 'x-ap-encoding'));
 
+  // A browser with no WebAssembly at all: the import must not throw, or the
+  // worker never starts and offline mode is lost with it.
+  let bare = null, bareErr = null;
+  try {
+    bare = bootWorker({ networkFails: true, decoder: true, noWasm: true, entries: Object.assign({
+      '/js/zstd.wasm': { body: wasm, ct: 'application/wasm', cache: 'static' } }, saved) });
+  } catch (err) {
+    bareErr = err && err.message;
+  }
+  check('without WebAssembly the worker still starts', !!bare, bareErr || '');
+  if (bare) {
+    a = bare.ask(DELTA, { mode: 'navigate', destination: 'document' });
+    res = a ? await a.catch((e) => ({ error: e.message })) : null;
+    body = await bodyOf(res);
+    check('and the JavaScript decoder rebuilds the page',
+          !!body && Buffer.compare(body, page) === 0,
+          res && res.error ? res.error : (body ? body.length + ' bytes' : 'no answer'));
+  }
+
   // The version index lists a delta-held version without decoding anything:
   // no wasm anywhere, and still the version is offered.
   const INDEX = '/rover/_static/parameters-Rover.json';
@@ -599,7 +618,7 @@ function bootWorker({ networkFails = false, serve = null,
                      existingCaches = [], offlineCopy = null,
                      holdNetwork = false, putFails = false,
                      runtimeImages = null, entries = null, decoder = false,
-                     decoderFails = false,
+                     decoderFails = false, noWasm = false,
                      onLine = true, file = WORKER } = {}) {
   const seen = { fetches: [], cacheReads: [], puts: [], deleted: [], posted: [] };
   let hasImpl = async (name) => cacheNames.indexOf(name) !== -1;
@@ -796,6 +815,8 @@ function bootWorker({ networkFails = false, serve = null,
     };
   }
   vm.createContext(ctx);
+  // A context has a WebAssembly of its own whatever it is given.
+  if (noWasm) { vm.runInContext('delete globalThis.WebAssembly', ctx); }
   vm.runInContext(fs.readFileSync(file, 'utf8'), ctx);
 
   /** Deliver one message event, as a page's postMessage would. */
