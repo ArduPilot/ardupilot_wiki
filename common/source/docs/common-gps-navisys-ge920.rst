@@ -4,8 +4,8 @@
 Navisys GE-920 Dual-Antenna RTK
 ===============================
 
-.. image:: ../../../images/navisys/.png
-    :target: ../../../images/navisys/.png
+.. image:: ../../../images/navisys/navisys_ge920.png
+    :target: ../../../images/navisys/navisys_ge920.png
     :width: 433px
 
 The Navisys GE-920 is a dual-antenna GNSS module based on the u-blox ZED-F9 RTK engine. It operates simultaneously as an RTK moving base and RTK rover to provide centimeter-level positioning and precise heading without relying on vehicle movement.
@@ -22,8 +22,8 @@ Key Features
 Pinout & Connection Guide
 -------------------------
 
-.. image:: ../../../images/navisys/_pinout.png
-    :target: ../../../images/navisys/_pinout.png
+.. image:: ../../../images/navisys/navisys_ge920_pinout_pinout.png
+    :target: ../../../images/navisys/navisys_ge920_pinout_pinout.png
     :width: 516px
 
 ===  ==========  ======================================================  ======
