@@ -956,6 +956,15 @@
     button.classList.add('busy');
     setLabel('Cancel');
 
+    // Cancel reaches the steps that hold no fetch of their own to abort.
+    function stopIfCancelled() {
+      if (activeDownload && activeDownload.signal.aborted) {
+        var e = new Error('cancelled');
+        e.name = 'AbortError';
+        throw e;
+      }
+    }
+
     function setLabel(text) {
       var lbl = button.querySelector('.lbl');
       if (lbl) { lbl.textContent = text; } else { button.textContent = text; }
@@ -1026,7 +1035,10 @@
                 rowProgress(entry.id, 99, 'checking');
                 // The file table both verifies this save and drives updates;
                 // without it nothing vouches for what just arrived.
-                return fetch(ApUpdate.tableUrl(entry, ARTIFACT_BASE, CURRENT_BUILD), { cache: 'no-cache' })
+                return fetch(ApUpdate.tableUrl(entry, ARTIFACT_BASE, CURRENT_BUILD), {
+                  cache: 'no-cache',
+                  signal: activeDownload ? activeDownload.signal : undefined
+                })
                   .then(function (r) {
                     if (!r.ok) { throw new Error('HTTP ' + r.status); }
                     return r.json();
@@ -1041,6 +1053,8 @@
                     return table;
                   })
                   .catch(function (err) {
+                    // A cancel is the reader's decision, not a failed check.
+                    if (err && err.name === 'AbortError') { throw err; }
                     var e = new Error('could not verify ' + entry.name + ' (' +
                                     ((err && err.message) || 'no file table') +
                                     '); nothing was marked saved. Try again.');
@@ -1048,6 +1062,7 @@
                     throw e;
                   });
               }).then(function (table) {
+                stopIfCancelled();
                 // The fetch above throws rather than yield a missing table.
                 {
                   // A build published mid-save leaves the table naming pages the
@@ -1106,6 +1121,9 @@
                   }));
                 }).then(function () {
                   return ApUpdate.storeTable(cache, table);
+                }).then(function () {
+                  // The last moment a cancel can still leave nothing marked.
+                  stopIfCancelled();
                 });
               }).catch(function (err) {
                 if (!err || !(err.apVerify || wrote)) { throw err; }

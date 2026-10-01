@@ -969,6 +969,17 @@ async function checkErrorFallsBackToSaved() {
         answered && answered.status ? 'status ' + answered.status : String(answered));
   check('the error answer is not stored', w.seen.puts.length === 0, JSON.stringify(w.seen.puts));
 
+  // A publish replaces the fingerprinted files, so the old name is a 404.
+  w = bootWorker({ serve: () => ({ status: 404, ct: 'text/html', body: 'gone' }),
+                   offlineCopy: { path: '/dev/_static/css/theme.css',
+                                  body: 'body{}', ct: 'text/css' } });
+  a = w.ask('/dev/_static/css/theme.css?v=abc123');
+  answered = a ? await a.catch(() => 'REJECTED') : undefined;
+  check('a fingerprinted asset the server answers 404 is served from the saved wiki too',
+        !!answered && answered === w.seen.servedCopy,
+        answered && answered.status ? 'status ' + answered.status : String(answered));
+  check('and the 404 is not stored', w.seen.puts.length === 0, JSON.stringify(w.seen.puts));
+
   w = bootWorker({ serve: () => ({ status: 404, ct: 'text/html', body: 'gone' }) });
   a = w.ask('/dev/_static/css/other.css?v=abc123');
   answered = a ? await a.catch(() => 'REJECTED') : undefined;
