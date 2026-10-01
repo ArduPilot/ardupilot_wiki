@@ -36,7 +36,7 @@ The entire SRTM database is available at https://firmware.ardupilot.org/SRTM .  
 Firmware Manifest
 -----------------
 
-The firmware available to be downloaded from our firmware server is catalogued in a JSON file available from `here <https://http://autotest.ardupilot.org/manifest.json.gz>`__.
+The firmware available to be downloaded from our firmware server is catalogued in a JSON file available from `here <https://firmware.ardupilot.org/manifest.json.gz>`__.
 
 A sample of this::
 
