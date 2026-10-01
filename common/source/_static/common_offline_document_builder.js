@@ -774,12 +774,29 @@
     return out + '</ul>';
   }
 
-  /** The sidebar and the reading order, from one tree so they agree. */
-  function buildNav(state, wikis, pages) {
+  /** The tree without the pages in `leftOut`; what sat under one moves up
+   * into its place, so nothing else leaves the sidebar with it. */
+  function withoutLeftOut(nodes, leftOut) {
+    var out = [];
+    nodes.forEach(function (n) {
+      var kids = withoutLeftOut(n.children, leftOut);
+      if (!n.external && Object.prototype.hasOwnProperty.call(leftOut, n.href)) {
+        out = out.concat(kids);
+        return;
+      }
+      out.push({ href: n.href, external: n.external, label: n.label, children: kids });
+    });
+    return out;
+  }
+
+  /** The sidebar and the reading order, from one tree so they agree.
+   * `leftOut` maps the paths of pages the file holds no readable copy of. */
+  function buildNav(state, wikis, pages, leftOut) {
     var html = '', order = [], seen = {};
 
     wikis.forEach(function (wiki) {
       var tree = state.trees[wiki];
+      if (tree && leftOut) { tree = withoutLeftOut(tree, leftOut); }
       html += '<p class="caption">' + escapeHtml(wiki) + '</p>';
       if (!tree || !tree.length) {
         html += listNav(pages, wiki);

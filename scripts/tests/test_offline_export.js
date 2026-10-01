@@ -719,8 +719,14 @@ async function main() {
     const orphan = new FakeCache();
     orphan.put('/__ap_complete__', new FakeResponse(
       Buffer.from(JSON.stringify({ build: 'test', id: 'probe' }))));
+    // Its sidebar names the version, as a toctree that lists it would.
     orphan.put('/probe/index.html', new FakeResponse(Buffer.from(
       '<html><head><title>Probe</title></head><body>' +
+      '<div class="wy-menu wy-menu-vertical"><ul>' +
+      '<li class="toctree-l1"><a class="reference internal" href="index.html">Probe</a></li>' +
+      '<li class="toctree-l1"><a class="reference internal" ' +
+      'href="docs/parameters-Probe-stable-V4.1.0.html">Parameters 4.1.0</a></li>' +
+      '</ul></div>' +
       '<div itemprop="articleBody"><h1>Probe</h1></div><footer></footer></body></html>')));
     orphan.put('/probe/docs/base-page.bin', new FakeResponse(baseBody));
     orphan.put('/probe/docs/parameters-Probe-stable-V4.1.0.html', new FakeResponse(
@@ -742,6 +748,15 @@ async function main() {
     check('and it is not offered as a version the file can show',
           !((payload.params || {}).probe || []).length,
           JSON.stringify((payload.params || {}).probe || []));
+    check('the sidebar was read from the page, so this is the toctree path',
+          /href="#\/probe\/index"/.test(payload.nav || ''), String(payload.nav).slice(0, 160));
+    check('nor is it linked from the sidebar',
+          String(payload.nav).indexOf('parameters-Probe-stable-V4.1.0') === -1,
+          String(payload.nav).slice(0, 240));
+    check('nor is it a stop in previous/next',
+          Array.isArray(payload.order) && payload.order.length > 0 &&
+          !payload.order.some((p) => p.indexOf('parameters-Probe-stable-V4.1.0') !== -1),
+          JSON.stringify(payload.order));
     check('and the home page counts only the pages the file can show',
           ((payload.homes || [])[0] || {}).pages === 1,
           JSON.stringify(payload.homes));

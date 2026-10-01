@@ -335,9 +335,11 @@
             // One wiki opens directly; several show the list.
             var homes = DOC.wikiHomes(readable, wikis);
             // Sidebar and reading order from one call, so they agree, and
-            // over the index: a page left out must not become a dead link.
+            // over the index: a page left out must not become a dead link,
+            // in the flat list or in a toctree that names it.
             var nav = DOC.buildNav(navState, wikis,
-                                   readable.map(function (e) { return { path: e.p }; }));
+                                   readable.map(function (e) { return { path: e.p }; }),
+                                   dead);
             var payload = { pages: index, nav: nav.html, order: nav.order,
                             wikis: wikis, imgs: imgPaths, homes: homes,
                             params: DOC.parameterVersions(readable.map(function (e) { return e.p; })).byWiki,
