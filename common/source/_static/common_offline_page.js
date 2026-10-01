@@ -226,8 +226,9 @@
         var anything = pages > 0 || Object.keys(storedIds).length > 0;
         clear.disabled = !anything || checkBusy || !!activeDownload ||
           !!activeExport || exportBusy || !!plainFetch;
+        var holder = busyWithWhat();
         clear.title = !anything ? 'Nothing is stored on this device'
-          : clear.disabled ? 'Wait for the update to finish'
+          : clear.disabled ? 'Wait for ' + (holder || 'the update') + ' to finish'
           : 'Removes saved wikis and pages cached while reading';
         if (!anything && clearArmed) { disarmClear(clear); }
       }
@@ -391,6 +392,7 @@
     var clearBtn = el('clear-btn');
     if (clearBtn) {
       clearBtn.disabled = true;
+      clearBtn.title = 'Wait for the parameter pages download to finish';
       if (clearArmed) { disarmClear(clearBtn); }
     }
     progress.hidden = false;
@@ -649,9 +651,16 @@
     var btn = el('clear-btn');
     if (!btn) { return; }
     // The button is disabled while anything owns the caches; a press armed
-    // before that began is refused here.
-    if (busyWithWhat()) {
+    // before that began is refused here, and says why.
+    var busy = busyWithWhat();
+    if (busy) {
       if (clearArmed) { disarmClear(btn); }
+      var out = el('check-result');
+      if (out) {
+        out.hidden = false;
+        out.textContent = 'Still running: ' + busy +
+          '. Remove all once it has finished.';
+      }
       return;
     }
 

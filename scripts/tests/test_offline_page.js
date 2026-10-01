@@ -2127,14 +2127,19 @@ async function main() {
           $(r.doc, 'check-result').textContent);
     // Every other way of rewriting or removing these caches stands aside too.
     const press = (id) => $(r.doc, id).dispatchEvent(new r.w.MouseEvent('click', { bubbles: true }));
-    check('Remove all is disabled while the plain pages download', $(r.doc, 'clear-btn').disabled);
+    check('Remove all is disabled while the plain pages download, and says why',
+          $(r.doc, 'clear-btn').disabled &&
+          /parameter pages download/.test($(r.doc, 'clear-btn').title),
+          $(r.doc, 'clear-btn').title);
     // A press that was armed already is not stopped by the attribute.
     $(r.doc, 'clear-btn').disabled = false;
+    $(r.doc, 'check-result').textContent = '';   // the Turn off refusal said it already
     press('clear-btn'); await settle(); press('clear-btn'); await settle();
-    check('and a Remove all pressed anyway removes nothing',
+    check('and a Remove all pressed anyway removes nothing, and says why',
           (await cachesObj.keys()).indexOf('ardupilot-offline-copter') !== -1 &&
-          !$(r.doc, 'clear-btn').classList.contains('apo-btn-armed'),
-          (await cachesObj.keys()).join(' '));
+          !$(r.doc, 'clear-btn').classList.contains('apo-btn-armed') &&
+          /Still running: the parameter pages download/.test($(r.doc, 'check-result').textContent),
+          (await cachesObj.keys()).join(' ') + ' | ' + $(r.doc, 'check-result').textContent);
     const manifestAsks = () => r.fetchCalls.filter((u) => u.indexOf('offline-manifest.json') !== -1).length;
     const asksBefore = manifestAsks();
     $(r.doc, 'check-btn').disabled = false;
