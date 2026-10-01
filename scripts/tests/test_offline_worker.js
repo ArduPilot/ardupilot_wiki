@@ -437,6 +437,27 @@ async function checkDeltaVersionRebuilt() {
   res = a ? await a.catch((e) => ({ error: e.message })) : null;
   check('the base page is served plain', !!res && !res.error && !header(res, 'x-ap-encoding'));
 
+  // The wasm missed the precache and the link stalls on it: the wait is
+  // bounded and the JavaScript decoder answers, rather than the page hanging.
+  const quick = path.join(require('os').tmpdir(), 'sw-quick-wasm-timeout.js');
+  fs.writeFileSync(quick, fs.readFileSync(WORKER, 'utf8')
+    .replace(/const NETWORK_TIMEOUT_MS = \d+;/, 'const NETWORK_TIMEOUT_MS = 200;'));
+  const stalled = bootWorker({ file: quick, holdNetwork: true, decoder: true,
+                               onLine: false, entries: saved });
+  a = stalled.ask(DELTA, { mode: 'navigate', destination: 'document' });
+  res = await Promise.race([
+    a ? a.catch((e) => ({ error: e.message })) : Promise.resolve(null),
+    new Promise((r) => setTimeout(() => r({ error: 'still waiting on zstd.wasm' }), 3000)),
+  ]);
+  body = await bodyOf(res);
+  check('a stalled fetch of the wasm does not hold up a saved version',
+        !!body && Buffer.compare(body, page) === 0,
+        res && res.error ? res.error : (body ? body.length + ' bytes' : 'no answer'));
+  check('the wasm was asked for, and given up on',
+        stalled.seen.fetches.some((u) => u.indexOf('zstd.wasm') !== -1),
+        JSON.stringify(stalled.seen.fetches));
+  if (stalled.seen.releaseNetwork) { stalled.seen.releaseNetwork(); }
+
   // A browser with no WebAssembly at all: the import must not throw, or the
   // worker never starts and offline mode is lost with it.
   let bare = null, bareErr = null;

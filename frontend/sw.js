@@ -339,10 +339,19 @@ function deltaDecoder() {
       }
       let bytes = null;
       try {
-        let hit = await (await caches.open(STATIC_CACHE)).match(ZSTD_WASM);
-        if (!hit) {
-          hit = await fetch(ZSTD_WASM);
-          if (hit && hit.ok) { await keep(STATIC_CACHE, ZSTD_WASM, hit.clone()); } else { hit = null; }
+        const hit = await (await caches.open(STATIC_CACHE)).match(ZSTD_WASM);
+        if (hit) {
+          bytes = await hit.arrayBuffer();
+        } else {
+          // Missed by the precache. Bounded like every other network wait,
+          // body included: the JavaScript decoder can answer meanwhile, and
+          // a fetch that lands late is still kept for the next worker.
+          bytes = (await raceNetwork((async () => {
+            const fetched = await fetch(ZSTD_WASM);
+            if (!fetched || !fetched.ok) { return null; }
+            await keep(STATIC_CACHE, ZSTD_WASM, fetched.clone());
+            return fetched.arrayBuffer();
+          })())) || null;
         }
         if (hit) { bytes = await hit.arrayBuffer(); }
       } catch (err) {

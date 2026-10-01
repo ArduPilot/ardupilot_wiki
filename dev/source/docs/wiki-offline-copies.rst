@@ -384,7 +384,8 @@ that reads through ``ApUnpack.readFrom`` rebuild the page on first use with
 ``frontend/js/zstd-delta.js``, which holds two decoders behind one surface:
 zstd compiled to WebAssembly (imported by the worker at start-up and precached
 with its ``zstd.wasm``), and fzstd, a pure JavaScript decoder that takes over
-when WebAssembly is unavailable, about 150 ms for a 4 MB page against 3 ms.
+when WebAssembly is unavailable or the ``.wasm`` cannot be had within the
+worker's usual network wait, about 150 ms for a 4 MB page against 3 ms.
 The worker imports the decoder while it evaluates, because ``importScripts``
 is illegal once a worker is installed and ``sw.js`` is replaced only when it
 changes: an import that fails is left to fail the installation, so the next
