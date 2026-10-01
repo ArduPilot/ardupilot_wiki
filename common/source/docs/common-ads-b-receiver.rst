@@ -64,6 +64,13 @@ For example, if you plugged a uAvionix Ping2020i into a UART designated as SERIA
 
 .. note:: the specifications for the ADSB receiver may only state MAVLink as the protocol. In that case try MAVLink2, first, and if that does not succeed, use MAVLink as the serial port protocol.
 
+.. note:: :ref:`ADSB_TYPE <ADSB_TYPE>` = 1 was previously named "uAvionix-MAVLink". It is now named "MAVLink" since it is not limited to uAvionix devices.
+
+ADS-B traffic from a companion computer
+---------------------------------------
+
+ArduPilot processes incoming MAVLink `ADSB_VEHICLE <https://mavlink.io/en/messages/common.html#ADSB_VEHICLE>`__ messages whenever :ref:`ADSB_TYPE <ADSB_TYPE>` is non-zero. To use ADS-B traffic sent from a companion computer, or from any other MAVLink source such as an on-vehicle traffic feed, with no ADS-B hardware attached to the autopilot, set :ref:`ADSB_TYPE <ADSB_TYPE>` = 1 (MAVLink) and reboot. No serial port needs to be set up for ADS-B. The messages can come in over any MAVLink link. With no transceiver attached, this setup only receives traffic. ADS-B out messages are only sent once a transceiver reports that it is healthy.
+
 You will need to reboot your board after making those changes.
 
 To enable streaming the ADSB data to the GCS you'll want to check your StreamRate param. In some cases it is already set but it's good to check. These rates are adjustable per telemetry like in the case of having both a high-bandwidth and a low-bandwitdh link attached. The param to adjust the rate would depend on which one your GCS is connected to. In most cases, it is telem1.
