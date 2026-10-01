@@ -1005,6 +1005,7 @@
     }
     checkBusy = true;
     var checked = false;   // reached the site and compared; recorded at the end
+    // 'behind': updates were found and are not in yet, so nothing is recorded.
     var outcome = 'current';
     var incomplete = {};   // caches without their marker that this check must finish
     var checkBtn = el('check-btn');
@@ -1083,6 +1084,7 @@
           report('Updates found; they will be fetched after the export finishes.');
           toast({ mode: 'hide' });
           updateDeferred = true;
+          outcome = 'behind';
           return undefined;
         }
         // Real news, announced even on an automatic run.
@@ -1179,6 +1181,7 @@
                       msg: 'Could not download again: ' + missing.map(nameOf).join(', ') +
                            '. It will be tried again later.',
                       mode: 'done' });
+              outcome = 'behind';
               return;
             }
             outcome = 'updated';
@@ -1199,7 +1202,7 @@
         checkBusy = false;
         updateWriting = false;
         if (checkBtn && !activeDownload && !activeExport) { checkBtn.disabled = false; }
-        if (checked) { noteChecked(outcome); }
+        if (checked && outcome !== 'behind') { noteChecked(outcome); }
         return renderStorage();
       });
   }

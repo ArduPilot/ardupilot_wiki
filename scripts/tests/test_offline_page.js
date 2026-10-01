@@ -2230,6 +2230,46 @@ async function main() {
           $(r.doc, 'check-result').textContent + ' | ' + $(r.doc, 'last-checked').textContent);
   });
 
+  await section('a check whose download the reader cancelled is not recorded as up to date', async () => {
+    // As above, but the reader cancels the download the check started: the
+    // shared images stay incomplete, and the check must not vouch for them.
+    const cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'index'] });
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    const common = await cachesObj.open('ardupilot-offline-common');
+    await common.delete('/__ap_complete__');
+    const same = JSON.parse(JSON.stringify(MANIFEST)); same.generated = OLD_BUILD;
+    const r = load({ manifest: same, caches: cachesObj,
+      archives: { '_images/shared.png': 'shared bytes' },
+      tables: { 'common-files.json': { '_images/shared.png': await fileHash('shared bytes') },
+                'copter-files.json': { 'copter/index.html': 'h1' } } });
+    await settle();
+    const realFetch = r.sandbox.fetch;
+    let asked = false;
+    r.sandbox.fetch = (u, o) => {
+      if (String(u).indexOf('common-offline.tar') === -1) { return realFetch(u, o); }
+      asked = true;
+      return new Promise((res, rej) => {
+        if (o && o.signal) {
+          o.signal.addEventListener('abort', () => {
+            const e = new Error('aborted'); e.name = 'AbortError'; rej(e);
+          });
+        }
+      });
+    };
+    r.sandbox.window.fetch = r.sandbox.fetch;
+    $(r.doc, 'check-btn').click();
+    for (let i = 0; i < 20 && !asked; i++) { await settle(); }
+    check('the check started the download', asked);
+    $(r.doc, 'download-cache-btn').dispatchEvent(new r.w.MouseEvent('click', { bubbles: true }));
+    for (let i = 0; i < 14; i++) { await settle(); }
+    check('the shared images are still incomplete', !(await common.match('/__ap_complete__')));
+    check('and nothing is recorded as checked and up to date',
+          !r.w.localStorage.getItem('ap-last-checked') &&
+          !/up to date/.test($(r.doc, 'last-checked').textContent || ''),
+          r.w.localStorage.getItem('ap-last-checked') + ' | ' + $(r.doc, 'last-checked').textContent);
+  });
+
   await section('a first save the reader cancelled is not re-downloaded behind their back', async () => {
     // Rover was never complete and holds no table: the reader stopped it.
     const cachesObj = makeCaches();
@@ -3042,6 +3082,10 @@ async function main() {
     check('the deferral says what will happen instead',
           /after the export/i.test($(doc, 'check-result').textContent || ''),
           JSON.stringify($(doc, 'check-result').textContent));
+    check('and the check is not recorded as up to date while the update waits',
+          !w.localStorage.getItem('ap-last-checked') &&
+          !/up to date/.test($(doc, 'last-checked').textContent || ''),
+          w.localStorage.getItem('ap-last-checked') + ' | ' + $(doc, 'last-checked').textContent);
     // Only the resumed check's differential can move this counter: the
     // original check deferred before touching anything.
     const beforeResume = updates();
@@ -3050,6 +3094,10 @@ async function main() {
     check('the deferred update resumes once the export finishes',
           updates() > beforeResume,
           updates() + ' update fetches, ' + beforeResume + ' before');
+    // The fixture's update cannot complete, so there is still nothing to record.
+    check('and the resumed check records nothing as up to date either',
+          !/"r":"current"/.test(w.localStorage.getItem('ap-last-checked') || ''),
+          String(w.localStorage.getItem('ap-last-checked')));
   });
 
   await section('the check tail carries the resume release() had to skip', async () => {
