@@ -239,7 +239,9 @@ it is used, so later requests for it resolve directly. This takes 1 ms against
 
 Assets carrying a fingerprint are served from storage without checking the
 network. Sphinx stamps them, as in ``theme.css?v=5d32c60e``, so a stored copy
-can only be the copy that the fingerprint names.
+can only be the copy that the fingerprint names. A saved wiki holds its files
+by path alone, and an update rewrites them in place, so its copy is checksummed
+against the fingerprint every time it is read and answers only when it matches.
 
 That last point is also why the wiki costs the server less to serve. Of the 21
 to 26 resources a page pulls in, twelve are shared assets totalling 131 KB and

@@ -297,8 +297,8 @@ async function checkFingerprintVerifiedFromSaved() {
   const PATH = '/copter/_static/js/theme.js';
 
   // The network stalls; the saved copy's checksum is the one asked for.
-  let w = bootWorker({ holdNetwork: true,
-                       offlineCopy: { path: PATH, body, ct: 'text/javascript' } });
+  const copy = { path: PATH, body, ct: 'text/javascript' };
+  let w = bootWorker({ holdNetwork: true, offlineCopy: copy });
   let a = w.ask(PATH + '?v=' + v);
   const raced = await Promise.race([
     a ? a.then(() => 'answered').catch((e) => 'rejected ' + e.message) : Promise.resolve('no handler'),
@@ -310,12 +310,26 @@ async function checkFingerprintVerifiedFromSaved() {
         JSON.stringify(w.seen.fetches));
   check('the verified copy is served in place, never copied into the static cache',
         w.seen.puts.length === 0, JSON.stringify(w.seen.puts));
-  // Read again: the checksum was remembered, the bytes are not re-read.
-  const readsBefore = w.seen.cacheReads.length;
+  // Read again: still served, still without the network.
   a = w.ask(PATH + '?v=' + v);
-  if (a) { await a; }
-  check('a second read of a verified copy does not re-check its bytes',
-        w.seen.cacheReads.length - readsBefore <= 2, (w.seen.cacheReads.length - readsBefore) + ' cache reads');
+  const again = a ? await a : null;
+  check('a second read of the same copy is served the same way',
+        !!again && again === w.seen.servedCopy && w.seen.fetches.length === 0,
+        w.seen.fetches.length + ' fetches');
+  // An update rewrites the saved wiki in place: the same name now holds
+  // another build's bytes. The earlier check must not vouch for them, with
+  // or without the page having said the caches changed.
+  copy.body = 'var theme = "another build";';
+  w.seen.servedCopy = null;
+  a = w.ask(PATH + '?v=' + v);
+  const swapped = await Promise.race([
+    a ? a.then((r) => (r === w.seen.servedCopy ? 'the rewritten copy' : 'something else'))
+         .catch((e) => 'rejected ' + e.message) : Promise.resolve('no handler'),
+    new Promise((r) => setTimeout(() => r('the network'), 300)),
+  ]);
+  check('a copy rewritten after it was verified is checked again, not served on the old verdict',
+        swapped === 'the network' && w.seen.fetches.length === 1,
+        'answered by ' + swapped + ', ' + w.seen.fetches.length + ' fetches');
   if (w.seen.releaseNetwork) { w.seen.releaseNetwork(); }
 
   // A saved copy from another build: the network still answers first.

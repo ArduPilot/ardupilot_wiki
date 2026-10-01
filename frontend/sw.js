@@ -145,7 +145,6 @@ self.addEventListener('message', (event) => {
     cacheNamesGeneration++;
     openedCaches.clear();
     markerChecked.clear();
-    verifiedFingerprints.clear();
     return;
   }
   if (data.type === 'OFFLINE_OFF') {
@@ -353,7 +352,6 @@ function deltaDecoder() {
             return fetched.arrayBuffer();
           })())) || null;
         }
-        if (hit) { bytes = await hit.arrayBuffer(); }
       } catch (err) {
         bytes = null;
       }
@@ -704,18 +702,16 @@ function crc32(bytes) {
 }
 
 // The saved copy, when its bytes are exactly what the fingerprint asks for.
-// Remembered per worker life, so the bytes are checked once, not per read.
-const verifiedFingerprints = new Map();
-
+// Checked on every read, against the very bytes about to be served: an
+// update rewrites a saved wiki in place, and a verdict remembered from
+// before it would hand the old fingerprint the new bytes unchecked.
 async function heldMatchingFingerprint(request, url) {
   const v = url.searchParams.get('v');
   if (!v || !/^[0-9a-f]{8}$/.test(v)) { return undefined; }
   const held = await heldOffline(request);
   if (!held) { return undefined; }
-  if (verifiedFingerprints.get(url.pathname) === v) { return held; }
   const bytes = new Uint8Array(await held.clone().arrayBuffer());
   if (crc32(bytes) !== v) { return undefined; }
-  verifiedFingerprints.set(url.pathname, v);
   return held;
 }
 
