@@ -2578,6 +2578,59 @@ async function main() {
           JSON.stringify(swMessages));
   });
 
+  await section('a save cancelled while it is checking is not marked saved', async () => {
+    // The bytes are in and the table is being fetched: Cancel must still stop
+    // the save. Once with a fetch that honours the abort, once with a table
+    // that arrives anyway, as one already in flight would.
+    for (const honours of [true, false]) {
+      const cachesObj = makeCaches();
+      await seedSaved(cachesObj, 'common', MANIFEST.generated, { '_images/seed.png': ['h0', 'x'] });
+      const body = '<html>a</html>';
+      const table = { 'copter/index.html': await fileHash(body) };
+      const { doc, w, sandbox } = load({ manifest: MANIFEST, caches: cachesObj,
+        archives: { 'copter/index.html': body }, tables: { 'copter-files.json': table } });
+      await settle();
+      const realFetch = sandbox.fetch;
+      let tableAsked = false, tableSignal = false, deliver = null;
+      sandbox.fetch = (u, o) => {
+        if (String(u).indexOf('copter-files.json') === -1) { return realFetch(u, o); }
+        tableAsked = true;
+        tableSignal = !!(o && o.signal);
+        return new Promise((res, rej) => {
+          deliver = () => res({ ok: true, json: () => Promise.resolve(table) });
+          if (honours && o && o.signal) {
+            o.signal.addEventListener('abort', () => {
+              const e = new Error('aborted'); e.name = 'AbortError'; rej(e);
+            });
+          }
+        });
+      };
+      sandbox.window.fetch = sandbox.fetch;
+      doc.querySelector('.wiki-check[value="copter"]').click(); await settle();
+      $(doc, 'download-cache-btn').click();
+      for (let i = 0; i < 40 && !tableAsked; i++) { await settle(); }
+      const how = honours ? 'the table fetch aborted' : 'the table arriving anyway';
+      check('the save reached its checking phase (' + how + ')',
+            tableAsked && /^Checking Copter/.test($(doc, 'cache-progress').textContent),
+            JSON.stringify($(doc, 'cache-progress').textContent));
+      check('the table fetch carries the download\'s abort signal', tableSignal);
+      $(doc, 'download-cache-btn').dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
+      await settle();
+      if (!honours && deliver) { deliver(); }
+      for (let i = 0; i < 12; i++) { await settle(); }
+      const c = await cachesObj.open('ardupilot-offline-copter');
+      check('a cancel while checking leaves the wiki unmarked (' + how + ')',
+            !(await c.match('/__ap_complete__')),
+            JSON.stringify($(doc, 'cache-progress').textContent));
+      check('and the panel says cancelled, not saved',
+            /^Cancelled/.test($(doc, 'cache-progress').textContent) &&
+            (doc.querySelector('tr[data-wiki="copter"] .apo-badge') || {}).textContent !== 'Saved',
+            JSON.stringify($(doc, 'cache-progress').textContent));
+      check('and the button is Save again',
+            /Save selected/.test($(doc, 'download-cache-btn').textContent));
+    }
+  });
+
   await section('an update tick hands the selection back', async () => {
     // The reader ticked Rover and unticked Copter; the tick has to re-download
     // Copter and must not leave its own selection behind.
