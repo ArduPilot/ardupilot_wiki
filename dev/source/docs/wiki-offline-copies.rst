@@ -221,7 +221,7 @@ the ``/_common/`` path used for images shared between wikis.
 Why Browsing Is Fast
 --------------------
 
-Four things account for most of it.
+Three things account for most of it.
 
 Content held locally is preferred over the network. A page that is stored is
 returned immediately and revalidated in the background, and if the copy that
@@ -232,10 +232,6 @@ naming a store searches every store in turn, and a reader who has saved every
 wiki has fourteen of them. Since the URL identifies the single store that could
 hold it, the worker looks only there, which takes 89 ms against 692 ms for the
 same request. The exhaustive search is kept as a fallback.
-
-Content found in a saved wiki is copied into the runtime store the first time
-it is used, so later requests for it resolve directly. This takes 1 ms against
-84 ms.
 
 Assets carrying a fingerprint are served from storage without checking the
 network. Sphinx stamps them, as in ``theme.css?v=5d32c60e``, so a stored copy
