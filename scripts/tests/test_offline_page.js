@@ -2121,10 +2121,117 @@ async function main() {
           r.apOffline.calls.length === 0 && r.doc.getElementById('offline-off-warning').hidden &&
           /Still running: the parameter pages download/.test($(r.doc, 'check-result').textContent),
           JSON.stringify({ calls: r.apOffline.calls, said: $(r.doc, 'check-result').textContent }));
+    check('and it does not offer a cancel this download does not have',
+          /Wait for it to finish, then turn off/.test($(r.doc, 'check-result').textContent) &&
+          !/cancel/i.test($(r.doc, 'check-result').textContent),
+          $(r.doc, 'check-result').textContent);
+    // Every other way of rewriting or removing these caches stands aside too.
+    const press = (id) => $(r.doc, id).dispatchEvent(new r.w.MouseEvent('click', { bubbles: true }));
+    check('Remove all is disabled while the plain pages download', $(r.doc, 'clear-btn').disabled);
+    // A press that was armed already is not stopped by the attribute.
+    $(r.doc, 'clear-btn').disabled = false;
+    press('clear-btn'); await settle(); press('clear-btn'); await settle();
+    check('and a Remove all pressed anyway removes nothing',
+          (await cachesObj.keys()).indexOf('ardupilot-offline-copter') !== -1 &&
+          !$(r.doc, 'clear-btn').classList.contains('apo-btn-armed'),
+          (await cachesObj.keys()).join(' '));
+    const manifestAsks = () => r.fetchCalls.filter((u) => u.indexOf('offline-manifest.json') !== -1).length;
+    const asksBefore = manifestAsks();
+    $(r.doc, 'check-btn').disabled = false;
+    press('check-btn'); await settle();
+    check('a check for updates waits for it',
+          manifestAsks() === asksBefore &&
+          /parameter pages are downloading/.test($(r.doc, 'check-result').textContent),
+          $(r.doc, 'check-result').textContent);
+    let exports = 0;
+    r.w.ArduPilotExport = { exportHtml: () => { exports++; return Promise.resolve({ pages: 1 }); } };
+    $(r.doc, 'dl-single').disabled = false;
+    press('dl-single'); await settle();
+    check('and so does an export, which reads what it is rewriting',
+          exports === 0 && /parameter pages are downloading/.test($(r.doc, 'dl-single').textContent),
+          exports + ' exports, ' + $(r.doc, 'dl-single').textContent);
     if (letGo) { letGo(); }
     for (let i = 0; i < 8; i++) { await settle(); }
     check('and the copy it was writing is still there',
           (await cachesObj.keys()).indexOf('ardupilot-offline-copter') !== -1);
+    check('Remove all comes back when it finishes', !$(r.doc, 'clear-btn').disabled);
+
+    // Another tab removes the wiki while a page is on its way: the late
+    // write must not bring the cache back with one page in it.
+    cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj, decoder: false, served, offline: true });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    const waiting = [];
+    const tabFetch = r.sandbox.fetch;
+    r.sandbox.fetch = (u, o) => (String(u).indexOf('/docs/parameters-') !== -1
+      ? new Promise((res) => { waiting.push(() => res(tabFetch(u, o))); })
+      : tabFetch(u, o));
+    r.doc.getElementById('plain-params-btn').click();
+    await settle();
+    await cachesObj.delete('ardupilot-offline-copter');
+    for (let i = 0; i < 12; i++) { while (waiting.length) { waiting.shift()(); } await settle(); }
+    check('a wiki removed from another tab mid-download is not recreated',
+          (await cachesObj.keys()).indexOf('ardupilot-offline-copter') === -1,
+          (await cachesObj.keys()).join(' '));
+    check('and the reader is told, not shown a success',
+          /removed meanwhile/.test($(r.doc, 'cache-progress').textContent) &&
+          !/^All /.test($(r.doc, 'cache-progress').textContent),
+          $(r.doc, 'cache-progress').textContent);
+
+    // The same, removed in the instant between the look and the write.
+    cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj, decoder: false, served, offline: true });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    r.doc.getElementById('plain-params-btn').click();
+    const openNow = cachesObj.open;
+    let pulled = 0;
+    cachesObj.open = (n) => {
+      if (n === 'ardupilot-offline-copter' && !pulled) { pulled++; cachesObj._all.delete(n); }
+      return openNow(n);
+    };
+    for (let i = 0; i < 12; i++) { await settle(); }
+    cachesObj.open = openNow;
+    check('a wiki removed between the look and the write is not left behind as one page',
+          pulled === 1 && (await cachesObj.keys()).indexOf('ardupilot-offline-copter') === -1,
+          pulled + ' removals, ' + (await cachesObj.keys()).join(' '));
+    check('and that is not reported as a success either',
+          /removed meanwhile/.test($(r.doc, 'cache-progress').textContent),
+          $(r.doc, 'cache-progress').textContent);
+
+    // The download cannot even start (the saved copy will not open): it
+    // must let go, or Turn off would be refused until the page was reloaded.
+    cachesObj = makeCaches();
+    await seedSaved(cachesObj, 'common', OLD_BUILD, { '_images/shared.png': ['c1', 'shared bytes'] });
+    await seedSaved(cachesObj, 'copter', OLD_BUILD, { 'copter/index.html': ['h1', 'old index'] });
+    await seedDeltas(cachesObj);
+    r = load({ manifest: withVersions(), caches: cachesObj, decoder: false, served, offline: true });
+    for (let i = 0; i < 4; i++) { await settle(); }
+    const realOpen = cachesObj.open;
+    cachesObj.open = () => Promise.reject(new Error('storage is unavailable'));
+    r.doc.getElementById('plain-params-btn').click();
+    cachesObj.open = realOpen;
+    for (let i = 0; i < 8; i++) { await settle(); }
+    check('a download that cannot start says so',
+          /Could not download the parameter pages \(storage is unavailable\)/.test(
+            $(r.doc, 'cache-progress').textContent),
+          $(r.doc, 'cache-progress').textContent);
+    const again = r.doc.getElementById('plain-params-btn');
+    check('and offers the button again', !!again && !again.disabled);
+    const box2 = r.doc.getElementById('offline-mode');
+    box2.checked = false;
+    box2.dispatchEvent(new r.w.Event('change', { bubbles: true }));
+    for (let i = 0; i < 4; i++) { await settle(); }
+    check('and Turn off is not left refused',
+          !r.doc.getElementById('offline-off-warning').hidden &&
+          !/Still running/.test($(r.doc, 'check-result').textContent || ''),
+          JSON.stringify({ warning: !r.doc.getElementById('offline-off-warning').hidden,
+                           said: $(r.doc, 'check-result').textContent }));
   });
 
   await section('the state text is green only when the worker controls the page', async () => {

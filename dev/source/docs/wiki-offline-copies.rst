@@ -411,7 +411,9 @@ server support. Once a saved wiki carries versions, the Offline page runs the
 decoder against a tiny built-in delta; if even the JavaScript decoder cannot
 run it says so and offers one button that fetches every
 carried version as a plain page and stores it over the delta, about 0.3 MB
-each over the wire. A worker that cannot rebuild a delta treats that version
+each over the wire. While that download runs it owns the saved wikis as a save
+does: Save, Remove all, the update check, the export and turning offline mode
+off all wait for it. A worker that cannot rebuild a delta treats that version
 as not held rather than serving the raw bytes.
 
 Archives are reproducible: tar metadata is normalised, so unchanged content

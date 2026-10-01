@@ -225,7 +225,7 @@
       if (clear) {
         var anything = pages > 0 || Object.keys(storedIds).length > 0;
         clear.disabled = !anything || checkBusy || !!activeDownload ||
-          !!activeExport || exportBusy;
+          !!activeExport || exportBusy || !!plainFetch;
         clear.title = !anything ? 'Nothing is stored on this device'
           : clear.disabled ? 'Wait for the update to finish'
           : 'Removes saved wikis and pages cached while reading';
@@ -378,20 +378,30 @@
    * store it over the delta; a page with no delta header stores as any page. */
   function fetchPlainVersions() {
     if (plainFetch) { return plainFetch; }
-    if (activeDownload || activeExport) {
-      return Promise.reject(new Error('A download is already running; try again when it finishes.'));
+    // A download, an export and an update check each own these caches.
+    var busy = busyWithWhat();
+    if (busy) {
+      return Promise.reject(new Error('Still running: ' + busy +
+                                      '; try again when it finishes.'));
     }
     var progress = el('cache-progress');
     var button = el('plain-params-btn');
     if (button) { button.disabled = true; }
+    // Nothing redraws Remove all until the end; it is held from the start.
+    var clearBtn = el('clear-btn');
+    if (clearBtn) {
+      clearBtn.disabled = true;
+      if (clearArmed) { disarmClear(clearBtn); }
+    }
     progress.hidden = false;
-    var done = 0, failed = [], wanted = [];
+    var done = 0, failed = [], wanted = [], removed = 0;
     plainFetch = deltasHeld().then(function (held) {
       wanted = held;
       return held;
     }).then(function (held) { return held.reduce(function (chain, item) {
       return chain.then(function () {
         var w = item.w, v = item.v, url = item.key;
+        var cacheName = OFFLINE_CACHE_PREFIX + w.id;
         progress.textContent = 'Fetching ' + w.name + ' parameters ' + v.label +
                                ' (' + (done + 1) + ' of ' + wanted.length + ')\u2026';
         // Tagged as an update so the worker goes to the network and never
@@ -405,23 +415,54 @@
           if (ct && !/html/i.test(ct)) { throw new Error('served as ' + ct); }
           return r.arrayBuffer();
         }).then(function (buf) {
-          return caches.open(OFFLINE_CACHE_PREFIX + w.id).then(function (cache) {
-            return ApUnpack.storeEntry(cache, url, v.file, new Uint8Array(buf));
+          // This panel refuses to remove a wiki under the download, but
+          // another tab can: opening a deleted cache to write would bring it
+          // back holding one page and nothing else.
+          return caches.keys().then(function (names) {
+            if (names.indexOf(cacheName) === -1) { return false; }
+            return caches.open(cacheName).then(function (cache) {
+              return ApUnpack.storeEntry(cache, url, v.file, new Uint8Array(buf))
+                .then(function () { return cache.match(COMPLETE_MARKER); })
+                .then(function (marker) {
+                  if (marker) { return true; }
+                  // Removed between that look and the write: the page comes
+                  // back out, and the cache with it if it holds nothing else.
+                  return cache.delete(url).then(function () {
+                    return cache.keys();
+                  }).then(function (left) {
+                    return left.length ? false : caches.delete(cacheName);
+                  }).then(function () { return false; });
+                });
+            });
           });
-        }).then(function () { done++; }, function (err) {
+        }).then(function (stored) {
+          if (stored) { done++; } else { removed++; }
+        }, function (err) {
           console.warn('[offline] plain parameter page skipped', url, err && err.message);
           failed.push(v.file);
         });
       });
     }, Promise.resolve()); }).then(function () {
-      plainFetch = null;
-      notifyWorkerCachesChanged();
-      if (failed.length) {
+      if (removed) {
+        progress.textContent = done + ' of ' + wanted.length + ' parameter pages saved as plain ' +
+          'pages; the rest belong to a saved wiki that was removed meanwhile.';
+      } else if (failed.length) {
         progress.textContent = done + ' of ' + wanted.length + ' parameter pages saved as plain ' +
           'pages; ' + failed.length + ' could not be fetched (' + failed[0] + '). Try again later.';
       } else {
         progress.textContent = 'All ' + done + ' parameter versions are saved as plain pages.';
       }
+    }, function (err) {
+      progress.textContent = 'Could not download the parameter pages (' +
+        ((err && err.message) || 'the saved copy could not be read') + '). Try again later.';
+    }).then(function () {
+      // Released however it ended: left set, it would refuse Save, Remove
+      // all and Turn off until the page was reloaded.
+      plainFetch = null;
+      var again = el('plain-params-btn');
+      if (again) { again.disabled = false; }
+      notifyWorkerCachesChanged();
+      resumeDeferredUpdate();
       return renderWikis().then(renderStorage);
     });
     return plainFetch;
@@ -472,7 +513,8 @@
       var clear = el('clear-btn');
       if (clear) {
         var anySaved = Object.keys(stored).length > 0;
-        if (anySaved && !activeDownload && !activeExport && !exportBusy && !checkBusy) {
+        if (anySaved && !activeDownload && !activeExport && !exportBusy && !checkBusy &&
+            !plainFetch) {
           clear.disabled = false; clear.title = '';
         }
       }
@@ -606,6 +648,12 @@
   function confirmClear() {
     var btn = el('clear-btn');
     if (!btn) { return; }
+    // The button is disabled while anything owns the caches; a press armed
+    // before that began is refused here.
+    if (busyWithWhat()) {
+      if (clearArmed) { disarmClear(btn); }
+      return;
+    }
 
     if (clearArmed) {
       if (Date.now() - clearArmedAt < CONFIRM_DEAD_MS) { return; }
@@ -1003,6 +1051,15 @@
       }
       return Promise.resolve();
     }
+    // The plain-page fallback writes the same caches. An automatic run
+    // says nothing and comes round again.
+    if (plainFetch) {
+      if (out && !quiet) {
+        out.hidden = false;
+        out.textContent = 'The parameter pages are downloading; check again when they finish.';
+      }
+      return Promise.resolve();
+    }
     checkBusy = true;
     var checked = false;   // reached the site and compared; recorded at the end
     // 'behind': updates were found and are not in yet, so nothing is recorded.
@@ -1266,7 +1323,7 @@
       // Re-checked here: an owner can claim the panel in the timer window,
       // narrower than the harness can produce; the flag then waits for it.
       if (!updateDeferred || activeExport || exportBusy ||
-          activeDownload || checkBusy) { return; }
+          activeDownload || checkBusy || plainFetch) { return; }
       updateDeferred = false;
       checkForUpdates(true);
     }, 0);
@@ -1277,9 +1334,12 @@
     if (!link || !global.ArduPilotExport || !selected().length) { return; }
     // One export at a time, over its whole span including the pre-save.
     if (exportBusy) { return; }
-    if (updateWriting) {
+    // Packing reads the caches; neither writer may be rewriting them.
+    if (updateWriting || plainFetch) {
       if (!link.dataset.label) { link.dataset.label = link.textContent; }
-      link.textContent = 'An update is being written; try again in a moment.';
+      link.textContent = plainFetch
+        ? 'The parameter pages are downloading; try again in a moment.'
+        : 'An update is being written; try again in a moment.';
       setTimeout(function () {
         // A later export owns the label by now.
         if (!exportBusy) { link.textContent = link.dataset.label || 'Save as .html'; }
@@ -1494,6 +1554,14 @@
     return null;
   }
 
+  // Only a download and an export have a Cancel to point at.
+  function stillRunning(busy) {
+    var cancellable = busy === 'a download' || busy === 'an export';
+    return 'Still running: ' + busy + (cancellable
+      ? '. Wait for it or cancel it, then turn off.'
+      : '. Wait for it to finish, then turn off.');
+  }
+
   function offerTurnOff() {
     var busy = busyWithWhat();
     if (busy) {
@@ -1501,8 +1569,7 @@
       var out = el('check-result');
       if (out) {
         out.hidden = false;
-        out.textContent = 'Still running: ' + busy +
-          '. Wait for it or cancel it, then turn off.';
+        out.textContent = stillRunning(busy);
       }
       return Promise.resolve();
     }
@@ -1532,8 +1599,7 @@
       var out = el('check-result');
       if (out) {
         out.hidden = false;
-        out.textContent = 'Still running: ' + busy +
-          '. Wait for it or cancel it, then turn off.';
+        out.textContent = stillRunning(busy);
       }
       return Promise.resolve();
     }
