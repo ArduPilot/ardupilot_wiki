@@ -12,12 +12,13 @@ As a reference the diagram below provides a high level view of Copter's architec
     :target: ../_images/copter-architecture.png
     :width: 450px
 
-#. Pick a name for the new mode and add it to the bottom of the control_mode_t enum in `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h#L14>`__ just like "NEW_MODE" has been added below.
+#. Pick a name for the new mode and add it to the ``Mode::Number`` enum in `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h>`__ just like "NEW_MODE" has been added below.
+   Choose an unused number in the current enum; do not change existing mode numbers. The example uses 100, but check that it is still unused in your checkout.
 
    ::
 
     // Auto Pilot Modes enumeration
-    enum class Number {
+    enum class Number : uint8_t {
         STABILIZE =     0,  // manual airframe angle with manual throttle
         ACRO =          1,  // manual body-frame angular rate with manual throttle
         ALT_HOLD =      2,  // manual airframe angle with automatic throttle
@@ -42,18 +43,20 @@ As a reference the diagram below provides a high level view of Copter's architec
         ZIGZAG    =    24,  // ZIGZAG mode is able to fly in a zigzag manner with predefined point A and point B
         SYSTEMID  =    25,  // System ID mode produces automated system identification signals in the controllers
         AUTOROTATE =   26,  // Autonomous autorotation
-        NEW_MODE =     27,  // your new flight mode
+        // Other existing modes omitted from this excerpt.
+        NEW_MODE =    100,  // your new flight mode (check that this number is unused)
     };
 
 #. Define a new class for the mode in `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h>`__.
    It is probably easiest to copy a similar existing mode's class definition and just change the class name (i.e. copy and rename "class ModeStabilize" to "class ModeNewMode").
-   The new class should inherit from the Mode class and implement ``run()``, ``name()`` and ``name4()`` and optionally ``init()``.
+   The new class should inherit from the Mode class and implement ``mode_number()``, ``run()``, ``name()``, ``name4()`` and the required capability methods shown below. Implement ``init()`` if the mode needs initialisation or entry checks.
 
     ::
 
         public:
            // inherit constructor
            using Mode::Mode;
+           Number mode_number() const override { return Number::NEW_MODE; }
            bool init(bool ignore_checks) override;
            void run() override;
 
@@ -63,13 +66,13 @@ As a reference the diagram below provides a high level view of Copter's architec
 
    The ``name()`` and ``name4()`` methods are for logging and display purposes.  ``init()`` will be called when the vehicle first switches into this new mode so it should implement any required initialisation.  ``run()`` will be called at 400hz and should implement any pilot input decoding and then set position and attitude targets (see below).
 
-   There are also some simple methods returning true/false that you may want to override that control features such as whether the vehicle can be armed in the new mode:
+   Implement the following required capability methods to describe whether the mode needs a position estimate, uses manual throttle, allows arming, and controls the vehicle automatically:
 
     ::
 
-        bool requires_GPS() const override { return false; }
+        bool requires_position() const override { return false; }
         bool has_manual_throttle() const override { return true; }
-        bool allows_arming(bool from_gcs) const override { return true; };
+        bool allows_arming(AP_Arming::Method method) const override { return true; }
         bool is_autopilot() const override { return false; }
 
 #. Create a new mode_<new flight mode>.cpp file based on a similar mode such as
@@ -89,8 +92,8 @@ As a reference the diagram below provides a high level view of Copter's architec
                 }
             }
             // initialise waypoint and spline controller
-            wp_nav->wp_and_spline_init();
-            _state = RTL_Starting;
+            wp_nav->wp_and_spline_init_m(speed_ms.get());
+            _state = SubMode::STARTING;
             _state_complete = true; // see run() method below
             terrain_following_allowed = !copter.failsafe.terrain;
             return true;
@@ -104,19 +107,23 @@ As a reference the diagram below provides a high level view of Copter's architec
         void ModeStabilize::run()
         {
             // convert pilot input to lean angles
-            float target_roll, target_pitch;
-            get_pilot_desired_lean_angles(target_roll, target_pitch, copter.aparm.angle_max, copter.aparm.angle_max);
+            float target_roll_rad, target_pitch_rad;
+            get_pilot_desired_lean_angles_rad(target_roll_rad, target_pitch_rad, attitude_control->lean_angle_max_rad(), attitude_control->lean_angle_max_rad());
 
             // get pilot's desired yaw rate
-            float target_yaw_rate = get_pilot_desired_yaw_rate(channel_yaw->get_control_in());
+            float target_yaw_rate_rads = get_pilot_desired_yaw_rate_rads();
 
-            // code that sets motor spool state omitted
+            // motor spool state handling omitted from this excerpt
 
             // call attitude controller
-            attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(target_roll, target_pitch, target_yaw_rate);
+            attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw_rad(target_roll_rad, target_pitch_rad, target_yaw_rate_rads);
 
             // output pilot's throttle
+            // throttle adjustment for the motor spool state omitted
             attitude_control->set_throttle_out(get_pilot_desired_throttle(), true, g.throttle_filt);
+        }
+
+   The attitude inputs in this excerpt are in radians and radians per second. It is not a complete mode implementation: copy the motor spool state and throttle handling from the current source when implementing your mode.
 
 #. Instantiate the new mode class in `Copter.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.h#L894>`__ by searching for "ModeAcro" and then adding the new mode somewhere below.
 
@@ -131,11 +138,11 @@ As a reference the diagram below provides a high level view of Copter's architec
         #endif
         #endif
             ModeAltHold mode_althold;
+            ModeNewMode mode_newmode;
         #if MODE_AUTO_ENABLED == ENABLED
             ModeAuto mode_auto;
         #endif
         #if AUTOTUNE_ENABLED == ENABLED
-            AutoTune autotune;
             ModeAutoTune mode_autotune;
         #endif
 
@@ -149,12 +156,16 @@ As a reference the diagram below provides a high level view of Copter's architec
             Mode *ret = nullptr;
 
             switch (mode) {
-                case ACRO:
+                case Mode::Number::ACRO:
                     ret = &mode_acro;
                     break;
 
-                case STABILIZE:
+                case Mode::Number::STABILIZE:
                     ret = &mode_stabilize;
+                    break;
+
+                case Mode::Number::NEW_MODE:
+                    ret = &mode_newmode;
                     break;
 
 #. Add the new flight mode to the list of valid ``@Values`` for the ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L262>`__ (Search for "FLTMODE1").  Once committed to master, this will cause the new mode to appear in the ground stations list of valid modes.
