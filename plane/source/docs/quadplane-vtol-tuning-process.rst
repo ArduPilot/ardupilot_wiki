@@ -117,16 +117,6 @@ vehicle. These parameters are critical to the tuning process.
 - :ref:`Q_A_RAT_YAW_FLTT <Q_A_RAT_YAW_FLTT>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
 
 
-
-.. image:: ../images/tuning-process-instructions-2.hires.png
-    :target: ../_images/tuning-process-instructions-2.hires.png
-
-.. image:: ../images/tuning-process-instructions-3.hires.png
-    :target: ../_images/tuning-process-instructions-3.hires.png
-
-.. image:: ../images/tuning-process-instructions-4.hires.png
-    :target: ../_images/tuning-process-instructions-4.hires.png
-
 The initial tune of the aircraft should be done **in the aircraft's most agile configuration**. This generally means that the aircraft will be at its minimum take off weight with fully charged batteries.
 
 Step 4: Pilot's preparation for first flight
