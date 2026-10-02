@@ -13,7 +13,7 @@ As a reference the diagram below provides a high level view of Copter's architec
     :width: 450px
 
 #. Pick a name for the new mode and add it to the ``Mode::Number`` enum in `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h>`__ just like "NEW_MODE" has been added below.
-   Choose an unused number in the current enum; do not change existing mode numbers. The example uses 100, but check that it is still unused in your checkout.
+   Choose a number that is neither used nor reserved in the current source; do not change existing mode numbers. The example uses 100, but check that it is still available in your checkout.
 
    ::
 
@@ -43,8 +43,14 @@ As a reference the diagram below provides a high level view of Copter's architec
         ZIGZAG    =    24,  // ZIGZAG mode is able to fly in a zigzag manner with predefined point A and point B
         SYSTEMID  =    25,  // System ID mode produces automated system identification signals in the controllers
         AUTOROTATE =   26,  // Autonomous autorotation
-        // Other existing modes omitted from this excerpt.
-        NEW_MODE =    100,  // your new flight mode (check that this number is unused)
+        AUTO_RTL =     27,  // AUTO returning through a landing sequence
+        TURTLE =       28,  // flip over after crash
+
+        // Mode number 30 reserved for "offboard" for external/Lua control.
+        // Mode number 127 reserved for the "drone show mode" in the Skybrush
+        // fork at https://github.com/skybrush-io/ardupilot
+
+        NEW_MODE =    100,  // your new flight mode (check that this number is available)
     };
 
 #. Define a new class for the mode in `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h>`__.
@@ -96,6 +102,8 @@ As a reference the diagram below provides a high level view of Copter's architec
             _state = SubMode::STARTING;
             _state_complete = true; // see run() method below
             terrain_following_allowed = !copter.failsafe.terrain;
+            // land_repo_active and prec_land_active resets, and the conditional
+            // precland state machine initialisation, omitted from this excerpt
             return true;
         }
 
@@ -125,24 +133,25 @@ As a reference the diagram below provides a high level view of Copter's architec
 
    The attitude inputs in this excerpt are in radians and radians per second. It is not a complete mode implementation: copy the motor spool state and throttle handling from the current source when implementing your mode.
 
-#. Instantiate the new mode class in `Copter.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.h#L894>`__ by searching for "ModeAcro" and then adding the new mode somewhere below.
+#. Instantiate the new mode class in `Copter.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.h>`__ by searching for "ModeAcro" and then adding the new mode somewhere below.
 
    ::
 
-            Mode *flightmode;
-        #if MODE_ACRO_ENABLED == ENABLED
+        #if MODE_ACRO_ENABLED
         #if FRAME_CONFIG == HELI_FRAME
             ModeAcro_Heli mode_acro;
         #else
             ModeAcro mode_acro;
         #endif
         #endif
+        #if MODE_ALTHOLD_ENABLED
             ModeAltHold mode_althold;
+        #endif
             ModeNewMode mode_newmode;
-        #if MODE_AUTO_ENABLED == ENABLED
+        #if MODE_AUTO_ENABLED
             ModeAuto mode_auto;
         #endif
-        #if AUTOTUNE_ENABLED == ENABLED
+        #if AUTOTUNE_ENABLED
             ModeAutoTune mode_autotune;
         #endif
 
@@ -153,38 +162,63 @@ As a reference the diagram below provides a high level view of Copter's architec
         // return the static controller object corresponding to supplied mode
         Mode *Copter::mode_from_mode_num(const Mode::Number mode)
         {
-            Mode *ret = nullptr;
-
             switch (mode) {
+        #if MODE_ACRO_ENABLED
                 case Mode::Number::ACRO:
-                    ret = &mode_acro;
-                    break;
+                    return &mode_acro;
+        #endif
 
                 case Mode::Number::STABILIZE:
-                    ret = &mode_stabilize;
-                    break;
+                    return &mode_stabilize;
 
                 case Mode::Number::NEW_MODE:
-                    ret = &mode_newmode;
-                    break;
+                    return &mode_newmode;
 
-#. Add the new flight mode to the list of valid ``@Values`` for the ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L262>`__ (Search for "FLTMODE1").  Once committed to master, this will cause the new mode to appear in the ground stations list of valid modes.
+                // Other existing mode cases omitted from this excerpt.
+                default:
+                    break;
+            }
+
+            // Existing Lua mode lookup omitted from this excerpt.
+            return nullptr;
+        }
+
+#. Add the new flight mode to the ``modes[]`` array in ``GCS_MAVLINK_Copter::send_available_mode()`` in `GCS_MAVLink_Copter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_MAVLink_Copter.cpp>`__ so it is reported in the MAVLink ``AVAILABLE_MODES`` messages.
+   Also add it to the ``modes[]`` array in ``Copter::get_available_mode_enabled_mask()`` in `mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.cpp>`__ so changes to its selectable state are tracked.
+   Append the following entry to both arrays. Keep the first two AUTO entries in ``send_available_mode()`` in place because they receive special handling for AUTO RTL and AUTO. The enabled-mode mask supports at most 32 entries.
+
+   ::
+
+        &copter.mode_newmode,
+
+   If the mode has a build option, use the same preprocessor condition for its instance, lookup case and entries in both arrays.
+
+#. If users should be able to block selection of the mode from a ground station with ``FLTMODE_GCSBLOCK``, append its number to ``mode_list[]`` in ``Copter::gcs_mode_enabled()`` in `mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.cpp>`__:
+
+   ::
+
+        (uint8_t)Mode::Number::NEW_MODE,
+
+   The array index is the parameter's bit number, not the flight mode number. Preserve the order of existing entries and add the corresponding ``@Bitmask{Copter}`` description for ``FLTMODE_GCSBLOCK`` in `AP_Vehicle.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Vehicle/AP_Vehicle.cpp>`__.
+   GCS blocking prevents ground-station mode changes and marks the mode as not user selectable in ``AVAILABLE_MODES``; RC and failsafe mode changes remain possible.
+
+#. Add the new flight mode to the list of valid ``@Values`` for the ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp>`__ (search for "FLTMODE1"). The current ``FLTMODE2`` through ``FLTMODE6`` definitions inherit the values with ``@CopyFieldsFrom: FLTMODE1``; update any separate values lists in your checkout as well.
    Note that even before being committed to master, a user can setup the new flight mode to be activated from the transmitter's flight mode switch by directly setting the FLTMODE1 (or FLTMODE2, etc) parameters to the number of the new mode.
 
    ::
 
         // @Param: FLTMODE1
         // @DisplayName: Flight Mode 1
-        // @Description: Flight mode when Channel 5 pwm is <= 1230
-        // @Values: 0:Stabilize,1:Acro,2:AltHold,3:Auto,4:Guided,5:Loiter,6:RTL,7:Circle,9:Land,11:Drift,13:Sport,14:Flip,15:AutoTune,16:PosHold,17:Brake,18:Throw,19:Avoid_ADSB,20:Guided_NoGPS,21:Smart_RTL,22:FlowHold,23:Follow,24:ZigZag
+        // @Description: Flight mode when pwm of Flightmode channel(FLTMODE_CH) is <= 1230
+        // @Values: 0:Stabilize,1:Acro,2:AltHold,3:Auto,4:Guided,5:Loiter,6:RTL,7:Circle,9:Land,11:Drift,13:Sport,14:Flip,15:AutoTune,16:PosHold,17:Brake,18:Throw,19:Avoid_ADSB,20:Guided_NoGPS,21:Smart_RTL,22:FlowHold,23:Follow,24:ZigZag,25:SystemID,26:Heli_Autorotate,27:Auto RTL,28:Turtle,100:NewMode
         // @User: Standard
-        GSCALAR(flight_mode1, "FLTMODE1",               FLIGHT_MODE_1),
+        GARRAY(flight_modes, 0, "FLTMODE1", (uint8_t)FLIGHT_MODE_1),
 
         // @Param: FLTMODE2
+        // @CopyFieldsFrom: FLTMODE1
         // @DisplayName: Flight Mode 2
-        // @Description: Flight mode when Channel 5 pwm is >1230, <= 1360
-        // @Values: 0:Stabilize,1:Acro,2:AltHold,3:Auto,4:Guided,5:Loiter,6:RTL,7:Circle,9:Land,11:Drift,13:Sport,14:Flip,15:AutoTune,16:PosHold,17:Brake,18:Throw,19:Avoid_ADSB,20:Guided_NoGPS,21:Smart_RTL,22:FlowHold,23:Follow,24:ZigZag
-        // @User: Standard
-        GSCALAR(flight_mode2, "FLTMODE2",               FLIGHT_MODE_2),
+        // @Description: Flight mode when pwm of Flightmode channel(FLTMODE_CH) is >1230, <= 1360
+        GARRAY(flight_modes, 1, "FLTMODE2", (uint8_t)FLIGHT_MODE_2),
 
-#. Optionally you may wish to add the flight mode to the ``COPTER_MODE`` enum within the `mavlink/ardupilotmega.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml#L1027>`__ because some ground stations may use this to automatically populate the list of available flight modes.
+#. Add the flight mode to the ``COPTER_MODE`` enum within `mavlink/ardupilotmega.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml>`__ if ground-station support requires this definition. Some ground stations use it to interpret the mode number.
+   For a new mode to be accepted into ArduPilot, also prepare PRs for MAVProxy, QGroundControl and Mission Planner so they display the mode and let users select it easily. Updating the firmware and parameter metadata alone does not complete ground-station support.
