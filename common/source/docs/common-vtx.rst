@@ -53,7 +53,7 @@ ImmersionRC Tramp
 Video transmitter settings
 --------------------------
 
-- Set :ref:`VTX_BAND <VTX_BAND>` to modify the VTX band.
+- Set :ref:`VTX_BAND <VTX_BAND>` to modify the VTX band. The bands and their channel frequencies come from the band table, which can be customised (see :ref:`common-vtx-band-table` below).
 - Set :ref:`VTX_CHANNEL <VTX_CHANNEL>` to modify the VTX channel.
 - Set :ref:`VTX_FREQ <VTX_FREQ>` to modify the VTX frequency. Band/channel and frequency are mutually exclusive, if you set band and/or channel then the frequency will be automatically updated. If you set the frequency then the band/channel will be automatically updated. Not all frequencies, channels and bands are supported unless the transmitter is unlocked. Please consult local regulations before doing this. If you select an unsupported frequency then the current frequency will not be changed.
 - Set :ref:`VTX_POWER <VTX_POWER>` to modify the VTX power in mw. Not all transmitters support all power values. In particular in Europe only 25mw is allowed by default. To allow other values the transmitter must be unlocked. If you select a power level that is unsupported by the transmitter then the actual power value will not be changed.
@@ -74,6 +74,38 @@ Video transmitter settings
 ===================================    ==============
 
 .. note:: "unlocking" can be done differently, depending on transmitter brand. Also, using unlocked frequencies/power levels may violate local laws and restrictions. 
+
+.. _common-vtx-band-table:
+
+Custom band table
+-----------------
+
+.. note:: This feature is available in firmware versions 4.8 and later.
+
+The bands and channel frequencies selected by :ref:`VTX_BAND <VTX_BAND>` and :ref:`VTX_CHANNEL <VTX_CHANNEL>` come from a band table of up to 12 bands with 8 channels each. Each band has a name, a single-letter identifier and a frequency per channel, and any channel can be disabled. Selecting a disabled channel has no effect: the transmitter stays on its current frequency. The default table is the standard set of bands (A, B, E, F, R, L, 1G3, X and 3G3), so behaviour is unchanged unless you upload your own table.
+
+A custom table can be used to:
+
+- disable channels that you may not use in your region
+- add a custom band
+- match a video transmitter whose channel plan differs from the standard analog bands
+
+Each band is marked either factory or custom. As in Betaflight, a factory band is selected on SmartAudio and CRSF transmitters by its band and channel number, and the transmitter uses its own built-in frequencies for it, so changing the frequencies of a factory band does not change what those transmitters send. A custom band is always selected by its frequency. To change the frequencies of a band, mark it as custom. IRC Tramp transmitters are always set by frequency.
+
+The table is stored as a single file, ``@VTX/vtxtable.dat``, which is read and written over MAVLink FTP by ground stations and configurators that support it. For example, with MAVProxy:
+
+::
+
+    ftp get @VTX/vtxtable.dat vtxtable.dat
+    ftp put vtxtable.dat @VTX/vtxtable.dat
+
+An uploaded table is checked before it is used, and a damaged or invalid file is rejected, leaving the existing table unchanged. Some tools, including MAVProxy, do not report when a damaged file has been rejected, so download the table again after uploading it to confirm the change. The file format is documented in `README_VTX_TABLE.md <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_VideoTX/README_VTX_TABLE.md>`__ for anyone writing a configurator.
+
+.. note:: A custom table can only be saved on autopilots with 32 KB of parameter storage, which includes most H7-based boards. On these boards the table uses a small part of the storage previously used for missions, reducing the maximum number of mission items from 1306 to 1280 on Copter and from 1312 to 1286 on Plane and Rover. A stored mission larger than the new limit is not loaded after updating the firmware. On autopilots with less storage, which includes most F4-based boards, custom tables are not supported and the default table is always used.
+
+.. note:: The band table applies to SmartAudio, IRC Tramp and CRSF video transmitters. MSP-controlled (digital) video transmitters always receive the band and channel number, so custom bands and disabled channels are not supported with them: use only enabled factory bands.
+
+.. note:: The band table does not include power levels. Video transmitter power levels are set separately using the ``VTX_PWRTBL_EN`` and ``VTX_PWRTBL1`` to ``VTX_PWRTBL6`` parameters, which are available on all boards.
 
 Setting video transmitter settings
 ----------------------------------
