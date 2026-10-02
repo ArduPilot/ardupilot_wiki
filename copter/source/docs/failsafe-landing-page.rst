@@ -23,3 +23,4 @@ The main failsafe topics are listed below.
     Crash Check <crash_check>
     Parachute <common-parachute>
     Independent Watchdog <common-watchdog>
+    Servo Failsafe Positions <common-servo-failsafe>
