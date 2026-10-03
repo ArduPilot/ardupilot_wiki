@@ -46,7 +46,7 @@ Details for tuning :ref:`AltHold are on this wiki page <altholdmode_tuning>`.
 Loiter Parameters
 -----------------
 
-- :ref:`LOIT_OPTIONS <LOIT_OPTIONS>`: Enabling Coordinated Turns enables Loiter mode to automatically include coordinated turn logic. This adjusts the requested roll and pitch accelerations so that the vehicle’s motion matches both the horizontal velocity vector and the commanded yaw rate.
+- :ref:`LOIT_OPTIONS <LOIT_OPTIONS>`: Enabling Coordinated Turns enables Loiter mode to automatically include coordinated turn logic. This adjusts the requested roll and pitch accelerations so that the vehicle’s motion matches both the horizontal velocity vector and the commanded yaw rate. Coordinated Turns are disabled by default (they were enabled by default in earlier 4.7 releases).
 - :ref:`LOIT_SPEED_MS<LOIT_SPEED_MS>`: max horizontal speed in m/s 
 - :ref:`LOIT_ACC_MAX_M<LOIT_ACC_MAX_M>`: max acceleration in m/s/s.  Higher values cause the copter to accelerate and stop more quickly
 - :ref:`LOIT_ANG_MAX <LOIT_ANG_MAX>`: max lean angle in degrees (i.e. 30deg).  By default this value is zero which causes the :ref:`PSC_ANGLE_MAX<PSC_ANGLE_MAX>`  or :ref:`ATC_ANGLE_MAX<ATC_ANGLE_MAX>` parameter's value to be used
