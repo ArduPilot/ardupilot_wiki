@@ -13,7 +13,7 @@ As a reference the diagram below provides a high level view of Copter's architec
     :width: 450px
 
 #. Pick a name for the new mode and add it to the ``Mode::Number`` enum in `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h>`__ just like "NEW_MODE" has been added below.
-   Choose a number that is neither used nor reserved in the current source; do not change existing mode numbers. The example uses 100, but check that it is still available in your checkout.
+   Choose a number that is neither used nor reserved in the current source; do not change existing mode numbers. The example uses 99, but check that it is still available in your checkout and does not collide with any Lua modes you use. Lua modes registered with ``vehicle:register_custom_mode()`` are not listed in this enum. For example, `Flip_Mode.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/Flip_Mode.lua>`__ registers mode 100; assigning that number to a native mode would prevent the script from registering its mode.
 
    ::
 
@@ -28,7 +28,7 @@ As a reference the diagram below provides a high level view of Copter's architec
         RTL =           6,  // automatic return to launching point
         CIRCLE =        7,  // automatic circular flight with automatic throttle
         LAND =          9,  // automatic landing with horizontal position control
-        DRIFT =        11,  // semi-automous position, yaw and throttle control
+        DRIFT =        11,  // semi-autonomous position, yaw and throttle control
         SPORT =        13,  // manual earth-frame angular rate control with manual throttle
         FLIP =         14,  // automatically flip the vehicle on the roll axis
         AUTOTUNE =     15,  // automatically tune the vehicle's roll and pitch gains
@@ -43,14 +43,14 @@ As a reference the diagram below provides a high level view of Copter's architec
         ZIGZAG    =    24,  // ZIGZAG mode is able to fly in a zigzag manner with predefined point A and point B
         SYSTEMID  =    25,  // System ID mode produces automated system identification signals in the controllers
         AUTOROTATE =   26,  // Autonomous autorotation
-        AUTO_RTL =     27,  // AUTO returning through a landing sequence
+        AUTO_RTL =     27,  // Auto RTL, this is not a true mode, AUTO will report as this mode if entered to perform a DO_LAND_START Landing sequence
         TURTLE =       28,  // flip over after crash
 
         // Mode number 30 reserved for "offboard" for external/Lua control.
         // Mode number 127 reserved for the "drone show mode" in the Skybrush
         // fork at https://github.com/skybrush-io/ardupilot
 
-        NEW_MODE =    100,  // your new flight mode (check that this number is available)
+        NEW_MODE =     99,  // your new flight mode (check that this number is available)
     };
 
 #. Define a new class for the mode in `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h>`__.
@@ -194,9 +194,11 @@ As a reference the diagram below provides a high level view of Copter's architec
    If the mode has a build option, use the same preprocessor condition for its instance, lookup case and entries in both arrays.
 
 #. If users should be able to block selection of the mode from a ground station with ``FLTMODE_GCSBLOCK``, append its number to ``mode_list[]`` in ``Copter::gcs_mode_enabled()`` in `mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.cpp>`__:
+   Add a comma after the existing last entry, ``TURTLE``, before appending the new entry. The end of the array should look like this:
 
    ::
 
+        (uint8_t)Mode::Number::TURTLE,
         (uint8_t)Mode::Number::NEW_MODE,
 
    The array index is the parameter's bit number, not the flight mode number. Preserve the order of existing entries and add the corresponding ``@Bitmask{Copter}`` description for ``FLTMODE_GCSBLOCK`` in `AP_Vehicle.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Vehicle/AP_Vehicle.cpp>`__.
@@ -210,7 +212,7 @@ As a reference the diagram below provides a high level view of Copter's architec
         // @Param: FLTMODE1
         // @DisplayName: Flight Mode 1
         // @Description: Flight mode when pwm of Flightmode channel(FLTMODE_CH) is <= 1230
-        // @Values: 0:Stabilize,1:Acro,2:AltHold,3:Auto,4:Guided,5:Loiter,6:RTL,7:Circle,9:Land,11:Drift,13:Sport,14:Flip,15:AutoTune,16:PosHold,17:Brake,18:Throw,19:Avoid_ADSB,20:Guided_NoGPS,21:Smart_RTL,22:FlowHold,23:Follow,24:ZigZag,25:SystemID,26:Heli_Autorotate,27:Auto RTL,28:Turtle,100:NewMode
+        // @Values: 0:Stabilize,1:Acro,2:AltHold,3:Auto,4:Guided,5:Loiter,6:RTL,7:Circle,9:Land,11:Drift,13:Sport,14:Flip,15:AutoTune,16:PosHold,17:Brake,18:Throw,19:Avoid_ADSB,20:Guided_NoGPS,21:Smart_RTL,22:FlowHold,23:Follow,24:ZigZag,25:SystemID,26:Heli_Autorotate,27:Auto RTL,28:Turtle,99:NewMode
         // @User: Standard
         GARRAY(flight_modes, 0, "FLTMODE1", (uint8_t)FLIGHT_MODE_1),
 
