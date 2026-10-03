@@ -28,7 +28,7 @@ Specifications
 
 -  **Sensors**
 
-   -  InvenSense MPU6000 IMU (accel and gyro only, no compass)
+   -  MPU6000, ICM-42688-P, BMI270 or LSM6DSV IMU (accel and gyro only, no compass). LSM6DSV requires firmware 4.8 or later
    -  BMP280 barometer
 
 -  **Power**

@@ -20,7 +20,7 @@ Specifications
 
 -  **Sensors**
 
-   -  V1.1: MPU6000, V1.3: BMI270, V1.5: ICM-42688-P (accel & gyro)
+   -  V1.1: MPU6000, V1.3: BMI270, V1.5: ICM-42688-P or LSM6DSV (accel & gyro). LSM6DSV requires firmware 4.8 or later
    -  BMP280 barometer
 
 -  **Power**
