@@ -24,12 +24,12 @@ The connector is a 6-pin 1.25 mm plug. For I2C, connect these pins to an I2C por
 
 Pins 3 (TX) and 4 (RX) are the UART lines. Leave them unconnected for this driver.
 
-The module's default I2C address is 0x36. Its address can be set from 1 to 127.
+The module's I2C address is 0x36. These pages do not give a command to change it.
 
 Set the following parameters:
 
 - :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 49 (TWTOF240UI). Reboot after setting this.
-- :ref:`RNGFND1_ADDR <RNGFND1_ADDR>` = 0 uses 54 decimal (0x36). If the module address was changed, set this to that address in decimal.
+- :ref:`RNGFND1_ADDR <RNGFND1_ADDR>` = 0 uses 54 decimal (0x36). This does not change the address stored in the module.
 - :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.10
 - :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 2.4
 - :ref:`RNGFND1_GNDCLR <RNGFND1_GNDCLR>` to the distance in metres from the sensor to the ground when the vehicle is landed. This depends on how the sensor is mounted.
