@@ -13,7 +13,7 @@ This is the first release of dedicated firmware for an ArduPilot based Blimp. Wh
 
 The first release is a simple flapping fin Blimp that can be easily constructed and is suitable for indoor use. It is capable of only lifting a few grams besides its own envelope but serves as a good testing and development platform. Follow these instructions to :ref:`build your own <building-a-blimp>`.
 
-It is expected that future development will be done to include the heavier commercially available LTA vehicles or large do-it-yourself version that could lift and utilize electric motors and/or control surfaces and heavier peripherals. Contributors and Partners to this development would be welcomed!
+Blimps driven by four reversible motors (propellers) are also supported, see :ref:`servo-rc-setup`. This allows larger blimps that can carry heavier peripherals. Contributors and Partners to further development would be welcomed!
 
 5 or 6 channel (minimum) RC transmitter and receiver
 ====================================================
