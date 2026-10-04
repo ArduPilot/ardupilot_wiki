@@ -45,6 +45,7 @@ Tutorial steps
     Rover - waypoint navigation <rover-L1>
     Plane - Architecture overview <plane-architecture>
     Plane - Navigation and Altitude Control <plane-navigation-overview>
+    Plane - Adding Custom Controllers <plane-adding-custom-controller>
     Adding a new Log message <code-overview-adding-a-new-log-message>
     Adding a new MAVLink message <code-overview-adding-a-new-mavlink-message>
     Adding a new MAVLink Gimbal <code-overview-adding-support-for-a-new-mavlink-gimbal>
