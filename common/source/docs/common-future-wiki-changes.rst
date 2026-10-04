@@ -51,6 +51,10 @@ New Features
 - Crash dumps are now saved as a full memory dump to APM/CrashDump.DAT on the microSD card on most autopilots with one, instead of a partial dump in internal flash; delete the file to clear the CrashDump pre-arm failure, see https://github.com/ArduPilot/ardupilot_wiki/pull/8097
 - MAVLink cameras keep their own identity when relayed to ground stations, new CAMx_COMPID, MNTx_ATT_RATE and MNTx_TARG_RATE parameters, MAVx_OPTIONS "Unicast" option for camera/gimbal links, and camera/gimbal IDs 7-255 select MAVLink devices by component ID, see https://github.com/ArduPilot/ardupilot_wiki/pull/8099
 - SITL can be built as WebAssembly (``--board wasm``) to run a simulated vehicle in a web browser or Node.js, with serial ports bridged to JavaScript, see https://github.com/ArduPilot/ardupilot_wiki/pull/8103
+- Terrain cache blocks are now allocated individually, so a large TERRAIN_CACHE_SZ no longer needs one contiguous region of free RAM, see https://github.com/ArduPilot/ardupilot_wiki/pull/8128
+- INS_HNTCH_ESCMSK and INS_HNTC2_ESCMSK select which ESCs drive an ESC telemetry harmonic notch, e.g. to give QuadPlane VTOL and forward motors separate notches, see https://github.com/ArduPilot/ardupilot_wiki/pull/8130
+- Home-centered circular inclusion fence (MAV_CMD_NAV_FENCE_HOME_CIRCLE_INCLUSION) that moves with home, see https://github.com/ArduPilot/ardupilot_wiki/pull/8131
+- Servo camera zoom and focus speed for continuous (rate) commands is now set by CAMx_ZOM_RAT_MAX and CAMx_FOC_RAT_MAX, see https://github.com/ArduPilot/ardupilot_wiki/pull/8133
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
@@ -72,8 +76,12 @@ New Features
 [/site]
 [site wiki="rover"]
 - Follow: changing FOLL_SYSID now discards the previous lead vehicle's state, and FOLL_SYSID = 0 no longer adopts the first vehicle seen, see https://github.com/ArduPilot/ardupilot_wiki/pull/8061
+- GUID_TIMEOUT sets how long Guided mode waits for a new velocity, heading, turn rate or steering/throttle command before stopping (previously fixed at 3s), see https://github.com/ArduPilot/ardupilot_wiki/pull/8126
 [/site]
 [site wiki="sub"]
 - Remote (MAVLink) leak detection, see https://github.com/ArduPilot/ardupilot_wiki/pull/7593
 - GUIDED mode accepts an acceleration target alongside position and velocity, see https://github.com/ArduPilot/ardupilot_wiki/pull/8053
+[/site]
+[site wiki="blimp"]
+- Four motor (propeller) blimp frame, AUTO (waypoint) and HOLD modes, LAND now descends while holding position, and Loiter/Velocity parameters moved and renamed under ``LOIT_``, see https://github.com/ArduPilot/ardupilot_wiki/pull/8135
 [/site]
