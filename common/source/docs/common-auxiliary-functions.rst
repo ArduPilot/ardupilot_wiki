@@ -225,6 +225,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        108           | QRTL Mode                  |          |    X    |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
+|        109           | Custom Controller          |    X     |    X    |         |       |
++----------------------+----------------------------+----------+---------+---------+-------+
 |        111           | Loweheiser Starter         |    X     |    X    |    X    |  X    |
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        112           | SwitchExternalAHRS         |    X     |    X    |    X    |  X    |
@@ -538,6 +540,10 @@ Other functions are:
                                          | it can autotune while the vehicle is loitering by using sticks,
                                          | but enabling autotuning can occur in any mode other
                                          | than MANUAL).
+    Custom Controller                    | Switches between the main controller (low) and a custom
+                                         | controller compiled into the firmware (high). Developer
+                                         | feature, see :ref:`Copter custom controller <dev:copter-adding-custom-controller>`
+                                         | and `Plane custom controller <https://ardupilot.org/dev/docs/plane-adding-custom-controller.html>`__.
     Loweheiser Starter                    Enable starter on Loweheiser generator.
     SwitchExternalAHRS                   | If EKF3 and an external AHRS module are enabled, high on this
                                          | switch switches from EKF3 to the external AHRS.
