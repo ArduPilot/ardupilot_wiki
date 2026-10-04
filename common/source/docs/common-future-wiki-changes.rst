@@ -51,6 +51,7 @@ New Features
 - Crash dumps are now saved as a full memory dump to APM/CrashDump.DAT on the microSD card on most autopilots with one, instead of a partial dump in internal flash; delete the file to clear the CrashDump pre-arm failure, see https://github.com/ArduPilot/ardupilot_wiki/pull/8097
 - MAVLink cameras keep their own identity when relayed to ground stations, new CAMx_COMPID, MNTx_ATT_RATE and MNTx_TARG_RATE parameters, MAVx_OPTIONS "Unicast" option for camera/gimbal links, and camera/gimbal IDs 7-255 select MAVLink devices by component ID, see https://github.com/ArduPilot/ardupilot_wiki/pull/8099
 - SITL can be built as WebAssembly (``--board wasm``) to run a simulated vehicle in a web browser or Node.js, with serial ports bridged to JavaScript, see https://github.com/ArduPilot/ardupilot_wiki/pull/8103
+- Terrain cache blocks are now allocated individually, so a large TERRAIN_CACHE_SZ no longer needs one contiguous region of free RAM, see https://github.com/ArduPilot/ardupilot_wiki/pull/8128
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
