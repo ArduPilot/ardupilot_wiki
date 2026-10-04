@@ -27,6 +27,16 @@ Configure the autopilot by setting these parameters:
 - Set :ref:`CAM1_SERVO_OFF<CAM1_SERVO_OFF>` to the pwm value to output when *not* taking a picture (e.g. 1100)
 - Set :ref:`CAM1_DURATION<CAM1_DURATION>` to the time (in seconds) that the pwm value should remain high (e.g 0.1)
 
+Servo zoom and focus control
+============================
+
+A servo camera (:ref:`CAM1_TYPE<CAM1_TYPE>` = 1) can also drive zoom and focus using PWM outputs:
+
+- Set ``SERVOx_FUNCTION`` = 180 (CameraZoom) for the output connected to the camera's zoom input
+- Set ``SERVOx_FUNCTION`` = 92 (CameraFocus) for the output connected to the camera's focus input
+
+The outputs move between that output's ``SERVOx_MIN`` and ``SERVOx_MAX`` in response to zoom and focus commands from the ground station, a mission or an :ref:`RC switch <common-camera-controls>`. Both outputs start at 50% at boot. A range (percentage) command moves the output directly to that position. A continuous (rate) command, such as the "Camera Zoom" and "Manual Focus" RC auxiliary functions, moves the output at a speed set by :ref:`CAM1_ZOM_RAT_MAX<CAM1_ZOM_RAT_MAX>` and :ref:`CAM1_FOC_RAT_MAX<CAM1_FOC_RAT_MAX>`, in percent of full travel per second. The default of 5%/s moves across the full range in 20 seconds. A full-rate command (1 or -1) moves at this maximum speed, and smaller rates move proportionally slower.
+
 Relay control connection and configuration
 ==========================================
 
