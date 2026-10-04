@@ -5,6 +5,8 @@ Adding Custom Attitude Controller to Copter
 ====================================================
 
 Custom controller library allows you to implement and easily run your controller inside ArduPilot in a systematic way. Original-primary-mains means existing controller and custom-secondary means new controller. This library aimed to not interfere with other parts of the main controller or vehicle level code. The controller output is sent to the control allocation library, known as the mixer, the same way the main controller does.
+For Plane, see :ref:`plane-adding-custom-controller`.
+
 The custom controller library has the following features:
 
 Features
