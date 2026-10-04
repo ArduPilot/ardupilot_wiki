@@ -179,7 +179,7 @@ The ``coordinate_frame`` field takes the following values:
 
 .. note::
 
-   If sending velocity commands, they should be re-sent every second (the vehicle will stop after 3 seconds if no command is received)
+   If sending velocity commands, they should be re-sent every second (the vehicle will stop if no command is received within :ref:`GUID_TIMEOUT <rover:GUID_TIMEOUT>` seconds, default 3 seconds)
 
 **Examples**
 
@@ -327,7 +327,7 @@ When providing position or velocity both X and Y axis must be provided.  At leas
 
 .. note::
 
-   If sending velocity commands, they should be re-sent every second (the vehicle will stop after 3 seconds if no command is received)
+   If sending velocity commands, they should be re-sent every second (the vehicle will stop if no command is received within :ref:`GUID_TIMEOUT <rover:GUID_TIMEOUT>` seconds, default 3 seconds)
 
 **Examples**
 

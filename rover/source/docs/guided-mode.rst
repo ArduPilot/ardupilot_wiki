@@ -35,6 +35,7 @@ These additional MAVLink messages are supported in Guided mode.  These are liste
 -  `SET_POSITION_TARGET_LOCAL_NED <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__
 -  `SET_POSITION_TARGET_GLOBAL_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT>`__
 
+Command Timeout
+---------------
 
-
-
+When the vehicle is being controlled using velocity, heading, turn rate, or steering and throttle commands, the :ref:`GUID_TIMEOUT<GUID_TIMEOUT>` parameter holds the timeout (in seconds). If no new command is received within this time, the vehicle will stop and a "target not received last X secs, stopping" message is sent to the ground station. The default is 3 seconds and the minimum is 0.1 seconds. Position targets are not affected by this timeout.
