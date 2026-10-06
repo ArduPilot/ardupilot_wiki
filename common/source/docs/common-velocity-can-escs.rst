@@ -23,7 +23,7 @@ Additionally, the Velocity ESC provides an optional hardware interlock for incre
 Where to Buy
 ------------
 
-Contact `Currawong Engineering <https://www.currawongeng.com/about-us/contact-us/>`__ for purchasing details.
+Contact `Currawong Engineering <https://www.currawongeng.com/contact/>`__ for purchasing details.
 
 DroneCAN Setup
 --------------
