@@ -88,6 +88,8 @@ For a newer AutoPilot with 1M of RAM, the :ref:`TERRAIN_CACHE_SZ<TERRAIN_CACHE_S
 increased to make better use of available memory for caching terrain tiles. The default
 is 12 but a good value on an STM32-H7 processor would be 60 or higher.
 
+Each cache block uses about 1.8KB of RAM, and each block is allocated separately, so a large cache does not need a single contiguous region of free memory. If there is not enough free memory for all of the blocks, "Terrain: Allocation failed" is sent to the ground station and terrain is not available. In that case, reduce :ref:`TERRAIN_CACHE_SZ<TERRAIN_CACHE_SZ>` (or other large memory users, such as :ref:`SCR_HEAP_SIZE<SCR_HEAP_SIZE>`).
+
 If the ground station does not have terrain data available at the resolution requested by the aircraft then the ground station will interpolate as necessary to provide the requested grid size.
 
 Terrain Accuracy
