@@ -11,7 +11,7 @@ ArduPilot is dependent upon several external code repositories which are held in
 
 - `ChibiOS <https://github.com/ChibiOS>`__
 - `DroneCAN <https://github.com/DroneCAN>`__
-- `waf <https://github.com/waf-project/waf>`__
+- `waf <https://gitlab.com/ita1024/waf/>`__
 
 This page describes how we use `git submodules <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`__ in the ArduPilot build.
 
