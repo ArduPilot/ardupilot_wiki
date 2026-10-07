@@ -47,3 +47,14 @@ By default the ESC based harmonic notch will use an average of the individual mo
 
 To configure this option set :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` and/or :ref:`INS_HNTC2_OPTS <INS_HNTC2_OPTS>` to "2". You also need to reduce the bandwidth of the notch filter to around :ref:`INS_HNTCH_FREQ<INS_HNTCH_FREQ>` / number of motors, otherwise you will likely have too high phase lag leading to worse PID performance. See the note above for more details.
 
+Selecting ESCs
+==============
+
+By default, all ESCs reporting telemetry are used to drive the notch. :ref:`INS_HNTCH_ESCMSK <INS_HNTCH_ESCMSK>` and/or :ref:`INS_HNTC2_ESCMSK <INS_HNTC2_ESCMSK>` can be set to a bitmask of the ESCs (by servo output number) that each notch should use. A value of 0 uses all ESCs. This applies to both the averaged and the multi-source notch.
+
+[site wiki="plane"]
+This is useful on QuadPlanes where both the VTOL motors and the forward motor(s) report ESC telemetry. Without a mask, the forward motor is included in the VTOL motor average (or gets its own notch with the same settings when using multi-source). Instead, one notch can be set to the VTOL motors and the second notch to the forward motor(s), each with its own frequency and bandwidth settings. For example, with VTOL motors on outputs 5-8 and the forward motor on output 3:
+
+- :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 3 and :ref:`INS_HNTCH_ESCMSK <INS_HNTCH_ESCMSK>` = 240 (ESCs 5, 6, 7 and 8)
+- :ref:`INS_HNTC2_ENABLE <INS_HNTC2_ENABLE>` = 1, :ref:`INS_HNTC2_MODE <INS_HNTC2_MODE>` = 3 and :ref:`INS_HNTC2_ESCMSK <INS_HNTC2_ESCMSK>` = 4 (ESC 3)
+[/site]
