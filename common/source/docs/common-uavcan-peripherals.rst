@@ -41,6 +41,8 @@ GPS/Combos
     mRo GPS, GPS+Compass,RTK, and DroneCAN modules <https://store.mrobotics.io/category-s/109.htm>
     mRo Location One GPS GPS+Compass+LED+Safety Switch <common-mrobotics-location-one-gps>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
+    YARI DroneCAN M9N <https://yarirobotics.com/product/yari-m9n-gnss/>
+    YARI DroneCAN F10N <https://yarirobotics.com/product/yari-f10n-gnss/>
     Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
 
 Adapter Nodes
