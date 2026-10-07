@@ -61,8 +61,8 @@ Dual Antenna Yaw Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * :ref:`EK3_SRC1_YAW<EK3_SRC1_YAW>` = 2 (GPS) or 3 (GPS with Compass fallback)
-* :ref:`GPS_POS1_X<GPS_POS1_X>`, :ref:`GPS_POS1_Y<GPS_POS1_Y>`, :ref:`GPS_POS1_Z<GPS_POS1_Z>`: Set offset relative to CG for ANTm (Moving Base).
-* :ref:`GPS_POS2_X<GPS_POS2_X>`, :ref:`GPS_POS2_Y<GPS_POS2_Y>`, :ref:`GPS_POS2_Z<GPS_POS2_Z>`: Set offset relative to CG for ANTr (Rover).
+* :ref:`GPS_POS1_X <gps_pos1_x>`, :ref:`GPS_POS1_Y <gps_pos1_y>`, :ref:`GPS_POS1_Z <gps_pos1_z>`: Set offset relative to CG for ANTm (Moving Base).
+* :ref:`GPS_POS2_X <gps_pos2_x>`, :ref:`GPS_POS2_Y <gps_pos2_y>`, :ref:`GPS_POS2_Z <gps_pos2_z>`: Set offset relative to CG for ANTr (Rover).
 
 Where to Buy
 ------------
