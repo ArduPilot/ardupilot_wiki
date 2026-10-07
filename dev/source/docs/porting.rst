@@ -56,6 +56,12 @@ Step 2 - create a hwdef.dat and hwdef-bl.dat files for the board
 
 .. tip:: The `scripts directory <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/scripts>`__ contains pin function assignments for the ArduPilot supported microprocessors for reference.
 
+.. warning:: Avoid routing servo/motor outputs through the STM32 JTAG pins PA15 (JTDI) or PB4 (NJTRST). The MCU turns on an internal pull-up on these pins at every reset and at power-on. When the bootloader releases the pull-up, a servo on that output sees a short, valid-looking pulse (about 500-700us) and moves to match it during boot. For a new design, use a different pin, or add an external pull-down resistor on the line. For an existing design, add the ``HOLD_HIGH`` keyword to that pin's ``PWM(n)`` line in hwdef.dat, for example ``PA15 TIM2_CH1 TIM2 PWM(1) GPIO(50) HOLD_HIGH``. Also declare the pin as ``INPUT PULLUP`` in hwdef-bl.dat, for example ``PA15 PWM1_HOLD INPUT PULLUP``. Both are needed, or the pull-up is still released during boot. This keeps the line high continuously until the channel's first real output, so the servo never sees a pulse it can decode. Notes:
+
+   - The output stays high until that channel is first given a value. On a board with a safety switch this can be minutes (until safety is disarmed), and a channel that is never given a value stays high indefinitely. Check that the actual servo or ESC ignores a continuous high instead of driving to an endpoint.
+   - It gives no protection if that pin's timer group has bi-directional DShot enabled at runtime.
+   - ``HOLD_HIGH`` can only be used on a ``PWM(n)`` timer output. It is not supported on STM32F1.
+
 .. _build_firmware:
 
 Step 3 - Build the firmware

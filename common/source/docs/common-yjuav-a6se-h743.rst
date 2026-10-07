@@ -281,6 +281,8 @@ The 11 PWM outputs are in 3 groups:
 Channels 1-8 support bi-directional Dshot.
 Channels within the same group need to use the same output rate. If any channel in a group uses DShot, then all channels in that group need to use DShot.
 
+.. note:: PWM1 uses a JTAG pin, which the MCU pulls high at reset. To stop a servo on PWM1 from moving during boot, firmware 4.8 and later holds this output high from power-on or reboot until it is first given a value. While the safety switch is engaged (if that output is not in :ref:`BRD_SAFETY_MASK<BRD_SAFETY_MASK>`), the output stays high instead of low. Make sure the device connected to PWM1 ignores a continuous high signal. If bi-directional DShot is enabled on group1, this protection does not apply.
+
 GPIOs
 =====
 All 11 PWM channels can be used for GPIO functions (relays, buttons, RPM etc).
