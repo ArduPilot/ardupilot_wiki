@@ -21,9 +21,9 @@ Copters from Partners
 * `Bask Aerospace - AeroDrone MR4 <https://baskaerospace.com.au/products/aerodrone/mr4/>`__
 * `CUAV - Xunwing X4 <https://store.cuav.net/shop/xunwing-x4/>`__
 * `NWBlue Hexsoon EDU450/EDU650 <https://nwblue.com/collections/vendors?q=hexsoon>`__
-* `Holybro - S500 V2 Kit <https://holybro.com/collections/s500>`__
-* `Holybro - X500 Kit <https://holybro.com/products/px4-development-kit-x500-v2>`__
-* `Holybro - X650 Kit <https://holybro.com/collections/x650-kits/products/x650-development-kit>`__
+* `Holybro - S500 V2 Kit <https://holybro.com/products/s500-v2-kit>`__
+* `Holybro - X500 Kit <https://holybro.com/products/x500-v2-kits>`__
+* `Holybro - X650 Kit <https://holybro.com/products/x650-development-kit>`__
 * `Raefly - Xunwing 2 <https://raefly.com>`__
 * `TT Robotix - H2-X6 Phoenix H6 Multirotor <https://www.ttrobotix.com/products/detail/926.html>`__
 * `TT Robotix - X-450 Scout Quadcopter <https://www.ttrobotix.com/products/detail/928.html>`__
@@ -46,6 +46,7 @@ Planes from Partners
 
 * `Dual RC - Elanus Duo <https://www.dualrc.com/elanus-duo/p/rtf/>`__
 * `Event38 - e384 <https://event38.com/fixed-wing/e384-mapping-drone/>`__
+* `MakeFLyEasy - Believer <https://en.makeflyeasy.com/index.php/believer/>`__
 * :ref:`MakeFLyEasy - Fighter <common-makeflyeasy-fighter-hand-throw>`
 * :ref:`MakeFLyEasy - Striver Mini <common-makeflyeasy-striver-mini-hand-throw>`
 * :ref:`MakeFLyEasy - Striver Mini Hand Throw <common-makeflyeasy-striver-mini-hand-throw>`
@@ -54,12 +55,12 @@ Planes from Partners
 VTOL/QuadPlanes from Partners
 =============================
 
-* `ARACE Phoenix QuadPlane <https://araceuas.com/phoenix/>`__
+* `ARACE ROC Pro QuadPlane <https://araceuas.com/roc-pro/>`__
 * `ARACE Griffin Pro QuadPlane <https://araceuas.com/griffin-pro/>`__
 * `Event38 - E400 <https://event38.com/fixed-wing/e400-vtol-drone/>`__
 * `Event38 - E455 <https://event38.com/fixed-wing/e455-vtol-drone/>`__
 * :ref:`Holybro Swan-K1 <common-Swan-K1>`
-* `MakeFLyEasy - Freeman 2100 <https://www.uavmodel.com/products/makeflyeasy-striver-mini-4-1-4-2-2100mm-vtol-uav?variant=41656322654362>`__
+* `MakeFLyEasy - Freeman 2100 <https://www.uavmodel.com/products/makeflyeasy-freeman-4-1-mini-2100mm-uav-vtol>`__
 * `MakeFLyEasy - Freeman 2300 <https://www.uavmodel.com/products/makeflyeasy-freeman-4-1-2300mm-uav-vtol>`__
 * :ref:`MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>`
 * :ref:`MakeFLyEasy - Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>`
