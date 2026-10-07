@@ -10,7 +10,7 @@ Mateksys H743-Wing/SLIM/MINI/WLITE
 
 the above image and some content courtesy of `mateksys.com <http://www.mateksys.com/>`__
 
-.. note:: Only the WING version is shown above. All versions use the same firmware, but have varying configurations for pinouts and resources available. See Matek's site for exact details for every variant. 
+.. note:: Only the WING version is shown above. All versions use the same firmware, but have varying configurations for pinouts and resources available. See Matek's site for exact details for every variant. Note that while the H743-WING remains in production, the SLIM, MINI, and WLITE variants are discontinued by the manufacturer, though distributor stock is still widely available.
 
 Specifications
 ==============
@@ -117,7 +117,7 @@ All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and nor
 Where to Buy
 ============
 
-- see this list of `Mateksys Distributors <http://www.mateksys.com/?page_id=1212>`__
+- see this list of `Mateksys Distributors <http://www.mateksys.com/?page_id=1212>`__. Note that the SLIM, MINI, and WLITE variants are discontinued by the manufacturer, but remaining stock is still available from many retailers.
 
 Connecting a GPS/Compass module
 ===============================
