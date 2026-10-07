@@ -29,6 +29,7 @@ Script_Controller.lua                       Allows selection of multiple scripts
 SmartAudio.lua                              Smart Audio control
 UniversalAutoLand.lua                       Allow easy, unpre-planned operation at any location with the protection of a do-land-start autoland sequence
 VTOL-quicktune.lua                          VTOL-quicktuning applet
+actuator_chirp.lua                          Drives a servo or ESC output with a frequency sweep to measure its bandwidth
 advance-wp.lua                              Advance the current mission waypoint via an RC switch
 ahrs-set-origin.lua                         Sets the AHRS/EKF origin to a specified Location
 ahrs-source-extnav-optflow.lua              Help vehicles automatically switch between ExternalNav and optical flow
