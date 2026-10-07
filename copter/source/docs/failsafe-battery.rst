@@ -32,7 +32,7 @@ When the failsafe is triggered:
 Then one of the following will happen:
 
 -  **Nothing** if the vehicle is already disarmed or executing RTL or Land
--  **Disarm motors** if the vehicle is in Stabilize or Acro mode and the throttle is at zero OR the vehicle is landed
+-  **Disarm motors** if the vehicle is in Stabilize or Acro mode and the throttle is at zero OR the vehicle is landed. In firmware 4.8 and later, this does not happen if the failsafe action (:ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` or :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>`) is set to 0 (Warn Only). The vehicle then stays armed, so, for example, a vehicle that was force-armed with a low battery is not immediately disarmed.
 -  The user configurable action held in the :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` parameter
 
   - **0** : Warn Only - no action will be taken
