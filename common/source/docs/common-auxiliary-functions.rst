@@ -458,7 +458,10 @@ Other functions are:
     Winch Control                        | Controls the speed and direction of the winch. Low: takeup,
                                          | Middle: stop, High: unreel.
     RC Override Enable                   | This is a 3-position switch that enables (high) or disables (low)
-                                         | the use of RC overrides from the Ground Control Station.
+                                         | the use of RC overrides from the Ground Control Station. Instead
+                                         | of using this switch to disable overrides, :ref:`RC_OPTIONS<RC_OPTIONS>`
+                                         | bit 14 can be set to automatically clear overrides whenever the
+                                         | pilot moves the RC sticks, see :ref:`common_rc_options`.
     Learn Cruise                         | This starts the cruise speed and the throttle learning sequence
                                          | on Rover when switched to high. See :ref:`rover-tuning-throttle-and-speed`.
     Clear Waypoints                       Clears currently loaded mission waypoints.
