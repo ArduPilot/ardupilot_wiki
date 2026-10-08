@@ -25,7 +25,6 @@ they are marked with **(Partner)** below. You may also want to check the list of
 * `DATAGNSS <https://www.datagnss.com>`__
 * `DH Research <https://dh-research.com/>`__ (Partner)
 * `Emlid <https://store.emlid.com/>`__
-* `EAMS Robotics <https://store.shopping.yahoo.co.jp/elab-store/>`__ (Partner)
 * `Event38 <https://event38.com/shop/>`__ (Partner)
 * `Foxtech <https://www.foxtechfpv.com>`__ (Partner)
 * `GNSS.store <https://gnss.store/>`__
