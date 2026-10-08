@@ -157,7 +157,9 @@ As a reference the diagram below provides a high level view of Copter's architec
                     ret = &mode_stabilize;
                     break;
 
-#. Add the new flight mode to the list of valid ``@Values`` for the ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L262>`__ (Search for "FLTMODE1").  Once committed to master, this will cause the new mode to appear in the ground stations list of valid modes.
+#. Add the new mode to the ``modes[]`` list in ``GCS_MAVLINK_Copter::send_available_mode()`` in `GCS_MAVLink_Copter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_MAVLink_Copter.cpp>`__ (wrapped in the same ``#if`` as the mode if it can be compiled out) so that ground stations which use the ``AVAILABLE_MODES`` message list it. Also add it to the matching list in ``Copter::get_available_mode_enabled_mask()`` in `mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.cpp>`__. The mode is still listed without this, but if it overrides ``enabled()`` or is blocked with :ref:`FLTMODE_GCSBLOCK<copter:FLTMODE_GCSBLOCK>`, a change in whether it can be selected will not be announced to the ground station.
+
+#. Add the new flight mode to the list of valid ``@Values`` for the ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L262>`__ (Search for "FLTMODE1").  Once committed to master, this will cause the new mode to appear in the list of valid values for these parameters in ground stations that use the parameter metadata.
    Note that even before being committed to master, a user can setup the new flight mode to be activated from the transmitter's flight mode switch by directly setting the FLTMODE1 (or FLTMODE2, etc) parameters to the number of the new mode.
 
    ::
@@ -176,4 +178,6 @@ As a reference the diagram below provides a high level view of Copter's architec
         // @User: Standard
         GSCALAR(flight_mode2, "FLTMODE2",               FLIGHT_MODE_2),
 
-#. Optionally you may wish to add the flight mode to the ``COPTER_MODE`` enum within the `mavlink/ardupilotmega.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml#L1027>`__ because some ground stations may use this to automatically populate the list of available flight modes.
+#. Add the new mode to the ``COPTER_MODE`` enum in `mavlink/ardupilotmega.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml>`__ and submit a PR to `pymavlink <https://github.com/ArduPilot/pymavlink>`__ adding it to the ``mode_mapping_acm`` table in `mavutil.py <https://github.com/ArduPilot/pymavlink/blob/master/mavutil.py>`__. MAVProxy does not use the ``AVAILABLE_MODES`` message and takes its mode names from this table, so the new mode will appear as unknown in MAVProxy until it is updated.
+
+   `QGroundControl <https://github.com/mavlink/qgroundcontrol>`__ requests the list of modes from the vehicle with ``AVAILABLE_MODES``, so it shows the new mode by name once it has been added to ``send_available_mode()`` as above. Its hard-coded list of Copter modes in ``ArduCopterFirmwarePlugin`` is only a fallback for older firmware, so adding the new mode there is optional. Mission Planner takes its list of modes from the ``FLTMODE1`` parameter metadata, so it needs no changes beyond the ``@Values`` update above.

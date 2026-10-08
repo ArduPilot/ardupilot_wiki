@@ -44,6 +44,7 @@ Tutorial steps
     Rover - Adding a new drive mode <rover-adding-a-new-drive-mode>
     Rover - waypoint navigation <rover-L1>
     Plane - Architecture overview <plane-architecture>
+    Plane - Adding a new flight mode <plane-adding-a-new-flight-mode>
     Plane - Navigation and Altitude Control <plane-navigation-overview>
     Plane - Adding Custom Controllers <plane-adding-custom-controller>
     Adding a new Log message <code-overview-adding-a-new-log-message>

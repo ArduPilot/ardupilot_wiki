@@ -139,7 +139,9 @@ As a reference the diagram below provides a high level view of Rover's architect
                 ret = &mode_steering;
                 break;
 
-#. Add the new flight mode to the list of valid ``@Values`` for the ``MODE1 ~ MODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/Parameters.cpp#L242>`__ (Search for "MODE1").  Once committed to master, this will cause the new mode to appear in the ground stations list of valid modes.  Note that even before being committed to master, a user can setup the new flight mode to be activated from the transmitter's flight mode switch by directly setting the MODE1 (or MODE2, etc) parameters to the number of the new mode.
+#. Add the new mode to the ``modes[]`` list in ``GCS_MAVLINK_Rover::send_available_mode()`` in `GCS_MAVLink_Rover.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/GCS_MAVLink_Rover.cpp>`__ (wrapped in the same ``#if`` as the mode if it can be compiled out) so that ground stations which use the ``AVAILABLE_MODES`` message list it. Also add it to the matching list in ``Rover::get_available_mode_enabled_mask()`` in `system.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/system.cpp>`__. The mode is still listed without this, but if it overrides ``enabled()`` or is blocked with :ref:`FLTMODE_GCSBLOCK<rover:FLTMODE_GCSBLOCK>`, a change in whether it can be selected will not be announced to the ground station.
+
+#. Add the new flight mode to the list of valid ``@Values`` for the ``MODE1 ~ MODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/Parameters.cpp#L242>`__ (Search for "MODE1").  Once committed to master, this will cause the new mode to appear in the list of valid values for these parameters in ground stations that use the parameter metadata.  Note that even before being committed to master, a user can setup the new flight mode to be activated from the transmitter's flight mode switch by directly setting the MODE1 (or MODE2, etc) parameters to the number of the new mode.
 
    ::
 
@@ -156,6 +158,10 @@ As a reference the diagram below provides a high level view of Rover's architect
         // @Values: 0:Manual,1:Acro,3:Steering,4:Hold,10:Auto,11:RTL,15:Guided
         // @User: Standard
         GSCALAR(mode2, "MODE2", MANUAL),
+
+#. Add the new mode to the ``ROVER_MODE`` enum in `mavlink/ardupilotmega.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml>`__ and submit a PR to `pymavlink <https://github.com/ArduPilot/pymavlink>`__ adding it to the ``mode_mapping_rover`` table in `mavutil.py <https://github.com/ArduPilot/pymavlink/blob/master/mavutil.py>`__. MAVProxy does not use the ``AVAILABLE_MODES`` message and takes its mode names from this table, so the new mode will appear as unknown in MAVProxy until it is updated.
+
+   `QGroundControl <https://github.com/mavlink/qgroundcontrol>`__ requests the list of modes from the vehicle with ``AVAILABLE_MODES``, so it shows the new mode by name once it has been added to ``send_available_mode()`` as above. Its hard-coded list of Rover modes in ``ArduRoverFirmwarePlugin`` is only a fallback for older firmware, so adding the new mode there is optional. Mission Planner takes its list of modes from the ``MODE1`` parameter metadata, so it needs no changes beyond the ``@Values`` update above.
 
 **As a side note, Rover has 3 high level controllers:**
 
