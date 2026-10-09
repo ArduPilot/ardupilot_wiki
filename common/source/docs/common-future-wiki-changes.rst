@@ -55,6 +55,7 @@ New Features
 - INS_HNTCH_ESCMSK and INS_HNTC2_ESCMSK select which ESCs drive an ESC telemetry harmonic notch, e.g. to give QuadPlane VTOL and forward motors separate notches, see https://github.com/ArduPilot/ardupilot_wiki/pull/8130
 - Home-centered circular inclusion fence (MAV_CMD_NAV_FENCE_HOME_CIRCLE_INCLUSION) that moves with home, see https://github.com/ArduPilot/ardupilot_wiki/pull/8131
 - Servo camera zoom and focus speed for continuous (rate) commands is now set by CAMx_ZOM_RAT_MAX and CAMx_FOC_RAT_MAX, see https://github.com/ArduPilot/ardupilot_wiki/pull/8133
+- MAVLink 2.1 32-bit system IDs: MAV_SYSID, MAV_GCS_SYSID(_HI), FOLL_SYSID and MNTx_SYSID_DFLT accept values up to 4294967295, and SD-card Lua MAVLink modules must be updated, see https://github.com/ArduPilot/ardupilot_wiki/pull/8149
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
