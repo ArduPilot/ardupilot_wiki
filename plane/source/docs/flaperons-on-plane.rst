@@ -23,7 +23,7 @@ another.
 Flaperons are the classic example of a setup where input and output
 channels do not map directly.  The autopilot will use the input from
 the aileron (rc channel 1, by default) AND the input from the flap channel
-(set by RCx_OPTION =208 for channel x in firmware versions 4.1 and later, or ``FLAP_IN_CH`` in perevious versions) and "mix" them to calculate
+(set by RCx_OPTION = 208 for channel x) and "mix" them to calculate
 how the flaperons on the plane should move. The result is sent out to
 each flaperon OUTPUT channel (channels 5 and 6 in the example below).
 
@@ -38,7 +38,7 @@ Flaperon setup
       the flaps. You can configure any unused input channel for this
       however we are going to use servo output channel 5.  Configure your transmitter to
       use Channel 5 for flaps and
-      set ``FLAP_IN_CHANNEL`` to 5 or :ref:`RC5_OPTION<RC5_OPTION>` = 208 (firmware 4.1 or later).
+      set :ref:`RC5_OPTION<RC5_OPTION>` = 208.
    -  Move your ailerons to 2 spare output channels on the autopilot
       that you aren't using.  In this example we are using outputs 5
       and 6.
