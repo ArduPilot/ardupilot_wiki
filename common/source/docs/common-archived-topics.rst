@@ -81,6 +81,7 @@ value to users with old hardware.
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
     ArduRoller Balance Bot <reference-frames-arduroller>
     Learning Mode (removed in 3.2) <learning-mode>
+    Tuning Navigation (4.2 and lower) <rover-tuning-navigation-420>
 [/site]
 
 [site wiki="plane"]
