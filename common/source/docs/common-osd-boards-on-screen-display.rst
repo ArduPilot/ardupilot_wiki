@@ -22,7 +22,7 @@ Digital Video OSD
 .. toctree::
     :maxdepth: 1
 
-    MSP OSD (version 4.2 and later) <common-msp-osd-overview-4.2>
+    MSP OSD <common-msp-osd-overview-4.2>
     DisplayPort OSD <common-displayport>
     MSP Telemetry Overview <common-msp-overview-4.2>
 
