@@ -123,7 +123,7 @@ If you need to set up NEO 3 pro or upgrade its firmware, you need to enable SLCA
 
 .. note::
 
-    ArduPilot 4.0 or later firmware supports SLCAN.
+    ArduPilot supports SLCAN.
 
 - Please connect NEO 3 pro to the autopilot's CAN1 interface.
 - Open mission planner and connect autopilot.
