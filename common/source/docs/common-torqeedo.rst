@@ -6,7 +6,7 @@ Torqeedo Electric Motors
 
 .. image:: ../../../images/torqeedo.jpg
 
-Rover-4.2.0 (and higher) supports controlling a single `Torqeedo Travel <https://www.torqeedo.com/en/products/outboards/travel>`__, `Ultralight <https://www.torqeedo.com/en/products/outboards/ultralight>`__ or `Cruise <https://www.torqeedo.com/en/products/outboards/cruise>`__ motor using its custom RS485 protocol.
+Rover supports controlling a single `Torqeedo Travel <https://www.torqeedo.com/en/products/outboards/travel>`__, `Ultralight <https://www.torqeedo.com/en/products/outboards/ultralight>`__ or `Cruise <https://www.torqeedo.com/en/products/outboards/cruise>`__ motor using its custom RS485 protocol.
 
 Rover-4.7 (and higher) supports controlling single or dual Torqeedo motors that use ``TorqLink`` CAN protocol for motor control.
 

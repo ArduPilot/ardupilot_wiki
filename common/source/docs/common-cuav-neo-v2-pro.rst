@@ -9,10 +9,6 @@ NEO V2 pro is DroneCAN standard GPS developed by CUAV. It integrates industrial-
 .. image:: ../../../images/cuav-neo-v2-pro/neo-v2-pro.png
     :target: ../_images/neo-v2-pro.png
 
-.. note::
-
-     NEO V2 pro is supported in ArduPilot 4.0 firmware (and higher).
-
 Key Features
 ============
 
@@ -118,7 +114,7 @@ If you need to set up NEO V2 PRO or upgrade its firmware, you need to enable SLC
 
 .. note::
 
-    ArduPilot 4.0 or later firmware supports SLCAN.
+    ArduPilot supports SLCAN.
 
 - Please connect NEO V2 pro to the autopilot's CAN1 interface.
 - Open mission planner and connect autopilot.

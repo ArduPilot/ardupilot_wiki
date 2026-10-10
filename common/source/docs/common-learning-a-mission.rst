@@ -13,7 +13,7 @@ Missions can be created by flying (Copter) or driving (Rover) the vehicle around
 Setup
 =====
 
-- set the :ref:`Auxiliary Function Switch <common-auxiliary-functions>` to "Save Waypoint" by setting and RCx_OPTION for a channel to 7. (Prior to version 4.0, CH7_OPTION was used)
+- set the :ref:`Auxiliary Function Switch <common-auxiliary-functions>` to "Save Waypoint" by setting and RCx_OPTION for a channel to 7.
 - wait for a good position estimate (i.e. LED will turn green)
 - arm and drive/fly the vehicle around in any mode except Auto.
 - when the vehicle is at a position that you would like to record as a waypoint, toggle the auxiliary function switch high (and then return to low). That position and alt.itude will be added as a waypoint to the end of any existing mission list (including an initially blank list)

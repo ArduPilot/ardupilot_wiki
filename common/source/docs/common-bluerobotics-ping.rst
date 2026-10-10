@@ -8,7 +8,7 @@ The `Blue Robotics Underwater Sonar <https://bluerobotics.com/store/sensors-sona
 
 .. note::
 
-   Rover-4.1.0 (and higher) require the Ping sensor be running firmware version 3.28 (or higher).  See below for how to upgrade the Ping's firmware.
+   ArduPilot requires the Ping sensor to be running firmware 3.28 or higher.  See below for how to upgrade the Ping's firmware.
 
 Where to Buy
 ------------

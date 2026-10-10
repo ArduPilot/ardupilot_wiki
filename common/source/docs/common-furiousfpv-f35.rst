@@ -11,7 +11,7 @@ Furious FPV F-35 Lightning and Wing FC10
 
 .. note::
 
-   Support for the FuriousFPV and WingFC10 were released with Copter-3.6.1.  These boards use the same firmware.
+   The FuriousFPV and WingFC10 use the same firmware.
 
 Specifications
 ==============

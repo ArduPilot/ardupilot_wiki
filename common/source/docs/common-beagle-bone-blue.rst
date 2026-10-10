@@ -7,10 +7,6 @@ BeagleBone Blue
 `BeagleBone Blue <https://beagleboard.org/blue>`__ (BBBlue) is a complete, Linux-enabled robotics computer.
 Community-supported and fully open-source, the real-time performance, flexible networking and rich set of robotics-oriented peripherals make building mobile robots quick and affordable.
 
-.. note::
-
-   Copter support was added in Copter-3.5.
-
 .. image:: ../../../images/beagle-bone-blue-annotated.png
     :target: ../_images/beagle-bone-blue-annotated.png
     :width: 800 px
@@ -281,12 +277,12 @@ Install Ubuntu 20.04 64-Bit as build machine (e.g. can be VM or github action).
     git clone --recurse-submodules https://github.com/ardupilot/ardupilot.git
     cd ardupilot
 
-use either the stable tag ``ArduPlane-stable`` or the current Plane branch ``Plane-4.1`` (in the moment both refer to Plane-4.1.6) - make sure to use a ``stable`` version
+check out the stable tag ``ArduPlane-stable`` - make sure to use a ``stable`` version
 
 .. code-block:: bash
 
     ./Tools/environment_install/install-prereqs-ubuntu.sh
-    git checkout Plane-4.1
+    git checkout ArduPlane-stable
 
 .. code-block:: bash
 
@@ -608,8 +604,8 @@ The ``current`` config should look like this (Use diffchecker or similar tool):
     dmesg | grep gpio-of-helper
     END
 
-Video of BBBlue flying Copter-3.5
-==========================================
+Video of BBBlue flying Copter
+=============================
 
 ..  youtube:: v2xWtlyYrtE
     :width: 100%

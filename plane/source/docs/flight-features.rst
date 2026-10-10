@@ -19,7 +19,6 @@ a full set of features see the :doc:`full parameter list <parameters>` and the `
     Geo-Fencing in Plane <common-geofencing-landing-page>
     Terrain Following <common-terrain-following>
     Soaring <soaring-4_1>
-    Automated Aerobatics (prior to 4.4)<common-scripting-aerobatics>
-    Automated Aerobatics (4.4 and later) <common-scripted-aerobatics-4.4>
+    Automated Aerobatics <common-scripted-aerobatics-4.4>
     Moving Vehicle/Ship Takeoff/Landing <common-ship-landing>
     High Altitude Glider Drop Pullup <glider-pullup>

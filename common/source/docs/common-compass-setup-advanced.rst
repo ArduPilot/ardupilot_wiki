@@ -156,7 +156,7 @@ Automatic Offset Calibration
 
 .. warning:: DO NOT USE THIS WITH GPS-DERIVED YAW! ie :ref:`common-gps-for-yaw` in  firmware versions before 4.5.2!
 
-In the 4.0 and later releases of ArduPilot, an automatic offset learning feature is available. The :ref:`COMPASS_LEARN<COMPASS_LEARN>` parameter determines how this feature works. This is for advanced users and not recommended.
+An automatic offset learning feature is available. The :ref:`COMPASS_LEARN<COMPASS_LEARN>` parameter determines how this feature works. This is for advanced users and not recommended.
 
 - If set to 3, the offsets will be learned automatically during flight, be saved, and this parameter reset to 0. Position control modes (Loiter, Auto, etc.) should not be used while the offsets are being learned.
 

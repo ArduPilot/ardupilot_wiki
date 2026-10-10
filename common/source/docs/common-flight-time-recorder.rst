@@ -23,7 +23,7 @@ Parameter Details
 When will counters be reset?
 ============================
 
-The STAT parameters will not be cleared when upgrading/downgrading firmware versions of a particular vehicle type (i.e. upgrading from Copter-3.4 to 3.5 will not clear the parameters).
+The STAT parameters will not be cleared when upgrading/downgrading firmware versions of a particular vehicle type (i.e. upgrading from Copter-4.5 to 4.6 will not clear the parameters).
 
 The parameters are not protected meaning they can be changed by the user.  In addition they may be reset when:
 

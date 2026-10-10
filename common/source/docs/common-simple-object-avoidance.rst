@@ -86,8 +86,8 @@ Example setup below shown for first proximity sensor:
 
 
 
-Advanced Configuration for Simple Avoidance (Copter/Rover 4.1 and above)
-========================================================================
+Advanced Configuration for Simple Avoidance
+===========================================
 
 Backing away from obstacles
 ---------------------------

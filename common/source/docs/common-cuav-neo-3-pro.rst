@@ -9,10 +9,6 @@ NEO 3 pro is DroneCAN standard GPS developed by CUAV. It integrates industrial-g
 .. image:: ../../../images/cuav-gnss/neo-3-pro.jpg
     :target: ../_images/neo-3-pro.jpg
 
-.. note::
-
-     NEO 3  pro is supported in ArduPilot 4.0 firmware (and higher).
-
 Key Features
 ============
 
@@ -127,7 +123,7 @@ If you need to set up NEO 3 pro or upgrade its firmware, you need to enable SLCA
 
 .. note::
 
-    ArduPilot 4.0 or later firmware supports SLCAN.
+    ArduPilot supports SLCAN.
 
 - Please connect NEO 3 pro to the autopilot's CAN1 interface.
 - Open mission planner and connect autopilot.

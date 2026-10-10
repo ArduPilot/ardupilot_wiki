@@ -8,10 +8,6 @@ Optitrack for Non-GPS Navigation
 
 This article explains how a `OptiTrack <https://optitrack.com/>`__ motion capture system can be used as a short-range substitute for a GPS allowing position control modes like Loiter, Guided, RTL, and Auto indoors.
 
-.. note::
-
-   You will need a recent version of ArduPilot on your copter (Copter-4.0 or above).
-
 .. youtube:: IocykCXJmhw
    :width: 100%
 
