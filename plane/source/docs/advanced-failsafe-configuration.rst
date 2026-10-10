@@ -105,7 +105,7 @@ described below.
 Geofence Breach
 ~~~~~~~~~~~~~~~
 
-If a :ref:`geofence <geofencing>` is enabled then the AFS failsafe module
+If a :ref:`geofence <common-geofencing-landing-page>` is enabled then the AFS failsafe module
 will monitor the aircraft for a breach of the boundaries of the geofence
 (and lower and upper geofence altitudes if set). If a breach happens
 then the AFS system will immediately terminate the flight (see
