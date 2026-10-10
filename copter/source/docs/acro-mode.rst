@@ -96,7 +96,7 @@ and option #2 (leveling & limited) are possible.
 Traditional Helicopters
 =======================
 
-For Traditional Helicopters, this modes operates the same. However, experienced pilots might find that this mode has a slightly robotic feel, and attitude jumps as it lifts from the skids that they are not familiar with. In Copter-4.0 and later, a "Virtual Flybar" feature has been introduced, that simulates the classic feel of a flybar helicopter. By setting the :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>` and :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>` parameters to non-zero values, this feature takes effect. 
+For Traditional Helicopters, this modes operates the same. However, experienced pilots might find that this mode has a slightly robotic feel, and attitude jumps as it lifts from the skids that they are not familiar with. A "Virtual Flybar" feature simulates the classic feel of a flybar helicopter. By setting the :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>` and :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>` parameters to non-zero values, this feature takes effect. 
 
 The Virtual Flybar will add decay term to the attitude controller to bleed off accumulated differences between the current attitude and accumulated commanded attitude, if the copter has not quickly obtained it, such as when sitting on the ground but stick inputs are being given. Otherwise, when the helicopter clears it will jump to the accumulated commanded attitude when skids clear, perhaps surprisingly. This is familiar to Multicopter pilots.
 
