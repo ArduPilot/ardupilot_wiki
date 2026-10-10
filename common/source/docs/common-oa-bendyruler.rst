@@ -20,7 +20,7 @@ Basic Configuration
 -------------------
 
 -  :ref:`OA_TYPE <OA_TYPE>` = 1 (BendyRuler).  You may need to refresh parameters after changing this to see the parameters below.
--  :ref:`OA_BR_LOOKAHEAD <OA_BR_LOOKAHEAD>`: This parameter is called "OA_LOOKAHEAD" before Copter and Rover 4.1. It is the distance (in meters) ahead of the vehicle that should be probed.  Obstacles further than this far away will be ignored.  This should be long enough that the path around obstacles can be "seen" but not too long or the vehicle will be overly cautious and not enter areas with a lot of obstacles. 5m is typical.
+-  :ref:`OA_BR_LOOKAHEAD <OA_BR_LOOKAHEAD>`: It is the distance (in meters) ahead of the vehicle that should be probed.  Obstacles further than this far away will be ignored.  This should be long enough that the path around obstacles can be "seen" but not too long or the vehicle will be overly cautious and not enter areas with a lot of obstacles. 5m is typical.
 -  :ref:`OA_MARGIN_MAX <OA_MARGIN_MAX>`: the distance (in meters) that the vehicle should stay away from obstacles. 2m is a typical value.
 
 .. note::
@@ -30,9 +30,9 @@ Basic Configuration
 BendyRuler Types
 -----------------
 
-Copter 4.1 onwards has support for two different types of BendyRuler Path Planning.
+Copter supports two different types of BendyRuler Path Planning.
 
-- 1. :ref:`OA_BR_TYPE <OA_BR_TYPE>` = 1: Horizontal BendyRuler: This is the only option available on Rover and older Copter versions. This searches for obstacle-free paths only in horizontal directions and therefore when it detects an obstacle in its path, it will only move in those directions.
+- 1. :ref:`OA_BR_TYPE <OA_BR_TYPE>` = 1: Horizontal BendyRuler: This is the only option available on Rover. This searches for obstacle-free paths only in horizontal directions and therefore when it detects an obstacle in its path, it will only move in those directions.
 
 ..  youtube:: GRqjMf7kQxU
     :width: 100%

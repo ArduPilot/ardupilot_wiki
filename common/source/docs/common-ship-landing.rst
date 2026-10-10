@@ -5,7 +5,7 @@
 Moving Platform Takeoff and Landing (Ships, Trucks, etc.)
 =========================================================
 
-The Plane 4.2 firmware supports VTOL taking off and landing on a moving platform with QuadPlanes. VTOL Takeoffs and Landings will track the platform's motion to remain vertically above the takeoff/landing pad and landings will provide a tracking hold-off loitering point and controlled angular approach to avoid vehicle superstructures or other obstructions. This article describes how to setup and use this functionality.
+Plane supports VTOL taking off and landing on a moving platform with QuadPlanes. VTOL Takeoffs and Landings will track the platform's motion to remain vertically above the takeoff/landing pad and landings will provide a tracking hold-off loitering point and controlled angular approach to avoid vehicle superstructures or other obstructions. This article describes how to setup and use this functionality.
 
 Equipment Needed
 ================
@@ -43,10 +43,6 @@ There are several ways to setup this type :ref:`Telemetry<common-telemetry-landi
 For mesh capable radios, you could use three RFD900x radios, with the radios setup for broadcast.(see :ref:`common-rfd900`)
 
 Alternatively you could use the RFD900x relay firmware from `here <https://firmware.ardupilot.org/SiK/RFD900x-relay/>`__  with the GCS set as NODE=1, the beacon set as NODE=0 and the aircraft set as NODE=2.
-
-Firmware
---------
-You will need ArduPilot plane 4.2 or later
 
 Lua Script
 ----------
