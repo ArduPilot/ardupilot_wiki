@@ -56,6 +56,7 @@ New Features
 - Home-centered circular inclusion fence (MAV_CMD_NAV_FENCE_HOME_CIRCLE_INCLUSION) that moves with home, see https://github.com/ArduPilot/ardupilot_wiki/pull/8131
 - Servo camera zoom and focus speed for continuous (rate) commands is now set by CAMx_ZOM_RAT_MAX and CAMx_FOC_RAT_MAX, see https://github.com/ArduPilot/ardupilot_wiki/pull/8133
 - CRSF/ELRS on an F4/F7 UART without RX DMA now gives a repeating GCS warning while disarmed, see https://github.com/ArduPilot/ardupilot_wiki/pull/8151
+- Duplicate RCx_OPTION and mode channel/RCx_OPTION conflicts are now reported as pre-arm failures while disarmed, even with no RC input, and are only skipped by the ARMING_SKIPCHK RC bit, see https://github.com/ArduPilot/ardupilot_wiki/pull/8154
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
