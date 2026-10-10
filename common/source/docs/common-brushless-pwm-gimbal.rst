@@ -11,10 +11,6 @@ Many camera gimbals can accept PWM input or SBUS input for controlling the roll,
 .. image:: ../../../images/Tarot_OnX8.jpg
     :width: 450px
 
-.. warning::
-
-    These instructions are for ArduPilot 4.3 (and higher).  For ArduPilot 4.2 (and lower) please refer to the :ref:`Servo Gimbal <common-camera-gimbal>` instructions.
-
 Supported Gimbals
 -----------------
 

@@ -42,7 +42,7 @@ Configuration
 
 .. note::
 
-   Mission Planner includes a "Camera Gimbal" configuration screen but it has not yet been updated to work with ArduPilot 4.3 (and higher).
+   Mission Planner includes a "Camera Gimbal" configuration screen but it has not been updated to work with current ArduPilot firmware.
 
 Connect to the autopilot with a ground station and set the following parameters. These settings assume the autopilot's PWM outputs 9, 10 and 11 will control the gimbal's roll, pitch and yaw angles respectively. They also assume common angular ranges of the gimbal which may need adjusting to match the actual gimbal being used.
 
