@@ -9,7 +9,7 @@ The battery failsafe can be configured to automatically switch the vehicle into 
 
     This failsafe requires the vehicle have a working :ref:`Power Module <common-powermodule-landingpage>`.
 
-.. note:: ArduPilot supports up to 9 batteries/power monitors. The discussion below applies to those optional batteries also. Each can trigger a failsafe and each can have different actions and setup values. In addition, a group of batteries can be treated as a single unit, see ``BATTx_MONITOR`` = 10.
+.. note:: ArduPilot supports up to 16 batteries/power monitors (9 in standard firmware builds). The discussion below applies to those optional batteries also. Each can trigger a failsafe and each can have different actions and setup values. In addition, a group of batteries can be treated as a single unit, see ``BATTx_MONITOR`` = 10.
 
 When the failsafe will trigger
 ------------------------------

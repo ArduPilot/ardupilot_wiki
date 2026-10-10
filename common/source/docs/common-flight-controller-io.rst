@@ -126,7 +126,7 @@ Some "smart" battery/power monitors replace the CUR and VLT pins with I2C signal
 
 Many board-style autopilots fully integrate the PMU as part of the board with internal connections to the processor.
 
-In addition, many autopilots offer multiple PMU connections since ArduPilot firmware versions 4.0 and later support up to 10 PMUs/Battery Monitors.
+In addition, many autopilots offer multiple PMU connections since ArduPilot supports up to 16 PMUs/Battery Monitors (9 in standard firmware builds).
 
 RCIN
 ----
