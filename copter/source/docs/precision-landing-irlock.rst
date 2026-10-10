@@ -98,7 +98,6 @@ to enable the precision landing feature and then Reboot the autopilot.
 -  :ref:`PLND_TYPE <PLND_TYPE>` = 2
 
 To enable Precision Loiter, an :ref:`Auxiliary Function Switch <common-auxiliary-functions>` must be set to 39 (PrecLoiter Enable).
-In versions prior to Copter-4.0, a CHx_OPT parameter could be set via Mission Planner to 39 for this enable.
 
 
 Flying and Testing
