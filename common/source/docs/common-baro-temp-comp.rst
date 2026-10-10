@@ -12,10 +12,6 @@ Some small autopilots with very tightly packed components can suffer from bad al
 
    This feature is not useful for most autopilots including the Pixracer and Pixhawk family of boards
 
-.. note::
-
-   This feature is available in Copter-3.6 (and higher)
-
 How to Use
 ----------
 
