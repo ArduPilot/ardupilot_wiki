@@ -36,9 +36,9 @@ In general the crash check should be left enabled but if the vehicle is likely t
 
 Image courtesy of `The Verge <https://www.theverge.com/2016/2/3/10905970/droneboarding-is-happening>`__
 
-In Copter-3.3.3 (and higher) the crash check can be disabled by setting :ref:`FS_CRASH_CHECK <FS_CRASH_CHECK>` to 0.
+The crash check can be disabled by setting :ref:`FS_CRASH_CHECK <FS_CRASH_CHECK>` to 0.
 
-Below is a video describing the crash check from Copter-3.1 (the logic has changed in 3.3 and higher)
+Below is a video describing an early version of the crash check. It may be outdated, since the crash check has been improved since it was made.
 
 ..  youtube:: xaw3-oSahtE
     :width: 100%
