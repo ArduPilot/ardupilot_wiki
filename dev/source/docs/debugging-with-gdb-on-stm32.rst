@@ -17,6 +17,8 @@ low-level failures with the STM32
 This guide assumes that you have already successfully built the firmware
 on your machine following the instructions for :ref:`Windows <building-setup-windows>`, :ref:`Mac <building-setup-mac>` or :ref:`Linux <building-setup-linux>`.
 
+.. note:: STM32H7 autopilots running ArduPilot 4.8 or later can also be debugged over USB without a debug probe. See :ref:`debugging-with-gdb-over-usb`.
+
 One the the following debuggers is required:
 
 - `BlackMagic probe <http://www.blacksphere.co.nz/main/index.php/blackmagic>`__ (available from `1 Bit Squared <http://1bitsquared.com/collections/frontpage/products/black-magic-probe>`__)
