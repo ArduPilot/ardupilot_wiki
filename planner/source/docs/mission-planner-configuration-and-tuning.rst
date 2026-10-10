@@ -66,7 +66,7 @@ Some autopilots have integrated On Screen Display (OSD) capability. This provide
 MAVftp
 ======
 
-In firmware versions 4.1 and later, an integrated FTP (File Transfer Protocol) has been implemented to allow access to the SD card (if the autopilot has one) and internal flash file systems (See :ref:`dev:filesystems`) via Mission Planner. (It is not recommended to use it for log download, use the DataFlash Logs button in the DATA screen, it's faster).
+ArduPilot firmware includes an integrated FTP (File Transfer Protocol) that allows access to the SD card (if the autopilot has one) and internal flash file systems (See :ref:`dev:filesystems`) via Mission Planner. (It is not recommended to use it for log download, use the DataFlash Logs button in the DATA screen, it's faster).
 
 User Params
 ===========
