@@ -129,7 +129,7 @@ Supported Features
 
 - Set a :ref:`transmitter switch<common-auxiliary-functions>` for arming. Ensure the channel used for the switch has been :ref:`calibrated<common-radio-control-calibration>`. To configure a channel for arming, for example channel 7, then set the parameter:
 
-    - :ref:`RC7_OPTION<RC7_OPTION>` =41 (Sets function of channel 7 as arming/disarming)
+    - :ref:`RC7_OPTION<RC7_OPTION>` =153 (Sets function of channel 7 as arming/disarming)
 
 - Connect the battery. Connect the autopilot board to GCS via USB or telemetry.
 
