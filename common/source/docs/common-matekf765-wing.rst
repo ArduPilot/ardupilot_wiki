@@ -9,10 +9,6 @@ Mateksys F765-Wing
 
 the above image and some content courtesy of `mateksys.com <http://www.mateksys.com/?portfolio=f765-wing>`__
 
-.. note::
-
-   Support for this board is available with ArduPilot 4.0 and higher
-
 Specifications
 ==============
 
