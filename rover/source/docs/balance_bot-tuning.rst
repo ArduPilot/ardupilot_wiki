@@ -106,7 +106,7 @@ If the balance bot drifts forward, increase :ref:`BAL_PITCH_TRIM <BAL_PITCH_TRIM
 Pitch Limiting
 --------------
 
-Rover-4.3 (and higher) includes automatic pitch limiting to reduce the chance of the vehicle falling over due to throttle saturation.  The feature works by monitoring the throttle output and if it crosses a given threshold the maximum pitch angle is temporarily reduced.
+Rover includes automatic pitch limiting to reduce the chance of the vehicle falling over due to throttle saturation.  The feature works by monitoring the throttle output and if it crosses a given threshold the maximum pitch angle is temporarily reduced.
 
 The parameters below can be used to tune this features although normally they can be left at their default values
 
