@@ -126,7 +126,7 @@ To enable this feature connect with a Ground Station and set the following param
 
 Note: there are equivalent "Warn" parameters (i.e. AVD_W_DIST_XY) that can be used to adjust when warnings to the pilot will appear on the ground station.
 
-In ArduPilot firmware versions 4.0 and later, the entry into this mode can be enabled or disabled via an RC channel switch by setting the channel's RCx_OPTION = 38 (ADSB Avoidance En). If the RC PWM is >1800us, then entry into this mode is enabled if a threat presents.
+The entry into this mode can be enabled or disabled via an RC channel switch by setting the channel's RCx_OPTION = 38 (ADSB Avoidance En). If the RC PWM is >1800us, then entry into this mode is enabled if a threat presents.
 
 
    ..  youtube:: quomxCIPP74

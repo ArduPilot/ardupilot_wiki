@@ -114,7 +114,7 @@ If you need to set up NEO V2 PRO or upgrade its firmware, you need to enable SLC
 
 .. note::
 
-    ArduPilot 4.0 or later firmware supports SLCAN.
+    ArduPilot supports SLCAN.
 
 - Please connect NEO V2 pro to the autopilot's CAN1 interface.
 - Open mission planner and connect autopilot.

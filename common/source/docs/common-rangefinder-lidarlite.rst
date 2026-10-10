@@ -89,7 +89,7 @@ The resistor can be between 200 Ohm and 1kOhm.  Connecting a resistor between th
 Set the following parameters:
 
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 5 "PWM"
--  :ref:`RNGFND1_PIN <RNGFND1_PIN>` = 54 "AUX5" (if using 4.0.0 or higher any Auxiliary output may be used)
+-  :ref:`RNGFND1_PIN <RNGFND1_PIN>` = 54 "AUX5" (any Auxiliary output may be used)
 -  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 35 (the maximum range the lidar can accurately report in m)
 -  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.2 (the minimum range the lidar can accurately report in m)
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1 ("0.8" may produce more accurate readings for some units)

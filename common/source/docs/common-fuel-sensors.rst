@@ -4,7 +4,7 @@
 Fuel Flow and Level Sensors
 ===========================
 
-In firmware versions 4.0 and later, ArduPilot provides the ability to use fuel flow and level sensors, in addition to battery monitors. Pulse output fuel flow sensors, PWM output fuel level sensors, and analog output fuel level sensors are supported. Just as an analog battery monitor provides current flow measurements with the capacity status being computed by the autopilot, these sensors provide fuel use or level status measurements to enable the same reporting and monitoring for liquid fuel systems.
+ArduPilot provides the ability to use fuel flow and level sensors, in addition to battery monitors. Pulse output fuel flow sensors, PWM output fuel level sensors, and analog output fuel level sensors are supported. Just as an analog battery monitor provides current flow measurements with the capacity status being computed by the autopilot, these sensors provide fuel use or level status measurements to enable the same reporting and monitoring for liquid fuel systems.
 
 Fuel Flow Sensors
 =================
@@ -65,7 +65,7 @@ Like analog battery current and capacity monitoring, the key parameters are:
 Analog Fuel Level Sensors
 -------------------------
 
-Fuel level sensors that output voltage are supported in ArduPilot version 4.3 and later. These types of sensors are also sometimes called fuel senders and are widely available from many manufacturers. Just as with the PWM type sensors, the estimated volume of fluid in the tank is shown as mAh when it is now actually milliliters.
+Fuel level sensors that output voltage are also supported. These types of sensors are also sometimes called fuel senders and are widely available from many manufacturers. Just as with the PWM type sensors, the estimated volume of fluid in the tank is shown as mAh when it is now actually milliliters.
 
 Any analog-capable pin can be used as the input from the sensor. Carefully consider the maximum voltage that the chosen ADC pin can measure and tolerate. Adding an external voltage divider might be necessary. To assist with calibrating these types of sensors, the voltage ArduPilot sees on the analog pin is shown in the battery voltage field.
 
