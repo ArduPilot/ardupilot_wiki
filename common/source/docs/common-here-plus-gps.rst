@@ -103,7 +103,7 @@ As shown in the figure, the current firmware version is FWVER = HPG 1.30 REF, in
 
 Basic operating manual
 ======================
-This part of the tutorial uses Mission Planner ground control software and ArduCopter-3.5 flight control firmware for operating instructions. 
+This part of the tutorial uses Mission Planner; screens in current versions may differ. 
 
 Preparation before operation.
 -----------------------------

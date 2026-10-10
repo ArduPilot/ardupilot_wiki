@@ -205,8 +205,8 @@ Setup for Normal Operation
 [site wiki="plane,copter"]
 .. note:: When Copters have an optical flow sensor enabled (along with a rangefinder) and it is specified as the only horizontal position source (e.g. ``EK3_SRCx_VELXY`` = OpticalFlow and ``EK3_SRCx_POSXY`` = None) and the vehicle is flying in a pilot controlled mode requiring a position estimate (ie Loiter or PosHold) the vehicle will not climb above the rangefinder's maximum altitude specified in ``RNGFNDx_MAX``. This is a safety mechanism because otherwise the EKF failsafe would trigger as the vehicle flew out of rangefinder range.
 
-Example Video (Copter-3.4)
-==========================
+Example Video
+=============
 
 ..  youtube:: Bzgey8iR69Q
     :width: 100%
