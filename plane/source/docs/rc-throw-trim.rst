@@ -91,8 +91,8 @@ Throttle Reversal
 
 It is very unusual to have a reversed throttle input. In most cases it
 means your transmitter is setup incorrectly. Having a reversed
-throttle output is much more common for internal combustion motors. In
-firmware version 3.8 and later you do not need to reverse throttle
+throttle output is much more common for internal combustion motors. You
+do not need to reverse throttle
 input just because your output is reversed (ie. you can set
 :ref:`RC3_REVERSED<RC3_REVERSED>` separately from :ref:`SERVO3_REVERSED<SERVO3_REVERSED>` ).
 
