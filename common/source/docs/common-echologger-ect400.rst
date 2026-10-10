@@ -11,10 +11,6 @@ More details can be found in the `datasheet <http://www.echologger.com/media/mai
 
 *image courtesy of echologger.com*
 
-.. note::
-
-   Support for this sensor was added to Rover-3.4.
-
 Recommended Hardware
 --------------------
 

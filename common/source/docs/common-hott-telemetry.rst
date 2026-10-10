@@ -4,7 +4,7 @@
 HOTT Telemetry
 ==============
 
-Plane-4.0.0 (and higher), Copter-4.0.4 (and higher) and Rover-4.1.0 (and higher) support Graupner HOTT telemetry.
+ArduPilot supports Graupner HOTT telemetry.
 
 .. image:: ../../../images/mz-32.jpg
     :width: 450px

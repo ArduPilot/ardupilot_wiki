@@ -9,10 +9,6 @@ The `LeddarTech LeddarVu8 <https://leddartech.com/lidar/leddar-vu8-solid-state-l
 ..  youtube:: EnJq63ggBao
     :width: 100%
 
-.. note::
-
-    Support for this sensor was released with Copter-4.0.4
-
 Connecting to the Autopilot
 ---------------------------
 
