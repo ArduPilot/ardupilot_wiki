@@ -90,6 +90,7 @@ value to users with old hardware.
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
     LAND mode <land-mode>
     Geofencing prior to 4.1 <geofencing>
+    Soaring prior to 4.1 <soaring>
     Manual Roll, Pitch and Yaw Controller Tuning(firmware before 4.1) <roll-pitch-controller-tuning>
 [/site]
 [site wiki="dev"]
