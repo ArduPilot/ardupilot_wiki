@@ -17,4 +17,4 @@ The `ULS-XCopter-G2 landing kit <https://store.uavlas.com/products/uls-xcopter-g
 Documentation
 =============
 
-See `UAVLAS's own ArduPilot integration guide <https://docs.uavlas.com/docs/uls-xcopter/integration/ardupilot-integration/>`__ for setup instructions. Per that guide, ArduCopter 4.3.3 or higher is required.
+See `UAVLAS's own ArduPilot integration guide <https://docs.uavlas.com/docs/uls-xcopter/integration/ardupilot-integration/>`__ for setup instructions.

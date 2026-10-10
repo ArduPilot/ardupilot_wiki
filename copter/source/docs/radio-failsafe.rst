@@ -8,7 +8,7 @@ Copter supports several configurable failsafe options in cases where contact bet
 
 .. warning::
 
-   For Single Helicopter, Dual Helicopter and Quad Helicopter frames, Copter 3.6 and earlier in any :ref:`H_RSC Mode<H_RSC_MODE>` or Copter 4.0 in the RC Passthrough :ref:`H_RSC_Mode<H_RSC_MODE>` requires the RC receiver channel 8 to hold last value when transmitter signal is lost.  If the receiver sends no signal or does not hold the RC channel 8 value, the motor will be shutdown and the helicopter will crash.  
+   For Single Helicopter, Dual Helicopter and Quad Helicopter frames, the RC Passthrough :ref:`H_RSC_MODE<H_RSC_MODE>` requires the RC receiver channel used for the rotor speed control to hold its last value when transmitter signal is lost.  If the receiver sends no signal or does not hold that channel's value, the motor will be shutdown and the helicopter will crash.  
 
 .. image:: ../images/RadioFailsafe_Intro.jpg
     :target: ../_images/RadioFailsafe_Intro.jpg
@@ -73,7 +73,7 @@ The :ref:`FS_THR_ENABLE<FS_THR_ENABLE>` parameter can be set in the Mission Plan
 
 -  **Disabled** (Value 0) will disable the radio failsafe entirely.
 -  **Enabled Always RTL** (Value 1) will switch the copter to RTL Mode.  If the GPS position is not usable, the copter will change to Land Mode instead.
--  **Enabled Continue with Mission in Auto Mode** (this value has no effect in 4.0 and later with :ref:`FS_OPTIONS<FS_OPTIONS>` parameter replacing function, see below) (Value 2) will ignore the failsafe in an Auto Mode mission. Otherwise, it will behave the same as *Enabled Always RTL*. This option no longer exists in ArduCopter 4.0. Instead, see the :ref:`FS_OPTIONS<FS_OPTIONS>` parameter for this function. Setting this value in Copter 4.0 and later version will automatically be converted and set to (Value 1) and the :ref:`FS_OPTIONS<FS_OPTIONS>` will be modified to include bit (0) in the bitmask for "Continue if in auto mode on Radio Failsafe".
+-  **Enabled Continue with Mission in Auto Mode** (Value 2) is no longer used. Setting it is automatically converted to Value 1, and :ref:`FS_OPTIONS<FS_OPTIONS>` is modified to include bit (0) for "Continue if in auto mode on Radio Failsafe".
 -  **Enabled Always Land** (Value 3) will switch the copter to Land Mode.
 -  **Enabled SmartRTL or RTL** (Value 4) will switch the copter to SmartRTL mode. If SmartRTL is not available, the copter will switch to RTL Mode instead.  If the GPS position is not usable, the copter will change to Land Mode instead.
 -  **Enabled SmartRTL or Land** (Value 5) will switch the copter to SmartRTL mode. If SmartRTL is not available, the copter will switch to Land Mode instead.
@@ -86,7 +86,7 @@ The :ref:`FS_THR_VALUE<FS_THR_VALUE>`  parameter can be set in the Mission Plann
 -  At least 10 PWM lower than your channel 3's PWM value when the throttle stick is fully down and the transmitter is **on**
 -  Above 910 PWM
 
-The :ref:`FS_OPTIONS<FS_OPTIONS>`  parameter (Copter 4.0 and later) is a bitmask parameter to select one or more options that modify the standard actions of the radio, GCS, and battery failsafe. In the Mission Planner full parameter list or full parameter tree, the handy checkbox popup window is an easy what to set this (and any other bitmask) parameter. Be sure to go to Help > Check Beta Updates to pull the latest parameter definitions first while connected to the internet. The :ref:`FS_OPTIONS<FS_OPTIONS>` bits are as follows:
+The :ref:`FS_OPTIONS<FS_OPTIONS>`  parameter is a bitmask parameter to select one or more options that modify the standard actions of the radio, GCS, and battery failsafe. In the Mission Planner full parameter list or full parameter tree, the handy checkbox popup window is an easy what to set this (and any other bitmask) parameter. Be sure to go to Help > Check Beta Updates to pull the latest parameter definitions first while connected to the internet. The :ref:`FS_OPTIONS<FS_OPTIONS>` bits are as follows:
 
 - bit 0 set: Continue if in auto mode on :ref:`Radio Failsafe <radio-failsafe>`
 - bit 1 set: Continue if in auto mode on :ref:`Ground Control Station Failsafe<gcs-failsafe>`
