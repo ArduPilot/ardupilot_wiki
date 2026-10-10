@@ -24,7 +24,7 @@ The ground station will normally set the vehicle to Guided mode before the targe
 Speed
 -----
 
-While the vehicle is travelling, the user can increase the vehicle's speed by raising the transmitter's throttle stick to between 75% and 100%.  At 75% the vehicle will remain at it's configured speed (i.e. :ref:`WP_SPEED <WP_SPEED>` or :ref:`CRUISE <CRUISE_SPEED>` if :ref:`WP_SPEED <WP_SPEED>` is zero, versions of Rover after 3.5.1 use only :ref:`WP_SPEED <WP_SPEED>`), this linearly increases to the vehicle's maximum speed as the pilot's throttle stick reaches 100%.
+While the vehicle is travelling, the user can increase the vehicle's speed by raising the transmitter's throttle stick to between 75% and 100%.  At 75% the vehicle will remain at it's configured speed (i.e. :ref:`WP_SPEED <WP_SPEED>`), this linearly increases to the vehicle's maximum speed as the pilot's throttle stick reaches 100%.
 
 Other controls
 --------------
