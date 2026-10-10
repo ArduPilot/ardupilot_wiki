@@ -97,7 +97,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        40            | Object Avoidance           |    X     |         |    X    |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
-|        41            | Arm Disarm (4.1 and before)|    X     |    X    |    X    |       |
+|        41            | No longer used             |          |         |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        42            | SMARTRTL mode              |    X     |         |    X    |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
@@ -440,8 +440,6 @@ Other functions are:
                                          | using IR-Lock sensor).
     Object Avoidance                     | When the switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>`
                                          | or :ref:`TeraRanger Tower<common-teraranger-tower-objectavoidance>`. When low, object avoidance is disabled.
-    Arm/Disarm(4.1 and earlier)          | Arms the vehicle if the switch goes high (subject to arming checks).
-                                         | Disarms the vehicle if brought low.
    ===================================== =======================================================================
 
 
