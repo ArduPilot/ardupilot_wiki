@@ -80,6 +80,7 @@ value to users with old hardware.
     Tuning Waypoint Turn Speed (ver 3.1 and older) <speed-turn-parameter-tuning>
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
     ArduRoller Balance Bot <reference-frames-arduroller>
+    Learning Mode (removed in 3.2) <learning-mode>
 [/site]
 
 [site wiki="plane"]
