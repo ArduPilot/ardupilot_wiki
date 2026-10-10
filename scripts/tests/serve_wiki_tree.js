@@ -90,17 +90,34 @@ function serveKill(on) {
   killWorker = on;
 }
 
+// One path made to fail its next request, so a test can put a blip in front
+// of an asset the way a deploy or a proxy does, and see what survives it.
+const failing = new Map();
+function failNext(urlPath, status) {
+  failing.set(urlPath, status || 503);
+}
+
 function createServer() {
   return http.createServer((req, res) => {
     const urlPath = (req.url || '/').split('?')[0];
+    if (failing.has(urlPath)) {
+      const status = failing.get(urlPath);
+      failing.delete(urlPath);
+      res.writeHead(status, { 'Content-Type': 'text/plain; charset=utf-8' });
+      res.end('failed once, on purpose\n');
+      return;
+    }
     const file = urlPath === '/sw.js' && killWorker
       ? path.join(ROOT, 'frontend', 'sw-kill.js') : resolveFile(req.url || '/');
 
-    // As nginx gzip_static does.
-    if (urlPath.endsWith('.tar') && fs.existsSync(file + '.gz')) {
+    // As nginx gzip_static does: the archives, and the loose files the
+    // differential update fetches, exist only as .gz beside their names.
+    if ((urlPath.endsWith('.tar') || !fs.existsSync(file)) && fs.existsSync(file + '.gz')) {
       const gz = file + '.gz';
+      const ext = path.extname(file).toLowerCase();
       res.writeHead(200, Object.assign({
-        'Content-Type': 'application/octet-stream',
+        'Content-Type': urlPath.endsWith('.tar') ? 'application/octet-stream'
+                                                 : (TYPES[ext] || 'application/octet-stream'),
         'Content-Length': fs.statSync(gz).size,
         'Content-Encoding': 'gzip',
       }, extraHeaders(urlPath)));
@@ -175,7 +192,7 @@ function start(port) {
   });
 }
 
-module.exports = { start, createServer, resolveFile, bumpWorker, serveKill, WIKIS };
+module.exports = { start, createServer, resolveFile, bumpWorker, serveKill, failNext, WIKIS };
 
 if (require.main === module) {
   const port = Number(process.argv[2] || 8000);
