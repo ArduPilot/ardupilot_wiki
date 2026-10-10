@@ -6,7 +6,7 @@ Crossfire and ELRS RC Systems
 
 Any Crossfire/ELRS compatible receiver can be used with ArduPilot. 
 
-.. note::  ELRS (ExpressLRS) RC systems use the CRSF protocol and are connected in a similar manner as Crossfire receivers to an autopilot UART. ELRS can also be configured to be MAVLink protocol with embedded RC control (See below). On  F4/F7 based autopilots the UART MUST be DMA enabled for reliable operation in CRSF protocol mode. Consult :ref:`common-autopilots`.
+.. note::  ELRS (ExpressLRS) RC systems use the CRSF protocol and are connected in a similar manner as Crossfire receivers to an autopilot UART. ELRS can also be configured to be MAVLink protocol with embedded RC control (See below). On F4/F7 based autopilots the UART must have RX DMA to assure the highest reliability in CRSF protocol mode. Consult :ref:`common-autopilots`.
 
 If you do not wish to use telemetry then a TBS Crossfire or ELRS receiver can be connected to the **RCIN** port using :ref:`SBUS <common-rc-systems>`. You must configure the receiver to output SBUS, of course.
 
@@ -17,7 +17,9 @@ CRSF Receivers
 If you wish to use telemetry then a receiver can be connected to a UART utilizing the `CRSF <https://www.team-blacksheep.com/products/prod:crossfire_tx>`__ protocol.
 
 CRSF is a full-duplex protocol that supports integrated telemetry and a number of other features. Connect the RX pin of the UART to the CRSF TX pin of the CRSF device and vice versa.
-Currently a full-duplex UART connection is required. For best performance a UART with DMA capability on its RX port is desirable, but not required. A message will be displayed once on the GCS console, if connected to a UART without this capability on an F4/F7 based autopilot.
+Currently a full-duplex UART connection is required. On F4/F7 based autopilots the UART must have DMA on its RX port to assure the highest reliability. Once CRSF is detected on such a UART without RX DMA, the warning "CRSF: no UART RX DMA, RC integrity may be impacted" is sent to the GCS every 10 seconds while disarmed, so that a GCS which connects late will still see it. The warning does not block arming, and stops once the vehicle is armed. It reports the UART's configuration, not measured frame loss.
+
+If this warning appears, move the receiver to a UART that has RX DMA, if the autopilot has one. The autopilot's hwdef ``README.md`` or wiki page usually lists which UARTs are DMA-enabled. H7 based autopilots do not need RX DMA, since their UARTs have hardware FIFOs.
 
 In the configuration of the serial port select the RCIN protocol. So for example for serial port 4:
 
