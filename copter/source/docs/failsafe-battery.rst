@@ -46,7 +46,7 @@ Then one of the following will happen:
 
 As with all failsafes, the user can re-take control of the vehicle by changing the flight mode switch to another mode. The battery failsafe will not trigger again unless the two-layer failsafe is setup (see below)
 
-The :ref:`FS_OPTIONS<FS_OPTIONS>` parameter (Copter 4.0 and later) is a bitmask parameter to select one or more options that modify the standard actions of the radio, GCS, and battery failsafe. In the Mission Planner full parameter list or full parameter tree, the handy checkbox popup window is an easy way to set this (and any other bitmask) parameter. Be sure to go to Help > Check Beta Updates to pull the latest parameter definitions first while connected to the internet. The :ref:`FS_OPTIONS<FS_OPTIONS>` bits are as follows:
+The :ref:`FS_OPTIONS<FS_OPTIONS>` parameter is a bitmask parameter to select one or more options that modify the standard actions of the radio, GCS, and battery failsafe. In the Mission Planner full parameter list or full parameter tree, the handy checkbox popup window is an easy way to set this (and any other bitmask) parameter. Be sure to go to Help > Check Beta Updates to pull the latest parameter definitions first while connected to the internet. The :ref:`FS_OPTIONS<FS_OPTIONS>` bits are as follows:
 
 - bit 0 set: Continue if in auto mode on :ref:`Radio Failsafe <radio-failsafe>`
 - bit 1 set: Continue if in auto mode on :ref:`Ground Control Station Failsafe<gcs-failsafe>`
