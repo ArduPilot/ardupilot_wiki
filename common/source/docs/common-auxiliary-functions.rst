@@ -239,7 +239,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        152           | SIMPLE mode heading reset  |    X     |         |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
-|        153           | ARM/DISARM (4.2 and higher)|    X     |    X    |    X    |  X    |
+|        153           | ARM/DISARM                 |    X     |    X    |    X    |  X    |
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        154           | ARM/DISARM with AIRMODE on |    X     |    X    |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
@@ -549,7 +549,7 @@ Other functions are:
                                          | switch switches from EKF3 to the external AHRS.
     SIMPLE mode heading reset            | Resets original heading reference to current heading
                                          | for SIMPLE Mode.
-    ARM/DISARM (4.2 and higher)          | Arms the vehicle if the switch goes high (subject to arming
+    ARM/DISARM                           | Arms the vehicle if the switch goes high (subject to arming
                                          | checks). Disarms the vehicle unconditionally if brought low.
     ARM/DISARM with AIRMODE on           | Arms the vehicle if the switch goes high (subject to arming
                                          | checks) with AIRMODE active. Airmode RC option switch can
