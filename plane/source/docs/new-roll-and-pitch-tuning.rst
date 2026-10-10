@@ -137,7 +137,7 @@ Now, the vehicle can be flown again to start trimming P and D. Starting with D a
 ACRO YAW Rate Controller Tuning
 ===============================
 
-As of version 4.2, a full YAW rate controller for use in ACRO mode is also provided. ``YAW_RATE_x`` parameters exist and can be adjusted after :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` is set to 1. When enabled, the :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` parameter can be used to adjust maximum yaw rate demanded at rudder stick full deflections in ACRO mode.
+A full YAW rate controller for use in ACRO mode is also provided. ``YAW_RATE_x`` parameters exist and can be adjusted after :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` is set to 1. When enabled, the :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` parameter can be used to adjust maximum yaw rate demanded at rudder stick full deflections in ACRO mode.
 
 Manual tuning adjustment follows the same methodology as explained above for the pitch and roll axes. PID parameters can also be AutoTuned in the same manner as those for the pitch and roll axes.
 
