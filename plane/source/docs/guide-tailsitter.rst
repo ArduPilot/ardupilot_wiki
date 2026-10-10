@@ -37,16 +37,7 @@ ArduPilot sub-divides tailsitters into two broad categories:
 Tailsitter Configuration
 ========================
 
-firmware versions 4.1 and earlier
----------------------------------
-
-The key to make a QuadPlane a tailsitter is to either set
-:ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` =10 or :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` non-zero. That tells the QuadPlane code to use the tailsitter VTOL backend.
-
-firmware version 4.2 and later:
--------------------------------
-
-To make a QuadPlane a tailsitter is to set :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` to "1" or "2" to tell the QuadPlane code to use the tailsitter VTOL backend. 
+To make a QuadPlane a tailsitter, set :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` to "1" or "2" to tell the QuadPlane code to use the tailsitter VTOL backend. 
 
 If :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is zero (the default), meaning no multicopter-like motors, it provides roll, pitch, yaw and thrust (Throttle, Throttle Left, Throttle Right) values to the fixed wing control code. These values then control your ailerons, elevons, elevators, rudder and forward motors.
 
@@ -92,9 +83,7 @@ Copter Tailsitters
 ------------------
 All the copter motor layouts are supported as CopterMotor tailsitters if :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is non-zero . See :ref:`Copter's Motor Layout Section <copter:connect-escs-and-motors>`. If non-zero, then use the :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` and :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` parameter to configure the multicopter motor style, and the appropriate MOTORx outputs will be activated.
 
-.. note:: in firmware versions previous to 4.1, CopterMotor Tailsitters did not use any yaw torque control. Roll (with respect to plane body) is only controlled by the flying surface (ailerons or elevons). Now QUAD PLUS and X frames have yaw control via motors, and frame types 16 and 17 are added that have no torque yaw control, as previous versions of PLUS and X did.
-
-.. note:: (firmware 4.1 and earlier)it is possible to have a CopterMotor Tailsitter using no fixed wing control surfaces, ie basically a quadcopter with a wing. For that configuration, all Copter motors would be set to be active in fixed wing modes via :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` and :ref:`Q_OPTIONS<Q_OPTIONS>` bitmask would have bit 7 (Force QASSIST) set to have QASSIST active in all modes. With firmware 4.2 and later, for this configuration, use :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` = 2 which forces QASSIT all the time. :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is ignored in that case.
+.. note:: it is possible to have a CopterMotor Tailsitter using no fixed wing control surfaces, ie basically a quadcopter with a wing. For that configuration, use :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` = 2 which forces QASSIST all the time. :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is ignored in that case.
 
 
 In addition, two Copter tailsitter specific configurations are available which provide No Yaw Torque (NYT) control to the copter style motors: :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` = 16 (Plus) and =17 (X).
@@ -321,30 +310,6 @@ interpreted using the :ref:`Q_TAILSIT_INPUT<Q_TAILSIT_INPUT>` parameter. The cho
 
 .. note:: :ref:`Q_TAILSIT_INPUT<Q_TAILSIT_INPUT>` is ignored in QACRO modes. All inputs are body-frame referenced.
 
-Tailsitter Input Mask
-=====================
-
-.. note:: Use of this feature is not recommended since its removed in 4.2 and  later firmware revisions
-
-
-To support people with experience flying 3D aircraft and wanting to learn how to
-prop-hang manually, you can set the ``Q_TAILSIT_MASK<Q_TAILSIT_MASK>`` to determine which
-channels will have full manual input control without attitude stabilization while hovering in QHOVER and QSTABILIZE.
-
-The mask of manual channels is enabled using a transmitter input
-channel, specified with the ``Q_TAILSIT_MASKCH<Q_TAILSIT_MASKCH>`` parameter.
-
-For example, if you are learning how to fly 3D aircraft, and you want
-some assistance learning how to best control the rudder, then you can
-set:
-
-- ``Q_TAILSIT_MASK<Q_TAILSIT_MASK>`` =8 (for rudder)
-- ``Q_TAILSIT_MASKCH<Q_TAILSIT_MASKCH>`` =7
-
-then when channel 7 goes above 1700 the pilot will be given full
-manual control of rudder when hovering. This provides good 3D piloting
-practice on one or more axes at a time.
-  
 Center of Gravity
 =================
 

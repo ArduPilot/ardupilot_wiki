@@ -2,7 +2,7 @@
 
 .. note::
 
-  Refer to :ref:`this page <soaring-4_1>` if you're using version 4.1.
+  **ARCHIVED:** This page applies to firmware versions prior to 4.1. See :ref:`soaring-4_1` for current firmware.
 
 =======
 Soaring
@@ -141,7 +141,7 @@ Altitude limits
 Spatial limits
 ~~~~~~~~~~~~~~
 
-:ref:`Geofence <geofencing>` can be used to constrain the physical flight area used. Set it up in the usual way.
+:ref:`Geofence <common-geofencing-landing-page>` can be used to constrain the physical flight area used. Set it up in the usual way.
 
 
 Tuning

@@ -4174,7 +4174,7 @@ MAV_CMD_DO_FENCE_ENABLE
 
 Supported by: All vehicles.
 
-Mission commands to enable the Plane :ref:`GeoFence <geofencing>`, Copter/Rover :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence`.
+Mission commands to enable the Plane :ref:`GeoFence <common-geofencing-landing-page>`, Copter/Rover :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence`.
 
 
 **Command parameters**
