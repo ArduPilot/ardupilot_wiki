@@ -4,7 +4,7 @@
 Walking Robots
 ==============
 
-ArduPilot Rover 4.1 (and higher) includes basic support for four legged walking robots.  More details can be found in `this GSoC 2020 blog post <https://discuss.ardupilot.org/t/gsoc-2020-walking-robot-support-for-ardupilot/57080>`__
+ArduPilot Rover includes basic support for four legged walking robots.  More details can be found in `this GSoC 2020 blog post <https://discuss.ardupilot.org/t/gsoc-2020-walking-robot-support-for-ardupilot/57080>`__
 
 ..  youtube:: 07C-O9GdTkY
     :width: 100%
@@ -90,7 +90,7 @@ Configuration and Setup
     - GPS(optional)
     - Telemetry(optional)
     
-Use a ground station to load Rover-4.1 (or higher) to the autopilot
+Use a ground station to load Rover to the autopilot
 #. :ref:`Install GCS<common-install-gcs>` (Mission Planner recommended) and :ref:`upload rover firmware<common-loading-firmware>`
 #. Perform all the :ref:`hardware calibration<rover-code-configuration>` steps for:
 
