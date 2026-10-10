@@ -13,7 +13,7 @@ Features
 
 * MCU - STM32H743 32-bit processor running at 480 MHz
 * IMU - Dual ICM42688 or dual MPU6000
-* Barometer - DPS310
+* Barometer - DPS310, DPS368, or BMP390
 * OSD - AT7456E
 * microSD card slot
 * 7x UARTs
