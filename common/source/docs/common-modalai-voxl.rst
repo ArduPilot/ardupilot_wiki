@@ -13,10 +13,6 @@ This article explains how to setup a `ModalAI VOXL-CAM <https://www.modalai.com/
 
 The VOXL board in the VOXL-CAM can be purchased `individually <https://www.modalai.com/collections/voxl/products/voxl>`__ and be used as a companion computer. The newer and more powerful :ref:`VOXL 2 companion computer <common-modalai-voxl2>` is also available.
 
-.. note::
-
-    VOXL camera support is available in ArduPilot 4.3 (and higher).
-
 What to Buy
 -----------
 

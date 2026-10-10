@@ -21,10 +21,6 @@ V6.x hardware revision
 
 Above images and some content courtesy of `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4nanov6.html>`__
 
-.. note::
-
-   Support for this board is available with Copter-3.6.0 (and higher)
-
 Specifications
 ==============
 

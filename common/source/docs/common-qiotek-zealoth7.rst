@@ -4,9 +4,6 @@
 QioTek Zealot H743
 ==================
 
-.. note:: This autopilot is supported in 4.2 and later firmware
-
-
 The QioTek Zealot H743 is an internally vibration dampened autopilot with a protective CNC metal case for ruggedness. It features fully redundant sensors, expanded number of outputs, temperature controlled IMUs, and is the first high performance autopilot with integrated OSD chip.
 
 .. figure:: ../../../images/Qiotek-ZealotH7.png

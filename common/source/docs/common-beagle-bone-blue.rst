@@ -7,10 +7,6 @@ BeagleBone Blue
 `BeagleBone Blue <https://beagleboard.org/blue>`__ (BBBlue) is a complete, Linux-enabled robotics computer.
 Community-supported and fully open-source, the real-time performance, flexible networking and rich set of robotics-oriented peripherals make building mobile robots quick and affordable.
 
-.. note::
-
-   Copter support was added in Copter-3.5.
-
 .. image:: ../../../images/beagle-bone-blue-annotated.png
     :target: ../_images/beagle-bone-blue-annotated.png
     :width: 800 px
