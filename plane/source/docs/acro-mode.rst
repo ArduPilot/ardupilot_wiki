@@ -81,7 +81,7 @@ It is recommended that it be set to "2", instead of "1", in order to use a quart
 ACRO Mode YAW Rate Control
 ==========================
 
-As of version 4.2, ArduPilot provides the option for utilization of a rate controller for YAW, which behaves in the same manner as the pitch and roll controllers, explained above, but for the YAW axis controlled by the Rudder stick, assuming the vehicle has a rudder control surface.
+ArduPilot provides the option of a rate controller for YAW, which behaves in the same manner as the pitch and roll controllers, explained above, but for the YAW axis controlled by the Rudder stick, assuming the vehicle has a rudder control surface.
 
 To enable this functionality, set :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` to 1. When enabled, the :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` parameter can be used to adjust maximum yaw rate demanded at rudder stick full deflections in ACRO mode.
 
