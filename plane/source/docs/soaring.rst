@@ -141,7 +141,7 @@ Altitude limits
 Spatial limits
 ~~~~~~~~~~~~~~
 
-:ref:`Geofence <geofencing>` can be used to constrain the physical flight area used. Set it up in the usual way.
+:ref:`Geofence <common-geofencing-landing-page>` can be used to constrain the physical flight area used. Set it up in the usual way.
 
 
 Tuning
