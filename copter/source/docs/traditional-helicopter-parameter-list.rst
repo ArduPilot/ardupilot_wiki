@@ -38,9 +38,7 @@ These set up the configuration of the swashplate and collective travel.
 
 - :ref:`H_SW_TYPE<H_SW_TYPE__AP_MotorsHeli_Single>`
 - :ref:`H_SW_H3_ENABLE<H_SW_H3_ENABLE__AP_MotorsHeli_Single>` Never manually set this parameter!
-- ``H_COLYAW<H_COLYAW>`` This parameter will be eliminated in versions after 4.3
 - :ref:`H_COL_MAX<H_COL_MAX>`
-- ``H_COL_MID``  This parameter was used in versions prior to Copter 4.3.0
 - :ref:`H_COL_MIN<H_COL_MIN>`
 - :ref:`H_SW_COL_DIR<H_SW_COL_DIR__AP_MotorsHeli_Single>`
 - :ref:`H_SW_LIN_SVO<H_SW_LIN_SVO__AP_MotorsHeli_Single>`
@@ -56,7 +54,6 @@ If Dual Heli frame type is selected, these additional parameters for the second 
 - :ref:`H_YAW_SCALER<H_YAW_SCALER>`
 - :ref:`H_COL2_MIN<H_COL2_MIN>`
 - :ref:`H_COL2_MAX<H_COL2_MAX>`
-- ``H_COL2_MID``  This parameter was used in versions prior to Copter 4.3.0
 - :ref:`H_SW2_TYPE<H_SW2_TYPE>`
 - :ref:`H_SW2_COL_DIR<H_SW2_COL_DIR>`
 - :ref:`H_SW2_LIN_SVO<H_SW2_LIN_SVO>`
@@ -122,11 +119,8 @@ ArduPilot Provided Rotor Speed Governor
 
 Parameters for internal rotor speed governor, if used. The transmitter's throttle curve will need to be set up to use this mode. See the Setup section of :ref:`traditional-helicopter-internal-rsc-governor`.
 
-- ``H_RSC_GOV_DISGAG``  This parameter was used in versions prior to Copter 4.3.0
 - :ref:`H_RSC_GOV_DROOP<H_RSC_GOV_DROOP>`
 - :ref:`H_RSC_GOV_RANGE<H_RSC_GOV_RANGE>`
-- ``H_RSC_GOV_SETPNT``  This parameter was used in versions prior to Copter 4.3.0
-- ``H_RSC_GOV_TCGAIN``  This parameter was used in versions prior to Copter 4.3.0
 - :ref:`H_RSC_GOV_COMP<H_RSC_GOV_COMP>`
 - :ref:`H_RSC_GOV_FF<H_RSC_GOV_FF>`
 - :ref:`H_RSC_GOV_RPM<H_RSC_GOV_RPM>`
