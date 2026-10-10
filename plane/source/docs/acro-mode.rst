@@ -47,7 +47,7 @@ Immelman turns or cuban eights.
 
 Note that if you are using ACRO mode to try and teach yourself aerobatic
 flying then it is highly recommended that you setup a
-:ref:`geo-fence <geofencing>` in case you get disoriented.
+:ref:`geo-fence <common-geofencing-landing-page>` in case you get disoriented.
 
 .. warning::
 

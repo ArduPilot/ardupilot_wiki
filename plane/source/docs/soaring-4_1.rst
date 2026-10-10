@@ -157,7 +157,7 @@ The image below shows a scenario where the mission track is north to south and t
 
 If using FBWB or CRUISE mode, the parameter :ref:`SOAR_MAX_RADIUS<SOAR_MAX_RADIUS>` can be used to trigger RTL if the aircraft is more than this distance from home when in THERMAL mode. Note that this parameter won't stop the aircraft from exceeding this distance before it enters THERMAL mode.
 
-:ref:`Geofence <geofencing>` can be used as a last line of defence. Set it up in the usual way.
+:ref:`Geofence <common-geofencing-landing-page>` can be used as a last line of defence. Set it up in the usual way.
 
 .. _soaring_maximum-distance-from-home:
 
