@@ -1,9 +1,5 @@
 .. _soaring-4_1:
 
-.. note::
-
-  Refer to :ref:`this page <soaring>` if you're using a version earlier than 4.1.
-
 =======
 Soaring
 =======
@@ -201,11 +197,6 @@ Adding hysteresis can reduce the frequency of mode changes.
 TECS Tuning
 -----------
 
-.. note::
-
-   In firmware revisions before 4.1, it was necessary to set :ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` to 2.0 when using soaring.
-   This is now handled automatically.
- 
 For best results the TECS needs to be set up to fly the aircraft at a consistent airspeed when 
 gliding.
 
@@ -243,10 +234,3 @@ Use of TECS synthetic airspeed
 
 If your plane can't accommodate an airspeed sensor, it is possible to use the TECS synthetic airspeed estimate :ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>`.
 Make sure you read the warning regarding this feature before deciding to use it. To use this feature, set the parameter :ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>` to 1.
-
-
-.. toctree::
-    :maxdepth: 1
-    :hidden:
-
-    Soaring (version prior to 4.1) <soaring>

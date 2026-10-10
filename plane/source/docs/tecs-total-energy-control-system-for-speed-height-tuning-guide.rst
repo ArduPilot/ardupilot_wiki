@@ -261,7 +261,7 @@ the pitch control to simultaneously control height and speed.
    height).
 
 .. note::
-   When the :ref:`soaring<soaring>` feature is in use and is requesting the TECS shut off
+   When the :ref:`soaring<soaring-4_1>` feature is in use and is requesting the TECS shut off
    throttle to glide, a value of 2.0 will automatically be used providing an airspeed
    estimate is available.
 
