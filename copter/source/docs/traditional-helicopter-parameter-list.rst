@@ -26,6 +26,7 @@ These set the cyclic max, allow bench testing of blade angle set up, and set fea
 - :ref:`H_COL_ZERO_THRST<H_COL_ZERO_THRST>`
 - :ref:`H_COL_LAND_MIN<H_COL_LAND_MIN>`
 - :ref:`H_CYC_MAX<H_CYC_MAX>`
+- :ref:`H_CYC_ANG_MAX<H_CYC_ANG_MAX>`
 - :ref:`H_SV_MAN<H_SV_MAN>`
 - :ref:`H_SV_TEST<H_SV_TEST>`
 - :ref:`H_HOVER_LEARN<H_HOVER_LEARN>`
