@@ -4,8 +4,6 @@
 HOTT Telemetry
 ==============
 
-ArduPilot supports Graupner HOTT telemetry.
-
 .. image:: ../../../images/mz-32.jpg
     :width: 450px
 
