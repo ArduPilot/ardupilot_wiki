@@ -38,7 +38,7 @@ In Mission Planner's  full parameter list or full parameter tree, set the :ref:`
 
 -  **Disabled** (Value 0) will disable the GCS failsafe entirely.
 -  **Enabled Always RTL** (Value 1) will switch the copter to RTL Mode.  If the GPS position is not usable, the copter will change to Land Mode instead.
--  **Enabled Continue with Mission in Auto Mode** (Value 2) is no longer used. Setting it is automatically converted to Value 1 (Always RTL), and the :ref:`FS_OPTIONS<FS_OPTIONS>` bitmask is modified to include bit (1) for "Continue auto mode mission on GCS failsafe".
+-  **Enabled Continue with Mission in Auto Mode** (Value 2) is no longer used, please refer to :ref:`FS_OPTIONS<FS_OPTIONS>`.
 -  **Enabled SmartRTL or RTL** (Value 3) will switch the copter to SmartRTL mode. If SmartRTL is not available, the copter will switch to RTL Mode instead.  If the GPS position is not usable, the copter will change to Land Mode instead.
 -  **Enabled SmartRTL or Land** (Value 4) will switch the copter to SmartRTL mode. If SmartRTL is not available, the copter will switch to Land Mode instead.
 -  **Enabled Always Land** (Value 5) will switch the copter to Land Mode.

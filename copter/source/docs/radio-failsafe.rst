@@ -73,7 +73,7 @@ The :ref:`FS_THR_ENABLE<FS_THR_ENABLE>` parameter can be set in the Mission Plan
 
 -  **Disabled** (Value 0) will disable the radio failsafe entirely.
 -  **Enabled Always RTL** (Value 1) will switch the copter to RTL Mode.  If the GPS position is not usable, the copter will change to Land Mode instead.
--  **Enabled Continue with Mission in Auto Mode** (Value 2) is no longer used. Setting it is automatically converted to Value 1, and :ref:`FS_OPTIONS<FS_OPTIONS>` is modified to include bit (0) for "Continue if in auto mode on Radio Failsafe".
+-  **Enabled Continue with Mission in Auto Mode** (Value 2) is no longer used, please refer to :ref:`FS_OPTIONS<FS_OPTIONS>`.
 -  **Enabled Always Land** (Value 3) will switch the copter to Land Mode.
 -  **Enabled SmartRTL or RTL** (Value 4) will switch the copter to SmartRTL mode. If SmartRTL is not available, the copter will switch to RTL Mode instead.  If the GPS position is not usable, the copter will change to Land Mode instead.
 -  **Enabled SmartRTL or Land** (Value 5) will switch the copter to SmartRTL mode. If SmartRTL is not available, the copter will switch to Land Mode instead.
