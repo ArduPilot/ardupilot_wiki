@@ -4,10 +4,11 @@
 MCP
 ===
 
-MCP clients (agents, lab tools, anything that speaks the protocol) can talk to
-an ArduPilot vehicle through MAVProxy with this module. It is an in-process
-JSON-RPC MCP server (HTTP + TCP) — no sidecar. Not the same as the
-:ref:`chat` module (OpenAI Assistants + UI window).
+A custom JSON-RPC client can talk to an ArduPilot vehicle through MAVProxy
+with this module. It is an in-process server on two custom transports: HTTP
+POST request/response, and TCP newline-delimited JSON. There is no sidecar.
+A stock MCP client that only speaks stdio or HTTP+SSE will not connect.
+This is separate from the :ref:`chat` module (OpenAI Assistants + UI window).
 
 .. code-block:: bash
 
@@ -15,10 +16,17 @@ JSON-RPC MCP server (HTTP + TCP) — no sidecar. Not the same as the
 
 .. warning::
 
-   Still early. Flight tools will arm, change mode, take off, and send guided
-   velocity setpoints if you enable them. Listeners and flight tools are
-   **off by default**. Bind defaults to ``127.0.0.1``. Prefer SITL until you
-   know the surface.
+   Still early. Flight tools arm, change mode, take off, and send guided
+   velocity setpoints when you enable them. Listeners and flight tools are
+   **off by default**.
+
+   There is no authentication. The HTTP handler does not read ``Origin``, and
+   every HTTP response sends ``Access-Control-Allow-Origin: *``. The TCP
+   listener has no credential check either. Bind defaults to ``127.0.0.1``.
+   Leave it there except on a trusted isolated network. Loopback with
+   ``allow_flight`` is still open to other processes on this machine, and to
+   a browser on this machine. Prefer SITL, or a propeller-free bench, until
+   you know the surface.
 
 .. note::
 
@@ -147,12 +155,21 @@ Settings
 Transports
 ----------
 
-HTTP: GET ``/``, ``/health``, or ``/mcp`` for health. POST ``/``, ``/mcp``, or
-``/rpc`` for JSON-RPC 2.0 (single object or batch array).
+HTTP: GET ``/``, ``/health``, or ``/mcp`` returns a JSON health document.
+POST ``/``, ``/mcp``, or ``/rpc`` accepts JSON-RPC 2.0 (one object or a batch
+array) and writes the JSON-RPC result in the response body.
 
 TCP: newline-delimited JSON-RPC on ``bind:tcp_port``.
 
-Smoke checks:
+These transports are custom. ``initialize`` returns protocol version
+``2024-11-05`` and server name ``mavproxy-mcp`` (``0.1.0``). The 2024-11-05
+revision's transports are stdio and HTTP+SSE, and that revision requires
+``initialize`` before any other request. This server keeps no session, so
+``tools/list`` and ``tools/call`` succeed with no ``initialize`` /
+``notifications/initialized`` first.
+
+The curls below are a check for this custom client. The second call is
+``tools/list`` with no handshake:
 
 .. code-block:: bash
 
@@ -164,8 +181,9 @@ Smoke checks:
 MCP Methods
 -----------
 
-Protocol version advertised on ``initialize``: ``2024-11-05``.
-Server name: ``mavproxy-mcp`` (``0.1.0``).
+``initialize`` returns ``protocolVersion`` ``2024-11-05``. That string is what
+the handler sends. It does not mean these listeners implement that revision's
+transports or its initialize-first lifecycle.
 
 .. list-table::
    :header-rows: 1
@@ -174,9 +192,9 @@ Server name: ``mavproxy-mcp`` (``0.1.0``).
    * - Method
      - What
    * - ``initialize``
-     - Handshake
+     - Returns ``protocolVersion``; other methods do not require it first
    * - ``notifications/initialized`` / ``initialized``
-     - Notification (no response)
+     - Accepted, no response, no session state
    * - ``ping``
      - Liveness
    * - ``tools/list``
@@ -184,36 +202,61 @@ Server name: ``mavproxy-mcp`` (``0.1.0``).
    * - ``tools/call``
      - Invoke a tool by name
 
-``tools/call`` returns MCP ``content`` (text JSON) plus ``structuredContent``
-(parsed object).
+``tools/call`` returns ``content`` (text JSON) and ``isError``. It also adds
+``structuredContent`` (the parsed object). ``structuredContent`` is absent
+from the 2024-11-05 tool-result schema. It is an optional field in the
+2025-06-18 schema.
 
 Tools
 -----
 
 Always available (read): ``vehicle_status``, ``position``, ``mcp_info``
 
-If ``allow_flight`` is enabled:
+If ``allow_flight`` is enabled, the flight tools only transmit. ``ok`` means
+the message was handed to the master link. It does not mean the flight
+controller accepted it or that the vehicle reached the requested state. Poll
+``vehicle_status``, ``position``, and the vehicle's ``COMMAND_ACK`` before
+treating mode, armed state, or altitude as done.
 
-- ``set_mode`` — e.g. ``GUIDED``, ``RTL``, ``LOITER``
-- ``arm`` — ``force`` uses SITL magic ``21196``
-- ``takeoff`` — skips or GUIDED-climbs if already airborne (``NAV_TAKEOFF`` fails in the air)
-- ``velocity_ned`` — GUIDED velocity in local NED (m/s)
+- ``set_mode`` — sends ``MAV_CMD_DO_SET_MODE`` (any mode the master link
+  knows, such as ``GUIDED``, ``RTL``, or ``LOITER``).
+- ``arm`` — sends ``MAV_CMD_COMPONENT_ARM_DISARM``. With ``force`` true,
+  param2 is ``21196`` on the vehicle that is connected, including a real
+  flight controller. That skips non-mandatory arm checks. Mandatory checks
+  still run (OpenDroneID, RC calibration, serial protocol).
+  ``{"arm": false, "force": true}`` force-disarms, including a flying Copter
+  or Plane. Keep ``force`` for SITL or a propeller-free bench.
+- ``takeoff`` — on the ground, sends ``MAV_CMD_NAV_TAKEOFF``. Above 1 m
+  relative altitude and below 90% of ``alt_m``, it sends one local-NED
+  velocity setpoint at ``vd=-2`` m/s and returns ``method: guided_climb``.
+  That single setpoint does not hold the climb until ``alt_m``. At or above
+  90% of the target it sends nothing (``method: skip``). The call raises
+  ``not armed`` when MAVProxy's current status is disarmed. ``arm`` does not
+  wait for the heartbeat that updates that flag, so the next call can still
+  see the vehicle as disarmed.
+- ``velocity_ned`` — sends one GUIDED velocity setpoint in local NED (m/s).
 
 No flight gate → permission error. That is intentional.
 
 Sample Session (SITL)
 ---------------------
 
-Rough agent loop with ``allow_flight`` on:
+Rough SITL loop with ``allow_flight`` on. Each flight call only transmits.
+Poll ``vehicle_status`` after ``arm`` and wait until it shows armed before
+``takeoff``. ``force`` skips non-mandatory checks on a real vehicle too; use
+this loop on SITL:
 
 .. code-block:: bash
 
     tools/call  vehicle_status
     tools/call  set_mode      {"mode": "GUIDED"}
+    tools/call  vehicle_status
     tools/call  arm           {"arm": true, "force": true}
+    tools/call  vehicle_status    # wait until this shows armed
     tools/call  takeoff       {"alt_m": 10}
     tools/call  position
     tools/call  velocity_ned  {"vn": 1, "ve": 0, "vd": 0}
+    tools/call  position
     tools/call  set_mode      {"mode": "RTL"}
 
 curl form for one call:
