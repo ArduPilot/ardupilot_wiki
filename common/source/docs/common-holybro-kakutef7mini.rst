@@ -11,7 +11,7 @@ Holybro Kakute F7 Mini
 
 .. note::
 
-   Only the V1 and V2 boards are supported. The V3 board changed microporcessor type and is no longer capable of running ArduPilot.
+   Only the V1 and V2 boards are supported. The V3 board changed microprocessor type and is no longer capable of running ArduPilot.
 
 .. note::
 
