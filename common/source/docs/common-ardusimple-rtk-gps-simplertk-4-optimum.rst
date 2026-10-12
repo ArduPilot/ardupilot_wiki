@@ -20,7 +20,7 @@ It provides:
 Where to Buy
 ============
 
-- `ArduSimple simpleRTK 4 Pro (u-blox ZED-X20P) <https://www.ardusimple.com/product/simplertk4-optimum-zed-x20p/>`_
+- `ArduSimple simpleRTK 4 Optimum (u-blox ZED-X20P) <https://www.ardusimple.com/product/simplertk4-optimum-zed-x20p/>`_
 
 Pin Map
 =======
