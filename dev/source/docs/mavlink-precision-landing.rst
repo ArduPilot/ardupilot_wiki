@@ -15,7 +15,7 @@ References:
 
 Users should follow the :ref:`user precision landing wiki page <copter:precision-landing-and-loiter>` including setting :ref:`PLND_TYPE <PLND_TYPE>` = 1 (MAVLink)
 
-The external camera system should send the `LANDING_TARGET <https://mavlink.io/en/messages/common.html#LANDING_TARGET>`__ message to the autopilot at no less than 1hz (a higher rate is better).
+The external camera system should send the `LANDING_TARGET <https://mavlink.io/en/messages/common.html#LANDING_TARGET>`__ message to the autopilot at no less than 2hz (a higher rate is better).
 
 If the x (e.g. forward), y (e.g. right) and z (e.g. down) distance to the target is known (in body frame) then "x", "y" and "z" fields should be populated, and "position_valid" should be set to "1".
 
@@ -43,7 +43,7 @@ If only the body-frame angle to the target is known then "angle_x" and "angle_y"
    <tr>
    <td><strong>frame</strong></td>
    <td>uint8_t</td>
-   <td>MAV_FRAME_BODY_FRD (12)</td>
+   <td>MAV_FRAME_BODY_FRD (12) for cameras hard-mounted to the frame or MAV_FRAME_LOCAL_FRD (20) for cameras in roll/pitch stabilised gimbals</td>
    </tr>
    <tr>
    <td><strong>angle_x</strong></td>
@@ -58,7 +58,7 @@ If only the body-frame angle to the target is known then "angle_x" and "angle_y"
    <tr>
    <td><strong>distance</strong></td>
    <td>float</td>
-   <td>Distance (in m) to the target from the vehicle or 0 if unknown</td>
+   <td>Distance (in m) to the target from the vehicle or 0 if unknown.  If 0 the rangefinder's distance is used</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>size_x</td>
