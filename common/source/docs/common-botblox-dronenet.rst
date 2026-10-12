@@ -15,7 +15,7 @@ Where To Buy
 
 The `BotBlox DroneNet can be purchased directly from BotBlox <https://botblox.io/dronenet-for-ardupilot/>`__
 
-Optionally the `SwitchBlox Cable Adapter <https://botblox.io/switchblox-cable-adapter-for-ardupilot/>`__ may be useful to ease the ethernet port differences across device manufacturers
+Optionally the `SwitchBlox Cable Adapter <https://shop.botblox.com/switchblox-for-ardupilot>`__ may be useful to ease the ethernet port differences across device manufacturers
 
 Connecting to the Autopilot
 ===========================
