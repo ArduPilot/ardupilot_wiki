@@ -3372,7 +3372,7 @@ In the example above, the servo attached to output channel 8 would be
 moved to PWM 1700 (servos generally accept PWM values between 1000 and
 2000).
 
-.. note:: this command can be used on any output whose ``SERVOx_FUNCTION`` is 0, 1, 51-66 or 140-155 (disabled, RCPassThru or RC pass-throughs)
+.. note:: this command can be used on any output whose ``SERVOx_FUNCTION`` is 0, 1, 51-66 or 140-155 (disabled or RC pass-through)
 
 .. _mav_cmd_do_repeat_servo:
 
