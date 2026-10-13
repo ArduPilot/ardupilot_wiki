@@ -307,6 +307,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        186           | Mount POI Lock             |    X     |    X    |    X    |  X    |
 +----------------------+----------------------------+----------+---------+---------+-------+
+|        187           | EKF Reset                  |    X     |    X    |    X    |  X    |
++----------------------+----------------------------+----------+---------+---------+-------+
 
 Intended as continuous PWM range control inputs:
 
@@ -634,6 +636,9 @@ Other functions are:
                                          | has been captured, switches gimbal target mode back to mode before 
                                          | it was switched high, or does nothing otherwise. Low clears the POI
                                          | and switches to the default gimbal mode.
+    EKF Reset                            | When switched high while disarmed, triggers a full bootstrap
+                                         | reset of the EKF filters without requiring an autopilot
+                                         | reboot. Ignored if the vehicle is armed.
     ROLL Input                            ROLL input channel. (replaces RCMAP).
     PITCH Input                           PITCH input channel. (replaces RCMAP).
     THROTTLE Input                        THROTTLE input channel. (replaces RCMAP).
