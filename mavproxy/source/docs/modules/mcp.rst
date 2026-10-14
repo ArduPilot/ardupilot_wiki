@@ -23,9 +23,11 @@ This is separate from the :ref:`chat` module (OpenAI Assistants + UI window).
    velocity setpoints when you enable them. Listeners and flight tools are
    **off by default**.
 
-   There is no authentication. The HTTP handler does not read ``Origin``, and
-   every HTTP response sends ``Access-Control-Allow-Origin: *``. The TCP
-   listener has no credential check either. Bind defaults to ``127.0.0.1``.
+   There is no authentication. The HTTP handler does not read ``Origin``.
+   JSON responses and the OPTIONS preflight send
+   ``Access-Control-Allow-Origin: *``. A 204 reply to a notification
+   (for example ``notifications/initialized``) does not. The TCP listener
+   has no credential check either. Bind defaults to ``127.0.0.1``.
    Leave it there except on a trusted isolated network. Loopback with
    ``allow_flight`` is still open to other processes on this machine, and to
    a browser on this machine. Prefer SITL, or a propeller-free bench, until
@@ -128,7 +130,12 @@ before the stop can still complete that request. ``mcp status`` reports
 the listeners as down while that client is served. ``mcp restart`` can
 then print ``TCP bind failed ... Address already in use`` until the client
 disconnects. ``mcp set allow_flight 0`` blocks the next flight call
-immediately, including on a connection that ``mcp stop`` left open.
+immediately for clients of this module instance, including a connection that
+``mcp stop`` left open. A client connected before ``module unload`` or
+``module reload`` keeps the old instance's ``allow_flight``. After a reload
+with the new gate at 0, that client can still send a flight command, such as
+a force arm. Turn ``allow_flight`` off before unloading or reloading the
+module.
 
 Settings
 --------
