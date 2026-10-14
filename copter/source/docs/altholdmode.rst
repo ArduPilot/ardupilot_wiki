@@ -65,21 +65,26 @@ Tuning
 .. image:: ../images/Tuning_AltHold.png
     :target: ../_images/Tuning_AltHold.png
 
-The Altitude Hold P is used to convert the altitude error (the
-difference between the desired altitude and the actual altitude) to a
-desired climb or descent rate.  A higher rate will make it more
-aggressively attempt to maintain it’s altitude but if set too high leads
-to a jerky throttle response.
+The Altitude Hold mode utilizes a cascaded controller loop consisting of a position controller, a velocity controller, and an acceleration controller:
 
-The Throttle Rate (which normally requires no tuning) converts the
-desired climb or descent rate into a desired acceleration up or down.
+* **Position Controller (Altitude Hold P)**: :ref:`PSC_D_POS_P <PSC_D_POS_P>` converts altitude error (difference between target and estimated altitude) into a desired climb or descent rate. A higher value makes the vehicle attempt to maintain altitude more aggressively, but setting it too high can cause jerky throttle response or vertical oscillations.
+* **Velocity Controller (Throttle Rate P)**: :ref:`PSC_D_VEL_P <PSC_D_VEL_P>` converts the climb or descent rate error into a desired vertical acceleration. This parameter normally does not require tuning.
+* **Acceleration Controller (Throttle Accel PID)**: Converts vertical acceleration error into motor throttle output using :ref:`PSC_D_ACC_P <PSC_D_ACC_P>`, :ref:`PSC_D_ACC_I <PSC_D_ACC_I>`, and :ref:`PSC_D_ACC_D <PSC_D_ACC_D>`. The output is summed with the feedforward hover throttle (:ref:`MOT_THST_HOVER <MOT_THST_HOVER>`) to drive the motor matrix.
 
-The Throttle Accel PID gains convert the acceleration error (i.e the
-difference between the desired acceleration and the actual acceleration)
-into a motor output.  The 1:2 ratio of P to I (i.e. I is twice the size
-of P) should be maintained if you modify these parameters.  These values
-should never be increased but for very powerful copters you may get
-better response by reducing both by 50% (i.e P to 0.5, I to 1.0).
+Tuning Guidelines:
+
+* The 1:2 ratio of P to I (i.e. ``PSC_D_ACC_I`` is twice ``PSC_D_ACC_P``) should typically be maintained when modifying Throttle Accel gains.
+* During initial tuning, follow the :ref:`initial-tuning-flight` procedure: set :ref:`PSC_D_ACC_P <PSC_D_ACC_P>` to 0.1 × :ref:`MOT_THST_HOVER <MOT_THST_HOVER>` and :ref:`PSC_D_ACC_I <PSC_D_ACC_I>` to 2 × ``PSC_D_ACC_P`` (0.2 × ``MOT_THST_HOVER``). This helps prevent vertical oscillations or bouncing.
+* If the vehicle slowly oscillates up and down in AltHold, reduce both :ref:`PSC_D_POS_P <PSC_D_POS_P>` and :ref:`PSC_D_VEL_P <PSC_D_VEL_P>` by 20% to 50%.
+
+In Mission Planner, these parameters can be configured under **CONFIG -> Extended Tuning** in the **Altitude Hold (Alt to climbrate)**, **Throttle Rate (VSpd to accel)**, and **Throttle Accel (Accel to motor)** sections, or directly via the **Full Parameter List**.
+
+.. note::
+
+   In Copter 4.7 and later, vertical position controller parameters use NED naming conventions (:ref:`PSC_D_POS_P <PSC_D_POS_P>`, :ref:`PSC_D_VEL_P <PSC_D_VEL_P>`, and :ref:`PSC_D_ACC_P <PSC_D_ACC_P>`). In Copter 4.6 and earlier, these were named ``PSC_POSZ_P``, ``PSC_VELZ_P``, and ``PSC_ACCZ_*``. Note that while position and velocity gains were only renamed, the acceleration parameters were rescaled when upgrading from 4.6: P, I, and D gains were rescaled by 0.1 (:ref:`PSC_D_ACC_P <PSC_D_ACC_P>` = ``PSC_ACCZ_P`` × 0.1, :ref:`PSC_D_ACC_I <PSC_D_ACC_I>` = ``PSC_ACCZ_I`` × 0.1), while IMAX was rescaled by 0.001 (:ref:`PSC_D_ACC_IMAX <PSC_D_ACC_IMAX>` = ``PSC_ACCZ_IMAX`` × 0.001).
+
+.. image:: ../images/copter-poscontrol-z-pid.png
+    :target: ../_images/copter-poscontrol-z-pid.png
 
 .. _altholdmode_verifying_althold_performance_with_dataflash_logs:
 
