@@ -121,7 +121,8 @@ CLI
      - Settings below
 
 ``mcp stop`` stops accepting new connections. It does not disconnect a client that
-is already connected, and it does not close the listening sockets. A TCP
+is already connected. While a client stays connected, its listening socket stays
+bound. With no client, that port can be bound again immediately. A TCP
 client can still call tools after the stop. An HTTP connection accepted
 before the stop can still complete that request. ``mcp status`` reports
 the listeners as down while that client is served. ``mcp restart`` can
@@ -250,10 +251,14 @@ outside this API. MAVProxy prints it on the console.
   relative altitude and below 90% of ``alt_m``, it sends one local-NED
   velocity setpoint at ``vd=-2`` m/s and returns ``method: guided_climb``.
   That single setpoint does not hold the climb until ``alt_m``. At or above
-  90% of the target it sends nothing (``method: skip``). The call raises
-  ``not armed`` when MAVProxy's current status is disarmed. ``arm`` does not
-  wait for the heartbeat that updates that flag, so the next call can still
-  see the vehicle as disarmed.
+  90% of the target it sends nothing and returns ``ok`` with ``method: skip``
+  and ``already_airborne: true``. That check runs before the armed check, so
+  this ``ok`` is also returned when the vehicle is disarmed, including
+  ``alt_m`` 0 before any position arrives (no position is treated as relative
+  altitude 0). That ``ok`` does not mean the vehicle is armed. Below that
+  threshold the call raises ``not armed`` when MAVProxy's current status is
+  disarmed. ``arm`` does not wait for the heartbeat that updates that flag,
+  so the next call can still see the vehicle as disarmed.
 - ``velocity_ned`` — sends one GUIDED velocity setpoint in local NED (m/s).
 
 No flight gate → permission error. That is intentional.
