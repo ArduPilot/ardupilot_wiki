@@ -8,6 +8,9 @@ A custom JSON-RPC client can talk to an ArduPilot vehicle through MAVProxy
 with this module. It is an in-process server on two custom transports: HTTP
 POST request/response, and TCP newline-delimited JSON. There is no sidecar.
 A stock MCP client that only speaks stdio or HTTP+SSE will not connect.
+The unmodified MCP Python SDK 2.3.0 Streamable HTTP client does connect
+to ``POST /mcp`` and can list and call tools. It accepts this server's
+``application/json`` response.
 This is separate from the :ref:`chat` module (OpenAI Assistants + UI window).
 
 .. code-block:: bash
@@ -111,11 +114,20 @@ CLI
    * - ``mcp start``
      - Bind listeners
    * - ``mcp stop``
-     - Close listeners
+     - Stop accepting new connections. Does not drop clients already connected
    * - ``mcp restart``
      - Stop then start
    * - ``mcp set <name> <value>``
      - Settings below
+
+``mcp stop`` stops accepting new connections. It does not disconnect a client that
+is already connected, and it does not close the listening sockets. A TCP
+client can still call tools after the stop. An HTTP connection accepted
+before the stop can still complete that request. ``mcp status`` reports
+the listeners as down while that client is served. ``mcp restart`` can
+then print ``TCP bind failed ... Address already in use`` until the client
+disconnects. ``mcp set allow_flight 0`` blocks the next flight call
+immediately, including on a connection that ``mcp stop`` left open.
 
 Settings
 --------
@@ -129,7 +141,7 @@ Settings
      - Meaning
    * - ``enabled``
      - ``0``
-     - Auto-start listeners on load
+     - Load-time flag. ``mcp set enabled`` does not start or stop listeners
    * - ``http_port``
      - ``8765``
      - HTTP port (``0`` disables)
@@ -152,6 +164,11 @@ Settings
     mcp set http_port 8765
     mcp restart
 
+``mcp set enabled 1`` changes the flag only. Listeners auto-start when
+``MAVPROXY_MCP_ENABLE=1`` before the module loads. After load, ``mcp start``
+and ``mcp stop`` are the run-time controls, and those commands set
+``enabled`` to match.
+
 Transports
 ----------
 
@@ -168,7 +185,7 @@ revision's transports are stdio and HTTP+SSE, and that revision requires
 ``tools/list`` and ``tools/call`` succeed with no ``initialize`` /
 ``notifications/initialized`` first.
 
-The curls below are a check for this custom client. The second call is
+The curls below check this HTTP listener. The second call is
 ``tools/list`` with no handshake:
 
 .. code-block:: bash
@@ -215,15 +232,18 @@ Always available (read): ``vehicle_status``, ``position``, ``mcp_info``
 If ``allow_flight`` is enabled, the flight tools only transmit. ``ok`` means
 the message was handed to the master link. It does not mean the flight
 controller accepted it or that the vehicle reached the requested state. Poll
-``vehicle_status``, ``position``, and the vehicle's ``COMMAND_ACK`` before
-treating mode, armed state, or altitude as done.
+``vehicle_status`` and ``position`` before treating mode, armed state, or
+altitude as done. No tool returns ``COMMAND_ACK``. That acknowledgement is
+outside this API. MAVProxy prints it on the console.
 
 - ``set_mode`` — sends ``MAV_CMD_DO_SET_MODE`` (any mode the master link
   knows, such as ``GUIDED``, ``RTL``, or ``LOITER``).
 - ``arm`` — sends ``MAV_CMD_COMPONENT_ARM_DISARM``. With ``force`` true,
   param2 is ``21196`` on the vehicle that is connected, including a real
   flight controller. That skips non-mandatory arm checks. Mandatory checks
-  still run (OpenDroneID, RC calibration, serial protocol).
+  still run, for example OpenDroneID, RC calibration, and serial protocol.
+  Copter also runs its position and altitude checks. Plane also runs its
+  RC-received check.
   ``{"arm": false, "force": true}`` force-disarms, including a flying Copter
   or Plane. Keep ``force`` for SITL or a propeller-free bench.
 - ``takeoff`` — on the ground, sends ``MAV_CMD_NAV_TAKEOFF``. Above 1 m
