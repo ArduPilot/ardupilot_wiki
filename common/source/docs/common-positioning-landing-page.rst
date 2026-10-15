@@ -49,6 +49,7 @@ GPS/Compass
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     mRo GPS, GPS+Compass,RTK, and DroneCAN modules <https://store.mrobotics.io/category-s/109.htm>
     mRo Locaton One DroneCAN GPS/Compass <common-mrobotics-location-one-gps>
+    Navisys GM-M04B L1/L5 GNSS + Compass <common-gps-navisys-gm-m04b>
     Qiotek DroneCAN GNSS M10 QMC5883  <https://www.qio-tek.com/index.php/product/qiotek-m10s-gnss-module/>
     Qiotek GNSS M10 QMC5883 <https://www.qio-tek.com/index.php/product/qiotek-m10s-gnss-module/>
     Qiotek DroneCAN RM3100 Compass <https://www.qio-tek.com/index.php/product/qiotek-rm3100-dronecan-module/>
