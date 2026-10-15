@@ -131,11 +131,13 @@ the listeners as down while that client is served. ``mcp restart`` can
 then print ``TCP bind failed ... Address already in use`` until the client
 disconnects. ``mcp set allow_flight 0`` blocks the next flight call
 immediately for clients of this module instance, including a connection that
-``mcp stop`` left open. A client connected before ``module unload`` or
-``module reload`` keeps the old instance's ``allow_flight``. After a reload
-with the new gate at 0, that client can still send a flight command, such as
-a force arm. Turn ``allow_flight`` off before unloading or reloading the
-module.
+``mcp stop`` left open. The module loads as ``mavproxy_mcp`` and registers as
+``mcp``. To load a fresh instance, run ``mcp set allow_flight 0``, then
+``module unload mcp``, then ``module load mavproxy_mcp``, then ``mcp start``
+if you need the listeners again. A client connected before
+``module unload mcp`` keeps the old instance. If ``allow_flight`` was still
+on, that client can still send a flight command, such as a force arm, after
+the new instance loads with the gate at 0.
 
 Settings
 --------
