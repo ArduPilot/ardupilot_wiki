@@ -137,7 +137,10 @@ immediately for clients of this module instance, including a connection that
 if you need the listeners again. A client connected before
 ``module unload mcp`` keeps the old instance. If ``allow_flight`` was still
 on, that client can still send a flight command, such as a force arm, after
-the new instance loads with the gate at 0.
+the new instance loads with the gate at 0. If that client is still connected,
+``mcp start`` on the new instance brings up HTTP only, because the TCP bind
+fails while the port stays held, and ``mcp restart`` after the client drops
+brings TCP up.
 
 Settings
 --------
