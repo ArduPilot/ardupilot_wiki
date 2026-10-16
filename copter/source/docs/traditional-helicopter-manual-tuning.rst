@@ -126,7 +126,7 @@ The setup of a helicopter with a flybar equipped head requires no special
 configuration; ArduPilot's attitude controller runs the same way as for a
 flybarless head, and the FF gain is set as described below.
 
-.. note:: Prior to Copter-4.8, the ``H_FLYBAR_MODE`` parameter allowed ACRO flight mode to passthrough pilot roll/pitch input directly to the swashplate, mimicking a mechanical flybar. This passthrough option has been removed; ACRO mode now always uses the attitude controller's "Virtual Flybar" feature (see :ref:`acro-mode`) regardless of whether the head is flybar equipped.
+.. note:: Prior to Copter-4.8, the ``H_FLYBAR_MODE`` parameter allowed ACRO flight mode to passthrough pilot roll/pitch input directly to the swashplate which bypassed the attitude controller and relied solely on the stabilization provided by the mechanical flybar. This passthrough option has been removed; ACRO mode now always uses the attitude controller(see :ref:`acro-mode`) regardless of whether the head is flybar equipped.
 
 .. Note:: For flybar heads, the flybar is a mechanical version of the rate PID loop. So flybar is tuned using only FF in pitch and roll. The rate D and P gains are left set to zero for flybar. I-gain, IMAX, and ILMI are tuned just like FBL. 
 
