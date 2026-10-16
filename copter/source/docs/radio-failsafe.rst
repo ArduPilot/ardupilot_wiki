@@ -8,7 +8,7 @@ Copter supports several configurable failsafe options in cases where contact bet
 
 .. warning::
 
-   For Single Helicopter, Dual Helicopter and Quad Helicopter frames, the RC Passthrough :ref:`H_RSC_MODE<H_RSC_MODE>` requires the RC receiver channel used for the rotor speed control to hold its last value when transmitter signal is lost.  If the receiver sends no signal or does not hold that channel's value, the motor will be shutdown and the helicopter will crash.  
+   For Single Helicopter, Dual Helicopter and Quad Helicopter frames, the RC Passthrough :ref:`H_RSC_MODE<H_RSC_MODE>` requires the RC receiver channel assigned to Motor Interlock to hold its last value when transmitter signal is lost.  If the receiver sends no signal or does not hold that channel's value, the motor will be shutdown and the helicopter will crash.  
 
 .. image:: ../images/RadioFailsafe_Intro.jpg
     :target: ../_images/RadioFailsafe_Intro.jpg
