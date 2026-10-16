@@ -215,6 +215,8 @@ of the aircraft (sticking out the left and right side).  Measure the blade pitch
 the elevator stick full forward or aft and measure the blade pitch.  The difference between the two measurements would be the maximum cyclic 
 blade pitch corresponding to the :ref:`H_CYC_MAX <H_CYC_MAX>`.  The cyclic blade pitch is the same for the pitch (elevator) and roll (aileron) axes.
 
+Enter this measured maximum cyclic blade pitch angle, in degrees, in :ref:`H_CYC_ANG_MAX <H_CYC_ANG_MAX>`. It is used only to log the collective and cyclic blade pitch angles in the SWSH log message, which are calculated from the actual swashplate servo outputs. The default of 0 disables SWSH logging.
+
 
 .. toctree::
     :hidden:
