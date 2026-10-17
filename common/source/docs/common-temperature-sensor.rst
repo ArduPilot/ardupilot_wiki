@@ -70,6 +70,18 @@ Then set (examples shown for first sensor):
 
 - :ref:`TEMP1_TYPE<TEMP1_TYPE>` = 6 (DroneCAN)
 
+Rangefinder Temperature
+=======================
+
+A temperature sensor can supply its reading to a :ref:`rangefinder <common-rangefinder-landingpage>` instance. This is intended for rangefinders that have no onboard temperature sensor, and provides the foundation for future temperature-based distance corrections (for example, ultrasonic speed-of-sound compensation).
+
+- :ref:`TEMP1_SRC<TEMP1_SRC>` = 9 (Rangefinder) designates that this temperature sensor's reading will be supplied to a rangefinder.
+- :ref:`TEMP1_SRC_ID<TEMP1_SRC_ID>` selects the rangefinder instance. For example, a value of ``1`` supplies the reading to ``RNGFND1``.
+
+.. note:: The temperature represents the surrounding medium (air or water) in which the rangefinder operates, **not** the internal temperature of the rangefinder hardware.
+
+The supplied value is logged in the ``RFND`` message (``Temp`` field) for the selected instance.
+
 Logging/OSD
 ===========
 
