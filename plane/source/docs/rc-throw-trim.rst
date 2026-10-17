@@ -98,7 +98,7 @@ input just because your output is reversed (ie. you can set
 
 If you do need to use a reversed throttle input then you need to be be
 very careful with your throttle failsafe settings. The plane parameter
-:ref:`THR_FS_VALUE<THR_FS_VALUE>` is normally the throttle value below which the autopilot
+:ref:`THR_FS_VALUE<THR_FS_VALUE>` is normally the throttle value at or below which the autopilot
 will consider your transmitter to be in RC failsafe. If you have a
 reversed throttle input then that value will need to be a high value,
-and will be the value above which you are in RC failsafe.
+and will be the value at or above which you are in RC failsafe.
