@@ -115,9 +115,9 @@
           }
           return hashBytes(body).then(function (got) {
             if (got !== expected) { return attempt(i + 1); }
-            return cache.put(new Request(key), new Response(body, {
-              headers: { 'Content-Type': cfg.mimeFor(name) }
-            }));
+            // Stored as the unpacker stores it: a parameter delta keeps
+            // its marker, text is compressed the same way.
+            return ApUnpack.storeEntry(cache, key, name, new Uint8Array(body));
           });
         });
       }, function (err) {
