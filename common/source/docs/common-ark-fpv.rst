@@ -15,7 +15,7 @@ Features
 * 480MHz
 * 2MB Flash
 * 1MB RAM
-* Invensense IIM-42653 Industrial IMU with heater resistor
+* Invensense IIM-42653 (hardware rev 0) or ST LSM6DSV32X (hardware rev 1) IMU with heater resistor
 * Bosch BMP390 Barometer
 * ST IIS2MDC Magnetometer
 * 9x PWM  Bidirectional-DSHOT capable
