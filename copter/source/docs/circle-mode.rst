@@ -32,8 +32,8 @@ The :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` bitmask parameter controls what the pi
 
 When bit 0 of the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` parameter is set, the pilot can adjust the circle's radius and angular velocity with the control sticks:
 
-- Pitch stick up (reducing RC pwm) reduces the radius. Think moving forward from an FPV perspective. At full stick deflection the radius changes at :ref:`WP_SPD<WP_SPD>` m/s.
-- Pitch stick down (increasing RC pwm) increases the radius. Think moving back from an FPV perspective.
+- Pitch stick up (reducing RC pwm) reduces the radius. Think moving forward from an FPV perspective. At full stick deflection the radius changes at :ref:`WP_SPD<WP_SPD>` m/s. Holding the stick up reduces the radius to zero, and the vehicle then rotates in place. In firmware 4.7 and earlier the radius could not be reduced to zero this way: on reaching zero it jumped back to :ref:`CIRCLE_RADIUS_M<CIRCLE_RADIUS_M>` and began shrinking again.
+- Pitch stick down (increasing RC pwm) increases the radius, including from zero. Think moving back from an FPV perspective.
 - Roll stick right (think clockwise) will increase the speed while moving clockwise, or decrease the speed while moving counterclockwise until reaching zero, at which point it will stop.
 - Roll stick left (think counterclockwise) will increase the speed while moving counterclockwise, or decrease the speed while moving clockwise until reaching zero, at which point it will stop. Once stopped (rate 0), releasing the roll stick and pushing it again in either direction will begin moving again in the desired direction. So yes, this allows you to completely change the direction on the fly.
 - Roll stick rate changes are inhibited when CH6 tuning knob is set for circle rate.
