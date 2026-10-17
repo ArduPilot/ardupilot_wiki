@@ -31,7 +31,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        4             | RTL mode                   |    X     |    X    |    X    |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
-|        5             | Save Trim                  |    X     |         |    X    |       |
+|        5             | Save Trim                  |    X     |         |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        7             | Save Waypoint              |    X     |         |    X    |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
@@ -379,10 +379,8 @@ Other functions are:
    ===================================== =======================================================================
     Flip                                 | The vehicle will flip on its roll or pitch axis depending upon the
                                          | pilot's roll and pitch stick position. See :ref:`Flip Mode<flip-mode>`.
-    Save Trim                            | In Rover, a high saves the current steering channel trim,
-                                         | see :ref:`Save Steering Trim <savetrim>`.
-                                         | In Copter, it adjusts the vehicle level position using the current roll
-                                         | and pitch stick inputs. See details :ref:`here <auto-trim>`.
+    Save Trim                            | Adjusts the vehicle level position using the current roll
+                                         | and pitch stick inputs. See details :ref:`here <copter:autotrim>`.
     Save Waypoint                        | Save the current location (including altitude) as a waypoint in the
                                          | mission.If in AUTO mode no waypoint will be saved, instead the 
                                          | vehicle will RTL.
@@ -554,7 +552,8 @@ Other functions are:
                                          | subsequently enable or disable if it is configured. Disarms
                                          | the vehicle unconditionally if brought low.
     TRIM RC/SERVO Save                   | Saves current RC input trim and SERVO output trim for pitch,
-                                         | roll, and yaw in Plane and for Steering in Rover.
+                                         | roll, and yaw in Plane and for Steering in Rover. See
+                                         | :ref:`Save Steering Trim <savetrim>` for Rover.
     Torqeedo Error Clear                  Clears error condition in Torqeedo motor controller.
     Force FBWA as Long FS Action         | Forces mode change to FBWA in Long FS, overriding the
                                          | :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter value for emergency
