@@ -40,6 +40,9 @@ first connect with the Mission Planner and then open the Config/Tuning
 
 -  :ref:`RNGFND1_MAX<RNGFND1_MAX>` = "7" (i.e. 7m max range)
 -  :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “2" (MaxbotixI2C sonar)
+-  :ref:`RNGFND1_ADDR<RNGFND1_ADDR>` = 0 (default), which uses the sensor's factory I2C address of 112 (0x70). If the sensor's address has been changed, set this to the new address in decimal.
+
+.. note:: If :ref:`RNGFND1_ADDR<RNGFND1_ADDR>` has been set to a different address, for example for a previously used I2C rangefinder or by loading a parameter file, the sensor will not be found. Set it back to 0 or to 112.
 
 .. image:: ../../../images/RangeFinder_MaxbotixI2C_MPSetup.png
     :target: ../_images/RangeFinder_MaxbotixI2C_MPSetup.png
