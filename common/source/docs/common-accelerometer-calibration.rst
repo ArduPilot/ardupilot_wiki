@@ -51,14 +51,13 @@ Calibration steps
 
 .. note:: this **Calibrate Level** operation can only correct up to a 10 degree difference between the initial calibration and the final position in the vehicle, and only corrects pitch and roll differences, not yaw.
 
-[site wiki="plane"]
-   .. tip:: For planes, the "level" angle for pitch is important for steady altitude flight. See :ref:`tuning-cruise` for more details.
+   .. ifconfig:: project == 'Plane'
 
-   The :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` parameter will add "nose-down" trim when the throttle stick is lowered in pilot throttle controlled and stabilized modes, such as FBWA, to prevent the autopilot from holding the nose up as the plane slows down and potentially causing a stall. This can be tested, at altitude, in FBWA mode by moving the throttle to idle and checking that there is sufficient airspeed in a turn to avoid stalling. Be prepared to recover from a stall! Increase the value of :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>`, if necessary.
+      .. tip:: For planes, the "level" angle for pitch is important for steady altitude flight. See :ref:`tuning-cruise` for more details.
 
-   .. tip:: For small planes or gliders, :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` often needs to be set more than the default value of 2 degrees.
+      The :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` parameter will add "nose-down" trim when the throttle stick is lowered in pilot throttle controlled and stabilized modes, such as FBWA, to prevent the autopilot from holding the nose up as the plane slows down and potentially causing a stall. This can be tested, at altitude, in FBWA mode by moving the throttle to idle and checking that there is sufficient airspeed in a turn to avoid stalling. Be prepared to recover from a stall! Increase the value of :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>`, if necessary.
 
- [/site]
+      .. tip:: For small planes or gliders, :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` often needs to be set more than the default value of 2 degrees.
 
 - Proceed through the required positions, using the **Click when Done** button once each position is reached and held still.
 
