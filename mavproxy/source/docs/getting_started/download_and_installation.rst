@@ -83,24 +83,30 @@ To update an existing installation with the current development version (ie, fro
 Mac
 ===
 
-Install Python via
+Install Python with Homebrew:
 
 .. code:: bash
 
-    brew install python --framework
+    brew install python
 
-Uninstall python-dateutil (OSX and Windows come bundled with a version that is not supported for some dependencies):
-
-.. code:: bash
-
-    sudo python3 -m pip uninstall python-dateutil
-
-Install MAVProxy and its remaining dependencies from the public PyPi repository:
+Install MAVProxy in a virtual environment. This avoids modifying the Homebrew-managed Python environment and prevents PEP 668 ``externally-managed-environment`` errors:
 
 .. code:: bash
 
-    sudo python3 -m pip install wxPython
-    sudo python3 -m pip install gnureadline
-    sudo python3 -m pip install billiard
-    sudo python3 -m pip install numpy pyparsing
-    sudo python3 -m pip install MAVProxy
+    python3 -m venv ~/venv-mavproxy
+    source ~/venv-mavproxy/bin/activate
+    python -m pip install --upgrade pip
+    python -m pip install MAVProxy wxPython gnureadline billiard numpy pyparsing
+    mavproxy.py --version
+
+The virtual environment must be activated with ``source ~/venv-mavproxy/bin/activate`` before running MAVProxy.
+
+Alternatively, install MAVProxy with pipx, which manages an isolated environment automatically:
+
+.. code:: bash
+
+    brew install pipx
+    pipx ensurepath
+    pipx install MAVProxy
+    pipx inject MAVProxy wxPython gnureadline billiard numpy pyparsing
+    mavproxy.py --version
