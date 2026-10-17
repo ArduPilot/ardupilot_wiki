@@ -43,3 +43,14 @@ In addition, there are several global MAVLink related parameters
 * :ref:`MAV_SYSID<MAV_SYSID>`: Allows setting an individual MAVLink system id for this vehicle to distinguish it from others on the same network
 * :ref:`MAV_TELEM_DELAY<MAV_TELEM_DELAY>`: The amount of time (in seconds) to delay radio telemetry to prevent an Xbee bricking on power up
 
+32-bit System IDs
+=================
+ArduPilot 4.8 and later support the 32-bit system IDs of MAVLink 2.1. :ref:`MAV_SYSID<MAV_SYSID>` and :ref:`MAV_GCS_SYSID<MAV_GCS_SYSID>` accept 1 through 4294967295, and :ref:`MAV_GCS_SYSID_HI<MAV_GCS_SYSID_HI>` accepts 0 through 4294967295. This allows, for example, each vehicle's IPv4 address to be used as its system ID, which makes large swarms such as drone light shows easier to set up. Parameters that hold another system's ID, such as ``FOLL_SYSID`` and ``MNTx_SYSID_DFLT``, accept 0 through 4294967295. Existing system ID values are converted automatically on upgrade.
+
+.. warning:: Using a system ID above 255 has these limitations:
+
+   - Every device that communicates with the vehicle (ground station, companion computer, MAVLink peripherals such as gimbals and cameras) must support MAVLink2 with 32-bit system IDs. Devices with older MAVLink2 implementations will drop all packets from the vehicle.
+   - No packets are sent on ports set to MAVLink1 (``SERIALx_PROTOCOL`` = 1).
+   - Some individual message fields remain 8-bit. In particular, ``GIMBAL_MANAGER_STATUS`` reports a primary controller system ID above 255 as zero. OpenDroneID payload target fields are also 8-bit, so OpenDroneID peripherals must support MAVLink 2.1 extended targets.
+   - The ``PARAM_SET`` message sends values as floating point, which cannot represent every value above 16777216 exactly. Use a ground station that supports packed parameter upload over MAVFTP to set larger system IDs.
+
