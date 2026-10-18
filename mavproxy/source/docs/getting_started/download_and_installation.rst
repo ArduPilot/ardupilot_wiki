@@ -89,17 +89,29 @@ Install Python with Homebrew:
 
     brew install python
 
+Homebrew's current ``python`` formula installs Python 3.15. ``gnureadline`` is built from source on Python 3.15 and requires the Xcode Command Line Tools:
+
+.. code:: bash
+
+    xcode-select --install
+
+Alternatively, install ``python@3.14`` with Homebrew and use ``$(brew --prefix python@3.14)/bin/python3.14`` instead of the Python command below.
+
 Install MAVProxy in a virtual environment. This avoids modifying the Homebrew-managed Python environment and prevents PEP 668 ``externally-managed-environment`` errors:
 
 .. code:: bash
 
-    python3 -m venv ~/venv-mavproxy
+    $(brew --prefix)/bin/python3 -m venv ~/venv-mavproxy
     source ~/venv-mavproxy/bin/activate
     python -m pip install --upgrade pip
-    python -m pip install MAVProxy wxPython gnureadline billiard numpy pyparsing
+    python -m pip install MAVProxy wxPython gnureadline
     mavproxy.py --version
 
-The virtual environment must be activated with ``source ~/venv-mavproxy/bin/activate`` before running MAVProxy.
+The virtual environment must be activated with ``source ~/venv-mavproxy/bin/activate`` before running MAVProxy. To update this installation, activate the virtual environment and run:
+
+.. code:: bash
+
+    python -m pip install --upgrade MAVProxy
 
 Alternatively, install MAVProxy with pipx, which manages an isolated environment automatically:
 
@@ -107,6 +119,17 @@ Alternatively, install MAVProxy with pipx, which manages an isolated environment
 
     brew install pipx
     pipx ensurepath
+
+Open a new Terminal window (or restart your shell) to load the updated ``PATH``, then run:
+
+.. code:: bash
+
     pipx install MAVProxy
-    pipx inject MAVProxy wxPython gnureadline billiard numpy pyparsing
+    pipx inject MAVProxy wxPython gnureadline
     mavproxy.py --version
+
+To update the pipx installation, run:
+
+.. code:: bash
+
+    pipx upgrade MAVProxy
