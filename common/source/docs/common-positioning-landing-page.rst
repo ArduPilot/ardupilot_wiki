@@ -107,6 +107,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     LOCOSYS HAWK R1 RTK GNSS / R2 RTK GNSS + Compass<common-gps-locosys>
     Navisys GR-901U ZED-F9P RTK base for Ground Station <common-gps-navisys-gr901u>
     Navisys GE-920 Dual-Antenna RTK <common-gps-navisys-ge920>
+    Navisys GM-905 RTK / CLAS GNSS Module <common-gps-navisys-gm-905>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
     Septentrio AsteRx-m UAS RTK GPS <common-gps-septentrio>
@@ -143,6 +144,7 @@ Moving Baseline (GPS for Yaw) Capable
     Holybro RTK NEO-F9P Family <https://holybro.com/collections/h-rtk-neo-f9p-series>
     Holybro RTK Unicore UM982 GPS (Dual Antenna Heading) <https://holybro.com/products/h-rtk-unicore-um982>
     Holybro RTK mosaic-H GPS (Dual Antenna Heading) <https://holybro.com/collections/h-rtk-gps/products/h-rtk-mosaic>
+    Navisys GM-905 RTK / CLAS GNSS Module <common-gps-navisys-gm-905>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
     Synerx MDU-2000 RTK + LTE GPS <common-synerex-mdu-2000>
     
