@@ -58,7 +58,7 @@ PWM Output
 ==========
 
 The Pixhawk6C supports up to 16 PWM outputs. All 16 outputs
-support all normal PWM output formats. All FMU outputs (marked "FMU PWM Output") also support DShot.
+support all normal PWM output formats. All FMU outputs (marked "FMU PWM Output") also support DShot. DShot on the 8 IO outputs requires :ref:`BRD_IO_DSHOT<BRD_IO_DSHOT>` to be set to 1, followed by a reboot, which loads the DShot firmware onto the IO controller. Doing so disables PPM, iBus, SUMD, SRXL and ST24 input on the IO controller's RC input pin. SBUS and FPort on that pin, and DSM receivers on the DSM port, continue to work. With the DShot firmware loaded, IO outputs 1-4 also support Bi-Directional DShot.
 
 The 8 FMU PWM outputs are in 4 groups:
 

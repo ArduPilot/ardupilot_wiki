@@ -116,7 +116,7 @@ Wiring Diagram
 
 PWM Output
 ==========
-PWM M1-M8 (IO Main PWM), A1-A8(FMU PWM). All these 16 support normal PWM output formats. FMU PWM A1-A6 can support DShot and B-Directional DShot. A1-A8(FMU PWM) are grouped as:
+PWM M1-M8 (IO Main PWM), A1-A8(FMU PWM). All these 16 support normal PWM output formats. FMU PWM A1-A6 can support DShot and B-Directional DShot. DShot on M1-M8 (IO Main PWM) requires :ref:`BRD_IO_DSHOT<BRD_IO_DSHOT>` to be set to 1, followed by a reboot, which loads the DShot firmware onto the IO controller. With the DShot firmware loaded, M1-M4 also support Bi-Directional DShot. A1-A8(FMU PWM) are grouped as:
 
 * Group 1: A1, A2, A3, A4
 * Group 2: A5, A6
