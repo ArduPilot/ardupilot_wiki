@@ -37,8 +37,8 @@ configure the encoders.
 
 - set :ref:`WRC_ENABLE <WRC_ENABLE>` to 1 to enable wheel rate control
 - set :ref:`WRC_RATE_MAX <WRC_RATE_MAX>` to the wheel's maximum rotation rate in radians/sec (this single value is shared by both wheels; a 100% throttle request is treated as this rate). Leaving this at 0 does not disable the feature -- it makes the controller target a rate of zero for every throttle request instead, fighting the vehicle to a stop. Use :ref:`WRC_ENABLE <WRC_ENABLE>` = 0 to actually disable wheel rate control.
-- tune the left wheel's controller using the :ref:`WRC_RATE_P <WRC_RATE_P>`, :ref:`WRC_RATE_I <WRC_RATE_I>`, :ref:`WRC_RATE_D <WRC_RATE_D>`, :ref:`WRC_RATE_FF <WRC_RATE_FF>`, :ref:`WRC_RATE_IMAX <WRC_RATE_IMAX>` and :ref:`WRC_RATE_FILT <WRC_RATE_FILT>` parameters
-- tune the right wheel's controller using the equivalent :ref:`WRC2_RATE_P <WRC2_RATE_P>`, :ref:`WRC2_RATE_I <WRC2_RATE_I>`, :ref:`WRC2_RATE_D <WRC2_RATE_D>`, :ref:`WRC2_RATE_FF <WRC2_RATE_FF>`, :ref:`WRC2_RATE_IMAX <WRC2_RATE_IMAX>` and :ref:`WRC2_RATE_FILT <WRC2_RATE_FILT>` parameters
+- tune the left wheel's controller using the :ref:`WRC_RATE_P <WRC_RATE_P>`, :ref:`WRC_RATE_I <WRC_RATE_I>`, :ref:`WRC_RATE_D <WRC_RATE_D>`, :ref:`WRC_RATE_FF <WRC_RATE_FF>`, :ref:`WRC_RATE_IMAX <WRC_RATE_IMAX>`, :ref:`WRC_RATE_FLTT <WRC_RATE_FLTT>`, :ref:`WRC_RATE_FLTE <WRC_RATE_FLTE>` and :ref:`WRC_RATE_FLTD <WRC_RATE_FLTD>` parameters
+- tune the right wheel's controller using the equivalent :ref:`WRC2_RATE_P <WRC2_RATE_P>`, :ref:`WRC2_RATE_I <WRC2_RATE_I>`, :ref:`WRC2_RATE_D <WRC2_RATE_D>`, :ref:`WRC2_RATE_FF <WRC2_RATE_FF>`, :ref:`WRC2_RATE_IMAX <WRC2_RATE_IMAX>`, :ref:`WRC2_RATE_FLTT <WRC2_RATE_FLTT>`, :ref:`WRC2_RATE_FLTE <WRC2_RATE_FLTE>` and :ref:`WRC2_RATE_FLTD <WRC2_RATE_FLTD>` parameters
 
 The left wheel's rate controller performance can be reviewed using the
 dataflash log's ``PIDW`` message (desired vs achieved rate, and the P/I/D/FF contributions), the same way the steering and throttle-speed rate controllers are reviewed via their own ``PIDS``/``PIDA`` messages. The right wheel's controller is not currently logged.
