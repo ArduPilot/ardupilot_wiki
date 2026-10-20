@@ -69,6 +69,8 @@ Specifications
      - Dimensions: 45mm x 45mm x 13.5mm
      - Weight: 33.0g
 
+.. note:: DShot on the 8 IO co-processor outputs requires :ref:`BRD_IO_DSHOT<BRD_IO_DSHOT>` to be set to 1, followed by a reboot, which loads the DShot firmware onto the IO controller. Doing so disables PPM, iBus, SUMD, SRXL and ST24 input on the IO controller's RC input pin. SBUS and FPort on that pin, and DSM receivers on the DSM port, continue to work.
+
 UART Mapping
 ============
 

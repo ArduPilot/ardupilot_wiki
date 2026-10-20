@@ -51,6 +51,8 @@ Specifications
    -  4x SPI buses enabled
    -  2x CAN Bus ports
 
+.. note:: DShot on the 8 IOMCU outputs requires :ref:`BRD_IO_DSHOT<BRD_IO_DSHOT>` to be set to 1, followed by a reboot, which loads the DShot firmware onto the IO controller. Doing so disables PPM, iBus, SUMD, SRXL and ST24 input on the IO controller's RC input pin. SBUS and FPort on that pin, and DSM receivers on the DSM port, continue to work.
+
 -  **Other**
 
   -  Weight: 90g
