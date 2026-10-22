@@ -24,6 +24,21 @@ The gimbal's attitude (in body-frame Quaternion form) can be monitored by decodi
 
     The :ref:`user wiki pages for gimbals is here <copter:common-cameras-and-gimbals>`.
 
+.. _mavlink-gimbal-mount-selection:
+
+Selecting a gimbal (4.8 and higher)
+-----------------------------------
+
+In ArduPilot 4.8 (and higher) the gimbal device ID in the commands and messages below (and in the equivalent mission commands) selects the gimbal as follows:
+
+- 0 means the primary gimbal (for MAV_CMD_DO_SET_ROI_LOCATION and MAV_CMD_DO_SET_ROI_NONE, 0 or NaN keeps the vehicle-specific behaviour, e.g. the vehicle may also yaw to face the ROI)
+- 1 to 6 select the 1st, 2nd, etc gimbal configured on the autopilot (the MNT1\_, MNT2\_ parameters)
+- 7 to 255 select a MAVLink gimbal (MNTx_TYPE = 6) using its component ID
+
+Unknown or invalid IDs are rejected. When a non-zero ID is given, MAV_CMD_DO_SET_ROI_LOCATION, MAV_CMD_DO_SET_ROI_NONE and MAV_CMD_DO_SET_ROI_SYSID only affect the selected gimbal. GIMBAL_MANAGER_INFORMATION and GIMBAL_MANAGER_STATUS report the component ID of MAVLink gimbals and the gimbal number (1, 2) for other gimbals.
+
+For MAVLink gimbals the rate at which the autopilot sends AUTOPILOT_STATE_FOR_GIMBAL_DEVICE can be set with MNTx_ATT_RATE (default 50Hz, the gimbal may also change this using MAV_CMD_SET_MESSAGE_INTERVAL), and the rate at which unchanged GIMBAL_DEVICE_SET_ATTITUDE targets are re-sent with MNTx_TARG_RATE (default 10Hz).
+
 Set the mode with MAV_CMD_DO_MOUNT_CONTROL
 ------------------------------------------
 
@@ -201,7 +216,7 @@ The gimbal's yaw behaviour as the vehicle rotates can also be controlled.  The t
    <tr>
    <td><strong>param7</strong></td>
    <td>float</td>
-   <td>Gimbal device ID (0 is primary gimbal, 1 is 1st gimbal, 2 is 2nd gimbal)</td>
+   <td>Gimbal device ID (0 is primary gimbal, 1 is 1st gimbal, 2 is 2nd gimbal, 7 to 255 is a MAVLink gimbal component ID from 4.8, see <a href="#mavlink-gimbal-mount-selection">Selecting a gimbal</a>)</td>
    </tr>
    </tbody>
    </table>
@@ -260,7 +275,7 @@ angular rates, not both.
    <tr>
    <td><strong>gimbal_device_id</strong></td>
    <td>uint8_t</td>
-   <td>Gimbal device ID (0 is primary gimbal, 1 is 1st gimbal, 2 is 2nd gimbal)</td>
+   <td>Gimbal device ID (0 is primary gimbal, 1 is 1st gimbal, 2 is 2nd gimbal, 7 to 255 is a MAVLink gimbal component ID from 4.8, see <a href="#mavlink-gimbal-mount-selection">Selecting a gimbal</a>)</td>
    </tr>
    <tr>
    <td><strong>q</strong></td>
@@ -356,10 +371,10 @@ Valid options are:
    <td>uint8_t</td>
    <td>0 (not used)</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>param1</strong></td>
    <td>float</td>
-   <td>Gimbal device id (unused)</td>
+   <td>Gimbal device id (4.8 and higher, see <a href="#mavlink-gimbal-mount-selection">Selecting a gimbal</a>. Unused in earlier versions)</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
@@ -452,10 +467,10 @@ The gimbal ROI can be stopped (e.g. the gimbal will switch to its default mode h
    <td>uint8_t</td>
    <td>0 (not used)</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>param1</strong></td>
    <td>float</td>
-   <td>Gimbal device id (unused)</td>
+   <td>Gimbal device id (4.8 and higher, see <a href="#mavlink-gimbal-mount-selection">Selecting a gimbal</a>. Unused in earlier versions)</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
@@ -543,10 +558,10 @@ This feature relies on the main vehicle receiving the other vehicle's position a
    <td>float</td>
    <td>System ID of other vehicle</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>param2</strong></td>
    <td>float</td>
-   <td>Gimbal device id (unused)</td>
+   <td>Gimbal device id (4.8 and higher, see <a href="#mavlink-gimbal-mount-selection">Selecting a gimbal</a>. Unused in earlier versions)</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param3</strong></td>
@@ -656,7 +671,7 @@ command and param1 fields set as specified for the `MAV_CMD_DO_GIMBAL_MANAGER_CO
    <tr style="color: #c0c0c0">
    <td><strong>param7</strong></td>
    <td>float</td>
-   <td>Gimbal device ID (0 is primary gimbal, 1 is 1st gimbal, 2 is 2nd gimbal)</td>
+   <td>Gimbal device ID (0 is primary gimbal, 1 is 1st gimbal, 2 is 2nd gimbal, 7 to 255 is a MAVLink gimbal component ID from 4.8, see <a href="#mavlink-gimbal-mount-selection">Selecting a gimbal</a>)</td>
    </tr>
    </tbody>
    </table>
