@@ -120,6 +120,8 @@ DDS is responsible for ROS2 communication. If the ROS2 topics are not published,
 
 The second aspect to check, ensure the ArduPilot parameter :ref:`DDS_DOMAIN_ID<DDS_DOMAIN_ID>` matches your environment variable ``ROS_DOMAIN_ID``.The default is ``0`` for ArduPilot, which corresponds to the environment variable being unset. You may need to relaunch the SITL after changing the parameters. 
 
+For multi-vehicle simulations with ROS 2, set :ref:`DDS_USE_NS <DDS_USE_NS>` to ``1`` to automatically namespace topics and services by vehicle system ID (``v<SYSID>``).
+
 
 MAVProxy
 ========
