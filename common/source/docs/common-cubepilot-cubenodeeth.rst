@@ -101,6 +101,16 @@ The CubeNodeETH's parameters can be set using Mission Planner's DroneCAN screen 
 
 The IP addresses chosen above are somewhat arbitrary but work well for many systems.  In general all ethernet devices on the drone should be in the same subnet meaning the first three octets of the IP address (e.g. 192.168.144.x) should match while the last octet should be unique to each device.
 
+CubeNodeETH WebServer
+=====================
+
+The CubeNodeETH has a built-in web server that can be used to check the device's status, download files from it, edit its parameters and put it into firmware update mode
+
+- Connect a PC to the CubeNodeETH's ethernet
+- Set the PC's IP address to be in the same subnet as the CubeNodeETH (e.g. 192.168.144.99)
+- Open a web browser and enter the CubeNodeETH's IP address as the URL (e.g. "192.168.144.14")
+- See the :ref:`PPP Gateway Web Interface <pppgw-web-interface>` section for a description of the pages provided
+
 Firmware Updates
 ================
 
