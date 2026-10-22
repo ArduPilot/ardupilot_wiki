@@ -80,11 +80,13 @@ Each OSD panel item uses a set of three variables to be set:
 
 Display Resolution and Fonts
 ============================
-When using DisplayPort, you can select to display either the SD or HD fonts using ``OSDx_TXT_RES`` for each OSD screen enabled. 0 = SD (30x16), 1 = HD (50x18), 2 = HD (60x22).
+When using DisplayPort, you can select to display either the SD or HD fonts using ``OSDx_TXT_RES`` for each OSD screen enabled. 0 = SD (30x16), 1 = HD (50x18), 2 = HD (60x22), 3 = HD (53x20) (firmware 4.8 and later).
 
 For HDZero you should set ``OSDx_TXT_RES`` to 0 or 1 for each enabled OSD screen. If you set it to 2, the text displayed will be garbled.
 
-The SD font's positions are set on a 30x16 X/Y position grid as normal, the HD uses a (1) 50x18 or (2) 60x22 grid. The 50x18 grid has margins at the top/bottom/left/right of the screen before the grid begins.
+The 53x20 grid (``OSDx_TXT_RES`` = 3) has been tested with the Walksnail Avatar Ascent VTX.
+
+The SD font's positions are set on a 30x16 X/Y position grid as normal, the HD uses a (1) 50x18, (2) 60x22, or (3) 53x20 grid. The 50x18 grid has margins at the top/bottom/left/right of the screen before the grid begins.
 
 ArduPilot compatible fonts for WTFOS modified DJI goggles can be found `**HERE** <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts/HDFonts/WTFOS-DJI>`__ .
 
