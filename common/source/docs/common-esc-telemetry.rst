@@ -29,7 +29,7 @@ Set the following parameters to enable BLHeli32/AM32 telemetry feedback to the a
 
 - :ref:`SERVO_BLH_TRATE <SERVO_BLH_TRATE>` defaults to 10 and normally does not need to be changed. this enables telemetry at a 10Hz update rate from the ESC.  If using the :ref:`harmonic notch feature <common-imu-notch-filtering>` this can be raised to 100.
 
-- :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed.  Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM.
+- :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` Generally the number of magnets in your motor. Defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed.  Adjust as required if you're using motors with a magnetic pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM.
 
 .. note:: using the RPM value reported using single wire telemetry for the center frequency adjustment of the :ref:`harmonic notch feature <common-imu-notch-filtering>`  works well, but the responsiveness is slower than using telemetry provided by bi-directional DShot. See next section.
 
@@ -55,7 +55,7 @@ Set the following parameters to enable BLHeli32 and BLHeli_S bi-directional DSho
 
 - :ref:`SERVO_BLH_BDMASK <SERVO_BLH_BDMASK>`: a bitmap used to enable BLHeli32, AM32, or BLHeli_S bi-directional DShot support. On autopilots without IOMCU this would normally be set to 15 to indicate four active channels. On autopilots with an IOMCU this can be set to 3840 to indicate four active AUX channels (bi-directional DShot will only work on the AUX outputs).
 
-- :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed. Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM (small motors might have 12 poles).
+- :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` Generally the number of magnets in your motor. Defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed. Adjust as required if you're using motors with a magnetic pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM (small motors might have 12 poles).
 
 - :ref:`SERVO_DSHOT_ESC<SERVO_DSHOT_ESC>` must be set to the type of Dshot ESC you are using.
 
