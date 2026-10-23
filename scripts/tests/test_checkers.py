@@ -9,6 +9,8 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
+import check_ref_directives  # noqa: E402
+import check_rst_literal_blocks  # noqa: E402
 import check_youtube_timestamps  # noqa: E402
 
 
@@ -117,6 +119,136 @@ class TestCheckYoutubeTimestamps(unittest.TestCase):
         errors = check_youtube_timestamps.check_file(path)
         self.assertEqual(len(errors), 1)
         self.assertIn("UnicodeDecodeError", errors[0])
+
+
+class TestCheckRefDirectives(unittest.TestCase):
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.tmp = pathlib.Path(self._tmp.name)
+
+    def tearDown(self):
+        self._tmp.cleanup()
+
+    def test_valid_ref(self):
+        path = _rst(self.tmp, "valid.rst", "See :ref:`some-label` for details.\n")
+        self.assertEqual(check_ref_directives.check_file(path), [])
+
+    def test_char_before_ref(self):
+        path = _rst(self.tmp, "before.rst", "Seex:ref:`some-label` for details.\n")
+        errors = check_ref_directives.check_file(path)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("remove character directly before", errors[0])
+
+    def test_special_char_before_ref_not_caught(self):
+        path = _rst(self.tmp, "ampersand.rst", "See (:ref:`some-label`) for details.\n")
+        self.assertEqual(check_ref_directives.check_file(path), [])
+
+    def test_space_before_ref_is_valid(self):
+        path = _rst(self.tmp, "space_before.rst", "See :ref:`some-label` for details.\n")
+        self.assertEqual(check_ref_directives.check_file(path), [])
+
+    def test_space_after_ref(self):
+        path = _rst(self.tmp, "after.rst", "See :ref: `some-label` for details.\n")
+        errors = check_ref_directives.check_file(path)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("remove whitespace", errors[0])
+
+    def test_char_after_ref(self):
+        path = _rst(self.tmp, "char_after.rst", "See :ref:x`some-label` for details.\n")
+        errors = check_ref_directives.check_file(path)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("remove whitespace", errors[0])
+
+    def test_space_before_period(self):
+        path = _rst(self.tmp, "punct_period.rst", "See :ref:`some-label` .\n")
+        errors = check_ref_directives.check_file(path)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("remove space between", errors[0])
+
+    def test_space_before_comma(self):
+        path = _rst(self.tmp, "punct_comma.rst", "See :ref:`some-label` , and more.\n")
+        errors = check_ref_directives.check_file(path)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("remove space between", errors[0])
+
+    def test_space_before_colon(self):
+        path = _rst(self.tmp, "punct_colon.rst", "See :ref:`some-label` : details.\n")
+        errors = check_ref_directives.check_file(path)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("remove space between", errors[0])
+
+    def test_no_space_before_period_valid(self):
+        path = _rst(self.tmp, "valid_punct.rst", "See :ref:`some-label`.\n")
+        self.assertEqual(check_ref_directives.check_file(path), [])
+
+    def test_unicode_error(self):
+        path = self.tmp / "bad.rst"
+        path.write_bytes(b"See :ref:`label` \xff.\n")
+        errors = check_ref_directives.check_file(path)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("UnicodeDecodeError", errors[0])
+
+    def test_main_valid(self):
+        path = _rst(self.tmp, "valid.rst", "See :ref:`some-label` for details.\n")
+        with patch("sys.argv", ["check_ref_directives", str(path)]):
+            self.assertEqual(check_ref_directives.main(), 0)
+
+    def test_main_invalid(self):
+        path = _rst(self.tmp, "invalid.rst", "Seex:ref:`some-label` for details.\n")
+        with patch("sys.argv", ["check_ref_directives", str(path)]):
+            self.assertEqual(check_ref_directives.main(), 1)
+
+    def test_non_rst_skipped(self):
+        path = self.tmp / "errors.txt"
+        path.write_text("See&:ref:`some-label` for details.\n", encoding="utf-8")
+        with patch("sys.argv", ["check_ref_directives", str(path)]):
+            self.assertEqual(check_ref_directives.main(), 0)
+
+
+class TestCheckRstLiteralBlocks(unittest.TestCase):
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.tmp = pathlib.Path(self._tmp.name)
+
+    def tearDown(self):
+        self._tmp.cleanup()
+
+    def test_valid_literal_block(self):
+        path = _rst(self.tmp, "valid.rst", "Some text.\n\n::\n\n    code here\n")
+        self.assertEqual(check_rst_literal_blocks.check_file(path), [])
+
+    def test_missing_blank_before(self):
+        path = _rst(self.tmp, "before.rst", "Some text.\n::\n\n    code here\n")
+        errors = check_rst_literal_blocks.check_file(path)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("blank line before", errors[0])
+
+    def test_missing_blank_after(self):
+        path = _rst(self.tmp, "after.rst", "Some text.\n\n::\n    code here\n")
+        errors = check_rst_literal_blocks.check_file(path)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("blank line after", errors[0])
+
+    def test_missing_blank_both(self):
+        path = _rst(self.tmp, "both.rst", "Some text.\n::\n    code here\n")
+        errors = check_rst_literal_blocks.check_file(path)
+        self.assertEqual(len(errors), 2)
+
+    def test_main_valid(self):
+        path = _rst(self.tmp, "valid.rst", "Some text.\n\n::\n\n    code here\n")
+        with patch("sys.argv", ["check_rst_literal_blocks", str(path)]):
+            self.assertEqual(check_rst_literal_blocks.main(), 0)
+
+    def test_main_invalid(self):
+        path = _rst(self.tmp, "invalid.rst", "Some text.\n::\n\n    code here\n")
+        with patch("sys.argv", ["check_rst_literal_blocks", str(path)]):
+            self.assertEqual(check_rst_literal_blocks.main(), 1)
+
+    def test_non_rst_skipped(self):
+        path = self.tmp / "errors.txt"
+        path.write_text("Some text.\n::\n    code here\n", encoding="utf-8")
+        with patch("sys.argv", ["check_rst_literal_blocks", str(path)]):
+            self.assertEqual(check_rst_literal_blocks.main(), 0)
 
 
 if __name__ == "__main__":
