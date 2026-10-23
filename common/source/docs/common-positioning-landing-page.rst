@@ -84,6 +84,8 @@ These GPS can incorporate real time kinematic data, either internally generated 
     DATAGNSS GEM1305 RTK Receiver<common-datagnss-gem1305-rtk>
     DATAGNSS NANO RTK Receiver<common-datagnss-nano-rcv-rtk>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
+    Eview HB6 RTK GNSS Receiver (Septentrio mosaic-X5) <https://gnss-solutions.com/product/hb6-gnss-receiver/>
+    Eview HB6 Pro Dual-Antenna Heading Receiver (Septentrio mosaic-H) <https://gnss-solutions.com/product/hb6-pro-gnss-receiver/>
     CubePilot HERE 3/3+ DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-3/here-3-manual>
     CubePilot HERE 4 DroneCAN RTK GPS/IMU/Compass (see note below) <https://docs.cubepilot.org/user-guides/here-4/here-4-manual>
     CubePilot Here+ RTK Base/Rover Receiver <common-here-plus-gps>
