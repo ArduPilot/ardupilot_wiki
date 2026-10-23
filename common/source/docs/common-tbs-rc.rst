@@ -59,6 +59,27 @@ Instead of CRSF protocol, MAVLink protocol can be used if the receiver is config
 
 If the ELRS transmitter module has WIFI capability, then the telemetry data can be forwarded wirelessly to a PC or phone based GCS close to the transmitter.
 
+Updating ELRS Receiver Firmware Through the Autopilot
+-----------------------------------------------------
+
+ESP8285/ESP32 based ELRS receivers can be flashed without disconnecting them from the autopilot by using :ref:`common-serial-passthrough` and `esptool <https://github.com/espressif/esptool>`__. This needs ArduPilot 4.8 or later. Earlier firmware kept reconfiguring the RC input port while passthrough was active, which corrupted the transfer.
+
+The ExpressLRS Configurator's "Betaflight Passthrough" flashing method uses the Betaflight CLI and will not work with ArduPilot. Use esptool directly instead.
+
+- Connect the autopilot to the PC by USB and connect a ground station
+- Set :ref:`SERIAL_PASSTIMO<SERIAL_PASSTIMO>` = 30 (or longer)
+- Set :ref:`SERIAL_PASS1<SERIAL_PASS1>` = 0 (USB)
+- Set :ref:`SERIAL_PASS2<SERIAL_PASS2>` to the serial port the receiver is connected to, for example 4 if it is on SERIAL4
+- Disconnect or close the ground station, leaving the USB cable connected
+- Put the receiver into its bootloader. Either hold its boot button while powering it up, or send it the ELRS reboot to bootloader frame (hex ``EC 04 32 62 6C 0A``) at 420000 baud on the autopilot's USB port
+- Flash the receiver with esptool through the autopilot's USB port, for example for an ESP8285 receiver:
+
+::
+
+    esptool.py --chip esp8285 --port COM5 --baud 420000 --before no_reset --after hard_reset write_flash -z 0x0 firmware.bin
+
+There is no need to set the receiver port's baud rate, the autopilot uses the baud rate esptool opens the USB port with. Passthrough ends once :ref:`SERIAL_PASSTIMO<SERIAL_PASSTIMO>` seconds pass with no data from the PC, after which the autopilot resumes using the port for RC input.
+
 ELRS bootloader "lockup"
 ------------------------
 

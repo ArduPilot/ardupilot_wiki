@@ -32,6 +32,8 @@ Setup
 
 - Open the sensor's configuration software and connect to the autopilot's COM port.  If all goes well the configuration software should work as it does when the PC is directly connected to the sensor
 
+.. note:: Passthrough can also be used to update the firmware of an ELRS receiver connected for RC input. See :ref:`common-tbs-rc`.
+
 If the configuration fails to connect there are some things to try:
 
 - Some configuration software will not allow connecting to the autopilot's COM port by default but may have a option to display all available COM ports
