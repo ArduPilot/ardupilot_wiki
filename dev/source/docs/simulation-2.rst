@@ -43,6 +43,7 @@ The most commonly used simulators are:
 -  :ref:`JSON interface<sitl-with-JSON>` The JSON interface is a generic interface protocol designed to be easy to implement for those developing physics backend. There are Python and MATLAB examples.
 -  :ref:`Webots <sitl-with-webots>` is a cross-platform robotics simulator that is quick to set up and get running. It currently has examples for multicopter and rover vehicles.
 -  :ref:`Renode <renode-emulation>` is not a vehicle simulator but an MCU emulator: it runs unmodified ArduPilot STM32 firmware on an emulated flight controller, which allows board bring-up, driver and bootloader work to be done without the physical board.
+-  :ref:`SkySim <sitl-with-skysim>` is an open-source multirotor simulator with a blade-element rotor model that runs natively and in the browser via WebAssembly
 
 
 Less often used simulators include:
