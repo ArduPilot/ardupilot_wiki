@@ -193,6 +193,15 @@ git reset --hard origin/master
 git clean -f -f -x -d -d
 popd
 
+# Whatever requirements.txt gained since the last run, so a module a PR adds
+# is in place for the build that first needs it. The theme is left out: it
+# is installed from its own checkout just below, and the pin here would
+# undo that. Never --upgrade, so a satisfied pin is never moved; and never
+# fatal, so a PyPI outage cannot stop the wiki publishing.
+progress "Installing Python requirements"
+grep -v 'sphinx_rtd_theme' ardupilot_wiki/requirements.txt > wiki-requirements.txt
+python3 -m pip install --user -q -r wiki-requirements.txt || progress "requirements install failed; building with what is installed"
+
 progress "Updating sphinx_rtd_theme"
 pushd sphinx_rtd_theme
 git checkout -f master
