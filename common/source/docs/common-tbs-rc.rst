@@ -73,13 +73,21 @@ The ExpressLRS Configurator's "Betaflight Passthrough" flashing method uses the 
 - Set :ref:`SERIAL_PASS2<SERIAL_PASS2>` to the serial port the receiver is connected to, for example 4 if it is on SERIAL4
 - Disconnect or close the ground station, leaving the USB cable connected
 - If the receiver is not already in its bootloader, send it the ELRS reboot to bootloader frame (hex ``EC 04 32 62 6C 0A``) at 420000 baud on the autopilot's USB port
-- Flash the receiver with esptool through the autopilot's USB port, for example for an ESP8285 receiver:
+- Flash the receiver with esptool through the autopilot's USB port. For an ESP8285 receiver:
 
 ::
 
     esptool.py --chip esp8266 --port COM5 --baud 420000 --before no_reset --after soft_reset write_flash -z 0x0 firmware.bin
 
-esptool's ``esp8266`` setting covers ESP8285 chips. ``--after soft_reset`` starts the new firmware once the write is done, as the autopilot's USB port cannot reset the receiver. ESP32 based receivers (``--chip esp32``) cannot be restarted this way, so power cycle them after flashing.
+esptool's ``esp8266`` setting covers ESP8285 chips. ``--after soft_reset`` starts the new firmware once the write is done, as the autopilot's USB port cannot reset the receiver.
+
+For an ESP32 receiver the firmware is written at 0x10000, after the bootloader and partition table, as the ExpressLRS flasher does:
+
+::
+
+    esptool.py --chip esp32 --port COM5 --baud 420000 --before no_reset --after no_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0x10000 firmware.bin
+
+ESP32 receivers cannot be restarted through the autopilot, so power cycle the receiver once the write is done.
 
 There is no need to set the receiver port's baud rate, the autopilot uses the baud rate esptool opens the USB port with. Passthrough ends once :ref:`SERIAL_PASSTIMO<SERIAL_PASSTIMO>` seconds pass with no data from the PC, after which the autopilot resumes using the port for RC input.
 
