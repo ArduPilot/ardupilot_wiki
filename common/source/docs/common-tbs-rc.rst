@@ -66,17 +66,20 @@ ESP8285/ESP32 based ELRS receivers can be flashed without disconnecting them fro
 
 The ExpressLRS Configurator's "Betaflight Passthrough" flashing method uses the Betaflight CLI and will not work with ArduPilot. Use esptool directly instead.
 
+- If you will use the receiver's boot button to enter its bootloader, hold it while powering up the autopilot and receiver, then release it. Do this first, as :ref:`SERIAL_PASS2<SERIAL_PASS2>` is reset to -1 whenever the autopilot reboots
 - Connect the autopilot to the PC by USB and connect a ground station
 - Set :ref:`SERIAL_PASSTIMO<SERIAL_PASSTIMO>` = 30 (or longer)
 - Set :ref:`SERIAL_PASS1<SERIAL_PASS1>` = 0 (USB)
 - Set :ref:`SERIAL_PASS2<SERIAL_PASS2>` to the serial port the receiver is connected to, for example 4 if it is on SERIAL4
 - Disconnect or close the ground station, leaving the USB cable connected
-- Put the receiver into its bootloader. Either hold its boot button while powering it up, or send it the ELRS reboot to bootloader frame (hex ``EC 04 32 62 6C 0A``) at 420000 baud on the autopilot's USB port
+- If the receiver is not already in its bootloader, send it the ELRS reboot to bootloader frame (hex ``EC 04 32 62 6C 0A``) at 420000 baud on the autopilot's USB port
 - Flash the receiver with esptool through the autopilot's USB port, for example for an ESP8285 receiver:
 
 ::
 
-    esptool.py --chip esp8285 --port COM5 --baud 420000 --before no_reset --after hard_reset write_flash -z 0x0 firmware.bin
+    esptool.py --chip esp8266 --port COM5 --baud 420000 --before no_reset --after soft_reset write_flash -z 0x0 firmware.bin
+
+esptool's ``esp8266`` setting covers ESP8285 chips. ``--after soft_reset`` starts the new firmware once the write is done, as the autopilot's USB port cannot reset the receiver. ESP32 based receivers (``--chip esp32``) cannot be restarted this way, so power cycle them after flashing.
 
 There is no need to set the receiver port's baud rate, the autopilot uses the baud rate esptool opens the USB port with. Passthrough ends once :ref:`SERIAL_PASSTIMO<SERIAL_PASSTIMO>` seconds pass with no data from the PC, after which the autopilot resumes using the port for RC input.
 
