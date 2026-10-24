@@ -87,7 +87,7 @@ For an ESP32 receiver the firmware is written at 0x10000, after the bootloader a
 
     esptool.py --chip esp32 --port COM5 --baud 420000 --before no_reset --after no_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0x10000 firmware.bin
 
-ESP32 receivers cannot be restarted through the autopilot, so power cycle the receiver once the write is done.
+For an ESP32-C3 or ESP32-S3 receiver use ``--chip esp32c3`` or ``--chip esp32s3`` instead, with the same 0x10000 offset. ESP32 receivers cannot be restarted through the autopilot, so power cycle the receiver once the write is done.
 
 There is no need to set the receiver port's baud rate, the autopilot uses the baud rate esptool opens the USB port with. Passthrough ends once :ref:`SERIAL_PASSTIMO<SERIAL_PASSTIMO>` seconds pass with no data from the PC, after which the autopilot resumes using the port for RC input.
 
