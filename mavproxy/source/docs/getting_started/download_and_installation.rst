@@ -83,24 +83,53 @@ To update an existing installation with the current development version (ie, fro
 Mac
 ===
 
-Install Python via
+Install Python with Homebrew:
 
 .. code:: bash
 
-    brew install python --framework
+    brew install python
 
-Uninstall python-dateutil (OSX and Windows come bundled with a version that is not supported for some dependencies):
-
-.. code:: bash
-
-    sudo python3 -m pip uninstall python-dateutil
-
-Install MAVProxy and its remaining dependencies from the public PyPi repository:
+Homebrew's current ``python`` formula installs Python 3.15. ``gnureadline`` is built from source on Python 3.15 and requires the Xcode Command Line Tools:
 
 .. code:: bash
 
-    sudo python3 -m pip install wxPython
-    sudo python3 -m pip install gnureadline
-    sudo python3 -m pip install billiard
-    sudo python3 -m pip install numpy pyparsing
-    sudo python3 -m pip install MAVProxy
+    xcode-select --install
+
+Alternatively, install ``python@3.14`` with Homebrew and use ``$(brew --prefix python@3.14)/bin/python3.14`` instead of the Python command below.
+
+Install MAVProxy in a virtual environment. This avoids modifying the Homebrew-managed Python environment and prevents PEP 668 ``externally-managed-environment`` errors:
+
+.. code:: bash
+
+    $(brew --prefix)/bin/python3 -m venv ~/venv-mavproxy
+    source ~/venv-mavproxy/bin/activate
+    python -m pip install --upgrade pip
+    python -m pip install MAVProxy wxPython gnureadline
+    mavproxy.py --version
+
+The virtual environment must be activated with ``source ~/venv-mavproxy/bin/activate`` before running MAVProxy. To update this installation, activate the virtual environment and run:
+
+.. code:: bash
+
+    python -m pip install --upgrade MAVProxy
+
+Alternatively, install MAVProxy with pipx, which manages an isolated environment automatically:
+
+.. code:: bash
+
+    brew install pipx
+    pipx ensurepath
+
+Open a new Terminal window (or restart your shell) to load the updated ``PATH``, then run:
+
+.. code:: bash
+
+    pipx install MAVProxy
+    pipx inject MAVProxy wxPython gnureadline
+    mavproxy.py --version
+
+To update the pipx installation, run:
+
+.. code:: bash
+
+    pipx upgrade MAVProxy
