@@ -21,4 +21,5 @@ Sub has a number of failsafe mechanisms to ease vehicle recovery/prevent wanderi
     EKF Failsafe <common-ekf-inav-failsafe>
     Crash Check <crash_check>
     Independent Watchdog <common-watchdog>
+    Servo Failsafe Positions <common-servo-failsafe>
 
