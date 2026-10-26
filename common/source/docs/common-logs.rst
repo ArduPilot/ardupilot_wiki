@@ -26,6 +26,9 @@ Topics related to logging and analysis
     Telemetry Logs <https://ardupilot.org/planner/docs/mission-planner-telemetry-logs.html>
     Diagnosing problems using Logs <common-diagnosing-problems-using-logs>
 [/site]
+[site wiki="plane,copter,planner,rover,sub,dev"]
+    USB Mass Storage (SD Card Access) <common-mass-storage>
+[/site]
 [site wiki="plane"]
     Plane Log Messages <logmessages>
 [/site]
