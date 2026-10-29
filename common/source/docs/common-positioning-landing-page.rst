@@ -108,6 +108,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     Navisys GR-901U ZED-F9P RTK base for Ground Station <common-gps-navisys-gr901u>
     Navisys GE-920 Dual-Antenna RTK <common-gps-navisys-ge920>
     Navisys GM-905 RTK / CLAS GNSS Module <common-gps-navisys-gm-905>
+    Navisys GR-906 RTK Helical Smart Antenna (DroneCAN) <common-gps-navisys-gr-906>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/index.php/product/qiotek-zed-f9p-rtk-and-compass-dronecan-module>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
     Septentrio AsteRx-m UAS RTK GPS <common-gps-septentrio>
