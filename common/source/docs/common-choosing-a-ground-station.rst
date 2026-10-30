@@ -23,7 +23,7 @@ A GCS is also required to setup the configuration of the autopilot prior to its 
 
 There are at least ten different ground control stations. On desktop there is *Mission
 Planner*, *APM Planner 2*, *MAVProxy*, *QGroundControl*, *UgCS*, *LOGOS*, and *FlightZoomer*. For Tablet/Smartphone there are
-*QGroundControl*, *Tower* (DroidPlanner 3), *MAVPilot*, *AndroPilot* and *SidePilot* that can be
+*QGroundControl*, *Tower* (DroidPlanner 3), *MAVPilot*, *AndroPilot*, *SidePilot* and *Field Mission Planner* that can be
 used to communicate with ArduPilot.
 
 The decision to select a particular GCS often depends on your vehicle
@@ -242,6 +242,25 @@ See website for how-to on how connect it to your autopilot
 -  `Website <http://sidepilot.net>`__
 -  `Support Forum <http://sidepilot.net/forum>`__
 -  `iTunes Store link <https://itunes.apple.com/us/app/sidepilot/id1138193193?ls=1&mt=8>`__
+
+Field Mission Planner
+---------------------
+
+Mission planner and GCS for Copter agricultural spraying. Draw a field on a satellite map, add
+cut-outs (trees, ponds, power-line corridors found from OpenStreetMap) and it generates a
+boustrophedon coverage route that avoids them, with a geofence from the field outline. Exports
+``.waypoints`` / ``.plan`` for Mission Planner / QGroundControl, or uploads over MAVLink (USB,
+WiFi via an ELRS TX backpack, Bluetooth) with read-back verification, live telemetry and a GPS
+jamming/spoofing alarm. Planning works offline; runs in the browser without installation.
+
+-  **Platform**: Android, browser (any desktop or phone, installable as a PWA), Windows / macOS from source
+-  **Licence**: `Open source <https://github.com/tecelskyyivan-alt/ardu-field-planner/blob/main/LICENSE>`__
+   (GPLv3)
+
+-  `Web app <https://tecelskyyivan-alt.github.io/ardu-field-planner/>`__
+-  `Download (Android APK) <https://github.com/tecelskyyivan-alt/ardu-field-planner/releases/latest>`__
+-  `Issues List <https://github.com/tecelskyyivan-alt/ardu-field-planner/issues>`__
+-  `Source Code <https://github.com/tecelskyyivan-alt/ardu-field-planner>`__
 
 AndroPilot
 ----------
