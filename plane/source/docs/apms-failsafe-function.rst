@@ -7,7 +7,7 @@ Plane Failsafe Function
 Plane has a limited failsafe function which is designed to do four
 things:
 
-#. Detects a RC Failsafe condition and then initiating a defined response, such as returning to home. Detection of an RC Failsafe is either a complete loss, or corruption, of RC signals, or the receiver sets a FS bit in its data stream for those protocols supporting it (SBUS, etc.), or that the throttle channel PWM value falls below a certain point set by :ref:`THR_FS_VALUE<THR_FS_VALUE>`. This RC failsafe must be enabled by setting :ref:`THR_FAILSAFE<THR_FAILSAFE>` = 1.
+#. Detects a RC Failsafe condition and then initiating a defined response, such as returning to home. Detection of an RC Failsafe is either a complete loss, or corruption, of RC signals, or the receiver sets a FS bit in its data stream for those protocols supporting it (SBUS, etc.), or that the throttle channel PWM value falls to or below a certain point set by :ref:`THR_FS_VALUE<THR_FS_VALUE>`. This RC failsafe must be enabled by setting :ref:`THR_FAILSAFE<THR_FAILSAFE>` = 1.
 #. Optionally, detect loss of telemetry (GCS Failsafe) and take an programmable action, such as switching to return to launch (RTL) mode.
 
 Either of the above have two phases: Short Failsafe which occurs a programmable time after loss of RC or telemetry, which allows optionally circling to try to recover the signals, and if the loss persists longer, a Long Failsafe which determines what long term action is to be taken.
@@ -43,18 +43,18 @@ If the received signal is lost or the control information corrupted for greater 
 Throttle Failsafe
 -----------------
 
-In addition, if the throttle signal falls below a threshold set by :ref:`THR_FS_VALUE<THR_FS_VALUE>` and the :ref:`THR_FAILSAFE<THR_FAILSAFE>` is = 1, an RC Failsafe condition will be entered, a Ground Control Station text message ("Throttle Failsafe On") will be sent (to differentiate from a Radio Signal Failure Failsafe), and the actions described in the RC Failsafe Actions section below will be taken.
+In addition, if the throttle signal falls to or below a threshold set by :ref:`THR_FS_VALUE<THR_FS_VALUE>` and the :ref:`THR_FAILSAFE<THR_FAILSAFE>` is = 1, an RC Failsafe condition will be entered, a Ground Control Station text message ("Throttle Failsafe On") will be sent (to differentiate from a Radio Signal Failure Failsafe), and the actions described in the RC Failsafe Actions section below will be taken.
 
 Throttle Failsafe Setup
 -----------------------
 
 .. note:: Throttle Failsafe is not required. If you wish to have failsafe protection against RC signal loss, but not setup a throttle signal controlled failsafe, then set :ref:`THR_FS_VALUE<THR_FS_VALUE>` lower than the lowest RC throttle signal that can be sent to the autopilot from the receiver.
 
-In order to activate the Throttle Failsafe, the throttle signal received by the autopilot must be below :ref:`THR_FS_VALUE<THR_FS_VALUE>`. Once setup, this can be controlled by the pilot to initiate Throttle failsafe intentionally (for testing, or instead of setting up an RTL position on the flight mode switch), or by having the receiver, itself, send that value when it loses RC signal.
+In order to activate the Throttle Failsafe, the throttle signal received by the autopilot must be at or below :ref:`THR_FS_VALUE<THR_FS_VALUE>`. Once setup, this can be controlled by the pilot to initiate Throttle failsafe intentionally (for testing, or instead of setting up an RTL position on the flight mode switch), or by having the receiver, itself, send that value when it loses RC signal.
 
 .. note:: having the receiver send a pre-set failsafe throttle value upon signal loss is NOT recommended and can lead to issues if a battery level failsafe is setup in QuadPlanes. Setting the receiver to send "no pulses" is much preferred. However, some very old receivers will only send a low throttle level in failsafe, see the section below, :ref:`Old Receivers <old_RX>`.
 
-The system must be setup such that the throttle channel's signal can go below :ref:`THR_FS_VALUE<THR_FS_VALUE>` (Default is 950), but still be above it for normal low throttle stick operation. Before doing the :ref:`RC Calibration<common-radio-control-calibration>` setup step which determines normal operating ranges for the throttle channel and others, make sure that the low throttle stick position on your transmitter is above :ref:`THR_FS_VALUE<THR_FS_VALUE>`. This can be done several ways:
+The system must be setup such that the throttle channel's signal can go to or below :ref:`THR_FS_VALUE<THR_FS_VALUE>` (Default is 950), but still be above it for normal low throttle stick operation. Before doing the :ref:`RC Calibration<common-radio-control-calibration>` setup step which determines normal operating ranges for the throttle channel and others, make sure that the low throttle stick position on your transmitter is above :ref:`THR_FS_VALUE<THR_FS_VALUE>`. This can be done several ways:
 
 - When you do the :ref:`RC Calibration <common-radio-control-calibration>` setup step, change the trim tab for the throttle channel to adjust its signal 40-50us above :ref:`THR_FS_VALUE<THR_FS_VALUE>` at low throttle stick. This will be the normal operating position. Lowering the trim tab and setting the :ref:`THR_FS_VALUE<THR_FS_VALUE>` to that value allows initiating a failsafe at low trim.
 - Setup a transmitter switch that you will use to force failsafe such that it forces the throttle channel signal, using a mix, to below :ref:`THR_FS_VALUE<THR_FS_VALUE>` when activated, allowing normal operation otherwise.
@@ -140,7 +140,7 @@ Battery Failsafe
 
     This failsafe requires the vehicle have a working :ref:`Power Module <common-powermodule-landingpage>`.
 
-.. note:: ArduPilot supports up to 10 batteries/power monitors. All the  discussion below applies to those optional batteries also. Each can trigger a failsafe and each can have different actions and setup values. In addition, a group of batteries can be treated as a single unit, see ``BATTx_MONITOR`` = 10.
+.. note:: ArduPilot supports up to 16 batteries/power monitors (9 in standard firmware builds). All the  discussion below applies to those optional batteries also. Each can trigger a failsafe and each can have different actions and setup values. In addition, a group of batteries can be treated as a single unit, see ``BATTx_MONITOR`` = 10.
 
 .. note:: the battery low failsafe voltage must be higher than the battery critical failsafe voltage or a pre-arm error will occur.
 

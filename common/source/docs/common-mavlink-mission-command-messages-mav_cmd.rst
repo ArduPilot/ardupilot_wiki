@@ -921,11 +921,11 @@ will restart).
 
 .. _mav_cmd_nav_loiter_turns:
 
-[site wiki="copter,plane,rover"]
+[site wiki="copter,plane,rover,sub"]
 MAV_CMD_NAV_LOITER_TURNS
 ------------------------
 
-Supported by: Copter, Plane (not Rover).
+Supported by: Copter, Plane, Sub (not Rover).
 
 [/site]
 [site wiki="copter" heading="off"]
@@ -995,6 +995,64 @@ This is the command equivalent of the :ref:`Circle flight mode <copter:circle-mo
    :target: ../_images/MissionList_LoiterTurns.png
 
    Copter: Mission Planner Settings for LOITER_TURNS command
+
+[/site]
+[site wiki="sub" heading="off"]
+
+Circle the specified location for at least the specified number of complete turns at the :ref:`CIRCLE_RATE<CIRCLE_RATE>` rate, and then proceed to the next command. If the vehicle is more than 3m from the edge of the circle, it first moves to the edge. If zero is specified for the latitude and longitude, the current location is used.
+
+The radius of the circle is set by the command's Radius field. A radius of 0 uses the :ref:`CIRCLE_RADIUS_M<CIRCLE_RADIUS_M>` radius. Positive radius values give clockwise turns and negative values give counter-clockwise turns. Radius values over 255 meters will be rounded down to the nearest 10 meter mark.
+
+.. note:: In firmware 4.5 and earlier, the sign of the radius is ignored and the direction of the turns is set by the sign of :ref:`CIRCLE_RATE<CIRCLE_RATE>`.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Turns</td>
+   <td>Number of turns (N x 360°)</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param2</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr>
+   <td><strong>param3</strong></td>
+   <td>Radius</td>
+   <td>Loiter radius around the location. Units are in meters. Values over 255 will be rounded to units of 10 meters. Negative values indicate counter-clockwise turns. If zero, CIRCLE_RADIUS_M is used</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr>
+   <td><strong>param5</strong></td>
+   <td>Lat</td>
+   <td>Target latitude. If zero (with longitude also zero), the vehicle will circle around its current position.</td>
+   </tr>
+   <tr>
+   <td><strong>param6</strong></td>
+   <td>Lon</td>
+   <td>Target longitude. If zero (with latitude also zero), the vehicle will circle around its current position.</td>
+   </tr>
+   <tr>
+   <td><strong>param7</strong></td>
+   <td>Alt</td>
+   <td>Target altitude (depth)</td>
+   </tr>
+   </tbody>
+   </table>
 
 [/site]
 
@@ -3372,7 +3430,7 @@ In the example above, the servo attached to output channel 8 would be
 moved to PWM 1700 (servos generally accept PWM values between 1000 and
 2000).
 
-.. note:: as of firmware versions 4.0 and later, this command can be used on any output configured by its ``SERVOx_FUNCTION`` command as 0,1, or 51-66  (disabled or RC pass-throughs)
+.. note:: this command can be used on any output whose ``SERVOx_FUNCTION`` is 0, 1, 51-66 or 140-155 (disabled or RC pass-through)
 
 .. _mav_cmd_do_repeat_servo:
 
@@ -4174,7 +4232,7 @@ MAV_CMD_DO_FENCE_ENABLE
 
 Supported by: All vehicles.
 
-Mission commands to enable the Plane :ref:`GeoFence <geofencing>`, Copter/Rover :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence`.
+Mission commands to enable the Plane :ref:`GeoFence <common-geofencing-landing-page>`, Copter/Rover :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence`.
 
 
 **Command parameters**

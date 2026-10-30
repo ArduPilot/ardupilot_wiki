@@ -45,6 +45,7 @@ CAN/DroneCAN Power Monitors and Batteries
     :maxdepth: 1
 
     Aerotate DroneCAN Smart Battery<common-aerotate-dronecan-battery>
+    CSKY GaN DroneCAN PMU <common-csky-gan-pmu>
     CUAV CAN/DroneCAN PMU<common-can-pmu>
     Holybro PM08-CAN Power Modules <https://holybro.com/collections/power-modules-pdbs/products/dronecan-pm08-power-module-14s-200a>
     MakeFlyEasy DroneCan PDB <https://www.uavmodel.com/products/makeflyeasy-pdb-can-distribution-board-dronecan-flight-control-board-ardupilot-flight-control>

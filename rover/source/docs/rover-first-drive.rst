@@ -17,5 +17,4 @@ This section covers items required for your first drive including basic tuning r
     Tuning Turn Rate <rover-tuning-steering-rate>
     Tuning Pivot Turns <rover-tuning-pivot-turns>
     QuikTune <quiktune>
-    Tuning Navigation (4.3 and higher) <rover-tuning-navigation>
-    Tuning Navigation (4.2 and lower) <rover-tuning-navigation-420>
+    Tuning Navigation <rover-tuning-navigation>

@@ -8,10 +8,6 @@ The Parrot `Bebop2 <https://www.parrot.com/global/drones/parrot-bebop-2-fpv>`__ 
 Instructions for converting a Bebop to run ArduPilot are :ref:`here <dev:building-for-bebop-2>`.  
 We recommend the Bebop2 over the original Bebop because of its much improved GPS.
 
-.. note::
-
-   Copter support was added in Copter-3.3.
-
 .. image:: ../images/bebop-drone.jpg
     :target: ../_images/bebop-drone.jpg
 

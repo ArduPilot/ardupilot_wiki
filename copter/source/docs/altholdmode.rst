@@ -81,9 +81,6 @@ of P) should be maintained if you modify these parameters.  These values
 should never be increased but for very powerful copters you may get
 better response by reducing both by 50% (i.e P to 0.5, I to 1.0).
 
-.. image:: ../images/Alt-Hold-PID-version-3.0.1.jpg
-    :target: ../_images/Alt-Hold-PID-version-3.0.1.jpg
-
 .. _altholdmode_verifying_althold_performance_with_dataflash_logs:
 
 Verifying AltHold performance with dataflash logs

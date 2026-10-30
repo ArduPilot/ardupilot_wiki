@@ -29,4 +29,4 @@ The Display menu contains methods for displaying a map of the GPS points of the 
     Saving custom graphs is not currently available on Windows.
     
 More information about this program can be found in the 
-`ArduPilot documentation <http://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html>`_.
+`ArduPilot documentation <https://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html>`_.

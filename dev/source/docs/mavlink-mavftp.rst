@@ -14,6 +14,26 @@ Common uses for using MAVFTP include:
 - :ref:`Uploading Lua scripts <copter:common-lua-scripts>`
 - Fast download of parameters, :ref:`onboard logs <copter:common-logs>`, mission command files and :ref:`rally points <copter:common-rally-points>` and :ref:`terrain data <copter:terrain-following>`
 
+Directory Listings With Times
+=============================
+
+In addition to the plain ``ListDirectory`` operation (opcode 3), ArduPilot 4.8 and later support ``ListDirectoryWithTime`` (opcode 16). Each entry is returned as ``<type><name>\t<size>\t<mtime>``, where ``mtime`` is the modification time in seconds since the UNIX epoch:
+
+- directories are returned with a size of 0 and their modification time
+- an unknown time is sent as 0. This includes files written to a FAT filesystem while the autopilot had no clock source, which carry the 1980 FAT epoch
+- an entry whose name contains a tab character is sent as a bare ``S`` (skip) entry
+
+Log Directory (@MAV_LOG)
+========================
+
+ArduPilot 4.8 and later provide the flight-stack-independent ``@MAV_LOG`` directory defined by the MAVFTP specification. Some ground stations, including QGroundControl, look here first for onboard logs. ``@MAV_LOG`` is an alias for the directory ArduPilot writes its logs to (normally ``APM/LOGS``, or the custom log directory if one is configured), so ``@MAV_LOG/00000001.BIN`` and ``APM/LOGS/00000001.BIN`` are the same file. Files can be listed, read, written, renamed and deleted through either path. Renaming a file between ``@MAV_LOG`` and a different virtual filesystem, such as ``@SYS``, fails with ``EXDEV``.
+
+``@MAV_LOG`` is only present on autopilots that log to a filesystem (normally an SD card). It is not available on boards whose local filesystem is LittleFS, and it can be removed from a :ref:`custom build <copter:common-custom-firmware>` with the ``FILESYSTEM_MAVLOG`` build option.
+
+.. note::
+
+   ArduPilot's MAVFTP does not confine requests to a root directory, so ``@MAV_LOG/..`` reaches the rest of the filesystem, as plain paths already do.
+
 Reference Implementation
 ========================
 

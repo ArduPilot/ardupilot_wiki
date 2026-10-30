@@ -4,6 +4,8 @@
 Tuning Navigation
 =================
 
+.. note:: **ARCHIVED:** This page applies to Rover 4.2 and lower. See :ref:`rover-tuning-navigation` for current firmware.
+
 This page describes how to tune the Navigation control including the "L1 controller".  The lower level :ref:`speed <rover-tuning-throttle-and-speed>` and :ref:`turn rate <rover-tuning-steering-rate>` controllers should be tuned before attempting to tune this controller.
 
 .. image:: ../images/rover-tuning-navigation1.png

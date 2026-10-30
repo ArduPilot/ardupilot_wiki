@@ -427,7 +427,7 @@ PWM Output
 
 The MUPilot supports up to 14 PWM outputs. First first 8 outputs (labeled
 "M1 to M8") are controlled by a dedicated STM32F103 IO controller. These 8
-outputs support all PWM output formats, but not DShot.
+outputs support all PWM output formats. DShot on these outputs requires :ref:`BRD_IO_DSHOT<BRD_IO_DSHOT>` to be set to 1, followed by a reboot, which loads the DShot firmware onto the IO controller. Doing so disables PPM, iBus, SUMD, SRXL and ST24 input on the IO controller's RC input pin. SBUS and FPort on that pin, and DSM receivers on the DSM port, continue to work.
 
 The remaining 6 outputs (labeled A1 to A6) are the "auxiliary"
 outputs. These are directly attached to the STM32F765 and support all

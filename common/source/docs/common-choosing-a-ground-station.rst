@@ -22,7 +22,7 @@ often also used to monitor the live video streams from a UAV’s cameras.
 A GCS is also required to setup the configuration of the autopilot prior to its use and to update the autopilot's firmware.
 
 There are at least ten different ground control stations. On desktop there is *Mission
-Planner*, *APM Planner 2*, *MAVProxy*, *QGroundControl*, *UgCS*, and *LOGOS*. For Tablet/Smartphone there are
+Planner*, *APM Planner 2*, *MAVProxy*, *QGroundControl*, *UgCS*, *LOGOS*, and *FlightZoomer*. For Tablet/Smartphone there are
 *QGroundControl*, *Tower* (DroidPlanner 3), *MAVPilot*, *AndroPilot* and *SidePilot* that can be
 used to communicate with ArduPilot.
 
@@ -146,6 +146,17 @@ GCS designed to streamline the planning of complex missions that include area sc
 -  `Download <https://aerologos.by/download>`__
 -  `Website <https://aerologos.by/>`__
 -  `Youtube <https://www.youtube.com/@AerologosBusinessAccount/>`__
+
+FlightZoomer
+------------
+
+GCS designed for flying rather than managing the vehicle, with a cockpit based on a modern airliner. It provides airliner-style instruments and autopilot modes, a Flight Management System with LNAV/VNAV route following, terrain awareness displays and a synthetic 3D outside view generated from telemetry. It can connect to the vehicle through standard telemetry or its own 3G/4G cellular link. Supports Copter and Plane.
+
+-  **Platform**: Windows 10 and later (PC, notebook or tablet)
+-  **Licence**: Proprietary
+-  `Website <http://www.flightzoomer.com/>`__
+-  `Documentation <http://www.flightzoomer.com/manual/hfw_contents.html>`__
+-  `Microsoft Store <https://apps.microsoft.com/detail/9pc8nw0z900j>`__
 
 Mobile GCSs
 ===========

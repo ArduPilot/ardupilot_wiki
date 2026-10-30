@@ -32,7 +32,7 @@ The most commonly used simulators are:
 -  :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` is the simulator most commonly used by developers. It is a simple simulator that is built within all SITL builds of ArduPilot. It is used by the :ref:`autotester <the-ardupilot-autotest-framework>` and other simulators below are actually built on top of SITL
 -  :ref:`Mission Planner <planner:mission-planner-simulation>` can be used in Windows to simulate with Mission Planner as GCS.
 -  :ref:`Gazebo <sitl-with-gazebo>` is the official DARPA virtual robotics simulator
--  :ref:`XPlane-10 <sitl-with-xplane>` a commercial flight simulator with a rich 3D interface   
+-  :ref:`X-Plane <sitl-with-xplane>` a commercial flight simulator with a rich 3D interface   
 -  :ref:`XPlane-10 Soaring<soaring-sitl-with-xplane>` soaring on XPlane-10
 -  :ref:`RealFlight <sitl-with-realflight>` a commercial flight simulator with a rich 3D interface and ability to design custom vehicles
 -  :ref:`Replay <testing-with-replay>` has no graphical interface but allows re-running master from a dataflash log
@@ -42,6 +42,7 @@ The most commonly used simulators are:
 -  :ref:`MATLAB and Simulink<sitl-with-MATLAB>` are numerical computing environments used for developing algorithms and plotting data developed by `MathWorks <https://www.mathworks.com/>`__.
 -  :ref:`JSON interface<sitl-with-JSON>` The JSON interface is a generic interface protocol designed to be easy to implement for those developing physics backend. There are Python and MATLAB examples.
 -  :ref:`Webots <sitl-with-webots>` is a cross-platform robotics simulator that is quick to set up and get running. It currently has examples for multicopter and rover vehicles.
+-  :ref:`Renode <renode-emulation>` is not a vehicle simulator but an MCU emulator: it runs unmodified ArduPilot STM32 firmware on an emulated flight controller, which allows board bring-up, driver and bootloader work to be done without the physical board.
 
 
 Less often used simulators include:
@@ -57,7 +58,7 @@ List of simulators (so they can appear in the menu):
     SITL Simulator <sitl-simulator-software-in-the-loop>
     Mission Planner Simulation <mission-planner-sim>
     Gazebo <sitl-with-gazebo>
-    XPlane-10 <sitl-with-xplane>
+    X-Plane <sitl-with-xplane>
     XPlane-10 Soaring<soaring-sitl-with-xplane>
     RealFlight <sitl-with-realflight>
     Replay <testing-with-replay>
@@ -73,3 +74,4 @@ List of simulators (so they can appear in the menu):
     Webots <sitl-with-webots>
     MATLAB and Simulink <sitl-with-MATLAB>
     JSON interface <sitl-with-JSON>
+    Renode MCU Emulation <renode-emulation>

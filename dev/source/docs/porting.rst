@@ -56,6 +56,8 @@ Step 2 - create a hwdef.dat and hwdef-bl.dat files for the board
 
 .. tip:: The `scripts directory <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/scripts>`__ contains pin function assignments for the ArduPilot supported microprocessors for reference.
 
+.. tip:: A list of some DEFINE statements that can be included in the hwdef.dat file to change parameter defaults are on this page: :ref:`hwdef-parameter-defaults`
+
 .. _build_firmware:
 
 Step 3 - Build the firmware
@@ -181,3 +183,4 @@ Here is `how it was done for the skyviper <https://github.com/ArduPilot/ardupilo
     
     readme_file
     common-install-sdcard
+    hwdef-parameter-defaults

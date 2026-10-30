@@ -59,7 +59,7 @@ devices such as ESC's, servos, gimbals and other peripherals.
 
 :ref:`Firmware <common-downloads_firmware>` is the code running on the controller.
 You choose the firmware to match your vehicle and mission: :ref:`Copter <copter:home>`, `Plane <https://ardupilot.org/plane/index.html>`__,
-:ref:`Rover <rover:home>`, Sub, or :ref:`Antenna Tracker <antennatracker:home>`.
+:ref:`Rover <rover:home>`, :ref:`Sub <sub:home>`, or :ref:`Antenna Tracker <antennatracker:home>`.
 
 The choice is yours -- one autopilot for any mission.
 
@@ -227,7 +227,7 @@ Features
    Copter <https://ardupilot.org/copter/index.html>
    Plane <https://ardupilot.org/plane/index.html>
    Rover <https://ardupilot.org/rover/index.html>
-   Sub <http://ardupilot.org/sub/index.html>
+   Sub <https://ardupilot.org/sub/index.html>
    Blimp <https://ardupilot.org/blimp/index.html>
    AntennaTracker <https://ardupilot.org/antennatracker/index.html>
 

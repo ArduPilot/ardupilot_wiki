@@ -75,3 +75,5 @@ MAVFTP
 ------
 
 :ref:`MAVFTP <mavlink-mavftp>` can also fetch a log file directly from the autopilot's filesystem, but this is not the recommended method -- use the ``LOG_*`` messages above (for a completed log) or MAVLink log streaming (for the current log) instead.
+
+In ArduPilot 4.8 and later, logs can be found through MAVFTP in the ``@MAV_LOG`` directory, which is an alias for the log directory (see :ref:`mavlink-mavftp`).

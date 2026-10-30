@@ -16,7 +16,7 @@ The following are all currently supported within ArduPilot:
 .. toctree::
     :maxdepth: 1
 
-    Currawong CORTEX Generator <https://www.currawongeng.com/chps/>
+    Currawong CORTEX Generator <common-currawong-cortex-generator.rst>
     Intelligent Energy 650W/800W Hydrogen Fuel Cell <common-ie650-fuelcell>
     Intelligent Energy 2.4kW Hydrogen Fuel Cell <common-ie24-fuelcell>
     RichenPower generator <common-richenpower-generator>

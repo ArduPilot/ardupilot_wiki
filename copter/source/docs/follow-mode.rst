@@ -7,16 +7,16 @@ Follow Mode
 ..  youtube:: _g9SkK0IhRk
     :width: 100%
 
-When switched into Follow, the vehicle will attempt to follow another vehicle (or anything publishing its position) at a specified offset.  The vehicle lead vehicle's position must be published to the vehicle in Follow mode using a telemetry system.
+When in Follow mode, the vehicle will attempt to follow another vehicle (or anything publishing its position) at a specified offset.
 
-Although Follow mode can use standard ``global-position-int`` MAVLink messages from the lead vehicle, it generally works better if the lead vehicle publishes a ``FOLLOW_TARGET`` MAVLink message. This can be done by running the `follow-target-send.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/follow-target-send.lua>`__ Lua script on the lead vehicle.
+The lead vehicle's position must be published to the vehicle in Follow mode using a :ref:`telemetry system <common-rangefinder-landingpage>`.  Telemetry radios which support mesh networking (e.g. :ref:`DroneBridge ESP32 <common-esp32-telemetry>`) are recommended.  See :ref:`Mult-Vehicle Flying <common-multi-vehicle-flying>` for more details.
 
-The altitude is maintained with the altitude hold controller so the vehicle will attempt to hold its current altitude when the sticks are placed with 10% of mid-throttle. It will climb or descend at up to 2.5m/s (this speed is adjustable with the :ref:`PILOT_SPD_UP<PILOT_SPD_UP>` and :ref:`PILOT_SPD_DN<PILOT_SPD_DN>` parameters). The acceleration used to establish these speeds is set by :ref:`PILOT_ACC_Z<PILOT_ACC_Z>`.
+Although Follow mode can use standard `GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#GLOBAL_POSITION_INT>`__ MAVLink messages from the lead vehicle, it generally works better if the lead vehicle publishes a `FOLLOW_TARGET <https://mavlink.io/en/messages/common.html#FOLLOW_TARGET>`__ MAVLink message. This can be done by running the `follow-target-send.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/follow-target-send.lua>`__ Lua script on the lead vehicle.
 
-The following parameters can be used to tune Follow Mode's performance:
+The following parameters can be used to tune Follow mode's performance:
 
 -  :ref:`FOLL_ENABLE <FOLL_ENABLE>`: set to 1 to enable follow mode and refresh parameters
--  :ref:`FOLL_SYSID <FOLL_SYSID>`: MAVLink system id of lead vehicle ("0" means follow the first vehicle "seen")
+-  :ref:`FOLL_SYSID <FOLL_SYSID>`: MAVLink system id of the lead vehicle. This must be set explicitly; "0" means no lead vehicle has been selected and Follow is inactive
 -  :ref:`FOLL_DIST_MAX <FOLL_DIST_MAX>`: if lead vehicle is more than this many meters away, give up on following and hold position
 -  :ref:`FOLL_OFS_X <FOLL_OFS_X>`, :ref:`FOLL_OFS_Y <FOLL_OFS_Y>`, :ref:`FOLL_OFS_Z <FOLL_OFS_Z>`: 3D offset (in meters) from the lead vehicle
 -  :ref:`FOLL_OFS_TYPE <FOLL_OFS_TYPE>`: set to 0 if offsets are North-East-Down, 1 if offsets are relative to lead vehicle's heading
@@ -24,6 +24,11 @@ The following parameters can be used to tune Follow Mode's performance:
 -  :ref:`FOLL_POS_P <FOLL_POS_P>`: gain which controls how aggressively this vehicle moves towards lead vehicle (limited by :ref:`WP_SPD<WP_SPD>`)
 -  :ref:`FOLL_ALT_TYPE <FOLL_ALT_TYPE>`: allows selecting whether to use lead vehicle's relative-to-home or relative-to-sea-level altitude
 -  :ref:`FOLL_OPTIONS<FOLL_OPTIONS>`: set bit 0 to "1" to enable the :ref:`common-mount-targeting` to follow the target vehicle.
+-  :ref:`FOLL_ACCEL_NE <FOLL_ACCEL_NE>`, :ref:`FOLL_JERK_NE <FOLL_JERK_NE>`: Acceleration and jerk limits applied to the lead vehicle's estimated horizontal position, velocity and acceleration
+-  :ref:`FOLL_ACCEL_D <FOLL_ACCEL_D>`, :ref:`FOLL_JERK_D <FOLL_JERK_D>`: Acceleration and jerk limits applied to the lead vehicle's estimated vertical position, velocity and acceleration
+-  :ref:`FOLL_ACCEL_H <FOLL_ACCEL_H>`, :ref:`FOLL_JERK_H <FOLL_JERK_H>`: Acceleration and jerk limits applied to the lead vehicle's estimated heading and yaw rotation rate
+-  :ref:`FOLL_TIMEOUT <FOLL_TIMEOUT>`: Timeout in seconds.  If no messages are received from the lead vehicle within this many seconds, the follower will give up and hold position
+-  :ref:`WP_SPD <WP_SPD>`, :ref:`WP_SPD_UP <WP_SPD_UP>`, :ref:`WP_SPD_DN <WP_SPD_DN>`, :ref:`WP_ACC <WP_ACC>`, :ref:`WP_ACC_Z <WP_ACC_Z>`: horizontal and vertical speed and acceleration limits for the following vehicle
 
 Choosing the Altitude Type
 ==========================
@@ -52,3 +57,12 @@ an unexpected height.
    mismatch between the two vehicles' home altitudes. If the follower consistently flies too
    high or too low by roughly the difference in take-off elevations, "relative" is the wrong
    choice for that setup.
+
+Changing the Lead Vehicle
+=========================
+
+:ref:`FOLL_SYSID<FOLL_SYSID>` may be changed while flying, for example by a Lua script switching between two beacons. The position, velocity and heading held for the previous lead vehicle are discarded as soon as the parameter changes, so the follower has no target and holds its current position until the newly selected vehicle is heard from. Tracking then restarts from that vehicle's position, rather than being smoothed across from the old one.
+
+The type of position message in use is also reset by the change, so if the previous lead vehicle was sending ``FOLLOW_TARGET``, ``GLOBAL_POSITION_INT`` from the new lead vehicle is accepted immediately.
+
+Setting :ref:`FOLL_SYSID<FOLL_SYSID>` to "0" deselects the lead vehicle altogether, and nothing is followed until a non-zero system id is set. Earlier firmware treated "0" as "follow the first vehicle seen" and wrote that vehicle's system id into the parameter; it no longer does either, so the lead vehicle must always be selected explicitly.

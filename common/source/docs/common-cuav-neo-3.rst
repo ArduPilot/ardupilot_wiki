@@ -9,10 +9,6 @@ Neo 3 is a UAV positioning module developed by  CUAV. It integrates industrial-g
 .. image:: ../../../images/cuav-gnss/neo-3.jpg
     :target: ../_images/neo-3.jpg
 
-.. note::
-
-     NEO 3 is supported in ArduPilot 4.0 firmware (and higher).
-
 Key Features
 ============
 

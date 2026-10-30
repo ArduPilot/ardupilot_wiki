@@ -55,7 +55,7 @@ The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive p
   SERIAL5   Telem3     UART2     DMA Enabled
   SERIAL6   User       UART4     DMA Enabled
   SERIAL7   Debug      UART3     DMA Enabled
-  SERIAL8   OTG-SLCAN  USB
+  SERIAL8   OTG2       USB
  ========= ========== ========== ============
 
 RC Input
@@ -77,7 +77,7 @@ PWM Output
 ==========
 The X6_Air flight controller supports up to 15 PWM outputs.The first 8 outputs (labelled M1 to M8) are controlled by a dedicated STM32F103 IO controller. The remaining 7 outputs (labelled A9 to A15) are the "auxiliary" outputs. These are directly attached to the STM32H753 FMU controller.
 
-All 15 outputs support normal PWM output formats. All outputs support DShot, except A15. Outputs 1-12 support Bi_Directional DShot.
+All 15 outputs support normal PWM output formats. All outputs support DShot, except A15. DShot on M1-M8 requires :ref:`BRD_IO_DSHOT<BRD_IO_DSHOT>` to be set to 1, followed by a reboot, which loads the DShot firmware onto the IO controller. Outputs A9-A12 support Bi-Directional DShot, as do M1-M4 when the IO DShot firmware is loaded.
 
 The M1-8 outputs are in 4 groups:
 

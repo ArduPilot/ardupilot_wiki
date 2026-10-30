@@ -11,10 +11,6 @@ Speedy Bee F4
 
 *above image and some content courtesy of the* `speedybee.com <https://www.speedybee.com/speedy-bee-f4-aio-flight-controller/>`__
 
-.. note::
-
-   Support for the SpeedyBee F4 was released with Copter-3.6.1
-
 Specifications
 ==============
 

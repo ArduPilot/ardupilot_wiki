@@ -31,7 +31,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        4             | RTL mode                   |    X     |    X    |    X    |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
-|        5             | Save Trim                  |    X     |         |    X    |       |
+|        5             | Save Trim                  |    X     |         |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        7             | Save Waypoint              |    X     |         |    X    |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
@@ -97,7 +97,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        40            | Object Avoidance           |    X     |         |    X    |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
-|        41            | Arm Disarm (4.1 and before)|    X     |    X    |    X    |       |
+|        41            | No longer used             |          |         |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        42            | SMARTRTL mode              |    X     |         |    X    |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
@@ -225,6 +225,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        108           | QRTL Mode                  |          |    X    |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
+|        109           | Custom Controller          |    X     |    X    |         |       |
++----------------------+----------------------------+----------+---------+---------+-------+
 |        111           | Loweheiser Starter         |    X     |    X    |    X    |  X    |
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        112           | SwitchExternalAHRS         |    X     |    X    |    X    |  X    |
@@ -237,7 +239,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        152           | SIMPLE mode heading reset  |    X     |         |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
-|        153           | ARM/DISARM (4.2 and higher)|    X     |    X    |    X    |  X    |
+|        153           | ARM/DISARM                 |    X     |    X    |    X    |  X    |
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        154           | ARM/DISARM with AIRMODE on |    X     |    X    |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
@@ -377,10 +379,8 @@ Other functions are:
    ===================================== =======================================================================
     Flip                                 | The vehicle will flip on its roll or pitch axis depending upon the
                                          | pilot's roll and pitch stick position. See :ref:`Flip Mode<flip-mode>`.
-    Save Trim                            | In Rover, a high saves the current steering channel trim,
-                                         | see :ref:`Save Steering Trim <savetrim>`.
-                                         | In Copter, it adjusts the vehicle level position using the current roll
-                                         | and pitch stick inputs. See details :ref:`here <auto-trim>`.
+    Save Trim                            | Adjusts the vehicle level position using the current roll
+                                         | and pitch stick inputs. See details :ref:`here <copter:autotrim>`.
     Save Waypoint                        | Save the current location (including altitude) as a waypoint in the
                                          | mission.If in AUTO mode no waypoint will be saved, instead the 
                                          | vehicle will RTL.
@@ -440,8 +440,6 @@ Other functions are:
                                          | using IR-Lock sensor).
     Object Avoidance                     | When the switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>`
                                          | or :ref:`TeraRanger Tower<common-teraranger-tower-objectavoidance>`. When low, object avoidance is disabled.
-    Arm/Disarm(4.1 and earlier)          | Arms the vehicle if the switch goes high (subject to arming checks).
-                                         | Disarms the vehicle if brought low.
    ===================================== =======================================================================
 
 
@@ -538,19 +536,24 @@ Other functions are:
                                          | it can autotune while the vehicle is loitering by using sticks,
                                          | but enabling autotuning can occur in any mode other
                                          | than MANUAL).
+    Custom Controller                    | Switches between the main controller (low) and a custom
+                                         | controller compiled into the firmware (high). Developer
+                                         | feature, see :ref:`Copter custom controller <dev:copter-adding-custom-controller>`
+                                         | and `Plane custom controller <https://ardupilot.org/dev/docs/plane-adding-custom-controller.html>`__.
     Loweheiser Starter                    Enable starter on Loweheiser generator.
     SwitchExternalAHRS                   | If EKF3 and an external AHRS module are enabled, high on this
                                          | switch switches from EKF3 to the external AHRS.
     SIMPLE mode heading reset            | Resets original heading reference to current heading
                                          | for SIMPLE Mode.
-    ARM/DISARM (4.2 and higher)          | Arms the vehicle if the switch goes high (subject to arming
+    ARM/DISARM                           | Arms the vehicle if the switch goes high (subject to arming
                                          | checks). Disarms the vehicle unconditionally if brought low.
     ARM/DISARM with AIRMODE on           | Arms the vehicle if the switch goes high (subject to arming
                                          | checks) with AIRMODE active. Airmode RC option switch can
                                          | subsequently enable or disable if it is configured. Disarms
                                          | the vehicle unconditionally if brought low.
     TRIM RC/SERVO Save                   | Saves current RC input trim and SERVO output trim for pitch,
-                                         | roll, and yaw in Plane and for Steering in Rover.
+                                         | roll, and yaw in Plane and for Steering in Rover. See
+                                         | :ref:`Save Steering Trim <savetrim>` for Rover.
     Torqeedo Error Clear                  Clears error condition in Torqeedo motor controller.
     Force FBWA as Long FS Action         | Forces mode change to FBWA in Long FS, overriding the
                                          | :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter value for emergency

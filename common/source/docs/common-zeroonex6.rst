@@ -43,7 +43,7 @@ Features:
    - 2 CAN Power Monitor inputs
    - 2 CAN ports
    - SPI and I2C ports
-   - 16 motor/servo outputs, 8 supporting BiDirDShot, 14 supporting DShot
+   - 16 motor/servo outputs, 4 supporting BiDirDShot, 14 supporting DShot
 
 Pinout
 ======
@@ -64,7 +64,7 @@ The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive p
 - SERIAL5 :USART2  Telem3
 - SERIAL6 :UART4   USER
 - SERIAL7 :USART3  FMU DEBUG
-- SERIAL8 :USB     OTG-SLCAN      |
+- SERIAL8 :USB     OTG2
 
 RC Input
 ========
@@ -76,7 +76,7 @@ PWM Output
 
 The X6 flight controller supports up to 16 PWM outputs. First 8 outputs (labeled 1 to 8) are controlled by a dedicated STM32F103 IO controller. The remaining 8 outputs (labeled 9 to 16) are the "auxiliary" outputs. These are directly attached to the STM32H753 FMU controller.
 
-All 16 outputs support normal PWM output formats. All 16 outputs support DShot, except 15 and 16. Outputs 1-8 support BiDirectional DShot.
+All 16 outputs support normal PWM output formats. All 16 outputs support DShot, except 15 and 16. DShot on outputs 1-8 (IO controller) requires :ref:`BRD_IO_DSHOT<BRD_IO_DSHOT>` to be set to 1, followed by a reboot, which loads the DShot firmware onto the IO controller. With the DShot firmware loaded, outputs 1-4 also support BiDirectional DShot.
 
 The 8 IO PWM outputs are in 4 groups:
 

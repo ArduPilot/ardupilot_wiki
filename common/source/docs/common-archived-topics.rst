@@ -80,16 +80,20 @@ value to users with old hardware.
     Tuning Waypoint Turn Speed (ver 3.1 and older) <speed-turn-parameter-tuning>
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
     ArduRoller Balance Bot <reference-frames-arduroller>
+    Learning Mode (removed in 3.2) <learning-mode>
+    Tuning Navigation (4.2 and lower) <rover-tuning-navigation-420>
 [/site]
 
 [site wiki="plane"]
     Migration from release 3.7 to 3.8 <plane-3-7-to-3-8-migration>
+    Automated Aerobatics prior to 4.4 <common-scripting-aerobatics>
     Mandatory Hardware Configuration <first-time-apm-setup>
     Normal/Elevon/VTail Mode & Reversing Servos <reversing-servos-and-setting-normalelevon-mode>
     Channel Output Functions <channel-output-functions>
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
     LAND mode <land-mode>
     Geofencing prior to 4.1 <geofencing>
+    Soaring prior to 4.1 <soaring>
     Manual Roll, Pitch and Yaw Controller Tuning(firmware before 4.1) <roll-pitch-controller-tuning>
 [/site]
 [site wiki="dev"]

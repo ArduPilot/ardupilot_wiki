@@ -12,10 +12,6 @@ The user manual for this radar unit can be found `here. <https://ainstein.ai/wp-
 
 .. image:: ../../../images/aerotenna-usd1.png
 
-.. note::
-
-   Support for this sensor is available in ArduPilot firmware versions 4.0 and later
-
 Where to Buy
 ------------
 

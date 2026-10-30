@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600"
+     font-family="Lato, Helvetica, Arial, sans-serif" role="img"
+     aria-labelledby="sa-title sa-desc">
+  <title id="sa-title">SITL architecture and default network ports</title>
+  <desc id="sa-desc">The ArduPilot SITL executable contains a built-in physics
+    model. MAVProxy connects to SERIAL0 on TCP 5760, sends RC input to UDP 5501
+    and forwards MAVLink to a ground station on UDP 14550. SERIAL1 and SERIAL2
+    listen on TCP 5762 and 5763. Optionally an external simulator replaces the
+    built-in physics: JSBSim on TCP 5505 and UDP 5504, or a JSON simulator on
+    UDP 9002. FlightGear can display the vehicle using UDP 5503.</desc>
+
+  <defs>
+    <marker id="saArrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a5058"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="600" fill="#ffffff"/>
+
+  <!-- ArduPilot SITL executable -->
+  <rect x="300" y="40" width="300" height="490" rx="8"
+        fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="450" y="74" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">ArduPilot SITL executable</text>
+  <text x="450" y="96" text-anchor="middle" font-size="13" fill="#444">arducopter, arduplane, ardurover, ...</text>
+
+  <!-- serial port tags -->
+  <g font-size="13" fill="#222">
+    <rect x="245" y="130" width="120" height="44" rx="4" fill="#ffffff" stroke="#c0392b" stroke-width="1.5"/>
+    <text x="305" y="148" text-anchor="middle" font-weight="bold">TCP 5760</text>
+    <text x="305" y="165" text-anchor="middle">SERIAL0</text>
+
+    <rect x="245" y="190" width="120" height="44" rx="4" fill="#ffffff" stroke="#c0392b" stroke-width="1.5"/>
+    <text x="305" y="208" text-anchor="middle" font-weight="bold">TCP 5762</text>
+    <text x="305" y="225" text-anchor="middle">SERIAL1</text>
+
+    <rect x="245" y="250" width="120" height="44" rx="4" fill="#ffffff" stroke="#c0392b" stroke-width="1.5"/>
+    <text x="305" y="268" text-anchor="middle" font-weight="bold">TCP 5763</text>
+    <text x="305" y="285" text-anchor="middle">SERIAL2</text>
+
+    <rect x="245" y="450" width="120" height="44" rx="4" fill="#ffffff" stroke="#c0392b" stroke-width="1.5"/>
+    <text x="305" y="468" text-anchor="middle" font-weight="bold">UDP 5501</text>
+    <text x="305" y="485" text-anchor="middle">RC input</text>
+  </g>
+  <text x="378" y="208" font-size="12" fill="#555">free for another GCS,</text>
+  <text x="378" y="224" font-size="12" fill="#555">companion computer</text>
+  <text x="378" y="240" font-size="12" fill="#555">or peripheral</text>
+
+  <!-- built-in physics -->
+  <rect x="330" y="320" width="240" height="100" rx="6"
+        fill="#ffffff" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="0"/>
+  <text x="450" y="352" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">Built-in physics model</text>
+  <text x="450" y="374" text-anchor="middle" font-size="12" fill="#444">default: quad, plane, rover, ...</text>
+  <text x="450" y="392" text-anchor="middle" font-size="12" fill="#444">selected with -f / --model</text>
+  <text x="450" y="410" text-anchor="middle" font-size="12" fill="#444">no separate process needed</text>
+
+  <!-- MAVProxy -->
+  <rect x="20" y="110" width="170" height="110" rx="8"
+        fill="#e8f5ec" stroke="#1e7a45" stroke-width="2"/>
+  <text x="105" y="160" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">MAVProxy</text>
+  <text x="105" y="182" text-anchor="middle" font-size="12" fill="#444">started by sim_vehicle.py</text>
+
+  <!-- GCS -->
+  <rect x="20" y="410" width="170" height="100" rx="8"
+        fill="#e8f5ec" stroke="#1e7a45" stroke-width="2"/>
+  <text x="105" y="452" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">Any GCS</text>
+  <text x="105" y="474" text-anchor="middle" font-size="12" fill="#444">Mission Planner, QGC,</text>
+  <text x="105" y="490" text-anchor="middle" font-size="12" fill="#444">MAVProxy map, ...</text>
+
+  <g stroke="#4a5058" stroke-width="2" fill="none">
+    <!-- MAVProxy <-> SERIAL0 -->
+    <line x1="190" y1="152" x2="243" y2="152" marker-start="url(#saArrow)" marker-end="url(#saArrow)"/>
+    <!-- MAVProxy -> RC input -->
+    <polyline points="190,200 215,200 215,472 243,472" marker-end="url(#saArrow)"/>
+    <!-- MAVProxy <-> GCS -->
+    <line x1="105" y1="222" x2="105" y2="408" marker-start="url(#saArrow)" marker-end="url(#saArrow)"/>
+  </g>
+  <text x="217" y="143" text-anchor="middle" font-size="12" fill="#222">MAVLink</text>
+  <text x="228" y="330" font-size="12" fill="#222" transform="rotate(90 228 330)" text-anchor="middle">RC channels</text>
+  <text x="115" y="305" font-size="12" font-weight="bold" fill="#222">UDP 14550</text>
+  <text x="115" y="321" font-size="12" fill="#222">MAVLink</text>
+
+  <!-- optional external simulators -->
+  <rect x="690" y="40" width="250" height="490" rx="8"
+        fill="none" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="815" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#2980b9">Optional external simulators</text>
+  <text x="815" y="84" text-anchor="middle" font-size="12" fill="#2980b9">replace the built-in physics</text>
+
+  <rect x="715" y="105" width="200" height="90" rx="6" fill="#eaf2fb" stroke="#2980b9" stroke-width="2"/>
+  <text x="815" y="145" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">JSBSim</text>
+  <text x="815" y="166" text-anchor="middle" font-size="12" fill="#444">Plane, -f jsbsim</text>
+
+  <rect x="715" y="245" width="200" height="100" rx="6" fill="#eaf2fb" stroke="#2980b9" stroke-width="2"/>
+  <text x="815" y="282" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">JSON simulator</text>
+  <text x="815" y="303" text-anchor="middle" font-size="12" fill="#444">Gazebo, Webots,</text>
+  <text x="815" y="319" text-anchor="middle" font-size="12" fill="#444">custom scripts, -f JSON</text>
+
+  <rect x="715" y="410" width="200" height="90" rx="6" fill="#eaf2fb" stroke="#2980b9" stroke-width="2"/>
+  <text x="815" y="450" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">FlightGear</text>
+  <text x="815" y="471" text-anchor="middle" font-size="12" fill="#444">3D view only</text>
+
+  <g stroke="#4a5058" stroke-width="2" fill="none">
+    <!-- SITL -> JSBSim control -->
+    <line x1="600" y1="130" x2="713" y2="130" marker-end="url(#saArrow)"/>
+    <!-- JSBSim -> SITL fdm -->
+    <line x1="713" y1="172" x2="602" y2="172" marker-end="url(#saArrow)"/>
+    <!-- SITL <-> JSON -->
+    <line x1="602" y1="295" x2="713" y2="295" marker-start="url(#saArrow)" marker-end="url(#saArrow)"/>
+    <!-- SITL -> FlightGear -->
+    <line x1="600" y1="455" x2="713" y2="455" marker-end="url(#saArrow)"/>
+  </g>
+  <g font-size="11" fill="#222" text-anchor="middle">
+    <text x="645" y="122"><tspan font-weight="bold">TCP 5505</tspan></text>
+    <text x="645" y="146">servo outputs</text>
+    <text x="645" y="164"><tspan font-weight="bold">UDP 5504</tspan></text>
+    <text x="645" y="188">flight data</text>
+    <text x="645" y="287"><tspan font-weight="bold">UDP 9002</tspan></text>
+    <text x="645" y="312">servos / state</text>
+    <text x="645" y="447"><tspan font-weight="bold">UDP 5503</tspan></text>
+    <text x="645" y="472">vehicle state</text>
+  </g>
+
+  <text x="480" y="570" text-anchor="middle" font-size="13" fill="#444">Ports shown are for instance 0. Each additional instance (-I n) adds 10 × n to every port.</text>
+</svg>

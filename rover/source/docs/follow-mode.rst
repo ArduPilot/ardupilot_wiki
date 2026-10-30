@@ -29,11 +29,20 @@ If using QGroundControl ensure the Application setting under the General tab ``S
 The following parameters can be used to tune Follow mode's performance:
 
 -  :ref:`FOLL_ENABLE <FOLL_ENABLE>`: set to 1 to enable follow mode and refresh parameters.
--  :ref:`FOLL_SYSID <FOLL_SYSID>`: MAVLink system id of lead vehicle ("0" means follow the first vehicle "seen").
+-  :ref:`FOLL_SYSID <FOLL_SYSID>`: MAVLink system id of the lead vehicle. This must be set explicitly; "0" means no lead vehicle has been selected and Follow is inactive.
 -  :ref:`FOLL_DIST_MAX <FOLL_DIST_MAX>`: if lead vehicle is more than this many meters away, give up on following and hold position (loiter if boat, stop if ground vehicle).
 -  :ref:`FOLL_OFS_X <FOLL_OFS_X>`, :ref:`FOLL_OFS_Y <FOLL_OFS_Y>`, :ref:`FOLL_OFS_Z <FOLL_OFS_Z>` (not used in Rover) : 3D offset (in meters) from the lead vehicle. If they are zero, then the current vehicle's offset from the follow target at time of mode entry is used every time. These offsets can be altered via Mavlink and will take effect immediately. However, if they were originally zero and changed during FOLLOW MODE rather than during another mode, they will be reset to zero for the next entry into FOLLOW mode, until a reboot occurs and then the changed offsets will be restored. 
 -  :ref:`FOLL_OFS_TYPE <FOLL_OFS_TYPE>`: set to 0 if offsets are North-East (NED), 1 if offsets are relative to lead vehicle's heading, see diagrams below.
 -  :ref:`FOLL_POS_P <FOLL_POS_P>`: gain which controls how aggressively this vehicle moves towards lead vehicle (limited by :ref:`WP_SPD<WP_SPD>`)
+
+Changing the Lead Vehicle
+=========================
+
+:ref:`FOLL_SYSID<FOLL_SYSID>` may be changed while driving. The position, velocity and heading held for the previous lead vehicle are discarded as soon as the parameter changes, so the follower has no target and stops until the newly selected vehicle is heard from. Tracking then restarts from that vehicle's position, rather than being smoothed across from the old one.
+
+The type of position message in use is also reset by the change, so if the previous lead vehicle was sending ``FOLLOW_TARGET``, ``GLOBAL_POSITION_INT`` from the new lead vehicle is accepted immediately.
+
+Setting :ref:`FOLL_SYSID<FOLL_SYSID>` to "0" deselects the lead vehicle altogether, and nothing is followed until a non-zero system id is set. Earlier firmware treated "0" as "follow the first vehicle seen" and wrote that vehicle's system id into the parameter; it no longer does either, so the lead vehicle must always be selected explicitly.
 
 .. image:: ../images/FollowMode.jpg
    :target: ../_images/FollowMode.jpg

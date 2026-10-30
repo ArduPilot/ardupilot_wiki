@@ -118,7 +118,7 @@ at a fixed altitude (which can be set with the \ :ref:`Mission Planner <planner:
 If it does not return crisply and circle overhead in a near-perfect
 circle, you need to tune the autopilot a bit for your particular
 airframe. This can usually be done by adjusting the Roll parameters, as
-described :ref:`here <roll-pitch-controller-tuning>`.
+described :ref:`here <new-roll-and-pitch-tuning>`.
 
 Once all this has checked out, you can program waypoint missions and
 test them in Auto mode.

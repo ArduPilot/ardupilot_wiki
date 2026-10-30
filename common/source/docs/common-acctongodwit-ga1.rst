@@ -26,8 +26,8 @@ Specifications
 **Sensors**
 ^^^^^^^^^^^
 * Bosch BMI088 (vibration isolated)
-* TDK InvenSense ICM-42688-P x 2 (one vibration isolated)
-* TDK Barometric Pressure and Temperature Sensor CP-20100 x 2 (one vibration isolated)
+* Two of either ICM-42688-P / ICM-45686 / ICM-56686 / LSM6DSK320X in any combination (one vibration isolated)
+* Two barometers of either TDK CP-20100 / Infineon DPS368 in any combination (one vibration isolated)
 * PNI RM3100 Geomagnetic Sensor (vibration isolated)
 
 **Power**
@@ -116,7 +116,7 @@ Wiring Diagram
 
 PWM Output
 ==========
-PWM M1-M8 (IO Main PWM), A1-A8(FMU PWM). All these 16 support normal PWM output formats. FMU PWM A1-A6 can support DShot and B-Directional DShot. A1-A8(FMU PWM) are grouped as:
+PWM M1-M8 (IO Main PWM), A1-A8(FMU PWM). All these 16 support normal PWM output formats. FMU PWM A1-A6 can support DShot and B-Directional DShot. DShot on M1-M8 (IO Main PWM) requires :ref:`BRD_IO_DSHOT<BRD_IO_DSHOT>` to be set to 1, followed by a reboot, which loads the DShot firmware onto the IO controller. With the DShot firmware loaded, M1-M4 also support Bi-Directional DShot. A1-A8(FMU PWM) are grouped as:
 
 * Group 1: A1, A2, A3, A4
 * Group 2: A5, A6

@@ -91,14 +91,14 @@ Throttle Reversal
 
 It is very unusual to have a reversed throttle input. In most cases it
 means your transmitter is setup incorrectly. Having a reversed
-throttle output is much more common for internal combustion motors. In
-firmware version 3.8 and later you do not need to reverse throttle
+throttle output is much more common for internal combustion motors. You
+do not need to reverse throttle
 input just because your output is reversed (ie. you can set
 :ref:`RC3_REVERSED<RC3_REVERSED>` separately from :ref:`SERVO3_REVERSED<SERVO3_REVERSED>` ).
 
 If you do need to use a reversed throttle input then you need to be be
 very careful with your throttle failsafe settings. The plane parameter
-:ref:`THR_FS_VALUE<THR_FS_VALUE>` is normally the throttle value below which the autopilot
+:ref:`THR_FS_VALUE<THR_FS_VALUE>` is normally the throttle value at or below which the autopilot
 will consider your transmitter to be in RC failsafe. If you have a
 reversed throttle input then that value will need to be a high value,
-and will be the value above which you are in RC failsafe.
+and will be the value at or above which you are in RC failsafe.

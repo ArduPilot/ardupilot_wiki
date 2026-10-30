@@ -61,7 +61,7 @@ The key parameters you should look for are:
 
 Setting those to an approximately correct value will give you a
 reasonable starting point for tuning your airframe. After that you
-should follow the :ref:`tuning guide <roll-pitch-controller-tuning>`.
+should follow the :ref:`tuning guide <new-roll-and-pitch-tuning>`.
 
 Also note that the Plane parameters default to zero 'I' values. The
 reason for this is that you need to tune the P value first, then tune

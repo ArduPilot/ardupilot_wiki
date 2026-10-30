@@ -1,13 +1,13 @@
 .. _sitl-with-xplane:
 
-=============================
-Using SITL with X-Plane 10/11
-=============================
+========================
+Using SITL with X-Plane
+========================
 
 .. figure:: ../images/xplane-pt60.jpg
    :target: ../_images/xplane-pt60.jpg
 
-This article describes how to use X-Plane 10 as a simulation backend for
+This article describes how to use X-Plane 10, 11 or 12 as a simulation backend for
 ArduPilot :ref:`SITL <sitl-simulator-software-in-the-loop>`.
 
 .. youtube:: llRii8hmG1M
@@ -16,7 +16,7 @@ ArduPilot :ref:`SITL <sitl-simulator-software-in-the-loop>`.
 Overview
 ========
 
-X-Plane 10/11 is a commercial flight simulator with a rich networking
+X-Plane is a commercial flight simulator with a rich networking
 interface that allows it to be interfaced to other software. In this
 case we will be interfacing it to the ArduPilot SITL system, allowing
 ArduPilot to fly a wide variety of aircraft.
@@ -28,19 +28,34 @@ develop support for aircraft features that may not be available in
 other simulator backends.
 
 Before starting SITL the only thing you need to setup on X-Plane is
-the network data to send the sensor data to the IP address of the
+the network data output, sending the sensor data to the IP address of the
 computer that will run ArduPilot. This can be the same computer that
 is running X-Plane (in which case you should use an IP address of
 127.0.0.1) or it can be another computer on your network.
 
-Setup of X-Plane 11
-===================
+How it works
+============
 
-Go to *Settings* -> *Data Output* menu in X-Plane 11 and activate the *General Data Output* tab.
+- SITL listens for X-Plane data on UDP port 49001 and sends its commands to X-Plane on UDP port 49000.
+- X-Plane only needs to be told to send one data row to SITL. When the first packet arrives, SITL records the IP address it came from and sends all further commands there. It then tells X-Plane which other data rows it needs and turns off any it does not use, so the rest of the *Data Output* screen does not need to be set up by hand.
+- SITL asks X-Plane for its version number and adjusts for the change in gyro data format introduced in X-Plane 12 automatically.
+- ArduPilot's servo outputs are sent to X-Plane as datarefs (named X-Plane variables), using a JSON map file that is built into SITL: ``xplane_plane.json`` for Plane, and ``xplane_heli.json`` for Helicopter builds. The same file maps X-Plane joystick axes and buttons to ArduPilot RC input channels. The default maps can be viewed in the ArduPilot source at `Tools/autotest/models <https://github.com/ArduPilot/ardupilot/tree/master/Tools/autotest/models>`__.
+- To change the mapping (for example for a different aircraft or joystick), copy the JSON file into the directory SITL is started from and edit it. The local file is used instead of the built-in one if it is present when SITL starts, and SITL reloads it automatically when it changes, as long as the vehicle is disarmed.
+- X-Plane's sensor data is not good enough to run the EKF, so SITL sets these parameter defaults (parameters you have saved still take priority):
+
+  - :ref:`AHRS_EKF_TYPE <plane:AHRS_EKF_TYPE>` = 10 (simulated EKF)
+  - :ref:`GPS1_TYPE <plane:GPS1_TYPE>` = 100 (SITL GPS)
+  - :ref:`INS_GYR_CAL <plane:INS_GYR_CAL>` = 0 (no gyro calibration at startup)
+  - Plane only: :ref:`SERVO5_FUNCTION <plane:SERVO5_FUNCTION>` = 3 (flaps), with :ref:`SERVO5_MIN <plane:SERVO5_MIN>` = 1000 and :ref:`SERVO5_MAX <plane:SERVO5_MAX>` = 2000
+
+Setup of X-Plane 11 and 12
+==========================
+
+Go to *Settings* -> *Data Output* menu in X-Plane and activate the *General Data Output* tab.
 Check the *Network via UDP* column for at least one of the settings that ArduPilot will use (e.g. *Times* in the second row).
-The other will be set with commands over network by ArduPilot itself, note that you can use that to verify a two-way connection.
+The others will be set with commands over the network by ArduPilot itself; note that you can use that to verify a two-way connection.
 
-In the right part of the interface, set *UDP Rate* to 50.0 and make sure that the checkbox below labeled *Send network data output* is set.
+In the right part of the interface, set *UDP Rate* to 50.0 (recommended) and make sure that the checkbox below labeled *Send network data output* is set.
 Set the *IP Address* field to the address of the computer running SITL.
 Set *Port* field to 49001.
 
@@ -48,6 +63,8 @@ Set *Port* field to 49001.
 
 .. figure:: ../images/xplane11-data-output.png
    :target: ../_images/xplane11-data-output.png
+
+   X-Plane 11 Data Output screen
 
 Setup of X-Plane 10
 ===================
@@ -67,22 +84,30 @@ You will also need to output data from X-Plane. Click on *Settings*, then *Data 
 .. figure:: ../images/mavlinkhil1.jpg
    :target: ../_images/mavlinkhil1.jpg
 
-If you have a joystick then you can configure the joystick for
-X-Plane. A joystick controlled by X-Plane will be available as R/C
+Joystick
+========
+
+If you have a joystick connected to X-Plane, it will be available as R/C
 input when ArduPilot is in control of X-Plane, allowing you to fly the
 aircraft with the joystick in ArduPilot flight modes.
 
-For joystick setup go to Settings -> Joystick and Equipment. You
-should setup controls for roll, pitch, yaw and throttle. Note that
-X-Plane has an unusual throttle setup where the bar is fully to the
+SITL reads X-Plane's raw joystick axes (1 to 6) and buttons, and maps
+them to RC input channels using the JSON map file described in
+`How it works`_. In the default maps, axes 6, 5, 4, 2 and 3 are RC
+channels 1 to 5 (roll, pitch, throttle, yaw and channel 5), and
+buttons 1 to 4 are RC channels 6 to 9. If your joystick's axes are
+numbered differently, or the axis directions or ranges need changing,
+edit the axis numbers and ``input_min``/``input_max`` values in a local
+copy of the JSON file. Buttons can be used for flight mode changes or
+any other RC channel function; a button entry whose ``mask`` includes
+two bits gives a three position switch.
+
+The joystick must be detected and calibrated in X-Plane under Settings -> Joystick and Equipment.
+Note that X-Plane has an unusual throttle setup where the bar is fully to the
 left at full throttle and fully to the right at zero throttle.
 
 .. figure:: ../images/xplane-joystick-setup.jpg
    :target: ../_images/xplane-joystick-setup.jpg
-
-Right now you can't use the joystick for other than basic axes
-controls, so you can't use it for flight mode changes. We may be able
-to add support for that in the future.
 
 Starting SITL
 =============
@@ -107,6 +132,8 @@ MAVProxy for ArduPilot SITL testing. MAVProxy has a rich graphing and
 control capability that is ideal for long term ArduPilot software
 development.
 
+The second and third approaches need an ArduPilot build environment. See :ref:`building-setup-linux`, :ref:`building-setup-mac`, or for Windows, :ref:`building-setup-windows10_new` or :ref:`building-setup-windows11` (which use WSL), and :ref:`setting-up-sitl-on-linux`.
+
 Using SITL from MissionPlanner
 ------------------------------
 
@@ -116,42 +143,28 @@ To start SITL directly from MissionPlanner go to the Simulation tab:
    :target: ../_images/xplane-missionplanner2.jpg
 
 In the Simulation screen you need to select Model "xplane" and then select
-"Plane". At the moment we only support fixed wing and helicopter
-aircraft in X-Plane with SITL. In the future we may support other
-aircraft types. See below for more information on flying a helicopter.
+"Plane". Built-in JSON maps are provided for fixed wing and helicopter
+aircraft; other aircraft, such as QuadPlanes, need their own JSON map
+(see `How it works`_). See below for more information on flying a helicopter.
 
-When you select "Plane" MissionPlanner will present a selection for downloading the current stable release or a nightly build of ArduPilot. 
+When you select "Plane" MissionPlanner will present a selection for downloading the current stable release or a nightly build of ArduPilot.
 
 .. figure:: ../images/xplane-missionplanner3.jpg
    :target: ../_images/xplane-missionplanner3.jpg
 
 You then need to load an appropriate set of parameters for the
-aircraft (or setup the aircraft just like you would a real aircraft)
-and enjoy flying as usual with MissionPlanner.
-
-When setting up the aircraft it is useful to use the joystick to move
-the control surfaces to make sure they are all going the right
-way. You can change channel direction in the normal way with ArduPilot
-parameters.
-
+aircraft (see `Loading Parameters`_) and enjoy flying as usual with MissionPlanner.
 
 Using SITL with your own GCS
 ----------------------------
 
-The second approach to running X-Plane 10/11 with SITL is to build
-ArduPilot SITL manually and then run it from the cygwin command
-line. You can then connect with your favourite GCS.
+The second approach is to build ArduPilot SITL yourself and run it
+directly. From the top level ``ardupilot`` directory of an ArduPilot
+git checkout, run::
 
-You should checkout the latest ArduPilot git tree in cygwin, and then
-change directory to the top "ardupilot" directory. Then run the
-following commands::
-
-  $ modules/waf/waf-light configure --board sitl
-  $ modules/waf/waf-light plane
-  $ build/sitl/bin/arduplane --model xplane
-
-.. figure:: ../images/xplane-waf.jpg
-   :target: ../_images/xplane-waf.jpg
+  ./waf configure --board sitl
+  ./waf plane
+  build/sitl/bin/arduplane --model xplane
 
 That will start SITL and wait for a GCS to connect. You should connect
 on TCP port 5760 and configure ArduPilot as usual.
@@ -161,106 +174,81 @@ Using SITL with sim_vehicle.py
 
 The sim_vehicle.py script gives you a lot of options for launching all
 of the different simulation systems that work with ArduPilot,
-including X-Plane.
+including X-Plane. It uses MAVProxy as the GCS, which is installed as
+part of the ArduPilot build environment setup.
 
-To use sim_vehicle.py you will need to install MAVProxy. If you are on
-Linux then make sure pip is installed and run::
+It is useful to create a sub-directory for each
+aircraft you fly in SITL so that settings, and any local JSON map file,
+are kept per-aircraft. In the following example the PT60 aircraft in
+X-Plane is used, so a PT60 directory is created::
 
-  $ pip install --upgrade pymavlink mavproxy
+  cd ArduPlane
+  mkdir PT60
+  cd PT60
+  sim_vehicle.py -D -f xplane --console --map
 
-If you are on Windows then download and install MAVProxy from
-https://firmware.ardupilot.org/Tools/MAVProxy/
+If X-Plane is running on a different computer, ``-f xplane`` is all that is needed on the SITL side: X-Plane's *Data Output* IP address must be set to the SITL computer, and SITL replies to whichever address the data comes from.
 
-Then do a git checkout of ArduPilot master and change directory to the
-ArduPlane directory. I like to create a sub-directory for each
-aircraft I fly in SITL so that settings are remembered
-per-aircraft. If you want to do that then create a subdirectory in the
-ArduPlane directory and run sim_vehicle.py from there. In the
-following example I will be using the PT60 aircraft in X-Plane, so I
-create a PT60 directory::
-
-  $ cd ArduPlane
-  $ mkdir PT60
-  $ cd PT60
-  $ sim_vehicle.py -D -f xplane --console --map
+.. note:: SITL running inside a Docker container may not be able to send commands back to X-Plane, because Docker changes the address the X-Plane data appears to come from. See `ArduPilot PR #32218 <https://github.com/ArduPilot/ardupilot/pull/32218>`__.
 
 Using SITL running inside WSL2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The :ref:`currently recommended<dev:sitl-native-on-windows>` way of setting up SITL for Windows runs in Windows Subsystem for Linux, as explained in :ref:`building-setup-windows10_new` for Windows 10 systems or :ref:`building-setup-windows11` for Windows 11 systems.
 
-To connect X-Plane and SITL in this environment you need to manually point each of them at the right address in the virtual network created between the two operating systems.
+With X-Plane running on Windows and SITL running inside WSL2, X-Plane must be pointed at the WSL2 address of the Linux system. SITL does not need to be told the Windows address, because it replies to whichever address X-Plane's data comes from.
 
-Find the address of Windows reachable from WSL by running ``ipconfig.exe`` in PowerShell or Command Prompt, and looking for the following device::
-
-  Ethernet adapter vEthernet (WSL):
-  
-      Connection-specific DNS Suffix  . :
-      IPv4 Address. . . . . . . . . . . : 172.25.64.1
-      Subnet Mask . . . . . . . . . . . : 255.255.240.0
-      Default Gateway . . . . . . . . . :
-
-This is the address that you need to pass to the SITL instance running in WSL.
-In this example it would look like the following::
-
-  $ sim_vehicle.py -D -f xplane --sim-address 172.25.64.1
-
-On the side of Linux, you can get the address with ``ip addr`` command, look for the address from the same subnet, i.e. with same prefix, as the one you found for Windows.
-For example, the relevant block looks like this in Ubuntu 20.04::
+On the Linux side, get the address with the ``ip addr`` command and look for the ``eth0`` device.
+For example, the relevant block looks like this in Ubuntu::
 
   2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
       link/ether 00:15:5d:43:ee:d1 brd ff:ff:ff:ff:ff:ff
       inet 172.25.67.144/20 brd 172.25.79.255 scope global eth0
          valid_lft forever preferred_lft forever
 
-Set this address (172.25.67.144 in this example) in the *IP Address* field shown in section `Setup of X-Plane 11`_ above
+Set this address (172.25.67.144 in this example) in the *IP Address* field shown in `Setup of X-Plane 11 and 12`_ above, then start SITL as usual::
+
+  sim_vehicle.py -D -f xplane --console --map
+
+.. note:: The WSL2 address normally changes each time Windows restarts, so check it and update X-Plane's *IP Address* field if SITL stops receiving data. If WSL2 is configured to use mirrored networking mode, X-Plane and SITL share the network and 127.0.0.1 can be used instead.
+
+Loading Parameters
+==================
+
+Parameter files (``.parm``) can be loaded with any GCS:
+
+- MAVProxy: ``param load <filename>.parm``
+- QGroundControl: *Vehicle Configuration* -> *Parameters* -> *Tools* -> *Load from file...*
+- Mission Planner: *Config* -> *Full Parameter List* -> *Load from file*
+
+Some parameters (for example servo functions) only take effect after a reboot, so reboot SITL after loading a complete parameter file.
+
+Whichever parameters are used, the servo outputs must match the JSON map for the aircraft. For Plane, the default map expects outputs 1 to 5 to be aileron, elevator, throttle, rudder and flaps. When setting up the aircraft it is useful to use the joystick to move the control surfaces to make sure they are all going the right way. You can change channel direction in the normal way with ArduPilot parameters.
+
+A parameter file for flying the Alia QuadPlane in X-Plane 12 is included in the ArduPilot source at `Tools/Frame_params/QuadPlanes/XPlane-Alia.parm <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/QuadPlanes/XPlane-Alia.parm>`__. Its VTOL motor outputs are not driven by the default ``xplane_plane.json`` map, so a local JSON map that sends them to the aircraft's engines is also needed.
 
 Flying a Helicopter
--------------------
+===================
 
-It is also possible to fly a helicopter with XPlane-10/11. The setup is
-similar to a plane, with two additional requirements:
+It is also possible to fly a helicopter with X-Plane. Use a Copter
+helicopter build, for example::
 
-  - you need to setup your XPlane joystick to map the collective stick
-    to flaps
-  - you need to map a key or joystick button to turn on and off the
-    "generator1" electrical system
+  sim_vehicle.py -v ArduCopter -f xplane-heli --console --map
 
-These strange requirements are because of limitations in the remote
-control of helicopters in X-Plane 10. The flaps input is something
-that ArduPilot SITL is able to read remotely while not interfering
-with flight of the helicopter. The "generator1 on/off" is used to
-simulate the interlock switch (channel 8) in ArduPilot helicopter
-support.
+or ``build/sitl/bin/arducopter-heli --model xplane`` after ``./waf heli``.
+Helicopter builds use the ``xplane_heli.json`` map, in which:
 
-Note that for "generator on/off" you do need to map two separate
-events, one for on and one for off. If using a two position switch
-then map one to the switch on position and the other to the switch off
-position.
-
-See this example for typical joystick setup
-
-.. figure:: ../images/xplane-heli-joystick1.jpg
-   :target: ../_images/xplane-heli-joystick1.jpg
-
-and this one for mapping the generator on/off switch to a joystick
-switch
-
-.. figure:: ../images/xplane-heli-joystick2.jpg
-   :target: ../_images/xplane-heli-joystick2.jpg
-
-A full set of parameters for the Bell JetRanger Helicopter in X-Plane
-10/11 are available here http://uav.tridgell.net/XPlane/
-
-You also need to start SITL with the model set to "xplane-heli"
-instead of "xplane" to activate Helicopter controls.
+- outputs 1, 2 and 4 drive roll, pitch and yaw
+- output 3 drives the collective
+- output 8 drives the engine throttle, so set :ref:`SERVO8_FUNCTION <copter:SERVO8_FUNCTION>` to 31 (HeliRSC)
+- joystick button 3 is a three position switch on RC channel 8, used as the motor interlock (:ref:`RC8_OPTION <copter:RC8_OPTION>` = 32)
 
 The startup procedure for a helicopter is:
 
-   #. set interlock on (so RC input channel 8 is low)
-   #. set zero collective (so RC input channel 3 is low)
+   #. set the motor interlock to disabled (RC input channel 8 low)
+   #. set zero collective (RC input channel 3 low)
    #. arm the helicopter
-   #. set interlock off (so RC input channel 8 is high)
+   #. set the motor interlock to enabled (RC input channel 8 high)
    #. wait for the head to reach full speed
    #. takeoff
 

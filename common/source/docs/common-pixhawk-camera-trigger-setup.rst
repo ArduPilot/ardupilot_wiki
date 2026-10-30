@@ -129,7 +129,7 @@ e) Proceed to the CONFIG/TUNING -> EXTENDED TUNING screen in Mission Planner and
 .. image:: ../../../images/CTimage14.png
     :width: 450px
     
-.. note:: As of 4.0 firmware versions, any GPIO can be assigned as the Camera Trigger pin via its ``SERVOx_FUNCTION`` parameter, and any RC channel can be assigned to control that trigger via its ``RCx_OPTION`` parameter.
+.. note:: Any GPIO can be assigned as the Camera Trigger pin via its ``SERVOx_FUNCTION`` parameter, and any RC channel can be assigned to control that trigger via its ``RCx_OPTION`` parameter.
 
 
 f) Navigate to the FULL PARAMETER LIST under the main CONFIG/TUNING tab and locate the ``CAMx_TRIGG_TYPE`` parameter. This parameter must show as 1 for “RELAY”. If it is not set to 1, change this parameter to 1 before proceeding to the next step.

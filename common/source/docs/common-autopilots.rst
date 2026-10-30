@@ -121,6 +121,7 @@ Closed Hardware
     CORVON743V2 <common-corvon743v2>
     CORVON V5 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/CORVON_V5/README.md>
     CBUnmanned H743 Stamp <common-StampH743>
+    CoreWing F405 Wing V2/Wing Mini V2 <common-CoreWingF405WingV2>
     CORVONF405V2.1 <common-corvonf405v2_1>
     CrazyF405 <common-crazyf405>
     CSKY405 <common-CSKYF405>
@@ -129,6 +130,8 @@ Closed Hardware
     DAKEFPVH743 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/DAKEFPVH743/README.md>
     DAKEFPVH743Pro <common-dakefpvh743pro>
     DAKEFPVH743-SLIM <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/DAKEFPVH743_SLIM/README.md>
+    CUAV-X25-EVO <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-X25-EVO>
+    CUAV-X25-MEGA <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-X25-MEGA/README.md>
     DAKEFPVF405 <common-dakefpvf405>
     DroneerF405 <common-DroneerF405>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
@@ -173,6 +176,7 @@ Closed Hardware
     JHEMCU H743HD <common-jhemcu-h743hd>
     KARSHAKH743VTOL <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/KARSHAKH743VTOL/README.md>
     KT-FMU-F1 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/KT-FMU-F1/README.md>
+    Lectron Pi5 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Lectron-Pi5-H7/README.md>
     LongBowF405WING <common-longbowf405wing>
     Lumineer LUXF765-NDAA <common-luxf765-ndaa>
     Mamba F405 MK2 <common-mamba405-mk2>
@@ -209,6 +213,7 @@ Closed Hardware
     MUPilot <common-MUPilot>
     NarinFC-H7/H5 <common-NarinFC-H7>
     NarinFC-X3 <common-NarinFC-X3>
+    NWBlue Pro H757 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/NWBLUE_PROH757/README.md>
     NxtPX4v2 <common-NxtPX4v2>
     Omnibus F4 AIO/Pro <common-omnibusf4pro>
     OmnibusNanoV6 <common-omnibusnanov6>
@@ -266,6 +271,7 @@ Closed Hardware
     ThePeach FCC-R1 <common-thepeach-r1>
     TmotorH7Mini <common-tmotor-h7-mini>
     UAV-DEV H7 UM982 <common-uav-dev-fc-um982>
+    VECROS JETCORE-FC <common-vecros-JetcoreFC>
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
     X-MAV-AP-H743v2 <common-X_MAV_H743v2>

@@ -31,7 +31,7 @@ Tune the Pitch to Servo Loop
 
 The performance of the TECS speed and height controller is dependent on
 having the pitch to servo control loop tuned correctly. Before tuning
-TECS you need to have tuned the pitch loop following the instructions either in :ref:`automatic-tuning-with-autotune` or manually using :ref:`Roll, Pitch and Yaw Controller Tuning <roll-pitch-controller-tuning>`.
+TECS you need to have tuned the pitch loop following the instructions either in :ref:`automatic-tuning-with-autotune` or manually using :ref:`Roll, Pitch and Yaw Controller Tuning <new-roll-and-pitch-tuning>`.
 
 Set initial parameters — throttle, pitch, airspeed and vertical speed limits
 ============================================================================
@@ -261,7 +261,7 @@ the pitch control to simultaneously control height and speed.
    height).
 
 .. note::
-   When the :ref:`soaring<soaring>` feature is in use and is requesting the TECS shut off
+   When the :ref:`soaring<soaring-4_1>` feature is in use and is requesting the TECS shut off
    throttle to glide, a value of 2.0 will automatically be used providing an airspeed
    estimate is available.
 

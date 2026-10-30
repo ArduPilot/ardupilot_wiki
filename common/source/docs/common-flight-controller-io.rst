@@ -59,7 +59,7 @@ USB is provided as the primary port for the autopilot configuration. It always a
 UART
 ----
 
-Usually, several UART ports are provided. These provide connections to Telemetry radios, GPS, Rangefinders, and even SBUS servos. In addition, as of firmware version 4.0, serial RC receiver inputs can be connected to any UART. See :ref:`Serial Port Configuration <common-serial-options>` 
+Usually, several UART ports are provided. These provide connections to Telemetry radios, GPS, Rangefinders, and even SBUS servos. In addition, serial RC receiver inputs can be connected to any UART. See :ref:`Serial Port Configuration <common-serial-options>` 
 
 Signals
 +++++++
@@ -126,14 +126,14 @@ Some "smart" battery/power monitors replace the CUR and VLT pins with I2C signal
 
 Many board-style autopilots fully integrate the PMU as part of the board with internal connections to the processor.
 
-In addition, many autopilots offer multiple PMU connections since ArduPilot firmware versions 4.0 and later support up to 10 PMUs/Battery Monitors.
+In addition, many autopilots offer multiple PMU connections since ArduPilot supports up to 16 PMUs/Battery Monitors (9 in standard firmware builds).
 
 RCIN
 ----
 
 Input from the radio control receiver is input on this pin. Most serial RC protocols (PPM, SBUS, DSM, etc.) are supported by ArduPilot and auto-detected. In addition, some autopilots provide dedicated connectors for DSM protocol satellite receivers which provide power to the receiver in addition to the input signal.
 
-As of firmware versions 4.0 and later, ArduPilot also allows an RC receiver to be attached to any UART port.
+ArduPilot also allows an RC receiver to be attached to any UART port.
 
 .. _main-aux-out:
 
