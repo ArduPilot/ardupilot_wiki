@@ -25,6 +25,8 @@ New Board Support
 - Tustin MACH, see https://github.com/ArduPilot/ardupilot_wiki/pull/8029
 - SVehicle E2-mini, see https://github.com/ArduPilot/ardupilot_wiki/pull/8091
 - ZenFC743, see https://github.com/ArduPilot/ardupilot_wiki/pull/8106
+- CyberX-Cube, see https://github.com/ArduPilot/ardupilot_wiki/pull/8206
+- DroneerX6, see https://github.com/ArduPilot/ardupilot_wiki/pull/8207
 
 New Peripheral Support
 ======================
