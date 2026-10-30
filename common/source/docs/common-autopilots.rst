@@ -126,6 +126,7 @@ Closed Hardware
     CrazyF405 <common-crazyf405>
     CSKY405 <common-CSKYF405>
     CUAV-X25-EVO <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-X25-EVO>
+    CyberX-Cube <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/CyberX-Cube/README.md>
     CyberX-v10 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/CyberX-v10/README.md>
     DAKEFPVH743 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/DAKEFPVH743/README.md>
     DAKEFPVH743Pro <common-dakefpvh743pro>
