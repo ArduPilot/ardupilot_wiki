@@ -134,6 +134,7 @@ Closed Hardware
     CUAV-X25-MEGA <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-X25-MEGA/README.md>
     DAKEFPVF405 <common-dakefpvf405>
     DroneerF405 <common-DroneerF405>
+    DroneerX6 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/DroneerX6/README.md>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     F4BY_H743 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/F4BY_H743/README.md>
     Flywoo F405 Pro <common-flywoof405pro>
