@@ -1,14 +1,14 @@
 .. _common-makeflyeasy-striver-mini-vtol:
 
 =============================
-MakeFlyEasy Striver Mini VTOL
+MakeFlyEasy Striver2100 VTOL
 =============================
 
 ..  youtube:: 5I9I2eG7oAM
     :width: 100%
 
 
-Striver mini VTOL is a 7 kg class vertical take-off and landing UAV, which continues the classic aerodynamic layout, high reliability avionics system and modular design of the MakeFlyEasy Fighter VTOL.
+Striver2100 VTOL is a 7 kg class vertical take-off and landing UAV, which continues the classic aerodynamic layout, high reliability avionics system and modular design of the MakeFlyEasy Fighter VTOL.
 
 More information can be found on the `MakeFlyEasy <http://www.makeflyeasy.com/>`__ home page.
 
@@ -32,9 +32,6 @@ Basic Parameters
 - Transport box inch: 1.07×0.35×0.48m
 - Range performance: 107min/115km (speed 19m/s load 600g, battery 6S@22000mah, takeoff weight 6.8kg)
 
-Where to Buy
-============
 
-`Aliexpress <https://www.aliexpress.com/item/1005002723289589.html>`__
 
 [copywiki destination="plane"]

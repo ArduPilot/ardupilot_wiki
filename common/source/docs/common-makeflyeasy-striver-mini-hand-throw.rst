@@ -1,7 +1,7 @@
 .. _common-makeflyeasy-striver-mini-hand-throw:
 
 ===================================
-MakeFlyEasy Striver Mini Hand Throw
+MakeFlyEasy Striver2100 Hand Throw
 ===================================
 
 ..  youtube:: t2l10DYtX4A
@@ -33,10 +33,6 @@ Basic Parameters
 - Stall speed: 10m/s
 - Endurance performance: 96min/105km (speed 19m/s, load 600g, battery 6S@22000mah, takeoff weight 7.3kg, altitude 500m)
 
-Where to Buy
-============
-
-`Aliexpress <https://www.aliexpress.com/item/1005002723370301.html>`__
 
 [copywiki destination="plane"]
 

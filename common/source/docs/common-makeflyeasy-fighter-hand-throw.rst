@@ -1,14 +1,14 @@
 .. _common-makeflyeasy-fighter-hand-throw:
 
 ==============================
-MakeFlyEasy Fighter Hand Throw
+MakeFlyEasy Striver2430 Hand Throw
 ==============================
 
 ..  youtube:: GW1bqDLc0zs
     :width: 100%
 
 
-The `MakeFlyEasy Fighter Hand Throw <http://www.makeflyeasy.com/>`__ is positioned as a heavy-duty, long-endurance fixed wing, which greatly reduces the difficulty of aerial survey, increases  productivity and improves the efficiency of aerial surveying.
+The `MakeFlyEasy Striver2430 Hand Throw <http://www.makeflyeasy.com/>`__ is positioned as a heavy-duty, long-endurance fixed wing, which greatly reduces the difficulty of aerial survey, increases  productivity and improves the efficiency of aerial surveying.
 
 
 Basic Parameters
@@ -23,16 +23,12 @@ Basic Parameters
 - Stalling speed: 10m/s
 - Maximum payload: 1500g       
 - Payload bay size: 280*160*110mm
-- Longest flight range: >50km (600g load)     
+- Longest flight range: 126km (600g load)     
 - Max take-off weight：11.5kg
 - Practical ceiling height: 4000m             
 - Wind resistance: 5
 - Take-off and landing approach: Hand thrown/Parachute Glide landing   
 - Dismounting way: tool-free
 
-Where to Buy
-============
-
-`Aliexpress <https://www.aliexpress.com/item/10000223175280.html>`__
 
 [copywiki destination="plane"]

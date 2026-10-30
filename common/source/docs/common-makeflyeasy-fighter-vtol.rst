@@ -1,14 +1,14 @@
 .. _common-makeflyeasy-fighter-vtol:
 
 ========================================
-Setup Guide for MakeFlyEasy Fighter VTOL
+Setup Guide for MakeFlyEasy Striver2430 VTOL
 ========================================
 
 ..  youtube:: C62T40MxATA
     :width: 100%
 
 
-The Fighter is a 10kg fixed-wing flight platform, which is easy to carry, friendly to operate, and is stable and durable.
+The Striver2430 is a 10kg fixed-wing flight platform, which is easy to carry, friendly to operate, and is stable and durable.
 
 More information can be found on the `MakeFlyEasy <http://www.makeflyeasy.com/>`__ home page.
 
@@ -32,9 +32,5 @@ Basic Parameters
 - Dismounting way: tool-free
 - Transport case seize: 1.26m×0.35m×0.495m
 
-Where to Buy
-============
-
-`Aliexpress  <https://www.aliexpress.com/item/10000223165284.html>`__
 
 [copywiki destination="plane"]
