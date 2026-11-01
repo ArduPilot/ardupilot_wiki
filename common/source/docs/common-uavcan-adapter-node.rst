@@ -125,7 +125,9 @@ DroneCAN Adapter Nodes
 Several devices are manufactured specifically for use as general-purpose adapter nodes:
 
 - :ref:`ARK CANnode <common-ark-can-node>`
-- `Beyond Robotix Node <https://beyond-robotix.gitbook.io/docs/can-node-system>`_
+- `Beyond Robotix CAN Node <https://beyond-robotix.gitbook.io/docs/can-ecosystem/l431-can-node>`_
+- `Beyond Robotix CAN Node Plus <https://beyond-robotix.gitbook.io/docs/can-ecosystem/can-node-plus>`_
+- `Beyond Robotix Micro CAN Node <https://beyond-robotix.gitbook.io/docs/can-ecosystem/micro-node>`_
 - `MatekL431 DroneCAN Adapter Node <http://www.mateksys.com/?portfolio=can-l431>`_
 - :ref:`mRo DroneCAN Adapter Node <common-mro-uavcan-adapter-node>`
 
