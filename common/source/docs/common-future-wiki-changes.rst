@@ -60,6 +60,7 @@ New Features
 - MAVLink 2.1 32-bit system IDs: MAV_SYSID, MAV_GCS_SYSID(_HI), FOLL_SYSID and MNTx_SYSID_DFLT accept values up to 4294967295, and SD-card Lua MAVLink modules must be updated, see https://github.com/ArduPilot/ardupilot_wiki/pull/8149
 - CRSF/ELRS on an F4/F7 UART without RX DMA now gives a repeating GCS warning while disarmed, see https://github.com/ArduPilot/ardupilot_wiki/pull/8151
 - Duplicate RCx_OPTION and mode channel/RCx_OPTION conflicts are now reported as pre-arm failures while disarmed, even with no RC input, and are only skipped by the ARMING_SKIPCHK RC bit, see https://github.com/ArduPilot/ardupilot_wiki/pull/8154
+- EK3_MAG_CAL = 7 learns the compass field on the ground and after the first in-flight yaw reset, but not during the initial climb, for compasses close to the motors, see https://github.com/ArduPilot/ardupilot_wiki/pull/8210
 - STM32H7 firmware built with --enable-USB-debug can be debugged with GDB over USB without a debug probe, see https://github.com/ArduPilot/ardupilot_wiki/pull/8156
 
 [site wiki="plane"]
