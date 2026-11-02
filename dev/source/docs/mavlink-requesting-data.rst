@@ -28,7 +28,7 @@ Setting the ``SRx_`` parameters (and then rebooting the autopilot) will cause th
 
 - Connect to the autopilot with a ground station
 - Determine which telemetry connection is being used.  For example if the ground station is connected to the autopilot's "Telem1" port (perhaps using a wifi or telemetry radio) then the ``SR1_`` parameters should be modified
-- Set the ``SRx_`` parameter to the rate (in Hz) you wish the group of messages to be sent.  The exact messages contained in each group can be determined by inspecting the STREAM_xxx arrays in each vehicle's GCS_Mavlink.cpp file (see here for `Copter <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_Mavlink.cpp#L393>`__, `Plane <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/GCS_Mavlink.cpp#L547>`__, `Rover <https://github.com/ArduPilot/ardupilot/blob/master/Rover/GCS_Mavlink.cpp#L457>`__, `Sub <https://github.com/ArduPilot/ardupilot/blob/master/ArduSub/GCS_Mavlink.cpp#L318>`__ and `AntennaTracker <https://github.com/ArduPilot/ardupilot/blob/master/AntennaTracker/GCS_Mavlink.cpp#L232>`__).  Below is the list of messages by group for Copter-4.0:
+- Set the ``SRx_`` parameter to the rate (in Hz) you wish the group of messages to be sent.  The message groups are defined by the `STREAM_xxx_msgs arrays in GCS_MAVLink_Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/GCS_MAVLink/GCS_MAVLink_Parameters.cpp#L259-L440>`__, including vehicle-specific conditions.  Below is the historical list of messages by group for Copter-4.0:
 
     - SRx_ADSB
 
