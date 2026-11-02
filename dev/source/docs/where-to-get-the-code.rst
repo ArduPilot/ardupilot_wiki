@@ -47,8 +47,8 @@ the project: clone, branch, commit, push.
 If you want to know more about git there are many great resources
 online. Here are just a few you may find useful:
 
--  `Try Git <http://try.github.io/levels/1/challenges/1>`__:
-   browser-based interactive tutorial for learning git
+-  `Coddy Git course <https://coddy.tech/landing/git>`__:
+   browser-based interactive course for learning git
 -  `Git Ready <http://gitready.com/>`__: tutorials of varying difficulty
    levels
 -  `Git SCM Book <http://git-scm.com/book/en/Getting-Started>`__:
