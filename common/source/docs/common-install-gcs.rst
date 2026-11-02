@@ -20,10 +20,12 @@ Installation links for some of the more popular GCS systems are provided below:
    
 - :ref:`APM Planner 2 <planner2:home>` (Windows, Mac OS X, Linux): :ref:`Install APM Planner 2 <planner2:installing-apm-planner-2>` -Provides basic functionality, but is not currently well maintained and updated.
 
--  `ArduDeck <https://ardudeck.com>`__ (Windows, Mac OS X, Linux): **Currently in Alpha Testing -feedback welcomed!** A free, open-source ground control station built with a modern UI. Supports real-time telemetry, mission planning with terrain-aware altitude profiles, full parameter management, calibration wizards, firmware flashing, visual Lua script editor, and MAVLink signing. Also supports Betaflight and iNav via MSP protocol.
+-  `ArduDeck <https://ardudeck.com>`__ (Windows, Mac OS X, Linux, with a mobile app for Android and iOS): **Currently in Beta, feedback welcomed.** A free, open-source ground control station built with a modern UI. Supports real-time telemetry, mission planning with terrain-aware altitude profiles, full parameter management, calibration wizards, firmware flashing, visual Lua script editor, and MAVLink signing. Also supports Betaflight and iNav via MSP protocol.
 
-   -  `Download and Install <https://ardudeck.com/docs/Getting-Started>`__
+   -  `Download and Install <https://ardudeck.com/docs/Getting-Started/>`__
    -  `Source Code <https://github.com/rubenCodeforges/ardudeck>`__
+   -  `Android (Google Play, open beta) <https://play.google.com/store/apps/details?id=com.ardudeck.gcs>`__
+   -  `iOS (TestFlight beta) <https://testflight.apple.com/join/FMPtzrAz>`__
 
 [copywiki destination="copter,plane,rover,sub,blimp"]
 

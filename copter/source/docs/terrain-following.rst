@@ -35,7 +35,7 @@ Setting up a Mission to use Terrain data
 Sources of Terrain Data
 =======================
 
-The ground station is normally responsible for providing the raw terrain data which is sent to the aircraft via MAVLink. Mission Planner, QGroundControl, SiYi UniGCS and MAVProxy support the required TERRAIN_DATA and TERRAIN_REQUEST MAVLink messages needed for terrain following download support. If you are using a different ground station , in order to download terrain data you will need to connect using one of those two ground stations in order to allow ArduPilot to load terrain data onto your board on the ground or in flight.  Once it is loaded, it is saved permanently on the microSD card.
+The ground station is normally responsible for providing the raw terrain data which is sent to the aircraft via MAVLink. Mission Planner, QGroundControl, SiYi UniGCS, ArduDeck and MAVProxy support the required TERRAIN_DATA and TERRAIN_REQUEST MAVLink messages needed for terrain following download support. If you are using a different ground station , in order to download terrain data you will need to connect using one of those ground stations in order to allow ArduPilot to load terrain data onto your board on the ground or in flight.  Once it is loaded, it is saved permanently on the microSD card.
 
 Both MissionPlanner and MAVProxy support the global SRTM database for terrain data. The ArduPilot SRTM server used by MAVProxy and Mission Planner has 100m grid spacing. Unless the ground control station uses a server with closer spacing, setting the :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` parameter lower than 100m provides no better resolution, and only consumes more space on the SD card. 
 

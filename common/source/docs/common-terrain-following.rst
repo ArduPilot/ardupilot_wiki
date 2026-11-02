@@ -105,12 +105,13 @@ Sources of Terrain Data
 =======================
 
 The ground station is normally responsible for providing the raw terrain data which is sent to the aircraft via MAVLink. 
-Mission Planner, QGroundControl, SiYi UniGCS and MAVProxy support the required TERRAIN_DATA and TERRAIN_REQUEST 
+Mission Planner, QGroundControl, SiYi UniGCS, ArduDeck and MAVProxy support the required TERRAIN_DATA and TERRAIN_REQUEST 
 MAVLink messages needed for terrain following download support. 
 
 - Mission Planner and MAVProxy supply the ArduPilot JAXA ALOS sourced data for 100m and 30m spacing 
 - QGroundControl supplies COP30 (Copernicus DEM - Global and European Digital Elevation Model) sourced data for 100m and 30m spacing
 - SiYi UniGCS supplies terrain data (NASA - SRTM Shuttle Radar Topography Mission Global 1 arc second V003) for 100m and 30m spacing 
+- ArduDeck supplies terrain data at the spacing the autopilot requests, from the Tilezen Terrain Tiles dataset on AWS Open Data (SRTM 30m globally, with finer national sources such as EU-DEM, 3DEP and Land Information New Zealand data where available)
 
 .. note::
    SiYi terrain data: NASA JPL. (2013). *NASA Shuttle Radar Topography Mission Global 1 arc second V003* \[Data set\]. `NASA Earth Sciences Data Sets <https://www.earthdata.nasa.gov/data/catalog/lpcloud-srtmgl1-003>`__
