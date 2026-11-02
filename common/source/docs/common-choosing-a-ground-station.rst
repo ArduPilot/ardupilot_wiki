@@ -22,8 +22,8 @@ often also used to monitor the live video streams from a UAV’s cameras.
 A GCS is also required to setup the configuration of the autopilot prior to its use and to update the autopilot's firmware.
 
 There are at least ten different ground control stations. On desktop there is *Mission
-Planner*, *APM Planner 2*, *MAVProxy*, *QGroundControl*, *UgCS*, *LOGOS*, and *FlightZoomer*. For Tablet/Smartphone there are
-*QGroundControl*, *Tower* (DroidPlanner 3), *MAVPilot*, *AndroPilot* and *SidePilot* that can be
+Planner*, *APM Planner 2*, *MAVProxy*, *QGroundControl*, *UgCS*, *LOGOS*, *FlightZoomer*, and *ArduDeck*. For Tablet/Smartphone there are
+*QGroundControl*, *Tower* (DroidPlanner 3), *MAVPilot*, *AndroPilot*, *SidePilot* and *ArduDeck* that can be
 used to communicate with ArduPilot.
 
 The decision to select a particular GCS often depends on your vehicle
@@ -158,6 +158,26 @@ GCS designed for flying rather than managing the vehicle, with a cockpit based o
 -  `Documentation <http://www.flightzoomer.com/manual/hfw_contents.html>`__
 -  `Microsoft Store <https://apps.microsoft.com/detail/9pc8nw0z900j>`__
 
+ArduDeck
+--------
+
+Open source desktop GCS for ArduPilot and PX4 vehicles over MAVLink. It also configures Betaflight and INAV boards over MSP.
+It covers vehicle setup (parameters with descriptions, calibration and setup wizards, firmware flashing), mission, fence and rally planning
+with survey patterns and terrain-aware altitude profiles, real-time telemetry with map instruments, multi-vehicle operation,
+DataFlash and ULog log analysis, MAVLink signing and a built-in SITL launcher. It serves terrain data to the autopilot (see :ref:`common-terrain-following`).
+A mobile app for Android and iOS is described under :ref:`Mobile GCSs <common-choosing-a-ground-station-mobile>`.
+
+-  **Platform**: Windows, Mac OS X, Linux
+-  **Licence**: `Open source <https://github.com/rubenCodeforges/ardudeck/blob/master/LICENSE>`__
+   (GPLv3)
+-  `Website <https://ardudeck.com>`__
+-  `Download and Install <https://ardudeck.com/docs/Getting-Started/>`__
+-  `Support Forum <https://discuss.ardupilot.org/t/ardudeck-open-source-cross-platform-gcs/142407>`__
+-  `Issues List <https://github.com/rubenCodeforges/ardudeck/issues>`__
+-  `Source Code <https://github.com/rubenCodeforges/ardudeck>`__
+
+.. _common-choosing-a-ground-station-mobile:
+
 Mobile GCSs
 ===========
 
@@ -242,6 +262,22 @@ See website for how-to on how connect it to your autopilot
 -  `Website <http://sidepilot.net>`__
 -  `Support Forum <http://sidepilot.net/forum>`__
 -  `iTunes Store link <https://itunes.apple.com/us/app/sidepilot/id1138193193?ls=1&mt=8>`__
+
+ArduDeck (mobile)
+-----------------
+
+Field GCS for ArduPilot on phones and tablets, the mobile companion to the ArduDeck desktop application.
+It connects over USB OTG (telemetry radio or cable), Bluetooth Low Energy, or wifi using UDP or TCP, and shows a moving map
+with flight instruments, live video, the mission stored on the vehicle (missions are edited in the desktop application),
+the full parameter list and field calibrations (compass, level, accelerometer and gyroscope).
+A second screen mode mirrors telemetry forwarded from ArduDeck on the desktop.
+
+-  **Platform**: Android phones and tablets (open beta), iPhone and iPad (TestFlight beta)
+-  **Licence**: Proprietary, free
+-  `Google Play <https://play.google.com/store/apps/details?id=com.ardudeck.gcs>`__
+-  `TestFlight beta (iOS) <https://testflight.apple.com/join/FMPtzrAz>`__
+-  `Website <https://ardudeck.com>`__
+-  `Support Forum <https://discuss.ardupilot.org/t/ardudeck-open-source-cross-platform-gcs/142407>`__
 
 AndroPilot
 ----------
