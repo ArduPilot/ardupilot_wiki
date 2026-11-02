@@ -75,7 +75,7 @@ A typical configuration would be to use the onboard analog video OSD system, tog
 
 .. note:: there are several combinations of first and second OSD type that are not allowed and will result in a pre-arm warning to change configuration. The most obvious is using two osd types of the same kind.
 
-.. note:: although both OSD systems work simultaneously, if the two OSD systems are different resolutions, you will need to setup multiple OSD screens (see below) and switch the screen layout when switching to using the different system (ie when  swapping the video display being actively used). It is possible to create a single screen layout that works for both, but the advantage of the HD system would be obviously reduced.
+.. note:: although both OSD systems work simultaneously, if the two OSD systems are different resolutions, you will need to setup multiple OSD screens (see above) and switch the screen layout when switching to using the different system (ie when  swapping the video display being actively used). It is possible to create a single screen layout that works for both, but the advantage of the HD system would be obviously reduced.
 
 .. note:: screen item setup for HD displays may give warnings in Mission Planner about screen location parameters being out of range. Just ignore those.
 
@@ -153,66 +153,65 @@ Panel Name    Description
  BAT_VOLT     Primary Battery Voltage
  RSSI         RC Received Signal Strength
  CURRENT      Primary Battery Current
- BATUSED      Consumed Battery Capacity
+ BATUSED      Primary Battery mAh Consumed
  SATS         Number of GPS Satellites
  FLTMODE      Flight Mode
- MESSAGE      GCS Messages
- GSPEED       Ground Speed
+ MESSAGE      GCS (MAVLink) Text Messages
+ GSPEED       GPS Ground Speed
  HORIZON      Artificial Horizon
  HOME         Distance and Direction to Home
- HEADING      Magnetic Heading
- THROTTLE     Throttle Percentage
+ HEADING      Heading
+ THROTTLE     Throttle Percentage being sent to motor(s)
  COMPASS      Compass Rose
- WIND         Wind Speed and Direction
- ASPEED       System Airspeed
+ WIND         Wind Speed and Direction (on Rover, apparent wind from the windvane, if fitted)
+ ASPEED       Airspeed from sensor if present and healthy, otherwise the synthetic airspeed estimate (only used for Plane control if ``TECS_SYNAIRSPEED`` is set)
  VSPEED       Climb Rate
- ESCTEMP      ESC Temperature (if ESC Telem available, ESC used is selected by OSDx_ESC_IDX)
- ESCRPM       ESC RPM (if ESC Telem available, ESC used is selected by OSDx_ESC_IDX)
- ESCAMPS      ESC Current (if ESC Telem available, ESC used is selected by OSDx_ESC_IDX)
+ ESCTEMP      Highest ESC Temperature, or that of the ESC selected by ``OSDn_ESC_IDX`` (requires ESC telemetry)
+ ESCRPM       Highest ESC RPM, or that of the ESC selected by ``OSDn_ESC_IDX`` (requires ESC telemetry)
+ ESCAMPS      Current of the highest RPM ESC, or of the ESC selected by ``OSDn_ESC_IDX`` (requires ESC telemetry)
  GPSLAT       GPS Latitude
  GPSLONG      GPS Longitude
- ROLL         Roll degrees
- PITCH        Pitch degrees
- TEMP         Baro Temperature
+ ROLL         Roll degrees from level
+ PITCH        Pitch degrees from level
+ TEMP         Primary Baro Temperature
  HDOP         GPS HDOP
  WAYPOINT     Next Waypoint Distance and Direction
  XTRACK       Cross Track Error
  DIST         Total Distance Traveled
- STATS        Statistics Summary
+ STATS        Statistics Summary (see above)
  FLTIME       Elapsed Time in Flight
- CLIMBEFF     Climb Efficiency
- EFF          Efficiency
- BTEMP        2nd Baro Temperature
- ATEMP        Airspeed Temperature
+ CLIMBEFF     Climb Efficiency (climb rate/current)
+ EFF          Flight Efficiency (mAh/km or mAh/mi)
+ BTEMP        Secondary Baro Temperature (first healthy baro that is not the primary, if present)
+ ATEMP        Primary Airspeed Sensor Temperature
  BAT2_VLT     Second Battery Voltage
- BAT2USED     Second Battery Consumption
- ASPD2        Airspeed sensor 2
- ASPD1        Airspeed sensor 1
+ BAT2USED     Second Battery mAh Consumed
+ ASPD2        Airspeed directly from second airspeed sensor
+ ASPD1        Airspeed directly from primary airspeed sensor
  CLK          Local Time of Day
- SIDEBARS     Speed/Alt Sidebars
- CRSSHAIR     Artificial Horizon Crosshair
+ SIDEBARS     Speed/Alt Sidebars (if "Enable Scrolling sidebars" feature is enabled in firmware)
+ CRSSHAIR     Artificial Horizon Crosshair (MSPOSD only)
  HOMEDIST     Distance to HOME (MSPOSD only)
  HOMEDIR      Direction to HOME (MSPOSD only)
  POWER        Power (MSPOSD only)
  CELLVOLT     Calculated Cell Voltage for Primary Battery (MSPOSD only)
- BATTBAR      Battery Health Bar (MSPOSD only)
+ BATTBAR      Battery Usage Bar (MSPOSD only)
  ARMING       Arming Status (MSPOSD only)
- PLUSCODE     Open Location Code (if feature is enabled in firmware)
- CALLSIGN     Callsign from SD card callsign.txt
- CURRENT2     2nd Battery Current
- VTX_PWR      Video TX power setting
- TER_HGT      Altitude above Terrain
+ PLUSCODE     Open Location Code (if "Enable PlusCode" feature is enabled in firmware)
+ CALLSIGN     Callsign from SD card callsign.txt (see above)
+ CURRENT2     Second Battery Current
+ VTX_PWR      Video TX power (actual power, if reported by the VTX)
+ TER_HGT      Altitude above Terrain (if terrain is enabled in firmware)
  AVGCELLV     Calculated Cell Voltage for Primary Battery
  RESTVOLT     Calculated Resting Voltage for Primary Battery
- FENCE        FENCE enabled status
+ FENCE        Fence(s) enabled/disabled and breach status
  RNGF         Rangefinder Distance
  ACRVOLT      Calculated Cell Resting Voltage for Primary Battery
  LINK_Q       RC Link Quality
- RPM          Rpm reported from RPM sensor
- FENCE        Fence(s) enabled/disabled status
+ RPM          RPM reported from RPM sensor
  RC_PWR       CRSF RX link transmit power (if "OSD panels with extended link stats data" feature enabled in a custom build)
  RSSIDBM      CRSF RSSI in dBm (if "OSD panels with extended link stats data" feature enabled in a custom build)
- RC_SNR       CRSF RC SNR  (if "OSD panels with extended link stats data" feature enabled in a custom build)
+ RC_SNR       CRSF RC SNR in dB (if "OSD panels with extended link stats data" feature enabled in a custom build)
  RC_ANT       CRSF active antenna (if "OSD panels with extended link stats data" feature enabled in a custom build)
- RC_LQ        CRSF Link Quality (if "OSD panels with extended link stats data" feature enabled in a custom build)
+ RC_LQ        CRSF Link Quality, and RF mode if bit 7 of :ref:`OSD_OPTIONS<OSD_OPTIONS>` is set (if "OSD panels with extended link stats data" feature enabled in a custom build)
 ==========    ===========
