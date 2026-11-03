@@ -13,6 +13,10 @@ Depending on the autopilot type and configuration, the dataflash logs may be sav
 
 .. note:: In addition to using Mission Planner, many other tools are available to users for log analysis: :ref:`MAVExplorer(part of MAVProxy installation) <using-mavexplorer-for-log-analysis>` and :ref:`Web-based tools <common-webtools>`.
 
+[site wiki="copter,plane,rover,sub,planner,dev"]
+.. tip:: Many autopilots can export their microSD card to a computer as a USB disk, which downloads large logs far faster than MAVLink does. See :ref:`common-mass-storage`.
+[/site]
+
 [copywiki destination="copter,plane,rover,dev,sub,planner"]
 
 .. note:: :ref:`Telemetry logs <planner:mission-planner-telemetry-logs>` (also known as "tlogs") collect similar information to dataflash logs (see :ref:`Diagnosing problems using Logs <common-diagnosing-problems-using-logs>` for more information).
