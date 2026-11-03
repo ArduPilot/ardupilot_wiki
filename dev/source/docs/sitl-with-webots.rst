@@ -36,7 +36,7 @@ providing an easy way to create custom vehicles and worlds.
 Webots C
 -------------
 The Webots C controller was the first Webots implementation in ArduPilot 
-and supports Webots 2021b. This implementation also includes wind simulation 
+and now supports Webots R2025a. This implementation also includes wind simulation 
 through a custom physics plugin.
 
 .. image:: ../images/webots-c-screenshot.png
