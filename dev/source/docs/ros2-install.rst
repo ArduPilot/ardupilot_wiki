@@ -21,8 +21,8 @@ Prerequisites
 
     We are keen to improve ArduPilot's support of ROS 2 so if you find issues (such as commands that do not seem to be supported), please report them in the `ArduPilot issues list <https://github.com/ArduPilot/ardupilot/issues>`__. A maintainer can add the `ROS` tag.
 
-First, make sure that you have successfully installed `ROS 2 Humble <https://docs.ros.org/en/humble/Installation.html>`__ .
-Currently, ROS 2 Humble is the only version supported.
+First, make sure that you have successfully installed either `ROS 2 Humble <https://docs.ros.org/en/humble/Installation.html>`__ (Ubuntu 22.04) or `ROS 2 Jazzy <https://docs.ros.org/en/jazzy/Installation.html>`__ (Ubuntu 24.04).
+Currently, ROS 2 Humble and Jazzy are supported.
 
 You are about to create a new `ROS 2 workspace <https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#id4>`__.
 This page assumes that your workspace is named `ardu_ws` in your home directory, but feel free to adjust to your preferred location.
@@ -36,25 +36,51 @@ and check if it is `configured correctly <https://docs.ros.org/en/humble/Tutoria
 Installation (Ubuntu)
 =====================
 
-To make installation easy, we will clone the required repositories using `vcs` and a `ros2.repos` files:
+To make installation easy, we will clone the required repositories using `vcs` and the appropriate `repos` file for your ROS 2 distribution:
 
-.. code-block:: bash
+.. tabs::
 
-    mkdir -p ~/ardu_ws/src
-    cd ~/ardu_ws
-    vcs import --recursive --input  https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos src
+   .. tab:: ROS 2 Humble (Ubuntu 22.04)
+
+      .. code-block:: bash
+
+          mkdir -p ~/ardu_ws/src
+          cd ~/ardu_ws
+          vcs import --recursive --input https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.repos src
+
+   .. tab:: ROS 2 Jazzy (Ubuntu 24.04)
+
+      .. code-block:: bash
+
+          mkdir -p ~/ardu_ws/src
+          cd ~/ardu_ws
+          vcs import --recursive --input https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/ros2/ros2.jazzy.repos src
 
 This will take a few minutes to clone all the repositories your first time. It downloads the ArduPilot and *micro-ROS-Agent* repositories. Note that the master branch of ArduPilot is cloned by default. If you wish to use a different version, you will need to use Git commands to check out your desired ArduPilot version.
 
 Now update all dependencies for *micro-ROS-Agent*:
 
-.. code-block:: bash
+.. tabs::
 
-    cd ~/ardu_ws
-    sudo apt update
-    rosdep update
-    source /opt/ros/humble/setup.bash
-    rosdep install --from-paths src --ignore-src -r -y
+   .. tab:: ROS 2 Humble
+
+      .. code-block:: bash
+
+          cd ~/ardu_ws
+          sudo apt update
+          rosdep update
+          source /opt/ros/humble/setup.bash
+          rosdep install --from-paths src --ignore-src -r -y
+
+   .. tab:: ROS 2 Jazzy
+
+      .. code-block:: bash
+
+          cd ~/ardu_ws
+          sudo apt update
+          rosdep update
+          source /opt/ros/jazzy/setup.bash
+          rosdep install --from-paths src --ignore-src -r -y
 
 Installing the *Micro-XRCE-DDS-Gen* build dependency:
 
