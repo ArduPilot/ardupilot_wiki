@@ -55,8 +55,13 @@ To do that, setup a MAVLink rangefinder on ArduPilot side and simply set a subsc
     distance_sensor:       <== plugin name
       rangefinder_sub:     <== ROS subscriber name
         subscriber: true   <== set subscriber type
-        id: 1              <== sensor instance number must match the one set on ArduPilot side
+        id: 1              <== DISTANCE_SENSOR id, matched against RNGFNDx_ADDR if id filtering is used
         orientation: PITCH_270  <== only that orientation are supported by Copter 3.4+
+
+The ``id`` is only checked if the matching ``RNGFNDx_ADDR`` is non-zero; left at its
+default of 0 the ArduPilot rangefinder accepts any id with the expected orientation. Set a
+distinct non-zero ``RNGFNDx_ADDR`` on each rangefinder, and the same value here, to feed
+more than one MAVLink rangefinder facing the same direction.
 
 Now, publish a sensor_msgs/Range message on /mavros/distance_sensor/rangefinder_sub.
 Using a GCS, you can see data in rangefinder measurements.
