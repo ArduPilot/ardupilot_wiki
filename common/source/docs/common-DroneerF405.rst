@@ -4,7 +4,7 @@
 Droneer F405 Flight Controller
 ==============================
 
-The Droneer F405 is a flight controller produced by `Droneer <http://www.droneer.co/>`_.
+The Droneer F405 is a flight controller produced by `Droneer <https://droneer.com/>`_.
 
 Features
 ========
