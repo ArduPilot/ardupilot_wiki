@@ -4,6 +4,15 @@
 Using SITL with legacy versions of Gazebo
 =========================================
 
+.. warning::
+
+   **Deprecated.** The legacy Gazebo interface described on this page
+   (the ``gazebo`` SITL model selected by ``-f gazebo-iris`` without
+   ``--model JSON``) is deprecated and is being removed from ArduPilot.
+   Gazebo Classic (Gazebo 11 and earlier) has reached end of life.
+   Use the current generation of Gazebo with the JSON interface instead,
+   see :ref:`Using SITL with Gazebo <sitl-with-gazebo>`.
+
 This article explains how to use legacy versions of Gazebo 
 https://classic.gazebosim.org/ as an external simulator for
 ArduPilot Rover, Copter and Plane.
