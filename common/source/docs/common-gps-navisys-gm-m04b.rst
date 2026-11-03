@@ -28,8 +28,8 @@ Specifications
 
 -  **Interface**
 
-   - 6-pin, 1.0 mm pitch connector (UART TX, ON/OFF control, I2C)
-   - UART TTL output, NMEA 0183 (V3.01 / V4.10), 230400 bps by default
+   - 6-pin, 1.0 mm pitch connector (UART, I2C)
+   - UART TTL, NMEA 0183 (V3.01 / V4.10), 230400 bps by default
 
 -  **Power**
 
@@ -58,20 +58,12 @@ Pin  Name     Function                        Type
 1    GND      Ground                          Power
 2    VCC      Power supply (3.3 ~ 5 V)        Power
 3    TXD      UART transmit (TTL)             Output
-4    ON/OFF   High/floating: on, low: off     Input
+4    RXD      UART receive (TTL)              Input
 5    SCL      I2C clock (compass)             Input
 6    SDA      I2C data (compass)              I/O
 ===  =======  ==============================  ======
 
 An optional 30 cm cable (6-pin JST-GH to the module connector) is available for direct connection to the 6-pin GPS2 port of Pixhawk-standard autopilots.
-
-.. note::
-   Pin 4 is a power ON/OFF control input, not a UART receive line. The module does not accept commands or RTCM corrections from the autopilot. If pin 4 is connected to the autopilot's UART TX line, any data sent on that line pulls the pin low, which may switch the module off. The recommended wiring is to leave pin 4 unconnected.
-
-   If pin 4 must stay connected (for example when using the standard cable), the autopilot can still transmit on this port in two cases:
-
-   * During GPS detection, ArduPilot sends configuration data. Set :ref:`GPS_AUTO_CONFIG <GPS_AUTO_CONFIG>` = 0 to stop this.
-   * RTCM correction data received from the ground station is sent to every GPS by default. If another (RTK) GPS is used, set :ref:`GPS_INJECT_TO <GPS_INJECT_TO>` to that GPS instance so that corrections are not sent to the GM-M04B.
 
 ArduPilot Configuration
 =======================
@@ -88,7 +80,6 @@ When connected to the GPS2 port (SERIAL4) as the only GPS, using the optional ca
 * :ref:`SERIAL3_PROTOCOL <SERIAL3_PROTOCOL>` = -1 (None), or any protocol other than 5, so that SERIAL4 becomes the first GPS port
 * :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 5 (GPS)
 * :ref:`GPS1_TYPE <GPS1_TYPE>` = 5 (NMEA)
-* :ref:`GPS_AUTO_CONFIG <GPS_AUTO_CONFIG>` = 0 (Disabled), recommended if pin 4 is connected (see note above). This parameter applies to all GPS instances.
 
 When connected to the GPS1 port (SERIAL3), keep :ref:`SERIAL3_PROTOCOL <SERIAL3_PROTOCOL>` = 5 and set :ref:`GPS1_TYPE <GPS1_TYPE>` = 5.
 
