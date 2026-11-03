@@ -57,7 +57,8 @@ Video transmitter settings
 - Set :ref:`VTX_CHANNEL <VTX_CHANNEL>` to modify the VTX channel.
 - Set :ref:`VTX_FREQ <VTX_FREQ>` to modify the VTX frequency. Band/channel and frequency are mutually exclusive, if you set band and/or channel then the frequency will be automatically updated. If you set the frequency then the band/channel will be automatically updated. Not all frequencies, channels and bands are supported unless the transmitter is unlocked. Please consult local regulations before doing this. If you select an unsupported frequency then the current frequency will not be changed.
 - Set :ref:`VTX_POWER <VTX_POWER>` to modify the VTX power in mw. Not all transmitters support all power values. In particular in Europe only 25mw is allowed by default. To allow other values the transmitter must be unlocked. If you select a power level that is unsupported by the transmitter then the actual power value will not be changed.
-- Set :ref:`VTX_MAX_POWER <VTX_MAX_POWER>` to set the maximum VTX power allowed in mw. This is used by ``RCx_OPTION`` = 94 which allows the VTX power to be changed via a switch or dial.
+- Set :ref:`VTX_MAX_POWER <VTX_MAX_POWER>` to set the maximum VTX power allowed in mw. This is used by ``RCx_OPTION`` = 94 which allows the VTX power to be changed via a switch or dial. A value of 0 means no limit. It is ignored if the user power table below is enabled.
+- Set :ref:`VTX_PWRTBL_EN <VTX_PWRTBL_EN>` to 1 to use the user-defined power table described in :ref:`User-defined power table <vtx-power-table>`.
 - Set :ref:`VTX_OPTIONS <VTX_OPTIONS>` to set options on the VTX. The most common option is setting bit 0 which puts the VTX into pit mode, if supported. Other options can be used to reset pitmode upon arming and/or set it upon disarming (bits 1 and 2). The option bits and their actions are shown below:
 
 ===================================    ==============
@@ -85,3 +86,24 @@ Video transmitter settings can be changed in multiple ways but always go via the
 - Parameter modification via the OSD (See :ref:`common-paramosd`)
 - Parameter modification via CRSF OpenTX lua scripts (or OpenTX AgentX lua scripts) - CRSF only
 - Spektrum VTX support. VTX settings on your Spektrum transmitter will be translated by either the DSMX or SRXL2 drivers and the appropriate VTX settings updated
+
+.. _vtx-power-table:
+
+User-defined power table
+------------------------
+
+By default the power switch (``RCx_OPTION`` = 94) chooses between the power levels built into the firmware, up to :ref:`VTX_MAX_POWER <VTX_MAX_POWER>`. If your transmitter supports other levels, or you want pit mode at a particular switch position, set :ref:`VTX_PWRTBL_EN <VTX_PWRTBL_EN>` = 1 and define the levels in :ref:`VTX_PWRTBL1 <VTX_PWRTBL1>` to :ref:`VTX_PWRTBL6 <VTX_PWRTBL6>`. When the table is enabled it replaces the built-in levels and :ref:`VTX_MAX_POWER <VTX_MAX_POWER>`.
+
+Each entry is one of:
+
+- ``-1``: the entry is ignored.
+- ``0``: pit mode.
+- Any value above 0: the power in mW.
+
+The entries that are not ``-1`` are the switch choices, in slot order. With six entries each switch position selects one entry. With fewer entries the six positions are spread over them, so the first and last entries cover more than one position. For example, with ``VTX_PWRTBL1`` to ``VTX_PWRTBL6`` set to 0, 25, 400, 800, 1500 and 2500, switch position 0 selects pit mode, position 1 selects 25mW, position 2 selects 400mW, position 3 selects 800mW, position 4 selects 1500mW and position 5 selects 2500mW.
+
+If every entry is ``-1`` the switch does nothing.
+
+.. note:: Only the IRC Tramp protocol accepts arbitrary power values. With other protocols the requested power is rounded to a level the protocol can express: CRSF uses 25, 100, 200, 400, 500 or 800mW, and SmartAudio uses the nearest lower level it supports. Using power levels above those allowed by local regulations may violate local laws and restrictions.
+
+With IRC Tramp, if the transmitter does not accept a change into or out of pit mode, the autopilot keeps retrying it and, after 30 seconds, reports "VTX: pitmode change not accepted". Power changes the transmitter does not apply are also retried.
