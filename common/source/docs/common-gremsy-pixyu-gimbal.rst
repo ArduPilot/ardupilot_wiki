@@ -43,6 +43,11 @@ Connect to the autopilot with a ground station and set the following parameters,
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
 - :ref:`SERIAL2_OPTIONS <SERIAL2_OPTIONS>` to 1024 for "Don't forward mavlink to/from"
 
+In ArduPilot 4.8 and later, the rate at which the autopilot sends messages to a MAVLink gimbal (``MNT1_TYPE`` = 6) can be adjusted. The defaults are suitable for most gimbals:
+
+- :ref:`MNT1_ATT_RATE <MNT1_ATT_RATE>`: rate (in Hz) at which the vehicle's attitude is sent to the gimbal (AUTOPILOT_STATE_FOR_GIMBAL_DEVICE messages). Default is 50Hz. 0 disables these messages. The gimbal can also request a different rate itself. A reboot is required after changing this parameter.
+- :ref:`MNT1_TARG_RATE <MNT1_TARG_RATE>`: rate (in Hz) at which an unchanged angle or rate target is re-sent to the gimbal. Default is 10Hz. Changed targets are always sent immediately. 0 disables sending targets to the gimbal.
+
 See the "Control with an RC transmitter" section of :ref:`this page <common-mount-targeting>` for details on parameter changes required to control the gimbal through an RC Transmitter (aka "RC Targeting")
 
 When the autopilot has successfully connected to the gimbal, "Mount: GREMSY PixyU fw:7.7.1.0" (or similar) will be sent to the ground station.  Looking for this message may be useful in determining if the autopilot and gimbal are communicating successfully.

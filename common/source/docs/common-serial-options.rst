@@ -569,4 +569,9 @@ Bit set    Description
 1          Don’t forward mavlink to/from this channel, from/to other channels
 2          Ignore Streamrate set by GCS
 3          forward mavlink packets that don’t pass CRC (bit 1 overrides this)
+4          Unicast (ArduPilot 4.8 and later)
 =======    ======================
+
+**Unicast** (bit 4) is intended for links to a MAVLink device such as a camera or gimbal. Broadcast MAVLink messages are not forwarded to or from the link, but messages addressed to a specific device on the link (and its replies, such as MAVFTP and command acknowledgements) are routed normally. The autopilot sends its heartbeat on the link but does not start its normal telemetry streams; the device requests the messages it needs. Unlike bit 1, which blocks addressed replies from leaving the link, unicast allows a ground station full access to the device, so it is the recommended setting for a :ref:`MAVLink camera <common-camera-controls>` port.
+
+.. note:: ``MAVx_OPTIONS`` apply to MAVLink channels, not directly to ``SERIALx`` ports. MAVLink channels are numbered in order of the serial ports that have MAVLink protocols enabled, so check which channel a camera or gimbal port uses before setting its options.
