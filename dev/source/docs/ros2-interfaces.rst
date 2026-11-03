@@ -306,6 +306,22 @@ Interfaces that use custom messages that aren't already used commonly in
 the ROS 2 ecosystem are typically added with an ``experimental`` designator.
 
 
+Namespacing and Multi-Vehicle Support
+=====================================
+
+By default, all ROS 2 topics and services are published under the ``ap/`` namespace (for example, ``ap/navsat/navsat0``). When operating multiple vehicles on the same ROS 2 network or connecting through a single Micro-ROS Agent, topics and client IDs can conflict.
+
+ArduPilot provides the :ref:`DDS_USE_NS <DDS_USE_NS>` parameter to support multi-vehicle configurations:
+
+- When :ref:`DDS_USE_NS <DDS_USE_NS>` is set to ``1`` (enabled), topic and service names include a ``v<SYSID>`` namespace based on :ref:`MAV_SYSID <MAV_SYSID>` (formerly ``SYSID_THISMAV``). For example, for a vehicle with ``MAV_SYSID = 1``:
+
+  - Topics are namespaced as ``ap/v1/<topic_name>`` (e.g. ``ap/v1/navsat/navsat0``, ``ap/v1/geopose/filtered``).
+  - Services are namespaced as ``/ap/v1/<service_name>`` (e.g. ``/ap/v1/arm_motors``).
+
+- The Micro-XRCE-DDS client session key is also derived from ``MAV_SYSID``, allowing multiple vehicles to connect to the same Micro-ROS Agent without session key conflicts.
+- A reboot is required after changing :ref:`DDS_USE_NS <DDS_USE_NS>` for the namespace configuration to take effect.
+
+
 ABI Stability Guarantees
 ========================
 
