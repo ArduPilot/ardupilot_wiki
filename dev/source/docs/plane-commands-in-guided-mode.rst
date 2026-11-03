@@ -8,7 +8,7 @@ This article lists the MAVLink commands that affect the movement of a Plane or Q
 
 .. note::
 
-   The code which processes these commands can be found `here in GCS_Mavlink.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/GCS_Mavlink.cpp>`__
+   The code which processes these commands can be found `here in GCS_MAVLink_Plane.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/GCS_MAVLink_Plane.cpp>`__
 
 .. _movement_commands:
 
