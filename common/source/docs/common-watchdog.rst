@@ -8,9 +8,19 @@ ArduPilot enables the autopilot CPU's internal independent watchdog which causes
 
 While not recommended, this feature can be disabled by setting :ref:`BRD_OPTIONS<BRD_OPTIONS>` = 0.
 
-In the case of a "HARD FAULT" (e.g an illegal instruction, out of bounds memory access, etc.) before resetting, the watchdog handler code will log a "WDG" message to the onboard log, send a "WDG" text message to the GCS and attempt to write a crash_dump.bin file to the "@SYS" flash area.  This crash_dump.bin file contains the cpu state and registers for later analysis (See section below for more details). A "HARD FAULT" is extremely serious and should be reported to ArduPilot. The vehicle is probably not safe to fly until the cause is resolved.
+In the case of a "HARD FAULT" (e.g an illegal instruction, out of bounds memory access, etc.) before resetting, the watchdog handler code will log a "WDG" message to the onboard log, send a "WDG" text message to the GCS and attempt to save a crash dump containing the CPU state, registers and memory for later analysis (See section below for more details). A "HARD FAULT" is extremely serious and should be reported to ArduPilot. The vehicle is probably not safe to fly until the cause is resolved.
 
-In ArduPilot-4.5.1 (and higher), if a crash_dump.bin file has been created, a pre-arm failure will warn the user and prevent arming.  The crash_dump.bin file can be erased by re-flashing the ArduPilot firmware to the autopilot or it can be ignored by setting the :ref:`ARMING_CRSDP_IGN<ARMING_CRSDP_IGN>` param to 1 (not recommended).
+Where the crash dump is saved depends on the autopilot:
+
+- **microSD card** (ArduPilot 4.8 and later, on most autopilots with a microSD card): a full dump of the autopilot's RAM is written to the ``APM/CrashDump.DAT`` file on the card. At the next boot the GCS is sent a "Previous CrashDump: APM/CrashDump.DAT" message.
+- **Internal flash** (autopilots without a supported microSD card interface, and all autopilots before ArduPilot 4.8): a smaller, partial dump is written to the ``crash_dump.bin`` file in the "@SYS" flash area.
+
+In ArduPilot-4.5.1 (and higher), if a crash dump has been saved, a pre-arm failure ("CrashDump data detected") will warn the user and prevent arming. It can be ignored by setting the :ref:`ARMING_CRSDP_IGN<ARMING_CRSDP_IGN>` param to 1 (not recommended). To clear it:
+
+- **microSD card**: delete ``APM/CrashDump.DAT`` from the card, either by removing the card and using a computer, or remotely using the GCS's MAVFTP file manager. Re-flashing the firmware does not remove it.
+- **Internal flash**: re-flash the ArduPilot firmware to the autopilot.
+
+.. note:: To make saving a crash dump fast and reliable, on autopilots that save crash dumps to the microSD card ArduPilot creates a file named ``APM/CD_Reserved.DAT`` at boot, large enough to hold a full dump (about the size of the autopilot's RAM). This file is normal and should not be deleted; it is recreated at the next boot if it is. If no card is fitted, or the card is full, unreadable or badly fragmented, no crash dump will be saved; these autopilots do not fall back to saving a dump in internal flash.
 
 .. youtube:: ZGuTIPLI_e0
 
@@ -19,7 +29,10 @@ In ArduPilot-4.5.1 (and higher), if a crash_dump.bin file has been created, a pr
 Reporting a Watchdog / Crash Dump
 =================================
 
-Use Mission Planner or another GCS to download the crash_dump.bin file from the "@SYS" flash area.
+Use Mission Planner or another GCS to download the crash dump file:
+
+- **microSD card**: download ``APM/CrashDump.DAT`` using the GCS's MAVFTP file manager, or copy it from the card using a computer.
+- **Internal flash**: download the ``crash_dump.bin`` file from the "@SYS" flash area, as shown below.
 
 .. image:: ../../../images/crash_dump.png
     :target: ../_images/crash+dump.png
@@ -32,7 +45,7 @@ If the dataflash log cannot be found, find the git-hash of the firmware.  This a
    :target: ../_images/git-hash.png
 
 Open `ArduPilot's support forum <https://discuss.ardupilot.org/>`__, find the category for your vehicle and software version (e.g. `Copter-4.6 <https://discuss.ardupilot.org/c/arducopter/copter-46/179>`__, `Plane-4.6 <https://discuss.ardupilot.org/c/arduplane/plane-4-6/182>`__, `Rover-4.6 <https://discuss.ardupilot.org/c/ardurover/rover-46/180>`__),
-create a "New Topic", include "watchdog" in the title and attach the crash_dump.bin file, log file and/or git-hash as described above.  If the files cannot be uploaded directly, please include a link to where they can be downloaded from.
+create a "New Topic", include "watchdog" in the title and attach the crash dump file (``CrashDump.DAT`` or ``crash_dump.bin``), log file and/or git-hash as described above.  If the files cannot be uploaded directly, please include a link to where they can be downloaded from.
 
 Determining that a Watchdog Reset Occurred
 ==========================================
