@@ -833,7 +833,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_droneer.png
             :width: 250px
             :align: center
-            :target:  nan
+            :target:  https://droneer.com/
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_topotek.png
