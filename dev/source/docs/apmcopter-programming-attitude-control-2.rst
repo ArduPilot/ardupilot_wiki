@@ -81,7 +81,7 @@ methods.
    library allows 3D position control of the vehicle.  Normally only the
    simpler Z-axis (i.e. altitude control) methods are used because more
    complicated 3D position flight modes (i.e.
-   `Loiter <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_loiter.cpp#L30>`__)
+   `Loiter <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_loiter.cpp>`__)
    make use of the
    `AC_WPNav <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AC_WPNav/AC_WPNav.h>`__
    library.  In any case, some commonly used methods of this library

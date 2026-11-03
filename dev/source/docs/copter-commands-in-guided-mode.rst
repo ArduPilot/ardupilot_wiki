@@ -8,7 +8,7 @@ This article lists the MAVLink commands that affect the movement of a Copter.  N
 
 .. note::
 
-   The Copter code which processes these commands can be found `here in GCS_Mavlink.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_Mavlink.cpp#L683>`__
+   The Copter code which processes these commands can be found `here in GCS_MAVLink_Copter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_MAVLink_Copter.cpp>`__
 
 Movement Commands
 =================
