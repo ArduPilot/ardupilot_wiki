@@ -32,6 +32,8 @@ Setup
 
 - Open the sensor's configuration software and connect to the autopilot's COM port.  If all goes well the configuration software should work as it does when the PC is directly connected to the sensor
 
+.. note:: While passthrough is active both ports use their ``SERIALx_OPTIONS`` with 8 data bits, no parity and 1 stop bit, or the parity the PC's software opens the USB port with, and nothing else on the autopilot can change those settings. The settings each port had are put back when passthrough ends. This is in ArduPilot 4.8 and later.
+
 .. note:: Passthrough can also be used to update the firmware of an ELRS receiver connected for RC input. See :ref:`common-tbs-rc`.
 
 If the configuration fails to connect there are some things to try:
