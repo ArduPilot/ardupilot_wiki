@@ -27,6 +27,9 @@ New Board Support
 - ZenFC743, see https://github.com/ArduPilot/ardupilot_wiki/pull/8106
 - CyberX-Cube, see https://github.com/ArduPilot/ardupilot_wiki/pull/8206
 - DroneerX6, see https://github.com/ArduPilot/ardupilot_wiki/pull/8207
+- HGLRC H743 PRO, see https://github.com/ArduPilot/ardupilot_wiki/pull/8224
+- AcctonGodwit GFH7, see https://github.com/ArduPilot/ardupilot_wiki/pull/8225
+- AcctonGodwit GFF4, see https://github.com/ArduPilot/ardupilot_wiki/pull/8226
 
 New Peripheral Support
 ======================
