@@ -170,6 +170,10 @@ A mobile app for Android and iOS is described under :ref:`Mobile GCSs <common-ch
 -  **Platform**: Windows, Mac OS X, Linux
 -  **Licence**: `Open source <https://github.com/rubenCodeforges/ardudeck/blob/master/LICENSE>`__
    (GPLv3)
+
+.. image:: ../../../images/ardudeck_desktop_map_and_synthetic_vision.jpg
+    :target: ../_images/ardudeck_desktop_map_and_synthetic_vision.jpg
+
 -  `Website <https://ardudeck.com>`__
 -  `Download and Install <https://ardudeck.com/docs/Getting-Started/>`__
 -  `Support Forum <https://discuss.ardupilot.org/t/ardudeck-open-source-cross-platform-gcs/142407>`__
@@ -274,6 +278,10 @@ A second screen mode mirrors telemetry forwarded from ArduDeck on the desktop.
 
 -  **Platform**: Android phones and tablets (open beta), iPhone and iPad (TestFlight beta)
 -  **Licence**: Proprietary, free
+
+.. image:: ../../../images/ardudeck_mobile_map_and_synthetic_vision.jpg
+    :target: ../_images/ardudeck_mobile_map_and_synthetic_vision.jpg
+
 -  `Google Play <https://play.google.com/store/apps/details?id=com.ardudeck.gcs>`__
 -  `TestFlight beta (iOS) <https://testflight.apple.com/join/FMPtzrAz>`__
 -  `Website <https://ardudeck.com>`__
