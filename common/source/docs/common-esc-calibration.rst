@@ -21,8 +21,8 @@ and what PWM value corresponds with full throttle. These values are
 stored inside the ESC.
 
 .. note:: You should not try to calibrate your ESC until you have
-          completed both your :ref:`RC inputs <rc-throw-trim>`
-          calibration and your :ref:`servo setup <servo-functions>`. 
+          completed both your [site wiki="plane"]:ref:`RC inputs <rc-throw-trim>` [/site][site wiki="rover,sub"]RC inputs[/site]
+          calibration and your [site wiki="plane"]:ref:`servo setup <servo-functions>`\ [/site][site wiki="rover,sub"]servo setup[/site]. 
           Mission Planner's motor calibration does not work on 
           traditional planes.
 
@@ -58,7 +58,7 @@ Alternative ESC Calibration
 
 If the typical ESC calibration method above doesn't work,
 instead adjust the SERVOx_MIN and SERVOx_MAX values on 
-the appropriate servo channel (SERVOx) you had set as the Throttle channel in :ref:`servo setup <servo-functions>` to match the existing range of your ESC.
+the appropriate servo channel (SERVOx) you had set as the Throttle channel in [site wiki="plane"]:ref:`servo setup <servo-functions>`\ [/site][site wiki="rover,sub"]servo setup[/site] to match the existing range of your ESC.
 
 To use this method slowly raise the SERVOx_MIN value until it is set
 to a value just below the point that the motor comes on. A value about
@@ -72,7 +72,7 @@ the sound of the motor as a guide.
 Reversing PWM based ESCs
 ========================
 
-If you are using a reversing ESC for reverse thrust for Plane( see :ref:`Automatic Landing<automatic-landing>` section on Reverse Thrust Landing ) or normal Rovers/Subs, and its PWM based rather than CAN, OneShot, or DShot, then you may need to calibrate it for minimum and maximum PWM values. Sometimes, a button is provided for setting full forward, neutral, and full reverse. In this case, you will need to setup an RCx_OPTION on an RC channel to allow setting full reverse manually. Follow the manufacturers instructions for calibration.
+If you are using a reversing ESC for reverse thrust for Plane[site wiki="plane"] (see :ref:`Automatic Landing<automatic-landing>` section on Reverse Thrust Landing)[/site] or normal Rovers/Subs, and its PWM based rather than CAN, OneShot, or DShot, then you may need to calibrate it for minimum and maximum PWM values. Sometimes, a button is provided for setting full forward, neutral, and full reverse. In this case, you will need to setup an RCx_OPTION on an RC channel to allow setting full reverse manually. Follow the manufacturers instructions for calibration.
 
 Some ESCs just fix the calibration, in which case you may need to adjust the servo/motor's output trim position to be slightly different than 1500 us to obtain zero thrust.
 
