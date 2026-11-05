@@ -42,6 +42,18 @@ The vehicle should respond with many individual `PARAM_VALUE <https://mavlink.io
 
 MAVLink does not guarantee delivery of packets so if some parameter values do not arrive, use the instructions below to re-request the missing parameters.
 
+Downloading All Parameters With MAVFTP
+--------------------------------------
+
+A much faster way to download the full parameter list is to read the ``@PARAM/param.pck`` file over :ref:`MAVFTP <mavlink-mavftp>`.  This is a virtual file which holds every parameter's name, type and value in a packed binary format.  It has been available since ArduPilot 4.1.
+
+- ``@PARAM/param.pck?start=50&count=10`` returns only 10 parameters starting from parameter number 50
+- ``@PARAM/param.pck?withdefaults=1`` also includes each parameter's default value where it differs from the current value (ArduPilot 4.3 and later)
+
+All reads on one open file handle must use the same read size.  Without ``withdefaults`` the file is padded so that a parameter value is never split across two MAVFTP blocks.  With ``withdefaults=1`` only the default value is kept whole, so a decoder should join the blocks back into one stream before unpacking.  A change of read size after the first read fails.
+
+The packed format is described in the `AP_Filesystem README <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Filesystem/README.md>`__.  `param_unpack.py <https://github.com/ArduPilot/ardupilot/blob/master/Tools/scripts/param_unpack.py>`__ unpacks a plain download (it does not read a file fetched with ``withdefaults=1``) and pymavlink's ``mavftp.py`` has a ``getparams`` command which downloads and decodes both.  Since ArduPilot 4.1 parameters can also be uploaded in bulk by writing a packed file to ``@PARAM/param.pck`` over MAVFTP, which MAVProxy's ``param ftpload`` command uses.
+
 Retrieving a Parameter
 ----------------------
 
