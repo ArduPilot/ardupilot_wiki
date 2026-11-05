@@ -147,6 +147,7 @@ Closed Hardware
     GEPRC Taker H743 BT <common-geprc-taker-h743-bt>
     GreenSightUltraBlue <common-greensightultrablue>
     HeeWing F405/F405V2 <common-heewingf405>
+    HGLRC H743 PRO <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/HGLRC_H743_PRO/README.md>
     Holybro Kakute F4 <common-holybro-kakutef4>
     Holybro Kakute F4 Mini <common-holybro-kakutef4-mini>
     Holybro Kakute F7 AIO <common-holybro-kakutef7aio>
