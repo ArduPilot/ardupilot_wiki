@@ -458,13 +458,13 @@ Other functions are:
     RC Override Enable                   | This is a 3-position switch that enables (high) or disables (low)
                                          | the use of RC overrides from the Ground Control Station.
     Learn Cruise                         | This starts the cruise speed and the throttle learning sequence
-                                         | on Rover when switched to high. See :ref:`rover-tuning-throttle-and-speed`.
+                                         | on Rover when switched to high.[site wiki="rover"] See :ref:`rover-tuning-throttle-and-speed`.[/site]
     Clear Waypoints                       Clears currently loaded mission waypoints.
     Compass Learn                        | Inflight compass offset learning. See Automatic Offset
                                          | Calibration section of :ref:`common-compass-setup-advanced`.
     Sailboat Tack                        | Any high to low, or low to high change on this channel will start
                                          | a tack in the opposite direction
-                                         | to the last tack. See Sailboat :ref:`sailboat-configure`.
+                                         | to the last tack.[site wiki="rover"] See Sailboat :ref:`sailboat-configure`.[/site]
     Reverse Throttle                     | When switched high, forces throttle reverse in Plane for
                                          | steepening descents. Normally, this is
                                          | controlled by flight mode via the :ref:`USE_REV_THRUST<USE_REV_THRUST>`
@@ -552,8 +552,7 @@ Other functions are:
                                          | subsequently enable or disable if it is configured. Disarms
                                          | the vehicle unconditionally if brought low.
     TRIM RC/SERVO Save                   | Saves current RC input trim and SERVO output trim for pitch,
-                                         | roll, and yaw in Plane and for Steering in Rover. See
-                                         | :ref:`Save Steering Trim <savetrim>` for Rover.
+                                         | roll, and yaw in Plane and for Steering in Rover.[site wiki="rover"] See :ref:`Save Steering Trim <savetrim>`.[/site]
     Torqeedo Error Clear                  Clears error condition in Torqeedo motor controller.
     Force FBWA as Long FS Action         | Forces mode change to FBWA in Long FS, overriding the
                                          | :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter value for emergency
@@ -638,8 +637,7 @@ Other functions are:
     Mainsail                             | This RC channel will drive the output of the MainSail 
                                          | output ( ``SERVOx_FUNCTION`` = 89) instead of being set from 
                                          | the Throttle Input channel (useful if it has an auxiliary motor
-                                         | using that input). See Sailboat :ref:`sailboat-configure` for 
-                                         | more information about the main sail setup.
+                                         | using that input).[site wiki="rover"] See Sailboat :ref:`sailboat-configure` for more information about the main sail setup.[/site]
     Flaps                                | This RC channel provides manual control the amount of FLAP 
                                          | deflection and can also be used in conjunction with
                                          | :ref:`automatic-flaps` and/or :ref:`flaperons<flaperons-on-plane>`
@@ -647,7 +645,7 @@ Other functions are:
     Forward Throttle                     | Manual forward motor throttle in QSTABILIZE, QACRO, and
                                          | QHOVER modes.
     Airbrakes                             Controls deployment of :ref:`Airbrakes<airbrakes-on-plane>`.
-    Walking Robot Height                  Input channel for Walking Robot Height. See :ref:`walking-robots`.
+    Walking Robot Height                  Input channel for Walking Robot Height.[site wiki="rover"] See :ref:`walking-robots`.[/site]
     Mount1 Roll                           1st camera gimbal's roll control.
     Mount1 Pitch                          1st camera gimbal's pitch control.
     Mount1 Yaw                            1st camera gimbal's yaw control.
