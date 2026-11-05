@@ -324,7 +324,7 @@ function except that it only acts when the aircraft is below
 [/site][site wiki="plane"]:ref:`GROUND_STEER_ALT<GROUND_STEER_ALT>`\ [/site][site wiki="rover"]:ref:`GROUND_STEER_ALT<plane:GROUND_STEER_ALT>`\ [/site][site wiki="plane,rover"] altitude. At altitudes above [/site][site wiki="plane"]:ref:`GROUND_STEER_ALT<GROUND_STEER_ALT>`\ [/site][site wiki="rover"]:ref:`GROUND_STEER_ALT<plane:GROUND_STEER_ALT>`\ [/site][site wiki="plane,rover"] the
 output will be the trim value for the channel.
 
-See the separate page on :ref:`setting up ground steering <tuning-ground-steering-for-a-plane>`
+[/site][site wiki="plane"]See the separate page on :ref:`setting up ground steering <tuning-ground-steering-for-a-plane>`
 [/site]
 
 [site wiki="plane, copter"]
@@ -440,7 +440,7 @@ Throttle Left/ Right
 Tilt Motor/ Tilt Motor Left/ Tilt Motor Right/ Tilt Motor Rear/ Tilt Motor Rear Left/ Tilt Motor Rear Right
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-These outputs control the tilt servos for :ref:`guide-tilt-rotor` in Plane and Bicopters in Copter.
+[/site][site wiki="plane"]These outputs control the tilt servos for :ref:`guide-tilt-rotor` in Plane.[/site][site wiki="copter"]These outputs control the tilt servos for Bicopters in Copter.[/site][site wiki="plane, copter"]
 
 Boost Engine Throttle
 +++++++++++++++++++++

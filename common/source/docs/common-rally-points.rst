@@ -9,7 +9,7 @@ Overview
 
 Ordinarily when a plane or copter enters :ref:`Return to Launch (RTL) <rtl-mode>` mode (typically
 triggered by an
-autopilot \ :ref:`failsafe <apms-failsafe-function>`),
+autopilot failsafe[site wiki="plane"], see :ref:`apms-failsafe-function`\ [/site][site wiki="copter,sub"], see :ref:`failsafe-landing-page`\ [/site][site wiki="rover"], see :ref:`rover-failsafes`\ [/site]),
 the default behaviour is to return to the \ :ref:`Home point <common-planning-a-mission-with-waypoints-and-events_setting_the_home_position>`,
 but there are often cases when that can be undesirable. For example it
 may be an area full of people or property and a system running in RTL

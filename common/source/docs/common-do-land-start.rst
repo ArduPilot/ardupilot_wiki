@@ -6,7 +6,7 @@ Using DO_LAND_START
 
 The :ref:`DO_LAND_START <mav_cmd_do_land_start>` mission item can be used for two purposes:
 
-#. In Plane, to provide an automatic re-attempt for an aborted NAV_LAND autolanding in a mission. (See :ref:`aborting-autolanding`)
+#. In Plane, to provide an automatic re-attempt for an aborted NAV_LAND autolanding in a mission.[site wiki="plane"] (See :ref:`aborting-autolanding`)[/site]
 #. To provide an automatic landing sequence for RTLs in Plane or as a failsafe action in Copter.
 
 .. note:: in Rover, it can be used, but only via Scripting call to start the landing sequence.

@@ -468,8 +468,8 @@ Other functions are:
     Reverse Throttle                     | When switched high, forces throttle reverse in Plane for
                                          | steepening descents. Normally, this is
                                          | controlled by flight mode via the [site wiki="plane"]:ref:`USE_REV_THRUST<USE_REV_THRUST>` [/site][site wiki="copter,rover,sub"]:ref:`USE_REV_THRUST<plane:USE_REV_THRUST>` [/site]
-                                         | parameter. See :ref:`automatic-landing` for more information on
-                                         | the setup of reverse thrust.
+                                         | parameter.[site wiki="plane"] See :ref:`automatic-landing` for more information on
+                                         | the setup of reverse thrust.[/site]
     GPS Disable                           Simulates GPS failure by disabling GPS.
     Relay 5 On/Off                       | Switch pulled low turns off the third :ref:`relay <common-relay>`, pulled
                                          | high turns on the fifth relay.
@@ -497,8 +497,8 @@ Other functions are:
                                          | Emergency Stop Motors, which waits for [site wiki="copter"]:ref:`DISARM_DELAY<DISARM_DELAY>` [/site][site wiki="plane,rover,sub"]:ref:`DISARM_DELAY<copter:DISARM_DELAY>` [/site]
                                          | in Copter.
     Q_Assist 3Pos SW                     | Low: disable Q_Assist entirely, Middle: Normal Q_Assist
-                                         | operation, High: Q_Assist active at all times. See Assisted Fixed
-                                         | Wing Flight section of :ref:`quadplane-flying`.
+                                         | operation, High: Q_Assist active at all times.[site wiki="plane"] See Assisted Fixed
+                                         | Wing Flight section of :ref:`quadplane-flying`.[/site]
     ZigZag Mode Auto Enable              | Enable automatic zigzag and sprayer in ZIGZAG mode.
                                          | See :ref:`zigzag-mode`.
     AIRMODE(not a flight mode)            Enables and disables AIRMODE feature. See :ref:`airmode`.
@@ -514,7 +514,7 @@ Other functions are:
                                          | See :ref:`common-non-gps-to-gps`.
     Airspeed Ratio Calibrate             | Activates calibration of airspeed ratio in flight. Best results
                                          | occur while executing course changes over 360 degrees over
-                                         | time, as in LOITER mode. See :ref:`calibrating-an-airspeed-sensor`.
+                                         | time, as in LOITER mode.[site wiki="plane"] See :ref:`calibrating-an-airspeed-sensor`.[/site]
     VTX Power                            | Allows reading up to a 6-position switch for controlling Video
                                          | Transmitter Power. See :ref:`common-vtx`.
     FBWA_TAILDRAGGER                     | Enables FBWA taildragger takeoff mode using elevator to
@@ -611,7 +611,7 @@ Other functions are:
     FlightMode Pause                      In Guided/Auto modes, pauses mission.
     ICEngine start / stop                 Controls ICE engine starter output [site wiki="plane"]:ref:`ICE engines<common-ice>`\ [/site][site wiki="copter,rover,sub"]ICE engines[/site].
     Autotune_test_gains                   After autotune,allows selecting tune(high) or pretune gains.
-    VTOL QuickTune                        Autotunes QuadPlane VTOL PIDs, see :ref:`quicktune`.
+    VTOL QuickTune                        Autotunes QuadPlane VTOL PIDs[site wiki="plane"], see :ref:`quicktune`\ [/site].
     AHRS AutoTrim                         Auto Trim for Copter, see :ref:`autotrim`.
     System ID                            | Enables the System Identification feature to be started and stopped with this switch.
                                          | In quadplane VTOL, system ID feature is allowed to run on top of either qstabilize, qhover,
@@ -640,11 +640,11 @@ Other functions are:
                                          | using that input).[site wiki="rover"] See Sailboat :ref:`sailboat-configure` for more information about the main sail setup.[/site]
     Flaps                                | This RC channel provides manual control the amount of FLAP 
                                          | deflection and can also be used in conjunction with
-                                         | :ref:`automatic-flaps` and/or :ref:`flaperons<flaperons-on-plane>`
+                                         | [site wiki="plane"]:ref:`automatic-flaps` and/or :ref:`flaperons<flaperons-on-plane>` [/site][site wiki="copter,rover,sub"]automatic flaps and/or flaperons[/site]
                                          | (Replaces the old FLAP_IN_CHANNEL parameter).
     Forward Throttle                     | Manual forward motor throttle in QSTABILIZE, QACRO, and
                                          | QHOVER modes.
-    Airbrakes                             Controls deployment of :ref:`Airbrakes<airbrakes-on-plane>`.
+    Airbrakes                             Controls deployment of [site wiki="plane"]:ref:`Airbrakes<airbrakes-on-plane>`\ [/site][site wiki="copter,rover,sub"]Airbrakes[/site].
     Walking Robot Height                  Input channel for Walking Robot Height.[site wiki="rover"] See :ref:`walking-robots`.[/site]
     Mount1 Roll                           1st camera gimbal's roll control.
     Mount1 Pitch                          1st camera gimbal's pitch control.
