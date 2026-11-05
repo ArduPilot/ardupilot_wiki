@@ -11,7 +11,7 @@ In order to use an output as a GPIO, the individual ``SERVOx_FUNCTION`` paramete
 .. _gpio-warning:
 .. warning:: GPIOs should only source or sink 8mA (20mA absolute maximum). They are intended as logic-level IO and must not be used to directly drive relay coils, motors, LED strings, etc. Directly connecting electromechanical or high-current devices to GPIOs can permanently damage the autopilot.
 
-General Purpose Input/Outputs (GPIOs) are used in ArduPilot for control of :ref:`relays<common-relay>`, actuators, LEDs, :ref:`camera triggers<common-camera-shutter-with-servo>`, :ref:`Start Button<startstop-switch>` etc. Some functions also use a GPIO pin as an input, like :ref:`common-rpm`. Some autopilots provide dedicated GPIO pins (sometimes labeled "CAPTURE" pins). In addition, GPIOs can be obtained by re-configuring the PWM outputs.
+General Purpose Input/Outputs (GPIOs) are used in ArduPilot for control of :ref:`relays<common-relay>`, actuators, LEDs, :ref:`camera triggers<common-camera-shutter-with-servo>`,[site wiki="rover"] :ref:`Start Button<startstop-switch>`,[/site] etc. Some functions also use a GPIO pin as an input, like :ref:`common-rpm`. Some autopilots provide dedicated GPIO pins (sometimes labeled "CAPTURE" pins). In addition, GPIOs can be obtained by re-configuring the PWM outputs.
 
 Configuring GPIOS
 =================

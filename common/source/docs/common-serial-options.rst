@@ -239,7 +239,7 @@ RobotisServo, see :ref:`common-servo-robotis`
    <td>21</td>
    <td>
 
-WindVane, see :ref:`wind-vane` 
+WindVane[site wiki="rover"], see :ref:`wind-vane` [/site]
 
 .. raw:: html
 
@@ -419,7 +419,7 @@ FETtecOneWire, see :ref:`common-fettec-onewire`
    <td>39</td>
    <td>
 
-Torqeedo, see :ref:`common-torqeedo`
+Torqeedo[site wiki="rover"], see :ref:`common-torqeedo` [/site]
 
 .. raw:: html
 

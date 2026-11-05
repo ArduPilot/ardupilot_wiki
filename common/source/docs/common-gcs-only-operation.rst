@@ -17,7 +17,7 @@ It is also possible to use only the GCS itself, if only autonomous missions or g
 Failsafes
 =========
 
-It is highly recommended that the GCS failsafe be setup for the vehicle, since GCS connectivity is being relied upon exclusively for vehicle control. See :ref:`apms-failsafe-function`, :ref:`Copter Failsafe <failsafe-landing-page>`, or :ref:`Rover Failsafes <rover-failsafes>`, as appropriate.
+It is highly recommended that the GCS failsafe be setup for the vehicle, since GCS connectivity is being relied upon exclusively for vehicle control. See [site wiki="plane"]:ref:`apms-failsafe-function`\ [/site][site wiki="copter,sub"]:ref:`failsafe-landing-page`\ [/site][site wiki="rover"]:ref:`rover-failsafes`\ [/site].
 
 RC failsafe can also be used if a joystick is being used to send RC information (RC_OVERRIDES) via MAVLink. If the joystick fails or is disconnected, and normal :ref:`radio-failsafe` will occur.
 
