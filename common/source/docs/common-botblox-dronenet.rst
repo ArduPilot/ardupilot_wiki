@@ -40,7 +40,7 @@ Install ArduPilot with PPP Support
 .. image:: ../../../images/build-server-ppp.jpg
     :target: ../_images/build-server-ppp.jpg
 
-- Alternatively :ref:`build the code yourself <building-the-code>` and enable PPP by adding ``--enable-PPP`` to the waf configuration step
+- Alternatively :ref:`build the code yourself <dev:building-the-code>` and enable PPP by adding ``--enable-PPP`` to the waf configuration step
 - :ref:`Install the firmware on the autopilot <common-loading-firmware-onto-pixhawk>`
 
 Autopilot Configuration

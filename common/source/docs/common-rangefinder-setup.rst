@@ -50,6 +50,6 @@ References
 
 - Object Avoidance wiki page is :ref:`here <common-object-avoidance-landing-page>`
 [site wiki="copter,rover"]
-- More details of the algorithms used in :ref:`common-simple-object-avoidance` are on the :ref:`developer wiki's object avoidance page <code-overview-object-avoidance>`
+- More details of the algorithms used in :ref:`common-simple-object-avoidance` are on the :ref:`developer wiki's object avoidance page <dev:code-overview-object-avoidance>`
 [/site]
 

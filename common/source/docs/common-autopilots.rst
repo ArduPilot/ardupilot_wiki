@@ -300,7 +300,7 @@ These autopilots use an underlying Linux OS. Linux boards usually have more CPU 
 
 \** these devices are sensor add-on boards for a Linux-based microcomputer. See board links for details.
 
-.. note:: For more information on using ArduPilot on Linux based boards, see :ref:`building-the-code`
+.. note:: For more information on using ArduPilot on Linux based boards, see :ref:`dev:building-the-code`
 
 Firmware Limitations
 ====================

@@ -102,7 +102,7 @@ Bit 0 (e.g. "1") allowing arming in Guided mode from the RC transmitter
 
 Bit 2 (e.g. "4") disables the pilot's ability to change the vehicle's heading using the RC transmitter
 
-Bit 3 (e.g. "8") changes the interpretation of the `SET_ATTITUDE_TARGET MAVLink <https://mavlink.io/en/messages/common.html#SET_ATTITUDE_TARGET>`__ command's ``thrust`` field to be pure thrust expressed as a value between 0 and 1, instead of a climb rate. See :ref:`Copter Commands in Guided Mode <copter-commands-in-guided-mode>` for more details
+Bit 3 (e.g. "8") changes the interpretation of the `SET_ATTITUDE_TARGET MAVLink <https://mavlink.io/en/messages/common.html#SET_ATTITUDE_TARGET>`__ command's ``thrust`` field to be pure thrust expressed as a value between 0 and 1, instead of a climb rate. See :ref:`Copter Commands in Guided Mode <dev:copter-commands-in-guided-mode>` for more details
 
 Bit 4 (e.g. "16") disables the position controller's XY axis position error correction.  This may be useful if an external controller is providing high speed targets which already include position error correction
 

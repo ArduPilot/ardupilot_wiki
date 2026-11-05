@@ -214,7 +214,7 @@ After installing it, you can use the following command to convert the "arducopte
 Option 3: Compile the Firmware Yourself
 ---------------------------------------
 
-If you have a working :ref:`ArduPilot build environment<building-the-code>`, you can compile the firmware yourself and then convert it to the format needed by the BrainFPV bootloader. You will also need the BrainFPV Firmware Packer to do so. Install it using the "pip install" command shown above.
+If you have a working :ref:`ArduPilot build environment<dev:building-the-code>`, you can compile the firmware yourself and then convert it to the format needed by the BrainFPV bootloader. You will also need the BrainFPV Firmware Packer to do so. Install it using the "pip install" command shown above.
 
 For Copter, build the firmware as follows:
 

@@ -51,4 +51,4 @@ Attach a physical device to a SERIALx port in the sim: You can attach actual dev
 Simulating Custom Code Branches
 ===============================
 
-In addition, if you are code developer, you can run SITL using your custom code branch using Mission Planner, either with or without, the physics and visualizations of RealFlight. See the :ref:`Using Your Code Branch with Mission Planner SITL and RealFlightM<mp-sitl-custom-code>` section of :ref:`dev:sitl-with-realflight`
+In addition, if you are code developer, you can run SITL using your custom code branch using Mission Planner, either with or without, the physics and visualizations of RealFlight. See the :ref:`Using Your Code Branch with Mission Planner SITL and RealFlightM<dev:mp-sitl-custom-code>` section of :ref:`dev:sitl-with-realflight`

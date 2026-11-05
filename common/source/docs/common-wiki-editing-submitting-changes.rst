@@ -12,7 +12,7 @@ Once you have completed changes to the wiki on your local machine and tested the
 
 There are a number of way of using Git/Github - including a number of different GUI and command line tools.  The typical process for working with Git on the command line is:
 
-#. :ref:`Rebase <git-rebase>` your repo's master branch on the upstream ardupilot_wiki repo's master branch:
+#. :ref:`Rebase <dev:git-rebase>` your repo's master branch on the upstream ardupilot_wiki repo's master branch:
 
    - The very first time a "remote" pointing back to the upstream ardupilot_wiki repository must be created
 
@@ -55,7 +55,7 @@ There are a number of way of using Git/Github - including a number of different 
        git add the_name_of_file_you_changed.rst
        git commit -m "A short explanation of the change"
 
-#. "Squash" your commits. See :ref:`git-interactive-rebase`. There should be onlt one commit for changes related to a given topical change, even if multiple pages with changes are involved.
+#. "Squash" your commits. See :ref:`dev:git-interactive-rebase`. There should be onlt one commit for changes related to a given topical change, even if multiple pages with changes are involved.
 
 #. Push your commits to your fork on GitHub
 

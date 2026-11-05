@@ -405,4 +405,4 @@ And remove the debug console lines:
 - STDOUT_SERIAL SD3
 - STDOUT_BAUDRATE 57600
 
-This requires building the firmware locally. See the :ref:`building-the-code` Wiki section for build instructions.
+This requires building the firmware locally. See the :ref:`dev:building-the-code` Wiki section for build instructions.

@@ -93,7 +93,7 @@ In a nutshell, the 6-DOF pose data (**position** and **orientation**) and **conf
 .. note::
 
    The choice of Python is optional, and you can use any `other wrappers supported by librealsense <https://github.com/IntelRealSense/librealsense/tree/master/wrappers#wrappers-for-intel-realsense-technology>`__.
-   ROS users can find the equivalent article :ref:`here <ros-vio-tracking-camera>`.
+   ROS users can find the equivalent article :ref:`here <dev:ros-vio-tracking-camera>`.
 
 .. note::
 
@@ -110,13 +110,13 @@ The Realsense T265 is supported via `librealsense <https://github.com/IntelRealS
 - `Windows <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_windows.md>`__
 - `Raspbian <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_raspbian.md>`__
 
-For RPi running Ubuntu, the installation process for ``librealsense`` has been detailed in :ref:`this wiki <ros-vio-tracking-camera>`. Follow the instructions to install ``librealsense`` and ``pyrealsense2``. Since we are **not** using ROS, ``realsense-ros`` is not required.
+For RPi running Ubuntu, the installation process for ``librealsense`` has been detailed in :ref:`this wiki <dev:ros-vio-tracking-camera>`. Follow the instructions to install ``librealsense`` and ``pyrealsense2``. Since we are **not** using ROS, ``realsense-ros`` is not required.
 
 
 Python Packages Installation
 ============================
 
-- Establish serial connection: :ref:`Connect RPi to ArduPilot with MAVLink <raspberry-pi-via-mavlink>`.
+- Establish serial connection: :ref:`Connect RPi to ArduPilot with MAVLink <dev:raspberry-pi-via-mavlink>`.
 
   - If the connection between RPi-ArduPilot is established via the UART serial port, also `change the setting in /boot/config.txt <https://discuss.ardupilot.org/t/communicating-with-raspberry-pi-3b/39269/8>`__.
 
