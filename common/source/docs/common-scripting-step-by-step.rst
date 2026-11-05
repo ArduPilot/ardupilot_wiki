@@ -9,7 +9,7 @@ Running a Script in SITL
 ========================
 In Linux:
 
-#. Assuming you have setup the build and SITL environment, run SITL. See :ref:`using-sitl-for-ardupilot-testing`. For example:
+#. Assuming you have setup the build and SITL environment, run SITL. See :ref:`dev:using-sitl-for-ardupilot-testing`. For example:
 
 .. code-block:: bash
 

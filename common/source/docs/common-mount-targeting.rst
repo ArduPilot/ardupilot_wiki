@@ -197,7 +197,7 @@ To point the mount at a Location
 
 Companion Computer Mount Controls
 =================================
-MAVLink mount commands can also be sent from other sources, such as companion computers. See :ref:`mavlink-gimbal-mount` for a commands list and more information.
+MAVLink mount commands can also be sent from other sources, such as companion computers. See :ref:`dev:mavlink-gimbal-mount` for a commands list and more information.
 
 Cameras may also be controlled via MAVLink commands from a companion computer or other source.
 See :ref:`dev:mavlink-camera` documentation.

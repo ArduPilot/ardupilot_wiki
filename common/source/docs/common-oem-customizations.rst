@@ -16,7 +16,7 @@ ArduPilot provides several ways for an OEM to provide firmware on their products
 Customization Steps
 ===================
 
-This section assumes that the OEM has set up the build environment (:ref:`building-the-code`) and cloned the ArduPilot GitHub repo locally (:ref:`where-to-get-the-code`), to build its customized version of the firmware.
+This section assumes that the OEM has set up the build environment (:ref:`dev:building-the-code`) and cloned the ArduPilot GitHub repo locally (:ref:`dev:where-to-get-the-code`), to build its customized version of the firmware.
 
 #. Create a branch with the version of firmware you wish to base the customization upon. This will usually be the current stable version. To do this for ArduPlane Stable, for example, assuming you are already in the ArduPilot directory on your PC:
 

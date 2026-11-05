@@ -78,7 +78,7 @@ This feature allows any H7 cpu-based autopilot to connect to networks via a Seri
 
 .. note:: this cannot be used with autopilots having a built-in Ethernet MAC. Only one network connection per autopilot is allowed currently. Also, only one serial port on the autopilot can be configured for PPP.
 
-To enable this feature, it first must be present in the autopilot firmware. This can be done using the `Custom Firmware Build Server <https://firmware.ardupilot.org/>`__ or by building the code locally using the "\-\-enable-PPP" waf configuration option (See :ref:`building-the-code`)
+To enable this feature, it first must be present in the autopilot firmware. This can be done using the `Custom Firmware Build Server <https://firmware.ardupilot.org/>`__ or by building the code locally using the "\-\-enable-PPP" waf configuration option (See :ref:`dev:building-the-code`)
 
 .. image:: ../../../images/build-server-ppp.jpg
     :target: ../_images/build-server-ppp.jpg

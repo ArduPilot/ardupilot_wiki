@@ -4,7 +4,7 @@
 ACNS-CM4Pilot
 =============
 
-The ACNS-CM4Pilot is a low-cost and compact flight controller which integrates a Raspberry Pi CM4 onboard as its :ref:`Companion computer <companion-computers>`.
+The ACNS-CM4Pilot is a low-cost and compact flight controller which integrates a Raspberry Pi CM4 onboard as its :ref:`Companion computer <dev:companion-computers>`.
 
 .. image:: ../../../images/CM4pilot_inshell.jpg
     :target: ../_images/CM4pilot_inshell.jpg

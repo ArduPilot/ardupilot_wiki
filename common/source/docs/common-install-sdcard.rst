@@ -95,7 +95,7 @@ Several things can go wrong with the firmware flash, but some diagnostics are av
 Building the firmware yourself
 ==============================
 
-If the autopilot has an SD card capability but no SD Card flash-able firmware is present on the `Firmware build server <https://firmware.ardupilot.org>`__, you can build the firmware yourself. You must setup a build environment and then modify the autopilot's hwdefs to build a capable bootloader and an ``xxxx.abin`` firmware, see :ref:`building-the-code`.
+If the autopilot has an SD card capability but no SD Card flash-able firmware is present on the `Firmware build server <https://firmware.ardupilot.org>`__, you can build the firmware yourself. You must setup a build environment and then modify the autopilot's hwdefs to build a capable bootloader and an ``xxxx.abin`` firmware, see :ref:`dev:building-the-code`.
 
 In the ``hwdef-bl.dat`` file you must include this:
 
