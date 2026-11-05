@@ -463,7 +463,7 @@ See :ref:`Parachute<common-parachute>` section.
 Landing Gear
 ++++++++++++
 
-This output controls the landing gear servo(s) in Copter and Plane. See :ref:`landing-gear` for more information.
+This output controls the landing gear servo(s) in Copter and Plane. See :ref:`common-landing-gear` for more information.
 [/site]
 
 [site wiki="copter, sub"]

@@ -5,7 +5,7 @@
 GeoFencing
 ==========
 [/site]
-[site wiki="copter,rover"]
+[site wiki="copter,rover,sub"]
 ======
 Fences
 ======

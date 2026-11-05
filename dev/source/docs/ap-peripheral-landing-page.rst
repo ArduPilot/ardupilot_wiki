@@ -1,6 +1,6 @@
-.. _ap-peripheral-landing-page:
-
 .. image:: ../images/ap-periph-logo.png
+
+.. _ap-peripheral-landing-page:
 
 =========
 AP_Periph
