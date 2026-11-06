@@ -26,7 +26,7 @@ Used to calibrate or fine tune calibration of compass from flight log. This tool
 
 `Filter Review <https://firmware.ardupilot.org/Tools/WebTools/FilterReview/>`__
 ===============================================================================
-Gyro noise and filter configuration tool. Uses raw or batch IMU logs to show the vehicle's noise profile. Filters can be applied to logged pre-filter data to see the effect without the need to fly again. Advanced user tool, more instructions on use coming.
+Gyro noise and filter configuration tool. Uses raw or batch IMU logs to show the vehicle's noise profile. Filters can be applied to logged pre-filter data to see the effect without the need to fly again. Raw IMU logging is preferred; batch sampling is for autopilots that cannot keep up with raw logging. Advanced user tool, see `Using the Filter Review Tool <https://ardupilot.org/copter/docs/common-raw-imu-logging.html#using-the-filter-review-tool>`__ for step by step instructions.
 
 .. image:: ../../../images/FilterReview_Icon.png
 

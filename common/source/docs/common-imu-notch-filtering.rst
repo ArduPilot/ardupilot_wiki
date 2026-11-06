@@ -107,7 +107,7 @@ Always enable only the number of harmonic notch filters actually required and be
 Checking Notch Filter Effectiveness
 ===================================
 
-Once the notch filter(s) are setup, the effectiveness of them can be checked by again measuring the  frequency spectrum of the output of the filters (which are the new inputs to the IMU sensors). Refer back to the :ref:`common-imu-batchsampling`  or :ref:`common-raw-imu-logging` page for this.
+Once the notch filter(s) are setup, the effectiveness of them can be checked by again measuring the  frequency spectrum of the output of the filters (which are the new inputs to the IMU sensors). Refer back to the :ref:`common-imu-batchsampling`  or :ref:`common-raw-imu-logging` page for this. See :ref:`common-raw-imu-logging-filter-review` for step by step instructions on the Filter Review tool.
 
 .. _notch_options:
 
