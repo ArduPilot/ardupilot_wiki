@@ -214,17 +214,14 @@ Unless noted otherwise all connectors are JST GH.
 
 Two external I2C buses are brought out:
 
-============  ==============  ==============
-Connector     ArduPilot bus   MCU peripheral
-============  ==============  ==============
-GPS, POWER    1               I2C1
-I2C           2               I2C3
-============  ==============  ==============
+============  ==============
+Connector     I2C bus
+============  ==============
+GPS, POWER    1
+I2C           2
+============  ==============
 
-ArduPilot numbers buses in the order they are declared, not by peripheral, so
-the bus number to use in parameters such as :ref:`BARO_EXT_BUS<BARO_EXT_BUS>`
-can differ from the I2Cn peripheral the connector is wired to, as it does for
-the I2C connector. Bus 0 is the internal sensor bus and is not brought out.
+Bus 0 is the internal sensor bus and is not brought out.
 
 The safety switch, its LED and the buzzer are all on the GPS connector rather
 than on a connector of their own.
