@@ -41,4 +41,4 @@ Example setup below shown for first proximity sensor:
 - :ref:`PRX1_YAW_CORR <PRX1_YAW_CORR>` allows adjusting the forward direction of the SF40c.  One way to determine this angle is to use the Mission Planner's Setup >> Advanced, Proximity viewer and then walk around the vehicle and ensure that the sector distances shorten appropriately.
 - :ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>` and :ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>` parameters allow defining zones around the vehicle that should be ignored.  For example to avoid a 20deg area behind the vehicle, set :ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>` to 180 and :ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>` to 20.
 
-More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
+[site wiki="copter,plane,rover"]More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.[/site]

@@ -101,7 +101,9 @@ More Information
 
 * `ARK Flow MR documentation <https://arkelectron.gitbook.io/ark-documentation/sensors/ark-flow-mr/ardupilot-instructions>`_
 
+[site wiki="copter,plane,rover"]
 Testing and Setup
 -----------------
 
 See :ref:`common-optical-flow-sensor-setup`
+[/site]

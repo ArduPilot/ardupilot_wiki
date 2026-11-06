@@ -210,7 +210,7 @@ Devo Telemetry
    <td>18</td>
    <td>
 
-OpticalFlow, see :ref:`Optical Flow Sensors <common-optical-flow-sensors-landingpage>` 
+OpticalFlow[site wiki="copter,plane,rover"], see :ref:`Optical Flow Sensors <common-optical-flow-sensors-landingpage>` [/site] 
 
 .. raw:: html
 
@@ -419,7 +419,7 @@ FETtecOneWire, see :ref:`common-fettec-onewire`
    <td>39</td>
    <td>
 
-Torqeedo, see :ref:`common-torqeedo`
+Torqeedo[site wiki="rover"], see :ref:`common-torqeedo` [/site]
 
 .. raw:: html
 

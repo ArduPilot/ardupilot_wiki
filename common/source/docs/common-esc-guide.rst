@@ -4,7 +4,7 @@
 ESC (Electronic Speed Controls)
 ===============================
 
-ESCs are available for either brushed (DC) or brushless (AC) motors. :ref:`Brushed motors<common-brushed-motors>` are most commonly used in toy-class planes, multicopters, rovers, boats, and balance bots. Most other larger vehicles use brushless speed controllers.
+ESCs are available for either brushed (DC) or brushless (AC) motors. [site wiki="copter,rover"]:ref:`Brushed motors<common-brushed-motors>`\ [/site][site wiki="plane,sub"]Brushed motors[/site] are most commonly used in toy-class planes, multicopters, rovers, boats, and balance bots. Most other larger vehicles use brushless speed controllers.
 
 ESCs are available in a confusing array of communication protocols, programming capability, telemetry, and multi unit configurations. Below is a guide to some of the terms and capabilities.
 

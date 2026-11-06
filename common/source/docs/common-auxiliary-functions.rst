@@ -3,7 +3,7 @@
 ===================
 Auxiliary Functions
 ===================
-This page describes how to set up additional features which can be invoked from the transmitter's auxiliary function switches, from Mission Planner using the ``Aux function`` sub-tab of the ``Data`` tab, via MAVLink/Mission command (:ref:`MAV_CMD_DO_AUX_FUNCTION <mav_cmd_do_aux_function>`) or from external :ref:`buttons <common-buttons>`.
+This page describes how to set up additional features which can be invoked from the transmitter's auxiliary function switches, from Mission Planner using the ``Aux function`` sub-tab of the ``Data`` tab, via MAVLink/Mission command (:ref:`MAV_CMD_DO_AUX_FUNCTION <mav_cmd_do_aux_function>`) or from external [site wiki="copter,plane,rover"]:ref:`buttons <common-buttons>`\ [/site][site wiki="sub"]buttons[/site].
 
 Configuring which transmitter channel is used
 =============================================
@@ -394,11 +394,11 @@ Other functions are:
     Sprayer                               Turn on the :ref:`crop sprayer <sprayer>` when the switch is pulled high.
     Gripper                              | Operates the :ref:`gripper <common-gripper-landingpage>`. Switch pulled
                                          | low releases the gripper, high closes or grabs.
-    Parachute Enable                     | Enables the automatic release of the :ref:`parachute <common-parachute>`
+    Parachute Enable                     | Enables the automatic release of the [site wiki="copter,plane"]:ref:`parachute <common-parachute>` [/site][site wiki="rover,sub"]parachute[/site]
                                          | (this does not immediately trigger the release).
-    Parachute Release                    | Immediately triggers the release of the :ref:`parachute <common-parachute>`
+    Parachute Release                    | Immediately triggers the release of the [site wiki="copter,plane"]:ref:`parachute <common-parachute>` [/site][site wiki="rover,sub"]parachute[/site]
                                          | as long as the vehicle is not landed, or too low.
-    Parachute 3Pos                       | Switch pulled low disables the :ref:`parachute <common-parachute>`.
+    Parachute 3Pos                       | Switch pulled low disables the [site wiki="copter,plane"]:ref:`parachute <common-parachute>`\ [/site][site wiki="rover,sub"]parachute[/site].
                                          | The switch in the middle position enables the parachute for
                                          | automatic release. The switch pulled high triggers the release of the
                                          | parachute as long as the vehicle is not landed, or too low.
@@ -411,7 +411,7 @@ Other functions are:
     Retract Mount2                        Move the :ref:`camera mount <common-cameras-and-gimbals>` to its retracted position.
     Relay 1 On/Off                       | Switch pulled low turns off the first :ref:`relay <common-relay>`,
                                          | pulled high turns on the first relay.
-    Landing Gear                          Deploys or Retracts :ref:`Landing Gear <common-landing-gear>`.
+    Landing Gear                          Deploys or Retracts [site wiki="copter,plane"]:ref:`Landing Gear <common-landing-gear>`\ [/site][site wiki="rover,sub"]Landing Gear[/site].
     Lost Vehicle Alarm                    Plays the `lost copter alarm <https://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__ through the buzzer.
     Emergency Stop Motors                 Stops motors immediately (`video <https://www.youtube.com/watch?v=-Db4u8LJE5w>`__).
     Motor Interlock                      | Motor Interlock controls the way the heliRSC (motor throttle control)
@@ -433,7 +433,7 @@ Other functions are:
     Throw                                | Invokes the :ref:`Throw flight mode <throw-mode>` when the switch
                                          | goes high. Bringing the switch back to low will return the vehicle
                                          | to the mode indicated by the ch5 flight mode switch.
-    ADSB-Avoidance                       | When the switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>`
+    ADSB-Avoidance                       | When the switch is high, [site wiki="copter,plane"]:ref:`ADSB avoidance <common-ads-b-receiver>` [/site][site wiki="rover,sub"]ADSB avoidance[/site]
                                          | (avoidance of manned aircraft) is enabled, otherwise it's disabled.
     Precision Loiter                     | Turns on/off :ref:`Precision Loiter <precision-landing-and-loiter>`.
                                          | (i.e. holding position above a target in Loiter mode
@@ -610,7 +610,7 @@ Other functions are:
     VTOL Fwd Throttle disable             Overrides use of forward throttle in VTOL modes.
     Mount LRF Enable                      Enable(switch high) ranging updates.
     FlightMode Pause                      In Guided/Auto modes, pauses mission.
-    ICEngine start / stop                 Controls ICE engine starter output :ref:`ICE engines<common-ice>`.
+    ICEngine start / stop                 Controls ICE engine starter output [site wiki="plane"]:ref:`ICE engines<common-ice>`\ [/site][site wiki="copter,rover,sub"]ICE engines[/site].
     Autotune_test_gains                   After autotune,allows selecting tune(high) or pretune gains.
     VTOL QuickTune                        Autotunes QuadPlane VTOL PIDs, see :ref:`quicktune`.
     AHRS AutoTrim                         Auto Trim for Copter, see :ref:`autotrim`.
@@ -654,7 +654,7 @@ Other functions are:
     Mount2 Roll                           2nd camera gimbal's roll control.
     Mount2 Pitch                          2nd camera gimbal's pitch control.
     Mount2 Yaw                            2nd camera gimbal's yaw control.
-    Transmitter Tuning Channel           Copter tuning knob channel, see :ref:`common-transmitter-tuning`.
+    Transmitter Tuning Channel           Copter tuning knob channel[site wiki="copter,plane"], see :ref:`common-transmitter-tuning`\ [/site].
     Scripting RC channels                 Allows reading a dedicated RC channel for script inputs.
    ===================================== =======================================================================
 

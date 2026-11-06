@@ -13,7 +13,7 @@ Multicopter frame including motors, ESCs and propellers
 There are numerous frames, ESCs and motors available. Some components
 you might consider are discussed in 
 :ref:`Choosing a Multicopter Frame <choosing-a-frame>` and the 
-:ref:`Detailed Vehicle Builds <common-common-airframe-builds>`.
+:ref:`Detailed Vehicle Builds <plane:common-common-airframe-builds>`.
 
 Many other designs and configurations including Traditional Helicopters
 are also supported.

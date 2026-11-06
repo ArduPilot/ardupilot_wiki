@@ -44,7 +44,7 @@ For the last two options "carpet fixing tape" will be required to attach the foa
 .. image:: ../../../images/Vibration_3MFoam.jpg
     :target: ../_images/Vibration_3MFoam.jpg
 
-For vehicles with :ref:`internal combustion engines <common-ice>`, the autopilot should be mounted on an intermediate plate with `self adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass.
+For vehicles with [site wiki="plane"]:ref:`internal combustion engines <common-ice>`\ [/site][site wiki="copter,rover,sub"]internal combustion engines[/site], the autopilot should be mounted on an intermediate plate with `self adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass.
 
 Gel pads
 --------

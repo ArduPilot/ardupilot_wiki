@@ -4,7 +4,7 @@
 Hexsoon 77G MWW Radar
 =====================
 
-The `Hexsoon HS77G MMW radar <http://www.hexsoon.com/en/list-4-27.html>`__ (available in `20m <http://www.hexsoon.com/en/product/product-84-684.html>`__, `40m <http://www.hexsoon.com/en/product/product-87-23.html>`__, and `80m <http://www.hexsoon.com/en/product/product-7-973.html>`__ versions) are 77Ghz-band radar useful for horizontal :ref:`object avoidance <common-object-avoidance-landing-page>`
+The `Hexsoon HS77G MMW radar <http://www.hexsoon.com/en/list-4-27.html>`__ (available in `20m <http://www.hexsoon.com/en/product/product-84-684.html>`__, `40m <http://www.hexsoon.com/en/product/product-87-23.html>`__, and `80m <http://www.hexsoon.com/en/product/product-7-973.html>`__ versions) are 77Ghz-band radar useful for horizontal [site wiki="copter,plane,rover"]:ref:`object avoidance <common-object-avoidance-landing-page>` [/site][site wiki="sub"]object avoidance[/site]
 
 .. image:: ../../../images/hexsoon-radar-title.png
     :target: ../_images/hexsoon-radar-title.png
@@ -50,7 +50,7 @@ Up to 3 radar may be connected to a single autopilot.  Please follow these steps
 - :ref:`PRX3_TYPE <PRX3_TYPE>` = 18 (Hexsoon Radar)
 - :ref:`PRX3_YAW_CORR <PRX3_YAW_CORR>` = angle that the 3rd radar is mounted at relative to the forward direction of the vehicle
 
-More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
+[site wiki="copter,plane,rover"]More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.[/site]
 
 Testing the sensor
 ==================

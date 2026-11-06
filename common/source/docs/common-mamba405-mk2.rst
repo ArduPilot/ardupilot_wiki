@@ -10,7 +10,7 @@ Mamba F405 MK2 Flight Controller
 The Mamba F405 MK2 is an autopilot produced by
 `Diatone <https://www.diatone.us>`__.
 
-.. warning:: This autopilot does not have a barometer. An external barometer can be added, or operation with an alternate altitude sensor, such as GPS for outdoor use or rangefinder for indoor applications is supported, with caveats. In Plane, if GPS is lost, then the user should switch to a non-navigation, non-altitude holding mode immediately. In Copter, operation is allowed using GPS, but not recommended, due to the imprecision in altitude hold modes. Bear in mind if GPS fails and the vehicle is using it for altitude information, a crash can eventually result due to lack of accurate altitude information.See :ref:`common-gps-for-alt` for more information.
+.. warning:: This autopilot does not have a barometer. An external barometer can be added, or operation with an alternate altitude sensor, such as GPS for outdoor use or rangefinder for indoor applications is supported, with caveats. In Plane, if GPS is lost, then the user should switch to a non-navigation, non-altitude holding mode immediately. In Copter, operation is allowed using GPS, but not recommended, due to the imprecision in altitude hold modes. Bear in mind if GPS fails and the vehicle is using it for altitude information, a crash can eventually result due to lack of accurate altitude information.See [site wiki="plane,copter,rover,blimp"]:ref:`common-gps-for-alt`\ [/site][site wiki="sub"]Using GPS for Altitude Sensing[/site] for more information.
 
 Features
 ========
@@ -28,7 +28,7 @@ This autopilot does not include a barometer sensor for altitude information and 
 
 Plane
 -----
-An altitude source must be provided for any operation. Attach a GPS and follow the instructions in :ref:`common-gps-for-alt`.
+An altitude source must be provided for any operation. Attach a GPS and follow the instructions in [site wiki="plane,copter,rover,blimp"]:ref:`common-gps-for-alt`\ [/site][site wiki="sub"]Using GPS for Altitude Sensing[/site].
 
 Copter
 ------

@@ -4,7 +4,7 @@
 Hexsoon 24G Radar
 =================
 
-The `Hexsoon 24G radar <http://www.hexsoon.com/en/list-4-27.html>`__ (available in `20m <http://www.hexsoon.com/en/product/product-96-167.html>`__, `100m <http://www.hexsoon.com/en/product/product-88-685.html>`__, and `200m <http://www.hexsoon.com/en/product/product-85-346.html>`__ versions) are 24Ghz-band radar useful for :ref:`surface tracking <copter:terrain-following-manual-modes>`, :ref:`terrain following <copter:terrain-following>` and :ref:`object avoidance <common-object-avoidance-landing-page>`
+The `Hexsoon 24G radar <http://www.hexsoon.com/en/list-4-27.html>`__ (available in `20m <http://www.hexsoon.com/en/product/product-96-167.html>`__, `100m <http://www.hexsoon.com/en/product/product-88-685.html>`__, and `200m <http://www.hexsoon.com/en/product/product-85-346.html>`__ versions) are 24Ghz-band radar useful for :ref:`surface tracking <copter:terrain-following-manual-modes>`, :ref:`terrain following <copter:terrain-following>` and [site wiki="copter,plane,rover"]:ref:`object avoidance <common-object-avoidance-landing-page>` [/site][site wiki="sub"]object avoidance[/site]
 
 .. image:: ../../../images/rangefinder-hexsoon-24g.png
     :target: ../_images/rangefinder-hexsoon-24g.png

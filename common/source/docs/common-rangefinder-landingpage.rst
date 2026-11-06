@@ -4,7 +4,7 @@
 Rangefinders (landing page)
 ===========================
 
-Copter/Plane/Rover support a number of different rangefinders including Lidars (which use lasers or infra-red beams for distance measurements), 360 degree Lidars (which can detect obstacles in multiple directions) and Sonars (which use ultrasonic sound). This category also includes Maxbotix Sonar and Pulsed Light LED range finders. These devices can be used for measuring distance near to  the ground for precision landings and altitude control, water depth, or object distance as proximity sensors for :ref:`Object Avoidance<common-object-avoidance-landing-page>`. Vision systems (see :ref:`common-realsense-depth-camera`) can also be used for Object Avoidance.
+Copter/Plane/Rover support a number of different rangefinders including Lidars (which use lasers or infra-red beams for distance measurements), 360 degree Lidars (which can detect obstacles in multiple directions) and Sonars (which use ultrasonic sound). This category also includes Maxbotix Sonar and Pulsed Light LED range finders. These devices can be used for measuring distance near to  the ground for precision landings and altitude control, water depth, or object distance as proximity sensors for [site wiki="copter,plane,rover"]:ref:`Object Avoidance<common-object-avoidance-landing-page>`\ [/site][site wiki="sub"]Object Avoidance[/site]. Vision systems[site wiki="copter,rover"] (see :ref:`common-realsense-depth-camera`)[/site] can also be used for Object Avoidance.
 
 A forward facing rangefinders can also be used for Obstacle Avoidance. See Rangefinder :ref:`Setup Overview <common-rangefinder-setup>` to know more.
 

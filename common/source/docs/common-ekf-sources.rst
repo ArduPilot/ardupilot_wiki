@@ -28,7 +28,7 @@ The :ref:`EK3_SRC1_YAW<EK3_SRC1_YAW>` source options are:
 - Option 2: GPS is used with GPS that can supply yaw (see :ref:`common-gps-for-yaw`)
 - Option 3: GPS with compass fallback is the same as GPS option, but while it has GPS yaw available it learns compass offsets to make the compass yaw match the GPS yaw. This means that if you lose GPS yaw while flying then the compass is ready to takeover immediately, with a smooth change from GPS yaw to compass yaw.
 - Option 6: ExternalNav is used when a companion device is providing yaw information
-- Option 8: GSF (Gaussian Sum Filter) provides yaw information based on GPS velocity and position changes and Plane will automatically use this in :ref:`compass-less <common-compassless>` configurations,even if not selected. Copter requires this to be set explicitly in these configurations.
+- Option 8: GSF (Gaussian Sum Filter) provides yaw information based on GPS velocity and position changes and Plane will automatically use this in [site wiki="copter,plane,rover,blimp"]:ref:`compass-less <common-compassless>`\ [/site][site wiki="sub"]compass-less[/site] configurations,even if not selected. Copter requires this to be set explicitly in these configurations.
 
 Source Switching
 ================

@@ -47,7 +47,7 @@ Specifications
    - 8.5g
 
 
-.. warning:: This board has no compass and no way to connect an external compass. Applications requiring accurate heading information must rely on ArduPilots :ref:`common-compassless` operation.
+.. warning:: This board has no compass and no way to connect an external compass. Applications requiring accurate heading information must rely on ArduPilots [site wiki="plane,copter,rover,blimp"]:ref:`common-compassless`\ [/site][site wiki="sub"]Compass-less Operation[/site] operation.
 
 Barometer-less Operation
 ========================
@@ -56,7 +56,7 @@ Depending on version, this autopilot may not include a barometer sensor for alti
 
 Plane
 -----
-An altitude source must be provided for any operation. Attach a GPS and follow the instructions in :ref:`common-gps-for-alt`.
+An altitude source must be provided for any operation. Attach a GPS and follow the instructions in [site wiki="plane,copter,rover,blimp"]:ref:`common-gps-for-alt`\ [/site][site wiki="sub"]Using GPS for Altitude Sensing[/site].
 
 Copter
 ------

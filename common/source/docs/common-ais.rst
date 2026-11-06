@@ -60,7 +60,7 @@ dAISy2 Configuration and Testing
 Avoidance
 ---------
 
-When path-planning based object avoidance is enabled, AIS vessel positions are automatically pushed into the :ref:`Object Avoidance Database <common-oa-bendyruler>` so that the vehicle can plan routes around them.
+When path-planning based object avoidance is enabled, AIS vessel positions are automatically pushed into the [site wiki="copter,rover"]:ref:`Object Avoidance Database <common-oa-bendyruler>`\ [/site][site wiki="plane,sub"]Object Avoidance Database[/site] so that the vehicle can plan routes around them.
 
 The database and path planning then operate as they would with any other obstacle source (lidar, proximity sensor, etc.). However, as AIS messages are sent infrequently a much larger :ref:`OA_DB_EXPIRE <OA_DB_EXPIRE>` value is needed so the database does not forget about a vessel in between AIS messages being received. A value of at least 600 seconds should be used (10 mins).
 

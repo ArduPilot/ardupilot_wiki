@@ -29,3 +29,4 @@ Once the rc receiver is attached to the autopilot and configured as described in
     :hidden:
 
     common-rc-transmitter-flight-mode-configuration
+    common-radio-control-calibration

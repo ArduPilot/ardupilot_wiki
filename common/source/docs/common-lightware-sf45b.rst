@@ -34,7 +34,7 @@ Example setup below shown for first proximity sensor:
 - :ref:`PRX1_YAW_CORR <PRX1_YAW_CORR>` allows adjusting for the forward direction of the lidar.  For example, if the lidar is facing forward this parameter can be left as 0.  If facing backwards it should be set to 180.
 - :ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>` and :ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>` parameters allow defining zones around the vehicle that should be ignored.  For example to avoid a 20deg area to the right, set :ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>` to 90 and :ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>` to 20.
 
-More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
+[site wiki="copter,plane,rover"]More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.[/site]
 
 Video
 -----
