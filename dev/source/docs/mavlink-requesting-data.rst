@@ -6,7 +6,7 @@ Requesting Data From The Autopilot
 
 The ground station or companion computer can request the data it wants (and the rate) using one of the following methods:
 
-   - Set the ``SRx_`` parameters to cause the autopilot to pro-actively send groups of messages on start-up.  This method is easy to set-up for a small number of drones but is not recommended for most applications
+   - Set the ``MAVn_`` stream rate parameters (``SRx_`` before ArduPilot 4.7) to cause the autopilot to pro-actively send groups of messages on start-up.  This method is easy to set-up for a small number of drones but is not recommended for most applications
    - Send `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_DATA_STREAM>`__ messages to set the rate for groups of messages
    - Send a `SET_MESSAGE_INTERVAL <https://mavlink.io/en/messages/common.html#MAV_CMD_SET_MESSAGE_INTERVAL>`__ command (within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message) to precisely control the rate of an individual message.  Note this is only supported on ArduPilot 4.0 and higher
    - Send a `REQUEST_MESSAGE <https://mavlink.io/en/messages/common.html#MAV_CMD_REQUEST_MESSAGE>`__ command (within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message) to request a single instance of a message.  Note this is only supported on ArduPilot 4.0 and higher
@@ -21,20 +21,22 @@ More details on the above methods can be found below.
 
    If you find your message rates are reverting to some fixed value after you set them, see the "Rates Reverting to some Fixed value" section at the bottom of this page
 
-Using SRx Parameters
---------------------
+Using MAVn Parameters
+---------------------
 
-Setting the ``SRx_`` parameters (and then rebooting the autopilot) will cause the autopilot to pro-actively send groups of messages to the ground station.  This is not the recommended method because the ground station has no way to determine what "x" should be.
+Setting the ``MAVn_`` stream rate parameters (and then rebooting the autopilot) will cause the autopilot to pro-actively send groups of messages to the ground station.  This is not the recommended method because the ground station has no way to determine what "n" should be.
+
+Before ArduPilot 4.7 these were the ``SRx_`` parameters, numbered from 0 instead of 1, so ``SR0_`` is now ``MAV1_``, ``SR1_`` is now ``MAV2_`` and so on (see :ref:`Parameter Name Changes <copter:common-param-name-changes>`).  On Copter every group defaults to 0, so nothing is streamed until a rate is set or requested.
 
 - Connect to the autopilot with a ground station
-- Determine which telemetry connection is being used.  For example if the ground station is connected to the autopilot's "Telem1" port (perhaps using a wifi or telemetry radio) then the ``SR1_`` parameters should be modified
-- Set the ``SRx_`` parameter to the rate (in Hz) you wish the group of messages to be sent.  The message groups are defined by the `STREAM_xxx_msgs arrays in GCS_MAVLink_Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/GCS_MAVLink/GCS_MAVLink_Parameters.cpp#L259-L440>`__, including vehicle-specific conditions.  Below is the historical list of messages by group for Copter-4.0:
+- Determine which telemetry connection is being used.  For example if the ground station is connected to the autopilot's "Telem1" port (perhaps using a wifi or telemetry radio) then the ``MAV2_`` parameters (``SR1_`` before 4.7) should be modified
+- Set the ``MAVn_`` parameter to the rate (in Hz) you wish the group of messages to be sent.  The message groups are defined by the `STREAM_xxx_msgs arrays in GCS_MAVLink_Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/GCS_MAVLink/GCS_MAVLink_Parameters.cpp>`__, including vehicle-specific conditions.  Below is the historical list of messages by group for Copter-4.0:
 
-    - SRx_ADSB
+    - MAVn_ADSB
 
       - `ADSB_VEHICLE <https://mavlink.io/en/messages/common.html#ADSB_VEHICLE>`__
 
-    - SRx_EXT_STAT
+    - MAVn_EXT_STAT
 
       - `SYS_STATUS <https://mavlink.io/en/messages/common.html#SYS_STATUS>`__
       - `POWER_STATUS <https://mavlink.io/en/messages/common.html#POWER_STATUS>`__
@@ -48,7 +50,7 @@ Setting the ``SRx_`` parameters (and then rebooting the autopilot) will cause th
       - `FENCE_STATUS <https://mavlink.io/en/messages/common.html#FENCE_STATUS>`__
       - `POSITION_TARGET_GLOBAL_INT <https://mavlink.io/en/messages/common.html#POSITION_TARGET_GLOBAL_INT>`__
 
-    - SRx_EXTRA1
+    - MAVn_EXTRA1
 
       - `ATTITUDE <https://mavlink.io/en/messages/common.html#ATTITUDE>`__
       - `SIMSTATE <https://mavlink.io/en/messages/common.html#SIMSTATE>`__
@@ -56,11 +58,11 @@ Setting the ``SRx_`` parameters (and then rebooting the autopilot) will cause th
       - `AHRS3 <https://mavlink.io/en/messages/common.html#AHRS3>`__
       - `PID_TUNING <https://mavlink.io/en/messages/common.html#PID_TUNING>`__
 
-    - SRx_EXTRA2
+    - MAVn_EXTRA2
 
       - `VFR_HUD <https://mavlink.io/en/messages/common.html#VFR_HUD>`__
 
-    - SRx_EXTRA3
+    - MAVn_EXTRA3
 
       - `AHRS <https://mavlink.io/en/messages/common.html#AHRS>`__
       - `HWSTATUS <https://mavlink.io/en/messages/ardupilotmega.html#HWSTATUS>`__
@@ -82,16 +84,16 @@ Setting the ``SRx_`` parameters (and then rebooting the autopilot) will cause th
       - `ESC_TELEMETRY_5_TO_8 <https://mavlink.io/en/messages/ardupilotmega.html#ESC_TELEMETRY_5_TO_8>`__
       - `ESC_TELEMETRY_9_TO_12 <https://mavlink.io/en/messages/ardupilotmega.html#ESC_TELEMETRY_9_TO_12>`__
 
-    - SRx_PARAMS - should not be changed
+    - MAVn_PARAMS - should not be changed
 
-    - SRx_POSITION
+    - MAVn_POSITION
 
       - `GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#GLOBAL_POSITION_INT>`__
       - `LOCAL_POSITION_NED <https://mavlink.io/en/messages/common.html#LOCAL_POSITION_NED>`__
 
-    - SRx_RAW_CTRL (Not Used)
+    - MAVn_RAW_CTRL (Not Used)
 
-    - SRx_RAW_SENS
+    - MAVn_RAW_SENS
 
       - `RAW_IMU <https://mavlink.io/en/messages/common.html#RAW_IMU>`__
       - `SCALED_IMU2 <https://mavlink.io/en/messages/common.html#SCALED_IMU2>`__
@@ -101,7 +103,7 @@ Setting the ``SRx_`` parameters (and then rebooting the autopilot) will cause th
       - `SCALED_PRESSURE3 <https://mavlink.io/en/messages/common.html#SCALED_PRESSURE3>`__
       - `SENSOR_OFFSETS <https://mavlink.io/en/messages/ardupilotmega.html#SENSOR_OFFSETS>`__
 
-    - SRx_RC_CHAN
+    - MAVn_RC_CHAN
 
       - `SERVO_OUTPUT_RAW <https://mavlink.io/en/messages/common.html#SERVO_OUTPUT_RAW>`__
       - `RC_CHANNELS <https://mavlink.io/en/messages/common.html#RC_CHANNELS>`__
@@ -116,7 +118,7 @@ Send a `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_
 
 - target_system : the MAVLink system id of the vehicle (normally "1")
 - target_components : normally "0"
-- req_stream_id : 0 to 12 corresponding to the group of messages (see `MAV_DATA_STREAM <https://mavlink.io/en/messages/common.html#MAV_DATA_STREAM>`__).  See the "Using SRx Parameters" section above to determine exactly which messages are in each group
+- req_stream_id : 0 to 12 corresponding to the group of messages (see `MAV_DATA_STREAM <https://mavlink.io/en/messages/common.html#MAV_DATA_STREAM>`__).  See the "Using MAVn Parameters" section above to determine exactly which messages are in each group
 - req_message_rate : the rate (in hz) of the message
 - start_stop : "1" to start sending, "0" to stop
 
@@ -274,4 +276,4 @@ Most Ground Control Stations have a control to disable this behaviour.  For exam
 - If using Mission Planner, open the Config, Planner screen and set the "Telemetry Rates" dropdowns to -1
 - If using QGroundControl, open Application Settings, Telemetry and move the "Controlled By vehicle" slider to the right
 
-If adjusting the GCS behaviour is impossible, set the appropriate ``SERIALn_OPTIONS`` parameter's bit 12 ("Ignore Streamrate") to ignore attempts by the GCS to set message rates via streamrate commands.  For example if Serial1/Telem1's rates are being inconveniently adjusted by the GCS, set the :ref:`SERIAL1_OPTIONS <SERIAL1_OPTIONS>` parameter value
+If adjusting the GCS behaviour is impossible, set bit 2 ("Ignore Streamrate", a value of 4) of the appropriate ``MAVn_OPTIONS`` parameter to ignore attempts by the GCS to set message rates via streamrate commands.  For example if Serial1/Telem1 is the second MAVLink port and its rates are being inconveniently adjusted by the GCS, set bit 2 of the :ref:`MAV2_OPTIONS <copter:MAV2_OPTIONS>` parameter (if that bit is clear, add 4 to its value).  Before ArduPilot 4.7 this option was bit 12 (a value of 4096) of the ``SERIALn_OPTIONS`` parameter for that port, for example :ref:`SERIAL1_OPTIONS <copter:SERIAL1_OPTIONS>`.
