@@ -104,7 +104,7 @@ The most commonly used hal functions are:
    sleep for a short time
 -  hal.gpio->pinMode(), hal.gpio->read() and hal.gpio->write() for
    accessing GPIO pins
--  I2C access via hal.i2c
+-  I2C access via hal.i2c_mgr
 -  SPI access via hal.spi
 
 Go and have a look in the libraries/AP_HAL directory now for the full
