@@ -14,7 +14,7 @@ Overview
 
 When RTL mode is selected, the copter will return to the home location, or if :ref:`rally points <common-rally-points>` have been setup, the closest rally point.
 
-The copter will first rise a minimum of :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>` or to  :ref:`RTL_ALT_M<RTL_ALT_M>`, whichever is higher, before returning home.  The default value for :ref:`RTL_ALT_M<RTL_ALT_M>` is 15m. Under no circumstances will this altitude be below 30cm.
+The copter will first rise a minimum of :ref:`RTL_CLIMB_MIN_M<RTL_CLIMB_MIN_M>` or to  :ref:`RTL_ALT_M<RTL_ALT_M>`, whichever is higher, before returning home.  The default value for :ref:`RTL_ALT_M<RTL_ALT_M>` is 15m. Under no circumstances will this altitude be below 30cm.
 
 The altitude reference frame is set by either the rally point, if proceeding to one of those, or by :ref:`RTL_ALT_TYPE<RTL_ALT_TYPE>` to select relative to HOME, or Terrain. If :ref:`WP_RFND_USE<WP_RFND_USE>` = 1 and Terrain is selected, then rangefinder will be used.
 
@@ -104,18 +104,18 @@ Options (User Adjustable Parameters)
       setting (see :ref:`land-mode`) regardless of this option.
 
 -  :ref:`LAND_SPD_MS<LAND_SPD_MS>`:
-   The descent speed for the final stage of landing in centimeters per
+   The descent speed for the final stage of landing in meters per
    second.
 
    -  The landing speed is adjustable from 0.3 to 2 meters per
       second.
 
--  :ref:`RTL_CLIMB_MIN <RTL_CLIMB_MIN>`:
+-  :ref:`RTL_CLIMB_MIN_M <RTL_CLIMB_MIN_M>`:
    The vehicle will climb at least this many meters at the first stage
    of the RTL.  By default this value is zero.
 
--  :ref:`RTL_SPEED <RTL_SPEED>`:
-   The horizontal speed (in cm/s) at which the vehicle will return to
+-  :ref:`RTL_SPEED_MS <RTL_SPEED_MS>`:
+   The horizontal speed (in m/s) at which the vehicle will return to
    home.  By default this value is zero meaning it will use
    :ref:`WP_SPD<WP_SPD>`.
 

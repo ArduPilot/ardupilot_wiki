@@ -505,10 +505,10 @@ Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) 
 | ``attitude 1 0 0 0 0.5``                 | hold level attitude with zero climb rate (if GUID_OPTIONS=0)   |
 |                                          | OR hold level attitude and 50% throttle (if GUID_OPTIONS=8)    |
 +------------------------------------------+----------------------------------------------------------------+
-| ``attitude 1 0 0 0 1.0``                 | climb at WPNAV_SPEED_UP (if GUID_OPTIONS=0) OR climb at 100%   |
+| ``attitude 1 0 0 0 1.0``                 | climb at WP_SPD_UP (if GUID_OPTIONS=0) OR climb at 100%        |
 |                                          | throttle (if GUID_OPTIONS=8)                                   |
 +------------------------------------------+----------------------------------------------------------------+
-| ``attitude 1 0 0 0 0.0``                 | descend at WPNAV_SPEED_DN (if GUID_OPTIONS=0) OR descend at 0% |
+| ``attitude 1 0 0 0 0.0``                 | descend at WP_SPD_DN (if GUID_OPTIONS=0) OR descend at 0%      |
 |                                          | throttle (if GUID_OPTIONS=8)                                   |
 +------------------------------------------+----------------------------------------------------------------+
 | ``attitude 0.9961947 0.0871557 0 0 0.5`` | roll at 10deg with zero climb rate (if GUID_OPTIONS=0) OR roll |
