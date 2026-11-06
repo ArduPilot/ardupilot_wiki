@@ -56,7 +56,7 @@ The default RC input is configured on the UART6 RX6 input and can be used for al
 
 OSD
 ===
-MicoAir743-AIO supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort can be used simultaneously and is pre-configured on SERIAL2 but can be supported on any spare UART. See :ref:`common-msp-osd-overview-4.2` for more info.
+MicoAir743-AIO supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort can be used simultaneously and is pre-configured on SERIAL2 but can be supported on any spare UART. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 VTX Support
 ===========

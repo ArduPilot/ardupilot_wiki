@@ -106,7 +106,7 @@ The JST-GH-6P connector supports a standard DJI HD VTX connection. Pin 1 of the 
 Camera Control Pin
 ==================
 
-The Cam pin is GPIO 84 and is set to be controlled by RELAY4 by default. Relay pins can be controlled either by an RC switch or GCS command. See :ref:`common-relay` for more information.
+The Cam pin is GPIO 84 and is set to be controlled by RELAY4 by default. Relay pins can be controlled either by an RC switch or GCS command. See [site wiki="plane,copter,rover,sub"]:ref:`common-relay`\ [/site][site wiki="blimp"]:ref:`copter:common-relay`\ [/site] for more information.
 
 PWM Output
 ==========
@@ -133,7 +133,7 @@ to use DShot.
 LED Output
 ==========
 
-The LED output (PWM9) is configured by default to support :ref:`NeoPixel LED strings<common-serial-led-neopixel>`.
+The LED output (PWM9) is configured by default to support [site wiki="plane,copter,rover,sub"]:ref:`NeoPixel LED strings<common-serial-led-neopixel>`\ [/site][site wiki="blimp"]:ref:`NeoPixel LED strings<copter:common-serial-led-neopixel>`\ [/site].
 
 Battery Monitoring
 ==================

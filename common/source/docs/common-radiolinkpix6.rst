@@ -523,7 +523,7 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 OSD Support
 ===========
 
-The RadiolinkPIX6 support using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort is supported using UART3 or any other free UART. See :ref:`common-msp-osd-overview-4.2` for more info.
+The RadiolinkPIX6 support using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort is supported using UART3 or any other free UART. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 PWM Outputs
 ===========

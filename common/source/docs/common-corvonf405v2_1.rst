@@ -51,7 +51,7 @@ The default RC input is configured on the UART6_RX input which is inverted from 
 
 OSD Support
 ===========
-The CORVON405V2.1 supports analog OSD via its internal MAX7456. Simultaneous external HD OSD support is preconfigured on SERIAL6. See :ref:`common-msp-osd-overview-4.2` for more info.
+The CORVON405V2.1 supports analog OSD via its internal MAX7456. Simultaneous external HD OSD support is preconfigured on SERIAL6. See [site wiki="plane,rover,copter,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 VTX Support
 ===========

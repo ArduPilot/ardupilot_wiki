@@ -122,7 +122,7 @@ Where to Buy
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected in order for autonomous modes to function.
+This board does not include a GPS or compass so an [site wiki="plane,copter,rover,sub"]:ref:`external GPS/compass <common-positioning-landing-page>`\ [/site][site wiki="blimp"]:ref:`external GPS/compass <copter:common-positioning-landing-page>`\ [/site] should be connected in order for autonomous modes to function.
 
 If the GPS is attached to UART2 TX/RX and powered from the adjacent 4.5V pins, it will be powered when connected via USB, as would the RX if powered from the adjacent 4.5V pins to UART6.
 
@@ -161,7 +161,7 @@ Firmware
 Firmware for these boards can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "MatekH743".
 
-Firmware that supports :ref:`bi-directional Dshot <bidir-dshot>` is labeled "MatekH743-bdshot".
+Firmware that supports [site wiki="plane,copter,rover,sub"]:ref:`bi-directional Dshot <bidir-dshot>`\ [/site][site wiki="blimp"]:ref:`bi-directional Dshot <copter:bidir-dshot>`\ [/site] is labeled "MatekH743-bdshot".
 
 .. warning:: The bi-directional Dshot firmware redefines the Rx6 pin as a pure UART input, and cannot support PPM. It also requires that the :ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` = 23 and that :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>` = 3 for use with SBUS to provide inversion. In addition, outputs 9-12 no longer support normal Dshot. Only outputs 1-8 are bi-directional Dshot capable, with 1-2,3-4,5-6,7-8 in groups. Finally, the buzzer in the USB dongle will no longer play musical tones, only simple buzzer beeps.
 
@@ -171,6 +171,6 @@ Initial firmware load can be done with DFU by plugging in USB with the bootloade
 
 Once the initial firmware is loaded you can update the firmware using any ArduPilot ground station software. Updates should be done with the "\*.apj" firmware files.
 
-.. note:: If you experience issues with the device ceasing to initialize after power up, see :ref:`common-when-problems-arise` section for H7 based autopilots for a possible solution.
+.. note:: If you experience issues with the device ceasing to initialize after power up, see [site wiki="plane,copter,rover,sub"]:ref:`common-when-problems-arise`\ [/site][site wiki="blimp"]:ref:`copter:common-when-problems-arise`\ [/site] section for H7 based autopilots for a possible solution.
 
 [copywiki destination="plane,copter,rover,blimp,sub"]

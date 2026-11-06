@@ -236,7 +236,7 @@ PPM encoders
 ============
 
 A `PPM Encoder <https://www.amazon.com/s?k=ppm+encoder>`__ will
-allow you to use any older style RC receiver that has only PWM outputs for each channel instead of an SBUS or PPM output. See :ref:`common-ppm-encoders-new` for more information. This protocol is not being included on many new autopilots and is being slowly obsoleted.
+allow you to use any older style RC receiver that has only PWM outputs for each channel instead of an SBUS or PPM output. See [site wiki="plane,copter,rover,sub"]:ref:`common-ppm-encoders-new`\ [/site][site wiki="blimp"]:ref:`copter:common-ppm-encoders-new`\ [/site] for more information. This protocol is not being included on many new autopilots and is being slowly obsoleted.
 
 .. toctree::
    :hidden:

@@ -534,7 +534,7 @@ Then reboot.
 
 DroneCAN capability
 ===================
-There are 2 CAN ports which allow connecting two independent CAN bus outputs. Each of these can have multiple CAN peripheral devices connected. A CAN splitter board is included with the autopilot. Please refer to :ref:`CAN Bus Setup <common-canbus-setup-advanced>` for information on how to configure CAN on the board. 
+There are 2 CAN ports which allow connecting two independent CAN bus outputs. Each of these can have multiple CAN peripheral devices connected. A CAN splitter board is included with the autopilot. Please refer to [site wiki="plane,copter,rover,sub"]:ref:`CAN Bus Setup <common-canbus-setup-advanced>`\ [/site][site wiki="blimp"]:ref:`CAN Bus Setup <copter:common-canbus-setup-advanced>`\ [/site] for information on how to configure CAN on the board. 
 
 Where to Buy
 ============

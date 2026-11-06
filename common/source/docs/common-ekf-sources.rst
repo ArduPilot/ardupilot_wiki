@@ -25,17 +25,17 @@ The :ref:`EK3_SRC1_POSZ<EK3_SRC1_POSZ>` source options are:
 The :ref:`EK3_SRC1_YAW<EK3_SRC1_YAW>` source options are:
 
 - Option 1: Compass is the normal default.
-- Option 2: GPS is used with GPS that can supply yaw (see :ref:`common-gps-for-yaw`)
+- Option 2: GPS is used with GPS that can supply yaw (see [site wiki="copter,plane,rover,sub"]:ref:`common-gps-for-yaw`\ [/site][site wiki="blimp"]:ref:`copter:common-gps-for-yaw`\ [/site])
 - Option 3: GPS with compass fallback is the same as GPS option, but while it has GPS yaw available it learns compass offsets to make the compass yaw match the GPS yaw. This means that if you lose GPS yaw while flying then the compass is ready to takeover immediately, with a smooth change from GPS yaw to compass yaw.
 - Option 6: ExternalNav is used when a companion device is providing yaw information
-- Option 8: GSF (Gaussian Sum Filter) provides yaw information based on GPS velocity and position changes and Plane will automatically use this in [site wiki="copter,plane,rover,blimp"]:ref:`compass-less <common-compassless>`\ [/site][site wiki="sub"]compass-less[/site] configurations,even if not selected. Copter requires this to be set explicitly in these configurations.
+- Option 8: GSF (Gaussian Sum Filter) provides yaw information based on GPS velocity and position changes and Plane will automatically use this in [site wiki="copter,plane,rover"]:ref:`compass-less <common-compassless>`\ [/site][site wiki="blimp"]:ref:`compass-less <copter:common-compassless>`\ [/site][site wiki="sub"]compass-less[/site] configurations,even if not selected. Copter requires this to be set explicitly in these configurations.
 
 Source Switching
 ================
 
 Three sets of EKF position and velocity source parameters are provided and by default the 1st set is used (e.g. the _SRC1 set).
 
-The active set can be selected via an :ref:`RC auxiliary switch <common-auxiliary-functions>` (e.g. set ``RCx_OPTION`` to "90" / "EKF Source Set").
+The active set can be selected via an [site wiki="copter,plane,rover,sub"]:ref:`RC auxiliary switch <common-auxiliary-functions>`\ [/site][site wiki="blimp"]:ref:`RC auxiliary switch <copter:common-auxiliary-functions>`\ [/site] (e.g. set ``RCx_OPTION`` to "90" / "EKF Source Set").
 
 Ground stations or companion computers may set the source by sending a `MAV_CMD_SET_EKF_SOURCE_SET  <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_SET_EKF_SOURCE_SET>`__ mavlink command but no GCSs are currently known to implement this.
 
@@ -78,6 +78,6 @@ and OpticalFLow as the second source:
 - :ref:`EK3_SRC2_POSXY<EK3_SRC2_POSXY>` = 0 (None, position is relative when using OpticalFlow)
 - :ref:`EK3_SRC2_VELXY<EK3_SRC2_VELXY>` = 5 (OpticalFlow for XY velocity)
 
-and use an :ref:`auxiliary RC switch <common-auxiliary-functions>` to switch between the two.
+and use an [site wiki="copter,plane,rover,sub"]:ref:`auxiliary RC switch <common-auxiliary-functions>`\ [/site][site wiki="blimp"]:ref:`auxiliary RC switch <copter:common-auxiliary-functions>`\ [/site] to switch between the two.
 
 [copywiki destination="copter,plane,rover,sub,blimp"]

@@ -32,12 +32,12 @@ Ethernet Connectivity
 
 Instead of using a UART serial connection to connect the autopilot to the AirUnit, an Ethernet virtual serial connection may be used
 
-An example of the setup of the Herelink in a networked ArduPilot vehicle system is detailed in :ref:`common-ethernet-vehicle` but a short form of the instructions is below
+An example of the setup of the Herelink in a networked ArduPilot vehicle system is detailed in [site wiki="plane,copter,rover,sub"]:ref:`common-ethernet-vehicle`\ [/site][site wiki="blimp"]:ref:`copter:common-ethernet-vehicle`\ [/site] but a short form of the instructions is below
 
 .. image:: ../../../images/herelink-botblox-ethernet.png
     :target: ../_images/herelink-botblox-ethernet.png
 
-- Connect the AirUnit and autopilot using an :ref:`ethernet adapter <common-ethernet-adapters>`.  The wiring for the AirUnit when used with a BotBlox SwitchBox is shown above but CubePilot's CubeLAND 8-Port Switch can also be used
+- Connect the AirUnit and autopilot using an [site wiki="plane,copter,rover,sub"]:ref:`ethernet adapter <common-ethernet-adapters>`\ [/site][site wiki="blimp"]:ref:`ethernet adapter <copter:common-ethernet-adapters>`\ [/site].  The wiring for the AirUnit when used with a BotBlox SwitchBox is shown above but CubePilot's CubeLAND 8-Port Switch can also be used
 - Ensure the AirUnit and autopilot are on the same subnet (e.g the first 3 octets of the IP address match, 4th octet is different)
 
   - Herelink AirUnit's IP address is 192.168.144.10, GroundUnit's is 192.168.144.11
@@ -51,7 +51,7 @@ An example of the setup of the Herelink in a networked ArduPilot vehicle system 
   - Set :ref:`NET_P1_PORT<NET_P1_PORT>` = 14550 (port that AirUnit listens on)
   - Set :ref:`NET_P1_PROTOCOL<NET_P1_PROTOCOL>` = 2 (MAVLink2)
 
-For information on how to include a camera gimbal to the system, please see the individual wiki pages for the :ref:`Siyi <common-siyi-zr10-gimbal>`, :ref:`Topotek <common-topotek-gimbal>` and :ref:`ViewPro <common-viewpro-gimbal>` gimbals
+For information on how to include a camera gimbal to the system, please see the individual wiki pages for the [site wiki="plane,copter,rover,sub"]:ref:`Siyi <common-siyi-zr10-gimbal>`\ [/site][site wiki="blimp"]:ref:`Siyi <copter:common-siyi-zr10-gimbal>`\ [/site], [site wiki="plane,copter,rover,sub"]:ref:`Topotek <common-topotek-gimbal>`\ [/site][site wiki="blimp"]:ref:`Topotek <copter:common-topotek-gimbal>`\ [/site] and [site wiki="plane,copter,rover,sub"]:ref:`ViewPro <common-viewpro-gimbal>`\ [/site][site wiki="blimp"]:ref:`ViewPro <copter:common-viewpro-gimbal>`\ [/site] gimbals
 
 Updating QGC
 ------------

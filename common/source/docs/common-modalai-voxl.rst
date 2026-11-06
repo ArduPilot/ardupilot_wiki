@@ -52,7 +52,7 @@ Connect to the autopilot with a ground station (i.e. Mission Planner) and check 
 - Optionally set :ref:`SERIAL2_OPTIONS <SERIAL2_OPTIONS>` = 1024 (Don't forward mavlink to/from) to disable the camera's odometry messages from being sent to the GCS
 - Optionally set :ref:`MAV3_EXTRA3 <MAV3_EXTRA3>` = 0 to disable sending the SYSTEM_TIME message to the camera which has been known to cause the camera to lose its position estimate (e.g. quality falls to -1).  Note this assumes the camera is connected to the autopilot's second mavlink port (e.g. usually Telem2)
 - :ref:`VISO_TYPE <VISO_TYPE>` = 3 (VOXL)
-- Set :ref:`VISO_POS_X <VISO_POS_X>`, :ref:`VISO_POS_Y <VISO_POS_Y>`, :ref:`VISO_POS_Z <VISO_POS_Z>` to the camera's position on the drone relative to the center-of-gravity.  See :ref:`sensor position offset compensation <common-sensor-offset-compensation>` for more details
+- Set :ref:`VISO_POS_X <VISO_POS_X>`, :ref:`VISO_POS_Y <VISO_POS_Y>`, :ref:`VISO_POS_Z <VISO_POS_Z>` to the camera's position on the drone relative to the center-of-gravity.  See [site wiki="copter,plane,rover"]:ref:`sensor position offset compensation <common-sensor-offset-compensation>`\ [/site][site wiki="blimp"]:ref:`sensor position offset compensation <copter:common-sensor-offset-compensation>`\ [/site] for more details
 - Optionally increase :ref:`VISO_QUAL_MIN <VISO_QUAL_MIN>` to 10 (or higher) to only consume estimates from the camera when the quality is 10% (or higher)
 
 If only the VOXL camera will be used for position estimation and heading (e.g. No GPS):

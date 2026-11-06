@@ -116,7 +116,7 @@ Where to Buy
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected in order for autonomous modes to function.
+This board does not include a GPS or compass so an [site wiki="plane,copter,rover,sub"]:ref:`external GPS/compass <common-positioning-landing-page>`\ [/site][site wiki="blimp"]:ref:`external GPS/compass <copter:common-positioning-landing-page>`\ [/site] should be connected in order for autonomous modes to function.
 
 If the GPS is attached to UART2 TX/RX and powered from the adjacent 4.5V pins, it will be powered when connected via USB, as would the RX if powered from the adjacent 4.5V pins to UART6.
 

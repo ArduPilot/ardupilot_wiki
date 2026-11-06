@@ -109,7 +109,7 @@ GPIOs
 The 11 PWM ports plus the CAP4 ports can be used as GPIOs (relays,
 buttons, RPM etc). To use them you need to limit the number of these
 pins that is used for PWM by setting the BRD_PWM_COUNT to a number
-less than 11. See :ref:`common-gpios` page for more information.
+less than 11. See [site wiki="plane,copter,rover,sub"]:ref:`common-gpios`\ [/site][site wiki="blimp"]:ref:`copter:common-gpios`\ [/site] page for more information.
 
 For example if you set BRD_PWM_COUNT to 8 then CAP1,
 CAP2 and CAP3 will be available for use as GPIOs, in addition to CAP4.

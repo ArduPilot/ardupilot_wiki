@@ -168,7 +168,7 @@ Multiple Vehicle / Multiple GCS Support
 =======================================
 
 If multiple vehicles are each equipped with an air unit (e.g. ESP-NOW LR Mode AIR) and/or multiple GCSs are each equipped with a ground unit (e.g. ESP-NOW LR Mode GND) all GCSs will receive telemetry from all vehicles allowing the user to monitor and control all vehicles.
-Note that this type of setup requires each vehicle and GCS to have a unique mavlink system id.  See :ref:`Multi-Vehicle Flying <common-multi-vehicle-flying>` for more details.
+Note that this type of setup requires each vehicle and GCS to have a unique mavlink system id.  See [site wiki="plane,copter,rover,sub"]:ref:`Multi-Vehicle Flying <common-multi-vehicle-flying>`\ [/site][site wiki="blimp"]:ref:`Multi-Vehicle Flying <copter:common-multi-vehicle-flying>`\ [/site] for more details.
 
 By default, Air units do not receive telemetry from other air units (nor do ground units receive telemetry from other ground units) meaning that vehicles do not "see" each other. This means that one vehicle following another using :ref:`Follow mode <copter:follow-mode>` will not work.  To enable vehicles to receive telemetry from other vehicles:
 

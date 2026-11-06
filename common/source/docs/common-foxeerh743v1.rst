@@ -100,12 +100,12 @@ For PPM support on UART4_RX set :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to 1 and u
 OSD Support
 ===========
 
-The FoxeerH7 MPU6000 supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort is supported using UART7 or any other free UART. See :ref:`common-msp-osd-overview-4.2` for more info.
+The FoxeerH7 MPU6000 supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort is supported using UART7 or any other free UART. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 VTX Control
 ===========
 
-UART2 TX is setup to provide IRC Tramp control of video transmitters by default. See :ref:`common-vtx` for more information.
+UART2 TX is setup to provide IRC Tramp control of video transmitters by default. See [site wiki="plane,copter,rover,sub"]:ref:`common-vtx`\ [/site][site wiki="blimp"]:ref:`copter:common-vtx`\ [/site] for more information.
 
 Camera/GPIO Control
 ===================
@@ -142,7 +142,7 @@ Then reboot.
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected in order for autonomous modes to function.
+This board does not include a GPS or compass so an [site wiki="plane,copter,rover,sub"]:ref:`external GPS/compass <common-positioning-landing-page>`\ [/site][site wiki="blimp"]:ref:`external GPS/compass <copter:common-positioning-landing-page>`\ [/site] should be connected in order for autonomous modes to function.
 
 Firmware
 ========

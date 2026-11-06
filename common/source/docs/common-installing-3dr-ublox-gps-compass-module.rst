@@ -5,7 +5,7 @@ UBlox GPS + Compass Module
 ==========================
 
 A UBlox GPS + Compass module is the most commonly used GPS for ArduPilot compatible autopilots.
-There are many versions of these modules available from various manufacturers, the recommended models are :ref:`here <common-positioning-landing-page>`.
+There are many versions of these modules available from various manufacturers, the recommended models are [site wiki="plane,copter,rover,sub"]:ref:`here <common-positioning-landing-page>`\ [/site][site wiki="blimp"]:ref:`here <copter:common-positioning-landing-page>`\ [/site].
 
 ArduPilot automatically configures the GPS soon after startup so there is no need for any GPS related calibration.  The :ref:`compass must be calibrated <common-compass-calibration-in-mission-planner>` however.
 
@@ -32,7 +32,7 @@ if other I2C devices are to be attached.
 .. image:: ../../../images/pixhawk_with_dual_gps.jpg
     :target: ../_images/pixhawk_with_dual_gps.jpg
 
-Details on how to setup and use a 2nd GPS can be found on the :ref:`GPS Blending page <common-gps-blending>` page.
+Details on how to setup and use a 2nd GPS can be found on the [site wiki="plane,copter,rover,sub"]:ref:`GPS Blending page <common-gps-blending>`\ [/site][site wiki="blimp"]:ref:`GPS Blending page <copter:common-gps-blending>`\ [/site] page.
 
 .. note::
 
@@ -40,7 +40,7 @@ Details on how to setup and use a 2nd GPS can be found on the :ref:`GPS Blending
 
 .. note::
 
-   ArduPilot supports many attached compasses, but only up to 3 compasses can be used during operation. See :ref:`common-compass-setup-advanced`.
+   ArduPilot supports many attached compasses, but only up to 3 compasses can be used during operation. See [site wiki="plane,copter,rover,sub"]:ref:`common-compass-setup-advanced`\ [/site][site wiki="blimp"]:ref:`copter:common-compass-setup-advanced`\ [/site].
 
 
 Mounting the GPS Module
@@ -83,7 +83,7 @@ simplest way to calibrate a compass mounted in the recommended
 orientation (arrows for autopilot and compass facing to front of
 vehicle).
 
-:ref:`Advanced Compass Setup <common-compass-setup-advanced>` contains more
+[site wiki="plane,copter,rover,sub"]:ref:`Advanced Compass Setup <common-compass-setup-advanced>`\ [/site][site wiki="blimp"]:ref:`Advanced Compass Setup <copter:common-compass-setup-advanced>`\ [/site] contains more
 detailed instructions for calibrating a compass if, for example, it has
 been mounted at some other orientation.
 
@@ -105,4 +105,4 @@ Advanced Configuration
 ======================
 
 Advanced configuration of the UBlox GPS's internal settings is
-documented in :ref:`UBlox GPS Configuration <common-ublox-gps>`. But this is never used by the average user. ArduPilot automatically configures the gps during initialization.
+documented in [site wiki="plane,copter,rover,sub"]:ref:`UBlox GPS Configuration <common-ublox-gps>`\ [/site][site wiki="blimp"]:ref:`UBlox GPS Configuration <copter:common-ublox-gps>`\ [/site]. But this is never used by the average user. ArduPilot automatically configures the gps during initialization.

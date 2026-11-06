@@ -133,7 +133,7 @@ Default pin values:
 
 :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT__AP_BattMonitor_Analog>` = 11
 
-Optionally add voltage and / or current monitoring using ESC telemetry capable ESCs. See instructions :ref:`here <blheli32-esc-telemetry>`.
+Optionally add voltage and / or current monitoring using ESC telemetry capable ESCs. See instructions [site wiki="plane,copter,rover,sub"]:ref:`here <blheli32-esc-telemetry>`\ [/site][site wiki="blimp"]:ref:`here <copter:blheli32-esc-telemetry>`\ [/site].
 
 
 V6.x revision

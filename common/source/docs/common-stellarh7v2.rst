@@ -77,7 +77,7 @@ The default RC input is configured on the UART4 RX4 input and can be used for al
 
 OSD Support
 ===========
-StellarH7V2 supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). Simultaneous DisplayPort OSD operation is preconfigured on SERIAL 6 but requires OSD_TYPE2 = 5. See :ref:`common-msp-osd-overview-4.2` for more info.
+StellarH7V2 supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). Simultaneous DisplayPort OSD operation is preconfigured on SERIAL 6 but requires OSD_TYPE2 = 5. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 PWM Output
 ==========
@@ -111,7 +111,7 @@ Pads for a second analog battery monitor are provided (Voltage only). Defaults a
 
 Camera Switch
 =============
-GPIO 81 controls which camera input (CAM1 or CAM2) is applied to the internal OSD. A RELAY function (see :ref:`common-relay`) can be enabled to control the switching.
+GPIO 81 controls which camera input (CAM1 or CAM2) is applied to the internal OSD. A RELAY function (see [site wiki="plane,copter,rover,sub"]:ref:`common-relay`\ [/site][site wiki="blimp"]:ref:`copter:common-relay`\ [/site]) can be enabled to control the switching.
 
 Compass
 =======

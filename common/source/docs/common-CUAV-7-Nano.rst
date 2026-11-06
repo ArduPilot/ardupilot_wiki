@@ -88,7 +88,7 @@ The 14 PWM outputs are in 6 groups:
 
 Channels within the same group need to use the same output rate. If any channel in a group uses DShot then all channels in the group need to use DShot. Outputs 1-4 support BDShot.
 
-First first 8 PWM outputs of CUAV-7-Nano flight controller support switching between 3.3V voltage and 5V voltage output. It can be switched to 5V by setting GPIO 80 high by setting up a Relay (see :ref:`common-relay`) to control it.
+First first 8 PWM outputs of CUAV-7-Nano flight controller support switching between 3.3V voltage and 5V voltage output. It can be switched to 5V by setting GPIO 80 high by setting up a Relay (see [site wiki="plane,copter,rover,sub"]:ref:`common-relay`\ [/site][site wiki="blimp"]:ref:`copter:common-relay`\ [/site]) to control it.
 
 Battery Monitoring
 ==================

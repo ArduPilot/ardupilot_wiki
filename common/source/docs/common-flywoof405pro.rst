@@ -89,7 +89,7 @@ Channels within the same group need to use the same output protocol. If any chan
 GPIOs
 =====
 
-The FlywooF405 Pro outputs can be used as GPIOs (relays, buttons, RPM etc). To use them you need to set the output's ``SERVOx_FUNCTION`` to -1. See :ref:`common-gpios` page for more information.
+The FlywooF405 Pro outputs can be used as GPIOs (relays, buttons, RPM etc). To use them you need to set the output's ``SERVOx_FUNCTION`` to -1. See [site wiki="plane,copter,rover,sub"]:ref:`common-gpios`\ [/site][site wiki="blimp"]:ref:`copter:common-gpios`\ [/site] page for more information.
 
 The numbering of the GPIOs for PIN variables in ArduPilot is:
 

@@ -355,7 +355,7 @@ The default RC input is configured on the UART7 RX input and can be used for all
 
 OSD Support
 ===========
-The LUX F765 - NDAA supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). Simultaneous DisplayPort OSD operation  is pre-configured on SERIAL 6. See :ref:`common-msp-osd-overview-4.2` for more info.
+The LUX F765 - NDAA supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). Simultaneous DisplayPort OSD operation  is pre-configured on SERIAL 6. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 Camera Control
 ==============

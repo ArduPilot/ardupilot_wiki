@@ -107,7 +107,7 @@ PWM Output
 
 The KakuteF4 supports up to 5 PWM outputs. The pads for motor output
 M1 to M6 on the above diagram are for the 5 outputs. M1-4 outputs
-support DShot and :ref:`Bi-Directional DShot<bidir-dshot>`, as well as all PWM types. The M5 is defaulted to support serial LEDs instead of PWM but can be changed by changing its default function using :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` and supports Dshot.
+support DShot and [site wiki="plane,copter,rover,sub"]:ref:`Bi-Directional DShot<bidir-dshot>`\ [/site][site wiki="blimp"]:ref:`Bi-Directional DShot<copter:bidir-dshot>`\ [/site], as well as all PWM types. The M5 is defaulted to support serial LEDs instead of PWM but can be changed by changing its default function using :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` and supports Dshot.
 
 The PWM is in 2 groups:
 

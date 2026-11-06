@@ -119,7 +119,7 @@ to use DShot.
 Video Power Control
 ===================
 
-The 12V video power can be turned off/on  using GPIO 81 which is already assigned by default to RELAY2.  This relay can be controlled either from the GCS or using a transmitter channel (See :ref:`common-auxiliary-functions`)
+The 12V video power can be turned off/on  using GPIO 81 which is already assigned by default to RELAY2.  This relay can be controlled either from the GCS or using a transmitter channel (See [site wiki="plane,copter,rover,sub"]:ref:`common-auxiliary-functions`\ [/site][site wiki="blimp"]:ref:`copter:common-auxiliary-functions`\ [/site])
 
 RSSI Input
 ==========

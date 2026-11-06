@@ -34,7 +34,7 @@ A bootloader capable of flashing from the SD card is required (and the autopilot
 
 If the autopilot firmware currently provides this capability, updating your current bootloader may be required to support flashing from SD card.  Note that updating the autopilot's bootloader is an operation which can make your board non-operational, and difficult to recover.  More-so with boards that do not expose a "boot0" pin, such as the CubeOrange.  Be aware of this risk, and be prepared to spend considerable time recovering a board if something bad happens when updating the bootloader.
 
-:ref:`The instructions on updating the bootloader <common-bootloader-update>` can be followed to update your bootloader; be aware that you must use a recent firmware (4.5 or higher) to obtain a suitable bootloader.
+[site wiki="copter,plane,rover,planner,sub,dev"]:ref:`The instructions on updating the bootloader <common-bootloader-update>`\ [/site][site wiki="blimp"]:ref:`The instructions on updating the bootloader <copter:common-bootloader-update>`\ [/site] can be followed to update your bootloader; be aware that you must use a recent firmware (4.5 or higher) to obtain a suitable bootloader.
 
 The Firmware File
 =================

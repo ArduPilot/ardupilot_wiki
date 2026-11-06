@@ -128,7 +128,7 @@ The SpeedyBeeF405-Mini has an integrated wireless module connected to UART4 but 
 OSD Support
 ===========
 
-The SpeedyBeeF405-Mini supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort is supported using UART1 or any other free UART. See :ref:`common-msp-osd-overview-4.2` for more info.
+The SpeedyBeeF405-Mini supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort is supported using UART1 or any other free UART. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 Battery Monitor Configuration
 =============================
@@ -151,7 +151,7 @@ Then reboot.
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected as shown below in order for autonomous modes to function.
+This board does not include a GPS or compass so an [site wiki="plane,copter,rover,sub"]:ref:`external GPS/compass <common-positioning-landing-page>`\ [/site][site wiki="blimp"]:ref:`external GPS/compass <copter:common-positioning-landing-page>`\ [/site] should be connected as shown below in order for autonomous modes to function.
 
 Firmware
 ========

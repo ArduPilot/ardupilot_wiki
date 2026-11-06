@@ -30,7 +30,7 @@ Several OpenTX scripts are normally provided for adjusting CRSF TX and RX system
 ArduPilot Parameter Editor
 ==========================
 
-In  addition, the ArduPilot CRSF implementation provides for ArduPilot parameter adjustment, similar in function to ArduPilot's :ref:`common-paramosd` feature.
+In  addition, the ArduPilot CRSF implementation provides for ArduPilot parameter adjustment, similar in function to ArduPilot's [site wiki="plane,copter,rover,sub"]:ref:`common-paramosd`\ [/site][site wiki="blimp"]:ref:`copter:common-paramosd`\ [/site] feature.
 
 If the autopilot has any active OSD (:ref:`OSD_TYPE<OSD_TYPE>` not equal to "0") , this feature is automatically enabled. If not, then selecting :ref:`OSD_TYPE<OSD_TYPE>` = 4 (TX only) will enable it.
 
@@ -38,7 +38,7 @@ Selecting the Crossfire Configuration LUA script in the transmitter will show:
 
 .. image:: ../../../images/crsf-config-screen.png
 
-And selecting the ArduPilot vehicle shown in that list will activate the :ref:`common-paramosd` with a list of all parameters which have been setup for both OSD screens. 
+And selecting the ArduPilot vehicle shown in that list will activate the [site wiki="plane,copter,rover,sub"]:ref:`common-paramosd`\ [/site][site wiki="blimp"]:ref:`copter:common-paramosd`\ [/site] with a list of all parameters which have been setup for both OSD screens. 
 
 .. image:: ../../../images/crsf-param-editor.png
 

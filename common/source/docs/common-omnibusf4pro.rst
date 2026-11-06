@@ -206,7 +206,7 @@ Then reboot.
 How to trigger a camera with relay pin
 ======================================
 
-Any PWM output can be used as a relay pin. See :ref:`common-gpios`
+Any PWM output can be used as a relay pin. See [site wiki="plane,copter,rover,sub"]:ref:`common-gpios` [/site][site wiki="blimp"]:ref:`copter:common-gpios` [/site]
 
 :ref:`RELAY2_PIN<RELAY2_PIN>` = 54 for output PWM 5 to be assigned to RELAY2
 

@@ -121,7 +121,7 @@ The output groups that must be the same (PWM rate or Dshot, when configured as a
 GPIOs
 =====
 
-The Aocoda-RC H743Dual outputs can be used as GPIOs (relays, buttons, RPM etc). To use them you need to set the output's ``SERVOx_FUNCTION`` to -1. See :ref:`common-gpios` page for more information.
+The Aocoda-RC H743Dual outputs can be used as GPIOs (relays, buttons, RPM etc). To use them you need to set the output's ``SERVOx_FUNCTION`` to -1. See [site wiki="plane,copter,rover,sub"]:ref:`common-gpios`\ [/site][site wiki="blimp"]:ref:`copter:common-gpios`\ [/site] page for more information.
 
 The numbering of the GPIOs for PIN variables in ArduPilot is:
 
@@ -159,7 +159,7 @@ For example, use Channel 10 to control the switch using Relay 2:
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected in order for autonomous modes to function.
+This board does not include a GPS or compass so an [site wiki="plane,copter,rover,sub"]:ref:`external GPS/compass <common-positioning-landing-page>`\ [/site][site wiki="blimp"]:ref:`external GPS/compass <copter:common-positioning-landing-page>`\ [/site] should be connected in order for autonomous modes to function.
 
 .. note:: If the GPS is attached to UART2 TX/RX and powered from the adjacent 5V pins, a battery must be plugged in for power to be provided.
 
@@ -206,6 +206,6 @@ This board does not come with ArduPilot firmware pre-installed. Use instructions
 
 Firmware for these boards can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "Aocoda-RC-H743Dual".
 
-.. note:: If you experience issues with the device ceasing to initialize after power up, see :ref:`common-when-problems-arise` section for H7 based autopilots for a possible solution.
+.. note:: If you experience issues with the device ceasing to initialize after power up, see [site wiki="plane,copter,rover,sub"]:ref:`common-when-problems-arise`\ [/site][site wiki="blimp"]:ref:`copter:common-when-problems-arise`\ [/site] section for H7 based autopilots for a possible solution.
 
 [copywiki destination="plane,copter,rover,blimp,sub"]

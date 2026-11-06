@@ -284,7 +284,7 @@ Closed Hardware
 Linux Based Autopilots
 ======================
 
-These autopilots use an underlying Linux OS. Linux boards usually have more CPU power and memory many of the other boards listed on this page, but do not support DShot, Bi-Directional DShot, BLHeli ESC passthrough, many of the ArduPilot GPIO based features, and easy upload from the ground stations. They do allow experimentation and development of advanced control and navigation algorithms (see also :ref:`common-companion-computers`).
+These autopilots use an underlying Linux OS. Linux boards usually have more CPU power and memory many of the other boards listed on this page, but do not support DShot, Bi-Directional DShot, BLHeli ESC passthrough, many of the ArduPilot GPIO based features, and easy upload from the ground stations. They do allow experimentation and development of advanced control and navigation algorithms (see also [site wiki="plane,copter,rover,sub"]:ref:`common-companion-computers`\ [/site][site wiki="blimp"]:ref:`copter:common-companion-computers`\ [/site]).
 
 .. toctree::
     :maxdepth: 1
@@ -336,7 +336,7 @@ The following boards are no longer produced, however, documentation is still ava
     Drotek Pixhawk3 <https://drotek.gitbook.io/pixhawk-3-pro/>
 
 
-The following boards are no longer supported. The documentation is :ref:`archived<common-archived-topics>`, but
+The following boards are no longer supported. The documentation is [site wiki="plane,copter,rover,sub"]:ref:`archived<common-archived-topics>`\ [/site][site wiki="blimp"]:ref:`archived<copter:common-archived-topics>`\ [/site], but
 available if you're still working on those platforms:
 
 - APM 2.x (APM 2.6 and later) are no longer supported for Copter, Plane or Rover. The last firmware builds that fit on this board are Copter 3.2.1, and Plane 3.4.0, and Rover 2.5.1. 

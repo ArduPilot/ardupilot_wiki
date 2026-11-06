@@ -131,7 +131,7 @@ Then reboot.
 RSSI Input
 ==========
 
-Analog or PWM RSSI Input can be attached to the RSSI pin. Set :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` = 0. adjust other RSSI parameters as needed, see :ref:`common-rssi-received-signal-strength-indication`.
+Analog or PWM RSSI Input can be attached to the RSSI pin. Set :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` = 0. adjust other RSSI parameters as needed, see [site wiki="plane,copter,rover,sub"]:ref:`common-rssi-received-signal-strength-indication`\ [/site][site wiki="blimp"]:ref:`copter:common-rssi-received-signal-strength-indication`\ [/site].
 
 NeoPixel LED
 ============

@@ -19,7 +19,7 @@ the above images and some content courtesy of `mateksys.com <http://www.mateksys
     Due to flash memory limitations, this board does not include all ArduPilot features.
         See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
-.. warning:: some variants of these autopilots do not have a barometer. An external barometer can be added, or operation with an alternate altitude sensor, such as GPS for outdoor use or rangefinder for indoor applications is supported (see :ref:`EK3_SRC1_POSZ<EK3_SRC1_POSZ>`), with the following caveats. In Plane, if GPS is lost, then the user should switch to MANUAL mode immediately to avoid a crash. In Copter, operation is allowed using GPS, but not recommended, due to the imprecision in altitude hold modes. Bear in mind if GPS fails and the vehicle is using it for altitude information, a crash can eventually result due to lack of accurate altitude information.See [site wiki="plane,copter,rover,blimp"]:ref:`common-gps-for-alt`\ [/site][site wiki="sub"]Using GPS for Altitude Sensing[/site] for more information.
+.. warning:: some variants of these autopilots do not have a barometer. An external barometer can be added, or operation with an alternate altitude sensor, such as GPS for outdoor use or rangefinder for indoor applications is supported (see :ref:`EK3_SRC1_POSZ<EK3_SRC1_POSZ>`), with the following caveats. In Plane, if GPS is lost, then the user should switch to MANUAL mode immediately to avoid a crash. In Copter, operation is allowed using GPS, but not recommended, due to the imprecision in altitude hold modes. Bear in mind if GPS fails and the vehicle is using it for altitude information, a crash can eventually result due to lack of accurate altitude information.See [site wiki="plane,copter,rover"]:ref:`common-gps-for-alt`\ [/site][site wiki="blimp"]:ref:`copter:common-gps-for-alt`\ [/site][site wiki="sub"]Using GPS for Altitude Sensing[/site] for more information.
 
 Specifications
 ==============
@@ -64,7 +64,7 @@ In addition to STD and CTR versions, there are older variants called -AIO and -O
 
   For the -STD version please use the MatekF405-STD type firmware. For the -CTR version with MPU6000 please use the MatekF405 type firmware. For the :ref:`MatekF405-Wing <common-matekf405-wing>` which has an essentially different board layout please use the dedicated firmware. Please note that ArduPilot does not support -AIO and -OSD versions per default as additional hardware and / or software adjustments are required. 
 
-The MatekF405-CTR has a firmware version supporting :ref:`bi-directional Dshot <bidir-dshot>` labeled "MatekF405-bdshot". Note this is only supported for outputs 1-4 in this version.
+The MatekF405-CTR has a firmware version supporting [site wiki="plane,copter,rover,sub"]:ref:`bi-directional Dshot <bidir-dshot>`\ [/site][site wiki="blimp"]:ref:`bi-directional Dshot <copter:bidir-dshot>`\ [/site] labeled "MatekF405-bdshot". Note this is only supported for outputs 1-4 in this version.
 
 
 Default UART order
@@ -113,7 +113,7 @@ Where to Buy
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected as shown below in order for autonomous modes to function.
+This board does not include a GPS or compass so an [site wiki="plane,copter,rover,sub"]:ref:`external GPS/compass <common-positioning-landing-page>`\ [/site][site wiki="blimp"]:ref:`external GPS/compass <copter:common-positioning-landing-page>`\ [/site] should be connected as shown below in order for autonomous modes to function.
 
 .. image:: ../../../images/matekf405-std-wiring.png
     :target: ../_images/matekf405-std-wiring.png

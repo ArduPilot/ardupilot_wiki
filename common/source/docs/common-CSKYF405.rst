@@ -71,7 +71,7 @@ Serial protocols shown are defaults, but can be adjusted to personal preferences
 
 OSD Support
 ===========
-The CSKY405 supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort can be supported using USART6 or any other free UART. See :ref:`common-msp-osd-overview-4.2` for more info.
+The CSKY405 supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort can be supported using USART6 or any other free UART. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 PWM Outputs
 ===========
@@ -121,12 +121,12 @@ Then reboot.
 VTX power control
 =================
 
-GPIO 84 controls the VTX BEC output to pins marked "12V". Setting this GPIO high using an :ref:`common-auxiliary-functions` or :ref:`common-relay` removes voltage supply to pins.
+GPIO 84 controls the VTX BEC output to pins marked "12V". Setting this GPIO high using an [site wiki="plane,copter,rover,sub"]:ref:`common-auxiliary-functions`\ [/site][site wiki="blimp"]:ref:`copter:common-auxiliary-functions`\ [/site] or [site wiki="plane,copter,rover,sub"]:ref:`common-relay`\ [/site][site wiki="blimp"]:ref:`copter:common-relay`\ [/site] removes voltage supply to pins.
 
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected as shown below in order for autonomous modes to function.
+This board does not include a GPS or compass so an [site wiki="plane,copter,rover,sub"]:ref:`external GPS/compass <common-positioning-landing-page>`\ [/site][site wiki="blimp"]:ref:`external GPS/compass <copter:common-positioning-landing-page>`\ [/site] should be connected as shown below in order for autonomous modes to function.
 
 Firmware
 ========

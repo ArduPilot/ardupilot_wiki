@@ -4,7 +4,7 @@
 SWAN-K1 HWing
 =============
 
-This autopilot is a part of a :ref:`ready-to-fly vehicle <common-rtf>` in  the form of a control-surfaceless, quad-copter Tailsitter QuadPlane. It comes with customized PX4 firmware installed and an GCS application that is downloadable for smart phones. This page describes the conversion to ArduPilot firmware and its setup.
+This autopilot is a part of a [site wiki="plane,copter,rover,sub"]:ref:`ready-to-fly vehicle <common-rtf>`\ [/site][site wiki="blimp"]:ref:`ready-to-fly vehicle <copter:common-rtf>`\ [/site] in  the form of a control-surfaceless, quad-copter Tailsitter QuadPlane. It comes with customized PX4 firmware installed and an GCS application that is downloadable for smart phones. This page describes the conversion to ArduPilot firmware and its setup.
 
 It was initially offered with a 10 channel RC transmitter using an external smart phone for GCS and video display, and the Pro version comes with a 12 channel system with an integrated screen for the GCS/Video.
 
@@ -46,12 +46,12 @@ Customization
 
 One of the benefits of using ArduPilot is that you can set transmitter functions easily.
 
-Some possibilities using :ref:`RC Auxiliary Functions<common-auxiliary-functions>`:
+Some possibilities using [site wiki="plane,copter,rover,sub"]:ref:`RC Auxiliary Functions<common-auxiliary-functions>`\ [/site][site wiki="blimp"]:ref:`RC Auxiliary Functions<copter:common-auxiliary-functions>`\ [/site]:
 
  - Set one of the switches as ARM/DISARM for quick disarming instead of the rudder/throttle combination.
  - Set other flight modes, such as CRUISE or QLAND, on one of the other switches or buttons 
  - Set AUTO mode, on a button
- - Set up :ref:`fences<common-geofencing-landing-page>` and enable/disable via switch or button.
+ - Set up [site wiki="plane,copter,rover,sub"]:ref:`fences<common-geofencing-landing-page>`\ [/site][site wiki="blimp"]:ref:`fences<copter:common-geofencing-landing-page>`\ [/site] and enable/disable via switch or button.
 
 Transmitter RC Channel Mapping
 ------------------------------

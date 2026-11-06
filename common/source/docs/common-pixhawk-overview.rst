@@ -757,7 +757,7 @@ camera when a picture has been taken.
 Powering
 ========
 
-The topic :ref:`Powering the Pixhawk <common-powering-the-pixhawk>`
+The topic [site wiki="plane,copter,rover,sub"]:ref:`Powering the Pixhawk <common-powering-the-pixhawk>` [/site][site wiki="blimp"]:ref:`Powering the Pixhawk <copter:common-powering-the-pixhawk>` [/site]
 explains both simple and advanced power-supply options for the Pixhawk.
 
 

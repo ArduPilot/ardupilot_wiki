@@ -14,7 +14,7 @@ ArduPilot supports in-flight transitions between GPS and Non-GPS environments.
 Setup
 -----
 
-To enable transitions, the EKF3 must be used, which is the default.  Instructions for enabling EKF3 can be found on the :ref:`Extended Kalman Filter page <common-apm-navigation-extended-kalman-filter-overview>` but in short it requires setting the following parameters:
+To enable transitions, the EKF3 must be used, which is the default.  Instructions for enabling EKF3 can be found on the [site wiki="plane,copter,rover,sub"]:ref:`Extended Kalman Filter page <common-apm-navigation-extended-kalman-filter-overview>`\ [/site][site wiki="blimp"]:ref:`Extended Kalman Filter page <copter:common-apm-navigation-extended-kalman-filter-overview>`\ [/site] but in short it requires setting the following parameters:
 
 - :ref:`EK3_ENABLE <EK3_ENABLE>` = 1
 - :ref:`EK2_ENABLE <EK2_ENABLE>` = 0
@@ -40,11 +40,11 @@ The fusing of all velocities should be disabled by unchecking the :ref:`EK3_SRC_
 
 - :ref:`EK3_SRC_OPTIONS <EK3_SRC_OPTIONS>` = 0
 
-The pilot can manually switch between the source sets using a 3-position :ref:`auxiliary switch <common-auxiliary-functions>` configured for "EKF Pos Source" (90).  When the switch is pulled low, the primary source set will be used.  Middle position is for the secondary source set and High is for the tiertiary source set.  If the transmitter's channel 8 switch is to be used set:
+The pilot can manually switch between the source sets using a 3-position [site wiki="plane,copter,rover,sub"]:ref:`auxiliary switch <common-auxiliary-functions>`\ [/site][site wiki="blimp"]:ref:`auxiliary switch <copter:common-auxiliary-functions>`\ [/site] configured for "EKF Pos Source" (90).  When the switch is pulled low, the primary source set will be used.  Middle position is for the secondary source set and High is for the tiertiary source set.  If the transmitter's channel 8 switch is to be used set:
 
 - :ref:`RC8_OPTION <RC8_OPTION>` = 90 (EKF Pos Source)
 
-:ref:`Lua scripts <common-lua-scripts>` can be used to automatically switch between sources based on information from the sensors (i.e. GPS speed accuracy, rangefinder distance, etc) or "innovations" from the EKF ("innovations" are a measure of how close the sensor's latest sensor data matches the EKF's estimate).
+[site wiki="plane,copter,rover,sub"]:ref:`Lua scripts <common-lua-scripts>`\ [/site][site wiki="blimp"]:ref:`Lua scripts <copter:common-lua-scripts>`\ [/site] can be used to automatically switch between sources based on information from the sensors (i.e. GPS speed accuracy, rangefinder distance, etc) or "innovations" from the EKF ("innovations" are a measure of how close the sensor's latest sensor data matches the EKF's estimate).
 
 - `ahrs-source.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/ahrs-source.lua>`__ switches between GPS, T265 and optical flow
 - `ahrs-source-gps-optflow.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/ahrs-source-gps-optflow.lua>`__ switches between GPS and optical flow

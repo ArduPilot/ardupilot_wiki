@@ -4,9 +4,9 @@
 Compass Calibration
 ===================
 
-.. note:: Operation of fixed wing Planes and some Rovers is possible without the use of a compass[site wiki="copter,plane,rover,blimp,planner"] (See :ref:`common-compassless`)[/site], but utilizing a compass is recommended for all other vehicles unless yaw is provided by some other means (:ref:`common-gps-for-yaw` or :ref:`common-non-gps-navigation-landing-page` or :ref:`common-external-ahrs`)
+.. note:: Operation of fixed wing Planes and some Rovers is possible without the use of a compass[site wiki="copter,plane,rover,planner"] (See :ref:`common-compassless`)[/site][site wiki="blimp"] (See :ref:`copter:common-compassless`)[/site], but utilizing a compass is recommended for all other vehicles unless yaw is provided by some other means ([site wiki="copter,plane,rover,sub,planner"]:ref:`common-gps-for-yaw`\ [/site][site wiki="blimp"]:ref:`copter:common-gps-for-yaw`\ [/site] or :ref:`common-non-gps-navigation-landing-page` or [site wiki="copter,plane,rover,sub,planner"]:ref:`common-external-ahrs`\ [/site][site wiki="blimp"]:ref:`copter:common-external-ahrs`\ [/site])
 
-This article explains how to perform basic compass calibration. It assumes that you have at least one compass, either internally or externally in the system, and it has been enabled. See :ref:`Advanced Compass Setup <common-compass-setup-advanced>` for more information and to setup other compass related features.
+This article explains how to perform basic compass calibration. It assumes that you have at least one compass, either internally or externally in the system, and it has been enabled. See [site wiki="copter,plane,rover,sub,planner"]:ref:`Advanced Compass Setup <common-compass-setup-advanced>`\ [/site][site wiki="blimp"]:ref:`Advanced Compass Setup <copter:common-compass-setup-advanced>`\ [/site] for more information and to setup other compass related features.
 
 .. warning::  It is important that when compass calibration is done, the vehicle have a good 3D gps lock, in order to assure the best setup. If necessary, move outdoors in order to get a good 3D gps lock before doing the compass calibration.
 
@@ -89,10 +89,10 @@ At the top of the page, you can change the priority of the attached compasses, i
 Additional information
 ======================
 
-More information about compass configuration can be found in :ref:`Advanced Compass Setup <common-compass-setup-advanced>`. This includes instructions for how to set up additional compasses, :ref:`automatic setting of offsets<automatic-compass-offset-calibration>`, non-standard compass alignments, :ref:`compassmot <copter:common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>`, etc.
+More information about compass configuration can be found in [site wiki="copter,plane,rover,sub,planner"]:ref:`Advanced Compass Setup <common-compass-setup-advanced>`\ [/site][site wiki="blimp"]:ref:`Advanced Compass Setup <copter:common-compass-setup-advanced>`\ [/site]. This includes instructions for how to set up additional compasses, [site wiki="copter,plane,rover,sub,planner"]:ref:`automatic setting of offsets<automatic-compass-offset-calibration>`\ [/site][site wiki="blimp"]:ref:`automatic setting of offsets<copter:automatic-compass-offset-calibration>`\ [/site], non-standard compass alignments, :ref:`compassmot <copter:common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>`, etc.
 
 General discussion on magnetic interference and ways to reduce it can be
-found in :ref:`Magnetic Interference <common-magnetic-interference>`.
+found in [site wiki="copter,plane,rover,sub,planner"]:ref:`Magnetic Interference <common-magnetic-interference>`\ [/site][site wiki="blimp"]:ref:`Magnetic Interference <copter:common-magnetic-interference>`\ [/site].
 
 Video demonstration
 ===================

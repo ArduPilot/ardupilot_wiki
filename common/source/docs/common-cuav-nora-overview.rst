@@ -89,7 +89,7 @@ All motor/servo outputs are DShot and PWM capable. However, mixing DShot and nor
 Battery Monitor
 ===============
 
-The autopilot includes a DroneCAN power module and battery monitor, :ref:`common-can-pmu`. Connect to one of the CAN ports and it is already pre-configured for use.
+The autopilot includes a DroneCAN power module and battery monitor, [site wiki="plane,copter,rover,sub"]:ref:`common-can-pmu`\ [/site][site wiki="blimp"]:ref:`copter:common-can-pmu`\ [/site]. Connect to one of the CAN ports and it is already pre-configured for use.
 
 Where to Buy
 ============

@@ -113,7 +113,7 @@ CAN
 ===
 
 There are two CAN ports which are pre-configured for DroneCAN, which may be changed by the user as desired.
-See :ref:`common-canbus-setup-advanced` for more information on setup.
+See [site wiki="plane,copter,rover,sub"]:ref:`common-canbus-setup-advanced`\ [/site][site wiki="blimp"]:ref:`copter:common-canbus-setup-advanced`\ [/site] for more information on setup.
 
 Battery Monitor Configuration
 =============================

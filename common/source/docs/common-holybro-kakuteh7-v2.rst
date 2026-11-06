@@ -61,7 +61,7 @@ Pinout
 Pin               Function
 =============     =================================================
 VTX+              9V for HD System or other VTX, by default ON/OFF is
-                  controlled by RELAY2. See :ref:`common-relay`
+                  controlled by RELAY2. See [site wiki="plane,copter,rover,sub"]:ref:`common-relay` [/site][site wiki="blimp"]:ref:`copter:common-relay` [/site]
                   Can be controlled by RELAY2
 SDA, SCL          I2C connection (for peripherals)
 5v                5v output (1.5A max)
@@ -117,7 +117,7 @@ VTX Port
 Pin               Function
 =============     =================================================
 Vtx+              9V for HD System or other VTX, by default ON/OFF is
-                  controlled by RELAY2. See :ref:`common-relay`
+                  controlled by RELAY2. See [site wiki="plane,copter,rover,sub"]:ref:`common-relay` [/site][site wiki="blimp"]:ref:`copter:common-relay` [/site]
 G                 Ground
 T1                UART1 TX
 R1                UART1 RX
@@ -203,7 +203,7 @@ to use DShot.
 LED Output
 ==========
 
-The LED output is configured by default to support :ref:`NeoPixel LED strings<common-serial-led-neopixel>`.
+The LED output is configured by default to support [site wiki="plane,copter,rover,sub"]:ref:`NeoPixel LED strings<common-serial-led-neopixel>`\ [/site][site wiki="blimp"]:ref:`NeoPixel LED strings<copter:common-serial-led-neopixel>`\ [/site].
 
 Battery Monitoring
 ==================
