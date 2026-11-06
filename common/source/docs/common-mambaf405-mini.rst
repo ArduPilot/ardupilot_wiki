@@ -112,10 +112,10 @@ The Mamba MK4 F405Mini supports up to 7 PWM outputs, all are DShot capable. The 
 
 The PWM is in 4 groups:
 
--   PWM 1,2 in group1  (if used for :ref:`GPIOs <common-gpios>` their reference pin numbers are 50 and 51, respectively)
--   PWM 3,4 in group2 (if used for :ref:`GPIOs <common-gpios>` their reference pin numbers are 52 and 53, respectively)
--   PWM 5,6 in group3 (if used for :ref:`GPIOs <common-gpios>` their reference pin numbers are 54 and 55, respectively)
--   PWM 7 (LED) in group4 (if used for :ref:`GPIOs <common-gpios>` its reference pin number is 56)
+-   PWM 1,2 in group1  (if used for [site wiki="plane,copter,rover,sub"]:ref:`GPIOs <common-gpios>`\ [/site][site wiki="blimp"]:ref:`GPIOs <copter:common-gpios>`\ [/site] their reference pin numbers are 50 and 51, respectively)
+-   PWM 3,4 in group2 (if used for [site wiki="plane,copter,rover,sub"]:ref:`GPIOs <common-gpios>`\ [/site][site wiki="blimp"]:ref:`GPIOs <copter:common-gpios>`\ [/site] their reference pin numbers are 52 and 53, respectively)
+-   PWM 5,6 in group3 (if used for [site wiki="plane,copter,rover,sub"]:ref:`GPIOs <common-gpios>`\ [/site][site wiki="blimp"]:ref:`GPIOs <copter:common-gpios>`\ [/site] their reference pin numbers are 54 and 55, respectively)
+-   PWM 7 (LED) in group4 (if used for [site wiki="plane,copter,rover,sub"]:ref:`GPIOs <common-gpios>`\ [/site][site wiki="blimp"]:ref:`GPIOs <copter:common-gpios>`\ [/site] its reference pin number is 56)
 
 Channels within the same group need to use the same output rate. If any channel in a group uses DShot then all channels in the group need to use DShot. Channels 1-4 support bi-directional DShot.
 

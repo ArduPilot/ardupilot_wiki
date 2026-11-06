@@ -178,7 +178,7 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 
 OSD Support
 ===========
-The units supports HD air units with telemetry using UART4 RX/TX. See :ref:`common-msp-osd-overview-4.2` for more info.
+The units supports HD air units with telemetry using UART4 RX/TX. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 
 Battery Monitor Configuration
@@ -202,9 +202,9 @@ Then reboot.
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a GPS and compass so an :ref:`external GPS <common-positioning-landing-page>` can be connected to allow operation of position holding/tracking modes (ie LOITER,etc.). However, only the AIO has the ability to disconnect its ELRS module to provide the required access to the UART3 RX/TX pins to attach an I2C compass. This also requires special firmware (see below) be installed to convert these pins from UART use to I2C use with RX3 becoming SDA and TX3 becoming SCL.
+This board does not include a GPS and compass so an [site wiki="plane,copter,rover,sub"]:ref:`external GPS <common-positioning-landing-page>`\ [/site][site wiki="blimp"]:ref:`external GPS <copter:common-positioning-landing-page>`\ [/site] can be connected to allow operation of position holding/tracking modes (ie LOITER,etc.). However, only the AIO has the ability to disconnect its ELRS module to provide the required access to the UART3 RX/TX pins to attach an I2C compass. This also requires special firmware (see below) be installed to convert these pins from UART use to I2C use with RX3 becoming SDA and TX3 becoming SCL.
 
-.. warning:: since a compass cannot be normally attached, only ACRO, STABILIZE, and ALTHOLD (if the unit has a BARO) modes are recommended. GSF ([site wiki="plane,copter,rover,blimp"]:ref:`common-compassless`\ [/site][site wiki="sub"]Compass-less Operation[/site])can be used, but requires pre-flight actions to converge it before taking off, and it is susceptible to failures in flight.
+.. warning:: since a compass cannot be normally attached, only ACRO, STABILIZE, and ALTHOLD (if the unit has a BARO) modes are recommended. GSF ([site wiki="plane,copter,rover"]:ref:`common-compassless`\ [/site][site wiki="blimp"]:ref:`copter:common-compassless`\ [/site][site wiki="sub"]Compass-less Operation[/site])can be used, but requires pre-flight actions to converge it before taking off, and it is susceptible to failures in flight.
 
 Firmware
 ========

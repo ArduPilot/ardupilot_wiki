@@ -47,9 +47,9 @@ Specifications
    - 8.5g
 
 
-.. warning:: This board has no compass and no way to connect an external compass. Applications requiring accurate heading information must rely on ArduPilots [site wiki="plane,copter,rover,blimp"]:ref:`common-compassless`\ [/site][site wiki="sub"]Compass-less Operation[/site] operation.
+.. warning:: This board has no compass and no way to connect an external compass. Applications requiring accurate heading information must rely on ArduPilots [site wiki="plane,copter,rover"]:ref:`common-compassless`\ [/site][site wiki="blimp"]:ref:`copter:common-compassless`\ [/site][site wiki="sub"]Compass-less Operation[/site] operation.
 
-.. warning:: This autopilot does not have a barometer. An external barometer can be added, or operation with an alternate altitude sensor, such as GPS for outdoor use or rangefinder for indoor applications is supported (see :ref:`EK3_SRC1_POSZ<EK3_SRC1_POSZ>`), with the following caveats. In Plane, if GPS is lost, then the user should switch to MANUAL mode immediately to avoid a crash. In Copter, operation is allowed using GPS, but not recommended, due to the imprecision in altitude hold modes. Bear in mind if GPS fails and the vehicle is using it for altitude information, a crash can eventually result due to lack of accurate altitude information.See [site wiki="plane,copter,rover,blimp"]:ref:`common-gps-for-alt`\ [/site][site wiki="sub"]Using GPS for Altitude Sensing[/site] for more information.
+.. warning:: This autopilot does not have a barometer. An external barometer can be added, or operation with an alternate altitude sensor, such as GPS for outdoor use or rangefinder for indoor applications is supported (see :ref:`EK3_SRC1_POSZ<EK3_SRC1_POSZ>`), with the following caveats. In Plane, if GPS is lost, then the user should switch to MANUAL mode immediately to avoid a crash. In Copter, operation is allowed using GPS, but not recommended, due to the imprecision in altitude hold modes. Bear in mind if GPS fails and the vehicle is using it for altitude information, a crash can eventually result due to lack of accurate altitude information.See [site wiki="plane,copter,rover"]:ref:`common-gps-for-alt`\ [/site][site wiki="blimp"]:ref:`copter:common-gps-for-alt`\ [/site][site wiki="sub"]Using GPS for Altitude Sensing[/site] for more information.
 
 Where to Buy
 ============
@@ -63,7 +63,7 @@ Depending on version, this autopilot may not include a barometer sensor for alti
 
 Plane
 -----
-An altitude source must be provided for any operation. Attach a GPS and follow the instructions in [site wiki="plane,copter,rover,blimp"]:ref:`common-gps-for-alt`\ [/site][site wiki="sub"]Using GPS for Altitude Sensing[/site].
+An altitude source must be provided for any operation. Attach a GPS and follow the instructions in [site wiki="plane,copter,rover"]:ref:`common-gps-for-alt`\ [/site][site wiki="blimp"]:ref:`copter:common-gps-for-alt`\ [/site][site wiki="sub"]Using GPS for Altitude Sensing[/site].
 
 Copter
 ------

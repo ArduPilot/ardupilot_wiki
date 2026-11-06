@@ -98,7 +98,7 @@ There are two pins provided for SBUS input also, one being inverted and applied 
 OSD Support
 ===========
 
-The autopilot supports HD air units with telemetry using UART4 RX/TX on the DJI connector. See :ref:`common-msp-osd-overview-4.2` for more info.
+The autopilot supports HD air units with telemetry using UART4 RX/TX on the DJI connector. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 
 Battery Monitor Configuration

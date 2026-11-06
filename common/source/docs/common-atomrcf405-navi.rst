@@ -76,7 +76,7 @@ Default UART order
 - SERIAL2 = RCinput = USART2 (RX2 connected to SBUS via inverter, to use as UART input use :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1 and do not attach anything to SBUS pin)
 - SERIAL3 = GPS1 = USART3
 - SERIAL4 = GPS2 = UART4
-- SERIAL5 = USER = UART5 (typically used for DJI Goggles (see :ref:`common-msp-osd-overview-4.2`) or Tramp VTX control (see :ref:`common-vtx`))
+- SERIAL5 = USER = UART5 (typically used for DJI Goggles (see [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site]) or Tramp VTX control (see [site wiki="plane,copter,rover,sub"]:ref:`common-vtx`\ [/site][site wiki="blimp"]:ref:`copter:common-vtx`\ [/site]))
 - SERIAL6 = USER = USART6 (solder pads)
 
 
@@ -133,7 +133,7 @@ Then reboot.
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected as shown below in order for autonomous modes to function.
+This board does not include a GPS or compass so an [site wiki="plane,copter,rover,sub"]:ref:`external GPS/compass <common-positioning-landing-page>`\ [/site][site wiki="blimp"]:ref:`external GPS/compass <copter:common-positioning-landing-page>`\ [/site] should be connected as shown below in order for autonomous modes to function.
 
 Firmware
 ========

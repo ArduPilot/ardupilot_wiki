@@ -118,7 +118,7 @@ When connected to USB, pins marked 5V are powered. Be careful not to overload th
 OSD Support
 ===========
 
-The KakuteH7-Wing supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort is supported using UART5 or any other free UART. See :ref:`common-msp-osd-overview-4.2` for more info.
+The KakuteH7-Wing supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort is supported using UART5 or any other free UART. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 Camera and VTX Control
 ======================
@@ -141,7 +141,7 @@ CAN
 ===
 
 The KakuteH7-Wing has one CAN port (port 1 parameters should be used) available for connecting CAN and DroneCAN peripherals such as GPS and airspeed sensors.
-See :ref:`common-canbus-setup-advanced` for more information on setup.
+See [site wiki="plane,copter,rover,sub"]:ref:`common-canbus-setup-advanced`\ [/site][site wiki="blimp"]:ref:`copter:common-canbus-setup-advanced`\ [/site] for more information on setup.
 
 Battery Monitor Configuration
 =============================
@@ -166,7 +166,7 @@ Then reboot.
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected to the GPS/Compass in order for autonomous modes to function. A JST-GH connector for GPS/Compass is provided.
+This board does not include a GPS or compass so an [site wiki="plane,copter,rover,sub"]:ref:`external GPS/compass <common-positioning-landing-page>`\ [/site][site wiki="blimp"]:ref:`external GPS/compass <copter:common-positioning-landing-page>`\ [/site] should be connected to the GPS/Compass in order for autonomous modes to function. A JST-GH connector for GPS/Compass is provided.
 
 Firmware
 ========

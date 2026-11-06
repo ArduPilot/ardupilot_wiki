@@ -213,14 +213,14 @@ to use DShot.
 GPIO and Camera Switch
 ======================
 
-GPIO pin 70 is the SER pad and is assigned by default to RELAY2 functionality. This pin can be controlled via GCS or by RC transmitter using the :ref:`common-auxiliary-functions` feature.
+GPIO pin 70 is the SER pad and is assigned by default to RELAY2 functionality. This pin can be controlled via GCS or by RC transmitter using the [site wiki="plane,copter,rover,sub"]:ref:`common-auxiliary-functions`\ [/site][site wiki="blimp"]:ref:`copter:common-auxiliary-functions`\ [/site] feature.
 
 Camera input can be switched between CAM1 input and CA2 input using GPIO 71 which is assigned by default to the RELAY3 functionality. It can be controlled like the GPIO above.
 
 LED Output
 ==========
 
-The LED output is configured by default to support :ref:`NeoPixel LED strings<common-serial-led-neopixel>`.
+The LED output is configured by default to support [site wiki="plane,copter,rover,sub"]:ref:`NeoPixel LED strings<common-serial-led-neopixel>`\ [/site][site wiki="blimp"]:ref:`NeoPixel LED strings<copter:common-serial-led-neopixel>`\ [/site].
 
 Battery Monitoring
 ==================

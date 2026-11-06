@@ -471,7 +471,7 @@ The MUPilot has a builtin IST8310 compass. Due to potential interference the boa
 
 GPIOs
 =====
-The 6 auxiliary outputs can be used as GPIOs (relays, buttons, RPM etc). To use them see :ref:`common-gpios`
+The 6 auxiliary outputs can be used as GPIOs (relays, buttons, RPM etc). To use them see [site wiki="copter,plane,rover,sub"]:ref:`common-gpios` [/site][site wiki="blimp"]:ref:`copter:common-gpios` [/site]
 
 The numbering of the GPIOs for PIN variables in ArduPilot is:
 * MAIN1 101

@@ -100,7 +100,7 @@ Step 3: Load the Firmware
 
 **If it is not**, follow :ref:`common-loading-firmware-onto-chibios-only-boards`. The ArduPilot bootloader and firmware are downloaded as a single file and loaded together over USB in DFU mode using STM32CubeProgrammer. This is a one time operation: once it has succeeded the board has an ArduPilot bootloader, and all later updates use the ground station method above. That page also covers the boards which run from external flash, such as the SPRacing series, which need a different procedure again.
 
-.. note:: some autopilots with 1MB of flash do not include a copy of the bootloader in their firmware in order to save flash space. Those boards have a compatible bootloader installed, but it cannot be updated from within ArduPilot; see :ref:`common-bootloader-update`.
+.. note:: some autopilots with 1MB of flash do not include a copy of the bootloader in their firmware in order to save flash space. Those boards have a compatible bootloader installed, but it cannot be updated from within ArduPilot; see [site wiki="copter,plane,rover,planner,sub"]:ref:`common-bootloader-update`\ [/site][site wiki="blimp"]:ref:`copter:common-bootloader-update`\ [/site].
 
 .. _loading-firmware-testing:
 

@@ -27,7 +27,7 @@ This is done by:
            This topic is archived.
 
 #. Move the topic under "Archived Topics" in the menu (you will need to edit the toctree
-   directive in :ref:`common-archived-topics`).
+   directive in [site wiki="copter,plane,rover,sub,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]:ref:`common-archived-topics`\ [/site][site wiki="blimp"]:ref:`copter:common-archived-topics`\ [/site]).
 
 
 Deleting wiki pages

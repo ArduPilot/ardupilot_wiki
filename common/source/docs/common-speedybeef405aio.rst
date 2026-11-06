@@ -102,7 +102,7 @@ The SpeedyBee F405 AIO does not have a builtin compass but an external compass c
 
 Camera Control
 ==============
-The CC pin is a GPIO (pin 70) and is assigned by default to RELAY2 functionality. This pin can be controlled via GCS or by RC transmitter using the :ref:`Auxiliary Function<common-auxiliary-functions>` feature.
+The CC pin is a GPIO (pin 70) and is assigned by default to RELAY2 functionality. This pin can be controlled via GCS or by RC transmitter using the [site wiki="plane,copter,rover,sub"]:ref:`Auxiliary Function<common-auxiliary-functions>`\ [/site][site wiki="blimp"]:ref:`Auxiliary Function<copter:common-auxiliary-functions>`\ [/site] feature.
 
 NeoPixel LED
 ============

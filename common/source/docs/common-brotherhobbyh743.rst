@@ -54,7 +54,7 @@ FrSky Telemetry can be supported using any UART. For example, the T4 pin (UART4 
 
 OSD Support
 ===========
-The BROTHERHOBBYH743 supports using its internal OSD (MAX7456 driver). Simultaneous DisplayPort OSD operation  is also pre-configured on SERIAL 6. See :ref:`common-msp-osd-overview-4.2` for more info.
+The BROTHERHOBBYH743 supports using its internal OSD (MAX7456 driver). Simultaneous DisplayPort OSD operation  is also pre-configured on SERIAL 6. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 VTX Support
 ===========

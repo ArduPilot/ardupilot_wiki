@@ -110,7 +110,7 @@ FPORT with telemetry could use this setup also, but connects only to TX3 and :re
 OSD Support
 ===========
 
-The Blitz Whoop F7 AIO supports analog video transmission using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort is supported by default on USART1 RX/TX or any other free UART. See :ref:`common-msp-osd-overview-4.2` for more info.
+The Blitz Whoop F7 AIO supports analog video transmission using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort is supported by default on USART1 RX/TX or any other free UART. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 Battery Monitor Configuration
 =============================
@@ -130,7 +130,7 @@ Then reboot.
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a Compass and/or GPS so an :ref:`external GPS/compass <common-positioning-landing-page>` can be connected in order for autonomous modes to function.
+This board does not include a Compass and/or GPS so an [site wiki="plane,copter,rover,sub"]:ref:`external GPS/compass <common-positioning-landing-page>`\ [/site][site wiki="blimp"]:ref:`external GPS/compass <copter:common-positioning-landing-page>`\ [/site] can be connected in order for autonomous modes to function.
 
 NeoPixel LED
 ============

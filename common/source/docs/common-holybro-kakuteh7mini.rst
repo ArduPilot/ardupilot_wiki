@@ -55,7 +55,7 @@ Pinout
 Pin               Function
 =============     =================================================
 VTX+              9V for HD System or other VTX, by default ON/OFF is
-                  controlled by RELAY2. See :ref:`common-relay`
+                  controlled by RELAY2. See [site wiki="plane,copter,rover,sub"]:ref:`common-relay` [/site][site wiki="blimp"]:ref:`copter:common-relay` [/site]
                   Can be controlled by RELAY2
 SDA, SCL          I2C connection (for peripherals)
 5v                5v output (1.5A max)
@@ -96,7 +96,7 @@ VTX Port
 Pin               Function
 =============     =================================================
 Vtx+              9V for HD System or other VTX, by default ON/OFF is
-                  controlled by RELAY2. See :ref:`common-relay`
+                  controlled by RELAY2. See [site wiki="plane,copter,rover,sub"]:ref:`common-relay` [/site][site wiki="blimp"]:ref:`copter:common-relay` [/site]
 G                 Ground
 T1                UART1 TX
 R1                UART1 RX
@@ -140,7 +140,7 @@ The KakuteH7 Mini supports OSD using :ref:`OSD_TYPE<OSD_TYPE>` 1 (MAX7456 driver
 PWM Output
 ==========
 
-The KakuteH7 Mini supports up to 9 outputs. M1 to M4 are accessed via the connector and are :ref:`bi-directional<bidir-dshot>` capable. M5-M8 and LED are the pads shown on the above diagram. M1-M8 and LED outputs support DShot as well as all PWM types.
+The KakuteH7 Mini supports up to 9 outputs. M1 to M4 are accessed via the connector and are [site wiki="plane,copter,rover,sub"]:ref:`bi-directional<bidir-dshot>`\ [/site][site wiki="blimp"]:ref:`bi-directional<copter:bidir-dshot>`\ [/site] capable. M5-M8 and LED are the pads shown on the above diagram. M1-M8 and LED outputs support DShot as well as all PWM types.
 The PWM is in 5 groups:
 
 - PWM 1,4 in group1

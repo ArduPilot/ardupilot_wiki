@@ -53,7 +53,7 @@ Within the COMMAND_LONG and COMMAND_INT messages, the following commands are sup
 RockBLOCK 9704
 ==============
 
-.. note:: This feature is only available on ArduPilot 4.7 or later and requires a flight controller that supports :ref:`LUA Scripts<common-lua-scripts>`
+.. note:: This feature is only available on ArduPilot 4.7 or later and requires a flight controller that supports [site wiki="plane,copter,rover,sub"]:ref:`LUA Scripts<common-lua-scripts>` [/site][site wiki="blimp"]:ref:`LUA Scripts<copter:common-lua-scripts>` [/site]
 
 
 The `RockBLOCK 9704 <https://www.groundcontrol.com/product/rockblock-9704/>`__ satellite
@@ -72,7 +72,7 @@ Vehicle Setup
 #.  Connect the RockBLOCK I_BTD pin to a GPIO input on the flight controller.
 #.  Ensure the modem is activated in your RockBLOCK account.
 #.  Copy the `Ardupilot RockBLOCK Lua script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/RockBlock-9704.lua>`__ to the flight controller's SD card.
-#.  Ensure :ref:`LUA Scripts<common-lua-scripts>` are enabled and the RockBLOCK UART is set as a scripting UART (``SERIALx_PROTOCOL=28``). Reboot the autopilot.
+#.  Ensure [site wiki="plane,copter,rover,sub"]:ref:`LUA Scripts<common-lua-scripts>`\ [/site][site wiki="blimp"]:ref:`LUA Scripts<copter:common-lua-scripts>`\ [/site] are enabled and the RockBLOCK UART is set as a scripting UART (``SERIALx_PROTOCOL=28``). Reboot the autopilot.
 #.  Set ``SCR_SDEV_EN=1`` to enable a scripting serial port and set one to MAVLink High Latency (``SCR_SDEVn=43``), where ``n`` is the scripting serial port number. Set ``RK9_SCRPORT=n`` to the same port number.
 #.  Set ``RK9_RELAY=n`` to the relay output number ``RELAYn`` connected to the RockBLOCK I_EN pin.
 #.  Set ``RK9_BOOTED=n`` to the GPIO input number ``SERVOn`` connected to the RockBLOCK I_BTD pin. Requires ``SERVOn_FUNCTION=-1`` (GPIO input).
@@ -132,7 +132,7 @@ Name                      Description
 RockBLOCK 9603
 ==============
 
-.. note:: This feature is only available on ArduPilot 4.4 or later and requires a flight controller that supports :ref:`LUA Scripts<common-lua-scripts>`
+.. note:: This feature is only available on ArduPilot 4.4 or later and requires a flight controller that supports [site wiki="plane,copter,rover,sub"]:ref:`LUA Scripts<common-lua-scripts>` [/site][site wiki="blimp"]:ref:`LUA Scripts<copter:common-lua-scripts>` [/site]
 
 
 .. image:: ../../../images/RockBLOCK-9603-Angled.jpg
@@ -153,7 +153,7 @@ Vehicle Setup
 #.  Connect the RockBLOCK modem to a spare UART on the flight controller. Only the +5V, RX, TX and GND lines need to be connected
 #.  Ensure the modem is activated in your RockBLOCK account
 #.  Copy the `Ardupilot RockBLOCK Lua script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/RockBlock.lua>`__ to the flight controller's SD card.
-#.  Ensure :ref:`LUA Scripts<common-lua-scripts>` are enabled and the RockBLOCK UART is set as a scripting UART (``SERIALx_PROTOCOL=28``). Reboot the autopilot.
+#.  Ensure [site wiki="plane,copter,rover,sub"]:ref:`LUA Scripts<common-lua-scripts>`\ [/site][site wiki="blimp"]:ref:`LUA Scripts<copter:common-lua-scripts>`\ [/site] are enabled and the RockBLOCK UART is set as a scripting UART (``SERIALx_PROTOCOL=28``). Reboot the autopilot.
 
 
 Ground Setup

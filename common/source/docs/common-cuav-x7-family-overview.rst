@@ -107,7 +107,7 @@ ALL outputs within the same group need to use the same output rate and protocol.
 
 GPIOs
 =====
-The 14 outputs can be used as GPIOs (relays, buttons, RPM etc). To use them you need to set the output’s SERVOx_FUNCTION to -1. See :ref:`common-gpios` page for more information.
+The 14 outputs can be used as GPIOs (relays, buttons, RPM etc). To use them you need to set the output’s SERVOx_FUNCTION to -1. See [site wiki="plane,copter,rover,sub"]:ref:`common-gpios`\ [/site][site wiki="blimp"]:ref:`copter:common-gpios`\ [/site] page for more information.
 
 The numbering of the GPIOs for use in the PIN parametersin ArduPilot is:
 
@@ -139,7 +139,7 @@ The CUAV X7+/X7+ Pro has 2 analog inputs, one 6V tolerant and one 3.3V tolerant
 Battery Monitor
 ===============
 
-The autopilot includes a DroneCAN power module and battery monitor, :ref:`common-can-pmu`. Connect to the Power C port and its already pre-configured for use.
+The autopilot includes a DroneCAN power module and battery monitor, [site wiki="plane,copter,rover,sub"]:ref:`common-can-pmu`\ [/site][site wiki="blimp"]:ref:`copter:common-can-pmu`\ [/site]. Connect to the Power C port and its already pre-configured for use.
 If you are using an analog battery monitor instead, connect to the Power A connector and set the following parameters (if used as second monitor use the BATT2 parameters instead):
 
 - :ref:`BATT_MONITOR<BATT_MONITOR>` = 4

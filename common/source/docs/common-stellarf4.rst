@@ -67,7 +67,7 @@ The default RC input is configured on the UART2(SERIAL1) RX2 input and can be us
 OSD Support
 ===========
 StellarF4 supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver).
-External OSD support such as DJI or DisplayPort can be used simultaneously and is preconfigured on SERIAL3 but can be supported on any spare UART. See :ref:`common-msp-osd-overview-4.2` for more info.
+External OSD support such as DJI or DisplayPort can be used simultaneously and is preconfigured on SERIAL3 but can be supported on any spare UART. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 PWM Output
 ==========
@@ -99,7 +99,7 @@ StellarF4 does not have a built-in compass, but you can attach an external compa
 
 Camera Switch
 =============
-GPIO 81 controls which camera input (CAM1 or CAM2) is applied to the internal OSD. A :ref:`RELAY <common-relay>` function can be enabled to control the switching.
+GPIO 81 controls which camera input (CAM1 or CAM2) is applied to the internal OSD. A [site wiki="plane,copter,rover,sub"]:ref:`RELAY <common-relay>`\ [/site][site wiki="blimp"]:ref:`RELAY <copter:common-relay>`\ [/site] function can be enabled to control the switching.
 
 Loading Firmware
 ================

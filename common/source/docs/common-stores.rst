@@ -6,7 +6,7 @@ Stores
 
 The following stores sell hardware compatible with ArduPilot (listed alphabetically).
 :ref:`ArduPilot Partners <common-partners>` are companies that actively support ArduPilot development;
-they are marked with **(Partner)** below. You may also want to check the list of :ref:`Ready-to-Use vehicles <common-rtf>`.
+they are marked with **(Partner)** below. You may also want to check the list of [site wiki="copter,plane,rover,sub,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]:ref:`Ready-to-Use vehicles <common-rtf>`\ [/site][site wiki="blimp"]:ref:`Ready-to-Use vehicles <copter:common-rtf>`\ [/site].
 
 * `3DR <https://store.3dr.com/>`__ (Partner)
 * `3DXR <https://www.3dxr.co.uk/>`__ (Partner)

@@ -132,7 +132,7 @@ to use DShot.
 LED Output
 ==========
 
-The LED output is configured by default to support :ref:`NeoPixel LED strings<common-serial-led-neopixel>`.
+The LED output is configured by default to support [site wiki="plane,copter,rover,sub"]:ref:`NeoPixel LED strings<common-serial-led-neopixel>`\ [/site][site wiki="blimp"]:ref:`NeoPixel LED strings<copter:common-serial-led-neopixel>`\ [/site].
 
 Battery Monitoring
 ==================

@@ -160,7 +160,7 @@ Recommended receiver connections:
 
  - FPort: connect to TX6 and RX6 through a bidirectional inverter. See :ref:`common-FPort-receivers`.
 
-.. note:: UART6 is configured by default for serial receivers. You can also have more than one receiver in the system at a time (usually used for long range hand-offs to a remote TX). See :ref:`common-multiple-rx` for details.
+.. note:: UART6 is configured by default for serial receivers. You can also have more than one receiver in the system at a time (usually used for long range hand-offs to a remote TX). See [site wiki="plane,copter,rover,sub"]:ref:`common-multiple-rx`\ [/site][site wiki="blimp"]:ref:`copter:common-multiple-rx`\ [/site] for details.
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM (SBUS requires external inversion on other UARTs). See :ref:`common-rc-systems` for details.
 
@@ -230,12 +230,12 @@ In WiFi STA mode, connect using the IP address assigned by the router or hotspot
 OSD Support
 ===========
 
-The CoreWing F405 Wing V2 / Mini V2 supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort is supported using UART3 or any other free UART. See :ref:`common-msp-osd-overview-4.2` for more info.
+The CoreWing F405 Wing V2 / Mini V2 supports using its internal OSD using OSD_TYPE 1 (MAX7456 driver). External OSD support such as DJI or DisplayPort is supported using UART3 or any other free UART. See [site wiki="plane,copter,rover,sub"]:ref:`common-msp-osd-overview-4.2`\ [/site][site wiki="blimp"]:ref:`copter:common-msp-osd-overview-4.2`\ [/site] for more info.
 
 VTX Control
 ===========
 
-UART3 TX is located in the Video Output connector to provide IRC Tramp or Smart Audio control of video transmitters. See :ref:`common-vtx` for more information.
+UART3 TX is located in the Video Output connector to provide IRC Tramp or Smart Audio control of video transmitters. See [site wiki="plane,copter,rover,sub"]:ref:`common-vtx`\ [/site][site wiki="blimp"]:ref:`copter:common-vtx`\ [/site] for more information.
 
 VTX Power Control
 =================

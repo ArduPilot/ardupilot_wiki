@@ -9,12 +9,12 @@ transmitter) using telemetry. Follow the links below for configuration
 information based upon your set-up.
 
 .. note:: Some RC systems incorporate telemetry in addition to RC control
-.. note:: most pure telemetry radios connect to the autopilot via a serial UART using MAVLink 1 or 2 protocol. See :ref:`common-telemetry-port-setup`
+.. note:: most pure telemetry radios connect to the autopilot via a serial UART using MAVLink 1 or 2 protocol. See [site wiki="plane,copter,rover,sub"]:ref:`common-telemetry-port-setup` [/site][site wiki="blimp"]:ref:`copter:common-telemetry-port-setup` [/site]
 
 .. image:: ../../../images/Telemetry_LandingImage.jpg
     :target: ../_images/Telemetry_LandingImage.jpg
 
-.. note:: High value systems using RC control over a telemetry link should consider :ref:`common-redundant-telemetry`
+.. note:: High value systems using RC control over a telemetry link should consider [site wiki="plane,copter,rover,sub"]:ref:`common-redundant-telemetry` [/site][site wiki="blimp"]:ref:`copter:common-redundant-telemetry` [/site]
 
 Short Range (<10KM)
 ===================

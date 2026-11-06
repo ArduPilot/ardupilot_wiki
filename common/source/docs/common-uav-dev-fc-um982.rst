@@ -255,7 +255,7 @@ Pre-configured to use DroneCAN with the supplied UAV-DEV-POWERMODULE
 
 Compass
 =======
-The autopilot includes an internal compass as well as GNSS-based heading, but GNSS-based heading is the recommended heading source, in which case, the internal compass should be disabled or set as a lower priority. Proper setup and placement of the dual antennas is required as well as setup of the moving baseline parameters, see :ref:`common-gps-for-yaw` for more details.
+The autopilot includes an internal compass as well as GNSS-based heading, but GNSS-based heading is the recommended heading source, in which case, the internal compass should be disabled or set as a lower priority. Proper setup and placement of the dual antennas is required as well as setup of the moving baseline parameters, see [site wiki="plane,copter,rover,sub"]:ref:`common-gps-for-yaw`\ [/site][site wiki="blimp"]:ref:`copter:common-gps-for-yaw`\ [/site] for more details.
 
 Motor Output
 ============

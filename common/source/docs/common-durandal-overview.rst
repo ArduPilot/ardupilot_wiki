@@ -673,7 +673,7 @@ Where to Buy
 Quick Start
 ===========
 
-Use the :ref:`Pixhawk Wiring QuickStart <common-pixhawk-wiring-and-quick-start>` as a general guide.
+Use the [site wiki="plane,copter,rover,sub"]:ref:`Pixhawk Wiring QuickStart <common-pixhawk-wiring-and-quick-start>`\ [/site][site wiki="blimp"]:ref:`Pixhawk Wiring QuickStart <copter:common-pixhawk-wiring-and-quick-start>`\ [/site] as a general guide.
 
 
 Acknowledgments

@@ -325,9 +325,12 @@ For example, if your local rules allow for a maximum of 30dBm (1W) EIRP,
 then if you use an amplifier with a 12dB transmit gain, and an antenna
 with 3dBi gain, then you will need to set TXPOWER to at most 14.
 
-[site wiki="plane,copter,rover,blimp"]
+[site wiki="plane,copter,rover"]
 If you don't know how to calculate it, we've made a tutorial for you
 here: :ref:`Understanding dB, Watts and dBm <common-antenna-design_understanding_db_watts_and_dbm>`.
+[/site][site wiki="blimp"]
+If you don't know how to calculate it, we've made a tutorial for you
+here: :ref:`Understanding dB, Watts and dBm <copter:common-antenna-design_understanding_db_watts_and_dbm>`.
 [/site]
 
 Using the AT command set
