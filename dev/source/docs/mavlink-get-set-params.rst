@@ -66,6 +66,8 @@ To retrieve just a single parameter send a `PARAM_REQUEST_READ <https://mavlink.
 
 The vehicle should respond with a `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__ message as described in the section above.
 
+From ArduPilot 4.7, if no parameter has the requested name or index the vehicle responds with a `PARAM_ERROR <https://mavlink.io/en/messages/common.html#PARAM_ERROR>`__ message with the "error" field set to MAV_PARAM_ERROR_DOES_NOT_EXIST instead.
+
 Setting a Parameter
 -------------------
 
@@ -79,7 +81,17 @@ To set the value of a single parameter send a `PARAM_SET <https://mavlink.io/en/
 
 If the parameter value is successfully updated the vehicle will respond with a `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__ message with the "param_value" field set to the new value.
 
-If the save is unsuccessful because the parameter is a read-only parameter (like MISSION_COUNT), the vehicle will respond with **two** messages.  A `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__ message with the "param_value" field set to the new value and a follow-up `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__ with the "param_value" field set to the original value.  This odd behaviour was implemented to deal with the bad behaviour of some GCSs that would try over and over to set the parameter until they received the number they were expecting.
+From ArduPilot 4.7, if the parameter cannot be set the vehicle responds with a `PARAM_ERROR <https://mavlink.io/en/messages/common.html#PARAM_ERROR>`__ message whose "error" field gives the reason:
+
+- **MAV_PARAM_ERROR_DOES_NOT_EXIST** : no parameter has that name
+- **MAV_PARAM_ERROR_VALUE_OUT_OF_RANGE** : the value sent is not a number (NaN) or is infinite
+- **MAV_PARAM_ERROR_PERMISSION_DENIED** : the parameter is read-only (like MIS_TOTAL).  The vehicle also sends a "Param write denied" STATUSTEXT and a `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__ message with the "param_value" field set to the unchanged value
+
+If a script has turned off parameter setting from the ground station, the firmware itself replies to a set of any existing parameter to a finite value with only a `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__ message with the "param_value" field set to the unchanged value, with no `PARAM_ERROR <https://mavlink.io/en/messages/common.html#PARAM_ERROR>`__ message and no STATUSTEXT.  The script may send its own replies or set the value itself, as the param-lockdown applet does.
+
+Before 4.7 no `PARAM_ERROR <https://mavlink.io/en/messages/common.html#PARAM_ERROR>`__ message is sent.  An unknown parameter name gets no reply at all.  A value that is NaN or infinite is also ignored without a reply.  A read-only parameter gets the "Param write denied" STATUSTEXT and a single `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__ message with the "param_value" field set to the unchanged value.
+
+To decode `PARAM_ERROR <https://mavlink.io/en/messages/common.html#PARAM_ERROR>`__ a ground station or script needs a MAVLink library that includes it (for example pymavlink 2.4.50 or later).  `PARAM_ERROR <https://mavlink.io/en/messages/common.html#PARAM_ERROR>`__ is a MAVLink 2 message, so on a link still using MAVLink 1 the vehicle replies as it did before 4.7.
 
 Hidden Parameters
 -----------------
