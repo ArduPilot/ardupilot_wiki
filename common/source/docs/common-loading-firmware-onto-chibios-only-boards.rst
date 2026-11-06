@@ -107,7 +107,7 @@ Installing the ArduPilot bootloader
 **If you are certain that you only want to use ArduPilot on the board**, then flashing the ardupilot bootloader enables much simpler subsequent upgrades.
 
 - You must initially have a working version of ArduPilot installed on the board - follow the steps above.
-- You now must remove the copy protection on the internal flash. This is a destructive operation requiring complete erasure of the flash. ArduPilot provides support to make this easy. Set :ref:`BRD_OPTIONS<BRD_OPTIONS>` = 16.
+- You now must remove the copy protection on the internal flash. This is a destructive operation requiring complete erasure of the flash. ArduPilot provides support to make this easy. Set [site wiki="copter,plane,rover,blimp,sub"]:ref:`BRD_OPTIONS<BRD_OPTIONS>`\ [/site][site wiki="planner"]:ref:`BRD_OPTIONS<copter:BRD_OPTIONS>`\ [/site] = 16.
 - Power off and power on the board. The board will not appear to boot but the flash sector is being erased. Wait a few seconds and then power off the board.
 - Hold down the ``boot`` button (boot *not* bind this time) and power on the autopilot. This will put the board in dfu mode.
 - Download the ArduPilot bootloader, e.g. https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/SPRacingH7_bl.bin

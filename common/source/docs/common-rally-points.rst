@@ -68,24 +68,24 @@ The following should be considered when using Rally Points:
    number of Rally Points is restricted to 10 on Plane and 6 on Copter
    -- this limit may be expanded on other platforms such as Pixhawk in the future.
 #. On Plane, loiter radius for a Rally Point is the same as all other
-   loiter points; determined by the [site wiki="plane,planner"]:ref:`WP_LOITER_RAD <WP_LOITER_RAD>` [/site][site wiki="copter,rover,sub"]:ref:`WP_LOITER_RAD <plane:WP_LOITER_RAD>` [/site]
+   loiter points; determined by the [site wiki="plane"]:ref:`WP_LOITER_RAD <WP_LOITER_RAD>` [/site][site wiki="planner"]:ref:`WP_LOITER_RAD <plane:WP_LOITER_RAD>` [/site][site wiki="copter,rover,sub"]:ref:`WP_LOITER_RAD <plane:WP_LOITER_RAD>` [/site]
    parameter.
-#. The [site wiki="plane,planner"]:ref:`RTL_ALTITUDE <RTL_ALTITUDE>`\ [/site][site wiki="copter,rover,sub"]:ref:`RTL_ALTITUDE <plane:RTL_ALTITUDE>`\ [/site] or 
+#. The [site wiki="plane"]:ref:`RTL_ALTITUDE <RTL_ALTITUDE>`\ [/site][site wiki="planner"]:ref:`RTL_ALTITUDE <plane:RTL_ALTITUDE>`\ [/site][site wiki="copter,rover,sub"]:ref:`RTL_ALTITUDE <plane:RTL_ALTITUDE>`\ [/site] or 
    [site wiki="copter"]:ref:`RTL_ALT_M<RTL_ALT_M>`\ [/site][site wiki="plane,rover,sub,planner"]:ref:`RTL_ALT_M<copter:RTL_ALT_M>`\ [/site] parameters are NOT used with Rally Points! 
    The aircraft will transit to the Rally Point at the altitude 
    specified when adding that point.
 
 The following MAVLink parameters control Rally Point behavior:
 
-#. :ref:`RALLY_LIMIT_KM <RALLY_LIMIT_KM>`
+#. [site wiki="copter,plane,rover,sub"]:ref:`RALLY_LIMIT_KM <RALLY_LIMIT_KM>` [/site][site wiki="planner"]:ref:`RALLY_LIMIT_KM <copter:RALLY_LIMIT_KM>` [/site]
    is the maximum distance a Rally Point may be from the aircraft to be
    considered for an RTL event.  If all Rally Points are greater than
    this distance from the aircraft, then the Home location is used for
-   RTL events (at altitude [site wiki="plane,planner"]:ref:`RTL_ALTITUDE <RTL_ALTITUDE>`\ [/site][site wiki="copter,rover,sub"]:ref:`RTL_ALTITUDE <plane:RTL_ALTITUDE>`\ [/site])
+   RTL events (at altitude [site wiki="plane"]:ref:`RTL_ALTITUDE <RTL_ALTITUDE>`\ [/site][site wiki="planner"]:ref:`RTL_ALTITUDE <plane:RTL_ALTITUDE>`\ [/site][site wiki="copter,rover,sub"]:ref:`RTL_ALTITUDE <plane:RTL_ALTITUDE>`\ [/site])
    This parameter is to prevent fly offs if Rally Points have been specified for multiple
    flying fields. This parameter can be disabled if set to 0.
-#. :ref:`RALLY_INCL_HOME<RALLY_INCL_HOME>` allows Home to be included in the RALLY points, allowing it to return to home if closer than any RALLY point.
-#. :ref:`RALLY_TOTAL <RALLY_TOTAL>` is
+#. [site wiki="copter,plane,rover,sub"]:ref:`RALLY_INCL_HOME<RALLY_INCL_HOME>`\ [/site][site wiki="planner"]:ref:`RALLY_INCL_HOME<copter:RALLY_INCL_HOME>`\ [/site] allows Home to be included in the RALLY points, allowing it to return to home if closer than any RALLY point.
+#. [site wiki="copter,plane,rover,sub"]:ref:`RALLY_TOTAL <RALLY_TOTAL>`\ [/site][site wiki="planner"]:ref:`RALLY_TOTAL <copter:RALLY_TOTAL>`\ [/site] is
    the number of Rally Points currently specified. This parameter will
    be set for you by your ground control station (e.g., Mission Planner)
    when you add and remove Rally Points.  **IT IS HIGHLY UNLIKELY YOU

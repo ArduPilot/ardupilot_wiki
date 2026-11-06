@@ -61,10 +61,10 @@ In this example, a quadplane with outputs 5-8 used for 4 DShot ESCs with telemet
 
 On the main autopilot you need to set:
 
-- :ref:`CAN_Px_DRIVER <CAN_P1_DRIVER>` = 1
-- :ref:`CAN_Dx_PROTOCOL <CAN_D1_PROTOCOL>` = 1
-- :ref:`CAN_Dx_UC_ESC_BM <CAN_D1_UC_ESC_BM>` = 240 or the bitmask of motor outputs
-- :ref:`CAN_Dx_UC_ESC_OF <CAN_D1_UC_ESC_OF>` = 4 or the offset number to the first ESC output. This makes the transmission of CAN packets much more efficient
+- [site wiki="copter,plane,rover,sub"]:ref:`CAN_Px_DRIVER <CAN_P1_DRIVER>`\ [/site][site wiki="dev"]:ref:`CAN_Px_DRIVER <copter:CAN_P1_DRIVER>`\ [/site] = 1
+- [site wiki="copter,plane,rover,sub"]:ref:`CAN_Dx_PROTOCOL <CAN_D1_PROTOCOL>`\ [/site][site wiki="dev"]:ref:`CAN_Dx_PROTOCOL <copter:CAN_D1_PROTOCOL>`\ [/site] = 1
+- [site wiki="copter,plane,rover,sub"]:ref:`CAN_Dx_UC_ESC_BM <CAN_D1_UC_ESC_BM>`\ [/site][site wiki="dev"]:ref:`CAN_Dx_UC_ESC_BM <copter:CAN_D1_UC_ESC_BM>`\ [/site] = 240 or the bitmask of motor outputs
+- [site wiki="copter,plane,rover,sub"]:ref:`CAN_Dx_UC_ESC_OF <CAN_D1_UC_ESC_OF>`\ [/site][site wiki="dev"]:ref:`CAN_Dx_UC_ESC_OF <copter:CAN_D1_UC_ESC_OF>`\ [/site] = 4 or the offset number to the first ESC output. This makes the transmission of CAN packets much more efficient
 
 On the DroneCAN PWM node you need to set:
 
@@ -75,8 +75,8 @@ PWM Output
 ----------
 On the main autopilot you need to set:
 
-- :ref:`CAN_Dx_UC_SRV_BM <CAN_D1_UC_SRV_BM>` to a bitmask of servos you want to send over CAN.
-- :ref:`CAN_Dx_UC_SRV_RT <CAN_D1_UC_SRV_RT>` to the output rate. This is typically 50 Hz for most servos.
+- [site wiki="copter,plane,rover,sub"]:ref:`CAN_Dx_UC_SRV_BM <CAN_D1_UC_SRV_BM>`\ [/site][site wiki="dev"]:ref:`CAN_Dx_UC_SRV_BM <copter:CAN_D1_UC_SRV_BM>`\ [/site] to a bitmask of servos you want to send over CAN.
+- [site wiki="copter,plane,rover,sub"]:ref:`CAN_Dx_UC_SRV_RT <CAN_D1_UC_SRV_RT>`\ [/site][site wiki="dev"]:ref:`CAN_Dx_UC_SRV_RT <copter:CAN_D1_UC_SRV_RT>`\ [/site] to the output rate. This is typically 50 Hz for most servos.
 
 On the CAN node you need to set:
 

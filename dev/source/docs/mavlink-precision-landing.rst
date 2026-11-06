@@ -13,7 +13,7 @@ References:
 - `MAVLink's Landing Target documentation <https://mavlink.io/en/services/landing_target.html>`__
 - :ref:`Testing Precision Landing in SITL <testing_precision_landing>`
 
-Users should follow the :ref:`user precision landing wiki page <copter:precision-landing-and-loiter>` including setting :ref:`PLND_TYPE <PLND_TYPE>` = 1 (MAVLink)
+Users should follow the :ref:`user precision landing wiki page <copter:precision-landing-and-loiter>` including setting :ref:`PLND_TYPE <copter:PLND_TYPE>` = 1 (MAVLink)
 
 The external camera system should send the `LANDING_TARGET <https://mavlink.io/en/messages/common.html#LANDING_TARGET>`__ message to the autopilot at no less than 2hz (a higher rate is better).
 

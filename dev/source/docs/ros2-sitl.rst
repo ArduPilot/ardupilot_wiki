@@ -118,7 +118,7 @@ DDS is responsible for ROS2 communication. If the ROS2 topics are not published,
     param set DDS_ENABLE 1
 
 
-The second aspect to check, ensure the ArduPilot parameter :ref:`DDS_DOMAIN_ID<DDS_DOMAIN_ID>` matches your environment variable ``ROS_DOMAIN_ID``.The default is ``0`` for ArduPilot, which corresponds to the environment variable being unset. You may need to relaunch the SITL after changing the parameters. 
+The second aspect to check, ensure the ArduPilot parameter :ref:`DDS_DOMAIN_ID<copter:DDS_DOMAIN_ID>` matches your environment variable ``ROS_DOMAIN_ID``.The default is ``0`` for ArduPilot, which corresponds to the environment variable being unset. You may need to relaunch the SITL after changing the parameters. 
 
 
 MAVProxy

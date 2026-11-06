@@ -40,7 +40,7 @@ Onboard Calibration
 
 "Onboard Calibration" is a calibration routine that runs on the autopilot.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling and orientation are also automatically determined.
 
-.. note:: Calibration could fail for the compasses integrated into the autopilot, if any,  if the :ref:`autopilot board orientation<AHRS_ORIENTATION>` parameter is not correct.
+.. note:: Calibration could fail for the compasses integrated into the autopilot, if any,  if the [site wiki="copter,plane,rover,sub,blimp"]:ref:`autopilot board orientation<AHRS_ORIENTATION>`\ [/site][site wiki="planner"]:ref:`autopilot board orientation<copter:AHRS_ORIENTATION>`\ [/site] parameter is not correct.
 
 To perform the onboard calibration of all compasses:
 
@@ -60,7 +60,7 @@ If calibration fails:
 - you will hear an "unhappy" failure tone, the green bars may reset to the left, and the calibration routine may restart (depending upon the ground station). Mission Planner will automatically retry, so continue to rotate the vehicle as instructed above.
 - if a compass is not calibrating, consider moving to a different area away from magnetic disturbances, and remove electronics from your pockets.
 - if, after multiple attempts, the compass has not passed the calibration, Press the "Cancel" button and change the "Fitness" drop-down to a more relaxed setting and try again.
-- if compass calibration still fails it may help to raise :ref:`COMPASS_OFFS_MAX <COMPASS_OFFS_MAX>` from 850 to 2000 or even 3000
+- if compass calibration still fails it may help to raise [site wiki="copter,plane,rover,sub,blimp"]:ref:`COMPASS_OFFS_MAX <COMPASS_OFFS_MAX>`\ [/site][site wiki="planner"]:ref:`COMPASS_OFFS_MAX <copter:COMPASS_OFFS_MAX>`\ [/site] from 850 to 2000 or even 3000
 - finally, if a single compass is not calibrating and you trust the others, disable it.
 
 Onboard Calibration using RC Switch

@@ -12,7 +12,7 @@ The "primary" lane is the one currently providing state estimates, other lanes a
 
     This page attempts to clarify an advanced configuration topic. The source code is the truth.
 
-The number of possible lanes is the number of IMUs enabled for use (see :ref:`EK3_IMU_MASK <EK3_IMU_MASK>`).
+The number of possible lanes is the number of IMUs enabled for use (see [site wiki="copter,plane,rover,sub"]:ref:`EK3_IMU_MASK <EK3_IMU_MASK>`\ [/site][site wiki="dev"]:ref:`EK3_IMU_MASK <copter:EK3_IMU_MASK>`\ [/site]).
 Furthermore, the lanes are 1-1 bound to the (used) IMUs: lane 1 for IMU 1, lane 2 for IMU 2, etc.
 
 Now, consider the other sensor types {Airspeed, Barometer, GPS, and Magnetometer (aka Compass)}.
@@ -54,17 +54,17 @@ Configuration Parameters
 
 .. note::
 
-    Affinity is only available with EKF3, so make sure you are using it by ensuring :ref:`EK3_ENABLE <EK3_ENABLE>` is set to "1" and :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` is set to "3"
+    Affinity is only available with EKF3, so make sure you are using it by ensuring [site wiki="copter,plane,rover,sub"]:ref:`EK3_ENABLE <EK3_ENABLE>`\ [/site][site wiki="dev"]:ref:`EK3_ENABLE <copter:EK3_ENABLE>`\ [/site] is set to "1" and :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` is set to "3"
 
-The :ref:`EK3_AFFINITY <EK3_AFFINITY>` parameter is a bitmask which gives you the option to choose the sensors you want to enable affinity for.
+The [site wiki="copter,plane,rover,sub"]:ref:`EK3_AFFINITY <EK3_AFFINITY>`\ [/site][site wiki="dev"]:ref:`EK3_AFFINITY <copter:EK3_AFFINITY>`\ [/site] parameter is a bitmask which gives you the option to choose the sensors you want to enable affinity for.
 In every EKF lane, sensors for which affinity is not enabled will follow the system's "primary" selection logic.
 For a sensor-type with affinity enabled, lane 1's primary sensor is 1, lane 2's primary sensor is 2, etc.
 
-The :ref:`EK3_ERR_THRESH <EK3_ERR_THRESH>` parameter controls the sensitivity of lane switching. Lane errors are accumulated over time relative to the active primary lane. This threshold controls how much of an error difference between a non-primary and primary lane is required to consider the former performing better. Lowering this parameter makes lane switching more responsive to smaller 'relative' errors, and in practical you will see a more aggressive lane switching, and, vice-versa.
+The [site wiki="copter,plane,rover,sub"]:ref:`EK3_ERR_THRESH <EK3_ERR_THRESH>`\ [/site][site wiki="dev"]:ref:`EK3_ERR_THRESH <copter:EK3_ERR_THRESH>`\ [/site] parameter controls the sensitivity of lane switching. Lane errors are accumulated over time relative to the active primary lane. This threshold controls how much of an error difference between a non-primary and primary lane is required to consider the former performing better. Lowering this parameter makes lane switching more responsive to smaller 'relative' errors, and in practical you will see a more aggressive lane switching, and, vice-versa.
 
 .. warning::
 
-    Misconfiguring the :ref:`EK3_ERR_THRESH <EK3_ERR_THRESH>` parameter could adversely affect the lane switching mechanism and have serious consequences which could lead to the loss of your vehicle. Please tune carefully.
+    Misconfiguring the [site wiki="copter,plane,rover,sub"]:ref:`EK3_ERR_THRESH <EK3_ERR_THRESH>`\ [/site][site wiki="dev"]:ref:`EK3_ERR_THRESH <copter:EK3_ERR_THRESH>`\ [/site] parameter could adversely affect the lane switching mechanism and have serious consequences which could lead to the loss of your vehicle. Please tune carefully.
 
 
 Test Results

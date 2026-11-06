@@ -26,7 +26,7 @@ units of measure you want to use, etc.
 Flight Modes
 ============
 
-This is where you can set the 6 flight modes controlled by the flight mode channel. This channel defaults to RC channel 8 for Plane, and channel 5 for Copter and Rover, but can be re-assigned by the :ref:`FLTMODE_CH<FLTMODE_CH>` parameter for  Plane and Copter, and the :ref:`MODE_CH<MODE_CH>` for Rover.
+This is where you can set the 6 flight modes controlled by the flight mode channel. This channel defaults to RC channel 8 for Plane, and channel 5 for Copter and Rover, but can be re-assigned by the :ref:`FLTMODE_CH<copter:FLTMODE_CH>` parameter for  Plane and Copter, and the :ref:`MODE_CH<rover:MODE_CH>` for Rover.
 
 .. image:: ../../../images/MP-fltmode.png
 

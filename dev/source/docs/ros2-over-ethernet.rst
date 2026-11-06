@@ -52,17 +52,17 @@ Then, you would configure all of the below parameters.
 
    * - Parameter Name
      - Value
-   * - :ref:`DDS_ENABLE<DDS_ENABLE>`
+   * - :ref:`DDS_ENABLE<copter:DDS_ENABLE>`
      - 1
-   * - :ref:`DDS_IP0<DDS_IP0>`
+   * - :ref:`DDS_IP0<copter:DDS_IP0>`
      - 192
-   * - :ref:`DDS_IP1<DDS_IP1>`
+   * - :ref:`DDS_IP1<copter:DDS_IP1>`
      - 168
-   * - :ref:`DDS_IP2<DDS_IP2>`
+   * - :ref:`DDS_IP2<copter:DDS_IP2>`
      - 144
-   * - :ref:`DDS_IP3<DDS_IP3>`
+   * - :ref:`DDS_IP3<copter:DDS_IP3>`
      - 6
-   * - :ref:`DDS_UDP_PORT<DDS_UDP_PORT>`
+   * - :ref:`DDS_UDP_PORT<copter:DDS_UDP_PORT>`
      - 2019
    * - :ref:`NET_DHCP<NET_DHCP>`
      - 0

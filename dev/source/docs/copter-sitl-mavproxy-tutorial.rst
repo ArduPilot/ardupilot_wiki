@@ -68,7 +68,7 @@ default :ref:`DISARM_DELAY <copter:DISARM_DELAY>`) otherwise the motors will dis
 .. note::
 
    Copter by default only supports takeoff in ``GUIDED`` mode.
-   if you want to take off in ``AUTO`` mode, you need to set :ref:`AUTO_OPTIONS <AUTO_OPTIONS>` parameter to 3.
+   if you want to take off in ``AUTO`` mode, you need to set :ref:`AUTO_OPTIONS <copter:AUTO_OPTIONS>` parameter to 3.
 
 Enter the following commands in the *MAVProxy Command Prompt*.
 
@@ -132,7 +132,7 @@ Changing flight mode - circle and land
 
 The command below shows how to put Copter into
 :ref:`CIRCLE <copter:circle-mode>`
-mode with a :ref:`CIRCLE_RADIUS_M <CIRCLE_RADIUS_M>` of 20m. This will fly the Copter in a circle at a constant altitude, with the front pointed towards the centre of the circle.
+mode with a :ref:`CIRCLE_RADIUS_M <copter:CIRCLE_RADIUS_M>` of 20m. This will fly the Copter in a circle at a constant altitude, with the front pointed towards the centre of the circle.
 
 ::
 
@@ -141,7 +141,7 @@ mode with a :ref:`CIRCLE_RADIUS_M <CIRCLE_RADIUS_M>` of 20m. This will fly the C
 
 .. note::
 
-   If you set the :ref:`CIRCLE_RADIUS_M <CIRCLE_RADIUS_M>` to zero the vehicle will rotate
+   If you set the :ref:`CIRCLE_RADIUS_M <copter:CIRCLE_RADIUS_M>` to zero the vehicle will rotate
    in place.
 
 Copter supports a :ref:`number of other flight modes <copter:flight-modes>`,
@@ -273,13 +273,13 @@ You can list the fence parameters with ``param show``:
     FENCE_RADIUS     150.000000
     FENCE_TYPE       3.000000
 
-The fence has an altitude boundary of 100 metres (:ref:`FENCE_ALT_MAX <FENCE_ALT_MAX>`) and
-is bound by a circle of radius :ref:`FENCE_RADIUS<FENCE_RADIUS>` around the home
-location. The :ref:`FENCE_TYPE <FENCE_TYPE>` = "3" means that both the radius and altitude
+The fence has an altitude boundary of 100 metres (:ref:`FENCE_ALT_MAX <copter:FENCE_ALT_MAX>`) and
+is bound by a circle of radius :ref:`FENCE_RADIUS<copter:FENCE_RADIUS>` around the home
+location. The :ref:`FENCE_TYPE <copter:FENCE_TYPE>` = "3" means that both the radius and altitude
 are used (you can change the type to other numbers have an altitude-only
 or circle only fence - or none at all).
 FENCE_ENABLE
-The fence is initially disabled (:ref:`FENCE_ENABLE <FENCE_ENABLE>` = 0). To turn it on we
+The fence is initially disabled (:ref:`FENCE_ENABLE <copter:FENCE_ENABLE>` = 0). To turn it on we
 set the value to one:
 
 ::

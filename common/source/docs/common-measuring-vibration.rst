@@ -106,7 +106,7 @@ IMU Dataflash Log message
 
 For very old versions of ArduPilot that do not include the Vibe message the IMU values can be checked directly
 
--  Ensure the :ref:`LOG_BITMASK <LOG_BITMASK>` parameter is set to include IMU data so accelerometer values are recorded to the dataflash logs
+-  Ensure the [site wiki="copter,plane,rover,sub"]:ref:`LOG_BITMASK <LOG_BITMASK>`\ [/site][site wiki="dev,planner"]:ref:`LOG_BITMASK <copter:LOG_BITMASK>`\ [/site] parameter is set to include IMU data so accelerometer values are recorded to the dataflash logs
 -  Fly your copter in Stabilize mode and try to maintain a level hover (it doesn't need to be perfectly stable or level)
 -  :ref:`Download the dataflash logs and <common-downloading-and-analyzing-data-logs-in-mission-planner_downloading_logs_via_mavlink>`
    after the download has completed, use the Mission Planner's "Review a

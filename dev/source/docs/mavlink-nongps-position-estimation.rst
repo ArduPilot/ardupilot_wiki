@@ -24,13 +24,13 @@ Any of the following messages should be sent to the autopilot at 4hz or higher:
 
 ArduPilot's parameters should be setup as if a :ref:`ModalAI VOXL <copter:common-modalai-voxl>` is used which includes:
 
-- Set :ref:`VISO_TYPE <VISO_TYPE>` = 3 (VOXL)
-- Set :ref:`VISO_POS_X <VISO_POS_X>`, :ref:`VISO_POS_Y <VISO_POS_Y>`, :ref:`VISO_POS_Z <VISO_POS_Z>` to the camera's position on the vehicle
-- Set :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` = 6 (ExternalNav)
-- Set :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 6 (ExternalNav) or 0 (None)
-- Set :ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>` = 6 (ExternalNav) or 1 (Baro)
-- Set :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` = 6 (ExternalNav) or 0 (None)
-- Set :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 6 (ExternalNav) or 1 (Compass)
+- Set :ref:`VISO_TYPE <copter:VISO_TYPE>` = 3 (VOXL)
+- Set :ref:`VISO_POS_X <copter:VISO_POS_X>`, :ref:`VISO_POS_Y <copter:VISO_POS_Y>`, :ref:`VISO_POS_Z <copter:VISO_POS_Z>` to the camera's position on the vehicle
+- Set :ref:`EK3_SRC1_POSXY <copter:EK3_SRC1_POSXY>` = 6 (ExternalNav)
+- Set :ref:`EK3_SRC1_VELXY <copter:EK3_SRC1_VELXY>` = 6 (ExternalNav) or 0 (None)
+- Set :ref:`EK3_SRC1_POSZ <copter:EK3_SRC1_POSZ>` = 6 (ExternalNav) or 1 (Baro)
+- Set :ref:`EK3_SRC1_VELZ <copter:EK3_SRC1_VELZ>` = 6 (ExternalNav) or 0 (None)
+- Set :ref:`EK3_SRC1_YAW <copter:EK3_SRC1_YAW>` = 6 (ExternalNav) or 1 (Compass)
 
 In addition it may be useful to setup :ref:`GPS/Non-GPS transitions <copter:common-non-gps-to-gps>` to allow switching between GPS and External Navigation
 
@@ -157,16 +157,16 @@ For both position and angle error, the 3 elements are combined to create a singl
 .. image:: ../images/nongps-position-estimation-poserr.png
     :target: ../_images/nongps-position-estimation-poserr.png
 
-In addition the position error is constrained to be between :ref:`VISO_POS_M_NSE <VISO_POS_M_NSE>` and 100 and the angle error between :ref:`VISO_YAW_M_NSE <VISO_YAW_M_NSE>` and 1.5
+In addition the position error is constrained to be between :ref:`VISO_POS_M_NSE <copter:VISO_POS_M_NSE>` and 100 and the angle error between :ref:`VISO_YAW_M_NSE <copter:VISO_YAW_M_NSE>` and 1.5
 
-Messages with "quality" below the :ref:`VISO_QUAL_MIN <VISO_QUAL_MIN>` parameter value are ignored
+Messages with "quality" below the :ref:`VISO_QUAL_MIN <copter:VISO_QUAL_MIN>` parameter value are ignored
 
 OPTICAL_FLOW message
 --------------------
 
 An offboard optical flow sensor can send its horizontal flow sensor data to the autopilot using the `OPTICAL_FLOW <https://mavlink.io/en/messages/common.html#OPTICAL_FLOW>`__ message
 
-Users should set :ref:`FLOW_TYPE<FLOW_TYPE>` = 5 (MAVLink) and then perform the :ref:`Optical Flow Setup procedure <copter:common-optical-flow-sensor-setup>` before use
+Users should set :ref:`FLOW_TYPE<copter:FLOW_TYPE>` = 5 (MAVLink) and then perform the :ref:`Optical Flow Setup procedure <copter:common-optical-flow-sensor-setup>` before use
 
 .. raw:: html
 
