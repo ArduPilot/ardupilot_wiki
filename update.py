@@ -1298,6 +1298,13 @@ class WikiUpdater:
                   "log messages, and video thumbnails rather than cleaning "
                   "before build."),
         )
+        parser.add_argument(
+            "--offline",
+            dest="offline",
+            action="store_true",
+            default=False,
+            help="Build without fetching online resources/components.",
+        )
 
         self.args = parser.parse_args()
         self.verbose: bool = self.args.verbose
@@ -1316,24 +1323,30 @@ class WikiUpdater:
         check_imports()
         check_ref_directives()
 
-        info("=== Step 1: Creating features pages ===")
-        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-        create_features_pages(self.args.site)
+        if self.args.offline:
+            info("=== Step 1: Skipping features pages (offline build) ===")
+            info("=== Step 2: Skipping parameter and log message fetching (offline build) ===")
+        else:
+            info("=== Step 1: Creating features pages ===")
+            info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+            create_features_pages(self.args.site)
 
-        info("=== Step 2: Fetching parameters and log messages in parallel ===")
-        info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
-        if not self.args.fast:
-            if self.args.paramversioning:
-                # Parameters for all versions available on firmware.ardupilot.org:
-                fetch_versioned_parameters(self.args.site)
+            if self.args.fast:
+                info("=== Step 2: Using local parameters and log messages (fast build) ===")
             else:
-                # Single parameters file. Just present the latest parameters:
-                cleanup_versioned_parameters(self.args.site)
-                fetchparameters(self.args.site, self.args.cached_parameter_files)
+                info("=== Step 2: Fetching parameters and log messages in parallel ===")
+                info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
+                if self.args.paramversioning:
+                    # Parameters for all versions available on firmware.ardupilot.org:
+                    fetch_versioned_parameters(self.args.site)
+                else:
+                    # Single parameters file. Just present the latest parameters:
+                    cleanup_versioned_parameters(self.args.site)
+                    fetchparameters(self.args.site, self.args.cached_parameter_files)
 
-            dedupe_periph_net_parameters('./dev/source/docs/AP_Periph-Parameters.rst')
-            # Fetch most recent LogMessage metadata from autotest:
-            fetchlogmessages(self.args.site, self.args.cached_parameter_files)
+                dedupe_periph_net_parameters('./dev/source/docs/AP_Periph-Parameters.rst')
+                # Fetch most recent LogMessage metadata from autotest:
+                fetchlogmessages(self.args.site, self.args.cached_parameter_files)
 
         info("=== Step 3: Processing static sites ===")
         info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
