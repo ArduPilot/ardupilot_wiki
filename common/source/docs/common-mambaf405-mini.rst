@@ -98,12 +98,12 @@ FrSky Telemetry is supported using any UART TX pin. You need to set the followin
 OSD Support
 ============
 
-The Mamba MK4 F405Mini supports internal OSD using :ref:`OSD_TYPE<OSD_TYPE>` = 1 (MAX7456 driver).
+The Mamba MK4 F405Mini supports internal OSD using [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] = 1 (MAX7456 driver).
 
 DJI Video
 =========
 
-A standard DJI video connector is provided. Set :ref:`OSD_TYPE<OSD_TYPE>` to "3" (MSP) or "5" (DisplayPort) depending on use, and set :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` to "32" (MSP) or "42" (DisplayPort) also.
+A standard DJI video connector is provided. Set [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] to "3" (MSP) or "5" (DisplayPort) depending on use, and set :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` to "32" (MSP) or "42" (DisplayPort) also.
 
 PWM Output
 ===========

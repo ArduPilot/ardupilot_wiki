@@ -126,7 +126,7 @@ Then select an RC channel for control (Chx) and set its ``RCx_OPTION`` to the ap
 
 For example, use Channel 10 to control the power using Relay 2:
 
-- :ref:`RELAY2_PIN<RELAY2_PIN>` = "81" (Relay 2 is set by default, but can be changed)
+- [site wiki="plane,copter,rover,sub"]:ref:`RELAY2_PIN<RELAY2_PIN>`\ [/site][site wiki="blimp"]:ref:`RELAY2_PIN<copter:RELAY2_PIN>`\ [/site] = "81" (Relay 2 is set by default, but can be changed)
 - :ref:`RC10_OPTION<RC10_OPTION>` = "34" (Relay2 Control)
 
 .. note:: setting the above Relay low will turn off that supply. If nothing is assigned, default is powered on.

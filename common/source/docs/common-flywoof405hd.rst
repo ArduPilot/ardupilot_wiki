@@ -86,7 +86,7 @@ Internally connected to integrated 4in1 ESC with BLHELI_S firmware. Bi-Direction
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - [site wiki="copter,rover,blimp"]:ref:`FRAME_CLASS<FRAME_CLASS>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_CLASS<copter:FRAME_CLASS>`\ [/site] = 1 (Quad)
-- [site wiki="copter,rover,blimp"]:ref:`FRAME_TYPE<FRAME_TYPE>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site] = 12 (BetaFlightX) 
+- [site wiki="copter,rover"]:ref:`FRAME_TYPE<FRAME_TYPE>`\ [/site][site wiki="blimp"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site] = 12 (BetaFlightX) 
 
 RC Input
 ========

@@ -39,7 +39,7 @@ The defaults provide for basic operation:
 
 .. note:: once armed, and the center sprung throttle is allowed to return to center, the vehicle may start to  lift off slowly. Also, be sure to arm only in QHOVER or QLOITER!
 
-- Failsafe is setup by default to execute the [site wiki="plane"]:ref:`Hybrid RTL/QRTL <quadplane_rtl>`\ [/site][site wiki="copter,rover,blimp,sub"]Hybrid RTL/QRTL[/site] function with [site wiki="plane,blimp"]:ref:`Q_RTL_MODE<Q_RTL_MODE>`\ [/site][site wiki="copter,rover,sub"]:ref:`Q_RTL_MODE<plane:Q_RTL_MODE>`\ [/site] = 3.
+- Failsafe is setup by default to execute the [site wiki="plane"]:ref:`Hybrid RTL/QRTL <quadplane_rtl>`\ [/site][site wiki="copter,rover,blimp,sub"]Hybrid RTL/QRTL[/site] function with [site wiki="plane"]:ref:`Q_RTL_MODE<Q_RTL_MODE>`\ [/site][site wiki="copter,rover,blimp,sub"]:ref:`Q_RTL_MODE<plane:Q_RTL_MODE>`\ [/site] = 3.
 
 Customization
 =============

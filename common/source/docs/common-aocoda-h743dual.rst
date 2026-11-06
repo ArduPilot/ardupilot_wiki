@@ -103,7 +103,7 @@ Analog inputs are provided.
 OSD Support
 ===========
 
-The Aocoda-RC H743Dual has an on-board OSD using :ref:`OSD_TYPE<OSD_TYPE>` =  1 (MAX7456 driver). The CAM and VTX pins provide connections for using the internal OSD.
+The Aocoda-RC H743Dual has an on-board OSD using [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] =  1 (MAX7456 driver). The CAM and VTX pins provide connections for using the internal OSD.
 
 DJI Video and OSD
 =================
@@ -150,7 +150,7 @@ Set a RELAYx_PIN to “81” to control the switching. Then select an RC channel
 
 For example, use Channel 10 to control the switch using Relay 2:
 
-    :ref:`RELAY2_PIN<RELAY2_PIN>` = “81”
+    [site wiki="plane,copter,rover,sub"]:ref:`RELAY2_PIN<RELAY2_PIN>`\ [/site][site wiki="blimp"]:ref:`RELAY2_PIN<copter:RELAY2_PIN>`\ [/site] = “81”
 
     :ref:`RC10_OPTION<RC10_OPTION>` = “34” (Relay2 Control)
 

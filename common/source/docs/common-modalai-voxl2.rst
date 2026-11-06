@@ -126,9 +126,9 @@ Connect to the autopilot with a ground station (i.e. Mission Planner) and check 
 
 To enable the downward and forward facing lidars:
 
-- :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 10 (MAVLink)
-- :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0 (cm)
-- [site wiki="copter,rover,blimp,dev"]:ref:`PRX1_TYPE <PRX1_TYPE>`\ [/site][site wiki="plane"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site] = 2 (MAVLink)
+- [site wiki="copter,plane,rover,dev"]:ref:`RNGFND1_TYPE <RNGFND1_TYPE>`\ [/site][site wiki="blimp"]:ref:`RNGFND1_TYPE <copter:RNGFND1_TYPE>`\ [/site] = 10 (MAVLink)
+- [site wiki="copter,plane,rover,dev"]:ref:`RNGFND1_MIN <RNGFND1_MIN>`\ [/site][site wiki="blimp"]:ref:`RNGFND1_MIN <copter:RNGFND1_MIN>`\ [/site] = 0 (cm)
+- [site wiki="copter,rover,dev"]:ref:`PRX1_TYPE <PRX1_TYPE>`\ [/site][site wiki="blimp"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site][site wiki="plane"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site] = 2 (MAVLink)
 
 If only the VOXL 2 camera will be used for position estimation and heading (e.g. No GPS):
 

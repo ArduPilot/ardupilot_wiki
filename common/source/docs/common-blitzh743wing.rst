@@ -93,7 +93,7 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 OSD Support
 ===========
 
-The autopilot  supports OSD using :ref:`OSD_TYPE<OSD_TYPE>` 1 (MAX7456 driver). The defaults are also setup to allow DJI Goggle OSD support on UART4. Both the internal analog OSD and the DisplayPort OSD can be used simultaneously by setting :ref:`OSD_TYPE2<OSD_TYPE2>` = 5
+The autopilot  supports OSD using [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] 1 (MAX7456 driver). The defaults are also setup to allow DJI Goggle OSD support on UART4. Both the internal analog OSD and the DisplayPort OSD can be used simultaneously by setting [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE2<OSD_TYPE2>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE2<copter:OSD_TYPE2>`\ [/site] = 5
 
 
 PWM Output

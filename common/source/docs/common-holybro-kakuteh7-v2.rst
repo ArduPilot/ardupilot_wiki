@@ -176,7 +176,7 @@ FrSky Telemetry is supported using the Tx pin of any UART. You need to set the f
 OSD Support
 ===========
 
-The KakuteH7  supports OSD using :ref:`OSD_TYPE<OSD_TYPE>` 1 (MAX7456 driver). The defaults are also setup to allow DJI Goggle OSD support on UART1.
+The KakuteH7  supports OSD using [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] 1 (MAX7456 driver). The defaults are also setup to allow DJI Goggle OSD support on UART1.
 
 PWM Output
 ==========
@@ -198,7 +198,7 @@ to use DShot.
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - [site wiki="copter,rover,blimp"]:ref:`FRAME_CLASS<FRAME_CLASS>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_CLASS<copter:FRAME_CLASS>`\ [/site] = 1 (Quad)
-- [site wiki="copter,rover,blimp"]:ref:`FRAME_TYPE<FRAME_TYPE>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site] = 12 (BetaFlightX) 
+- [site wiki="copter,rover"]:ref:`FRAME_TYPE<FRAME_TYPE>`\ [/site][site wiki="blimp"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site] = 12 (BetaFlightX) 
 
 LED Output
 ==========

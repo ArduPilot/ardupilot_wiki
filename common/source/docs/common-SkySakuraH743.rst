@@ -66,7 +66,7 @@ RC input is configured on UART4 with an sh1.0 connector. It supports all RC prot
 
 OSD Support
 ===========
-SkySakura H743 supports HD VTX DisplayPort OSD through UART6 by default. Set :ref:`OSD_TYPE<OSD_TYPE>` = 5.
+SkySakura H743 supports HD VTX DisplayPort OSD through UART6 by default. Set [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] = 5.
 
 VTX Power Control
 =================

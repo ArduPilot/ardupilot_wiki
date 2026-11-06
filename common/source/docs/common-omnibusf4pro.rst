@@ -208,7 +208,7 @@ How to trigger a camera with relay pin
 
 Any PWM output can be used as a relay pin. See [site wiki="plane,copter,rover,sub"]:ref:`common-gpios` [/site][site wiki="blimp"]:ref:`copter:common-gpios` [/site]
 
-:ref:`RELAY2_PIN<RELAY2_PIN>` = 54 for output PWM 5 to be assigned to RELAY2
+[site wiki="plane,copter,rover,sub"]:ref:`RELAY2_PIN<RELAY2_PIN>`\ [/site][site wiki="blimp"]:ref:`RELAY2_PIN<copter:RELAY2_PIN>`\ [/site] = 54 for output PWM 5 to be assigned to RELAY2
 
 Hardware definition is available `here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/omnibusf4pro/hwdef.dat>`__.
 

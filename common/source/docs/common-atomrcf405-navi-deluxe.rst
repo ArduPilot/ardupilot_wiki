@@ -125,7 +125,7 @@ RF Module
 
 A BLERF module is integrated on board and connected to USART1, but is not currently supported by ArduPilot Ground Control stations. This module is powered off by default, but power to it can be controlled by setting up a relay function:
 
-Enable a relay via ``RELAYx_EN`` and set its  ``RELAYx_PIN`` to “81” to control the  switching. Then select an RC channel for control (Chx) and set its ``RCx_OPTION`` to the appropriate Relay (1-6) that you had set its pin parameter above. ``RELAY 2`` is assigned by default to this GPIO pin, but would need :reF:`RELAY2_FUNCTION<RELAY2_FUNCTION>` set to "1" to enable it.
+Enable a relay via ``RELAYx_EN`` and set its  ``RELAYx_PIN`` to “81” to control the  switching. Then select an RC channel for control (Chx) and set its ``RCx_OPTION`` to the appropriate Relay (1-6) that you had set its pin parameter above. ``RELAY 2`` is assigned by default to this GPIO pin, but would need [site wiki="plane,copter,rover,sub"]:ref:`RELAY2_FUNCTION<RELAY2_FUNCTION>`\ [/site][site wiki="blimp"]:ref:`RELAY2_FUNCTION<copter:RELAY2_FUNCTION>`\ [/site] set to "1" to enable it.
 
 Battery Monitor Configuration
 =============================

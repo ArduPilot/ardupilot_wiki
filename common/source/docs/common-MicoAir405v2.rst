@@ -91,7 +91,7 @@ The default RC input is SBUS only on SBUS pin. PPM is not supported. Other RC pr
 OSD Support
 ===========
 
-The MicoAir405v2 supports analog OSD using OSD_TYPE 1 (MAX7456 driver) using the CAM and VTX connectors. DisplayPort HD OSD via the DJI connector is enabled simultaneously by :ref:`OSD_TYPE2<OSD_TYPE2>` = 5.
+The MicoAir405v2 supports analog OSD using OSD_TYPE 1 (MAX7456 driver) using the CAM and VTX connectors. DisplayPort HD OSD via the DJI connector is enabled simultaneously by [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE2<OSD_TYPE2>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE2<copter:OSD_TYPE2>`\ [/site] = 5.
 
 HD VTX Support
 ==============
@@ -111,7 +111,7 @@ The MicoAir405v2 supports up to 10 PWM outputs(Mini supports 9). Outputs 1-8 als
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - [site wiki="copter,rover,blimp"]:ref:`FRAME_CLASS<FRAME_CLASS>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_CLASS<copter:FRAME_CLASS>`\ [/site] = 1 (Quad)
-- [site wiki="copter,rover,blimp"]:ref:`FRAME_TYPE<FRAME_TYPE>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site] = 12 (BetaFlightX) 
+- [site wiki="copter,rover"]:ref:`FRAME_TYPE<FRAME_TYPE>`\ [/site][site wiki="blimp"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site] = 12 (BetaFlightX) 
 
 Battery Monitoring
 ==================

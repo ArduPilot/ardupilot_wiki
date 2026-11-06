@@ -87,7 +87,7 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 OSD Support
 ===========
 
-The Mamba F405 MK2 has an integrated OSD enabled by :ref:`OSD_TYPE<OSD_TYPE>` =` 1 (MAX7456 driver).
+The Mamba F405 MK2 has an integrated OSD enabled by [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] =` 1 (MAX7456 driver).
 
 PWM Output
 ==========
