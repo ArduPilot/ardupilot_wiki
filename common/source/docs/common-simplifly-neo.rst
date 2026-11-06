@@ -51,7 +51,7 @@ Specifications
    -  14 PWM outputs
    -  Dedicated SBUS input, PPM input and SBUS output connectors
    -  1x CAN
-   -  SPI6 port with two chip selects
+   -  SPI port with two chip selects
    -  3 I2C buses, one brought out to an external connector
    -  microSD card slot
    -  Safety switch with LED, buzzer, RGB status LED
@@ -111,7 +111,8 @@ require a full UART with ``SERIALx_PROTOCOL`` set to "23". For example, using
 SERIAL4 on the SERIAL4/5 connector:
 
  - :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` = 23
- - FPort requires :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` = 15
+ - FPort requires :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` = 15, and connects
+   only the RX pin
  - CRSF/ELRS requires :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` = 0
  - SRXL2 requires :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` = 4, and connects
    only the TX pin
