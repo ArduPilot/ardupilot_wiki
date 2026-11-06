@@ -15,7 +15,7 @@ current code is targeted for a specific ROV configuration with the following har
 
 Sub Defaults
 ============
-* Default :ref:`frame type <FRAME_TYPE>` is VECTORED
+* Default :ref:`frame type <FRAME_CONFIG>` is VECTORED
 * Radio control is disabled via :ref:`RC_PROTOCOLS<RC_PROTOCOLS>` = 0 and :ref:`FLTMODE_CH<FLTMODE_CH>` = 0. Water absorbs radio waves, so RC is generally impractical unless the vehicle is at the surface, or the signal is converted to some other medium in between (e.g. using a tether cable, or acoustic modems).
 
 MAVLink Overrides

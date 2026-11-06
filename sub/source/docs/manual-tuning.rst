@@ -58,8 +58,8 @@ Several parameters impact speed or speed limits:
 - :ref:`WP_SPD_DN<WP_SPD_DN>`
 
 - :ref:`PILOT_SPEED<PILOT_SPEED>`
-- :ref:`PILOT_SPD_UP<PILOT_SPD_UP>`
-- :ref:`PILOT_SPD_DN<PILOT_SPD_DN>`
+- :ref:`PILOT_SPEED_UP<PILOT_SPEED_UP>`
+- :ref:`PILOT_SPEED_DN<PILOT_SPEED_DN>`
 
 Depth Control
 =============

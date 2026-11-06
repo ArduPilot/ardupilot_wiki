@@ -34,7 +34,7 @@ For the below example, we will assume that the rangefinder is connected to SERIA
 
 As a Plane altitude rangefinder used in auto landings:
 
-- Set :ref:`RNGFND_LANDING<RNGFND_LANDING>` bits 0 or 1 to enable used of the rangefinder during landing phases of Plane and QuadPlane. The first rangefinder with "down" orientation will be used.
+- Set [site wiki="plane"]:ref:`RNGFND_LANDING<RNGFND_LANDING>`\ [/site][site wiki="copter,rover,sub"]:ref:`RNGFND_LANDING<plane:RNGFND_LANDING>`\ [/site] bits 0 or 1 to enable used of the rangefinder during landing phases of Plane and QuadPlane. The first rangefinder with "down" orientation will be used.
 
 - Set :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = 25 (down)
 - Set :ref:`RNGFND1_MIN<RNGFND1_MIN>` = 0.5 (meters)

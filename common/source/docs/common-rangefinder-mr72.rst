@@ -36,10 +36,10 @@ Set the following parameters
 -  :ref:`CAN_P2_DRIVER <CAN_P2_DRIVER>` = 2 (to enable the 2nd CAN port using the second CAN driver)
 -  :ref:`CAN_P2_BITRATE<CAN_P2_BITRATE>` = 500000 (Or as set in NAssistant)
 -  :ref:`CAN_D2_PROTOCOL<CAN_D2_PROTOCOL>` = 14 (RadarCAN)
--  :ref:`PRX1_TYPE <PRX1_TYPE>` = 17 (MR72_CAN) Reboot after setting this.
--  :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
--  :ref:`PRX1_YAW_CORR <PRX1_YAW_CORR>` allows adjusting the forward direction of the unit.  One way to determine this angle is to use the Mission Planner's Setup >> Advanced, Proximity viewer and then walk around the vehicle and ensure that the sector distances shorten appropriately.
--  :ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>` and :ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>` should be left at default.
+-  [site wiki="copter,rover,sub"]:ref:`PRX1_TYPE <PRX1_TYPE>`\ [/site][site wiki="plane"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site] = 17 (MR72_CAN) Reboot after setting this.
+-  [site wiki="copter,rover,sub"]:ref:`PRX1_ORIENT <PRX1_ORIENT>`\ [/site][site wiki="plane"]:ref:`PRX1_ORIENT <copter:PRX1_ORIENT>`\ [/site] = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
+-  [site wiki="copter,rover,sub"]:ref:`PRX1_YAW_CORR <PRX1_YAW_CORR>`\ [/site][site wiki="plane"]:ref:`PRX1_YAW_CORR <copter:PRX1_YAW_CORR>`\ [/site] allows adjusting the forward direction of the unit.  One way to determine this angle is to use the Mission Planner's Setup >> Advanced, Proximity viewer and then walk around the vehicle and ensure that the sector distances shorten appropriately.
+-  [site wiki="copter,rover,sub"]:ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>`\ [/site][site wiki="plane"]:ref:`PRX1_IGN_ANG1 <copter:PRX1_IGN_ANG1>`\ [/site] and [site wiki="copter,rover,sub"]:ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>`\ [/site][site wiki="plane"]:ref:`PRX1_IGN_WID1 <copter:PRX1_IGN_WID1>`\ [/site] should be left at default.
  
 [site wiki="copter,plane,rover"]More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.[/site]
 

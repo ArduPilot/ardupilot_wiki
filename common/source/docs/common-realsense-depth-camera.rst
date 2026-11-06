@@ -96,8 +96,8 @@ Example of specifics for ``Loiter`` and ``AltHold`` mode:
 
 - :ref:`AVOID_MARGIN <AVOID_MARGIN>` = 1.5: How many meters from the barrier the vehicle will attempt to stop or try to slide along it
 - :ref:`AVOID_BEHAVE <AVOID_BEHAVE>` = 1: Whether the vehicle should simply Stop (1) in front of the barrier or Slide (0) around it
-- :ref:`AVOID_DIST_MAX <AVOID_DIST_MAX>` = 1.5: How far from a barrier the vehicle starts leaning away from the barrier in AltHold
-- :ref:`AVOID_ANG_MAX <AVOID_ANG_MAX>` = 30: How far the vehicle will try to lean away from the barrier in 
+- [site wiki="copter"]:ref:`AVOID_DIST_MAX <AVOID_DIST_MAX>`\ [/site][site wiki="rover"]:ref:`AVOID_DIST_MAX <copter:AVOID_DIST_MAX>`\ [/site] = 1.5: How far from a barrier the vehicle starts leaning away from the barrier in AltHold
+- [site wiki="copter"]:ref:`AVOID_ANG_MAX <AVOID_ANG_MAX>`\ [/site][site wiki="rover"]:ref:`AVOID_ANG_MAX <copter:AVOID_ANG_MAX>`\ [/site] = 30: How far the vehicle will try to lean away from the barrier in 
 
 **Optional**: You can assign an RC switch to enable Avoidance instead of always on by default. Example of setting RC7 to switch Avoidance on in Mission Planner:
 

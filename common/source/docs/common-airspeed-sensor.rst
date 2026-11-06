@@ -7,7 +7,7 @@ Airspeed Sensor
 
 Copter, Rover, and Blimp can attach and enable an Airspeed Sensor. However, unlike Plane which uses the readings for navigation and control, these vehicles only log and report the readings for use by the displays in Ground Control Stations, OSDs, and telemetry. The Plane airspeed sensor :ref:`documentation<plane:airspeed>` can followed for selecting and mounting an airspeed sensor. However, be aware that it will not provide all the features discussed in Plane except for measurement and reporting.
 
-The one exception to the above is that Sailboats can use an airspeed sensor as part of a :ref:`Wind Vane<rover:wind-vane>` (:ref:`WNDVN_TYPE<WNDVN_TYPE>` = 4) and use its readings to calculate wind speed as a part of navigation.
+The one exception to the above is that Sailboats can use an airspeed sensor as part of a :ref:`Wind Vane<rover:wind-vane>` ([site wiki="rover"]:ref:`WNDVN_TYPE<WNDVN_TYPE>`\ [/site][site wiki="copter"]:ref:`WNDVN_TYPE<rover:WNDVN_TYPE>`\ [/site] = 4) and use its readings to calculate wind speed as a part of navigation.
 
 - Set :ref:`ARSPD_ENABLE<ARSPD_ENABLE>` = 1 to allow use of airspeed sensor and to show other airspeed parameters
 

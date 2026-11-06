@@ -53,7 +53,7 @@ Connection and Configuration
 - Set :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 3 (ToshibaCAN)
 - Set :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (First driver) to specify that the ESCs are connected to the CAN1 port
 [site wiki="copter,rover"]
-- Set :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` = 1000 and :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` = 2000 so ArduPilot uses an output range that matches the ESCs input range
+- Set [/site][site wiki="copter"]:ref:`MOT_PWM_MIN <MOT_PWM_MIN>`\ [/site][site wiki="rover"]:ref:`MOT_PWM_MIN <copter:MOT_PWM_MIN>`\ [/site][site wiki="copter,rover"] = 1000 and [/site][site wiki="copter"]:ref:`MOT_PWM_MAX <MOT_PWM_MAX>`\ [/site][site wiki="rover"]:ref:`MOT_PWM_MAX <copter:MOT_PWM_MAX>`\ [/site][site wiki="copter,rover"] = 2000 so ArduPilot uses an output range that matches the ESCs input range
 [/site]
 [site wiki="copter"]
 - Set :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` = 0.03 meaning the motors will spin at 3% of full thrust when armed

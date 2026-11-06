@@ -32,8 +32,8 @@ Connect the radar to the autopilot's CAN port as shown above and set the followi
 - :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (First CAN driver)
 - :ref:`CAN_P1_BITRATE <CAN_P1_BITRATE>` = 500000
 - :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 14 (RadarCAN)
-- :ref:`PRX1_TYPE <PRX1_TYPE>` = 18 (Hexsoon Radar)
-- :ref:`PRX1_YAW_CORR <PRX1_YAW_CORR>` = 0 (forward) if the radar is mounted pointing forwards
+- [site wiki="copter,rover,sub"]:ref:`PRX1_TYPE <PRX1_TYPE>`\ [/site][site wiki="plane"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site] = 18 (Hexsoon Radar)
+- [site wiki="copter,rover,sub"]:ref:`PRX1_YAW_CORR <PRX1_YAW_CORR>`\ [/site][site wiki="plane"]:ref:`PRX1_YAW_CORR <copter:PRX1_YAW_CORR>`\ [/site] = 0 (forward) if the radar is mounted pointing forwards
 
 After setting the above parameters reboot the autopilot
 
@@ -45,10 +45,10 @@ Up to 3 radar may be connected to a single autopilot.  Please follow these steps
 - Connect each radar's GND, CANL and CANH pins to one of the autopilot's CAN ports as shown above
 - Connect each radar's GND and VCC pins to an external BEC providing between 5V and 28V
 - Download and run the `configuration tool <http://www.hexsoon.com/en/download/download-11-748.html>`__ to set each radar's ID to a unique number
-- :ref:`PRX2_TYPE <PRX2_TYPE>` = 18 (Hexsoon Radar)
-- :ref:`PRX2_YAW_CORR <PRX2_YAW_CORR>` = angle that the 2nd radar is mounted at relative to the forward direction of the vehicle
-- :ref:`PRX3_TYPE <PRX3_TYPE>` = 18 (Hexsoon Radar)
-- :ref:`PRX3_YAW_CORR <PRX3_YAW_CORR>` = angle that the 3rd radar is mounted at relative to the forward direction of the vehicle
+- [site wiki="copter,rover,sub"]:ref:`PRX2_TYPE <PRX2_TYPE>`\ [/site][site wiki="plane"]:ref:`PRX2_TYPE <copter:PRX2_TYPE>`\ [/site] = 18 (Hexsoon Radar)
+- [site wiki="copter,rover,sub"]:ref:`PRX2_YAW_CORR <PRX2_YAW_CORR>`\ [/site][site wiki="plane"]:ref:`PRX2_YAW_CORR <copter:PRX2_YAW_CORR>`\ [/site] = angle that the 2nd radar is mounted at relative to the forward direction of the vehicle
+- [site wiki="copter,rover,sub"]:ref:`PRX3_TYPE <PRX3_TYPE>`\ [/site][site wiki="plane"]:ref:`PRX3_TYPE <copter:PRX3_TYPE>`\ [/site] = 18 (Hexsoon Radar)
+- [site wiki="copter,rover,sub"]:ref:`PRX3_YAW_CORR <PRX3_YAW_CORR>`\ [/site][site wiki="plane"]:ref:`PRX3_YAW_CORR <copter:PRX3_YAW_CORR>`\ [/site] = angle that the 3rd radar is mounted at relative to the forward direction of the vehicle
 
 [site wiki="copter,plane,rover"]More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.[/site]
 

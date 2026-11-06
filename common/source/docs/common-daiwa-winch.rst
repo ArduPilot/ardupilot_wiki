@@ -44,7 +44,7 @@ Connect the winch to the autopilot as shown below
 
 Set the following parameters
 
-- :ref:`WINCH_TYPE <WINCH_TYPE>` = 2 (Daiwa)
+- [site wiki="copter"]:ref:`WINCH_TYPE <WINCH_TYPE>`\ [/site][site wiki="plane,rover,sub"]:ref:`WINCH_TYPE <copter:WINCH_TYPE>`\ [/site] = 2 (Daiwa)
 - :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` = 88 (Winch)
 - :ref:`SERVO9_MIN <SERVO9_MIN>` = 1000
 - :ref:`SERVO9_TRIM <SERVO9_TRIM>` = 1500
@@ -67,7 +67,7 @@ Set the following parameters
 Winch Options
 =============
 
-The :ref:`WINCH_OPTIONS<WINCH_OPTIONS>` parameter provides a bit mask of possible configuration options for the winch when the following bits are set in the parameter:
+The [site wiki="copter"]:ref:`WINCH_OPTIONS<WINCH_OPTIONS>`\ [/site][site wiki="plane,rover,sub"]:ref:`WINCH_OPTIONS<copter:WINCH_OPTIONS>`\ [/site] parameter provides a bit mask of possible configuration options for the winch when the following bits are set in the parameter:
 
 ===     ======
 Bit     Option

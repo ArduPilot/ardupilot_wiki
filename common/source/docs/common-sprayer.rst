@@ -33,7 +33,7 @@ Enabling the Sprayer
 ====================
 
 -  Connect your autopilot to the ground station (i.e. Mission Planner)
--  Set the :ref:`SPRAY_ENABLE <SPRAY_ENABLE>` parameter to 1 and refresh parameters (the sprayer is not a commonly used feature so its other parameters are initially hidden)
+-  Set the [site wiki="copter"]:ref:`SPRAY_ENABLE <SPRAY_ENABLE>`\ [/site][site wiki="plane"]:ref:`SPRAY_ENABLE <copter:SPRAY_ENABLE>`\ [/site] parameter to 1 and refresh parameters (the sprayer is not a commonly used feature so its other parameters are initially hidden)
 -  Connect the pump to one of the autopilot's PWM outputs (like Pixhawk AUX1) and set the appropriate SERVO*_FUNCTION  or RC*_FUNCTION to 22 (where "*" is the RC output number, i.e. if the pump is connected to a Pixhawk's AUX1, set :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` to 22).
 -  Connect the optional spinner to another output port and set SERVO*_FUNCTION or RC*_FUNCTION to 23 (i.e. if using a Pixhawk's AUX2, set :ref:`SERVO10_FUNCTION <SERVO10_FUNCTION>` to 23)
 -  To allow the pilot to turn on/off the sprayer set an auxiliary switch on an rc channel(``RCx_OPTION``) to "15"
@@ -41,8 +41,8 @@ Enabling the Sprayer
 Configuring the pump
 ====================
 -  PWM range used to control the pump and spinner can be configured by setting the SERVO*_MIN/RC*_MIN, SERVO*_MAX/RC*_MAX parameters corresponding to the pwm output channels the pump and spinner are connected to.
--  :ref:`SPRAY_PUMP_MIN <SPRAY_PUMP_MIN>` controls the minimum pump rate (expressed as a percentage).  By default this is 0% meaning the pump will completely stop if the vehicle stops.
--  :ref:`SPRAY_PUMP_RATE <SPRAY_PUMP_RATE>` controls the pump rate (expressed as a percentage) when the vehicle is travelling at 1m/s.  By default this is 10%.  The pump rate increases linearly with the vehicle speed meaning by default the pump will reach 100% at 10m/s.
--  :ref:`SPRAY_SPINNER <SPRAY_SPINNER>` sets the pwm value sent to the spinner when the pump is on.
--  :ref:`SPRAY_SPEED_MIN <SPRAY_SPEED_MIN>` sets the minimum vehicle speed (in cm/s) at which the pump will operate.  Default is 100 meaning the pump will begin when the vehicle is travelling at or above 1m/s.
+-  [site wiki="copter"]:ref:`SPRAY_PUMP_MIN <SPRAY_PUMP_MIN>`\ [/site][site wiki="plane"]:ref:`SPRAY_PUMP_MIN <copter:SPRAY_PUMP_MIN>`\ [/site] controls the minimum pump rate (expressed as a percentage).  By default this is 0% meaning the pump will completely stop if the vehicle stops.
+-  [site wiki="copter"]:ref:`SPRAY_PUMP_RATE <SPRAY_PUMP_RATE>`\ [/site][site wiki="plane"]:ref:`SPRAY_PUMP_RATE <copter:SPRAY_PUMP_RATE>`\ [/site] controls the pump rate (expressed as a percentage) when the vehicle is travelling at 1m/s.  By default this is 10%.  The pump rate increases linearly with the vehicle speed meaning by default the pump will reach 100% at 10m/s.
+-  [site wiki="copter"]:ref:`SPRAY_SPINNER <SPRAY_SPINNER>`\ [/site][site wiki="plane"]:ref:`SPRAY_SPINNER <copter:SPRAY_SPINNER>`\ [/site] sets the pwm value sent to the spinner when the pump is on.
+-  [site wiki="copter"]:ref:`SPRAY_SPEED_MIN <SPRAY_SPEED_MIN>`\ [/site][site wiki="plane"]:ref:`SPRAY_SPEED_MIN <copter:SPRAY_SPEED_MIN>`\ [/site] sets the minimum vehicle speed (in cm/s) at which the pump will operate.  Default is 100 meaning the pump will begin when the vehicle is travelling at or above 1m/s.
 

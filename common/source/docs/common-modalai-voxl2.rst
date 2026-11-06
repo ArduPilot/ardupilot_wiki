@@ -128,7 +128,7 @@ To enable the downward and forward facing lidars:
 
 - :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 10 (MAVLink)
 - :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0 (cm)
-- :ref:`PRX1_TYPE <PRX1_TYPE>` = 2 (MAVLink)
+- [site wiki="copter,rover,blimp,dev"]:ref:`PRX1_TYPE <PRX1_TYPE>`\ [/site][site wiki="plane"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site] = 2 (MAVLink)
 
 If only the VOXL 2 camera will be used for position estimation and heading (e.g. No GPS):
 

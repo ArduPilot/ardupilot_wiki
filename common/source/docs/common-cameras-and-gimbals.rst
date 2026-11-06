@@ -91,7 +91,7 @@ below:
       very effective even at maximum 30 power zoom.
 
 -  For better and smoother Yaw, use Expo control on your RC and lower
-   the :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` gain in the autopilot.
+   the [site wiki="copter"]:ref:`ACRO_Y_RATE<ACRO_Y_RATE>`\ [/site][site wiki="plane,rover,sub"]:ref:`ACRO_Y_RATE<copter:ACRO_Y_RATE>`\ [/site] gain in the autopilot.
 
 It is important to remember that even with a perfect setup, photography
 is an art as well as a science. Using the camera pointing straight to

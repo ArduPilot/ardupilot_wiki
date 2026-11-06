@@ -28,7 +28,7 @@ Data Collection
 
 The data collection is initiated by switching to the System ID mode.
 Each time the mode is changed to the System ID flight mode a new data collection is initiated.
-To change the amplitude of the excitation, the :ref:`SID_MAGNITUDE<SID_MAGNITUDE>` parameter can be tuned using the transmitter during the data collection using :ref:`common-transmitter-tuning` and setting the :ref:`TUNE<TUNE>` parameter in Copter, or the :ref:`TUNE_PARAM<TUNE_PARAM>` in Plane, to "58" .
+To change the amplitude of the excitation, the :ref:`SID_MAGNITUDE<SID_MAGNITUDE>` parameter can be tuned using the transmitter during the data collection using :ref:`common-transmitter-tuning` and setting the [site wiki="copter"]:ref:`TUNE<TUNE>`\ [/site][site wiki="plane"]:ref:`TUNE<copter:TUNE>`\ [/site] parameter in Copter, or the [site wiki="plane"]:ref:`TUNE_PARAM<TUNE_PARAM>`\ [/site][site wiki="copter"]:ref:`TUNE_PARAM<plane:TUNE_PARAM>`\ [/site] in Plane, to "58" .
 
 The System ID mode provides these capabilities:
 
@@ -135,17 +135,17 @@ For plane, the main loop frequency default is 50 hz.  This is too low for most s
 +--------------+--------------+---------------+
 
 
-The next figure depicts the :ref:`SID_AXIS<SID_AXIS>` injection points in yellow and some details of the most inner PID loops when :ref:`ATC_RATE_FF_ENAB<ATC_RATE_FF_ENAB>` = 0.
+The next figure depicts the :ref:`SID_AXIS<SID_AXIS>` injection points in yellow and some details of the most inner PID loops when [site wiki="copter"]:ref:`ATC_RATE_FF_ENAB<ATC_RATE_FF_ENAB>`\ [/site][site wiki="plane"]:ref:`ATC_RATE_FF_ENAB<copter:ATC_RATE_FF_ENAB>`\ [/site] = 0.
 
 .. figure:: ../images/arducopter4.1_pid_loops_ff_dis.png
 
 ArduCopter control loops with ATC_RATE_FF_ENAB=0
 
-The next figure depicts the :ref:`SID_AXIS<SID_AXIS>` injection points in yellow and some details of the most inner PID loops when :ref:`ATC_RATE_FF_ENAB<ATC_RATE_FF_ENAB>` = 1.
+The next figure depicts the :ref:`SID_AXIS<SID_AXIS>` injection points in yellow and some details of the most inner PID loops when [site wiki="copter"]:ref:`ATC_RATE_FF_ENAB<ATC_RATE_FF_ENAB>`\ [/site][site wiki="plane"]:ref:`ATC_RATE_FF_ENAB<copter:ATC_RATE_FF_ENAB>`\ [/site] = 1.
 
 .. figure:: ../images/arducopter4.1_pid_loops_ff_en.png
 
-ArduCopter control loops with :ref:`ATC_RATE_FF_ENAB<ATC_RATE_FF_ENAB>` = 1
+ArduCopter control loops with [site wiki="copter"]:ref:`ATC_RATE_FF_ENAB<ATC_RATE_FF_ENAB>`\ [/site][site wiki="plane"]:ref:`ATC_RATE_FF_ENAB<copter:ATC_RATE_FF_ENAB>`\ [/site] = 1
 
 [site wiki="copter"]
 

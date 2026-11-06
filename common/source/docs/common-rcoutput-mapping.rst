@@ -321,7 +321,7 @@ Ground Steering
 
 The GroundSteering output function acts much like the rudder output
 function except that it only acts when the aircraft is below
-:ref:`GROUND_STEER_ALT<GROUND_STEER_ALT>` altitude. At altitudes above :ref:`GROUND_STEER_ALT<GROUND_STEER_ALT>` the
+[/site][site wiki="plane"]:ref:`GROUND_STEER_ALT<GROUND_STEER_ALT>`\ [/site][site wiki="rover"]:ref:`GROUND_STEER_ALT<plane:GROUND_STEER_ALT>`\ [/site][site wiki="plane,rover"] altitude. At altitudes above [/site][site wiki="plane"]:ref:`GROUND_STEER_ALT<GROUND_STEER_ALT>`\ [/site][site wiki="rover"]:ref:`GROUND_STEER_ALT<plane:GROUND_STEER_ALT>`\ [/site][site wiki="plane,rover"] the
 output will be the trim value for the channel.
 
 See the separate page on :ref:`setting up ground steering <tuning-ground-steering-for-a-plane>`
