@@ -115,7 +115,7 @@ Set the following parameters:
 When the terrain data indicates that the vehicle is above the :ref:`RNGFND1_PWRRNG <RNGFND1_PWRRNG>` height the :ref:`RNGFND1_STOP_PIN <RNGFND1_STOP_PIN>` will be used to disable the Lidar
 
 [site wiki="plane,copter"]
-Your GCS must :ref:`provide terrain data <common-terrain-following>` for this to work.
+Your GCS must [/site][site wiki="plane"]:ref:`provide terrain data <common-terrain-following>`\ [/site][site wiki="copter"]provide terrain data[/site][site wiki="plane,copter"] for this to work.
 [/site]
 
 Testing the sensor

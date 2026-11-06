@@ -210,7 +210,7 @@ Devo Telemetry
    <td>18</td>
    <td>
 
-OpticalFlow, see :ref:`Optical Flow Sensors <common-optical-flow-sensors-landingpage>` 
+OpticalFlow[site wiki="copter,plane,rover"], see :ref:`Optical Flow Sensors <common-optical-flow-sensors-landingpage>` [/site] 
 
 .. raw:: html
 

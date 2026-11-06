@@ -164,7 +164,7 @@ ArduDeck
 Open source desktop GCS for ArduPilot and PX4 vehicles over MAVLink. It also configures Betaflight and INAV boards over MSP.
 It covers vehicle setup (parameters with descriptions, calibration and setup wizards, firmware flashing), mission, fence and rally planning
 with survey patterns and terrain-aware altitude profiles, real-time telemetry with map instruments, multi-vehicle operation,
-DataFlash and ULog log analysis, MAVLink signing and a built-in SITL launcher. It serves terrain data to the autopilot (see :ref:`common-terrain-following`).
+DataFlash and ULog log analysis, MAVLink signing and a built-in SITL launcher. It serves terrain data to the autopilot[site wiki="plane,blimp"] (see :ref:`common-terrain-following`)[/site].
 A mobile app for Android and iOS is described under :ref:`Mobile GCSs <common-choosing-a-ground-station-mobile>`.
 
 -  **Platform**: Windows, Mac OS X, Linux

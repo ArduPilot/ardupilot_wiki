@@ -133,7 +133,7 @@ of the number of reflective obstacles that pass the sensor in a single rotation.
 Harmonic Notch Center Frequency
 ===============================
 
-If ``RPMx_TYPE`` = 4, then the center frequency of the harmonic notch is reported.  See :ref:`common-imu-notch-filtering` for how this value is obtained.
+If ``RPMx_TYPE`` = 4, then the center frequency of the harmonic notch is reported.[site wiki="copter,plane"]  See :ref:`common-imu-notch-filtering` for how this value is obtained.[/site]
 
 Heli Magnetic Sensors Known to Work with ArduPilot
 ==================================================

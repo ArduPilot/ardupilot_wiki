@@ -6,16 +6,18 @@ RangeFinders Setup Overview
 
 There are many different kinds of rangefinders: Lidar (using laser or infra-red light to measure distance), Sonar (using ultrasonic sound), and Radar (using microwave RF). Some are analog, producing  pulses whose timing represent the distance to an object, others are digital sending data streams over serial to UARTs, or I2C, or even via DroneCAN.
 
-:ref:`RangeFinders (Sonar or Lidar) <common-rangefinder-landingpage>` can be used for :ref:`Object Avoidance <common-object-avoidance-landing-page>` as well as altitude sensors for precision landing in Plane and Copter.
+:ref:`RangeFinders (Sonar or Lidar) <common-rangefinder-landingpage>` can be used for [site wiki="copter,plane,rover"]:ref:`Object Avoidance <common-object-avoidance-landing-page>`\ [/site][site wiki="sub"]Object Avoidance[/site] as well as altitude sensors for precision landing in Plane and Copter.
 
 ..  youtube:: y2Kk6nIily0
     :width: 100%
 
+[site wiki="copter,plane,rover"]
 .. warning::
    :ref:`common-object-avoidance-landing-page` features are new and should be used with caution.
+[/site]
    
 
-Up to 10 Rangefinders can be used in the system (1 thru A). :ref:`Object Avoidance <common-object-avoidance-landing-page>` can use a single 360 degree Lidar, or up to 9 unidirectional rangefinders: 8 arranged in a circle covering 45 degree wide segments, plus an upward facing rangefinder. And a downward facing rangefinder used for low altitude height above ground measurements.
+Up to 10 Rangefinders can be used in the system (1 thru A). [site wiki="copter,plane,rover"]:ref:`Object Avoidance <common-object-avoidance-landing-page>`\ [/site][site wiki="sub"]Object Avoidance[/site] can use a single 360 degree Lidar, or up to 9 unidirectional rangefinders: 8 arranged in a circle covering 45 degree wide segments, plus an upward facing rangefinder. And a downward facing rangefinder used for low altitude height above ground measurements.
 
 Connecting and Configuring the Rangefinder
 ==========================================
@@ -45,10 +47,12 @@ Connecting and Configuring the Rangefinder
 .. note:: Only downward facing rangefinders are supported in Plane currently.
 [/site]
 
+[site wiki="copter,plane,rover"]
 References
 ==========
 
 - Object Avoidance wiki page is :ref:`here <common-object-avoidance-landing-page>`
+[/site]
 [site wiki="copter,rover"]
 - More details of the algorithms used in :ref:`common-simple-object-avoidance` are on the :ref:`developer wiki's object avoidance page <dev:code-overview-object-avoidance>`
 [/site]

@@ -9,7 +9,7 @@ If the ESC has this capability, it allows monitoring and logging of performance 
 
 Telemetry data may be conveyed to the autopilot either by a separate wire connection to an autopilot's UART RX pin or across the signal wire used to convey motor speed information (Bi-Directional DShot) or CAN messages for CAN based ESCs. For non-CAN ESCs, this capability is available primarily in selected BLHeli ESCs running stock or BlueJay firmware. But it is possible for an ESC not to implement the BLHeli firmware and still provide this capability. Currently, ArduPilot only supports this for BLHeli/BlueJay telemetry compatible ESCs.
 
-ESC telemetry of motor RPM is especially useful for controlling the center frequency of harmonic notch filters to control noise. See :ref:`common-esc-telem-based-notch` for more information.
+ESC telemetry of motor RPM is especially useful for controlling the center frequency of harmonic notch filters to control noise.[site wiki="copter,plane"] See :ref:`common-esc-telem-based-notch` for more information.[/site]
 
 .. note:: ArduPilot does not currently support the polling of the ESCs for telemetry data via throttle idle messages over the signal line in non DShot protocols.
 
@@ -26,11 +26,11 @@ Set the following parameters to enable BLHeli32/AM32 telemetry feedback to the a
 
 - :ref:`SERIALx_PROTOCOL <SERIAL5_PROTOCOL>` 16 (= ESC telemetry) where "x" is the autopilot serial port number connected to the ESCs telemetry wire.  The mapping between serial port numbering and UART physical ports for you autopilot should be documented in its description page linked :ref:`here <common-autopilots>`.
 
-- :ref:`SERVO_BLH_TRATE <SERVO_BLH_TRATE>` defaults to 10 and normally does not need to be changed. this enables telemetry at a 10Hz update rate from the ESC.  If using the :ref:`harmonic notch feature <common-imu-notch-filtering>` this can be raised to 100.
+- :ref:`SERVO_BLH_TRATE <SERVO_BLH_TRATE>` defaults to 10 and normally does not need to be changed. this enables telemetry at a 10Hz update rate from the ESC.  If using the [site wiki="copter,plane"]:ref:`harmonic notch feature <common-imu-notch-filtering>`\ [/site][site wiki="rover,sub"]harmonic notch feature[/site] this can be raised to 100.
 
 - :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` Generally the number of magnets in your motor. Defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed.  Adjust as required if you're using motors with a magnetic pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM.
 
-.. note:: using the RPM value reported using single wire telemetry for the center frequency adjustment of the :ref:`harmonic notch feature <common-imu-notch-filtering>`  works well, but the responsiveness is slower than using telemetry provided by bi-directional DShot. See next section.
+.. note:: using the RPM value reported using single wire telemetry for the center frequency adjustment of the [site wiki="copter,plane"]:ref:`harmonic notch feature <common-imu-notch-filtering>`\ [/site][site wiki="rover,sub"]harmonic notch feature[/site]  works well, but the responsiveness is slower than using telemetry provided by bi-directional DShot. See next section.
 
 .. _bidir-dshot:
 
@@ -44,7 +44,7 @@ Some autopilots with IOMCUs can not only support Dshot on their "Main" outputs (
 Setup
 -----
 
-First ensure that you have an appropriate version of BLHeli32 or BLHeli_S installed on your ESCs. The majority of ESCs do not come pre-installed with these versions. The official 32.7 version of BLHeli32 supports bi-directional DShot. Official versions of BLHeli_S do not support bi-directional DShot, you will need to either buy a version from `BLHeli_S JESC <https://jflight.net/index.php?route=common/home&language=en-gb>`__ or use `BLHeli_S BlueJay <https://github.com/bird-sanctuary/bluejay/>`__ . If you try and enable bi-directional DShot with the wrong firmware version then unpredictable motor operation can occur. ESC RPM telemetry is especially useful for controlling the center frequencies of harmonic notch noise filters, see :ref:`common-esc-telem-based-notch`
+First ensure that you have an appropriate version of BLHeli32 or BLHeli_S installed on your ESCs. The majority of ESCs do not come pre-installed with these versions. The official 32.7 version of BLHeli32 supports bi-directional DShot. Official versions of BLHeli_S do not support bi-directional DShot, you will need to either buy a version from `BLHeli_S JESC <https://jflight.net/index.php?route=common/home&language=en-gb>`__ or use `BLHeli_S BlueJay <https://github.com/bird-sanctuary/bluejay/>`__ . If you try and enable bi-directional DShot with the wrong firmware version then unpredictable motor operation can occur. ESC RPM telemetry is especially useful for controlling the center frequencies of harmonic notch noise filters[site wiki="copter,plane"], see :ref:`common-esc-telem-based-notch` [/site]
 
 .. image:: ../../../images/blheli-version-check.png
     :target: ../_images/blheli-version-check.png

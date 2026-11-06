@@ -204,7 +204,7 @@ Connecting a GPS/Compass module
 
 This board does not include a GPS and compass so an :ref:`external GPS <common-positioning-landing-page>` can be connected to allow operation of position holding/tracking modes (ie LOITER,etc.). However, only the AIO has the ability to disconnect its ELRS module to provide the required access to the UART3 RX/TX pins to attach an I2C compass. This also requires special firmware (see below) be installed to convert these pins from UART use to I2C use with RX3 becoming SDA and TX3 becoming SCL.
 
-.. warning:: since a compass cannot be normally attached, only ACRO, STABILIZE, and ALTHOLD (if the unit has a BARO) modes are recommended. GSF (:ref:`common-compassless`)can be used, but requires pre-flight actions to converge it before taking off, and it is susceptible to failures in flight.
+.. warning:: since a compass cannot be normally attached, only ACRO, STABILIZE, and ALTHOLD (if the unit has a BARO) modes are recommended. GSF ([site wiki="plane,copter,rover,blimp"]:ref:`common-compassless`\ [/site][site wiki="sub"]Compass-less Operation[/site])can be used, but requires pre-flight actions to converge it before taking off, and it is susceptible to failures in flight.
 
 Firmware
 ========

@@ -27,4 +27,4 @@ Example setup below shown for first proximity sensor:
 - :ref:`PRX1_TYPE <PRX1_TYPE>` = "3" to enable the TeraRanger Tower, = "6" for Tower EVO (or 0 to disable).
 - :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" Default.
 
-More details on using sensors for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
+[site wiki="copter,plane,rover"]More details on using sensors for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.[/site]

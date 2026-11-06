@@ -80,7 +80,7 @@ Planner* and open the **CONFIG/Full Parameter List** menu and set:
    the rangefinder is used by the autopilot.
 -  ``RNGFNDx_ADDR``: 48 (for TeraRanger One) or 49 (for EVO series), 0 will disable the rangefinder setup.
 -  ``RNGFNDx_TYPE``: 14
--  ``RNGFNDx_ORIENT``: 25 (for downward facing). If used for :ref:`Object Avoidance<common-object-avoidance-landing-page>` or ceiling distancing, instead of altitude ranging, mount and chose the appropriate orientatioin.
+-  ``RNGFNDx_ORIENT``: 25 (for downward facing). If used for [site wiki="copter,plane,rover"]:ref:`Object Avoidance<common-object-avoidance-landing-page>`\ [/site][site wiki="sub"]Object Avoidance[/site] or ceiling distancing, instead of altitude ranging, mount and chose the appropriate orientatioin.
 
 Values for the rangefinders are shown below:
 

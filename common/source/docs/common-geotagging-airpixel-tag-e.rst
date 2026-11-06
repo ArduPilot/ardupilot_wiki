@@ -52,7 +52,7 @@ Triggering
 
 Once :ref:`CAM1_TYPE <CAM1_TYPE>` is set, the normal ArduPilot camera triggers reach the ILX-LR1: ``DO_SET_CAM_TRIGG_DIST`` (for example from a Mission Planner survey grid), ``DO_DIGICAM_CONTROL``, ``IMAGE_START_CAPTURE``/``IMAGE_STOP_CAPTURE``, ``VIDEO_START_CAPTURE``/``VIDEO_STOP_CAPTURE``, RC auxiliary switches (Camera Trigger, Camera Record Video) and the ground station shutter button. See :ref:`common-camera-controls` for details.
 
-Because TAG-E writes the geotags into the images on the camera's SD card during the flight, no :ref:`log-based geotagging <common-geotagging-images-with-mission-planner>` is needed afterwards.
+Because TAG-E writes the geotags into the images on the camera's SD card during the flight, no [site wiki="copter,plane"]:ref:`log-based geotagging <common-geotagging-images-with-mission-planner>`\ [/site][site wiki="rover,sub"]log-based geotagging[/site] is needed afterwards.
 
 More information
 ================

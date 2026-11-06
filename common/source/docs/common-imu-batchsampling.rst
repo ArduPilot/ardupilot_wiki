@@ -57,9 +57,9 @@ On the graph it should be possible to identify a significant peak in noise that 
 Harmonic Notch Filter Setup
 ===========================
 
-It is possible to filter some of this noise to increase performance and allow better tuning by activating the harmonic notch filter(s). See :ref:`common-imu-notch-filtering` for details.
+It is possible to filter some of this noise to increase performance and allow better tuning by activating the harmonic notch filter(s).[site wiki="copter,plane,dev,planner"] See :ref:`common-imu-notch-filtering` for details.[/site]
 
-For Throttle Based Dynamic Harmonic Notch(s) you will need some additional information from the logs if using a :ref:`common-throttle-based-notch`:
+For Throttle Based Dynamic Harmonic Notch(s) you will need some additional information from the logs if using a [site wiki="copter,plane,dev,planner"]:ref:`common-throttle-based-notch`\ [/site][site wiki="rover,sub"]Throttle Based Dynamic Harmonic Notch[/site]:
 - With the same log, open it in the regular way in mission planner and graph the throttle value: CTUN.ThO (Copter) or QTUN.ThO (QuadPlane).
 . From this identify an average hover throttle value which will be used for :ref:`INS_HNTCH_REF <INS_HNTCH_REF>`.
 - It's also possible to use :ref:`MOT_HOVER_LEARN <MOT_HOVER_LEARN>` = 2 in Copter and read off the value of :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`, or :ref:`Q_M_HOVER_LEARN <Q_M_HOVER_LEARN>` = 2 in QuadPlane and read off the value of :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`

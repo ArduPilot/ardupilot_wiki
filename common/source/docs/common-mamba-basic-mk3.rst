@@ -22,7 +22,7 @@ This autopilot does not include a barometer sensor for altitude information and 
 
 Plane
 -----
-An altitude source must be provided for any operation. Attach a GPS and follow the instructions in :ref:`common-gps-for-alt`.
+An altitude source must be provided for any operation. Attach a GPS and follow the instructions in [site wiki="plane,copter,rover,blimp"]:ref:`common-gps-for-alt`\ [/site][site wiki="sub"]Using GPS for Altitude Sensing[/site].
 
 Copter
 ------
@@ -117,7 +117,7 @@ The correct battery setting parameters are:
 Compass
 =======
 
-The Mamba Basic autopilots do not have a builtin compass, but you can attach an external compass using I2C on the SDA and SCL pads or refer to :ref:`common-compassless`.
+The Mamba Basic autopilots do not have a builtin compass, but you can attach an external compass using I2C on the SDA and SCL pads or refer to [site wiki="plane,copter,rover,blimp"]:ref:`common-compassless`\ [/site][site wiki="sub"]Compass-less Operation[/site].
 
 Firmware
 ========

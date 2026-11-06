@@ -85,7 +85,7 @@ Power Monitoring Via Telemetry Equipped AM32/BLHeli32/S ESCs
 EFI Fuel Monitoring
 ===================
 
-EFI Fuel Monitoring, See :ref:`common-efi` section on using :ref:`BATT_MONITOR<BATT_MONITOR>` = 27 (EFI).
+EFI Fuel Monitoring,[site wiki="plane"] See :ref:`common-efi` section on using[/site][site wiki="copter,rover,sub"] using[/site] :ref:`BATT_MONITOR<BATT_MONITOR>` = 27 (EFI).
 
 Liquid Fuel Monitors
 ====================

@@ -608,7 +608,7 @@ INTERNAL COMBUSTION ENGINE FUNCTIONS
 Ignition/Starter/Choke
 ++++++++++++++++++++++
 
-For control of an internal combustion engine's spark plug/igniter, starter motor, and choke. See :ref:`common-ice`.
+For control of an internal combustion engine's spark plug/igniter, starter motor, and choke.[/site][site wiki="plane"] See :ref:`common-ice`.[/site][site wiki="plane,copter,rover"]
 [/site]
 
 NEOPIXEL LED STRINGS
@@ -668,7 +668,7 @@ These outputs are controlling a :ref:`sprayer`.
 Output SERVOn MAX/MIN/TRIM
 ++++++++++++++++++++++++++
 
-Continuously outputs the parameter value set for that output. Used in button detection. See  :ref:`common-buttons`
+Continuously outputs the parameter value set for that output. Used in button detection.[site wiki="copter,plane,rover"] See  :ref:`common-buttons` [/site]
 
 [site wiki="sub"]
 Lights1/2

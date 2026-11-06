@@ -105,7 +105,7 @@ ArduPilot can support many vehicles types: Planes, Multicopter, Helicopter, Rove
 
 Its not only used for autonomous operation but as basic stabilization for pilot controlled vehicles.
 
-See all the supported :ref:`vehicle types and frames here <common-all-vehicle-types>`
+See all the supported :ref:`vehicle types and frames here <ardupilot:common-all-vehicle-types>`
 [site wiki="plane"]
 Records
 =======

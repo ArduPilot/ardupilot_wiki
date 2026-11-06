@@ -73,7 +73,7 @@ Calibration
 [site wiki="plane,copter,planner"]
 - A window will appear with the prompt, "Ensure all your sticks are centered and throttle is down and click ok to continue".  Move the throttle to zero and press "OK".
 [/site]
-[site wiki="rover"]
+[site wiki="rover,sub"]
 - A window will appear with the prompt, "Ensure all your sticks are centered and throttle is down and click ok to continue".  **Move the throttle to the center** and press "OK".
 [/site]
 
@@ -156,6 +156,22 @@ If the transmitter is capable of programming multiple throttle curves controlled
 
 [/site]
 
+[site wiki="sub"]
+
+Sub default channel mappings are:
+
+-  **Channel 1**: Pitch
+-  **Channel 2**: Roll
+-  **Channel 3**: Throttle (vertical)
+-  **Channel 4**: Yaw
+-  **Channel 5**: Forward
+-  **Channel 6**: Lateral
+-  **Channel 7**: Camera mount gimbal yaw
+-  **Channel 8**: Camera mount gimbal pitch
+
+There is no default flight mode channel.
+[/site]
+
 Further Reading
 ---------------
 
@@ -165,4 +181,4 @@ Further Reading
 - Rover steering and reversing behaviour setup are described on the :ref:`Steering Input Type and Reversing Behaviour <rover-steering-input-type-and-reversing-behaviour>` page
 [/site]
 
-[copywiki destination="copter,plane,rover,planner,blimp"]
+[copywiki destination="copter,plane,rover,planner,blimp,sub"]

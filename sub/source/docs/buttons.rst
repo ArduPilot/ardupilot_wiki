@@ -4,7 +4,7 @@
 Button Inputs in Sub
 ====================
 
-Unlike other vehicles, Sub has its own specialized button functionality. Other vehicles include hardware buttons as described in the :ref:`common-buttons` hardware section.
+Unlike other vehicles, Sub has its own specialized button functionality. Other vehicles include hardware buttons as described in the :ref:`copter:common-buttons` hardware section.
 
 Instead, Sub uses "joystick" buttons associated with the GCS or GCS attached Joystick. The GCS sends frequent button state updates via the `MAVLink Manual Control protocol <https://mavlink.io/en/services/manual_control.html>`__, which includes both motion-axis commands and button states.
 

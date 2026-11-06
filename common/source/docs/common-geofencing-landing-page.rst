@@ -88,7 +88,7 @@ The maximum and minimum altitude fences (:ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` and
 
 These parameters are unavailable in Rover. The altitude fences are global limits, independent of any Inclusion/Exclusion fence boundaries, which are horizontal-only.
 
-.. note:: Using the above terrain frame (3) requires a terrain database (see :ref:`common-terrain-following`) and will prevent arming until terrain data is available. If the vehicle cannot determine its altitude in the selected frame while flying, the corresponding fence is treated as breached.
+.. note:: Using the above terrain frame (3) requires a terrain database[site wiki="plane"] (see :ref:`common-terrain-following`)[/site] and will prevent arming until terrain data is available. If the vehicle cannot determine its altitude in the selected frame while flying, the corresponding fence is treated as breached.
 
 .. _fence_breach_actions:
 

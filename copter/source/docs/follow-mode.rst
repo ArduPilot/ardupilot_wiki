@@ -49,7 +49,7 @@ an unexpected height.
   vehicles is normal.
 - "3" (terrain) converts the lead vehicle's altitude to a height above terrain, so the follower
   matches the lead vehicle's clearance above ground rather than its altitude. This requires
-  terrain data (see :ref:`common-terrain-following`) to be available for the lead vehicle's
+  terrain data (see :ref:`terrain-following`) to be available for the lead vehicle's
   position. If it is not, the target update is discarded and the follower will stop tracking,
   so only use this option where terrain data is known to be loaded.
 

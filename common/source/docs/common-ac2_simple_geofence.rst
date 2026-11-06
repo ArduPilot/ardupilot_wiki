@@ -8,7 +8,7 @@ Cylindrical Fence
 Overview
 ========
 
-ArduPilot includes a simple "tin can" shaped fence centered on home that will attempt to stop your copter/rover from flying/driving too far away by stopping at the fence in some Copter/Rover modes if :ref:`common-object-avoidance-landing-page` is setup.
+ArduPilot includes a simple "tin can" shaped fence centered on home that will attempt to stop your copter/rover from flying/driving too far away by stopping at the fence in some Copter/Rover modes if [site wiki="copter,plane,rover"]:ref:`common-object-avoidance-landing-page`\ [/site][site wiki="sub"]Object Avoidance[/site] is setup.
 
 The maximum circular distance and altitude (altitude used by Plane and Copter only) and the vehicle behavior when the fence is reached can be configured using a ground station like Mission Planner or QGC.
 

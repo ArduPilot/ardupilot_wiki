@@ -56,4 +56,4 @@ On rovers and boats it may be necessary to increase the main loop rate to 400 in
 
 - :ref:`SCHED_LOOP_RATE <SCHED_LOOP_RATE>` =  "400"
 
-More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
+[site wiki="copter,plane,rover"]More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.[/site]
