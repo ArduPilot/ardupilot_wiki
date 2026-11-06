@@ -120,40 +120,40 @@ Connect to the autopilot with a ground station (i.e. Mission Planner) and check 
 - :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = 57600 ( baud)
 - Optionally set :ref:`SERIAL1_OPTIONS <SERIAL1_OPTIONS>` = 1024 (Don't forward mavlink to/from) to disable the camera's odometry messages from being sent to the GCS
 - Optionally set :ref:`MAV3_EXTRA3 <MAV3_EXTRA3>` = 0 to disable sending the SYSTEM_TIME message to the camera which has been known to cause the camera to lose its position estimate (e.g. quality falls to -1).  Note this assumes the camera is connected to the autopilot's second mavlink port (e.g. usually Telem2)
-- :ref:`VISO_TYPE <VISO_TYPE>` = 3 (VOXL)
-- Set :ref:`VISO_POS_X <VISO_POS_X>`, :ref:`VISO_POS_Y <VISO_POS_Y>` and :ref:`VISO_POS_Z <VISO_POS_Z>` to 0 because the VOXL2 already compensates for the camera's position relative to the IMU.  See [site wiki="copter,plane,rover,dev"]:ref:`sensor position offset compensation <common-sensor-offset-compensation>`\ [/site][site wiki="blimp"]:ref:`sensor position offset compensation <copter:common-sensor-offset-compensation>`\ [/site] for more details
-- Optionally increase :ref:`VISO_QUAL_MIN <VISO_QUAL_MIN>` to 10 (or higher) to only consume estimates from the camera when the quality is 10% (or higher)
+- [site wiki="copter,plane,rover,blimp"]:ref:`VISO_TYPE <VISO_TYPE>`\ [/site][site wiki="dev"]:ref:`VISO_TYPE <copter:VISO_TYPE>`\ [/site] = 3 (VOXL)
+- Set [site wiki="copter,plane,rover,blimp"]:ref:`VISO_POS_X <VISO_POS_X>`\ [/site][site wiki="dev"]:ref:`VISO_POS_X <copter:VISO_POS_X>`\ [/site], [site wiki="copter,plane,rover,blimp"]:ref:`VISO_POS_Y <VISO_POS_Y>`\ [/site][site wiki="dev"]:ref:`VISO_POS_Y <copter:VISO_POS_Y>`\ [/site] and [site wiki="copter,plane,rover,blimp"]:ref:`VISO_POS_Z <VISO_POS_Z>`\ [/site][site wiki="dev"]:ref:`VISO_POS_Z <copter:VISO_POS_Z>`\ [/site] to 0 because the VOXL2 already compensates for the camera's position relative to the IMU.  See [site wiki="copter,plane,rover,dev"]:ref:`sensor position offset compensation <common-sensor-offset-compensation>`\ [/site][site wiki="blimp"]:ref:`sensor position offset compensation <copter:common-sensor-offset-compensation>`\ [/site] for more details
+- Optionally increase [site wiki="copter,plane,rover,blimp"]:ref:`VISO_QUAL_MIN <VISO_QUAL_MIN>`\ [/site][site wiki="dev"]:ref:`VISO_QUAL_MIN <copter:VISO_QUAL_MIN>`\ [/site] to 10 (or higher) to only consume estimates from the camera when the quality is 10% (or higher)
 
 To enable the downward and forward facing lidars:
 
-- [site wiki="copter,plane,rover,dev"]:ref:`RNGFND1_TYPE <RNGFND1_TYPE>`\ [/site][site wiki="blimp"]:ref:`RNGFND1_TYPE <copter:RNGFND1_TYPE>`\ [/site] = 10 (MAVLink)
-- [site wiki="copter,plane,rover,dev"]:ref:`RNGFND1_MIN <RNGFND1_MIN>`\ [/site][site wiki="blimp"]:ref:`RNGFND1_MIN <copter:RNGFND1_MIN>`\ [/site] = 0 (cm)
-- [site wiki="copter,rover,dev"]:ref:`PRX1_TYPE <PRX1_TYPE>`\ [/site][site wiki="blimp"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site][site wiki="plane"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site] = 2 (MAVLink)
+- [site wiki="copter,plane,rover"]:ref:`RNGFND1_TYPE <RNGFND1_TYPE>`\ [/site][site wiki="dev"]:ref:`RNGFND1_TYPE <copter:RNGFND1_TYPE>`\ [/site][site wiki="blimp"]:ref:`RNGFND1_TYPE <copter:RNGFND1_TYPE>`\ [/site] = 10 (MAVLink)
+- [site wiki="copter,plane,rover"]:ref:`RNGFND1_MIN <RNGFND1_MIN>`\ [/site][site wiki="dev"]:ref:`RNGFND1_MIN <copter:RNGFND1_MIN>`\ [/site][site wiki="blimp"]:ref:`RNGFND1_MIN <copter:RNGFND1_MIN>`\ [/site] = 0 (cm)
+- [site wiki="copter,rover"]:ref:`PRX1_TYPE <PRX1_TYPE>`\ [/site][site wiki="dev"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site][site wiki="blimp"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site][site wiki="plane"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site] = 2 (MAVLink)
 
 If only the VOXL 2 camera will be used for position estimation and heading (e.g. No GPS):
 
-- :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` = 6 (ExternalNav)
-- :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 6 (ExternalNav)
-- :ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>` = 6 (ExternalNav)
-- :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` = 6 (ExternalNav)
-- :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 6 (ExternalNav)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>`\ [/site][site wiki="dev"]:ref:`EK3_SRC1_POSXY <copter:EK3_SRC1_POSXY>`\ [/site] = 6 (ExternalNav)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>`\ [/site][site wiki="dev"]:ref:`EK3_SRC1_VELXY <copter:EK3_SRC1_VELXY>`\ [/site] = 6 (ExternalNav)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>`\ [/site][site wiki="dev"]:ref:`EK3_SRC1_POSZ <copter:EK3_SRC1_POSZ>`\ [/site] = 6 (ExternalNav)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>`\ [/site][site wiki="dev"]:ref:`EK3_SRC1_VELZ <copter:EK3_SRC1_VELZ>`\ [/site] = 6 (ExternalNav)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>`\ [/site][site wiki="dev"]:ref:`EK3_SRC1_YAW <copter:EK3_SRC1_YAW>`\ [/site] = 6 (ExternalNav)
 
 After the parameters are modified, reboot the autopilot.  Connect with the ground station and (if using Mission Planner) right-mouse-button-click on the map, select "Set Home Here", "Set EKF Origin Here" to tell ArduPilot where the vehicle is and it should instantly appear on the map.
 
 For indoor/outdoor transitions (e.g. VOXL camera indoors, GPS+Compass outdoors):
 
-- :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` = 3 (GPS)
-- :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 3 (GPS)
-- :ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>` = 1 (Baro)
-- :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` = 0 (None)
-- :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 1 (Compass)
-- :ref:`EK3_SRC2_POSXY <EK3_SRC2_POSXY>` = 6 (ExternalNav)
-- :ref:`EK3_SRC2_VELXY <EK3_SRC2_VELXY>` = 6 (ExternalNav)
-- :ref:`EK3_SRC2_POSZ <EK3_SRC2_POSZ>` = 6 (ExternalNav)
-- :ref:`EK3_SRC2_VELZ <EK3_SRC2_VELZ>` = 6 (ExternalNav)
-- :ref:`EK3_SRC2_YAW <EK3_SRC2_YAW>` = 6 (ExternalNav)
-- :ref:`RC6_OPTION <RC6_OPTION>` = 90 (EKF Pos Source) to allow the pilot to use channel 6 to switch between Source1 (e.g. GPS+Compass) and Source2 (e.g. VOXL camera).  The switch's low position is Source1 (GPS+Compass), middle position is Source2 (e.g. VOXL), and high position is Source3 (e.g. None) which will lead to the EKF losing its position estimate and triggering an EKF failsafe.  To avoid pilot error triggering an EKF failsafe you may wish to copy EK3_SRC1_xxx or EK2_SRC2_xxx to EK3_SRC3_xx.
-- :ref:`RC7_OPTION <RC7_OPTION>` = 80 (Viso Align) to allow the pilot to use channel 7 to re-align the camera's yaw with the AHRS/EKF yaw before flight.  Re-aligning yaw before takeoff is a good idea or loss of position control (aka "toilet bowling") may occur.
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>`\ [/site][site wiki="dev"]:ref:`EK3_SRC1_POSXY <copter:EK3_SRC1_POSXY>`\ [/site] = 3 (GPS)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>`\ [/site][site wiki="dev"]:ref:`EK3_SRC1_VELXY <copter:EK3_SRC1_VELXY>`\ [/site] = 3 (GPS)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>`\ [/site][site wiki="dev"]:ref:`EK3_SRC1_POSZ <copter:EK3_SRC1_POSZ>`\ [/site] = 1 (Baro)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>`\ [/site][site wiki="dev"]:ref:`EK3_SRC1_VELZ <copter:EK3_SRC1_VELZ>`\ [/site] = 0 (None)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>`\ [/site][site wiki="dev"]:ref:`EK3_SRC1_YAW <copter:EK3_SRC1_YAW>`\ [/site] = 1 (Compass)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC2_POSXY <EK3_SRC2_POSXY>`\ [/site][site wiki="dev"]:ref:`EK3_SRC2_POSXY <copter:EK3_SRC2_POSXY>`\ [/site] = 6 (ExternalNav)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC2_VELXY <EK3_SRC2_VELXY>`\ [/site][site wiki="dev"]:ref:`EK3_SRC2_VELXY <copter:EK3_SRC2_VELXY>`\ [/site] = 6 (ExternalNav)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC2_POSZ <EK3_SRC2_POSZ>`\ [/site][site wiki="dev"]:ref:`EK3_SRC2_POSZ <copter:EK3_SRC2_POSZ>`\ [/site] = 6 (ExternalNav)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC2_VELZ <EK3_SRC2_VELZ>`\ [/site][site wiki="dev"]:ref:`EK3_SRC2_VELZ <copter:EK3_SRC2_VELZ>`\ [/site] = 6 (ExternalNav)
+- [site wiki="copter,plane,rover,blimp"]:ref:`EK3_SRC2_YAW <EK3_SRC2_YAW>`\ [/site][site wiki="dev"]:ref:`EK3_SRC2_YAW <copter:EK3_SRC2_YAW>`\ [/site] = 6 (ExternalNav)
+- [site wiki="copter,plane,rover,blimp"]:ref:`RC6_OPTION <RC6_OPTION>`\ [/site][site wiki="dev"]:ref:`RC6_OPTION <copter:RC6_OPTION>`\ [/site] = 90 (EKF Pos Source) to allow the pilot to use channel 6 to switch between Source1 (e.g. GPS+Compass) and Source2 (e.g. VOXL camera).  The switch's low position is Source1 (GPS+Compass), middle position is Source2 (e.g. VOXL), and high position is Source3 (e.g. None) which will lead to the EKF losing its position estimate and triggering an EKF failsafe.  To avoid pilot error triggering an EKF failsafe you may wish to copy EK3_SRC1_xxx or EK2_SRC2_xxx to EK3_SRC3_xx.
+- [site wiki="copter,plane,rover,blimp"]:ref:`RC7_OPTION <RC7_OPTION>`\ [/site][site wiki="dev"]:ref:`RC7_OPTION <copter:RC7_OPTION>`\ [/site] = 80 (Viso Align) to allow the pilot to use channel 7 to re-align the camera's yaw with the AHRS/EKF yaw before flight.  Re-aligning yaw before takeoff is a good idea or loss of position control (aka "toilet bowling") may occur.
 
 After the parameters are modified, reboot the autopilot.
 

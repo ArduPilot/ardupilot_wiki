@@ -76,10 +76,10 @@ This sets up the required parameters a user would normally have to enter into th
 - Run the 'script remoteid.scr' command to load the script...you should see it announce that it has loaded the OpenDroneID module and other commands in the console
 - Set the following params:
 
-  - :ref:`DID_ENABLE<DID_ENABLE>` 1 
-  - :ref:`DID_OPTIONS<DID_OPTIONS>` 1 
-  - :ref:`DID_MAVPORT<DID_MAVPORT>` X  where x is the serial port attached to OpenDroneID module
-  - :ref:`DID_CANDRIVER<DID_CANDRIVER>` 0
+  - :ref:`DID_ENABLE<copter:DID_ENABLE>` 1 
+  - :ref:`DID_OPTIONS<copter:DID_OPTIONS>` 1 
+  - :ref:`DID_MAVPORT<copter:DID_MAVPORT>` X  where x is the serial port attached to OpenDroneID module
+  - :ref:`DID_CANDRIVER<copter:DID_CANDRIVER>` 0
   - :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` 3 
   - :ref:`GPS1_TYPE<GPS1_TYPE>` 1
   - :ref:`GPS2_TYPE<GPS2_TYPE>` 0
@@ -87,8 +87,8 @@ This sets up the required parameters a user would normally have to enter into th
 - If its a CAN module these parameters should be substituted:
 
 
-  - :ref:`DID_MAVPORT<DID_MAVPORT>` -1 
-  - :ref:`DID_CANDRIVER<DID_CANDRIVER>` 1
+  - :ref:`DID_MAVPORT<copter:DID_MAVPORT>` -1 
+  - :ref:`DID_CANDRIVER<copter:DID_CANDRIVER>` 1
 
 
 - Any OpenDroneID pre-arms should disappear and the vehicle appear on your android phone with this app: https://play.google.com/store/apps/details?id=org.opendroneid.android_osm
@@ -111,7 +111,7 @@ this will return a rather lengthy path in a similar form to:
 **/dev/serial/by-id/usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_4e7564343210ec11a33426947a109228-if00-port0**
 
 
-Start SITL using the following,  and if you will be using the SERIAL1 interface in the code (ie :ref:`DID_MAVPORT<DID_MAVPORT>` = 1) and the <path> discovered above:
+Start SITL using the following,  and if you will be using the SERIAL1 interface in the code (ie :ref:`DID_MAVPORT<copter:DID_MAVPORT>` = 1) and the <path> discovered above:
 
 .. code::
 

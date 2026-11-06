@@ -28,9 +28,9 @@ Parameters
 ---------------------------------------------------
 The frontend library has the following parameters
 
-- :ref:`CC_TYPE<CC_TYPE>`: choose which custom controller backend to use, reboot required.   
+- :ref:`CC_TYPE<copter:CC_TYPE>`: choose which custom controller backend to use, reboot required.   
   - Setting it to 0 will turn this feature off, GCS will not display parameters related to the custom controller
-- :ref:`CC_AXIS_MASK<CC_AXIS_MASK>`: choose which axis to use custom controller output   
+- :ref:`CC_AXIS_MASK<copter:CC_AXIS_MASK>`: choose which axis to use custom controller output   
   - This is a bitmask type parameter. Set 7 to use all output
 
 .. warning:: The custom controller requires the user to set up the build environment (:ref:`building-the-code`) and cloned the ArduPilot GitHub repo locally (:ref:`where-to-get-the-code`). The example controller is for experimental purposes only and it has been tested only lightly. The user is advised to use caution while testing it on a real vehicle.
@@ -53,7 +53,7 @@ Bumpless Transfer
 
 When switching from the custom controller to the main controller it is important to reset the main controller target, error, d-term filters, and set each axis integrator properly. Otherwise, a sudden jump in the controller error signal or motor output will be observed, which could result in a jerky motion. To allow a smooth transition between controllers, the main controller reset function is called when switching out of the custom controller which reset all three axes of the main controller. The reset is performed inside ``reset_main_atti_controller`` function.
 
-The attitude target and rate target are also made equal to the current attitude and gyro rate to make the error signal grow from zero in the ``relax_attitude_controllers`` function. To avoid impulse input to the controller, the target resetting is not performed when the feedforward is disabled by setting :ref:`ATC_RATE_FF_ENAB<ATC_RATE_FF_ENAB>` parameter to 0.
+The attitude target and rate target are also made equal to the current attitude and gyro rate to make the error signal grow from zero in the ``relax_attitude_controllers`` function. To avoid impulse input to the controller, the target resetting is not performed when the feedforward is disabled by setting :ref:`ATC_RATE_FF_ENAB<copter:ATC_RATE_FF_ENAB>` parameter to 0.
 
 .. code-block:: c++
 
@@ -75,18 +75,18 @@ Backend Type
 
 Currently, there 2 custom controller backends available. These are
 
-- Empty backend set :ref:`CC_TYPE<CC_TYPE>` = 1
-- PID backend set :ref:`CC_TYPE<CC_TYPE>` = 2
+- Empty backend set :ref:`CC_TYPE<copter:CC_TYPE>` = 1
+- PID backend set :ref:`CC_TYPE<copter:CC_TYPE>` = 2
 
 
-Empty Controller - :ref:`CC_TYPE<CC_TYPE>` = 1
----------------------------------------------------
+Empty Controller - :ref:`CC_TYPE<copter:CC_TYPE>` = 1
+-----------------------------------------------------
 
 The empty controller does not do any calculations. It is created to make it easier to copy and implement your new controller. The main controller is not reset when switching from an empty controller.
 
 
 
-PID Controller - :ref:`CC_TYPE<CC_TYPE>` = 2
+PID Controller - :ref:`CC_TYPE<copter:CC_TYPE>` = 2
 ---------------------------------------------------
 
 The PID controller backend has the same controller architecture as the main controller. It doesn't have any safeguarding mechanism such as acceleration limiting or rate limiting. The default gains are scaled 0.9 times to differentiate the custom controller response from the main one. Since this controller does not have acceleration limiting, specifically a square root controller, it would be safer to give a gentle command while flying with it. Although it has the same architecture as the main one, a proper reset functionality is not implemented intentionally to make it easier to detect the effect of improper resetting.
@@ -336,7 +336,7 @@ Simulink model of the controller needs to be configured before the code generati
 .. youtube:: oiGb1-c8TFk
     :width: 100%
 
-**Step #1:** In Solver tab in Configuration, change solver type to Fixed-Type. This is mandatory for code generation to work. Change Solver to discrete(no continuous state) this will reduce generated code's flash cost and run-time load. Change Fixed-step size to one over the :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`. The code generation needs to be repeated each time this parameter is changed.
+**Step #1:** In Solver tab in Configuration, change solver type to Fixed-Type. This is mandatory for code generation to work. Change Solver to discrete(no continuous state) this will reduce generated code's flash cost and run-time load. Change Fixed-step size to one over the :ref:`SCHED_LOOP_RATE<copter:SCHED_LOOP_RATE>`. The code generation needs to be repeated each time this parameter is changed.
 
 **Step #2:** In the Hardware Implementation tab, change Device vendor to ARM Compatible and Device type to ARM Cortex-M. This determines which data types are available and what is their size. 
 

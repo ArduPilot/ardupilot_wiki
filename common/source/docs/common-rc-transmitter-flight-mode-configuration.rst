@@ -4,7 +4,7 @@
 RC Transmitter Flight Mode Configuration
 ========================================
 
-This article shows how you can enable up to 6 autopilot control/flight modes to be set from your RC transmitter via the flight mode channel ([site wiki="copter,plane,planner,blimp,sub"]:ref:`FLTMODE_CH<FLTMODE_CH>`\ [/site][site wiki="rover"]:ref:`FLTMODE_CH<copter:FLTMODE_CH>`\ [/site] for plane/copter/sub, [site wiki="rover"]:ref:`MODE_CH<MODE_CH>`\ [/site][site wiki="copter,plane,sub,planner,blimp"]:ref:`MODE_CH<rover:MODE_CH>`\ [/site] for rover). Flight mode changes can also be made via RC channels setup as [site wiki="copter,plane,rover,planner,sub"]:ref:`common-auxiliary-functions`\ [/site][site wiki="blimp"]:ref:`copter:common-auxiliary-functions`\ [/site].
+This article shows how you can enable up to 6 autopilot control/flight modes to be set from your RC transmitter via the flight mode channel ([site wiki="copter,plane,blimp,sub"]:ref:`FLTMODE_CH<FLTMODE_CH>`\ [/site][site wiki="planner"]:ref:`FLTMODE_CH<copter:FLTMODE_CH>`\ [/site][site wiki="rover"]:ref:`FLTMODE_CH<copter:FLTMODE_CH>`\ [/site] for plane/copter/sub, [site wiki="rover"]:ref:`MODE_CH<MODE_CH>`\ [/site][site wiki="copter,plane,sub,planner,blimp"]:ref:`MODE_CH<rover:MODE_CH>`\ [/site] for rover). Flight mode changes can also be made via RC channels setup as [site wiki="copter,plane,rover,planner,sub"]:ref:`common-auxiliary-functions`\ [/site][site wiki="blimp"]:ref:`copter:common-auxiliary-functions`\ [/site].
 
 .. _common-rc-transmitter-flight-mode-configuration_flight_modes_configuration:
 

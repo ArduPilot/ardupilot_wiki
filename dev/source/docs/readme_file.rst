@@ -113,7 +113,7 @@ Bi-directional protocols like CRSF/ELRS,SRXL2,IRC Ghost, and FPort need specific
 
 OSD Support
 ===========
-Note if onboard OSD is provided. hwdef should already set :ref:`OSD_TYPE<OSD_TYPE>`. Adding :ref:`OSD_TYPE2<OSD_TYPE2>` 5  in the defaults.param file will enable DisplayPort operation simultaneously with analog OSD. If a UART is set to DisplayPort by default, so should the OSD type.
+Note if onboard OSD is provided. hwdef should already set :ref:`OSD_TYPE<copter:OSD_TYPE>`. Adding :ref:`OSD_TYPE2<copter:OSD_TYPE2>` 5  in the defaults.param file will enable DisplayPort operation simultaneously with analog OSD. If a UART is set to DisplayPort by default, so should the OSD type.
 
 .. _readme-vtx:
 

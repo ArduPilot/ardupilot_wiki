@@ -59,7 +59,7 @@ An flexible firmware building script is located `here <https://github.com/ArduPi
 - board: board target for firmware
 - vehicle: plane/rover/copter/blimp, same as used by sim_vehicle.py
 - simclass: Plane/Multicopter/Helicopter/SimRover/Sailboat/QuadPlane
-- frame: same as used by sim_vehicle.py, this modifies the physics model according to which frame type is used, but unlike software based SITL it does not also load a default set of params for this frame (like :ref:`Q_TILT_ENABLE<Q_TILT_ENABLE>` = 1, etc.). So they must be manually added after the firmware is loaded.
+- frame: same as used by sim_vehicle.py, this modifies the physics model according to which frame type is used, but unlike software based SITL it does not also load a default set of params for this frame (like :ref:`Q_TILT_ENABLE<plane:Q_TILT_ENABLE>` = 1, etc.). So they must be manually added after the firmware is loaded.
 - defaults: extra defaults file (optional). As shown,it will load the default param file that sim_vehicle.py loads for the example frame. If omitted, a minimal defaults.parm file is loaded to get most vehicles simulating. You may want to create a file that sets up these necessary parameters for the simulation (see below), the frame defaults, or the ones you are using on your vehicle including the other parameters for specific hardware devices you may wish to activate during the simulations(be sure not to change the required parameters below).
 
 In order for the simulation to work and emulate flight while the autopilot remains stationary, it will use simulated IMUs, GPS, and Compass.

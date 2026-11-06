@@ -104,7 +104,7 @@ Tips
    with the distance between the two points.
 -  The altitude change between waypoints is normally a linear ramp of target altitude as the
    vehicle progresses unless the altitude starts below 25m above home to prevent slow climbs potentially 
-   close to home. This value can be controlled with the [site wiki="plane,planner"]:ref:`CLIMB_SLOPE_HGT<CLIMB_SLOPE_HGT>`\ [/site][site wiki="copter,rover,sub"]:ref:`CLIMB_SLOPE_HGT<plane:CLIMB_SLOPE_HGT>`\ [/site] parameter.
+   close to home. This value can be controlled with the [site wiki="plane"]:ref:`CLIMB_SLOPE_HGT<CLIMB_SLOPE_HGT>`\ [/site][site wiki="planner"]:ref:`CLIMB_SLOPE_HGT<plane:CLIMB_SLOPE_HGT>`\ [/site][site wiki="copter,rover,sub"]:ref:`CLIMB_SLOPE_HGT<plane:CLIMB_SLOPE_HGT>`\ [/site] parameter.
 
 Auto grid
 =========
@@ -167,24 +167,25 @@ When the mission list is completed, Copter will loiter at the last waypoint inde
 Mission Reset
 =============
 
-On Copter and Rover, the mission is reset to the beginning of the mission list every disarm. On Plane, it is reset similarly, except in AUTO mode which does not reset on disarm and leaves the "mission pointer" on the last mission item to be performed. For all vehicles, any landing mission item, when the landing is completed, will not advance to the next mission item. The :ref:`MIS_OPTIONS<MIS_OPTIONS>` parameter, bit 2, can be set to continue onward in the mission list after landing.
+On Copter and Rover, the mission is reset to the beginning of the mission list every disarm. On Plane, it is reset similarly, except in AUTO mode which does not reset on disarm and leaves the "mission pointer" on the last mission item to be performed. For all vehicles, any landing mission item, when the landing is completed, will not advance to the next mission item. The [site wiki="copter,plane,rover,sub"]:ref:`MIS_OPTIONS<MIS_OPTIONS>`\ [/site][site wiki="planner"]:ref:`MIS_OPTIONS<copter:MIS_OPTIONS>`\ [/site] parameter, bit 2, can be set to continue onward in the mission list after landing.
 
 One can set an ``RCx_OPTION`` switch function ("24") to reset the mission item pointer to the beginning of the mission list at any time.
 
-Also, the mission can be set to reset upon any entry into AUTO mode with the :ref:`MIS_RESTART<MIS_RESTART>` parameter. Default (0) is to resume the mission when re-entering AUTO mode.
+Also, the mission can be set to reset upon any entry into AUTO mode with the [site wiki="copter,plane,rover,sub"]:ref:`MIS_RESTART<MIS_RESTART>`\ [/site][site wiki="planner"]:ref:`MIS_RESTART<copter:MIS_RESTART>`\ [/site] parameter. Default (0) is to resume the mission when re-entering AUTO mode.
 
-:ref:`MIS_OPTIONS<MIS_OPTIONS>`
-===============================
+[site wiki="copter,plane,rover,sub"]:ref:`MIS_OPTIONS<MIS_OPTIONS>` [/site][site wiki="planner"]:ref:`MIS_OPTIONS<copter:MIS_OPTIONS>` [/site]
+======================================
 
-The :ref:`MIS_OPTIONS<MIS_OPTIONS>` parameter bits can be set to modify how missions function:
+The [site wiki="copter,plane,rover,sub"]:ref:`MIS_OPTIONS<MIS_OPTIONS>`\ [/site][site wiki="planner"]:ref:`MIS_OPTIONS<copter:MIS_OPTIONS>`\ [/site] parameter bits can be set to modify how missions function:
 
-===================================   ================================
-:ref:`MIS_OPTIONS<MIS_OPTIONS>` bit   Option
-===================================   ================================
-0                                     Clears the loaded mission on boot. Must be loaded after each boot.
-1 (Plane only)                        Use distance to land calculation on battery failsafe. See :ref:`common-do-land-start`
-2                                     Continue after landing. Advances mission item pointer to next mission item after landing complete. If no item exists, RTL.
-===================================   ================================
+=============================================   ================================
+[site wiki="copter,plane,rover,sub"]:ref:`MIS_OPTIONS<MIS_OPTIONS>` bit             Option
+[/site][site wiki="planner"]:ref:`MIS_OPTIONS<copter:MIS_OPTIONS>` bit      Option
+[/site]=============================================   ================================
+0                                               Clears the loaded mission on boot. Must be loaded after each boot.
+1 (Plane only)                                  Use distance to land calculation on battery failsafe. See :ref:`common-do-land-start`
+2                                               Continue after landing. Advances mission item pointer to next mission item after landing complete. If no item exists, RTL.
+=============================================   ================================
 
 Mission Re-Wind
 ===============
@@ -194,7 +195,7 @@ The behavior of returning to a mission sequence when interrupted by a mode chang
 Mission Size
 ============
 
-The number of mission items which can be stored in the autopilot is limited to approximately 650 waypoints. If you need to have longer missions, then you can set the :ref:`BRD_SD_MISSION<BRD_SD_MISSION>` parameter to create a file on the SD Card to store more. This can be set up to a maximum of 64 (kB) which would allow a total of over 4,000 waypoints in a mission.
+The number of mission items which can be stored in the autopilot is limited to approximately 650 waypoints. If you need to have longer missions, then you can set the [site wiki="copter,plane,rover,sub"]:ref:`BRD_SD_MISSION<BRD_SD_MISSION>`\ [/site][site wiki="planner"]:ref:`BRD_SD_MISSION<copter:BRD_SD_MISSION>`\ [/site] parameter to create a file on the SD Card to store more. This can be set up to a maximum of 64 (kB) which would allow a total of over 4,000 waypoints in a mission.
 
 How to prefetch a stored Mission Map
 ====================================
