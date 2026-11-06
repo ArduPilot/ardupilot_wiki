@@ -78,7 +78,7 @@ For PPM and SBUS support on UART1_RX set BRD_ALT_CONFIG to 1.
 OSD Support
 ===========
 
-The Orqa FC 3030 F405 supports analog OSD using OSD_TYPE 1 (MAX7456 driver) using the CAM and VTX connectors. DisplayPort HD OSD can be enabled simultaneously by setting :ref:`OSD_TYPE<OSD_TYPE>` = 5 and using USART6 for telemetry to the HD air unit by setting :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` = 42.
+The Orqa FC 3030 F405 supports analog OSD using OSD_TYPE 1 (MAX7456 driver) using the CAM and VTX connectors. DisplayPort HD OSD can be enabled simultaneously by setting [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] = 5 and using USART6 for telemetry to the HD air unit by setting :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` = 42.
 
 PWM Output
 ==========
@@ -92,7 +92,7 @@ The Orqa FC 3030 F405 supports up to 8 PWM outputs(Mini supports 9). Outputs 1-8
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - [site wiki="copter,rover,blimp"]:ref:`FRAME_CLASS<FRAME_CLASS>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_CLASS<copter:FRAME_CLASS>`\ [/site] = 1 (Quad)
-- [site wiki="copter,rover,blimp"]:ref:`FRAME_TYPE<FRAME_TYPE>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site] = 12 (BetaFlightX) 
+- [site wiki="copter,rover"]:ref:`FRAME_TYPE<FRAME_TYPE>`\ [/site][site wiki="blimp"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site] = 12 (BetaFlightX) 
 
 Battery Monitoring
 ==================

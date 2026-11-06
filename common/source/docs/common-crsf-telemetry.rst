@@ -32,7 +32,7 @@ ArduPilot Parameter Editor
 
 In  addition, the ArduPilot CRSF implementation provides for ArduPilot parameter adjustment, similar in function to ArduPilot's [site wiki="plane,copter,rover,sub"]:ref:`common-paramosd`\ [/site][site wiki="blimp"]:ref:`copter:common-paramosd`\ [/site] feature.
 
-If the autopilot has any active OSD (:ref:`OSD_TYPE<OSD_TYPE>` not equal to "0") , this feature is automatically enabled. If not, then selecting :ref:`OSD_TYPE<OSD_TYPE>` = 4 (TX only) will enable it.
+If the autopilot has any active OSD ([site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] not equal to "0") , this feature is automatically enabled. If not, then selecting [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] = 4 (TX only) will enable it.
 
 Selecting the Crossfire Configuration LUA script in the transmitter will show:
 

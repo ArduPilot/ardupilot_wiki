@@ -95,7 +95,7 @@ FrSky Telemetry is supported using any UART TX pin. You need to set the followin
 OSD Support
 ============
 
-The MambaH743v4 supports OSD using :ref:`OSD_TYPE<OSD_TYPE>` = 1 (MAX7456 driver).
+The MambaH743v4 supports OSD using [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] = 1 (MAX7456 driver).
 
 PWM Output
 ===========
@@ -114,7 +114,7 @@ Channels within the same group need to use the same output rate. If any channel 
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - [site wiki="copter,rover,blimp"]:ref:`FRAME_CLASS<FRAME_CLASS>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_CLASS<copter:FRAME_CLASS>`\ [/site] = 1 (Quad)
-- [site wiki="copter,rover,blimp"]:ref:`FRAME_TYPE<FRAME_TYPE>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site] = 12 (BetaFlightX) 
+- [site wiki="copter,rover"]:ref:`FRAME_TYPE<FRAME_TYPE>`\ [/site][site wiki="blimp"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site] = 12 (BetaFlightX) 
 
 
 Battery Monitoring

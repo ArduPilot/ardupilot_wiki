@@ -85,7 +85,7 @@ pin with no special adapters.
 OSD Support
 ===========
 
-The KakuteF4 supports OSD using :ref:`OSD_TYPE<OSD_TYPE>` 1 (MAX7456 driver).
+The KakuteF4 supports OSD using [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] 1 (MAX7456 driver).
 
 PWM Output
 ==========

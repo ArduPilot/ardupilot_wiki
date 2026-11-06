@@ -44,8 +44,8 @@ Example setup below shown for first proximity sensor:
 
 - :ref:`SERIAL1_PROTOCOL <SERIAL4_PROTOCOL>` = "11" ("Lidar360") if using Serial1
 - :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` =  "230" if using Serial1 as connection port
-- [site wiki="copter,rover,blimp,sub"]:ref:`PRX1_TYPE <PRX1_TYPE>`\ [/site][site wiki="plane"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site] = "16"
-- [site wiki="copter,rover,blimp,sub"]:ref:`PRX1_ORIENT <PRX1_ORIENT>`\ [/site][site wiki="plane"]:ref:`PRX1_ORIENT <copter:PRX1_ORIENT>`\ [/site] = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
+- [site wiki="copter,rover,sub"]:ref:`PRX1_TYPE <PRX1_TYPE>`\ [/site][site wiki="blimp"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site][site wiki="plane"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site] = "16"
+- [site wiki="copter,rover,sub"]:ref:`PRX1_ORIENT <PRX1_ORIENT>`\ [/site][site wiki="blimp"]:ref:`PRX1_ORIENT <copter:PRX1_ORIENT>`\ [/site][site wiki="plane"]:ref:`PRX1_ORIENT <copter:PRX1_ORIENT>`\ [/site] = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
 
 It may be necessary to turn off flow control if using Telem1 (aka Serial1) or Telem2 (aka Serial2)
 

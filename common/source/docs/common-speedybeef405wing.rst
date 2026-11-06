@@ -167,7 +167,7 @@ Set a ``RELAYx_PIN`` to “81” to control the  switching. Then select an RC ch
 
 For example, use Channel 10 to control the switch using Relay 2:
 
-    :ref:`RELAY2_PIN<RELAY2_PIN>` = “81”
+    [site wiki="plane,copter,rover,sub"]:ref:`RELAY2_PIN<RELAY2_PIN>`\ [/site][site wiki="blimp"]:ref:`RELAY2_PIN<copter:RELAY2_PIN>`\ [/site] = “81”
 
     :ref:`RC10_OPTION<RC10_OPTION>` = “34” (Relay2 Control)
 

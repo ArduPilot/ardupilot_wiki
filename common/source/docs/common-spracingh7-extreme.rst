@@ -64,7 +64,7 @@ Then select an RC channel for control (Chx) and set its ``RCx_OPTION`` to the ap
 
 For example, use Channel 10 to control the power using Relay 2:
 
-- :ref:`RELAY2_PIN<RELAY2_PIN>` = "81" (Relay 2 is set by default, but can be changed)
+- [site wiki="plane,copter,rover,sub"]:ref:`RELAY2_PIN<RELAY2_PIN>`\ [/site][site wiki="blimp"]:ref:`RELAY2_PIN<copter:RELAY2_PIN>`\ [/site] = "81" (Relay 2 is set by default, but can be changed)
 - :ref:`RC10_OPTION<RC10_OPTION>` = "34" (Relay2 Control)
 
 .. note:: setting the above Relay on/high will turn off that supply. If nothing is assigned, default is powered on.
@@ -100,7 +100,7 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 OSD Support
 ===========
 
-The SPracing H7 Extreme onboard OSD is used by setting :ref:`OSD_TYPE<OSD_TYPE>` 1 (MAX7456 driver).
+The SPracing H7 Extreme onboard OSD is used by setting [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] 1 (MAX7456 driver).
 
 SmartPort Telemetry
 ===================

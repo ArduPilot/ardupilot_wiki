@@ -121,7 +121,7 @@ FrSky Telemetry is supported using the T6 pin (UART6 transmit). You need to set 
 OSD Support
 ===========
 
-The KakuteF7 AIO supports OSD using :ref:`OSD_TYPE<OSD_TYPE>` 1 (MAX7456 driver).
+The KakuteF7 AIO supports OSD using [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] 1 (MAX7456 driver).
 
 PWM Output
 ==========

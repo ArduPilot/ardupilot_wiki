@@ -111,7 +111,7 @@ An analog input is provided and its reference pin number is "10"
 OSD Support
 ===========
 
-The FlywooF405 Pro has an on-board OSD using :ref:`OSD_TYPE<OSD_TYPE>` =  1 (MAX7456 driver). The CAM and VTX pins provide connections for using the internal OSD.
+The FlywooF405 Pro has an on-board OSD using [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] =  1 (MAX7456 driver). The CAM and VTX pins provide connections for using the internal OSD.
 
 DJI Video and OSD
 =================

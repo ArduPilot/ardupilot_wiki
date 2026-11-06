@@ -147,7 +147,7 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 OSD Support
 ===========
 
-The autopilot has an integrated OSD using :ref:`OSD_TYPE<OSD_TYPE>` 1 (MAX7456 driver). The defaults are also setup to allow DJI Goggle OSD support on UART6.
+The autopilot has an integrated OSD using [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] 1 (MAX7456 driver). The defaults are also setup to allow DJI Goggle OSD support on UART6.
 
 PWM Output
 ==========
@@ -169,7 +169,7 @@ to use DShot.
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
 - [site wiki="copter,rover,blimp"]:ref:`FRAME_CLASS<FRAME_CLASS>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_CLASS<copter:FRAME_CLASS>`\ [/site] = 1 (Quad)
-- [site wiki="copter,rover,blimp"]:ref:`FRAME_TYPE<FRAME_TYPE>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site] = 12 (BetaFlightX) 
+- [site wiki="copter,rover"]:ref:`FRAME_TYPE<FRAME_TYPE>`\ [/site][site wiki="blimp"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site] = 12 (BetaFlightX) 
 
 
 LED Output
@@ -182,12 +182,12 @@ VTX Voltage Selection/Control
 
 A solder jumper pad (VTX+)is provided to allow selection of 5V or 10V output to the "10V" pads. Another solder pad (Jp) selects if the supply is always on or switchable for Pit mode operation.
 
-If configured for switchable operation, set :ref:`RELAY1_PIN<RELAY1_PIN>` = "81" to control on or off with RELAY1 in ArduPilot and setup an ``RCx_OPTION`` to "28".
+If configured for switchable operation, set [site wiki="plane,copter,rover,sub"]:ref:`RELAY1_PIN<RELAY1_PIN>`\ [/site][site wiki="blimp"]:ref:`RELAY1_PIN<copter:RELAY1_PIN>`\ [/site] = "81" to control on or off with RELAY1 in ArduPilot and setup an ``RCx_OPTION`` to "28".
 
 Camera Selection
 ================
 
-Two camera inputs are provided. C1 is selected by default. In order to switch to camera 2 (C2), set :ref:`RELAY2_PIN<RELAY2_PIN>` = "82" to allow RELAY2 to control selection of cameras.
+Two camera inputs are provided. C1 is selected by default. In order to switch to camera 2 (C2), set [site wiki="plane,copter,rover,sub"]:ref:`RELAY2_PIN<RELAY2_PIN>`\ [/site][site wiki="blimp"]:ref:`RELAY2_PIN<copter:RELAY2_PIN>`\ [/site] = "82" to allow RELAY2 to control selection of cameras.
 
 GPIO Output
 ===========

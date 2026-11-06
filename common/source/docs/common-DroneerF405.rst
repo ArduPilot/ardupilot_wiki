@@ -67,7 +67,7 @@ FrSky Telemetry is supported using the Tx pin of any UART. You need to set the f
 
 OSD Support
 ===========
-The Droneer F405 supports analog OSD using its integrated MAX7456. Simultaneous HD TVX OSD operation can also be obtained using an available UART whose protocol is set to "DisplayPort (42)" and :ref:`OSD_TYPE2<OSD_TYPE2>` set to "5".
+The Droneer F405 supports analog OSD using its integrated MAX7456. Simultaneous HD TVX OSD operation can also be obtained using an available UART whose protocol is set to "DisplayPort (42)" and [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE2<OSD_TYPE2>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE2<copter:OSD_TYPE2>`\ [/site] set to "5".
 
 The JST-GH-4P connector supports a standard "Tramp" VTX connection. Pin 1 of the connector is 10v so be careful not to connect this to a peripheral requiring 5v.
 

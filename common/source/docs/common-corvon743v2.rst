@@ -84,7 +84,7 @@ RX pins. The SBUS pin of the O4-AIR connector feeds the same input. See
 OSD Support
 ===========
 
-The default configuration sets :ref:`OSD_TYPE<OSD_TYPE>` = 5 (MSP DisplayPort)
+The default configuration sets [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE<OSD_TYPE>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE<copter:OSD_TYPE>`\ [/site] = 5 (MSP DisplayPort)
 on SERIAL2, so a DJI O4/O3 Air Unit connected to the O4-AIR connector shows
 the OSD overlay without any additional setup. The board has no onboard analog
 OSD chip, so analog video OSD is not supported.

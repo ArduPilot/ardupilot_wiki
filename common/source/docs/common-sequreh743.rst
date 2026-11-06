@@ -47,7 +47,7 @@ The default RC input is configured on USART1. RC could  be applied instead to a 
 
 OSD Support
 ===========
-The SequreH743 supports OSD using its MAX7456by default, and simultaneously DisplayPort using UART7 on the HD VTX connector if :ref:`OSD_TYPE2<OSD_TYPE2>` is set to "5".
+The SequreH743 supports OSD using its MAX7456by default, and simultaneously DisplayPort using UART7 on the HD VTX connector if [site wiki="plane,copter,rover,sub"]:ref:`OSD_TYPE2<OSD_TYPE2>`\ [/site][site wiki="blimp"]:ref:`OSD_TYPE2<copter:OSD_TYPE2>`\ [/site] is set to "5".
 
 VTX Support
 ===========

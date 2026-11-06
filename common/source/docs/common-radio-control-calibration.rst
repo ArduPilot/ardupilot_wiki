@@ -36,7 +36,7 @@ Check the Transmitter's Setup
   - Pitch stick should control channel 2
   - Throttle stick should control channel 3
   - Yaw stick should control channel 4
-  - A 3 or 6 position switch (to control the flight mode) should be setup to control Channel 5 (default,if using Copter) or Channel 8 (default, if using Rover or Plane).  This channel can be moved by setting the [site wiki="copter,plane,planner,blimp"]:ref:`FLTMODE_CH <FLTMODE_CH>`\ [/site][site wiki="rover"]:ref:`FLTMODE_CH <copter:FLTMODE_CH>`\ [/site] parameter in Plane or Copter, or [site wiki="rover,blimp"]:ref:`MODE_CH<MODE_CH>`\ [/site][site wiki="copter,plane,planner"]:ref:`MODE_CH<rover:MODE_CH>`\ [/site] in Rover.
+  - A 3 or 6 position switch (to control the flight mode) should be setup to control Channel 5 (default,if using Copter) or Channel 8 (default, if using Rover or Plane).  This channel can be moved by setting the [site wiki="copter,plane,planner,blimp"]:ref:`FLTMODE_CH <FLTMODE_CH>`\ [/site][site wiki="rover"]:ref:`FLTMODE_CH <copter:FLTMODE_CH>`\ [/site] parameter in Plane or Copter, or [site wiki="rover"]:ref:`MODE_CH<MODE_CH>`\ [/site][site wiki="blimp"]:ref:`MODE_CH<rover:MODE_CH>`\ [/site][site wiki="copter,plane,planner"]:ref:`MODE_CH<rover:MODE_CH>`\ [/site] in Rover.
   - On Copter, a tuning knob should control Channel 6
   - On Copter and Rover, any remaining two or three position switches can be setup to control auxiliary functions by mapping them to channels 7 to 12
 - Note that for reversing motor controls on Plane and Rover, the throttle range is range is normally divided into two parts:
