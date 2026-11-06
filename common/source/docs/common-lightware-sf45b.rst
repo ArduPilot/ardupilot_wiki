@@ -29,10 +29,10 @@ Example setup below shown for first proximity sensor:
 
 - :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = "11" ("Lidar360") if using Serial1
 - :ref:`SERIAL1_BAUD <SERIAL4_BAUD>` =  "115" if using Serial1
-- :ref:`PRX1_TYPE <PRX1_TYPE>` = "8" (LightwareSF45B)
-- :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle
-- :ref:`PRX1_YAW_CORR <PRX1_YAW_CORR>` allows adjusting for the forward direction of the lidar.  For example, if the lidar is facing forward this parameter can be left as 0.  If facing backwards it should be set to 180.
-- :ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>` and :ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>` parameters allow defining zones around the vehicle that should be ignored.  For example to avoid a 20deg area to the right, set :ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>` to 90 and :ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>` to 20.
+- [site wiki="copter,rover,sub"]:ref:`PRX1_TYPE <PRX1_TYPE>`\ [/site][site wiki="plane"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site] = "8" (LightwareSF45B)
+- [site wiki="copter,rover,sub"]:ref:`PRX1_ORIENT <PRX1_ORIENT>`\ [/site][site wiki="plane"]:ref:`PRX1_ORIENT <copter:PRX1_ORIENT>`\ [/site] = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle
+- [site wiki="copter,rover,sub"]:ref:`PRX1_YAW_CORR <PRX1_YAW_CORR>`\ [/site][site wiki="plane"]:ref:`PRX1_YAW_CORR <copter:PRX1_YAW_CORR>`\ [/site] allows adjusting for the forward direction of the lidar.  For example, if the lidar is facing forward this parameter can be left as 0.  If facing backwards it should be set to 180.
+- [site wiki="copter,rover,sub"]:ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>`\ [/site][site wiki="plane"]:ref:`PRX1_IGN_ANG1 <copter:PRX1_IGN_ANG1>`\ [/site] and [site wiki="copter,rover,sub"]:ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>`\ [/site][site wiki="plane"]:ref:`PRX1_IGN_WID1 <copter:PRX1_IGN_WID1>`\ [/site] parameters allow defining zones around the vehicle that should be ignored.  For example to avoid a 20deg area to the right, set [site wiki="copter,rover,sub"]:ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>`\ [/site][site wiki="plane"]:ref:`PRX1_IGN_ANG1 <copter:PRX1_IGN_ANG1>`\ [/site] to 90 and [site wiki="copter,rover,sub"]:ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>`\ [/site][site wiki="plane"]:ref:`PRX1_IGN_WID1 <copter:PRX1_IGN_WID1>`\ [/site] to 20.
 
 More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
 

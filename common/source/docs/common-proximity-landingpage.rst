@@ -71,7 +71,7 @@ Ground detection
     This feature requires a valid downward facing rangefinder configured first and only works with Copter.
 
 For low altitude obstacle avoidance, and while just taking off and landing, sometimes the sensor will pick up the ground below as obstacle. This can be dangerous because the vehicle will try and "avoid" these obstacles (if avoidance features are turned on).
-By setting :ref:`PRX_IGN_GND <PRX_IGN_GND>` = 1, we attempt to detect and ignore any obstacles that are near the ground.
+By setting [site wiki="copter"]:ref:`PRX_IGN_GND <PRX_IGN_GND>`\ [/site][site wiki="rover"]:ref:`PRX_IGN_GND <copter:PRX_IGN_GND>`\ [/site] = 1, we attempt to detect and ignore any obstacles that are near the ground.
 
 .. warning::
 

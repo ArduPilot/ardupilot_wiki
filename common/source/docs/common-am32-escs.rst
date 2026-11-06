@@ -34,7 +34,7 @@ To enable communication with the AM32 ESCs using DroneCAN, set the following par
 - Set :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (First driver) to specify that the ESCs are connected to the CAN1 port
 - Set :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 1 (DroneCAN)
 [site wiki="copter,rover"]
-- Set :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` = 1000 and :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` = 2000 so ArduPilot uses an output range that matches the ESCs input range
+- Set [/site][site wiki="copter"]:ref:`MOT_PWM_MIN <MOT_PWM_MIN>`\ [/site][site wiki="rover"]:ref:`MOT_PWM_MIN <copter:MOT_PWM_MIN>`\ [/site][site wiki="copter,rover"] = 1000 and [/site][site wiki="copter"]:ref:`MOT_PWM_MAX <MOT_PWM_MAX>`\ [/site][site wiki="rover"]:ref:`MOT_PWM_MAX <copter:MOT_PWM_MAX>`\ [/site][site wiki="copter,rover"] = 2000 so ArduPilot uses an output range that matches the ESCs input range
 [/site]
 [site wiki="plane"]
 - Set ``SERVOx_MIN`` = 1000 and ``SERVOx_MAX`` = 2000 for each ESC connected (``x`` corresponds to the ESC number) so ArduPilot uses an output range that matches the ESCs input range

@@ -19,7 +19,7 @@ Follow the links below (or in sidebar) for configuration information based upon 
     Servo Gripper  <common-gripper-servo>
 
 .. tip::
-    Grippers can be configured to release in a failsafe situation using :ref:`FS_OPTIONS<FS_OPTIONS>` (ArduCopter only)
+    Grippers can be configured to release in a failsafe situation using [site wiki="copter,rover"]:ref:`FS_OPTIONS<FS_OPTIONS>`\ [/site][site wiki="plane,sub"]:ref:`FS_OPTIONS<copter:FS_OPTIONS>`\ [/site] (ArduCopter only)
 
 Common Gripper Parameters
 =========================

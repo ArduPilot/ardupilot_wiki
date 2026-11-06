@@ -32,14 +32,14 @@ BendyRuler Types
 
 Copter supports two different types of BendyRuler Path Planning.
 
-- 1. :ref:`OA_BR_TYPE <OA_BR_TYPE>` = 1: Horizontal BendyRuler: This is the only option available on Rover. This searches for obstacle-free paths only in horizontal directions and therefore when it detects an obstacle in its path, it will only move in those directions.
+- 1. [site wiki="copter"]:ref:`OA_BR_TYPE <OA_BR_TYPE>`\ [/site][site wiki="rover"]:ref:`OA_BR_TYPE <copter:OA_BR_TYPE>`\ [/site] = 1: Horizontal BendyRuler: This is the only option available on Rover. This searches for obstacle-free paths only in horizontal directions and therefore when it detects an obstacle in its path, it will only move in those directions.
 
 ..  youtube:: GRqjMf7kQxU
     :width: 100%
 
 
 
-- 2. :ref:`OA_BR_TYPE <OA_BR_TYPE>` = 2: Vertical BendyRuler: This feature searches for path only in four directions: Straight towards the destination, vertically up, vertically down and backwards. This feature is typically helpful while avoiding short obstacles in a crowded space. Don't forget to setup an altitude fence if you do not want the Copter to climb above a certain height.
+- 2. [site wiki="copter"]:ref:`OA_BR_TYPE <OA_BR_TYPE>`\ [/site][site wiki="rover"]:ref:`OA_BR_TYPE <copter:OA_BR_TYPE>`\ [/site] = 2: Vertical BendyRuler: This feature searches for path only in four directions: Straight towards the destination, vertically up, vertically down and backwards. This feature is typically helpful while avoiding short obstacles in a crowded space. Don't forget to setup an altitude fence if you do not want the Copter to climb above a certain height.
 
 ..  youtube:: cjv0ArVOCy0
     :width: 100%
@@ -54,7 +54,7 @@ If using a lidar or proximity sensor the following "obstacle database" parameter
 - :ref:`OA_DB_EXPIRE <OA_DB_EXPIRE>`: the number of seconds after an obstacle disappears from view that it is removed from the database
 - :ref:`OA_DB_QUEUE_SIZE <OA_DB_QUEUE_SIZE>`: the buffer size between the lidar and obstacle database.  Normally this can be left at the default value
 - :ref:`OA_DB_OUTPUT <OA_DB_OUTPUT>`: controls whether tracked objects are visible on the GCS as small airplanes
-- :ref:`OA_DB_ALT_MIN <OA_DB_ALT_MIN>`: OADatabase will reject obstacle's if vehicle's altitude above home is below this parameter, in a 3 meter radius around home. This can be useful if your sensor is picking up the ground as obstacles while taking off.
+- [site wiki="copter"]:ref:`OA_DB_ALT_MIN <OA_DB_ALT_MIN>`\ [/site][site wiki="rover"]:ref:`OA_DB_ALT_MIN <copter:OA_DB_ALT_MIN>`\ [/site]: OADatabase will reject obstacle's if vehicle's altitude above home is below this parameter, in a 3 meter radius around home. This can be useful if your sensor is picking up the ground as obstacles while taking off.
 
 
 Videos

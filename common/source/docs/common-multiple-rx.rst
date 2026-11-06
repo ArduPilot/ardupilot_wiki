@@ -29,7 +29,7 @@ The autopilot will always use the receiver attached to the IOMCU's RCin, if prov
 
 Note that the previously calibrated ``RCx_MAX`` , ``RCx_MIN``, ``RCx_REVERSED``, ``RCx_DZ`` and ``RCx_TRIM`` parameters for each channel will be used by the active receiver and could vary between receivers, especially if different types are mixed. It is recommended that all receivers be of the same manufacture and type.
 
-.. note:: lowering throttle to below :ref:`FS_THR_VALUE<FS_THR_VALUE>`  on the first receiver will not force a changeover, but rather force a normal radio failsafe. Only loss of RC signals from the first receiver will cause a changeover.
+.. note:: lowering throttle to below [site wiki="copter,rover,sub"]:ref:`FS_THR_VALUE<FS_THR_VALUE>`\ [/site][site wiki="plane"]:ref:`FS_THR_VALUE<copter:FS_THR_VALUE>`\ [/site]  on the first receiver will not force a changeover, but rather force a normal radio failsafe. Only loss of RC signals from the first receiver will cause a changeover.
 
 If all receivers become inactive (no pulses), then the normal radio failsafe handling will begin.
 

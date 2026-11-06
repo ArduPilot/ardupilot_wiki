@@ -68,13 +68,13 @@ Optionally (normally recommended only for indoor use), the RF can be used as an 
 Plane
 -----
 
-In Plane, when using fixed wing modes, RangeFinder use, when within range and enabled by the :ref:`RNGFND_LANDING<RNGFND_LANDING>` parameter, is limited to:
+In Plane, when using fixed wing modes, RangeFinder use, when within range and enabled by the [site wiki="plane"]:ref:`RNGFND_LANDING<RNGFND_LANDING>`\ [/site][site wiki="copter"]:ref:`RNGFND_LANDING<plane:RNGFND_LANDING>`\ [/site] parameter, is limited to:
 
 - Adjusting glide slope during :ref:`Automatic Landings <automatic-landing>`, during the approach and pre-flare phases of the landing.
 - Determining altitude when :ref:`LGR_DEPLOY_ALT<LGR_DEPLOY_ALT>`, or :ref:`LGR_RETRACT_ALT<LGR_RETRACT_ALT>` is reached, if a downward facing RF is active and within range.
-- When :ref:`Q_LAND_FINAL_ALT<Q_LAND_FINAL_ALT>` is reached in VTOL landings in QuadPlane, if a downward facing RF is active.
-- Determining if below :ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>`.
-- Determining if below :ref:`Q_VFWD_ALT<Q_VFWD_ALT>`.
+- When [site wiki="plane"]:ref:`Q_LAND_FINAL_ALT<Q_LAND_FINAL_ALT>`\ [/site][site wiki="copter"]:ref:`Q_LAND_FINAL_ALT<plane:Q_LAND_FINAL_ALT>`\ [/site] is reached in VTOL landings in QuadPlane, if a downward facing RF is active.
+- Determining if below [site wiki="plane"]:ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>`\ [/site][site wiki="copter"]:ref:`Q_ASSIST_ALT<plane:Q_ASSIST_ALT>`\ [/site].
+- Determining if below [site wiki="plane"]:ref:`Q_VFWD_ALT<Q_VFWD_ALT>`\ [/site][site wiki="copter"]:ref:`Q_VFWD_ALT<plane:Q_VFWD_ALT>`\ [/site].
 
 Target ALT Modification using Terrain Following Data
 ====================================================

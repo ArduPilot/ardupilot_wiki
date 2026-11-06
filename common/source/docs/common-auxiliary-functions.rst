@@ -467,7 +467,7 @@ Other functions are:
                                          | to the last tack.[site wiki="rover"] See Sailboat :ref:`sailboat-configure`.[/site]
     Reverse Throttle                     | When switched high, forces throttle reverse in Plane for
                                          | steepening descents. Normally, this is
-                                         | controlled by flight mode via the :ref:`USE_REV_THRUST<USE_REV_THRUST>`
+                                         | controlled by flight mode via the [site wiki="plane"]:ref:`USE_REV_THRUST<USE_REV_THRUST>` [/site][site wiki="copter,rover,sub"]:ref:`USE_REV_THRUST<plane:USE_REV_THRUST>` [/site]
                                          | parameter. See :ref:`automatic-landing` for more information on
                                          | the setup of reverse thrust.
     GPS Disable                           Simulates GPS failure by disabling GPS.
@@ -494,7 +494,7 @@ Other functions are:
                                          | See :ref:`common-camera-runcam`.
     VISO Align                            Aligns external Visual Odometry with current autopilot AHRS.
     Disarm                               | Disarm the vehicle unconditionally and immediately. Unlike
-                                         | Emergency Stop Motors, which waits for :ref:`DISARM_DELAY<DISARM_DELAY>`
+                                         | Emergency Stop Motors, which waits for [site wiki="copter"]:ref:`DISARM_DELAY<DISARM_DELAY>` [/site][site wiki="plane,rover,sub"]:ref:`DISARM_DELAY<copter:DISARM_DELAY>` [/site]
                                          | in Copter.
     Q_Assist 3Pos SW                     | Low: disable Q_Assist entirely, Middle: Normal Q_Assist
                                          | operation, High: Q_Assist active at all times. See Assisted Fixed
@@ -509,7 +509,7 @@ Other functions are:
     Force Flare                          | Moves tilt motors to the upright position and optionally sets
                                          | pitch for flare when landing Tilt Rotor QuadPlanes.
                                          | Middle: The pilot retains pitch control during a flare.
-                                         | High: Pitch set to :ref:`LAND_PITCH_DEG<LAND_PITCH_DEG>`. 
+                                         | High: Pitch set to [site wiki="plane"]:ref:`LAND_PITCH_DEG<LAND_PITCH_DEG>`\ [/site][site wiki="copter,rover,sub"]:ref:`LAND_PITCH_DEG<plane:LAND_PITCH_DEG>`\ [/site]. 
     EKF Source Set                       | Allows switching between up to three source sets manually for EKF3 (only).
                                          | See :ref:`common-non-gps-to-gps`.
     Airspeed Ratio Calibrate             | Activates calibration of airspeed ratio in flight. Best results
@@ -522,7 +522,7 @@ Other functions are:
     MODE_SWITCH_RESET                     Forces mode switch to be re-read.
     WindVane home direction offset       | This is a continuous input channel providing a -45 to +45
                                          | degree offset of the initial wind direction when using
-                                         | :ref:`WNDVN_TYPE<WNDVN_TYPE>` = 2.
+                                         | [site wiki="rover"]:ref:`WNDVN_TYPE<WNDVN_TYPE>`\ [/site][site wiki="copter,plane,sub"]:ref:`WNDVN_TYPE<rover:WNDVN_TYPE>`\ [/site] = 2.
     Camera Mode Toggle                   | Toggle camera mode (Photo/Video/etc.). Ideally, this should be
                                          | on a momentary switch since only low to high transitions
                                          | toggle the camera mode. Used only with Solo gimbals
@@ -555,7 +555,7 @@ Other functions are:
                                          | roll, and yaw in Plane and for Steering in Rover.[site wiki="rover"] See :ref:`Save Steering Trim <savetrim>`.[/site]
     Torqeedo Error Clear                  Clears error condition in Torqeedo motor controller.
     Force FBWA as Long FS Action         | Forces mode change to FBWA in Long FS, overriding the
-                                         | :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter value for emergency
+                                         | [site wiki="plane"]:ref:`FS_LONG_ACTN<FS_LONG_ACTN>`\ [/site][site wiki="copter,rover,sub"]:ref:`FS_LONG_ACTN<plane:FS_LONG_ACTN>`\ [/site] parameter value for emergency
                                          | landings beyond RC control range to prevent normal
                                          | failsafe action from occurring.
     Optflow Calibration                   Enables calibration of optical flow parameters.

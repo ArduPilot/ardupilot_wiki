@@ -8,17 +8,17 @@ Several bi-directional motor configurations/orientations are available in Sub:
 
 Key to axis: R = Roll, P = Pitch, Y = Yaw, Z= Depth, F = Forward, L = Lateral
 
-=============================   =======  ================  ==================
-:ref:`FRAME_TYPE<FRAME_TYPE>`   #MOTORS  NAME              Controllable Axes
-=============================   =======  ================  ==================
-0                                  6     BlueROV1          R/P/Y/Z/F/L
-1                                  6     Vectored          R/Y/Z/F/L
-2                                  8     Vectored_6DOF     R/P/Y/Z/F/L
-3                                  8     Vectored_6DOF-90  R/P/Y/Z/F/L
-4                                  3     SimpleROV-3       Y/Z/F 
-5                                  4     SimpleROV-4       R/Y/Z/F 
-6                                  5     SimpleROV-5       R/Y/Z/F/L 
-=============================   =======  ================  ==================
+=================================   =======  ================  ==================
+:ref:`FRAME_CONFIG<FRAME_CONFIG>`   #MOTORS  NAME              Controllable Axes
+=================================   =======  ================  ==================
+0                                      6     BlueROV1          R/P/Y/Z/F/L
+1                                      6     Vectored          R/Y/Z/F/L
+2                                      8     Vectored_6DOF     R/P/Y/Z/F/L
+3                                      8     Vectored_6DOF-90  R/P/Y/Z/F/L
+4                                      3     SimpleROV-3       Y/Z/F 
+5                                      4     SimpleROV-4       R/Y/Z/F 
+6                                      5     SimpleROV-5       R/Y/Z/F/L 
+=================================   =======  ================  ==================
 
 .. note:: Configurations lacking one or more controllable axes rely on proper CG and ballast to maintain earth-frame stability in that axis.
 

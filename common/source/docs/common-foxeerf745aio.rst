@@ -104,8 +104,8 @@ to use DShot. Outputs 1-4 support bidirectional DShot.
 
 .. note:: for users migrating from BetaflightX quads, the first four outputs M1-M4 have been configured for use with existing motor wiring using these default parameters:
 
-- :ref:`FRAME_CLASS<FRAME_CLASS>` = 1 (Quad)
-- :ref:`FRAME_TYPE<FRAME_TYPE>` = 12 (BetaFlightX) 
+- [site wiki="copter,rover,blimp"]:ref:`FRAME_CLASS<FRAME_CLASS>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_CLASS<copter:FRAME_CLASS>`\ [/site] = 1 (Quad)
+- [site wiki="copter,rover,blimp"]:ref:`FRAME_TYPE<FRAME_TYPE>`\ [/site][site wiki="plane,sub"]:ref:`FRAME_TYPE<copter:FRAME_TYPE>`\ [/site] = 12 (BetaFlightX) 
 
 
 Integrated ESC Setup
@@ -115,9 +115,9 @@ By default the following parameters are setup for a Copter vehicle to give Bi-Di
 
 - :ref:`SERVO_BLH_BDMASK<SERVO_BLH_BDMASK>` =  15 (outputs 1-4 are bi-directional BLHeli)
 - :ref:`SERVO_BLH_AUTO<SERVO_BLH_AUTO>` =  1 (enable automatically enabling BLHeli passthrough on outputs 1 -4)
-- :ref:`MOT_PWM_TYPE<MOT_PWM_TYPE>` = 6 (set DShot 600 protocol)
+- [site wiki="copter,rover,blimp,sub"]:ref:`MOT_PWM_TYPE<MOT_PWM_TYPE>`\ [/site][site wiki="plane"]:ref:`MOT_PWM_TYPE<copter:MOT_PWM_TYPE>`\ [/site] = 6 (set DShot 600 protocol)
 
-.. note:: for QuadPlane Copter Tailsitters, set :ref:`Q_M_PWM_TYPE<Q_M_PWM_TYPE>` = 6, since :ref:`MOT_PWM_TYPE<MOT_PWM_TYPE>` only applies to Copters.
+.. note:: for QuadPlane Copter Tailsitters, set [site wiki="plane,blimp"]:ref:`Q_M_PWM_TYPE<Q_M_PWM_TYPE>`\ [/site][site wiki="copter,rover,sub"]:ref:`Q_M_PWM_TYPE<plane:Q_M_PWM_TYPE>`\ [/site] = 6, since [site wiki="copter,rover,blimp,sub"]:ref:`MOT_PWM_TYPE<MOT_PWM_TYPE>`\ [/site][site wiki="plane"]:ref:`MOT_PWM_TYPE<copter:MOT_PWM_TYPE>`\ [/site] only applies to Copters.
 
 Neopixel Output
 ===============

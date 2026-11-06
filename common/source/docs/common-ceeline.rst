@@ -33,7 +33,7 @@ These rangefinder parameters should also be set:
 -  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.50     - adjust if the CEE-LINE config changes
 -  :ref:`RNGFND1_MAX <RNGFND1_MAX>` = 70 (70m) - adjust if the CEE-LINE config changes
 -  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (down)
--  :ref:`FRAME_CLASS` = 2 (boat) - needed if you want the rangefinder reading logged as `DPTH` (and this only works on rover).
+-  [site wiki="copter,rover"]:ref:`FRAME_CLASS`\ [/site][site wiki="plane,sub"]:ref:`rover:FRAME_CLASS`\ [/site] = 2 (boat) - needed if you want the rangefinder reading logged as `DPTH` (and this only works on rover).
 
 Advanced Configuration
 ----------------------

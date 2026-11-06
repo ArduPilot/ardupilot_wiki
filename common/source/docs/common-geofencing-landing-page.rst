@@ -23,12 +23,12 @@ General Setup
 -  Set :ref:`FENCE_ENABLE<FENCE_ENABLE>` = 1 to enable fences. This enables any fences that are setup, except the ALT_MIN fence, which must be enabled by using any fence enable means (GCS message, AUTOENABLE in plane, RC switch)
 -  Set :ref:`FENCE_ACTION<FENCE_ACTION>` = to whatever you wish for a breach action. These will vary depending on vehicle type. See :ref:`fence_breach_actions` above.
 -  Set :ref:`FENCE_OPTIONS<FENCE_OPTIONS>` Set bit 1 to prevent mode changes after a fence breach until the vehicle returns within the fence boundary (Plane only, Copter/Rover do not allow mode changes while in breach). Set bit 2 to use the Union of inclusion areas instead of just Intersects. Set bit 3 to provide GCS warning when vehicle is less than :ref:`FENCE_MARGIN<FENCE_MARGIN>` from a breach. This parameter is also used in avoidance and path planning.
--  Set :ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` = to the altitude limit you want (in meters). This is unavailable in Rover.
+-  Set [site wiki="copter,plane,sub"]:ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>`\ [/site][site wiki="rover"]:ref:`FENCE_ALT_MAX<copter:FENCE_ALT_MAX>`\ [/site] = to the altitude limit you want (in meters). This is unavailable in Rover.
 -  Set :ref:`FENCE_MARGIN<FENCE_MARGIN>` = to the distance from the fence horizontal boundary the vehicle must maintain in order to prevent a breach.
--  Set the :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>` as a minimum altitude breach boundary. This is unavailable in Rover.
+-  Set the [site wiki="copter,plane,sub"]:ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>`\ [/site][site wiki="rover"]:ref:`FENCE_ALT_MIN<copter:FENCE_ALT_MIN>`\ [/site] as a minimum altitude breach boundary. This is unavailable in Rover.
 -  Set :ref:`FENCE_ALT_MAX_TP<FENCE_ALT_MAX_TP>` and :ref:`FENCE_ALT_MIN_TP<FENCE_ALT_MIN_TP>` to select the altitude reference frame used by the maximum and minimum altitude fences, respectively. See :ref:`altitude-fence-frames` below. These are unavailable in Rover.
--  Set :ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>` = (Plane Only)to allow automatic enabling of the fence (different than :ref:`FENCE_ENABLE<FENCE_ENABLE>`) under certain vehicle conditions, such as upon arming or takeoff. A value of 0 disables this feature. :ref:`FENCE_ENABLE<FENCE_ENABLE>` is ignored if this feature is enabled. Using :ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>` = 3 (enable on ARM) is the only recommended use. "1" or "2" functions are being deprecated shortly since they can produce undesirable results in terms of containment.
--  :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` allows returning to the nearest RALLY point (See: :ref:`common-rally-points`), if loaded, instead of HOME.
+-  Set [site wiki="copter,plane"]:ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>`\ [/site][site wiki="rover,sub"]:ref:`FENCE_AUTOENABLE<copter:FENCE_AUTOENABLE>`\ [/site] = (Plane Only)to allow automatic enabling of the fence (different than :ref:`FENCE_ENABLE<FENCE_ENABLE>`) under certain vehicle conditions, such as upon arming or takeoff. A value of 0 disables this feature. :ref:`FENCE_ENABLE<FENCE_ENABLE>` is ignored if this feature is enabled. Using [site wiki="copter,plane"]:ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>`\ [/site][site wiki="rover,sub"]:ref:`FENCE_AUTOENABLE<copter:FENCE_AUTOENABLE>`\ [/site] = 3 (enable on ARM) is the only recommended use. "1" or "2" functions are being deprecated shortly since they can produce undesirable results in terms of containment.
+-  [site wiki="plane"]:ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>`\ [/site][site wiki="copter,rover,sub"]:ref:`FENCE_RET_RALLY<plane:FENCE_RET_RALLY>`\ [/site] allows returning to the nearest RALLY point (See: :ref:`common-rally-points`), if loaded, instead of HOME.
 -  Set :ref:`FENCE_TYPE<FENCE_TYPE>` = is a bitmap set to enable the various fence types: MIN or MAX altitude, simple CIRCLE tin can around HOME, or POLYGON fences. The POLYGON fences must also have been loaded via a fence list from a ground control station in order to be active. See below for detailed setup of :ref:`common-ac2_simple_geofence` and :ref:`common-polygon_fence`.
 
 .. note:: Polygon fence type includes the circular fences specified in the Inclusion/Exclusion fence list. The simple home centered CIRCLE fence is a separate fence. Rover ignores altitudes, if set.
@@ -79,7 +79,7 @@ Types of Fences
 Altitude Fence Reference Frames
 ===============================
 
-The maximum and minimum altitude fences (:ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` and :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>`) are altitudes above home by default. The altitude reference frame for each can be selected with :ref:`FENCE_ALT_MAX_TP<FENCE_ALT_MAX_TP>` and :ref:`FENCE_ALT_MIN_TP<FENCE_ALT_MIN_TP>`, respectively:
+The maximum and minimum altitude fences ([site wiki="copter,plane,sub"]:ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>`\ [/site][site wiki="rover"]:ref:`FENCE_ALT_MAX<copter:FENCE_ALT_MAX>`\ [/site] and [site wiki="copter,plane,sub"]:ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>`\ [/site][site wiki="rover"]:ref:`FENCE_ALT_MIN<copter:FENCE_ALT_MIN>`\ [/site]) are altitudes above home by default. The altitude reference frame for each can be selected with :ref:`FENCE_ALT_MAX_TP<FENCE_ALT_MAX_TP>` and :ref:`FENCE_ALT_MIN_TP<FENCE_ALT_MIN_TP>`, respectively:
 
 - 0: above mean sea level (AMSL)
 - 1: above home (the default, and the behaviour of previous releases)
@@ -103,7 +103,7 @@ Rover has no altitude actions, but if it reaches the Cylindrical fence boundary 
 Copter Actions
 --------------
 
-Copter will stop increasing altitude at :ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` in Loiter, PosHold, and AltHold modes.
+Copter will stop increasing altitude at [/site][site wiki="copter"]:ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>`\ [/site][site wiki="rover"]:ref:`FENCE_ALT_MAX<copter:FENCE_ALT_MAX>`\ [/site][site wiki="copter,rover"] in Loiter, PosHold, and AltHold modes.
 
 In Loiter mode, it will try to stop at the horizontal boundaries, but declare a breach if exceeds the boundary.
 
@@ -190,7 +190,7 @@ An ``RCx_OPTION`` can be set via the Config/Tuning > Full Parameter List screen,
 Automatic Altitude Breach Avoidance
 ===================================
 
-For landing modes (NAV_LAND,QLAND,LAND,etc.) in Copter and Plane, the :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>` limit is automatically disabled.
+For landing modes (NAV_LAND,QLAND,LAND,etc.) in Copter and Plane, the [site wiki="copter,plane,sub"]:ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>`\ [/site][site wiki="rover"]:ref:`FENCE_ALT_MIN<copter:FENCE_ALT_MIN>`\ [/site] limit is automatically disabled.
 
 [site wiki="copter"]
 

@@ -123,7 +123,7 @@ Minimum altitude (Copter only)
 ------------------------------
 
 - If the sensor has a wide field of view, on takeoff and landings it might see the ground below as obstacle and the vehicle might react to it. 
-- Set the parameter :ref:`AVOID_ALT_MIN <AVOID_ALT_MIN>` to have a minimum altitude before avoidance is switched on.
+- Set the parameter [site wiki="copter"]:ref:`AVOID_ALT_MIN <AVOID_ALT_MIN>`\ [/site][site wiki="rover"]:ref:`AVOID_ALT_MIN <copter:AVOID_ALT_MIN>`\ [/site] to have a minimum altitude before avoidance is switched on.
 
 .. note:: This feature requires a valid Downward Facing Rangefinder reading to works
 
@@ -136,5 +136,5 @@ Configuring Simple Avoidance for Copter in Altitude Hold Mode
 
 - in :ref:`AltHold <altholdmode>`
 
-  - :ref:`AVOID_DIST_MAX <AVOID_DIST_MAX>` controls how far from a barrier the vehicle starts leaning away from the barrier
-  - :ref:`ATC_ANGLE_MAX <ATC_ANGLE_MAX>` controls how far the vehicle will try to lean away from the barrier
+  - [site wiki="copter"]:ref:`AVOID_DIST_MAX <AVOID_DIST_MAX>`\ [/site][site wiki="rover"]:ref:`AVOID_DIST_MAX <copter:AVOID_DIST_MAX>`\ [/site] controls how far from a barrier the vehicle starts leaning away from the barrier
+  - [site wiki="copter"]:ref:`ATC_ANGLE_MAX <ATC_ANGLE_MAX>`\ [/site][site wiki="rover"]:ref:`ATC_ANGLE_MAX <copter:ATC_ANGLE_MAX>`\ [/site] controls how far the vehicle will try to lean away from the barrier

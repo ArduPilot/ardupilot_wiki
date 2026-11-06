@@ -54,7 +54,7 @@ Alternatively, if you wish the hover frequency to be the lowest value for the ha
 - Set :ref:`FFT_ENABLE <FFT_ENABLE>` = 0 to disable the FFT engine.
 - Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` and/or :ref:`INS_HNTC2_MODE <INS_HNTC2_MODE>` = 1 to use the throttle-based dynamic harmonic notch.
 - Set :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` = :ref:`FFT_FREQ_HOVER <FFT_FREQ_HOVER>`
-- Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` and/or :ref:`INS_HNTC2_REF <INS_HNTC2_REF>` = :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
+- Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` and/or :ref:`INS_HNTC2_REF <INS_HNTC2_REF>` = [site wiki="copter"]:ref:`MOT_THST_HOVER <MOT_THST_HOVER>` [/site][site wiki="plane"]:ref:`MOT_THST_HOVER <copter:MOT_THST_HOVER>` [/site]
 
 
 Tuning

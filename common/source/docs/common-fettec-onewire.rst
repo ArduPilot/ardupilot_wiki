@@ -88,8 +88,8 @@ Output type
 
 This digital protocol can use the full 1000 to 2000 range. Do set these parameters as well:
 
-- :ref:`MOT_PWM_MAX<MOT_PWM_MAX>` = 2000
-- :ref:`MOT_PWM_MIN<MOT_PWM_MIN>` = 1000
+- [site wiki="copter,sub"]:ref:`MOT_PWM_MAX<MOT_PWM_MAX>`\ [/site][site wiki="plane,rover"]:ref:`MOT_PWM_MAX<copter:MOT_PWM_MAX>`\ [/site] = 2000
+- [site wiki="copter,sub"]:ref:`MOT_PWM_MIN<MOT_PWM_MIN>`\ [/site][site wiki="plane,rover"]:ref:`MOT_PWM_MIN<copter:MOT_PWM_MIN>`\ [/site] = 1000
 
 Functions to output
 ===================
