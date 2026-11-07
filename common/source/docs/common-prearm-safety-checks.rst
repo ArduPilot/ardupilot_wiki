@@ -288,8 +288,8 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     ADSB threat detected                                    ADSB failsafe.  Manned vehicles nearby              See :ref:`ADSB configuration<common-ads-b-receiver>`
     AHRS not healthy                                        AHRS/EKF is not yet ready                           Wait.  Reboot autopilot.
     AIRSPEED_MIN too low x<5 m/s                            Parameter set too low, under 5m/s                   Raise to at least 20% above stall speed
-    Bad parameter: ATC_ANG_PIT_P must be > 0                Attitude controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
-    Bad parameter: PSC_POSXY_P must be > 0                  Position controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
+    Bad parameter: ATC_ANG_PIT_P must be > 0                Attitude controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<quadplane-vtol-tuning-process>`
+    Bad parameter: PSC_POSXY_P must be > 0                  Position controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<quadplane-vtol-tuning-process>`
     Check Q_ANGLE_MAX                                       Set above 80 degrees                                Reduce :ref:`Q_A_ANGLE_MAX<Q_A_ANGLE_MAX>` below 80; 30 degrees is typical
     In landing sequence                                     Trying to arm while still in landing sequence       Reset mission;change to mission item not in a landing sequence
     Invalid THR_FS_VALUE for reversed throttle input        THR_FS_VALUE pwm is not ABOVE the max throttle      Set :ref:`THR_FS_VALUE<THR_FS_VALUE>` above throttle maximum pwm
@@ -299,10 +299,10 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Mode not armable                                        Cannot arm from this mode                           Change Mode
     Mode not QMODE                                          Q_OPTION set to prevent arming except in QMODE/AUTO Change Mode or reset :ref:`Q_OPTIONS<Q_OPTIONS>` bit 18
     Motors: Check frame class and type                      Unknown or misconfigured frame class or type        Enter valid frame class and/or type
-    Motors: Check MOT_PWM_MIN and MOT_PWM_MAX               MOT_PWM_MIN or MOT_PWM_MAX misconfigured            Set :ref:`MOT_PWM_MIN<copter:MOT_PWM_MIN>` = 1000 and :ref:`MOT_PWM_MAX<copter:MOT_PWM_MAX>` = 2000 and repeat the :ref:`ESC calibration <esc-calibration>`
-    Motors: MOT_SPIN_ARM > MOT_SPIN_MIN                     MOT_SPIN_ARM is too high or MOT_SPIN_MIN is too low Reducse :ref:`MOT_SPIN_ARM<copter:MOT_SPIN_ARM>` to below :ref:`MOT_SPIN_MIN<copter:MOT_SPIN_MIN>`.  See :ref:`Setting motor range<set-motor-range>`
-    Motors: MOT_SPIN_MIN too high x > 0.3                   MOT_SPIN_MIN parameter value is too high            Reduce :ref:`MOT_SPIN_MIN<copter:MOT_SPIN_MIN>` to below 0.3.  See :ref:`Setting motor range<set-motor-range>`
-    Motors: no SERVOx_FUNCTION set to MotorX                At least one motor output has not been configured   Check SERVOx_FUNCTION values for "Motor1", "Motor2", etc.  Check :ref:`ESC and motor configuration <connect-escs-and-motors>`
+    Motors: Check MOT_PWM_MIN and MOT_PWM_MAX               MOT_PWM_MIN or MOT_PWM_MAX misconfigured            Set :ref:`MOT_PWM_MIN<copter:MOT_PWM_MIN>` = 1000 and :ref:`MOT_PWM_MAX<copter:MOT_PWM_MAX>` = 2000 and repeat the :ref:`ESC calibration <quadplane-esc-calibration>`
+    Motors: MOT_SPIN_ARM > MOT_SPIN_MIN                     MOT_SPIN_ARM is too high or MOT_SPIN_MIN is too low Reducse :ref:`MOT_SPIN_ARM<copter:MOT_SPIN_ARM>` to below :ref:`MOT_SPIN_MIN<copter:MOT_SPIN_MIN>`.  See :ref:`Setting motor range<quadplane-vtol-tuning-process>`
+    Motors: MOT_SPIN_MIN too high x > 0.3                   MOT_SPIN_MIN parameter value is too high            Reduce :ref:`MOT_SPIN_MIN<copter:MOT_SPIN_MIN>` to below 0.3.  See :ref:`Setting motor range<quadplane-vtol-tuning-process>`
+    Motors: no SERVOx_FUNCTION set to MotorX                At least one motor output has not been configured   Check SERVOx_FUNCTION values for "Motor1", "Motor2", etc.  Check :ref:`ESC and motor configuration <quadplane-frame-setup>`
     Q_ASSIST_SPEED is not set                               Q_ASSIST_SPEED has not been set                     Set :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`, See :ref:`assisted_fixed_wing_flight`
     Quadplane enabled but not running                       Q_ENABLE is set, but QuadPlane code has not started Reboot
     quadplane needs SCHED_LOOP_RATE >= 100                  Quadplane needs faster loop times for performance   Increase :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`; 300 is typical

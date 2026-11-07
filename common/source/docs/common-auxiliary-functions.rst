@@ -370,7 +370,7 @@ For example, if you have a "LOITER mode" switch active and then an "AUTO mode" s
 
 .. note:: Copter and Rover mode changes are not guaranteed. They may be denied if the conditions required for that mode are not met. For example, changing to LOITER mode in Copter would fail if the GPS lock is not active, whereas in Plane the demanded mode will change and operate as best as it can.
 
-.. note:: If mapped to a three-position switch then the SUPERSIMPLE mode function will allow **SUPERSIMPLE** and **SIMPLE** modes to be enabled using the high and middle switch positions, respectively (a two-position switch will enable/disable SUPERSIMPLE mode only). :ref:`See here for more details<simpleandsuper-simple-modes>`.
+.. note:: If mapped to a three-position switch then the SUPERSIMPLE mode function will allow **SUPERSIMPLE** and **SIMPLE** modes to be enabled using the high and middle switch positions, respectively (a two-position switch will enable/disable SUPERSIMPLE mode only). [site wiki="copter"]:ref:`See here for more details<simpleandsuper-simple-modes>`.[/site]
 
 Other functions are:
 
@@ -378,7 +378,7 @@ Other functions are:
     Option                                Description
    ===================================== =======================================================================
     Flip                                 | The vehicle will flip on its roll or pitch axis depending upon the
-                                         | pilot's roll and pitch stick position. See :ref:`Flip Mode<flip-mode>`.
+                                         | pilot's roll and pitch stick position. See [site wiki="copter"]:ref:`Flip Mode<flip-mode>`\ [/site][site wiki="plane,rover,sub"]Flip Mode[/site].
     Save Trim                            | Adjusts the vehicle level position using the current roll
                                          | and pitch stick inputs. See details :ref:`here <copter:autotrim>`.
     Save Waypoint                        | Save the current location (including altitude) as a waypoint in the
@@ -421,7 +421,7 @@ Other functions are:
                                          | Throttle Hold in RC Helicopter terminology.
                                          | For Mulit-copters, it is used as a motor stop function when <1200us.
                                          | (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__).
-    Brake                                | Invokes the :ref:`Brake flight mode <brake-mode>` when the switch goes high.
+    Brake                                | Invokes the [site wiki="copter"]:ref:`Brake flight mode <brake-mode>`\ [/site][site wiki="plane,rover,sub"]Brake flight mode[/site] when the switch goes high.
                                          | Bringing the switch back to low will return the vehicle to the mode 
                                          | indicated by the flight mode switch.
     Relay2 On/Off                        | Switch pulled low turns off the second :ref:`relay <common-relay>`,
@@ -430,12 +430,12 @@ Other functions are:
                                          | pulled high turns on the third relay.
     Relay4 On/Off                        | Switch pulled low turns off the fourth :ref:`relay <common-relay>`,
                                          | pulled high turns on the fourth relay.
-    Throw                                | Invokes the :ref:`Throw flight mode <throw-mode>` when the switch
+    Throw                                | Invokes the [site wiki="copter"]:ref:`Throw flight mode <throw-mode>`\ [/site][site wiki="plane,rover,sub"]Throw flight mode[/site] when the switch
                                          | goes high. Bringing the switch back to low will return the vehicle
                                          | to the mode indicated by the ch5 flight mode switch.
     ADSB-Avoidance                       | When the switch is high, [site wiki="copter,plane"]:ref:`ADSB avoidance <common-ads-b-receiver>` [/site][site wiki="rover,sub"]ADSB avoidance[/site]
                                          | (avoidance of manned aircraft) is enabled, otherwise it's disabled.
-    Precision Loiter                     | Turns on/off :ref:`Precision Loiter <precision-landing-and-loiter>`.
+    Precision Loiter                     | Turns on/off [site wiki="copter"]:ref:`Precision Loiter <precision-landing-and-loiter>`\ [/site][site wiki="plane,rover,sub"]Precision Loiter[/site].
                                          | (i.e. holding position above a target in Loiter mode
                                          | using IR-Lock sensor).
     Object Avoidance                     | When the switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>`
@@ -500,7 +500,7 @@ Other functions are:
                                          | operation, High: Q_Assist active at all times.[site wiki="plane"] See Assisted Fixed
                                          | Wing Flight section of :ref:`quadplane-flying`.[/site]
     ZigZag Mode Auto Enable              | Enable automatic zigzag and sprayer in ZIGZAG mode.
-                                         | See :ref:`zigzag-mode`.
+                                         | [site wiki="copter"]See :ref:`zigzag-mode`.[/site]
     AIRMODE(not a flight mode)            Enables and disables AIRMODE feature. See :ref:`airmode`.
     Generator                             Mode control for Richenpower Hybrid Power Generator.
     Non Auto Terrain Follow Disable       Disables Terrain Following in CRUISE and FBWB modes.
@@ -612,7 +612,7 @@ Other functions are:
     ICEngine start / stop                 Controls ICE engine starter output [site wiki="plane"]:ref:`ICE engines<common-ice>`\ [/site][site wiki="copter,rover,sub"]ICE engines[/site].
     Autotune_test_gains                   After autotune,allows selecting tune(high) or pretune gains.
     VTOL QuickTune                        Autotunes QuadPlane VTOL PIDs[site wiki="plane"], see :ref:`quicktune`\ [/site].
-    AHRS AutoTrim                         Auto Trim for Copter, see :ref:`autotrim`.
+    AHRS AutoTrim                         Auto Trim for Copter[site wiki="copter"], see :ref:`autotrim`\ [/site].
     System ID                            | Enables the System Identification feature to be started and stopped with this switch.
                                          | In quadplane VTOL, system ID feature is allowed to run on top of either qstabilize, qhover,
                                          | or qloiter flight modes.  In quadplane fixed-wing and plane, system ID is albe to run on 

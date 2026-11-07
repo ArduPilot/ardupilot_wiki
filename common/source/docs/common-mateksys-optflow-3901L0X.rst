@@ -49,7 +49,7 @@ Additional Notes
 -----------------
 
 - As with all optical flow sensors, a range finder is required to use the sensor for autonomous modes including :ref:`Loiter <loiter-mode>` and :ref:`RTL <rtl-mode>`
-- :ref:`FlowHold <flowhold-mode>` does not require the use of a rangefinder but performance is generally worse than Loiter mode and is not recommended
+- [site wiki="copter"]:ref:`FlowHold <flowhold-mode>`\ [/site][site wiki="plane,rover,sub"]FlowHold[/site] does not require the use of a rangefinder but performance is generally worse than Loiter mode and is not recommended
 - Performance can be improved by setting the :ref:`sensors position parameters <common-sensor-offset-compensation>`.  For example if the sensor is mounted 2cm forward and 5cm below the frame's center of rotation set :ref:`FLOW_POS_X <FLOW_POS_X>` to 0.02 and :ref:`FLOW_POS_Z <FLOW_POS_Z>` to 0.05.
 
 Testing and Setup

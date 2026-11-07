@@ -23,7 +23,7 @@ In addition, Simple Object Avoidance can use Geo-Fences and Fence Beacons as pro
 Simple Object Avoidance Algorithms
 ==================================
 
-Horizontal object avoidance works in :ref:`AltHold <altholdmode>` and :ref:`Loiter <loiter-mode>` modes.  Upward object avoidance works in LOITER, ALTHOLD modes only.
+Horizontal object avoidance works in [site wiki="copter"]:ref:`AltHold <altholdmode>`\ [/site][site wiki="rover"]AltHold[/site] and :ref:`Loiter <loiter-mode>` modes.  Upward object avoidance works in LOITER, ALTHOLD modes only.
 
 .. warning:: Only one proximity sensor source can be enabled, using either a 360 degree lidar or up to 9 rangefinders.
 
@@ -134,7 +134,7 @@ Configuring Simple Avoidance for Copter in Altitude Hold Mode
 
 .. warning:: While this mode does have the option of avoidance, avoidance in Loiter mode is much more advanced and has more features.
 
-- in :ref:`AltHold <altholdmode>`
+- in [site wiki="copter"]:ref:`AltHold <altholdmode>` [/site][site wiki="rover"]AltHold[/site]
 
   - [site wiki="copter"]:ref:`AVOID_DIST_MAX <AVOID_DIST_MAX>`\ [/site][site wiki="rover"]:ref:`AVOID_DIST_MAX <copter:AVOID_DIST_MAX>`\ [/site] controls how far from a barrier the vehicle starts leaning away from the barrier
   - [site wiki="copter"]:ref:`ATC_ANGLE_MAX <ATC_ANGLE_MAX>`\ [/site][site wiki="rover"]:ref:`ATC_ANGLE_MAX <copter:ATC_ANGLE_MAX>`\ [/site] controls how far the vehicle will try to lean away from the barrier

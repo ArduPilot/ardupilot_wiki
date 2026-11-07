@@ -81,7 +81,7 @@ Target ALT Modification using Terrain Following Data
 
 If Terrain Following is enabled and active, then the terrain altitude changes are used to increase or decrease the Target ALT for whatever the present location is, as it moves, depending on vehicle and mode. For details see [site wiki="plane"]:ref:`common-terrain-following`\ [/site][site wiki="copter"]:ref:`terrain-following`\ [/site].
 
-For Copter, this can be combined with RangeFinder use for obtain :ref:`Surface Tracking<terrain-following-manual-modes>` over obstacles at low altitudes.
+[site wiki="copter"]For Copter, this can be combined with RangeFinder use for obtain :ref:`Surface Tracking<terrain-following-manual-modes>` over obstacles at low altitudes.[/site]
 
 
 [copywiki destination="copter,plane"]
