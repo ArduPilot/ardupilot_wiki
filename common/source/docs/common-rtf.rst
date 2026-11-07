@@ -47,9 +47,8 @@ Planes from Partners
 * `Dual RC - Elanus Duo <https://www.dualrc.com/elanus-duo/p/rtf/>`__
 * `Event38 - e384 <https://event38.com/fixed-wing/e384-mapping-drone/>`__
 * `MakeFLyEasy - Believer <https://en.makeflyeasy.com/index.php/believer/>`__
-* :ref:`MakeFLyEasy - Fighter <common-makeflyeasy-fighter-hand-throw>`
-* :ref:`MakeFLyEasy - Striver Mini <common-makeflyeasy-striver-mini-hand-throw>`
-* :ref:`MakeFLyEasy - Striver Mini Hand Throw <common-makeflyeasy-striver-mini-hand-throw>`
+* :ref:`MakeFLyEasy - Striver2430 Hand Throw <common-makeflyeasy-fighter-hand-throw>`
+* :ref:`MakeFLyEasy - Striver2100 Hand Throw <common-makeflyeasy-striver-mini-hand-throw>`
 * Various from `UAVSystems <https://uavsystemsinternational.com/collections/fixed-wing-long-range-drones>`__
 
 VTOL/QuadPlanes from Partners
@@ -62,8 +61,8 @@ VTOL/QuadPlanes from Partners
 * :ref:`Holybro Swan-K1 <common-Swan-K1>`
 * `MakeFLyEasy - Freeman 2100 <https://www.uavmodel.com/products/makeflyeasy-freeman-4-1-mini-2100mm-uav-vtol>`__
 * `MakeFLyEasy - Freeman 2300 <https://www.uavmodel.com/products/makeflyeasy-freeman-4-1-2300mm-uav-vtol>`__
-* :ref:`MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>`
-* :ref:`MakeFLyEasy - Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>`
+* :ref:`MakeFLyEasy - Striver2430 VTOL <common-makeflyeasy-fighter-vtol>`
+* :ref:`MakeFLyEasy - Striver2100 VTOL <common-makeflyeasy-striver-mini-vtol>`
 * `Raefly VT240 Pro <https://raefly.com/raefly-vt-240-pro>`__
 * `Raefly VT290 <https://raefly.com/raefly-vt-290>`__
 * `Raefly VT370 Hybrid <https://raefly.com/raefly-vt370>`__
@@ -117,10 +116,10 @@ Vehicles from Non-Partners
 .. toctree::
    :hidden:
 
-    MakeFLyEasy Fighter Hand Throw <common-makeflyeasy-fighter-hand-throw>
-    MakeFLyEasy Fighter VTOL <common-makeflyeasy-fighter-vtol>
-    MakeFLyEasy Striver Mini Hand Throw <common-makeflyeasy-striver-mini-hand-throw>
-    MakeFLyEasy Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>
+    MakeFLyEasy Striver2430 Hand Throw <common-makeflyeasy-fighter-hand-throw>
+    MakeFLyEasy Striver2430 VTOL <common-makeflyeasy-fighter-vtol>
+    MakeFLyEasy Striver2100 Hand Throw <common-makeflyeasy-striver-mini-hand-throw>
+    MakeFLyEasy Striver2100 VTOL <common-makeflyeasy-striver-mini-vtol>
 [/site]
 
 [copywiki destination="plane,copter,rover,sub"]
