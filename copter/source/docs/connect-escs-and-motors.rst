@@ -94,7 +94,7 @@ QUAD FRAMES
     :alt: QUAD X (NO YAW TORQUE)
 
 .. note::
-    Quad 'No Yaw Torque' (NYT) frames are primarily intended for :ref:`VTOL Tailsitter<guide-tailsitter>` configurations with large control surfaces. Motor rotation direction does not matter for these motors, but unless the motor's spin directions are setup as any kind of normal QUAD frame, roll and pitch inputs will result in adverse yaw, resulting in less dynamic range of the yaw control of the fixed wing control surfaces.
+    Quad 'No Yaw Torque' (NYT) frames are primarily intended for :ref:`VTOL Tailsitter<plane:guide-tailsitter>` configurations with large control surfaces. Motor rotation direction does not matter for these motors, but unless the motor's spin directions are setup as any kind of normal QUAD frame, roll and pitch inputs will result in adverse yaw, resulting in less dynamic range of the yaw control of the fixed wing control surfaces.
 
 .. image:: ../images/m_01_18_quad_x_bf_rev.svg
     :target: ../_images/m_01_18_quad_x_bf_rev.svg

@@ -92,7 +92,7 @@ Depending on vehicle design and pilot experience, it can be desirable to limit h
     .. note:: Dshot ESCs ignore these values. Range is fixed at 1000µs to 2000µs.
 
     - If one or more PWM ESC controlled motors are moving while disarmed, it may be necessary to adjust the relevant :ref:`SERVOn_TRIM<SERVO1_TRIM>` parameter(s) to correct the neutral points
-- Motor output scaling can also be adjusted automatically, :ref:`in response to feedback from the power/battery monitoring system <current-limiting-and-voltage-scaling>`, using
+- Motor output scaling can also be adjusted automatically, :ref:`in response to feedback from the power/battery monitoring system <copter:current-limiting-and-voltage-scaling>`, using
 
   - :ref:`MOT_BAT_CURR_MAX<MOT_BAT_CURR_MAX>` to reduce the power output after excessive current draw occurs for more than :ref:`MOT_BAT_CURR_TC<MOT_BAT_CURR_TC>`, and/or
   - :ref:`MOT_BAT_VOLT_MIN<MOT_BAT_VOLT_MIN>` and :ref:`MOT_BAT_VOLT_MAX<MOT_BAT_VOLT_MAX>` to scale up motor outputs to compensate for sagging voltage over time

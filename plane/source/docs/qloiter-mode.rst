@@ -54,12 +54,12 @@ Common Problems
    incorrect compass orientation.
 #. The vehicle takes off in the wrong direction as soon as QLOITER is engaged.  The cause is the same as #1 except that the compass error is greater than 90deg.  Please try the suggestions above to resolve this.
 #. The vehicle is QLOITERing normally and then suddenly takes off in the
-   wrong direction.  This is generally caused by a :ref:`GPS Glitch <gps-failsafe-glitch-protection>`.  
+   wrong direction.  This is generally caused by a :ref:`GPS Glitch <copter:gps-failsafe-glitch-protection>`.  
    There is no 100% reliable protection
    against these which means the pilot should always be ready to
    take-over manual control.  Beyond that ensuring a good GPS HDOP
    before take-off is always good and it may help to reduce the
-   ``EK2_GLITCH_RAD`` and/or ``EK3_GLITCH_RAD`` parameters (see :ref:`GPS glitch wiki page <gps-failsafe-glitch-protection>`
+   ``EK2_GLITCH_RAD`` and/or ``EK3_GLITCH_RAD`` parameters (see :ref:`GPS glitch wiki page <copter:gps-failsafe-glitch-protection>`
    for details) to tighten up on the glitch detection.
 #. QuadPlane slowly descends or climbs until the pilot retakes control in
    stabilize.  Normally this is caused by not having the throttle stick

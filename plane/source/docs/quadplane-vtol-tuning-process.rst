@@ -89,9 +89,9 @@ the expo is applied.
 
 - :ref:`Q_M_PWM_MAX <Q_M_PWM_MAX>`: Check ESC manual for fixed range or 2000us
 - :ref:`Q_M_PWM_MIN <Q_M_PWM_MIN>`: Check ESC manual for fixed range or 1000us
-- :ref:`Q_M_SPIN_ARM <Q_M_SPIN_ARM>`: use the :ref:`motor test feature <connect-escs-and-motors_testing_motor_spin_directions>`
+- :ref:`Q_M_SPIN_ARM <Q_M_SPIN_ARM>`: use the :ref:`motor test feature <copter:connect-escs-and-motors_testing_motor_spin_directions>`
 - :ref:`Q_M_SPIN_MAX <Q_M_SPIN_MAX>`: 0.95
-- :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>`: use the :ref:`motor test feature <connect-escs-and-motors_testing_motor_spin_directions>`
+- :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>`: use the :ref:`motor test feature <copter:connect-escs-and-motors_testing_motor_spin_directions>`
 - :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`: 0.25, or below the expected hover thrust percentage (low is safe)
 
 Step 3: PID Controller Initial Setup
@@ -136,7 +136,7 @@ The first takeoff of an untuned VTOL vehicle is the most dangerous seconds of th
 
 There are several things that the pilot can do to minimize the risk during the early tuning process:
 
-1. The pilot should conduct a motor number and orientation check (see :ref:`Checking the motor numbering with the Mission Planner Motor test <connect-escs-and-motors_testing_motor_spin_directions>`). Care should be taken to ensure that the correct frame type is selected. Incorrect frame type can result in a very fast yaw rotation or complete loss of control. Take note of the output percentage required to spin the propellers and ensure that:
+1. The pilot should conduct a motor number and orientation check (see :ref:`Checking the motor numbering with the Mission Planner Motor test <copter:connect-escs-and-motors_testing_motor_spin_directions>`). Care should be taken to ensure that the correct frame type is selected. Incorrect frame type can result in a very fast yaw rotation or complete loss of control. Take note of the output percentage required to spin the propellers and ensure that:
 
 - :ref:`Q_M_SPIN_ARM <Q_M_SPIN_ARM>` is set high enough to spin the motors cleanly.
 - :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>` is set high enough to spin the motors with a minimal level of thrust.
