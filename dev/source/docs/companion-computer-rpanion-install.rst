@@ -13,7 +13,7 @@ Recommended Hardware
     :target: ../_images/rpanion-hardware.jpg
     :width: 400px
 
-- :ref:`ArduPilot compatible flight controller <common-autopilots>`
+- :ref:`ArduPilot compatible flight controller <copter:common-autopilots>`
 - `RPI4 I/O board <https://www.raspberrypi.com/products/compute-module-4-io-board/>`__ or `RPI5 I/O board <https://www.raspberrypi.com/products/compute-module-5-io-board/>`__
 - `RPI CM4 <https://www.raspberrypi.com/products/compute-module-4/>`__ or `CM5 <https://www.raspberrypi.com/products/compute-module-5/>`__
 - `Ochin Tiny Carrier Board V2 <https://www.seeedstudio.com/Ochin-Tiny-Carrier-Board-V2-for-Raspberry-Pi-CM4-p-5887.html>`__

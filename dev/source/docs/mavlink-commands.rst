@@ -41,19 +41,19 @@ MAVLink not only has command messages but also incoming messages. A complete lis
 
    .. group-tab:: Plane
 
-      :ref:`ArduPlane_MAVLink_messages`
+      :ref:`plane:ArduPlane_MAVLink_messages`
 
    .. group-tab:: Copter
 
-      :ref:`ArduCopter_MAVLink_messages`
+      :ref:`copter:ArduCopter_MAVLink_messages`
 
    .. group-tab:: Rover
 
-      :ref:`Rover_MAVLink_messages`
+      :ref:`rover:Rover_MAVLink_messages`
 
    .. group-tab:: Sub
 
-      :ref:`ArduSub_MAVLink_messages`
+      :ref:`sub:ArduSub_MAVLink_messages`
 
 External References
 ===================

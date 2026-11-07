@@ -6,13 +6,13 @@ Using SITL
 
 This article describes how :ref:`SITL <sitl-simulator-software-in-the-loop>` can be used to change the environment, simulate failure modes, and configure the vehicle with optional components.
 
-SITL can be run under Linux using a tool named ``sim_vehicle.py`` from a Linux or WSL2 command line, or through :ref:`Mission Planner's Simulation feature <mission-planner-simulation>`. It can also be run in conjunction with a graphics visualization and/or physics modeling program like :ref:`Realflight<sitl-with-realflight>`.
+SITL can be run under Linux using a tool named ``sim_vehicle.py`` from a Linux or WSL2 command line, or through :ref:`Mission Planner's Simulation feature <planner:mission-planner-simulation>`. It can also be run in conjunction with a graphics visualization and/or physics modeling program like :ref:`Realflight<sitl-with-realflight>`.
 
 In addition to running the simulation, a ground control station program will need to be run concurrently in order to control the simulation. With ``sim_vehicle.py``, `MAVProxy <https://ardupilot.org/mavproxy/index.html>`__ is automatically started. When using Mission Planner's simulation feature, it is used. You can also have more than one GCS attached, see :ref:`connect to different GCSs <using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations>`.
 
 .. note::
 
-   This page assumes you have already cloned the repository and set up the build environment if you wish to simulate your own code - see :ref:`Building the code <building-the-code>`, although this is not needed if using :ref:`Mission Planner's Simulation feature <mission-planner-simulation>` since it can easily run simulations on the current development code or stable code versions.
+   This page assumes you have already cloned the repository and set up the build environment if you wish to simulate your own code - see :ref:`Building the code <building-the-code>`, although this is not needed if using :ref:`Mission Planner's Simulation feature <planner:mission-planner-simulation>` since it can easily run simulations on the current development code or stable code versions.
 
 .. tip::
 
@@ -383,7 +383,7 @@ Using Mission Planner's Simulation feature
 
 Instead of using ``sim_vehicle.py`` under Linux or WSL, you can also simulate using Mission Planner's simulation feature.
 
-See :ref:`mission-planner-simulation`
+See :ref:`planner:mission-planner-simulation`
 
 .. _using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations:
 
@@ -527,4 +527,4 @@ Then to use the joystick in MAVProxy run:
 
 If you want to add support for a new joystick type then you need to add a file for it following these `instructions <https://github.com/ArduPilot/MAVProxy/blob/master/docs/JOYSTICKS.md>`__ . Note that you can also use this information to customize the operation of your joystick if it already supported. Just modify it file appropriately.
 
-To use a joystick in Mission Planner under Windows, be sure to setup the joystick using Window's Game Controller control panel, then under Mission Planners DATA screen Actions tab, click Joystick, then setup the axes and buttons, and enable it. See :ref:`common-joystick` for more information.
+To use a joystick in Mission Planner under Windows, be sure to setup the joystick using Window's Game Controller control panel, then under Mission Planners DATA screen Actions tab, click Joystick, then setup the axes and buttons, and enable it. See :ref:`copter:common-joystick` for more information.

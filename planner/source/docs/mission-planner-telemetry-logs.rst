@@ -5,7 +5,7 @@ Telemetry Logs
 ==============
 
 Telemetry logs (also known as "tlogs") are recorded by the ground station when you connect ArduPilot to your
-computer via a :ref:`telemetry link <common-telemetry-landingpage>`. This topic explains how to configure and access tlogs.
+computer via a :ref:`telemetry link <copter:common-telemetry-landingpage>`. This topic explains how to configure and access tlogs.
 
 .. note::
 

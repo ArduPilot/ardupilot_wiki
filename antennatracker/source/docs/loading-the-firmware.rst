@@ -4,10 +4,10 @@
 Loading the Firmware
 ====================
 
-Before loading Firmware, you need to choose which :ref:`autopilot hardware <common-autopilots>` to use.
+Before loading Firmware, you need to choose which :ref:`autopilot hardware <copter:common-autopilots>` to use.
 All supported autopilots are suitable for use with AntennaTracker.
 The antenna tracker firmware can be loaded from the Mission Planner's
-**Setup \| Install Firmware** very :ref:`much like any other vehicle <common-loading-firmware-onto-pixhawk>` if ArduPilot firmware is already loaded.
+**Setup \| Install Firmware** very :ref:`much like any other vehicle <copter:common-loading-firmware-onto-pixhawk>` if ArduPilot firmware is already loaded.
 
 .. image:: ../images/AntennaTracker_MP_LoadFirmware.jpg
     :target: ../_images/AntennaTracker_MP_LoadFirmware.jpg
@@ -21,7 +21,7 @@ The antenna tracker firmware can be loaded from the Mission Planner's
    and you should be able to connect with the mission planner and see
    the Flight Data screen's HUD update.
    
-If non-ArduPilot firmware is loaded on the autopilot, see :ref:`these instructions <common-loading-firmware-onto-chibios-only-boards>` for instructions to download a version of antennatracker_with_bl.hex firmware and install.
+If non-ArduPilot firmware is loaded on the autopilot, see :ref:`these instructions <copter:common-loading-firmware-onto-chibios-only-boards>` for instructions to download a version of antennatracker_with_bl.hex firmware and install.
 
 .. note::
 

@@ -34,14 +34,14 @@ Before operating the vehicle, you must setup:
 - :ref:`Accel Calibration <common-accelerometer-calibration>`
 - :ref:`Compass (optional for Plane)<common-compass-calibration-in-mission-planner>`
 - :ref:`Radio Calibration<common-radio-control-calibration>`
-- Servo Output : configure each :ref:`output's function<common-rcoutput-mapping>`. Default values get loaded upon initial firmware installation, but be sure to check them here.
-- :ref:`ESC Calibration<esc-calibration>` for Copter only (not required for ESCs running DShot protocol, but must be :ref:`configured <common-brushless-escs>` in ArduPilot) Plane and Rover use their own :ref:`common-esc-calibration` technique, but is also a mandatory setup item.
-- Flight Modes: Refer to :ref:`Plane <plane:flight-modes>`, :ref:`Copter <copter:flight-modes>` or :ref:`Rover<rover-control-modes>` mode pages.
-- Failsafe: Refer to :ref:`Plane <apms-failsafe-function>`, :ref:`Copter <failsafe-landing-page>` or :ref:`Rover<rover-failsafes>` failsafe pages.
+- Servo Output : configure each :ref:`output's function<copter:common-rcoutput-mapping>`. Default values get loaded upon initial firmware installation, but be sure to check them here.
+- :ref:`ESC Calibration<copter:esc-calibration>` for Copter only (not required for ESCs running DShot protocol, but must be :ref:`configured <copter:common-brushless-escs>` in ArduPilot) Plane and Rover use their own :ref:`plane:common-esc-calibration` technique, but is also a mandatory setup item.
+- Flight Modes: Refer to :ref:`Plane <plane:flight-modes>`, :ref:`Copter <copter:flight-modes>` or :ref:`Rover<rover:rover-control-modes>` mode pages.
+- Failsafe: Refer to :ref:`Plane <plane:apms-failsafe-function>`, :ref:`Copter <copter:failsafe-landing-page>` or :ref:`Rover<rover:rover-failsafes>` failsafe pages.
 
 Optional Hardware
 =================
-This submenu allows the configuration of optional devices, many of which can be configured while Mission Planner is unconnected. Programming of the Sik  Telemetry Radio, UAVCAN setup, PX4 Optical Flow sensor, and Antenna Tracker can be done here, as well as the setup of a :ref:`joystick <common-joystick>` to be used in conjunction with Mission Planner.
+This submenu allows the configuration of optional devices, many of which can be configured while Mission Planner is unconnected. Programming of the Sik  Telemetry Radio, UAVCAN setup, PX4 Optical Flow sensor, and Antenna Tracker can be done here, as well as the setup of a :ref:`joystick <copter:common-joystick>` to be used in conjunction with Mission Planner.
 
 When connected, peripherals such as Battery Monitors, Integrated OSD, Airspeed Sensors, and Rangefinders can be configured. Also, this submenu has a Motor Test function allowing you to test the direction and order of Copter and QuadPlane Motors.
 
@@ -57,7 +57,7 @@ The SLCAN tool inside Mission Planner allows viewing, configuration, and softwar
 Connecting to the DroneCAN node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If using the direct SLCAN connection method, autopilot parameters have to be configured first. See :ref:`common-slcan-f4` or :ref:`common-slcan-f7h7` for setup information. Mission Planner should be in the disconnected state, and make sure the SLCAN port is shown as the selected COM port in the dropdown box in the upper right corner of Mission Planner.
+If using the direct SLCAN connection method, autopilot parameters have to be configured first. See :ref:`copter:common-slcan-f4` or :ref:`copter:common-slcan-f7h7` for setup information. Mission Planner should be in the disconnected state, and make sure the SLCAN port is shown as the selected COM port in the dropdown box in the upper right corner of Mission Planner.
 
 If using the MAVLink method, nothing is required for setup and Mission Planner should be in the connected state via the normal MAVLink connection to the autopilot.
 
@@ -116,4 +116,4 @@ This section is for advanced users.
 - Param Gen: Regenerates Mission Planners parameter list. Occasionally required if new firmware parameters are not being displayed.
 - Moving Base: if NMEA GPS is attached to PC, shows PCs location as moving on the map display
 - Anon Log: Allows you to hide your location when sharing log files by creating a version with scrambled locations
-- FFT: Plot an FFT from a log that has IMU batch sampling enabled. See :ref:`common-imu-notch-filtering` for an example of its use.
+- FFT: Plot an FFT from a log that has IMU batch sampling enabled. See :ref:`copter:common-imu-notch-filtering` for an example of its use.

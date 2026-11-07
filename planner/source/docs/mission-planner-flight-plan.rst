@@ -112,7 +112,7 @@ For Plane, the right click menu item, has the GeoFence sub-menu:
 
     - Upload: Upload a fence based on drawn polygon
     - Download: Retrieve fence from autopilot
-    - Set Return Location: Plane fences require a return location. See :ref:`geofencing`.
+    - Set Return Location: Plane fences require a return location. See :ref:`plane:geofencing`.
     - Load from File: Load a geo-fence from a file
     - Save to File: Save the geo-fence points and return point to a file
     - Clear: Clear the geo-fence on the map. This **does clear** the fence in the autopilot as well as the map workspace.

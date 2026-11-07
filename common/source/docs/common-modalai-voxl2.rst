@@ -121,14 +121,14 @@ Connect to the autopilot with a ground station (i.e. Mission Planner) and check 
 - Optionally set :ref:`SERIAL1_OPTIONS <SERIAL1_OPTIONS>` = 1024 (Don't forward mavlink to/from) to disable the camera's odometry messages from being sent to the GCS
 - Optionally set :ref:`MAV3_EXTRA3 <MAV3_EXTRA3>` = 0 to disable sending the SYSTEM_TIME message to the camera which has been known to cause the camera to lose its position estimate (e.g. quality falls to -1).  Note this assumes the camera is connected to the autopilot's second mavlink port (e.g. usually Telem2)
 - [site wiki="copter,plane,rover,blimp"]:ref:`VISO_TYPE <VISO_TYPE>`\ [/site][site wiki="dev"]:ref:`VISO_TYPE <copter:VISO_TYPE>`\ [/site] = 3 (VOXL)
-- Set [site wiki="copter,plane,rover,blimp"]:ref:`VISO_POS_X <VISO_POS_X>`\ [/site][site wiki="dev"]:ref:`VISO_POS_X <copter:VISO_POS_X>`\ [/site], [site wiki="copter,plane,rover,blimp"]:ref:`VISO_POS_Y <VISO_POS_Y>`\ [/site][site wiki="dev"]:ref:`VISO_POS_Y <copter:VISO_POS_Y>`\ [/site] and [site wiki="copter,plane,rover,blimp"]:ref:`VISO_POS_Z <VISO_POS_Z>`\ [/site][site wiki="dev"]:ref:`VISO_POS_Z <copter:VISO_POS_Z>`\ [/site] to 0 because the VOXL2 already compensates for the camera's position relative to the IMU.  See [site wiki="copter,plane,rover,dev"]:ref:`sensor position offset compensation <common-sensor-offset-compensation>`\ [/site][site wiki="blimp"]:ref:`sensor position offset compensation <copter:common-sensor-offset-compensation>`\ [/site] for more details
+- Set [site wiki="copter,plane,rover,blimp"]:ref:`VISO_POS_X <VISO_POS_X>`\ [/site][site wiki="dev"]:ref:`VISO_POS_X <copter:VISO_POS_X>`\ [/site], [site wiki="copter,plane,rover,blimp"]:ref:`VISO_POS_Y <VISO_POS_Y>`\ [/site][site wiki="dev"]:ref:`VISO_POS_Y <copter:VISO_POS_Y>`\ [/site] and [site wiki="copter,plane,rover,blimp"]:ref:`VISO_POS_Z <VISO_POS_Z>`\ [/site][site wiki="dev"]:ref:`VISO_POS_Z <copter:VISO_POS_Z>`\ [/site] to 0 because the VOXL2 already compensates for the camera's position relative to the IMU.  See [site wiki="copter,plane,rover"]:ref:`sensor position offset compensation <common-sensor-offset-compensation>`\ [/site][site wiki="dev"]:ref:`sensor position offset compensation <copter:common-sensor-offset-compensation>`\ [/site][site wiki="blimp"]:ref:`sensor position offset compensation <copter:common-sensor-offset-compensation>`\ [/site] for more details
 - Optionally increase [site wiki="copter,plane,rover,blimp"]:ref:`VISO_QUAL_MIN <VISO_QUAL_MIN>`\ [/site][site wiki="dev"]:ref:`VISO_QUAL_MIN <copter:VISO_QUAL_MIN>`\ [/site] to 10 (or higher) to only consume estimates from the camera when the quality is 10% (or higher)
 
 To enable the downward and forward facing lidars:
 
 - [site wiki="copter,plane,rover"]:ref:`RNGFND1_TYPE <RNGFND1_TYPE>`\ [/site][site wiki="dev"]:ref:`RNGFND1_TYPE <copter:RNGFND1_TYPE>`\ [/site][site wiki="blimp"]:ref:`RNGFND1_TYPE <copter:RNGFND1_TYPE>`\ [/site] = 10 (MAVLink)
 - [site wiki="copter,plane,rover"]:ref:`RNGFND1_MIN <RNGFND1_MIN>`\ [/site][site wiki="dev"]:ref:`RNGFND1_MIN <copter:RNGFND1_MIN>`\ [/site][site wiki="blimp"]:ref:`RNGFND1_MIN <copter:RNGFND1_MIN>`\ [/site] = 0 (cm)
-- [site wiki="copter,rover"]:ref:`PRX1_TYPE <PRX1_TYPE>`\ [/site][site wiki="dev"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site][site wiki="blimp"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site][site wiki="plane"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site] = 2 (MAVLink)
+- [site wiki="copter,rover"]:ref:`PRX1_TYPE <PRX1_TYPE>`\ [/site][site wiki="dev"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site][site wiki="blimp,plane"]:ref:`PRX1_TYPE <copter:PRX1_TYPE>`\ [/site] = 2 (MAVLink)
 
 If only the VOXL 2 camera will be used for position estimation and heading (e.g. No GPS):
 
@@ -157,7 +157,7 @@ For indoor/outdoor transitions (e.g. VOXL camera indoors, GPS+Compass outdoors):
 
 After the parameters are modified, reboot the autopilot.
 
-More details on :ref:`GPS/Non-GPS Transitions can be found here <common-non-gps-to-gps>`
+More details on [site wiki="copter,plane,rover,blimp"]:ref:`GPS/Non-GPS Transitions can be found here <common-non-gps-to-gps>` [/site][site wiki="dev"]:ref:`GPS/Non-GPS Transitions can be found here <copter:common-non-gps-to-gps>` [/site]
 
 To use an optical flow and rangefinder for backup in case the VOXL fails, a Lua applet for `ExternalNav/Optical flow transitions is here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/ahrs-source-extnav-optflow.lua>`__
 

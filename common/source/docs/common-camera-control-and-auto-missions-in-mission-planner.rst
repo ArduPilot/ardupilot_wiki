@@ -6,7 +6,7 @@ Camera Control in Auto Missions
 
 This article describes ArduPilot's camera and gimbal commands, and
 explains how these can be used in Mission Planner to define camera
-survey missions.  These instructions assume a :ref:`camera trigger and gimbal have already been connected and configured <common-cameras-and-gimbals>`.
+survey missions.  These instructions assume a [site wiki="plane,copter,rover,sub"]:ref:`camera trigger and gimbal have already been connected and configured <common-cameras-and-gimbals>`\ [/site][site wiki="planner"]:ref:`camera trigger and gimbal have already been connected and configured <copter:common-cameras-and-gimbals>`\ [/site].
 
 Overview
 ========
@@ -29,7 +29,7 @@ Camera commands
    intervals. This is most commonly used for supporting area surveys.
 -  ``DO_DIGICAM_CONTROL`` — Trigger the camera shutter once every time
    this command is called.
--  ``DO_AUX_FUNCTION`` — allows any :ref:`auxiliary function <common-auxiliary-functions>` to be executed from within a mission without setting up an auxiliary switch.  This includes camera start recording, camera zoom, camera manual focus and camera auto focus.
+-  ``DO_AUX_FUNCTION`` — allows any [site wiki="plane,copter,rover,sub"]:ref:`auxiliary function <common-auxiliary-functions>`\ [/site][site wiki="planner"]:ref:`auxiliary function <copter:common-auxiliary-functions>`\ [/site] to be executed from within a mission without setting up an auxiliary switch.  This includes camera start recording, camera zoom, camera manual focus and camera auto focus.
 
 Camera gimbal commands
 ----------------------
@@ -58,7 +58,7 @@ from still to video).
 
    The method used to connect your servo or relay to the camera, and
    what features are accessible, will depend the camera and its supported
-   remote-control mechanism(s) (see the :ref:`Camera Control and GeoTagging section of the Cameras and Gimbals wiki page <common-cameras-and-gimbals>`)
+   remote-control mechanism(s) (see the [site wiki="plane,copter,rover,sub"]:ref:`Camera Control and GeoTagging section of the Cameras and Gimbals wiki page <common-cameras-and-gimbals>`\ [/site][site wiki="planner"]:ref:`Camera Control and GeoTagging section of the Cameras and Gimbals wiki page <copter:common-cameras-and-gimbals>`\ [/site])
 
 Auto-mission types
 ==================

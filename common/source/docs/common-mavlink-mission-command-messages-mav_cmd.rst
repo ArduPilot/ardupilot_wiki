@@ -3298,7 +3298,7 @@ MAV_CMD_DO_REPEAT_RELAY
 
 Supported by: All vehicles.
 
-Toggle the :ref:`Relay <common-relay>` pin's voltage/state a specified
+Toggle the [site wiki="plane,copter,rover,sub"]:ref:`Relay <common-relay>`\ [/site][site wiki="planner,dev"]:ref:`Relay <copter:common-relay>`\ [/site] pin's voltage/state a specified
 number of times with a given period. Toggling the Relay will turn an off
 relay on and vice versa
 
@@ -3368,7 +3368,7 @@ MAV_CMD_DO_SET_SERVO
 
 Supported by: All vehicles.
 
-Set a given :ref:`servo pin <common-servo>` output to a specific PWM value.
+Set a given [site wiki="plane,copter,rover,sub"]:ref:`servo pin <common-servo>`\ [/site][site wiki="planner,dev"]:ref:`servo pin <copter:common-servo>`\ [/site] output to a specific PWM value.
 
 **Command parameters**
 
@@ -3439,7 +3439,7 @@ MAV_CMD_DO_REPEAT_SERVO
 
 Supported by: All vehicles.
 
-Cycle a :ref:`servo <common-servo>` PWM output pin between its mid-position
+Cycle a [site wiki="plane,copter,rover,sub"]:ref:`servo <common-servo>`\ [/site][site wiki="planner,dev"]:ref:`servo <copter:common-servo>`\ [/site] PWM output pin between its mid-position
 value and a specified PWM value, for a given number of cycles and with a
 set period.
 
@@ -3939,7 +3939,7 @@ MAV_CMD_DO_DIGICAM_CONTROL
 
 Supported by: All vehicles.
 
-Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>` once. This command takes no additional arguments.
+Trigger the [site wiki="plane,copter,rover,sub"]:ref:`camera shutter <common-camera-shutter-with-servo>`\ [/site][site wiki="planner,dev"]:ref:`camera shutter <copter:common-camera-shutter-with-servo>`\ [/site] once. This command takes no additional arguments.
 
 **Command parameters**
 
@@ -4020,7 +4020,7 @@ Supported by: All vehicles.
 Mission command to control a camera or antenna mount.
 
 This command allows you to specify a roll, pitch and yaw angle which
-will be sent to the :ref:`camera gimbal <common-cameras-and-gimbals>`. This
+will be sent to the [site wiki="plane,copter,rover,sub"]:ref:`camera gimbal <common-cameras-and-gimbals>`\ [/site][site wiki="planner,dev"]:ref:`camera gimbal <copter:common-cameras-and-gimbals>`\ [/site]. This
 can be used to point the camera in specific directions at various times
 in the mission.
 
@@ -4090,7 +4090,7 @@ Supported by: All vehicles.
 Mission command to move the gimbal to the desired pitch and yaw angles (in degrees).
 
 This command allows you to specify a pitch and yaw angle which
-will be sent to the :ref:`camera gimbal <common-cameras-and-gimbals>`. This
+will be sent to the [site wiki="plane,copter,rover,sub"]:ref:`camera gimbal <common-cameras-and-gimbals>`\ [/site][site wiki="planner,dev"]:ref:`camera gimbal <copter:common-cameras-and-gimbals>`\ [/site]. This
 can be used to point the camera in specific directions at various times
 in the mission. Positive pitch angles are up, Negative are down.  Positive yaw angles are clockwise, negative are counter clockwise.
 
@@ -4157,8 +4157,8 @@ MAV_CMD_DO_SET_CAM_TRIGG_DIST
 
 Supported by: All vehicles.
 
-Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>` at
-regular distance intervals. This command is useful in :ref:`camera survey missions <common-camera-control-and-auto-missions-in-mission-planner>`. 
+Trigger the [site wiki="plane,copter,rover,sub"]:ref:`camera shutter <common-camera-shutter-with-servo>`\ [/site][site wiki="planner,dev"]:ref:`camera shutter <copter:common-camera-shutter-with-servo>`\ [/site] at
+regular distance intervals. This command is useful in [site wiki="plane,copter,rover,sub,planner"]:ref:`camera survey missions <common-camera-control-and-auto-missions-in-mission-planner>`\ [/site][site wiki="dev"]:ref:`camera survey missions <copter:common-camera-control-and-auto-missions-in-mission-planner>`\ [/site]. 
 To trigger the camera once, immediately after passing the DO command, set param3 to 1.
 
 .. note::
@@ -4232,7 +4232,7 @@ MAV_CMD_DO_FENCE_ENABLE
 
 Supported by: All vehicles.
 
-Mission commands to enable the Plane :ref:`GeoFence <common-geofencing-landing-page>`, Copter/Rover :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence`.
+Mission commands to enable the Plane [site wiki="plane,copter,rover,sub"]:ref:`GeoFence <common-geofencing-landing-page>`\ [/site][site wiki="planner,dev"]:ref:`GeoFence <copter:common-geofencing-landing-page>`\ [/site], Copter/Rover [site wiki="plane,copter,rover,sub"]:ref:`common-ac2_simple_geofence`\ [/site][site wiki="planner,dev"]:ref:`copter:common-ac2_simple_geofence`\ [/site] and/or [site wiki="plane,copter,rover,sub"]:ref:`common-polygon_fence`\ [/site][site wiki="planner,dev"]:ref:`copter:common-polygon_fence`\ [/site].
 
 
 **Command parameters**
@@ -4291,7 +4291,7 @@ MAV_CMD_DO_AUX_FUNCTION
 
 Supported by: All vehicles.
 
-Mission command to control an :ref:`Auxiliary Function<common-auxiliary-functions>` in the same manner as an RC channel switch.
+Mission command to control an [site wiki="plane,copter,rover,sub"]:ref:`Auxiliary Function<common-auxiliary-functions>`\ [/site][site wiki="planner,dev"]:ref:`Auxiliary Function<copter:common-auxiliary-functions>`\ [/site] in the same manner as an RC channel switch.
 
 
 **Command parameters**
@@ -4743,7 +4743,7 @@ MAV_CMD_DO_SET_RESUME_REPEAT_DIST
 
 Supported by: All vehicles.
 
-Set the distance that the mission will be rewound when resuming after an interrupt (switching modes).  A full explanation of this feature can be found on the :ref:`Mission Rewind on Resume Page <common-mission-rewind>`.  After setting a rewind distance in a mission, setting the distance to zero will switch off the rewind feature from that point on the mission.
+Set the distance that the mission will be rewound when resuming after an interrupt (switching modes).  A full explanation of this feature can be found on the [site wiki="plane,copter,rover,sub,planner"]:ref:`Mission Rewind on Resume Page <common-mission-rewind>`\ [/site][site wiki="dev"]:ref:`Mission Rewind on Resume Page <copter:common-mission-rewind>`\ [/site].  After setting a rewind distance in a mission, setting the distance to zero will switch off the rewind feature from that point on the mission.
 
 **Command parameters**
 

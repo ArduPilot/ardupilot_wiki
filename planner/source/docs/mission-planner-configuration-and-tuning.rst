@@ -35,7 +35,7 @@ GeoFence (Copter only)
 
 This allows configuration of the various Fence/Exclusion Zone/Inclusion Zone parameters. The coordinates of these fences are setup and saved via the PLAN screen. For Plane and Rover, these associated fence parameter must be set manually via the Full Parameter Screen described below. 
 
-For more information on Geo-Fences, see :ref:`geofencing`, or :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence` for Copter and Rover.
+For more information on Geo-Fences, see :ref:`plane:geofencing`, or :ref:`copter:common-ac2_simple_geofence` and/or :ref:`copter:common-polygon_fence` for Copter and Rover.
 
 
 Basic Tuning
@@ -71,7 +71,7 @@ ArduPilot firmware includes an integrated FTP (File Transfer Protocol) that allo
 User Params
 ===========
 
-Currently, this allows easy access to setting the :ref:`common-auxiliary-functions` on RC channels.
+Currently, this allows easy access to setting the :ref:`copter:common-auxiliary-functions` on RC channels.
 
 Full Parameter List
 ===================

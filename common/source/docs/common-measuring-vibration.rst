@@ -14,7 +14,7 @@ performance in modes that rely on accurate positioning (e.g. on Copter:
 AltHold, Loiter, RTL, Guided, Position and Auto flight modes).
 
 These instructions explain how to measure the vibration levels. If you
-find they are out-of-tolerance then follow the advice found on the :ref:`Vibration Damping <common-vibration-damping>` page.
+find they are out-of-tolerance then follow the advice found on the [site wiki="copter,plane,rover,sub"]:ref:`Vibration Damping <common-vibration-damping>`\ [/site][site wiki="dev,planner"]:ref:`Vibration Damping <copter:common-vibration-damping>`\ [/site] page.
 
 Real-Time view in Ground Station
 --------------------------------
@@ -45,7 +45,7 @@ Check the recorded Vibe levels are mostly below 30m/s/s
    these should be zero for the whole flight but low numbers (<100) are
    likely ok especially if they occur during hard landings.  A regularly
    increasing number through the log indicates a serious vibration
-   problem that :ref:`should be fixed <common-vibration-damping>`.
+   problem that [site wiki="copter,plane,rover,sub"]:ref:`should be fixed <common-vibration-damping>`\ [/site][site wiki="dev,planner"]:ref:`should be fixed <copter:common-vibration-damping>`\ [/site].
 
    .. image:: ../../../images/mp_vibe_dataflash_msg.png
        :target: ../_images/mp_vibe_dataflash_msg.png
@@ -123,7 +123,7 @@ For very old versions of ArduPilot that do not include the Vibe message the IMU 
 -  Check the scale on the left and ensure that your vibration levels for
    the AccX and AccY are between -3 and +3.  For AccZ the acceptable
    range is -15 to -5.  If it is very close or over these limits you
-   should refer back to the :ref:`Vibration Damping <common-vibration-damping>` page for possible solutions.
+   should refer back to the [site wiki="copter,plane,rover,sub"]:ref:`Vibration Damping <common-vibration-damping>`\ [/site][site wiki="dev,planner"]:ref:`Vibration Damping <copter:common-vibration-damping>`\ [/site] page for possible solutions.
 -  After all the above is complete, go to the Mission Planner's standard
    parameters page (you may need to press the **Connect** button again)
    and set the Log Bitmask back to "Default".  This is important because

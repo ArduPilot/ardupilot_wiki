@@ -69,7 +69,7 @@ Calibration steps
 
       Mission Planner: Calibration Successful
 
-.. note:: If your autopilot has a built-in IMU heater, then it is recommended that the [site wiki="copter,plane,rover,planner,sub"]:ref:`common-imutempcal`\ [/site][site wiki="blimp"]:ref:`copter:common-imutempcal`\ [/site] also be done. Some autopilots have this calibration done at the factory in which case, this calibration need not be done.
+.. note:: If your autopilot has a built-in IMU heater, then it is recommended that the [site wiki="copter,plane,rover,sub"]:ref:`common-imutempcal`\ [/site][site wiki="planner"]:ref:`copter:common-imutempcal`\ [/site][site wiki="blimp"]:ref:`copter:common-imutempcal`\ [/site] also be done. Some autopilots have this calibration done at the factory in which case, this calibration need not be done.
 
 Simple Calibration
 ==================

@@ -8,7 +8,7 @@ The following tutorial explains how to connect a flight controller to a companio
 
 Ensure you have ROS 2 :ref:`installed <ros2>` and have run :ref:`SITL <ros2-sitl>` successfully before attempting this page.
 
-Additionally, make sure you understand the :ref:`basics of networking in ArduPilot. <common-network>`
+Additionally, make sure you understand the :ref:`basics of networking in ArduPilot. <copter:common-network>`
 
 .. note:: ROS2 (via DDS) is not part of the standard ArduPilot build. Use the `Custom Build Server <https://custom.ardupilot.org/add_build>`__ and ensure "MicroXRCE DDS support for ROS 2" is checked.
 

@@ -15,7 +15,7 @@ Libraries involved
 
 - `AR_WPNav <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AR_WPNav>`__
   plans the path to the destination and outputs a desired speed and turn rate
-- `AR_WPNav_OA <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AR_WPNav/AR_WPNav_OA.cpp>`__ extends AR_WPNav with :ref:`object avoidance <common-object-avoidance-landing-page>`
+- `AR_WPNav_OA <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AR_WPNav/AR_WPNav_OA.cpp>`__ extends AR_WPNav with :ref:`object avoidance <rover:common-object-avoidance-landing-page>`
   path planning, and is the class Rover actually instantiates
 - `AR_PivotTurn <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AR_WPNav/AR_PivotTurn.cpp>`__ handles pivot (point) turns for vehicles that can turn on the spot
 - `AR_AttitudeControl <https://github.com/ArduPilot/ardupilot/tree/master/libraries/APM_Control>`__
