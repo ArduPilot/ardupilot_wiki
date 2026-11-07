@@ -235,7 +235,7 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     Altitude disparity                                      Barometer and EKF altitudes differ by at least 1m   Wait for EKF altitude to stabilise.  Reboot autopilot
     Auto mode not armable                                   Vehicle cannot be armed in Auto mode                Switch to another mode (like Loiter) or set :ref:`RTL_OPTIONS<RTL_OPTIONS>` = 3. See :ref:`Auto mode<auto-mode>`
     Bad parameter: ATC_ANG_PIT_P must be > 0                Attitude controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
-    Bad parameter: PSC_POSXY_P must be > 0                  Position controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
+    Bad parameter: PSC_NE_POS_P must be > 0                 Position controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<tuning-process-instructions>`
     Battery failsafe                                        Battery failsafe has triggered                      Plug in battery and check its voltage and capacity.  See ref:`battery failsafe configuration <failsafe-battery>`
     Check ACRO_BAL_ROLL/PITCH                               ACRO_BAL_ROLL, ACRO_BAL_PITCH negative or too high  Change :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>` to between 0 and :ref:`ATC_ANG_RLL_P<ATC_ANG_RLL_P>` and/or :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>` between 0 and :ref:`ATC_ANG_PIT_P<ATC_ANG_PIT_P>`.  See :ref:`Acro mode<acro-mode>`
     Check ANGLE_MAX                                         ANGLE_MAX set too high                              Reduce :ref:`ATC_ANGLE_MAX<ATC_ANGLE_MAX>` to 80 (e.g. 80 degrees) or lower
@@ -288,8 +288,8 @@ Pre-arm checks that are failing will also be sent as messages to the GCS while d
     ADSB threat detected                                    ADSB failsafe.  Manned vehicles nearby              See :ref:`ADSB configuration<common-ads-b-receiver>`
     AHRS not healthy                                        AHRS/EKF is not yet ready                           Wait.  Reboot autopilot.
     AIRSPEED_MIN too low x<5 m/s                            Parameter set too low, under 5m/s                   Raise to at least 20% above stall speed
-    Bad parameter: ATC_ANG_PIT_P must be > 0                Attitude controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<quadplane-vtol-tuning-process>`
-    Bad parameter: PSC_POSXY_P must be > 0                  Position controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<quadplane-vtol-tuning-process>`
+    Bad parameter: Q_A_ANG_PIT_P must be > 0                Attitude controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<quadplane-vtol-tuning-process>`
+    Bad parameter: Q_P_NE_POS_P must be > 0                 Position controller misconfiguration                Increase specified parameter value to be above zero. See :ref:`Tuning Process Instructions<quadplane-vtol-tuning-process>`
     Check Q_ANGLE_MAX                                       Set above 80 degrees                                Reduce :ref:`Q_A_ANGLE_MAX<Q_A_ANGLE_MAX>` below 80; 30 degrees is typical
     In landing sequence                                     Trying to arm while still in landing sequence       Reset mission;change to mission item not in a landing sequence
     Invalid THR_FS_VALUE for reversed throttle input        THR_FS_VALUE pwm is not ABOVE the max throttle      Set :ref:`THR_FS_VALUE<THR_FS_VALUE>` above throttle maximum pwm
