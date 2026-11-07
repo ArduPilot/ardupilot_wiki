@@ -13,6 +13,9 @@ lxml
 # Video stills and the lossless PNG pass; both are no-ops without it.
 Pillow
 
+# zstd deltas for the offline archives' historical parameter pages.
+zstandard
+
 # Install sphinx theme from ArduPilot repository, pinned for reproducible
 # builds; this is the squash-merged sphinx_rtd_theme PR 24, whose offline
 # hooks conf.py requests whenever the installed theme declares them.
