@@ -7,7 +7,7 @@ Rally Points
 Overview
 ========
 
-Ordinarily when a plane or copter enters :ref:`Return to Launch (RTL) <rtl-mode>` mode (typically
+Ordinarily when a plane or copter enters [site wiki="copter,plane,rover"]:ref:`Return to Launch (RTL) <rtl-mode>`\ [/site][site wiki="sub,planner"]Return to Launch (RTL)[/site] mode (typically
 triggered by an
 autopilot failsafe[site wiki="plane"], see :ref:`apms-failsafe-function`\ [/site][site wiki="copter,sub"], see :ref:`failsafe-landing-page`\ [/site][site wiki="rover"], see :ref:`rover-failsafes`\ [/site]),
 the default behaviour is to return to the \ :ref:`Home point <common-planning-a-mission-with-waypoints-and-events_setting_the_home_position>`,

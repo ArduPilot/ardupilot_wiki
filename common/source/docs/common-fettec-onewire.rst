@@ -175,7 +175,7 @@ Optional features
 
 Optional features can be configured using the instructions at their respective wiki page:
 
-- dynamically change the center frequency of the :ref:`notch filters used to reduce frame vibration noise in the gyros<esc-telemetry-based-dynamic-notch-filter>`
+- dynamically change the center frequency of the [site wiki="copter,plane"]:ref:`notch filters used to reduce frame vibration noise in the gyros<esc-telemetry-based-dynamic-notch-filter>` [/site][site wiki="rover,sub"]notch filters used to reduce frame vibration noise in the gyros[/site]
 - measure :ref:`battery voltage, current and power consumption<esc-telemetry-based-battery-monitor>`
 
 ---------------
