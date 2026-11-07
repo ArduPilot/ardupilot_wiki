@@ -49,7 +49,9 @@ Adapter Nodes
     :maxdepth: 1
 
     ARK CANnode <common-ark-can-node>
-    Beyond Robotix Node <https://beyond-robotix.gitbook.io/docs/can-node-system>
+    Beyond Robotix CAN Node <https://beyond-robotix.gitbook.io/docs/can-ecosystem/l431-can-node>
+    Beyond Robotix CAN Node Plus <https://beyond-robotix.gitbook.io/docs/can-ecosystem/can-node-plus>
+    Beyond Robotix Micro CAN Node <https://beyond-robotix.gitbook.io/docs/can-ecosystem/micro-node>
     Matek DroneCAN Adapter Node <https://www.mateksys.com/?portfolio=can-l431>
     mRo KitCAN CAN/DroneCAN Adapter Node+Compass+Baro <common-mro-kitcan>
     mRo DroneCAN Adapter Node <common-mro-uavcan-adapter-node>
