@@ -57,11 +57,11 @@ CAN/DroneCAN Power Monitors and Batteries
 DroneCAN Battery Tag
 ====================
 
-A DroneCAN based Battery Tag which monitors battery age and user cycles can be easily created by reflashing the `Matek DroneCAN RC adapter board <https://www.mateksys.com/?portfolio=can-l4-rc>`__ using the `Battery Tag AP_Periph firmware <https://firmware.ardupilot.org/AP_Periph/latest/MatekL431-BatteryTag/>`__ . Firmware updating process is explained :ref:`HERE <dronecan-firmware-flashing>`.
+A DroneCAN based Battery Tag which monitors battery age and user cycles can be easily created by reflashing the `Matek DroneCAN RC adapter board <https://www.mateksys.com/?portfolio=can-l4-rc>`__ using the `Battery Tag AP_Periph firmware <https://firmware.ardupilot.org/AP_Periph/latest/MatekL431-BatteryTag/>`__ . Firmware updating process is explained :ref:`HERE <planner:dronecan-firmware-flashing>`.
 
 VimDrones also has Battery Tag firmware for use with their DroneCan devices based on the L431, `HERE <https://firmware.ardupilot.org/AP_Periph/latest/VM-L431-BatteryTag/>`__.
 
-Battery Tag data can be accessed easily via either examining the tag's DroneCAN parameters using the :ref:`GCS DroneCAN Interface <dronecan-uavcan-slcan>` or :ref:`DroneCAN GUI <common-uavcan-gui>`.
+Battery Tag data can be accessed easily via either examining the tag's DroneCAN parameters using the :ref:`GCS DroneCAN Interface <planner:dronecan-uavcan-slcan>` or :ref:`DroneCAN GUI <common-uavcan-gui>`.
 
 A `Scripting applet <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/BatteryTag.lua>`__ can also be used.
 

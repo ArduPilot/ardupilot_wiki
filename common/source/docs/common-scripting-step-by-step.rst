@@ -38,7 +38,7 @@ Mavproxy ground control station will automatically be started. You can also star
 
 In Mission Planner (Windows):
 
-#. Start the simulation in Mission Planner as normal (see :ref:`mission-planner-simulation`)
+#. Start the simulation in Mission Planner as normal (see :ref:`planner:mission-planner-simulation`)
 #. In the CONFIG->Full Parameter List, set the :ref:`SCR_ENABLE<SCR_ENABLE>` parameter to "1". Restart the simulation.
 #. The 'scripts' subdirectory will be located in your Documents->Mission Planner->sitl directory.Place the script you downloaded into this directory. Again, restart the simulation.
 #. If you get a "Scripting: out of memory" GCS message then you will need to increase the :ref:`SCR_HEAP_SIZE<SCR_HEAP_SIZE>` parameter and try to restart the simulation.
