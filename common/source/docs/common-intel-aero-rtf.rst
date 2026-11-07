@@ -62,7 +62,7 @@ Connecting and configuring with a ground station
 .. image:: ../../../images/intel-aero-param-load.jpg
     :target: ../_images/intel-aero-param-load.jpg
 
-- regular :ref:`compass <common-compass-calibration-in-mission-planner>`, :ref:`Radio <common-radio-control-calibration>`, :ref:`accelerometer calibration <common-accelerometer-calibration>` is required (:ref:`ESC calibration <esc-calibration>` is not required)
+- regular :ref:`compass <common-compass-calibration-in-mission-planner>`, :ref:`Radio <common-radio-control-calibration>`, :ref:`accelerometer calibration <common-accelerometer-calibration>` is required ([site wiki="copter"]:ref:`ESC calibration <esc-calibration>`\ [/site][site wiki="plane,rover,sub"]:ref:`ESC calibration <common-esc-calibration>`\ [/site][site wiki="blimp"]ESC calibration[/site] is not required)
 
 Connecting the Transmitter
 ==========================

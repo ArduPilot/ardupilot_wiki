@@ -204,7 +204,7 @@ See :ref:`dev:mavlink-camera` documentation.
 
 Control during Auto mode missions
 =================================
-Commands to control the mount are listed on the  :ref:`Camera Control in Auto Missions <common-camera-control-and-auto-missions-in-mission-planner>`, :ref:`Copter Mission Command List <mission-command-list>` and :ref:`Mission Commands <common-mavlink-mission-command-messages-mav_cmd>` pages
+Commands to control the mount are listed on the  :ref:`Camera Control in Auto Missions <common-camera-control-and-auto-missions-in-mission-planner>`, [site wiki="copter"]:ref:`Copter Mission Command List <mission-command-list>`\ [/site][site wiki="plane,rover,sub"]:ref:`Copter Mission Command List <copter:mission-command-list>`\ [/site] and :ref:`Mission Commands <common-mavlink-mission-command-messages-mav_cmd>` pages
 
 Other Mount Parameters
 ======================

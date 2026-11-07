@@ -62,7 +62,7 @@ Additional Notes
 =================
 
 - As with all optical flow sensors, a range finder is required to use the sensor for autonomous modes including :ref:`Loiter <loiter-mode>` and :ref:`RTL <rtl-mode>`.  MechFlow V1's onboard VL53L1X rangefinder, configured via ``RNGFND1_TYPE`` above, satisfies this requirement on its own indoors, in shade, or at short range outdoors — see `Indoor vs. Outdoor Use`_.  For outdoor altitude hold in direct sunlight, a separate rangefinder rated for outdoor/sunlight use is recommended as the primary rangefinder; MechFlow V1 remains useful in that setup at short range, e.g. as a landing/take-off sensor
-- :ref:`FlowHold <flowhold-mode>` does not require the use of a rangefinder but performance is generally worse than Loiter mode and is not recommended
+- [site wiki="copter"]:ref:`FlowHold <flowhold-mode>`\ [/site][site wiki="plane,rover,sub"]FlowHold[/site] does not require the use of a rangefinder but performance is generally worse than Loiter mode and is not recommended
 - Performance can be improved by setting the :ref:`sensor's position parameters <common-sensor-offset-compensation>`. For example if the sensor is mounted 2cm forward and 5cm below the frame's center of rotation set :ref:`FLOW_POS_X <FLOW_POS_X>` to 0.02 and :ref:`FLOW_POS_Z <FLOW_POS_Z>` to 0.05
 - The onboard VL53L1X completes a new rangefinder measurement roughly every 55ms, while MSP telemetry is output at a fixed 100Hz; the rangefinder value is therefore repeated across several telemetry frames between updates rather than refreshed on every frame
 

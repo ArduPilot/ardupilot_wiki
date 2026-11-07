@@ -62,7 +62,7 @@ Control during Auto mode missions
 See these pages for details on controlling the camera during Auto mode missions including specifying when the camera shutter should trigger or a distance that the vehicle should travel between shots.
 
 - :ref:`Camera Control in Auto Missions <common-camera-control-and-auto-missions-in-mission-planner>`
-- :ref:`Copter Mission Command List <mission-command-list>` 
+- [site wiki="copter"]:ref:`Copter Mission Command List <mission-command-list>` [/site][site wiki="plane,rover,sub"]:ref:`Copter Mission Command List <copter:mission-command-list>` [/site] 
 - :ref:`Mission Commands <common-mavlink-mission-command-messages-mav_cmd>` pages
 
 Control from a Companion Computer or MAVLink

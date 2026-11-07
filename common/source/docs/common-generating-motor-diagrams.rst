@@ -4,7 +4,7 @@
 Generating Copter Motor Diagrams
 ================================
 
-Motor diagrams such as the one below can be automatically generated for inclusion in the :ref:`Connect ESCs and Motors<connect-escs-and-motors>` page.
+Motor diagrams such as the one below can be automatically generated for inclusion in the [site wiki="copter"]:ref:`Connect ESCs and Motors<connect-escs-and-motors>`\ [/site][site wiki="plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]:ref:`Connect ESCs and Motors<copter:connect-escs-and-motors>`\ [/site] page.
 
 .. image:: ../../../images/m_01_01_quad_x.svg
     :target: ../_images/m_01_01_quad_x.svg
@@ -82,7 +82,7 @@ If ``AP_Motors_test.json`` or ``AP_Motors_display.json`` are changed, the follow
     # optionally preview wiki image tags before building
     ./scripts/build_motor_diagrams.py --preview
 
-Preview output can be pasted into the :ref:`Connect ESCs and Motors<connect-escs-and-motors>` page.
+Preview output can be pasted into the [site wiki="copter"]:ref:`Connect ESCs and Motors<connect-escs-and-motors>`\ [/site][site wiki="plane,rover,sub,blimp,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]:ref:`Connect ESCs and Motors<copter:connect-escs-and-motors>`\ [/site] page.
 
 There are a number of other options for the script. Run ``./scripts/build_motor_diagrams.py -h`` for a full list.
 

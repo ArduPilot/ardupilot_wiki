@@ -38,7 +38,7 @@ Configuration can be done using the SERVO tab of Mission Planner or by directly 
 .. image:: ../../../images/rcoutput-mapping.png
     :target: ../_images/rcoutput-mapping.png
 
-For example, if you wished to re-order a Copter quad-x frame's motors from the :ref:`kitty-corner default <connect-escs-and-motors>` to a more logical clockwise method, make these changes:
+For example, if you wished to re-order a Copter quad-x frame's motors from the [site wiki="copter"]:ref:`kitty-corner default <connect-escs-and-motors>`\ [/site][site wiki="plane,rover,sub"]:ref:`kitty-corner default <copter:connect-escs-and-motors>`\ [/site] to a more logical clockwise method, make these changes:
 
 - :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` leave as 33 (aka "motor1", front-right)
 - :ref:`SERVO2_FUNCTION <SERVO2_FUNCTION>` change from 34 (aka "motor2", back-left) to 36 (motor #4, back-right)
@@ -331,7 +331,7 @@ output will be the trim value for the channel.
 Boost Engine Throttle
 +++++++++++++++++++++
 
-This output is for throttle control of an auxiliary :ref:`booster-motor` to add an additional vertical thrust source in Multi-Copter and QuadPlane applications.
+This output is for throttle control of an auxiliary [/site][site wiki="copter"]:ref:`booster-motor`\ [/site][site wiki="plane"]:ref:`copter:booster-motor`\ [/site][site wiki="plane, copter"] to add an additional vertical thrust source in Multi-Copter and QuadPlane applications.
 
 
 Motor Enable Switch
@@ -418,7 +418,7 @@ Motors 1 - 12
 
 
 
-These are the Copter and QuadPlane VTOL motor outputs. For Multi-Copters, see :ref:`Motor Order Diagrams<connect-escs-and-motors>`. Or see :ref:`Traditional Helicopter <traditional-helicopter-connecting-apm>`, or :ref:`singlecopter-and-coaxcopter`, or :ref:`heliquads`.
+These are the Copter and QuadPlane VTOL motor outputs. For Multi-Copters, see [site wiki="copter"]:ref:`Motor Order Diagrams<connect-escs-and-motors>`\ [/site][site wiki="plane,rover,sub"]:ref:`Motor Order Diagrams<copter:connect-escs-and-motors>`\ [/site]. Or see [site wiki="copter"]:ref:`Traditional Helicopter <traditional-helicopter-connecting-apm>`\ [/site][site wiki="plane,rover,sub"]:ref:`Traditional Helicopter <copter:traditional-helicopter-connecting-apm>`\ [/site], or [site wiki="copter"]:ref:`singlecopter-and-coaxcopter`\ [/site][site wiki="plane,rover,sub"]:ref:`copter:singlecopter-and-coaxcopter`\ [/site], or [site wiki="copter"]:ref:`heliquads`\ [/site][site wiki="plane,rover,sub"]:ref:`copter:heliquads`\ [/site].
 
 [site wiki="copter"]
 .. note::
@@ -445,7 +445,7 @@ Tilt Motor/ Tilt Motor Left/ Tilt Motor Right/ Tilt Motor Rear/ Tilt Motor Rear 
 Boost Engine Throttle
 +++++++++++++++++++++
 
-This output is for throttle control of an auxiliary :ref:`booster-motor` to add an additional vertical thrust source in Multi-Copter and QuadPlane applications.
+This output is for throttle control of an auxiliary [/site][site wiki="copter"]:ref:`booster-motor`\ [/site][site wiki="plane"]:ref:`copter:booster-motor`\ [/site][site wiki="plane, copter"] to add an additional vertical thrust source in Multi-Copter and QuadPlane applications.
 
 Motor Enable Switch
 +++++++++++++++++++
