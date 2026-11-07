@@ -4,7 +4,7 @@
 Mission Planning
 ================
 
-This section contains articles about creating missions that will run when the vehicle switched to :ref:`AUTO <auto-mode>` mode.
+This section contains articles about creating missions that will run when the vehicle switched to [site wiki="copter,plane,rover"]:ref:`AUTO <auto-mode>`\ [/site][site wiki="sub,planner"]AUTO[/site] mode.
 
 .. figure:: ../../../images/mp_flight_plan_screen.jpg
   :target: ../_images/mp_flight_plan_screen.jpg

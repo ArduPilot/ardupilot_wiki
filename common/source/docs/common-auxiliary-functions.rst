@@ -391,7 +391,7 @@ Other functions are:
     Fence                                | Fence is disabled when the switch is in a low position, and enabled
                                          | when in a high position.
     Acro Trainer                          Turn on automatic leveling in the ACRO flight mode.
-    Sprayer                               Turn on the :ref:`crop sprayer <sprayer>` when the switch is pulled high.
+    Sprayer                               Turn on the [site wiki="copter,plane"]:ref:`crop sprayer <sprayer>`\ [/site][site wiki="rover,sub"]crop sprayer[/site] when the switch is pulled high.
     Gripper                              | Operates the :ref:`gripper <common-gripper-landingpage>`. Switch pulled
                                          | low releases the gripper, high closes or grabs.
     Parachute Enable                     | Enables the automatic release of the [site wiki="copter,plane"]:ref:`parachute <common-parachute>` [/site][site wiki="rover,sub"]parachute[/site]
@@ -501,7 +501,7 @@ Other functions are:
                                          | Wing Flight section of :ref:`quadplane-flying`.[/site]
     ZigZag Mode Auto Enable              | Enable automatic zigzag and sprayer in ZIGZAG mode.
                                          | [site wiki="copter"]See :ref:`zigzag-mode`.[/site]
-    AIRMODE(not a flight mode)            Enables and disables AIRMODE feature. See :ref:`airmode`.
+    AIRMODE(not a flight mode)            Enables and disables AIRMODE feature.[site wiki="copter,plane"] See :ref:`airmode`.[/site]
     Generator                             Mode control for Richenpower Hybrid Power Generator.
     Non Auto Terrain Follow Disable       Disables Terrain Following in CRUISE and FBWB modes.
     CROW Mode Switch                      Selects between different CROW aileron operating modes.

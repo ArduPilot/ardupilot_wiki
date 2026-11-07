@@ -228,8 +228,8 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
 - :ref:`MAV_CMD_JUMP_TAG <mav_cmd_jump_tag>`
 - :ref:`MAV_CMD_DO_JUMP_TAG <mav_cmd_do_jump_tag>`
-- :ref:`MAV_CMD_MISSION_START <mav_cmd_mission_start>`
-- :ref:`MAV_CMD_COMPONENT_ARM_DISARM <mav_cmd_component_arm_disarm>`
+- :ref:`MAV_CMD_MISSION_START <copter:mav_cmd_mission_start>`
+- :ref:`MAV_CMD_COMPONENT_ARM_DISARM <copter:mav_cmd_component_arm_disarm>`
 - :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
 - :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
 - :ref:`MAV_CMD_CONDITION_YAW <mav_cmd_condition_yaw>`
@@ -250,10 +250,10 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW <mav_cmd_do_gimbal_manager_pitchyaw>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_PARACHUTE <mav_cmd_do_parachute>` (Parachute enabled only)
 - :ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>`
-- :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>` (NAV_GUIDED only)
+- :ref:`MAV_CMD_DO_GUIDED_LIMITS <copter:mav_cmd_do_guided_limits>` (NAV_GUIDED only)
 - :ref:`MAV_CMD_DO_SET_RESUME_REPEAT_DIST <mav_cmd_do_set_resume_repeat_dist>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
-- :ref:`MAV_CMD_DO_WINCH <mav_cmd_do_winch>`
+- :ref:`MAV_CMD_DO_WINCH <copter:mav_cmd_do_winch>`
 - :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
 [/site]
 
@@ -1851,7 +1851,7 @@ Supported by: Copter, Rover, Sub (not Plane).
 
 Enable ``GUIDED`` mode to hand over control to an external controller/:ref:`common-companion-computers`. ee :ref:`Guided Mode <copter:ac2_guidedmode>` for more information. The :ref:`common-companion-computers`  would then send MAVLink commands to control the vehicle.
 
-See also :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>`
+See also [/site][site wiki="copter"]:ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>` [/site][site wiki="rover,sub"]:ref:`MAV_CMD_DO_GUIDED_LIMITS <copter:mav_cmd_do_guided_limits>` [/site][site wiki="copter,rover,sub"]
 for information on how to apply time, altitude and distance limits on
 the external control.
 
