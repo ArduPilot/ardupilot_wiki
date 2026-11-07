@@ -287,8 +287,11 @@ to link to this anchor defined other wikis you would do:
 
 .. tip::
 
-    For links within a wiki and in most common topics you can use the "bare" format. Sometimes
-    you will need to explicitly specify a target wiki.
+    A "bare" link (no wiki prefix) only links to an anchor in the wiki being built; it never
+    falls back to another wiki, and the build reports an "undefined label" warning if the anchor
+    is missing. In a common topic, a bare link's anchor must exist on every wiki the page is
+    copied to. If it only exists on some of them, put the link in a ``[site wiki="..."]`` block
+    for those wikis, or add the prefix of the wiki that has the page.
 
 
 External links
