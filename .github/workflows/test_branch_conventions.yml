@@ -1,0 +1,35 @@
+name: Test for Malformed Commits in PR Branch
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: ci-${{github.workflow}}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-merge-commits:
+    if: github.repository == 'ArduPilot/ardupilot_wiki'
+    runs-on: ubuntu-slim
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v6
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          submodules: 'false'
+          fetch-depth: 0
+
+      - name: Fetch base branch
+        run: |
+          git remote -v
+          git remote add upstream ${{ github.event.pull_request.base.repo.clone_url }}
+          git fetch upstream ${{ github.event.pull_request.base.ref }}
+          git show upstream/${{ github.event.pull_request.base.ref }}
+
+      - name: Check branch conventions
+        shell: bash
+        run: |
+          scripts/check_branch_conventions.py --base-branch "upstream/${{ github.event.pull_request.base.ref }}"
