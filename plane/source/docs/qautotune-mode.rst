@@ -27,7 +27,7 @@ You can tell that QAUTOTUNE has finished when it stops twitching. You need to th
 
 You can reposition while tuning by moving your sticks. Once you re-center the sticks the tune will continue. If you change modes then the tune stops immediately.
 
-You can read more about AutoTune for copters here: :ref:`autotune`. The autotune for quadplanes works the same way.
+You can read more about AutoTune for copters here: :ref:`copter:autotune`. The autotune for quadplanes works the same way.
 
 .. note:: Like Copter, entering QAUTOTUNE from QLOITER will attempt a loose position hold.
 
