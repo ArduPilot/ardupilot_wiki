@@ -81,3 +81,7 @@ build_options.py
 /package-lock.json
 build.lck
 build.lck.log
+
+# MAVLink message pages per version, from build_mavlink_messages.py
+/*/source/docs/mavlink-messages-*.rst
+/*/source/_static/mavlink-messages-*.json

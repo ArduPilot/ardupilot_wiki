@@ -1283,6 +1283,12 @@ class WikiUpdater:
             help="Build multiple parameters pages for each vehicle based on its firmware repo.",
         )
         parser.add_argument(
+            "--mavlinkversioning",
+            action="store_true",
+            default=False,
+            help="Build a MAVLink messages page for each stored firmware version of each vehicle.",
+        )
+        parser.add_argument(
             "--verbose",
             dest="verbose",
             action="store_true",
@@ -1334,6 +1340,15 @@ class WikiUpdater:
             dedupe_periph_net_parameters('./dev/source/docs/AP_Periph-Parameters.rst')
             # Fetch most recent LogMessage metadata from autotest:
             fetchlogmessages(self.args.site, self.args.cached_parameter_files)
+
+            if self.args.mavlinkversioning:
+                # MAVLink message pages for each stored firmware version:
+                import build_mavlink_messages
+                try:
+                    build_mavlink_messages.build(os.getcwd(), self.args.site)
+                except Exception as e:
+                    # the current MAVLink pages still build without the version pages
+                    error(f"Could not build the MAVLink message version pages: {e}")
 
         info("=== Step 3: Processing static sites ===")
         info(f"Time elapsed so far: {time.time() - tstart:.2f} seconds")
