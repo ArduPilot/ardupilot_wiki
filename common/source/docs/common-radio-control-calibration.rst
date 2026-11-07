@@ -175,7 +175,7 @@ There is no default flight mode channel.
 Further Reading
 ---------------
 
-- Roll, pitch, throttle and yaw channel mappings can be changed using [site wiki="copter,plane,rover,sub,planner"]:ref:`RCMAP Input Channel Mapping <common-rcmap>` [/site][site wiki="blimp"]:ref:`RCMAP Input Channel Mapping <copter:common-rcmap>` [/site]
+- Roll, pitch, throttle and yaw channel mappings can be changed using [site wiki="copter,plane,rover,sub"]:ref:`RCMAP Input Channel Mapping <common-rcmap>` [/site][site wiki="planner"]:ref:`RCMAP Input Channel Mapping <copter:common-rcmap>` [/site][site wiki="blimp"]:ref:`RCMAP Input Channel Mapping <copter:common-rcmap>` [/site]
 - Flight mode switch setup to specify which vehicle modes are enabled by each switch position can be found on the :ref:`RC Transmitter Flight Mode Configuration <common-rc-transmitter-flight-mode-configuration>` page
 [site wiki="rover"]
 - Rover steering and reversing behaviour setup are described on the :ref:`Steering Input Type and Reversing Behaviour <rover-steering-input-type-and-reversing-behaviour>` page

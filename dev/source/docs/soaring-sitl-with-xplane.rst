@@ -9,7 +9,7 @@
 Soaring SITL with X-Plane
 =========================
 
-As of March 2017, ArduPlane has a :ref:`soaring capability <soaring>` that allows many fixed-wing aircraft to stay in the air without motor power by exploiting rising air currents called *thermals*. These instructions are intended for people who would like to try out ArduPlane's soaring controller in a :ref:`software-in-the-loop (SITL) simulation <sitl-simulator-software-in-the-loop>` with X-Plane, a popular commercial flight simulator. 
+As of March 2017, ArduPlane has a :ref:`soaring capability <plane:soaring>` that allows many fixed-wing aircraft to stay in the air without motor power by exploiting rising air currents called *thermals*. These instructions are intended for people who would like to try out ArduPlane's soaring controller in a :ref:`software-in-the-loop (SITL) simulation <sitl-simulator-software-in-the-loop>` with X-Plane, a popular commercial flight simulator. 
 
 |br|
 
@@ -30,7 +30,7 @@ Setting up X-Plane
    X-Plane 11 also works, but the instructions below assume X-Plane 10's UI.
 
    .. warning::
-      The demo version will prevent you from controlling the plane manually after 15 minutes of flying or so, but flying in ArduPlane modes that don’t require manual input, e.g., Auto, and switching modes from a ground control station such as :ref:`Mission Planner <mission-planner-overview>` will work even after that.
+      The demo version will prevent you from controlling the plane manually after 15 minutes of flying or so, but flying in ArduPlane modes that don’t require manual input, e.g., Auto, and switching modes from a ground control station such as :ref:`Mission Planner <planner:mission-planner-overview>` will work even after that.
          
    |br|
    
@@ -188,7 +188,7 @@ Running soaring SITL with X-Plane
    When you load and set parameters from a file for the first time after (re-)building ArduPlane, Mission Planner may display a message such as "Parameter refresh required --- press F5", and the simulation may even crash -- you will see "ERROR: Floating point exception - aborting" in the Cygwin window where you started the simulation. This is not unusual. Just restart the simulation by running ``build/sitl/bin/arduplane --model xplane`` in Cygwin, reconnect to it by pressing *Connect* in Mission Planner, and repeat the above process for loading parameters from a file. This time everything will work smoothly.
  
    .. warning::
-      ArduPilot's parameters largely determine how an aircraft behaves, and setting them correctly is very important. This is especially true for :ref:`soaring-specific <soaring>` parameters. Failure to choose appropriate values for them can cause a sailplane to miss all thermals or repeatedly try to catch a thermal where there is none. Refer to `the instructions for calculating these parameters <https://ardupilot.org/plane/docs/soaring.html#tune-the-tecs>`_ for your sailplane model.    
+      ArduPilot's parameters largely determine how an aircraft behaves, and setting them correctly is very important. This is especially true for :ref:`soaring-specific <plane:soaring>` parameters. Failure to choose appropriate values for them can cause a sailplane to miss all thermals or repeatedly try to catch a thermal where there is none. Refer to `the instructions for calculating these parameters <https://ardupilot.org/plane/docs/soaring.html#tune-the-tecs>`_ for your sailplane model.    
   
    
    If everything has worked correctly so far, you should see the Cygwin window where you launched SITL start getting filled with notifications of the kind ``Data rate: 19.9 FPS  Frame rate:466.9 FPS``, like so: 

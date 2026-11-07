@@ -21,7 +21,7 @@ Overview of Steps
 Study the above video and README!
 
 #. Make sure you have a :ref:`build environment<building-the-code>` setup and working for normal firmware builds.
-#. Make sure you have the :ref:`latest MAVProxy<mavproxy-downloadinstall>` installed.
+#. Make sure you have the :ref:`latest MAVProxy<mavproxy:mavproxy-downloadinstall>` installed.
 #. Create a branch to develop the firmware locally.
 #. Create your public-private key pairs (normally up to two are allowed for your use).
 #. Build a securely signed bootloader for the autopilot.

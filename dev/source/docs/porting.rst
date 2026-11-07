@@ -4,7 +4,7 @@
 Porting to a new flight controller board
 ========================================
 
-ArduPilot :ref:`supports a wide variety of flight controllers <common-autopilots>` with new controllers being added all the time.  This page spells out the steps to port ArduPilot to a new board with an emphasis on porting to STM32 based boards (the most common type) using `ChibiOS <http://www.chibios.org/dokuwiki/doku.php>`__.
+ArduPilot :ref:`supports a wide variety of flight controllers <copter:common-autopilots>` with new controllers being added all the time.  This page spells out the steps to port ArduPilot to a new board with an emphasis on porting to STM32 based boards (the most common type) using `ChibiOS <http://www.chibios.org/dokuwiki/doku.php>`__.
 
 .. note:: Any firmware customization of ArduPilot code must abide by the terms of the GPL3.0+ open source software license. ArduPilot also reminds developers and manufacturers to adhere to the appropriate trademark and copyright laws when developing new autopilots
 
@@ -94,7 +94,7 @@ If successful the build should produce an .apj file in ``ardupilot/build/YourBoa
 
 Step 4 - Load and test the firmware
 -----------------------------------
-Use `dfu <http://dfu-util.sourceforge.net/>`__ to install the firmware to the board. See :ref:`common-loading-firmware-onto-chibios-only-boards`.
+Use `dfu <http://dfu-util.sourceforge.net/>`__ to install the firmware to the board. See :ref:`copter:common-loading-firmware-onto-chibios-only-boards`.
 
 .. note::
 

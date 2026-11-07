@@ -4,12 +4,12 @@
 Mission Planner GPS-based Antenna Tracking
 ==========================================
 
-This article explains how to build a GPS-based :ref:`Antenna Tracker <common-antenna-tracking>` that uses the :ref:`Mission Planner <planner:install-mission-planner>` GCS to provide directional/tracking information for a servo-driven directional antenna.
+This article explains how to build a GPS-based [site wiki="plane,copter,rover"]:ref:`Antenna Tracker <common-antenna-tracking>`\ [/site][site wiki="antennatracker"]:ref:`Antenna Tracker <copter:common-antenna-tracking>`\ [/site] that uses the :ref:`Mission Planner <planner:install-mission-planner>` GCS to provide directional/tracking information for a servo-driven directional antenna.
 
 .. note::
 
    This approach requires that the GCS is running on a PC that has
-   access to GPS information. See :ref:`Antenna Tracking <common-antenna-tracking>` for other options.
+   access to GPS information. See [site wiki="plane,copter,rover"]:ref:`Antenna Tracking <common-antenna-tracking>`\ [/site][site wiki="antennatracker"]:ref:`Antenna Tracking <copter:common-antenna-tracking>`\ [/site] for other options.
 
 Overview
 ========
@@ -40,7 +40,7 @@ system (it is not all inclusive with things like screws, glue etc.)
    `Maestro <https://www.pololu.com/product/1350>`__
 -  Tripod (or other mounting device)
 -  Battery
--  :ref:`Telemetry Radios <common-telemetry-landingpage>`
+-  [site wiki="plane,copter,rover"]:ref:`Telemetry Radios <common-telemetry-landingpage>` [/site][site wiki="antennatracker"]:ref:`Telemetry Radios <copter:common-telemetry-landingpage>` [/site]
 -  (Optional, recommended:) BEC, cooling fan, battery low voltage
    device.
 
@@ -390,7 +390,7 @@ Miscellaneous notes
 I have included pictures from all angles of my AT (version 2). A few
 pointers here. Build your AT as light as you can. Get as beefy of servos
 as you can afford and fit. You can make a wireless version of this AT if
-you have telemetry radios like the :ref:`3DR or the Xbee <common-telemetry-landingpage>` kits. I don't know how to do that
+you have telemetry radios like the [site wiki="plane,copter,rover"]:ref:`3DR or the Xbee <common-telemetry-landingpage>`\ [/site][site wiki="antennatracker"]:ref:`3DR or the Xbee <copter:common-telemetry-landingpage>`\ [/site] kits. I don't know how to do that
 but it is not going to be anymore complicated than what I have shown
 here, just more expensive.
 

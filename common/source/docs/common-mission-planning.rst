@@ -12,7 +12,7 @@ This section contains articles about creating missions that will run when the ve
 
 .. note::
 
-   The instructions focus on the :ref:`Mission Planner <planner:home>` but the main concepts apply to other :ref:`Ground Control Stations <common-choosing-a-ground-station>` as well
+   The instructions focus on the :ref:`Mission Planner <planner:home>` but the main concepts apply to other [site wiki="copter,plane,rover,sub"]:ref:`Ground Control Stations <common-choosing-a-ground-station>`\ [/site][site wiki="planner"]:ref:`Ground Control Stations <copter:common-choosing-a-ground-station>`\ [/site] as well
 
 .. toctree::
     :maxdepth: 1

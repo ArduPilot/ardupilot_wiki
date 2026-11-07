@@ -13,7 +13,7 @@ Avoidance in Loiter
 ..  youtube:: BDBSpR1Dw_8
     :width: 100%
 
-The video above shows a test of an EnRoute EX700 copter fitted with a :ref:`Lightware SF40C 360degree lidar<common-lightware-sf40c-objectavoidance>`.
+The video above shows a test of an EnRoute EX700 copter fitted with a :ref:`Lightware SF40C 360degree lidar<copter:common-lightware-sf40c-objectavoidance>`.
 The vehicle stops 2m from the fence regardless of the speed of the vehicle towards the fence.
 This is possible because ArduPilot knows the speed of the vehicle (using the GPS and accelerometers), the distance to the barrier and the maximum acceleration/deceleration of the vehicle.
 

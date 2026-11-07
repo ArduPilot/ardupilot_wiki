@@ -15,12 +15,12 @@ Recommended Hardware
     :target: ../_images/blueos-hardware.jpg
     :width: 400px
 
-- :ref:`ArduPilot compatible flight controller <common-autopilots>`
+- :ref:`ArduPilot compatible flight controller <copter:common-autopilots>`
 - `RPI4 I/O board <https://www.raspberrypi.com/products/compute-module-4-io-board/>`__ or `RPI5 I/O board <https://www.raspberrypi.com/products/compute-module-5-io-board/>`__
 - `RPI CM4 <https://www.raspberrypi.com/products/compute-module-4/>`__ or `CM5 <https://www.raspberrypi.com/products/compute-module-5/>`__
 - `Ochin Tiny Carrier Board V2 <https://www.seeedstudio.com/Ochin-Tiny-Carrier-Board-V2-for-Raspberry-Pi-CM4-p-5887.html>`__
-- :ref:`BotBlox DroneNet ethernet switch <common-botblox-dronenet>` or :ref:`CubeNodeETH <common-cubepilot-cubenodeeth>` and `CubeLan 8-port ethernet switch <https://docs.cubepilot.org/user-guides/switch/cubelan-8-port-switch>`__ (see :ref:`ethernet adapters <common-ethernet-adapters>`)
-- (optionally) Ethernet enabled camera gimbal (e.g. :ref:`Siyi A8 <common-siyi-zr10-gimbal>`)
+- :ref:`BotBlox DroneNet ethernet switch <copter:common-botblox-dronenet>` or :ref:`CubeNodeETH <copter:common-cubepilot-cubenodeeth>` and `CubeLan 8-port ethernet switch <https://docs.cubepilot.org/user-guides/switch/cubelan-8-port-switch>`__ (see :ref:`ethernet adapters <copter:common-ethernet-adapters>`)
+- (optionally) Ethernet enabled camera gimbal (e.g. :ref:`Siyi A8 <copter:common-siyi-zr10-gimbal>`)
 
 Ochin Ethernet Solder Bridge
 ----------------------------
@@ -114,11 +114,11 @@ Configure RPI/BlueOS's Ethernet IP to be the same subnet as the autopilot and ca
 
 Connect RPI/BlueOS to Autopilot and Camera:
 
-- Follow :ref:`DroneNet <common-botblox-dronenet>` or :ref:`CubeNodeETH <common-cubepilot-cubenodeeth>` setup instructions.  This should result in these IP addresses for other components:
+- Follow :ref:`DroneNet <copter:common-botblox-dronenet>` or :ref:`CubeNodeETH <copter:common-cubepilot-cubenodeeth>` setup instructions.  This should result in these IP addresses for other components:
 
   - DroneNet/CubeNodeETH: 192.168.144.14
   - Autopilot: 192.168.144.15
-  - :ref:`Siyi A8 <common-siyi-zr10-gimbal>`: 192.168.144.25
+  - :ref:`Siyi A8 <copter:common-siyi-zr10-gimbal>`: 192.168.144.25
 
 - On the autopilot, create an additional UDP Server connection for BlueOS to connect to:
 

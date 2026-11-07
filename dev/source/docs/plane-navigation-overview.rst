@@ -23,6 +23,6 @@ Auto-navigating modes call their ``navigation method``, usually involving a ``ve
 Altitude Control
 ================
 
-Altitude control is managed by :ref:`tecs-total-energy-control-system-for-speed-height-tuning-guide` using demanded altitude from the mode, in altitude controlled mode. Modes use the ``update_target_altitude`` to calculate demanded altitude for TECS which will calculate the altitude profile between waypoints(`setup_glide_slope <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/altitude.cpp#L55>`__ or maintain current altitude. Altitude target can be changed by MAVLink command (DO_CHANGE_ALT) or by stick control using ``update_fbwb_speed_height`` method.
+Altitude control is managed by :ref:`plane:tecs-total-energy-control-system-for-speed-height-tuning-guide` using demanded altitude from the mode, in altitude controlled mode. Modes use the ``update_target_altitude`` to calculate demanded altitude for TECS which will calculate the altitude profile between waypoints(`setup_glide_slope <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/altitude.cpp#L55>`__ or maintain current altitude. Altitude target can be changed by MAVLink command (DO_CHANGE_ALT) or by stick control using ``update_fbwb_speed_height`` method.
 
 .. note:: if you are actually moving away from the next waypoint, as usually the case if RTL climbing before turning toward home option is set, the prev_WP will have to be continuously reset to present position and the glide slope re-setup in order to continue to climb.

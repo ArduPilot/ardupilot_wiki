@@ -19,7 +19,7 @@ Video Manager for Cockpit
 
     - Set the "Stream nickname" to something like "Siyi A8" (anything is fine)
     - From the lower-left drop-down change select "RTSP"
-    - Under "Stream endpoint" enter the RTSP URL for your camera.  Please refer to the :ref:`ArduPilot wiki page for your camera gimbal <common-cameras-and-gimbals>` and check the "Ethernet Connectivity" section.  For the Siyi A8 it is normally ``rtsp://192.168.144.25:8554/main.264``
+    - Under "Stream endpoint" enter the RTSP URL for your camera.  Please refer to the :ref:`ArduPilot wiki page for your camera gimbal <copter:common-cameras-and-gimbals>` and check the "Ethernet Connectivity" section.  For the Siyi A8 it is normally ``rtsp://192.168.144.25:8554/main.264``
     - Push "Create"
 
   - after a few seconds a thumbnail from the camera may be displayed
@@ -49,7 +49,7 @@ To view the live video in Mission Planner or QGC, the RTSP Relay (aka MediaMTX) 
 2. On the PC, open a chrome browser and connect to BlueOs running on the vehicle by entering the vehicle's IP address (see :ref:`4G/LTE telemetry setup <companion-computer-blueos-lte-telem>`) or try http://blueos-wifi.local/
 3. From the left menu select "Extensions", find MediaMTX and push the "Get" button
 4. From the left menu select "RTSP Relay"
-5. Copy and paste the code below into the "MediaMTX Configuration" section, making sure to set the "source:" field to the RTSP URL appropriate for your camera.  This can be found on the :ref:`ArduPilot wiki page for your camera gimbal <common-cameras-and-gimbals>` in the "Ethernet Connectivity" section
+5. Copy and paste the code below into the "MediaMTX Configuration" section, making sure to set the "source:" field to the RTSP URL appropriate for your camera.  This can be found on the :ref:`ArduPilot wiki page for your camera gimbal <copter:common-cameras-and-gimbals>` in the "Ethernet Connectivity" section
 
 .. code-block:: yaml
 

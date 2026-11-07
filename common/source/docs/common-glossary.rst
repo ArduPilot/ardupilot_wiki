@@ -256,7 +256,7 @@ DIY Drones and other teams for source code.
 **Telemetry System**: A two way radio system to allow flight data to be
 sent from your aircraft and also to allow control or adjustment
 information to be sent back to it from a "ground station", commonly a
-laptop computer. See the :ref:`telemetry landing page <common-telemetry-landingpage>` for options.
+laptop computer. See the [site wiki="copter,plane,rover,sub,blimp"]:ref:`telemetry landing page <common-telemetry-landingpage>`\ [/site][site wiki="planner,planner2,antennatracker,dev,ardupilot,mavproxy"]:ref:`telemetry landing page <copter:common-telemetry-landingpage>`\ [/site] for options.
 
 **Thermopile**: An infrared detector. Often used in pairs in UAVs to
 measure tilt and pitch by looking at differences in the infrared

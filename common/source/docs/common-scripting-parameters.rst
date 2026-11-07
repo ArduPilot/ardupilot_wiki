@@ -72,7 +72,7 @@ How Parameters Work in ArduPilot
 ================================
 
 Parameters are defined in the firmware. Each parameter has a name, a default value, and value type(boolean,float, integer 8,etc).
-Upon boot up, the firmware creates RAM variables for each parameter and initializes them with a value. That value is the default if the parameter has never been changed by a user, or a value that has been stored in EEPROM of the autopilot, if it has been changed from default. If the parameters have been "reset" by the user (see :ref:`common-parameter-reset`) then the EEPROM storage for changes is blank and all default values are used.
+Upon boot up, the firmware creates RAM variables for each parameter and initializes them with a value. That value is the default if the parameter has never been changed by a user, or a value that has been stored in EEPROM of the autopilot, if it has been changed from default. If the parameters have been "reset" by the user (see [site wiki="copter,plane,rover,sub"]:ref:`common-parameter-reset`\ [/site][site wiki="dev"]:ref:`copter:common-parameter-reset`\ [/site]) then the EEPROM storage for changes is blank and all default values are used.
 
 The string names of the parameters are only used by the Ground Control Stations and LUA scripts. Access from within the C++ code is directly to addresses of the initialized parameter variables in RAM while executing, not by name strings.
 

@@ -17,7 +17,7 @@ The directory structure is:
 
 - APM: base directory
 - LOGS : flight logs are stored here (See :ref:`common-downloading-and-analyzing-data-logs-in-mission-planner`)
-- TERRAIN : terrain data is stored here (See :ref:`common-terrain-following`)
+- TERRAIN : terrain data is stored here (See :ref:`plane:common-terrain-following`)
 - STRNG_BAK: every boot the parameter data is backed up here
 - scripts: LUA scripts are stored here (See :ref:`common-lua-scripts`)
 

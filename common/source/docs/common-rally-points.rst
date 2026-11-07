@@ -59,7 +59,7 @@ The following steps are for specifying Rally Points in Mission Planner:
 
 The following should be considered when using Rally Points:
 
-#. If using a :ref:`geofence <common-geofencing-landing-page>`:
+#. If using a [site wiki="copter,plane,rover,sub"]:ref:`geofence <common-geofencing-landing-page>`\ [/site][site wiki="planner"]:ref:`geofence <copter:common-geofencing-landing-page>`\ [/site]:
    its HIGHLY recommended the Rally Points you intend to use at your event
    are inside the geofence.
 #. Make sure Rally Point altitudes are high enough to clear terrain and

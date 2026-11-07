@@ -19,7 +19,7 @@ To establish a connection you must first choose the communication
 method/channel you want to use, and then set up the physical hardware
 and Windows device drivers. You can connect the PC and autopilot using
 USB cables, :ref:`Telemetry Radios <copter:common-telemetry-landingpage>`,
-:ref:`Bluetooth <common-mission-planner-bluetooth-connectivity_detailed_connecting_with_mission_planner>`,
+[site wiki="plane,copter,rover,sub,blimp"]:ref:`Bluetooth <common-mission-planner-bluetooth-connectivity_detailed_connecting_with_mission_planner>`\ [/site][site wiki="planner"]:ref:`Bluetooth <copter:common-mission-planner-bluetooth-connectivity_detailed_connecting_with_mission_planner>`\ [/site],
 IP connections etc.
 
 .. note::
@@ -102,8 +102,8 @@ If Mission Planner is unable to connect:
 
 You should also ensure that the autopilot controller board has
 appropriate ArduPilot firmware installed and has booted correctly (on
-Pixhawk there are useful :ref:`LEDs <common-leds-pixhawk>` and
-:ref:`Sounds <common-sounds-pixhawkpx4>` which can tell you the state of the autopilot).
+Pixhawk there are useful [site wiki="plane,copter,rover,sub,blimp"]:ref:`LEDs <common-leds-pixhawk>`\ [/site][site wiki="planner"]:ref:`LEDs <copter:common-leds-pixhawk>`\ [/site] and
+[site wiki="plane,copter,rover,sub,blimp"]:ref:`Sounds <common-sounds-pixhawkpx4>`\ [/site][site wiki="planner"]:ref:`Sounds <copter:common-sounds-pixhawkpx4>`\ [/site] which can tell you the state of the autopilot).
 
 If using a remote link (not USB) and Mission Planner connects, but does not download parameters or you cannot get commands, like mode changes acted upon,then the autopilot probably has Signing turned on. See :ref:`common-MAVLink2-signing`.
 
@@ -142,6 +142,6 @@ The procedure to recover is as follows:
 Related topics
 ==============
 
-:ref:`Mission Planner Bluetooth Connectivity <common-mission-planner-bluetooth-connectivity_detailed_connecting_with_mission_planner>`
+[site wiki="plane,copter,rover,sub,blimp"]:ref:`Mission Planner Bluetooth Connectivity <common-mission-planner-bluetooth-connectivity_detailed_connecting_with_mission_planner>` [/site][site wiki="planner"]:ref:`Mission Planner Bluetooth Connectivity <copter:common-mission-planner-bluetooth-connectivity_detailed_connecting_with_mission_planner>` [/site]
 
 [copywiki destination="plane,copter,rover,planner,sub,blimp"]

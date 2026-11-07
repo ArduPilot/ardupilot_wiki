@@ -17,7 +17,7 @@ Attach the GPS to a DroneCAN Adapter's serial port
 
 Compass Setup
 =============
-Attach the Compass to the DroneCAN Adapter's external I2C port. It will appear as a normal Compass in ArduPilot and normal :ref:`compass setup procedures<common-compass-calibration-in-mission-planner>` would apply.
+Attach the Compass to the DroneCAN Adapter's external I2C port. It will appear as a normal Compass in ArduPilot and normal [site wiki="copter,plane,rover,sub"]:ref:`compass setup procedures<common-compass-calibration-in-mission-planner>`\ [/site][site wiki="dev"]:ref:`compass setup procedures<copter:common-compass-calibration-in-mission-planner>`\ [/site] would apply.
 
 .. note:: The MatekL431 CAN Adapter comes setup for a SPI connected Compass (RM3100). If an I2C Compass is attached, different firmware must be loaded for it to function.
 
@@ -30,7 +30,7 @@ Attach to the I2C bus pinned out from the DroneCAN Adapter.
 
 Rangefinder Setup
 =================
-To use rangefinders, follow the instructions at  :ref:`DroneCAN Setup Advanced<common-uavcan-setup-advanced>` to set up the ArduPilot parameters. Using MissionPlanner or DroneCAN Gui, set the parameters on the adaptor node following the instructions for the relevant rangefinder.
+To use rangefinders, follow the instructions at  [site wiki="copter,plane,rover,sub"]:ref:`DroneCAN Setup Advanced<common-uavcan-setup-advanced>`\ [/site][site wiki="dev"]:ref:`DroneCAN Setup Advanced<copter:common-uavcan-setup-advanced>`\ [/site] to set up the ArduPilot parameters. Using MissionPlanner or DroneCAN Gui, set the parameters on the adaptor node following the instructions for the relevant rangefinder.
 
 .. note:: The orientation of the rangefinder (RNGFND1_ORIENT) must be set to 0 on the adaptor node.
 

@@ -13,7 +13,7 @@ This page explains how to get ArduPilot firmware onto an autopilot: how to tell 
 Step 1: Connect the Autopilot to the Computer
 =============================================
 
-:ref:`Install a ground station <common-install-gcs>` on your computer, then connect the autopilot with a USB cable as shown below. Use a USB port directly on the computer, not a USB hub.
+[site wiki="copter,plane,rover,blimp,sub"]:ref:`Install a ground station <common-install-gcs>`\ [/site][site wiki="planner"]:ref:`Install a ground station <copter:common-install-gcs>`\ [/site] on your computer, then connect the autopilot with a USB cable as shown below. Use a USB port directly on the computer, not a USB hub.
 
 .. figure:: ../../../images/pixhawk_usb_connection.jpg
    :target: ../_images/pixhawk_usb_connection.jpg
@@ -34,7 +34,7 @@ Step 2: Check What is Already on the Autopilot
 
 ArduPilot firmware is loaded by a small program which permanently resides in the autopilot's flash, called the bootloader. ArduPilot's own bootloader, and the PX4 bootloader it descends from, both accept firmware from a ground station over USB. Bootloaders belonging to other firmware, such as the one shipped on most Betaflight flight controllers, do not, and must be replaced before ArduPilot can be loaded the first time.
 
-An ArduPilot compatible bootloader is normally already present if the autopilot was purchased from an `ArduPilot partner <https://ardupilot.org/about/Partners>`__, or if it has previously run ArduPilot or PX4 firmware. It is normally **not** present if the board was supplied running Betaflight, INAV, or similar, or if the board's page in :ref:`common-autopilots` says that ArduPilot must be loaded for the first time via DFU.
+An ArduPilot compatible bootloader is normally already present if the autopilot was purchased from an `ArduPilot partner <https://ardupilot.org/about/Partners>`__, or if it has previously run ArduPilot or PX4 firmware. It is normally **not** present if the board was supplied running Betaflight, INAV, or similar, or if the board's page in [site wiki="copter,plane,rover,blimp,sub"]:ref:`common-autopilots`\ [/site][site wiki="planner"]:ref:`copter:common-autopilots`\ [/site] says that ArduPilot must be loaded for the first time via DFU.
 
 If you are unsure, look at how the board appears to the computer with it plugged in as above.
 
@@ -100,7 +100,7 @@ Step 3: Load the Firmware
 
 **If it is not**, follow :ref:`common-loading-firmware-onto-chibios-only-boards`. The ArduPilot bootloader and firmware are downloaded as a single file and loaded together over USB in DFU mode using STM32CubeProgrammer. This is a one time operation: once it has succeeded the board has an ArduPilot bootloader, and all later updates use the ground station method above. That page also covers the boards which run from external flash, such as the SPRacing series, which need a different procedure again.
 
-.. note:: some autopilots with 1MB of flash do not include a copy of the bootloader in their firmware in order to save flash space. Those boards have a compatible bootloader installed, but it cannot be updated from within ArduPilot; see [site wiki="copter,plane,rover,planner,sub"]:ref:`common-bootloader-update`\ [/site][site wiki="blimp"]:ref:`copter:common-bootloader-update`\ [/site].
+.. note:: some autopilots with 1MB of flash do not include a copy of the bootloader in their firmware in order to save flash space. Those boards have a compatible bootloader installed, but it cannot be updated from within ArduPilot; see [site wiki="copter,plane,rover,sub"]:ref:`common-bootloader-update`\ [/site][site wiki="planner"]:ref:`copter:common-bootloader-update`\ [/site][site wiki="blimp"]:ref:`copter:common-bootloader-update`\ [/site].
 
 .. _loading-firmware-testing:
 
@@ -158,7 +158,7 @@ Mission Planner has an option on the **Install Firmware** page to upload this re
 Latest Developer Version
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-This reflects the current state of the development branch of the ArduPilot code. It has been reviewed by the development team, passed all automated test suites, and in most cases test flown. This code gets built daily and is available for testing by experienced users. This corresponds to an "alpha" release, and may have bugs, although very rarely "crash inducing". Very shortly after an addition that changes or introduces a feature is added, the :ref:`Upcoming Features <common-master-features>` section of the Wiki is updated with information about the addition or change.
+This reflects the current state of the development branch of the ArduPilot code. It has been reviewed by the development team, passed all automated test suites, and in most cases test flown. This code gets built daily and is available for testing by experienced users. This corresponds to an "alpha" release, and may have bugs, although very rarely "crash inducing". Very shortly after an addition that changes or introduces a feature is added, the [site wiki="copter,plane,rover,blimp,sub"]:ref:`Upcoming Features <common-master-features>`\ [/site][site wiki="planner"]:ref:`Upcoming Features <copter:common-master-features>`\ [/site] section of the Wiki is updated with information about the addition or change.
 
 This code must be manually downloaded from the `Firmware Downloads <https://firmware.ardupilot.org>`__ page as ``latest`` for your particular board, and then uploaded using your ground station's custom firmware option, or via DFU.
 
@@ -208,7 +208,7 @@ Firmware Feature Limitations
 
 Not every autopilot's firmware contains every ArduPilot feature. Autopilots with 1MB of flash, in particular, have features removed in order for the code to fit.
 
-- For a list of the features which are **not** included in the current "latest" firmware for a given autopilot, see :ref:`this page<binary-features>`. The definitive list for a specific board and firmware version is the ``features.txt`` file in that firmware's folder on the `firmware server <https://firmware.ardupilot.org/>`__. See :ref:`common-limited_firmware` for more detail, including RAM limitations.
+- For a list of the features which are **not** included in the current "latest" firmware for a given autopilot, see [site wiki="copter,plane,rover,blimp,sub"]:ref:`this page<binary-features>`\ [/site][site wiki="planner"]:ref:`this page<copter:binary-features>`\ [/site]. The definitive list for a specific board and firmware version is the ``features.txt`` file in that firmware's folder on the `firmware server <https://firmware.ardupilot.org/>`__. See [site wiki="copter,plane,rover,blimp,sub"]:ref:`common-limited_firmware`\ [/site][site wiki="planner"]:ref:`copter:common-limited_firmware`\ [/site] for more detail, including RAM limitations.
 - Every feature excluded from a 1MB autopilot by default is selectable on the `Custom Firmware Build Server <https://custom.ardupilot.org>`__. Many features which *are* included by default may not be needed for your application, so a custom build can add some of the excluded features while dropping unneeded ones. For example, omitting QuadPlane support frees space on a Plane which does not need it. Drivers and peripheral support can be selected individually, so that only those actually used take up flash.
 - The custom build server can build from the daily master branch, and from the Stable and Beta branches.
 

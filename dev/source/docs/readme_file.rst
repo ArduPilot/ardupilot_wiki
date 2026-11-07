@@ -107,7 +107,7 @@ Also, if a board alternate config can be used, it should be mentioned.
 
 Broad group names can be used, ie " Using the RCin pin will support all unidirectional RC protocols." Which would cover PPM, SBUS, iBus, PPM-Sum, DSM,DSM2,DSM-X,SRXL, and SUM-D".
 
-Bi-directional protocols like CRSF/ELRS,SRXL2,IRC Ghost, and FPort need specific instructions with at least CRSF/ELRS instructions and  a link to :ref:`common-rc-systems`.
+Bi-directional protocols like CRSF/ELRS,SRXL2,IRC Ghost, and FPort need specific instructions with at least CRSF/ELRS instructions and  a link to :ref:`copter:common-rc-systems`.
 
 .. _readme-osd:
 

@@ -61,7 +61,7 @@ The graph below shows an acceptable amount of magnetic interference with mag_fie
 Extra Notes:
 
 -  The length of the mag_field can be anywhere from 120 ~ 550 depending upon where in the world the vehicle is but it is normally around 330
--  The magnetic interference as a percentage of the total mag field is also displayed at the end of the compassmot set-up procedure.  Search for "CompassMot" on the :ref:`Advanced Compass Setup page <common-compass-setup-advanced>` page to learn more about compassmot
+-  The magnetic interference as a percentage of the total mag field is also displayed at the end of the compassmot set-up procedure.  Search for "CompassMot" on the [site wiki="copter,plane,rover,sub"]:ref:`Advanced Compass Setup page <common-compass-setup-advanced>`\ [/site][site wiki="dev,planner"]:ref:`Advanced Compass Setup page <copter:common-compass-setup-advanced>`\ [/site] page to learn more about compassmot
 -  Dataflash log's COMPASS message hold the compass's raw x, y and z axis values (called MagX, MagY, MagZ) which are equivalent to the tlog's RAW_IMU xmag, ymag and zmag fields.  It is possible to calculate the mag-field length by first loading the dataflash log file into excel, filtering by the COMPASS message and then calculating the mag-field using the formula mag_field = sqrt(MagX^2, MagY^2, MagZ^2).  Note that the COMPASS message is not enabled by default in the dataflash logs because it runs at 50hz and does affect CPU performance a bit.
 -  The image above it shows a short spike at the beginning of the graph but this can be ignored because it is before the throttle is raised so it is probably just as the user plugged in some other electrical device
 
@@ -87,7 +87,7 @@ See the :ref:`EKF failsafe <copter:ekf-inav-failsafe>` wiki page for more detail
 Power Problems (BrownOuts, etc)
 ===============================
 
-:ref:`Power Modules <common-powermodule-landingpage>` provide a reliable power supply to the autopilot but brown-outs do still occasionally occur.  They can normally be recognised by the logs suddenly ending while the vehicle is still in the air (i.e. barometer or EKF altitude is still reporting the vehicle's altitude is well above zero).
+[site wiki="copter,plane,rover,sub"]:ref:`Power Modules <common-powermodule-landingpage>`\ [/site][site wiki="dev,planner"]:ref:`Power Modules <copter:common-powermodule-landingpage>`\ [/site] provide a reliable power supply to the autopilot but brown-outs do still occasionally occur.  They can normally be recognised by the logs suddenly ending while the vehicle is still in the air (i.e. barometer or EKF altitude is still reporting the vehicle's altitude is well above zero).
 
 Try graphing the:
 

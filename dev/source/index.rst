@@ -35,8 +35,8 @@ New developers are always welcome! The best way to start is to:
 Why the name?
 =============
 
-The 'Ardu' part of the ArduPilot name comes from `Arduino <http://www.arduino.cc/>`__. The original :ref:`APM1 and APM2 <common-apm25-and-26-overview>` boards were based around the
-Arduino development environment and AVR CPUs. We long ago outgrew these boards so we recommend users use one of the many more capable boards found on our :ref:`Autopilot Hardware Options page <common-autopilots>` including the Pixhawk series.
+The 'Ardu' part of the ArduPilot name comes from `Arduino <http://www.arduino.cc/>`__. The original :ref:`APM1 and APM2 <copter:common-apm25-and-26-overview>` boards were based around the
+Arduino development environment and AVR CPUs. We long ago outgrew these boards so we recommend users use one of the many more capable boards found on our :ref:`Autopilot Hardware Options page <copter:common-autopilots>` including the Pixhawk series.
 
 A timeline history of ArduPilot can be found :ref:`here <history-of-ardupilot>`.
 

@@ -30,7 +30,7 @@ Capabilities
 - Dynamic or static CAN node allocation
 - Parameter storage in flash memory
 - Self-diagnostic and security: watchdog, CRC, autotest, etc.
-- Updates with MissionPlanner or DroneCAN tools like :ref:`common-uavcan-gui`
+- Updates with MissionPlanner or DroneCAN tools like :ref:`copter:common-uavcan-gui`
 
 Examples of using generic AP_Periph nodes are shown here:
 
@@ -44,10 +44,10 @@ Existing Products
 
 Some (but not all) product examples using AP-Periph:
 
-- :ref:`Mateksys M8Q<common-matek-m8q>`
+- :ref:`Mateksys M8Q<copter:common-matek-m8q>`
 - Hitec GNSS (`Septentrio Mosaic <https://hitecnology.com/drone-peripherals/hcs-positionpro-gnss-receiver>`__ )
-- :ref:`mRo UAVCAN/DroneCAN Adapter node<common-mro-uavcan-adapter-node>`
-- :ref:`Orange Cube<common-thecubeorange-overview>` (It is a flight controller, but it can also be used in AP_Periph. Similar node types to follow.)
+- :ref:`mRo UAVCAN/DroneCAN Adapter node<copter:common-mro-uavcan-adapter-node>`
+- :ref:`Orange Cube<copter:common-thecubeorange-overview>` (It is a flight controller, but it can also be used in AP_Periph. Similar node types to follow.)
 
 See: :ref:`DroneCAN Peripherals <copter:common-uavcan-peripherals>` for more devices
 

@@ -244,7 +244,7 @@ MAV_CMD_EXTERNAL_POSITION_ESTIMATE
 
 Unlike the continuous position/velocity streams described above, `MAV_CMD_EXTERNAL_POSITION_ESTIMATE (43003) <https://mavlink.io/en/messages/common.html#MAV_CMD_EXTERNAL_POSITION_ESTIMATE>`__ provides a single, occasional position correction while the EKF is dead reckoning without GPS.  It is intended for cases such as a remote pilot spotting a known landmark over an FPV video feed and nudging the vehicle's estimated position back onto it.
 
-This is only supported by EKF3 (not EKF2) and, like the rest of non-GPS navigation, requires a :ref:`board with more than 1MB of flash <common-non-gps-navigation-landing-page>`.
+This is only supported by EKF3 (not EKF2) and, like the rest of non-GPS navigation, requires a :ref:`board with more than 1MB of flash <copter:common-non-gps-navigation-landing-page>`.
 
 The command must be sent as a `COMMAND_INT <https://mavlink.io/en/messages/common.html#COMMAND_INT>`__ with ``frame`` set to ``MAV_FRAME_GLOBAL``:
 

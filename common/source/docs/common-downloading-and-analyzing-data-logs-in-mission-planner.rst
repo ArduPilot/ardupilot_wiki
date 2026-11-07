@@ -256,7 +256,7 @@ ATTITUDE logging will occur at highest rate of the selections.
 Message Details (Copter specific)
 =================================
 
-.. note:: Many messages are detailed in the :ref:`logmessages` page in each vehicle's wiki section.
+.. note:: Many messages are detailed in the [site wiki="copter,plane,rover,sub"]:ref:`logmessages`\ [/site][site wiki="dev,planner"]:ref:`copter:logmessages`\ [/site] page in each vehicle's wiki section.
 
 
 **ATT (attitude information):**
@@ -439,7 +439,7 @@ or unsigned 32bit integers):**
 **EKF (Extended Kalman Filter**):
 
 :ref:`Log information here <dev:extended-kalman-filter_interpreting_log_data>`
-(Dev Wiki). Overview :ref:`here <common-apm-navigation-extended-kalman-filter-overview>`.
+(Dev Wiki). Overview [site wiki="copter,plane,rover,sub"]:ref:`here <common-apm-navigation-extended-kalman-filter-overview>`\ [/site][site wiki="dev,planner"]:ref:`here <copter:common-apm-navigation-extended-kalman-filter-overview>`\ [/site].
 
 **ERR (an error message):**
 
