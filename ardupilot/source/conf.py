@@ -374,6 +374,7 @@ html_js_files = [
 
 # Intersphinx mapping config (done globally)
 intersphinx_mapping = common_conf.intersphinx_mapping
+intersphinx_disabled_reftypes = common_conf.intersphinx_disabled_reftypes
 
 
 def setup(app):

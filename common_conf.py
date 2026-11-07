@@ -63,6 +63,11 @@ WIKI_KEYS = [
 # Build mapping programmatically (remote auto-discovery by using None for objects.inv)
 intersphinx_mapping = {k: (intersphinx_base_url % k, None) for k in WIKI_KEYS}
 
+# Only resolve a cross-wiki ref when it names the wiki, e.g. :ref:`copter:label`.
+# A ref without a wiki prefix must be defined in the wiki being built, so a
+# missing local label is a build warning instead of a silent link to another wiki.
+intersphinx_disabled_reftypes = ['*']
+
 
 # Suppress warnings that slow down builds (already have nitpicky = False)
 suppress_warnings = [
