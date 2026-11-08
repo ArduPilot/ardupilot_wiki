@@ -358,14 +358,14 @@ To enable Rangefinder, ``RNGFNDx_TYPE`` should be set to 100 (SITL). Parameters 
 
     # First Rangefinder (Distance Sensor in AirSim), facing down
     RNGFND1_TYPE 100
-    RNGFND1_MIN_CM 0
-    RNGFND1_MAX_CM 4000
+    RNGFND1_MIN 0
+    RNGFND1_MAX 40
     RNGFND1_ORIENT 25
 
     # Second one, facing forward
     RNGFND2_TYPE 100
-    RNGFND2_MIN_CM 0
-    RNGFND2_MAX_CM 4000
+    RNGFND2_MIN 0
+    RNGFND2_MAX 40
     RNGFND2_ORIENT 0
 
 Rangefinders can be used for Obstacle Avoidance, precise altitude measurement. Currently ArduPilot supports upto 10 rangefinders.
