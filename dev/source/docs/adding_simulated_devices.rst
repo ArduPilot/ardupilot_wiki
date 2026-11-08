@@ -264,8 +264,8 @@ A rangefinder is currently required for precision landing.  Enable a simulated r
 ::
 
    param set RNGFND1_TYPE 1
-   param set RNGFND1_MIN_CM 0
-   param set RNGFND1_MAX_CM 4000
+   param set RNGFND1_MIN 0
+   param set RNGFND1_MAX 40
    param set RNGFND1_PIN 0
    param set RNGFND1_SCALING 12.12
 
