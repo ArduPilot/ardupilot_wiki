@@ -65,7 +65,7 @@ Altitude Tuning
 
 The QHOVER (altitude hold) related tuning parameters are related to the vertical position controller and the motor thrust scaling, which linearizes the throttle to motor thrust response to improve the position controllers response.
 
-The ``Q_P_POSZ_P`` parameter is used to convert the altitude error (the difference between the desired altitude and the actual altitude) to a desired climb or descent rate. A higher rate will make it more aggressively attempt to maintain it’s altitude but if set too high leads to a jerky throttle response.
+The :ref:`Q_P_D_POS_P<Q_P_D_POS_P>` parameter is used to convert the altitude error (the difference between the desired altitude and the actual altitude) to a desired climb or descent rate. A higher rate will make it more aggressively attempt to maintain it’s altitude but if set too high leads to a jerky throttle response.
 
 The :ref:`Q_P_D_VEL_P<Q_P_D_VEL_P>` (which normally requires no tuning) converts the desired climb or descent rate into a desired acceleration up or down.
 
