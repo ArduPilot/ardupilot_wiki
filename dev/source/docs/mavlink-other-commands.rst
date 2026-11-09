@@ -20,7 +20,6 @@ These MAV_CMDs should be packaged within a `COMMAND_LONG <https://mavlink.io/en/
 - :ref:`MAV_CMD_DO_GRIPPER <copter:mav_cmd_do_gripper>`
 - `MAV_CMD_DO_MOTOR_TEST <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_DO_MOTOR_TEST>`__
 - :ref:`MAV_CMD_DO_PARACHUTE <copter:mav_cmd_do_parachute>`
-- `MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN <https://mavlink.io/en/messages/common.html#MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN>`__
 - :ref:`MAV_CMD_DO_REPEAT_SERVO <copter:mav_cmd_do_repeat_servo>`
 - :ref:`MAV_CMD_DO_REPEAT_RELAY <copter:mav_cmd_do_repeat_relay>`
 - `MAV_CMD_DO_SEND_BANNER <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_DO_SEND_BANNER>`__
@@ -37,6 +36,31 @@ These MAV_CMDs should be packaged within a `COMMAND_LONG <https://mavlink.io/en/
 - `MAV_CMD_DO_START_MAG_CAL <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_DO_START_MAG_CAL>`__
 - `MAV_CMD_DO_ACCEPT_MAG_CAL <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_DO_ACCEPT_MAG_CAL>`__
 - `MAV_CMD_DO_CANCEL_MAG_CAL <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_DO_CANCEL_MAG_CAL>`__
+
+.. _mavlink-other-commands-power-off:
+
+Remote Power Off
+================
+
+In firmware 4.8 and later, an autopilot whose hwdef.dat defines a power control pin can switch its own power off when it receives `MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN <https://mavlink.io/en/messages/common.html#MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN>`__ with param1 = 2 (shutdown). Autopilots without the pin reject the shutdown request. The board's hwdef.dat must set the GPIO number of the output pin that controls the power, and the pin level that turns the power off:
+
+::
+
+    define AP_POWER_CONTROL_GPIO 12
+    define AP_POWER_CONTROL_GPIO_VALUE_OFF 1
+
+The command is refused while the vehicle is armed. When it is accepted, the autopilot:
+
+- stops its servo and motor outputs and forces the safety state on
+- saves any parameter changes not yet written to storage
+- plays the power off tones
+- sends a "Vehicle powering off" message to the ground station
+- sends a `MAV_CMD_POWER_OFF_INITIATED <https://mavlink.io/en/messages/common.html#MAV_CMD_POWER_OFF_INITIATED>`__ command to the other MAVLink components with the same system ID (for example a companion computer), so they can shut down cleanly
+- refuses to arm, even if arming is forced, with a "Power off pending" pre-arm failure
+
+5 seconds later it sets the power control pin to its off level. The delay can be changed with ``define AP_POWEROFF_DELAY_MS`` in the hwdef.dat. A delay of 0 sets the pin straight away, without the steps above.
+
+SITL defines a power control pin, and exits when sent the shutdown command, so this can be tested in simulation.
 
 Other commands
 ==============

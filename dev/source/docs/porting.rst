@@ -58,6 +58,8 @@ Step 2 - create a hwdef.dat and hwdef-bl.dat files for the board
 
 .. tip:: A list of some DEFINE statements that can be included in the hwdef.dat file to change parameter defaults are on this page: :ref:`hwdef-parameter-defaults`
 
+.. tip:: If the board can switch off its own power from a GPIO pin, see :ref:`mavlink-other-commands-power-off` for the hwdef.dat defines that let a ground station or companion computer power it off with a MAVLink command.
+
 .. _build_firmware:
 
 Step 3 - Build the firmware
