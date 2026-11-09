@@ -57,3 +57,11 @@ Sub provides access to many functionalities through its fine-grained :ref:`param
 
 **No programming is required** for standard operation, but highly detailed interfaces are available for programmatic control (including :ref:`MAVLink commands<dev:mavlink-commands>`), and the autopilot firmware can be freely modified and extended (including through dynamically loaded :ref:`common-lua-scripts`).
 
+Developer Presentations
+=======================
+
+ArduPilot Developer Conference, 2026
+------------------------------------
+.. youtube:: nlb4M2t6Odk
+   :width: 100%
+
