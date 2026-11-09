@@ -63,8 +63,10 @@ New Features
 - MAVLink 2.1 32-bit system IDs: MAV_SYSID, MAV_GCS_SYSID(_HI), FOLL_SYSID and MNTx_SYSID_DFLT accept values up to 4294967295, and SD-card Lua MAVLink modules must be updated, see https://github.com/ArduPilot/ardupilot_wiki/pull/8149
 - CRSF/ELRS on an F4/F7 UART without RX DMA now gives a repeating GCS warning while disarmed, see https://github.com/ArduPilot/ardupilot_wiki/pull/8151
 - Duplicate RCx_OPTION and mode channel/RCx_OPTION conflicts are now reported as pre-arm failures while disarmed, even with no RC input, and are only skipped by the ARMING_SKIPCHK RC bit, see https://github.com/ArduPilot/ardupilot_wiki/pull/8154
+- Autopilots with a power control pin defined in their hwdef.dat can be powered off by MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN (param1 = 2), see https://github.com/ArduPilot/ardupilot_wiki/pull/8260
 - EK3_MAG_CAL = 7 learns the compass field on the ground and after the first in-flight yaw reset, but not during the initial climb, for compasses close to the motors, see https://github.com/ArduPilot/ardupilot_wiki/pull/8210
 - STM32H7 firmware built with --enable-USB-debug can be debugged with GDB over USB without a debug probe, see https://github.com/ArduPilot/ardupilot_wiki/pull/8156
+- SERIAL_PASS1 and SERIAL_PASS2 can now pass through to networking, DroneCAN serial and scripting serial ports, see https://github.com/ArduPilot/ardupilot_wiki/pull/8258
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
@@ -73,6 +75,7 @@ New Features
 - Q_RTL_PAUSE_TIME pauses above the landing point before the final VTOL descent, defaulting to 5s on tailsitters, see https://github.com/ArduPilot/ardupilot_wiki/pull/8059
 - Automatic flap speed schedule reworked: target airspeed is used without needing an airspeed sensor, with AIRSPEED_CRUISE as the fallback, see https://github.com/ArduPilot/ardupilot_wiki/pull/8060
 - ALT_OFFSET now always resets to zero at boot, and new FLIGHT_OPTIONS bit 17 also resets it on flight mode and AUTO navigation command changes, see https://github.com/ArduPilot/ardupilot_wiki/pull/8094
+- AUTOLAND now limits bank angle to LEVEL_ROLL_LIMIT during the flare, as AUTO mode landings do, see https://github.com/ArduPilot/ardupilot_wiki/pull/8262
 [/site]
 [site wiki="copter"]
 - Ability to abort flip using aux switch low, see https://github.com/ArduPilot/ardupilot_wiki/pull/7759
