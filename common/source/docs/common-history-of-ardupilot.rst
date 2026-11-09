@@ -246,6 +246,10 @@ May 2025 - Plane, Copter, Rover, Tracker `4.6.0 released <https://discuss.ardupi
 
 Oct 2025 - `ArduPilot Developer Conference held in Richmond, UK <https://discuss.ardupilot.org/t/ardupilot-conference-2025-thanks/138764>`__
 
+Jul 2026 - Plane, Copter, Rover, Tracker, Sub `4.7.0 released <https://discuss.ardupilot.org/t/copter-4-7-0-released/144650>`__
+
+Oct 2026 - `ArduPilot Developer Conference held in Ottawa, Canada <https://discuss.ardupilot.org/t/ardupilot-developers-conference-2026-ottawa/145914>`__
+
 .. note::
 
    The above list includes many of the major milestones for the project.  Please see the
