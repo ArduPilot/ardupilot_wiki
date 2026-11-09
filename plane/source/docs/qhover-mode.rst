@@ -47,7 +47,7 @@ Tuning
 ======
 
 
-The ``Q_P_POSZ_P`` is used to convert the altitude error (the
+The :ref:`Q_P_D_POS_P<Q_P_D_POS_P>` is used to convert the altitude error (the
 difference between the desired altitude and the actual altitude) to a
 desired climb or descent rate.  A higher rate will make it more
 aggressively attempt to maintain it’s altitude but if set too high leads
