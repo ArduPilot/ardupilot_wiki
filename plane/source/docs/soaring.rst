@@ -24,12 +24,12 @@ minimal use of the motor (soaring). Its full technical description is available 
 This picture shows the different phases of flight when using the soaring
 functionality:
 
-#. If modes AUTO, FBWB or CRUISE are entered, and Soaring is enabled, the throttle is set to zero provided the aircraft is above :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` altitude and the aircraft then begins gliding.
+#. If modes AUTO, FBWB, CRUISE, GUIDED or LOITER are entered, and Soaring is enabled, the throttle is set to zero provided the aircraft is above :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` altitude and the aircraft then begins gliding.
 #. In AUTO, if the aircraft descends to :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` altitude, throttle is re-enabled and the aircraft will begin to climb to the altitude of the next waypoint. If that waypoint altitude is less than :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` altitude, then Soaring can not begin before reaching the waypoint. If it is above :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` altitude, then Soaring can occur once that altitude has been reached. In FBWB or CRUISE modes, if  :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` altitude is reached, an RTL will be initiated, so the pilot must disable Soaring, or change to a mode other than FBWB or CRUISE to climb back above :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` to begin gliding again and prevent an RTL beginning.
 #. When the aircraft reaches :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` altitude, throttle is set to zero again.
 #. If, during gliding flight, the air is estimated to be rising at more than
-   :ref:`SOAR_VSPEED<SOAR_VSPEED>` and the :ref:`RC switch position<soaring_rc-switch>` allows it, the aircraft will automatically enter LOITER mode. While in LOITER mode the aircraft will adjust the loiter position to better centre the thermal.
-#. LOITER mode is exited under the following conditions:
+   :ref:`SOAR_VSPEED<SOAR_VSPEED>` and the :ref:`RC switch position<soaring_rc-switch>` allows it, the aircraft will automatically enter THERMAL mode. While in THERMAL mode the aircraft will adjust the loiter position to better centre the thermal.
+#. THERMAL mode is exited under the following conditions:
 
    - :ref:`SOAR_ALT_MAX<SOAR_ALT_MAX>` is reached.
    - :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` is reached.
@@ -38,7 +38,7 @@ functionality:
      thermalling has lasted at least :ref:`SOAR_MIN_THML_S<SOAR_MIN_THML_S>` seconds.
    - The aircraft drifts more than :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` - see :ref:`Limit maximum distance from home<soaring_maximum-distance-from-home>`
 
-   The flight mode will be returned to whatever it was before LOITER was 
+   The flight mode will be returned to whatever it was before THERMAL was 
    triggered. As an exception to this, if the previous mode was FBWB or 
    CRUISE, and thermalling ended due to reaching :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>`,
    RTL will be triggered instead.
@@ -107,8 +107,9 @@ You can use a 2-position RC switch to control when the autopilot can use soaring
 
  - Below 1700us. Soaring is disabled (equivalent to setting SOAR_ENABLE = 0). Throttle will be used as normal. Switching to this from either of the positions below, will disable Soaring and maintain the current flight mode.
  
- - Above 1700us. Fully automatic mode changes to LOITER from AUTO, FBWB or CRUISE modes in response to detected rising air, and following of rising air currents.
+ - Above 1700us. Fully automatic mode changes to THERMAL from AUTO, FBWB or CRUISE modes in response to detected rising air, and following of rising air currents.
 
+In supported modes (not AUTO) the vehicle will maintain current altitude when soaring is disabled.
 
 Loiter radius 
 ~~~~~~~~~~~~~
@@ -150,7 +151,7 @@ Tuning
 Triggering lift
 ---------------
 
-:ref:`SOAR_VSPEED<SOAR_VSPEED>` controls when the mode will be changed to LOITER to begin thermalling. The default of 0.7m/s
+:ref:`SOAR_VSPEED<SOAR_VSPEED>` controls when the mode will be changed to THERMAL to begin thermalling. The default of 0.7m/s
 may be too low if you fly in strong conditions. Increasing this value makes the aircraft more "picky" about the lift it will
 try to circle in.
 
@@ -167,9 +168,9 @@ Time hysteresis
 
 Adding hysteresis can reduce the frequency of mode changes.
 
-:ref:`SOAR_MIN_THML_S<SOAR_MIN_THML_S>`: Minimum time to remain in LOITER once entered for a thermal before exiting due to low lift or altitude limits.
+:ref:`SOAR_MIN_THML_S<SOAR_MIN_THML_S>`: Minimum time to remain in THERMAL once entered for a thermal before exiting due to low lift or altitude limits.
 
-:ref:`SOAR_MIN_CRSE_S<SOAR_MIN_CRSE_S>`: Minimum time to remain in glide after exiting LOITER due to low lift or altitude limits before entering LOITER mode again, or when entering Soaring initially.
+:ref:`SOAR_MIN_CRSE_S<SOAR_MIN_CRSE_S>`: Minimum time to remain in glide after exiting THERMAL due to low lift or altitude limits before entering THERMAL mode again, or when entering Soaring initially.
 
 TECS Tuning
 -----------
