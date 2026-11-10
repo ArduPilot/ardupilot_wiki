@@ -690,25 +690,21 @@ be digital GPIO outputs/inputs. These are the first 6 of the 14 three-pin
 servo connectors on the end of the board. They are marked as AUX servo
 pins 1 - 6 on the silkscreen as seen above.
 
-To set the number of these pins that are available as digital
-inputs/outputs, set the ``BRD_PWM_COUNT`` parameter. On Pixhawk this
-defaults to 4, which means the first 4 AUX connectors are for servos
-(PWM) and the last 2 are for digital inputs/outputs. If you set
-``BRD_PWM_COUNT`` to 0 then you would have 6 virtual digital pins and
-still have 8 PWM outputs on the rest of the connector.
+By default all 6 are servo (PWM) outputs. To use one as a digital
+input/output instead, set the ``SERVOx_FUNCTION`` parameter of that
+output to "-1" (AUX 1 to AUX 6 are outputs 9 to 14, so ``SERVO9_FUNCTION``
+to ``SERVO14_FUNCTION``), as described in the note below.
 
 .. note:: To set a PWM/SERVO/MOTOR output to be a GPIO, set its ``SERVOx_FUNCTION`` parameter to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
 
 The 6 possible pins are available for PIN variables as pin numbers 50 to
 55 inclusive.
 
-In summary:
+In summary, when set up as GPIOs:
 
-If ``BRD_PWM_CNT`` = 2 then
+50 = Aux 1
 
-50 = RC9
-
-51 = RC10
+51 = Aux 2
 
 52 = Aux 3
 
@@ -718,35 +714,7 @@ If ``BRD_PWM_CNT`` = 2 then
 
 55 = Aux 6
 
-If ``BRD_PWM_CNT`` = 4 then
-
-50 = RC9
-
-51 = RC10
-
-52 = RC11
-
-53 = RC12
-
-54 = Aux 5
-
-55 = Aux 6
-
-If ``BRD_PWM_CNT`` = 6 then
-
-50 = RC9
-
-51 = RC10
-
-52 = RC11
-
-53 = RC12
-
-54 = RC13
-
-55 = RC14
-
-By default, the pins are digital outputs as outlined above. A digital
+Once set up as GPIOs, the pins are digital outputs by default. A digital
 pin will instead be a digital input if it is assigned to a parameter
 that represents a digital input. For example, setting [site wiki="plane,copter,rover,sub"]:ref:`CAM1_FEEDBAK_PIN<CAM1_FEEDBAK_PIN>` [/site][site wiki="blimp"]:ref:`CAM1_FEEDBAK_PIN<copter:CAM1_FEEDBAK_PIN>` [/site]
 to 50 will make pin 50 the digital input that receives a signal from the

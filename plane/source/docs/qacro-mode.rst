@@ -11,27 +11,27 @@ Training mode is not implemented and this mode will behave similarly to a fixed 
 Aileron and elevator stick scalings are set by parameters :ref:`Q_ACRO_RLL_RATE<Q_ACRO_RLL_RATE>` and :ref:`Q_ACRO_PIT_RATE<Q_ACRO_PIT_RATE>`, respectively, with default of 180 deg/sec. Yaw stick scaling is set by :ref:`Q_ACRO_YAW_RATE<Q_ACRO_YAW_RATE>` with default of 90 deg/sec.
 
 To avoid control surface oscillation, it is necessary to reduce control surface deflections at high airspeeds in VTOL modes.  If the vehicle has no airspeed sensor, this reduction is based on attitude (tilt angle from vertical) and throttle setting, since these are generally correlated with airspeed. If an airspeed sensor is available, the reduction is based on the measured airspeed.
-There are 2 parameters which control gain scaling: :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK>` and :ref:`Q_TAILSIT_GSCMIN<Q_TAILSIT_GSCMIN>`
+There are 3 parameters which control gain scaling: :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK>`, :ref:`Q_TAILSIT_GSCMAX<Q_TAILSIT_GSCMAX>` and :ref:`Q_TAILSIT_GSCMIN<Q_TAILSIT_GSCMIN>`
 
 :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK>` is a bitmask with two bits:
 BOOST (bit 0): boost gain at low throttle and
 ATT THR (bit 1): reduce gain at high throttle/tilt
-If BOOST is set, parameter ``Q_TAILSIT_THSCMX`` determines whether gain boost (default 2) is applied below hover throttle (used for hovering a conventional 3D plane)
-If ATT THR is set, attenuation is applied at high throttle and tilt angles (used for "copter" tailsitters). :ref:`Q_TAILSIT_GSC_MIN<Q_TAILSIT_GSCMIN>` (default 0.4) sets the minimum gain scaling at high throttle/tilt angle when ATT THR is active.
+If BOOST is set, parameter :ref:`Q_TAILSIT_GSCMAX<Q_TAILSIT_GSCMAX>` determines whether gain boost (default 2) is applied below hover throttle (used for hovering a conventional 3D plane)
+If ATT THR is set, attenuation is applied at high throttle and tilt angles (used for "copter" tailsitters). :ref:`Q_TAILSIT_GSCMIN<Q_TAILSIT_GSCMIN>` (default 0.4) sets the minimum gain scaling at high throttle/tilt angle when ATT THR is active.
 
 Parameter summary:
 
 1. If gain boost at low throttle values is desired:
     a) Set bit 0 of :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK>` (value 1).
-    b) Set ``Q_TAILSIT_THSCMX`` to the maximum boost value desired.
+    b) Set :ref:`Q_TAILSIT_GSCMAX<Q_TAILSIT_GSCMAX>` to the maximum boost value desired.
 
 2. If attitude/throttle based gain attenuation is desired to reduce oscillation at higher airspeeds in VTOL modes:
-    a) Set bit 1 of :ref:`Q_TAILSIT_GSC_MSK<Q_TAILSIT_GSCMSK>` (value 2).
-    b) Set :ref:`Q_TAILSIT_GSC_MIN<Q_TAILSIT_GSCMIN>` to minimum desired scale (greater than zero and less than 1) for gain  attenuation based on attitude and throttle. Reduce this value if oscillation occurs at high airspeeds.
+    a) Set bit 1 of :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK>` (value 2).
+    b) Set :ref:`Q_TAILSIT_GSCMIN<Q_TAILSIT_GSCMIN>` to minimum desired scale (greater than zero and less than 1) for gain  attenuation based on attitude and throttle. Reduce this value if oscillation occurs at high airspeeds.
 
 3. If both gain scaling functions are desired:
-    a) Set :ref:`Q_TAILSIT_GSC_MSK<Q_TAILSIT_GSCMSK>` to 3.
-    b) Set ``Q_TAILSIT_THSCMX`` and :ref:`Q_TAILSIT_GSC_MIN<Q_TAILSIT_GSCMIN>` as desired.
+    a) Set :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK>` to 3.
+    b) Set :ref:`Q_TAILSIT_GSCMAX<Q_TAILSIT_GSCMAX>` and :ref:`Q_TAILSIT_GSCMIN<Q_TAILSIT_GSCMIN>` as desired.
 
 QACRO flying tips:
 

@@ -615,11 +615,8 @@ The Durandal has one builtin IST8310 compass.
 GPIOs
 =====
 
-The 8 AUX PWM ports can be used as GPIOs (relays, buttons, RPM etc). To
-use them you need to limit the number of these pins that is used for
-PWM by setting the ``BRD_PWM_COUNT`` to a number less than 8. For example
-if you set it to 6 then PWM7 and PWM8 will be available for
-use as GPIOs.
+The 8 AUX PWM ports can be used as GPIOs (relays, buttons, RPM etc), as
+described in the note below.
 
 .. note:: To set a PWM/SERVO/MOTOR output to be a GPIO, set its ``SERVOx_FUNCTION`` parameter to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
 
