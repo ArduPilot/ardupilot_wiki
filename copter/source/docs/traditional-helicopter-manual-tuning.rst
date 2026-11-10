@@ -6,7 +6,7 @@ Manual Tuning Instructions
 
 Pitch and Roll Axes
 ===================
-Setting ``ATC_RAT_xxx_FF`` and ``ATC_ACCEL_x_MAX`` Parameters for Desired Pitch and Roll Response
+Setting ``ATC_RAT_xxx_FF`` and ``ATC_ACC_x_MAX`` Parameters for Desired Pitch and Roll Response
 -------------------------------------------------------------------------------------------------
 
 In both pitch and roll axes, the ``ATC_RAT_xxx_FF`` gain is set so that the actual aircraft
@@ -25,7 +25,7 @@ then you'll want to decrease ``ATC_RAT_xxx_FF``. If it is less, increase ``ATC_R
 If the desired and actual rates are offset by some amount, it means that your swash was not 
 properly leveled in the setup. In this case, just make sure the change in rate is similar in 
 amplitude between desired and actual.  If you get the rates to match and they feel like they 
-are too fast, then reduce the ``ATC_ACCEL_x_MAX`` parameter and repeat the process above to 
+are too fast, then reduce the ``ATC_ACC_x_MAX`` parameter and repeat the process above to 
 match the desired and actual rates. 
 
 If while tuning the ``ATC_RAT_xxx_FF`` gain the aircraft starts to oscillate, reduce the 

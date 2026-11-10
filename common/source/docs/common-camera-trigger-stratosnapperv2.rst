@@ -95,7 +95,7 @@ configure Pixhawk AUX output as a servo camera trigger.
 The parameters used to configure this Stratosnapper/IR/NEX5 hardware are
 listed below:
 
--  ``CAM_TRIG_TYPE``: 0 (Servo).
+-  :ref:`CAM1_TYPE<CAM1_TYPE>`: 1 (Servo).
 -  ``Shutter (Port)``: RC10 (AUX2).
 -  ``Shutter Pushed``: 1800
 -  ``Shutter Not Pushed``: 1100

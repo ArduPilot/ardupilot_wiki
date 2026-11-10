@@ -52,6 +52,6 @@ Here are some general tips about inverted flight
   inverted flight. Depending on your airframe, you could lose a lot of
   height while flipping over, and it may be that your airframe
   struggles to maintain height while inverted
-- make sure your ``PTCH2SRV_I`` value and ``PTCH2SRV_IMAX`` is high
+- make sure your :ref:`PTCH_RATE_I<PTCH_RATE_I>` value and :ref:`PTCH_RATE_IMAX<PTCH_RATE_IMAX>` are high
   enough. Planes commonly need more pitch trim while inverted to hold
   height.

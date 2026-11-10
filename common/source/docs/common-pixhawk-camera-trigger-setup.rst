@@ -132,17 +132,17 @@ e) Proceed to the CONFIG/TUNING -> EXTENDED TUNING screen in Mission Planner and
 .. note:: Any GPIO can be assigned as the Camera Trigger pin via its ``SERVOx_FUNCTION`` parameter, and any RC channel can be assigned to control that trigger via its ``RCx_OPTION`` parameter.
 
 
-f) Navigate to the FULL PARAMETER LIST under the main CONFIG/TUNING tab and locate the ``CAMx_TRIGG_TYPE`` parameter. This parameter must show as 1 for “RELAY”. If it is not set to 1, change this parameter to 1 before proceeding to the next step.
+f) Navigate to the FULL PARAMETER LIST under the main CONFIG/TUNING tab and locate the ``CAMx_TYPE`` parameter. This parameter must show as 2 for “Relay”. If it is not set to 2, change this parameter to 2 before proceeding to the next step.
 
 .. image:: ../../../images/CTimage15.png
     :width: 450px
 
-g) Scroll down through the parameters until you get to ``RELAYx_PIN`` (for the first relay pin...there can be up to 6) . Here you will want to set the ``RELAY_PIN``  parameter to match the GPIO pin you have connected the shutter release cable to. Since we have connected the cable to AUX6 on a Pixhawk, we need to change the ``RELAYx_PIN``  parameter to “55” (55:Pixhawk AUXOUT6).
+g) Scroll down through the parameters to the relay you will use (there can be up to 6) and set its ``RELAYx_FUNCTION`` to 4 (Camera), for example :ref:`RELAY1_FUNCTION<RELAY1_FUNCTION>` = 4. Click “WRITE PARAMS” and then “Refresh Params” so that the rest of that relay's parameters are shown. Then locate ``RELAYx_PIN``. Here you will want to set the ``RELAYx_PIN``  parameter to match the GPIO pin you have connected the shutter release cable to. Since we have connected the cable to AUX6 on a Pixhawk, we need to change the ``RELAYx_PIN``  parameter to “55” (55:Pixhawk AUXOUT6).
 
 .. image:: ../../../images/CTimage16.png
     :width: 450px
 
-h) Now that the required parameters have been changed, click on “WRITE PARAMS”
+h) Now that the required parameters have been changed, click on “WRITE PARAMS” and then reboot the autopilot, since the camera trigger type only takes effect at boot
 
 .. image:: ../../../images/CTimage17.png
     :width: 450px

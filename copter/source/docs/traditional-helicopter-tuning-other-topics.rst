@@ -7,10 +7,11 @@ Additional Tuning Topics
 Tuning ACCEL MAX and Feel
 =========================
 
-The final setting for ``ATC_ACCEL_x_MAX`` parameters will depend on the size of the
-helicopter.  Large 800-900 class machines will typically be in the 36000-52000 
-range; smaller 450-500 class machines will typically be in the 90000-110000 
-range. You may want to experiment with the :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter as well to get
+The final setting for ``ATC_ACC_x_MAX`` parameters will depend on the size of the
+helicopter.  Large 800-900 class machines will typically be in the 360-520 deg/s/s
+range; smaller 450-500 class machines will typically be in the 900-1100 deg/s/s
+range. In firmware 4.6 and earlier these were the ``ATC_ACCEL_x_MAX`` parameters, in centidegrees/s/s
+(36000-52000 and 90000-110000 respectively). You may want to experiment with the :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter as well to get
 the initial aircraft response the way you like it.  It is recommended to keep the
 :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter between 0.15 and 0.25.  Once this process is complete, the aircraft
 should have the desired feel in snappiness and rate.
