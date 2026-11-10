@@ -7,6 +7,14 @@ if [ "$UID" -eq 0 ]; then
      exit 1
 fi
 
+# pip refuses "--user" when it is run by a virtual environment interpreter, and
+# this script runs with "set -e", so probe the python3 that will actually
+# receive the install rather than trusting $VIRTUAL_ENV, which is only set when
+# an environment has been activated in the shell.
+is_python_venv() {
+    python3 -c 'import sys; raise SystemExit(0 if hasattr(sys, "real_prefix") or sys.prefix != getattr(sys, "base_prefix", sys.prefix) else 1)'
+}
+
 # Check for lsb_release and set distribution variables safely
 if command -v lsb_release &> /dev/null; then
     DISTRIBUTION_ID=$(lsb_release -i -s)
@@ -38,7 +46,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
         python3 -m ensurepip --upgrade || true
     fi
     SCRIPT_DIR=$(dirname $(realpath ${BASH_SOURCE[0]}))
-    python3 -m pip install --user --upgrade -r "$SCRIPT_DIR"/requirements.txt
+    if is_python_venv; then
+        python3 -m pip install --upgrade -r "$SCRIPT_DIR"/requirements.txt
+    else
+        python3 -m pip install --user --upgrade -r "$SCRIPT_DIR"/requirements.txt
+    fi
     echo "Setup completed successfully for macOS!"
     exit 0
 fi
@@ -62,7 +74,7 @@ sudo apt-get install -y python3-pip
 
 # Install required python packages
 SCRIPT_DIR=$(dirname $(realpath ${BASH_SOURCE[0]}))
-if [ "${DISTRIBUTION_CODENAME}" = "noble" ]; then
+if [ "${DISTRIBUTION_CODENAME}" = "noble" ] || is_python_venv; then
     python3 -m pip install --upgrade -r "$SCRIPT_DIR"/requirements.txt
 else
     python3 -m pip install --user --upgrade -r "$SCRIPT_DIR"/requirements.txt
