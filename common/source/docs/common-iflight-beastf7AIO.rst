@@ -67,11 +67,11 @@ An altitude source must be provided for any operation. Attach a GPS and follow t
 
 Copter
 ------
-Arming and operation in ACRO and STABILIZE modes is possible. It is also possible to arm and fly in ALTHOLD, but altitude hold performance relies on accelerometer/gyro exclusively and could be exceptionally poor, even resulting in a crash so is not recommended. As with Plane you can use a GPS for altitude data, but Rangefinders and Beacons can also be used and the ``EK3_SCRX_POSZ`` parameters set appropriately.
+Arming and operation in ACRO and STABILIZE modes is possible. It is also possible to arm and fly in ALTHOLD, but altitude hold performance relies on accelerometer/gyro exclusively and could be exceptionally poor, even resulting in a crash so is not recommended. As with Plane you can use a GPS for altitude data, but Rangefinders and Beacons can also be used and the ``EK3_SRCx_POSZ`` parameters set appropriately.
 
 Rover
 -----
-Rover does not require an altitude source and the ``EK3_SCRX_POSZ`` parameters can be set to "0"
+Rover does not require an altitude source and the ``EK3_SRCx_POSZ`` parameters can be set to "0"
 
 
 Default UART order

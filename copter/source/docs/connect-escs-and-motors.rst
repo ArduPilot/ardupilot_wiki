@@ -255,7 +255,7 @@ TRICOPTER FRAMES
     :alt: TRICOPTER PITCH REVERSED
 
 .. note::
-    Since the tail (or nose) servo is used for yaw control, Tricopter motor rotation direction is not critical for basic operation, but unless the front motors spin in opposite directions, roll and pitch inputs will result in adverse yaw, resulting in less dynamic range of the yaw control. If the direction of your tail (or nose) servo is going the wrong way in response to yaw then either the ``RCn_REVERSE`` RC input direction or the tilt servo's ``SERVOn_REVERSE`` parameter should be set to 1 (from 0), See :ref:`TriCopter setup page <tricopter>` for details.
+    Since the tail (or nose) servo is used for yaw control, Tricopter motor rotation direction is not critical for basic operation, but unless the front motors spin in opposite directions, roll and pitch inputs will result in adverse yaw, resulting in less dynamic range of the yaw control. If the direction of your tail (or nose) servo is going the wrong way in response to yaw then either the ``RCn_REVERSED`` RC input direction or the tilt servo's ``SERVOn_REVERSED`` parameter should be set to 1 (from 0), See :ref:`TriCopter setup page <tricopter>` for details.
 
 BICOPTER FRAMES
 ---------------

@@ -94,7 +94,7 @@ RC Input
 
 The SBUS pin can be used for all ArduPilot supported receiver protocols, except CRSF/ELRS and SRXL2 which require a true UART connection. However, FPort, when connected in this manner, can provide RC without telemetry. 
 
-To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers a UART must be configured and used (USART1 , UART4, or UART6) and their ``SERAILx_PROTOCOL`` set to "23".
+To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers a UART must be configured and used (USART1 , UART4, or UART6) and their ``SERIALx_PROTOCOL`` set to "23".
  
 With this option:
 

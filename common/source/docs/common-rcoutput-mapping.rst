@@ -271,7 +271,7 @@ planes.
 Flap
 ++++
 
-When a channel is set as a flap its value comes from the flap rc input channel selected by assigning ``RCx_FUNCTION`` = 208 to it and/or from the :ref:`Automatic Flaps<automatic-flaps>` feature. The reason you may want to use this instead of a RCPassThru is that you can setup
+When a channel is set as a flap its value comes from the flap rc input channel selected by assigning ``RCx_OPTION`` = 208 to it and/or from the :ref:`Automatic Flaps<automatic-flaps>` feature. The reason you may want to use this instead of a RCPassThru is that you can setup
 multiple flap channels with different trims and ranges, and you may want
 to take advantage of the :ref:`FLAP_SLEWRATE<FLAP_SLEWRATE>` to limit the speed of flap
 movement.

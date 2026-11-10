@@ -50,7 +50,7 @@ A wing sail may be actuated by a secondary control surface akin to a plane's ele
 See `Karl's build <https://discuss.ardupilot.org/t/sailboat-support/32060/321>`__ . Use servo output function, ``SERVOx_FUNCTION``, 128 - Wing Sail Elevator.
 
 The servo min (``SERVOx_MIN``) and max (``SERVOx_MAX``) end points should be set such that the main wing is held in a maximum lift angle of attack on both tacks.
-If the wing sail is acting on the wrong tack the servo should be reversed with ``SERVOx_REVERSE``. The `SAIL_ANGLE_*` parameters are not use with wing sail elevators.
+If the wing sail is acting on the wrong tack the servo should be reversed with ``SERVOx_REVERSED``. The `SAIL_ANGLE_*` parameters are not use with wing sail elevators.
 
 Direct wing sail actuation
 --------------------------

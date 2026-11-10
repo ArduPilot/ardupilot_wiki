@@ -14,8 +14,8 @@ By setting :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` to 1, ArduPlane will constant
 Every 10 seconds, it will store this trim into the appropriate ``SERVOx_TRIM`` values for outputs assigned to control roll and pitch (ie Aileron/Elevator, Elevons, etc.).
 This includes flaperon and differential spoiler configurations. After a minute or so of flight, the trims will be adjusted such that minor trim errors will be canceled out when switching back to MANUAL and ACRO modes.
 
-The amount that can be trimmed is center in the servo output range and limited to about 20% of the total ``SEROVX_MAX/MIN`` range, so very radical out-of-trim conditions are not correctable.
-These must be corrected mechanically. Once you correct them mechanically, fly again with :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` enabled and verify the new ``SERVOx_TRIM`` is within 20% of the total ``SEROVX_MAX/MIN`` range.
+The amount that can be trimmed is center in the servo output range and limited to about 20% of the total ``SERVOx_MAX/MIN`` range, so very radical out-of-trim conditions are not correctable.
+These must be corrected mechanically. Once you correct them mechanically, fly again with :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` enabled and verify the new ``SERVOx_TRIM`` is within 20% of the total ``SERVOx_MAX/MIN`` range.
 Also, it will not be updated unless there is no pilot input, the plane is being controlled by the autopilot to be in generally level flight, and the plane is flying above 8m/s ground speed.
 This means that that AHRS must have a ground speed estimate (from GPS usually).
 

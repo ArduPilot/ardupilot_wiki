@@ -61,7 +61,7 @@ Disarming the motors will cause the motors to stop spinning. To disarm the motor
 #. Disconnect the Lipo battery.
 #. Turn off your transmitter.
 
-.. note:: If setup, you can use one of the ``RC_xOPTION`` switches that includes the disarm function. See switch option "81", "153, or "154".
+.. note:: If setup, you can use one of the ``RCx_OPTION`` switches that includes the disarm function. See switch option "81", "153, or "154".
 
 GCS Status Messages
 ===================

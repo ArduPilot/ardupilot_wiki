@@ -79,5 +79,5 @@ Several methods are available:
 
 - If brushless, two of the three motor wires can be swapped
 - If BLHeli or AM32 ESC is being used, the motor direction can be reversed using the ESC configurator tool, either by direct connection or using ArduPilot's :ref:`PassThrough Support <common-blheli32-passthru>`
-- The ``MOTx_DIRECTION`` parameters can be changed.
+- The ``MOT_x_DIRECTION`` parameters can be changed.
 - The MOTORDETECT mode can be used while at rest underwater to automatically detect and correct the motor direction for bi-directional thrusters. However, this only affects those thrusters which control Roll, Pitch, and/or Yaw axes.
