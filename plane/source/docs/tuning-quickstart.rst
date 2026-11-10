@@ -24,9 +24,9 @@ values needed).
 .. tip::
 
    To use AUTOTUNE you must to be able to fly the aircraft. Plane will
-   fly the majority of lightweight RC airframes right out of the box. We
-   also provide :ref:`configuration values for many common aircraft <configuration-files-for-common-airframes>` that you can use
-   to get your aircraft flying before doing further tuning.
+   fly the majority of lightweight RC airframes right out of the box
+   with the default parameter values, which are good enough to get the
+   aircraft flying before running AUTOTUNE.
 
    If AUTOTUNE doesn't work with your plane, a fully manual approach is
    described in the :ref:`Manual Roll, Pitch and Yaw Controller Tuning Guide <new-roll-and-pitch-tuning>`.
