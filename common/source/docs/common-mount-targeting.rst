@@ -118,7 +118,7 @@ Low        Body Frame    Body Frame       FPV         Gimbal angles maintained w
 
 .. note:: If the Aux switch above is not used, HORIZON mode is the normal mode of gimbal operation
 
-- ``MOUNTx_OPTION`` bit 3 (+4 in value) provides the ability to obtain FPV lock above (on gimbals that are capable), without the need for the switch,
+- ``MNTx_OPTIONS`` bit 2 (+4 in value) provides the ability to obtain FPV lock above (on gimbals that are capable), without the need for the switch,
 
 - Also in RC Targeting, an Auxiliary Switch function "163" (Mount Yaw Lock) can be used on an RC channel to switch from normal yaw operation to capturing the heading that the gimbal is currently pointing and "locking" it to maintain that direction. RC yaw target controls can shift that heading point. Switching it to low, or changing mount modes, returns normal operation.
 

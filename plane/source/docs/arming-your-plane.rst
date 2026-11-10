@@ -95,7 +95,7 @@ three ways:
 How to Disarm
 =============
 
--  If setup, you can use one of the ``RC_xOPTION`` switches that includes that function. See switch option "81", "153, or "154".
+-  If setup, you can use one of the ``RCx_OPTION`` switches that includes that function. See switch option "81", "153, or "154".
 
 .. warning:: This is **UNCONDITIONAL**. If done while in flight, all motors disarm and you must have throttle at idle before re-arming can occur!
 

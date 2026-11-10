@@ -70,7 +70,7 @@ Enable CAN PMU
 Set the following parameters in the Mission planner's full parameter list and restart after writing:
 
 - :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` to 1 if attached to CAN bus1  port or :ref:`CAN_P2_DRIVER<CAN_P2_DRIVER>` to 1 if attached to CAN bus2 port
-- :ref:`BATT_MONITOR<BATT_MONITOR>` or ``BATT_MONITORx`` to 8 enable a DroneCAN battery monitor on the appropriate battery monitor port.
+- :ref:`BATT_MONITOR<BATT_MONITOR>` or ``BATTx_MONITOR`` to 8 enable a DroneCAN battery monitor on the appropriate battery monitor port.
 
 .. image:: ../../../images/can-pmu/mp-set.png
     :target: ../_images/can-pmu/mp-set.png
