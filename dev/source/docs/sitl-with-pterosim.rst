@@ -16,7 +16,7 @@ PteroSim runs on Windows and Linux. It is closed source, but prebuilt binaries a
 Supported Vehicles
 ==================
 
-The steps on this page use a quadcopter, which is included in the free tier. Helicopter, coaxial helicopter, fixed wing, quadplane VTOL and tailsitter airframes are part of the paid tiers, and all of them can be flown with ArduPilot. See `pterolabs.ai <https://pterolabs.ai/#pricing>`__ for the licensing details.
+The steps on this page use a quadcopter. Helicopter, coaxial helicopter, fixed wing, quadplane VTOL and tailsitter airframes can be flown with ArduPilot too, and every vehicle is available on every license tier. See `pterolabs.ai <https://pterolabs.ai/#pricing>`__ for the licensing details.
 
 Simulated IMU, GPS, barometer, airspeed and camera sensors are provided for all of them, and vehicles can be spawned and controlled from a Python API.
 
