@@ -94,7 +94,7 @@ Set the following parameters:
 -  :ref:`RNGFND1_MIN <RNGFND1_MIN>` = 0.2 (the minimum range the lidar can accurately report in m)
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1 ("0.8" may produce more accurate readings for some units)
 -  :ref:`RNGFND1_OFFSET <RNGFND1_OFFSET>` = 0
--  ``BRD_PWM_COUNT`` = 4 (ensures AUX5 is not used as a servo output)
+-  ``SERVO13_FUNCTION`` = -1 (makes AUX5 a GPIO instead of a servo output)
 
 .. note:: To set a PWM/SERVO/MOTOR output to be a GPIO, set its ``SERVOx_FUNCTION`` parameter to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
 
@@ -110,6 +110,7 @@ When using the PWM driver you can optionally configure the lidar to be disabled 
 Set the following parameters:
 
 -  :ref:`RNGFND1_STOP_PIN <RNGFND1_STOP_PIN>` to 55 "AUX6" (other auxiliary pins may also be used)
+-  ``SERVO14_FUNCTION`` = -1 (makes AUX6 a GPIO instead of a servo output)
 -  :ref:`RNGFND1_PWRRNG <RNGFND1_PWRRNG>` to a terrain height in meters above which the Lidar will be disabled to save power
 
 When the terrain data indicates that the vehicle is above the :ref:`RNGFND1_PWRRNG <RNGFND1_PWRRNG>` height the :ref:`RNGFND1_STOP_PIN <RNGFND1_STOP_PIN>` will be used to disable the Lidar

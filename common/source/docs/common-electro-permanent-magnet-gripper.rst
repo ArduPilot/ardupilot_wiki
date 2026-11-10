@@ -33,12 +33,14 @@ Connecting to a Pixhawk
 The EPM is connected to the Pixhawk in the same way as a
 :ref:`servo <common-servo>`.
 
--  If using Copter, Connect the EPM to AUX OUT 1, 2, 3 or 4.  MAIN OUT 1
+-  If using Copter, connect the EPM to AUX OUT 1 ~ 6.  MAIN OUT 1
    ~ 8 cannot be used because the EPM does not accept the 400hz update
-   rate.  AUX OUT 5 an 6 cannot be used because they are reserved for
-   :ref:`Relays <common-relay>`.
+   rate.
+-  If an output has been set up as a GPIO for a :ref:`Relay <common-relay>`
+   (its ``SERVOx_FUNCTION`` set to "-1"), it must be given back a servo
+   function, and its ``RELAYx_PIN`` set to -1, before it can drive the EPM.
 -  If using Plane or Rover where all pwm pins update at 50hz, any unused
-   MAIN OUT or AUX OUT 1 ~ 4 may be used.
+   MAIN OUT or AUX OUT 1 ~ 6 may be used.
 -  A BEC or ESC should be used that can provide 600milliamps of current
    at 5V for the short period that the gripper is first activated to
    latch onto the cargo.

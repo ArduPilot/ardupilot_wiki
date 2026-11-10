@@ -17,7 +17,7 @@ indoor use but which has been successfully used outdoors on Copter. The very sho
 Connection to the autopilot
 ===========================
 
-Two :ref:`GPIOs <common-gpios>` are required for the Trigger pin (starts the sonar pulse) and Echo pin (indicates reception of the echo). These can be a PWM output if the ``BRD_PWM_COUNT`` is set such that two are available, or if the autopilot has dedicated GPIO outputs (see the autopilot's :ref:`description <common-autopilots>` or datasheet).
+Two :ref:`GPIOs <common-gpios>` are required for the Trigger pin (starts the sonar pulse) and Echo pin (indicates reception of the echo). These can be PWM outputs set up as GPIOs (see the note below), or if the autopilot has dedicated GPIO outputs (see the autopilot's :ref:`description <common-autopilots>` or datasheet).
 
 .. note:: To set a PWM/SERVO/MOTOR output to be a GPIO, set its ``SERVOx_FUNCTION`` parameter to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
 
@@ -25,7 +25,7 @@ To setup as the first rangefinder. Reboot after setting parameters:
 
 -  :ref:`RNGFND1_MAX<RNGFND1_MAX>` = "2" (i.e. 2m max range)
 -  :ref:`RNGFND1_MIN<RNGFND1_MIN>` = "0.2" (i.e. 0.2m min range)
--  :ref:`RNGFND1_STOP_PIN<RNGFND1_STOP_PIN>` = Enter GPIO number for pin attached to HC-SRO4 "Trigger" pin. For example, on PixHawk with ``BRD_PWM_COUNT`` = 4, AUX6 (GPIO 55) could be used here, and AUX5 (GPIO54) could be used below.
+-  :ref:`RNGFND1_STOP_PIN<RNGFND1_STOP_PIN>` = Enter GPIO number for pin attached to HC-SRO4 "Trigger" pin. For example, on PixHawk with ``SERVO13_FUNCTION`` and ``SERVO14_FUNCTION`` set to "-1", AUX6 (GPIO 55) could be used here, and AUX5 (GPIO54) could be used below.
 -  :ref:`RNGFND1_PIN<RNGFND1_PIN>` = Enter GPIO number for pin attached to HC-SRO4 "Echo" pin.
 -  :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “30" (HC-SR04 sonar)
 -  :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = "25" (Downward facing) if used for altitude control.

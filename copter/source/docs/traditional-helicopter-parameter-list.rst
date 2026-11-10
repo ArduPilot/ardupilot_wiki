@@ -94,7 +94,7 @@ The speed of the rotor, or rotors in the case of Dual Heli, is controlled by Ard
 - :ref:`H_RSC_SLEWRATE<H_RSC_SLEWRATE>`
 - :ref:`H_RSC_CRITICAL<H_RSC_CRITICAL>`
 - :ref:`H_RSC_CLDWN_TIME<H_RSC_CLDWN_TIME>`
-- ``H_RSC_AROT_PCT`` Currently only available in SITL
+- :ref:`H_RSC_AROT_IDLE<H_RSC_AROT_IDLE>`
 
 External Governor
 =======================
