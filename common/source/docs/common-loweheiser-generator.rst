@@ -57,14 +57,14 @@ Controls
 The switch configured as Generator has 3 values: STOP, IDLE, RUNNING. Begin on the STOP command. The generator is stopped.
 
 Set the generator switch to IDLE. The goal of the IDLE state is to start the engine and bring it up to temperature.
-If you have configured a Loweheiser throttle input channel, you can now use it to select the throttle during IDLE state. Otherwise, ``GEN_IDLE_TH`` will be applied.
+If you have configured a Loweheiser throttle input channel, you can now use it to select the throttle during IDLE state. Otherwise, :ref:`GEN_L_IDLE_TH<GEN_L_IDLE_TH>` will be applied.
 If you have configured a Loweheiser starter input channel, you can now use it to activate the starter motor and crank the engine. Otherwise, crank the engine manually.
 
-Set the generator switch to RUNNING. The driver will actually wait until the engine reaches a temperature of ``GEN_RUN_TEMP``, before it switches to the RUN state. Until then, it will set the throttle to ``GEN_IDLE_TH_H``.
+Set the generator switch to RUNNING. The driver will actually wait until the engine reaches a temperature of :ref:`GEN_L_RUN_TEMP<GEN_L_RUN_TEMP>`, before it switches to the RUN state. Until then, it will set the throttle to :ref:`GEN_L_IDLE_TH_H<GEN_L_IDLE_TH_H>`.
 
 Once temperature is reached, the generator will proceed to the RUN state. In this state the throttle is controlled automatically by a governor and the generator produces power.
 
-To stop the engine, set the Generator switch to STOP. The driver will actually wait until the engine cools down to a temperature of ``GEN_IDLE_TEMP`` before it stops. During that time, it will apply ``GEN_IDLE_TH_H`` throttle.
+To stop the engine, set the Generator switch to STOP. The driver will actually wait until the engine cools down to a temperature of :ref:`GEN_L_IDLE_TEMP<GEN_L_IDLE_TEMP>` before it stops. During that time, it will apply :ref:`GEN_L_IDLE_TH_H<GEN_L_IDLE_TH_H>` throttle.
 
 .. note:: No state transitions will take place once the vehicle is armed.
 

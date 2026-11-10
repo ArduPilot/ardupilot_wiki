@@ -102,8 +102,7 @@ listed below:
 -  ``Shutter Duration``: 10 (1 second)
 -  ``Servo Limits Max``: 1900
 -  ``Servo Limits Min``: 1100
--  ``CH7_OPT`` : 9 (Optional - enables manual shutter triggering on
-   Copter only).
+-  :ref:`RC7_OPTION<RC7_OPTION>` = 9 (Optional - enables manual shutter triggering).
 
 .. figure:: ../../../images/missionplannercameragimbalscreen.jpg
    :target: ../_images/missionplannercameragimbalscreen.jpg

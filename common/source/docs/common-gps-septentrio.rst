@@ -32,7 +32,7 @@ To setup this using GPS2 input (serial4) configure these parameters:
 - :ref:`SERIAL4_BAUD<SERIAL4_BAUD>` = 115
 - :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` = 5 (GPS)
 
-The Septentrio driver currently does not use `GPS_RATE_MS` and `GPS_RATE_MS2`.
+The Septentrio driver currently does not use :ref:`GPS1_RATE_MS<GPS1_RATE_MS>` and :ref:`GPS2_RATE_MS<GPS2_RATE_MS>`.
 It is still important to set them to the expected value of 100 (10Hz) as they are used as weights when combining GPS results.
 
 If you want to inject RTCM corrections to both GPS1 and GPS2 then use:
