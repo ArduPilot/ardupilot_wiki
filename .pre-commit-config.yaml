@@ -49,8 +49,16 @@ repos:
       - id: rst-literal-block-spacing
         name: Check ReST literal block spacing
         entry: python scripts/check_rst_literal_blocks.py
-        language: system
-        files: '\.rst$'
+        language: python
+        types: [rst]
+
+  - repo: local
+    hooks:
+      - id: check-ref-directives
+        name: Check ref directive formatting
+        entry: python scripts/check_ref_directives.py
+        language: python
+        types: [rst]
 
   - repo: local
     hooks:
