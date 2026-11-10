@@ -18,6 +18,5 @@ its first flight, and includes an explanation of the main :ref:`Flight Modes <fl
     Tuning Quickstart <tuning-quickstart>
     Automatic Tuning <automatic-tuning-with-autotune>
     Tuning in Detail <common-tuning>
-    Tuning Configuration Values for Common Airframes <configuration-files-for-common-airframes>
     Measuring Vibration <common-measuring-vibration>
     Transmitter based tuning <common-transmitter-tuning>

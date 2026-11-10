@@ -95,6 +95,7 @@ value to users with old hardware.
     Geofencing prior to 4.1 <geofencing>
     Soaring prior to 4.1 <soaring>
     Manual Roll, Pitch and Yaw Controller Tuning(firmware before 4.1) <roll-pitch-controller-tuning>
+    Configuration Values for Common Airframes (firmware before 4.1) <configuration-files-for-common-airframes>
 [/site]
 [site wiki="dev"]
 .. toctree::

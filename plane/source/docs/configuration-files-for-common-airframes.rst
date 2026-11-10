@@ -1,8 +1,12 @@
 .. _configuration-files-for-common-airframes:
 
-=========================================
-Configuration Values for Common Airframes
-=========================================
+===================================================
+Archived: Configuration Values for Common Airframes
+===================================================
+
+.. note::
+
+  **ARCHIVED:** The ``RLL2SRV_x`` and ``PTCH2SRV_x`` gains below are for the roll and pitch controllers used before Plane 4.1 and do not apply to current firmware. The current defaults are good enough for a first flight in most airframes, after which :ref:`AUTOTUNE <automatic-tuning-with-autotune>` should be used.
 
 This page provides some approximate configuration values for common
 airframes.
@@ -57,7 +61,7 @@ The key parameters you should look for are:
 
 -  ``RLL2SRV_P``
 -  ``PTCH2SRV_P``
--  :ref:`NAVL1_PERIOD <NAVL1_PERIOD>`
+-  ``NAVL1_PERIOD``
 
 Setting those to an approximately correct value will give you a
 reasonable starting point for tuning your airframe. After that you
@@ -94,7 +98,7 @@ Key parameters
 
 -  ``RLL2SRV_P`` : 0.9
 -  ``PTCH2SRV_P`` : 1.0
--  :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: 18
+-  ``NAVL1_PERIOD``: 18
 
 Bixler Tips
 -----------
@@ -146,7 +150,7 @@ parameters will be a good starting point for most users:
 
 -  ``RLL2SRV_P`` : 1.8
 -  ``PTCH2SRV_P`` : 1.5
--  :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: 20
+-  ``NAVL1_PERIOD``: 20
 
 HobbyKing Skyfun
 ================
@@ -162,9 +166,9 @@ The SkyFun and FunJet are similar, and are quite "twitchy" planes. A
 small amount of elevon movement goes a long way! The following values
 should be a good starting point:
 
--  RLL2SRV_P: 0.4
--  PTCH2SRV_P: 0.45
--  NAVL1_PERIOD: 17
+-  ``RLL2SRV_P``: 0.4
+-  ``PTCH2SRV_P``: 0.45
+-  ``NAVL1_PERIOD``: 17
 
 Multiplex EasyStar
 ==================
@@ -181,12 +185,12 @@ plane it would be better to get a bixler2, which is a similar size and
 cost, but flies a lot better.
 
 If you do want to fly an easystar then you will need to set a
-:ref:`KFF_RDDRMIX<KFF_RDDRMIX>`, along with the other key parameters. For example:
+``KFF_RDDRMIX``, along with the other key parameters. For example:
 
 -  ``RLL2SRV_P`` : 0.55
 -  ``PTCH2SRV_P`` : 0.6
--  :ref:`KFF_RDDRMIX<KFF_RDDRMIX>`: 0.5
--  :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: 20
+-  ``KFF_RDDRMIX``: 0.5
+-  ``NAVL1_PERIOD``: 20
 
 Borojet Maja
 ============
@@ -202,7 +206,7 @@ The following parameters should be a good starting point:
 
 -  ``RLL2SRV_P`` : 1.4
 -  ``PTCH2SRV_P`` : 1.3
--  :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: 16
+-  ``NAVL1_PERIOD``: 16
 
 TELINK Toro900 flying wing
 ==========================
@@ -214,7 +218,7 @@ The following values should be a good starting point:
 
 -  ``RLL2SRV_P`` : 1.2
 -  ``PTCH2SRV_P`` : 2
--  :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: 18
+-  ``NAVL1_PERIOD``: 18
 
 SkyWalker X8
 ============
@@ -227,7 +231,7 @@ parameters around this range:
 
 -  ``RLL2SRV_P`` : 0.8
 -  ``PTCH2SRV_P`` : 0.5
--  :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: 19
+-  ``NAVL1_PERIOD``: 19
 
 Phoenix Tiger60
 ===============
@@ -239,12 +243,12 @@ The Tiger60 is usually flown as a nitro plane, plus it has relatively
 small ailerons and elevator surfaces. A good starting point will be the
 following parameters:
 
--  RLL2SRV_P: 1.2
--  PTCH2SRV_P: 1.2
--  NAVL1_PERIOD: 15
--  THR_PASS_STAB: 1
--  THR_SUPP_MAN: 1
--  THR_SLEWRATE: 30
+-  ``RLL2SRV_P``: 1.2
+-  ``PTCH2SRV_P``: 1.2
+-  ``NAVL1_PERIOD``: 15
+-  ``THR_PASS_STAB``: 1
+-  ``THR_SUPP_MAN``: 1
+-  ``THR_SLEWRATE``: 30
 
 HotDog
 ======
@@ -258,10 +262,10 @@ following parameters:
 
 -  ``RLL2SRV_P`` : 0.35
 -  ``PTCH2SRV_P`` : 0.6
--  :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: 14
--  THR_PASS_STAB:  1
--  :ref:`THR_SUPP_MAN<THR_SUPP_MAN>`: 1
--  :ref:`THR_SLEWRATE<THR_SLEWRATE>`: 30
+-  ``NAVL1_PERIOD``: 14
+-  ``THR_PASS_STAB``: 1
+-  ``THR_SUPP_MAN``: 1
+-  ``THR_SLEWRATE``: 30
 
 Boomerang 60
 ============
@@ -275,10 +279,10 @@ will be a good starting point:
 
 -  ``RLL2SRV_P`` : 1.1
 -  ``PTCH2SRV_P`` : 1.2
--  :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: 20
--  :ref:`THR_PASS_STAB<THR_PASS_STAB>`: 1
--  :ref:`THR_SUPP_MAN<THR_SUPP_MAN>`: 1
--  :ref:`THR_SLEWRATE<THR_SLEWRATE>`: 30
+-  ``NAVL1_PERIOD``: 20
+-  ``THR_PASS_STAB``: 1
+-  ``THR_SUPP_MAN``: 1
+-  ``THR_SLEWRATE``: 30
 
 Mugin
 =====
@@ -293,10 +297,10 @@ The following parameters should be a good starting point:
 
 -  ``RLL2SRV_P`` : 1.0
 -  ``PTCH2SRV_P`` : 1.3
--  :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: 19
--  :ref:`THR_PASS_STAB<THR_PASS_STAB>`: 1
--  :ref:`THR_SUPP_MAN<THR_SUPP_MAN>`: 1
--  :ref:`THR_SLEWRATE<THR_SLEWRATE>`: 30
+-  ``NAVL1_PERIOD``: 19
+-  ``THR_PASS_STAB``: 1
+-  ``THR_SUPP_MAN``: 1
+-  ``THR_SLEWRATE``: 30
 
 PA Addiction
 ============
@@ -312,7 +316,7 @@ following parameters will be a good start:
 -  ``RLL2SRV_P`` : 0.35
 -  ``PTCH2SRV_P`` : 0.6
 -  ``PTCH2SRV_D`` : 0.04
--  :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: 13
+-  ``NAVL1_PERIOD``: 13
 
 RipMax AcroWot
 ==============
@@ -325,8 +329,8 @@ fly! With an OS55AX motor it flies well with the following parameters:
 
 -  ``RLL2SRV_P`` : 1.0
 -  ``PTCH2SRV_P`` : 0.9
--  :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: 13
--  :ref:`TRIM_THROTTLE<TRIM_THROTTLE>`: 35
+-  ``NAVL1_PERIOD``: 13
+-  ``TRIM_THROTTLE``: 35
 
 TechPod
 =======
@@ -341,9 +345,9 @@ It flies well with the following parameters:
 
 -  ``RLL2SRV_P`` : 1.5
 -  ``PTCH2SRV_P`` : 1.5
--  :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: 17
--  :ref:`AIRSPEED_MIN<AIRSPEED_MIN>`: 9
--  :ref:`AIRSPEED_MAX<AIRSPEED_MAX>`: 20
--  :ref:`AIRSPEED_CRUISE<AIRSPEED_CRUISE>`: 1200
+-  ``NAVL1_PERIOD``: 17
+-  ``ARSPD_FBW_MIN``: 9
+-  ``ARSPD_FBW_MAX``: 20
+-  ``TRIM_ARSPD_CM``: 1200
 
 For a more complete guide `see this review <https://diydrones.com/profiles/blogs/tuning-the-techpod>`__.
