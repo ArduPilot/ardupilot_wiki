@@ -57,7 +57,7 @@ Parameter setup
 
 #. Save the configurations and restart the boards. After about 5 seconds the RED CAN LED on the EPM will start blinking. This indicates that CAN frames are being received.
     
-#. Set CH7_OPT: Channel 7 option = 19 (EPM) (Channel 7 - 12 maybe used) 
+#. Set :ref:`RC7_OPTION<RC7_OPTION>` = 19 (Gripper) (any RCx_OPTION may be used)
 
    .. image:: ../../../images/OpenGrabEPMV3_4.jpg
        :target: ../_images/OpenGrabEPMV3_4.jpg
@@ -77,7 +77,7 @@ Connect the EPM to the Pixhawk the same as a :ref:`servo <common-servo>`.
 Parameter setup 
 ===============
 
-Set CH7_OPT: Channel 7 option = 19 (EPM) (Channel 7 - 12 maybe used).
+Set :ref:`RC7_OPTION<RC7_OPTION>` = 19 (Gripper) (any RCx_OPTION may be used).
 
 .. image:: ../../../images/OpenGrabEPMV3_6.jpg
     :target: ../_images/OpenGrabEPMV3_6.jpg

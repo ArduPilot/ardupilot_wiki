@@ -79,16 +79,18 @@ Pilot control in each mode (Except LAND in which there is no pilot control and a
 TRANSMITTER STICK     CONTROL EFFECT
 ==================    =================
 ROLL                  MANUAL: Lateral movement,
-                      VELOCITY: Full throw attempts to obtain ``MAX_VEL_XY`` m/s laterally,
-                      LOITER: Full throw attempts to obtain ``MAX_POS_XY`` m/s laterally
+                      VELOCITY: Full throw attempts to obtain :ref:`LOIT_MAX_VELY<LOIT_MAX_VELY>` m/s laterally,
+                      LOITER: Moves the target position laterally (see note below)
 PITCH                 MANUAL: Fore/Aft movement,
-                      VELOCITY: Full throw attempts to obtain ``MAX_VEL_XY`` m/s  fore/aft,
-                      LOITER: Full throw attempts to obtain ``MAX_POS_XY`` m/s  fore/aft
+                      VELOCITY: Full throw attempts to obtain :ref:`LOIT_MAX_VELX<LOIT_MAX_VELX>` m/s  fore/aft,
+                      LOITER: Moves the target position fore/aft (see note below)
 YAW                   MANUAL: Yaw,
-                      VELOCITY: Full throw attempts to increase/decrease heading ``MAX_VEL_YAW`` radians/s  fore/aft,
-                      LOITER: Full throw attempts to increase/decrease heading ``MAX_POS_YAW`` radians/s  fore/aft
+                      VELOCITY: Full throw attempts to increase/decrease heading :ref:`LOIT_MAX_VELYAW<LOIT_MAX_VELYAW>` radians/s,
+                      LOITER: Full throw attempts to increase/decrease heading :ref:`LOIT_MAX_POSYAW<LOIT_MAX_POSYAW>` radians/s
 THROTTLE              MANUAL: Ascend/Descend,
-                      VELOCITY: Full throw attempts to increase/decrease altitude ``MAX_VEL_Z`` m/s,
-                      LOITER: Full throw attempts to increase/decrease heading ``MAX_POS_Z`` m/s 
+                      VELOCITY: Full throw attempts to increase/decrease altitude :ref:`LOIT_MAX_VELZ<LOIT_MAX_VELZ>` m/s,
+                      LOITER: Full throw attempts to increase/decrease altitude :ref:`LOIT_MAX_POSZ<LOIT_MAX_POSZ>` m/s
 ==================    =================
+
+.. note:: In LOITER, roll and pitch stick inputs are relative to the vehicle's heading (or to north if :ref:`SIMPLE_MODE<SIMPLE_MODE>` is enabled). At full throw, :ref:`LOIT_MAX_POSX<LOIT_MAX_POSX>` and :ref:`LOIT_MAX_POSY<LOIT_MAX_POSY>` limit how fast the target position moves north/south and east/west respectively, in m/s.
 
