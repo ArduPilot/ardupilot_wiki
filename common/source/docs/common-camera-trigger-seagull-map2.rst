@@ -63,7 +63,7 @@ below. Note that you have to set different shutter pushed and duration
 values depending on which mode you want to support for camera
 triggering.
 
--  ``CAM_TRIG_TYPE``: 0 (Servo).
+-  :ref:`CAM1_TYPE<CAM1_TYPE>`: 1 (Servo).
 -  ``Shutter (Port)``: Depends on the connected output - e.g. RC10 for
    AUX2.
 -  ``Shutter Pushed``:

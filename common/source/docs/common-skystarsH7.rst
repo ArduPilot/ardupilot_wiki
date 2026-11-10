@@ -192,7 +192,7 @@ Two camera inputs are provided. C1 is selected by default. In order to switch to
 GPIO Output
 ===========
 
-An additional GPIO output is provided via the OSD pin. It can be controlled by setting ``RELAY_PIN3`` = 83 and using RELAY3 to change its level.
+An additional GPIO output is provided via the OSD pin. It can be controlled by setting [site wiki="plane,copter,rover,sub"]:ref:`RELAY3_PIN<RELAY3_PIN>`\ [/site][site wiki="blimp"]:ref:`RELAY3_PIN<copter:RELAY3_PIN>`\ [/site] = 83 and using RELAY3 to change its level.
 
 Battery Monitoring
 ==================

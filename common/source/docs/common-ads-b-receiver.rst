@@ -142,8 +142,9 @@ enabled, the detected vehicle list is checked once per second for potential conf
 Developer information including Simulation
 ==========================================
 The data is transmitted via the `ADSB_VEHICLE message <https://mavlink.io/en/messages/common.html#ADSB_VEHICLE>`__. When
-received by ArduPilot, it is streamed out using the ``SRx_ADSB`` value where x is the telemetry port number and the
-value is how many vehicles per second to be streamed. If using telem1 the streamrate param would be ``SR1_ADSB``. The list will not repeat any faster than 1 second. This
+received by ArduPilot, it is streamed out using the ``MAVx_ADSB`` value, where x is the MAVLink port instance (MAV1 is
+normally SERIAL0/USB) and the value is how many vehicles per second to be streamed. If using TELEM1 (SERIAL1) the streamrate
+param would normally be :ref:`MAV2_ADSB<MAV2_ADSB>` (``SR1_ADSB`` in firmware 4.6 and earlier). The list will not repeat any faster than 1 second. This
 flexibility is useful to conserve bandwidth on data links but also allow maximum update rate for high-speed links
 such as an on-board companion computer.
 
