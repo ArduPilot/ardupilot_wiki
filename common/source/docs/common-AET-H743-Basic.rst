@@ -146,7 +146,7 @@ The AET-H743-Basic supports up to 2 cameras, connected to pin CAM1 and CAM2. You
 
 
 * RELAY2_FUNCTION = 1
-* RELAY_PIN2 = 82
+* RELAY2_PIN = 82
 * RC8_OPTION = 34
 
 9V video power switch
@@ -154,7 +154,7 @@ The AET-H743-Basic supports up to 2 cameras, connected to pin CAM1 and CAM2. You
 The 9Vsw power supply can be controlled by an RC channel. Set the parameters below:
 
 * RELAY1_FUNCTION = 1
-* RELAY_PIN = 81
+* RELAY1_PIN = 81
 * RC7_OPTION = 28
 
 Bluetooth
