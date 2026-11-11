@@ -30,6 +30,9 @@ New Board Support
 - HGLRC H743 PRO, see https://github.com/ArduPilot/ardupilot_wiki/pull/8224
 - AcctonGodwit GFH7, see https://github.com/ArduPilot/ardupilot_wiki/pull/8225
 - AcctonGodwit GFF4, see https://github.com/ArduPilot/ardupilot_wiki/pull/8226
+- BlueBerry H743, see https://github.com/ArduPilot/ardupilot_wiki/pull/8273
+- CSKY AVEGA6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/8274
+- Simplifly Neo, see https://github.com/ArduPilot/ardupilot_wiki/pull/8199
 
 New Peripheral Support
 ======================
@@ -67,6 +70,7 @@ New Features
 - EK3_MAG_CAL = 7 learns the compass field on the ground and after the first in-flight yaw reset, but not during the initial climb, for compasses close to the motors, see https://github.com/ArduPilot/ardupilot_wiki/pull/8210
 - STM32H7 firmware built with --enable-USB-debug can be debugged with GDB over USB without a debug probe, see https://github.com/ArduPilot/ardupilot_wiki/pull/8156
 - SERIAL_PASS1 and SERIAL_PASS2 can now pass through to networking, DroneCAN serial and scripting serial ports, see https://github.com/ArduPilot/ardupilot_wiki/pull/8258
+- Serial passthrough to an RC input port (e.g. to flash an ELRS receiver) no longer has its port settings changed by RC input while active, see https://github.com/ArduPilot/ardupilot_wiki/pull/8276
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
