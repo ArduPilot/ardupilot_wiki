@@ -101,7 +101,7 @@ The SDMODELH7V2  supports OSD using [site wiki="plane,copter,rover,sub"]:ref:`OS
 VTX Power Switch
 ================
 
-The JST-GH-6P connector supports a standard DJI HD VTX connection. Pin 1 of the connector is 9v so be careful not to connect this to a peripheral requiring 5v. The 9v supply is controlled by RELAY_PIN2 set to GPIO 81 and is on by default. It can be configured to be operated by an RC switch by selecting the function RELAY2.
+The JST-GH-6P connector supports a standard DJI HD VTX connection. Pin 1 of the connector is 9v so be careful not to connect this to a peripheral requiring 5v. The 9v supply is controlled by RELAY2_PIN set to GPIO 81 and is on by default. It can be configured to be operated by an RC switch by selecting the function RELAY2.
 
 Camera Control Pin
 ==================
