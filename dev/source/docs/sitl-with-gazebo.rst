@@ -9,9 +9,10 @@ simulator which has been used in a number of robotics simulation challenges
 for ground, marine and space based robots, including the DARPA Robotics
 Challenge, DARPA Subterranean Challenge and Virtual RobotX Competition. 
 
-There are two main generations of Gazebo. To use SITL with Gazebo11 and earlier 
-versions see the
-:ref:`instructions for legacy versions <sitl-with-gazebo-legacy>`.
+There are two main generations of Gazebo. The
+:ref:`instructions for legacy versions <sitl-with-gazebo-legacy>` (Gazebo11
+and earlier) are deprecated, as ArduPilot is removing support for the
+legacy Gazebo interface.
 
 This article explains how to use the latest generation of Gazebo as an
 external simulator for ArduPilot Rover, Coper and Plane.
@@ -276,4 +277,4 @@ Previous versions
 .. toctree::
     :maxdepth: 1
 
-    Using SITL with legacy versions of Gazebo <sitl-with-gazebo-legacy>
+    Using SITL with legacy versions of Gazebo (deprecated) <sitl-with-gazebo-legacy>
