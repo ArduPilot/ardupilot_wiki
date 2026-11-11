@@ -8,6 +8,10 @@ This article explains how to use legacy versions of Gazebo
 https://classic.gazebosim.org/ as an external simulator for
 ArduPilot Rover, Copter and Plane.
 
+.. warning::
+
+   The legacy Gazebo SITL backend used by these instructions was removed in ArduPilot 4.8. They only work with ArduPilot 4.7 and earlier. In 4.8 and later, ``sim_vehicle.py -f gazebo-iris`` without ``--model JSON`` exits with an error. Use :ref:`the current generation of Gazebo <sitl-with-gazebo>`, which connects to SITL using the JSON backend, instead.
+
 Overview
 ========
 

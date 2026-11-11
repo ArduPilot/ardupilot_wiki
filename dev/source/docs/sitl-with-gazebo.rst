@@ -11,7 +11,9 @@ Challenge, DARPA Subterranean Challenge and Virtual RobotX Competition.
 
 There are two main generations of Gazebo. To use SITL with Gazebo11 and earlier 
 versions see the
-:ref:`instructions for legacy versions <sitl-with-gazebo-legacy>`.
+:ref:`instructions for legacy versions <sitl-with-gazebo-legacy>`. Those
+instructions use the legacy Gazebo SITL backend, which was removed in ArduPilot
+4.8, so they only work with ArduPilot 4.7 and earlier.
 
 This article explains how to use the latest generation of Gazebo as an
 external simulator for ArduPilot Rover, Coper and Plane.
