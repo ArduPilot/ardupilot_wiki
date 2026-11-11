@@ -84,7 +84,7 @@ The PWM is in 5 groups:
 RC Input
 ========
 
-RC input is configured on the RC_IN pin. All unidirectional RC protocols are supported. For bi-directional protocols, like CRSF a normal UART is required. For example, USART6 (SERAIL6) could be used.
+RC input is configured on the RC_IN pin. All unidirectional RC protocols are supported. For bi-directional protocols, like CRSF a normal UART is required. For example, USART6 (SERIAL6) could be used.
 
 With this option, :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` must be set to "23", and:
 
