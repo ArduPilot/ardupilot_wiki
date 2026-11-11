@@ -73,7 +73,7 @@ receive pin for UARTn. The TXn pin is the transmit pin for UARTn.
  - SERIAL2 -> USART2 (MAVlink Telem) (DMA on RX only)
  - SERIAL3 -> UART3  (USER) (DMA capable)
  - SERIAL4 -> UART4  (GPS)
- - SERAIL5 -> UART5  (not pinned out)
+ - SERIAL5 -> UART5  (not pinned out)
  - SERIAL6 -> UART6  (DisplayPort) 
 
 Serial protocols shown are defaults, but can be adjusted to personal preferences.

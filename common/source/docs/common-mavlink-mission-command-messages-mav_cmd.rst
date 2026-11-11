@@ -4308,7 +4308,7 @@ Mission command to control an [site wiki="plane,copter,rover,sub"]:ref:`Auxiliar
    <tr>
    <td><strong>param1</strong></td>
    <td>Aux Function</td>
-   <td>Auxiliary Function code,same as RCx_OPTIONS </td>
+   <td>Auxiliary Function code,same as RCx_OPTION </td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>
