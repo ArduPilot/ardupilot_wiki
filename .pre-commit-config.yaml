@@ -83,3 +83,12 @@ repos:
         entry: python scripts/check_raw_iframes.py
         language: python
         types: [rst]
+
+  - repo: local
+    hooks:
+      - id: test-dedupe-params
+        name: Test scripts/dedupe_params.py
+        entry: python3 scripts/tests/test_dedupe_params.py
+        language: system
+        files: '^scripts/(dedupe_params\.py|tests/test_dedupe_params\.py)$'
+        pass_filenames: false
