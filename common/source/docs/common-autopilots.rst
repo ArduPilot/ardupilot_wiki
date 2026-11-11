@@ -113,6 +113,7 @@ Closed Hardware
     AtomRC F405-NAVI-Deluxe <common-atomrcf405-navi-deluxe>
     BCubeF745v2 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/BCubeF745v2/README.md>
     BetaFPV F405 family <common-betafpvf405>
+    BlueBerry H743 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/BlueBerryH743/README.md>
     BrahmaF4 <common-brahmaf4>
     BOTWINGF405 <common-botwingf405>
     brainFPV RADIX2 HD <common-radix2hd>
