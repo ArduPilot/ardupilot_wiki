@@ -20,12 +20,18 @@ ArduPilot supports up to two cameras. The following is for the first camera:
 - :ref:`CAM1_INTRVAL_MIN<CAM1_INTRVAL_MIN>`: Camera minimum time interval between photos
 - :ref:`CAM1_MNT_INST<CAM1_MNT_INST>`: If the camera is associated with a MOUNTx instance, this indicates which MOUNTx instance. For example if CAM1 is associated with MOUNT2, then this value will be 2. The default value of 0 for this parameter means that the Mount instance is the same as the Camera instance, ie. CAM1 is in MOUNT1 and is the same as value "1" in this case. This allows Camera commands to be directed to the correct MOUNT instance.
 - :ref:`CAM1_OPTIONS<CAM1_OPTIONS>`: if bit 0 set and camera/mount has the ability to start/stop video recording, then it will start on arm and stop on disarm events.
+- :ref:`CAM1_COMPID<CAM1_COMPID>`: (ArduPilot 4.8 and later) MAVLink component ID of a MAVLink camera (``CAM1_TYPE`` = 6, "MAVLinkCamV2"). The default of 0 uses component ID 100 for the first camera and 101 for the second. Set a value from 7 to 255 if the camera uses a different component ID. Each MAVLink camera must use a different component ID. A reboot is required after changing this parameter.
 
 
 .. note:: be sure to set the ``CAMx_INTRVAL_MIN`` to be greater than the fastest the camera can take photos when using the camera trigger functions.
 
 - :ref:`CAM_MAX_ROLL<CAM_MAX_ROLL>`: Maximum photo roll angle. Postpone shooting if roll is greater than limit. (0=Disable, will shoot regardless of roll).
 - :ref:`CAM_AUTO_ONLY<CAM_AUTO_ONLY>`: Distance-triggering in AUTO mode only.
+
+MAVLink Cameras
+---------------
+
+In ArduPilot 4.8 and later, a camera using the MAVLink camera protocol (``CAMx_TYPE`` = 6) keeps its own MAVLink identity. Its camera information, video streams, capture status and other messages are relayed to ground stations with the camera's own system and component IDs, so a ground station can discover the camera and control it directly, as well as through the autopilot. Only one camera/gimbal unit per MAVLink link is supported; use MAVLink2 on the camera's port. Setting the camera port's ``MAVx_OPTIONS`` to "Unicast" (bit 4, see :ref:`MAVLink channel options <common-serial-options>`) is recommended so that the camera is isolated from other MAVLink traffic while still allowing the ground station full access to it.
 
 Control with an RC transmitter
 ==============================
