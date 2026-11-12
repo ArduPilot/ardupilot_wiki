@@ -79,7 +79,7 @@ configure Pixhawk AUX output as a servo camera trigger.
 
 The parameters used to configure this hardware are listed below:
 
-``CAM_TRIG_TYPE``: 0 (Servo).
+:ref:`CAM1_TYPE<CAM1_TYPE>`: 1 (Servo).
 
 ``Shutter (Port)``: RC10 (for AUX2, but this will depend on your
 connected output).

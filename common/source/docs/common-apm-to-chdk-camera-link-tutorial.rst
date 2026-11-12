@@ -176,7 +176,7 @@ cameras:
 
 -  Pixhawk:
 
-   -  ``CAM_TRIG_TYPE``: 1 (Relay).
+   -  :ref:`CAM1_TYPE<CAM1_TYPE>`: 2 (Relay).
    -  ``Shutter (Port)``: RC10 (Name of connected port, in this example
       we use RC10 = AUX2).
 
@@ -244,7 +244,7 @@ Testing
 Load and run your CHDK script. On Copter you should be able to trigger
 the shutter using the CH7 switch.
 
-On other vehicles set the ``CAM_TRIGG_DIST`` to 1 or 2 meters. Small
+On other vehicles set :ref:`CAM1_TRIGG_DIST<CAM1_TRIGG_DIST>` to 1 or 2 meters. Small
 changes in the GPS readings will cause the distance value to count up
 slowly and it should trigger the shutter every few seconds. If nothing
 happens at all, take your vehicle outside and walk around to make sure
