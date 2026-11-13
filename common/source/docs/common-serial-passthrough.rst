@@ -37,6 +37,11 @@ If the configuration fails to connect there are some things to try:
 - Some configuration software will not allow connecting to the autopilot's COM port by default but may have a option to display all available COM ports
 - If no serial messages are received from the PC the timeout will expire and :ref:`SERIAL_PASS2 <SERIAL_PASS2>` will revert to -1
 
+Passthrough to an RC Input Port
+-------------------------------
+
+In firmware 4.8 and later, passthrough can be used reliably with a serial port used for RC input, for example to update the firmware of an ELRS receiver connected to that port using esptool or the ExpressLRS Configurator. While passthrough is active, RC input no longer changes that port's settings. The port uses its ``SERIALx_OPTIONS`` setting with no parity and one stop bit, and its previous settings are restored when passthrough ends, after which RC input resumes. In earlier firmware, RC input kept reconfiguring the port during passthrough, which could make firmware updates fail partway through.
+
 Video
 -----
 
