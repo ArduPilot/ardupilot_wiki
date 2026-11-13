@@ -60,6 +60,16 @@ A version for Android is in development and can be downloaded from the `Google P
 
 The latest version is also available `here <https://github.com/ArduPilot/MissionPlanner/releases/tag/latest>`__. Download to device, and double click on it to install.
 
+Mission Planner on macOS
+========================
+
+There is no stable release of Mission Planner for macOS. The options are:
+
+- **Run the Windows version in a virtual machine (recommended).** Install Windows using `Parallels Desktop <https://www.parallels.com/>`__, `VMware Fusion <https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion>`__ or `UTM <https://mac.getutm.app/>`__, then install Mission Planner in Windows as described above. On Intel Macs, Boot Camp can also be used. You may need to pass the autopilot's USB connection through to the virtual machine.
+- **Native macOS development build (experimental).** A ``.dmg`` built from the latest Mission Planner code is available `here <https://github.com/ArduPilot/MissionPlanner/releases/tag/osxlatest>`__. It is not recommended for inexperienced users, and not all features work. If macOS refuses to open it because the developer cannot be verified, allow it in System Settings > Privacy & Security.
+
+QGroundControl and :ref:`MAVProxy <mavproxy:home>` also run on macOS (see :ref:`Choosing a Ground Station <copter:common-choosing-a-ground-station>`).
+
 Mission Planner on Linux
 ========================
 
