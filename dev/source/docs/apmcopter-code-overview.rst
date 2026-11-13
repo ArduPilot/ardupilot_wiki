@@ -11,8 +11,8 @@ are shared with Plane and Rover.
 
 Below is a highlevel view of the ardupilot architecture.
 
-.. image:: ../images/ArduPilot_HighLevelArchecture.png
-    :target: ../_images/ArduPilot_HighLevelArchecture.png
+.. image:: ../images/ArduPilot_HighLevelArchitecture.png
+    :target: ../_images/ArduPilot_HighLevelArchitecture.png
 
 Below is a more zoomed in view (as compared to the above diagram) of the architecture.
 

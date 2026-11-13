@@ -12,8 +12,8 @@ more out of it if you have :ref:`cloned all of the git repositories <where-to-ge
 Basic structure
 ===============
 
-.. image:: ../images/ArduPilot_HighLevelArchecture.png
-    :target: ../_images/ArduPilot_HighLevelArchecture.png
+.. image:: ../images/ArduPilot_HighLevelArchitecture.png
+    :target: ../_images/ArduPilot_HighLevelArchitecture.png
 
 The basic structure of ArduPilot is broken up into 5 main parts:
 
