@@ -125,6 +125,7 @@ Closed Hardware
     CoreWing F405 Wing V2/Wing Mini V2 <common-CoreWingF405WingV2>
     CORVONF405V2.1 <common-corvonf405v2_1>
     CrazyF405 <common-crazyf405>
+    CSKY AVEGA6X <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/CSKY_AVEGA6X/README.md>
     CSKY405 <common-CSKYF405>
     CUAV-X25-EVO <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-X25-EVO>
     CUAV-X25-MEGA <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/CUAV-X25-MEGA/README.md>
