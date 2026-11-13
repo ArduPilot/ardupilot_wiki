@@ -31,14 +31,14 @@ Cloning with the command line
        git clone --recurse-submodules https://github.com/your-github-userid/ardupilot
        cd ardupilot
 
-.. youtube:: kAli2y2-n-M
-
    or the main project repo:
 
    ::
 
        git clone --recurse-submodules https://github.com/ArduPilot/ardupilot
        cd ardupilot
+
+.. youtube:: kAli2y2-n-M
 
 Cloning with the GitHub GUI (Windows or MAC)
 ============================================
