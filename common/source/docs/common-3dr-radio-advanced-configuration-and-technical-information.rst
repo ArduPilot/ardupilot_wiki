@@ -225,10 +225,10 @@ that if a packet is lost you don't end up with half a MAVLink packet
 being seen by the receiver. That partial packet would appear as line
 noise on your ground stations console.
 
-If you set MAVLINK to 2, then in addition to doing MAVLink framing the
-radio will look for ``RC_OVERRIDE`` packets (used for joysticks) and
-ensure that those packets get sent as quickly as possible. This option
-is useful if you are using a tablet based joystick for control.
+Older SiK firmware also had a "low latency" setting (MAVLINK set to 2)
+that gave ``RC_OVERRIDE`` packets priority. Current SiK firmware no
+longer does this and treats a value of 2 the same as 1. To reduce latency,
+use ``MAX_WINDOW`` instead (see :ref:`common-3dr-radio-advanced-configuration-and-technical-information_low_latency_mode`).
 
 The radio firmware will try to fit multiple MAVLink packets into one
 radio packet where possible for maximum efficiency. The highest radio
@@ -240,7 +240,7 @@ transmission formats.
 MAVLink reporting
 =================
 
-If you have MAVLINK set to 1, then the radio firmware will also look for
+If you have MAVLINK set to 1 (or 2), then the radio firmware will also look for
 MAVLink HEARTBEAT messages coming from the serial connection. If it sees
 a HEARTBEAT message then it knows that the MAVLink protocol is in use,
 and it will start injecting MAVLink 'RADIO' status packets into the the
@@ -417,7 +417,8 @@ The meaning of the parameter is as follows:
 -  ``TXPOWER`` - this is the transmit power in dBm. The maximum is 20dBm
 -  ``ECC`` - this enables/disables the golay error correcting code
 -  ``MAVLINK`` - this controls MAVLink framing and reporting. 0=no
-   MAVLink framing, 1=frame mavlink, 2=low latency mavlink
+   MAVLink framing, 1=frame mavlink (2 is accepted, but current firmware
+   treats it the same as 1)
 -  ``MIN_FREQ`` - minimum frequency in kHz
 -  ``MAX_FREQ`` - maximum frequency in kHz
 -  ``NUM_CHANNELS`` - number of frequency hopping channels
@@ -501,14 +502,9 @@ as otherwise the clock synchronisation will be poor.
 Low latency mode
 ================
 
-The radio can be configured to use 'low latency mode' to improve
-performance for things like tablet based joysticks etc... The two
-parameters you should set to enable this mode are as follows:
+The radio can be configured for lower latency to improve
+performance for things like tablet based joysticks etc... To do this:
 
--  Set ``MAVLINK`` to 2. This turns on special checking for the
-   ``RC_OVERRIDE`` packets used in joystick control, to allow those
-   packets to always be sent first. If you are using MAVLink (you
-   probably are) there are no downsides for choosing this setting.
 -  Change ``MAX_WINDOW`` from the default of 131 to 33. This will ensure
    that the GCS can send a packet to the vehicle at least once every 33
    msecs. It is worth noting that this will lower the available

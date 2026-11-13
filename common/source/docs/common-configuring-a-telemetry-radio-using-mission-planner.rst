@@ -60,11 +60,11 @@ Other parameters you may choose to update:
    when the vehicle is far from home base because transmission errors
    increase greatly with distance.
 -  **MAVlink** (default is "MAVLink") : this controls whether the
-   transmission is optimised for MAVLink packets or not. Set to "Low
-   Latency" if using a joystick or an android tablet's virtual joystick
-   to manually fly the vehicle. Note that information on the radio
-   signal strength (rssi) and error rate is only sent if this parameter
-   is set to its default, "MAVLink".
+   transmission is optimised for MAVLink packets or not. Information on
+   the radio signal strength (rssi) and error rate is only sent if
+   MAVLink framing is enabled. Some ground stations still offer a "Low
+   Latency" option, but current SiK firmware treats it the same as
+   "MAVLink".
 -  **Tx Power** (default 20) : the transmission power where
    1=1.3milliWats, 2=1.5mW, 5=3.2mW, 8=6.3mW,11=12.5mW, 14=25mW,
    17=50mW, 20=100mW. This should be set to conform with your local
@@ -81,9 +81,10 @@ Other parameters you may choose to update:
    100% then your available bandwidth will be reduced, so you will find
    it will only work well for telemetry at higher air speeds. A radio
    can be set to receive only by setting its Duty Cycle to zero.
--  **Max Window** (default 33) : ensure the GCS can send a packet to the
-   vehicle ever 33msec. This should be kept as a low number (like 33)
-   when the "MAVLink" setting is "Low Latency"
+-  **Max Window** (default 131) : the longest time, in milliseconds, that
+   one radio may transmit before the other radio gets a turn. A lower
+   value (like 33) reduces latency, for example when flying with a
+   joystick, at the cost of some bandwidth.
 -  **LBT Rssi** (default 0) : holds the threshold used for "listen
    before talk" which allows it to comply with some country's regulatory
    requirements. When non-zero the radio listens for quiet period of
