@@ -294,7 +294,8 @@ Mission planner and GCS for Copter agricultural spraying. Draw a field on a sate
 cut-outs (trees, ponds, power-line corridors found from OpenStreetMap) and it generates a
 boustrophedon coverage route that avoids them, with a geofence from the field outline. Exports
 ``.waypoints`` / ``.plan`` for Mission Planner / QGroundControl, or uploads over MAVLink (USB,
-WiFi via an ELRS TX backpack, Bluetooth) with read-back verification, live telemetry and a GPS
+WiFi via an ELRS TX backpack, Bluetooth; from a browser the backpack needs the project's
+`WebSocket firmware <https://github.com/tecelskyyivan-alt/ardu-field-planner/blob/main/docs/elrs-backpack-browser.md>`__) with read-back verification, live telemetry and a GPS
 jamming/spoofing alarm. Planning works offline; runs in the browser without installation.
 
 -  **Platform**: Android, browser (any desktop or phone, installable as a PWA), Windows / macOS from source
