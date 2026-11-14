@@ -683,15 +683,32 @@
     });
   }
 
+  // The card's caption says what is happening: probing, or why it is
+  // still a link. The link wording after the separator is the build's.
+  function caption(a, prefix) {
+    var label = a.querySelector('.ap-video-label');
+    if (!label) { return; }
+    if (!a.dataset.apLink) {
+      var parts = label.innerHTML.split('</span>');
+      a.dataset.apLink = parts.length > 1 ? parts.slice(1).join('</span>') : label.innerHTML;
+    }
+    label.innerHTML = '<span style="opacity:.8">' + prefix + ' &middot; </span>' + a.dataset.apLink;
+  }
+
+  // navigator.onLine is only a hint: Windows reports offline behind some
+  // VPN and virtual adapters while everything loads fine. The probe decides.
   function upgrade(a) {
     if (a.dataset.apLive) { return; }
     var embed = embedFor(a.getAttribute('href'));
     if (!embed) { return; }
     a.dataset.apLive = '1';
-    if (navigator.onLine === false) { a.dataset.apLive = ''; return; }
+    caption(a, 'Connecting to ' + embed.title.replace(/ video$/, '') + '\u2026');
     hostReachable(embed.src).then(function (ok) {
-      // The connection can drop while the probe is in flight.
-      if (!ok || navigator.onLine === false) { a.dataset.apLive = ''; return; }
+      if (!ok) {
+        a.dataset.apLive = '';
+        caption(a, 'Video could not be loaded');
+        return;
+      }
       mountEmbed(a, embed);
     });
   }
@@ -751,9 +768,6 @@
   }
 
   function start() {
-    // Offline, the still and its link are the right thing to show.
-    if (navigator.onLine === false) { return; }
-
     var cards = [].slice.call(document.querySelectorAll('a.ap-video'));
     if (!cards.length) { return; }
 
@@ -768,9 +782,13 @@
     }
     whenIdle(function () {
       // About a viewport of lead, so the fade has happened before the reader arrives.
+      // Watched until the player is in, so a card whose probe failed gets
+      // another try when it scrolls into view again.
       var seen = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
-          if (e.isIntersecting) { seen.unobserve(e.target); upgrade(e.target); }
+          if (!e.isIntersecting) { return; }
+          if (!e.target.parentNode) { seen.unobserve(e.target); return; }
+          upgrade(e.target);
         });
       }, { rootMargin: '600px' });
       cards.forEach(function (c) { seen.observe(c); });
@@ -781,12 +799,9 @@
   window.addEventListener('online', start);
 
   // An external link followed offline dies on a browser error page and
-  // takes the reader with it; the click waits with a note instead.
-  document.addEventListener('click', function (event) {
-    var a = event.target && event.target.closest
-      ? event.target.closest('a[data-ap-external]') : null;
-    if (!a || navigator.onLine !== false) { return; }
-    event.preventDefault();
+  // takes the reader with it. When the browser says offline the host is
+  // probed first: reachable, the link opens; not, a note explains.
+  function showOfflineNote() {
     var note = document.getElementById('ap-offline-note');
     if (!note) {
       note = document.createElement('div');
@@ -802,11 +817,127 @@
     note.hidden = false;
     clearTimeout(note._apTimer);
     note._apTimer = setTimeout(function () { note.hidden = true; }, 4000);
+  }
+
+  document.addEventListener('click', function (event) {
+    var a = event.target && event.target.closest
+      ? event.target.closest('a[data-ap-external]') : null;
+    if (!a || navigator.onLine !== false) { return; }
+    event.preventDefault();
+    var href = a.href;
+    // The tab is opened in the click itself; opened from the probe's answer
+    // a moment later, a browser takes it for a popup and blocks it.
+    var tab = window.open('', '_blank');
+    if (tab) { try { tab.opener = null; } catch (err) { /* left as it was */ } }
+    hostReachable(href).then(function (ok) {
+      if (!ok) {
+        if (tab) { tab.close(); }
+        showOfflineNote();
+        return;
+      }
+      if (tab) { tab.location = href; } else { window.open(href, '_blank', 'noopener'); }
+    });
   }, true);
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', start);
   } else {
     start();
+  }
+})();
+
+// The site's top-menu "Offline" link turns green on every page while the
+// worker is active, with the last check as its tooltip: the sign, wherever
+// the reader is, that offline mode is really working.
+(function () {
+  'use strict';
+  var LAST_CHECKED_KEY = 'ap-last-checked';   // written by the offline page
+
+  // The theme writes the href relative to the page, and as "#" on the
+  // Offline page itself; the title marks the menu item until the first
+  // paint replaces it with the status, so the item is marked on first find.
+  function link() {
+    var marked = document.querySelector('a[data-ap-offline-link]');
+    if (marked) { return marked; }
+    var all = document.querySelectorAll('a[title="Offline"]');
+    for (var i = 0; i < all.length; i++) {
+      var href = all[i].getAttribute('href') || '';
+      if (href === '#' || /common-offline\.html$/.test(href)) {
+        all[i].setAttribute('data-ap-offline-link', '1');
+        return all[i];
+      }
+    }
+    return null;
+  }
+
+  function agoText(when) {
+    var s = Math.max(0, (Date.now() - when) / 1000);
+    if (s < 60) { return 'just now'; }
+    if (s < 3600) { return Math.round(s / 60) + ' min ago'; }
+    if (s < 86400) { return Math.round(s / 3600) + ' h ago'; }
+    return 'on ' + new Date(when).toISOString().slice(0, 10);
+  }
+
+  function lastChecked() {
+    try {
+      var stamp = JSON.parse(window.localStorage.getItem(LAST_CHECKED_KEY) || 'null');
+      var when = stamp && Date.parse(stamp.t || '');
+      if (!when) { return ''; }
+      return (stamp.r === 'updated' ? 'updated ' : 'checked ') + agoText(when);
+    } catch (err) { return ''; }
+  }
+
+  var styled = false;
+  function paint(active) {
+    var a = link();
+    if (!a) { return; }
+    if (!styled) {
+      var css = document.createElement('style');
+      css.textContent = 'a.ap-offline-live{color:#46b46e !important;font-weight:600}';
+      document.head.appendChild(css);
+      styled = true;
+    }
+    a.classList.toggle('ap-offline-live', active);
+    var stamp = active ? lastChecked() : '';
+    a.title = active ? 'Offline mode is on' + (stamp ? ', ' + stamp : '') : 'Offline';
+  }
+
+  function refresh() {
+    var api = window.ApOffline;
+    if (!api || !api.enabled()) { paint(false); return; }
+    // The registration's state, not this page's control: a hard reload
+    // loads a page without control while the worker is up for the rest.
+    Promise.resolve(navigator.serviceWorker.getRegistration()).then(function (reg) {
+      paint(!!(reg && reg.active));
+    }, function () { paint(false); });
+  }
+
+  // Follow the switch on the offline page, and activation as it happens.
+  var api = window.ApOffline;
+  if (api) {
+    var enable = api.enable, disable = api.disable;
+    api.enable = function () {
+      var r = enable.apply(this, arguments);
+      Promise.resolve(r).then(refresh, refresh);
+      return r;
+    };
+    api.disable = function () {
+      var r = disable.apply(this, arguments);
+      Promise.resolve(r).then(refresh, refresh);
+      return r;
+    };
+  }
+  navigator.serviceWorker.addEventListener('controllerchange', refresh);
+  if (navigator.serviceWorker.ready && navigator.serviceWorker.ready.then) {
+    navigator.serviceWorker.ready.then(refresh, function () {});
+  }
+  window.addEventListener('storage', function (e) {
+    if (!e.key || e.key === 'ap-offline-enabled' || e.key === LAST_CHECKED_KEY) { refresh(); }
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', refresh);
+  } else {
+    refresh();
   }
 })();

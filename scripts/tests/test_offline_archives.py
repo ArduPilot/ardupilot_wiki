@@ -100,6 +100,9 @@ def check_embed_rewrite():
           "yt-dQw4w9WgXcQ.jpg" in out)
     check("a vimeo embed becomes a Vimeo card",
           'href="https://vimeo.com/123456"' in out and "Watch on Vimeo" in out)
+    check("a card says the video is not loaded and never looks like a player",
+          "Video not loaded" in out and 'class="ap-video-label"' in out and
+          "&#9654;" not in out and "needs a connection" not in out)
     check("an unknown iframe becomes a link card to what it embedded",
           'href="https://docs.google.com/forms/d/e/abc/viewform"' in out and
           "Open in a browser" in out)
@@ -302,6 +305,98 @@ def check_no_dangling_assets():
            f"(KNOWN_UPSTREAM_ISSUES.md)" if known else ""))
 
 
+def check_param_versions_are_deltas(wikis):
+    """Historical parameter pages ride in the archive as zstd deltas against
+    the newest stable, which is the one plain copy; each must rebuild."""
+    manifest_path = OFFLINE / "offline-manifest.json"
+    if not manifest_path.is_file():
+        return
+    entries = [e for e in json.loads(manifest_path.read_text()).get("wikis", [])
+               if e["id"] in wikis and e.get("param_versions")]
+    if not entries:
+        check("parameter versions: none in this build (no --paramversioning), nothing to delta",
+              True)
+        return
+    try:
+        import zstandard
+    except ImportError:
+        check("the zstandard module the build uses is installed", False)
+        return
+
+    for entry in entries:
+        wiki = entry["id"]
+        versions = entry["param_versions"]
+        table = json.loads((OFFLINE / entry["files"]).read_text())
+        bases = [v for v in versions if v.get("default")]
+        check(f"{wiki}: exactly one parameter version is the base",
+              len(bases) == 1 and bases[0]["channel"] == "stable",
+              ", ".join(v["label"] for v in bases))
+        old = [v for v in versions if not v["version"].startswith("4.")]
+        betas = [v for v in versions if v["channel"] != "stable"]
+        check(f"{wiki}: only 4.x stables and the newest beta are carried",
+              not old and len(betas) <= 1,
+              f"{len(versions)} versions, {len(betas)} beta")
+        built = sorted(p.name for p in (REPO / wiki / "build" / "html" / "docs")
+                       .glob("parameters-*-stable-V4*.html"))
+        carried = sorted(Path(v["file"]).name for v in versions if v["channel"] == "stable")
+        check(f"{wiki}: every built 4.x stable is carried", built == carried,
+              f"{len(built)} built, {len(carried)} carried")
+        if not bases:
+            continue
+        base_name = f"{wiki}/{bases[0]['file']}"
+
+        members = {}
+        with tarfile.open(OFFLINE / (entry["archive"] + ".gz")) as tar:
+            wanted = {f"{wiki}/{v['file']}" for v in versions}
+            for member in tar:
+                if member.name in wanted:
+                    members[member.name] = tar.extractfile(member).read()
+        check(f"{wiki}: the archive carries every listed version",
+              set(members) == {f"{wiki}/{v['file']}" for v in versions},
+              f"{len(members)} of {len(versions)}")
+        base = members.get(base_name, b"")
+        check(f"{wiki}: the base is a plain page", base.lstrip()[:9].lower() == b"<!doctype",
+              base[:20].decode("latin-1"))
+
+        rebuilt = 0
+        bad = []
+        dec = zstandard.ZstdDecompressor(dict_data=zstandard.ZstdCompressionDict(
+            base, dict_type=zstandard.DICT_TYPE_RAWCONTENT))
+        for v in versions:
+            name = f"{wiki}/{v['file']}"
+            data = members.get(name)
+            if data is None:
+                continue
+            if v.get("default"):
+                continue
+            head, _, frame = data.partition(b"\n")
+            fields = head[9:].split(b" ") if head.startswith(b"APDELTA1 ") else []
+            if len(fields) != 2 or fields[0] != Path(base_name).name.encode():
+                bad.append(f"{v['label']}: header {head[:60]!r}")
+                continue
+            if v.get("bytes") != len(data) or table.get(name) is None:
+                bad.append(f"{v['label']}: manifest bytes or table row wrong")
+                continue
+            try:
+                page = dec.decompress(frame)
+            except Exception as ex:
+                bad.append(f"{v['label']}: {ex}")
+                continue
+            source = (REPO / wiki / "build" / "html" / v["file"]).read_bytes()
+            if b"Full Parameter List" not in page or b"<iframe" in page.lower() \
+                    or abs(len(page) - len(source)) > len(source) // 50:
+                bad.append(f"{v['label']}: rebuilt {len(page)} B against {len(source)} B built")
+                continue
+            import hashlib
+            if hashlib.sha256(page).hexdigest()[:16].encode() != fields[1]:
+                bad.append(f"{v['label']}: header hash is not the rebuilt page's")
+                continue
+            rebuilt += 1
+        check(f"{wiki}: every delta names the base and rebuilds its page",
+              not bad and rebuilt == len(versions) - 1,
+              bad[0] if bad else f"{rebuilt} rebuilt, {len(base)} B base")
+
+
 def main():
     wikis = [w for w in (sys.argv[1:] or WIKIS)]
     print("\noffline archives: what the reader receives\n")
@@ -361,6 +456,7 @@ def main():
               local_donate > 0,
               f"{local_donate} of {pages} pages")
 
+    check_param_versions_are_deltas(wikis)
     check_assets_follow_pages()
     check_archives_carry_current_static()
     check_no_dangling_assets()
