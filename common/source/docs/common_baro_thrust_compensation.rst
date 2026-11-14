@@ -17,3 +17,5 @@ The first barometer (BARO1) can have compensation applied as a linearly varying 
 
 .. image:: ../../../images/baro_thrust2.png
     :target: ../_images/baro_thrust2.png
+
+In firmware 4.8 and later, the throttle value used for this compensation is low-pass filtered. This stops sudden throttle changes from causing sudden jumps in the barometer altitude, which can otherwise upset the altitude controller, for example when flying indoors near surfaces that reflect pressure waves. :ref:`BARO_THST_FILT<BARO_THST_FILT>` sets the filter cutoff frequency (default 1Hz). Set it to 0 to disable the filter, which applies the compensation directly from the throttle output as in earlier firmware.
