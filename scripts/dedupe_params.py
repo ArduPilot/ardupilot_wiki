@@ -41,7 +41,7 @@ def dedupe_rst_parameter_sections(
         _logger.warning("File not found for deduplication: %s", filepath)
         return
     try:
-        with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+        with open(filepath, 'r', encoding='utf-8') as f:
             lines = f.readlines()
     except (OSError, UnicodeDecodeError) as e:
         _logger.error("Failed to read %s for deduplication: %s", filepath, e)
